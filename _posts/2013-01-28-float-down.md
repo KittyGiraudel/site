@@ -4,7 +4,7 @@ layout: post
 ---
 <section>
 <h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}, <a href="#disqus_thread" class="comment-count"></a></p>
+<p class="date">{{ page.date | date: "%d %B %Y" }}, <a href="http://hugogiraudel.com/blog/float-down#disqus_thread" class="comment-count"></a></p>
 
 <p>Back in september, some guy exposed a very interesting problem on <a href="http://css-tricks.com/forums/discussion/19610/float-items">CSS-tricks forums</a>. To sum up, he had a list of elements floated to the left. However, he wanted to float items top to bottom on each column and not left to right on each row.</p>
 

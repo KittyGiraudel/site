@@ -4,7 +4,7 @@ layout: post
 ---
 <section>          
 <h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }} <a href="#disqus_thread" class="comment-count"></a></p>
+<p class="date">{{ page.date | date: "%d %B %Y" }} <a href="http://hugogiraudel.com/blog/sass-structure#disqus_thread" class="comment-count"></a></p>
 
 <p>Hi guys! Ever since the redesign a few weeks ago I have never stopped trying optimizing the performance of the site. One of my biggest concerns was having a stylesheet which is both nice and efficient.</p>
 

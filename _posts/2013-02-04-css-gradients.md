@@ -5,7 +5,7 @@ layout: post
 <section>          
 <h1>{{ page.title }}</h1>
 
-<p class="date">{{ page.date | date: "%d %B %Y" }} <a href="#disqus_thread" class='comment-count'></a></p>
+<p class="date">{{ page.date | date: "%d %B %Y" }}, <a href="http://hugogiraudel.com/blog/css-gradients#disqus_thread" class='comment-count'></a></p>
 
 <blockquote><p>The following is a guest post by <a href="http://twitter.com/thebabydino" target="blank">Ana Tudor</a>. She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.</p></blockquote>
 <img src="../images/rainbow_wheel_screen.gif" class="pull-image--right" alt="Rainbow wheel">
