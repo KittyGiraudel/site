@@ -54,19 +54,19 @@ else if (direction = right)  { /* Conditional stuff here */ }
 <p>The fact is <strong>LESS doesn’t handle if / else statements</strong>. Instead, it provides guarded mixins (mixin when a parameter exists or equals / is inferior / is superior to something). So basically, I had to do something like this:</p>
 
 <pre><code class="language-css">.mixin(parameters) {
-/*Basic stuff here */
+	/*Basic stuff here */
 }
 .mixin(parameters) when (direction = top) {
-/* Conditional stuff here */
+	/* Conditional stuff here */
 }
 .mixin(parameters) when (direction = bottom) {
-/* Conditional stuff here */
+	/* Conditional stuff here */
 }
 .mixin(parameters) when (direction = left) {
-/* Conditional stuff here */
+	/* Conditional stuff here */
 }
 .mixin(parameters) when (direction = right) {
-/* Conditional stuff here */
+	/* Conditional stuff here */
 }
 </code></pre>
 
@@ -86,8 +86,8 @@ else if (direction = right)  { /* Conditional stuff here */ }
 <p>Loops are cool: they can handle a huge amount of operations in only a few lines and even if you don’t need them everyday in CSS, it’s cool to have the option to use them. I wanted a loop to set the appropriate animation name on a dozen of elements. This is more or less what I was expecting:</p>
 
 <pre><code class="language-css">@nbElements: 10;
-for(@i = 0; @i &lt; @nbElements; @i++){
-.my-element:nth-child(@i) { animation-name: loading-@i; }
+for(@i = 0; @i &lt; @nbElements; @i++) {
+	.my-element:nth-child(@i) { animation-name: loading-@i; }
 }
 </code></pre>
 
@@ -95,12 +95,12 @@ for(@i = 0; @i &lt; @nbElements; @i++){
 
 <pre><code class="language-css">/* Define loop */
 .loop(@index) when (@index &gt; 0) {
-(~".my-element:nth-child(@{index})") {
-animation-name: "loading-@{index}";
-}
+	(~".my-element:nth-child(@{index})") {
+		animation-name: "loading-@{index}";
+	}
 
-/* Call itself */
-.loop(@index - 1);
+	/* Call itself */
+	.loop(@index - 1);
 }
 
 /* Stop loop */
@@ -121,29 +121,29 @@ animation-name: "loading-@{index}";
 
 <pre><code class="language-css">/* This works */
 .my-element {
-color: @my-value;
+	color: @my-value;
 }
 
 /* This doesn't work */
 @my-element {
-color: @my-value;
+	color: @my-value;
 }
 
 /* This doesn't work either */
 @{my-element} {
-color: @my-value;
+	color: @my-value;
 }
 
 /* But this works */
 (~"@{my-element}") {
-color: @my-value;
+	color: @my-value;
 }
 
 /* And this can't work */
 .my-element {
-@my-property: @my-value;
-@{my-property}: @my-value;
-(~"@{my-property}"): @my-value;
+	@my-property: @my-value;
+	@{my-property}: @my-value;
+	(~"@{my-property}"): @my-value;
 }
 </code></pre>
 
@@ -207,8 +207,8 @@ animation:         @name;
 <p>So basically, here is what there is to say (<a href="http://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css/11028622#11028622" title="Sign and variables in CSS keyframes using LESS CSS">still not from me</a>):</p>
 
 <ul>
-    <li>The initial selector <code>(~"@keyframes @{name}{") { ... }</code> renders as <code>@keyframes name {{ ... }</code></li>   
-    <li>To avoid <code>{{</code>, it requires a newline which cannot be escaped directly so through the variable <code>@newline: `"\n"`;</code>. LESS parses anything between backticks as JavaScript, so the resulting value is a newline character.</li>
+    <li>The initial selector <code>(~"@keyframes @{name}{") { ... }</code> renders as <code>@keyframes name { { ... }</code></li>   
+    <li>To avoid <code>{ {</code>, it requires a newline which cannot be escaped directly so through the variable <code>@newline: `"\n"`;</code>. LESS parses anything between backticks as JavaScript, so the resulting value is a newline character.</li>
     <li>Since <code>{ ... }</code> requires a selector to be valid, we use the first step of the animation (0%).</li>
     <li>But the curly braces do not match. To fix this, we can add a dummy selector in the end, which starts with <code>(~"} dummy") { .. }</code>. How ugly is that?</li>
     <li>But wait, we already know that vendor prefixes are going to be added in sequel. So, let the final first selector be <code>(~"@{pre} @@{vendor}keyframes @{name} {@{newline}0%")</code>. What a nightmare...</li>
