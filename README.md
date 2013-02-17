@@ -1,2 +1,1 @@
-hugogiraudel.github.com
-=======================
+Here lay the uncompiled files from my site running on Jekyll.
