@@ -1,0 +1,127 @@
+// ------ //
+// Mixins //
+// ------ //
+
+	// Mixin providing a PX fallback for REM font-sizes
+
+@mixin font-size($val) {
+	font-size: ($val * 20) + px;
+	font-size: $val + rem;
+}
+
+	// Mixin handling breakpoints for media queries
+
+@mixin breakpoint($point) {
+	@if $point == mama-bear {
+	    @media (max-width: 48em) { @content; } //960px
+	}
+	@if $point == baby-bear {
+	    @media (max-width: 38em) { @content; } //760px
+	}
+}
+
+// --------- //
+// Variables //
+// --------- //
+
+$pink: #FF3D7F;
+$lightgrey: #444;
+$mediumgrey: #666;
+$darkgrey: #999;
+
+// ------- //
+// Helpers //
+// ------- //
+
+.clearfix:after {
+    display: table;
+    content: "";
+	clear: both 
+}
+
+.clear { clear: both }
+.float-left { float: left }
+.float-right { float: right }
+.icon-left { margin-right: 5px }
+.icon-right { margin-left: 5px }
+
+.pull-image--left {
+	@extend %pull-image;
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+.pull-image--right {
+	@extend %pull-image;
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+%pull-image {
+	max-width: 15em;
+	display: block;
+
+	@include breakpoint(baby-bear) {
+		float: none;
+		width: 100%;
+		margin: 1em auto;
+	}
+}
+
+.pull-quote--left {
+	@extend %pull-quote;
+	text-align: right;
+	float: left;
+	padding-right: 1em;
+	margin: 0 1em 0 0;
+	border-right: 6px solid $pink;
+}
+
+.pull-quote--right {
+	@extend %pull-quote;
+	text-align: left;
+	float: right;
+	padding-left: 1em;
+	margin: 0 0 0 1em;
+	border-left: 6px solid $pink;
+}
+
+%pull-quote {
+	max-width: 250px;
+	width: 100%;
+	position: relative;
+	line-height: 1.35;
+	font-size: 1.5em;
+
+	&:after,
+	&:before {
+		content: '"';
+		font-family: Times New Roman, serif;
+	}
+
+	@include breakpoint(baby-bear) {
+		float: none;
+		margin: 1em auto;
+		border: 5px solid $pink;
+		border-left: none;
+		border-right: none;
+		text-align: center;
+		padding: 1em 0.5em;
+		max-width: 100%;
+	}
+}
+
+.visually-hidden { 
+	position: absolute !important; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height: 1px; width: 1px; 
+	margin: -1px !important; 
+	padding: 0 !important; 
+	border: none; 
+}
+
+.note {
+	font-style: italic;
+	padding-left: 1em;
+}

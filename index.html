@@ -1,0 +1,48 @@
+---
+title: Index
+layout: default
+---
+<h1 class="visually-hidden">Latest articles</h1>
+<ul class="list-articles">
+{% for post in paginator.posts %}
+<li role="article">
+	<p class="list-articles__date">
+	{{ post.date | date_to_long_string  }}
+	</p>
+	<h2 class="list-articles__title">
+	<a href=" {{ post.url }}">
+	{{ post.title }}
+	</a>
+	</h2>
+</li>
+{% endfor %}
+</ul>
+
+      <ul class="pagination">
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+          <li class="pagination__item pagination__previous"><a href="/"><span class="fontawesome-angle-left icon-left icon-right"></span></a></li>
+          {% else %}
+          <li class="pagination__item pagination__previous"><a href="/page{{ paginator.previous_page }}"><span class="fontawesome-angle-left icon-left icon-right"></span></a></li>
+          {% endif %}
+        {% else %}
+        <li class="pagination__item pagination__previous pagination__disabled"><span class="fontawesome-angle-left icon-left icon-right"></span></li>
+        {% endif %}
+        {% if paginator.page == 1 %}
+        <li class="pagination__item pagination__active">1</li>
+        {% else %}
+        <li class="pagination__item"><a href="/">1</a></li>
+        {% endif %}
+        {% for count in (2..paginator.total_pages) %}
+          {% if count == paginator.page %}
+          <li class="pagination__item pagination__active">{{ count }}</li>
+          {% else %}
+          <li class="pagination__item"><a href="/page{{ count }}">{{ count }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if paginator.next_page %}
+        <li class="pagination__item pagination__next"><a href="/page{{ paginator.next_page }}"><span class="fontawesome-angle-right icon-left icon-right"></span></a></li>
+        {% else %}
+        <li class="pagination__item pagination__next pagination__disabled"><span class="fontawesome-angle-right icon-left icon-right"></span></li>
+        {% endif %}
+      </ul>

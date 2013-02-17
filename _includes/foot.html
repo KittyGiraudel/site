@@ -1,0 +1,30 @@
+<script async src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script  src="/js/prism.js"></script>
+<script>
+//GA
+var _gaq = [['_setAccount', 'UA-30333387-2'], ['_trackPageview']];
+(function(d, t) {
+var g = d.createElement(t),
+s = d.getElementsByTagName(t)[0];
+g.async = true;
+g.src = '//www.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g, s);
+}(document, 'script'));
+
+//Disqus
+var disqus_shortname = 'hugogiraudel';
+(function(d, t) {
+var dsq = d.createElement(t),
+  s = d.createElement(t);
+dsq.async = true;
+dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+s.async = true;
+s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+}(document, 'script'));
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+
+</html>
