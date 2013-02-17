@@ -43,7 +43,7 @@ layout: post
 <section id="ide">
 <h2>IDE<a href="#ide" class="section-anchor">#</a></h2>
 
-<img src="../images/sublime-text.png" alt="Sublime Text 2" class="pull-image--right">
+<img src="/images/sublime-text.png" alt="Sublime Text 2" class="pull-image--right">
 
 <p>I used to be a huge fan of Notepad++, even if everybody was using Dreamweaver. Honestly I never liked DW; it is super heavy while doing not much than a regular text editor.</p>
 
@@ -77,7 +77,7 @@ layout: post
 
 <h3>Sass &amp; Compass</h3>
 
-<img src="../images/sass-compass.jpg" alt="Sass and Compass" class="pull-image--right">
+<img src="/images/sass-compass.jpg" alt="Sass and Compass" class="pull-image--right">
 
 <p>Not so long ago I gave a try to CSS preprocessors, because I am both curious and a CSS lover. It turned out I like CSS preprocessors, they give a lot more options than regular CSS.</p>
 

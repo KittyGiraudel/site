@@ -65,7 +65,7 @@ layout: post
 </tr>
 </table>
 
-<img src="../images/color-cube.jpg" class="pull-image--left" alt="Color Cube" />
+<img src="/images/color-cube.jpg" class="pull-image--left" alt="Color Cube" />
 
 <blockquote class="bq1">This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.</blockquote>
 
@@ -212,7 +212,7 @@ color: rgb(51, 51, 51);
 <p>Then the CSS2.1 specification added the <span style="background: orange; display: inline-block; padding: 0 5px;">orange</span> keyword. Finally, CSS3 came with 130 additional keywords for a total of 147 keywords (134 non-gray, 13 gray).
 I won’t list all of them here because it would be too long however, this is a visualization of all of them on a hue wheel by <a href="http://meyerweb.com/eric/css/colors/hsl-147.html">Eric Meyer</a> (see <a href="http://www.xanthir.com/blog/b4JC0">annotated version by Tab Atkins Jr.</a>):</p>
 
-<img alt="Color Wheel" src="../images/color-wheel.jpg"/>
+<img alt="Color Wheel" src="/images/color-wheel.jpg"/>
 
 <p>The point of this work is to show keywords are associated to random colors: they are chosen according to their position on the hue wheel.</p>
 
@@ -279,13 +279,13 @@ text-shadow: 0 2px 1px;    /* This will be red */
 <h3>What is HSL?</h3>
 
 <p>HSL stands for Hue, Saturation and Lightness. Please don’t worry, HSL is not another format of color. It’s only another representation of the RGB model. This cylindric representation aims at showing the RGB model in a more intuitive way than the previous seen cube.</p>
-<img src="../images/color-hsl.jpg" alt="Color HSL" />
+<img src="/images/color-hsl.jpg" alt="Color HSL" />
 
 <h4>Hue</h4>
 
 <p>The angle around the central vertical axis of the cylinder corresponds to the “hue”, which is basically the color you want. Take a chromatic wheel: at 0° you have red, at 120° you have green, at 240°you have blue and you go back to red when you reach 360°.</p>
 
-<img src="../images/color-wheel.png" alt="Color Wheel" />
+<img src="/images/color-wheel.png" alt="Color Wheel" />
 <h4>Saturation</h4>
 
 <p>The distance from the central vertical axis of the cylinder corresponds to “saturation” (also called “chroma”). It can be understood as the quantity of black and white you add to your color. When set to 100%, the color is “pure”, but when you reduce the saturation you’re creating a “mixture”, progressively moving your color to some kind of grey.</p>
