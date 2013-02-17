@@ -50,8 +50,8 @@ layout: post
 <p>Finally someone came up with a better idea (and probably a better understanding of CSS) than mine with a pure CSS and very elegant solution (<a href="http://codepen.io/wolfcry911/pen/IkBbu">CodePen</a>).</p>
 
 <pre><code class="language-css">li:nth-child(even) {
-margin: 110px 0 0 -110px; 
-/* Given a 100*100px element with a 10px margin */
+	margin: 110px 0 0 -110px; 
+	/* Given a 100*100px element with a 10px margin */
 }</code></pre>
 
 <p>Wolfcry911 simply used margins to reposition one out of two items. It's a brilliant solution, really.</p>
@@ -63,7 +63,7 @@ margin: 110px 0 0 -110px;
 <p>I just noticed <a href="http://codepen.io/estelle">Estelle Weyl</a> did it in another clever way with CSS columns (<a href="http://codepen.io/estelle/pen/zkjrn">CodePen</a>). I'm actually wondering if it's not the better option all in all since it requires only one single CSS line (prefixes omitted).</p> 
 
 <pre><code class="language-css">ul {
-columns: 5;
+	columns: 5;
 }</code></pre>
 
 <p>Congratulations to her for such a smart solution. :)</p>
@@ -82,13 +82,13 @@ columns: 5;
 <p>Instead of doing <code>:nth-child(even)</code>, we need two different selectors:</p>
 
 <pre><code class="language-css">li:nth-child(3n+2){
-margin: 120px 0 0 -110px;
-background: limegreen;
+	margin: 120px 0 0 -110px;
+	background: limegreen;
 }
 
 li:nth-child(3n+3) {
-margin: 230px 0 0 -110px;
-background: crimson;
+	margin: 230px 0 0 -110px;
+	background: crimson;
 }</code></pre>
 
 </section>
@@ -128,31 +128,31 @@ $margin: 0.4em;</code></pre>
 
 @while $i &gt; 1 {
 
-li:nth-child(#{$rows}n+#{$i}) {
-$j: $i - 1; // Setting a $i-1 variable
+	li:nth-child(#{$rows}n+#{$i}) {
+		$j: $i - 1; // Setting a $i-1 variable
 
-margin-top: $j * $height + $i * $margin;
-margin-left: -($width + $margin);
-}
+		margin-top: $j * $height + $i * $margin;
+		margin-left: -($width + $margin);
+	}
 
-$i: $i - 1;
+	$i: $i - 1;
 }</code></pre>
 
 <p>It is pretty tough. Let me show you how it compiles when $rows is set to 4 (other variables remain unchanged):</p>
 
 <pre><code class="language-css">li:nth-child(4n+4) {
-margin-top: 13.6em;  // (3 * 4em) + (4 * 0.4em)
-margin-left: -4.4em; // -(4em + 0.4em)
+	margin-top: 13.6em;  // (3 * 4em) + (4 * 0.4em)
+	margin-left: -4.4em; // -(4em + 0.4em)
 }
 
 li:nth-child(4n+3) {
-margin-top: 9.2em;   // (2 * 4em) + (3 * 0.4em)
-margin-left: -4.4em; // -(4em + 0.4em)
+	margin-top: 9.2em;   // (2 * 4em) + (3 * 0.4em)
+	margin-left: -4.4em; // -(4em + 0.4em)
 }
 
 li:nth-child(4n+2) {
-margin-top: 4.8em;   // (1 * 4em) + (2 * 0.4em)
-margin-left: -4.4em; // -(4em + 0.4em)
+	margin-top: 4.8em;   // (1 * 4em) + (2 * 0.4em)
+	margin-left: -4.4em; // -(4em + 0.4em)
 }</code></pre>
 
 <p>I think the pattern should be easier to see now thanks to the comments. For X rows you'll have <code>X-1</code> different selectors starting from <code>:nth-child(Xn+Y)</code> (where X and Y are the same) until Y becomes stricly superior than 1 (so Y equals 2).</p>

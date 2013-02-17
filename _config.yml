@@ -1,5 +1,7 @@
 name: "HugoGiraudel.com"
 description: "I write about front-end development stuff."
+url: "http://hugogiraudel.com"
+future: false
 auto: true
 server: true
 paginate: 7

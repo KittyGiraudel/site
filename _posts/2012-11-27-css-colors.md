@@ -85,28 +85,28 @@ layout: post
 <p>So, summarized, we end up with two different ways to display CSS colors with the <code>rgb()</code> function: percentages and integers between 0 and 255. Let’s illustrate this with an example, shall we?</p>
 
 <pre><code class="language-css">.black { /* I’m black! */
-color: rgb(0, 0, 0);
-color: rgb(0%, 0%, 0%);
+	color: rgb(0, 0, 0);
+	color: rgb(0%, 0%, 0%);
 }
 
 .white { /* I’m white! */
-color: rgb(255, 255, 255);
-color: rgb(100%, 100%, 100%);
+	color: rgb(255, 255, 255);
+	color: rgb(100%, 100%, 100%);
 }
 
 .purple { /* I’m medium purple! */
-color: rgb(128, 0, 128);
-color: rgb(50%, 0%, 50%);
+	color: rgb(128, 0, 128);
+	color: rgb(50%, 0%, 50%);
 }
 
 .light-purple { /* I’m fuchsia! */
-color: rgb(255, 0, 255);
-color: rgb(100%, 0%, 100%);
+	color: rgb(255, 0, 255);
+	color: rgb(100%, 0%, 100%);
 }
 
 .dark-purple { /* I’m deep purple! */
-color: rgb(64, 0, 64);
-color: rgb(25%, 0%, 25%);
+	color: rgb(64, 0, 64);
+	color: rgb(25%, 0%, 25%);
 }
 </code></pre>
 
@@ -121,30 +121,30 @@ color: rgb(25%, 0%, 25%);
 <p>To use this channel in CSS, you’ll call the <code>rgba()</code> function instead of the <code>rgb()</code>. However note the alpha-channel is always defined with a float clamped between 0 and 1.</p>
 
 <pre><code class="language-css">.black { /* I’m half transparent black! */
-color: rgba(0, 0, 0, 0.5);
-color: rgba(0%, 0%, 0%, 0.5);
+	color: rgba(0, 0, 0, 0.5);
+	color: rgba(0%, 0%, 0%, 0.5);
 }
 
 .white { /* I’m 2/3 transparent white! */
-color: rgba(255, 255, 255, 0.33);
-color: rgba(100%, 100%, 100%, 0.33);
+	color: rgba(255, 255, 255, 0.33);
+	color: rgba(100%, 100%, 100%, 0.33);
 }
 
 .red { /* I’m fully transparent red, so kind of invisible */
-color: rgba(255, 0, 0, 0);
-color: rgba(100%, 0%, 0%, 0);
+	color: rgba(255, 0, 0, 0);
+	color: rgba(100%, 0%, 0%, 0);
 }
 </code></pre>
 
 <p>This can be very useful in various situation. Let’s say you have some kind of background image and want to write on it without losing readability or putting a big white box on top of it. This is the perfect usecase for RGBa!</p>
 
 <pre><code class="language-css">.parent {
-background-image: url(‘my-picture.jpg’);
+	background-image: url(‘my-picture.jpg’);
 }
 
 .child {
-background: rgba(255, 255, 255, 0.75);
-color: rgb(51, 51, 51);
+	background: rgba(255, 255, 255, 0.75);
+	color: rgb(51, 51, 51);
 }
 </code></pre>
 
@@ -242,7 +242,7 @@ I won’t list all of them here because it would be too long however, this is a 
 
 <pre><code class="language-css">.my-element {
 color: red;
-border-color: 5px solid currentColor;
+	border-color: 5px solid currentColor;
 }
 </code></pre>
 
@@ -261,10 +261,10 @@ border-color: 5px solid currentColor;
 <p>It means you can do one of those and be perfectly valid:</p>
 
 <pre><code class="language-css">.my-element {
-color: red;
-border-color: 5px solid;   /* This will be red */
-box-shadow: 10px 10px 5px; /* This will be red */
-text-shadow: 0 2px 1px;    /* This will be red */
+	color: red;
+	border-color: 5px solid;   /* This will be red */
+	box-shadow: 10px 10px 5px; /* This will be red */
+	text-shadow: 0 2px 1px;    /* This will be red */
 }
 </code></pre>
 
@@ -305,15 +305,15 @@ text-shadow: 0 2px 1px;    /* This will be red */
 </ul>
 
 <pre><code class="language-css">.white { /* I’m white! */
-color: hsl(0, 0%, 100%);
+	color: hsl(0, 0%, 100%);
 }
 
 .black { /* I’m black! */
-color: hsl(0, 0%, 0%);
+	color: hsl(0, 0%, 0%);
 }
 
 .red { /* I’m red! */
-color: hsl(0, 100%, 50%);
+	color: hsl(0, 100%, 50%);
 }
 </code></pre>
 
@@ -326,14 +326,13 @@ color: hsl(0, 100%, 50%);
 <p>As for RGBa, you can set a value for the alpha-channel on a HSL color. It works exactly the same way RGBa does: it accepts a float value between 0 and 1 such as 0.56.</p>
 
 <pre><code class="language-css">.parent {
-background-image: url(‘my-picture.jpg’);
+	background-image: url(‘my-picture.jpg’);
 }
 
 .child {
-background: hsla(0, 0%, 100%, 0.75);
-color: hsl(0, 0%, 30%);
-}
-</code></pre>
+	background: hsla(0, 0%, 100%, 0.75);
+	color: hsl(0, 0%, 30%);
+}</code></pre>
 </section>
 <section id="system-colors">
 <h2>System colors<a href="#system-colors" class="section-anchor">#</a></h2>
