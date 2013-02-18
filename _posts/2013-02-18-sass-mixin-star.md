@@ -6,7 +6,7 @@ layout: post
 <h1>{{ page.title }}</h1>
 <p class="date">{{ page.date | date: "%d %B %Y" }}</p>
 
-<img class="pull-image--right" src="/images/css-gradients__css-star.png">
+<img class="pull-image--right" src="/images/sass-mixin-star__css-star.png">
 
 <p>A couple of days ago, <a href="http://twitter.com/thebabydino">Ana Tudor</a> showed me how she managed to do a <a href="http://codepen.io/thebabydino/pen/DmklE">pure CSS 6-point star</a> with a single element.</p>
 
@@ -18,7 +18,7 @@ layout: post
 <section id="shape">
 <h2>Understand the shape <a href="#shape" class="section-anchor">#</a></h2>
 
-<img src="/images/css-gradients__rhombius.png" class="pull-image--right">
+<img src="/images/sass-mixin-star__rhombius.png" class="pull-image--right">
 
 <p>The first thing was to understand how Ana managed to achieve such a shape with a single element (and 2 pseudo-elements). Long story short:  <strong>chained CSS transforms</strong>.</p>
 
