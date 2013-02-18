@@ -213,10 +213,11 @@ a {
 
 	@include breakpoint(baby-bear) {
 		display: inline-block;
-		text-indent: 8px;
+		//text-indent: 8px;
 	}
 }
 
+/*
 .list-articles__codrops,
 .list-articles__guest {
 	position: absolute;
@@ -246,7 +247,7 @@ a {
 		color: $darkgrey;
 	}
 }
-
+*/
 
 // ---------- //
 // Pagination //
@@ -270,7 +271,7 @@ a {
 }
 
 .pagination__disabled {
-	display: none;
+	opacity: 0;
 }
 
 .pagination__item:hover,
