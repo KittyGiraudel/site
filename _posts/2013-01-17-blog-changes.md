@@ -1,6 +1,7 @@
 ---
 title: Blog changes
 layout: post
+alias: [/blog/blog-changes]
 ---
 <section>
 <h1>{{ page.title }}</h1>
