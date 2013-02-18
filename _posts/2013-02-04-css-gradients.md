@@ -1,6 +1,7 @@
 ---
 title: Dig deep into CSS linear gradients
 layout: post
+guest: Ana Tudor
 ---      
 <section>          
 <h1>{{ page.title }}</h1>

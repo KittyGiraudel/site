@@ -6,11 +6,21 @@ layout: default
 <ul class="list-articles">
 {% for post in paginator.posts %}
 <li role="article">
+  {% if post.guest %}
+  <span class="fontawesome-user list-articles__guest"></span>
+  {% endif %}
+  {% if post.codrops %}
+  <span class="fontawesome-tint list-articles__codrops"></span>
+  {% endif %}
 	<p class="list-articles__date">
 	{{ post.date | date_to_long_string  }}
 	</p>
 	<h2 class="list-articles__title">
-	<a href=" {{ post.url }}">
+  {% if post.codrops %}
+  <a href="{{ post.codrops }}">
+  {% else %}
+	<a href="{{ post.url }}">
+  {% endif %}
 	{{ post.title }}
 	</a>
 	</h2>
