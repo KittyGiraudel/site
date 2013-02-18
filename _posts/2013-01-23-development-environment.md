@@ -1,6 +1,7 @@
 ---
 title: My development environment
 layout: post
+disqus: http://hugogiraudel.com/blog/development-environment
 ---
 <section>          
 <h1>{{ page.title }}</h1>
@@ -105,4 +106,3 @@ layout: post
 
 <p>What about you guys? What's your development environment?</p>
 </section>
-<script>var disqus_url = "http://hugogiraudel.com/blog/development-environment";</script>

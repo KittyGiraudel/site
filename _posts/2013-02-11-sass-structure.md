@@ -1,6 +1,7 @@
 ---
 title: A closer look at my Sass structure
 layout: post
+disqus: http://hugogiraudel.com/blog/sass-structure
 ---
 <section>          
 <h1>{{ page.title }}</h1>
@@ -343,5 +344,3 @@ a {
 
 <p>I think I have covered most of my Sass structure. If you feel like something could be improved or if you have any question, please be sure to drop a comment. :)</p>
 </section>
-
-<script>var disqus_url = "http://hugogiraudel.com/blog/sass-structure";</script>

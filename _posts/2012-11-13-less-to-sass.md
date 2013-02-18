@@ -1,6 +1,7 @@
 ---
 title: Why I switched from LESS to Sass
 layout: post
+disqus: http://hugogiraudel.com/blog/less-to-sass.html
 ---
 <section>
 <h1>{{ page.title }}</h1>
@@ -285,4 +286,3 @@ animation:         @name;
 <p>Whatsoever, the choice is really up to you. All of this was only my opinion based on my experience. <strong>LESS is still a good CSS preprocessor, but in the end I think Sass is simply better</strong>.</p>
 
 </section>  
-<script>var disqus_url = "http://hugogiraudel.com/blog/less-to-sass.html";</script>

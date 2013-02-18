@@ -1,6 +1,7 @@
 ---
 title: A round-up on CSS playgrounds
 layout: post
+disqus: http://hugogiraudel.com/blog/css-playgrounds.html
 ---
 <section>
 <h1>{{ page.title }}</h1>
@@ -181,4 +182,3 @@ layout: post
 <p>What about you? What's your favorite CSS playground?</p>
 
 </section>
-<script>var disqus_url = "http://hugogiraudel.com/blog/css-playgrounds.html";</script>

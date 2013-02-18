@@ -1,6 +1,7 @@
 ---
 title: Blog changes
 layout: post
+disqus: http://hugogiraudel.com/blog/blog-changes
 ---
 <section>
 <h1>{{ page.title }}</h1>
@@ -112,5 +113,3 @@ layout: post
 
 <p>You tell me. If you have any request, comment, advise or any feedback to do, be sure to speak. Thanks a lot.</p>
 </section>
-
-<script>var disqus_url = "{{ disqus }}";</script>

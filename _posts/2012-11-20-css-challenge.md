@@ -1,6 +1,7 @@
 ---
 title: A CSS challenge
 layout: post
+disqus: http://hugogiraudel.com/blog/css-challenge.html
 ---
 <section>
 <h1>{{ page.title }}</h1>
@@ -95,4 +96,3 @@ h1:after { left: 100%; }
 <p>But since it's only a tiny design improvement, I'll definitely go with the gradient version on a live project. Thanks for participating. I'll try to drop another challenge soon. :)</p>
 
 </section>
-<script>var disqus_url = "http://hugogiraudel.com/blog/css-challenge.html";</script>

@@ -1,6 +1,7 @@
 ---
 title: A little LESS puzzle
 layout: post
+disqus: http://hugogiraudel.com/blog/less-puzzle
 --- 
 <section>          
 <h1>{{ page.title }}</h1>
@@ -52,4 +53,3 @@ h1 { font-family: $my-font; }
 
 <p>No luck.</p> 
 </section>
-<script>var disqus_url = "http://hugogiraudel.com/blog/less-puzzle";</script>

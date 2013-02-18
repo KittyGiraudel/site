@@ -1,3 +1,8 @@
+{%if page.disqus %}
+<script>var disqus_url = "{{ page.disqus }}";</script>
+{% else %}
+<script>var disqus_url = "http://hugogiraudel.com{{ page.url }}";</script>
+{% endif %}
 <div id="disqus_thread"></div>
 </article>
 

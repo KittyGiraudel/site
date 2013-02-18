@@ -2,6 +2,7 @@
 title: Dig deep into CSS linear gradients
 layout: post
 guest: Ana Tudor
+disqus: http://hugogiraudel.com/blog/css-gradients
 ---      
 <section>          
 <h1>{{ page.title }}</h1>
@@ -152,5 +153,4 @@ oldSyntax = 90° - newSyntax;</code></pre>
 <p>You definitely should follow her on <a href="http://twitter.com/thebabydino" target="blank">Twitter</a> or have a look at <a href="http://about.me/thebabydino" target="blank">her profile</a> to know more about her and what she does.</p>
 </blockquote>
 </section>  
-<script async src="http://codepen.io/assets/embed/ei.js"></script>     
-<script>var disqus_url = "http://hugogiraudel.com/blog/css-gradients";</script>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>    

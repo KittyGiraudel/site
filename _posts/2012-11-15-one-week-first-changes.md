@@ -1,6 +1,7 @@
 ---
 title: One week, first changes
 layout: post
+disqus: http://hugogiraudel.com/blog/one-week-first-changes.html
 ---
 <section>
 <h1>{{ page.title }}</h1>
@@ -53,4 +54,3 @@ layout: post
 
 <p>If you have any suggestion to how we could make this place better, please feel free to speak. By the way I'd like to thanks all of you giving feedbacks and helping me improve this place. It means a lot, keep up! :)</p>
 </section>
-<script>var disqus_url = "http://hugogiraudel.com/blog/one-week-first-changes.html";</script>

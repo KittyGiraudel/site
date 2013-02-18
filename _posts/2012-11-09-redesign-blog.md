@@ -1,6 +1,7 @@
 ---
 title: Hugogiraudel.com redesigned + new blog
 layout: post
+disqus: http://hugogiraudel.com/blog/redesign-blog
 ---
 <section>
 <h1>{{ page.title }}</h1>
@@ -43,4 +44,3 @@ layout: post
 
 <p>Anyway, if you find any bug or have any suggestion, please catch me on GTalk or Twitter.</p>
 </section>
-<script>var disqus_url = "http://hugogiraudel.com/blog/redesign-blog";</script>
