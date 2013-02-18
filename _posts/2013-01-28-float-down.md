@@ -174,4 +174,5 @@ li:nth-child(4n+2) {
 
 <p>I guess we could complicate the whole thing to accept more parameters and be even more flexible but would it worth it? I guess not. <strong>The simple way is to use JavaScript. The funny way is to use Sass.</strong></p>
 </section>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
 <script>var disqus_url = "http://hugogiraudel.com/blog/float-down";</script>
