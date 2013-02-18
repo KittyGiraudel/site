@@ -118,21 +118,17 @@ $darkgrey: #999;
 
 <p>Let's start with the basics:</p>
 <ul>
-    <li><code>.clearfix</code> is the well known hack to clear floats in an element containing only floated elements</li>
-    <li><code>.clear</code> is for a quick float clearing</li>
-    <li><code>.float-left</code> and <code>.float-right</code> are short helpers to pull any element from the flow on the left or the right</li>
+    <li><code>%clearfix</code> is an invisible class meant to be extended (@extend) to clear floats in an element containing only floated elements</li>
     <li><code>.icon-left</code> and <code>.icon-right</code> are used on inline icons to prevent them from sticking the text</li>
 </ul>                   
 
-<pre><code class="language-css">.clearfix:after {
-display: table;
-    content: "";
-    clear: both 
+<pre><code class="language-css">%clearfix {
+    &:after {
+        display: table;
+        content: "";
+        clear: both 
+    }
 }
-
-.clear { clear: both }
-.float-left { float: left }
-.float-right { float: right }
 
 .icon-left { margin-right: 5px }
 .icon-right { margin-left: 5px }</code></pre>
