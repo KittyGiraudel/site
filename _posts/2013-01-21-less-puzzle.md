@@ -53,4 +53,3 @@ h1 { font-family: $my-font; }
 <p>No luck.</p> 
 </section>
 <script>var disqus_url = "http://hugogiraudel.com/blog/less-puzzle";</script>
-<div id="disqus_thread"></div>

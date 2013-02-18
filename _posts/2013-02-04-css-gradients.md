@@ -152,4 +152,3 @@ oldSyntax = 90° - newSyntax;</code></pre>
 </blockquote>
 </section>       
 <script>var disqus_url = "http://hugogiraudel.com/blog/css-gradients";</script>
-<div id="disqus_thread"></div>

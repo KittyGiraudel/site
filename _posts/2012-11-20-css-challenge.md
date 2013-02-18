@@ -96,4 +96,3 @@ h1:after { left: 100%; }
 
 </section>
 <script>var disqus_url = "http://hugogiraudel.com/blog/css-challenge.html";</script>
-<div id="disqus_thread"></div>

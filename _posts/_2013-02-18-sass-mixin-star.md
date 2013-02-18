@@ -195,6 +195,3 @@ layout: post
 
 <p>Thanks (and congratulations) to <a href="http://twitter.com/thebabydino">Ana Tudor</a> for creating such a shape which made me do some cool Sass stuff.</p>
 </section>
-            
-
-<div id="disqus_thread"></div>

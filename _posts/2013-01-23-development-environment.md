@@ -106,4 +106,3 @@ layout: post
 <p>What about you guys? What's your development environment?</p>
 </section>
 <script>var disqus_url = "http://hugogiraudel.com/blog/development-environment";</script>
-<div id="disqus_thread"></div>

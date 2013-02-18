@@ -115,4 +115,3 @@ alias: [/blog/blog-changes]
 </section>
 
 <script>var disqus_url = "http://hugogiraudel.com/blog/blog-changes";</script>
-<div id="disqus_thread"></div>

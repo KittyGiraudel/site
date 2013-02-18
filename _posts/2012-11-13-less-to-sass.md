@@ -286,5 +286,3 @@ animation:         @name;
 
 </section>  
 <script>var disqus_url = "http://hugogiraudel.com/blog/less-to-sass.html";</script>
-
-<div id="disqus_thread"></div>

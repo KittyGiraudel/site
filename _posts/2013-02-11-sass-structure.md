@@ -349,4 +349,3 @@ a {
 </section>
 
 <script>var disqus_url = "http://hugogiraudel.com/blog/sass-structure";</script>
-<div id="disqus_thread"></div>

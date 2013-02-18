@@ -182,4 +182,3 @@ layout: post
 
 </section>
 <script>var disqus_url = "http://hugogiraudel.com/blog/css-playgrounds.html";</script>
-<div id="disqus_thread"></div>

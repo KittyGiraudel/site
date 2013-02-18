@@ -467,4 +467,3 @@ lightness(color)    /* Gets the lightness component */
 <p>Thanks a lot for reading this article. If you have any question or feedback, please be sure to share. Also, if you find any mistake, I'd be glad to correct it. ;)</p>
 </section>
 <script>var disqus_url = "http://hugogiraudel.com/blog/css-colors.html";</script>
-<div id="disqus_thread"></div>
