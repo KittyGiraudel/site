@@ -4,7 +4,7 @@ layout: post
 ---
 <section>
 <h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}, <a href="#disqus_thread" title="One week, first changes" class='comment-count'></a></p>
+<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
 </section>    
 <section id="design">
 <h2>Design<a href="#design" class="section-anchor">#</a></h2>

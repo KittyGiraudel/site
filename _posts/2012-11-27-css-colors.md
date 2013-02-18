@@ -4,7 +4,7 @@ layout: post
 ---
 <section>
 <h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}, <a href="http://hugogiraudel.com/blog/css-colors.html#disqus_thread" class="comment-count"></a></p>
+<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
 
 
 <p>Hi everyone! Today, we will talk about colors in CSS. There are many color specifications and we'll be talking about their history, what they mean and how to use them.</p>

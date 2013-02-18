@@ -4,7 +4,7 @@ layout: post
 ---
 <section>
 <h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}, <a href="http://hugogiraudel.com/blog/redesign-blog.html#disqus_thread" title="HugoGiraudel.com redesigned + a new blog" class='comment-count'></a></p>
+<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
 
 <p>Hi guys! As you can see, I have big news. I've changed a few things on hugogiraudel.com in order to make it look like a little bit more aesthetic and/or professionnal. What do you say?</p>
 

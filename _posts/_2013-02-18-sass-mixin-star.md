@@ -4,7 +4,7 @@ layout: post
 ---
 <section>          
 <h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}, <a href="#disqus_thread" class='comment-count'></a></p>
+<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
 
 <img class="pull-image--right" src="/images/css-star.png">
 

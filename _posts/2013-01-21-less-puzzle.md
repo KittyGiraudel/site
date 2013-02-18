@@ -4,7 +4,7 @@ layout: post
 --- 
 <section>          
 <h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}, <a href="#disqus_thread" class='comment-count'></a></p>
+<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
 
 <p>Hi guys! What do you think of a little puzzle to wake up your neurons? I think I've found something tricky enough to worth a blog post and a little challenge about it.</p>
 
