@@ -267,6 +267,10 @@ a {
     a {
 		display: block;
 		color: #BFBFBF;
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 
