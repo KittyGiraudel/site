@@ -1,7 +1,6 @@
 ---
 title: Blog changes
 layout: post
-alias: [/blog/blog-changes]
 ---
 <section>
 <h1>{{ page.title }}</h1>
@@ -114,4 +113,4 @@ alias: [/blog/blog-changes]
 <p>You tell me. If you have any request, comment, advise or any feedback to do, be sure to speak. Thanks a lot.</p>
 </section>
 
-<script>var disqus_url = "http://hugogiraudel.com/blog/blog-changes";</script>
+<script>var disqus_url = "{{ disqus }}";</script>
