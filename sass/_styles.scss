@@ -464,6 +464,10 @@ tr:nth-child(odd) {
 			float: none;
 		}
 	}
+
+	a {
+		color: $mediumgrey;
+	}
 }
 
 // ----------- //
@@ -482,10 +486,6 @@ tr:nth-child(odd) {
 	li {
 		display: inline;
 		margin: 0 0.25em;
-	}
-
-	a {
-		color: $mediumgrey;
 	}
 
 	@include breakpoint(baby-bear) {
