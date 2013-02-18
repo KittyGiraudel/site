@@ -41,9 +41,6 @@ $darkgrey: #999;
 	}
 }
 
-.clear { clear: both }
-.float-left { float: left }
-.float-right { float: right }
 .icon-left { margin-right: 5px }
 .icon-right { margin-left: 5px }
 
@@ -75,7 +72,7 @@ $darkgrey: #999;
 	text-align: right;
 	float: left;
 	padding-right: 1em;
-	margin: 0 1em 0 0;
+	margin: 0 1em .5em 0;
 	border-right: 6px solid $pink;
 }
 
@@ -84,7 +81,7 @@ $darkgrey: #999;
 	text-align: left;
 	float: right;
 	padding-left: 1em;
-	margin: 0 0 0 1em;
+	margin: 0 0 .5em 1em;
 	border-left: 6px solid $pink;
 }
 

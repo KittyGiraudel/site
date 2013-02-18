@@ -353,7 +353,7 @@ h1 {
 	font-family: 'Sanchez', sans-serif;
 	@include font-size(1.8);
 	text-shadow: 0 1px white, 0 2px $darkgrey;
-	margin-top: 1em;
+	margin: 1em 0 0 0;
 	text-transform: uppercase;
 }
 
