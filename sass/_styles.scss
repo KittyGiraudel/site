@@ -90,6 +90,7 @@ a {
 // ------ //
 
 .header {
+	@extend %clearfix;
 	border-bottom: 3px solid #D1D1D1;
 	margin: 2.5em 0 2em;
 
@@ -441,6 +442,7 @@ tr:nth-child(odd) {
 // ------ //
 
 .footer {
+	@extend %clearfix;
 	clear: both;
 	@include font-size(0.7);
 	padding: 2.5em 0;
@@ -464,6 +466,7 @@ tr:nth-child(odd) {
 // ----------- //
 
 .footer__nav {
+	@extend %clearfix;
 	float: right;
 
 	ul {
