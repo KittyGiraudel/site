@@ -176,6 +176,10 @@ a {
 		padding: 1.3em 0 0.5em;
 		position: relative;
 
+		@include breakpoint(mama-bear) {
+			padding: 0.7em 0 0.5em;
+		}
+
 		&:last-of-type,
 		&:nth-of-type(7n+1) {
 			border-top: none;
