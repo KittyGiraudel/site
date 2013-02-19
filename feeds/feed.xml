@@ -7,7 +7,7 @@ layout: none
 		<title>{{ site.name }}</title>
 		<description>{{ site.description }}</description>
 		<link>http://hugogiraudel.com</link>
-		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="http://hugogiraudel.com/feeds/feed.xml" rel="self" type="application/rss+xml" />
 		{% for post in site.posts %}
 			<item>
 				<title>{{ post.title }}</title>
