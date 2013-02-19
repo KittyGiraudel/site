@@ -180,11 +180,11 @@ a {
 			padding: 0.7em 0 0.5em;
 		}
 
-		&:first-of-type(7n+1) {
+		&:first-of-type {
 			border-top: none;
 		}
 
-		&:last-of-type(7n) {
+		&:last-of-type {
         	box-shadow: 0 1px #F2F2F2;
     	}
 	}
