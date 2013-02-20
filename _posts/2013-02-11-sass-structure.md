@@ -1,6 +1,7 @@
 ---
 title: A closer look at my Sass structure
 layout: post
+comments: true
 disqus: http://hugogiraudel.com/blog/sass-structure
 ---
 <section>          

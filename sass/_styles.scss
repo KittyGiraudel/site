@@ -341,10 +341,10 @@ p {
 // Titles //
 // ------ // 
 
-h1,
-h2,
-h3,
-h4 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
 	margin: 1.3em 0 0.6em 0;
 	font-weight: normal;
 	line-height: 1.3;
@@ -352,7 +352,7 @@ h4 {
 	color: $lightgrey;
 }
 
-h1 {
+h1, .h1 {
 	font-family: 'Sanchez', sans-serif;
 	@include font-size(1.8);
 	text-shadow: 0 1px white, 0 2px $darkgrey;
@@ -360,7 +360,7 @@ h1 {
 	text-transform: uppercase;
 }
 
-h2 {
+h2, .h2 {
 	@include font-size(1.6);
 
 	&:hover .section-anchor {
@@ -373,14 +373,14 @@ h2 {
 	border-bottom: 1px solid silver;
 }
 
-h3 {
+h3, .h3 {
 	@include font-size(1.3);
 	letter-spacing: 1px;
 	font-style: italic;
 	text-transform: uppercase;
 }
 
-h4 {
+h4, .h4 {
 	@include font-size(1.2);
 }
 

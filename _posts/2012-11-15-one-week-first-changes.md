@@ -1,6 +1,7 @@
 ---
 title: One week, first changes
 layout: post
+comments: true
 disqus: http://hugogiraudel.com/blog/one-week-first-changes.html
 ---
 <section>

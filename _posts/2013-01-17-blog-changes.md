@@ -1,6 +1,7 @@
 ---
 title: Blog changes
 layout: post
+comments: true
 disqus: http://hugogiraudel.com/blog/blog-changes
 ---
 <section>

@@ -1,6 +1,7 @@
 ---
 title: A little LESS puzzle
 layout: post
+comments: true
 disqus: http://hugogiraudel.com/blog/less-puzzle
 --- 
 <section>          

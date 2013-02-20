@@ -1,6 +1,7 @@
 ---
 title: Why I switched from LESS to Sass
 layout: post
+comments: true
 disqus: http://hugogiraudel.com/blog/less-to-sass.html
 ---
 <section>

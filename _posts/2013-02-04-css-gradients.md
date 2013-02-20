@@ -2,6 +2,7 @@
 title: Dig deep into CSS linear gradients
 layout: post
 guest: Ana Tudor
+comments: true
 disqus: http://hugogiraudel.com/blog/css-gradients
 ---      
 <section>          

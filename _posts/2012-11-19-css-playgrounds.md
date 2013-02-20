@@ -1,6 +1,7 @@
 ---
 title: A round-up on CSS playgrounds
 layout: post
+comments: true
 disqus: http://hugogiraudel.com/blog/css-playgrounds.html
 ---
 <section>

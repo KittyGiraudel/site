@@ -11,7 +11,10 @@ g.async = true;
 g.src = '//www.google-analytics.com/ga.js';
 s.parentNode.insertBefore(g, s);
 }(document, 'script'));
+</script>
 
+{%if page.comments %}
+<script>
 //Disqus
 var disqus_shortname = 'hugogiraudel';
 {%if page.disqus %}
@@ -30,8 +33,10 @@ s.async = true;
 s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
 }(document, 'script'));
+
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
 </body>
 
 </html>

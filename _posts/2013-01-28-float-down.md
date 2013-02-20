@@ -1,6 +1,7 @@
 ---
 title: Simulate float down
 layout: post
+comments: true
 disqus: http://hugogiraudel.com/blog/float-down
 ---
 <section>
