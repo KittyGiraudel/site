@@ -40,7 +40,7 @@ All the development and implementation was done by me and Pedro.</p>
 </section>
 <section id="data">
 <h2 class="h4"><span class="fontawesome-comments icon-left"></span>Could you share a few datas about the site maybe? Traffic, authors, anything surprising? <a href="#data" class="section-anchor">#</a></h2>
-<p>We currently have about **850.000 unique visitor** and **9.5 million pageviews** every month. Our readers spend an average of **4.25 minutes** on Codrops and they view about **6 pages per visit**. Almost half of them are from the United States. We have **512 published posts** and more than **20.000 comments**. In total, we have **45 authors**, most of whom were guest authors with a single contribution. </p>
+<p>We currently have about <strong>850.000 unique visitor</strong> and <strong>9.5 million pageviews</strong> every month. Our readers spend an average of <strong>4.25 minutes</strong> on Codrops and they view about <strong>6 pages per visit</strong>. Almost half of them are from the United States. We have <strong>512 published posts</strong> and more than <strong>20.000 comments</strong>. In total, we have <strong>45 authors</strong>, most of whom were guest authors with a single contribution. </p>
 </section>
 <section id="best-codrops-article">
 <h2 class="h4"><span class="fontawesome-comments icon-left"></span>What is the most successful article on Codrops so far? Related to the number of views. <a href="#best-codrops-article" class="section-anchor">#</a></h2>
