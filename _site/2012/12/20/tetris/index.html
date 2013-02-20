@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="I write stuff about front-end development especially HTML5 and CSS3.">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://hugogiraudel.com/feeds/feed.xml" />
+<link rel='stylesheet' href='/stylesheets/styles.min.css'>
+<!--[if lte IE 7]> <link rel="stylesheet" type="text/css" href="../stylesheets/ie-specific.css"><![endif]-->
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>How I built a Tetris with C# and Unity</title>
+</head>   
+<body>
+<div class="row">
+<header class="header" role="banner">
+<h1 class="header__title"><a href="/" title="Home">Hugo<span>giraudel</span>.com</a></h1>
+<nav role="navigation">
+<ul class="header__nav">
+<li><a href="/" title="Home">Home</a></li>
+<li><a href="/resume/" title="Resume">Resume</a></li>
+</ul>
+</nav>
+</header>
+<article class="main" role="main">
+ 
+<h1>How I built a Tetris with C# and Unity</h1> 
+
+<p class="date">20 December 2012</p> 
+<p><section></p>
+
+<p>As part of my formation in programming sciences, I had the opportunity to build a little Tetris game with C# on Unity and I thought it could be a good idea to write a little blog post about my experience. Plus, it changes a little from CSS things.</p>
+
+
+<p><strong>Why Tetris?</strong> Well first, it's a pretty classic game which doesn't need a good design layer to be fun to play. Plus, the logic behind the game is simple enough to start, but there are still some difficulties which are very interesting to learn from.</p>
+
+
+<p>As a reminder:</p>
+
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Unity_(game_engine)"><strong>Unity</strong></a>: Unity is a cross-platform game engine and IDE developed by Unity Technologies, targeting web plugins, desktop platforms and mobile devices.</li>
+<li><a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"><strong>C#</strong></a>: C# is a programming language developed by Microsoft within its .NET initiative and later approved as a standard by ECMA and ISO.</li>
+</ul>
+
+
+<p>If you don't give a fuck about how I built this up and simply want to give it a try, please refer to <a href="#play">this section</a> at the bottom of the article. Have fun! ;)</p>
+
+
+<p><strong>Disclaimer!</strong> Please, understand this game is one of my first works in Unity with C#, so it’s pretty dirty. There are still some bugs, and there have been absolutely no work on the design layer. <strong>The point was to try to make a game which is playable</strong>. It’s more than enough for a first work, don’t you think?</p>
+
+
+<p></section>
+<section id="making-of"></p>
+
+<h2>The making of <a href="#making-of" class="section-anchor">#</a></h2>
+
+
+<p><img src="/images/tetris__tetris.jpg" class="pull-image--right"></p>
+
+<h3>Neuron Tetris</h3>
+
+
+<p>Before doing any code, I had the "how the fuck am I supposed to do this?" moment. I had to think about the process behind the program, the way it would work. This is what I started with:</p>
+
+
+<ol>
+<li>Instantiate a random brick</li>
+<li>Allow move and rotate on the current brick</li>
+<li>Stop the brick when its bottom hits another brick or the floor</li>
+<li>Destroy complete lines</li>
+<li>Goto(1);</li>
+</ol>
+
+
+<p>Even if I’m clearly not a good C# developer neither I'm a Unity ninja, I was pretty confident with the making of this game. Given the process above, I thought it would be fairly easy to do. Boy, I was wrong. It’s been rough. Let’s see why!</p>
+
+
+<h3>When things go wrong</h3>
+
+
+<h4>Collision detection</h4>
+
+
+<p>There are a few things that were really not easy to do with my current skills and knowledge of both the language and the program but one was really above all: <strong>collision detection</strong>. What a bitch.</p>
+
+
+<p>Basically, I wanted to:</p>
+
+
+<ul>
+<li>prevent the brick from crossing left and right edges of the frame</li>
+<li>prevent the brick from crossing another brick</li>
+<li>stop the brick when hitting either the floor or another brick</li>
+</ul>
+
+
+<p>At a first glance, it seems easy, especially when you know Unity engine implements a collision detection system. To put it simple, the collision detection module from Unity permanently checks if something is touching your current item. If there is, it returns the item touching it, else it returns false.</p>
+
+
+<p>First problem: how to distinguish bottom collisions from side collisions? Because this isn’t the same thing. If you detect a collision on the bottom, you have to make the brick stop moving, and if you detect a collision on a side, you have to prevent the user to move the brick on this side.</p>
+
+
+<p>I’ve spend hours trying to make it work with no success, so I ended using a completely different approach: <strong>rays</strong>. To put it simple, you can cast an invisible ray from the center of an item in the direction you want and to the distance you want. From there, it returns you a boolean: there is something or there is not.</p>
+
+
+<p>So what I did was casting rays in 3 direction (left, bottom, right) at a very short distance. If the ray returns something on a side, I prevent the brick from moving on this side. If there is something below, I stop the brick and instantiate a new one. It seems to work well.</p>
+
+
+<h4>Brick positioning</h4>
+
+
+<p>Another problem of mine was placing the bricks correctly. During the first phase of testing, bricks were slightly overlapping each other (see figure). Not much, but enough to be seen and to involve some line destroying issues.</p>
+
+
+<p><img src="/images/tetris__bricks-overlapping.png" class="img-right mt05 bordered"></p>
+
+<p>This was caused by the collision detection problem. Because whatever the method I could use (rays, OnCollisionEnter, OnTriggerEnter, …), the brick wasn’t stopped at the right position. It was always “more or less" where it should have ended. This lack of accuracy was problematic.</p>
+
+
+<p>I ended doing something I didn’t want to, but I had no choice: brick repositioning after landing. Basically, it means when a brick stops moving, I round up its coordinates to place it where it should have ended. It’s not great, it involves some calculations, but I couldn’t think of any other option to fix this issue.</p>
+
+
+<h4>Brick rotation</h4>
+
+
+<p>When I started coding, I was expecting the brick rotation to be very simple. In some way, I wasn't wrong: make the brick rotate on itself is the easy part. When pressing top or bottom arrow, the brick makes a 90° rotation clockwise or counter-clockwise, no problem.</p>
+
+
+<p><img src="/images/tetris__tetris-bug.png" class="pull-image--right"></p>
+
+<p>What was much harder however was <strong>prevent the rotation when too close to the wall</strong>. Rotating a red bar near the wall could mean wedging the bar into the wall. I succeded in preventing the rotation when too close to the wall, however there is still a bug with the purple L brick which cannot rotate when placed at a 1-unit gap from the wall. Sadly, I don't know how to fix it.</p>
+
+
+<p>The other big problem I had and still have with brick rotation is rotating near another brick. Unlike the walls, there is no restriction for rotating a brick near another one, meaning you can overlap bricks with this method. In most cases, this bug won't be noticed because the common behaviour when playing Tetris is rotating and moving the brick while falling, not moving the brick at the very last moment of its fall. Still, there is a bug I couldn't fix.</p>
+
+
+<p></section>
+<section id="improvements"></p>
+
+<h2>Let's make improvements <a href="#improvements" class="section-anchor">#</a></h2>
+
+
+<p>Once I figured out how to fix most of the previously seen problems, it was time to do some improvements to make the game enjoyable. This includes increasing difficulty overtime, displaying the next brick, showing the score, having a main screen, allow pause, and so on. Actually,  it's kind of all the features. Making the game work is the hard part, but making the game cool is very important as well.</p>
+
+
+<p><img src="/images/tetris__tetris-options.jpg" class="pull-image--right"></p>
+
+<h3>Score</h3>
+
+
+<p>Showing the score was very easy to do. Basically, everytime a brick is spawned a score variable is incremented by 10 points. When a line is destroyed, the score variable gains 100 points. What was a little harder was displaying the score on the main screen once you lose the game. (This makes me notice I forgot to reset the number of lines when playing again. :x)</p>
+
+
+<p>On Unity, when you want to do various "levels", you have to create multiple scenes. Like you would do in Flash if you know what I mean. So in our case, the main menu is a scene, and the game is another one. Problem is, objects in a scene are not accessible from another scene by default, so I had to do some trickery.</p>
+
+
+<h3>Difficulty</h3>
+
+
+<p>To increase the difficulty over time, I had multiple options:</p>
+
+
+<ul>
+<li>The Classic Tetris way: you have to do X lines to change level. Each level is faster than the previous one. However, it would have required me to do multiple scenes which would have pissed me off, so it was not an option to me.</li>
+<li>Increase speed over time since game start: it didn't seem very accurate to me since; the difficulty has to go higher when you can stand it, not when you're struggling to place your bricks.</li>
+<li>Increase speed over score: something like <code>speed = score / 100</code> or I don't know. Same reason as above.</li>
+<li>Increase speed over completed lines: every time a line is completed, the speed increases.</li>
+</ul>
+
+
+<p>So I decided to increase speed every time you complete a line. Not much, so you don't notice it, but progressively, you're starting to feel it. This option seems great to me because it increases speed only when you're winning without requiring any other scene breaking the game flow.</p>
+
+
+<p>From there, displaying some kind of level was only a math concern. The result is you're passing a level every 10 lines. I think it's pretty accurate regarding the Classic Tetris.</p>
+
+
+<h3>Rotating camera</h3>
+
+
+<p>An interesting point of making a game on Unity is you're using 3D. You can choose to ignore it, but I feel like it can be a plus to the game when used correctly (which is not the case in this game :D). I wanted to try slowly moving the camera during the game to increase difficulty. Hopefully, I didn't have to struggle with quaternion calculations for rotation concerns since I managed to do everything directly in the IDE with default animations.</p>
+
+
+<p><img src="/images/tetris__tetris-camera.jpg" class="pull-image--right"></p>
+
+<p>It was pretty easy to do, however I felt like it could be really annoying for some people (including me) to have the camera moving permanently so I simply added an option to enable/disable it. The <code>C</code> key in game, as in camera. True story.</p>
+
+
+<p></section>
+<section id="play"></p>
+
+<h2>About the game<a href="#play" class="section-anchor">#</a></h2>
+
+
+<p><strong>Disclaimer (once again)!</strong> This game is kind of a learning experiment so it may be pretty dirty. As explained above, there are still some bugs and the design layer hasn't been done at all.</p>
+
+
+<h3>Features</h3>
+
+
+<ul>
+<li>Classic tetris gameplay</li>
+<li>3D view</li>
+<li>Score + number of lines</li>
+<li>Kind of levels with speed increase</li>
+<li>Quick fall while pressing space</li>
+<li>Preview of next brick</li>
+<li>Pause</li>
+<li>Rotating camera</li>
+<li>Epic 8-bit Tetris soundtrack</li>
+</ul>
+
+
+<h3>Play it!</h3>
+
+
+<p>Even if it’s not perfect, I still have fun playing it, you can try it if you want:</p>
+
+
+<ul>
+<li><a target="blank" href="http://tank-a-faire.com/tetris/WebPlayer.html">Play online</a>; you’ll be ask to download Unity’s Web Player, hopefully it’s extremely light and quick to install</li>
+<li>Try the <a href="http://tank-a-faire.com/tetris/flash/tetris.html">Flash version</a> (a bit laggy) if you don't want to download the UWP</li> 
+<li><a target="blank" href="http://tank-a-faire.com/tetris/windows/tetris.zip">Download it for Windows 64 bits</a> (~8Mb)</li>
+<li><a target="blank" href="http://tank-a-faire.com/tetris/mac/tetris.app.zip">Download it for Mac OS</a> (~8Mb)</li>
+</ul>
+
+
+<p></section>
+<section id="to-do"></p>
+
+<h2>What's next?<a href="#to-do" class="section-anchor">#</a></h2>
+
+
+<p>I don't know yet if I'm going to continue this game, but I think it's a good start, so I may try to improve it in a not so far future. I have a few plans to make it nicer, including:</p>
+
+
+<ul>
+<li>Fixing the brick rotation bugs</li>
+<li>Fixing the number of lines bug</li>
+<li>Improving the design layer</li>
+<li>Hiding the game when paused</li>
+<li>Giving the ability to disable music</li>
+<li>Improving performances</li>
+<li>Making it run on mobile</li>
+</ul>
+
+
+<p>So guys, how far did you manage to go? My best score is 9840 points, level 7 I guess.</p>
+
+
+<p></section></p>
+
+<script>var disqus_url = "http://hugogiraudel.com/blog/tetris";</script>
+
+
+
+<div id="disqus_thread"></div> 
+
+</article>
+<aside class="sidebar" role="complementary" itemscope itemtype="http://schema.org/Person">
+<h1 class="visually-hidden">About me</h1>
+<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> student from <span itemprop="nationality">France</span>; passionate for web standards and new technologies especially HTML5 and CSS3.</p>
+<p>I am the author of <a href="http://wildwebwatch.com" title="Wild Web Watch" target="blank" itemprop="url">Wild Web Watch</a> and I am a writer at <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>. Also I <a href="http://twitter.com/HugoGiraudel" itemprop="url">tweet</a> a lot.</p>
+<p>I'm available for web projects. Or chat. Whatever.</p>
+</aside>
+<footer class="footer" role="contentinfo">
+    <nav role="navigation" class="footer__nav">
+        <ul>
+            <li><a href="/feeds/feed.xml" title="Flux RSS">RSS</a></li>
+            <li><a href="http://twitter.com/HugoGiraudel" title="Hugo on Twitter" target="blank">Twitter</a></li>
+            <li><a href="https://github.com/HugoGiraudel" title="Hugo on GitHub" target="blank">GitHub</a></li>
+            <li><a href="http://codepen.io/HugoGiraudel" title="Hugo on CodePen" target="blank">CodePen</a></li>
+            <li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo on Codrops" target="blank">Codrops</a></li>
+        </ul>
+    </nav>
+    <p>&copy;&nbsp;2013 Hugo Giraudel. Built on <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://sass-lang.com/">Sass</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p> 
+</footer>
+</div>
+<script async src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script  src="/js/prism.js"></script>
+<script>
+//GA
+var _gaq = [['_setAccount', 'UA-30333387-2'], ['_trackPageview']];
+(function(d, t) {
+var g = d.createElement(t),
+s = d.getElementsByTagName(t)[0];
+g.async = true;
+g.src = '//www.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g, s);
+}(document, 'script'));
+</script>
+
+
+<script>
+//Disqus
+var disqus_shortname = 'hugogiraudel';
+
+var disqus_url = "http://hugogiraudel.com/2012/12/20/tetris/";
+
+var disqus_title = "How I built a Tetris with C# and Unity";
+(function(d, t) {
+var dsq = d.createElement(t),
+  s = d.createElement(t);
+dsq.async = true;
+dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+s.async = true;
+s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+}(document, 'script'));
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</body>
+
+</html>

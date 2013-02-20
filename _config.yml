@@ -6,7 +6,7 @@ auto: true
 server: true
 exclude: sass
 
-paginate: 7
+paginate: 10
 
 markdown: rdiscount
 permalink: pretty
