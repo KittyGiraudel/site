@@ -5,6 +5,7 @@ future: false
 
 auto: true
 server: true
+exclude: sass
 
 paginate: 7
 

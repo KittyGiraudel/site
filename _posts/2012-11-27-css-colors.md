@@ -3,6 +3,8 @@ title: Colors in CSS
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/css-colors.html
+categories: 
+  - css
 ---
 <section>
 <h1>{{ page.title }}</h1>
@@ -86,8 +88,7 @@ disqus: http://hugogiraudel.com/blog/css-colors.html
 
 <p>So, summarized, we end up with two different ways to display CSS colors with the <code>rgb()</code> function: percentages and integers between 0 and 255. Let’s illustrate this with an example, shall we?</p>
 
-{% highlight css linenos %}
-.black { /* I’m black! */
+<pre><code class="language-css">.black { /* I’m black! */
 	color: rgb(0, 0, 0);
 	color: rgb(0%, 0%, 0%);
 }
@@ -111,7 +112,7 @@ disqus: http://hugogiraudel.com/blog/css-colors.html
 	color: rgb(64, 0, 64);
 	color: rgb(25%, 0%, 25%);
 }
-{% endhighlight %}
+</code></pre>
 
 <p><strong>Important</strong>: when using percentages, you have to set the unit even if it is 0. If you don’t, some browsers may be unable to parse it.</p>
 

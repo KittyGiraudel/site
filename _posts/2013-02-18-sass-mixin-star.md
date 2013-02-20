@@ -2,6 +2,9 @@
 title: Sass-ify a CSS shape
 layout: post
 comments: true
+categories: 
+  - css
+  - sass
 ---
 <section>          
 <h1>{{ page.title }}</h1>

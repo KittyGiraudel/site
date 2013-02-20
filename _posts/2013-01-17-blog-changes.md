@@ -3,6 +3,8 @@ title: Blog changes
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/blog-changes
+categories: 
+  - blog
 ---
 <section>
 <h1>{{ page.title }}</h1>

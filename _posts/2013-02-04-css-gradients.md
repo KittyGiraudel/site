@@ -4,6 +4,8 @@ layout: post
 guest: Ana Tudor
 comments: true
 disqus: http://hugogiraudel.com/blog/css-gradients
+categories: 
+  - css
 ---      
 <section>          
 <h1>{{ page.title }}</h1>

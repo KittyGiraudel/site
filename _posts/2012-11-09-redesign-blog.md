@@ -3,6 +3,9 @@ title: Hugogiraudel.com redesigned + new blog
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/redesign-blog
+categories: 
+  - blog
+  - design
 ---
 <section>
 <h1>{{ page.title }}</h1>
