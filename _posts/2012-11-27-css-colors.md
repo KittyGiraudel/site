@@ -3,8 +3,6 @@ title: Colors in CSS
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/css-colors.html
-categories: 
-  - css
 ---
 <section>
 <h1>{{ page.title }}</h1>

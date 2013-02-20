@@ -3,8 +3,6 @@ title: A CSS challenge
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/css-challenge.html
-categories: 
-  - css
 ---
 <section>
 <h1>{{ page.title }}</h1>

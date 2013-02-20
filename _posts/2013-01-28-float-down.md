@@ -3,9 +3,6 @@ title: "Simulate float: down"
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/float-down
-categories: 
-- css
-- sass
 ---
 <section>
 <h1>{{ page.title }}</h1>

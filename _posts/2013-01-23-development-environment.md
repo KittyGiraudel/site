@@ -3,8 +3,6 @@ title: My development environment
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/development-environment
-categories: 
-  - workflow
 ---
 <section>          
 <h1>{{ page.title }}</h1>

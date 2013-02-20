@@ -3,10 +3,6 @@ title: Why I switched from LESS to Sass
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/less-to-sass.html
-categories: 
-  - css
-  - sass
-  - less
 ---
 <section>
 <h1>{{ page.title }}</h1>

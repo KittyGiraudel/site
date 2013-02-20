@@ -3,10 +3,6 @@ title: A closer look at my Sass structure
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/sass-structure
-categories: 
-  - css
-  - sass
-  - workflow
 ---
 <section>          
 <h1>{{ page.title }}</h1>
