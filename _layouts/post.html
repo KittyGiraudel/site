@@ -1,14 +1,13 @@
 {% include head.html %}
 {% include header.html %}
-
-
 <article class="main" role="main">
-{% if page.title %} <h1>{{ page.title }}</h1> {% endif %}
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-{{ content }}</article>
-
+{% if page.title %} 
+<h1>{{ page.title }}</h1> 
+{% endif %}
+<p class="date">{{ page.date | date: "%d %B %Y" }}</p> 
+{{ content }}
+</article>
 {%if page.comments %} <div id="disqus_thread"></div> {% endif %}
-
 {% include sidebar.html %}
 {% include footer.html %}
 {% include foot.html %}
