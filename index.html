@@ -5,6 +5,7 @@ layout: default
 <h1 class="visually-hidden">Latest articles</h1>
 <ul class="list-articles">
 {% for post in paginator.posts %}
+{% if post.preview != true %}
 <li role="article">
   {% if post.guest %}
   <span class="fontawesome-user list-articles__guest"></span>
@@ -25,6 +26,7 @@ layout: default
 	</a>
 	</h2>
 </li>
+{% endif %}
 {% endfor %}
 </ul>
 

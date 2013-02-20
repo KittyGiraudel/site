@@ -6,7 +6,9 @@
 {% endif %}
 <p class="date">{{ page.date | date: "%d %B %Y" }}</p> 
 {{ content }}
-{%if page.comments %} <div id="disqus_thread"></div> {% endif %}
+{% if page.comments %}
+<div id="disqus_thread"></div> 
+{% endif %}
 </article>
 {% include sidebar.html %}
 {% include footer.html %}
