@@ -5,9 +5,6 @@ comments: true
 disqus: http://hugogiraudel.com/blog/blog-changes
 ---
 <section>
-<h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-
 <p>Hi guys! It’s now been two months since I launched the new and active version of hugogiraudel.com and I took the opportunity to make a few changes. Let me introduce them, hoping you find them cool. :)</p>
 
 <p><strong>Edit</strong> (January 22nd, 2013): I did a lot of changes after writing this post notably regarding SEO, performances and accessibility. Be sure <a href="#features">you read</a> about it!</p>

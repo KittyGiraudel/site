@@ -5,9 +5,6 @@ comments: true
 disqus: http://hugogiraudel.com/blog/css-challenge.html
 ---
 <section>
-<h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-
 <p>Yesterday night, I've seen something in my Twitter timeline which excited my curiosity: a CSS challenge. It was proposed by <a href="https://twitter.com/goetter">Raphael Goetter</a>, a famous French front-end developer on <a href="http://blog.goetter.fr/post/36084887039/tes-pas-cap-premiere-edition" title="CSS challenge on Raphael Goetter's blog">his blog</a>.</p>
 
 <p>Since I'm sure you'll be interested in a little CSS riddle (you will, will you?), let me tell you what this is about.</p>

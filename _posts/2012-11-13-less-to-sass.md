@@ -5,8 +5,6 @@ comments: true
 disqus: http://hugogiraudel.com/blog/less-to-sass.html
 ---
 <section>
-<h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
 <p>Yaaay, another blog post on the web about CSS preprocessors, as if there wasn’t enough. Don’t worry: I won’t try to convince you to use a CSS preprocessor, neither about the one you should pick. These decisions are really up to you.</p>
 
 <p>So this post will be about my own experience with CSS preprocessors. For the concern, I recently wrote an article for Codrops untitled “10 things I learnt about CSS” and I talked a lot about preprocessors, so I’ve read (and tried) a bunch of things on the topic lately.</p>

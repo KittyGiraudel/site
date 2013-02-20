@@ -5,9 +5,6 @@ comments: true
 disqus: http://hugogiraudel.com/blog/sass-structure
 ---
 <section>          
-<h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-
 <p>Hi guys! Ever since the redesign a few weeks ago I have never stopped trying optimizing the performance of the site. One of my biggest concerns was having a stylesheet which is both nice and efficient.</p>
 
 <p>I think I’ve come pretty close to this point thus I thought it might be a good idea to write a bit about it and give you an inside glance at the whole thing.</p>

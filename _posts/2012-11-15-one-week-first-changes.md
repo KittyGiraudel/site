@@ -4,10 +4,6 @@ layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/one-week-first-changes.html
 ---
-<section>
-<h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-</section>    
 <section id="design">
 <h2>Design<a href="#design" class="section-anchor">#</a></h2>
 

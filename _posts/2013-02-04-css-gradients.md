@@ -6,10 +6,6 @@ comments: true
 disqus: http://hugogiraudel.com/blog/css-gradients
 ---      
 <section>          
-<h1>{{ page.title }}</h1>
-
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-
 <blockquote><p>The following is a guest post by <a href="http://twitter.com/thebabydino" target="blank">Ana Tudor</a>. She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.</p></blockquote>
 <img src="/images/css-gradients__rainbow_wheel_screen.gif" class="pull-image--right" alt="Rainbow wheel">
 

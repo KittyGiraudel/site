@@ -5,9 +5,6 @@ comments: true
 disqus: http://hugogiraudel.com/blog/less-puzzle
 --- 
 <section>          
-<h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-
 <p>Hi guys! What do you think of a little puzzle to wake up your neurons? I think I've found something tricky enough to worth a blog post and a little challenge about it.</p>
 
 <p>First of all, this will be a LESS puzzle, so if you're really unfamiliar with this CSS preprocessor, I think you might feel a bit lost here. Sorry! :(</p>

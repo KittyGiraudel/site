@@ -4,10 +4,6 @@ layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/css-playgrounds.html
 ---
-<section>
-<h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-</section>
 <section id="playground">
 <h2>What is a code playground?<a href="#playground" class="section-anchor">#</a></h2>
 

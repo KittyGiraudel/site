@@ -4,9 +4,6 @@ layout: post
 comments: true
 ---
 <section>          
-<h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-
 <img class="pull-image--right" src="/images/sass-mixin-star__css-star.png">
 
 <p>A couple of days ago, <a href="http://twitter.com/thebabydino">Ana Tudor</a> showed me how she managed to do a <a href="http://codepen.io/thebabydino/pen/DmklE">pure CSS 6-point star</a> with a single element.</p>

@@ -5,10 +5,6 @@ comments: true
 disqus: http://hugogiraudel.com/blog/css-colors.html
 ---
 <section>
-<h1>{{ page.title }}</h1>
-<p class="date">{{ page.date | date: "%d %B %Y" }}</p>
-
-
 <p>Hi everyone! Today, we will talk about colors in CSS. There are many color specifications and we'll be talking about their history, what they mean and how to use them.</p>
 
 <p>If you'd like to read about how to build a color scheme for a website then you might be interested in this article <a href="http://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/">Build a color scheme: the fundamentals</a>, or the article <a href="http://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/" title="Principles of Color and the Color Wheel">Principles of Color and the Color Wheel</a> if you'd like to read about the color wheel.</p>
