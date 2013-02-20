@@ -1,7 +1,7 @@
 ---
 title: Hugogiraudel.com redesigned + new blog
 layout: post
-comments: false
+comments: true
 disqus: http://hugogiraudel.com/blog/redesign-blog
 ---
 <section>

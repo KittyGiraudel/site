@@ -1,6 +1,7 @@
 ---
 title: Interview with Manoela Ilic
 layout: post
+comments: true
 ---
 
 <section>

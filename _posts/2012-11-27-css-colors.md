@@ -86,7 +86,8 @@ disqus: http://hugogiraudel.com/blog/css-colors.html
 
 <p>So, summarized, we end up with two different ways to display CSS colors with the <code>rgb()</code> function: percentages and integers between 0 and 255. Let’s illustrate this with an example, shall we?</p>
 
-<pre><code class="language-css">.black { /* I’m black! */
+{% highlight css linenos %}
+.black { /* I’m black! */
 	color: rgb(0, 0, 0);
 	color: rgb(0%, 0%, 0%);
 }
@@ -110,7 +111,7 @@ disqus: http://hugogiraudel.com/blog/css-colors.html
 	color: rgb(64, 0, 64);
 	color: rgb(25%, 0%, 25%);
 }
-</code></pre>
+{% endhighlight %}
 
 <p><strong>Important</strong>: when using percentages, you have to set the unit even if it is 0. If you don’t, some browsers may be unable to parse it.</p>
 
