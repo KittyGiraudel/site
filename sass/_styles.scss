@@ -411,6 +411,7 @@ img {
 // ------ //
 
 blockquote {
+	@extend %clearfix;
 	background: #F4F4F4;
 	border-left: 0.5em solid white;
 	padding: 1em;
