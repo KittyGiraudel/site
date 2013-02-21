@@ -2,15 +2,13 @@
 // Mixins //
 // ------ //
 
-	// Mixin providing a PX fallback for REM font-sizes
-
-@mixin font-size($val) {
+// Mixin providing a PX fallback for REM font-sizes
+@mixin rem($val) {
 	font-size: ($val * 10) + px;
 	font-size: $val + rem;
 }
 
-	// Mixin handling breakpoints for media queries
-
+// Mixin handling breakpoints for media queries
 @mixin breakpoint($point) {
 	@if $point == medium {
 	    @media (max-width: 48em) { @content; } //960px
@@ -34,6 +32,7 @@ $pages: home, resume;
 // Helpers //
 // ------- //
 
+//Invisible clearfix
 %clearfix {
 	&:after {
     	display: table;
@@ -42,9 +41,11 @@ $pages: home, resume;
 	}
 }
 
+//Prevent icon to stick the text
 .icon-left { margin-right: 5px }
 .icon-right { margin-left: 5px }
 
+//Image pulling
 .pull-image--left {
 	@extend %pull-image;
 	float: left;
@@ -68,6 +69,7 @@ $pages: home, resume;
 	}
 }
 
+//Quote pulling
 .pull-quote--left {
 	@extend %pull-quote;
 	text-align: right;
@@ -91,7 +93,7 @@ $pages: home, resume;
 	width: 100%;
 	position: relative;
 	line-height: 1.35;
-	@include font-size(3);
+	@include rem(3);
 
 	&:after,
 	&:before {
@@ -111,6 +113,7 @@ $pages: home, resume;
 	}
 }
 
+//Hidden yet accessible content
 .visually-hidden { 
 	position: absolute !important; 
 	overflow: hidden; 
@@ -121,6 +124,7 @@ $pages: home, resume;
 	border: none; 
 }
 
+//Secondary content; could be ommited without altering the meaning
 .note {
 	font-style: italic;
 	padding-left: 1em;

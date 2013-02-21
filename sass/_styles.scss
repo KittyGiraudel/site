@@ -15,7 +15,7 @@
 // ------- //
 
 html {
-	font-size: 62.5%;
+	font-size: 62.5%; //10px 
 	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif;
 	color: #555;
 	text-shadow: 0 1px rgba(255,255,255,.6);
@@ -30,14 +30,15 @@ html {
 }
 
 body {
-	@include font-size(2);
+	@include rem(2); //20px 
 }
 
+//Links
 a {
 	color: $pink;
 	text-decoration: none;
 	
-	&:hover {
+	&:hover, &:focus {
 		text-decoration: underline;
 	}
 }
@@ -47,10 +48,10 @@ a {
 // ---------- //
 
 .row {
+	@extend %clearfix;
 	width: 100%;
 	max-width: 57em;
 	margin: 0 auto;
-	overflow: hidden;
 	padding: 0 20px;
 
 	@include breakpoint(small) {
@@ -75,12 +76,12 @@ a {
 	padding-top: 2em;
 
 	@include breakpoint(medium) {
-		padding-bottom: 1.5em !important;
+		padding-bottom: 2em;
 	}
 }
 
 .content { 
-	padding-bottom: 3em;
+	padding-bottom: 2em;
 	float: left;
 
 	@include breakpoint(medium) {
@@ -103,17 +104,18 @@ a {
 	}
 }
 
-.header__title {
+//Main title
+.site-title {
 	float: left;
 	font-family: 'Orienta', sans-serif;
 	margin: 0;
 	text-shadow: none;
 	text-transform: none;
 	font-weight: bold;
-	@include font-size(4);
+	@include rem(4);
 
 	@include breakpoint(small) {
-		@include font-size(2.8);
+		@include rem(2.8);
 		float: none;
 		text-align: center;
 	}
@@ -121,7 +123,7 @@ a {
 	a {
 		color: $mediumgrey;
 
-		&:hover {
+		&:hover, &:focus {
 			text-decoration: none;
 		}
 	}
@@ -132,7 +134,8 @@ a {
 	}
 }
 
-.header__nav {
+//Main nav
+.site-nav {
 	float: right;
 	list-style: none;
 	margin: 0;
@@ -158,6 +161,10 @@ a {
 		padding: 1em .5em;
 		position: relative;
 
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+
 		&:after {
 			bottom: -3px;
 			height: 3px;
@@ -169,20 +176,20 @@ a {
 	}
 }
 
+//Active class
 @each $page in $pages {
-    .page--#{$page} .header__#{$page} {
+    .page--#{$page} .site-nav__#{$page} {
         cursor: text;
         &:after {
         	content: '';
-        }
+		}
     }
 }
 
 
-// ------------ //
-// Article list //
-// ------------ //
-
+// ------------- //
+// Articles list //
+// ------------- //
 
 .list-articles {
 	margin: 1em 2em 0 0;
@@ -203,18 +210,13 @@ a {
 			padding: 0.7em 0 .5em;
 		}
 
-		&:first-of-type {
-			border-top: none;
-		}
-
-		&:last-of-type {
-        	box-shadow: 0 1px #F2F2F2;
-    	}
+		&:first-of-type { border-top: none;	}
+		&:last-of-type { box-shadow: 0 1px #F2F2F2;	}
 	}
 
 	a {
 		color: $mediumgrey;
-		&:hover {
+		&:hover, &:focus {
 			color: $pink;
 			text-decoration: none;
 		}
@@ -224,7 +226,7 @@ a {
 .list-articles__title {
 	margin: 0;
 	padding: .25em 3em .25em 0;
-	@include font-size(2.8);
+	@include rem(2.8);
 	
 	@include breakpoint(small) {
 		padding: .25em 0;
@@ -232,14 +234,13 @@ a {
 }
 
 .list-articles__date {
-	@include font-size(1.7);
+	@include rem(1.7);
 	text-indent: 3px;
 	margin-bottom: 0;
 	color: $darkgrey;
 
 	@include breakpoint(small) {
 		display: inline-block;
-		//text-indent: 8px;
 	}
 }
 
@@ -261,15 +262,10 @@ a {
 	@include breakpoint(small) {
 		position: relative;
 		opacity: 1;
-		top: 0;
-		margin-top: 0;
 		font-size: 1em;
-		width: auto;
-		height: auto;
 		border: none;
 		line-height: 1.5;
 		display: inline;
-		border-radius: 0;
 		color: $darkgrey;
 	}
 }
@@ -278,44 +274,6 @@ a {
 // ---------- //
 // Pagination //
 // ---------- //
-
-.pagination__item {
-    display: inline-block;
-    border-radius: 50%;
-    color: #BFBFBF;
-    border: 3px solid;
-    margin: 0 3px;
-    width: 1.6em;
-    height: 1.6em;
-    text-align: center;
-    line-height: 1.4em;
-
-    a {
-		display: block;
-		color: #BFBFBF;
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-}
-
-.pagination__disabled {
-	opacity: 0;
-}
-
-.pagination__item:hover,
-.pagination__active {
-    color: $darkgrey;
-    text-decoration: none;
-}
-
-.pagination__previous,
-.pagination__next {
-	border: none;
-	width: auto;
-	margin: 0;
-}
 
 .pagination {
 	padding: 0;
@@ -332,21 +290,55 @@ a {
     }
 }
 
+.pagination__item {
+    display: inline-block;
+    border-radius: 50%;
+    color: #BFBFBF;
+    border: 3px solid;
+    margin: 0 3px;
+    width: 1.6em;
+    height: 1.6em;
+    text-align: center;
+    line-height: 1.4em;
+
+    a {
+		display: block;
+		color: #BFBFBF;
+
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+	}
+}
+
+.pagination__disabled {
+	opacity: 0;
+}
+
+.pagination__item:hover,
+.pagination__item:focus,
+.pagination__active {
+    color: $darkgrey;
+}
+
+.pagination__previous,
+.pagination__next {
+	border: none;
+	width: auto;
+	margin: 0;
+}
+
 // ------------------ //
 // Main content stuff //
 // ------------------ //
 
 p {
 	margin-bottom: 1em;
-	
-	&.date {
-		color: $darkgrey;
-		text-transform: uppercase;
-	}
+}
 
-	&.comment-count {
-		color: $darkgrey;
-	}
+.date {
+	color: $darkgrey;
+	text-transform: uppercase;
 }
 
 ul, 
@@ -377,34 +369,35 @@ h4, .h4 {
 
 h1, .h1 {
 	font-family: 'Sanchez', sans-serif;
-	@include font-size(3.6);
+	@include rem(3.6);
 	text-shadow: 0 1px white, 0 2px $darkgrey;
 	margin: 1em 0 0 0;
 	text-transform: uppercase;
 }
 
 h2, .h2 {
-	@include font-size(3.2);
+	@include rem(3.2);
 
-	&:hover .section-anchor {
+	&:hover .section-anchor,
+	&:focus .section-anchor {
 		opacity: 1;
 		pointer-events: auto;
 	}
-}
 
-.resume h2 {
-	border-bottom: 1px solid silver;
+	.page--resume & {
+		border-bottom: 1px solid silver;
+	}
 }
 
 h3, .h3 {
-	@include font-size(2.6);
+	@include rem(2.6);
 	letter-spacing: 1px;
 	font-style: italic;
 	text-transform: uppercase;
 }
 
 h4, .h4 {
-	@include font-size(2.4);
+	@include rem(2.4);
 }
 
 .section-anchor {
@@ -414,8 +407,7 @@ h4, .h4 {
 	color: $darkgrey;
 	opacity: 0;
 	pointer-events: none;
-	@include transition-property(all);
-	@include transition-duration(0.15s);
+	@include transition(.15s);
 }
 
 // ------ //
@@ -476,13 +468,9 @@ tr:nth-child(odd) {
 .footer {
 	@extend %clearfix;
 	clear: both;
-	@include font-size(1.4);
+	@include rem(1.4);
 	padding: 2.5em 0;
 	border-top: 3px solid #D1D1D1;
-
-	@include breakpoint(small) {
-		text-align: center;
-	}
 
 	p {
 		float: left;
@@ -494,6 +482,10 @@ tr:nth-child(odd) {
 
 	a {
 		color: $mediumgrey;
+	}
+
+	@include breakpoint(small) {
+		text-align: center;
 	}
 }
 
