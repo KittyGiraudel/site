@@ -156,6 +156,7 @@ a {
 		display: block;
 		color: $mediumgrey;
 		padding: 1em .5em;
+		position: relative;
 
 		&:after {
 			bottom: -3px;
@@ -169,8 +170,8 @@ a {
 }
 
 @each $page in $pages {
-    .page--#{$page} .header__nav a {
-        cursor:text;
+    .page--#{$page} .header__#{$page}:after {
+        cursor: text;
         &:after {
         	content: '';
         }
