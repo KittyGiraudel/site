@@ -1,0 +1,96 @@
+// ------ //
+// Header //
+// ------ //
+
+.header {
+	@extend %clearfix;
+	border-bottom: 3px solid #D1D1D1;
+	margin: 2.5em 0 2em;
+
+	@include breakpoint(small) {
+		margin-top: 1em;
+	}
+}
+
+//Main title
+.site-title {
+	float: left;
+	font-family: 'Orienta', sans-serif;
+	margin: 0;
+	text-shadow: none;
+	text-transform: none;
+	font-weight: bold;
+	@include rem(4);
+
+	@include breakpoint(small) {
+		@include rem(2.8);
+		float: none;
+		text-align: center;
+	}
+	
+	a {
+		color: $mediumgrey;
+
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+	}
+	
+	span {
+		text-transform: uppercase;
+		color: $darkgrey;
+	}
+}
+
+//Main nav
+.site-nav {
+	float: right;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@include breakpoint(small) {
+		float: none;
+		text-align: center;
+	}
+	
+	li {
+		float: left;
+
+		@include breakpoint(small) {
+			float: none;
+			display: inline-block;
+		}
+	}
+	
+	a {
+		display: block;
+		color: $mediumgrey;
+		padding: 1em .5em;
+		position: relative;
+
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+
+		&:after {
+			bottom: -3px;
+			height: 3px;
+			background: $pink;
+			left: 0;
+			right: 0;
+			position: absolute;
+		}
+	}
+}
+
+//Active class
+@each $page in $pages {
+    .page--#{$page} .site-nav__#{$page} {
+        cursor: text;
+        &:after {
+        	content: '';
+		}
+    }
+}
+

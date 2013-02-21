@@ -1,0 +1,132 @@
+// ------------------ //
+// Main content stuff //
+// ------------------ //
+
+p {
+	margin-bottom: 1em;
+}
+
+.date {
+	color: $darkgrey;
+	text-transform: uppercase;
+}
+
+ul, 
+ol {
+	margin-bottom: 1em;
+	padding-left: 1.5em;
+}
+
+li,
+p {
+	line-height: 1.55;
+}
+
+// ------ //
+// Titles //
+// ------ // 
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+	margin: 1.3em 0 .6em 0;
+	font-weight: normal;
+	line-height: 1.3;
+	font-family: 'Orienta', sans-serif;
+	color: $lightgrey;
+}
+
+h1, .h1 {
+	font-family: 'Sanchez', sans-serif;
+	@include rem(3.6);
+	text-shadow: 0 1px white, 0 2px $darkgrey;
+	margin: 1em 0 0 0;
+	text-transform: uppercase;
+}
+
+h2, .h2 {
+	@include rem(3.2);
+
+	&:hover .section-anchor,
+	&:focus .section-anchor {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.page--resume & {
+		border-bottom: 1px solid silver;
+	}
+}
+
+h3, .h3 {
+	@include rem(2.6);
+	letter-spacing: 1px;
+	font-style: italic;
+	text-transform: uppercase;
+}
+
+h4, .h4 {
+	@include rem(2.4);
+}
+
+.section-anchor {
+	*display: inline;
+	display: inline-block;
+	padding-left: .3em;
+	color: $darkgrey;
+	opacity: 0;
+	pointer-events: none;
+	@include transition(.15s);
+}
+
+// ------ //
+// Images //
+// ------ //
+
+img {
+	height: auto;
+	max-width: 100%;
+	margin: 1em auto;
+	display: block;
+}
+
+// ------ //
+// Quotes //
+// ------ //
+
+blockquote {
+	@extend %clearfix;
+	background: #F4F4F4;
+	border-left: .5em solid white;
+	padding: 1em;
+	font-style: italic;
+	margin-bottom: 1em;
+	
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+// ------ //
+// Tables //
+// ------ //
+
+table {
+	width: 100%;
+	margin: 2em 0;
+}
+
+td,
+th {
+	padding: 0.5em;
+}
+
+th {
+	font-weight: bold;
+	text-align: center;
+}
+
+tr:nth-child(odd) {
+	background: #F4F4F4;
+}

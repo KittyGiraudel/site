@@ -1,0 +1,140 @@
+// ------------- //
+// Articles list //
+// ------------- //
+
+.list-articles {
+	margin: 1em 2em 0 0;
+	padding: 0;
+	list-style: none;
+
+	@include breakpoint(medium) {
+		margin: 0;
+	}
+
+	li {
+		border-bottom: 1px solid #CFCFCF;
+		border-top: 1px solid #F2F2F2;
+		padding: 1.3em 0 .5em;
+		position: relative;
+
+		@include breakpoint(medium) {
+			padding: 0.7em 0 .5em;
+		}
+
+		&:first-of-type { border-top: none;	}
+		&:last-of-type { box-shadow: 0 1px #F2F2F2;	}
+	}
+
+	a {
+		color: $mediumgrey;
+		&:hover, &:focus {
+			color: $pink;
+			text-decoration: none;
+		}
+	}
+}
+
+.list-articles__title {
+	margin: 0;
+	padding: .25em 3em .25em 0;
+	@include rem(2.8);
+	
+	@include breakpoint(small) {
+		padding: .25em 0;
+	}
+}
+
+.list-articles__date {
+	@include rem(1.7);
+	text-indent: 3px;
+	margin-bottom: 0;
+	color: $darkgrey;
+
+	@include breakpoint(small) {
+		display: inline-block;
+	}
+}
+
+
+.list-articles__codrops,
+.list-articles__guest {
+	position: absolute;
+	opacity: .2;
+	right: 0;
+	top: 50%;
+	margin-top: -1em;
+	font-size: 2em;
+	width: 2em !important;
+	height: 2em;
+	border: .1em solid;
+	line-height: 2em;
+	border-radius: 50%;
+
+	@include breakpoint(small) {
+		position: relative;
+		opacity: 1;
+		font-size: 1em;
+		border: none;
+		line-height: 1.5;
+		display: inline;
+		color: $darkgrey;
+	}
+}
+
+
+// ---------- //
+// Pagination //
+// ---------- //
+
+.pagination {
+	padding: 0;
+	margin: 1em 1.2em 0 0;
+    text-align: right;
+
+    @include breakpoint(medium) {
+    	margin: 1em 0 0 0;
+    }
+
+    @include breakpoint(small) {
+    	text-align: center;
+		margin: 1.2em 0;
+    }
+}
+
+.pagination__item {
+    display: inline-block;
+    border-radius: 50%;
+    color: #BFBFBF;
+    border: 3px solid;
+    margin: 0 3px;
+    width: 1.6em;
+    height: 1.6em;
+    text-align: center;
+    line-height: 1.4em;
+
+    a {
+		display: block;
+		color: #BFBFBF;
+
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+	}
+}
+
+.pagination__disabled {
+	opacity: 0;
+}
+
+.pagination__item:hover,
+.pagination__item:focus,
+.pagination__active {
+    color: $darkgrey;
+}
+
+.pagination__previous,
+.pagination__next {
+	border: none;
+	width: auto;
+	margin: 0;
+}

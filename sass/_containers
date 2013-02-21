@@ -1,0 +1,46 @@
+// ---------- //
+// Containers //
+// ---------- //
+
+.row {
+	@extend %clearfix;
+	width: 100%;
+	max-width: 57em;
+	margin: 0 auto;
+	padding: 0 1em;
+
+	@include breakpoint(small) {
+		padding: 0 .5em;
+	}
+}
+
+.main {
+	@extend .content;
+	width: 68%;
+	margin-right: 2%;
+
+	@include breakpoint(medium) { 
+		margin-right: 0;
+		border-bottom: 3px solid #D1D1D1;
+	}
+}
+
+.sidebar {
+	@extend .content;
+	width: 30%;
+	padding-top: 2em;
+
+	@include breakpoint(medium) {
+		padding-bottom: 2em;
+	}
+}
+
+.content { 
+	padding-bottom: 2em;
+	float: left;
+
+	@include breakpoint(medium) {
+		float: none;
+		width: 100%;
+	}
+}
