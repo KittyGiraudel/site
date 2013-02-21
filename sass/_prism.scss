@@ -18,7 +18,7 @@ pre[class*="language-"] {
 	hyphens: none;
 
 	@include breakpoint(baby-bear) {
-		@include font-size(0.75);
+		@include font-size(1.5);
 	}
 }
 

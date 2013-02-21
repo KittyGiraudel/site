@@ -90,7 +90,7 @@ $darkgrey: #999;
 	width: 100%;
 	position: relative;
 	line-height: 1.35;
-	font-size: 1.5em;
+	@include font-size(3);
 
 	&:after,
 	&:before {
