@@ -3,7 +3,6 @@ title: Hugogiraudel.com redesigned + new blog
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/redesign-blog
-published: false
 ---
 <section>
 <p>Hi guys! As you can see, I have big news. I've changed a few things on hugogiraudel.com in order to make it look like a little bit more aesthetic and/or professionnal. What do you say?</p>
