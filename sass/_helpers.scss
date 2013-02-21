@@ -12,10 +12,10 @@
 	// Mixin handling breakpoints for media queries
 
 @mixin breakpoint($point) {
-	@if $point == mama-bear {
+	@if $point == medium {
 	    @media (max-width: 48em) { @content; } //960px
 	}
-	@if $point == baby-bear {
+	@if $point == small {
 	    @media (max-width: 38em) { @content; } //760px
 	}
 }
@@ -60,7 +60,7 @@ $darkgrey: #999;
 	max-width: 15em;
 	display: block;
 
-	@include breakpoint(baby-bear) {
+	@include breakpoint(small) {
 		float: none;
 		width: 100%;
 		margin: 1em auto;
@@ -98,7 +98,7 @@ $darkgrey: #999;
 		font-family: Times New Roman, serif;
 	}
 
-	@include breakpoint(baby-bear) {
+	@include breakpoint(small) {
 		float: none;
 		margin: 1em auto;
 		border: 5px solid $pink;

@@ -1,6 +1,7 @@
 ---
 title: Resume
 layout: default
+page-class: page--resume
 ---
 <section id="formation">
 <h2><i class='fontawesome-beaker icon-left'></i>Formation <a href="#formation" class="section-anchor">#</a></h2>
