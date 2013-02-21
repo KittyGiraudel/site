@@ -170,7 +170,7 @@ a {
 }
 
 @each $page in $pages {
-    .page--#{$page} .header__#{$page}:after {
+    .page--#{$page} .header__#{$page} {
         cursor: text;
         &:after {
         	content: '';
