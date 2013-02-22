@@ -21,14 +21,15 @@ disqus: http://hugogiraudel.com/blog/less-puzzle
 </ol>
 <p><strong>Bonus:</strong> make it work with compound font names (such as "Roboto Condensed").</p>
 <p>Accustomed to SASS like me will wonder where is the difficulty in this little exercise. Problem is LESS is extremely annoying when it comes to both url() and string concatenation. I partially covered the topic in <a href="less-to-sass">this article</a>. </p>
-<pre><code class="language-css">/* SASS version */
+{% highlight css %}
+/* SASS version */
 
 $my-font: "Merriweather";
 $url: "http://fonts.googleapis.com/css?family=#{$my-font}";
 @import url($url);
 
 h1 { font-family: $my-font; }
-</code></pre>
+{% endhighlight %}
 <p>I struggled about one hour on this and couldn't make it work. All my respect to the one who will find the solution.</p>
 <p>Good luck!</p>
 </section>

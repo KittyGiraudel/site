@@ -26,21 +26,27 @@ disqus: http://hugogiraudel.com/blog/float-down
 </ul>
 <h3>JavaScript</h3>
 <p>I was very upset not finding any proper way to do it with CSS so I did it with a mix of CSS and JavaScript (in fact jQuery). I don't know if it's the best way to do it in JavaScript but here is what I came up with:</p>
-<pre><code class="language-javascript">$('.myList > li:odd').remove().appendTo('.myList');</code></pre>
+{% highlight javascript %}
+$('.myList > li:odd').remove().appendTo('.myList');
+{% endhighlight %}
 <p>Basically I target one out of two items with <code>:nth-child(even)</code> then remove it from the DOM to finally append it again. This does exactly what was asked so I think it's a decent solution (<a href="http://jsfiddle.net/VAdT3/6/">JSFiddle</a>).</p>
 <h3>Margins</h3>
 <p>Finally someone came up with a better idea (and probably a better understanding of CSS) than mine with a pure CSS and very elegant solution (<a href="http://codepen.io/wolfcry911/pen/IkBbu">CodePen</a>).</p>
-<pre><code class="language-css">li:nth-child(even) {
+{% highlight css %}
+li:nth-child(even) {
 	margin: 110px 0 0 -110px; 
 	/* Given a 100*100px element with a 10px margin */
-}</code></pre>
+}
+{% endhighlight %}
 <p>Wolfcry911 simply used margins to reposition one out of two items. It's a brilliant solution, really.</p>
 <p>However it relies on CSS advanced pseudo-selectors so for a deeper browser support, you might want get back to the JavaScript solution.</p>
 <h3>Columns (edit 31/01/2013)</h3>
 <p>I just noticed <a href="http://codepen.io/estelle">Estelle Weyl</a> did it in another clever way with CSS columns (<a href="http://codepen.io/estelle/pen/zkjrn">CodePen</a>). I'm actually wondering if it's not the better option all in all since it requires only one single CSS line (prefixes omitted).</p> 
-<pre><code class="language-css">ul {
+{% highlight css %}
+ul {
 	columns: 5;
-}</code></pre>
+}
+{% endhighlight %}
 <p>Congratulations to her for such a smart solution. :)</p>
 </section>
 <section id="moar">
@@ -49,7 +55,8 @@ disqus: http://hugogiraudel.com/blog/float-down
 <p><strong>CHALLENGE ACCEPTED!</strong> This made me want to give it a shot. Honestly, it took me a few tries and no more than 10 minutes to find a solution for 3 rows.</p>	
 <pre class="codepen" data-height="450" data-type="result" data-href="DoAIB" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/DoAIB">Check out this Pen!</a></pre>
 <p>Instead of doing <code>:nth-child(even)</code>, we need two different selectors:</p>
-<pre><code class="language-css">li:nth-child(3n+2){
+{% highlight css %}
+li:nth-child(3n+2){
 	margin: 120px 0 0 -110px;
 	background: limegreen;
 }
@@ -57,18 +64,21 @@ disqus: http://hugogiraudel.com/blog/float-down
 li:nth-child(3n+3) {
 	margin: 230px 0 0 -110px;
 	background: crimson;
-}</code></pre>
+}
+{% endhighlight %}
 </section>
 <section id="sass">
 <h2>Automating the process<a href="#sass" class="section-anchor">#</a></h2>
 <p>So I found a solution to do it with the number of rows we want, pretty cool. Immediately, I thought about automating this. And guess what? I succeeded.</p>
 <h3>Prepare the ground</h3>
 <p>First, I had to move everything to em units in order to make the whole thing easier to customize. I also created a few variables:</p>
-<pre><code class="language-css">$rows: 4; 
+{% highlight css %}
+$rows: 4; 
 $baseline: 10px;
 $width: 4em;
 $height: 4em;
-$margin: 0.4em;</code></pre>
+$margin: 0.4em;
+{% endhighlight %}
 <p>A few explanations about the variables:</p>
 <ul>
 <li><code>$rows</code> stands for the number of rows you want,</li>
@@ -80,7 +90,8 @@ $margin: 0.4em;</code></pre>
 <p class="note">Note: you may wonder why using 2 different variables for size when one would be enough. This allows you to use non-square items if you want to: try it, it works.</em></p>
 <h3>Looping!</h3>
 <p>Now let's get to the funny part. I figured out there is some kind of pattern to achieve this and to be honest it took me a while (no pun intended) to create the while loop for this, struggling between my comprehension of the problem and Sass syntax errors. Anyway, this is the main idea:</p>
-<pre><code class="language-javascript">$i: $rows; // Initializing the loop
+{% highlight javascript %}
+$i: $rows; // Initializing the loop
 
 @while $i &gt; 1 {
 
@@ -92,9 +103,11 @@ $margin: 0.4em;</code></pre>
 	}
 
 	$i: $i - 1;
-}</code></pre>
+}
+{% endhighlight %}
 <p>It is pretty tough. Let me show you how it compiles when $rows is set to 4 (other variables remain unchanged):</p>
-<pre><code class="language-css">li:nth-child(4n+4) {
+{% highlight css %}
+li:nth-child(4n+4) {
 	margin-top: 13.6em;  // (3 * 4em) + (4 * 0.4em)
 	margin-left: -4.4em; // -(4em + 0.4em)
 }
@@ -107,7 +120,8 @@ li:nth-child(4n+3) {
 li:nth-child(4n+2) {
 	margin-top: 4.8em;   // (1 * 4em) + (2 * 0.4em)
 	margin-left: -4.4em; // -(4em + 0.4em)
-}</code></pre>
+}
+{% endhighlight %}
 <p>I think the pattern should be easier to see now thanks to the comments. For X rows you'll have <code>X-1</code> different selectors starting from <code>:nth-child(Xn+Y)</code> (where X and Y are the same) until Y becomes stricly superior than 1 (so Y equals 2).</p>
 </section>
 <section id="demo">

@@ -15,9 +15,10 @@ disqus: http://hugogiraudel.com/blog/css-gradients
 <h2>Breaking it down <a href="#breaking-it-down" class="section-anchor">#</a></h2>
 <p>The wheel - or you can think of it as a pie - is first split horizontally into two halves and then each half is split into five slices, so there are ten slices in total. Which means that the <a href="http://en.wikipedia.org/wiki/Central_angle" target="blank">central angle</a> for each slice is <code><a href="http://www.mathopenref.com/degrees.html" target="blank">360°</a>/10 = 36°</code>.</p>
 <p>The pen below shows graphically how to layer the multiple backgrounds. It also has a pause button so that the infinite animation doesn't turn into a performance problem.</p>
-<pre class="codepen" data-height="340" data-type="result" data-href="Kuvom" data-user="thebabydino" data-safe="true"><code></code></pre>
+<pre class="codepen" data-height="340" data-type="result" data-href="Kuvom" data-user="thebabydino" data-safe="true"><code></code><a href="http://codepen.io/thebabydino/pen/qgoBL" target="blank">Check out this Pen!</a>s</pre>
 <p>For both the original pen and this helper demo, the interesting part is this one:</p>
-<pre class=" language-css"><code>background: 
+{% highlight css %}
+background: 
 linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
 linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%),
 linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0,
@@ -28,7 +29,8 @@ linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%,
 linear-gradient(-72deg, transparent 24.52%, #9a1d34 24.52%) 0 100%, 
 #43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
 background-repeat: no-repeat;
-background-size: 50% 50%;</code></pre>
+background-size: 50% 50%;
+{% endhighlight %}
 <p>We first specify the nine gradient backgrounds, their positioning and the <code>background-color</code> using the shorthand <code>background</code> syntax.</p>
 </section>
 <section id="background-shorthand">
@@ -59,7 +61,8 @@ background-size: 50% 50%;</code></pre>
 <p class="note">Note: coming from a mathematical background, I have to say the old way feels more natural to me. However, the new way feels consistent with other CSS features, like rotate transforms, for which the angle values are also clockwise.</p>
 <p>What this means is that we (almost always) have different angle values in the standard syntax and in the current WebKit syntax. So, if we are not using something like <a href="http://leaverou.github.com/prefixfree/" target="blank">-prefix-free</a> (which I do almost all the time), then we should to be able to compute one when knowing the other. That is actually pretty simple. They are going in opposite directions, so the formula for one includes the other with a minus sign. Also, there is a <code>90°</code> difference between them so this is how we get them: </p>
 <pre><code class="language-javascript">newSyntax = 90° - oldSyntax;
-oldSyntax = 90° - newSyntax;</code></pre>
+oldSyntax = 90° - newSyntax;
+{% endhighlight %}
 <p class="note">Note: if no gradient angle or destination side is specified (for example, <code>linear-gradient(lime, yellow)</code>), then the resulting gradient is going to have a gradient angle of <code>180°</code>, not <code>0°</code>.</p>
 <p>All the points on a line that is <a href="http://www.mathopenref.com/perpendicular.html" target="blank">perpendicular</a> on the gradient line have the same color. The perpendicular from the corner in the quadrant that's opposite to the quadrant of the angle is the <code>0%</code> line (the crimson line in the demo) and its intersection with the gradient line is the <em>starting point</em> of the gradient (let's call it <code class="var">S</code>). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the <code>100%</code> line (the black line in the demo) and its intersection with the gradient line is the <em>ending point</em> of the gradient (let's call it <code class="var">E</code>).</p>
 <img src="/images/css-gradients__gradient.png" alt="Gradient with gradient line, 0% line, 100% line">
