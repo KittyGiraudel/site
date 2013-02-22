@@ -36,7 +36,8 @@ else if (direction = left)   { /* Conditional stuff here */ }
 else if (direction = right)  { /* Conditional stuff here */ }
 }</code></pre>
 <p>The fact is <strong>LESS doesn’t handle if / else statements</strong>. Instead, it provides guarded mixins (mixin when a parameter exists or equals / is inferior / is superior to something). So basically, I had to do something like this:</p>
-<pre><code class="language-css">.mixin(parameters) {
+{% highlight css %}
+.mixin(parameters) {
 	/*Basic stuff here */
 }
 .mixin(parameters) when (direction = top) {
@@ -50,7 +51,8 @@ else if (direction = right)  { /* Conditional stuff here */ }
 }
 .mixin(parameters) when (direction = right) {
 	/* Conditional stuff here */
-}</code></pre>
+}
+{% endhighlight %}
 <p>It may look similar at the first glance but it involves a few things:</p>
 <ul>
 <li>it multiplies the number of mixin declarations. It’s not one mixin with conditions, it’s multiple mixins varying according to their parameters,</li>

@@ -4,7 +4,7 @@ url: "http://localhost:4000"
 
 auto: true
 server: true
-exclude: sass
+exclude: ['README.md', 'sass/']
 
 paginate: 10
 
