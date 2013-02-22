@@ -28,13 +28,15 @@ disqus: http://hugogiraudel.com/blog/less-to-sass.html
 <p>One of the first “complicated” thing I tried to create was a mixin handling CSS arrows the same way <a href="http://cssarrowplease.com/" title="CSSArrowPlease">CSSArrowPlease</a> does. It took me a couple of hours but I finally succeeded and <a href="https://github.com/HugoGiraudel/LESS-Mixin-for-CSS-arrows" title="LESS Mixin for CSS arrows">hosted it on GitHub</a>. However I noticed something counter-intuitive: conditional statements.</p>
 <h3>LESS and conditional statements</h3>
 <p>The way I wanted to handle my mixin was something which would look like this:</p>
-<pre><code class="language-css">.mixin(parameters) {
+{% highlight css %}
+.mixin(parameters) {
 /* Basic stuff here */
 if (direction = top)    { /* Conditional stuff here */ }
 else if (direction = bottom) { /* Conditional stuff here */ }
 else if (direction = left)   { /* Conditional stuff here */ }
 else if (direction = right)  { /* Conditional stuff here */ }
-}</code></pre>
+}
+{% endhighlight %}
 <p>The fact is <strong>LESS doesn’t handle if / else statements</strong>. Instead, it provides guarded mixins (mixin when a parameter exists or equals / is inferior / is superior to something). So basically, I had to do something like this:</p>
 {% highlight css %}
 .mixin(parameters) {
@@ -63,12 +65,15 @@ else if (direction = right)  { /* Conditional stuff here */ }
 <p>For a recent <a href="http://tympanus.net/codrops/2012/11/14/creative-css-loading-animations/" title="Creative CSS loading animations">Codrops article on pure CSS loading animations</a>, I wanted to include a few things about CSS preprocessors and how they are supposed to be easy to use. Actually, it could have been very very simple if I wasn’t using LESS. One of these things was a loop.</p>
 <h3>LESS and loops</h3>
 <p>Loops are cool: they can handle a huge amount of operations in only a few lines and even if you don’t need them everyday in CSS, it’s cool to have the option to use them. I wanted a loop to set the appropriate animation name on a dozen of elements. This is more or less what I was expecting:</p>
-<pre><code class="language-css">@nbElements: 10;
+{% highlight css %}
+@nbElements: 10;
 for(@i = 0; @i &lt; @nbElements; @i++) {
 	.my-element:nth-child(@i) { animation-name: loading-@i; }
-}</code></pre>
+}
+{% endhighlight %}
 <p>Well, this is absolutely not how LESS is handling loops. Actually <strong>LESS doesn't handle loops</strong>; you have to use a recursive function (a function calling itself) in order to reproduce the desired behaviour. This is what I ended up with:</p>
-<pre><code class="language-css">/* Define loop */
+{% highlight css %}
+/* Define loop */
 .loop(@index) when (@index &gt; 0) {
 	(~".my-element:nth-child(@{index})") {
 		animation-name: "loading-@{index}";
@@ -83,12 +88,14 @@ for(@i = 0; @i &lt; @nbElements; @i++) {
 
 /* Use loop */
 @nbElements: 10;
-.loop (@nbElements);</code></pre>
+.loop (@nbElements);
+{% endhighlight %}
 <p>In what universe is this more user-friendly and intuitive than a classic for loop? Is there anyone here who would have thought about this at first? I started thinking LESS was not as perfect as I first thought but sadly, that was still not the worst part.</p>
 <p>Things went very ugly when I wanted to manage @keyframes inside this for loop. Yeah, I know: I like challenge.</p>
 <h3>LESS and concatenation</h3>
 <p>I know concatenation can be somewhat annoying to handle depending on the language, but I was far from thinking LESS was so bad on this topic. First thing I discovered: <strong>you can't use/concatenate a variable as a selector</strong> without a work-around and <strong>you absolutely can't use a variable as a property name</strong> in LESS (at least as far as I can tell). Only as a value.</p> 
-<pre><code class="language-css">/* This works */
+{% highlight css %}
+/* This works */
 .my-element {
 	color: @my-value;
 }
@@ -113,12 +120,14 @@ for(@i = 0; @i &lt; @nbElements; @i++) {
 	@my-property: @my-value;
 	@{my-property}: @my-value;
 	(~"@{my-property}"): @my-value;
-}</code></pre>
+}
+{% endhighlight %}
 <p>Two very annoying things there: we definitely can't use variables as property names and the concatenation syntax is ugly as hell. <code>(~"@{variable}")</code>, really? But actually if you want my opinion, <strong>the biggest mistake they made is to name variables with the at sign @</strong>.</p>
 <p>It is somewhat well thought out since CSS is using this sign for “alternative stuff” like media queries (@media), animation keyframes (@keyframes) and probably other things in the future (@page for example). I got the reasoning and I admire the will of sticking to the regular CSS syntax.</p>
 <p>But come on... How come they didn’t think about variable concatenations and @keyframes/@page uses inside mixins?</p>
 <p>Basically, LESS fails to understand @page and @keyframes inside mixins because it throws an exception according to <a href="https://github.com/cloudhead/less.js/blob/b235734a11f646252db8f0947fee406ce67cf904/lib/less/parser.js#L1158" title="Source LESS">its source code</a>. So you'll need two nested mixins: one handling your animation, the second one to handle the keyframes. Sounds heavy and complicated, well it is. So let’s say you want to create a custom mixin using @keyframes and vendor prefixes (not much, right?) this is what you have to do:</p>
-<pre><code class="language-css">@newline: `"\n"`; /* Newline */
+{% highlight css %}
+@newline: `"\n"`; /* Newline */
 .my-mixin(@selector, @name, @other-parameters) {
 	/* @selector is the element using your animation 
 	 * @name is the name of your animation
@@ -159,7 +168,8 @@ for(@i = 0; @i &lt; @nbElements; @i++) {
 .keyframe-mixin(~"}@{newline}", 1,         "");
 
 } 
-.my-mixin("#whatever", name, other-parameters);</code></pre>
+.my-mixin("#whatever", name, other-parameters);
+{% endhighlight %}
 <p>Yeah, this is a complete nightmare. I'm not the one who wrote this; I've been searching for hours how to do this before finding <a href="http://stackoverflow.com/questions/13160991/chaining-keyframe-attributes-with-less" title="Chaining keyframe attributes with LESS">a very complete answer</a> on StackOverflow leading to two others related topic with wonderful answers (<a href="http://stackoverflow.com/questions/11551313/less-css-pass-mixin-as-a-parameter-to-another-mixin/11589227#11589227" title="Mixin as a parameter to another mixin">here</a> and <a href="http://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css" title="Sign and variables in CSS keyframes using LESS CSS">there</a>).</p>
 <p class="note">Note: the <code>.Local()</code> thing seems to be a keyword for "this" but I couldn't find any confirmation on this. If you have, please catch me on Twitter.</p>
 <p>So basically, here is what there is to say (<a href="http://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css/11028622#11028622" title="Sign and variables in CSS keyframes using LESS CSS">still not from me</a>):</p>
@@ -178,23 +188,29 @@ for(@i = 0; @i &lt; @nbElements; @i++) {
 <h2>Why I think Sass is better<a href="#why-i-think-sass-is-better" class="section-anchor">#</a></h2>
 <p>I won't make a complete and detailed comparison between Sass and LESS because some guys did it very well already (<a href="http://css-tricks.com/sass-vs-less/" title="Sass vs LESS">Chris Coyier</a>, <a href="http://fr.slideshare.net/utbkevin/less-vs-sass-css-precompiler-showdown-14068991" title="LESS vs SASS CSS precompiler showdown">Kewin Powell</a>, etc.). I'll only cover the few points I talked about earlier.</p>
 <h3>Sass and conditional statements</h3>
-<pre><code class="language-css">@mixin my-mixin($parameters) {
+{% highlight css %}
+@mixin my-mixin($parameters) {
 	/* Basic stuff here */
 	@if $my-parameter == value {
 		/* Conditional stuff here */
 	}
-}</code></pre>
+}
+{% endhighlight %}
 <p>This is the Sass syntax for conditional statements in a mixin. Okay, it may lack of some brackets but it's way easier than the LESS syntax in my opinion.</p>
 <h3>Sass and loops</h3>
-<pre><code class="language-css">@for $i from 1 through 10 {
+{% highlight css %}
+@for $i from 1 through 10 {
 /* My stuff here */
-}</code></pre>
+}
+{% endhighlight %}
 <p>Once again, it may lack of a few brackets but we still understand very well how it works. It's almost plain language: <em>"for variable i from 1 through 10, do this"</em>. It looks very intuitive to me.</p>
 <h3>Sass and concatenation</h3>
 <p>Sass has absolutely no problem with concatenation neither in selectors nor in property names. You only have to do this <code>#{$my-variable}</code> to make things work.</p>
-<pre><code class="language-css">#{$my-selector} {
+{% highlight css %}
+#{$my-selector} {
 	#{$my-property}: $my-value;
-}</code></pre>
+}
+{% endhighlight %}
 <h3>Other things</h3>
 <p>Very quickly, here are the few things making me tell Sass is better than LESS. Those are well explained in the above links.</p>
 <ul>
