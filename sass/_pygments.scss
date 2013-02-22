@@ -1,5 +1,12 @@
 .hightlight {
-	.hll { background-color: #ffffcc }
+  background: #efefef;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  box-shadow: 3px 3px rgba(0,0,0,0.1);
+  margin: 1em 0;
+  overflow: hidden;
+
+  	.hll { background-color: #ffffcc }
 	.c { color: #999988; font-style: italic } /* Comment */
 	.err { color: #a61717; background-color: #e3d2d2 } /* Error */
 	.k { color: #000000; font-weight: bold } /* Keyword */
