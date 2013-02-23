@@ -5,7 +5,7 @@ comments: true
 disqus: http://hugogiraudel.com/blog/development-environment
 ---
 <section>         
-<blockquote><p><strong>Edit (2013/23/02):</strong> this post might contain outdated informations since I <a href="http://hugogiraudel.com/2013/02/22/jekyll/">moved my site to Jekyll and GitHub Pages</a>.</p></blockquote> 
+<blockquote><p><strong>Edit (2013/02/21):</strong> this post might contain outdated informations since I <a href="http://hugogiraudel.com/2013/02/21/jekyll/">moved my site to Jekyll and GitHub Pages</a>.</p></blockquote> 
 <p>Hey guys! I recently blogged about the tools I use for front-end development, but someone pointed out on Twitter I didn't tell anything about my development environment. Let's fix my mistake and talk about it!</p>
 <p>Well, first of all, it is kind of complicated because I work at 3 different places, which means I have 3 different development environments (5 actually, I have 3 computers at home). There is -well- home, but I also happen to do some stuff at school or at work when I have some time, mostly during the lunch break.</p>
 <p>Anyway, I will try to describe what I use to work.</p>
