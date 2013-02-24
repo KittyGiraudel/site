@@ -88,27 +88,19 @@
 
 .pagination {
 	padding: 0;
-	margin: 1em 1.2em 0 0;
+	margin: 1em 0 0 0;
     text-align: center;
+    
+    li {
+	    display: inline-block;
+	    margin: 0 5px;
 
-    @include breakpoint(medium) {
-    	margin: 1em 0 0 0;
-    }
+	    a {
+			display: block;
 
-    @include breakpoint(small) {
-		margin: 1.2em 0;
-    }
-}
-
-.pagination__item {
-    display: inline-block;
-    margin: 0 3px;
-
-    a {
-		display: block;
-
-		&:hover, &:focus {
-			text-decoration: none;
+			&:hover, &:focus {
+				text-decoration: none;
+			}
 		}
 	}
 }
@@ -116,9 +108,4 @@
 .pagination__disabled {
 	opacity: 0.3;
 	pointer-events: none;
-}
-
-.pagination__item:hover,
-.pagination__item:focus {
-    color: $darkgrey;
 }
