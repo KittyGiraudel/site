@@ -82,6 +82,7 @@ h4, .h4 {
 	@include breakpoint(small) {
 		opacity: 1;
 		pointer-events: auto;
+		padding-left: 0.1em;
 	}
 }
 

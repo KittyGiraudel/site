@@ -16,8 +16,6 @@
 	-o-tab-size: 4;
 	tab-size: 4;
 	
-	@include hyphens(none);
-
 	@include breakpoint(small) {
 		@include rem(1.5);
 	}
