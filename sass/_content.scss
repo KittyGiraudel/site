@@ -48,12 +48,6 @@ h1, .h1 {
 h2, .h2 {
 	@include rem(3.2);
 
-	&:hover .section-anchor,
-	&:focus .section-anchor {
-		opacity: 1;
-		pointer-events: auto;
-	}
-
 	.page--resume & {
 		border-bottom: 1px solid silver;
 	}
@@ -78,6 +72,17 @@ h4, .h4 {
 	opacity: 0;
 	pointer-events: none;
 	@include transition(.15s);
+
+	h2:hover &,
+	h2:focus & {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	@include breakpoint(small) {
+		opacity: 1;
+		pointer-events: auto;
+	}
 }
 
 // ------ //
