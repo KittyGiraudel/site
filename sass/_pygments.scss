@@ -4,7 +4,7 @@
 	border: 1px solid #ddd;
 	border-radius: 3px;
 	margin: 1em 0;
-	overflow: auto;
+	overflow-x: auto;
 	line-height: 1.4; 
 	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
@@ -16,6 +16,8 @@
 	-o-tab-size: 4;
 	tab-size: 4;
 	
+	@include hyphens(none);
+
 	@include breakpoint(small) {
 		@include rem(1.5);
 	}
