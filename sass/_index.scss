@@ -89,13 +89,13 @@
 .pagination {
 	padding: 0;
 	margin: 1em 0 0 0;
-    text-align: center;
+	text-align: center;
     
     li {
-	    display: inline-block;
-	    margin: 0 5px;
+		display: inline-block;
+		margin: 0 5px;
 
-	    a {
+		a {
 			display: block;
 
 			&:hover, &:focus {

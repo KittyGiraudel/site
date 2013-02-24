@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page {{ page.page-class }}" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,17 @@
 <meta name="robots" content="index,follow"> 
 <meta name="revisit-after" content="1 days"> 
 <meta name="description" content="I write stuff about front-end development especially HTML5 and CSS3.">
+
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="http://hugogiraudel.com/feeds/feed.xml" />
+
+<link rel="icon" href="favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+
 <link rel='stylesheet' href='/stylesheets/styles.min.css'>
-<!--[if lte IE 7]> <link rel="stylesheet" type="text/css" href="../stylesheets/ie-specific.css"><![endif]-->
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lte IE 7]> <link rel="stylesheet" type="text/css" href="../stylesheets/ie-specific.css">   <![endif]-->
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>{{ page.title }}</title>
 </head>   
-<body>
+<body class="page {{ page.page-class }}">
 <div class="wrapper">
