@@ -6,13 +6,13 @@ comment: false
 ---
 <section>
 <p>Hey guys! Just a quick post to anounce the very recent launch of <a href="http://browserhacks.com">Browserhacks</a>!</p>
-<p>Browserhacks is as we like to call it, a comprehensive list of browser specific CSS (and somewhat JavaScript) hacks gathered from all over the interwebz.</p>
+<blockquote><p>Browserhacks is an extensive list of browser specific CSS (and somewhat JavaScript) hacks gathered from all over the interwebz.</p></blockquote>
 </section>
 <section id="why">
 <h2>Why doing this? <a href="#why" class="section-anchor">#</a></h2>
 <p>There are two main reasons that lead us to create Browserhacks.</p>
-<p>The first one is that we couldn't find a place where all (at least many) hacks were gathered. The best spot at the moment is <a href="http://paulirish.com/2009/browser-specific-css-hacks/">this great blog post by Paul Irish</a>, but it's a) a blog post; b) there are a lot of interesting stuff in the hundred of comments nobody will ever read anymore.</p>
-<p>Anyway, we thought it could be a good idea to get our hands a little dirty and merge all the cool sources we could find on the topic into a lovely tool.</p>
+<p>The first one is that we couldn't find a place where all (at least many) hacks were gathered (or it was way too old; Netscape 4 says hi!). The best spot at the moment is <a href="http://paulirish.com/2009/browser-specific-css-hacks/">this great blog post by Paul Irish</a>, but it's a) a blog post; b) there are a lot of interesting stuff in the hundred of comments nobody will ever read anymore.</p>
+<p>Anyway, we thought it could be a good idea to get our hands a little dirty and merge <a href="http://paulirish.com/2009/browser-specific-css-hacks/">all</a> <a href="https://gist.github.com/983116">the</a> <a href="http://www.impressivewebs.com/ie10-css-hacks/">cool</a> <a href="http://www.webcredible.co.uk/user-friendly-resources/css/hacks-browser-detection.shtml">sources</a> we could find on the topic into a lovely tool.</p>
 <p>The other reason is that we wanted to do something together for quite a while now and it was a very good opportunity to do it! So we did.</p>
 </section>
 <section id="who">
@@ -32,10 +32,10 @@ comment: false
 <h2>How to use it? <a href="#how" class="section-anchor">#</a></h2>
 <p>It couldn't be any simpler. If you ever happen to be stuck on a rendering bug in let's say... Internet Explorer 7 (only an example...), you could simply:</p>
 <ol>
-<li>Come to <a href="http://browserhacks.com">Browserhacks.com</a></li>
-<li>Search for "IE7"</li>
-<li>Copy one of the proposed hacks</li>
-<li>Paste it in your stylesheet</li>
+<li>Come to <a href="http://browserhacks.com">Browserhacks.com</a>,</li>
+<li>Search for "IE7",</li>
+<li>Copy one of the proposed hacks,</li>
+<li>Paste it in your stylesheet,</li>
 <li>Keep CSS-ing worry-free!</li>
 </ol>
 <p class="note">If you don't feel like using this because you don't like CSS hacks (understandable), simply don't use it. However if you start trolling, God will kill many kittens.</p>
@@ -51,4 +51,5 @@ comment: false
 <li>Improve the main site in Internet Explorer 8-</li>
 <li>Add moar hackz!</li>
 </ul>
+<p>Hope you like it, happy hacking!</p>
 </section>
