@@ -52,6 +52,12 @@ h2, .h2 {
 		border-bottom: 1px solid silver;
 	}
 
+	&:hover a,
+	&:focus a {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
 	a[href^="#"] {
 		*display: inline;
 		display: inline-block;
@@ -61,11 +67,6 @@ h2, .h2 {
 		pointer-events: none;
 		@include transition(.15s);
 
-		&:hover,
-		&:focus {
-			opacity: 1;
-			pointer-events: auto;
-		}
 
 		@include breakpoint(small) {
 			opacity: 1;
