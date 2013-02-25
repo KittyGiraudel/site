@@ -61,17 +61,17 @@ h2, .h2 {
 		pointer-events: none;
 		@include transition(.15s);
 
-		h2:hover &,
-		h2:focus & {
-			opacity: 1;
-			pointer-events: auto;
-		}
-
 		@include breakpoint(small) {
 			opacity: 1;
 			pointer-events: auto;
 			padding-left: 0.1em;
 		}
+	}
+
+	&:hover a,
+	&:focus a {
+		opacity: 1;
+		pointer-events: auto;
 	}
 }
 
