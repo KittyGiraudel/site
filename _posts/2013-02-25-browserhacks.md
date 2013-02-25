@@ -1,7 +1,7 @@
 ---
 title: "Introducing Browserhacks"
 layout: post
-comment: true
+comments: true
 ---
 <section>
 <p>Hey guys! Just a quick post to anounce the very recent launch of <a href="http://browserhacks.com">Browserhacks</a>!</p>
