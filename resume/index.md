@@ -44,19 +44,20 @@ page-class: page--resume
 <h3>Crédit Agricole Sud Rhône Alpes - 2011/2013 (still)</h3>
 <ul>
 <li>Development of web content for an iPad app</li>
-<li>Development of a website event for the Store by Crédit Agricole: <a href="https://www.le-store-by-ca-sra.fr" title="Website event for the Store by Crédit Agricole">https://www.le-store-by-ca-sra.fr</a></li>
-<li>Design and development of the sustainable development website for the local fund: <a href='http://ca-sudrhonealpes.fr/developpement-durable-index.html' title='Crédit Agricole Sud Rhône Alpes sustainable development website'>http://ca-sudrhonealpes.fr/developpement-durable-index.html</a></li>
+<li>Development of a website event for the <a href="https://www.le-store-by-ca-sra.fr" title="Website event for the Store by Crédit Agricole">Store by Crédit Agricole</a></li>
+<li>Design and development of the <a href='http://ca-sudrhonealpes.fr/developpement-durable-index.html' title='Crédit Agricole Sud Rhône Alpes sustainable development website'>sustainable development website</a> for the local fund</li>
 </ul>
 
 <h3>Matt Design Communication - 2011 (2 months)</h3>
 <ul>
-<li>Developement of Matt Design Communication official website: <a href='http://www.mattbrand.fr/' title="Matt Design Communication website">http://www.mattbrand.fr/</a></li>
-<li>Design and development of the front page for Alpine Leisure Summer Group (ASLG): <a href='http://aslg.france-neige-international.fr/' title="ASLG front page">http://aslg.france-neige-international.fr/</a></li>
+<li>Developement of <a href='http://www.mattbrand.fr/' title="Matt Design Communication website">Matt Design Communication</a> official website</a></li>
+<li>Design and development of the front page for <a href='http://aslg.france-neige-international.fr/' title="ASLG front page">Alpine Leisure Summer Group (ASLG)</a></li>
 </ul> 
 
 <h3>Personal projects</h3>
 <ul>
-<li>Wild Web Watch, a web watch project: <a href="http://wildwebwatch.com/" title="Wild Web Watch">http://wildwebwatch.com/</a></li>
+<li><a href="http://browserhacks.com">Browserhacks.com</a>, a comprehensive list of browser specific CSS hacks</li>
+<li><a href="http://wildwebwatch.com/" title="Wild Web Watch">Wild Web Watch</a>, a web watch project</a></li>
 </ul>
 
 </section>
