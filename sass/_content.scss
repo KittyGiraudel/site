@@ -51,6 +51,28 @@ h2, .h2 {
 	.page--resume & {
 		border-bottom: 1px solid silver;
 	}
+
+	a[href^="#"] {
+		*display: inline;
+		display: inline-block;
+		padding-left: .3em;
+		color: $darkgrey;
+		opacity: 0;
+		pointer-events: none;
+		@include transition(.15s);
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		@include breakpoint(small) {
+			opacity: 1;
+			pointer-events: auto;
+			padding-left: 0.1em;
+		}
+	}
 }
 
 h3, .h3 {
@@ -62,28 +84,6 @@ h3, .h3 {
 
 h4, .h4 {
 	@include rem(2.4);
-}
-
-.section-anchor {
-	*display: inline;
-	display: inline-block;
-	padding-left: .3em;
-	color: $darkgrey;
-	opacity: 0;
-	pointer-events: none;
-	@include transition(.15s);
-
-	h2:hover &,
-	h2:focus & {
-		opacity: 1;
-		pointer-events: auto;
-	}
-
-	@include breakpoint(small) {
-		opacity: 1;
-		pointer-events: auto;
-		padding-left: 0.1em;
-	}
 }
 
 // ------ //
