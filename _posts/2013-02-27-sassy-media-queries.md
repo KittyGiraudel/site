@@ -65,7 +65,7 @@ $max: 1910px; /* [1] */
 
 Please note we also could write it this way:
 
-{% highlight php %}
+{% highlight css %}
 $max: 1910px;
 @each $word in $words {
 	@media screen and (max-width: $max) {
