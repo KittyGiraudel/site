@@ -1,8 +1,7 @@
 ---
 title: Sassy Media Queries
 layout: post
-comments: false
-preview: true
+comments: true
 ---
 <section>
 
