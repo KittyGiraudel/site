@@ -16,11 +16,10 @@
 
 /**
  * Document root
- * [1] - equals 10 px, base for REM unit
+ * [1] - 62.5% equals 10 px, base for REM unit
  */
 html {
-	font-size: 62.5%; /* [1] */
-	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif;
+	font: 62.5%/1.55 "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif; /* [1] */
 	color: #555;
 	text-shadow: 0 1px rgba(255,255,255,.6);
 	border-left: 6px solid $pink;
