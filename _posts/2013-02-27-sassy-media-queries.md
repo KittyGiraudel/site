@@ -4,7 +4,7 @@ preview: true
 comments: false
 layout: post
 ---
-<section>
+<section> 
 Here is a quick blog post aiming at explaining how I turned a ~250-line CSS experiment by [Arley McBlain](http://arleym.com) into less than 30 sexy lines of Sass.
 
 First, let me remind you what Arley did in this experiment, topic of a [great article at CSS-tricks](http://css-tricks.com/lark-queries/). His idea was to change some content according to the screen size.

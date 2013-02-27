@@ -26,7 +26,7 @@ page-class: page--resume
 <p>xHTML/HTML5, CSS2/CSS3 (LESS/Sass), XML, PHP/MySQL, JavaScript/jQuery, Ajax, C# (notions), Java (notions)</p>
 
 <h3>Softwares</h3>
-<p>Sublime Text 2, Git (notions), PhotoShop, Microsoft Office</p>
+<p>Sublime Text 2, Git (notions), Photoshop, Microsoft Office</p>
 
 <h3>Languages</h3>
 <p>French (native), English (fluent), Spanish (notions)</p>
