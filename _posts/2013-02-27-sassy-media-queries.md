@@ -38,9 +38,9 @@ Pretty big, right? Don't worry, the worst part is over. Now it's all about easy 
 
 ### Let's loop!
 
-> One loop to rule them all,
-> One loop to bind them,
-> One loop to bring them all,
+> One loop to rule them all,  
+> One loop to bind them,  
+> One loop to bring them all,  
 > And in the Sass way bind them.
 
 Now we have the list, we only have to loop through all items in it and do something, right?
