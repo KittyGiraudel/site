@@ -96,6 +96,7 @@
  * [1] - same as "display: block" or "visibility: visible"
  * Source: https://github.com/csswizardry/csswizardry.github.com/blob/master/css/ui/site-nav.scss
  */
+$pages: home, resume;
 @each $page in $pages {
     .page--#{$page} .site-nav__#{$page} {
         cursor: text;

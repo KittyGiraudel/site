@@ -70,15 +70,11 @@ h4, .h4 {
 /**
  * Text content
  */
-
-p, 
-ul, 
-ol {
+p, ul, ol {
 	margin-bottom: $space;
 }
 
-ul, 
-ol {
+ul, ol {
 	padding-left: 1.5em;
 }
 
@@ -87,7 +83,6 @@ ol {
  * [1] - prevent images to break outside their container
  * [2] - keep ratio when resized
  */
-
 img {
 	max-width: 100%; /* [1] */
 	height: auto; /* [2] */
@@ -97,11 +92,11 @@ img {
 
 /**
  * Quotes
- * [1] - avoid odd gap at the bottom of a blockquote
+ * [1] - in case there is an image + text in the blockquote
+ * [2] - avoid odd gap at the bottom of a blockquote
  */
-
 blockquote {
-	@extend %clearfix;
+	@extend %clearfix; /* [1] */
 	background: #F4F4F4;
 	border-left: .5em solid white;
 	padding: 1em;
@@ -109,14 +104,13 @@ blockquote {
 	margin-bottom: $space;
 	
 	p:last-of-type {
-		margin-bottom: 0; /* [1] */
+		margin-bottom: 0; /* [2] */
 	}
 }
 
 /**
  * Tables
  */
-
 table {
 	width: 100%;
 	margin: $space 0;

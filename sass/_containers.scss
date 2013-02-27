@@ -4,7 +4,7 @@
 
 /**
  * Main wrapper
- * contains .header, .main, .sidebar, .footer
+ * Contains .header, .main, .sidebar, .footer
  */
 .wrapper {
 	width: 100%;
@@ -33,7 +33,7 @@
 
 /**
  * Sidebar
- * contains informations about me + a Carbon Ad
+ * Contains informations about me + CarbonAds
  */
 .sidebar {
 	@extend %content;

@@ -5,6 +5,7 @@
 /**
  * Font files from WeLoveIconFonts
  * http://weloveiconfonts.com
+ * [1] - prevent screen readers to read (future proof)
  */
 @font-face {
   font-family: 'FontAwesome';
@@ -21,7 +22,7 @@
 [class*=" fontawesome-"] {
   display: inline-block;
   text-decoration: inherit;
-  speak: none;
+  speak: none; /* [1] */
 
   li & {
     width: 1.25em;
@@ -40,17 +41,17 @@
 /**
  * Used icons
  */
-.fontawesome-heart:before{content:"\f004"}
-.fontawesome-pencil:before{content:"\f040"}
-.fontawesome-tint:before{content:"\f043"}
-.fontawesome-briefcase:before{content:"\f0b1"}
-.fontawesome-magic:before{content:"\f0d0"}
-.fontawesome-beaker:before{content:"\f0c3"}
-.fontawesome-angle-left:before{content:"\f104"}
-.fontawesome-angle-right:before{content:"\f105"}
-.fontawesome-user:before{content:"\f007"}
-.fontawesome-comment:before{content:"\f075"}
-.fontawesome-comments:before{content:"\f086"}
+.fontawesome-heart:before { content: "\f004" }
+.fontawesome-pencil:before { content: "\f040" }
+.fontawesome-tint:before { content: "\f043" }
+.fontawesome-briefcase:before { content: "\f0b1" }
+.fontawesome-magic:before { content: "\f0d0" }
+.fontawesome-beaker:before { content: "\f0c3" }
+.fontawesome-angle-left:before { content: "\f104" }
+.fontawesome-angle-right:before { content: "\f105" }
+.fontawesome-user:before { content: "\f007" }
+.fontawesome-comment:before { content: "\f075" }
+.fontawesome-comments:before { content: "\f086" }
 
 /**
  * Default yet unused stuff from Font Awesome

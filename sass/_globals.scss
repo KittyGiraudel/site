@@ -7,8 +7,7 @@
  * [1] - include pseudo-elements which are not target by * 
  */
 *,
-*:before, /* [1] */
-*:after   /* [1] */ {
+*:before, *:after { /* [1] */
 	@include box-sizing(border-box);
 	padding: 0;
 	margin: 0;
@@ -16,7 +15,7 @@
 
 /**
  * Document root
- * [1] - 62.5% equals 10 px, base for REM unit
+ * [1] - 62.5% equals 10 px; used as a baseline for REM unit
  */
 html {
 	font: 62.5%/1.55 "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif; /* [1] */
@@ -34,7 +33,7 @@ html {
 
 /**
  * Shake your body
- * [1] - 20px, base for em unit
+ * [1] - 20px, used as a baseline for EM unit
  */
 body {
 	@include rem(2); /* [1] */ 

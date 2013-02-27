@@ -29,6 +29,7 @@
 		&:first-of-type { 
 			border-top: none; /* [1] */
 		}
+
 		&:last-of-type { /* [2] */
 			box-shadow: 0 1px #F2F2F2;	
 		}
@@ -126,6 +127,6 @@
  * If first or last page
  */
 .pagination__disabled {
-	opacity: 0.3;
+	opacity: .3;
 	pointer-events: none;
 }
