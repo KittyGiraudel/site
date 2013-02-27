@@ -94,6 +94,7 @@
 /**
  * Active class for the main nav
  * [1] - same as "display: block" or "visibility: visible"
+ * Source: https://github.com/csswizardry/csswizardry.github.com/blob/master/css/ui/site-nav.scss
  */
 @each $page in $pages {
     .page--#{$page} .site-nav__#{$page} {

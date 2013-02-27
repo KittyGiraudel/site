@@ -7,7 +7,6 @@
  * contains .header, .main, .sidebar, .footer
  */
 .wrapper {
-	@extend %clearfix;
 	width: 100%;
 	max-width: 57em;
 	margin: 0 auto;

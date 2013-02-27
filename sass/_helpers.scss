@@ -4,6 +4,7 @@
 
 /**
  * Mixin providing a PX fallback for REM font-sizes
+ * Source: http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
  */
 @mixin rem($val) {
 	font-size: ($val * 10) + px;
@@ -12,6 +13,7 @@
 
 /**
  * Mixin handling breakpoints for media queries
+ * Source: http://css-tricks.com/media-queries-sass-3-2-and-codekit/
  */
 @mixin breakpoint($point) {
 	@if $point == medium {
@@ -33,9 +35,9 @@ $darkgrey: #999;
 $space: 1em;
 $pages: home, resume;
 
-// ------- //
-// Helpers //
-// ------- //
+/* -------- *
+ * $HELPERS *
+ * -------- */
 
 /**
  * Clearfix
@@ -130,6 +132,7 @@ $pages: home, resume;
 /**
  * Hidden yet accessible content
  * [1] - avoid specificity issues
+ * Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
  */
 .visually-hidden { 
 	position: absolute !important; /* [1] */
