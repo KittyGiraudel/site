@@ -364,6 +364,7 @@ lightness(color)    /* Gets the lightness component */
 <li><a href="http://0to255.com/">0to255</a></li>
 <li><a href="http://meyerweb.com/eric/css/colors/">Color Equivalents Table</a> by Eric Meyer</li>
 <li><a href="http://www.xanthir.com/blog/b4JC0">CSS Color Keyword Distribution</a> by Tab Atkins Jr. (<a href="http://meyerweb.com/eric/css/colors/hsl-147.html">original work</a> by Eric Meyer)</li>
+<li><a href="http://www.jessechapo.com/posts/Developers-Guide-to-Images.html">Developers guide to images</a></li>
 <li><a href="http://colour.charlottedann.com/">Official Brand Colors</a> by Charlotte Dann</li>
 </ul>
 <p>Thanks a lot for reading this article. If you have any question or feedback, please be sure to share. Also, if you find any mistake, I'd be glad to correct it. ;)</p>

@@ -6,7 +6,7 @@ auto: true
 server: true
 exclude: ['README.md', 'sass/']
 
-paginate: 10
+paginate: 8
 
 markdown: rdiscount
 permalink: pretty

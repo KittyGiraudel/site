@@ -3,6 +3,7 @@ title: Dig deep into CSS linear gradients
 layout: post
 guest: Ana Tudor
 comments: true
+codepen: true
 disqus: http://hugogiraudel.com/blog/css-gradients
 ---      
 <section>          
@@ -101,5 +102,4 @@ oldSyntax = 90° - newSyntax;
 <p>Ana Tudor excels in CSS, especially when it comes to CSS transforms and well, as you may have seen, CSS gradients.</p>
 <p>You definitely should follow her on <a href="http://twitter.com/thebabydino" target="blank">Twitter</a> or have a look at <a href="http://about.me/thebabydino" target="blank">her profile</a> to know more about her and what she does.</p>
 </blockquote>
-</section>  
-<script async src="http://codepen.io/assets/embed/ei.js"></script>    
+</section>

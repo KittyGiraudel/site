@@ -2,6 +2,7 @@
 title: Sassy Media Queries
 layout: post
 comments: true
+codepen: true
 ---
 <section>
 
@@ -18,6 +19,8 @@ Check it live on [his website home](http://arleym.com/) or at [CSS-tricks](http:
 Let's be honest, it's an amazing idea, really. It works great, it looks great, the only downside is... it's a pain in the ass to code.
 
 This is where Sass &dash; or any CSS preprocessor really &dash; can be very efficient. It took me about 10 minutes to divide the amount of required code by 4. Plus, it makes everything so much easier to adapt and maintain. 
+
+<pre class="codepen" data-height="300" data-type="result" data-href="kBzra" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/kBzra">Check out this Pen!</a></pre>
 
 If you simply want to see the code and don't care much about how I did it, please check [this CodePen](http://codepen.io/HugoGiraudel/pen/kBzra) ([fullsize here](http://codepen.io/HugoGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
 
