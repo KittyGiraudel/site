@@ -4,7 +4,6 @@ layout: post
 comments: false
 preview: true
 ---
-
 <section>
 <blockquote><p>The wonderful <a href="https://twitter.com/crnacura">Manoela Ilic</a> also known as Mary Lou, co-founder of <a href="http://tympanus.net/codrops/">Codrops</a> has accepted to answer a few questions. Below is her interview. Enjoy!</p></blockquote>
 </section>

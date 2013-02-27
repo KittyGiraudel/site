@@ -1,8 +1,8 @@
 ---
-title: Media Queries made Sassy
-preview: true
-comments: false
+title: Sassy Media Queries
 layout: post
+comments: false
+preview: true
 ---
 <section> 
 Here is a quick blog post aiming at explaining how I turned a ~250-line CSS experiment by [Arley McBlain](http://arleym.com) into less than 30 sexy lines of Sass.
@@ -19,7 +19,7 @@ Let's be honest, it's an amazing idea, really. It works great, it looks great, t
 
 This is where Sass &dash; or any CSS preprocessor really &dash; can be very efficient. It took me about 10 minutes to divide the amount of required code by 4. Plus, it makes everything so much easier to adapt and maintain. 
 
-If you simply want to see the code and don't care much about how I did it, please check [this CodePen](http://codepen.io/HugoGiraudel/pen/kBzra) ([fullsize here](http://codepen.io/HugoGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
+If you simply want to see the code and don't care much about how I did it, please check [this CodePen](http://codepen.io/HugoGiraudel/pen/kBzra) ( [fullsize here](http://codepen.io/HugoGiraudel/full/kBzra) ) and resize your browser like a fucking obsessive.
 
 ### Create the list
 
