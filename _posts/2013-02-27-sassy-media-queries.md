@@ -27,7 +27,7 @@ Okay, this is no magic. I had to write all the words Arley used all over again. 
 
 So basically I created a Sass list containing all words ordered from the longest to the shortest. Hopefully, Arley already did this part of the job before me so I didn't have to do it again.
 
-{% highlight css}
+{% highlight css %}
 $words: "Unconventional", "Flabbergasting", "Scintillating", "Extraordinary", "Unforgettable", "Unpredictable", "Dumbfounding", "Electrifying", "Overwhelming", "Incomparable", "Entertaining", "Magnificient", "Confounding", "Resourceful", "Interesting", "Adventurous", "Bewildering", "Astonishing", "Fascinating", "Outstanding", "Influential", "Imaginative", "Nonsensical", "Stimulating", "Exceptional", "Resplendent", "Commanding", "Determined", "Remarkable", "Incredible", "Impressive", "Perplexing", "Passionate", "Formidable", "Stupefying", "Refreshing", "Delightful", "Incredible", "Innovative", "Monumemtal", "Surprising", "Stupendous", "Staggering", "Delectable", "Astounding", "Responsive", "Courageous", "Outlandish", "Marvelous", "Whimsical", "Versatile", "Motivated", "Brilliant", "Eccentric", "Wonderful", "Excellent", "Thrilling", "Inspiring", "Exquisite", "Inventive", "Colourful", "Delicious", "Fantastic", "Audacious", "Dexterous", "Different", "Confident", "Enthused", "Peculiar", "Glorious", "Smashing", "Splendid", "Adaptive", "Daunting", "Imposing", "Striking", "Charming", "Dazzling", "Engaging", "Resolute", "Intrepid", "Dramatic", "Original", "Fearless", "Flexible", "Creative", "Animated", "Puzzling", "Shocking", "Intense", "Elastic", "Pointed", "Unusual", "Devoted", "Amusing", "Radiant", "Refined", "Natural", "Dynamic", "Radical", "Bizarre", "Curious", "Amazing", "Lively", "Modest", "Mighty", "August", "Unique", "Absurd", "Brazen", "Crafty", "Astute", "Shrewd", "Daring", "Lovely", "Nimble", "Classy", "Humble", "Limber", "Superb", "Super", "Ready", "Crazy", "Proud", "First", "Light", "Alert", "Lithe", "Fiery", "Eager", "Quick", "Risky", "Adept", "Sharp", "Smart", "Brisk", "Fresh", "Swift", "Novel", "Giant", "Funky", "Weird", "Grand", "Alive", "Happy", "Keen", "Bold", "Wild", "Spry", "Zany", "Nice", "Loud", "Lean", "Fine", "Busy", "Cool", "Rare", "Apt", "Fun", "Hot", "Big";
 {% endhighlight %}
 
@@ -76,7 +76,7 @@ $max: 1910px;
 
 This outputs exactly the same thing. It's really a matter of where you want to put the Media Query call: inside or outside the selector.
 </section>
-<section>
+<section id="final-words">
 ## Final words [#](#final-words)
 
 That's pretty much it. Pretty simple isn't it? This means we can easily add another word in the list without having to copy/paste or code anything. Simply put the word.
