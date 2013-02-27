@@ -4,12 +4,13 @@ layout: post
 comments: false
 preview: true
 ---
-<section> 
+<section>
+
 Here is a quick blog post aiming at explaining how I turned a ~250-line CSS experiment by [Arley McBlain](http://arleym.com) into less than 30 sexy lines of Sass.
 
-First, let me remind you what Arley did in this experiment, topic of a [great article at CSS-tricks](http://css-tricks.com/lark-queries/). His idea was to change some content according to the screen size.
+First, let me remind you what Arley did in his experiment, topic of a [great article at CSS-tricks](http://css-tricks.com/lark-queries/). His idea was to change some content according to the screen size.
 
-In order to do that, he used a pseudo-element and filled the `content` property accordingly. With about 160 media query calls, he managed to change the content every 10px from 1920px to 300px.
+In order to do that, he used a pseudo-element and filled the `content` property accordingly. With about 160 media query calls, he managed to change the content every 10px from 1920px to 300px (device width).
 
 Check it live on [his website home](http://arleym.com/) or at [CSS-tricks](http://css-tricks.com/examples/LarkQueries/).
 </section>
@@ -19,7 +20,7 @@ Let's be honest, it's an amazing idea, really. It works great, it looks great, t
 
 This is where Sass &dash; or any CSS preprocessor really &dash; can be very efficient. It took me about 10 minutes to divide the amount of required code by 4. Plus, it makes everything so much easier to adapt and maintain. 
 
-If you simply want to see the code and don't care much about how I did it, please check [this CodePen](http://codepen.io/HugoGiraudel/pen/kBzra) ( [fullsize here](http://codepen.io/HugoGiraudel/full/kBzra) ) and resize your browser like a fucking obsessive.
+If you simply want to see the code and don't care much about how I did it, please check [this CodePen](http://codepen.io/HugoGiraudel/pen/kBzra) ([fullsize here](http://codepen.io/HugoGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
 
 ### Create the list
 
@@ -43,18 +44,18 @@ Pretty big, right? Don't worry, the worst part is over. Now it's all about easy 
 Now we have the list, we only have to loop through all items in it and do something, right?
 
 {% highlight css %}
-$max: 1910px; /* [1] */
+$max: 1910px;                               /* [1] */
 .be:after {
-	@each $word in $words { /* [2] */
+	@each $word in $words {                   /* [2] */
   		@media screen and (max-width: $max) { /* [3] */
-    		content: "Be #{$word}."; /* [4] */
+    		content: "Be #{$word}.";            /* [4] */
   		}
-  		$max: $max - 10; /* [5] */
+  		$max: $max - 10;                      /* [5] */
   	}
 }
 {% endhighlight %}
 
-1. First, we set a max value for the first Media Query call we will do; from there, it will decrease from 10 to 10,
+1. First, we set a max value (not necessarly px) for the first Media Query call we will do; from there, it will decrease from 10 to 10,
 2. We loop through all items in the list,
 3. We call the Media Query setting the according maximum width,
 4. We put the current word in the `content` property,
@@ -62,7 +63,7 @@ $max: 1910px; /* [1] */
 
 Please note we also could write it this way:
 
-{% highlight css %}
+{% highlight php %}
 $max: 1910px;
 @each $word in $words {
 	@media screen and (max-width: $max) {
@@ -79,7 +80,7 @@ This outputs exactly the same thing. It's really a matter of where you want to p
 <section id="final-words">
 ## Final words [#](#final-words)
 
-That's pretty much it. Pretty simple isn't it? This means we can easily add another word in the list without having to copy/paste or code anything. Simply put the word.
+That's pretty much it. Fairly simple isn't it? This means we can easily add another word in the list without having to copy/paste or code anything. Simply put the word.
 
 However if we add a couple of words, the last one will trigger under 300px device width, which gets kind of small. To prevent this, we could reverse the loop, starting from the smallest width, increasing from 10 to 10.
 
