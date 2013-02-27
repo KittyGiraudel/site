@@ -1,10 +1,21 @@
+/* ---- *
+ * $ADS *
+ * ---- */
+
+/**
+ * Change default styles of Carbon Ads
+ * [1] - override inline styles
+ */
 .carbonad {
-	background: rgba(0,0,0,.05) !important;
-	border: 1px solid rgba(0,0,0,.1) !important;
-	height: auto !important;
+	background: rgba(0,0,0,.05) !important; /* [1] */
+	border: 1px solid rgba(0,0,0,.1) !important; /* [1] */
+	height: auto !important; /* [1] */
 	border-radius: 2px;
 }
 
+/**
+ * Prevent hidden image from CA to mess the layout
+ */
 #azcarbon > img {
 	display: inline !important;
 }

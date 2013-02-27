@@ -1,7 +1,12 @@
-// ------------- //
-// Articles list //
-// ------------- //
+/* ---------- *
+ * $HOME PAGE *
+ * ---------- */
 
+/**
+ * List of articles on the home page
+ * [1] - remove top border if first list item
+ * [2] - fake a bottom border if last list item
+ */
 .list-articles {
 	margin: 1em 2em 0 0;
 	padding: 0;
@@ -21,8 +26,12 @@
 			padding: 0.7em 0 .5em;
 		}
 
-		&:first-of-type { border-top: none;	}
-		&:last-of-type { box-shadow: 0 1px #F2F2F2;	}
+		&:first-of-type { 
+			border-top: none; /* [1] */
+		}
+		&:last-of-type { /* [2] */
+			box-shadow: 0 1px #F2F2F2;	
+		}
 	}
 
 	a {
@@ -34,6 +43,9 @@
 	}
 }
 
+/**
+ * Article titles in the list
+ */
 .list-articles__title {
 	margin: 0;
 	padding: .25em 3em .25em 0;
@@ -44,6 +56,9 @@
 	}
 }
 
+/**
+ * Article dates in the list
+ */
 .list-articles__date {
 	@include rem(1.7);
 	text-indent: 3px;
@@ -55,9 +70,13 @@
 	}
 }
 
-
-.list-articles__codrops,
-.list-articles__guest {
+/**
+ * Special articles
+ * [1] - if article is a link to Codrops
+ * [2] - if article is a guest post
+ */
+.list-articles__codrops, /* [1] */
+.list-articles__guest {  /* [2] */
 	position: absolute;
 	opacity: .2;
 	right: 0;
@@ -81,11 +100,9 @@
 	}
 }
 
-
-// ---------- //
-// Pagination //
-// ---------- //
-
+/**
+ * Pagination
+ */
 .pagination {
 	padding: 0;
 	margin: 1em 0 0 0;
@@ -105,6 +122,9 @@
 	}
 }
 
+/**
+ * If first or last page
+ */
 .pagination__disabled {
 	opacity: 0.3;
 	pointer-events: none;

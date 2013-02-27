@@ -1,12 +1,15 @@
+/* ------- *
+ * $FOOTER *
+ * ------- */
 
-// ------ //
-// Footer //
-// ------ //
-
+/**
+ * Footer element
+ * [1] - clear .main and .sidebar floats
+ */
 .footer {
 	@extend %clearfix;
-	clear: both;
 	@include rem(1.4);
+	clear: both; /* [1] */
 	padding: 2.5em 0;
 	border-top: 3px solid #D1D1D1;
 
@@ -27,10 +30,9 @@
 	}
 }
 
-// ----------- //
-// Footer menu //
-// ----------- //
-
+/**
+ * Footer navigation
+ */
 .footer__nav {
 	@extend %clearfix;
 	float: right;

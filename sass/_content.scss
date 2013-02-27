@@ -1,19 +1,15 @@
-// ------------------ //
-// Main content stuff //
-// ------------------ //
+/* ------------- *
+ * $MAIN CONTENT *
+ * ------------- */
 
-p {
-	margin-bottom: 1em;
-}
-
-.date {
-	color: $darkgrey;
-	text-transform: uppercase;
+p, 
+ul, 
+ol {
+	margin-bottom: $space;
 }
 
 ul, 
 ol {
-	margin-bottom: 1em;
 	padding-left: 1.5em;
 }
 
@@ -22,10 +18,14 @@ p {
 	line-height: 1.55;
 }
 
-// ------ //
-// Titles //
-// ------ // 
+/* ------- *
+ * $TITLES *
+ * ------- */
 
+/**
+ * Classes are meant to give styles without semantic value
+ * e.g. <h2 class="h4">Title level 2 with styles level 4</h2>
+ */
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -86,20 +86,20 @@ h4, .h4 {
 	@include rem(2.4);
 }
 
-// ------ //
-// Images //
-// ------ //
+/* ------- *
+ * $IMAGES *
+ * ------- */
 
 img {
 	height: auto;
 	max-width: 100%;
-	margin: 1em auto;
+	margin: $space auto;
 	display: block;
 }
 
-// ------ //
-// Quotes //
-// ------ //
+/* ------- *
+ * $QUOTES *
+ * ------- */
 
 blockquote {
 	@extend %clearfix;
@@ -107,20 +107,20 @@ blockquote {
 	border-left: .5em solid white;
 	padding: 1em;
 	font-style: italic;
-	margin-bottom: 1em;
+	margin-bottom: $space;
 	
 	p:last-of-type {
 		margin-bottom: 0;
 	}
 }
 
-// ------ //
-// Tables //
-// ------ //
+/* ------- *
+ * $TABLES *
+ * ------- */
 
 table {
 	width: 100%;
-	margin: 2em 0;
+	margin: $space 0;
 }
 
 td,

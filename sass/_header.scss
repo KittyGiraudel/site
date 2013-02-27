@@ -1,7 +1,10 @@
-// ------ //
-// Header //
-// ------ //
+/* ------- *
+ * $HEADER *
+ * ------- */
 
+/**
+ * Header element
+ */
 .header {
 	@extend %clearfix;
 	border-bottom: 3px solid #D1D1D1;
@@ -12,7 +15,9 @@
 	}
 }
 
-//Main title
+/**
+ * Site main title
+ */
 .site-title {
 	float: left;
 	font-family: 'Orienta', sans-serif;
@@ -42,7 +47,9 @@
 	}
 }
 
-//Main nav
+/**
+ * Site main navigation
+ */
 .site-nav {
 	float: right;
 	list-style: none;
@@ -84,12 +91,15 @@
 	}
 }
 
-//Active class
+/**
+ * Active class for the main nav
+ * [1] - same as "display: block" or "visibility: visible"
+ */
 @each $page in $pages {
     .page--#{$page} .site-nav__#{$page} {
         cursor: text;
         &:after {
-        	content: '';
+        	content: ''; /* [1] */
 		}
     }
 }

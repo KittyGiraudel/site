@@ -1,7 +1,11 @@
-// ---------- //
-// Containers //
-// ---------- //
+/* ----------- *
+ * $CONTAINERs *
+ * ----------- */
 
+/**
+ * Main wrapper
+ * contains .header, .main, .sidebar, .footer
+ */
 .wrapper {
 	@extend %clearfix;
 	width: 100%;
@@ -14,8 +18,11 @@
 	}
 }
 
+/**
+ * Main content
+ */
 .main {
-	@extend .content;
+	@extend %content;
 	width: 68%;
 	margin-right: 2%;
 
@@ -25,8 +32,12 @@
 	}
 }
 
+/**
+ * Sidebar
+ * contains informations about me + a Carbon Ad
+ */
 .sidebar {
-	@extend .content;
+	@extend %content;
 	width: 30%;
 	padding-top: 2em;
 
@@ -35,7 +46,10 @@
 	}
 }
 
-.content { 
+/**
+ * Shared by .sidebar and .main
+ */
+%content { 
 	padding-bottom: 2em;
 	float: left;
 

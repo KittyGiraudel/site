@@ -1,3 +1,11 @@
+/* ------------- *
+ * $FONT AWESOME *
+ * ------------- */
+
+/**
+ * Font files from WeLoveIconFonts
+ * http://weloveiconfonts.com
+ */
 @font-face {
   font-family: 'FontAwesome';
   font-style: 'normal';
@@ -9,27 +17,44 @@
   url('http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
 }
 
-[class^="fontawesome-"]:before, 
-[class*=" fontawesome-"]:before {
-  font-family: 'FontAwesome';
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  text-decoration: inherit;
-}
-
 [class^="fontawesome-"], 
 [class*=" fontawesome-"] {
   display: inline-block;
   text-decoration: inherit;
   speak: none;
+
+  li & {
+    width: 1.25em;
+    text-align: center;
+  }
+
+  &:before {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+  }
 }
 
-li [class^="fontawesome-"], 
-li [class*=" fontawesome-"] {
-  width: 1.25em;
-  text-align: center;
-}
+/**
+ * Used icons
+ */
+.fontawesome-heart:before{content:"\f004"}
+.fontawesome-pencil:before{content:"\f040"}
+.fontawesome-tint:before{content:"\f043"}
+.fontawesome-briefcase:before{content:"\f0b1"}
+.fontawesome-magic:before{content:"\f0d0"}
+.fontawesome-beaker:before{content:"\f0c3"}
+.fontawesome-angle-left:before{content:"\f104"}
+.fontawesome-angle-right:before{content:"\f105"}
+.fontawesome-user:before{content:"\f007"}
+.fontawesome-comment:before{content:"\f075"}
+.fontawesome-comments:before{content:"\f086"}
+
+/**
+ * Default yet unused stuff from Font Awesome
+ */
 
 /*
 .icon-large:before {
@@ -59,19 +84,9 @@ li[class*=" fontawesome-"].icon-large:before {
   text-indent: -1.3333333333333333em;
 }
 */
-
-.fontawesome-heart:before{content:"\f004"}
-.fontawesome-pencil:before{content:"\f040"}
-.fontawesome-tint:before{content:"\f043"}
-.fontawesome-briefcase:before{content:"\f0b1"}
-.fontawesome-magic:before{content:"\f0d0"}
-.fontawesome-beaker:before{content:"\f0c3"}
-.fontawesome-angle-left:before{content:"\f104"}
-.fontawesome-angle-right:before{content:"\f105"}
-.fontawesome-user:before{content:"\f007"}
+/*
 .fontawesome-comment-alt:before{content:"\f0e5"}
 .fontawesome-comments-alt:before{content:"\f0e6"}
-/*
 .fontawesome-glass:before{content:"\f000"}
 .fontawesome-music:before{content:"\f001"}
 .fontawesome-search:before{content:"\f002"}
@@ -179,7 +194,6 @@ li[class*=" fontawesome-"].icon-large:before {
 .fontawesome-plane:before{content:"\f072"}
 .fontawesome-calendar:before{content:"\f073"}
 .fontawesome-random:before{content:"\f074"}
-.fontawesome-comment:before{content:"\f075"}
 .fontawesome-magnet:before{content:"\f076"}
 .fontawesome-chevron-up:before{content:"\f077"}
 .fontawesome-chevron-down:before{content:"\f078"}
@@ -195,7 +209,6 @@ li[class*=" fontawesome-"].icon-large:before {
 .fontawesome-camera-retro:before{content:"\f083"}
 .fontawesome-key:before{content:"\f084"}
 .fontawesome-cogs:before{content:"\f085"}
-.fontawesome-comments:before{content:"\f086"}
 .fontawesome-thumbs-up:before{content:"\f087"}
 .fontawesome-thumbs-down:before{content:"\f088"}
 .fontawesome-star-half:before{content:"\f089"}

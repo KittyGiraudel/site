@@ -1,21 +1,25 @@
-// ----- //
-// Reset //
-// ----- //
+/* -------- *
+ * $GLOBALS *
+ * -------- */
 
+/**
+ * RESET ALL THE THINGS! (barbarian style)
+ * [1] - include pseudo-elements which are not target by * 
+ */
 *,
-*:before,
-*:after {
+*:before, /* [1] */
+*:after   /* [1] */ {
 	@include box-sizing(border-box);
 	padding: 0;
 	margin: 0;
 }
 
-// ------- //
-// Overall //
-// ------- //
-
+/**
+ * Document root
+ * [1] - equals 10 px, base for REM unit
+ */
 html {
-	font-size: 62.5%; //10px 
+	font-size: 62.5%; /* [1] */
 	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif;
 	color: #555;
 	text-shadow: 0 1px rgba(255,255,255,.6);
@@ -29,11 +33,17 @@ html {
 	}
 }
 
+/**
+ * Shake your body
+ * [1] - 20px, base for em unit
+ */
 body {
-	@include rem(2); //20px 
+	@include rem(2); /* [1] */ 
 }
 
-//Links
+/**
+ * Links
+ */
 a {
 	color: $pink;
 	text-decoration: none;
@@ -43,15 +53,23 @@ a {
 	}
 }
 
-//Highlighting
-::-moz-selection { background: $pink; color: white; }
-::selection      { background: $pink; color: white; }
+/**
+ * User selection
+ */
+::-moz-selection { 
+	background: $pink; 
+	color: white;
+}
+
+::selection      { 
+	background: $pink; 
+	color: white;
+}
 
 
-// ---------- //
-// Disqus fix //
-// ---------- //
-
+/**
+ * Disqus fix
+ */
 #disqus_thread {
 	margin-top: 3.5em;
 }

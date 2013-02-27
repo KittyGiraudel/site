@@ -1,14 +1,18 @@
-// ------ //
-// Mixins //
-// ------ //
+/* ------- *
+ * $MIXINS *
+ * ------- */
 
-// Mixin providing a PX fallback for REM font-sizes
+/**
+ * Mixin providing a PX fallback for REM font-sizes
+ */
 @mixin rem($val) {
 	font-size: ($val * 10) + px;
 	font-size: $val + rem;
 }
 
-// Mixin handling breakpoints for media queries
+/**
+ * Mixin handling breakpoints for media queries
+ */
 @mixin breakpoint($point) {
 	@if $point == medium {
 	    @media (max-width: 48em) { @content; } //960px
@@ -18,22 +22,26 @@
 	}
 }
 
-// --------- //
-// Variables //
-// --------- //
+/* ---------- *
+ * $VARIABLES *
+ * ---------- */
 
 $pink: #FF3D7F;
 $lightgrey: #444;
 $mediumgrey: #666;
 $darkgrey: #999;
+$space: 1em;
 $pages: home, resume;
 
 // ------- //
 // Helpers //
 // ------- //
 
-//Invisible clearfix
-%clearfix {
+/**
+ * Clearfix
+ * [1] - only meant to be extended from within the stylesheets
+ */
+%clearfix { /* [1] */
 	&:after {
     	display: table;
     	content: "";
@@ -41,18 +49,22 @@ $pages: home, resume;
 	}
 }
 
-//Prevent icon to stick the text
-.icon-left { margin-right: 5px }
-.icon-right { margin-left: 5px }
+/**
+ * Prevent icon to stick to the text
+ */
+/*span*/.icon-left { margin-right: 5px }
+/*span*/.icon-right { margin-left: 5px }
 
-//Image pulling
-.pull-image--left {
+/**
+ * Image pulling
+ */
+/*img*/.pull-image--left {
 	@extend %pull-image;
 	float: left;
 	margin: 0 1em 1em 0;
 }
 
-.pull-image--right {
+/*img*/.pull-image--right {
 	@extend %pull-image;
 	float: right;
 	margin: 0 0 1em 1em;
@@ -65,12 +77,14 @@ $pages: home, resume;
 	@include breakpoint(small) {
 		float: none;
 		width: 100%;
-		margin: 1em auto;
+		margin: $space auto;
 	}
 }
 
-//Quote pulling
-.pull-quote--left {
+/**
+ * Quote pulling
+ */
+/*p*/.pull-quote--left {
 	@extend %pull-quote;
 	text-align: right;
 	float: left;
@@ -79,7 +93,7 @@ $pages: home, resume;
 	border-right: 6px solid $pink;
 }
 
-.pull-quote--right {
+/*p*/.pull-quote--right {
 	@extend %pull-quote;
 	text-align: left;
 	float: right;
@@ -98,12 +112,12 @@ $pages: home, resume;
 	&:after,
 	&:before {
 		content: '"';
-		font-family: Times New Roman, serif;
+		font-family: "Times New Roman", serif;
 	}
 
 	@include breakpoint(small) {
 		float: none;
-		margin: 1em auto;
+		margin: $space auto;
 		border: 5px solid $pink;
 		border-left: none;
 		border-right: none;
@@ -113,19 +127,32 @@ $pages: home, resume;
 	}
 }
 
-//Hidden yet accessible content
+/**
+ * Hidden yet accessible content
+ * [1] - avoid specificity issues
+ */
 .visually-hidden { 
-	position: absolute !important; 
+	position: absolute !important; /* [1] */
 	overflow: hidden; 
 	clip: rect(0 0 0 0); 
 	height: 1px; width: 1px; 
-	margin: -1px !important; 
-	padding: 0 !important; 
+	margin: -1px !important; /* [1] */
+	padding: 0 !important; /* [1] */
 	border: none; 
 }
 
-//Secondary content; could be ommited without altering the meaning
-.note {
+/**
+ * Secondary content; could be ommited without altering the meaning
+ */
+/*p*/.note {
 	font-style: italic;
 	padding-left: 1em;
+}
+
+/**
+ * After main title in articles
+ */
+/*p*/.date {
+	color: $darkgrey;
+	text-transform: uppercase;
 }
