@@ -44,15 +44,15 @@ Pretty big, right? Don't worry, the worst part is over. Now it's all about easy 
 Now we have the list, we only have to loop through all items in it and do something, right?
 
 {% highlight css %}
-$max: 1910px;                                /* [1] */
-.be:after {
-	@each $word in $words {                    /* [2] */
-  		@media screen and (max-width: $max) {  /* [3] */
-    		content: "Be #{$word}.";             /* [4] */
-  		}
-  		$max: $max - 10;                       /* [5] */
-  	}
-}
+/* [1] */ $max: 1910px;
+          .be:after {
+/* [2] */	  @each $word in $words {
+/* [3] */  		@media screen and (max-width: $max) {
+/* [4] */    		content: "Be #{$word}.";
+              }
+/* [5] */  		$max: $max - 10;             
+  	        }
+          }
 {% endhighlight %}
 
 1. First, we set a max value (not necessarly px) for the first Media Query call we will do; from there, it will decrease from 10 to 10,
