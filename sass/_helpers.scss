@@ -24,6 +24,35 @@
 	}
 }
 
+/**
+ * Mixin used by helper class %pull-quote
+ */
+@mixin pull-quote($direction) {
+	$opposite: '';
+	@if $direction == left  { $opposite: right; }
+	@if $direction == right { $opposite: left; }
+
+	text-align: $opposite;
+	float: $direction;  
+	margin: 0 0 .5em 0;
+	margin-#{$opposite}: 1em;
+	border-#{$opposite}: 6px solid hotpink;
+	padding-#{$opposite}: 1em;
+}
+
+/**
+ * Mixin used by helper class %pull-image
+ */
+@mixin pull-image($direction) {
+	$opposite: '';
+	@if $direction == left  { $opposite: right; }
+	@if $direction == right { $opposite: left; }
+
+	float: $direction;
+	margin: 0 0 1em 0;
+	margin-#{$opposite}: 1em;
+}
+
 /* ---------- *
  * $VARIABLES *
  * ---------- */
@@ -61,14 +90,12 @@ $space: 1em;
  */
 /*img*/.pull-image--left {
 	@extend %pull-image;
-	float: left;
-	margin: 0 1em 1em 0;
+	@include pull-image(left);
 }
 
 /*img*/.pull-image--right {
 	@extend %pull-image;
-	float: right;
-	margin: 0 0 1em 1em;
+	@include pull-image(right);
 }
 
 %pull-image {
@@ -87,20 +114,12 @@ $space: 1em;
  */
 /*p*/.pull-quote--left {
 	@extend %pull-quote;
-	text-align: right;
-	float: left;
-	padding-right: 1em;
-	margin: 0 1em .5em 0;
-	border-right: 6px solid $pink;
+	@include pull-quote(left);
 }
 
 /*p*/.pull-quote--right {
 	@extend %pull-quote;
-	text-align: left;
-	float: right;
-	padding-left: 1em;
-	margin: 0 0 .5em 1em;
-	border-left: 6px solid $pink;
+	@include pull-quote(right);
 }
 
 %pull-quote {
