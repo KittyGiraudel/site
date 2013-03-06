@@ -131,8 +131,15 @@ $space: 1em;
 
 	&:after,
 	&:before {
-		content: '"';
 		font-family: "Times New Roman", serif;
+	}
+
+	&:before {
+		content: '“';
+	}
+
+	&:after {
+		content: '”';
 	}
 
 	@include breakpoint(small) {
