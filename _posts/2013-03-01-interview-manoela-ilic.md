@@ -8,7 +8,7 @@ preview: true
 <blockquote><p>The wonderful <a href="https://twitter.com/crnacura">Manoela Ilic</a> also known as Mary Lou, co-founder of <a href="http://tympanus.net/codrops/">Codrops</a> has accepted to answer a few questions. Below is her interview. Enjoy!</p></blockquote>
 </section>
 <section id="introduction">
-<img class="pull-image--left" src="/images/interview-manoela-ilic__codrops.png" alt="Codrops logo" />
+<img class="pull-image--left" src="http://www.gravatar.com/avatar/a35237134b23b6eb90c58d71c82c6464?s=200">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>You are kind of a mysterious person. Maybe could you introduce yourself? <a href="#introduction" class="section-anchor">#</a></h2>
 <p>I'm Manoela, a 31 year old web designer and developer and I create things for <a href="http://tympanus.net/codrops/">Codrops</a> since 2009. I studied Cognitive Science in Germany and then Computational Logic in Portugal.</p>
 <p>I worked in a software company for a while before I decided to become a freelancer and launch Codrops. Since I was a kid I was always fascinated with computers and I created my first website when I was 16 (it had some fancy Flash buttons, I remember) :)</p>
@@ -17,6 +17,7 @@ preview: true
 </section>
 <section id="codrops">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Could you tell us a little bit more about Codrops? Where did the idea came from and what do you do for it? <a href="#codrops" class="section-anchor">#</a></h2>
+<img class="pull-image--left" src="/images/interview-manoela-ilic__codrops.png" alt="Codrops logo" />
 <p>I set up a WordPress blog in late 2009 thinking that I could share some useful snippets with fellow developers. I was doing some beginner mobile web development back then and I just wanted to share what I learnt and what I thought could be helpful. Snippets turned into tutorials over time and now Codrops turned into an almost full-time job :)  </p>
 <p>What I do is to plan, design and implement and write tutorials together with my partner <a href="https://twitter.com/o_telho">Pedro</a>. I also manage the blog and review articles by our writers.</p>
 </section>
@@ -55,7 +56,6 @@ All the development and implementation was done by me and Pedro.</p>
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Anything left you’d like to say? :) <a href="#final-words" class="section-anchor">#</a></h2>
 <p>I'd like to thank you for the opportunity and <strong>I'd like to thank all the readers of <a href="http://tympanus.com/codrops/">Codrops</a></strong> for their support. I'd also like to wish you all the best for your website and blog and I'm looking forward to read many of your articles :)</p>
 <blockquote class="clearfix">
-	<img class="pull-image--left" src="http://www.gravatar.com/avatar/a35237134b23b6eb90c58d71c82c6464?s=200">
 	<p>Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. :)</p>
 </blockquote>
 </section>
