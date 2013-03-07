@@ -8,10 +8,11 @@ preview: true
 <blockquote><p>The wonderful <a href="https://twitter.com/crnacura">Manoela Ilic</a> also known as Mary Lou, co-founder of <a href="http://tympanus.net/codrops/">Codrops</a> has accepted to answer a few questions. Below is her interview. Enjoy!</p></blockquote>
 </section>
 <section id="introduction">
+<img class="pull-image--left" src="http://www.gravatar.com/avatar/a35237134b23b6eb90c58d71c82c6464?s=200">
 <h2 class="h4"><span class="fontawesome-comments icon-left"></span>You are kind of a mysterious person. Maybe could you introduce yourself? <a href="#introduction" class="section-anchor">#</a></h2>
 <p>I'm Manoela, a 31 year old web designer and developer and I create things for <a href="http://tympanus.net/codrops/">Codrops</a> since 2009. I studied Cognitive Science in Germany and then Computational Logic in Portugal.</p>
-<p class="pull-quote--right">I create things for Codrops since 2009.</p>
 <p>I worked in a software company for a while before I decided to become a freelancer and launch Codrops. Since I was a kid I was always fascinated with computers and I created my first website when I was 16 (it had some fancy Flash buttons, I remember) :)</p>
+<p class="pull-quote--right">I created my first website when I was 16.</p>
 <p>In my personal life I like to travel a lot (in fact, most of the time I am). I love to eat and make good food, drink a great wine and take care of my balcony herb garden whenever I have some spare time.</p>
 </section>
 <section id="codrops">
@@ -31,7 +32,7 @@ All the development and implementation was done by me and Pedro.</p>
 <section id="change-something">
 <h2 class="h4"><span class="fontawesome-comments icon-left"></span>Sounds lovely. If you could go back and change something at Codrops, what would it be? <a href="#change-something" class="section-anchor">#</a></h2>
 <p class="pull-quote--right">If you are happy with what you've learned, it was a good path to choose.</p>
-<p>There are always things that could be done better when looking back. But in general I am quite content with how Codrops turned out thanks to our readers and I wouldn't want to change anything about that I guess. It's just like with everything else in life: if you wouldn't have done it that exact way, you might have not learned what you know now. And if you are happy with what you've learned, it probably was a good path to choose. </p>
+<p>There are always things that could be done better when looking back. But in general I am quite happy with how Codrops turned out thanks to our readers and I wouldn't want to change anything about that I guess. It's just like with everything else in life: if you wouldn't have done it that exact way, you might have not learned what you know now. And if you are happy with what you've learned, it probably was a good path to choose. </p>
 </section>
 <section id="future-of-codrops">
 <h2 class="h4"><span class="fontawesome-comments icon-left"></span>What do you plan for the future of Codrops? <a href="#future-of-codrops" class="section-anchor">#</a></h2>
@@ -44,6 +45,7 @@ All the development and implementation was done by me and Pedro.</p>
 <section id="best-codrops-article">
 <h2 class="h4"><span class="fontawesome-comments icon-left"></span>What is the most successful article on Codrops so far? Related to the number of views. <a href="#best-codrops-article" class="section-anchor">#</a></h2>
 <p>The most successful article was <a href="http://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/">Original Hover Effects</a> by <a href="https://twitter.com/Bluxart">Alessio Atzeni</a>.</p>
+<img src="http://cdn2.tympanus.net/codrops/wp-content/uploads/2011/11/OriginalHoverEffects.jpg?84cd58" alt="Original Hover Effects on Codrops">
 </section>
 <section id="side-projects">
 <h2 class="h4"><span class="fontawesome-comments icon-left"></span>Do you have any side project? What would you like to do if you had enough time? <a href="#side-projects" class="section-anchor">#</a></h2>
@@ -51,7 +53,7 @@ All the development and implementation was done by me and Pedro.</p>
 </section>
 <section id="final-words">
 <h2 class="h4"><span class="fontawesome-comments icon-left"></span>Anything left you’d like to say? :) <a href="#final-words" class="section-anchor">#</a></h2>
-<p>I'd like to thank you for the opportunity and I'd like to thank all the readers of Codrops for their support. I'd also like to wish you all the best for your website and blog and I'm looking forward to read many of your articles :)</p>
+<p>I'd like to thank you for the opportunity and <strong>I'd like to thank all the readers of <a href="http://tympanus.com/codrops/">Codrops</a></strong> for their support. I'd also like to wish you all the best for your website and blog and I'm looking forward to read many of your articles :)</p>
 <blockquote class="clearfix">
 	<img class="pull-image--left" src="http://www.gravatar.com/avatar/a35237134b23b6eb90c58d71c82c6464?s=200">
 	<p>Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. :)</p>
