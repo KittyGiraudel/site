@@ -84,16 +84,18 @@ $space: 1em;
 /*span*/.icon-right { margin-left: 5px }
 
 /**
- * Image pulling
+ * Quotes & images pulling
  */
-/*img*/.pull-image--left {
-	@extend %pull-image;
-	@include pull-image(left);
-}
+@each $dir in left, right {
+  .pull-quote--#{$dir} {
+    @extend %pull-quote;
+    @include pull-quote($dir);
+  }
 
-/*img*/.pull-image--right {
-	@extend %pull-image;
-	@include pull-image(right);
+  .pull-image--#{$dir} {
+    @extend %pull-image;
+    @include pull-image($dir);
+  }
 }
 
 %pull-image {
@@ -105,19 +107,6 @@ $space: 1em;
 		width: 100%;
 		margin: $space auto;
 	}
-}
-
-/**
- * Quote pulling
- */
-/*p*/.pull-quote--left {
-	@extend %pull-quote;
-	@include pull-quote(left);
-}
-
-/*p*/.pull-quote--right {
-	@extend %pull-quote;
-	@include pull-quote(right);
 }
 
 %pull-quote {
