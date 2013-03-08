@@ -26,11 +26,10 @@
 
 /**
  * Mixin used by helper class %pull-quote
+ * [1] - returns `left` if given `right` and vice versa
  */
 @mixin pull-quote($direction) {
-	$opposite: '';
-	@if $direction == left  { $opposite: right; }
-	@if $direction == right { $opposite: left; }
+	$opposite: opposite-position($direction); /* [1] */
 
 	text-align: $opposite;
 	float: $direction;  
@@ -39,14 +38,13 @@
 	border-#{$opposite}: 6px solid hotpink;
 	padding-#{$opposite}: 1em;
 }
-
+ 
 /**
  * Mixin used by helper class %pull-image
+ * [1] - returns `left` if given `right` and vice versa
  */
 @mixin pull-image($direction) {
-	$opposite: '';
-	@if $direction == left  { $opposite: right; }
-	@if $direction == right { $opposite: left; }
+	$opposite: opposite-position($direction); /* [1] */
 
 	float: $direction;
 	margin: 0 0 1em 0;
