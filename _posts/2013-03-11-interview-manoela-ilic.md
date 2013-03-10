@@ -8,18 +8,18 @@ preview: true
 <blockquote><p>The wonderful <a href="https://twitter.com/crnacura">Manoela Ilic</a> also known as Mary Lou, co-founder of <a href="http://tympanus.net/codrops/">Codrops</a> has accepted to answer a few questions. Below is her interview. Enjoy!</p></blockquote>
 </section>
 <section id="introduction">
-<img class="pull-image--left" src="http://www.gravatar.com/avatar/a35237134b23b6eb90c58d71c82c6464?s=200">
+<img class="pull-image--left" src="/images/interview-manoela-ilic__manoela.jpg" alt="Photo Manoela Ilic">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>You are kind of a mysterious person. Maybe could you introduce yourself? <a href="#introduction" class="section-anchor">#</a></h2>
 <p>I'm Manoela, a 31 year old web designer and developer and I create things for <a href="http://tympanus.net/codrops/">Codrops</a> since 2009. I studied Cognitive Science in Germany and then Computational Logic in Portugal.</p>
 <p>I worked in a software company for a while before I decided to become a freelancer and launch Codrops. Since I was a kid I was always fascinated with computers and I created my first website when I was 16 (it had some fancy Flash buttons, I remember) :)</p>
 <p class="pull-quote--right">I created my first website when I was 16.</p>
-<p>In my personal life I like to travel a lot (in fact, most of the time I am). I love to eat and make good food, drink a great wine and take care of my balcony herb garden whenever I have some spare time.</p>
+<p>In my personal life I like to travel a lot (in fact, most of the time I am travelling). I love to eat and make good food, drink a great wine and take care of my balcony herb garden whenever I have some spare time.</p>
 </section>
 <section id="codrops">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Could you tell us a little bit more about Codrops? Where did the idea came from and what do you do for it? <a href="#codrops" class="section-anchor">#</a></h2>
 <img class="pull-image--left" src="/images/interview-manoela-ilic__codrops.png" alt="Codrops logo" />
 <p>I set up a WordPress blog in late 2009 thinking that I could share some useful snippets with fellow developers. I was doing some beginner mobile web development back then and I just wanted to share what I learnt and what I thought could be helpful. Snippets turned into tutorials over time and now Codrops turned into an almost full-time job :)  </p>
-<p>What I do is to plan, design and implement and write tutorials together with my partner <a href="https://twitter.com/o_telho">Pedro</a>. I also manage the blog and review articles by our writers.</p>
+<p>What I do is to plan, design, implement and write tutorials together with my partner <a href="https://twitter.com/o_telho">Pedro</a>. I also manage the blog and review articles by our writers.</p>
 </section>
 <section id="why-wordpress">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Why did you choose to land on Wordpress? Who did the development (CSS, scripts and stuff)? <a href="#why-wordpress" class="section-anchor">#</a></h2>
