@@ -122,11 +122,11 @@ $space: 1em;
 	}
 
 	&:before {
-		content: '“';
+		content: '\201c';
 	}
 
 	&:after {
-		content: '”';
+		content: '\201d';
 	}
 
 	@include breakpoint(small) {
