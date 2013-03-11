@@ -1,8 +1,7 @@
 ---
 title: Interview with Manoela Ilic
 layout: post
-comments: false
-preview: true
+comments: true
 ---
 <section>
 <blockquote><p>The wonderful <a href="https://twitter.com/crnacura">Manoela Ilic</a> also known as Mary Lou, co-founder of <a href="http://tympanus.net/codrops/">Codrops</a> has accepted to answer a few questions. Below is her interview. Enjoy!</p></blockquote>
@@ -56,6 +55,6 @@ All the development and implementation was done by me and Pedro.</p>
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Anything left you’d like to say? :) <a href="#final-words" class="section-anchor">#</a></h2>
 <p>I'd like to thank you for the opportunity and <strong>I'd like to thank all the readers of <a href="http://tympanus.com/codrops/">Codrops</a></strong> for their support. I'd also like to wish you all the best for your website and blog and I'm looking forward to read many of your articles :)</p>
 <blockquote class="clearfix">
-	<p>Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. :)</p>
+	<p>Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. Oh, and congratulations for being part of the <a href="http://www.awwwards.com/jury/2013">2013 Awwwards jury</a>! :)</p>
 </blockquote>
 </section>
