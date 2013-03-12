@@ -1,0 +1,126 @@
+---
+title: The ultimate PX/REM mixin
+layout: post
+preview: true
+comments: false
+---
+<section id="rem">
+<h2>About REM <a href="#rem" class="section-anchor">#</a></h2>
+<p>Everybody loves relative units. They are handy and help us solve daily problems. However the most used one -<code>em</code>- presents some issues, especially when it comes to nesting. To avoid this, a new unit has been created: <code>rem</code>.</p>
+<p><code>rem</code> stands for "root em". Basically, instead of being relative to the font-size of its direct parent, it's relative to the font-size defined for the <code>html</code> element.</p>
+<p>You may have already seen something like this in frameworks, demo, blog posts and such:</p>
+{% highlight css %}
+html {
+	font-size: 62.5%
+}
+
+body {
+	font-size: 1.6rem;
+}
+{% endhighlight %}
+<p>Because all browsers have a default font-size of 16px, setting the font-size to 62.5% on the html element gives it a font-size of 10px (10 / 16 * 100 = 62.5). Then, setting a font-size of 1.6rem on the body element simply results in a font-size of 16px, cascading through the whole DOM tree.</p>
+<p>Then, if I want an element to have like a 28px font-size, I simply have to do <code>.element { font-size: 2.8rem; }</code>, no matter the size of its parent.</p>
+<p>Everything is great, however <a href="http://caniuse.com/#feat=rem"><code>rem</code> isn't supported in all browsers</a>, especially not in Internet Explorer 8, which is still supported in most projects. It means we have to <strong>give a fallback</strong> for this browser.</p>
+</section>
+<section id="mixin">
+<h2>Mixin to the rescue! <a href="#mixin" class="section-anchor">#</a></h2>
+<p>Having to define twice the font-size property everytime you have to set the size of a text element sucks. This is the moment you'd like to have a wonderful mixin handling everything for you. <strong>WISH GRANTED!</strong></p>
+<h3>About the mixin</h3>
+<p>There are already many mixins handling <code>px</code> fallback for <code>rem</code> usage, most of them do it very well. However what this one pushes things a step further. Here are the features:</p>
+<ul>
+<li>Accepts either <code>px</code> or <code>rem</code> as an input value</li>
+<li>Accepts (almost) any property as an input, not only font-size</li>
+<li>Accepts multiple values, like <code>10px 20px</code> (for padding or margin as an example)</li>
+</ul>
+<h3>Let's open the beast</h3>
+{% highlight css %}
+html {
+	font-size: 62.5%; /* [1] */
+}
+
+@function parseInt($n) { /* [2] */
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+  $px : (); /* [3] */
+  $rem: (); /* [3] */
+  
+  @each $value in $values { /* [4] */
+   
+    @if $value == 0 or $value == auto { /* [5] */
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+    
+    @else { 
+      $unit: unit($value); /* [6] */
+      $val: parseInt($value); /* [6] */
+      
+      @if $unit == "px" { /* [7] */
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 10 + rem));
+      }
+      
+      @if $unit == "rem" { /* [7] */
+        $px : append($px,  ($val * 10 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+  
+  #{$property}: $px;  /* [8] */
+  #{$property}: $rem; /* [8] */
+}
+{% endhighlight %}	
+<p>This may be a bit rough so let me explain it:</p>
+<ol>
+<li>The mixin relies on a baseline of 10px</li>
+<li>The mixin relies on a function to parse the integer from a value with a unit</li>
+<li>We define a list of values for both units</li>
+<li>We iterate through each value in the given parameter <code>$values</code></li>
+<li>If the value is either <code>auto</code> or </code>0</code>, we append it to the list as-is</li>
+<li>If the value as a unit, we split it to get the unit and the raw value</li>
+<li>We append according values to the lists depending on the unit of the given value</li>
+<li>We output the result</li>
+</ol>
+<h3>Usage</h3>
+<p>Using it is pretty straightforward:</p>
+{% highlight css %}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	@include rem(font-size, 1.6rem);
+	@include rem(padding, 20px 10px);
+}
+{% endhighlight %}
+<p>... outputs:</p>
+{% highlight css %}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 16px; 	//Fallback for IE8
+	font-size: 1.6rem;
+	padding: 20px 10px; //Fallback for IE8
+	padding: 2rem 1rem;
+}
+{% endhighlight %}
+<h3>Remaining issues</li>
+<p>There are still some issues with this mixin:</p>
+<ul>
+<li>Doesn't work with all properties (border, gradient among others)</li>
+<li>Doesn't fallback if you input a wrong value (wrong unit as an example)</li>
+<li>Relies on a defined baseline; however this is easily fixed by adding a <code>$baseline</code> parameter to the mixin</li>
+<li>Relies on a <code>parseInt()</code> function; I've proposed it to Compass, let's hope they add it anytime soon</li>
+</ul>
+<p>If you ever happen to find a decent solution to fix one, I'll be glad to know and add it!</p>
+</section>
+<section id="final-words">
+<h2>Final words <a href="#final-words" class="section-anchor">#</a></h2>
+<p>That's pretty much it folks. I'd be glad to hear your opinion on this and improve it with your ideas. :)</p>
+<p>If you want a playground to test and hack, please feel free to fork <a href="http://codepen.io/HugoGiraudel/pen/xsKdH">my pen</a>.</p>
+</section>
