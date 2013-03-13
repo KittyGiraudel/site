@@ -20,7 +20,7 @@ $position: top right;
 $opposite: opposite-position($position); /* Outputs "bottom left" */
 {% endhighlight %}
 <p class="note">Note: the opposite of <code>center</code> is <code>center</code>.</p>
-<p>I personally used this extension in this very site, when it comes to images and quotes pulling. Please refer to <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss">the source code line 32 and 47</a>.</p>
+<p>I personally used this extension in this very site, when it comes to images and quotes pulling (<a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L32">L32</a> and <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L47">L47</a>.</p>
 {% highlight css %}
 @mixin pull-quote($direction) {
 	$opposite: opposite-position($direction);
@@ -94,7 +94,7 @@ $opposite: opposite-position($position); /* Outputs "bottom left" */
 <blockquote><p>“Layout” is an IE/Win proprietary concept that determines how elements draw and bound their content, interact with and relate to other elements, and react on and transmit application/user events.</p>
 <p>This quality can be irreversibly triggered by some CSS properties. Some HTML elements have “layout” by default.</p>
 <p>Microsoft developers decided that elements should be able to acquire a “property” (in an object-oriented programming sense) they referred to as hasLayout, which is set to true when this rendering concept takes effect.</p></blockquote>
-<p>Back to our business: Compass gives two ways to trigger <code>hasLayout</code> on elements: with <code>zoom</code> (using the <code>zoom</code> MS proprietary property) or with <code>block</code> (using the <code>display</code> property). I'd go with the zoom, even if it doesn't validate. I'm used to.</p>
+<p>Back to our business: Compass gives two ways to trigger <code>hasLayout</code> on elements: with <code>zoom</code> (using the <code>zoom</code> MS proprietary property) or with <code>block</code> (using the <code>display</code> property). I'd go with the zoom, even if it doesn't validate mostly because I'm used to.</p>
 {% highlight css %}
 .element1 {
 	@include has-layout(zoom);
@@ -152,8 +152,8 @@ $opposite: opposite-position($position); /* Outputs "bottom left" */
 <p>I once had to use <code>sin()</code> in order to make a <a href="http://hugogiraudel.com/2013/02/18/sass-mixin-star/">mixin for a pure CSS 6-points star</a> but that's pretty much it. If you happen to have a real live use case for one of those functions, I'd be more than pleased to know more about it.</p>
 {% highlight css %}
 $n: 4;
-pow($n);  /* Returns 16 */
-sqrt($n); /* Returns 2 */ 
+$pow :  pow($n); /* Returns 16 */
+$sqrt: sqrt($n); /* Returns 2  */ 
 {% endhighlight %}
 </section>
 <section id="selectors">
@@ -162,20 +162,26 @@ sqrt($n); /* Returns 2 */
 <p>Once again, I am not sure if there are a bunch of real life use cases for such functions. Let me show you with a demo, maybe you'll be able to find a use case:</p>
 {% highlight css %}
 /* nest() */
-nest(".class1", ".class2");          /* Outputs ".class1.class2" */
-nest(".class1, .class2", ".class3"); /* Outputs ".class1.class3 .class2.class3" */
+nest(".class1", ".class2");          
+/* Outputs ".class1.class2" */
+nest(".class1, .class2", ".class3"); 
+/* Outputs ".class1.class3 .class2.class3" */
 
 /* append-selector */
-append-selector(".class1", ".class2"); /* Outputs ".class1.class2" */
-append-selector("a, p, li", ".class"); /* Outputs "a.class, p.class, li.class" */
+append-selector(".class1", ".class2"); 
+/* Outputs ".class1.class2" */
+append-selector("a, p, li", ".class"); 
+/* Outputs "a.class, p.class, li.class" */
 
 /* headings() */
 #{headings()} {
-	font-family: 'My Awesome Font'; /* Set font-family to all headings */
+	font-family: 'My Awesome Font'; 
+	/* Set font-family to all headings */
 }
 
 #{headings(1, 3)} {
-	font-weight: bold; /* Set font-weight to h1, h2, h3 */
+	font-weight: bold; 
+	/* Set font-weight to h1, h2, h3 */
 }
 {% endhighlight %}
 </section>
@@ -187,7 +193,7 @@ append-selector("a, p, li", ".class"); /* Outputs "a.class, p.class, li.class" *
 	@include hide-text(right);
 }
 {% endhighlight %}
-<p>Outputs ...</p>
+<p>Outputs...</p>
 {% highlight css %}
 .element {
 	text-indent: 110%;
@@ -196,4 +202,8 @@ append-selector("a, p, li", ".class"); /* Outputs "a.class, p.class, li.class" *
 }
 {% endhighlight %}
 <p class="note">The <code>hide-text()</code> mixin takes a direction as a parameter. The default one is <code>left</code>, resulting in a <code>text-indent: -199988px</code> with a <code>16px</code> baseline. You definitely should use <code>right</code> for better performance.</p>
+</section>
+<section id="final-words">
+<h2>Final words <a href="#final-words" class="section-anchor">#</a></h2>
+<p>So guys, how many of these features did you know? If you have some free time, I highly recommand you to dig into <a href="http://compass-style.org/reference/compass/">Compass documentation</a>. You'd be surprised how little you know about the framework in most cases.</p>
 </section>
