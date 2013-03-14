@@ -1,17 +1,16 @@
 ---
 title: Can I afford a preprocessor?
 layout: post
-preview: true
-comments: false
+comments: true
 ---
 <section>
 <p><strong>Disclaimer:</strong>I just want to share my thoughts on the topic. I won't try to convince you to use a preprocessor. So please, don't tell me how good you are without one; I trust you. I'm a developer too.</p>
 <p>A couple of days ago, the famous french front-end developer <a href="https://twitter.com/iamvdo">Vincent De Oliveira</a> has written a blog post called <a href="http://blog.iamvdo.me/post/45259636008/pourquoi-je-nutilise-pas-les-preprocesseurs-css">Why I don't use CSS preprocessors</a> ("Pourquoi je n'utilise pas les préprocesseurs CSS"). If you can read French, or stand <a href="http://translate.google.fr/translate?sl=fr&tl=en&js=n&prev=_t&hl=fr&ie=UTF-8&eotf=1&u=http%3A%2F%2Fblog.iamvdo.me%2Fpost%2F45259636008%2Fpourquoi-je-nutilise-pas-les-preprocesseurs-css">Google Translate</a>, then I highly recommand you this article, full of good points and interesting opinions.</p>
-<p>Please don't consider this post as an answer to Vincent's one. I just wanted to <strong>share my opinion on the topic</strong>, not to open a flame war. Especially since I like this guy. :)</p>
+<p>Please don't consider this post as an answer to Vincent's one. I just wanted to <strong>share my opinion on the topic</strong>, not open a flame war. Especially since I like this guy. :)</p>
 </section>
 <section id="tldr">
 <h2>Tl;dr <a href="#tldr">#</a></h2>
-<p>There is no point debating about whether preprocessors are good or evil: they are good. If you think they are evil, it's either because you're afraid of them, or because you suck with them. The question isn't even which one to choose: they all do pretty much the same things (even if Sass is slightly more robust than others). The main topic is: <strong>should or shouldn't you use one</strong>?</p>
+<p>There is no point debating about whether preprocessors are good or evil: they are good. If you think they are evil, it's either because you're afraid of them, or because you suck at them. The question isn't even which one to choose: they all do pretty much the same things (even if Sass is slightly more robust than others). The main topic is: <strong>should or shouldn't you use one</strong>?</p>
 <p>There are cases where you don't want to use a preprocessor (whatever the language). The main case is when your team involves some beginners or inexperienced developers: if they are not very comfortable with the language, it will be even worse with a preprocessor.</p>
 <p>The other case is when you are dealing with very small projects or one-shot websites, meaning you don't plan on updating often. Then, a preprocessor isn't that useful.</p>
 </section>
@@ -39,9 +38,10 @@ comments: false
 <p>Vincent says preprocessors don't add anything to the default language. In a sense, yes. Sass isn't magic. CoffeeScript isn't magic. Markdown isn't magic. In the end, they render CSS, JS and HTML.</p>
 <p>But CSS preprocessors give CSS what CSS lacks of. CSS lacks of variables, above all. CSS possibly lacks of simple nesting for pseudo-classes. CSS might lack of functions and mixins. Preprocessors give developers all this stuff. <strong>Without altering performances</strong>.</p>
 <p class="pull-quote--right">CSS lacks of variables, above all.</p>
-<p><strong>Yes, we can do sites without these features.</strong> It's just nice to have them. Saying otherwise would be a big fat like. But of course we can still make sites without preprocessors.</p>
-<p><strong>I don't need a preprocessor</strong>. I say it: I don't. I'm not working on 10000-lines stylesheets. I'm not working on multiple templates websites. I'm not working on complex CSS architectures. I could do every single project I do without Sass.</p>
+<p><strong>Yes, we can do sites without these features.</strong> It's just nice to have them. Saying otherwise would be a big fat lie. But of course we can still make sites without preprocessors.</p>
+<p>In fact, <strong>I don't need a preprocessor</strong>. I say it: I don't. I'm not working on 10000-lines stylesheets. I'm not working on multiple templates websites. I'm not working on complex CSS architectures. I could do every single project I do without Sass.</p>
 <p>But <strong>Sass looks better than CSS to me</strong> (at least in most cases). I like being able to use variables. I like being able to use mixins and functions. I like being able to use Compass. I like all of this stuff, even if I don't necessarily need it. It feels more normal to me.</p>
+<p class="note">Sass also gives multiple stylesheets concatenation and file minification (among others), which is kind out of the CSS range but still awesome features nevertheless.</p>
 <section id="learning-curve">
 <h2>Learning curve <a href="#learning-curve">#</a></h2>
 <blockquote><p>Preprocessors make CSS more complex. [...] I said more "complex" not more "complicated". You can think preprocessor's syntax is simple, it is still more complex than the default one.</p></blockquote>
