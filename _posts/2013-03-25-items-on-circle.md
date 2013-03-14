@@ -7,8 +7,8 @@ comments: false
 ---
 <section>
 <p>If you like to experiment or do a little bit of webdesign, then you have probably already tried to put elements on a circle. Unless you're a CSS hacker, you've probably set a class/ID per item, then used <code>left</code> and <code>top</code> accordingly to position everything around the circle.</p>
-<img class='pull-image--right' alt='5 images positioned along a circle' src='items-on-circle__5-items.png'>
-<p>But in most cases, you would have ended doing this with JavaScript, or a jQuery plugin. There are plenty of jQuery plugins doing this out there, and no doubt they are all good.</p>
+<img class='pull-image--right' alt='5 images positioned along a circle' src='/images/items-on-circle__5-items.png'>
+<p>But in most cases, you would have ended doing this with JavaScript, or jQuery. There are plenty of <a href="http://addyosmani.com/blog/jquery-roundrr/">plugins</a> doing this out there, and no doubt they are all good.</p>
 <p>But what if you could do it very simply with CSS? That's what <a href="http://stackoverflow.com/questions/12813573/position-icons-into-circle">Ana Tudor did in an answer on StackOverflow</a>. Instead of using basic positioning, she relies on chained CSS transforms to do it. God, this is brilliant. Well? Let's push it further.</p>
 <p class="note">Note: in case you need a deep browser support, including IE8 and lower, you might want to rely on JS script.</p>
 </section>
@@ -18,7 +18,10 @@ comments: false
 <blockquote><p>[...] You then decide on the angles at which you want to have your links with the images and you add a class deg{desired_angle} (for example deg0 or deg45 or whatever). Then for each such class you apply chained CSS transforms, like this:</p>
 {% highlight css %}
 .deg{desired_angle} {
-   transform: rotate({desired_angle}) translate(12em) rotate(-{desired_angle});
+   transform: 
+   	rotate({desired_angle}) 
+   	translate(12em) 
+   	rotate(-{desired_angle});
 }
 {% endhighlight %}
 <p>where you replace {desired_angle} with 0, 45, and so on...</p>
@@ -31,36 +34,41 @@ comments: false
 <ul>
 <li>You can define the number of items you want on the circle</li>
 <li>You can use any element you want as child of the container, even different ones (<code>li</code>, <code>div</code>, <code>span</code>, <code>a</code>, <code>img</code>, whatever)</li>
-<li>It handles only what it needs to position items: all the fancy stuff is up to you</li>
-<li>It includes a small reset in order to allow you to use apply it on unordered lists</li>
-<li>If the number of items in the container is superior to the parameter given in the mixin, left children are nicely stacked on top of each other at the center of the parent, not breaking anything</li>
+<li>It only places items, not more not less: all the fancy stuff is up to you</li>
+<li>It includes a small reset in order to allow you to use it on unordered lists</li>
+<li>It takes care of vendor prefixes for you thanks to Compass</li>
 <li>You can make the whole shit easily responsive with relative units</li>
 <li>It's damn easy to use</li>
 </ul>
 <p>Here are the arguments you can pass to the mixin in order to suit your needs:</p>
-<ul>
-<li><code>$nbItems</code>: this is the number of items you want to distribute along the circle</li>
-<li><code>$circleSize</code>: this is the size of your circle</li>
-<li><code>$itemSize</code> (optional): this is the size of an item (default is <code>$circleSize / 4</code>)</li>
-<li><code>$innerPadding</code> (optional): this is the padding you want inside the main container (default is 0, also accepts "limited" and "strict" as values)</li>
-</ul>
+<ol>
+<li><code>$nbItems (integer)</code>: this is the number of items you want to distribute along the circle</li>
+<li><code>$circleSize (length)</code>: this is the size of your circle</li>
+<li><code>$itemSize (length)</code> (optional): this is the size of an item (default is <code>$circleSize / 4</code>)</li>
+<li><code>$innerPadding (length|keyword)</code> (optional): this is the padding you want inside the main container (default is "none", also accepts "limited" and "strict" as values)</li>
+</ol>
 <p>Thus, usage is pretty straight forward:</p>
 {% highlight css %}
 .my-container {
-	/* Without optional parameters */
+	/* Without optional parameters 
+	 * 8 items, 24em large container, 6em large items (24/4), no inner padding
+	 */
 	@include putOnCircle(8, 24em);
 
-	/* With all parameters */
-	@include putOnCircle(8, 24em, 4em, limited);
+	/* With all parameters 
+	 * 5 items, 500px large container, 7.2em large items, limited inner padding
+	 */
+	@include putOnCircle(5, 500px, 7.2em, limited);
 }
 {% endhighlight %}
+<p class="note">If the number of items in the container is superior to the parameter given in the mixin, left children are nicely stacked on top of each other at the center of the parent, not breaking anything.</p>
 </section>
 <section id="how">
 <h2>How does it work? <a href="#how">#</a></h2>
-<p>It's pretty easy. It divides 360° by the number of elements you ask for to know what is the angle between 2 elements. Then, it runs a for loop using pseudo-selectors (<code>:nth-of-type()</code>) to assign the appropriate transforms to each element.</p>
+<p>It's pretty easy. It divides <code>360°</code> by the number of elements you ask for to compute the angle between 2 items. Then, it runs a @for loop using pseudo-selectors (<code>:nth-of-type()</code>) to assign the appropriate transforms to each element.</p>
 {% highlight css %}
 $rot: 0; /* Rotation angle for the current item */
-$angle: 360/$nbItems;
+$angle: 360 / $nbItems; /* Angle between two items */
 
 @for $i from 1 to $nbItems+1 {
 
@@ -91,14 +99,14 @@ $angle: 360/$nbItems;
 <p>The inner padding was probably the hardest thing to do. Here is the thing, if you don't set a padding on the container, the items are placed <strong>on</strong> the circle, meaning they are half in, half out. In most cases, that's what you want.</p>
 <p>If you want items to be stricly inside the circle, then it's getting more complicated.</p>
 <ul>
-<li>If you are dealing with circle items, then the inner padding has to be half the size of an item in order to make them inside the containing circle. That's the easy one.</li>
+<li>If you are dealing with circular items, then the inner padding has to be half the size of an item in order to make them inside the containing circle. That's the easy one.</li>
 <li>If you are dealing with squares however, it's getting waaaay more complicated. Indeed, the distance between the center of a square and one of its corner is <code>sqrt(2) * itemSize / 2</code> (thanks Ana). So in order to make squares stricly inside the container, the padding has to be equals to the above formula.</li>
 </ul>
 <p>Hopefully, Sass does it for us and you don't have to use your calculator every time you want to use the mixin. In fact, I even included keywords to ease the use if you don't want to set a custom inner padding:</p>
 <ul>
 <li><code>none</code> (default value): simply set padding to 0, placing items <strong>on</strong> the circle</li>
-<li><code>limited</code>: put circle items inside the container, isn't enough for squares though</li>
-<li><code>strict</code>: put any items inside the container</li>
+<li><code>limited</code>: put circular items inside the container, isn't enough for squares though</li>
+<li><code>strict</code>: put any item inside the container</li>
 </ul>
 {% highlight css %}
 @if $innerPadding == "none"    { $innerPadding: 0; }
@@ -109,5 +117,5 @@ $angle: 360/$nbItems;
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
 <p>That's all folks! If you have any suggestion to improve it, please be sure to share! Meanwhile, you can play with my <a href="http://codepen.io/HugoGiraudel/pen/Bigqr">demo</a> on CodePen.</p>
-<pre class="codepen" data-height="500" data-type="result" data-href="Bigqr" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Bigqr">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="550" data-type="result" data-href="Bigqr" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Bigqr">Check out this Pen!</a></pre>
 </section>
