@@ -112,13 +112,13 @@
     li {
 		display: inline-block;
 		margin: 0 5px;
+	}
 
-		a {
-			display: block;
+	a {
+		display: block;
 
-			&:hover, &:focus {
-				text-decoration: none;
-			}
+		&:hover, &:focus {
+			text-decoration: none;
 		}
 	}
 }
