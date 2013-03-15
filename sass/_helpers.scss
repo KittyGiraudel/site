@@ -171,3 +171,11 @@ $space: 1em;
 	color: $darkgrey;
 	text-transform: uppercase;
 }
+
+/*p*/.explanation {
+	background: #F4F4F4;
+	border-left: .5em solid white;
+	padding: 1em;
+	font-style: italic;
+	margin-bottom: $space;
+}

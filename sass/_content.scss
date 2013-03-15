@@ -96,12 +96,8 @@ img {
  * [2] - avoid odd gap at the bottom of a blockquote
  */
 blockquote {
+	@extend .explanation;
 	@extend %clearfix; /* [1] */
-	background: #F4F4F4;
-	border-left: .5em solid white;
-	padding: 1em;
-	font-style: italic;
-	margin-bottom: $space;
 	
 	p:last-of-type {
 		margin-bottom: 0; /* [2] */
