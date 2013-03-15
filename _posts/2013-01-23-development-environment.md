@@ -21,7 +21,7 @@ disqus: http://hugogiraudel.com/blog/development-environment
 <h2>Browser<a href="#browser" class="section-anchor">#</a></h2>
 <p>Ah, browsers. Our main tools. For the record, not so long ago I swear only by Firefox. But when I started doing a lot of stuff on the web at the same time (running many tabs with somewhat heavy content like videos, WebGL, CSS animations, etc.), it occurred to me Firefox was suffering from a bad memory management. Which wasn't the case of Chrome.</p>
 <p>So I switched to Chrome and never looked back. I even pushed it one step further, using <a href="https://www.google.com/intl/en/chrome/browser/canary.html">Chrome Canary</a>. This in order to access to a few things Chrome doesn't support (or didn't support at the time I switched to Canary) like CSS shaders, exclusions, regions and so on.</p>
-<p class="pull-quote--right">I don't dislike Firefox -it's a wonderful browser- but I clearly prefer Chrome.</p>
+<blockquote class="pull-quote--right">I don't dislike Firefox -it's a wonderful browser- but I clearly prefer Chrome.</blockquote>
 <p>At work for something which looks like SSL issue, I am also running <a href="http://www.mozilla.org/fr/firefox/channel/">Firefox Aurora</a> which is the future version of Firefox, like Canary for Chrome. I don't dislike Firefox -it's a wonderful browser- but I clearly prefer Chrome.</p>
 <p>I also have Opera and Safari on some computers to make unusual tests. Since I am not a freelance web designer living from the sites I make, I'm not using any browser testing tool like <a href="http://www.browserstack.com/">BrowserStack</a>. I would really love a BrowserStack license, but I can't (or don't want to) afford a $20/month subscription.</p>
 </section>

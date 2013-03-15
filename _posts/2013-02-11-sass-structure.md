@@ -162,9 +162,11 @@ $darkgrey: #999;
 
     &:after,
     &:before {
-        content: '"';
-        font-family: Times New Roman, serif;
+        font-weight: bold;
     }
+
+    &:before { content: '\201c'; }
+    &:after  { content: '\201d'; }
 
     @include breakpoint(baby-bear) { 
         float: none;

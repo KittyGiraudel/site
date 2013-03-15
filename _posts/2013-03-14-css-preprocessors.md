@@ -18,7 +18,7 @@ comments: true
 <section id="quality-code">
 <h2>Quality code <a href="#quality-code">#</a></h2>
 <p>Let's make things clear right now: <strong>preprocessors don't output bad code, bad developers do</strong>. CSS preprocessors -whatever the one you (don't) use- do not generate top-heavy, unwiedly, unnecessarily complicated code. This is a lie bad developers will tell you to explain the quality of their code.</p>
-<p class="pull-quote--right">Preprocessors don't output bad code, bad developers do.</p>
+<blockquote class="pull-quote--right">Preprocessors don't output bad code, bad developers do.</blockquote>
 <p>If the final stylesheet is less maintainable or heavier, or more complicated than the vanilla CSS version you had before using a preprocessor, <a href="http://pastebin.com/Jy9PqFTy">it's because you messed up</a>. Not because of Sass.</p>
 <p>Vincent does an interesting comparison with PHP (HyperText Preprocessor): you can output shitty code with PHP too. Is it because of PHP? Definitely not. It's because you've messed up.</p>
 </section>
@@ -30,14 +30,14 @@ comments: true
 <section id="maintainability">
 <h2>Maintainability <a href="#maintainability">#</a></h2>
 <p>I think the key word here is <strong>maintainability</strong>. You will never ever reach the same level of maintainability without a CSS preprocessor. Ever.</p>
-<p class="pull-quote--right">I think the key word here is maintainability.</p>
+<blockquote class="pull-quote--right">I think the key word here is maintainability.</blockquote>
 <p>However, you might not need that level of maintainability. As <a href="https://twitter.com/kaelig">Kaelig</a> says in his article <a href="http://blog.kaelig.fr/post/24877648508/preprocesseurs-css-renoncer-par-choix-ou-par">CSS preprocessors: renounce by choice or ignorance?</a> ("Préprocesseurs CSS, renoncer par choix ou par ignorance?"): if you work on small projects or one-shot websites, you may not need a preprocessor. Let's be realistic for a minute: you won't update the site everyday, if at all. If you ever happen to do so, you can dig into the code without having to use of a preprocessor.</p> 
 </section>
 <section id="needs">
 <h2>Give CSS what CSS needs <a href="#needs">#</a></h2>
 <p>Vincent says preprocessors don't add anything to the default language. In a sense, yes. Sass isn't magic. CoffeeScript isn't magic. Markdown isn't magic. In the end, they render CSS, JS and HTML.</p>
 <p>But CSS preprocessors give CSS what CSS lacks of. CSS lacks of variables, above all. CSS possibly lacks of simple nesting for pseudo-classes. CSS might lack of functions and mixins. Preprocessors give developers all this stuff. <strong>Without altering performances</strong>.</p>
-<p class="pull-quote--right">CSS lacks of variables, above all.</p>
+<blockquote class="pull-quote--right">CSS lacks of variables, above all.</blockquote>
 <p><strong>Yes, we can do sites without these features.</strong> It's just nice to have them. Saying otherwise would be a big fat lie. But of course we can still make sites without preprocessors.</p>
 <p>In fact, <strong>I don't need a preprocessor</strong>. I say it: I don't. I'm not working on 10000-lines stylesheets. I'm not working on multiple templates websites. I'm not working on complex CSS architectures. I could do every single project I do without Sass.</p>
 <p>But <strong>Sass looks better than CSS to me</strong> (at least in most cases). I like being able to use variables. I like being able to use mixins and functions. I like being able to use Compass. I like all of this stuff, even if I don't necessarily need it. It feels more normal to me.</p>

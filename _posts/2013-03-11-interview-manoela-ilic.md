@@ -11,7 +11,7 @@ comments: true
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>You are kind of a mysterious person. Maybe could you introduce yourself? <a href="#introduction">#</a></h2>
 <p>I'm Manoela, a 31 year old web designer and developer and I create things for <a href="http://tympanus.net/codrops/">Codrops</a> since 2009. I studied Cognitive Science in Germany and then Computational Logic in Portugal.</p>
 <p>I worked in a software company for a while before I decided to become a freelancer and launch Codrops. Since I was a kid I was always fascinated with computers and I created my first website when I was 16 (it had some fancy Flash buttons, I remember) :)</p>
-<p class="pull-quote--right">I created my first website when I was 16.</p>
+<blockquote class="pull-quote--right">I created my first website when I was 16.</blockquote>
 <p>In my personal life I like to travel a lot (in fact, most of the time I am travelling). I love to eat and make good food, drink a great wine and take care of my balcony herb garden whenever I have some spare time.</p>
 </section>
 <section id="codrops">
@@ -31,7 +31,7 @@ All the development and implementation was done by me and Pedro.</p>
 </section>
 <section id="change-something">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Sounds lovely. If you could go back and change something at Codrops, what would it be? <a href="#change-something">#</a></h2>
-<p class="pull-quote--right">If you are happy with what you've learned, it was a good path to choose.</p>
+<blockquote class="pull-quote--right">If you are happy with what you've learned, it was a good path to choose.</blockquote>
 <p>There are always things that could be done better when looking back. But in general I am quite happy with how Codrops turned out thanks to our readers and I wouldn't want to change anything about that I guess. It's just like with everything else in life: if you wouldn't have done it that exact way, you might have not learned what you know now. And if you are happy with what you've learned, it probably was a good path to choose. </p>
 </section>
 <section id="future-of-codrops">

@@ -33,7 +33,7 @@ function computeHeight(x, skewAngle) {
   return Math.sin(90 - skewAngle) * x 
 }
 {% endhighlight %}
-<p class="pull-quote--right">I had never heard of any <code>sin()</code> function in Sass.</p>
+<blockquote class="pull-quote--right">I had never heard of any <code>sin()</code> function in Sass.</blockquote>
 <p>From there, I knew how to get the height from the width, I only had to turn this into SCSS. First problem: <em>sin()</em>. I had never heard of any <code>sin()</code> function in Sass. Damn it.</p>
 <p>After a little Google search, I stumbled upon <a href="https://github.com/adambom/Sass-Math/blob/master/math.scss">a not-documentated-at-all library</a> to use advanced math functions in Sass (including <code>sin()</code>, <code>exp()</code>, <code>sqrt()</code>, and much more). Seemed good enough so I gave it a try.</p>
 <p>It turned out the <code>power()</code> function (called in the <code>sin()</code> one) was triggering a Sass error. I tried a few things but finally couldn’t make it work. So I did something unusual... Looked at the 2nd page on Google. And bam, <a href="http://compass-style.org/reference/compass/helpers/math/">the Holy Grail</a>!</p>
