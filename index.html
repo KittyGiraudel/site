@@ -15,7 +15,7 @@ page-class: page--home
     <span class="fontawesome-tint list-articles__codrops"></span>
     {% endif %}
   	<p class="list-articles__date">
-  	{{ post.date | date_to_long_string  }}
+  	{{ post.date | %B %d, %Y }}
   	</p>
   	<h2 class="list-articles__title">
     {% if post.codrops %}
