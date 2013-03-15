@@ -62,7 +62,7 @@ function computeHeight(x, skewAngle) {
 <li><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#unit-instance_method"><code>unit(number)</code></a> returns the unit of the value</li>
 </ul>
 <p>The first is useless in our case, but the second one is precisely what we need to store the unit of the value given by the user. However we still have no way to parse the integer from a value with a unit. At least not with a built-in function. A <a href="http://stackoverflow.com/a/12335841">quick run on Stack Overflow</a> gave me what I was looking for:</p>
-<blockquote><p>You need to divide by 1 of the same unit. If you use unit(), you get a string instead of a number, but if you multiply by zero and add 1, you have what you need:</p></blockquote>
+<blockquote class="quote"><p>You need to divide by 1 of the same unit. If you use unit(), you get a string instead of a number, but if you multiply by zero and add 1, you have what you need:</p></blockquote>
 {% highlight javascript %}
 @function strip-units($number) {
   @return $number / ($number * 0 + 1);

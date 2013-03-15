@@ -121,38 +121,33 @@ $space: 1em;
 		font-weight: bold;
 	}
 
-	&:before {
-		content: '\201c';
-	}
-
-	&:after {
-		content: '\201d';
-	}
+	&:before { content: '\201c'; }
+	&:after  { content: '\201d'; }
 
 	@include breakpoint(small) {
 		float: none;
 		margin: $space auto;
 		border: 5px solid $pink;
-		border-left: none;
+		border-left:  none;
 		border-right: none;
 		text-align: center;
-		padding: 1em 0.5em;
+		padding: $space 0.5em;
 		max-width: 100%;
 	}
 }
 
 /**
  * Hidden yet accessible content
- * [1] - avoid specificity issues
  * Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
  */
 .visually-hidden { 
-	position: absolute !important; /* [1] */
+	position: absolute;
 	overflow: hidden; 
 	clip: rect(0 0 0 0); 
-	height: 1px; width: 1px; 
-	margin: -1px !important; /* [1] */
-	padding: 0 !important; /* [1] */
+	height:  1px; 
+	width:   1px; 
+	margin: -1px;
+	padding: 0;
 	border: none; 
 }
 
@@ -161,11 +156,11 @@ $space: 1em;
  */
 /*p*/.note {
 	font-style: italic;
-	padding-left: 1em;
+	padding-left: $space;
 }
 
 /**
- * After main title in articles
+ * Right after main title in articles
  */
 /*p*/.date {
 	color: $darkgrey;
@@ -173,10 +168,13 @@ $space: 1em;
 	margin-top: .5em;
 }
 
+/**
+ * Often used as an introduction paragraph in articles
+ */
 /*p*/.explanation {
 	background: #F4F4F4;
 	border-left: .5em solid white;
-	padding: 1em;
+	padding: $space;
 	font-style: italic;
 	margin-bottom: $space;
 }

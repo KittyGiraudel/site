@@ -95,7 +95,7 @@ img {
  * [1] - in case there is an image + text in the blockquote
  * [2] - avoid odd gap at the bottom of a blockquote
  */
-blockquote {
+.quote {
 	@extend .explanation;
 	@extend %clearfix; /* [1] */
 	

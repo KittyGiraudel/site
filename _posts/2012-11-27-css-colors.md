@@ -52,7 +52,7 @@ disqus: http://hugogiraudel.com/blog/css-colors.html
 </tr>
 </table>
 <img src="/images/css-colors__color-cube.jpg" class="pull-image--left" alt="Color Cube" />
-<blockquote class="bq1">This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.</blockquote>
+<blockquote class="quote">This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.</blockquote>
 <h3 style="clear:both">How do we define RGB colors?</h3>
 <p>To describe a color using the RGB model, you have to define a value for the red channel, a value for the green channel and a value for the blue channel. Okay, but what type of value? Percentages? Arbitrary? Any?</p>
 <p>A RGB value can be defined using four different syntaxes but only two of them are available in CSS:</p>

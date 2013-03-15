@@ -97,7 +97,7 @@ oldSyntax = 90° - newSyntax;
 <section id="final-words">
 <h2>Final words <a href="#final-words" class="section-anchor">#</a></h2>
 <p>CSS gradients are really powerful and understanding how they work can be really useful for creating all sorts of imageless textures or shapes that would be difficult to obtain otherwise.</p>
-<blockquote>
+<blockquote class="quote">
 <img src="http://www.gravatar.com/avatar/bee436794e066a5423040cf673c7506f?s=200" alt="Ana Tudor's gravatar" class="pull-image--left">
 <p>Ana Tudor excels in CSS, especially when it comes to CSS transforms and well, as you may have seen, CSS gradients.</p>
 <p>You definitely should follow her on <a href="http://twitter.com/thebabydino" target="blank">Twitter</a> or have a look at <a href="http://about.me/thebabydino" target="blank">her profile</a> to know more about her and what she does.</p>
