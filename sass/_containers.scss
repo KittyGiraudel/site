@@ -19,19 +19,6 @@
 }
 
 /**
- * Shared by .main and .sidebar
- */
-%content { 
-	float: left;
-	padding-bottom: 2em;
-
-	@include breakpoint(medium) {
-		float: none;
-		width: 100%;
-	}
-}
-
-/**
  * Main content
  */
 .main {
@@ -53,4 +40,17 @@
 	@extend %content;
 	width: 30%;
 	padding-top: 2em;
+}
+
+/**
+ * Shared by .main and .sidebar
+ */
+%content { 
+	float: left;
+	padding-bottom: 2em;
+
+	@include breakpoint(medium) {
+		float: none;
+		width: 100%;
+	}
 }
