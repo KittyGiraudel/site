@@ -19,8 +19,8 @@ h4, .h4 {
 }
 
 h1, .h1 {
-	font-family: 'Sanchez', sans-serif;
 	@include rem(3.6);
+	font-family: 'Sanchez', sans-serif;
 	text-shadow: 0 1px white, 0 2px $darkgrey;
 	margin: 1em 0 0 0;
 	text-transform: uppercase;
@@ -85,22 +85,23 @@ ul, ol {
  */
 img {
 	max-width: 100%; /* [1] */
-	height: auto; /* [2] */
+	height: auto;    /* [2] */
 	margin: $space auto;
 	display: block;
 }
 
 /**
  * Quotes
- * [1] - in case there is an image + text in the blockquote
- * [2] - avoid odd gap at the bottom of a blockquote
+ * [1] - same appearance as .explanation
+ * [2] - in case there is an image + text in the blockquote
+ * [3] - avoid odd gap at the bottom of a blockquote
  */
-.quote {
-	@extend .explanation;
-	@extend %clearfix; /* [1] */
+/*blockquote*/.quote {
+	@extend .explanation; /* [1] */
+	@extend %clearfix;    /* [2] */
 	
 	p:last-of-type {
-		margin-bottom: 0; /* [2] */
+		margin-bottom: 0; /* [3] */
 	}
 }
 
@@ -112,16 +113,16 @@ table {
 	margin: $space 0;
 }
 
+tr:nth-child(odd) {
+	background: #F4F4F4;
+}
+
 td,
 th {
-	padding: 0.5em;
+	padding: .5em;
 }
 
 th {
 	font-weight: bold;
 	text-align: center;
-}
-
-tr:nth-child(odd) {
-	background: #F4F4F4;
 }

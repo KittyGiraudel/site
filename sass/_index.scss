@@ -26,13 +26,8 @@
 			padding: 0.7em 0 .5em;
 		}
 
-		&:first-of-type { 
-			border-top: none; /* [1] */
-		}
-
-		&:last-of-type { /* [2] */
-			box-shadow: 0 1px #F2F2F2;	
-		}
+		&:first-of-type { border-top: none; }         /* [1] */
+		&:last-of-type { box-shadow: 0 1px #F2F2F2; } /* [2] */
 	}
 
 	a {
@@ -65,10 +60,6 @@
 	text-indent: 3px;
 	margin-bottom: 0;
 	color: $darkgrey;
-
-	@include breakpoint(small) {
-		display: inline-block;
-	}
 }
 
 /**
@@ -110,7 +101,7 @@
 	text-align: center;
     
     li {
-		display: inline-block;
+		@include inline-block(middle);
 		margin: 0 5px;
 	}
 

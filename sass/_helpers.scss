@@ -87,12 +87,12 @@ $space: 1em;
  * Quotes & images pulling
  */
 @each $dir in left, right {
-  .pull-quote--#{$dir} {
+  /*blockquote*/.pull-quote--#{$dir} {
     @extend %pull-quote;
     @include pull-quote($dir);
   }
 
-  .pull-image--#{$dir} {
+  /*image*/.pull-image--#{$dir} {
     @extend %pull-image;
     @include pull-image($dir);
   }
