@@ -5,7 +5,7 @@ comments: true
 ---
 <section>
 <p>Hey guys! Just a quick post to anounce the very recent launch of [Browserhacks](http://browserhacks.com)!</p>
-<p class="explanation">clBrowserhacks is an extensive list of browser specific CSS (and somewhat JavaScript) hacks gathered from all over the interwebz.</p>
+<p class="explanation">Browserhacks is an extensive list of browser specific CSS (and somewhat JavaScript) hacks gathered from all over the interwebz.</p>
 </section>
 <section id="why">
 ## Why doing this? [#](#why)
