@@ -10,7 +10,6 @@ comments: false
 <img class='pull-image--right' alt='5 images positioned along a circle' src='/images/items-on-circle__5-items.png'>
 <p>But in most cases, you would have ended doing this with JavaScript, or jQuery. There are plenty of <a href="http://addyosmani.com/blog/jquery-roundrr/">plugins</a> doing this out there, and no doubt they are all good.</p>
 <p>But what if you could do it very simply with CSS? That's what <a href="http://stackoverflow.com/questions/12813573/position-icons-into-circle">Ana Tudor did in an answer on StackOverflow</a>. Instead of using basic positioning, she relies on chained CSS transforms to do it. God, this is brilliant. Well? Let's push it further.</p>
-<p class="note">Note: in case you need a deep browser support, including IE8 and lower, you might want to rely on JS script.</p>
 </section>
 <section id="current-solution">
 <h2>About the current solution <a href="#current-solution">#</a></h2>
@@ -113,6 +112,53 @@ $angle: 360 / $nbItems; /* Angle between two items */
 @if $innerPadding == "limited" { $innerPadding: $halfImage; }
 @if $innerPadding == "strict"  { $innerPadding: $halfImage * sqrt(2); }
 {% endhighlight %}
+</section>
+<section id="legacy-browsers">
+<h2>What about old browsers? <a href="#legacy-browsers">#</a></h2>
+<p>There are two problems with this technic that prevent the mixin to works for older browsers:</p>
+<ul>
+<li>IE8- don't support pseudo-selectors (:nth-of-type())</li>
+<li>IE9- don't support CSS transforms</li>
+</ul>
+<p>The first problem is easily fixed with either a plugin like <a href="">Selectivizr</a> to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it:</p>
+{% highlight javascript %}
+$('.parent').children().each(function() {
+  $(this).addClass('item'+($(this).index() + 1));
+});
+{% endhighlight %}
+<p>Then, the CSS would be slightly altered:</p>
+{% highlight css %}
+@for $i from 1 to $nbItems+1 {
+	&:nth-of-type(#{$i}),
+	&.item#{$i} {
+		/* ... */
+	}
+}
+{% endhighlight %}
+<p>First problem solved. Not let's deal with the biggest one: IE9- don't support CSS transforms. Hopefully, we can draw a fallback that will make everything cool on these browsers as well using margin.</p>
+<p>Basically, instead of rotating, translating then rotating back each element, we apply it top and left margin (sometimes negative) to place it on the circle.</p>
+{% highlight css %}
+$marginTop : sin($rot * pi() / 180) * $halfParent - $halfItem;
+$marginLeft: cos($rot * pi() / 180) * $halfParent - $halfItem;
+margin: $marginTop 0 0 $marginLeft;
+{% endhighlight %}
+<p>Yes, it's definitely not the easiest way to do it as it involves some complicated calculations (thanks Ana for the formulas), but it works like a charm!</p>
+<p>To detect if the browser supports CSS transforms, we use Modernizr. If it does, we apply CSS transforms, if it doesn't, we apply margins. Consider the following structure:</p>
+{% highlight css %}
+@for $i from 1 to $nbItems+1 {
+	&:nth-of-type(#{$i}),
+	&.item#{$i} {
+		.csstransforms {
+			/* Use transforms */
+		}
+
+		.no-csstransforms {
+			/* Use margins */
+		}
+	}
+}
+{% enhighlight %}
+<p>Et voila! We now have a mixin working back to IE7 (maybe even 6) thanks to very little JavaScript. Isn't that nice?</p>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
