@@ -157,7 +157,7 @@ margin: $marginTop 0 0 $marginLeft;
 		}
 	}
 }
-{% enhighlight %}
+{% endhighlight %}
 <p>Et voila! We now have a mixin working back to IE7 (maybe even 6) thanks to very little JavaScript. Isn't that nice?</p>
 </section>
 <section id="final-words">
