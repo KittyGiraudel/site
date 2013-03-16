@@ -115,12 +115,12 @@ $angle: 360 / $nbItems; /* Angle between two items */
 </section>
 <section id="legacy-browsers">
 <h2>What about old browsers? <a href="#legacy-browsers">#</a></h2>
-<p>There are two problems with this technic that prevent the mixin to works for older browsers:</p>
+<p>There are two problems with this technic that prevent the mixin from working on older browsers:</p>
 <ul>
-<li>IE8- don't support pseudo-selectors (:nth-of-type())</li>
-<li>IE9- don't support CSS transforms</li>
+<li>IE8- don't support pseudo-selectors (<code>:nth-of-type()</code>)</li>
+<li>IE9- don't support CSS transforms (<code>transform: rotate() translate()</code>)</li>
 </ul>
-<p>The first problem is easily fixed with either a plugin like <a href="">Selectivizr</a> to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it:</p>
+<p>The first problem is easily fixed either with a plugin like <a href="http://selectivizr.com/">Selectivizr</a> to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it (with jQuery):</p>
 {% highlight javascript %}
 $('.parent').children().each(function() {
   $(this).addClass('item'+($(this).index() + 1));
@@ -136,14 +136,14 @@ $('.parent').children().each(function() {
 }
 {% endhighlight %}
 <p>First problem solved. Not let's deal with the biggest one: IE9- don't support CSS transforms. Hopefully, we can draw a fallback that will make everything cool on these browsers as well using margin.</p>
-<p>Basically, instead of rotating, translating then rotating back each element, we apply it top and left margin (sometimes negative) to place it on the circle.</p>
+<p>Basically, instead of rotating, translating then rotating back each element, we apply it top and left margin (sometimes negative) to place it on the circle. Fasten your belt folks, the calculations are pretty insane:</p>
 {% highlight css %}
 $marginTop : sin($rot * pi() / 180) * $halfParent - $halfItem;
 $marginLeft: cos($rot * pi() / 180) * $halfParent - $halfItem;
 margin: $marginTop 0 0 $marginLeft;
 {% endhighlight %}
 <p>Yes, it's definitely not the easiest way to do it as it involves some complicated calculations (thanks Ana for the formulas), but it works like a charm!</p>
-<p>To detect if the browser supports CSS transforms, we use Modernizr. If it does, we apply CSS transforms, if it doesn't, we apply margins. Consider the following structure:</p>
+<p>To detect if the browser supports CSS transforms, we use <a href="http://modernizr.com/">Modernizr</a>. If it does, we apply CSS transforms, if it doesn't, we apply margins. Consider the following structure:</p>
 {% highlight css %}
 @for $i from 1 to $nbItems+1 {
 	&:nth-of-type(#{$i}),
