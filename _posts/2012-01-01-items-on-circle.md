@@ -19,7 +19,7 @@ comments: false
 .deg{desired_angle} {
    transform: 
    	rotate({desired_angle}) 
-   	translate(12em) 
+   	translate({half_parent_size}) 
    	rotate(-{desired_angle});
 }
 {% endhighlight %}
@@ -36,28 +36,28 @@ comments: false
 <li>It only places items, not more not less: all the fancy stuff is up to you</li>
 <li>It includes a small reset in order to allow you to use it on unordered lists</li>
 <li>It takes care of vendor prefixes for you thanks to Compass</li>
-<li>You can make the whole shit easily responsive with relative units</li>
+<li>It handles fallbacks for older browsers</li>
 <li>It's damn easy to use</li>
 </ul>
 <p>Here are the arguments you can pass to the mixin in order to suit your needs:</p>
 <ol>
-<li><code>$nbItems (integer)</code>: this is the number of items you want to distribute along the circle</li>
-<li><code>$circleSize (length)</code>: this is the size of your circle</li>
-<li><code>$itemSize (length)</code> (optional): this is the size of an item (default is <code>$circleSize / 4</code>)</li>
-<li><code>$innerPadding (length|keyword)</code> (optional): this is the padding you want inside the main container (default is "none", also accepts "limited" and "strict" as values)</li>
+<li><code>$nb-items (integer)</code>: this is the number of items you want to distribute along the circle</li>
+<li><code>$circle-size (length)</code>: this is the size of your circle</li>
+<li><code>$item-size (length)</code>: this is the size of an item</li>
+<li><code>$class-for-IE (string|false)</code> (optional): class used as a fallback for pseudo-selectors (default is false, meaning no fallback)</li>
 </ol>
 <p>Thus, usage is pretty straight forward:</p>
 {% highlight css %}
 .my-container {
-	/* Without optional parameters 
-	 * 8 items, 24em large container, 6em large items (24/4), no inner padding
+	/* With no support for old IE 
 	 */
-	@include putOnCircle(8, 24em);
+	@include putOnCircle(8, 24em, 6em);
+	@include putOnCircle(8, 24em, 6em, false);
 
-	/* With all parameters 
-	 * 5 items, 500px large container, 7.2em large items, limited inner padding
+	/* With support for old IE
+	 * Using class "item" (.item1, .item2, .item3, etc.)
 	 */
-	@include putOnCircle(5, 500px, 7.2em, limited);
+	@include putOnCircle(8, 24em, 6em, 'item');
 }
 {% endhighlight %}
 <p class="note">If the number of items in the container is superior to the parameter given in the mixin, left children are nicely stacked on top of each other at the center of the parent, not breaking anything.</p>
@@ -93,34 +93,10 @@ $angle: 360 / $nbItems; /* Angle between two items */
 .container > *:nth-of-type(8) { transform: rotate(315deg) translate(12em) rotate(-315deg); }
 {% endhighlight %}
 </section>
-<section id="inner-padding">
-<h2>About the inner padding <a href="#inner-padding">#</a></h2>
-<p>The inner padding was probably the hardest thing to do. Here is the thing, if you don't set a padding on the container, the items are placed <strong>on</strong> the circle, meaning they are half in, half out. In most cases, that's what you want.</p>
-<p>If you want items to be stricly inside the circle, then it's getting more complicated.</p>
-<ul>
-<li>If you are dealing with circular items, then the inner padding has to be half the size of an item in order to make them inside the containing circle. That's the easy one.</li>
-<li>If you are dealing with squares however, it's getting waaaay more complicated. Indeed, the distance between the center of a square and one of its corner is <code>sqrt(2) * itemSize / 2</code> (thanks Ana). So in order to make squares stricly inside the container, the padding has to be equals to the above formula.</li>
-</ul>
-<p>Hopefully, Sass does it for us and you don't have to use your calculator every time you want to use the mixin. In fact, I even included keywords to ease the use if you don't want to set a custom inner padding:</p>
-<ul>
-<li><code>none</code> (default value): simply set padding to 0, placing items <strong>on</strong> the circle</li>
-<li><code>limited</code>: put circular items inside the container, isn't enough for squares though</li>
-<li><code>strict</code>: put any item inside the container</li>
-</ul>
-{% highlight css %}
-@if $innerPadding == "none"    { $innerPadding: 0; }
-@if $innerPadding == "limited" { $innerPadding: $halfImage; }
-@if $innerPadding == "strict"  { $innerPadding: $halfImage * sqrt(2); }
-{% endhighlight %}
-</section>
 <section id="legacy-browsers">
 <h2>What about old browsers? <a href="#legacy-browsers">#</a></h2>
-<p>There are two problems with this technic that prevent the mixin from working on older browsers:</p>
-<ul>
-<li>IE8- don't support pseudo-selectors (<code>:nth-of-type()</code>)</li>
-<li>IE9- don't support CSS transforms (<code>transform: rotate() translate()</code>)</li>
-</ul>
-<p>The first problem is easily fixed either with a plugin like <a href="http://selectivizr.com/">Selectivizr</a> to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it (with jQuery):</p>
+<p>The main problem with this technic is that IE8- doesn't support pseudo-selectors (<code>:nth-of-type()</code>) and CSS transforms (<code>transform: rotate() translate()</code>).</p>
+<p>The first thing is easily fixed either with a plugin like <a href="http://selectivizr.com/">Selectivizr</a> to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it (with jQuery):</p>
 {% highlight javascript %}
 $('.parent').children().each(function() {
   $(this).addClass('item'+($(this).index() + 1));
@@ -129,31 +105,37 @@ $('.parent').children().each(function() {
 <p>Then, the CSS would be slightly altered:</p>
 {% highlight css %}
 @for $i from 1 to $nbItems+1 {
-	&:nth-of-type(#{$i}),
-	&.item#{$i} {
+	&.#{$class-for-IE}#{$i} {
 		/* ... */
 	}
 }
 {% endhighlight %}
-<p>First problem solved. Not let's deal with the biggest one: IE9- don't support CSS transforms. Hopefully, we can draw a fallback that will make everything cool on these browsers as well using margin.</p>
+<p>First problem solved. Not let's deal with the biggest one: IE8- doesn't support CSS transforms. Hopefully, we can draw a fallback that will make everything cool on these browsers as well using margin.</p>
 <p>Basically, instead of rotating, translating then rotating back each element, we apply it top and left margin (sometimes negative) to place it on the circle. Fasten your belt folks, the calculations are pretty insane:</p>
 {% highlight css %}
-$marginTop : sin($rot * pi() / 180) * $halfParent - $halfItem;
-$marginLeft: cos($rot * pi() / 180) * $halfParent - $halfItem;
-margin: $marginTop 0 0 $marginLeft;
+$margin-top : sin($rot * pi() / 180) * $half-parent - $half-item;
+$margin-left: cos($rot * pi() / 180) * $half-parent - $half-item;
+margin: $margin-top 0 0 $margin-left;
 {% endhighlight %}
 <p>Yes, it's definitely not the easiest way to do it as it involves some complicated calculations (thanks Ana for the formulas), but it works like a charm!</p>
-<p>To detect if the browser supports CSS transforms, we use <a href="http://modernizr.com/">Modernizr</a>. If it does, we apply CSS transforms, if it doesn't, we apply margins. Consider the following structure:</p>
+<p>Now how do we use all this stuff for IE8- without messing with modern browser stuff? I found that the easiest solution is to add a flag to the mixin: if it's turned on, then it means we need to support old IE, thus we use classes and margins. Else, we use transforms and pseudo-selectors.Consider the following structure:</p>
 {% highlight css %}
-@for $i from 1 to $nbItems+1 {
-	&:nth-of-type(#{$i}),
-	&.item#{$i} {
-		.csstransforms {
-			/* Use transforms */
+@mixin putOnCircle($nb-items, $circle-size, $item-size, $class-for-IE: false) {
+	/* ... */
+	@for $i from 1 to $nbItems+1 {
+		
+		/* If we don't plan on supporting old IE */
+		@if $class-for-IE == false {
+			&:nth-of-type(#{$i}) {
+				/* Use transforms */
+			}
 		}
 
-		.no-csstransforms {
-			/* Use margins */
+		/* If we plan on supporting old IE */
+		@else {
+			&.#{$class-for-IE}#{$i} {
+				/* Use margins */
+			}
 		}
 	}
 }
