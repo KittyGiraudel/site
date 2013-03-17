@@ -14,7 +14,7 @@ comments: false
 <section id="current-solution">
 <h2>About the current solution <a href="#current-solution">#</a></h2>
 <p>Ana's work is great, I'm not questioning this. However, adding or removing elements can be tricky. Before going any further, let's see how she does this:</p>
-<blockquote><p>[...] You then decide on the angles at which you want to have your links with the images and you add a class deg{desired_angle} (for example deg0 or deg45 or whatever). Then for each such class you apply chained CSS transforms, like this:</p>
+<blockquote class="quote"><p>[...] You then decide on the angles at which you want to have your links with the images and you add a class deg{desired_angle} (for example deg0 or deg45 or whatever). Then for each such class you apply chained CSS transforms, like this:</p>
 {% highlight css %}
 .deg{desired_angle} {
    transform: 
@@ -95,7 +95,7 @@ $angle: 360 / $nbItems; /* Angle between two items */
 </section>
 <section id="legacy-browsers">
 <h2>What about old browsers? <a href="#legacy-browsers">#</a></h2>
-<p>The main problem with this technic is that IE8- doesn't support pseudo-selectors (<code>:nth-of-type()</code>) and CSS transforms (<code>transform: rotate() translate()</code>).</p>
+<p>The main problem with this technic is that <strong>IE8- doesn't support pseudo-selectors and CSS transforms</strong>.</p>
 <p>The first thing is easily fixed either with a plugin like <a href="http://selectivizr.com/">Selectivizr</a> to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it (with jQuery):</p>
 {% highlight javascript %}
 $('.parent').children().each(function() {
@@ -105,13 +105,15 @@ $('.parent').children().each(function() {
 <p>Then, the CSS would be slightly altered:</p>
 {% highlight css %}
 @for $i from 1 to $nbItems+1 {
+
 	&.#{$class-for-IE}#{$i} {
 		/* ... */
 	}
+
 }
 {% endhighlight %}
 <p>First problem solved. Not let's deal with the biggest one: IE8- doesn't support CSS transforms. Hopefully, we can draw a fallback that will make everything cool on these browsers as well using margin.</p>
-<p>Basically, instead of rotating, translating then rotating back each element, we apply it top and left margin (sometimes negative) to place it on the circle. Fasten your belt folks, the calculations are pretty insane:</p>
+<p>Basically, instead of rotating, translating then rotating back each element, we apply it top and left margins (sometimes negative) to place it on the circle. Fasten your belt folks, the calculations are pretty insane:</p>
 {% highlight css %}
 $margin-top : sin($rot * pi() / 180) * $half-parent - $half-item;
 $margin-left: cos($rot * pi() / 180) * $half-parent - $half-item;
