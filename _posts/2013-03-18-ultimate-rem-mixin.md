@@ -1,8 +1,7 @@
 ---
 title: The ultimate PX/REM mixin
 layout: post
-preview: true
-comments: false
+comments: true
 ---
 <section id="rem">
 <h2>About REM <a href="#rem" class="section-anchor">#</a></h2>
@@ -27,7 +26,7 @@ body {
 <h2>Mixin to the rescue! <a href="#mixin" class="section-anchor">#</a></h2>
 <p>Having to define twice the font-size property everytime you have to set the size of a text element sucks. This is the moment you'd like to have a wonderful mixin handling everything for you. Well, <strong>WISH GRANTED!</strong></p>
 <h3>About the mixin</h3>
-<p>There are already many mixins handling <code>px</code> fallback for <code>rem</code> usage, most of them do it very well. However what this one pushes things a step further. It is inspired by <a href="https://github.com/drublic/Sass-Mixins/blob/master/rem.scss">this rem mixin</a> by <a href="https://twitter.com/drublic">Hans Christian Reinl</a>, revamped by myself to make it even more awesome. Here are the features:</p>
+<p>There are already many mixins handling <code>px</code> fallback for <code>rem</code> usage, most of them do it very well. However this one pushes things a step further. It is inspired by <a href="https://github.com/drublic/Sass-Mixins/blob/master/rem.scss">this rem mixin</a> by <a href="https://twitter.com/drublic">Hans Christian Reinl</a>, revamped by myself to make it even more awesome. Here are the features:</p>
 <ul>
 <li>Accepts either <code>px</code> or <code>rem</code> as an input value</li>
 <li>Accepts (almost) any property as an input, not only font-size</li>

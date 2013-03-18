@@ -67,14 +67,14 @@ comments: false
 <p>It's pretty easy. It divides <code>360°</code> by the number of elements you ask for to compute the angle between 2 items. Then, it runs a @for loop using pseudo-selectors (<code>:nth-of-type()</code>) to assign the appropriate transforms to each element.</p>
 {% highlight css %}
 $rot: 0; /* Rotation angle for the current item */
-$angle: 360 / $nbItems; /* Angle between two items */
+$angle: 360 / $nb-items; /* Angle between two items */
 
-@for $i from 1 to $nbItems+1 {
+@for $i from 1 to $nb-items+1 {
 
 	&:nth-of-type(#{$i}) {
 		transform: 
 			rotate(#{$rot}deg)       /* Rotate the axis */
-			translate($circleSize/2) /* Move the item from the center */ 
+			translate($circle-size/2) /* Move the item from the center */ 
 			rotate(-#{$rot}deg);     /* Rotate the item back to its default position */
 	}
 
@@ -104,7 +104,7 @@ $('.parent').children().each(function() {
 {% endhighlight %}
 <p>Then, the CSS would be slightly altered:</p>
 {% highlight css %}
-@for $i from 1 to $nbItems+1 {
+@for $i from 1 to $nb-items+1 {
 
 	&.#{$class-for-IE}#{$i} {
 		/* ... */
@@ -120,11 +120,11 @@ $margin-left: cos($rot * pi() / 180) * $half-parent - $half-item;
 margin: $margin-top 0 0 $margin-left;
 {% endhighlight %}
 <p>Yes, it's definitely not the easiest way to do it as it involves some complicated calculations (thanks Ana for the formulas), but it works like a charm!</p>
-<p>Now how do we use all this stuff for IE8- without messing with modern browser stuff? I found that the easiest solution is to add a flag to the mixin: if it's turned on, then it means we need to support old IE, thus we use classes and margins. Else, we use transforms and pseudo-selectors.Consider the following structure:</p>
+<p>Now how do we use all this stuff for IE8- without messing with modern browser stuff? I found that the easiest solution is to add a flag to the mixin: if it's turned on, then it means we need to support old IE, thus we use classes and margins. Else, we use transforms and pseudo-selectors. Consider the following structure:</p>
 {% highlight css %}
 @mixin putOnCircle($nb-items, $circle-size, $item-size, $class-for-IE: false) {
 	/* ... */
-	@for $i from 1 to $nbItems+1 {
+	@for $i from 1 to $nb-items+1 {
 		
 		/* If we don't plan on supporting old IE */
 		@if $class-for-IE == false {
