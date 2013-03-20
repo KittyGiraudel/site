@@ -68,6 +68,25 @@ h4, .h4 {
 }
 
 /**
+ * ToC
+ */
+.table-of-contents {
+	float: right;
+	width: 40%;
+	background: rgba(255,255,255,.3);
+	font-size: 0.8em;
+	padding: 1em 1.5em;
+	margin: 0 0 1em 1em;
+
+	ol { color: silver; }
+
+	h2 {
+		margin: .1em 0 .35em;
+		@include rem(2.8);
+	}
+}
+
+/**
  * Text content
  */
 p, ul, ol {
