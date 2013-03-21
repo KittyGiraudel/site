@@ -177,4 +177,12 @@ $space: 1em;
 	padding: $space;
 	font-style: italic;
 	margin-bottom: $space;
+
+	.table-of-contents ~ section & {
+		margin-right: 42%;
+	}
+
+	@include breakpoint(small) {
+		margin-right: 0;
+	}
 }
