@@ -8,6 +8,7 @@ disqus: http://hugogiraudel.com/blog/css-gradients
 summary: true
 ---      
 <section>          
+<p class="explanation">The following is a guest post by <a href="http://twitter.com/thebabydino" target="blank">Ana Tudor</a>. She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.</p>
 <p>I had no idea how powerful CSS gradients could be until late 2011, when I found the <a href="http://lea.verou.me/css3patterns/" target="blank">CSS3 Patterns Gallery</a> made by Lea Verou. The idea that you can obtain many shapes using just gradients was a starting point for many CSS experiments I would later do.</p>
 <p>Recently, while browsing through the demos on CodePen, I came across <a href="http://codepen.io/bitmap/pen/eBbHt" target="blank">a CSS3 Color Wheel</a> and thought <q>hey, I could do it with just one element and gradients</q>. So I did and the result can be seen <a href="http://codepen.io/thebabydino/pen/hkxGp" target="blank">here</a>. And now I'm going to explain the reasoning behind it.</p>
 <img src="/images/css-gradients__rainbow_wheel_screen.gif" class="pull-image--right" alt="Rainbow wheel">
