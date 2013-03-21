@@ -5,11 +5,11 @@
 /**
  * Main wrapper
  * Contains .header, .main, .sidebar, .footer
- * [1] - Equals 1140px
+ * 1. Equals 1140px
  */
 .wrapper {
 	width: 100%;
-	max-width: 57em; /* [1] */
+	max-width: 57em; /* 1 */
 	margin:  0 auto;
 	padding: 0 1em;
 

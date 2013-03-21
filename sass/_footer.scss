@@ -4,12 +4,12 @@
 
 /**
  * Footer element
- * [1] - clear .main and .sidebar floats
+ * 1. Clear .main and .sidebar floats
  */
 .footer {
 	@extend %clearfix;
 	@include rem(1.4);
-	clear: both; /* [1] */
+	clear: both; /* 1 */
 	padding: 2.5em 0;
 	border-top: 3px solid #D1D1D1;
 

@@ -43,7 +43,7 @@
 	
 	span {
 		text-transform: uppercase;
-		color: $darkgrey;
+		color: $lightgrey;
 	}
 }
 
@@ -93,7 +93,7 @@
 
 /**
  * Active class for the main nav
- * [1] - same as "display: block" or "visibility: visible"
+ * 1. Same as "display: block" or "visibility: visible"
  * Source: https://github.com/csswizardry/csswizardry.github.com/blob/master/css/ui/site-nav.scss
  */
 $pages: home, resume;
@@ -101,7 +101,7 @@ $pages: home, resume;
     .page--#{$page} .site-nav__#{$page} {
         cursor: text;
         &:after {
-        	content: ''; /* [1] */
+        	content: ''; /* 1 */
 		}
     }
 }

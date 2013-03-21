@@ -15,13 +15,13 @@ h4, .h4 {
 	font-weight: normal;
 	line-height: 1.3;
 	font-family: 'Orienta', sans-serif;
-	color: $lightgrey;
+	color: $darkgrey;
 }
 
 h1, .h1 {
 	@include rem(3.6);
 	font-family: 'Sanchez', sans-serif;
-	text-shadow: 0 1px white, 0 2px $darkgrey;
+	text-shadow: 0 1px white, 0 2px $lightgrey;
 	margin: 1em 0 0 0;
 	text-transform: uppercase;
 }
@@ -37,7 +37,7 @@ h2, .h2 {
 		*display: inline;
 		display: inline-block;
 		padding-left: .3em;
-		color: $darkgrey;
+		color: $lightgrey;
 		opacity: 0;
 		pointer-events: none;
 		@include transition(.15s);
@@ -79,7 +79,7 @@ h4, .h4 {
 	margin: 0 0 1em 1em;
 	border-left: .5em solid white;
 
-	ul { color: silver; }
+	ul { color: $lightgrey; }
 
 	h2 {
 		margin: .1em 0 .35em;
@@ -106,28 +106,28 @@ ul, ol {
 
 /**
  * Images
- * [1] - prevent images to break outside their container
- * [2] - keep ratio when resized
+ * 1. Prevent images to break outside their container
+ * 2. keep ratio when resized
  */
 img {
-	max-width: 100%; /* [1] */
-	height: auto;    /* [2] */
+	max-width: 100%; /* 1 */
+	height: auto;    /* 2 */
 	margin: $space auto;
 	display: block;
 }
 
 /**
  * Quotes
- * [1] - same appearance as .explanation
- * [2] - in case there is an image + text in the blockquote
- * [3] - avoid odd gap at the bottom of a blockquote
+ * 1. Same appearance as .explanation
+ * 2. In case there is an image + text in the blockquote
+ * 3. Avoid odd gap at the bottom of a blockquote
  */
 /*blockquote*/.quote {
-	@extend .explanation; /* [1] */
-	@extend %clearfix;    /* [2] */
+	@extend .explanation; /* 1 */
+	@extend %clearfix;    /* 2 */
 	
 	p:last-of-type {
-		margin-bottom: 0; /* [3] */
+		margin-bottom: 0; /* 3 */
 	}
 }
 

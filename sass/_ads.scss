@@ -4,12 +4,12 @@
 
 /**
  * Change default styles of CarbonAds
- * [1] - override inline styles
+ * 1. Override inline styles
  */
 .carbonad {
-	background: rgba(0,0,0,.05) !important; /* [1] */
-	border: 1px solid rgba(0,0,0,.1) !important; /* [1] */
-	height: auto !important; /* [1] */
+	background: rgba(0,0,0,.05) !important;      /* 1 */
+	border: 1px solid rgba(0,0,0,.1) !important; /* 1 */
+	height: auto !important;                     /* 1 */
 	border-radius: 2px;
 }
 

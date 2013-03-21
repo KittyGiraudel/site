@@ -26,10 +26,10 @@
 
 /**
  * Mixin used by helper class %pull-quote
- * [1] - returns `left` if given `right` and vice versa
+ * 1. returns `left` if given `right` and vice versa
  */
 @mixin pull-quote($direction) {
-	$opposite: opposite-position($direction); /* [1] */
+	$opposite: opposite-position($direction); /* 1 */
 
 	text-align: $opposite;
 	float: $direction;  
@@ -41,10 +41,10 @@
  
 /**
  * Mixin used by helper class %pull-image
- * [1] - returns `left` if given `right` and vice versa
+ * 1. returns `left` if given `right` and vice versa
  */
 @mixin pull-image($direction) {
-	$opposite: opposite-position($direction); /* [1] */
+	$opposite: opposite-position($direction); /* 1 */
 
 	float: $direction;
 	margin: 0 0 1em 0;
@@ -56,9 +56,9 @@
  * ---------- */
 
 $pink: #FF3D7F;
-$lightgrey: #444;
+$darkgrey: #444;
 $mediumgrey: #666;
-$darkgrey: #999;
+$lightgrey: #999;
 $space: 1em;
 
 /* -------- *
@@ -67,9 +67,9 @@ $space: 1em;
 
 /**
  * Clearfix
- * [1] - only meant to be extended from within the stylesheets
+ * 1. only meant to be extended from within the stylesheets
  */
-%clearfix { /* [1] */
+%clearfix { /* 1 */
 	&:after {
     	display: table;
     	content: "";
@@ -163,13 +163,14 @@ $space: 1em;
  * Right after main title in articles
  */
 /*p*/.date {
-	color: $darkgrey;
+	color: $lightgrey;
 	text-transform: uppercase;
 	margin-top: .5em;
 }
 
 /**
  * Often used as an introduction paragraph in articles
+ * 1. To avoid overlapping in case there is a table of contents
  */
 /*p*/.explanation {
 	background: #F4F4F4;
@@ -178,7 +179,7 @@ $space: 1em;
 	font-style: italic;
 	margin-bottom: $space;
 
-	.table-of-contents ~ section & {
+	.table-of-contents + section & { /* 1 */
 		margin-right: 42%;
 	}
 

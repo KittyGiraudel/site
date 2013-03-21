@@ -5,7 +5,7 @@
 /**
  * Font files from WeLoveIconFonts
  * http://weloveiconfonts.com
- * [1] - prevent screen readers to read (future proof)
+ * 1. Prevent screen readers to read (future proof)
  */
 @font-face {
   font-family: 'FontAwesome';
@@ -22,7 +22,7 @@
 [class*=" fontawesome-"] {
   display: inline-block;
   text-decoration: inherit;
-  speak: none; /* [1] */
+  speak: none; /* 1 */
 
   li & {
     width: 1.25em;

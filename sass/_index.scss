@@ -4,8 +4,8 @@
 
 /**
  * List of articles on the home page
- * [1] - remove top border if first list item
- * [2] - fake a bottom border if last list item
+ * 1. Remove top border if first list item
+ * 2. Fake a bottom border if last list item
  */
 .list-articles {
 	margin: 1em 2em 0 0;
@@ -26,8 +26,8 @@
 			padding: 0.7em 0 .5em;
 		}
 
-		&:first-of-type { border-top: none; }         /* [1] */
-		&:last-of-type { box-shadow: 0 1px #F2F2F2; } /* [2] */
+		&:first-of-type { border-top: none; }         /* 1 */
+		&:last-of-type { box-shadow: 0 1px #F2F2F2; } /* 2 */
 	}
 
 	a {
@@ -59,16 +59,16 @@
 	@include rem(1.7);
 	text-indent: 3px;
 	margin-bottom: 0;
-	color: $darkgrey;
+	color: $lightgrey;
 }
 
 /**
  * Special articles
- * [1] - if article is a link to Codrops
- * [2] - if article is a guest post
+ * 1. If article is a link to Codrops
+ * 2. If article is a guest post
  */
-.list-articles__codrops, /* [1] */
-.list-articles__guest {  /* [2] */
+.list-articles__codrops, /* 1 */
+.list-articles__guest {  /* 2 */
 	position: absolute;
 	opacity: .2;
 	right: 0;
@@ -88,7 +88,7 @@
 		border: none;
 		line-height: 1.5;
 		display: inline;
-		color: $darkgrey;
+		color: $lightgrey;
 	}
 }
 

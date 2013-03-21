@@ -4,24 +4,24 @@
 
 /**
  * RESET ALL THE THINGS! (barbarian style)
- * [1] - include pseudo-elements which are not target by * 
- * [2] - apply proper box-sizing to all elements
- * [3] - barbarian reset
+ * 1. Include pseudo-elements which are not target by * 
+ * 2. Apply proper box-sizing to all elements
+ * 3. Barbarian reset
  */
 *,
 *:before, 
-*:after {                            /* [1] */
-	@include box-sizing(border-box); /* [2] */
-	padding: 0;                      /* [3] */
-	margin: 0;                       /* [3] */
+*:after {                            /* 1 */
+	@include box-sizing(border-box); /* 2 */
+	padding: 0;                      /* 3 */
+	margin: 0;                       /* 3 */
 }
 
 /**
  * Document root
- * [1] - 62.5% equals 10 px; used as a baseline for REM unit
+ * 1. 62.5% equals 10 px; used as a baseline for REM unit
  */
 html {
-	font: 62.5%/1.55 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* [1] */
+	font: 62.5%/1.55 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* 1 */
 	color: #555;
 	text-shadow: 0 1px rgba(255,255,255,.6);
 	border-left: 6px solid $pink;
@@ -35,10 +35,10 @@ html {
 
 /**
  * Shake your <body>
- * [1] - 20px, used as a baseline for EM unit
+ * 1. 20px, used as a baseline for EM unit
  */
 body {
-	@include rem(2); /* [1] */ 
+	@include rem(2); /* 1 */ 
 }
 
 /**
