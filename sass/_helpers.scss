@@ -183,6 +183,6 @@ $space: 1em;
 	}
 
 	@include breakpoint(small) {
-		margin-right: 0;
+		margin-right: 0 !important;
 	}
 }
