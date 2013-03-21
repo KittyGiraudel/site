@@ -10,7 +10,7 @@ disqus: http://hugogiraudel.com/blog/less-to-sass.html
 <p>Anyway and before anything, please note I’m not a hardcore CSS preprocessor user. I’m more like a novice with these tools, but I’ve already worked a little bit on 2 of them: firstly LESS then Sass. I recently moved from LESS to Sass and don’t plan on going back.</p>
 </section>
 <section id="why-less-as-a-first-try">
-<h2>Why LESS as a first try<a href="#why-less-as-a-first-try" class="section-anchor">#</a></h2>
+<h2>Why LESS as a first try <a href="#why-less-as-a-first-try" class="section-anchor">#</a></h2>
 <p>A few weeks ago, I wanted to have a real shot with CSS preprocessors after hours of playing on <a href="http://codepen.io">CodePen</a> so I read a few things to make a choice. To put it simple, there are currently 4 major CSS preprocessors:</p>
 <ul>
 <li><a href="http://sass-lang.com/" title="Sass">Sass</a> built on Ruby</li>
@@ -24,7 +24,7 @@ disqus: http://hugogiraudel.com/blog/less-to-sass.html
 <p>Anyway, that wasn’t the worst thing. I still could learn how to run the server-side part of LESS to compile, or switch to LESSPHP with the help of my brother who uses it at work. No, the worst thing occurred to me when I tried to dig deep down into the entrails of LESS.</p>
 </section>
 <section id="when-i-started-realizing-less-wasnt-the-eldorado">
-<h2>When I started realizing LESS wasn’t the Eldorado<a href="#when-i-started-realizing-less-wasnt-the-eldorado" class="section-anchor">#</a></h2>
+<h2>When I started realizing LESS wasn’t the Eldorado <a href="#when-i-started-realizing-less-wasnt-the-eldorado" class="section-anchor">#</a></h2>
 <p>One of the first “complicated” thing I tried to create was a mixin handling CSS arrows the same way <a href="http://cssarrowplease.com/" title="CSSArrowPlease">CSSArrowPlease</a> does. It took me a couple of hours but I finally succeeded and <a href="https://github.com/HugoGiraudel/LESS-Mixin-for-CSS-arrows" title="LESS Mixin for CSS arrows">hosted it on GitHub</a>. However I noticed something counter-intuitive: conditional statements.</p>
 <h3>LESS and conditional statements</h3>
 <p>The way I wanted to handle my mixin was something which would look like this:</p>
@@ -185,7 +185,7 @@ for(@i = 0; @i &lt; @nbElements; @i++) {
 <p>Anyway, this was waaaaay too much for me. <strong>The point of CSS preprocessors is to easy the CSS development, not to make it harder</strong>. So this is the moment I realized LESS wasn't <em>that</em> good.</p>
 </section>
 <section id="why-i-think-sass-is-better">
-<h2>Why I think Sass is better<a href="#why-i-think-sass-is-better" class="section-anchor">#</a></h2>
+<h2>Why I think Sass is better <a href="#why-i-think-sass-is-better" class="section-anchor">#</a></h2>
 <p>I won't make a complete and detailed comparison between Sass and LESS because some guys did it very well already (<a href="http://css-tricks.com/sass-vs-less/" title="Sass vs LESS">Chris Coyier</a>, <a href="http://fr.slideshare.net/utbkevin/less-vs-sass-css-precompiler-showdown-14068991" title="LESS vs SASS CSS precompiler showdown">Kewin Powell</a>, etc.). I'll only cover the few points I talked about earlier.</p>
 <h3>Sass and conditional statements</h3>
 {% highlight css %}
@@ -223,7 +223,7 @@ for(@i = 0; @i &lt; @nbElements; @i++) {
 </ul>
 </section>
 <section id="less-is-not-so-bad">
-<h2>LESS is not so bad<a href="#less-is-not-so-bad" class="section-anchor">#</a></h2>
+<h2>LESS is not so bad <a href="#less-is-not-so-bad" class="section-anchor">#</a></h2>
 <p>Well, I've been moaning about LESS the whole article, but honestly this is not so bad. At least, it's no so bad if you don't plan on complicated and advanced things. Actually there are things LESS are better at, let me tell you my opinion about it:</p>
 <ul>
 <li><span style="text-decoration: line-through;">LESS provides some really cool color functions (darken, lighten, spin, de/saturate, fade, fadein, fadeout, mix, contrast)</span> (so does Sass)</li>

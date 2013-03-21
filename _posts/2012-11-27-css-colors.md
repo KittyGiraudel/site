@@ -8,7 +8,9 @@ disqus: http://hugogiraudel.com/blog/css-colors.html
 <p>Hi everyone! Today, we will talk about colors in CSS. There are many color specifications and we'll be talking about their history, what they mean and how to use them.</p>
 <p>If you'd like to read about how to build a color scheme for a website then you might be interested in this article <a href="http://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/">Build a color scheme: the fundamentals</a>, or the article <a href="http://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/" title="Principles of Color and the Color Wheel">Principles of Color and the Color Wheel</a> if you'd like to read about the color wheel.</p>
 <p>We will see how we can define colors in style sheets, what each one can be used for and more. But first, let me introduce the topic.</p>
-<h2>Various types of colors in CSS</h2>
+</section>
+<section id="types-of-colors">
+<h2>Various types of colors in CSS <a href="#types-of-colors">#</a></h2>
 <p>Colors in CSS are defined on a <a href="http://en.wikipedia.org/wiki/SRGB">sRGB</a> color space. sRGB stands for "Standard Red Green Blue" where colors are defined through three channels: Red, Green and Blue.</p>
 <p>From there, we have various ways to describe color with CSS. Some of them like keywords and hexadecimal has been there almost since the beginning of the web, while other like HSL or RGB came later.</p>
 <ul>
@@ -21,7 +23,7 @@ disqus: http://hugogiraudel.com/blog/css-colors.html
 <p>Let's talk about each one of these definitions to understand them better.</p>
 </section>
 <section id="rgb">
-<h2>RGB<a href="#rgb" class="section-anchor">#</a></h2>
+<h2>RGB <a href="#rgb" class="section-anchor">#</a></h2>
 <p>Let me start with the RGB syntax since it’s the most fundamental thing to understand in order to comprehend how other notations like hexadecimal work. </p>
 <h3>What is RGB?</h3>
 <p>As I said above, RGB stands for Red, Green and Blue. Remember when you were a little kid and were painting with some cheap watercolor? Well, this is kind of the same thing, except that colors behave a little bit differently on screen and on paper. Let me explain myself:</p>
@@ -126,7 +128,7 @@ disqus: http://hugogiraudel.com/blog/css-colors.html
 <p><em>Note: the <code>rgb()</code> function is perfectly valid CSS2.1. However the <code>rgba()</code> function is part of the CSS3 specification and is not supported by all browsers (Internet Explorer 6, 7, 8).</em></p>
 </section>
 <section id="hex">
-<h2>Hexadecimal<a href="#hex" class="section-anchor">#</a></h2>
+<h2>Hexadecimal <a href="#hex" class="section-anchor">#</a></h2>
 <h3>What is hexadecimal?</h3>
 <p>Most of the time, CSS colors are specified using the hexadecimal format which is a 6 (or 3) characters long string using numbers from 0 to 9 and letters from A to F, starting by the hash sign # (ex: #1A2B3C). We refer as this syntax as a “hex triplet”.</p>
 <p>Okay, but what does this mean? I agree it’s not that simple. Basically, hexadecimal colors are some sort of code for RGB colors: the first two characters stand for the red value; the 3rd and 4th characters stand for greens; and the last two characters are here for the blue.</p>
@@ -139,7 +141,7 @@ disqus: http://hugogiraudel.com/blog/css-colors.html
 <p><strong>Important</strong>: however beware of the opacity property. It changes the opacity of the element itself, and all its child elements. Plus, it is <a href="http://caniuse.com/#feat=css-opacity">not supported by Internet Explorer 6, 7 and 8</a>.</p>
 </section>
 <section id="keywords">
-<h2>Keywords<a href="#" class="section-anchor">#</a></h2>
+<h2>Keywords <a href="#" class="section-anchor">#</a></h2>
 <h3>What are color keywords?</h3>
 <p>The fact is, hexadecimal is really unfriendly. Nobody knows what color is associated to a hex triplet at the first glance, because it’s a computed syntax by the machine and for the machine.</p>
 <p>RGB is slightly better, especially when you’re using percentage values but it’s not wonderful either. If I tell you <code>rgb(54%, 69%, 23%)</code>, can you tell me what color it will be? Even approximately? I guess not.</p>
@@ -203,7 +205,7 @@ color: red;
 <p class="note">Note: the cap on the C letter is not required. It’s only a writing convention.</p>
 </section>
 <section id="hsl">
-<h2>HSL<a href="#hsl" class="section-anchor">#</a></h2>
+<h2>HSL <a href="#hsl" class="section-anchor">#</a></h2>
 <h3>What is HSL?</h3>
 <p>HSL stands for Hue, Saturation and Lightness. Please don’t worry, HSL is not another format of color. It’s only another representation of the RGB model. This cylindric representation aims at showing the RGB model in a more intuitive way than the previous seen cube.</p>
 <img src="/images/css-colors__color-hsl.jpg" alt="Color HSL" />
@@ -250,7 +252,7 @@ color: red;
 {% endhighlight %}
 </section>
 <section id="system-colors">
-<h2>System colors<a href="#system-colors" class="section-anchor">#</a></h2>
+<h2>System colors <a href="#system-colors" class="section-anchor">#</a></h2>
 <p>You may or may not have heard about System colors. At first, I didn’t want to talk about them because they are deprecated in the CSS3 specification but I thought it could be interesting to drop a few lines just in a matter of curiosity.</p>
 <p>System colors are a little bit special since they are not matched to a RGB equivalent, at least not directly. They are keywords associated to a color related to the user’s operating system (Windows XP, Mac OS X, Linux Ubuntu, etc.) like <code>buttonFace</code> or <code>activeBorder</code>.</p>
 <p>Since the goal of CSS specifications is to standardize things, you understand why they announced System colors as deprecated. Plus, not all operating systems support all the System color keywords; basically it’s a mess.</p>
@@ -279,7 +281,7 @@ color: red;
 <p>What I think is really cool with HSL however is the fact you can get a shade instead of another color by tweaking the lightness. This is a thing you can’t do with other syntaxes.</p>
 </section>
 <section id="preprocessors">
-<h2>Colors ands CSS preprocessors<a href="#preprocessors" class="section-anchor">#</a></h2>
+<h2>Colors ands CSS preprocessors <a href="#preprocessors" class="section-anchor">#</a></h2>
 <p>CSS preprocessors (at least some of them) provide built-in functions to play with colors. Things like saturate, darken, hue rotation and such. Let me introduce some of them.</p>
 <h3>LESS (<a href="http://lesscss.org/#-color-functions">doc</a>)</h3>
 {% highlight css %}
@@ -349,7 +351,7 @@ lightness(color)    /* Gets the lightness component */
 {% endhighlight %}
 </section>
 <section id="final-words">
-<h2>Final words<a href="#final-words" class="section-anchor">#</a></h2>
+<h2>Final words <a href="#final-words" class="section-anchor">#</a></h2>
 <p>As I was documenting myself to write this article, I understood color stuff is very complicated either in optical, in paint or in digital. Those notions of “hex triplet”, “chromatic wheel”, “base 16”, “alpha” are so abstract we can face some difficulties to understand what they mean, what they represent.</p>
 <p>Thankfully in CSS we don’t have to use a base 16 converter everytime we want to describe a color. Tools do it for us. But this is a really interesting topic, so I’d recommand you read about it. You’d be surprise how huge it can be!</p>
 <p>Anyway, back to CSS, let me (re)introduce you a few awesome tools and resources to help you deal with colors:</p>

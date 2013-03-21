@@ -50,7 +50,7 @@ $opposite: opposite-position($position); /* Outputs "bottom left" */
 <p>This snippet forces all HTML5 elements to be displayed as block-elements, even by unsupported browsers.</p>
 </section>
 <section id="experimental">
-<h2>Experimental()  <a href="#experimental" class="section-anchor">#</a></h2>
+<h2>Experimental() <a href="#experimental" class="section-anchor">#</a></h2>
 <p><a href="http://compass-style.org/reference/compass/css3/shared/">Experimental()</a> has to be one of the most used function in Compass and probably one of the less known at the same time.</p>
 <p>Basically, <code>experimental()</code> allows you to define mixins outputing content depending on enabled vendor prefixes. It is used in <strong>all</strong> CSS3 built-in mixins. When you use <code>@include box-sizing(border-box)</code>, here is what happen:</p>
 {% highlight css %}
