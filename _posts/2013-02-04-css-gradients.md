@@ -5,6 +5,7 @@ guest: Ana Tudor
 comments: true
 codepen: true
 disqus: http://hugogiraudel.com/blog/css-gradients
+summary: true
 ---      
 <section>          
 <img src="/images/css-gradients__rainbow_wheel_screen.gif" class="pull-image--right" alt="Rainbow wheel">

@@ -3,6 +3,7 @@ title: A closer look at my Sass structure
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/sass-structure
+summary: true
 ---
 <section>          
 <p>Hi guys! Ever since the redesign a few weeks ago I have never stopped trying optimizing the performance of the site. One of my biggest concerns was having a stylesheet which is both nice and efficient.</p>

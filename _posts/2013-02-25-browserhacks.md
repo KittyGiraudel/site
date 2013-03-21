@@ -4,7 +4,7 @@ layout: post
 comments: true
 ---
 <section>
-<p>Hey guys! Just a quick post to anounce the very recent launch of [Browserhacks](http://browserhacks.com)!</p>
+<p>Hey guys! Just a quick post to anounce the very recent launch of <a href="http://browserhacks.com">Browserhacks</a>!</p>
 <p class="explanation">Browserhacks is an extensive list of browser specific CSS (and somewhat JavaScript) hacks gathered from all over the interwebz.</p>
 </section>
 <section id="why">

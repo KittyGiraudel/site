@@ -2,6 +2,7 @@
 title: Sass-ify a CSS shape
 layout: post
 comments: true
+summary: true
 ---
 <section>          
 <img class="pull-image--right" src="/images/sass-mixin-star__css-star.png">
