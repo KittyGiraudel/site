@@ -3,7 +3,6 @@ title: My development environment
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/development-environment
-summary: true
 ---
 <section>         
 <p class="explanation"><strong>Edit (2013/02/21):</strong> this post might contain outdated informations since I <a href="http://hugogiraudel.com/2013/02/21/jekyll/">moved my site to Jekyll and GitHub Pages</a>.</p> 

@@ -3,10 +3,8 @@ title: A closer look at my Sass structure
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/sass-structure
-summary: true
 ---
 <section>          
-<p class="explanation"><strong>Edit (2013/02/27):</strong> this post contains valuable yet outdated informations. To have a look at my current Sass structure, please have a look at <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/sass">the GitHub repo</a>.</p>
 <p>Hi guys! Ever since the redesign a few weeks ago I have never stopped trying optimizing the performance of the site. One of my biggest concerns was having a stylesheet which is both nice and efficient.</p>
 <p>I think I’ve come pretty close to this point thus I thought it might be a good idea to write a bit about it and give you an inside glance at the whole thing.</p>
 <p>Please, consider this post as both a way to introduce some people to Sass and a way to ask Sass experts some advices about the way I handled things. Any comment appreciated. :)</p>

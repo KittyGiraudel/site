@@ -73,7 +73,7 @@ h4, .h4 {
 .table-of-contents {
 	float: right;
 	width: 40%;
-	background: rgba(255,255,255,.3);
+	background: #F4F4F4;
 	font-size: 0.8em;
 	padding: 1em 1.5em;
 	margin: 0 0 1em 1em;
@@ -83,6 +83,12 @@ h4, .h4 {
 	h2 {
 		margin: .1em 0 .35em;
 		@include rem(2.8);
+	}
+
+	@include breakpoint(small) {
+		float: none;
+		width: 100%;
+		margin-right: 0;
 	}
 }
 
