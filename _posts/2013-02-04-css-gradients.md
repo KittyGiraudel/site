@@ -5,6 +5,7 @@ guest: Ana Tudor
 comments: true
 codepen: true
 disqus: http://hugogiraudel.com/blog/css-gradients
+summary: true
 ---      
 <section>          
 <p class="explanation">The following is a guest post by <a href="http://twitter.com/thebabydino" target="blank">Ana Tudor</a>. She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.</p>

@@ -3,6 +3,7 @@ title: A closer look at my Sass structure
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/sass-structure
+summary: true
 ---
 <section>          
 <p class="explanation"><strong>Edit (2013/02/27):</strong> this post contains valuable yet outdated informations. To have a look at my current Sass structure, please have a look at <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/sass">the GitHub repo</a>.</p>
