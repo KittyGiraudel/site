@@ -82,7 +82,7 @@ h4, .h4 {
 
 	h2 {
 		margin: .1em 0 .35em;
-		@include rem(2.8);
+		@include rem(2.4);
 	}
 
 	@include breakpoint(small) {

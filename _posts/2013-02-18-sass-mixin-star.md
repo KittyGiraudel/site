@@ -5,15 +5,15 @@ comments: true
 summary: true
 ---
 <section>          
-<img class="pull-image--right" src="/images/sass-mixin-star__css-star.png">
 <p>A couple of days ago, <a href="http://twitter.com/thebabydino">Ana Tudor</a> showed me how she managed to do a <a href="http://codepen.io/thebabydino/pen/DmklE">pure CSS 6-point star</a> with a single element.</p>
 <p>To be truely honest, I wasn’t impressed that much since I am pretty familiar with Ana’s work which is always amazing. If you haven’t seen <a href="http://stackoverflow.com/users/1397351/ana">her 3D geometric shapes</a> made of pure CSS, then you definitely should.</p>
+<img class="pull-image--right" src="/images/sass-mixin-star__css-star.png">
 <p>Anyway, when I saw this I thought it could be fun to make a <a href="http://codepen.io/HugoGiraudel/pen/LkoGE">Sass version</a> of it to clean the code and ease the use. Let me show you what I ended up with.</p>
 </section>
 <section id="shape">
 <h2>Understand the shape <a href="#shape" class="section-anchor">#</a></h2>
-<img src="/images/sass-mixin-star__rhombius.png" class="pull-image--right">
 <p>The first thing was to understand how Ana managed to achieve such a shape with a single element (and 2 pseudo-elements). Long story short:  <strong>chained CSS transforms</strong>.</p>
+<img src="/images/sass-mixin-star__rhombius.png" class="pull-image--right">
 <p>Basically she stacks the element and its 2 pseudo-elements on top of each other after applying several chained transforms to each of them to have the appropriate shape (a <a href="http://www.mathopenref.com/rhombus.html">rhombus</a>).</p>
 <p>Instead of covering everything in here, I let you have a look at <a href="http://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb">this very clear explanation</a> by Ana herself on CodePen.</p>
 <p class="note">Note: we can do it with one single pseudo-element with the <a href="http://davidwalsh.name/css-triangles">border shaping trick</a> but the hover doesn't feel right, and without pseudo-element with linear gradients.</p>
