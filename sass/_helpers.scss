@@ -179,7 +179,7 @@ $space: 1em;
 	font-style: italic;
 	margin-bottom: $space;
 
-	.table-of-contents + section & { /* 1 */
+	.table-of-contents ~ section & { /* 1 */
 		margin-right: 42%;
 	}
 
