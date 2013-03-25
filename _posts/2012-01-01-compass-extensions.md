@@ -1,8 +1,7 @@
 ---
 title: 8 Compass extensions you may not know
 layout: post
-preview: true
-comments: false
+comments: true
 ---
 <section>
 <p><a href="http://compass-style.org/">Compass</a> is a CSS authoring framework dedicated to <a href="http://sass-lang.com/">Sass</a>. Not only is it insanely powerful, but it also includes a large range of built-in functions and mixins, easing daily tasks.</p>
@@ -20,7 +19,7 @@ $position: top right;
 $opposite: opposite-position($position); /* Outputs "bottom left" */
 {% endhighlight %}
 <p class="note">Note: the opposite of <code>center</code> is <code>center</code>.</p>
-<p>I personally used this extension in this very site, when it comes to images and quotes pulling (<a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L32">L32</a> and <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L47">L47</a>.</p>
+<p>I personally used this extension in this very site, when it comes to images and quotes pulling (<a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L32">L32</a> and <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L47">L47</a>).</p>
 {% highlight css %}
 @mixin pull-quote($direction) {
 	$opposite: opposite-position($direction);
@@ -91,7 +90,7 @@ $opposite: opposite-position($position); /* Outputs "bottom left" */
 <h2>Hacks <a href="#hacks" class="section-anchor">#</a></h2>
 <p>Hum, <a href="http://compass-style.org/reference/compass/utilities/general/hacks/">hacks</a>. I know what you think: <em>NOOOOOO!</em>. Anyway, Compass provides a couple of features to take advantage of Internet Explorer inconsistencies and weaknesses.</p>
 <p>You may have already heard of <code>has-layout</code>. <a href="http://www.satzansatz.de/cssd/onhavinglayout.html">This article</a> explains it way better than I could:</p>
-<blockquote><p>“Layout” is an IE/Win proprietary concept that determines how elements draw and bound their content, interact with and relate to other elements, and react on and transmit application/user events.</p>
+<blockquote class="quote"><p>“Layout” is an IE/Win proprietary concept that determines how elements draw and bound their content, interact with and relate to other elements, and react on and transmit application/user events.</p>
 <p>This quality can be irreversibly triggered by some CSS properties. Some HTML elements have “layout” by default.</p>
 <p>Microsoft developers decided that elements should be able to acquire a “property” (in an object-oriented programming sense) they referred to as hasLayout, which is set to true when this rendering concept takes effect.</p></blockquote>
 <p>Back to our business: Compass gives two ways to trigger <code>hasLayout</code> on elements: with <code>zoom</code> (using the <code>zoom</code> MS proprietary property) or with <code>block</code> (using the <code>display</code> property). I'd go with the zoom, even if it doesn't validate mostly because I'm used to.</p>
@@ -144,11 +143,11 @@ $opposite: opposite-position($position); /* Outputs "bottom left" */
 }
 {% endhighlight %}
 <p>In this example, the element will have a size relative to the background-image it uses.</p>
-<p class="note">Note: beware, the path has to be relative to your project's image directory.</p>
+<p class="note">Note: beware, the path has to be relative to your project's image directory, defined in your <code>config.rb</code> file.</p>
 </section>
 <section id="math-functions">
 <h2>Math functions <a href="#math-functions" class="section-anchor">#</a></h2>
-<p>If you're like a total nerd and wants to do CSS with math, then you'll be pleased to know Compass has a bunch of built-in <a href="http://compass-style.org/reference/compass/helpers/math/">math functions</a> like <code>sin()</code>, <code>cos()</code>, <code>pi()</code> among a few others.</p>
+<p>If you're like a total nerd and want to do CSS with math, then you'll be pleased to know Compass has a bunch of built-in <a href="http://compass-style.org/reference/compass/helpers/math/">math functions</a> like <code>sin()</code>, <code>cos()</code>, <code>pi()</code> among a few others.</p>
 <p>I once had to use <code>sin()</code> in order to make a <a href="http://hugogiraudel.com/2013/02/18/sass-mixin-star/">mixin for a pure CSS 6-points star</a> but that's pretty much it. If you happen to have a real live use case for one of those functions, I'd be more than pleased to know more about it.</p>
 {% highlight css %}
 $n: 4;
