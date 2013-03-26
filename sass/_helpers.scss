@@ -78,11 +78,12 @@ $space: 1em;
 
 /**
  * Quotes & images pulling
+ * 1. Center images/quotes on small screens
  */
 %pull-image {
 	max-width: 15em;
 
-	@include breakpoint(small) {
+	@include breakpoint(small) { /* 1 */
 		float: none;
 		width: 100%;
 		margin: $space auto;
@@ -102,7 +103,7 @@ $space: 1em;
 	&:before { content: "\201c"; }
 	&:after  { content: "\201d"; }
 
-	@include breakpoint(small) {
+	@include breakpoint(small) { /* 1 */
 		float: none;
 		margin: $space auto;
 		border: .5em solid $pink;
@@ -114,17 +115,23 @@ $space: 1em;
 	}
 }
 
+/**
+ * Creates helpers for both images and quotes
+ * for both directions (left and righ)
+ * 1. Extends default styles no matter the direction
+ * 2. Applies styles according to the given direction
+ */
 @each $dir in left, right {
   /*blockquote*/
   .pull-quote--#{$dir} {
-    @extend %pull-quote;
-    @include pull($dir, true);
+    @extend %pull-quote;        /* 1 */
+    @include pull($dir, true);  /* 2 */
   }
 
   /*img*/
   .pull-image--#{$dir} {
-    @extend %pull-image;
-    @include pull($dir, false);
+    @extend %pull-image;        /* 1 */
+    @include pull($dir, false); /* 2 */
   }
 }
 
