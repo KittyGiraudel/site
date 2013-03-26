@@ -78,17 +78,6 @@ $space: 1em;
 /**
  * Quotes & images pulling
  */
-@each $dir in left, right {
-  /*blockquote*/.pull-quote--#{$dir} {
-    @extend %pull-quote;
-    @include pull($dir, true);
-  }
-
-  /*image*/.pull-image--#{$dir} {
-    @extend %pull-image;
-    @include pull($dir, false);
-  }
-}
 
 %pull-image {
 	max-width: 15em;
@@ -119,13 +108,25 @@ $space: 1em;
 	@include breakpoint(small) {
 		float: none;
 		margin: $space auto;
-		border: 5px solid $pink;
+		border: .5em solid $pink;
 		border-left:  none;
 		border-right: none;
 		text-align: center;
 		padding: $space 0.5em;
 		max-width: 100%;
 	}
+}
+
+@each $dir in left, right {
+  /*blockquote*/.pull-quote--#{$dir} {
+    @extend %pull-quote;
+    @include pull($dir, true);
+  }
+
+  /*image*/.pull-image--#{$dir} {
+    @extend %pull-image;
+    @include pull($dir, false);
+  }
 }
 
 /**
