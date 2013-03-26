@@ -1,3 +1,13 @@
+/* ---------- *
+ * $VARIABLES *
+ * ---------- */
+
+$pink: #FF3D7F;
+$darkgrey: #444;
+$mediumgrey: #666;
+$lightgrey: #999;
+$space: 1em;
+
 /* ------- *
  * $MIXINS *
  * ------- */
@@ -33,10 +43,10 @@
 
 	text-align: $opposite;
 	float: $direction;  
-	margin: 0 0 .5em 0;
-	margin-#{$opposite}: 1em;
-	border-#{$opposite}: 6px solid hotpink;
-	padding-#{$opposite}: 1em;
+	margin: 0 0 $space 0;
+	margin-#{$opposite}: $space;
+	border-#{$opposite}: 6px solid $pink;
+	padding-#{$opposite}: $space;
 }
  
 /**
@@ -47,19 +57,9 @@
 	$opposite: opposite-position($direction); /* 1 */
 
 	float: $direction;
-	margin: 0 0 1em 0;
-	margin-#{$opposite}: 1em;
+	margin: 0 0 $space 0;
+	margin-#{$opposite}: $space;
 }
-
-/* ---------- *
- * $VARIABLES *
- * ---------- */
-
-$pink: #FF3D7F;
-$darkgrey: #444;
-$mediumgrey: #666;
-$lightgrey: #999;
-$space: 1em;
 
 /* -------- *
  * $HELPERS *
