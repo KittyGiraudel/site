@@ -72,16 +72,15 @@ $space: 1em;
 /**
  * Prevent icon to stick to the text
  */
-/*span*/.icon-left { margin-right: 5px }
-/*span*/.icon-right { margin-left: 5px }
+/*span*/
+.icon-left { margin-right: 5px }
+.icon-right { margin-left: 5px }
 
 /**
  * Quotes & images pulling
  */
-
 %pull-image {
 	max-width: 15em;
-	display: block;
 
 	@include breakpoint(small) {
 		float: none;
@@ -92,8 +91,6 @@ $space: 1em;
 
 %pull-quote {
 	max-width: 250px;
-	width: 100%;
-	position: relative;
 	line-height: 1.35;
 	@include rem(3);
 
@@ -102,8 +99,8 @@ $space: 1em;
 		font-weight: bold;
 	}
 
-	&:before { content: '\201c'; }
-	&:after  { content: '\201d'; }
+	&:before { content: "\201c"; }
+	&:after  { content: "\201d"; }
 
 	@include breakpoint(small) {
 		float: none;
@@ -118,12 +115,14 @@ $space: 1em;
 }
 
 @each $dir in left, right {
-  /*blockquote*/.pull-quote--#{$dir} {
+  /*blockquote*/
+  .pull-quote--#{$dir} {
     @extend %pull-quote;
     @include pull($dir, true);
   }
 
-  /*image*/.pull-image--#{$dir} {
+  /*img*/
+  .pull-image--#{$dir} {
     @extend %pull-image;
     @include pull($dir, false);
   }
@@ -147,7 +146,8 @@ $space: 1em;
 /**
  * Secondary content; could be ommited without altering the meaning
  */
-/*p*/.note {
+/*p*/
+.note {
 	font-style: italic;
 	padding-left: $space;
 }
@@ -155,7 +155,8 @@ $space: 1em;
 /**
  * Right after main title in articles
  */
-/*p*/.date {
+/*p*/
+.date {
 	color: $lightgrey;
 	text-transform: uppercase;
 	margin-top: .5em;
@@ -165,7 +166,8 @@ $space: 1em;
  * Often used as an introduction paragraph in articles
  * 1. To avoid overlapping in case there is a table of contents
  */
-/*p*/.explanation {
+/*p*/
+.explanation {
 	background: #F4F4F4;
 	border-left: .5em solid white;
 	padding: $space;
