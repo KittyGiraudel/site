@@ -35,30 +35,22 @@ $space: 1em;
 }
 
 /**
- * Mixin used by helper class %pull-quote
+ * Mixin used by helper classes .pull-image--$pos and .pull-quote--$pos
  * 1. returns `left` if given `right` and vice versa
  */
-@mixin pull-quote($direction) {
-	$opposite: opposite-position($direction); /* 1 */
 
-	text-align: $opposite;
-	float: $direction;  
-	margin: 0 0 $space 0;
-	margin-#{$opposite}: $space;
-	border-#{$opposite}: 6px solid $pink;
-	padding-#{$opposite}: $space;
-}
- 
-/**
- * Mixin used by helper class %pull-image
- * 1. returns `left` if given `right` and vice versa
- */
-@mixin pull-image($direction) {
+@mixin pull($direction, $quote: false) {
 	$opposite: opposite-position($direction); /* 1 */
 
 	float: $direction;
 	margin: 0 0 $space 0;
-	margin-#{$opposite}: $space;
+	margin-#{$opposite}: $space;	
+
+	@if($quote) {
+		text-align: $opposite;
+		border-#{$opposite}: 6px solid $pink;
+		padding-#{$opposite}: $space;
+	}
 }
 
 /* -------- *
@@ -89,12 +81,12 @@ $space: 1em;
 @each $dir in left, right {
   /*blockquote*/.pull-quote--#{$dir} {
     @extend %pull-quote;
-    @include pull-quote($dir);
+    @include pull($dir, true);
   }
 
   /*image*/.pull-image--#{$dir} {
     @extend %pull-image;
-    @include pull-image($dir);
+    @include pull($dir, false);
   }
 }
 
