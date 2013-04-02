@@ -2,8 +2,7 @@
 title: Items on circle with CSS
 layout: post
 codepen: true
-preview: true
-comments: false
+comments: true
 ---
 <section>
 <p>If you like to experiment or do a little bit of webdesign, then you have probably already tried to put elements on a circle. Unless you're a CSS hacker, you've probably set a class/ID per item, then used <code>left</code> and <code>top</code> accordingly to position everything around the circle.</p>
