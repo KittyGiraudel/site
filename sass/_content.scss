@@ -122,16 +122,20 @@ img {
 
 /**
  * Quotes
- * 1. Same appearance as .explanation
- * 2. In case there is an image + text in the blockquote
- * 3. Avoid odd gap at the bottom of a blockquote
+ * 1. In case there is an image + text in the blockquote
+ * 2. Avoid odd gap at the bottom of a blockquote
  */
 /*blockquote*/.quote {
-	@extend .explanation; /* 1 */
-	@extend %clearfix;    /* 2 */
+	background: #F4F4F4;
+	border-left: .5em solid white;
+	padding: $space;
+	font-style: italic;
+	margin-bottom: $space;
+
+	@extend %clearfix;    /* 1 */
 	
 	p:last-of-type {
-		margin-bottom: 0; /* 3 */
+		margin-bottom: 0; /* 2 */
 	}
 }
 

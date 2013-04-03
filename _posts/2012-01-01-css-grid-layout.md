@@ -72,7 +72,7 @@ summary: true
 .main    { grid-column: 3; }
 .annexe  { grid-column: 5; }
 {% endhighlight %}
-<p>Done. 10 lines. No float. No inline-block. No height. No width. No margin. And if you want to make everything nice on small devices, it will take no more than a couple of more lines (8 in this example). </p>
+<p>Done. <strong>10 lines. No float. No inline-block. No height. No width. No margin.</strong> And if you want to make everything nice on small devices, it will take no more than a couple of more lines (8 in this example). </p>
 <p class="note">Note: I won't explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at <a href="http://css-tricks.com/almanac/properties/g/grid/">CSS-Tricks' Almanac entry</a>.</p>
 </section>
 <section id="flexbox">
