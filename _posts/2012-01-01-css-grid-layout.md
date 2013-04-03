@@ -1,6 +1,6 @@
 ---
-title: Future of CSS layout: CSS Grid
-template: post
+title: "Future of CSS layout: CSS Grid"
+layout: post
 comments: false
 preview: true
 summary: true
