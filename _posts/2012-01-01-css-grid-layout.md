@@ -1,6 +1,6 @@
 ---
 title: Future of CSS layout: CSS Grid
-layout: post
+template: post
 comments: false
 preview: true
 summary: true
