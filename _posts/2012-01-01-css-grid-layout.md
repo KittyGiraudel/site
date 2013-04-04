@@ -1,8 +1,7 @@
 ---
 title: "Future of CSS layout: CSS Grid"
 layout: post
-comments: false
-preview: true
+comments: true
 summary: true
 ---
 <section>
@@ -18,12 +17,12 @@ summary: true
 	<li><strong>float</strong>: clearing</li>
 	<li><strong>inline-blocks</strong>: spacing between blocks</li>
 </ul>
-<p>The CSS Grid Layout consists on defining a 2-dimensional grid in which the children can be positioned as desired. The main benefits of the this technique are:</p>
+<p>The CSS Grid Layout consists on defining a 2-dimensional grid in which the children can be positioned as desired. The main benefits of this technique are:</p>
 <ul>
 	<li>source order independant (!)</li>
-	<li>no need of widths or heights</li>
-	<li>no need of floats or inline-blocks</li>
-	<li>no need of margins to space columns from each others</li>
+	<li>no need for widths or heights</li>
+	<li>no need for floats or inline-blocks</li>
+	<li>no need for margins to space columns from each others</li>
 	<li>easily adjustable when it comes to responsive</li>
 </ul>
 <p>The basic example would be something like this: my <code>.wrapper</code> is my grid; <code>.header</code> will all columns of the first row; <code>.main</code> will by displayed in the second row and the first column; <code>.sidebar</code> in the second row, second column; and <code>.footer</code> in the third row, all columns.</p> 
@@ -39,11 +38,11 @@ summary: true
 	<li><code>grid-row</code> is supposed to be a shorthand for <code>grid-row-position</code> and <code>grid-row-span</code>. The current implementation in Internet Explorer 10 for <code>grid-row</code> should be the one for <code>grid-row-position</code> (which isn't supported). Same goes for <code>grid-column</code>.</li>
 </ul>
 <p>This kind of stuff definitely doesn't make things easier.</p>
-<p>Otherwise, the module is quite complicated by itself. It involves about 15 new properties, a new unit, and more important: a whole new way of thinking. Fortunately, the currently supported part of the spec is quite easily understanble and it has been very fun to play around with.</p>
+<p>Otherwise, the module is quite complicated by itself. It involves about 15 new properties, a new unit, and more important: a whole new way of thinking. Fortunately, the currently supported part of the spec is quite easily understandable and it has been very fun to play around with.</p>
 </section>
 <section id="example">
 <h2>A little example <a href="#example">#</a></h2>
-<p>What I've found astonishing is the very amount of required CSS to achieve a complex layout. I counted: with no more than 10 lines of CSS, I've been able to make a 3-columns layout including 2 fixed-size columns, with full-width header and footer. Oh, and source order independant. Please have a look at the following markup:</p>
+<p>What I've found astonishing is the very little amount of required CSS to achieve a complex layout. I counted: with no more than 10 lines of CSS, I've been able to make a 3-columns layout including 2 fixed-size columns, with full-width header and footer. Oh, and source order independant. Please have a look at the following markup:</p>
 {% highlight html %}
 <div class="wrapper">
 	<article class="main" >My awesome content here </article>
