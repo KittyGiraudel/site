@@ -18,7 +18,7 @@ body {
 	font-size: 1.6rem;
 }
 {% endhighlight %}
-<p>Because all browsers have a default font-size of <code>16px</code>, setting the font-size to 62.5% on the html element gives it a font-size of 10px (10 / 16 * 100 = 62.5) without explicitely setting it to <code>10px</code> which would prevent cascading. Then, setting a font-size of 1.6rem on the body element simply results in a font-size of <code>16px</code>, cascading through the whole DOM tree.</p>
+<p>Because all browsers have a default font-size of <code>16px</code>, setting the font-size to 62.5% on the html element gives it a font-size of 10px (10 / 16 * 100 = 62.5) without explicitely setting it to <code>10px</code> which would prevent zooming. Then, setting a font-size of 1.6rem on the body element simply results in a font-size of <code>16px</code>, cascading through the whole DOM tree.</p>
 <p>Then, if I want an element to have like a <code>28px</code> font-size, I simply have to do <code>.element { font-size: 2.8rem; }</code>, no matter the size of its parent.</p>
 <p>Everything is great, however <a href="http://caniuse.com/#feat=rem">rem isn't supported in all browsers</a>, especially not in Internet Explorer 8, which is still required in most projects. It means we have to <strong>give a fallback</strong> for this browser.</p>
 </section>
