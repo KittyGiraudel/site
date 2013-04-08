@@ -1,8 +1,7 @@
 ---
 title: Why a CSS alternative to &lt;select&gt; is impossible
 layout: post
-preview: true
-comments: false
+comments: true
 summary: true
 ---
 <section>
@@ -58,7 +57,7 @@ summary: true
 <section id="Performance">
 <h2>Performance <a href="#Performance">#</a></h2>
 <p>Even if it's not much a concern, using a HTML/CSS "alternative" to the <code>&lt;select&gt;</code> element means using at least a dozen of DOM nodes (quickly ramping up with the number of options) and maybe about 50 lines of CSS, perhaps including some heavy CSS properties like shadows or gradients.</p>
-<p>Okay, it's no big deal when you know the average page size is a little over 1.4Mb (according to <a href="http://www.httparchive.org/interesting.php#bytesperpage">HTTP Archives</a>).</p>
+<p>Okay, it's no big deal when you know the average page size is a little over 1.4Mb (according to <a href="http://www.httparchive.org/interesting.php#bytesperpage">HTTP Archive</a>).</p>
 <p>But still, you could have used a single element (including Shadow DOM) and 0 line of CSS for a result which beats your alternative on all points except on design (and this is yet to be determined).</p>
 </section>
 <section id="final-words">
