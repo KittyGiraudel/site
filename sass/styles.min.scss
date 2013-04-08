@@ -1,10 +1,26 @@
 /**
- * Compass imports
+ * Merge all stylesheets into one
+ * 1. Compass related imports
+ * 2. Vendor related stylesheets
+ * 3. Sass helpers
+ * 4. Partial frags
  */
-@import "compass/css3/images";
+
+@import "compass/css3/images"; /* 1 */
 @import "compass/css3";
 
-/**
- * Merge all stylesheets into one
- */
-@import "font-awesome", "google-fonts", "helpers", "pygments", "globals", "containers", "header", "content", "index", "footer", "ads";
+@import "vendor/font-awesome"; /* 2 */
+@import "vendor/google-fonts";
+
+@import "modules/variables";   /* 3 */
+@import "modules/mixins";
+@import "modules/helpers";
+
+@import "partials/pygments";   /* 4 */
+@import "partials/globals";
+@import "partials/containers";
+@import "partials/header";
+@import "partials/content";
+@import "partials/index";
+@import "partials/footer";
+@import "partials/ads";

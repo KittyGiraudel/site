@@ -1,0 +1,48 @@
+/* ------- *
+ * $MIXINS *
+ * ------- */
+
+/**
+ * Mixin providing a PX fallback for REM font-sizes
+ * Source: http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+ */
+@mixin rem($val) {
+	font-size: ($val * 10) + px;
+	font-size: $val + rem;
+}
+
+/**
+ * Mixin handling breakpoints for media queries
+ * Source: http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+ */
+@mixin breakpoint($point) {
+	@if $point == medium {
+	    @media (max-width: 48em) { @content; } //960px
+	}
+	@if $point == small {
+	    @media (max-width: 38em) { @content; } //760px
+	}
+}
+
+/**
+ * Mixins used by helper classes .pull-image--$pos and .pull-quote--$pos
+ * 1. returns `left` if given `right` and vice versa
+ */
+@mixin pull-quote($direction) {
+	$opposite: opposite-position($direction); /* 1 */
+
+	text-align: $opposite;
+	float: $direction;
+	margin: 0 0 $space 0;
+	margin-#{$opposite}: $space;	
+	border-#{$opposite}: 6px solid $pink;
+	padding-#{$opposite}: $space;
+}
+
+@mixin pull-image($direction) {
+	$opposite: opposite-position($direction); /* 1 */
+
+	float: $direction;
+	margin: 0 0 $space 0;
+	margin-#{$opposite}: $space;
+}
