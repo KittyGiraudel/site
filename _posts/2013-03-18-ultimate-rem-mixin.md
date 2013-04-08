@@ -35,42 +35,46 @@ body {
 <h3>Let's open the beast</h3>
 {% highlight css %}
 html {
-	font-size: 62.5%; /* [1] */
+	font-size: 62.5%; /* 1 */
 }
 
-@function parseInt($n) { /* [2] */
+@function parseInt($n) { /* 2 */
   @return $n / ($n * 0 + 1);
 }
 
 @mixin rem($property, $values) {
-  $px : (); /* [3] */
-  $rem: (); /* [3] */
+  $px : (); /* 3 */
+  $rem: (); /* 3 */
   
-  @each $value in $values { /* [4] */
+  @each $value in $values { /* 4 */
    
-    @if $value == 0 or $value == auto { /* [5] */
+    @if $value == 0 or $value == auto { /* 5 */
       $px : append($px , $value);
       $rem: append($rem, $value);
     }
     
     @else { 
-      $unit: unit($value);    /* [6] */
-      $val: parseInt($value); /* [6] */
+      $unit: unit($value);    /* 6 */
+      $val: parseInt($value); /* 6 */
       
-      @if $unit == "px" {  /* [7] */
+      @if $unit == "px" {  /* 7 */
         $px : append($px,  $value);
         $rem: append($rem, ($val / 10 + rem));
       }
       
-      @if $unit == "rem" { /* [7] */
+      @if $unit == "rem" { /* 7 */
         $px : append($px,  ($val * 10 + px));
         $rem: append($rem, $value);
       }
     }
   }
   
-  #{$property}: $px;  /* [8] */
-  #{$property}: $rem; /* [8] */
+  @if $px == $rem {     /* 8 */
+    #{$property}: $px;  /* 9 */
+  } else {
+    #{$property}: $px;  /* 9 */
+    #{$property}: $rem; /* 9 */
+  }
 }
 {% endhighlight %}	
 <p>This may be a bit rough so let me explain it:</p>
@@ -82,8 +86,10 @@ html {
 <li>If the value is either <code>auto</code> or <code>0</code>, we append it to the list as-is</li>
 <li>If the value has a unit, we split it to get both the unit and the raw value</li>
 <li>We append according values to the lists depending on the unit of the given value</li>
+<li>If the two lists are the same, we ouput only one (like <code>margin-top: 0</code>)</li>
 <li>We output the result</li>
 </ol>
+<p class="note">Thanks to <a href="http://twitter.com/movingprimates">Moving Primates</a> to improve the mixin by adding step 8. ;)</p>
 <h3>Usage</h3>
 <p>Using it is pretty straightforward:</p>
 {% highlight css %}
