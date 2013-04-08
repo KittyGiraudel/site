@@ -67,6 +67,7 @@ page-class: page--resume
 <h3>Web</h3>
 <ul>
 <li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo on Codrops">Writer for Codrops</a></li>
+<li>Helper at CSS-Tricks: <a href="http://css-tricks.com/almanac/properties/f/flex/">Flex</a>, <a href="http://css-tricks.com/almanac/properties/g/grid/">Grid</a>, <a href="http://css-tricks.com/almanac/properties/p/perspective/">Perspective</a>, <a href="http://css-tricks.com/almanac/properties/p/perspective-origin/">Perspective-origin</a></li>
 <li><a href="http://css-tricks.com/css-pie-timer/" title="CSS Pie Timer">CSS Pie Timer</a> (CSS-Tricks)</li>
 </ul>
 
