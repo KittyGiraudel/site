@@ -47,7 +47,7 @@ summary: true
 <p>... what if you want to give your user the ability to select multiple options? Okay, you could still use checkboxes, that sounds legit.</p>
 <p>Then let's talk about other options like: <code>required</code>, <code>disabled</code> and <code>autofocus</code>.</p>
 <p>I can think of a workaround for <code>disabled</code> with a class on the parent element, using pointer-events to disable clicking on items. Okay.</p>
-<p>If you come up with a CSS-only solution to force the user to select an option by preventing form submit and displaying a warning message instead, I'd be more than glad to here it!</p>
+<p>If you come up with a CSS-only solution to force the user to select an option by preventing form submit and displaying a warning message instead, I'd be more than glad to hear it!</p>
 <p>You could still use JavaScript. But then:</p>
 <ul>
 	<li>it's no more a CSS-only alternative to the <code>&lt;select&gt;</code> element</li>

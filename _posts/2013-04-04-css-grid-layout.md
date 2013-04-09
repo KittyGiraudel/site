@@ -56,7 +56,7 @@ summary: true
 {% highlight css %}
 .wrapper {
 	display: grid;
-	grid-columns: 200px 15px 1ft 15px 100px;
+	grid-columns: 200px 15px 1fr 15px 100px;
 	grid-rows: (auto 15px)[2] auto;
 }
 
