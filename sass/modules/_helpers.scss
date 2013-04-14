@@ -50,11 +50,11 @@
 
 	@include breakpoint(small) { /* 1 */
 		float: none;
-		margin: $space auto;
+		margin: $space auto !important;
 		border: 6px solid $pink;
-		border-left:  none;
+		border-left:  none !important;
 		border-right: none;
-		text-align: center;
+		text-align: center !important;
 		padding: $space 0.5em;
 		max-width: 100%;
 	}
