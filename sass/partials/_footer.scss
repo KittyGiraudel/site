@@ -49,5 +49,6 @@
 
 	@include breakpoint(small) {
 		float: none;
+		padding: 0;
 	}
 }
