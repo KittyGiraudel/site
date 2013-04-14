@@ -51,7 +51,7 @@
 	@include breakpoint(small) { /* 1 */
 		float: none;
 		margin: $space auto;
-		border: .5em solid $pink;
+		border: 6px solid $pink;
 		border-left:  none;
 		border-right: none;
 		text-align: center;
