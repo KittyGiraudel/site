@@ -20,6 +20,7 @@ selector [, selector2, ...] [:pseudo-class] {
 }
 {% endhighlight %}
 </section>
+<p>Most of all, CSS means something. It uses real words, understandable by anyone. When you read <code>.element { color: red; }</code>, you can be pretty sure it means an item called "element" is red. It's a no brainer.</p>
 <section id="evolution">
 <h2>A constantly evolving language <a href="#evolution">#</a></h2>
 <p>The first "problem" (for lack of a better word) with CSS is that it is a constantly evolving language. It was first introduced in 1994 if no mistake so almost 20 years ago. After 3 major versions (CSS1, CSS2 and CSS2.1), CSS is now divided into modules growing at their own speed (Colors Level 3, Selectors Level 4, etc.). It means you cannot simply "learn CSS" then don't get back to it. You can learn the bases, yes but it's not enough.</p>
