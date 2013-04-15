@@ -1,5 +1,5 @@
 ---
-title: CSS is easy
+title: \"CSS is easy\"
 layout: post
 comments: false
 preview: true
@@ -32,6 +32,18 @@ selector [, selector2, ...] [:pseudo-class] {
 <p>Yes, HTML and JavaScript as well. But unless you're using new HTML5 elements (which don't provide much more than semantic), your HTML &dash;as long as it is valid&dash; won't differ from one browser to another.</p>
 <p>JavaScript is kind of like CSS. The interpretation depends on the JavaScript engine version. For example, Internet Explorer 9 doesn't use the same <a href="http://en.wikipedia.org/wiki/List_of_ECMAScript_engines">ECMAScript engine</a> as Firefox or Chrome (Chakra for IE9, SpiderMonkey for Firefox, V8 for Chrome).</p>
 <p>Anyway, in order to write consistent CSS, you have to know which browser supports which feature, or partially support them, and how to draw fallback, when to use hacks, and so on. It requires some knowledge, and most of all, some experience.</p>
+<p>Take the Flexbox module for example. It has been introduced in 2009 and has known 3 different syntaxes since then resulting in a blurry mess when trying to have the best browser support:</p>
+{% highlight css %}
+.flex {
+	-ms-box-orient: horizontal;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+}
+{% endhighlight %}
+<p>This is the kind of thing that makes CSS tricky (some people would say annoying).</p>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
