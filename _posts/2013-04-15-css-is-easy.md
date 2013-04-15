@@ -1,8 +1,7 @@
 ---
 title: "\"CSS is easy\""
 layout: post
-comments: false
-preview: true
+comments: true
 ---
 <section>
 <p>I am studying what comes close to "Programming Sciences". My mates are hardware, server or back-end guys. When I tell them I prefer front-end, especially HTML/CSS I always get the same reaction: "CSS is easy".</p>
