@@ -4,6 +4,7 @@ layout: post
 comments: true
 ---
 <section>
+<p class="explanation"><a href="https://twitter.com/verobouvier">Véronique Bouvier</a> translated <a href="http://www.veronique-bouvier.com/css-cest-facile-par-hugo-giraudel/">this article in French</a> on her blog.</p>
 <p>I am studying what comes close to "Programming Sciences". My mates are hardware, server or back-end guys. When I tell them I prefer front-end, especially HTML/CSS I always get the same reaction: "CSS is easy".</p>
 <p>And I always tell myself the same thing "Yeaaaaah... so that should explain why your CSS is a fucking mess".</p>
 </section>
