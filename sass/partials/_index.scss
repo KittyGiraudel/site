@@ -44,7 +44,7 @@
  */
 .list-articles__title {
 	margin: 0;
-	padding: .25em 3em .25em 0;
+	padding: .25em 3.25em .25em 0;
 	@include rem(2.8);
 	
 	@include breakpoint(small) {
