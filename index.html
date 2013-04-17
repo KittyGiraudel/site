@@ -26,7 +26,7 @@ page-class: page--home
     {% else if post.external %}
     <a href="{{ post.external }}">
     {% else %}
-  	<a href="{{ post.url }}">
+  	<a href="{{ page.url }}">
     {% endif %}
   	{{ post.title }}
   	</a>
