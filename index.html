@@ -23,10 +23,10 @@ page-class: page--home
   	<h2 class="list-articles__title">
     {% if post.codrops %}
     <a href="{{ post.codrops }}">
-    {% else if post.external %}
+    {% elseif post.external %}
     <a href="{{ post.external }}">
     {% else %}
-  	<a href="{{ page.url }}">
+  	<a href="{{ post.url }}">
     {% endif %}
   	{{ post.title }}
   	</a>
