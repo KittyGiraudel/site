@@ -52,6 +52,7 @@
 .fontawesome-user:before { content: "\f007" }
 .fontawesome-comment:before { content: "\f075" }
 .fontawesome-comments:before { content: "\f086" }
+.fontawesome-share-alt:before{content:"\f064"}
 
 /**
  * Default yet unused stuff from Font Awesome
@@ -182,7 +183,6 @@ li[class*=" fontawesome-"].icon-large:before {
 .fontawesome-arrow-right:before{content:"\f061"}
 .fontawesome-arrow-up:before{content:"\f062"}
 .fontawesome-arrow-down:before{content:"\f063"}
-.fontawesome-share-alt:before{content:"\f064"}
 .fontawesome-resize-full:before{content:"\f065"}
 .fontawesome-resize-small:before{content:"\f066"}
 .fontawesome-plus:before{content:"\f067"}

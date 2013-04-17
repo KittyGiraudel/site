@@ -64,11 +64,9 @@
 
 /**
  * Special articles
- * 1. If article is a link to Codrops
- * 2. If article is a guest post
+ * 1. If article is a link to Codrops or a guest post or an external link
  */
-.list-articles__codrops, /* 1 */
-.list-articles__guest {  /* 2 */
+.list-articles__icon {  /* 2 */
 	position: absolute;
 	opacity: .2;
 	right: 0;

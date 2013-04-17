@@ -9,10 +9,13 @@ page-class: page--home
   {% unless post.preview %}
   <li role="article">
     {% if post.guest %}
-    <span class="fontawesome-user list-articles__guest"></span>
+    <span class="fontawesome-user list-articles__icon"></span>
     {% endif %}
     {% if post.codrops %}
-    <span class="fontawesome-tint list-articles__codrops"></span>
+    <span class="fontawesome-tint list-articles__icon"></span>
+    {% endif %}
+    {% if post.external %}
+    <span class="fontawesome-share-alt list-articles__icon"></span>
     {% endif %}
   	<p class="list-articles__date">
   	{{ post.date | date: "%B %d, %Y" }}
@@ -20,6 +23,8 @@ page-class: page--home
   	<h2 class="list-articles__title">
     {% if post.codrops %}
     <a href="{{ post.codrops }}">
+    {% else if post.external %}
+    <a href="{{ post.external }}">
     {% else %}
   	<a href="{{ post.url }}">
     {% endif %}
