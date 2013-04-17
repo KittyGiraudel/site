@@ -23,7 +23,7 @@ page-class: page--home
   	<h2 class="list-articles__title">
     {% if post.codrops %}
     <a href="{{ post.codrops }}">
-    {% elseif post.external %}
+    {% elsif post.external %}
     <a href="{{ post.external }}">
     {% else %}
   	<a href="{{ post.url }}">
