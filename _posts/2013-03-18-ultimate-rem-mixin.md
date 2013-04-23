@@ -71,7 +71,7 @@ html {
   
   @if $px == $rem {     /* 8 */
     #{$property}: $px;  /* 9 */
-  } else {
+  } @else {
     #{$property}: $px;  /* 9 */
     #{$property}: $rem; /* 9 */
   }

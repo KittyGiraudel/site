@@ -20,14 +20,14 @@ preview: true
 </section>
 <section id="qualifications">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"> According to you, what are the required qualifications for your job? <a href="#qualifications">#</a></h2>
-<p>That ain't easy. I think the biggest "problem" of client-side languages is that they are dependent on the client. This implies a lot of hacks and tricks to make everything work everywhere. This is even more true today with mobile devices like tablets and smartphones or even TV screens! So this asks for a lot of patience and experience (the latter comes with time, hopefully).</p>
 <blockquote class="pull-quote--right">I love experimenting and trying new things.</blockquote>
+<p>That ain't easy. I think the biggest "problem" of client-side languages is that they are dependent on the client. This implies a lot of hacks and tricks to make everything work everywhere. This is even more true today with mobile devices like tablets and smartphones or even TV screens! So this asks for a lot of patience and experience (the latter comes with time, hopefully).</p>
 <p>I also think we really have to love experimenting and trying new things. We work with constantly evolving languages which implies reading as much docs and tutorials as we can. Being aware of incoming things is part of a web developer's job.</p>
 </section>
 <section id="like">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"> What do you like the most in your job? And the least? <a href="#like">#</a></h2>
-<p>My favourite thing in my job hasto be <strong>learning things</strong>. It's definitely because I'm passionate that I'm comfortable with some things today. As good as my web teacher has been, I don't owe him my skills (not all of them at least). Long story short, I love reading web related stuff.</p>
-<blockquote class="pull-quote--right">I love reading web related stuff.</blockquote>
+<p>My favourite thing in my job hasto be <strong>learning things</strong>. It's definitely because I'm passionate that I'm comfortable with some things today. As good as my web teacher has been, I don't owe him my skills (not all of them at least). Long story short, I enjoy reading web related stuff.</p>
+<blockquote class="pull-quote--right">I love enjoy web related stuff.</blockquote>
 <p>Beyond reading, it's great to be able to easily discover and learn new things like CSS features, JavaScript APIs, preprocessors and much more (especially thanks to tools like <a href="http://codepen.io">CodePen</a> and <a href="http://github.com">GitHub</a>). And if we ever happen to use what we've learnt in real-life projects, then it's even better!</p>
 <p>Ironically, even if I am able to define what I like in my job I don't think I'm able to tell what I like the least. Maybe not being always able to use everything I know in real-life projects because of technical constraints like performance, maintainability or browser support. But this is part of the job; we can't use everything we know, especially when it comes to new &dash; somewhat borderline &dash; features ("hello CSS grid!").</p>
 <p>But this "bad side" of our job is what makes it interesting. Producing clean, maintainable and future-proof code is what makes the front-end developer work fun.</p>
