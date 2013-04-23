@@ -1,8 +1,7 @@
 ---
 title: My interview by Clément Osternaud
 layout: post
-comments: false
-preview: true
+comments: true
 ---
 <section id="introduction">
 <p class="explanation">French front-end developer Clément Osternaud interviewed me for <a href="http://myressources.com/interview-hugo-giraudel/">his site</a>. Below is the translation of the whole interview.</p> 
