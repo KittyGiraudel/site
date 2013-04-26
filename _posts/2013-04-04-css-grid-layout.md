@@ -31,7 +31,7 @@ summary: true
 <h2>What's complicated? <a href="#complicated">#</a></h2>
 <blockquote class="pull-quote--right">Specifications are definitely not for random people.</blockquote
 <p>First, <strong>reading specifications</strong>. If a spec author ever reads this, I am sorry; but the specifications are definitely not for random people. I believe they are mostly made for browser makers, and they are probably very well writen but for a guy like me, it's way too complicated. Unfortunately, I had to dig deep into the spec.</p>
-<p>What has been difficult as well is that the only supported browser &dash;as of writing&dash; is Internet Explorer 10 (mostly because 3 of 5 authors of the Grid spec are from Microsoft). And I believe they started implementing the module in their browser engine a while ago, resulting in some inconsistencies regarding the spec which keeps moving.</p>
+<p>What has been difficult as well is that the only supported browser &mdash;as of writing&mdash; is Internet Explorer 10 (mostly because 3 of 5 authors of the Grid spec are from Microsoft). And I believe they started implementing the module in their browser engine a while ago, resulting in some inconsistencies regarding the spec which keeps moving.</p>
 <p>Not only their implementation is at a very early stage (about half the spec is currently supported), but it also differs from the spec at some point. Among other things:</p>
 <ul>
 	<li><code>grid-rows</code> and <code>grid-columns</code> have been renamed in <code>grid-definition-rows</code> and <code>grid-definition-columns</code></li>
@@ -78,7 +78,7 @@ summary: true
 <section id="flexbox">
 <h2>What about Flexbox? <a href="#flexbox">#</a></h2>
 <blockquote class="quote"><p>Are Flexbox and Grid both solutions to the same problem or do they both have their own use case?</p>
-&dash; <a href="https://twitter.com/Lezz/status/319376112679522304">@Lezz</a></blockquote>
+&mdash; <a href="https://twitter.com/Lezz/status/319376112679522304">@Lezz</a></blockquote>
 <p>This question comes from Twitter. However I've been questioning myself regarding this while making the entry for CSS-Tricks. Let's have a look at both specifications:</p>
 <blockquote class="quote"><p>The <strong>Flexbox specification</strong> describes a CSS box model optimized for user interface design. In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions.</p></blockquote>
 <blockquote class="quote"><p><strong>Grid Layout</strong> contains features targeted at web application authors. The Grid can be used to achieve many different layouts. It excels at dividing up space for major regions of an application, or defining the relationship in terms of size, position, and layer between parts of a control built from HTML primitives.</p>

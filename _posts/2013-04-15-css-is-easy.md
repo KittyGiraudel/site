@@ -24,12 +24,12 @@ selector [, selector2, ...] [:pseudo-class] {
 <section id="evolution">
 <h2>A constantly evolving language <a href="#evolution">#</a></h2>
 <p>The first "problem" (for lack of a better word) with CSS is that it is a constantly evolving language. It was first introduced in 1994 if no mistake; so almost 20 years ago. After 3 major versions (CSS1, CSS2 and CSS2.1), CSS is now divided into modules growing at their own speed (Colors Level 3, Selectors Level 4, etc.). It means you cannot simply "learn CSS" then don't get back to it. You can learn the bases, yes but it's not enough.</p>
-<p>Some things I learnt 2 years ago are irrelevant now, and some things I'm learning today might disappear or become bad practices in the future. It is a non-stop evolution &dash;which is cool but&dash; which requires developers to be very careful.</p>
+<p>Some things I learnt 2 years ago are irrelevant now, and some things I'm learning today might disappear or become bad practices in the future. It is a non-stop evolution &mdash;which is cool but&mdash; which requires developers to be very careful.</p>
 </section>
 <section id="browser-dependance">
 <h2>Browser dependant <a href="#browser-dependance">#</a></h2>
 <p>The thing is, since CSS is a language compiled on the client side (meaning by the browser itself), its interpretation depends on the compiler (once again, the browser).</p>
-<p>Yes, HTML and JavaScript as well. But unless you're using new HTML5 elements (which don't provide much more than semantic), your HTML &dash;as long as it is valid&dash; won't differ from one browser to another.</p>
+<p>Yes, HTML and JavaScript as well. But unless you're using new HTML5 elements (which don't provide much more than semantic), your HTML &mdash;as long as it is valid&mdash; won't differ from one browser to another.</p>
 <p>JavaScript is kind of like CSS. The interpretation depends on the JavaScript engine version. For example, Internet Explorer 9 doesn't use the same <a href="http://en.wikipedia.org/wiki/List_of_ECMAScript_engines">ECMAScript engine</a> as Firefox or Chrome (Chakra for IE9, SpiderMonkey for Firefox, V8 for Chrome).</p>
 <p>Anyway, in order to write consistent CSS, you have to know which browser supports which feature, or partially support them, and how to draw fallback, when to use hacks, and so on. It requires some knowledge, and most of all, some experience.</p>
 <p>Take the Flexbox module for example. It has been introduced in 2009 and has known 3 different syntaxes since then resulting in a blurry mess when trying to have the best browser support:</p>

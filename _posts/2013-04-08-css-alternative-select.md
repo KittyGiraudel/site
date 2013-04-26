@@ -26,7 +26,7 @@ summary: true
 </ol>
 <p>While making a pure CSS dropdown easily usable with the mouse can be done by pretty much any one with some CSS knowledge, making it usable with keyboard navigation is a whole other story.</p>
 <p>However, it's doable. You won't have exactly the same process as above, but you'll probably be able to pick your option with the arrow keys and such.</p>
-<p>Anyway, this introduces some new behaviour (you may call this inconsistencies) for people who can't use a mouse. Yes, not having to press enter (steps 2 and 4) is probably no big deal for you and I, but for &dash; let's say &dash; a blind user, it may be confusing.</p>
+<p>Anyway, this introduces some new behaviour (you may call this inconsistencies) for people who can't use a mouse. Yes, not having to press enter (steps 2 and 4) is probably no big deal for you and I, but for &mdash; let's say &mdash; a blind user, it may be confusing.</p>
 </section>
 <section id="mobile">
 <h2>Mobile devices <a href="#mobile">#</a></h2>
