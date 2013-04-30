@@ -1,8 +1,7 @@
 ---
 title: My CSS Aha moment
 layout: post
-comments: false
-preview: true
+comments: true
 ---
 <section>
 <p>I'd like to share with you my CSS "Aha moment". The "Aha moment" is when some day, in the very back of your head, two neurons get in touch and all of the sudden things become clear as crystal.</p>
@@ -13,5 +12,5 @@ preview: true
 <img src="/images/css-aha-moment__box-model.jpg" alt="CSS box model" class="pull-image--right">
 <p>Seriously, the first thing to understand when learning CSS is that every element is following the same pattern: <strong>a content-box in a padding-box in a border-box in a margin-box</strong>; I don't know why my teachers didn't even start with that.</p>
 <p>Once you get that, it's really not that hard to produce correct (not necessarily efficient, but still correct) CSS.</p>
-<p>What about you? What was your Ahaa moment?</p>
+<p>What about you? What was your Aha moment?</p>
 </section>
