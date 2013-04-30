@@ -134,3 +134,67 @@
 		margin-right: 0 !important;
 	}
 }
+
+/**
+ * Figures
+ * <figure class="figure">
+ *   <img src="path/to/image.jpg" alt="" />
+ *   <figcaption>Optional figcaption</figcaption>
+ * </figure>
+ */
+.figure {
+	padding: 1em 1em 0 1em;
+	background: #efefef;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+
+	figcaption {
+		font-style: italic;
+		@include rem(1.3);
+		padding: .5em 0;
+		text-align: center;
+	}
+}
+
+.figure--left {
+	@extend .figure;
+
+	float: left;
+	margin: 0 1em .5em 0;
+	width: -webkit-min-content;
+	width: -moz-min-content;
+	width: min-content;
+
+	img {
+		max-width: none;
+	}
+}
+
+.figure--right {
+	@extend .figure;
+
+	float: right;
+	margin: 0 0 .5em 1em;
+	width: -webkit-min-content;
+	width: -moz-min-content;
+	width: min-content; 
+
+	img {
+		max-width: none;
+	}
+}
+
+/**
+ * Figure numbering if numberedFigures variable set to true
+ */
+.numbered-figures {
+	counter-reset: figures;
+
+	figcaption { 
+		counter-increment: figures;
+
+		&:before {
+			content: 'Fig. ' counter(figures) ' - ';
+		}
+	}
+}

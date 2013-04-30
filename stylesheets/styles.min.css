@@ -227,6 +227,71 @@
   }
 }
 
+/**
+ * Figures
+ * <figure class="figure">
+ *   <img src="path/to/image.jpg" alt="" />
+ *   <figcaption>Optional figcaption</figcaption>
+ * </figure>
+ */
+/* line 145, ../sass/modules/_helpers.scss */
+.figure, .figure--left, .figure--right {
+  padding: 1em 1em 0 1em;
+  background: #efefef;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+/* line 151, ../sass/modules/_helpers.scss */
+.figure figcaption, .figure--left figcaption, .figure--right figcaption {
+  font-style: italic;
+  font-size: 13px;
+  font-size: 1.3rem;
+  padding: .5em 0;
+  text-align: center;
+}
+
+/* line 159, ../sass/modules/_helpers.scss */
+.figure--left {
+  float: left;
+  margin: 0 1em .5em 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+/* line 168, ../sass/modules/_helpers.scss */
+.figure--left img {
+  max-width: none;
+}
+
+/* line 173, ../sass/modules/_helpers.scss */
+.figure--right {
+  float: right;
+  margin: 0 0 .5em 1em;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+/* line 182, ../sass/modules/_helpers.scss */
+.figure--right img {
+  max-width: none;
+}
+
+/**
+ * Figure numbering if numberedFigures variable set to true
+ */
+/* line 190, ../sass/modules/_helpers.scss */
+.numbered-figures {
+  counter-reset: figures;
+}
+/* line 193, ../sass/modules/_helpers.scss */
+.numbered-figures figcaption {
+  counter-increment: figures;
+}
+/* line 196, ../sass/modules/_helpers.scss */
+.numbered-figures figcaption:before {
+  content: "Fig. " counter(figures) " - ";
+}
+
 /* ------------- *
  * $FONT AWESOME *
  * ------------- */
@@ -1255,22 +1320,6 @@ ul, ol {
  * 2. keep ratio when resized
  */
 /* line 116, ../sass/partials/_content.scss */
-.figure, .figure--left, .figure--right {
-  padding: 1em 1em 0 1em;
-  background: #efefef;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-}
-/* line 122, ../sass/partials/_content.scss */
-.figure figcaption, .figure--left figcaption, .figure--right figcaption {
-  font-style: italic;
-  font-size: 15px;
-  font-size: 1.5rem;
-  padding: .5em 0;
-  text-align: center;
-}
-
-/* line 130, ../sass/partials/_content.scss */
 img {
   max-width: 100%;
   /* 1 */
@@ -1280,52 +1329,13 @@ img {
   display: block;
 }
 
-/* line 137, ../sass/partials/_content.scss */
-.figure--left {
-  float: left;
-  margin: 0 1em .5em 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-}
-/* line 146, ../sass/partials/_content.scss */
-.figure--left img {
-  max-width: none;
-}
-
-/* line 151, ../sass/partials/_content.scss */
-.figure--right {
-  float: right;
-  margin: 0 0 .5em 1em;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-}
-/* line 160, ../sass/partials/_content.scss */
-.figure--right img {
-  max-width: none;
-}
-
-/* line 165, ../sass/partials/_content.scss */
-.numbered-figures {
-  counter-reset: figures;
-}
-/* line 168, ../sass/partials/_content.scss */
-.numbered-figures figcaption {
-  counter-increment: figures;
-}
-/* line 171, ../sass/partials/_content.scss */
-.numbered-figures figcaption:before {
-  content: "Fig. " counter(figures) " - ";
-}
-
 /**
  * Quotes
  * 1. In case there is an image + text in the blockquote
  * 2. Avoid odd gap at the bottom of a blockquote
  */
 /*blockquote*/
-/* line 182, ../sass/partials/_content.scss */
+/* line 128, ../sass/partials/_content.scss */
 .quote {
   background: #F4F4F4;
   border-left: .5em solid white;
@@ -1334,7 +1344,7 @@ img {
   margin-bottom: 1em;
   /* 1 */
 }
-/* line 191, ../sass/partials/_content.scss */
+/* line 137, ../sass/partials/_content.scss */
 .quote p:last-of-type {
   margin-bottom: 0;
   /* 2 */
@@ -1343,24 +1353,24 @@ img {
 /**
  * Tables
  */
-/* line 199, ../sass/partials/_content.scss */
+/* line 145, ../sass/partials/_content.scss */
 table {
   width: 100%;
   margin: 1em 0;
 }
 
-/* line 204, ../sass/partials/_content.scss */
+/* line 150, ../sass/partials/_content.scss */
 tr:nth-child(odd) {
   background: #F4F4F4;
 }
 
-/* line 209, ../sass/partials/_content.scss */
+/* line 155, ../sass/partials/_content.scss */
 td,
 th {
   padding: .5em;
 }
 
-/* line 213, ../sass/partials/_content.scss */
+/* line 159, ../sass/partials/_content.scss */
 th {
   font-weight: bold;
   text-align: center;

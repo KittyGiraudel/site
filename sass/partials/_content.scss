@@ -113,65 +113,11 @@ ul, ol {
  * 1. Prevent images to break outside their container
  * 2. keep ratio when resized
  */
-.figure {
-	padding: 1em 1em 0 1em;
-	background: #efefef;
-	border: 1px solid #ddd;
-	border-radius: 3px;
-
-	figcaption {
-		font-style: italic;
-		@include rem(1.5);
-		padding: .5em 0;
-		text-align: center;
-	}
-}
-
 img {
 	max-width: 100%; /* 1 */
 	height: auto;    /* 2 */
 	margin: 0 auto;
 	display: block;
-}
-
-.figure--left {
-	@extend .figure;
-
-	float: left;
-	margin: 0 1em .5em 0;
-	width: -webkit-min-content;
-	width: -moz-min-content;
-	width: min-content;
-
-	img {
-		max-width: none;
-	}
-}
-
-.figure--right {
-	@extend .figure;
-
-	float: right;
-	margin: 0 0 .5em 1em;
-	width: -webkit-min-content;
-	width: -moz-min-content;
-	width: min-content; 
-
-	img {
-		max-width: none;
-	}
-}
-
-.numbered-figures {
-	counter-reset: figures;
-
-	figcaption { 
-		counter-increment: figures;
-
-		&:before {
-			content: 'Fig. ' counter(figures) ' - ';
-		}
-	}
 }
 
 /**
