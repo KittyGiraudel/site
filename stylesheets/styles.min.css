@@ -1,1 +1,1606 @@
-.header:after,.quote:after,.footer:after,.footer__nav:after{display:table;content:"";clear:both}.icon-left{margin-right:5px}.icon-right{margin-left:5px}.pull-image--left,.pull-image--right{max-width:15em}@media (max-width: 38em){.pull-image--left,.pull-image--right{float:none;width:100%;margin:1em auto}}.pull-quote--left,.pull-quote--right{max-width:250px;line-height:1.35;font-size:30px;font-size:3rem}.pull-quote--left:after,.pull-quote--right:after,.pull-quote--left:before,.pull-quote--right:before{font-weight:bold}.pull-quote--left:before,.pull-quote--right:before{content:"\201c"}.pull-quote--left:after,.pull-quote--right:after{content:"\201d"}@media (max-width: 38em){.pull-quote--left,.pull-quote--right{float:none;margin:1em auto !important;border:6px solid #ff3d7f;border-left:none !important;border-right:none;text-align:center !important;padding:1em 0.5em !important;max-width:100%}}.pull-quote--left{text-align:right;float:left;margin:0 0 1em 0;margin-right:1em;border-right:6px solid #ff3d7f;padding-right:1em}.pull-image--left{float:left;margin:0 0 1em 0;margin-right:1em}.pull-quote--right{text-align:left;float:right;margin:0 0 1em 0;margin-left:1em;border-left:6px solid #ff3d7f;padding-left:1em}.pull-image--right{float:right;margin:0 0 1em 0;margin-left:1em}.visually-hidden{position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:none}.note{font-style:italic;padding-left:1em}.date{color:#999;text-transform:uppercase;margin-top:.5em}.explanation{background:#F4F4F4;border-left:.5em solid white;padding:1em;font-style:italic;margin-bottom:1em}.table-of-contents ~ section .explanation{margin-right:42%}@media (max-width: 38em){.explanation{margin-right:0 !important}}@font-face{font-family:'FontAwesome';font-style:'normal';font-weight:'normal';src:url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.eot");src:url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.eot?#iefix") format("eot"),url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.woff") format("woff"),url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.ttf") format("truetype"),url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.svg#FontAwesomeRegular") format("svg")}[class^="fontawesome-"],[class*=" fontawesome-"]{display:inline-block;text-decoration:inherit;speak:none}li [class^="fontawesome-"],li [class*=" fontawesome-"]{width:1.25em;text-align:center}[class^="fontawesome-"]:before,[class*=" fontawesome-"]:before{font-family:'FontAwesome';font-weight:normal;font-style:normal;display:inline-block;text-decoration:inherit}.fontawesome-heart:before{content:"\f004"}.fontawesome-pencil:before{content:"\f040"}.fontawesome-tint:before{content:"\f043"}.fontawesome-briefcase:before{content:"\f0b1"}.fontawesome-magic:before{content:"\f0d0"}.fontawesome-beaker:before{content:"\f0c3"}.fontawesome-angle-left:before{content:"\f104"}.fontawesome-angle-right:before{content:"\f105"}.fontawesome-user:before{content:"\f007"}.fontawesome-comment:before{content:"\f075"}.fontawesome-comments:before{content:"\f086"}.fontawesome-share-alt:before{content:"\f064"}@font-face{font-family:'Orienta';font-style:normal;font-weight:400;src:local("Orienta"),local("Orienta-Regular"),url(http://themes.googleusercontent.com/static/fonts/orienta/v1/nPJ0J30J_zQZtBhztPPbaA.woff) format("woff")}@font-face{font-family:'Sanchez';font-style:normal;font-weight:400;src:local("Sanchez"),local("Sanchez-Regular"),url(http://themes.googleusercontent.com/static/fonts/sanchez/v1/mx466fsxfR1AA3OwUm3waQ.woff) format("woff")}.highlight{margin-bottom:1em;padding:.6em;overflow-x:auto;background:#efefef;border:1px solid #ddd;border-radius:3px;line-height:1.4;text-shadow:0 1px white;font-family:Consolas, Monaco, 'Andale Mono', monospace;white-space:pre;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;hyphens:none}@media (max-width: 38em){.highlight{font-size:15px;font-size:1.5rem}}.highlight .hll{background-color:#ffffcc}.highlight .c,.highlight .cm,.highlight .c1{color:#999988;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .cp,.highlight .cs{color:#999999;font-weight:bold;font-style:italic}.highlight .gd{color:#000000;background-color:#ffdddd}.highlight .ge{color:#000000;font-style:italic}.highlight .gr,.highlight .gt{color:#aa0000}.highlight .gh,.highlight .bp{color:#999999}.highlight .gi{color:#000000;background-color:#ddffdd}.highlight .go{color:#888888}.highlight .gp,.highlight .nn{color:#555555}.highlight .gs{font-weight:bold}.highlight .gu{color:#aaaaaa}.highlight .o,.highlight .ow,.highlight .k,.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{color:#000000;font-weight:bold}.highlight .kt,.highlight .nc{color:#445588;font-weight:bold}.highlight .nb{color:#0086B3}.highlight .nd{color:#3c5d5d;font-weight:bold}.highlight .ni{color:#800080}.highlight .ne,.highlight .nf,.highlight .nl{color:#990000;font-weight:bold}.highlight .nt{color:#000080}.highlight .w{color:#bbbbbb}.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo,.highlight .il{color:#009999}.highlight .s,.highlight .s1,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d01040}.highlight .sr{color:#009926}.highlight .ss{color:#990073}.highlight .nv,.highlight .no,.highlight .na,.highlight .vc,.highlight .vg,.highlight .vi{color:#008080}*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0;margin:0}html{font:62.5%/1.55 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;color:#555;text-shadow:0 1px rgba(255,255,255,0.6);border-left:6px solid #ff3d7f;background-image:url("data:image/png;base64,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")}@media (max-width: 38em){html{border-left:none;border-top:5px solid #ff3d7f}}body{font-size:20px;font-size:2rem}a{color:#ff3d7f;text-decoration:none}a:hover,a:focus{text-decoration:underline}::-moz-selection{background:#ff3d7f;color:white}::selection{background:#ff3d7f;color:white}#disqus_thread{margin-top:3.5em}.wrapper{width:100%;max-width:57em;margin:0 auto;padding:0 1em}@media (max-width: 38em){.wrapper{padding:0 .5em}}.main{width:68%;margin-right:2%}@media (max-width: 48em){.main{margin-right:0;border-bottom:3px solid #D1D1D1}}.sidebar{width:30%;padding-top:2em}.main,.sidebar{float:left;padding-bottom:2em}@media (max-width: 48em){.main,.sidebar{float:none;width:100%}}.header{border-bottom:3px solid #D1D1D1;margin:2.5em 0 2em}@media (max-width: 38em){.header{margin-top:1em}}.site-title{float:left;font-family:'Orienta', sans-serif;margin:0;text-shadow:none;text-transform:none;font-weight:bold;font-size:40px;font-size:4rem}@media (max-width: 38em){.site-title{font-size:28px;font-size:2.8rem;float:none;text-align:center}}.site-title a{color:#666}.site-title a:hover,.site-title a:focus{text-decoration:none}.site-title span{text-transform:uppercase;color:#999}.site-nav{float:right;list-style:none;margin:0;padding:0}@media (max-width: 38em){.site-nav{float:none;text-align:center}}.site-nav li{float:left}@media (max-width: 38em){.site-nav li{float:none;display:inline-block}}.site-nav a{display:block;color:#666;padding:1em .5em;position:relative}.site-nav a:hover,.site-nav a:focus{text-decoration:none}.site-nav a:after{bottom:-3px;height:3px;background:#ff3d7f;left:0;right:0;position:absolute}.page--home .site-nav__home{cursor:text}.page--home .site-nav__home:after{content:''}.page--resume .site-nav__resume{cursor:text}.page--resume .site-nav__resume:after{content:''}h1,.h1,h2,.h2,h3,.h3,h4,.h4{margin:1.3em 0 .6em 0;font-weight:normal;line-height:1.3;font-family:'Orienta', sans-serif;color:#444}h1,.h1{font-size:36px;font-size:3.6rem;font-family:'Sanchez', sans-serif;text-shadow:0 1px #fff,0 2px #999;margin:1em 0 0 0;text-transform:uppercase}@media (max-width: 38em){h1,.h1{font-size:32px;font-size:3.2rem}}h2,.h2{font-size:32px;font-size:3.2rem}.page--resume h2,.page--resume .h2{border-bottom:1px solid silver}h2 a[href^="#"],.h2 a[href^="#"]{*display:inline;display:inline-block;padding-left:.3em;color:#999;opacity:0;pointer-events:none;-webkit-transition:0.15s;-moz-transition:0.15s;-o-transition:0.15s;transition:0.15s}@media (max-width: 38em){h2 a[href^="#"],.h2 a[href^="#"]{opacity:1;pointer-events:auto;padding-left:0.1em}}h2:hover a,h2:focus a,.h2:hover a,.h2:focus a{opacity:1;pointer-events:auto}h3,.h3{font-size:26px;font-size:2.6rem;letter-spacing:1px;font-style:italic;text-transform:uppercase}h4,.h4{font-size:24px;font-size:2.4rem}.table-of-contents{float:right;width:40%;background:#F4F4F4;font-size:0.8em;padding:1em 1.5em;margin:0 0 1em 1em;border-left:.5em solid white}.table-of-contents ul{color:#999}.table-of-contents h2{margin:.1em 0 .35em;font-size:24px;font-size:2.4rem}@media (max-width: 38em){.table-of-contents{float:none;width:100%;margin-left:0}}p,ul,ol{margin-bottom:1em}ul,ol{padding-left:1.5em}img{max-width:100%;height:auto;margin:1em auto;display:block}.quote{background:#F4F4F4;border-left:.5em solid white;padding:1em;font-style:italic;margin-bottom:1em}.quote p:last-of-type{margin-bottom:0}table{width:100%;margin:1em 0}tr:nth-child(odd){background:#F4F4F4}td,th{padding:.5em}th{font-weight:bold;text-align:center}.list-articles{margin:1em 2em 0 0;padding:0;list-style:none}@media (max-width: 48em){.list-articles{margin:0}}.list-articles li{border-bottom:1px solid #CFCFCF;border-top:1px solid #F2F2F2;padding:1.3em 0 .5em;position:relative}@media (max-width: 48em){.list-articles li{padding:0.7em 0 .5em}}.list-articles li:first-of-type{border-top:none}.list-articles li:last-of-type{box-shadow:0 1px #F2F2F2}.list-articles a{color:#666}.list-articles a:hover,.list-articles a:focus{color:#ff3d7f;text-decoration:none}.list-articles__title{margin:0;padding:.25em 3.25em .25em 0;font-size:28px;font-size:2.8rem}@media (max-width: 38em){.list-articles__title{padding:.25em 0}}.list-articles__date{font-size:17px;font-size:1.7rem;text-indent:3px;margin-bottom:0;color:#999}.list-articles__icon{position:absolute;opacity:.2;right:0;top:50%;margin-top:-1em;font-size:2em;width:2em !important;height:2em;border:.1em solid;line-height:2em;border-radius:50%}@media (max-width: 38em){.list-articles__icon{position:relative;opacity:1;font-size:1em;border:none;line-height:1.5;display:inline;color:#999}}.pagination{padding:0;margin:2em 0 0 0;text-align:center}.pagination li{display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline;margin:0 5px}.pagination a{display:block}.pagination a:hover,.pagination a:focus{text-decoration:none}.pagination__disabled{opacity:.3;pointer-events:none}.footer{font-size:14px;font-size:1.4rem;clear:both;padding:2.5em 0;border-top:3px solid #D1D1D1}.footer p{float:left}@media (max-width: 38em){.footer p{float:none}}.footer a{color:#666}@media (max-width: 38em){.footer{text-align:center}}.footer__nav{float:right}.footer__nav ul{list-style:none;padding:0}.footer__nav li{display:inline;margin:0 .25em}@media (max-width: 38em){.footer__nav{float:none;padding:0}}.carbonad{background:rgba(0,0,0,0.05) !important;border:1px solid rgba(0,0,0,0.1) !important;height:auto !important;border-radius:2px}#azcarbon>img{display:inline !important}
+/**
+ * Merge all stylesheets into one
+ * 1. Compass related imports
+ * 2. Sass helpers
+ * 3. Vendor related stylesheets
+ * 4. Partial frags
+ */
+/* 1 */
+/* ---------- *
+ * $VARIABLES *
+ * ---------- */
+/* 2 */
+/* ------- *
+ * $MIXINS *
+ * ------- */
+/**
+ * Mixin providing a PX fallback for REM font-sizes
+ * Source: http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+ */
+/**
+ * Mixin handling breakpoints for media queries
+ * Source: http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+ */
+/**
+ * Mixins used by helper classes .pull-image--$pos and .pull-quote--$pos
+ * 1. returns `left` if given `right` and vice versa
+ */
+/* -------- *
+ * $HELPERS *
+ * -------- */
+/**
+ * Clearfix
+ * 1. only meant to be extended from within the stylesheets
+ */
+/* line 9, ../sass/modules/_helpers.scss */
+.header, .quote, .footer, .footer__nav {
+  /* 1 */
+}
+/* line 10, ../sass/modules/_helpers.scss */
+.header:after, .quote:after, .footer:after, .footer__nav:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+/**
+ * Prevent icon to stick to the text
+ */
+/*span*/
+/* line 21, ../sass/modules/_helpers.scss */
+.icon-left {
+  margin-right: 5px;
+}
+
+/* line 22, ../sass/modules/_helpers.scss */
+.icon-right {
+  margin-left: 5px;
+}
+
+/**
+ * Quotes & images pulling
+ * 1. Center images/quotes on small screens
+ */
+/* line 28, ../sass/modules/_helpers.scss */
+.pull-image--left, .pull-image--right {
+  max-width: 15em;
+}
+@media (max-width: 38em) {
+  /* line 28, ../sass/modules/_helpers.scss */
+  .pull-image--left, .pull-image--right {
+    /* 1 */
+    float: none;
+    width: 100%;
+    margin: 1em auto;
+  }
+}
+
+/* line 38, ../sass/modules/_helpers.scss */
+.pull-quote--left, .pull-quote--right {
+  max-width: 250px;
+  line-height: 1.35;
+  font-size: 30px;
+  font-size: 3rem;
+}
+/* line 44, ../sass/modules/_helpers.scss */
+.pull-quote--left:after, .pull-quote--right:after, .pull-quote--left:before, .pull-quote--right:before {
+  font-weight: bold;
+}
+/* line 48, ../sass/modules/_helpers.scss */
+.pull-quote--left:before, .pull-quote--right:before {
+  content: "\201c";
+}
+/* line 49, ../sass/modules/_helpers.scss */
+.pull-quote--left:after, .pull-quote--right:after {
+  content: "\201d";
+}
+@media (max-width: 38em) {
+  /* line 38, ../sass/modules/_helpers.scss */
+  .pull-quote--left, .pull-quote--right {
+    /* 1 */
+    float: none;
+    margin: 1em auto !important;
+    border: 6px solid #ff3d7f;
+    border-left: none !important;
+    border-right: none;
+    text-align: center !important;
+    padding: 1em 0.5em !important;
+    max-width: 100%;
+  }
+}
+
+/**
+ * Creates helpers for both images and quotes
+ * for both directions (left and righ)
+ * 1. Extends default styles no matter the direction
+ * 2. Applies styles according to the given direction
+ */
+/*blockquote*/
+/* line 71, ../sass/modules/_helpers.scss */
+.pull-quote--left {
+  /* 1 */
+  /* 1 */
+  text-align: right;
+  float: left;
+  margin: 0 0 1em 0;
+  margin-right: 1em;
+  border-right: 6px solid #ff3d7f;
+  padding-right: 1em;
+  /* 2 */
+}
+
+/*img*/
+/* line 77, ../sass/modules/_helpers.scss */
+.pull-image--left {
+  /* 1 */
+  /* 1 */
+  float: left;
+  margin: 0 0 1em 0;
+  margin-right: 1em;
+  /* 2 */
+}
+
+/*blockquote*/
+/* line 71, ../sass/modules/_helpers.scss */
+.pull-quote--right {
+  /* 1 */
+  /* 1 */
+  text-align: left;
+  float: right;
+  margin: 0 0 1em 0;
+  margin-left: 1em;
+  border-left: 6px solid #ff3d7f;
+  padding-left: 1em;
+  /* 2 */
+}
+
+/*img*/
+/* line 77, ../sass/modules/_helpers.scss */
+.pull-image--right {
+  /* 1 */
+  /* 1 */
+  float: right;
+  margin: 0 0 1em 0;
+  margin-left: 1em;
+  /* 2 */
+}
+
+/**
+ * Hidden yet accessible content
+ * Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+ */
+/* line 87, ../sass/modules/_helpers.scss */
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: none;
+}
+
+/**
+ * Secondary content; could be ommited without altering the meaning
+ */
+/*p*/
+/* line 102, ../sass/modules/_helpers.scss */
+.note {
+  font-style: italic;
+  padding-left: 1em;
+}
+
+/**
+ * Right after main title in articles
+ */
+/*p*/
+/* line 111, ../sass/modules/_helpers.scss */
+.date {
+  color: #999999;
+  text-transform: uppercase;
+  margin-top: .5em;
+}
+
+/**
+ * Often used as an introduction paragraph in articles
+ * 1. To avoid overlapping in case there is a table of contents
+ */
+/*p*/
+/* line 122, ../sass/modules/_helpers.scss */
+.explanation {
+  background: #F4F4F4;
+  border-left: .5em solid white;
+  padding: 1em;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+/* line 129, ../sass/modules/_helpers.scss */
+.table-of-contents ~ section .explanation {
+  /* 1 */
+  margin-right: 42%;
+}
+@media (max-width: 38em) {
+  /* line 122, ../sass/modules/_helpers.scss */
+  .explanation {
+    margin-right: 0 !important;
+  }
+}
+
+/* ------------- *
+ * $FONT AWESOME *
+ * ------------- */
+/**
+ * Font files from WeLoveIconFonts
+ * http://weloveiconfonts.com
+ * 1. Prevent screen readers to read (future proof)
+ */
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: 'normal';
+  font-weight: 'normal';
+  src: url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.eot");
+  src: url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.eot?#iefix") format("eot"), url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.woff") format("woff"), url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.ttf") format("truetype"), url("http://weloveiconfonts.com/api/fonts/fontawesome/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+}
+
+/* line 22, ../sass/vendor/_font-awesome.scss */
+[class^="fontawesome-"],
+[class*=" fontawesome-"] {
+  display: inline-block;
+  text-decoration: inherit;
+  speak: none;
+  /* 1 */
+}
+/* line 27, ../sass/vendor/_font-awesome.scss */
+li [class^="fontawesome-"], li
+[class*=" fontawesome-"] {
+  width: 1.25em;
+  text-align: center;
+}
+/* line 32, ../sass/vendor/_font-awesome.scss */
+[class^="fontawesome-"]:before,
+[class*=" fontawesome-"]:before {
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+/**
+ * Used icons
+ */
+/* line 44, ../sass/vendor/_font-awesome.scss */
+.fontawesome-heart:before {
+  content: "\f004";
+}
+
+/* line 45, ../sass/vendor/_font-awesome.scss */
+.fontawesome-pencil:before {
+  content: "\f040";
+}
+
+/* line 46, ../sass/vendor/_font-awesome.scss */
+.fontawesome-tint:before {
+  content: "\f043";
+}
+
+/* line 47, ../sass/vendor/_font-awesome.scss */
+.fontawesome-briefcase:before {
+  content: "\f0b1";
+}
+
+/* line 48, ../sass/vendor/_font-awesome.scss */
+.fontawesome-magic:before {
+  content: "\f0d0";
+}
+
+/* line 49, ../sass/vendor/_font-awesome.scss */
+.fontawesome-beaker:before {
+  content: "\f0c3";
+}
+
+/* line 50, ../sass/vendor/_font-awesome.scss */
+.fontawesome-angle-left:before {
+  content: "\f104";
+}
+
+/* line 51, ../sass/vendor/_font-awesome.scss */
+.fontawesome-angle-right:before {
+  content: "\f105";
+}
+
+/* line 52, ../sass/vendor/_font-awesome.scss */
+.fontawesome-user:before {
+  content: "\f007";
+}
+
+/* line 53, ../sass/vendor/_font-awesome.scss */
+.fontawesome-comment:before {
+  content: "\f075";
+}
+
+/* line 54, ../sass/vendor/_font-awesome.scss */
+.fontawesome-comments:before {
+  content: "\f086";
+}
+
+/* line 55, ../sass/vendor/_font-awesome.scss */
+.fontawesome-share-alt:before {
+  content: "\f064";
+}
+
+/**
+ * Default yet unused stuff from Font Awesome
+ */
+/*
+.icon-large:before {
+  vertical-align: -10%;
+  font-size: 1.3333333333333333em;
+}
+
+li .icon-large[class^="fontawesome-"], 
+li .icon-large[class*=" fontawesome-"] {
+  width: 1.5625em;
+}
+
+li[class^="fontawesome-"], 
+li[class*=" fontawesome-"] {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+li[class^="fontawesome-"]:before, 
+li[class*=" fontawesome-"]:before {
+  text-indent: -2em;
+  text-align: center;
+}
+
+li[class^="fontawesome-"].icon-large:before, 
+li[class*=" fontawesome-"].icon-large:before {
+  text-indent: -1.3333333333333333em;
+}
+*/
+/**
+ * Unused icons 
+ */
+/*
+.fontawesome-comment-alt:before{content:"\f0e5"}
+.fontawesome-comments-alt:before{content:"\f0e6"}
+.fontawesome-glass:before{content:"\f000"}
+.fontawesome-music:before{content:"\f001"}
+.fontawesome-search:before{content:"\f002"}
+.fontawesome-envelope:before{content:"\f003"}
+.fontawesome-star:before{content:"\f005"}
+.fontawesome-star-empty:before{content:"\f006"}
+.fontawesome-user:before{content:"\f007"}
+.fontawesome-film:before{content:"\f008"}
+.fontawesome-th-large:before{content:"\f009"}
+.fontawesome-th:before{content:"\f00a"}
+.fontawesome-th-list:before{content:"\f00b"}
+.fontawesome-ok:before{content:"\f00c"}
+.fontawesome-remove:before{content:"\f00d"}
+.fontawesome-zoom-in:before{content:"\f00e"}
+.fontawesome-zoom-out:before{content:"\f010"}
+.fontawesome-off:before{content:"\f011"}
+.fontawesome-signal:before{content:"\f012"}
+.fontawesome-cog:before{content:"\f013"}
+.fontawesome-trash:before{content:"\f014"}
+.fontawesome-home:before{content:"\f015"}
+.fontawesome-file:before{content:"\f016"}
+.fontawesome-time:before{content:"\f017"}
+.fontawesome-road:before{content:"\f018"}
+.fontawesome-download-alt:before{content:"\f019"}
+.fontawesome-download:before{content:"\f01a"}
+.fontawesome-upload:before{content:"\f01b"}
+.fontawesome-inbox:before{content:"\f01c"}
+.fontawesome-play-circle:before{content:"\f01d"}
+.fontawesome-repeat:before{content:"\f01e"}
+.fontawesome-refresh:before{content:"\f021"}
+.fontawesome-list-alt:before{content:"\f022"}
+.fontawesome-lock:before{content:"\f023"}
+.fontawesome-flag:before{content:"\f024"}
+.fontawesome-headphones:before{content:"\f025"}
+.fontawesome-volume-off:before{content:"\f026"}
+.fontawesome-volume-down:before{content:"\f027"}
+.fontawesome-volume-up:before{content:"\f028"}
+.fontawesome-qrcode:before{content:"\f029"}
+.fontawesome-barcode:before{content:"\f02a"}
+.fontawesome-tag:before{content:"\f02b"}
+.fontawesome-tags:before{content:"\f02c"}
+.fontawesome-book:before{content:"\f02d"}
+.fontawesome-bookmark:before{content:"\f02e"}
+.fontawesome-print:before{content:"\f02f"}
+.fontawesome-camera:before{content:"\f030"}
+.fontawesome-font:before{content:"\f031"}
+.fontawesome-bold:before{content:"\f032"}
+.fontawesome-italic:before{content:"\f033"}
+.fontawesome-text-height:before{content:"\f034"}
+.fontawesome-text-width:before{content:"\f035"}
+.fontawesome-align-left:before{content:"\f036"}
+.fontawesome-align-center:before{content:"\f037"}
+.fontawesome-align-right:before{content:"\f038"}
+.fontawesome-align-justify:before{content:"\f039"}
+.fontawesome-list:before{content:"\f03a"}
+.fontawesome-indent-left:before{content:"\f03b"}
+.fontawesome-indent-right:before{content:"\f03c"}
+.fontawesome-facetime-video:before{content:"\f03d"}
+.fontawesome-picture:before{content:"\f03e"}
+.fontawesome-map-marker:before{content:"\f041"}
+.fontawesome-adjust:before{content:"\f042"}
+.fontawesome-edit:before{content:"\f044"}
+.fontawesome-share:before{content:"\f045"}
+.fontawesome-check:before{content:"\f046"}
+.fontawesome-move:before{content:"\f047"}
+.fontawesome-step-backward:before{content:"\f048"}
+.fontawesome-fast-backward:before{content:"\f049"}
+.fontawesome-backward:before{content:"\f04a"}
+.fontawesome-play:before{content:"\f04b"}
+.fontawesome-pause:before{content:"\f04c"}
+.fontawesome-stop:before{content:"\f04d"}
+.fontawesome-forward:before{content:"\f04e"}
+.fontawesome-fast-forward:before{content:"\f050"}
+.fontawesome-step-forward:before{content:"\f051"}
+.fontawesome-eject:before{content:"\f052"}
+.fontawesome-chevron-left:before{content:"\f053"}
+.fontawesome-chevron-right:before{content:"\f054"}
+.fontawesome-plus-sign:before{content:"\f055"}
+.fontawesome-minus-sign:before{content:"\f056"}
+.fontawesome-remove-sign:before{content:"\f057"}
+.fontawesome-ok-sign:before{content:"\f058"}
+.fontawesome-question-sign:before{content:"\f059"}
+.fontawesome-info-sign:before{content:"\f05a"}
+.fontawesome-screenshot:before{content:"\f05b"}
+.fontawesome-remove-circle:before{content:"\f05c"}
+.fontawesome-ok-circle:before{content:"\f05d"}
+.fontawesome-ban-circle:before{content:"\f05e"}
+.fontawesome-arrow-left:before{content:"\f060"}
+.fontawesome-arrow-right:before{content:"\f061"}
+.fontawesome-arrow-up:before{content:"\f062"}
+.fontawesome-arrow-down:before{content:"\f063"}
+.fontawesome-resize-full:before{content:"\f065"}
+.fontawesome-resize-small:before{content:"\f066"}
+.fontawesome-plus:before{content:"\f067"}
+.fontawesome-minus:before{content:"\f068"}
+.fontawesome-asterisk:before{content:"\f069"}
+.fontawesome-exclamation-sign:before{content:"\f06a"}
+.fontawesome-gift:before{content:"\f06b"}
+.fontawesome-leaf:before{content:"\f06c"}
+.fontawesome-fire:before{content:"\f06d"}
+.fontawesome-eye-open:before{content:"\f06e"}
+.fontawesome-eye-close:before{content:"\f070"}
+.fontawesome-warning-sign:before{content:"\f071"}
+.fontawesome-plane:before{content:"\f072"}
+.fontawesome-calendar:before{content:"\f073"}
+.fontawesome-random:before{content:"\f074"}
+.fontawesome-magnet:before{content:"\f076"}
+.fontawesome-chevron-up:before{content:"\f077"}
+.fontawesome-chevron-down:before{content:"\f078"}
+.fontawesome-retweet:before{content:"\f079"}
+.fontawesome-shopping-cart:before{content:"\f07a"}
+.fontawesome-folder-close:before{content:"\f07b"}
+.fontawesome-folder-open:before{content:"\f07c"}
+.fontawesome-resize-vertical:before{content:"\f07d"}
+.fontawesome-resize-horizontal:before{content:"\f07e"}
+.fontawesome-bar-chart:before{content:"\f080"}
+.fontawesome-twitter-sign:before{content:"\f081"}
+.fontawesome-facebook-sign:before{content:"\f082"}
+.fontawesome-camera-retro:before{content:"\f083"}
+.fontawesome-key:before{content:"\f084"}
+.fontawesome-cogs:before{content:"\f085"}
+.fontawesome-thumbs-up:before{content:"\f087"}
+.fontawesome-thumbs-down:before{content:"\f088"}
+.fontawesome-star-half:before{content:"\f089"}
+.fontawesome-heart-empty:before{content:"\f08a"}
+.fontawesome-signout:before{content:"\f08b"}
+.fontawesome-linkedin-sign:before{content:"\f08c"}
+.fontawesome-pushpin:before{content:"\f08d"}
+.fontawesome-external-link:before{content:"\f08e"}
+.fontawesome-signin:before{content:"\f090"}
+.fontawesome-trophy:before{content:"\f091"}
+.fontawesome-github-sign:before{content:"\f092"}
+.fontawesome-upload-alt:before{content:"\f093"}
+.fontawesome-lemon:before{content:"\f094"}
+.fontawesome-phone:before{content:"\f095"}
+.fontawesome-check-empty:before{content:"\f096"}
+.fontawesome-bookmark-empty:before{content:"\f097"}
+.fontawesome-phone-sign:before{content:"\f098"}
+.fontawesome-twitter:before{content:"\f099"}
+.fontawesome-facebook:before{content:"\f09a"}
+.fontawesome-github:before{content:"\f09b"}
+.fontawesome-unlock:before{content:"\f09c"}
+.fontawesome-credit-card:before{content:"\f09d"}
+.fontawesome-rss:before{content:"\f09e"}
+.fontawesome-hdd:before{content:"\f0a0"}
+.fontawesome-bullhorn:before{content:"\f0a1"}
+.fontawesome-bell:before{content:"\f0a2"}
+.fontawesome-certificate:before{content:"\f0a3"}
+.fontawesome-hand-right:before{content:"\f0a4"}
+.fontawesome-hand-left:before{content:"\f0a5"}
+.fontawesome-hand-up:before{content:"\f0a6"}
+.fontawesome-hand-down:before{content:"\f0a7"}
+.fontawesome-circle-arrow-left:before{content:"\f0a8"}
+.fontawesome-circle-arrow-right:before{content:"\f0a9"}
+.fontawesome-circle-arrow-up:before{content:"\f0aa"}
+.fontawesome-circle-arrow-down:before{content:"\f0ab"}
+.fontawesome-globe:before{content:"\f0ac"}
+.fontawesome-wrench:before{content:"\f0ad"}
+.fontawesome-tasks:before{content:"\f0ae"}
+.fontawesome-filter:before{content:"\f0b0"}
+.fontawesome-fullscreen:before{content:"\f0b2"}
+.fontawesome-group:before{content:"\f0c0"}
+.fontawesome-link:before{content:"\f0c1"}
+.fontawesome-cloud:before{content:"\f0c2"}
+.fontawesome-cut:before{content:"\f0c4"}
+.fontawesome-copy:before{content:"\f0c5"}
+.fontawesome-paper-clip:before{content:"\f0c6"}
+.fontawesome-save:before{content:"\f0c7"}
+.fontawesome-sign-blank:before{content:"\f0c8"}
+.fontawesome-reorder:before{content:"\f0c9"}
+.fontawesome-list-ul:before{content:"\f0ca"}
+.fontawesome-list-ol:before{content:"\f0cb"}
+.fontawesome-strikethrough:before{content:"\f0cc"}
+.fontawesome-underline:before{content:"\f0cd"}
+.fontawesome-table:before{content:"\f0ce"}
+.fontawesome-truck:before{content:"\f0d1"}
+.fontawesome-pinterest:before{content:"\f0d2"}
+.fontawesome-pinterest-sign:before{content:"\f0d3"}
+.fontawesome-google-plus-sign:before{content:"\f0d4"}
+.fontawesome-google-plus:before{content:"\f0d5"}
+.fontawesome-money:before{content:"\f0d6"}
+.fontawesome-caret-down:before{content:"\f0d7"}
+.fontawesome-caret-up:before{content:"\f0d8"}
+.fontawesome-caret-left:before{content:"\f0d9"}
+.fontawesome-caret-right:before{content:"\f0da"}
+.fontawesome-columns:before{content:"\f0db"}
+.fontawesome-sort:before{content:"\f0dc"}
+.fontawesome-sort-down:before{content:"\f0dd"}
+.fontawesome-sort-up:before{content:"\f0de"}
+.fontawesome-envelope-alt:before{content:"\f0e0"}
+.fontawesome-linkedin:before{content:"\f0e1"}
+.fontawesome-undo:before{content:"\f0e2"}
+.fontawesome-legal:before{content:"\f0e3"}
+.fontawesome-dashboard:before{content:"\f0e4"}
+.fontawesome-bolt:before{content:"\f0e7"}
+.fontawesome-sitemap:before{content:"\f0e8"}
+.fontawesome-umbrella:before{content:"\f0e9"}
+.fontawesome-paste:before{content:"\f0ea"}
+.fontawesome-lightbulb:before{content:"\f0eb"}
+.fontawesome-exchange:before{content:"\f0ec"}
+.fontawesome-cloud-download:before{content:"\f0ed"}
+.fontawesome-cloud-upload:before{content:"\f0ee"}
+.fontawesome-user-md:before{content:"\f0f0"}
+.fontawesome-stethoscope:before{content:"\f0f1"}
+.fontawesome-suitcase:before{content:"\f0f2"}
+.fontawesome-bell-alt:before{content:"\f0f3"}
+.fontawesome-coffee:before{content:"\f0f4"}
+.fontawesome-food:before{content:"\f0f5"}
+.fontawesome-file-alt:before{content:"\f0f6"}
+.fontawesome-building:before{content:"\f0f7"}
+.fontawesome-hospital:before{content:"\f0f8"}
+.fontawesome-ambulance:before{content:"\f0f9"}
+.fontawesome-medkit:before{content:"\f0fa"}
+.fontawesome-fighter-jet:before{content:"\f0fb"}
+.fontawesome-beer:before{content:"\f0fc"}
+.fontawesome-h-sign:before{content:"\f0fd"}
+.fontawesome-plus-sign-alt:before{content:"\f0fe"}
+.fontawesome-double-angle-left:before{content:"\f100"}
+.fontawesome-double-angle-right:before{content:"\f101"}
+.fontawesome-double-angle-up:before{content:"\f102"}
+.fontawesome-double-angle-down:before{content:"\f103"}
+.fontawesome-angle-up:before{content:"\f106"}
+.fontawesome-angle-down:before{content:"\f107"}
+.fontawesome-desktop:before{content:"\f108"}
+.fontawesome-laptop:before{content:"\f109"}
+.fontawesome-tablet:before{content:"\f10a"}
+.fontawesome-mobile-phone:before{content:"\f10b"}
+.fontawesome-circle-blank:before{content:"\f10c"}
+.fontawesome-quote-left:before{content:"\f10d"}
+.fontawesome-quote-right:before{content:"\f10e"}
+.fontawesome-spinner:before{content:"\f110"}
+.fontawesome-circle:before{content:"\f111"}
+.fontawesome-reply:before{content:"\f112"}
+.fontawesome-github-alt:before{content:"\f113"}
+.fontawesome-folder-close-alt:before{content:"\f114"}
+.fontawesome-folder-open-alt:before{content:"\f115"}
+*/
+/* 3 */
+/* ------------- *
+ * $GOOGLE FONTS *
+ * ------------- */
+@font-face {
+  font-family: 'Orienta';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Orienta"), local("Orienta-Regular"), url(http://themes.googleusercontent.com/static/fonts/orienta/v1/nPJ0J30J_zQZtBhztPPbaA.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Sanchez';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Sanchez"), local("Sanchez-Regular"), url(http://themes.googleusercontent.com/static/fonts/sanchez/v1/mx466fsxfR1AA3OwUm3waQ.woff) format("woff");
+}
+
+/* -------------------- *
+ * $SYNTAX HIGHLIGHTING *
+ * -------------------- */
+/**
+ * Syntax highlighting
+ * 1. Make the content within the code block horizontally scrollable
+ * 2. Keep white spaces as authored
+ * 3. Ensure tab size consistency
+ * 4. Disable word hyphenation within code blocks
+ * 5. Reduce font size on small screens
+ */
+/* line 13, ../sass/vendor/_pygments.scss */
+.highlight {
+  margin-bottom: 1em;
+  padding: .6em;
+  overflow-x: auto;
+  /* 1 */
+  background: #efefef;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  line-height: 1.4;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  white-space: pre;
+  /* 2 */
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  /* 4 */
+}
+@media (max-width: 38em) {
+  /* line 13, ../sass/vendor/_pygments.scss */
+  .highlight {
+    font-size: 15px;
+    font-size: 1.5rem;
+    /* 5 */
+  }
+}
+/* line 37, ../sass/vendor/_pygments.scss */
+.highlight .hll {
+  background-color: #ffffcc;
+}
+/* line 42, ../sass/vendor/_pygments.scss */
+.highlight .c,
+.highlight .cm,
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+/* line 46, ../sass/vendor/_pygments.scss */
+.highlight .err {
+  /* Error */
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+/* line 51, ../sass/vendor/_pygments.scss */
+.highlight .cp,
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 56, ../sass/vendor/_pygments.scss */
+.highlight .gd {
+  /* Generic.Deleted */
+  color: #000000;
+  background-color: #ffdddd;
+}
+/* line 60, ../sass/vendor/_pygments.scss */
+.highlight .ge {
+  /* Generic.Emph */
+  color: #000000;
+  font-style: italic;
+}
+/* line 65, ../sass/vendor/_pygments.scss */
+.highlight .gr,
+.highlight .gt {
+  color: #aa0000;
+}
+/* line 69, ../sass/vendor/_pygments.scss */
+.highlight .gh,
+.highlight .bp {
+  color: #999999;
+}
+/* line 72, ../sass/vendor/_pygments.scss */
+.highlight .gi {
+  /* Generic.Inserted */
+  color: #000000;
+  background-color: #ddffdd;
+}
+/* line 76, ../sass/vendor/_pygments.scss */
+.highlight .go {
+  /* Generic.Output */
+  color: #888888;
+}
+/* line 80, ../sass/vendor/_pygments.scss */
+.highlight .gp,
+.highlight .nn {
+  color: #555555;
+}
+/* line 83, ../sass/vendor/_pygments.scss */
+.highlight .gs {
+  /* Generic.Strong */
+  font-weight: bold;
+}
+/* line 86, ../sass/vendor/_pygments.scss */
+.highlight .gu {
+  /* Generic.Subheading */
+  color: #aaaaaa;
+}
+/* line 96, ../sass/vendor/_pygments.scss */
+.highlight .o,
+.highlight .ow,
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+/* line 101, ../sass/vendor/_pygments.scss */
+.highlight .kt,
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+/* line 105, ../sass/vendor/_pygments.scss */
+.highlight .nb {
+  /* Name.Builtin */
+  color: #0086B3;
+}
+/* line 108, ../sass/vendor/_pygments.scss */
+.highlight .nd {
+  /* Name.Decorator */
+  color: #3c5d5d;
+  font-weight: bold;
+}
+/* line 112, ../sass/vendor/_pygments.scss */
+.highlight .ni {
+  /* Name.Entity */
+  color: #800080;
+}
+/* line 117, ../sass/vendor/_pygments.scss */
+.highlight .ne,
+.highlight .nf,
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+/* line 121, ../sass/vendor/_pygments.scss */
+.highlight .nt {
+  /* Name.Tag */
+  color: #000080;
+}
+/* line 124, ../sass/vendor/_pygments.scss */
+.highlight .w {
+  /* Text.Whitespace */
+  color: #bbbbbb;
+}
+/* line 132, ../sass/vendor/_pygments.scss */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il {
+  color: #009999;
+}
+/* line 144, ../sass/vendor/_pygments.scss */
+.highlight .s,
+.highlight .s1,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx {
+  color: #d01040;
+}
+/* line 147, ../sass/vendor/_pygments.scss */
+.highlight .sr {
+  /* Literal.String.Regex */
+  color: #009926;
+}
+/* line 150, ../sass/vendor/_pygments.scss */
+.highlight .ss {
+  /* Literal.String.Symbol */
+  color: #990073;
+}
+/* line 158, ../sass/vendor/_pygments.scss */
+.highlight .nv,
+.highlight .no,
+.highlight .na,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+  color: #008080;
+}
+
+/* -------- *
+ * $GLOBALS *
+ * -------- */
+/**
+ * RESET ALL THE THINGS! (barbarian style)
+ * 1. Include pseudo-elements which are not target by * 
+ * 2. Apply proper box-sizing to all elements
+ * 3. Barbarian reset
+ */
+/* line 13, ../sass/partials/_globals.scss */
+*,
+*:before,
+*:after {
+  /* 1 */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Document root
+ * 1. 62.5% equals 10 px; used as a baseline for REM unit
+ */
+/* line 23, ../sass/partials/_globals.scss */
+html {
+  font: 62.5%/1.55 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  /* 1 */
+  color: #555;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+  border-left: 6px solid #ff3d7f;
+  background-image: url("data:image/png;base64,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");
+}
+@media (max-width: 38em) {
+  /* line 23, ../sass/partials/_globals.scss */
+  html {
+    border-left: none;
+    border-top: 5px solid #ff3d7f;
+  }
+}
+
+/**
+ * Shake your <body>
+ * 1. 20px, used as a baseline for EM unit
+ */
+/* line 40, ../sass/partials/_globals.scss */
+body {
+  font-size: 20px;
+  font-size: 2rem;
+  /* 1 */
+}
+
+/**
+ * Links
+ */
+/* line 47, ../sass/partials/_globals.scss */
+a {
+  color: #ff3d7f;
+  text-decoration: none;
+}
+/* line 51, ../sass/partials/_globals.scss */
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/**
+ * User selection
+ */
+/* line 59, ../sass/partials/_globals.scss */
+::-moz-selection {
+  background: #ff3d7f;
+  color: white;
+}
+
+/* line 64, ../sass/partials/_globals.scss */
+::selection {
+  background: #ff3d7f;
+  color: white;
+}
+
+/**
+ * Disqus fix
+ */
+/* line 73, ../sass/partials/_globals.scss */
+#disqus_thread {
+  margin-top: 3.5em;
+}
+
+/* 4 */
+/* ----------- *
+ * $CONTAINERs *
+ * ----------- */
+/**
+ * Main wrapper
+ * Contains .header, .main, .sidebar, .footer
+ * 1. Equals 1140px
+ */
+/* line 10, ../sass/partials/_containers.scss */
+.wrapper {
+  width: 100%;
+  max-width: 57em;
+  /* 1 */
+  margin: 0 auto;
+  padding: 0 1em;
+}
+@media (max-width: 38em) {
+  /* line 10, ../sass/partials/_containers.scss */
+  .wrapper {
+    padding: 0 .5em;
+  }
+}
+
+/**
+ * Main content
+ */
+/* line 24, ../sass/partials/_containers.scss */
+.main {
+  width: 68%;
+  margin-right: 2%;
+}
+@media (max-width: 48em) {
+  /* line 24, ../sass/partials/_containers.scss */
+  .main {
+    margin-right: 0;
+    border-bottom: 3px solid #D1D1D1;
+  }
+}
+
+/**
+ * Sidebar
+ * Contains informations about me + CarbonAds
+ */
+/* line 39, ../sass/partials/_containers.scss */
+.sidebar {
+  width: 30%;
+  padding-top: 2em;
+}
+
+/**
+ * Shared by .main and .sidebar
+ */
+/* line 48, ../sass/partials/_containers.scss */
+.main, .sidebar {
+  float: left;
+  padding-bottom: 2em;
+}
+@media (max-width: 48em) {
+  /* line 48, ../sass/partials/_containers.scss */
+  .main, .sidebar {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* ------- *
+ * $HEADER *
+ * ------- */
+/**
+ * Header element
+ */
+/* line 8, ../sass/partials/_header.scss */
+.header {
+  border-bottom: 3px solid #D1D1D1;
+  margin: 2.5em 0 2em;
+}
+@media (max-width: 38em) {
+  /* line 8, ../sass/partials/_header.scss */
+  .header {
+    margin-top: 1em;
+  }
+}
+
+/**
+ * Site main title
+ */
+/* line 21, ../sass/partials/_header.scss */
+.site-title {
+  float: left;
+  font-family: 'Orienta', sans-serif;
+  margin: 0;
+  text-shadow: none;
+  text-transform: none;
+  font-weight: bold;
+  font-size: 40px;
+  font-size: 4rem;
+}
+@media (max-width: 38em) {
+  /* line 21, ../sass/partials/_header.scss */
+  .site-title {
+    font-size: 28px;
+    font-size: 2.8rem;
+    float: none;
+    text-align: center;
+  }
+}
+/* line 36, ../sass/partials/_header.scss */
+.site-title a {
+  color: #666666;
+}
+/* line 39, ../sass/partials/_header.scss */
+.site-title a:hover, .site-title a:focus {
+  text-decoration: none;
+}
+/* line 44, ../sass/partials/_header.scss */
+.site-title span {
+  text-transform: uppercase;
+  color: #999999;
+}
+
+/**
+ * Site main navigation
+ */
+/* line 53, ../sass/partials/_header.scss */
+.site-nav {
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 38em) {
+  /* line 53, ../sass/partials/_header.scss */
+  .site-nav {
+    float: none;
+    text-align: center;
+  }
+}
+/* line 64, ../sass/partials/_header.scss */
+.site-nav li {
+  float: left;
+}
+@media (max-width: 38em) {
+  /* line 64, ../sass/partials/_header.scss */
+  .site-nav li {
+    float: none;
+    display: inline-block;
+  }
+}
+/* line 73, ../sass/partials/_header.scss */
+.site-nav a {
+  display: block;
+  color: #666666;
+  padding: 1em .5em;
+  position: relative;
+}
+/* line 79, ../sass/partials/_header.scss */
+.site-nav a:hover, .site-nav a:focus {
+  text-decoration: none;
+}
+/* line 83, ../sass/partials/_header.scss */
+.site-nav a:after {
+  bottom: -3px;
+  height: 3px;
+  background: #ff3d7f;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+/**
+ * Active class for the main nav
+ * 1. Same as "display: block" or "visibility: visible"
+ * Source: https://github.com/csswizardry/csswizardry.github.com/blob/master/css/ui/site-nav.scss
+ */
+/* line 101, ../sass/partials/_header.scss */
+.page--home .site-nav__home {
+  cursor: text;
+}
+/* line 103, ../sass/partials/_header.scss */
+.page--home .site-nav__home:after {
+  content: '';
+  /* 1 */
+}
+
+/* line 101, ../sass/partials/_header.scss */
+.page--resume .site-nav__resume {
+  cursor: text;
+}
+/* line 103, ../sass/partials/_header.scss */
+.page--resume .site-nav__resume:after {
+  content: '';
+  /* 1 */
+}
+
+/* ------------- *
+ * $MAIN CONTENT *
+ * ------------- */
+/**
+ * Titles
+ * Classes are meant to give styles without semantic value
+ * e.g. <h2 class="h4">Title level 2 with styles level 4</h2>
+ */
+/* line 13, ../sass/partials/_content.scss */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  margin: 1.3em 0 .6em 0;
+  font-weight: normal;
+  line-height: 1.3;
+  font-family: 'Orienta', sans-serif;
+  color: #444444;
+}
+
+/* line 21, ../sass/partials/_content.scss */
+h1, .h1 {
+  font-size: 36px;
+  font-size: 3.6rem;
+  font-family: 'Sanchez', sans-serif;
+  text-shadow: 0 1px white, 0 2px #999999;
+  margin: 1em 0 0 0;
+  text-transform: uppercase;
+}
+@media (max-width: 38em) {
+  /* line 21, ../sass/partials/_content.scss */
+  h1, .h1 {
+    font-size: 32px;
+    font-size: 3.2rem;
+  }
+}
+
+/* line 33, ../sass/partials/_content.scss */
+h2, .h2 {
+  font-size: 32px;
+  font-size: 3.2rem;
+}
+/* line 36, ../sass/partials/_content.scss */
+.page--resume h2, .page--resume .h2 {
+  border-bottom: 1px solid silver;
+}
+/* line 40, ../sass/partials/_content.scss */
+h2 a[href^="#"], .h2 a[href^="#"] {
+  *display: inline;
+  display: inline-block;
+  padding-left: .3em;
+  color: #999999;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -o-transition: 0.15s;
+  transition: 0.15s;
+}
+@media (max-width: 38em) {
+  /* line 40, ../sass/partials/_content.scss */
+  h2 a[href^="#"], .h2 a[href^="#"] {
+    opacity: 1;
+    pointer-events: auto;
+    padding-left: 0.1em;
+  }
+}
+/* line 57, ../sass/partials/_content.scss */
+h2:hover a, h2:focus a, .h2:hover a, .h2:focus a {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* line 63, ../sass/partials/_content.scss */
+h3, .h3 {
+  font-size: 26px;
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+/* line 70, ../sass/partials/_content.scss */
+h4, .h4 {
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+
+/**
+ * Table of contents
+ */
+/* line 77, ../sass/partials/_content.scss */
+.table-of-contents {
+  float: right;
+  width: 40%;
+  background: #F4F4F4;
+  font-size: 0.8em;
+  padding: 1em 1.5em;
+  margin: 0 0 1em 1em;
+  border-left: .5em solid white;
+}
+/* line 86, ../sass/partials/_content.scss */
+.table-of-contents ul {
+  color: #999999;
+}
+/* line 88, ../sass/partials/_content.scss */
+.table-of-contents h2 {
+  margin: .1em 0 .35em;
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+@media (max-width: 38em) {
+  /* line 77, ../sass/partials/_content.scss */
+  .table-of-contents {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/**
+ * Text content
+ */
+/* line 103, ../sass/partials/_content.scss */
+p, ul, ol {
+  margin-bottom: 1em;
+}
+
+/* line 107, ../sass/partials/_content.scss */
+ul, ol {
+  padding-left: 1.5em;
+}
+
+/**
+ * Images & figures
+ * 1. Prevent images to break outside their container
+ * 2. keep ratio when resized
+ */
+/* line 116, ../sass/partials/_content.scss */
+.figure, .figure--left, .figure--right {
+  padding: 1em 1em 0 1em;
+  background: #efefef;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+/* line 122, ../sass/partials/_content.scss */
+.figure figcaption, .figure--left figcaption, .figure--right figcaption {
+  font-style: italic;
+  font-size: 15px;
+  font-size: 1.5rem;
+  padding: .5em 0;
+  text-align: center;
+}
+
+/* line 130, ../sass/partials/_content.scss */
+img {
+  max-width: 100%;
+  /* 1 */
+  height: auto;
+  /* 2 */
+  margin: 0 auto;
+  display: block;
+}
+
+/* line 137, ../sass/partials/_content.scss */
+.figure--left {
+  float: left;
+  margin: 0 1em .5em 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+/* line 146, ../sass/partials/_content.scss */
+.figure--left img {
+  max-width: none;
+}
+
+/* line 151, ../sass/partials/_content.scss */
+.figure--right {
+  float: right;
+  margin: 0 0 .5em 1em;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+/* line 160, ../sass/partials/_content.scss */
+.figure--right img {
+  max-width: none;
+}
+
+/* line 165, ../sass/partials/_content.scss */
+.numbered-figures {
+  counter-reset: figures;
+}
+/* line 168, ../sass/partials/_content.scss */
+.numbered-figures figcaption {
+  counter-increment: figures;
+}
+/* line 171, ../sass/partials/_content.scss */
+.numbered-figures figcaption:before {
+  content: "Fig. " counter(figures) " - ";
+}
+
+/**
+ * Quotes
+ * 1. In case there is an image + text in the blockquote
+ * 2. Avoid odd gap at the bottom of a blockquote
+ */
+/*blockquote*/
+/* line 182, ../sass/partials/_content.scss */
+.quote {
+  background: #F4F4F4;
+  border-left: .5em solid white;
+  padding: 1em;
+  font-style: italic;
+  margin-bottom: 1em;
+  /* 1 */
+}
+/* line 191, ../sass/partials/_content.scss */
+.quote p:last-of-type {
+  margin-bottom: 0;
+  /* 2 */
+}
+
+/**
+ * Tables
+ */
+/* line 199, ../sass/partials/_content.scss */
+table {
+  width: 100%;
+  margin: 1em 0;
+}
+
+/* line 204, ../sass/partials/_content.scss */
+tr:nth-child(odd) {
+  background: #F4F4F4;
+}
+
+/* line 209, ../sass/partials/_content.scss */
+td,
+th {
+  padding: .5em;
+}
+
+/* line 213, ../sass/partials/_content.scss */
+th {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ---------- *
+ * $HOME PAGE *
+ * ---------- */
+/**
+ * List of articles on the home page
+ * 1. Remove top border if first list item
+ * 2. Fake a bottom border if last list item
+ */
+/* line 10, ../sass/partials/_index.scss */
+.list-articles {
+  margin: 1em 2em 0 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 48em) {
+  /* line 10, ../sass/partials/_index.scss */
+  .list-articles {
+    margin: 0;
+  }
+}
+/* line 19, ../sass/partials/_index.scss */
+.list-articles li {
+  border-bottom: 1px solid #CFCFCF;
+  border-top: 1px solid #F2F2F2;
+  padding: 1.3em 0 .5em;
+  position: relative;
+  /* 1 */
+  /* 2 */
+}
+@media (max-width: 48em) {
+  /* line 19, ../sass/partials/_index.scss */
+  .list-articles li {
+    padding: 0.7em 0 .5em;
+  }
+}
+/* line 29, ../sass/partials/_index.scss */
+.list-articles li:first-of-type {
+  border-top: none;
+}
+/* line 30, ../sass/partials/_index.scss */
+.list-articles li:last-of-type {
+  box-shadow: 0 1px #F2F2F2;
+}
+/* line 33, ../sass/partials/_index.scss */
+.list-articles a {
+  color: #666666;
+}
+/* line 35, ../sass/partials/_index.scss */
+.list-articles a:hover, .list-articles a:focus {
+  color: #ff3d7f;
+  text-decoration: none;
+}
+
+/**
+ * Article titles in the list
+ */
+/* line 45, ../sass/partials/_index.scss */
+.list-articles__title {
+  margin: 0;
+  padding: .25em 3.25em .25em 0;
+  font-size: 28px;
+  font-size: 2.8rem;
+}
+@media (max-width: 38em) {
+  /* line 45, ../sass/partials/_index.scss */
+  .list-articles__title {
+    padding: .25em 0;
+  }
+}
+
+/**
+ * Article dates in the list
+ */
+/* line 58, ../sass/partials/_index.scss */
+.list-articles__date {
+  font-size: 17px;
+  font-size: 1.7rem;
+  text-indent: 3px;
+  margin-bottom: 0;
+  color: #999999;
+}
+
+/**
+ * Special articles
+ * 1. If article is a link to Codrops or a guest post or an external link
+ */
+/* line 69, ../sass/partials/_index.scss */
+.list-articles__icon {
+  /* 2 */
+  position: absolute;
+  opacity: .2;
+  right: 0;
+  top: 50%;
+  margin-top: -1em;
+  font-size: 2em;
+  width: 2em !important;
+  height: 2em;
+  border: .1em solid;
+  line-height: 2em;
+  border-radius: 50%;
+}
+@media (max-width: 38em) {
+  /* line 69, ../sass/partials/_index.scss */
+  .list-articles__icon {
+    position: relative;
+    opacity: 1;
+    font-size: 1em;
+    border: none;
+    line-height: 1.5;
+    display: inline;
+    color: #999999;
+  }
+}
+
+/**
+ * Pagination
+ */
+/* line 96, ../sass/partials/_index.scss */
+.pagination {
+  padding: 0;
+  margin: 2em 0 0 0;
+  text-align: center;
+}
+/* line 101, ../sass/partials/_index.scss */
+.pagination li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 0 5px;
+}
+/* line 106, ../sass/partials/_index.scss */
+.pagination a {
+  display: block;
+}
+/* line 109, ../sass/partials/_index.scss */
+.pagination a:hover, .pagination a:focus {
+  text-decoration: none;
+}
+
+/**
+ * If first or last page
+ */
+/* line 118, ../sass/partials/_index.scss */
+.pagination__disabled {
+  opacity: .3;
+  pointer-events: none;
+}
+
+/* ------- *
+ * $FOOTER *
+ * ------- */
+/**
+ * Footer element
+ * 1. Clear .main and .sidebar floats
+ */
+/* line 9, ../sass/partials/_footer.scss */
+.footer {
+  font-size: 14px;
+  font-size: 1.4rem;
+  clear: both;
+  /* 1 */
+  padding: 2.5em 0;
+  border-top: 3px solid #D1D1D1;
+}
+/* line 16, ../sass/partials/_footer.scss */
+.footer p {
+  float: left;
+}
+@media (max-width: 38em) {
+  /* line 16, ../sass/partials/_footer.scss */
+  .footer p {
+    float: none;
+  }
+}
+/* line 24, ../sass/partials/_footer.scss */
+.footer a {
+  color: #666666;
+}
+@media (max-width: 38em) {
+  /* line 9, ../sass/partials/_footer.scss */
+  .footer {
+    text-align: center;
+  }
+}
+
+/**
+ * Footer navigation
+ */
+/* line 36, ../sass/partials/_footer.scss */
+.footer__nav {
+  float: right;
+}
+/* line 40, ../sass/partials/_footer.scss */
+.footer__nav ul {
+  list-style: none;
+  padding: 0;
+}
+/* line 45, ../sass/partials/_footer.scss */
+.footer__nav li {
+  display: inline;
+  margin: 0 .25em;
+}
+@media (max-width: 38em) {
+  /* line 36, ../sass/partials/_footer.scss */
+  .footer__nav {
+    float: none;
+    padding: 0;
+  }
+}
+
+/* ---- *
+ * $ADS *
+ * ---- */
+/**
+ * Change default styles of CarbonAds
+ * 1. Override inline styles
+ */
+/* line 9, ../sass/partials/_ads.scss */
+.carbonad {
+  background: rgba(0, 0, 0, 0.05) !important;
+  /* 1 */
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  /* 1 */
+  height: auto !important;
+  /* 1 */
+  border-radius: 2px;
+}
+
+/**
+ * Prevent hidden image from CarbonAds to mess the layout
+ */
+/* line 19, ../sass/partials/_ads.scss */
+#azcarbon > img {
+  display: inline !important;
+}

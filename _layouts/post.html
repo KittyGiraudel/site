@@ -3,6 +3,9 @@ page-class: page--post
 ---
 {% include head.html %}
 {% include header.html %}
+{% if page.numberedFigures %}
+<article class="main numbered-figures" role="main">
+{% else %}
 <article class="main" role="main">
 {% if page.title %} 
 <h1>{{ page.title }}</h1> 
