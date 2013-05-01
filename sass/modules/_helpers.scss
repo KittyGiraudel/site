@@ -156,12 +156,12 @@
 	}
 
 	@include breakpoint(small) {
-		width: 100%;
-		margin: $space auto;
-		float: none;
+		width: 100% !important;
+		margin: $space auto !important;
+		float: none !important;
 
 		img {
-			max-width: 100%;
+			max-width: 100% !important;
 		}
 	}
 }
