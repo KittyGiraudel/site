@@ -154,11 +154,19 @@
 		padding: .5em 0;
 		text-align: center;
 	}
+
+	@include breakpoint(small) {
+		width: 100%;
+		margin: $space auto;
+		float: none;
+
+		img {
+			max-width: 100%;
+		}
+	}
 }
 
 .figure--left {
-	@extend .figure;
-
 	float: left;
 	margin: 0 1em .5em 0;
 	width: -webkit-min-content;
@@ -168,11 +176,11 @@
 	img {
 		max-width: none;
 	}
+
+	@extend .figure;
 }
 
 .figure--right {
-	@extend .figure;
-
 	float: right;
 	margin: 0 0 .5em 1em;
 	width: -webkit-min-content;
@@ -182,6 +190,8 @@
 	img {
 		max-width: none;
 	}
+
+	@extend .figure;
 }
 
 /**
