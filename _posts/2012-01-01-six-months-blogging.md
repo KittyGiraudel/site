@@ -6,7 +6,7 @@ comments: false
 numberedFigures: true
 ---
 <section>
-<p>Hey guys! The blog is 6 months old today. Launched November 9th 2012 as a quick and dirty plateform to drop some posts when I get time, I have to say I am pretty happy with what I have done so far with this.</p>
+<p>Hey guys! The blog is 6 months old today. Launched in <a href="http://hugogiraudel.com/2012/11/09/redesign-blog/">November 9th 2012</a> as a quick and dirty plateform to drop some posts when I get time, I have to say I am pretty happy with what I have done so far with this.</p>
 </section>
 <section id="analytics">
 <h2>A few analytics <a href="#analytics">#</a></h2>
@@ -16,8 +16,8 @@ numberedFigures: true
 <p>All articles have drawn more than 80,000 unique visitors for about 150,000 viewed pages. The average visit duration is about one minut, and the number of page per visit is about 1.4.</p>
 <h3>About you</h3>
 <figure class="figure--right">
-	<img src="/images/six-months-blogging__mobile-vs-desktop.png" alt="">
-	<figcaption><span style="color: #50b432">Mobile</span> vs <span style="color: #058dc7">Desktop</span></figcaption>
+<img src="/images/six-months-blogging__mobile-vs-desktop.png" alt="">
+<figcaption><span style="color: #50b432">Mobile</span> vs <span style="color: #058dc7">Desktop</span></figcaption>
 </figure>
 <p>Enough about me, let's talk about you: about 28% of users come from United State, 8% come from United Kingdom, then a little more than 7% from France.</p>
 <p>Regarding browser, I'm a lucky bastard: Chrome gets more than 60% of the browser share on my site, then it's Firefox with 17.5%, and then Safari with 16%. Internet Explorer comes with 1.8%.</p>
