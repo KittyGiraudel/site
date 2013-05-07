@@ -6,7 +6,10 @@ comments: true
 ---
 <section>
 <p>If you like to experiment or do a little bit of webdesign, then you have probably already tried to put elements on a circle. Unless you're a CSS hacker, you've probably set a class/ID per item, then used <code>left</code> and <code>top</code> accordingly to position everything around the circle.</p>
-<img class='pull-image--right' alt='5 images positioned along a circle' src='/images/items-on-circle__5-items.png'>
+<figure class="figure--right">
+<img alt='' src='/images/items-on-circle__5-items.png' />
+<figcaption>5 images positioned along a circle with CSS</figcaption>
+</figure>
 <p>But in most cases, you would have ended doing this with JavaScript, or jQuery. There are plenty of <a href="http://addyosmani.com/blog/jquery-roundrr/">plugins</a> doing this out there, and no doubt they are all good.</p>
 <p>But what if you could do it very simply with CSS? That's what <a href="http://stackoverflow.com/questions/12813573/position-icons-into-circle">Ana Tudor did in an answer on StackOverflow</a>. Instead of using basic positioning, she relies on chained CSS transforms to do it. God, this is brilliant. Well? Let's push it further.</p>
 </section>

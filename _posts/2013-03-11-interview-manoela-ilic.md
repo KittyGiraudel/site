@@ -45,7 +45,10 @@ All the development and implementation was done by me and Pedro.</p>
 <section id="best-codrops-article">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>What is the most successful article on Codrops so far? Related to the number of views. <a href="#best-codrops-article">#</a></h2>
 <p>The most successful article was <a href="http://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/">Original Hover Effects</a> by <a href="https://twitter.com/Bluxart">Alessio Atzeni</a>.</p>
-<a title="Original Hover Effects on Codrops" href="http://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/"><img src="http://cdn2.tympanus.net/codrops/wp-content/uploads/2011/11/OriginalHoverEffects.jpg?84cd58" alt="Original Hover Effects on Codrops"></a>
+<figure class="figure">
+<a href="http://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/"><img src="http://cdn2.tympanus.net/codrops/wp-content/uploads/2011/11/OriginalHoverEffects.jpg?84cd58" alt=""></a>
+<figcaption>Original Hover Effects on Codrops</figcaption>
+</figure>
 </section>
 <section id="side-projects">
 <h2 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Do you have any side project? What would you like to do if you had enough time? <a href="#side-projects">#</a></h2>
