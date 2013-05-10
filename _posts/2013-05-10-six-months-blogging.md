@@ -1,8 +1,7 @@
 ---
 title: "Six months of blogging"
 layout: post
-preview: true
-comments: false
+comments: true
 numberedFigures: true
 ---
 <section>
