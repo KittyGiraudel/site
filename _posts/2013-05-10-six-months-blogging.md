@@ -6,7 +6,8 @@ comments: false
 numberedFigures: true
 ---
 <section>
-<p>Hey guys! The blog is 6 months old today. Launched in <a href="http://hugogiraudel.com/2012/11/09/redesign-blog/">November 9th 2012</a> as a quick and dirty plateform to drop some posts when I get time, now built on <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://sass-lang.com/">Sass</a> and <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub Pages</a>, I have to say I am pretty happy with what I have done so far with this.</p>
+<p>Hey guys! Yesterday, the blog was 6 months old. Launched in <a href="http://hugogiraudel.com/2012/11/09/redesign-blog/">November 9th 2012</a> as a quick and dirty plateform to drop some posts when I get time, now built on <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://sass-lang.com/">Sass</a> and <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub Pages</a>, I have to say I am pretty happy with what I have done so far with this.</p>
+<p>I take this article as an opportunity to make some kind of assessment. Any comment appreciated of course. ;)</p>
 </section>
 <section id="analytics">
 <h2>A few analytics <a href="#analytics">#</a></h2>
