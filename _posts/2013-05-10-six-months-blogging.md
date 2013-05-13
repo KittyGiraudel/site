@@ -12,21 +12,21 @@ numberedFigures: true
 <h2>A few analytics <a href="#analytics">#</a></h2>
 <h3>About the blog</h3>
 <p>In 6 months, I've released exactly 30 articles (this is 31st) including 3 specials: 2 interviews (<a href="http://hugogiraudel.com/2013/04/23/interview-by-clement-osternaud/">one of me from Clément Osternaud</a> and <a href="http://hugogiraudel.com/2013/03/11/interview-manoela-ilic/">one of Manoela Ilic from me</a>) and a guest post (<a href="http://hugogiraudel.com/2013/02/04/css-gradients/">from Ana Tudor</a>).</p>
-<p>The most successful article is definitely <a href="http://hugogiraudel.com/2013/02/04/css-gradients/">Dig deep into CSS linear gradients</a> (the guest post from Ana Tudor) with about 30,000 viewed pages and 32 comments. Then it is a very old one: <a href="http://hugogiraudel.com/2012/11/13/less-to-sass/">Why I switched from LESS to Sass</a> with over 12,000 viewed pages for 29 comments. The third most successful article is <a href="http://hugogiraudel.com/2013/04/30/css-aha-moment/">My CSS aha moment</a> with over 11,000 viewed pages and 30 comments. Note that other articles like <a href="http://hugogiraudel.com/2013/04/08/css-alternative-select/">Why a CSS alternative to the select element is not possible</a>, <a href="http://hugogiraudel.com/2013/01/28/float-down/">Simulate float: down</a> and <a href="http://hugogiraudel.com/2013/04/04/css-grid-layout/">Future of CSS layout: Grid</a> has been very welcomed as well.</p>
-<p>All articles have drawn more than <strong>82,000 unique visitors</strong> for about <strong>150,000 viewed pages</strong>. The average visit duration is about one minut, and the number of page per visit is about 1.4.</p>
+<p>The most successful article is definitely <a href="http://hugogiraudel.com/2013/02/04/css-gradients/">Dig deep into CSS linear gradients</a> (the guest post from Ana Tudor) with more than 30,000 viewed pages and 32 comments. Then it is a very old one: <a href="http://hugogiraudel.com/2012/11/13/less-to-sass/">Why I switched from LESS to Sass</a> with over 12,000 viewed pages for 29 comments. The third most read article is <a href="http://hugogiraudel.com/2013/04/30/css-aha-moment/">My CSS aha moment</a> with about 11,000 viewed pages and 30 comments. Note that other articles like <a href="http://hugogiraudel.com/2013/04/08/css-alternative-select/">Why a CSS alternative to the select element is not possible</a>, <a href="http://hugogiraudel.com/2013/01/28/float-down/">Simulate float: down</a> and <a href="http://hugogiraudel.com/2013/04/04/css-grid-layout/">Future of CSS layout: Grid</a> has been very welcomed as well.</p>
+<p>All articles have drawn more than <strong>82,000 unique visitors</strong> for about <strong>150,000 viewed pages</strong>. The average visit duration is close to one minute, and the number of page per visit is around 1.4.</p>
 <figure class="figure">
 <img src="/images/six-months-blogging__visits.jpg" alt="">
 <figcaption>Spiky visits between February and April</figcaption>
 </figure>
 <h3>About you</h3>
 <blockquote class="pull-quote--right">Chrome gets more than 60% of the browser share.</blockquote>
-<p>Enough about me, let's talk about you: about <strong>28% of users come from United States</strong>, 8% come from United Kingdom, then a little more than 7% from France.</p>
-<p>Regarding browser, I'm a lucky bastard: <strong>Chrome gets more than 60% of the browser share</strong> on my site, then it's Firefox with 17.5%, and then Safari with 16%. Internet Explorer comes with 1.8%.</p>
+<p>Enough about me, let's talk about you: <strong>28% of users come from United States</strong>, 8% come from United Kingdom, then a little more than 7% from France.</p>
+<p>Regarding browser, I'm a lucky bastard: <strong>Chrome gets more than 60% of the browser share</strong> on my site, then it's Firefox with 17.5%, and then Safari with 16%. Internet Explorer comes further with 1.8%.</p>
 <figure class="figure--left">
 <img src="/images/six-months-blogging__mobile-vs-desktop.png" alt="">
 <figcaption><span style="color: #50b432">Mobile</span> vs <span style="color: #058dc7">Desktop</span></figcaption>
 </figure>
-<p>About <strong>14% users are reading articles on their mobile phone</strong> (cf. fig 2). About 7 out of 10 users use an Apple phone. The 3 others use Android (I'm in).</p>
+<p>About <strong>14% users are reading articles on their mobile phone</strong> (cf. fig 2). and 7 out of 10 of them use an Apple phone. The 3 others use Android (I'm in).</p>
 <p>The most important traffic source is definitely <a href="http://twitter.com">Twitter</a> (actually t.co), then it's <a href="http://reddit.com">Reddit</a> and then <a href="http://tympanus.com/codrops/">Codrops</a>. A little further behind, we have <a href="http://sidebar.io">Sidebar.io</a>, <a href="http://google.com">Google</a> and <a href="http://css-tricks.com">CSS-Tricks</a>.</p>
 </section>
 <section>
