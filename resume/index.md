@@ -23,7 +23,7 @@ page-class: page--resume
 
 <h2><span class='fontawesome-magic icon-left'></span>Skills <a href="#skills" class="section-anchor">#</a></h2>
 <h3>Programming languages</h3>
-<p>HTML5, CSS3 (Sass), XML, OOPHP, MySQL, JavaScript (jQuery), Ajax, UML</p>
+<p>HTML5, CSS3 (Sass), JavaScript (jQuery), AJAX, XML, OOPHP, MySQL, UML</p>
 
 <h3>Softwares</h3>
 <p>Sublime Text 2, Git (notions), Photoshop</p>
