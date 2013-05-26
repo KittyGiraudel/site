@@ -71,6 +71,10 @@ page-class: page--resume
 <li><a href="http://css-tricks.com/css-pie-timer/" title="CSS Pie Timer">CSS Pie Timer</a> (at CSS-Tricks)</li>
 <li><a href="http://toddmotto.com/raw-javascript-jquery-style-fadein-fadeout-functions-hugo-giraudel">Raw JavaScript jQuery-style fadeIn() fadeOut() functions</a> (at Todd Motto's)</li>
 </ul>
+<h3>Print</h3>
+<ul>
+	<li><a href="http://www.netmagazine.com/shop/magazines/July-2013-242">.net Magazine - Issue n°242 : "Hack back"</a></li>
+</ul> 
 
 </section>
 <section id="interests">
