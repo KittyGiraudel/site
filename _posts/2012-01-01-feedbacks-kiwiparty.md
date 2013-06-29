@@ -7,8 +7,8 @@ title: Feedbacks on my first conf
 ---
 
 <section>
-<p>Hey guys! I recently had the amazing opportunity to be a speaker at <a href="http://kiwiparty.fr">KiwiParty</a>, a one-day French conference at Strasbourg where we talk about front-end technologies, accessibility, ergonomy, webdesin, and so much more.</p>
-<p>I've been among the ten out of fourty or so boys and girls picked to give a talk on the topic of our choice. I chose to talk about Sass : "Kick-ass CSS with Sass".</p>
+<p>Hey guys! I recently had the amazing opportunity to be a speaker at <a href="http://kiwiparty.fr">KiwiParty</a>, a one-day French conference at Strasbourg gathering 10 speakers and more than 150 peoples to talk about front-end technologies, accessibility, ergonomy, webdesin, and so much more.</p>
+<p>So Friday June 28 at 2:00PM I was on stage to talk about Sass, and how we can use preprocessors to push our stylesheets to an upper level: "Kick-ass CSS with Sass".</p>
 </section>
 <section id="conference">
 <h2>About the conference <a href="#conference">#</a></h2>
@@ -33,6 +33,12 @@ title: Feedbacks on my first conf
 <h2>Moar! <a href="#moar">#</a></h2>
 <p>Unfortunately, my talk hasn't been recorded so no way to access it online, sorry guys. :(</p>
 <p>Regarding pictures, my <a href="http://alexandralucas.com">girlfriend</a> took a couple of photos as you can see in this article. Otherwise, you can find more pics of the whole event on Flickr,tagged KiwiParty.</p>
-<p>Of, and of course here are my <a href="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/">slides</a> (in French, but it's mostly code).</p>
+<p>Of, and of course here are my <a href="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/">slides</a> (in French, but it's mostly code); read top to bottom then left to right.</p>
 <iframe src="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</section>
+<section id="final-words">
+<h2>Final words <a href="#">#</a></h2>
+<p>So all in all, it was an amazing experience. Big thanks to the Alsacreations team and to all of you who were in the room to hear my talk.</p>
+<p>I hope to be part of it next year as well. Meanwhile, I'm available to hack your Sass. ;)</p>
+<p>Cheers!</p>
 </section>
