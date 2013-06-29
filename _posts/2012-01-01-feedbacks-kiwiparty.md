@@ -15,8 +15,8 @@ title: Feedbacks on my first conf
 <p>I've never been at a conference before so it was pretty much what I could expect. A bunch of awesome people, great talks, food, and most of all: web. It was an amazing day, for sure.</p>
 <p>Plus, we had the opportunity to meet two awesome dudes of our field:</p>
 <ul>
-<li>Bert Bos -co-creator of CSS- introduced the day by telling us about <a href="http://www.w3.org/Talks/2013/0628-CSS-Strasbourg/">CSS for books</a>. Pretty amazing what we can know do with CSS when we know it was first intented to style basic text documents.</li>
-<li>Tristan Nitot -founder of Mozilla Europe- concluded the conference by talking about Firefox OS. He's an awesome speaker. Totally worth seeing it.</li>
+<li><a href="http://en.wikipedia.org/wiki/Bert_Bos">Bert Bos</a> -co-creator of CSS- introduced the day by telling us about <a href="http://www.w3.org/Talks/2013/0628-CSS-Strasbourg/">CSS for books</a>. Pretty amazing what we can know do with CSS when we know it was first intented to style basic text documents.</li>
+<li><a href="http://twitter.com/nitot">Tristan Nitot</a> -founder of Mozilla Europe- concluded the conference by talking about Firefox OS. He's an awesome speaker. Totally worth seeing it.</li>
 </ul>
 <p>I could also meet all those great French guys from Twitter and put some faces on names. Cool thing, really. :)</p>
 </section>
