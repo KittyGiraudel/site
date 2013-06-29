@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: default
 preview: true
 comments: false
