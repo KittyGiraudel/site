@@ -29,6 +29,12 @@ title: Feedbacks on my first conf
 <p>Then a little voice popped in my head saying "dude, this is too complicated", or "this is obvious to you but not for them" or "what the hell are you trying to explain?". It stayed there during the whole conference and was kind of disturbing. I couldn't have real-time feedbacks of course (imagine what it would look like) so I had no idea if people were enjoying my talk or hoping it was soon finished.</p>
 <p>In the end, I had a couple of questions (most of them very relevant) which I was prepared to answer. Yeah that's right, I prepared the Q&A guys! </p>
 </section>
+<section id="why-sass">
+<h2> Why Sass? <a href="#why-sass">#</a></h2>
+<p>Well, it's been almost a year now I am using Sass on an almost-daily basis. In the last few months, I've been intensively hacking around Sass, reading every tiny bit of documentation I could find to push things further.</p>
+<p>When my girlfriend suggested I give a talk at KiwiParty, I laughed. I had nothing to talk about. Then, it was kind of an inception; the idea kept spinning in my head looking for a topic to speak about. Until I found it: Sass.</p>
+<p>Retrospectively, it was a risky bet. Speaking of CSS preprocessors isn't very easy, especially in France where the topic is very controversial. I could have been faced to fervent opposant to CSS preprocessing. Luckily, I haven't been.</p> 
+</section>
 <section id="moar">
 <h2>Moar! <a href="#moar">#</a></h2>
 <p>Unfortunately, my talk hasn't been recorded so no way to access it online, sorry guys. :(</p>
