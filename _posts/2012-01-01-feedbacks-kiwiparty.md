@@ -7,8 +7,9 @@ title: Feedbacks on my first conf
 ---
 
 <section>
-<p>Hey guys! I recently had the amazing opportunity to be a speaker at <a href="http://kiwiparty.fr">KiwiParty</a>, a one-day French conference at Strasbourg gathering 10 speakers and more than 150 peoples to talk about front-end technologies, accessibility, ergonomy, webdesin, and so much more.</p>
+<p>Hey guys! I recently had the amazing opportunity to be a speaker at <a href="http://kiwiparty.fr">KiwiParty</a>, a one-day French conference at Strasbourg gathering 10 speakers and more than 150 persons to talk about front-end technologies, accessibility, ergonomy, webdesin, and so much more.</p>
 <p>So Friday June 28 at 2:00PM I was on stage to talk about Sass, and how we can use preprocessors to push our stylesheets to an upper level: "Kick-ass CSS with Sass".</p>
+<p>Basically, my talk is a collection of code snippets and real-life usecases of Sass to show we can use a preprocessor further than declaring a couple of variables, yet simple enough not to turn the code into a Rube Goldberg machine.</p>
 </section>
 <section id="conference">
 <h2>About the conference <a href="#conference">#</a></h2>
@@ -22,17 +23,18 @@ title: Feedbacks on my first conf
 </section>
 <section id="talk">
 <h2>About my talk <a href="#talk">#</a></h2>
-<p>It went great. People seemed very interested in the topic and were receptive regarding of what I could say.</p>
+<p>It went great. People seemed very interested in the topic and I felt like they were understanding the main point of the conference, so it's something!</p>
 <p>I was kind of nervous, obviously. My laptop dying the night before the big day was not to help though... Hopefully I could buy a Chromebook (which will probably the topic for another article) and all went well.</p>
 <blockquote class="pull-quote--right">This experience was kind of incredible actually.</blockquote>
-<p>This experience was kind of incredible actually. I walked into that room were dozens and dozens of people were waiting for me to talk to them. My hands were kind of sweaty and I was shivering a little at first but it all disappeared when I started talking.</p>
+<p>This experience was kind of incredible actually. I walked into that room where dozens and dozens of boys and girls were waiting for me to talk to them. My hands were kind of sweaty and I was shivering a little at first but it all disappeared when I started talking.</p>
 <p>Then a little voice popped in my head saying "dude, this is too complicated", or "this is obvious to you but not for them" or "what the hell are you trying to explain?". It stayed there during the whole conference and was kind of disturbing. I couldn't have real-time feedbacks of course (imagine what it would look like) so I had no idea if people were enjoying my talk or hoping it was soon finished.</p>
 <p>In the end, I had a couple of questions (most of them very relevant) which I was prepared to answer. Yeah that's right, I prepared the Q&A guys! </p>
 </section>
 <section id="why-sass">
 <h2> Why Sass? <a href="#why-sass">#</a></h2>
-<p>Well, it's been almost a year now I am using Sass on an almost-daily basis. In the last few months, I've been intensively hacking around Sass, reading every tiny bit of documentation I could find to push things further.</p>
+<p>Well, it's been <a href="http://hugogiraudel.com/2012/11/13/less-to-sass/">almost 9 months</a> now I am using Sass on an almost-daily basis. In the last few months, I've been intensively hacking around the language, reading every tiny bit of documentation I could find (especially Compass' one) to push things further.</p>
 <p>When my girlfriend suggested I give a talk at KiwiParty, I laughed. I had nothing to talk about. Then, it was kind of an inception; the idea kept spinning in my head looking for a topic to speak about. Until I found it: Sass.</p>
+<blockquote class="pull-quote--right">It was a risky bet.</blockquote>
 <p>Retrospectively, it was a risky bet. Speaking of CSS preprocessors isn't very easy, especially in France where the topic is very controversial. I could have been faced to fervent opposant to CSS preprocessing. Luckily, I haven't been.</p> 
 </section>
 <section id="moar">
