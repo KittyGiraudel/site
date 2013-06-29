@@ -35,18 +35,18 @@ title: Feedbacks on my first conf
 <p>Well, it's been <a href="http://hugogiraudel.com/2012/11/13/less-to-sass/">almost 9 months</a> now I am using Sass on an almost-daily basis. In the last few months, I've been intensively hacking around the language, reading every tiny bit of documentation I could find (especially Compass' one) to push things further.</p>
 <p>When my girlfriend suggested I give a talk at KiwiParty, I laughed. I had nothing to talk about. Then, it was kind of an inception; the idea kept spinning in my head looking for a topic to speak about. Until I found it: Sass.</p>
 <blockquote class="pull-quote--right">It was a risky bet.</blockquote>
-<p>Retrospectively, it was a risky bet. Speaking of CSS preprocessors isn't very easy, especially in France where the topic is very controversial. I could have been faced to fervent opposant to CSS preprocessing. Luckily, I haven't been.</p> 
+<p>Retrospectively, it was a risky bet. Speaking of CSS preprocessors can be quite complicated, especially in France where the topic is pretty controversial. I could have been faced to fervent opposants to CSS preprocessing, turning my talk into a troll. Luckily, I haven't been.</p> 
 </section>
 <section id="moar">
 <h2>Moar! <a href="#moar">#</a></h2>
-<p>Unfortunately, my talk hasn't been recorded so no way to access it online, sorry guys. :(</p>
-<p>Regarding pictures, my <a href="http://alexandralucas.com">girlfriend</a> took a couple of photos as you can see in this article. Otherwise, you can find more pics of the whole event on Flickr,tagged KiwiParty.</p>
-<p>Of, and of course here are my <a href="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/">slides</a> (in French, but it's mostly code); read top to bottom then left to right.</p>
+<p>Unfortunately, my talk wasn't recorded so no way to access it online, sorry guys. :(</p>
+<p>Regarding pictures, my <a href="http://alexandralucas.com">girlfriend</a> took a couple of photos as you can see in this article. Otherwise, you can find more pics of the whole event on Flickr tagged <a href="http://www.flickr.com/search/?q=kiwiparty">#KiwiParty</a>.</p>
+<p>Oh, and of course here are my <a href="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/">slides</a> (in French, but it's mostly code); read top to bottom then left to right.</p>
 <iframe src="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#">#</a></h2>
 <p>So all in all, it was an amazing experience. Big thanks to the Alsacreations team and to all of you who were in the room to hear my talk.</p>
-<p>I hope to be part of it next year as well. Meanwhile, I'm available to hack your Sass. ;)</p>
+<p>I hope to be part of it next year as well. Meanwhile, I'm available to hack your Sass.&nbsp;;)</p>
 <p>Cheers!</p>
 </section>
