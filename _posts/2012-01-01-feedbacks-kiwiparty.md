@@ -59,6 +59,10 @@ title: Feedbacks on my first conf
 <section id="final-words">
 <h2>Final words <a href="#">#</a></h2>
 <p>So all in all, it was an amazing experience. Big thanks to the Alsacreations team and to all of you who were in the room to hear my talk.</p>
+<figure class="figure--right">
+<img src="/images/feedbacks-kiwiparty__stuff.jpg" alt="">
+<figcaption>Stuff - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+</figure>
 <p>I hope to be part of it next year as well. Meanwhile, I'm available to hack your Sass.&nbsp;;)</p>
 <p>Cheers!</p>
 </section>
