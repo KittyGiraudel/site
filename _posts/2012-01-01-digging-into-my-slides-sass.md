@@ -4,6 +4,7 @@ layout: post
 comments: false
 preview: true
 summary: true
+codepen: true
 title: Digging into my slides about Sass
 ---
 
@@ -11,7 +12,7 @@ title: Digging into my slides about Sass
 <p>As you may know, I have been <a href="#">speaking at KiwiParty</a> about Sass in late June. It has been a really great experience and people were really receptive even if my talk was a bit technical.</p>
 <p>Because slides are not very self-explanatory, I think it might be cool to dig deep into the topic with expanded explanations, so that everybody can now fully understand what I was trying to explain. :D</p>
 <p>Just for your information, here are my slides in French powered by <a href="http://slid.es">Reveal.js</a>:</p>
-%PUT SLIDES%
+<iframe src="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </section>
 <section id="introduction">
 <h2>What is Sass? <a href="#introduction">#</a></h2>
@@ -53,6 +54,7 @@ title: Digging into my slides about Sass
 }
 {% endhighlight %}
 <p>This example shows how we can use <code>@extend</code> and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you’re familiar with Twitter Bootstrap, then you’ll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).</p>
+<pre class="codepen" data-height="300" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
 <p>With vanilla CSS, you have 3 ways to do this:</p>
 <ol>
 <li>Create a <code>.message</code> class containing styles shared by all messages, then a class per message type. Pretty cool, no style repeated but you have to add two classes to your elements (<code>.message</code> and <code>.message-error</code>. Less cool.</li>
@@ -99,12 +101,12 @@ title: Digging into my slides about Sass
 </section>
 <section id="rem">
 <h2>Sass and REM <a href="#rem">#</a></h2>
-<p>REM (root EM) is awesome. Problem is IE8 doesn’t understand it, and we cannot cross it out of our support chart. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.</p>
+<p>REM (root EM) is awesome. Problem is <a href="http://caniuse.com/#feat=rem">IE8 doesn’t understand it</a>, and we cannot cross it out of our support chart. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.</p>
 <p>But duplicating every <code>font-size</code> declaration can be tedious and converting REM to PX can be annoying. Let’s do it with Sass!</p>
 {% highlight css %}
 @mixin rem($value, $base: 16) {
-	font-size: $value + “px”;
-	font-size: $value / $base + “rem”;
+	font-size: $value + px;
+	font-size: $value / $base + rem;
 }
 
 .element {
@@ -125,10 +127,10 @@ $support-IE8: false;
 
 @mixin rem($value, $base: 16) {
 	@if $support-IE8 {
-		font-size: $value + “px”;
+		font-size: $value + px;
 	}
 
-	font-size: $value / $base + “rem”;
+	font-size: $value / $base + rem;
 }
 
 .element {
@@ -239,6 +241,7 @@ $gutter-pct : ($gutter-width / $wrap-width) * 100;
 <li>Then, you call the mixin and pass the number of columns you want your element to expand on as an argument.</li>
 </ul>
 <p>And there you have a very simple yet responsive Sass grid.</p>
+<pre class="codepen" data-height="300" data-type="result" data-href="9581fd77d4c244288a6a115981ee1d1d" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/FpDdm">Check out this Pen!</a></pre>
 </section>
 <section id="counters">
 <h2>CSS counters and Sass <a href="#counters">#</a></h2>
