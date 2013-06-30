@@ -41,7 +41,7 @@ title: Feedbacks on my first conf
 <h2>Moar! <a href="#moar">#</a></h2>
 <p>Unfortunately, my talk wasn't recorded so no way to access it online, sorry guys. :(</p>
 <p>Regarding pictures, my <a href="http://alexandralucas.com">girlfriend</a> took a couple of photos as you can see in this article. Otherwise, you can find more pics of the whole event on Flickr tagged <a href="http://www.flickr.com/search/?q=kiwiparty">#KiwiParty</a>.</p>
-<p>Oh, and of course here are my <a href="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/">slides</a> (in French, but it's mostly code); read top to bottom then left to right.</p>
+<p>Oh, and of course here are my <a href="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/">slides</a> (in French, but it's mostly code); read top to bottom then left to right. I'm currently writing a blog post digging deep into my slides, so be patient English-speaking friends. :)</p>
 <iframe src="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </section>
 <section id="final-words">
