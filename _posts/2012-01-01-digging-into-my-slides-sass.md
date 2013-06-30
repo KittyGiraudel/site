@@ -8,19 +8,19 @@ title: Digging into my slides about Sass
 ---
 
 <section>
-<p>As you may know, I have been <a href=”#”>speaking at KiwiParty</a> about Sass in late June. It has been a really great experience and people were really receptive even if my talk was a bit technical.</p>
+<p>As you may know, I have been <a href="#">speaking at KiwiParty</a> about Sass in late June. It has been a really great experience and people were really receptive even if my talk was a bit technical.</p>
 <p>Because slides are not very self-explanatory, I think it might be cool to dig deep into the topic with expanded explanations, so that everybody can now fully understand what I was trying to explain. :D</p>
-<p>Just for your information, here are my slides in French powered by <a href=”http://slid.es”>Reveal.js</a>:</p>
+<p>Just for your information, here are my slides in French powered by <a href="http://slid.es">Reveal.js</a>:</p>
 %PUT SLIDES%
 </section>
-<section id=”introduction”>
-<h2>What is Sass? <a href=”#introduction”>#</a></h2>
+<section id="introduction">
+<h2>What is Sass? <a href="#introduction">#</a></h2>
 <p>I’ll skip the part where I introduce myself, I don’t think it has much point here. Instead, I’ll go straight to the introduction to explain what is a CSS preprocessor.</p>
 <p>Sass -and pretty much any preprocessor- is a program aiming at extending a language in order to provide further features or a simplified syntax (or both). You can think of Sass as an extension of CSS; it adds to CSS what CSS doesn’t have and what CSS needs (or might need).</p>
 <p>Among other things, Sass can be very useful for:</p>
 <ul>
 <li><strong>Variables</strong>: it’s been a while since we first asked for variables in CSS. They’ll come native some day but meanwhile, we have to rely on CSS preprocessors.</li>
-<li><strong>Nesting</strong>: it is the ability to nest rules within each others to create expanded CSS selectors. Can be very interesting to avoid code repetition. Remember the <a href=”http://thesassway.com/beginner/the-inception-rule”>inception rule though</a>.</li>
+<li><strong>Nesting</strong>: it is the ability to nest rules within each others to create expanded CSS selectors. Can be very interesting to avoid code repetition. Remember the <a href="http://thesassway.com/beginner/the-inception-rule">inception rule though</a>.</li>
 <li><strong>Functions</strong>: I don’t think functions deserve an explanation. Give it parameters, it returns a value you can store in a variable or use as a value.</li>
 <li><strong>Mixins</strong>: same as functions except it outputs code instead of returning a result. Very useful to output chuncks of code depending on some parameters (mixin arguments).</li>
 <li><strong>Color functions</strong>: every preprocessor nowadays comes with a bunch of functions to ease color management (lighten, darken, transparentize, mix, complementary…). Very cool to avoid repeated back-and-forths between the IDE and Photoshop and having 50 shades of grey when you only need one (see what I did there?). Also easier to read than hexadecimal in my opinion.</li>
@@ -30,8 +30,8 @@ title: Digging into my slides about Sass
 <p>All of this is awesome. But when you just get started with Sass, you don’t really know what to do. So you declare a couple of variables, maybe make a mixin or two that you don’t really need and that’s pretty much it.</p>
 <p>My talk aimed at giving some hints to get started with Sass, along with a collection of usecases and code snippets to show how to push stylesheets to an upper level.</p>
 </section>
-<section id=”extend”>
-<h2>@extend and abstract classes <a href=”#extend”>#</a></h2>
+<section id="extend">
+<h2>@extend and abstract classes <a href="#extend">#</a></h2>
 <p>The <code>@extend</code> feature has to be the one which made Sass so popular compared to other CSS preprocessors including Less. Basically, you can make a selector inherits styles from another selector. It comes with abstract classes (also called placeholders), classes prefixed by a <code>%</code> symbol instead of a dot, that are not compiled in the final stylesheet, thus that cannot be used in the markup. Their use is exclusive to the stylesheet.</p>
 {% highlight css %}
 %clearfix:after {
@@ -97,8 +97,8 @@ title: Digging into my slides about Sass
 {% endhighlight %}
 <p>No styles repeated, no heavy selector, only one class assigned in the markup. Pretty neat. And this is only a very easy example of what you can do with <code>@extend</code> and placeholders. Feel free to think of clever usecases as well.</p>
 </section>
-<section id=”rem”>
-<h2>Sass and REM <a href=”#rem”>#</a></h2>
+<section id="rem">
+<h2>Sass and REM <a href="#rem">#</a></h2>
 <p>REM (root EM) is awesome. Problem is IE8 doesn’t understand it, and we cannot cross it out of our support chart. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.</p>
 <p>But duplicating every <code>font-size</code> declaration can be tedious and converting REM to PX can be annoying. Let’s do it with Sass!</p>
 {% highlight css %}
@@ -142,8 +142,8 @@ $support-IE8: false;
 }
 {% endhighlight %}
 </section>
-<section id=”mq”>
-<h2>Media queries made easy <a href=”#mq”>#</a></h2>
+<section id="mq">
+<h2>Media queries made easy <a href="#mq">#</a></h2>
 <p>I don’t know for you but I don’t really like manipulating media queries. The syntax isn’t very typing-friendly, they require values, braces and all. Plus, I really like to manage breakpoints with keywords instead of values. Sass makes it happening; please consider the following mixin.</p>
 {% highlight css %}
 @mixin mq($keyword) {
@@ -158,7 +158,7 @@ $support-IE8: false;
 {% endhighlight %}
 <p>When I want to declare alternative styles for a given breakpoint, I call the <code>mq()</code> mixin with the according keyword as argument like <code>@include mq(small) { … }</code>.</p>
 <p>I like to name my breakpoints “small/medium/large” but you can chose whatever pleases you: “mobile/tablet/desktop”, “baby-bear/mama-bear/papa-bear”...</p>
-<p>We can even push things further by adding retina support to the mixin (based on <a href=”https://github.com/kaelig/hidpi”>HiDPI from Kaelig</a>):</p>
+<p>We can even push things further by adding retina support to the mixin (based on <a href="https://github.com/kaelig/hidpi">HiDPI from Kaelig</a>):</p>
 {% highlight css %}
 @mixin mq($keyword) {
 	/* … */
@@ -206,9 +206,9 @@ only screen and (-webkit-min-device-pixel-ratio: 1.3)
 {% endhighlight %}
 <p>The Sass way makes it way easier to debug and update in my opinion; lisibility is well preserved since alternative styles are based on keywords instead of arbitrary values.</p>
 </section>
-<section id=”grid”>
-<h2>Simple responsive grid with Sass <a href=”#grid”>#</a></h2>
-<p>Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes <a href=”http://css-tricks.com/dont-overthink-it-grids/”>you just wan’t to build your own</a>. Especially when you don’t need a whole Rube Goldberg machine for your simple layout. Let’s see how we can build a very simple grid system in Sass in about 12 lines:</p>
+<section id="grid">
+<h2>Simple responsive grid with Sass <a href="#grid">#</a></h2>
+<p>Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes <a href="http://css-tricks.com/dont-overthink-it-grids/">you just wan’t to build your own</a>. Especially when you don’t need a whole Rube Goldberg machine for your simple layout. Let’s see how we can build a very simple grid system in Sass in about 12 lines:</p>
 {% highlight css %}
 /* Your variables */
 $nb-columns : 6; 
@@ -222,14 +222,14 @@ $gutter-pct : ($gutter-width / $wrap-width) * 100;
 
 /* One single mixin */
 @mixin cols($cols) { 
-width: $column-pct * $cols + $gutter-pct * ($cols - 1) + unquote('%'); 
-margin-right: $gutter-pct + unquote('%'); 
-float: left; 
+	width: $column-pct * $cols + $gutter-pct * ($cols - 1) + unquote('%'); 
+	margin-right: $gutter-pct + unquote('%'); 
+	float: left; 
 
-@media screen and (max-width: 400px) { 
-width: 100%; 
-margin-right: 0; 
-} 
+	@media screen and (max-width: 400px) { 
+		width: 100%; 
+		margin-right: 0; 
+	} 
 }
 {% endhighlight %}
 <p>Now let’s see what the code does exactly:</p>
@@ -240,8 +240,8 @@ margin-right: 0;
 </ul>
 <p>And there you have a very simple yet responsive Sass grid.</p>
 </section>
-<section id=”counters”>
-<h2>CSS counters and Sass <a href=”#counters”>#</a></h2>
+<section id="counters">
+<h2>CSS counters and Sass <a href="#counters">#</a></h2>
 <p>CSS counters are part of a CSS2 module (and not CSS3 as it is often claimed) making items numbering possible with CSS only. The main idea is the following:</p>
 <ol>
 <li>initialize one or more counters with <code>counter-reset</code>,</li>
@@ -253,7 +253,7 @@ margin-right: 0;
 {% highlight css %}
 /* Initialize counters */
 body { 
-counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
+	counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
 } 
 
 /* Create a variable (list) to store the concatenated counters */
@@ -262,48 +262,48 @@ $nest: ();
 /* Loop on each heading level */
 @for $i from 1 through 6 {
 	
-/* For each heading level */
-h#{$i} { 
+	/* For each heading level */
+	h#{$i} { 
 
-	/* Increment the according counter */
-counter-increment: ct#{$i}; 
+		/* Increment the according counter */
+		counter-increment: ct#{$i}; 
 
-/* Display the concatenated counters in the according pseudo-element */
-&:before { 
-content: $nest counter(ct#{$i}) ". ";
-} 
-} 
+		/* Display the concatenated counters in the according pseudo-element */
+		&:before { 
+			content: $nest counter(ct#{$i}) ". ";
+		} 
+	} 
 
-/* Concatenate counters */
-$nest: append($nest, counter(ct#{$i}) ".");
+	/* Concatenate counters */
+	$nest: append($nest, counter(ct#{$i}) ".");
 }
 {% endhighlight %}
 <p>The code might be complicated to understand but it’s really not that hard once you’re familiar with Sass. Now, we can push things further by turning this shit into a mixin in order to make it both clean and reusable.</p>
 {% highlight css %}
 @mixin numbering($from: 1, $to: 6) {
-counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
-$nest: (); 
+	counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
+	$nest: (); 
 
-@for $i from 1 through 6 {
+	@for $i from 1 through 6 {
 		h#{$i} { 
-counter-increment: ct#{$i}; 
+			counter-increment: ct#{$i}; 
 
-&:before { 
-content: $nest counter(ct#{$i}) ". ";
-}	 
-} 
+			&:before { 
+				content: $nest counter(ct#{$i}) ". ";
+			}	 
+		} 
 
-$nest: append($nest, counter(ct#{$i}) ".");
-}
+		$nest: append($nest, counter(ct#{$i}) ".");
+	}
 }
 
 .wrapper {
 	@include numbering(1, 4);
 }
 {% endhighlight %}
-<p class=”note”>Note: a couple of guys came to me after the talk to warn me again making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.</p>
+<p class="note">Note: a couple of guys came to me after the talk to warn me again making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.</p>
 </section>
-<section id=”foreach”>
-<h2>Foreach <a href=”#foreach”>#</a></h2>
+<section id="foreach">
+<h2>Foreach <a href="#foreach">#</a></h2>
 <p>The last part of my talk was probably slightly more technical thus more complicated. I wanted to show where we can go with Sass, especially with lists and loops. </p> 
 </section>
