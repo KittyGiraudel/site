@@ -49,7 +49,7 @@
 	&:after  { content: "\201d"; }
 
 	@include breakpoint(small) { /* 1 */
-		float: none;
+		float: none !important;
 		margin: $space auto !important;
 		border: 6px solid $pink;
 		border-left:  none !important;
