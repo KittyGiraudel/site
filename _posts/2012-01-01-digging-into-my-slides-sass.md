@@ -311,7 +311,7 @@ $nest: ();
 <p>The last part of my talk was probably slightly more technical thus more complicated. I wanted to show where we can go with Sass, especially with lists and loops. </p> 
 <p>To fully understand it, I thought it was better to introduce Sass loops and lists (remember there was quite a few guys not knowing a bit about Sass in the room).</p>
 {% highlight css %}
-/* All equivalents */
+/* All equivalents (forgive the messed up syntax highlighter) */
 $list: (item-1, item-2, item-3, item-3);
 $list: ("item-1", "item-2", "item-3", "item-4");
 $list: item-1, item-2, item-3, item-4;
@@ -329,29 +329,36 @@ $list: "item-1" "item-2" "item-3" "item-4";
 </ul>
 <p>A quick look at nested lists:</p>
 {% highlight css %}
-$list: ( 
-		(item-1, item-2, item-3)
-        (item-4, item-5, item-6)
-        (item-7, item-8, item-9)
-       );
+$list: ( (item-1, item-2, item-3)
+         (item-4, item-5, item-6)
+         (item-7, item-8, item-9) );
 
-/* Or simpler: top-level list is comma-separated while inner lists are space-separated */
-$list: item-1 item-2 item-3, item-4 item-5 item-6, item-7 item-8 item-9;
+/* Or simpler: 
+ * top-level list is comma-separated 
+ * inner lists are space-separated 
+ */
+$list:  item-1 item-2 item-3, 
+		item-4 item-5 item-6, 
+        item-7 item-8 item-9;
 {% endhighlight %}
-<p>Now, how to use a list to access item one by one.</p>
+<p>Now, here is how to use a list to access item one by one.</p>
 {% highlight css %}
 @each $item in $list {
 	/* Access item with $item */
 }
 {% endhighlight %}
-<p>You can do the exact same thing with a <code>@for</code> loop thanks to Sass advanced list functions.</p>
+<p>You can do the exact same thing with a <code>@for</code> loop as you would probably do in JavaScript thanks to Sass advanced list functions.</p>
 {% highlight css %}
 @for $i from 1 through length($list) {
 	/* Access item with nth($list, $i) */
 }
 {% endhighlight %}
-<p>Now that we introduced loops and lists, we can move forward. My idea was to build a little Sass script that output a given background value based a page name where file names would not follow a guidename. So home page would have background X, contact page background Y, etc.</p>
+<p>Now that we introduced loops and lists, we can move forward. My idea was to build a little Sass script that output a specific background based on a page name where file names would not follow any guide name (hyphens, underscores, .jpg, .png, random folders...). So home page would have background X, contact page background Y, etc.</p>
 {% highlight css %}
+/* Two-levels list
+ * Top level contains page
+ * Inner level contains page-specific informations 
+ */
 $pages : 
   "home"     "bg-home.jpg", 
   "about"    "about.png", 
@@ -359,6 +366,7 @@ $pages :
   "contact"  "assets/contact.jpg";
 
 @each $page in $pages {
+	/* Scoped variable */
     $selector : nth($page, 1);
     $path     : nth($page, 2);
     
@@ -370,7 +378,7 @@ $pages :
 <p>Here is what happen:</p>
 <ul>
 <li>We deal with a 2-levels list. Each item is a list containing 2 strings: the name of the page (e.g. "home") and the name of the file (e.g. "bg-home.jpg").</li>
-<li>We loop on the list then access inner items with the <code>nth()</code> function (e.g. <code>nth($page, 1)</Code>).</li>
+<li>We loop through the list then access inner items with the <code>nth()</code> function (e.g. <code>nth($page, 1)</Code>).</li>
 <li>We output CSS within the loop to have one rule for each page.</li>
 </ul>
 <p>Outputs:</p>
@@ -380,7 +388,7 @@ $pages :
 .products body { background: url('../images/prod_bg.jpg'); }
 .contact  body { background: url('../images/assets/contact.jpg'); }
 {% endhighlight %}
-<p>I finished my talk with a last example with lists and loops, to show how to build an "active menu" without JavaScript or server-side; only CSS. To put it simple, it relies on matching name on the page and the menu. The link to home is highlighted if it's a child of home (class on html element); the link to contact page is highlighted if it's a child of the contact page. You get the idea.</p>
+<p>I finished my talk with a last example with lists and loops, to show how to build an "active menu" without JavaScript or server-side; only CSS. To put it simple, it relies on the page name matching and the link name. So the link to home page is highlighted if it's a child of <code>.home</code> (class on html element); the link to the contact page is highlighted if it's a child of the <code>.contact</code> page. You get the idea.</p>
 <p>To show the difference between nice and very nice Sass, I made two versions of this one. The first one is cool but meh, the second one is clever as hell (if I may).</p>
 <p>Let's save the best for last. The idea behind the first version is to loop through the pages and output styles for each one of them.</p>
 {% highlight css %}
