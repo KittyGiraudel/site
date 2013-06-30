@@ -8,12 +8,20 @@ title: Feedbacks on my first conf
 
 <section>
 <p>Hey guys! I recently had the amazing opportunity to be a speaker at <a href="http://kiwiparty.fr">KiwiParty</a>, a one-day French conference at Strasbourg gathering 10 speakers and more than 150 persons to talk about front-end technologies, accessibility, ergonomy, webdesin, and so much more.</p>
+<figure class="figure">
+<img src="/images/feedbacks-kiwiparty__code-is-poetry.jpg" alt="">
+<figcaption>Code is poetry - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+</figure>
 <p>So Friday June 28 at 2:00PM I was on stage to talk about Sass, and how we can use preprocessors to push our stylesheets to an upper level: "Kick-ass CSS with Sass".</p>
 <p>Basically, my talk is a collection of code snippets and real-life usecases of Sass to show we can use a preprocessor further than declaring a couple of variables, yet simple enough not to turn the code into a Rube Goldberg machine.</p>
 </section>
 <section id="conference">
 <h2>About the conference <a href="#conference">#</a></h2>
 <p>I've never been at a conference before so it was pretty much what I could expect. A bunch of awesome people, great talks, food, and most of all: web. It was an amazing day, for sure.</p>
+<figure class="figure">
+<img src="/images/feedbacks-kiwiparty__laptops-and-food.jpg" alt="">
+<figcaption>Laptops and food - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+</figure>
 <p>Plus, we had the opportunity to meet two awesome dudes of our field:</p>
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/Bert_Bos">Bert Bos</a> -co-creator of CSS- introduced the day by telling us about <a href="http://www.w3.org/Talks/2013/0628-CSS-Strasbourg/">CSS for books</a>. Pretty amazing what we can know do with CSS when we know it was first intented to style basic text documents.</li>
@@ -24,6 +32,10 @@ title: Feedbacks on my first conf
 <section id="talk">
 <h2>About my talk <a href="#talk">#</a></h2>
 <p>It went great. People seemed very interested in the topic and I felt like they were understanding the main point of the conference, so it's something!</p>
+<figure class="figure">
+<img src="/images/feedbacks-kiwiparty__hugo-giraudel.jpg" alt="">
+<figcaption>Focus - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+</figure>
 <p>I was kind of nervous, obviously. My laptop dying the night before the big day was not to help though... Hopefully I could buy a Chromebook (which will probably the topic for another article) and all went well.</p>
 <blockquote class="pull-quote--right">This experience was kind of incredible actually.</blockquote>
 <p>This experience was kind of incredible actually. I walked into that room where dozens and dozens of boys and girls were waiting for me to talk to them. My hands were kind of sweaty and I was shivering a little at first but it all disappeared when I started talking.</p>
