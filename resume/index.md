@@ -1,8 +1,10 @@
 ---
+published: true
 title: Resume
 layout: default
-page-class: page--resume
+"page-class": "page--resume"
 ---
+
 <section id="formation">
 <h2><i class='fontawesome-beaker icon-left'></i>Formation <a href="#formation" class="section-anchor">#</a></h2>
 
@@ -63,7 +65,7 @@ page-class: page--resume
 </section>
 <section id="publications">
 
-<h2><span class='fontawesome-pencil icon-left'></span>Publications <a href="#publications" class="section-anchor">#</a></h2>
+<h2><span class='fontawesome-pencil icon-left'></span>Publications and talks <a href="#publications" class="section-anchor">#</a></h2>
 <h3>Web</h3>
 <ul>
 <li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo on Codrops">Writer for Codrops</a></li>
@@ -75,7 +77,10 @@ page-class: page--resume
 <ul>
 	<li><a href="http://www.netmagazine.com/shop/magazines/July-2013-242">.net Magazine - Issue n°242 : "Hack back"</a></li>
 </ul> 
-
+<h3>Talks</h3>
+<ul>
+	<li>"Kick-ass CSS with Sass" at <a href="http://kiwiparty.fr">KiwiParty</a> (June 2013)</li>
+</ul>
 </section>
 <section id="interests">
 
