@@ -34,11 +34,11 @@
 	text-align: $opposite;
 	float: $direction;
 	margin: 0 0 $space 0;
-	margin-#{$position}: -4em;	
+	margin-#{$direction}: -4em;	
 	margin-#{$opposite}: $space;	
 
 	@include breakpoint(medium) {
-		margin-#{$position}: 0;
+		margin-#{$direction}: 0;
 	}
 }
 
