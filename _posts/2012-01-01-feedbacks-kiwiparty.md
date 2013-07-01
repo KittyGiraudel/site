@@ -1,13 +1,12 @@
 ---
-published: true
 layout: post
-preview: true
-comments: false
+comments: true
 title: Feedbacks on my first conf
 ---
 
 <section>
-<p>Hey guys! It's been a while I haven't post anything; last month has been pretty intense. Especially since I recently had the amazing opportunity to be a speaker at <a href="http://kiwiparty.fr">KiwiParty</a>, a one-day French conference at Strasbourg (France) gathering 10 speakers and more than 150 persons to talk about front-end technologies, accessibility, ergonomy, webdesin, and so much more.</p>
+<p>Hey guys! It's been a while I haven't post anything; last month has been pretty intense. Especially since I recently had the amazing opportunity to be a speaker at <a href="http://kiwiparty.fr">KiwiParty</a>!</p>
+<p>It's a one-day French conference at Strasbourg (France) gathering 10 speakers and more than 150 persons to talk about front-end technologies, accessibility, ergonomy, webdesin, and so much more.</p>
 <figure class="figure">
 <img src="/images/feedbacks-kiwiparty__code-is-poetry.jpg" alt="">
 <figcaption>Code is poetry - photo by <a target="_blank" href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
