@@ -67,16 +67,32 @@ title: Digging into my slides about Sass
 	/* shared styles */
 }
 .message-error {
-	/* error-only styles */
+	@extend %message;
+	$color: #b94a48;
+	color: $color;
+  	background: lighten($color, 38%);
+  	border-color: lighten(adjust-hue($color, -10), 20%);
 }
 .message-ok {
-	/* ok-only styles */
+	@extend %message;
+	$color: #468847;
+	color: $color;
+  	background: lighten($color, 38%);
+  	border-color: lighten(adjust-hue($color, -10), 20%);
 }
 .message-warn {
-	/* warn-only styles */
+	@extend %message;
+	$color: #c09853;
+	color: $color;
+  	background: lighten($color, 38%);
+ 	border-color: lighten(adjust-hue($color, -10), 20%);
 }
 .message-info {
-	/* info-only styles */
+	@extend %message;
+	$color: #3a87ad;
+	color: $color;
+	background: lighten($color, 38%);
+ 	border-color: lighten(adjust-hue($color, -10), 20%);
 }
 {% endhighlight %}
 <p>Outputs:</p>
@@ -85,19 +101,54 @@ title: Digging into my slides about Sass
 	/* shared styles */
 }
 .message-error {
-	/* error-only styles */
+	color: #b94a48;
+  	background: #efd5d4;
+  	border-color: #d5929c;
 }
 .message-ok {
-	/* ok-only styles */
+	color: #468847;
+ 	background: #b6dab7;
+ 	border-color: #83ba7a;
 }
 .message-warn {
-	/* warn-only styles */
+	color: #c09853;
+  	background: #f4ede1;
+  	border-color: #dbba9e;
 }
 .message-info {
-	/* info-only styles */
+	color: #3a87ad;
+  	background: #bfdcea;
+  	border-color: #7ac4d3;
 }
 {% endhighlight %}
-<p>No styles repeated, no heavy selector, only one class assigned in the markup. Pretty neat. And this is only a very easy example of what you can do with <code>@extend</code> and placeholders. Feel free to think of clever usecases as well.</p>
+<p>No styles repeated, no heavy selector, only one class assigned in the markup. Pretty neat. However, even if there is no repeated styles in the final CSS, there are repeated lines in the Sass stylesheet. They are repeated because the <code>$color</code> variable changes in the scope. Isn't this the perfect usecase for a mixin?</p>
+{% highlight css %}
+@mixin message($color) {
+	color: $color;
+	background: lighten($color, 38%);
+ 	border-color: lighten(adjust-hue($color, -10), 20%);
+}
+{% endhighlight %}
+<p>Then, we change our Sass a little bit:</p>
+{% highlight css %}
+.message-error {
+	@extend %message;
+	@include message(#b94a48);
+}
+.message-ok {
+	@extend %message;
+	@include message(#468847);
+}
+.message-warn {
+	@extend %message;
+	@include message(#c09853);
+}
+.message-info {
+	@extend %message;
+	@include message(#3a87ad);
+}
+{% endhighlight %}
+<p>Quite cool, right? And this is only a very easy example of what you can do with <code>@extend</code> and placeholders. Feel free to think of clever usecases as well.</p>
 </section>
 <section id="rem">
 <h2>Sass and REM <a href="#rem">#</a></h2>
@@ -430,6 +481,20 @@ $selector : ();
 }
 {% endhighlight %}
 <p>This is hot! Instead of outputing shit in the loop, we use it to create a selector that we then use to define our "active" styles.</p>
+</section>
+<section id="QA">
+<h2>Questions & Answers <a href="#QA">#</a></h2>
+<p style="font-weight: bold">Is there a performance difference between <code>.message</code> and <code>.message-error, .message-ok, .message-info, .message-warn</code>?</p>
+<p>None. The only difference there is, is that in the first case you have to apply 2 classes to your element instead of one. Per se, having to use 2 classes on the same element isn't a problem at all. However what can be considered odd is that the 2 classes are co-dependant, meaning they make sense when they are together. <code>.message</code> on itself won't do much since it has no color chart. Meanwhile <code>.message-error</code> will look ugly since it lacks basic styles like padding and such.</p>
+<p style="font-weight: bold">Your @media mixin outputs a media-query block every time you use it. Ain't you afraid of performance issues?</p>
+<p>That's true. Sass doesn't automatically merge media queries rules <a href="https://github.com/nex3/sass/issues/316">yet</a>. However, <a href="http://sasscast.tumblr.com/post/38673939456/sass-and-media-queries">tests have been done</a> and they showed that once GZipped, there was no difference between duplicated and merged @media queries.</p> 
+<p>In any case, if you feel dirty having duplicated media queries in your final CSS even if it doesn't make any difference, you can still use <a href="https://github.com/aaronjensen/sass-media_query_combiner">this Ruby gem</a> to merge them. Please note merging media queries may mean reordering CSS which may involve some specificity issues. More tests needed.</p>
+<blockquote><p>"... we hashed out whether there were performance implications of combining vs scattering Media Queries and came to the conclusion that the difference, while ugly, is minimal at worst, essentially non-existent at best."</p></blockquote>
+<p style="font-weight: bold">Compass or Bourbon?</p>
+<p>Well, frankly it's up to you. However note that the Compass team works directly with the Sass team so they are and will always be up to date. Bourbon otherwise is a side-project which isn't affiliated at all with Sass in anyway (well, except for the obvious).</p>
+<p>Moreover, Compass comes with a <a href="http://compass-style.org/reference/compass/helpers/sprites/">sprite generator</a>, <a href="http://compass-style.org/reference/blueprint/">Blueprint</a> for your grids, a <a href="http://compass-style.org/reference/compass/typography/vertical_rhythm/">a vertical rhytm module</a> and a bunch of other cool things like <a href="http://compass-style.org/reference/compass/helpers/math/">Math functions</a>, <a href="http://compass-style.org/reference/compass/helpers/image-dimensions/">image dimensions</a>, and <a href="http://compass-style.org/reference/compass/helpers/">much more</a>...</p>
+<p>So if you want my opinion: definitely Compass.</p>  
+<p style="font-weight: bold">Do you think we will ever be able to connect Sass to some kind of DB to auto-supply lists or something?</p>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
