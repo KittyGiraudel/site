@@ -484,17 +484,19 @@ $selector : ();
 </section>
 <section id="QA">
 <h2>Questions & Answers <a href="#QA">#</a></h2>
-<p style="font-weight: bold">Is there a performance difference between <code>.message</code> and <code>.message-error, .message-ok, .message-info, .message-warn</code>?</p>
+<h3 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Is there a performance difference between <code>.message</code> and <code>.message-error, .message-ok, .message-info, .message-warn</code>?</h3>
 <p>None. The only difference there is, is that in the first case you have to apply 2 classes to your element instead of one. Per se, having to use 2 classes on the same element isn't a problem at all. However what can be considered odd is that the 2 classes are co-dependant, meaning they make sense when they are together. <code>.message</code> on itself won't do much since it has no color chart. Meanwhile <code>.message-error</code> will look ugly since it lacks basic styles like padding and such.</p>
-<p style="font-weight: bold">Your @media mixin outputs a media-query block every time you use it. Ain't you afraid of performance issues?</p>
+<h3 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Your @media mixin outputs a media-query block every time you use it. Ain't you afraid of performance issues?</h3>
 <p>That's true. Sass doesn't automatically merge media queries rules <a href="https://github.com/nex3/sass/issues/316">yet</a>. However, <a href="http://sasscast.tumblr.com/post/38673939456/sass-and-media-queries">tests have been done</a> and they showed that once GZipped, there was no difference between duplicated and merged @media queries.</p> 
 <p>In any case, if you feel dirty having duplicated media queries in your final CSS even if it doesn't make any difference, you can still use <a href="https://github.com/aaronjensen/sass-media_query_combiner">this Ruby gem</a> to merge them. Please note merging media queries may mean reordering CSS which may involve some specificity issues. More tests needed.</p>
 <blockquote><p>"... we hashed out whether there were performance implications of combining vs scattering Media Queries and came to the conclusion that the difference, while ugly, is minimal at worst, essentially non-existent at best."</p></blockquote>
-<p style="font-weight: bold">Compass or Bourbon?</p>
+<h3 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Compass or Bourbon?</h3>
 <p>Well, frankly it's up to you. However note that the Compass team works directly with the Sass team so they are and will always be up to date. Bourbon otherwise is a side-project which isn't affiliated at all with Sass in anyway (well, except for the obvious).</p>
 <p>Moreover, Compass comes with a <a href="http://compass-style.org/reference/compass/helpers/sprites/">sprite generator</a>, <a href="http://compass-style.org/reference/blueprint/">Blueprint</a> for your grids, a <a href="http://compass-style.org/reference/compass/typography/vertical_rhythm/">a vertical rhytm module</a> and a bunch of other cool things like <a href="http://compass-style.org/reference/compass/helpers/math/">Math functions</a>, <a href="http://compass-style.org/reference/compass/helpers/image-dimensions/">image dimensions</a>, and <a href="http://compass-style.org/reference/compass/helpers/">much more</a>...</p>
 <p>So if you want my opinion: definitely Compass.</p>  
-<p style="font-weight: bold">Do you think we will ever be able to connect Sass to some kind of DB to auto-supply lists or something?</p>
+<h3 class="h4"><span class="fontawesome-comments icon-left" style="color: #aaa"></span>Do you think we will ever be able to connect Sass to some kind of DB to auto-supply lists or something?</h3>
+<p>Honestly, I don't think so but I could be wrong. I know Sass developers want to do the right thing and try to stick as much as possible to the "CSS scope" (because in the end what is compiled is CSS). Connecting Sass to a database to generate lists then do things in Sass with these lists like <a href="http://codepen.io/thebabydino/pen/lHqbz">this pure Sass chart</a> would probably be out of line.</p>
+<p>However they are including awesome features in Sass starting with the next version (3.3) which should include sourcemaps, a huge improvements to the parent selector (<code>&</code>), inner-string manipulation like <code>str-index()</code>, ...</p>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
