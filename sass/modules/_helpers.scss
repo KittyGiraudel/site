@@ -36,8 +36,12 @@
 }
 
 %pull-quote {
-	max-width: 250px;
+	max-width: 8em;
 	line-height: 1.35;
+	border: 6px solid $pink;
+	border-left: none;
+	border-right: none;
+	padding: $space 0;
 	@include rem(3);
 
 	&:after,
@@ -49,16 +53,13 @@
 	&:after  { content: "\201d"; }
 
 	@include breakpoint(small) { /* 1 */
-		float: none !important;
-		margin: $space auto !important;
-		border: 6px solid $pink;
-		border-left:  none !important;
-		border-right: none;
-		text-align: center !important;
-		padding: $space 0.5em !important;
-		max-width: 100%;
+		float: none			 !important;
+		margin: $space auto  !important;
+		text-align: center   !important;
+		padding: $space .5em !important;
+		max-width: 100% 	 !important;
 	}
-}
+} 
 
 /**
  * Creates helpers for both images and quotes

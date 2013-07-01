@@ -22,7 +22,7 @@
 	@if $point == small {
 	    @media (max-width: 38em) { @content; } //760px
 	}
-}
+} 
 
 /**
  * Mixins used by helper classes .pull-image--$pos and .pull-quote--$pos
@@ -34,9 +34,12 @@
 	text-align: $opposite;
 	float: $direction;
 	margin: 0 0 $space 0;
+	margin-#{$position}: -4em;	
 	margin-#{$opposite}: $space;	
-	border-#{$opposite}: 6px solid $pink;
-	padding-#{$opposite}: $space;
+
+	@include breakpoint(medium) {
+		margin-#{$position}: 0;
+	}
 }
 
 @mixin pull-image($direction) {
