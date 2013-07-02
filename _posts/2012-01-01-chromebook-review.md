@@ -50,7 +50,7 @@ preview: true
 <section id="chrome-os">
 <h2>Chrome OS <a href="#chrome-os">#</a></h2>
 <figure class="figure">
-<img src="images/chromebook-review__chrome-os.jpg">
+<img src="images/chromebook-review__chrome-os.png">
 <figcaption>Minimal desktop of Chrome OS</figcaption>
 </figure>
 <blockquote class="pull-quote--right">Chrome OS is freaking fast.</blockquote>
