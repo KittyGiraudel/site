@@ -34,7 +34,7 @@ preview: true
 <p>Oh man, this is good. You can rely on an average 6.5 hours battery lifetime with a regular usage. This may vary according to your usage; from 5 hours when streaming, up to 9 hours when casual browsing.</p>
 <p>This is definitely a plus not having to worry much about the battery (at least for me).</p>
 <p>For in-depth tests on Samsung Chromebook's battery, please refer to <a href="http://fr.ubergizmo.com/2013/03/test-du-chromebook-samsung-serie-3/">this article</a> (in French, but graphs are in English).</p>
-<h3>Keyboard</h3><p>The keyboard is pretty nice, really. Keys are large and smooth so typing is quite easy and most importantly, noiseless.</p>
+<h3>Keyboard</h3><p>The keyboard is pretty nice, really. <strong>Keys are large and smooth</strong> so typing is quite easy and most importantly, noiseless.</p>
 <p>The Chromebook keyboard has been rearranged and optimized for web browsing. Indeed, the upper row contains "back", "forward" and "refresh" keys. You also have a "fullscreen" and a "alt-tab" like keys along with the traditional "luminosity", "volume" and "power" buttons.</p>
 <p>Note the "caps-lock"	button has been replaced by the "search" button (quite similar to the "Windows button) and "ctrl" and "alt" are pretty huge.</p>
 <p class="note">One funny detail is how letters are in lowercase on the Chromebook keyboard when all other keyboards are using uppercase. Made me smile when I noticed it. :)</p>
@@ -44,8 +44,8 @@ preview: true
 <p>This is actually cool but kind of disturbing when you have a MBP background. In a way, it makes sense since there are "backward" and "forward" keys on the keyboard.</p>
 <p>In any case, the surface is not only smooth and pleasant, but also quite large.</p> 
 <h3>Connectivy</h3>
-<p>The Samsung Chromebook has 2 USB ports (USB2 & USB3), a HDMI connection and a SD card reader. All of these are on the back of the laptop which I don't like much; I'd rather have them on the side. No big deal for sure, but having to plug / unplug something on the back of the laptop can quickly become a pain in the ass.</p>
-<p>Beware, HDMI connection may be a problem if you plan on connecting your laptop to a monitor because it's generally VGA. So if you plan on using your Chromebook for talks, remember buying an adaptor first. ;)</p>
+<p>The Samsung Chromebook has 2 USB ports (USB2 & USB3), a HDMI connection and a SD card reader. All of these are <strong>on the back of the laptop</strong> which I don't like much; I'd rather have them on the side. No big deal for sure, but having to plug / unplug something on the back of the laptop can quickly become a pain in the ass.</p>
+<p>Beware, HDMI connection may be a problem if you plan on connecting your laptop to a monitor because it's generally VGA. So if you plan on using your Chromebook for talks, remember to buy an adaptor first. ;)</p>
 </section>
 <section id="chrome-os">
 <h2>Chrome OS <a href="#chrome-os">#</a></h2>
@@ -54,7 +54,9 @@ preview: true
 <p>The Chromebook is a web-based laptop, running on a web-based OS to use web-based applications. If you can't stand Google services or don't plan on having internet, this laptop isn't for you.</p>
 <p>Thus, the OS taskbar shortcuts essentially open new tabs in Chrome to Google services (Gmail, Google Drive, Youtube, Chrome Web Store, Google Maps, Google+...).</p>
 <p>On a side note, Chrome OS comes with a built-in yet very simplistic image editor. This may sounds irrelevant but when you have images you want to crop / rotate for articles, this is really rad.</p>
-<h3>Working offline</h3>
+</section>
+<section id="working-offline">
+<h2>Working offline <a href="#working-offline">#</a></h2>
 <blockquote class="pull-quote--right">The Chromebook is a web-based laptop, running on a web-based OS to use web-based applications.</blockquote>
 <p>Thankfully, Google thought about offline usage and made Gmail and Google Drive fully usable when not connected to internet. You can classify and even write mails on Gmail and write whole documents on Google Drive: everything will be synchronized / sent when WiFi is up again.</p>
 <p>So this is pretty neat. Let's say you have a couple of hours to kill in the train. No problem, you can deal with all your unread emails and work on your projets on Google Drive safely. No need for a connection.</p>
