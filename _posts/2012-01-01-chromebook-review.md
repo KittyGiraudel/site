@@ -49,12 +49,12 @@ preview: true
 </section>
 <section id="chrome-os">
 <h2>Chrome OS <a href="#chrome-os">#</a></h2>
+<blockquote class="pull-quote--right">Chrome OS is freaking fast.</blockquote>
+<p>Chrome OS is freaking fast. It takes about 6 seconds between the moment you press the power button and the moment you're on the desktop. This is probably due to the fact <strong>most applications and services run in the browser</strong>. Indeed, there are very few things installed on the computer aside of Google Chrome.</p>
 <figure class="figure">
 <img src="/images/chromebook-review__chrome-os.png">
 <figcaption>Minimal desktop of Chrome OS</figcaption>
 </figure>
-<blockquote class="pull-quote--right">Chrome OS is freaking fast.</blockquote>
-<p>Chrome OS is freaking fast. It takes about 6 seconds between the moment you press the power button and the moment you're on the desktop. This is probably due to the fact <strong>most applications and services run in the browser</strong>. Indeed, there are very few things installed on the computer aside of Google Chrome.</p>
 <p>The Chromebook is a web-based laptop, running on a web-based OS to use web-based applications. If you can't stand Google services or don't plan on having internet, this laptop isn't for you.</p>
 <p>Thus, the OS taskbar shortcuts essentially open new tabs in Chrome to Google services (Gmail, Google Drive, Youtube, Chrome Web Store, Google Maps, Google+...).</p>
 <p>On a side note, Chrome OS comes with a built-in yet very simplistic image editor. This may sounds irrelevant but when you have images you want to crop / rotate for articles, this is really rad.</p>
