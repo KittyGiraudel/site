@@ -20,7 +20,7 @@ preview: true
 <h3>Size</h3>
 <p>Let's start by the whole hardware part. First of all, I think it's pretty nice even if it doesn't compete with the MacBook Pro.</p>
 <p>I'm not very comfortable with very technical specifications so I'll just leave it here: Exynos 5 Dual Core 1.7Ghz, 2GB DDR3 RAM, 16GB SSD storage.</p>
-<p>The whole shell is not in aluminium which is why you don't have the same feeling as the MBP, but that's definitely better when it comes to the weight. Indeed, the Chromebook 11.6" is very lightweight with only 1.1Kg (which has to be 2.4lbs to some of you) for 1.8cm thick.</p>
+<p>The whole shell is not in aluminium but in (good) plastic which is why you don't have the same feeling as the MBP, but that's definitely better when it comes to the weight. Indeed, the Chromebook 11.6" is very lightweight with only 1.1Kg (which has to be 2.4lbs to some of you) for 1.8cm thick.</p>
 <p>In any case, you can tell it is a small laptop halfway through a regular laptop and a netbook.</p>
 <h3>Screen</h3>
 <p>The screen resolution is limited to 1366*768 which is enough if you want my opinion. However the screen quality isn't awesome. Indeed, the Chromebook uses a lower-end display with pretty bad sight angles. So you wouldn't buy the Chromebook for its screen.</p>
@@ -30,7 +30,15 @@ preview: true
 <p>There are two speakers on the bottom case which isn't great when the laptop is put on table, on your knees, on the couch, on the bed or pretty much anywhere. Yeah so, the sound isn't great.</p>
 <p>It's not awful, definitely not awful but it's not high-quality sound. So if you want high-quality sound, you may need to plug in external speakers or headphones.</p>
 <h3>Battery</h3>
-<p>Oh man, this is good. You can count on about 6.5 hours battery lifetime with a regular usage.
+<p>Oh man, this is good. You can rely on an average 6.5 hours battery lifetime with a regular usage. This may vary according to your usage; from 5 hours when streaming, up to 9 hours when quick browsing.</p>
+<p>This is definitely a plus not having to worry much about the battery (at least for me).</p>
+<h3>Keyboard</h3>
+<p>The keyboard is pretty nice, really. Keys are large and smooth so typing is quite easy and most importantly, noiseless.</p>
+<p>One funny detail is how the Chromebook keyboard has been rearranged and optimized for web browsing. Indeed, the upper row contains "back", "forward" and "refresh" keys. You also have a "fullscreen" and a "alt-tab like" keys along with the traditional "luminosity", "volume" and "power" keys.</p>
+<h3>Trackpad</h3>
+<p>Chrome gives us a close to MBP trackpad with a double-finger tap as a right click which is pretty nice. Plus the surface is smooth and pleasant.</p>
+<p>However trible-finger swipe doesn't go back in history like on a MacBook Pro; instead, it moves one tab to the left or to the right depending on the direction.</p>
+<p>This is actually cool but kind of disturbing when you have a MBP background. In a way, it makes sense since there are "backward" and "forward" keys on the keyboard.</p>
 </section>
 <section id="applications">
 <h2>Applications <a href="#applications">#</a></h2>
