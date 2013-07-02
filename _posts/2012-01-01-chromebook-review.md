@@ -43,11 +43,16 @@ preview: true
 <p>The Samsung Chromebook has 2 USB ports (USB2 & USB3), a HDMI connection and a SD card reader. All of these are on the back of the laptop which I don't like much; I'd rather have them on the side.</p>
 <p>Beware, HDMI connection may be a problem if you plan on connecting your laptop to a monitor because it's generally VGA. So if you plan on using your Chromebook for talks, remember buying an adaptor first. ;)</p>
 </section>
-<section id="applications">
-<h2>Applications <a href="#applications">#</a></h2>
-</section>
-<section id="browsing">
-<h2>Browsing <a href="#browsing">#</a></h2>
+<section id="chrome-os">
+<h2>Chrome OS <a href="#chrome-os">#</a></h2>
+<blockquote class="pull-quote--right">Chrome OS is freaking fast.</blockquote>
+<p>Chrome OS is freaking fast. It takes about 6 seconds between the moment you press the power button and the moment you're on the desktop. This is probably due to the fact most applications and services run in the browser. Indeed, there are very few things installed on the computer aside of Google Chrome.</p>
+<p>Thus, the OS taskbar shortcuts essentially open new tabs in Chrome to Google services (Gmail, Google Drive, Youtube, Chrome Web Store, Google Maps, Google+...).</p>
+<p>This is why the Chromebook is a web-based laptop, running on a web-based OS to use web-based applications. If you can't stand Google services or don't plan on having internet, this laptop isn't for you.</p>
+<h3>Working offline</h3>
+<p>Hopefully, Google thought about offline usage and made Gmail and Google Drive fully usable when not connected to internet. You can classify and even write mails on Gmail and write whole documents on Google Drive: everything will be synchronized/sent when wifi is up again.</p>
+<p>So this is pretty neat. Let's say you have a couple of hours to kill in the train. No problem, you can deal with all your unread emails and work on your projets on Google Drive safely. No need for a connection.</p>
+<p>There is even a <a href="https://chrome.google.com/webstore/category/collection/offline_enabled">section of the Chrome Web Store</a> gathering offline applications (including games). Beware though, you need an internet connection to download these applications of course.</p>
 </section>
 <section id="final-thoughts">
 <h2>Final thoughts <a href="#final-thoughts">#</a></h2>
