@@ -1,6 +1,8 @@
 ---
-page-class: page--post
+published: true
+"page-class": "page--post"
 ---
+
 {% include head.html %}
 {% include header.html %}
 {% if page.numberedFigures %}
@@ -11,7 +13,7 @@ page-class: page--post
 {% if page.title %} 
 <h1>{{ page.title }}</h1> 
 {% endif %}
-<p class="date">Published {{ page.date | date: "%B %d, %Y" }}</p> 
+<p class="date">{{ page.date | date: "%B %d, %Y" }}</p> 
 {{ content }}
 {% if page.comments %}
 <div id="disqus_thread"></div> 
