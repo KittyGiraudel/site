@@ -16,12 +16,15 @@ comments: false
 <p>Anyway, we have a couple of ways to initialize an empty variable (that could be treated as a list):</p>
 {% highlight css %}
 $a: ();
-type-of($a) -> list
 $b: unquote('');
-type-of($b) -> string
 $c: null;
-type-of($c) -> null
 $d: (null);
+{% endhighlight %}
+<p>Now we have defined our variables, we will check their type. Just for fun.</p>
+{% highlight css %}
+type-of($a) -> list
+type-of($b) -> string
+type-of($c) -> null
 type-of($d) -> null
 {% endhighlight %}
 <p>Since <code>$c</code> and <code>$d</code> are stricly equivalent, we will remove the later from the next tests. Let's check the length of each variable.</p>
@@ -35,13 +38,12 @@ length($c) -> 1
 <section>
 <h2>Sass list "fun" facts</h2>
 <p>This section has been quickly covered in the article at CSS-Tricks but since it is the very basics I have to put this here as well.</p>
-<p><strong>You can ommit braces.</strong> You can define a non-empty list without any braces if you feel so. Thus <code>$list: "item-1", "item-2", "item-3"</code> is perfectly valid.</p>
+<p><strong>You can ommit braces.</strong> You can define a non-empty list without any braces if you feel so. In fact, they are often ommited. Specifying the braces explicitly casts the variable as a list while ommiting them can imply a few issues in some rare cases.</p>
 {% highlight css %}
 $list: "item-1", "item-2", "item-3";
 {% endhighlight %}
 <p><strong>Indexes start at 1, not 0.</strong> This is one of the most disturbing once you start experimenting with Sass lists. Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).</p>
 {% highlight css %}
-$list: "item-1", "item-2", "item-3";
 nth($list, 0) -> throws error
 nth($list, 1) -> "item-1"
 {% endhighlight %}
@@ -49,7 +51,7 @@ nth($list, 1) -> "item-1"
 {% highlight css %}
 $list: "item-1" "item-2" "item-3";
 {% endhighlight %}
-<p><strong>You can nest lists.</strong> As for JavaScript or any other language, there is no limit regarding the level of depth you can have with nested lists. Just go as deep as like bro. </p>
+<p><strong>You can nest lists.</strong> As for JavaScript or any other language, there is no limit regarding the level of depth you can have with nested lists. Just go as deep as you need to, bro. </p>
 {% highlight css %}
 /* Nested lists with braces and same separator (clean) */
 $list: ( 
@@ -57,6 +59,7 @@ $list: (
         ("item-2.1", "item-2.2", "item-2.3"),
         ("item-3.1", "item-3.2", "item-3.3")
        );
+       
 /* Nested lists the "dirty" way */
 $list: "item-1.1" "item-1.2" "item-1.3", 
        "item-2.1" "item-2.2" "item-2.3",
