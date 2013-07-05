@@ -69,11 +69,11 @@ $list: "item-1.1" "item-1.2" "item-1.3",
 <section>
 <h2>Sass list functions</h2>
 <p>Before getting into the real topic, let's make a round-up on Sass list functions.</p>
-<p><code>length($list)</code>: returns the length of a <code>$list</code> (if not a list, returns 1).</p>
-<p><code>nth($list, $index)</code>: returns the value at <code>$index</code> position in <code>$list</code> (throw an error if index out of list range).</p>
-<p><code>index($list, $value)</code>: returns the first index of the searched for <code>$value</code> in <code>$list</code> (false if not found).</p>
-<p><code>append($list, $value[, $separator])</code>: appends <code>$value</code> to the end of <code>$list</code> using <code>$separator</code> as a separator (using the current one if not specified).</p>
-<p><code>join($list-1, $list-2[, $separator])</code>: appends <code>$list-2</code> to <code>$list-1</code> using <code>$separator</code> as a separator (using the one from the first list if not specified).</p> 
-<p><code>zip(*$lists)</code>: combines several list into a comma-separated list where the nth value is a space-separated lists of all source lists nth values. In case source lists are not all the same length, the result list will be the length of the shortest one.</p>
-<p><code>reject($list, $value)</code> (Compass): removes <code>$value</code> from <code>$list</code>.</p>
-<p><code>compact(*$args)</code>: returns a new list after removing all the non-true values.</p>
+<p><strong><code>length($list)</code></strong>: returns the length of a <code>$list</code> (if not a list, returns 1).</p>
+<p><strong><code>nth($list, $index)</code></strong>: returns the value at <code>$index</code> position in <code>$list</code> (throw an error if index out of list range).</p>
+<p><strong><code>index($list, $value)</code></strong>: returns the first index of the searched for <code>$value</code> in <code>$list</code> (false if not found).</p>
+<p><strong><code>append($list, $value[, $separator])</code></strong>: appends <code>$value</code> to the end of <code>$list</code> using <code>$separator</code> as a separator (using the current one if not specified).</p>
+<p><strong><code>join($list-1, $list-2[, $separator])</code></strong>: appends <code>$list-2</code> to <code>$list-1</code> using <code>$separator</code> as a separator (using the one from the first list if not specified).</p> 
+<p><strong><code>zip(*$lists)</code></strong>: combines several list into a comma-separated list where the nth value is a space-separated lists of all source lists nth values. In case source lists are not all the same length, the result list will be the length of the shortest one.</p>
+<p><strong><code>reject($list, $value)</code></strong> (Compass): removes <code>$value</code> from <code>$list</code>.</p>
+<p><strong><code>compact(*$args)</code></strong>: returns a new list after removing all the non-true values.</p>
