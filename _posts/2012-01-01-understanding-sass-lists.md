@@ -10,8 +10,8 @@ comments: false
 <p>Lists have to be the most complicated and vicious thing in the whole Sass language. The main problem with lists -if a problem it is- is that the syntax is too permissive. You can do pretty much whatever you want.</p>
 <p>Anyway, I recently had the opportunity to write an article for CSS-Tricks about a Sass function involving quite a lot of list manipulation. I introduced the topic by clearing a couple of things regarding Sass lists but I wanted to write a more in-depth article.</p>
 </section>
-<section>
-<h2>Creating a Sass list</h2>
+<section id="init">
+<h2>Creating a Sass list <a href="#init">#</a></h2>
 <p>First things first. Even creating a Sass list can be tricky. Indeed, Sass isn't very strict with variable types. Basically it means you can process a list quite like a string, or use list functions to a string. It is basically a mess.</p>
 <p>Anyway, we have a couple of ways to initialize an empty variable (that could be treated as a list):</p>
 {% highlight css %}
@@ -35,8 +35,8 @@ length($c) -> 1
 {% endhighlight %}
 <p><code>$a</code> being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn't that odd either since it is a string. However the <code>null</code> variable being 1 item long is kind of weird.</p>
 </section>
-<section>
-<h2>Sass list "fun" facts</h2>
+<section id="facts">
+<h2>Sass list "fun" facts <a href="#facts">#</a></h2>
 <p>This section has been quickly covered in the article at CSS-Tricks but since it is the very basics I have to put this here as well.</p>
 <p><strong>You can ommit braces.</strong> You can define a non-empty list without any braces if you feel so. In fact, they are often ommited. Specifying the braces explicitly casts the variable as a list while ommiting them can imply a few issues in some rare cases.</p>
 {% highlight css %}
@@ -66,8 +66,8 @@ $list: "item-1.1" "item-1.2" "item-1.3",
        "item-3.1" "item-3.2" "item-3.3";
 {% endhighlight %}
 </section>
-<section>
-<h2>Sass list functions</h2>
+<section id="functions">
+<h2>Sass list functions <a href="#functions">#</a></h2>
 <p>Before getting into the real topic, let's make a round-up on Sass list functions.</p>
 <p><strong><code>length($list)</code></strong>: returns the length of a <code>$list</code> (if not a list, returns 1).</p>
 <p><strong><code>nth($list, $index)</code></strong>: returns the value at <code>$index</code> position in <code>$list</code> (throw an error if index out of list range).</p>
@@ -76,4 +76,24 @@ $list: "item-1.1" "item-1.2" "item-1.3",
 <p><strong><code>join($list-1, $list-2[, $separator])</code></strong>: appends <code>$list-2</code> to <code>$list-1</code> using <code>$separator</code> as a separator (using the one from the first list if not specified).</p> 
 <p><strong><code>zip(*$lists)</code></strong>: combines several list into a comma-separated list where the nth value is a space-separated lists of all source lists nth values. In case source lists are not all the same length, the result list will be the length of the shortest one.</p>
 <p><strong><code>reject($list, $value)</code></strong> (Compass): removes <code>$value</code> from <code>$list</code>.</p>
-<p><strong><code>compact(*$args)</code></strong>: returns a new list after removing all the non-true values.</p>
+<p><strong><code>compact(*$args)</code></strong> (Compass): returns a new list after removing all the non-true values.</p>
+<section id="experimenting">
+<h2>Adding things to Sass lists <a href="#experimenting">#</a></h2>
+<p>This is where things get very interesting. And quite complicated as well. I think the best way to explain this kind of stuff is to use an example. I'll use the same I talked about in my Sass talk at KiwiParty last month.</p>
+<p>Please consider an extended selector like <code>.home .nav-home, .about .nav-about, .products .nav-products, .contact .nav-contact</code> based on a list of keywords <code>$pages: home, about, products, contact</code>. I found 3 ways to generate this selector based on the list; we'll see them one by one.</p>
+<p>But first, we will write the skeleton of our testcase:</p>
+{% highlight css %}
+$pages: home, about, products, contact;
+$selector: ();
+
+@each $item in $pages {
+	/* We create $selector */
+}
+
+#{$selector} {
+	style: awesome;
+}
+{% endhighlight %}
+<h3>The long and dirty way</h3>
+<p>This is what I did a couple of weeks ago.</p>
+</section>
