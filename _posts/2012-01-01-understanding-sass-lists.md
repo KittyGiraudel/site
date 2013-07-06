@@ -125,9 +125,9 @@ $selector: ();
 <p>Instead of using <code>append()</code> and setting the 3rd parameter to <code>comma</code> we implicitly do it via removing the function and using a comma right after <code>$selector</code>.</p>
 </section>
 <section id="final-words">
-<h2>Final words <a href="final-words">#</a></h2>
+<h2>Final words <a href="#final-words">#</a></h2>
 <p>The three versions we saw in the previous section work like a charm, the one you should use is really up to you. You can also do it in some other more complicated and dirty ways.</p>
 <p>Anyway, this shows how having a very permissive syntax is kind of fucked up. As I said at the beginning of this post, you can do pretty much whatever you want and if you want my opinion this isn't for the best.</p>
 <p>Anyway, I'll close this article with this amazing Lightning Talk from Gary Bernhardt at CodeMash 2012 entitled "WAT". I think it is on-topic.</p>
-<iframe width="420" height="315" src="//www.youtube.com/embed/lrBhwGUF6yU" frameborder="0" allowfullscreen></iframe>
+<iframe style="margin: 0 auto" width="420" height="315" src="//www.youtube.com/embed/lrBhwGUF6yU" frameborder="0" allowfullscreen></iframe>
 </section>
