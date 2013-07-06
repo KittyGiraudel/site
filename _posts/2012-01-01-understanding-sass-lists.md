@@ -79,7 +79,7 @@ $list: "item-1.1" "item-1.2" "item-1.3",
 <p><strong><code>compact(*$args)</code></strong> (Compass): returns a new list after removing all the non-true values.</p>
 <section id="experimenting">
 <h2>Adding things to Sass lists <a href="#experimenting">#</a></h2>
-<p>This is where things get very interesting. And quite complicated as well. I think the best way to explain this kind of stuff is to use an example. I'll use the same I talked about in my Sass talk at KiwiParty last month.</p>
+<p>This is where things get very interesting. And quite complicated as well. I think the best way to explain this kind of stuff is to use an example. I'll use the same I talked about in <a href="http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/">my Sass talk at KiwiParty</a> last month.</p>
 <p>Please consider an extended selector like <code>.home .nav-home, .about .nav-about, .products .nav-products, .contact .nav-contact</code> based on a list of keywords <code>$pages: home, about, products, contact</code>. I found 3 ways to generate this selector based on the list; we'll see them one by one.</p>
 <p>But first, we will write the skeleton of our testcase:</p>
 {% highlight css %}
@@ -95,7 +95,7 @@ $selector: ();
 }
 {% endhighlight %}
 <h3>The long and dirty way</h3>
-<p>This is the method I used a couple of weeks. It works but it involves an extra conditional statements to handle commas. Please see below.</p>
+<p>This is the method I was still using a couple of weeks ago. It works but it involves an extra conditional statements to handle commas. Please see below.</p>
 {% highlight css %}
 @each $item in $pages {
 	$selector: $selector unquote('.#{$item} .nav-#{$item}');
@@ -106,6 +106,7 @@ $selector: ();
 }
 {% endhighlight %}
 <p>Basically, we add the new selector to <code>$selector</code> and if we are not dealing with the last item of the list, we add a comma.</p>
+<p class="note">Note: we have to use <code>unquote('')</code> to treat our new selector as an unquoted string.</p>
 <h3>The clean way</h3>
 <p>This one is the cleanest way you can use between the three; not the shortest though. Anyway, it uses <code>append()</code> properly.</p>
 {% highlight css %}
@@ -115,11 +116,18 @@ $selector: ();
 {% endhighlight %}
 <p>I think this is pretty straightforward: we append to <code>$selector</code> the new selector by explicitly separating it from the previous one with a comma.</p>
 <h3>The implicit way</h3>
-<p>Probably my favorite version above all since it's the shortest. It relieson implicit appending; very neat.</p>
+<p>Probably my favorite version above all since it's the shortest. It relies on implicit appending; very neat.</p>
 {% highlight css %}
 @each $item in $pages {
 	$selector: $selector, unquote('.#{$item} .nav-#{$item}');
 }
 {% endhighlight %}
 <p>Instead of using <code>append()</code> and setting the 3rd parameter to <code>comma</code> we implicitly do it via removing the function and using a comma right after <code>$selector</code>.</p>
+</section>
+<section id="final-words">
+<h2>Final words <a href="final-words">#</a></h2>
+<p>The three versions we saw in the previous section work like a charm, the one you should use is really up to you. You can also do it in some other more complicated and dirty ways.</p>
+<p>Anyway, this shows how having a very permissive syntax is kind of fucked up. As I said at the beginning of this post, you can do pretty much whatever you want and if you want my opinion this isn't for the best.</p>
+<p>Anyway, I'll close this article with this amazing Lightning Talk from Gary Bernhardt at CodeMash 2012 entitled "WAT". I think it is on-topic.</p>
+<iframe width="420" height="315" src="//www.youtube.com/embed/lrBhwGUF6yU" frameborder="0" allowfullscreen></iframe>
 </section>
