@@ -95,5 +95,31 @@ $selector: ();
 }
 {% endhighlight %}
 <h3>The long and dirty way</h3>
-<p>This is what I did a couple of weeks ago.</p>
+<p>This is the method I used a couple of weeks. It works but it involves an extra conditional statements to handle commas. Please see below.</p>
+{% highlight css %}
+@each $item in $pages {
+	$selector: $selector unquote('.#{$item} .nav-#{$item}');
+    
+    @if $item != nth($pages, length($pages)) {
+    	$selector: $selector unquote(',');
+    }
+}
+{% endhighlight %}
+<p>Basically, we add the new selector to <code>$selector</code> and if we are not dealing with the last item of the list, we add a comma.</p>
+<h3>The clean way</h3>
+<p>This one is the cleanest way you can use between the three; not the shortest though. Anyway, it uses <code>append()</code> properly.</p>
+{% highlight css %}
+@each $item in $pages {
+	$selector: append($selector, unquote('.#{$item} .nav-#{$item}', comma);
+}
+{% endhighlight %}
+<p>I think this is pretty straightforward: we append to <code>$selector</code> the new selector by explicitly separating it from the previous one with a comma.</p>
+<h3>The implicit way</h3>
+<p>Probably my favorite version above all since it's the shortest. It relieson implicit appending; very neat.</p>
+{% highlight css %}
+@each $item in $pages {
+	$selector: $selector, unquote('.#{$item} .nav-#{$item}');
+}
+{% endhighlight %}
+<p>Instead of using <code>append()</code> and setting the 3rd parameter to <code>comma</code> we implicitly do it via removing the function and using a comma right after <code>$selector</code>.</p>
 </section>
