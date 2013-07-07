@@ -10,9 +10,7 @@
  * 4. Disable word hyphenation within code blocks
  * 5. Reduce font size on small screens
  */
-code[class*="language-"],
 pre[class*="language-"] {
-
 	margin-bottom: $space;
 	padding: .6em;
 	overflow-x: auto;       /* 1 */
