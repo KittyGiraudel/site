@@ -35,7 +35,7 @@ title: Digging into my slides about Sass
 <h2>@extend and abstract classes <a href="#extend">#</a></h2>
 <p>The <code>@extend</code> feature has to be the one which made Sass so popular compared to other CSS preprocessors including Less. Basically, you can make a selector inherits styles from another selector. It comes with abstract classes (also called placeholders), classes prefixed by a <code>%</code> symbol instead of a dot, that are not compiled in the final stylesheet, thus that cannot be used in the markup. Their use is exclusive to the stylesheet.</p>
 <p>As a very simple example, let's make a placeholder of the <a href="http://nicolasgallagher.com/micro-clearfix-hack/">clearfix method by Nicolas Gallagher</a>.</p>
-{% highlight css %}
+<pre class="language-scss"><code>
 %clearfix:after {
 	content: '';
 	display: table;
@@ -53,7 +53,7 @@ title: Digging into my slides about Sass
 	display: table;
 	clear: both;
 }
-{% endhighlight %}
+</code></pre>
 <p>This example shows how we can use <code>@extend</code> and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you're familiar with <a href="http://twitter.github.io/bootstrap/components.html#alerts">Twitter Bootstrap</a>, then you'll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).</p>
 <pre class="codepen" data-height="300" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
 <p>With vanilla CSS, you have 3 ways to do this:</p>
