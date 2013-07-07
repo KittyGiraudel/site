@@ -10,6 +10,10 @@ preview: true
 <p>As you may know already, I recently bought a <strong>Samsung Chromebook</strong>. Since it is a fairly new computer and reviews can be quite rare, I thought it would be a good idea to give you my feeling after a week or two of daily use.</p>
 <p>Please note I may do a lot of comparisons with both a MacBook Pro since my girlfriend has one, a <a href="http://images.appleinsider.com/mb-081009.jpg">MacBook old generation</a> since it's the laptop I had before. I also have an <a href="http://cdn-static.zdnet.com/i/story/61/18/015531/zdnet-msi-gx740-laptop-computer.jpg">old MSI G Series (Black/red)</a> running on Linux even if I don't use it much.</p>
 <p>So, <strong>the Chromebook is an ultraportable laptop from Google running on Chrome OS</strong> (Linux core) mostly made for web browsing sold at a lovely price: €299.</p>
+<figure class="figure">
+<img src="/images/chromebook-review__chromebook.jpg" alt="">
+<figcaption>Samsung Chromebook - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+</figure>
 </section>
 <section id="hardware">
 <h2>Hardware <a href="#hardware">#</a></h2>
@@ -35,6 +39,10 @@ preview: true
 <p>This is definitely a plus not having to worry much about the battery (at least for me).</p>
 <p>For in-depth tests on Samsung Chromebook's battery, please refer to <a href="http://fr.ubergizmo.com/2013/03/test-du-chromebook-samsung-serie-3/">this article</a> (in French, but graphs are in English).</p>
 <h3>Keyboard</h3><p>The keyboard is pretty nice, really. <strong>Keys are large and smooth</strong> so typing is quite easy and most importantly, noiseless.</p>
+<figure class="figure--right">
+<img src="/images/chromebook-review__chromebook-keyboard.jpg" alt="">
+<figcaption>Samsung Chromebook - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+</figure>
 <p>The Chromebook keyboard has been rearranged and optimized for web browsing. Indeed, the upper row contains "back", "forward" and "refresh" keys. You also have a "fullscreen" and a "alt-tab" like keys along with the traditional "luminosity", "volume" and "power" buttons.</p>
 <p>Note the "caps-lock"	button has been replaced by the "search" button (quite similar to the "Windows button) and "ctrl" and "alt" are pretty huge.</p>
 <p class="note">One funny detail is how letters are in lowercase on the Chromebook keyboard when all other keyboards are using uppercase. Made me smile when I noticed it. :)</p>
