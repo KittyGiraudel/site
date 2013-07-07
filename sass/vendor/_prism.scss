@@ -102,3 +102,7 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
+
+.token.variable {
+	color: darken(hotpink, 5%);
+}

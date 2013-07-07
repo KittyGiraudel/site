@@ -29,11 +29,11 @@ summary: true
 <p>I quickly noticed the height and the width of the main element were different. The width is a randomly picked number (10em), but the height seemed to be computed by some calculation since it was 8.66em.</p>
 <p>At this point, I was already able to handle a mixin to create the star, but the user had to set both the width and the height. Yet, since the height has to be calculated, it wasn’t right. How is the user supposed to know the appropriate height for the width he set?</p>
 <p>The user couldn’t figure this out and neither could I. So I asked Ana how to compute the height of the element based on the width. After a few complicated explanations, she finally gave me the formula (explanation <a href="http://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb">here</a>).</p>
-<pre class="language-scss"><code>function computeHeight(x, skewAngle) { 
+<pre class="language-javascript"><code>function computeHeight(x, skewAngle) { 
   return Math.sin((90 - skewAngle) * Math.PI / 180) * x 
 }</code></pre>
 <p>Okay, this is JavaScript but it is a good start. However this returns a radian value, which is not what we want. We want degrees. So the correct function has to be this one:</p>
-<pre class="language-scss"><code>function computeHeight(x, skewAngle) { 
+<pre class="language-javascript"><code>function computeHeight(x, skewAngle) { 
   return Math.sin(90 - skewAngle) * x 
 }</code></pre>
 <blockquote class="pull-quote--right">I had never heard of any <code>sin()</code> function in Sass.</blockquote>
