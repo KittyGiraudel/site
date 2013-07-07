@@ -22,7 +22,7 @@ title: Digging into my slides about Sass
 <ul>
 <li><strong>Variables</strong>: it's been a while since we first asked for variables in CSS. They'll come native some day but meanwhile, we have to rely on CSS preprocessors.</li>
 <li><strong>Nesting</strong>: it is the ability to nest rules within each others to create expanded CSS selectors. Can be very interesting to avoid code repetition. Remember the <a href="http://thesassway.com/beginner/the-inception-rule">inception rule though</a>.</li>
-<li><strong>Functions</strong>: I don't think functions deserve an explanation. Give it parameters, it returns a value you can store in a variable or use as a value.</li>
+<li><strong>Functions</strong>: I don't think functions deserve an explanation. Give it parameters, it returns a result you can store in a variable or use as a value.</li>
 <li><strong>Mixins</strong>: same as functions except it outputs code instead of returning a result. Very useful to output chuncks of code depending on some parameters (mixin arguments).</li>
 <li><strong>Color functions</strong>: every preprocessor nowadays comes with a bunch of functions to ease color management (lighten, darken, transparentize, mix, complementary…). Very cool to avoid repeated back-and-forths between the IDE and Photoshop and having 50 shades of grey when you only need one (see what I did there?). Also easier to read than hexadecimal in my opinion.</li>
 <li><strong>File concatenation</strong>: we often want to split our large stylesheets into several smaller ones but doing so increases the number of HTTP requests, thus the time the page need to load. Sass makes this possible: multiple files in production environment, one single file compressed in production.</li>
@@ -153,7 +153,7 @@ title: Digging into my slides about Sass
 </section>
 <section id="rem">
 <h2>Sass and REM <a href="#rem">#</a></h2>
-<p>REM (root EM) is awesome. Problem is <a href="http://caniuse.com/#feat=rem">IE8 doesn't understand it</a>, and we cannot cross it out of our support chart. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.</p>
+<p>REM (root EM) is awesome. Problem is <a href="http://caniuse.com/#feat=rem">IE8 doesn't understand it</a>, and we cannot cross it out of our support chart yet. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.</p>
 <p>But duplicating every <code>font-size</code> declaration can be tedious and converting REM to PX can be annoying. Let's do it with Sass!</p>
 {% highlight css %}
 @mixin rem($value, $base: 16) {
@@ -219,7 +219,7 @@ $support-IE8: false;
 	/* … */
 	@if $keyword == retina {
 		@media 
-only screen and (-webkit-min-device-pixel-ratio: 1.3)
+			only screen and (-webkit-min-device-pixel-ratio: 1.3)
 			only screen and (min-resolution: 124.8dpi)
 			only screen and (min-resolution: 1.3dppx) {
 				@content;
@@ -231,9 +231,11 @@ only screen and (-webkit-min-device-pixel-ratio: 1.3)
 {% highlight css %}
 .element {
 	/* regular styles */
+
 	@include mq(small) {
 		/* small-screen styles */
 	}
+
 	@include mq(retina) {
 		/* retina-only styles */
 	}
@@ -263,7 +265,7 @@ only screen and (-webkit-min-device-pixel-ratio: 1.3)
 </section>
 <section id="grid">
 <h2>Simple responsive grid with Sass <a href="#grid">#</a></h2>
-<p>Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes <a href="http://css-tricks.com/dont-overthink-it-grids/">you just wan't to build your own</a>. Especially when you don't need a whole Rube Goldberg machine for your simple layout. Let's see how we can build a very simple grid system in Sass in about 12 lines:</p>
+<p>Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes <a href="http://css-tricks.com/dont-overthink-it-grids/">you just want to build your own</a>. Especially when you don't need a whole Rube Goldberg machine for your simple layout. Let's see how we can build a very simple grid system in Sass in about 12 lines:</p>
 {% highlight css %}
 /* Your variables */
 $nb-columns : 6; 
@@ -298,14 +300,14 @@ $gutter-pct : ($gutter-width / $wrap-width) * 100;
 </section>
 <section id="counters">
 <h2>CSS counters and Sass <a href="#counters">#</a></h2>
-<p>CSS counters are part of a CSS2 module (and not CSS3 as it is often claimed) making items numbering possible with CSS only. The main idea is the following:</p>
+<p>CSS counters are part of the <a href="http://www.w3.org/TR/CSS21/generate.html">CSS 2.1 "Generated content" module</a> (and not CSS3 as it is often claimed) making items numbering possible with CSS only. The main idea is the following:</p>
 <ol>
 <li>initialize one or more counters with <code>counter-reset</code>,</li>
 <li>at each occurrence of a specific item, increment the counter with <code>counter-increment</code>,</li>
 <li>at each occurrence of a specific item, display the current counter with the <code>:before</code> pseudo-element and <code>content: counter(my-counter)</code>.</li>
 </ol>
 <p>Now, what if you want nested counters? Where headings level 1 are numbered like 1, 2, 3, headings level 2 are numbered x.1, x.2, x.3, headings level 3 are numbered x.x.1, x.x.2, x.x.3...</p>
-<p>Doing this with vanilla CSS isn't too hard but require code repetition and quite a lot of code. With a Sass @for loop, we can do it with less than 10 lines of code.</p>
+<p>Doing this with vanilla CSS isn't too hard but require code repetition and quite a lot of lines. With a Sass <code>@for</code> loop, we can do it with less than 10 lines of code.</p>
 {% highlight css %}
 /* Initialize counters */
 body { 
@@ -357,29 +359,20 @@ $nest: ();
 	@include numbering(1, 4);
 }
 {% endhighlight %}
-<p class="note">Note: a couple of guys came to me after the talk to warn me again making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.</p>
+<p class="note">Note: a couple of guys came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.</p>
 </section>
 <section id="foreach">
 <h2>Foreach <a href="#foreach">#</a></h2>
 <p>The last part of my talk was probably slightly more technical thus more complicated. I wanted to show where we can go with Sass, especially with lists and loops. </p> 
 <p>To fully understand it, I thought it was better to introduce Sass loops and lists (remember there was quite a few guys not knowing a bit about Sass in the room).</p>
 {% highlight css %}
-/* All equivalents (forgive the messed up syntax highlighter) */
-$list: (item-1, item-2, item-3, item-3);
+/* All equivalents */
 $list: ("item-1", "item-2", "item-3", "item-4");
-$list: item-1, item-2, item-3, item-4;
-$list: "item-1", "item-2", "item-3", "item-4";
-$list: (item-1 item-2 item-3 item-3);
 $list: ("item-1" "item-2" "item-3" "item-4");
-$list: item-1 item-2 item-3 item-4;
+$list: "item-1", "item-2", "item-3", "item-4";
 $list: "item-1" "item-2" "item-3" "item-4";
 {% endhighlight %}
-<p>So basically:</p>
-<ul>
-<li>you can ommit braces,</li>
-<li>you can ommit quotes around strings as long as they don't contain special chars,</li>
-<li>you can comma-separate or space-separate values.</li>
-</ul>
+<p>So basically you can ommit braces and can either comma-separate or space-separate values.</li>
 <p>A quick look at nested lists:</p>
 {% highlight css %}
 $list: ( (item-1, item-2, item-3)
@@ -406,10 +399,11 @@ $list:  item-1 item-2 item-3,
 	/* Access item with nth($list, $i) */
 }
 {% endhighlight %}
+<p class="note">Note: I have a very in-depth article on Sass lists scheduled for next week. Stay tuned for some Sass awesomeness. ;)</p>
 <p>Now that we introduced loops and lists, we can move forward. My idea was to build a little Sass script that output a specific background based on a page name where file names would not follow any guide name (hyphens, underscores, .jpg, .png, random folders...). So home page would have background X, contact page background Y, etc.</p>
 {% highlight css %}
 /* Two-levels list
- * Top level contains page
+ * Top level contains pages
  * Inner level contains page-specific informations 
  */
 $pages : 
