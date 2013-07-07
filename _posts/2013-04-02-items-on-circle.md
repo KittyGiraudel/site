@@ -78,7 +78,7 @@ $angle: 360 / $nb-items; /* Angle between two items */
 	$rot: $rot + $angle; /* Increments the $rot variable for next item */
 }</code></pre>
 <p>Outputs (with 8 items and a 24em large container)...</p>
-<pre class="language-scss"><code>.container > *:nth-of-type(1) { transform: rotate(0deg)   translate(12em) rotate(-0deg);   }
+<pre class="language-css"><code>.container > *:nth-of-type(1) { transform: rotate(0deg)   translate(12em) rotate(-0deg);   }
 .container > *:nth-of-type(2) { transform: rotate(45deg)  translate(12em) rotate(-45deg);  }
 .container > *:nth-of-type(3) { transform: rotate(90deg)  translate(12em) rotate(-90deg);  }
 .container > *:nth-of-type(4) { transform: rotate(135deg) translate(12em) rotate(-135deg); }

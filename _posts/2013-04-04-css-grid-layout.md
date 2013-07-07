@@ -43,13 +43,13 @@ summary: true
 <section id="example">
 <h2>A little example <a href="#example">#</a></h2>
 <p>What I've found astonishing is the very little amount of required CSS to achieve a complex layout. I counted: with no more than 10 lines of CSS, I've been able to make a 3-columns layout including 2 fixed-size columns, with full-width header and footer. Oh, and source order independant. Please have a look at the following markup:</p>
-<pre class="language-markup"><code><div class="wrapper">
-	<article class="main" >My awesome content here </article>
-	<footer class="footer">Some informations here  </footer>
-	<header class="header">My site title goes here </header>
-	<aside class="sidebar">Here is my side content </aside>
-	<aside class="annexe" >Some more side content  </aside>
-</div></code></pre>
+<pre class="language-markup"><code>&lt;div class="wrapper"&gt;
+	&lt;article class="main" &gt;My awesome content here &lt;/article&gt;
+	&lt;footer class="footer"&gt;Some informations here  &lt;/footer&gt;
+	&lt;header class="header"&gt;My site title goes here &lt;/header&gt;
+	&lt;aside class="sidebar"&gt;Here is my side content &lt;/aside&gt;
+	&lt;aside class="annexe" &gt;Some more side content  &lt;/aside&gt;
+&lt;/div&gt;</code></pre>
 <p>Now the CSS. Pay attention to the number of lines:</p>
 <pre class="language-css"><code>.wrapper {
 	display: grid;

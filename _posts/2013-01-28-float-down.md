@@ -80,7 +80,7 @@ $margin: 0.4em;</code></pre>
 <p class="note">Note: you may wonder why using 2 different variables for size when one would be enough. This allows you to use non-square items if you want to: try it, it works.</em></p>
 <h3>Looping!</h3>
 <p>Now let's get to the funny part. I figured out there is some kind of pattern to achieve this and to be honest it took me a while (no pun intended) to create the while loop for this, struggling between my comprehension of the problem and Sass syntax errors. Anyway, this is the main idea:</p>
-<pre class="language-javascript"><code>$i: $rows; // Initializing the loop
+<pre class="language-scss"><code>$i: $rows; // Initializing the loop
 
 @while $i &gt; 1 {
 
