@@ -12,13 +12,11 @@ comments: true
 <h2>CSS is easy... syntactically <a href="#syntax">#</a></h2>
 <p>Yes. CSS has a very easy syntax based on english words. I don't think it could be much simpler since it can be summed up in 3 words: <strong>selector, property, value</strong>.</p>
 <p>A 8-year-old child could do some CSS without even having any explanation on how to do so. Even HTML has a more complicated syntax than CSS since there are some elements which need a closing tag, some don't, some have attributes, some don't, some can't be inside others and so on. CSS is always the same.</p>
-{% highlight css %}
-selector [, selector2, ...] [:pseudo-class] {
+<pre class="language-css"><code>selector [, selector2, ...] [:pseudo-class] {
  property: value;
  [property2: value2;
  ...]
-}
-{% endhighlight %}
+}</code></pre>
 </section>
 <p>Most of all, CSS means something. It uses real words, understandable by anyone. When you read <code>.element { color: red; }</code>, you can be pretty sure it means an item called "element" is red. It's a no brainer.</p>
 <section id="evolution">
@@ -33,16 +31,14 @@ selector [, selector2, ...] [:pseudo-class] {
 <p>JavaScript is kind of like CSS. The interpretation depends on the JavaScript engine version. For example, Internet Explorer 9 doesn't use the same <a href="http://en.wikipedia.org/wiki/List_of_ECMAScript_engines">ECMAScript engine</a> as Firefox or Chrome (Chakra for IE9, SpiderMonkey for Firefox, V8 for Chrome).</p>
 <p>Anyway, in order to write consistent CSS, you have to know which browser supports which feature, or partially support them, and how to draw fallback, when to use hacks, and so on. It requires some knowledge, and most of all, some experience.</p>
 <p>Take the Flexbox module for example. It has been introduced in 2009 and has known 3 different syntaxes since then resulting in a blurry mess when trying to have the best browser support:</p>
-{% highlight css %}
-.flex {
+<pre class="language-css"><code>.flex {
 	-ms-box-orient: horizontal;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: flex;
-}
-{% endhighlight %}
+}</code></pre>
 <p>This is the kind of thing that makes CSS tricky (some people would say annoying).</p>
 </section>
 <section id="final-words">

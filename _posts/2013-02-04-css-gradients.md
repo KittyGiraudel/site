@@ -23,8 +23,7 @@ numberedFigures: true
 <p>The pen below shows graphically how to layer the multiple backgrounds. It also has a pause button so that the infinite animation doesn't turn into a performance problem.</p>
 <pre class="codepen" data-height="340" data-type="result" data-href="Kuvom" data-user="thebabydino" data-safe="true"><code></code><a href="http://codepen.io/thebabydino/pen/qgoBL" target="blank">Check out this Pen!</a>s</pre>
 <p>For both the original pen and this helper demo, the interesting part is this one:</p>
-{% highlight css %}
-background: 
+<pre class="language-css"><code>background: 
 linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
 linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%),
 linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0,
@@ -35,8 +34,7 @@ linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%,
 linear-gradient(-72deg, transparent 24.52%, #9a1d34 24.52%) 0 100%, 
 #43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
 background-repeat: no-repeat;
-background-size: 50% 50%;
-{% endhighlight %}
+background-size: 50% 50%;</code></pre>
 <p>We first specify the nine gradient backgrounds, their positioning and the <code>background-color</code> using the shorthand <code>background</code> syntax.</p>
 </section>
 <section id="background-shorthand">
@@ -66,10 +64,8 @@ background-size: 50% 50%;
 <p>The <em>gradient angle</em> is the angle - measured clockwise - between the vertical axis and the <em>gradient line</em> (the blue line in the demo). This is for the new syntax, which is not yet supported by WebKit browsers (however, <a href="https://bugs.webkit.org/show_bug.cgi?id=67166" target="blank">this is going to change</a>). The old syntax measured angles just like on the <a href="http://en.wikipedia.org/wiki/Unit_circle" target="blank">trigonometric unit circle</a> (counter-clockwise and starting from the horizontal axis).</p>
 <p class="note">Note: coming from a mathematical background, I have to say the old way feels more natural to me. However, the new way feels consistent with other CSS features, like rotate transforms, for which the angle values are also clockwise.</p>
 <p>What this means is that we (almost always) have different angle values in the standard syntax and in the current WebKit syntax. So, if we are not using something like <a href="http://leaverou.github.com/prefixfree/" target="blank">-prefix-free</a> (which I do almost all the time), then we should to be able to compute one when knowing the other. That is actually pretty simple. They are going in opposite directions, so the formula for one includes the other with a minus sign. Also, there is a <code>90°</code> difference between them so this is how we get them: </p>
-{% highlight javascript %}
-newSyntax = 90° - oldSyntax;
-oldSyntax = 90° - newSyntax;
-{% endhighlight %}
+<pre class="language-scss"><code>newSyntax = 90° - oldSyntax;
+oldSyntax = 90° - newSyntax;</code></pre>
 <p class="note">Note: if no gradient angle or destination side is specified (for example, <code>linear-gradient(lime, yellow)</code>), then the resulting gradient is going to have a gradient angle of <code>180°</code>, not <code>0°</code>.</p>
 <p>All the points on a line that is <a href="http://www.mathopenref.com/perpendicular.html" target="blank">perpendicular</a> on the gradient line have the same color. The perpendicular from the corner in the quadrant that's opposite to the quadrant of the angle is the <code>0%</code> line (the crimson line in the demo) and its intersection with the gradient line is the <em>starting point</em> of the gradient (let's call it <code class="var">S</code>). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the <code>100%</code> line (the black line in the demo) and its intersection with the gradient line is the <em>ending point</em> of the gradient (let's call it <code class="var">E</code>).</p>
 <figure class="figure">

@@ -26,16 +26,14 @@ summary: true
 <p class="note">Note: .scss files starting with a <code>_</code> are not compiled into .css files.</p>
 <p>Since my website isn’t that big, I didn’t have to split the code stylesheet into smaller parts like typography, header, footer, modules, etc.</p>
 <p>So basically, my central stylesheet (<code>styles.min.scss</code> compiled into <code>styles.min.css</code>) looks like this:</p>
-{% highlight css %}
-@import "compass/css3/images";
+<pre class="language-scss"><code>@import "compass/css3/images";
 @import "compass/css3";
 
 @import "font-awesome", 
         "google-fonts", 
         "prism", 
         "helpers", 
-        "styles";
-{% endhighlight %}
+        "styles";</code></pre>
 <p>The first two lines are Compass related imports. It doesn’t compile into the final CSS. They enable use of Compass embedded mixins, sparing me from writing vendor prefixes. The last line imports the 5 files into a single one (top to bottom).</p>
 <p class="note">Note: when importing Sass/SCSS files, you don't need to add underscores or file extensions.</p>
 </section>
@@ -49,8 +47,7 @@ summary: true
 <p>Depending on your project size, you may have various files for that. Maybe one file for variables, one file for mixins, one file for helper classes, and whatever else you like.</p>
 <p>My project is fairly (not to say really) small so I gathered everything into a single file. Let’s dig a little bit into it, part by part.</p>
 <h3>Mixins</h3>
-{% highlight css %}
-// Mixin providing a PX fallback for REM font-sizes
+<pre class="language-scss"><code>// Mixin providing a PX fallback for REM font-sizes
 
 @mixin font-size($val) {
     font-size: ($val * 20) + px;
@@ -66,8 +63,7 @@ summary: true
     @if $point == baby-bear {
         @media (max-width: 38em) { @content; } 
     }
-}
-{% endhighlight %}
+}</code></pre>
 <p>Just two. Why having one hundred mixins when you use just two? The first one allows me to use <code>rem</code> safely for font-size by providing a <code>px</code> fallback. This is a very nice mixin from Chris Coyier at <a href="http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/">CSS-tricks</a>. </p>
 <p>The second one also comes from <a href="http://css-tricks.com/media-queries-sass-3-2-and-codekit/">CSS-tricks</a> and is a nice way to handle breakpoints for Media Queries within a single MQ declaration. If either I want to change the breakpoints, I don’t have to go through all my stylesheets to find occurrences; all I have to do is edit it in the mixin.</p>
 <p>Whenever I want to use a Media Query, I just have to run <code class="language-css">@include breakpoint(baby-bear) { /* My stuff here */ }</code>.</p>
@@ -75,12 +71,10 @@ summary: true
 <h3>Variables</h3>
 <p>Ah variables. The most awesome thing in any informatic language in the world. This little piece of thing that spare you from repeating again and again the same things. </p>
 <p>Native CSS variables are coming but currently only supported by Chrome so meanwhile we rely on CSS preprocessors for variables. I have to say I really didn’t use much in my project. Actually I used 4, not more.</p>
-{% highlight css %}
-$pink: #FF3D7F;
+<pre class="language-scss"><code>$pink: #FF3D7F;
 $lightgrey: #444;
 $mediumgrey: #666;
-$darkgrey: #999;
-{% endhighlight %}
+$darkgrey: #999;</code></pre>
 <p>At first I named my variables like <code>$color1</code>, <code>$color2</code>, etc but then it occurred to me I was not able to know what variable I had to set in order to have the right color so I switched back to real color names. It feels easier to me this way.</p>
 <h3>Helper classes</h3>
 <p>Helpers are classes you can add to any element to have a quick effect without having to give this element any id or specific class, then set styles and all this stuff.</p>
@@ -90,8 +84,7 @@ $darkgrey: #999;
 <li><code>%clearfix</code> is an invisible class meant to be extended (@extend) to clear floats in an element containing only floated elements</li>
 <li><code>.icon-left</code> and <code>.icon-right</code> are used on inline icons to prevent them from sticking the text</li>
 </ul>                   
-{% highlight css %}
-%clearfix {
+<pre class="language-scss"><code>%clearfix {
     &:after {
         display: table;
         content: "";
@@ -100,15 +93,13 @@ $darkgrey: #999;
 }
 
 .icon-left { margin-right: 5px }
-.iconright { margin-left: 5px }
-{% endhighlight %}
+.iconright { margin-left: 5px }</code></pre>
 <p>Then, two helpers to give content specific meaning:</p>
 <ul>
     <li><code>.visually-hidden</code> simply make the text disappear while keeping it accessible for both screen readers and search engine bots.</li>
     <li><code>.note</code> is used to tell a paragraph is a note which could be removed without affecting the sense of the content</li>
 </ul>
-{% highlight css %}
-.visually-hidden { 
+<pre class="language-scss"><code>.visually-hidden { 
     position: absolute; 
     overflow: hidden; 
     clip: rect(0 0 0 0); 
@@ -121,8 +112,7 @@ $darkgrey: #999;
 .note {
     font-style: italic;
     padding-left: 1em;
-}
-{% endhighlight %}
+}</code></pre>
 <p>And now let's dig into more interesting stuff. I have built some useful classes to pull images or quotes out of the flow and put them on the side in order to emphasize them. Both are built in the same way:</p>
 <ul>
     <li><code>%pull-quote</code> and <code>%pull-image</code> are invisible classes; it means they won’t be compiled in the stylesheet, they are only here to be extended</li>
@@ -130,8 +120,7 @@ $darkgrey: #999;
     <li>Plus, they have some specific styles like margins, float, borders, etc.</li>
     <li>On small screens, they are not floated any more, pulled back in the flow and centered</li>
 </ul>
-{% highlight css %}
-%pull-image {
+<pre class="language-scss"><code>%pull-image {
     max-width: 15em;
     display: block;
 
@@ -197,8 +186,7 @@ $darkgrey: #999;
     padding-left: 1em;
     margin: 0 0 0 1em;
     border-left: 6px solid $pink;
-}
-{% endhighlight %}
+}</code></pre>
 <p>Please note how I nest media queries inside their related selectors. There are two main reasons for this:</p>
 <ul>
 <li>This makes the stylesheet easier to maintain since you have everything at the same place: regular rules + conditional rules. No need of going at the bottom of the stylesheet to find all the conditional CSS.</li>
@@ -211,21 +199,18 @@ $darkgrey: #999;
 <p>Now we’ve seen pretty much everything else than what makes the site what it is, I think it’s time to dig into the main stylesheet. For reading concern I’ll split it into several code snippets here. Plus it will be easier for commenting.</p>
 <h3>Reset</h3>
 <p>This is not optional, every project needs to use some kind of way to reset CSS styles. Depending on your tastes it might be <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer’s CSS reset</a>, <a href="http://necolas.github.com/normalize.css/">Normalize CSS</a> or as I like to call it the <strong>barbarian CSS</strong> as below.</p>
-{% highlight css %}
-*,
+<pre class="language-scss"><code>*,
 *:before,
 *:after {
     @include box-sizing(border-box);
     padding: 0;
     margin: 0;
-}
-{% endhighlight %}
+}</code></pre>
 <p>Yes I know, this is dirty. I shouldn’t not reset CSS this way but honestly on small projects like this, it’s really not a big deal. At first I used Normalize CSS but then I realized loading kilobytes of code when 2 lines are enough is not necessary. So barbarian CSS reset guys!<p>
 <p>Please note I use the simplest box-sizing since IE (all versions) represents less than 1.5% of my traffic.</p>
 <h3>Overall stuff</h3>
 <p>I didn’t really know how to call this.</p>
-{% highlight css %}
-html {
+<pre class="language-scss"><code>html {
     font: 20px/1 "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif;
     color: #555;
     text-shadow: 0 1px rgba(255,255,255,0.6);
@@ -246,13 +231,11 @@ a {
     &:hover {
         text-decoration: underline;
     }
-}
-{% endhighlight %}
+}</code></pre>
 <p>Basic stuff here. Font-size, color, font-families, text-shadows and everything that needs to cascade on the whole document are set on the root element (<code>html</code>). I also give a little custom styles to anchor tags.</p>
 <h3>Containers</h3>
 <p>This used to be in the 1140px stylesheet but since I don’t use anymore, I moved it back here. It’s all about main wrappers and containers.</p>
-{% highlight css %}
-.row {
+<pre class="language-scss"><code>.row {
     width: 100%;
     max-width: 57em;
     margin: 0 auto;
@@ -284,8 +267,7 @@ a {
         float: none;
         width: 100%;
     }
-}
-{% endhighlight %}
+}</code></pre>
 <p><code>.row</code> is the main wrapper: it contains the header, the main column (<code>.main</code>), the sidebar (<code>.sidebar</code>) and the footer.</p>
 <p><code>.content</code> is an invisible shared class between both the main column and the sidebar.</p>
 </section>

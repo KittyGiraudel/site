@@ -9,15 +9,13 @@ comments: true
 <p>As an example, setting both <code>p</code> and <code>li</code> tags font-size to <code>1.2em</code> may seem fine. But if you ever happen to have a paragraph inside a list item, it would result in a font-size 1.44 times (1.2 * 1.2) bigger than parent font-size, and not 1.2 as wished.</p>
 <p>To avoid this, a new unit has been created: <a href="http://snook.ca/archives/html_and_css/font-size-with-rem"><code>rem</code></a>. It stands for <em>root em</em>. Basically, instead of being relative to the font-size of its direct parent, it's relative to the font-size defined for the <code>html</code> element.</p>
 <p>You may have already seen something like this in frameworks, demo, blog posts and such:</p>
-{% highlight css %}
-html {
+<pre class="language-css"><code>html {
 	font-size: 62.5%
 }
 
 body {
 	font-size: 1.6rem;
-}
-{% endhighlight %}
+}</code></pre>
 <p>Because all browsers have a default font-size of <code>16px</code>, setting the font-size to 62.5% on the html element gives it a font-size of 10px (10 / 16 * 100 = 62.5) without explicitely setting it to <code>10px</code> which would prevent zooming. Then, setting a font-size of 1.6rem on the body element simply results in a font-size of <code>16px</code>, cascading through the whole DOM tree.</p>
 <p>Then, if I want an element to have like a <code>28px</code> font-size, I simply have to do <code>.element { font-size: 2.8rem; }</code>, no matter the size of its parent.</p>
 <p>Everything is great, however <a href="http://caniuse.com/#feat=rem">rem isn't supported in all browsers</a>, especially not in Internet Explorer 8, which is still required in most projects. It means we have to <strong>give a fallback</strong> for this browser.</p>
@@ -33,8 +31,7 @@ body {
 <li>Accepts multiple values, like <code>10px 20px</code> (for padding or margin as an example)</li>
 </ul>
 <h3>Let's open the beast</h3>
-{% highlight css %}
-html {
+<pre class="language-scss"><code>html {
 	font-size: 62.5%; /* 1 */
 }
 
@@ -75,8 +72,7 @@ html {
     #{$property}: $px;  /* 9 */
     #{$property}: $rem; /* 9 */
   }
-}
-{% endhighlight %}	
+}</code></pre>	
 <p>This may be a bit rough so let me explain it:</p>
 <ol>
 <li>The mixin relies on a baseline of <code>10px</code></li>
@@ -92,19 +88,16 @@ html {
 <p class="note">Thanks to <a href="http://twitter.com/movingprimates">Moving Primates</a> to improve the mixin by adding step 8. ;)</p>
 <h3>Usage</h3>
 <p>Using it is pretty straightforward:</p>
-{% highlight css %}
-html {
+<pre class="language-scss"><code>html {
 	font-size: 62.5%;
 }
 
 body {
 	@include rem(font-size, 1.6rem);
 	@include rem(padding, 20px 10px);
-}
-{% endhighlight %}
+}</code></pre>
 <p>... outputs:</p>
-{% highlight css %}
-html {
+<pre class="language-css"><code>html {
 	font-size: 62.5%;
 }
 
@@ -113,8 +106,7 @@ body {
 	font-size: 1.6rem;
 	padding: 20px 10px; /* Fallback for IE8 */
 	padding: 2rem 1rem;
-}
-{% endhighlight %}
+}</code></pre>
 <h3>Remaining issues</h3>
 <p>There are still some issues with this mixin:</p>
 <ul>

@@ -29,7 +29,7 @@ summary: true
 </section>
 <section id="complicated">
 <h2>What's complicated? <a href="#complicated">#</a></h2>
-<blockquote class="pull-quote--right">Specifications are definitely not for random people.</blockquote
+<blockquote class="pull-quote--right">Specifications are definitely not for random people.</blockquote>
 <p>First, <strong>reading specifications</strong>. If a spec author ever reads this, I am sorry; but the specifications are definitely not for random people. I believe they are mostly made for browser makers, and they are probably very well writen but for a guy like me, it's way too complicated. Unfortunately, I had to dig deep into the spec.</p>
 <p>What has been difficult as well is that the only supported browser &mdash;as of writing&mdash; is Internet Explorer 10 (mostly because 3 of 5 authors of the Grid spec are from Microsoft). And I believe they started implementing the module in their browser engine a while ago, resulting in some inconsistencies regarding the spec which keeps moving.</p>
 <p>Not only their implementation is at a very early stage (about half the spec is currently supported), but it also differs from the spec at some point. Among other things:</p>
@@ -43,18 +43,15 @@ summary: true
 <section id="example">
 <h2>A little example <a href="#example">#</a></h2>
 <p>What I've found astonishing is the very little amount of required CSS to achieve a complex layout. I counted: with no more than 10 lines of CSS, I've been able to make a 3-columns layout including 2 fixed-size columns, with full-width header and footer. Oh, and source order independant. Please have a look at the following markup:</p>
-{% highlight html %}
-<div class="wrapper">
+<pre class="language-markup"><code><div class="wrapper">
 	<article class="main" >My awesome content here </article>
 	<footer class="footer">Some informations here  </footer>
 	<header class="header">My site title goes here </header>
 	<aside class="sidebar">Here is my side content </aside>
 	<aside class="annexe" >Some more side content  </aside>
-</div>
-{% endhighlight %}
+</div></code></pre>
 <p>Now the CSS. Pay attention to the number of lines:</p>
-{% highlight css %}
-.wrapper {
+<pre class="language-css"><code>.wrapper {
 	display: grid;
 	grid-columns: 200px 15px 1fr 15px 100px;
 	grid-rows: (auto 15px)[2] auto;
@@ -70,8 +67,7 @@ summary: true
 
 .sidebar { grid-column: 1; }
 .main    { grid-column: 3; }
-.annexe  { grid-column: 5; }
-{% endhighlight %}
+.annexe  { grid-column: 5; }</code></pre>
 <p>Done. <strong>10 lines. No float. No inline-block. No height. No width. No margin.</strong> And if you want to make everything nice on small devices, it will take no more than a couple of more lines (8 in this example). </p>
 <p class="note">Note: I won't explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at <a href="http://css-tricks.com/almanac/properties/g/grid/">CSS-Tricks' Almanac entry</a>.</p>
 </section>

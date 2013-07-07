@@ -29,27 +29,21 @@ summary: true
 <p>I quickly noticed the height and the width of the main element were different. The width is a randomly picked number (10em), but the height seemed to be computed by some calculation since it was 8.66em.</p>
 <p>At this point, I was already able to handle a mixin to create the star, but the user had to set both the width and the height. Yet, since the height has to be calculated, it wasn’t right. How is the user supposed to know the appropriate height for the width he set?</p>
 <p>The user couldn’t figure this out and neither could I. So I asked Ana how to compute the height of the element based on the width. After a few complicated explanations, she finally gave me the formula (explanation <a href="http://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb">here</a>).</p>
-{% highlight javascript %}
-function computeHeight(x, skewAngle) { 
+<pre class="language-scss"><code>function computeHeight(x, skewAngle) { 
   return Math.sin((90 - skewAngle) * Math.PI / 180) * x 
-}
-{% endhighlight %}
+}</code></pre>
 <p>Okay, this is JavaScript but it is a good start. However this returns a radian value, which is not what we want. We want degrees. So the correct function has to be this one:</p>
-{% highlight javascript %}
-function computeHeight(x, skewAngle) { 
+<pre class="language-scss"><code>function computeHeight(x, skewAngle) { 
   return Math.sin(90 - skewAngle) * x 
-}
-{% endhighlight %}
+}</code></pre>
 <blockquote class="pull-quote--right">I had never heard of any <code>sin()</code> function in Sass.</blockquote>
 <p>From there, I knew how to get the height from the width, I only had to turn this into SCSS. First problem: <em>sin()</em>. I had never heard of any <code>sin()</code> function in Sass. Damn it.</p>
 <p>After a little Google search, I stumbled upon <a href="https://github.com/adambom/Sass-Math/blob/master/math.scss">a not-documentated-at-all library</a> to use advanced math functions in Sass (including <code>sin()</code>, <code>exp()</code>, <code>sqrt()</code>, and much more). Seemed good enough so I gave it a try.</p>
 <p>It turned out the <code>power()</code> function (called in the <code>sin()</code> one) was triggering a Sass error. I tried a few things but finally couldn’t make it work. So I did something unusual... Looked at the 2nd page on Google. And bam, <a href="http://compass-style.org/reference/compass/helpers/math/">the Holy Grail</a>!</p>
 <p>Compass has built-in functions for advanced math calculation including <code>sin()</code>. Isn’t that great? Like really awesome? Building the Sass function was a piece of cake:</p>
-{% highlight javascript %}
-@function computeHeight($x, $skewAngle) { 
+<pre class="language-scss"><code>@function computeHeight($x, $skewAngle) { 
   @return sin(90deg - $skewAngle) * $x;
-}
-{% endhighlight %}
+}</code></pre>
 <p>This worked like a charm. So <strong>given only the width, Sass was able to calculate the according height.</strong></p>
 </section>
 <section id="units">
@@ -70,11 +64,9 @@ function computeHeight(x, skewAngle) {
 </ul>
 <p>The first is useless in our case, but the second one is precisely what we need to store the unit of the value given by the user. However we still have no way to parse the integer from a value with a unit. At least not with a built-in function. A <a href="http://stackoverflow.com/a/12335841">quick run on Stack Overflow</a> gave me what I was looking for:</p>
 <blockquote class="quote"><p>You need to divide by 1 of the same unit. If you use unit(), you get a string instead of a number, but if you multiply by zero and add 1, you have what you need:</p></blockquote>
-{% highlight javascript %}
-@function strip-units($number) {
+<pre class="language-scss"><code>@function strip-units($number) {
   @return $number / ($number * 0 + 1);
-}
-{% endhighlight %}
+}</code></pre>
 <p>Do not ask me why it works or how does it work, I have absolutely no idea. This function makes strictly no sense yet it does what we need.</p>
 <p>Anyway, at this point we can set the size in any unit we want, could it be <code>px</code>, <code>rem</code>, <code>vh</code>, <code>cm</code>, whatever.
 </section>
@@ -82,35 +74,28 @@ function computeHeight(x, skewAngle) {
 <h2>Improve tiny bits <a href="#improvements" class="section-anchor">#</a></h2>
 <p>Last but not least, Ana used the <a href="http://xiel.de/webkit-fix-css-transitions-on-pseudo-elements/">inherit hack</a> to enable transition on pseudo-elements. She asked me if we had a way in Sass to assign the same value to several properties.</p>
 <p>Of course we have, mixin to the rescue!</p>
-{% highlight css %}
-@mixin val($properties, $value) {
+<pre class="language-scss"><code>@mixin val($properties, $value) {
   @each $prop in $properties { 
     #{$prop}:  #{$value};
   }
-}
-{% endhighlight %}
+}</code></pre>
 <p>You give this mixin a <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists">list</a> of properties you want to share the same value and of course the value. Then, for each property in the list, the mixin outputs the given value. In our case:</p>
-{% highlight css %}
-&:after, &:before {
+<pre class="language-scss"><code>&:after, &:before {
   $properties: width, height, background;
   @include val($properties, 'inherit');
-}
-{% endhighlight %}
+}</code></pre>
 <p>... outputs:</p>
-{% highlight css %}
-.selector:before, .selector:after {
+<pre class="language-scss"><code>.selector:before, .selector:after {
   width      : inherit;
   height     : inherit;
   background : inherit;
-}
-{% endhighlight %}
+}</code></pre>
 <p>It’s really no big deal. We could totally write those 3 properties/value pairs, but it is great to see what’s possible with Sass, isn’t it?</p>
 </section>
 <section id="code">
 <h2>Full code <a href="#code" class="section-anchor">#</a></h2>
 <p>Here is the full code for the mixin. As you can see, it is really not that big (especially since Ana's original code is very light).</p>
-{% highlight css %}
-@mixin val($properties, $value) {
+<pre class="language-scss"><code>@mixin val($properties, $value) {
   @each $prop in $properties { 
     #{$prop}: #{$value};
   }
@@ -148,15 +133,13 @@ function computeHeight(x, skewAngle) {
   &:after { 
     @include transform(skewX(-30deg) rotate(-60deg) skewX(-30deg)) 
   }
-}
-{% endhighlight %}
+}</code></pre>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words" class="section-anchor">#</a></h2>
 <p>Well guys, that’s pretty much it. You have a perfectly working <a href="http://codepen.io/HugoGiraudel/pen/LkoGE">Sass mixin</a> to create customized single-element 6-point stars in CSS. Pretty neat, right?</p>
 <p>Using it couldn't be simpler:</p>
-{% highlight css %}
-.star {
+<pre class="language-scss"><code>.star {
   margin: 5em auto;
   background: tomato;
   @include star(10em);
@@ -164,7 +147,6 @@ function computeHeight(x, skewAngle) {
   &:hover {
     background: deepskyblue;
   }
-}
-{% endhighlight %}
+}</code></pre>
 <p>Thanks (and congratulations) to <a href="http://twitter.com/thebabydino">Ana Tudor</a> for creating such a shape which made me do some cool Sass stuff.</p>
 </section>

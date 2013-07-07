@@ -26,8 +26,7 @@ disqus: http://hugogiraudel.com/blog/css-challenge.html
 <p>Thanks for participating! There have been a couple of answers for this trick. Druid of Lûhn proposed <a href="http://codepen.io/Druid-of-Luhn/details/sclvk">something</a> which works but sadly it's pretty awful for SEO since it involves an empty <code>h1</code> tag.</p>
 <p>Joshua Hibbert <a href="http://jsfiddle.net/joshnh/3PG8j/">used linear gradients</a> to do it (so <a href="http://codepen.io/raphaelgoetter/pen/dGxvL">did</a> Raphael Goetter). This is a clever technique I thought about but didn't give a try. My experience with gradients is not that good.</p>
 <p>Here is the way I <a href="http://jsfiddle.net/HugoGiraudel/cyeGM/1/">did it</a>:</p>
-{% highlight css %}
-body {
+<pre class="language-css"><code>body {
 	text-align: center;
 	overflow: hidden;
 	background: #ffa;
@@ -54,8 +53,7 @@ h1:before {
 	background: black;
 }
 
-h1:after { left: 100%; }
-{% endhighlight %}
+h1:after { left: 100%; }</code></pre>
 <p>So basically, I used both pseudo-elements to create the line. To place them, I set the title to inline-block, and the parent (<code>body</code>) text-align to center.</p>
 <p>Sadly, a few things suck with this technique, even if it works pretty well:</p>
 <ul>
