@@ -1,48 +1,40 @@
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
+/* -------------------- *
+ * $SYNTAX HIGHLIGHTING *
+ * -------------------- */
 
+/**
+ * Syntax highlighting
+ * 1. Make the content within the code block horizontally scrollable
+ * 2. Keep white spaces as authored
+ * 3. Ensure tab size consistency
+ * 4. Disable word hyphenation within code blocks
+ * 5. Reduce font size on small screens
+ */
 code[class*="language-"],
 pre[class*="language-"] {
-	color: black;
+
+	margin-bottom: $space;
+	padding: .6em;
+	overflow-x: auto;       /* 1 */
+
+	background: #efefef;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	
+	line-height: 1.4; 
 	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-
+	white-space: pre;       /* 2 */
+	
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
-	tab-size: 4;
+	tab-size: 4;            /* 3 */
+	
+	@include hyphens(none); /* 4 */
 
-	@include hyphens(none);
-}
-
-::-moz-selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-::selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
-		text-shadow: none;
+	@include breakpoint(small) {
+		@include rem(1.5);  /* 5 */
 	}
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
