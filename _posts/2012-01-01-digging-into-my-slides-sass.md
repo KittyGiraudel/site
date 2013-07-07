@@ -53,7 +53,7 @@ title: Digging into my slides about Sass
 	clear: both;
 }</code></pre>
 <p>This example shows how we can use <code>@extend</code> and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you're familiar with <a href="http://twitter.github.io/bootstrap/components.html#alerts">Twitter Bootstrap</a>, then you'll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).</p>
-<pre class="codepen" data-height="300" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
+<!--<pre class="codepen" data-height="300" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>-->
 <p>With vanilla CSS, you have 3 ways to do this:</p>
 <ol>
 <li>Create a <code>.message</code> class containing styles shared by all messages, then a class per message type. Pretty cool, no style repeated but you have to add two classes to your elements (<code>.message</code> and <code>.message-error</code>. Less cool.</li>
@@ -268,7 +268,7 @@ $gutter-pct : ($gutter-width / $wrap-width) * 100;
 <li>Then, you call the mixin and pass the number of columns you want your element to expand on as an argument.</li>
 </ul>
 <p>And there you have a very simple yet responsive Sass grid.</p>
-<pre class="codepen" data-height="300" data-type="result" data-href="9581fd77d4c244288a6a115981ee1d1d" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/FpDdm">Check out this Pen!</a></pre>
+<!--<pre class="codepen" data-height="300" data-type="result" data-href="9581fd77d4c244288a6a115981ee1d1d" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/FpDdm">Check out this Pen!</a></pre>-->
 </section>
 <section id="counters">
 <h2>CSS counters and Sass <a href="#counters">#</a></h2>
@@ -418,7 +418,7 @@ $selector : ();
     style: awesome; 
 }</code></pre>
 <p>Outputs:</p>
-<pre class="language-css"><code>.home     .nav-home, 
+<pre class="language-scsscss"><code>.home     .nav-home, 
 .about    .nav-about,
 .products .nav-products, 
 .contact  .nav-contact {
