@@ -1,8 +1,6 @@
 ---
-published: true
 layout: post
-comments: false
-preview: true
+comments: true
 summary: true
 codepen: true
 title: Digging into my slides about Sass
