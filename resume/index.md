@@ -69,8 +69,7 @@ layout: default
 <h3>Web</h3>
 <ul>
 <li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo on Codrops">Writer for Codrops</a></li>
-<li>Helper at CSS-Tricks (<a href="http://css-tricks.com/">Almanac</a>)</li>
-<li><a href="http://css-tricks.com/css-pie-timer/" title="CSS Pie Timer">CSS Pie Timer</a> (at CSS-Tricks)</li>
+<li><a href="http://css-tricks.com/css-pie-timer/" title="CSS Pie Timer">CSS Pie Timer</a>, <a href="http://css-tricks.com/striped-background-gradients/" title="Striped background gradients">Striped background gradients</a>and some <a href="http://css-tricks.com/">Almanac</a> entries at CSS-Tricks</li>
 <li><a href="http://toddmotto.com/raw-javascript-jquery-style-fadein-fadeout-functions-hugo-giraudel">Raw JavaScript jQuery-style fadeIn() fadeOut() functions</a> (at Todd Motto's)</li>
 </ul>
 <h3>Print</h3>
