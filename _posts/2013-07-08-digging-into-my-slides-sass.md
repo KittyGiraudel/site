@@ -1,4 +1,5 @@
 ---
+published: true
 layout: post
 comments: true
 summary: true
@@ -115,25 +116,22 @@ title: Digging into my slides about Sass
 }</code></pre>
 <p>No styles repeated, no heavy selector, only one class assigned in the markup. Pretty neat. However, even if there is no repeated styles in the final CSS, there are repeated lines in the Sass stylesheet. They are repeated because the <code>$color</code> variable changes in the scope. Isn't this the perfect usecase for a mixin?</p>
 <pre class="language-scss"><code>@mixin message($color) {
-	color: $color;
+    @extend %message;
+    color: $color;
 	background: lighten($color, 38%);
  	border-color: lighten(adjust-hue($color, -10), 20%);
 }</code></pre>
 <p>Then, we change our Sass a little bit:</p>
 <pre class="language-scss"><code>.message-error {
-	@extend %message;
 	@include message(#b94a48);
 }
 .message-ok {
-	@extend %message;
 	@include message(#468847);
 }
 .message-warn {
-	@extend %message;
 	@include message(#c09853);
 }
 .message-info {
-	@extend %message;
 	@include message(#3a87ad);
 }</code></pre>
 <p>Quite cool, right? And this is only a very easy example of what you can do with <code>@extend</code> and placeholders. Feel free to think of clever usecases as well.</p>
