@@ -38,7 +38,7 @@ length($c) -> 1
 <section id="facts">
 <h2>Sass list "fun" facts <a href="#facts">#</a></h2>
 <p>This section has been quickly covered in the article at CSS-Tricks but since it is the very basics I have to put this here as well.</p>
-<p><strong>You can ommit braces.</strong> You can define a non-empty list without any braces if you feel so. In fact, they are often ommited. Specifying the braces explicitly casts the variable as a list while ommiting them can imply a few issues in some rare cases.</p>
+<p><strong>You can ommit braces.</strong> You can define a non-empty list without any braces if you feel so. This is because contrarily to what most people think, braces are not what create lists in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism. In fact, they are often ommited.</p>
 {% highlight css %}
 $list: "item-1", "item-2", "item-3";
 {% endhighlight %}
