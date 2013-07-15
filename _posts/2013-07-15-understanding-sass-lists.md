@@ -2,8 +2,7 @@
 published: true
 layout: post
 title: Understanding Sass lists
-preview: true
-comments: false
+comments: true
 ---
 
 <section>
