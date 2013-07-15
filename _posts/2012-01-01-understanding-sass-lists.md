@@ -14,6 +14,7 @@ comments: false
 <h2>Creating a Sass list <a href="#init">#</a></h2>
 <p>First things first. Even creating a Sass list can be tricky. Indeed, Sass isn't very strict with variable types. Basically it means you can process a list quite like a string, or use list functions to a string. It is basically a mess.</p>
 <p>Anyway, we have a couple of ways to initialize an empty variable (that could be treated as a list):</p>
+<blockquote class="pull-quote--right">Sass isn't very strict with variable type.</blockquote>
 <pre class="language-scss"><code>$a: ();
 $b: unquote('');
 $c: null;
@@ -27,7 +28,7 @@ type-of($d) -> null</code></pre>
 <pre class="language-scss"><code>length($a) -> 0
 length($b) -> 1
 length($c) -> 1</code></pre>
-<p><code>$a</code> being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn't that odd either since it is a string. However the <code>null</code> variable being 1 item long is kind of weird.</p>
+<p><code>$a</code> being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn't that odd either since it is a string. However the <code>null</code> variable being 1 item long is kind of weird; more on this later.</p>
 </section>
 <section id="facts">
 <h2>Sass list "fun" facts <a href="#facts">#</a></h2>
@@ -50,6 +51,7 @@ $list: "item-1.1" "item-1.2" "item-1.3",
        "item-3.1" "item-3.2" "item-3.3";</code></pre>
 <p><strong>You can ommit braces</strong> (as you can guess from the previous example). You can define a non-empty list without any braces if you feel so. This is because -contrarily to what most people think- <a href="https://github.com/nex3/sass/issues/837#issuecomment-20429965">braces are not what create lists</a> in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.</p>
 <p class="note">Note: This is the theory. I've noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we'll dig into this in anotger blog post.</p>
+<blockquote class="pull-quote--right">Manipulating 5+ nested lists is a pain in the ass.</blockquote>
 <pre class="language-scss"><code>$list: "item-1", "item-2", "item-3";</code></pre>
 <p><strong>Indexes start at 1, not 0.</strong> This is one of the most disturbing once you start experimenting with Sass lists. Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).</p>
 <pre class="language-scss"><code>nth($list, 0) -> throws error
