@@ -38,15 +38,6 @@ length($c) -> 1
 <section id="facts">
 <h2>Sass list "fun" facts <a href="#facts">#</a></h2>
 <p>This section has been quickly covered in the article at CSS-Tricks but since it is the very basics I have to put this here as well.</p>
-<p><strong>You can ommit braces.</strong> You can define a non-empty list without any braces if you feel so. This is because contrarily to what most people think, braces are not what create lists in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism. In fact, they are often ommited.</p>
-{% highlight css %}
-$list: "item-1", "item-2", "item-3";
-{% endhighlight %}
-<p><strong>Indexes start at 1, not 0.</strong> This is one of the most disturbing once you start experimenting with Sass lists. Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).</p>
-{% highlight css %}
-nth($list, 0) -> throws error
-nth($list, 1) -> "item-1"
-{% endhighlight %}
 <p><strong>You can use spaces or commas as separator.</strong> Even if I feel more comfortable with commas since it is the classic separator for arrays (JavaScript, PHP...).</p>
 {% highlight css %}
 $list: "item-1" "item-2" "item-3";
@@ -64,6 +55,21 @@ $list: (
 $list: "item-1.1" "item-1.2" "item-1.3", 
        "item-2.1" "item-2.2" "item-2.3",
        "item-3.1" "item-3.2" "item-3.3";
+{% endhighlight %}
+<p><strong>You can ommit braces</strong> (as you can guess from the previous example). You can define a non-empty list without any braces if you feel so. This is because -contrarily to what most people think- <a href="https://github.com/nex3/sass/issues/837#issuecomment-20429965">braces are not what create lists</a> in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.</p>
+<p class="note">This is the theory. I've noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we'll dig into this in anotger blog post.</p>
+{% highlight css %}
+$list: "item-1", "item-2", "item-3";
+{% endhighlight %}
+<p><strong>Indexes start at 1, not 0.</strong> This is one of the most disturbing once you start experimenting with Sass lists. Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).</p>
+{% highlight css %}
+nth($list, 0) -> throws error
+nth($list, 1) -> "item-1"
+{% endhighlight %}
+<p><strong>Most things are considered as 1 item long lists.</strong> Strings, numbers, boolean, whatever you can put in a variable. This means you're fine to use some list functions (see below) even on things that don't look like one.</p>
+{% highlight css %}
+$variable: "Sass is awesome!";
+length($variable) -> 1
 {% endhighlight %}
 </section>
 <section id="functions">
