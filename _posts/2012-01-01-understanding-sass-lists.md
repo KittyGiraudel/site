@@ -70,8 +70,8 @@ length($variable) -> 1</code></pre>
 <p><strong><code class="language-scss">append($list, $value[, $separator])</code></strong>: appends <code>$value</code> to the end of <code>$list</code> using <code>$separator</code> as a separator (using the current one if not specified).</p>
 <p><strong><code class="language-scss">join($list-1, $list-2[, $separator])</code></strong>: appends <code>$list-2</code> to <code>$list-1</code> using <code>$separator</code> as a separator (using the one from the first list if not specified).</p> 
 <p><strong><code class="language-scss">zip(*$lists)</code></strong>: combines several list into a comma-separated list where the nth value is a space-separated lists of all source lists nth values. In case source lists are not all the same length, the result list will be the length of the shortest one.</p>
-<p><strong><code class="language-scss">reject($list, $value)</code></strong> (Compass): removes <code>$value</code> from <code>$list</code>.</p>
-<p><strong><code class="language-scss">compact(*$args)</code></strong> (Compass): returns a new list after removing all the non-true values.</p>
+<p><strong><code class="language-scss">reject($list, $value)</code></strong><em> (Compass)</em>: removes <code>$value</code> from <code>$list</code>.</p>
+<p><strong><code class="language-scss">compact(*$args)</code></strong> <em>(Compass)</em>: returns a new list after removing all the non-true values.</p>
 </section>
 <section id="experimenting">
 <h2>Adding things to Sass lists <a href="#experimenting">#</a></h2>
@@ -115,7 +115,8 @@ $selector: ();
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
 <p>The three versions we saw in the previous section work like a charm, the one you should use is really up to you. You can also do it in some other more complicated and dirty ways.</p>
-<p>Anyway, this shows how having a very permissive syntax is kind of fucked up. As I said at the beginning of this post, you can do pretty much whatever you want and if you want my opinion this isn't for the best.</p>
+<p>Anyway, this shows why having a very permissive can be complicated. As I said at the beginning of this post, you can do pretty much whatever you want and if you want my opinion this isn't for the best.</p>
+<blockquote class="pull-quote--right">Having a very permissive can be complicated.</blockquote>
 <p>Anyway, I'll close this article with this amazing Lightning Talk from Gary Bernhardt at CodeMash 2012 entitled "WAT". I think it is on-topic.</p>
 <iframe style="margin: 0 auto" width="420" height="315" src="//www.youtube.com/embed/lrBhwGUF6yU" frameborder="0" allowfullscreen></iframe>
 </section>
