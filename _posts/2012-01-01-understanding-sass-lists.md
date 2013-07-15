@@ -14,37 +14,28 @@ comments: false
 <h2>Creating a Sass list <a href="#init">#</a></h2>
 <p>First things first. Even creating a Sass list can be tricky. Indeed, Sass isn't very strict with variable types. Basically it means you can process a list quite like a string, or use list functions to a string. It is basically a mess.</p>
 <p>Anyway, we have a couple of ways to initialize an empty variable (that could be treated as a list):</p>
-{% highlight css %}
-$a: ();
+<pre class="language-scss"><code>$a: ();
 $b: unquote('');
 $c: null;
-$d: (null);
-{% endhighlight %}
+$d: (null);</code></pre>
 <p>Now we have defined our variables, we will check their type. Just for fun.</p>
-{% highlight css %}
-type-of($a) -> list
+<pre class="language-scss"><code>type-of($a) -> list
 type-of($b) -> string
 type-of($c) -> null
-type-of($d) -> null
-{% endhighlight %}
+type-of($d) -> null</code></pre>
 <p>Since <code>$c</code> and <code>$d</code> are stricly equivalent, we will remove the later from the next tests. Let's check the length of each variable.</p>
-{% highlight css %}
-length($a) -> 0
+<pre class="language-scss"><code>length($a) -> 0
 length($b) -> 1
-length($c) -> 1
-{% endhighlight %}
+length($c) -> 1</code></pre>
 <p><code>$a</code> being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn't that odd either since it is a string. However the <code>null</code> variable being 1 item long is kind of weird.</p>
 </section>
 <section id="facts">
 <h2>Sass list "fun" facts <a href="#facts">#</a></h2>
 <p>This section has been quickly covered in the article at CSS-Tricks but since it is the very basics I have to put this here as well.</p>
 <p><strong>You can use spaces or commas as separator.</strong> Even if I feel more comfortable with commas since it is the classic separator for arrays (JavaScript, PHP...).</p>
-{% highlight css %}
-$list: "item-1" "item-2" "item-3";
-{% endhighlight %}
+<pre class="language-scss"><code>$list: "item-1" "item-2" "item-3";</code></pre>
 <p><strong>You can nest lists.</strong> As for JavaScript or any other language, there is no limit regarding the level of depth you can have with nested lists. Just go as deep as you need to, bro. </p>
-{% highlight css %}
-/* Nested lists with braces and same separator */
+<pre class="language-scss"><code>/* Nested lists with braces and same separator */
 $list: ( 
 		("item-1.1", "item-1.2", "item-1.3"), 
         ("item-2.1", "item-2.2", "item-2.3"),
@@ -54,23 +45,16 @@ $list: (
 /* Nested lists without braces using different separators to distinguish levels */
 $list: "item-1.1" "item-1.2" "item-1.3", 
        "item-2.1" "item-2.2" "item-2.3",
-       "item-3.1" "item-3.2" "item-3.3";
-{% endhighlight %}
+       "item-3.1" "item-3.2" "item-3.3";</code></pre>
 <p><strong>You can ommit braces</strong> (as you can guess from the previous example). You can define a non-empty list without any braces if you feel so. This is because -contrarily to what most people think- <a href="https://github.com/nex3/sass/issues/837#issuecomment-20429965">braces are not what create lists</a> in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.</p>
 <p class="note">This is the theory. I've noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we'll dig into this in anotger blog post.</p>
-{% highlight css %}
-$list: "item-1", "item-2", "item-3";
-{% endhighlight %}
+<pre class="language-scss"><code>$list: "item-1", "item-2", "item-3";</code></pre>
 <p><strong>Indexes start at 1, not 0.</strong> This is one of the most disturbing once you start experimenting with Sass lists. Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).</p>
-{% highlight css %}
-nth($list, 0) -> throws error
-nth($list, 1) -> "item-1"
-{% endhighlight %}
+<pre class="language-scss"><code>nth($list, 0) -> throws error
+nth($list, 1) -> "item-1"</code></pre>
 <p><strong>Most things are considered as 1 item long lists.</strong> Strings, numbers, boolean, whatever you can put in a variable. This means you're fine to use some list functions (see below) even on things that don't look like one.</p>
-{% highlight css %}
-$variable: "Sass is awesome!";
-length($variable) -> 1
-{% endhighlight %}
+<pre class="language-scss"><code>$variable: "Sass is awesome!";
+length($variable) -> 1</code></pre>
 </section>
 <section id="functions">
 <h2>Sass list functions <a href="#functions">#</a></h2>
@@ -88,8 +72,7 @@ length($variable) -> 1
 <p>This is where things get very interesting. And quite complicated as well. I think the best way to explain this kind of stuff is to use an example. I'll use the same I talked about in <a href="http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/">my Sass talk at KiwiParty</a> last month.</p>
 <p>Please consider an extended selector like <code>.home .nav-home, .about .nav-about, .products .nav-products, .contact .nav-contact</code> based on a list of keywords <code>$pages: home, about, products, contact</code>. I found 3 ways to generate this selector based on the list; we'll see them one by one.</p>
 <p>But first, we will write the skeleton of our testcase:</p>
-{% highlight css %}
-$pages: home, about, products, contact;
+<pre class="language-scss"><code>$pages: home, about, products, contact;
 $selector: ();
 
 @each $item in $pages {
@@ -98,36 +81,29 @@ $selector: ();
 
 #{$selector} {
 	style: awesome;
-}
-{% endhighlight %}
+}</code></pre>
 <h3>The long and dirty way</h3>
 <p>This is the method I was still using a couple of weeks ago. It works but it involves an extra conditional statements to handle commas. Please see below.</p>
-{% highlight css %}
-@each $item in $pages {
+<pre class="language-scss"><code>@each $item in $pages {
 	$selector: $selector unquote('.#{$item} .nav-#{$item}');
     
     @if $item != nth($pages, length($pages)) {
     	$selector: $selector unquote(',');
     }
-}
-{% endhighlight %}
+}</code></pre>
 <p>Basically, we add the new selector to <code>$selector</code> and if we are not dealing with the last item of the list, we add a comma.</p>
 <p class="note">Note: we have to use <code>unquote('')</code> to treat our new selector as an unquoted string.</p>
 <h3>The clean way</h3>
 <p>This one is the cleanest way you can use between the three; not the shortest though. Anyway, it uses <code>append()</code> properly.</p>
-{% highlight css %}
-@each $item in $pages {
+<pre class="language-scss"><code>@each $item in $pages {
 	$selector: append($selector, unquote('.#{$item} .nav-#{$item}', comma);
-}
-{% endhighlight %}
+}</code></pre>
 <p>I think this is pretty straightforward: we append to <code>$selector</code> the new selector by explicitly separating it from the previous one with a comma.</p>
 <h3>The implicit way</h3>
 <p>Probably my favorite version above all since it's the shortest. It relies on implicit appending; very neat.</p>
-{% highlight css %}
-@each $item in $pages {
+<pre class="language-scss"><code>@each $item in $pages {
 	$selector: $selector, unquote('.#{$item} .nav-#{$item}');
-}
-{% endhighlight %}
+}</code></pre>
 <p>Instead of using <code>append()</code> and setting the 3rd parameter to <code>comma</code> we implicitly do it via removing the function and using a comma right after <code>$selector</code>.</p>
 </section>
 <section id="final-words">
