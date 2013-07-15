@@ -55,7 +55,7 @@ $list: "item-1.1" "item-1.2" "item-1.3",
 <p><strong>Indexes start at 1, not 0.</strong> This is one of the most disturbing once you start experimenting with Sass lists. Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).</p>
 <pre class="language-scss"><code>nth($list, 0) -> throws error
 nth($list, 1) -> "item-1"</code></pre>
-<p><strong>Most things are considered as 1 item long lists.</strong> Strings, numbers, boolean, whatever you can put in a variable. This means you're fine to use some <a href="#functions">list functions</a> even on things that don't look like one.</p>
+<p><strong>Every value in Sass is treated as a list.</strong> Strings, numbers, boolean, whatever you can put in a variable. This means you're fine to use some <a href="#functions">list functions</a> even on things that don't look like one.</p>
 <pre class="language-scss"><code>$variable: "Sass is awesome";
 length($variable) -> 1</code></pre>
 <p class="note">Beware! If you remove the quotes around this string, it will be parsed as a 3 items long list (1: Sass; 2: is; 3: awesome). I recommand you quotes your strings to avoid some unpleasant surprises.</p>
