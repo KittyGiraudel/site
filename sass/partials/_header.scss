@@ -16,6 +16,28 @@
 }
 
 /**
+ * Avatar
+ */
+.avatar {
+	width: 6em;
+	height: 6em;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	left: .5em;
+
+	@include breakpoint(medium) {
+		display: none;
+	}
+
+	@include breakpoint(small) {
+		position: relative;
+		margin: 1em auto;
+		display: block;
+	}
+}
+
+/**
  * Site main title
  */
 .site-title {
@@ -25,10 +47,18 @@
 	text-shadow: none;
 	text-transform: none;
 	font-weight: bold;
+	padding: .25em 0 0 3.8em;
 	@include rem(4);
 
 	@include breakpoint(small) {
 		@include rem(2.8);
+		float: none;
+		text-align: center;
+	}
+
+	@include breakpoint(medium) {
+		@include rem(2.8);
+		padding: 0;
 		float: none;
 		text-align: center;
 	}
@@ -83,7 +113,7 @@
 		&:after {
 			bottom: -3px;
 			height: 3px;
-			background: $pink;
+			background: $main-color;
 			left: 0;
 			right: 0;
 			position: absolute;

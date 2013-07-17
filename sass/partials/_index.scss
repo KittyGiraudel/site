@@ -33,7 +33,7 @@
 	a {
 		color: $mediumgrey;
 		&:hover, &:focus {
-			color: $pink;
+			color: $main-color;
 			text-decoration: none;
 		}
 	}
@@ -60,6 +60,7 @@
 	text-indent: 3px;
 	margin-bottom: 0;
 	color: $lightgrey;
+	@include inline-block;
 }
 
 /**
@@ -116,6 +117,6 @@
  * If first or last page
  */
 .pagination__disabled {
-	opacity: .3;
+	opacity: .6;
 	pointer-events: none;
 }

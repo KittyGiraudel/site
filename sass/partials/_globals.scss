@@ -24,12 +24,11 @@ html {
 	font: 62.5%/1.55 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; /* 1 */
 	color: #555;
 	text-shadow: 0 1px rgba(255,255,255,.6);
-	border-left: 6px solid $pink;
-	background: #EFEFEF;
+	border-left: 6px solid $main-color;
 	
 	@include breakpoint(small) { 
 		border-left: none;
-		border-top: 5px solid $pink;
+		border-top: 5px solid $main-color;
 	}
 }
 
@@ -45,7 +44,7 @@ body {
  * Links
  */
 a {
-	color: $pink;
+	color: $main-color;
 	text-decoration: none;
 	
 	&:hover, &:focus {
@@ -57,12 +56,12 @@ a {
  * User selection
  */
 ::-moz-selection { 
-	background: $pink; 
+	background: $main-color; 
 	color: white;
 }
 
 ::selection      { 
-	background: $pink; 
+	background: $main-color; 
 	color: white;
 }
 
