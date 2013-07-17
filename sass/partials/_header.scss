@@ -32,7 +32,7 @@
 	}
 
 	@include breakpoint(small) {
-		position: relative;
+		position: static;
 		margin: 1em auto;
 		display: block;
 	}
