@@ -101,7 +101,7 @@ $selector: ();
 <h3>The clean way</h3>
 <p>This one is the cleanest way you can use between the three; not the shortest though. Anyway, it uses <code>append()</code> properly.</p>
 <pre class="language-scss"><code>@each $item in $pages {
-	$selector: append($selector, unquote('.#{$item} .nav-#{$item}', comma);
+	$selector: append($selector, unquote('.#{$item} .nav-#{$item}'), comma);
 }</code></pre>
 <p>I think this is pretty straightforward: we append to <code>$selector</code> the new selector by explicitly separating it from the previous one with a comma.</p>
 <h3>The implicit way</h3>
