@@ -9,6 +9,7 @@
 	@extend %clearfix;
 	border-bottom: 3px solid #D1D1D1;
 	margin: 2.5em 0 2em;
+	position: relative;
 
 	@include breakpoint(small) {
 		margin-top: 1em;
@@ -57,10 +58,7 @@
 	}
 
 	@include breakpoint(medium) {
-		@include rem(2.8);
 		padding: 0;
-		float: none;
-		text-align: center;
 	}
 	
 	a {
