@@ -59,7 +59,7 @@ layout: default
 <h3>Personal projects</h3>
 <ul>
 <li><a href="http://browserhacks.com">Browserhacks.com</a>, a comprehensive list of browser specific CSS hacks</li>
-<li><a href="https://github.com/HugoGiraudel/KNACSS-Sass">Sass port of KNACSS</a>, a CSS framework from Raphaël Gotter</li>
+<li><a href="https://github.com/HugoGiraudel/KNACSS-Sass">Sass port of KNACSS</a>, a CSS framework from Raphaël Goetter</li>
 <li><a href="http://wildwebwatch.com/" title="Wild Web Watch">Wild Web Watch</a>, a web watch project</a></li>
 </ul>
 
