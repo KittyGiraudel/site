@@ -54,7 +54,7 @@ title: Digging into my slides about Sass
 <pre class="codepen" data-height="300" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
 <p>With vanilla CSS, you have 3 ways to do this:</p>
 <ol>
-<li>Create a <code>.message</code> class containing styles shared by all messages, then a class per message type. Pretty cool, no style repeated but you have to add two classes to your elements (<code>.message</code> and <code>.message-error</code>. Less cool.</li>
+<li>Create a <code>.message</code> class containing styles shared by all messages, then a class per message type. Pretty cool, no style repeated but you have to add two classes to your elements (<code>.message</code> and <code>.message-error</code>). Less cool.</li>
 <li>Targets all messages with an attribute selector like <code>[class^="message-"]</code>. Clever, but attribute selectors are quite greedy peformance-speaking. Probably what I would do without Sass anyway.</li>
 <li>You do it the jerk way with only 4 classes, repeating the shared styles in each of them. Not cool at all.</li>
 </ol>
