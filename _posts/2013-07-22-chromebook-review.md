@@ -49,7 +49,7 @@ comments: true
 <p>However trible-finger swipe doesn't go back in history like on a MacBook Pro; instead, it moves one tab to the left or to the right depending on the direction.</p>
 <p>This is actually cool but kind of disturbing when you have a MBP background. In a way, it makes sense since there are <em>"backward"</em> and <em>"forward"</em> keys on the keyboard.</p>
 <p>In any case, the surface is not only <strong>smooth and pleasant</strong>, but also quite large. It has to be the best trackpad I ever had on a not-Apple laptop.</p> 
-<h3>Connectivy</h3>
+<h3>Connectivity</h3>
 <p>The Samsung Chromebook has 2 USB ports (USB2 & USB3), a HDMI connection and a SD card reader. All of these are <strong>on the back of the laptop</strong> which I don't like much; I'd rather have them on the side. No big deal for sure, but having to plug / unplug something on the back of the laptop can quickly become a pain in the ass.</p>
 <p>Beware, HDMI connection may be a problem if you plan on connecting your laptop to a monitor because it's generally VGA. So if you plan on using your Chromebook for talks, remember to buy an adaptor first. ;)</p>
 </section>
