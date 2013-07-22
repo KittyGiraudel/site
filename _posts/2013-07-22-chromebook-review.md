@@ -1,9 +1,7 @@
 ---
-published: true
 layout: post
 title: Chromebook review
-comments: false
-preview: true
+comments: true
 ---
 
 <section>
