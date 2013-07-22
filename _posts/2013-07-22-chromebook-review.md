@@ -41,13 +41,13 @@ comments: true
 <img src="/images/chromebook-review__chromebook-keyboard.jpg" alt="">
 <figcaption>Samsung Chromebook - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
-<p>The Chromebook keyboard has been rearranged and optimized for web browsing. Indeed, the upper row contains *"back"*, *"forward"* and *"refresh"* keys. You also have a *"fullscreen"* and a *"alt-tab"* like keys along with the traditional *"luminosity"*, *"volume"* and *"power"* buttons.</p>
-<p>Note the *"caps-lock"* button has been replaced by the *"search"* button (quite similar to the *"Windows"* button) and *"ctrl"* and *"alt"* are pretty huge.</p>
+<p>The Chromebook keyboard has been rearranged and optimized for web browsing. Indeed, the upper row contains <em>"back"</em>, <em>"forward"</em> and <em>"refresh"</em> keys. You also have a <em>"fullscreen"</em> and a <em>"alt-tab"</em> like keys along with the traditional <em>"luminosity"</em>, <em>"volume"</em> and <em>"power"</em> buttons.</p>
+<p>Note the <em>"caps-lock"</em> button has been replaced by the <em>"search"</em> button (quite similar to the <em>"Windows"</em> button) and <em>"ctrl"</em> and <em>"alt"</em> are pretty huge.</p>
 <p class="note">One funny detail is how letters are in lowercase on the Chromebook keyboard when all other keyboards are using uppercase. Made me smile when I noticed it.&nbsp;:)</p>
 <h3>Trackpad</h3>
 <p>Chrome gives us a close to MBP trackpad with a double-finger vertical swipe to scroll and double-finger tap as a right click which is pretty neat.</p>
 <p>However trible-finger swipe doesn't go back in history like on a MacBook Pro; instead, it moves one tab to the left or to the right depending on the direction.</p>
-<p>This is actually cool but kind of disturbing when you have a MBP background. In a way, it makes sense since there are *"backward"* and *"forward"* keys on the keyboard.</p>
+<p>This is actually cool but kind of disturbing when you have a MBP background. In a way, it makes sense since there are <em>"backward"</em> and <em>"forward"</em> keys on the keyboard.</p>
 <p>In any case, the surface is not only <strong>smooth and pleasant</strong>, but also quite large. It has to be the best trackpad I ever had on a not-Apple laptop.</p> 
 <h3>Connectivy</h3>
 <p>The Samsung Chromebook has 2 USB ports (USB2 & USB3), a HDMI connection and a SD card reader. All of these are <strong>on the back of the laptop</strong> which I don't like much; I'd rather have them on the side. No big deal for sure, but having to plug / unplug something on the back of the laptop can quickly become a pain in the ass.</p>
