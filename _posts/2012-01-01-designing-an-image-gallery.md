@@ -14,7 +14,7 @@ preview: true
 <p>At first I thought about doing it myself and then... </p>
 <img src="/images/design-an-image-gallery__how-about-no-bear.jpg" alt="Coding a responsive image gallery by hand? What about no!" />
 <p>It would have been a pain in the ass to work out such a "complicated" layout so I thought about Masonry but that's kind of old school, right? In the end, I went with <a href='https://github.com/desandro/isotope'>Isotope</a> for layouting the items.</p>
-<blockquote class="pull-quote--right">Isotope is the best JS plugin I ever worked with.</blockquote>
+<blockquote class="pull-quote--right">Isotope is the best JavaScript plugin I ever worked with.</blockquote>
 <p>Isotope has to be the best JavaScript plugin I ever worked with. Developed by David Desandro, <strong>you can think of it as <em>Masonry 2.0</em></strong>. It makes complicated box-based layouts fully customizable and above all <strong>easy</strong>.</p>
 <p>The idea is quite simple: you define a container that will draw boundaries for the layout and Isotope will move all its child elements according to the available room. What is really nice is it takes advantage of hardware accelerated CSS transforms (translate) if the browser support them (else it falls back on offsets).</p>
 <p>Anyway, I wanted to give some emphasis to the author content: her picture and her name, a short description and one or two ways to contact her. I first tried to include this as if it was a picture, in the layout but it looked kind of crowded. Instead, I decided to take a whole column to do this. Not only it makes this content more valuable but it also gives the page the space it needs to look nice.</p>
@@ -34,12 +34,25 @@ preview: true
 </section>
 <section id="responsive">
 <h2>Doing something for small devices <a href="#responsive">#</a></h2>
-<p>Of course, we wanted the site to look acceptable if not good on small devices. I wasn't sure about the way to display this photo gallery on mobile so I opted for the easy solution: put everything into one column. I'll try to think of something better for a future version.</p>
+<p>Of course, we wanted the site to look acceptable (if not good!) on small devices. I wasn't sure about the way to display this photo gallery on mobile so I opted for the easy solution: put everything into one column. I'll try to think of something better for a future version.</p>
 <p>Thankfully, Isotope handled almost all the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to remove floats from my two main containers, tweak a couple of things and it was okay.</p>
-<p>When you load the page on your phone, you'll see nothing but the author information, starting with her picture. You get to read the tiny description, then if you scroll there are photos. I think it's nice this way; it kind of reproduces the "Hi, I'm X. Here is my work" social flow.</p>
+<p>When you load the page on your phone, you'll see nothing but the author information, starting with her picture. You get to read the tiny description, then if you scroll there are photos. I think it's nice this way; it kind of reproduces the <em>"Hi, I'm X. Here is my work"</em> social flow.</p>
+<p>Regarding the modal, I completely removed it at first then I tweaked it on small screens so it takes almost the full viewport (leaving a small gap on each side). I'm not sure it is the best thing to do especially since clicking (tapping) an image makes no sense on small screen since it won't enlarge it at all. We'll see after some tests.</p>
 </section>
 <section id="high-density-displays">
 <h2>Dealing with high density displays <a href="#high-density-displays">#</a></h2>
+<p>Let me tell you this: dealing with retina displays is a pain in the ass. God, this is so annoying. I don't even know why we came to have such a thing... Did we really need it? In any case, this "feature" involves a lot of things like:</p>
+<ul>
+	<li>having to deal more files for every image,</li>
+	<li>having to deal with big files that can be heavy,</li>
+	<li>having to deal with more CSS and/or JavaScript to handle convertion between retina and not-retina.</li>
+</ul>
+<p>There are quite a few ways to handle graphics on retina displays, most of them include getting rid off images when possible by using SVG, CSS, fonts, Canvas... When it comes to real images, the number of solutions get lower: replace with CSS, replace with JavaScript.</p>
+<p>CSS image replacement within @media blocks can work great... if you deal with background-images. It is even simpler with a preprocessor thanks to clever mixins (<a href="https://github.com/kaelig/hidpi">HiDPI</a> for Sass, <a href="https://github.com/imulus/retinajs/blob/master/src/retina.less">Retina.less</a> for LESS). But when you only have <code>img</code> tags, you can't do it with CSS only.</p>
+<p>So you start looking for a JavaScript solution and hopefully you find <a href="http://retinajs.com/">RetinaJS</a> which is a great little script to handle high-density displays image convertion.</p>
+<p>Basically, the script parses all your image tags, make an AJAX request on your server to check whether there is a file with the same name and a <code>@2x</code> appended right before the extension and if there is it swaps the current src with the one it found. All of this only if you are using a retina display obviously.</p>
+<p>So I guess it is not that bad since this solution handles almost everything for us, but really. Does it worth it? Now we have to create like 2 or 3 files for each image so they can look good everywhere depending on the device's capacities. It sucks.</p>
+<blockquote class="pull-quote--right">Dealing with retina displays is a pain in the ass.</blockquote>
 </section>
 <section id="performance">
 <h2>Think (and do) about performance <a href="#performance">#</a></h2>
