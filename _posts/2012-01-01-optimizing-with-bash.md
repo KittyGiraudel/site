@@ -20,17 +20,17 @@ layout: post
 </section>
 <section id="linux">
 <h2>Use Linux flavour in Windows <a href='#linux'>#</a></h2>
-<p>To be able to run Linux scripts in windows, there is two methods:</p>
-<ul>
+<p>To be able to run Linux scripts on Windows, there are two methods:</p>
+<ol>
 <li>use a Virtual Machine with a Linux distribution on it,</li>
 <li>use a Linux simulator.</li>
-</ul>
+</ol>
 <p>Since it can be quite a pain to set up a virtual machine, we will go for the latter with <a href="http://www.cygwin.com/">Cygwin</a>. Cygwin is a Linux simulator. Go to the <a href="http://cygwin.com/install.html">download section</a>, grab the <code>setup.exe</code> file and execute it to launch the installer. You can leave all settings by default until you get to the step asking you which packages to install. </p>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__cygwin.png" alt="" />
 <figcaption><a href="http://www.cygwin.com/">Cygwin</a> is a Linux simulator</figcaption>
 </figure>
-<p>To add a package, click on the "Skip" label to switch it to a package version. Search for the following packages and add them (clicking on "Skip" is enough):<p>
+<p>To add a package, click on the <em>"Skip"</em> label to switch it to a package version. Search for the following packages and add them (clicking on <em>"Skip"</em> is enough):<p>
 <ul>
 <li>optipng</li>
 <li>pngcrush</li>
@@ -38,7 +38,7 @@ layout: post
 <li>util-linux</li>
 </ul>
 <p>Once Cygwin is fully installed, simply open a Cygwin terminal. Let's create a workspace to host our optimization script: we create a <em>"workspace"</em> directory in the current user home:</p>
-<pre class="language-javascript"><code># Create the workspace folder
+<pre class="language-bash"><code># Create the workspace folder
 mkdir workspace
 # Enter the workspace folder
 cd workspace</code></pre>
@@ -125,7 +125,7 @@ cd workspace</code></pre>
 </figure>
 <h3>Output informations</h3>
 <p>Let's add some useful output to see progress and the final stats. What about something like this:</p>
-<pre><code>file1 ...................... [ DONE ]
+<pre class="language-bash"><code>file1 ...................... [ DONE ]
 file2 ...................... [ DONE ]
 file_with_a_long_name ...... [ DONE ]
 ...</code></pre>
@@ -138,15 +138,15 @@ file_with_a_long_name ...... [ DONE ]
 <ol>
 <li>retrieve the length of the longest filename</li>
 <li>create a very long string of dots (<em>"."</em>)</li>
-<li>set a max line length equals to the length of the longest filename + the length of our " [ DONE ]" string (9 characters) + a small number (5 here) to have some space between the longest name and the " [ DONE ]" string.</li>
+<li>set a max line length equals to the length of the longest filename + the length of our <em>" [ DONE ]"</em> string (9 characters) + a small number (5 here) to have some space between the longest name and the <em>" [ DONE ]"</em> string.</li>
 </ol>
-<p>Finally, in the main loop we display the filename then the "." symbols and the the " [ DONE ]" string. </p>
+<p>Finally, in the main loop we display the filename then the <em>"."</em> symbols and the the <em>" [ DONE ]"</em> string. </p>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__output.png" alt="" />
 <figcaption>Script handling the output</figcaption>
 </figure>
 <p>Let's try it by running the following command:</p>
-<pre><code>./optimize.sh</code></pre>
+<pre class="language-bash"><code>./optimize.sh</code></pre>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__output-console.png" alt="" />
 <figcaption>Testing the output</figcaption>
@@ -168,8 +168,8 @@ file_with_a_long_name ...... [ DONE ]
 <figcaption>Quiet mode</figcaption>
 </figure>
 <h3>Final result</h3>
-<p>Below lies the final script (editor's note: I have no syntax highlighter for Bash script, sorry for the ugly output guys). Or you can get the script directly from <a href="https://gist.github.com/lgiraudel/6065155">this gist</a>.</p>
-<pre><code class="language-javascript">#!/bin/bash
+<p>Below lies the final script or you can grab it directly from <a href="https://gist.github.com/lgiraudel/6065155">this GitHub gist</a>.</p>
+<pre><code class="language-bash">#!/bin/bash
 
 PROGNAME=${0##*/}
 INPUT=''
