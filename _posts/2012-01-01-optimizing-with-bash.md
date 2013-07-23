@@ -146,7 +146,12 @@ file_with_a_long_name ...... [ DONE ]
 <figcaption>Script handling the output</figcaption>
 </figure>
 <p>Let's try it by running the following command:</p>
-<pre class="language-bash"><code>./optimize.sh</code></pre>
+<pre class="language-bash"><code># All parameters to default
+./optimize.sh
+# Or with custom options
+./optimize.sh --input images --output optimized-images
+# Or with custom options and shorthand
+./optimize.sh -i images -o optimized-images</code></pre>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__output-console.png" alt="" />
 <figcaption>Testing the output</figcaption>
@@ -157,12 +162,17 @@ file_with_a_long_name ...... [ DONE ]
 <img src="/images/optimizing-with-bash__optimize-image-with-stats.png" alt="" />
 <figcaption>Adding stats output in optimize_image()</figcaption>
 </figure>
-<p>To display human readable numbers, we can use a <code>human_readable_filesize()</code> method, retrieve from <a href="http://unix.stackexchange.com/questions/44040/a-standard-tool-to-convert-a-byte-count-into-human-kib-mib-etc-like-du-ls1">StackExchange</a>.</p>
+<p>To display human readable numbers, we can use a <code>human_readable_filesize()</code> method, retrieved from <a href="http://unix.stackexchange.com/questions/44040/a-standard-tool-to-convert-a-byte-count-into-human-kib-mib-etc-like-du-ls1">StackExchange</a> (let's not reinvent the wheel, shall we?).</p>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__display-stats.png" alt="" />
-<figcaption>Display of stats</figcaption>
+<figcaption>A function to display human readable stats</figcaption>
 </figure>
-<p>We are almost done. We just have to display progress output if the quiet mode is on.</p>
+<p>Let's try it before adding the last bites to our code. Once again, we simply run <code>./optimize.sh</code> (or with additional parameters if needed).</p>
+<figure class="figure">
+<img src="/images/optimizing-with-bash__output-with-stats.png" alt="" />
+<figcaption>Outputing optimization stats</figcaption>
+</figure>
+<p>Keep it up guys, we are almost done! We just have to display progress output if the quiet mode is on.</p>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__quiet-mode.png" alt="" />
 <figcaption>Quiet mode</figcaption>
@@ -170,24 +180,24 @@ file_with_a_long_name ...... [ DONE ]
 <h3>Final result</h3>
 <p>Below lies the final script or you can grab it directly from <a href="https://gist.github.com/lgiraudel/6065155">this GitHub gist</a>.</p>
 <pre><code class="language-bash">#!/bin/bash
-
+ 
 PROGNAME=${0##*/}
 INPUT=''
 QUIET='0'
 NOSTATS='0'
 max_input_size=0
 max_output_size=0
-
+ 
 usage()
 {
-	cat &lt;&lt;EO
+  cat <<EO
 Usage: $PROGNAME [options]
-
+ 
 Script to optimize JPG and PNG images in a directory.
-
+ 
 Options:
 EO
-cat &lt;&lt;EO | column -s\& -t
+cat <<EO | column -s\& -t
 	-h, --help  	   & shows this help
 	-q, --quiet 	   & disables output
 	-i, --input [dir]  & specify input directory (current directory by default)
@@ -195,14 +205,14 @@ cat &lt;&lt;EO | column -s\& -t
 	-ns, --no-stats    & no stats at the end
 EO
 }
-
+ 
 # $1: input image
 # $2: output image 
 optimize_image()
 {
 	input_file_size=$(stat -c%s "$1")
 	max_input_size=$(expr $max_input_size + $input_file_size)
-
+ 
 	if [ "${1##*.}" = "png" ]; then
 		optipng -o1 -clobber -quiet $1 -out $2
 		pngcrush -q -rem alla -reduce $1 $2 >/dev/null
@@ -210,56 +220,56 @@ optimize_image()
 	if [ "${1##*.}" = "jpg" -o "${1##*.}" = "jpeg" ]; then
 		jpegtran -copy none -progressive $1 > $2
 	fi
-
+ 
 	output_file_size=$(stat -c%s "$2")
 	max_output_size=$(expr $max_output_size + $output_file_size)
 }
-
+ 
 get_max_file_length()
 {
 	local maxlength=0
-
+ 
 	IMAGES=$(find $INPUT -regextype posix-extended -regex '.*\.(jpg|jpeg|png)' | grep -v $OUTPUT)
-
+ 
 	for CURRENT_IMAGE in $IMAGES; do
 		filename=$(basename "$CURRENT_IMAGE")
 		if [[ ${#filename} -gt $maxlength ]]; then
 			maxlength=${#filename}
 		fi
 	done
-
+ 
 	echo "$maxlength"	
 }
-
+ 
 main()
 {
 	# If $INPUT is empty, then we use current directory
-	if ["$INPUT" == ""]; then
+	if [[ "$INPUT" == "" ]]; then
 		INPUT=$(pwd)
 	fi
-
+ 
 	# If $OUTPUT is empty, then we use the directory "output" in the current directory
-	if ["$OUTPUT" == ""]; then
+	if [[ "$OUTPUT" == "" ]]; then
 		OUTPUT=$(pwd)/output
 	fi
-
+ 
 	# We create the output directory
 	mkdir -p $OUTPUT
-
+ 
 	# To avoid some troubles with filename with spaces, we store the current IFS (Internal File Separator)...
 	SAVEIFS=$IFS
 	# ...and we set a new one
 	IFS=$(echo -en "\n\b")
-
+ 
 	max_filelength=`get_max_file_length`
 	pad=$(printf '%0.1s' "."{1..600})
 	sDone=' [ DONE ]'
 	linelength=$(expr $max_filelength + ${#sDone} + 5)
-
+ 
 	# Search of all jpg/jpeg/png in $INPUT
 	# We remove images from $OUTPUT if $OUTPUT is a subdirectory of $INPUT
 	IMAGES=$(find $INPUT -regextype posix-extended -regex '.*\.(jpg|jpeg|png)' | grep -v $OUTPUT)
-
+ 
 	if [ "$QUIET" == "0" ]; then
 		echo --- Optimizing $INPUT ---
 		echo
@@ -270,17 +280,17 @@ main()
 		    printf '%s ' "$filename"
 		    printf '%*.*s' 0 $((linelength - ${#filename} - ${#sDone} )) "$pad"
 		fi
-
+ 
 		optimize_image $CURRENT_IMAGE $OUTPUT/$filename
-
+ 
 		if [ "$QUIET" == "0" ]; then
 		    printf '%s\n' "$sDone"
 		fi
 	done
-
+ 
 	# we restore the saved IFS
 	IFS=$SAVEIFS
-
+ 
 	if [ "$NOSTATS" == "0" -a "$QUIET" == "0" ]; then
 		echo
 		echo "Input: " $(human_readable_filesize $max_input_size)
@@ -289,24 +299,24 @@ main()
 		echo "Space save: " $(human_readable_filesize $space_saved)
 	fi
 }
-
+ 
 human_readable_filesize()
 {
-	echo -n $1 | awk 'function human(x) {
-	     s=" b  Kb Mb Gb Tb"
-	     while (x>=1024 && length(s)>1) 
-	           {x/=1024; s=substr(s,4)}
-	     s=substr(s,1,4)
-	     xf=(s==" b ")?"%5d   ":"%.2f"
-	     return sprintf( xf"%s", x, s)
-	  }
-	  {gsub(/^[0-9]+/, human($1)); print}'
+echo -n $1 | awk 'function human(x) {
+     s=" b  Kb Mb Gb Tb"
+     while (x>=1024 && length(s)>1) 
+           {x/=1024; s=substr(s,4)}
+     s=substr(s,1,4)
+     xf=(s==" b ")?"%5d   ":"%.2f"
+     return sprintf( xf"%s", x, s)
+  }
+  {gsub(/^[0-9]+/, human($1)); print}'
 }
-
+ 
 SHORTOPTS="h,i:,o:,q,s"
 LONGOPTS="help,input:,output:,quiet,no-stats"
 ARGS=$(getopt -s bash --options $SHORTOPTS --longoptions $LONGOPTS --name $PROGNAME -- "$@")
-
+ 
 eval set -- "$ARGS"
 while true; do
 	case $1 in
@@ -339,7 +349,7 @@ while true; do
 	esac
 	shift
 done
-
+ 
 main</code></pre>
 </section>
 <section id="what-now">
