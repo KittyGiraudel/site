@@ -63,13 +63,13 @@ preview: true
 <section id="responsive">
 <h2>Doing something for small devices <a href="#responsive">#</a></h2>
 <p>Of course, we wanted the site to look acceptable (if not good!) on small devices. I wasn't sure about the way to display this photo gallery on mobile so I opted for the easy solution: put everything into one column. I'll try to think of something better for a future version.</p>
-<p>Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to remove floats from my two main containers, tweak a couple of things and it was okay.</p>
 <figure class="figure--right">
 <a href="http://alexandralucas.com" target="_blank">
 <img src="/images/designing-an-image-gallery__phoneview.png" alt="">
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">View on most smartphone</a></figcaption>
 </figure>
+<p>Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to remove floats from my two main containers, tweak a couple of things and it was okay.</p>
 <p>Thus when you load the page on your phone, you'll see nothing but the author information starting with her picture. You get to read the tiny description, then if you scroll there are photos. I think it's nice this way; it kind of reproduces the <em>"Hi, I'm X. Here is my work"</em> social flow.</p>
 <p>Regarding the modal, I first tweaked it on small screens so it takes almost the full viewport (leaving a small gap on each side). Then after some tests it occurred to me it made absolutely no point to have a modal on small devices so I simply removed it.</p>
 </section>
