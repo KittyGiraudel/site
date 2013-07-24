@@ -19,8 +19,7 @@ preview: true
 <p>The idea is quite simple: you define a container that will draw boundaries for the layout and Isotope will move all its child elements according to the available room. What is really nice is it takes advantage of hardware accelerated CSS transforms (translate) if the browser support them (else it falls back on offsets).</p>
 <p>Anyway, I wanted to give some emphasis to the author content: her picture and her name, a short description and one or two ways to contact her. I first tried to include this as if it was a picture, in the layout but it looked kind of crowded. Instead, I decided to take a whole column to do this. Not only it makes this content more valuable but it also gives the page the space it needs to look nice.</p>
 <p>While the sidebar is floated left, the pictures are all wrapped in a regular unordered list which is floated left as well. Each image is in a <code>figure</code> element to be as semantic as possible.</p>
-<pre class="language-markup"><code>
-&lt;li class='gallery__item'&gt;
+<pre class="language-markup"><code>&lt;li class='gallery__item'&gt;
   &lt;figure&gt;
     &lt;img 
       class='gallery__image'
@@ -28,8 +27,7 @@ preview: true
       alt="Alt text" 
       width="400" height="266" /&gt;
   &lt;/figure&gt;
-&lt;/li&gt;
-</code></pre>
+&lt;/li&gt;</code></pre>
 </section>
 <section id="features">
 <h2>Building features over the layout <a href="#features">#</a></h2>
@@ -72,8 +70,7 @@ preview: true
 <p>When I first set up the layout with images and all, I used really big pictures like 1600*1059px and I was like <em>"I resize them automagically with CSS"</em>. Sure. And the page weighed about 35Mb. Ouch.</p>
 <p>I quickly understood I had to handle 2 files for each image: one for the thumbnail (400*266) and a bigger one for when you click on it (800+). This is what I did. I also smushed all images with <a href="http://www.jpegmini.com/">JpegMini</a> to remove unnecessary meta-data. The page went down to 750Kb. Not bad, right? Still not good enough though, especially for a small device on a crappy 3G connection.</p>
 <p>The next step was to load images when they are needed. To put it simple, only load images that are actually displayed on the screen and not the one that are below the fold. This is called <em>lazy loading</em>. Thankfully, I found an amazing <a href="http://www.appelsiini.net/projects/lazyload">JavaScript plugin doing this</a>. All I had to do was turning my markup into something like this:</p>
-<pre class="language-markup"><code>
-&lt;li class='gallery__item' data-album='album-name'&gt;
+<pre class="language-markup"><code>&lt;li class='gallery__item' data-album='album-name'&gt;
   &lt;figure&gt;
     &lt;img 
       class='gallery__image'
@@ -82,8 +79,7 @@ preview: true
       alt="Alt text" 
       width="400" height="266" /&gt;
   &lt;/figure&gt;
-&lt;/li&gt;
-</code></pre>
+&lt;/li&gt;</code></pre>
 <blockquote class="pull-quote--right">When viewing it on mobile, it goes down to 700 bytes.</blockquote>
 <p>As you can see, the image source is a 1*1px blank GIF while the actual source lies in the <code>data-original</code> attribute. Then the LazyLoad script checks all images to see whether they are above the fold or not; if they are, it swaps <code>src</code> with <code>data-original</code>. Everytime there is a scroll, it checks again. Lightweight and comfy.</p>
 <p>Thanks to LazyLoad, I could bring down the page to 380Kb on a regular desktop screen. Definitely good. When viewing it on mobile, it goes down to ... 700 bytes. Then it progressively load the images as the user scroll through them. How cool is that? </p>
