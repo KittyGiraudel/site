@@ -8,10 +8,10 @@ preview: true
 <p>Hey guys! I recently had the opportunity to work on a cool little project I'd like to talk about: an advanced image gallery with some really cool features. Indeed, I've been asked to design and develop the site of Alexandra Lucas to promote her work as a French photographer. Since I'm a big fan of her work, I accepted and it turned out to be quite fun to work on this project.</p>
 <p>Let's say things straight: I'd never have the opportunity to work on an image gallery before. Actually I did but back then I didn't give a shit about performance, responsive design, high-density displays and all the topics cool kids always talk about. So this time I've been faced with some difficulties I had not encountered before; meaning I had to solve them by myself.</p>
 <figure class="figure">
-  <a href="http://alexandralucas.com" target="_blank">
-    <img src="/images/designing-an-image-gallery__alexandralucas.png" alt="">
-  </a>
-  <figcaption><a href="http://alexandralucas.com" target="_blank">Alexandralucas.com</a></figcaption>
+<a href="http://alexandralucas.com" target="_blank">
+<img src="/images/designing-an-image-gallery__alexandralucas.png" alt="">
+</a>
+<figcaption><a href="http://alexandralucas.com" target="_blank">Alexandralucas.com</a></figcaption>
 </figure>
 </section>
 <section id="layout">
@@ -46,17 +46,17 @@ preview: true
 <h2>Building features over the layout <a href="#features">#</a></h2>
 <p>We needed two major features for this image gallery:</p>
 <ul>
-	<li>being able to filter images by tags to manage albums</li>
-	<li>display a scaled up image when clicking it</li>
+<li>being able to filter images by tags to manage albums</li>
+<li>display a scaled up image when clicking it</li>
 </ul>
 <p>The first one was pretty easy to do since Isotope comes with a built-in way to filter and sort items. In the <a href="http://isotope.metafizzy.co/docs/filtering.html">documentation</a>, they recommand using a class as a tag and apply it to all elements you want to assign this tag to. Then you create a little list with a jQuery selector as a <code>data-filter</code> attribute (like <code>.tag</code>). When you click on an element of this list, the plugin parses this data-attribute and displays nothing but the items matching the given selector.</p>
 <p>I didn't want to add classes for this so I added a <code>data-album</code> attribute to every item and passed it the name of the album the image belongs to. Then, I give something like this to the <code>data-filter</code> attribute of the filter list: <code>[data-album*='album-name']</code> (literally <em>everything with a <code>data-album</code> attribute containing 'album-name'</em>). Easy peasy!</p>
 <p>Regarding the second feature, I basically needed a little lightbox thingie to display an image in fullsize when clicked. I could have made one but since I am definitely not a JavaScript ninja, I would probably have ended with a code that could be improved. So I decided to rely on a built-in solution; I wanted something which is both nice and efficient so I went with Avgrund from <a href="http://hakim.se/">Hakim El Hattab</a>.</p>
 <figure class="figure">
-  <a href="http://alexandralucas.com" target="_blank">
-    <img src="/images/designing-an-image-gallery__lightbox.png" alt="">
-  </a>
-  <figcaption><a href="http://alexandralucas.com" target="_blank">Lightbox powered by Avgrund</a></figcaption>
+<a href="http://alexandralucas.com" target="_blank">
+<img src="/images/designing-an-image-gallery__lightbox.png" alt="">
+</a>
+<figcaption><a href="http://alexandralucas.com" target="_blank">Lightbox powered by Avgrund</a></figcaption>
 </figure>
 <p><a href="http://lab.hakim.se/avgrund/">Avgrund</a> is a very lightweight modal plugin that does exactly what I want: open a modal on click, close it with a close button or the <code>ESC</code> key or clicking out of the lightbox.</p>
 </section>
@@ -65,10 +65,10 @@ preview: true
 <p>Of course, we wanted the site to look acceptable (if not good!) on small devices. I wasn't sure about the way to display this photo gallery on mobile so I opted for the easy solution: put everything into one column. I'll try to think of something better for a future version.</p>
 <p>Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to remove floats from my two main containers, tweak a couple of things and it was okay.</p>
 <figure class="figure--right">
-  <a href="http://alexandralucas.com" target="_blank">
-    <img src="/images/designing-an-image-gallery__phoneview.png" alt="">
-  </a>
-  <figcaption><a href="http://alexandralucas.com" target="_blank">View on most smartphone</a></figcaption>
+<a href="http://alexandralucas.com" target="_blank">
+<img src="/images/designing-an-image-gallery__phoneview.png" alt="">
+</a>
+<figcaption><a href="http://alexandralucas.com" target="_blank">View on most smartphone</a></figcaption>
 </figure>
 <p>Thus when you load the page on your phone, you'll see nothing but the author information starting with her picture. You get to read the tiny description, then if you scroll there are photos. I think it's nice this way; it kind of reproduces the <em>"Hi, I'm X. Here is my work"</em> social flow.</p>
 <p>Regarding the modal, I first tweaked it on small screens so it takes almost the full viewport (leaving a small gap on each side). Then after some tests it occurred to me it made absolutely no point to have a modal on small devices so I simply removed it.</p>
@@ -78,9 +78,9 @@ preview: true
 <blockquote class="pull-quote--right">Dealing with retina displays is a pain in the ass.</blockquote>
 <p>Let me tell you this: dealing with retina displays is a pain in the ass. God, this is so annoying. I don't even know why we came to have such a thing... Did we really need it? In any case, this so-called "feature" involves a lot of things like:</p>
 <ul>
-	<li>having to deal with more files for every image,</li>
-	<li>having to deal with big files that can be heavy,</li>
-	<li>having to deal with more CSS and/or JavaScript to handle convertion between retina and not-retina.</li>
+<li>having to deal with more files for every image,</li>
+<li>having to deal with big files that can be heavy,</li>
+<li>having to deal with more CSS and/or JavaScript to handle convertion between retina and not-retina.</li>
 </ul>
 <p>There are quite a few ways to handle graphics on retina displays and it is no surprise most of them include getting rid off images when possible by using SVG, CSS, fonts, canvas... When it comes to real images, the number of solutions get lower: replace with CSS or replace with JavaScript. Or do nothing which is a solution I highly considered.</p>
 <p>CSS image replacement within <code>@media</code> blocks can work great... if you deal with background-images. It is even simpler with a preprocessor thanks to clever mixins (<a href="https://github.com/kaelig/hidpi">HiDPI</a> for Sass, <a href="https://github.com/imulus/retinajs/blob/master/src/retina.less">Retina.less</a> for LESS).</p>
