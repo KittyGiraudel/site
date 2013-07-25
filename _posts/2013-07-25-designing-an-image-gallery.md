@@ -1,8 +1,7 @@
 ---
 title: "Designing an image gallery"
 layout: post
-comments: false
-preview: true
+comments: true
 ---
 <section>
 <p>Hey guys! I recently had the opportunity to work on a cool little project I'd like to talk about: an advanced image gallery with some really cool features. Indeed, I've been asked to design and develop the site of <a href="http://alexandralucas.com">Alexandra Lucas</a> to promote her work as a French photographer. Since I'm a big fan of her work, I accepted and it turned out to be quite fun to work on this project.</p>
