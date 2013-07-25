@@ -60,13 +60,13 @@ preview: true
 </figure>
 <p><a href="http://lab.hakim.se/avgrund/">Avgrund</a> is a very lightweight modal plugin that does exactly what I want: open a modal on click, close it with a close button or the <code>ESC</code> key or clicking out of the lightbox.</p>
 <h3>Adding some fanciness</h3>
-<p>One thing I wanted to do is to progressively display the pictures when loading the page: the first one being immediately displayed, then after a quick instant the second one, then the third, and so on until all images have been displayed.</p>
-<p>Isn't it the perfect usecase for CSS animations? First the <code>@keyframes</code> animation:</p>
+<p>One thing I wanted to do is to progressively display the pictures when loading the page: the first one being immediately displayed, then after a quick instant the second one, then the third, and so on until all images have been displayed. It's definitely not  a key feature, just eye sugar.</p>
+<p>Isn't it the perfect usecase for CSS animations? Let's jump on this opportunity, it's not that often we can safely use CSS animations. First the (really common) <code>@keyframes</code>:</p>
 <pre class="language-css"><code>@keyframes opacity {
   from { opacity: 0; }
   to   { opacity: 1; }
 }</code></pre>
-<p>Now all I had to do is applying it to all items with a varying delay. The highest the index of the item in the list, the longest the delay. Perfect! Let's loop! But wait.. I don't know the number of images in the page. I guess I could have gone to like 100 to be sure it works everywhere but I realized 20 is more than enough for most screens (including my 29").</p>
+<p>Now all I had to do was applying it to all items with a varying delay. The highest the index of the item in the list, the longest the delay. Perfect! Let's loop! But wait... I don't know the number of images in the page. I guess I could have gone to something like 100 to be sure it works everywhere but that would have bloated the CSS. Plus, I realized 20 is more than enough for most screens (including my 29").</p>
 <pre class="language-scss"><code>@for $i from 1 through 20 {
   .gallery__item {
     opacity: 0;
