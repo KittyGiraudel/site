@@ -44,7 +44,7 @@ comments: false
 <li>Check whether or not the offset is being listed in the arg list,</li>
 <li>Make sure the index of an offset + 1 is lesser or equal to the length of the list,</li>
 <li>Make sure the value listed after an offset is a valid length/number.</li>
-</ul>
+</ol>
 <pre class="language-scss"><code>@mixin absolute($args) {
 	$offsets: top right bottom left;
 
@@ -120,9 +120,38 @@ comments: false
 <p>Almost done. To indicate <code>position()</code> is a private mixin, I wanted to prefix it with something. I first thought about <code>private-position()</code> but it didn't feel great. In the end I went with <code>_position()</code>. Since I use hyphens to separate words in CSS, the underscore was unused. No risk of conflicts with anything in a project!</p>
 <p class="note">Note: remember hyphens and underscores are treated the same way in Sass. It means <code>-position()</code> will work as well. This is meant to be: hyphens or underscores is only a matter of presentational preference.</p> 
 </section>
-<section>
-<h2> <a href="#"></a></h2>
+<section id="usage">
+<h2>Usage <a href="#usage"></a></h2>
+<p>Using this is pretty simply:</p>
+<pre class="language-scss"><code>.element {
+	@include absolute(top 1em right 10%);
+}</code></pre>
+<p>Outputs:</p>
+<pre class="language-scss"><code>.element {
+	position: absolute;
+	top: 1em;
+	right: 10%;
+}</code></pre>
+<p>Now, what if we try to do bad things like assigning no value to an offset, or an invalid value?</p>
+<pre class="language-scss"><code>.element {
+	@include absolute(top 1em left "I wanna do bad things with you!" right 10% bottom);
+}</code></pre>
+<p>In this case:</p>
+<ul>
+	<li><code>top</code> will be defined to <code>1em</code></li>
+	<li><code>left</code> won't de set since we gave it a string</li>
+	<li><code>right</code> will be defined to <code>10%</code></li>
+	<li><code>bottom</code> won't be set since we didn't give it any value</li>
+</ul>
+<pre class="language-scss"><code>.element {
+	position: absolute;
+	top: 1em;
+	right: 10%;
+}</code></pre>
+<p>Clean handling of errors and invalid input. Nice!</p>
 </section>
-<section>
-<h2> <a href="#"></a></h2>
+<section id="final-words">
+<h2>Final words <a href="#final-words"></a></h2>
+<p>I'm aware some of you won't like this. Some will say it is overly complicated, some will say it is useless and some will say their mixin is better. In no way this is a better way than an other. It simply suits my tastes. I like the way it works, and I like the way I can use it.</p>
+<p>Anyway, you can fork and play around <a href="http://codepen.io/HugoGiraudel/pen/HDebE">this pen</a> if you feel so. And be sure to hit me if you ever need anything or want to propose something new. :)</p>
 </section>
