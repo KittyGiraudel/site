@@ -5,11 +5,11 @@ comments: false
 preview: true
 ---
 <section>
-<p>Hey guys! I recently had the opportunity to work on a cool little project I'd like to talk about: an advanced image gallery with some really cool features. Indeed, I've been asked to design and develop the site of Alexandra Lucas to promote her work as a French photographer. Since I'm a big fan of her work, I accepted and it turned out to be quite fun to work on this project.</p>
+<p>Hey guys! I recently had the opportunity to work on a cool little project I'd like to talk about: an advanced image gallery with some really cool features. Indeed, I've been asked to design and develop the site of <a href="http://alexandralucas.com">Alexandra Lucas</a> to promote her work as a French photographer. Since I'm a big fan of her work, I accepted and it turned out to be quite fun to work on this project.</p>
 <p>Let's say things straight: I'd never have the opportunity to work on an image gallery before. Actually I did but back then I didn't give a shit about performance, responsive design, high-density displays and all the topics cool kids always talk about. So this time I've been faced with some difficulties I had not encountered before; meaning I had to solve them by myself.</p>
 <figure class="figure">
 <a href="http://alexandralucas.com" target="_blank">
-<img src="/images/designing-an-image-gallery__alexandralucas.png" alt="">
+<img src="/images/designing-an-image-gallery__alexandralucas.jpg" alt="">
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">Alexandralucas.com</a></figcaption>
 </figure>
@@ -54,7 +54,7 @@ preview: true
 <p>Regarding the second feature, I basically needed a little lightbox thingie to display an image in fullsize when clicked. I could have made one but since I am definitely not a JavaScript ninja, I would probably have ended with a code that could be improved. So I decided to rely on a built-in solution; I wanted something which is both nice and efficient so I went with Avgrund from <a href="http://hakim.se/">Hakim El Hattab</a>.</p>
 <figure class="figure">
 <a href="http://alexandralucas.com" target="_blank">
-<img src="/images/designing-an-image-gallery__lightbox.png" alt="">
+<img src="/images/designing-an-image-gallery__lightbox.jpg" alt="">
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">Lightbox powered by Avgrund</a></figcaption>
 </figure>
