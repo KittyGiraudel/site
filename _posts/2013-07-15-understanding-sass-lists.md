@@ -116,6 +116,4 @@ $selector: ();
 <blockquote class="pull-quote--right">Having a very permissive can be complicated.</blockquote>
 <p>The three versions we saw in the previous section work like a charm, the one you should use is really up to you. You can also do it in some other more complicated and dirty ways.</p>
 <p>Anyway, this shows why having a very permissive can be complicated. As I said at the beginning of this post, you can do pretty much whatever you want and if you want my opinion this isn't for the best.</p>
-<p>Anyway, I'll close this article with this amazing Lightning Talk from Gary Bernhardt at CodeMash 2012 entitled "WAT". I think it is on-topic.</p>
-<iframe style="margin: 0 auto" width="420" height="315" src="//www.youtube.com/embed/lrBhwGUF6yU" frameborder="0" allowfullscreen></iframe>
 </section>
