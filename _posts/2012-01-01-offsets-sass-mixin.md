@@ -96,12 +96,12 @@ comments: false
 		}
 	}
 }</code></pre>
-<p>I guess this is pretty lucid now. Not quite hard in the end, is it?</p>
+<p>I guess this is pretty clear now. Not quite hard in the end, is it?</p>
 </section>
 <section id="positions">
 <h2> Dealing with other position types <a href="#positions"></a></h2>
 <p>We now have to deal with <code>relative</code> and <code>fixed</code>. I guess we could duplicate the whole mixin 3 times and simple rename it but would it be the best solution? Definitely not.</p>
-<p>Why instead don't we create a "private mixin"? Something that isn't meant to be called and only helps us for our internal stuff. To do so, I renamed the mixin <code>position()</code> and overloaded it with another argument: the position type.</p>
+<p>Why don't we create a "private mixin" instead? Something that isn't meant to be called and only helps us for our internal stuff. To do so, I renamed the mixin <code>position()</code> and overloaded it with another argument: the position type.</p>
 <p class="note">Note: you might want to rename it differently to avoid conflict with other mixins of your project. Indeed "position" is a quite common keyword.</p>
 <pre class="language-scss"><code>@mixin position($position, $args) {
 	/* Stuff we saw before */
