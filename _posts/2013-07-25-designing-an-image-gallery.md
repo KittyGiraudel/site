@@ -21,8 +21,8 @@ published: true
 <p>At first I thought about doing it myself and then... </p>
 <img src="/images/design-an-image-gallery__how-about-no-bear.jpg" alt="Coding a responsive image gallery by hand? What about no!" />
 <p>It would have been a pain in the ass to work out such a "complicated" layout so I thought about <a href="http://masonry.desandro.com/">Masonry</a> but that's kind of old school, right? In the end, I went with Isotope for layouting the items.</p>
-<blockquote class="pull-quote--right"><a href='https://github.com/desandro/isotope'>Isotope</a> is the best JavaScript plugin I ever worked with.</blockquote>
-<p>Isotope has to be the best JavaScript plugin I ever worked with. Developed by <a href="http://v3.desandro.com/">David Desandro</a>, <strong>you can think of it as <em>Masonry 2.0</em></strong>. It makes complicated box-based layouts fully customizable and above all <strong>easy</strong>.</p>
+<blockquote class="pull-quote--right">Isotope is the best JavaScript plugin I ever worked with.</blockquote>
+<p><a href='https://github.com/desandro/isotope'>Isotope</a> has to be the best JavaScript plugin I ever worked with. Developed by <a href="http://v3.desandro.com/">David Desandro</a>, <strong>you can think of it as <em>Masonry 2.0</em></strong>. It makes complicated box-based layouts fully customizable and above all <strong>easy</strong>.</p>
 <p>The idea is quite simple: you define a container that will draw boundaries for the layout and Isotope will move all its child elements according to the available room.</p>
 <pre class="language-javascript"><code>$container.isotope({
   itemSelector : '.gallery__item',
@@ -87,7 +87,7 @@ published: true
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">View on most smartphone</a></figcaption>
 </figure>
-<p>Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to remove floats from my two main containers, tweak a couple of things and it was okay.</p>
+<p>Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to make the "sidebar" static, remove the left-margin of the main container, tweak a couple of things and it was okay.</p>
 <p>Thus when you load the page on your phone, you'll see nothing but the author information starting with her picture. You get to read the tiny description, then if you scroll there are photos. I think it's nice this way; it kind of reproduces the <em>"Hi, I'm X. Here is my work"</em> social flow.</p>
 <p>Regarding the modal, I first tweaked it on small screens so it takes almost the full viewport (leaving a small gap on each side). Then after some tests it occurred to me it made absolutely no point to have a modal on small devices so I simply removed it.</p>
 </section>
