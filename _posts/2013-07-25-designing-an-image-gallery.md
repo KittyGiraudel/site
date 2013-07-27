@@ -1,8 +1,10 @@
 ---
-title: "Designing an image gallery"
+title: Designing an image gallery
 layout: post
 comments: true
+published: true
 ---
+
 <section>
 <p>Hey guys! I recently had the opportunity to work on a cool little project I'd like to talk about: an advanced image gallery with some really cool features. Indeed, I've been asked to design and develop the site of <a href="http://alexandralucas.com">Alexandra Lucas</a> to promote her work as a French photographer. Since I'm a big fan of her work, I accepted and it turned out to be quite fun to work on this project.</p>
 <p>Let's say things straight: I'd never have the opportunity to work on an image gallery before. Actually I did but back then I didn't give a shit about performance, responsive design, high-density displays and all the topics cool kids always talk about. So this time I've been faced with some difficulties I had not encountered before; meaning I had to solve them by myself.</p>
@@ -20,7 +22,7 @@ comments: true
 <img src="/images/design-an-image-gallery__how-about-no-bear.jpg" alt="Coding a responsive image gallery by hand? What about no!" />
 <p>It would have been a pain in the ass to work out such a "complicated" layout so I thought about <a href="http://masonry.desandro.com/">Masonry</a> but that's kind of old school, right? In the end, I went with Isotope for layouting the items.</p>
 <blockquote class="pull-quote--right"><a href='https://github.com/desandro/isotope'>Isotope</a> is the best JavaScript plugin I ever worked with.</blockquote>
-<p>Isotope has to be the best JavaScript plugin I ever worked with. Developed by David Desandro, <strong>you can think of it as <em>Masonry 2.0</em></strong>. It makes complicated box-based layouts fully customizable and above all <strong>easy</strong>.</p>
+<p>Isotope has to be the best JavaScript plugin I ever worked with. Developed by <a href="http://v3.desandro.com/">David Desandro</a>, <strong>you can think of it as <em>Masonry 2.0</em></strong>. It makes complicated box-based layouts fully customizable and above all <strong>easy</strong>.</p>
 <p>The idea is quite simple: you define a container that will draw boundaries for the layout and Isotope will move all its child elements according to the available room.</p>
 <pre class="language-javascript"><code>$container.isotope({
   itemSelector : '.gallery__item',
@@ -29,16 +31,14 @@ comments: true
   }
 });</code></pre>
 <p> What is really nice is it takes advantage of hardware accelerated CSS transforms (essentially <code>translate</code>) if the browser support them (else it falls back on regular TRBL offsets).</p>
-<p>Anyway, I wanted to give some emphasis to the author content: her picture and her name, a short description and one or two ways to contact her. I first tried to include this as if it was another block in the layout, in the layout but it looked kind of crowded. Instead, I decided to go with a fixed column. Not only does it make this content more valuable but it also gives the page the space it needs to look nice.</p>
-<p>Meanwhile the pictures are all wrapped in a regular unordered list which has a huge left margin (to bypass the fixed sidebar). Each image is in a <code>figure</code> element to be as semantic as possible.</p>
+<p>Anyway, I wanted to give some emphasis to the author content: her picture and her name, a short description and one or two ways to contact her. I first tried to include this as if it was another block in the layout, but it looked kind of crowded. Instead, I decided to go with a fixed column. Not only does it make this content more valuable but it also gives the page the space it needs to look nice.</p>
+<p>Meanwhile the pictures are all wrapped in a regular unordered list which has a huge left margin (to bypass the fixed sidebar).</p>
 <pre class="language-markup"><code>&lt;li class='gallery__item'&gt;
-  &lt;figure&gt;
     &lt;img 
       class='gallery__image'
       src="images/filename.jpg"
       alt="Alt text" 
       width="400" height="266" /&gt;
-  &lt;/figure&gt;
 &lt;/li&gt;</code></pre>
 </section>
 <section id="features">
@@ -105,6 +105,7 @@ comments: true
 <p>But when you only have <code>img</code> tags, you can't do it with CSS only. So you start looking for a JavaScript solution and hopefully you find <a href="http://retinajs.com/">RetinaJS</a> which is a great little script to handle high-density displays image convertion.</p>
 <p>Basically the script parses all your image tags, make an AJAX request on your server to check whether there is a file with the same name and a <code>@2x</code> appended right before the extension and if there is it swaps the current source with the one it found. All of this only if you are using a retina display obviously.</p>
 <p>So I guess it is not that bad since this solution handles almost everything for us, but really. Does it worth it? Now we have to create like 2 or 3 files for each image so they can look good everywhere depending on the device's capacities. It sucks.</p>
+<p class="note">Edit: I finally wrote my own script to deal with high-density displays because RetinaJS and LazyLoad were kind of conflicting with each other.</p>
 </section>
 <section id="performance">
 <h2>Think (and do) about performance <a href="#performance">#</a></h2>
@@ -114,14 +115,12 @@ comments: true
 <p>I quickly understood I had to handle 2 files for each image: one for the thumbnail (400*266) and a bigger one for when you click on it (800+). This is what I did. I also smushed all images with <a href="http://www.jpegmini.com/">JpegMini</a> to remove unnecessary meta-data. The page went down to 750Kb. Not bad, right? Still not good enough though, especially for a small device on a crappy 3G connection.</p>
 <p>The next step was to load images when they are needed. To put it simple, only load images that are actually displayed on the screen and not the one that are below the fold. This is called <em>lazy loading</em>. Thankfully, I found an amazing <a href="http://www.appelsiini.net/projects/lazyload">JavaScript plugin doing this</a>. All I had to do was turning my markup into something like this:</p>
 <pre class="language-markup"><code>&lt;li class='gallery__item' data-album='album-name'&gt;
-  &lt;figure&gt;
     &lt;img 
       class='gallery__image'
       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
       data-original="images/filename.jpg" 
       alt="Alt text" 
       width="400" height="266" /&gt;
-  &lt;/figure&gt;
 &lt;/li&gt;</code></pre>
 <blockquote class="pull-quote--right">When viewing it on mobile, it goes down to 700 bytes.</blockquote>
 <p>As you can see, the image source is a 1*1px blank GIF while the actual source lies in the <code>data-original</code> attribute. Then the LazyLoad script checks all images to see whether they are above the fold or not; if they are, it swaps <code>src</code> with <code>data-original</code>. Everytime there is a scroll, it checks again. Lightweight and comfy.</p>
