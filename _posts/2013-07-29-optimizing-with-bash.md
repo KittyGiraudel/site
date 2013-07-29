@@ -1,6 +1,7 @@
 ---
 title: Optimizing images with Bash script
 comments: true
+guest: Loïc Giraudel
 layout: post
 ---
 <section>
