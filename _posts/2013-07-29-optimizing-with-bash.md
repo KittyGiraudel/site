@@ -192,14 +192,14 @@ max_output_size=0
  
 usage()
 {
-  cat <<EO
+  cat &lt;&lt;EO
 Usage: $PROGNAME [options]
  
 Script to optimize JPG and PNG images in a directory.
  
 Options:
 EO
-cat <<EO | column -s\& -t
+cat &lt;&lt;EO | column -s\& -t
 	-h, --help  	   & shows this help
 	-q, --quiet 	   & disables output
 	-i, --input [dir]  & specify input directory (current directory by default)
@@ -217,10 +217,10 @@ optimize_image()
  
 	if [ "${1##*.}" = "png" ]; then
 		optipng -o1 -clobber -quiet $1 -out $2
-		pngcrush -q -rem alla -reduce $1 $2 >/dev/null
+		pngcrush -q -rem alla -reduce $1 $2 &gt;/dev/null
 	fi
 	if [ "${1##*.}" = "jpg" -o "${1##*.}" = "jpeg" ]; then
-		jpegtran -copy none -progressive $1 > $2
+		jpegtran -copy none -progressive $1 &gt; $2
 	fi
  
 	output_file_size=$(stat -c%s "$2")
