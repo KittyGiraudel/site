@@ -1,7 +1,6 @@
 ---
 title: Optimizing images with Bash script
-preview: true
-comments: false
+comments: true
 layout: post
 ---
 <section>
@@ -13,9 +12,9 @@ layout: post
 <li>it's not quite simple to use it in an industrial process,</li>
 <li>it's always interesting to learn how those services work.</li>
 </ul>
+<blockquote class="pull-quote--right">Shell scripting is a powerful skill to improve development efficiency by automating common tasks.</blockquote>
 <p>But first, a simple warning: don't expect big optimizations. To have the best results, you have to decrease the image quality but it's better to do this manually than automatically. We are going to script simple operations that remove metadata and other losslessly informations.</p>
 <p>I'm working on Linux environment so this script will be a Bash script. Don't worry! I will start with an introduction to Bash scripting in a Windows environment.</p>
-<blockquote class="pull-quote--right">Shell scripting is a powerful skill to improve development efficiency by automating common tasks.</blockquote>
 <p>Bash is the GNU shell and the most common shell in Unix/Linux environment. A shell is a command-line interpreter allowing to access to all the functionalities of the OS. Shell scripting is a powerful skill to improve development efficiency by automating common tasks like building a project and deploying it.</p>
 </section>
 <section id="linux">
@@ -50,21 +49,21 @@ cd workspace</code></pre>
 </section>
 <section id="optimization">
 <h2>Optimizing an image with the command line <a href="#optimization">#</a></h2>
-<p>For each file, our script is going to run <em>optipng</em> and <em>pngcrush</em> for PNG files and <em>jpegtran</em> for JPG files. Let's make a first try with all of these tools starting with <em>optipng</em>:</p>
+<p>For each file, our script is going to run <em>optipng</em> and <em>pngcrush</em> for PNG files and <em>jpegtran</em> for JPG files. Before going any further and start writing the script, let's make a first try with all of these tools starting with <em>optipng</em>:</p>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__optipng.png" alt="" />
-<figcaption>PNG optimization with optipng</figcaption>
+<figcaption>PNG optimization with <a href="http://optipng.sourceforge.net/">optipng</a></figcaption>
 </figure>
 <p class="note">Note: the -o7 parameter force optipng to use the slowest mode. The fastest is -o0.</p>
 <p>Then <em>pngcrush</em>:</p>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__pngcrush.png" alt="" />
-<figcaption>PNG optimization with pngcrush</figcaption>
+<figcaption>PNG optimization with <a href="http://pmt.sourceforge.net/pngcrush/">pngcrush</a></figcaption>
 </figure>
 <p>And now a JPG optimization with <em>jpegtran</em>:</p>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__jpegtran.png" alt="" />
-<figcaption>JPG optimization with jpegtran</figcaption>
+<figcaption>JPG optimization with <a href="http://jpegclub.org/">jpegtran</a></figcaption>
 </figure>
 </section>
 <section id="script">
@@ -172,12 +171,14 @@ file_with_a_long_name ...... [ DONE ]
 <img src="/images/optimizing-with-bash__output-with-stats.png" alt="" />
 <figcaption>Outputing optimization stats</figcaption>
 </figure>
-<p>Keep it up guys, we are almost done! We just have to display progress output if the quiet mode is on.</p>
+<p>Keep it up guys, we are almost done! We just have to display progress output if the quiet mode is off.</p>
 <figure class="figure">
 <img src="/images/optimizing-with-bash__quiet-mode.png" alt="" />
 <figcaption>Quiet mode</figcaption>
 </figure>
-<h3>Final result</h3>
+</section>
+<section id="result">
+<h2>Final result <a href="#result">#</a></h2>
 <p>Below lies the final script or you can grab it directly from <a href="https://gist.github.com/lgiraudel/6065155">this GitHub gist</a>.</p>
 <pre><code class="language-bash">#!/bin/bash
  
@@ -354,7 +355,15 @@ main</code></pre>
 </section>
 <section id="what-now">
 <h2>What now ? <a href="#what-now">#</a></h2>
-<p>This is just a sample. Now you can improve it to add GIF support, use other tools to optimize JPG and PNG in the <code>optimize_image</code> method (by the way, I highly recommand you to read <a href="http://www.phpied.com/big-list-image-optimization-tools">this great article</a> by Stoyan Stefanov), add a progress bar, try to add some lossy optimizations for JPG, add an auto-upload function to upload to your FTP, use a configuration file to tweak the optimization tools, etc.</p>
+<p>Of course this is just a simple sample (no pun intended); there is still a lot of room for improvements. Here is a couple of things we could do to improve it:</p>
+<ul>
+<li>add GIF support,</li>
+<li>use other tools to optimize JPG and PNG in the <code>optimize_image</code> method (by the way, I highly recommand you to read <a href="http://www.phpied.com/big-list-image-optimization-tools">this great article</a> by Stoyan Stefanov),</li>
+<li>add a progress bar,</li>
+<li>try to add some lossy optimizations for JPG,</li>
+<li>add an auto-upload function to upload to your FTP,</li>
+<li>use a configuration file to tweak the optimization tools...</li>
+</ul>
 <blockquote class="quote">
 <img src="http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg" alt="Loic Giraudel" class="pull-image--left">
 <p>Loïc Giraudel works as a front-end developer at BestOfMedia (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: <a href="http://twitter.com/l_giraudel">@l_giraudel</a>.</p>
