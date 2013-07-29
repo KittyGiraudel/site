@@ -10,12 +10,12 @@
  * 4. Disable word hyphenation within code blocks
  * 5. Reduce font size on small screens
  */
-pre[class*="language-"] {
+pre {
 	margin-bottom: $space;
 	padding: .6em;
 	overflow-x: auto;       /* 1 */
 
-	background: #efefef;
+	background: #f5f2f0;
 	border: 1px solid #ddd;
 	border-radius: 3px;
 	
@@ -35,13 +35,8 @@ pre[class*="language-"] {
 	}
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code {
 	background: #f5f2f0;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
 }
