@@ -22,6 +22,7 @@ comments: false
 
 $length : 42em;
 $int    : strip-unit($length); // 42</code></pre>
+<p>There has been a request to include this function to Sass code but Chris Eppstein declined it. According to him, there is no good usecase for such a thing, and most of existing usages are bad understanding of how units work. So, no <code>strip-unit()</code> into Sass!</p>
 </section>
 <section id="clamp">
 <h2>Clamp a number <a href="#clamp">#</a></h2>
@@ -50,4 +51,20 @@ $int    : strip-unit($length); // 42</code></pre>
 <p>Now what's the point of this function? I guess that could be useful when you want to be sure the number you pass to a function is between two values, like a percentage for color functions.</p>
 <pre class="language-scss"><code>$value: percentage(clamp($value, 0, 100));
 $darkColor: darken($color, $value);</code></pre>
+</section>
+<section id="unit-conversion">
+<h2>Unit conversion <a href="#unit-conversion">#</a></h2>
+<p>This one is a function by Chris Eppstein himself in order to convert a unit into another one. This one converts units for angles but you could probably do this for anything fixed (px, in, cm, mm).</p>
+<pre class="language-scss"><code>@function convert-angle($value, $unit) {
+  $convertable-units: deg grad turn rad;
+  $conversion-factors: 1 10grad/9deg 1turn/360deg 3.1415926rad/180deg;
+  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+    @return $value
+             / nth($conversion-factors, index($convertable-units, unit($value)))
+             * nth($conversion-factors, index($convertable-units, $unit));
+  } @else {
+    @warn "Cannot convert #{unit($value)} to #{$unit}";
+  }
+}</code></pre>
+<p>Here is how it works: you give it a value and the unit you want to convert your value into (let's say <code>30grad</code> into <code>turn</code>). If both are recognized as valid units for the function, calculations are made to return the new value into the asked unit.</p>
 </section>
