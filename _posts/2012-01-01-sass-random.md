@@ -67,7 +67,7 @@ $number: rand(-1); /* Random between 1 and 9999999999999999 */
 </code></pre>
 </section>
 <section id="rand-v2">
-<h2>The clean way <a href="#rand-v2">#</a></h2>
+<h2>Random, the clean way <a href="#rand-v2">#</a></h2>
 <p>Okay, let's say it: the first version I came with is really dirty. That's why I reworked a new version from scratch with the help of <a href="https://twitter.com/l_giraudel">my brother</a>. We even tweaked it in order to make it <em>future-proof</em> for both implementations of the <code>unique-id()</code> function. How cool is that?</p> 
 <p>To put it simple, instead of stripping alpha characters, we take the alphanumeric string and convert it back into an integer. Then, we get a fully random integer we simply have to manipulate around min and max values.</p>
 <pre class="language-scss"><code>@function rand($min: 0, $max: 100) {
