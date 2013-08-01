@@ -129,4 +129,6 @@ $number: rand(-1); /* Random between 1 and 9999999999999999 */
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
+<p>That's pretty much it. As I said at the beginning of the article, I couldn't try this code since neither the <code>unique-id()</code> nor the string manipulation functions are currently implemented in the Sass 3.3 Alpha version. So this is pretty much blind coding here!</p>
+<p>If you think of anything that could improve this Sass random function, please be sure to tell. Meanwhile you can play with the code directly on <a href="http://codepen.io/HugoGiraudel/pen/ohscb">this pen</a>.</p>
 </section>
