@@ -68,3 +68,76 @@ $darkColor: darken($color, $value);</code></pre>
 }</code></pre>
 <p>Here is how it works: you give it a value and the unit you want to convert your value into (let's say <code>30grad</code> into <code>turn</code>). If both are recognized as valid units for the function, calculations are made to return the new value into the asked unit.</p>
 </section>
+<section id="import-once">
+<h2>Import once <a href="#import-once">#</a></h2>
+<p>When you are working on very big Sass projects, you sometimes wish there was a <code>@import-once</code> directive. As of today, if you import twice the same file, its content is outputed twice. Sounds legit, but still sucks.</p>
+<p>While we wait for Sass 4.0 which will bring the brand new <code>@import</code> (solving this issue), we can rely on this little function I found in an issue on Sass' GitHub repo.</p>
+<pre class="language-scss"><code>$imported-once-files: ();
+
+@function import-once($filename) {
+    @if index($imported-once-files, $filename) {
+        @return false;
+    }
+
+    $imported-once-files: append($imported-once-files, $filename);
+    @return true;
+}
+
+@if import-once("_SharedBaseStuff.scss") {
+    /* ...declare stuff that will only be imported once... */
+}</code></pre>
+<p>The idea is pretty simple: everytime you import a file, you store its name in a list (<code>$imported-once-files</code>). If its name is stored, then you can't import it a second time.</p>
+<p>It took me a couple of minutes to get the point of this stuff. Actually, this is how you should probably use it:</p>
+<pre class="language-scss"><code>/* _variables.scss */
+$imported-once-files: ();
+
+/* _functions.scss */
+@function import-once($filename) {
+    @if index($imported-once-files, $filename) {
+        @return false;
+    }
+
+    $imported-once-files: append($imported-once-files, $filename);
+    @return true;
+}
+
+/* styles.scss */
+@import "variables"; /* Sass stuff only */
+@import "functions"; /* Sass stuff only */
+@import "component";
+
+/* _component.scss */
+@if import-once('component') {
+  .element {
+    /* ... */
+  }
+}</code></pre>
+<p>Now if you add another <code>@import "component"</code> in <code>styles.scss</code>, since the whole content of <code>_cmponent.scss</code> is wrapped in a conditional statement calling the function, its content won't be outputed a second time. Clever.</p>
+<p>You probably wonder why we couldn't do something like this:</p>
+<pre class="language-scss"><code>/* styles.scss - this doesn't work */
+@if import-once('component') {
+  @import "component";
+}</code></pre>
+<p>Unfortunately, we cannot import a file in a conditional statement, <a href="https://github.com/nex3/sass/issues/451">this just don't work</a>. Here is the reason by Chris Eppstein:</p>
+<blockquote class="quote"><p>It was never intended that <code>@import</code> would work in a conditional context, this makes it impossible for us to build a dependency tree for recompilation without fully executing the file -- which would be simply terrible for performance.</p></blockquote>
+</section>
+<section id="mapping">
+<h2>Mapping with nested lists <a href="#mapping">#</a></h2>
+<p>Sass 3.3 will introduce <em>maps</em> which are very close to what we often call <em>associative arrays</em>. The point is to have a list of key:value pairs. It is already possible to emulate some kind of map workaround with nested Sass lists.</p>
+<p>Let's have a look at the following list <code>$list: a b, c d, e f;</code>. <code>a</code> is kind of mapped of to <code>b</code>, <code>c</code> to <code>d</code>, and so on. Now what if you want to retreive <code>b</code> from <code>a</code> (the value from the key) or even <code>a</code> from <code>b</code> (the key from the value, which is less frequent)? This is where our function is coming on stage.</p>
+<pre class="language-scss"><code>@function match($haystack, $needle) {
+  @each $item in $haystack {
+    $index: index($item, $needle);
+    @if $index { 
+      $return: if($index == 1, 2, $index);
+      @return nth($item, $return); 
+    }
+  }
+  @return false;
+}</code></pre>
+<p>Basically, the function loops through the pairs; if <code>$needle</code> you gave is found, it then, checks if it has been found as the key or the value, and return the other. So with our last example:</p>
+<pre class="language-scss"><code>$list: a b, c d, e f;
+$value: match(e); /* returns f */
+$value: match(b); /* returns a */
+$value: match(z); /* returns false */</code></pre>
+</section>
