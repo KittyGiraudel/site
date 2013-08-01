@@ -28,7 +28,7 @@ u86fb16af4800d46b</code></pre>
 <p>To put it very simple, the function randoms a 19-digits number, convert it to base 16, then append it a <code>u</code>. So when we use <code>unique-id()</code>, we end up with something like this: <code>u8547f4133644af4c</code>.</p>
 </section>
 <section id="rand-v1">
-<h2>Rand() v1 (dirty) <a href="#rand-v1">#</a></h2>
+<h2>The dirty way <a href="#rand-v1">#</a></h2>
 <p>My first attempt to get a random number from this string was to remove all alpha characters from it, then keep only the number of digits we want (or we still have). To do this, I used the incoming string manipulation functions (<code>str-length()</code>, <code>str-slice()</code>, <code>str-insert()</code>):</p>
 <pre class="language-scss"><code>@function rand($digits: 16) {
     /* Array of characters to remove */
@@ -57,8 +57,7 @@ u86fb16af4800d46b</code></pre>
 }</code></pre>
 <p>I think the code is pretty much self-explanatory. I check each character individually: if it's not a letter, I append it to the <code>$result</code> variable. When I'm done, if the length of <code>$result</code> is still greater than the number of digits we asked for (<code>$digits</code>) we truncate it.</p>
 <p>And there we have a random number between 1 and 9999999999999999 (in case the 16 characters are 9).</p>
-<pre class="language-scss"><code>
-$number: rand();   /* Random between 1 and 9999999999999999 */
+<pre class="language-scss"><code>$number: rand();   /* Random between 1 and 9999999999999999 */
 $number: rand(1);  /* Random between 1 and 9 */
 $number: rand(4);  /* Random between 1 and 9999 */
 $number: rand(0);  /* Random between 1 and 9999999999999999 */
@@ -66,17 +65,17 @@ $number: rand(-1); /* Random between 1 and 9999999999999999 */
 </code></pre>
 </section>
 <section id="rand-v2">
-<h2>Rand() v2 (clean) <a href="#rand-v2">#</a></h2>
+<h2>The clean way <a href="#rand-v2">#</a></h2>
 <p>Okay, let's say it: the first version I came with is really dirty. That's why I reworked a new version from scratch with the help of <a href="https://twitter.com/l_giraudel">my brother</a>. We even tweaked it in order to make it <em>future-proof</em> for both implementations of the <code>unique-id()</code> function. How cool is that?</p> 
 <p>To put it simple, instead of stripping alpha characters, we take the alphanumeric string and convert it back into an integer. Then, we have a fully random integer we simply have to manipulate around min and max values.</p>
 <pre class="language-scss"><code>@function rand($min: 0, $max: 100) {
-  $str : str-slice(unique-id(), 2); /* Get unique-id() like this u85fc92d97fdea7bd */
+  $str : str-slice(unique-id(), 2); /* Something like u85fc92d97fdea7bd */
   $res : toInt($str, 16);
   @return ($res % ($max - $min)) + $min;
 }</code></pre>
 <p>The first line in the function core is the <code>unique-id()</code> function call. We immediately pass it into the <code>str-slice()</code> function to remove the very first character which is always a <code>u</code>.</p>
-<p class="note">According to my tests, the min value used in <code>unique-id()</code> both implementations is such that the second character of the returned string is always the same (<code>8</code>in base 16, <code>1</code> in base 36). Thus, we may need to strip it too like this: <code>str-slice(unique-id(), 3)</code>.</p>
-<p>The second line calls a <code>toInt()</code> function, passing it both the string and the base we want to convert the string from (not to). This is why I say we're ready for both implementations: we only have to change this <code>16</code> to <code>36</code>.</p>
+<p class="note">According to my tests, the min value used in both implementations of <code>unique-id()</code> is such that the second character of the returned string is always the same (<code>8</code> in base 16, <code>1</code> in base 36). Thus we may need to strip it too, like this <code>str-slice(unique-id(), 3)</code>.</p>
+<p>The second line calls a <code>toInt()</code> function, passing it both the string (<code>$str</code>) and the base we want to convert the string from (not to). This is why I say we're ready for both implementations: we only have to change this <code>16</code> to <code>36</code> and everything should work like a charm.</p>
 <p>Before going to the last line, let's have a look at the <code>toInt</code> function:</p>
 <pre class="language-scss"><code>@function toInt($str, $base: 10) {
   $res   : 0;
@@ -93,8 +92,17 @@ $number: rand(-1); /* Random between 1 and 9999999999999999 */
   @return false;
 }</code></pre>
 <p><code>$res</code> will store the result we will return once we're done. <code>$chars</code> return the array of characters used by base <code>$base</code>; we'll see this function right after. Then, if the base is supported we loop through each characters of the string.</p>
-<p>For every character, we isolate it and convert it to its numeric equivalent thanks to the <code>$chars</code> array. Then, we multiply this number to the base elevated to the reversed index in the string. That may sound a little complicated, let me rephrase it: in base 10, <code>426</code> equals <code>4*10^2</code> + <code>2*10^1</code> + <code>6*10^0</code>. That's pretty much what we do here, except instead of <code>10</code> we use the base, and instead of <code>2</code>, <code>1</code> and <code>0</code>, we use the length of string minus the index of the current character.</p>
-<p>And of course, we add this to the result. Once we're done with the string, we return the result to the <code>rand()</code> function. Then, we simply return <code>($res % ($max - $min)) + $min</code> to the user resulting in a random number between min and max values.</p>
+<p>For every character, we isolate it (<code>$char</code>) and convert it to its numeric equivalent (<code>$charVal</code>) thanks to the <code>$chars</code> array. Then, we multiply this number to the base elevated to the reversed index in the string. That may sound a little complicated, let me rephrase it: in base 10, <code>426</code> equals <code>4*10^2</code> + <code>2*10^1</code> + <code>6*10^0</code>. That's pretty much what we do here, except instead of <code>10</code> we use the base, and instead of <code>2</code>, <code>1</code> and <code>0</code>, we use the length of string minus the index of the current character.</p>
+<p><code>pow()</code> is part of <a href="http://compass-style.org/reference/compass/helpers/math/">Compass Math helpers</a>. In case you don't want to use Compass or simply can't use Compass, here is the <code>pow()</code> function in pure Sass:</p>
+<pre class="language-scss"><code>@function pow($val, $pow) {
+  $res: 1;
+  @while($pow > 0) {
+    $res: $res * $val;
+    $pow: $pow - 1;
+  }
+  @return $res;
+}</code></pre>
+<p>And of course, we add this to the result (<code>$res</code>). Once we're done with the string, we return the result to the <code>rand()</code> function. Then, we simply return <code>($res % ($max - $min)) + $min</code> to the user resulting in a random number between min and max values.</p>
 <p>Regarding the <code>charsFromBase()</code> function, here is what it looks like:</p>
 <pre class="language-scss"><code>@function charsFromBase($base: 10) {
   /* Binary */
