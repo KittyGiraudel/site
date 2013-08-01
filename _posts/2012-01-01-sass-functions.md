@@ -88,7 +88,7 @@ $darkColor: darken($color, $value);</code></pre>
 }</code></pre>
 <p>The idea is pretty simple: everytime you import a file, you store its name in a list (<code>$imported-once-files</code>). If its name is stored, then you can't import it a second time.</p>
 <p>It took me a couple of minutes to get the point of this stuff. Actually, this is how you should probably use it:</p>
-<pre class="language-scss"><code>/* _variables.scss */
+<pre class="language-scss line-numbers"><code>/* _variables.scss */
 $imported-once-files: ();
 
 /* _functions.scss */
@@ -141,4 +141,8 @@ $imported-once-files: ();
 $value: match(e); /* returns f */
 $value: match(b); /* returns a */
 $value: match(z); /* returns false */</code></pre>
+</section>
+<section id="final-words">
+<h2>Final words <a href="#final-words">#</a></h2>
+<p>That's all I got folk. Do you have any cool Sass functions you sometimes use, or even made just for the sake of it?</p>
 </section>
