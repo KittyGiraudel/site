@@ -88,7 +88,7 @@ $darkColor: darken($color, $value);</code></pre>
 }</code></pre>
 <p>The idea is pretty simple: everytime you import a file, you store its name in a list (<code>$imported-once-files</code>). If its name is stored, then you can't import it a second time.</p>
 <p>It took me a couple of minutes to get the point of this stuff. Actually, this is how you should probably use it:</p>
-<pre class="language-scss line-numbers"><code>/* _variables.scss */
+<pre class="language-scss"><code>/* _variables.scss */
 $imported-once-files: ();
 
 /* _functions.scss */
