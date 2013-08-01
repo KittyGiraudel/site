@@ -113,6 +113,7 @@ $imported-once-files: ();
   }
 }</code></pre>
 <p>Now if you add another <code>@import "component"</code> in <code>styles.scss</code>, since the whole content of <code>_cmponent.scss</code> is wrapped in a conditional statement calling the function, its content won't be outputed a second time. Clever.</p>
+<blockquote class="pull-quote--right">We cannot import a file in a conditional statement.</blockquote>
 <p>You probably wonder why we couldn't do something like this:</p>
 <pre class="language-scss"><code>/* styles.scss - this doesn't work */
 @if import-once('component') {
