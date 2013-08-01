@@ -119,3 +119,6 @@ $number: rand(-1); /* Random between 1 and 9999999999999999 */
 }</code></pre>
 <p>I only added most common standard bases (binary, octal, decimal, hexadecimal, 36, 64) but I guess we could probably add a couple of others. Actually this is already too much since we know the <code>unique-id()</code> function will return a base16 or base36 encoded string (depending on the implementation they'll keep).</p>
 </section>
+<section id="final-words">
+<h2>Final words <a href="#final-words">#</a></h2>
+</section>
