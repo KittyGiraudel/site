@@ -138,9 +138,9 @@ $imported-once-files: ();
 }</code></pre>
 <p>Basically, the function loops through the pairs; if <code>$needle</code> you gave is found, it then, checks if it has been found as the key or the value, and return the other. So with our last example:</p>
 <pre class="language-scss"><code>$list: a b, c d, e f;
-$value: match(e); /* returns f */
-$value: match(b); /* returns a */
-$value: match(z); /* returns false */</code></pre>
+$value: match($list, e); /* returns f */
+$value: match($list, b); /* returns a */
+$value: match($list, z); /* returns false */</code></pre>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
