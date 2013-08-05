@@ -116,8 +116,57 @@ $list: remove($list, z); // a, b, c, d, e, f</code></pre>
 </section>
 <section id="remove-at">
 <h2>Removing value at index n <a href="#remove-at">#</a></h2>
+<p>We only miss the ability to remove a value at a specific index.</p>
+<pre class="language-scss"><code>$list: a, b, z, c, d, e, f;
+$list: remove-at($list, 3); // a, b, c, d, e, f</code></pre>
+<p>This is a very easy function actually.</p>
+<pre class="language-scss"><code>@function remove-at($haystack, $needle) {
+	$new: ();
+	@for $i from 1 through length($haystack) {
+		@if $i != $needle {
+			$new: append($new, nth($haystack, $i));
+		}
+	}
+	@return $new;
+}</code></pre>
+<p>We break down the list (<code>$haystack</code>) to build up the new one, appending all the items except the one that was on the index we want to delete (<code>$needle</code>).</p>
 </section>
 <section id="slice">
 <h2>Slicing a list <a href="#slice">#</a></h2>
+<p>To complete out series of function, what if we could slice a list between two indexes to get only the part we want?</p>
+<pre class="language-scss"><code>$list: a, b, c, d, e, f;
+$list: slice($list, 3, 5); // c, d, e</code></pre>
+<p>The tricky thing with this function is we have to make sure both index do not conflict each other, are in range, and so on. Let's deal with this:</p>
+<pre class="language-scss"><code>@function slice($haystack, $start: 1, $end: length($haystack)) {
+	$new: ();
+	$start: if($start <= 0, 1, if($start > length($haystack), length($haystack), $start));
+	$end: if($end > length($haystack), length($haystack), if($end < $start, $start, $end));
+
+	@for $i from $start through $end {
+		$new: append($new, nth($haystack, $i));
+	}
+	@return $new;
+}</code></pre>
+<p>We make both <code>$start</code> and <code>$end</code> optional: if they are not specified, we go from the first index (<code>1</code>) to the last one (<code>length($haystack)</code>).</p>
+<p>Then we do our verifications. Let's start with, well, <code>$start</code>:</p>
+<ul>
+<li>If <code>$start <= 0</code>, we set it to the first index in the list (<code>1</code>)</li>
+<li>Else if <code>$start > 0</code>, we compare it to the length of the list (<code>length($haystack)</code>)
+<ul>
+<li>If it is greater than the length of the list, we set it to the length of the list</li>
+<li>Else if it is lesser or equals to the length of the list, we leave it to its current value</li>
+</ul>
+<p>Now, we do almost the same thing for <code>$end</code>:</p>
+<ul>
+<li>If <code>$end > length($haystack)</code>, we set it to the length of the list</li>
+<li>Else if <code>$end <= length($haystack)</code>, we compare it to <code>$start</code>
+<ul>
+<li>If it is lesser than <code>$start</code>, we set it to the same value as <code>$start</code></li>
+<li>If it is greater than or equals to <code>$start</code>, we leave it to its current value</li>
+</ul>
+<p>And now we're sure our values are okay, we can loop through lists values from <code>$start</code> to <code>$end</code>, building up a new list from those.</p>
 </section>
+<section id="final-words">
+<h2>Final words <a href="#final-words">#</a></h2>
+<p>I guess that's all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with <a href="http://codepen.io/HugoGiraudel/pen/loAgq">this pen</a>.</p>
 </section>
