@@ -1,8 +1,7 @@
 ---
 title: Sass mixin for offsets
 layout: post
-preview: true
-comments: false
+comments: true
 ---
 <section>
 <p>Over the last months, I have seen a ton of mixins to handle offsets when dealing with absolute / fixed / relative positioning. I also made a lot of them myself. And in the end, none of them really suited me. Either they were far too long or complicated, or the calling didn't feel right to me.</p>
@@ -27,9 +26,9 @@ comments: false
 	left: 1em;
 	top: 1.5em;
 }</code></pre>
-<p>Unfortunately, we cannot do something like this in Sass and won't probably ever be able to do so since we have no way to define custom property. So let's try to do something close.</p>
+<p>Unfortunately, we cannot do something like this in Sass and won't probably ever be able to do so since we have no way to define custom properties. So let's try to do something close.</p>
 <h3>The skeleton</h3>
-<p>First, we will build the skeleton for our mixin. We seem to want to call our mixin with the keyword <code>absolute</code> so why not calling it <em>absolute</em>? And we pass it a list.</p>
+<p>First, we will build the skeleton for our mixin. We seem to want to call our mixin with the keyword <em>absolute</em> so why not calling it <code>absolute</code>? And we pass it a list.</p>
 <pre class="language-scss"><code>@mixin absolute($args) {
 	/* Mixin stuff here */
 }</code></pre>
@@ -101,7 +100,7 @@ comments: false
 <section id="positions">
 <h2> Dealing with other position types <a href="#positions"></a></h2>
 <p>We now have to deal with <code>relative</code> and <code>fixed</code>. I guess we could duplicate the whole mixin 3 times and simple rename it but would it be the best solution? Definitely not.</p>
-<p>Why don't we create a "private mixin" instead? Something that isn't meant to be called and only helps us for our internal stuff. To do so, I renamed the mixin <code>position()</code> and overloaded it with another argument: the position type.</p>
+<p>Why don't we create a <em>private mixin</em> instead? Something that isn't meant to be called and only helps us for our internal stuff. To do so, I renamed the mixin <code>position()</code> and overloaded it with another argument: the position type.</p>
 <p class="note">Note: you might want to rename it differently to avoid conflict with other mixins of your project. Indeed "position" is a quite common keyword.</p>
 <pre class="language-scss"><code>@mixin position($position, $args) {
 	/* Stuff we saw before */
