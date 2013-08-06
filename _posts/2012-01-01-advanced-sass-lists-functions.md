@@ -3,6 +3,7 @@ title: Advanced Sass lists functions
 layout: post
 preview: true
 comments: false
+summary: true
 ---
 <section>
 <p>A couple of weeks ago, I wrote a small guide to <a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/">understand Sass lists</a>. I hope you've read it and learnt things from it!</p>
@@ -14,7 +15,7 @@ comments: false
 <p>Let's start with something very simple: two small functions to target first and last elements of a list. I don't know for you, but I don't really like doing <code>nth($list, length($list))</code>. I'd rather do <code>last($list)</code>.</p>
 <pre class="language-scss"><code>$list: a, b, c, d, e, f;
 $first: first($list); // a
-$last: last($list); // f</code></pre>
+$last: last($list);   // f</code></pre>
 <p>Nice, isn't it? Of course these functions are ridiculously simple to write:</p>
 <pre class="language-scss"><code>@function first($list) {
   @return nth($list, 1);
@@ -27,7 +28,7 @@ $last: last($list); // f</code></pre>
 <h3>Last index of value <code>x</code></h3>
 <p>Sass already provides a <code>index()</code> function to retreive the index of a given value in a list. It works well but what if the value is present several times in the list? <code>index()</code> returns the first index.</p>
 <p>Good. Now what if we want the last one?</p>
-<pre class="language-scss"><code>$list: a, b, c, d, e, a, f;
+<pre class="language-scss"><code>$list: a, b, c, d z, e, a, f;
 $first-index: index($list, a); // 1
 $last-index: last-index($list, a); // 6
 $last-index: last-index($list, z); // null</code></pre>
@@ -71,7 +72,8 @@ $last-index: last-index($list, z); // null</code></pre>
 <h3>Prepending value to list</h3>
 <p>You already know Sass comes with a built-in function to add values to a list called <code>append()</code>. While it does the job most of the time, there are cases where you need to add new values at the beginning of the list instead of the end. Thus a new <code>prepend()</code> method.</p>
 <pre class="language-scss"><code>$list: b, c, d, e, f;
-$list: prepend($list, a); // a, b, c, d, e, f</code></pre>
+$list: prepend($list, a); // a, b, c, d, e, f
+$list: prepend($list, now i know my a); // now, i, know, my, a, b, c, d, e, f</code></pre>
 <p>As you can see, the signature is the same as the one for the <code>append()</code> function. Now, let's open the beast; you'll be surprised how simple this is:</p>
 <pre class="language-scss"><code>@function prepend($list, $value) {
 	@return join($value, $list);
@@ -113,10 +115,10 @@ $list: insert-at($list, 100, z); // a, b, d, e, z</code></pre>
 </section>
 <section id="replacing">
 <h2>Replacing values from list <a href="#replacing">#</a></h2>
-<p>We're good with adding new values to a list. Now what if we want to change values from a list? Like changing all occurences of <code>a</code> into <code>z</code>? Or changing the value at index <code>n</code>? Sass provides nothing for this, so let's do it ourself!</p>
+<p>We're good with adding new values to a list. Now what if we want to change values from a list? Like changing all occurences of <code>a</code> into <code>z</code>? Or changing the value at index <code>n</code>? Sass provides nothing native for this, so let's do it ourself!</p>
 <h3>Replacing value <code>x</code></h3>
 <pre class="language-scss"><code>$list: a, b, r, a, c a, d a, b, r, a;
-$list: replace($list, a, u); // u, b, r, u, c a, d a, b, r, u;
+$list: replace($list, a, u);       // u, b, r, u, c a, d a, b, r, u;
 $list: replace($list, a, u, true); // u, b, r, u, c u, d u, b, r, u;</code></pre>
 <p>As you can see, the function also deals with nested lists if you pass the 4th optional argument to <code>true</code>. At index 5 and 6, we have 2 nested lists where <code>a</code> has been replaced by <code>u</code> in the second example.</p>
 <pre class="language-scss"><code>@function replace($list, $old-value, $new-value, $recursive: false) {
@@ -145,7 +147,7 @@ $list: replace($list, a, u, true); // u, b, r, u, c u, d u, b, r, u;</code></pre
 <li>If it is and <code>$recursive</code> is set to <code>true</code>, we call the <code>replace()</code> function again on the nested list (recursive style!).</li>
 <li>Else, we check if the element is strictly the same as the value we want to replace (<code>$old-value</code>).
 <ul>
-<li>If it is, we append the new value (<code>$new-value</code>).</li>
+<li>If it is, we append <code>$new-value</code>.</li>
 <li>Else we append the initial value.</li>
 </ul>
 </li>
@@ -154,7 +156,8 @@ $list: replace($list, a, u, true); // u, b, r, u, c u, d u, b, r, u;</code></pre
 <h3>Replacing value at index <code>n</code></h3>
 <p>Now if we want to replace a value at a specific index, it's a lot simpler.</p>
 <pre class="language-scss"><code>$list: a, b, z, d, e, f;
-$list: replace-at($list, 3, c); // a, b, c, d, e, f</code></pre>
+$list: replace-at($list, 3, c); // a, b, c, d, e, f
+$list: replace-at($list, -1, c); // error</code></pre>
 <p>As you can imagine, it works almost the same as the <code>insert-at()</code> function.</p>
 <pre class="language-scss"><code>@function replace-at($list, $index, $value) {
   $result: ();
@@ -178,10 +181,10 @@ $list: replace-at($list, 3, c); // a, b, c, d, e, f</code></pre>
 </section>
 <section id="removing">
 <h2>Removing values from list <a href="#removing">#</a></h2>
-<p>Hey, it's getting pretty cool. We can add values to list pretty much wherever we want. We can replace any value within a list. All we have left is to be able to remove values from list.</p>
+<p>Hey, it's getting pretty cool. We can add values to list pretty much wherever we want. We can replace any value within a list. All we have left is to be able to remove values from lists.</p>
 <h3>Removing values <code>x</code></h3>
 <pre class="language-scss"><code>$list: a, b z, c, z, d, z, e, f;
-$list: remove($list, z); // a, b z, c, d, e, f;
+$list: remove($list, z);       // a, b z, c, d, e, f;
 $list: remove($list, z, true); // a, b, c, d, e, f</code></pre>
 <p>Same as for the <code>replace()</code> function, it can be recursive so it works on nested lists as well.</p>
 <pre class="language-scss"><code>@function remove($list, $value, $recursive: false) {
@@ -203,7 +206,8 @@ $list: remove($list, z, true); // a, b, c, d, e, f</code></pre>
 <h3>Removing value at index <code>n</code></h3>
 <p>We only miss the ability to remove a value at a specific index.</p>
 <pre class="language-scss"><code>$list: a, b, z, c, d, e, f;
-$list: remove-at($list, 3); // a, b, c, d, e, f</code></pre>
+$list: remove-at($list, 3); // a, b, c, d, e, f
+$list: remove-at($list, -1); // error</code></pre>
 <p>This is a very easy function actually.</p>
 <pre class="language-scss"><code>@function remove-at($list, $index) {
   $result: ();
@@ -228,11 +232,17 @@ $list: remove-at($list, 3); // a, b, c, d, e, f</code></pre>
 <h3>Slicing a list</h3>
 <pre class="language-scss"><code>$list: a, b, c, d, e, f;
 $list: slice($list, 3, 5); // c, d, e</code></pre>
-<p>The tricky thing with this function is we have to make sure both index do not conflict each other, are in range, and so on. Let's deal with this:</p>
+<p>The tricky thing with this function is we have to make sure both index do not conflict with each other, are in range, and so on. Let's deal with this:</p>
 <pre class="language-scss"><code>@function slice($list, $start: 1, $end: length($list)) {
   $result: ();
-  $start: if($start <= 0, 1, if($start > length($list), length($list), $start));
-  $end: if($end > length($list), length($list), if($end < $start, $start, $end));
+  $start: if($start <= 0, 
+              1, 
+              if($start > length($list), length($list), $start)
+            );
+  $end: if($end > length($list), 
+              length($list), 
+              if($end < $start, $start, $end)
+            );
 
   @for $i from $start through $end {
      $result: append($result, nth($list, $i));
@@ -265,7 +275,7 @@ $list: slice($list, 3, 5); // c, d, e</code></pre>
 <h3>Reverse a list</h3>
 <p>Let's make a small function to reverse the order of elements within a list so the last index becomes the first, and the first the last.</p>
 <pre class="language-scss"><code>$list: a, b, c d e, f, g, h;
-$list: reverse($list); // h, g, f, c d e, b, a
+$list: reverse($list);       // h, g, f, c d e, b, a
 $list: reverse($list, true); // h, g, f, e d c, b, a</code></pre>
 <p>As you can see, by default the function do not reverse nested lists. As always, you can force this behaviour by setting the <code>$recursive</code> parameter to <code>true</code>.</p>
 <pre class="language-scss"><code>@function reverse($list, $recursive: false) {
@@ -285,10 +295,9 @@ $list: reverse($list, true); // h, g, f, e d c, b, a</code></pre>
 }</code></pre>
 <p>As we saw earlier, <code>@for</code> loops can't decrement so we use the negative indexes workaround to make it work. Quite easy to do in the end. </p>
 <h3>Convert a list into a string</h3>
-<p>Let's finish with a function I had a hard time to name. I first wanted to call it <code>join()</code> like in JavaScript but there is already one. I then thought about <code>implode()</code> and <code>to-string()</code>. I went with the latter. It is a function converting an array into a string, with the ability to use a string to join elements with each others.</p>
+<p>Let's finish with a function I had a hard time to name. I first wanted to call it <code>join()</code> like in JavaScript but there is already one. I then thought about <code>implode()</code> and <code>to-string()</code>. I went with the latter. The point of this function is to convert an array into a string, with the ability to use a string to join elements with each others.</p>
 <pre class="language-scss"><code>$list: a, b, c d e, f, g, h;
-$list: to-string($list); // abcdefgh
-$list: to-string($list, ''); // abcdefgh
+$list: to-string($list);      // abcdefgh
 $list: to-string($list, '-'); // a-b-c-d-e-f-g-h</code></pre>
 <p>The core of the function is slightly more complicated than others because there is a need of a strictly internal boolean to make it work. Before I explain any further, please have a look at the code.</p>
 <pre class="language-scss"><code>@function to-string($list, $glue: '', $is-nested: false) {
@@ -308,11 +317,12 @@ $list: to-string($list, '-'); // a-b-c-d-e-f-g-h</code></pre>
 
   @return $result;
 }</code></pre>
-<p>Recursivity is implied here; it would make no sense not to join elements from inner lists so you have no power over this: it is recursive. Now, my very first draft returned something like this <code>a-b-c-d-e-f-g-h-</code>. With an extra hyphen at the end.</p>
-<p>I then added a condition to check whether it is the last element of the list. If it is, we don't add the <code>$glue</code>. It moved the issue to nested lists; I had: <code>a-b-c-d-ef-g-h</code>. Because the check was also made in inner lists, resulting in no glue after the last element of inner lists.</p>
+<p class="note">Note: recursivity is implied here. It would make no sense not to join elements from inner lists so you have no power over this: it is recursive.</p>
+<p>Now, my very first draft returned something like this <code>a-b-c-d-e-f-g-h-</code>. With an extra hyphen at the end.</p>
+<p>In a foolish attempt to fix this, I added a condition to check whether it is the last element of the list. If it is, we don't add the <code>$glue</code>. Unfortunately, it only moved the issue to nested lists. Then I had <code>a-b-c-d-ef-g-h</code> because the check was also made in inner lists, resulting in no glue after the last element of inner lists.</p>
 <p>That's why I had to add an extra argument to the function signature to differenciate the upper level from the nested ones. It is not very elegant but this is the only option I found. If you think of something else, be sure to tell.</p>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
-<p>I guess that's all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with <a href="http://codepen.io/HugoGiraudel/pen/loAgq">this pen</a>.</p>
+<p>I guess that's all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with <a href="http://codepen.io/HugoGiraudel/pen/loAgq">this pen</a> or contribute to <a href="https://github.com/HugoGiraudel/Sass-snippets/blob/master/list-functions/_all.scss">this repo</a>.</p>
 </section>
