@@ -1,5 +1,5 @@
 ---
-title: Advanced Sass lists functions
+title: Advanced Sass list functions
 layout: post
 preview: true
 comments: false
