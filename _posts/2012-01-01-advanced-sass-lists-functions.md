@@ -86,7 +86,7 @@ $list: prepend($list, now i know my a); // now, i, know, my, a, b, c, d, e, f</c
 $list: insert-at($list, 3, c);   // a, b, c, d, e, f
 $list: insert-at($list, -1, z);  // error
 $list: insert-at($list, 0, z);   // error
-$list: insert-at($list, 100, z); // a, b, d, e, z</code></pre>
+$list: insert-at($list, 100, z); // error</code></pre>
 <p>Now let's have a look at the function core:</p>
 <pre class="language-scss"><code>@function insert-at($list, $index, $value) {
   $result: ();
@@ -96,7 +96,7 @@ $list: insert-at($list, 100, z); // a, b, d, e, z</code></pre>
   }
 
   @else if $index > length($list) {
-    $result: append($list, $value);
+    @warn "The index has to be within list range.";
   }
 
   @else {
@@ -104,14 +104,15 @@ $list: insert-at($list, 100, z); // a, b, d, e, z</code></pre>
       @if $i == $index {
         $result: append($result, $value);
       }
+
       $result: append($result, nth($list, $i));
     }
   }
 
   @return $result;
 }</code></pre>
-<p>Here is what happens: we first make some verifications on <code>$index</code>. If it is strictly lesser than 1, we throw an error. If <code>$index</code> is greater than the length of the list, we simply append the new value to the list (discutable behaviour, I admit).</p>
-<p> In any other case, we build a new list based on the one we pass to the function (<code>$list</code>). When we get to the <code>$index</code> passed to the function, we simply append the new <code>$value</code>.</p>
+<p>Here is what happens: we first make some verifications on <code>$index</code>. If it is strictly lesser than 1 or greater than the length of the list, we throw an error.</p>
+<p>In any other case, we build a new list based on the one we pass to the function (<code>$list</code>). When we get to the <code>$index</code> passed to the function, we simply append the new <code>$value</code>.</p>
 </section>
 <section id="replacing">
 <h2>Replacing values from list <a href="#replacing">#</a></h2>
@@ -156,8 +157,10 @@ $list: replace($list, a, u, true); // u, b, r, u, c u, d u, b, r, u;</code></pre
 <h3>Replacing value at index <code>n</code></h3>
 <p>Now if we want to replace a value at a specific index, it's a lot simpler.</p>
 <pre class="language-scss"><code>$list: a, b, z, d, e, f;
-$list: replace-at($list, 3, c); // a, b, c, d, e, f
-$list: replace-at($list, -1, c); // error</code></pre>
+$list: replace-at($list, 3, c);  // a, b, c, d, e, f
+$list: replace-at($list, 0, c);  // error
+$list: replace-at($list, -1, c); // error
+$list: replace-at($list, 100, c); // error</code></pre>
 <p>As you can imagine, it works almost the same as the <code>insert-at()</code> function.</p>
 <pre class="language-scss"><code>@function replace-at($list, $index, $value) {
   $result: ();
@@ -166,18 +169,24 @@ $list: replace-at($list, -1, c); // error</code></pre>
     @warn "The index has to be a positive integer.";
   }
 
-  @for $i from 1 through length($list) {
-    @if $i == $index {
-      $result: append($result, $value);
-    }
-    @else {
-      $result: append($result, nth($list, $i));
-    }
+  @else if $index > length($list) {
+    @warn "The index has to be within list range.";
   }
 
+  @else {
+    @for $i from 1 through length($list) {
+      @if $i == $index {
+        $result: append($result, $value);
+      }
+
+      @else {
+        $result: append($result, nth($list, $i));
+      }
+    }
+  }
   @return $result;
 }</code></pre>
-<p>I think the code is kind of self explanatory: we loop through the values of the <code>$list</code> and if the current index (<code>$i</code>) is stricly equivalent to the index at which we want to replace the value (<code>$index</code>) we replace the value. Else, we simply append the initial value.</p> 
+<p>I think the code is kind of self explanatory: we check for errors then loop through the values of the <code>$list</code> and if the current index (<code>$i</code>) is stricly equivalent to the index at which we want to replace the value (<code>$index</code>) we replace the value. Else, we simply append the initial value.</p> 
 </section>
 <section id="removing">
 <h2>Removing values from list <a href="#removing">#</a></h2>
@@ -206,18 +215,28 @@ $list: remove($list, z, true); // a, b, c, d, e, f</code></pre>
 <h3>Removing value at index <code>n</code></h3>
 <p>We only miss the ability to remove a value at a specific index.</p>
 <pre class="language-scss"><code>$list: a, b, z, c, d, e, f;
-$list: remove-at($list, 3); // a, b, c, d, e, f
-$list: remove-at($list, -1); // error</code></pre>
+$list: remove-at($list, 3);   // a, b, c, d, e, f
+$list: remove-at($list, 0);   // error
+$list: remove-at($list, -1);  // error
+$list: remove-at($list, 100); // error</code></pre>
 <p>This is a very easy function actually.</p>
-<pre class="language-scss"><code>@function remove-at($list, $index) {
+<pre class="language-scss"><code>@function slice($list, $start: 1, $end: length($list)) {
   $result: ();
 
-  @if $index < 1 {
-    @warn "The index has to be a positive integer.";
+  @if $start > $end {
+    @warn "The start index has to be lesser than or equals to the end index.";
   }
 
-  @for $i from 1 through length($list) {
-    @if $i != $index {
+  @else if $start < 1 or $end < 1 {
+    @warn "The indexes have to be positive integers.";
+  }
+
+  @else if $start > length($list) or $end > length($list) {
+    @warn "The index has to be within list range.";
+  }
+  
+  @else {
+    @for $i from $start through $end {
       $result: append($result, nth($list, $i));
     }
   }
@@ -232,45 +251,32 @@ $list: remove-at($list, -1); // error</code></pre>
 <h3>Slicing a list</h3>
 <pre class="language-scss"><code>$list: a, b, c, d, e, f;
 $list: slice($list, 3, 5); // c, d, e</code></pre>
-<p>The tricky thing with this function is we have to make sure both index do not conflict with each other, are in range, and so on. Let's deal with this:</p>
+<p>In the first draft I made of this function, I edited <code>$start</code> and <code>$end</code> value so they don't conflict with each other. In the end, I went with the safe mode: display error messages if anything seems wrong.</p>
 <pre class="language-scss"><code>@function slice($list, $start: 1, $end: length($list)) {
   $result: ();
-  $start: if($start <= 0, 
-              1, 
-              if($start > length($list), length($list), $start)
-            );
-  $end: if($end > length($list), 
-              length($list), 
-              if($end < $start, $start, $end)
-            );
 
-  @for $i from $start through $end {
-     $result: append($result, nth($list, $i));
+  @if $start > $end {
+    @warn "The start index has to be lesser than or equals to the end index.";
+  }
+
+  @else if $start < 1 or $end < 1 {
+    @warn "The indexes have to be positive integers.";
+  }
+
+  @else if $start > length($list) or $end > length($list) {
+    @warn "The index has to be within list range.";
+  }
+  
+  @else {
+    @for $i from $start through $end {
+      $result: append($result, nth($list, $i));
+    }
   }
 
   @return $result;
 }</code></pre>
 <p>We make both <code>$start</code> and <code>$end</code> optional: if they are not specified, we go from the first index (<code>1</code>) to the last one (<code>length($list)</code>).</p>
-<p>Then we do our verifications. Let's start with, well, <code>$start</code>:</p>
-<ul>
-<li>If <code>$start <= 0</code>, we set it to the first index in the list (<code>1</code>)</li>
-<li>Else if <code>$start > 0</code>, we compare it to the length of the list (<code>length($list)</code>)
-<ul>
-<li>If it is greater than the length of the list, we set it to the length of the list</li>
-<li>Else if it is lesser or equals to the length of the list, we leave it to its current value</li>
-</ul>
-</li>
-</ul>
-<p>Now, we do almost the same thing for <code>$end</code>:</p>
-<ul>
-<li>If <code>$end > length($list)</code>, we set it to the length of the list</li>
-<li>Else if <code>$end <= length($list)</code>, we compare it to <code>$start</code>
-<ul>
-<li>If it is lesser than <code>$start</code>, we set it to the same value as <code>$start</code></li>
-<li>If it is greater than or equals to <code>$start</code>, we leave it to its current value</li>
-</ul>
-</li>
-</ul>
+<p>Then we make sure <code>$start</code> is lesser or equals to <code>$end</code> and that they both are within list range.</p>
 <p>And now we're sure our values are okay, we can loop through lists values from <code>$start</code> to <code>$end</code>, building up a new list from those.</p>
 <h3>Reverse a list</h3>
 <p>Let's make a small function to reverse the order of elements within a list so the last index becomes the first, and the first the last.</p>
