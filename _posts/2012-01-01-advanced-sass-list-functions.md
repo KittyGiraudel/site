@@ -250,7 +250,9 @@ $list: remove-at($list, 100); // error</code></pre>
 <p>We did a lot of important things already, so why not ending our series of functions with a couple of misc stuff? Like slicing a list? Reversing a list? Converting a list into a string?</p>
 <h3>Slicing a list</h3>
 <pre class="language-scss"><code>$list: a, b, c, d, e, f;
-$list: slice($list, 3, 5); // c, d, e</code></pre>
+$list: slice($list, 3, 5);   // c, d, e
+$list: slice($list, 5, 3);   // error
+$list: slice($list, -1, 10); // error</code></pre>
 <p>In the first draft I made of this function, I edited <code>$start</code> and <code>$end</code> value so they don't conflict with each other. In the end, I went with the safe mode: display error messages if anything seems wrong.</p>
 <pre class="language-scss"><code>@function slice($list, $start: 1, $end: length($list)) {
   $result: ();
