@@ -1,7 +1,7 @@
 ---
 title: Advanced Sass list functions
 layout: post
-preview: true
+preview: false
 comments: true
 summary: true
 published: true
