@@ -1,10 +1,8 @@
 ---
 title: Advanced Sass list functions
 layout: post
-preview: false
 comments: true
 summary: true
-published: true
 ---
 
 <section>
@@ -331,7 +329,23 @@ $new-list: to-string($list, '-'); // a-b-c-d-e-f-g-h</code></pre>
 <p>Now, my very first draft returned something like this <code>a-b-c-d-e-f-g-h-</code>. With an extra hyphen at the end.</p>
 <p>In a foolish attempt to fix this, I added a condition to check whether it is the last element of the list. If it is, we don't add the <code>$glue</code>. Unfortunately, it only moved the issue to nested lists. Then I had <code>a-b-c-d-ef-g-h</code> because the check was also made in inner lists, resulting in no glue after the last element of inner lists.</p>
 <p>That's why I had to add an extra argument to the function signature to differenciate the upper level from the nested ones. It is not very elegant but this is the only option I found. If you think of something else, be sure to tell.</p>
+<h3>Shift indexes of a list</h3>
+<p>This function comes from <a href="https://twitter.com/thebabydino">Ana tudor</a>. It aims at shifting the indexes of a list by a certain value. It may be quite tricky to understand.</p>
+<pre class="language-scss"><code>$list: a, b, c, d, e, f;
+$new-list: loop($list, 1);  // f, a, b, c, d, e
+$new-list: loop($list, -3); // d, e, f, a, b, c</code></pre>
 </section>
+<p>Hopefully examples will make the point of this function clearer. The code isn't obvious in the end, so I'll just leave it here.</p>
+<pre class="language-scss"><code>@function loop($list, $value: 1) {
+  $result: ();
+    
+  @for $i from 0 to length($list) {
+    $result: append($result, nth($list, ($i - $value) % length($list) + 1));
+  }
+  
+  @return $result;
+}</code></pre>
+<p>Thanks a lot for the input Ana!</p>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
 <p>I guess that's all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with <a href="http://codepen.io/HugoGiraudel/pen/loAgq">this pen</a> or contribute to <a href="https://github.com/HugoGiraudel/Sass-snippets/blob/master/list-functions/_all.scss">this repo</a>.</p>
