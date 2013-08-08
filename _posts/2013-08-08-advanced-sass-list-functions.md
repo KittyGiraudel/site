@@ -2,9 +2,11 @@
 title: Advanced Sass list functions
 layout: post
 preview: true
-comments: false
+comments: true
 summary: true
+published: true
 ---
+
 <section>
 <p>A couple of weeks ago, I wrote a small guide to <a href="http://hugogiraudel.com/2013/07/15/understanding-sass-lists/">understand Sass lists</a>. I hope you've read it and learnt things from it!</p>
 <p>Anyway, a couple of days ago I stumbled upon <a href="https://github.com/nex3/sass/issues/852#issuecomment-22071664">a comment in a Sass issue</a> listing a couple of advanced Sass functions to deal with lists. I found the idea quite appealing so I made my own function library for for this. In my opinion, it is always interesting to go deeper than <em>"it just works"</em>, so here is a short blog post to explain my code.</p>
