@@ -85,23 +85,30 @@ $new-list: prepend($list, now i know my a); // now, i, know, my, a, b, c, d, e, 
 <p>We can append new values to a list, and now even prepend new values to a list. What if we want to insert a new value at index <code>n</code>? Like this:</p>
 <pre class="language-scss"><code>$list: a, b, d, e, f;
 /* I want to add "c" as the 3rd index in the list */
-$new-list: insert-at($list, 3, c);   // a, b, c, d, e, f
-$new-list: insert-at($list, -1, z);  // error
-$new-list: insert-at($list, 0, z);   // error
-$new-list: insert-at($list, 100, z); // error</code></pre>
+$new-list: insert-nth($list, 3, c);   // a, b, c, d, e, f
+$new-list: insert-nth($list, -1, z);  // error
+$new-list: insert-nth($list, 0, z);   // error
+$new-list: insert-nth($list, 100, z); // error
+$new-list: insert-nth($list, zog, z); // error</code></pre>
 <p>Now let's have a look at the function core:</p>
-<pre class="language-scss"><code>@function insert-at($list, $index, $value) {
-  $result: ();
+<pre class="language-scss"><code>@function insert-nth($list, $index, $value) {
+  $result: null;
+      
+  @if type-of($index) != number {
+    @warn "$index: #{quote($index)} is not a number for `insert-nth`.";
+  }
 
-  @if $index < 1 {
-    @warn "The index has to be a positive integer.";
+  @else if $index < 1 {
+    @warn "List index 0 must be a non-zero integer for `insert-nth`";
   }
 
   @else if $index > length($list) {
-    @warn "The index has to be within list range.";
+    @warn "List index is #{$index} but list is only #{length($list)} item long for `insert-nth'.";
   }
 
   @else {
+    $result: ();
+        
     @for $i from 1 through length($list) {
       @if $i == $index {
         $result: append($result, $value);
@@ -159,36 +166,47 @@ $new-list: replace($list, a, u, true); // u, b, r, u, c u, d u, b, r, u;</code><
 <h3>Replacing value at index <code>n</code></h3>
 <p>Now if we want to replace a value at a specific index, it's a lot simpler.</p>
 <pre class="language-scss"><code>$list: a, b, z, d, e, f;
-$new-list: replace-at($list, 3, c);   // a, b, c, d, e, f
-$new-list: replace-at($list, 0, c);   // error
-$new-list: replace-at($list, -1, c);  // error
-$new-list: replace-at($list, 100, c); // error</code></pre>
-<p>As you can imagine, it works almost the same as the <code>insert-at()</code> function.</p>
-<pre class="language-scss"><code>@function replace-at($list, $index, $value) {
-  $result: ();
-
-  @if $index < 1 {
-    @warn "The index has to be a positive integer.";
+$new-list: replace-nth($list,   3, c); // a, b, c, d, e, f
+$new-list: replace-nth($list,   0, c); // error
+$new-list: replace-nth($list,  -2, c); // a, b, c, d, z, f
+$new-list: replace-nth($list, -10, c); // error
+$new-list: replace-nth($list, 100, c); // error
+$new-list: replace-nth($list, zog, c); // error</code></pre>
+<p>As you can imagine, it works almost the same as the <code>insert-nth()</code> function.</p>
+<pre class="language-scss"><code>@function replace-nth($list, $index, $value) {
+  $result: null;
+      
+  @if type-of($index) != number {
+    @warn "$index: #{quote($index)} is not a number for `replace-nth`.";
   }
 
-  @else if $index > length($list) {
-    @warn "The index has to be within list range.";
+  @else if $index == 0 {
+    @warn "List index 0 must be a non-zero integer for `replace-nth`.";
+  }
+      
+  @else if abs($index) > length($list) {
+    @warn "List index is #{$index} but list is only #{length($list)} item long for `replace-nth`.";
   }
 
   @else {
+    $result: ();
+    $index: if($index < 0, length($list) + $index + 1, $index);  
+
     @for $i from 1 through length($list) {
       @if $i == $index {
         $result: append($result, $value);
       }
-
+    
       @else {
         $result: append($result, nth($list, $i));
       }
     }
   }
+ 
   @return $result;
 }</code></pre>
 <p>I think the code is kind of self explanatory: we check for errors then loop through the values of the <code>$list</code> and if the current index (<code>$i</code>) is stricly equivalent to the index at which we want to replace the value (<code>$index</code>) we replace the value. Else, we simply append the initial value.</p> 
+<p class="explanation"><strong>Edit (2013/08/11):</strong> I slightly tweaked the function to accept negative integers. Thus, <code>-1</code> means last item, <code>-2</code> means second-to-last, and so on. However if you go like <code>-100</code>, it throws an error.</p>
 </section>
 <section id="removing">
 <h2>Removing values from list <a href="#removing">#</a></h2>
@@ -217,31 +235,43 @@ $new-list: remove($list, z, true); // a, b, c, d, e, f</code></pre>
 <h3>Removing value at index <code>n</code></h3>
 <p>We only miss the ability to remove a value at a specific index.</p>
 <pre class="language-scss"><code>$list: a, b, z, c, d, e, f;
-$new-list: remove-at($list, 3);   // a, b, c, d, e, f
-$new-list: remove-at($list, 0);   // error
-$new-list: remove-at($list, -1);  // error
-$new-list: remove-at($list, 100); // error</code></pre>
+$new-list: remove-nth($list,   3); // a, b, c, d, e, f
+$new-list: remove-nth($list,   0); // error
+$new-list: remove-nth($list,  -2); // a, b, z, c, d, f
+$new-list: remove-nth($list, -10); // error
+$new-list: remove-nth($list, 100); // error
+$new-list: remove-nth($list, zog); // error</code></pre>
 <p>This is a very easy function actually.</p>
-<pre class="language-scss"><code>@function remove-at($list, $index) {
-  $result: ();
-
-  @if $index < 1 {
-    @warn "The index has to be a positive integer.";
+<pre class="language-scss"><code>@function remove-nth($list, $index) {
+  $result: null;
+        
+  @if type-of($index) != number {
+    @warn "$index: #{quote($index)} is not a number for `remove-nth`.";
   }
 
-  @else if $index > length($list) {
-    @warn "The index has to be within list range.";
+  @else if $index == 0 {
+    @warn "List index 0 must be a non-zero integer for `remove-nth`.";
   }
 
-  @for $i from 1 through length($list) {
-    @if $i != $index {
-      $result: append($result, nth($list, $i));
+  @else if abs($index) > length($list) {
+    @warn "List index is #{$index} but list is only #{length($list)} item long for `remove-nth`.";
+  }
+
+  @else {
+    $result: ();
+    $index: if($index < 0, length($list) + $index + 1, $index);  
+
+    @for $i from 1 through length($list) {
+      @if $i != $index {
+        $result: append($result, nth($list, $i));
+      }
     }
   }
-
+        
   @return $result;
 }</code></pre>
 <p>We break down the list (<code>$list</code>) to build up the new one, appending all the items except the one that was on the index we want to delete (<code>$index</code>).</p>
+<p class="explanation"><strong>Edit (2013/08/11):</strong> same as for the <code>replace-nth</code> function, I tweaked this one to accept negative integers. So <code>-1</code> means last item, <code>-2</code> means second-to-last, and so on.</p>
 </section>
 <section id="miscellaneous">
 <h2>Miscellaneous <a href="#miscellaneous">#</a></h2>
@@ -254,27 +284,38 @@ $new-list: slice($list, 5, 3);   // error
 $new-list: slice($list, -1, 10); // error</code></pre>
 <p>In the first draft I made of this function, I edited <code>$start</code> and <code>$end</code> value so they don't conflict with each other. In the end, I went with the safe mode: display error messages if anything seems wrong.</p>
 <pre class="language-scss"><code>@function slice($list, $start: 1, $end: length($list)) {
-  $result: ();
-
-  @if $start > $end {
-    @warn "The start index has to be lesser than or equals to the end index.";
+  $result: null;
+              
+  @if type-of($start) != number or type-of($end) != number {
+    @warn "Either $start or $end are not a number for `slice`.";
+  }
+             
+  @else if $start > $end {
+    @warn "The start index has to be lesser than or equals to the end index for `slice`.";
   }
 
   @else if $start < 1 or $end < 1 {
-    @warn "The indexes have to be positive integers.";
+    @warn "List indexes must be non-zero integers for `slice`.";
   }
 
-  @else if $start > length($list) or $end > length($list) {
-    @warn "The index has to be within list range.";
+  @else if $start > length($list) {
+    @warn "List index is #{$start} but list is only #{length($list)} item long for `slice`.";
+  }
+             
+  @else if $end > length($list) {
+    @warn "List index is #{$end} but list is only #{length($list)} item long for `slice`.";
   }
   
   @else {
+    $result: ();
+                
     @for $i from $start through $end {
       $result: append($result, nth($list, $i));
     }
   }
 
   @return $result;
+}
 }</code></pre>
 <p>We make both <code>$start</code> and <code>$end</code> optional: if they are not specified, we go from the first index (<code>1</code>) to the last one (<code>length($list)</code>).</p>
 <p>Then we make sure <code>$start</code> is lesser or equals to <code>$end</code> and that they both are within list range.</p>
