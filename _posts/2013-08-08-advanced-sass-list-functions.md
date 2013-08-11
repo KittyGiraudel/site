@@ -206,7 +206,7 @@ $new-list: replace-nth($list, zog, c); // error</code></pre>
   @return $result;
 }</code></pre>
 <p>I think the code is kind of self explanatory: we check for errors then loop through the values of the <code>$list</code> and if the current index (<code>$i</code>) is stricly equivalent to the index at which we want to replace the value (<code>$index</code>) we replace the value. Else, we simply append the initial value.</p> 
-<p class="explanation"><strong>Edit (2013/08/11):</strong> I slightly tweaked the function to accept negative integers. Thus, <code>-1</code> means last item, <code>-2</code> means second-to-last, and so on. However if you go like <code>-100</code>, it throws an error.</p>
+<p class="note"><strong>Edit (2013/08/11):</strong> I slightly tweaked the function to accept negative integers. Thus, <code>-1</code> means last item, <code>-2</code> means second-to-last, and so on. However if you go like <code>-100</code>, it throws an error.</p>
 </section>
 <section id="removing">
 <h2>Removing values from list <a href="#removing">#</a></h2>
@@ -271,7 +271,7 @@ $new-list: remove-nth($list, zog); // error</code></pre>
   @return $result;
 }</code></pre>
 <p>We break down the list (<code>$list</code>) to build up the new one, appending all the items except the one that was on the index we want to delete (<code>$index</code>).</p>
-<p class="explanation"><strong>Edit (2013/08/11):</strong> same as for the <code>replace-nth</code> function, I tweaked this one to accept negative integers. So <code>-1</code> means last item, <code>-2</code> means second-to-last, and so on.</p>
+<p class="note"><strong>Edit (2013/08/11):</strong> same as for the <code>replace-nth</code> function, I tweaked this one to accept negative integers. So <code>-1</code> means last item, <code>-2</code> means second-to-last, and so on.</p>
 </section>
 <section id="miscellaneous">
 <h2>Miscellaneous <a href="#miscellaneous">#</a></h2>
