@@ -6,7 +6,7 @@ comments: false
 ---
 <section>
 <p>We can do awesome things with Sass. It really pushes CSS to an upper level. More than that, it is so much fun to make Sass mixins and functions. Everytime I do something new, I'm like “whoaaa” even if it's a useless thing.</p>
-<p>Mixins are usually quite easy to deal with. Functions are a little more underground in Sass. So what if we go through a couple of functions (including useless ones) to see how we can build an efficiant function?</p>
+<p>Mixins are usually quite easy to deal with. Functions are a little more underground in Sass. So what if we go through a couple of functions (including useless ones) to see how we can build an efficient ones?</p>
 </section>
 <section id='strip-unit'>
 <h2>Strip unit function <a href="#strip-unit">#</a></h2>
