@@ -178,10 +178,41 @@ $count: $count - 1;</code></pre>
 	// Returning the whole sequence
 	@return $sequence;
 }</code></pre>
+<p>And here is how you use it:</p>
+<pre class="language-scss"><code>$look-and-say: look-and-say(10);</code></pre>
+<p class="note">Caution! This sequence is pretty heavy to generate, and the number of characters in each line quickly grow. On CodePen, it's getting too heavy after like 15 iterations. You could push it further locally but if your browser crashes, you won't tell you hadn't be warned!</p>
 </section>
-<section id="">
-<h2> <a href="#">#</a></h2>
+<section id="displaying">
+<h2>Displaying those sequences <a href="#displaying">#</a></h2>
+<p>One equally interesting thing is how I managed to display these sequences with line breaks and reasonable styles without any markup at all.</p>
+<p>First things first: to display textual content without any markup, I used a pseudo-element on the body. This way, I can inject text into the document without having to use an extra element.</p>
+<p>Now to display it with line-breaks, I had to get tricky! The main idea is to convert the list into a string and to join elements with a line-break character.</p>
+<p>Thankfully, I recently wrote an article about <a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/">advanced Sass list functions</a>, and one of those is <code>to-string()</code>. I slightly tweaked it so it's as simple as it can get:</p>
+<pre class="language-scss"><code>@function to-string($list, $glue: '') {
+  $result: null;
+
+  @for $i from 1 through length($list) {
+    $e: nth($list, $i);      
+    $result: if($i != length($list), $result#{$e}#{$glue}, $result#{$e});
+  }
+
+  @return $result;
+}</code></pre>
+<p>I think you can see where this is going now: to display the Fibonacci number line by line, I simply did this:</p>
+<pre class="language-scss"><code>body:before {
+    content: quote(to-string(fibonacci(100), ' \A '));
+    white-space: pre-wrap;
+}</code></pre>
+<p>Here is what we do (from middle to edges):</p>
+<ol>
+<li>We call the fibonacci function to run 100 times</li>
+<li>We convert the returned list into a string, using the <code>\A</code> line-break character</li>
+<li>We quote this string so it's a valid content value</li>
+</ol>
+<p>There you have it: displaying a whole list of data with line-breaks all through CSS. Pretty neat, isn't it?</p>
+<p class="note">Note: for the Look-and-say sequence, it takes one extra step to convert nested lists into strings first.</p>
 </section>
-<section id="">
-<h2> <a href="#">#</a></h2>
+<section id="final-words">
+<h2>Final words <a href="#final-words">#</a></h2>
+<p>This is pointless but definitely fun to do. And interesting. Now what else could we do? Do you have anything in mind? :)</p>
 </section>
