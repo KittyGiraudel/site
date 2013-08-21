@@ -8,7 +8,7 @@ layout: post
 <section>
 <p>A couple of weeks ago (right before holidays actually), I've been playing around math sequences in Sass, especially the <a href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci number</a> and the <a href="http://en.wikipedia.org/wiki/Look-and-say_sequence">Look-and-say sequence</a> also known as <em>Conway's number</em>.</p>
 <p>Those were kind of fun Sass experiments and people seemed to be interested on Twitter so here is the how-to.</p> 
-<p>If you're not interested in learning how I did it and just want to see the code, you can play around those pens: <a href="http://codepen.io/HugoGiraudel/pen/krAes">Fibonacci number</a>, <a href="http://codepen.io/HugoGiraudel/pen/tBhzs">Look-and-say sequences</a>.
+<p>If you're not interested in learning how I did it and just want to see the code, you can play around those pens: <a href="http://codepen.io/HugoGiraudel/pen/krAes">Fibonacci number</a>, <a href="http://codepen.io/HugoGiraudel/pen/tBhzs">Look-and-say sequence</a>.
 </section>
 <section id="fibonacci-number">
 <h2>Fibonacci number <a href="#fibonacci-number">#</a></h2>
@@ -166,7 +166,8 @@ $count: $count - 1;</code></pre>
 	@return $sequence;
 }</code></pre>
 <p>And here is how you use it:</p>
-<pre class="language-scss"><code>$look-and-say: look-and-say(10);</code></pre>
+<pre class="language-scss"><code>$look-and-say: look-and-say(7);
+// 1, 1 1, 2 1, 1 2 1 1, 1 1 1 2 2 1, 3 1 2 2 1 1, 1 3 1 1 2 2 2 1, 1 1 1 3 2 1 3 2 1 1</code></pre>
 <p class="note">Caution! This sequence is pretty heavy to generate, and the number of characters in each entry quickly grow. On CodePen, it's getting too heavy after like 15 iterations. You could push it further locally but if your browser crashes, you won't tell you hadn't be warned!</p>
 </section>
 <section id="displaying">
@@ -197,7 +198,7 @@ $count: $count - 1;</code></pre>
 <li>We quote this string so it's a valid content value</li>
 </ol>
 <p>There you have it: displaying a whole list of data with line-breaks all through CSS. Pretty neat, isn't it?</p>
-<p class="note">Note: for the Look-and-say sequence, it takes one extra step to convert nested lists into strings first.</p>
+<p class="note">Note: for the Look-and-say sequence, it takes one extra step to convert nested lists into strings first. You check how I did it directly on <a href="http://codepen.io/HugoGiraudel/pen/tBhzs">the pen</a>.</p>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
