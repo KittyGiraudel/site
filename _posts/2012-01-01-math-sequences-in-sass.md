@@ -103,10 +103,86 @@ $fib: fibonacci(10);
         $new-line  : ();
         $count     : 0;
         @for $j from length($last-line) * -1 through -1 { 
-    		// We do stuff
+        	$j      : abs($j);
+    		$last   : nth($last-line, $j);
+            $last-1 : null;
+            $last-2 : null;
+            
+            @if $j > 1 { $last-1: nth($last-line, $j - 1); }
+      		@if $j > 2 { $last-2: nth($last-line, $j - 2); }
+            
+            // We do stuff
         }
     }
     @return $sequence;
+}</code></pre>
+<p>We use the dirty old hack to make the loop decrement instead of increment since we want to start from the last character (stored in <code>$last</code>).</p>
+<p>Since second-to-last and third-to-last characted don't necessarily exist, we first define them to <code>null</code> then we check if they can exist, and if they can, we define them for good.</p>
+<p>Now we check if <code>$count = 0</code>. If it does, it means we are dealing with a brand new character. Then, we need to know how long is the sequence of identical numbers (1, 2 or 3). Quite easy to do, if <code>$last</code>, <code>$last-1</code> and <code>$last-2</code> are identical, it's <code>3</code>. If <code>$last</code> and <code>$last-1</code> are identical, it's <code>2</code>. Else it's 1.</p>
+<p>Once we've figured out this number, we can <strong>prepend</strong> (remember we're starting from the end of the line) it and the value to the new line.</p>
+<p>Then, we decrement <code>$count</code> from 1 at each loop run. This is meant to skip numbers we just checked.</p>
+<pre class="language-scss"><code>@if $count == 0 {
+        
+    @if $last == $last-1 and 
+    	$last == $last-2 { 
+         	$count: 3; 
+    }
+    @else if 
+    	$last == $last-1 { 
+        	$count: 2; 
+    }
+    @else { 
+    		$count: 1;
+	}
+        
+    // Prepend new numbers to new line
+    $new-line: join($count $last, $new-line);
+        
+}  
+      
+$count: $count - 1;</code></pre>
+<p>Once we're done with the inner loop, we can append the new line to the sequence and start a new line again, and so on until we've run <code>$n</code> loop runs. When we've finished, we return the sequence. Here is the whole function:</p>
+<pre class="language-scss"><code>@function look-and-say($n) {
+	$sequence: (1);
+    @for $i from 1 through $n {
+    	$last-line : nth($sequence, length($sequence));
+        $new-line  : ();
+        $count     : 0;
+        @for $j from length($last-line) * -1 through -1 { 
+        	$j      : abs($j);
+    		$last   : nth($last-line, $j);
+            $last-1 : null;
+            $last-2 : null;
+            
+            @if $j > 1 { $last-1: nth($last-line, $j - 1); }
+      		@if $j > 2 { $last-2: nth($last-line, $j - 2); }
+            
+            @if $count == 0 {
+            	@if $last == $last-1 and 
+                	$last == $last-2 { 
+                    	$count: 3; 
+            	}
+            	@else if 
+                	$last == $last-1 { 
+                    	$count: 2; 
+            	}
+            	@else { 
+                		$count: 1;
+            	}
+                  
+            	// Prepend new numbers to new line
+            	$new-line: join($count $last, $new-line);  
+            }  
+    		
+            $count: $count - 1;
+        }
+        
+        // Appending new line to result
+    	$sequence: append($sequence, $new-line);
+	}  
+    
+	// Returning the whole sequence
+	@return $sequence;
 }</code></pre>
 </section>
 <section id="">
