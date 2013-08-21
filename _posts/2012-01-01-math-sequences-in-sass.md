@@ -151,36 +151,30 @@ $count: $count - 1;</code></pre>
         @for $j from length($last-line) * -1 through -1 { 
         	$j      : abs($j);
     		$last   : nth($last-line, $j);
+            
             $last-1 : null;
             $last-2 : null;
-            
             @if $j > 1 { $last-1: nth($last-line, $j - 1); }
       		@if $j > 2 { $last-2: nth($last-line, $j - 2); }
             
             @if $count == 0 {
-            	@if $last == $last-1 and 
-                	$last == $last-2 { 
-                    	$count: 3; 
+            	@if $last == $last-1 and $last == $last-2 { 
+                	$count: 3; 
             	}
-            	@else if 
-                	$last == $last-1 { 
-                    	$count: 2; 
+            	@else if $last == $last-1 { 
+                    $count: 2; 
             	}
             	@else { 
-                		$count: 1;
+                	$count: 1;
             	}
-                  
             	// Prepend new numbers to new line
             	$new-line: join($count $last, $new-line);  
             }  
-    		
             $count: $count - 1;
         }
-        
         // Appending new line to result
     	$sequence: append($sequence, $new-line);
 	}  
-    
 	// Returning the whole sequence
 	@return $sequence;
 }</code></pre>
