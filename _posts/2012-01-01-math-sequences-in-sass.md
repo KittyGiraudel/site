@@ -42,9 +42,16 @@ $fib: fibonacci(10);
 <section id="juggler">
 <h2>Juggler sequence <a href="#juggler">#</a></h2>
 <p>I'll be totally honest with you guys: I'm not sure what's the Juggler sequence is meant for. All I know is how it works. First of all, it is not an infinite sequence; secondly, it's different for each initial number.</p>
-<p>Basically, every new entry in the sequence is either the previous one raised to 1/2 if it's even or raised to 3/2 if it's odd. Let's take an example with <code>3</code> as a starter:</p>
-<pre><code>3 5 11 36 6 2 1</code></pre>
+<p>Basically, every new entry in the sequence is the previous one either raised to <code>1/2</code> if it's even or raised to <code>3/2</code> if it's odd. Let's take an example with <code>3</code> as a starter:</p>
+<pre class="language-scss"><code>3  // initial 
+5  // 3^3/2  = 5.196...
+11 // 5^3/2  = 11.180...
+36 // 11^3/2 = 36.482...
+6  // 36^1/2 = 6
+2  // 6^1/2  = 2.449...
+1  // 2^1/2  = 1.414...</code></pre>
 <p>What's interesting about this sequence is it will eventually always end up with <code>1</code>. This is actually pretty cool because it means we know when to stop: when we reach 1. Ready?</p>
+<blockquote class="pull-quote--right">First time ever I use a while loop.</blockquote>
 <pre class="language-scss"><code>@function juggler($n) {
 	$juggler: ($n);
     @while nth($juggler, length($juggler)) != 1 {
@@ -53,7 +60,7 @@ $fib: fibonacci(10);
     }
     @return $juggler;
 }</code></pre>
-<p>First time ever I find a usecase for the while loop; this makes me happy! Anyway, I think the code is pretty self-explanatory. We append new values to the list until the last one is <code>1</code>, in which case we stop. All we have to do is to find <code>$new</code>.</p>
+<p>Anyway, I think the code is pretty self-explanatory. We append new values to the list until the last one is <code>1</code>, in which case we stop. All we have to do is to find <code>$new</code>.</p>
 <p>It is actually pretty simple. We only have to check whether the last number is odd or even:</p>
 <ul>
 <li>If it's odd, raise it to <code>3/2</code>
@@ -212,17 +219,7 @@ $count: $count - 1;</code></pre>
 <p>One equally interesting thing is how I managed to display these sequences with line breaks and reasonable styles without any markup at all.</p>
 <p>First things first: to display textual content without any markup, I used a pseudo-element on the body. This way, I can inject text into the document without having to use an extra element.</p>
 <p>Now to display it with line-breaks, I had to get tricky! The main idea is to convert the list into a string and to join elements with a line-break character.</p>
-<p>Thankfully, I recently wrote an article about <a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/">advanced Sass list functions</a>, and one of those is <code>to-string()</code>. I slightly tweaked it so it's as simple as it can get:</p>
-<pre class="language-scss"><code>@function to-string($list, $glue: '') {
-  $result: null;
-
-  @for $i from 1 through length($list) {
-    $e: nth($list, $i);      
-    $result: if($i != length($list), $result#{$e}#{$glue}, $result#{$e});
-  }
-
-  @return $result;
-}</code></pre>
+<p>Thankfully, I recently wrote an article about <a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/">advanced Sass list functions</a>, and one of those is <code>to-string()</code>.</p>
 <p>I think you can see where this is going now: to display the Fibonacci number line by line, I simply did this:</p>
 <pre class="language-scss"><code>body:before {
     content: quote(to-string(fibonacci(100), ' \A '));
