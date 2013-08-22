@@ -13,6 +13,10 @@ guest: "Hugo Darby-Brown"
 <section id="setting-out">
 <h2>Setting Out <a href="#setting-out">#</a></h2>
 <p>I wanted to create a horizontal scrolling navigation, similar to that of the iOS taskbar. Lots of responsive menu's take the approach of displaying list items vertically on small screens, but I wanted to play with the idea of having menu items off the screen and swiping to reveal them.</p>
+<figure class="figure">
+<img src='http://darbybrown.com/img/scroll-overflow-menu.jpg" alt="" />
+<figcaption>The scroll-overflow menu by Hugo</figcaption>
+</figure>
 </section>
 <section id="basic-effect">
 <h2>The Basic Effect <a href="#basic-effect">#</a></h2>
@@ -49,12 +53,12 @@ ul:after { /* 5 */
 li {
   display: inline-block; /* 6 */
 }</code></pre>
-<p>OK so what's going on here? In essence we're creating a navigation that is too large for the screen.</p>
-<p>We set the overflow to scroll, and the overflow-scroll type to touch to allow for momentum scrolling. Explained in a bit more deatil below:</p>
+<p>Okay, so what's going on here? In essence we're creating a navigation that is too large for the screen.</p>
+<p>We set the overflow to scroll, and the overflow-scroll type to <code>touch</code> to allow for momentum scrolling. Explained in a bit more detail below:</p>
 <ol>
-<li>Setting auto will work on some devices, but set this to scroll just to be sure.</li>
-<li>This the 'magic' property that enables the 'native feel' scrolling.</li>
-<li>Setting this to justified creates equally spaced <code>li</code>'s which takes the headache of working out margins.</li>
+<li>Setting <code>auto</code> will work on some devices, but set this to <code>scroll</code> just to be sure.</li>
+<li>This the <em>magic</em> property that enables the <em>native feel</em> scrolling.</li>
+<li>Setting this to <code>justify</code> creates equally spaced <code>li</code>'s which takes the headache of working out margins.</li>
 <li>You must set the width to a value larger than the sum of all the <code>li</code>'s width.</li>
 <li>This is <code>text-align: justify</code>'s version of a clearfix.</li>
 <li>This must also be set for the equal spacing to work.</li>
@@ -85,20 +89,17 @@ document.querySelector('header > a').onclick = function () {
 </section>
 <section id="larger-devices">
 <h2>What about larger devices? <a href="#larger-devices">#</a></h2>
-<p>A mobile only menu isn't much use these days is it? So using a few<code>min-width</code> queries we'll turn this menu into a responsive mobile first menu.</p>
+<p>A mobile only menu isn't much use these days is it? So using a few <code>min-width</code> media queries we'll turn this menu into a responsive mobile first menu.</p>
 <pre class="language-css"><code>@media (min-width: 31.25em) {
   nav {
     max-height: none; /* reset the max-height */
     overflow: hidden; /* this prevents the scroll bar showing on large devices */
   }
 
-@media (min-width: 31.25em) {
   ul {
     width: 100%; 
   }
-}
 
-@media (min-width: 31.25em) {
   header > a {
     display: none; 
   }
@@ -106,14 +107,14 @@ document.querySelector('header > a').onclick = function () {
 </section>
 <section id="support">
 <h2>Support and polyfills <a href="#support">#</a></h2>
-<p>Ok, so the support goes like this:</p>
+<p>The support is really not that bad, without being awesome either. As far as I know, it looks like this:</p>
 <ul>
 <li>iOS 5+ </li>
 <li>Android 3.0</li>
 <li>Blackberry 6+</li>
 <li>Windows Phone (IE10) supports momentum scrolling natively</li>
 </ul>
-<p>There are a few of polyfills that can help you, should you want to use it:</p>
+<p>For unsupported browsers, there are a few of polyfills that can help you, should you want to use it:</p>
 <ul>
 <li><a href="http://cubiq.org/iscroll-4">iScroll</a></li>
 <li><a href="http://filamentgroup.github.io/Overthrow/">Overthrow</a></li>
@@ -124,13 +125,10 @@ document.querySelector('header > a').onclick = function () {
 <h2>Final thoughts <a href="#final-thoughts">#</a></h2>
 <p>I think you'll see a lot more menu's taking a horizontal approach in the future, but unfortunately Android 2.X still makes up for a 1/3 of market share of all Android devices, so until that reduces significantly I wouldn't use this in any serious projects.</p>
 <p>I would love to hear your thoughts on <code>-webkit-overflow-scrolling: touch;</code> and the future possibilities. </p>
-<p>I would usually embed the demo but, unfortunately iframes don't play well with <code>scroll-overflow:touch</code>, So I'll have to include a link that you can navigate to on your phone.</p>
-<ul>
-<li><a href="http://darbybrown.com/menu">Demo</a></li>
-<li><a href="http://darbybrown.com/menu/download.zip" target="_blank">Download Files</a></li>
-</ul>
+<p>I would usually embed the demo but, unfortunately iframes don't play well with <code>scroll-overflow:touch</code>, so it's best if you directly check <a href="http://darbybrown.com/menu">this link</a> with your phone. Or you could play around the code by <a href="http://darbybrown.com/menu/download.zip" target="_blank">downloading the files</a>!</p>
+<p>Thanks for reading! If you think of anything to improve this menu concept, feel free to share. :)</p>
 <blockquote class="quote"><img src="https://si0.twimg.com/profile_images/378800000254019863/1b79cd519877a4900d633354e161f095.jpeg" alt="Photo Hugo Darby Brown" class="pull-image--left">
-<p>Hugo Darby-Brown is both a designer and a developer, passionate with CSS. You can catch him on <a href="http://twitter.com/darbybrown">Twitter</a> or on his brand new <a href="http://darbybrown.com">site</a>.</p></blockquote>
+<p>Hugo Darby-Brown is both a designer and a developer from UK, passionate with front-end technologies especially CSS. You can catch him on <a href="http://twitter.com/darbybrown">Twitter</a> or on his brand new <a href="http://darbybrown.com">site</a>.</p></blockquote>
 </section>
 
 
