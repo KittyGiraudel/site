@@ -73,8 +73,10 @@ $new  : pow($last, $x);</code></pre>
 <pre class="language-scss"><code>@function juggler($n) {
 	$juggler: ($n);
     @while nth($juggler, length($juggler)) != 1 {
-    	// What's $new?
-    	$juggler: append($juggler, $new);
+    	$last    : nth($juggler, length($juggler));
+		$x       : if($last % 2 == 0, 1/2, 3/2);
+		$new     : pow($last, $x);
+    	$juggler : append($juggler, $new);
     }
     @return $juggler;
 }
