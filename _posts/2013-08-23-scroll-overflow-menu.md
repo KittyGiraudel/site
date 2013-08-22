@@ -1,0 +1,136 @@
+---
+published: true
+layout: post
+preview: true
+comments: false
+guest: "Hugo Darby-Brown"
+---
+
+<section>
+<p class="explanation">The following is a guest post by <a href="http://darbybrown.com/">Hugo Darby-Brown</a>, a talented front-end developer. I'm very glad to have him writing here today!</p>
+<p>Before I start off I'd like to say that this is more of a proof of concept, than a method that I'd recommend using on your next project.  This menu uses the CSS declaration <code>-webkit-overflow-scrolling: touch;</code> so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).</p>
+</section>
+<section id="setting-out">
+<h2>Setting Out <a href="#setting-out">#</a></h2>
+<p>I wanted to create a horizontal scrolling navigation, similar to that of the iOS taskbar. Lots of responsive menu's take the approach of displaying list items vertically on small screens, but I wanted to play with the idea of having menu items off the screen and swiping to reveal them.</p>
+</section>
+<section id="basic-effect">
+<h2>The Basic Effect <a href="#basic-effect">#</a></h2>
+<p>I wanted the HTML markup to be really clean, it's pretty self explanatory really.</p>
+<pre class="language-markup"><code>&lt;header>
+  &lt;nav role='navigation'>
+    &lt;ul>
+      &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">Clients&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+  &lt;a href="#">Menu&lt;/a>
+&lt;/header></code></pre>
+<p>This is the CSS that makes the effect happen. I've stripped out all the styling to highlight the key components, that make the effect work.</p>
+<pre class="language-css"><code>nav {
+  overflow-x: scroll; /* 1 */
+  -webkit-overflow-scrolling: touch; /* 2 */
+}
+
+ul {
+  text-align: justify; /* 3 */
+  width: 30em; /* 4 */
+}
+
+
+ul:after { /* 5 */
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+li {
+  display: inline-block; /* 6 */
+}</code></pre>
+<p>OK so what's going on here? In essence we're creating a navigation that is too large for the screen.</p>
+<p>We set the overflow to scroll, and the overflow-scroll type to touch to allow for momentum scrolling. Explained in a bit more deatil below:</p>
+<ol>
+<li>Setting auto will work on some devices, but set this to scroll just to be sure.</li>
+<li>This the 'magic' property that enables the 'native feel' scrolling.</li>
+<li>Setting this to justified creates equally spaced <code>li</code>'s which takes the headache of working out margins.</li>
+<li>You must set the width to a value larger than the sum of all the <code>li</code>'s width.</li>
+<li>This is <code>text-align: justify</code>'s version of a clearfix.</li>
+<li>This must also be set for the equal spacing to work.</li>
+</ol>
+</section>
+<section id="toggling">
+<h2>Toggling The Menu <a href="#toggling">#</a></h2>
+<p>We set the <code>max-height</code> of the <code>nav</code> to 0 to initially hide it, and add a <code>transition</code> so when we toggle the class <code>.show</code> the menu will appear to slide in from the top, pretty basic mobile menu stuff. </p>
+<pre class="language-css"><code>nav {	
+	max-height: 0;
+	transition: .6s ease-in-out;
+}
+
+.show {
+	max-height: 15em;
+}</code></pre>
+<p>Throw in some JS to toggle the class, and you've got yourself a basic slide down mobile menu.</p>
+<pre class="language-javascript"><code>// jQuery version
+$("header > a").click(function () {
+  $("nav").toggleClass("show");
+});
+
+// Vanilla JS version
+document.querySelector('header > a').onclick = function () {
+  var nav = document.querySelector('nav');
+  nav.classList.toggle('show');
+}</code></pre>
+</section>
+<section id="larger-devices">
+<h2>What about larger devices? <a href="#larger-devices">#</a></h2>
+<p>A mobile only menu isn't much use these days is it? So using a few<code>min-width</code> queries we'll turn this menu into a responsive mobile first menu.</p>
+<pre class="language-css"><code>@media (min-width: 31.25em) {
+  nav {
+    max-height: none; /* reset the max-height */
+    overflow: hidden; /* this prevents the scroll bar showing on large devices */
+  }
+
+@media (min-width: 31.25em) {
+  ul {
+    width: 100%; 
+  }
+}
+
+@media (min-width: 31.25em) {
+  header > a {
+    display: none; 
+  }
+}</code></pre>
+</section>
+<section id="support">
+<h2>Support and polyfills <a href="#support">#</a></h2>
+<p>Ok, so the support goes like this:</p>
+<ul>
+<li>iOS 5+ </li>
+<li>Android 3.0</li>
+<li>Blackberry 6+</li>
+<li>Windows Phone (IE10) supports momentum scrolling natively</li>
+</ul>
+<p>There are a few of polyfills that can help you, should you want to use it:</p>
+<ul>
+<li><a href="http://cubiq.org/iscroll-4">iScroll</a></li>
+<li><a href="http://filamentgroup.github.io/Overthrow/">Overthrow</a></li>
+<li><a href="https://github.com/joehewitt/scrollability/">Scrollability</a></li>
+</ul>
+</section>
+<section id="final-thoughts">
+<h2>Final thoughts <a href="#final-thoughts">#</a></h2>
+<p>I think you'll see a lot more menu's taking a horizontal approach in the future, but unfortunately Android 2.X still makes up for a 1/3 of market share of all Android devices, so until that reduces significantly I wouldn't use this in any serious projects.</p>
+<p>I would love to hear your thoughts on <code>-webkit-overflow-scrolling: touch;</code> and the future possibilities. </p>
+<p>I would usually embed the demo but, unfortunately iframes don't play well with <code>scroll-overflow:touch</code>, So I'll have to include a link that you can navigate to on your phone.</p>
+<ul>
+<li><a href="http://darbybrown.com/menu">Demo</a></li>
+<li><a href="http://darbybrown.com/menu/download.zip" target="_blank">Download Files</a></li>
+</ul>
+<blockquote class="quote"><img src="https://si0.twimg.com/profile_images/378800000254019863/1b79cd519877a4900d633354e161f095.jpeg" alt="Photo Hugo Darby Brown" class="pull-image--left">
+<p>Hugo Darby-Brown is both a designer and a developer, passionate with CSS. You can catch him on <a href="http://twitter.com/darbybrown">Twitter</a> or on his brand new <a href="http://darbybrown.com">site</a>.</p></blockquote>
+</section>
+
+
