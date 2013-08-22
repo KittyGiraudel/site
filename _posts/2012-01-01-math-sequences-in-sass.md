@@ -6,9 +6,9 @@ layout: post
 ---
 
 <section>
-<p>A couple of weeks ago (right before holidays actually), I've been playing around math sequences in Sass, especially the <a href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci number</a> and the <a href="http://en.wikipedia.org/wiki/Look-and-say_sequence">Look-and-say sequence</a> also known as <em>Conway's number</em>.</p>
+<p>A couple of weeks ago (right before holidays actually), I've been playing around math sequences in Sass, especially the <a href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci number</a>, the <a href="http://en.wikipedia.org/wiki/Juggler_sequence">Juggler sequence</a> and the <a href="http://en.wikipedia.org/wiki/Look-and-say_sequence">Look-and-say sequence</a> also known as <em>Conway's number</em>.</p>
 <p>Those were kind of fun Sass experiments and people seemed to be interested on Twitter so here is the how-to.</p> 
-<p>If you're not interested in learning how I did it and just want to see the code, you can play around those pens: <a href="http://codepen.io/HugoGiraudel/pen/krAes">Fibonacci number</a>, <a href="http://codepen.io/HugoGiraudel/pen/tBhzs">Look-and-say sequence</a>.
+<p>If you're not interested in learning how I did it and just want to see the code, you can play around those pens: <a href="http://codepen.io/HugoGiraudel/pen/krAes">Fibonacci number</a>, <a href="http://codepen.io/HugoGiraudel/pen/GnzfB">Juggler sequence</a>, <a href="http://codepen.io/HugoGiraudel/pen/tBhzs">Look-and-say sequence</a>.
 </section>
 <section id="fibonacci-number">
 <h2>Fibonacci number <a href="#fibonacci-number">#</a></h2>
@@ -38,6 +38,43 @@ $new: $last + $second-to-last;</code></pre>
 
 $fib: fibonacci(10);
 // -> 0 1 1 2 3 5 8 13 21 34 55 89</code></pre>
+</section>
+<section id="juggler">
+<h2>Juggler sequence <a href="#juggler">#</a></h2>
+<p>I'll be totally honest with you guys: I'm not sure what's the Juggler sequence is meant for. All I know is how it works. First of all, it is not an infinite sequence; secondly, it's different for each initial number.</p>
+<p>Basically, every new entry in the sequence is either the previous one raised to 1/2 if it's even or raised to 3/2 if it's odd. Let's take an example with <code>3</code> as a starter:</p>
+<pre><code>3 5 11 36 6 2 1</code></pre>
+<p>What's interesting about this sequence is it will eventually always end up with <code>1</code>. This is actually pretty cool because it means we know when to stop: when we reach 1. Ready?</p>
+<pre class="language-scss"><code>@function juggler($n) {
+	$juggler: ($n);
+    @while nth($juggler, length($juggler)) != 1 {
+    	// What's $new?
+    	$juggler: append($juggler, $new);
+    }
+    @return $juggler;
+}</code></pre>
+<p>First time ever I find a usecase for the while loop; this makes me happy! Anyway, I think the code is pretty self-explanatory. We append new values to the list until the last one is <code>1</code>, in which case we stop. All we have to do is to find <code>$new</code>.</p>
+<p>It is actually pretty simple. We only have to check whether the last number is odd or even:</p>
+<ul>
+<li>If it's odd, raise it to <code>3/2</code>
+<li>If it's even, raise it to <code>1/2</code>
+</ul>
+<pre class="language-scss"><code>$last : nth($juggler, length($juggler));
+$x    : if($last % 2 == 0, 1/2, 3/2);
+$new  : pow($last, $x);</code></pre>
+<p>Simple, isn't it? Here is the whole function and a usecase:</p>
+<pre class="language-scss"><code>@function juggler($n) {
+	$juggler: ($n);
+    @while nth($juggler, length($juggler)) != 1 {
+    	// What's $new?
+    	$juggler: append($juggler, $new);
+    }
+    @return $juggler;
+}
+
+$juggler: juggler(77);
+// -> 77 675 17537 2322378 1523 59436 243 3787 233046 482 21 96 9 27 140 11 36 6 2 1
+</code></pre>
 </section>
 <section id="look-and-say">
 <h2>Look-and-say sequence <a href="#look-and-say">#</a></h2>
