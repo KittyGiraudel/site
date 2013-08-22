@@ -14,7 +14,7 @@ guest: "Hugo Darby-Brown"
 <h2>Setting Out <a href="#setting-out">#</a></h2>
 <p>I wanted to create a horizontal scrolling navigation, similar to that of the iOS taskbar. Lots of responsive menu's take the approach of displaying list items vertically on small screens, but I wanted to play with the idea of having menu items off the screen and swiping to reveal them.</p>
 <figure class="figure">
-<img src='http://darbybrown.com/img/scroll-overflow-menu.jpg" alt="" />
+<img src="http://darbybrown.com/img/scroll-overflow-menu.jpg" alt="" />
 <figcaption>The scroll-overflow menu by Hugo</figcaption>
 </figure>
 </section>
