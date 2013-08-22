@@ -7,8 +7,8 @@ guest: "Hugo Darby-Brown"
 ---
 
 <section>
-<p class="explanation">The following is a guest post by <a href="http://darbybrown.com/">Hugo Darby-Brown</a>, a talented front-end developer. I'm very glad to have him writing here today!</p>
-<p>Before I start off I'd like to say that this is more of a proof of concept, than a method that I'd recommend using on your next project.  This menu uses the CSS declaration <code>-webkit-overflow-scrolling: touch;</code> so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).</p>
+<p class="explanation">The following is a guest post by <a href="http://darbybrown.com/">Hugo Darby-Brown</a>, a talented front-end developer. I'm very glad to have him writing here today about a menu concept he came up with!</p>
+<p>Before I start off I'd like to say that this is more of <strong>a proof of concept</strong>, than a method that I'd recommend using on your next project.  This menu uses the CSS declaration <code>-webkit-overflow-scrolling: touch;</code> so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).</p>
 </section>
 <section id="setting-out">
 <h2>Setting Out <a href="#setting-out">#</a></h2>
@@ -20,7 +20,7 @@ guest: "Hugo Darby-Brown"
 </section>
 <section id="basic-effect">
 <h2>The Basic Effect <a href="#basic-effect">#</a></h2>
-<p>I wanted the HTML markup to be really clean, it's pretty self explanatory really.</p>
+<p>I wanted the HTML markup to be as clean as possible, this I guess it's pretty self explanatory.</p>
 <pre class="language-markup"><code>&lt;header>
   &lt;nav role='navigation'>
     &lt;ul>
@@ -30,9 +30,9 @@ guest: "Hugo Darby-Brown"
       &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
     &lt;/ul>
   &lt;/nav>
-  &lt;a href="#">Menu&lt;/a>
+  &lt;a href="#" class="nav-toggle">Menu&lt;/a>
 &lt;/header></code></pre>
-<p>This is the CSS that makes the effect happen. I've stripped out all the styling to highlight the key components, that make the effect work.</p>
+<p>This is the CSS that makes the effect happen. I've stripped out all the styling to highlight the key components that make the effect work.</p>
 <pre class="language-css"><code>nav {
   overflow-x: scroll; /* 1 */
   -webkit-overflow-scrolling: touch; /* 2 */
@@ -54,7 +54,7 @@ li {
   display: inline-block; /* 6 */
 }</code></pre>
 <p>Okay, so what's going on here? In essence we're creating a navigation that is too large for the screen.</p>
-<p>We set the overflow to scroll, and the overflow-scroll type to <code>touch</code> to allow for momentum scrolling. Explained in a bit more detail below:</p>
+<p>We set the overflow to <code>scroll</code>, and the overflow-scroll type to <code>touch</code> to allow for momentum scrolling. Explained in a bit more detail below:</p>
 <ol>
 <li>Setting <code>auto</code> will work on some devices, but set this to <code>scroll</code> just to be sure.</li>
 <li>This the <em>magic</em> property that enables the <em>native feel</em> scrolling.</li>
@@ -77,14 +77,16 @@ li {
 }</code></pre>
 <p>Throw in some JS to toggle the class, and you've got yourself a basic slide down mobile menu.</p>
 <pre class="language-javascript"><code>// jQuery version
-$("header > a").click(function () {
+$(".nav-toggle").on('click', function (e) {
   $("nav").toggleClass("show");
+  e.preventDefault();
 });
 
 // Vanilla JS version
-document.querySelector('header > a').onclick = function () {
+document.querySelector('.nav-toggle').onclick = function (e) {
   var nav = document.querySelector('nav');
   nav.classList.toggle('show');
+  e.preventDefault();
 }</code></pre>
 </section>
 <section id="larger-devices">
@@ -100,7 +102,7 @@ document.querySelector('header > a').onclick = function () {
     width: 100%; 
   }
 
-  header > a {
+  .nav-toggle {
     display: none; 
   }
 }</code></pre>
