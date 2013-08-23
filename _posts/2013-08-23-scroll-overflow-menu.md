@@ -1,8 +1,8 @@
 ---
 published: true
 layout: post
-preview: true
-comments: false
+preview: false
+comments: true
 guest: "Hugo Darby-Brown"
 ---
 
@@ -132,5 +132,3 @@ document.querySelector('.nav-toggle').onclick = function (e) {
 <blockquote class="quote"><img src="https://si0.twimg.com/profile_images/378800000254019863/1b79cd519877a4900d633354e161f095.jpeg" alt="Photo Hugo Darby Brown" class="pull-image--left">
 <p>Hugo Darby-Brown is both a designer and a developer from UK, passionate with front-end technologies especially CSS. You can catch him on <a href="http://twitter.com/darbybrown">Twitter</a> or on his brand new <a href="http://darbybrown.com">site</a>.</p></blockquote>
 </section>
-
-
