@@ -8,7 +8,7 @@ guest: "Hugo Darby-Brown"
 
 <section>
 <p class="explanation">The following is a guest post by <a href="http://darbybrown.com/">Hugo Darby-Brown</a>, a talented front-end developer. I'm very glad to have him writing here today about a menu concept he came up with!</p>
-<p>Before I start off I'd like to say that this is more of <strong>a proof of concept</strong>, than a method that I'd recommend using on your next project.  This menu uses the CSS declaration <code>-webkit-overflow-scrolling: touch;</code> so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).</p>
+<p>Before I start off I'd like to say that this is more of <strong>a proof of concept</strong>, than a method that I'd recommend using on your next project.  This menu uses the WebKit-specific CSS declaration <code>overflow-scrolling: touch</code> so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).</p>
 </section>
 <section id="setting-out">
 <h2>Setting Out <a href="#setting-out">#</a></h2>
@@ -53,8 +53,7 @@ ul:after { /* 5 */
 li {
   display: inline-block; /* 6 */
 }</code></pre>
-<p>Okay, so what's going on here? In essence we're creating a navigation that is too large for the screen.</p>
-<p>We set the overflow to <code>scroll</code>, and the overflow-scroll type to <code>touch</code> to allow for momentum scrolling. Explained in a bit more detail below:</p>
+<p>Okay, so what's going on here? In essence we're creating a navigation that is too large for the screen. We set the overflow to <code>scroll</code>, and the overflow-scroll type to <code>touch</code> to allow for momentum scrolling. Explained in a bit more detail below:</p>
 <ol>
 <li>Setting <code>auto</code> will work on some devices, but set this to <code>scroll</code> just to be sure.</li>
 <li>This the <em>magic</em> property that enables the <em>native feel</em> scrolling.</li>
@@ -66,7 +65,8 @@ li {
 </section>
 <section id="toggling">
 <h2>Toggling The Menu <a href="#toggling">#</a></h2>
-<p>We set the <code>max-height</code> of the <code>nav</code> to 0 to initially hide it, and add a <code>transition</code> so when we toggle the class <code>.show</code> the menu will appear to slide in from the top, pretty basic mobile menu stuff. </p>
+<p>We're almost done, all we have to do is to deal with the toggling. We could use a CSS hack for this but this is not the point so we'll just use a tiny bit of JavaScript.</p>
+<p>So we set the <code>max-height</code> of the navigation to <code>0</code> in order to initially hide it, and add a <code>transition</code> so when we toggle the class <code>.show</code> the menu will appear to slide in from the top, pretty basic mobile menu stuff. </p>
 <pre class="language-css"><code>nav {	
 	max-height: 0;
 	transition: .6s ease-in-out;
@@ -127,7 +127,7 @@ document.querySelector('.nav-toggle').onclick = function (e) {
 <h2>Final thoughts <a href="#final-thoughts">#</a></h2>
 <p>I think you'll see a lot more menu's taking a horizontal approach in the future, but unfortunately Android 2.X still makes up for a 1/3 of market share of all Android devices, so until that reduces significantly I wouldn't use this in any serious projects.</p>
 <p>I would love to hear your thoughts on <code>-webkit-overflow-scrolling: touch;</code> and the future possibilities. </p>
-<p>I would usually embed the demo but, unfortunately iframes don't play well with <code>scroll-overflow:touch</code>, so it's best if you directly check <a href="http://darbybrown.com/menu">this link</a> with your phone. Or you could play around the code by <a href="http://darbybrown.com/menu/download.zip" target="_blank">downloading the files</a>!</p>
+<p>I would usually embed the demo but, unfortunately iframes don't play well with <code>overflow-scrolling:touch</code>, so it's best if you directly check <a href="http://darbybrown.com/menu">this link</a> with your phone. Or you could play around the code by <a href="http://darbybrown.com/menu/download.zip" target="_blank">downloading the files</a>!</p>
 <p>Thanks for reading! If you think of anything to improve this menu concept, feel free to share. :)</p>
 <blockquote class="quote"><img src="https://si0.twimg.com/profile_images/378800000254019863/1b79cd519877a4900d633354e161f095.jpeg" alt="Photo Hugo Darby Brown" class="pull-image--left">
 <p>Hugo Darby-Brown is both a designer and a developer from UK, passionate with front-end technologies especially CSS. You can catch him on <a href="http://twitter.com/darbybrown">Twitter</a> or on his brand new <a href="http://darbybrown.com">site</a>.</p></blockquote>
