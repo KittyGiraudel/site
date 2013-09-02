@@ -3,6 +3,7 @@ published: true
 preview: true
 comments: false
 title: "Use lengths, not strings"
+layout: post
 ---
 
 <section>
