@@ -15,7 +15,8 @@ $length: $value + em;
 whatever {
     padding-top: $length;
 }</code></pre>
-<p>I want to play a game... This example: working or not working? Well obviously, it works like a charm. That's probably why you can see it so much in so many Sass demos.</p>
+<p>I want to play a game... This example: working or not working?</p>
+<p>Well obviously, it works like a charm. That's probably why you can see it so much in so many Sass demos.</p>
 </section>
 <section id="problem">
 <h2>The problem <a href="#problem">#</a></h2>
@@ -35,7 +36,7 @@ whatever {
 $length: $value * 1em;
     
 whatever {
-    padding-top: round($length);
+    padding-top: round($length); // 13em
 }</code></pre>
 <p>Problem solved! Please, use lengths when you need to, not strings.</p>
 </section>
