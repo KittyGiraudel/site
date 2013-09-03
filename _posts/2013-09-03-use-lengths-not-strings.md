@@ -1,7 +1,7 @@
 ---
 published: true
-preview: true
-comments: false
+preview: false
+comments: true
 title: "Use lengths, not strings"
 layout: post
 ---
