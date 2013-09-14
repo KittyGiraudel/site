@@ -39,6 +39,11 @@ layout: post
 <p>Fortunately, we've made it very easy for us to decree a browser version as obsolete. All we have to do is change the version in <a href="https://github.com/4ae9b8/browserhacks/blob/master/code/db_browsers.php">this file</a>. Every hack for this version and prior will be considered as legacy.</p>
 <p>Soon enough, we'll move the legacy limit for Internet Explorer to <code>7</code>. Soon enough my friends.</p>
 </section>
+<section id="link-to">
+<h2>Link to a hack <a href="#link-to">#</a></h2>
+<p>We thought it would be cool if you could link to a specific hack. It would make it easier to show a hack to someone, rather than copy/pasting or saying <em>Section IE, sub-section Media hacks, 3rd hack on the 2nd column</em>.</p>
+<p>So every hack now has a unique ID. You can target a hack by clicking the little <code>#</code> at the bottom right of the code.</p>
+</section>
 <section id="little-things">
 <h2>Little things <a href="#little-things">#</a></h2>
 <p>We've also done a few little things, starting by <em>improving</em> the design. The header is now lighter, and the search bar only is fixed on scroll. We'd like opinion on this. You like it? You don't? Why?</p>
@@ -46,10 +51,9 @@ layout: post
 </section>
 <section id="what-now">
 <h2>What now? <a href="#what-now">#</a></h2>
-<p>Well, there is always work to do: if only fixing bugs, adding hacks, verifying hacks, and so on. We still have quite a couple of features on the way though like being able to <a href="https://github.com/4ae9b8/browserhacks/issues/97">link to a hack</a>. 
-<p>Actually the feature was ready to be released until we realised the id for a hack is likely to be changed since we don't use an auto-incremented primary from a DBMS but a <a href="https://github.com/4ae9b8/browserhacks/blob/master/code/db_hacks.php">huge PHP array</a>. You can still use a hack's HTML id to link to it like <a href="http://browserhacks.com#hack-10">http://browserhacks.com#hack-10</a> but don't be surprised if some day, <code>#hack-10</code> don't link to this hack anymore.</p> 
+<p>Well, there is always work to do: if only fixing bugs, adding hacks, verifying hacks, and so on. We still have quite a couple of features on the way.</p>
 <blockquote class="pull-quote--right">Many of the hacks we provide are likely to break when passed in a preprocessor.</blockquote>
-<p>I think we also need to give you a hint about the <a href="https://github.com/4ae9b8/browserhacks/issues/96">safety of a hack</a>. Many of the hacks we provide are likely to break when passed in a preprocessor. Some of them can even break upon minification. While we can't prevent this from happening, we should be able to tell you which hacks are <em>safe</em> and which are not. We only need ot think of a way to test all this stuff. If you want to help, you'd be more than welcome!</p>
+<p>For example, we need to give you a hint about the <a href="https://github.com/4ae9b8/browserhacks/issues/96">safety of a hack</a>. Many of the hacks we provide are likely to break when passed in a preprocessor. Some of them can even break upon minification. While we can't prevent this from happening, we should be able to tell you which hacks are <em>safe</em> and which are not. We only need ot think of a way to test all this stuff. If you want to help, you'd be more than welcome!</p>
 <p>And last but not least, we want to be able to <a href="https://github.com/4ae9b8/browserhacks/issues/88">automate the testing</a>. This is probably our biggest project for Browserhacks, and we've yet to figure a way to do so. Ultimately, we'd like to be able to make all tests and proof-tests automated so we don't have to spend countless hours on <a href="http://browserstack.com">Browserstack</a> testing all the browsers / OS combos.</p>
 <p>If you feel like helping for anything at all, that would be really awesome. Shoot us on <a href="http://twitter.com/browserhacks">Twitter</a> or on <a href="https://github.com/4ae9b8/browserhacks/">Github</a>.</p> 
 <p class="note">Note: by the way, I'd really like not having to retweet everything from the Browserhacks Twitter account, so if you guys could follow it, that'd be cool. :D</p>
