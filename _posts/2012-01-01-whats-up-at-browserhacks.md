@@ -3,10 +3,19 @@ title: "What's up at Browserhacks?"
 preview: true
 comments: false
 layout: post
+published: true
 ---
+
 <section>
 <p>Well, quite a lot actually! We've been working hard on <a href="http://browserhacks.com">Browserhacks.com</a> lately to make this whole pool of hacks even easier for you to browse and use. So much we've recently crossed the 100 issues line on <a href="http://github.com/4ae9b8/browserhacks/">GitHub</a>; most of them are closed thankfully!</p>
 <p>Anyway, since we do not have a blog for Browserhacks, I have no choice but to announce all those things here. Quick article to explain all we've done since last update.</p>
+</section>
+<section id="grunt">
+<h2>Moving to grunt <a href="#grunt">#</a></h2>
+<p>We have decided to put aside our PHP tools to move to a <a href="http://gruntjs.com">Grunt</a> workflow. Grunt is  a task-builder in JavaScript involving a lot of things to us.</p>
+<p>The first thing is we need to learn how to Grunt. <a href="http://blog.weinberg.me/">Fabrice Weinberg</a> is currently helping us for the porting but in the end we should be able to do this on our own.</p>
+<p>Now we don't use PHP anymore, we can host the whole thing on <a href="http://pages.github.com/">GitHub Pages</a> which makes our repository always sync with the server and save us from all that server crap.</p>
+<p>Because Grunt is a task builder, we will be able to do a lot more things. More importantly, we will be able to do a lot more things automatically especially testing hacks and stuff.</p>
 </section>
 <section id="merging-pages">
 <h2>Merging home and test pages <a href="#merging-pages">#</a></h2>
@@ -53,8 +62,8 @@ layout: post
 <h2>What now? <a href="#what-now">#</a></h2>
 <p>Well, there is always work to do: if only fixing bugs, adding hacks, verifying hacks, and so on. We still have quite a couple of features on the way.</p>
 <blockquote class="pull-quote--right">Many of the hacks we provide are likely to break when passed in a preprocessor.</blockquote>
-<p>For example, we need to give you a hint about the <a href="https://github.com/4ae9b8/browserhacks/issues/96">safety of a hack</a>. Many of the hacks we provide are likely to break when passed in a preprocessor. Some of them can even break upon minification. While we can't prevent this from happening, we should be able to tell you which hacks are <em>safe</em> and which are not. We only need ot think of a way to test all this stuff. If you want to help, you'd be more than welcome!</p>
-<p>And last but not least, we want to be able to <a href="https://github.com/4ae9b8/browserhacks/issues/88">automate the testing</a>. This is probably our biggest project for Browserhacks, and we've yet to figure a way to do so. Ultimately, we'd like to be able to make all tests and proof-tests automated so we don't have to spend countless hours on <a href="http://browserstack.com">Browserstack</a> testing all the browsers / OS combos.</p>
+<p>For example, we need to give you a hint about the <a href="https://github.com/4ae9b8/browserhacks/issues/96">safety of a hack</a>. Many of the hacks we provide are likely to break when passed in a preprocessor. Some of them can even break upon minification. While we can't prevent this from happening, we should be able to tell you which hacks are <em>safe</em> and which are not. We only need ot think of a way to test all this stuff with Grunt. If you want to help, you'd be more than welcome!</p>
+<p>And last but not least, we want to be able to <a href="https://github.com/4ae9b8/browserhacks/issues/88">automate the testing</a>. This is probably our biggest project for Browserhacks, and we've yet to figure a way to do so. Ultimately, we'd like to be able to make all tests and proof-tests automated so we don't have to spend countless hours on <a href="http://browserstack.com">Browserstack</a> testing all the browsers / OS combos. Thanks to Fabrice Weinberg, this may possible with our new Grunt workflow.</p>
 <p>If you feel like helping for anything at all, that would be really awesome. Shoot us on <a href="http://twitter.com/browserhacks">Twitter</a> or on <a href="https://github.com/4ae9b8/browserhacks/">Github</a>.</p> 
 <p class="note">Note: by the way, I'd really like not having to retweet everything from the Browserhacks Twitter account, so if you guys could follow it, that'd be cool. :D</p>
 </section>
