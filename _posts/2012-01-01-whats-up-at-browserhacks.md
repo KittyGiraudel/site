@@ -12,10 +12,10 @@ published: true
 </section>
 <section id="grunt">
 <h2>Moving to grunt <a href="#grunt">#</a></h2>
-<p>We have decided to put aside our PHP tools to move to a <a href="http://gruntjs.com">Grunt</a> workflow. Grunt is  a task-builder in JavaScript involving a lot of things to us.</p>
-<p>The first thing is we need to learn how to Grunt. <a href="http://blog.weinberg.me/">Fabrice Weinberg</a> is currently helping us for the porting but in the end we should be able to do this on our own.</p>
+<p>We have decided to put aside our PHP tools to move to a <a href="http://gruntjs.com">Grunt</a> workflow. As you may know, Grunt is  a task-builder in JavaScript which is involving a lot of things to us.</p>
+<p>Well obviously the first thing is we need to learn how to Grunt. <a href="http://blog.weinberg.me/">Fabrice Weinberg</a> is currently helping us for the porting but at the end of the day we should be able to do this on our own.</p>
 <p>Now we don't use PHP anymore, we can host the whole thing on <a href="http://pages.github.com/">GitHub Pages</a> which makes our repository always sync with the server and save us from all that server crap.</p>
-<p>Because Grunt is a task builder, we will be able to do a lot more things. More importantly, we will be able to do a lot more things automatically especially testing hacks and stuff.</p>
+<p>Ultimately because Grunt is a task builder, we will be able to do a lot more things. More importantly, we will be able to do a lot more things automatically especially testing hacks and stuff.</p>
 </section>
 <section id="merging-pages">
 <h2>Merging home and test pages <a href="#merging-pages">#</a></h2>
