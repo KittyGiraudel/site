@@ -61,7 +61,7 @@ published: true
 <img src="/images/whats-up-at-browserhacks__validity.jpg" alt="">
 <figcaption>Display hacks validity and CSS Lint errors</figcaption>
 </figure>
-<p>Awesome little feature: in case the hack is invalid, we display the warning raised by CSS Lint when you hover the little cross at the bottom right of the hack. Pretty cool, right?</p>
+<p>Awesome little feature: in case the hack is invalid, we display the warning raised by CSS Lint when you hover the little cross at the bottom right of the hack. Pretty cool, right? </p>
 </section>
 <section id="little-things">
 <h2>Little things <a href="#little-things">#</a></h2>
