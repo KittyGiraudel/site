@@ -57,6 +57,11 @@ published: true
 <h2>Is it valid? <a href="#hack-safety">#</a></h2>
 <p>This is a <a href="https://github.com/4ae9b8/browserhacks/issues/96">feature request by Lea Verou</a> we're honoring. She asked us for a way to know whether a hack is valid or not. By valid, we mean <em>goes through <a href="http://csslint.net/">CSS Lint</a> without raising a warning</em>.</p>
 <p>Thanks to both Fabrice and Grunt, we managed to have all our CSS hacks checked with CSS Lint so you can know right away if a hack is valid or not. We'll very soon have the same thing for JavaScript hacks with JSLint.</p>
+<figure class="figure">
+<img src="/images/whats-up-at-browserhacks__validity.jpg" alt="">
+<figcaption>Display hacks validity and CSS Lint errors</figcaption>
+</figure>
+<p>Awesome little feature: in case the hack is invalid, we display the warning raised by CSS Lint when you hover the little cross at the bottom right of the hack. Pretty cool, right? </p>
 </section>
 <section id="little-things">
 <h2>Little things <a href="#little-things">#</a></h2>
