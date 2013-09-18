@@ -13,7 +13,7 @@ published: true
 <section id="grunt">
 <h2>Moving to grunt <a href="#grunt">#</a></h2>
 <p>We have decided to put aside our PHP tools to move to a <a href="http://gruntjs.com">Grunt</a> workflow. As you may know, Grunt is  a task-builder in JavaScript which is involving a lot of things to us.</p>
-<p>Well obviously the first thing is we need to learn how to Grunt. <a href="http://blog.weinberg.me/">Fabrice Weinberg</a> is currently helping us for the porting but at the end of the day we should be able to do this on our own.</p>
+<p>Well obviously the first thing is we need to learn how to Grunt. <a href="http://blog.weinberg.me/">Fabrice Weinberg</a> has helped us for the porting but at the end of the day we should be able to do this on our own.</p>
 <p>Now we don't use PHP anymore, we can host the whole thing on <a href="http://pages.github.com/">GitHub Pages</a> which makes our repository always sync with the server and save us from all that server crap.</p>
 <p>Ultimately because Grunt is a task builder, we will be able to do a lot more things. More importantly, we will be able to do a lot more things automatically especially testing hacks and stuff.</p>
 </section>
@@ -52,6 +52,11 @@ published: true
 <h2>Link to a hack <a href="#link-to">#</a></h2>
 <p>We thought it would be cool if you could link to a specific hack. It would make it easier to show a hack to someone, rather than copy/pasting or saying <em>Section IE, sub-section Media hacks, 3rd hack on the 2nd column</em>.</p>
 <p>So every hack now has a unique ID. You can target a hack by clicking the little <code>#</code> at the bottom right of the code.</p>
+</section>
+<section id="hack-safety">
+<h2>Is it valid? <a href="#hack-safety">#</a></h2>
+<p>This is a <a href="https://github.com/4ae9b8/browserhacks/issues/96">feature request by Lea Verou</a> we're honoring. She asked us for a way to know whether a hack is valid or not. By valid, we mean <em>goes through <a href="http://csslint.net/">CSS Lint</a> without raising a warning</em>.</p>
+<p>Thanks to both Fabrice and Grunt, we managed to have all our CSS hacks checked with CSS Lint so you can know right away if a hack is valid or not. We'll very soon have the same thing for JavaScript hacks with JSLint.</p>
 </section>
 <section id="little-things">
 <h2>Little things <a href="#little-things">#</a></h2>
