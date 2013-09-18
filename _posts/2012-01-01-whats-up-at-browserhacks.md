@@ -9,10 +9,11 @@ summary: true
 
 <section>
 <p>Well, quite a lot actually! We've been working hard on <a href="http://browserhacks.com">Browserhacks.com</a> lately to make this whole pool of hacks even easier for you to browse and use. So much we've recently crossed the 100 issues line on <a href="http://github.com/4ae9b8/browserhacks/">GitHub</a>; most of them are closed thankfully!</p>
-<p>Anyway, since we do not have a blog for Browserhacks, I have no choice but to announce all those things here. Quick article to explain all we've done since last update.</p>
+<p>Anyway, since we do not have a blog for Browserhacks, I have no choice but to announce all those things here. Quick article to explain all we've done since last major update.</p>
 </section>
 <section id="grunt">
 <h2>Moving to grunt <a href="#grunt">#</a></h2>
+<img src="/images/whats-up-at-browserhacks__grunt.jpg" alt="Grunt.js is a JavaScript task runner" class="pull-image--right" />
 <p>We have decided to put aside our PHP tools to move to a <a href="http://gruntjs.com">Grunt</a> workflow. As you may know, Grunt is  a task-builder in JavaScript which is involving a lot of things to us.</p>
 <p>Well obviously the first thing is we need to learn how to Grunt. <a href="http://blog.weinberg.me/">Fabrice Weinberg</a> has helped us for the porting but at the end of the day we should be able to do this on our own.</p>
 <p>Now we don't use PHP anymore, we can host the whole thing on <a href="http://pages.github.com/">GitHub Pages</a> which makes our repository always sync with the server and save us from all that server crap.</p>
