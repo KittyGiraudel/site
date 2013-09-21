@@ -5,20 +5,31 @@ layout: default
 "page-class": "page--resume"
 ---
 
-<section id="formation">
-<h2><i class='fontawesome-beaker icon-left'></i>Formation <a href="#formation" class="section-anchor">#</a></h2>
+<section id="experience">
 
-<h3>Ariès - 2D/3D Infographic School</h3>
+<h2><span class='fontawesome-briefcase icon-left'></span>Experience <a href="#experience" class="section-anchor">#</a></h2>
+<!--
+<h3>Caramel Poivré - 2012 (still)</h3>
 <ul>
-<li>In progress : Programming sciences</li>
-<li>2010 - 2012 : Webmaster Diploma</li>
-<li>2009 - 2010 : Preparatory class</li>
-</ul>
-<h3>High School Meylan (France)</h3>
-<ul>
-<li>2008 - 2009 : High school diploma following a terminal examination; specializations: Economics and Social Studies opt. English (Baccalauréat ES opt. Anglais)</li>
-</ul>
+<li>Development of a web watch application : <a href='http://veille.caramel-poivre.fr/' title="Veille Caramel Poivré">http://veille.caramel-poivre.fr/</a></a></li>
+</ul> 
+-->
+<h3>Square Connexion - current</h3>
+<p>Front-end developer</p>
 
+<h3>Crédit Agricole Sud Rhône Alpes - 2011/2013</h3>
+<p>Web Developer</p>
+
+<h3>Matt Design Communication - 2011 (2 months)</h3>
+<p>WordPress project</p>
+
+<h3>Personal projects</h3>
+<ul>
+<li><a href="http://browserhacks.com">Browserhacks.com</a>, a comprehensive list of browser specific CSS hacks</li>
+<li><a href="https://github.com/Team-Sass/Sass-list-functions">Advanced Sass list functions</a> in Team Sass</li>
+<li><a href="https://github.com/HugoGiraudel/KNACSS-Sass">Sass port of KNACSS</a>, a CSS framework from Raphaël Goetter</li>
+<!--<li><a href="http://wildwebwatch.com/" title="Wild Web Watch">Wild Web Watch</a>, a web watch project</a></li>-->
+</ul>
 
 </section>
 <section id="skills">
@@ -34,34 +45,21 @@ layout: default
 <p>French (native), English (fluent), Spanish (notions)</p>
 
 </section>
-<section id="experience">
 
-<h2><span class='fontawesome-briefcase icon-left'></span>Experience <a href="#experience" class="section-anchor">#</a></h2>
-<!--
-<h3>Caramel Poivré - 2012 (still)</h3>
+<section id="formation">
+<h2><i class='fontawesome-beaker icon-left'></i>Formation <a href="#formation" class="section-anchor">#</a></h2>
+
+<h3>Ariès - 2D/3D Infographic School</h3>
 <ul>
-<li>Development of a web watch application : <a href='http://veille.caramel-poivre.fr/' title="Veille Caramel Poivré">http://veille.caramel-poivre.fr/</a></a></li>
-</ul> 
--->
-<h3>Crédit Agricole Sud Rhône Alpes - 2011/2013 (still)</h3>
+<li>2012 - 2013 : Programming sciences</li>
+<li>2010 - 2012 : Webmaster Diploma</li>
+<li>2009 - 2010 : Preparatory class</li>
+</ul>
+<h3>High School Meylan (France)</h3>
 <ul>
-<li>Development of web content for an iPad app</li>
-<li>Development of a website event for the <a href="https://www.le-store-by-ca-sra.fr" title="Website event for the Store by Crédit Agricole">Store by Crédit Agricole</a></li>
-<li>Design and development of the <a href='http://ca-sudrhonealpes.fr/developpement-durable-index.html' title='Crédit Agricole Sud Rhône Alpes sustainable development website'>sustainable development website</a> for the local fund</li>
+<li>2008 - 2009 : High school diploma following a terminal examination; specializations: Economics and Social Studies opt. English (Baccalauréat ES opt. Anglais)</li>
 </ul>
 
-<h3>Matt Design Communication - 2011 (2 months)</h3>
-<ul>
-<li>Developement of <a href='http://www.mattbrand.fr/' title="Matt Design Communication website">Matt Design Communication</a> official website</a></li>
-<li>Design and development of the front page for <a href='http://aslg.france-neige-international.fr/' title="ASLG front page">Alpine Leisure Summer Group (ASLG)</a></li>
-</ul> 
-
-<h3>Personal projects</h3>
-<ul>
-<li><a href="http://browserhacks.com">Browserhacks.com</a>, a comprehensive list of browser specific CSS hacks</li>
-<li><a href="https://github.com/HugoGiraudel/KNACSS-Sass">Sass port of KNACSS</a>, a CSS framework from Raphaël Goetter</li>
-<li><a href="http://wildwebwatch.com/" title="Wild Web Watch">Wild Web Watch</a>, a web watch project</a></li>
-</ul>
 
 </section>
 <section id="publications">
