@@ -1,7 +1,7 @@
 ---
 title: "What's up at Browserhacks?"
-preview: true
-comments: false
+preview: false
+comments: true
 layout: post
 published: true
 summary: true
