@@ -15,13 +15,13 @@ layout: default
 </ul> 
 -->
 <h3>Square Connexion - current</h3>
-<p>Front-end developer</p>
+<p class="job-title">Front-end developer in a Symfony2 project.</p>
 
 <h3>Crédit Agricole Sud Rhône Alpes - 2011/2013</h3>
-<p>Web Developer</p>
+<p class="job-title">Web Developer.</p>
 
 <h3>Matt Design Communication - 2011 (2 months)</h3>
-<p>WordPress project</p>
+<p class="job-title">WordPress project.</p>
 
 <h3>Personal projects</h3>
 <ul>
