@@ -1,5 +1,5 @@
 ---
-title: "Advanced Sass list functions - 2"
+title: "Advanced Sass list functions, again"
 published: true
 preview: true
 comments: false
@@ -8,8 +8,8 @@ layout: post
 
 <section>
 <p class="explanation">In case you have missed my <a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/">first article about this Advanced Sass List Functions library</a>, I recommand you to read it.</p>
-<p>Heys guys, it's been a while I haven't posted anything! I have been pretty buse lately but I really miss writing so here it is: a short article about what's new on my Sass list functions library.</p>
-<p>Well first of all, it has been added as a <a href="https://github.com/Team-Sass">Team-Sass</a> repository on GitHub. You probably know the Team-Sass collective. They have done ton of awesome things like <a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a>, <a href="https://github.com/Team-Sass/Sassy-math">Sassy Math</a> and <a href="https://github.com/Team-Sass/uikit">UIKit</a>.</p>
+<p>Heys guys, it's been a while I haven't posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what's new on my Sass list functions library.</p>
+<p>Well first of all, it has been added as a <a href="https://github.com/Team-Sass">Team-Sass</a> repository on GitHub (the <a href="http://codepen.io/HugoGiraudel/pen/loAgq">pen</a> is still updated). You probably know the Team-Sass collective. They have done ton of awesome things like <a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a>, <a href="https://github.com/Team-Sass/Sassy-math">Sassy Math</a> and <a href="https://github.com/Team-Sass/uikit">UIKit</a>.</p>
 <p>I am very glad to see my repo in there, so big thanks to them. :)</p>
 </section>
 <section id="added-functions">
@@ -30,7 +30,7 @@ layout: post
   
   @return $result;
 }</code></pre>
-<p>I think the code is self-explanatory. We loop through all items of the list: if it's not false, we append it. Then we return the new list. Easy peasy! It would be even easier if Sass had a boolean converter function. Then we could do something like this <code>@if !!$item { $result: append($result, $item); }</code>. Unfortunately, we can't.</p>
+<p>I think the code is self-explanatory. We loop through all items of the list: if it's not false, we append it then we return the new list. Easy peasy! It would be even easier if Sass had a boolean converter operator (<code>!!</code>). Then we could do something like this <code>@if !!$item { $result: append($result, $item); }</code>. Unfortunately, we can't.</p>
 <h3>Is symmetrical</h3>
 <p>I don't think this function has any major usecase, but you know, just in case I added it. It checks whether your list is symmetrical. It's based on my <code>reverse()</code> function.</p>
 <pre class="language-scss"><code>@function is-symmetrical($list) {
@@ -60,7 +60,12 @@ layout: post
   }
   
   @return $result;
-}</code></pre>
+}
+
+$list: 1 2 3 4px;
+$sum: sum($list);       // -> 6
+$sum: sum($list, true); // -> 10
+</code></pre>
 <h3>Chunk</h3>
 <p>The <code>chunk()</code> function is based on the equivalent PHP function <code>array_chunk()</code>. From the <a href="http://php.net/manual/en/function.array-chunk.php">PHP.net manual</a>:</p>
 <blockquote class="quote">Chunks an <code>$array</code> into <code>$size</code> large chunks. The last chunk may contain less than <code>$size</code> elements.</blockquote>
@@ -153,7 +158,7 @@ $count-values: count-values($list);
 <section id="what-now">
 <h2>What now? <a href="#what-now">#</a></h2>
 <p>Quite a few things! I still have to clean some functions because they are kind of messy at the time. I could still add new functions if you think of something.</p>
-<p>I am unable to wait for Sass 3.3, it is going to be awesome. First, we will have a real ternary operator so the <code>if()</code> function will stop bugging around. </p>
-<p>But there will also be new string manipulation functions and the <code>call()</code> function which will allow me to make a lot of new functions like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">every()</a>.</p>
-<p>Oh, and of course Sass 3.3 will bring map support which will be a whole another story, with a ton of new functions to make. It is going to be awesome, really!</p>
+<p>I am unable to wait for Sass 3.3, it is going to be awesome. First, the <code>if()</code> will be completely reworked to have a built-in parser so it stop bugging around. </p>
+<p>But there will also be new string manipulation functions (<code>str-length()</code>, <code>str-slice()</code>...) and the <code>call()</code> function which will allow me to make a lot of new functions like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every"><code>every()</code></a>.</p>
+<p>Oh, and of course Sass 3.3 will bring map support which will be a whole another story, with a ton of new functions to make. Anyway it is going to be amazing, really!</p>
 </section>
