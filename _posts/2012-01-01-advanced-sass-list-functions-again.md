@@ -7,7 +7,7 @@ layout: post
 ---
 
 <section>
-<p class="explanation">In case you have missed my <a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/">first article about this Advanced Sass List Functions library</a>, I recommand you to read it.</p>
+<p class="explanation">In case you have missed my first article about this Advanced Sass List Functions library, I recommand you to read <a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/">it</a>.</p>
 <p>Heys guys, it's been a while I haven't posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what's new on my Sass list functions library.</p>
 <p>Well first of all, it has been added as a <a href="https://github.com/Team-Sass">Team-Sass</a> repository on GitHub (the <a href="http://codepen.io/HugoGiraudel/pen/loAgq">pen</a> is still updated). You probably know the Team-Sass collective. They have done ton of awesome things like <a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a>, <a href="https://github.com/Team-Sass/Sassy-math">Sassy Math</a> and <a href="https://github.com/Team-Sass/uikit">UIKit</a>.</p>
 <p>I am very glad to see my repo in there, so big thanks to them. :)</p>
@@ -29,7 +29,11 @@ layout: post
   }
   
   @return $result;
-}</code></pre>
+}
+
+$list: a, b, null, c, false, '', d;
+$purge: purge($list);
+// -> a, b, c, d</code></pre>
 <p>I think the code is self-explanatory. We loop through all items of the list: if it's not false, we append it then we return the new list. Easy peasy! It would be even easier if Sass had a boolean converter operator (<code>!!</code>). Then we could do something like this <code>@if !!$item { $result: append($result, $item); }</code>. Unfortunately, we can't.</p>
 <h3>Is symmetrical</h3>
 <p>I don't think this function has any major usecase, but you know, just in case I added it. It checks whether your list is symmetrical. It's based on my <code>reverse()</code> function.</p>
@@ -42,7 +46,7 @@ layout: post
       
   @return $result == reverse($result); 
 }</code></pre>
-<p>Why do we recreate a list from the given one? Because <code>$result == reverse($result)</code> may fail depending on the list separator. If anyone has a better idea for this one, I'd be glad.</p>
+<p>Why do we recreate a list from the given one? Because <code>return $list == reverse($list)</code> may fail depending on the list separator. If anyone has a better idea for this one, I'd be glad to have a look at it.</p>
 <h3>Sum</h3>
 <p>Same here, I don't think it has much point but I wanted to add it anyway. It takes all unitless number from the list and add them. The second parameter is a boolean enabling / disabling the removing of units. Basically, you can parseInt the value to get only the number.</p>
 <pre class="language-scss"><code>@function sum($list, $force: false) {
@@ -88,8 +92,12 @@ $sum: sum($list, true); // -> 10
   }
 
   @return $result;
-}</code></pre>
-<p>We could probably make the code slightly lighter but I didn't want to dig too deep into this. I'll probably clean this up later. Meanwhile, it works great. If you find a usecase, hit me up!</p>
+}
+
+$list: a, b, c, d, e, f, g;
+$chunk: chunk($list, 3);
+// -> ( (a, b, c), (d, e, f), g)</code></pre>
+<p>We could probably make the code slightly lighter but I didn't want to dig too deep into this. I'll eventually clean this up later. Meanwhile, it works great. If you find a usecase, hit me up!</p>
 <h3>Count values</h3>
 <p>Same as above, the <code>count-values()</code> function is inspired by <code>array_count_values()</code> that counts each value of the given array.</p>
 <blockquote class="quote">Returns an array using the values of <code>$array</code> as keys and their frequency in <code>$array</code> as values.</blockquote>
@@ -137,7 +145,11 @@ $count-values: count-values($list);
   }
   
   @return $result;
-}</code></pre>
+}
+
+$list: a, b, a, c, b, a, d, e;
+$remove-duplicates: remove-duplicates($list);
+// -> a, b, c, d, e</code></pre>
 <p>You can even do it recursively if you feel so, by enabling recursivity with <code>true</code> as a 2nd argument. Nice, isn't it?</p>
 </section>
 <section id="improvements">
