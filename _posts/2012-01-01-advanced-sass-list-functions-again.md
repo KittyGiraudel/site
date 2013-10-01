@@ -133,7 +133,7 @@ $count-values: count-values($list);
   @each $item in $list {
 
     @if not index($result, $item) {
-      @if type-of($item) == list and $recursive {
+      @if length($item) > 1 and $recursive {
         $result: append($result, remove-duplicates($item, $recursive));
       }
       
@@ -151,6 +151,35 @@ $list: a, b, a, c, b, a, d, e;
 $remove-duplicates: remove-duplicates($list);
 // -> a, b, c, d, e</code></pre>
 <p>You can even do it recursively if you feel so, by enabling recursivity with <code>true</code> as a 2nd argument. Nice, isn't it?</p>
+<h3>Debug</h3>
+<p>Last but not least, I added a <code>debug()</code> function to help you guys debugging your lists. Basically all it does is displaying the content of your list like a <code>console.log()</code> in JavaScript.</p>
+<pre class="language-scss"><code>@function debug($list) {
+  $result: #{"[ "};
+
+  @each $item in $list {
+
+    @if length($item) > 1 {
+      $result: $result#{debug($item)};
+    }
+
+    @else {
+      $result: $result#{$item};
+    }
+
+    @if index($list, $item) != length($list) {
+      $result: $result#{", "};
+    }
+
+  } 
+
+  $result: $result#{" ]"};
+
+  @return $result;
+}
+
+$list: (a b (c d (e f ( (g h (i j k)) l m))));
+$debug: debug($list);
+// -> [ a, b, [ c, d, [ e, f, [ [ g, h, [ i, j, k] ], l, m ] ] ] ]</code></pre>
 </section>
 <section id="improvements">
 <h2>Improvements <a href="#improvements">#</a></h2>
