@@ -12,6 +12,16 @@ layout: post
 <p>Well first of all, it has been added as a <a href="https://github.com/Team-Sass">Team-Sass</a> repository on GitHub (the <a href="http://codepen.io/HugoGiraudel/pen/loAgq">pen</a> is still updated). You probably know the Team-Sass collective. They have done ton of awesome things like <a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a>, <a href="https://github.com/Team-Sass/Sassy-math">Sassy Math</a> and <a href="https://github.com/Team-Sass/uikit">UIKit</a>.</p>
 <p>I am very glad to see my repo in there, so big thanks to them. :)</p>
 </section>
+<section id="compass-extension">
+<h2>Compass extension <a href="#compass-extension">#</a></h2>
+<p>Even more exciting guys, there is now a Compass extension! No more annoying copy/pasting into your projects to use those list functions. You can now directly import it into your projects in 3 little steps:</p>
+<ol>
+<li>Install the gem: <code>gem install ListFunctions</code></li>
+<li>Require it in your <code>config.rb</code>: <code>require 'ListFunctions'</code></li>
+<li>Import it into your stylesheets: <code>@import 'ListFunctions'</code></li>
+</ol>
+<p>Done. From there you can use all the functions you want. Isn't this awesome? All this thanks to <a href="http://viii.in/">Vinay Raghu</a> who created the extension from my original code.</p>
+</section>
 <section id="added-functions">
 <h2>New functions <a href="#added-functions">#</a></h2>
 <p>I have added a couple of functions to make the library even more awesome like <code>purge()</code>, <code>is-symmetrical()</code>, <code>sum()</code>, <code>chunk()</code>, <code>count-values()</code> and <code>remove-duplicates()</code>.</p>
