@@ -20,7 +20,8 @@ layout: post
 <li>Require it in your <code>config.rb</code> file: <code>require 'ListFunctions'</code></li>
 <li>Import it in your stylesheet: <code>@import 'ListFunctions';</code></li>
 </ol>
-<p>Done. From there you can use all the functions you want. Isn't it awesome? All of this thanks to <a href="http://viii.in/">Vinay Raghu</a> who made the Compass extension out of my original work. A million thanks to him!</p>
+<p>Done. From there you can use all the functions you want. Isn't it awesome? Plus all you have to do to update the library is reinstalling the gem with the same command as step 1. No more checking your functions are up to date and copy pasting all over again.</p>
+<p>All of this thanks to <a href="http://viii.in/">Vinay Raghu</a> who made the Compass extension out of my original work. A million thanks to him!</p>
 </section>
 <section id="added-functions">
 <h2>New functions <a href="#added-functions">#</a></h2>
