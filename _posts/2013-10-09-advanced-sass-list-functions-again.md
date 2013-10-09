@@ -1,8 +1,8 @@
 ---
 title: "Advanced Sass list functions, again"
 published: true
-preview: true
-comments: false
+preview: false
+comments: true
 layout: post
 ---
 
