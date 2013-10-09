@@ -16,8 +16,8 @@ layout: post
 <h2>Compass extension <a href="#compass-extension">#</a></h2>
 <p>Even bigger news! It is now a Compass extension so you don't have to copy/paste functions into your projects anymore. All you have to do is:</p>
 <ol>
-<li>Install the gem: <code>gem install ListFunctions</code></li>
-<li>Require it in your <code>config.rb</code>: <code>require 'ListFunctions'</code></li>
+<li>Install the gem through your terminal: <code>gem install ListFunctions</code></li>
+<li>Require it in your <code>config.rb</code> file: <code>require 'ListFunctions'</code></li>
 <li>Import it in your stylesheet: <code>@import 'ListFunctions';</code></li>
 </ol>
 <p>Done. From there you can use all the functions you want. Isn't it awesome? All of this thanks to <a href="http://viii.in/">Vinay Raghu</a> who made the Compass extension out of my original work. A million thanks to him!</p>
@@ -48,15 +48,9 @@ $purge: purge($list);
 <h3>Is symmetrical</h3>
 <p>I don't think this function has any major usecase, but you know, just in case I added it. It checks whether your list is symmetrical. It's based on my <code>reverse()</code> function.</p>
 <pre class="language-scss"><code>@function is-symmetrical($list) {
-  $result: ();
-
-  @each $item in $list {
-    $result: append($result, $item, space); 
-  }
-      
-  @return $result == reverse($result); 
+  @return reverse($list) == reverse(reverse($list)); 
 }</code></pre>
-<p>Why do we recreate a list from the given one? Because <code>return $list == reverse($list)</code> may fail depending on the list separator. If anyone has a better idea for this one, I'd be glad to have a look at it.</p>
+<p>Why don't we compare the initial list with the reversed one? Because reversing a list modify its inner structure, resulting in a false assertion. This makes sure both list are properly compared.</p>
 <h3>Sum</h3>
 <p>Same here, I don't think it has much point but I wanted to add it anyway. It takes all unitless number from the list and add them. The second parameter is a boolean enabling / disabling the removing of units. Basically, you can parseInt the value to get only the number.</p>
 <pre class="language-scss"><code>@function sum($list, $force: false) {
@@ -122,7 +116,6 @@ $chunk: chunk($list, 3);
       $keys   : append($keys, $item);
       $counts : append($counts, 1);
     }
-
     @else {
       $count  : nth($counts, $index) + 1;
       $counts : replace-nth($counts, $index, $count);
@@ -141,17 +134,14 @@ $count-values: count-values($list);
   $result: ();
   
   @each $item in $list {
-
     @if not index($result, $item) {
       @if length($item) > 1 and $recursive {
         $result: append($result, remove-duplicates($item, $recursive));
       }
-      
       @else {
         $result: append($result, $item);
       }
     }
-
   }
   
   @return $result;
@@ -167,19 +157,15 @@ $remove-duplicates: remove-duplicates($list);
   $result: #{"[ "};
 
   @each $item in $list {
-
     @if length($item) > 1 {
       $result: $result#{debug($item)};
     }
-
     @else {
       $result: $result#{$item};
     }
-
     @if index($list, $item) != length($list) {
       $result: $result#{", "};
     }
-
   } 
 
   $result: $result#{" ]"};
