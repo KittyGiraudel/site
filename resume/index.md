@@ -15,7 +15,7 @@ layout: default
 </ul> 
 -->
 <h3>Square Connexion - current</h3>
-<p class="job-title">Front-end developer in a Symfony2 project.</p>
+<p class="job-title">Front-end developer in a Symfony 2 project.</p>
 
 <h3>Crédit Agricole Sud Rhône Alpes - 2011/2013</h3>
 <p class="job-title">Web Developer.</p>
@@ -67,14 +67,14 @@ layout: default
 <h2><span class='fontawesome-pencil icon-left'></span>Publications and talks <a href="#publications" class="section-anchor">#</a></h2>
 <h3>Web</h3>
 <ul>
-<li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo on Codrops">Writer for Codrops</a></li>
-<li><a href="http://css-tricks.com/css-pie-timer/" title="CSS Pie Timer">Helper</a> <a href="http://css-tricks.com/striped-background-gradients/" title="Striped background gradients">at</a> <a href="http://css-tricks.com/">CSS-Tricks</a></li>
+<li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo on Codrops">Writer</a> at <a href="http://tympanus.net/codrops">Codrops</a></li>
+<li><a href="http://css-tricks.com/metafizzy-effect-with-sass/" title="CSS Pie Timer">Writer</a> at <a href="http://css-tricks.com/">CSS-Tricks</a></li>
 <li><a href="http://thesassway.com/advanced/math-sequences-with-sass">Math sequences in Sass</a> at <a href="http://thesassway.com">TheSassWay.com</a></li>
-<li><a href="http://davidwalsh.name/future-sass">Looking into the future of Sass</a> at David Walsh'</li>
+<li><a href="http://davidwalsh.name/future-sass">Looking into the future of Sass</a> at <a href="http://davidwalsh.name">David Walsh'</a></li>
 </ul>
 <h3>Print</h3>
 <ul>
-	<li><a href="http://www.netmagazine.com/shop/magazines/July-2013-242">.net Magazine - Issue n°242 : "Hack back"</a></li>
+<li><a href="http://www.netmagazine.com/shop/magazines/July-2013-242">.net Magazine - Issue n°242 : "Hack back"</a></li>
 </ul> 
 <h3>Talks</h3>
 <ul>
