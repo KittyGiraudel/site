@@ -69,8 +69,8 @@ layout: default
 <ul>
 <li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo on Codrops">Writer for Codrops</a></li>
 <li><a href="http://css-tricks.com/css-pie-timer/" title="CSS Pie Timer">Helper</a> <a href="http://css-tricks.com/striped-background-gradients/" title="Striped background gradients">at</a> <a href="http://css-tricks.com/">CSS-Tricks</a></li>
-<li><a href="http://toddmotto.com/raw-javascript-jquery-style-fadein-fadeout-functions-hugo-giraudel">Raw JavaScript jQuery-style fadeIn() fadeOut() functions</a> (at Todd Motto's)</li>
-<li><a href="http://davidwalsh.name/future-sass">Looking into the future of Sass</a> (at David Walsh')</li>
+<li><a href="http://thesassway.com/advanced/math-sequences-with-sass">Math sequences in Sass</a> at <a href="http://thesassway.com">TheSassWay.com</a></li>
+<li><a href="http://davidwalsh.name/future-sass">Looking into the future of Sass</a> at David Walsh'</li>
 </ul>
 <h3>Print</h3>
 <ul>
