@@ -1,11 +1,10 @@
 ---
 title: Random function with Sass 3.3
 layout: post
-preview: true
-comments: false
+preview: false
+comments: true
 published: true
 ---
-
 <section>
 <p class="explanation">I wrote this article months ago when I was first experimenting with Sass 3.3 alpha features. I came up with a pretty crazy solution to generate a random number in Sass. However it looks like <a href="https://github.com/nex3/sass/pull/968">Sass 3.3 will implement a random function</a> so we won't need all this stuff. I still publish it for fun. :)</p>
 <p>Everything started when I was spying on Sass 3.3 source code on GitHub for my article about the <a href="http://davidwalsh.name/future-sass">future of Sass</a> at David Walsh' Blog. I was sniffing the incoming functions when all of the sudden I came by a <code>unique-id()</code> function.</p>
@@ -37,8 +36,8 @@ u86fb16af4800d46b</code></pre>
     /* Array of characters to remove */
     $letters : a b c d e f u;
     $result  : unquote("");
-    $string  : unique-id(); 
-  
+    $string  : unique-id();
+
     /* For each character in the given string */
     @for $i from 1 through str-length($string) {
         /* Isolate character */
@@ -54,7 +53,7 @@ u86fb16af4800d46b</code></pre>
     @if $digits !== 0 and $digits < length($result) {
       $result: str-slice($result, 1, $digits);
     }
-  
+
     /* Return the result */
     @return $result;
 }</code></pre>
@@ -69,7 +68,7 @@ $number: rand(-1); /* Random between 1 and 9999999999999999 */
 </section>
 <section id="rand-v2">
 <h2>Random, the clean way <a href="#rand-v2">#</a></h2>
-<p>Okay, let's say it: the first version I came with is really dirty. That's why I reworked a new version from scratch with the help of <a href="https://twitter.com/l_giraudel">my brother</a>. We even tweaked it in order to make it <em>future-proof</em> for both implementations of the <code>unique-id()</code> function. How cool is that?</p> 
+<p>Okay, let's say it: the first version I came with is really dirty. That's why I reworked a new version from scratch with the help of <a href="https://twitter.com/l_giraudel">my brother</a>. We even tweaked it in order to make it <em>future-proof</em> for both implementations of the <code>unique-id()</code> function. How cool is that?</p>
 <p>To put it simple, instead of stripping alpha characters, we take the alphanumeric string and convert it back into an integer. Then, we get a fully random integer we simply have to manipulate around min and max values.</p>
 <pre class="language-scss"><code>@function rand($min: 0, $max: 100) {
   $str : str-slice(unique-id(), 2);
@@ -109,22 +108,22 @@ $number: rand(-1); /* Random between 1 and 9999999999999999 */
 <p>Regarding the <code>charsFromBase()</code> function, here is what it looks like:</p>
 <pre class="language-scss"><code>@function charsFromBase($base: 10) {
   /* Binary */
-  @if $base == 2 { 
+  @if $base == 2 {
     @return 0 1;  }
   /* Octal */
-  @if $base == 8 { 
+  @if $base == 8 {
     @return 0 1 2 3 4 5 6 7;  }
   /* Decimal */
   @if $base == 10 {
     @return 0 1 2 3 4 5 6 7 8 9;  }
   /* Hexadecimal */
-  @if $base == 16 { 
+  @if $base == 16 {
     @return 0 1 2 3 4 5 6 7 8 9 a b c d e f;  }
   /* Base 36 */
-  @if $base == 36 { 
+  @if $base == 36 {
     @return 0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x y z;  }
   /* Base 64 */
-  @if $base == 64 { 
+  @if $base == 64 {
     @return A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 + /;  }
   @return false;
 }</code></pre>
