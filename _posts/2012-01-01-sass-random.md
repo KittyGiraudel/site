@@ -7,6 +7,7 @@ published: true
 ---
 
 <section>
+<p class="explanation">I wrote this article months ago when I was first experimenting with Sass 3.3 alpha features. I came up with a pretty crazy solution to generate a random number in Sass. However it looks like <a href="https://github.com/nex3/sass/pull/968">Sass 3.3 will implement a random function</a> so we won't need all this stuff. I still publish it for fun. :)</p>
 <p>Everything started when I was spying on Sass 3.3 source code on GitHub for my article about the <a href="http://davidwalsh.name/future-sass">future of Sass</a> at David Walsh' Blog. I was sniffing the incoming functions when all of the sudden I came by a <code>unique-id()</code> function.</p>
 <p>According to the <a href="https://github.com/nex3/sass/issues/771">issue</a> which started this idea, the <code>unique-id()</code> function should return a unique random alphanumeric identifier that could be used for whatever you like. As far as I understood the example provided by Chris Eppstein, it could be used to dynamically generate and extend a placeholder from within a mixin. Kind of complicated stuff, really.</p>
 <p>Anyway, I saw this unique id thingie as an opportunity to have a random number with Sass. Why? I don't know. I leave this question to you. Maybe some day I'll find a usecase for a random number in CSS.</p>
