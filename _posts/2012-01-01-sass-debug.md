@@ -11,7 +11,7 @@ codepen: true
 <p>You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It's a shame there is so few functions to deal with them. This is why I made <a href="https://github.com/Team-Sass/Sass-list-functions">SassyLists</a>.</p>
 <p>Most importantly, I always wanted a <code>console.log()</code> for Sass. You know, something to debug a variable, a list, a value, whatever... There is the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4"><code>@debug</code></a> function but somehow it didn't completely satisfy me. Plus, there is no console on <a href="http://codepen.io">CodePen.io</a> and since this is where I do most of my experiments I needed something else.</p>
 <p>So I rolled up my sleeves, got my hands dirty and made my own Sass debug function. This is how it looks like:</p>
-<p data-height="300" data-theme-id="0" data-slug-hash="unyBH" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/unyBH'>Debug Sass lists</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a></p>
+<p data-height="310" data-theme-id="0" data-slug-hash="unyBH" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/unyBH'>Debug Sass lists</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a></p>
 <p>If you don't want to read but simply want to dig into the code, check <a href="http://codepen.io/HugoGiraudel/pen/unyBH">this pen</a>.</p>
 </section>
 <section id="stringify-a-list">
@@ -83,7 +83,7 @@ body:before {
 <section id="improving-the-function">
 <h2>Improving the function <a href="#improving-the-function">#</a></h2>
 <p>I wanted two things: 1) explode the list into several lines to make it easier to read; 2) add the ability to display the type of each value in the list.</p>
-<h3>Deal with line breaks</h3>
+<h3>Dealing with line breaks</h3>
 <p>If you are a reader of <a href="http://thesassway.com">TheSassWay.com</a>, you might have stumbled upon my article <a href="http://thesassway.com/advanced/math-sequences-with-sass">Math sequences with Sass</a> in which I explain how I created famous math sequences in Sass and how I managed to display them with nothing more than CSS. Anyway, I kind of answer the question of linebreaks in CSS.</p>
 <p>If you've ever read the <a href="http://www.w3.org/TR/CSS2/generate.html#content">CSS specifications for the content property</a> (which I highly doubt), you may already know that there is a way to insert breaklines with <code>\A </code>. In TheSassWay article, I used it as a <code>$glue</code> for the <a href="https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss"><code>to-string()</code> function</a> from SassyLists.</p>
 <p>This is pretty much what we will do here.</p>
@@ -136,7 +136,7 @@ body:before {
   @return quote($result);
 }</code></pre>
 <p>The list should now be properly indented. So should be the nested lists. Okaaaay this is getting quite cool! We can now output a list in a clean <code>var_dump()</code> way.</p>
-<h3>Display variable types</h3>
+<h3>Displaying variable types</h3>
 <p>Now the icing on top of the cake would be displaying variable types, right? Thanks to the <code>type-of()</code> function and some tweaks to our <code>debug</code> function, it is actually quite simple to do. Far simpler than what we previously did with indents and line breaks.</p>
 <pre class="language-scss"><code>@function debug($list, $type: false, $root: true) {
 	$result : if($type, 
