@@ -1,9 +1,8 @@
 ---
 title: How I made a Sass debug function
-preview: true
-comments: false
+preview: false
+comments: trie
 layout: post
-published: true
 codepen: true
 ---
 
@@ -21,7 +20,7 @@ codepen: true
 <pre class="language-scss"><code>@function debug($list) {
 	// We open the bracket
 	$result: unquote("[ ");
-    
+
     // For each item in list
     @each $item in $list {
     	// We test its length
@@ -41,7 +40,7 @@ codepen: true
      		$result: unquote("#{$result}, ");
     	}
     }
-    
+
     // We close the bracket
     // And return the string
     $result: unquote("#{$result} ]");
@@ -61,15 +60,15 @@ body:before {
 <pre class="language-scss"><code>@mixin debug($list) {
 	body:before {
         content: debug($list)                     !important;
-    
+
     	display: block                            !important;
     	margin: 1em                               !important;
-    	padding: .5em                             !important; 
-    
+    	padding: .5em                             !important;
+
     	background: #EFEFEF                       !important;
     	border: 1px solid #DDD                    !important;
     	border-radius: .2em                       !important;
-    
+
     	color: #333                               !important;
     	font: .75em/1.5 "Courier New", monospace  !important;
     	text-shadow: 0 1px white                  !important;
@@ -111,7 +110,7 @@ body:before {
 }</code></pre>
 <p>All we did was adding a line-break after the bracket, after each value, then before the closing bracket. That looks great, but we need to handle the indentation now. This is where it gets a little tricky.</p>
 <p>Actually the only way I could manage a perfect indentation is the same trick I used for the <code>to-string()</code> function: with an internal boolean to make a distinction between the root level (the one you called) and the inner levels (from nested lists). Problem with this boolean is it fucks the function signature but that's the only way I found.</p>
-<pre class="language-scss"><code>@function debug($list, $root: true) { 
+<pre class="language-scss"><code>@function debug($list, $root: true) {
   $result : unquote("[ \A ");
   $space  : if($root, "", "  ");
 
@@ -139,13 +138,13 @@ body:before {
 <h3>Displaying variable types</h3>
 <p>Now the icing on top of the cake would be displaying variable types, right? Thanks to the <code>type-of()</code> function and some tweaks to our <code>debug</code> function, it is actually quite simple to do. Far simpler than what we previously did with indents and line breaks.</p>
 <pre class="language-scss"><code>@function debug($list, $type: false, $root: true) {
-	$result : if($type, 
-		unquote("(list:#{length($list)})[ \A "), 
+	$result : if($type,
+		unquote("(list:#{length($list)})[ \A "),
 		unquote("[ \A ")
 	);
 
-	$space  : if($root, 
-		"", 
+	$space  : if($root,
+		"",
 		"  "
 	);
 
@@ -157,8 +156,8 @@ body:before {
 		}
 
 		@else {
-			$result: if($type, 
-				unquote("#{$result}#{$space}(#{type-of($item)}) #{$item}"), 
+			$result: if($type,
+				unquote("#{$result}#{$space}(#{type-of($item)}) #{$item}"),
 				unquote("#{$result}#{$space}#{$item}")
 			);
 		}
@@ -177,8 +176,8 @@ body:before {
 <p>The only problem left is that if you debug a single value, it will wrap it into <code>(list:1) [ ... ]</code>. While this is true, it doesn't really help the user so we should get rid of this. Fairly easy! We just have to add a condition when entering the function.</p>
 <pre class="language-scss"><code>@function debug($list, $type: false, $root: true) {
 	@if length($list) == 1 {
-    	@return if($type, 
-    		quote("(#{type-of($list)}) #{$list}"), 
+    	@return if($type,
+    		quote("(#{type-of($list)}) #{$list}"),
     		quote($list)
     	);
 	}
