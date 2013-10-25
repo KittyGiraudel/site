@@ -27,7 +27,7 @@ layout: default
 <ul>
 <li><a href="http://browserhacks.com">Browserhacks.com</a>, a comprehensive list of browser specific CSS hacks</li>
 <li><a href="https://github.com/Team-Sass/Sass-list-functions">SassyLists</a> (Compass extension) in Team Sass</li>
-<li><a href="https://github.com/HugoGiraudel/KNACSS-Sass">Sass port of KNACSS</a>, a CSS framework from Raphaël Goetter</li>
+<li><a href="https://github.com/HugoGiraudel/KNACSS-Sass">Sass port</a> of <a href="http://knacss.com">KNACSS</a>, a CSS framework from Raphaël Goetter</li>
 <!--<li><a href="http://wildwebwatch.com/" title="Wild Web Watch">Wild Web Watch</a>, a web watch project</a></li>-->
 </ul>
 
@@ -36,10 +36,10 @@ layout: default
 
 <h2><span class='fontawesome-magic icon-left'></span>Skills <a href="#skills" class="section-anchor">#</a></h2>
 <h3>Programming languages</h3>
-<p>HTML5, CSS3 (Sass), JavaScript (jQuery), AJAX, XML, OOPHP, MySQL, UML</p>
+<p>HTML, CSS (Sass), JavaScript (jQuery), AJAX, XML, OOPHP, MySQL, UML</p>
 
 <h3>Softwares</h3>
-<p>Sublime Text 2, Git (notions), Photoshop</p>
+<p>Sublime Text, Git, Photoshop</p>
 
 <h3>Languages</h3>
 <p>French (native), English (fluent), Spanish (notions)</p>
@@ -67,9 +67,9 @@ layout: default
 <h2><span class='fontawesome-pencil icon-left'></span>Publications and talks <a href="#publications" class="section-anchor">#</a></h2>
 <h3>Web</h3>
 <ul>
-<li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo on Codrops">Writer</a> at <a href="http://tympanus.net/codrops">Codrops</a></li>
-<li><a href="http://css-tricks.com/metafizzy-effect-with-sass/" title="CSS Pie Timer">Writer</a> at <a href="http://css-tricks.com/">CSS-Tricks</a></li>
-<li><a href="http://thesassway.com/advanced/math-sequences-with-sass">Math sequences in Sass</a> at <a href="http://thesassway.com">TheSassWay.com</a></li>
+<li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo at Codrops">Writer</a> at <a href="http://tympanus.net/codrops">Codrops</a></li>
+<li><a href="http://thesassway.com/hugo-giraudel" title="Hugo at TheSassyWay">Writer</a> at <a href="http://thesassway.com/">TheSassWay</a></li>
+<li><a href="http://css-tricks.com/metafizzy-effect-with-sass/" title="Hugo at CSS-Tricks">Writer</a> at <a href="http://css-tricks.com/">CSS-Tricks</a></li>
 <li><a href="http://davidwalsh.name/future-sass">Looking into the future of Sass</a> at <a href="http://davidwalsh.name">David Walsh'</a></li>
 </ul>
 <h3>Print</h3>
@@ -84,6 +84,6 @@ layout: default
 <section id="interests">
 
 <h2><span class='fontawesome-heart icon-left'></span>Interests <a href="#interests" class="section-anchor">#</a></h2>
-<p>Web watch, writing (blogging), games (board games, video games, role play), drawing</p>
+<p>Web watch, writing (blogging), games (board games, video games, role play)</p>
 
 </section>
