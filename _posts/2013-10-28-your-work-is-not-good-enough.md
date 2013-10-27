@@ -30,7 +30,7 @@ guest: Christoph Rumpel
 <h2>Conclusion <a href="#conclusion">#</a></h2>
 <p>This isn't just something you have to consider at the beginning of your career. These things are important to all of us and we are facing similar situations every day. I hope I could open your minds and you will stop being too critical with yourself, because there is no need to. Mr. Hugo himself is a great example. He is working a lot and sharing most of his work with us too. This is a great benefit for us and for him. He told me that there are times too, when he thinks his work is not good enough. I can tell you / him that his work is definitely good enough and <strong>so is yours</strong>!</p>
 <blockquote class="quote">
-<img src="http://christoph-rumpel.com/wp-content/themes/cr2013/_/img/icon_christoph.png" alt="Christoph Rumpel" class="pull-image--left"  style="height: 150px">
+<img src="/images/your-work-is-not-good-enough__christoph-rumpel.jpg" alt="Christoph Rumpel" class="pull-image--left">
 <p>Christoph Rumpel is a passionate Web developer from Austria who wants to make the web look and feel awesome. You should definitely check <a href="http://christoph-rumpel.com/">his site</a> and follow him on <a href="https://twitter.com/christophrumpel">Twitter</a>.</p>
 </blockquote>
 </section>
