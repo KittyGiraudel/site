@@ -35,3 +35,13 @@ comments: false
 <p>Carousel? Check. No need of <em>FancyJqueryAnythingCarouselSlider.js</em>. Icon fonts? Check. No need of <em>FontAwesome</em>. Modal? Check. Dropdowns? Tabs? Tooltips? Check, check, check. It may sounds trivial, but not having thousands of dependencies is really important to keep things maintainable.</p> 
 <p>Of course we still have other dependencies than Bootstrap like <em>jQuery UI</em> (which could deserve a similar article I guess), <em>underscore.js</em> and quite a couple of other things but I can't imagine the number of external dependencies we would have right now if we were not using Bootstrap.</p>
 </section>
+<section id="start">
+<h2>So where did it start? <a href="#start">#</a></h2>
+<p>I believe all this "Bootstrap is evil" started shortly after Twitter Bootstrap 2.x came out. Many people started creating websites with nothing more than the default collection of composents without even trying to customize them or to find a special scheme.</p>
+<p>At this point, every sites looked alike and it was kind of annoying for sure. But I feel like this time is over and now most Bootstrap powered sites are using it wisely, adding their own custom design on top of Bootstrap components. That's what Bootstrap is: a backbone for the site.</p>
+</section>
+<section id="final-words">
+<h2>Final words <a href="#final-words">#</a></h2>
+<p>In the end, I think I've changed my mind on Bootstrap and I really start to understand what it's for. On big websites, having a skeleton to work on is important. It's like managing a huge JavaScript structure without a library (could it be jQuery, MooTools, whatever).</p>
+<p>Long story short: Bootstrap is not that bad. Just don't use it raw. Cook it your way first.</p>
+</section>
