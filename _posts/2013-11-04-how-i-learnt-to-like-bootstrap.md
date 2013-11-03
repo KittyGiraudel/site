@@ -10,10 +10,11 @@ comments: false
 <img src="/images/how-i-learnt-to-like-bootstrap__bootstrap.jpg" alt="Twitter Bootstrap 3" />
 <p>This reminded me that no so long ago, I was a fervent defender of the tell <em>"Bootstrap is good for prototypes and back offices or stuff like this"</em>.</p>
 <p>Until a recent project where I finally learnt to like Bootstrap, even for websites. But let's back up a little bit!</p>
-<section id="start">
-<h2>How did we get there <a href="#start">#</a></h2>
+<section id="beginning">
+<h2>How did we get there <a href="#beginning">#</a></h2>
 <p>I recently got hired for quite a big project as the only front-end developer in a team of a dozen of developers. The design itself is fairly complex since it involves various layouts, multiple themes, a lot of forms and a bunch of pages. Thankfully, <a href="http://symfony.com/">Symfony 2</a> and its template engine <a href="http://twig.sensiolabs.org/">Twig</a> make it a lot easier to manage but that's not the point.</p>
 <p>So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly back-end devs.</p>
+<blockquote class="pull-quote--right">Hugo, we'll use Bootstrap. NOOOOOO!</blockquote>
 <p>And then he told me what I didn't want to hear: <em>"we will use Twitter Bootstrap"</em> and I was like <em>"NOOOO!!"</em>.</p>
 <p>But then he said something even worse: <em>"Bootstrap 2.3"</em> and then I was like <em>"NOOOOOOOO!!"</em> (note the number of <em>O</em> is increasing).</p>
 <p>Since Bootstrap 3 was still in RC back then, it wasn't possible for us to use it. Thankfully a couple of days later, it got officially released so we jumped onto it and moved the little front-end we had already done to v3.</p>
@@ -39,10 +40,10 @@ comments: false
 <h2>So where did it start? <a href="#start">#</a></h2>
 <p>I believe this whole <em>"Bootstrap is evil"</em> thing started shortly after Twitter Bootstrap 2.x came out. Many people started creating websites with nothing more than the default collection of composents without even trying to customize them or to find a special scheme.</p>
 <p>At this point, every sites looked alike and it was kind of annoying for sure. But I feel like this time is over and now most Bootstrap powered sites are using it wisely, adding their own custom design on top of Bootstrap components. That's what Bootstrap is: a backbone for the site.</p>
-<blockquote class="pull-quote--right">Bootstrap is not that bad. Just don't use it raw.</blockquote>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
+<blockquote class="pull-quote--right">Bootstrap is not that bad. Just don't use it raw.</blockquote>
 <p>In the end, I think I've changed my mind on Bootstrap and I really start to understand what it's for. On big websites, having a skeleton to work on is important. It's like managing a huge JavaScript structure without a library (could it be jQuery, MooTools, whatever).</p>
 <p>Long story short: Bootstrap is not that bad. Just don't use it raw. Cook it your way first.</p>
 </section>
