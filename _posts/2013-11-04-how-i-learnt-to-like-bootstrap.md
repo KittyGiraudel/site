@@ -37,8 +37,9 @@ comments: false
 </section>
 <section id="start">
 <h2>So where did it start? <a href="#start">#</a></h2>
-<p>I believe all this "Bootstrap is evil" started shortly after Twitter Bootstrap 2.x came out. Many people started creating websites with nothing more than the default collection of composents without even trying to customize them or to find a special scheme.</p>
+<p>I believe this whole <em>"Bootstrap is evil"</em> thing started shortly after Twitter Bootstrap 2.x came out. Many people started creating websites with nothing more than the default collection of composents without even trying to customize them or to find a special scheme.</p>
 <p>At this point, every sites looked alike and it was kind of annoying for sure. But I feel like this time is over and now most Bootstrap powered sites are using it wisely, adding their own custom design on top of Bootstrap components. That's what Bootstrap is: a backbone for the site.</p>
+<blockquote class="pull-quote--right">Bootstrap is not that bad. Just don't use it raw.</blockquote>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
