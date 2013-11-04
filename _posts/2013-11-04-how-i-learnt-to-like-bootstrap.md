@@ -3,6 +3,7 @@ published: true
 layout: post
 preview: false
 comments: true
+title: "How I learnt to like Bootstrap"
 ---
 
 <section>
