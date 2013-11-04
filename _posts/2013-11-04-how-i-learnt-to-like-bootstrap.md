@@ -4,7 +4,7 @@ layout: post
 preview: false
 comments: true
 ---
-<section>
+<section> 
 <p>A couple of days ago, I saw a <a href="https://twitter.com/Gandoulfe/status/392640481634422785">fellow French developer say how much he hates (Twitter) Bootstrap</a> for websites on Twitter. And I saw a couple of fellow French developers agree with him.</p>
 <img src="/images/how-i-learnt-to-like-bootstrap__bootstrap.jpg" alt="Twitter Bootstrap 3" />
 <p>This reminded me that no so long ago, I was a fervent defender of the tell <em>"Bootstrap is good for prototypes and back offices or stuff like this"</em>.</p>
