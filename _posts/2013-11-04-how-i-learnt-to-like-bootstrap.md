@@ -20,7 +20,7 @@ comments: true
 <p>Since Bootstrap 3 was still in RC back then, it wasn't possible for us to use it. Thankfully a couple of days later, it got officially released so we jumped onto it and moved the little front-end we had already done to v3.</p>
 </section>
 <section id="beginning">
-<h2>The beginning <a href="#">#</a></h2>
+<h2>The beginning <a href="#beginning">#</a></h2>
 <p>At first, it was a pain in the ass for me to work with Bootstrap. Mostly because I haven't ever used it before. Especially the grid system which didn't feel intuitive to me: <code>.container</code>, <code>.row</code>, <code>.col-md-*</code>? What is this?</p>
 <p>But also because I thought my CSS skills were good enough so I don't have to use some framework. And in a way, I was right: I don't need a CSS framework to make a website. Now, even if I don't need it doesn't mean I shouldn't use it at all. </p>
 <p>It's been a couple of weeks now we are working on this project and picking Bootstrap has to be one of the wisest moves we have taken so far.</p>
