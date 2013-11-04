@@ -1,8 +1,8 @@
 ---
 published: true
 layout: post
-preview: true
-comments: false
+preview: false
+comments: true
 ---
 
 <section>
@@ -33,7 +33,7 @@ comments: false
 <section id="less-dependencies">
 <h2>Less dependencies <a href="#less-dependencies">#</a></h2>
 <p>This heading can be confusing: I am not talking about <em>LESS</em>, the CSS preprocessor. I mean that using Bootstrap really reduces the number of dependencies used across a project.</p>
-<p>Carousel? Check. No need of <em>FancyJqueryAnythingCarouselSlider.js</em>. Icon fonts? Check. No need of <em>FontAwesome</em>. Modal? Check. Dropdowns? Tabs? Tooltips? Check, check, check. It may sounds trivial, but not having thousands of dependencies is really important to keep things maintainable.</p> 
+<p>Carousel? Check. No need of <em>FancyJqueryAnythingCarouselSlider.js</em>. Icon fonts? Check. No need of <em>FontAwesome</em>. Modal? Check. Dropdowns? Tabs? Tooltips? Check, check, check. It may sounds trivial, but not having thousands of dependencies is really important to keep things maintainable.</p>
 <p>Of course we still have other dependencies than Bootstrap like <em>jQuery UI</em> (which could deserve a similar article I guess), <em>underscore.js</em> and quite a couple of other things but I can't imagine the number of external dependencies we would have right now if we were not using Bootstrap.</p>
 </section>
 <section id="start">
