@@ -1,9 +1,9 @@
 ---
+title: "How I learnt to like Bootstrap"
 published: true
 layout: post
 preview: false
 comments: true
-title: "How I learnt to like Bootstrap"
 ---
 
 <section>
@@ -11,6 +11,7 @@ title: "How I learnt to like Bootstrap"
 <img src="/images/how-i-learnt-to-like-bootstrap__bootstrap.jpg" alt="Twitter Bootstrap 3" />
 <p>This reminded me that no so long ago, I was a fervent defender of the tell <em>"Bootstrap is good for prototypes and back offices or stuff like this"</em>.</p>
 <p>Until a recent project where I finally learnt to like Bootstrap, even for websites. But let's back up a little bit!</p>
+</section>
 <section id="beginning">
 <h2>How did we get there <a href="#beginning">#</a></h2>
 <p>I recently got hired for quite a big project as the only front-end developer in a team of a dozen of developers. The design itself is fairly complex since it involves various layouts, multiple themes, a lot of forms and a bunch of pages. Thankfully, <a href="http://symfony.com/">Symfony 2</a> and its template engine <a href="http://twig.sensiolabs.org/">Twig</a> make it a lot easier to manage but that's not the point.</p>
