@@ -1,19 +1,17 @@
 ---
-title: "How I learnt to like Bootstrap"
-published: true
+title: How I learnt to like Bootstrap
 layout: post
 preview: false
 comments: true
 ---
-
 <section>
 <p>A couple of days ago, I saw a <a href="https://twitter.com/Gandoulfe/status/392640481634422785">fellow French developer say how much he hates (Twitter) Bootstrap</a> for websites on Twitter. And I saw a couple of fellow French developers agree with him.</p>
 <img src="/images/how-i-learnt-to-like-bootstrap__bootstrap.jpg" alt="Twitter Bootstrap 3" />
 <p>This reminded me that no so long ago, I was a fervent defender of the tell <em>"Bootstrap is good for prototypes and back offices or stuff like this"</em>.</p>
 <p>Until a recent project where I finally learnt to like Bootstrap, even for websites. But let's back up a little bit!</p>
 </section>
-<section id="beginning">
-<h2>How did we get there <a href="#beginning">#</a></h2>
+<section id="how-did-we-get-there">
+<h2>How did we get there <a href="#how-did-we-get-there">#</a></h2>
 <p>I recently got hired for quite a big project as the only front-end developer in a team of a dozen of developers. The design itself is fairly complex since it involves various layouts, multiple themes, a lot of forms and a bunch of pages. Thankfully, <a href="http://symfony.com/">Symfony 2</a> and its template engine <a href="http://twig.sensiolabs.org/">Twig</a> make it a lot easier to manage but that's not the point.</p>
 <p>So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly back-end devs.</p>
 <blockquote class="pull-quote--right">Hugo, we'll use Bootstrap. NOOOOOO!</blockquote>
