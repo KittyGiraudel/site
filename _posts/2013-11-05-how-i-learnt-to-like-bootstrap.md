@@ -1,8 +1,8 @@
 ---
 title: How I learnt to like Bootstrap
 layout: post
-preview: true
-comments: false
+preview: false
+comments: true
 ---
 <section> 
 <p>A couple of days ago, I saw a <a href="https://twitter.com/Gandoulfe/status/392640481634422785">fellow French developer say how much he hates (Twitter) Bootstrap</a> for websites on Twitter. And I saw a couple of fellow French developers agree with him.</p>
