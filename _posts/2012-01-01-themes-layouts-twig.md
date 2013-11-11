@@ -12,7 +12,7 @@ preview: true
 <h2>Some leveling-up about Twig <a href="#twig">#</a></h2>
 <p>Since not all of you are Twig masters (neither am I), I'm going to explain a couple of things before entering the topic.</p>
 <p>Twig is mostly about extending templates (<a href="http://twig.sensiolabs.org/doc/tags/extends.html"><code>@extend</code></a>), kind of like extends work in Sass. Thus, we start with setting up a base template outputing some HTML (<code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>...) and defining Twig blocks. Quick example:</p>
-<pre class="language-markup"><code>&lt;!-- base.html.twig --&lg;
+<pre class="language-markup"><code>&lt;!-- base.html.twig --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;&lt;!-- whatever --&gt;&lt;/head&gt;
@@ -23,7 +23,7 @@ preview: true
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p>When a second template extends from the first one, it can dump stuff into those blocks that will bubble up into the first one to finally output content. There is no maximum level of nesting for such a thing so you can do this as deep as you want. Let's continue our example:</p>
-<pre class="language-markup"><code>&lt;!-- page.html.twig --&lg;
+<pre class="language-markup"><code>&lt;!-- page.html.twig --&gt;
 {&#37; extends 'base.html.twig' &#37;}
 
 {&#37; block header &#37;}
