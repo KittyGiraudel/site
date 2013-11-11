@@ -11,14 +11,11 @@ preview: true
 <section id="twig">
 <h2>Some leveling-up about Twig <a href="#twig">#</a></h2>
 <p>Since not all of you are Twig masters (neither am I), I'm going to explain a couple of things before entering the topic.</p>
-<p>Twig is mostly about extending templates (<a href="http://twig.sensiolabs.org/doc/tags/extends.html">@extend</a>), kind of like extends work in Sass. Thus, we start with setting up a base template outputing some HTML (<code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>...) and defining Twig blocks. Quick example:</p>
-<pre class="language-markup"><code>/* base.html.twig */
+<p>Twig is mostly about extending templates (<a href="http://twig.sensiolabs.org/doc/tags/extends.html"><code>@extend</code></a>), kind of like extends work in Sass. Thus, we start with setting up a base template outputing some HTML (<code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>...) and defining Twig blocks. Quick example:</p>
+<pre class="language-markup"><code>&lt;!-- base.html.twig --&lg;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
-&lt;head&gt;
-    <!-- whatever -->
-&lt;/head&gt;
-
+&lt;head&gt;&lt;!-- whatever --&gt;&lt;/head&gt;
 &lt;body&gt;
     {&#37; block header &#37;}{&#37; endblock &#37;}
     {&#37; block main   &#37;}{&#37; endblock &#37;}
@@ -26,24 +23,31 @@ preview: true
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p>When a second template extends from the first one, it can dump stuff into those blocks that will bubble up into the first one to finally output content. There is no maximum level of nesting for such a thing so you can do this as deep as you want. Let's continue our example:</p>
-<pre class="language-markup"><code>/* page.html.twig */
+<pre class="language-markup"><code>&lt;!-- page.html.twig --&lg;
 {&#37; extends 'base.html.twig' &#37;}
 
-{&#37; block header &#37;}&lt;h1&gt;Title&lt;/h1&gt;{&#37; endblock &#37;}
-{&#37; block main   &#37;}&lt;p&gt;My first page&lt;/p&gt;{&#37; endblock &#37;}
-{&#37; block footer &#37;}&lt;footer&gt;&copy; Copyright&lt;/footer&gt;{&#37; endblock &#37;}</code></pre>
-<p>That's pretty much how you work a project with Twig. Now you alse can also include files (<a href="http://twig.sensiolabs.org/doc/tags/include.html">@include</a>) which work has you would expect: this is basically the <code>@include</code> from PHP. So if you have some static content, like a footer for example, you can include a partials (a bunch of HTML if you will) directly into your footer block like this:</p>
+{&#37; block header &#37;}
+    &lt;h1&gt;Title&lt;/h1&gt;
+{&#37; endblock &#37;}
+{&#37; block main   &#37;}
+    &lt;p&gt;My first page&lt;/p&gt;
+{&#37; endblock &#37;}
+{&#37; block footer &#37;}
+    &lt;footer&gt;Credits & copyright&lt;/footer&gt;
+{&#37; endblock &#37;}</code></pre>
+<p>That's pretty much how you work a project with Twig. Now you also can also include files (<a href="http://twig.sensiolabs.org/doc/tags/include.html"><code>@include</code></a>) which work has you would expect: this is basically the <code>@include</code> from PHP. So if you have some static content, like a footer for example, you can include a partials (a bunch of HTML if you will) directly into your footer block like this:</p>
 <pre class="language-markup"><code>{&#37; block footer &#37;}
     {&#37; include 'partials/footer.html.twig' &#37;}
 {&#37; endblock &#37;}</code></pre>
-<p>And finally, you can embed (<a href="http://twig.sensiolabs.org/doc/tags/embed.html">@embed</a>) files which is more complex. Embeding is a mix between both extending and including. Basically it includes a template with the ability to make blocks bubbling down instead of up. We'll come back to this.</p>
+<p>And finally, you can embed (<a href="http://twig.sensiolabs.org/doc/tags/embed.html"><code>@embed</code></a>) files which is more complex. Embeding is a mix between both extending and including. Basically it includes a template with the ability to make blocks bubbling down instead of up. We'll come back to this.</p>
 </section>
 <section id="problem">
 <h2>The problem <a href="#problem">#</a></h2>
-<p>The problem I faced at work was finding a way to manage both themes and layouts in Twig with <em>themes</em> being design schemes (mostly color-based) and <em>layouts</em> basically being the number of columns we use for the layout as well as their size. So the theme is passed as a class to the body element (e.g. <code>&lt;body class="shopping"&gt;</code>, while the layout defines what kind of dom nodes / HTML classes we will use for the main content of the site.</p>
-<p>We have half a dozen of themes &mdash; one per section of site &mdash; (shopping, news, admin, regular, ...) and 4 different layouts based on the 12-columns grid system from Bootstrap ("12" for a full-width one-column template, "9-3" for two columns with a 3/1 ratio, "8-4" for a two columns with a 2/1 ratio and "2-7-3" for 3-columns).</p>
+<p>The problem I faced at work was finding a way to manage both themes and layouts in Twig with <em>themes</em> being design schemes (mostly color-based) and <em>layouts</em> basically being the number of columns we use for the layout as well as their size. So the theme is passed as a class to the body element (e.g. <code>&lt;body class="shopping"&gt;</code>), while the layout defines what kind of dom nodes / HTML classes we will use for the main content of the site.</p>
+<p>We have half a dozen of themes &mdash; one per section of site &mdash; (shopping, news, admin, regular, ...) and 4 different layouts based on the 12-columns grid system from Bootstrap (<code>12</code> for a full-width one-column template, <code>9-3</code> for two columns with a 3/1 ratio, <code>8-4</code> for a two columns with a 2/1 ratio and <code>2-7-3</code> for 3-columns).</p>
 <p>Back to the issue: we had to be able to define both the theme and the layout on a page per page basis. Something like this:</p>
-<pre class="language-markup"><code>{&#37; extends '@layout' &#37;}
+<pre class="language-markup"><code>&lt;!-- This doesn't work. --&gt;
+{&#37; extends '@layout' &#37;}
 {&#37; extends '@theme' &#37;}</code></pre>
 <p>Unfortunately, it's not possible to extend multiple templates in Twig (which seems obvious) so we had to find a workaround.</p>
 </section>
@@ -69,8 +73,26 @@ preview: true
 </li>
 <li>...</li>
 </ul>
-<p>Or the other way around: having the layouts first, each one having all the themes every time. With this solution we could do something like <code>{&#37; extends 'admin/12' &#37;}</code> but that sucks so bad.</p>
-<p>So, we needed another way.</p>
+<p>With this solution, you could do somethink like <code>{&#37; extends 'shopping/12' &#37;}</code>. Or the other way around:</p>
+<ul>
+<li>12 (layout)</li>
+<ul>
+<li>shopping (theme)</li>
+<li>news (theme)</li>
+<li>...</li>
+</ul>
+</li>
+<li>12 (layout)</li>
+<ul>
+<li>shopping (theme)</li>
+<li>news (theme)</li>
+<li>...</li>
+</ul>
+</li>
+<li>...</li>
+</ul>
+<p>With this solution, you could do somethink like <code>{&#37; extends '12/shopping' &#37;}</code>.</p>
+<p>Both sucks. Really bad. It is not only very ugly but also a nightmare to maintain. Guys: don't do this. This is not a good idea. Especially since Twig is the most powerful template engine out there: there is a better way.</p>
 </section>
 <section id="solution">
 <h2>A clean solution <a href="#solution">#</a></h2>
@@ -88,10 +110,7 @@ preview: true
 <p>As seen previously, the base file creates the HTML root document, the major HTML tags and defines the major Twig blocks, especially the one used to define the HTML class on the body element.</p>
 <pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-&lt;head&gt;
-    <!-- whatever -->
-&lt;/head&gt;
-
+&lt;head&gt;&lt;!-- whatever --&gt;&lt;/head&gt;
 &lt;body class="{&#37; block theme &#37;}default{&#37; endblock &#37;}"&gt;
     /* whatever */
     {&#37; block layout &#37;}{&#37; endblock &#37;}
@@ -132,9 +151,7 @@ preview: true
 <h3>Rendered HTML</h3>
 <pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-&lt;head&gt;
-    <!-- whatever -->
-&lt;/head&gt;
+&lt;head&gt;&lt;!-- whatever --&gt;&lt;/head&gt;
 &lt;body class="shopping"&gt;
     &lt;div class="col-md-9  content"&gt;
         <p>My awesome content</p>
@@ -144,4 +161,9 @@ preview: true
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
+</section>
+<section id="final-words">
+<h2>Final words <a href="#final-words">#</a></h2>
+<p>That's pretty much it. From there, dealing with color schemes is pretty easy since you have a specific class on the body element. To ease the pain of working out design schemes on the CSS-side, I use a couple of Sass mixins and a bunch of Sass variables. It makes everything fits in a couple of lines instead of large amount of vanilla CSS.</p>
+<p>Long story short: Twig is fucking powerful and so is the embed directive.</p>
 </section>
