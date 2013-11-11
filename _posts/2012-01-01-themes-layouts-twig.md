@@ -67,7 +67,7 @@ preview: true
 </li>
 <li>...</li>
 </ul>
-<p>Or the other way around: having the layouts first, each one having all the themes every time. With this solution we could do something like <code>{&#37; extends 'admin/12' &#37;} but that sucks so bad.</p>
+<p>Or the other way around: having the layouts first, each one having all the themes every time. With this solution we could do something like <code>{&#37; extends 'admin/12' &#37;}</code> but that sucks so bad.</p>
 <p>So, we needed another way.</p>
 </section>
 <section id="solution">
