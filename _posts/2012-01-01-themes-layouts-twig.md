@@ -29,7 +29,7 @@ preview: true
 {&#37; block header &#37;}
     &lt;h1&gt;Title&lt;/h1&gt;
 {&#37; endblock &#37;}
-{&#37; block main   &#37;}
+{&#37; block main &#37;}
     &lt;p&gt;My first page&lt;/p&gt;
 {&#37; endblock &#37;}
 {&#37; block footer &#37;}
@@ -137,6 +137,7 @@ preview: true
 <p>We only need the last piece of the puzzle: the page file. In this file, not much to do except dumping our content in the accurate blocks:</p>
 <pre class="language-markup"><code>{&#37; extends 'shopping.html.twig' &#37;}
 
+&lt;!-- Filling the 'layout' block defined in base template --&gt;
 {&#37; block layout &#37;}
     {&#37; embed '9-3.html.twig' &#37;}
         {&#37; block content &#37;}
