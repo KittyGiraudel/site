@@ -78,7 +78,7 @@ preview: true
 <ul>
 <li><code>base.html.twig</code> which defines the page core and the major blocks</li>
 <li><code>{theme}.html.twig</code> with <code>{theme}</code> being the name of the theme we want which extends <code>base.html.twig</code> and defines the class for the body element (and if necessary some other theme-specific stuff)</li>
-<li><code>page.html.twig which is the actual page, embeding the layout file in the main content to override its blocks</li>
+<li><code>page.html.twig</code> which is the actual page, embeding the layout file in the main content to override its blocks</li>
 <li><code>{layout}.html.twig</code> with <code>{layout}</code> being the layout we want, defined content blocks</li>
 </ul>
 <p>This may sound a bit complicated so why not doing this step by step:</p>
