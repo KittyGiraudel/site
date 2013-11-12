@@ -1,8 +1,8 @@
 ---
 title: Dealing with themes and layouts with Twig
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 ---
 <section>
 <p>Hey guys! This post is going to be quite different from what I usually write about since it will talk about <a href="http://twig.sensiolabs.org/">Twig</a>, the template engine used by <a href="http://symfony.com/">Symfony 2</a>. I came across a pretty complicated case at work so I thought I'd write a little something about it.</p>
