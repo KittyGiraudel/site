@@ -103,7 +103,7 @@ preview: false
 </section>
 <section id="solution">
 <h2>A clean solution <a href="#solution">#</a></h2>
-<p>After some searches, we finally found a way to do what we wanted with the <code>embed</code> directive. As I said earlier, embed really comes in handy when trying to acheive complicated systems like this. From the official Twig documentation:</p>
+<p>After some searches, we finally found a way to do what we wanted with the <code>embed</code> directive. As I said earlier, embed really comes in handy when trying to achieve complicated systems like this. From the official Twig documentation:</p>
 <blockquote class="quote">The embed tag combines the behaviour of include and extends. It allows you to include another template's contents, just like include does. But it also allows you to override any block defined inside the included template, like when extending a template.</blockquote>
 <p>In the end, we need 4 files to create a page:</p>
 <ul>
