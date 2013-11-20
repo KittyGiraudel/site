@@ -48,7 +48,7 @@ if(value != false) {
     array.push(value);
 }</code></pre>
 <p>This works because JavaScript makes a difference between <code>!=</code> and <code>!==</code> while Sass uses the latter no matter what.</p>
-<p>We talked about the empty-list case in this section but there is the exact same problem with an empty string <code>""<code> or even the <code>null</code> value. Anyway, as I said it's barely an issue, but it has boggled me more than once.</p>
+<p>We talked about the empty-list case in this section but there is the exact same problem with an empty string <code>""</code> or even the <code>null</code> value. Anyway, as I said it's barely an issue, but it has boggled me more than once.</p>
 </section>
 <section id="list-append">
 <h2>List append <a href="#list-append">#</a></h2>
