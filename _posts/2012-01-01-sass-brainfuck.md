@@ -97,7 +97,7 @@ el {
         font-size: $size;
     }
 }</code></pre>
-<p>I want to play a game. In your opinion, what is the CSS rendered by this code (shamelessly stolen from <a href="http://twitter.com/pioupioum">Mehdi Kabab</a>'s new book - "Sass and Compass avancé")?</p>
+<p>I want to play a game. In your opinion, what is the CSS rendered by this code (shamelessly stolen from <a href="http://twitter.com/pioupioum">Mehdi Kabab</a>'s new book - "Advanced Sass and Compass")?</p>
 <p>The correct answer is:</p>
 <pre class="language-scss"><code>el {
     font-size: 1em; 
@@ -105,3 +105,30 @@ el {
 }</code></pre>
 <p>This is actually not fucked up at all: it's the expected behaviour from a correct variable scoping. While it might look silly for an advanced Sass user, I bet it's not that obvious to the beginner. The declared <code>$size</code> variable is used for the font-size while the default value for the <code>$size</code> argument is used for the bottom margin since it is inside the mixin, where the variable is scoped.</p>
 </section>
+<section id="ternary">
+<h2>If ternary then... Sass error <a href="#ternary">#</a></h2>
+<p>You all know what a ternary is, right? Kind of a one-line <code>if</code>/<code>else</code> statement. It's pretty cool when you need to assign a variable differently depending on a condition. In JavaScript, that would be something like this:</p>
+<pre class="language-javascript"><code>var whatever = condition ? true : false</code></pre>
+<p>Where every of the 3 parts can be whatever you want, not necessarily booleans. Okay, so there is no technically ternary operator in Sass (even if there is one in Ruby very similar to the one we just used). However there is a ternary function called <code>if()</code> which works the same way:</p>
+<pre class="language-scss"><code>$whatever: if(condition, true, false)</code></pre>
+<p>First argument is the condition, second one is the value to return in case the condition is evaluated to <code>true</code> and as you may guess the third one is returned when condition is false. 'til then, no surprise.</p>
+<p>Let's have a little try, shall we? Consider a function accepting a list as its only argument. It checks for its length and returns either the 2nd item if it has multiple items, or the only item if it has only 1.</p>
+<pre class="language-scss"><code>@function f($a) {
+    @return if(length($a) > 1, nth($a, 2), $a);
+}</code></pre>
+<p>And this is how to use it:</p>
+<pre class="language-scss"><code>$c: f( bazinga gloubiboulga );
+// returns `gloubiboulga`</code></pre>
+<p>And now with a one-item long list:</p>
+<pre class="language-scss"><code>$c: f( bazinga );
+// List index is 2 but list is only 1 item long for `nth'</code></pre>
+<p>BAZINGA! The <code>if()</code> function returns an error. It looks like it's trying to access the second item in the list, even if the list is only one item long. <em>Why</em> you ask? Because the ternary function from Sass parses both 2nd and 3rd arguments no matter what.</p>
+<p>Hopefully this issue is supposed to be solved in the incoming Sass 3.3 according to <a href="https://github.com/nex3/sass/issues/470">this GitHub issue</a>. Meanwhile, a workaround would be to use a real <code>@if/@else</code> statement to bypass the issue. Not ideal but still better than nothing.</p>
+</section>
+<section id="final-words">
+<h2>Final words <a href="#final-words">#</a></h2>
+<p>I love how powerfull Sass has become but there are things that keep boggling my mind. <a href="<a href="http://twitter.com/pioupioum">">Mehdi Kabab</a>, a fellow french developer (and author of a fresh new book <a href="http://livre-sass-compass.fr/">Advanced Sass and Compass</a>) told me it was because I wasn't using Sass as a preprocessor.</p>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p><a href="https://twitter.com/HugoGiraudel">@HugoGiraudel</a> the main problem is you want use Sass like PHP oe Ruby, and not like a CSS preprocessor ;) /cc <a href="https://twitter.com/kaelig">@kaelig</a></p>&mdash; Mehdi Kabab (@piouPiouM) <a href="https://twitter.com/piouPiouM/statuses/401427568592957441">November 15, 2013</a></blockquote>
+<p>That's actually true! I've done many things with Sass that are really out of the scope of CSS. But that's where I think the fun is: thinking out of box, and hacking around the syntax. That's how I learnt to use Sass, and that's how I'll keep going on. ;)</p>
+</section>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
