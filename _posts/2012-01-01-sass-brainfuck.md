@@ -21,6 +21,7 @@ comments: false
 </section>
 <section id="strictly-equal-operator">
 <h2>Strictly equal operator <a href="#strictly-equal-operator">#</a></h2>
+<blockquote class="pull-quote--right">Sass makes no distrinction between <code>==</code> and <code>===</code>.</blockquote>
 <p>Sometimes I wish Sass could make a distinction between <code>==</code> and <code>===</code>. As a reminder, the first one check whether values are equal while the latter makes sure both are of the same type. This to prevent something like <code>5 == '5'</code> to return <code>true</code>. When checking with <code>===</code>, it should return <code>false</code>.</p>
 <p>Anyway, when you use <code>==</code> in Sass, it actually means <code>===</code>. So basically there is no way to check whether two values are equal in Sass with as well checking their type.</p>
 <p>In most cases, this is really not an issue but I came up with a case where I didn't wanted to check the type. Please have a look at the following exemple:</p>
@@ -122,12 +123,13 @@ el {
 <p>And now with a one-item long list:</p>
 <pre class="language-scss"><code>$c: f( bazinga );
 // List index is 2 but list is only 1 item long for `nth'</code></pre>
+<blockquote class="pull-quote--right"><code>if()</code> parses all arguments no matter what.</blockquote>
 <p>BAZINGA! The <code>if()</code> function returns an error. It looks like it's trying to access the second item in the list, even if the list is only one item long. <em>Why</em> you ask? Because the ternary function from Sass parses both 2nd and 3rd arguments no matter what.</p>
 <p>Hopefully this issue is supposed to be solved in the incoming Sass 3.3 according to <a href="https://github.com/nex3/sass/issues/470">this GitHub issue</a>. Meanwhile, a workaround would be to use a real <code>@if/@else</code> statement to bypass the issue. Not ideal but still better than nothing.</p>
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
-<p>I love how powerfull Sass has become but there are things that keep boggling my mind. <a href="<a href="http://twitter.com/pioupioum">">Mehdi Kabab</a>, a fellow french developer (and author of a fresh new book <a href="http://livre-sass-compass.fr/">Advanced Sass and Compass</a>) told me it was because I wasn't using Sass as a preprocessor.</p>
+<p>I love how powerfull Sass has become but there are things that keep boggling my mind. <a href="http://twitter.com/pioupioum">">Mehdi Kabab</a>, a fellow french developer (and author of a fresh new book <a href="http://livre-sass-compass.fr/">Advanced Sass and Compass</a>) told me it was because I wasn't using Sass as a preprocessor.</p>
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p><a href="https://twitter.com/HugoGiraudel">@HugoGiraudel</a> the main problem is you want use Sass like PHP oe Ruby, and not like a CSS preprocessor ;) /cc <a href="https://twitter.com/kaelig">@kaelig</a></p>&mdash; Mehdi Kabab (@piouPiouM) <a href="https://twitter.com/piouPiouM/statuses/401427568592957441">November 15, 2013</a></blockquote>
 <p>That's actually true! I've done many things with Sass that are really out of the scope of CSS. But that's where I think the fun is: thinking out of box, and hacking around the syntax. That's how I learnt to use Sass, and that's how I'll keep going on. ;)</p>
 </section>
