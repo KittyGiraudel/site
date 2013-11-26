@@ -14,7 +14,7 @@ layout: default
 <li>Development of a web watch application : <a href='http://veille.caramel-poivre.fr/' title="Veille Caramel Poivré">http://veille.caramel-poivre.fr/</a></a></li>
 </ul> 
 -->
-<h3>Square Connexion - current</h3>
+<h3>Tootici - current</h3>
 <p class="job-title">Front-end developer in a Symfony 2 project.</p>
 
 <h3>Crédit Agricole Sud Rhône Alpes - 2011/2013</h3>
@@ -27,8 +27,8 @@ layout: default
 <ul>
 <li><a href="http://browserhacks.com">Browserhacks.com</a>, a comprehensive list of browser specific CSS hacks</li>
 <li><a href="http://sassylists.com/">SassyLists</a> (Compass extension) in Team Sass</li>
+<li><a href="https://github.com/HugoGiraudel/Countdown.js">Countdown.js</a>, a simple yet customizable JavaScript countdown</li>
 <li><a href="https://github.com/HugoGiraudel/KNACSS-Sass">Sass port</a> of <a href="http://knacss.com">KNACSS</a>, a CSS framework from Raphaël Goetter</li>
-<!--<li><a href="http://wildwebwatch.com/" title="Wild Web Watch">Wild Web Watch</a>, a web watch project</a></li>-->
 </ul>
 
 </section>
@@ -36,10 +36,10 @@ layout: default
 
 <h2><span class='fontawesome-magic icon-left'></span>Skills <a href="#skills" class="section-anchor">#</a></h2>
 <h3>Programming languages</h3>
-<p>HTML, CSS (Sass), JavaScript (jQuery), AJAX, XML, OOPHP, MySQL, UML</p>
+<p>HTML, CSS (Sass), JavaScript, XML, OOPHP, MySQL</p>
 
 <h3>Softwares</h3>
-<p>Sublime Text, Git, Photoshop</p>
+<p>Sublime Text, Git</p>
 
 <h3>Languages</h3>
 <p>French (native), English (fluent), Spanish (notions)</p>
