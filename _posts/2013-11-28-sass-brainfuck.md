@@ -1,8 +1,8 @@
 ---
 title: Sass brainfuck
 layout: post
-preview: true
-comments: false
+preview: false
+comments: true
 ---
 <section>
 <p>After months of experimenting with Sass, making crazy and useless things, hacking aroung the syntax and trying things that are not meant to be done, I have come with a list of things that still kind of bug my mind when it comes to Sass. Some of them are normal, some of them are normal, and some are just... weird. Please, follow my lead.</p>
