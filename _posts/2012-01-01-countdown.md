@@ -42,7 +42,7 @@ codepen: true
 </ul>
 <p>Thanks bro! Anyway, I'm proud to tell this script as passed strict JSHint validations and Jasmine tests! Hurray!</p>
 </section>
-<section id="final-wors">
+<section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
 <p>That's all folks! I hope you like this script and if you find anything worth mentioning, please be sure to shoot in the comments or directly on the <a href="https://github.com/HugoGiraudel/Countdown.js">GitHub repo</a>.</p>
 <p>Oh and if you only want to hack around the code, check this pen:</p>
