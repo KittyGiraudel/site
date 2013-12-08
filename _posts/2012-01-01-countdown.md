@@ -7,7 +7,7 @@ codepen: true
 ---
 <section>
 <p>Hey guys! Just a quick article to introduce <a href="https://github.com/HugoGiraudel/Countdown.js">Countdown.js</a>, a little script I recently made. During the last weeks, I've been practicing with JavaScript. It has been on <a href="http://hugogiraudel.com/2013/05/13/things-to-do-2013/">my wishlist for 2013</a> and I'm glad that I could made some progress with it.</p>
-<p>In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited <a href="http://codepen.io/HugoGiraudel/pen/jtJrq">an old countdown script</a> I made a while back with the litteral object pattern.</p>
+<p>In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited <a href="http://codepen.io/HugoGiraudel/pen/jtJrq">an old countdown script</a> I made a while back with the <a href="http://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/">object literal pattern</a>.</p>
 </section>
 <section id="why-another-one">
 <h2>Why another countdown script? <a href="#why-another-one">#</a></h2>
@@ -18,10 +18,10 @@ codepen: true
 </section>
 <section id="moving-on">
 <h2>Moving on <a href="#moving-on">#</a></h2>
-<p>But I wanted to try something else than the litteral object pattern. As good as this pattern can be, it becomes highly annoying when you have to deal with multiple occurrences of your widget on the same page. For some things, that's not a problem at all. But you could definitely come with the need to display multiple times on the same page so I needed something moar.</p>
-<p>Here comes Object Oriented JavaScript in all its glory! Now using the script is as easy as instanciating the Countdown class:</p>
+<p>But I wanted to try something else than the litteral object pattern. As good as this pattern can be, it becomes highly annoying when you have to deal with multiple occurrences of your widget on the same page. For some things, that's not a problem at all. But you could definitely come with the need to display multiple timers/countdowns on the same page so I needed something moar.</p>
+<p>Here comes <a href="http://tobyho.com/2010/11/22/javascript-constructors-and/">Object Oriented JavaScript</a> in all its glory! Now using the script is as easy as instanciating the <code>Countdown</code> class:</p>
 <pre class="language-javascript"><code>var countdown = new Countdown();</code></pre>
-<p>Passing options is not any harder:</p>
+<p>Passing options is not any harder. Just pass an object of parameters to the constructor (you can find the list of options <a href="https://github.com/HugoGiraudel/Countdown.js/blob/master/README.md">here</a>):</p>
 <pre class="language-javascript"><code>var countdown = new Countdown({
     selector: '#timer',
     msgBefore: "Will start at Christmas!",
@@ -40,11 +40,11 @@ codepen: true
 <li>Jasmine tests to make sure the script does what it's supposed to do</li>
 <li>Grunt to automate building process (also thanks to <a href="https://twitter.com/_agtlucas">Lucas Churchill</a> for this)</li>
 </ul>
-<p>So I'm proud to tell this script as passed strict JSHint validations and Jasmine tests! Hurray!</p>
+<p>Thanks bro! Anyway, I'm proud to tell this script as passed strict JSHint validations and Jasmine tests! Hurray!</p>
 </section>
 <section id="final-wors">
 <h2>Final words <a href="#final-words">#</a></h2>
 <p>That's all folks! I hope you like this script and if you find anything worth mentioning, please be sure to shoot in the comments or directly on the <a href="https://github.com/HugoGiraudel/Countdown.js">GitHub repo</a>.</p>
 <p>Oh and if you only want to hack around the code, check this pen:</p>
-<p data-height="329" data-theme-id="0" data-slug-hash="jtJrq" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/jtJrq'>JS Countdown module</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a></p>
+<p data-height="300" data-theme-id="0" data-slug-hash="vCyJq" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/vCyJq'>Object-oriented JS Countdown Class</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a></p>
 </section>
