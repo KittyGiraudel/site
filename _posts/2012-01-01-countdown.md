@@ -1,5 +1,5 @@
 ---
-title: Introducing Countdown.js
+title: "Introducing Countdown.js"
 layout: post
 comments: false
 preview: true
