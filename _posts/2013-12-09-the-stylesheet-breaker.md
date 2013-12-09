@@ -13,8 +13,8 @@ codepen: true
 <h2>How did it start <a href="#start">#</a></h2>
 <p>I was working on <a href="http://browserhacks.com">Browserhacks</a> pretty late very other night and just when I was about to turn everything off and go to bed, I runned the site on Google Chrome to "check that everything's okay".</p>
 <p>And everything seemed okay until I noticed one deficient <a href="http://browserhacks.com/#hack-ac2480b5c83038f2d838e2a62e28a307">hack</a> we added a couple of days earlier, aiming for Chrome 29+ and Opera 16+. My Chrome 31.0.1650.57 didn't seem targeted so I removed the hack from our database and added a note about it on our GitHub repository. No big deal.</p>
-<p>But just to be sure, I launched Firefox (Aurora) to make some tests and then the same phenomenum happened: I noticed a deficient hack. And then another one. And another one. And another one. And again. What the fuck? All of our 9 hacks supposed to target latest Firefox seemed to be completely pointless against Firefox Aurora. Either this browser has become bulletproof during its last releases, or there was a problem on our side. The latter the more plausible, unfortunately.</p>
 <blockquote class="pull-quote--right">All our CSS hacks were broken.</blockquote>
+<p>But just to be sure, I launched Firefox (Aurora) to make some tests and then the same phenomenum happened: I noticed a deficient hack. And then another one. And another one. And another one. And again. What the fuck? All of our 9 hacks supposed to target latest Firefox seemed to be completely pointless against Firefox Aurora. Either this browser has become bulletproof during its last releases, or there was a problem on our side. The latter the more plausible, unfortunately.</p>
 <p>First thing odd: all the JavaScript hacks were fine; only the CSS one were miserably failing. So I started checking the stylesheet dedicated to the hacks (merged into <code>main.css</code> but whatever) and everything seemed good. I double checked the call, I double checked the selectors, I double checked many little things but no luck. Everything <em>seemed</em> fine.</p>
 </section>
 <section id="finding-the-issue">
@@ -59,7 +59,7 @@ codepen: true
 <section id="final-words">
 <h2>Final words <a href="#final-words">#</a></h2>
 <p>In the end I simply removed <code>.selector { [property: value; }</code> from our hacks database so that it doesn't harm anyone again. If you want to play around this glitch, simply have a look at <a href="http://codepen.io/HugoGiraudel/pen/qztrl">this pen</a>:</p>
-<p data-height="350" data-theme-id="0" data-slug-hash="qztrl" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/qztrl'>The stylesheet breaker line</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a></p>
+<p data-height="350" data-theme-id="0" data-slug-hash="qztrl" data-user="HugoGiraudel" data-default-tab="css" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/qztrl'>The stylesheet breaker line</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a></p>
 <p>On a side note Sass, LESS and Stylus will all throw an error when encountering such a thing. In our case, we use Sass for everything but the hacks, for this very same reason: some hacks are not process-safe.</p>
 <p>Anyway folks, that's all I got. ;) Make sure you don't have weird things in your stylesheets!</p>
 </section>
