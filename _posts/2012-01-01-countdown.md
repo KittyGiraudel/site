@@ -57,7 +57,7 @@ codepen: true
 <h3><code>onEnd</code></h3>
 <p>Default: <code>null</code></p>
 <p>The function to run whenever the countdown stops.</p>
-<h3>xample</h3>
+<h3>Example</h3>
 <pre class="language-javascript"><code>var countdown = new Countdown({
     selector: '#timer',
     msgBefore: "Will start at Christmas!",
