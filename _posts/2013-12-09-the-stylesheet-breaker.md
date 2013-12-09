@@ -1,8 +1,8 @@
 ---
 title: The stylesheet breaker
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 codepen: true
 ---
 <section>
