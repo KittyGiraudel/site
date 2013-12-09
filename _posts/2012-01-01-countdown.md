@@ -14,12 +14,14 @@ codepen: true
 <p>There are like a billion scripts for countdowns, timers and clocks made of JavaScript. That's like the "hello world!" of JS scripts so why making another one? Everything has been done yet!</p>
 <p>Well, for one it was mostly about practicing. Making a timer script is something quite simple yet there is often lot of room for improvements. It turns out to be quite a nice playground to work in. </p>
 <p>Secondly, I needed a script able to display a countdown in the way I like and not only <code>hh:mm:ss</code>. I wanted to be able to display a sentence like <code>There are still X days, Y hours and Z minutes left</code> or whatever. And since I didn't know any script that allowed the use of patterns in a string (<code>{days}</code>, <code>{years}</code>...), I started building one.</p>
-<p>It worked pretty well and the code was clean enough so that I wasn't ashamed to release it on CodePen in early September.</p>
-<p>But I wanted to try something else than the litteral object pattern. As good as this pattern can be, it becomes highly annoying when you have to deal with multiple occurrences of your widget on the same page. For some things, that's not a problem at all. But you could definitely come with the need to display multiple timers/countdowns on the same page so I needed something moar. So here comes <a href="http://tobyho.com/2010/11/22/javascript-constructors-and/">Object Oriented JavaScript</a> in all its glory!</p>
+<p>It worked pretty well and the code was clean enough so that I wasn't ashamed to release it on CodePen in early September. But I wanted to try something else than the litteral object pattern. As good as this pattern can be, it becomes highly annoying when you have to deal with multiple occurrences of your widget on the same page. For some things, that's not a problem at all. But you could definitely come with the need to display multiple timers/countdowns on the same page so I needed something moar.</p>
+<p>So here comes <a href="http://tobyho.com/2010/11/22/javascript-constructors-and/">Object Oriented JavaScript</a> in all its glory!</p>
 </section>
 <section id="how-to">
 <h2>How to <a href="#how-to">#</a></h2>
-<p>Using the countdown is as easy as instanciating the <code>Countdown</code> class:</p>
+<p>Well, obviously you need to include the script in your page. But I made it pretty tiny! It's under 2Kb minified (which is about ~1.3Kb once gzipped).</p>
+<pre class="language-markup"><code>&lt;script src="js/countdown.js">&lt;/script></code></pre>
+<p>Then using the countdown is as easy as instanciating the <code>Countdown</code> class:</p>
 <pre class="language-javascript"><code>var countdown = new Countdown();</code></pre>
 <p>This creates a new instance with all defaults values but you can pass quite a few options:</p>
 <h3><code>selector</code></h3>
@@ -30,7 +32,7 @@ codepen: true
 <p>The date to start the countdown to. It should be a valid instance of class <code>Date</code></p>
 <h3><code>dateStart</code></h3>
 <p>Default: <code>new Date(new Date().getTime() + (24 * 60 * 60 * 1000))</code> (tomorrow)</p>
-<p>the date to end the countdown to. It should be a valid instance of class <code>Date</code></p>
+<p>The date to end the countdown to. It should be a valid instance of class <code>Date</code></p>
 <h3><code>msgBefore</code></h3>
 <p>Default: <code>Be ready!</code></p>
 <p>The message to display before reaching <code>dateStart</code></p>
@@ -55,7 +57,7 @@ codepen: true
 <h3><code>onEnd</code></h3>
 <p>Default: <code>null</code></p>
 <p>The function to run whenever the countdown stops.</p>
-<h3><code>xample</code>/h3>
+<h3>xample</h3>
 <pre class="language-javascript"><code>var countdown = new Countdown({
     selector: '#timer',
     msgBefore: "Will start at Christmas!",
@@ -74,7 +76,7 @@ codepen: true
 <section id="pushing-things-further">
 <h2>Pushing things further <a href="#pushing-things-further">#</a></h2>
 <h3>Custom events</h3>
-<p>The script doesn't use jQuery at all, mostly because there is no need for this library for such a small thing. However if you happen to use jQuery in your project, you'll be glad to know the Countdown throws custom events on the element.</p>
+<p>The script doesn't use jQuery at all, mostly because there is no need for such a library for this. However if you happen to use jQuery in your project, you'll be glad to know the Countdown throws custom events on the element you're binding the countdown to.</p>
 <p>As of today, two events are being fired: <code>countdownStart</code> and <code>countdownEnd</code>. You can use them as follow:</p>
 <pre class="language-javascript"><code>var countdown = new Countdown({
 	selector: '.timer'
@@ -88,6 +90,7 @@ $('.timer').on('countdownEnd', function() {
 	console.log('The countdown has reached 0.');
 });
 </code></pre>
+<p>Pretty neat, right?</p>
 <h3>Validating code</h3>
 <p>My brother <a href="https://twitter.com/l_giraudel">Loïc</a> helped me pushing things further by adding a couple of things to the project on GitHub:</p>
 <ul>
