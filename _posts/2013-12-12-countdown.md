@@ -1,8 +1,8 @@
 ---
 title: "Introducing Countdown.js"
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 codepen: true
 ---
 <section>
