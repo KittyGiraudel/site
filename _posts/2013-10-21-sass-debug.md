@@ -7,6 +7,7 @@ codepen: true
 ---
 
 <section>
+<p class="explanation">The code explained in this article has been slightly revisited in <a href="http://codepen.io/HugoGiraudel/pen/unyBH">the pen</a> afterwards. For the ultimate version of the code, check the pen.</p>
 <p>You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It's a shame there is so few functions to deal with them. This is why I made <a href="https://github.com/Team-Sass/Sass-list-functions">SassyLists</a>.</p>
 <p>Most importantly, I always wanted a <code>console.log()</code> for Sass. You know, something to debug a variable, a list, a value, whatever... There is the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4"><code>@debug</code></a> function but somehow it didn't completely satisfy me. Plus, there is no console on <a href="http://codepen.io">CodePen.io</a> and since this is where I do most of my experiments I needed something else.</p>
 <p>So I rolled up my sleeves, got my hands dirty and made my own Sass debug function. This is how it looks like:</p>
