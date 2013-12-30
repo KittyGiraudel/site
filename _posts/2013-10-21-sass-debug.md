@@ -76,7 +76,7 @@ body:before {
     }
 }</code></pre>
 <p>In case you wonder, I bash <code>!important</code> in case <code>body:before</code> is already defined for something. Basically I force this pseudo-element to behave exactly how I want.</p>
-<p>So. This mixin doesn't do much more than styling the output of the @debug function. So now instead of having to open the <code>body:before</code> rule, the content property and all, we just need to go <code>@include debug($list)</code>.</p>
+<p>So. This mixin doesn't do much more than styling the output of the <code>debug</code> function. So now instead of having to open the <code>body:before</code> rule, the content property and all, we just need to go <code>@include debug($list)</code>.</p>
 <p>Pretty neat, but I wanted moar.</p>
 </section>
 <section id="improving-the-function">
@@ -84,10 +84,11 @@ body:before {
 <p>I wanted two things: 1) explode the list into several lines to make it easier to read; 2) add the ability to display the type of each value in the list.</p>
 <h3>Dealing with line breaks</h3>
 <p>If you are a reader of <a href="http://thesassway.com">TheSassWay.com</a>, you might have stumbled upon my article <a href="http://thesassway.com/advanced/math-sequences-with-sass">Math sequences with Sass</a> in which I explain how I created famous math sequences in Sass and how I managed to display them with nothing more than CSS. Anyway, I kind of answer the question of linebreaks in CSS.</p>
-<p>If you've ever read the <a href="http://www.w3.org/TR/CSS2/generate.html#content">CSS specifications for the content property</a> (which I highly doubt), you may already know that there is a way to insert breaklines with <code>\A </code>. In TheSassWay article, I used it as a <code>$glue</code> for the <a href="https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss"><code>to-string()</code> function</a> from SassyLists.</p>
+<p>If you've ever read the <a href="http://www.w3.org/TR/CSS2/generate.html#content">CSS specifications for the content property</a> (don't worry, neither did I), you may know that there is a way to insert breaklines with <code>\A </code> (don't forget the trailing white space). In TheSassWay article, I used it as a <code>$glue</code> for the <a href="https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss"><code>to-string()</code> function</a> from SassyLists.</p>
 <p>This is pretty much what we will do here.</p>
 <pre class="language-scss"><code>@function debug($list) {
-	$result: "[ \A ";
+	$line-break: "\A ";
+	$result: "[ " + $line-break;
 
 	@each $item in $list {
     	$result: $result + "  ";
@@ -101,18 +102,19 @@ body:before {
 		}
 
 		@if index($list, $item) != length($list) {
-			$result: $result + ", \A ";
+			$result: $result + ", " + $line-break;
 		}
  	}
 
-	$result: $result + "\A ]";
+	$result: $result + $line-break + "]";
 	@return quote($result);
 }</code></pre>
 <p>All we did was adding a line-break after the bracket, after each value, then before the closing bracket. That looks great, but we need to handle the indentation now. This is where it gets a little tricky.</p>
-<p>Actually the only way I could manage a perfect indentation is the same trick I used for the <code>to-string()</code> function: with an internal boolean to make a distinction between the root level (the one you called) and the inner levels (from nested lists). Problem with this boolean is it fucks the function signature but that's the only way I found.</p>
+<p>Actually the only way I could manage a perfect indentation is the same trick I used for the <code>to-string()</code> function: with an internal boolean to make a distinction between the root level (the one you called) and the inner levels (from nested lists). Problem with this boolean is it messes with the function signature but that's the only way I found.</p>
 <pre class="language-scss"><code>@function debug($list, $root: true) {
-  $result : "[ \A ";
-  $space  : if($root, "", "  ");
+  $line-break: "\A ";
+  $result: "[ " + $line-break;
+  $space: if($root, "", "  ");
 
   @each $item in $list {
     $result: $result + "  ";
@@ -126,30 +128,30 @@ body:before {
     }
 
     @if index($list, $item) != length($list) {
-      $result: $result + ", \A ";
+      $result: $result + ", " + $line-break;
     }
 
   }
 
-  $result: $result + "\A " + $space + "]";
+  $result: $result + $line-break + $space + "]";
   @return quote($result);
 }</code></pre>
 <p>The list should now be properly indented. So should be the nested lists. Okaaaay this is getting quite cool! We can now output a list in a clean <code>var_dump()</code> way.</p>
 <h3>Displaying variable types</h3>
 <p>Now the icing on top of the cake would be displaying variable types, right? Thanks to the <code>type-of()</code> function and some tweaks to our <code>debug</code> function, it is actually quite simple to do. Far simpler than what we previously did with indents and line breaks.</p>
 <pre class="language-scss"><code>@function debug($list, $type: false, $root: true) {
-	$result : if($type,
-		"(list:#{length($list)})[ \A ",
-		"[ \A "
-	);
+  $line-break: "\A ";
+  $result: if($type,
+	  "(list:#{length($list)})[ "+ $line-break,
+	  "[ " + $line-break
+  );
+  $space: if($root,
+	  "",
+	  "  "
+  );
 
-	$space  : if($root,
-		"",
-		"  "
-	);
-
-	@each $item in $list {
-		$result: $result + "  ";
+  @each $item in $list {
+	  $result: $result + "  ";
 
 		@if length($item) > 1 {
 			$result: $result + debug($item, $type, false);
@@ -163,11 +165,11 @@ body:before {
 		}
 
 		@if index($list, $item) != length($list) {
-			$result: $result + ", \A ";
+			$result: $result + ", " + $line-break;
 		}
 	}
 
-	$result: $result + "\A " + $space + "]");
+	$result: $result + $line-break + $space + "]");
 	@return quote($result);
 }</code></pre>
 <p>As you can see, it is pretty much the same. We only check for the <code>$type</code> boolean and add the value types accordingly wherever they belong. We're almost there!</p>
