@@ -19,7 +19,7 @@ codepen: true
 <p>It was pretty easy to do.</p>
 <pre class="language-scss"><code>@function debug($list) {
 	// We open the bracket
-	$result: unquote("[ ");
+	$result: "[ ";
 
     // For each item in list
     @each $item in $list {
@@ -27,23 +27,23 @@ codepen: true
     	// If it's more than one item long
     	@if length($item) > 1 {
     		// We deal with a nested list
-    		$result: unquote("#{$result}#{debug($item)}");
+    		$result: $result + debug($item);
     	}
     	// Else we append the item to $result
     	@else {
-    		$result: unquote("#{$result}#{$item}");
+    		$result: $result + $item;
     	}
 
     	// If we are not dealing with the last item of the list
     	// We add a comma and a space
     	@if index($list, $item) != length($list) {
-     		$result: unquote("#{$result}, ");
+     		$result: $result + ", ";
     	}
     }
 
     // We close the bracket
     // And return the string
-    $result: unquote("#{$result} ]");
+    $result: $result + " ]";
     @return quote($result);
 }</code></pre>
 <p>This simple functions turns a Sass list into a readable string. It also deals with nested lists. Please have a look at the following example:</p>
@@ -87,51 +87,51 @@ body:before {
 <p>If you've ever read the <a href="http://www.w3.org/TR/CSS2/generate.html#content">CSS specifications for the content property</a> (which I highly doubt), you may already know that there is a way to insert breaklines with <code>\A </code>. In TheSassWay article, I used it as a <code>$glue</code> for the <a href="https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss"><code>to-string()</code> function</a> from SassyLists.</p>
 <p>This is pretty much what we will do here.</p>
 <pre class="language-scss"><code>@function debug($list) {
-	$result: unquote("[ \A ");
+	$result: "[ \A ";
 
 	@each $item in $list {
-    	$result: unquote("#{$result}  ");
+    	$result: $result + "  ";
 
 		@if length($item) > 1 {
-			$result: unquote("#{$result}#{debug($item)}");
+			$result: $result + debug($item);
 		}
 
 		@else {
-			$result: unquote("#{$result}#{$item}");
+			$result: $result + $item;
 		}
 
 		@if index($list, $item) != length($list) {
-			$result: unquote("#{$result}, \A ");
+			$result: $result + ", \A ";
 		}
  	}
 
-	$result: unquote("#{$result}\A ]");
+	$result: $result + "\A ]";
 	@return quote($result);
 }</code></pre>
 <p>All we did was adding a line-break after the bracket, after each value, then before the closing bracket. That looks great, but we need to handle the indentation now. This is where it gets a little tricky.</p>
 <p>Actually the only way I could manage a perfect indentation is the same trick I used for the <code>to-string()</code> function: with an internal boolean to make a distinction between the root level (the one you called) and the inner levels (from nested lists). Problem with this boolean is it fucks the function signature but that's the only way I found.</p>
 <pre class="language-scss"><code>@function debug($list, $root: true) {
-  $result : unquote("[ \A ");
+  $result : "[ \A ";
   $space  : if($root, "", "  ");
 
   @each $item in $list {
-    $result: unquote("#{$result}  ");
+    $result: $result + "  ";
 
     @if length($item) > 1 {
-      $result: unquote("#{$result}#{debug($item, false)}");
+      $result: $result + debug($item, false);
     }
 
     @else {
-      $result: unquote("#{$result}#{$space}#{$item}");
+      $result: $result + $space + $item;
     }
 
     @if index($list, $item) != length($list) {
-      $result: unquote("#{$result}, \A ");
+      $result: $result + ", \A ";
     }
 
   }
 
-  $result: unquote("#{$result}\A #{$space}]");
+  $result: $result + "\A " + $space + "]";
   @return quote($result);
 }</code></pre>
 <p>The list should now be properly indented. So should be the nested lists. Okaaaay this is getting quite cool! We can now output a list in a clean <code>var_dump()</code> way.</p>
@@ -139,8 +139,8 @@ body:before {
 <p>Now the icing on top of the cake would be displaying variable types, right? Thanks to the <code>type-of()</code> function and some tweaks to our <code>debug</code> function, it is actually quite simple to do. Far simpler than what we previously did with indents and line breaks.</p>
 <pre class="language-scss"><code>@function debug($list, $type: false, $root: true) {
 	$result : if($type,
-		unquote("(list:#{length($list)})[ \A "),
-		unquote("[ \A ")
+		"(list:#{length($list)})[ \A ",
+		"[ \A "
 	);
 
 	$space  : if($root,
@@ -149,25 +149,25 @@ body:before {
 	);
 
 	@each $item in $list {
-		$result: unquote("#{$result}  ");
+		$result: $result + "  ";
 
 		@if length($item) > 1 {
-			$result: unquote("#{$result}#{debug($item, $type, false)}");
+			$result: $result + debug($item, $type, false);
 		}
 
 		@else {
 			$result: if($type,
-				unquote("#{$result}#{$space}(#{type-of($item)}) #{$item}"),
-				unquote("#{$result}#{$space}#{$item}")
+				$result + $space + "(" + type-of($item) + ") " + $item,
+				$result + $space + $item
 			);
 		}
 
 		@if index($list, $item) != length($list) {
-			$result: unquote("#{$result}, \A ");
+			$result: $result + ", \A ";
 		}
 	}
 
-	$result: unquote("#{$result}\A #{$space}]");
+	$result: $result + "\A " + $space + "]");
 	@return quote($result);
 }</code></pre>
 <p>As you can see, it is pretty much the same. We only check for the <code>$type</code> boolean and add the value types accordingly wherever they belong. We're almost there!</p>
