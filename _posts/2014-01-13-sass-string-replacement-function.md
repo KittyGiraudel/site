@@ -1,8 +1,8 @@
 ---
 title: String replacement function in Sass
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 ---
 <section>
 The other day, I caught up a discussion on Twitter where famous French developer [Nicolas Hoffman asked for a way to replace a string into another string in Sass](https://twitter.com/Nico3333fr/status/420557471745179648). He quickly got some answers to dig into string functions coming in Sass 3.3, but I know playing around such tools can be quite time consuming for someone who's not like super comfortable with the syntax.
