@@ -55,7 +55,7 @@ Now let's dig into the core of our function. The first thing we need to do is to
 
 So we start by initializing the `$new-string` with the beginning of the `$string`, from the first character to the one right before `$index` (the start of `$old`). Then we loop through each character in the string, and append them to the new string only if they are not part of the `$old` occurrence.
 
-Now that we've remove the old string, we need to append the new one. Couldn't be easier with the `str-index` function. 
+Now that we've remove the old string, we need to append the new one. Couldn't be easier with the `str-insert` function. 
 
 <pre class="language-scss"><code>$new-string: str-insert($new-string, $new, $index);</code></pre>
 
