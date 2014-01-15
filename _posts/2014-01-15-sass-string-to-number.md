@@ -113,7 +113,7 @@ Making sure we can convert floats and doubles took me a couple of minutes. I cou
     }
   }
   
-  @return $result;
+  @return if($minus, $result * -1, $result);
 }</code></pre>
 
 Since it can be a little tricky to understand, let's try with a quick example. Here is what happen when we try to cast "13.37" to a number:
@@ -156,6 +156,7 @@ First we need to get the unit as a string. It's basically the string starting fr
     }
     @else {
       @if not $index {
+        $result: if($minus, $result * -1, $result);
         @return _length($result, str-slice($string, $i));
       }
       // ...
