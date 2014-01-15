@@ -28,6 +28,7 @@ layout: default
 <li><a href="http://browserhacks.com">Browserhacks.com</a>, a comprehensive list of browser specific CSS hacks</li>
 <li><a href="http://sassylists.com/">SassyLists</a>, <a href="https://github.com/Team-Sass/Sassy-Strings">SassyStrings</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, Sass functions libraries</li>
 <li><a href="https://github.com/HugoGiraudel/Countdown.js">Countdown.js</a>, a simple yet customizable JavaScript countdown</li>
+<li><a href="https://github.com/HugoGiraudel/CRUD.js">CRUD.js</a>, a lightweight CRUD API in JavaScript</li>
 <li><a href="https://github.com/HugoGiraudel/KNACSS-Sass">Sass port</a> of <a href="http://knacss.com">KNACSS</a>, a CSS framework from Raphaël Goetter</li>
 </ul>
 
