@@ -139,5 +139,5 @@ On the performance side, I suppose we could always do better. We try to make the
 
 That's pretty much it folks. We hope you like it! It's been one hell of a thing to do and we're glad to have made it through. Comments and suggestions are obviously welcome!
 
-If you want to test SassyJSON, you'll be pleased to know it's available on [npm](https://npmjs.org/) or as [Ruby Gem](http://rubygems.org/gems/SassyJSON). We also [asked SassMeister to support it]() so you should soon be able to play with it directly on SassMeister.
+If you want to test SassyJSON, you'll be pleased to know it's available on [npm](https://npmjs.org/) or as [Ruby Gem](http://rubygems.org/gems/SassyJSON). We also [asked SassMeister to support it](https://github.com/jedfoster/SassMeister/issues/70) so you should soon be able to play with it directly on SassMeister.
 </section>
