@@ -7,7 +7,7 @@ preview: true
 <section>
 If you are a reader of CSS-Tricks, you might have come across this article a while back about [making Sass talk to JavaScript with JSON](http://css-tricks.com/making-sass-talk-to-javascript-with-json/). The main idea behind this write up is to provide a way for JavaScript to access content from the stylesheet (a.k.a. CSS).
 
-While the idea is solid, the realization is very simple. There where no CSS magic behind it at all. Les James (the author) simply manually wrote some [JSON](http://json.org/) in the `content` property like this:
+While the idea is solid, the realization is very simple. There was no CSS magic behind it at all. Les James (the author) manually wrote some [JSON](http://json.org/) in the `content` property of body's `::before` pseudo-element, like this:
 
 <pre class="language-css"><code>body::before {
   display: none;
@@ -25,7 +25,7 @@ Fabrice and I recently released [SassyJSON](https://github.com/HugoGiraudel/Sass
 
 On my side, I already found a usecase. You may know [Bootcamp](https://github.com/thejameskyle/bootcamp), a Jasmine-like testing framework made in Sass for Sass by [James Kyle](https://twitter.com/thejameskyle) (with a Grunt port). I am using Bootcamp for [SassyLists](https://github.com/Team-Sass/SassyLists). I am using Bootcamp for [SassyMatrix](https://github.com/HugoGiraudel/SassyMatrix). We are using Bootcamp for [SassyJSON](https://github.com/HugoGiraudel/SassyJSON). This makes sure our Sass code is clean and efficient.
 
-Back to my point: Bootcamp 2 (work in progress) will use maps to handle test results. Encoding this map to JSON makes it easy to parse it with JavaScript in order to make a real page for tests result, kind of like Jasmine SpecRunner. This is cool. Picture it guys: 
+Back to my point: Bootcamp 2 (work in progress) [will use maps](https://github.com/thejameskyle/bootcamp/issues/75#issuecomment-32131963) to handle test results. Encoding this map to JSON makes it easy to parse it with JavaScript in order to make a real page for tests result, kind of like Jasmine SpecRunner. This is cool. Picture it guys: 
 
 1. You write a Sass library
 2. You write Jasmine-like tests for your library
@@ -37,15 +37,15 @@ How awesome is that?
 <section id="Sass-to-JSON">
 ## Sass to JSON [#](#Sass-to-JSON)
 
-Writing the `json-encode` part has been very easy to do. It took us less than an hour to have everything set up. We are able to encode properly any Sass type to JSON, including lists and maps. We have a `json-encode` function delaying the encoding to type-specific functions like `_json-encode--string`, `_json-encode--list` thanks to the brand new `call` function from Sass 3.3:
+Writing the `json-encode` part has been very easy to do. It took us less than an hour to have everything set up. We are able to encode properly any Sass type to JSON, including lists and maps. We have a `json-encode` function delaying the encoding to type-specific *private* functions like `_json-encode--string`, `_json-encode--list` thanks to the brand new `call` function from Sass 3.3:
 
 <pre class="language-scss"><code>@function json-encode($value) {
-  $type: type-of($value);
-  @if function_exists('_json-encode--#{$type}') {
-    @return call('_json-encode--#{$type}', $value);
+  $type: type-of($value);                            /* 1 */
+  @if function_exists('_json-encode--#{$type}') {    /* 2 */
+    @return call('_json-encode--#{$type}', $value);  /* 3 */
   } 
-  @warn "Unknown type for #{$value} (#{$type}).";
-  @return false;
+  @warn "Unknown type for #{$value} (#{$type}).";    /* 4 */
+  @return false;                                     /* 4 */
 }</code></pre>
 
 Here is what's going on:
@@ -64,9 +64,9 @@ Once you've encoded your Sass into JSON, you'll want to dump the JSON string int
 * using the `content` property of a pseudo-element (`::after` and `::before`)
 * using the `font-family` property, preferably on an used element (e.g. `head`)
 * using a falsy media query
-* using a comment
+* using a persistent comment (`/*!*/`)
 
-Since we don't like to choose, we picked all of them. We simply made [a mixin with a flag](https://github.com/HugoGiraudel/SassyJSON/blob/master/src/encode/mixins/_json.scss) as a parameter defining the type of output you'll get: `regular` for option 1 and 2 (cross-browser mess), `media` for the media query and `comment` for the comment or `all` for all of them. Default is `all`. Judge for yourselves:
+Since we don't like to choose, we picked all of them. We simply made [a mixin with a flag](https://github.com/HugoGiraudel/SassyJSON/blob/master/src/encode/mixins/_json.scss) as a parameter defining the type of output you'll get: `regular` for option 1 and 2 (cross-browser mess), `media` for the media query and `comment` for the comment or even `all` for all of them (which is the default). Judge for yourselves:
 
 <pre class="language-scss"><code>$map: ((a: (1 2 ( b : 1 )), b: ( #444444, false, ( a: 1, b: test ) ), c: (2 3 4 string)));
 @include json-encode($map, $flag: all);</code></pre>
@@ -93,9 +93,9 @@ head {
 
 Meanwhile `json-decode` has been a pain in the ass to write, so much that I was very close to give up. Between nested lists, maps, null values, falsy values and hundreds of other tricky cases it is probably one of the hardest thing I've ever done in Sass.
 
-> It was so difficult I was close to give up.
+<blockquote class="pull-quote--right">It was so difficult I was close to give up.</blockquote>
 
-One of the main problem we faced was the ability to retrieve numbers. You see, when you parse a string &mdash; well &mdash; everything is a *string*. Even if *you* now this part is a number and this part is a boolean, when you slice your string all you have is shorter strings. Not numbers and booleans.
+One of the main problem we faced was the ability to retrieve numbers and colors. You see, when you parse a string, everything is a *string*. Even if *you* now this part is a number and this part is a boolean, when you slice your string all you have is shorter strings. Not numbers and booleans.
 
 And this is a big deal, because when you use those tiny bits of decoded JSON in your Sass, types matter. If you go `42px * 2` but `42px` is actually a `string` and not a `number` as it should be, [then your code breaks](http://hugogiraudel.com/2013/09/03/use-lengths-not-strings/) and Sass is furious and you are sad. Hence [this article](http://hugogiraudel.com/2014/01/15/sass-string-to-number/) about casting a string into a number in Sass.
 
@@ -104,6 +104,8 @@ And this is a big deal, because when you use those tiny bits of decoded JSON in 
 It took me 3 completely different tries before I come up with something that actually succeeds in parsing JSON. Frankly I was about to give up after the 2nd one because I had absolutely no idea how to do this efficiently. Just in case, I started searching for algorithms like how to build one's own JSON parser or something.
 
 I ended up in an obscure StackOverflow thread pointing to JSON parser implementations by browser vendors. Chrome's one was impossible for me to understand, so I gave a shot at [Mozilla's](https://github.com/mozilla/rhino/blob/master/src/org/mozilla/javascript/json/JsonParser.java) and it looked actually understandable! Mozilla is using Java for their JSON parser, and their code is quite simple to catch up even for someone with absolutely no experience with Java at all (a.k.a. me). 
+
+<blockquote class="pull-quote--right">Sass and Java are quite different.</blockquote>
 
 So I followed the Fox' steps and began implementing it approximately like they did. Breaking news folks: Sass and Java are two very different languages. I had to be creative for some stuff because it was simply impossible to do it their way (number casting, anyone?).
 
