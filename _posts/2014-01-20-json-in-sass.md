@@ -1,5 +1,5 @@
 ---
-title: JSON in Sass
+title: SassyJSON: Talk to the browser!
 layout: post
 comments: false
 preview: true
