@@ -134,3 +134,10 @@ Also, I'd like to be able to cover every case of invalid JSON with a `false` ret
 
 On the performance side, I suppose we could always do better. We try to make the code as fast as possible but it's not easy when you nest multiple level of functions and loops. I am thinking of using some kind of cache system like [Memo](https://github.com/Team-Sass/Sassy-Maps#memo) for SassyMaps by [Snugug](https://twitter.com/snugug). We'll see.
 </section>
+<section id="final-words">
+## Final words [#](#final-words)
+
+That's pretty much it folks. We hope you like it! It's been one hell of a thing to do and we're glad to have made it through. Comments and suggestions are obviously welcome!
+
+If you want to test SassyJSON, you'll be pleased to know it's available on [npm](https://npmjs.org/) or as [Ruby Gem](http://rubygems.org/gems/SassyJSON). We also [asked SassMeister to support it]() so you should soon be able to play with it directly on SassMeister.
+</section>
