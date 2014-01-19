@@ -5,8 +5,6 @@ comments: false
 preview: true
 ---
 <section>
-# JSON in Sass
-
 If you are a reader of CSS-Tricks, you might have come across this article a while back about [making Sass talk to JavaScript with JSON](http://css-tricks.com/making-sass-talk-to-javascript-with-json/). The main idea behind this write up is to provide a way for JavaScript to access content from the stylesheet (a.k.a. CSS).
 
 While the idea is solid, the realization is very simple. There where no CSS magic behind it at all. Les James (the author) simply manually wrote some [JSON](http://json.org/) in the `content` property like this:
