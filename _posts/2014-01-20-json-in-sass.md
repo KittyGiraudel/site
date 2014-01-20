@@ -93,7 +93,7 @@ head {
 
 Meanwhile `json-decode` has been a pain in the ass to write, so much that I was very close to give up. Between nested lists, maps, null values, falsy values and hundreds of other tricky cases it is probably one of the hardest thing I've ever done in Sass.
 
-<blockquote class="pull-quote--right">It was so difficult I was close to give up.</blockquote>
+<blockquote class="pull-quote--right">It was so difficult I was close to giving up.</blockquote>
 
 One of the main problem we faced was the ability to retrieve numbers and colors. You see, when you parse a string, everything is a *string*. Even if *you* now this part is a number and this part is a boolean, when you slice your string all you have is shorter strings. Not numbers and booleans.
 
