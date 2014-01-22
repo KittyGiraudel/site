@@ -40,8 +40,8 @@ layout: default
 <h3>Programming languages</h3>
 <p>HTML, CSS (Sass), JavaScript, XML, OOPHP, MySQL</p>
 
-<h3>Softwares</h3>
-<p>Sublime Text, Git</p>
+<h3>Softwares & frameworks</h3>
+<p>Sublime Text, Git, Twig, Jekyll, Symfony (notions)</p>
 
 <h3>Languages</h3>
 <p>French (native), English (fluent), Spanish (notions)</p>
