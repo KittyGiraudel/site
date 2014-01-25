@@ -72,7 +72,7 @@ layout: default
 <li><a href="http://tympanus.net/codrops/author/hugogiraudel/" title="Hugo at Codrops">Writer</a> at <a href="http://tympanus.net/codrops">Codrops</a></li>
 <li><a href="http://thesassway.com/hugo-giraudel" title="Hugo at TheSassyWay">Writer</a> at <a href="http://thesassway.com/">TheSassWay</a></li>
 <li><a href="http://css-tricks.com/metafizzy-effect-with-sass/" title="Hugo at CSS-Tricks">Writer</a> at <a href="http://css-tricks.com/">CSS-Tricks</a></li>
-<li><a href="http://davidwalsh.name/future-sass">Looking into the future of Sass</a> at <a href="http://davidwalsh.name">David Walsh'</a></li>
+<li><a href="http://davidwalsh.name/crud-javascript-class">Writer</a> <a href="http://davidwalsh.name/future-sass">at</a> <a href="http://davidwalsh.name">David Walsh'</a></li>
 </ul>
 <h3>Print</h3>
 <ul>
