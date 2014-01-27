@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Type conversion in Sass
-comments: false
-preview: true
+comments: true
+preview: false
 ---
 
 <section>
@@ -12,13 +12,13 @@ Something so simple as changing a stringified number into an integer is actually
 
 Sass provides a few types:
 
-* string (with or without quotes)
-* number (with or without CSS unit)
-* bool (`true` or `false`)
-* color (hexadecimal, rgb, hsl, keyword)
-* list (comma separated or space separated)
-* map (from Sass 3.3)
-* null (kind of a weird one)
+* [string](#string) (with or without quotes)
+* [number](#number) (with or without CSS unit)
+* [bool](#bool) (`true` or `false`)
+* [color](#color) (hexadecimal, rgb, hsl, keyword)
+* [list](#list) (comma separated or space separated)
+* [map](#map) (from Sass 3.3)
+* [null](#null) (kind of a weird one)
 
 Let's see how we can cast a value to another data type.
 </section>
