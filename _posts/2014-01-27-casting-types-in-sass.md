@@ -22,7 +22,7 @@ Sass provides a few types:
 
 Let's see how we can cast a value to another data type.
 
-<p class="explanation">Update: I just released [SassyCast](https://github.com/HugoGiraudel/SassyCast), also available as an eponym Compass extension.</p>
+<p class="explanation">Update: I just released <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, also available as an eponym <a href="http://rubygems.org/gems/SassyCast">Compass extension</a>.</p>
 </section>
 <section id="string">
 ## To string [#](#string)
