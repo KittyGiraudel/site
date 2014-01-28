@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SassyCast: type conversion in Sass
+title: "SassyCast: type conversion in Sass"
 comments: true
 preview: false
 ---
