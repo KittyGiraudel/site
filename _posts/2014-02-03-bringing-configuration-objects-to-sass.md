@@ -12,8 +12,7 @@ One thing I am really looking forward with [Sass maps](http://viget.com/extend/s
 
 Before digging into Sass awesomeness, let's first have a look at how we would do it in JavaScript (my JS isn't great, please report and apologize any mistake):
 
-``` js
-var Class = function (conf) {
+<pre class="language-javascript"><code>var Class = function (conf) {
   this.conf = window.extend({
     duration: 2000,
     name: 'class',
@@ -22,8 +21,7 @@ var Class = function (conf) {
   }, conf || {});
 
   this.init();
-}
-```
+}</code></pre>
 
 So what's going on here? The `Class` constructor is accepting a `conf` parameter. Then it defines its own `conf` property by merging the given object with a default configuration via the `extend` function. If `conf` isn't defined, then it extends an empty object with default properties.
 
@@ -37,8 +35,7 @@ One could ask what is wrong with having several arguments in the signature with 
 
 To begin with, using an object makes it easier to understand since you have to specify the key associated to each value. While slightly longer to write, it's easier to read; a fair trade-off in my opinion.
 
-``` js
-// This...
+<pre class="language-javascript"><code>// This...
 f({
   message: 'You shall not pass!',
   close: false,
@@ -47,8 +44,7 @@ f({
 });
 
 // ... is easier to understand than this
-f('You shall not pass!', false, 42, 'error');
-```
+f('You shall not pass!', false, 42, 'error');</code></pre>
 
 But the readibility argument is kind of a poor one. Some would say that they feel very comfortable with the multiple-arguments notation as long as they use a proper indentation for each argument (kind of like the object one) so let's move on to something more robust.
 
@@ -56,8 +52,7 @@ But the readibility argument is kind of a poor one. Some would say that they fee
 
 It's generally simpler to store an object in a variable and then to pass it to the function rather than storing each individual parameter in its own variable. While `.call()` and `.apply()` let you do something around this, it's not exquisite for readability (again!).
 
-``` js
-// This...
+<pre class="language-javascript"><code>// This...
 var conf = {
   message: 'You shall not pass!',
   close: false,
@@ -70,8 +65,7 @@ f(conf);
 // ... is easier to read than this
 var conf = ['You shall not pass!', false, 42, 'error'];
 
-f.apply(void 0, conf);
-```
+f.apply(void 0, conf);</code></pre>
 
 Still not convince? Let's move on.
 
@@ -79,8 +73,7 @@ Still not convince? Let's move on.
 
 Adding or removing is as easy as updating the configuration object. No need to update all the calls or change arguments order if some of theme are optional. 
 
-``` js
-// Adding a parameter is simple; no need to worry about argument order
+<pre class="language-javascript"><code>// Adding a parameter is simple; no need to worry about argument order
 f({
   message: 'You shall not pass!',
   close: false,
@@ -90,15 +83,11 @@ f({
 });
 
 // ... while you have to put your required parameters before optional one in the signature
-f('You shall not pass!', 42, false, 5000, 'error');
-
-```
+f('You shall not pass!', 42, false, 5000, 'error');</code></pre>
 
 #### Harder to provide default parameters
 
 Last but not least, I think an object notation makes it simpler to provide defaults arguments with an `extend` function than the multiple-arguments notation since JavaScript doesn't support default values for arguments in the function signature (while PHP, Sass and other languages do). Because of this, using an object is definitely more elegant than multiplying ternary operators to check if arguments are defined or not.
-
----
 
 I think we can agree on the fact that using a configuration object as a unique parameter is both better and more elegant than using a bunch of chained arguments. Now let's move on to the core of this article: bringing this to Sass.
 </section>
@@ -107,13 +96,11 @@ I think we can agree on the fact that using a configuration object as a unique p
 
 In a way, we don't really need this in Sass because it already provides *named arguments*. [Named arguments](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments) give the ability to call a function without having to specify all its parameters. You can call it specifying only the arguments you want, no matter their index in the parameter list, like this.
 
-``` scss
-@mixin mixin($a: "a", $b: "b", $c: "c") {
+<pre class="language-scss"><code>@mixin mixin($a: "a", $b: "b", $c: "c") {
   /* ... */
 }
 
-@include mixin($b: "boat");
-```
+@include mixin($b: "boat");</code></pre>
 
 This is pretty neat. But if like me you'd rather have a single object instead of a collection of arguments, then read on. 
 
@@ -121,21 +108,18 @@ This is pretty neat. But if like me you'd rather have a single object instead of
 
 Sass 3.3 is bringing maps which are the exact equivalent of JavaScript objects. Now that we have maps, we can do all the cool stuff we just talked about and **this is amazing**. All we need is an `extend` function to be able to extend a given object with an object of default parameters. Thankfully, this is very easy to do.
 
-``` scss
-@function extend($obj, $extObj) {
+<pre class="language-scss"><code>@function extend($obj, $extObj) {
   @each $key, $value in $extObj {
     $obj: map-merge($obj, ($key: $value));
   }
   @return $obj;
-}
-```
+}</code></pre>
 
 Basically we say that every property found in the extended object (`$extObj`) is merged with the first object (`$obj`). If it already exists in the default object, then it overrides the value; else it is simply added as a new property to the object.
 
 If the function is *that* simple to do, it's thanks to the way Sass handles `map-merge()`. To put it simple, this function is both an addition and a replacement function. If the given key already exists in the map, it will replace it values, else it will add the new key/value pair.
 
-``` scss
-$default-object: (
+<pre class="language-scss"><code>$default-object: (
   dont: you think,
   this: is awesome
 );
@@ -152,16 +136,14 @@ $merge: (
   dont: you think,
   this: is amazing
 );
- */
-```
+ */</code></pre>
 </section>
 <section id="using-it">
 ## Using it for real [#](#using-it)
 
 Now what's the point of all of this? Let's say you have a component you call with a mixin. This mixin accepts quite a few parameters like &mdash; I don't know &mdash; the width, the color scheme, the animation duration, maybe a name or something. They probably have some default values defined to match a common use case. Until now, you have done it like this
 
-``` scss
-@mixin component($theme: light, $size: 100%, $duration: 250ms, $name: 'component', $border: true) {
+<pre class="language-scss"><code>@mixin component($theme: light, $size: 100%, $duration: 250ms, $name: 'component', $border: true) {
   .#{$name} {
     width: $size;
     animation: fade $duration;
@@ -182,13 +164,11 @@ Now what's the point of all of this? Let's say you have a component you call wit
 }
 
 // Including component
-@include component(dark, $name: 'module');
-```
+@include component(dark, $name: 'module');</code></pre>
 
 This works great. It is easily readable, it does the job very well. However there is *one* thing that still sucks with this method: you can't move the configuration elsewhere. Actually you can, but it will be like 5 variables which is getting a lot. Having a configuration map would be easier to move in a variable file or something.
 
-``` scss
-@mixin component($conf: ()) {
+<pre class="language-scss"><code>@mixin component($conf: ()) {
   // Extending the default arguments with the given object
   $conf: extend((
     size: 100%,
@@ -219,21 +199,18 @@ This works great. It is easily readable, it does the job very well. However ther
 @include component((
   theme: dark, 
   name: 'module'
-));
-```
+));</code></pre>
 
 Both doesn't look much different except the core function from the object-way looks more crowded. True, but now separating the setup from the code is getting very easy. All you have to do is defining a map and pass it to the mixin. No need to move around a couple of variables which can quickly become a mess.
 
-``` scss
-// In `_config.scss` along with your other setup variables
+<pre class="language-scss"><code>// In `_config.scss` along with your other setup variables
 $component-conf: (
   theme: light,
   name: 'module',
 );
 
 // In `_component.scss`
-@include component($component-conf);
-```
+@include component($component-conf);</code></pre>
 </section>
 <section id="final-thoughts">
 ## Final thoughts [#](#final-thoughts)
