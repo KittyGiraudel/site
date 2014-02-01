@@ -37,8 +37,8 @@ pre {
 
 :not(pre) > code {
 	background: #f5f2f0;
-	border: 1px solid #ddd;
-	padding: .1em;
+	border: 1px solid #eee;
+	padding: .05em .1em;
 	border-radius: .2em;
 }
 
@@ -87,14 +87,12 @@ pre {
 }
 
 .token.atrule,
-.token.attr-value
-{
+.token.attr-value {
 	color: #e6db74;
 }
 
-
 .token.keyword{
-color: #66d9ef;
+	color: #66d9ef;
 }
 
 .token.regex,
@@ -111,5 +109,5 @@ color: #66d9ef;
 }
 
 .token.variable {
-	color: $main-color;
+	color: #f92672; // Monokawaii
 }
