@@ -37,6 +37,7 @@ pre {
 
 :not(pre) > code {
 	background: #272822;
+	color: #f8f8f2;
 	padding: .1em;
 	border-radius: .2em;
 }
@@ -107,4 +108,8 @@ color: #66d9ef;
 
 .token.entity {
 	cursor: help;
+}
+
+.token.variable {
+	color: $main-color;
 }
