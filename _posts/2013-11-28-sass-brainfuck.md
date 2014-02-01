@@ -1,5 +1,5 @@
 ---
-title: Sass brainfuck
+title: "Sass brainfuck"
 layout: post
 preview: false
 comments: true

@@ -1,5 +1,5 @@
 ---
-title: Sass-ify a CSS shape
+title: "Sass-ify a CSS shape"
 layout: post
 comments: true
 summary: true

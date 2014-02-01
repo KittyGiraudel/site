@@ -1,5 +1,5 @@
 ---
-title: How I learnt to like Bootstrap
+title: "How I learnt to like Bootstrap"
 layout: post
 preview: false
 comments: true

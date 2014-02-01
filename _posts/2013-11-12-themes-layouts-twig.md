@@ -1,5 +1,5 @@
 ---
-title: Dealing with themes and layouts with Twig
+title: "Dealing with themes and layouts with Twig"
 layout: post
 comments: true
 preview: false

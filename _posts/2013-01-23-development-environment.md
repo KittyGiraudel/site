@@ -1,5 +1,5 @@
 ---
-title: My development environment
+title: "My development environment"
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/development-environment

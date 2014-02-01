@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chromebook review
+title: "Chromebook review"
 comments: true
 ---
 

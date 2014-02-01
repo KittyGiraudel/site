@@ -1,5 +1,5 @@
 ---
-title: Colors in CSS
+title: "Colors in CSS"
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/css-colors.html

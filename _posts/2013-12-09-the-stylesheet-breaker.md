@@ -1,5 +1,5 @@
 ---
-title: The stylesheet breaker
+title: "The stylesheet breaker"
 layout: post
 comments: true
 preview: false

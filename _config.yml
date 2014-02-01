@@ -1,13 +1,7 @@
 name: "HugoGiraudel.com"
 description: "I write about front-end development stuff."
-url: "http://localhost:4000"
-
-auto: true
-server: true
 exclude: ['README.md', 'sass/']
-
 paginate: 7
-
 markdown: rdiscount
 permalink: pretty
 pygments: true

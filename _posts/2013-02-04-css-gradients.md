@@ -1,5 +1,5 @@
 ---
-title: Dig deep into CSS linear gradients
+title: "Dig deep into CSS linear gradients"
 layout: post
 guest: Ana Tudor
 comments: true

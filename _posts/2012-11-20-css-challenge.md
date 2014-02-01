@@ -1,5 +1,5 @@
 ---
-title: A CSS challenge
+title: "A CSS challenge"
 layout: post
 comments: true
 disqus: http://hugogiraudel.com/blog/css-challenge.html

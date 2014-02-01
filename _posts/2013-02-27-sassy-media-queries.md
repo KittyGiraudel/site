@@ -1,5 +1,5 @@
 ---
-title: Sassy Media Queries
+title: "Sassy Media Queries"
 layout: post
 comments: true
 codepen: true

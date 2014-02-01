@@ -1,5 +1,5 @@
 ---
-title: The ultimate PX/REM mixin
+title: "The ultimate PX/REM mixin"
 layout: post
 comments: true
 ---

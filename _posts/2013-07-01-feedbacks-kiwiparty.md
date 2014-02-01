@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Feedbacks on my first conf
+title: "Feedbacks on my first conf"
 ---
 
 <section>

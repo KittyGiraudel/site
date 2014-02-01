@@ -1,5 +1,5 @@
 ---
-title: String replacement function in Sass
+title: "String replacement function in Sass"
 layout: post
 comments: true
 preview: false

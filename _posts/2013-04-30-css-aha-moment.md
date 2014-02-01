@@ -1,5 +1,5 @@
 ---
-title: My CSS Aha moment
+title: "My CSS Aha moment"
 layout: post
 comments: true
 ---

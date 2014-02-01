@@ -4,7 +4,7 @@ layout: post
 comments: true
 summary: true
 codepen: true
-title: Digging into my slides about Sass
+title: "Digging into my slides about Sass"
 ---
 
 <section>

@@ -1,5 +1,5 @@
 ---
-title: Your work is not good enough
+title: "Your work is not good enough"
 layout: post
 comments: true
 preview: false

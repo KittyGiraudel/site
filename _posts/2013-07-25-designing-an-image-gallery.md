@@ -1,5 +1,5 @@
 ---
-title: Designing an image gallery
+title: "Designing an image gallery"
 layout: post
 comments: true
 published: true

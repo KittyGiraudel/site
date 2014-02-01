@@ -1,5 +1,5 @@
 ---
-title: Random function with Sass 3.3
+title: "Random function with Sass 3.3"
 layout: post
 preview: true
 comments: false

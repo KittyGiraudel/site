@@ -1,5 +1,5 @@
 ---
-title: Can I afford a preprocessor?
+title: "Can I afford a preprocessor?"
 layout: post
 comments: true
 summary: true

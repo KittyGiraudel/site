@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Understanding Sass lists
+title: "Understanding Sass lists"
 comments: true
 ---
 

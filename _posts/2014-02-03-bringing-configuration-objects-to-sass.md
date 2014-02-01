@@ -1,5 +1,5 @@
 ---
-title: Bringing configuration objects to Sass
+title: "Bringing configuration objects to Sass"
 layout: post
 preview: true
 comments: false

@@ -1,5 +1,5 @@
 ---
-title: 8 Compass extensions you may not know
+title: "8 Compass extensions you may not know"
 layout: post
 comments: true
 ---

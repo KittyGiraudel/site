@@ -1,5 +1,5 @@
 ---
-title: Sass mixin for offsets
+title: "Sass mixin for offsets"
 layout: post
 comments: true
 ---
