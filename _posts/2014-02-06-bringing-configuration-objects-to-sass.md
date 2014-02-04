@@ -106,18 +106,15 @@ This is pretty neat. But if like me you'd rather have a single object instead of
 
 > Being able to use configuration objects in Sass is amazing.
 
-Sass 3.3 is bringing maps which are the exact equivalent of JavaScript objects. Now that we have maps, we can do all the cool stuff we just talked about and **this is amazing**. All we need is an `extend` function to be able to extend a given object with an object of default parameters. Thankfully, this is very easy to do.
+Sass 3.3 is bringing maps which are the exact equivalent of JavaScript objects. Now that we have maps, we can do all the cool stuff we just talked about and **this is amazing**. All we need is an `extend` function to be able to extend a given object with an object of default parameters. 
+
+This could have been very easy to do but `map-merge` already does it for us. Indeed, when merging two maps it does exactly what we want: extend one map with the other. At best, we could alias the `map-merge` function with an `extend` function:
 
 <pre class="language-scss"><code>@function extend($obj, $extObj) {
-  @each $key, $value in $extObj {
-    $obj: map-merge($obj, ($key: $value));
-  }
-  @return $obj;
+  @return map-merge($obj, $extObj);
 }</code></pre>
 
-Basically we say that every property found in the extended object (`$extObj`) is merged with the first object (`$obj`). If it already exists in the default object, then it overrides the value; else it is simply added as a new property to the object.
-
-If the function is *that* simple to do, it's thanks to the way Sass handles `map-merge()`. To put it simple, this function is both an addition and a replacement function. If the given key already exists in the map, it will replace it values, else it will add the new key/value pair.
+So here it is:
 
 <pre class="language-scss"><code>$default-object: (
   dont: you think,
