@@ -5,12 +5,13 @@ comments: false
 preview: true
 ---
 <section>
-Last week, famous French front-end developer [Rémi Parmentier proposed a little CSS riddle on his blog](http://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.
 
 <figure class="figure--right">
 <img src="/images/calc-css-riddle__gollum-riddle.gif" alt="">
 <figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
 </figure>
+
+Yesterday, famous French front-end developer [Rémi Parmentier proposed a little CSS riddle on his blog](http://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.
 
 I gave it a go and it turned out to be much easier than I firstly expected. No weird cross browser issue, no dirty hack and mostly just plain ol' good CSS. But you may want to give it a try, don't you?
 </section>
@@ -19,7 +20,6 @@ I gave it a go and it turned out to be much easier than I firstly expected. No w
 
 Let me translate the post from Rémi for you:
 
-<img src="/images/calc-css-riddle__css-grid.gif" alt="The grid we want to create" />
 
 1. The orange items have a fixed width of 200px
 2. The grid is fluid and contains 4 cells per row
@@ -35,7 +35,9 @@ Let me translate the post from Rémi for you:
 8. No JavaScript, only HTML and CSS.
 9. It should work from IE 9 and gracefully degrades on older browsers.
 
-The tricky part is *5*. After checking at proposals submitted by various developers on Rémi's post, it seems most of them didn't catch that **all grey rectangles should be the same width**. 
+The tricky part is *5*. After checking at proposals submitted by various developers on Rémi's post, it seems most of them didn't catch that **all grey rectangles should be the same width**. Here is what you should be having:
+
+<img src="/images/calc-css-riddle__css-grid.gif" alt="The grid we want to create" />
 
 Rémi made [a CodePen](http://codepen.io/hteumeuleu/pen/zLiGw) to kickstart the riddle if you'd like to give it a try. Go on, have a shot. I'll be waiting.
 </section>
@@ -94,7 +96,7 @@ If you are using a templating engine (SPIP, Twig, Liquid...), there are high cha
 But since we only have to support a reasonably recent range of browsers, we could use advanced CSS selectors as well like `:nth-of-type()` to target side cells.
 
 <pre class="language-scss"><code>/* Side cells */
-.cell:nth-of-type(4n),       /* last cells */
+.cell:nth-of-type(4n),       /* last  cells */
 .cell:nth-of-type(4n + 1) {  /* first cells */
   /* Do something */
 }</code></pre>
@@ -103,10 +105,12 @@ But since we only have to support a reasonably recent range of browsers, we coul
 
 In the end, the core of the solution is no more than this:
 
-<pre class="language-scss"><code>.cell {
+<pre class="language-scss"><code>/* Middle cells */
+.cell {
   width: calc(((100% - (200px * 4 + 10px * 6)) / 6) * 2 + 200px);
 }
 
+/* Side cells */
 .cell:nth-of-type(4n),
 .cell:nth-of-type(4n + 1) {
   width: calc(((100% - (200px * 4 + 10px * 6)) / 6) + 200px);
