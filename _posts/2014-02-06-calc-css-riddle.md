@@ -1,8 +1,8 @@
 ---
 title: "CSS trickery and calc function"
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 ---
 <section>
 
@@ -11,7 +11,7 @@ preview: true
 <figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
 </figure>
 
-Yesterday, famous French front-end developer [Rémi Parmentier proposed a little CSS riddle on his blog](http://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.
+Yesterday, famous French front-end developer [Rémi Parmentier proposed a little CSS brain-teaser on his blog](http://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.
 
 I gave it a go and it turned out to be much easier than I firstly expected. No weird cross browser issue, no dirty hack and mostly just plain ol' good CSS. But you may want to give it a try, don't you?
 </section>
