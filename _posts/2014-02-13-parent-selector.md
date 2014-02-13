@@ -1,7 +1,7 @@
 ---
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 title: "Parent selector: on has() and ^"
 ---
 <section>
