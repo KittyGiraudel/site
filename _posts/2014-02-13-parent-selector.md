@@ -2,7 +2,7 @@
 layout: post
 comments: false
 preview: true
-title: "Parent selector: on `has()` and `^`"
+title: "Parent selector: on has() and ^`"
 ---
 <section>
 Yesterday I stumbled upon [this Google Survey](https://docs.google.com/forms/d/1x0eXPBj1GN8Zau-7k9J_JGhoM6uGEqlJBkBBDFswT2w/viewform?edit_requested=true) about the selector syntax for the incoming parent selector from [Selectors Level 4](http://dev.w3.org/csswg/selectors4/#subject) module asking for developers' help on choosing the right syntax for this feature. 
@@ -55,7 +55,7 @@ Meanwhile `:has()` being a pseudo-class it preserves this golden rule by keeping
 
 Not only `:has()` is both more readable and more understandable, but it also goes very well with the existing pseudo-classes, especially [`:not()`](http://dev.w3.org/csswg/selectors4/#negation) and [`:matches()`](http://dev.w3.org/csswg/selectors4/#matches) ([aliased as `:any()` in Firefox](https://developer.mozilla.org/en-US/docs/Web/CSS/:any)) which both work in the exact same way.
 
-<blockquote class="pull-quote--right">There are reasons why we have `:not()` and not `!` as a negative operator.</blockquote>
+<blockquote class="pull-quote--right">There are reasons why we have <code>:not()</code> and not <code>!</code> as a negative operator.</blockquote>
 
 Having meaningful pseudo-classes can make a huge difference. There are reasons why we have `:not()` and not `!` as a *negative operator*. Because `A:not(B):has(C)` is easier to read than `^A!B C`. 
 
