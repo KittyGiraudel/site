@@ -53,7 +53,9 @@ Meanwhile `:has()` being a pseudo-class it preserves this golden rule by keeping
 <section id="consistency">
 ## Keeping it consistent [#](#consistency)
 
-Not only `:has()` is both more readable and more understandable, but it also goes very well with the existing pseudo-classes, especially `:not()` and `:matches()` (aliased as `:any()` in Firefox) which both work in the exact same way.
+Not only `:has()` is both more readable and more understandable, but it also goes very well with the existing pseudo-classes, especially [`:not()`](http://dev.w3.org/csswg/selectors4/#negation) and [`:matches()`](http://dev.w3.org/csswg/selectors4/#matches) ([aliased as `:any()` in Firefox](https://developer.mozilla.org/en-US/docs/Web/CSS/:any)) which both work in the exact same way.
+
+<blockquote class="pull-quote--right">There are reasons why we have `:not()` and not `!` as a negative operator.</blockquote>
 
 Having meaningful pseudo-classes can make a huge difference. There are reasons why we have `:not()` and not `!` as a *negative operator*. Because `A:not(B):has(C)` is easier to read than `^A!B C`. 
 
