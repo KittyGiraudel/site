@@ -70,7 +70,7 @@ There are still edge cases I don't really see handled with the single character 
 
 <pre class="language-css"><code>A ^B ^C D</code></pre>
 
-What happens here? What is the selector's target? Is it `C`? Is it `D`? We don't know and more accurately: we can't know. I believe this should simply throw an error (which, in CSS, is equivalent to *skip that shit and move on*).
+What happens here? What is the selector's target? Is it `C`? Is it `D`? We don't know and more accurately: we can't know. According to the specifications, a selector like `^A ^B` would result in *all `B` contained in `A` and their containing `A` elements*. Needless to say it's getting crazy. If you ask me, this should simply throw an error (which, in CSS, is equivalent to *skip that shit and move on*).
 
 On the other hand, the pseudo-class proposal make it very easy to allow multiple occurrences of itself in a selector. Even better, chaining and nesting are possible.
 
