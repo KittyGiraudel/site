@@ -16,7 +16,7 @@ I think it should be `:has()`. Definitely. And here is why.
 </section>
 <section id="readibility">
 ## Starting with the obvious [#](#readability)
-One thing that no one can misses is how obvious the `:has()` proposal is. It speaks for iself. One thing I always liked in CSS is the ability to understand the selectors just by reading them out loud. When you see something like this:
+One thing that no one can misses is how obvious the `:has()` proposal is. It speaks for itself. One thing I always liked in CSS is the ability to understand the selectors just by reading them out loud. When you see something like this:
 <blockquote class="pull-quote--right">CSS selectors can be understood by reading them out loud.</blockquote>
 
 <pre class="language-css"><code>A:has(B)</code></pre>
@@ -72,7 +72,7 @@ There are still edge cases I don't really see handled with the single character 
 
 What happens here? What is the selector's target? Is it `C`? Is it `D`? We don't know and more accurately: we can't know. According to the specifications, a selector like `^A ^B` would result in *all `B` contained in `A` and their containing `A` elements*. Needless to say it's getting crazy. If you ask me, this should simply throw an error (which, in CSS, is equivalent to *skip that shit and move on*).
 
-On the other hand, the pseudo-class proposal make it very easy to allow multiple occurrences of itself in a selector. Even better, chaining and nesting are possible.
+On the other hand, the pseudo-class proposal makes it very easy to allow multiple occurrences of itself in a selector. Even better, chaining and nesting are possible.
 
 <pre class="language-css"><code>A:has(B:has(C))</code></pre>
 
