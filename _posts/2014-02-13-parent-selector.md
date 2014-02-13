@@ -2,7 +2,7 @@
 layout: post
 comments: false
 preview: true
-title: "Parent selector: on has() and ^`"
+title: "Parent selector: on has() and ^"
 ---
 <section>
 Yesterday I stumbled upon [this Google Survey](https://docs.google.com/forms/d/1x0eXPBj1GN8Zau-7k9J_JGhoM6uGEqlJBkBBDFswT2w/viewform?edit_requested=true) about the selector syntax for the incoming parent selector from [Selectors Level 4](http://dev.w3.org/csswg/selectors4/#subject) module asking for developers' help on choosing the right syntax for this feature. 
@@ -30,7 +30,7 @@ Moving on.
 <section id="selector-target-last">
 ## Keeping target last [#](#selector-target-last)
 
-The "ah-ah moment" I had a while back about CSS was that the target of a CSS selector is always at the end of it. That's also a reason why CSS parsers read selectors from right to left and not left to right. Because this is the way it makes sense. 
+The "ah-ah moment" I had a while back about CSS was that the target (refered as *subject* in the specifications) of a CSS selector is always at the end of it. That's also a reason why CSS parsers read selectors from right to left and not left to right. Because this is the way it makes sense. 
 
 <pre class="language-css"><code>nav a:hover span</code></pre>
 
@@ -53,7 +53,7 @@ Meanwhile `:has()` being a pseudo-class it preserves this golden rule by keeping
 <section id="consistency">
 ## Keeping it consistent [#](#consistency)
 
-Not only `:has()` is both more readable and more understandable, but it also goes very well with the existing pseudo-classes, especially [`:not()`](http://dev.w3.org/csswg/selectors4/#negation) and [`:matches()`](http://dev.w3.org/csswg/selectors4/#matches) ([aliased as `:any()` in Firefox](https://developer.mozilla.org/en-US/docs/Web/CSS/:any)) which both work in the exact same way.
+Not only `:has()` is both more readable and more understandable, but it also goes very well with the existing pseudo-classes, especially [`:not()`](http://dev.w3.org/csswg/selectors4/#negation) and [`:matches()`](http://dev.w3.org/csswg/selectors4/#matches) (aliased as [`:any()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:any) in Firefox) which both work in the exact same way.
 
 <blockquote class="pull-quote--right">There are reasons why we have <code>:not()</code> and not <code>!</code> as a negative operator.</blockquote>
 
