@@ -94,4 +94,6 @@ That being said, I really don't see this as an interesting trade-off. Having con
 If you ask me, the `^` proposal (or `!` for that matter) sucks. Syntactically it's very poor and messy. I don't think it should even be considered. The only fair pro I can see is it's shorter which is definitely not a good reason to consider it as a solid candidate for parent selector.
 
 Meanwhile, `:has()` is robust, simple and very permissive. It's the One folks. 
+
+*Update: the `^` combinator is already used in Shadow DOM where it is a descendant selector crossing a single shadow boundary. More informations on this stuff at [HTML5Rocks](https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/webcomponents/shadowdom-201/en/index.md#the--and--combinators).*
 </section>
