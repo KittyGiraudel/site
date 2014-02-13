@@ -2,10 +2,10 @@
 layout: post
 comments: false
 preview: true
-title: "Parent selector: on has() and ^"
+title: "Parent selector: on `has()` and `^`"
 ---
 <section>
-A couple of days ago, I stumbled upon [this Google Survey](https://docs.google.com/forms/d/1x0eXPBj1GN8Zau-7k9J_JGhoM6uGEqlJBkBBDFswT2w/viewform?edit_requested=true) about the selector syntax for the incoming parent selector from [Selectors Level 4](http://dev.w3.org/csswg/selectors4/#subject) module asking for developers' help on choosing the right syntax for this feature. 
+Yesterday I stumbled upon [this Google Survey](https://docs.google.com/forms/d/1x0eXPBj1GN8Zau-7k9J_JGhoM6uGEqlJBkBBDFswT2w/viewform?edit_requested=true) about the selector syntax for the incoming parent selector from [Selectors Level 4](http://dev.w3.org/csswg/selectors4/#subject) module asking for developers' help on choosing the right syntax for this feature. 
 
 The official syntax for this has yet to be determined and as of writing there are two proposals grabbing some attention:
 
@@ -16,8 +16,8 @@ I think it should be `:has()`. Definitely. And here is why.
 </section>
 <section id="readibility">
 ## Starting with the obvious [#](#readability)
-<blockquote class="pull-quote--right">CSS selectors can be understood by reading them out loud.</blockquote>
 One thing that no one can misses is how obvious the `:has()` proposal is. It speaks for iself. One thing I always liked in CSS is the ability to understand the selectors just by reading them out loud. When you see something like this:
+<blockquote class="pull-quote--right">CSS selectors can be understood by reading them out loud.</blockquote>
 
 <pre class="language-css"><code>A:has(B)</code></pre>
 
