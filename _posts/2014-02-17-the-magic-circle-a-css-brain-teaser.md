@@ -5,7 +5,7 @@ comments: false
 preview: true
 ---
 <section>
-Months back at work, I have been asked to code a piece of design for the home page of our site that ended up being quite tricky to come up wite. You know I like riddle, right? Feelink tricksy my precious? Want to play a game? 
+Months back at work, I have been asked to code a piece of design for the home page of our site that ended up being quite tricky. You know [I like riddles](http://hugogiraudel.com/2014/02/06/calc-css-riddle/), right? Feelink tricksy my precious? Want to play a game?
 </section>
 <section id="what">
 ## What we want?! [#](#what)
@@ -17,14 +17,14 @@ First of all, this is what you should come up with:
 <figcaption>Beautiful, isn't it?</figcaption>
 </figure>
 
-Obviously the difficult part is the transparent circle in the middle of the picture, not adding border-radius to the boxes. Anyway, as you can see we got 4 boxes (2 per row), each with its own color scheme because it's prettier. On the middle of the frame, the four boxes are kind of cropped to make place to some kind of invisible circle. And in this circle there is a dark disk.  
+Obviously the difficult part is the transparent circle in the middle of the picture, not adding border-radius to the boxes. Anyway, as you can see we got 4 boxes (2 per row), each with its own color scheme because it's prettier. On the middle of the frame, the four boxes are kind of cropped to make place to some kind of invisible circle. And in this circle there is a dark disk.
 
 *Note: this is not an image I made on Photoshop or whatever, this is the result I ended up with.*
 </section>
 <section id="rules">
 ## Rules [#](#rules)
 
-There are no games without rules, so let me give you some constraints for the exercise, alright? 
+There are no games without rules, so let me give you some constraints for the exercise, alright?
 
 * As you can see, the circle must be transparent to allow the use of a background image,
 * the space between left blocks and right blocks, and the space between top blocks and bottom blocks should be the same,
