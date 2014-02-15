@@ -32,12 +32,12 @@ No magic here, just some HTML (via Twig) and CSS (via Sass). The button is a lit
 <pre class="language-markup"><code>{&#37; set currentUrl = "&#123;&#123; app.request.getSchemeAndHttpHost() ~ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) &#125;&#125;" &#37;}
 
 &lt;div class="btn-facebook">
-  &lt;a class="btn-facebook__link" href="http://www.facebook.com/sharer.php?u={{ currentUrl }}">Share&lt;/a>
+  &lt;a class="btn-facebook__link" href="http://www.facebook.com/sharer.php?u=&#123;&#123; currentUrl &#125;&#125;">Share&lt;/a>
   &lt;span class="btn-facebook__count">&lt;/span>
 &lt;/div>
 
 &lt;div class="btn-twitter">
-  &lt;a class="btn-twitter__link" href="https://twitter.com/share" data-url="{{ currentUrl }}">Share&lt;/a>
+  &lt;a class="btn-twitter__link" href="https://twitter.com/share" data-url="&#123;&#123; currentUrl &#125;&#125;">Share&lt;/a>
   &lt;span class="btn-twitter__count">&lt;/span>
 &lt;/div></code></pre>
 
