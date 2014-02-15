@@ -12,9 +12,9 @@ Facebook, Twitter and all their little brothers provide a neat "Get code" thingi
 <section id="whats-wrong">
 ## What's wrong with all-made social buttons? [#](#whats-wrong)
 
-<blockquote class="pull-quote--right">Social buttons are extremely heavy.</blockquote>
-
 They are heavy like hell. I knew they were but I wanted to see it for myself thus I started by doing it with Facebook's tool. **3 fucking iframes**. For a simple link with a counter. 3 injected documents into the DOM. For a button. Think about it. 
+
+<blockquote class="pull-quote--right">Social buttons are extremely heavy.</blockquote>
 
 Funny thing, I came across [this article](http://www.sitepoint.com/social-sharing-hidden-costs/) by Craig Buckler at SitePoint the same day. According to Craig's tests, Facebook "like" button is about 270Kb. Compressed. 
 
@@ -29,7 +29,7 @@ We have spent like half an hour searching for ideas to have social media buttons
 
 No magic here, just some HTML (via Twig) and CSS (via Sass). The button is a little more than just a link since we need a wrapper for the share counter. So a wrapping div, then a link and a span. The icon is added through a pseudo-element on the anchor tag to avoid using an extra span.
 
-<pre class="language-markup"><code>{&#37; set currentUrl = "{{ app.request.getSchemeAndHttpHost() ~ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}" &#37;}
+<pre class="language-markup"><code>{&#37; set currentUrl = "&#123;&#123; app.request.getSchemeAndHttpHost() ~ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) &#125;&#125;" &#37;}
 
 &lt;div class="btn-facebook">
   &lt;a class="btn-facebook__link" href="http://www.facebook.com/sharer.php?u={{ currentUrl }}">Share&lt;/a>
@@ -155,7 +155,7 @@ What's cool is that the buttons are working like a charm even if JavaScript is d
 
 Making the buttons display counters couldn't get any easier:
 
-<pre class="language-markup"><code>Social.init("{{ app.request.getSchemeAndHttpHost() ~ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}")</code></pre>
+<pre class="language-markup"><code>Social.init("&#123;&#123; app.request.getSchemeAndHttpHost() ~ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) &#125;&#125;")</code></pre>
 
 Yeah... The Twig code to get the current URL isn't the prettiest code ever. You might want to create a little Twig extension like `get_current_url` doing this for you. But that's really not the point.
 </section>
