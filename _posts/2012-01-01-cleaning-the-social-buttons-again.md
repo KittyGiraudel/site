@@ -29,7 +29,7 @@ We have spent like half an hour searching for ideas to have social media buttons
 
 No magic here, just some HTML (via Twig) and CSS (via Sass). The button is a little more than just a link since we need a wrapper for the share counter. So a wrapping div, then a link and a span. The icon is added through a pseudo-element on the anchor tag to avoid using an extra span.
 
-<pre class="language-markup"><code>{% set currentUrl = "{{ app.request.getSchemeAndHttpHost() ~ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}" %}
+<pre class="language-markup"><code>{&#37; set currentUrl = "{{ app.request.getSchemeAndHttpHost() ~ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}" &#37;}
 
 &lt;div class="btn-facebook">
   &lt;a class="btn-facebook__link" href="http://www.facebook.com/sharer.php?u={{ currentUrl }}">Share&lt;/a>
