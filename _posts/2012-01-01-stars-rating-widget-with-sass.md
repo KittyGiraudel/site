@@ -11,7 +11,7 @@ The other day, I was having a look at featured pens from CodePen to kill some ti
 I was both surprised and pleased to see they are using Sass for their CSS codebase, and more interestingly, they are using it pretty well if I may. Their code looked both logic and efficient so that was kind of a cool pen to look at.
 
 <figure class="figure--right">
-<img alt="" src="/images/stars-rating-widget-with-sass__rating-widget.jpg" />
+<img alt="" src="/images/stars-rating-widget-with-sass__rating-widget.png" />
 <figcaption>Stars-rating widget from Yelp</figcaption>
 </figure>
 
