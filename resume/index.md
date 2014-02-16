@@ -26,7 +26,7 @@ layout: default
 <h3>Personal projects</h3>
 <ul>
 <li><a href="http://browserhacks.com">Browserhacks.com</a>, a comprehensive list of browser specific CSS and JS hacks</li>
-<li><a href="http://sassylists.com/">SassyLists</a>, <a href="https://github.com/Team-Sass/Sassy-Strings">SassyStrings</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>, Sass functions libraries</li>
+<li><a href="http://sassylists.com/">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>, Sass functions libraries</li>
 <li><a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, a JSON parser written in Sass</li>
 <li><a href="https://github.com/HugoGiraudel/Countdown.js">Countdown.js</a>, a simple yet customizable JavaScript countdown</li>
 <li><a href="https://github.com/HugoGiraudel/CRUD.js">CRUD.js</a>, a lightweight CRUD API in JavaScript</li>
