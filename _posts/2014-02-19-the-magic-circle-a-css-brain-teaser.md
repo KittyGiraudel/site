@@ -1,8 +1,8 @@
 ---
 title: "The Magic Circle: a CSS brain teaser"
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 ---
 <section>
 Months back at work, I have been asked to code a piece of design for the home page of our site that ended up being quite tricky. You know [I like riddles](http://hugogiraudel.com/2014/02/06/calc-css-riddle/), right? Feelink tricksy my precious? Want to play a game?
