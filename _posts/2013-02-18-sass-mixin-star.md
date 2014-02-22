@@ -137,7 +137,7 @@ summary: true
 </section>
 <section id="final-words">
 <h2>Final words <a href="#final-words" class="section-anchor">#</a></h2>
-<p>Well guys, that’s pretty much it. You have a perfectly working <a href="http://codepen.io/HugoGiraudel/pen/LkoGE">Sass mixin</a> to create customized single-element 6-point stars in CSS. Pretty neat, right?</p>
+<p>Well guys, that’s pretty much it. You have a perfectly working <a href="http://codepen.io/HugoGiraudel/pen/Lcexi">Sass mixin</a> to create customized single-element 6-point stars in CSS. Pretty neat, right?</p>
 <p>Using it couldn't be simpler:</p>
 <pre class="language-scss"><code>.star {
   margin: 5em auto;
