@@ -1,5 +1,5 @@
 ---
-title: "CSS star-rating widget with Sass"
+title: "Star-rating widget with Sass"
 layout: post
 comments: true
 preview: false
