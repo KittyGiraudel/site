@@ -8,9 +8,9 @@ codepen: true
 <section>
 The other day, I was having a look at featured pens from CodePen to kill some time before getting a haircut. I ended up checking [a pen from Yelp Devs'](http://codepen.io/yelp/pen/aLxbG) in which they featured their star-rating system we can see pretty much all over their site.
 
-<figure class="pull-image--right">
+<figure class="figure--right">
 <img src="/images/stars-rating-widget-with-sass__rating-widget.png" alt="" />
-<figcaption>Star-rating width from Yelp</figcaption>
+<figcaption>Star-rating widget from Yelp</figcaption>
 </figure>
 
 I was both surprised and pleased to see they are using Sass for their CSS codebase, and more interestingly, they are using it pretty well if I may. Their code looked both logic and efficient so that was kind of a cool pen to look at.
@@ -98,6 +98,10 @@ Here we have a `$colors` Sass list containing 5 colors, the first being the colo
 
 Then all we have to do is check if `$stars` is a valid index for `$colors`. If it is, we return the color at index `$stars`, else we return a default color (here `#333`). Simple and efficient.
 
+<blockquote class="pull-quote--right">Always verify inputs from your functions.</blockquote>
+
+Also note how we make our function secure by making sure `$stars` is a color. When building custom functions, always think about data validation. ;)
+
 ### Rethinking the looping
 
 Yelp Devs are using nested loops to output their CSS. The outer loop goes from 1 through 5 and the inner one is going from 1 to the value of the outer loop. So during the first loop run of the outer loop, the inner loop will go from 1 through... 1. During the second, from 1 through 2, and so on.
@@ -156,8 +160,8 @@ Then dealing with this case is as easy as writing:
 
 To see how efficient those little optimizations have been, I've minified both demo:
 
-* [Original](http://codepen.io/yelp/pen/aLxbG): 1840 bytes (2379 unminified)
-* [Mine](http://codepen.io/HugoGiraudel/pen/DqBkH): 1056 bytes (1363 unminified)
+* [Original](http://codepen.io/yelp/pen/aLxbG): 1.84Kb (2.379Kb unminified)
+* [Mine](http://codepen.io/HugoGiraudel/pen/DqBkH): 1.056Kb (1.363Kb unminified)
 
 And here is what the loops output in my case:
 
