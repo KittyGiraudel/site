@@ -79,7 +79,7 @@ One thing I've been surprised to see is they use classes instead of data-attribu
 &lt;div class="rating rating-1-half">&lt;/div>
 
 &lt;!-- Instead -->
-&lt;div class="rating" data-rating="1.5">&lt;/div>
+&lt;div class="rating" data-rating="1.5">&lt;/div></code></pre>
 
 There are two main reasons for this. The first one is it allows me to use data-attributes modulators to target both `x` and `x.y` by doing `data-rating^='x'`. This may seem insignificant but it makes a selector like `.rating-1 .star-1, .rating-1-half .star-1` turn into `[data-rating^='1'] .star-1`. Much shorter.
 
