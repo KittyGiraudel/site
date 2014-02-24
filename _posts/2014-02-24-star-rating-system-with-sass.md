@@ -1,8 +1,8 @@
 ---
 title: "CSS star-rating widget with Sass"
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 codepen: true
 ---
 <section>
@@ -24,7 +24,7 @@ Hence, a short blog post relating all this.
 
 First of all, the way they approach the whole widget is *very* clever. To deal with half-star ratings, they use left and right borders instead of background-color. This way, they can color only half of the background for a star. This is brilliant.
 
-So the few things I noticed were definitely not about their idea but more the way they use Sass. The very first and most obvious mistake is they output a rule for 5.5-stars rating which simply cannot exist since it goes from 1 to 5.
+So the few things I noticed were definitely not about their idea but more the way they use Sass. The first and most obvious mistake is they output a rule for 5.5-stars rating which simply cannot exist since it goes from 1 to 5.
 
 <pre class="language-css"><code>.rating-5-half .star-6 {
   border-left-color: #dd050b;
@@ -52,7 +52,7 @@ Next and probably the biggest flaws in their code, they got a lot of duplicated 
 
 This is only for 3-stars ratings, but it's the same for other ratings as well. We could merge the selectors into one in order to have a single rule with only two declarations in there which would be much better.
 
-Last but not least, their `stars-color` function returning a color based on a number (of stars) is kind of repetitive and could be refactored in a much simpler and smarter way with a Sass list.
+Last but not least, their `stars-color` function returning a color based on a number (of stars) is repetitive and could be refactored.
 
 <pre class="language-scss"><code>@function stars-color($num) {
   @if $num == 5 {
@@ -69,13 +69,13 @@ Last but not least, their `stars-color` function returning a color based on a nu
 }</code></pre>
 </section>
 <section id="solving">
-## Doing some trickery to solve problems [#](#solving)
+## Solving problems, one at a time [#](#solving)
 
 ### Moving to data-attributes
 
 One thing I've been surprised to see is they use classes instead of data-attributes for their ratings. In my opinion the only valid option to do so is because you still have to support Internet Explorer 6 but I'm not sure Yelp does. So I decided to move everything to data-attributes.
 
-Instead of having classes like `rating-1` or `rating-4-half`, I have things like this: `data-rating='1'` and `data-rating='4.5'`.
+Instead of having classes like `rating-1` or `rating-4-half`, I have things like `data-rating='1'` and `data-rating='4.5'`.
 
 There are two main reasons for this. The first one is it allows me to use data-attributes modulators to target both `x` and `x.y` by doing `data-rating^='x'`. This may seem insignificant but it makes a selector like `.rating-1 .star-1, .rating-1-half .star-1` turn into `[data-rating^='1'] .star-1`. Much shorter.
 
@@ -87,7 +87,7 @@ We'll start with the simplest thing we can do to improve the code: refactoring t
 
 <pre class="language-scss"><code>@function stars-color($stars) {
   @if type-of($stars) != number {
-    @warn '#{$stars} is not a number of `stars-color`.';
+    @warn '#{$stars} is not a number for `stars-color`.';
     @return false;
   }
   $colors: #cc8b1f #dcb228 #f0991e #f26a2c #dd050b;
@@ -102,7 +102,7 @@ Then all we have to do is check if `$stars` is a valid index for `$colors`. If i
 
 Also note how we make our function secure by making sure `$stars` is a color. When building custom functions, always think about data validation. ;)
 
-### Rethinking the looping
+### Looping is fun, wheeee!
 
 Yelp Devs are using nested loops to output their CSS. The outer loop goes from 1 through 5 and the inner one is going from 1 to the value of the outer loop. So during the first loop run of the outer loop, the inner loop will go from 1 through... 1. During the second, from 1 through 2, and so on.
 
@@ -160,10 +160,10 @@ Then dealing with this case is as easy as writing:
 
 To see how efficient those little optimizations have been, I've minified both demo:
 
-* [Original](http://codepen.io/yelp/pen/aLxbG): 1.84Kb (2.379Kb unminified)
-* [Mine](http://codepen.io/HugoGiraudel/pen/DqBkH): 1.056Kb (1.363Kb unminified)
+* [Original](http://codepen.io/yelp/pen/aLxbG): 1.84Kb (2.38Kb unminified)
+* [Mine](http://codepen.io/HugoGiraudel/pen/DqBkH): 1.05Kb (1.36Kb unminified)
 
-And here is what the loops output in my case:
+And here is what the loops' output looks like in my case:
 
 <pre class="language-css"><code>[data-rate^='1'] .star-1 {
   border-color: #cc8b1f;
