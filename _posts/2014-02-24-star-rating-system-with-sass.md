@@ -104,7 +104,7 @@ Then all we have to do is check if `$stars` is a valid index for `$colors`. If i
 
 <blockquote class="pull-quote--right">Always verify inputs from your functions.</blockquote>
 
-Also note how we make our function secure by making sure `$stars` is a color. When building custom functions, always think about data validation. ;)
+Also note how we make our function secure by making sure `$stars` is a number. When building custom functions, always think about data validation. ;)
 
 ### Looping is fun, wheeee!
 
