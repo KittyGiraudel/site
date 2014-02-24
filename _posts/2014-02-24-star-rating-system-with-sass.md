@@ -75,7 +75,11 @@ Last but not least, their `stars-color` function returning a color based on a nu
 
 One thing I've been surprised to see is they use classes instead of data-attributes for their ratings. In my opinion the only valid option to do so is because you still have to support Internet Explorer 6 but I'm not sure Yelp does. So I decided to move everything to data-attributes.
 
-Instead of having classes like `rating-1` or `rating-4-half`, I have things like `data-rating='1'` and `data-rating='4.5'`.
+<pre class="language-markup"><code>&lt;!-- No more -->
+&lt;div class="rating rating-1-half">&lt;/div>
+
+&lt;!-- Instead -->
+&lt;div class="rating" data-rating="1.5">&lt;/div>
 
 There are two main reasons for this. The first one is it allows me to use data-attributes modulators to target both `x` and `x.y` by doing `data-rating^='x'`. This may seem insignificant but it makes a selector like `.rating-1 .star-1, .rating-1-half .star-1` turn into `[data-rating^='1'] .star-1`. Much shorter.
 
@@ -115,7 +119,7 @@ Because it does the work well and is quite smart, I kept this as is. However I d
   @for $j from 1 through $i {
     $selector: append(
       $selector, 
-      unquote("[data-rate^='#{$i}'] .star-#{$j}"), 
+      unquote("[data-rating^='#{$i}'] .star-#{$j}"), 
       comma
     );
   }
@@ -165,49 +169,49 @@ To see how efficient those little optimizations have been, I've minified both de
 
 And here is what the loops' output looks like in my case:
 
-<pre class="language-css"><code>[data-rate^='1'] .star-1 {
+<pre class="language-css"><code>[data-rating^='1'] .star-1 {
   border-color: #cc8b1f;
   background: #cc8b1f;
 }
 
-[data-rate='1.5'] .star-2 {
+[data-rating='1.5'] .star-2 {
   border-left-color: #cc8b1f;
 }
 
-[data-rate^='2'] .star-1,
-[data-rate^='2'] .star-2 {
+[data-rating^='2'] .star-1,
+[data-rating^='2'] .star-2 {
   border-color: #dcb228;
   background: #dcb228;
 }
 
-[data-rate='2.5'] .star-3 {
+[data-rating='2.5'] .star-3 {
   border-left-color: #dcb228;
 }
 
-[data-rate^='3'] .star-1,
-[data-rate^='3'] .star-2,
-[data-rate^='3'] .star-3 {
+[data-rating^='3'] .star-1,
+[data-rating^='3'] .star-2,
+[data-rating^='3'] .star-3 {
   border-color: #f0991e;
   background: #f0991e;
 }
 
-[data-rate='3.5'] .star-4 {
+[data-rating='3.5'] .star-4 {
   border-left-color: #f0991e;
 }
 
-[data-rate^='4'] .star-1,
-[data-rate^='4'] .star-2,
-[data-rate^='4'] .star-3,
-[data-rate^='4'] .star-4 {
+[data-rating^='4'] .star-1,
+[data-rating^='4'] .star-2,
+[data-rating^='4'] .star-3,
+[data-rating^='4'] .star-4 {
   border-color: #f26a2c;
   background: #f26a2c;
 }
 
-[data-rate='4.5'] .star-5 {
+[data-rating='4.5'] .star-5 {
   border-left-color: #f26a2c;
 }
 
-[data-rate='5'] i {
+[data-rating='5'] i {
   border-color: #dd050b;
   background: #dd050b;
 }</code></pre>
