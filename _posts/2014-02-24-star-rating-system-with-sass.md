@@ -225,4 +225,6 @@ Hope you liked the demo anyway folks. Cheers!
 
 <p data-height="454" data-theme-id="0" data-slug-hash="DqBkH" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/DqBkH'>CSS Rating Stars</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//codepen.io/assets/embed/ei.js"></script>
+
+*Update: be sure to check [this version](http://codepen.io/piouPiouM/pen/beBcJ) from Mehdi Kabab, using placeholders to make it even lighter.*
 </section>
