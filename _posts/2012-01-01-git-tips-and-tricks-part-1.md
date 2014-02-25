@@ -11,7 +11,7 @@ preview: true
 Hi guys! Today, I'm gonna share with you some Git tips & tricks I've already shared with my workmates at Best Of Media. But before even starting let's never forget the more important laws of Git.
 
 **Law #1**: **each commit must let the branch into a stable state**.
-You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn't be splitted into several commits. For example, don't put the HTML, CSS and JS of a new functionality in three commits : the functionality requires all of this to works so put all this stuff in a single commit. If you have to stop your work (time to go home, switch to another thing, etc.), create a temporary commit which will be enhanced later.
+You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn't be splitted into several commits. For example, don't put the HTML, CSS and JS of a new functionality in three commits: the functionality requires all of this to works so put all this stuff in a single commit. If you have to stop your work (time to go home, switch to another thing, etc.), create a temporary commit which will be enhanced later.
 
 **Law #2**: **each commit has only one purpose**.
 If you see a bug while you're working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.
@@ -38,7 +38,7 @@ This prompt displays:
 
 In this image, I'm working on the "myFork" branch and I have modified and/or staged some files but I don't have any commit to push or to pull.
 
-To install this prompt in a linux environment, just download it somewhere and update your ~/.bashrc file to add this line :
+To install this prompt in a linux environment, just download it somewhere and update your ~/.bashrc file to add this line:
 
 <pre class="language-bash"><code>. /path/to/gitprompt</code></pre>
 
@@ -49,7 +49,7 @@ That's it. Just re-open your terminal and go to a Git project directory.
 
 This is the very basic when working with Git.
 
-<blockquote class="quote">How am I supposed to find a specific commit relative to a specific part of code ?</blockquote>
+<blockquote class="quote">How am I supposed to find a specific commit relative to a specific part of code?</blockquote>
 
 There are many ways to do this.
 
@@ -61,9 +61,9 @@ The simplest is to use `git log`. If you add `-p` (or `-u` or `--patch`), you wi
 
 ### With `git log -S`
 
-A better method is to use the `-S` parameter to search for a specific string : `git log -S console.log` will search all commit which contains the string "console.log" in the patch content. It's better than the previous method because it doesn't search in the commit message or information (username, date, ...) and it's only searching in the patch content and not in the lines added before and after the patch content.
+A better method is to use the `-S` parameter to search for a specific string: `git log -S console.log` will search all commit which contains the string "console.log" in the patch content. It's better than the previous method because it doesn't search in the commit message or information (username, date, ...) and it's only searching in the patch content and not in the lines added before and after the patch content.
 
-You can add several parameters to reduce the commits related to the search :
+You can add several parameters to reduce the commits related to the search:
 
 <pre class="language-bash"><code>git log -S console.log --author lgiraudel --before="2013-10-01 00:00" --after="2013-06-01 00:00" -- web/js</code></pre>
 
@@ -71,7 +71,7 @@ You can add several parameters to reduce the commits related to the search :
 
 `git blame` displays each line of a file and the last commit which has modified the line. It's the better way to find who, when and why a specific line has been added to a file.
 
-It requires a filepath to works :
+It requires a filepath to works:
 
 <pre class="language-bash"><code>$ git blame Gruntfile.js
 15b95608 (Loic 2013-10-08 14:21:51 +0200  1) module.exports = function(grunt) {
@@ -186,7 +186,7 @@ index b2185a2..887387f 100755
      };
      /**</code></pre>
 
-What's the important change in this piece of code ? It's not quite easy to check what have been done with a diff like this. But with the `-w` option:
+What's the important change in this piece of code? It's not quite easy to check what have been done with a diff like this. But with the `-w` option:
 
 <pre class="language-bash"><code>$ git diff -w
 diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
@@ -212,5 +212,15 @@ index b2185a2..887387f 100755
      };
      /**</code></pre>
 
-Now, this is really understandable : I've replaced the test wrapping my ajax call by a 3-lines test checking just before, which reduces the indentation level of the ajax call.
+Now, this is really understandableé: I've replaced the test wrapping my ajax call by a 3-lines test checking just before, which reduces the indentation level of the ajax call.
+</section>
+<section id="final-thoughts">
+## Final thoughts [#](#final-thoughts)
+
+I hope those little tricks will help. In the next part, I'll continue with other small smart tricks before tackling some advanced Fit useful features.
+
+<blockquote class="quote">
+<img src="http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg" alt="Loic Giraudel" class="pull-image--left">
+<p>Loïc Giraudel works as a front-end developer at BestOfMedia (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: <a href="http://twitter.com/l_giraudel">@l_giraudel</a>.</p>
+</blockquote>
 </section>
