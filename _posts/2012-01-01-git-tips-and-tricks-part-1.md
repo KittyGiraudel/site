@@ -6,14 +6,14 @@ comments: false
 preview: true
 ---
 <section>
-<p class="explanation">Hey guys! The following is the first post of a series written by my dear brother Loïc, Git expert at Best Of Media (Grenoble, France). I'll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!</p>
+<p class="explanation">Hey guys! The following is the first post of a series written by my dear brother Loïc, Git expert at Best Of Media (Tom's Guide & Tom's Hardware). I'll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!</p>
 
 Hi guys! Today, I'm gonna share with you some Git tips & tricks I've already shared with my workmates at Best Of Media. But before even starting let's never forget the more important laws of Git.
 
-**Law #1**: **each commit must let the branch into a stable state**.
-You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn't be splitted into several commits. For example, don't put the HTML, CSS and JS of a new functionality in three commits: the functionality requires all of this to works so put all this stuff in a single commit. If you have to stop your work (time to go home, switch to another thing, etc.), create a temporary commit which will be enhanced later.
+**Law #1**: **each commit must let the branch into a stable state**.  
+You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn't be splitted into several commits. For instance, don't put the HTML, CSS and JS of a new feature in three separate commits: the functionality requires all of them to work so they should all belong to the same commit. If you have to pause your work (time to grab lunch, go home, switch to another thing or whatever), create a temporary commit which will be enhanced later.
 
-**Law #2**: **each commit has only one purpose**.
+**Law #2**: **each commit has only one purpose**.  
 If you see a bug while you're working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.
 
 <blockquote class="pull-quote--right">Each commit should leave the branch stable.</blockquote>
@@ -51,11 +51,11 @@ That's it. Just re-open your terminal and go to a Git project directory.
 <section id="find-a-commit">
 ## Find a commit [#](#find-a-commit)
 
-This is the very basic when working with Git.
+This is the very basic when working with Git. Have you ever found yourself asking:
 
 <blockquote class="quote">How am I supposed to find a specific commit relative to a specific part of code?</blockquote>
 
-There are many ways to do this.
+Thankfully there are quite a few ways to do this.
 
 <blockquote class="pull-quote--right">Each commit has only one purpose.</blockquote>
 
@@ -73,7 +73,7 @@ You can add several parameters to reduce the commits related to the search:
 
 ### With `git blame`
 
-`git blame` displays each line of a file and the last commit which has modified the line. It's the better way to find who, when and why a specific line has been added to a file.
+`git blame` displays each line of a file and the last commit which has modified the line. It's the better way to find who, when and why a specific line has been added to a file. Actually the command name kind of speaks for itself: *blame*.
 
 It requires a filepath to works:
 
@@ -103,7 +103,7 @@ It's possible to limit the output to specific lines with the parameter `-L`: `gi
 <section id="improve-diff-output">
 ## Improve diff output [#](#improve-diff-output)
 
-`git diff` is one of the most used git command before adding changes to the stage areas to avoid pushing mistakes to repository. The diff command can be customized to avoid some inconvenience.
+`git diff` is one of the most used Git command before adding changes to the stage area to avoid pushing mistakes to the repository. The diff command can be customized to avoid some inconveniences.
 
 ### See changes in one line
 
@@ -124,13 +124,13 @@ index 74d58f9..569449c 100755
        ],
        options: {</code></pre>
 
-But if you use the `--color-words` parameter, it will write the old and new text in the same line with red and green colors, which can be more readable in some cases.
+But if you use the `--color-words` parameter, it will write the old and new text in the same line with red and green colors, which can be easier to read in some cases.
 
 ### Disable space changes
 
-When spaces are added in a line, the `git diff` command displays the line as changed. When you read your changes before creating a commit, this can be annoying to understand the diff, especially when the spaces have been added/removed by your IDE (useless spaces, fix indentation, replace tab by spaces, etc).
+When spaces are added in a line, the `git diff` command displays the line as changed. When you read your changes before creating a commit, this can be annoying to understand the diff, especially when the spaces have been added/removed by your IDE (useless spaces, fix indentation, replace tab by spaces, etc.).
 
-To avoid this pollution in the git diff, you can add the `-w` option to omits spaces (and tabs) changes.
+To avoid this pollution in the git diff, you can add the `-w` option to omit spaces (and tabs) changes.
 
 Let's take an explicite example:
 
@@ -190,7 +190,7 @@ index b2185a2..887387f 100755
      };
      /**</code></pre>
 
-What's the important change in this piece of code? It's not quite easy to check what have been done with a diff like this. But with the `-w` option:
+What are the important updates in this piece of code? It's not quite easy to check what have been done with a diff like this. But with the `-w` option:
 
 <pre class="language-bash"><code>$ git diff -w
 diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
@@ -225,6 +225,6 @@ I hope those little tricks will help. In the next part, I'll continue with other
 
 <blockquote class="quote">
 <img src="http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg" alt="Loic Giraudel" class="pull-image--left">
-<p>Loïc Giraudel works as a front-end developer at BestOfMedia (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: <a href="http://twitter.com/l_giraudel">@l_giraudel</a>.</p>
+<p>Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: <a href="http://twitter.com/l_giraudel">@l_giraudel</a>.</p>
 </blockquote>
 </section>
