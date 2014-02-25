@@ -28,13 +28,16 @@ If you have to often switch from one branch to another (like a Git monkey), havi
 My favorite so far has been created by [Tung Nguyen](https://gist.github.com/tung) and you can found it [right here](https://gist.github.com/tung/409780).
 
 This prompt displays:
+
 * username@host
 * your current path
 * the current branch
 * a lightning if you have some modified files in your working directory or in your staging area, waiting to be packed in a commit
 * an up, down or up-and-down arrow if you have commits to push or pull from remote repository
 
-![Example of git promp](/images/git-tips-and-tricks-part-1__git-prompt.png)
+<figure class="figure">
+<img src="/images/git-tips-and-tricks-part-1__git-prompt.png" alt="" />
+<figcaption>A Nguyen flavoured Git prompt</figcaption>
 
 In this image, I'm working on the "myFork" branch and I have modified and/or staged some files but I don't have any commit to push or to pull.
 
@@ -212,7 +215,7 @@ index b2185a2..887387f 100755
      };
      /**</code></pre>
 
-Now, this is really understandableé: I've replaced the test wrapping my ajax call by a 3-lines test checking just before, which reduces the indentation level of the ajax call.
+It's now easier to catch up with the changes: I've replaced the test wrapping my Ajax call by a 3-lines test checking right before, which reduces the indentation level of the Ajax call.
 </section>
 <section id="final-thoughts">
 ## Final thoughts [#](#final-thoughts)
