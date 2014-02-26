@@ -5,6 +5,7 @@ comments: true
 preview: false
 ---
 <section>
+<p class="explanation">If you want the solution, be sure to read <a href="http://hugogiraudel.com/2014/02/26/the-magic-circle-trick-revealed/">this post</a>.</p>
 Months back at work, I have been asked to code a piece of design for the home page of our site that ended up being quite tricky. You know [I like riddles](http://hugogiraudel.com/2014/02/06/calc-css-riddle/), right? Feelink tricksy my precious? Want to play a game?
 </section>
 <section id="what">
