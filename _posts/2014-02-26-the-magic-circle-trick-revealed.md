@@ -1,8 +1,8 @@
 ---
 title: "The Magic Circle: trick revealed"
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 codepen: true
 ---
 <section>
