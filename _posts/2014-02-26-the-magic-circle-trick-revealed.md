@@ -89,7 +89,7 @@ $colors: (
 
 Everything is computed from there. There will be absolutely no magic number anywhere. 
 
-### Default styles
+### Styling the container
 
 Let's start with applying some default styles to our element (`.boxes`, `.box`...).
 
@@ -129,7 +129,11 @@ Let's start with applying some default styles to our element (`.boxes`, `.box`..
   }
 }</code></pre>
 
-I think the code kind of speaks for itself until there. The `:after` pseudo-element is used to create the central dark disk. It is absolutely centered, sized according to Sass variables and so on. We remove it on small screens and unsupported browsers. Let's move on to `.box`.
+I think the code kind of speaks for itself until there. The `:after` pseudo-element is used to create the central dark disk. It is absolutely centered, sized according to Sass variables and so on. We remove it on small screens and unsupported browsers.
+
+### Gutters
+
+One of the rules of the game was to keep the same gutter between left and right boxes and top and bottom boxes. Let's start with the easiest of both: vertical gutter.
 
 <pre class="language-scss"><code>.box {
   float: left;
@@ -143,11 +147,7 @@ I think the code kind of speaks for itself until there. The `:after` pseudo-elem
   }
 }</code></pre>
 
-Boxes spread across half the width of the parent. Some of you guys did use `calc` to handle the gutter between left and right boxes right away but it lowers the browser support so we'll do it differently (in a couple of lines). On small screens, boxes are not floated anymore and are full width.
-
-### Gutters
-
-As you've seen in the previous code snippet, the gutter between top and bottom boxes is done with a top/bottom margin the size of the gutter. For horizontal gutter, here is how we can handle it:
+Boxes spread across half the width of the parent. Some of you guys did use `calc` to handle the gutter between left and right boxes right away but it lowers the browser support so we'll do it differently. For horizontal gutter, here is how we can handle it:
 
 <pre class="language-scss"><code>// Inner box wrapper
 .box__content {
