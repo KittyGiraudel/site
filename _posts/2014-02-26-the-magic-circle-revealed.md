@@ -1,10 +1,9 @@
 ---
-title: "The Magic Circle: trick revealed
+title: "The Magic Circle: trick revealed"
 layout: post
 comments: false
 preview: true
 ---
-
 <section>
 <p class="explanation">Spoilers! This post is the solution of <a href="http://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/">a CSS riddle</a> proposed a while back.</p>
 
