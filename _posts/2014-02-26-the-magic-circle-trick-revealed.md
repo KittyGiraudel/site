@@ -263,7 +263,7 @@ We could have used advanced CSS selectors (e.g. `:nth-of-type`) to avoid having 
 
 ### Why box-shadows and not borders?
 
-<blockquote class="pull-quote--right">`box-sizing: border-box` is a bless.</blockquote>
+<blockquote class="pull-quote--right"><code>box-sizing: border-box</code> is a bless.</blockquote>
 
 Some of you used the same trick with borders instead of box-shadows. I think the main pro of using box-shadows is it doesn't conflict with the box-model since it's being rendered on its own layer. When you're dealing with borders, you have to make sure you include the border in the width/height if you're using `box-sizing: border-box`. And if you don't... well that's stupid, this property is golden.
 
@@ -280,13 +280,13 @@ When it comes to Internet Explorer 8, or actually any browser not supporting any
 
 [Giulia Alfonsi](http://codepen.io/electric_g/pen/tyAcn), [Lokesh Suthar](http://codepen.io/magnus16/pen/sadEg), [One div](http://codepen.io/onediv/pen/Krypb), [mh-nichts](http://codepen.io/mh-nichts/pen/Giokl) and [Hugo Darby-Brown](http://codepen.io/hugo/pen/mIvfz) made it either with borders or box-shadows. Some of them did use `calc` for positioning/sizing although that wasn't necessary. Good job guys.
 
-[Rafał Krupiński](http://codepen.io/rkrupinski/pen/psrBm) did use radial-gradients. Even better, he used `calc` **in** the radial-gradients declaration to keep things fluid. You've to admit that's clever. His solution is probably the one involving the lowest amount of code, at the price of browser support though. Anyway, congratulations Rafał!
+[Rafał Krupiński](http://codepen.io/rkrupinski/pen/psrBm) came up with a solution using radial-gradients. Even better, he used `calc` **in** the radial-gradients declaration to keep things fluid. You've to admit that's clever. His solution is probably the one involving the lowest amount of code, at the price of browser support though. Anyway, congratulations Rafał!
 
-I was hoping for one, [Gaël Poupard](http://codepen.io/ffoodd/pen/xHFjg) did it: a solution with `clip-path`. Plus his code is fully commented so be sure to have a look at this beauty. [His comment](http://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/#comment-1259685947) below is also worth a read. Nice one Gaël!
+I was hoping for one, [Gaël Poupard](http://codepen.io/ffoodd/pen/xHFjg) did it: a solution with `clip-path`. Plus his code is fully commented so be sure to have a look at this beauty. [His comment](http://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/#comment-1259685947) on the original post is also worth a read. Nice one Gaël!
 
 Last but not least, [Vithun Kumar Gajendra](http://codepen.io/vithun/full/gazbD) made an interesting demo animating the pseudo-elements to show the trick. Note he used duplicated background-image on pseudo-elements rather than box-shadows/borders, that's a cool one too!
 
 Anyway, you can have a look at my fully commented pen here: 
 
-<p data-height="479" data-theme-id="0" data-slug-hash="b8e914a2caf8090a9fffa7cf194afc18" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/b8e914a2caf8090a9fffa7cf194afc18'>b8e914a2caf8090a9fffa7cf194afc18</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="500" data-theme-id="0" data-slug-hash="b8e914a2caf8090a9fffa7cf194afc18" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/b8e914a2caf8090a9fffa7cf194afc18'>b8e914a2caf8090a9fffa7cf194afc18</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 </section>
