@@ -148,7 +148,7 @@ So we should probably make a couple of checks to make sure everything's right be
 
   // Making sure $btn-hover and $btn-border
   // are 2 items long
-  @if length($btn-hover) != 2
+  @if length($btn-hover)  != 2
    or length($btn-border) != 2 {
     @warn "Both `$btn-hover` and `$btn-border` should be two items long for `button-color`.";
     $everything-okay: false;
@@ -164,7 +164,7 @@ So we should probably make a couple of checks to make sure everything's right be
 
   // Making sure second items from $btn-hover and $btn-border
   // are percentages
-  @if type-of(nth($btn-hover, 2)) != number
+  @if type-of(nth($btn-hover, 2))  != number
    or type-of(nth($btn-border, 2)) != number {
     @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
     $everything-okay: false;
@@ -172,16 +172,7 @@ So we should probably make a couple of checks to make sure everything's right be
 
   // If there is no mistake
   @if $everything-okay == true {
-    background-color: $color;
-
-    &:hover,
-    &:active {
-      background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
-    }
-
-    @if $btn-border != false {
-      border-color: call(nth($btn-border, 1), $color, nth($btn-border, 2));
-    }
+    // Mixin content
   }
 }</code></pre>
 
