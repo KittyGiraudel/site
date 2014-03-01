@@ -22,8 +22,6 @@ Also the code should be DRY and the CSS output well optimized. As light as it ca
 <section id="configuration">
 ## Configuration [#](#configuration)
 
-<img class="pull-image--right" alt='Variable all the things!' src='http://i.imgur.com/shEzy8H.jpg'/>
-
 Let's start with the configuration, shall we?
 
 <pre class="language-scss"><code>// Configuration
@@ -38,6 +36,8 @@ $btn-background: (
   'warning': #c09853,
   'info':    #3a87ad
 ) !default;</code></pre>
+
+<img class="pull-image--right" alt='Variable all the things!' src='http://i.imgur.com/shEzy8H.jpg'/>
 
 Everything might not be intuitive so let me explain what each variable is for:
 
@@ -135,8 +135,6 @@ The second one works the same except it first checks whether the variable is not
 
 I don't know for you, but I don't like letting the compiler fail. I'd rather handle the potential errors myself; I feel like it's better for the end user.
 
-<blockquote class="pull-quote--right">Always validate user input in your custom functions.</blockquote>
-
 So we should probably make a couple of checks to make sure everything's right before dumping our CSS in the `button-color` mixin. Here is how I did it:
 
 <pre class="language-scss"><code>@mixin button-color($color) {
@@ -148,20 +146,26 @@ So we should probably make a couple of checks to make sure everything's right be
     $everything-okay: false;
   }
 
-  // Making sure $btn-hover and $btn-border are 2 items long
-  @if length($btn-hover) != 2 or length($btn-border) != 2 {
+  // Making sure $btn-hover and $btn-border
+  // are 2 items long
+  @if length($btn-hover) != 2
+   or length($btn-border) != 2 {
     @warn "Both `$btn-hover` and `$btn-border` should be two items long for `button-color`.";
     $everything-okay: false;
   }
 
-  // Making sure first items from $btn-hover and $btn-border are valid functions
-  @if not function-exists(nth($btn-hover, 1)) or not function-exists(nth($btn-border, 1)) {
+  // Making sure first items from $btn-hover and $btn-border
+  // are valid functions
+  @if not function-exists(nth($btn-hover, 1))
+   or not function-exists(nth($btn-border, 1)) {
     @warn "Either `#{nth($btn-hover, 1)}` or `#{nth($btn-border, 1)}` is not a valid function for `button-color`.";
     $everything-okay: false;
   }
 
-  // Making sure second items from $btn-hover and $btn-border are percentages
-  @if type-of(nth($btn-hover, 2)) != number or type-of(nth($btn-border, 2)) != number {
+  // Making sure second items from $btn-hover and $btn-border
+  // are percentages
+  @if type-of(nth($btn-hover, 2)) != number
+   or type-of(nth($btn-border, 2)) != number {
     @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
     $everything-okay: false;
   }
@@ -180,6 +184,8 @@ So we should probably make a couple of checks to make sure everything's right be
     }
   }
 }</code></pre>
+
+<blockquote class="pull-quote--right">Always validate user input in your custom functions.</blockquote>
 
 Yes, it takes a decent amount of space. Yes, it makes the mixin longer. Yes, it's a pain in the ass to right. On the other hand, if the user makes a mistake with one of the argument, he'll know what's going on, or why the mixin didn't output anything.
 
