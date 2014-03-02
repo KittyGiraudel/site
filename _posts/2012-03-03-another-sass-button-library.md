@@ -10,7 +10,7 @@ If you enjoy reading about Sass, you may have stumbled upon Stuart Robson's [rec
 
 Anyway, I had a couple of minutes to kill the other day so I opened new [pen](http://codepen.io) and started writing a little button library. Yes, another one! Actually my point wasn't to improve anything, I just wanted to code some Sass, just for the sake of it.
 
-Anyway, I came up with some interesting things and Stuart suggested I write a little something about it so here we are.
+Anyway, I came up with some interesting things and Stuart suggested I wrote a little something about it so here we are.
 </section>
 <section id="main-principles">
 ## Main principles [#](#main-principles)
@@ -68,7 +68,7 @@ Also note the 2 measures we take to avoid conflicts with user's code:
   box-shadow: inset 0 1px rgba(255, 255, 255, .15);
 
   // Border or not border?
-  border: if($btn-border != false, 1px solid, none);
+  border: if($btn-border, 1px solid, none);
 
   // Modifiers
   &--large {
@@ -92,6 +92,7 @@ Also note the 2 measures we take to avoid conflicts with user's code:
     width: 100%;
   }
 
+  // Color schemes
   @each $key, $value in $btn-background {
     &--#{$key} {
       @include button-color($value);
@@ -127,9 +128,7 @@ Now the mixin will actually apply the background-color to the button, as well as
 
 Remember what our `$btn-hover` and `$btn-border` variables look like? First a color function, then a percentage. To apply this function to the color, we can use the `call` feature from Sass 3.3.
 
-`call` function calls the function named after the first argument if it exists, passing it all the remaining arguments in the same order. So in our case, the first `call` will apply `saturate($color, 25%)` to the background property when hovering the button.
-
-The second one works the same except it first checks whether the variable is not false. In case `$btn-border` is set to `false`, we should not output the border-color.
+`call` function calls the function named after the first argument if it exists, passing it all the remaining arguments in the same order. So in our case, the first `call` will be `saturate($color, 25%)`. Meanwhile the second one works the same except it first checks whether the variable is not false. In case `$btn-border` is set to `false`, we should not output the border-color.
 
 ### Smart error handling
 
@@ -164,7 +163,7 @@ So we should probably make a couple of checks to make sure everything's right be
 
   // Making sure second items from $btn-hover and $btn-border
   // are percentages
-  @if type-of(nth($btn-hover, 2))  != number
+  @if type-of(nth($btn-hover,  2)) != number
    or type-of(nth($btn-border, 2)) != number {
     @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
     $everything-okay: false;
@@ -178,9 +177,9 @@ So we should probably make a couple of checks to make sure everything's right be
 
 <blockquote class="pull-quote--right">Always validate user input in your custom functions.</blockquote>
 
-Yes, it takes a decent amount of space. Yes, it makes the mixin longer. Yes, it's a pain in the ass to right. On the other hand, if the user makes a mistake with one of the argument, he'll know what's going on, or why the mixin didn't output anything.
+Yes, it takes a decent amount of space. Yes, it makes the mixin longer. Yes, it's a pain in the ass to write. On the other hand, if the user makes a mistake with one of the arguments, he'll know what's going on, or why the mixin didn't output anything.
 
-Note how we use the new `function-exists` from Sass 3.3 to make sure the functions set in `$btn-border` and `$btn-hover` variables actually exists. We could push the tests further by making sure it's one of `saturate`, `desaturate`, `darken`, `lighten`, `adjust-hue`, `grayscale`, `complement`, `invert` but I feel like we do a pretty good job covering potential mistakes here.
+Note how we use the new `function-exists` from Sass 3.3 to make sure the functions set in `$btn-border` and `$btn-hover` variables actually exists. We could push the tests further by making sure it's one of `saturate`, `desaturate`, `darken`, `lighten`, `adjust-hue`, `grayscale`, `complement` or `invert` but I feel like we already do a pretty good job covering potential mistakes here.
 </section>
 <section id="final-thoughts">
 ## Final thoughts [#](#final-thoughts)
