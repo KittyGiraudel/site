@@ -2,8 +2,8 @@
 title: "Git tips & tricks - Part 1"
 layout: post
 guest: "Loïc Giraudel"
-comments: false
-preview: true
+comments: true
+preview: false
 ---
 <section>
 <p class="explanation">Hey guys! The following is the first post of a series written by my dear brother Loïc, Git expert at Best Of Media (Tom's Guide & Tom's Hardware). I'll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!</p>
@@ -16,12 +16,12 @@ You must be able to checkout any commit in the project and still have a working 
 **Law #2**: **each commit has only one purpose**.  
 If you see a bug while you're working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.
 
-<blockquote class="pull-quote--right">Each commit should leave the branch stable.</blockquote>
-
 Ok, now let's start with the real tips & tricks...
 </section>
 <section id="custom-prompt">
 ## Use an awesome prompt [#](#custom-prompt)
+
+<blockquote class="pull-quote--right">Each commit should leave the branch stable.</blockquote>
 
 If you have to often switch from one branch to another (like a Git monkey), having a great prompt is quite useful to know what is the current branch you're working on, if you have modified some files, if you have some commits to push or to pull from the server, and so on.
 
