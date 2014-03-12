@@ -341,11 +341,9 @@ $list: "item-1" "item-2" "item-3" "item-4";</code></pre>
   (item-7, item-8, item-9) 
 );
 
-/**
- * Or simpler: 
- * top-level list is comma-separated 
- * inner lists are space-separated 
- */
+// Or simpler: 
+// top-level list is comma-separated 
+// inner lists are space-separated 
 $list:  item-1 item-2 item-3, 
 	      item-4 item-5 item-6, 
         item-7 item-8 item-9;</code></pre>
@@ -359,10 +357,9 @@ $list:  item-1 item-2 item-3,
 }</code></pre>
 <p class="note">Note: I have a very in-depth article on Sass lists scheduled for next week. Stay tuned for some Sass awesomeness. ;)</p>
 <p>Now that we introduced loops and lists, we can move forward. My idea was to build a little Sass script that output a specific background based on a page name where file names would not follow any guide name (hyphens, underscores, .jpg, .png, random folders...). So home page would have background X, contact page background Y, etc.</p>
-<pre class="language-scss"><code>/* Two-levels list
- * Top level contains pages
- * Inner level contains page-specific informations 
- */
+<pre class="language-scss"><code>// Two-levels list
+// Top level contains pages
+// Inner level contains page-specific informations 
 $pages : 
   "home"     "bg-home.jpg", 
   "about"    "about.png", 
@@ -370,7 +367,7 @@ $pages :
   "contact"  "assets/contact.jpg";
 
 @each $page in $pages {
-  /* Scoped variable */
+  // Scoped variables
   $selector : nth($page, 1);
   $path     : nth($page, 2);
 
