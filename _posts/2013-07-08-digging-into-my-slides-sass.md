@@ -151,7 +151,7 @@ title: "Digging into my slides about Sass"
 <p>Outputs:</p>
 <pre class="language-css"><code>.element {
   font-size: 24px;
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }</code></pre>
 <p>Calculations and fallbacks are handled by Sass. What about pushing things a little further by enabling some sort of flag for IE8 instead of always outputing the PX line? Let's say you are using this in a constantly evolving project or in a library or something. You might want to easily enable or disable IE8 support.</p>
 <p>Simple enough: wrap the PX line in a conditional statement (<code>@if</code>) depending on a boolean you initialize either at the top of your stylesheet or in a configuration file.</p>
@@ -338,7 +338,7 @@ $list: "item-1" "item-2" "item-3" "item-4";</code></pre>
 <pre class="language-scss"><code>$list: ( (item-1, item-2, item-3)
          (item-4, item-5, item-6)
          (item-7, item-8, item-9) );
-
+         
 /* Or simpler: 
  * top-level list is comma-separated 
  * inner lists are space-separated 
@@ -365,12 +365,12 @@ $pages :
   "about"    "about.png", 
   "products" "prod_bg.jpg", 
   "contact"  "assets/contact.jpg";
-
+    
 @each $page in $pages {
   /* Scoped variable */
   $selector : nth($page, 1);
   $path     : nth($page, 2);
-    
+         
   .#{$selector} body {
     background: url('../images/#{ $path }');
   }
@@ -392,7 +392,7 @@ $pages :
 <pre class="language-scss"><code>$pages: home, about, products, contact;
 
 @each $item in $pages {
-  .#{ $item } .nav-#{ $item } { 
+  .#{$item} .nav-#{ $item } { 
     style: awesome;
   }
 }</code></pre>
