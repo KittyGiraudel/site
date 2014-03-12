@@ -69,6 +69,7 @@ layout: default
 <h2><span class='fontawesome-pencil icon-left'></span>Publications and talks <a href="#publications" class="section-anchor">#</a></h2>
 <h3>Web</h3>
 <ul>
+<li><a href="http://hub.tutsplus.com/authors/hugo-giraudel">Writer</a> at <a href="http://hub.tutsplus.com/">Tuts+</a></li>
 <li><a href="http://www.sitepoint.com/author/hgiraudel/">Writer</a> at <a href="http://sitepoint.com">SitePoint</a></li>
 <li><a href="http://tympanus.net/codrops/author/hugogiraudel/">Writer</a> at <a href="http://tympanus.net/codrops">Codrops</a></li>
 <li><a href="http://thesassway.com/hugo-giraudel">Writer</a> at <a href="http://thesassway.com/">TheSassWay</a></li>
