@@ -335,11 +335,14 @@ $list: "item-1", "item-2", "item-3", "item-4";
 $list: "item-1" "item-2" "item-3" "item-4";</code></pre>
 <p>So basically you can ommit braces and can either comma-separate or space-separate values.</li>
 <p>A quick look at nested lists:</p>
-<pre class="language-scss"><code>$list: ( (item-1, item-2, item-3)
-         (item-4, item-5, item-6)
-         (item-7, item-8, item-9) );
+<pre class="language-scss"><code>$list: ( 
+  (item-1, item-2, item-3)
+  (item-4, item-5, item-6)
+  (item-7, item-8, item-9) 
+);
          
-/* Or simpler: 
+/**
+ * Or simpler: 
  * top-level list is comma-separated 
  * inner lists are space-separated 
  */
