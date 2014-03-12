@@ -340,7 +340,7 @@ $list: "item-1" "item-2" "item-3" "item-4";</code></pre>
   (item-4, item-5, item-6)
   (item-7, item-8, item-9) 
 );
-         
+
 /**
  * Or simpler: 
  * top-level list is comma-separated 
@@ -368,12 +368,12 @@ $pages :
   "about"    "about.png", 
   "products" "prod_bg.jpg", 
   "contact"  "assets/contact.jpg";
-    
+
 @each $page in $pages {
   /* Scoped variable */
   $selector : nth($page, 1);
   $path     : nth($page, 2);
-         
+
   .#{$selector} body {
     background: url('../images/#{ $path }');
   }
@@ -392,9 +392,7 @@ $pages :
 <p>I finished my talk with a last example with lists and loops, to show how to build an "active menu" without JavaScript or server-side; only CSS. To put it simple, it relies on the page name matching and the link name. So the link to home page is highlighted if it's a child of <code>.home</code> (class on html element); the link to the contact page is highlighted if it's a child of the <code>.contact</code> page. You get the idea.</p>
 <p>To show the difference between nice and very nice Sass, I made two versions of this one. The first one is cool but meh, the second one is clever as hell (if I may).</p>
 <p>Let's save the best for last. The idea behind the first version is to loop through the pages and output styles for each one of them.</p>
-<pre class="language-scss"><code>$pages: home, about, products, contact;
-
-@each $item in $pages {
+<pre class="language-scss"><code>@each $item in home, about, products, contact {
   .#{$item} .nav-#{ $item } { 
     style: awesome;
   }
@@ -405,10 +403,9 @@ $pages :
 .products .nav-products { style: awesome; }
 .contact  .nav-contact  { style: awesome; }</code></pre>
 <p>Not bad. At least it works. But it repeats a bunch of things and this sucks. There has to be a better way to write this.</p>
-<pre class="language-scss"><code>$pages: home, about, products, contact;
-$selector: ();
+<pre class="language-scss"><code>$selector: ();
 
-@each $item in $pages {
+@each $item in home, about, products, contact {
   $selector: append($selector, unquote(".#{$item} .nav-#{$item}"));
 }
 
