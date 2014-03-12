@@ -344,7 +344,7 @@ $list: "item-1" "item-2" "item-3" "item-4";</code></pre>
  * inner lists are space-separated 
  */
 $list:  item-1 item-2 item-3, 
-		item-4 item-5 item-6, 
+	      item-4 item-5 item-6, 
         item-7 item-8 item-9;</code></pre>
 <p>Now, here is how to use a list to access item one by one.</p>
 <pre class="language-scss"><code>@each $item in $list {
@@ -367,13 +367,13 @@ $pages :
   "contact"  "assets/contact.jpg";
 
 @each $page in $pages {
-	/* Scoped variable */
-    $selector : nth($page, 1);
-    $path     : nth($page, 2);
+  /* Scoped variable */
+  $selector : nth($page, 1);
+  $path     : nth($page, 2);
     
-    .#{ $selector } body {
-        background: url('../images/#{ $path }');
-    }
+  .#{$selector} body {
+    background: url('../images/#{ $path }');
+  }
 }</code></pre>
 <p>Here is what happen:</p>
 <ul>
@@ -389,12 +389,12 @@ $pages :
 <p>I finished my talk with a last example with lists and loops, to show how to build an "active menu" without JavaScript or server-side; only CSS. To put it simple, it relies on the page name matching and the link name. So the link to home page is highlighted if it's a child of <code>.home</code> (class on html element); the link to the contact page is highlighted if it's a child of the <code>.contact</code> page. You get the idea.</p>
 <p>To show the difference between nice and very nice Sass, I made two versions of this one. The first one is cool but meh, the second one is clever as hell (if I may).</p>
 <p>Let's save the best for last. The idea behind the first version is to loop through the pages and output styles for each one of them.</p>
-<pre class="language-scss"><code>$pages : home, about, products, contact;
+<pre class="language-scss"><code>$pages: home, about, products, contact;
 
 @each $item in $pages {
-    .#{ $item } .nav-#{ $item } { 
-        style: awesome;
-    }
+  .#{ $item } .nav-#{ $item } { 
+    style: awesome;
+  }
 }</code></pre>
 <p>Outputs:</p>
 <pre class="language-css"><code>.home     .nav-home     { style: awesome; }
@@ -402,22 +402,22 @@ $pages :
 .products .nav-products { style: awesome; }
 .contact  .nav-contact  { style: awesome; }</code></pre>
 <p>Not bad. At least it works. But it repeats a bunch of things and this sucks. There has to be a better way to write this.</p>
-<pre class="language-scss"><code>$pages    : home, about, products, contact;
-$selector : ();
+<pre class="language-scss"><code>$pages: home, about, products, contact;
+$selector: ();
 
 @each $item in $pages {
-    $selector: append($selector, unquote(".#{$item} .nav-#{$item}"));
+  $selector: append($selector, unquote(".#{$item} .nav-#{$item}"));
 }
 
-#{ $selector } { 
-    style: awesome; 
+#{$selector} { 
+  style: awesome; 
 }</code></pre>
 <p>Outputs:</p>
 <pre class="language-scsscss"><code>.home     .nav-home, 
 .about    .nav-about,
 .products .nav-products, 
 .contact  .nav-contact {
-    style: awesome;
+  style: awesome;
 }</code></pre>
 <p>This is hot! Instead of outputing shit in the loop, we use it to create a selector that we then use to define our "active" styles.</p>
 </section>
