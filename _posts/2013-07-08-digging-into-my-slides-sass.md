@@ -35,20 +35,20 @@ title: "Digging into my slides about Sass"
 <p>The <code>@extend</code> feature has to be the one which made Sass so popular compared to other CSS preprocessors including Less. Basically, you can make a selector inherits styles from another selector. It comes with abstract classes (also called placeholders), classes prefixed by a <code>%</code> symbol instead of a dot, that are not compiled in the final stylesheet, thus that cannot be used in the markup. Their use is exclusive to the stylesheet.</p>
 <p>As a very simple example, let's make a placeholder of the <a href="http://nicolasgallagher.com/micro-clearfix-hack/">clearfix method by Nicolas Gallagher</a>.</p>
 <pre class="language-scss"><code>%clearfix:after {
-	content: '';
-	display: table;
-	clear: both;
+  content: '';
+  display: table;
+  clear: both;
 }
 
 .element {
-	@extend %clearfix;
+  @extend %clearfix;
 }
 </code></pre>
 <p>Outputs:</p>
 <pre class="language-scss"><code>.element:after {
-	content: '';
-	display: table;
-	clear: both;
+  content: '';
+  display: table;
+  clear: both;
 }</code></pre>
 <p>This example shows how we can use <code>@extend</code> and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you're familiar with <a href="http://twitter.github.io/bootstrap/components.html#alerts">Twitter Bootstrap</a>, then you'll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).</p>
 <pre class="codepen" data-height="300" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
@@ -60,79 +60,79 @@ title: "Digging into my slides about Sass"
 </ol>
 <p>Let's see how we can Sass it:</p>
 <pre class="language-scss"><code>%message {
-	/* shared styles */
+  /* shared styles */
 }
 .message-error {
-	@extend %message;
-	$color: #b94a48;
-	color: $color;
-  	background: lighten($color, 38%);
-  	border-color: lighten(adjust-hue($color, -10), 20%);
+  @extend %message;
+  $color: #b94a48;
+  color: $color;
+  background: lighten($color, 38%);
+  border-color: lighten(adjust-hue($color, -10), 20%);
 }
 .message-ok {
-	@extend %message;
-	$color: #468847;
-	color: $color;
-  	background: lighten($color, 38%);
-  	border-color: lighten(adjust-hue($color, -10), 20%);
+  @extend %message;
+  $color: #468847;
+  color: $color;
+  background: lighten($color, 38%);
+  border-color: lighten(adjust-hue($color, -10), 20%);
 }
 .message-warn {
-	@extend %message;
-	$color: #c09853;
-	color: $color;
-  	background: lighten($color, 38%);
- 	border-color: lighten(adjust-hue($color, -10), 20%);
+  @extend %message;
+  $color: #c09853;
+  color: $color;
+  background: lighten($color, 38%);
+  border-color: lighten(adjust-hue($color, -10), 20%);
 }
 .message-info {
-	@extend %message;
-	$color: #3a87ad;
-	color: $color;
-	background: lighten($color, 38%);
- 	border-color: lighten(adjust-hue($color, -10), 20%);
+  @extend %message;
+  $color: #3a87ad;
+  color: $color;
+  background: lighten($color, 38%);
+  border-color: lighten(adjust-hue($color, -10), 20%);
 }</code></pre>
 <p>Outputs:</p>
 <pre class="language-css"><code>.message-error, .message-ok, .message-warn, .message-info {
-	/* shared styles */
+  /* shared styles */
 }
 .message-error {
-	color: #b94a48;
-  	background: #efd5d4;
-  	border-color: #d5929c;
+  color: #b94a48;
+  background: #efd5d4;
+  border-color: #d5929c;
 }
 .message-ok {
-	color: #468847;
- 	background: #b6dab7;
- 	border-color: #83ba7a;
+  color: #468847;
+  background: #b6dab7;
+  border-color: #83ba7a;
 }
 .message-warn {
-	color: #c09853;
-  	background: #f4ede1;
-  	border-color: #dbba9e;
+  color: #c09853;
+  background: #f4ede1;
+  border-color: #dbba9e;
 }
 .message-info {
-	color: #3a87ad;
-  	background: #bfdcea;
-  	border-color: #7ac4d3;
+  color: #3a87ad;
+  background: #bfdcea;
+  border-color: #7ac4d3;
 }</code></pre>
 <p>No styles repeated, no heavy selector, only one class assigned in the markup. Pretty neat. However, even if there is no repeated styles in the final CSS, there are repeated lines in the Sass stylesheet. They are repeated because the <code>$color</code> variable changes in the scope. Isn't this the perfect usecase for a mixin?</p>
 <pre class="language-scss"><code>@mixin message($color) {
-    @extend %message;
-    color: $color;
-	background: lighten($color, 38%);
- 	border-color: lighten(adjust-hue($color, -10), 20%);
+  @extend %message;
+  color: $color;
+  background: lighten($color, 38%);
+  border-color: lighten(adjust-hue($color, -10), 20%);
 }</code></pre>
 <p>Then, we change our Sass a little bit:</p>
 <pre class="language-scss"><code>.message-error {
-	@include message(#b94a48);
+  @include message(#b94a48);
 }
 .message-ok {
-	@include message(#468847);
+  @include message(#468847);
 }
 .message-warn {
-	@include message(#c09853);
+  @include message(#c09853);
 }
 .message-info {
-	@include message(#3a87ad);
+  @include message(#3a87ad);
 }</code></pre>
 <p>Quite cool, right? And this is only a very easy example of what you can do with <code>@extend</code> and placeholders. Feel free to think of clever usecases as well.</p>
 </section>
@@ -141,16 +141,16 @@ title: "Digging into my slides about Sass"
 <p>REM (root EM) is awesome. Problem is <a href="http://caniuse.com/#feat=rem">IE8 doesn't understand it</a>, and we cannot cross it out of our support chart yet. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.</p>
 <p>But duplicating every <code>font-size</code> declaration can be tedious and converting REM to PX can be annoying. Let's do it with Sass!</p>
 <pre class="language-scss"><code>@mixin rem($value, $base: 16) {
-	font-size: $value + px;
-	font-size: $value / $base + rem;
+  font-size: $value + px;
+  font-size: $value / $base + rem;
 }
 
 .element {
-	@include rem(24);
+  @include rem(24);
 }</code></pre>
 <p>Outputs:</p>
 <pre class="language-css"><code>.element {
-	font-size: 24px;
+  font-size: 24px;
 	font-size: 1.5rem;
 }</code></pre>
 <p>Calculations and fallbacks are handled by Sass. What about pushing things a little further by enabling some sort of flag for IE8 instead of always outputing the PX line? Let's say you are using this in a constantly evolving project or in a library or something. You might want to easily enable or disable IE8 support.</p>
