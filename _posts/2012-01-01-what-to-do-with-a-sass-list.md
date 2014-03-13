@@ -28,9 +28,9 @@ Let's start with a quick reminder. First of all, the `list` data type isn't spec
   box-shadow: 0 .5em .25em -.5em rgba(0,0,0,.1);
 }</code></pre>
 
-<blockquote class="pull-quote--right">There have been lists for long in CSS.</blockquote>
-
 All these properties (and many more) use lists as values. To my knowledge, only `font-family` uses a comma-separated list though. Anyway, most of them are shorthands for multiple properties, so that's not surprising but still. Even the selector itself is a (comma-separated) list!
+
+<blockquote class="pull-quote--right">There have been lists for long in CSS.</blockquote>
 
 Lists have been around for a long time now, we just didn't call them "lists" because we didn't have to. Now, Sass officially uses the word "list" as a data type, but that doesn't mean Sass introduced lists to the CSS background.
 
@@ -60,7 +60,7 @@ Let me try with a practical example: at work, we display an image background dir
   }
 }</code></pre>
 
-Thanks to the `$zips` list and the `@each` loop, we can make the whole process of assigning a specific background image depending on a class very simple. Also it gets damn simple to add/remove a zip-code: all you have to do is updating the list. 
+Thanks to the `$zips` list and the `@each` loop, we can make the whole process of assigning a specific background image depending on a class very simple. Also it gets damn simple to add/remove a zip-code: all we have to do is updating the list. 
 
 Okay. I believe this is a decent use case for a list. Now what about lists functions like `append` or `length`? Finding a good example is getting tricky, but I suppose we could take the one I recently talked about in [this article about star rating widget in Sass](http://hugogiraudel.com/2014/02/24/star-rating-system-with-sass/) where I build a selector out of a Sass list. 
 
@@ -74,13 +74,17 @@ Okay. I believe this is a decent use case for a list. Now what about lists funct
       comma
     );
   }
-
+  
   #{$selector} {
     // CSS rules
   }
 }</code></pre>
 
-The code might be complex to understand so I suggest you read the related article. Anyway, this is a valid usecase for `append` even if you could have worked around the problem using `@extend`. 
+The code might be complex to understand so I suggest you read the related article. For instance, when `$i` is 4, the generated `$selector` would be:
+
+<pre class="language-scss"><code>[data-rate^='4'] .star-1, [data-rate^='4'] .star-2, [data-rate^='4'] .star-3, [data-rate^='4'] .star-4 { ... }</code></pre>
+
+Anyway, this is a valid usecase for `append` even if you could have worked around the problem using `@extend`. 
 
 Another use case would be building a CSS gradient from a Sass list of colors. I have an article ready about this; SitePoint will release it in the next few weeks. By the way, I provide another example for lists in my article about making [a Sass component in 10 minutes](http://www.sitepoint.com/sass-component-10-minutes/) at SitePoint where I use one to store various message types (alert, danger, info...) as well as a base color (orange, red, blue...). Probably one of my best write-up so far, be sure to have a look.
 </section>
