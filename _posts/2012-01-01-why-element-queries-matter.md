@@ -10,6 +10,11 @@ At work, many of our pages present one or more collection of items, like product
 
 Now, this is the core of a lot of other components. For instance, we have a component featuring top products, with the same list of items but in a better wrapper with a heading, a "see more" link, a large left border for some visual impact and stuff. It's just an example but the `elements` component is used in at least 3 to 4 other components of our architecture.
 
+<figure class="figure">
+<img src="/images/why-element-queries-matter__thumbs-list.png" alt="" />
+<figcaption>A sketch of our main component</figcaption>
+</figure>
+
 Until now, no big deal. Au contraire, it looks pretty nice! DRY code, component-based architecture. Nothing but the best so let's move on.
 
 We also have a couple of different layouts: 
@@ -50,7 +55,7 @@ I decided to set up on the last one which looks slightly better than the others.
 
 Then when a min-width is matched, the element can be selected using an attribute selector `data-eq-state` matching the bound keywird. For instance `.component[data-eq-state="small"]` when the component is between 300 and 499px wide.
 
-I have designed a little test case: 
+I have designed a little test case (you might want to test it on CodePen directly and resize the screen): 
 
 <p data-height="462" data-theme-id="0" data-slug-hash="cfdf5410e622f1e5f41035232de4260c" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/cfdf5410e622f1e5f41035232de4260c'>cfdf5410e622f1e5f41035232de4260c</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
