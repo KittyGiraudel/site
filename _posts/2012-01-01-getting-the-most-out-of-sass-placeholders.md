@@ -71,7 +71,7 @@ Here is a boilerplate to code your own:
 }
 
 %myMixin {
-  @include myMixin(false);
+  @include myMixin($extend: false);
 }</code></pre>
 </section>
 <section id="using-it">
@@ -84,8 +84,7 @@ There it is. Now let's try it:
 
 This will result in the following CSS output:
 
-``` scss
-.a:after, .b:after {
+<pre class="language-scss"><code>.a:after, .b:after {
   content: '';
   display: table;
   clear: both;
