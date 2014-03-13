@@ -125,22 +125,22 @@ This function returns a string like this: `" 0 0 0\A  0 0 0\A  0 0 0\A "`. As is
 ... which is pretty nice. Basically I used the mixin from SassyLists which takes a string and displays it in the body pseudo-element with `white-space: pre-wrap`, allowing for line breaks.
 
 <pre class="language-scss"><code>@mixin display($matrix, $pseudo: before) {
-    body:#{$pseudo} {
-        content: display($matrix)                 !important;
+  body:#{$pseudo} {
+    content: display($matrix)                 !important;
 
-        display: block                            !important;
-        margin: 1em                               !important;
-        padding: .5em                             !important;
+    display: block                            !important;
+    margin: 1em                               !important;
+    padding: .5em                             !important;
 
-        background: #EFEFEF                       !important;
-        border: 1px solid #DDD                    !important;
-        border-radius: .2em                       !important;
+    background: #EFEFEF                       !important;
+    border: 1px solid #DDD                    !important;
+    border-radius: .2em                       !important;
 
-        color: #333                               !important;
-        font: 1.5em/1.5 "Courier New", monospace  !important;
-        text-shadow: 0 1px white                  !important;
-        white-space: pre-wrap                     !important;
-    }
+    color: #333                               !important;
+    font: 1.5em/1.5 "Courier New", monospace  !important;
+    text-shadow: 0 1px white                  !important;
+    white-space: pre-wrap                     !important;
+  }
 }</code></pre>
 </section>
 <section id="what-next">
@@ -151,6 +151,7 @@ So far we managed to initialize a matrix, set values in it, retreive those value
 But what if we want to push things further? While I am not ace with matrices (I never really did extremely well in math), I know someone who is: [Ana Tudor](https://twitter.com/thebabydino). You may be familiar with some of her crazy experiments from CodePen. Anyway, Ana is most certainly a brainiac so she gave me plenty of ideas of functions to ease the pain of having to deal with matrices!
 
 Among other things:
+
 * `swap-entries($matrix, $e1, $e2)`: swaps values `$e1` and `$e2` from `$matrix`
 * `swap-rows($matrix, $r1, $r2)`: swaps rows `$r1` and `$r2` from `$matrix`
 * `swap-columns($matrix, $c1, $c2)`: swaps columns `$c1` and `$c2` from `$matrix`
