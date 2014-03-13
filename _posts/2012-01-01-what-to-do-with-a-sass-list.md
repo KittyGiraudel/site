@@ -26,7 +26,7 @@ Let's start with a quick reminder. First of all, the `list` data type isn't spec
   background: url('my/awesome/image.png') 0 0 #666;
   border: 1px solid silver;
   box-shadow: 0 .5em .25em -.5em rgba(0,0,0,.1);
-}</pre>
+}</code></pre>
 
 <blockquote class="pull-quote--right">There have been lists for long in CSS.</blockquote>
 
