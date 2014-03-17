@@ -1,7 +1,7 @@
 ---
 title: "Git tips & tricks - Part 2"
-preview: true
-comments: false
+preview: false
+comments: true
 layout: post
 guest: "Loïc Giraudel"
 ---
