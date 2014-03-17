@@ -25,7 +25,7 @@ Ok, now let's start with the real tips & tricks...
 
 If you have to often switch from one branch to another (like a Git monkey), having a great prompt is quite useful to know what is the current branch you're working on, if you have modified some files, if you have some commits to push or to pull from the server, and so on.
 
-My favorite so far has been created by [Tung Nguyen](https://gist.github.com/tung) and you can found it [right here](https://gist.github.com/tung/409780).
+My favorite so far has been created by [Tung Nguyen](https://gist.github.com/tung) and can be found [right here](https://gist.github.com/tung/409780).
 
 This prompt displays:
 
