@@ -6,9 +6,9 @@ layout: post
 guest: "Loïc Giraudel"
 ---
 <section>
-<p class="explanation">Hey guys! This is the 2nd part of the *Git Tips & Tricks* series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!</p>
+<p class="explanation">Hey guys! This is the 2nd part of the <em>Git Tips & Tricks</em> series from Loïc Giraudel. If you missed the first post, be sure to <a href="http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/">give it a read</a>! And now fasten your belts folks, because this is some serious Git fu!</p>
 
-Hey guys ! I hope you enjoyed the first part of the series. In this one, you will find more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced git concepts and commands. Ready?
+Hey guys ! I hope you enjoyed the first part of the series. In this one, I will introduce you even more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced Git concepts and commands. Ready?
 </section>
 <section id="improve-diff-output">
 ## Improve diff output [#](#improve-diff-output)
@@ -23,7 +23,7 @@ To stop viewing those `^M` symbols, just change the `whitespace` option:
 
 ### Remove file prefix in diff
 
-By default, the `git diff` command displays the filename with a `a/` or `b/` prefix:
+By default, the `git diff` command displays the filename with either `a/` or `b/` prefix:
 
 <pre class="language-bash"><code>$ git diff
 diff --git a/Gruntfile.js b/Gruntfile.js
@@ -63,23 +63,23 @@ My most used Git command is `git status` but instead of creating an alias like `
 <pre class="language-bash"><code>$ cat ~/.bashrc
 [...]
 alias gst="git status"</code></pre>
-</section>
-<section id="create-a-bash-alias-to-go-back-to-project-root">
-## Create a bash alias to go back to project root [#](#create-a-bash-alias-to-go-back-to-project-root)
 
-If your project has a deep directory tree, it can be useful to have a bash alias to go back to the root of the git project in one line instead of multiple `cd ..` commands or counting `/..` in a `cd ../../../..` command.
+### Create a bash alias to go back to project root [#](#create-a-bash-alias-to-go-back-to-project-root)
 
-For unix systems, this alias looks like this (put it in your ~/.bashrc file):
+If your project has a deep directory tree, it can be useful to have a bash alias to go back to the root of the Git project in one line instead of multiple `cd ..` commands or counting `/..` in a `cd ../../../..` command.
+
+For unix systems, this alias looks like this (put it in your `~/.bashrc` file):
 
 <pre class="language-bash"><code>/home/workspace/myProject $ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 /home/workspace/myProject $ cd test/phpunit/apps/sso/lib/action/
 /home/workspace/myProject/test/phpunit/apps/sso/lib/action $ gr
 /home/workspace/myProject $</code></pre>
 
-If you are curious, feel free to explore the `git rev-parse` command: it's a magic command used by many other commands to do many different things. The manual page says:
-> "git-rev-parse - Pick out and massage parameters"
+If you happen to be curious, feel free to explore the `git rev-parse` command: it's a magic command used by many other commands to do many different things. The manual page says:
 
-For example, this command can convert a commit ref to a real SHA1:
+<blockquote class="quote">"git-rev-parse - Pick out and massage parameters"</blockquote>
+
+For instance, this command can convert a commit ref to a real SHA1:
 
 <pre class="language-bash"><code>$ git rev-parse HEAD~17
 7f292beec1e55e33d911a942f59e942a04828935</code></pre>
@@ -99,12 +99,12 @@ It can return the relative path to go back to project root:
 
 In Unix system, the default commit message editor is VI. To use your favorite editor, edit the core.editor option:
 
-<pre class="language-bash"><code>$ git config --global core.editor "~/Sublime\ Text\ 2/sublime_text -w"</code></pre>
+<pre class="language-bash"><code>$ git config --global core.editor "~/Sublime\ Text\ 3/sublime_text -w"</code></pre>
 </section>
 <section id="track-a-remote-branch">
 ## Track a remote branch [#](#track-a-remote-branch)
 
-Large scale projects have many git branches: developers create new ones every day, do many merges, switch to branches created by workmates, co-develop features in shared branches and so on.
+Large scale projects have many Git branches: developers create new ones every day, do many merges, switch to branches created by workmates, co-develop features in shared branches and so on.
 
 It's possible to track a remote branch, which displays useful informations in the `git status` command:
 
@@ -169,7 +169,7 @@ Luckily, since Git 1.7.0, there is an easier syntax to do this:
 <pre class="language-bash"><code>$ git push origin --delete myBranch</code></pre>
 </section>
 <section id="use-a-git-message-template">
-## Use a git message template [#](#use-a-git-message-template)
+## Use a Git message template [#](#use-a-git-message-template)
 
 Using a message template for Git commits is a good practice, especially in big projects with a lot of people involved. It helps finding commits relative to a specific feature, relative to a specific work team, etc.
 
@@ -183,9 +183,9 @@ Here's what my `committemplate.txt` looks like:
 [MyTeam] [#FeatureId] - Description of the feature
 More informations about the feature</code></pre>
 
-It's not possible to use a bash script instead of a text message, to &mdash; let's say &mdash; dynamically add the branch name. Fortunately, the same thing can be done with Git hooks.
+Unfortunately, it's not possible to use a bash script instead of a text message, to &mdash; let's say &mdash; dynamically add the branch name. Fortunately, the same thing can be done with Git hooks.
 
-Hooking is a common programming pattern to allow user to improve the behavior of a software by allowing custom piece of code to run at a specific moment.
+*Hooking* is a common programming pattern to allow user to improve the behavior of a software by allowing custom piece of code to run at a specific moment.
 
 With Git, you can create a client-side hook running before user writes his commit message. This hook can retrieve some informations to pre-fill the commit message. Let's create a hook which pre-fill the commit message with the local branch name.
 
@@ -308,16 +308,16 @@ Stage this hunk [y,n,q,a,d,/,e,?]?</code></pre>
 
 At the end of the `git add` command, there is a prompt message asking me if I want to add this hunk to the commit. The available options are:
 
-* *y*es, 
-* *n*o, 
-* *q*uit, 
-* *a*ll later hunks (including current one), 
-* *d*on't add all the later hunks (included current one), 
-* search for a hunk with a regexp (*/*),
-* *e*dit the current hunk,
-* show some help (*?*).
+* **y**es, 
+* **n**o, 
+* **q**uit, 
+* **a**ll later hunks (including current one), 
+* **d**on't add all the later hunks (included current one), 
+* search for a hunk with a regexp (**/**),
+* **e**dit the current hunk,
+* show some help (**?**).
 
-If I type *e*, the hunk will be opened in my text editor:
+If I type **e**, the hunk will be opened in my text editor:
 
 <pre class="language-bash"><code># Manual hunk edit mode -- see bottom for a quick guide
 @@ -1 +1,2 @@
