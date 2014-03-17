@@ -187,7 +187,7 @@ Unfortunately, it's not possible to use a bash script instead of a text message,
 
 *Hooking* is a common programming pattern to allow user to improve the behavior of a software by allowing custom piece of code to run at a specific moment.
 
-With Git, you can create a client-side hook running before user writes his commit message. This hook can retrieve some informations to pre-fill the commit message. Let's create a hook which pre-fill the commit message with the local branch name.
+With Git, you can create a client-side hook running before user writes his commit message. A hook can retrieve some informations to pre-fill the commit message. Let's create one in order to fill the commit message with the local branch name, shall we?
 
 <pre class="language-bash"><code>$ cat .git/hooks/prepare-commit-msg
 #/bin/bash
