@@ -171,6 +171,8 @@ Luckily, since Git 1.7.0, there is an easier syntax to do this:
 <section id="use-a-git-message-template">
 ## Use a Git message template [#](#use-a-git-message-template)
 
+<blockquote class="pull-quote--right">Using a message template for Git commits is a good practice.</blockquote>
+
 Using a message template for Git commits is a good practice, especially in big projects with a lot of people involved. It helps finding commits relative to a specific feature, relative to a specific work team, etc.
 
 To change the default template, you can write a small text file somewhere on your disk, then reference it in your Git configuration:
@@ -268,6 +270,8 @@ Now we've covered the basics, let's move on to some advanced Git techniques. Tho
 * to dig deep in your commit history to find the origin of a bug
 * to juggle with many branches
 * to use some submodules to split your project into several parts
+
+<blockquote class="pull-quote--right">Each commit must have only one purpose.</blockquote>
 
 Each commit must have only one purpose (c.f. Law #2 at the beginning of the Git Tips & Tricks - Part 1), but it's easy to find some small mistakes when editing a file. If you don't want to add those little fixes when you're creating your commit in order to put them in a dedicated commit, the best way is to split the file modifications when adding the file to the staging area.
 
