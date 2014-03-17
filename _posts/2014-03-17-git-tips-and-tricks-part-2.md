@@ -6,9 +6,9 @@ layout: post
 guest: "Loïc Giraudel"
 ---
 <section>
-<p class="explanation">Hey guys! This is the 2nd part of the <em>Git Tips & Tricks</em> series from Loïc Giraudel. If you missed the first post, be sure to <a href="http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/">give it a read</a>! And now fasten your belts folks, because this is some serious Git fu!</p>
+<p class="explanation">Hi dear folks! This is the 2nd part of the <em>Git Tips & Tricks</em> series from Loïc Giraudel. If you missed the first post, be sure to <a href="http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/">give it a read</a>! And now fasten your belts folks, because this is some serious Git fu!</p>
 
-Hey guys ! I hope you enjoyed the first part of the series. In this one, I will introduce you even more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced Git concepts and commands. Ready?
+Hey guys! I hope you enjoyed the first part of the series. In this one, I will introduce you even more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced Git concepts and commands. Ready?
 </section>
 <section id="improve-diff-output">
 ## Improve diff output [#](#improve-diff-output)
@@ -64,7 +64,7 @@ My most used Git command is `git status` but instead of creating an alias like `
 [...]
 alias gst="git status"</code></pre>
 
-### Create a bash alias to go back to project root [#](#create-a-bash-alias-to-go-back-to-project-root)
+### Create a bash alias to go back to project root
 
 If your project has a deep directory tree, it can be useful to have a bash alias to go back to the root of the Git project in one line instead of multiple `cd ..` commands or counting `/..` in a `cd ../../../..` command.
 
@@ -258,8 +258,8 @@ $ git commit -m 'This is another feature'
 $ git log -1 --oneline
 4d169f5 [my-local-branch] This is another feature</code></pre>
 </section>
-<section id="advanced-tips">
-## Advanced tips [#](#advanced-tips)
+<section id="split-a-file-modification-into-two-commits">
+## Split a file modification into two commits [#](#split-a-file-modification-into-two-commits)
 
 Now we've covered the basics, let's move on to some advanced Git techniques. Those tricks get useful when you have a complex Git environment which can require:
 
@@ -268,8 +268,6 @@ Now we've covered the basics, let's move on to some advanced Git techniques. Tho
 * to dig deep in your commit history to find the origin of a bug
 * to juggle with many branches
 * to use some submodules to split your project into several parts
-
-### Split a file modification into two commits
 
 Each commit must have only one purpose (c.f. Law #2 at the beginning of the Git Tips & Tricks - Part 1), but it's easy to find some small mistakes when editing a file. If you don't want to add those little fixes when you're creating your commit in order to put them in a dedicated commit, the best way is to split the file modifications when adding the file to the staging area.
 
@@ -405,8 +403,9 @@ Author: lgiraudel <lgiraudel@mydomain.com>
 Date:   Mon Feb 17 10:58:11 2014 +0100
 
     Initial commit</code></pre>
-    
-### Pick a commit from another branch
+</section>
+<section id="pick-commit-from-another-branch">
+## Pick a commit from another branch [#](#pick-commit-from-another-branch)
 
 It's sometimes useful to pick a commit from another branch to add it in the current branch.
 
