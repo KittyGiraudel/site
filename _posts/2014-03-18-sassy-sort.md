@@ -1,8 +1,8 @@
 ---
 title: "SassySort: sorting algorithms in Sass"
 layout: post
-preview: true
-comments: false
+preview: false
+comments: true
 ---
 <section>
 The idea of building a sorting function in pure Sass isn't new. I think everything started months ago when a fellow folk on Twitter asked how I would build a Sass function to sort a list of numeric values in order to create a modular scale. It was actually quite easy to do even if it could probably be optimized.
