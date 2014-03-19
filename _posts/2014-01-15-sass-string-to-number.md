@@ -185,28 +185,28 @@ The idea is the same as for the `number` function. We retrieve the string in the
 <section id="examples">
 ## Examples [#](#examples)
 
-If you want to play with the code or the function, you can check it on [SassMeister](http://sassmeister.com/gist/8414840). In any case, here are a couple of examples of our awesome little function:
+If you want to play with the code or the function, you can check it on [SassMeister](http://sassmeister.com/gist/9647408). In any case, here are a couple of examples of our awesome little function:
 
 <pre class="language-scss"><code>sass {
-  cast: "-15";    // -15
-  cast: "-1";     // -1
-  cast: "-.5";    // -.5
-  cast: "-0";     // 0
-  cast: "0";      // 0
-  case: ".10";    // 0.1
-  cast: "1";      // 1
-  cast: "1.5";    // 1.5
-  cast: "10.";    // 10
-  cast: "12.380"; // 12.38
-  cast: "42";     // 42
-  cast: "1337";   // 1337
+  cast: number("-15");    // -15
+  cast: number("-1");     // -1
+  cast: number("-.5");    // -.5
+  cast: number("-0");     // 0
+  cast: number("0");      // 0
+  case: number(".10");    // 0.1
+  cast: number("1");      // 1
+  cast: number("1.5");    // 1.5
+  cast: number("10.");    // 10
+  cast: number("12.380"); // 12.38
+  cast: number("42");     // 42
+  cast: number("1337");   // 1337
   
-  cast: "-10px";  // -10px
-  cast: "20em";   // 20em
-  cast: "30ch";   // 30ch
+  cast: number("-10px");  // -10px
+  cast: number("20em");   // 20em
+  cast: number("30ch");   // 30ch
   
-  cast: "1fail";  // Error
-  cast: "string"; // Error
+  cast: number("1fail");  // Error
+  cast: number("string"); // Error
 }</code></pre>
 </section>
 <section id="final-words">
