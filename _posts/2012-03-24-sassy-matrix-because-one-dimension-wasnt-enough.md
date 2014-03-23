@@ -22,12 +22,12 @@ Now back to our main topic: I needed matrices. A matrix is basically a two-dimen
   (3 0 0 0)
 )</code></pre>
 
-Well this was pretty easy. Now what if we want to create a matrix dynamically? Update values? Retreive values? And more stuff? This is getting harder. So I created a couple of functions to ease the pain. 
+Well this was pretty easy. Now what if we want to dynamically create a matrix? Update values? Retreive values? And more stuff? This is getting harder. So I created a couple of functions to ease the pain. 
 </section>
 <section id="create">
 ## Creating a matrix [#](#create)
 
-JavaScript allows you to instanciate a new array of `n` cell. This makes creating empty matrices quite easy, you only need a single for-loop like this:
+JavaScript allows you to instanciate a new array of `n` cells. This makes creating empty matrices quite easy, you only need a single for-loop like this:
 <pre class="language-javascript"><code>var matrix = new Array(9);
 for (var i = 0; i &lt; matrix.length; i++) {
   matrix[i] = new Array(9);
@@ -59,8 +59,7 @@ Being able to instanciate an empty matrix is cool but being able to fill it with
 <pre class="language-scss"><code>@function set-entry($matrix, $coords, $value) {
   $x: nth($coords, 1);
   $y: nth($coords, 2);
-  $matrix: set-nth(nth($matrix, $x), $y, $value);
-  $matrix: set-nth($matrix, $x, $matrix);
+  $matrix: set-nth(set-nth(nth($matrix, $x), $y, $value), $x, $matrix);
   @return $matrix;
 }</code></pre>
 
@@ -142,6 +141,8 @@ This function returns a string like this: `" 0 0 0\A  0 0 0\A  0 0 0\A "`. As is
     white-space: pre-wrap                     !important;
   }
 }</code></pre>
+
+Since there are two pseudo-elements (`::after` and `::before`), you can watch for 2 matrices at the same time. Pretty convenient when working on complicated stuff or debugging a matrix.
 </section>
 <section id="what-next">
 ## What's next? [#](#what-next)
@@ -150,11 +151,14 @@ So far we managed to initialize a matrix, set values in it, retreive those value
 
 But what if we want to push things further? While I am not ace with matrices (I never really did extremely well in math), I know someone who is: [Ana Tudor](https://twitter.com/thebabydino). You may be familiar with some of her crazy experiments from CodePen. Anyway, Ana is most certainly a brainiac so she gave me plenty of ideas of functions to ease the pain of having to deal with matrices!
 
-Among other things:
+Among other things, there are a couple of functions to swap values and collection of values of position:
 
 * `swap-entries($matrix, $e1, $e2)`: swaps values `$e1` and `$e2` from `$matrix`
 * `swap-rows($matrix, $r1, $r2)`: swaps rows `$r1` and `$r2` from `$matrix`
 * `swap-columns($matrix, $c1, $c2)`: swaps columns `$c1` and `$c2` from `$matrix`
+
+Some functions to know additional informations on the current matrix:
+
 * `columns($matrix)`: return number of columns in `$matrix`
 * `rows($matrix)`: return number of rows in `$matrix`
 * `is-square($matrix)`: check wether `$matrix` has as many rows as columns
@@ -170,5 +174,5 @@ Also, there is a Compass extension for SassyMatrix now:
 2. Add `require 'SassyMatrix'` in `config.rb`
 3. `@import "SassyMatrix"` in your stylesheet
 
-I'd love to have some feedbacks!
+Also, you can play with SassyMatrix directly at [SassMeister](http://sassmeister.com), so be sure to give it a try. Plus, I'd love to have some feedbacks!
 </section>
