@@ -126,3 +126,9 @@ pre {
 .token.commit_sha1 {
   color: orange;
 }
+.token.command .prompt {
+  color: deepskyblue;
+}
+.token.command .prompt_end {
+  color: hotpink;
+}

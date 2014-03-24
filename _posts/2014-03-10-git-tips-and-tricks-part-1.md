@@ -10,10 +10,10 @@ preview: false
 
 Hi guys! Today, I'm gonna share with you some Git tips & tricks I've already shared with my workmates at Best Of Media. But before even starting let's never forget the more important laws of Git.
 
-**Law #1**: **each commit must let the branch into a stable state**.  
+**Law #1**: **each commit must let the branch into a stable state**.
 You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn't be splitted into several commits. For instance, don't put the HTML, CSS and JS of a new feature in three separate commits: the functionality requires all of them to work so they should all belong to the same commit. If you have to pause your work (time to grab lunch, go home, switch to another thing or whatever), create a temporary commit which will be enhanced later.
 
-**Law #2**: **each commit has only one purpose**.  
+**Law #2**: **each commit has only one purpose**.
 If you see a bug while you're working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.
 
 Ok, now let's start with the real tips & tricks...
@@ -44,7 +44,7 @@ In this image, I'm working on the "myFork" branch and I have modified and/or sta
 
 To install this prompt in a linux environment, just download it somewhere and update your ~/.bashrc file to add this line:
 
-<pre class="language-bash"><code>. /path/to/gitprompt</code></pre>
+<pre class="language-git"><code>. /path/to/gitprompt</code></pre>
 
 That's it. Just re-open your terminal and go to a Git project directory.
 </section>
@@ -69,7 +69,7 @@ A better method is to use the `-S` parameter to search for a specific string: `g
 
 You can add several parameters to reduce the commits related to the search:
 
-<pre class="language-bash"><code>git log -S console.log --author lgiraudel --before="2013-10-01 00:00" --after="2013-06-01 00:00" -- web/js</code></pre>
+<pre class="language-git"><code>git log -S console.log --author lgiraudel --before="2013-10-01 00:00" --after="2013-06-01 00:00" -- web/js</code></pre>
 
 ### With `git blame`
 
@@ -77,7 +77,7 @@ You can add several parameters to reduce the commits related to the search:
 
 It requires a filepath to works:
 
-<pre class="language-bash"><code>$ git blame Gruntfile.js
+<pre class="language-git"><code>$ git blame Gruntfile.js
 15b95608 (Loic 2013-10-08 14:21:51 +0200  1) module.exports = function(grunt) {
 15b95608 (Loic 2013-10-08 14:21:51 +0200  2)
 15b95608 (Loic 2013-10-08 14:21:51 +0200  3)   // Project configuration.
@@ -109,7 +109,7 @@ It's possible to limit the output to specific lines with the parameter `-L`: `gi
 
 In the diff output, each change is displayed like this :
 
-<pre class="language-bash"><code>$ git diff
+<pre class="language-git"><code>$ git diff
 diff --git a/Gruntfile.js b/Gruntfile.js
 index 74d58f9..569449c 100755
 --- a/Gruntfile.js
@@ -134,7 +134,7 @@ To avoid this pollution in the git diff, you can add the `-w` option to omit spa
 
 Let's take an explicite example:
 
-<pre class="language-bash"><code>$ git diff
+<pre class="language-git"><code>$ git diff
 diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
 index b2185a2..887387f 100755
 --- a/web/js/lazy.js
@@ -192,7 +192,7 @@ index b2185a2..887387f 100755
 
 What are the important updates in this piece of code? It's not quite easy to check what have been done with a diff like this. But with the `-w` option:
 
-<pre class="language-bash"><code>$ git diff -w
+<pre class="language-git"><code>$ git diff -w
 diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
 index b2185a2..887387f 100755
 --- a/web/js/lazy.js
