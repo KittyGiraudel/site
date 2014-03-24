@@ -32,7 +32,7 @@ Resolving deltas: 100% (31/31), done.</code></pre>
 
 Then, create a new alias *meld* in Git, for example by adding the following line in the **[alias]** part of you *.git/config* file:
 
-<pre class="language-git"><code>meld = !/home/workspace/git-meld/git-meld.pl</code></pre>
+<pre class="language-bash"><code>meld = !/home/workspace/git-meld/git-meld.pl</code></pre>
 
 Now, you just have to use `git meld` command for your diff:
 
@@ -59,7 +59,7 @@ Then the user has to check the bug again and inform `git bisect`. At each step o
 
 Let's take an example. I'm going to create 20 commits; each commit adding a new line "line number #" in *file.txt*. One of the insertions will have a typing error *"numer"* instead of *"number"*. We are going to try to find the commit which has the typo with `git bisect`.
 
-<pre class="language-git"><code>$ # I create 20 commits here
+<pre class="language-bash"><code>$ # I create 20 commits here
 $ cat file.txt | grep number | wc -l
 19
 $ cat file.txt | grep numer | wc -l
@@ -79,7 +79,7 @@ Git checks my interval and calculates that I will need 3 steps to find the wrong
 
 Now I have to check if the bug is still there or not and inform Git according to my check.
 
-<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1</code></pre>
 
 The bug is still there, so I use `git bisect bad` to tell Git bisect that the current state is still broken.
@@ -94,7 +94,7 @@ Git bisect has reduced the commit interval and checkout the "Commit 5". I will f
 
 The *refs/bisect/bad* reference has been moved to the "Commit 10". I check if the bug is still there or not.
 
-<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
 $ git bisect bad
 Bisecting: 2 revisions left to test after this (roughly 1 step)
@@ -104,7 +104,7 @@ Now Gitg show this:
 
 ![After second git bisect bad](/images/git-tips-and-tricks-part-3__bisect-3.png)
 
-<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 0
 $ git bisect good
 Bisecting: 0 revisions left to test after this (roughly 1 step)
@@ -114,7 +114,7 @@ The bug wasn't there in this step, so I use `git bisect good` instead of `git bi
 
 ![After first git bisect good](/images/git-tips-and-tricks-part-3__bisect-4.png)
 
-<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
 $ git bisect bad
 Bisecting: 0 revisions left to test after this (roughly 0 steps)
@@ -122,7 +122,7 @@ Bisecting: 0 revisions left to test after this (roughly 0 steps)
 
 ![After third git bisect bad](/images/git-tips-and-tricks-part-3__bisect-5.png)
 
-<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
 $ git bisect bad
 7ae5192025b3a96520ee4897bd411ee7c9d0828f is the first bad commit
@@ -194,7 +194,7 @@ If you want to avoid testing manually each step of the bisect process, you can u
 
 The test script is really easy to write for our usecase. For real usecases, it usually requires to use a testing techno like test unit frameworks, BDD frameworks or sanity frameworks.
 
-<pre class="language-git"><code>#/bin/sh
+<pre class="language-bash"><code>#/bin/sh
 
 exit `cat file.txt | grep numer | wc -l`</code></pre>
 
