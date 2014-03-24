@@ -100,6 +100,7 @@ pre {
 	color: #fd971f;
 }
 
+.token.command,
 .token.important {
 	font-weight: bold;
 }
@@ -110,4 +111,18 @@ pre {
 
 .token.variable {
 	color: #f92672; // Monokawaii
+}
+
+.token.string,
+.token.newline {
+  color: green;
+}
+.token.coord {
+  color: darkcyan;
+}
+.token.oldline {
+  color: red;
+}
+.token.commit_sha1 {
+  color: orange;
 }

@@ -13,16 +13,16 @@ Hi guys ! Welcome to the third part of this Git Tips & Tricks series ! This week
 <section id="fix-merge-conflicts-with-graphical-too">
 ## Fix merge conflicts with a graphical tool [#](#fix-merge-conflicts-with-graphical-too)
 
-When you have a merge conflict, you can use a merge tool to resolve conflicts easily. Just use the `git mergetool` command, it will ask you which tool to use.
+Whenever you face a merge conflict, you can use a merge tool to resolve it without too much headache. Just use the `git mergetool` command, it will ask you which tool to use.
 </section>
 <section id="use-graphical-tool-for-diff">
 ## Use a graphical tool for diff [#](#use-graphical-tool-for-diff)
 
-Like `git mergetool` to resolve merge conflicts, there is a `git difftool` to see diff results in a graphical tool. Unfortunately, `git difftool` opens file sequentially: after checking a file, you have to close the diff tool and git will reopen it with the next file.
+Like `git mergetool` to resolve merge conflicts, there is a `git difftool` to see diff results in a graphical tool. Unfortunately, `git difftool` opens files sequentially: after checking a file, you have to close the diff tool so Git can reopen it with the next file.
 
-Since version 1.7.11, Git allows to see diff on a whole directory with the `--dir-diff` parameter and for oldest versions of Git, it's possible to install a [small script](https://github.com/wmanley/git-meld) to do the same thing. To install it:
+Fortunately since version 1.7.11, Git allows to see diff on a whole directory with the `--dir-diff` parameter. If you are using an older version, worry not! It's possible to install a [small script](https://github.com/wmanley/git-meld) to do the same thing:
 
-<pre class="language-bash"><code>/home/workspace $ git clone git@github.com:wmanley/git-meld.git
+<pre class="language-git"><code>/home/workspace $ git clone git@github.com:wmanley/git-meld.git
 Cloning into git-meld...
 remote: Counting objects: 64, done.
 remote: Compressing objects: 100% (34/34), done.
@@ -32,11 +32,11 @@ Resolving deltas: 100% (31/31), done.</code></pre>
 
 Then, create a new alias *meld* in Git, for example by adding the following line in the **[alias]** part of you *.git/config* file:
 
-<pre class="language-bash"><code>meld = !/home/workspace/git-meld/git-meld.pl</code></pre>
+<pre class="language-git"><code>meld = !/home/workspace/git-meld/git-meld.pl</code></pre>
 
 Now, you just have to use `git meld` command for your diff:
 
-<pre class="language-bash"><code>$ git meld HEAD HEAD~4
+<pre class="language-git"><code>$ git meld HEAD HEAD~4
 $ git meld myBranch myOtherBranch</code></pre>
 
 This command will ask you which diff tool to use, then open the whole directory in the tool instead of each file sequencially.
@@ -49,7 +49,7 @@ When a new bug appears in your application, the best way to fix the bug is to fi
 <blockquote class="quote">In computer science, a dichotomic search is a search algorithm that operates by selecting between two distinct alternatives (dichotomies) at each step. It is a specific type of divide and conquer algorithm. A well-known example is binary search.
 &mdash; <a href="http://en.wikipedia.org/wiki/Dichotomic_search">Wikipedia - Dichotomic Search</a></blockquote>
 
-The magic Git command is `git bisect`. This command requires two commits SHA1 (or references) to work: an old commit where the bug is not there and a recent commit where the bug is there. The command will checkout the commit in the middle of the interval of the two commits.
+The magic Git command is `git bisect`. This command requires 2 commits SHA1 (or references) to work: an old commit where the bug is not there and a recent commit where the bug is there. The command will checkout the commit in the middle of the interval of the two commits.
 
 Once checkout of the *middle commit* has been done, user has to test if the bug is still there or not and inform `git bisect` command. According to user answer, `git bisect` will checkout a commit in the middle of the first or the second half of the initial interval.
 
@@ -59,30 +59,32 @@ Then the user has to check the bug again and inform `git bisect`. At each step o
 
 Let's take an example. I'm going to create 20 commits; each commit adding a new line "line number #" in *file.txt*. One of the insertions will have a typing error *"numer"* instead of *"number"*. We are going to try to find the commit which has the typo with `git bisect`.
 
-<pre class="language-bash"><code>$ // I create 20 commits here
+<pre class="language-git"><code>$ # I create 20 commits here
 $ cat file.txt | grep number | wc -l
 19
 $ cat file.txt | grep numer | wc -l
 1</code></pre>
 
-Ok, I have 19 occurences of "number" and 1 occurrence of "number", let's find which commit inserted the typo. To do so, I run `git bisect` with two commits references. I know that the bug was not there 20 commits ago and is present now. So I can pass HEAD and HEAD~20 for my two references.
+Ok, I have 19 occurences of *"number"* and 1 occurrence of *"numer"*, let's find which commit inserted the typo. To do so, I run `git bisect` with two commits references. I know that the bug was not there 20 commits ago and is present now. So I can pass `HEAD` and `HEAD~20` for my two references.
 
-<pre class="language-bash"><code>$ git bisect start HEAD HEAD~20
+<pre class="language-git"><code>$ git bisect start HEAD HEAD~20
 Bisecting: 9 revisions left to test after this (roughly 3 steps)
 [2128ffe8f612d40bc15b617600b6de5f5231d58e] Commit 10</code></pre>
 
-Git checks my interval and calculates that I will need 3 steps to find the wrong commit after current step. The commit in the middle of my interval has been checkout ("Commit 10"). If I look at my *master* branch in gitg, I can see that Git has created two references *refs/bisect/start* and *refs/bisect/good-[...]* next to my HEAD and HEAD~20 commits. It's possible to use `git bisect visualize` or `git bisect view` to see the remaining interval in graphical tool. For a console view, you can use `git bisect view --stat`.
+Git checks my interval and calculates that I will need 3 steps to find the wrong commit after current step. The commit in the middle of my interval has been checkout ("Commit 10"). If I look at my *master* branch in Gitg (or Gitk, Gitx or any Git graphical tool...), I can see that Git has created two references *refs/bisect/start* and *refs/bisect/good-[...]* next to my `HEAD` and `HEAD~20` commits.
+
+*Note: It's possible to use `git bisect visualize` or `git bisect view` to see the remaining interval in graphical tool. For a console view, you can use `git bisect view --stat`.*
 
 ![After starting git bisect](/images/git-tips-and-tricks-part-3__bisect-1.png)
 
 Now I have to check if the bug is still there or not and inform Git according to my check.
 
-<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
 1</code></pre>
 
-The bug is still there, so I use `git bisect bad` to tell `git bisect` that the current state is still broken.
+The bug is still there, so I use `git bisect bad` to tell Git bisect that the current state is still broken.
 
-<pre class="language-bash"><code>$ git bisect bad
+<pre class="language-git"><code>$ git bisect bad
 Bisecting: 4 revisions left to test after this (roughly 2 steps)
 [2c935028965bd60a8fe15d428feb1f3972245e75] Commit 5</code></pre>
 
@@ -92,17 +94,17 @@ Git bisect has reduced the commit interval and checkout the "Commit 5". I will f
 
 The *refs/bisect/bad* reference has been moved to the "Commit 10". I check if the bug is still there or not.
 
-<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
 1
 $ git bisect bad
 Bisecting: 2 revisions left to test after this (roughly 1 step)
 [7ab0afc851dc3cdd1bee795b6bc0656d57497ca5] Commit 2</code></pre>
 
-Now gitg show this:
+Now Gitg show this:
 
 ![After second git bisect bad](/images/git-tips-and-tricks-part-3__bisect-3.png)
 
-<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
 0
 $ git bisect good
 Bisecting: 0 revisions left to test after this (roughly 1 step)
@@ -112,7 +114,7 @@ The bug wasn't there in this step, so I use `git bisect good` instead of `git bi
 
 ![After first git bisect good](/images/git-tips-and-tricks-part-3__bisect-4.png)
 
-<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
 1
 $ git bisect bad
 Bisecting: 0 revisions left to test after this (roughly 0 steps)
@@ -120,7 +122,7 @@ Bisecting: 0 revisions left to test after this (roughly 0 steps)
 
 ![After third git bisect bad](/images/git-tips-and-tricks-part-3__bisect-5.png)
 
-<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+<pre class="language-git"><code>$ cat file.txt | grep numer | wc -l
 1
 $ git bisect bad
 7ae5192025b3a96520ee4897bd411ee7c9d0828f is the first bad commit
@@ -134,7 +136,7 @@ Date:   Mon Feb 17 16:25:48 2014 +0100
 
 Finally, Git bisect gives me the guilty commit. Let's check its content:
 
-<pre class="language-bash"><code>$ git log -1 -p
+<pre class="language-git"><code>$ git log -1 -p
 commit 7ae5192025b3a96520ee4897bd411ee7c9d0828f
 Author: lgiraudel &lt;lgiraudel@mydomain.com>
 Date:   Mon Feb 17 16:25:48 2014 +0100
@@ -156,7 +158,7 @@ Now that I have found the commit which has introduced the typo, I can read its c
 
 Sometimes, it's not possible to check if a bug is still present on a specific commit. In this case, instead of using `git bisect good` or `git bisect bad` commands, you can use `git bisect skip` to ask a commit near the current one.
 
-<pre class="language-bash"><code>$ git bisect start HEAD HEAD~20
+<pre class="language-git"><code>$ git bisect start HEAD HEAD~20
 Bisecting: 9 revisions left to test after this (roughly 3 steps)
 [2128ffe8f612d40bc15b617600b6de5f5231d58e] Commit 10
 $ cat file.txt | grep numer | wc -l
@@ -192,13 +194,13 @@ If you want to avoid testing manually each step of the bisect process, you can u
 
 The test script is really easy to write for our usecase. For real usecases, it usually requires to use a testing techno like test unit frameworks, BDD frameworks or sanity frameworks.
 
-<pre class="language-bash"><code>#/bin/sh
+<pre class="language-git"><code>#/bin/sh
 
 exit `cat file.txt | grep numer | wc -l`</code></pre>
 
 Now, let's just launch `git bisect` with the script:
 
-<pre class="language-bash"><code>$ git bisect start HEAD HEAD~20
+<pre class="language-git"><code>$ git bisect start HEAD HEAD~20
 Bisecting: 9 revisions left to test after this (roughly 3 steps)
 $ git bisect run ./bisect_auto.sh
 running ./bisect_auto.sh
@@ -233,17 +235,17 @@ You can add new files to the last commit with the `git commit --amend` command i
 
 Let's take our 20 commits adding a new line to a text file:
 
-[20 commits to merge into a single one](/images/git-tips-and-tricks-part-3__interactive-rebase.png)
+![20 commits to merge into a single one](/images/git-tips-and-tricks-part-3__interactive-rebase.png)
 
 If my 20 commits haven't been pushed to the remote repository yet, I can consider to merge them into a single commit.
 
 The command to do this:
 
-<pre class="language-bash"><code>$ git rebase -i HEAD~20</code></pre>
+<pre class="language-git"><code>$ git rebase -i HEAD~20</code></pre>
 
 Git will open editor with one line per commit:
 
-<pre class="language-bash"><code>pick b2be46f Commit 1
+<pre class="language-git"><code>pick b2be46f Commit 1
 pick 7d028f1 Commit 2
 pick 90b2d43 Commit 3
 pick b08b7ae Commit 4
@@ -280,7 +282,7 @@ pick bb09305 Commit 20
 
 If I want to merge my 20 commits, I can replace **pick** by **squash** or **s** for each commit except first one.
 
-<pre class="language-bash"><code>pick b2be46f Commit 1
+<pre class="language-git"><code>pick b2be46f Commit 1
 s 7d028f1 Commit 2
 s 90b2d43 Commit 3
 s b08b7ae Commit 4
@@ -319,7 +321,7 @@ If I save the content and close the editor, Git will merge the 20 commits into a
 
 Now I have a single commit which adds 20 lines in the text file, instead of having 20 commits, each one adding only one line:
 
-<pre class="language-bash"><code>$ git log -1 -p
+<pre class="language-git"><code>$ git log -1 -p
 commit f523330f8db0030eadc41836b54713aac2baf18b
 Author: lgiraudel &lt;lgiraudel@mydomain.com>
 Date:   Tue Feb 18 13:25:49 2014 +0100

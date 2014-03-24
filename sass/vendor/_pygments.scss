@@ -18,73 +18,73 @@
 	background: #efefef;
 	border: 1px solid #ddd;
 	border-radius: 3px;
-	
-	line-height: 1.4; 
+
+	line-height: 1.4;
 	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
 	white-space: pre;       /* 2 */
-	
+
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;            /* 3 */
-	
+
 	@include hyphens(none); /* 4 */
 
 	@include breakpoint(small) {
 		@include rem(1.5);  /* 5 */
 	}
 
-	.hll { 
+	.hll {
 		background-color: #ffffcc;
 	}
 	.c,  /* Comment */
 	.cm, /* Comment.Multiline */
-	.c1  /* Comment.Single */ { 
+	.c1  /* Comment.Single */ {
 		color: #999988;
 		font-style: italic;
-	} 
+	}
 	.err { /* Error */
-		color: #a61717; 
+		color: #a61717;
 		background-color: #e3d2d2;
-	} 
+	}
 	.cp, /* Comment.Preproc */
 	.cs  /* Comment.Special */ {
-		color: #999999; 
-		font-weight: bold; 
-		font-style: italic; 
-	} 
+		color: #999999;
+		font-weight: bold;
+		font-style: italic;
+	}
 	.gd  { /* Generic.Deleted */
-		color: #000000; 
-		background-color: #ffdddd; 
-	} 
+		color: #000000;
+		background-color: #ffdddd;
+	}
 	.ge  { /* Generic.Emph */
-		color: #000000; 
-		font-style: italic; 
+		color: #000000;
+		font-style: italic;
 	}
 	.gr, /* Generic.Error */
 	.gt  /* Generic.Traceback */ {
-		color: #aa0000; 
+		color: #aa0000;
 	}
 	.gh, /* Generic.Heading */
-	.bp  /* Name.Builtin.Pseudo */ { 
-		color: #999999; 
+	.bp  /* Name.Builtin.Pseudo */ {
+		color: #999999;
 	}
 	.gi  { /* Generic.Inserted */
-		color: #000000; 
-		background-color: #ddffdd; 
+		color: #000000;
+		background-color: #ddffdd;
 	}
 	.go  { /* Generic.Output */
-		color: #888888; 
+		color: #888888;
 	}
 	.gp, /* Generic.Prompt */
 	.nn  /* Name.Namespace */ {
-		color: #555555; 
+		color: #555555;
 	}
 	.gs  { /* Generic.Strong */
-		font-weight: bold; 
+		font-weight: bold;
 	}
 	.gu  { /* Generic.Subheading */
-		color: #aaaaaa; 
+		color: #aaaaaa;
 	}
 	.o,  /* Operator */
 	.ow, /* Operator.Word */
@@ -94,44 +94,44 @@
 	.kn, /* Keyword.Namespace */
 	.kp, /* Keyword.Pseudo */
 	.kr  /* Keyword.Reserved */ {
-		color: #000000; 
-		font-weight: bold; 
+		color: #000000;
+		font-weight: bold;
 	}
 	.kt, /* Keyword.Type */
 	.nc  /* Name.Class */ {
-		color: #445588; 
-		font-weight: bold; 
+		color: #445588;
+		font-weight: bold;
 	}
 	.nb  { /* Name.Builtin */
-		color: #0086B3; 
+		color: #0086B3;
 	}
 	.nd  { /* Name.Decorator */
-		color: #3c5d5d; 
-		font-weight: bold; 
+		color: #3c5d5d;
+		font-weight: bold;
 	}
 	.ni  { /* Name.Entity */
-		color: #800080; 
-	} 
+		color: #800080;
+	}
 	.ne, /* Name.Exception */
 	.nf, /* Name.Function */
 	.nl  /*  Name.Label */ {
-		color: #990000; 
-		font-weight: bold; 
-	} 
+		color: #990000;
+		font-weight: bold;
+	}
 	.nt  { /* Name.Tag */
-		color: #000080; 
-	} 
+		color: #000080;
+	}
 	.w   { /* Text.Whitespace */
-		color: #bbbbbb; 
-	} 
+		color: #bbbbbb;
+	}
 	.m,  /* Literal.Number */
 	.mf, /* Literal.Number.Float */
 	.mh, /* Literal.Number.Hex */
 	.mi, /* Literal.Number.Integer */
 	.mo, /* Literal.Number.Oct */
 	.il  /* Literal.Number.Integer.Long */ {
-		color: #009999; 
-	} 
+		color: #009999;
+	}
 	.s,  /* Literal.String */
 	.s1, /* Literal.String.Single */
 	.sb, /* Literal.String.Backtick */
@@ -142,20 +142,20 @@
 	.sh, /* Literal.String.Heredoc */
 	.si, /* Literal.String.Interpol */
 	.sx  /* Literal.String.Other */ {
-		color: #d01040; 
-	} 
+		color: #d01040;
+	}
 	.sr { /* Literal.String.Regex */
-		color: #009926; 
-	} 
+		color: #009926;
+	}
 	.ss { /* Literal.String.Symbol */
-		color: #990073; 
-	} 
+		color: #990073;
+	}
 	.nv, /* Name.Variable */
 	.no, /* Name.Constant */
 	.na, /* Name.Attribute */
 	.vc, /* Name.Variable.Class */
 	.vg, /* Name.Variable.Global */
 	.vi  /* Name.Variable.Instance */ {
-		color: #008080;	
-	} 
+		color: #008080;
+	}
 }
