@@ -163,8 +163,8 @@ Some functions to know additional informations on the current matrix:
 * `rows($matrix)`: return number of rows in `$matrix`
 * `is-square($matrix)`: check wether `$matrix` has as many rows as columns
 * `is-diagonal($matrix)`: check wether all values from the main diagonal of `$matrix` are set while all other values are equal to 0
-* `is-lower-triangular($matrix, $flag: null)`: check wether all value below `$matrix` diagonal are equal to 0
-* `is-upper-triangular($matrix, $flag: null)`: check wether all value above `$matrix` diagonal are equal to 0
+* `is-upper-triangular($matrix, $flag: null)`: check wether all value below `$matrix` diagonal are equal to 0
+* `is-lower-triangular($matrix, $flag: null)`: check wether all value above `$matrix` diagonal are equal to 0
 
 ... and much more. And because I needed a place to store all those functions I made a [GitHub repository](https://github.com/HugoGiraudel/SassyMatrix) so if you feel like contributing, be sure to have a glance!
 
