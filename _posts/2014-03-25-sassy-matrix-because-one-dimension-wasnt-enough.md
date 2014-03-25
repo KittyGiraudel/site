@@ -1,15 +1,15 @@
 ---
 title: "SassyMatrix: because one dimension wasn't enough"
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 ---
 <section>
 Sass is much more than just a CSS preprocessor. You can do ton of things you're not supposed to do and won't ever do except in your crazy demos. This is what is amazing about Sass: it can be use for (pseudo-)programming as well!
 
 A while back, I wanted to create a function to calculate the Levenshtein distance between two strings. The [Levenshtein distance](http://en.wikipedia.org/wiki/Levenshtein_distance) is the number of manipulations you need to do to string A in order to have string B. If you want Wikipedia's definition, here it is:
 
-> In information theory and computer science, the Levenshtein distance is a string metric for measuring the difference between two sequences. Informally, the Levenshtein distance between two words is the minimum number of single-character edits (insertion, deletion, substitution) required to change one word into the other.
+<blockquote class="quote">In information theory and computer science, the Levenshtein distance is a string metric for measuring the difference between two sequences. Informally, the Levenshtein distance between two words is the minimum number of single-character edits (insertion, deletion, substitution) required to change one word into the other.</blockquote>
 
 If you wonder whether I succeeded or failed, I succeeded. You can play with [the code](http://sassmeister.com/gist/8334461) directly on SassMeister. So if you ever wanted to calculate the Levenshtein distance between two strings in Sass, now you can. Useless thus essential.
 
