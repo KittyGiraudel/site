@@ -1,7 +1,7 @@
 ---
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 title: "Getting the most out of Sass placeholders"
 ---
 
@@ -10,10 +10,10 @@ The other day I was looking at the source code from [GUFF](http://kenwheeler.git
 
 Anyway, I was looking at the code and to my surprise, Ken was mostly using mixins for common patterns, even when there was no variable involved whatsoever. You probably know it's considered bad practice to use a mixin when you don't need to make your styles varying according to passed arguments. Placeholders are best suited for such a thing. More informations on topic in [this article at SitePoint](http://www.sitepoint.com/sass-mixin-placeholder/).
 
-So I opened an issue to prompt Ken to move away from mixins when there is no need for them, in favor of placeholders and while he was completely willing to do so, he was worried about usage in media queries. Let's pause here for some explanations.
+So [I opened an issue](https://github.com/kenwheeler/guff/issues/1) to prompt Ken to move away from mixins when there is no need for them, in favor of placeholders and while he was completely willing to do so, he was worried about usage in media queries. Let's pause here for some explanations.
 </section>
-<section id="placeholders-and-media-queries">
-## Placeholders and media queries [#](#placeholders-and-media-queries)
+<section id="extend-and-media-queries">
+## @extend and media queries [#](#extend-and-media-queries)
 
 This is something I covered before in [this article about `@extend`](http://www.sitepoint.com/sass-extend-nobody-told-you/) at SitePoint but I'll sum up here so you can follow along if you're not very comfortable with Sass yet.
 
@@ -32,7 +32,7 @@ Meanwhile, this is why Ken didn't use placeholders and stuck to mixins. However 
 
 See what I did? With the title? "Mixin".. Because it's like... Nevermind. I opened a SassMeister gist and started playing around to see if I could come up with a solution. First of all, what I ended up with is not unique. People have done it before me; and I remember seeing frameworks using it already.
 
-My idea was the following: extend the placeholder when possible, else include the mixin. Also, I didn't want to have code duplicates. Whenever I need to make a chance in the code, I don't want to edit both the placeholder and the mixin. There should be only a single place where the code lies.
+My idea was the following: extend the placeholder when possible, else include the mixin. Also, I didn't want to have code duplicates. Whenever I need to make a change in the code, I don't want to edit both the placeholder and the mixin. There should be only a single place where the code lies.
 
 For our example, let's consider a basic need: a [micro-clearfix hack](http://nicolasgallagher.com/micro-clearfix-hack/) mixin. Here is how I decided to tackle things:
 
@@ -50,7 +50,7 @@ For our example, let's consider a basic need: a [micro-clearfix hack](http://nic
 }
 
 %clear {
-  @include clear(false);
+  @include clear($extend: false);
 }</code></pre>
 
 Okay, that looks nasty. Here is what we do: first we define the `clear` mixin. The only parameter from the signature is `$extend`, which is a boolean set to `true` per default.
