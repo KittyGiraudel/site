@@ -1,7 +1,7 @@
 ---
 title: "Pushing Sass placeholders further"
-comments: false
-preview: true
+comments: true
+preview: false
 layout: post
 ---
 <section>
@@ -11,7 +11,7 @@ The trick was to wrap the placeholder extension in a mixin. This mixin accepts a
 
 <pre class="language-scss"><code>@mixin clearfix($extend: true) {
   @if $extend {
-    @extend %clear;
+    @extend %clearfix;
   }
   @else {
     overflow: hidden;
@@ -19,7 +19,7 @@ The trick was to wrap the placeholder extension in a mixin. This mixin accepts a
 }
 
 %clear {
-  @include clear($extend: false);
+  @include clearfix($extend: false);
 }</code></pre>
 
 For more informations about this technique and to understand this post, I suggest you read the article. Don't worry, I'll be there. I'll wait, go ahead.
@@ -27,9 +27,9 @@ For more informations about this technique and to understand this post, I sugges
 <section id="pushing-things-further">
 ## Pushing things further [#](#pushing-things-further)
 
-All good? Fine. This morning, [Matt Stow](https://twitter.com/stowball) suggested a new version where we wouldn't have to create a mixin for every placeholder we want to have. Instead, we would have a single mixin &mdash; let's call it `extend()` &mdash; asking for a placeholder's name, and extending it or including the mixin's content as we did yesterday.
+All good? Fine. This morning, [Matt Stow](https://twitter.com/stowball/status/450917879047651328) suggested a new version where we wouldn't have to create a mixin for every placeholder we want to have. Instead, we would have a single mixin &mdash; let's call it `extend()` &mdash; asking for a placeholder's name, and extending it or including the mixin's content as we did yesterday.
 
-You can fin [Matt's demo on SassMeister]. It looks about this:
+You can fin [Matt's demo on SassMeister](http://sassmeister.com/gist/9910272). It looks about this:
 
 <pre class="language-scss"><code>@mixin extend($placeholder, $extend: true) {
   @if $extend {
@@ -59,14 +59,16 @@ You can fin [Matt's demo on SassMeister]. It looks about this:
   @include extend(hide-text, $extend: false);
 }</code></pre>
 
-This technique is great if you want to redure the number of mixins. Indeed, you have only one `extend()` mixin, and all the placeholders you want. When you create a placeholder, all you have to do is adding its core content in the mixin by adding a `@else if ($class == my-placeholder)` clause.
+This technique is great if you want to reduce the number of mixins. Indeed, you have only one `extend()` mixin, and all the placeholders you want. When you create a placeholder, all you have to do is adding its core content in the mixin by adding a `@else if ($class == my-placeholder)` clause.
 
-However it can quickly become very messy when you have a lot of placeholders to deal with. I can see the `extend()` mixin's core being dozens of lines long which is probably not a good idea. Also, I don't like having a lot of conditional statements, especially since Sass doesn't provide a `switch` directive.
+However it can quickly become very messy when you have a lot of placeholders to deal with. I can see the `extend()` mixin's core being dozens of lines long which is probably not a good idea. Also, I don't like having a lot of conditional statements, especially since [Sass doesn't and won't ever provide a `@switch` directive](https://github.com/nex3/sass/issues/554).
 </section>
 <section id="improving-the-improved-version">
 ## Improving the improved version [#](#improving-the-improved-version)
 
-That being said, I liked Matt's idea so I tried to push things even further! To prevent from having a succession of conditional directives, we need a loop. And to use a loop, we need either a list or a map. What's cool with CSS declarations is they look like key/values from a map. I think you can see where this is going.
+That being said, I liked Matt's idea so I tried to push things even further! To prevent from having a succession of conditional directives, we need a loop. And to use a loop, we need either a list or a map. 
+
+What's cool with CSS declarations is they look like keys/values from a map. I think you can see where this is going.
 
 My idea was to move all the mixin's core to a configuration map so it only deals with logical stuff. Let me explain with an example; what if we had a map like this:
 
@@ -109,12 +111,12 @@ Now that we have a map to loop through, we can slightly rethink Matt's work:
   }
 }</code></pre>
 
-First, we retreive placeholder's content from `$placeholders-map` with `map-get($placeholders-map, $placeholder)`. If the name doesn't exist as a key in the map, we do nothing but warning the developer:
+First, we retreive placeholder's content from `$placeholders-map` with `map-get($placeholders-map, $placeholder)`. If the name doesn't exist as a key in the map (`null`) , we do nothing but warn the developer:
 
-* either he made a typo in the placeholder's name
-* or he didn't set the placeholder in the configuration map
+* either he made a typo in the placeholder's name,
+* or he didn't set the placeholder in the configuration map.
 
-If the placeholder's name has been found but `$extend` is set to `true`, then we extend the actual Sass placeholder. Else if `$extend` is false, we dump the placeholder's content from within the mixin. To do so, we loop through the inner map of declarations. Simply and comfy.
+If the placeholder's name has been found and `$extend` is set to `true`, then we extend the actual Sass placeholder. Else if `$extend` is `false`, we dump the placeholder's content from within the mixin. To do so, we loop through the inner map of declarations. Simple and comfy.
 
 Last but not least, let's not forget to create our Sass placeholders! And this is where there is a huge improvement compared to Matt's version: since we have a map, we can loop through the map, to generate the placeholders. We don't have to do it by hand!
 
@@ -122,7 +124,7 @@ Last but not least, let's not forget to create our Sass placeholders! And this i
 // Instanciating a placeholder everytime
 // With $extend set to false so it dumps 
 // mixin's core in the placeholder's content
-@each $placeholder, $content in $extend-map {
+@each $placeholder, $content in $placeholders-map {
   %#{$placeholder} {
     @include extend($placeholder, $extend: false);
   }
@@ -141,7 +143,9 @@ While the code does the job well, I am not sure how I feel about this. To be per
 
 First, there is a big problem with this version: since we are relying on the fact CSS declarations can be stored as keys/values in a Sass map, it makes it impossible to use nesting (including `&`), inner mixins, or `@extend` in the mixin core. Thus, it does the job for simple placeholders as we've seen in our demo, but wouldn't work for more complex pieces of code.
 
-Secondly, I don't like storing CSS declarations in a map, no matter how clever it is. In the end, I feel like it adds too much code complexity. Someone once told me it's like a preprocessor in a preprocessor. I don't think it's worth the pain.
+<blockquote class="pull-quote--right">I love playing with Sass syntax.</blockquote>
+
+Secondly, I don't like storing CSS declarations in a map, no matter how clever it is. In the end, I feel like it adds too much code complexity. [Someone once told me it's like a preprocessor in a preprocessor](http://codepen.io/HugoGiraudel/details/yGFri#comment-id-25055). I don't think it's worth the pain.
 
 That being said, it's pretty cool as experimental stuff. Playing around Sass' syntax has always been one of the things I love the most about this preprocessor. Hence this blog post, and the pretty crazy demo. Anyway, I hope you liked it, and thanks Matt!
 </section>
