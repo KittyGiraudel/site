@@ -1,5 +1,5 @@
 ---
-title: "SassyMatrix: because one dimension wasn't enough"
+title: "SassyMatrix: because one dimension wasn\'t enough"
 layout: post
 comments: true
 preview: false
