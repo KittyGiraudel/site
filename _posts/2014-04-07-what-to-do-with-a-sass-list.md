@@ -48,7 +48,7 @@ Let me try with a practical example: at work, we display an image background dir
 // 1. `.zipcode-*` class on body
 // 2. Header only 
 // 3. Home page
-@each $zip in $zipcodes {
+@each $zip in $zips {
   .zipcode-#{$zip} { // 1
     .header { // 2
       background-image: url('../bundles/images/backgrounds/#{$zip}-small.jpg');
