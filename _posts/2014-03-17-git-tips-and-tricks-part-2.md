@@ -1,5 +1,5 @@
 ---
-title: "Git tips & tricks - Part 2"
+title: "Git tips \& tricks - Part 2"
 preview: false
 comments: true
 layout: post
