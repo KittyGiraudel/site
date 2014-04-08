@@ -1,5 +1,5 @@
 ---
-title: "Git tips \& tricks - Part 1"
+title: "Git tips and tricks - Part 1"
 layout: post
 guest: "Loïc Giraudel"
 comments: true
