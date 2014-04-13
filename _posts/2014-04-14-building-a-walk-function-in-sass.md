@@ -20,11 +20,11 @@ Pretty much like the `array_walk` function actually. Here is the syntax:
 
 <pre class="language-scss"><code>walk(list $list, function $function, argList $args...)</code></pre>
 
-The first argument is the list you are walking through. The second argument is the function you want to call to each item from the list. Any argument after those 2 are optional and will be passed as extra arguments to the function call. 
+The first argument is the list you are walking through. The second argument is the function you want to call to each item from the list. Any argument after those 2 are optional and will be passed as extra argument to the function call. 
 
 This is why we add `...` to the `$args` parameter; because it is an `argList`. To put it simple: all arguments passed to the function (as many as you want) starting from the index of `$args` will be packaged as a list. Then, you can access them like regular list item with `nth()` for instance.
 
-Let's say you have a list of colors you want to revert, in order to get complementary colors. 
+For example let's say you have a list of colors you want to revert, in order to get complementary colors. 
 
 <pre class="language-scss"><code>$colors: hotpink deepskyblue firebrick;
 $complementary-colors: walk($colors, complementary);
@@ -32,7 +32,7 @@ $complementary-colors: walk($colors, complementary);
 
 As you can see, this is pretty straight-forward. The first argument is the list of colors (`$colors`) and the second argument is the name of the function you want to apply to each item from the list. 
 
-Now le's move on to something slightly more complicated, with an extra parameter. Shall we? Instead of finding the complementary color of each item from the list, let's lighten all those colors.
+Now let's move on to something slightly more complicated, with an extra parameter. Shall we? Instead of finding the complementary color of each item from the list, let's lighten all those colors.
 
 <pre class="language-scss"><code>$colors: hotpink deepskyblue firebrick;
 $complementary-colors: walk($colors, lighten, 20%);
@@ -53,7 +53,7 @@ Okay, let's move on to the code now. Surprisingly enough, the function core is e
   @return $list;
 }</code></pre>
 
-Let's have a little recap about both `call` and `set-nth` so you can fully understand what's going on here. First, `set-nth` is a function added in Sass 3.3, aiming at updating a specific value from a list. The first argument is the list, the second is the index to be updated and the first the new value.
+Let's have a little recap about both `call` and `set-nth` so you can fully understand what's going on here. First, `set-nth` is a function added in Sass 3.3, aiming at updating a specific value from a list. The first argument is the list, the second is the index to be updated and the third the new value.
 
 I intentionally choosed to use `set-nth()` here and not to build a new list from scratch because I feel like it makes more sense: we are not creating a new list, we are simply updating values. Also I think it's faster but I'm not quite sure about that.
 
