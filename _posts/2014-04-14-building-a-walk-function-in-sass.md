@@ -63,7 +63,7 @@ Back to our function now, here it what's going on: we loop through the list and 
 
 1. Updating value of `$list` at index `1` with the result of `call(hotpink, lighten, 20%)` (`==lighten(hotpink, 20%`)
 1. Updating value of `$list` at index `2` with the result of `call(deepskyblue, lighten, 20%)` (`==lighten(deepskyblue, 20%`)
-1. Updating value of `$list` at index `3` with the result of `call(firebrick, lighten, 20%)` (`==lighten(hofirebricktpink, 20%`)
+1. Updating value of `$list` at index `3` with the result of `call(firebrick, lighten, 20%)` (`==lighten(firebrick, 20%`)
 1. Returning `$list`
 
 Simple, isn't it?
