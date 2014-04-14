@@ -1,8 +1,8 @@
 ---
 title: "Building a walk function in Sass"
 layout: post
-comments: false
-preview: true
+comments: true
+preview: false
 ---
 <section>
 In the last couple of weeks, I have done some decent amount of code reviewing for various Sass frameworks and I have seen quite  clever things. Meanwhile, I keep experimenting with Sass to find cool stuff, and I think this one will get frameworks' maintainers interested.
