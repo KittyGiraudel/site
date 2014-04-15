@@ -129,7 +129,7 @@ Because it does the work well and is quite smart, I kept this as is. However I d
     background: $color;
   }
 
-  [data-rate='#{$i + 0.5}'] .star-#{$i + 1} {
+  [data-rating='#{$i + 0.5}'] .star-#{$i + 1} {
     border-left-color: $color;
   }
 }</code></pre>
@@ -138,9 +138,9 @@ This may look a little complicated but I can assure you it is actually quite sim
 
 Then we run the inner loop. As we've seen previously, the inner loop goes from 1 through `$i`, and it doesn't do much. The only thing that is going on inside the inner loop is appending a piece of selector to the selector list.
 
-Once we get off the inner loop, we can use the generated selector to dump the rules. For instance, if `$i = 2`, `$selector` equals `[data-rate^='2'] .star-1, [data-rate^='2'] .star-2`. It succeeds in targeting stars 1 and 2 in ratings going from 1 to 2.5.
+Once we get off the inner loop, we can use the generated selector to dump the rules. For instance, if `$i = 2`, `$selector` equals `[data-rating^='2'] .star-1, [data-rating^='2'] .star-2`. It succeeds in targeting stars 1 and 2 in ratings going from 1 to 2.5.
 
-Last but not least, we need to deal with half-ratings. For this, we only have to dump a selector specifically targeting half ratings to have a result like this: `[data-rate='2.5'] .star-3`. Not that hard, is it?
+Last but not least, we need to deal with half-ratings. For this, we only have to dump a selector specifically targeting half ratings to have a result like this: `[data-rating='2.5'] .star-3`. Not that hard, is it?
 
 ### Dealing with 5-stars ratings
 
@@ -154,7 +154,7 @@ There are 2 things that are different in this case:
 Then dealing with this case is as easy as writing:
 
 <pre class="language-scss"><code>$color: stars-color(5);
-[data-rate='5'] i {
+[data-rating='5'] i {
   border-color: $color;
   background: $color;
 }</code></pre>
