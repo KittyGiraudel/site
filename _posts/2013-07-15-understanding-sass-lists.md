@@ -49,7 +49,7 @@ $list: "item-1.1" "item-1.2" "item-1.3",
        "item-2.1" "item-2.2" "item-2.3",
        "item-3.1" "item-3.2" "item-3.3";</code></pre>
 <p><strong>You can ommit braces</strong> (as you can guess from the previous example). You can define a non-empty list without any braces if you feel so. This is because -contrarily to what most people think- <a href="https://github.com/nex3/sass/issues/837#issuecomment-20429965">braces are not what create lists</a> in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.</p>
-<p class="note">Note: This is the theory. I've noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we'll dig into this in anotger blog post.</p>
+<p class="note">Note: This is the theory. I've noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we'll dig into this in another blog post.</p>
 <blockquote class="pull-quote--right">Manipulating 5+ nested lists is a pain in the ass.</blockquote>
 <pre class="language-scss"><code>$list: "item-1", "item-2", "item-3";</code></pre>
 <p><strong>Indexes start at 1, not 0.</strong> This is one of the most disturbing once you start experimenting with Sass lists. Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).</p>
