@@ -1,0 +1,1055 @@
+
+
+<rss version="2.0">
+	<channel>
+		<title>HugoGiraudel.com</title>
+		<link>http://hugogiraudel.com</link>
+		<description>I write about Sass.</description>
+		<language>en</language>
+		<copyright>2014</copyright>
+		
+			
+<item>
+	<title>Feedback on another conf</title>
+	
+	<link>http://hugogiraudel.com/article/2014-06-02-feedbacks-feweb</link>
+	<guid>/article/2014-06-02-feedbacks-feweb</guid>
+	
+	
+	<pubDate>Mon, 02 Jun 2014 00:00:00 GMT</pubDate>
+	<description>
+&lt;p&gt;A couple of weeks ago, I have been invited by the &lt;a href=&quot;http://www.lafeweb.be/&quot;&gt;FeWeb&lt;/a&gt; (which stands for &lt;em&gt;La fédération des métiers du web&lt;/em&gt;, literally &lt;em&gt;Web professions Federation&lt;/em&gt;) to talk about Sass at &lt;a href=&quot;http://www.co-station.com/&quot;&gt;Co.Station&lt;/a&gt; in Bruxelles, Belgium.&lt;/p&gt;
+
+&lt;figure class=&quot;figure&quot;&gt;
+&lt;img src=&quot;/images/feedbacks-feweb__feweb-costation.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;FeWeb's event, hosted by Co.Station&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Obviously I accepted and took a plane to travel 900 kilometers from home with my dearest in order to give a talk about Sass architecture. Hence a short blog post to relate how it went.&lt;/p&gt;
+
+&lt;p&gt;Well, it went very well! Except for the weather which was pretty ugly and the fact that my girlfriend got her phone stolen. Anyway, the trip was worth it and we enjoyed Belgium. &lt;/p&gt;
+
+&lt;h2&gt;The place&lt;/h2&gt;
+
+&lt;p&gt;The Co.Station is a great spot in the heart of Bruxelles, aiming at helping startups, associations and business growing. In this case, Co.Station was hosting FeWeb&amp;#8217;s event.&lt;/p&gt;
+
+&lt;p&gt;The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But&amp;#8230; it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor guys who had to stand up for almost 2 hours, it sucks.&lt;/p&gt;
+
+&lt;figure class=&quot;figure&quot;&gt;
+&lt;img src=&quot;/images/feedbacks-feweb__room.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Crowded room is crowded.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;The talks&lt;/h2&gt;
+
+&lt;p&gt;FeWeb&amp;#8217;s events are usually composed of 2 successive talks, then a couple of beers (remember it&amp;#8217;s in Belgium). Thus, &lt;a href=&quot;https://twitter.com/thierrymichel&quot;&gt;Thierry Michel&lt;/a&gt; was giving an introduction to Sass and Compass, then I talked about architecture and components. &lt;/p&gt;
+
+&lt;figure class=&quot;figure&quot;&gt;
+&lt;img src=&quot;/images/feedbacks-feweb__speakers.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Thierry and I on stage.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Both talks have received positive feedbacks so I guess we did the job well. However, I was kind of nervous at first so I was speaking pretty fast, making my session a couple of minutes shorter than expected.&lt;/p&gt;
+
+&lt;p&gt;Also when tensed I tend to speak in low voice, certainly as an attempt to calm things down. Because of that, I had to hold the mic in my hand during the whole presentation. Trust me, figuring out the distance between the mouth and the mic every single time you say something is definitely not the kind of things you want to think about. &lt;/p&gt;
+
+&lt;p&gt;Anyway, I eventually went through the whole session and ended my talk peacefully. The audience was receptive and we got some interesting questions (what about post-processors, Autoprefixer&amp;#8230;), so it was pretty cool.&lt;/p&gt;
+
+&lt;figure class=&quot;figure&quot;&gt;
+&lt;img src=&quot;/images/feedbacks-feweb__talk.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Because LEGOs are cool.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;Slides&lt;/h2&gt;
+
+&lt;blockquote class=&quot;pull-quote--right&quot;&gt;Not disappointed by &lt;a href=&quot;https://slides.com&quot;&gt;Slid.es&lt;/a&gt;.&lt;/blockquote&gt;
+
+&lt;p&gt;Once again I have made my slides with &lt;a href=&quot;https://slides.com&quot;&gt;Slid.es&lt;/a&gt;, the CMS for &lt;a href=&quot;http://lab.hakim.se/reveal-js/#/&quot;&gt;Reveal.js&lt;/a&gt;. I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF&amp;#8230;). I also used the &lt;em&gt;presentation mode&lt;/em&gt; from Slid.es, which is great. Absolutely not disappointed.&lt;/p&gt;
+
+&lt;p&gt;I won&amp;#8217;t walk through my slides like I did for my talk at &lt;a href=&quot;http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/&quot;&gt;KiwiParty 2013&lt;/a&gt; because in this case it is less focused on code. Plus, I think they are better designed than the previous one.&lt;/p&gt;
+
+&lt;p&gt;Anyway, here they are (in French).&lt;/p&gt;
+
+&lt;iframe src=&quot;//slides.com/hugogiraudel/sass-une-architecture-composee/embed&quot; width=&quot;100%&quot; height=&quot;420&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;A warn thank to the FeWeb for their great welcome, the bear and the fries. And if you &amp;mdash; whoever you are &amp;mdash; were here on May 8th, thank you. If you were not, let&amp;#8217;s hope we meet at another event. &lt;/p&gt;
+</description>
+</item>
+
+<item>
+	<title>Compass or Bourbon</title>
+	
+	<link>http://www.sitepoint.com/compass-or-bourbon-sass-frameworks/</link>
+	<guid>http://www.sitepoint.com/compass-or-bourbon-sass-frameworks/</guid>
+	
+	
+	<pubDate>Fri, 30 May 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+<item>
+	<title>How I came to write for the web</title>
+	
+	<link>http://hugogiraudel.com/article/2014-05-26-how-i-came-to-write-for-the-web</link>
+	<guid>/article/2014-05-26-how-i-came-to-write-for-the-web</guid>
+	
+	
+	<pubDate>Mon, 26 May 2014 00:00:00 GMT</pubDate>
+	<description>
+&lt;p&gt;Today, no cool Sass stuff or neat CSS trick. I&amp;#8217;d like to address a slightly more personnal topic people keep asking me about: how I came up to write for big online magazine (SitePoint, Tuts+, Codrops&amp;#8230;). It&amp;#8217;s true I have been very active lately and some people want to know how I can keep up with such a large amount of write ups. Well, if you happen to be one of those people, let me tell you my story (yes, you might find it boring!).&lt;/p&gt;
+
+&lt;p&gt;First of all, let me introduce with a little bit of background: as far as I can remember, I always liked writing. Back in high-school, I spent most French lessons writing prose or short stories. A few years later (late 2010), I launched a blog (in French) about World of Warcraft that got quite popular by the time. This was mostly due to the fact I published about 1000 words a day, and this during almost a year.&lt;/p&gt;
+
+&lt;p&gt;Long story short, you&amp;#8217;d say I&amp;#8217;m a writer. Ironically, I have never enjoyed reading. You would think someone who likes to write also likes to read but that is not my case. I don&amp;#8217;t like reading. Especially books. I find it boring. Enough back story, let&amp;#8217;s move on.&lt;/p&gt;
+
+&lt;h2&gt;How did it all started&lt;/h2&gt;
+
+&lt;p&gt;In this section, I&amp;#8217;ll tell you how I went from doing CSS drawings on CodePen, to writing for SitePoint, CSS-Tricks and The Sass Way in about a year and a half. If you really just want to know how I write my articles, feel free to skip to the next section. &lt;/p&gt;
+
+&lt;h3&gt;Codrops&lt;/h3&gt;
+
+&lt;p&gt;During the summer vacations from 2012, I got contacted by &lt;a href=&quot;https://twitter.com/o_telho&quot;&gt;Pedro Botelho&lt;/a&gt; one of the two folks behind &lt;a href=&quot;http://tympanus.net/codrops/&quot;&gt;Codrops&lt;/a&gt; (the other one being the awesome &lt;a href=&quot;https://twitter.com/crnacura&quot;&gt;Manoela Ilic&lt;/a&gt;, whom &lt;a href=&quot;http://hugogiraudel.com/2013/03/11/interview-manoela-ilic/&quot;&gt;I interviewed later on this very blog&lt;/a&gt;) to know if I&amp;#8217;d be interested in writing for Codrops. I was mostly unknown (not that I am specially popular today) at that time and I spent most of my free time doing silly CSS demos on CodePen.&lt;/p&gt;
+
+&lt;p&gt;Obviously I said &lt;em&gt;yes&lt;/em&gt; and got to write quite &lt;a href=&quot;http://tympanus.net/codrops/author/hugogiraudel/&quot;&gt;a couple of posts for Codrops&lt;/a&gt; between September 2012 and July 2013, including some pretty popular ones like &lt;a href=&quot;http://tympanus.net/codrops/2013/07/17/troubleshooting-css/&quot;&gt;Troubleshooting CSS&lt;/a&gt;. After a dozen articles over a year, I realized Codrops was looking for design-related posts while I felt more technic-focused. As a matter of facts, my last posts at Codrops were quite technical (dealing with CSS counters, &lt;code&gt;clip()&lt;/code&gt;, click events&amp;#8230;).&lt;/p&gt;
+
+&lt;h3&gt;CSS-Tricks&lt;/h3&gt;
+
+&lt;p&gt;At that time (mid 2013), &lt;a href=&quot;https://twitter.com/chriscoyier&quot;&gt;Chris Coyier&lt;/a&gt; from &lt;a href=&quot;http://css-tricks.com&quot;&gt;CSS-Tricks&lt;/a&gt; was looking for authors to help him complete the Almanac, an alternative to MDN Docs on CSS selectors and properties. Being a big fan of Chris&amp;#8217; work for years now, I have been helping him as much as I could, especially with a few interesting entries like &lt;a href=&quot;http://css-tricks.com/almanac/properties/g/grid/&quot;&gt;CSS Grid System&lt;/a&gt;, &lt;a href=&quot;http://css-tricks.com/snippets/css/a-guide-to-flexbox/&quot;&gt;A Complete Guide to Flexbox&lt;/a&gt; and a few other cool properties as well. &lt;/p&gt;
+
+&lt;p&gt;I still keep helping Chris updating the Almanac whenever I can. I recently added a couple entries, and we will soon update the Flexbox guide if Chris is still willing me to do so. I&amp;#8217;m learning a lot and it&amp;#8217;s a real pleasure to contribute to this famous site that is CSS-Tricks.&lt;/p&gt;
+
+&lt;h3&gt;David Walsh&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/davidwalshblog&quot;&gt;David Walsh&lt;/a&gt; and Chris being good buddies, David asked me if I&amp;#8217;d be interested in writing a little article about Sass for his blog as a guest author (July 2013). A couple of days later, he released &lt;a href=&quot;http://davidwalsh.name/future-sass&quot;&gt;Looking into the Future of Sass&lt;/a&gt; where I explained what&amp;#8217;s coming up in Sass 3.3 which was on the tracks back then. Even today, this article is still getting linked to as an alternative to &lt;a href=&quot;http://sass-lang.com/documentation/file.SASS_CHANGELOG.html&quot;&gt;Sass&amp;#8217; official changelog&lt;/a&gt;. Needless to say you should check the changelog rather than external articles. ;)&lt;/p&gt;
+
+&lt;p&gt;On the very beginning of 2014, I gathered my courage and let David release another guest post from me, this time about JavaScript. Yes, you read right! I explained how I built &lt;a href=&quot;http://davidwalsh.name/crud-javascript-class&quot;&gt;a CRUD JavaScript class&lt;/a&gt;. I spent a couple of days working on this piece of code and that was kind of a big deal for a JavaScript newbie like me to talk about it, especially at David Walsh&amp;#8217;s which is well known for his JS skills. Thankfully I&amp;#8217;ve got some positive feedbacks, so it&amp;#8217;s all good!&lt;/p&gt;
+
+&lt;h3&gt;The Sass Way&lt;/h3&gt;
+
+&lt;p&gt;A few months after my first article for David Walsh (October 2013), I think &lt;a href=&quot;https://twitter.com/johnwlong&quot;&gt;John W. Long&lt;/a&gt; from &lt;a href=&quot;http://thesassway.com&quot;&gt;The Sass Way&lt;/a&gt; asked me whether I&amp;#8217;d like publishing a write up at The Sass Way. The Sass Way being one of the most central places for Sass related stuff, I jumped on the occasion and released a completely silly post about &lt;a href=&quot;http://thesassway.com/advanced/math-sequences-with-sass&quot;&gt;Math sequences in Sass&lt;/a&gt;. While this was very interesting from a strictly technical point of view, it had absolutely no point whatsoever &amp;mdash; making the article completely useless.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, John gave me some extra opportunities to release more interesting articles on The Sass Way, including a cool one about &lt;a href=&quot;http://thesassway.com/advanced/how-to-programtically-go-from-one-color-to-another-in-sass&quot;&gt;how to programmatically go from one color to another&lt;/a&gt; which is &amp;mdash; in my opinion &amp;mdash; quite neat, especially if you&amp;#8217;re interested in how colors work.&lt;/p&gt;
+
+&lt;h3&gt;SitePoint&lt;/h3&gt;
+
+&lt;p&gt;In late January 2014, I got contacted by &lt;a href=&quot;https://twitter.com/ImpressiveWebs&quot;&gt;Louis Lazaris&lt;/a&gt; (who was just named at a new position at &lt;a href=&quot;http://sitepoint.com&quot;&gt;SitePoint&lt;/a&gt;) if I wanted to fill their CSS Section with a couple of Sass articles. Louis told me SitePoint at that time was willing to provide some content about CSS preprocessors, so he thought about me (thanks Louis!).&lt;/p&gt;
+
+&lt;p&gt;The day after, I sent him a first article, ready to roll. And in the week-end that followed, I sent him 2 or 3 new write ups about Sass. At a point where my articles were not even passing by the &lt;em&gt;Approved topics&lt;/em&gt; and &lt;em&gt;Work in progress&lt;/em&gt; on Trello but directly popping into &lt;em&gt;Ready for edit&lt;/em&gt;. For about 3 months now, SitePoint has been releasing an article from me every week and I have to say I am very glad to be part of this.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m busting my ass to provide interesting and fresh Sass content (when it&amp;#8217;s not too technical, in which case I keep it for my own blog). And it&amp;#8217;s a really great adventure so I hope months from now, I&amp;#8217;ll still be giving them food for thoughts.&lt;/p&gt;
+
+&lt;h3&gt;Webdesign Tuts+&lt;/h3&gt;
+
+&lt;p&gt;Finally, a few weeks ago (March 2014) Ian Yates from &lt;a href=&quot;http://webdesign.tutsplus.com&quot;&gt;Webdesign Tuts+&lt;/a&gt; got in touch with me to know if I could write a little something about Sass. A round of applause for Tuts+ because for once, someone contacted to ask me to write about something very specific, and not a &lt;em&gt;about Sass&lt;/em&gt; or &lt;em&gt;about CSS&lt;/em&gt;. In this case, Ian asked me to talk about &lt;a href=&quot;design.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996&quot;&gt;error handling in Sass&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This led to the fastest turn around in history because the same day I was able to hand over the finished article to Ian, which could be released on Webdesign Tuts+ the day after. So in about 24 hours, we went from not knowing each other, to having released an article on the site. That being said, it was fast because he knew right away what he wanted from me (and because I had some free time that day).&lt;/p&gt;
+
+&lt;p&gt;I really enjoyed how things went the first time so I hope Webdesign Tuts+ and I will keep working together in the future. &lt;/p&gt;
+
+&lt;h3&gt;Hugogiraudel.com&lt;/h3&gt;
+
+&lt;p&gt;Last but not least, shortly after starting writing for Codrops, in November 2012, I launched my own blog to write about experiments and stuff. I&amp;#8217;ve been writing almost once a week since then, and plan on keep doing so for as long as I can.&lt;/p&gt;
+
+&lt;h2&gt;About actually &lt;em&gt;writing&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;So far, I have talked about all the places I&amp;#8217;ve been writing for, but not really &lt;em&gt;how&lt;/em&gt; I write. As you may have noticed, this is usually getting fast: in most cases a couple of days after establishing contact, the first article is out. Apart from the fact I have some free time during the evening where I can write, there are a couple of other reasons. &lt;/p&gt;
+
+&lt;h3&gt;I know my topic&lt;/h3&gt;
+
+&lt;p&gt;Things are easier when you know what you&amp;#8217;re talking about. Have you ever tried to explain to someone something you barely know? It hurts. You stutter. You make sentences that don&amp;#8217;t always make sense. You take time to think before answering&amp;#8230; It takes time and effort. When you know your topic, it&amp;#8217;s getting simple. You don&amp;#8217;t have to &lt;em&gt;think carefully before you speak&lt;/em&gt;. It comes naturally.&lt;/p&gt;
+
+&lt;p&gt;Remember the article about JavaScript for David Walsh? That was longer. Some Almanac entries for Chris Coyier took me days to write, especially the one about CSS Grid. But when I write about Sass (&lt;a href=&quot;https://gist.github.com/HugoGiraudel/8332582&quot;&gt;which is usually the case&lt;/a&gt;), it&amp;#8217;s getting very easy. Except for the little things I still don&amp;#8217;t get about Sass, I&amp;#8217;m okay with talking about it for hours.&lt;/p&gt;
+
+&lt;h3&gt;I &lt;em&gt;one-shot&lt;/em&gt; articles&lt;/h3&gt;
+
+&lt;p&gt;I never ever start an article without finishing it. Even this one you are currently reading. I wrote it in a single shot. If I leave an unfinished article, it will remain unfinished and won&amp;#8217;t ever be released. I still have a draft from March 2013 which was meant to be an article about table design for Codrops.&lt;/p&gt;
+
+&lt;p&gt;I just can&amp;#8217;t get back to an article I started. This might look incapacitating but I see it as a strength. Writing an article from the beginning to the end in a single session helps me keeping track of my thoughts and having a structured meaningful result. &lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve seen friends working days on an article before delivering / releasing it. God, that would kill me. From start to end, every time. One shot. &lt;/p&gt;
+
+&lt;h3&gt;I&amp;#8217;m a fast typer&lt;/h3&gt;
+
+&lt;p&gt;This might seem silly, but I am a very fast typer and this is not trivial when writing a lot. I usually sit on a comfortable 80 to 100 words per minute while being able to hit up to 120 words per minute with &lt;a href=&quot;https://soundcloud.com/janskibeeeats/mini-montana&quot;&gt;appropriate music in the ears&lt;/a&gt;. &lt;/p&gt;
+
+&lt;blockquote class=&quot;pull-quote--right&quot;&gt;There has always been a computer at home.&lt;/blockquote&gt;
+
+&lt;p&gt;I grew up without a TV but as far as I can remember, there has always been a computer at home. When I was 3, my brother put me on Street Fighter, and I was smashing the keyboard with my little fingers without understanding much what I was doing. Before I was even 10, I started playing online. Which means typing to talk with people.&lt;/p&gt;
+
+&lt;p&gt;A few years later in secondary school, we had typing lessons to help us use a keyboard; it was already earned. I remember finding a website where you had to type the alphabet as fast as you can. Then, there was a scoreboard displaying best scores. After a couple of days of practice, I managed to type the entire latin alphabet in about &lt;em&gt;2-3 seconds&lt;/em&gt;. As silly as this exercise may be, it helped a lot rushing a couple of keys in a short amount of time.&lt;/p&gt;
+
+&lt;p&gt;Anyway, being a fast typer is part how I am able to release as many articles. Writing a post doesn&amp;#8217;t take forever because I can type almost as fast as I speak.&lt;/p&gt;
+
+&lt;h2&gt;Writing process&lt;/h2&gt;
+
+&lt;p&gt;Well, it involves Markdown, for sure. If you ask me about the greatest improvement regarding writing for the web, I&amp;#8217;d say it&amp;#8217;s Markdown. Being able to have structured content that doesn&amp;#8217;t hurt reading is essential. Add a syntax highlighter and you got the holy grail of web writing. I&amp;#8217;m not sure I&amp;#8217;d be writing that much if it wasn&amp;#8217;t for Markdown.&lt;/p&gt;
+
+&lt;blockquote class=&quot;pull-quote--right&quot;&gt;Markdown is the best way to write for the web.&lt;/blockquote&gt;
+
+&lt;p&gt;Anyway, I usually open a &lt;a href=&quot;http://gist.github.com&quot;&gt;Github Gist&lt;/a&gt; or Sublime Text and start writing in Markdown mode. As I&amp;#8217;ve explained in the previous section, once I&amp;#8217;ve started I don&amp;#8217;t stop until the end. It usually takes no more than a couple of minutes or dozens of minutes depending on the article&amp;#8217;s length. If everything is not perfect at first, it&amp;#8217;s no big deal. What&amp;#8217;s important is I have a backbone.&lt;/p&gt;
+
+&lt;p&gt;Once I&amp;#8217;m done, I proof read the whole thing as if I were discovering it for the first time. I fix typos and try to level up my English so it&amp;#8217;s not too much pain for the reader (a.k.a &lt;em&gt;you&lt;/em&gt;) to read. It&amp;#8217;s very unusual I have to re-write a whole section but it happens. In this case, I just fill the blanks or update as needed.&lt;/p&gt;
+
+&lt;p&gt;When the content seems fine, I have another read to see if I can add extras which would make the article more appealing: quotes, images, demos (usually as a Pen or a SassMeister Gist). If there is room for those, I add them.&lt;/p&gt;
+
+&lt;p&gt;And finally, I hand it to the site aiming at publishing it (e.g. SitePoint) or schedule it for my own blog.&lt;/p&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;There we are folks; you know everything! There is no magic. I just love what I do thus I enjoy writing about it. That&amp;#8217;s why I&amp;#8217;ve been able to write about 50 articles since the beginning of the year. &lt;/p&gt;
+
+&lt;p&gt;When I got some free time and a cool little idea in the back of my head, I open GitHub Gist, switch to Markdown and start typing. A couple of minutes later, the article is done, and I only have to proof read.&lt;/p&gt;
+
+&lt;p&gt;Of course it is time consuming. Yet, I try to find some time to write, because I really enjoy it. That&amp;#8217;s all. If you want to write, you just have to love what you do.&lt;/p&gt;
+</description>
+</item>
+
+<item>
+	<title>Managing responsive breakpoints in Sass</title>
+	
+	<link>http://www.sitepoint.com/managing-responsive-breakpoints-sass/</link>
+	<guid>http://www.sitepoint.com/managing-responsive-breakpoints-sass/</guid>
+	
+	
+	<pubDate>Sun, 25 May 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+<item>
+	<title>A new Sass mixin for offsets</title>
+	
+	<link>http://hugogiraudel.com/article/2014-05-19-new-offsets-sass-mixin</link>
+	<guid>/article/2014-05-19-new-offsets-sass-mixin</guid>
+	
+	
+	<pubDate>Mon, 19 May 2014 00:00:00 GMT</pubDate>
+	<description>
+&lt;p&gt;About a year ago, I wrote about how I managed to come up with what I think is &lt;a href=&quot;http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/&quot;&gt;a clever Sass mixin to deal with offset positioning&lt;/a&gt; in CSS, also known as &lt;code&gt;top&lt;/code&gt;, &lt;code&gt;right&lt;/code&gt;, &lt;code&gt;bottom&lt;/code&gt; and &lt;code&gt;left&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;The mixin was directly inspired from &lt;a href=&quot;https://github.com/visionmedia/nib&quot;&gt;Nib&lt;/a&gt;, &lt;a href=&quot;http://learnboost.github.io/stylus/&quot;&gt;Stylus&lt;/a&gt;&amp;#8217; most popular framework. The idea is to be able to declare all desired offsets in a single declaration rather than having to write multiple CSS properties. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Stylus syntax
+selector {
+  absolute: top 1em right 100%
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When looking back at Nib&amp;#8217;s documentation a couple of weeks ago, I noticed there are a couple of features I missed when implementing the Sass version of this little gem. Hence the brand new version of the mixin, and the blog post explaining the process.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, Sass in its SCSS syntax doesn&amp;#8217;t provide as much abstraction as Stylus does, so we still have to use some extra characters, especially &lt;code&gt;@include&lt;/code&gt;, parenthesis, colons and semi-colons&amp;#8230; That being said, the result is quite good in my opinion.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
+selector {
+  @include absolute(top 1em right 100%)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;What we want? Offsets!&lt;/h2&gt;
+
+&lt;p&gt;Before jumping on the code, it is important to analyze the topic so we can implement things right. There are a few different use cases, but the main idea is always the same: we loop through the 4 offsets to see if they are being passed to our mixin. Then, depending on how it&amp;#8217;s going, various things happen. Let&amp;#8217;s see each case one by one.&lt;/p&gt;
+
+&lt;p&gt;Case 1. &lt;strong&gt;The offset has not been found in the list.&lt;/strong&gt; Obviously, we stop there and do not output it.&lt;/p&gt;
+
+&lt;p&gt;Case 2. &lt;strong&gt;The offset has been found at the last index of list.&lt;/strong&gt; We output it to &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
+@include absolute(top);
+
+// CSS
+position: absolute;
+top: 0;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Case 3. &lt;strong&gt;The offset has been found and the next item is another offset.&lt;/strong&gt; We output it to &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
+@include absolute(top left);
+
+// CSS
+position: absolute;
+top: 0;
+left: 0;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Case 4. &lt;strong&gt;The offset has been found and the next item is invalid.&lt;/strong&gt; An invalid value could be a string other than &lt;code&gt;auto&lt;/code&gt;, &lt;code&gt;initial&lt;/code&gt; and &lt;code&gt;inherit&lt;/code&gt;, or any value that is not a number, or a unitless number. In any case, we do not output the offset.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
+@include absolute(top &quot;string&quot;);
+
+// CSS
+position: absolute;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Case 5. &lt;strong&gt;The offset has been found and the next item is valid.&lt;/strong&gt; Of course then, we output the offset with the next item as a value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
+@include absolute(top 1em);
+
+// CSS
+position: absolute;
+top: 1em;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So if we sum up:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;if offset doesn&amp;#8217;t exist or offset exists but is followed by an invalid value, we don&amp;#8217;t output it&lt;/li&gt;
+  &lt;li&gt;if offset exist as last item or offset is followed by another offset, we output it to &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;if offset exist and is followed by valid value, we output it to the value&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Starting with the helper&lt;/h2&gt;
+
+&lt;p&gt;As you may have understood from what we have just seen, we will need to determine if the value directly following the offset is a valid value for an offset property (&lt;code&gt;top&lt;/code&gt;, &lt;code&gt;right&lt;/code&gt;, &lt;code&gt;bottom&lt;/code&gt; or &lt;code&gt;left&lt;/code&gt;). Nothing better than a little function to do that.&lt;/p&gt;
+
+&lt;p&gt;Should be considered as a valid length:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a number with a unit&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;auto&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;initial&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;inherit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@function is-valid-length($value) {
+  @return (type-of($value) == &quot;number&quot; and not unitless($value)) 
+       or (index(auto initial inherit 0, $value) != false);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The function is as simple as that. First we check if it&amp;#8217;s a number with a unit. If it is not, we check whether it is an allowed value. If it is not again, then it is not a valid length for an offset property. &lt;/p&gt;
+
+&lt;h2&gt;Building the mixin&lt;/h2&gt;
+
+&lt;p&gt;Now that we have our helper function and all our use-cases, it is time to move on to the mixin. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin position($position, $args: ()) {
+  $offsets: top right bottom left;
+  position: $position;
+  
+  @each $offset in $offsets {
+    // Doing the magic trick
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;From there, we iterate through the offsets list (so 4 times) and for each one, we do the checks we discussed in the first section of this article. I added comments to the code so you can follow along but it is pretty straight forward anyway.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// All this code happens inside the loop
+$index: index($args, $offset);
+
+// If offset is found in the list
+@if $index {
+
+  // If it is found at last position
+  @if $index == length($args) {
+    #{$offset}: 0;
+  }
+
+  // If it is followed by a value
+  @else {
+    $next: nth($args, $index + 1);
+
+    // If the next value is value length
+    @if is-valid-length($next) {
+      #{$offset}: $next;
+    }
+
+    // If the next value is another offset
+    @else if index($offsets, $next) {
+      #{$offset}: 0;
+    }
+
+    // If it is invalid
+    @else {
+      @warn &quot;Invalid value `#{$next}` for offset `#{$offset}`.&quot;;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then of course, there are still the 3 extra mixins &lt;code&gt;absolute&lt;/code&gt;, &lt;code&gt;relative&lt;/code&gt; and &lt;code&gt;fixed&lt;/code&gt;. This doesn&amp;#8217;t change at all from the previous version.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin absolute($args: ()) {
+  @include position(absolute, $args);
+}
+ 
+@mixin fixed($args: ()) {
+  @include position(fixed, $args);
+}
+ 
+@mixin relative($args: ()) {
+  @include position(relative, $args);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.a { 
+  @include absolute()
+}
+
+.a {
+  position: absolute;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.b {
+  @include absolute(top)
+}
+
+.b {
+  position: absolute;
+  top: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.c {
+  @include absolute(top right)
+}
+
+.c {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.d {
+  @include absolute(top right bottom)
+}
+
+.d {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.e {
+  @include absolute(top right bottom left)
+}
+
+.e {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.f {
+  @include absolute(top right 1em)
+}
+
+.f {
+  position: absolute;
+  top: 0;
+  right: 1em;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.g {
+  @include absolute(top 1em right)
+}
+
+.g {
+  position: absolute;
+  top: 1em;
+  right: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.h {
+  @include absolute(top 1em right 100%)
+}
+
+.h {
+  position: absolute;
+  top: 1em;
+  right: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.i {
+  @include absolute(top right mistake)
+}
+
+.i {
+  position: absolute;
+  top: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.j {
+  @include absolute(top 1em right 1em bottom 1em left 1em)
+}
+
+.j {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  bottom: 1em;
+  left: 1em;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;So here we go with the new version guys. It is slightly better than the old since you can now chain offsets to set them to &lt;code&gt;0&lt;/code&gt;, and extra keywords like &lt;code&gt;auto&lt;/code&gt;, &lt;code&gt;initial&lt;/code&gt; and &lt;code&gt;inherit&lt;/code&gt; are allowed, which wasn&amp;#8217;t the case before.&lt;/p&gt;
+
+&lt;p&gt;I hope you like it. If you think of anything to improve it, be sure to share!&lt;/p&gt;
+
+&lt;p class=&quot;sassmeister&quot; data-gist-id=&quot;f8ab9cc308b84e37b18d&quot; data-height=&quot;480&quot;&gt;&lt;a href=&quot;http://sassmeister.com/gist/f8ab9cc308b84e37b18d&quot;&gt;Play with this gist on SassMeister.&lt;/a&gt;&lt;/p&gt;
+</description>
+</item>
+
+<item>
+	<title>Supporting multiple versions of Sass</title>
+	
+	<link>http://webdesign.tutsplus.com/articles/when-and-how-to-support-multiple-versions-of-sass--cms-20935</link>
+	<guid>http://webdesign.tutsplus.com/articles/when-and-how-to-support-multiple-versions-of-sass--cms-20935</guid>
+	
+	
+	<pubDate>Tue, 13 May 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+<item>
+	<title>Modernizr Sass mixin</title>
+	
+	<link>http://hugogiraudel.com/article/2014-05-12-modernizr-sass-mixin</link>
+	<guid>/article/2014-05-12-modernizr-sass-mixin</guid>
+	
+	
+	<pubDate>Mon, 12 May 2014 00:00:00 GMT</pubDate>
+	<description>
+&lt;blockquote&gt;
+  &lt;p&gt;The following is a guest post by Daniel Guillan. Daniel is the co-founder and chief design officer at Vintisis. I am very glad to have him here today, writing about a clever mixin to ease the use of Modernizr with Sass.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I use &lt;a href=&quot;http://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt; on every single project I work on. In a nutshell, it&amp;#8217;s a JS library that helps us take decisions based on the capabilities of the browser accessing our site. Modernizr quickly performs tests to check for browser support of modern CSS and HTML implementations like CSS 3d Transforms, HTML5 Video or Touch Events among &lt;a href=&quot;http://modernizr.com/download/&quot;&gt;many many others&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once it has checked for the features we intend to use, Modernizr appends classes to the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; tag. We can then provide a set of CSS rules to browsers that support those features and another set of fallback rules to browsers that don&amp;#8217;t support them.&lt;/p&gt;
+
+&lt;p&gt;I created a Sass mixin that helps us write those rules in a &lt;em&gt;DRYer&lt;/em&gt; and more comprehensive way, reducing the amount of code needed and making it less error-prone and far easier to read and maintain.&lt;/p&gt;
+
+&lt;p&gt;Before jumping into the code for the actual mixin, let&amp;#8217;s see how we actually write Modernizr tests in plain CSS.&lt;/p&gt;
+
+&lt;h2&gt;Plain CSS&lt;/h2&gt;
+
+&lt;p&gt;This is how we can write a rule-set to add a CSS3 gradient background:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.cssgradients .my-selector {
+  background-image: linear-gradient(to bottom, #fff, #000);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For browsers that don&amp;#8217;t support CSS gradients or for those where Javascript is not available or disabled and thus we can&amp;#8217;t test for support, we will need a fallback rule-set:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.no-js .my-selector,
+.no-cssgradients .my-selector {
+  background-image: url('gradient.png');
+  background-repeat: repeat-x;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Making it Sassier&lt;/h2&gt;
+
+&lt;p&gt;Sass allows selectors and rules to be &lt;a href=&quot;http://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_rules&quot;&gt;nested&lt;/a&gt; so we can make that code prettier and much more organized, avoiding repetition of the selector:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.my-selector {
+  .cssgradients &amp;amp; {
+    background-image: linear-gradient(to bottom, #fff, #000);   
+  }
+        
+  .no-js &amp;amp;,
+  .no-cssgradients &amp;amp; {
+    background-image: url('gradient.png');
+    background-repeat: repeat-x;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Even better with a mixin&lt;/h2&gt;
+
+&lt;blockquote class=&quot;pull-quote--right&quot;&gt;Easy? Yep and Nope.&lt;/blockquote&gt;
+
+&lt;p&gt;Having written a lot of selectors and rules like the above, I got a bit tired of that code. It&amp;#8217;s not a complicated code at all, but it&amp;#8217;s a bit messy, it isn&amp;#8217;t that easy to read and maintain and I tend to forget to add the &lt;code&gt;.no-js &amp;amp;&lt;/code&gt; bit. So I thought a couple of mixins would do the job.&lt;/p&gt;
+
+&lt;p&gt;One mixin would write the rule-set for available features. I called it &lt;code&gt;yep&lt;/code&gt;. The other one, &lt;code&gt;nope&lt;/code&gt;, would add the fallback rule-set. We use them like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.my-selector {
+  @include yep(cssgradients) {
+    // ...
+  }
+        
+  @include nope(cssgradients) {
+    // ...
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;#8217;s extremely easy, I thought. This is all the code we actually need to make those two mixins work:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin yep($feature) {
+  .#{$feature} &amp;amp; { 
+    @content;
+  }
+}
+    
+@mixin nope($feature) {
+  .no-js &amp;amp;,
+  .no-#{$feature} &amp;amp; {
+    @content;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Multiple features at once&lt;/h2&gt;
+
+&lt;p&gt;Ouch! What if we need to test for multiple features at the same time? &lt;/p&gt;
+
+&lt;p&gt;It isn&amp;#8217;t as straightforward as I first thought. The &lt;code&gt;yep&lt;/code&gt; mixin should not produce the same kind of selectors as the &lt;code&gt;nope&lt;/code&gt; mixin. Take this example: we want to test for &lt;code&gt;csstransforms&lt;/code&gt; &lt;strong&gt;and&lt;/strong&gt; &lt;code&gt;opacity&lt;/code&gt; and declare a specific rule-set. But if one of those features isn&amp;#8217;t supported, we need to fall back on another rule-set.&lt;/p&gt;
+
+&lt;p&gt;This is the compiled CSS we are looking for:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.csstransforms.opacity .my-selector {
+  // ...
+}
+    
+.no-js .my-selector,
+.no-csstransforms .my-selector,
+.no-opacity .my-selector {
+  // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One thing I strived for was to keep the code as DRY as possible using some of the newness in Sass 3.3. As I worked through the logic I found that a single mixin could handle both cases.&lt;/p&gt;
+
+&lt;h2&gt;Aliases&lt;/h2&gt;
+
+&lt;p&gt;I created a main &lt;code&gt;modernizr&lt;/code&gt; mixin to handle both situations. You won&amp;#8217;t use it directly on your Sass stylesheet, but it&amp;#8217;s used internally by &lt;code&gt;yep&lt;/code&gt; and &lt;code&gt;nope&lt;/code&gt;.  In fact, &lt;code&gt;yep&lt;/code&gt; and &lt;code&gt;nope&lt;/code&gt;  are merely aliases of this more complex mixin. They only do one thing: call the &lt;code&gt;modernizr&lt;/code&gt; mixin with the set of features you&amp;#8217;re passing, and set a &lt;code&gt;$supports&lt;/code&gt; variable you won&amp;#8217;t need to remember. &lt;/p&gt;
+
+&lt;p&gt;That&amp;#8217;s it, they&amp;#8217;re meant to be easier to remember because they require only one parameter: &lt;code&gt;$features...&lt;/code&gt;, faster to write because they are shorter and make the whole thing extremely easy to read because you instantly know what the intention of the code is.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// `yep` is an alias for modernizr($features, $supports: true)
+@mixin yep($features...) {
+  @include modernizr($features, $supports: true) {
+    @content;
+  }
+}
+
+// `nope` is an alias for modernizr($features, $supports: false)
+@mixin nope($features...) {
+  @include modernizr($features, $supports: false) {
+    @content;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;The ultimate mixin&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;modernizr&lt;/code&gt; mixin expects two arguments: &lt;code&gt;$features&lt;/code&gt; which is our &lt;code&gt;argList&lt;/code&gt;, a comma-separated list of features and &lt;code&gt;$supports&lt;/code&gt;, a boolean which will be used to output the yep or the nope rules.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin modernizr($features, $supports) {
+  // Sass magic
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Inside the mixin I set three variables to handle everything we need to generate.&lt;/p&gt;
+
+&lt;h3&gt;The prefix&lt;/h3&gt;
+
+&lt;p&gt;We need to use the &lt;code&gt;no-&lt;/code&gt; prefix if checking for unsupported features (e.g. &lt;code&gt;.no-opacity&lt;/code&gt;). If checking for supported features we need no prefix at all so we&amp;#8217;ll use an empty string in this case:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$prefix: if($supports, '', 'no-');
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;The selector&lt;/h3&gt;
+
+&lt;p&gt;To generate our feature selector (e.g. &lt;code&gt;.opacity.csstransforms&lt;/code&gt; or &lt;code&gt;.no-opacity, .no-csstransforms&lt;/code&gt;), we need two different strategies. We have to create a string if checking for supported features and we&amp;#8217;ll concatenate the class names later on. Or create a list if checking for unsupported features. We&amp;#8217;ll append class names later on too.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$selector: if($supports, '', unquote('.no-js'));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;The placeholder&lt;/h3&gt;
+
+&lt;p&gt;You&amp;#8217;ll see that all the magic that handles this thing is done by a placeholder. We&amp;#8217;ll need to give it a name that will look something like &lt;code&gt;%yep-feature&lt;/code&gt; or &lt;code&gt;%nope-feature&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$placeholder: if($supports, '%yep', '%nope');
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Error handling&lt;/h3&gt;
+
+&lt;p&gt;I also set a variable &lt;code&gt;$everything-okay: true&lt;/code&gt; which is meant for error handling. More on this later on.&lt;/p&gt;
+
+&lt;h3&gt;Generating the placeholder and selectors&lt;/h3&gt;
+
+&lt;p&gt;Now it&amp;#8217;s time to create our feature selectors and our placeholder names. We&amp;#8217;ll loop through the passed &lt;code&gt;$features&lt;/code&gt; to do so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@each $feature in $features {
+  // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Within that loop we just need three lines of code. They&amp;#8217;re a bit heavy, but what they accomplish is quite simple:&lt;/p&gt;
+
+&lt;h3&gt;Generate our placeholder name&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$placeholder: $placeholder + '-' + $feature;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The resulting &lt;code&gt;$placeholder&lt;/code&gt; variables will look something like &lt;code&gt;%yep-opacity-csstransforms&lt;/code&gt; or &lt;code&gt;%nope-opacity-csstransforms&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Generate our selector name&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$new-selector: #{'.' + $prefix + $feature};
+$selector: if($supports, $selector + $new-selector, append($selector, $new-selector, comma));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;$new-selector&lt;/code&gt; will look something like &lt;code&gt;.csstransforms&lt;/code&gt; or &lt;code&gt;.no-csstransforms&lt;/code&gt;. We then concatenate &lt;code&gt;$new-selector&lt;/code&gt; or append it to the list (e.g. &lt;code&gt;.opacity.csstransforms&lt;/code&gt; or &lt;code&gt;.no-opacity, .no-csstransforms&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;That&amp;#8217;s it for generating our placeholder and selector names. Take the &lt;code&gt;opacity&lt;/code&gt; and &lt;code&gt;csstransforms&lt;/code&gt; example. This is the result of using &lt;code&gt;@include yep(opacity, csstransforms)&lt;/code&gt;;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@debug $placeholder; // %yep-opacity-csstransforms
+@debug $selector; // .opacity.csstransforms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And this the result of using &lt;code&gt;@include nope(opacity, csstransforms)&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@debug $placeholder; // %nope-opacity-csstransforms
+@debug $selector; // .no-js, .no-opacity, .no-csstransforms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;The placeholder and @content&lt;/h3&gt;
+
+&lt;p&gt;It&amp;#8217;s time to write our placeholder. We use &lt;a href=&quot;http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_&quot;&gt;Sass interpolation&lt;/a&gt; to write the name we&amp;#8217;ve generated within the loop and then print the declaration block (&lt;code&gt;@content&lt;/code&gt;) we&amp;#8217;ve passed within the &lt;code&gt;yep&lt;/code&gt; or &lt;code&gt;nope&lt;/code&gt; mixin.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;#{$placeholder} &amp;amp; {
+  @content;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Extending with @at-root&lt;/h3&gt;
+
+&lt;p&gt;Now we&amp;#8217;ll print our features &lt;code&gt;$selector&lt;/code&gt;(s) and extend the placeholder. But, there&amp;#8217;s a little problem here, if we extend the placeholder as-is: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;#{$selector} {
+  @extend #{$placeholder}; 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;we&amp;#8217;ll get an unexpected CSS output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.my-selector .opacity.csstransforms .my-selector { 
+  // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We need something to fix this. Sass 3.3&amp;#8217;s @at-root directive comes to the rescue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@at-root #{$selector} {
+  @extend #{$placeholder};
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now our features selector isn&amp;#8217;t placed  before the actual selector because &lt;code&gt;@at-root&lt;/code&gt; cancels the selector nesting.&lt;/p&gt;
+
+&lt;h2&gt;Error handling&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@if type-of($feature) != &quot;string&quot; {
+  $everything-okay: false;
+  @warn '`#{$feature}` is not a string for `modernizr`';
+} @else {
+  // proceed ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Within the previous loop we&amp;#8217;ll also check if every &lt;code&gt;$feature&lt;/code&gt; is a &lt;code&gt;string&lt;/code&gt;. As Hugo Giraudel explains in his &lt;a href=&quot;http://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996&quot;&gt;introduction to error handling in Sass&lt;/a&gt; we shouldn&amp;#8217;t let the Sass compiler fail and punch us in the face with an error. That&amp;#8217;s why we should prevent things like &lt;code&gt;10px&lt;/code&gt; or even nested lists like &lt;code&gt;(opacity csstransforms), hsla&lt;/code&gt;  to stop our stylesheet from successfully compiling.&lt;/p&gt;
+
+&lt;p&gt;If a wrong parameter is passed, the compilation won&amp;#8217;t fail, but nothing will be generated and you&amp;#8217;ll be warned of the problem. &lt;/p&gt;
+
+&lt;p&gt;If &lt;code&gt;$everything-okay&lt;/code&gt; is still &lt;code&gt;true&lt;/code&gt; after we iterate through the list of features, we&amp;#8217;re ready to generate the output code.&lt;/p&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;It all started as a small Sass experiment and ended up being an incredibly interesting challenge. I came up with a piece of code that I never thought would make me push the Sass syntax as far as I did. It was really interesting to develop a solution that uses so many different Sass features like the &lt;code&gt;@at-root&lt;/code&gt; directive, loops (&lt;code&gt;@each&lt;/code&gt;), the ampersand (&lt;code&gt;&amp;amp;&lt;/code&gt;) to reference parent selectors, the &lt;code&gt;if()&lt;/code&gt; function, placeholders, list manipulation, … and also stuff like mixin aliases and error handling.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#8217;s it, you can play with the code on &lt;a href=&quot;http://sassmeister.com/gist/10578910&quot;&gt;SassMeister&lt;/a&gt; or &lt;a href=&quot;https://github.com/danielguillan/modernizr-mixin&quot;&gt;view the documentation and download on Github&lt;/a&gt;. The Modernizr mixin is available as a &lt;a href=&quot;http://rubygems.org/gems/modernizr-mixin&quot;&gt;Compass extension&lt;/a&gt; too.&lt;/p&gt;
+
+&lt;p class=&quot;sassmeister&quot; data-gist-id=&quot;10578910&quot; data-height=&quot;480&quot;&gt;&lt;a href=&quot;http://sassmeister.com/gist/10578910&quot;&gt;Play with this gist on SassMeister.&lt;/a&gt;&lt;/p&gt;
+&lt;script src=&quot;http://static.sassmeister.com/js/embed.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;http://cdn.shopify.com/s/files/1/0240/0941/t/4/assets/daniel-guillan-cdo.jpg?16714&quot; alt=&quot;Daniel Guillan&quot; /&gt; Daniel Guillan is the co-founder and chief design officer at Vintisis. Not only designer but also front-end developer, Daniel likes using Sass to make his life easier. You should catch him on &lt;a href=&quot;https://twitter.com/danielguillan&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+</item>
+
+<item>
+	<title>Sass mixins to kickstart your project</title>
+	
+	<link>http://www.sitepoint.com/sass-mixins-kickstart-project/</link>
+	<guid>http://www.sitepoint.com/sass-mixins-kickstart-project/</guid>
+	
+	
+	<pubDate>Thu, 08 May 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+<item>
+	<title>Bringing configuration objects to Sass</title>
+	
+	<link>http://hugogiraudel.com/article/2014-05-05-bringing-configuration-objects-to-sass</link>
+	<guid>/article/2014-05-05-bringing-configuration-objects-to-sass</guid>
+	
+	
+	<pubDate>Mon, 05 May 2014 00:00:00 GMT</pubDate>
+	<description>
+&lt;p&gt;One thing I was really looking forward with &lt;a href=&quot;http://viget.com/extend/sass-maps-are-awesome&quot;&gt;Sass maps&lt;/a&gt; is the ability to have configuration objects for functions and mixins. You know how you pass objects to your JavaScript class constructors instead of several parameters? Well fasten your belt boys because I&amp;#8217;m bringing this to Sass!&lt;/p&gt;
+
+&lt;h2&gt;An insight in the JS way of doing&lt;/h2&gt;
+
+&lt;p&gt;Before digging into Sass awesomeness, let&amp;#8217;s first have a look at how we would do it in JavaScript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var Class = function (conf) {
+  this.conf = extend({
+    duration: 2000,
+    name: 'class',
+    theme: 'dark',
+    speed: 500
+  }, conf || {});
+
+  this.init();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So what&amp;#8217;s going on here? The &lt;code&gt;Class&lt;/code&gt; constructor is accepting a &lt;code&gt;conf&lt;/code&gt; parameter. Then it defines its own &lt;code&gt;conf&lt;/code&gt; property by merging the given object with a default configuration via the &lt;code&gt;extend&lt;/code&gt; function. If &lt;code&gt;conf&lt;/code&gt; isn&amp;#8217;t defined, then it extends an empty object with default properties.&lt;/p&gt;
+
+&lt;p&gt;Extending an object based on another one is very convenient when you want to allow the user to define his own configuration but still want to provide defaults in case he doesn&amp;#8217;t set all arguments.&lt;/p&gt;
+
+&lt;h2&gt;What&amp;#8217;s wrong with several parameters?&lt;/h2&gt;
+
+&lt;p&gt;One could ask what is wrong with having several arguments in the signature with a default value for each of them. Tl;dr version is that using an object is just easier and more convenient. Now if you want the detail, here are the reasons behind why an object as unique parameter instead of several parameters sounds better.&lt;/p&gt;
+
+&lt;h3&gt;Harder to read&lt;/h3&gt;
+
+&lt;p&gt;To begin with, using an object makes it easier to understand since you have to specify the key associated to each value. While slightly longer to write, it&amp;#8217;s easier to read; a fair trade-off in my opinion.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// This...
+f({
+  message: 'You shall not pass!',
+  close: false,
+  error: 42,
+  type: 'error'
+});
+
+// ... is easier to understand than this
+f('You shall not pass!', false, 42, 'error');
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But the readibility argument is kind of a poor one. Some would say that they feel very comfortable with the multiple-arguments notation as long as they use a proper indentation for each argument (kind of like the object one) so let&amp;#8217;s move on to something more robust.&lt;/p&gt;
+
+&lt;h3&gt;Harder to call&lt;/h3&gt;
+
+&lt;p&gt;It&amp;#8217;s generally simpler to store an object in a variable and then to pass it to the function rather than storing each individual parameter in its own variable. While &lt;code&gt;.call()&lt;/code&gt; and &lt;code&gt;.apply()&lt;/code&gt; let you do something around this, it&amp;#8217;s not exquisite for readability (again!).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// This...
+var conf = {
+  message: 'You shall not pass!',
+  close: false,
+  error: 42,
+  type: 'error'
+};
+
+f(conf);
+
+// ... is easier to read than this
+var conf = ['You shall not pass!', false, 42, 'error'];
+
+f.apply(void 0, conf);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Still not convince? Let&amp;#8217;s move on.&lt;/p&gt;
+
+&lt;h3&gt;Harder to maintain&lt;/h3&gt;
+
+&lt;p&gt;Adding or removing is as easy as updating the configuration object. No need to update all the calls or change arguments order if some of theme are optional. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// Adding a parameter is simple; no need to worry about argument order
+f({
+  message: 'You shall not pass!',
+  close: false,
+  error: 42,
+  type: 'error',
+  duration: 5000
+});
+
+// ... while you have to put your required parameters before optional one in the signature
+f('You shall not pass!', 42, false, 5000, 'error');
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Harder to provide default parameters&lt;/h3&gt;
+
+&lt;p&gt;Last but not least, I think an object notation makes it simpler to provide defaults arguments with an &lt;code&gt;extend&lt;/code&gt; function than the multiple-arguments notation since JavaScript doesn&amp;#8217;t support default values for arguments in the function signature (while PHP, Sass and other languages do). Because of this, using an object is definitely more elegant than multiplying ternary operators to check if arguments are defined or not.&lt;/p&gt;
+
+&lt;p&gt;I think we can agree on the fact that using a configuration object as a unique parameter is both better and more elegant than using a bunch of chained arguments. Now let&amp;#8217;s move on to the core of this article: bringing this to Sass.&lt;/p&gt;
+
+&lt;h2&gt;Bringing it to Sass&lt;/h2&gt;
+
+&lt;p&gt;In a way, we don&amp;#8217;t really need this in Sass because it already provides &lt;em&gt;named arguments&lt;/em&gt;. &lt;a href=&quot;http://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments&quot;&gt;Named arguments&lt;/a&gt; give the ability to call a function without having to specify all its parameters. You can call it specifying only the arguments you want, no matter their index in the parameter list, like this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin mixin($a: &quot;a&quot;, $b: &quot;b&quot;, $c: &quot;c&quot;) {
+  /* ... */
+}
+
+@include mixin($b: &quot;boat&quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is pretty neat. But if like me you&amp;#8217;d rather have a single object instead of a collection of arguments, then read on. &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Being able to use configuration objects in Sass is amazing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sass 3.3 is bringing maps which are the exact equivalent of JavaScript objects. Now that we have maps, we can do all the cool stuff we just talked about and &lt;strong&gt;this is amazing&lt;/strong&gt;. All we need is an &lt;code&gt;extend&lt;/code&gt; function to be able to extend a given object with an object of default parameters. &lt;/p&gt;
+
+&lt;p&gt;This could have been very easy to do but &lt;code&gt;map-merge&lt;/code&gt; already does it for us. Indeed, when merging two maps it does exactly what we want: extend one map with the other. At best, we could alias the &lt;code&gt;map-merge&lt;/code&gt; function with an &lt;code&gt;extend&lt;/code&gt; function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@function extend($obj, $ext-obj) {
+  @return map-merge($obj, $ext-obj);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So here it is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$default-object: (
+  dont: you think,
+  this: is awesome
+);
+
+$object: (
+  this: is amazing
+);
+
+$merge: extend($default-object, $object); 
+
+/**
+ * This results in
+$merge: (
+  dont: you think,
+  this: is amazing
+);
+ */
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Using it for real&lt;/h2&gt;
+
+&lt;p&gt;Now what&amp;#8217;s the point of all of this? Let&amp;#8217;s say you have a component you call with a mixin. This mixin accepts quite a few parameters like &amp;mdash; I don&amp;#8217;t know &amp;mdash; the width, the color scheme, the animation duration, maybe a name or something. They probably have some default values defined to match a common use case. Until now, you have done it like this&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin component($theme: light, $size: 100%, $duration: 250ms, $name: 'component', $border: true) {
+  .#{$name} {
+    width: $size;
+    animation: fade $duration;
+
+    @if $border {
+      border-top: .25em solid;
+    }
+
+    @if $theme == &quot;dark&quot; {
+      background: #333;
+      color: #FEFEFE;
+    }
+    @else if $theme == &quot;light&quot; {
+      background: #FEFEFE;
+      color: #333;
+    }
+  }
+}
+
+// Including component
+@include component(dark, $name: 'module');
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This works great. It is easily readable, it does the job very well. However there is &lt;em&gt;one&lt;/em&gt; thing that still sucks with this method: you can&amp;#8217;t move the configuration elsewhere. Actually you can, but it will be like 5 variables which is getting a lot. Having a configuration map would be easier to move in a variable file or something.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin component($conf: ()) {
+  // Extending the default arguments with the given object
+  $conf: extend((
+    size: 100%,
+    theme: dark,
+    duration: 250ms,
+    name: 'component',
+    border: true
+  ), $conf);
+
+  // Dumping CSS
+  .#{map-get($conf, name)} {
+    width: map-get($conf, size);
+    animation: fade map-get($conf, duration);
+
+    $theme: map-get($conf, theme);
+    @if $theme == &quot;dark&quot; {
+      background: #333;
+      color: #FEFEFE;
+    }
+    @else if $theme == &quot;light&quot; {
+      background: #FEFEFE;
+      color: #333;
+    }
+  }
+}
+
+// Including component
+@include component((
+  theme: dark, 
+  name: 'module'
+));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Both doesn&amp;#8217;t look much different except the core function from the object-way looks more crowded. True, but now separating the setup from the code is getting very easy. All you have to do is defining a map and pass it to the mixin. No need to move around a couple of variables which can quickly become a mess.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// In `_config.scss` along with your other setup variables
+$component-conf: (
+  theme: light,
+  name: 'module',
+);
+
+// In `_component.scss`
+@include component($component-conf);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;There you go folks. This is definitely a more &amp;#8220;Object&amp;#8221; approach than the previous one and I can understand some people not liking it because it doesn&amp;#8217;t look like we are dealing with CSS anymore. &lt;/p&gt;
+
+&lt;p&gt;Now if you ask me, not only does it make both the mixin signature cleaner, but it also gives you more flexibility about your code structure and &lt;em&gt;this&lt;/em&gt; is a big deal when working on a huge project with countless components. Being able to gather configuration maps in a variables file can make a huge difference when it comes to code maintenance.&lt;/p&gt;
+
+&lt;p&gt;And while the mixin core is a little more crowded due to the map getters, the trade-off can be worth it in some cases.&lt;/p&gt;
+</description>
+</item>
+
+<item>
+	<title>What’s the difference between Sass and SCSS?</title>
+	
+	<link>http://www.sitepoint.com/whats-difference-sass-scss/</link>
+	<guid>http://www.sitepoint.com/whats-difference-sass-scss/</guid>
+	
+	
+	<pubDate>Tue, 29 Apr 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+		
+	</channel>
+</rss>
