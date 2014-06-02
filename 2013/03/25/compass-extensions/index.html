@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>8 Compass features you may not know</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>8 Compass features you may not know</h1> 
+	
+
+	
+		<p class="date">March 25, 2013
+		
+		</p> 
+	
+	
+	
+<p><a href="http://compass-style.org/">Compass</a> is a CSS authoring framework dedicated to <a href="http://sass-lang.com/">Sass</a>. Not only is it insanely powerful, but it also includes a large range of built-in functions and mixins, easing daily tasks.</p>
+
+<p>It occurred to me there was a couple of Compass features which remain pretty much unknown to most users so I thought it could be a good idea to write a short blog post about them.</p>
+
+<h2>Opposite-position()</h2>
+
+<p>Compass defines 5 CSS <a href="http://compass-style.org/reference/compass/helpers/constants/">constants</a>: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> and <code>center</code>.</p>
+
+<p>The point of these inalterable variables is to use the <code>opposite-position()</code> function which returns the opposite value for each constant. Please consider the following example:</p>
+
+<pre><code class="language-scss">$direction: left;
+$opposite: opposite-position($direction); /* Outputs "right" */
+
+$position: top right;
+$opposite: opposite-position($position); /* Outputs "bottom left" */
+</code></pre>
+
+<p><em>Note: the opposite of <code>center</code> is <code>center</code>.</em></p>
+
+<p>I personally used this extension in this very site, when it comes to images and quotes pulling (<a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L32">L32</a> and <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L47">L47</a>).</p>
+
+<pre><code class="language-scss">@mixin pull-quote($direction) {
+	$opposite: opposite-position($direction);
+
+	text-align: $opposite;
+	float: $direction;  
+	margin: 0 0 .5em 0;
+	margin-#{$opposite}: 1em;
+	border-#{$opposite}: 6px solid hotpink;
+	padding-#{$opposite}: 1em;
+}
+</code></pre>
+
+<p>So <code>$opposite</code> equals <em>right</em> when <code>$direction</code> is <em>left</em> and vice versa. Allows me to make only one mixin instead of 2!</p>
+
+<h2>Elements-of-type() <a href="#display-helpers" class="section-anchor">#&lt;/h2&gt;</a></h2>
+
+<p><a href="http://compass-style.org/reference/compass/helpers/display/">Element-of-type()</a> is a built-in function to detect the display type of an element: <code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>table</code>, <code>table-row-group</code>, <code>table-header-group</code>, <code>table-footer-group</code>, <code>table-row</code>, <code>table-cell</code>, <code>list-item</code> and -as odd as it may look- <code>html5</code>, <code>html5-inline</code> and <code>html5-block</code>.</p>
+
+<p><em>Note: <code>html5</code>, <code>html5-inline</code> and <code>html5-block</code> are not real display values; they are just keywords to gather all html5 elements (inline, block or both).</em></p>
+
+<p>This may be useful as part of a CSS reset for example:</p>
+
+<pre><code class="language-scss">@mixin reset-html5 {
+	#{elements-of-type(html5-block)} {
+		display: block; 
+	} 
+}
+</code></pre>
+
+<p>This snippet forces all HTML5 elements to be displayed as block-elements, even by unsupported browsers.</p>
+
+<h2>Experimental()</h2>
+
+<p><a href="http://compass-style.org/reference/compass/css3/shared/">Experimental</a> has to be one of the most used function in Compass and probably one of the less known at the same time.</p>
+
+<p>Basically, <code>experimental()</code> allows you to define mixins outputing content depending on enabled vendor prefixes. It is used in <strong>all</strong> CSS3 built-in mixins. When you use <code>@include box-sizing(border-box)</code>, here is what happen:</p>
+
+<pre><code class="language-scss">@mixin box-sizing($bs) {
+  $bs: unquote($bs);
+  @include experimental(box-sizing, $bs, -moz, -webkit, not -o, not -ms, not -khtml, official); 
+}
+</code></pre>
+
+<p>This outputs:</p>
+
+<pre><code class="language-css">.element {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+</code></pre>
+
+<p><code>-o-</code>, <code>-ms-</code> (and <code>-khtml-</code>) are omitted because the <code>box-sizing()</code> mixin calls <code>experimental()</code> by specifically specifying not to output lines for Opera and Internet Explorer.</p>
+
+<p>Now what&#8217;s the point of such a tool? As an example, there is no default mixin for CSS animation in Compass. Let&#8217;s make one!</p>
+
+<pre><code class="language-scss">@mixin animation($content) {
+  @include experimental(animation, $content, -webkit, -moz, not -o, not -ms, official);
+}
+
+.element {
+  @include animation(my-animation 3s ease);
+}
+</code></pre>
+
+<p>This outputs:</p>
+
+<pre><code class="language-css">.element {
+	-webkit-animation: my-animation 3s ease;
+	   -moz-animation: my-animation 3s ease;
+	        animation: my-animation 3s ease;
+}
+</code></pre>
+
+<h2>Hacks <a href="#hacks" class="section-anchor">#&lt;/h2&gt;</a></h2>
+
+<p>Hum, <a href="http://compass-style.org/reference/compass/utilities/general/hacks/">hacks</a>. I know what you think: <em>NOOOOOO!</em>. Anyway, Compass provides a couple of features to take advantage of Internet Explorer inconsistencies and weaknesses.</p>
+
+<p>You may have already heard of <code>has-layout</code>. <a href="http://www.satzansatz.de/cssd/onhavinglayout.html">This article</a> explains it way better than I could:</p>
+
+<blockquote>
+  <p>“Layout” is an IE/Win proprietary concept that determines how elements draw and bound their content, interact with and relate to other elements, and react on and transmit application/user events.<br />
+This quality can be irreversibly triggered by some CSS properties. Some HTML elements have “layout” by default.<br />
+Microsoft developers decided that elements should be able to acquire a “property” (in an object-oriented programming sense) they referred to as hasLayout, which is set to true when this rendering concept takes effect.</p>
+</blockquote>
+
+<p>Back to our business: Compass gives two ways to trigger <code>hasLayout</code> on elements: with <code>zoom</code> (using the <code>zoom</code> MS proprietary property) or with <code>block</code> (using the <code>display</code> property). I&#8217;d go with the zoom, even if it doesn&#8217;t validate mostly because I&#8217;m used to.</p>
+
+<pre><code class="language-scss">.element1 {
+	@include has-layout(zoom);
+}
+
+.element2 {
+	@include has-layout(block);
+}
+</code></pre>
+
+<p>Outputs&#8230;</p>
+
+<pre><code class="language-css">.element1 {
+	*zoom: 1;
+}
+
+.element2 {
+	display: inline-block;
+}
+.element2 {
+	display: block;
+}
+</code></pre>
+
+<p>You now understand why I use the zoom approach. Otherwise, Compass also provides another way to target IE6 specifically called the bang hack. It relies on the inability for IE6 to understand the <code>!important</code> flag:</p>
+
+<pre><code class="language-scss">.element1 {
+	@include bang-hack(color, red, blue);
+}
+</code></pre>
+
+<p>Outputs&#8230;</p>
+
+<pre><code class="language-css">.element1 {
+	color: red !important;
+	color: blue;
+}
+</code></pre>
+
+<p>Since IE6 doesn&#8217;t understand <code>!important</code>, it will apply the later declaratation while other browsers will follow the hammer bash flaged rule.</p>
+
+<h2>Image dimensions</h2>
+
+<p>Compass gives you a way to know the <a href="http://compass-style.org/reference/compass/helpers/image-dimensions/">dimensions of an image</a> (given as a path) with 2 functions: <code>image-width()</code> and <code>image-height()</code>.</p>
+
+<pre><code class="language-scss">.element {
+	$image: 'my-awesome-background.jpg';
+	background: url($image);
+	width:  image-width($image);
+	height: image-height($image);
+}
+</code></pre>
+
+<p>In this example, the element will have a size relative to the background-image it uses.</p>
+
+<p><em>Note: beware, the path has to be relative to your project&#8217;s image directory, defined in your <code>config.rb</code> file.</em></p>
+
+<h2>Math functions</h2>
+
+<p>If you&#8217;re like a total nerd and want to do CSS with math, then you&#8217;ll be pleased to know Compass has a bunch of built-in <a href="http://compass-style.org/reference/compass/helpers/math/">math functions</a> like <code>sin()</code>, <code>cos()</code>, <code>pi()</code> among a few others.</p>
+
+<p>I once had to use <code>sin()</code> in order to make a <a href="http://hugogiraudel.com/2013/02/18/sass-mixin-star/">mixin for a pure CSS 6-points star</a> but that&#8217;s pretty much it. If you happen to have a real live use case for one of those functions, I&#8217;d be more than pleased to know more about it.</p>
+
+<pre><code class="language-scss">$n: 4;
+$pow :  pow($n); /* Returns 16 */
+$sqrt: sqrt($n); /* Returns 2  */ 
+</code></pre>
+
+<h2>Selector helpers</h2>
+
+<p>Compass provides some <a href="http://compass-style.org/reference/compass/helpers/selectors/">features</a> to play with selectors like <code>nest()</code>, <code>append-selector()</code> or <code>headings()</code>.</p>
+
+<p>Once again, I am not sure if there are a bunch of real life use cases for such functions. Let me show you with a demo, maybe you&#8217;ll be able to find a use case:</p>
+
+<pre><code class="language-scss">/* nest() */
+nest(".class1", ".class2");          
+/* Outputs ".class1.class2" */
+nest(".class1, .class2", ".class3"); 
+/* Outputs ".class1.class3 .class2.class3" */
+
+/* append-selector */
+append-selector(".class1", ".class2"); 
+/* Outputs ".class1.class2" */
+append-selector("a, p, li", ".class"); 
+/* Outputs "a.class, p.class, li.class" */
+
+/* headings() */
+#{headings()} {
+	font-family: 'My Awesome Font'; 
+	/* Set font-family to all headings */
+}
+
+#{headings(1, 3)} {
+	font-weight: bold; 
+	/* Set font-weight to h1, h2, h3 */
+}
+</code></pre>
+
+<h2>Image-replacement functions</h2>
+
+<p>Compass provides several resources to ease a daily task: <a href="http://compass-style.org/reference/compass/typography/text/replacement/">image replacement</a>. When you have an element with text content, but you want the text to disappear to see the background image instead.</p>
+
+<pre><code class="language-scss">.element {
+	@include hide-text(right);
+}
+</code></pre>
+
+<p>Outputs&#8230;</p>
+
+<pre><code class="language-css">.element {
+	text-indent: 110%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+</code></pre>
+
+<p><em>The <code>hide-text()</code> mixin takes a direction as a parameter. The default one is <code>left</code>, resulting in a <code>text-indent: -199988px</code> with a <code>16px</code> baseline. You definitely should use <code>right</code> for better performance.</em></p>
+
+<h2>Final words</h2>
+
+<p>So guys, how many of these features did you know? If you have some free time, I highly recommand you to dig into <a href="http://compass-style.org/reference/compass/">Compass documentation</a>. You&#8217;d be surprised how little you know about the framework in most cases.</p>
+
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: '8 Compass features you may not know',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

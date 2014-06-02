@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Introducing Countdown.js</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>Introducing Countdown.js</h1> 
+	
+
+	
+		<p class="date">December 12, 2013
+		
+		</p> 
+	
+	
+	
+<p>Hey guys! Just a quick article to introduce <a href="https://github.com/HugoGiraudel/Countdown.js">Countdown.js</a>, a little script I recently made. During the last weeks, I&#8217;ve been practicing with JavaScript. It has been on <a href="http://hugogiraudel.com/2013/05/13/things-to-do-2013/">my wishlist</a> for 2013 and I&#8217;m glad that I could made some progress with it.</p>
+
+<p>In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited <a href="http://codepen.io/HugoGiraudel/pen/jtJrq">an old countdown script</a> I made a while back with the <a href="http://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/">object literal pattern</a>.</p>
+
+<h2>Why another countdown script?</h2>
+
+<p>There are like a billion scripts for countdowns, timers and clocks made of JavaScript. That&#8217;s like the &#8220;hello world!&#8221; of JS scripts so why making another one? Everything has been done yet!</p>
+
+<p>Well, for one it was mostly about practicing. Making a timer script is something quite simple yet there is often lot of room for improvements. It turns out to be quite a nice playground to work in.</p>
+
+<p>Secondly, I needed a script able to display a countdown in the way I like and not only <code>hh:mm:ss</code>. I wanted to be able to display a sentence like <code>There are still X days, Y hours and Z minutes left</code> or whatever. And since I didn&#8217;t know any script that allowed the use of patterns in a string (<code>{days}</code>, <code>{years}</code>&#8230;), I started building one.</p>
+
+<p>It worked pretty well and the code was clean enough so that I wasn&#8217;t ashamed to release it on CodePen in early September. But I wanted to try something else than the litteral object pattern.</p>
+
+<p>As good as this pattern can be, it becomes highly annoying when you have to deal with multiple occurrences of your widget on the same page. For some things, that&#8217;s not a problem at all. But you could definitely come with the need to display multiple timers/countdowns on the same page so I needed something moar.</p>
+
+<p>So here comes <a href="http://tobyho.com/2010/11/22/javascript-constructors-and/">Object Oriented JavaScript</a> in all its glory!</p>
+
+<h2>How to</h2>
+
+<p>Well, obviously you need to include the script in your page. But I made it pretty tiny plus it doesn&#8217;t have any requirement! It&#8217;s under 2Kb minified (which is about ~1.3Kb once gzipped).</p>
+
+<pre><code class="language-html">&lt;script src="js/countdown.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Then using the countdown is as easy as instanciating the <code>Countdown</code> class:</p>
+
+<pre><code class="language-javascript">var countdown = new Countdown();
+</code></pre>
+
+<p>This creates a new instance with all defaults values but you can pass quite a few options:</p>
+
+<h3><code>selector</code></h3>
+
+<p>Default: <code>.timer</code></p>
+
+<p>The selector you want to inject Countdown into. It should be a valid string for <code>document.querySelector()</code>.</p>
+
+<h3><code>dateStart</code></h3>
+
+<p>Default: <code>new Date()</code> (now)</p>
+
+<p>The date to start the countdown to. It should be a valid instance of class <code>Date</code></p>
+
+<h3><code>dateEnd</code></h3>
+
+<p>Default: <code>new Date(new Date().getTime() + (24 * 60 * 60 * 1000))</code> (tomorrow)</p>
+
+<p>The date to end the countdown to. It should be a valid instance of class <code>Date</code></p>
+
+<h3><code>msgBefore</code></h3>
+
+<p>Default: <code>Be ready!</code></p>
+
+<p>The message to display before reaching <code>dateStart</code></p>
+
+<h3><code>msgAfter</code></h3>
+
+<p>Default: <code>It's over, sorry folks!</code></p>
+
+<p>The message to display once reaching <code>dateEnd</code></p>
+
+<h3><code>msgPattern</code></h3>
+
+<p>Default: <code>{days} days, {hours} hours, {minutes} minutes and {seconds} seconds left</code></p>
+
+<p>The message to display during the countdown where values between braces get replaced by actual numeric values. The possible patterns are:</p>
+
+<ul>
+  <li><code>{years}</code></li>
+  <li><code>{months}</code></li>
+  <li><code>{weeks}</code></li>
+  <li><code>{days}</code></li>
+  <li><code>{hours}</code></li>
+  <li><code>{minutes}</code></li>
+  <li><code>{seconds}</code></li>
+</ul>
+
+<h3><code>onStart</code></h3>
+
+<p>Default: <code>null</code></p>
+
+<p>The function to run whenever the countdown starts.</p>
+
+<h3><code>onEnd</code></h3>
+
+<p>Default: <code>null</code></p>
+
+<p>The function to run whenever the countdown stops.</p>
+
+<h3>Example</h3>
+
+<pre><code class="language-javascript">var countdown = new Countdown({
+    selector: '#timer',
+    msgBefore: "Will start at Christmas!",
+    msgAfter: "Happy new year folks!",
+    msgPattern: "{days} days, {hours} hours and {minutes} minutes before new year!",
+    dateStart: new Date('2013/12/25 12:00'),
+    dateEnd: new Date('Jan 1, 2014 12:00'),
+    onStart: function() {
+    	console.log('Merry Christmas!');
+    },
+    onEnd: function() {
+    	console.log('Happy New Year!');
+    }
+});
+</code></pre>
+
+<h2>Pushing things further</h2>
+
+<h3>Custom events</h3>
+
+<p>The script doesn&#8217;t use jQuery at all, mostly because there is no need for such a library for this. However if you happen to use jQuery in your project, you&#8217;ll be glad to know the Countdown throws custom events on the element you&#8217;re binding the countdown to.</p>
+
+<p>As of today, two events are being fired: <code>countdownStart</code> and <code>countdownEnd</code>. You can use them as follow:</p>
+
+<pre><code class="language-javascript">var countdown = new Countdown({
+	selector: '.timer'
+});
+
+$('.timer').on('countdownStart', function() {
+	console.log('The countdown has been started.');
+});
+
+$('.timer').on('countdownEnd', function() {
+	console.log('The countdown has reached 0.');
+});
+
+</code></pre>
+
+<p>Pretty neat, right?</p>
+
+<h3>Validating code</h3>
+
+<p>My brother <a href="https://twitter.com/l_giraudel">Loïc</a> helped me pushing things further by adding a couple of things to the project on GitHub:</p>
+
+<ul>
+  <li><a href="http://www.jshint.com/">JSHint</a> tests to check JavaScript code quality</li>
+  <li><a href="http://pivotal.github.io/jasmine/">Jasmine</a> tests to make sure the script does what it&#8217;s supposed to do</li>
+  <li><a href="http://gruntjs.com/">Grunt</a> to automate building process (also thanks to <a href="https://twitter.com/_agtlucas">Lucas Churchill</a> for this)</li>
+</ul>
+
+<p>Thanks bro! Anyway, I&#8217;m proud to tell this script as passed strict JSHint validations and Jasmine tests! Hurray!</p>
+
+<h2>Final words</h2>
+
+<p>That&#8217;s all folks! I hope you like this script and if you find anything worth mentioning, please be sure to shoot in the comments or directly on the <a href="https://github.com/HugoGiraudel/Countdown.js">GitHub repo</a>.</p>
+
+<p>Oh and if you only want to hack around the code, check this pen:</p>
+
+<p data-height="300" data-theme-id="0" data-slug-hash="vCyJq" data-user="HugoGiraudel" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/HugoGiraudel/pen/vCyJq">Object-oriented JS Countdown Class</a> by Hugo Giraudel (<a href="http://codepen.io/HugoGiraudel">@HugoGiraudel</a>) on <a href="http://codepen.io">CodePen</a>
+
+</p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: true,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'Introducing Countdown.js',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

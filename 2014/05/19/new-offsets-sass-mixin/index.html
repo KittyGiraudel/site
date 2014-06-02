@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>A new Sass mixin for offsets</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>A new Sass mixin for offsets</h1> 
+	
+
+	
+		<p class="date">May 19, 2014
+		
+		</p> 
+	
+	
+	
+<p>About a year ago, I wrote about how I managed to come up with what I think is <a href="http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/">a clever Sass mixin to deal with offset positioning</a> in CSS, also known as <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code>. </p>
+
+<p>The mixin was directly inspired from <a href="https://github.com/visionmedia/nib">Nib</a>, <a href="http://learnboost.github.io/stylus/">Stylus</a>&#8217; most popular framework. The idea is to be able to declare all desired offsets in a single declaration rather than having to write multiple CSS properties. </p>
+
+<pre><code class="language-scss">// Stylus syntax
+selector {
+  absolute: top 1em right 100%
+}
+</code></pre>
+
+<p>When looking back at Nib&#8217;s documentation a couple of weeks ago, I noticed there are a couple of features I missed when implementing the Sass version of this little gem. Hence the brand new version of the mixin, and the blog post explaining the process.</p>
+
+<p>Unfortunately, Sass in its SCSS syntax doesn&#8217;t provide as much abstraction as Stylus does, so we still have to use some extra characters, especially <code>@include</code>, parenthesis, colons and semi-colons&#8230; That being said, the result is quite good in my opinion.</p>
+
+<pre><code class="language-scss">// SCSS
+selector {
+  @include absolute(top 1em right 100%)
+}
+</code></pre>
+
+<h2>What we want? Offsets!</h2>
+
+<p>Before jumping on the code, it is important to analyze the topic so we can implement things right. There are a few different use cases, but the main idea is always the same: we loop through the 4 offsets to see if they are being passed to our mixin. Then, depending on how it&#8217;s going, various things happen. Let&#8217;s see each case one by one.</p>
+
+<p>Case 1. <strong>The offset has not been found in the list.</strong> Obviously, we stop there and do not output it.</p>
+
+<p>Case 2. <strong>The offset has been found at the last index of list.</strong> We output it to <code>0</code>.</p>
+
+<pre><code class="language-scss">// SCSS
+@include absolute(top);
+
+// CSS
+position: absolute;
+top: 0;
+</code></pre>
+
+<p>Case 3. <strong>The offset has been found and the next item is another offset.</strong> We output it to <code>0</code>.</p>
+
+<pre><code class="language-scss">// SCSS
+@include absolute(top left);
+
+// CSS
+position: absolute;
+top: 0;
+left: 0;
+</code></pre>
+
+<p>Case 4. <strong>The offset has been found and the next item is invalid.</strong> An invalid value could be a string other than <code>auto</code>, <code>initial</code> and <code>inherit</code>, or any value that is not a number, or a unitless number. In any case, we do not output the offset.</p>
+
+<pre><code class="language-scss">// SCSS
+@include absolute(top "string");
+
+// CSS
+position: absolute;
+</code></pre>
+
+<p>Case 5. <strong>The offset has been found and the next item is valid.</strong> Of course then, we output the offset with the next item as a value.</p>
+
+<pre><code class="language-scss">// SCSS
+@include absolute(top 1em);
+
+// CSS
+position: absolute;
+top: 1em;
+</code></pre>
+
+<p>So if we sum up:</p>
+
+<ul>
+  <li>if offset doesn&#8217;t exist or offset exists but is followed by an invalid value, we don&#8217;t output it</li>
+  <li>if offset exist as last item or offset is followed by another offset, we output it to <code>0</code></li>
+  <li>if offset exist and is followed by valid value, we output it to the value</li>
+</ul>
+
+<h2>Starting with the helper</h2>
+
+<p>As you may have understood from what we have just seen, we will need to determine if the value directly following the offset is a valid value for an offset property (<code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code>). Nothing better than a little function to do that.</p>
+
+<p>Should be considered as a valid length:</p>
+
+<ul>
+  <li>a number with a unit</li>
+  <li><code>0</code></li>
+  <li><code>auto</code></li>
+  <li><code>initial</code></li>
+  <li><code>inherit</code></li>
+</ul>
+
+<pre><code class="language-scss">@function is-valid-length($value) {
+  @return (type-of($value) == "number" and not unitless($value)) 
+       or (index(auto initial inherit 0, $value) != false);
+}
+</code></pre>
+
+<p>The function is as simple as that. First we check if it&#8217;s a number with a unit. If it is not, we check whether it is an allowed value. If it is not again, then it is not a valid length for an offset property. </p>
+
+<h2>Building the mixin</h2>
+
+<p>Now that we have our helper function and all our use-cases, it is time to move on to the mixin. </p>
+
+<pre><code class="language-scss">@mixin position($position, $args: ()) {
+  $offsets: top right bottom left;
+  position: $position;
+  
+  @each $offset in $offsets {
+    // Doing the magic trick
+  }
+}
+</code></pre>
+
+<p>From there, we iterate through the offsets list (so 4 times) and for each one, we do the checks we discussed in the first section of this article. I added comments to the code so you can follow along but it is pretty straight forward anyway.</p>
+
+<pre><code class="language-scss">// All this code happens inside the loop
+$index: index($args, $offset);
+
+// If offset is found in the list
+@if $index {
+
+  // If it is found at last position
+  @if $index == length($args) {
+    #{$offset}: 0;
+  }
+
+  // If it is followed by a value
+  @else {
+    $next: nth($args, $index + 1);
+
+    // If the next value is value length
+    @if is-valid-length($next) {
+      #{$offset}: $next;
+    }
+
+    // If the next value is another offset
+    @else if index($offsets, $next) {
+      #{$offset}: 0;
+    }
+
+    // If it is invalid
+    @else {
+      @warn "Invalid value `#{$next}` for offset `#{$offset}`.";
+    }
+  }
+}
+</code></pre>
+
+<p>Then of course, there are still the 3 extra mixins <code>absolute</code>, <code>relative</code> and <code>fixed</code>. This doesn&#8217;t change at all from the previous version.</p>
+
+<pre><code class="language-scss">@mixin absolute($args: ()) {
+  @include position(absolute, $args);
+}
+ 
+@mixin fixed($args: ()) {
+  @include position(fixed, $args);
+}
+ 
+@mixin relative($args: ()) {
+  @include position(relative, $args);
+}
+</code></pre>
+
+<h2>Examples</h2>
+
+<pre><code class="language-scss">.a { 
+  @include absolute()
+}
+
+.a {
+  position: absolute;
+}
+</code></pre>
+
+<pre><code class="language-scss">.b {
+  @include absolute(top)
+}
+
+.b {
+  position: absolute;
+  top: 0;
+}
+</code></pre>
+
+<pre><code class="language-scss">.c {
+  @include absolute(top right)
+}
+
+.c {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+</code></pre>
+
+<pre><code class="language-scss">.d {
+  @include absolute(top right bottom)
+}
+
+.d {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+</code></pre>
+
+<pre><code class="language-scss">.e {
+  @include absolute(top right bottom left)
+}
+
+.e {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+</code></pre>
+
+<pre><code class="language-scss">.f {
+  @include absolute(top right 1em)
+}
+
+.f {
+  position: absolute;
+  top: 0;
+  right: 1em;
+}
+</code></pre>
+
+<pre><code class="language-scss">.g {
+  @include absolute(top 1em right)
+}
+
+.g {
+  position: absolute;
+  top: 1em;
+  right: 0;
+}
+</code></pre>
+
+<pre><code class="language-scss">.h {
+  @include absolute(top 1em right 100%)
+}
+
+.h {
+  position: absolute;
+  top: 1em;
+  right: 100%;
+}
+</code></pre>
+
+<pre><code class="language-scss">.i {
+  @include absolute(top right mistake)
+}
+
+.i {
+  position: absolute;
+  top: 0;
+}
+</code></pre>
+
+<pre><code class="language-scss">.j {
+  @include absolute(top 1em right 1em bottom 1em left 1em)
+}
+
+.j {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  bottom: 1em;
+  left: 1em;
+}
+</code></pre>
+
+<h2>Final thoughts</h2>
+
+<p>So here we go with the new version guys. It is slightly better than the old since you can now chain offsets to set them to <code>0</code>, and extra keywords like <code>auto</code>, <code>initial</code> and <code>inherit</code> are allowed, which wasn&#8217;t the case before.</p>
+
+<p>I hope you like it. If you think of anything to improve it, be sure to share!</p>
+
+<p class="sassmeister" data-gist-id="f8ab9cc308b84e37b18d" data-height="480"><a href="http://sassmeister.com/gist/f8ab9cc308b84e37b18d">Play with this gist on SassMeister.</a></p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: true,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'A new Sass mixin for offsets',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

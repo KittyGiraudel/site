@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Git tips and tricks - Part 3</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>Git tips and tricks - Part 3</h1> 
+	
+
+	
+		<p class="date">March 24, 2014
+		 &mdash; by Loïc Giraudel
+		</p> 
+	
+	
+	
+<blockquote>
+  <p>Hey folks! This is the 3rd part of the <em>Git Tips &amp; Tricks</em> series from Loïc Giraudel. If you missed the <a href="http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/">first post</a> and the <a href="http://hugogiraudel.com/2014/03/17/git-tips-and-tricks-part-2/">the second one</a>, be sure to give them a read! And now roll up your sleeves, because this is getting wicked!</p>
+</blockquote>
+
+<p>Hi guys ! Welcome to the third part of this Git Tips &amp; Tricks series ! This week I&#8217;m going to start with 2 useful tricks to fix conflicts or just see diff in a graphical tool instead of command line. Then we&#8217;ll explore the magic of the Git <code>bisect</code> command. Finally I will show how to merge commits into a single one before pushing it. What do you think? Let&#8217;s go?</p>
+
+<h2>Fix merge conflicts with a graphical tool</h2>
+
+<p>Whenever you face a merge conflict, you can use a merge tool to resolve it without too much headache. Just use the <code>git mergetool</code> command, it will ask you which tool to use.</p>
+
+<h2>Use a graphical tool for diff</h2>
+
+<p>Like <code>git mergetool</code> to resolve merge conflicts, there is a <code>git difftool</code> to see diff results in a graphical tool. Unfortunately, <code>git difftool</code> opens files sequentially: after checking a file, you have to close the diff tool so Git can reopen it with the next file.</p>
+
+<p>Fortunately since version 1.7.11, Git allows to see diff on a whole directory with the <code>--dir-diff</code> parameter. If you are using an older version, worry not! It&#8217;s possible to install a <a href="https://github.com/wmanley/git-meld">small script</a> to do the same thing:</p>
+
+<pre class="language-git"><code>/home/workspace $ git clone git@github.com:wmanley/git-meld.git
+Cloning into git-meld...
+remote: Counting objects: 64, done.
+remote: Compressing objects: 100% (34/34), done.
+remote: Total 64 (delta 31), reused 57 (delta 25)
+Receiving objects: 100% (64/64), 17.83 KiB, done.
+Resolving deltas: 100% (31/31), done.</code></pre>
+
+<p>Then, create a new alias <em>meld</em> in Git, for example by adding the following line in the <strong>[alias]</strong> part of you <em>.git/config</em> file:</p>
+
+<pre class="language-bash"><code>meld = !/home/workspace/git-meld/git-meld.pl</code></pre>
+
+<p>Now, you just have to use <code>git meld</code> command for your diff:</p>
+
+<pre class="language-git"><code>$ git meld HEAD HEAD~4
+$ git meld myBranch myOtherBranch</code></pre>
+
+<p>This command will ask you which diff tool to use, then open the whole directory in the tool instead of each file sequencially.</p>
+
+<h2>Find a bug with a dichotomous process</h2>
+
+<p>When a new bug appears in your application, the best way to fix the bug is to find which commit introduced it. Git has an awesome method to find a specific commit with a dichotomic search solution.</p>
+
+<blockquote>
+  <p>In computer science, a dichotomic search is a search algorithm that operates by selecting between two distinct alternatives (dichotomies) at each step. It is a specific type of divide and conquer algorithm. A well-known example is binary search.<br />
+&mdash; <a href="http://en.wikipedia.org/wiki/Dichotomic_search">Wikipedia - Dichotomic Search</a></p>
+</blockquote>
+
+<p>The magic Git command is <code>git bisect</code>. This command requires 2 commits SHA1 (or references) to work: an old commit where the bug is not there and a recent commit where the bug is there. The command will checkout the commit in the middle of the interval of the two commits.</p>
+
+<p>Once checkout of the <em>middle commit</em> has been done, user has to test if the bug is still there or not and inform <code>git bisect</code> command. According to user answer, <code>git bisect</code> will checkout a commit in the middle of the first or the second half of the initial interval.</p>
+
+<p>Then the user has to check the bug again and inform <code>git bisect</code>. At each step of the process, <code>git bisect</code> reduce the interval and finally returns the SHA1 of the commit which has introduced the bug.</p>
+
+<h3>Manual version</h3>
+
+<p>Let&#8217;s take an example. I&#8217;m going to create 20 commits; each commit adding a new line &#8220;line number #&#8221; in <em>file.txt</em>. One of the insertions will have a typing error <em>&#8220;numer&#8221;</em> instead of <em>&#8220;number&#8221;</em>. We are going to try to find the commit which has the typo with <code>git bisect</code>.</p>
+
+<pre class="language-bash"><code>$ # I create 20 commits here
+$ cat file.txt | grep number | wc -l
+19
+$ cat file.txt | grep numer | wc -l
+1</code></pre>
+
+<p>Ok, I have 19 occurences of <em>&#8220;number&#8221;</em> and 1 occurrence of <em>&#8220;numer&#8221;</em>, let&#8217;s find which commit inserted the typo. To do so, I run <code>git bisect</code> with two commits references. I know that the bug was not there 20 commits ago and is present now. So I can pass <code>HEAD</code> and <code>HEAD~20</code> for my two references.</p>
+
+<pre class="language-git"><code>$ git bisect start HEAD HEAD~20
+Bisecting: 9 revisions left to test after this (roughly 3 steps)
+[2128ffe8f612d40bc15b617600b6de5f5231d58e] Commit 10</code></pre>
+
+<p>Git checks my interval and calculates that I will need 3 steps to find the wrong commit after current step. The commit in the middle of my interval has been checkout (&#8220;Commit 10&#8221;). If I look at my <em>master</em> branch in Gitg (or Gitk, Gitx or any Git graphical tool&#8230;), I can see that Git has created two references <em>refs/bisect/start</em> and <em>refs/bisect/good-[&#8230;]</em> next to my <code>HEAD</code> and <code>HEAD~20</code> commits.</p>
+
+<p><em>Note: It&#8217;s possible to use <code>git bisect visualize</code> or <code>git bisect view</code> to see the remaining interval in graphical tool. For a console view, you can use <code>git bisect view --stat</code>.</em></p>
+
+<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-1.png" alt="After starting git bisect" /></p>
+
+<p>Now I have to check if the bug is still there or not and inform Git according to my check.</p>
+
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+1</code></pre>
+
+<p>The bug is still there, so I use <code>git bisect bad</code> to tell Git bisect that the current state is still broken.</p>
+
+<pre class="language-git"><code>$ git bisect bad
+Bisecting: 4 revisions left to test after this (roughly 2 steps)
+[2c935028965bd60a8fe15d428feb1f3972245e75] Commit 5</code></pre>
+
+<p>Git bisect has reduced the commit interval and checkout the &#8220;Commit 5&#8221;. I will find the typo bug in 2 steps from now. In gitg, my master branch looks like this:</p>
+
+<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-2.png" alt="After first git bisect bad" /></p>
+
+<p>The <em>refs/bisect/bad</em> reference has been moved to the &#8220;Commit 10&#8221;. I check if the bug is still there or not.</p>
+
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+1
+$ git bisect bad
+Bisecting: 2 revisions left to test after this (roughly 1 step)
+[7ab0afc851dc3cdd1bee795b6bc0656d57497ca5] Commit 2</code></pre>
+
+<p>Now Gitg show this:</p>
+
+<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-3.png" alt="After second git bisect bad" /></p>
+
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+0
+$ git bisect good
+Bisecting: 0 revisions left to test after this (roughly 1 step)
+[a21e6e97e003b614793cffccbdc1a53985fc11d4] Commit 4</code></pre>
+
+<p>The bug wasn&#8217;t there in this step, so I use <code>git bisect good</code> instead of <code>git bisect bad</code>. Gitg has created a new <em>refs/bisect/good-[&#8230;]</em> reference.</p>
+
+<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-4.png" alt="After first git bisect good" /></p>
+
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+1
+$ git bisect bad
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[7ae5192025b3a96520ee4897bd411ee7c9d0828f] Commit 3</code></pre>
+
+<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-5.png" alt="After third git bisect bad" /></p>
+
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+1
+$ git bisect bad
+7ae5192025b3a96520ee4897bd411ee7c9d0828f is the first bad commit
+commit 7ae5192025b3a96520ee4897bd411ee7c9d0828f
+Author: lgiraudel &lt;lgiraudel@mydomain.com&gt;
+Date:   Mon Feb 17 16:25:48 2014 +0100
+
+    Commit 3
+
+:100644 100644 d133004b66122208e5a1841e01b77db5862548c0 cd8061d8bb277cb08d8965487ff263181a82e2e4 M  file.txt</code></pre>
+
+<p>Finally, Git bisect gives me the guilty commit. Let&#8217;s check its content:</p>
+
+<pre class="language-git"><code>$ git log -1 -p
+commit 7ae5192025b3a96520ee4897bd411ee7c9d0828f
+Author: lgiraudel &lt;lgiraudel@mydomain.com&gt;
+Date:   Mon Feb 17 16:25:48 2014 +0100
+
+    Commit 3
+
+diff --git file.txt file.txt
+index d133004..cd8061d 100644
+</code></pre>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'Git tips and tricks - Part 3',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

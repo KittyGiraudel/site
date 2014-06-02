@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Getting the most out of Sass placeholders</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>Getting the most out of Sass placeholders</h1> 
+	
+
+	
+		<p class="date">March 31, 2014
+		
+		</p> 
+	
+	
+	
+<p>The other day I was looking at the source code from <a href="http://kenwheeler.github.io/guff/">GUFF</a>, a brand new Sass framework from <a href="https://github.com/kenwheeler">Ken Wheeler</a>. I like reviewing Sass code, I find it very interesting to have an insight at how other people tackle some common issues. By the way, if you want me to review your Sass code, I&#8217;ll be glad to do so. ;)</p>
+
+<p>Anyway, I was looking at the code and to my surprise, Ken was mostly using mixins for common patterns, even when there was no variable involved whatsoever. You probably know it&#8217;s considered bad practice to use a mixin when you don&#8217;t need to make your styles varying according to passed arguments. Placeholders are best suited for such a thing. More informations on topic in <a href="http://www.sitepoint.com/sass-mixin-placeholder/">this article at SitePoint</a>.</p>
+
+<p>So <a href="https://github.com/kenwheeler/guff/issues/1">I opened an issue</a> to prompt Ken to move away from mixins when there is no need for them, in favor of placeholders and while he was completely willing to do so, he was worried about usage in media queries. Let&#8217;s pause here for some explanations.</p>
+
+<h2>@extend and media queries</h2>
+
+<p>This is something I covered before in <a href="http://www.sitepoint.com/sass-extend-nobody-told-you/">this article about <code>@extend</code></a> at SitePoint but I&#8217;ll sum up here so you can follow along if you&#8217;re not very comfortable with Sass yet.</p>
+
+<p>When extending a selector, Sass doesn&#8217;t take the CSS content from the extended selector to put it in the extending one. It works the other way around. It takes the extending selector and append it to the extended one. This is the reason why extending placeholders is better for final output than including mixins.</p>
+
+<p>Because extending takes the current selector to move it to the extended selector, it makes it impossible to use it from different scopes. For instance, you can&#8217;t extend a placeholder that has been declared in a <code>@media</code> block, nor can you extend a placeholder from root if you&#8217;re within a <code>@media</code> directive.</p>
+
+<blockquote class="pull-quote--right">Cross-scope extends is the most wanted feature from Sass.</blockquote>
+
+<p>And <em>this</em> is a huge issue. Fortunately, this has to be the most expected feature request from Sass (according to the outrageous number of issues mentioning this on their repo: <a href="https://github.com/nex3/sass/issues/501">#501</a>, <a href="https://github.com/nex3/sass/issues/640">#640</a>, <a href="https://github.com/nex3/sass/issues/915">#915</a>, <a href="https://github.com/nex3/sass/issues/1050">#1050</a>, <a href="https://github.com/nex3/sass/issues/1083">#1083</a>). At this point, we believe Sass maintainers will find a way to allow cross-scope extending.</p>
+
+<p>Meanwhile, this is why Ken didn&#8217;t use placeholders and stuck to mixins. However from my experience, it&#8217;s not very common to have to include a mixin/extend a placeholder at a very specific breakpoint and not the others. Usually, rules scoped into mixins/placeholders are the core of the element they are applied to, meaning they should be there in all circumstancies. So I decided to find a solution.</p>
+
+<h2>Mixin both mixin and placeholder</h2>
+
+<p>See what I did? With the title? &#8220;Mixin&#8221;.. Because it&#8217;s like&#8230; Nevermind. I opened a SassMeister gist and started playing around to see if I could come up with a solution. First of all, what I ended up with is not unique. People have done it before me; and I remember seeing frameworks using it already.</p>
+
+<p>My idea was the following: extend the placeholder when possible, else include the mixin. Also, I didn&#8217;t want to have code duplicates. Whenever I need to make a change in the code, I don&#8217;t want to edit both the placeholder and the mixin. There should be only a single place where the code lies.</p>
+
+<p>For our example, let&#8217;s consider a basic need: a <a href="http://nicolasgallagher.com/micro-clearfix-hack/">micro-clearfix hack</a> mixin. Here is how I decided to tackle things:</p>
+
+<pre><code class="language-scss">@mixin clear($extend: true) {
+  @if $extend {
+    @extend %clear;
+  }
+  @else {
+    &amp;:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+%clear {
+  @include clear($extend: false);
+}
+</code></pre>
+
+<p>Okay, that looks nasty. Here is what we do: first we define the <code>clear</code> mixin. The only parameter from the signature is <code>$extend</code>, which is a boolean set to <code>true</code> per default.</p>
+
+<p>Then in the mixin core, we check whether or not <code>$extend</code> is set to <code>true</code>. If it is, then we extend the placeholder. If it is not, we dump the CSS code as a regular mixin would do.</p>
+
+<p>Out of the mixin, we define the placeholder <code>%clear</code>. To avoid repeating the CSS code in the placeholder, we only have to include the mixin by setting <code>$extend</code> to false. This will dump the CSS code in the placeholder&#8217;s core. </p>
+
+<p>Here is a boilerplate to code your own:</p>
+
+<pre><code class="language-scss">@mixin myMixin($extend: true) {
+  @if $extend {
+    @extend %myMixin;
+  }
+  @else {
+    // Mixin core
+  }
+}
+
+%myMixin {
+  @include myMixin($extend: false);
+}
+</code></pre>
+
+<h2>Using it</h2>
+
+<p>There it is. Now let&#8217;s try it:</p>
+
+<pre><code class="language-scss">.a { @include clear; }
+.b { @include clear; }
+</code></pre>
+
+<p>This will result in the following CSS output:</p>
+
+<pre><code class="language-scss">.a:after, .b:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+</code></pre>
+
+<p>Until now, quite nice isn&#8217;t it? Even if we are using a mixin, we have the behaviour of a placeholder since both selectors get merged into a single one, like extending a placeholder would do.</p>
+
+<p>Now let&#8217;s imagine we need to have a clear fix at a certain breakpoint:</p>
+
+<pre><code class="language-scss">@media (min-width: 48em) {
+  .c {
+    @include clear;
+  }
+}
+</code></pre>
+
+<p>This will throw an error:</p>
+
+<pre><code class="language-scss">You may not @extend an outer selector from within @media.
+You may only @extend selectors within the same directive.
+From "@extend %clear" on line 3.
+</code></pre>
+
+<p>This is exactly the issue we are trying to work around. Now, thanks to the way we wrote our mixin, we only have to move <code>$extend</code> to <code>false</code> in order to make it work:</p>
+
+<pre><code class="language-scss">@media (min-width: 48em) {
+  .c {
+    @include clear(false);
+  }
+}
+</code></pre>
+
+<p>No more error! The code is being output as usual because in this case, we are not extending a placeholder anymore (which would produce an error) but actually dumping CSS rules like a regular mixin.</p>
+
+<h2>Final thoughts</h2>
+
+<p>It&#8217;s a shame we have to hack around the syntax in order to get the best from Sass placeholders. Hopefully cross-scope extending will save us from doing such nasty things whenever it comes live.</p>
+
+<p>In any case, this looks like a robust way to get the most from both mixins and placeholders. Hope you like it guys!</p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'Getting the most out of Sass placeholders',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

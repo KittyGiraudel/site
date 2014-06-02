@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Moving to Jekyll</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>Moving to Jekyll</h1> 
+	
+
+	
+		<p class="date">February 21, 2013
+		
+		</p> 
+	
+	
+	
+<p>If you wonder why you may have experienced some issues when trying to reach the site a couple of days ago, it is probably because I recently decided to move my website to Jekyll and to host it on GitHub Pages. Just like that.</p>
+
+<p>As a reminder or for those of you who don&#8217;t know what Jekyll and GitHub Pages are:</p>
+
+<p><a href="https://github.com/mojombo/jekyll">Jekyll</a> is a simple, blog aware, static site generator written on Ruby by <a href="http://tom.preston-werner.com/">Tom Preston Werner</a>, GitHub co-founder. It takes a template directory (representing the raw form of a website), runs it through Markdown and Liquid converters to spit out a complete static website.</p>
+
+<p><a href="http://pages.github.com/">GitHub Pages</a> are public webpages freely hosted and easily published through GitHub.</p>
+
+<h2>Why Jekyll and GitHub Pages</h2>
+
+<p>There are a couple of reasons that made me take the decision to move my perfectly-working site (or kind of) to Jekyll and GitHub Pages:</p>
+
+<ul>
+  <li><strong>No server-side language nor database.</strong>  <br />
+This is only good ol&#8217; HTML/CSS/JS. Frankly, I don&#8217;t want to have anything to do with a database unless I absolutely have to. This also means it&#8217;s worry-free: nothing to hack and unless GitHub goes down, no reason it won&#8217;t work.</li>
+  <li><strong>Simpler workflow.</strong>  <br />
+I only need a text editor and Git to update the site or release a blog post. No need for a local PHP server or anything. Plus, synchronizing my local environment with the one in production takes no more than a single command.</li>
+  <li><strong>Fewer dependencies.</strong>  <br />
+No more jQuery.paginate for pagination; Jekyll has a built in plugin to do it. No more Prism.js for syntax highlighting; Jekyll comes with Pygments, a Python based syntax highlighter. Less JS (and especially no more jQuery) means faster site.</li>
+  <li><strong>Hosted on GitHub.</strong>  <br />
+Not only are static files served from GitHub blazingly fast, but the <a href="source code is now">source code is now public</a>. I like the idea of making anyone able to have a look at the code behind the site. Plus, there is now a <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/issues">bug tracker</a>.</li>
+  <li><strong>Discover new things.</strong>  <br />
+I&#8217;ve learnt to use the PHP/MySQL combo but I finally learnt how not to use it when it is not needed. I wanted to discover a new thing and it turned out to be quite simple to use in the end.</li>
+</ul>
+
+<h2>Before Jekyll</h2>
+
+<h3>Look &#8216;ma, no CMS</h3>
+
+<p>When I launched the new version of the site last November, I wanted things to be as simple as possible. No complicated Rube Goldberg machine, no heavy CMS, none of this stuff. I didn&#8217;t even want to use a server-side language.</p>
+
+<p>Every time I wanted to release an article, this what I did:</p>
+
+<ol>
+  <li>Create a new <code>.html</code> file</li>
+  <li>Write the article (+head, header, sidebar, footer, etc.)</li>
+  <li>Push it with an FTP client</li>
+  <li>Add a new entry on the home page</li>
+  <li>Add a new entry in the RSS feed</li>
+</ol>
+
+<p>Everything was handled manually and I was pretty happy back then (what a fool&#8230;).</p>
+
+<h3>It was a bad idea</h3>
+
+<p><img src="../../../../images/jekyll__oh-god-why.png" class="pull-image--right" alt="Oh god... why?" /></p>
+
+<p>But soon enough I realized I couldn&#8217;t stand this any longer. Every time I had to edit a single comma in either the head, the sidebar or the footer, I had to open all the files all over again to fix it. YAAAAAAAAY!</p>
+
+<p>So I tried to make things work a little better by themselves. I turned everything to PHP and used <code>include()</code> for shared parts throughout all pages. It was already way better. But once again I wanted to push things further.</p>
+
+<p>I created a PHP array which was kind of a database to me. It handled both the index page and the RSS feed, and allowed me to quickly show/hide an article from the site by switching a boolean. Here is what it looked like:</p>
+
+<pre><code class="language-php">$articles = array(
+  array(
+    title =&gt; "Article title",
+    desc =&gt; "A little article description",
+    url =&gt; "/blog/url-of-the-article",
+    codrops =&gt; false,
+    guest =&gt; false,
+    status =&gt; true //public
+  ),
+  ...
+);
+</code></pre>
+
+<p>It wasn&#8217;t bad at all but still wasn&#8217;t good enough. I started wondering whether or not I should get back to a real CMS like WordPress. I knew it would please me once everything would had been settled, but I also knew it would have taken weeks to get there because moving an existing site to WordPress is very complicated.</p>
+
+<p>Also as a developer, I would probably have not felt very proud of running WordPress for my own site. Don&#8217;t get me wrong, WordPress works great but this site is also meant to show what I can do.</p>
+
+<h2>Here comes Jekyll</h2>
+
+<p>This is why I wanted another simpler option, so I <a href="https://twitter.com/HugoGiraudel/status/302826818988290048">asked</a> <a href="https://twitter.com/HugoGiraudel/status/302839345277194240">on</a> <a href="https://twitter.com/HugoGiraudel/status/302910551363825665">Twitter</a>. A couple of people recommended either Jekyll or <a href="http://octopress.org/">Octopress</a> (which runs on Jekyll). I had already heard about it since the site redesign has been motivated by <a href="http://daverupert.com/2012/11/brander-newer/">Dave Rupert&#8217;s</a> when he moved to Jekyll.</p>
+
+<p>Back then, I had a look at Jekyll and it seemed nice but overly complicated — at least to me. I am really not that smart when you put CSS aside. Anyway it seemed to be quite what I was looking for so I thought I should give a try.</p>
+
+<p>I looked for tutorials to move a simple site to Jekyll and found a couple of posts explaining the whole process pretty well but the best one has to be <a href="http://www.andrewmunsell.com/tutorials/jekyll-by-example/">this one</a> from Andrew Munsell. If you can read this Andrew, thank you a billion times because I couldn&#8217;t have made it without your post. Two or three reads later, I was fucking ready to move that shit to Jekyll.</p>
+
+<h3>The install nightmare</h3>
+
+<p>Ironically, I think this was the hardest part. You see, when I tried to install the Jekyll gem at home (Mac OS X 10.6.8) it threw me an error. It wasn&#8217;t starting well.</p>
+
+<p>Thanks to a <a href="http://stackoverflow.com/questions/10725767/error-installing-jekyll-native-extension-build">StackOverflow answer</a>, I understood I missed some sort of component (Command Line Tool XCode or whatever) which could be downloaded on Apple&#8217;s official website. Fair enough. After 15 minutes spent trying to remember my Apple ID, I could finally download and install this thing&#8230; only to realize it requires Mac OS X 10.7 to run. Damn it.</p>
+
+<p>It&#8217;s Sunday morning, I have croissants and coffee. I CAN FIGURE THIS OUT! So I tried updating software components a couple of times to finally realize not only nothing was getting updated, but that it couldn&#8217;t update the OS itself, thus I would never get Mac OS X 10.7 this way.</p>
+
+<p>After a few more Google searches and mouthfuls of delicious croissant, I found the horrifying answer: Mac OS X 10.7 cannot be upgraded for free. It is $25. DAMN IT, I JUST WANT TO RUN JEKYLL!</p>
+
+<p>Once again thanks to a <a href="http://stackoverflow.com/questions/10989869/how-do-i-get-ruby-set-up-in-os-x-10-6-8">StackOverflow answer</a> I could install some other thing (called GCC) which would finally get rid of the error when trying to install Jekyll. Worst part over.</p>
+
+<p><strong>Edit:</strong> &#8230; kind of. I spent hours trying to install Jekyll on a Windows machine without success. It turns out the latest Rdiscount gem (required by Jekyll to compile Markdown into HTML) cannot compile due to <a href="https://github.com/rtomayko/rdiscount/issues/74">a bug on Windows</a>. As of writing, there is no known fix for this.</p>
+
+<h3>Make things work locally</h3>
+
+<p>Making everything work locally was pretty easy I have to say, especially since my previous PHP architecture was kind of similar to the one I use with Jekyll today (includes, folder structure and such).</p>
+
+<p>To create a blog post, here is what I have to do:</p>
+
+<ol>
+  <li>Create a new Markdown file (<code>.md</code>)</li>
+  <li>Fill the &#8220;front-matter&#8221;, which is what Liquid needs to compile everything right. As an example, here is the header (front-matter) of this post:<br /></li>
+</ol>
+
+<pre><code class="language-markup">--
+title: Moving to Jekyll
+layout: post
+comments: true
+--
+</code></pre>
+
+<ol>
+  <li>Write my article (either in Markdown or in HTML)</li>
+  <li>Push to the repo</li>
+</ol>
+
+<p>It is pretty straight forward. If I want to disable comments, it requires no more than switching the <code>comments</code> boolean to false. If it is a Codrops article, I only have to add <code>codrops: url</code>. If it is a guest post, I only have to add <code>guest: Ana Tudor</code>. See? Very simple.</p>
+
+<p>It took me no more than a couple of hours with some motivating music to make my website run locally. Not everything was perfect (and still isn&#8217;t) but it was something.</p>
+
+<h2>GitHub Pages</h2>
+
+<p>Setting up a GitHub Pages based website couldn&#8217;t be simpler. It only consists of creating a repo named this way <code>username.github.com</code>. Easy, right?</p>
+
+<blockquote class="pull-quote--right">GitHub Pages is built on Jekyll.</blockquote>
+
+<p>The best thing with GitHub Pages is that it is built on Jekyll. This means <strong>you can push raw Jekyll source to your repo</strong> and GitHub Pages will automagically compile it through Jekyll (on their side). This also means you only really need Jekyll the very first time to set everything up, but then — unless you plan on changing your structure everyday — you don&#8217;t really need to use Jekyll at all since GitHub does the compilation.</p>
+
+<p><em>I could also push the compiled code to the repo but that would mean I need Jekyll everytime I want to update anything on the site. Not great, especially since I work at 4 different places.</em></p>
+
+<p>From there, I only had to push the local Jekyll site to this repo and about 10 minutes later, the whole thing was hosted and available at hugogiraudel.github.com. Easy as a pie.</p>
+
+<h2>Redirect, DNS and all this shit</h2>
+
+<h3>Domain changes</h3>
+
+<p>At this point, I had my site based on Jekyll running on GitHub Pages. However I didn&#8217;t want to use hugogiraudel.github.com as the main domain name but hugogiraudel.com. Meanwhile, I had my (previous) website hosted on a OVH server, hugogiraudel.com pointing to a folder on this server.</p>
+
+<p>Basically I had to tell the GitHub server to serve hugogiraudel.github.com content from hugogiraudel.com, and to make hugogiraudel.com redirect at hugogiraudel.github.com.</p>
+
+<p>According to <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">GitHub Pages documentation</a>, and a couple of <a href="http://stackoverflow.com/questions/9082499/custom-domain-for-github-project-pages">posts on StackOverflow</a>, I understood I had to create a <code>CNAME</code> file at the root of the repo directing to the top-level domain I wanted to serve from (hugogiraudel.com) and set an A-record pointing to the GitHub IP from my own server.</p>
+
+<blockquote class="pull-quote--right">My site was down and I had no idea whether or not it would get back up.</blockquote>
+
+<p>This has been done and followed by 12 hours of worry. My site was down and I had no idea whether or not it would get back up. Since I don&#8217;t understand a thing about server stuff and DNS, I could have simply broken everything without even knowing it.</p>
+
+<p>Hopefully I did everything right and the site has been back up about 12 hours after the DNS change. However some people are still facing some <a href="https://twitter.com/thebabydino/status/304194836523786240">issues</a> when trying to reach the site as of today. I don&#8217;t think I can do anything about it except asking them to wait or use a proxy.</p>
+
+<p><strong>Edit:</strong> I got in touch with OVH technical support. Basically they told me everything was fine. Users unable to reach the site should try clearing their cache or try from different connections.</p>
+
+<h3>Think of old URLs!</h3>
+
+<p>This was probably my biggest concern when I decided to change structure and host. I knew URLs were going to change and I had no idea how to make old URLs still working. Anyway <strong>I had to</strong>. There are a couple of articles being linked to on a daily basis.</p>
+
+<p>GitHub doesn&#8217;t allow <code>.htaccess</code> config for obvious reasons, so I couldn&#8217;t set server-side redirects. A <a href="http://stackoverflow.com/a/13676721">StackOverflow answer</a> recommended a Jekyll plugin to handle automatic redirects through aliases but GitHub Pages compiles Jekyll in safe mode (no plugin), so it wasn&#8217;t an option either.</p>
+
+<p>I opted for a very simple — yet not perfect — approach which consisted of creating HTML files at the old locations redirecting to the new files with meta tags. For example, there is a file in a <code>/blog</code> folder called <code>css-gradients.html</code> containing only a the basic html/head/body tag and <code>&lt;meta http-equiv="refresh" content="0;url=/2013/02/04/css-gradients/"&gt;</code>.</p>
+
+<p>Thus, trying to reach <code>hugogiraudel.com/blog/css-gradients</code> (old URL) automagically redirects to <code>hugogiraudel.com/2013/02/04/css-gradients/</code>. Easy peasy.</p>
+
+<p>However it is not perfect since it requires me to have about 15 files like this in an unused /blog folder. I could do it because I only had 15 articles, but what if I had 300? So if anyone has a clean solution, I take it! :)</p>
+
+<h2>Final words</h2>
+
+<p>First of all, I must say I am very happy with the porting. All in all, everything has gone pretty well and the downtime hasn&#8217;t been that long. Also I am proud of having done all this by myself; kind of a big deal to me.</p>
+
+<p>There are still a couple of things to take care of, like finding a way to preview articles before releasing them without having to run Jekyll but it&#8217;s nitpicking.</p>
+
+<p>If you ever happen to find any bug or if you have a suggestion, please <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/issues">open an issue on GitHub</a> or drop me a comment here.</p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: true,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'Moving to Jekyll',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

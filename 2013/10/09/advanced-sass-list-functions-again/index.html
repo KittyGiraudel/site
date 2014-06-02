@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Advanced Sass list functions, again</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>Advanced Sass list functions, again</h1> 
+	
+
+	
+		<p class="date">October 09, 2013
+		
+		</p> 
+	
+	
+	
+<blockquote>
+  <p>In case you have missed my first article about this Advanced Sass List Functions library, I recommand you to read <a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/">it</a>.</p>
+</blockquote>
+
+<p>Heys guys, it&#8217;s been a while I haven&#8217;t posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what&#8217;s new on my Sass list functions library.</p>
+
+<p>Well first of all, it has been added as a <a href="https://github.com/Team-Sass">Team-Sass</a> repository on GitHub (the <a href="http://codepen.io/HugoGiraudel/pen/loAgq is still updated">pen</a>. You probably know the Team-Sass collective. They have done ton of awesome things like <a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a>, <a href="https://github.com/Team-Sass/Sassy-math">Sassy Math</a> and <a href="https://github.com/Team-Sass/uikit">UIKit</a>.</p>
+
+<p>I am very glad to see my repo in there, so big thanks to them. :)</p>
+
+<p>Even bigger news! It is now a Compass extension so you don&#8217;t have to copy/paste functions into your projects anymore. All you have to do is:</p>
+
+<ol>
+  <li>Install the gem through your terminal: <code>gem install SassyLists</code></li>
+  <li>Require it in your <code>config.rb</code> file: <code>require 'SassyLists'</code></li>
+  <li>Import it in your stylesheet: <code>@import 'SassyLists';</code></li>
+</ol>
+
+<p>Done. From there you can use all the functions you want. Isn&#8217;t it awesome? Plus all you have to do to update the library is reinstalling the gem with the same command as step 1. No more checking your functions are up to date and copy pasting all over again.</p>
+
+<p>All of this thanks to <a href="http://viii.in/">Vinay Raghu</a> who made the Compass extension out of my original work. A million thanks to him!</p>
+
+<h2>New functions</h2>
+
+<p>I have added a couple of functions to make the library even more awesome like <code>purge()</code>, <code>is-symmetrical()</code>, <code>sum()</code>, <code>chunk()</code>, <code>count-values()</code> and <code>remove-duplicates()</code>.</p>
+
+<h3>Purge</h3>
+
+<p>I can&#8217;t believe I didn&#8217;t make the <code>purge()</code> function a while ago. Basically, it removes all non-true value of a list. Compass includes the <code>compact()</code> function which does pretty much the same thing. </p>
+
+<pre><code class="language-scss">@function purge($list) {
+  $result: ();
+  
+  @each $item in $list {
+    @if $item != null 
+    and $item != false 
+    and $item != "" {
+      $result: append($result, $item);
+    }
+  }
+  
+  @return $result;
+}
+
+$list: a, b, null, c, false, '', d;
+$purge: purge($list);
+// -&gt; a, b, c, d
+</code></pre>
+
+<p>I think the code is self-explanatory. We loop through all items of the list: if it&#8217;s not false, we append it then we return the new list. Easy peasy! It would be even easier if Sass had a boolean converter operator (<code>!!</code>). Then we could do something like this <code>@if !!$item { $result: append($result, $item); }</code>. Unfortunately, we can&#8217;t.</p>
+
+<h3>Is symmetrical</h3>
+
+<p>I don&#8217;t think this function has any major usecase, but you know, just in case I added it. It checks whether your list is symmetrical. It&#8217;s based on my <code>reverse()</code> function.</p>
+
+<pre><code class="language-scss">@function is-symmetrical($list) {
+  @return reverse($list) == reverse(reverse($list)); 
+}
+</code></pre>
+
+<p>Why don&#8217;t we compare the initial list with the reversed one? Because reversing a list modify its inner structure, resulting in a false assertion. This makes sure both list are properly compared.</p>
+
+<h3>Sum</h3>
+
+<p>Same here, I don&#8217;t think it has much point but I wanted to add it anyway. It takes all unitless number from the list and add them. The second parameter is a boolean enabling / disabling the removing of units. Basically, you can parseInt the value to get only the number.</p>
+
+<pre><code class="language-scss">@function sum($list, $force: false) {
+  $result: 0;
+  
+  @each $item in $list {
+    @if type-of($item) == number {
+      @if $force and unit($item) {
+        $item: $item / ($item * 0 + 1);
+      }
+      @if unitless($item) {
+        $result: $result + $item;
+      }
+    }
+  }
+  
+  @return $result;
+}
+
+$list: 1 2 3 4px;
+$sum: sum($list);       // -&gt; 6
+$sum: sum($list, true); // -&gt; 10
+
+</code></pre>
+
+<h3>Chunk</h3>
+
+<p>The <code>chunk()</code> function is based on the equivalent PHP function <code>array_chunk()</code>. From the <a href="http://php.net/manual/en/function.array-chunk.php">PHP.net manual</a>:</p>
+
+<blockquote>
+  <p>Chunks an <code>$array</code> into <code>$size</code> large chunks. The last chunk may contain less than <code>$size</code> elements.</p>
+</blockquote>
+
+<pre><code class="language-scss">@function chunk($list, $size) {
+  $result: ();
+  $n: ceil(length($list) / $size);
+  $temp-index: 0;
+
+  @for $i from 1 through $n {
+    $temp-list: ();
+
+    @for $j from 1 + $temp-index through $size + $temp-index {
+      @if $j &lt;= length($list) {
+        $temp-list: append($temp-list, nth($list, $j));
+      }
+    }
+
+    $result: append($result, $temp-list);
+    $temp-index: $temp-index + $size;
+  }
+
+  @return $result;
+}
+
+$list: a, b, c, d, e, f, g;
+$chunk: chunk($list, 3);
+// -&gt; ( (a, b, c), (d, e, f), g)
+</code></pre>
+
+<p>We could probably make the code slightly lighter but I didn&#8217;t want to dig too deep into this. I&#8217;ll eventually clean this up later. Meanwhile, it works great. If you find a usecase, hit me up!</p>
+
+<h3>Count values</h3>
+
+<p>Same as above, the <code>count-values()</code> function is inspired by <code>array_count_values()</code> that counts each value of the given array.</p>
+
+<blockquote>
+  <p>Returns an array using the values of <code>$array</code> as keys and their frequency in <code>$array</code> as values.</p>
+</blockquote>
+
+<pre><code class="language-scss">@function count-values($list) {
+  $keys   : ();
+  $counts : ();
+
+  @each $item in $list {
+    $index: index($keys, $item);
+
+    @if not $index {
+      $keys   : append($keys, $item);
+      $counts : append($counts, 1);
+    }
+    @else {
+      $count  : nth($counts, $index) + 1;
+      $counts : replace-nth($counts, $index, $count);
+    }
+  }
+
+  @return zip($keys, $counts);
+}
+</code></pre>
+
+<p>It&#8217;s based on the built-in <code>zip()</code> function that merges several lists into a multi-dimensional list by preserving indexes.</p>
+
+<pre><code class="language-scss">$list: a, b, c, a, d, b, a, e;
+$count-values: count-values($list);
+// -&gt; a 3, b 2, c 1, d 1, e 1
+</code></pre>
+
+<h3>Remove duplicates</h3>
+
+<p>There are times when you want to remove values that are present multiple times in a list. You had to do it by hand. Not anymore, I got your back.</p>
+
+<pre><code class="language-scss">@function remove-duplicates($list, $recursive: false) {
+  $result: ();
+  
+  @each $item in $list {
+    @if not index($result, $item) {
+      @if length($item) &gt; 1 and $recursive {
+        $result: append($result, remove-duplicates($item, $recursive));
+      }
+      @else {
+        $result: append($result, $item);
+      }
+    }
+  }
+  
+  @return $result;
+}
+
+$list: a, b, a, c, b, a, d, e;
+$remove-duplicates: remove-duplicates($list);
+// -&gt; a, b, c, d, e
+</code></pre>
+
+<p>You can even do it recursively if you feel so, by enabling recursivity with <code>true</code> as a 2nd argument. Nice, isn&#8217;t it?</p>
+
+<h3>Debug</h3>
+
+<p>Last but not least, I added a <code>debug()</code> function to help you guys debugging your lists. Basically all it does is displaying the content of your list like a <code>console.log()</code> in JavaScript.</p>
+
+<pre><code class="language-scss">@function debug($list) {
+  $result: #{"[ "};
+
+  @each $item in $list {
+    @if length($item) &gt; 1 {
+      $result: $result#{debug($item)};
+    }
+    @else {
+      $result: $result#{$item};
+    }
+    @if index($list, $item) != length($list) {
+      $result: $result#{", "};
+    }
+  } 
+
+  $result: $result#{" ]"};
+
+  @return $result;
+}
+
+$list: (a b (c d (e f ( (g h (i j k)) l m))));
+$debug: debug($list);
+// -&gt; [ a, b, [ c, d, [ e, f, [ [ g, h, [ i, j, k] ], l, m ] ] ] ]
+</code></pre>
+
+<h2>Improvements</h2>
+
+<p>Not only I try to add new functions but I also do my best to make all functions as fast as they can be and the library as simple to understand as it can be so you can dig into it to change / learn stuff.</p>
+
+<p>For example, you know we have <a href="http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#removing">two remove functions</a>: <code>remove()</code> and <code>remove-nth()</code>. I have simplified those two greatly:</p>
+
+<pre><code class="language-scss">@function remove($list, $value, $recursive: false) {
+  @return replace($list, $value, "", $recursive);
+}
+
+@function remove-nth($list, $index) {
+  @return replace-nth($list, $index, "");
+}
+</code></pre>
+
+<p>Crazy simple, right? How come I haven&#8217;t done this earlier? Well let&#8217;s be honest, it has been a pain in the ass to come to this actually. I have faced an annoying issue: replacing by an empty string didn&#8217;t remove the element from the list, it simply made it disappear. The difference is that the length of the list remained unchanged and this is a big deal.</p>
+
+<p>This is why I had to create the <code>purge()</code> function. Both <code>replace()</code> and <code>replace-nth()</code> functions return a purged list, which means the empty strings get actually deleted from the list.</p>
+
+<p>I have also used quite a couple of ternary operators along the way to make code lighter.</p>
+
+<h2>What now?</h2>
+
+<p>Quite a few things! I still have to clean some functions because they are kind of messy at the time. I could still add new functions if you think of something.</p>
+
+<p>I am unable to wait for Sass 3.3, it is going to be awesome. First, the <code>if()</code> will be completely reworked to have a built-in parser so it stop bugging around. </p>
+
+<p>But there will also be new string manipulation functions (<code>str-length()</code>, <code>str-slice()</code>&#8230;) and the <code>call()</code> function which will allow me to make a lot of new functions like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every"><code>every()</code></a>.</p>
+
+<p>Oh, and of course Sass 3.3 will bring map support which will be a whole another story, with a ton of new functions to make. Anyway it is going to be amazing, really!</p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'Advanced Sass list functions, again',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>A round-up on CSS playgrounds</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>A round-up on CSS playgrounds</h1> 
+	
+
+	
+		<p class="date">November 19, 2012
+		
+		</p> 
+	
+	
+	
+<h2>What is a code playground?</h2>
+
+<p>A code playground is an online tool allowing you to do some code, then save and share it. It&#8217;s often used for quick demos and reduced testcases. It&#8217;s a good alternative to the old .html file with its embedded <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code> tags.</p>
+
+<p>Playgrounds are becoming more and more popular and there are a bunch of options when you want to use one. Let me introduce you the most popular ones:</p>
+
+<ul>
+  <li><a href="http://codepen.io" title="CodePen">CodePen</a> from Chris Coyier, Tim Sabat and Alex Vasquez</li>
+  <li><a href="http://dabblet.com" title="Dabblet">Dabblet</a> from Lea Verou</li>
+  <li><a href="http://cssdeck.com" title="CSSDeck">CSSDeck</a> from Rishabh</li>
+  <li><a href="http://jsfiddle.net" title="JSFiddle">JSFiddle</a> from Oskar Krawczyk</li>
+</ul>
+
+<p>Basically, they all do more or less the same stuff but each one has its own strengths and weaknesses. So in the end the choice is up to the user. I&#8217;d like to give you my opinion on this stuff but first, let&#8217;s make a little round-up.</p>
+
+<h2>Dabblet</h2>
+
+<p>Dabblet is an amazing playground<span style="text-decoration: line-through;">, however it doesn&#8217;t support JavaScript. That being said, its author presented Dabblet as a pure CSS playground, so it&#8217;s not very surprising JavaScript isn&#8217;t supported</span>.</p>
+
+<p>What is a little bit more surprising however is that Dabblet doesn&#8217;t provide any support for preprocessors, especially CSS ones. Nowadays, it&#8217;s a pretty big deal when a playground doesn&#8217;t allow users to code with preprocessors.</p>
+
+<p>Plus, it seems to be very buggy sometimes. Shortcuts don&#8217;t work as expected, cursor is boucing to the top of your document, etc. It&#8217;s too bad because it has a minimalist and cute interface.</p>
+
+<h3>Pros</h3>
+
+<ul>
+  <li>Live reload</li>
+  <li>Prefixfree by default (removable)</li>
+  <li>Modulable interface</li>
+  <li>User accounts via GitHub: gallery</li>
+</ul>
+
+<h3>Cons</h3>
+
+<ul>
+  <li><span style="text-decoration: line-through">No JS support</span> JS tab now in alpha stage</li>
+  <li>No preprocessors support</li>
+  <li>Cloned GitHub user accounts (followers/following GitHub users)</li>
+  <li>Sometimes very buggy</li>
+</ul>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="http://dabblet.com">Dabblet</a></li>
+  <li><a href="http://blog.dabblet.com/">Blog</a></li>
+  <li><a href="https://twitter.com/dabblet">Dabblet</a> on Twitter</li>
+</ul>
+
+<h2>JSFiddle</h2>
+
+<p>JSFiddle is a wonderful playground when it comes to JavaScript development since it provides a wide range of JavaScript libraries, probably more than you&#8217;ll ever need. Problem is it doesn&#8217;t use a live reload system meaning you have to hit &#8220;Run&#8221; everytime you make a change. It&#8217;s kind of annoying, but for JavaScript prototyping, it&#8217;s amazing.</p>
+
+<h3>Pros</h3>
+
+<ul>
+  <li>22 JavaScript libraries available + multiple versions: Mootools, jQuery, Prototype, YUI, Glow, Dojo, Processing.js, ExtJS, Raphael, RightJS, Three.js, Zepto, Eny, Shipyard, Knockout, The X Toolkit, AngularJS, Ember, Underscore, Bonsai, KineticJS, FabricJS</li>
+  <li>Highly customizable for JS development</li>
+  <li>Built-in options for Normalize.css</li>
+  <li>Preprocessors: SCSS (CSS), CoffeeScript (JS), JavaScript 1.7 (JS)</li>
+  <li>Easy embedding of external stylesheets / JS scripts</li>
+  <li>Doctype accessible</li>
+  <li>Numbers versions of your work</li>
+  <li>User accounts: gallery</li>
+  <li>Mobile debugger</li>
+</ul>
+
+<h3>Cons</h3>
+
+<ul>
+  <li>No live reload</li>
+  <li>No HTML preprocessors support</li>
+  <li>No built-in option for Prefixfree and Modernizr</li>
+  <li>Interface somewhat a bit fixed</li>
+</ul>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="http://jsfiddle.net">JSFiddle</a></li>
+  <li><a href="https://twitter.com/jsfiddle">JSFiddle</a> and <a href="https://twitter.com/jsfiddlesupport">JSFiddleSupport</a> on Twitter</li>
+</ul>
+
+<h2>CSSDeck</h2>
+
+<p>CSSDeck is fairly new in the playground scene but it&#8217;s the only one providing the ability to record your code while you type it in order to have some kind of video. Basically, you can make video tutorial with CSSDeck, which you can&#8217;t do with other playgrounds.</p>
+
+<h3>Pros</h3>
+
+<ul>
+  <li>Live reload</li>
+  <li>Codecast feature (video coding)</li>
+  <li>11 JavaScript libraries available: MooTools, jQuery, jQuery Mobile, Prototype, YUI, Underscore, Backbone, Modernizr, Sencha Touch, Dojo, Bootstrap</li>
+  <li>Preprocessors: ZenCoding (HTML), Markdown (HTML), Slim (HTML), Jade (HTML), HAML (HTML), LESS (CSS), Stylus (CSS), SCSS (CSS), Sass (CSS), Compass (CSS), CoffeeScript (JS)</li>
+  <li>Built-in options for Prefixfree and Normalize.css</li>
+  <li>User accounts via Twitter or GitHub: gallery, likes &amp; follow</li>
+  <li>Possibility to make private stuff</li>
+</ul>
+
+<h3>Cons</h3>
+
+<ul>
+  <li>Small community</li>
+  <li>Interface sometimes a bit messy</li>
+</ul>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="http://cssdeck.com">CSSDeck</a></li>
+  <li><a href="https://twitter.com/cssdeck">CSSDeck</a> on Twitter</li>
+</ul>
+
+<h2>CodePen</h2>
+
+<p>CodePen is one hell of a playground. It provides very strong tools for each of the 3 supported languages and provides awesome features for registered users like personal gallery, tags, forks, likes and follows, various themes, etc.</p>
+
+<p>Plus, authors pick best pens on the site and feature them on the front page. This way you can have a look at best front-end works outhere without having to search in thousands of pages.</p>
+
+<h3>Pros</h3>
+
+<ul>
+  <li>Live reload</li>
+  <li>8 JavaScript libraries available: jQuery, jQuery UI, Zepto, MooTools, Prototype, YUI, ExtJS, Dojo</li>
+  <li>Preprocessors: ZenCoding (HTML), Markdown (HTML), Slim (HTML), HAML (HTML), LESS (CSS), SCSS (CSS), Sass (CSS), CoffeeScript (JS)</li>
+  <li>Built-in options for Prefixfree, Normalize.css, Reset.css and Modernizr</li>
+  <li><code>&lt;head&gt;</code> accessible</li>
+  <li>Easy embedding of external stylesheets / JS scripts</li>
+  <li>User accounts via GitHub: gallery, likes &amp; follow</li>
+  <li>Various themes available</li>
+  <li>Tags</li>
+  <li>Possibility to fork</li>
+  <li>Homepage featuring coolest pens</li>
+  <li>A PRO version with special features (teach mode, pair programming and much more)</li>
+</ul>
+
+<h3>Cons</h3>
+
+<ul>
+  <li>Interface somewhat a bit fixed (preview with small height)</li>
+  <li>Everything is public without PRO version</li>
+  <li>Not registered pens are quickly deleted</li>
+  <li>Sometimes buggy with for loops</li>
+</ul>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="http://codepen.io">CodePen</a></li>
+  <li><a href="http//blog.codepen.io">Blog</a></li>
+  <li><a href="https://twitter.com/codepen">CodePen</a> on Twitter</li>
+</ul>
+
+<h2>What&#8217;s my opinion</h2>
+
+<p>Honestly, I think <strong>CodePen is far ahead of any other playground out there</strong>. All in all, it provides more options than others, it&#8217;s more stable, less buggy, and far more popular even if it&#8217;s only 6 months old.</p>
+
+<p>I used to work a lot in Dabblet but I&#8217;ve always found those tiny little bugs very annoying. Then I switched to JSFiddle but the lack of a live reload was bothering me. Then came CodePen and it was kind of a revelation.</p>
+
+<p>Shortly after the launch, I spent a huge amount of time on CodePen to play with CSS. Back in the days, I did between 1 and 5 pens a day (inspired from Dribbble), most of them hitting the front page. It was very amusing. Now, I&#8217;m not doing much anymore because I use my free time for Codrops as part of articles.</p>
+
+<p>Anyway, if you&#8217;d like to have a glance behind the scenes of CodePen, <a href="http://davidwalsh.name/codepen-interview">David Walsh recently interviewed Chris Coyier about it</a>. They talk about challenges to get there, technical details and of course what&#8217;s planned for the future.</p>
+
+<p>I&#8217;ve made a comparison of these 4 playgrounds as a table for more clarity. Here is <a href="http://jsfiddle.net/FDDed/13/embedded/result/">the JSFiddle</a>. Yeah, I made a <strong>JSFiddle</strong>, because on CodePen everything is public, and I don&#8217;t want to drop those kind of things there. It&#8217;s probably one of the only bad sides of CodePen, which will be soon gone.</p>
+
+<iframe style="width: 100%; height: 500px; margin: 20px 0;" src="http://jsfiddle.net/FDDed/13/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>What about you? What&#8217;s your favorite CSS playground?</p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'A round-up on CSS playgrounds',
+  	  url: 'http://hugogiraudel.com/blog/css-playgrounds.html',
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

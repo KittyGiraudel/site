@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Understanding Sass lists</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>Understanding Sass lists</h1> 
+	
+
+	
+		<p class="date">July 15, 2013
+		
+		</p> 
+	
+	
+	
+<p>Lists have to be the most complicated and vicious thing in the whole Sass language. The main problem with lists -if a problem it is- is that the syntax is way too permissive. You can do pretty much whatever you want.</p>
+
+<p>Anyway, I recently had the opportunity to write <a href="http://css-tricks.com/striped-background-gradients/">an article for CSS-Tricks</a> about a Sass function involving quite a lot of list manipulation. I introduced the topic by clearing a couple of things regarding Sass lists but I wanted to write a more in-depth article.</p>
+
+<h2>Creating a Sass list</h2>
+
+<p>First things first. Even creating a Sass list can be tricky. Indeed, Sass isn&#8217;t very strict with variable types. Basically it means you can process a list quite like a string, or use list functions to a string. It is basically a mess.</p>
+
+<p>Anyway, we have a couple of ways to initialize an empty variable (that could be treated as a list):</p>
+
+<blockquote class="pull-quote--right">Sass isn't very strict with variable type.</blockquote>
+
+<pre><code class="language-scss">$a: ();
+$b: unquote('');
+$c: null;
+$d: (null);
+</code></pre>
+
+<p>Now we have defined our variables, we will check their type. Just for fun.</p>
+
+<pre><code class="language-scss">type-of($a) -&gt; list
+type-of($b) -&gt; string
+type-of($c) -&gt; null
+type-of($d) -&gt; null
+</code></pre>
+
+<p>Since <code>$c</code> and <code>$d</code> are stricly equivalent, we will remove the later from the next tests. Let&#8217;s check the length of each variable.</p>
+
+<pre><code class="language-scss">length($a) -&gt; 0
+length($b) -&gt; 1
+length($c) -&gt; 1
+</code></pre>
+
+<p><code>$a</code> being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn&#8217;t that odd either since it is a string. However the <code>null</code> variable being 1 item long is kind of weird; more on this later.</p>
+
+<h2>Sass list &#8220;fun&#8221; facts</h2>
+
+<p>This section has been quickly covered in the article at CSS-Tricks but since it is the very basics I have to put this here as well.</p>
+
+<p><strong>You can use spaces or commas as separator.</strong> Even if I feel more comfortable with commas since it is the classic separator for arrays (JavaScript, PHP&#8230;).</p>
+
+<pre><code class="language-scss">$list-space: "item-1" "item-2" "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+</code></pre>
+
+<p><em>Note: As in CSS, you can ommit quotes for your strings as long as they don&#8217;t contain any special characters. So <code>$list: item-1, item-2, item-3</code> is perfectly valid.</em></p>
+
+<p><strong>You can nest lists.</strong> As for JavaScript or any other language, there is no limit regarding the level of depth you can have with nested lists. Just go as deep as you need to, bro. </p>
+
+<pre><code class="language-scss">/* Nested lists with braces and same separator */
+$list: ( 
+    ("item-1.1", "item-1.2", "item-1.3"), 
+        ("item-2.1", "item-2.2", "item-2.3"),
+        ("item-3.1", "item-3.2", "item-3.3")
+       );
+       
+/* Nested lists without braces using different separators to distinguish levels */
+$list: "item-1.1" "item-1.2" "item-1.3", 
+       "item-2.1" "item-2.2" "item-2.3",
+       "item-3.1" "item-3.2" "item-3.3";
+</code></pre>
+
+<p><strong>You can ommit braces</strong> (as you can guess from the previous example). You can define a non-empty list without any braces if you feel so. This is because -contrarily to what most people think- <a href="https://github.com/nex3/sass/issues/837#issuecomment-20429965">braces are not what create lists</a> in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.</p>
+
+<p><em>Note: This is the theory. I&#8217;ve noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we&#8217;ll dig into this in another blog post.</em></p>
+
+<blockquote class="pull-quote--right">Manipulating 5+ nested lists is a pain in the ass.</blockquote>
+
+<pre><code class="language-scss">$list: "item-1", "item-2", "item-3";
+</code></pre>
+
+<p><strong>Indexes start at 1, not 0.</strong> This is one of the most disturbing once you start experimenting with Sass lists. Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).</p>
+
+<pre><code class="language-scss">nth($list, 0) -&gt; throws error
+nth($list, 1) -&gt; "item-1"
+</code></pre>
+
+<p><strong>Every value in Sass is treated as a list.</strong> Strings, numbers, boolean, whatever you can put in a variable. This means you&#8217;re fine to use some list functions even on things that don&#8217;t look like one.</p>
+
+<pre><code class="language-scss">$variable: "Sass is awesome";
+length($variable) -&gt; 1
+</code></pre>
+
+<p><em>Beware! If you remove the quotes around this string, it will be parsed as a 3 items long list (1: Sass; 2: is; 3: awesome). I recommand you quotes your strings to avoid some unpleasant surprises.</em></p>
+
+<h2>Sass list functions</h2>
+
+<p>Before getting into the real topic, let&#8217;s make a round-up on Sass list functions.</p>
+
+<p><strong><code>length($list)</code></strong>: returns the length of a <code>$list</code> (if not a list, returns 1).</p>
+
+<p><strong><code>nth($list, $index)</code></strong>: returns the value at <code>$index</code> position in <code>$list</code> (throw an error if index out of list range).</p>
+
+<p><strong><code>index($list, $value)</code></strong>: returns the first index of the searched for <code>$value</code> in <code>$list</code> (false if not found).</p>
+
+<p><strong><code>append($list, $value[, $separator])</code></strong>: appends <code>$value</code> to the end of <code>$list</code> using <code>$separator</code> as a separator (using the current one if not specified).</p>
+
+<p><strong><code>join($list-1, $list-2[, $separator])</code></strong>: appends <code>$list-2</code> to <code>$list-1</code> using <code>$separator</code> as a separator (using the one from the first list if not specified). </p>
+
+<p><strong><code>zip(*$lists)</code></strong>: combines several list into a comma-separated list where the nth value is a space-separated lists of all source lists nth values. In case source lists are not all the same length, the result list will be the length of the shortest one.</p>
+
+<p><strong><code>reject($list, $value)</code></strong> <em>(Compass)</em>: removes <code>$value</code> from <code>$list</code>.</p>
+
+<p><strong><code>compact(\*$args)</code></strong> <em>(Compass)</em>: returns a new list after removing all the non-true values.</p>
+
+<h2>Adding things to Sass lists</h2>
+
+<p>This is where things get very interesting. And quite complicated as well. I think the best way to explain this kind of stuff is to use an example. I&#8217;ll use the same I talked about in <a href="http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/">my Sass talk at KiwiParty</a> last month.</p>
+
+<p>Please consider an extended selector like <code>.home .nav-home, .about .nav-about, .products .nav-products, .contact .nav-contact</code> based on a list of keywords <code>$pages: home, about, products, contact</code>. I found 3 ways to generate this selector based on the list; we&#8217;ll see them one by one.</p>
+
+<p>But first, we will write the skeleton of our testcase:</p>
+
+<pre><code class="language-scss">$pages: home, about, products, contact;
+$selector: ();
+
+@each $item in $pages {
+  /* We create $selector */
+}
+
+#{$selector} {
+  style: awesome;
+}
+</code></pre>
+
+<h3>The long and dirty way</h3>
+
+<p>This is the method I was still using a couple of weeks ago. It works but it involves an extra conditional statemens to handle commas. Please see below.</p>
+
+<pre><code class="language-scss">@each $item in $pages {
+  $selector: $selector unquote('.#{$item} .nav-#{$item}');
+    
+    @if $item != nth($pages, length($pages)) {
+      $selector: $selector unquote(',');
+    }
+}
+</code></pre>
+
+<p>Basically, we add the new selector to <code>$selector</code> and if we are not dealing with the last item of the list, we add a comma.</p>
+
+<p><em>Note: we have to use <code>unquote('')</code> to treat our new selector as an unquoted string.</em></p>
+
+<h3>The clean way</h3>
+
+<p>This one is the cleanest way you can use between the three; not the shortest though. Anyway, it uses <code>append()</code> properly.</p>
+
+<pre><code class="language-scss">@each $item in $pages {
+  $selector: append($selector, unquote('.#{$item} .nav-#{$item}'), comma);
+}
+</code></pre>
+
+<p>I think this is pretty straightforward: we append to <code>$selector</code> the new selector by explicitly separating it from the previous one with a comma.</p>
+
+<h3>The implicit way</h3>
+
+<p>Probably my favorite version above all since it&#8217;s the shortest. It relies on implicit appending; very neat.</p>
+
+<pre><code class="language-scss">@each $item in $pages {
+  $selector: $selector, unquote('.#{$item} .nav-#{$item}');
+}
+</code></pre>
+
+<p>Instead of using <code>append()</code> and setting the 3rd parameter to <code>comma</code> we implicitly do it via removing the function and using a comma right after <code>$selector</code>.</p>
+
+<h2>Final words</h2>
+
+<blockquote class="pull-quote--right">Having a very permissive can be complicated.</blockquote>
+
+<p>The three versions we saw in the previous section work like a charm, the one you should use is really up to you. You can also do it in some other more complicated and dirty ways.</p>
+
+<p>Anyway, this shows why having a very permissive can be complicated. As I said at the beginning of this post, you can do pretty much whatever you want and if you want my opinion this isn&#8217;t for the best.</p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'Understanding Sass lists',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>A CSS challenge</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>A CSS challenge</h1> 
+	
+
+	
+		<p class="date">November 20, 2012
+		
+		</p> 
+	
+	
+	
+<p>Yesterday night, I&#8217;ve seen something in my Twitter timeline which excited my curiosity: a CSS challenge. It was proposed by <a href="https://twitter.com/goetter">Raphael Goetter</a>, a famous French front-end developer on <a href="http://blog.goetter.fr/post/36084887039/tes-pas-cap-premiere-edition">his blog</a>.</p>
+
+<p>Since I&#8217;m sure you&#8217;ll be interested in a little CSS riddle (you will, will you?), let me tell you what this is about.</p>
+
+<p><img src="http://i.imgur.com/fZkkw.jpg" alt="CSS challenge" /></p>
+
+<p>Will you be able to do this (I&#8217;m talking about the small line behind the text) following the restrictions below?</p>
+
+<ul>
+  <li>Only one single element (<code>h1</code>) in the body element</li>
+  <li>Element horizontally centered in its parent</li>
+  <li>The line is vertically centered on the text</li>
+  <li>Both the font size and the text have to be editable without having to edit the line</li>
+  <li>Body and/or the element can have a background (image) without changing anything else</li>
+  <li>No HTTP request, no image, no JavaScript</li>
+  <li>The best browser support the better of course</li>
+</ul>
+
+<p>I can&#8217;t wait to see the way you&#8217;ll figure this out guys. I personally found something with a few downsides sadly. I&#8217;m sure some of you will be able to find a kick-ass solution. ;)</p>
+
+<p>Good luck!</p>
+
+<h2>[Edit] Solutions (November 24th, 2012)</h2>
+
+<p>Thanks for participating! There have been a couple of answers for this trick. Druid of Lûhn proposed <a href="http://codepen.io/Druid-of-Luhn/details/sclvk">something</a> which works but sadly it&#8217;s pretty awful for SEO since it involves an empty <code>h1</code> tag.</p>
+
+<p>Joshua Hibbert <a href="http://jsfiddle.net/joshnh/3PG8j/">used linear gradients</a> to do it (so <a href="http://codepen.io/raphaelgoetter/pen/dGxvL">did</a> Raphael Goetter). This is a clever technique I thought about but didn&#8217;t give a try. My experience with gradients is not that good.</p>
+
+<p>Here is the way I <a href="http://jsfiddle.net/HugoGiraudel/cyeGM/1/">did it</a>:</p>
+
+<pre><code class="language-css">body {
+	text-align: center;
+	overflow: hidden;
+	background: #ffa;
+}
+
+h1 {
+	display: -moz-inline-box;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: relative;
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+h1:after,
+h1:before {
+	content: "";
+	position: absolute;
+	height: 1px;
+	width: 1000px;
+	top: 50%;
+	right: 100%;
+	background: black;
+}
+
+h1:after { left: 100%; }
+</code></pre>
+
+<p>So basically, I used both pseudo-elements to create the line. To place them, I set the title to inline-block, and the parent (<code>body</code>) text-align to center.</p>
+
+<p>Sadly, a few things suck with this technique, even if it works pretty well:</p>
+
+<ul>
+  <li>Parent needs to have <code>text-align: center</code></li>
+  <li>Parent needs to have <code>overflow: auto</code></li>
+  <li>It requires 2 pseudo-elements</li>
+  <li>Pseudo-elements need to have a large width to reach the edge of the screen (~1000px to cover about all screen sizes)</li>
+</ul>
+
+<p>Hopefully the browser support is pretty good, at least way better than the gradient version:</p>
+
+<ul>
+  <li>IE8+</li>
+  <li>Firefox 2+</li>
+  <li>Chrome</li>
+  <li>Safari 3+</li>
+  <li>Opera 9+</li>
+  <li>iOS Safari 3+</li>
+  <li>Opera Mini 5+</li>
+  <li>Android Browser 2+</li>
+  <li>Blackberry browser 7+</li>
+  <li>Opera Mobile 10+</li>
+  <li>Chrome for Android</li>
+  <li>Firefox for Android</li>
+</ul>
+
+<p>But since it&#8217;s only a tiny design improvement, I&#8217;ll definitely go with the gradient version on a live project. Thanks for participating. I&#8217;ll try to drop another challenge soon. :)</p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'A CSS challenge',
+  	  url: 'http://hugogiraudel.com/blog/css-challenge.html',
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>SassySort: sorting algorithms in Sass</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>SassySort: sorting algorithms in Sass</h1> 
+	
+
+	
+		<p class="date">March 18, 2014
+		
+		</p> 
+	
+	
+	
+<p>The idea of building a sorting function in pure Sass isn&#8217;t new. I think everything started months ago when a fellow folk on Twitter asked how I would build a Sass function to sort a list of numeric values in order to create a modular scale. It was actually quite easy to do even if it could probably be optimized.</p>
+
+<p>Although at this point, sorting numbers was not enough to me. I wanted to sort more. I wanted to sort everything! Thankfully, Sass 3.3 was providing me exactly what I needed: string manipulation functions. So I started hacking around to make a sorting function. It took me two days but eventually I did it.</p>
+
+<p>That could have been the end of that if Sam Richards (a.k.a <a href="https://twitter.com/snugug">Snugug</a>) had not put his Quick Sort implementation on my way. God, it was both fast and beautiful but&#8230; it was for numeric values only. Challenge accepted!</p>
+
+<p>It didn&#8217;t take me long to update his function in order to sort anything, very quickly (actually as quickly as Ruby can get, which means, not much&#8230;). And I really enjoyed working on this, so I started implementing other famous algorithms in Sass, resulting in <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+
+<p><em>Note: I recently wrote <a href="http://thesassway.com/advanced/implementing-bubble-sort-with-sass">an article</a> about how to implement the Bubble Sort algorithm in Sass for The Sass Way. If you haven&#8217;t read it, you should! At least for the beautiful header image!</em></p>
+
+<h2>How to use</h2>
+
+<p>SassySort is now a Compass Extension, which means you can easily include it in any of your project. </p>
+
+<ol>
+  <li>Run <code>gem install SassySort</code> in your terminal</li>
+  <li>Add <code>require 'SassySort'</code> to your <code>config.rb</code></li>
+  <li>Add <code>@import 'SassySort'</code> to your stylesheet</li>
+</ol>
+
+<p>If you simply want to add a file to your project, you can get the <a href="https://github.com/HugoGiraudel/SassySort/blob/master/dist/_SassySort.scss">dist file</a> from the repository, copy and paste its content to your project and voila.</p>
+
+<p>Then you&#8217;ve access to a neat little API:</p>
+
+<pre><code class="language-scss">$list: oranges pears apples strawberries bananas;
+$sort: sort($list);
+// =&gt; apples bananas oranges pears strawberries
+</code></pre>
+
+<p>That&#8217;s pretty much the end of it.</p>
+
+<p><em>Note: also, <a href="https://github.com/jedfoster/SassMeister/issues/64#issuecomment-35530071">I&#8217;ve asked SassMeister to include it</a>, so you might be able to use it directly into <a href="http://sassmeister.com/">SassMeister</a> in the not-so-far future.</em></p>
+
+<h2>Picking the algorithm</h2>
+
+<p>Looking back at my code, I think it&#8217;s pretty cool how I handled the whole thing.There are a couple of algorithms available but I wanted to keep the function name simple: <code>sort()</code> and not <code>bubble-sort()</code> or <code>insertion-sort()</code>. So you can pass the algorithm name as argument.</p>
+
+<pre><code class="language-scss">$sort: sort($list, $algorithm: "bubble");
+</code></pre>
+
+<p>This will use the Bubble Sort implementation, because of the way the <code>sort()</code> function works:</p>
+
+<pre><code class="language-scss">@function sort($list, $order: $default-order, $algorithm: "quick") {
+  @return call("#{$algorithm}-sort", $list, $order);
+}
+</code></pre>
+
+<blockquote class="pull-quote--right">Quicksort is... quicker.</blockquote>
+
+<p>As you can see, the <code>sort()</code> function does no more than defering the return to a sub-function named after the algorithm you ask for (e.g.<code>%algorithm%-sort</code>). The default algorithm is <code>quick</code>, as specified in the function signature but you can use <code>bubble</code>, <code>insertion</code>, <code>shell</code>, <code>comb</code> and <code>selection</code> as well. However <code>quick</code> is simply&#8230; quicker.</p>
+
+<h2>Dealing with weird characters</h2>
+
+<p>Depending on what you aim at doing with this sorting function, you might or might not encounter some issues if you are trying to sort words with unexpected characters. This is because Sass doesn&#8217;t have access to some universal sorting order or something; I had to hard-code the order to follow somewhere.</p>
+
+<p>And this somewhere is in the <code>$default-order</code> variable:</p>
+
+<pre><code class="language-scss">$default-order:
+	"!" "#" "$" "%" "&amp;" "'" "(" ")" "*" "+" "," "-" "." "/" "[" "\\" "]" "^" "_" "{" "|" "}" "~"
+	"0" "1" "2" "3" "4" "5" "6" "7" "8" "9"
+	"a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z" !default;
+</code></pre>
+
+<p>As you can see, it only deals with a restricted amount of characters. Mostly special characters, numbers and letters. You might notice there are no uppercase letters. I decided I wouldn&#8217;t deal with case when sorting. It simply added to much complexity to sorting functions.</p>
+
+<p>Anyway, if you need to add extra characters, you can override this list or make your own variable and pass it to the sort function as the <code>$order</code> (2nd) argument.</p>
+
+<pre><code class="language-scss">$custom-order: /* your custom order */;
+$sort: sort($list, $order: $custom-order);
+</code></pre>
+
+<p>Note that if an unrecognized character is found, it is skipped.</p>
+
+<h2>Final thoughts</h2>
+
+<p>That&#8217;s pretty much it folks. If you really want to dig in the code of the algorithms, be sure to have a look at the <a href="https://github.com/HugoGiraudel/SassySort">repository</a> however it was mostly JavaScript to Sass code conversion, so there is no magic behind it. </p>
+
+<p>If you feel like implementing other sorting algorithms, be sure to have a shot and open an issue / pull-request.</p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'SassySort: sorting algorithms in Sass',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

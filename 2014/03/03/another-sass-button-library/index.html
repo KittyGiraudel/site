@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Another Sass button library</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>Another Sass button library</h1> 
+	
+
+	
+		<p class="date">March 03, 2014
+		
+		</p> 
+	
+	
+	
+<p>If you enjoy reading about Sass, you may have stumbled upon Stuart Robson&#8217;s <a href="http://www.alwaystwisted.com/post.php?s=2014-02-27-even-easier-bem-ing-with-sass-33">recent article promoting BEM</a> syntax with new Sass 3.3 features. Pretty cool article; if you haven&#8217;t read it, you definitely should.</p>
+
+<p>Anyway, I had a couple of minutes to kill the other day so I opened new <a href="http://codepen.io">pen</a> and started writing a little button library. Yes, another one! Actually my point wasn&#8217;t to improve anything, I just wanted to code some Sass, just for the sake of it.</p>
+
+<p>Anyway, I came up with some interesting things and Stuart suggested I wrote a little something about it so here we are.</p>
+
+<h2>Main principles</h2>
+
+<p>My point was to create a base class and a couple of modifiers to be used along with the base class using the brand new <code>&amp;--modifier</code> syntax. Then you can stack as many modifiers as you want as long as they don&#8217;t conflict with each others (multiple color schemes for instance).</p>
+
+<p>Also the code should be DRY and the CSS output well optimized. As light as it can be! And last but not least, the most important pieces of configuration should be handled with a couple of variables to avoid digging into the code.</p>
+
+<h2>Configuration</h2>
+
+<p>Let&#8217;s start with the configuration, shall we?</p>
+
+<pre><code class="language-scss">// Configuration
+$btn-name:  'button' !default;
+$btn-size-ratio: 1.2 !default;
+$btn-hover:  saturate 25% !default;
+$btn-border: darken   20% !default;
+$btn-background: (
+  'default': #565656,
+  'success': #468847,
+  'danger':  #b94a48,
+  'warning': #c09853,
+  'info':    #3a87ad
+) !default;
+</code></pre>
+
+<p><img class="pull-image--right" alt="Variable all the things!" src="http://i.imgur.com/shEzy8H.jpg" /></p>
+
+<p>Everything might not be intuitive so let me explain what each variable is for:</p>
+
+<ul>
+  <li><code>$btn-name</code> is the name of the module (e.g. the base class).</li>
+  <li><code>$btn-size-ratio</code> is the ratio used for small and large modifiers. Basically large is <code>$btn-size-ratio</code> times bigger than usual, while small is <code>$btn-size-ratio</code> smaller than usual.</li>
+  <li><code>$btn-hover</code> is a 2 items long list, the first item being the Sass color manipulation function used, while the second is the argument for this function (e.g. <code>saturate 25%</code>).</li>
+  <li><code>$btn-border</code> kind of works the same way; if not false, it defines the function used to compute the border-color based on the button color. If <code>false</code>, it just disables the border.</li>
+  <li><code>$btn-background</code> is a map of all color schemes; every color is mapped to a name so a modifier like <code>.button--default</code> will make a grey button.</li>
+</ul>
+
+<p>Also note the 2 measures we take to avoid conflicts with user&#8217;s code:</p>
+
+<ul>
+  <li>the <code>!default</code> flag for each variable,</li>
+  <li>namespacing all variables with <code>$btn-</code></li>
+</ul>
+
+<h2>The module</h2>
+
+<pre><code class="language-scss">.#{$btn-name} {
+  // Default styles
+  padding: .5em;
+  margin-bottom: 1em;
+  color: #fff;
+
+  // Some sex appeal!
+  transition: background .15s;
+  border-radius: .15em;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .15);
+
+  // Border or not border?
+  border: if($btn-border, 1px solid, none);
+
+  // Modifiers
+  &amp;--large {
+    font-size: 1em * $btn-size-ratio;
+  }
+
+  &amp;--small {
+    font-size: 1em / $btn-size-ratio;
+  }
+
+  &amp;--bold {
+    font-weight: bold;
+  }
+
+  &amp;--upper {
+    text-transform: uppercase;
+  }
+
+  &amp;--block {
+    display: block;
+    width: 100%;
+  }
+
+  // Color schemes
+  @each $key, $value in $btn-background {
+    &amp;--#{$key} {
+      @include button-color($value);
+    }
+  }
+}
+</code></pre>
+
+<p>Here is how it works: we define everything inside a unique CSS selector named after the <code>$btn-name</code> variable. For each modifier, we use <code>&amp;--modifier</code> which outputs a <code>.button--modifier</code> rule at CSS root. I have made a couple of simple modifiers but you could make as many as you want of course.</p>
+
+<p>You can see we make the border conditional thanks to the ternary <code>if()</code> function. If <code>$btn-border</code> is set to false, then we hide the border, else we add a 1px solid border without specifying any color for now.</p>
+
+<p>Regarding color schemes, we simply loop through the <code>$btn-background</code> map, and call a <code>button-color</code> mixin passing the color as unique argument. Elegant.</p>
+
+<h2>The color mixin</h2>
+
+<p>The <code>button-color</code> mixin aims at dealing with color schemes. We have set up quite a few color schemes in the <code>$btn-background</code> map over which we&#8217;ve iterated to apply those color to the classes they belong to.</p>
+
+<p>Now the mixin will actually apply the background-color to the button, as well as the hover/active state, and the border if not set to false.</p>
+
+<pre><code class="language-scss">@mixin button-color($color) {
+  background-color: $color;
+
+  &amp;:hover,
+  &amp;:active {
+    background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+  }
+
+  @if $btn-border != false {
+    border-color: call(nth($btn-border, 1), $color, nth($btn-border, 2));
+  }
+}
+</code></pre>
+
+<p>Remember what our <code>$btn-hover</code> and <code>$btn-border</code> variables look like? First a color function, then a percentage. To apply this function to the color, we can use the <code>call</code> feature from Sass 3.3.</p>
+
+<p><code>call</code> function calls the function named after the first argument if it exists, passing it all the remaining arguments in the same order. So in our case, the first <code>call</code> will be <code>saturate($color, 25%)</code>. Meanwhile the second one works the same except it first checks whether the variable is not false. In case <code>$btn-border</code> is set to <code>false</code>, we should not output the border-color.</p>
+
+<h3>Smart error handling</h3>
+
+<p>I don&#8217;t know for you, but I don&#8217;t like letting the compiler fail. I&#8217;d rather handle the potential errors myself; I feel like it&#8217;s better for the end user.</p>
+
+<p>So we should probably make a couple of checks to make sure everything&#8217;s right before dumping our CSS in the <code>button-color</code> mixin. Here is how I did it:</p>
+
+<pre><code class="language-scss">@mixin button-color($color) {
+  $everything-okay: true;
+
+  // Making sure $color is a color
+  @if type-of($color) != color {
+    @warn "`#{$color}` is not a color for `button-color`";
+    $everything-okay: false;
+  }
+
+  // Making sure $btn-hover and $btn-border
+  // are 2 items long
+  @if length($btn-hover)  != 2
+   or length($btn-border) != 2 {
+    @warn "Both `$btn-hover` and `$btn-border` should be two items long for `button-color`.";
+    $everything-okay: false;
+  }
+
+  // Making sure first items from $btn-hover and $btn-border
+  // are valid functions
+  @if not function-exists(nth($btn-hover, 1))
+   or not function-exists(nth($btn-border, 1)) {
+    @warn "Either `#{nth($btn-hover, 1)}` or `#{nth($btn-border, 1)}` is not a valid function for `button-color`.";
+    $everything-okay: false;
+  }
+
+  // Making sure second items from $btn-hover and $btn-border
+  // are percentages
+  @if type-of(nth($btn-hover,  2)) != number
+   or type-of(nth($btn-border, 2)) != number {
+    @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
+    $everything-okay: false;
+  }
+
+  // If there is no mistake
+  @if $everything-okay == true {
+    // Mixin content
+  }
+}
+</code></pre>
+
+<blockquote class="pull-quote--right">Always validate user input in your custom functions.</blockquote>
+
+<p>Yes, it takes a decent amount of space. Yes, it makes the mixin longer. Yes, it&#8217;s a pain in the ass to write. On the other hand, if the user makes a mistake with one of the arguments, he&#8217;ll know what&#8217;s going on, or why the mixin didn&#8217;t output anything.</p>
+
+<p>Note how we use the new <code>function-exists</code> from Sass 3.3 to make sure the functions set in <code>$btn-border</code> and <code>$btn-hover</code> variables actually exists. We could push the tests further by making sure it&#8217;s one of <code>saturate</code>, <code>desaturate</code>, <code>darken</code>, <code>lighten</code>, <code>adjust-hue</code>, <code>grayscale</code>, <code>complement</code> or <code>invert</code> but I feel like we already do a pretty good job covering potential mistakes here.</p>
+
+<h2>Final thoughts</h2>
+
+<p>The module is quite simple right now but I feel like it introduces a couple of often overlooked and/or new notions like <code>call</code>, <code>function-exists</code>, <code>@warn</code>, <code>map</code>, BEM 3.3&#8230; </p>
+
+<p>You can have a look at the final code here:</p>
+
+<p data-height="306" data-theme-id="0" data-slug-hash="Dezad" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/HugoGiraudel/pen/Dezad">(Another) Sass button lib</a> by Hugo Giraudel (<a href="http://codepen.io/HugoGiraudel">@HugoGiraudel</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: true,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'Another Sass button library',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>

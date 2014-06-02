@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="../../../../favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+
+<link href="../../../../assets/css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Casting a map into a list in Sass</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>Casting a map into a list in Sass</h1> 
+	
+
+	
+		<p class="date">April 28, 2014
+		
+		</p> 
+	
+	
+	
+<p>I have this article ready for about 3 months now but I never found an occasion to release it&#8230; until today! This will be quite short but I still wanted to write a little something on the topic anyway. You might have read my <a href="http://hugogiraudel.com/2014/01/27/casting-types-in-sass/">article about SassyCast</a>, a small Compass extension I wrote to convert data types in Sass.</p>
+
+<p>SassyCast making possible to go from any data type to any data type (or almost), it includes a way to cast a map into a list. While the function I wrote was kind of straight forward, <a href="https://twitter.com/JulienCabanes/status/427920448899538944">Julien Cabanes showed me a cool little improvement to the function</a> on Twitter. I merged his code in SassyCast 1.0.0.</p>
+
+<h2>The old way</h2>
+
+<p>The <code>to-list</code> function core is pretty straightforward. If the given value is a map, we iterate over it to create a 2-dimensional list like this: <code>( "key-1" "value 1", "key-2" "value 20" )</code>. </p>
+
+<pre><code class="language-scss">@function to-list($value) { 
+  @if type-of($value) == map {
+    $keys: ();
+    $values: ();
+    @each $key, $val in $value {
+      $keys: append($keys, $key);
+      $values: append($values, $val);
+    }
+     @return zip($keys, $values);
+  }
+
+  @return if(type-of($value) != list, ($value,), $value);
+}
+</code></pre>
+
+<p>To be a little more precise about what&#8217;s being done here: we loop through each map entry, store the key in a <code>$keys</code> list and the value in a <code>$values</code> list. Then we <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#zip-instance_method">zip</a> both to return a 2-dimensional list where the first element of each list if the former key and the second element of each list is the former value.</p>
+
+<p>Does the job well.</p>
+
+<h2>The new way</h2>
+
+<p>Julien thought it would be cool to be able to keep only keys, or only values or both (what I&#8217;ve done) so he added an extra parameter to the function accepting either <code>keys</code> or <code>values</code> or <code>both</code>. Every other value would fallback to <code>both</code>.</p>
+
+<p>Then depending on the flag, he returns either <code>$keys</code> or <code>$values</code> or a zip of both.</p>
+
+<pre><code class="language-scss">@function to-list($value, $keep: 'both') {
+  $keep: if(index('keys' 'values', $keep), $keep, 'both');
+  
+  @if type-of($value) == map {
+    $keys: ();
+    $values: ();
+    @each $key, $val in $value {
+      $keys: append($keys, $key);
+      $values: append($values, $val);
+    }
+
+    @if $keep == 'keys' {
+      @return $keys;
+    }
+    @else if $keep == 'values' {
+      @return $values;
+    }
+    @else {
+      @return zip($keys, $values);
+    }
+  }
+
+  @return if(type-of($value) != list, ($value,), $value);
+
+}
+</code></pre>
+
+<p>If you don&#8217;t like conditional return statements or if you simply want to look like a badass with an unreadable ternary mess, you could return something like this:</p>
+
+<pre><code class="language-scss">@return if($keep == 'keys', $keys, if($keep == 'values', $values, zip($keys, $values)));
+</code></pre>
+
+<p>Literally:</p>
+
+<ol>
+  <li>If <code>$keep</code> is <code>'keys'</code>, return <code>$keys</code></li>
+  <li>Else if <code>$keep</code> is <code>'values'</code>, return <code>$values</code></li>
+  <li>Else return <code>zip($keys, $values)</code></li>
+</ol>
+
+<h2>Final thoughts</h2>
+
+<p>Let&#8217;s try it with a little example, shall we? First, our map.</p>
+
+<pre><code class="language-scss">$breakpoints: (
+  small: 600px,
+  medium: 900px,
+  large: 1200px
+);
+</code></pre>
+
+<p>And now, we cast it to a list.</p>
+
+<pre><code class="language-scss">$breakpoints-list: to-list($breakpoints, 'both');
+// (small 600px, medium 900px, large 1200px)
+
+$breakpoints-keys: to-list($breakpoints, 'keys');
+// (small medium large)
+
+$breakpoints-values: to-list($breakpoints, 'values');
+// (600px 900px 1200px)
+</code></pre>
+
+<p>That&#8217;s all folks! Thanks again Julien!</p>
+
+
+
+	
+		<div id="disqus_thread"></div> 
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="../../../../assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+  	codepen: false,
+  	sassmeister: false,
+  	tableOfContent: false,
+  	comments: true,
+  	layout: 'article',
+  	disqus: {
+  	  title: 'Casting a map into a list in Sass',
+  	  url: window.location.href,
+  	  name: 'hugogiraudel'
+  	},
+  	tracking: true,
+  	ad: true
+  });
+});
+</script>
+</body>
+</html>
