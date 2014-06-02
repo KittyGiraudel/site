@@ -585,13 +585,11 @@ pre {
   white-space: pre;
   /* 2 */
   -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
   /* 3 */
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
-  -o-hyphens: none;
   hyphens: none; }
   @media (max-width: 38em) {
     pre {
@@ -937,6 +935,7 @@ h2, .h2 {
     color: #999999;
     opacity: 0;
     pointer-events: none;
+    -webkit-transition: .15s;
     transition: .15s; }
     @media (max-width: 38em) {
       h2 a[href^="#"], .h2 a[href^="#"] {
@@ -1071,6 +1070,7 @@ th {
       border-top: none;
       /* 1 */ }
     .list-articles li:last-of-type {
+      -webkit-box-shadow: 0 1px #F2F2F2;
       box-shadow: 0 1px #F2F2F2;
       /* 2 */ }
   .list-articles a {
@@ -1217,3 +1217,4 @@ th {
  */
 #azcarbon > img {
   display: inline !important; }
+
