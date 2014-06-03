@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -16,10 +16,10 @@
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
 
-<link rel="icon" href="../../../../favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+<link rel="icon" href="/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link rel="stylesheet" href="../../../../assets/css/main.min.css" />
+<link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>Why Element Queries matter</title>
 </head>   
@@ -30,7 +30,7 @@
 	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
 
 	<div class="avatar">
-		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+		<img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
 	</div>
 
 </header>
@@ -40,12 +40,8 @@
 	 
 		<h1>Why Element Queries matter</h1> 
 	
-
 	
-		<p class="date">April 22, 2014
-		
-		</p> 
-	
+	<p class="date">April 22, 2014</p> 
 	
 	
 <p>At work, many of our pages present one or more collection of items, like products, shops, or whatever. It&#8217;s basically a list of thumbnails, with a title and a location and/or a price. When you click on it, it leads you to the page related to the item. We call this the <code>elements</code> component (we could have called it <code>thumbs-list</code> or something but that doesn&#8217;t matter).</p>
@@ -53,7 +49,7 @@
 <p>Now, this is the core of a lot of other components. For instance, we have a component featuring top products, with the same list of items but in a better wrapper with a heading, a &#8220;see more&#8221; link, a large left border for some visual impact and stuff. It&#8217;s just an example but the <code>elements</code> component is used in at least 3 to 4 other components of our architecture.</p>
 
 <figure class="figure">
-<img src="../../../../images/why-element-queries-matter__thumbs-list.png" alt="" />
+<img src="/images/why-element-queries-matter__thumbs-list.png" alt="" />
 <figcaption>A sketch of our main component</figcaption>
 </figure>
 
@@ -116,7 +112,6 @@
 
 <p>But I hope we might get to it. Some day.</p>
 
-
 	
 		<div id="disqus_thread"></div> 
 	
@@ -150,7 +145,7 @@
 </footer>
 </div>
 
-<script src="../../../../assets/js/main.min.js"></script>
+<script src="/assets/js/main.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

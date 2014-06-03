@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -16,10 +16,10 @@
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
 
-<link rel="icon" href="../../../../favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+<link rel="icon" href="/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link rel="stylesheet" href="../../../../assets/css/main.min.css" />
+<link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>Bringing configuration objects to Sass</title>
 </head>   
@@ -30,7 +30,7 @@
 	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
 
 	<div class="avatar">
-		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+		<img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
 	</div>
 
 </header>
@@ -40,12 +40,8 @@
 	 
 		<h1>Bringing configuration objects to Sass</h1> 
 	
-
 	
-		<p class="date">May 05, 2014
-		
-		</p> 
-	
+	<p class="date">May 05, 2014</p> 
 	
 	
 <p>One thing I was really looking forward with <a href="http://viget.com/extend/sass-maps-are-awesome">Sass maps</a> is the ability to have configuration objects for functions and mixins. You know how you pass objects to your JavaScript class constructors instead of several parameters? Well fasten your belt boys because I&#8217;m bringing this to Sass!</p>
@@ -269,7 +265,6 @@ $component-conf: (
 
 <p>And while the mixin core is a little more crowded due to the map getters, the trade-off can be worth it in some cases.</p>
 
-
 	
 		<div id="disqus_thread"></div> 
 	
@@ -303,7 +298,7 @@ $component-conf: (
 </footer>
 </div>
 
-<script src="../../../../assets/js/main.min.js"></script>
+<script src="/assets/js/main.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

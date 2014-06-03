@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -16,10 +16,10 @@
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
 
-<link rel="icon" href="../../../../favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+<link rel="icon" href="/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link rel="stylesheet" href="../../../../assets/css/main.min.css" />
+<link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>Simulate float: down</title>
 </head>   
@@ -30,7 +30,7 @@
 	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
 
 	<div class="avatar">
-		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+		<img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
 	</div>
 
 </header>
@@ -40,12 +40,8 @@
 	 
 		<h1>Simulate float: down</h1> 
 	
-
 	
-		<p class="date">January 28, 2013
-		
-		</p> 
-	
+	<p class="date">January 28, 2013</p> 
 	
 	
 <p>Back in september, some guy exposed a very interesting problem on <a href="http://css-tricks.com/forums/discussion/19610/float-items">CSS-tricks forums</a>. To sum up, he had a list of elements floated to the left. However, he wanted to float items top to bottom on each column and not left to right on each row.</p>
@@ -210,7 +206,6 @@ li:nth-child(4n+2) {
 
 <p>I guess we could complicate the whole thing to accept more parameters and be even more flexible but would it worth it? I guess not. <strong>The simple way is to use JavaScript. The funny way is to use Sass.</strong></p>
 
-
 	
 		<div id="disqus_thread"></div> 
 	
@@ -244,7 +239,7 @@ li:nth-child(4n+2) {
 </footer>
 </div>
 
-<script src="../../../../assets/js/main.min.js"></script>
+<script src="/assets/js/main.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

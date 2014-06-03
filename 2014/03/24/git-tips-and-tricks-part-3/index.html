@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -16,10 +16,10 @@
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
 
-<link rel="icon" href="../../../../favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+<link rel="icon" href="/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link rel="stylesheet" href="../../../../assets/css/main.min.css" />
+<link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>Git tips and tricks - Part 3</title>
 </head>   
@@ -30,7 +30,7 @@
 	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
 
 	<div class="avatar">
-		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+		<img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
 	</div>
 
 </header>
@@ -40,12 +40,8 @@
 	 
 		<h1>Git tips and tricks - Part 3</h1> 
 	
-
 	
-		<p class="date">March 24, 2014
-		 &mdash; by Loïc Giraudel
-		</p> 
-	
+	<p class="date">March 24, 2014 &mdash; by Loïc Giraudel</p> 
 	
 	
 <blockquote>
@@ -118,7 +114,7 @@ Bisecting: 9 revisions left to test after this (roughly 3 steps)
 
 <p><em>Note: It&#8217;s possible to use <code>git bisect visualize</code> or <code>git bisect view</code> to see the remaining interval in graphical tool. For a console view, you can use <code>git bisect view --stat</code>.</em></p>
 
-<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-1.png" alt="After starting git bisect" /></p>
+<p><img src="/images/git-tips-and-tricks-part-3__bisect-1.png" alt="After starting git bisect" /></p>
 
 <p>Now I have to check if the bug is still there or not and inform Git according to my check.</p>
 
@@ -133,7 +129,7 @@ Bisecting: 4 revisions left to test after this (roughly 2 steps)
 
 <p>Git bisect has reduced the commit interval and checkout the &#8220;Commit 5&#8221;. I will find the typo bug in 2 steps from now. In gitg, my master branch looks like this:</p>
 
-<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-2.png" alt="After first git bisect bad" /></p>
+<p><img src="/images/git-tips-and-tricks-part-3__bisect-2.png" alt="After first git bisect bad" /></p>
 
 <p>The <em>refs/bisect/bad</em> reference has been moved to the &#8220;Commit 10&#8221;. I check if the bug is still there or not.</p>
 
@@ -145,7 +141,7 @@ Bisecting: 2 revisions left to test after this (roughly 1 step)
 
 <p>Now Gitg show this:</p>
 
-<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-3.png" alt="After second git bisect bad" /></p>
+<p><img src="/images/git-tips-and-tricks-part-3__bisect-3.png" alt="After second git bisect bad" /></p>
 
 <pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 0
@@ -155,7 +151,7 @@ Bisecting: 0 revisions left to test after this (roughly 1 step)
 
 <p>The bug wasn&#8217;t there in this step, so I use <code>git bisect good</code> instead of <code>git bisect bad</code>. Gitg has created a new <em>refs/bisect/good-[&#8230;]</em> reference.</p>
 
-<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-4.png" alt="After first git bisect good" /></p>
+<p><img src="/images/git-tips-and-tricks-part-3__bisect-4.png" alt="After first git bisect good" /></p>
 
 <pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
@@ -163,7 +159,7 @@ $ git bisect bad
 Bisecting: 0 revisions left to test after this (roughly 0 steps)
 [7ae5192025b3a96520ee4897bd411ee7c9d0828f] Commit 3</code></pre>
 
-<p><img src="../../../../images/git-tips-and-tricks-part-3__bisect-5.png" alt="After third git bisect bad" /></p>
+<p><img src="/images/git-tips-and-tricks-part-3__bisect-5.png" alt="After third git bisect bad" /></p>
 
 <pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
@@ -189,7 +185,6 @@ Date:   Mon Feb 17 16:25:48 2014 +0100
 diff --git file.txt file.txt
 index d133004..cd8061d 100644
 </code></pre>
-
 
 	
 		<div id="disqus_thread"></div> 
@@ -224,7 +219,7 @@ index d133004..cd8061d 100644
 </footer>
 </div>
 
-<script src="../../../../assets/js/main.min.js"></script>
+<script src="/assets/js/main.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

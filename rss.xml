@@ -1,10 +1,8 @@
-
-
 <rss version="2.0">
 	<channel>
 		<title>HugoGiraudel.com</title>
 		<link>http://hugogiraudel.com</link>
-		<description>I write about Sass. Mostly.</description>
+		<description>I write about Sass.</description>
 		<language>en</language>
 		<copyright>2014</copyright>
 		
@@ -16,65 +14,49 @@
 	<guid>/article/2014-06-02-feedbacks-feweb</guid>
 	
 	
-	<pubDate>Mon, 02 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
-&lt;p&gt;A couple of weeks ago, I have been invited by the &lt;a href=&quot;http://www.lafeweb.be/&quot;&gt;FeWeb&lt;/a&gt; (which stands for &lt;em&gt;La fédération des métiers du web&lt;/em&gt;, literally &lt;em&gt;Web professions Federation&lt;/em&gt;) to talk about Sass at &lt;a href=&quot;http://www.co-station.com/&quot;&gt;Co.Station&lt;/a&gt; in Bruxelles, Belgium.&lt;/p&gt;
-
+	<pubDate>Mon, 02 Jun 2014 17:11:33 GMT</pubDate>
+	<description>&lt;p&gt;A couple of weeks ago, I have been invited by the &lt;a href=&quot;http://www.lafeweb.be/&quot;&gt;FeWeb&lt;/a&gt; (which stands for &lt;em&gt;La f&#233;d&#233;ration des m&#233;tiers du web&lt;/em&gt;, literally &lt;em&gt;Web professions Federation&lt;/em&gt;) to talk about Sass at &lt;a href=&quot;http://www.co-station.com/&quot;&gt;Co.Station&lt;/a&gt; in Bruxelles, Belgium.&lt;/p&gt;
 &lt;figure class=&quot;figure&quot;&gt;
-&lt;img src=&quot;/images/feedbacks-feweb__feweb-costation.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;figcaption&gt;FeWeb's event, hosted by Co.Station&lt;/figcaption&gt;
+&lt;img src=&quot;/images/feedbacks-feweb__feweb-costation.jpg&quot; alt=&quot;&quot;&gt;
+&lt;figcaption&gt;FeWeb&#39;s event, hosted by Co.Station&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Obviously I accepted and took a plane to travel 900 kilometers from home with my dearest in order to give a talk about Sass architecture. Hence a short blog post to relate how it went.&lt;/p&gt;
-
 &lt;p&gt;Well, it went very well! Except for the weather which was pretty ugly and the fact that my girlfriend got her phone stolen. Anyway, the trip was worth it and we enjoyed Belgium. &lt;/p&gt;
-
-&lt;h2&gt;The place&lt;/h2&gt;
-
-&lt;p&gt;The Co.Station is a great spot in the heart of Bruxelles, aiming at helping startups, associations and business growing. In this case, Co.Station was hosting FeWeb&amp;#8217;s event.&lt;/p&gt;
-
-&lt;p&gt;The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But&amp;#8230; it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor guys who had to stand up for almost 2 hours, it sucks.&lt;/p&gt;
-
+&lt;h2 id=&quot;the-place&quot;&gt;The place&lt;/h2&gt;
+&lt;p&gt;The Co.Station is a great spot in the heart of Bruxelles, aiming at helping startups, associations and business growing. In this case, Co.Station was hosting FeWeb&#39;s event.&lt;/p&gt;
+&lt;p&gt;The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But... it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor guys who had to stand up for almost 2 hours, it sucks.&lt;/p&gt;
 &lt;figure class=&quot;figure&quot;&gt;
-&lt;img src=&quot;/images/feedbacks-feweb__room.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/feedbacks-feweb__room.jpg&quot; alt=&quot;&quot;&gt;
 &lt;figcaption&gt;Crowded room is crowded.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h2&gt;The talks&lt;/h2&gt;
-
-&lt;p&gt;FeWeb&amp;#8217;s events are usually composed of 2 successive talks, then a couple of beers (remember it&amp;#8217;s in Belgium). Thus, &lt;a href=&quot;https://twitter.com/thierrymichel&quot;&gt;Thierry Michel&lt;/a&gt; was giving an introduction to Sass and Compass, then I talked about architecture and components. &lt;/p&gt;
-
+&lt;h2 id=&quot;the-talks&quot;&gt;The talks&lt;/h2&gt;
+&lt;p&gt;FeWeb&#39;s events are usually composed of 2 successive talks, then a couple of beers (remember it&#39;s in Belgium). Thus, &lt;a href=&quot;https://twitter.com/thierrymichel&quot;&gt;Thierry Michel&lt;/a&gt; was giving an introduction to Sass and Compass, then I talked about architecture and components. &lt;/p&gt;
 &lt;figure class=&quot;figure&quot;&gt;
-&lt;img src=&quot;/images/feedbacks-feweb__speakers.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/feedbacks-feweb__speakers.jpg&quot; alt=&quot;&quot;&gt;
 &lt;figcaption&gt;Thierry and I on stage.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Both talks have received positive feedbacks so I guess we did the job well. However, I was kind of nervous at first so I was speaking pretty fast, making my session a couple of minutes shorter than expected.&lt;/p&gt;
-
 &lt;p&gt;Also when tensed I tend to speak in low voice, certainly as an attempt to calm things down. Because of that, I had to hold the mic in my hand during the whole presentation. Trust me, figuring out the distance between the mouth and the mic every single time you say something is definitely not the kind of things you want to think about. &lt;/p&gt;
-
-&lt;p&gt;Anyway, I eventually went through the whole session and ended my talk peacefully. The audience was receptive and we got some interesting questions (what about post-processors, Autoprefixer&amp;#8230;), so it was pretty cool.&lt;/p&gt;
-
+&lt;p&gt;Anyway, I eventually went through the whole session and ended my talk peacefully. The audience was receptive and we got some interesting questions (what about post-processors, Autoprefixer...), so it was pretty cool.&lt;/p&gt;
 &lt;figure class=&quot;figure&quot;&gt;
-&lt;img src=&quot;/images/feedbacks-feweb__talk.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/feedbacks-feweb__talk.jpg&quot; alt=&quot;&quot;&gt;
 &lt;figcaption&gt;Because LEGOs are cool.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h2&gt;Slides&lt;/h2&gt;
-
+&lt;h2 id=&quot;slides&quot;&gt;Slides&lt;/h2&gt;
 &lt;blockquote class=&quot;pull-quote--right&quot;&gt;Not disappointed by &lt;a href=&quot;https://slides.com&quot;&gt;Slid.es&lt;/a&gt;.&lt;/blockquote&gt;
 
-&lt;p&gt;Once again I have made my slides with &lt;a href=&quot;https://slides.com&quot;&gt;Slid.es&lt;/a&gt;, the CMS for &lt;a href=&quot;http://lab.hakim.se/reveal-js/#/&quot;&gt;Reveal.js&lt;/a&gt;. I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF&amp;#8230;). I also used the &lt;em&gt;presentation mode&lt;/em&gt; from Slid.es, which is great. Absolutely not disappointed.&lt;/p&gt;
-
-&lt;p&gt;I won&amp;#8217;t walk through my slides like I did for my talk at &lt;a href=&quot;http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/&quot;&gt;KiwiParty 2013&lt;/a&gt; because in this case it is less focused on code. Plus, I think they are better designed than the previous one.&lt;/p&gt;
-
+&lt;p&gt;Once again I have made my slides with &lt;a href=&quot;https://slides.com&quot;&gt;Slid.es&lt;/a&gt;, the CMS for &lt;a href=&quot;http://lab.hakim.se/reveal-js/#/&quot;&gt;Reveal.js&lt;/a&gt;. I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF...). I also used the &lt;em&gt;presentation mode&lt;/em&gt; from Slid.es, which is great. Absolutely not disappointed.&lt;/p&gt;
+&lt;p&gt;I won&#39;t walk through my slides like I did for my talk at &lt;a href=&quot;http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/&quot;&gt;KiwiParty 2013&lt;/a&gt; because in this case it is less focused on code. Plus, I think they are better designed than the previous one.&lt;/p&gt;
 &lt;p&gt;Anyway, here they are (in French).&lt;/p&gt;
+&lt;iframe src=&quot;//slides.com/hugogiraudel/sass-une-architecture-composee/embed&quot; width=&quot;100%&quot; height=&quot;420&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;iframe src=&quot;//slides.com/hugogiraudel/sass-une-architecture-composee/embed&quot; width=&quot;100%&quot; height=&quot;420&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
+&lt;p&gt;A warn thank to the FeWeb for their great welcome, the bear and the fries. And if you &amp;mdash; whoever you are &amp;mdash; were here on May 8th, thank you. If you were not, let&#39;s hope we meet at another event. &lt;/p&gt;
 
-&lt;h2&gt;Final thoughts&lt;/h2&gt;
-
-&lt;p&gt;A warn thank to the FeWeb for their great welcome, the bear and the fries. And if you &amp;mdash; whoever you are &amp;mdash; were here on May 8th, thank you. If you were not, let&amp;#8217;s hope we meet at another event. &lt;/p&gt;
 </description>
 </item>
 
@@ -85,7 +67,7 @@
 	<guid>http://www.sitepoint.com/compass-or-bourbon-sass-frameworks/</guid>
 	
 	
-	<pubDate>Fri, 30 May 2014 00:00:00 GMT</pubDate>
+	<pubDate>Fri, 30 May 2014 01:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>
@@ -97,7 +79,7 @@
 	<guid>/article/2014-05-26-how-i-came-to-write-for-the-web</guid>
 	
 	
-	<pubDate>Mon, 26 May 2014 00:00:00 GMT</pubDate>
+	<pubDate>Mon, 26 May 2014 01:00:00 GMT</pubDate>
 	<description>
 &lt;p&gt;Today, no cool Sass stuff or neat CSS trick. I&amp;#8217;d like to address a slightly more personnal topic people keep asking me about: how I came up to write for big online magazine (SitePoint, Tuts+, Codrops&amp;#8230;). It&amp;#8217;s true I have been very active lately and some people want to know how I can keep up with such a large amount of write ups. Well, if you happen to be one of those people, let me tell you my story (yes, you might find it boring!).&lt;/p&gt;
 
@@ -214,7 +196,7 @@
 	<guid>http://www.sitepoint.com/managing-responsive-breakpoints-sass/</guid>
 	
 	
-	<pubDate>Sun, 25 May 2014 00:00:00 GMT</pubDate>
+	<pubDate>Sun, 25 May 2014 01:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>
@@ -226,7 +208,7 @@
 	<guid>/article/2014-05-19-new-offsets-sass-mixin</guid>
 	
 	
-	<pubDate>Mon, 19 May 2014 00:00:00 GMT</pubDate>
+	<pubDate>Mon, 19 May 2014 01:00:00 GMT</pubDate>
 	<description>
 &lt;p&gt;About a year ago, I wrote about how I managed to come up with what I think is &lt;a href=&quot;http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/&quot;&gt;a clever Sass mixin to deal with offset positioning&lt;/a&gt; in CSS, also known as &lt;code&gt;top&lt;/code&gt;, &lt;code&gt;right&lt;/code&gt;, &lt;code&gt;bottom&lt;/code&gt; and &lt;code&gt;left&lt;/code&gt;. &lt;/p&gt;
 
@@ -518,7 +500,7 @@ $index: index($args, $offset);
 	<guid>http://webdesign.tutsplus.com/articles/when-and-how-to-support-multiple-versions-of-sass--cms-20935</guid>
 	
 	
-	<pubDate>Tue, 13 May 2014 00:00:00 GMT</pubDate>
+	<pubDate>Tue, 13 May 2014 01:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>
@@ -530,7 +512,7 @@ $index: index($args, $offset);
 	<guid>/article/2014-05-12-modernizr-sass-mixin</guid>
 	
 	
-	<pubDate>Mon, 12 May 2014 00:00:00 GMT</pubDate>
+	<pubDate>Mon, 12 May 2014 01:00:00 GMT</pubDate>
 	<description>
 &lt;blockquote&gt;
   &lt;p&gt;The following is a guest post by Daniel Guillan. Daniel is the co-founder and chief design officer at Vintisis. I am very glad to have him here today, writing about a clever mixin to ease the use of Modernizr with Sass.&lt;/p&gt;
@@ -557,7 +539,7 @@ $index: index($args, $offset);
 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.no-js .my-selector,
 .no-cssgradients .my-selector {
-  background-image: url('gradient.png');
+  background-image: url(&#39;gradient.png&#39;);
   background-repeat: repeat-x;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -573,7 +555,7 @@ $index: index($args, $offset);
         
   .no-js &amp;amp;,
   .no-cssgradients &amp;amp; {
-    background-image: url('gradient.png');
+    background-image: url(&#39;gradient.png&#39;);
     background-repeat: repeat-x;
   }
 }
@@ -671,21 +653,21 @@ $index: index($args, $offset);
 
 &lt;p&gt;We need to use the &lt;code&gt;no-&lt;/code&gt; prefix if checking for unsupported features (e.g. &lt;code&gt;.no-opacity&lt;/code&gt;). If checking for supported features we need no prefix at all so we&amp;#8217;ll use an empty string in this case:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$prefix: if($supports, '', 'no-');
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$prefix: if($supports, &#39;&#39;, &#39;no-&#39;);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;The selector&lt;/h3&gt;
 
 &lt;p&gt;To generate our feature selector (e.g. &lt;code&gt;.opacity.csstransforms&lt;/code&gt; or &lt;code&gt;.no-opacity, .no-csstransforms&lt;/code&gt;), we need two different strategies. We have to create a string if checking for supported features and we&amp;#8217;ll concatenate the class names later on. Or create a list if checking for unsupported features. We&amp;#8217;ll append class names later on too.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$selector: if($supports, '', unquote('.no-js'));
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$selector: if($supports, &#39;&#39;, unquote(&#39;.no-js&#39;));
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;The placeholder&lt;/h3&gt;
 
 &lt;p&gt;You&amp;#8217;ll see that all the magic that handles this thing is done by a placeholder. We&amp;#8217;ll need to give it a name that will look something like &lt;code&gt;%yep-feature&lt;/code&gt; or &lt;code&gt;%nope-feature&lt;/code&gt;.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$placeholder: if($supports, '%yep', '%nope');
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$placeholder: if($supports, &#39;%yep&#39;, &#39;%nope&#39;);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;Error handling&lt;/h3&gt;
@@ -705,14 +687,14 @@ $index: index($args, $offset);
 
 &lt;h3&gt;Generate our placeholder name&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$placeholder: $placeholder + '-' + $feature;
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$placeholder: $placeholder + &#39;-&#39; + $feature;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The resulting &lt;code&gt;$placeholder&lt;/code&gt; variables will look something like &lt;code&gt;%yep-opacity-csstransforms&lt;/code&gt; or &lt;code&gt;%nope-opacity-csstransforms&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3&gt;Generate our selector name&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$new-selector: #{'.' + $prefix + $feature};
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$new-selector: #{&#39;.&#39; + $prefix + $feature};
 $selector: if($supports, $selector + $new-selector, append($selector, $new-selector, comma));
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -767,7 +749,7 @@ $selector: if($supports, $selector + $new-selector, append($selector, $new-selec
 
 &lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@if type-of($feature) != &quot;string&quot; {
   $everything-okay: false;
-  @warn '`#{$feature}` is not a string for `modernizr`';
+  @warn &#39;`#{$feature}` is not a string for `modernizr`&#39;;
 } @else {
   // proceed ...
 }
@@ -781,7 +763,7 @@ $selector: if($supports, $selector + $new-selector, append($selector, $new-selec
 
 &lt;h2&gt;Final thoughts&lt;/h2&gt;
 
-&lt;p&gt;It all started as a small Sass experiment and ended up being an incredibly interesting challenge. I came up with a piece of code that I never thought would make me push the Sass syntax as far as I did. It was really interesting to develop a solution that uses so many different Sass features like the &lt;code&gt;@at-root&lt;/code&gt; directive, loops (&lt;code&gt;@each&lt;/code&gt;), the ampersand (&lt;code&gt;&amp;amp;&lt;/code&gt;) to reference parent selectors, the &lt;code&gt;if()&lt;/code&gt; function, placeholders, list manipulation, … and also stuff like mixin aliases and error handling.&lt;/p&gt;
+&lt;p&gt;It all started as a small Sass experiment and ended up being an incredibly interesting challenge. I came up with a piece of code that I never thought would make me push the Sass syntax as far as I did. It was really interesting to develop a solution that uses so many different Sass features like the &lt;code&gt;@at-root&lt;/code&gt; directive, loops (&lt;code&gt;@each&lt;/code&gt;), the ampersand (&lt;code&gt;&amp;amp;&lt;/code&gt;) to reference parent selectors, the &lt;code&gt;if()&lt;/code&gt; function, placeholders, list manipulation, â¦ and also stuff like mixin aliases and error handling.&lt;/p&gt;
 
 &lt;p&gt;That&amp;#8217;s it, you can play with the code on &lt;a href=&quot;http://sassmeister.com/gist/10578910&quot;&gt;SassMeister&lt;/a&gt; or &lt;a href=&quot;https://github.com/danielguillan/modernizr-mixin&quot;&gt;view the documentation and download on Github&lt;/a&gt;. The Modernizr mixin is available as a &lt;a href=&quot;http://rubygems.org/gems/modernizr-mixin&quot;&gt;Compass extension&lt;/a&gt; too.&lt;/p&gt;
 
@@ -801,7 +783,7 @@ $selector: if($supports, $selector + $new-selector, append($selector, $new-selec
 	<guid>http://www.sitepoint.com/sass-mixins-kickstart-project/</guid>
 	
 	
-	<pubDate>Thu, 08 May 2014 00:00:00 GMT</pubDate>
+	<pubDate>Thu, 08 May 2014 01:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>
@@ -813,7 +795,7 @@ $selector: if($supports, $selector + $new-selector, append($selector, $new-selec
 	<guid>/article/2014-05-05-bringing-configuration-objects-to-sass</guid>
 	
 	
-	<pubDate>Mon, 05 May 2014 00:00:00 GMT</pubDate>
+	<pubDate>Mon, 05 May 2014 01:00:00 GMT</pubDate>
 	<description>
 &lt;p&gt;One thing I was really looking forward with &lt;a href=&quot;http://viget.com/extend/sass-maps-are-awesome&quot;&gt;Sass maps&lt;/a&gt; is the ability to have configuration objects for functions and mixins. You know how you pass objects to your JavaScript class constructors instead of several parameters? Well fasten your belt boys because I&amp;#8217;m bringing this to Sass!&lt;/p&gt;
 
@@ -824,8 +806,8 @@ $selector: if($supports, $selector + $new-selector, append($selector, $new-selec
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var Class = function (conf) {
   this.conf = extend({
     duration: 2000,
-    name: 'class',
-    theme: 'dark',
+    name: &#39;class&#39;,
+    theme: &#39;dark&#39;,
     speed: 500
   }, conf || {});
 
@@ -847,14 +829,14 @@ $selector: if($supports, $selector + $new-selector, append($selector, $new-selec
 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// This...
 f({
-  message: 'You shall not pass!',
+  message: &#39;You shall not pass!&#39;,
   close: false,
   error: 42,
-  type: 'error'
+  type: &#39;error&#39;
 });
 
 // ... is easier to understand than this
-f('You shall not pass!', false, 42, 'error');
+f(&#39;You shall not pass!&#39;, false, 42, &#39;error&#39;);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;But the readibility argument is kind of a poor one. Some would say that they feel very comfortable with the multiple-arguments notation as long as they use a proper indentation for each argument (kind of like the object one) so let&amp;#8217;s move on to something more robust.&lt;/p&gt;
@@ -865,16 +847,16 @@ f('You shall not pass!', false, 42, 'error');
 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// This...
 var conf = {
-  message: 'You shall not pass!',
+  message: &#39;You shall not pass!&#39;,
   close: false,
   error: 42,
-  type: 'error'
+  type: &#39;error&#39;
 };
 
 f(conf);
 
 // ... is easier to read than this
-var conf = ['You shall not pass!', false, 42, 'error'];
+var conf = [&#39;You shall not pass!&#39;, false, 42, &#39;error&#39;];
 
 f.apply(void 0, conf);
 &lt;/code&gt;&lt;/pre&gt;
@@ -887,15 +869,15 @@ f.apply(void 0, conf);
 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// Adding a parameter is simple; no need to worry about argument order
 f({
-  message: 'You shall not pass!',
+  message: &#39;You shall not pass!&#39;,
   close: false,
   error: 42,
-  type: 'error',
+  type: &#39;error&#39;,
   duration: 5000
 });
 
 // ... while you have to put your required parameters before optional one in the signature
-f('You shall not pass!', 42, false, 5000, 'error');
+f(&#39;You shall not pass!&#39;, 42, false, 5000, &#39;error&#39;);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;Harder to provide default parameters&lt;/h3&gt;
@@ -956,7 +938,7 @@ $merge: (
 
 &lt;p&gt;Now what&amp;#8217;s the point of all of this? Let&amp;#8217;s say you have a component you call with a mixin. This mixin accepts quite a few parameters like &amp;mdash; I don&amp;#8217;t know &amp;mdash; the width, the color scheme, the animation duration, maybe a name or something. They probably have some default values defined to match a common use case. Until now, you have done it like this&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin component($theme: light, $size: 100%, $duration: 250ms, $name: 'component', $border: true) {
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin component($theme: light, $size: 100%, $duration: 250ms, $name: &#39;component&#39;, $border: true) {
   .#{$name} {
     width: $size;
     animation: fade $duration;
@@ -977,7 +959,7 @@ $merge: (
 }
 
 // Including component
-@include component(dark, $name: 'module');
+@include component(dark, $name: &#39;module&#39;);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This works great. It is easily readable, it does the job very well. However there is &lt;em&gt;one&lt;/em&gt; thing that still sucks with this method: you can&amp;#8217;t move the configuration elsewhere. Actually you can, but it will be like 5 variables which is getting a lot. Having a configuration map would be easier to move in a variable file or something.&lt;/p&gt;
@@ -988,7 +970,7 @@ $merge: (
     size: 100%,
     theme: dark,
     duration: 250ms,
-    name: 'component',
+    name: &#39;component&#39;,
     border: true
   ), $conf);
 
@@ -1012,7 +994,7 @@ $merge: (
 // Including component
 @include component((
   theme: dark, 
-  name: 'module'
+  name: &#39;module&#39;
 ));
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -1021,7 +1003,7 @@ $merge: (
 &lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// In `_config.scss` along with your other setup variables
 $component-conf: (
   theme: light,
-  name: 'module',
+  name: &#39;module&#39;,
 );
 
 // In `_component.scss`
@@ -1039,13 +1021,13 @@ $component-conf: (
 </item>
 
 <item>
-	<title>What’s the difference between Sass and SCSS?</title>
+	<title>Whatâs the difference between Sass and SCSS?</title>
 	
 	<link>http://www.sitepoint.com/whats-difference-sass-scss/</link>
 	<guid>http://www.sitepoint.com/whats-difference-sass-scss/</guid>
 	
 	
-	<pubDate>Tue, 29 Apr 2014 00:00:00 GMT</pubDate>
+	<pubDate>Tue, 29 Apr 2014 01:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>

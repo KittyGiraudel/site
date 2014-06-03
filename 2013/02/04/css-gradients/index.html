@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -16,10 +16,10 @@
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
 
-<link rel="icon" href="../../../../favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+<link rel="icon" href="/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link rel="stylesheet" href="../../../../assets/css/main.min.css" />
+<link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>Dig deep into CSS linear gradients</title>
 </head>   
@@ -30,7 +30,7 @@
 	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
 
 	<div class="avatar">
-		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+		<img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
 	</div>
 
 </header>
@@ -40,12 +40,8 @@
 	 
 		<h1>Dig deep into CSS linear gradients</h1> 
 	
-
 	
-		<p class="date">February 04, 2013
-		 &mdash; by Ana Tudor
-		</p> 
-	
+	<p class="date">February 04, 2013 &mdash; by Ana Tudor</p> 
 	
 	
 <blockquote>
@@ -57,7 +53,7 @@
 <p>Recently, while browsing through the demos on CodePen, I came across <a href="http://codepen.io/bitmap/pen/eBbHt">a CSS3 Color Wheel</a> and thought <em>hey, I could do it with just one element and gradients</em>. So I did and the result can be seen <a href="http://codepen.io/thebabydino/pen/hkxGp">here</a>. And now I&#8217;m going to explain the reasoning behind it.</p>
 
 <figure class="figure--right">
-<img src="../../../../images/css-gradients__rainbow_wheel_screen.gif" alt="" />
+<img src="/images/css-gradients__rainbow_wheel_screen.gif" alt="" />
 <figcaption>Rainbow wheel made of CSS</figcaption>
 </figure>
 
@@ -136,7 +132,7 @@ oldSyntax = 90° - newSyntax;
 <p>All the points on a line that is <a href="http://www.mathopenref.com/perpendicular.html">perpendicular</a> on the gradient line have the same color. The perpendicular from the corner in the quadrant that&#8217;s opposite to the quadrant of the angle is the <code>0%</code> line (the crimson line in the demo) and its intersection with the gradient line is the <em>starting point</em> of the gradient (let&#8217;s call it <code>S</code>). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the <code>100%</code> line (the black line in the demo) and its intersection with the gradient line is the <em>ending point</em> of the gradient (let&#8217;s call it <code>E</code>).</p>
 
 <figure class="figure">
-<img src="../../../../images/css-gradients__gradient.png" alt="" />
+<img src="/images/css-gradients__gradient.png" alt="" />
 <figcaption>Gradient with gradient line, 0% line and 100% line</figcaption>
 </figure>
 
@@ -149,7 +145,7 @@ oldSyntax = 90° - newSyntax;
 <p>Let&#8217;s first consider a gradient that creates a single slice (one with a central angle of <code>36°</code>). This is a square image (see below), with a blue slice having an angle of <code>36°</code> in the lower part. We draw the horizontal and vertical axes through the point <code>O</code> at which the diagonals intersect. We draw a perpendicular from that point to the line that separates the dark blue part from the transparent part. This is going to be the gradient line. As it can be seen, there is a <code>36°</code> angle between the vertical axis and the gradient line, so the angle of the gradient is <code>36°</code>.</p>
 
 <figure class="figure">
-<img src="../../../../images/css-gradients__slice_1.png" alt="" />
+<img src="/images/css-gradients__slice_1.png" alt="" />
 <figcaption>Applying the theory for the first slice</figcaption>
 </figure>
 
@@ -158,21 +154,21 @@ oldSyntax = 90° - newSyntax;
 <p>The <a href="http://www.mathopenref.com/square.html">intersection of the diagonals of a square splits each one of them into two</a>, so <code>AO</code> and <code>BO</code> are equal. The <code>BOE</code> and <code>AOS</code> angles are equal, as they are <a href="http://www.mathopenref.com/anglesvertical.html">vertical angles</a>. Moreover, the <code>BOE</code> and <code>AOS</code> triangles are <a href="http://www.mathopenref.com/righttriangle.html">right triangles</a>. All these three <a href="http://en.wikipedia.org/wiki/Triangle#Similarity_and_congruence">mean that the two triangles are also congruent</a>. Which in turn means that <code>SO</code> and <code>EO</code> are equal, so the length of <code>SE</code> is going to be twice the length of <code>EO</code> or twice the length of <code>SO</code>.</p>
 
 <figure class="figure--right">
-<img src="../../../../images/css-gradients__right_triangle_trigonometric_functions.png" alt="" />
+<img src="/images/css-gradients__right_triangle_trigonometric_functions.png" alt="" />
 <figcaption>A right angled triangle and how to compute sin and cos functions</figcaption>
 </figure>
 
 <p><em>Note: before moving further, let&#8217;s go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it&#8217;s called the <a href="http://www.mathopenref.com/hypotenuse.html">hypotenuse</a>. The other two sides (the ones forming the right angle) are called the <a href="http://en.wikipedia.org/wiki/Cathetus">catheti</a> of the right triangle. The <a href="http://www.mathopenref.com/sine.html">sine</a> of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The <a href="http://www.mathopenref.com/cosine.html">cosine</a> of the same angle is the ratio between the adjacent cathetus and the hypothenuse.</em></p>
 
 <figure class="figure--right">
-<img src="../../../../images/css-gradients__slice_1_BOE.png" alt="" />
+<img src="/images/css-gradients__slice_1_BOE.png" alt="" />
 <figcaption>The BOE triangle</figcaption>
 </figure>
 
 <p>Computing the length of <code>EO</code> in the right triangle <code>BOE</code> is really simple. If we take the length of the side of the square to be <code>a</code>, then the length of the half diagonal <code>BO</code> is going to be <code>a*sqrt(2)/2</code>. The <code>BOE</code> angle is equal to the difference between the <code>BOM</code> angle, which is <code>45°</code>, and the <code>EOM</code> angle, which is <code>36°</code>. This makes <code>BOE</code> have <code>9°</code>. Since <code>BO</code> is also the hypotenuse in the right triangle <code>BOE</code>, the length of <code>EO</code> is going to be <code>(a*sqrt(2)/2)*cos9°</code>. Which makes the length of <code>SE</code> be <code>a*sqrt(2)*cos9°</code>.</p>
 
 <figure class="figure--right">
-<img src="../../../../images/css-gradients__slice_1_APD.png" alt="" />
+<img src="/images/css-gradients__slice_1_APD.png" alt="" />
 <figcaption>The APD triangle</figcaption>
 </figure>
 
@@ -201,7 +197,6 @@ oldSyntax = 90° - newSyntax;
 <blockquote>
   <p><img src="http://www.gravatar.com/avatar/bee436794e066a5423040cf673c7506f?s=200" alt="Ana Tudor" /> Ana Tudor excels in CSS, especially when it comes to CSS transforms and well, as you may have seen, CSS gradients. You definitely should follow her on <a href="http://twitter.com/thebabydino">Twitter</a> or have a look at <a href="http://about.me/thebabydino">her profile</a> to know more about her and what she does.</p>
 </blockquote>
-
 
 	
 		<div id="disqus_thread"></div> 
@@ -236,7 +231,7 @@ oldSyntax = 90° - newSyntax;
 </footer>
 </div>
 
-<script src="../../../../assets/js/main.min.js"></script>
+<script src="/assets/js/main.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

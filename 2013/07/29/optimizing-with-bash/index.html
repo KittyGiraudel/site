@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -16,10 +16,10 @@
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
 
-<link rel="icon" href="../../../../favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+<link rel="icon" href="/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link rel="stylesheet" href="../../../../assets/css/main.min.css" />
+<link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>Optimizing images with Bash script</title>
 </head>   
@@ -30,7 +30,7 @@
 	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
 
 	<div class="avatar">
-		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+		<img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
 	</div>
 
 </header>
@@ -40,12 +40,8 @@
 	 
 		<h1>Optimizing images with Bash script</h1> 
 	
-
 	
-		<p class="date">July 29, 2013
-		 &mdash; by Loïc Giraudel
-		</p> 
-	
+	<p class="date">July 29, 2013 &mdash; by Loïc Giraudel</p> 
 	
 	
 <blockquote>
@@ -82,7 +78,7 @@
 <p>Since it can be quite a pain to set up a virtual machine, we will go for the latter with <a href="http://www.cygwin.com/">Cygwin</a>. Cygwin is a Linux simulator. Go to the <a href="http://cygwin.com/install.html">download section</a>, grab the <code>setup.exe</code> file and execute it to launch the installer. You can leave all settings by default until you get to the step asking you which packages to install.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__cygwin.png" alt="" />
+<img src="/images/optimizing-with-bash__cygwin.png" alt="" />
 <figcaption><a href="http://www.cygwin.com/">Cygwin</a> is a Linux simulator</figcaption>
 </figure>
 
@@ -103,7 +99,7 @@ mkdir workspace
 cd workspace</code></pre>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__workspace.png" alt="" />
+<img src="/images/optimizing-with-bash__workspace.png" alt="" />
 <figcaption>Creating a workspace in Cygwin</figcaption>
 </figure>
 
@@ -114,7 +110,7 @@ cd workspace</code></pre>
 <p>For each file, our script is going to run <em>optipng</em> and <em>pngcrush</em> for PNG files and <em>jpegtran</em> for JPG files. Before going any further and start writing the script, let&#8217;s make a first try with all of these tools starting with <em>optipng</em>:</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__optipng.png" alt="" />
+<img src="/images/optimizing-with-bash__optipng.png" alt="" />
 <figcaption>PNG optimization with <a href="http://optipng.sourceforge.net/">optipng</a></figcaption>
 </figure>
 
@@ -123,14 +119,14 @@ cd workspace</code></pre>
 <p>Then <em>pngcrush</em>:</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__pngcrush.png" alt="" />
+<img src="/images/optimizing-with-bash__pngcrush.png" alt="" />
 <figcaption>PNG optimization with <a href="http://pmt.sourceforge.net/pngcrush/">pngcrush</a></figcaption>
 </figure>
 
 <p>And now a JPG optimization with <em>jpegtran</em>:</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__jpegtran.png" alt="" />
+<img src="/images/optimizing-with-bash__jpegtran.png" alt="" />
 <figcaption>JPG optimization with <a href="http://jpegclub.org/">jpegtran</a></figcaption>
 </figure>
 
@@ -153,14 +149,14 @@ cd workspace</code></pre>
 <p>There is a common pattern to parse script options, based on the <code>getopt</code> command. First, we create two variables to store both the short and long version of each parameter. A parameter which requires a specific value (for example our input and output directories) must end with &#8220;:&#8221;.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__options.png" alt="" />
+<img src="/images/optimizing-with-bash__options.png" alt="" />
 <figcaption>Bash script options</figcaption>
 </figure>
 
 <p>Then we are going to use the <code>getopt</code> command to parse the parameters passed to script and use a loop to call functions or define variables to store values. For this, we will also need to know the script name.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__options-loop.png" alt="" />
+<img src="/images/optimizing-with-bash__options-loop.png" alt="" />
 <figcaption>Parsing our options within a loop</figcaption>
 </figure>
 
@@ -176,14 +172,14 @@ cd workspace</code></pre>
 <p>To be called, the functions must be declared before the parameters loop.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__usage.png" alt="" />
+<img src="/images/optimizing-with-bash__usage.png" alt="" />
 <figcaption>The help function</figcaption>
 </figure>
 
 <p>Let&#8217;s try our help function. To be able to run the script, we have to add execution mode (+x) on it with the command <code>chmod</code>.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__usage-try.png" alt="" />
+<img src="/images/optimizing-with-bash__usage-try.png" alt="" />
 <figcaption>Help function</figcaption>
 </figure>
 
@@ -196,7 +192,7 @@ cd workspace</code></pre>
 <p>And now, let&#8217;s create the main function. We won&#8217;t deal with <code>--no-stats</code> and <code>--quiet</code> parameters for now. Below is the skeleton of our main function; it might looks complicated but it&#8217;s really not trust me.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__main.png" alt="" />
+<img src="/images/optimizing-with-bash__main.png" alt="" />
 <figcaption>The main function of our script</figcaption>
 </figure>
 
@@ -213,7 +209,7 @@ cd workspace</code></pre>
 <p>Now, we have to create this <code>optimize_image()</code> method which is going to be fairly easy since we already have seen the command to optimize images before.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__optimize-image.png" alt="" />
+<img src="/images/optimizing-with-bash__optimize-image.png" alt="" />
 <figcaption>The actual image optimization function</figcaption>
 </figure>
 
@@ -229,7 +225,7 @@ file_with_a_long_name ...... [ DONE ]
 <p>Would be neat, wouldn&#8217;t it? To do this, we first need to find the longest filename by doing a fast loop on the files.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__get-max-file-length.png" alt="" />
+<img src="/images/optimizing-with-bash__get-max-file-length.png" alt="" />
 <figcaption>Function to retrieve the longest filename</figcaption>
 </figure>
 
@@ -244,7 +240,7 @@ file_with_a_long_name ...... [ DONE ]
 <p>Finally, in the main loop we display the filename then the <em>&#8221;.&#8221;</em> symbols and the the <em>&#8221; [ DONE ]&#8221;</em> string. </p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__output.png" alt="" />
+<img src="/images/optimizing-with-bash__output.png" alt="" />
 <figcaption>Script handling the output</figcaption>
 </figure>
 
@@ -258,7 +254,7 @@ file_with_a_long_name ...... [ DONE ]
 ./optimize.sh -i images -o optimized-images</code></pre>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__output-console.png" alt="" />
+<img src="/images/optimizing-with-bash__output-console.png" alt="" />
 <figcaption>Testing the output</figcaption>
 </figure>
 
@@ -267,28 +263,28 @@ file_with_a_long_name ...... [ DONE ]
 <p>For the final stats we are going to display the amount of space saved. The <code>optimize_image()&lt;/code&gt; method will increase a </code>total_input_size<code> with the filesize of the image to optimize, and a </code>total_output_size` with the filesize of the output image. At the end of the loop, we will use this two counters to display the stats.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__optimize-image-with-stats.png" alt="" />
+<img src="/images/optimizing-with-bash__optimize-image-with-stats.png" alt="" />
 <figcaption>Adding stats output in optimize_image()</figcaption>
 </figure>
 
 <p>To display human readable numbers, we can use a <code>human_readable_filesize()</code> method, retrieved from <a href="http://unix.stackexchange.com/questions/44040/a-standard-tool-to-convert-a-byte-count-into-human-kib-mib-etc-like-du-ls1">StackExchange</a> (let&#8217;s not reinvent the wheel, shall we?).</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__display-stats.png" alt="" />
+<img src="/images/optimizing-with-bash__display-stats.png" alt="" />
 <figcaption>A function to display human readable stats</figcaption>
 </figure>
 
 <p>Let&#8217;s try it before adding the last bites to our code. Once again, we simply run <code>./optimize.sh</code> (or with additional parameters if needed).</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__output-with-stats.png" alt="" />
+<img src="/images/optimizing-with-bash__output-with-stats.png" alt="" />
 <figcaption>Outputing optimization stats</figcaption>
 </figure>
 
 <p>Keep it up guys, we are almost done! We just have to display progress output if the quiet mode is off.</p>
 
 <figure class="figure">
-<img src="../../../../images/optimizing-with-bash__quiet-mode.png" alt="" />
+<img src="/images/optimizing-with-bash__quiet-mode.png" alt="" />
 <figcaption>Quiet mode</figcaption>
 </figure>
 
@@ -486,7 +482,6 @@ main</code></pre>
   <p><img src="http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg" alt="Loic Giraudel" /> Loïc Giraudel works as a front-end developer at BestOfMedia (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: <a href="http://twitter.com/l_giraudel">@l_giraudel</a>.</p>
 </blockquote>
 
-
 	
 		<div id="disqus_thread"></div> 
 	
@@ -520,7 +515,7 @@ main</code></pre>
 </footer>
 </div>
 
-<script src="../../../../assets/js/main.min.js"></script>
+<script src="/assets/js/main.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

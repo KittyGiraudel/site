@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -16,10 +16,10 @@
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
 
-<link rel="icon" href="../../../../favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+<link rel="icon" href="/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link rel="stylesheet" href="../../../../assets/css/main.min.css" />
+<link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>How I built a Tetris with C# and Unity</title>
 </head>   
@@ -30,7 +30,7 @@
 	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
 
 	<div class="avatar">
-		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+		<img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
 	</div>
 
 </header>
@@ -40,12 +40,8 @@
 	 
 		<h1>How I built a Tetris with C# and Unity</h1> 
 	
-
 	
-		<p class="date">December 20, 2012
-		
-		</p> 
-	
+	<p class="date">December 20, 2012</p> 
 	
 	
 <p>As part of my formation in programming sciences, I had the opportunity to build a little Tetris game with C# on Unity and I thought it could be a good idea to write a little blog post about my experience. Plus, it changes a little from CSS things.</p>
@@ -65,7 +61,7 @@
 
 <h2>The making of</h2>
 
-<p><img src="../../../../images/tetris__tetris.jpg" alt="Tetris" class="pull-image--right" /></p>
+<p><img src="/images/tetris__tetris.jpg" alt="Tetris" class="pull-image--right" /></p>
 
 <h3>Neuron Tetris</h3>
 
@@ -107,7 +103,7 @@
 
 <p>Another problem of mine was placing the bricks correctly. During the first phase of testing, bricks were slightly overlapping each other (see figure). Not much, but enough to be seen and to involve some line destroying issues.</p>
 
-<p><img src="../../../../images/tetris__bricks-overlapping.png" alt="Overlapping bricks" /></p>
+<p><img src="/images/tetris__bricks-overlapping.png" alt="Overlapping bricks" /></p>
 
 <p>This was caused by the collision detection problem. Because whatever the method I could use (rays, OnCollisionEnter, OnTriggerEnter, …), the brick wasn’t stopped at the right position. It was always “more or less&#8221; where it should have ended. This lack of accuracy was problematic.</p>
 
@@ -117,7 +113,7 @@
 
 <p>When I started coding, I was expecting the brick rotation to be very simple. In some way, I wasn&#8217;t wrong: make the brick rotate on itself is the easy part. When pressing top or bottom arrow, the brick makes a 90° rotation clockwise or counter-clockwise, no problem.</p>
 
-<p><img src="../../../../images/tetris__tetris-bug.png" alt="Tetris bug" class="pull-image--right" /></p>
+<p><img src="/images/tetris__tetris-bug.png" alt="Tetris bug" class="pull-image--right" /></p>
 
 <p>What was much harder however was <strong>prevent the rotation when too close to the wall</strong>. Rotating a red bar near the wall could mean wedging the bar into the wall. I succeded in preventing the rotation when too close to the wall, however there is still a bug with the purple L brick which cannot rotate when placed at a 1-unit gap from the wall. Sadly, I don&#8217;t know how to fix it.</p>
 
@@ -127,7 +123,7 @@
 
 <p>Once I figured out how to fix most of the previously seen problems, it was time to do some improvements to make the game enjoyable. This includes increasing difficulty overtime, displaying the next brick, showing the score, having a main screen, allow pause, and so on. Actually,  it&#8217;s kind of all the features. Making the game work is the hard part, but making the game cool is very important as well.</p>
 
-<p><img src="../../../../images/tetris__tetris-options.jpg" alt="Tetris options" class="pull-image--right" /></p>
+<p><img src="/images/tetris__tetris-options.jpg" alt="Tetris options" class="pull-image--right" /></p>
 
 <h3>Score</h3>
 
@@ -154,7 +150,7 @@
 
 <p>An interesting point of making a game on Unity is you&#8217;re using 3D. You can choose to ignore it, but I feel like it can be a plus to the game when used correctly (which is not the case in this game :D). I wanted to try slowly moving the camera during the game to increase difficulty. Hopefully, I didn&#8217;t have to struggle with quaternion calculations for rotation concerns since I managed to do everything directly in the IDE with default animations.</p>
 
-<p><img src="../../../../images/tetris__tetris-camera.jpg" alt="Tetris camera" class="pull-image--right" /></p>
+<p><img src="/images/tetris__tetris-camera.jpg" alt="Tetris camera" class="pull-image--right" /></p>
 
 <p>It was pretty easy to do, however I felt like it could be really annoying for some people (including me) to have the camera moving permanently so I simply added an option to enable/disable it. The <code>C</code> key in game, as in camera. True story.</p>
 
@@ -203,7 +199,6 @@
 
 <p>So guys, how far did you manage to go? My best score is 9840 points, level 7 I guess.</p>
 
-
 	
 		<div id="disqus_thread"></div> 
 	
@@ -237,7 +232,7 @@
 </footer>
 </div>
 
-<script src="../../../../assets/js/main.min.js"></script>
+<script src="/assets/js/main.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
