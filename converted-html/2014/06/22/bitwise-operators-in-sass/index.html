@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+		
+	
+
+<meta charset="utf-8">
+
+
+<meta name="robots" content="index,follow"> 
+<meta name="revisit-after" content="1 days"> 
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
+<meta name="description" content="">
+
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+
+<link rel="icon" href="/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+
+<link rel="stylesheet" href="/assets/css/main.min.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<title>Bitwise operators in Sass</title>
+</head>   
+<body>
+<div class="wrapper">
+	<header class="header" role="banner">
+	
+	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
+
+	<div class="avatar">
+		<img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+	</div>
+
+</header>
+
+	<article class="main" role="main"> 
+	
+	 
+		<h1>Bitwise operators in Sass</h1> 
+	
+
+	
+		<p class="date">June 22, 2014
+		
+		</p> 
+	
+
+	
+	
+	
+<p>A couple of days ago, <a href="https://twitter.com/valeriangalliat">Valérian Galliat</a> and I had the crazy idea of implementing bitwise operators in Sass. It went like this:</p>
+
+<blockquote>
+  <p><strong>Hugo</strong>: Do you know how bitwise operators work?  <br />
+<strong>Val</strong>: Yes.  <br />
+<strong>Hugo</strong>: Do you think we could implement them in Sass?  <br />
+<strong>Val</strong>: No.   <br />
+(Loading&#8230;)  <br />
+<strong>Val</strong>: Well, in fact we could.  <br />
+<strong>Hugo</strong>: LET&#8217;S DO IT!</p>
+</blockquote>
+
+<p>And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let&#8217;s catch up on bitwise operators, shall we?</p>
+
+<p><em>Note: project is on GitHub. Check out <a href="https://github.com/HugoGiraudel/SassyBitwise">SassyBitwise</a>.</em></p>
+
+<h2>B-b-b-b-bitwise</h2>
+
+<p><em>Note: I am no programmer so please kindly apologize any shortcut I could make when explaining bitwise operators.</em></p>
+
+<p>You are probably not without knowing numbers we use in everyday life are expressed in base 10, also known as <em>decimal</em>. <em>Hexadecimal</em> is base 16. <em>Octal</em> is base 8. And <em>binary</em> is base 2. Just to name a few popular bases.</p>
+
+<p>Let&#8217;s put this very simple: bitwise operators are operators for numbers expressed in their binary form. Most common bitwise operators are AND (<code>&amp;</code>), OR (<code>|</code>) and NOT (<code>~</code>), but there are also XOR (<code>^</code>), LEFT-SHIFT (<code>&lt;&lt;</code>) and RIGHT-SHIFT (<code>&gt;&gt;</code>).</p>
+
+<p>To illustrate this explanation, allow me to have a little example (inspired from <a href="http://en.wikipedia.org/wiki/Bitwise_operation#Bitwise_operators">Wikipedia</a>):</p>
+
+<pre><code># ~7
+NOT 0111 (decimal 7)
+  = 1000 (decimal 8)
+
+# 5 &amp; 3
+    0101 (decimal 5)
+AND 0011 (decimal 3)
+  = 0001 (decimal 1)
+
+# 5 | 3
+    0101 (decimal 5)
+OR  0011 (decimal 3)
+  = 0111 (decimal 7)
+
+# 2 ^ 10
+    0010 (decimal 2)
+XOR 1010 (decimal 10)
+  = 1000 (decimal 8)
+
+# 23 &lt;&lt; 1
+   00010111 (decimal 23) LEFT-SHIFT 1
+=  00101110 (decimal 46)
+
+# 23 &gt;&gt; 1
+   00010111 (decimal 23) RIGHT-SHIFT 1
+=  00001011 (decimal 11)
+</code></pre>
+
+<p>As you can see, the idea is pretty straightforward: </p>
+
+<ul>
+  <li><em>NOT</em> converts <code>1</code>s in <code>0</code>s, and <code>0</code>s in <code>1</code>s</li>
+  <li><em>AND</em> takes <code>1</code>s if both are <code>1</code>s, else <code>0</code></li>
+  <li><em>OR</em> takes <code>1</code> if any are <code>1</code>, else <code>0</code></li>
+  <li><em>XOR</em> takes <code>1</code> if one of 2 is <code>1</code>, else <code>0</code></li>
+  <li><em>LEFT-SHIFT</em> shifts all bits from <code>n</code> to the left</li>
+  <li><em>RIGHT-SHIFT</em> shifts all bits from <code>n</code> to the right</li>
+</ul>
+
+<p>If you&#8217;re more a <em>table</em> kind of guy:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>&#160;</td>
+      <td>Bit</td>
+      <td>Result</td>
+    </tr>
+    <tr>
+      <td>:</td>
+      <td>&#160;</td>
+      <td>&#160;</td>
+    </tr>
+  </tbody>
+</table>
+
+
+	
+
+	</article>
+
+	<aside class="sidebar" role="complementary">
+
+	<div itemscope itemtype="http://schema.org/Person">
+	<h1 class="visually-hidden">About me</h1>
+	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a>, <a href="http://mixture.io/blog/jekyll-mixture/">Mixture</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyBitwise">SassyBitwise</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+</div>
+<div id="carbonads-container">
+	<div class="carbonad">
+		<div id="azcarbon"></div>
+	</div>
+</div>
+</aside>
+	<footer class="footer" role="contentinfo">
+    <ul class="footer__nav">
+        <li><a href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a></li>
+        <li><a href="https://github.com/HugoGiraudel" target="blank">GitHub</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/rss">RSS</a></li>
+        <li><a href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a></li>
+    </ul>
+    <p>&copy;&nbsp;2014 Hugo Giraudel. Built with <a href="http://mixture.io/">Mixture</a>. Hosted on <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com">GitHub</a>.</p>
+</footer>
+</div>
+
+<script src="/assets/js/main.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App({
+    codepen: false,
+    sassmeister: false,
+    tableOfContent: false,
+    comments: false,
+    layout: 'article',
+    disqus: {
+      title: 'Bitwise operators in Sass',
+      url: window.location.href,
+      name: 'hugogiraudel'
+    },
+    tracking: true,
+    ad: true
+  });
+});
+</script>
+</body>
+</html>

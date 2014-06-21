@@ -7,20 +7,24 @@
 	
 
 <meta charset="utf-8">
+
+
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="refresh" content="0;url=http://www.sitepoint.com/caching-values-sass-mixins/" />
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Hugo Giraudel"> 
-<meta name="robots" content="index,follow"> 
-<meta name="revisit-after" content="1 days"> 
 <meta name="description" content="">
 
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
 
-<link rel="icon" href="../../../../favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="../../../../favicon.ico"><![endif]-->
+<link rel="icon" href="/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link rel="stylesheet" href="../../../../assets/css/main.min.css" />
-<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="/assets/css/main.min.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>Caching Values from Sass Mixins</title>
 </head>   
 <body>
@@ -30,7 +34,7 @@
 	<h1 class="site-title"><a href="/">Hugo<span>Giraudel</span>.com</a></h1>
 
 	<div class="avatar">
-		<img src="../../../../images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
+		<img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel" />
 	</div>
 
 </header>
@@ -46,6 +50,10 @@
 		
 		</p> 
 	
+
+	
+		<p>The post is not hosted on http://hugogiraudel.com. Please go to : <a href="http://www.sitepoint.com/caching-values-sass-mixins/">SitePoint</a>.</p>
+	
 	
 	
 
@@ -59,8 +67,8 @@
 	<div itemscope itemtype="http://schema.org/Person">
 	<h1 class="visually-hidden">About me</h1>
 	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
-	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
-	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a>, <a href="http://mixture.io/blog/jekyll-mixture/">Mixture</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyBitwise">SassyBitwise</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
 	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
 </div>
 <div id="carbonads-container">
@@ -81,23 +89,23 @@
 </footer>
 </div>
 
-<script src="../../../../assets/js/main.min.js"></script>
+<script src="/assets/js/main.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var app = new App({
-  	codepen: false,
-  	sassmeister: false,
-  	tableOfContent: false,
-  	comments: false,
-  	layout: 'article',
-  	disqus: {
-  	  title: 'Caching Values from Sass Mixins',
-  	  url: window.location.href,
-  	  name: 'hugogiraudel'
-  	},
-  	tracking: true,
-  	ad: true
+    codepen: false,
+    sassmeister: false,
+    tableOfContent: false,
+    comments: false,
+    layout: 'article',
+    disqus: {
+      title: 'Caching Values from Sass Mixins',
+      url: window.location.href,
+      name: 'hugogiraudel'
+    },
+    tracking: true,
+    ad: true
   });
 });
 </script>

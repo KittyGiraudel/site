@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -7,10 +7,14 @@
 	
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Hugo Giraudel"> 
+
+
 <meta name="robots" content="index,follow"> 
 <meta name="revisit-after" content="1 days"> 
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
 <meta name="description" content="">
 
 <link rel="dns-prefetch" href="//www.google-analytics.com">
@@ -19,8 +23,8 @@
 <link rel="icon" href="/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
-<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="/assets/css/main.min.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>Git tips and tricks - Part 1</title>
 </head>   
 <body>
@@ -40,11 +44,21 @@
 	 
 		<h1>Git tips and tricks - Part 1</h1> 
 	
+
 	
-	<p class="date">March 10, 2014 &mdash; by Loïc Giraudel</p> 
+		<p class="date">March 10, 2014
+		 &mdash; by Loïc Giraudel
+		</p> 
+	
+
+	
 	
 	
 <p class="explanation">Hey guys! The following is the first post of a series written by my dear brother Loïc, Git expert at Best Of Media (Tom's Guide &amp; Tom's Hardware). I'll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!</p>
+
+<blockquote>
+  <p><strong>Update 2014-03-17:</strong> Part 2 is out! Go check <a href="http://hugogiraudel.com/2014/03/17/git-tips-and-tricks-part-2/">it</a>.</p>
+</blockquote>
 
 <p>Hi guys! Today, I&#8217;m gonna share with you some Git tips &amp; tricks I&#8217;ve already shared with my workmates at Best Of Media. But before even starting let&#8217;s never forget the more important laws of Git.</p>
 
@@ -265,6 +279,7 @@ index b2185a2..887387f 100755
   <p><img src="http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg" alt="Loic Giraudel" /> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: <a href="http://twitter.com/l_giraudel">@l_giraudel</a>.</p>
 </blockquote>
 
+
 	
 		<div id="disqus_thread"></div> 
 	
@@ -276,8 +291,8 @@ index b2185a2..887387f 100755
 	<div itemscope itemtype="http://schema.org/Person">
 	<h1 class="visually-hidden">About me</h1>
 	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
-	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
-	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a>, <a href="http://mixture.io/blog/jekyll-mixture/">Mixture</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyBitwise">SassyBitwise</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
 	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
 </div>
 <div id="carbonads-container">
@@ -303,18 +318,18 @@ index b2185a2..887387f 100755
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var app = new App({
-  	codepen: false,
-  	sassmeister: false,
-  	tableOfContent: false,
-  	comments: true,
-  	layout: 'article',
-  	disqus: {
-  	  title: 'Git tips and tricks - Part 1',
-  	  url: window.location.href,
-  	  name: 'hugogiraudel'
-  	},
-  	tracking: true,
-  	ad: true
+    codepen: false,
+    sassmeister: false,
+    tableOfContent: false,
+    comments: true,
+    layout: 'article',
+    disqus: {
+      title: 'Git tips and tricks - Part 1',
+      url: window.location.href,
+      name: 'hugogiraudel'
+    },
+    tracking: true,
+    ad: true
   });
 });
 </script>

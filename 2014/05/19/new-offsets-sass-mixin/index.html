@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -7,10 +7,14 @@
 	
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Hugo Giraudel"> 
+
+
 <meta name="robots" content="index,follow"> 
 <meta name="revisit-after" content="1 days"> 
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hugo Giraudel"> 
 <meta name="description" content="">
 
 <link rel="dns-prefetch" href="//www.google-analytics.com">
@@ -19,8 +23,8 @@
 <link rel="icon" href="/favicon.png">
 <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
 
-<link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
-<!--[if lt IE 9]>  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="/assets/css/main.min.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>A new Sass mixin for offsets</title>
 </head>   
 <body>
@@ -40,8 +44,14 @@
 	 
 		<h1>A new Sass mixin for offsets</h1> 
 	
+
 	
-	<p class="date">May 19, 2014</p> 
+		<p class="date">May 19, 2014
+		
+		</p> 
+	
+
+	
 	
 	
 <p>About a year ago, I wrote about how I managed to come up with what I think is <a href="http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/">a clever Sass mixin to deal with offset positioning</a> in CSS, also known as <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code>. </p>
@@ -325,6 +335,7 @@ $index: index($args, $offset);
 
 <p class="sassmeister" data-gist-id="f8ab9cc308b84e37b18d" data-height="480"><a href="http://sassmeister.com/gist/f8ab9cc308b84e37b18d">Play with this gist on SassMeister.</a></p>
 
+
 	
 		<div id="disqus_thread"></div> 
 	
@@ -336,8 +347,8 @@ $index: index($args, $offset);
 	<div itemscope itemtype="http://schema.org/Person">
 	<h1 class="visually-hidden">About me</h1>
 	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
-	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
-	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
+	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a>, <a href="http://mixture.io/blog/jekyll-mixture/">Mixture</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyBitwise">SassyBitwise</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
 	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
 </div>
 <div id="carbonads-container">
@@ -363,18 +374,18 @@ $index: index($args, $offset);
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var app = new App({
-  	codepen: false,
-  	sassmeister: true,
-  	tableOfContent: false,
-  	comments: true,
-  	layout: 'article',
-  	disqus: {
-  	  title: 'A new Sass mixin for offsets',
-  	  url: window.location.href,
-  	  name: 'hugogiraudel'
-  	},
-  	tracking: true,
-  	ad: true
+    codepen: false,
+    sassmeister: true,
+    tableOfContent: false,
+    comments: true,
+    layout: 'article',
+    disqus: {
+      title: 'A new Sass mixin for offsets',
+      url: window.location.href,
+      name: 'hugogiraudel'
+    },
+    tracking: true,
+    ad: true
   });
 });
 </script>

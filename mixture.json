@@ -1,9 +1,14 @@
 {
+  "convertHtml": {
+    "relativePaths": false
+  },
   "customRubyPath": null,
   "debug": false,
   "followLeader": true,
   "lintScripts": true,
-  "preprocessorLocations": "assets",
+  "preprocessorLocations": [
+    "assets"
+  ],
   "preprocessorScriptOutput": "assets/js",
   "preprocessorStyleOutput": "assets/css",
   "projectDescription": "I write about Sass. Mostly.",
