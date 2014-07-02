@@ -11,6 +11,812 @@
 			
 
 <item>
+	<title>SassDoc, a documentation tool for Sass</title>
+	
+	<link>http://www.sitepoint.com/sassdoc-documentation-tool-sass/</link>
+	<guid>http://www.sitepoint.com/sassdoc-documentation-tool-sass/</guid>
+	
+	
+	<pubDate>Thu, 03 Jul 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
+	<title>How to check for dependencies in Sass libraries</title>
+	
+	<link>http://webdesign.tutsplus.com/tutorials/how-to-check-for-dependencies-in-sass-libraries--cms-21558</link>
+	<guid>http://webdesign.tutsplus.com/tutorials/how-to-check-for-dependencies-in-sass-libraries--cms-21558</guid>
+	
+	
+	<pubDate>Wed, 02 Jul 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
+	<title>Building a customization API in Sass</title>
+	
+	<link>http://hugogiraudel.com/2014/07/01/building-a-customization-api-in-sass</link>
+	<guid>/2014/07/01/building-a-customization-api-in-sass</guid>
+	
+	
+	<pubDate>Tue, 01 Jul 2014 00:00:00 GMT</pubDate>
+	<description>
+&lt;blockquote&gt;
+  &lt;p&gt;I am glad to have &lt;a href=&quot;http://ezekielg.com/&quot;&gt;Ezekiel Gabrielse&lt;/a&gt; today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts boys, this is quite intense!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hey guys! I am the creator of a relatively new Sass grid-system called &lt;a href=&quot;https://github.com/ezekg/flint&quot;&gt;Flint&lt;/a&gt;, and a lightweight Compass extension called &lt;a href=&quot;https://github.com/ezekg/SassyExport&quot;&gt;SassyExport&lt;/a&gt;, which we will be discussing throughout this series.&lt;/p&gt;
+
+&lt;p&gt;Since I already mentioned the word &lt;em&gt;series&lt;/em&gt;, this article will be the first post of a 2 part series. Today we&amp;#8217;re going to create a Sass-powered customization API that can be plugged into a front-end API, such as a Wordpress theming framework or even allow live customization through JS. &lt;/p&gt;
+
+&lt;p&gt;Today&amp;#8217;s discussion will focus on the Sass part, but it will flow straight into part 2 of this series, where we will be utilizing a brand new tool I developed called &lt;a href=&quot;https://github.com/ezekg/SassyExport&quot;&gt;SassyExport&lt;/a&gt;, which allows you to &lt;em&gt;export&lt;/em&gt; JSON &lt;em&gt;from&lt;/em&gt; Sass and write it into a new file to use elsewhere in your projects.&lt;/p&gt;
+
+&lt;h2&gt;How does it work?&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Our Sass-powered customization API&lt;/strong&gt; will essentially be able to &lt;em&gt;mark&lt;/em&gt; elements within our stylesheet that we want to customize, and which of those elements &lt;em&gt;properties&lt;/em&gt; may be customized as well as default &lt;em&gt;values&lt;/em&gt; for these properties. &lt;/p&gt;
+
+&lt;p&gt;To be able to track all this stuff, we are going to use Sass maps to sort the output of this API by selector. Within that selector&amp;#8217;s map, we&amp;#8217;ll not only list its customizable properties but also the defaults for its values in case the user has not modified those.&lt;/p&gt;
+
+&lt;p&gt;We are going to do this all within Sass, and as we will discuss in part 2 of the series, a language like PHP or JS can hook in to our Sass-API and use the data to modify our stylesheet for these specific &lt;code&gt;$selector-&amp;gt;$property&lt;/code&gt; relationships. For the sake of time, we&amp;#8217;re going to keep this project simple and only stick to color customization. &lt;/p&gt;
+
+&lt;p&gt;Therefore, we will create a color palette as a map, in order to pull &lt;em&gt;values&lt;/em&gt; from it. That way we can also hook into this palette &lt;em&gt;module&lt;/em&gt; through our front-end API and then allow the user to modify the original color palette. &lt;/p&gt;
+
+&lt;p&gt;Furthermore, because we&amp;#8217;ll be keeping track of which selectors (or if we&amp;#8217;re getting really technical &amp;mdash; which &lt;em&gt;sub-modules&lt;/em&gt;) are using which color, we can then update their values if the user ever modifies that sub-module&amp;#8217;s color &lt;em&gt;value&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Okay, let&amp;#8217;s sum up&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;We need to create a global variable for our color palette.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The palette naming convention should be semantic. For instance, we&amp;#8217;ll prefer &lt;em&gt;primary&lt;/em&gt; and &lt;em&gt;complementary&lt;/em&gt; to &lt;em&gt;red&lt;/em&gt; and &lt;em&gt;blue&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;The code itself needs to be modular and flexible, allowing the user to create a color palette of any scale. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;We need to keep another global variable of all customizable elements with the following data:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the full selector name (kind of &lt;code&gt;&amp;amp;&lt;/code&gt;);&lt;/li&gt;
+  &lt;li&gt;its customizable properties;&lt;/li&gt;
+  &lt;li&gt;default values for each property.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;We also need to output these default values into our stylesheet, that way our mixin will have two purposes: serve as our customization API and a way to retrieve our color palette to use within the actual stylesheet.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;What we want? API!&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Throughout this article I will be using another project of mine called &lt;a href=&quot;https://github.com/ezekg/flint&quot;&gt;Flint&lt;/a&gt; as a base. It has various helper-functions that we will be using such as &lt;code&gt;selector_string()&lt;/code&gt;, a Ruby function returning a stringified version of the current selector (&lt;code&gt;&amp;amp;&lt;/code&gt;) so that we can use it in interpolation (which currently isn&amp;#8217;t possible). As well as a few others self-explanitory functions such as &lt;code&gt;exists()&lt;/code&gt;, &lt;code&gt;is-map()&lt;/code&gt;, &lt;code&gt;is-list()&lt;/code&gt; and &lt;code&gt;map-fetch()&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the end result of what we will be building today. Take a look at the code, and follow along as we go through creating this API and understanding the methodology behind it, if that&amp;#8217;s your thing.&lt;/p&gt;
+
+&lt;p class=&quot;sassmeister&quot; data-gist-id=&quot;ccf842e5ee74287f1868&quot; data-height=&quot;480&quot;&gt;&lt;a href=&quot;http://sassmeister.com/gist/ccf842e5ee74287f1868&quot;&gt;Play with this gist on SassMeister.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Building our palette&lt;/h2&gt;
+
+&lt;p&gt;Firstly, let&amp;#8217;s create the map for our color palette setup.&lt;/p&gt;
+
+&lt;p&gt;We are going to keep our colors in a sub-map called &lt;em&gt;&amp;#8220;palette&amp;#8221;&lt;/em&gt; so we can keep our main API&amp;#8217;s code more modular to allow it to work with other customizable properties than just colors.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Customization module defaults
+$customizer: (
+  &quot;palette&quot;: (
+    &quot;primary&quot;: (
+      &quot;lightest&quot;: #eff3d1,
+      &quot;light&quot;: #bbdfbc,
+      &quot;base&quot;: #8bb58e,
+      &quot;dark&quot;: #0b3c42,
+      &quot;darkest&quot;: #092226,
+    ),
+    &quot;complementary&quot;: (
+      &quot;light&quot;: #f6616e,
+      &quot;base&quot;: #f2192c,
+      &quot;dark&quot;: #b40a19,
+    ),
+    &quot;gray&quot;: (
+      &quot;light&quot;: #819699,
+      &quot;base&quot;: #4b5557,
+      &quot;dark&quot;: #333a3b,
+    ),
+    &quot;black&quot;: #131517,
+    &quot;white&quot;: #f2f9ff,
+  ),
+) !global;
+
+// Global variables
+$customizer-instances: () !global;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we have a pretty simple map of our default color palette to use within our customization API. I also created another global variable called &lt;code&gt;$customizer-instances&lt;/code&gt; that will keep a record of all the data from each use of the API. It&amp;#8217;s an empty map for now. &lt;/p&gt;
+
+&lt;p&gt;So, let&amp;#8217;s go ahead and move on to the next step, which is fleshing out the bones of our main mixin that we will be using to drive the API.&lt;/p&gt;
+
+&lt;h2&gt;Building our API&amp;#8217;s driver&lt;/h2&gt;
+
+&lt;p&gt;Before we go any further, let&amp;#8217;s decide on how we want our API to work. To be able to jump right into the code in the rest of this article, this is what our syntax is going to look like at the end:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.selector {
+  @include customizer(
+    $args: (
+      color: &quot;white&quot;,
+      background: &quot;primary&quot; &quot;darkest&quot;,
+      border-color: &quot;complementary&quot; &quot;base&quot;
+    ), 
+    $uses: &quot;palette&quot;
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order to make the API easy to use and as close to the usual CSS syntax as possible, we&amp;#8217;re going to require the first argument to be a map called &lt;code&gt;$args&lt;/code&gt; so that we can use &lt;code&gt;$key-&amp;gt;$value&lt;/code&gt; pairs for each customizable property, as well as allowing multiple properties to be passed to a single instance of the mixin. &lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: If you&amp;#8217;re unfamiliar with using maps as arguments, &lt;a href=&quot;http://www.sitepoint.com/using-sass-maps/&quot;&gt;Hugo wrote up a pretty nifty article on that&lt;/a&gt;, as well as many other use-cases for maps.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The next argument will be fetching a module from within the above &lt;code&gt;$customizer&lt;/code&gt; map, which in this case will be our &lt;em&gt;&amp;#8220;palette&amp;#8221;&lt;/em&gt; module. We&amp;#8217;ll call this argument &lt;code&gt;$uses&lt;/code&gt;, as we will be fetching (&lt;em&gt;using&lt;/em&gt;) values from it for use in our first argument, &lt;code&gt;$args&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I also want to make it fall back to outputting plain CSS if no module to use is specified, rather than erroring out we can simply &lt;code&gt;@warn&lt;/code&gt; the user that the mixin shouldn&amp;#8217;t be used that way. Therefore, our API will be less frustrating to newer users that don&amp;#8217;t happen to be using it correctly.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Create new customizable properties, save to instance map
+// 
+// @param {Map}           $args         - map of customizable property-&amp;gt;value pairs
+// @param {String | Null} $users (null) - module to pull property values from
+// 
+// @output $property-&amp;gt;$value pairs for each argument
+
+@mixin customizer($args, $uses: null) {
+  
+  // Make sure argument is a map
+  @if is-map($args) {
+
+    // Use module? Expecting module to exist
+    @if $uses != null {
+
+      // Check if module exists
+      @if exists($customizer, $uses) {
+        // ... All is safe, let's work with the arguments
+      } 
+
+      // Module did not exist, throw error
+      @else {
+        @warn &quot;Invalid argument: #{$uses}. Module was not found.&quot;;
+      }
+
+    } 
+
+    // No module specified, expecting plain CSS
+    @else {
+      // ... Since we'll be expecting valid CSS, let's output it here
+
+      // Warn that customization mixin shouldn't be used without a module
+      @warn &quot;The customization mixin should not be used without specifying a module to use.&quot;;
+    }
+
+  } 
+
+  // Argument was not a map, throw error
+  @else {
+    @warn &quot;Invalid argument: #{$args}. Argument type is not a map.&quot;;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I&amp;#8217;ve commented the above code, but let&amp;#8217;s go ahead and dig a little deeper into the structure of the mixin. Like I said above, the first thing we should do is check that the &lt;code&gt;$args&lt;/code&gt; argument is a map, and depending on the result, we&amp;#8217;ll either throw an error, or move on.&lt;/p&gt;
+
+&lt;p&gt;Next, let&amp;#8217;s check if a module was passed as the &lt;code&gt;$uses&lt;/code&gt; argument; if not, let&amp;#8217;s output any &lt;code&gt;$key-&amp;gt;$value&lt;/code&gt; pairs as plain CSS. Also we will throw a warning to the user to let him know that the mixin shouldn&amp;#8217;t be used for plain CSS output. &lt;/p&gt;
+
+&lt;p&gt;On the other hand, if &lt;code&gt;$uses&lt;/code&gt; is not &lt;code&gt;null&lt;/code&gt;, let&amp;#8217;s move on to check whether or not the module actually exists within our &lt;code&gt;$customizer&lt;/code&gt; variable (the palette map), like before we will either error out with a warning, or move forward.&lt;/p&gt;
+
+&lt;p&gt;Now, since we want to be able to pass multiple customizable properties into a single instance of the mixin, we need to iterate over each of those arguments. So, from within our conditional statement that checks whether or not the module exists, let&amp;#8217;s add the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// @if exists($customizer, $uses) {
+
+  // Run through each argument individually
+  @each $arg in $args {
+    // Break up argument into property-&amp;gt;value
+    $property: nth($arg, 1);
+    $value: nth($arg, 2);
+
+    // Get values from module
+    @if is-list($value) or exists($customizer, $value) {
+      $value: // ... We need to fetch the values from our module here;
+    }
+
+    // Output styles
+    #{$property}: $value;
+  }
+
+// } @else module did not exist
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order to loop through each argument, we use an &lt;code&gt;@each&lt;/code&gt; loop. Within the loop, we retrieve both the &lt;code&gt;$property&lt;/code&gt; and the &lt;code&gt;$value&lt;/code&gt; using the &lt;code&gt;nth()&lt;/code&gt; function. Then, we check if &lt;code&gt;$value&lt;/code&gt; is either a list (when we&amp;#8217;re fetching the value from a deeper sub-module such as &lt;em&gt;&amp;#8220;primary&amp;#8221;&lt;/em&gt;), or that the module exists (for values that don&amp;#8217;t have additional sub-modules, but rather a single value such as &lt;em&gt;&amp;#8220;white&amp;#8221;&lt;/em&gt;). Assuming this check returns &lt;code&gt;true&lt;/code&gt;, we need a way to fetch these values from their deeper sub-modules; so let&amp;#8217;s create a function for that called &lt;code&gt;use-module()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Fetching our colors&lt;/h2&gt;
+
+&lt;p&gt;The function is going to take two arguments, fairly similar to the arguments our main mixin takes. The first argument is a list of &lt;code&gt;$args&lt;/code&gt;, which we will use to fetch the value from the module we passed into &lt;code&gt;$uses&lt;/code&gt; in the main mixin. &lt;/p&gt;
+
+&lt;p&gt;Which brings us to the second argument! Since the function needs to know which module it&amp;#8217;s fetching from, let&amp;#8217;s create an argument called &lt;code&gt;$module&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Return value for property based on passed module
+// 
+// @param {List}   $args   - list of keys for customizable property
+// @param {String} $module - module to pull property values from
+// 
+// @return {*} - $value from $module
+
+@function use-module($args, $module) {
+  $exists: true;
+
+  // Append the list of arguments to the module to pass to map-fetch
+  $module: join($module, $args);
+
+  // Check if sub-modules exist
+  // Make sure all sub-modules exist
+  @if length($args) &amp;gt; 1 {
+    @each $arg in $args {
+      @if not exists($customizer, $arg) {
+        $exists: false;
+      }
+    }
+  }
+
+  @if $exists {
+    // Grab value from module by passing in newly built list
+    @return map-fetch($customizer, $module);
+  } 
+
+  @else {
+    // One or more of the modules were not found, throw error
+    @warn &quot;Invalid arguments: #{$module}. One or more module or sub-module not found.&quot;;
+    @return false;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can see that I&amp;#8217;m doing a few simple checks to make sure every module and sub-module exists within &lt;code&gt;$customizer&lt;/code&gt; map. If the argument was only a single value, then our check from the main mixin (before we even enter the function) will do just fine, but if we&amp;#8217;re fetching from additional sub-modules, we need to make sure those exist so that we don&amp;#8217;t get any error that would make the compilation crash.&lt;/p&gt;
+
+&lt;p&gt;So, our code is fully functional right now, but we haven&amp;#8217;t kept a record of any of the data we passed, or what selectors and which of it&amp;#8217;s properties are customizable. So, let&amp;#8217;s go ahead and create the function needed to do that.&lt;/p&gt;
+
+&lt;h2&gt;Creating our instance map&lt;/h2&gt;
+
+&lt;p&gt;Remember we initialized an empty global map called &lt;code&gt;$customizer-instances&lt;/code&gt;? As I said, we are going to use that variable to house each instance of the mixin and keep track of the selector, which modules it uses, all of its customizable properties as well as their default values.&lt;/p&gt;
+
+&lt;p&gt;The function will be called &lt;code&gt;new-customizer-instance()&lt;/code&gt;. It will take two arguments indentical to the arguments that the main &lt;code&gt;customizer()&lt;/code&gt; mixin takes, and for good reason: we&amp;#8217;re essentially going to loop over the arguments the exact same way, but instead of outputting styles for the selector, we&amp;#8217;re going to save these variables to an &lt;code&gt;$instance&lt;/code&gt; map with the selectors name as the top-most key.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Create new customizable instance
+// 
+// @param {Map}    $args   - map of customizable property-&amp;gt;value pairs
+// @param {String} $module - module to pull property values from
+// 
+// @return {Map} updated instance map
+
+@function new-customizer-instance($args, $module) {
+  // Define static selector
+  $selector: selector-string(); // Flint Ruby function
+  // Empty argument map
+  $instance-properties: ();
+
+  // Run through each argument individually
+  @each $property, $value in $args {
+    // Merge into argument map
+    $instance-properties: map-merge($instance-properties, (
+      &quot;#{$property}&quot;: (
+        &quot;module&quot;: $module,
+        &quot;value&quot;: $value
+      )
+    ));
+  }
+
+  // Create new instance map for selector, save properties
+  $customizer-instance: (&quot;#{$selector}&quot;: $instance-properties);
+
+  // Merge into main map
+  @return map-merge($customizer-instances, $customizer-instance);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we&amp;#8217;re using the Ruby function I talked about ealier called &lt;code&gt;selector-string()&lt;/code&gt;, which outputs a stringified version of the &lt;code&gt;&amp;amp;&lt;/code&gt; operator in Sass. That way we can work with the selector the same way we would with any other string, which currently isn&amp;#8217;t possible when using the normal &lt;code&gt;&amp;amp;&lt;/code&gt; operator. You can read more about that issue &lt;a href=&quot;https://gist.github.com/nex3/8050187&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next, we&amp;#8217;re going to create an empty map that is going to contain each customizable &lt;code&gt;$property&lt;/code&gt; and all of the data for it such as its &lt;code&gt;$module&lt;/code&gt; and the &lt;code&gt;$value&lt;/code&gt; that is used from the module. &lt;/p&gt;
+
+&lt;p&gt;Unlike the main mixin, we&amp;#8217;re not going to keep track of what styles are actually outputted, but rather where those styles came from within our module (&lt;em&gt;&amp;#8220;palette&amp;#8221;&lt;/em&gt;). That way, if say, the &lt;em&gt;&amp;#8220;primary&amp;#8221; &amp;#8220;base&amp;#8221;&lt;/em&gt; color changes via our front-end API, we know that this element is using that value, so we can then update the stylesheet to reflect the change.&lt;/p&gt;
+
+&lt;p&gt;But, as we can tell from the function above, it&amp;#8217;s returning a merged map, but we haven&amp;#8217;t actually told the new map to override the global &lt;code&gt;$customizer-instances&lt;/code&gt; variable. Instead of making the function do that, let&amp;#8217;s create a mixin to handle that part so we can simply include it into the main mixin where we need to. That way, if we ever needed to make small minor adjustments, we only have to update it in one area. This next mixin is going to be rather simple.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Create new customizable instance
+// 
+// @param {Map}    $args   - map of customizable property-&amp;gt;value pairs
+// @param {String} $module - module to pull property values from
+// 
+// @return {Map} - updated instance map
+ 
+@mixin new-customizer-instance($args, $module) {
+  $customizer-instances: new-customizer-instance($args, $module) !global;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All that this mixin is doing, is taking the updated instance map from the &lt;code&gt;new-customizer-instance()&lt;/code&gt; function, and setting the global &lt;code&gt;$customizer-instances&lt;/code&gt; variable to reflect that update.&lt;/p&gt;
+
+&lt;h2&gt;Putting it all together&lt;/h2&gt;
+
+&lt;p&gt;Going back to our main &lt;code&gt;customizer()&lt;/code&gt; mixin, let&amp;#8217;s update the code to include all of our new functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Create new customizable properties, save to instance map
+// 
+// @param {Map}           $args        - map of customizable property-&amp;gt;value pairs
+// @param {String | Null} $uses (null) - module to pull property values from
+// 
+// @output $property-&amp;gt;$value pairs for each argument
+
+@mixin customizer($args, $uses: null) {
+
+  // Argument is not a map, throw error
+  @if not is-map($args) {
+    @warn &quot;Invalid argument: #{$args}. Argument type is not a map.&quot;;
+  }
+
+  @else {
+    // Use module? Expecting module to exist
+    @if $uses != null {
+
+      // Module doesn't exist, throw error
+      @if not exists($customizer, $uses) {
+        @warn &quot;Invalid argument: #{$uses}. Module was not found.&quot;;
+      }
+
+      @else {
+        // Save arguments to instance map
+        @include new-customizer-instance($args, $uses);
+
+        // Run through each argument individually
+        @each $property, $value in $args {
+          // Check if sub-module exists
+          @if is-list($value) or exists($customizer, $value) {
+            // Get values from sub-module
+            $value: use-module($value, $uses);  
+          } 
+          
+          // Sub-module did not exist, throw error
+          @else {
+            @warn &quot;Invalid argument: #{$value}. Sub-module was not found.&quot;;
+          }
+
+          // Output styles
+          #{$property}: $value;
+        }
+      } 
+    } 
+
+    // No module specified, expecting plain CSS
+    @else {
+
+      // Loop through each argument individually and output
+      @each $property, $value in $args {
+        #{$property}: $value;
+      }
+
+      // Warn that customization mixin shouldn't be used without a module
+      @warn &quot;The customization mixin should not be used without specifying a module to use.&quot;;
+    }
+
+  } 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;The result&lt;/h2&gt;
+
+&lt;p&gt;Above, I simply added in our new functions, and if all went well, our code should be fully functional.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.selector {
+  @include customizer($args: (
+    color: &quot;white&quot;,
+    background: &quot;primary&quot; &quot;darkest&quot;,
+    border-color: &quot;complementary&quot; &quot;base&quot;,
+  ), $uses: &quot;palette&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Everytime the &lt;code&gt;customizer()&lt;/code&gt; mixin is run, a new instance is created with all of the needed data.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Updates the global instance map with the new selector,
+$customizer-instances: (
+  &quot;.selector&quot;: (
+      &quot;color&quot;: (
+        &quot;module&quot;: &quot;palette&quot;,
+        &quot;value&quot;: &quot;white&quot;,
+      ), 
+      &quot;background&quot;: (
+        &quot;module&quot;: &quot;palette&quot;,
+        &quot;value&quot;: (&quot;primary&quot;, &quot;darkest&quot;),
+      ),
+      &quot;border-color&quot;: (
+        &quot;module&quot;: &quot;palette&quot;,
+        &quot;value&quot;: (&quot;complementary&quot;, &quot;base&quot;),
+      ),
+    ),
+  ),
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then the new styles are fetched and outputted into the stylesheet.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// And outputs the selectors styles from our module,
+.selector {
+  color: #f2f9ff;
+  background: #092226;
+  border-color: #f2192c;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;Now that we have these variables (&lt;code&gt;$customizer&lt;/code&gt; and &lt;code&gt;$customizer-instances&lt;/code&gt;) containing a wealth of useful data, in part 2 we&amp;#8217;ll walk through the basic syntax for &lt;a href=&quot;https://github.com/ezekg/SassyExport&quot;&gt;SassyExport&lt;/a&gt; and how we&amp;#8217;re going to use it to export all of this data into JSON. We will also discuss the various ways for this data to give opportunity to create some pretty impressive features when coupled with other languages, such as PHP.&lt;/p&gt;
+
+&lt;p&gt;Until next time, you can play with the customization API on &lt;a href=&quot;http://sassmeister.com/gist/ccf842e5ee74287f1868&quot;&gt;SassMeister&lt;/a&gt;, check out &lt;a href=&quot;https://github.com/ezekg/SassyExport&quot;&gt;SassyExport on Github&lt;/a&gt;, or &lt;a href=&quot;http://rubygems.org/gems/SassyExport&quot;&gt;download the gem&lt;/a&gt; to use with Compass in your own project.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ezekiel Gabrielse is a &lt;a href=&quot;http://ezekielg.com/2014/05/07/the-unintended/&quot;&gt;recent designer-turned-developer&lt;/a&gt; based in north Texas currently employed at &lt;a href=&quot;http://produceresults.com/&quot;&gt;Produce Results&lt;/a&gt; as a developer, and on the odd day, designer. You should definitely follow him on &lt;a href=&quot;https://twitter.com/ezekkkg&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+</item>
+
+
+<item>
+	<title>Tips to help you level up your Sass</title>
+	
+	<link>http://www.sitepoint.com/tips-help-level-up-sass/</link>
+	<guid>http://www.sitepoint.com/tips-help-level-up-sass/</guid>
+	
+	
+	<pubDate>Thu, 26 Jun 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
+	<title>Speaking on SassBites #42</title>
+	
+	<link>https://www.youtube.com/watch?v=H6Y9r49InXo</link>
+	<guid>https://www.youtube.com/watch?v=H6Y9r49InXo</guid>
+	
+	
+	<pubDate>Wed, 25 Jun 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
+	<title>All you ever need to know about Sass interpolation</title>
+	
+	<link>http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375</link>
+	<guid>http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375</guid>
+	
+	
+	<pubDate>Tue, 24 Jun 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
+	<title>Bitwise operators in Sass</title>
+	
+	<link>http://hugogiraudel.com/2014/06/22/bitwise-operators-in-sass</link>
+	<guid>/2014/06/22/bitwise-operators-in-sass</guid>
+	
+	
+	<pubDate>Sun, 22 Jun 2014 00:00:00 GMT</pubDate>
+	<description>
+&lt;p&gt;A couple of days ago, &lt;a href=&quot;https://twitter.com/valeriangalliat&quot;&gt;Valérian Galliat&lt;/a&gt; and I had the crazy idea of implementing bitwise operators in Sass. It went like this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt;: Do you know how bitwise operators work?  &lt;br /&gt;
+&lt;strong&gt;Val&lt;/strong&gt;: Yes.  &lt;br /&gt;
+&lt;strong&gt;Hugo&lt;/strong&gt;: Do you think we could implement them in Sass?  &lt;br /&gt;
+&lt;strong&gt;Val&lt;/strong&gt;: No.  &lt;br /&gt;
+(Loading&amp;#8230;)  &lt;br /&gt;
+&lt;strong&gt;Val&lt;/strong&gt;: Well, in fact we could.  &lt;br /&gt;
+&lt;strong&gt;Hugo&lt;/strong&gt;: LET&amp;#8217;S DO IT!  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let&amp;#8217;s catch up on bitwise operators, shall we?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: project is on GitHub. Check out &lt;a href=&quot;https://github.com/HugoGiraudel/SassyBitwise&quot;&gt;SassyBitwise&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;B-b-b-b-bitwise&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Note: I am no programmer so please kindly apologize any shortcut I could make when explaining bitwise operators.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;You are probably not without knowing numbers we use in everyday life are expressed in base 10, also known as &lt;em&gt;decimal&lt;/em&gt;. &lt;em&gt;Hexadecimal&lt;/em&gt; is base 16. &lt;em&gt;Octal&lt;/em&gt; is base 8. And &lt;em&gt;binary&lt;/em&gt; is base 2. Just to name a few popular bases.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s put this very simple: bitwise operators are operators for numbers expressed in their binary form. Most common bitwise operators are AND (&lt;code&gt;&amp;amp;&lt;/code&gt;), OR (&lt;code&gt;|&lt;/code&gt;) and NOT (&lt;code&gt;~&lt;/code&gt;), but there are also XOR (&lt;code&gt;^&lt;/code&gt;), LEFT-SHIFT (&lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;) and RIGHT-SHIFT (&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;To illustrate this explanation, allow me to have a little example (inspired from &lt;a href=&quot;http://en.wikipedia.org/wiki/Bitwise_operation#Bitwise_operators&quot;&gt;Wikipedia&lt;/a&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# ~7
+NOT 0111 (decimal 7)
+  = 1000 (decimal 8)
+
+# 5 &amp;amp; 3
+    0101 (decimal 5)
+AND 0011 (decimal 3)
+  = 0001 (decimal 1)
+
+# 5 | 3
+    0101 (decimal 5)
+OR  0011 (decimal 3)
+  = 0111 (decimal 7)
+
+# 2 ^ 10
+    0010 (decimal 2)
+XOR 1010 (decimal 10)
+  = 1000 (decimal 8)
+
+# 23 &amp;lt;&amp;lt; 1
+   00010111 (decimal 23) LEFT-SHIFT 1
+=  00101110 (decimal 46)
+
+# 23 &amp;gt;&amp;gt; 1
+   00010111 (decimal 23) RIGHT-SHIFT 1
+=  00001011 (decimal 11)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, the idea is pretty straightforward:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;NOT&lt;/em&gt; converts &lt;code&gt;1&lt;/code&gt;s in &lt;code&gt;0&lt;/code&gt;s, and &lt;code&gt;0&lt;/code&gt;s in &lt;code&gt;1&lt;/code&gt;s&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;AND&lt;/em&gt; takes &lt;code&gt;1&lt;/code&gt;s if both are &lt;code&gt;1&lt;/code&gt;s, else &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;OR&lt;/em&gt; takes &lt;code&gt;1&lt;/code&gt; if any are &lt;code&gt;1&lt;/code&gt;, else &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;XOR&lt;/em&gt; takes &lt;code&gt;1&lt;/code&gt; if one of 2 is &lt;code&gt;1&lt;/code&gt;, else &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;LEFT-SHIFT&lt;/em&gt; shifts all bits from &lt;code&gt;n&lt;/code&gt; to the left&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;RIGHT-SHIFT&lt;/em&gt; shifts all bits from &lt;code&gt;n&lt;/code&gt; to the right&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you&amp;#8217;re more a &lt;em&gt;table&lt;/em&gt; kind of guy:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&amp;#160;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Result&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NOT&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NOT&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 1&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 2&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;AND&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;OR&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;XOR&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&amp;#160;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 1&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 2&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 3&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 4&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 5&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 6&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 7&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bit 8&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Binary&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;LEFT-SHIFT&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;RIGHT-SHIFT&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So you got bitwise.&lt;/p&gt;
+
+&lt;h2&gt;Sass implementation&lt;/h2&gt;
+
+&lt;p&gt;Now, we wanted to implement this in Sass. There are two ways of doing it:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;convert to binary string, then apply operations char per char (a char being a bit in this context)&lt;/li&gt;
+  &lt;li&gt;rely on mathematical equivalents&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We could have decided to manipulate binary strings but god knows why, we ended up implementing the mathematical equivalents of all operators. Fortunately, we didn&amp;#8217;t have to figure out the formula (we are not &lt;em&gt;that&lt;/em&gt; clever): &lt;a href=&quot;http://en.wikipedia.org/wiki/Bitwise_operation#Mathematical_equivalents&quot;&gt;Wikipedia has them&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You may think that we didn&amp;#8217;t need a decimal to binary converter since we use math rather than string manipulation. Actually, we had to write a &lt;code&gt;decimal-to-binary()&lt;/code&gt; function because we needed to know the length of the binary string to compute bitwise operations. &lt;/p&gt;
+
+&lt;p&gt;We could have figured this length without converting to binary if we had a &lt;code&gt;log()&lt;/code&gt; function. And we could have made a &lt;code&gt;log()&lt;/code&gt; function if we had a &lt;code&gt;frexp()&lt;/code&gt; function. And we could have made a &lt;code&gt;frexp()&lt;/code&gt; function if we had bitwise operators. Do you see the problem here?&lt;/p&gt;
+
+&lt;p&gt;Valérian summed it up quite nicely in a Tweet:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;&amp;amp;, | and ^ bitwise operators math formulas needs log(), but log() needs frexp() which needs bitwise operators. Fak! cc &lt;a href=&quot;https://twitter.com/HugoGiraudel&quot;&gt;@HugoGiraudel&lt;/a&gt;&lt;/p&gt;&amp;mdash; Valérian Galliat (@valeriangalliat) &lt;a href=&quot;https://twitter.com/valeriangalliat/statuses/474127810798555136&quot;&gt;June 4, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I won&amp;#8217;t dig into Sass code because it doesn&amp;#8217;t have much point. Let&amp;#8217;s just have a look at the final implementation. We have implemented each operator as a Sass function called &lt;code&gt;bw-*&lt;/code&gt; where &lt;code&gt;*&lt;/code&gt; stands for the name of the operator (e.g. &lt;code&gt;and&lt;/code&gt;). Except for &lt;code&gt;bw-not()&lt;/code&gt; which is a rather particuliar operator, all functions accept 2 arguments: both decimal numbers.&lt;/p&gt;
+
+&lt;p&gt;On top of that, we have built a &lt;code&gt;bitwise()&lt;/code&gt; function (aliased as &lt;code&gt;bw()&lt;/code&gt;) which provides a more friendly API when dealing with bitwise operations. It accepts any number of queued bitwise operations, where operators are quoted. For instance:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// 42 | 38 | 24
+$value: bitwise(42 '|' 38 '|' 24);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So that&amp;#8217;s not too bad. The fact that operators have to be quoted for Sass not to crash is kind of annoying, but I suppose we can live with it. Other than that, it&amp;#8217;s pretty much like if you were doing bitwise operations in other language, except you wrap all this stuff in &lt;code&gt;bitwise()&lt;/code&gt; or &lt;code&gt;bw()&lt;/code&gt;. In my opinion, the API is pretty simple to use.&lt;/p&gt;
+
+&lt;h2&gt;Applications&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#8217;s be honest: there is none. Sass is not a low-level programming language. It does not have any valid use case for bitwise operations. Meanwhile, we implemented bit flags. &lt;em&gt;Bit flags&lt;/em&gt; is a programming technique aiming at storing several booleans in a single integer in ordre to save memory.&lt;/p&gt;
+
+&lt;p&gt;Here is a great &lt;a href=&quot;http://forum.codecall.net/topic/56591-bit-fields-flags-tutorial-with-example/&quot;&gt;introduction to bit flags&lt;/a&gt; but I&amp;#8217;ll try to sum up. The idea behind &lt;em&gt;bit flags&lt;/em&gt; is to have a collection of flags (think of them as options) mapped to powers of 2 (usually with an &lt;code&gt;enum&lt;/code&gt; field in C/C++). Each option will have its own bit flag.&lt;/p&gt;
+
+&lt;pre style=&quot;line-height: .9&quot;&gt;&lt;code&gt;00000000 Bin    | Dec
+│││││││└ 1 &amp;lt;&amp;lt; 0 | 1
+││││││└─ 1 &amp;lt;&amp;lt; 1 | 2
+│││││└── 1 &amp;lt;&amp;lt; 2 | 4
+││││└─── 1 &amp;lt;&amp;lt; 3 | 8
+│││└──── 1 &amp;lt;&amp;lt; 4 | 16
+││└───── 1 &amp;lt;&amp;lt; 5 | 32
+│└────── 1 &amp;lt;&amp;lt; 6 | 64
+└─────── 1 &amp;lt;&amp;lt; 7 | 128&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, let&amp;#8217;s say option A is &lt;code&gt;1 &amp;lt;&amp;lt; 0&lt;/code&gt; (DEC 1) and option B is &lt;code&gt;1 &amp;lt;&amp;lt; 1&lt;/code&gt; (DEC 2). If we &lt;em&gt;OR&lt;/em&gt; them:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   00000001 (A)
+OR 00000010 (B)
+ = 00000011
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The result &amp;mdash; let&amp;#8217;s call it &lt;em&gt;Z&lt;/em&gt; &amp;mdash; holds both options, right? To retrieve separately A and B from Z, we can use the &lt;em&gt;AND&lt;/em&gt; operator:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    00000011 (Z)
+AND 00000001 (A)
+  = 00000001
+
+    00000011 (Z)
+AND 00000010 (B)
+  = 00000010
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So far so good. Now what if we try to &lt;em&gt;AND&lt;/em&gt; Z and, option C (&lt;code&gt;1 &amp;lt;&amp;lt; 2&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    00000011 (Z)
+AND 00000100 (C)
+  = 00000000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The result of &lt;code&gt;Z &amp;amp; C&lt;/code&gt; isn&amp;#8217;t equal to &lt;code&gt;C&lt;/code&gt;, so we can safely assume the C option hasn&amp;#8217;t been passed.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#8217;s pretty much how bit flags work. Now let&amp;#8217;s apply it to Sass as an example of SassyBitwise. First thing to do, define a couple of flags:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Flags
+$A: bw(1 '&amp;lt;&amp;lt;' 0);
+$B: bw(1 '&amp;lt;&amp;lt;' 1);
+$C: bw(1 '&amp;lt;&amp;lt;' 2);
+$D: bw(1 '&amp;lt;&amp;lt;' 3);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We also need a mixin that would theorically accepts multiple boolean options. As a proof of concept, our mixin will accept a single argument: &lt;code&gt;$options&lt;/code&gt;, a &lt;strong&gt;number&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Custom mixin
+// ---
+// @param [number] $options: bitwise encoded flags
+// ---
+@mixin custom-test(/* number */ $options) {
+  is-A-flag-set: bw($options '&amp;amp;' $A);
+  is-B-flag-set: bw($options '&amp;amp;' $B);
+  is-C-flag-set: bw($options '&amp;amp;' $C);
+  is-D-flag-set: bw($options '&amp;amp;' $D);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And now we call it, passing it the result of a bitwise &lt;em&gt;OR&lt;/em&gt; operation of all our flags.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Call
+test {
+  @include custom-test(bw($A '|' $C '|' $D));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As expected, the result is the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;test {
+  is-A-flag-set: true;
+  is-B-flag-set: false;
+  is-C-flag-set: true;
+  is-D-flag-set: true;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;That&amp;#8217;s it folks, SassyBitwise. No point, much fun. As always.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: a huge thanks to Valérian Galliat for helping me out with this.&lt;/em&gt;&lt;/p&gt;
+</description>
+</item>
+
+
+<item>
 	<title>A better solution for managing z-index with Sass</title>
 	
 	<link>http://www.sitepoint.com/better-solution-managing-z-index-sass/</link>
@@ -228,539 +1034,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	<pubDate>Mon, 16 Jun 2014 00:00:00 GMT</pubDate>
 	<description>
-</description>
-</item>
-
-
-<item>
-	<title>Compass extension that are worth a try</title>
-	
-	<link>http://www.sitepoint.com/compass-extensions-worth-a-try/</link>
-	<guid>http://www.sitepoint.com/compass-extensions-worth-a-try/</guid>
-	
-	
-	<pubDate>Tue, 10 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
-</description>
-</item>
-
-
-<item>
-	<title>Using Sass maps</title>
-	
-	<link>http://www.sitepoint.com/using-sass-maps/</link>
-	<guid>http://www.sitepoint.com/using-sass-maps/</guid>
-	
-	
-	<pubDate>Thu, 05 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
-</description>
-</item>
-
-
-<item>
-	<title>Feedback on another conf</title>
-	
-	<link>http://hugogiraudel.com/2014/06/02/feedbacks-feweb</link>
-	<guid>/2014/06/02/feedbacks-feweb</guid>
-	
-	
-	<pubDate>Mon, 02 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
-&lt;p&gt;A couple of weeks ago, I have been invited by the &lt;a href=&quot;http://www.lafeweb.be/&quot;&gt;FeWeb&lt;/a&gt; (which stands for &lt;em&gt;La fédération des métiers du web&lt;/em&gt;, literally &lt;em&gt;Web professions Federation&lt;/em&gt;) to talk about Sass at &lt;a href=&quot;http://www.co-station.com/&quot;&gt;Co.Station&lt;/a&gt; in Bruxelles, Belgium.&lt;/p&gt;
-
-&lt;figure class=&quot;figure&quot;&gt;
-&lt;img src=&quot;/images/feedbacks-feweb__feweb-costation.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;figcaption&gt;FeWeb's event, hosted by Co.Station&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Obviously I accepted and took a plane to travel 900 kilometers from home with my dearest in order to give a talk about Sass architecture. Hence a short blog post to relate how it went.&lt;/p&gt;
-
-&lt;p&gt;Well, it went very well! Except for the weather which was pretty ugly and the fact that my girlfriend got her phone stolen. Anyway, the trip was worth it and we enjoyed Belgium. &lt;/p&gt;
-
-&lt;h2&gt;The place&lt;/h2&gt;
-
-&lt;p&gt;The Co.Station is a great spot in the heart of Bruxelles, aiming at helping startups, associations and business growing. In this case, Co.Station was hosting FeWeb&amp;#8217;s event.&lt;/p&gt;
-
-&lt;p&gt;The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But&amp;#8230; it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor guys who had to stand up for almost 2 hours, it sucks.&lt;/p&gt;
-
-&lt;figure class=&quot;figure&quot;&gt;
-&lt;img src=&quot;/images/feedbacks-feweb__room.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;figcaption&gt;Crowded room is crowded.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2&gt;The talks&lt;/h2&gt;
-
-&lt;p&gt;FeWeb&amp;#8217;s events are usually composed of 2 successive talks, then a couple of beers (remember it&amp;#8217;s in Belgium). Thus, &lt;a href=&quot;https://twitter.com/thierrymichel&quot;&gt;Thierry Michel&lt;/a&gt; was giving an introduction to Sass and Compass, then I talked about architecture and components. &lt;/p&gt;
-
-&lt;figure class=&quot;figure&quot;&gt;
-&lt;img src=&quot;/images/feedbacks-feweb__speakers.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;figcaption&gt;Thierry and I on stage.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Both talks have received positive feedbacks so I guess we did the job well. However, I was kind of nervous at first so I was speaking pretty fast, making my session a couple of minutes shorter than expected.&lt;/p&gt;
-
-&lt;p&gt;Also when tensed I tend to speak in low voice, certainly as an attempt to calm things down. Because of that, I had to hold the mic in my hand during the whole presentation. Trust me, figuring out the distance between the mouth and the mic every single time you say something is definitely not the kind of things you want to think about. &lt;/p&gt;
-
-&lt;p&gt;Anyway, I eventually went through the whole session and ended my talk peacefully. The audience was receptive and we got some interesting questions (what about post-processors, Autoprefixer&amp;#8230;), so it was pretty cool.&lt;/p&gt;
-
-&lt;figure class=&quot;figure&quot;&gt;
-&lt;img src=&quot;/images/feedbacks-feweb__talk.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;figcaption&gt;Because LEGOs are cool.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2&gt;Slides&lt;/h2&gt;
-
-&lt;blockquote class=&quot;pull-quote--right&quot;&gt;Not disappointed by &lt;a href=&quot;https://slides.com&quot;&gt;Slid.es&lt;/a&gt;.&lt;/blockquote&gt;
-
-&lt;p&gt;Once again I have made my slides with &lt;a href=&quot;https://slides.com&quot;&gt;Slid.es&lt;/a&gt;, the CMS for &lt;a href=&quot;http://lab.hakim.se/reveal-js/#/&quot;&gt;Reveal.js&lt;/a&gt;. I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF&amp;#8230;). I also used the &lt;em&gt;presentation mode&lt;/em&gt; from Slid.es, which is great. Absolutely not disappointed.&lt;/p&gt;
-
-&lt;p&gt;I won&amp;#8217;t walk through my slides like I did for my talk at &lt;a href=&quot;http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/&quot;&gt;KiwiParty 2013&lt;/a&gt; because in this case it is less focused on code. Plus, I think they are better designed than the previous one.&lt;/p&gt;
-
-&lt;p&gt;Anyway, here they are (in French).&lt;/p&gt;
-
-&lt;iframe src=&quot;//slides.com/hugogiraudel/sass-une-architecture-composee/embed&quot; width=&quot;100%&quot; height=&quot;420&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h2&gt;Final thoughts&lt;/h2&gt;
-
-&lt;p&gt;A warn thank to the FeWeb for their great welcome, the bear and the fries. And if you &amp;mdash; whoever you are &amp;mdash; were here on May 8th, thank you. If you were not, let&amp;#8217;s hope we meet at another event. &lt;/p&gt;
-</description>
-</item>
-
-
-<item>
-	<title>Compass or Bourbon</title>
-	
-	<link>http://www.sitepoint.com/compass-or-bourbon-sass-frameworks/</link>
-	<guid>http://www.sitepoint.com/compass-or-bourbon-sass-frameworks/</guid>
-	
-	
-	<pubDate>Fri, 30 May 2014 00:00:00 GMT</pubDate>
-	<description>
-</description>
-</item>
-
-
-<item>
-	<title>How I came to write for the web</title>
-	
-	<link>http://hugogiraudel.com/2014/05/26/how-i-came-to-write-for-the-web</link>
-	<guid>/2014/05/26/how-i-came-to-write-for-the-web</guid>
-	
-	
-	<pubDate>Mon, 26 May 2014 00:00:00 GMT</pubDate>
-	<description>
-&lt;p&gt;Today, no cool Sass stuff or neat CSS trick. I&amp;#8217;d like to address a slightly more personnal topic people keep asking me about: how I came up to write for big online magazine (SitePoint, Tuts+, Codrops&amp;#8230;). It&amp;#8217;s true I have been very active lately and some people want to know how I can keep up with such a large amount of write ups. Well, if you happen to be one of those people, let me tell you my story (yes, you might find it boring!).&lt;/p&gt;
-
-&lt;p&gt;First of all, let me introduce with a little bit of background: as far as I can remember, I always liked writing. Back in high-school, I spent most French lessons writing prose or short stories. A few years later (late 2010), I launched a blog (in French) about World of Warcraft that got quite popular by the time. This was mostly due to the fact I published about 1000 words a day, and this during almost a year.&lt;/p&gt;
-
-&lt;p&gt;Long story short, you&amp;#8217;d say I&amp;#8217;m a writer. Ironically, I have never enjoyed reading. You would think someone who likes to write also likes to read but that is not my case. I don&amp;#8217;t like reading. Especially books. I find it boring. Enough back story, let&amp;#8217;s move on.&lt;/p&gt;
-
-&lt;h2&gt;How did it all started&lt;/h2&gt;
-
-&lt;p&gt;In this section, I&amp;#8217;ll tell you how I went from doing CSS drawings on CodePen, to writing for SitePoint, CSS-Tricks and The Sass Way in about a year and a half. If you really just want to know how I write my articles, feel free to skip to the next section. &lt;/p&gt;
-
-&lt;h3&gt;Codrops&lt;/h3&gt;
-
-&lt;p&gt;During the summer vacations from 2012, I got contacted by &lt;a href=&quot;https://twitter.com/o_telho&quot;&gt;Pedro Botelho&lt;/a&gt; one of the two folks behind &lt;a href=&quot;http://tympanus.net/codrops/&quot;&gt;Codrops&lt;/a&gt; (the other one being the awesome &lt;a href=&quot;https://twitter.com/crnacura&quot;&gt;Manoela Ilic&lt;/a&gt;, whom &lt;a href=&quot;http://hugogiraudel.com/2013/03/11/interview-manoela-ilic/&quot;&gt;I interviewed later on this very blog&lt;/a&gt;) to know if I&amp;#8217;d be interested in writing for Codrops. I was mostly unknown (not that I am specially popular today) at that time and I spent most of my free time doing silly CSS demos on CodePen.&lt;/p&gt;
-
-&lt;p&gt;Obviously I said &lt;em&gt;yes&lt;/em&gt; and got to write quite &lt;a href=&quot;http://tympanus.net/codrops/author/hugogiraudel/&quot;&gt;a couple of posts for Codrops&lt;/a&gt; between September 2012 and July 2013, including some pretty popular ones like &lt;a href=&quot;http://tympanus.net/codrops/2013/07/17/troubleshooting-css/&quot;&gt;Troubleshooting CSS&lt;/a&gt;. After a dozen articles over a year, I realized Codrops was looking for design-related posts while I felt more technic-focused. As a matter of facts, my last posts at Codrops were quite technical (dealing with CSS counters, &lt;code&gt;clip()&lt;/code&gt;, click events&amp;#8230;).&lt;/p&gt;
-
-&lt;h3&gt;CSS-Tricks&lt;/h3&gt;
-
-&lt;p&gt;At that time (mid 2013), &lt;a href=&quot;https://twitter.com/chriscoyier&quot;&gt;Chris Coyier&lt;/a&gt; from &lt;a href=&quot;http://css-tricks.com&quot;&gt;CSS-Tricks&lt;/a&gt; was looking for authors to help him complete the Almanac, an alternative to MDN Docs on CSS selectors and properties. Being a big fan of Chris&amp;#8217; work for years now, I have been helping him as much as I could, especially with a few interesting entries like &lt;a href=&quot;http://css-tricks.com/almanac/properties/g/grid/&quot;&gt;CSS Grid System&lt;/a&gt;, &lt;a href=&quot;http://css-tricks.com/snippets/css/a-guide-to-flexbox/&quot;&gt;A Complete Guide to Flexbox&lt;/a&gt; and a few other cool properties as well. &lt;/p&gt;
-
-&lt;p&gt;I still keep helping Chris updating the Almanac whenever I can. I recently added a couple entries, and we will soon update the Flexbox guide if Chris is still willing me to do so. I&amp;#8217;m learning a lot and it&amp;#8217;s a real pleasure to contribute to this famous site that is CSS-Tricks.&lt;/p&gt;
-
-&lt;h3&gt;David Walsh&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/davidwalshblog&quot;&gt;David Walsh&lt;/a&gt; and Chris being good buddies, David asked me if I&amp;#8217;d be interested in writing a little article about Sass for his blog as a guest author (July 2013). A couple of days later, he released &lt;a href=&quot;http://davidwalsh.name/future-sass&quot;&gt;Looking into the Future of Sass&lt;/a&gt; where I explained what&amp;#8217;s coming up in Sass 3.3 which was on the tracks back then. Even today, this article is still getting linked to as an alternative to &lt;a href=&quot;http://sass-lang.com/documentation/file.SASS_CHANGELOG.html&quot;&gt;Sass&amp;#8217; official changelog&lt;/a&gt;. Needless to say you should check the changelog rather than external articles. ;)&lt;/p&gt;
-
-&lt;p&gt;On the very beginning of 2014, I gathered my courage and let David release another guest post from me, this time about JavaScript. Yes, you read right! I explained how I built &lt;a href=&quot;http://davidwalsh.name/crud-javascript-class&quot;&gt;a CRUD JavaScript class&lt;/a&gt;. I spent a couple of days working on this piece of code and that was kind of a big deal for a JavaScript newbie like me to talk about it, especially at David Walsh&amp;#8217;s which is well known for his JS skills. Thankfully I&amp;#8217;ve got some positive feedbacks, so it&amp;#8217;s all good!&lt;/p&gt;
-
-&lt;h3&gt;The Sass Way&lt;/h3&gt;
-
-&lt;p&gt;A few months after my first article for David Walsh (October 2013), I think &lt;a href=&quot;https://twitter.com/johnwlong&quot;&gt;John W. Long&lt;/a&gt; from &lt;a href=&quot;http://thesassway.com&quot;&gt;The Sass Way&lt;/a&gt; asked me whether I&amp;#8217;d like publishing a write up at The Sass Way. The Sass Way being one of the most central places for Sass related stuff, I jumped on the occasion and released a completely silly post about &lt;a href=&quot;http://thesassway.com/advanced/math-sequences-with-sass&quot;&gt;Math sequences in Sass&lt;/a&gt;. While this was very interesting from a strictly technical point of view, it had absolutely no point whatsoever &amp;mdash; making the article completely useless.&lt;/p&gt;
-
-&lt;p&gt;Thankfully, John gave me some extra opportunities to release more interesting articles on The Sass Way, including a cool one about &lt;a href=&quot;http://thesassway.com/advanced/how-to-programtically-go-from-one-color-to-another-in-sass&quot;&gt;how to programmatically go from one color to another&lt;/a&gt; which is &amp;mdash; in my opinion &amp;mdash; quite neat, especially if you&amp;#8217;re interested in how colors work.&lt;/p&gt;
-
-&lt;h3&gt;SitePoint&lt;/h3&gt;
-
-&lt;p&gt;In late January 2014, I got contacted by &lt;a href=&quot;https://twitter.com/ImpressiveWebs&quot;&gt;Louis Lazaris&lt;/a&gt; (who was just named at a new position at &lt;a href=&quot;http://sitepoint.com&quot;&gt;SitePoint&lt;/a&gt;) if I wanted to fill their CSS Section with a couple of Sass articles. Louis told me SitePoint at that time was willing to provide some content about CSS preprocessors, so he thought about me (thanks Louis!).&lt;/p&gt;
-
-&lt;p&gt;The day after, I sent him a first article, ready to roll. And in the week-end that followed, I sent him 2 or 3 new write ups about Sass. At a point where my articles were not even passing by the &lt;em&gt;Approved topics&lt;/em&gt; and &lt;em&gt;Work in progress&lt;/em&gt; on Trello but directly popping into &lt;em&gt;Ready for edit&lt;/em&gt;. For about 3 months now, SitePoint has been releasing an article from me every week and I have to say I am very glad to be part of this.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#8217;m busting my ass to provide interesting and fresh Sass content (when it&amp;#8217;s not too technical, in which case I keep it for my own blog). And it&amp;#8217;s a really great adventure so I hope months from now, I&amp;#8217;ll still be giving them food for thoughts.&lt;/p&gt;
-
-&lt;h3&gt;Webdesign Tuts+&lt;/h3&gt;
-
-&lt;p&gt;Finally, a few weeks ago (March 2014) Ian Yates from &lt;a href=&quot;http://webdesign.tutsplus.com&quot;&gt;Webdesign Tuts+&lt;/a&gt; got in touch with me to know if I could write a little something about Sass. A round of applause for Tuts+ because for once, someone contacted to ask me to write about something very specific, and not a &lt;em&gt;about Sass&lt;/em&gt; or &lt;em&gt;about CSS&lt;/em&gt;. In this case, Ian asked me to talk about &lt;a href=&quot;design.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996&quot;&gt;error handling in Sass&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This led to the fastest turn around in history because the same day I was able to hand over the finished article to Ian, which could be released on Webdesign Tuts+ the day after. So in about 24 hours, we went from not knowing each other, to having released an article on the site. That being said, it was fast because he knew right away what he wanted from me (and because I had some free time that day).&lt;/p&gt;
-
-&lt;p&gt;I really enjoyed how things went the first time so I hope Webdesign Tuts+ and I will keep working together in the future. &lt;/p&gt;
-
-&lt;h3&gt;Hugogiraudel.com&lt;/h3&gt;
-
-&lt;p&gt;Last but not least, shortly after starting writing for Codrops, in November 2012, I launched my own blog to write about experiments and stuff. I&amp;#8217;ve been writing almost once a week since then, and plan on keep doing so for as long as I can.&lt;/p&gt;
-
-&lt;h2&gt;About actually &lt;em&gt;writing&lt;/em&gt;&lt;/h2&gt;
-
-&lt;p&gt;So far, I have talked about all the places I&amp;#8217;ve been writing for, but not really &lt;em&gt;how&lt;/em&gt; I write. As you may have noticed, this is usually getting fast: in most cases a couple of days after establishing contact, the first article is out. Apart from the fact I have some free time during the evening where I can write, there are a couple of other reasons. &lt;/p&gt;
-
-&lt;h3&gt;I know my topic&lt;/h3&gt;
-
-&lt;p&gt;Things are easier when you know what you&amp;#8217;re talking about. Have you ever tried to explain to someone something you barely know? It hurts. You stutter. You make sentences that don&amp;#8217;t always make sense. You take time to think before answering&amp;#8230; It takes time and effort. When you know your topic, it&amp;#8217;s getting simple. You don&amp;#8217;t have to &lt;em&gt;think carefully before you speak&lt;/em&gt;. It comes naturally.&lt;/p&gt;
-
-&lt;p&gt;Remember the article about JavaScript for David Walsh? That was longer. Some Almanac entries for Chris Coyier took me days to write, especially the one about CSS Grid. But when I write about Sass (&lt;a href=&quot;https://gist.github.com/HugoGiraudel/8332582&quot;&gt;which is usually the case&lt;/a&gt;), it&amp;#8217;s getting very easy. Except for the little things I still don&amp;#8217;t get about Sass, I&amp;#8217;m okay with talking about it for hours.&lt;/p&gt;
-
-&lt;h3&gt;I &lt;em&gt;one-shot&lt;/em&gt; articles&lt;/h3&gt;
-
-&lt;p&gt;I never ever start an article without finishing it. Even this one you are currently reading. I wrote it in a single shot. If I leave an unfinished article, it will remain unfinished and won&amp;#8217;t ever be released. I still have a draft from March 2013 which was meant to be an article about table design for Codrops.&lt;/p&gt;
-
-&lt;p&gt;I just can&amp;#8217;t get back to an article I started. This might look incapacitating but I see it as a strength. Writing an article from the beginning to the end in a single session helps me keeping track of my thoughts and having a structured meaningful result. &lt;/p&gt;
-
-&lt;p&gt;I&amp;#8217;ve seen friends working days on an article before delivering / releasing it. God, that would kill me. From start to end, every time. One shot. &lt;/p&gt;
-
-&lt;h3&gt;I&amp;#8217;m a fast typer&lt;/h3&gt;
-
-&lt;p&gt;This might seem silly, but I am a very fast typer and this is not trivial when writing a lot. I usually sit on a comfortable 80 to 100 words per minute while being able to hit up to 120 words per minute with &lt;a href=&quot;https://soundcloud.com/janskibeeeats/mini-montana&quot;&gt;appropriate music in the ears&lt;/a&gt;. &lt;/p&gt;
-
-&lt;blockquote class=&quot;pull-quote--right&quot;&gt;There has always been a computer at home.&lt;/blockquote&gt;
-
-&lt;p&gt;I grew up without a TV but as far as I can remember, there has always been a computer at home. When I was 3, my brother put me on Street Fighter, and I was smashing the keyboard with my little fingers without understanding much what I was doing. Before I was even 10, I started playing online. Which means typing to talk with people.&lt;/p&gt;
-
-&lt;p&gt;A few years later in secondary school, we had typing lessons to help us use a keyboard; it was already earned. I remember finding a website where you had to type the alphabet as fast as you can. Then, there was a scoreboard displaying best scores. After a couple of days of practice, I managed to type the entire latin alphabet in about &lt;em&gt;2-3 seconds&lt;/em&gt;. As silly as this exercise may be, it helped a lot rushing a couple of keys in a short amount of time.&lt;/p&gt;
-
-&lt;p&gt;Anyway, being a fast typer is part how I am able to release as many articles. Writing a post doesn&amp;#8217;t take forever because I can type almost as fast as I speak.&lt;/p&gt;
-
-&lt;h2&gt;Writing process&lt;/h2&gt;
-
-&lt;p&gt;Well, it involves Markdown, for sure. If you ask me about the greatest improvement regarding writing for the web, I&amp;#8217;d say it&amp;#8217;s Markdown. Being able to have structured content that doesn&amp;#8217;t hurt reading is essential. Add a syntax highlighter and you got the holy grail of web writing. I&amp;#8217;m not sure I&amp;#8217;d be writing that much if it wasn&amp;#8217;t for Markdown.&lt;/p&gt;
-
-&lt;blockquote class=&quot;pull-quote--right&quot;&gt;Markdown is the best way to write for the web.&lt;/blockquote&gt;
-
-&lt;p&gt;Anyway, I usually open a &lt;a href=&quot;http://gist.github.com&quot;&gt;Github Gist&lt;/a&gt; or Sublime Text and start writing in Markdown mode. As I&amp;#8217;ve explained in the previous section, once I&amp;#8217;ve started I don&amp;#8217;t stop until the end. It usually takes no more than a couple of minutes or dozens of minutes depending on the article&amp;#8217;s length. If everything is not perfect at first, it&amp;#8217;s no big deal. What&amp;#8217;s important is I have a backbone.&lt;/p&gt;
-
-&lt;p&gt;Once I&amp;#8217;m done, I proof read the whole thing as if I were discovering it for the first time. I fix typos and try to level up my English so it&amp;#8217;s not too much pain for the reader (a.k.a &lt;em&gt;you&lt;/em&gt;) to read. It&amp;#8217;s very unusual I have to re-write a whole section but it happens. In this case, I just fill the blanks or update as needed.&lt;/p&gt;
-
-&lt;p&gt;When the content seems fine, I have another read to see if I can add extras which would make the article more appealing: quotes, images, demos (usually as a Pen or a SassMeister Gist). If there is room for those, I add them.&lt;/p&gt;
-
-&lt;p&gt;And finally, I hand it to the site aiming at publishing it (e.g. SitePoint) or schedule it for my own blog.&lt;/p&gt;
-
-&lt;h2&gt;Final thoughts&lt;/h2&gt;
-
-&lt;p&gt;There we are folks; you know everything! There is no magic. I just love what I do thus I enjoy writing about it. That&amp;#8217;s why I&amp;#8217;ve been able to write about 50 articles since the beginning of the year. &lt;/p&gt;
-
-&lt;p&gt;When I got some free time and a cool little idea in the back of my head, I open GitHub Gist, switch to Markdown and start typing. A couple of minutes later, the article is done, and I only have to proof read.&lt;/p&gt;
-
-&lt;p&gt;Of course it is time consuming. Yet, I try to find some time to write, because I really enjoy it. That&amp;#8217;s all. If you want to write, you just have to love what you do.&lt;/p&gt;
-</description>
-</item>
-
-
-<item>
-	<title>Managing responsive breakpoints in Sass</title>
-	
-	<link>http://www.sitepoint.com/managing-responsive-breakpoints-sass/</link>
-	<guid>http://www.sitepoint.com/managing-responsive-breakpoints-sass/</guid>
-	
-	
-	<pubDate>Sun, 25 May 2014 00:00:00 GMT</pubDate>
-	<description>
-</description>
-</item>
-
-
-<item>
-	<title>A new Sass mixin for offsets</title>
-	
-	<link>http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin</link>
-	<guid>/2014/05/19/new-offsets-sass-mixin</guid>
-	
-	
-	<pubDate>Mon, 19 May 2014 00:00:00 GMT</pubDate>
-	<description>
-&lt;p&gt;About a year ago, I wrote about how I managed to come up with what I think is &lt;a href=&quot;http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/&quot;&gt;a clever Sass mixin to deal with offset positioning&lt;/a&gt; in CSS, also known as &lt;code&gt;top&lt;/code&gt;, &lt;code&gt;right&lt;/code&gt;, &lt;code&gt;bottom&lt;/code&gt; and &lt;code&gt;left&lt;/code&gt;. &lt;/p&gt;
-
-&lt;p&gt;The mixin was directly inspired from &lt;a href=&quot;https://github.com/visionmedia/nib&quot;&gt;Nib&lt;/a&gt;, &lt;a href=&quot;http://learnboost.github.io/stylus/&quot;&gt;Stylus&lt;/a&gt;&amp;#8217; most popular framework. The idea is to be able to declare all desired offsets in a single declaration rather than having to write multiple CSS properties. &lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Stylus syntax
-selector {
-  absolute: top 1em right 100%
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When looking back at Nib&amp;#8217;s documentation a couple of weeks ago, I noticed there are a couple of features I missed when implementing the Sass version of this little gem. Hence the brand new version of the mixin, and the blog post explaining the process.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, Sass in its SCSS syntax doesn&amp;#8217;t provide as much abstraction as Stylus does, so we still have to use some extra characters, especially &lt;code&gt;@include&lt;/code&gt;, parenthesis, colons and semi-colons&amp;#8230; That being said, the result is quite good in my opinion.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
-selector {
-  @include absolute(top 1em right 100%)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;What we want? Offsets!&lt;/h2&gt;
-
-&lt;p&gt;Before jumping on the code, it is important to analyze the topic so we can implement things right. There are a few different use cases, but the main idea is always the same: we loop through the 4 offsets to see if they are being passed to our mixin. Then, depending on how it&amp;#8217;s going, various things happen. Let&amp;#8217;s see each case one by one.&lt;/p&gt;
-
-&lt;p&gt;Case 1. &lt;strong&gt;The offset has not been found in the list.&lt;/strong&gt; Obviously, we stop there and do not output it.&lt;/p&gt;
-
-&lt;p&gt;Case 2. &lt;strong&gt;The offset has been found at the last index of list.&lt;/strong&gt; We output it to &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
-@include absolute(top);
-
-// CSS
-position: absolute;
-top: 0;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Case 3. &lt;strong&gt;The offset has been found and the next item is another offset.&lt;/strong&gt; We output it to &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
-@include absolute(top left);
-
-// CSS
-position: absolute;
-top: 0;
-left: 0;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Case 4. &lt;strong&gt;The offset has been found and the next item is invalid.&lt;/strong&gt; An invalid value could be a string other than &lt;code&gt;auto&lt;/code&gt;, &lt;code&gt;initial&lt;/code&gt; and &lt;code&gt;inherit&lt;/code&gt;, or any value that is not a number, or a unitless number. In any case, we do not output the offset.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
-@include absolute(top &quot;string&quot;);
-
-// CSS
-position: absolute;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Case 5. &lt;strong&gt;The offset has been found and the next item is valid.&lt;/strong&gt; Of course then, we output the offset with the next item as a value.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// SCSS
-@include absolute(top 1em);
-
-// CSS
-position: absolute;
-top: 1em;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So if we sum up:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;if offset doesn&amp;#8217;t exist or offset exists but is followed by an invalid value, we don&amp;#8217;t output it&lt;/li&gt;
-  &lt;li&gt;if offset exist as last item or offset is followed by another offset, we output it to &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;if offset exist and is followed by valid value, we output it to the value&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Starting with the helper&lt;/h2&gt;
-
-&lt;p&gt;As you may have understood from what we have just seen, we will need to determine if the value directly following the offset is a valid value for an offset property (&lt;code&gt;top&lt;/code&gt;, &lt;code&gt;right&lt;/code&gt;, &lt;code&gt;bottom&lt;/code&gt; or &lt;code&gt;left&lt;/code&gt;). Nothing better than a little function to do that.&lt;/p&gt;
-
-&lt;p&gt;Should be considered as a valid length:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;a number with a unit&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;auto&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;initial&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;inherit&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@function is-valid-length($value) {
-  @return (type-of($value) == &quot;number&quot; and not unitless($value)) 
-       or (index(auto initial inherit 0, $value) != false);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The function is as simple as that. First we check if it&amp;#8217;s a number with a unit. If it is not, we check whether it is an allowed value. If it is not again, then it is not a valid length for an offset property. &lt;/p&gt;
-
-&lt;h2&gt;Building the mixin&lt;/h2&gt;
-
-&lt;p&gt;Now that we have our helper function and all our use-cases, it is time to move on to the mixin. &lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin position($position, $args: ()) {
-  $offsets: top right bottom left;
-  position: $position;
-  
-  @each $offset in $offsets {
-    // Doing the magic trick
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;From there, we iterate through the offsets list (so 4 times) and for each one, we do the checks we discussed in the first section of this article. I added comments to the code so you can follow along but it is pretty straight forward anyway.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// All this code happens inside the loop
-$index: index($args, $offset);
-
-// If offset is found in the list
-@if $index {
-
-  // If it is found at last position
-  @if $index == length($args) {
-    #{$offset}: 0;
-  }
-
-  // If it is followed by a value
-  @else {
-    $next: nth($args, $index + 1);
-
-    // If the next value is value length
-    @if is-valid-length($next) {
-      #{$offset}: $next;
-    }
-
-    // If the next value is another offset
-    @else if index($offsets, $next) {
-      #{$offset}: 0;
-    }
-
-    // If it is invalid
-    @else {
-      @warn &quot;Invalid value `#{$next}` for offset `#{$offset}`.&quot;;
-    }
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then of course, there are still the 3 extra mixins &lt;code&gt;absolute&lt;/code&gt;, &lt;code&gt;relative&lt;/code&gt; and &lt;code&gt;fixed&lt;/code&gt;. This doesn&amp;#8217;t change at all from the previous version.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin absolute($args: ()) {
-  @include position(absolute, $args);
-}
- 
-@mixin fixed($args: ()) {
-  @include position(fixed, $args);
-}
- 
-@mixin relative($args: ()) {
-  @include position(relative, $args);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;Examples&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.a { 
-  @include absolute()
-}
-
-.a {
-  position: absolute;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.b {
-  @include absolute(top)
-}
-
-.b {
-  position: absolute;
-  top: 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.c {
-  @include absolute(top right)
-}
-
-.c {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.d {
-  @include absolute(top right bottom)
-}
-
-.d {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.e {
-  @include absolute(top right bottom left)
-}
-
-.e {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.f {
-  @include absolute(top right 1em)
-}
-
-.f {
-  position: absolute;
-  top: 0;
-  right: 1em;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.g {
-  @include absolute(top 1em right)
-}
-
-.g {
-  position: absolute;
-  top: 1em;
-  right: 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.h {
-  @include absolute(top 1em right 100%)
-}
-
-.h {
-  position: absolute;
-  top: 1em;
-  right: 100%;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.i {
-  @include absolute(top right mistake)
-}
-
-.i {
-  position: absolute;
-  top: 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.j {
-  @include absolute(top 1em right 1em bottom 1em left 1em)
-}
-
-.j {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  bottom: 1em;
-  left: 1em;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;Final thoughts&lt;/h2&gt;
-
-&lt;p&gt;So here we go with the new version guys. It is slightly better than the old since you can now chain offsets to set them to &lt;code&gt;0&lt;/code&gt;, and extra keywords like &lt;code&gt;auto&lt;/code&gt;, &lt;code&gt;initial&lt;/code&gt; and &lt;code&gt;inherit&lt;/code&gt; are allowed, which wasn&amp;#8217;t the case before.&lt;/p&gt;
-
-&lt;p&gt;I hope you like it. If you think of anything to improve it, be sure to share!&lt;/p&gt;
-
-&lt;p class=&quot;sassmeister&quot; data-gist-id=&quot;f8ab9cc308b84e37b18d&quot; data-height=&quot;480&quot;&gt;&lt;a href=&quot;http://sassmeister.com/gist/f8ab9cc308b84e37b18d&quot;&gt;Play with this gist on SassMeister.&lt;/a&gt;&lt;/p&gt;
 </description>
 </item>
 
