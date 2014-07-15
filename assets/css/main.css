@@ -1035,10 +1035,13 @@ blockquote:not(.pull-quote--right):not(.pull-quote--left) {
  */
 table {
   width: 100%;
-  margin: 1em 0; }
+  margin: 1em 0;
+  border-collapse: collapse; }
+  table thead {
+    border-bottom: 2px solid #ccc; }
 
-tr:nth-child(odd) {
-  background: #F4F4F4; }
+tr + tr {
+  border-top: 1px solid #ccc; }
 
 td,
 th {
@@ -1222,6 +1225,3 @@ th {
  */
 #azcarbon > img {
   display: inline !important; }
-
-
-

@@ -11,6 +11,32 @@
 			
 
 <item>
+	<title>Semantic Versioning: why you should be using it</title>
+	
+	<link>http://www.sitepoint.com/semantic-versioning-why-you-should-using/</link>
+	<guid>http://www.sitepoint.com/semantic-versioning-why-you-should-using/</guid>
+	
+	
+	<pubDate>Wed, 09 Jul 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
+	<title>SassyLists moving to 2.x</title>
+	
+	<link>http://web-design-weekly.com/2014/07/08/sassylists-moving-2-x/</link>
+	<guid>http://web-design-weekly.com/2014/07/08/sassylists-moving-2-x/</guid>
+	
+	
+	<pubDate>Tue, 08 Jul 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
 	<title>SassDoc, a documentation tool for Sass</title>
 	
 	<link>http://www.sitepoint.com/sassdoc-documentation-tool-sass/</link>
@@ -824,215 +850,6 @@ test {
 	
 	
 	<pubDate>Fri, 20 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
-</description>
-</item>
-
-
-<item>
-	<title>Template engines and JavaScript</title>
-	
-	<link>http://hugogiraudel.com/2014/06/17/template-engines-and-javascript</link>
-	<guid>/2014/06/17/template-engines-and-javascript</guid>
-	
-	
-	<pubDate>Tue, 17 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
-&lt;p&gt;I couldn&amp;#8217;t find an appropriate title. I recently &lt;a href=&quot;http://mixture.io/blog/jekyll-mixture/&quot;&gt;moved my site from Jekyll to Mixture&lt;/a&gt; and took the time to rethink the way I dealt with JavaScript. In this article, I will give you my opinion regarding this topic and show you how I managed to execute conditional JavaScript depending on global variables.&lt;/p&gt;
-
-&lt;h2&gt;Template what..?&lt;/h2&gt;
-
-&lt;p&gt;A template engine is some kind of tool helping you writing markup. &lt;a href=&quot;&quot;&gt;Twig&lt;/a&gt; is the template engine coming with Symfony. Both Jekyll and Mixture uses &lt;a href=&quot;&quot;&gt;Liquid&lt;/a&gt;, the template engine from Shopify. You may also have heard of Smarty, Mustache.js or Handlebars.js.&lt;/p&gt;
-
-&lt;p&gt;The idea behind any template engine is to have template files that can be used and reused, imported and extended in order to have a dynamic, DRY and reusable HTML architecture. In this article, I will mostly talk about Liquid because it is the one used by Jekyll and Mixture, as well as Twig which I heavily use at work.&lt;/p&gt;
-
-&lt;h2&gt;What&amp;#8217;s the matter?&lt;/h2&gt;
-
-&lt;p&gt;Template engines expose global variables. In Liquid, those are mostly the ones declared in your YAML Front Matter (the header from every post). In Twig, they can be data passed from the controller, or super-global variables, whatever.&lt;/p&gt;
-
-&lt;blockquote class=&quot;pull-quote--right&quot;&gt;Don't write your JS in template files.&lt;/blockquote&gt;
-
-&lt;p&gt;Sometimes, you need to access such variables in your JavaScript code. Let me make this as clear as possible: writing JavaScript in a template file just because you need a variable from a template is not a clean solution. At work, we had developers writing huge chunks of JavaScript in &lt;code&gt;.html.twig&lt;/code&gt; files because they needed some data from the controller in their JavaScript application. This sucks.&lt;/p&gt;
-
-&lt;p&gt;JavaScript should mostly go in &lt;code&gt;.js&lt;/code&gt; file. Markup should go in template files. Not the other way around. Especially not when it&amp;#8217;s getting bigger than a couple of lines.&lt;/p&gt;
-
-&lt;h2&gt;Back to the problem&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;#8217;s get back to the initial topic: on my blog, I need to execute some JavaScript snippets depending on the variables declared in the YAML Front Matter from the page I am in. For instance if the article includes a CodePen, I should be able to tell JavaScript to include CodePen JS file. If the article allows comments (which is usually the case), then JavaScript should include Disqus. If I want the article to include a table of contents at the top, then JavaScript should be aware of that and do what needs to be done.&lt;/p&gt;
-
-&lt;p&gt;Before moving to Mixture, I handled the problem in a rather drastic (and dirty) way: all templates included a &lt;code&gt;scripts.liquid&lt;/code&gt; file at the bottom. In this file, I wrapped JavaScript snippets with Liquid conditions. For instance:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;{% if post.codepen %}
-  &amp;lt;script src=&quot;... source to CodePen JS file ...&quot;&amp;gt;&amp;lt;/script&amp;gt;
-{% endif % }
-
-{% if post.comments %}
-  ... Disqus JavaScript snippet ...
-{% endif %}
-
-{% if post.tableOfContents %}
-  ... Table of contents JavaScript snipppet ...
-{% endif %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As you can see, this is not ideal. First, JavaScript lays in a template file. We could work around the issue by moving JavaScript snippets to separate &lt;code&gt;.js&lt;/code&gt; files, then only include them when needed but we would possibly do several HTTP requests while a single one could be enough. Secondly, it is ugly. Very ugly.&lt;/p&gt;
-
-&lt;h2&gt;A possible solution&lt;/h2&gt;
-
-&lt;p&gt;When moving to Mixture, I took the time to think of how I would solve this issue to end up with a clean and DRY solution. The first thing I wanted to do was putting the JavaScript in &lt;a href=&quot;https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/mixture/assets/js/src/app.js&quot;&gt;a &lt;code&gt;.js&lt;/code&gt; file&lt;/a&gt;, so let&amp;#8217;s start with that.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// app.js
-(function (global) {
-
-  var App = function (conf) {
-    this.conf = global.extend({
-      codepen: false,
-      sassmeister: false,
-      tableOfContent: false,
-      tracking: true,
-      ad: true,
-      comments: false,
-      layout: 'default',
-      disqus: {
-        name: 'hugogiraudel',
-        title: false,
-        url: window.location.href
-      }
-    }, conf || {});
-
-    this.initialize();
-  };
-
-  App.prototype.initialize = function () { /* ... */ };
-
-  global.App = App;
-}(window))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So what&amp;#8217;s going on here? In a JavaScript file, in a closure, we define a new class called &lt;code&gt;App&lt;/code&gt;, that can be instantiated with an object of options (&lt;code&gt;conf&lt;/code&gt;). This one is extended with an object of default parameters. When instantiated, it automatically calls the &lt;code&gt;initialize()&lt;/code&gt; method. Let&amp;#8217;s see what it does.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;App.prototype.initialize = function () {
-  if (this.conf.tracking === true) {
-    this.tracking();
-  }
-
-  if (this.conf.ad === true) {
-    this.ad();
-  }
-
-  if (this.conf.comments === true) {
-    this.comments();
-  }
-
-  if (this.conf.codepen === true) {
-    this.codepen();
-  }
-
-  if (this.conf.sassmeister === true) {
-    this.sassmeister();
-  }
-
-  // ...
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;No magic here, the &lt;code&gt;initialize()&lt;/code&gt; method simply calls other methods based on the configuration. We could simplify the code even more by calling the methods based on the configuration key names:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;['tracking', 'ad', 'comments', 'codepen', 'sassmeister'].forEach(function (key) {
-  if (this.conf[key] === true) {
-    this[key]();
-  }
-}.bind(this));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But it&amp;#8217;s no big deal, we don&amp;#8217;t really need this. And now, the other methods:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;App.prototype.tracking = function () {
-  global._gaq = [
-    ['_setAccount','UA-XXXXXXXX-X'],
-    ['_trackPageview']
-  ];
-
-  this._inject(&quot;//www.google-analytics.com/ga.js&quot;);
-};
-
-App.prototype.ad = function () {
-  this._inject(&quot;//engine.carbonads.com/z/24598/azcarbon_2_1_0_HORIZ&quot;);
-};
-
-App.prototype.comments = function () {
-  global.disqus_shortname = this.conf.disqus.name;
-  global.disqus_url = this.conf.disqus.url;
-  global.disqus_title = this.conf.disqus.title;
-
-  this._inject(&quot;//&quot; + disqus_shortname + &quot;.disqus.com/embed.js&quot;);
-};
-
-App.prototype.codepen = function () {
-  this._inject(&quot;//codepen.io/assets/embed/ei.js&quot;);
-};
-
-App.prototype.sassmeister = function () {
-  this._inject(&quot;//static.sassmeister.com/js/embed.js&quot;);
-};
-
-App.prototype._inject = function (url) {
-  var d = document,
-      s = &quot;script&quot;,
-      g = d.createElement(s),
-      z = d.getElementsByTagName(s)[0];
-
-  g.async = true;
-  g.src = url;
-  z.parentNode.insertBefore(g, z);
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All resources are loaded asynchronously thanks to the &lt;code&gt;_inject&lt;/code&gt; (pseudo-)private function.&lt;/p&gt;
-
-&lt;h2&gt;So what?&lt;/h2&gt;
-
-&lt;p&gt;We still haven&amp;#8217;t really solved the problem yet. How are we going to pass our Liquid variables to the JavaScript? Well, this is the moment we need to get back to &lt;a href=&quot;https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/mixture/templates/includes/scripts.liquid&quot;&gt;&lt;code&gt;scripts.liquid&lt;/code&gt;&lt;/a&gt; file. No more conditional JavaScript snippets; instead, we instanciate the &lt;code&gt;App&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;&amp;lt;script src=&quot;/assets/js/main.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
-
-&amp;lt;script&amp;gt;
-document.addEventListener('DOMContentLoaded', function() {
-  var app = new App({
-    codepen: {{ post.codepen }},
-    sassmeister: {{ post.sassmeister }},
-    tableOfContent: {{ post.summary }},
-    comments: {{ post.comments }},
-    layout: '{{ post.layout }}',
-    disqus: {
-      title: '{{ post.title }}',
-    },
-    tracking: true,
-    ad: true
-  });
-});
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is the only chunk of JavaScript in a template file. It is called on every page, once the DOM has been fully loaded. It grabs data from the YAML Front Matter in a clean and dynamic way. Than, JavaScript deals with the rest.&lt;/p&gt;
-
-&lt;h2&gt;Final thoughts&lt;/h2&gt;
-
-&lt;p&gt;There you have it. A clean JavaScript application running on template variables, yet not using engine&amp;#8217;s conditional tags or being written in a template file.&lt;/p&gt;
-
-&lt;p&gt;If you think of anything to improve it, be sure to share. In any case, I hope you liked it. :)&lt;/p&gt;
-</description>
-</item>
-
-
-<item>
-	<title>Moving from Jekyll to Mixture</title>
-	
-	<link>http://mixture.io/blog/jekyll-mixture/</link>
-	<guid>http://mixture.io/blog/jekyll-mixture/</guid>
-	
-	
-	<pubDate>Mon, 16 Jun 2014 00:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>

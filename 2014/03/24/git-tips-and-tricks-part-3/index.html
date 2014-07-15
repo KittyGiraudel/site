@@ -387,18 +387,48 @@ s bb09305 Commit 20
 
 <p>Now I have a single commit which adds 20 lines in the text file, instead of having 20 commits, each one adding only one line:</p>
 
-<p>```git<br />
-$ git log -1 -p<br />
-commit f523330f8db0030eadc41836b54713aac2baf18b<br />
-Author: lgiraudel &lt;lgiraudel@mydomain.com&gt;<br />
-Date:   Tue Feb 18 13:25:49 2014 +0100</p>
+<pre><code class="language-git">$ git log -1 -p
+commit f523330f8db0030eadc41836b54713aac2baf18b
+Author: lgiraudel &amp;lt;lgiraudel@mydomain.com&gt;
+Date:   Tue Feb 18 13:25:49 2014 +0100
 
-<pre><code>Many commits instead of 20
+    Many commits instead of 20
+
+diff --git file.txt file.txt
+new file mode 100644
+index 0000000..b636d88
+--- /dev/null
++++ file.txt
+@@ -0,0 +1,20 @@
++line number 1
++line number 2
++line numer 3
++line number 4
++line number 5
++line number 6
++line number 7
++line number 8
++line number 9
++line number 10
++line number 11
++line number 12
++line number 13
++line number 14
++line number 15
++line number 16
++line number 17
++line number 18
++line number 19
++line number 20
 </code></pre>
 
-<p>diff &#8211;git file.txt file.txt<br />
-new file mode 100644<br />
-index 0000000..b636d88</p>
+<h2>Final thoughts</h2>
+
+<p>That&#8217;s all folks! I hope those tricks will help you in your daily work. Git bisect has deeply changed the way I search for weird bug : finding the guilty commit is easier than digging in the code. And merging commits before pushing help to keep a clean commit log.</p>
+
+<blockquote>
+  <p><img src="http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg" alt="Loic Giraudel" /> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: <a href="http://twitter.com/l_giraudel">@l_giraudel</a>.</p>
+</blockquote>
 
 
 	
@@ -412,9 +442,9 @@ index 0000000..b636d88</p>
 	<div itemscope itemtype="http://schema.org/Person">
 	<h1 class="visually-hidden">About me</h1>
 	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
-	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a>, <a href="http://mixture.io/blog/jekyll-mixture/">Mixture</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
-	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyBitwise">SassyBitwise</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
-	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+	<p>I am writing for <a href="http://web-design-weekly.com/2014/07/08/sassylists-moving-2-x/">Web Design Weekly</a>, <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">The Sass Way</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a>, <a href="http://mixture.io/blog/jekyll-mixture/">Mixture</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also I'm the curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and the author of a lot of <a href="https://gist.github.com/HugoGiraudel/8332582">Sass stuff</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>, or have a look at my projects on <a href="https://github.com/HugoGiraudel">GitHub</a>.</p>
 </div>
 <div id="carbonads-container">
 	<div class="carbonad">

@@ -60,10 +60,10 @@
   <p><strong>Hugo</strong>: Do you know how bitwise operators work?  <br />
 <strong>Val</strong>: Yes.  <br />
 <strong>Hugo</strong>: Do you think we could implement them in Sass?  <br />
-<strong>Val</strong>: No.   <br />
+<strong>Val</strong>: No.  <br />
 (Loading&#8230;)  <br />
 <strong>Val</strong>: Well, in fact we could.  <br />
-<strong>Hugo</strong>: LET&#8217;S DO IT!</p>
+<strong>Hugo</strong>: LET&#8217;S DO IT!  </p>
 </blockquote>
 
 <p>And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let&#8217;s catch up on bitwise operators, shall we?</p>
@@ -108,7 +108,7 @@ XOR 1010 (decimal 10)
 =  00001011 (decimal 11)
 </code></pre>
 
-<p>As you can see, the idea is pretty straightforward: </p>
+<p>As you can see, the idea is pretty straightforward:</p>
 
 <ul>
   <li><em>NOT</em> converts <code>1</code>s in <code>0</code>s, and <code>0</code>s in <code>1</code>s</li>
@@ -122,21 +122,245 @@ XOR 1010 (decimal 10)
 <p>If you&#8217;re more a <em>table</em> kind of guy:</p>
 
 <table>
+  <thead>
+    <tr>
+      <th style="text-align: center">&#160;</th>
+      <th style="text-align: center">Bit</th>
+      <th style="text-align: center">Result</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td>&#160;</td>
-      <td>Bit</td>
-      <td>Result</td>
+      <td style="text-align: center">NOT</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
     </tr>
     <tr>
-      <td>:</td>
-      <td>&#160;</td>
-      <td>&#160;</td>
+      <td style="text-align: center">NOT</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
     </tr>
   </tbody>
 </table>
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Bit 1</th>
+      <th style="text-align: center">Bit 2</th>
+      <th style="text-align: center">AND</th>
+      <th style="text-align: center">OR</th>
+      <th style="text-align: center">XOR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">&#160;</th>
+      <th style="text-align: center">Bit 1</th>
+      <th style="text-align: center">Bit 2</th>
+      <th style="text-align: center">Bit 3</th>
+      <th style="text-align: center">Bit 4</th>
+      <th style="text-align: center">Bit 5</th>
+      <th style="text-align: center">Bit 6</th>
+      <th style="text-align: center">Bit 7</th>
+      <th style="text-align: center">Bit 8</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Binary</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">LEFT-SHIFT</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">RIGHT-SHIFT</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>So you got bitwise.</p>
+
+<h2>Sass implementation</h2>
+
+<p>Now, we wanted to implement this in Sass. There are two ways of doing it:</p>
+
+<ul>
+  <li>convert to binary string, then apply operations char per char (a char being a bit in this context)</li>
+  <li>rely on mathematical equivalents</li>
+</ul>
+
+<p>We could have decided to manipulate binary strings but god knows why, we ended up implementing the mathematical equivalents of all operators. Fortunately, we didn&#8217;t have to figure out the formula (we are not <em>that</em> clever): <a href="http://en.wikipedia.org/wiki/Bitwise_operation#Mathematical_equivalents">Wikipedia has them</a>.</p>
+
+<p>You may think that we didn&#8217;t need a decimal to binary converter since we use math rather than string manipulation. Actually, we had to write a <code>decimal-to-binary()</code> function because we needed to know the length of the binary string to compute bitwise operations. </p>
+
+<p>We could have figured this length without converting to binary if we had a <code>log()</code> function. And we could have made a <code>log()</code> function if we had a <code>frexp()</code> function. And we could have made a <code>frexp()</code> function if we had bitwise operators. Do you see the problem here?</p>
+
+<p>Valérian summed it up quite nicely in a Tweet:</p>
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>&amp;, | and ^ bitwise operators math formulas needs log(), but log() needs frexp() which needs bitwise operators. Fak! cc <a href="https://twitter.com/HugoGiraudel">@HugoGiraudel</a></p>&mdash; Valérian Galliat (@valeriangalliat) <a href="https://twitter.com/valeriangalliat/statuses/474127810798555136">June 4, 2014</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>I won&#8217;t dig into Sass code because it doesn&#8217;t have much point. Let&#8217;s just have a look at the final implementation. We have implemented each operator as a Sass function called <code>bw-*</code> where <code>*</code> stands for the name of the operator (e.g. <code>and</code>). Except for <code>bw-not()</code> which is a rather particuliar operator, all functions accept 2 arguments: both decimal numbers.</p>
+
+<p>On top of that, we have built a <code>bitwise()</code> function (aliased as <code>bw()</code>) which provides a more friendly API when dealing with bitwise operations. It accepts any number of queued bitwise operations, where operators are quoted. For instance:</p>
+
+<pre><code class="language-scss">// 42 | 38 | 24
+$value: bitwise(42 '|' 38 '|' 24);
+</code></pre>
+
+<p>So that&#8217;s not too bad. The fact that operators have to be quoted for Sass not to crash is kind of annoying, but I suppose we can live with it. Other than that, it&#8217;s pretty much like if you were doing bitwise operations in other language, except you wrap all this stuff in <code>bitwise()</code> or <code>bw()</code>. In my opinion, the API is pretty simple to use.</p>
+
+<h2>Applications</h2>
+
+<p>Let&#8217;s be honest: there is none. Sass is not a low-level programming language. It does not have any valid use case for bitwise operations. Meanwhile, we implemented bit flags. <em>Bit flags</em> is a programming technique aiming at storing several booleans in a single integer in ordre to save memory.</p>
+
+<p>Here is a great <a href="http://forum.codecall.net/topic/56591-bit-fields-flags-tutorial-with-example/">introduction to bit flags</a> but I&#8217;ll try to sum up. The idea behind <em>bit flags</em> is to have a collection of flags (think of them as options) mapped to powers of 2 (usually with an <code>enum</code> field in C/C++). Each option will have its own bit flag.</p>
+
+<pre style="line-height: .9"><code>00000000 Bin    | Dec
+│││││││└ 1 &lt;&lt; 0 | 1
+││││││└─ 1 &lt;&lt; 1 | 2
+│││││└── 1 &lt;&lt; 2 | 4
+││││└─── 1 &lt;&lt; 3 | 8
+│││└──── 1 &lt;&lt; 4 | 16
+││└───── 1 &lt;&lt; 5 | 32
+│└────── 1 &lt;&lt; 6 | 64
+└─────── 1 &lt;&lt; 7 | 128</code></pre>
+
+<p>Now, let&#8217;s say option A is <code>1 &lt;&lt; 0</code> (DEC 1) and option B is <code>1 &lt;&lt; 1</code> (DEC 2). If we <em>OR</em> them:</p>
+
+<pre><code>   00000001 (A)
+OR 00000010 (B)
+ = 00000011
+</code></pre>
+
+<p>The result &mdash; let&#8217;s call it <em>Z</em> &mdash; holds both options, right? To retrieve separately A and B from Z, we can use the <em>AND</em> operator:</p>
+
+<pre><code>    00000011 (Z)
+AND 00000001 (A)
+  = 00000001
+
+    00000011 (Z)
+AND 00000010 (B)
+  = 00000010
+</code></pre>
+
+<p>So far so good. Now what if we try to <em>AND</em> Z and, option C (<code>1 &lt;&lt; 2</code>).</p>
+
+<pre><code>    00000011 (Z)
+AND 00000100 (C)
+  = 00000000
+</code></pre>
+
+<p>The result of <code>Z &amp; C</code> isn&#8217;t equal to <code>C</code>, so we can safely assume the C option hasn&#8217;t been passed.</p>
+
+<p>That&#8217;s pretty much how bit flags work. Now let&#8217;s apply it to Sass as an example of SassyBitwise. First thing to do, define a couple of flags:</p>
+
+<pre><code class="language-scss">// Flags
+$A: bw(1 '&lt;&lt;' 0);
+$B: bw(1 '&lt;&lt;' 1);
+$C: bw(1 '&lt;&lt;' 2);
+$D: bw(1 '&lt;&lt;' 3);
+</code></pre>
+
+<p>We also need a mixin that would theorically accepts multiple boolean options. As a proof of concept, our mixin will accept a single argument: <code>$options</code>, a <strong>number</strong>.</p>
+
+<pre><code class="language-scss">// Custom mixin
+// ---
+// @param [number] $options: bitwise encoded flags
+// ---
+@mixin custom-test(/* number */ $options) {
+  is-A-flag-set: bw($options '&amp;' $A);
+  is-B-flag-set: bw($options '&amp;' $B);
+  is-C-flag-set: bw($options '&amp;' $C);
+  is-D-flag-set: bw($options '&amp;' $D);
+}
+</code></pre>
+
+<p>And now we call it, passing it the result of a bitwise <em>OR</em> operation of all our flags.</p>
+
+<pre><code class="language-scss">// Call
+test {
+  @include custom-test(bw($A '|' $C '|' $D));
+}
+</code></pre>
+
+<p>As expected, the result is the following:</p>
+
+<pre><code class="language-css">test {
+  is-A-flag-set: true;
+  is-B-flag-set: false;
+  is-C-flag-set: true;
+  is-D-flag-set: true;
+}
+</code></pre>
+
+<h2>Final thoughts</h2>
+
+<p>That&#8217;s it folks, SassyBitwise. No point, much fun. As always.</p>
+
+<p><em>Note: a huge thanks to Valérian Galliat for helping me out with this.</em></p>
+
+
+	
+		<div id="disqus_thread"></div> 
 	
 
 	</article>
@@ -146,9 +370,9 @@ XOR 1010 (decimal 10)
 	<div itemscope itemtype="http://schema.org/Person">
 	<h1 class="visually-hidden">About me</h1>
 	<p>Hi! I'm <span itemprop="name">Hugo</span>, a <strong itemprop="jobTitle">front-end developer</strong> from <span itemprop="nationality">France</span>. CSS Goblin, Sass hacker, margin psycho.</p>
-	<p>Writer at <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">TheSassWay</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a>, <a href="http://mixture.io/blog/jekyll-mixture/">Mixture</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
-	<p>Also curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and author of <a href="http://sassylists.com">SassyLists</a>, <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, <a href="https://github.com/HugoGiraudel/SassyBitwise">SassyBitwise</a>, <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>, <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, <a href="https://github.com/HugoGiraudel/SassyStrings">SassyStrings</a> and <a href="https://github.com/HugoGiraudel/SassySort">SassySort</a>.</p>
-	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>.</p>
+	<p>I am writing for <a href="http://web-design-weekly.com/2014/07/08/sassylists-moving-2-x/">Web Design Weekly</a>, <a href="http://www.sitepoint.com/author/hgiraudel/">SitePoint</a>, <a href="http://tutorials.tutsplus.com/authors/hugo-giraudel">Tuts+</a>, <a href="http://thesassway.com/hugo-giraudel">The Sass Way</a>, <a href="http://tympanus.com/codrops/author/hugogiraudel" itemprop="url">Codrops</a>, <a href="http://css-tricks.com">CSS-tricks</a>, <a href="http://mixture.io/blog/jekyll-mixture/">Mixture</a> and <a href="http://davidwalsh.name">David Walsh' blog</a>.</p>
+	<p>Also I'm the curator of <a href="http://browserhacks.com" itemprop="url" target="blank" title="Browserhacks">Browserhacks</a> and the author of a lot of <a href="https://gist.github.com/HugoGiraudel/8332582">Sass stuff</a>.</p>
+	<p>You can catch me on <a href="http://twitter.com/HugoGiraudel" itemprop="url">Twitter</a>, or have a look at my projects on <a href="https://github.com/HugoGiraudel">GitHub</a>.</p>
 </div>
 <div id="carbonads-container">
 	<div class="carbonad">
@@ -176,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
     codepen: false,
     sassmeister: false,
     tableOfContent: false,
-    comments: false,
+    comments: true,
     layout: 'article',
     disqus: {
       title: 'Bitwise operators in Sass',
