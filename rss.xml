@@ -11,6 +11,19 @@
 			
 
 <item>
+	<title>Using Sass to build color palettes</title>
+	
+	<link>http://www.sitepoint.com/using-sass-build-color-palettes/</link>
+	<guid>http://www.sitepoint.com/using-sass-build-color-palettes/</guid>
+	
+	
+	<pubDate>Thu, 17 Jul 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
 	<title>Semantic Versioning: why you should be using it</title>
 	
 	<link>http://www.sitepoint.com/semantic-versioning-why-you-should-using/</link>
@@ -838,19 +851,6 @@ test {
 &lt;p&gt;That&amp;#8217;s it folks, SassyBitwise. No point, much fun. As always.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Note: a huge thanks to Valérian Galliat for helping me out with this.&lt;/em&gt;&lt;/p&gt;
-</description>
-</item>
-
-
-<item>
-	<title>A better solution for managing z-index with Sass</title>
-	
-	<link>http://www.sitepoint.com/better-solution-managing-z-index-sass/</link>
-	<guid>http://www.sitepoint.com/better-solution-managing-z-index-sass/</guid>
-	
-	
-	<pubDate>Fri, 20 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
 </description>
 </item>
 
