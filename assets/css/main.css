@@ -662,7 +662,7 @@ pre {
 
 .token.string,
 .token.newline {
-  color: green; }
+  color: #00cc00; }
 
 .token.coord {
   color: darkcyan; }
@@ -922,7 +922,7 @@ h1, .h1 {
   font-size: 3.6rem;
   font-family: 'Sanchez', sans-serif;
   text-shadow: 0 1px white, 0 2px #999999;
-  margin: 1.5em 0 0 0;
+  margin: 1.1em 0 0 0;
   text-transform: uppercase; }
   @media (max-width: 38em) {
     h1, .h1 {

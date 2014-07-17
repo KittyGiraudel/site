@@ -24,6 +24,388 @@
 
 
 <item>
+	<title>Automating CSS animations with Sass</title>
+	
+	<link>http://hugogiraudel.com/2014/07/16/automating-css-animations-with-sass</link>
+	<guid>/2014/07/16/automating-css-animations-with-sass</guid>
+	
+	
+	<pubDate>Wed, 16 Jul 2014 00:00:00 GMT</pubDate>
+	<description>
+&lt;p&gt;The other day, &lt;a href=&quot;https://twitter.com/csswizardry&quot;&gt;Harry Roberts&lt;/a&gt; featured a snippet of code from his own site &lt;a href=&quot;https://twitter.com/csswizardry/status/489038580128686081&quot;&gt;on Twitter&lt;/a&gt;, asking for some ways to improve it (if any). What Harry did was computing by hand the keyframes of a carousel animation, thus claiming that high school algebra indeed &lt;strong&gt;is&lt;/strong&gt; useful.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Why do we have to learn algebra, Miss? We’re never going to use it…”  &lt;br /&gt;
+&amp;mdash;Everyone in my maths class  &lt;br /&gt;
+&lt;a href=&quot;http://bit.ly/UaM2wf&quot;&gt;bit.ly/UaM2wf&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;What’s the idea?&lt;/h2&gt;
+
+&lt;p&gt;As far as I can see, Harry uses a carousel to display quotes about his work on his &lt;a href=&quot;http://csswizardry.com&quot;&gt;home page&lt;/a&gt;. Why use JavaScript when we can use CSS, right? So he uses a CSS animation to run the carousel. That sounds like a lovely idea, until you have to compute keyframes…&lt;/p&gt;
+
+&lt;p&gt;Below is &lt;a href=&quot;https://github.com/csswizardry/csswizardry.github.com/blob/5e8de0bcdd845c1fc46d622a1c605af89ac13208/css/_components.carousel.scss#L42-L87&quot;&gt;Harry’s comment&lt;/a&gt; in his carousel component:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Scroll the carousel (all hard-coded; yuk!) and apply a subtle blur to imply motion/speed. Equation for the carousel’s transitioning and delayed points in order to complete an entire animation (i.e. 100%):&lt;/p&gt;
+
+  &lt;p&gt;&lt;img style=&quot;display: block; margin: 0 0 1em 0; float: none; max-width: 100%;&quot; alt=&quot;Carousel formula&quot; src=&quot;/images/automating-css-animations-with-sass__formula-1.png&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;where &lt;var&gt;n&lt;/var&gt; is the number of slides, &lt;var&gt;x&lt;/var&gt; is the percentage of the animation spent static, and &lt;var&gt;y&lt;/var&gt; is the percentage of the animation spent animating.&lt;/p&gt;
+
+  &lt;p&gt;This carousel has five panes, so:&lt;/p&gt;
+
+  &lt;p&gt;&lt;img style=&quot;display: block; margin: 0 0 1em 0; float: none; max-width: 100%;&quot; alt=&quot;5 frames&quot; src=&quot;/images/automating-css-animations-with-sass__formula-2.png&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;To work out &lt;var&gt;y&lt;/var&gt; if we know &lt;var&gt;n&lt;/var&gt; and decide on a value for &lt;var&gt;x&lt;/var&gt;:&lt;/p&gt;
+
+  &lt;p&gt;&lt;img style=&quot;display: block; margin: 0 0 1em 0; float: none; max-width: 100%;&quot; alt=&quot;Formula to find Y&quot; src=&quot;/images/automating-css-animations-with-sass__formula-3.png&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;If we choose that &lt;var&gt;x&lt;/var&gt; equals 17.5 (i.e. a frame spends 17.5% of the animation’s total time &lt;em&gt;not&lt;/em&gt; animating), and we know that &lt;var&gt;n&lt;/var&gt; equals 5, then &lt;var&gt;y&lt;/var&gt; = 3.125:&lt;/p&gt;
+
+  &lt;p&gt;&lt;img style=&quot;display: block; margin: 0 0 1em 0; float: none; max-width: 100%;&quot; alt=&quot;Y when X equals 17.5&quot; src=&quot;/images/automating-css-animations-with-sass__formula-4.png&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;Static for 17.5%, transition for 3.125%, and so on, until we hit 100%.&lt;/p&gt;
+
+  &lt;p&gt;If we were to choose that &lt;var&gt;x&lt;/var&gt; equals 15, then we would find that &lt;var&gt;y&lt;/var&gt; equals 6.25:&lt;/p&gt;
+
+  &lt;p&gt;&lt;img style=&quot;display: block; margin: 0 0 1em 0; float: none; max-width: 100%;&quot; alt=&quot;Y when X equals 15&quot; src=&quot;/images/automating-css-animations-with-sass__formula-5.png&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;If &lt;var&gt;y&lt;/var&gt; comes out as zero-or-below, it means the number we chose for &lt;var&gt;x&lt;/var&gt; was too large: pick again.&lt;/p&gt;
+
+  &lt;p&gt;N.B. We also include a halfway point in the middle of our transitioning frames to which we apply a subtle blur. This number is derived from:&lt;/p&gt;
+
+  &lt;p&gt;&lt;img style=&quot;display: block; margin: 0 0 1em 0; float: none; max-width: 100%;&quot; alt=&quot;Computing a halfway point&quot; src=&quot;/images/automating-css-animations-with-sass__formula-6.png&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;where &lt;var&gt;a&lt;/var&gt; is the frame in question (out of &lt;var&gt;n&lt;/var&gt; frames). The halfway point between frames 3 and 4 is:&lt;/p&gt;
+
+  &lt;p&gt;&lt;img style=&quot;display: block; margin: 0 0 1em 0; float: none; max-width: 100%;&quot; alt=&quot;Halfway point between frames 3 and 4&quot; src=&quot;/images/automating-css-animations-with-sass__formula-7.png&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;I’m pretty sure this is all a mess. To any kind person reading this who would be able to improve it, I would be very grateful if you would advise :)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And the result is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;@keyframes carousel {
+  0% { 
+    transform: translate3d(0, 0, 0); 
+    filter: blur(0);
+  }
+  17.5% { 
+    transform: translate3d(0, 0, 0); 
+    filter: blur(0);
+  }
+  19.0625% {                                      
+    filter: blur(2px);
+  }
+  20.625% {
+    transform: translate3d(-20%, 0, 0); 
+    filter: blur(0);
+  }
+  38.125% { 
+    transform: translate3d(-20%, 0, 0); 
+    filter: blur(0);
+  }
+  39.6875% {                                
+    filter: blur(2px);
+  }
+  41.25%   { 
+    transform: translate3d(-40%, 0, 0); 
+    filter: blur(0);
+  }
+  58.75%   { 
+    transform: translate3d(-40%, 0, 0); 
+    filter: blur(0);
+  }
+  60.3125% {                                      
+    filter: blur(2px);
+  }
+  61.875%  { 
+    transform: translate3d(-60%, 0, 0); 
+    filter: blur(0);
+  }
+  79.375%  { 
+    transform: translate3d(-60%, 0, 0); 
+    filter: blur(0);
+  }
+  80.9375% {                                      
+    filter: blur(2px);
+  }
+  82.5%    { 
+    transform: translate3d(-80%, 0, 0); 
+    filter: blur(0);
+  }
+  100%     { 
+    transform: translate3d(-80%, 0, 0); 
+    filter: blur(0);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Holy moly!&lt;/p&gt;
+
+&lt;h2&gt;Cleaning the animation&lt;/h2&gt;
+
+&lt;p&gt;Before even thinking about Sass, let&amp;#8217;s lighten the animation a little bit. As we can see from the previous code block, some keyframes are identical. Let&amp;#8217;s combine them to make the whole animation simpler:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;@keyframes carousel {
+  0%, 
+  17.5% {
+    transform: translate3d(0, 0, 0); 
+    filter: blur(0);
+  }
+
+  19.0625% {
+    filter: blur(2px);
+  }
+
+  20.625%, 
+  38.125% {
+    transform: translate3d(-20%, 0, 0); 
+    filter: blur(0);
+  }
+
+  39.6875% {
+    filter: blur(2px);
+  }
+
+  41.25%, 
+  58.75% {
+    transform: translate3d(-40%, 0, 0); 
+    filter: blur(0);
+  }
+
+  60.3125% {
+    filter: blur(2px);
+  }
+
+  61.875%, 
+  79.375% {
+    transform: translate3d(-60%, 0, 0); 
+    filter: blur(0);
+  }
+
+  80.9375% {
+    filter: blur(2px);
+  }
+
+  82.5%, 
+  100% {
+    transform: translate3d(-80%, 0, 0); 
+    filter: blur(0);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Fine! That&amp;#8217;s less code to output.&lt;/p&gt;
+
+&lt;h2&gt;Bringing Sass in the game&lt;/h2&gt;
+
+&lt;p&gt;Keyframes are typically the kind of things you can optimize. Because they are heavily bound to numbers and loop iterations, it is usually quite easy to generate a repetitive &lt;code&gt;@keyframes&lt;/code&gt; animation with a loop. Let&amp;#8217;s try that, shall we?&lt;/p&gt;
+
+&lt;p&gt;First, bring the basics. For sake of consistency, I kept Harry&amp;#8217;s variable names: &lt;code&gt;n&lt;/code&gt;, &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;. Let&amp;#8217;s not forget their meaning:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;$n&lt;/code&gt; is the number of frames in the animation&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;$x&lt;/code&gt; is the percentage of the animation spent static for each frame. Logic wants it to be less than &lt;code&gt;100% / $n&lt;/code&gt; then.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;$y&lt;/code&gt; is the percentage of the animation spent animation for each frame.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$n: 5;
+$x: 17.5%;
+$y: (100% - $n * $x) / ($n - 1);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, we need to open the &lt;code&gt;@keyframes&lt;/code&gt; directive, then a loop.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@keyframes carousel {
+  @for $i from 0 to $n { // 0, 1, 2, 3, 4
+    // Sass Magic
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Inside the loop, we will use Harry&amp;#8217;s formulas to compute each pair of identical keyframes (for instance, 41.25% and 58.75%):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$current-frame: ($i * $x) + ($i * $y);
+$next-frame: (($i + 1) * $x) + ($i + $y);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note: braces are completely optional here, we just use them to keep things clean.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And now, we use those variables to generate a keyframe inside the loop. Let&amp;#8217;s not forget to interpolate them so they are correctly output in the resulting CSS (more informations about &lt;a href=&quot;http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375&quot;&gt;Sass interpolation on Tuts+&lt;/a&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;#{$current-frame, $next-frame} {
+  transform: translateX($i * -100% / $frames);
+  filter: blur(0);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Quite simple, isn&amp;#8217;t it? For the first loop run, this would output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;0%, 17.5% {
+  transform: translate3d(0%, 0, 0);
+  filter: blur(0);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All we have left is outputing what Harry calls &lt;em&gt;an halfway frame&lt;/em&gt; to add a little blur effect. Then again, we&amp;#8217;ll use his formula to compute the keyframe selectors:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
+
+#{$halfway-frame} {
+  filter: blur(2px);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Oh-ho! We got an error here!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Invalid CSS after &amp;#8220;&amp;#8221;: expected keyframes selector (e.g. 10%), was &amp;#8220;-1.5625%&amp;#8221;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As you can see, we end up with a negative keyframe selector. This is prohibited by the &lt;a href=&quot;http://www.w3.org/TR/css3-animations/#keyframes&quot;&gt;CSS specifications&lt;/a&gt; and Sass considers this a syntax error so we need to make sure this does not happen. Actually, it only happens when &lt;code&gt;$i&lt;/code&gt; is &lt;code&gt;0&lt;/code&gt;, so basically on first loop run. An easy way to prevent this error from happening is to condition the output of this rule to the value of &lt;code&gt;$i&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@if $i &amp;gt; 0 {
+  #{$halfway-frame} {
+    filter: blur(2px);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Error gone, all good! So here is how our code looks so far:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$n: 5;
+$x: 17.5%;
+$y: (100% - $n * $x) / ($n - 1);
+
+@keyframes carousel {
+  @for $i from 0 to $n {
+    $current-frame: ($i * $x) + ($i * $y);
+    $next-frame: (($i + 1) * $x) + ($i + $y);
+
+    #{$current-frame, $next-frame} {
+      transform: translate3d($i * -100% / $frames, 0, 0);
+    }
+
+    $halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
+
+    @if $i &amp;gt; 0 {
+      #{$halfway-frame} {
+        filter: blur(2px);
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Pushing things further with a mixin&lt;/h2&gt;
+
+&lt;p&gt;So far so good? It works pretty well in automating Harry&amp;#8217;s code so he does not have to compute everything from scratch again if he ever wants to display &amp;mdash;let&amp;#8217;s say&amp;mdash; 4 slides instead of 5, or wants the animation to be quicker or longer.&lt;/p&gt;
+
+&lt;p&gt;But we are basically polluting the global scope with our variables. Also, if he needs another carousel animation elsewhere, we will need to find other variable names, and copy the whole content of the animation into the new one. That&amp;#8217;s definitely not ideal.&lt;/p&gt;
+
+&lt;p&gt;So we have variables and possible duplicated content: &lt;a href=&quot;http://www.sitepoint.com/sass-mixin-placeholder/&quot;&gt;perfect case for a mixin&lt;/a&gt;! In order to make things easier to understand, we will replace those one-letter variable names with actual words if you don&amp;#8217;t mind:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;$n&lt;/code&gt; becomes &lt;code&gt;$frames&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;$x&lt;/code&gt; becomes &lt;code&gt;$static&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;$y&lt;/code&gt; becomes &lt;code&gt;$animating&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also, because a mixin can be called several times with different arguments, we should make sure it outputs different animations. For this, we need to add a 3rd parameter: the animation name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin carousel-animation($frames, $static, $name: 'carousel') {
+  $animating: (100% - $frames * $static) / ($frames - 1);
+
+  // Moar Sass
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since it is now a mixin, it can be called from several places: probably the root level, but there is nothing preventing us from including it from within a selector. Because &lt;code&gt;@&lt;/code&gt;-directives need to be stand at root level in CSS, we&amp;#8217;ll use &lt;code&gt;@at-root&lt;/code&gt; from Sass to make sure the animation gets output at root level.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin carousel-animation($frames, $static, $name: 'carousel') {
+  $animating: (100% - $frames * $static) / ($frames - 1);
+
+  @at-root {
+    @keyframes #{$name} {
+      // Animation logic here
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Rest is pretty much the same. Calling it is quite easy now:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@include carousel-animation(
+  $frames: 5, 
+  $static: 17.5%
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Resulting in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;@keyframes carousel {
+  0%, 17.5% {
+    transform: translateX(0%);
+    filter: blur(0);
+  }
+  19.0625% {
+    filter: blur(2px);
+  }
+  20.625%, 38.125% {
+    transform: translateX(-20%);
+    filter: blur(0);
+  }
+  39.6875% {
+    filter: blur(2px);
+  }
+  41.25%, 58.75% {
+    transform: translateX(-40%);
+    filter: blur(0);
+  }
+  60.3125% {
+    filter: blur(2px);
+  }
+  61.875%, 79.375% {
+    transform: translateX(-60%);
+    filter: blur(0);
+  }
+  80.9375% {
+    filter: blur(2px);
+  }
+  82.5%, 100% {
+    transform: translateX(-80%);
+    filter: blur(0);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mission accomplished! And if we want another animation for the contact page for instance:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@include carousel-animation(
+  $name: 'carousel-contact',
+  $frames: 3, 
+  $static: 20%
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pretty neat, heh?&lt;/p&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;That&amp;#8217;s pretty much it. While Harry&amp;#8217;s initial code is easier to read for the human eye, it&amp;#8217;s really not ideal when it comes to maintenance. That&amp;#8217;s where Sass can comes in handy, automating the whole thing with calculations and loops. It does make the code a little more complex, but it also makes it easier to maintain and update for future use cases.&lt;/p&gt;
+
+&lt;p&gt;You can play with the code on SassMeister:&lt;/p&gt;
+
+&lt;p class=&quot;sassmeister&quot; data-gist-id=&quot;b657072d11c527f3a016&quot; data-height=&quot;480&quot;&gt;&lt;a href=&quot;http://sassmeister.com/gist/b657072d11c527f3a016&quot;&gt;Play with this gist on SassMeister.&lt;/a&gt;&lt;/p&gt;
+&lt;script src=&quot;http://cdn.sassmeister.com/js/embed.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+</description>
+</item>
+
+
+<item>
 	<title>Semantic Versioning: why you should be using it</title>
 	
 	<link>http://www.sitepoint.com/semantic-versioning-why-you-should-using/</link>
@@ -535,322 +917,6 @@ $customizer-instances: (
 	
 	<pubDate>Tue, 24 Jun 2014 00:00:00 GMT</pubDate>
 	<description>
-</description>
-</item>
-
-
-<item>
-	<title>Bitwise operators in Sass</title>
-	
-	<link>http://hugogiraudel.com/2014/06/22/bitwise-operators-in-sass</link>
-	<guid>/2014/06/22/bitwise-operators-in-sass</guid>
-	
-	
-	<pubDate>Sun, 22 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
-&lt;p&gt;A couple of days ago, &lt;a href=&quot;https://twitter.com/valeriangalliat&quot;&gt;Valérian Galliat&lt;/a&gt; and I had the crazy idea of implementing bitwise operators in Sass. It went like this:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt;: Do you know how bitwise operators work?  &lt;br /&gt;
-&lt;strong&gt;Val&lt;/strong&gt;: Yes.  &lt;br /&gt;
-&lt;strong&gt;Hugo&lt;/strong&gt;: Do you think we could implement them in Sass?  &lt;br /&gt;
-&lt;strong&gt;Val&lt;/strong&gt;: No.  &lt;br /&gt;
-(Loading&amp;#8230;)  &lt;br /&gt;
-&lt;strong&gt;Val&lt;/strong&gt;: Well, in fact we could.  &lt;br /&gt;
-&lt;strong&gt;Hugo&lt;/strong&gt;: LET&amp;#8217;S DO IT!  &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let&amp;#8217;s catch up on bitwise operators, shall we?&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Note: project is on GitHub. Check out &lt;a href=&quot;https://github.com/HugoGiraudel/SassyBitwise&quot;&gt;SassyBitwise&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2&gt;B-b-b-b-bitwise&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;Note: I am no programmer so please kindly apologize any shortcut I could make when explaining bitwise operators.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;You are probably not without knowing numbers we use in everyday life are expressed in base 10, also known as &lt;em&gt;decimal&lt;/em&gt;. &lt;em&gt;Hexadecimal&lt;/em&gt; is base 16. &lt;em&gt;Octal&lt;/em&gt; is base 8. And &lt;em&gt;binary&lt;/em&gt; is base 2. Just to name a few popular bases.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#8217;s put this very simple: bitwise operators are operators for numbers expressed in their binary form. Most common bitwise operators are AND (&lt;code&gt;&amp;amp;&lt;/code&gt;), OR (&lt;code&gt;|&lt;/code&gt;) and NOT (&lt;code&gt;~&lt;/code&gt;), but there are also XOR (&lt;code&gt;^&lt;/code&gt;), LEFT-SHIFT (&lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;) and RIGHT-SHIFT (&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;To illustrate this explanation, allow me to have a little example (inspired from &lt;a href=&quot;http://en.wikipedia.org/wiki/Bitwise_operation#Bitwise_operators&quot;&gt;Wikipedia&lt;/a&gt;):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# ~7
-NOT 0111 (decimal 7)
-  = 1000 (decimal 8)
-
-# 5 &amp;amp; 3
-    0101 (decimal 5)
-AND 0011 (decimal 3)
-  = 0001 (decimal 1)
-
-# 5 | 3
-    0101 (decimal 5)
-OR  0011 (decimal 3)
-  = 0111 (decimal 7)
-
-# 2 ^ 10
-    0010 (decimal 2)
-XOR 1010 (decimal 10)
-  = 1000 (decimal 8)
-
-# 23 &amp;lt;&amp;lt; 1
-   00010111 (decimal 23) LEFT-SHIFT 1
-=  00101110 (decimal 46)
-
-# 23 &amp;gt;&amp;gt; 1
-   00010111 (decimal 23) RIGHT-SHIFT 1
-=  00001011 (decimal 11)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As you can see, the idea is pretty straightforward:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;NOT&lt;/em&gt; converts &lt;code&gt;1&lt;/code&gt;s in &lt;code&gt;0&lt;/code&gt;s, and &lt;code&gt;0&lt;/code&gt;s in &lt;code&gt;1&lt;/code&gt;s&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;AND&lt;/em&gt; takes &lt;code&gt;1&lt;/code&gt;s if both are &lt;code&gt;1&lt;/code&gt;s, else &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;OR&lt;/em&gt; takes &lt;code&gt;1&lt;/code&gt; if any are &lt;code&gt;1&lt;/code&gt;, else &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;XOR&lt;/em&gt; takes &lt;code&gt;1&lt;/code&gt; if one of 2 is &lt;code&gt;1&lt;/code&gt;, else &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;LEFT-SHIFT&lt;/em&gt; shifts all bits from &lt;code&gt;n&lt;/code&gt; to the left&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;RIGHT-SHIFT&lt;/em&gt; shifts all bits from &lt;code&gt;n&lt;/code&gt; to the right&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you&amp;#8217;re more a &lt;em&gt;table&lt;/em&gt; kind of guy:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&amp;#160;&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Result&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;NOT&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;NOT&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 1&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 2&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;AND&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;OR&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;XOR&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&amp;#160;&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 1&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 2&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 3&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 4&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 5&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 6&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 7&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Bit 8&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Binary&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;LEFT-SHIFT&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;RIGHT-SHIFT&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;So you got bitwise.&lt;/p&gt;
-
-&lt;h2&gt;Sass implementation&lt;/h2&gt;
-
-&lt;p&gt;Now, we wanted to implement this in Sass. There are two ways of doing it:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;convert to binary string, then apply operations char per char (a char being a bit in this context)&lt;/li&gt;
-  &lt;li&gt;rely on mathematical equivalents&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We could have decided to manipulate binary strings but god knows why, we ended up implementing the mathematical equivalents of all operators. Fortunately, we didn&amp;#8217;t have to figure out the formula (we are not &lt;em&gt;that&lt;/em&gt; clever): &lt;a href=&quot;http://en.wikipedia.org/wiki/Bitwise_operation#Mathematical_equivalents&quot;&gt;Wikipedia has them&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;You may think that we didn&amp;#8217;t need a decimal to binary converter since we use math rather than string manipulation. Actually, we had to write a &lt;code&gt;decimal-to-binary()&lt;/code&gt; function because we needed to know the length of the binary string to compute bitwise operations. &lt;/p&gt;
-
-&lt;p&gt;We could have figured this length without converting to binary if we had a &lt;code&gt;log()&lt;/code&gt; function. And we could have made a &lt;code&gt;log()&lt;/code&gt; function if we had a &lt;code&gt;frexp()&lt;/code&gt; function. And we could have made a &lt;code&gt;frexp()&lt;/code&gt; function if we had bitwise operators. Do you see the problem here?&lt;/p&gt;
-
-&lt;p&gt;Valérian summed it up quite nicely in a Tweet:&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-partner=&quot;tweetdeck&quot;&gt;&lt;p&gt;&amp;amp;, | and ^ bitwise operators math formulas needs log(), but log() needs frexp() which needs bitwise operators. Fak! cc &lt;a href=&quot;https://twitter.com/HugoGiraudel&quot;&gt;@HugoGiraudel&lt;/a&gt;&lt;/p&gt;&amp;mdash; Valérian Galliat (@valeriangalliat) &lt;a href=&quot;https://twitter.com/valeriangalliat/statuses/474127810798555136&quot;&gt;June 4, 2014&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;I won&amp;#8217;t dig into Sass code because it doesn&amp;#8217;t have much point. Let&amp;#8217;s just have a look at the final implementation. We have implemented each operator as a Sass function called &lt;code&gt;bw-*&lt;/code&gt; where &lt;code&gt;*&lt;/code&gt; stands for the name of the operator (e.g. &lt;code&gt;and&lt;/code&gt;). Except for &lt;code&gt;bw-not()&lt;/code&gt; which is a rather particuliar operator, all functions accept 2 arguments: both decimal numbers.&lt;/p&gt;
-
-&lt;p&gt;On top of that, we have built a &lt;code&gt;bitwise()&lt;/code&gt; function (aliased as &lt;code&gt;bw()&lt;/code&gt;) which provides a more friendly API when dealing with bitwise operations. It accepts any number of queued bitwise operations, where operators are quoted. For instance:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// 42 | 38 | 24
-$value: bitwise(42 '|' 38 '|' 24);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So that&amp;#8217;s not too bad. The fact that operators have to be quoted for Sass not to crash is kind of annoying, but I suppose we can live with it. Other than that, it&amp;#8217;s pretty much like if you were doing bitwise operations in other language, except you wrap all this stuff in &lt;code&gt;bitwise()&lt;/code&gt; or &lt;code&gt;bw()&lt;/code&gt;. In my opinion, the API is pretty simple to use.&lt;/p&gt;
-
-&lt;h2&gt;Applications&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;#8217;s be honest: there is none. Sass is not a low-level programming language. It does not have any valid use case for bitwise operations. Meanwhile, we implemented bit flags. &lt;em&gt;Bit flags&lt;/em&gt; is a programming technique aiming at storing several booleans in a single integer in ordre to save memory.&lt;/p&gt;
-
-&lt;p&gt;Here is a great &lt;a href=&quot;http://forum.codecall.net/topic/56591-bit-fields-flags-tutorial-with-example/&quot;&gt;introduction to bit flags&lt;/a&gt; but I&amp;#8217;ll try to sum up. The idea behind &lt;em&gt;bit flags&lt;/em&gt; is to have a collection of flags (think of them as options) mapped to powers of 2 (usually with an &lt;code&gt;enum&lt;/code&gt; field in C/C++). Each option will have its own bit flag.&lt;/p&gt;
-
-&lt;pre style=&quot;line-height: .9&quot;&gt;&lt;code&gt;00000000 Bin    | Dec
-│││││││└ 1 &amp;lt;&amp;lt; 0 | 1
-││││││└─ 1 &amp;lt;&amp;lt; 1 | 2
-│││││└── 1 &amp;lt;&amp;lt; 2 | 4
-││││└─── 1 &amp;lt;&amp;lt; 3 | 8
-│││└──── 1 &amp;lt;&amp;lt; 4 | 16
-││└───── 1 &amp;lt;&amp;lt; 5 | 32
-│└────── 1 &amp;lt;&amp;lt; 6 | 64
-└─────── 1 &amp;lt;&amp;lt; 7 | 128&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, let&amp;#8217;s say option A is &lt;code&gt;1 &amp;lt;&amp;lt; 0&lt;/code&gt; (DEC 1) and option B is &lt;code&gt;1 &amp;lt;&amp;lt; 1&lt;/code&gt; (DEC 2). If we &lt;em&gt;OR&lt;/em&gt; them:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;   00000001 (A)
-OR 00000010 (B)
- = 00000011
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The result &amp;mdash; let&amp;#8217;s call it &lt;em&gt;Z&lt;/em&gt; &amp;mdash; holds both options, right? To retrieve separately A and B from Z, we can use the &lt;em&gt;AND&lt;/em&gt; operator:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    00000011 (Z)
-AND 00000001 (A)
-  = 00000001
-
-    00000011 (Z)
-AND 00000010 (B)
-  = 00000010
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So far so good. Now what if we try to &lt;em&gt;AND&lt;/em&gt; Z and, option C (&lt;code&gt;1 &amp;lt;&amp;lt; 2&lt;/code&gt;).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    00000011 (Z)
-AND 00000100 (C)
-  = 00000000
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The result of &lt;code&gt;Z &amp;amp; C&lt;/code&gt; isn&amp;#8217;t equal to &lt;code&gt;C&lt;/code&gt;, so we can safely assume the C option hasn&amp;#8217;t been passed.&lt;/p&gt;
-
-&lt;p&gt;That&amp;#8217;s pretty much how bit flags work. Now let&amp;#8217;s apply it to Sass as an example of SassyBitwise. First thing to do, define a couple of flags:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Flags
-$A: bw(1 '&amp;lt;&amp;lt;' 0);
-$B: bw(1 '&amp;lt;&amp;lt;' 1);
-$C: bw(1 '&amp;lt;&amp;lt;' 2);
-$D: bw(1 '&amp;lt;&amp;lt;' 3);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We also need a mixin that would theorically accepts multiple boolean options. As a proof of concept, our mixin will accept a single argument: &lt;code&gt;$options&lt;/code&gt;, a &lt;strong&gt;number&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Custom mixin
-// ---
-// @param [number] $options: bitwise encoded flags
-// ---
-@mixin custom-test(/* number */ $options) {
-  is-A-flag-set: bw($options '&amp;amp;' $A);
-  is-B-flag-set: bw($options '&amp;amp;' $B);
-  is-C-flag-set: bw($options '&amp;amp;' $C);
-  is-D-flag-set: bw($options '&amp;amp;' $D);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And now we call it, passing it the result of a bitwise &lt;em&gt;OR&lt;/em&gt; operation of all our flags.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Call
-test {
-  @include custom-test(bw($A '|' $C '|' $D));
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As expected, the result is the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;test {
-  is-A-flag-set: true;
-  is-B-flag-set: false;
-  is-C-flag-set: true;
-  is-D-flag-set: true;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;Final thoughts&lt;/h2&gt;
-
-&lt;p&gt;That&amp;#8217;s it folks, SassyBitwise. No point, much fun. As always.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Note: a huge thanks to Valérian Galliat for helping me out with this.&lt;/em&gt;&lt;/p&gt;
 </description>
 </item>
 
