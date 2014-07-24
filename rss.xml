@@ -11,6 +11,19 @@
 			
 
 <item>
+	<title>Podcast about Sass at CDNify</title>
+	
+	<link>https://cdnify.com/blog/sassdoc-document-sass-files-functions-mixins/</link>
+	<guid>https://cdnify.com/blog/sassdoc-document-sass-files-functions-mixins/</guid>
+	
+	
+	<pubDate>Thu, 24 Jul 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
 	<title>Using Sass to build color palettes</title>
 	
 	<link>http://www.sitepoint.com/using-sass-build-color-palettes/</link>
@@ -903,19 +916,6 @@ $customizer-instances: (
 	
 	
 	<pubDate>Wed, 25 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
-</description>
-</item>
-
-
-<item>
-	<title>All you ever need to know about Sass interpolation</title>
-	
-	<link>http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375</link>
-	<guid>http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375</guid>
-	
-	
-	<pubDate>Tue, 24 Jun 2014 00:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>
