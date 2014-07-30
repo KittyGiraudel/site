@@ -11,6 +11,19 @@
 			
 
 <item>
+	<title>Keep Sass Simple</title>
+	
+	<link>http://www.sitepoint.com/keep-sass-simple/</link>
+	<guid>http://www.sitepoint.com/keep-sass-simple/</guid>
+	
+	
+	<pubDate>Wed, 30 Jul 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
 	<title>Podcast about Sass at CDNify</title>
 	
 	<link>https://cdnify.com/blog/sassdoc-document-sass-files-functions-mixins/</link>
@@ -903,19 +916,6 @@ $customizer-instances: (
 	
 	
 	<pubDate>Thu, 26 Jun 2014 00:00:00 GMT</pubDate>
-	<description>
-</description>
-</item>
-
-
-<item>
-	<title>Speaking on SassBites #42</title>
-	
-	<link>https://www.youtube.com/watch?v=H6Y9r49InXo</link>
-	<guid>https://www.youtube.com/watch?v=H6Y9r49InXo</guid>
-	
-	
-	<pubDate>Wed, 25 Jun 2014 00:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>

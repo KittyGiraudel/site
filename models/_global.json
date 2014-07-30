@@ -2,7 +2,7 @@
 	"title": "HugoGiraudel.com",
 	"intro": "I write about Sass. Mostly.",
 	"twitter": "HugoGiraudel",
-	"googleanalytics": "",
 	"domain": "http://hugogiraudel.com",
-	"email": "hugo.giraudel@gmail.com"
+	"email": "hugo.giraudel@gmail.com",
+	"cdn": "http://hugogiraudel.a.cdnify.io"
 }
