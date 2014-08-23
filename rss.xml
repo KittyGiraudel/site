@@ -11,6 +11,32 @@
 			
 
 <item>
+	<title>Sass 3.4 is out!</title>
+	
+	<link>http://www.sitepoint.com/sass-3-4-is-out/</link>
+	<guid>http://www.sitepoint.com/sass-3-4-is-out/</guid>
+	
+	
+	<pubDate>Fri, 22 Aug 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
+	<title>What&#39;s up with SassDoc 1.2?</title>
+	
+	<link>http://webdesign.tutsplus.com/articles/new-features-and-a-new-look-for-sassdoc--cms-21914</link>
+	<guid>http://webdesign.tutsplus.com/articles/new-features-and-a-new-look-for-sassdoc--cms-21914</guid>
+	
+	
+	<pubDate>Tue, 12 Aug 2014 00:00:00 GMT</pubDate>
+	<description>
+</description>
+</item>
+
+
+<item>
 	<title>Keep Sass Simple</title>
 	
 	<link>http://www.sitepoint.com/keep-sass-simple/</link>
@@ -62,7 +88,7 @@
 
 &lt;blockquote&gt;
   &lt;p&gt;“Why do we have to learn algebra, Miss? We’re never going to use it…”  &lt;br /&gt;
-&amp;mdash;Everyone in my maths class  &lt;br /&gt;
+—Everyone in my maths class  &lt;br /&gt;
 &lt;a href=&quot;http://bit.ly/UaM2wf&quot;&gt;bit.ly/UaM2wf&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -172,7 +198,7 @@
 
 &lt;h2&gt;Cleaning the animation&lt;/h2&gt;
 
-&lt;p&gt;Before even thinking about Sass, let&amp;#8217;s lighten the animation a little bit. As we can see from the previous code block, some keyframes are identical. Let&amp;#8217;s combine them to make the whole animation simpler:&lt;/p&gt;
+&lt;p&gt;Before even thinking about Sass, let’s lighten the animation a little bit. As we can see from the previous code block, some keyframes are identical. Let’s combine them to make the whole animation simpler:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;@keyframes carousel {
   0%, 
@@ -223,13 +249,13 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Fine! That&amp;#8217;s less code to output.&lt;/p&gt;
+&lt;p&gt;Fine! That’s less code to output.&lt;/p&gt;
 
 &lt;h2&gt;Bringing Sass in the game&lt;/h2&gt;
 
-&lt;p&gt;Keyframes are typically the kind of things you can optimize. Because they are heavily bound to numbers and loop iterations, it is usually quite easy to generate a repetitive &lt;code&gt;@keyframes&lt;/code&gt; animation with a loop. Let&amp;#8217;s try that, shall we?&lt;/p&gt;
+&lt;p&gt;Keyframes are typically the kind of things you can optimize. Because they are heavily bound to numbers and loop iterations, it is usually quite easy to generate a repetitive &lt;code&gt;@keyframes&lt;/code&gt; animation with a loop. Let’s try that, shall we?&lt;/p&gt;
 
-&lt;p&gt;First, bring the basics. For sake of consistency, I kept Harry&amp;#8217;s variable names: &lt;code&gt;n&lt;/code&gt;, &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;. Let&amp;#8217;s not forget their meaning:&lt;/p&gt;
+&lt;p&gt;First, bring the basics. For sake of consistency, I kept Harry’s variable names: &lt;code&gt;n&lt;/code&gt;, &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;. Let’s not forget their meaning:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code&gt;$n&lt;/code&gt; is the number of frames in the animation&lt;/li&gt;
@@ -251,7 +277,7 @@ $y: (100% - $n * $x) / ($n - 1);
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Inside the loop, we will use Harry&amp;#8217;s formulas to compute each pair of identical keyframes (for instance, 41.25% and 58.75%):&lt;/p&gt;
+&lt;p&gt;Inside the loop, we will use Harry’s formulas to compute each pair of identical keyframes (for instance, 41.25% and 58.75%):&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$current-frame: ($i * $x) + ($i * $y);
 $next-frame: (($i + 1) * $x) + ($i + $y);
@@ -259,7 +285,7 @@ $next-frame: (($i + 1) * $x) + ($i + $y);
 
 &lt;p&gt;&lt;em&gt;Note: braces are completely optional here, we just use them to keep things clean.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;And now, we use those variables to generate a keyframe inside the loop. Let&amp;#8217;s not forget to interpolate them so they are correctly output in the resulting CSS (more informations about &lt;a href=&quot;http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375&quot;&gt;Sass interpolation on Tuts+&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;And now, we use those variables to generate a keyframe inside the loop. Let’s not forget to interpolate them so they are correctly output in the resulting CSS (more informations about &lt;a href=&quot;http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375&quot;&gt;Sass interpolation on Tuts+&lt;/a&gt;).&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;#{$current-frame, $next-frame} {
   transform: translateX($i * -100% / $frames);
@@ -267,7 +293,7 @@ $next-frame: (($i + 1) * $x) + ($i + $y);
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Quite simple, isn&amp;#8217;t it? For the first loop run, this would output:&lt;/p&gt;
+&lt;p&gt;Quite simple, isn’t it? For the first loop run, this would output:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;0%, 17.5% {
   transform: translate3d(0%, 0, 0);
@@ -275,7 +301,7 @@ $next-frame: (($i + 1) * $x) + ($i + $y);
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;All we have left is outputing what Harry calls &lt;em&gt;an halfway frame&lt;/em&gt; to add a little blur effect. Then again, we&amp;#8217;ll use his formula to compute the keyframe selectors:&lt;/p&gt;
+&lt;p&gt;All we have left is outputing what Harry calls &lt;em&gt;an halfway frame&lt;/em&gt; to add a little blur effect. Then again, we’ll use his formula to compute the keyframe selectors:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;$halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
 
@@ -287,7 +313,7 @@ $next-frame: (($i + 1) * $x) + ($i + $y);
 &lt;p&gt;Oh-ho! We got an error here!&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Invalid CSS after &amp;#8220;&amp;#8221;: expected keyframes selector (e.g. 10%), was &amp;#8220;-1.5625%&amp;#8221;&lt;/p&gt;
+  &lt;p&gt;Invalid CSS after “”: expected keyframes selector (e.g. 10%), was “-1.5625%”&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;As you can see, we end up with a negative keyframe selector. This is prohibited by the &lt;a href=&quot;http://www.w3.org/TR/css3-animations/#keyframes&quot;&gt;CSS specifications&lt;/a&gt; and Sass considers this a syntax error so we need to make sure this does not happen. Actually, it only happens when &lt;code&gt;$i&lt;/code&gt; is &lt;code&gt;0&lt;/code&gt;, so basically on first loop run. An easy way to prevent this error from happening is to condition the output of this rule to the value of &lt;code&gt;$i&lt;/code&gt;:&lt;/p&gt;
@@ -327,11 +353,11 @@ $y: (100% - $n * $x) / ($n - 1);
 
 &lt;h2&gt;Pushing things further with a mixin&lt;/h2&gt;
 
-&lt;p&gt;So far so good? It works pretty well in automating Harry&amp;#8217;s code so he does not have to compute everything from scratch again if he ever wants to display &amp;mdash;let&amp;#8217;s say&amp;mdash; 4 slides instead of 5, or wants the animation to be quicker or longer.&lt;/p&gt;
+&lt;p&gt;So far so good? It works pretty well in automating Harry’s code so he does not have to compute everything from scratch again if he ever wants to display —let’s say— 4 slides instead of 5, or wants the animation to be quicker or longer.&lt;/p&gt;
 
-&lt;p&gt;But we are basically polluting the global scope with our variables. Also, if he needs another carousel animation elsewhere, we will need to find other variable names, and copy the whole content of the animation into the new one. That&amp;#8217;s definitely not ideal.&lt;/p&gt;
+&lt;p&gt;But we are basically polluting the global scope with our variables. Also, if he needs another carousel animation elsewhere, we will need to find other variable names, and copy the whole content of the animation into the new one. That’s definitely not ideal.&lt;/p&gt;
 
-&lt;p&gt;So we have variables and possible duplicated content: &lt;a href=&quot;http://www.sitepoint.com/sass-mixin-placeholder/&quot;&gt;perfect case for a mixin&lt;/a&gt;! In order to make things easier to understand, we will replace those one-letter variable names with actual words if you don&amp;#8217;t mind:&lt;/p&gt;
+&lt;p&gt;So we have variables and possible duplicated content: &lt;a href=&quot;http://www.sitepoint.com/sass-mixin-placeholder/&quot;&gt;perfect case for a mixin&lt;/a&gt;! In order to make things easier to understand, we will replace those one-letter variable names with actual words if you don’t mind:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code&gt;$n&lt;/code&gt; becomes &lt;code&gt;$frames&lt;/code&gt;&lt;/li&gt;
@@ -341,16 +367,16 @@ $y: (100% - $n * $x) / ($n - 1);
 
 &lt;p&gt;Also, because a mixin can be called several times with different arguments, we should make sure it outputs different animations. For this, we need to add a 3rd parameter: the animation name.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin carousel-animation($frames, $static, $name: 'carousel') {
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin carousel-animation($frames, $static, $name: &#39;carousel&#39;) {
   $animating: (100% - $frames * $static) / ($frames - 1);
 
   // Moar Sass
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Since it is now a mixin, it can be called from several places: probably the root level, but there is nothing preventing us from including it from within a selector. Because &lt;code&gt;@&lt;/code&gt;-directives need to be stand at root level in CSS, we&amp;#8217;ll use &lt;code&gt;@at-root&lt;/code&gt; from Sass to make sure the animation gets output at root level.&lt;/p&gt;
+&lt;p&gt;Since it is now a mixin, it can be called from several places: probably the root level, but there is nothing preventing us from including it from within a selector. Because &lt;code&gt;@&lt;/code&gt;-directives need to be stand at root level in CSS, we’ll use &lt;code&gt;@at-root&lt;/code&gt; from Sass to make sure the animation gets output at root level.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin carousel-animation($frames, $static, $name: 'carousel') {
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@mixin carousel-animation($frames, $static, $name: &#39;carousel&#39;) {
   $animating: (100% - $frames * $static) / ($frames - 1);
 
   @at-root {
@@ -410,7 +436,7 @@ $y: (100% - $n * $x) / ($n - 1);
 &lt;p&gt;Mission accomplished! And if we want another animation for the contact page for instance:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;@include carousel-animation(
-  $name: 'carousel-contact',
+  $name: &#39;carousel-contact&#39;,
   $frames: 3, 
   $static: 20%
 );
@@ -420,7 +446,7 @@ $y: (100% - $n * $x) / ($n - 1);
 
 &lt;h2&gt;Final thoughts&lt;/h2&gt;
 
-&lt;p&gt;That&amp;#8217;s pretty much it. While Harry&amp;#8217;s initial code is easier to read for the human eye, it&amp;#8217;s really not ideal when it comes to maintenance. That&amp;#8217;s where Sass can comes in handy, automating the whole thing with calculations and loops. It does make the code a little more complex, but it also makes it easier to maintain and update for future use cases.&lt;/p&gt;
+&lt;p&gt;That’s pretty much it. While Harry’s initial code is easier to read for the human eye, it’s really not ideal when it comes to maintenance. That’s where Sass can comes in handy, automating the whole thing with calculations and loops. It does make the code a little more complex, but it also makes it easier to maintain and update for future use cases.&lt;/p&gt;
 
 &lt;p&gt;You can play with the code on SassMeister:&lt;/p&gt;
 
@@ -478,444 +504,6 @@ $y: (100% - $n * $x) / ($n - 1);
 	
 	
 	<pubDate>Wed, 02 Jul 2014 00:00:00 GMT</pubDate>
-	<description>
-</description>
-</item>
-
-
-<item>
-	<title>Building a customization API in Sass</title>
-	
-	<link>http://hugogiraudel.com/2014/07/01/building-a-customization-api-in-sass</link>
-	<guid>/2014/07/01/building-a-customization-api-in-sass</guid>
-	
-	
-	<pubDate>Tue, 01 Jul 2014 00:00:00 GMT</pubDate>
-	<description>
-&lt;blockquote&gt;
-  &lt;p&gt;I am glad to have &lt;a href=&quot;http://ezekielg.com/&quot;&gt;Ezekiel Gabrielse&lt;/a&gt; today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts boys, this is quite intense!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Hey guys! I am the creator of a relatively new Sass grid-system called &lt;a href=&quot;https://github.com/ezekg/flint&quot;&gt;Flint&lt;/a&gt;, and a lightweight Compass extension called &lt;a href=&quot;https://github.com/ezekg/SassyExport&quot;&gt;SassyExport&lt;/a&gt;, which we will be discussing throughout this series.&lt;/p&gt;
-
-&lt;p&gt;Since I already mentioned the word &lt;em&gt;series&lt;/em&gt;, this article will be the first post of a 2 part series. Today we&amp;#8217;re going to create a Sass-powered customization API that can be plugged into a front-end API, such as a Wordpress theming framework or even allow live customization through JS. &lt;/p&gt;
-
-&lt;p&gt;Today&amp;#8217;s discussion will focus on the Sass part, but it will flow straight into part 2 of this series, where we will be utilizing a brand new tool I developed called &lt;a href=&quot;https://github.com/ezekg/SassyExport&quot;&gt;SassyExport&lt;/a&gt;, which allows you to &lt;em&gt;export&lt;/em&gt; JSON &lt;em&gt;from&lt;/em&gt; Sass and write it into a new file to use elsewhere in your projects.&lt;/p&gt;
-
-&lt;h2&gt;How does it work?&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Our Sass-powered customization API&lt;/strong&gt; will essentially be able to &lt;em&gt;mark&lt;/em&gt; elements within our stylesheet that we want to customize, and which of those elements &lt;em&gt;properties&lt;/em&gt; may be customized as well as default &lt;em&gt;values&lt;/em&gt; for these properties. &lt;/p&gt;
-
-&lt;p&gt;To be able to track all this stuff, we are going to use Sass maps to sort the output of this API by selector. Within that selector&amp;#8217;s map, we&amp;#8217;ll not only list its customizable properties but also the defaults for its values in case the user has not modified those.&lt;/p&gt;
-
-&lt;p&gt;We are going to do this all within Sass, and as we will discuss in part 2 of the series, a language like PHP or JS can hook in to our Sass-API and use the data to modify our stylesheet for these specific &lt;code&gt;$selector-&amp;gt;$property&lt;/code&gt; relationships. For the sake of time, we&amp;#8217;re going to keep this project simple and only stick to color customization. &lt;/p&gt;
-
-&lt;p&gt;Therefore, we will create a color palette as a map, in order to pull &lt;em&gt;values&lt;/em&gt; from it. That way we can also hook into this palette &lt;em&gt;module&lt;/em&gt; through our front-end API and then allow the user to modify the original color palette. &lt;/p&gt;
-
-&lt;p&gt;Furthermore, because we&amp;#8217;ll be keeping track of which selectors (or if we&amp;#8217;re getting really technical &amp;mdash; which &lt;em&gt;sub-modules&lt;/em&gt;) are using which color, we can then update their values if the user ever modifies that sub-module&amp;#8217;s color &lt;em&gt;value&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h3&gt;Okay, let&amp;#8217;s sum up&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;We need to create a global variable for our color palette.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The palette naming convention should be semantic. For instance, we&amp;#8217;ll prefer &lt;em&gt;primary&lt;/em&gt; and &lt;em&gt;complementary&lt;/em&gt; to &lt;em&gt;red&lt;/em&gt; and &lt;em&gt;blue&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;The code itself needs to be modular and flexible, allowing the user to create a color palette of any scale. &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;We need to keep another global variable of all customizable elements with the following data:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the full selector name (kind of &lt;code&gt;&amp;amp;&lt;/code&gt;);&lt;/li&gt;
-  &lt;li&gt;its customizable properties;&lt;/li&gt;
-  &lt;li&gt;default values for each property.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;We also need to output these default values into our stylesheet, that way our mixin will have two purposes: serve as our customization API and a way to retrieve our color palette to use within the actual stylesheet.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2&gt;What we want? API!&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;Throughout this article I will be using another project of mine called &lt;a href=&quot;https://github.com/ezekg/flint&quot;&gt;Flint&lt;/a&gt; as a base. It has various helper-functions that we will be using such as &lt;code&gt;selector_string()&lt;/code&gt;, a Ruby function returning a stringified version of the current selector (&lt;code&gt;&amp;amp;&lt;/code&gt;) so that we can use it in interpolation (which currently isn&amp;#8217;t possible). As well as a few others self-explanitory functions such as &lt;code&gt;exists()&lt;/code&gt;, &lt;code&gt;is-map()&lt;/code&gt;, &lt;code&gt;is-list()&lt;/code&gt; and &lt;code&gt;map-fetch()&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;This is the end result of what we will be building today. Take a look at the code, and follow along as we go through creating this API and understanding the methodology behind it, if that&amp;#8217;s your thing.&lt;/p&gt;
-
-&lt;p class=&quot;sassmeister&quot; data-gist-id=&quot;ccf842e5ee74287f1868&quot; data-height=&quot;480&quot;&gt;&lt;a href=&quot;http://sassmeister.com/gist/ccf842e5ee74287f1868&quot;&gt;Play with this gist on SassMeister.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Building our palette&lt;/h2&gt;
-
-&lt;p&gt;Firstly, let&amp;#8217;s create the map for our color palette setup.&lt;/p&gt;
-
-&lt;p&gt;We are going to keep our colors in a sub-map called &lt;em&gt;&amp;#8220;palette&amp;#8221;&lt;/em&gt; so we can keep our main API&amp;#8217;s code more modular to allow it to work with other customizable properties than just colors.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Customization module defaults
-$customizer: (
-  &quot;palette&quot;: (
-    &quot;primary&quot;: (
-      &quot;lightest&quot;: #eff3d1,
-      &quot;light&quot;: #bbdfbc,
-      &quot;base&quot;: #8bb58e,
-      &quot;dark&quot;: #0b3c42,
-      &quot;darkest&quot;: #092226,
-    ),
-    &quot;complementary&quot;: (
-      &quot;light&quot;: #f6616e,
-      &quot;base&quot;: #f2192c,
-      &quot;dark&quot;: #b40a19,
-    ),
-    &quot;gray&quot;: (
-      &quot;light&quot;: #819699,
-      &quot;base&quot;: #4b5557,
-      &quot;dark&quot;: #333a3b,
-    ),
-    &quot;black&quot;: #131517,
-    &quot;white&quot;: #f2f9ff,
-  ),
-) !global;
-
-// Global variables
-$customizer-instances: () !global;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As you can see, we have a pretty simple map of our default color palette to use within our customization API. I also created another global variable called &lt;code&gt;$customizer-instances&lt;/code&gt; that will keep a record of all the data from each use of the API. It&amp;#8217;s an empty map for now. &lt;/p&gt;
-
-&lt;p&gt;So, let&amp;#8217;s go ahead and move on to the next step, which is fleshing out the bones of our main mixin that we will be using to drive the API.&lt;/p&gt;
-
-&lt;h2&gt;Building our API&amp;#8217;s driver&lt;/h2&gt;
-
-&lt;p&gt;Before we go any further, let&amp;#8217;s decide on how we want our API to work. To be able to jump right into the code in the rest of this article, this is what our syntax is going to look like at the end:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.selector {
-  @include customizer(
-    $args: (
-      color: &quot;white&quot;,
-      background: &quot;primary&quot; &quot;darkest&quot;,
-      border-color: &quot;complementary&quot; &quot;base&quot;
-    ), 
-    $uses: &quot;palette&quot;
-  );
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In order to make the API easy to use and as close to the usual CSS syntax as possible, we&amp;#8217;re going to require the first argument to be a map called &lt;code&gt;$args&lt;/code&gt; so that we can use &lt;code&gt;$key-&amp;gt;$value&lt;/code&gt; pairs for each customizable property, as well as allowing multiple properties to be passed to a single instance of the mixin. &lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Note: If you&amp;#8217;re unfamiliar with using maps as arguments, &lt;a href=&quot;http://www.sitepoint.com/using-sass-maps/&quot;&gt;Hugo wrote up a pretty nifty article on that&lt;/a&gt;, as well as many other use-cases for maps.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The next argument will be fetching a module from within the above &lt;code&gt;$customizer&lt;/code&gt; map, which in this case will be our &lt;em&gt;&amp;#8220;palette&amp;#8221;&lt;/em&gt; module. We&amp;#8217;ll call this argument &lt;code&gt;$uses&lt;/code&gt;, as we will be fetching (&lt;em&gt;using&lt;/em&gt;) values from it for use in our first argument, &lt;code&gt;$args&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;I also want to make it fall back to outputting plain CSS if no module to use is specified, rather than erroring out we can simply &lt;code&gt;@warn&lt;/code&gt; the user that the mixin shouldn&amp;#8217;t be used that way. Therefore, our API will be less frustrating to newer users that don&amp;#8217;t happen to be using it correctly.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Create new customizable properties, save to instance map
-// 
-// @param {Map}           $args         - map of customizable property-&amp;gt;value pairs
-// @param {String | Null} $users (null) - module to pull property values from
-// 
-// @output $property-&amp;gt;$value pairs for each argument
-
-@mixin customizer($args, $uses: null) {
-  
-  // Make sure argument is a map
-  @if is-map($args) {
-
-    // Use module? Expecting module to exist
-    @if $uses != null {
-
-      // Check if module exists
-      @if exists($customizer, $uses) {
-        // ... All is safe, let's work with the arguments
-      } 
-
-      // Module did not exist, throw error
-      @else {
-        @warn &quot;Invalid argument: #{$uses}. Module was not found.&quot;;
-      }
-
-    } 
-
-    // No module specified, expecting plain CSS
-    @else {
-      // ... Since we'll be expecting valid CSS, let's output it here
-
-      // Warn that customization mixin shouldn't be used without a module
-      @warn &quot;The customization mixin should not be used without specifying a module to use.&quot;;
-    }
-
-  } 
-
-  // Argument was not a map, throw error
-  @else {
-    @warn &quot;Invalid argument: #{$args}. Argument type is not a map.&quot;;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;#8217;ve commented the above code, but let&amp;#8217;s go ahead and dig a little deeper into the structure of the mixin. Like I said above, the first thing we should do is check that the &lt;code&gt;$args&lt;/code&gt; argument is a map, and depending on the result, we&amp;#8217;ll either throw an error, or move on.&lt;/p&gt;
-
-&lt;p&gt;Next, let&amp;#8217;s check if a module was passed as the &lt;code&gt;$uses&lt;/code&gt; argument; if not, let&amp;#8217;s output any &lt;code&gt;$key-&amp;gt;$value&lt;/code&gt; pairs as plain CSS. Also we will throw a warning to the user to let him know that the mixin shouldn&amp;#8217;t be used for plain CSS output. &lt;/p&gt;
-
-&lt;p&gt;On the other hand, if &lt;code&gt;$uses&lt;/code&gt; is not &lt;code&gt;null&lt;/code&gt;, let&amp;#8217;s move on to check whether or not the module actually exists within our &lt;code&gt;$customizer&lt;/code&gt; variable (the palette map), like before we will either error out with a warning, or move forward.&lt;/p&gt;
-
-&lt;p&gt;Now, since we want to be able to pass multiple customizable properties into a single instance of the mixin, we need to iterate over each of those arguments. So, from within our conditional statement that checks whether or not the module exists, let&amp;#8217;s add the following code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// @if exists($customizer, $uses) {
-
-  // Run through each argument individually
-  @each $arg in $args {
-    // Break up argument into property-&amp;gt;value
-    $property: nth($arg, 1);
-    $value: nth($arg, 2);
-
-    // Get values from module
-    @if is-list($value) or exists($customizer, $value) {
-      $value: // ... We need to fetch the values from our module here;
-    }
-
-    // Output styles
-    #{$property}: $value;
-  }
-
-// } @else module did not exist
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In order to loop through each argument, we use an &lt;code&gt;@each&lt;/code&gt; loop. Within the loop, we retrieve both the &lt;code&gt;$property&lt;/code&gt; and the &lt;code&gt;$value&lt;/code&gt; using the &lt;code&gt;nth()&lt;/code&gt; function. Then, we check if &lt;code&gt;$value&lt;/code&gt; is either a list (when we&amp;#8217;re fetching the value from a deeper sub-module such as &lt;em&gt;&amp;#8220;primary&amp;#8221;&lt;/em&gt;), or that the module exists (for values that don&amp;#8217;t have additional sub-modules, but rather a single value such as &lt;em&gt;&amp;#8220;white&amp;#8221;&lt;/em&gt;). Assuming this check returns &lt;code&gt;true&lt;/code&gt;, we need a way to fetch these values from their deeper sub-modules; so let&amp;#8217;s create a function for that called &lt;code&gt;use-module()&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Fetching our colors&lt;/h2&gt;
-
-&lt;p&gt;The function is going to take two arguments, fairly similar to the arguments our main mixin takes. The first argument is a list of &lt;code&gt;$args&lt;/code&gt;, which we will use to fetch the value from the module we passed into &lt;code&gt;$uses&lt;/code&gt; in the main mixin. &lt;/p&gt;
-
-&lt;p&gt;Which brings us to the second argument! Since the function needs to know which module it&amp;#8217;s fetching from, let&amp;#8217;s create an argument called &lt;code&gt;$module&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Return value for property based on passed module
-// 
-// @param {List}   $args   - list of keys for customizable property
-// @param {String} $module - module to pull property values from
-// 
-// @return {*} - $value from $module
-
-@function use-module($args, $module) {
-  $exists: true;
-
-  // Append the list of arguments to the module to pass to map-fetch
-  $module: join($module, $args);
-
-  // Check if sub-modules exist
-  // Make sure all sub-modules exist
-  @if length($args) &amp;gt; 1 {
-    @each $arg in $args {
-      @if not exists($customizer, $arg) {
-        $exists: false;
-      }
-    }
-  }
-
-  @if $exists {
-    // Grab value from module by passing in newly built list
-    @return map-fetch($customizer, $module);
-  } 
-
-  @else {
-    // One or more of the modules were not found, throw error
-    @warn &quot;Invalid arguments: #{$module}. One or more module or sub-module not found.&quot;;
-    @return false;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can see that I&amp;#8217;m doing a few simple checks to make sure every module and sub-module exists within &lt;code&gt;$customizer&lt;/code&gt; map. If the argument was only a single value, then our check from the main mixin (before we even enter the function) will do just fine, but if we&amp;#8217;re fetching from additional sub-modules, we need to make sure those exist so that we don&amp;#8217;t get any error that would make the compilation crash.&lt;/p&gt;
-
-&lt;p&gt;So, our code is fully functional right now, but we haven&amp;#8217;t kept a record of any of the data we passed, or what selectors and which of it&amp;#8217;s properties are customizable. So, let&amp;#8217;s go ahead and create the function needed to do that.&lt;/p&gt;
-
-&lt;h2&gt;Creating our instance map&lt;/h2&gt;
-
-&lt;p&gt;Remember we initialized an empty global map called &lt;code&gt;$customizer-instances&lt;/code&gt;? As I said, we are going to use that variable to house each instance of the mixin and keep track of the selector, which modules it uses, all of its customizable properties as well as their default values.&lt;/p&gt;
-
-&lt;p&gt;The function will be called &lt;code&gt;new-customizer-instance()&lt;/code&gt;. It will take two arguments indentical to the arguments that the main &lt;code&gt;customizer()&lt;/code&gt; mixin takes, and for good reason: we&amp;#8217;re essentially going to loop over the arguments the exact same way, but instead of outputting styles for the selector, we&amp;#8217;re going to save these variables to an &lt;code&gt;$instance&lt;/code&gt; map with the selectors name as the top-most key.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Create new customizable instance
-// 
-// @param {Map}    $args   - map of customizable property-&amp;gt;value pairs
-// @param {String} $module - module to pull property values from
-// 
-// @return {Map} updated instance map
-
-@function new-customizer-instance($args, $module) {
-  // Define static selector
-  $selector: selector-string(); // Flint Ruby function
-  // Empty argument map
-  $instance-properties: ();
-
-  // Run through each argument individually
-  @each $property, $value in $args {
-    // Merge into argument map
-    $instance-properties: map-merge($instance-properties, (
-      &quot;#{$property}&quot;: (
-        &quot;module&quot;: $module,
-        &quot;value&quot;: $value
-      )
-    ));
-  }
-
-  // Create new instance map for selector, save properties
-  $customizer-instance: (&quot;#{$selector}&quot;: $instance-properties);
-
-  // Merge into main map
-  @return map-merge($customizer-instances, $customizer-instance);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As you can see, we&amp;#8217;re using the Ruby function I talked about ealier called &lt;code&gt;selector-string()&lt;/code&gt;, which outputs a stringified version of the &lt;code&gt;&amp;amp;&lt;/code&gt; operator in Sass. That way we can work with the selector the same way we would with any other string, which currently isn&amp;#8217;t possible when using the normal &lt;code&gt;&amp;amp;&lt;/code&gt; operator. You can read more about that issue &lt;a href=&quot;https://gist.github.com/nex3/8050187&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Next, we&amp;#8217;re going to create an empty map that is going to contain each customizable &lt;code&gt;$property&lt;/code&gt; and all of the data for it such as its &lt;code&gt;$module&lt;/code&gt; and the &lt;code&gt;$value&lt;/code&gt; that is used from the module. &lt;/p&gt;
-
-&lt;p&gt;Unlike the main mixin, we&amp;#8217;re not going to keep track of what styles are actually outputted, but rather where those styles came from within our module (&lt;em&gt;&amp;#8220;palette&amp;#8221;&lt;/em&gt;). That way, if say, the &lt;em&gt;&amp;#8220;primary&amp;#8221; &amp;#8220;base&amp;#8221;&lt;/em&gt; color changes via our front-end API, we know that this element is using that value, so we can then update the stylesheet to reflect the change.&lt;/p&gt;
-
-&lt;p&gt;But, as we can tell from the function above, it&amp;#8217;s returning a merged map, but we haven&amp;#8217;t actually told the new map to override the global &lt;code&gt;$customizer-instances&lt;/code&gt; variable. Instead of making the function do that, let&amp;#8217;s create a mixin to handle that part so we can simply include it into the main mixin where we need to. That way, if we ever needed to make small minor adjustments, we only have to update it in one area. This next mixin is going to be rather simple.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Create new customizable instance
-// 
-// @param {Map}    $args   - map of customizable property-&amp;gt;value pairs
-// @param {String} $module - module to pull property values from
-// 
-// @return {Map} - updated instance map
- 
-@mixin new-customizer-instance($args, $module) {
-  $customizer-instances: new-customizer-instance($args, $module) !global;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All that this mixin is doing, is taking the updated instance map from the &lt;code&gt;new-customizer-instance()&lt;/code&gt; function, and setting the global &lt;code&gt;$customizer-instances&lt;/code&gt; variable to reflect that update.&lt;/p&gt;
-
-&lt;h2&gt;Putting it all together&lt;/h2&gt;
-
-&lt;p&gt;Going back to our main &lt;code&gt;customizer()&lt;/code&gt; mixin, let&amp;#8217;s update the code to include all of our new functions.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Create new customizable properties, save to instance map
-// 
-// @param {Map}           $args        - map of customizable property-&amp;gt;value pairs
-// @param {String | Null} $uses (null) - module to pull property values from
-// 
-// @output $property-&amp;gt;$value pairs for each argument
-
-@mixin customizer($args, $uses: null) {
-
-  // Argument is not a map, throw error
-  @if not is-map($args) {
-    @warn &quot;Invalid argument: #{$args}. Argument type is not a map.&quot;;
-  }
-
-  @else {
-    // Use module? Expecting module to exist
-    @if $uses != null {
-
-      // Module doesn't exist, throw error
-      @if not exists($customizer, $uses) {
-        @warn &quot;Invalid argument: #{$uses}. Module was not found.&quot;;
-      }
-
-      @else {
-        // Save arguments to instance map
-        @include new-customizer-instance($args, $uses);
-
-        // Run through each argument individually
-        @each $property, $value in $args {
-          // Check if sub-module exists
-          @if is-list($value) or exists($customizer, $value) {
-            // Get values from sub-module
-            $value: use-module($value, $uses);  
-          } 
-          
-          // Sub-module did not exist, throw error
-          @else {
-            @warn &quot;Invalid argument: #{$value}. Sub-module was not found.&quot;;
-          }
-
-          // Output styles
-          #{$property}: $value;
-        }
-      } 
-    } 
-
-    // No module specified, expecting plain CSS
-    @else {
-
-      // Loop through each argument individually and output
-      @each $property, $value in $args {
-        #{$property}: $value;
-      }
-
-      // Warn that customization mixin shouldn't be used without a module
-      @warn &quot;The customization mixin should not be used without specifying a module to use.&quot;;
-    }
-
-  } 
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;The result&lt;/h2&gt;
-
-&lt;p&gt;Above, I simply added in our new functions, and if all went well, our code should be fully functional.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;.selector {
-  @include customizer($args: (
-    color: &quot;white&quot;,
-    background: &quot;primary&quot; &quot;darkest&quot;,
-    border-color: &quot;complementary&quot; &quot;base&quot;,
-  ), $uses: &quot;palette&quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Everytime the &lt;code&gt;customizer()&lt;/code&gt; mixin is run, a new instance is created with all of the needed data.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// Updates the global instance map with the new selector,
-$customizer-instances: (
-  &quot;.selector&quot;: (
-      &quot;color&quot;: (
-        &quot;module&quot;: &quot;palette&quot;,
-        &quot;value&quot;: &quot;white&quot;,
-      ), 
-      &quot;background&quot;: (
-        &quot;module&quot;: &quot;palette&quot;,
-        &quot;value&quot;: (&quot;primary&quot;, &quot;darkest&quot;),
-      ),
-      &quot;border-color&quot;: (
-        &quot;module&quot;: &quot;palette&quot;,
-        &quot;value&quot;: (&quot;complementary&quot;, &quot;base&quot;),
-      ),
-    ),
-  ),
-);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then the new styles are fetched and outputted into the stylesheet.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;// And outputs the selectors styles from our module,
-.selector {
-  color: #f2f9ff;
-  background: #092226;
-  border-color: #f2192c;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;Final Thoughts&lt;/h2&gt;
-
-&lt;p&gt;Now that we have these variables (&lt;code&gt;$customizer&lt;/code&gt; and &lt;code&gt;$customizer-instances&lt;/code&gt;) containing a wealth of useful data, in part 2 we&amp;#8217;ll walk through the basic syntax for &lt;a href=&quot;https://github.com/ezekg/SassyExport&quot;&gt;SassyExport&lt;/a&gt; and how we&amp;#8217;re going to use it to export all of this data into JSON. We will also discuss the various ways for this data to give opportunity to create some pretty impressive features when coupled with other languages, such as PHP.&lt;/p&gt;
-
-&lt;p&gt;Until next time, you can play with the customization API on &lt;a href=&quot;http://sassmeister.com/gist/ccf842e5ee74287f1868&quot;&gt;SassMeister&lt;/a&gt;, check out &lt;a href=&quot;https://github.com/ezekg/SassyExport&quot;&gt;SassyExport on Github&lt;/a&gt;, or &lt;a href=&quot;http://rubygems.org/gems/SassyExport&quot;&gt;download the gem&lt;/a&gt; to use with Compass in your own project.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Ezekiel Gabrielse is a &lt;a href=&quot;http://ezekielg.com/2014/05/07/the-unintended/&quot;&gt;recent designer-turned-developer&lt;/a&gt; based in north Texas currently employed at &lt;a href=&quot;http://produceresults.com/&quot;&gt;Produce Results&lt;/a&gt; as a developer, and on the odd day, designer. You should definitely follow him on &lt;a href=&quot;https://twitter.com/ezekkkg&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-</item>
-
-
-<item>
-	<title>Tips to help you level up your Sass</title>
-	
-	<link>http://www.sitepoint.com/tips-help-level-up-sass/</link>
-	<guid>http://www.sitepoint.com/tips-help-level-up-sass/</guid>
-	
-	
-	<pubDate>Thu, 26 Jun 2014 00:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>

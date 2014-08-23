@@ -25,7 +25,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.min.css" />
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<title>SassyCast: type conversion in Sass</title>
+<title></title>
 </head>   
 <body>
 <div class="wrapper">
@@ -41,145 +41,14 @@
 
 	<article class="main" role="main"> 
 	
-	 
-		<h1>SassyCast: type conversion in Sass</h1> 
 	
 
-	
-		<p class="date">January 27, 2014
-		
-		</p> 
 	
 
 	
 	
 	
-<p>To <em>cast</em> an entity means changing its data type to another one. This very particular thing so common in all programming languages can turn out to be a huge pain in the (S)ass. Mostly because Sass is not a programming language but that&#8217;s not the point.</p>
 
-<p>Something so simple as changing a stringified number into an integer is actually quite difficult to do in Sass, yet sometimes you might find yourself in the need of doing that (which means there is probably something wrong somewhere in your code by the way).</p>
-
-<p>Sass provides a few types:</p>
-
-<ul>
-  <li><a href="#string">string</a> (with or without quotes)</li>
-  <li><a href="#number">number</a> (with or without CSS unit)</li>
-  <li><a href="#bool">bool</a> (<code>true</code> or <code>false</code>)</li>
-  <li><a href="#color">color</a> (hexadecimal, rgb, hsl, keyword)</li>
-  <li><a href="#list">list</a> (comma separated or space separated)</li>
-  <li><a href="#map">map</a> (from Sass 3.3)</li>
-  <li><a href="#null">null</a> (kind of a weird one)</li>
-</ul>
-
-<p>Let&#8217;s see how we can cast a value to another data type.</p>
-
-<blockquote>
-  <p>Update: I just released <a href="https://github.com/HugoGiraudel/SassyCast">SassyCast</a>, also available as an eponym <a href="http://rubygems.org/gems/SassyCast">Compass extension</a>.</p>
-</blockquote>
-
-<h2>To string</h2>
-
-<p>Casting to a string has to be the easiest type of all thanks to the brand new <code>inspect</code> function from Sass 3.3 which does exactly that: casting to string.</p>
-
-<pre><code class="language-scss">@function to-string($value) {
-  @return inspect($value);
-}
-</code></pre>
-
-<p>It works with anything, even lists and maps. However it does some color conversions (hsl being converted to rgb and things like that) so if it&#8217;s important for you that the result of <code>to-string</code> is precisely the same as the input, you might want to opt for a <a href="https://github.com/HugoGiraudel/SassyJSON/blob/master/stylesheets/encode/helpers/_quote.scss">proof quoting function</a> instead. Same if you are running Sass 3.2 which doesn&#8217;t support <code>inspect</code>.</p>
-
-<p>Another way to cast to string without quoting is adding an unquoted empty string to the value like this <code>$value + unquote("")</code> however it has two pitfalls:</p>
-
-<ul>
-  <li>it doesn&#8217;t work with <code>null</code>: throws <code>Invalid null operation: "null plus """.</code></li>
-  <li>it doesn&#8217;t make maps displayble as CSS values: still throws <code>"(a: 1, b: 2) isn't a valid CSS value."</code></li>
-</ul>
-
-<h2>To number</h2>
-
-<p>I have already written an article about how to convert a stringified number into an actual number, even if it has a CSS unit in <a href="http://hugogiraudel.com/2014/01/15/sass-string-to-number/">this article</a>. </p>
-
-<p>I feel like the function could be improved to accept a boolean to be converted into <code>0</code> or <code>1</code> and things like that but that&#8217;s mostly optimization at this point. </p>
-
-<h2>To bool</h2>
-
-<p>Converting a value to a boolean is both simple and tricky. On the whole, the operation is quite easy because Sass does most of the work by evaluating a value to a boolean when in an <code>@if</code>/<code>@else if</code> directive. Meanwhile, there are some values that Sass considers as <code>true</code> while they are generally refered as <code>false</code>.</p>
-
-<pre><code class="language-scss">@function to-bool($value) {
-  @if not $value or $value == "" or $value == 0 {
-    @return false;
-  }
-  @return true;
-}
-</code></pre>
-
-<p>Note how we have to manually check for <code>""</code> and <code>0</code> because both evaluate to <code>true</code> in Sass.</p>
-
-<pre><code class="language-scss">to-bool(0)           // false
-to-bool(false)       // false
-to-bool(null)        // false
-to-bool("")          // false
-to-bool(1)           // true
-to-bool(true)        // true
-to-bool("abc")       // true
-to-bool(0 1 2)       // true
-to-bool((a: 1, b: 2) // true
-</code></pre>
-
-<h2>To color</h2>
-
-<p>We needed to be able to convert a stringified color into a real color for <a href="">SassyJSON</a> and we succeeded in doing so without too much troubles. Since we can&#8217;t build an hexadecimal color from the <code>#</code> symbol (because it would result in a string), we went with the <code>rgb()</code> for hexadecimal colors. </p>
-
-<p>Basically we parse the triplet, convert each of its three parts from hexadecimal to decimal and run them through the <code>rgb</code> function to have a color. Not very short but does the trick!</p>
-
-<p>I&#8217;ll let you have a look at <a href="https://github.com/HugoGiraudel/SassyJSON/tree/master/stylesheets/decode/helpers/color">the files</a> from our repo if you&#8217;re interested in casting a string to a color.</p>
-
-<h2>To list</h2>
-
-<p>Technically, Sass treats all values as single-item lists so in a way, your value is already a list even if it doesn&#8217;t have an explicit <code>list</code> type. Indeed, you can test its length with <code>length</code>, add new values to it with <code>append</code> and so on. That being said, if you still want to have a <code>list</code> data type anyway there is a very simple way in Sass 3.3 to do so:</p>
-
-<pre><code class="language-scss">@function to-list($value) {
-  @return if(type-of($value) != list, ($value,), $value);
-}
-</code></pre>
-
-<p>No, there is no typo in this code snippet. It&#8217;s really returning <code>($value,)</code>, which is basically a singleton. Starting from Sass 3.3, both <a href="https://github.com/nex3/sass/pull/964">lists and maps accept trailing commas</a> and since <a href="https://github.com/nex3/sass/issues/837#issuecomment-20429965">it&#8217;s not the braces but the delimiter which makes a list</a>, returning <code>$value,</code> returns a list anyway.</p>
-
-<p>If you are running Sass 3.2 and still want to create a singleton, there is a way which is actually kind of clever if you ask me:</p>
-
-<pre><code class="language-scss">@function to-list($args...) {
-  @return append((), $args);
-}
-</code></pre>
-
-<h2>To map</h2>
-
-<p>Converting a single value to a map doesn&#8217;t make much sense since a map is a key/value pair while a value is, well, a value. So in order to cast a value to map, we would have to invent a key to associate the value to. In a matter of simplicity, we can go with <code>1</code> but is it obvious? We could also use the <code>unique-id()</code> function or something. Anyway, here is the main picture:</p>
-
-<pre><code class="language-scss">@function to-map($value) {
-  @return if(type-of($value) != map, (1: $value), $value);
-}
-</code></pre>
-
-<p>Feel free to replace <code>1</code> with whatever makes you feel happy. </p>
-
-<pre><code class="language-scss">to-map("string") // (1: "string")
-to-map(1337)     // (1: 1337)
-
-</code></pre>
-
-<h2>To null</h2>
-
-<p>Well, I don&#8217;t think there is such a thing as <em>casting to null</em>. In JavaScript, <code>typeof null</code> returns an object (&#8230;) but in Sass there is a <code>null</code> type which has a single value bound to it: <code>null</code>. So casting to null is the same as returning <code>null</code>. Pointless.</p>
-
-<h2>Final words</h2>
-
-<p>While we can find hacks and tricks to convert values from one type to another, I&#8217;d advise against doing so. By doing this, you are moving too much logic inside your stylesheet. More importantly, there is no good reason to cast a value in most cases.</p>
-
-<p>In any case, I think it&#8217;s interesting to know <em>how</em> we can do such things. By tinkering around the syntax, we get to know it better and get more comfortable when it comes to do simple things.</p>
-
-
-	
-		<div id="disqus_thread"></div> 
 	
 
 	</article>
@@ -219,10 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
     codepen: false,
     sassmeister: false,
     tableOfContent: false,
-    comments: true,
-    layout: 'article',
+    comments: false,
+    layout: 'default',
     disqus: {
-      title: 'SassyCast: type conversion in Sass',
+      title: '',
       url: window.location.href,
       name: 'hugogiraudel'
     },

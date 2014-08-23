@@ -25,7 +25,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.min.css" />
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<title>Why Element Queries matter</title>
+<title></title>
 </head>   
 <body>
 <div class="wrapper">
@@ -41,90 +41,14 @@
 
 	<article class="main" role="main"> 
 	
-	 
-		<h1>Why Element Queries matter</h1> 
 	
 
-	
-		<p class="date">April 22, 2014
-		
-		</p> 
 	
 
 	
 	
 	
-<p>At work, many of our pages present one or more collection of items, like products, shops, or whatever. It&#8217;s basically a list of thumbnails, with a title and a location and/or a price. When you click on it, it leads you to the page related to the item. We call this the <code>elements</code> component (we could have called it <code>thumbs-list</code> or something but that doesn&#8217;t matter).</p>
 
-<p>Now, this is the core of a lot of other components. For instance, we have a component featuring top products, with the same list of items but in a better wrapper with a heading, a &#8220;see more&#8221; link, a large left border for some visual impact and stuff. It&#8217;s just an example but the <code>elements</code> component is used in at least 3 to 4 other components of our architecture.</p>
-
-<figure class="figure">
-<img src="/images/why-element-queries-matter__thumbs-list.png" alt="" />
-<figcaption>A sketch of our main component</figcaption>
-</figure>
-
-<p>Until now, no big deal. Au contraire, it looks pretty nice! DRY code, component-based architecture. Nothing but the best so let&#8217;s move on.</p>
-
-<p>We also have a couple of different layouts: </p>
-
-<ul>
-  <li>one column: the content spreads across the whole page</li>
-  <li>two columns: there is a sidebar on the right, with ads and related links</li>
-  <li>three columns: there is a sidebar on the left, gathering all search filters</li>
-</ul>
-
-<p>And now, here is the issue: depending on the component and the layout, we want to control the number of items to be displayed on a single row. For instance, in a one-column layout, we could spread to 6 items per row. 4 or 5 in a two-columns layout. 3 in the three-columns layout. </p>
-
-<p>And all this has nothing to do with responsive design, yet. So you can imagine what a nightmare it can be when you have to make this component adapt not only to its context but to the screen size, from 300px to 1200px.</p>
-
-<h2>The problem with media queries</h2>
-
-<blockquote class="pull-quote--right">Media queries are a hack.</blockquote>
-
-<p><a href="http://ianstormtaylor.com/media-queries-are-a-hack/">Media queries are not a solution</a>. At least not in this case. Media queries are great when we want to adapt the layout to the screen size. This is where they really kick off. But that&#8217;s not what we want. I mean, first we want to be able to make our component work great in all situations at a single screen width, we&#8217;ll see responsive issues <em>after</em>.</p>
-
-<p>And when switching from 1 to 2 to 3 columns, the viewport&#8217;s width has absolutely no impact on anything. It&#8217;s always the same. We don&#8217;t give a shit about the viewport&#8217;s size at the moment, we need to know how much space is available for the component depending on the layout used (and in a lesser extend the meta-component used).</p>
-
-<h2>Moving on to element queries</h2>
-
-<p>Element queries are not part of any CSS Specification. They basically do not exist as of today. There are a couple of JavaScript-based polyfills involving various syntaxes, but there is still no draft for a native support.</p>
-
-<p>Yet, element queries would be so much better than media queries. The more I think about it, the more I fell like we almost wouldn&#8217;t need media queries if we had element queries. Working a site/application as a collection of components you put together like LEGOs not only makes more sense but also allows you to handle responsive design at a module level instead of a macro overview.</p>
-
-<p>That&#8217;s why I&#8217;ve decided to give a serious go at element queries at work. I came across quite a couple of versions, all of them looking real good:</p>
-
-<ul>
-  <li><a href="https://github.com/marcj/css-element-queries">CSS Element Queries</a> from Marcj</li>
-  <li><a href="https://github.com/tysonmatanich/elementQuery">Element Queries</a> from Tyson Matanich</li>
-  <li><a href="https://github.com/Snugug/eq.js">EQ.js</a> from Sam Richards</li>
-</ul>
-
-<p>I decided to set up on the last one which looks slightly better than the others. Also I like Sam Richards, that&#8217;s enough for me. Anyway, all we have to do to make it work &mdash; aside from including the script &mdash; is adding a <code>data-eq-pts</code> attribute to the component, listing breakpoints as a map. </p>
-
-<pre><code class="language-html">&amp;lt;ul class="component" data-eq-pts="small: 300, medium: 500, large: 700, huge: 900"&gt;
-  &amp;lt;!-- ... --&gt;
-&amp;lt;/ul&gt;
-</code></pre>
-
-<p>Then when a min-width is matched, the element can be selected using an attribute selector <code>data-eq-state</code> matching the mapped keyword. For instance <code>.component[data-eq-state="small"]</code> when the component is between 300 and 499px wide.</p>
-
-<p>I have designed a little test case (you might want to test it on CodePen directly and resize the screen): </p>
-
-<p data-height="462" data-theme-id="0" data-slug-hash="cfdf5410e622f1e5f41035232de4260c" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/HugoGiraudel/pen/cfdf5410e622f1e5f41035232de4260c">cfdf5410e622f1e5f41035232de4260c</a> by Hugo Giraudel (<a href="http://codepen.io/HugoGiraudel">@HugoGiraudel</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-<p>The first collection (top) is the 1-column layout, the second one (middle) is when we got a sidebar and the last one (bottom) is when we got both the filter bar and the sidebar. As you can see, the number of elements per row adapts to the available width to the component (not the screen size).</p>
-
-<h2>Final thoughts</h2>
-
-<p>I truely believe future of responsive web design lay somewhere around Element Queries. They are not just convenient, they are essential to build a DRY and maintainable architecture.</p>
-
-<p>However, they still come up with a couple of pitfalls like infinite loops and non-sense declarations. Imagine you tell a component to have a width of 399px when it is 400+ pixels large. This is brainfuck. This is probably because of such things element queries are still not natively implemented anywhere.</p>
-
-<p>But I hope we might get to it. Some day.</p>
-
-
-	
-		<div id="disqus_thread"></div> 
 	
 
 	</article>
@@ -161,13 +85,13 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var app = new App({
-    codepen: true,
+    codepen: false,
     sassmeister: false,
     tableOfContent: false,
-    comments: true,
-    layout: 'article',
+    comments: false,
+    layout: 'default',
     disqus: {
-      title: 'Why Element Queries matter',
+      title: '',
       url: window.location.href,
       name: 'hugogiraudel'
     },

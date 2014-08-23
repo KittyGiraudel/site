@@ -25,7 +25,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.min.css" />
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<title>Git tips and tricks - Part 1</title>
+<title></title>
 </head>   
 <body>
 <div class="wrapper">
@@ -41,247 +41,14 @@
 
 	<article class="main" role="main"> 
 	
-	 
-		<h1>Git tips and tricks - Part 1</h1> 
 	
 
-	
-		<p class="date">March 10, 2014
-		 &mdash; by Loïc Giraudel
-		</p> 
 	
 
 	
 	
 	
-<p class="explanation">Hey guys! The following is the first post of a series written by my dear brother Loïc, Git expert at Best Of Media (Tom's Guide &amp; Tom's Hardware). I'll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!</p>
 
-<blockquote>
-  <p><strong>Update 2014-03-17:</strong> Part 2 is out! Go check <a href="http://hugogiraudel.com/2014/03/17/git-tips-and-tricks-part-2/">it</a>.</p>
-</blockquote>
-
-<p>Hi guys! Today, I&#8217;m gonna share with you some Git tips &amp; tricks I&#8217;ve already shared with my workmates at Best Of Media. But before even starting let&#8217;s never forget the more important laws of Git.</p>
-
-<p><strong>Law #1</strong>: <strong>each commit must let the branch into a stable state</strong>.<br />
-You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn&#8217;t be splitted into several commits. For instance, don&#8217;t put the HTML, CSS and JS of a new feature in three separate commits: the functionality requires all of them to work so they should all belong to the same commit. If you have to pause your work (time to grab lunch, go home, switch to another thing or whatever), create a temporary commit which will be enhanced later.</p>
-
-<p><strong>Law #2</strong>: <strong>each commit has only one purpose</strong>.<br />
-If you see a bug while you&#8217;re working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.</p>
-
-<p>Ok, now let&#8217;s start with the real tips &amp; tricks&#8230;</p>
-
-<h2>Use an awesome prompt</h2>
-
-<blockquote class="pull-quote--right">Each commit should leave the branch stable.</blockquote>
-
-<p>If you have to often switch from one branch to another (like a Git monkey), having a great prompt is quite useful to know what is the current branch you&#8217;re working on, if you have modified some files, if you have some commits to push or to pull from the server, and so on.</p>
-
-<p>My favorite so far has been created by <a href="https://gist.github.com/tung">Tung Nguyen</a> and can be found <a href="https://gist.github.com/tung/409780">right here</a>.</p>
-
-<p>This prompt displays:</p>
-
-<ul>
-  <li>username@host</li>
-  <li>your current path</li>
-  <li>the current branch</li>
-  <li>a lightning if you have some modified files in your working directory or in your staging area, waiting to be packed in a commit</li>
-  <li>an up, down or up-and-down arrow if you have commits to push or pull from remote repository</li>
-</ul>
-
-<figure class="figure">
-<img src="/images/git-tips-and-tricks-part-1__git-prompt.png" alt="" />
-<figcaption>A Nguyen flavoured Git prompt</figcaption>
-</figure>
-
-<p>In this image, I&#8217;m working on the &#8220;myFork&#8221; branch and I have modified and/or staged some files but I don&#8217;t have any commit to push or to pull.</p>
-
-<p>To install this prompt in a linux environment, just download it somewhere and update your ~/.bashrc file to add this line:</p>
-
-<pre class="language-git"><code>. /path/to/gitprompt</code></pre>
-
-<p>That&#8217;s it. Just re-open your terminal and go to a Git project directory.</p>
-
-<h2>Find a commit</h2>
-
-<p>This is the very basic when working with Git. Have you ever found yourself asking:</p>
-
-<blockquote>
-  <p>How am I supposed to find a specific commit relative to a specific part of code?</p>
-</blockquote>
-
-<p>Thankfully there are quite a few ways to do this.</p>
-
-<blockquote class="pull-quote--right">Each commit has only one purpose.</blockquote>
-
-<h3>With <code>git log -p</code></h3>
-
-<p>The simplest is to use <code>git log</code>. If you add <code>-p</code> (or <code>-u</code> or <code>--patch</code>), you will have the modifier code of each commit, there&#8217;s nothing for it but to search in the output to find a specific string.</p>
-
-<h3>With <code>git log -S</code></h3>
-
-<p>A better method is to use the <code>-S</code> parameter to search for a specific string: <code>git log -S console.log</code> will search all commit which contains the string &#8220;console.log&#8221; in the patch content. It&#8217;s better than the previous method because it doesn&#8217;t search in the commit message or information (username, date, &#8230;) and it&#8217;s only searching in the patch content and not in the lines added before and after the patch content.</p>
-
-<p>You can add several parameters to reduce the commits related to the search:</p>
-
-<pre class="language-git"><code>git log -S console.log --author lgiraudel --before="2013-10-01 00:00" --after="2013-06-01 00:00" -- web/js</code></pre>
-
-<h3>With <code>git blame</code></h3>
-
-<p><code>git blame</code> displays each line of a file and the last commit which has modified the line. It&#8217;s the better way to find who, when and why a specific line has been added to a file. Actually the command name kind of speaks for itself: <em>blame</em>.</p>
-
-<p>It requires a filepath to works:</p>
-
-<pre class="language-git"><code>$ git blame Gruntfile.js
-15b95608 (Loic 2013-10-08 14:21:51 +0200  1) module.exports = function(grunt) {
-15b95608 (Loic 2013-10-08 14:21:51 +0200  2)
-15b95608 (Loic 2013-10-08 14:21:51 +0200  3)   // Project configuration.
-15b95608 (Loic 2013-10-08 14:21:51 +0200  4)   var gruntConfig = {
-15b95608 (Loic 2013-10-08 14:21:51 +0200  5)     pkg: grunt.file.readJSON('package.json'),
-0a1d4d7b (Alex 2013-10-25 18:15:36 +0200 42)     jshint: {
-0a1d4d7b (Alex 2013-10-25 18:15:36 +0200 43)       all: [
-0a1d4d7b (Alex 2013-10-25 18:15:36 +0200 44)         'Gruntfile.js',
-0a1d4d7b (Alex 2013-10-25 18:15:36 +0200 45)         '/web/js/**/*.js'
-0a1d4d7b (Alex 2013-10-25 18:15:36 +0200 46)       ],
-0a1d4d7b (Alex 2013-10-25 18:15:36 +0200 47)       options: {
-0a1d4d7b (Alex 2013-10-25 18:15:36 +0200 48)         jshintrc: '.jshintrc'
-0a1d4d7b (Alex 2013-10-25 18:15:36 +0200 49)       }
-0a1d4d7b (Alex 2013-10-25 18:15:36 +0200 50)     },
-15b95608 (Seb  2013-10-08 14:21:51 +0200  6)     jasmine: {
-df9b1c21 (Seb  2013-10-11 11:50:08 +0200  7)       src: 'web/js/**/*.js',
-df9b1c21 (Seb  2013-10-11 11:50:08 +0200  8)       options: {
-df9b1c21 (Seb  2013-10-11 11:50:08 +0200  9)         vendor: [
-[...]</code></pre>
-
-<p>It&#8217;s possible to limit the output to specific lines with the parameter <code>-L</code>: <code>git blame -L 10,20</code> will only output lines 10 to 20.</p>
-
-<h2>Improve diff output</h2>
-
-<p><code>git diff</code> is one of the most used Git command before adding changes to the stage area to avoid pushing mistakes to the repository. The diff command can be customized to avoid some inconveniences.</p>
-
-<h3>See changes in one line</h3>
-
-<p>In the diff output, each change is displayed like this :</p>
-
-<pre class="language-git"><code>$ git diff
-diff --git a/Gruntfile.js b/Gruntfile.js
-index 74d58f9..569449c 100755
-&ndash;&ndash;&ndash; a/Gruntfile.js
-+++ b/Gruntfile.js
-@@ -41,7 +41,7 @@ module.exports = function(grunt) {
-     },
-     jshint: {
-       all: [
--        'Gruntfile.js',
-+        'gruntfile.js',
-         '/web/js/**/*.js'
-       ],
-       options: {</code></pre>
-
-<p>But if you use the <code>--color-words</code> parameter, it will write the old and new text in the same line with red and green colors, which can be easier to read in some cases.</p>
-
-<h3>Disable space changes</h3>
-
-<p>When spaces are added in a line, the <code>git diff</code> command displays the line as changed. When you read your changes before creating a commit, this can be annoying to understand the diff, especially when the spaces have been added/removed by your IDE (useless spaces, fix indentation, replace tab by spaces, etc.).</p>
-
-<p>To avoid this pollution in the git diff, you can add the <code>-w</code> option to omit spaces (and tabs) changes.</p>
-
-<p>Let&#8217;s take an explicite example:</p>
-
-<pre class="language-git"><code>$ git diff
-diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
-index b2185a2..887387f 100755
-&ndash;&ndash;&ndash; a/web/js/lazy.js
-+++ b/web/js/lazy.js
-@@ -427,28 +427,30 @@
-         return;
-       }
--      if (url !== null &amp;&amp; url !== '' &amp;&amp; typeof url !== 'undefined') {
--        jQuery.ajax({
--          url: url,
--          type: 'GET',
--          context: this,
--          dataType: $elem.data('tmpl') !== undefined ? 'json' : 'html',
--          success: self.injectData,
--          error: oConf.onError || self.error,
--          beforeSend: function () {
--            $elem.addClass('loading');
--            if (oConf.onLoad &amp;&amp; 'function' === typeof oConf.onLoad) {
--              oConf.onLoad();
--            }
--          },
--          complete: function () {
--            $elem.removeClass('loading');
--            if (oConf.onComplete &amp;&amp; 'function' === typeof oConf.onComplete) {
--              oConf.onComplete();
--            }
--          }
--        });
-+      if (url === null || url === '' || typeof url === 'undefined') {
-+        return;
-       }
-+
-+      jQuery.ajax({
-+        url: url,
-+        type: 'GET',
-+        context: this,
-+        dataType: $elem.data('tmpl') !== undefined ? 'json' : 'html',
-+        success: self.injectData,
-+        error: oConf.onError || self.error,
-+        beforeSend: function () {
-+          $elem.addClass('loading');
-+          if (oConf.onLoad &amp;&amp; 'function' === typeof oConf.onLoad) {
-+            oConf.onLoad();
-+          }
-+        },
-+        complete: function () {
-+          $elem.removeClass('loading');
-+          if (oConf.onComplete &amp;&amp; 'function' === typeof oConf.onComplete) {
-+            oConf.onComplete();
-+          }
-+        }
-+      });
-     };
-     /**</code></pre>
-
-<p>What are the important updates in this piece of code? It&#8217;s not quite easy to check what have been done with a diff like this. But with the <code>-w</code> option:</p>
-
-<pre class="language-git"><code>$ git diff -w
-diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
-index b2185a2..887387f 100755
-&ndash;&ndash;&ndash; a/web/js/lazy.js
-+++ b/web/js/lazy.js
-@@ -427,7 +427,10 @@
-         return;
-       }
--      if (url !== null &amp;&amp; url !== '' &amp;&amp; typeof url !== 'undefined') {
-+      if (url === null || url === '' || typeof url === 'undefined') {
-+        return;
-+      }
-+
-         jQuery.ajax({
-           url: url,
-           type: 'GET',
-@@ -448,7 +451,6 @@
-             }
-           }
-         });
--      }
-     };
-     /**</code></pre>
-
-<p>It&#8217;s now easier to catch up with the changes: I&#8217;ve replaced the test wrapping my Ajax call by a 3-lines test checking right before, which reduces the indentation level of the Ajax call.</p>
-
-<h2>Final thoughts</h2>
-
-<p>I hope those little tricks will help. In the next part, I&#8217;ll continue with other small smart tricks before tackling some advanced Fit useful features.</p>
-
-<blockquote>
-  <p><img src="http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg" alt="Loic Giraudel" /> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: <a href="http://twitter.com/l_giraudel">@l_giraudel</a>.</p>
-</blockquote>
-
-
-	
-		<div id="disqus_thread"></div> 
 	
 
 	</article>
@@ -321,10 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
     codepen: false,
     sassmeister: false,
     tableOfContent: false,
-    comments: true,
-    layout: 'article',
+    comments: false,
+    layout: 'default',
     disqus: {
-      title: 'Git tips and tricks - Part 1',
+      title: '',
       url: window.location.href,
       name: 'hugogiraudel'
     },
