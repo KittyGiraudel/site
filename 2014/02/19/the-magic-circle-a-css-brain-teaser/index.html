@@ -25,7 +25,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.min.css" />
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<title></title>
+<title>The Magic Circle: a CSS brain teaser</title>
 </head>   
 <body>
 <div class="wrapper">
@@ -41,14 +41,64 @@
 
 	<article class="main" role="main"> 
 	
+	 
+		<h1>The Magic Circle: a CSS brain teaser</h1> 
 	
 
 	
+		<p class="date">February 19, 2014
+		
+		</p> 
+	
 
 	
 	
 	
+<blockquote>
+  <p>If you want the solution, be sure to read <a href="http://hugogiraudel.com/2014/02/26/the-magic-circle-trick-revealed/">this post</a>.</p>
+</blockquote>
 
+<p>Months back at work, I have been asked to code a piece of design for the home page of our site that ended up being quite tricky. You know <a href="http://hugogiraudel.com/2014/02/06/calc-css-riddle/">I like riddles</a>, right? Feelink tricksy my precious? Want to play a game?</p>
+
+<h2>What we want?!</h2>
+
+<p>First of all, this is what you should come up with:</p>
+
+<figure class="figure">
+<img src="/images/the-magic-circle-a-css-brain-teaser__result.jpg" alt="" />
+<figcaption>Beautiful, isn't it?</figcaption>
+</figure>
+
+<p>Obviously the difficult part is the transparent circle in the middle of the picture, not adding border-radius to the boxes. Anyway, as you can see we got 4 boxes (2 per row), each with its own color scheme because it’s prettier. On the middle of the frame, the four boxes are kind of cropped to make place to some kind of invisible circle. And in this circle there is a dark disk.</p>
+
+<p><em>Note: this is not an image I made on Photoshop or whatever, this is the result I ended up with.</em></p>
+
+<h2>Rules</h2>
+
+<p>There are no games without rules, so let me give you some constraints for the exercise, alright?</p>
+
+<ul>
+  <li>As you can see, the circle must be transparent to allow the use of a background image,</li>
+  <li>the space between left blocks and right blocks, and the space between top blocks and bottom blocks should be the same,</li>
+  <li>boxes should be able to contain text; if you come up with a solution that makes this impossible, it’s not enough,</li>
+  <li>the DOM should look like this: <code>ul &gt; li &gt; section &gt; header + footer</code> (I came up with a solution to ditch the <code>section</code> element but it removes IE 8 support, see below),</li>
+  <li>no JavaScript, no images.</li>
+</ul>
+
+<p>Feel free to add as many classes and attributes as needed, and to use a CSS preprocessor if you feel more comfortable with it. I have no problem with this whatsoever.</p>
+
+<p>Regarding browser support, I came up with a solution working from Internet Explorer 9 gracefully degrading on Internet Explorer 8. As far as I know, you simply can’t do this on IE 8 without images (or SVG or whatever).</p>
+
+<h2>Game on!</h2>
+<p>y much it. In a week or so, I’ll update the post with my solution and I’ll talk about the more creative and effective proposals you gave me. Surprise me guys, and be sure to have fun doing it. It’s a tricky CSS brain-teaser, I’m sure you’re going to love it. ;)</p>
+
+<p>To help you start, I created <a href="http://codepen.io/HugoGiraudel/pen/cffeb2facdf797f46617e9615105f38d">a very basic CodePen</a> you can fork and link to in the comments.</p>
+
+<p>Game on!</p>
+
+
+	
+		<div id="disqus_thread"></div> 
 	
 
 	</article>
@@ -88,10 +138,10 @@ document.addEventListener('DOMContentLoaded', function() {
     codepen: false,
     sassmeister: false,
     tableOfContent: false,
-    comments: false,
-    layout: 'default',
+    comments: true,
+    layout: 'article',
     disqus: {
-      title: '',
+      title: 'The Magic Circle: a CSS brain teaser',
       url: window.location.href,
       name: 'hugogiraudel'
     },

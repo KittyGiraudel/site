@@ -1,0 +1,24 @@
+{
+  "convertHtml": {
+    "relativePaths": false
+  },
+  "customRubyPath": null,
+  "debug": false,
+  "followLeader": true,
+  "lintScripts": true,
+  "preprocessorLocations": [
+    "assets"
+  ],
+  "preprocessorScriptOutput": "assets/js",
+  "preprocessorStyleOutput": "assets/css",
+  "projectDescription": "I write about Sass. Mostly.",
+  "projectName": "HugoGiraudel.com",
+  "publishedId": null,
+  "serverHostname": "192.168.1.34",
+  "serverPort": null,
+  "templateDefaultLayout": "layout",
+  "templateDefaultPage": "index",
+  "templateDirectory": "templates",
+  "type": "mixture",
+  "useCompass": false
+}

@@ -25,7 +25,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.min.css" />
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<title></title>
+<title>SassyJSON: Talk to the browser!</title>
 </head>   
 <body>
 <div class="wrapper">
@@ -41,14 +41,165 @@
 
 	<article class="main" role="main"> 
 	
+	 
+		<h1>SassyJSON: Talk to the browser!</h1> 
 	
 
 	
+		<p class="date">January 20, 2014
+		
+		</p> 
+	
 
 	
 	
 	
+<p>If you are a reader of CSS-Tricks, you might have come across this article a while back about <a href="http://css-tricks.com/making-sass-talk-to-javascript-with-json/">making Sass talk to JavaScript with JSON</a>. The main idea behind this write up is to provide a way for JavaScript to access content from the stylesheet (a.k.a. CSS).</p>
 
+<p>While the idea is solid, the realization is very simple. There was no CSS magic behind it at all. Les James (the author) manually wrote some <a href="http://json.org/">JSON</a> in the <code>content</code> property of body’s <code>::before</code> pseudo-element, like this:</p>
+
+<pre><code class="language-css">body::before {
+  display: none;
+  content: '{ "current": "small", "all": ["small"] }';
+}
+</code></pre>
+
+<p>Well, you have to tell it is actually kind of cool to be able to do so, right? This is neat! Well fasten your belt guys because <a href="https://twitter.com/fweinb">Fabrice Weinberg</a> and I pushed this to an upper level.</p>
+
+<h2>Introducing SassyJSON</h2>
+
+<p>Fabrice and I recently released <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>, a Sass-powered API to communicate with JavaScript through JSON. Basically it’s <code>json-decode</code> and <code>json-encode</code> in Sass.</p>
+
+<p><em>Why</em>, you ask? Well, I guess that could be useful at some point. With maps coming up in Sass 3.3, we are about to have real structured data in Sass. It will soon be very easy to have a config object (understand a map) or a media-query handler (a map again). Being able to encode those objects to JSON and move them out of the stylesheet opens us to a lot of new horizons. I’ll leave you the only judge of what you’ll do with this.</p>
+
+<p>On my side, I already found a usecase. You may know <a href="https://github.com/thejameskyle/bootcamp">Bootcamp</a>, a Jasmine-like testing framework made in Sass for Sass by <a href="https://twitter.com/thejameskyle">James Kyle</a> (with a Grunt port). I am using Bootcamp for <a href="https://github.com/Team-Sass/SassyLists">SassyLists</a>. I am using Bootcamp for <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>. We are using Bootcamp for <a href="https://github.com/HugoGiraudel/SassyJSON">SassyJSON</a>. This makes sure our Sass code is clean and efficient.</p>
+
+<p>Back to my point: Bootcamp 2 (work in progress) <a href="https://github.com/thejameskyle/bootcamp/issues/75#issuecomment-32131963">will use maps</a> to handle test results. Encoding this map to JSON makes it easy to parse it with JavaScript in order to make a real page for tests result, kind of like Jasmine SpecRunner. This is cool. Picture it guys: </p>
+
+<ol>
+  <li>You write a Sass library</li>
+  <li>You write Jasmine-like tests for your library</li>
+  <li>You run them with Grunt</li>
+  <li>And get a clean HTML page with your results</li>
+</ol>
+
+<p>How awesome is that?</p>
+
+<h2>Sass to JSON</h2>
+
+<p>Writing the <code>json-encode</code> part has been very easy to do. It took us less than an hour to have everything set up. We are able to encode properly any Sass type to JSON, including lists and maps. We have a <code>json-encode</code> function delaying the encoding to type-specific <em>private</em> functions like <code>_json-encode--string</code>, <code>_json-encode--list</code> thanks to the brand new <code>call</code> function from Sass 3.3:</p>
+
+<pre><code class="language-scss">@function json-encode($value) {
+  $type: type-of($value);                            /* 1 */
+  @if function_exists('_json-encode--#{$type}') {    /* 2 */
+    @return call('_json-encode--#{$type}', $value);  /* 3 */
+  } 
+  @warn "Unknown type for #{$value} (#{$type}).";    /* 4 */
+  @return false;                                     /* 4 */
+}
+</code></pre>
+
+<p>Here is what’s going on:</p>
+
+<ol>
+  <li>First we check the type of the given value</li>
+  <li>We look for a function called <code>_json-encode--#{$type}</code> where <code>#{$type}</code> is the type of the value</li>
+  <li>If it exists, we call the function with <code>call</code> by passing it the value as parameter</li>
+  <li>If it doesn’t exist, we warn the user of the issue and return false</li>
+</ol>
+
+<p>We are very glad to be able to do clever stuff like this thanks to Sass 3.3 new functions. It looks both neat and clean, doesn’t it? Otherwise all functions are pretty straight-forward. Really, writing the encoding part has been easy as pie. </p>
+
+<h3>Dumping JSON in CSS</h3>
+
+<p>Once you’ve encoded your Sass into JSON, you’ll want to dump the JSON string into the CSS so that you can access it on the other side. There are several possibilities to dump a string into CSS without messing things up: </p>
+
+<ul>
+  <li>using the <code>content</code> property of a pseudo-element (<code>::after</code> and <code>::before</code>)</li>
+  <li>using the <code>font-family</code> property, preferably on an used element (e.g. <code>head</code>)</li>
+  <li>using a falsy media query</li>
+  <li>using a persistent comment (<code>/*!*/</code>)</li>
+</ul>
+
+<p>Since we don’t like to choose, we picked all of them. We simply made <a href="https://github.com/HugoGiraudel/SassyJSON/blob/master/src/encode/mixins/_json.scss">a mixin with a flag</a> as a parameter defining the type of output you’ll get: <code>regular</code> for option 1 and 2 (cross-browser mess), <code>media</code> for the media query and <code>comment</code> for the comment or even <code>all</code> for all of them (which is the default). Judge for yourselves:</p>
+
+<pre><code class="language-scss">$map: ((a: (1 2 ( b : 1 )), b: ( #444444, false, ( a: 1, b: test ) ), c: (2 3 4 string)));
+@include json-encode($map, $flag: all);
+</code></pre>
+
+<pre><code class="language-css">/*! json-encode: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}' */
+
+body::before {
+  display: none !important;
+  content: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
+}
+
+head {
+  font-family: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
+}
+
+@media -json-encode {
+  json {
+    json: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
+  }
+}
+</code></pre>
+
+<h2>JSON to Sass</h2>
+
+<p>Meanwhile <code>json-decode</code> has been a pain in the ass to write, so much that I was very close to give up. Between nested lists, maps, null values, falsy values and hundreds of other tricky cases it is probably one of the hardest thing I’ve ever done in Sass.</p>
+
+<blockquote class="pull-quote--right">It was so difficult I was close to giving up.</blockquote>
+
+<p>One of the main problem we faced was the ability to retrieve numbers and colors. You see, when you parse a string, everything is a <em>string</em>. Even if <em>you</em> now this part is a number and this part is a boolean, when you slice your string all you have is shorter strings. Not numbers and booleans.</p>
+
+<p>And this is a big deal, because when you use those tiny bits of decoded JSON in your Sass, types matter. If you go <code>42px * 2</code> but <code>42px</code> is actually a <code>string</code> and not a <code>number</code> as it should be, <a href="http://hugogiraudel.com/2013/09/03/use-lengths-not-strings/">then your code breaks</a> and Sass is furious and you are sad. Hence <a href="http://hugogiraudel.com/2014/01/15/sass-string-to-number/">this article</a> about casting a string into a number in Sass.</p>
+
+<h3>Getting started</h3>
+
+<p>It took me 3 completely different tries before I come up with something that actually succeeds in parsing JSON. Frankly I was about to give up after the 2nd one because I had absolutely no idea how to do this efficiently. Just in case, I started searching for algorithms like how to build one’s own JSON parser or something.</p>
+
+<p>I ended up in an obscure StackOverflow thread pointing to JSON parser implementations by browser vendors. Chrome’s one was impossible for me to understand, so I gave a shot at <a href="https://github.com/mozilla/rhino/blob/master/src/org/mozilla/javascript/json/JsonParser.java">Mozilla’s</a> and it looked actually understandable! Mozilla is using Java for their JSON parser, and their code is quite simple to catch up even for someone with absolutely no experience with Java at all (a.k.a. me). </p>
+
+<blockquote class="pull-quote--right">Sass and Java are quite different.</blockquote>
+
+<p>So I followed the Fox’ steps and began implementing it approximately like they did. Breaking news folks: Sass and Java are two very different languages. I had to be creative for some stuff because it was simply impossible to do it their way (number casting, anyone?).</p>
+
+<p>Anyway, the main idea is the following:</p>
+
+<ol>
+  <li>Call <code>json-decode</code> on a JSON string</li>
+  <li>This is defered to <code>_json-decode--value</code></li>
+  <li>This is defered to a type-specific decoding function like <code>__json-decode--number</code></li>
+  <li>The result bubbles up to <code>json-decode</code></li>
+  <li>You got your result</li>
+</ol>
+
+<h3>Global or scoped?</h3>
+
+<p>As I said, the Fox implemented it as a Java class. Among other things, it means this class can have private properties to keep track of some global values. Well I don’t. At first, I used a couple of global variables for <code>$position</code> (the pointer position), <code>$source</code> (the JSON string), <code>$length</code> (the length of the string) to make my code very close to the Java implementation. Indeed, none of my functions required any argument to work, using everything from the global scope.</p>
+
+<p>This was kind of dirty. I didn’t want the parser to rely on global variables and Fabrice wasn’t very satisfied either. So I moved everything back into the functions. This wasn’t an easy move because suddenly I had to pass the pointer from a function to another, from the beginning of the parsing until the very end. And since most functions do return a result, I had to return a list of two element where the first would be the pointer, and the second would be the actual result: <code>($pointer, $result)</code>. Messy but it did the trick.</p>
+
+<h2>What’s left?</h2>
+
+<p>Almost nothing. I am very proud with what we have come up with. The <em>only</em> thing missing from our parser is the ability to detect special characters: <code>\"</code>, <code>\\</code>, <code>\/</code>, <code>\b</code>, <code>\f</code>, <code>\t</code> and <code>\u</code>. We <a href="https://github.com/HugoGiraudel/SassyJSON/blob/master/src/decode/helpers/_strip-token.scss">found a way</a> for <code>\n</code> and <code>\r</code> and <code>\"</code> but that’s pretty much it. I’m not sure we will be able to parse them all, but we need to dig deeper into it before determining.</p>
+
+<p>Otherwise, I think we are good. We have already done almost <a href="https://github.com/HugoGiraudel/SassyJSON/tree/master/test">500 simple tests</a> to cover all basic usages of JSON. Now, we are likely to find edge cases like weird encoding, a space at the wrong place and so on…</p>
+
+<p>Also, I’d like to be able to cover every case of invalid JSON with a <code>false</code> return along with an error message in the console. I don’t want to have a compiler error whenever the JSON string is invalid: this is dirty. To find all the error cases, I need tests. And if you feel like helping you testing it, you’d be more than welcome.</p>
+
+<p>On the performance side, I suppose we could always do better. We try to make the code as fast as possible but it’s not easy when you nest multiple level of functions and loops. I am thinking of using some kind of cache system like <a href="https://github.com/Team-Sass/Sassy-Maps#memo">Memo</a> for SassyMaps by <a href="https://twitter.com/snugug">Snugug</a>. We’ll see.</p>
+
+<h2>Final words</h2>
+
+<p>That’s pretty much it folks. We hope you like it! It’s been one hell of a thing to do and we’re glad to have made it through. Comments and suggestions are obviously welcome!</p>
+
+<p>If you want to test SassyJSON, you’ll be pleased to know it’s available on <a href="https://npmjs.org/">npm</a> or as <a href="http://rubygems.org/gems/SassyJSON">Ruby Gem</a>. We also <a href="https://github.com/jedfoster/SassMeister/issues/70">asked SassMeister to support it</a> so you should soon be able to play with it directly on SassMeister.</p>
+
+
+	
+		<div id="disqus_thread"></div> 
 	
 
 	</article>
@@ -88,10 +239,10 @@ document.addEventListener('DOMContentLoaded', function() {
     codepen: false,
     sassmeister: false,
     tableOfContent: false,
-    comments: false,
-    layout: 'default',
+    comments: true,
+    layout: 'article',
     disqus: {
-      title: '',
+      title: 'SassyJSON: Talk to the browser!',
       url: window.location.href,
       name: 'hugogiraudel'
     },
