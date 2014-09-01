@@ -11,6 +11,76 @@
 			
 
 <item>
+	<title>SassDoc and Semantic Versioning</title>
+	
+	<link>http://hugogiraudel.com/2014/09/01/sassdoc-and-semantic-versioning</link>
+	<guid>/2014/09/01/sassdoc-and-semantic-versioning</guid>
+	
+	
+	<pubDate>Mon, 01 Sep 2014 00:00:00 GMT</pubDate>
+	<description>
+&lt;p&gt;If you are not familiar with the concept of Semantic Versioning, I invite you to read &lt;a href=&quot;http://www.sitepoint.com/semantic-versioning-why-you-should-using/&quot;&gt;my article&lt;/a&gt; on topic at SitePoint. To sum things up, it is a way to version softwares in ordre to provide meaning across version number bumps.&lt;/p&gt;
+
+&lt;p&gt;It looks like this: &lt;code&gt;major.minor.patch&lt;/code&gt; (e.g. &lt;code&gt;1.3.37&lt;/code&gt;). &lt;em&gt;Major&lt;/em&gt; version is for API changes and backward incompatibilities, &lt;em&gt;minor&lt;/em&gt; is for backward compatible features and &lt;em&gt;patch&lt;/em&gt; is for bug fixes.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://npmjs.org&quot;&gt;npm&lt;/a&gt; using Semantic Versioning for its packages, it is no surprise we use it at &lt;a href=&quot;https://github.com/SassDoc/sassdoc&quot;&gt;SassDoc&lt;/a&gt;. Meanwhile, we have seen quite a few suprises regarding our version bumps, so I thought I would clarify some things in a short article.&lt;/p&gt;
+
+&lt;h2&gt;Isn’t it too soon for &lt;code&gt;1.0.0&lt;/code&gt;?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;… I mean, project is not even a month old.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We have started working on SassDoc mid-June and released the stable version of &lt;code&gt;1.0.0&lt;/code&gt; on July 17th according to npm, so we basically took a month for the launch.&lt;/p&gt;
+
+&lt;p&gt;When we were first talking about &lt;code&gt;1.0.0&lt;/code&gt;, someone told us it was too soon because the projet needed to mature a bit first.&lt;/p&gt;
+
+&lt;p&gt;While it makes sense in some way, I think releasing a stable version after a month of such a small project as SassDoc isn’t &lt;em&gt;too soon&lt;/em&gt;, especially when 4 developers have been working on it.&lt;/p&gt;
+
+&lt;p&gt;The project mature as we are working on it and as people start using it. There is no need to wait weeks or months before launching it: we need feedbacks. And you don’t get feedbacks when project is on &lt;code&gt;0.4.3&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;You’ve released 4 minor versions in 2 weeks!&lt;/h2&gt;
+
+&lt;p&gt;Version &lt;code&gt;1.1.0&lt;/code&gt; came on July 20th (3 days after &lt;code&gt;1.0.0&lt;/code&gt;). Version &lt;code&gt;1.2.0&lt;/code&gt; has been released on August 11th (&lt;a href=&quot;http://webdesign.tutsplus.com/articles/new-features-and-a-new-look-for-sassdoc--cms-21914&quot;&gt;announced on Tuts+&lt;/a&gt; the next day). Version &lt;code&gt;1.3.0&lt;/code&gt; came one week later, on August 18th, and version &lt;code&gt;1.4.0&lt;/code&gt; has been launched 2 days later, on August 20th. Finally, version &lt;code&gt;1.5.0&lt;/code&gt; (latest stable as of writing) came on August 25th.&lt;/p&gt;
+
+&lt;blockquote class=&quot;pull-quote--right&quot;&gt;Between 10/08 and 25/08, we went from &lt;code&gt;1.1.0&lt;/code&gt; to &lt;code&gt;1.5.0&lt;/code&gt;.&lt;/blockquote&gt;
+
+&lt;p&gt;So indeed, between August 10th and August 25th, we went from &lt;code&gt;1.1.0&lt;/code&gt; to &lt;code&gt;1.5.0&lt;/code&gt;. So what?&lt;/p&gt;
+
+&lt;p&gt;Here is how we plan versions minor versions: we have a list of features we’d like to work on. Small features are planned for the next minor version, while features that require a reasonable amount of work are delayed for 1 or 2 versions.&lt;/p&gt;
+
+&lt;p&gt;Version &lt;code&gt;1.2.0&lt;/code&gt; has been quite long to build because we released a major feature: custom themes and templates. Not only did this required to build a whole &lt;a href=&quot;https://github.com/themeleon/themeleon&quot;&gt;theming engine&lt;/a&gt;, but we also had to make sure the &lt;a href=&quot;https://github.com/SassDoc/sassdoc/wiki/SassDoc-Data-Interface&quot;&gt;data structure&lt;/a&gt; we hand over to the theme is fixed and documented so that people are able to build their own themes right away.&lt;/p&gt;
+
+&lt;p&gt;But for other minor versions, we just group a couple of features and bundle them together once they are ready. There is no need to wait a specific amount of time. I suppose we could release one version every two weeks as agile methodology dictates, but I’m not sure that would help us whatsoever.&lt;/p&gt;
+
+&lt;p&gt;In the end, we’ve seen some positive effects with this feature-rush. People seem enthusiastic about SassDoc and willing to get their hands on a project that is being improved on a daily basis.&lt;/p&gt;
+
+&lt;h2&gt;You’ll hit &lt;code&gt;2.0.0&lt;/code&gt; in no time!&lt;/h2&gt;
+
+&lt;p&gt;And so what? Is there some specific rule telling that v2 should happend like one year after v1? Here is the thing: we push as many things in v1 as possible as long as they do not introduce backward incompatible changes. When this won’t be possible anymore, we’ll move on to the next major version.&lt;/p&gt;
+
+&lt;p&gt;For instance, if we ever come up with a way to allow both invisible comments and C-styles comments, chances are high that we will break something. Thus, we push it back to &lt;code&gt;2.0.0&lt;/code&gt;. It may be in &lt;code&gt;2.0.0&lt;/code&gt; or &lt;code&gt;2.4.0&lt;/code&gt;, we don’t know.&lt;/p&gt;
+
+&lt;p&gt;Along the same line, we are considering providing a way to document BEM architecture (&lt;code&gt;@module&lt;/code&gt;, &lt;code&gt;@element&lt;/code&gt;…) but since this is likely to be one of the biggest feature we’ve ever shipped, we’ll probably break something; probably minor, but still. So this is delayed to &lt;code&gt;~2.0.0&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, while we’re able to add new features without breaking the API, we keep going. I can already tell there will be a &lt;code&gt;1.6.0&lt;/code&gt; that we are currently working on (bringing YAML configuration on the tabl)e, and while I don’t exclude a &lt;code&gt;1.7.0&lt;/code&gt;, I think we will jump on &lt;code&gt;2.0.0&lt;/code&gt; at this point.&lt;/p&gt;
+
+&lt;h2&gt;You don’t use patches!&lt;/h2&gt;
+
+&lt;p&gt;Well, this is wrong for starter. Plus, when you release a minor version every 3 days, you are less likely to have bug reports. Anyway, when we find a bug in stable version, we immediately push a patch (hence &lt;code&gt;1.1.1&lt;/code&gt; to &lt;code&gt;1.1.6&lt;/code&gt;, &lt;code&gt;1.3.1&lt;/code&gt;, &lt;code&gt;1.3.2&lt;/code&gt;, &lt;code&gt;1.4.1&lt;/code&gt;), and we’ll keep doing so.&lt;/p&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;We’ve been working like crazy on SassDoc lately because not only is this Node project very fun to work on, but we’ve realized our 4-people crew is working quite well. Each of us have some special skills that fit very well with others.&lt;/p&gt;
+
+&lt;p&gt;Plus, we have noticed people were really interested in having a powerful tool to document their Sass projects. We only hope SassDoc will soon be the go-to tool for this.&lt;/p&gt;
+
+&lt;p&gt;By the way, we need feedbacks. And opinions. Consider joining us on &lt;a href=&quot;https://github.com/SassDoc/sassdoc&quot;&gt;the repository&lt;/a&gt; to chat on opened issues!&lt;/p&gt;
+</description>
+</item>
+
+
+<item>
 	<title>Sass 3.4 is out!</title>
 	
 	<link>http://www.sitepoint.com/sass-3-4-is-out/</link>
@@ -491,19 +561,6 @@ $y: (100% - $n * $x) / ($n - 1);
 	
 	
 	<pubDate>Thu, 03 Jul 2014 00:00:00 GMT</pubDate>
-	<description>
-</description>
-</item>
-
-
-<item>
-	<title>How to check for dependencies in Sass libraries</title>
-	
-	<link>http://webdesign.tutsplus.com/tutorials/how-to-check-for-dependencies-in-sass-libraries--cms-21558</link>
-	<guid>http://webdesign.tutsplus.com/tutorials/how-to-check-for-dependencies-in-sass-libraries--cms-21558</guid>
-	
-	
-	<pubDate>Wed, 02 Jul 2014 00:00:00 GMT</pubDate>
 	<description>
 </description>
 </item>
