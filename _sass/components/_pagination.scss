@@ -4,7 +4,7 @@
  */
 .pagination {
   padding: 0;
-  margin: 60px 0 0 0; /* 1 */
+  margin: 60px 0; /* 1 */
   text-align: center;
     
   li {
@@ -16,6 +16,7 @@
   a {
     text-decoration: none;
     display: block;
+    margin: 0 15px;
   }
 }
 
