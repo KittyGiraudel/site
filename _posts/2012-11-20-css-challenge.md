@@ -32,8 +32,7 @@ Joshua Hibbert [used linear gradients](http://jsfiddle.net/joshnh/3PG8j/) to do 
 
 Here is the way I [did it](http://jsfiddle.net/HugoGiraudel/cyeGM/1/):
 
-```css
-body {
+<pre class="language-css"><code>body {
 	text-align: center;
 	overflow: hidden;
 	background: #ffa;
@@ -60,8 +59,7 @@ h1:before {
 	background: black;
 }
 
-h1:after { left: 100%; }
-```
+h1:after { left: 100%; }</code></pre>
 
 So basically, I used both pseudo-elements to create the line. To place them, I set the title to inline-block, and the parent (`body`) text-align to center.
 

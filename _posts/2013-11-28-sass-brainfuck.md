@@ -9,20 +9,16 @@ After months of experimenting with Sass, making crazy and useless things, hackin
 
 Like... for real. There is no distinction in Sass between what you'd call a number (e.g. `42`) and what you'd call a length (e.g. `1337px`). In a sense, that makes sense (see what I did there?). You want to be able to do something like this:
 
-```scss
-$value: 42px;
+<pre class="language-scss"><code>$value: 42px;
 @if $value > 10 {
   // do something
-}
-```
+}</code></pre>
 
 You can do this just because lengths are treated as numbers. Else, you would have an error like *"42px is not a number for 42px gt 10"*.
 
 That being said...
 
-```scss
-42px == 42; // true
-```
+<pre class="language-scss"><code>42px == 42; // true</code></pre>
 
 I can't help but to grind my teeth when I see that the previous assertion returns `true`. Yes, both are some kind of a number, but still... One has a unit and one does not. I don't think the strict equality operator should return true for such a case.
 
@@ -36,40 +32,34 @@ Anyway, every time you use `==` in Sass, it actually means `===`. So basically t
 
 In most cases, this is really not an issue but I came up with a case where I didn't want to check the type. Please have a look at the following example:
 
-```scss
-// Initializing an empty list
+<pre class="language-scss"><code>// Initializing an empty list
 $list: ();
 
 // Checking whether the list is true
 $check: $list == true; // false, as expected
 
 // Checking whether the list is false
-$check: $list == false; // false
-```
+$check: $list == false; // false</code></pre>
 
 While we would expect an empty list to be `false`, it turns out it is not. If it's not false, then it's true! Right? Seems not. An empty list is neither true nor false because `==` also checks for types. So the previous statement would look like something like this: `[list] === [bool]` which is obviously false, no matter what the boolean is.
 
 Okay so it makes sense that the previous example returns `false` in both cases! Nevertheless, `()` being evaluated to `false` would be quite cool when checking for a valid value to append to a list. Please consider the following code:
 
-```scss
-$list: (a, b, c);
+<pre class="language-scss"><code>$list: (a, b, c);
 $value: ();
 
 @if $value { // Short for `$value == true` which is the same as `$value != false`
     $list: append($list, $value);
-}
-```
+}</code></pre>
 
 If `()` was treated as a falsy value, the condition wouldn't match and the 4th element of `$list` wouldn't be an empty list. This is how it works in JavaScript:
 
-```javascript
-var array = ['a', 'b', 'c'];
+<pre class="language-javascript"><code>var array = ['a', 'b', 'c'];
 var value = [];
 
 if(value != false) {
     array.push(value);
-}
-```
+}</code></pre>
 
 This works because JavaScript makes a difference between `!=` and `!==` while Sass uses the latter no matter what.
 
@@ -81,20 +71,16 @@ Even after [many](http://hugogiraudel.com/2013/07/15/understanding-sass-lists/) 
 
 As you may know, most single-values in Sass are considered as one item-long lists. This is to allow the use of `length()`, `nth()`, `index()` and more. Meanwhile, if you test the type of a single-value list, it won't return `list` but whatever the type is (could it be `bool`, `number` or `string`). Quick example:
 
-```scss
-$value: (1337);
-$type: type-of($value); // number
-```
+<pre class="language-scss"><code>$value: (1337);
+$type: type-of($value); // number</code></pre>
 
 Indeed &mdash;as explained in [this comment from Chris Eppstein](https://github.com/nex3/sass/issues/837#issuecomment-20429965) &mdash; parens are not what define lists; it's the delimiter (commas/spaces).
 
 Now what if we append this value to an empty list? Let's see.
 
-```scss
-$value: (1337);
+<pre class="language-scss"><code>$value: (1337);
 $value: append((), $value);
-$type: type-of($value); // list
-```
+$type: type-of($value); // list</code></pre>
 
 Bazinga! Now that you appended the value to an empty list, the type is a list. To be totally honest with you, I am not entirely sure why this happens. I believe the `append()` function returns a list no matter what, so if you append a single value to a list, it returns a list with a single item. That's actually the only way I know to cast a single value into a string in Sass. Not that you're going to need it, but that's actually good to know!
 
@@ -102,8 +88,7 @@ Bazinga! Now that you appended the value to an empty list, the type is a list. T
 
 Okay let's put this straight: variable scope has always been my pet hate. I don't know why, I always got it wrong. I believe variable scope in Sass is good, but for some reason it doesn't always work the way I'd want it to work. I recall trying to help someone who wanted to do something like this:
 
-```scss
-// Initialize a variable
+<pre class="language-scss"><code>// Initialize a variable
 $color: tomato;
 
 // Override it in an impossible @media directive
@@ -114,15 +99,13 @@ $color: tomato;
 // Use it
 body {
     background: $color; // lightgreen;
-}
-```
+}</code></pre>
 
 When I read it now, it seems obvious to me that the assignment in the `@media` directive will override the first one. Indeed Sass is compiled to serve CSS, not evaluated on the fly. This means Sass has no idea whether the `@media` will ever match and it doesn't care. It simpy overrides the variable; there is no scoping involved here. But that would be cool, right?
 
 Okay, let's take another example with Sass scope in mixin directives shall we?
 
-```scss
-// Define a `$size` variable
+<pre class="language-scss"><code>// Define a `$size` variable
 $size: 1em;
 
 // Define a mixin with an argument named `$size`
@@ -137,19 +120,16 @@ el {
     @include whatever {
         font-size: $size;
     }
-}
-```
+}</code></pre>
 
 I want to play a game. In your opinion, what is the CSS rendered by this code (shamelessly stolen from [Mehdi Kabab](http://twitter.com/pioupioum)'s new book - "Advanced Sass and Compass")?
 
 The correct answer is:
 
-```scss
-el {
+<pre class="language-scss"><code>el {
     font-size: 1em;
     margin-bottom: .6em;
-}
-```
+}</code></pre>
 
 This is actually not fucked up at all: it's the expected behaviour from correct variable scoping. While it might look silly for an advanced Sass user, I bet it's not that obvious to the beginner. The declared `$size` variable is used for the font-size while the default value for the `$size` argument is used for the bottom margin since it is inside the mixin, where the variable is scoped.
 
@@ -158,39 +138,29 @@ s 3.3, this is no longer a bug. It has been [fixed](http://sass-lang.com/documen
 
 You all know what a ternary is, right? Kind of a one-line `if`/`else` statement. It's pretty cool when you need to assign a variable differently depending on a condition. In JavaScript, you'd write something like this:
 
-```javascript
-var whatever = condition ? true : false
-```
+<pre class="language-javascript"><code>var whatever = condition ? true : false</code></pre>
 
 Where the first part would be an expression evaluating to a truthy or falsy value, and the other two parts can be whatever you want, not necessarily booleans. Okay, so technically there is no ternary operator in Sass (even if there is one in Ruby very similar to the one we just used). However there is a function called `if()` which works the same way:
 
-```scss
-$whatever: if(condition, true, false);
-```
+<pre class="language-scss"><code>$whatever: if(condition, true, false);</code></pre>
 
 First argument is the condition, second one is the value to return in case the condition is evaluated to `true` and as you may guess the third one is returned when the condition is false. 'til then, no surprise.
 
 Let's have a try, shall we? Consider a function accepting a list as its only argument. It checks for its length and returns either the 2nd item if it has multiple items, or the only item if it has only one.
 
-```scss
-@function f($a) {
+<pre class="language-scss"><code>@function f($a) {
     @return if(length($a) > 1, nth($a, 2), $a);
-}
-```
+}</code></pre>
 
 And this is how to use it:
 
-```scss
-$c: f( bazinga gloubiboulga );
-// returns `gloubiboulga`
-```
+<pre class="language-scss"><code>$c: f( bazinga gloubiboulga );
+// returns `gloubiboulga`</code></pre>
 
 And now with a one-item long list:
 
-```scss
-$c: f( bazinga );
-// List index is 2 but list is only 1 item long for `nth'
-```
+<pre class="language-scss"><code>$c: f( bazinga );
+// List index is 2 but list is only 1 item long for `nth'</code></pre>
 <blockquote class="pull-quote--right">`if()` parses all arguments no matter what.</blockquote>
 
 BAZINGA! The `if()` function returns an error. It looks like it's trying to access the second item in the list, even if the list is only one item long. *Why* you ask? Because the ternary function from Sass parses both 2nd and 3rd arguments no matter what.

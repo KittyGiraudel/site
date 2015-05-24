@@ -26,15 +26,12 @@ Whenever you're getting desperate about a bug, you start doing very unlikely thi
 
 First thing I tried was removing the very first hack from the test sheet because it has a very weird syntax that I suspected could break things apart:
 
-```css
-.selector { (;property: value;); }
-.selector { [;property: value;]; }
-```
+<pre class="language-css"><code>.selector { (;property: value;); }
+.selector { [;property: value;]; }</code></pre>
 
 Pretty weird, right? Anyway that wasn't the problem. Then I removed a second one that I knew could be an issue at some point: the collection of IE 7- hacks that rely on adding special characters at the beginning of the property:
 
-```css
-.selector { !property: value; }
+<pre class="language-css"><code>.selector { !property: value; }
 .selector { $property: value; }
 .selector { &property: value; }
 .selector { *property: value; }
@@ -53,14 +50,11 @@ Pretty weird, right? Anyway that wasn't the problem. Then I removed a second one
 .selector { ~property: value; }
 .selector { ?property: value; }
 .selector { :property: value; }
-.selector { |property: value; }
-```
+.selector { |property: value; }</code></pre>
 
 Well... BINGO! No more issue and all the CSS hacks were working again. Now that I found the deficient hack, I had to figure out which line could make the whole world explode (well, kind of). Not much to do except trying to remove them one by one to find out this one was guilty:
 
-```css
-.selector { [property: value; }
-```
+<pre class="language-css"><code>.selector { [property: value; }</code></pre>
 
 ## About the line
 

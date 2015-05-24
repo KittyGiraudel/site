@@ -35,20 +35,17 @@ One of the first “complicated” thing I tried to create was a mixin handling 
 
 The way I wanted to handle my mixin was something which would look like this:
 
-```scss
-.mixin(parameters) {
+<pre class="language-scss"><code>.mixin(parameters) {
 /* Basic stuff here */
 if (direction = top)    { /* Conditional stuff here */ }
 else if (direction = bottom) { /* Conditional stuff here */ }
 else if (direction = left)   { /* Conditional stuff here */ }
 else if (direction = right)  { /* Conditional stuff here */ }
-}
-```
+}</code></pre>
 
 The fact is **LESS doesn’t handle if / else statements**. Instead, it provides guarded mixins (mixin when a parameter exists or equals / is inferior / is superior to something). So basically, I had to do something like this:
 
-```scss
-.mixin(parameters) {
+<pre class="language-scss"><code>.mixin(parameters) {
 	/*Basic stuff here */
 }
 .mixin(parameters) when (direction = top) {
@@ -62,8 +59,7 @@ The fact is **LESS doesn’t handle if / else statements**. Instead, it provides
 }
 .mixin(parameters) when (direction = right) {
 	/* Conditional stuff here */
-}
-```
+}</code></pre>
 
 It may look similar at the first glance but it involves a few things:
 
@@ -79,17 +75,14 @@ For a recent [Codrops article on pure CSS loading animations](http://tympanus.ne
 
 Loops are cool: they can handle a huge amount of operations in only a few lines and even if you don’t need them everyday in CSS, it’s cool to have the option to use them. I wanted a loop to set the appropriate animation name on a dozen of elements. This is more or less what I was expecting:
 
-```scss
-@nbElements: 10;
+<pre class="language-scss"><code>@nbElements: 10;
 for(@i = 0; @i &lt; @nbElements; @i++) {
 	.my-element:nth-child(@i) { animation-name: loading-@i; }
-}
-```
+}</code></pre>
 
 Well, this is absolutely not how LESS is handling loops. Actually **LESS doesn't handle loops**; you have to use a recursive function (a function calling itself) in order to reproduce the desired behaviour. This is what I ended up with:
 
-```scss
-/* Define loop */
+<pre class="language-scss"><code>/* Define loop */
 .loop(@index) when (@index &gt; 0) {
 	(~".my-element:nth-child(@{index})") {
 		animation-name: "loading-@{index}";
@@ -104,8 +97,7 @@ Well, this is absolutely not how LESS is handling loops. Actually **LESS doesn't
 
 /* Use loop */
 @nbElements: 10;
-.loop (@nbElements);
-```
+.loop (@nbElements);</code></pre>
 
 In what universe is this more user-friendly and intuitive than a classic for loop? Is there anyone here who would have thought about this at first? I started thinking LESS was not as perfect as I first thought but sadly, that was still not the worst part.
 
@@ -115,8 +107,7 @@ Things went very ugly when I wanted to manage @keyframes inside this for loop. Y
 
 I know concatenation can be somewhat annoying to handle depending on the language, but I was far from thinking LESS was so bad on this topic. First thing I discovered: **you can't use/concatenate a variable as a selector** without a work-around and **you absolutely can't use a variable as a property name** in LESS (at least as far as I can tell). Only as a value.
 
-```scss
-/* This works */
+<pre class="language-scss"><code>/* This works */
 .my-element {
 	color: @my-value;
 }
@@ -141,8 +132,7 @@ I know concatenation can be somewhat annoying to handle depending on the languag
 	@my-property: @my-value;
 	@{my-property}: @my-value;
 	(~"@{my-property}"): @my-value;
-}
-```
+}</code></pre>
 
 Two very annoying things there: we definitely can't use variables as property names and the concatenation syntax is ugly as hell. `(~"@{variable}")`, really? But actually if you want my opinion, **the biggest mistake they made is to name variables with the at sign @**.
 
@@ -153,8 +143,7 @@ But come on... How come they didn’t think about variable concatenations and @k
 
 Basically, LESS fails to understand @page and @keyframes inside mixins because it throws an exception according to [its source code](https://github.com/cloudhead/less.js/blob/b235734a11f646252db8f0947fee406ce67cf904/lib/less/parser.js#L1158). So you'll need two nested mixins: one handling your animation, the second one to handle the keyframes. Sounds heavy and complicated, well it is. So let’s say you want to create a custom mixin using @keyframes and vendor prefixes (not much, right?) this is what you have to do:
 
-```scss
-@newline: `"\n"`; /* Newline */
+<pre class="language-scss"><code>@newline: `"\n"`; /* Newline */
 .my-mixin(@selector, @name, @other-parameters) {
 	/* @selector is the element using your animation 
 	 * @name is the name of your animation
@@ -195,8 +184,7 @@ Basically, LESS fails to understand @page and @keyframes inside mixins because i
 .keyframe-mixin(~"}@{newline}", 1,         "");
 
 } 
-.my-mixin("#whatever", name, other-parameters);
-```
+.my-mixin("#whatever", name, other-parameters);</code></pre>
 
 Yeah, this is a complete nightmare. I'm not the one who wrote this; I've been searching for hours how to do this before finding [a very complete answer](http://stackoverflow.com/questions/13160991/chaining-keyframe-attributes-with-less) on StackOverflow leading to two others related topic with wonderful answers ([here](http://stackoverflow.com/questions/11551313/less-css-pass-mixin-as-a-parameter-to-another-mixin/11589227#11589227) and [there](http://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css)).
 
@@ -220,24 +208,20 @@ I won't make a complete and detailed comparison between Sass and LESS because so
 
 ### Sass and conditional statements
 
-```scss
-@mixin my-mixin($parameters) {
+<pre class="language-scss"><code>@mixin my-mixin($parameters) {
 	/* Basic stuff here */
 	@if $my-parameter == value {
 		/* Conditional stuff here */
 	}
-}
-```
+}</code></pre>
 
 This is the Sass syntax for conditional statements in a mixin. Okay, it may lack of some brackets but it's way easier than the LESS syntax in my opinion.
 
 ### Sass and loops
 
-```scss
-@for $i from 1 through 10 {
+<pre class="language-scss"><code>@for $i from 1 through 10 {
 /* My stuff here */
-}
-```
+}</code></pre>
 
 Once again, it may lack of a few brackets but we still understand very well how it works. It's almost plain language: *"for variable i from 1 through 10, do this"*. It looks very intuitive to me.
 
@@ -245,11 +229,9 @@ Once again, it may lack of a few brackets but we still understand very well how 
 
 Sass has absolutely no problem with concatenation neither in selectors nor in property names. You only have to do this `#{$my-variable}` to make things work.
 
-```scss
-#{$my-selector} {
+<pre class="language-scss"><code>#{$my-selector} {
 	#{$my-property}: $my-value;
-}
-```
+}</code></pre>
 
 ### Other things
 

@@ -15,20 +15,17 @@ Compass defines 5 CSS [constants](http://compass-style.org/reference/compass/hel
 
 The point of these inalterable variables is to use the `opposite-position()` function which returns the opposite value for each constant. Please consider the following example:
 
-```scss
-$direction: left;
+<pre class="language-scss"><code>$direction: left;
 $opposite: opposite-position($direction); /* Outputs "right" */
 
 $position: top right;
-$opposite: opposite-position($position); /* Outputs "bottom left" */
-```
+$opposite: opposite-position($position); /* Outputs "bottom left" */</code></pre>
 
 *Note: the opposite of `center` is `center`.*
 
 I personally used this extension in this very site, when it comes to images and quotes pulling ([L32](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L32) and [L47](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L47)).
 
-```scss
-@mixin pull-quote($direction) {
+<pre class="language-scss"><code>@mixin pull-quote($direction) {
 	$opposite: opposite-position($direction);
 
 	text-align: $opposite;
@@ -37,8 +34,7 @@ I personally used this extension in this very site, when it comes to images and 
 	margin-#{$opposite}: 1em;
 	border-#{$opposite}: 6px solid hotpink;
 	padding-#{$opposite}: 1em;
-}
-```
+}</code></pre>
 
 So `$opposite` equals *right* when `$direction` is *left* and vice versa. Allows me to make only one mixin instead of 2!
 
@@ -50,13 +46,11 @@ So `$opposite` equals *right* when `$direction` is *left* and vice versa. Allows
 
 This may be useful as part of a CSS reset for example:
 
-```scss
-@mixin reset-html5 {
+<pre class="language-scss"><code>@mixin reset-html5 {
 	#{elements-of-type(html5-block)} {
 		display: block;
 	}
-}
-```
+}</code></pre>
 
 This snippet forces all HTML5 elements to be displayed as block-elements, even by unsupported browsers.
 
@@ -66,46 +60,38 @@ This snippet forces all HTML5 elements to be displayed as block-elements, even b
 
 Basically, `experimental()` allows you to define mixins outputing content depending on enabled vendor prefixes. It is used in **all** CSS3 built-in mixins. When you use `@include box-sizing(border-box)`, here is what happen:
 
-```scss
-@mixin box-sizing($bs) {
+<pre class="language-scss"><code>@mixin box-sizing($bs) {
   $bs: unquote($bs);
   @include experimental(box-sizing, $bs, -moz, -webkit, not -o, not -ms, not -khtml, official);
-}
-```
+}</code></pre>
 
 This outputs:
 
-```css
-.element {
+<pre class="language-css"><code>.element {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
-}
-```
+}</code></pre>
 
 `-o-`, `-ms-` (and `-khtml-`) are omitted because the `box-sizing()` mixin calls `experimental()` by specifically specifying not to output lines for Opera and Internet Explorer.
 
 Now what's the point of such a tool? As an example, there is no default mixin for CSS animation in Compass. Let's make one!
 
-```scss
-@mixin animation($content) {
+<pre class="language-scss"><code>@mixin animation($content) {
   @include experimental(animation, $content, -webkit, -moz, not -o, not -ms, official);
 }
 
 .element {
   @include animation(my-animation 3s ease);
-}
-```
+}</code></pre>
 
 This outputs:
 
-```css
-.element {
+<pre class="language-css"><code>.element {
 	-webkit-animation: my-animation 3s ease;
 	   -moz-animation: my-animation 3s ease;
 	        animation: my-animation 3s ease;
-}
-```
+}</code></pre>
 
 ## Hacks <a href="#hacks" class="section-anchor">#</h2>
 
@@ -119,20 +105,17 @@ You may have already heard of `has-layout`. [This article](http://www.satzansatz
 
 Back to our business: Compass gives two ways to trigger `hasLayout` on elements: with `zoom` (using the `zoom` MS proprietary property) or with `block` (using the `display` property). I'd go with the zoom, even if it doesn't validate mostly because I'm used to.
 
-```scss
-.element1 {
+<pre class="language-scss"><code>.element1 {
 	@include has-layout(zoom);
 }
 
 .element2 {
 	@include has-layout(block);
-}
-```
+}</code></pre>
 
 Outputs...
 
-```css
-.element1 {
+<pre class="language-css"><code>.element1 {
 	*zoom: 1;
 }
 
@@ -141,25 +124,20 @@ Outputs...
 }
 .element2 {
 	display: block;
-}
-```
+}</code></pre>
 
 You now understand why I use the zoom approach. Otherwise, Compass also provides another way to target IE6 specifically called the bang hack. It relies on the inability for IE6 to understand the `!important` flag:
 
-```scss
-.element1 {
+<pre class="language-scss"><code>.element1 {
 	@include bang-hack(color, red, blue);
-}
-```
+}</code></pre>
 
 Outputs...
 
-```css
-.element1 {
+<pre class="language-css"><code>.element1 {
 	color: red !important;
 	color: blue;
-}
-```
+}</code></pre>
 
 Since IE6 doesn't understand `!important`, it will apply the later declaratation while other browsers will follow the hammer bash flaged rule.
 
@@ -167,14 +145,12 @@ Since IE6 doesn't understand `!important`, it will apply the later declaratation
 
 Compass gives you a way to know the [dimensions of an image](http://compass-style.org/reference/compass/helpers/image-dimensions/) (given as a path) with 2 functions: `image-width()` and `image-height()`.
 
-```scss
-.element {
+<pre class="language-scss"><code>.element {
 	$image: 'my-awesome-background.jpg';
 	background: url($image);
 	width:  image-width($image);
 	height: image-height($image);
-}
-```
+}</code></pre>
 
 In this example, the element will have a size relative to the background-image it uses.
 
@@ -186,11 +162,9 @@ If you're like a total nerd and want to do CSS with math, then you'll be pleased
 
 I once had to use `sin()` in order to make a [mixin for a pure CSS 6-points star](http://hugogiraudel.com/2013/02/18/sass-mixin-star/) but that's pretty much it. If you happen to have a real live use case for one of those functions, I'd be more than pleased to know more about it.
 
-```scss
-$n: 4;
+<pre class="language-scss"><code>$n: 4;
 $pow :  pow($n); /* Returns 16 */
-$sqrt: sqrt($n); /* Returns 2  */
-```
+$sqrt: sqrt($n); /* Returns 2  */</code></pre>
 
 ## Selector helpers
 
@@ -198,8 +172,7 @@ Compass provides some [features](http://compass-style.org/reference/compass/help
 
 Once again, I am not sure if there are a bunch of real life use cases for such functions. Let me show you with a demo, maybe you'll be able to find a use case:
 
-```scss
-/* nest() */
+<pre class="language-scss"><code>/* nest() */
 nest(".class1", ".class2");
 /* Outputs ".class1.class2" */
 nest(".class1, .class2", ".class3");
@@ -220,28 +193,23 @@ append-selector("a, p, li", ".class");
 #{headings(1, 3)} {
 	font-weight: bold;
 	/* Set font-weight to h1, h2, h3 */
-}
-```
+}</code></pre>
 
 ## Image-replacement functions
 
 Compass provides several resources to ease a daily task: [image replacement](http://compass-style.org/reference/compass/typography/text/replacement/). When you have an element with text content, but you want the text to disappear to see the background image instead.
 
-```scss
-.element {
+<pre class="language-scss"><code>.element {
 	@include hide-text(right);
-}
-```
+}</code></pre>
 
 Outputs...
 
-```css
-.element {
+<pre class="language-css"><code>.element {
 	text-indent: 110%;
     white-space: nowrap;
     overflow: hidden;
-}
-```
+}</code></pre>
 
 *The `hide-text()` mixin takes a direction as a parameter. The default one is `left`, resulting in a `text-indent: -199988px` with a `16px` baseline. You definitely should use `right` for better performance.*
 

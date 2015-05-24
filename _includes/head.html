@@ -17,6 +17,14 @@
 
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    
+  <script>
+  {% include utilities.js %}
+  </script>
+
+  <script>
+  loadFont('sg', '/css/fonts/data-woff.css', '/css/fonts/data-woff2.css', '/css/fonts/data-ttf.css');
+  </script>
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />

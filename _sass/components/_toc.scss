@@ -1,0 +1,53 @@
+/**
+ * Table of contents
+ * 1. Make it slightly smaller than content
+ * 2. Cancel top padding
+ * 3. Shift it off in the right margin
+ */
+.toc {
+  background: white;
+  border-radius: 3px;
+  font-size: 90%; /* 1 */
+
+  @media (min-width: 700px) {
+    padding: 15px 40px 15px 20px;
+    float: right;
+    margin-top: -15px; /* 2 */
+  }
+
+  @media (min-width: 1020px) {
+    margin-right: -140px; /* 3 */
+  }
+}
+
+/**
+ * Table of contents heading
+ * 1. Same size as copy text
+ */
+.toc__title {
+  margin-top: 0;
+  font-size: 1em; /* 1 */
+}
+
+/**
+ * Table of contents list
+ */
+.toc__list {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+}
+
+/**
+ * Table of contents item
+ */
+.toc__item {
+  margin-bottom: 5px;
+}
+
+/**
+ * Table of contents link
+ */
+.toc__item a {
+  text-decoration: none;
+}

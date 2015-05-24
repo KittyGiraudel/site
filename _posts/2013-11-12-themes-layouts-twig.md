@@ -15,37 +15,33 @@ Since not all of you are Twig masters (neither am I though), I am going to expla
 
 Twig is mostly about extending templates ([`@extend`](http://twig.sensiolabs.org/doc/tags/extends.html)). Thus we start with setting up a base template outputing some HTML (`<html>`, `<head>`, `<body>`...) and defining Twig blocks. Quick example:
 
-```markup
-<!-- base.html.twig -->
-<!DOCTYPE html>
-<html>
-<head><!-- whatever --></head>
-<body>
+<pre class="language-markup"><code>&lt;!-- base.html.twig -->
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>&lt;!-- whatever -->&lt;/head>
+&lt;body>
     { % block header % }{ % endblock % }
     { % block main   % }{ % endblock % }
     { % block footer % }{ % endblock % }
-</body>
-</html>
-```
+&lt;/body>
+&lt;/html></code></pre>
 
 When a second template extends from the first one, it can dump stuff into those blocks that will bubble up into the first one to finally output content. There is no maximum level of nesting for such a thing so you can do this as deep as you want. Let's continue our example:
 
-```markup
-<!-- page.html.twig -->
+<pre class="language-markup"><code>&lt;!-- page.html.twig -->
 { % extends 'base.html.twig' % }
 
 { % block header % }
-    <h1>Title</h1>
+    &lt;h1>Title&lt;/h1>
 { % endblock % }
 
 { % block main % }
-    <p>My first page</p>
+    &lt;p>My first page&lt;/p>
 { % endblock % }
 
 { % block footer % }
-    <footer>Credits & copyright</footer>
-{ % endblock % }
-```
+    &lt;footer>Credits & copyright&lt;/footer>
+{ % endblock % }</code></pre>
 
 That's pretty much how you work a project with Twig.
 
@@ -53,11 +49,9 @@ That's pretty much how you work a project with Twig.
 
 Now you also can also include files ([`@include`](http://twig.sensiolabs.org/doc/tags/include.html)) which work has you would expect: this is basically the `@include` from PHP. So if you have some static content, like a footer for example, you can include a partials (a bunch of HTML if you will) directly into your footer block like this:
 
-```markup
-{ % block footer % }
+<pre class="language-markup"><code>{ % block footer % }
     { % include 'partials/footer.html.twig' % }
-{ % endblock % }
-```
+{ % endblock % }</code></pre>
 
 ### Embed
 
@@ -73,11 +67,9 @@ We have half a dozen of themes &mdash; one per section of site &mdash; (`shoppin
 
 Back to the issue: we had to be able to define both the theme and the layout on a page per page basis. Something like this:
 
-```markup
-<!-- This doesn't work. -->
+<pre class="language-markup"><code>&lt;!-- This doesn't work. -->
 { % extends '@layout' % }
-{ % extends '@theme' % }
-```
+{ % extends '@theme' % }</code></pre>
 
 Unfortunately, it's not possible to extend multiple templates in Twig (which seems obvious) so we had to find a workaround.
 
@@ -132,25 +124,21 @@ This may sound a bit complicated so why not doing this step by step, shall we?
 
 As seen previously, the base file creates the HTML root document, the major HTML tags and defines the major Twig blocks, especially the one used to define the HTML class on the body element.
 
-```markup
-<!DOCTYPE html>
-<html>
-<head><!-- whatever --></head>
-<body class="{ % block theme % }default{ % endblock % }">
+<pre class="language-markup"><code>&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>&lt;!-- whatever -->&lt;/head>
+&lt;body class="{ % block theme % }default{ % endblock % }">
     { % block layout % }{ % endblock % }
-</body>
-</html>
-```
+&lt;/body>
+&lt;/html></code></pre>
 
 ### Defining a theme
 
 Next, we need to define a theme. A theme file will directly extends the base file, and will be extended by the page file. The content of the theme file is very light. Let's say we have a *shopping* theme; so we have the `shopping.html.twig` file:
 
-```markup
-{ % extends 'base.html.twig' % }
+<pre class="language-markup"><code>{ % extends 'base.html.twig' % }
 
-{ % block theme 'shopping' % }
-```
+{ % block theme 'shopping' % }</code></pre>
 
 The last line of this code example may look a little weird to you: it is the short way for `{ % block theme % }shopping{ % endblock % }`. I like this way better when the content block is like a word or two without any HTML.
 
@@ -160,25 +148,22 @@ Anyway, when using this theme, the `theme` block defined in `base.html.twig` wil
 
 Let's say our page will use the shopping theme we just created with a 2-columns layout with a 2/1 ratio. Right? As I said previously, I like to call my themes the way they work with columns so in this case: `9-3.html.twig`.
 
-```markup
-<div class="wrapper">
-    <div class="col-md-9  content">
+<pre class="language-markup"><code>&lt;div class="wrapper">
+    &lt;div class="col-md-9  content">
         { % block content % }{ % endblock % }
-    </div>
-    <div class="col-md-3  sidebar">
+    &lt;/div>
+    &lt;div class="col-md-3  sidebar">
         { % block sidebar % }{ % endblock % }
-    </div>
-</div>
-```
+    &lt;/div>
+&lt;/div></code></pre>
 
 ### Creating the page
 
 We only need the last piece of the puzzle: the page file. In this file, not much to do except dumping our content in the accurate blocks:
 
-```markup
-{ % extends 'shopping.html.twig' % }
+<pre class="language-markup"><code>{ % extends 'shopping.html.twig' % }
 
-<!-- Filling the 'layout' block defined in base template -->
+&lt;!-- Filling the 'layout' block defined in base template -->
 { % block layout % }
     { % embed '9-3.html.twig' % }
         { % block content % }
@@ -191,27 +176,24 @@ We only need the last piece of the puzzle: the page file. In this file, not much
         { % endblock % }
     { % endembed % }
 { % endblock % }
-
-```
+</code></pre>
 
 ### Rendered HTML
 
-```markup
-<!DOCTYPE html>
-<html>
-<head><!-- whatever --></head>
-<body class="shopping">
-    <div class="col-md-9  content">
+<pre class="language-markup"><code>&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>&lt;!-- whatever -->&lt;/head>
+&lt;body class="shopping">
+    &lt;div class="col-md-9  content">
 
         My awesome content
-    </div>
-    <div class="col-md-3  sidebar">
+    &lt;/div>
+    &lt;div class="col-md-3  sidebar">
 
         My sidebar content
-    </div>
-</body>
-</html>
-```
+    &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
 
 Voila! Pretty neat, right?
 

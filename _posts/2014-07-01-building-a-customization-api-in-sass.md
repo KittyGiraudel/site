@@ -54,8 +54,7 @@ Firstly, let's create the map for our color palette setup.
 
 We are going to keep our colors in a sub-map called *"palette"* so we can keep our main API's code more modular to allow it to work with other customizable properties than just colors.
 
-```scss
-// Customization module defaults
+<pre class="language-scss"><code>// Customization module defaults
 $customizer: (
   "palette": (
     "primary": (
@@ -81,8 +80,7 @@ $customizer: (
 ) !global;
 
 // Global variables
-$customizer-instances: () !global;
-```
+$customizer-instances: () !global;</code></pre>
 
 As you can see, we have a pretty simple map of our default color palette to use within our customization API. I also created another global variable called `$customizer-instances` that will keep a record of all the data from each use of the API. It's an empty map for now. 
 
@@ -92,8 +90,7 @@ So, let's go ahead and move on to the next step, which is fleshing out the bones
 
 Before we go any further, let's decide on how we want our API to work. To be able to jump right into the code in the rest of this article, this is what our syntax is going to look like at the end:
 
-```scss
-.selector {
+<pre class="language-scss"><code>.selector {
   @include customizer(
     $args: (
       color: "white",
@@ -102,8 +99,7 @@ Before we go any further, let's decide on how we want our API to work. To be abl
     ), 
     $uses: "palette"
   );
-}
-```
+}</code></pre>
 
 In order to make the API easy to use and as close to the usual CSS syntax as possible, we're going to require the first argument to be a map called `$args` so that we can use `$key->$value` pairs for each customizable property, as well as allowing multiple properties to be passed to a single instance of the mixin. 
 
@@ -113,8 +109,7 @@ The next argument will be fetching a module from within the above `$customizer` 
 
 I also want to make it fall back to outputting plain CSS if no module to use is specified, rather than erroring out we can simply `@warn` the user that the mixin shouldn't be used that way. Therefore, our API will be less frustrating to newer users that don't happen to be using it correctly.
 
-```scss
-// Create new customizable properties, save to instance map
+<pre class="language-scss"><code>// Create new customizable properties, save to instance map
 // 
 // @param {Map}           $args         - map of customizable property->value pairs
 // @param {String | Null} $users (null) - module to pull property values from
@@ -155,8 +150,7 @@ I also want to make it fall back to outputting plain CSS if no module to use is 
   @else {
     @warn "Invalid argument: #{$args}. Argument type is not a map.";
   }
-}
-```
+}</code></pre>
 
 I've commented the above code, but let's go ahead and dig a little deeper into the structure of the mixin. Like I said above, the first thing we should do is check that the `$args` argument is a map, and depending on the result, we'll either throw an error, or move on.
 
@@ -166,8 +160,7 @@ On the other hand, if `$uses` is not `null`, let's move on to check whether or n
 
 Now, since we want to be able to pass multiple customizable properties into a single instance of the mixin, we need to iterate over each of those arguments. So, from within our conditional statement that checks whether or not the module exists, let's add the following code:
 
-```scss
-// @if exists($customizer, $uses) {
+<pre class="language-scss"><code>// @if exists($customizer, $uses) {
 
   // Run through each argument individually
   @each $arg in $args {
@@ -184,8 +177,7 @@ Now, since we want to be able to pass multiple customizable properties into a si
     #{$property}: $value;
   }
 
-// } @else module did not exist
-```
+// } @else module did not exist</code></pre>
 
 In order to loop through each argument, we use an `@each` loop. Within the loop, we retrieve both the `$property` and the `$value` using the `nth()` function. Then, we check if `$value` is either a list (when we're fetching the value from a deeper sub-module such as *"primary"*), or that the module exists (for values that don't have additional sub-modules, but rather a single value such as *"white"*). Assuming this check returns `true`, we need a way to fetch these values from their deeper sub-modules; so let's create a function for that called `use-module()`.
 
@@ -195,8 +187,7 @@ The function is going to take two arguments, fairly similar to the arguments our
 
 Which brings us to the second argument! Since the function needs to know which module it's fetching from, let's create an argument called `$module`.
 
-```scss
-// Return value for property based on passed module
+<pre class="language-scss"><code>// Return value for property based on passed module
 // 
 // @param {List}   $args   - list of keys for customizable property
 // @param {String} $module - module to pull property values from
@@ -229,8 +220,7 @@ Which brings us to the second argument! Since the function needs to know which m
     @warn "Invalid arguments: #{$module}. One or more module or sub-module not found.";
     @return false;
   }
-}
-```
+}</code></pre>
 
 You can see that I'm doing a few simple checks to make sure every module and sub-module exists within `$customizer` map. If the argument was only a single value, then our check from the main mixin (before we even enter the function) will do just fine, but if we're fetching from additional sub-modules, we need to make sure those exist so that we don't get any error that would make the compilation crash.
 
@@ -242,8 +232,7 @@ Remember we initialized an empty global map called `$customizer-instances`? As I
 
 The function will be called `new-customizer-instance()`. It will take two arguments indentical to the arguments that the main `customizer()` mixin takes, and for good reason: we're essentially going to loop over the arguments the exact same way, but instead of outputting styles for the selector, we're going to save these variables to an `$instance` map with the selectors name as the top-most key.
 
-```scss
-// Create new customizable instance
+<pre class="language-scss"><code>// Create new customizable instance
 // 
 // @param {Map}    $args   - map of customizable property->value pairs
 // @param {String} $module - module to pull property values from
@@ -272,8 +261,7 @@ The function will be called `new-customizer-instance()`. It will take two argume
 
   // Merge into main map
   @return map-merge($customizer-instances, $customizer-instance);
-}
-```
+}</code></pre>
 
 As you can see, we're using the Ruby function I talked about ealier called `selector-string()`, which outputs a stringified version of the `&` operator in Sass. That way we can work with the selector the same way we would with any other string, which currently isn't possible when using the normal `&` operator. You can read more about that issue [here](https://gist.github.com/nex3/8050187).
 
@@ -283,8 +271,7 @@ Unlike the main mixin, we're not going to keep track of what styles are actually
 
 But, as we can tell from the function above, it's returning a merged map, but we haven't actually told the new map to override the global `$customizer-instances` variable. Instead of making the function do that, let's create a mixin to handle that part so we can simply include it into the main mixin where we need to. That way, if we ever needed to make small minor adjustments, we only have to update it in one area. This next mixin is going to be rather simple.
 
-```scss
-// Create new customizable instance
+<pre class="language-scss"><code>// Create new customizable instance
 // 
 // @param {Map}    $args   - map of customizable property->value pairs
 // @param {String} $module - module to pull property values from
@@ -293,8 +280,7 @@ But, as we can tell from the function above, it's returning a merged map, but we
  
 @mixin new-customizer-instance($args, $module) {
   $customizer-instances: new-customizer-instance($args, $module) !global;
-}
-```
+}</code></pre>
 
 All that this mixin is doing, is taking the updated instance map from the `new-customizer-instance()` function, and setting the global `$customizer-instances` variable to reflect that update.
 
@@ -302,8 +288,7 @@ All that this mixin is doing, is taking the updated instance map from the `new-c
 
 Going back to our main `customizer()` mixin, let's update the code to include all of our new functions.
 
-```scss
-// Create new customizable properties, save to instance map
+<pre class="language-scss"><code>// Create new customizable properties, save to instance map
 // 
 // @param {Map}           $args        - map of customizable property->value pairs
 // @param {String | Null} $uses (null) - module to pull property values from
@@ -362,27 +347,23 @@ Going back to our main `customizer()` mixin, let's update the code to include al
     }
 
   } 
-}
-```
+}</code></pre>
 
 ## The result
 
 Above, I simply added in our new functions, and if all went well, our code should be fully functional.
 
-```scss
-.selector {
+<pre class="language-scss"><code>.selector {
   @include customizer($args: (
     color: "white",
     background: "primary" "darkest",
     border-color: "complementary" "base",
   ), $uses: "palette");
-}
-```
+}</code></pre>
 
 Everytime the `customizer()` mixin is run, a new instance is created with all of the needed data.
 
-```scss
-// Updates the global instance map with the new selector,
+<pre class="language-scss"><code>// Updates the global instance map with the new selector,
 $customizer-instances: (
   ".selector": (
       "color": (
@@ -399,19 +380,16 @@ $customizer-instances: (
       ),
     ),
   ),
-);
-```
+);</code></pre>
 
 Then the new styles are fetched and outputted into the stylesheet.
 
-```scss
-// And outputs the selectors styles from our module,
+<pre class="language-scss"><code>// And outputs the selectors styles from our module,
 .selector {
   color: #f2f9ff;
   background: #092226;
   border-color: #f2192c;
-}
-```
+}</code></pre>
 
 ## Final Thoughts
 

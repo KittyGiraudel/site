@@ -23,15 +23,13 @@ So the main idea is to enable a Google Web Font using a variable to have only on
 
 Accustomed to SASS like me will wonder where is the difficulty in this little exercise. Problem is LESS is extremely annoying when it comes to both url() and string concatenation. I partially covered the topic in <a href="http://hugogiraudel.com/2012/11/13/less-to-sass/">this article</a>.
 
-```scss
-/* SASS version */
+<pre class="language-scss"><code>/* SASS version */
 
 $my-font: "Merriweather";
 $url: "http://fonts.googleapis.com/css?family=#{$my-font}";
 @import url($url);
 
-h1 { font-family: $my-font; }
-```
+h1 { font-family: $my-font; }</code></pre>
 
 I struggled about one hour on this and couldn't make it work. All my respect to the one who will find the solution.
 

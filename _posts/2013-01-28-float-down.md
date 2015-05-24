@@ -36,9 +36,7 @@ I first managed to do it with `:nth-child()` selectors, replacing manually each 
 
 I was very upset not finding any proper way to do it with CSS so I did it with a mix of CSS and JavaScript (in fact jQuery). I don't know if it's the best way to do it in JavaScript but here is what I came up with:
 
-```javascript
-$('.myList > li:odd').remove().appendTo('.myList');
-```
+<pre class="language-javascript"><code>$('.myList > li:odd').remove().appendTo('.myList');</code></pre>
 
 Basically I target one out of two items with `:nth-child(even)` then remove it from the DOM to finally append it again. This does exactly what was asked so I think it's a decent solution ([JSFiddle](http://jsfiddle.net/VAdT3/6/)).
 
@@ -46,12 +44,10 @@ Basically I target one out of two items with `:nth-child(even)` then remove it f
 
 Finally someone came up with a better idea (and probably a better understanding of CSS) than mine with a pure CSS and very elegant solution ([CodePen](http://codepen.io/wolfcry911/pen/IkBbu)).
 
-```css
-li:nth-child(even) {
+<pre class="language-css"><code>li:nth-child(even) {
   margin: 110px 0 0 -110px; 
   /* Given a 100*100px element with a 10px margin */
-}
-```
+}</code></pre>
 
 Wolfcry911 simply used margins to reposition one out of two items. It's a brilliant solution, really.
 
@@ -61,11 +57,9 @@ However it relies on CSS advanced pseudo-selectors so for a deeper browser suppo
 
 I just noticed [Estelle Weyl](http://codepen.io/estelle) did it in another clever way with CSS columns ([CodePen](http://codepen.io/estelle/pen/zkjrn)). I'm actually wondering if it's not the better option all in all since it requires only one single CSS line (prefixes omitted). 
 
-```css
-ul {
+<pre class="language-css"><code>ul {
   columns: 5;
-}
-```
+}</code></pre>
 
 Congratulations to her for such a smart solution. :)
 
@@ -79,8 +73,7 @@ A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitt
 
 Instead of doing `:nth-child(even)`, we need two different selectors:
 
-```css
-li:nth-child(3n+2){
+<pre class="language-css"><code>li:nth-child(3n+2){
   margin: 120px 0 0 -110px;
   background: limegreen;
 }
@@ -88,8 +81,7 @@ li:nth-child(3n+2){
 li:nth-child(3n+3) {
   margin: 230px 0 0 -110px;
   background: crimson;
-}
-```
+}</code></pre>
 
 ## Automating the process
 
@@ -99,13 +91,11 @@ So I found a solution to do it with the number of rows we want, pretty cool. Imm
 
 First, I had to move everything to em units in order to make the whole thing easier to customize. I also created a few variables:
 
-```scss
-$rows: 4; 
+<pre class="language-scss"><code>$rows: 4; 
 $baseline: 10px;
 $width: 4em;
 $height: 4em;
-$margin: 0.4em;
-```
+$margin: 0.4em;</code></pre>
 
 A few explanations about the variables:
 
@@ -121,8 +111,7 @@ A few explanations about the variables:
 
 Now let's get to the funny part. I figured out there is some kind of pattern to achieve this and to be honest it took me a while (no pun intended) to create the while loop for this, struggling between my comprehension of the problem and Sass syntax errors. Anyway, this is the main idea:
 
-```scss
-$i: $rows; // Initializing the loop
+<pre class="language-scss"><code>$i: $rows; // Initializing the loop
 
 @while $i > 1 {
 
@@ -134,13 +123,11 @@ $i: $rows; // Initializing the loop
   }
 
   $i: $i - 1;
-}
-```
+}</code></pre>
 
 It is pretty tough. Let me show you how it compiles when $rows is set to 4 (other variables remain unchanged):
 
-```scss
-li:nth-child(4n+4) {
+<pre class="language-scss"><code>li:nth-child(4n+4) {
   margin-top: 13.6em;  // (3 * 4em) + (4 * 0.4em)
   margin-left: -4.4em; // -(4em + 0.4em)
 }
@@ -153,8 +140,7 @@ li:nth-child(4n+3) {
 li:nth-child(4n+2) {
   margin-top: 4.8em;   // (1 * 4em) + (2 * 0.4em)
   margin-left: -4.4em; // -(4em + 0.4em)
-}
-```
+}</code></pre>
 
 I think the pattern should be easier to see now thanks to the comments. For X rows you'll have `X-1` different selectors starting from `:nth-child(Xn+Y)` (where X and Y are the same) until Y becomes stricly superior than 1 (so Y equals 2).
 

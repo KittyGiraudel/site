@@ -15,8 +15,7 @@ I can see why this nice folk came up with such a question. When you've been used
 
 Let's start with a quick reminder. First of all, the `list` data type isn't specific to Sass. Actually CSS has been using lists for ages! Doubt it? Consider the following CSS rules:
 
-```css
-.element, 
+<pre class="language-css"><code>.element, 
 .other-element {
   font-family: 'Arial', 'Helvetica', sans-serif;
   padding: 10px 5px 15px 0;
@@ -24,8 +23,7 @@ Let's start with a quick reminder. First of all, the `list` data type isn't spec
   background: url('my/awesome/image.png') 0 0 #666;
   border: 1px solid silver;
   box-shadow: 0 .5em .25em -.5em rgba(0,0,0,.1);
-}
-```
+}</code></pre>
 
 All these properties (and many more) use lists as values. To my knowledge, only `font-family` uses a comma-separated list though. Anyway, most of them are shorthands for multiple properties, so that's not surprising but still. Even the selector itself is a (comma-separated) list!
 
@@ -41,8 +39,7 @@ I believe what we've just seen in the first section is a valid answer for the qu
 
 Let me try with a practical example: at work, we display an image background directly related to the post-code the user is being geolocated in. For instance, I live in Grenoble, France of which the post-code is 38000, shortened as 38. Then, I got served a background image called `background-38.jpg`. To avoid doing this manually for all post-codes, we use a list.
 
-```scss
-$zips: 07, 26, 38, 69, 'unknown';
+<pre class="language-scss"><code>$zips: 07, 26, 38, 69, 'unknown';
 
 // 1. `.zipcode-*` class on body
 // 2. Header only 
@@ -57,15 +54,13 @@ $zips: 07, 26, 38, 69, 'unknown';
       background-image: url('../bundles/images/backgrounds/#{$zip}-large.jpg');
     }
   }
-}
-```
+}</code></pre>
 
 Thanks to the `$zips` list and the `@each` loop, we can make the whole process of assigning a specific background image depending on a class very simple. Also it gets damn simple to add/remove a zip-code: all we have to do is updating the list. 
 
 Okay. I believe this is a decent use case for a list. Now what about lists functions like `append` or `length`? Finding a good example is getting tricky, but I suppose we could take the one I recently talked about in [this article about star rating widget in Sass](http://hugogiraudel.com/2014/02/24/star-rating-system-with-sass/) where I build a selector out of a Sass list. 
 
-```scss
-@for $i from 1 to 5 {
+<pre class="language-scss"><code>@for $i from 1 to 5 {
   $selector: ();
 
   @for $j from 1 through $i {
@@ -79,14 +74,11 @@ Okay. I believe this is a decent use case for a list. Now what about lists funct
   #{$selector} {
     // CSS rules
   }
-}
-```
+}</code></pre>
 
 The code might be complex to understand so I suggest you read the related article. For instance, when `$i` is 4, the generated `$selector` would be:
 
-```scss
-[data-rate^='4'] .star-1, [data-rate^='4'] .star-2, [data-rate^='4'] .star-3, [data-rate^='4'] .star-4 { ... }
-```
+<pre class="language-scss"><code>[data-rate^='4'] .star-1, [data-rate^='4'] .star-2, [data-rate^='4'] .star-3, [data-rate^='4'] .star-4 { ... }</code></pre>
 
 Anyway, this is a valid usecase for `append` even if you could have worked around the problem using `@extend`. 
 

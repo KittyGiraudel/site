@@ -20,21 +20,17 @@ But first, let's take a minute to think about what our mixin have to do:
 
 What I always wanted to be able to is something like this:
 
-```scss
-.element {
+<pre class="language-scss"><code>.element {
 	absolute: left 1em top 1.5em
-}
-```
+}</code></pre>
 
 And this should output:
 
-```scss
-.element {
+<pre class="language-scss"><code>.element {
 	position: absolute;
 	left: 1em;
 	top: 1.5em;
-}
-```
+}</code></pre>
 
 Unfortunately, we cannot do something like this in Sass and won't probably ever be able to do so since we have no way to define custom properties. So let's try to do something close.
 
@@ -42,11 +38,9 @@ Unfortunately, we cannot do something like this in Sass and won't probably ever 
 
 First, we will build the skeleton for our mixin. We seem to want to call our mixin with the keyword *absolute* so why not calling it `absolute`? And we pass it a list.
 
-```scss
-@mixin absolute($args) {
+<pre class="language-scss"><code>@mixin absolute($args) {
 	/* Mixin stuff here */
-}
-```
+}</code></pre>
 
 ### Assembling the gears
 
@@ -54,12 +48,10 @@ Now how does it work? Basically, you define the name of the offset you want to e
 
 The first thing to do is to tell our mixin what are the keywords we want to check. Easiest thing to do so is to create a list inside our mixin:
 
-```scss
-@mixin absolute($args) {
+<pre class="language-scss"><code>@mixin absolute($args) {
 	$offsets: top right bottom left;
 	/* Order doesn't matter */
-}
-```
+}</code></pre>
 
 Now, we will loop through the offsets and make three verifications:
 
@@ -67,8 +59,7 @@ Now, we will loop through the offsets and make three verifications:
 1. Make sure the index of an offset + 1 is lesser than or equal to the length of the list,
 1. Make sure the value listed after an offset is a valid length/number.
 
-```scss
-@mixin absolute($args) {
+<pre class="language-scss"><code>@mixin absolute($args) {
 	$offsets: top right bottom left;
 
 	@each $o in $offsets {
@@ -80,13 +71,11 @@ Now, we will loop through the offsets and make three verifications:
 			#{$o}: nth($args, $i + 1);
 		}
 	}
-}
-```
+}</code></pre>
 
 Okay, this might look quite complicated. Why don't we simply take it over with comments?
 
-```scss
-@mixin absolute($args) {
+<pre class="language-scss"><code>@mixin absolute($args) {
 	/**
 	 * List of offsets to check for in $args
  	 */
@@ -121,8 +110,7 @@ Okay, this might look quite complicated. Why don't we simply take it over with c
 			#{$o}: nth($args, $i + 1);
 		}
 	}
-}
-```
+}</code></pre>
 
 I guess this is pretty clear now. Not quite hard in the end, is it?
 
@@ -134,17 +122,14 @@ Why don't we create a *private mixin* instead? Something that isn't meant to be 
 
 *Note: you might want to rename it differently to avoid conflict with other mixins of your project. Indeed "position" is a quite common keyword.*
 
-```scss
-@mixin position($position, $args) {
+<pre class="language-scss"><code>@mixin position($position, $args) {
 	/* Stuff we saw before */
 	position: $position;
-}
-```
+}</code></pre>
 
 And now, we create the 3 mixins we need: `absolute()`, `fixed()` and `relative()`.
 
-```scss
-@mixin absolute($args) {
+<pre class="language-scss"><code>@mixin absolute($args) {
 	@include position(absolute, $args);
 }
 
@@ -154,8 +139,7 @@ And now, we create the 3 mixins we need: `absolute()`, `fixed()` and `relative()
 
 @mixin relative($args) {
 	@include position(relative, $args);
-}
-```
+}</code></pre>
 
 Almost done. To indicate `position()` is a private mixin, I wanted to prefix it with something. I first thought about `private-position()` but it didn't feel great. In the end I went with `_position()`. Since I use hyphens to separate words in CSS, the underscore was unused. No risk of conflicts with anything in a project!
 
@@ -165,29 +149,23 @@ Almost done. To indicate `position()` is a private mixin, I wanted to prefix it 
 
 Using this mixin is pretty simple:
 
-```scss
-.element {
+<pre class="language-scss"><code>.element {
 	@include absolute(top 1em right 10%);
-}
-```
+}</code></pre>
 
 Outputs:
 
-```scss
-.element {
+<pre class="language-scss"><code>.element {
 	position: absolute;
 	top: 1em;
 	right: 10%;
-}
-```
+}</code></pre>
 
 Now, what if we try to do bad things like assigning no value to an offset, or an invalid value?
 
-```scss
-.element {
+<pre class="language-scss"><code>.element {
 	@include absolute(top 1em left "HAHAHA!" right 10% bottom);
-}
-```
+}</code></pre>
 
 In this case:
 
@@ -196,13 +174,11 @@ In this case:
 * `right` will be defined to `10%`
 * `bottom` won't be set since we didn't give it any value
 
-```scss
-.element {
+<pre class="language-scss"><code>.element {
 	position: absolute;
 	top: 1em;
 	right: 10%;
-}
-```
+}</code></pre>
 
 Clean handling of errors and invalid inputs. Nice!
 
@@ -212,13 +188,11 @@ The only thing that still bother me quite a bit with this is we still have to wr
 
 Hopefully, some day we will see a shorter way to call mixins in Sass. Indeed, someone already [opened the issue](https://github.com/nex3/sass/issues/366) and the idea seems to have taken its way across minds including [Chris Eppstein's](https://github.com/nex3/sass/issues/366#issuecomment-7559687). The `+` operator has been proposed (as in the indented Sass syntax) but this could involve some issues when dealing with mixins with no-arguments + `@content` directive. Have a look at this:
 
-```scss
-abcd {
+<pre class="language-scss"><code>abcd {
 	+efgh {
 		property: value;
 	}
-}
-```
+}</code></pre>
 
 Is it supposed to mean *"assign `property: value` to a direct sibling `efgh` of `abcd`"* or *"call mixin `efgh` in `abcd`"*? Thus someone proposed `++` instead and it seems quite good so far. No idea when or if we will ever see this coming though. Let's hope.
 

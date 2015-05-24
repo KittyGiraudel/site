@@ -1,8 +1,7 @@
-.post-title {
-  font-size: 36px;
-  margin-top: 0;
-}
-
+/**
+ * Date from in the post page
+ */
 .post-date {
   color: $medium-grey;
+  font-family: $code-font-stack;
 }

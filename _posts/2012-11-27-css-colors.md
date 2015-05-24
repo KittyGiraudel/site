@@ -74,8 +74,7 @@ A RGB value can be defined using four different syntaxes but only two of them ar
 
 So, summarized, we end up with two different ways to display CSS colors with the <code>rgb()</code> function: percentages and integers between 0 and 255. Let’s illustrate this with an example, shall we?
 
-```css
-.black { /* I’m black! */
+<pre class="language-css"><code>.black { /* I’m black! */
 	color: rgb(0, 0, 0);
 	color: rgb(0%, 0%, 0%);
 }
@@ -98,8 +97,7 @@ So, summarized, we end up with two different ways to display CSS colors with the
 .dark-purple { /* I’m deep purple! */
 	color: rgb(64, 0, 64);
 	color: rgb(25%, 0%, 25%);
-}
-```
+}</code></pre>
 
 **Important**: when using percentages, you have to set the unit even if it is 0. If you don’t, some browsers may be unable to parse it.
 
@@ -111,8 +109,7 @@ As seen previously, while using the RGB system we can also use an alpha channel 
 
 To use this channel in CSS, you’ll call the <code>rgba()</code> function instead of the <code>rgb()</code>. However note the alpha-channel is always defined with a float clamped between 0 and 1.
 
-```css
-.black { /* I’m half transparent black! */
+<pre class="language-css"><code>.black { /* I’m half transparent black! */
 	color: rgba(0, 0, 0, 0.5);
 	color: rgba(0%, 0%, 0%, 0.5);
 }
@@ -125,21 +122,18 @@ To use this channel in CSS, you’ll call the <code>rgba()</code> function inste
 .red { /* I’m fully transparent red, so kind of invisible */
 	color: rgba(255, 0, 0, 0);
 	color: rgba(100%, 0%, 0%, 0);
-}
-```
+}</code></pre>
 
 This can be very useful in various situation. Let’s say you have some kind of background image and want to write on it without losing readability or putting a big white box on top of it. This is the perfect usecase for RGBa!
 
-```css
-.parent {
+<pre class="language-css"><code>.parent {
 	background-image: url(‘my-picture.jpg’);
 }
 
 .child {
 	background: rgba(255, 255, 255, 0.75);
 	color: rgb(51, 51, 51);
-}
-```
+}</code></pre>
 
 This way, the child element will have a white background with 75% opacity, showing its parent’s background without risking any issue with readability.
 
@@ -230,12 +224,10 @@ What’s the point you say? To restore the default transparent color if a color 
 
 The currentColor is a CSS3 value allowing you to take the color as a default value for another property. Have a look at the code below.
 
-```css
-.my-element {
+<pre class="language-css"><code>.my-element {
 color: red;
 	border-color: 5px solid currentColor;
-}
-```
+}</code></pre>
 
 The border will be red since the defined color is red. If no color was set, it would have been black, since the default value for the color property is black.
 
@@ -247,14 +239,12 @@ You want to know what’s awesome? <code>currentColor</code> is a default value 
 
 It means you can do one of those and be perfectly valid:
 
-```css
-.my-element {
+<pre class="language-css"><code>.my-element {
 	color: red;
 	border-color: 5px solid;   /* This will be red */
 	box-shadow: 10px 10px 5px; /* This will be red */
 	text-shadow: 0 2px 1px;    /* This will be red */
-}
-```
+}</code></pre>
 
 *Note: the cap on the C letter is not required. It’s only a writing convention.*
 
@@ -288,8 +278,7 @@ To describe a color using the HSL representation, you have to define parameters 
 * **Saturation**: if you want a pure color, then the saturation value will be 100%. If you want some kind of grey, try a value lower than 100%.
 * **Lightness**: if you want a pure color, then the lightness value will be 50%. If you want a light color, try something between 50% and 100%. If you want something dark, try below 50%.
 
-```css
-.white { /* I’m white! */
+<pre class="language-css"><code>.white { /* I’m white! */
 	color: hsl(0, 0%, 100%);
 }
 
@@ -299,8 +288,7 @@ To describe a color using the HSL representation, you have to define parameters 
 
 .red { /* I’m red! */
 	color: hsl(0, 100%, 50%);
-}
-```
+}</code></pre>
 
 *Note: when you want black or white, whatever the hue value you set since it’s not on the wheel. It means <code>hsl(0, 0%, 100%)</code>, <code>hsl(120, 0%, 100%)</code> and <code>hsl(240, 0%, 100%)</code> are all 3 white.
 
@@ -310,16 +298,14 @@ To describe a color using the HSL representation, you have to define parameters 
 
 As for RGBa, you can set a value for the alpha-channel on a HSL color. It works exactly the same way RGBa does: it accepts a float value between 0 and 1 such as 0.56.
 
-```css
-.parent {
+<pre class="language-css"><code>.parent {
 	background-image: url(‘my-picture.jpg’);
 }
 
 .child {
 	background: hsla(0, 0%, 100%, 0.75);
 	color: hsl(0, 0%, 30%);
-}
-```
+}</code></pre>
 
 ## System colors
 
@@ -335,8 +321,7 @@ If you want a complete list of system color keywords, please refer to [this docu
 
 Honestly, this is really up to you. In the end, a RGB triplet is generated, parsed and applied no matter the way you displayed it. The browser parser doesn’t care if you prefer <code>hsl(0, 100%, 50%)</code> over <code>rgba(255, 0, 0, 1)</code>.
 
-```css
-/* This will be red, whatever you pick */
+<pre class="language-css"><code>/* This will be red, whatever you pick */
 .red { color: red; } 
 .red { color: #f00; }
 .red { color: #ff0000; }
@@ -345,8 +330,7 @@ Honestly, this is really up to you. In the end, a RGB triplet is generated, pars
 .red { color: rgba(255, 0, 0, 1); }
 .red { color: rgba(100%, 0%, 0%, 1); }
 .red { color: hsl(0, 100%, 50%); }
-.red { color: hsla(0, 100%, 50%, 1); }
-```
+.red { color: hsla(0, 100%, 50%, 1); }</code></pre>
 
 Now if you want my way of doing with colors, here is what I do in most cases:
 
@@ -363,8 +347,7 @@ CSS preprocessors (at least some of them) provide built-in functions to play wit
 
 ### LESS (<a href="http://lesscss.org/#-color-functions">doc)
 
-```scss
-lighten(@color, @percentage);               /* Makes lighter */
+<pre class="language-scss"><code>lighten(@color, @percentage);               /* Makes lighter */
 darken(@color, @percentage);                /* Makes darker */
 
 saturate(@color, @percentage);              /* Makes more saturated*/
@@ -377,13 +360,11 @@ fade(@color, @percentage);                  /* Gives the color 50% opacity */
 spin(@color, @degrees);                     /* Rotates the hue wheel 10° */
 
 mix(@color1, @color2, @percentage);         /* Mixes 2 colors with a default weight of 50% */
-contrast(@color1, @darkcolor, @lightcolor); /* Returns @darkcolor if the color is >50% luma (i.e. is a light color) otherwise return @lightcolor */
-```
+contrast(@color1, @darkcolor, @lightcolor); /* Returns @darkcolor if the color is >50% luma (i.e. is a light color) otherwise return @lightcolor */</code></pre>
 
 ### Sass (<a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html">doc)
 
-```scss
-rgba($color, $alpha)               /* Convert a hex color into a RGBa one */
+<pre class="language-scss"><code>rgba($color, $alpha)               /* Convert a hex color into a RGBa one */
 red($color)                        /* Gets the red component */
 green($color)                      /* Gets the green component */
 blue($color)                       /* Gets the blue component */
@@ -407,22 +388,18 @@ opacity($color)                     /* Gets the alpha component (opacity) */
 opacify($color, $percentage)        /* Makes more opaque */
 fade-in($color, $percentage)        /* Makes more opaque */
 transparentize($color, $percentage) /* Makes more transparent */
-fade-out($color, $percentage)       /* Makes more transparent */
-```
+fade-out($color, $percentage)       /* Makes more transparent */</code></pre>
 
 ### CSS Crush (<a href="http://the-echoplex.net/csscrush/">doc)
 
-```scss
-h-adjust($color $value)             /* Rotates the hue wheel */
+<pre class="language-scss"><code>h-adjust($color $value)             /* Rotates the hue wheel */
 s-adjust($color $value)             /* Changes the saturation */
 l-adjust($color $value)             /* Changes the lightness */
-a-adjust($color $value)             /* Changes the alpha-channel */
-```
+a-adjust($color $value)             /* Changes the alpha-channel */</code></pre>
 
 ### Stylus (<a href="http://learnboost.github.com/stylus/docs/bifs.html">doc)
 
-```scss
-red(color)          /* Gets the red component */
+<pre class="language-scss"><code>red(color)          /* Gets the red component */
 green(color)        /* Gets the green component */
 blue(color)         /* Gets the blue component */
 alpha(color)        /* Gets the alpha component */
@@ -431,8 +408,7 @@ dark(color)         /* Makes lighter */
 light(color)        /* Makes darker */
 hue(color)          /* Gets the hue component */
 saturation(color)   /* Gets the saturation component */
-lightness(color)    /* Gets the lightness component */
-```
+lightness(color)    /* Gets the lightness component */</code></pre>
 
 ## Final words
 

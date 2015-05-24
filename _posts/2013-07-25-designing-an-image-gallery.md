@@ -32,14 +32,12 @@ It would have been a pain in the ass to work out such a "complicated" layout so 
 
 The idea is quite simple: you define a container that will draw boundaries for the layout and Isotope will move all its child elements according to the available room.
 
-```javascript
-$container.isotope({
+<pre class="language-javascript"><code>$container.isotope({
   itemSelector : '.gallery__item',
   masonry : {
     columnWidth : 410
   }
-});
-```
+});</code></pre>
 
  What is really nice is it takes advantage of hardware accelerated CSS transforms (essentially `translate`) if the browser support them (else it falls back on regular TRBL offsets).
 
@@ -47,14 +45,13 @@ Anyway, I wanted to give some emphasis to the author content: her picture and he
 
 Meanwhile the pictures are all wrapped in a regular unordered list which has a huge left margin (to bypass the fixed sidebar).
 
-```markup
-<li class='gallery__item'>
-    <img
-      class='gallery__image'
-      src="images/filename.jpg"
-      alt="Alt text"
-      width="400" height="266" />
-```
+<pre class="language-markup"><code>&lt;li class='gallery__item'>
+  &lt;img
+    class='gallery__image'
+    src="images/filename.jpg"
+    alt="Alt text"
+    width="400" height="266" />
+&lt;/li></code></pre>
 
 ## Building features over the layout
 
@@ -84,17 +81,14 @@ One thing I wanted to do is to progressively display the pictures when loading t
 
 Isn't it the perfect usecase for CSS animations? Let's jump on this opportunity, it's not that often we can safely use CSS animations. First the (really common) `@keyframes`:
 
-```css
-@keyframes opacity {
+<pre class="language-css"><code>@keyframes opacity {
   from { opacity: 0; }
   to   { opacity: 1; }
-}
-```
+}</code></pre>
 
 Now all I had to do was applying it to all items with a varying delay. The highest the index of the item in the list, the longest the delay. Perfect! Let's loop! But wait... I don't know the number of images in the page. I guess I could have gone to something like 100 to be sure it works everywhere but that would have bloated the CSS. Plus, I realized 20 is more than enough for most screens (including my 29").
 
-```scss
-@for $i from 1 through 20 {
+<pre class="language-scss"><code>@for $i from 1 through 20 {
   .gallery__item {
     opacity: 0;
     animation: opacity .25s forwards;
@@ -103,8 +97,7 @@ Now all I had to do was applying it to all items with a varying delay. The highe
   .gallery__item:nth-of-type(#{$i}) {
     animation-delay: $i * .1s;
   }
-}
-```
+}</code></pre>
 
 Basically, I assigned `opacity: 0` to all items so they don't appear at first. Then all of them appear in about 250ms except the 20 first for which the animation is slightly delayed according to their index in the list. The only thing left to do was wrapping this into a Modernizr class (`.cssanimations`) to be sure elements are not set to `opacity: 0` on unsupported browsers.
 
@@ -159,15 +152,14 @@ I quickly understood I had to handle 2 files for each image: one for the thumbna
 
 The next step was to load images when they are needed. To put it simple, only load images that are actually displayed on the screen and not the one that are below the fold. This is called *lazy loading*. Thankfully, I found an amazing [JavaScript plugin doing this](http://www.appelsiini.net/projects/lazyload). All I had to do was turning my markup into something like this:
 
-```markup
-<li class='gallery__item' data-album='album-name'>
-    <img
-      class='gallery__image'
-      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-      data-original="images/filename.jpg"
-      alt="Alt text"
-      width="400" height="266" />
-```
+<pre class="language-markup"><code>&lt;li class='gallery__item' data-album='album-name'>
+  &lt;img
+    class='gallery__image'
+    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+    data-original="images/filename.jpg"
+    alt="Alt text"
+    width="400" height="266" />
+&lt;/li></code></pre>
 
 <blockquote class="pull-quote--right">When viewing it on mobile, it goes down to 700 bytes.</blockquote>
 

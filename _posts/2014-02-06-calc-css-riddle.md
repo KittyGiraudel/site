@@ -88,20 +88,17 @@ If you are using a templating engine (SPIP, Twig, Liquid...), there are high cha
 
 But since we only have to support a reasonably recent range of browsers, we could use advanced CSS selectors as well like `:nth-of-type()` to target side cells.
 
-```scss
-/* Side cells */
+<pre class="language-scss"><code>/* Side cells */
 .cell:nth-of-type(4n),       /* last  cells */
 .cell:nth-of-type(4n + 1) {  /* first cells */
   /* Do something */
-}
-```
+}</code></pre>
 
 ### Defining widths with calc
 
 In the end, the core of the solution is no more than this:
 
-```scss
-/* Middle cells */
+<pre class="language-scss"><code>/* Middle cells */
 .cell {
   width: calc(((100% - (200px * 4 + 10px * 6)) / 6) * 2 + 200px);
 }
@@ -110,8 +107,7 @@ In the end, the core of the solution is no more than this:
 .cell:nth-of-type(4n),
 .cell:nth-of-type(4n + 1) {
   width: calc(((100% - (200px * 4 + 10px * 6)) / 6) + 200px);
-}
-```
+}</code></pre>
 
 You can have a look at the [whole code directly on CodePen](http://codepen.io/HugoGiraudel/pen/tivIj).
 

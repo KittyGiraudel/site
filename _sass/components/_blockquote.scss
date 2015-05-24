@@ -1,0 +1,45 @@
+/**
+ * Blockquotes
+ * 1. Clear inner floats (if any)
+ * 2. Poor man's vertical rhythm
+ */
+blockquote {
+  font-style: italic;
+  border-left: 5px solid $light-grey;
+  padding-left: 20px;
+  overflow: hidden; /* 1 */
+  margin: 0 0 20px; /* 2 */
+}
+
+/**
+ * Prevent an odd gap when the first child of blockquote as a top margin
+ */
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+/**
+ * Prevent an odd gap when the last child of blockquote as a bottom margin
+ */
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Make images inside blockquotes left floated starting medium screens
+ */
+blockquote img {
+  @include respond-to('medium') {
+    float: left;
+    max-width: 33%;
+    margin-right: 20px;
+  }
+}
+
+/**
+ * Some legacy articles still use `.quote` for blockquotes
+ * This makes them behave exactly like regular blockquotes
+ */
+.quote {
+  @extend blockquote;
+}

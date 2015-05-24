@@ -1,0 +1,12 @@
+/**
+ * Photo on the about me page
+ */
+.about-me__photo {
+  @include respond-to('medium') {
+    float: right;
+    max-width: 200px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    clear: both;
+  }
+}

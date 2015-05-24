@@ -1,0 +1,49 @@
+/**
+ * List component (e.g. home, speaking)
+ * 1. Undo default styling
+ */
+.list {
+  padding: 0; /* 1 */
+  margin: 0; /* 1 */
+  list-style: none; /* 1 */
+}
+
+/**
+ * List item
+ */
+.list__item {
+  margin-bottom: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid $light-grey;
+}
+
+/**
+ * List item primary content, emphasized
+ * 1. Make sure it is not inlined
+ * 2. Reset any weight (if any)
+ */
+.list__primary-content {
+  margin: 0;
+  display: block; /* 1 */
+  font-size: 24px;
+  font-weight: normal; /* 2 */
+}
+
+/**
+ * List item secondary content
+ */
+.list__secondary-content {
+  color: $medium-grey;
+  font-family: $code-font-stack;
+  margin: 0;
+  font-size: 80%;
+}
+
+/**
+ * List item links
+ * 1. Colored as text
+ */
+.list__item a {
+  color: inherit; /* 1 */
+  text-decoration: none;
+}

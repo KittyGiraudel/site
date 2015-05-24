@@ -7,14 +7,12 @@ This is something I see in a lot of Sass demos and tutorials. People tend to use
 
 But first, let me introduce the topic because you probably wonder what the hell I am talking about. Nothing better than a little example for this.
 
-```scss
-$value: 13.37;
+<pre class="language-scss"><code>$value: 13.37;
 $length: $value + em;
     
 whatever {
     padding-top: $length;
-}
-```
+}</code></pre>
 
 I want to play a game... This example: working or not working?
 
@@ -24,9 +22,7 @@ Well obviously, it works like a charm. That's probably why you can see it so muc
 
 Then you ask *"if it works, why bother?"*. That's actually a very fair question. Let's continue our example, shall we? What if we apply &mdash; let's say &mdash; the `round()` function to our length?
 
-```scss
-$rounded-length: round($length);
-```
+<pre class="language-scss"><code>$rounded-length: round($length);</code></pre>
 
 Aaaaaand... bummer.
 
@@ -38,21 +34,17 @@ This is because **there is no unit** since it's now a string. When you append a 
 
 Indeed, if you check the type of your variable with the `type-of()` function, you'll see it's not a number but a string.
 
-```scss
-type-of($length); // string
-```
+<pre class="language-scss"><code>type-of($length); // string</code></pre>
 
 ## The solution
 
 There is a very simple solution. Instead of appending the unit, simply multiply the number by 1 unit. For example, *3 apples* is strictly equivalent to *3 times 1 apple*, right? Same thing.
 
-```scss
-$value: 13.37;
+<pre class="language-scss"><code>$value: 13.37;
 $length: $value * 1em;
     
 whatever {
     padding-top: round($length); // 13em
-}
-```
+}</code></pre>
 
 Problem solved! Please, use lengths when you need to, not strings.

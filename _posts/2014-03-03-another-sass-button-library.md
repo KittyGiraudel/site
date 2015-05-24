@@ -20,8 +20,7 @@ Also the code should be DRY and the CSS output well optimized. As light as it ca
 
 Let's start with the configuration, shall we?
 
-```scss
-// Configuration
+<pre class="language-scss"><code>// Configuration
 $btn-name:  'button' !default;
 $btn-size-ratio: 1.2 !default;
 $btn-hover:  saturate 25% !default;
@@ -32,8 +31,7 @@ $btn-background: (
   'danger':  #b94a48,
   'warning': #c09853,
   'info':    #3a87ad
-) !default;
-```
+) !default;</code></pre>
 
 <img class="pull-image--right" alt='Variable all the things!' src='http://i.imgur.com/shEzy8H.jpg'/>
 
@@ -53,8 +51,7 @@ Also note the 2 measures we take to avoid conflicts with user's code:
 
 ## The module 
 
-```scss
-.#{$btn-name} {
+<pre class="language-scss"><code>.#{$btn-name} {
   // Default styles
   padding: .5em;
   margin-bottom: 1em;
@@ -96,8 +93,7 @@ Also note the 2 measures we take to avoid conflicts with user's code:
       @include button-color($value);
     }
   }
-}
-```
+}</code></pre>
 
 Here is how it works: we define everything inside a unique CSS selector named after the `$btn-name` variable. For each modifier, we use `&--modifier` which outputs a `.button--modifier` rule at CSS root. I have made a couple of simple modifiers but you could make as many as you want of course.
 
@@ -111,8 +107,7 @@ The `button-color` mixin aims at dealing with color schemes. We have set up quit
 
 Now the mixin will actually apply the background-color to the button, as well as the hover/active state, and the border if not set to false.
 
-```scss
-@mixin button-color($color) {
+<pre class="language-scss"><code>@mixin button-color($color) {
   background-color: $color;
 
   &:hover,
@@ -123,8 +118,7 @@ Now the mixin will actually apply the background-color to the button, as well as
   @if $btn-border != false {
     border-color: call(nth($btn-border, 1), $color, nth($btn-border, 2));
   }
-}
-```
+}</code></pre>
 
 Remember what our `$btn-hover` and `$btn-border` variables look like? First a color function, then a percentage. To apply this function to the color, we can use the `call` feature from Sass 3.3.
 
@@ -136,8 +130,7 @@ I don't know for you, but I don't like letting the compiler fail. I'd rather han
 
 So we should probably make a couple of checks to make sure everything's right before dumping our CSS in the `button-color` mixin. Here is how I did it:
 
-```scss
-@mixin button-color($color) {
+<pre class="language-scss"><code>@mixin button-color($color) {
   $everything-okay: true;
 
   // Making sure $color is a color
@@ -174,8 +167,7 @@ So we should probably make a couple of checks to make sure everything's right be
   @if $everything-okay == true {
     // Mixin content
   }
-}
-```
+}</code></pre>
 
 <blockquote class="pull-quote--right">Always validate user input in your custom functions.</blockquote>
 

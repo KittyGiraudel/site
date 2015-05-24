@@ -1,0 +1,50 @@
+/**
+ * Site advertisement
+ */
+.site-ad {
+  margin-bottom: 20px;
+
+  /**
+   * Floated on medium screens
+   */ 
+  @media (min-width: 700px) {
+    float: right;
+  }
+
+  /**
+   * Absolutely positioned, slightly off, on large screens
+   */
+  @media (min-width: 1020px) {
+    position: absolute;
+    right: -100px;
+    top: 20px;
+  }
+
+  /**
+   * Absolutely positioning on the left of container on very large screens
+   */
+  @media (min-width: 1400px) {
+    top: 0;
+    right: 100%;
+    right: calc(100% + 10px);
+  }
+}
+
+/**
+ * Change default styles of CarbonAds
+ * 1. Override inline styles
+ */
+.carbonad {
+  background: white !important; /* 1 */
+  height: auto !important; /* 1 */
+  border-radius: 3px !important; /* 1 */
+  border: 0 !important; /* 1 */
+  margin: 0 auto;
+}
+
+/**
+ * Prevent hidden image from CarbonAds to mess the layout
+ */
+#azcarbon > img {
+  display: inline !important;
+}

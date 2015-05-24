@@ -35,9 +35,7 @@ The algorithm for calculating the specificity of a selector is surprisingly simp
 
 Compound and complex selectors are composed of simple selectors. To calculate specificity, simply break apart your selector into simple selectors, and count the **occurances of each type**. For example:
 
-```css
-#main ul li > a[href].active.current:hover {}
-```
+<pre class="language-css"><code>#main ul li > a[href].active.current:hover {}</code></pre>
 
 ...has **1 ID (type A)** selector, **2 class + 1 attribute + 1 pseudo-class (type B)** selector, and **3 element type (type C)** selectors, giving it a specificity of `1, 4, 3`. We'll talk about how we can represent this accurately as an integer value later.
 
@@ -54,8 +52,7 @@ First things first, let's determine what our API is going to look like. The simp
 
 Great; our API will look like this, respectively:
 
-```scss
-/// Returns the specificity map or value of given simple/complex/multiple selector(s).
+<pre class="language-scss"><code>/// Returns the specificity map or value of given simple/complex/multiple selector(s).
 /// @access public
 /// @param {List | String} $initial-selector - selector returned by '&'
 /// @param {Bool} $integer - output specificity as integer? (default: false)
@@ -67,8 +64,7 @@ Great; our API will look like this, respectively:
 /// @access public
 /// @require {function} specificity
 /// @output specificity (map as string), specificity-value (specificity value as integer)
-@mixin specificity() {}
-```
+@mixin specificity() {}</code></pre>
 
 Looks clean and simple. Let's move on.
 
@@ -76,40 +72,33 @@ Looks clean and simple. Let's move on.
 
 Consider a simple selector. In order to implement the algorithm described above, we need to know what **type** the simple selector is - **A, B, or C**. Let's represent this as a map of what each type **begins with** (I call these *type tokens*):
 
-```scss
-$types: (
+<pre class="language-scss"><code>$types: (
   c: (':before', ':after', ':first-line', ':first-letter', ':selection'),
   b: ('.', '[', ':'),
   a: ('#')
-);
-```
+);</code></pre>
 
 You'll notice that the map is in reverse order, and that's because of our irritable colon (`:`) - both pseudo-elements and pseudo-classes start with one. The less general (pseudo-element) selectors are filtered out first so that they aren't accidentally categorized as a type B selector.
 
 Next, according to the [W3C spec](http://www.w3.org/TR/css3-selectors/#specificity), `:not()` does *not* count towards specificity, but the simple selector *inside* the parentheses does count. We can grab that with some string manipulation:
 
-```scss
-@if str-index($simple-selector, ':not(') == 1 {
+<pre class="language-scss"><code>@if str-index($simple-selector, ':not(') == 1 {
   $simple-selector: str-slice($simple-selector, 6, -2);
-}
-```
+}</code></pre>
 
 Then, iterate through the `$types` map and see if the `$simple-selector` begins with any of the *type tokens*. If it does, return the type.
 
-```scss
-  @each $type-key, $type-tokens in $types {
+<pre class="language-scss"><code>  @each $type-key, $type-tokens in $types {
     @each $token in $type-tokens {
       @if str-index($simple-selector, $token) == 1 {
         @return $type-key;
       }
     }
-  }
-```
+  }</code></pre>
 
 As a catch-all, if none of the type tokens matched, then the simple selector is either the universal selector (`*`) or an element type selector. Here's the full function:
 
-```scss
-@function specificity-type($simple-selector) {
+<pre class="language-scss"><code>@function specificity-type($simple-selector) {
   $types: (
     c: (':before', ':after', ':first-line', ':first-letter', ':selection'),
     b: ('.', '[', ':'),
@@ -137,8 +126,7 @@ As a catch-all, if none of the type tokens matched, then the simple selector is 
 
   // Simple selector is type selector (element)
   @return c;
-}
-```
+}</code></pre>
 
 ### Determining Specificity Value
 
@@ -148,9 +136,7 @@ Fair warning, this section might get a bit mathematical. According to the W3C sp
 
 Our goal is to represent the multiplicity of the three types (A, B, C) as a (base 10) integer from a larger (base ??) number. A common mistake is to use base 10, as this seems like the most straightforward approach. Consider a selector like:
 
-```css
-body nav ul > li > a + div > span ~ div.icon > i:before {}
-```
+<pre class="language-css"><code>body nav ul > li > a + div > span ~ div.icon > i:before {}</code></pre>
 
 This [complex selector](http://dev.w3.org/csswg/selectors4/#complex) doesn't look *too* ridiculous, but its type map is `a: 0, b: 1, c: 10`. If you multiply the types by 10<sup>2</sup>, 10<sup>1</sup>, and 10<sup>0</sup> respectively, and add them together, you get **20**. This implies that the above selector has the same specificity as *two classes*.
 
@@ -166,8 +152,7 @@ I chose base 256 (16<sup>2</sup>) to represent two hexadecimal digits per type. 
 
 Our job is simple, now. Multiply the multiplicity (frequency) of each type by an exponent of the base according to the map `(a: 2, b: 1, c: 0)` (remember - type  A selectors are the most specific). E.g. the selector `#foo .bar.baz > ul > li` would have a **specificity type map** `(a: 1, b: 2, c: 2)` which would give it a specificity of 1 * 256<sup>2</sup> + 2 * 256<sup>1</sup> + 2 * 256<sup>0</sup> = 66050. Here's that function:
 
-```scss
-@function specificity-value($specificity-map, $base: 256) {
+<pre class="language-scss"><code>@function specificity-value($specificity-map, $base: 256) {
   $exponent-map: (a: 2, b: 1, c: 0);
   $specificity: 0;
 
@@ -176,8 +161,7 @@ Our job is simple, now. Multiply the multiplicity (frequency) of each type by an
   }
 
   @return $specificity;
-}
-```
+}</code></pre>
 
 ### Dealing with Complex and Compound Selectors
 
@@ -188,37 +172,28 @@ Thankfully, with Sass 3.4's selector functions, we can split a selector list com
 
 Some points to note: I'm using a homemade `str-replace-batch` function to remove combinators, as these don't count towards specificity:
 
-```scss
-$initial-selector: str-replace-batch(#{$initial-selector}, ('+', '>', '~'));
-```
+<pre class="language-scss"><code>$initial-selector: str-replace-batch(#{$initial-selector}, ('+', '>', '~'));</code></pre>
 
 And more importantly, I'm keeping a running total of the multiplicity of each simple selector using a map:
 
-```scss
-$selector-specificity-map: ( a: 0, b: 0, c: 0 );
-```
+<pre class="language-scss"><code>$selector-specificity-map: ( a: 0, b: 0, c: 0 );</code></pre>
 Then, I can just use my previously defined function `selector-type` to iterate through each simple selector (`$part`) and increment the `$selector-specificity-map` accordingly:
 
-```scss
-@each $part in $parts {
+<pre class="language-scss"><code>@each $part in $parts {
   $specificity-type: specificity-type($part);
 
   @if $specificity-type {
     $selector-specificity-map: map-merge($selector-specificity-map, (#{$specificity-type}: map-get($selector-specificity-map, $specificity-type) + 1));
   }
-}
-```
+}</code></pre>
 
 The rest of the function just returns the specificity map (or integer value, if desired) with the highest specificity, determined by the `specificity-value` function, by keeping track of it here:
 
-```scss
-$specificities-map: map-merge($specificities-map, (specificity-value($selector-specificity-map): $selector-specificity-map));
-```
+<pre class="language-scss"><code>$specificities-map: map-merge($specificities-map, (specificity-value($selector-specificity-map): $selector-specificity-map));</code></pre>
 
 Here's the full function:
 
-```scss
-@function specificity($initial-selector, $integer: false) {
+<pre class="language-scss"><code>@function specificity($initial-selector, $integer: false) {
   $initial-selector: str-replace-batch(#{$initial-selector}, ('+', '>', '~'));
   $selectors: selector-parse($initial-selector);
   $specificities-map: ();
@@ -247,29 +222,24 @@ Here's the full function:
   $specificity-map: map-values(map-get($specificities-map, $specificity-value));
 
   @return if($integer, $specificity-value, $specificity-map);
-}
-```
+}</code></pre>
 
 ## The Applicability of Specificity
 
 So, aside from this being another application of a [rethinking of Atwood's Law](http://hugogiraudel.com/2014/10/27/rethinking-atwoods-law/), knowing **exactly how specific** your selectors are can be much more beneficial than seeing in your dev tools that your desired styles have been overridden by another style for some relatively unknown reason (which I'm sure is a common frustration). You can easily output specificity as a mixin:
 
-```scss
-@mixin specificity() {
+<pre class="language-scss"><code>@mixin specificity() {
   specificity: specificity(&);
   specificity-value: specificity(&, true);
-}
-```
+}</code></pre>
 
 On top of this, you can [find some way](http://hugogiraudel.com/2014/01/20/json-in-sass/) to communicate the specificities of your selectors to the browser in development, and output a [specificity graph](http://csswizardry.com/2014/10/the-specificity-graph/) to ensure that your CSS is well-organized.
 
 You can take this even further and, if you have dynamic selectors in your SCSS, know ahead of time which one will have the highest specificity:
 
-```scss
-@if specificity($foo-selector, true) > specificity($bar-selector, true) {
+<pre class="language-scss"><code>@if specificity($foo-selector, true) > specificity($bar-selector, true) {
   // ...
-}
-```
+}</code></pre>
 
 The full source for the specificity functions/mixins, as well as examples, are available [here on SassMeister](http://sassmeister.com/gist/dbf20a242bcccd1d789c):
 

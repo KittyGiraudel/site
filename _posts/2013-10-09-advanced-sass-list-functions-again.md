@@ -30,8 +30,7 @@ I have added a couple of functions to make the library even more awesome like `p
 
 I can't believe I didn't make the `purge()` function a while ago. Basically, it removes all non-true value of a list. Compass includes the `compact()` function which does pretty much the same thing. 
 
-```scss
-@function purge($list) {
+<pre class="language-scss"><code>@function purge($list) {
   $result: ();
   
   @each $item in $list {
@@ -47,8 +46,7 @@ I can't believe I didn't make the `purge()` function a while ago. Basically, it 
 
 $list: a, b, null, c, false, '', d;
 $purge: purge($list);
-// -> a, b, c, d
-```
+// -> a, b, c, d</code></pre>
 
 I think the code is self-explanatory. We loop through all items of the list: if it's not false, we append it then we return the new list. Easy peasy! It would be even easier if Sass had a boolean converter operator (`!!`). Then we could do something like this `@if !!$item { $result: append($result, $item); }`. Unfortunately, we can't.
 
@@ -56,11 +54,9 @@ I think the code is self-explanatory. We loop through all items of the list: if 
 
 I don't think this function has any major usecase, but you know, just in case I added it. It checks whether your list is symmetrical. It's based on my `reverse()` function.
 
-```scss
-@function is-symmetrical($list) {
+<pre class="language-scss"><code>@function is-symmetrical($list) {
   @return reverse($list) == reverse(reverse($list)); 
-}
-```
+}</code></pre>
 
 Why don't we compare the initial list with the reversed one? Because reversing a list modify its inner structure, resulting in a false assertion. This makes sure both list are properly compared.
 
@@ -68,8 +64,7 @@ Why don't we compare the initial list with the reversed one? Because reversing a
 
 Same here, I don't think it has much point but I wanted to add it anyway. It takes all unitless number from the list and add them. The second parameter is a boolean enabling / disabling the removing of units. Basically, you can parseInt the value to get only the number.
 
-```scss
-@function sum($list, $force: false) {
+<pre class="language-scss"><code>@function sum($list, $force: false) {
   $result: 0;
   
   @each $item in $list {
@@ -89,8 +84,7 @@ Same here, I don't think it has much point but I wanted to add it anyway. It tak
 $list: 1 2 3 4px;
 $sum: sum($list);       // -> 6
 $sum: sum($list, true); // -> 10
-
-```
+</code></pre>
 
 ### Chunk
 
@@ -98,8 +92,7 @@ The `chunk()` function is based on the equivalent PHP function `array_chunk()`. 
 
 > Chunks an `$array` into `$size` large chunks. The last chunk may contain less than `$size` elements.
 
-```scss
-@function chunk($list, $size) {
+<pre class="language-scss"><code>@function chunk($list, $size) {
   $result: ();
   $n: ceil(length($list) / $size);
   $temp-index: 0;
@@ -122,8 +115,7 @@ The `chunk()` function is based on the equivalent PHP function `array_chunk()`. 
 
 $list: a, b, c, d, e, f, g;
 $chunk: chunk($list, 3);
-// -> ( (a, b, c), (d, e, f), g)
-```
+// -> ( (a, b, c), (d, e, f), g)</code></pre>
 
 We could probably make the code slightly lighter but I didn't want to dig too deep into this. I'll eventually clean this up later. Meanwhile, it works great. If you find a usecase, hit me up!
 
@@ -133,8 +125,7 @@ Same as above, the `count-values()` function is inspired by `array_count_values(
 
 > Returns an array using the values of `$array` as keys and their frequency in `$array` as values.
 
-```scss
-@function count-values($list) {
+<pre class="language-scss"><code>@function count-values($list) {
   $keys   : ();
   $counts : ();
 
@@ -152,23 +143,19 @@ Same as above, the `count-values()` function is inspired by `array_count_values(
   }
 
   @return zip($keys, $counts);
-}
-```
+}</code></pre>
 
 It's based on the built-in `zip()` function that merges several lists into a multi-dimensional list by preserving indexes.
 
-```scss
-$list: a, b, c, a, d, b, a, e;
+<pre class="language-scss"><code>$list: a, b, c, a, d, b, a, e;
 $count-values: count-values($list);
-// -> a 3, b 2, c 1, d 1, e 1
-```
+// -> a 3, b 2, c 1, d 1, e 1</code></pre>
 
 ### Remove duplicates
 
 There are times when you want to remove values that are present multiple times in a list. You had to do it by hand. Not anymore, I got your back.
 
-```scss
-@function remove-duplicates($list, $recursive: false) {
+<pre class="language-scss"><code>@function remove-duplicates($list, $recursive: false) {
   $result: ();
   
   @each $item in $list {
@@ -187,8 +174,7 @@ There are times when you want to remove values that are present multiple times i
 
 $list: a, b, a, c, b, a, d, e;
 $remove-duplicates: remove-duplicates($list);
-// -> a, b, c, d, e
-```
+// -> a, b, c, d, e</code></pre>
 
 You can even do it recursively if you feel so, by enabling recursivity with `true` as a 2nd argument. Nice, isn't it?
 
@@ -196,8 +182,7 @@ You can even do it recursively if you feel so, by enabling recursivity with `tru
 
 Last but not least, I added a `debug()` function to help you guys debugging your lists. Basically all it does is displaying the content of your list like a `console.log()` in JavaScript.
 
-```scss
-@function debug($list) {
+<pre class="language-scss"><code>@function debug($list) {
   $result: #{"[ "};
 
   @each $item in $list {
@@ -219,8 +204,7 @@ Last but not least, I added a `debug()` function to help you guys debugging your
 
 $list: (a b (c d (e f ( (g h (i j k)) l m))));
 $debug: debug($list);
-// -> [ a, b, [ c, d, [ e, f, [ [ g, h, [ i, j, k] ], l, m ] ] ] ]
-```
+// -> [ a, b, [ c, d, [ e, f, [ [ g, h, [ i, j, k] ], l, m ] ] ] ]</code></pre>
 
 ## Improvements 
 
@@ -228,15 +212,13 @@ Not only I try to add new functions but I also do my best to make all functions 
 
 For example, you know we have [two remove functions](http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#removing): `remove()` and `remove-nth()`. I have simplified those two greatly:
 
-```scss
-@function remove($list, $value, $recursive: false) {
+<pre class="language-scss"><code>@function remove($list, $value, $recursive: false) {
   @return replace($list, $value, "", $recursive);
 }
 
 @function remove-nth($list, $index) {
   @return replace-nth($list, $index, "");
-}
-```
+}</code></pre>
 
 Crazy simple, right? How come I haven't done this earlier? Well let's be honest, it has been a pain in the ass to come to this actually. I have faced an annoying issue: replacing by an empty string didn't remove the element from the list, it simply made it disappear. The difference is that the length of the list remained unchanged and this is a big deal.
 

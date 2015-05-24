@@ -10,5 +10,7 @@ github_username:  HugoGiraudel
 
 # Build settings
 markdown: kramdown
-paginate: 7
+paginate: 10
 permalink: pretty
+sass:
+  style: :compressed

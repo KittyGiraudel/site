@@ -26,39 +26,37 @@ Then, be sure to know there is nothing magic in this trick. As a proof, some of 
 
 ### Customizing the markup
 
-```markup
-<ul class="boxes">
+<pre class="language-markup"><code>&lt;ul class="boxes">
   
-  <li class="box  box--top  box--left  box--alpha">
-    <section class="box__content">
-      <header class="box__header"></header>
-      <footer class="box__footer  box__cut"></footer>
-    </section>
-  </li>
+  &lt;li class="box  box--top  box--left  box--alpha">
+    &lt;section class="box__content">
+      &lt;header class="box__header">&lt;/header>
+      &lt;footer class="box__footer  box__cut">&lt;/footer>
+    &lt;/section>
+  &lt;/li>
   
-  <li class="box  box--top  box--right  box--beta">
-    <section class="box__content">
-      <header class="box__header"></header>
-      <footer class="box__footer  box__cut"></footer>
-    </section>
-  </li>
+  &lt;li class="box  box--top  box--right  box--beta">
+    &lt;section class="box__content">
+      &lt;header class="box__header">&lt;/header>
+      &lt;footer class="box__footer  box__cut">&lt;/footer>
+    &lt;/section>
+  &lt;/li>
   
-  <li class="box  box--bottom  box--left  box--gamma">
-    <section class="box__content">
-      <header class="box__header  box__cut"></header>
-      <footer class="box__footer"></footer>
-    </section>
-  </li>
+  &lt;li class="box  box--bottom  box--left  box--gamma">
+    &lt;section class="box__content">
+      &lt;header class="box__header  box__cut">&lt;/header>
+      &lt;footer class="box__footer">&lt;/footer>
+    &lt;/section>
+  &lt;/li>
   
-  <li class="box  box--bottom  box--right  box--delta">
-    <section class="box__content">
-      <header class="box__header  box__cut"></header>
-      <footer class="box__footer"></footer>
-    </section>
-  </li>
+  &lt;li class="box  box--bottom  box--right  box--delta">
+    &lt;section class="box__content">
+      &lt;header class="box__header  box__cut">&lt;/header>
+      &lt;footer class="box__footer">&lt;/footer>
+    &lt;/section>
+  &lt;/li>
   
-</ul>
-```
+&lt;/ul></code></pre>
 
 As you can see I added a couple of classes to make the code DRYer:
 
@@ -74,8 +72,7 @@ Also every box has its own name like `.box--alpha`. This is meant to be able to 
 
 Using Sass really helped me achieving such a tricky component. Thanks to Sass variables, it's getting easy to maintain support for small screens, old browsers or simply update the gutter size or the invisible circle radius.
 
-```scss
-$gutter:          2em;
+<pre class="language-scss"><code>$gutter:          2em;
 $mask-size:      12em; // Invisible circle
 $circle-size:     5em; // Inner disk
 $breakpoint:    700px;
@@ -85,8 +82,7 @@ $colors: (
   beta:  #2ecc71, 
   gamma: #3498db, 
   delta: #9b59b6
-);
-```
+);</code></pre>
 
 Everything is computed from there. There will be absolutely no magic number anywhere. 
 
@@ -94,8 +90,7 @@ Everything is computed from there. There will be absolutely no magic number anyw
 
 Let's start with applying some default styles to our element (`.boxes`, `.box`...).
 
-```scss
-// Boxes wrapper
+<pre class="language-scss"><code>// Boxes wrapper
 // 1. Clearing inner float
 // 2. Enabling position context for pseudo-element
 .boxes {
@@ -129,8 +124,7 @@ Let's start with applying some default styles to our element (`.boxes`, `.box`..
       content: none;
     }
   }
-}
-```
+}</code></pre>
 
 I think the code kind of speaks for itself until there. The `:after` pseudo-element is used to create the central dark disk. It is absolutely centered, sized according to Sass variables and so on. We remove it on small screens and unsupported browsers.
 
@@ -138,8 +132,7 @@ I think the code kind of speaks for itself until there. The `:after` pseudo-elem
 
 One of the rules of the game was to keep the same gutter between left and right boxes and top and bottom boxes. Let's start with the easiest of both: vertical gutter.
 
-```scss
-.box {
+<pre class="language-scss"><code>.box {
   float: left;
   width: 50%;
   margin: $gutter 0;
@@ -149,13 +142,11 @@ One of the rules of the game was to keep the same gutter between left and right 
     width: 100%;
     float: none;
   }
-}
-```
+}</code></pre>
 
 Boxes spread across half the width of the parent. Some of you guys did use `calc` to handle the gutter between left and right boxes right away but it lowers the browser support so we'll do it differently. For horizontal gutter, here is how we can handle it:
 
-```scss
-// Inner box wrapper
+<pre class="language-scss"><code>// Inner box wrapper
 .box__content {
   
   // Adding a right padding on left boxes for the central gutter
@@ -172,8 +163,7 @@ Boxes spread across half the width of the parent. Some of you guys did use `calc
   @media (max-width: $breakpoint) {
     padding: 0 !important;
   }
-}
-```
+}</code></pre>
 
 There we go. Since we are using a clean box model (i.e. `box-sizing: border-box`), we can add a padding to the inner wrapper (`section`) &mdash; left or right depending on their position &mdash; in order to simulate the horizontal gutter. No need for calc.
 
@@ -183,8 +173,7 @@ If you want to get rid of the sections at all cost, you can use `calc` however y
 
 Yes, finally. As I explained at the beginning of the article, the idea consists on simulating background on cropped parts with an absolutely positioned pseudo-element spreading a huge box-shadow.
 
-```scss
-// Part that is being truncated by the circle
+<pre class="language-scss"><code>// Part that is being truncated by the circle
 // 1. Removing background color
 // 2. Making sure the box-shadow from pseudo-element doesn't leak outside the container
 // 3. Enabling position context for pseudo-element
@@ -231,15 +220,13 @@ Yes, finally. As I explained at the beginning of the article, the idea consists 
   .box--bottom &:after {
     top: 0;
   }
-}
-```
+}</code></pre>
 
 ### Dealing with colors
 
 Last but not least, we have to apply colors all over our code like some sort of rainbow unicorn on extasy. Thankfully we made a map binding each box to a fancy color from [FlatUIColors](flatuicolors.com).
 
-```scss
-// Applying colors by looping on the color map
+<pre class="language-scss"><code>// Applying colors by looping on the color map
 @each $key, $value in $colors {
   // Targeting the box
   .box--#{$key} {
@@ -267,8 +254,7 @@ Last but not least, we have to apply colors all over our code like some sort of 
       }
     }
   }
-}
-```
+}</code></pre>
 
 We could have used advanced CSS selectors (e.g. `:nth-of-type`) to avoid having to name boxes however that would require either a polyfill for Internet Explorer 8, or another way to select box one by one. Not much point in using fancy selectors then.
 

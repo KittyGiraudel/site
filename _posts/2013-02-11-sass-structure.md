@@ -37,16 +37,14 @@ Since my website isn’t that big, I didn’t have to split the code stylesheet 
 
 So basically, my central stylesheet (`styles.min.scss` compiled into `styles.min.css`) looks like this:
 
-```scss
-@import "compass/css3/images";
+<pre class="language-scss"><code>@import "compass/css3/images";
 @import "compass/css3";
 
 @import "font-awesome", 
         "google-fonts", 
         "prism", 
         "helpers", 
-        "styles";
-```
+        "styles";</code></pre>
 
 The first two lines are Compass related imports. It doesn’t compile into the final CSS. They enable use of Compass embedded mixins, sparing me from writing vendor prefixes. The last line imports the 5 files into a single one (top to bottom).
 
@@ -66,8 +64,7 @@ My project is fairly (not to say really) small so I gathered everything into a s
 
 ### Mixins
 
-```scss
-// Mixin providing a PX fallback for REM font-sizes
+<pre class="language-scss"><code>// Mixin providing a PX fallback for REM font-sizes
 
 @mixin font-size($val) {
     font-size: ($val * 20) + px;
@@ -83,8 +80,7 @@ My project is fairly (not to say really) small so I gathered everything into a s
     @if $point == baby-bear {
         @media (max-width: 38em) { @content; } 
     }
-}
-```
+}</code></pre>
 
 Just two. Why having one hundred mixins when you use just two? The first one allows me to use `rem` safely for font-size by providing a `px` fallback. This is a very nice mixin from Chris Coyier at [CSS-tricks](http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/). 
 
@@ -100,12 +96,10 @@ Ah variables. The most awesome thing in any informatic language in the world. Th
 
 Native CSS variables are coming but currently only supported by Chrome so meanwhile we rely on CSS preprocessors for variables. I have to say I really didn’t use much in my project. Actually I used 4, not more.
 
-```scss
-$pink: #FF3D7F;
+<pre class="language-scss"><code>$pink: #FF3D7F;
 $lightgrey: #444;
 $mediumgrey: #666;
-$darkgrey: #999;
-```
+$darkgrey: #999;</code></pre>
 
 At first I named my variables like `$color1`, `$color2`, etc but then it occurred to me I was not able to know what variable I had to set in order to have the right color so I switched back to real color names. It feels easier to me this way.
 
@@ -121,8 +115,7 @@ Let's start with the basics:
 * `.icon-left` and `.icon-right` are used on inline icons to prevent them from sticking the text
                    
 
-```scss
-%clearfix {
+<pre class="language-scss"><code>%clearfix {
     &:after {
         display: table;
         content: "";
@@ -131,8 +124,7 @@ Let's start with the basics:
 }
 
 .icon-left { margin-right: 5px }
-.iconright { margin-left: 5px }
-```
+.iconright { margin-left: 5px }</code></pre>
 
 Then, two helpers to give content specific meaning:
 
@@ -140,8 +132,7 @@ Then, two helpers to give content specific meaning:
 * `.note` is used to tell a paragraph is a note which could be removed without affecting the sense of the content
 
 
-```scss
-.visually-hidden { 
+<pre class="language-scss"><code>.visually-hidden { 
     position: absolute; 
     overflow: hidden; 
     clip: rect(0 0 0 0); 
@@ -154,8 +145,7 @@ Then, two helpers to give content specific meaning:
 .note {
     font-style: italic;
     padding-left: 1em;
-}
-```
+}</code></pre>
 
 And now let's dig into more interesting stuff. I have built some useful classes to pull images or quotes out of the flow and put them on the side in order to emphasize them. Both are built in the same way:
 
@@ -165,8 +155,7 @@ And now let's dig into more interesting stuff. I have built some useful classes 
 * On small screens, they are not floated any more, pulled back in the flow and centered
 
 
-```scss
-%pull-image {
+<pre class="language-scss"><code>%pull-image {
     max-width: 15em;
     display: block;
 
@@ -232,8 +221,7 @@ And now let's dig into more interesting stuff. I have built some useful classes 
     padding-left: 1em;
     margin: 0 0 0 1em;
     border-left: 6px solid $pink;
-}
-```
+}</code></pre>
 
 Please note how I nest media queries inside their related selectors. There are two main reasons for this:
 
@@ -250,15 +238,13 @@ Now we’ve seen pretty much everything else than what makes the site what it is
 
 This is not optional, every project needs to use some kind of way to reset CSS styles. Depending on your tastes it might be [Eric Meyer’s CSS reset](http://meyerweb.com/eric/tools/css/reset/), [Normalize CSS](http://necolas.github.com/normalize.css/) or as I like to call it the **barbarian CSS** as below.
 
-```scss
-*,
+<pre class="language-scss"><code>*,
 *:before,
 *:after {
     @include box-sizing(border-box);
     padding: 0;
     margin: 0;
-}
-```
+}</code></pre>
 
 Yes I know, this is dirty. I shouldn’t not reset CSS this way but honestly on small projects like this, it’s really not a big deal. At first I used Normalize CSS but then I realized loading kilobytes of code when 2 lines are enough is not necessary. So barbarian CSS reset guys!
 
@@ -269,8 +255,7 @@ Please note I use the simplest box-sizing since IE (all versions) represents les
 
 I didn’t really know how to call this.
 
-```scss
-html {
+<pre class="language-scss"><code>html {
     font: 20px/1 "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif;
     color: #555;
     text-shadow: 0 1px rgba(255,255,255,0.6);
@@ -291,8 +276,7 @@ a {
     &:hover {
         text-decoration: underline;
     }
-}
-```
+}</code></pre>
 
 Basic stuff here. Font-size, color, font-families, text-shadows and everything that needs to cascade on the whole document are set on the root element (`html`). I also give a little custom styles to anchor tags.
 
@@ -300,8 +284,7 @@ Basic stuff here. Font-size, color, font-families, text-shadows and everything t
 
 This used to be in the 1140px stylesheet but since I don’t use anymore, I moved it back here. It’s all about main wrappers and containers.
 
-```scss
-.row {
+<pre class="language-scss"><code>.row {
     width: 100%;
     max-width: 57em;
     margin: 0 auto;
@@ -333,8 +316,7 @@ This used to be in the 1140px stylesheet but since I don’t use anymore, I move
         float: none;
         width: 100%;
     }
-}
-```
+}</code></pre>
 
 `.row` is the main wrapper: it contains the header, the main column (`.main`), the sidebar (`.sidebar`) and the footer.
 

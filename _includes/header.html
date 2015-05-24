@@ -2,12 +2,11 @@
   <h1 class="header__title">
     <a href="/">Hugo<span>Giraudel</span>.com</a>
   </h1>
-
   <nav role="navigation" class="nav">
     <ul class="clearfix">
-      <li><a href="/">Writing</a></li>
-      <li><a href="/">Speaking</a></li>
-      <li><a href="/">About me</a></li>
+      {% for item in site.data.nav %}
+      <li {% if page.url == item.url %}class="is-active"{% endif %}><a href="{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
     </ul>
   </nav>
 </header>

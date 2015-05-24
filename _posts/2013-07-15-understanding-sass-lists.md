@@ -15,29 +15,23 @@ Anyway, we have a couple of ways to initialize an empty variable (that could be 
 
 <blockquote class="pull-quote--right">Sass isn't very strict with variable type.</blockquote>
 
-```scss
-$a: ();
+<pre class="language-scss"><code>$a: ();
 $b: unquote('');
 $c: null;
-$d: (null);
-```
+$d: (null);</code></pre>
 
 Now we have defined our variables, we will check their type. Just for fun.
 
-```scss
-type-of($a) -> list
+<pre class="language-scss"><code>type-of($a) -> list
 type-of($b) -> string
 type-of($c) -> null
-type-of($d) -> null
-```
+type-of($d) -> null</code></pre>
 
 Since `$c` and `$d` are stricly equivalent, we will remove the later from the next tests. Let's check the length of each variable.
 
-```scss
-length($a) -> 0
+<pre class="language-scss"><code>length($a) -> 0
 length($b) -> 1
-length($c) -> 1
-```
+length($c) -> 1</code></pre>
 
 `$a` being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn't that odd either since it is a string. However the `null` variable being 1 item long is kind of weird; more on this later.
 
@@ -47,17 +41,14 @@ This section has been quickly covered in the article at CSS-Tricks but since it 
 
 **You can use spaces or commas as separator.** Even if I feel more comfortable with commas since it is the classic separator for arrays (JavaScript, PHP...).
 
-```scss
-$list-space: "item-1" "item-2" "item-3";
-$list-comma: "item-1", "item-2", "item-3";
-```
+<pre class="language-scss"><code>$list-space: "item-1" "item-2" "item-3";
+$list-comma: "item-1", "item-2", "item-3";</code></pre>
 
 *Note: As in CSS, you can ommit quotes for your strings as long as they don't contain any special characters. So `$list: item-1, item-2, item-3` is perfectly valid.*
 
 **You can nest lists.** As for JavaScript or any other language, there is no limit regarding the level of depth you can have with nested lists. Just go as deep as you need to, bro. 
 
-```scss
-/* Nested lists with braces and same separator */
+<pre class="language-scss"><code>/* Nested lists with braces and same separator */
 $list: ( 
     ("item-1.1", "item-1.2", "item-1.3"), 
         ("item-2.1", "item-2.2", "item-2.3"),
@@ -67,8 +58,7 @@ $list: (
 /* Nested lists without braces using different separators to distinguish levels */
 $list: "item-1.1" "item-1.2" "item-1.3", 
        "item-2.1" "item-2.2" "item-2.3",
-       "item-3.1" "item-3.2" "item-3.3";
-```
+       "item-3.1" "item-3.2" "item-3.3";</code></pre>
 
 
 **You can ommit braces** (as you can guess from the previous example). You can define a non-empty list without any braces if you feel so. This is because -contrarily to what most people think- [braces are not what create lists](https://github.com/nex3/sass/issues/837#issuecomment-20429965) in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.
@@ -77,23 +67,17 @@ $list: "item-1.1" "item-1.2" "item-1.3",
 
 <blockquote class="pull-quote--right">Manipulating 5+ nested lists is a pain in the ass.</blockquote>
 
-```scss
-$list: "item-1", "item-2", "item-3";
-```
+<pre class="language-scss"><code>$list: "item-1", "item-2", "item-3";</code></pre>
 
 **Indexes start at 1, not 0.** This is one of the most disturbing once you start experimenting with Sass lists. Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).
 
-```scss
-nth($list, 0) -> throws error
-nth($list, 1) -> "item-1"
-```
+<pre class="language-scss"><code>nth($list, 0) -> throws error
+nth($list, 1) -> "item-1"</code></pre>
 
 **Every value in Sass is treated as a list.** Strings, numbers, boolean, whatever you can put in a variable. This means you're fine to use some list functions even on things that don't look like one.
 
-```scss
-$variable: "Sass is awesome";
-length($variable) -> 1
-```
+<pre class="language-scss"><code>$variable: "Sass is awesome";
+length($variable) -> 1</code></pre>
 
 *Beware! If you remove the quotes around this string, it will be parsed as a 3 items long list (1: Sass; 2: is; 3: awesome). I recommand you quotes your strings to avoid some unpleasant surprises.*
 
@@ -125,8 +109,7 @@ Please consider an extended selector like `.home .nav-home, .about .nav-about, .
 
 But first, we will write the skeleton of our testcase:
 
-```scss
-$pages: home, about, products, contact;
+<pre class="language-scss"><code>$pages: home, about, products, contact;
 $selector: ();
 
 @each $item in $pages {
@@ -135,22 +118,19 @@ $selector: ();
 
 #{$selector} {
   style: awesome;
-}
-```
+}</code></pre>
 
 ### The long and dirty way
 
 This is the method I was still using a couple of weeks ago. It works but it involves an extra conditional statemens to handle commas. Please see below.
 
-```scss
-@each $item in $pages {
+<pre class="language-scss"><code>@each $item in $pages {
   $selector: $selector unquote('.#{$item} .nav-#{$item}');
     
     @if $item != nth($pages, length($pages)) {
       $selector: $selector unquote(',');
     }
-}
-```
+}</code></pre>
 
 Basically, we add the new selector to `$selector` and if we are not dealing with the last item of the list, we add a comma.
 
@@ -160,11 +140,9 @@ Basically, we add the new selector to `$selector` and if we are not dealing with
 
 This one is the cleanest way you can use between the three; not the shortest though. Anyway, it uses `append()` properly.
 
-```scss
-@each $item in $pages {
+<pre class="language-scss"><code>@each $item in $pages {
   $selector: append($selector, unquote('.#{$item} .nav-#{$item}'), comma);
-}
-```
+}</code></pre>
 
 I think this is pretty straightforward: we append to `$selector` the new selector by explicitly separating it from the previous one with a comma.
 
@@ -172,11 +150,9 @@ I think this is pretty straightforward: we append to `$selector` the new selecto
 
 Probably my favorite version above all since it's the shortest. It relies on implicit appending; very neat.
 
-```scss
-@each $item in $pages {
+<pre class="language-scss"><code>@each $item in $pages {
   $selector: $selector, unquote('.#{$item} .nav-#{$item}');
-}
-```
+}</code></pre>
 
 Instead of using `append()` and setting the 3rd parameter to `comma` we implicitly do it via removing the function and using a comma right after `$selector`.
 

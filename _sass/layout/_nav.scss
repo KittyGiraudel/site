@@ -1,0 +1,59 @@
+/**
+ * Navigation
+ */
+.nav {
+  @include respond-to('medium') {
+    float: right;
+  }
+}
+
+/**
+ * Navigation list
+ * 1. Undo default styles
+ */
+.nav ul {
+  list-style: none; /* 1 */
+  margin: 0; /* 1 */
+  padding: 0; /* 1 */
+}
+
+/**
+ * Navigation item
+ * 1. Position context for pseudo-element
+ */
+.nav li {
+  position: relative; /* 1 */
+  display: inline-block;
+}
+
+/**
+ * Navigation active item 
+ * 1. Magic number :(
+ */
+.nav .is-active::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  -webkit-transform: rotate(45deg) translateX(-50%);
+  -ms-transform: rotate(45deg) translateX(-50%);
+  transform: rotate(45deg) translateX(-50%);
+  left: 50%;
+  bottom: -48px; /* 1 */
+}
+
+/**
+ * Space navigation item one from the other
+ */
+.nav li + li {
+  margin-left: 20px;
+}
+
+/**
+ * Navigation links
+ */
+.nav a {
+  text-decoration: none;
+  color: white;
+}

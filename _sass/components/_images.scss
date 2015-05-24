@@ -1,0 +1,35 @@
+/**
+ * Floated images
+ * 1. Poor man's vertical rhythm
+ */
+.pull-image--left,
+.pull-image--right {
+  @include respond-to('medium') {
+    max-width: 250px;
+    margin-bottom: 30px; /* 1 */
+  }
+
+  @media (min-width: 800px) {
+    max-width: 400px;
+  }
+}
+
+/**
+ * Left floated images
+ */
+.pull-image--left {
+  @include respond-to('medium') {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+/**
+ * Right floated images
+ */
+.pull-image--right {
+  @include respond-to('medium') {
+    float: right;
+    margin-left: 20px;
+  }
+}

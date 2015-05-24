@@ -9,12 +9,10 @@ If you are a reader of CSS-Tricks, you might have come across this article a whi
 
 While the idea is solid, the realization is very simple. There was no CSS magic behind it at all. Les James (the author) manually wrote some [JSON](http://json.org/) in the `content` property of body's `::before` pseudo-element, like this:
 
-```css
-body::before {
+<pre class="language-css"><code>body::before {
   display: none;
   content: '{ "current": "small", "all": ["small"] }';
-}
-```
+}</code></pre>
 
 Well, you have to tell it is actually kind of cool to be able to do so, right? This is neat! Well fasten your belt guys because [Fabrice Weinberg](https://twitter.com/fweinb) and I pushed this to an upper level.
 
@@ -39,16 +37,14 @@ How awesome is that?
 
 Writing the `json-encode` part has been very easy to do. It took us less than an hour to have everything set up. We are able to encode properly any Sass type to JSON, including lists and maps. We have a `json-encode` function delaying the encoding to type-specific *private* functions like `_json-encode--string`, `_json-encode--list` thanks to the brand new `call` function from Sass 3.3:
 
-```scss
-@function json-encode($value) {
+<pre class="language-scss"><code>@function json-encode($value) {
   $type: type-of($value);                            /* 1 */
   @if function_exists('_json-encode--#{$type}') {    /* 2 */
     @return call('_json-encode--#{$type}', $value);  /* 3 */
   }
   @warn "Unknown type for #{$value} (#{$type}).";    /* 4 */
   @return false;                                     /* 4 */
-}
-```
+}</code></pre>
 
 Here is what's going on:
 
@@ -70,13 +66,10 @@ Once you've encoded your Sass into JSON, you'll want to dump the JSON string int
 
 Since we don't like to choose, we picked all of them. We simply made [a mixin with a flag](https://github.com/HugoGiraudel/SassyJSON/blob/master/src/encode/mixins/_json.scss) as a parameter defining the type of output you'll get: `regular` for option 1 and 2 (cross-browser mess), `media` for the media query and `comment` for the comment or even `all` for all of them (which is the default). Judge for yourselves:
 
-```scss
-$map: ((a: (1 2 ( b : 1 )), b: ( #444444, false, ( a: 1, b: test ) ), c: (2 3 4 string)));
-@include json-encode($map, $flag: all);
-```
+<pre class="language-scss"><code>$map: ((a: (1 2 ( b : 1 )), b: ( #444444, false, ( a: 1, b: test ) ), c: (2 3 4 string)));
+@include json-encode($map, $flag: all);</code></pre>
 
-```css
-/*! json-encode: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}' */
+<pre class="language-css"><code>/*! json-encode: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}' */
 
 body::before {
   display: none !important;
@@ -91,8 +84,7 @@ head {
   json {
     json: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
   }
-}
-```
+}</code></pre>
 
 ## JSON to Sass
 

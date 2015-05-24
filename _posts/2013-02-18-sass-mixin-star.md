@@ -38,19 +38,15 @@ At this point, I was already able to handle a mixin to create the star, but the 
 
 The user couldn’t figure this out and neither could I. So I asked Ana how to compute the height of the element based on the width. After a few complicated explanations, she finally gave me the formula (explanation [here](http://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb)).
 
-```javascript
-function computeHeight(x, skewAngle) { 
+<pre class="language-javascript"><code>function computeHeight(x, skewAngle) { 
   return Math.sin((90 - skewAngle) * Math.PI / 180) * x 
-}
-```
+}</code></pre>
 
 Okay, this is JavaScript but it is a good start. However this returns a radian value, which is not what we want. We want degrees. So the correct function has to be this one:
 
-```javascript
-function computeHeight(x, skewAngle) { 
+<pre class="language-javascript"><code>function computeHeight(x, skewAngle) { 
   return Math.sin(90 - skewAngle) * x 
-}
-```
+}</code></pre>
 
 <blockquote class="pull-quote--right">I had never heard of any `sin()` function in Sass.</blockquote>
 
@@ -62,11 +58,9 @@ It turned out the `power()` function (called in the `sin()` one) was triggering 
 
 Compass has built-in functions for advanced math calculation including `sin()`. Isn’t that great? Like really awesome? Building the Sass function was a piece of cake:
 
-```scss
-@function computeHeight($x, $skewAngle) { 
+<pre class="language-scss"><code>@function computeHeight($x, $skewAngle) { 
   @return sin(90deg - $skewAngle) * $x;
-}
-```
+}</code></pre>
 
 This worked like a charm. So **given only the width, Sass was able to calculate the according height.**
 
@@ -92,11 +86,9 @@ The first is useless in our case, but the second one is precisely what we need t
 
 > You need to divide by 1 of the same unit. If you use unit(), you get a string instead of a number, but if you multiply by zero and add 1, you have what you need.
 
-```scss
-@function strip-units($number) {
+<pre class="language-scss"><code>@function strip-units($number) {
   @return $number / ($number * 0 + 1);
-}
-```
+}</code></pre>
 
 Do not ask me why it works or how does it work, I have absolutely no idea. This function makes strictly no sense yet it does what we need.
 
@@ -108,33 +100,27 @@ Last but not least, Ana used the [inherit hack](http://xiel.de/webkit-fix-css-tr
 
 Of course we have, mixin to the rescue!
 
-```scss
-@mixin val($properties, $value) {
+<pre class="language-scss"><code>@mixin val($properties, $value) {
   @each $prop in $properties { 
     #{$prop}:  #{$value};
   }
-}
-```
+}</code></pre>
 
 You give this mixin a [list](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists) of properties you want to share the same value and of course the value. Then, for each property in the list, the mixin outputs the given value. In our case:
 
-```scss
-.selector {
+<pre class="language-scss"><code>.selector {
   &:after, &:before {
     @include val(width height background, 'inherit');
   }
-}
-```
+}</code></pre>
 
 ... outputs:
 
-```scss
-.selector:before, .selector:after {
+<pre class="language-scss"><code>.selector:before, .selector:after {
   width: inherit;
   height: inherit;
   background: inherit;
-}
-```
+}</code></pre>
 
 It’s really no big deal. We could totally write those 3 properties/value pairs, but it is great to see what’s possible with Sass, isn’t it?
 
@@ -142,8 +128,7 @@ It’s really no big deal. We could totally write those 3 properties/value pairs
 
 Here is the full code for the mixin. As you can see, it is really not that big (especially since Ana's original code is very light).
 
-```scss
-@mixin val($properties, $value) {
+<pre class="language-scss"><code>@mixin val($properties, $value) {
   @each $prop in $properties { 
     #{$prop}: #{$value};
   }
@@ -181,8 +166,7 @@ Here is the full code for the mixin. As you can see, it is really not that big (
   &:after { 
     @include transform(skewX(-30deg) rotate(-60deg) skewX(-30deg)) 
   }
-}
-```
+}</code></pre>
 
 ## Final words 
 
@@ -190,8 +174,7 @@ Well guys, that’s pretty much it. You have a perfectly working [Sass mixin](ht
 
 Using it couldn't be simpler:
 
-```scss
-.star {
+<pre class="language-scss"><code>.star {
   margin: 5em auto;
   background: tomato;
   @include star(10em);
@@ -199,8 +182,7 @@ Using it couldn't be simpler:
   &:hover {
     background: deepskyblue;
   }
-}
-```
+}</code></pre>
 
 Thanks (and congratulations) to [Ana Tudor](http://twitter.com/thebabydino) for creating such a shape which made me do some cool Sass stuff.
 

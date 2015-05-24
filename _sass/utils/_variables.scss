@@ -27,4 +27,13 @@ $light-grey: #EEE;
 /// @prop {String} key - Breakpoint name
 /// @prop {Map} value - Breakpoint value
 $breakpoints: (
+  'medium': (min-width: 500px)
 );
+
+/// Regular font stack
+/// @type List
+$text-font-stack: "Roboto", "Helvetica", "Arial", sans-serif;
+
+/// Code font stack
+/// @type List
+$code-font-stack: "Source Code Pro", "Courier New", monospace;

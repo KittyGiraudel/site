@@ -19,28 +19,22 @@ Like `git mergetool` to resolve merge conflicts, there is a `git difftool` to se
 
 Fortunately since version 1.7.11, Git allows to see diff on a whole directory with the `--dir-diff` parameter. If you are using an older version, worry not! It's possible to install a [small script](https://github.com/wmanley/git-meld) to do the same thing:
 
-```git
-/home/workspace $ git clone git@github.com:wmanley/git-meld.git
+<pre class="language-git"><code>/home/workspace $ git clone git@github.com:wmanley/git-meld.git
 Cloning into git-meld...
 remote: Counting objects: 64, done.
 remote: Compressing objects: 100% (34/34), done.
 remote: Total 64 (delta 31), reused 57 (delta 25)
 Receiving objects: 100% (64/64), 17.83 KiB, done.
-Resolving deltas: 100% (31/31), done.
-```
+Resolving deltas: 100% (31/31), done.</code></pre>
 
 Then, create a new alias *meld* in Git, for example by adding the following line in the **[alias]** part of you *.git/config* file:
 
-```bash
-meld = !/home/workspace/git-meld/git-meld.pl
-```
+<pre class="language-bash"><code>meld = !/home/workspace/git-meld/git-meld.pl</code></pre>
 
 Now, you just have to use `git meld` command for your diff:
 
-```git
-$ git meld HEAD HEAD~4
-$ git meld myBranch myOtherBranch
-```
+<pre class="language-git"><code>$ git meld HEAD HEAD~4
+$ git meld myBranch myOtherBranch</code></pre>
 
 This command will ask you which diff tool to use, then open the whole directory in the tool instead of each file sequencially.
 
@@ -61,21 +55,17 @@ Then the user has to check the bug again and inform `git bisect`. At each step o
 
 Let's take an example. I'm going to create 20 commits; each commit adding a new line "line number #" in *file.txt*. One of the insertions will have a typing error *"numer"* instead of *"number"*. We are going to try to find the commit which has the typo with `git bisect`.
 
-```bash
-$ # I create 20 commits here
+<pre class="language-bash"><code>$ # I create 20 commits here
 $ cat file.txt | grep number | wc -l
 19
 $ cat file.txt | grep numer | wc -l
-1
-```
+1</code></pre>
 
 Ok, I have 19 occurences of *"number"* and 1 occurrence of *"numer"*, let's find which commit inserted the typo. To do so, I run `git bisect` with two commits references. I know that the bug was not there 20 commits ago and is present now. So I can pass `HEAD` and `HEAD~20` for my two references.
 
-```git
-$ git bisect start HEAD HEAD~20
+<pre class="language-git"><code>$ git bisect start HEAD HEAD~20
 Bisecting: 9 revisions left to test after this (roughly 3 steps)
-[2128ffe8f612d40bc15b617600b6de5f5231d58e] Commit 10
-```
+[2128ffe8f612d40bc15b617600b6de5f5231d58e] Commit 10</code></pre>
 
 Git checks my interval and calculates that I will need 3 steps to find the wrong commit after current step. The commit in the middle of my interval has been checkout ("Commit 10"). If I look at my *master* branch in Gitg (or Gitk, Gitx or any Git graphical tool...), I can see that Git has created two references *refs/bisect/start* and *refs/bisect/good-[...]* next to my `HEAD` and `HEAD~20` commits.
 
@@ -85,18 +75,14 @@ Git checks my interval and calculates that I will need 3 steps to find the wrong
 
 Now I have to check if the bug is still there or not and inform Git according to my check.
 
-```bash
-$ cat file.txt | grep numer | wc -l
-1
-```
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
+1</code></pre>
 
 The bug is still there, so I use `git bisect bad` to tell Git bisect that the current state is still broken.
 
-```git
-$ git bisect bad
+<pre class="language-git"><code>$ git bisect bad
 Bisecting: 4 revisions left to test after this (roughly 2 steps)
-[2c935028965bd60a8fe15d428feb1f3972245e75] Commit 5
-```
+[2c935028965bd60a8fe15d428feb1f3972245e75] Commit 5</code></pre>
 
 Git bisect has reduced the commit interval and checkout the "Commit 5". I will find the typo bug in 2 steps from now. In gitg, my master branch looks like this:
 
@@ -104,42 +90,35 @@ Git bisect has reduced the commit interval and checkout the "Commit 5". I will f
 
 The *refs/bisect/bad* reference has been moved to the "Commit 10". I check if the bug is still there or not.
 
-```bash
-$ cat file.txt | grep numer | wc -l
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
 $ git bisect bad
 Bisecting: 2 revisions left to test after this (roughly 1 step)
-[7ab0afc851dc3cdd1bee795b6bc0656d57497ca5] Commit 2
-```
+[7ab0afc851dc3cdd1bee795b6bc0656d57497ca5] Commit 2</code></pre>
 
 Now Gitg show this:
 
 ![After second git bisect bad](/images/git-tips-and-tricks-part-3__bisect-3.png)
 
-```bash
-$ cat file.txt | grep numer | wc -l
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 0
 $ git bisect good
 Bisecting: 0 revisions left to test after this (roughly 1 step)
-[a21e6e97e003b614793cffccbdc1a53985fc11d4] Commit 4
-```
+[a21e6e97e003b614793cffccbdc1a53985fc11d4] Commit 4</code></pre>
 
 The bug wasn't there in this step, so I use `git bisect good` instead of `git bisect bad`. Gitg has created a new *refs/bisect/good-[...]* reference.
 
 ![After first git bisect good](/images/git-tips-and-tricks-part-3__bisect-4.png)
 
-```bash
-$ cat file.txt | grep numer | wc -l
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
 $ git bisect bad
 Bisecting: 0 revisions left to test after this (roughly 0 steps)
-[7ae5192025b3a96520ee4897bd411ee7c9d0828f] Commit 3
-```
+[7ae5192025b3a96520ee4897bd411ee7c9d0828f] Commit 3</code></pre>
 
 ![After third git bisect bad](/images/git-tips-and-tricks-part-3__bisect-5.png)
 
-```bash
-$ cat file.txt | grep numer | wc -l
+<pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
 $ git bisect bad
 7ae5192025b3a96520ee4897bd411ee7c9d0828f is the first bad commit
@@ -148,13 +127,11 @@ Author: lgiraudel &lt;lgiraudel@mydomain.com>
 
     Commit 3
 
-:100644 100644 d133004b66122208e5a1841e01b77db5862548c0 cd8061d8bb277cb08d8965487ff263181a82e2e4 M  file.txt
-```
+:100644 100644 d133004b66122208e5a1841e01b77db5862548c0 cd8061d8bb277cb08d8965487ff263181a82e2e4 M  file.txt</code></pre>
 
 Finally, Git bisect gives me the guilty commit. Let's check its content:
 
-```git
-$ git log -1 -p
+<pre class="language-git"><code>$ git log -1 -p
 commit 7ae5192025b3a96520ee4897bd411ee7c9d0828f
 Author: lgiraudel &lt;lgiraudel@mydomain.com>
 
@@ -167,8 +144,7 @@ index d133004..cd8061d 100644
 @@ -1,2 +1,3 @@
  line number 1
  line number 2
-+line numer 3
-```
++line numer 3</code></pre>
 
 Now that I have found the commit which has introduced the typo, I can read its content to find how to fix my bug. Once the bisect is finished, I can use `git bisect reset` to go back to the HEAD and clean references in my branch. This command can be used in the middle of a bisect process to stop it.
 
@@ -176,8 +152,7 @@ Now that I have found the commit which has introduced the typo, I can read its c
 
 Sometimes, it's not possible to check if a bug is still present on a specific commit. In this case, instead of using `git bisect good` or `git bisect bad` commands, you can use `git bisect skip` to ask a commit near the current one.
 
-```git
-$ git bisect start HEAD HEAD~20
+<pre class="language-git"><code>$ git bisect start HEAD HEAD~20
 Bisecting: 9 revisions left to test after this (roughly 3 steps)
 [2128ffe8f612d40bc15b617600b6de5f5231d58e] Commit 10
 $ cat file.txt | grep numer | wc -l
@@ -202,8 +177,7 @@ Author: lgiraudel &lt;lgiraudel@mydomain.com>
 
     Commit 3
 
-:100644 100644 d133004b66122208e5a1841e01b77db5862548c0 cd8061d8bb277cb08d8965487ff263181a82e2e4
-```
+:100644 100644 d133004b66122208e5a1841e01b77db5862548c0 cd8061d8bb277cb08d8965487ff263181a82e2e4</code></pre>
 
 Of course, if you skip the last steps of the bisect process, Git won't be able to tell you which commit has introduced the bug and will return a commit range instead of a commit.
 
@@ -213,16 +187,13 @@ If you want to avoid testing manually each step of the bisect process, you can u
 
 The test script is really easy to write for our usecase. For real usecases, it usually requires to use a testing techno like test unit frameworks, BDD frameworks or sanity frameworks.
 
-```bash
-#/bin/sh
+<pre class="language-bash"><code>#/bin/sh
 
-exit `cat file.txt | grep numer | wc -l`
-```
+exit `cat file.txt | grep numer | wc -l`</code></pre>
 
 Now, let's just launch `git bisect` with the script:
 
-```git
-$ git bisect start HEAD HEAD~20
+<pre class="language-git"><code>$ git bisect start HEAD HEAD~20
 Bisecting: 9 revisions left to test after this (roughly 3 steps)
 $ git bisect run ./bisect_auto.sh
 running ./bisect_auto.sh
@@ -245,8 +216,7 @@ Author: lgiraudel <lgiraudel@mydomain.com>
     Commit 3
 
 :100644 100644 d133004b66122208e5a1841e01b77db5862548c0 cd8061d8bb277cb08d8965487ff263181a82e2e4 M  file.txt
-bisect run success
-```
+bisect run success</code></pre>
 
 ## Merge several commits into a single one before pushing
 
@@ -263,14 +233,11 @@ If my 20 commits haven't been pushed to the remote repository yet, I can conside
 
 The command to do this:
 
-```git
-$ git rebase -i HEAD~20
-```
+<pre class="language-git"><code>$ git rebase -i HEAD~20</code></pre>
 
 Git will open editor with one line per commit:
 
-```git
-pick b2be46f Commit 1
+<pre class="language-git"><code>pick b2be46f Commit 1
 pick 7d028f1 Commit 2
 pick 90b2d43 Commit 3
 pick b08b7ae Commit 4
@@ -303,13 +270,11 @@ pick bb09305 Commit 20
 #
 # If you remove a line here THAT COMMIT WILL BE LOST.
 # However, if you remove everything, the rebase will be aborted.
-#
-```
+#</code></pre>
 
 If I want to merge my 20 commits, I can replace **pick** by **squash** or **s** for each commit except first one.
 
-```git
-pick b2be46f Commit 1
+<pre class="language-git"><code>pick b2be46f Commit 1
 s 7d028f1 Commit 2
 s 90b2d43 Commit 3
 s b08b7ae Commit 4
@@ -342,15 +307,13 @@ s bb09305 Commit 20
 #
 # If you remove a line here THAT COMMIT WILL BE LOST.
 # However, if you remove everything, the rebase will be aborted.
-#
-```
+#</code></pre>
 
 If I save the content and close the editor, Git will merge the 20 commits into a single one and then open the editor (again) to display the 20 commits messages. I can keep or change my commits message, then save and close the editor to finish the merging process.
 
 Now I have a single commit which adds 20 lines in the text file, instead of having 20 commits, each one adding only one line:
 
-```git
-$ git log -1 -p
+<pre class="language-git"><code>$ git log -1 -p
 commit f523330f8db0030eadc41836b54713aac2baf18b
 Author: lgiraudel &lt;lgiraudel@mydomain.com>
 
@@ -381,8 +344,7 @@ index 0000000..b636d88
 +line number 17
 +line number 18
 +line number 19
-+line number 20
-```
++line number 20</code></pre>
 
 ## Final thoughts
 

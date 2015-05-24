@@ -1,17 +1,33 @@
+/**
+ * Set up a decent box model on the root element
+ */
 html {
   box-sizing: border-box;
 }
 
-*, *::after, *::before {
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
   box-sizing: inherit;
-}
+} 
 
+/**
+ * Flat background color for the whole page
+ */
 body {
   background: $main-color;
 }
 
+/**
+ * Basic styles for links
+ */
 a {
   color: $main-color;
+  transition: 0.15s;
 
   &:hover,
   &:active {
@@ -19,8 +35,13 @@ a {
   }
 }
 
+/**
+ * Basic styles for images
+ * 1. Warning, potentially dangerous if using inline images
+ */
 img {
   max-width: 100%;
   height: auto;
-  display: block;
+  display: block; /* 1 */
+  margin: 0 auto;
 }

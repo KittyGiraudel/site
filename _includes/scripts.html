@@ -1,16 +1,15 @@
-<script src="/assets/js/main.min.js"></script>
+<script src="/js/main.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var app = new App({
-    codepen: {% if post.codepen %}true{% else %}false{% endif %},
-    sassmeister: {% if post.sassmeister %}true{% else %}false{% endif %},
-    tableOfContent: {% if post.summary %}true{% else %}false{% endif %},
-    comments: {% if post.comments %}true{% else %}false{% endif %},
-    layout: {% if post.layout %}'article'{% else %}'default'{% endif %},
+    codepen: {% if page.codepen %}true{% else %}false{% endif %},
+    sassmeister: {% if page.sassmeister %}true{% else %}false{% endif %},
+    tableOfContent: {% if page.summary %}true{% else %}false{% endif %},
+    comments: {% unless page.comments == false or page.external %}true{% else %}false{% endunless %},
     disqus: {
-      title: "{{ post.title }}",
-      url: {% if post.disqus %}'{{ post.disqus }}'{% else %}window.location.href{% endif %},
+      title: "{{ page.title }}",
+      url: {% if page.disqus %}'{{ page.disqus }}'{% else %}window.location.href{% endif %},
       name: 'hugogiraudel'
     },
     tracking: true,
