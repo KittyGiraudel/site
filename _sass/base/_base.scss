@@ -24,27 +24,43 @@ body {
 
 /**
  * Basic styles for links
+ * 1. Position context for pseudo-element
  */
 a {
   color: $secondary-color;
-  transition: 0.1s;
+  transition: 0.15s;
   text-decoration: none;
-  position: relative;
+  position: relative; /* 1 */
   display: inline-block;
 
+  /**
+   * Underline
+   * 1. Same transition as link
+   * 2. Full width below content
+   * 3. Same color as link
+   * 4. Scaled down to 0 to be invisible
+   */
   &::before {
     content: '';
-    transition: inherit;
-    position: absolute;
-    background: currentcolor;
-    top: 100%;
+    transition: inherit; /* 1 */
+    position: absolute; /* 2 */
+    top: 100%; /* 2 */
+    left: 0; /* 2 */
+    right: 0; /* 2 */
     height: 1px;
-    left: 0;
-    right: 0;
-    transform: scaleX(0);
+    background: currentcolor; /* 3 */
+    -webkit-transform: scaleX(0); /* 4 */
+    -ms-transform: scaleX(0); /* 4 */
+    transform: scaleX(0); /* 4 */
   }
 
+  /**
+   * Display underline on hover
+   */
+  &:active::before,
   &:hover::before {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
     transform: scaleX(1);
   }
 }

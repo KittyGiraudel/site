@@ -19,12 +19,3 @@
     opacity: 0.35;
   }
 }
-
-.article__reading-time {
-  color: $medium-grey;
-  font-family: $code-font-stack;
-
-  &::before { content: '('; }
-  &::after { content: ')'; }
-}
-

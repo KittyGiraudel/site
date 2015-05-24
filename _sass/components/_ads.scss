@@ -26,10 +26,6 @@ body:not(.home) .site-ad {
   margin: 0 auto;
 }
 
-.carbonad a::before {
-  content: none !important;
-}
-
 /**
  * Prevent hidden image from CarbonAds to mess the layout
  */

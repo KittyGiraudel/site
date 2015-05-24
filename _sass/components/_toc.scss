@@ -26,12 +26,13 @@
 
 /**
  * Table of contents list
+ * 1. Order with a counter
  */
 .toc__list {
   padding: 0;
   margin: 0;
   list-style: none;
-  counter-reset: toc;
+  counter-reset: toc; /* 1 */
 }
 
 /**
@@ -39,10 +40,13 @@
  */
 .toc__item {
   margin-bottom: 5px;
-  counter-increment: toc;
 }
 
+/**
+ * Add numbers on the right of table of contents item
+ */ 
 .toc__item::after {
+  counter-increment: toc;
   content: ' .' counter(toc);
 }
 

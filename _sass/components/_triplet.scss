@@ -22,6 +22,9 @@
   }
 }
 
+/**
+ * Double item on the right
+ */
 .triplet__item--pull {
   @include respond-to('medium') {
     float: right;

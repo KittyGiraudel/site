@@ -5,3 +5,8 @@
   color: $medium-grey;
   font-family: $code-font-stack;
 }
+
+.reading-time {
+  &::after { content: ')'; }
+  &::before { content: '('; }
+}

@@ -8,27 +8,33 @@ body {
 
 /**
  * Apply some basic styles to main headings
+ * 1. Poor man's vertical rhythm
  */
 h1 {
   font-size: 36px;
-  margin-top: 10px;
-  margin-bottom: 50px;
+  margin-top: 10px; /* 1 */
+  margin-bottom: 50px; /* 1 */
 }
 
 /**
  * Headings level 2
  * 1. Enable position context for anchor links
  * 2. Clear any pull-image / pull-quote
+ * 3. Poor man's vertical rhythm
  */
 h2 {
   position: relative; /* 1 */
   clear: both; /* 2 */
-  margin-top: 70px;
-  margin-bottom: 40px;
+  margin-top: 70px; /* 3 */
+  margin-bottom: 40px; /* 3 */
 }
 
+/**
+ * Headingds level 3
+ * 1. Poor man's vertical rhythm
+ */
 h3 {
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* 1 */
 }
 
 /**
@@ -58,6 +64,9 @@ p, ul, ol {
   margin-bottom: 40px;
 }
 
+/**
+ * Poor man's vertical rhythm
+ */
 li {
   margin-bottom: 10px;
 }
