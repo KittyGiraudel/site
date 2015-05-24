@@ -35,18 +35,20 @@
  * 1. (sqrt(2) * 20) / 2
  */
 .nav .is-active::before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: white;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  left: 50%;
-  bottom: -40px;
-  margin-left: -12px; /* 1 */
-  box-shadow: 0 -3spx 5px -3px rgba(black, 0.2);
+  @include respond-to('medium') {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 50%;
+    bottom: -40px;
+    margin-left: -12px; /* 1 */
+    box-shadow: 0 -3spx 5px -3px rgba(black, 0.2);
+  }
 }
 
 /**
