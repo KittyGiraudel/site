@@ -33,11 +33,24 @@
   text-decoration: none;
 }
 
+.triplet__link:hover,
+.triplet__link:active {
+  .triplet__image {
+    -webkit-filter: sepia(0) hue-rotate(0);
+    -moz-filter: sepia(0) hue-rotate(0);
+    filter: sepia(0) hue-rotate(0);
+  }
+}
+
 /**
  * Triplet image
  */
 .triplet__image {
   border-bottom: 2px solid $main-color;
+  -webkit-filter: sepia(1) hue-rotate(180deg);
+  -moz-filter: sepia(1) hue-rotate(180deg);
+  filter: sepia(1) hue-rotate(180deg);
+  transition: 0.15s;
 }
 
 /**

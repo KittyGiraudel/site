@@ -28,7 +28,7 @@ section > h2:first-of-type {
 .profile {
   text-align: center;
   margin-bottom: 20px;
-  padding-top: 20px;
+  padding-top: 40px;
 
   @include respond-to('medium') {
     text-align: initial;
@@ -40,6 +40,7 @@ section > h2:first-of-type {
  */
 .profile__avatar {
   margin-bottom: 40px;
+  margin-top: -20px;
   border-radius: 50%;
 
   @include respond-to('medium') {
