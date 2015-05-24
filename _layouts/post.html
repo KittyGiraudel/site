@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+{% if page.title %} 
+  <h1 class="post-title">{{ page.title }}</h1> 
+{% endif %}
+
+{% if page.date %}
+  <p class="post-date">{{ page.date | date: "%B %d, %Y" }}
+  {% if page.guest %} &mdash; by {{ page.guest }}{% endif %}
+  </p> 
+{% endif %}
+
+{% if page.external %}
+  <p>The post is not hosted on {{ global.domain }}. Please go to : <a href="{{ page.external.url }}">{{ page.external.host }}</a>.</p>
+{% endif %}
+
+{{ content }}
+
+{% unless page.comments == false or page.external %}
+  <div id="disqus_thread"></div> 
+{% endunless %}

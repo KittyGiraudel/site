@@ -1,0 +1,11 @@
+.figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+.figure figcaption {
+  float: right;
+  font-size: 16px;
+  color: $medium-grey;
+  margin-top: 10px;
+}

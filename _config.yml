@@ -1,0 +1,14 @@
+# Site settings
+title: HugoGiraudel.com
+email: hugo.giraudel@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  I write about Sass. Mostly.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://hugogiraudel.com" # the base hostname & protocol for your site
+twitter_username: HugoGiraudel
+github_username:  HugoGiraudel
+
+# Build settings
+markdown: kramdown
+paginate: 7
+permalink: pretty

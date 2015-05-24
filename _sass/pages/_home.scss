@@ -1,0 +1,29 @@
+.articles {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.article {
+  margin-bottom: 20px;
+  padding: 20px 0;
+  position: relative;
+  border-bottom: 5px solid $light-grey;
+}
+
+.article__date {
+  color: $medium-grey;
+}
+
+.article__link {
+  text-decoration: none;
+}
+
+.article__icon {
+  font-size: 30px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $main-color;
+}

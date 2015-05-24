@@ -1,0 +1,30 @@
+/// Container max-width
+/// @type Length
+$max-width: 800px;
+
+/// Main color
+/// @type Color
+$main-color: #3fa3d5;
+
+/// Secondary color
+/// @type Color
+$secondary-color: #c69;
+
+/// Dark grey
+/// @type Color
+$dark-grey: #333;
+
+/// Medium grey
+/// @type Color
+$medium-grey: #AAA;
+
+/// Light grey
+/// @type Color
+$light-grey: #EEE;
+
+/// Breakpoints
+/// @type Map
+/// @prop {String} key - Breakpoint name
+/// @prop {Map} value - Breakpoint value
+$breakpoints: (
+);

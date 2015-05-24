@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<h1 class="visually-hidden">Latest articles</h1>
+<ul class="articles">
+{% for post in paginator.posts %}
+  {% unless post.preview %}
+  <li class="article" role="article">
+    {% if post.guest %}
+      <span class="fontawesome-user  article__icon" title="Article from {{ post.guest }}"></span>
+    {% elsif post.external %}
+      <span class="fontawesome-share-alt  article__icon" title="Go to {{ post.external.host }} to read the full article"></span>
+    {% endif %}
+
+    <p class="article__date">{{ post.date | date: "%B %d, %Y" }}{% if post.guest %} by {{ post.guest }}{% endif %}{% if post.external %} at {{ post.external.host }}{% endif %}</p>
+
+    <h2 class="article__title">
+        {% if post.external %}
+          <a class="article__link" href="{{ post.external.url }}">
+        {% else %}
+          <a class="article__link" href="{{ post.url }}">
+        {% endif %}
+            {{ post.title }}
+        </a>
+    </h2>
+  </li>
+  {% endunless %}
+{% endfor %}
+</ul>

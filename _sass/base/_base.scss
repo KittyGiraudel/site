@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  background: $main-color;
+}
+
+a {
+  color: $main-color;
+
+  &:hover,
+  &:active {
+    color: $secondary-color;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
