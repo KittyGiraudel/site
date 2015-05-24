@@ -68,10 +68,12 @@ a {
 /**
  * Basic styles for images
  * 1. Warning, potentially dangerous if using inline images
+ * 2. Prevent image from being taller than viewport
  */
 img {
   max-width: 100%;
   height: auto;
   display: block; /* 1 */
+  max-height: 80vh; /* 2 */
   margin: 0 auto;
 }
