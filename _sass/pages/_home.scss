@@ -1,21 +1,39 @@
-/**
- * List item on the home page
- */
-.article {
-  position: relative;
+section {
+  padding: 20px 0;
+  margin: 10px 0;
+  border-bottom: 1px solid $light-grey;
 }
 
-/**
- * Article icons on the home page
- */
-.article__icon {
-  @include respond-to('medium') {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    -webkit-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    transform: translateY(-100%);
-    opacity: 0.35;
-  }
+section:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+section > h2:first-of-type {
+  margin-top: 0;
+}
+
+.profile {
+  margin-bottom: 20px;
+}
+
+.profile__avatar {
+  border-radius: 50%;
+  max-width: 150px;
+  float: left;
+  margin-right: 20px;
+}
+
+.profile__name {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+.profile__description {
+  font-family: $code-font-stack;
+  color: $medium-grey;
+  font-size: 1em;
+  margin: 0;
+  list-style: none;
+  padding: 0;
 }

@@ -2,6 +2,8 @@
  * Navigation
  */
 .nav {
+  position: relative;
+
   @include respond-to('medium') {
     float: right;
   }
@@ -22,13 +24,14 @@
  * 1. Position context for pseudo-element
  */
 .nav li {
+  padding: 0 10px;
   position: relative; /* 1 */
   display: inline-block;
 }
 
 /**
  * Navigation active item 
- * 1. Magic number :(
+ * 1. (sqrt(2) * 20) / 2
  */
 .nav .is-active::before {
   content: '';
@@ -36,18 +39,12 @@
   width: 20px;
   height: 20px;
   background: white;
-  -webkit-transform: rotate(45deg) translateX(-50%);
-  -ms-transform: rotate(45deg) translateX(-50%);
-  transform: rotate(45deg) translateX(-50%);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
   left: 50%;
-  bottom: -48px; /* 1 */
-}
-
-/**
- * Space navigation item one from the other
- */
-.nav li + li {
-  margin-left: 20px;
+  bottom: -40px;
+  margin-left: -12px; /* 1 */
 }
 
 /**

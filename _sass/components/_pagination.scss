@@ -4,7 +4,7 @@
  */
 .pagination {
   padding: 0;
-  margin: 20px 0 0 0; /* 1 */
+  margin: 60px 0 0 0; /* 1 */
   text-align: center;
     
   li {
@@ -17,4 +17,11 @@
     text-decoration: none;
     display: block;
   }
+}
+
+.pagination__icon {
+  -webkit-transform: scale(0.7) translateY(1px);
+  -ms-transform: scale(0.7) translateY(1px);
+  transform: scale(0.7) translateY(1px);
+  display: inline-block;
 }

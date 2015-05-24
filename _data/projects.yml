@@ -1,0 +1,58 @@
+- name: Sass Guidelines
+  description: "An opinionated styleguide for writing sane, maintainable and scalable Sass."
+  link: http://sass-guidelin.es
+  image: /images/recent-project__sass-guidelines.png
+
+- name: SassDoc
+  description: "A documentation system to build pretty and powerful Sass docs."
+  link: http://sassdoc.com
+  image: /images/recent-project__sassdoc.png
+
+- name: Sass Compatibility
+  description: "Reporting incompatibilities between different Sass engines."
+  link: http://sass-compatibility.github.io/
+  image: /images/recent-project__sass-compatibility.png
+
+- name: Browserhacks
+  description: "An extensive list of browser specific CSS and JavaScript hacks."
+  link: http://browserhacks.com/
+
+- name: SassyGradients
+  description: "A lightweight wrapper for the linear-gradient CSS function."
+  link: https://github.com/HugoGiraudel/SassyGradients
+
+- name: SassyBitwise
+  description: "A working implementation of bitwise operators in Sass."
+  link: https://github.com/HugoGiraudel/SassyBitwise
+
+- name: SassyIteratorsGenerators
+  description: "An experimental implementation of iterators and generators in Sass."
+  link: https://github.com/HugoGiraudel/SassyIteratorsGenerators
+
+- name: SassyStrings
+  description: "A collection of Sass functions to ease string manipulation."
+  link: https://github.com/HugoGiraudel/SassyStrings
+
+- name: SassyLists
+  description: "A collection of Sass functions to ease list manipulation."
+  link: http://sassylists.com/
+
+- name: SassyMatrix
+  description: "A collection of Sass functions to ease matrix manipulation."
+  link: https://github.com/HugoGiraudel/SassyMatrix
+
+- name: SassyLogger
+  description: "A powerful logging system built in Sass."
+  link: https://github.com/HugoGiraudel/SassyLogger
+
+- name: SassyJSON
+  description: "A partially working implementation of a JSON parser in Sass."
+  link: https://github.com/HugoGiraudel/SassyJSON
+
+- name: SassyCast
+  description: "A collection of Sass functions to ease type conversion."
+  link: https://github.com/HugoGiraudel/SassyCast
+
+- name: SassySort
+  description: "Several ways to sort values in Sass using popular sorting algorithms."
+  link: https://github.com/HugoGiraudel/SassySort

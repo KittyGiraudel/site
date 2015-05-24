@@ -1,0 +1,30 @@
+/**
+ * List item on the home page
+ */
+.article {
+  position: relative;
+}
+
+/**
+ * Article icons on the home page
+ */
+.article__icon {
+  @include respond-to('medium') {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    opacity: 0.35;
+  }
+}
+
+.article__reading-time {
+  color: $medium-grey;
+  font-family: $code-font-stack;
+
+  &::before { content: '('; }
+  &::after { content: ')'; }
+}
+

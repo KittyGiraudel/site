@@ -2,16 +2,20 @@
   link: http://frontendconf.ch/
   location: Zurich
   date: August 27 - 28, 2015
+  image: /images/upcoming-event__fec.png
+
 - event: dotCSS
   link: http://www.dotcss.io/
   location: Paris
   date: November 15, 2014
   past: true
+
 - event: FeWeb
   link: http://www.lafeweb.be/fiche-agenda/sass-and-compass-et-le-css-devient-fantastique
   location: Bruxelles
   date: May 8, 2014
   past: true
+
 - event: KiwiParty
   link: http://kiwiparty.fr
   location: Strasbourg

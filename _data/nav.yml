@@ -1,5 +1,7 @@
 - label: Writing
-  url: /
+  url: /blog/
+- label: Coding
+  url: /projects/
 - label: Speaking
   url: /speaking/
 - label: About me

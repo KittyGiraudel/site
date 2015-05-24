@@ -1,0 +1,48 @@
+.triplet {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: -5px;
+}
+
+.triplet__item {
+  @include respond-to('medium') {
+    float: left;
+    width: (100% / 3);
+    width: calc(100% / 3);
+  }
+}
+
+.triplet__link {
+  display: block;
+  padding: 5px;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+
+.triplet__link:hover .triplet__title {
+  color: $main-color;
+}
+
+.triplet__link:hover .triplet__image {
+  border-color: $secondary-color;
+}
+
+.triplet__image {
+  border-bottom: 2px solid $main-color;
+}
+
+.triplet__title {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.triplet__description {
+  font-size: 80%;
+  margin-top: 0;
+}

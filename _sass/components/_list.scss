@@ -12,9 +12,16 @@
  * List item
  */
 .list__item {
-  margin-bottom: 20px;
+  margin: 10px 0;
   padding: 20px 0;
   border-bottom: 1px solid $light-grey;
+}
+
+/**
+ * Remove bottom border on last item
+ */
+.list__item:last-of-type {
+  border-bottom: 0;
 }
 
 /**
