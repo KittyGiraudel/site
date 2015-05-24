@@ -113,7 +113,7 @@ Sidebar Enhancements, as the name states, improves the sidebar projet manager by
 
 Last time I had a fresh install of Sublime Text, I realized how poor the default sidebar is compared to the one provided by this excellent plugin. Highly recommended.
 
-## [Update 24/05/2015] Spell checking
+## Spell checking
 
 Paweł Grzybek, in the comments, asked for a spell checking feature. I don't use it myself, but I know that Sublime Text does support spell checking through 2 options:
 

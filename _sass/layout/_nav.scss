@@ -27,6 +27,7 @@
   padding: 0 10px;
   position: relative; /* 1 */
   display: inline-block;
+  margin: 0;
 }
 
 /**
@@ -45,6 +46,7 @@
   left: 50%;
   bottom: -40px;
   margin-left: -12px; /* 1 */
+  box-shadow: 0 -3spx 5px -3px rgba(black, 0.2);
 }
 
 /**

@@ -23,6 +23,12 @@ h1 {
 h2 {
   position: relative; /* 1 */
   clear: both; /* 2 */
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+h3 {
+  margin-bottom: 40px;
 }
 
 /**
@@ -49,5 +55,9 @@ h2:active a {
  * Poor man's vertical rhythm
  */
 p, ul, ol {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+li {
+  margin-bottom: 10px;
 }

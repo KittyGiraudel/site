@@ -26,14 +26,12 @@
 
 /**
  * List item primary content, emphasized
- * 1. Make sure it is not inlined
- * 2. Reset any weight (if any)
+ * 1. Reset any weight (if any)
  */
 .list__primary-content {
-  margin: 0;
-  display: block; /* 1 */
+  margin: 0 0 5px;
   font-size: 24px;
-  font-weight: normal; /* 2 */
+  font-weight: normal; /* 1 */
 }
 
 /**
@@ -41,8 +39,9 @@
  */
 .list__secondary-content {
   color: $medium-grey;
+  display: block;
   font-family: $code-font-stack;
-  margin: 0;
+  margin: 0 0 5px;
   font-size: 80%;
 }
 
@@ -53,4 +52,12 @@
 .list__item a {
   color: inherit; /* 1 */
   text-decoration: none;
+
+  &::before {
+    transition: transform 0.1s;
+  }
+
+  &:hover {
+    color: $secondary-color;
+  }
 }

@@ -20,19 +20,32 @@ html {
  */
 body {
   background: $main-color;
-  background: linear-gradient(to top, #00d2ff 10%, #3a7bd5 90%);
 }
 
 /**
  * Basic styles for links
  */
 a {
-  color: $main-color;
-  transition: 0.15s;
+  color: $secondary-color;
+  transition: 0.1s;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
 
-  &:hover,
-  &:active {
-    color: $secondary-color;
+  &::before {
+    content: '';
+    transition: inherit;
+    position: absolute;
+    background: currentcolor;
+    top: 100%;
+    height: 1px;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
   }
 }
 

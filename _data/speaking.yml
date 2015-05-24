@@ -3,21 +3,41 @@
   location: Zurich
   date: August 27 - 28, 2015
   image: /images/upcoming-event__fec.png
+  actions:
+    - name: Book now
+      link: http://frontendconf.ch/tickets/
 
 - event: dotCSS
   link: http://www.dotcss.io/
   location: Paris
   date: November 15, 2014
   past: true
+  actions:
+    - name: Feedback
+      link: http://hugogiraudel.com/2014/11/17/feedback-on-dotcss/
+    - name: Video
+      link: http://www.thedotpost.com/2014/11/hugo-giraudel-keep-calm-and-write-sass
+    - name: Slides
+      link: https://speakerdeck.com/hugogiraudel/keep-calm-and-write-sass
 
 - event: FeWeb
   link: http://www.lafeweb.be/fiche-agenda/sass-and-compass-et-le-css-devient-fantastique
   location: Bruxelles
   date: May 8, 2014
   past: true
+  actions:
+    - name: Feedback
+      link: http://hugogiraudel.com/2014/06/02/feedbacks-feweb/
+    - name: Slides
+      link: http://slides.com/hugogiraudel/sass-une-architecture-composee#/
 
 - event: KiwiParty
   link: http://kiwiparty.fr
   location: Strasbourg
   date: June 23, 2014
   past: true
+  actions:
+    - name: Feedback
+      link: http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/
+    - name: Slides
+      link: http://slides.com/hugogiraudel/css-kick-ass-avec-sass#/

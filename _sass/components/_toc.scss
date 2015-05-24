@@ -8,6 +8,10 @@
   background: white;
   border-radius: 3px;
   font-size: 90%; /* 1 */
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-bottom: 40px;
 
   @media (min-width: 700px) {
     padding: 15px 40px 15px 20px;
@@ -17,6 +21,7 @@
 
   @media (min-width: 1020px) {
     margin-right: -140px; /* 3 */
+    margin-top: -170px;
   }
 }
 
@@ -25,8 +30,8 @@
  * 1. Same size as copy text
  */
 .toc__title {
-  margin-top: 0;
   font-size: 1em; /* 1 */
+  margin: 0 0 10px;
 }
 
 /**

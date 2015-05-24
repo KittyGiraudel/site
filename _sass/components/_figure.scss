@@ -4,7 +4,7 @@
  * 2. Clear inner floats
  */
 .figure {
-  margin: 0 0 20px; /* 1 */
+  margin: 0 -40px 40px; /* 1 */
   overflow: hidden; /* 2 */
 }
 
@@ -16,7 +16,8 @@
   float: right; /* 1 */
   font-size: 16px;
   color: $medium-grey;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-right: 40px;
 }
 
 /**
@@ -56,7 +57,7 @@
  */
 .figure--left,
 .figure--right {
-  margin-bottom: 30px; /* 1 */
+  margin-bottom: 40px; /* 1 */
 
   @include respond-to('medium') {
     max-width: 250px;

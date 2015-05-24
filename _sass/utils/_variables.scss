@@ -2,13 +2,21 @@
 /// @type Length
 $max-width: 800px;
 
+/// Lovely blue
+/// @type Color
+$blue: #107FC9;
+
+/// Hot pink
+/// @type Color
+$pink: #FF4F72;
+
 /// Main color
 /// @type Color
-$main-color: #3fa3d5;
+$main-color: $blue;
 
 /// Secondary color
 /// @type Color
-$secondary-color: #c69;
+$secondary-color: $pink;
 
 /// Dark grey
 /// @type Color
@@ -27,7 +35,7 @@ $light-grey: #EEE;
 /// @prop {String} key - Breakpoint name
 /// @prop {Map} value - Breakpoint value
 $breakpoints: (
-  'medium': (min-width: 500px)
+  'medium': (min-width: 600px)
 );
 
 /// Regular font stack

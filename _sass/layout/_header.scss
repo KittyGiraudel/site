@@ -5,11 +5,11 @@
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 
   @include respond-to('medium') {
     text-align: initial;
-    padding-left: 40px;
-    padding-right: 40px;
   }
 }
 

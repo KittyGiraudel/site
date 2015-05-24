@@ -1,4 +1,6 @@
 {
+  "title": "HugoGiraudel.com Sass API",
+  "homepage": "http://hugogiraudel.com",
   "devDependencies": {
     "uglify-js": "^2.4.15"
   }

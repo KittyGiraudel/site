@@ -6,7 +6,7 @@
 .pull-image--right {
   @include respond-to('medium') {
     max-width: 250px;
-    margin-bottom: 30px; /* 1 */
+    margin-bottom: 40px; /* 1 */
   }
 
   @media (min-width: 800px) {

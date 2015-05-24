@@ -14,7 +14,9 @@ pre > code {
 
 /**
  * Poor man's vertical rhythm
+ * 1. Overrides Prism.js
  */
 pre {
-  margin-bottom: 20px;
+  margin: 0 -40px 40px !important; /* 1 */
+  padding: 20px 40px !important; /* 1 */
 }

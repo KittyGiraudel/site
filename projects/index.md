@@ -6,6 +6,8 @@ comments: false
 
 # Open-source Projects
 
+<img src="/images/9227705841_81b97a085f_k.jpg" alt="Photography by Alexandra Lucas" />
+
 When I can, I try to invest a lot of time in open-source projects. Here are a few of them I initiated myself:
 
 <ul class="list">

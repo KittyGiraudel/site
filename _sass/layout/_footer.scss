@@ -20,6 +20,7 @@
  */
 .footer p {
   margin: 20px 0 0;
+  color: white;
 
   @include respond-to('medium') {
     float: left;

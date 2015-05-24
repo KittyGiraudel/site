@@ -4,3 +4,29 @@
 .event--past {
   opacity: 0.65;
 }
+
+/**
+ * Event actions
+ * 1. Undo default styles
+ */
+.event__actions {
+  list-style: none; /* 1 */
+  padding: 0; /* 1 */
+  margin: 0; /* 1 */
+}
+
+/**
+ * Event action
+ */
+.event__actions li {
+  display: inline-block;
+}
+
+/**
+ * Event action separator
+ */
+.event__actions li + li::before {
+  content: ' •  ';
+  white-space: pre;
+  color: mix(black, $light-grey, 10%);
+}
