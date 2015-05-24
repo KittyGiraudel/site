@@ -8,8 +8,9 @@ comments: false
 
 <img src="https://pbs.twimg.com/profile_banners/551949534/1401302499/1500x500" alt="Photography by Alexandra Lucas" />
 
-It does not happen *that* often, but it happens! Why don't you come and see me at one of the few conferences I attend. I'm sure it would be nice to meet!
+{% include ad.html %}
 
+It does not happen *that* often, but it happens! Why don't you come and see me at one of the few conferences I attend. I'm sure it would be nice to meet!
 
 <ul class="events  list">
 {% for event in site.data.speaking %}

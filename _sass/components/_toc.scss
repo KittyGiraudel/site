@@ -5,23 +5,13 @@
  * 3. Shift it off in the right margin
  */
 .toc {
-  background: white;
-  border-radius: 3px;
   font-size: 90%; /* 1 */
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
   margin-bottom: 40px;
 
-  @media (min-width: 700px) {
-    padding: 15px 40px 15px 20px;
+  @include respond-to('medium') {
     float: right;
-    margin-top: -15px; /* 2 */
-  }
-
-  @media (min-width: 1020px) {
-    margin-right: -140px; /* 3 */
-    margin-top: -170px;
+    margin-left: 20px;
+    text-align: right;
   }
 }
 
@@ -40,7 +30,8 @@
 .toc__list {
   padding: 0;
   margin: 0;
-  list-style-position: inside;
+  list-style: none;
+  counter-reset: toc;
 }
 
 /**
@@ -48,6 +39,11 @@
  */
 .toc__item {
   margin-bottom: 5px;
+  counter-increment: toc;
+}
+
+.toc__item::after {
+  content: ' .' counter(toc);
 }
 
 /**

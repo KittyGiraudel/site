@@ -5,6 +5,11 @@ comments: false
 ---
 
 <h1>Latest articles</h1>
+
+{% include ad.html %}
+
+<p>Sometimes referred to as <em>the Sass writing machine</em>, I write <em>a lot</em> of articles for different sites. External articles are annotated with an external link icon. Articles with the user icon are guest posts.</p>
+
 <ul class="articles  list">
 {% for post in paginator.posts %}
   {% unless post.preview %}
@@ -18,7 +23,7 @@ comments: false
       {% endif %}
       
       {{ post.date | date: "%B %d, %Y" }}{% if post.guest %} by {{ post.guest }}{% endif %}{% if post.external %} at {{ post.external.host }} 
-      {% else %} {% include reading_time.html content=post.content %}{% endif %}
+      {% else %}{% endif %}
     </p>
 
     <h2 class="article__title  list__primary-content">

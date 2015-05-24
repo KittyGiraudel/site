@@ -3,13 +3,12 @@
 
   {% include head.html %}
 
-  <body>
+  <body {% if page.classes %}class="{{ page.classes }}"{% endif %}>
 
     {% include header.html %}
     
     <article class="main   clearfix" role="main">
       <div class="container">
-      {% include ad.html %}
       {{ content }}
       </div>
     </article>

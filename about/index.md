@@ -6,9 +6,11 @@ comments: false
 
 # About me
 
-<img src="/images/hugo-giraudel.jpg" class="about-me__photo" alt="Photo of Hugo Giraudel" />
+{% include ad.html %}
 
 I am a French front-end developer based in Berlin. After a couple of years working as a developer in the banking industry, I had the great opportunity to join [Edenspiekermann](http://edenspiekermann.com) in Berlin to work on client projects.
+
+<img src="/images/hugo-giraudel.jpg" class="about-me__photo" alt="Photo of Hugo Giraudel" />
 
 I dare call myself an active open-source community member as I have contributed to many projects, as well as initiated a few of my own as well. Among them, let's mention [Browserhacks](http://browserhacks.com), [SassDoc](http://sassdoc.com), [Sass Guidelines](http://sass-guidelin.es) and [Sass Compatibility](http://sass-compatibility.github.io).
 

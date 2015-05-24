@@ -22,6 +22,14 @@
   }
 }
 
+.triplet__item--pull {
+  @include respond-to('medium') {
+    float: right;
+    width: (100% / 3 * 2);
+    width: calc(100% / 3 * 2);
+  }
+}
+
 /**
  * Triplet link
  * 1. Spacing
