@@ -1,17 +1,17 @@
 - name: Sass Guidelines
   description: "An opinionated styleguide for writing sane, maintainable and scalable Sass."
   link: http://sass-guidelin.es
-  image: /images/recent-project__sass-guidelines.png
+  image: /images/projects/sass-guidelines.png
 
 - name: SassDoc
   description: "A documentation system to build pretty and powerful Sass docs."
   link: http://sassdoc.com
-  image: /images/recent-project__sassdoc.png
+  image: /images/projects/sassdoc.png
 
 - name: Sass Compatibility
   description: "Reporting incompatibilities between different Sass engines."
   link: http://sass-compatibility.github.io/
-  image: /images/recent-project__sass-compatibility.png
+  image: /images/projects/sass-compatibility.png
 
 - name: Browserhacks
   description: "An extensive list of browser specific CSS and JavaScript hacks."

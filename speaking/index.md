@@ -6,7 +6,7 @@ comments: false
 
 # Speaking events
 
-<img src="https://pbs.twimg.com/profile_banners/551949534/1401302499/1500x500" alt="Photography by Alexandra Lucas" />
+<img src="/images/banners/speaking.jpg" alt="Photography by Alexandra Lucas" />
 
 {% include ad.html %}
 

@@ -6,7 +6,7 @@ comments: false
 
 # Open-source Projects
 
-<img src="/images/9227705841_81b97a085f_k.jpg" alt="Photography by Alexandra Lucas" />
+<img src="/images/banners/coding.jpg" alt="Photography by Alexandra Lucas" />
 
 {% include ad.html %}
 
