@@ -21,9 +21,9 @@ classes: home
   <li class="triplet__item  recent-project">
     <a href="{{ project.link }}" class="triplet__link" target="_blank">
       <img class="triplet__image" src="{{ project.image }}" alt="{{ project.name }}" />
-      <h3 class="triplet__title">{{ project.name }}</h2>
-      <p class="triplet__description">{{ project.description }}</p>
     </a>
+    <h3 class="triplet__title">{{ project.name }}</h2>
+    <p class="triplet__description">{{ project.description }}</p>
   </li>
   {% endif %}
   {% endfor %}
@@ -38,9 +38,9 @@ classes: home
     <li class="triplet__item">
       <a href="{{ event.link }}" class="triplet__link">
         <img class="triplet__image" src="{{ event.image }}" alt="{{ event.event }}" />
-        <h3 class="triplet__title">{{ event.event }}</h2>
-        <p class="triplet__description">{{ event.date }}</p>
       </a>
+      <h3 class="triplet__title">{{ event.event }}</h2>
+      <p class="triplet__description">{{ event.date }}</p>
     </li>
     {% endunless %}
     {% endfor %}
