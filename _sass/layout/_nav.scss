@@ -34,7 +34,7 @@
  * Navigation active item 
  * 1. (sqrt(2) * 20) / 2
  */
-.nav .is-active::before {
+.is-active::before {
   @include respond-to('medium') {
     content: '';
     position: absolute;
@@ -47,7 +47,7 @@
     left: 50%;
     bottom: -40px;
     margin-left: -12px; /* 1 */
-    box-shadow: 0 -3spx 5px -3px rgba(black, 0.2);
+    box-shadow: 0 -3px 5px -3px rgba(black, 0.2);
   }
 }
 

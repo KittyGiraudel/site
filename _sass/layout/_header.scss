@@ -21,6 +21,7 @@
 .header__title {
   margin: 0 0 20px; /* 1 */
   font-size: 1em; /* 2 */
+  position: relative;
 
   @include respond-to('medium') {
     float: left;
