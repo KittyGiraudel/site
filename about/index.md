@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "About me"
+title: "About"
 comments: false
 ---
 
@@ -17,3 +17,9 @@ I dare call myself an active open-source community member as I have contributed 
 Early 2014, I co-authored with [Raphaël Goetter](http://goetter.fr) a French book on CSS 3 entitled [CSS 3 Pratique du Design Web](http://css3-pratique.fr/), and I am currently in the process of writing a book on Sass (stay tuned).
 
 I also happen to be one of the 10 nominees for the [Net Awards](https://thenetawards.com) under the [Developer of the Year](https://thenetawards.com/vote/developer/) category. I am not sure why, but I am very proud anyway.
+
+## About this site
+
+This site is made with [Jekyll](http://jekyllrb.com) and hosted on [Github Pages](https://pages.github.com/) under the [HugoGiraudel / hugogiraudel.github.com](https://github.com/HugoGiraudel/hugogiraudel.github.com) repository. 
+
+The Sass code base respects [Sass Guidelines](http://sass-guidelin.es) and sticks to the [7-1 architecture pattern](http://sass-guidelin.es/#architecture). The small Sass public API is commented using [SassDoc](http://sassdoc.com) and available [here](/sassdoc/). Moreover, the entire uncompiled stylesheets are heavily commented, so feel free to [have a look](https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/_sass).
