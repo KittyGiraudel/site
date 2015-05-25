@@ -71,7 +71,7 @@ Git checks my interval and calculates that I will need 3 steps to find the wrong
 
 *Note: It's possible to use `git bisect visualize` or `git bisect view` to see the remaining interval in graphical tool. For a console view, you can use `git bisect view --stat`.*
 
-![After starting git bisect](/images/git-tips-and-tricks-part-3__bisect-1.png)
+![After starting git bisect](/images/git-tips-and-tricks-part-3/bisect-1.png)
 
 Now I have to check if the bug is still there or not and inform Git according to my check.
 
@@ -86,7 +86,7 @@ Bisecting: 4 revisions left to test after this (roughly 2 steps)
 
 Git bisect has reduced the commit interval and checkout the "Commit 5". I will find the typo bug in 2 steps from now. In gitg, my master branch looks like this:
 
-![After first git bisect bad](/images/git-tips-and-tricks-part-3__bisect-2.png)
+![After first git bisect bad](/images/git-tips-and-tricks-part-3/bisect-2.png)
 
 The *refs/bisect/bad* reference has been moved to the "Commit 10". I check if the bug is still there or not.
 
@@ -98,7 +98,7 @@ Bisecting: 2 revisions left to test after this (roughly 1 step)
 
 Now Gitg show this:
 
-![After second git bisect bad](/images/git-tips-and-tricks-part-3__bisect-3.png)
+![After second git bisect bad](/images/git-tips-and-tricks-part-3/bisect-3.png)
 
 <pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 0
@@ -108,7 +108,7 @@ Bisecting: 0 revisions left to test after this (roughly 1 step)
 
 The bug wasn't there in this step, so I use `git bisect good` instead of `git bisect bad`. Gitg has created a new *refs/bisect/good-[...]* reference.
 
-![After first git bisect good](/images/git-tips-and-tricks-part-3__bisect-4.png)
+![After first git bisect good](/images/git-tips-and-tricks-part-3/bisect-4.png)
 
 <pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
@@ -116,7 +116,7 @@ $ git bisect bad
 Bisecting: 0 revisions left to test after this (roughly 0 steps)
 [7ae5192025b3a96520ee4897bd411ee7c9d0828f] Commit 3</code></pre>
 
-![After third git bisect bad](/images/git-tips-and-tricks-part-3__bisect-5.png)
+![After third git bisect bad](/images/git-tips-and-tricks-part-3/bisect-5.png)
 
 <pre class="language-bash"><code>$ cat file.txt | grep numer | wc -l
 1
@@ -227,7 +227,7 @@ You can add new files to the last commit with the `git commit --amend` command i
 
 Let's take our 20 commits adding a new line to a text file:
 
-![20 commits to merge into a single one](/images/git-tips-and-tricks-part-3__interactive-rebase.png)
+![20 commits to merge into a single one](/images/git-tips-and-tricks-part-3/interactive-rebase.png)
 
 If my 20 commits haven't been pushed to the remote repository yet, I can consider to merge them into a single commit.
 

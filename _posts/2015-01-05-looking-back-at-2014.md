@@ -38,7 +38,7 @@ Later this year, in November, [I gave my first talk in English](http://hugogirau
 
 
 <figure class="figure--right">
-<img src="/images/looking-back-at-2014__book-cover.png" alt="" />
+<img src="/images/looking-back-at-2014/book-cover.png" alt="" />
 <figcaption>My upcoming book</figcaption>
 </figure>
 

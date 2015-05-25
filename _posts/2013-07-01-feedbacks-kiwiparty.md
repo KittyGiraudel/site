@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Feedbacks on my first conf"
+title: "Feedback on my first conf"
 ---
 
 Hey guys! It's been a while I haven't post anything; last month has been pretty intense. Especially since I recently had the amazing opportunity to be a speaker at [KiwiParty](http://kiwiparty.fr)!
@@ -8,7 +8,7 @@ Hey guys! It's been a while I haven't post anything; last month has been pretty 
 It's a one-day French conference at Strasbourg (France) gathering 10 speakers and more than 150 persons to talk about front-end technologies, accessibility, ergonomy, webdesign, and so much more.
 
 <figure class="figure">
-<img src="/images/feedbacks-kiwiparty__code-is-poetry.jpg" alt="">
+<img src="/images/feedbacks-kiwiparty/code-is-poetry.jpg" alt="">
 <figcaption>Code is poetry - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
@@ -21,7 +21,7 @@ Basically, my talk is a collection of code snippets and real-life usecases of Sa
 I'd never been at a conference before so it was pretty much what I could expect. A bunch of awesome people, great talks, food, and most of all: web. It was an amazing day, for sure.
 
 <figure class="figure">
-<img src="/images/feedbacks-kiwiparty__laptops-and-food.jpg" alt="">
+<img src="/images/feedbacks-kiwiparty/laptops-and-food.jpg" alt="">
 <figcaption>Laptops and food - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ I could also meet all those great French guys and girls from Twitter and put som
 It went great. People seemed very interested in the topic and I felt like they were understanding the main point of the conference, so it's something!
 
 <figure class="figure">
-<img src="/images/feedbacks-kiwiparty__hugo-giraudel.jpg" alt="">
+<img src="/images/feedbacks-kiwiparty/hugo-giraudel.jpg" alt="">
 <figcaption>Focus - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ I was kind of nervous, obviously. My laptop dying the night before the big day w
 
 This experience was kind of incredible actually. I walked into that room where dozens and dozens of boys and girls were waiting for me to talk to them. My hands were kind of sweaty and I was shivering a little at first but it all disappeared when I started talking.
 
-Then a little voice popped in my head saying "dude, this is too complicated", or "this is obvious to you but not for them" or "what the hell are you trying to explain?". It stayed there during the whole conference and was kind of disturbing. I couldn't have real-time feedbacks of course (imagine what it would look like) so I had no idea if people were enjoying my talk or hoping it was soon finished.
+Then a little voice popped in my head saying "dude, this is too complicated", or "this is obvious to you but not for them" or "what the hell are you trying to explain?". It stayed there during the whole conference and was kind of disturbing. I couldn't have real-time feedback of course (imagine what it would look like) so I had no idea if people were enjoying my talk or hoping it was soon finished.
 
 In the end, I had a couple of questions (most of them very relevant) which I was prepared to answer. Yeah that's right, I prepared the Q&A guys! 
 
@@ -74,7 +74,7 @@ Oh, and of course here are my [slides](http://slid.es/hugogiraudel/css-kick-ass-
 ## Final words
 
 <figure class="figure--right">
-<img src="/images/feedbacks-kiwiparty__stuff.jpg" alt="">
+<img src="/images/feedbacks-kiwiparty/stuff.jpg" alt="">
 <figcaption>Stuff - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 

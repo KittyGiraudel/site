@@ -38,7 +38,7 @@ This prompt displays:
 * an up, down or up-and-down arrow if you have commits to push or pull from remote repository
 
 <figure class="figure">
-<img src="/images/git-tips-and-tricks-part-1__git-prompt.png" alt="" />
+<img src="/images/git-tips-and-tricks-part-1/git-prompt.png" alt="" />
 <figcaption>A Nguyen flavoured Git prompt</figcaption>
 </figure>
 

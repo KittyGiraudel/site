@@ -5,7 +5,7 @@ title: "Feedback on dotCSS 2014"
 
 I have been invited to speak at the very first [dotCSS](http://dotcss.eu) in Paris on November 14th, as part of a beautiful lineup of incredible speakers and not less than 400 attendees. It was a truely great experience, hence a little article to sum up the journey.
 
-<img alt="dotCSS logo" src="/images/feedback-on-dotcss__logo.png" class="pull-image--right" />
+<img alt="dotCSS logo" src="/images/feedback-on-dotcss/logo.png" class="pull-image--right" />
 
 ## About the event
 
@@ -20,7 +20,7 @@ Anyway, if you felt frisky coming to dotCSS this year because it was the first e
 The conference happened at the [Théâtre des Variétés](http://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_des_Vari%C3%A9t%C3%A9s) in Paris, a beautiful 19th century redish and goldish theatre with balconies, great lights and everything. It was absolutely gorgeous. The stage was not huge but definitely big enough to move a bit around. I think one could not dream of a best location to give a talk.
 
 <figure class="figure">
-<img src="/images/feedback-on-dotcss__theatre.jpg" alt="" />
+<img src="/images/feedback-on-dotcss/theatre.jpg" alt="" />
 <figcaption>Théâtre des Variétés in Paris. Photo by dotCSS.</figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ The 18-minutes format is probably one of the best if you ask me. Not only is tim
 I don't think the attention-span for a talk is meant to last any longer than 30-something minutes. At some point, people just get bored. I feel like this point happens between 20 and 30 minutes; before if they are not interested in the topic, slightly after if the speaker is really good on stage.
 
 <figure class="figure">
-<img src="/images/feedback-on-dotcss__speakers.jpg" alt="" />
+<img src="/images/feedback-on-dotcss/speakers.jpg" alt="" />
 <figcaption>All speakers and organisers. Photo by dotCSS.</figcaption>
 </figure>
 
@@ -74,7 +74,7 @@ Interestingly enough, I realised that I feel much more confident when I don't se
 So facing a black wall was actually much easier than expected. It allowed me to keep tracks of my thoughts without being disturbed. Loved it.
 
 <figure class="figure">
-<img src="/images/feedback-on-dotcss__hugo.jpg" alt="" />
+<img src="/images/feedback-on-dotcss/hugo.jpg" alt="" />
 <figcaption>Me on stage. Photo by dotCSS.</figcaption>
 </figure>
 

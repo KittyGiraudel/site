@@ -9,7 +9,7 @@ A couple of days ago, [Ana Tudor](http://twitter.com/thebabydino) showed me how 
 To be truely honest, I wasn’t impressed that much since I am pretty familiar with Ana’s work which is always amazing. If you haven’t seen [her 3D geometric shapes](http://stackoverflow.com/users/1397351/ana) made of pure CSS, then you definitely should.
 
 <figure class="figure--right">
-<img alt="" src="/images/sass-mixin-star__css-star.png">
+<img alt="" src="/images/sass-mixin-star/css-star.png">
 <figcaption>A 6-points star mixin made with CSS</figcaption>
 </figure>
 
@@ -20,7 +20,7 @@ Anyway, when I saw this I thought it could be fun to make a [Sass version](http:
 The first thing was to understand how Ana managed to achieve such a shape with a single element (and 2 pseudo-elements). Long story short: **chained CSS transforms**.
 
 <figure class="figure--right">
-<img src="/images/sass-mixin-star__rhombius.png" alt="">
+<img src="/images/sass-mixin-star/rhombius.png" alt="">
 <figcaption>3 rhombius = a 6-points star</figcaption>
 </figure>
 

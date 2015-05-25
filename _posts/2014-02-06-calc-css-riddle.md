@@ -3,7 +3,7 @@ layout: post
 title: "CSS trickery and calc function"
 ---
 <figure class="figure--right">
-<img src="/images/calc-css-riddle__gollum-riddle.gif" alt="">
+<img src="/images/calc-css-riddle/gollum-riddle.gif" alt="">
 <figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ Let me translate the post from Rémi for you:
 
 The tricky part is *5*. After checking at proposals submitted by various developers on Rémi's post, it seems most of them didn't catch that **all grey rectangles should be the same width**. Here is what you should be having:
 
-![The grid we want to create](/images/calc-css-riddle__css-grid.gif)
+![The grid we want to create](/images/calc-css-riddle/css-grid.gif)
 
 Rémi made [a CodePen](http://codepen.io/hteumeuleu/pen/zLiGw) to kickstart the riddle if you'd like to give it a try. Go on, have a shot. I'll be waiting.
 

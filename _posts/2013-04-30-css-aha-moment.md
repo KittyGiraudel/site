@@ -14,7 +14,7 @@ God, that sounds stupid now but it really helped in understanding how to make ef
 And when you get that and most generally the whole box-model (that says width equals `width + padding-left + padding-right + border-left + border-right.`), everything becomes so simple.
 
 <figure class="figure--right">
-<img src="/images/css-aha-moment__box-model.jpg" alt="">
+<img src="/images/css-aha-moment/box-model.jpg" alt="">
 <figcaption>CSS Box Model</figcaption>
 </figure>
 

@@ -19,37 +19,37 @@ Below is [Harry’s comment](https://github.com/csswizardry/csswizardry.github.c
 
 > Scroll the carousel (all hard-coded; yuk!) and apply a subtle blur to imply motion/speed. Equation for the carousel’s transitioning and delayed points in order to complete an entire animation (i.e. 100%):
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Carousel formula' src='/images/automating-css-animations-with-sass__formula-1.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Carousel formula' src='/images/automating-css-animations-with-sass/formula-1.png' />
 >
 > where <var>n</var> is the number of slides, <var>x</var> is the percentage of the animation spent static, and <var>y</var> is the percentage of the animation spent animating.
 >
 > This carousel has five panes, so:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='5 frames' src='/images/automating-css-animations-with-sass__formula-2.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='5 frames' src='/images/automating-css-animations-with-sass/formula-2.png' />
 >
 > To work out <var>y</var> if we know <var>n</var> and decide on a value for <var>x</var>:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Formula to find Y' src='/images/automating-css-animations-with-sass__formula-3.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Formula to find Y' src='/images/automating-css-animations-with-sass/formula-3.png' />
 >
 > If we choose that <var>x</var> equals 17.5 (i.e. a frame spends 17.5% of the animation’s total time *not* animating), and we know that <var>n</var> equals 5, then <var>y</var> = 3.125:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Y when X equals 17.5' src='/images/automating-css-animations-with-sass__formula-4.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Y when X equals 17.5' src='/images/automating-css-animations-with-sass/formula-4.png' />
 >
 > Static for 17.5%, transition for 3.125%, and so on, until we hit 100%.
 >
 > If we were to choose that <var>x</var> equals 15, then we would find that <var>y</var> equals 6.25:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Y when X equals 15' src='/images/automating-css-animations-with-sass__formula-5.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Y when X equals 15' src='/images/automating-css-animations-with-sass/formula-5.png' />
 >
 > If <var>y</var> comes out as zero-or-below, it means the number we chose for <var>x</var> was too large: pick again.
 >
 > N.B. We also include a halfway point in the middle of our transitioning frames to which we apply a subtle blur. This number is derived from:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Computing a halfway point' src='/images/automating-css-animations-with-sass__formula-6.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Computing a halfway point' src='/images/automating-css-animations-with-sass/formula-6.png' />
 >
 > where <var>a</var> is the frame in question (out of <var>n</var> frames). The halfway point between frames 3 and 4 is:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Halfway point between frames 3 and 4' src='/images/automating-css-animations-with-sass__formula-7.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Halfway point between frames 3 and 4' src='/images/automating-css-animations-with-sass/formula-7.png' />
 >
 > I’m pretty sure this is all a mess. To any kind person reading this who would be able to improve it, I would be very grateful if you would advise :)
 

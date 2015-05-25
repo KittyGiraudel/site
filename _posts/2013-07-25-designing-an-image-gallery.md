@@ -11,7 +11,7 @@ Let's say things straight: I'd never have the opportunity to work on an image ga
 
 <figure class="figure">
 <a href="http://alexandralucas.com" target="_blank">
-<img src="/images/designing-an-image-gallery__alexandralucas.jpg" alt="">
+<img src="/images/designing-an-image-gallery/alexandralucas.jpg" alt="">
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">Alexandralucas.com</a></figcaption>
 </figure>
@@ -22,7 +22,7 @@ The main content of the site is **photographs**. The goal is to show them. Alexa
 
 At first I thought about doing it myself and then...
 
-![Coding a responsive image gallery by hand? What about no!](/images/design-an-image-gallery__how-about-no-bear.jpg)
+![Coding a responsive image gallery by hand? What about no!](/images/designing-an-image-gallery/how-about-no-bear.jpg)
 
 It would have been a pain in the ass to work out such a "complicated" layout so I thought about [Masonry](http://masonry.desandro.com/) but that's kind of old school, right? In the end, I went with Isotope for layouting the items.
 
@@ -68,7 +68,7 @@ Regarding the second feature, I basically needed a little lightbox thingie to di
 
 <figure class="figure">
 <a href="http://alexandralucas.com" target="_blank">
-<img src="/images/designing-an-image-gallery__lightbox.jpg" alt="">
+<img src="/images/designing-an-image-gallery/lightbox.jpg" alt="">
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">Lightbox powered by Avgrund</a></figcaption>
 </figure>
@@ -107,7 +107,7 @@ Of course, we wanted the site to look acceptable (if not good!) on small devices
 
 <figure class="figure--right">
 <a href="http://alexandralucas.com" target="_blank">
-<img src="/images/designing-an-image-gallery__phoneview.png" alt="">
+<img src="/images/designing-an-image-gallery/phoneview.png" alt="">
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">View on most smartphone</a></figcaption>
 </figure>

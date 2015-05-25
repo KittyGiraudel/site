@@ -33,7 +33,7 @@ To be able to run Linux scripts on Windows, there are two methods:
 Since it can be quite a pain to set up a virtual machine, we will go for the latter with [Cygwin](http://www.cygwin.com/). Cygwin is a Linux simulator. Go to the [download section](http://cygwin.com/install.html), grab the `setup.exe` file and execute it to launch the installer. You can leave all settings by default until you get to the step asking you which packages to install.
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__cygwin.png" alt="" />
+<img src="/images/optimizing-with-bash/cygwin.png" alt="" />
 <figcaption><a href="http://www.cygwin.com/">Cygwin</a> is a Linux simulator</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ mkdir workspace
 cd workspace</code></pre>
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__workspace.png" alt="" />
+<img src="/images/optimizing-with-bash/workspace.png" alt="" />
 <figcaption>Creating a workspace in Cygwin</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ By default, Cygwin is installed at `C:/cygwin/` so our new directory is at `C:/c
 For each file, our script is going to run *optipng* and *pngcrush* for PNG files and *jpegtran* for JPG files. Before going any further and start writing the script, let's make a first try with all of these tools starting with *optipng*:
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__optipng.png" alt="" />
+<img src="/images/optimizing-with-bash/optipng.png" alt="" />
 <figcaption>PNG optimization with <a href="http://optipng.sourceforge.net/">optipng</a></figcaption>
 </figure>
 
@@ -72,14 +72,14 @@ For each file, our script is going to run *optipng* and *pngcrush* for PNG files
 Then *pngcrush*:
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__pngcrush.png" alt="" />
+<img src="/images/optimizing-with-bash/pngcrush.png" alt="" />
 <figcaption>PNG optimization with <a href="http://pmt.sourceforge.net/pngcrush/">pngcrush</a></figcaption>
 </figure>
 
 And now a JPG optimization with *jpegtran*:
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__jpegtran.png" alt="" />
+<img src="/images/optimizing-with-bash/jpegtran.png" alt="" />
 <figcaption>JPG optimization with <a href="http://jpegclub.org/">jpegtran</a></figcaption>
 </figure>
 
@@ -100,14 +100,14 @@ As obvious as it can be, our script needs some parameters:
 There is a common pattern to parse script options, based on the `getopt` command. First, we create two variables to store both the short and long version of each parameter. A parameter which requires a specific value (for example our input and output directories) must end with ":".
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__options.png" alt="" />
+<img src="/images/optimizing-with-bash/options.png" alt="" />
 <figcaption>Bash script options</figcaption>
 </figure>
 
 Then we are going to use the `getopt` command to parse the parameters passed to script and use a loop to call functions or define variables to store values. For this, we will also need to know the script name.
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__options-loop.png" alt="" />
+<img src="/images/optimizing-with-bash/options-loop.png" alt="" />
 <figcaption>Parsing our options within a loop</figcaption>
 </figure>
 
@@ -121,14 +121,14 @@ Now, we have to create two functions:
 To be called, the functions must be declared before the parameters loop.
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__usage.png" alt="" />
+<img src="/images/optimizing-with-bash/usage.png" alt="" />
 <figcaption>The help function</figcaption>
 </figure>
 
 Let's try our help function. To be able to run the script, we have to add execution mode (+x) on it with the command `chmod`.
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__usage-try.png" alt="" />
+<img src="/images/optimizing-with-bash/usage-try.png" alt="" />
 <figcaption>Help function</figcaption>
 </figure>
 
@@ -141,7 +141,7 @@ Pretty cool, isn't it ?
 And now, let's create the main function. We won't deal with `--no-stats` and `--quiet` parameters for now. Below is the skeleton of our main function; it might looks complicated but it's really not trust me.
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__main.png" alt="" />
+<img src="/images/optimizing-with-bash/main.png" alt="" />
 <figcaption>The main function of our script</figcaption>
 </figure>
 
@@ -158,7 +158,7 @@ And then, we loop through the files and call an `optimize_image` function with t
 Now, we have to create this `optimize_image()` method which is going to be fairly easy since we already have seen the command to optimize images before.
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__optimize-image.png" alt="" />
+<img src="/images/optimizing-with-bash/optimize-image.png" alt="" />
 <figcaption>The actual image optimization function</figcaption>
 </figure>
 
@@ -174,7 +174,7 @@ file_with_a_long_name ...... [ DONE ]
 Would be neat, wouldn't it? To do this, we first need to find the longest filename by doing a fast loop on the files.
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__get-max-file-length.png" alt="" />
+<img src="/images/optimizing-with-bash/get-max-file-length.png" alt="" />
 <figcaption>Function to retrieve the longest filename</figcaption>
 </figure>
 
@@ -187,7 +187,7 @@ Then before our main loop, we:
 Finally, in the main loop we display the filename then the *"."* symbols and the the *" [ DONE ]"* string. 
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__output.png" alt="" />
+<img src="/images/optimizing-with-bash/output.png" alt="" />
 <figcaption>Script handling the output</figcaption>
 </figure>
 
@@ -201,7 +201,7 @@ Let's try it by running the following command:
 ./optimize.sh -i images -o optimized-images</code></pre>
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__output-console.png" alt="" />
+<img src="/images/optimizing-with-bash/output-console.png" alt="" />
 <figcaption>Testing the output</figcaption>
 </figure>
 
@@ -210,28 +210,28 @@ Let's try it by running the following command:
 For the final stats we are going to display the amount of space saved. The `optimize_image()</code> method will increase a `total_input_size` with the filesize of the image to optimize, and a `total_output_size` with the filesize of the output image. At the end of the loop, we will use this two counters to display the stats.
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__optimize-image-with-stats.png" alt="" />
+<img src="/images/optimizing-with-bash/optimize-image-with-stats.png" alt="" />
 <figcaption>Adding stats output in optimize_image()</figcaption>
 </figure>
 
 To display human readable numbers, we can use a `human_readable_filesize()` method, retrieved from [StackExchange](http://unix.stackexchange.com/questions/44040/a-standard-tool-to-convert-a-byte-count-into-human-kib-mib-etc-like-du-ls1) (let's not reinvent the wheel, shall we?).
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__display-stats.png" alt="" />
+<img src="/images/optimizing-with-bash/display-stats.png" alt="" />
 <figcaption>A function to display human readable stats</figcaption>
 </figure>
 
 Let's try it before adding the last bites to our code. Once again, we simply run `./optimize.sh` (or with additional parameters if needed).
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__output-with-stats.png" alt="" />
+<img src="/images/optimizing-with-bash/output-with-stats.png" alt="" />
 <figcaption>Outputing optimization stats</figcaption>
 </figure>
 
 Keep it up guys, we are almost done! We just have to display progress output if the quiet mode is off.
 
 <figure class="figure">
-<img src="/images/optimizing-with-bash__quiet-mode.png" alt="" />
+<img src="/images/optimizing-with-bash/quiet-mode.png" alt="" />
 <figcaption>Quiet mode</figcaption>
 </figure>
 

@@ -44,7 +44,7 @@ I also have Opera and Safari on some computers to make unusual tests. Since I am
 
 ## IDE
 
-<img src="/images/development-environment__sublime-text.png" alt="Sublime Text 2" class="pull-image--right">
+<img src="/images/development-environment/sublime-text.png" alt="Sublime Text 2" class="pull-image--right">
 
 I used to be a huge fan of Notepad++, even if everybody was using Dreamweaver. Honestly I never liked DW; it is super heavy while doing not much than a regular text editor.
 
@@ -72,7 +72,7 @@ I didn't know how to call this section because it gathers various tools doing va
 
 ### Sass and Compass
 
-<img src="/images/development-environment__sass-compass.jpg" alt="Sass and Compass" class="pull-image--right">
+<img src="/images/development-environment/sass-compass.jpg" alt="Sass and Compass" class="pull-image--right">
 
 Not so long ago I gave a try to CSS preprocessors, because I am both curious and a CSS lover. It turned out I like CSS preprocessors, they give a lot more options than regular CSS.
 

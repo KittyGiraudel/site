@@ -7,7 +7,7 @@ title: "Star-rating widget with Sass"
 The other day, I was having a look at featured pens from CodePen to kill some time before getting a haircut. I ended up checking [a pen from Yelp Devs'](http://codepen.io/yelp/pen/aLxbG) (in the person of [Benjamin Knight](https://twitter.com/benjamin_knight)) in which they featured their star-rating system we can see pretty much all over their site.
 
 <figure class="figure--right">
-<img src="/images/stars-rating-widget-with-sass__rating-widget.png" alt="" />
+<img src="/images/stars-rating-widget-with-sass/rating-widget.png" alt="" />
 <figcaption>Star-rating widget from Yelp</figcaption>
 </figure>
 

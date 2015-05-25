@@ -12,7 +12,7 @@ Months back at work, I have been asked to code a piece of design for the home pa
 First of all, this is what you should come up with:
 
 <figure class="figure">
-<img src="/images/the-magic-circle-a-css-brain-teaser__result.jpg" alt="">
+<img src="/images/the-magic-circle-a-css-brain-teaser/result.jpg" alt="">
 <figcaption>Beautiful, isn't it?</figcaption>
 </figure>
 

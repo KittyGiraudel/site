@@ -59,7 +59,7 @@ As I said above, RGB stands for Red, Green and Blue. Remember when you were a li
 </tr>
 </table>
 
-> ![Color cube](/images/css-colors__color-cube.jpg) This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.
+> ![Color cube](/images/css-colors/color-cube.jpg) This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.
 
 ### How do we define RGB colors?
 
@@ -196,7 +196,7 @@ That’s why there are keywords. Keywords are real color names like red, green a
 
 I won’t list all of them here because it would be too long however, this is a visualization of all of them on a hue wheel by [Eric Meyer](http://meyerweb.com/eric/css/colors/hsl-147.html) (see [annotated version by Tab Atkins Jr.](http://www.xanthir.com/blog/b4JC0)):
 
-![Color wheel](/images/css-colors__color-wheel.jpg)
+![Color wheel](/images/css-colors/color-wheel.jpg)
 
 The point of this work is to show keywords are associated to random colors: they are chosen according to their position on the hue wheel.
 
@@ -254,13 +254,13 @@ It means you can do one of those and be perfectly valid:
 
 HSL stands for Hue, Saturation and Lightness. Please don’t worry, HSL is not another format of color. It’s only another representation of the RGB model. This cylindric representation aims at showing the RGB model in a more intuitive way than the previous seen cube.
 
-![Color HSL](/images/css-colors__color-hsl.jpg)
+![Color HSL](/images/css-colors/color-hsl.jpg)
 
 #### Hue
 
 The angle around the central vertical axis of the cylinder corresponds to the “hue”, which is basically the color you want. Take a chromatic wheel: at 0° you have red, at 120° you have green, at 240°you have blue and you go back to red when you reach 360°.
 
-![Color Wheel](/images/css-colors__color-wheel.png)
+![Color Wheel](/images/css-colors/color-wheel.png)
 
 #### Saturation
 

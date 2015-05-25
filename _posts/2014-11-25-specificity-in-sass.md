@@ -9,7 +9,7 @@ title: "Calculating Specificity in Sass"
 
 As any web developer who has to write CSS knows, specificity is both an important and confusing concept. You might be familiar with principles such as avoiding nesting and IDs to keep specificity low, but knowing exactly *how* specific your selectors are can provide you valuable insight for improving your stylesheets. Understanding specificity is especially important if you are culpable of sprinkling `!important` throughout your CSS rules in frustration, which ironically, makes specificity less important.
 
-![CSS Specificity issue](/images/specificity-in-sass__important.png)
+![CSS Specificity issue](/images/specificity-in-sass/important.png)
 
 **TL;DR:** Check out the source (and examples) [here on SassMeister](http://sassmeister.com/gist/dbf20a242bcccd1d789c) or directly on [GitHub](https://github.com/davidkpiano/sass-specificity).
 
@@ -146,7 +146,7 @@ In reality, even a selector with a single class should have greater specificity 
 
 <blockquote class="pull-quote--right">We're going to need a bigger base.</blockquote>
 
-![What if we tried more power by XKCD](/images/specificity-in-sass__xkcd.png)
+![What if we tried more power by XKCD](/images/specificity-in-sass/xkcd.png)
 
 I chose base 256 (16<sup>2</sup>) to represent two hexadecimal digits per type. This is historically how specificity was calculated, but also lets [256 classes override an ID](http://www.thecssninja.com/css/extreme-specificity). The larger you make the base, the more accurate your (relative) specificity will be.
 
