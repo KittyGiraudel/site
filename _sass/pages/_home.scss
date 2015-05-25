@@ -39,8 +39,7 @@ section > h2:first-of-type {
  * Profilte avatar
  */
 .profile__avatar {
-  margin-bottom: 40px;
-  margin-top: -20px;
+  margin-bottom: 20px;
   border-radius: 50%;
 
   @include respond-to('medium') {
@@ -58,6 +57,7 @@ section > h2:first-of-type {
   margin: 0 0 20px;
 }
 
+.profile__networks,
 .profile__description,
 .profile__job {
   margin: 0 0 5px;

@@ -10,6 +10,7 @@ classes: home
     <h1 class="profile__name">Ohai, I'm Hugo Giraudel.</h1>
     <p class="profile__description">CSS Goblin, Sass hacker, Margin psycho</p>
     <p class="profile__job">Front-end developer at <a href="http://edenspiekermann.com" target="_blank">edenspiekermann_</a> (Berlin)</p>
+    <p class="profile__networks">Catch me on Twitter <a href="https://twitter.com/hugogiraudel">@HugoGiraudel</a></p>
   </div>
 </section>
 
@@ -22,7 +23,7 @@ classes: home
     <a href="{{ project.link }}" class="triplet__link" target="_blank">
       <img class="triplet__image" src="{{ project.image }}" alt="{{ project.name }}" />
     </a>
-    <h3 class="triplet__title">{{ project.name }}</h2>
+    <h3 class="triplet__title"><a href="{{ project.link }}">{{ project.name }}</a></h2>
     <p class="triplet__description">{{ project.description }}</p>
   </li>
   {% endif %}
@@ -39,7 +40,7 @@ classes: home
       <a href="{{ event.link }}" class="triplet__link">
         <img class="triplet__image" src="{{ event.image }}" alt="{{ event.event }}" />
       </a>
-      <h3 class="triplet__title">{{ event.event }}</h2>
+      <h3 class="triplet__title"><a href="{{ event.link }}">{{ event.event }}</a></h2>
       <p class="triplet__description">{{ event.date }}</p>
     </li>
     {% endunless %}
