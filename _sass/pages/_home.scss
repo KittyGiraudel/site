@@ -20,6 +20,7 @@ section:first-of-type {
  */
 section > h2:first-of-type {
   margin-top: 0;
+  margin-bottom: 30px;
 }
 
 /**
@@ -31,7 +32,20 @@ section > h2:first-of-type {
   padding-top: 40px;
 
   @include respond-to('medium') {
-    text-align: initial;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      text-align: initial;
   }
 }
 
@@ -40,12 +54,27 @@ section > h2:first-of-type {
  */
 .profile__avatar {
   margin-bottom: 20px;
-  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+  }
 
   @include respond-to('medium') {
-    max-width: 150px;
-    float: left;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 150px;
+    -ms-flex: 0 0 150px;
+    flex: 0 0 150px;
+    margin-bottom: 0;
     margin-right: 40px;
+  }
+}
+
+.profile__info {
+  @include respond-to('medium') {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
   }
 }
 
@@ -60,6 +89,6 @@ section > h2:first-of-type {
 .profile__networks,
 .profile__description,
 .profile__job {
-  margin: 0 0 5px;
+  margin: 0;
   color: $medium-grey;
 }

@@ -37,3 +37,12 @@
   }
 }
 
+.blink {
+  color: $secondary-color;
+  animation: blink 1s infinite steps(1);
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
