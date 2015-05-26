@@ -7,15 +7,16 @@
 
 /**
  * Article icons on the home page
+ * 1. Magic number, sorry :(
  */
 .article__icon {
   @include respond-to('medium') {
     position: absolute;
     right: 0;
     top: 50%;
-    -webkit-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    transform: translateY(-100%);
+    -webkit-transform: translateY(-80%); /* 1 */
+    -ms-transform: translateY(-80%); /* 1 */
+    transform: translateY(-80%); /* 1 */
     opacity: 0.35;
   }
 }
