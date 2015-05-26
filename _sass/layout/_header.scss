@@ -37,6 +37,9 @@
   }
 }
 
+/**
+ * Blinking carret
+ */
 .blink {
   color: $secondary-color;
   animation: blink 1s infinite steps(1);
