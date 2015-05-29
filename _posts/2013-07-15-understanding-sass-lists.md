@@ -3,7 +3,7 @@ layout: post
 title: "Understanding Sass lists"
 ---
 
-> **Edit (2015/05/28):** After realising this article ranks up incredibly high on *Sass* Google searches, I come back to it to clear a few things up. Deletions are lined-through, addition are in italic.
+> **Edit (2015/05/28):** After realising this article ranks up incredibly high on *Sass* Google searches, I come back to it to clear a few things up. Deletions are lined-through, additions are in italic.
 
 Lists have to be the most complicated and vicious thing in the whole Sass language. The main problem with lists -if a problem it is- is that the syntax is way too permissive. You can do pretty much whatever you want.
 
@@ -166,8 +166,8 @@ Instead of using `append(..)` and setting the 3rd parameter to `comma` we implic
 
 ## Final words
 
-<blockquote class="pull-quote--right">Having a very permissive can be complicated.</blockquote>
+<blockquote class="pull-quote--right">Having a very permissive syntax can be complicated.</blockquote>
 
 The three versions we saw in the previous section work like a charm, <span style="text-decoration: line-through">the one you should use is really up to you</span> *although the one with `append(..)` is definitely the cleaner way of handling this. You can also do it in some other more complicated and dirty ways.*
 
-Anyway, this shows why having a very permissive can be complicated. As I said at the beginning of this post, you can do pretty much whatever you want and if you want my opinion this isn't for the best.
+Anyway, this shows why having a very permissive syntax can be complicated. As I said at the beginning of this post, you can do pretty much whatever you want and if you want my opinion this isn't for the best.
