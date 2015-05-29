@@ -15,7 +15,7 @@ comments: false
 <ul class="articles  list">
 {% for post in paginator.posts %}
   {% unless post.preview %}
-  <li class="article  list__item" role="article">
+  <li class="article  list__item">
 
     <p class="article__date  list__secondary-content">
       {% if post.guest %}
@@ -50,4 +50,3 @@ comments: false
     <li><a href="{{ paginator.next_page_path }}">Next <span class="pagination__icon">►</span></a></li>
   {% endif %}
 </ul>
-
