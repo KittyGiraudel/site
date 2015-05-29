@@ -2,6 +2,9 @@
 disqus: http://hugogiraudel.com/blog/css-challenge.html
 layout: post
 title: "A CSS challenge"
+tags:
+  - css
+  - riddle
 ---
 
 Yesterday night, I've seen something in my Twitter timeline which excited my curiosity: a CSS challenge. It was proposed by [Raphael Goetter](https://twitter.com/goetter), a famous French front-end developer on [his blog](http://blog.goetter.fr/post/36084887039/tes-pas-cap-premiere-edition).

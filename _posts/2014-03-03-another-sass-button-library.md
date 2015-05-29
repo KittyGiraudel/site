@@ -2,6 +2,10 @@
 codepen: true
 layout: post
 title: "Another Sass button library"
+tags:
+  - sass
+  - button
+  - library
 ---
 
 If you enjoy reading about Sass, you may have stumbled upon Stuart Robson's [recent article promoting BEM](http://www.alwaystwisted.com/post.php?s=2014-02-27-even-easier-bem-ing-with-sass-33) syntax with new Sass 3.3 features. Pretty cool article; if you haven't read it, you definitely should.

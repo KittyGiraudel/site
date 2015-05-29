@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "What I learnt from writing a book"
+tags:
+  - writing
+  - book
+  - css
 ---
 
 <img src="/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="CSS 3, Pratique du Design Web" class="pull-image--right" />

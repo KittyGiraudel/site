@@ -3,6 +3,10 @@ codepen: true
 guest: "Gregor Adams"
 layout: post
 title: "Netflix Logo in CSS"
+tags:
+  - css
+  - experiment
+  - animation
 ---
 
 > The following is a guest post by [Gregor Adams](https://twitter.com/gregoradams) about how he managed to re-create the Netflix logo in CSS. Gregor is kind of the rising star when it comes to CSS, so needless to say it is a great honor to have him here.

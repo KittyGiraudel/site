@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Rethinking Atwood's law"
+tags:
+  - thoughts
+  - atwood's law
+  - sass
 ---
 
 A couple years ago, the 17th of July 2007 to be exact, [Jeff Atwood](https://twitter.com/codinghorror), founder and builder of StackOverflow and StackExchange [wrote](http://blog.codinghorror.com/the-principle-of-least-power/) about the [principle of least power](http://www.w3.org/DesignIssues/Principles.html) and said:

@@ -1,7 +1,0 @@
----
-external:
-  host: SitePoint
-  url: http://www.sitepoint.com/compass-extensions-worth-a-try/
-layout: post
-title: "Compass extension that are worth a try"
----

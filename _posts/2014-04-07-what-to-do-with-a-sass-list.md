@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "What to do with a Sass list?"
+tags:
+  - sass
+  - lists
 ---
 
 A few weeks ago, [Louis Lazaris](https://twitter.com/ImpressiveWebs) has been invited at [Shop Talk Show](http://shoptalkshow.com/episodes/103-louis-lazaris/), the front-end podcast by [Chris Coyier](https://twitter.com/chriscoyier) and [Dave Rupert](https://twitter.com/davatron5000). I joined in the middle of the show and it was kind of cool hearing Louis talking about various stuff including Sass. By the way, if one of you guys come over here, thanks for mentioning me. ;)

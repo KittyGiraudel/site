@@ -3,6 +3,10 @@ guest: "David Khourshid"
 layout: post
 sassmeister: true
 title: "Calculating Specificity in Sass"
+tags:
+  - sass
+  - css
+  - specificity
 ---
 
 > The following is a guest post by [David Khourshid](https://twitter.com/davidkpiano) about how he managed to build a specificity calculator in Sass. In all honesty, I would not have made any better than David with this, so I have to say I am very glad to have him talking about his experiment here.

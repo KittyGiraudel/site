@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Translating Sass Guidelines"
+tags:
+  - sass
+  - guidelines
+  - translation
 ---
 
 {% raw %}

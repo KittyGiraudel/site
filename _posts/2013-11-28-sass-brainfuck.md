@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Sass brainfuck"
+tags:
+  - sass
+  - brainfuck
 ---
 
 After months of experimenting with Sass, making crazy and useless things, hacking aroung the syntax and trying to do things not meant to be done, I have come up with a list of things that still kind of boggle my mind when it comes to Sass. Some of them are rather normal and some are just... plain weird. Please, follow my lead.

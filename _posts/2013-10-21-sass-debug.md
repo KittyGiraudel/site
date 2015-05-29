@@ -2,6 +2,10 @@
 codepen: true
 layout: post
 title: "How I made a Sass debug function"
+tags:
+  - sass
+  - debug
+  - function
 ---
 
 > The code explained in this article has been slightly revisited in [the pen](http://codepen.io/HugoGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen.

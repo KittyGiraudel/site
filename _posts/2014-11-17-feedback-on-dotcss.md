@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Feedback on dotCSS 2014"
+tags:
+  - thoughts
+  - dotCSS
+  - sass
 ---
 
 I have been invited to speak at the very first [dotCSS](http://dotcss.eu) in Paris on November 14th, as part of a beautiful lineup of incredible speakers and not less than 400 attendees. It was a truely great experience, hence a little article to sum up the journey.

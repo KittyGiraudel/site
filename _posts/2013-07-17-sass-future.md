@@ -4,4 +4,7 @@ external:
   url: http://davidwalsh.name/future-sass
 layout: post
 title: "Looking into the future of Sass"
+tags:
+  - sass
+  - release
 ---

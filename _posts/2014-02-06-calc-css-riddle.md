@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "CSS trickery and calc function"
+tags:
+  - css
+  - calc
+  - riddle
 ---
 <figure class="figure--right">
 <img src="/images/calc-css-riddle/gollum-riddle.gif" alt="">

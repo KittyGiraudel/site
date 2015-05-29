@@ -2,6 +2,10 @@
 layout: post
 summary: true
 title: "Can I afford a preprocessor?"
+tags:
+  - css
+  - sass
+  - preprocessor
 ---
 
 **Disclaimer:** I just want to share my thoughts on the topic. I won't try to convince you to use a preprocessor. So please, don't tell me how good you are without one; I trust you. I'm a developer too.

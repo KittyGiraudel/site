@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "My interview by Clément Osternaud"
+tags:
+  - interview
+  - thoughts
 ---
 
 > French front-end developer Clément Osternaud interviewed me for [his site](http://myressources.com/interview-hugo-giraudel/). Below is the translation of the whole interview. 

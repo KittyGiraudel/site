@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "8 Compass features you may not know"
+tags:
+  - sass
+  - compass
 ---
 
 > **Edit (2014/11/16):** I no longer use Compass. Just sayin'.

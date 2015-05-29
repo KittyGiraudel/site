@@ -2,6 +2,9 @@
 codepen: true
 layout: post
 title: "The stylesheet breaker"
+tags:
+  - css
+  - riddle
 ---
 
 Or **how I found the one line of CSS that can break your entire stylesheet**. Hopefully it is very unlikely that you'll ever write this line so worry not; you should be safe.

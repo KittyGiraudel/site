@@ -2,6 +2,11 @@
 layout: post
 sassmeister: true
 title: "SassDoc and Semantic Versioning"
+tags:
+  - sass
+  - sassdoc
+  - semver
+  - release
 ---
 
 If you are not familiar with the concept of Semantic Versioning, I invite you to read [my article](http://www.sitepoint.com/semantic-versioning-why-you-should-using/) on topic at SitePoint. To sum things up, it is a way to version softwares in ordre to provide meaning across version number bumps.

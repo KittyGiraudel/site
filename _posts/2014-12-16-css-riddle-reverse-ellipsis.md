@@ -3,6 +3,10 @@ codepen: true
 layout: post
 sassmeister: true
 title: "CSS Riddle: reverse ellipsis"
+tags:
+  - css
+  - riddle
+  - ellipsis
 ---
 
 The other day, I wanted to do something in CSS that turned out to be quite complicated to achieve. Actually it's amazing that something *that* common ends up being so difficult to implement. Anyway, how would you do a reverse ellipsis in CSS, or *start ellipsis*?

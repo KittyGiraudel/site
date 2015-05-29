@@ -3,6 +3,8 @@ guest: "Loïc Giraudel"
 layout: post
 prism: true
 title: "Git tips and tricks - Part 3"
+tags:
+  - git
 ---
 
 > Hey folks! This is the 3rd part of the *Git Tips & Tricks* series from Loïc Giraudel. If you missed the [first post](http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/) and the [the second one](http://hugogiraudel.com/2014/03/17/git-tips-and-tricks-part-2/), be sure to give them a read! And now roll up your sleeves, because this is getting wicked!

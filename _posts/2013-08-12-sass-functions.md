@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "A couple of Sass functions"
+tags:
+  - sass
+  - function
 ---
 
 We can do awesome things with Sass. It really pushes CSS to an upper level. More than that, it is so much fun to make Sass mixins and functions. Everytime I do something new, I'm like “whoaaa” even if it's a useless thing.

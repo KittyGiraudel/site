@@ -2,6 +2,11 @@
 codepen: true
 layout: post
 title: "Color Clock Experiment"
+tags:
+  - javascript
+  - experiment
+  - color
+  - clock
 ---
 
 A while back, a developer posted a little experiment in which the current time was being used as an hexadecimal color, applied to the body element. Better have a look at [the demo](http://www.jacopocolo.com/hexclock/#).

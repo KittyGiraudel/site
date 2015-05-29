@@ -2,6 +2,8 @@
 disqus: http://hugogiraudel.com/blog/development-environment
 layout: post
 title: "My development environment"
+tags:
+  - thoughts
 ---
 
 > **Edit (2014/11/16):** I don't use Windows anymore. I moved to Mac OS and Ubuntu. Also I don't use Canary/Aurora anymore, I switched back to regular versions. I updated Sublime Text to ST3. And I suck much less at Git.

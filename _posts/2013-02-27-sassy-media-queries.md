@@ -2,6 +2,10 @@
 codepen: true
 layout: post
 title: "Sassy Media Queries"
+tags:
+  - sass
+  - media queries
+  - experiment
 ---
 
 Here is a quick blog post aiming at explaining how I turned a ~250-line CSS experiment by [Arley McBlain](http://arleym.com) into less than 30 sexy lines of Sass.

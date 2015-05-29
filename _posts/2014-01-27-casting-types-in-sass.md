@@ -1,6 +1,12 @@
 ---
 layout: post
 title: "SassyCast: type conversion in Sass"
+tags:
+  - sass
+  - type
+  - release
+  - cast
+  - SassyCast
 ---
 
 > **Edit (2014/11/16):** remember that type casting is often a symptom of poorly designed code. This should probably stay an experiment.

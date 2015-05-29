@@ -2,6 +2,8 @@
 codepen: true
 layout: post
 title: "Looking back at 2014"
+tags:
+  - thoughts
 ---
 
 Happy New Year to y'all folks! I hope you enjoyed your holidays.

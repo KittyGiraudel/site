@@ -2,6 +2,10 @@
 layout: post
 sassmeister: true
 title: "A new Sass mixin for offsets"
+tags:
+  - sass
+  - mixin
+  - offsets
 ---
 
 About a year ago, I wrote about how I managed to come up with what I think is [a clever Sass mixin to deal with offset positioning](http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/) in CSS, also known as `top`, `right`, `bottom` and `left`. 

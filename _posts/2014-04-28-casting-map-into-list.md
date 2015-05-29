@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Casting a map into a list in Sass"
+tags:
+  - sass
+  - lists
+  - maps
 ---
 
 I have this article ready for about 3 months now but I never found an occasion to release it... until today! This will be quite short but I still wanted to write a little something on the topic anyway. You might have read my [article about SassyCast](http://hugogiraudel.com/2014/01/27/casting-types-in-sass/), a small Compass extension I wrote to convert data types in Sass.

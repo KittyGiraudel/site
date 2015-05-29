@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "SassyJSON: Talk to the browser!"
+tags:
+  - sass
+  - JSON
+  - SassyJSON
+  - releaase
 ---
 
 > **Edit (2014/11/16):** please, don't use this in a live project. If you come up with a case where you need to parse/encode JSON in Sass, consider having a Ruby/C/whatever helper function for this.

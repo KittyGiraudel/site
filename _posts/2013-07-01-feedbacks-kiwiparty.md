@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Feedback on my first conf"
+tags:
+  - thoughts
 ---
 
 Hey guys! It's been a while I haven't post anything; last month has been pretty intense. Especially since I recently had the amazing opportunity to be a speaker at [KiwiParty](http://kiwiparty.fr)!

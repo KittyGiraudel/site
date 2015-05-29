@@ -2,6 +2,9 @@
 disqus: http://hugogiraudel.com/blog/sass-structure
 layout: post
 title: "A closer look at my Sass structure"
+tags:
+  - sass
+  - architecture
 ---
 
 > **Edit (2014/05/13):** after a year, I got much better with Sass architecture. I suggest you have a look at <a href="http://www.sitepoint.com/architecture-sass-project/">this post.

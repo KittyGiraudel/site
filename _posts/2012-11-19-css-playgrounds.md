@@ -2,6 +2,9 @@
 disqus: http://hugogiraudel.com/blog/css-playgrounds.html
 layout: post
 title: "A round-up on CSS playgrounds"
+tags:
+  - css
+  - playground
 ---
 
 > **Edit (2014/11/16):** this article is quite old. Information might be incorrect.

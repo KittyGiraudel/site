@@ -2,6 +2,9 @@
 layout: post
 sassmeister: true
 title: "Translation system in Sass"
+tags:
+  - translation
+  - sass
 ---
 
 Lately, I have been actively contributing to [a11y.css](https://github.com/ffoodd/a11y.css) project. If you don't know it yet and happen to be interested in accessibility, I highly recommand you give it a glance. It is a massive work from French developer and accessibility activist [Gaël Poupard](https://twitter.com/ffoodd_fr).

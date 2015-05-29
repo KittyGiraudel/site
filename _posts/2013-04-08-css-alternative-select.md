@@ -2,6 +2,10 @@
 layout: post
 summary: true
 title: "Why a CSS alternative to &lt;select&gt; is impossible"
+tags:
+  - css
+  - thoughts
+  - select
 ---
 
 A couple of weeks ago, I came across an article from Pepsized featuring a [CSS-only alternative to the Select Element](http://pepsized.com/css-only-alternative-to-the-select-element/). Sounds nice! Especially since I recall doing some [dropdown styling at Codrops](http://tympanus.net/codrops/2012/10/04/custom-drop-down-list-styling/).

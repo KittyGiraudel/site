@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "Getting the most out of Sass placeholders"
+tags:
+  - sass
+  - placeholders
+  - extend
+  - mixin
 ---
 
 The other day I was looking at the source code from [GUFF](http://kenwheeler.github.io/guff/), a brand new Sass framework from [Ken Wheeler](https://github.com/kenwheeler). I like reviewing Sass code, I find it very interesting to have an insight at how other people tackle some common issues. By the way, if you want me to review your Sass code, I'll be glad to do so. ;)

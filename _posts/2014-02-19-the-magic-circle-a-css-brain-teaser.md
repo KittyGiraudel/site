@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "The Magic Circle: a CSS brain teaser"
+tags:
+  - css
+  - riddle
 ---
 
 > If you want the solution, be sure to read [this post](http://hugogiraudel.com/2014/02/26/the-magic-circle-trick-revealed/).

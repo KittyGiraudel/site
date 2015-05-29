@@ -2,6 +2,11 @@
 guest: false
 layout: post
 title: "Bitwise operators in Sass"
+tags:
+  - sass
+  - bitwise
+  - experiment
+  - release
 ---
 
 A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) and I had the crazy idea of implementing bitwise operators in Sass. It went like this:

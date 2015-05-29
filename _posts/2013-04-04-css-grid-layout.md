@@ -2,6 +2,10 @@
 layout: post
 summary: true
 title: "Future of CSS layout: CSS Grid"
+tags:
+  - css
+  - grid
+  - layout
 ---
 
 > **Edit (2014/05/13):** it looks like Internet Explorer is not the only browser to support the Grid Layout anymore since Chrome 34+ seems able to handle it quite well without any prefix. To the future!

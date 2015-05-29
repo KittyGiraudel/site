@@ -5,6 +5,9 @@ guest: "Ana Tudor"
 layout: post
 numberedFigures: true
 title: "Dig deep into CSS linear gradients"
+tags:
+  - css
+  - gradient
 ---
 
 > The following is a guest post by [Ana Tudor](http://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.

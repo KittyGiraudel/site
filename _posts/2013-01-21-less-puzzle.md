@@ -2,6 +2,10 @@
 disqus: http://hugogiraudel.com/blog/less-puzzle
 layout: post
 title: "A little LESS puzzle"
+tags:
+  - css
+  - less
+  - riddle
 ---
 
 Hi guys! What do you think of a little puzzle to wake up your neurons? I think I've found something tricky enough to worth a blog post and a little challenge about it.

@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Introducing Sass Guidelines"
+tags:
+  - sass
+  - guidelines
+  - release
 ---
 
 > **Edit (2015/01/07):** over 20000 visits on [Sass Guidelines](http://sass-guidelin.es) during the last 24 hours. Thank you so much for your support!

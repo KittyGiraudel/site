@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "SassyMatrix: because one dimension wasn't enough"
+tags:
+  - sass
+  - matrix
+  - release
+  - sassymatrix
 ---
 
 Sass is much more than just a CSS preprocessor. You can do ton of things you're not supposed to do and won't ever do except in your crazy demos. This is what is amazing about Sass: it can be use for (pseudo-)programming as well!

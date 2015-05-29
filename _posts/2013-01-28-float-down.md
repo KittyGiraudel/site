@@ -3,6 +3,10 @@ codepen: true
 disqus: http://hugogiraudel.com/blog/float-down
 layout: post
 title: "Simulate float: down"
+tags:
+  - css
+  - riddle
+  - float
 ---
 
 Back in september, some guy exposed a very interesting problem on [CSS-tricks forums](http://css-tricks.com/forums/discussion/19610/float-items). To sum up, he had a list of elements floated to the left. However, he wanted to float items top to bottom on each column and not left to right on each row.

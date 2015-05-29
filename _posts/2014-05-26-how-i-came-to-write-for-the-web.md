@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "How I came to write for the web"
+tags:
+  - blog
+  - writing
+  - editing
 ---
 
 Today, no cool Sass stuff or neat CSS trick. I'd like to address a slightly more personnal topic people keep asking me about: how I came up to write for big online magazine (SitePoint, Tuts+, Codrops...). It's true I have been very active lately and some people want to know how I can keep up with such a large amount of write ups. Well, if you happen to be one of those people, let me tell you my story (yes, you might find it boring!).

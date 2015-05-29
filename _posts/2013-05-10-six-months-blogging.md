@@ -2,6 +2,8 @@
 layout: post
 numberedFigures: true
 title: "Six months of blogging"
+tags:
+  - blog
 ---
 
 Hey guys! Yesterday, the blog was 6 months old. Launched in [November 9th 2012](http://hugogiraudel.com/2012/11/09/redesign-blog/) as a quick and dirty plateform to drop some posts when I get time, now built on [Jekyll](http://jekyllrb.com/), [Sass](http://sass-lang.com/) and [GitHub Pages](https://github.com/HugoGiraudel/hugogiraudel.github.com), I have to say I am pretty happy with what I have done so far with this.

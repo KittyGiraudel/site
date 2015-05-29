@@ -2,9 +2,11 @@
 layout: post
 summary: true
 title: "Advanced Sass list functions"
+tags:
+  - sass
+  - lists
+  - function
 ---
-
-
 
 A couple of weeks ago, I wrote a small guide to [understand Sass lists](http://hugogiraudel.com/2013/07/15/understanding-sass-lists/). I hope you've read it and learnt things from it!
 

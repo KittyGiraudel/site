@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Sass mixin for offsets"
+tags:
+  - sass
+  - offsets
+  - mixin
 ---
 
 > **Edit (2014/05/19):** I updated this mixin to improve it, please focus on the [new article](http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/).

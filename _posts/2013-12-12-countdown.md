@@ -2,6 +2,9 @@
 codepen: true
 layout: post
 title: "Introducing Countdown.js"
+tags:
+  - javascript
+  - release
 ---
 
 Hey guys! Just a quick article to introduce [Countdown.js](https://github.com/HugoGiraudel/Countdown.js), a little script I recently made. During the last weeks, I've been practicing with JavaScript. It has been on [my wishlist](http://hugogiraudel.com/2013/05/13/things-to-do-2013/) for 2013 and I'm glad that I could made some progress with it.

@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Stop fucking up code learning"
+tags:
+  - css
+  - code
+  - learning
 ---
 
 During Christmas holidays, I have had the pleasure to see my little cousin. If I tell you this, it is because she showed me what she is currently studying in her schooling. She is a 20 year-old student in a field more or less related to the web. Because of this, she has been given some introduction lessons to web design and development. No big deal, only some basic HTML and CSS.

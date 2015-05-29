@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Oh Jekyll, here we go again..."
+tags: 
+  - jekyll
+  - mixture
+  - blog
 ---
 
 I [created this site](http://hugogiraudel.com/2012/11/09/redesign-blog/) in November 2012, with a strictly static old school set up. I quickly moved on to a custom PHP workflow only to move to [Jekyll](http://jekyllrb.com) about 3 months later (February 2013). I wrote about the experience in [this article](http://hugogiraudel.com/2013/02/21/jekyll/).

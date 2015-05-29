@@ -3,6 +3,8 @@ guest: "Loïc Giraudel"
 layout: post
 prism: true
 title: "Git tips and tricks - Part 1"
+tags:
+  - git
 ---
 
 > **Edit (2014/03/17):** Part 2 is out! Go check [it](http://hugogiraudel.com/2014/03/17/git-tips-and-tricks-part-2/).

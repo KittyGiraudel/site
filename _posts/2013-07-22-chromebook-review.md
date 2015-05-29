@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Chromebook review"
+tags:
+  - chromebook
+  - review
 ---
 
 > **Edit (2014/11/16):** I no longer own a Chromebook.

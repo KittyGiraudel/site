@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "Dealing with themes and layouts with Twig"
+tags:
+  - templates
+  - Twig
+  - themes
+  - layouts
 ---
 
 Hey guys! This post is going to be quite different from what I usually write about since it will talk about [Twig](http://twig.sensiolabs.org/), the template engine used by [Symfony 2](http://symfony.com/). I came across a pretty complicated case at work so I thought I'd write a little something about it.

@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "Introducing Browserhacks"
+tags:
+  - css
+  - hacks
+  - release
+  - browsers
 ---
 
 Hey guys! Just a quick post to anounce the very recent launch of [Browserhacks](http://browserhacks.com)!

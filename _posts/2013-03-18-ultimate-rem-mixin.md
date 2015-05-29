@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "The ultimate PX/REM mixin"
+tags:
+  - sass
+  - px
+  - rem
+  - mixin
 ---
 
 > **Edit (2014/11/16):** I have changed my mind again and no longer use Sass to remify. In most projects, I've noticed it's better to use a postprocessor such as [px_to_rem](https://github.com/songawee/px_to_rem).

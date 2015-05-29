@@ -2,6 +2,8 @@
 guest: "Christoph Rumpel"
 layout: post
 title: "Your work is not good enough"
+tags:
+  - thoughts
 ---
 
 > The following is a guest post by [Christoph Rumpel](http://christoph-rumpel.com/), a passionate Web developer from Austria. I'm very glad to have him writing a motivational post here.

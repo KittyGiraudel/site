@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Understanding Sass lists"
+tags:
+  - sass
+  - lists
 ---
 
 > **Edit (2015/05/28):** After realising this article ranks up incredibly high on *Sass* Google searches, I come back to it to clear a few things up. Deletions are lined-through, additions are in italic.

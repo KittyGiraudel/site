@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "\"CSS is easy\""
+tags:
+  - css
+  - front-end
+  - back-end
 ---
 
 > [Véronique Bouvier](https://twitter.com/verobouvier) translated [this article in French](http://www.veronique-bouvier.com/css-cest-facile-par-hugo-giraudel/) on her blog.

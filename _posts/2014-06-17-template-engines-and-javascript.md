@@ -2,6 +2,9 @@
 guest: false
 layout: post
 title: "Template engines and JavaScript"
+tags:
+  - template
+  - javascript
 ---
 
 I couldn't find an appropriate title. I recently [moved my site from Jekyll to Mixture](http://mixture.io/blog/jekyll-mixture/) and took the time to rethink the way I dealt with JavaScript. In this article, I will give you my opinion regarding this topic and show you how I managed to execute conditional JavaScript depending on global variables.

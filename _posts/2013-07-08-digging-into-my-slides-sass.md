@@ -3,6 +3,8 @@ codepen: true
 layout: post
 summary: true
 title: "Digging into my slides about Sass"
+tags:
+  - sass
 ---
 
 As you may know, I have been speaking at KiwiParty about Sass in late June. It has been a really great experience and people were really receptive even if my talk was a bit technical.

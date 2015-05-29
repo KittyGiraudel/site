@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "String replacement function in Sass"
+tags:
+  - sass
+  - strings
+  - replace
+  - function
 ---
 
 > **Edit (2014/11/16):** here is an [updated, more powerful version](http://sassmeister.com/gist/1b4f2da5527830088e4d).

@@ -2,6 +2,11 @@
 disqus: http://hugogiraudel.com/blog/redesign-blog
 layout: post
 title: "Hugogiraudel.com redesigned + new blog"
+tags:
+  - design
+  - blog
+  - writing
+  - release
 ---
 
 

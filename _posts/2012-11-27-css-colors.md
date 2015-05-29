@@ -2,6 +2,9 @@
 disqus: http://hugogiraudel.com/blog/css-colors.html
 layout: post
 title: "Colors in CSS"
+tags:
+  - css
+  - colors
 ---
 
 Hi everyone! Today, we will talk about colors in CSS. There are many color specifications and we'll be talking about their history, what they mean and how to use them.

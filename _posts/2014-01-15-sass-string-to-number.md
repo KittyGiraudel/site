@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "Casting a string to a number in Sass"
+tags:
+  - sass
+  - type
+  - cast
+  - strings
 ---
 
 Hey guys! I am currently working on a JSON parser in Sass (yes, you read right) thus I faced an issue I thought unsolvable until now: casting a string into a number in Sass. Needless to say I found a solution! Even better, I found a solution to convert a string into a valid CSS length you can use as a CSS value, in calculations and stuff.

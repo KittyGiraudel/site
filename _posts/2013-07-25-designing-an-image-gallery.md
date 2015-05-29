@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "Designing an image gallery"
+tags:
+  - design
+  - css
+  - gallery
+  - release
 ---
 
 > **Edit (2014/11/16):** I took time to improve this site. It now works fine without JavaScript and has been ported to Jekyll. Also both Sass and JavaScript code have been improved.

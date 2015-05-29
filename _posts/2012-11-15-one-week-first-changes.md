@@ -2,6 +2,9 @@
 disqus: http://hugogiraudel.com/blog/one-week-first-changes.html
 layout: post
 title: "One week, first changes"
+tags:
+  - blog
+  - writing
 ---
 
 ## Design 

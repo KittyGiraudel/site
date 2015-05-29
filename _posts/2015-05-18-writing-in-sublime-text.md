@@ -2,6 +2,10 @@
 title: Writing in Sublime Text
 layout: post
 summary: true
+tags:
+  - sublime text
+  - writing
+  - editing
 ---
 
 I use to write a lot.<sup>[citation needed]</sup> I have spent countless hours writing articles, books, mails and what else. And for all that, I use a single tool: Sublime Text. As far as I am concerned, Sublime Text is the perfect environment for writing, especially tech writing. In this article, I'd like to show you my setup so you can use Sublime Text for writing as well.

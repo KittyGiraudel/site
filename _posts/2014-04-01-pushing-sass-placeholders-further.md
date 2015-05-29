@@ -2,6 +2,10 @@
 layout: post
 sassmeister: true
 title: "Pushing Sass placeholders further"
+tags:
+  - sass
+  - placeholders
+  - extend
 ---
 
 Yesterday I released [Getting the most out of Sass placeholders](http://hugogiraudel.com/2014/03/31/getting-the-most-out-of-sass-placeholders/), where I explained how I came up with a little technique to work around the fact `@extend` doesn't work whenever you're in a `@media` block. 

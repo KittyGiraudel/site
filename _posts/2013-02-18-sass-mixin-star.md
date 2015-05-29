@@ -2,6 +2,10 @@
 layout: post
 summary: true
 title: "Sass-ify a CSS shape"
+tags:
+  - sass
+  - mixin
+  - star
 ---
 
 A couple of days ago, [Ana Tudor](http://twitter.com/thebabydino) showed me how she managed to do a [pure CSS 6-point star](http://codepen.io/thebabydino/pen/DmklE) with a single element.

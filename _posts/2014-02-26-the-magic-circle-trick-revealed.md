@@ -2,6 +2,9 @@
 codepen: true
 layout: post
 title: "The Magic Circle: trick revealed"
+tags:
+  - css
+  - riddle
 ---
 
 > Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](http://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/).

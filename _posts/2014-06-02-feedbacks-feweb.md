@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Feedback on another conf"
+tags:
+  - thoughts
+  - feweb
+  - sass
 ---
 
 A couple of weeks ago, I have been invited by the [FeWeb](http://www.lafeweb.be/) (which stands for *La fédération des métiers du web*, literally *Web professions Federation*) to talk about Sass at [Co.Station](http://www.co-station.com/) in Bruxelles, Belgium.

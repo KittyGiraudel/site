@@ -2,6 +2,11 @@
 layout: post
 sassmeister: true
 title: "Building a walk function in Sass"
+tags:
+  - sass
+  - walk
+  - functions
+  - functional programming
 ---
 
 > **Edit (2014/11/16):** more functional programming to be found [here](http://sassmeister.com/gist/c36be3440dc2b5ae9ba2).

@@ -2,6 +2,9 @@
 disqus: http://hugogiraudel.com/blog/blog-changes
 layout: post
 title: "Blog changes"
+tags:
+  - blog
+  - writing
 ---
 
 > **Edit (2013/01/22):** I did a lot of changes after writing this post notably regarding SEO, performances and accessibility. Be sure you read about it!
