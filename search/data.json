@@ -1,0 +1,14 @@
+---
+---
+[
+  {% for post in site.posts %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "tags"     : ["{{ post.tags | join: '", "' }}"],
+      "url"      : {% if post.external %}"{{ post.external.url }}"{% else %}"{{ site.url }}{{ post.url }}"{% endif %},
+      "date"     : "{{ post.date|date: '%B %d, %Y' }}",
+      "guest"    : {% if post.guest %}" by {{ post.guest }}"{% else %}"&#8203;"{% endif %},
+      "external" : {% if post.external %}" at {{ post.external.host }}"{% else %}"&#8203;"{% endif %}
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

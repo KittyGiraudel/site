@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     codepen: document.querySelector && !!document.querySelector('.codepen'),
     sassmeister: document.querySelector && !!document.querySelector('.sassmeister'),
     tableOfContent: {% if page.summary %}true{% else %}false{% endif %},
-    comments: {% unless page.comments == false or page.external %}true{% else %}false{% endunless %},
+    comments: document.querySelector && !!document.querySelector('#disqus_thread') && {% unless page.comments == false or page.external %}true{% else %}false{% endunless %},
     disqus: {
       title: "{{ page.title }}",
       url: {% if page.disqus %}'{{ page.disqus }}'{% else %}window.location.href{% endif %},
