@@ -11,7 +11,7 @@
     {% else %}{% endif %}
   </p>
 
-  <h2 class="article__title  list__primary-content">
+  <p class="article__title  list__primary-content">
       {% if include.post.external %}
         <a class="article__link" href="{{ include.post.external.url }}">
       {% else %}
@@ -19,5 +19,5 @@
       {% endif %}
           {{ include.post.title }}
       </a>
-  </h2>
+  </p>
 </li>

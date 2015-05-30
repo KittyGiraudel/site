@@ -1,7 +1,10 @@
 ---
 layout: default
 title: "About"
-comments: false
+excerpt: "Everything about me related to the tech-industry, as well as a couple of hints about this site and how it was built."
+tags:
+  - Hugo Giraudel
+  - about
 ---
 
 # About me

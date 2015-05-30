@@ -1,6 +1,10 @@
 ---
 layout: default
-comments: false
+tags:
+  - Hugo Giraudel
+  - blog
+  - css
+  - sass
 classes: home
 ---
 
@@ -10,7 +14,7 @@ classes: home
       <img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel"  />
     </div>
     <div class="profile__info">
-      <h2 class="profile__name">Ohai, I'm Hugo Giraudel.</h2>
+      <p class="profile__name">Ohai, I'm Hugo Giraudel.</p>
       <p class="profile__description">CSS Goblin, Sass hacker, margin psycho</p>
       <p class="profile__job">Front-end developer at <a href="http://edenspiekermann.com" target="_blank">edenspiekermann_</a> (Berlin)</p>
       <p class="profile__networks">Catch me on Twitter <a href="https://twitter.com/hugogiraudel">@HugoGiraudel</a></p>
@@ -34,9 +38,9 @@ classes: home
   {% if project.image %}
   <li class="triplet__item  recent-project">
     <a href="{{ project.link }}" class="triplet__link" target="_blank">
-      <img class="triplet__image" src="{{ project.image }}" alt="{{ project.name }}" />
+      <img class="triplet__image" src="{{ project.image }}" alt="Logo of project {{ project.name }}" />
     </a>
-    <h3 class="triplet__title"><a href="{{ project.link }}">{{ project.name }}</a></h3>
+    <p class="triplet__title"><a href="{{ project.link }}">{{ project.name }}</a></p>
     <p class="triplet__description">{{ project.description }}</p>
   </li>
   {% endif %}
@@ -51,9 +55,9 @@ classes: home
     {% unless event.past %}
     <li class="triplet__item">
       <a href="{{ event.link }}" class="triplet__link">
-        <img class="triplet__image" src="{{ event.image }}" alt="{{ event.event }}" />
+        <img class="triplet__image" src="{{ event.image }}" alt="Screenshot of homepage of {{ event.event }}" />
       </a>
-      <h3 class="triplet__title"><a href="{{ event.link }}">{{ event.event }}</a></h3>
+      <p class="triplet__title"><a href="{{ event.link }}">{{ event.event }}</a></p>
       <p class="triplet__description">{{ event.date }}</p>
     </li>
     {% endunless %}

@@ -1,7 +1,11 @@
 ---
 layout: default
 title: "Speaking"
-comments: false
+excerpt: "An overview of all my talks, past and to come, including slides and videos."
+tags:
+  - speaking
+  - talks
+  - conferences
 ---
 
 # Speaking events

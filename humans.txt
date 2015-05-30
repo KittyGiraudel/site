@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Hugo Giraudel -- Front-end developer -- @HugoGiraudel
+    Hugo Giraudel -- Designer -- @HugoGiraudel
+    Hugo Giraudel -- Author -- @HugoGiraudel
+
+# TECHNOLOGY COLOPHON
+
+    HTML, CSS, JavaScript
+    Sass, Normalize.css
+    Jekyll, Simple-Jekyll-Search
+    GitHub Pages, Jekyll 
