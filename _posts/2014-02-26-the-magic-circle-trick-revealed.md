@@ -1,5 +1,4 @@
 ---
-codepen: true
 layout: post
 title: "The Magic Circle: trick revealed"
 tags:

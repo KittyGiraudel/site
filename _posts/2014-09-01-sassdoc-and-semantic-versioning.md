@@ -1,6 +1,5 @@
 ---
 layout: post
-sassmeister: true
 title: "SassDoc and Semantic Versioning"
 tags:
   - sass

@@ -1,5 +1,4 @@
 ---
-codepen: true
 layout: post
 title: "The stylesheet breaker"
 tags:

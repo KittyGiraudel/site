@@ -1,5 +1,4 @@
 ---
-codepen: true
 layout: post
 title: "Color Clock Experiment"
 tags:

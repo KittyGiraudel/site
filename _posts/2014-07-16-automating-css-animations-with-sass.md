@@ -1,6 +1,5 @@
 ---
 layout: post
-sassmeister: true
 title: "Automating CSS animations with Sass"
 tags:
   - sass

@@ -1,5 +1,4 @@
 ---
-codepen: true
 layout: post
 title: "Looking back at 2014"
 tags:

@@ -1,6 +1,5 @@
 ---
 layout: post
-sassmeister: true
 title: "Translation system in Sass"
 tags:
   - translation

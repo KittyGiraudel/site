@@ -3,8 +3,8 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var app = new App({
-    codepen: {% if page.codepen %}true{% else %}false{% endif %},
-    sassmeister: {% if page.sassmeister %}true{% else %}false{% endif %},
+    codepen: document.querySelector && !!document.querySelector('.codepen'),
+    sassmeister: document.querySelector && !!document.querySelector('.sassmeister'),
     tableOfContent: {% if page.summary %}true{% else %}false{% endif %},
     comments: {% unless page.comments == false or page.external %}true{% else %}false{% endunless %},
     disqus: {

@@ -1,5 +1,4 @@
 ---
-codepen: true
 disqus: http://hugogiraudel.com/blog/css-gradients
 guest: "Ana Tudor"
 layout: post

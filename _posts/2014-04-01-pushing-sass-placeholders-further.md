@@ -1,6 +1,5 @@
 ---
 layout: post
-sassmeister: true
 title: "Pushing Sass placeholders further"
 tags:
   - sass

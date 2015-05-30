@@ -1,5 +1,4 @@
 ---
-codepen: true
 layout: post
 title: "Another Sass button library"
 tags:

@@ -1,5 +1,4 @@
 ---
-codepen: true
 layout: post
 summary: true
 title: "Digging into my slides about Sass"

@@ -1,7 +1,5 @@
 ---
-codepen: true
 layout: post
-sassmeister: true
 title: "CSS Riddle: reverse ellipsis"
 tags:
   - css

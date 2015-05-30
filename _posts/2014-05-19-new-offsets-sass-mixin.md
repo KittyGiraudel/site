@@ -1,6 +1,5 @@
 ---
 layout: post
-sassmeister: true
 title: "A new Sass mixin for offsets"
 tags:
   - sass

@@ -7,4 +7,5 @@ title: "What's up with SassDoc 1.2?"
 tags:
   - sass
   - sassdoc
+  - release
 ---

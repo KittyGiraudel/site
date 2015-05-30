@@ -1,5 +1,4 @@
 ---
-codepen: true
 layout: post
 title: "Items on circle with CSS"
 tags:

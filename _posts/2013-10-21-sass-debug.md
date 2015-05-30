@@ -1,5 +1,4 @@
 ---
-codepen: true
 layout: post
 title: "How I made a Sass debug function"
 tags:
