@@ -19,6 +19,15 @@ classes: home
 </section>
 
 <section>
+  <h2>Latest article</h2>
+  <ul class="list  articles">
+    {% for post in site.posts limit:1 %}
+      {% include article-list.html post=post %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
   <h2>Recent projects</h2>
   <ul class="triplet  recent-projects  clearfix">
   {% for project in site.data.projects %}
