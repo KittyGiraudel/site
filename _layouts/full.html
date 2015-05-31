@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body {% if page.classes %}class="{{ page.classes }}"{% endif %}>
+
+    {% include header.html %}
+    
+    {{ content }}
+
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
+
+</html>

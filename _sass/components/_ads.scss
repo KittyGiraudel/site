@@ -14,12 +14,16 @@ body:not(.home) .site-ad {
   }
 }
 
+.home .site-ad {
+  margin-top: 20px;
+}
+
 /**
  * Change default styles of CarbonAds
  * 1. Override inline styles
  */
 .carbonad {
-  background: white !important; /* 1 */
+  background: transparent !important; /* 1 */
   height: auto !important; /* 1 */
   border-radius: 3px !important; /* 1 */
   border: 0 !important; /* 1 */

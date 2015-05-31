@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: full
 tags:
   - Hugo Giraudel
   - blog
@@ -8,62 +8,54 @@ tags:
 classes: home
 ---
 
-<section>
-  <div class="profile  clearfix">
-    <div class="profile__avatar">
-      <img src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel"  />
-    </div>
-    <div class="profile__info">
-      <p class="profile__name">Ohai, I'm Hugo Giraudel.</p>
-      <p class="profile__description">CSS Goblin, Sass hacker, margin psycho</p>
-      <p class="profile__job">Front-end developer at <a href="http://edenspiekermann.com" target="_blank">edenspiekermann_</a> (Berlin)</p>
-      <p class="profile__networks">Catch me on Twitter <a href="https://twitter.com/hugogiraudel">@HugoGiraudel</a></p>
-    </div>
+<section class="home-section">
+  <div class="home-section__inner  container">
+    <img class="home-section__image" src="/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel"  />
+    <h2 class="home-section__title">Hello, I'm...</h2>
+    <p class="home-section__primary-content"><a href="https://twitter.com/hugogiraudel">Hugo Giraudel</a></p>
+    <p class="home-section__secondary-content">Front-end developer at <a href="http://edenspiekermann.com" target="_blank">Edenspiekermann</a> in Berlin</p>
+    {% include ad.html %}
   </div>
+  <footer class="home-section__footer">
+    <p>Know more <a href="/about/">about me</a>.</p>
+  </footer>
 </section>
 
-<section>
-  <h2>Latest article</h2>
-  <ul class="list  articles">
+<section class="home-section">
+  <div class="home-section__inner  container">
+    <h2 class="home-section__title">Latest article is...</h2>
     {% for post in site.posts limit:1 %}
-      {% include article-list.html post=post %}
+    <p class="home-section__primary-content"><a href="{% if post.external %}{{ post.external.url }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a></p>
+    <p class="home-section__secondary-content">Published on {{ post.date|date: "%B %d, %Y" }}{% if post.guest %} by {{ post.guest }}{% endif %}{% if post.external %} at {{ post.external.host }}{% endif %}</p>
     {% endfor %}
-  </ul>
+  </div>
+  <footer class="home-section__footer">
+    <p><a href="/blog/">Browse</a> or <a href="/search/">search</a> other articles.</p>
+  </footer>
 </section>
 
-<section>
-  <h2>Recent projects</h2>
-  <ul class="triplet  recent-projects  clearfix">
-  {% for project in site.data.projects %}
-  {% if project.image %}
-  <li class="triplet__item  recent-project">
-    <a href="{{ project.link }}" class="triplet__link" target="_blank">
-      <img class="triplet__image" src="{{ project.image }}" alt="Logo of project {{ project.name }}" />
-    </a>
-    <p class="triplet__title"><a href="{{ project.link }}">{{ project.name }}</a></p>
-    <p class="triplet__description">{{ project.description }}</p>
-  </li>
-  {% endif %}
-  {% endfor %}
-  </ul>
+<section class="home-section">
+  <div class="home-section__inner  container">
+    <h2 class="home-section__title">Latest project is...</h2>
+    {% for project in site.data.projects limit:1 %}
+    <p class="home-section__primary-content"><a href="{{ project.link }}" target="_blank">{{ project.name }}</a></p>
+    <p class="home-section__secondary-content">{{ project.description }}</p>
+    {% endfor %}
+  </div>
+  <footer class="home-section__footer">
+    <p><a href="/projects/">Browse</a> other projects.</p>
+  </footer>
 </section>
 
-<section>
-  <h2>Upcoming events</h2>
-  <ul class="triplet">
-    {% for event in site.data.speaking %}
-    {% unless event.past %}
-    <li class="triplet__item">
-      <a href="{{ event.link }}" class="triplet__link">
-        <img class="triplet__image" src="{{ event.image }}" alt="Screenshot of homepage of {{ event.event }}" />
-      </a>
-      <p class="triplet__title"><a href="{{ event.link }}">{{ event.event }}</a></p>
-      <p class="triplet__description">{{ event.date }}</p>
-    </li>
-    {% endunless %}
+<section class="home-section">
+  <div class="home-section__inner  container">
+    <h2 class="home-section__title">Next public speaking is...</h2>
+    {% for talk in site.data.speaking limit:1 %}
+    <p class="home-section__primary-content"><a href="{{ talk.link }}">{{ talk.event }}</a></p>
+    <p class="home-section__secondary-content">On {{ talk.date }} in {{ talk.location }}</p>
     {% endfor %}
-    <li class="triplet__item  triplet__item--pull">
-     {% include ad.html %}
-    </li>
-  </ul>
+  </div>
+  <footer class="home-section__footer">
+    <p><a href="/speaking/">Browse</a> other talks.</p>
+  </footer>
 </section>

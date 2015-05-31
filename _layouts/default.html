@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: full
+---
 
-  {% include head.html %}
-
-  <body {% if page.classes %}class="{{ page.classes }}"{% endif %}>
-
-    {% include header.html %}
-    
-    <main class="main   clearfix" role="main">
-      <div class="container">
-      {{ content }}
-      </div>
-    </main>
-
-    {% include footer.html %}
-    {% include scripts.html %}
-  </body>
-
-</html>
+<main class="main   clearfix" role="main">
+  <div class="container">
+  {{ content }}
+  </div>
+</main>
