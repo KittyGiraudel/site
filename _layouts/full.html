@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{% if page.lang %}{{ page.lang|downcase }}{% else %}en{% endif %}">
 
   {% include head.html %}
 
