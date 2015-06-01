@@ -16,6 +16,10 @@
 - name: Browserhacks
   description: "An extensive list of browser specific CSS and JavaScript hacks."
   link: http://browserhacks.com/
+  
+- name: SassyTester
+  description: "A minimalistic function tester in Sass."
+  link: https://github.com/HugoGiraudel/SassyTester
 
 - name: SassyGradients
   description: "A lightweight wrapper for the linear-gradient CSS function."
