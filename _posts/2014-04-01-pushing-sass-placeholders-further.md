@@ -7,6 +7,8 @@ tags:
   - extend
 ---
 
+> **Edit (2015/06/06)**: this is an experiment, please don't use this code in production.
+
 Yesterday I released [Getting the most out of Sass placeholders](http://hugogiraudel.com/2014/03/31/getting-the-most-out-of-sass-placeholders/), where I explained how I came up with a little technique to work around the fact `@extend` doesn't work whenever you're in a `@media` block. 
 
 The trick was to wrap the placeholder extension in a mixin. This mixin accepts a single boolean, defining if it should extend the placeholder or include the mixin's content as a regular mixin would do. Here is a short example:
