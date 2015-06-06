@@ -16,17 +16,19 @@ SassyCast making possible to go from any data type to any data type (or almost),
 The `to-list` function core is pretty straightforward. If the given value is a map, we iterate over it to create a 2-dimensional list like this: `( "key-1" "value 1", "key-2" "value 20" )`.
 
 <pre class="language-scss"><code>@function to-list($value) {
-  @if type-of($value) == map {
+  @if type-of($value) == 'map' {
     $keys: ();
     $values: ();
+    
     @each $key, $val in $value {
       $keys: append($keys, $key);
       $values: append($values, $val);
     }
-     @return zip($keys, $values);
+    
+    @return zip($keys, $values);
   }
 
-  @return if(type-of($value) != list, ($value,), $value);
+  @return if(type-of($value) != 'list', ($value,), $value);
 }</code></pre>
 
 To be a little more precise about what's being done here: we loop through each map entry, store the key in a `$keys` list and the value in a `$values` list. Then we [zip](http://sass-lang.com/documentation/Sass/Script/Functions.html#zip-instance_method) both to return a 2-dimensional list where the first element of each list if the former key and the second element of each list is the former value.
@@ -42,9 +44,10 @@ Then depending on the flag, he returns either `$keys` or `$values` or a zip of b
 <pre class="language-scss"><code>@function to-list($value, $keep: 'both') {
   $keep: if(index('keys' 'values', $keep), $keep, 'both');
 
-  @if type-of($value) == map {
+  @if type-of($value) == 'map' {
     $keys: ();
     $values: ();
+    
     @each $key, $val in $value {
       $keys: append($keys, $key);
       $values: append($values, $val);
@@ -52,16 +55,14 @@ Then depending on the flag, he returns either `$keys` or `$values` or a zip of b
 
     @if $keep == 'keys' {
       @return $keys;
-    }
-    @else if $keep == 'values' {
+    } @else if $keep == 'values' {
       @return $values;
-    }
-    @else {
+    } @else {
       @return zip($keys, $values);
     }
   }
 
-  @return if(type-of($value) != list, ($value,), $value);
+  @return if(type-of($value) != 'list', ($value,), $value);
 
 }</code></pre>
 
@@ -80,18 +81,18 @@ Literally:
 Let's try it with a little example, shall we? First, our map.
 
 <pre class="language-scss"><code>$breakpoints: (
-  small: 600px,
-  medium: 900px,
-  large: 1200px
+  'small': 600px,
+  'medium': 900px,
+  'large': 1200px
 );</code></pre>
 
 And now, we cast it to a list.
 
 <pre class="language-scss"><code>$breakpoints-list: to-list($breakpoints, 'both');
-// (small 600px, medium 900px, large 1200px)
+// ('small' 600px, 'medium' 900px, 'large' 1200px)
 
 $breakpoints-keys: to-list($breakpoints, 'keys');
-// (small medium large)
+// ('small' 'medium' 'large')
 
 $breakpoints-values: to-list($breakpoints, 'values');
 // (600px 900px 1200px)</code></pre>
