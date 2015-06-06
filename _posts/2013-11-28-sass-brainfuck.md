@@ -137,7 +137,8 @@ The correct answer is:
 This is actually not fucked up at all: it's the expected behaviour from correct variable scoping. While it might look silly for an advanced Sass user, I bet it's not that obvious to the beginner. The declared `$size` variable is used for the font-size while the default value for the `$size` argument is used for the bottom margin since it is inside the mixin, where the variable is scoped.
 
 ## If ternary then... Sass error
-s 3.3, this is no longer a bug. It has been [fixed](http://sass-lang.com/documentation/file.SASS_CHANGELOG.html#smaller_improvements).
+
+Since Sass 3.3, this is no longer a bug. It has been [fixed](http://sass-lang.com/documentation/file.SASS_CHANGELOG.html#smaller_improvements).
 
 You all know what a ternary is, right? Kind of a one-line `if`/`else` statement. It's pretty cool when you need to assign a variable differently depending on a condition. In JavaScript, you'd write something like this:
 
