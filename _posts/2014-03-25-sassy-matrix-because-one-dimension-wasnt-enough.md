@@ -8,6 +8,8 @@ tags:
   - sassymatrix
 ---
 
+> **Edit (2015/06/06)**: this is an experiment, please don't use this code in production.
+
 Sass is much more than just a CSS preprocessor. You can do ton of things you're not supposed to do and won't ever do except in your crazy demos. This is what is amazing about Sass: it can be use for (pseudo-)programming as well!
 
 A while back, I wanted to create a function to calculate the Levenshtein distance between two strings. The [Levenshtein distance](http://en.wikipedia.org/wiki/Levenshtein_distance) is the number of manipulations you need to do to string A in order to have string B. If you want Wikipedia's definition, here it is:
