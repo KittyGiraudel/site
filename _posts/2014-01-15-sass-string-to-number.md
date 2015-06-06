@@ -8,6 +8,8 @@ tags:
   - strings
 ---
 
+> **Edit (2015/06/06)**: a better version of the code can be found [here](http://sassmeister.com/gist/9fa19d254864f33d4a80).
+
 Hey guys! I am currently working on a JSON parser in Sass (yes, you read right) thus I faced an issue I thought unsolvable until now: casting a string into a number in Sass. Needless to say I found a solution! Even better, I found a solution to convert a string into a valid CSS length you can use as a CSS value, in calculations and stuff.
 
 I have to say I am pretty proud with what I have come up with. Not only does it work, but it is also very simple and from what I can tell quite efficient. This may be a bit slower for very large numbers but even there I'm not sure we can feel the difference in compilation time. It also lacks of support for very scientific notation like `e` but that's no big deal for now.
