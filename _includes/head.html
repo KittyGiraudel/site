@@ -7,9 +7,9 @@ http://ogp.me/ns/article#">
   <link rel="dns-prefetch" href="//www.google-analytics.com">
 
   <!-- Robots & indexing -->
-  {% if post.external %}
+  {% if page.external %}
   <meta name="robots" content="noindex,nofollow">
-  <meta http-equiv="refresh" content="0;url={{ post.external.url }}" />
+  <meta http-equiv="refresh" content="0;url={{ page.external.url }}" />
   {% else %}
   <meta name="robots" content="index,follow"> 
   <meta name="revisit-after" content="1 days"> 
