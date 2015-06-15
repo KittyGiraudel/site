@@ -38,7 +38,7 @@ Then, if I want an element to have like a `28px` font-size, I simply have to do 
 
 Everything is great, however [rem isn't supported in all browsers](http://caniuse.com/#feat=rem), especially not in Internet Explorer 8, which is still required in most projects. It means we have to **give a fallback** for this browser.
 
-## Mixin to the rescue!</h2>
+## Mixin to the rescue!
 
 Having to define twice the font-size property everytime you have to set the size of a text element sucks. This is the moment you'd like to have a wonderful mixin handling everything for you. Well, **WISH GRANTED!**
 
