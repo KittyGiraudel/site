@@ -24,13 +24,13 @@ Fortunately, any of these architectures can be used for styling React components
 
 Just like with any language, writing CSS without a well-defined architecture and/or organizational pattern quickly becomes an unmaintainable mess. Christopher Chedeau, a developer at Facebook, listed the problems in his ["CSS in JS" presentation](https://speakerdeck.com/vjeux/react-css-in-js):
 
-- **Global Namespace**
-- **Dependencies**
-- **Dead Code Elimination**
-- **Minification**
-- **Sharing Constants**
-- **Non-deterministic Resolution**
-- **Isolation**
+- Global Namespace
+- Dependencies
+- Dead Code Elimination
+- Minification
+- Sharing Constants
+- Non-deterministic Resolution
+- Isolation
 
 We will explore how using proper organization and architecture in Sass can mitigate these problems, especially within the context of styling React components.
 
@@ -60,25 +60,21 @@ Each component used is represented in Sass inside the `/stylesheets/components` 
 
 You'll also notice the `_all.scss` partial file in each of the folders. This file provides a way to consolidate all partials inside a file that should be exported, so that only `_all.scss` needs to be imported into `main.scss`:
 
-```scss
-// Inside /components/_all.scss
+<pre class="language-scss"><code>// Inside /components/_all.scss
 @import 'calendar';
 @import 'date';
 @import 'datepicker';
 @import 'header';
-@import 'month';
-```
+@import 'month';</code></pre>
 
 And finally, the `main.scss` file, which imports all partial stylesheets:
 
-```scss
-.my-datepicker-component {
+<pre class="language-scss"><code>.my-datepicker-component {
   @import 'utils/all';
   @import 'base/all';
   @import 'components/all';
   @import 'themes/all';
-}
-```
+}</code></pre>
 
 Yes, the imports are wrapped inside a `.my-datepicker-component` block, which is the target selector of `React.render(...)` in this project. This is _completely optional_, and just allows greater isolation for the component via increased specificity.
 
@@ -94,8 +90,7 @@ If you want your components to be able to be themed externally, limit the declar
 
 Here's an example rule set for the "date" component:
 
-```scss
-.sd-date {
+<pre class="language-scss"><code>.sd-date {
   width: percentage(1/7);
   float: left;
   text-align: center;
@@ -115,8 +110,7 @@ Here's an example rule set for the "date" component:
     cursor: pointer;
     background-color: rgba(white, 0.3);
   }
-}
-```
+}</code></pre>
 
 Just as you'd expect, everything's neatly contained inside `.sd-date`. There are quite a few magic numbers in this rule set, though, such as `font-size: 0.75rem;`. I implore you to use Sass `$variables` to reference these values, and Hugo [provides guidelines](http://sass-guidelin.es/#variables) on this.
 
@@ -126,8 +120,7 @@ I'm using a very thin naming system for component selectors; that is, I'm only p
 
 It goes without saying that we will be referencing styles in our React components using **classes**. There is a very useful, framework-independent utility for conditionally assigning classes by Jed Watson called [classnames](https://github.com/JedWatson/classnames), which is often used in React:
 
-```js
-import React from 'react';
+<pre class="language-javascript"><code>import React from 'react';
 import classnames from 'classnames';
 
 export default class CalendarDate extends React.Component {
@@ -152,8 +145,7 @@ export default class CalendarDate extends React.Component {
 }
 
 // Note: CalendarDate used instead of Date, since
-// Date is a native JavaScript object.
-```
+// Date is a native JavaScript object.</code></pre>
 
 The simple convention here is that the (prefixed) component class (`sd-date` in this example) is always included as the first argument in `classnames(...)`. No other CSS/style-specific dependencies are necessary for styling React components.
 
@@ -161,8 +153,7 @@ The simple convention here is that the (prefixed) component class (`sd-date` in 
 
 Depending on your build system, there are a number of ways that a stylesheet can be exported and used within a project. Sass files can be compiled and bundled with Webpack (or Browserify), in which case you would require it within your `index.js` file...
 
-```js
-import React from 'react';
+<pre class="language-javascript"><code>import React from 'react';
 
 import Datepicker from './components/datepicker';
 
@@ -170,8 +161,7 @@ require('./stylesheets/main.scss');
 
 React.render(
   <Datepicker />,
-  document.querySelector('.my-datepicker-component'));
-```
+  document.querySelector('.my-datepicker-component'));</code></pre>
 
 ... and include the proper loader ([sass-loader](https://github.com/jtangelder/sass-loader), in this case) in `webpack.config.js`. You can also compile Sass files separately into CSS, and embed them inside the bundle using `require('./stylesheets/main.css')`. For more info, check out the [Webpack documentation on stylesheets](http://webpack.github.io/docs/stylesheets.html).
 
@@ -228,8 +218,7 @@ You're in luck -- Sass has [variables](http://sass-lang.com/documentation/file.S
 
 This is just a fancy way of saying "not knowing when styles are being unintentionally overridden by selectors of the _same specificity_." Turns out, this is rarely ever an issue when following a component-based architecture such as the 7-1 pattern. Take this example:
 
-```scss
-// In components/_overlay.scss
+<pre class="language-scss"><code>// In components/_overlay.scss
 .my-overlay {
   // ... overlay styles
 
@@ -241,8 +230,7 @@ This is just a fancy way of saying "not knowing when styles are being unintentio
 // In components/_button.scss
 .my-button {
   // ... button styles
-}
-``` 
+}</code></pre>
 
 Above, we are taking full advantage of specificity to solve our non-deterministic resolution woes. And we're doing so by using specificity intuitively, and with no specificity hacks! We have two button selectors:
 
@@ -257,26 +245,22 @@ By the way, with a well-structured design system, contextual styling can (and sh
 
 As a developer who understands the value of good, consistent design, you'll probably want a component to be customizable by any developer who decides to use it. There are many ways that you can make configurable styles and themes in Sass, but the simplest is to provide an "API" of default variables in the component stylesheets:
 
-```scss
-// in base/_color.scss:
+<pre class="language-scss"><code>// in base/_color.scss:
 $sd-color-primary: rgb(41, 130, 217) !default;
 
 // in the main project stylesheet
 $sd-color-primary: #C0FF33; // overwrites default primary color
 
-@import 'path/to/simple-datepicker/stylesheets/main';
-```
+@import 'path/to/simple-datepicker/stylesheets/main';</code></pre>
 
 Conversely, you can customize similar 3rd-party components by just styling equal (or more) specific selectors. As 3rd-party stylesheets should be loaded first, the CSS cascade works naturally to override styles to the desired ones.
 
-```scss
-// after the simple datepicker stylesheet has been imported...
+<pre class="language-scss"><code>// after the simple datepicker stylesheet has been imported...
 
 // in stylesheets/components/_sd-month.scss
 #my-app .sd-month {
   // overriding styles
-}
-```
+}</code></pre>
 
 Personally, I wouldn't include 3rd-party styling at all, as the more style dependencies your project includes, the more complex your project's styling becomes, especially if they aren't using a similar component-based architecture. If you must use 3rd-party components, make sure that they have a clean, semantic DOM structure that can be styled intuitively. Then, you can style 3rd-party components just like any other component.
 
