@@ -160,7 +160,7 @@ import Datepicker from './components/datepicker';
 require('./stylesheets/main.scss');
 
 React.render(
-  <Datepicker />,
+  &lt;Datepicker />,
   document.querySelector('.my-datepicker-component'));</code></pre>
 
 ... and include the proper loader ([sass-loader](https://github.com/jtangelder/sass-loader), in this case) in `webpack.config.js`. You can also compile Sass files separately into CSS, and embed them inside the bundle using `require('./stylesheets/main.css')`. For more info, check out the [Webpack documentation on stylesheets](http://webpack.github.io/docs/stylesheets.html).
