@@ -11,7 +11,8 @@ layout: null
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    {% for post in site.posts %}
+      {% unless post.preview %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>{{ post.content | xml_escape }}</description>
@@ -25,6 +26,7 @@ layout: null
         <category>{{ cat | xml_escape }}</category>
         {% endfor %}
       </item>
+      {% endunless %}
     {% endfor %}
   </channel>
 </rss>
