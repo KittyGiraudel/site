@@ -134,12 +134,12 @@ export default class CalendarDate extends React.Component {
     });
 
     return (
-      <div
+      &lt;div
         className={classes}
         key={date}
         onClick={this.props.updateDate.bind(this, date)}>
         {date.date()}
-      </div>
+      &lt;/div>
     );
   }
 }
