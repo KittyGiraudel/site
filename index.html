@@ -25,7 +25,7 @@ classes: home
   <div class="home-section__inner  container">
     <h2 class="home-section__title">Latest article is...</h2>
     {% for post in site.posts limit:1 %}
-    <p class="home-section__primary-content"><a href="{% if post.external %}{{ post.external.url }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a></p>
+    <p class="home-section__primary-content"><a href="{% if post.external %}{{ post.external.url }}{% else %}{{ post.url }}{% endif %}" {% if post.external %}target="_blank"{% endif %}>{{ post.title }}</a></p>
     <p class="home-section__secondary-content">Published on {{ post.date|date: "%B %d, %Y" }}{% if post.guest %} by {{ post.guest }}{% endif %}{% if post.external %} at {{ post.external.host }}{% endif %}</p>
     {% endfor %}
   </div>
