@@ -36,6 +36,8 @@ We will explore how using proper organization and architecture in Sass can mitig
 
 ## The Result
 
+If you want to jump straight to the code, you can check the [sample React component I put on GitHub](https://github.com/davidkpiano/react-simple-datepicker). 
+
 Before we dive into how each of the above problems are solved, let's take a look at the end result by styling a simple React datepicker component from this mock-up:
 
 ![Simple React Datepicker screenshot](http://i.imgur.com/TS5WfFa.png)
