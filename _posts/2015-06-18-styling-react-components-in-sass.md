@@ -2,7 +2,6 @@
 guest: "David Khourshid"
 layout: post
 title: "Styling React Components in Sass"
-preview: true
 tags:
   - sass
   - react
