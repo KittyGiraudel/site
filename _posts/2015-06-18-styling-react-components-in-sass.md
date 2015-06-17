@@ -275,4 +275,6 @@ React components can be styled in Sass in an efficient, flexible, and maintainab
 
 The problems that Christopher Chedeau lists in his "CSS in JS" presentation are valid problems, albeit ones that are easily solved with a well-defined stylesheet architecture, organizational structure, and Sass (or any other preprocessor). Styling the web isn't easy, and there are many very useful open-source Sass tools and libraries for grids, typography, breakpoints, animations, UI pattern libraries, and more to help develop stylesheets for components much more efficiently. Take advantage of these Sassy resources.
 
-Check out the [example simple React datepicker](https://github.com/davidkpiano/react-simple-datepicker) on Github for an example of how Sass can be used to style React components.
+Check out the [example simple React datepicker](https://github.com/davidkpiano/react-simple-datepicker) on Github for an example of how Sass can be used to style React components. Oh, and here is a CodePen for you, has a treat: http://codepen.io/davidkpiano/pen/d592d53a8ba48ea0f1afdd3f6701c79e.
+
+> [David Khourshid](https://twitter.com/davidkpiano) is a front-end web developer in Orlando, Florida. He is passionate about JavaScript, Sass, and cutting-edge front-end technologies. He is also a pianist and enjoys mathematics, and is constantly finding new ways to apply both math and music theory to web development.
