@@ -17,7 +17,7 @@ I dare call myself an active open-source community member as I have contributed 
 
 Early 2014, I co-authored with [Raphaël Goetter](http://goetter.fr) a French book on CSS 3 entitled [CSS 3 Pratique du Design Web](http://css3-pratique.fr/), and I am currently in the process of co-writing a book about Sass with [Stuart Robson](https://twitter.com/sturobson) entitled [Jump Start Sass](https://learnable.com/books/jump-start-sass).
 
-I also happen to be one of the 10 nominees for the [Net Awards](https://thenetawards.com) under the [Developer of the Year](https://thenetawards.com/vote/developer/) category. I am not sure why, but I am very proud anyway.
+I also happen to be one of the 5 nominees for the [Net Awards](https://thenetawards.com) under the [Developer of the Year](https://thenetawards.com/vote/developer/) category. I am not sure why, but I am very proud anyway.
 
 ## About this site
 
