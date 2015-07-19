@@ -19,6 +19,8 @@ Early 2014, I co-authored with [Raphaël Goetter](http://goetter.fr) a French bo
 
 I also happen to be one of the 5 nominees for the [Net Awards](https://thenetawards.com) under the [Developer of the Year](https://thenetawards.com/vote/developer/) category. I am not sure why, but I am very proud anyway.
 
+You can ask me anything on the [Ask Me Anything](https://github.com/hugogiraudel/ama) repository.
+
 ## About this site
 
 This site is made with [Jekyll](http://jekyllrb.com) and hosted on [Github Pages](https://pages.github.com/) under the [HugoGiraudel / hugogiraudel.github.com](https://github.com/HugoGiraudel/hugogiraudel.github.com) repository. 
