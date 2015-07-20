@@ -7,8 +7,6 @@ tags:
   - answers
 ---
 
-# Ask Me Anything
-
 I recently discovered the *Ask Me Anything* concept, through the [AMA repository](https://github.com/sindresorhus/ama) of [Sindre Sorhus](https://twitter.com/sindresorhus), the author of countless node modules. 
 
 The idea is simple: people can ask questions about basically anything on the repository, to whom the author reply the way they feels. Once a question has been answered, the issue gets closed and that's it. 
