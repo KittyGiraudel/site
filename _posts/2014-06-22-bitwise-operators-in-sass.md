@@ -12,13 +12,13 @@ tags:
 
 A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) and I had the crazy idea of implementing bitwise operators in Sass. It went like this:
 
-> **Hugo**: Do you know how bitwise operators work?
-> **Val**: Yes.
-> **Hugo**: Do you think we could implement them in Sass?
-> **Val**: No.
-> (Loading...)
-> **Val**: Well, in fact we could.
-> **Hugo**: LET'S DO IT!
+> **Hugo**: Do you know how bitwise operators work?  
+> **Val**: Yes.  
+> **Hugo**: Do you think we could implement them in Sass?  
+> **Val**: No.  
+> (Loading...)  
+> **Val**: Well, in fact we could.  
+> **Hugo**: LET'S DO IT!  
 
 And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let's catch up on bitwise operators, shall we?
 
@@ -171,10 +171,8 @@ $D: bw(1 '<<' 3);</code></pre>
 
 We also need a mixin that would theorically accepts multiple boolean options. As a proof of concept, our mixin will accept a single argument: `$options`, a **number**.
 
-<pre class="language-scss"><code>// Custom mixin
-// ---
-// @param [number] $options: bitwise encoded flags
-// ---
+<pre class="language-scss"><code>/// Custom mixin
+/// @param {Number} $options - Bitwise encoded flags
 @mixin custom-test(/* number */ $options) {
   is-A-flag-set: bw($options '&' $A);
   is-B-flag-set: bw($options '&' $B);
