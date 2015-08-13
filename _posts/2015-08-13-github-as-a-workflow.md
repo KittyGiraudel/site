@@ -1,0 +1,160 @@
+---
+layout: post
+title: "GitHub As A Workflow"
+tags: 
+  - github
+  - workflow
+  - process
+---
+
+> This article is a draft I wrote for a co-worker to describe what I feel would be a great workflow for me, using [GitHub](https://github.com) as a central point for everything rather than a collection of tools.
+
+## Introduction
+
+Below is a short and unformal methodology on how to use [GitHub](https://github.com) as a project workflow, heavily relying on pull-requests. While it might sound scary as first, this approach actually has a lot of benefits that we'll investigate further in the next section.
+
+The rough idea is that at the beginning of a sprint, we create a(n empty) pull-request for all stories (involving development). In the description of the pull-request, we write tasks in Markdown using GitHub support for checkboxes. Then, concerned developers commit they work to this branch, progressively checking out the tasks. Once all tasks from a pull-request have been treated, this one can be reviewed then merged.
+
+## What problem does it solve
+
+* The code, code reviews, stories and tasks are all centralized at the same place, making it very easy for a developer to jump from one thing to the other.
+* [ScrumDo](https://app.scrumdo.com) and other process tools are not always the best place for discussions and commenting, while GitHub is actually meant for this.
+* GitHub has email notifications, which is helpful to know what's going in the project and where a developer might need to get involved.
+* GitHub has a lot of handy features, such as labels, Markdown, user pinging and code integration, which makes it a good tool for managing code projects.
+* [Slack](http://slack.com) has GitHub integration, making the whole process seamless.
+
+## What problem does it introduce
+
+Everybody needs a GitHub account, which actually is only a matter of minutes.
+
+## Creating the pull-request
+
+The idea is that every feature involving some development has its own pull-request opened at the beginning of the sprint. Tasks are handled as a checklist in the description of the pull-request. The good thing with this is that GitHub is clever and shows the progress of the pull-request in the list view directly.
+
+<figure class="figure">
+  <img alt="The progress is shown directly in the PR view" src="/images/github-as-a-workflow/01.png" />
+  <figcaption>The progress is shown directly in the PR view</figcaption>
+</figure>
+
+For all stories involving some development, create a branch named after the story and open a pull-request from this branch to the main one. When sticking to [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow/) conventions, the main branch is `develop`, and story branches should be start with `feature/`. Then, we usually put the number of the story first, and a slug for the story goal (e.g. `feature/42-basic-teaser`).
+
+Opening pull-requests can be done directly on GitHub, without having to clone the project locally or even having any Git knowledge whatsoever. But only when there is *something to compare*. It means that it is not possible to open a pull-request between two identical branches. Bummer.
+
+To work around this issue, there are two options: either waiting for the story to be started by someone (with at least a commit) so there is actually something to compare, although that is not ideal as the idea would be to have it from the beginning of the sprint. Or one can do an empty commit like so:
+
+<pre class="language-git"><code># Creating the branch
+git checkout -b feature/42-basic-teaser
+
+# Adding an empty commit (with a meaningful name) to make the pull-request possible
+git commit --allow-empty -m "Feature 42: Basic teaser component"</code></pre>
+
+The point of this commit is to initialize the branch and the feature so that a pull-request can be created on GitHub. 
+
+At this point, head onto the home of the GitHub repository and click on the big ol' green button. Then, create a pull-request from the relevant branch to the main one (automatically selected). That's it!
+
+## Naming the pull-request
+
+Name the pull-request after the feature name, and prefix it with `[WIP]` for *Work In Progress*. This will then be changed to `[RFR]` for *Ready For Review* once the story is done (see [Reviewing the pull-request](#reviewing-the-pull-request)).
+
+## Filling the description
+
+In the description of the story, create a list of tasks where a task is a checkbox, a short description and, importantly, one or several persons involved in the making. From the Markdown side, it might look like this:
+
+<pre class="language-git"><code>* [ ] Create the basic React component (@hugogiraudel)  
+* [ ] Design the icons (@sharonwalsh)  
+* [ ] Integrate component in current page (@mattberridge)  
+* [ ] Clarify types of teasers with client (@moritzguth)</code></pre>
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/02.png" alt="The PR description contains the task to be accomplished for the feature" />
+  <figcaption>The PR description contains the task to be accomplished for the feature</figcaption>
+</figure>
+
+As long as all actors from a project are part of the GitHub organisation behind the project, everybody can edit/delete any comment, so anyone is able to add new tasks to the description if deemed necessary.
+
+*Note: GitHub will automatically convert `[ ]` into an unticked checkbox and `[x]` into a ticked checkbox. It will also remember the state of the checkbox so you can actually rely on it.*
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/03.png" alt="The PR description contains checkboxes that can be checked to show current progress" />
+  <figcaption>The PR description contains checkboxes that can be checked to show current progress</figcaption>
+</figure>
+
+## Using comments
+
+The comments on the pull-request can be used to discuss the story or specific tasks. We can safely ask questions in there, tagging relevant contributors by prefixing their GitHub username with a `@` sign, include code blocks, quotations and pretty much whatever else we want. Also, everything is in Markdown, making it super easy to use.
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/04.png" alt="Comments are used to discuss some concerns and ask questions" />
+  <figcaption>Comments are used to discuss some concerns and ask questions</figcaption>
+</figure>
+
+## Reviewing the pull-request
+
+Once all checkboxes from the description have been checked, the name of the pull-request can be updated to `[RFR]` for *Ready For Review*. Ideally, the person checking the last bullet might want to ping someone to get the review started. Doing so avoid having a pull-request done but unmerged because nobody has reviewed it.
+
+To review a pull-request, we use GitHub inline comments in the *Files changed* tab. In there, we can comment any line to ask for modification. Adding a line comment notifies the owner of the pull-request so that he knows he has some re-working to do, and the comment shows up in the *Conversation* tab.
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/05.png" alt="GitHub inline comments are the ideal way for collaborating on code" />
+  <figcaption>GitHub inline comments are the ideal way for collaborating on code</figcaption>
+</figure>
+
+When updating a line that is the object of an inline comment, the latter disappears because it is not relevant anymore. Then, as comments get fixed, they disappear so the pull-request remains clean.
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/06.png" alt="When an inline comment has been taken care of, it disappears to avoid cluttering the diff" />
+  <figcaption>When an inline comment has been taken care of, it disappears to avoid cluttering the diff</figcaption>
+</figure>
+
+## Merging the pull-request
+
+Once the review has been done, the pull-request can be merged. If everything is fine, it should be mergeable from GitHub directly but sometimes there are potential conflicts so we need to either rebase the branch to synchronize it with the main branch or merge it manually. Anybody can do it, but the pull-request owner is probably the best person to do it.
+
+## Tip: using labels
+
+Labels can be very helpful to add extra pieces of information to a pull-request on GitHub. They come in particularly handy as they show up in the list view, making it visible and obvious for everybody scanning through the few open pull-requests.
+
+There is no limit regarding the amount of labels a project can have. They also are associated with colors, building a little yet powerful nomenclaturing system.
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/07.png" alt="Labels are used to create a nomenclature" />
+  <figcaption>Labels are used to create a nomenclature</figcaption>
+</figure>
+
+A label can be something such as *Design*, *Front-end*, *Back-end*, or even *Waiting for info*, *Waiting for review* or *To be started*. Anything.
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/08.png" alt="Labels are applied to stories to be able to filter them as well as givin more information from the PR view directly" />
+  <figcaption>Labels are applied to stories to be able to filter them as well as givin more information from the PR view directly</figcaption>
+</figure>
+
+## Tip: using assignees
+
+More often than not, a story is mostly for one person. Or when several actors have to get involved in a story, it usually happens one after the other (the designer does the mockup, then the front-end developer does the component, then the back-end developer integrates it in the process, etc.). Because of this, it might be interesting to *assign* the pull-request to the relevant actor on GitHub, and change this assignment when needed.
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/09.png" alt="Assignees are a good way of knowing who works on what from the PR view" />
+  <figcaption>Assignees are a good way of knowing who works on what from the PR view</figcaption>
+</figure>
+
+## Tip: using milestones
+
+Because GitHub is a platform for Git, it is a great tool to conserve a clean history of a project. One way to achieve this goal (if desired), would be to use milestones. To put it simply, on GitHub a milestone is a named basket of issues/pull-requests, that can optionally have a description and a date.
+
+Applying this to a project could be having a milestone per sprint (named after the number of the sprint), with a due date matching the one from the end of the sprint and the goals of the sprint in the description. All pull-requests (stories) would be tagged as part of the milestone. 
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/10.png" alt="In this workflow, a milestone equals a sprint" />
+  <figcaption>In this workflow, a milestone equals a sprint</figcaption>
+</figure>
+
+While not very helpful for the develop because all open pull-requests are part of the current sprint anyway, it might be interesting to have this as an history, where all pull-requests are gathered in milestones corresponding to sprints.
+
+<figure class="figure">
+  <img src="/images/github-as-a-workflow/11.png" alt="From the view, we can know to which sprint a story belongs, in case some of them are late to be resolved" />
+  <figcaption>From the view, we can know to which sprint a story belongs, in case some of them are late to be resolved</figcaption>
+</figure>
+
+---
+
+That is all I have written about it so far. I would love to collect opinions and have feedback about this way of doing. Has anyone ever tried it? How does it perform? How does it scale? What are the flaws? What are the positive effects? Cheers!
