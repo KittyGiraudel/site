@@ -7,7 +7,9 @@ tags:
   - process
 ---
 
-> This article is a draft I wrote for a co-worker to describe what I feel would be a great workflow for me, using [GitHub](https://github.com) as a central point for everything rather than a collection of tools.
+This article is the result of a discussion about development workflow with one of our Scrum Masters at Edenspiekermann. Therefore, it assumes you have basic notions of [Agile](https://en.wikipedia.org/wiki/Agile_software_development) and [Scrum](https://en.wikipedia.org/wiki/Scrum_(software_development)). If you don't, you still might benefit from reading the article but might be missing some keys to fully appreciate it. 
+
+In this short document, I try to describe what I feel would be a great workflow for me, using [GitHub](https://github.com) as a central point rather than having a collection of tools. Obviously, this standpoint is highly developer-centric and might not fit all teams / projects.
 
 ## Introduction
 
