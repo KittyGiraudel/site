@@ -9,7 +9,23 @@ tags:
 
 This article is the result of a discussion about development workflow with one of our Scrum Masters at Edenspiekermann. Therefore, it assumes you have basic notions of [Agile](https://en.wikipedia.org/wiki/Agile_software_development) and [Scrum](https://en.wikipedia.org/wiki/Scrum_(software_development)). If you don't, you still might benefit from reading the article but might be missing some keys to fully appreciate it. It also uses (although does not rely on) the [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow/) workflow.
 
-In this short document, I try to describe what I feel would be a great workflow for me, using [GitHub](https://github.com) as a central point rather than having a collection of tools. Obviously, this standpoint is highly developer-centric and might not fit all teams / projects.
+In this short document, I try to describe what I feel would be a great workflow for me, using [GitHub](https://github.com) as a central point rather than having a collection of tools. Obviously, this standpoint is highly developer-centric and might not fit all teams / projects. 
+
+Given how long this article is, here is a table of contents so you can quickly jump to the section you want:
+
+1. [Introduction](#introduction)
+1. [What problem does it solve](#what-problem-does-it-solve)
+1. [What problem does it introduce](#what-problem-does-it-introduce)
+1. [Creating the pull-request](#creating-the-pull-request)
+1. [Naming the pull-request](#naming-the-pull-request)
+1. [Filling the description](#filling-the-description)
+1. [Using comments](#using-comments)
+1. [Reviewing the pull-request](#reviewing-the-pull-request)
+1. [Merging the pull-request](#merging-the-pull-request)
+1. [Tip: using labels](#tip-using-labels)
+1. [Tip: using assignees](#tip-using-assignees)
+1. [Tip: using milestones](#tip-using-milestones)
+1. [Tip: using issues](#tip-using-issues)
 
 ## Introduction
 
@@ -160,6 +176,12 @@ While not very helpful for the develop because all open pull-requests are part o
   <img src="/images/github-as-a-workflow/11.png" alt="From the view, we can know to which sprint a story belongs, in case some of them are late to be resolved" />
   <figcaption>From the view, we can know to which sprint a story belongs, in case some of them are late to be resolved</figcaption>
 </figure>
+
+## Tip: using issues
+
+The fact that this workflow is heavily focused on pull-requests does not mean that GitHub issues are irrelevant. *Au contraire*! Issues can still be used for additional conversations, bug reports, and basically any non-feature-specific discussion.
+
+Also depending on the relationship with the client (internal or external), issues might be the good place for them to report problems, bugs and suggestions. Again, everything is centralized on GitHub: the pull-requests remain clean and focused on features; issues are kept for all side-discussions.
 
 ---
 
