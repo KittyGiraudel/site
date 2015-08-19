@@ -231,6 +231,11 @@ To make it easier to understand, consider this selector: `[href^="#"]`. When run
 1. `href`: the attribute name
 2. `"#"`: the attribute value
 
+<figure class="figure">
+  <img src="/images/learning-regular-expressions/09.png" alt="\[([a-z][a-z0-9-]*)(?:[|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)\s*i?)?]" />
+  <figcaption>We use the regular expression to both match and capture some content</figcaption>
+</figure>
+
 If we want to grab the value only, without the possible quotes, we need to move the capturing group inside the quotes. Depending on the purpose of the regular expression (validation, capture, etc.), it might be interesting or even needed to use capturing groups to grab content from the matched patterns.
 
 ## Final words
