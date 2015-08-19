@@ -45,7 +45,7 @@ Everything started from [a tweet](https://twitter.com/gregwhitworth/status/62721
 
 It does look illegible. As most regular expressions. I started discussing with Greg about what he was trying to achieve and learnt he wanted to find CSS attribute selectors in a document. It seemed like a fun challenge so I spent a few minutes on it and came up with this:
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)\s*i?)?]</code></pre>
+<pre class="language-regex"><code>\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(\s+i)?)?]</code></pre>
 
 In this article, we will see how to come up with such a monster, and what are the required steps to get there. But first, let’s be clear on what we want to match: attribute selectors. These are some examples of selectors we want to match:
 
@@ -199,12 +199,12 @@ Which we can now incorporate in our expression:
 
 [CSS Selectors Level 4](https://drafts.csswg.org/selectors/#attribute-case) introduces a flag to attribute selectors to discard case-sensitivity. When present, this option tells the browser to match no matter whether the case is matching the requested one.
 
-This flag (noted `i`) must be present after at least 1 space right before the closing square bracket. Testing for it in our regular expression is actually super easy using `\s*i`.
+This flag (noted `i`) must be present after at least 1 space right before the closing square bracket. Testing for it in our regular expression is actually super easy using `\s+i`.
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)\s*i?)?]</code></pre>
+<pre class="language-regex"><code>\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(\s+i)?)?]</code></pre>
 
 <figure class="figure">
-  <img src="/images/learning-regular-expressions/08.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)\s*i?)?]" />
+  <img src="/images/learning-regular-expressions/08.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)(\s+i)?)?]" />
   <figcaption>You can play with this regular expression on <a href="http://www.regexr.com/3bk6f" target="_blank">Regexr</a></figcaption>
 </figure>
 
@@ -218,13 +218,13 @@ Capturing content as part of a regular expression is made with parentheses (`(..
 
 You might be confused as we already used parentheses in our expression but not for capturing. We used them to group tokens together. This kind of behaviour is what makes the language of regular expressions difficult to grasp: it is not regular, and some characters have different meanings depending on their position or the context they are used in.
 
-To use parentheses as a grouping feature without capturing anything, it is needed to start their content with a question mark (`?`) directly followed by a colon (`:`), like this: `(?: ... )`. This intimates the engine not to capture what is being matched inside the parentheses. We should update our expression to avoid capturing the equal part:
+To use parentheses as a grouping feature without capturing anything, it is needed to start their content with a question mark (`?`) directly followed by a colon (`:`), like this: `(?: ... )`. This intimates the engine not to capture what is being matched inside the parentheses. We should update our expression to avoid capturing the equal part (as well as the case-sentivity flag):
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)\s*i?)?]</code></pre>
+<pre class="language-regex"><code>\[[a-z][a-z0-9-]*(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(?:\s+i)?)?]</code></pre>
 
-As you can see, we added `?:` right after the first opening parenthese (`(`) so we do not capture what is being matched. On the other hand, the second opening parenthese, after the equal sign, is capturing the attribute value. Which could be desired! Now, if we want to capture the attribute name as well, we only have to wrap the relevant part of the regex in parentheses:
+As you can see, we added `?:` right after the first opening parenthese so we do not capture what is being matched. On the other hand, the second opening parenthese, after the equal sign, is capturing the attribute value. Which could be desired! Now, if we want to capture the attribute name as well, we only have to wrap the relevant part of the regex in parentheses:
 
-<pre class="language-regex"><code>\[([a-z][a-z0-9-]*)(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)\s*i?)?]</code></pre>
+<pre class="language-regex"><code>\[([a-z][a-z0-9-]*)(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(?:\s+i)?)?]</code></pre>
 
 To make it easier to understand, consider this selector: `[href^="#"]`. When running the previous regular expression against it, we will capture 2 things:
 
@@ -232,7 +232,7 @@ To make it easier to understand, consider this selector: `[href^="#"]`. When run
 2. `"#"`: the attribute value
 
 <figure class="figure">
-  <img src="/images/learning-regular-expressions/09.png" alt="\[([a-z][a-z0-9-]*)(?:[|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)\s*i?)?]" />
+  <img src="/images/learning-regular-expressions/09.png" alt="\[([a-z][a-z0-9-]*)(?:[|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)(?:\s+i)?)?]" />
   <figcaption>We use the regular expression to both match and capture some content</figcaption>
 </figure>
 
