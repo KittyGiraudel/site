@@ -34,7 +34,7 @@ Also, as it is forbidden to write about regular expressions without dropping som
 > Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems.  
 > &mdash; Jamie Zawinski
 
-*Note: to play with regular expressions, I highly recommend [Regexr](http://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing.*
+*Note: to play with regular expressions, I highly recommend [Regexr](http://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions.*
 
 ## Finding a use-case
 
@@ -249,6 +249,13 @@ It is worth noting that the difficulty with regular expressions is usually not t
 <figure class="figure">
   <img src="/images/learning-regular-expressions/xkcd-2.png" alt="xkcd comics about regular expressions" />
   <figcaption>From <a href="http://xkcd.com/1171/">xkcd #1171</a></figcaption>
+</figure>
+
+Last but not least, Adonis mentioned in the comments a very handy tool to visualize the meaning of a regular expression in a graphical way. This tool, called [Regexper](http://regexper.com/) manages to define an render a graph based on a given regular expression. Impressive! Here is the graph for our regex (using non-capturing groups only for the sake of simplicity):
+
+<figure class="figure">
+  <img src="/images/learning-regular-expressions/visualisation.png" alt="The graphical representation of our regular expression" />
+  <figcaption>The graphical representation of our regular expression</figcaption>
 </figure>
 
 I hope you learnt a few things anyway. And if you find a way to improve it, be sure to share in the comments!
