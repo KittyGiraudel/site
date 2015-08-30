@@ -3,6 +3,7 @@
   location: Zurich
   date: August 27 - 28, 2015
   image: /images/events/fec.png
+  past: true
   actions:
     - name: Book now
       link: http://frontendconf.ch/tickets/
