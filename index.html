@@ -48,7 +48,7 @@ classes: home
 {% endfor %}
 
 {% for talk in site.data.speaking limit:1 %}
-{% if talk.past == true %}
+{% unless talk.past == true %}
 <section class="home-section">
   <div class="home-section__inner  container">
     <h2 class="home-section__title">Next public speaking is...</h2>
@@ -60,5 +60,5 @@ classes: home
     <p><a href="/speaking/">Browse</a> other talks.</p>
   </footer>
 </section>
-{% endif %}
+{% endunless %}
 {% endfor %}
