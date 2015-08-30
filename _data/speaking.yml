@@ -5,8 +5,10 @@
   image: /images/events/fec.png
   past: true
   actions:
-    - name: Book now
-      link: http://frontendconf.ch/tickets/
+    - name: Video
+      link: https://youtu.be/dGz6y6glEmI?t=8h17m40s
+    - name: Slides
+      link: https://speakerdeck.com/hugogiraudel/three-years-of-purging-sass
 
 - event: dotCSS
   link: http://www.dotcss.io/
