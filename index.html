@@ -21,36 +21,37 @@ classes: home
   </footer>
 </section>
 
+{% for post in site.posts limit:1 %}
 <section class="home-section">
   <div class="home-section__inner  container">
     <h2 class="home-section__title">Latest article is...</h2>
-    {% for post in site.posts limit:1 %}
     <p class="home-section__primary-content"><a href="{% if post.external %}{{ post.external.url }}{% else %}{{ post.url }}{% endif %}" {% if post.external %}target="_blank"{% endif %}>{{ post.title }}</a></p>
     <p class="home-section__secondary-content">Published on {{ post.date|date: "%B %d, %Y" }}{% if post.guest %} by {{ post.guest }}{% endif %}{% if post.external %} at {{ post.external.host }}{% endif %}</p>
-    {% endfor %}
   </div>
   <footer class="home-section__footer">
     <p><a href="/blog/">Browse</a> or <a href="/search/">search</a> other articles.</p>
   </footer>
 </section>
+{% endfor %}
 
+{% for project in site.data.projects limit:1 %}
 <section class="home-section">
   <div class="home-section__inner  container">
     <h2 class="home-section__title">Latest project is...</h2>
-    {% for project in site.data.projects limit:1 %}
     <p class="home-section__primary-content"><a href="{{ project.link }}" target="_blank">{{ project.name }}</a></p>
     <p class="home-section__secondary-content">{{ project.description }}</p>
-    {% endfor %}
   </div>
   <footer class="home-section__footer">
     <p><a href="/projects/">Browse</a> other projects.</p>
   </footer>
 </section>
+{% endfor %}
 
+{% for talk in site.data.speaking limit:1 %}
+{% if talk.past == true %}
 <section class="home-section">
   <div class="home-section__inner  container">
     <h2 class="home-section__title">Next public speaking is...</h2>
-    {% for talk in site.data.speaking limit:1 %}
     <p class="home-section__primary-content"><a href="{{ talk.link }}">{{ talk.event }}</a></p>
     <p class="home-section__secondary-content">On {{ talk.date }} in {{ talk.location }}</p>
     {% endfor %}
@@ -59,3 +60,5 @@ classes: home
     <p><a href="/speaking/">Browse</a> other talks.</p>
   </footer>
 </section>
+{% endif %}
+{% endfor %}
