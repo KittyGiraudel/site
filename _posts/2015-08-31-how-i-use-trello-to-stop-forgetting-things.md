@@ -53,6 +53,11 @@ One good thing from Trello is also the ability to re-order cards in a column whi
 
 ## Final thoughts
 
+<figure class="figure--right">
+  <img src="/images/how-i-use-trello/trello-due-date.png" alt="Using due date for time-boxed items" />
+  <figcaption>Using due date for time-boxed items</figcaption>
+</figure>
+
 I have been using Trello like this for the last few months and I must say it has proven to work well for me so far. I also shared this board with my girlfriend so she can deal with stuff that implies us both. She actually has a board of her own (which has waaaaay more cards than mine) to keep track of everything she has to do.
 
 I know it might not suit everybody. Still, I feel like it is an interesting alternate usage of a scrum tool so I thought it would be cool to write about it. What do you think? How do you manage to keep track of everything?
