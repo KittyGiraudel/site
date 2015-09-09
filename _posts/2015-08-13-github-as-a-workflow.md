@@ -7,6 +7,8 @@ tags:
   - process
 ---
 
+> **Edit (2015/09/09):** I just (re-)discovered [ZenHub](https://www.zenhub.io/) which is a highly advanced Google Chrome extension for Agile project management **inside** GitHub. Basically, ZenHub brings a lot of features inside the GitHub UI by connecting to your GitHub account (like the usual “Sign in with GitHub” button does), such as Scrum boards, burndown charts, as well as a lot of tiny yet handy extra features. We will try it seriously on an upcoming project at Edenspiekermann, but it definitely goes in the way of keeping things inside GitHub, including project management.
+
 This article is the result of a discussion about development workflow with one of our Scrum Masters at Edenspiekermann. Therefore, it assumes you have basic notions of [Agile](https://en.wikipedia.org/wiki/Agile_software_development) and [Scrum](https://en.wikipedia.org/wiki/Scrum_(software_development)). If you don't, you still might benefit from reading the article but might be missing some keys to fully appreciate it. It also uses (although does not rely on) the [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow/) workflow.
 
 In this short document, I try to describe what I feel would be a great workflow for me, using [GitHub](https://github.com) as a central point rather than having a collection of tools. Obviously, this standpoint is highly developer-centric and might not fit all teams / projects. 
