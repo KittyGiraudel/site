@@ -15,7 +15,7 @@ I am a French front-end developer based in Berlin. After a couple of years worki
 
 I dare call myself an active open-source community member as I have contributed to many projects, as well as initiated a few of my own as well. Among them, let's mention [Browserhacks](http://browserhacks.com), [SassDoc](http://sassdoc.com), [Sass Guidelines](http://sass-guidelin.es) and [Sass Compatibility](http://sass-compatibility.github.io) and the [SitePoint Sass Reference](http://www.sitepoint.com/sass-reference/).
 
-Early 2014, I co-authored with [Raphaël Goetter](http://goetter.fr) a French book on CSS 3 entitled [CSS 3 Pratique du Design Web](http://css3-pratique.fr/), and I am currently in the process of co-writing a book about Sass with [Stuart Robson](https://twitter.com/sturobson) entitled [Jump Start Sass](https://learnable.com/books/jump-start-sass).
+Early 2014, I co-authored with [Raphaël Goetter](http://goetter.fr) a French book on CSS 3 entitled [CSS 3 Pratique du Design Web](http://css3-pratique.fr/), and I am currently in the process of writing a book about Sass entitled [Jump Start Sass](https://learnable.com/books/jump-start-sass).
 
 I also happen to be one of the 5 nominees for the [Net Awards](https://thenetawards.com) under the [Developer of the Year](https://thenetawards.com/vote/developer/) category. I am not sure why, but I am very proud anyway.
 
