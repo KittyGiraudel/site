@@ -55,18 +55,16 @@ I feel like the function could be improved to accept a boolean to be converted i
 Converting a value to a boolean is both simple and tricky. On the whole, the operation is quite easy because Sass does most of the work by evaluating a value to a boolean when in an `@if`/`@else if` directive. Meanwhile, there are some values that Sass considers as `true` while they are generally refered as `false`.
 
 <pre class="language-scss"><code>@function to-bool($value) {
-  @if not $value or $value == "" or $value == 0 {
-    @return false;
-  }
-  @return true;
+  @return not ($value or $value == "" or $value == 0 or $value == ());
 }</code></pre>
 
-Note how we have to manually check for `""` and `0` because both evaluate to `true` in Sass.
+Note how we have to manually check for `""`, `()` and `0` because both evaluate to `true` in Sass.
 
 <pre class="language-scss"><code>to-bool(0)           // false
 to-bool(false)       // false
 to-bool(null)        // false
 to-bool("")          // false
+to-bool(())          // false
 to-bool(1)           // true
 to-bool(true)        // true
 to-bool("abc")       // true
