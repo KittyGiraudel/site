@@ -31,8 +31,12 @@
 .toc__list {
   padding: 0;
   margin: 0;
-  list-style: none;
-  counter-reset: toc; /* 1 */
+  list-style-position: inside;
+
+  @include respond-to('medium') {
+    list-style: none;
+    counter-reset: toc; /* 1 */
+  }
 }
 
 /**
@@ -46,8 +50,10 @@
  * Add numbers on the right of table of contents item
  */ 
 .toc__item::after {
-  counter-increment: toc;
-  content: ' .' counter(toc);
+  @include respond-to('medium') {
+    counter-increment: toc;
+    content: ' .' counter(toc);
+  }
 }
 
 /**

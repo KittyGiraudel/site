@@ -17,6 +17,11 @@ pre > code {
  * 1. Overrides Prism.js
  */
 pre {
-  margin: 0 -40px 40px !important; /* 1 */
-  padding: 20px 40px !important; /* 1 */
+  margin: 0 -20px 40px !important; /* 1 */
+  padding: 20px !important; /* 1 */
+
+  @include respond-to('medium') {
+    margin: 0 -40px 40px !important; /* 1 */
+    padding: 20px 40px !important; /* 1 */
+  }
 }

@@ -4,8 +4,12 @@
  * 2. Clear inner floats
  */
 .figure {
-  margin: 0 -40px 40px; /* 1 */
+  margin: 0 -20px 40px; /* 1 */
   overflow: hidden; /* 2 */
+
+  @include respond-to('medium') {
+    margin: 0 -40px 40px;
+  }
 }
 
 /**
