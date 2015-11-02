@@ -12,8 +12,6 @@ A couple of weeks ago, I wrote a small guide to [understand Sass lists](http://h
 
 Anyway, a couple of days ago I stumbled upon [a comment in a Sass issue](https://github.com/nex3/sass/issues/852#issuecomment-22071664) listing a couple of advanced Sass functions to deal with lists. I found the idea quite appealing so I made my own function library for for this. In my opinion, it is always interesting to go deeper than *"it just works"*, so here is a short blog post to explain my code.
 
-If you don't feel like reading all this and just want to look at the code, you can play with [this pen](http://codepen.io/HugoGiraudel/pen/loAgq) or contribute to [this repo](https://github.com/HugoGiraudel/Sass-snippets/blob/master/list-functions/_all.scss).
-
 ## Selecting values from list
 
 ### First and last
