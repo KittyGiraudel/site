@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "\"CSS is easy\""
+title: "“CSS is easy”"
 tags:
   - css
   - front-end
@@ -9,9 +9,9 @@ tags:
 
 > [Véronique Bouvier](https://twitter.com/verobouvier) translated [this article in French](http://www.veronique-bouvier.com/css-cest-facile-par-hugo-giraudel/) on her blog.
 
-I am studying what comes close to "Programming Sciences". My mates are hardware, server or back-end guys. When I tell them I prefer front-end, especially HTML/CSS I always get the same reaction: "CSS is easy".
+I am studying what comes close to “Programming Sciences“. My mates are hardware, server or back-end guys. When I tell them I prefer front-end, especially HTML/CSS I always get the same reaction “CSS is easy”.
 
-And I always tell myself the same thing "Yeaaaaah... so that should explain why your CSS is a fucking mess".
+And I always tell myself the same thing “Yeaaaaah... so that should explain why your CSS is a fucking mess”.
 
 ## CSS is easy... syntactically
 
@@ -25,11 +25,11 @@ A 8-year-old child could do some CSS without even having any explanation on how 
  ...]
 }</code></pre>
 
-Most of all, CSS means something. It uses real words, understandable by anyone. When you read `.element { color: red; }`, you can be pretty sure it means an item called "element" is red. It's a no brainer.
+Most of all, CSS means something. It uses real words, understandable by anyone. When you read `.element { color: red; }`, you can be pretty sure it means an item called “element” is red. It's a no brainer.
 
 ## A constantly evolving language
 
-The first "problem" (for lack of a better word) with CSS is that it is a constantly evolving language. It was first introduced in 1994 if no mistake; so almost 20 years ago. After 3 major versions (CSS1, CSS2 and CSS2.1), CSS is now divided into modules growing at their own speed (Colors Level 3, Selectors Level 4, etc.). It means you cannot simply "learn CSS" then don't get back to it. You can learn the bases, yes but it's not enough.
+The first “problem” (for lack of a better word) with CSS is that it is a constantly evolving language. It was first introduced in 1994 if no mistake; so almost 20 years ago. After 3 major versions (CSS1, CSS2 and CSS2.1), CSS is now divided into modules growing at their own speed (Colors Level 3, Selectors Level 4, etc.). It means you cannot simply “learn CSS” then don't get back to it. You can learn the bases, yes but it's not enough.
 
 Some things I learnt 2 years ago are irrelevant now, and some things I'm learning today might disappear or become bad practices in the future. It is a non-stop evolution &mdash; which is cool but &mdash; which requires developers to be very careful.
 
