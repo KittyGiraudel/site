@@ -14,7 +14,7 @@ Here are a few tips I have found helping when struggling with tendonitises. They
 
 **Do not trigger the pain**, under any circumstances. It is not like a cramp where forcing a bit of pain helps making it better. It makes things worse. When you feel pain, stop what you are doing.
 
-When you are in pain and not using your tendons (see first advice), **try putting some ice on the inflamed area**. It’s not much, but it can reduce the pain a little. Also **put some lotion on the painful area and rub it** (or ask someone to do it if it is to painful to do it) for a few minutes a few times a day. There are a lot of specialized products easily found in pharmacy.
+When you are in pain and not using your tendons (see first advice), **try putting some ice on the inflamed area**. It’s not much, but it can reduce the pain a little. Also **put some specialized oitment or green argile on the painful area and rub it** (or ask someone to do it if it is to painful to do it) for a few minutes a few times a day.
 
 **Drink a lot of water**, it helps hydrating the tendons (as I’ve heard) and can help in the long run. Also good for the body in general, so you know: win-win.
 
