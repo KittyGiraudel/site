@@ -50,6 +50,6 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 💬 **December 7th**. I created the [SJSJ](http://hugogiraudel.com/2015/12/07/introducing-sjsj/) (Simplified JavaScript Jargon) repository as an attempt to make the JavaScript buzzwords a bit less obscure to new comers. I am astonished as how welcome the project is, with already over 1300 stars on GitHub. Keep it up you people!
 
-And that’s pretty much it I guess. Which is already a lot for a single year if you ask me! Again, all in all, it was quite a good year, rich in new experiences and people. Let’s hope 2016 gets similar. :)
+And that’s pretty much it I guess. Which is already a lot for a single year if you ask me! 2015 is also the year where I started pool (billards) as a serious hobby (quite antinomic some would say). Again, all in all, it was quite a good year, rich in new experiences and people. Let’s hope 2016 gets similar. :)
 
 What about you my friends, how was 2015 for you?
