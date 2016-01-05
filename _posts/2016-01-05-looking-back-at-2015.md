@@ -6,8 +6,6 @@ tags:
   - thoughts
 ---
 
-Hey there!
-
 It is that time of the year again. 🎉 First, allow make to take this post as an opportunity to wish you all a very happy new year. Had you a rough time in 2015, be sure that it’s now over and 2016 will be a new fresh start. And if you had a wonderful year, then let’s make 2016 even better! In any cases, here are all my wishes to y’all for this new year.
 
 Now, this article is yet another “here is what I’ve done in 2015”. Some would argue it does not belong on this blog (or any other similar blog), but I feel like it’s important to look back and have a glance at what has been and not been done so we can focus more closely on realistic goals for the year to come.
