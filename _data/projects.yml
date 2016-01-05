@@ -1,3 +1,8 @@
+- name: SJSJ
+  description: "Simplified JavaScript Jargon (short SJSJ) is a community-driven attempt at explaining the loads of buzzwords making the current JavaScript ecosystem in a few simple words."
+  link: https://github.com/HugoGiraudel/SJSJ
+  image: /images/projects/sass-guidelines.png
+
 - name: Sass Guidelines
   description: "An opinionated styleguide for writing sane, maintainable and scalable Sass."
   link: http://sass-guidelin.es
@@ -16,7 +21,7 @@
 - name: Browserhacks
   description: "An extensive list of browser specific CSS and JavaScript hacks."
   link: http://browserhacks.com/
-  
+
 - name: SassyTester
   description: "A minimalistic function tester in Sass."
   link: https://github.com/HugoGiraudel/SassyTester
