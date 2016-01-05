@@ -50,6 +50,8 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 💔 **October 4th**. I ended a 4 years long relationship with my girlfriend.
 
+✨ **November 6th**. I built [node-legofy](https://github.com/HugoGiraudel/node-legofy) with my friend [Valérian Galliat](https://twitter.com/valeriangalliat), a script to convert your images to mosaics of LEGO. Super fun side project.
+
 💬 **December 7th**. I created the [SJSJ](http://hugogiraudel.com/2015/12/07/introducing-sjsj/) (Simplified JavaScript Jargon) repository as an attempt to make the JavaScript buzzwords a bit less obscure to new comers. I am astonished as how welcome the project is, with already over 1300 stars on GitHub. Keep it up you people!
 
 And that’s pretty much it I guess. Which is already a lot for a single year if you ask me! 2015 is also the year where I started pool (billards) as a serious hobby (quite antinomic some would say). Again, all in all, it was quite a good year, rich in new experiences and people. Let’s hope 2016 gets similar. :)
