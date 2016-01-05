@@ -29,6 +29,8 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 🇳🇱 **April 2 — 5th**. I visited Amsterdam for the first time (yup, took some holidays directly after my start at ESPI ¯\\_(ツ)\_/¯). Lovely city, it goes without saying, although super crowded at that time of the year. I am likely to go back there for a talk in the next months.
 
+✒ **May 12th**. I signed a contract with SitePoint to co-author [Jump Start Sass](https://www.sitepoint.com/premium/books/jump-start-sass) with [Miriam Suzanne](https://twitter.com/mirisuzanne) (author of Susy grid engine), an introduction book to Sass which will be released in February this year (if all goes right).
+
 🔙 **May 29th**. I [moved my site back to Jekyll](http://hugogiraudel.com/2015/05/29/oh-jekyll-here-we-go-again/) after roughly a year on Mixture. Took it at an opportunity to freshen up the design and add a few features. Might seem like nothing, but we all know that the project we usually deal the less with is our own site. :)
 
 ❓**July 19th**. I opened a [Ask Me Anything](http://hugogiraudel.com/2015/07/19/ask-me-anything/) repository and replied to over 50 questions already. Feel free to add your owns!
@@ -44,7 +46,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 🔥 **August — September**. Some time at the end of the summer, I started suffering from tendonitis on my right wrist, probably (although yet to be confirmed) due to a larger than average amount of stress at that time. To this day, I still happen to feel some pain in the arm, even though I [found some tricks to leverage it](http://hugogiraudel.com/2015/12/02/dealing-with-tendonitis/).
 
-✒ **September 21st**. I signed a contract with SitePoint to co-author [Jump Start Sass](https://www.sitepoint.com/premium/books/jump-start-sass) with [Miriam Suzanne](https://twitter.com/mirisuzanne) (author of Susy grid engine), an introduction book to Sass which will be released in February this year (if all goes right).
+🇹🇷 **September 17 — 21st**. I left Europe for the very first time, although didn’t go much further and visited Istanbul. Very interesting city, although probably not one I would like to live in. I have good memories though.
 
 💔 **October 4th**. I ended a 4 years long relationship with my girlfriend.
 
