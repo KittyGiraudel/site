@@ -42,7 +42,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 🎤 **August 27 — 28th**. I gave a talk entitled [Three Years of Purging Sass](https://speakerdeck.com/hugogiraudel/three-years-of-purging-sass) at Frontend Conference in Zurich. It was a great venue, and as always, a good opportunity to meet all the nice folks from our industry.
 
-🔥 **August — September**. Some time in September, I started suffering from tendonitis on my right wrist, probably (although yet to be confirmed) due to a larger than average amount of stress at that time. To this day, I still happen to feel some pain in the arm, even though I [found some tricks to leverage it](http://hugogiraudel.com/2015/12/02/dealing-with-tendonitis/).
+🔥 **August — September**. Some time at the end of the summer, I started suffering from tendonitis on my right wrist, probably (although yet to be confirmed) due to a larger than average amount of stress at that time. To this day, I still happen to feel some pain in the arm, even though I [found some tricks to leverage it](http://hugogiraudel.com/2015/12/02/dealing-with-tendonitis/).
 
 ✒ **September 21st**. I signed a contract with SitePoint to co-author [Jump Start Sass](https://www.sitepoint.com/premium/books/jump-start-sass) with [Miriam Suzanne](https://twitter.com/mirisuzanne) (author of Susy grid engine), an introduction book to Sass which will be released in February this year (if all goes right).
 
