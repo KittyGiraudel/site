@@ -33,6 +33,8 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 🔙 **May 29th**. I [moved my site back to Jekyll](http://hugogiraudel.com/2015/05/29/oh-jekyll-here-we-go-again/) after roughly a year on Mixture. Took it at an opportunity to freshen up the design and add a few features. Might seem like nothing, but we all know that the project we usually deal the less with is our own site. :)
 
+📝 **June 24th**. I released in a joint effort with SitePoint the [SitePoint Sass Reference](http://www.sitepoint.com/introducing-the-sitepoint-sass-reference/), a platform aiming at explaining the Sass buzzwords, mostly targetted at new comers. 
+
 ❓**July 19th**. I opened a [Ask Me Anything](http://hugogiraudel.com/2015/07/19/ask-me-anything/) repository and replied to over 50 questions already. Feel free to add your owns!
 
 🏆 **July 20th**. I made it to the [shortlist](http://www.edenspiekermann.com/blog/posts/net-awards-shortlist) for the “Developer of the Year” Net Award. At 23, needless to say it is a huge honor. [Sara Soueidan](https://sarasoueidan.com/blog/developer-of-the-year-2-15-net-award/) later won the well-deserved award on September 21st.
