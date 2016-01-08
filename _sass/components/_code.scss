@@ -3,6 +3,8 @@
  */
 code {
   font-family: $code-font-stack !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /**
