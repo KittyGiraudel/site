@@ -1,6 +1,12 @@
+- event: DEVit Conference
+  link: http://devitconf.org/
+  location: Thessaloniki, Greece
+  date: May 20, 2016
+  past: false
+
 - event: Frontend Conference Zurich
   link: http://frontendconf.ch/
-  location: Zurich
+  location: Zurich, Switzerland
   date: August 27 - 28, 2015
   image: /images/events/fec.png
   past: true
@@ -12,7 +18,7 @@
 
 - event: dotCSS
   link: http://www.dotcss.io/
-  location: Paris
+  location: Paris, France
   date: November 15, 2014
   past: true
   actions:
@@ -25,7 +31,7 @@
 
 - event: FeWeb
   link: http://www.lafeweb.be/fiche-agenda/sass-and-compass-et-le-css-devient-fantastique
-  location: Bruxelles
+  location: Bruxelles, Belgium
   date: May 8, 2014
   past: true
   actions:
@@ -36,7 +42,7 @@
 
 - event: KiwiParty
   link: http://kiwiparty.fr
-  location: Strasbourg
+  location: Strasbourg, France
   date: June 23, 2014
   past: true
   actions:
