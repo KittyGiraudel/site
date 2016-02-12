@@ -48,12 +48,12 @@ classes: home
 {% endfor %}
 
 {% for talk in site.data.speaking limit:1 %}
-{% unless talk.past == true %}
+{% unless talk.date < site.time %}
 <section class="home-section">
   <div class="home-section__inner  container">
     <h2 class="home-section__title">Next public speaking is...</h2>
     <p class="home-section__primary-content"><a href="{{ talk.link }}">{{ talk.event }}</a></p>
-    <p class="home-section__secondary-content">On {{ talk.date }} in {{ talk.location }}</p>
+    <p class="home-section__secondary-content">On {{ talk.date|date_to_string }} in {{ talk.location }}</p>
   </div>
   <footer class="home-section__footer">
     <p><a href="/speaking/">Browse</a> other talks.</p>

@@ -1,13 +1,13 @@
 - event: DEVit Conference
   link: http://devitconf.org/
   location: Thessaloniki, Greece
-  date: May 20, 2016
+  date: 2016-05-20 00:00:00 +0100
   past: false
 
 - event: Frontend Conference Zurich
   link: http://frontendconf.ch/
   location: Zurich, Switzerland
-  date: August 27 - 28, 2015
+  date: 2015-08-27 00:00:00 +0100
   image: /images/events/fec.png
   past: true
   actions:
@@ -19,7 +19,7 @@
 - event: dotCSS
   link: http://www.dotcss.io/
   location: Paris, France
-  date: November 15, 2014
+  date: 2014-11-15 00:00:00 +0100
   past: true
   actions:
     - name: Feedback
@@ -32,7 +32,7 @@
 - event: FeWeb
   link: http://www.lafeweb.be/fiche-agenda/sass-and-compass-et-le-css-devient-fantastique
   location: Bruxelles, Belgium
-  date: May 8, 2014
+  date: 2014-05-08 00:00:00 +0100
   past: true
   actions:
     - name: Feedback
@@ -43,7 +43,7 @@
 - event: KiwiParty
   link: http://kiwiparty.fr
   location: Strasbourg, France
-  date: June 23, 2014
+  date: 2013-06-23 00:00:00 +0100
   past: true
   actions:
     - name: Feedback

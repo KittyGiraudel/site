@@ -19,7 +19,7 @@ It does not happen *that* often, but it happens! Why don't you come and see me a
 <ul class="events  list">
 {% for event in site.data.speaking %}
   <li class="event  list__item{% if event.past %}  event--past{% endif %}">
-    <span class="event__data  list__secondary-content">{{ event.date }} — {{ event.location }}</span>
+    <span class="event__data  list__secondary-content">{{ event.date|date_to_string }} — {{ event.location }}</span>
     <a class="event__link  list__primary-content" href="{{ event.link }}" target="_blank">
       {{ event.event }}
     </a>
