@@ -219,7 +219,7 @@ The only problem left is that if you debug a single value, it will wrap it into 
 }
 </code></pre>
 
-## Final words <a href="#final-words">#</a>
+## Final words
 
 That's pretty much it guys. I hope you like it. This has been added to [SassyLists](https://github.com/Team-Sass/Sass-list-functions), so if you think of something to improve it be sure to share!
 
