@@ -21,10 +21,6 @@ layout: default
 
 {{ content }}
 
-{% if page.tags %}
-  <p class="post-tags">Published under: {{ page.tags|array_to_sentence_string }}.</p>
-{% endif %}
-
 {% unless page.comments == false or page.external %}
   <div id="disqus_thread"></div> 
 {% endunless %}
