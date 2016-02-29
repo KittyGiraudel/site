@@ -69,6 +69,6 @@ My dear PayPal, I love your services but your site and the way you handle my dat
 
 Oh, and little bonus for the end. When I have to open the Developer Tools to remove a container of yours in order to click a button, you know you have done it wrong.
 
-![Overlapping container on top of button](https://pbs.twimg.com/media/CZ5IiJXWQAA2bSq.png).
+![Overlapping container on top of button](https://pbs.twimg.com/media/CZ5IiJXWQAA2bSq.png)
 
 Sincerely yours.
