@@ -55,7 +55,7 @@ Ironically, I believe this is the kind of thing that matters less and less when 
 
 Put a picture, a background image and find a short bio. I hate writing bios so I am definitely not an example here, but that can be short and sweet. I personally tend to dislike bios that are a super serious list of all the achievements and titles of a person. I don’t really care. I’d rather have a smile at a joke, or simply see what is the person interested in.
 
-I also noticed that company / product / project accounts usually perform worse than user accounts. Probably because they are less personal, but that’s still and interesting thing to acknowledge.
+I also noticed that company / product / project accounts usually perform worse than user accounts. Probably because they are less personal, but that’s still an interesting thing to acknowledge.
 
 You can also pin in a tweet on the top of your timeline. It has no impact on users browsing Twitter through a third party client such as Tweetdeck. But for those on the .com, they’ll see your tweet right away when visiting your profile.
 
