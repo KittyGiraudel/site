@@ -17,6 +17,7 @@ tags:
 When I can, I try to invest a lot of time in open-source projects. Here are a few of them I initiated myself:
 
 {% assign groups = site.data.projects|group_by:"category" %}
+{% assign groups = groups|sort:"name" %}
 {% for category in groups %}
   <h2>{{ category.name }}</h2>
   <ul class="list">
