@@ -18,17 +18,17 @@
   link: https://github.com/edenspiekermann/a11y-dialog
   category: Accessibility
 
-- name: spritesh
+- name: Spritesh
   description: "A Bash script to build a SVG sprite from a folder of SVG files."
   link: https://github.com/edenspiekermann/sprite.sh
   category: Bash
 
-- name: transync
+- name: Transync
   description: "A Node.js script to synchronise keys from translation files."
   link: https://github.com/edenspiekermann/transync
   category: JavaScript
 
-- name: sass-semver
+- name: Sass Semver
   description: "A lightweight Semantic Versioning (SemVer) parser in Sass."
   link: https://github.com/HugoGiraudel/sass-semver
   category: Sass
@@ -73,7 +73,7 @@
   link: https://github.com/HugoGiraudel/CRUD.js
   category: JavaScript
 
-- name: Image Preloader
+- name: ImagePreloader
   description: "A lightweight JavaScript implementation of an image preloader relying on Promises."
   link: https://github.com/HugoGiraudel/imagepreloader
   category: JavaScript
