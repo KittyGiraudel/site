@@ -1,3 +1,27 @@
+- name: iframify
+  description: "A script to replace a HTML element with an iframe version of itself."
+  link: https://github.com/edenspiekermann/iframify
+
+- name: Outline Audit
+  description: "A script to audit the document outline."
+  link: https://github.com/edenspiekermann/outline-audit
+
+- name: A11y Toggle
+  description: "A script to make gaccessible content toggles."
+  link: https://github.com/edenspiekermann/a11y-toggle
+
+- name: A11y Dialog
+  description: "A script to make modal dialogs accessible to assistive technology users."
+  link: https://github.com/edenspiekermann/a11y-dialog
+
+- name: spritesh
+  description: "A Bash script to build a SVG sprite from a folder of SVG files."
+  link: https://github.com/edenspiekermann/sprite.sh
+
+- name: transync
+  description: "A Node.js script to synchronise translation files."
+  link: https://github.com/edenspiekermann/transync
+
 - name: sass-semver
   description: "A lightweight semantic version parser in Sass."
   link: https://github.com/HugoGiraudel/sass-semver
