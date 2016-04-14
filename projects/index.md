@@ -16,12 +16,17 @@ tags:
 
 When I can, I try to invest a lot of time in open-source projects. Here are a few of them I initiated myself:
 
-<ul class="list">
-{% for project in site.data.projects %}
-  <li class="list__item">
-    <a class="list__primary-content" href="{{ project.link }}" target="_blank">
-      {{ project.name }}
-    </a>
-    <span class="list__secondary-content">{{ project.description }}</span>
-  </li>
+{% assign groups = site.data.projects|group_by:"category" %}
+{% for category in groups %}
+  <h2>{{ category.name }}</h2>
+  <ul class="list">
+  {% assign projects = category.items|sort:"name" %}
+  {% for project in projects %}
+    <li class="list__item">
+      <a class="list__primary-content" href="{{ project.link }}" target="_blank">
+        {{ project.name }}
+      </a>
+      <span class="list__secondary-content">{{ project.description }}</span>
+    </li>
+  {% endfor %}
 {% endfor %}
