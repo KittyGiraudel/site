@@ -1,5 +1,5 @@
 - name: iframify
-  description: "A script to replace a HTML element with an iframe version of itself."
+  description: "A script to replace a HTML element with an iframe version of itself. Especially useful for styleguides."
   link: https://github.com/edenspiekermann/iframify
   category: JavaScript
 
@@ -29,7 +29,7 @@
   category: JavaScript
 
 - name: Sass Semver
-  description: "A lightweight Semantic Versioning (SemVer) parser in Sass."
+  description: "A small Semantic Versioning (SemVer) parser in Sass."
   link: https://github.com/HugoGiraudel/sass-semver
   category: Sass
 
@@ -44,7 +44,7 @@
   category: Sass
 
 - name: Sass Boilerplate
-  description: "The Sass boilerplate going with Sass Guidelines recommendations."
+  description: "A Sass boilerplate to kickstart a project sticking to Sass Guidelines recommendations."
   link: https://github.com/HugoGiraudel/sass-boilerplate
   category: Sass
 
@@ -54,7 +54,7 @@
   category: Sass
 
 - name: Sass Compatibility
-  description: "Reporting incompatibilities between different Sass engines."
+  description: "A project collecting incompatibilities between different Sass engines."
   link: http://sass-compatibility.github.io/
   category: Sass
 
@@ -64,22 +64,22 @@
   category: CSS
 
 - name: node-legofy
-  description: "Node.js version of Legofy, a script to convert an image in LEGO pieces."
+  description: "Node.js version of Legofy, a script to convert an image into a mosaic of LEGO pieces."
   link: https://github.com/HugoGiraudel/node-legofy
   category: JavaScript
 
 - name: CRUD.js
-  description: "An interface for CRUD in JavaScript."
+  description: "An interface for CRUD (Create Read Update Delete) in JavaScript."
   link: https://github.com/HugoGiraudel/CRUD.js
   category: JavaScript
 
 - name: ImagePreloader
-  description: "A lightweight JavaScript implementation of an image preloader relying on Promises."
+  description: "A lightweight JavaScript implementation of an image preloader relying on ES6 Promises."
   link: https://github.com/HugoGiraudel/imagepreloader
   category: JavaScript
 
 - name: Countdown.js
-  description: "A little JavaScript cutstomizable countdown."
+  description: "A small yet cutstomizable countdown in JavaScript."
   link: https://github.com/HugoGiraudel/countdown.js
   category: JavaScript
 
@@ -94,7 +94,7 @@
   category: Sass
 
 - name: SassyBitwise
-  description: "A working implementation of bitwise operators in Sass."
+  description: "A fully working implementation of bitwise operators in Sass."
   link: https://github.com/HugoGiraudel/SassyBitwise
   category: Sass
 
@@ -114,17 +114,17 @@
   category: Sass
 
 - name: SassyMatrix
-  description: "A collection of Sass functions to ease matrix manipulation."
+  description: "A collection of Sass functions to ease matrix (bi-dimensional maps) manipulation."
   link: https://github.com/HugoGiraudel/SassyMatrix
   category: Sass
 
 - name: SassyLogger
-  description: "A powerful logging system built in Sass."
+  description: "A powerful logging system built in Sass, for Sass."
   link: https://github.com/HugoGiraudel/SassyLogger
   category: Sass
 
 - name: SassyJSON
-  description: "A partially working implementation of a JSON parser in Sass."
+  description: "An experimental and partially working implementation of a JSON parser in Sass."
   link: https://github.com/HugoGiraudel/SassyJSON
   category: Sass
 
@@ -134,6 +134,6 @@
   category: Sass
 
 - name: SassySort
-  description: "Several ways to sort values in Sass using popular sorting algorithms."
+  description: "A collection of popular sorting algorithms implementations in Sass."
   link: https://github.com/HugoGiraudel/SassySort
   category: Sass
