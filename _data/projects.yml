@@ -1,3 +1,8 @@
+- name: Inline-Styler
+  description: "A teeny tiny JavaScript library to easily manipulate the style attribute of an element."
+  link: https://github.com/HugoGiraudel/inline-styler
+  category: JavaScript
+
 - name: iframify
   description: "A script to replace a HTML element with an iframe version of itself. Especially useful for styleguides."
   link: https://github.com/edenspiekermann/iframify
