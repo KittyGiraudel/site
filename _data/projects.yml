@@ -40,7 +40,7 @@
 
 - name: SJSJ
   description: "Simplified JavaScript Jargon (short SJSJ) is a community-driven attempt at explaining the loads of buzzwords making the current JavaScript ecosystem in a few simple words."
-  link: https://github.com/HugoGiraudel/SJSJ
+  link: http://jargon.js.org
   category: JavaScript
 
 - name: Sass Guidelines
