@@ -12,6 +12,10 @@
   }
 }
 
+.figure img:only-of-type {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 /**
  * Figcaption
  * 1. Right aligned
