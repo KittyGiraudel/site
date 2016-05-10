@@ -20,3 +20,14 @@ sass:
   sass_dir: assets/sass
   style: :compressed
 gems: [jekyll-paginate]
+
+# Navigation
+nav:
+  - label: Writing
+    url: /blog/
+  - label: Coding
+    url: /projects/
+  - label: Speaking
+    url: /speaking/
+  - label: About
+    url: /about/
