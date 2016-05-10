@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="{% if page.lang %}{{ page.lang|downcase }}{% else %}en{% endif %}">
+<html lang="{{ page.lang|default: en|downcase }}">
 
   {% include head.html %}
 
   <body {% if page.classes %}class="{{ page.classes }}"{% endif %}>
-
     {% include header.html %}
     
     {{ content }}
