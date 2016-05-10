@@ -48,7 +48,9 @@ In this image, I'm working on the "myFork" branch and I have modified and/or sta
 
 To install this prompt in a linux environment, just download it somewhere and update your ~/.bashrc file to add this line:
 
-<pre class="language-git"><code>. /path/to/gitprompt</code></pre>
+```git
+. /path/to/gitprompt
+```
 
 That's it. Just re-open your terminal and go to a Git project directory.
 
@@ -72,7 +74,9 @@ A better method is to use the `-S` parameter to search for a specific string: `g
 
 You can add several parameters to reduce the commits related to the search:
 
-<pre class="language-git"><code>git log -S console.log --author lgiraudel --before="2013-10-01 00:00" --after="2013-06-01 00:00" -- web/js</code></pre>
+```git
+git log -S console.log --author lgiraudel --before="2013-10-01 00:00" --after="2013-06-01 00:00" -- web/js
+```
 
 ### With `git blame`
 
@@ -80,7 +84,8 @@ You can add several parameters to reduce the commits related to the search:
 
 It requires a filepath to works:
 
-<pre class="language-git"><code>$ git blame Gruntfile.js
+```git
+$ git blame Gruntfile.js
 15b95608 (Loic 2013-10-08 14:21:51 +0200  1) module.exports = function(grunt) {
 15b95608 (Loic 2013-10-08 14:21:51 +0200  2)
 15b95608 (Loic 2013-10-08 14:21:51 +0200  3)   // Project configuration.
@@ -99,7 +104,8 @@ It requires a filepath to works:
 df9b1c21 (Seb  2013-10-11 11:50:08 +0200  7)       src: 'web/js/**/*.js',
 df9b1c21 (Seb  2013-10-11 11:50:08 +0200  8)       options: {
 df9b1c21 (Seb  2013-10-11 11:50:08 +0200  9)         vendor: [
-[...]</code></pre>
+[...]
+```
 
 It's possible to limit the output to specific lines with the parameter `-L`: `git blame -L 10,20` will only output lines 10 to 20.
 
@@ -111,7 +117,8 @@ It's possible to limit the output to specific lines with the parameter `-L`: `gi
 
 In the diff output, each change is displayed like this :
 
-<pre class="language-git"><code>$ git diff
+```git
+$ git diff
 diff --git a/Gruntfile.js b/Gruntfile.js
 index 74d58f9..569449c 100755
 &ndash;&ndash;&ndash; a/Gruntfile.js
@@ -124,7 +131,8 @@ index 74d58f9..569449c 100755
 +        'gruntfile.js',</span>
          '/web/js/**/*.js'
        ],
-       options: {</code></pre>
+       options: {
+```
 
 But if you use the `--color-words` parameter, it will write the old and new text in the same line with red and green colors, which can be easier to read in some cases.
 
@@ -136,7 +144,8 @@ To avoid this pollution in the git diff, you can add the `-w` option to omit spa
 
 Let's take an explicite example:
 
-<pre class="language-git"><code>$ git diff
+```git
+$ git diff
 diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
 index b2185a2..887387f 100755
 &ndash;&ndash;&ndash; a/web/js/lazy.js
@@ -190,11 +199,13 @@ index b2185a2..887387f 100755
 +        }
 +      });
      };
-     /**</code></pre>
+     /**
+```
 
 What are the important updates in this piece of code? It's not quite easy to check what have been done with a diff like this. But with the `-w` option:
 
-<pre class="language-git"><code>$ git diff -w
+```git
+$ git diff -w
 diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
 index b2185a2..887387f 100755
 &ndash;&ndash;&ndash; a/web/js/lazy.js
@@ -216,7 +227,8 @@ index b2185a2..887387f 100755
          });
 -      }
      };
-     /**</code></pre>
+     /**
+```
 
 It's now easier to catch up with the changes: I've replaced the test wrapping my Ajax call by a 3-lines test checking right before, which reduces the indentation level of the Ajax call.
 

@@ -50,9 +50,11 @@ That's why I've decided to give a serious go at element queries at work. I came 
 
 I decided to set up on the last one which looks slightly better than the others. Also I like Sam Richards, that's enough for me. Anyway, all we have to do to make it work &mdash; aside from including the script &mdash; is adding a `data-eq-pts` attribute to the component, listing breakpoints as a map.
 
-<pre class="language-html"><code>&lt;ul class="component" data-eq-pts="small: 300, medium: 500, large: 700, huge: 900">
-  &lt;!-- ... -->
-&lt;/ul></code></pre>
+```html
+<ul class="component" data-eq-pts="small: 300, medium: 500, large: 700, huge: 900">
+  <!-- ... -->
+</ul>
+```
 
 Then when a min-width is matched, the element can be selected using an attribute selector `data-eq-state` matching the mapped keyword. For instance `.component[data-eq-state="small"]` when the component is between 300 and 499px wide.
 

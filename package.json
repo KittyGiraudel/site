@@ -3,7 +3,7 @@
   "homepage": "http://hugogiraudel.com",
   "scripts": {
     "start": "npm run min",
-    "min": "cat assets/js/src/helpers.js assets/js/src/article.js assets/js/src/app.js assets/js/vendors/prism.min.js > assets/js/main.js | uglifyjs > assets/js/main.min.js",
+    "min": "cat assets/js/src/helpers.js assets/js/src/article.js assets/js/src/app.js > assets/js/main.js | uglifyjs > assets/js/main.min.js",
     "clean": "rm -f assets/js/main.min.js"
   },
   "devDependencies": {

@@ -21,7 +21,9 @@ ses is how obvious the `:has()` proposal is. It speaks for itself. One thing I a
 
 <blockquote class="pull-quote--right">CSS selectors can be understood by reading them out loud.</blockquote>
 
-<pre class="language-css"><code>A:has(B)</code></pre>
+```css
+A:has(B)
+```
 
 ... you only have to read it to understand it: *I want to select all elements `A` containing at least one element `B`*. You can try it for pretty much all CSS selectors, it works pretty well. The exception could be `~` (and `>` in a lesser extend) which isn't as obvious as it should be.
 
@@ -33,7 +35,9 @@ Moving on.
 
 The "ah-ah moment" I had a while back about CSS was that the target (refered as *subject* in the specifications) of a CSS selector is always at the end of it. That's also a reason why CSS parsers read selectors from right to left and not left to right. Because this is the way it makes sense. 
 
-<pre class="language-css"><code>nav a:hover span</code></pre>
+```css
+nav a:hover span
+```
 
 In this example, `span` is the target. Not `nav` or `a:hover`. Just `span`. This is the element you're willing to style. The remaining pieces of the selector are nothing but the context. You may think of it this way:
 
@@ -43,7 +47,9 @@ In this example, `span` is the target. Not `nav` or `a:hover`. Just `span`. This
 
 Adding a pseudo-class or a pseudo-element to the last element from the selector doesn't change the target, it only adds some more context on the target itself. 
 
-<pre class="language-css"><code>nav a:hover span:after</code></pre>
+```css
+nav a:hover span:after
+```
 
 The last element is still the target of the selector, although now it's not only `span` but `span:after`. Now back to our discussion, plus I'm sure you can see the problem now.
 
@@ -67,13 +73,17 @@ Also, no selector should start with an operator. You can't write something like 
 
 There are still edge cases I don't really see handled with the single character notation. For instance, what happens if there are multiple occurrences of the `^` symbol in the selector, like:
 
-<pre class="language-css"><code>A ^B ^C D</code></pre>
+```css
+A ^B ^C D
+```
 
 What happens here? What is the selector's target? Is it `C`? Is it `D`? We don't know and more accurately: we can't know. According to the specifications, a selector like `^A ^B` would result in *all `B` contained in `A` and their containing `A` elements*. Needless to say it's getting crazy. If you ask me, this should simply throw an error (which, in CSS, is equivalent to *skip that shit and move on*).
 
 On the other hand, the pseudo-class proposal makes it very easy to allow multiple occurrences of itself in a selector. Even better, chaining and nesting are possible.
 
-<pre class="language-css"><code>A:has(B:has(C))</code></pre>
+```css
+A:has(B:has(C))
+```
 
 This means we are looking for all `A` elements containing at least a `B` element, himself containing at least a `C` element. Doing this with the other syntax is close to impossible and if we can come up with a solution, would it be as clean as this one?
 

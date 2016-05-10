@@ -11,7 +11,8 @@ The other day, I wanted to do something in CSS that turned out to be quite compl
 
 A single-line *end-ellipsis* is often used when you have some long content that you want to hide behind a `...` to prevent a line-break. It is very easy to do. You can implement it with:
 
-<pre class="language-css"><code>/**
+```css
+/**
  * 1. Hide any overflow
  * 2. Prevent any line-break
  * 3. Add ellipsis at end of line
@@ -20,7 +21,8 @@ A single-line *end-ellipsis* is often used when you have some long content that 
     overflow: hidden;        /* 1 */
     white-space: nowrap;     /* 2 */
     text-overflow: ellipsis; /* 3 */
-}</code></pre>
+}
+```
 
 For instance, consider this content:
 
@@ -58,7 +60,8 @@ No luck. :(
 
 So there is no magic one-liner to make it work everywhere. Fortunately, some of you are very creative and came up with smart hacks to achieve the desired effect. The best solution given so far is the one from [Michael Godwin](https://twitter.com/__Godwin__):
 
-<pre class="language-css"><code>.reverse-ellipsis {
+```css
+.reverse-ellipsis {
   text-overflow: clip;
   position: relative;
   background-color: white;
@@ -93,7 +96,8 @@ So there is no magic one-liner to make it work everywhere. Fortunately, some of 
   background-color: inherit;
   z-index: 200;
   left: -.5em;
-}</code></pre>
+}
+```
 
 A couple issues with Michael's solution:
 

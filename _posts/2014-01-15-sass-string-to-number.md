@@ -18,7 +18,8 @@ I have to say I am pretty proud with what I have come up with. Not only does it 
 
 As I said, the function is actually simple. It relies on parsing the string character after character in order to map them to actual numbers. Then once you have numbers &mdash; well &mdash; you can do pretty much any thing. Let's start with the skeleton, shall we?
 
-<pre class="language-scss"><code>@function number($string) {
+```scss
+@function number($string) {
   // Matrices
   $strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
   $numbers:  0   1   2   3   4   5   6   7   8   9;
@@ -32,11 +33,13 @@ As I said, the function is actually simple. It relies on parsing the string char
   }
 
   @return $result;
-}</code></pre>
+}
+```
 
 I think you can see where this is going. Now let's have a look at what happens inside the loop:
 
-<pre class="language-scss"><code>@for $i from 1 through str-length($string) {
+```scss
+@for $i from 1 through str-length($string) {
   $character: str-slice($string, $i, $i);
   $index: index($strings, $character);
 
@@ -47,7 +50,8 @@ I think you can see where this is going. Now let's have a look at what happens i
 
   $number: nth($numbers, $index);
   $result: $result * 10 + $number;
-}</code></pre>
+}
+```
 
 And this is enough to cast any positive integer from a string. But wait! What about negative integers? Plus I told you `number`, not `integer`. Let's continue the journey!
 
@@ -55,7 +59,8 @@ And this is enough to cast any positive integer from a string. But wait! What ab
 
 Dealing with negative numbers is very easy: if we spot a dash (`-`) as a first character, then it's a negative number. Thus, all we have to do is to multiply `$result` by `-1` (as soon as `$result` isn't `0`).
 
-<pre class="language-scss"><code>@function number($string) {
+```scss
+@function number($string) {
 // ...
 $result: 0;
 $minus: false;
@@ -72,7 +77,8 @@ $minus: false;
   }
 
   @return if($minus, $result * -1, $result);
-}</code></pre>
+}
+```
 
 As I said, it is pretty straight forward.
 
@@ -81,7 +87,8 @@ As I said, it is pretty straight forward.
 
 Making sure we can convert floats and doubles took me a couple of minutes. I couldn't find a way to deal with numbers once the decimal dot has been found. I always ended up with a completely wrong result until I find a tricky way.
 
-<pre class="language-scss"><code>@function number($string) {
+```scss
+@function number($string) {
   // ...
   $result: 0;
   $divider: 0;
@@ -116,7 +123,8 @@ Making sure we can convert floats and doubles took me a couple of minutes. I cou
   }
 
   @return if($minus, $result * -1, $result);
-}</code></pre>
+}
+```
 
 Since it can be a little tricky to understand, let's try with a quick example. Here is what happen when we try to cast "13.37" to a number:
 
@@ -145,7 +153,8 @@ All we have left is the ability to retrieve the correct unit from the string and
 
 First we need to get the unit as a string. It's basically the string starting from the first not-numeric character. In `"42px"`, it would be `"px"`. We only need to slightly tweak our function to get this.
 
-<pre class="language-scss"><code>@function number($string) {
+```scss
+@function number($string) {
   // ...
   @for $i from 1 through str-length($string) {
     // ...
@@ -164,11 +173,13 @@ First we need to get the unit as a string. It's basically the string starting fr
     }
   }
   // ...
-}</code></pre>
+}
+```
 
 If we come to find a character that is neither `-`, nor `.` nor a number, it means we are moving onto the unit. Then we can return the result of the `_length` function.
 
-<pre class="language-scss"><code>@function _length($number, $unit) {
+```scss
+@function _length($number, $unit) {
   $strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw' 'vh' 'vmin' 'vmax';
   $units:   1px  1cm  1mm  1%  1ch  1pica  1in  1em  1rem  1pt  1pc  1ex  1vw  1vh  1vmin  1vmax;
   $index: index($strings, $unit);
@@ -179,7 +190,8 @@ If we come to find a character that is neither `-`, nor `.` nor a number, it mea
   }
 
   @return $number * nth($units, $index);
-}</code></pre>
+}
+```
 
 The idea is the same as for the `number` function. We retrieve the string in the `$strings` list in order to map it to an actual CSS length from the `$units` list, then we return the product of `$number` and the length. If the unit doesn't exist, we simply return false.
 
@@ -187,7 +199,8 @@ The idea is the same as for the `number` function. We retrieve the string in the
 
 If you want to play with the code or the function, you can check it on [SassMeister](http://sassmeister.com/gist/9647408). In any case, here are a couple of examples of our awesome little function:
 
-<pre class="language-scss"><code>sass {
+```scss
+sass {
   cast: number("-15");    // -15
   cast: number("-1");     // -1
   cast: number("-.5");    // -.5
@@ -207,7 +220,8 @@ If you want to play with the code or the function, you can check it on [SassMeis
 
   cast: number("1fail");  // Error
   cast: number("string"); // Error
-}</code></pre>
+}
+```
 
 ## Final words
 

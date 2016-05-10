@@ -19,9 +19,10 @@ SJSJ is community-driven. It means that while I take care of the repository and 
 
 The main problem is that when contributors want to link to another entry from their content, they do something like this:
 
-<pre class="language-markdown"><code>Redux is an alternative to [Flux](/glossary/FLUX.md) and used a lot together with [React](/glossary/REACT.md),
+```markdown
+Redux is an alternative to [Flux](/glossary/FLUX.md) and used a lot together with [React](/glossary/REACT.md),
 but you can use it with any other view library.
-</code></pre>
+```
 
 When clicking such a link on GitHub, it will head to the file `FLUX.md` file located in the `glossary/` folder for instance. Very good. Except that I needed these links to work the same on the Jekyll website. 
 
@@ -35,11 +36,12 @@ It turns out Jekyll 3 has lovely support for [collections](https://jekyllrb.com/
 
 I created a `glossary` collection, containing all the Markdown files, outputting pages at `/glossary/<path>/`:
 
-<pre class="language-yaml"><code>collections:
+```yaml
+collections:
   glossary:
     output: true
     permalink: /glossary/:path/
-</code></pre>
+```
 
 A few problems there already. For starters, a collection folder has to be prefixed with an underscore (`_`) in Jekyll, so the files would actually live in `/_glossary/` but served over `/glossary/`. Secondly, in-content links are rooting to `/glossary/<path>.md`, not `/glossary/<path>/` so they were broken. Bummer. There has to be a way.
 
@@ -47,19 +49,21 @@ A few problems there already. For starters, a collection folder has to be prefix
 
 The first issue is easily fixed by tweaking the permalink configuration to serve files over `/_glossary/` to have a 1:1 mapping between the folder structure and the URL routing:
 
-<pre class="language-yaml"><code>collections:
+```yaml
+collections:
   glossary:
     output: true
     permalink: /_glossary/:path/
-</code></pre>
+```
 
 I thought the second problem would be harder to fix, but it turns out I could simply serve entries with a URL ending in `.md`. I believe under the hood all this is just URL rewriting, so it was not an issue at all.
 
-<pre class="language-yaml"><code>collections:
+```yaml
+collections:
   glossary:
     output: true
     permalink: /_glossary/:path.md
-</code></pre>
+```
 
 Tada! Files are located at `/_glossary/<path>.md`, served over `/_glossary/<path>.md`. 1:1 mapping, site is browsable in both GitHub and Jekyll seamlessly.
 

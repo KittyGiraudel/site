@@ -55,16 +55,16 @@ At this stage, I invited them to open the file inside Chrome (because I knew Chr
 
 We encountered the first encoding issues (since we did not add a charset meta) with German and Japanese characters. We solved it by adding the `<html>` element, the `<body>` element, and a `<head>` element with the charset meta tag only.
 
-<pre class="language-markup"><code>
-&lt;html lang="en">
-  &lt;head>
-    &lt;meta charset="utf-8" />
-  &lt;/head>
-  &lt;body>
+```html
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
     Content…
-  &lt;/body>
-&lt;/html>
-</code></pre>
+  </body>
+</html>
+```
 
 
 I took this as an opportunity to introduce HTML attributes, such as `lang` on the `<html>` element. Retrospectively, I am not sure it was a good timing for that. Maybe it was unnecessary complexity at this stage.
@@ -75,11 +75,13 @@ This marked the end of the first half-day and the HTML part.
 
 I did not want to start right away with the `<link>` tag and how to connect a stylesheet to the document, so I started the second half day with a practical example to introduce CSS. 
 
-<pre class="language-css"><code>
+```css
+
 h1 {
   color: pink;
 }
-</code></pre>
+
+```
 
 Simple enough, but for someone with no clue how CSS works, there are already quite a few things going on there: a selector, a rule, a property, a value, a declaration, a motherfucking semi-colon… After a few explanations on this snippet, we actually created a stylesheet and used the `<link>` tag to connect it to the HTML document.
 

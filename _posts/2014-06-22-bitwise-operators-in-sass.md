@@ -34,7 +34,8 @@ Let's put this very simple: bitwise operators are operators for numbers expresse
 
 To illustrate this explanation, allow me to have a little example (inspired from [Wikipedia](http://en.wikipedia.org/wiki/Bitwise_operation#Bitwise_operators)):
 
-<pre class="language-"><code># ~7
+```
+# ~7
 NOT 0111 (decimal 7)
   = 1000 (decimal 8)
 
@@ -59,7 +60,8 @@ XOR 1010 (decimal 10)
 
 # 23 >> 1
    00010111 (decimal 23) RIGHT-SHIFT 1
-=  00001011 (decimal 11)</code></pre>
+=  00001011 (decimal 11)
+```
 
 As you can see, the idea is pretty straightforward:
 
@@ -116,8 +118,10 @@ I won't dig into Sass code because it doesn't have much point. Let's just have a
 
 On top of that, we have built a `bitwise()` function (aliased as `bw()`) which provides a more friendly API when dealing with bitwise operations. It accepts any number of queued bitwise operations, where operators are quoted. For instance:
 
-<pre class="language-scss"><code>// 42 | 38 | 24
-$value: bitwise(42 '|' 38 '|' 24);</code></pre>
+```scss
+// 42 | 38 | 24
+$value: bitwise(42 '|' 38 '|' 24);
+```
 
 So that's not too bad. The fact that operators have to be quoted for Sass not to crash is kind of annoying, but I suppose we can live with it. Other than that, it's pretty much like if you were doing bitwise operations in other language, except you wrap all this stuff in `bitwise()` or `bw()`. In my opinion, the API is pretty simple to use.
 
@@ -127,7 +131,9 @@ Let's be honest: there is none. Sass is not a low-level programming language. It
 
 Here is a great [introduction to bit flags](http://forum.codecall.net/topic/56591-bit-fields-flags-tutorial-with-example/) but I'll try to sum up. The idea behind *bit flags* is to have a collection of flags (think of them as options) mapped to powers of 2 (usually with an `enum` field in C/C++). Each option will have its own bit flag.
 
-<pre style="line-height: .9"><code>00000000 Bin    | Dec
+<div style="line-height: .9">
+```
+00000000 Bin    | Dec
 │││││││└ 1 << 0 | 1
 ││││││└─ 1 << 1 | 2
 │││││└── 1 << 2 | 4
@@ -135,66 +141,82 @@ Here is a great [introduction to bit flags](http://forum.codecall.net/topic/5659
 │││└──── 1 << 4 | 16
 ││└───── 1 << 5 | 32
 │└────── 1 << 6 | 64
-└─────── 1 << 7 | 128</code></pre>
+└─────── 1 << 7 | 128
+```
+</div>
 
 Now, let's say option A is `1 << 0` (DEC 1) and option B is `1 << 1` (DEC 2). If we *OR* them:
 
-<pre class="language-"><code>   00000001 (A)
+```
+   00000001 (A)
 OR 00000010 (B)
- = 00000011</code></pre>
+ = 00000011
+```
 
 The result &mdash; let's call it *Z* &mdash; holds both options, right? To retrieve separately A and B from Z, we can use the *AND* operator:
 
-<pre class="language-"><code>    00000011 (Z)
+```
+    00000011 (Z)
 AND 00000001 (A)
   = 00000001
 
     00000011 (Z)
 AND 00000010 (B)
-  = 00000010</code></pre>
+  = 00000010
+```
 
 So far so good. Now what if we try to *AND* Z and, option C (`1 << 2`).
 
-<pre class="language-"><code>    00000011 (Z)
+```
+    00000011 (Z)
 AND 00000100 (C)
-  = 00000000</code></pre>
+  = 00000000
+```
 
 The result of `Z & C` isn't equal to `C`, so we can safely assume the C option hasn't been passed.
 
 That's pretty much how bit flags work. Now let's apply it to Sass as an example of SassyBitwise. First thing to do, define a couple of flags:
 
-<pre class="language-scss"><code>// Flags
+```scss
+// Flags
 $A: bw(1 '<<' 0);
 $B: bw(1 '<<' 1);
 $C: bw(1 '<<' 2);
-$D: bw(1 '<<' 3);</code></pre>
+$D: bw(1 '<<' 3);
+```
 
 We also need a mixin that would theorically accepts multiple boolean options. As a proof of concept, our mixin will accept a single argument: `$options`, a **number**.
 
-<pre class="language-scss"><code>/// Custom mixin
+```scss
+/// Custom mixin
 /// @param {Number} $options - Bitwise encoded flags
 @mixin custom-test(/* number */ $options) {
   is-A-flag-set: bw($options '&' $A);
   is-B-flag-set: bw($options '&' $B);
   is-C-flag-set: bw($options '&' $C);
   is-D-flag-set: bw($options '&' $D);
-}</code></pre>
+}
+```
 
 And now we call it, passing it the result of a bitwise *OR* operation of all our flags.
 
-<pre class="language-scss"><code>// Call
+```scss
+// Call
 test {
   @include custom-test(bw($A '|' $C '|' $D));
-}</code></pre>
+}
+```
 
 As expected, the result is the following:
 
-<pre class="language-css"><code>test {
+```css
+test {
   is-A-flag-set: true;
   is-B-flag-set: false;
   is-C-flag-set: true;
   is-D-flag-set: true;
-}</code></pre>
+}
+```
 
 ## Final thoughts
 

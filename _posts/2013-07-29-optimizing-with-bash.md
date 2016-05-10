@@ -50,10 +50,12 @@ To add a package, click on the *"Skip"* label to switch it to a package version.
 
 Once Cygwin is fully installed, simply open a Cygwin terminal. Let's create a workspace to host our optimization script: we create a *"workspace"* directory in the current user home:
 
-<pre class="language-bash"><code># Create the workspace folder
+```bash
+# Create the workspace folder
 mkdir workspace
 # Enter the workspace folder
-cd workspace</code></pre>
+cd workspace
+```
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/workspace.png" alt="" />
@@ -170,10 +172,12 @@ Now, we have to create this `optimize_image()` method which is going to be fairl
 
 Let's add some useful output to see progress and the final stats. What about something like this:
 
-<pre class="language-bash"><code>file1 ...................... [ DONE ]
+```bash
+file1 ...................... [ DONE ]
 file2 ...................... [ DONE ]
 file_with_a_long_name ...... [ DONE ]
-...</code></pre>
+...
+```
 
 Would be neat, wouldn't it? To do this, we first need to find the longest filename by doing a fast loop on the files.
 
@@ -197,12 +201,14 @@ Finally, in the main loop we display the filename then the *"."* symbols and the
 
 Let's try it by running the following command:
 
-<pre class="language-bash"><code># All parameters to default
+```bash
+# All parameters to default
 ./optimize.sh
 # Or with custom options
 ./optimize.sh --input images --output optimized-images
 # Or with custom options and shorthand
-./optimize.sh -i images -o optimized-images</code></pre>
+./optimize.sh -i images -o optimized-images
+```
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/output-console.png" alt="" />
@@ -243,7 +249,8 @@ Keep it up guys, we are almost done! We just have to display progress output if 
 
 Below lies the final script or you can grab it directly from [this GitHub gist](https://gist.github.com/lgiraudel/6065155).
 
-<pre><code class="language-bash">#!/bin/bash
+```bash
+#!/bin/bash
  
 PROGNAME=${0##*/}
 INPUT=''
@@ -254,14 +261,14 @@ max_output_size=0
  
 usage()
 {
-  cat &lt;&lt;EO
+  cat <<EO
 Usage: $PROGNAME [options]
  
 Script to optimize JPG and PNG images in a directory.
  
 Options:
 EO
-cat &lt;&lt;EO | column -s\& -t
+cat <<EO | column -s\& -t
 	-h, --help  	   & shows this help
 	-q, --quiet 	   & disables output
 	-i, --input [dir]  & specify input directory (current directory by default)
@@ -414,7 +421,8 @@ while true; do
 	shift
 done
  
-main</code></pre>
+main
+```
 
 ## What now ?
 

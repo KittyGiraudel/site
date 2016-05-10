@@ -26,7 +26,7 @@ I should have kept this in mind during those months, and so should you if you ha
 
 The first thing I can tell is that you will run out of time, I guarantee it. And this, no matter how long your editor gives you to write your book. There is never enough time, because it is never finished.
 
-![You will run out of time, I guarantee it.](/images/what-i-learnt-from-writing-a-book/book-meme.jpeg)
+![You will run out of time, I guarantee it.](/assets/images/what-i-learnt-from-writing-a-book/book-meme.jpeg)
 
 Trust me, you will always find things to improve. I found myself writing new sections and examples a couple of hours before handing the book back to the editor. And if I had a couple of extra days, I'd have spent those until I needed three more...
 

@@ -30,7 +30,9 @@ Okay, this is no magic. I had to write all the words Arley used all over again. 
 
 So basically I created a Sass list containing all words ordered from the longest to the shortest. Hopefully, Arley already did this part of the job before me so I didn't have to do it again.
 
-<pre class="language-scss"><code>$words: "Unconventional", "Flabbergasting", "Scintillating", "Extraordinary", "Unforgettable", "Unpredictable", "Dumbfounding", "Electrifying", "Overwhelming", "Incomparable", "Entertaining", "Magnificient", "Confounding", "Resourceful", "Interesting", "Adventurous", "Bewildering", "Astonishing", "Fascinating", "Outstanding", "Influential", "Imaginative", "Nonsensical", "Stimulating", "Exceptional", "Resplendent", "Commanding", "Determined", "Remarkable", "Incredible", "Impressive", "Perplexing", "Passionate", "Formidable", "Stupefying", "Refreshing", "Delightful", "Incredible", "Innovative", "Monumemtal", "Surprising", "Stupendous", "Staggering", "Delectable", "Astounding", "Responsive", "Courageous", "Outlandish", "Marvelous", "Whimsical", "Versatile", "Motivated", "Brilliant", "Eccentric", "Wonderful", "Excellent", "Thrilling", "Inspiring", "Exquisite", "Inventive", "Colourful", "Delicious", "Fantastic", "Audacious", "Dexterous", "Different", "Confident", "Enthused", "Peculiar", "Glorious", "Smashing", "Splendid", "Adaptive", "Daunting", "Imposing", "Striking", "Charming", "Dazzling", "Engaging", "Resolute", "Intrepid", "Dramatic", "Original", "Fearless", "Flexible", "Creative", "Animated", "Puzzling", "Shocking", "Intense", "Elastic", "Pointed", "Unusual", "Devoted", "Amusing", "Radiant", "Refined", "Natural", "Dynamic", "Radical", "Bizarre", "Curious", "Amazing", "Lively", "Modest", "Mighty", "August", "Unique", "Absurd", "Brazen", "Crafty", "Astute", "Shrewd", "Daring", "Lovely", "Nimble", "Classy", "Humble", "Limber", "Superb", "Super", "Ready", "Crazy", "Proud", "First", "Light", "Alert", "Lithe", "Fiery", "Eager", "Quick", "Risky", "Adept", "Sharp", "Smart", "Brisk", "Fresh", "Swift", "Novel", "Giant", "Funky", "Weird", "Grand", "Alive", "Happy", "Keen", "Bold", "Wild", "Spry", "Zany", "Nice", "Loud", "Lean", "Fine", "Busy", "Cool", "Rare", "Apt", "Fun", "Hot", "Big";</code></pre>
+```scss
+$words: "Unconventional", "Flabbergasting", "Scintillating", "Extraordinary", "Unforgettable", "Unpredictable", "Dumbfounding", "Electrifying", "Overwhelming", "Incomparable", "Entertaining", "Magnificient", "Confounding", "Resourceful", "Interesting", "Adventurous", "Bewildering", "Astonishing", "Fascinating", "Outstanding", "Influential", "Imaginative", "Nonsensical", "Stimulating", "Exceptional", "Resplendent", "Commanding", "Determined", "Remarkable", "Incredible", "Impressive", "Perplexing", "Passionate", "Formidable", "Stupefying", "Refreshing", "Delightful", "Incredible", "Innovative", "Monumemtal", "Surprising", "Stupendous", "Staggering", "Delectable", "Astounding", "Responsive", "Courageous", "Outlandish", "Marvelous", "Whimsical", "Versatile", "Motivated", "Brilliant", "Eccentric", "Wonderful", "Excellent", "Thrilling", "Inspiring", "Exquisite", "Inventive", "Colourful", "Delicious", "Fantastic", "Audacious", "Dexterous", "Different", "Confident", "Enthused", "Peculiar", "Glorious", "Smashing", "Splendid", "Adaptive", "Daunting", "Imposing", "Striking", "Charming", "Dazzling", "Engaging", "Resolute", "Intrepid", "Dramatic", "Original", "Fearless", "Flexible", "Creative", "Animated", "Puzzling", "Shocking", "Intense", "Elastic", "Pointed", "Unusual", "Devoted", "Amusing", "Radiant", "Refined", "Natural", "Dynamic", "Radical", "Bizarre", "Curious", "Amazing", "Lively", "Modest", "Mighty", "August", "Unique", "Absurd", "Brazen", "Crafty", "Astute", "Shrewd", "Daring", "Lovely", "Nimble", "Classy", "Humble", "Limber", "Superb", "Super", "Ready", "Crazy", "Proud", "First", "Light", "Alert", "Lithe", "Fiery", "Eager", "Quick", "Risky", "Adept", "Sharp", "Smart", "Brisk", "Fresh", "Swift", "Novel", "Giant", "Funky", "Weird", "Grand", "Alive", "Happy", "Keen", "Bold", "Wild", "Spry", "Zany", "Nice", "Loud", "Lean", "Fine", "Busy", "Cool", "Rare", "Apt", "Fun", "Hot", "Big";
+```
 
 Pretty big, right? Don't worry, the worst part is over. Now it's all about easy and interesting stuff.
 
@@ -43,7 +45,8 @@ Pretty big, right? Don't worry, the worst part is over. Now it's all about easy 
 
 Now we have the list, we only have to loop through all items in it and do something, right?
 
-<pre class="language-scss"><code>$max: 1910px; /* [1] */
+```scss
+$max: 1910px; /* [1] */
 .be:after {
   @each $word in $words { /* [2] */
       @media screen and (max-width: $max) { /* [3] */
@@ -51,7 +54,8 @@ Now we have the list, we only have to loop through all items in it and do someth
       }
       $max: $max - 10; /* [5] */
     }
-}</code></pre>
+}
+```
 
 1. First, we set a max value (not necessarly px) for the first Media Query call we will do; from there, it will decrease from 10 to 10,
 2. We loop through all items in the list,
@@ -61,7 +65,8 @@ Now we have the list, we only have to loop through all items in it and do someth
 
 Please note we also could write it this way:
 
-<pre class="language-scss"><code>$max: 1910px;
+```scss
+$max: 1910px;
 @each $word in $words {
   @media screen and (max-width: $max) {
     .be:after {
@@ -69,7 +74,8 @@ Please note we also could write it this way:
       }
     }
     $max: $max - 10;
-}</code></pre>
+}
+```
 
 This outputs exactly the same thing. It's really a matter of where you want to put the Media Query call: inside or outside the selector.
 

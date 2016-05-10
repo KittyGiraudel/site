@@ -62,7 +62,7 @@ As I said above, RGB stands for Red, Green and Blue. Remember when you were a li
 </tr>
 </table>
 
-> ![Color cube](/images/css-colors/color-cube.jpg) This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.
+> ![Color cube](/assets/images/css-colors/color-cube.jpg) This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.
 
 ### How do we define RGB colors?
 
@@ -75,9 +75,10 @@ A RGB value can be defined using four different syntaxes but only two of them ar
 * A float number from 0 to 1 (0.58935); it’s more like a theoretical approach **unavailable in CSS**
 * A large integer 10, 16, 24, 32, 48 or even 64-bit units, but clearly that's **unavailable in CSS**
 
-So, summarized, we end up with two different ways to display CSS colors with the <code>rgb()</code> function: percentages and integers between 0 and 255. Let’s illustrate this with an example, shall we?
+So, summarized, we end up with two different ways to display CSS colors with the `rgb()` function: percentages and integers between 0 and 255. Let’s illustrate this with an example, shall we?
 
-<pre class="language-css"><code>.black { /* I’m black! */
+```css
+.black { /* I’m black! */
 	color: rgb(0, 0, 0);
 	color: rgb(0%, 0%, 0%);
 }
@@ -100,7 +101,8 @@ So, summarized, we end up with two different ways to display CSS colors with the
 .dark-purple { /* I’m deep purple! */
 	color: rgb(64, 0, 64);
 	color: rgb(25%, 0%, 25%);
-}</code></pre>
+}
+```
 
 **Important**: when using percentages, you have to set the unit even if it is 0. If you don’t, some browsers may be unable to parse it.
 
@@ -110,9 +112,10 @@ So, summarized, we end up with two different ways to display CSS colors with the
 
 As seen previously, while using the RGB system we can also use an alpha channel which is by default set to 1. This channel allows us to modify the opacity of a color, or its transparency if you will.
 
-To use this channel in CSS, you’ll call the <code>rgba()</code> function instead of the <code>rgb()</code>. However note the alpha-channel is always defined with a float clamped between 0 and 1.
+To use this channel in CSS, you’ll call the `rgba()` function instead of the `rgb()`. However note the alpha-channel is always defined with a float clamped between 0 and 1.
 
-<pre class="language-css"><code>.black { /* I’m half transparent black! */
+```css
+.black { /* I’m half transparent black! */
 	color: rgba(0, 0, 0, 0.5);
 	color: rgba(0%, 0%, 0%, 0.5);
 }
@@ -125,24 +128,27 @@ To use this channel in CSS, you’ll call the <code>rgba()</code> function inste
 .red { /* I’m fully transparent red, so kind of invisible */
 	color: rgba(255, 0, 0, 0);
 	color: rgba(100%, 0%, 0%, 0);
-}</code></pre>
+}
+```
 
 This can be very useful in various situation. Let’s say you have some kind of background image and want to write on it without losing readability or putting a big white box on top of it. This is the perfect usecase for RGBa!
 
-<pre class="language-css"><code>.parent {
+```css
+.parent {
 	background-image: url(‘my-picture.jpg’);
 }
 
 .child {
 	background: rgba(255, 255, 255, 0.75);
 	color: rgb(51, 51, 51);
-}</code></pre>
+}
+```
 
 This way, the child element will have a white background with 75% opacity, showing its parent’s background without risking any issue with readability.
 
-*Note: when dealing with decimal values between 0 and 1, you don’t have to write the 0 before the dot. So you can write <code>rgba(0, 0, 0, .5)</code> and still be perfectly valid.
+*Note: when dealing with decimal values between 0 and 1, you don’t have to write the 0 before the dot. So you can write `rgba(0, 0, 0, .5)` and still be perfectly valid.
 
-*Note: the <code>rgb()</code> function is perfectly valid CSS2.1. However the <code>rgba()</code> function is part of the CSS3 specification and is not supported by all browsers (Internet Explorer 6, 7, 8).*
+*Note: the `rgb()` function is perfectly valid CSS2.1. However the `rgba()` function is part of the CSS3 specification and is not supported by all browsers (Internet Explorer 6, 7, 8).*
 
 ## Hexadecimal
 
@@ -172,7 +178,7 @@ Alas, you can’t edit the alpha-channel when defining colors in hexadecimal, it
 
 The fact is, hexadecimal is really unfriendly. Nobody knows what color is associated to a hex triplet at the first glance, because it’s a computed syntax by the machine and for the machine.
 
-RGB is slightly better, especially when you’re using percentage values but it’s not wonderful either. If I tell you <code>rgb(54%, 69%, 23%)</code>, can you tell me what color it will be? Even approximately? I guess not.
+RGB is slightly better, especially when you’re using percentage values but it’s not wonderful either. If I tell you `rgb(54%, 69%, 23%)`, can you tell me what color it will be? Even approximately? I guess not.
 
 That’s why there are keywords. Keywords are real color names like red, green and blue associated to actual RGB / hex triplets. Back in the days, the HTML 4.01 Standard proposed 16 different keywords:
 
@@ -199,7 +205,7 @@ That’s why there are keywords. Keywords are real color names like red, green a
 
 I won’t list all of them here because it would be too long however, this is a visualization of all of them on a hue wheel by [Eric Meyer](http://meyerweb.com/eric/css/colors/hsl-147.html) (see [annotated version by Tab Atkins Jr.](http://www.xanthir.com/blog/b4JC0)):
 
-![Color wheel](/images/css-colors/color-wheel.jpg)
+![Color wheel](/assets/images/css-colors/color-wheel.jpg)
 
 The point of this work is to show keywords are associated to random colors: they are chosen according to their position on the hue wheel.
 
@@ -213,11 +219,11 @@ The point of keywords is to use basic colors with words that actually mean somet
 
 ### Special keywords
 
-There are two keywords which are a little bit special since they do not refer to a RGB triplet. Those are <code>transparent</code> and <code>currentColor</code>.
+There are two keywords which are a little bit special since they do not refer to a RGB triplet. Those are `transparent` and `currentColor`.
 
 #### Transparent
 
-The transparent value exists since CSS1 but was only valid as a value for the background property. Nowadays <code>transparent</code> is a valid keyword for any property accepting a color value (color, border-color, background, shadows, gradients, etc.).
+The transparent value exists since CSS1 but was only valid as a value for the background property. Nowadays `transparent` is a valid keyword for any property accepting a color value (color, border-color, background, shadows, gradients, etc.).
 
 Its effect is pretty straight forward: it makes the color (or background-color or whatever) of the element transparent, as it is by default when no color is specified.
 
@@ -227,14 +233,16 @@ What’s the point you say? To restore the default transparent color if a color 
 
 The currentColor is a CSS3 value allowing you to take the color as a default value for another property. Have a look at the code below.
 
-<pre class="language-css"><code>.my-element {
+```css
+.my-element {
 color: red;
 	border-color: 5px solid currentColor;
-}</code></pre>
+}
+```
 
 The border will be red since the defined color is red. If no color was set, it would have been black, since the default value for the color property is black.
 
-You want to know what’s awesome? <code>currentColor</code> is a default value for a bunch of things. From my tests:
+You want to know what’s awesome? `currentColor` is a default value for a bunch of things. From my tests:
 
 * Border-color
 * Color component in box-shadow
@@ -242,12 +250,14 @@ You want to know what’s awesome? <code>currentColor</code> is a default value 
 
 It means you can do one of those and be perfectly valid:
 
-<pre class="language-css"><code>.my-element {
+```css
+.my-element {
 	color: red;
 	border-color: 5px solid;   /* This will be red */
 	box-shadow: 10px 10px 5px; /* This will be red */
 	text-shadow: 0 2px 1px;    /* This will be red */
-}</code></pre>
+}
+```
 
 *Note: the cap on the C letter is not required. It’s only a writing convention.*
 
@@ -257,13 +267,13 @@ It means you can do one of those and be perfectly valid:
 
 HSL stands for Hue, Saturation and Lightness. Please don’t worry, HSL is not another format of color. It’s only another representation of the RGB model. This cylindric representation aims at showing the RGB model in a more intuitive way than the previous seen cube.
 
-![Color HSL](/images/css-colors/color-hsl.jpg)
+![Color HSL](/assets/images/css-colors/color-hsl.jpg)
 
 #### Hue
 
 The angle around the central vertical axis of the cylinder corresponds to the “hue”, which is basically the color you want. Take a chromatic wheel: at 0° you have red, at 120° you have green, at 240°you have blue and you go back to red when you reach 360°.
 
-![Color Wheel](/images/css-colors/color-wheel.png)
+![Color Wheel](/assets/images/css-colors/color-wheel.png)
 
 #### Saturation
 
@@ -281,7 +291,8 @@ To describe a color using the HSL representation, you have to define parameters 
 * **Saturation**: if you want a pure color, then the saturation value will be 100%. If you want some kind of grey, try a value lower than 100%.
 * **Lightness**: if you want a pure color, then the lightness value will be 50%. If you want a light color, try something between 50% and 100%. If you want something dark, try below 50%.
 
-<pre class="language-css"><code>.white { /* I’m white! */
+```css
+.white { /* I’m white! */
 	color: hsl(0, 0%, 100%);
 }
 
@@ -291,9 +302,10 @@ To describe a color using the HSL representation, you have to define parameters 
 
 .red { /* I’m red! */
 	color: hsl(0, 100%, 50%);
-}</code></pre>
+}
+```
 
-*Note: when you want black or white, whatever the hue value you set since it’s not on the wheel. It means <code>hsl(0, 0%, 100%)</code>, <code>hsl(120, 0%, 100%)</code> and <code>hsl(240, 0%, 100%)</code> are all 3 white.
+*Note: when you want black or white, whatever the hue value you set since it’s not on the wheel. It means `hsl(0, 0%, 100%)`, `hsl(120, 0%, 100%)` and `hsl(240, 0%, 100%)` are all 3 white.
 
 *Note: the hue value is expressed in degrees but you don’t have to set the unit. Actually you must not set the unit; the parser won’t understand it.
 
@@ -301,20 +313,22 @@ To describe a color using the HSL representation, you have to define parameters 
 
 As for RGBa, you can set a value for the alpha-channel on a HSL color. It works exactly the same way RGBa does: it accepts a float value between 0 and 1 such as 0.56.
 
-<pre class="language-css"><code>.parent {
+```css
+.parent {
 	background-image: url(‘my-picture.jpg’);
 }
 
 .child {
 	background: hsla(0, 0%, 100%, 0.75);
 	color: hsl(0, 0%, 30%);
-}</code></pre>
+}
+```
 
 ## System colors
 
 You may or may not have heard about System colors. At first, I didn’t want to talk about them because they are deprecated in the CSS3 specification but I thought it could be interesting to drop a few lines just in a matter of curiosity.
 
-System colors are a little bit special since they are not matched to a RGB equivalent, at least not directly. They are keywords associated to a color related to the user’s operating system (Windows XP, Mac OS X, Linux Ubuntu, etc.) like <code>buttonFace</code> or <code>activeBorder</code>.
+System colors are a little bit special since they are not matched to a RGB equivalent, at least not directly. They are keywords associated to a color related to the user’s operating system (Windows XP, Mac OS X, Linux Ubuntu, etc.) like `buttonFace` or `activeBorder`.
 
 Since the goal of CSS specifications is to standardize things, you understand why they announced System colors as deprecated. Plus, not all operating systems support all the System color keywords; basically it’s a mess.
 
@@ -322,9 +336,10 @@ If you want a complete list of system color keywords, please refer to [this docu
 
 ## What to use when?
 
-Honestly, this is really up to you. In the end, a RGB triplet is generated, parsed and applied no matter the way you displayed it. The browser parser doesn’t care if you prefer <code>hsl(0, 100%, 50%)</code> over <code>rgba(255, 0, 0, 1)</code>.
+Honestly, this is really up to you. In the end, a RGB triplet is generated, parsed and applied no matter the way you displayed it. The browser parser doesn’t care if you prefer `hsl(0, 100%, 50%)` over `rgba(255, 0, 0, 1)`.
 
-<pre class="language-css"><code>/* This will be red, whatever you pick */
+```css
+/* This will be red, whatever you pick */
 .red { color: red; } 
 .red { color: #f00; }
 .red { color: #ff0000; }
@@ -333,7 +348,8 @@ Honestly, this is really up to you. In the end, a RGB triplet is generated, pars
 .red { color: rgba(255, 0, 0, 1); }
 .red { color: rgba(100%, 0%, 0%, 1); }
 .red { color: hsl(0, 100%, 50%); }
-.red { color: hsla(0, 100%, 50%, 1); }</code></pre>
+.red { color: hsla(0, 100%, 50%, 1); }
+```
 
 Now if you want my way of doing with colors, here is what I do in most cases:
 
@@ -350,7 +366,8 @@ CSS preprocessors (at least some of them) provide built-in functions to play wit
 
 ### LESS (<a href="http://lesscss.org/#-color-functions">doc)
 
-<pre class="language-scss"><code>lighten(@color, @percentage);               /* Makes lighter */
+```scss
+lighten(@color, @percentage);               /* Makes lighter */
 darken(@color, @percentage);                /* Makes darker */
 
 saturate(@color, @percentage);              /* Makes more saturated*/
@@ -363,11 +380,13 @@ fade(@color, @percentage);                  /* Gives the color 50% opacity */
 spin(@color, @degrees);                     /* Rotates the hue wheel 10° */
 
 mix(@color1, @color2, @percentage);         /* Mixes 2 colors with a default weight of 50% */
-contrast(@color1, @darkcolor, @lightcolor); /* Returns @darkcolor if the color is >50% luma (i.e. is a light color) otherwise return @lightcolor */</code></pre>
+contrast(@color1, @darkcolor, @lightcolor); /* Returns @darkcolor if the color is >50% luma (i.e. is a light color) otherwise return @lightcolor */
+```
 
 ### Sass (<a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html">doc)
 
-<pre class="language-scss"><code>rgba($color, $alpha)               /* Convert a hex color into a RGBa one */
+```scss
+rgba($color, $alpha)               /* Convert a hex color into a RGBa one */
 red($color)                        /* Gets the red component */
 green($color)                      /* Gets the green component */
 blue($color)                       /* Gets the blue component */
@@ -391,18 +410,22 @@ opacity($color)                     /* Gets the alpha component (opacity) */
 opacify($color, $percentage)        /* Makes more opaque */
 fade-in($color, $percentage)        /* Makes more opaque */
 transparentize($color, $percentage) /* Makes more transparent */
-fade-out($color, $percentage)       /* Makes more transparent */</code></pre>
+fade-out($color, $percentage)       /* Makes more transparent */
+```
 
 ### CSS Crush (<a href="http://the-echoplex.net/csscrush/">doc)
 
-<pre class="language-scss"><code>h-adjust($color $value)             /* Rotates the hue wheel */
+```scss
+h-adjust($color $value)             /* Rotates the hue wheel */
 s-adjust($color $value)             /* Changes the saturation */
 l-adjust($color $value)             /* Changes the lightness */
-a-adjust($color $value)             /* Changes the alpha-channel */</code></pre>
+a-adjust($color $value)             /* Changes the alpha-channel */
+```
 
 ### Stylus (<a href="http://learnboost.github.com/stylus/docs/bifs.html">doc)
 
-<pre class="language-scss"><code>red(color)          /* Gets the red component */
+```scss
+red(color)          /* Gets the red component */
 green(color)        /* Gets the green component */
 blue(color)         /* Gets the blue component */
 alpha(color)        /* Gets the alpha component */
@@ -411,7 +434,8 @@ dark(color)         /* Makes lighter */
 light(color)        /* Makes darker */
 hue(color)          /* Gets the hue component */
 saturation(color)   /* Gets the saturation component */
-lightness(color)    /* Gets the lightness component */</code></pre>
+lightness(color)    /* Gets the lightness component */
+```
 
 ## Final words
 

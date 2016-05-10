@@ -45,7 +45,9 @@ Everything started from [a tweet](https://twitter.com/gregwhitworth/status/62721
 
 It does look illegible. As most regular expressions. I started discussing with Greg about what he was trying to achieve and learnt he wanted to find CSS attribute selectors in a document. It seemed like a fun challenge so I spent a few minutes on it and came up with this:
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(\s+i)?)?]</code></pre>
+```regex
+\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(\s+i)?)?]
+```
 
 In this article, we will see how to come up with such a monster, and what are the required steps to get there. But first, let’s be clear on what we want to match: attribute selectors. These are some examples of selectors we want to match:
 
@@ -89,7 +91,9 @@ To match a word character, we can use the `\w` meta character. This literally me
 
 So the very first version of our regular expression to match an attribute selector would look like this:
 
-<pre class="language-regex"><code>\[\w+]</code></pre>
+```regex
+\[\w+]
+```
 
 Let’s dissect it:
 
@@ -107,7 +111,9 @@ So far so good, right? Let’s check our test list to see how our regular expres
 
 Oops, `\w+` is actually not quite right! For starters, we do not want the attribute name to start with a number, and we don't want to allow underscores either, only hyphens. Along the same lines, uppercase letters are not actually allowed, so instead of `\w+` we should check for: `[a-z][a-z0-9-]*`. This means a mandatory latin letter that can be (but not necessarily) followed by any number of latin letters, numbers or hyphens. This is what the star (`*`) implies: from 0 to infinity. Our regex is now:
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*]</code></pre>
+```regex
+\[[a-z][a-z0-9-]*]
+```
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/02.png" alt="\[[a-z][a-z0-9-]*]" />
@@ -116,7 +122,9 @@ Oops, `\w+` is actually not quite right! For starters, we do not want the attrib
 
 To be completely honest, we could actually very slightly tweak our regular expression and stop here. Think about it: what if we said that an attribute selector is an opening bracket followed by anything, and then a closing bracket? As a regular expression, that would look like this:
 
-<pre class="language-regex"><code>\[[^\]]+]</code></pre>
+```regex
+\[[^\]]+]
+```
 
 This bracket mess literally means “find an opening square bracket, followed by anything that is not a closing square bracket, followed by a closing square bracket”. To do so, it relies on a negated set that we will see more in-depth in the next section.
 
@@ -131,7 +139,9 @@ Broadly speaking, it is more than enough to find attribute selectors in a styles
 
 We now want to match raw attribute selectors as well as attribute selectors checking for the value. For now, let’s focus on something like `[foo=bar]` without caring too much about modulators and quotes. Let’s put our current version here:
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*]</code></pre>
+```regex
+\[[a-z][a-z0-9-]*]
+```
 
 To match a value, we need to check for the presence of an equal sign (`=`), then a series of at least one character that is not a closing square bracket (for now). To match anything that is not a specific character we use a *negated set*, written as: `[^X]` where `X` is the character you do not want to match (escaped if needed).
 
@@ -139,7 +149,9 @@ To match a value, we need to check for the presence of an equal sign (`=`), then
 
 So to match anything that is not a closing square bracket, it is: `[^\]]`, as we’ve seen in the previous section. Our regex is now:
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*=[^\]]+]</code></pre>
+```regex
+\[[a-z][a-z0-9-]*=[^\]]+]
+```
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/04.png" alt="\[[a-z][a-z0-9-]*=[^\]]+]" />
@@ -148,7 +160,9 @@ So to match anything that is not a closing square bracket, it is: `[^\]]`, as we
 
 Oh-ho though... Now `[foo]` doesn't match anymore! That’s because we did not make the equal + something part optional. We can do that by wrapping it in parentheses and add a question mark right after it (`(..)?`). Like so:
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*(=[^\]]+)?]</code></pre>
+```regex
+\[[a-z][a-z0-9-]*(=[^\]]+)?]
+```
 
 The question mark says: 
 
@@ -161,7 +175,9 @@ The question mark says:
 
 That’s going somewhere! Attribute selectors can involve [a modulator](http://www.w3.org/TR/selectors4/#attribute-selectors) before the equal sign to add extra validations. There can be only 0 or 1 modulator at a time, and it has to be one of: `|`, `*`, `$`, `^`, `~`. We can make sure the modulator is valid by using a character set. To make it optional, there again we will use the question mark:
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*([|*$^~]?=[^\]]+)?]</code></pre>
+```regex
+\[[a-z][a-z0-9-]*([|*$^~]?=[^\]]+)?]
+```
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/06.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=[^\]]+)?]" />
@@ -184,11 +200,15 @@ To achieve this, we can use the alternation operator `|`:
 
 It gives us this pattern: 
 
-<pre class="language-regex"><code>("[^"\n]*"|'[^'\n]*'|[^"'\s]+)</code></pre>
+```regex
+("[^"\n]*"|'[^'\n]*'|[^"'\s]+)
+```
 
 Which we can now incorporate in our expression:
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+))?]</code></pre>
+```regex
+\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+))?]
+```
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/07.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+))?]" />
@@ -201,7 +221,9 @@ Which we can now incorporate in our expression:
 
 This flag (noted `i`) must be present after at least 1 space right before the closing square bracket. Testing for it in our regular expression is actually super easy using `\s+i`.
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(\s+i)?)?]</code></pre>
+```regex
+\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(\s+i)?)?]
+```
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/08.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)(\s+i)?)?]" />
@@ -220,11 +242,15 @@ You might be confused as we already used parentheses in our expression but not f
 
 To use parentheses as a grouping feature without capturing anything, it is needed to start their content with a question mark (`?`) directly followed by a colon (`:`), like this: `(?: ... )`. This intimates the engine not to capture what is being matched inside the parentheses. We should update our expression to avoid capturing the equal part (as well as the case-sentivity flag):
 
-<pre class="language-regex"><code>\[[a-z][a-z0-9-]*(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(?:\s+i)?)?]</code></pre>
+```regex
+\[[a-z][a-z0-9-]*(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(?:\s+i)?)?]
+```
 
 As you can see, we added `?:` right after the first opening parenthese so we do not capture what is being matched. On the other hand, the second opening parenthese, after the equal sign, is capturing the attribute value. Which could be desired! Now, if we want to capture the attribute name as well, we only have to wrap the relevant part of the regex in parentheses:
 
-<pre class="language-regex"><code>\[([a-z][a-z0-9-]*)(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(?:\s+i)?)?]</code></pre>
+```regex
+\[([a-z][a-z0-9-]*)(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(?:\s+i)?)?]
+```
 
 To make it easier to understand, consider this selector: `[href^="#"]`. When running the previous regular expression against it, we will capture 2 things:
 

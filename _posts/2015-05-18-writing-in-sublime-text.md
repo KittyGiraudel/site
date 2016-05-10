@@ -33,7 +33,8 @@ If there is one thing I do like with Sublime Text, it is the amount of options. 
 
 Most options default value make sense although there are some of theme that you might want to change. Here is my own configuration file (omitting a few boring things), annotated with comments to explain each choice:
 
-<pre class="language-javascript"><code>{
+```javascript
+{
   // Bold folder labels in the sidebar 
   // so they are distinguishable from regular files
   "bold_folder_labels": true,
@@ -71,7 +72,8 @@ Most options default value make sense although there are some of theme that you 
   
   // Make sure there are no tabs, only spaces
   "translate_tabs_to_spaces": true
-}</code></pre>
+}
+```
 
 ## Extra plugins
 
@@ -121,8 +123,10 @@ Last time I had a fresh install of Sublime Text, I realized how poor the default
 
 Paweł Grzybek, in the comments, asked for a spell checking feature. I don't use it myself, but I know that Sublime Text does support spell checking through 2 options:
 
-<pre class="language-javascript"><code>"spell_check": true,
-"dictionary": "Packages/Language - English/en_US.dic"</code></pre>
+```javascript
+"spell_check": true,
+"dictionary": "Packages/Language - English/en_US.dic"
+```
 
 The first one enables spell checking, and the second one is the dictionary used to perform the corrections. I am not entirely sure where to download a language dictionary file, but I suppose this is actually quite easy to find. If English is the only language you need spell checking for, then you can have direct out-of-the-box support for it. 
 

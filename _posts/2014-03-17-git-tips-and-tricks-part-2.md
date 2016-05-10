@@ -23,35 +23,44 @@ Unix and Windows systems have different end-of-line characters. This is a proble
 
 To stop viewing those `^M` symbols, just change the `whitespace` option:
 
-<pre class="language-git"><code>$ git config --global core.whitespace cr-at-eol</code></pre>
+```git
+$ git config --global core.whitespace cr-at-eol
+```
 
 ### Remove file prefix in diff
 
 By default, the `git diff` command displays the filename with either `a/` or `b/` prefix:
 
-<pre class="language-git"><code>$ git diff
+```git
+$ git diff
 diff --git a/Gruntfile.js b/Gruntfile.js
 index 74d58f9..569449c 100755
 &ndash;&ndash;&ndash; a/Gruntfile.js
-+++ b/Gruntfile.js</code></pre>
++++ b/Gruntfile.js
+```
 
 This prefix can be a little bit annoying when you want to quickly copy and past the filename (for instance to paste it in a `git add` command). Thus, the prefix is quite useless so you can remove it in the diff output with the `--no-prefix` parameter:
 
-<pre class="language-git"><code>$ git diff --no-prefix
+```git
+$ git diff --no-prefix
 diff --git Gruntfile.js Gruntfile.js
 index 74d58f9..569449c 100755
 &ndash;&ndash;&ndash; Gruntfile.js
-+++ Gruntfile.js</code></pre>
++++ Gruntfile.js
+```
 
 To avoid adding the flag on every single diff command, you can make it a default option in your config:
 
-<pre class="language-git"><code>$ git config --global --bool diff.noprefix true</code></pre>
+```git
+$ git config --global --bool diff.noprefix true
+```
 
 ## Create your own aliases
 
 Do you know that you can create your own Git aliases ?
 
-<pre class="language-git"><code>$ git config --global alias.co "checkout"
+```git
+$ git config --global alias.co "checkout"
 $ git config --global alias.br "branch"
 $ git config --global alias.cob "checkout -b"
 $ git config --global alias.rh "reset HEAD"
@@ -59,13 +68,16 @@ $ git config --global alias.rh "reset HEAD"
 $ git co master
 $ git br someStuff origin/someStuff
 $ git cob someStuff origin/someStuff
-$ git rh myFile</code></pre>
+$ git rh myFile
+```
 
 My most used Git command is `git status` but instead of creating an alias like `git st`, I created a bash alias in my `~/.bashrc` file:
 
-<pre class="language-git"><code>$ cat ~/.bashrc
+```git
+$ cat ~/.bashrc
 [...]
-alias gst="git status"</code></pre>
+alias gst="git status"
+```
 
 ### Create a bash alias to go back to project root
 
@@ -73,10 +85,12 @@ If your project has a deep directory tree, it can be useful to have a bash alias
 
 For unix systems, this alias looks like this (put it in your `~/.bashrc` file):
 
-<pre class="language-git"><code>/home/workspace/myProject $ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+```git
+/home/workspace/myProject $ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 /home/workspace/myProject $ cd test/phpunit/apps/sso/lib/action/
 /home/workspace/myProject/test/phpunit/apps/sso/lib/action $ gr
-/home/workspace/myProject $</code></pre>
+/home/workspace/myProject $
+```
 
 If you happen to be curious, feel free to explore the `git rev-parse` command: it's a magic command used by many other commands to do many different things. The manual page says:
 
@@ -84,24 +98,32 @@ If you happen to be curious, feel free to explore the `git rev-parse` command: i
 
 For instance, this command can convert a commit ref to a real SHA1:
 
-<pre class="language-git"><code>$ git rev-parse HEAD~17
-7f292beec1e55e33d911a942f59e942a04828935</code></pre>
+```git
+$ git rev-parse HEAD~17
+7f292beec1e55e33d911a942f59e942a04828935
+```
 
 It can return the `.git` path of the current project:
 
-<pre class="language-git"><code>$ git rev-parse --git-dir
-/home/workspace/myProject/.git</code></pre>
+```git
+$ git rev-parse --git-dir
+/home/workspace/myProject/.git
+```
 
 It can return the relative path to go back to project root:
 
-<pre class="language-git"><code>/home/workspace/myProject/test/phpunit/apps/sso/lib/action $ git rev-parse --show-cdup
-../../../../../../</code></pre>
+```git
+/home/workspace/myProject/test/phpunit/apps/sso/lib/action $ git rev-parse --show-cdup
+../../../../../../
+```
 
 ## Change default message editor
 
 In Unix system, the default commit message editor is VI. To use your favorite editor, edit the core.editor option:
 
-<pre class="language-git"><code>$ git config --global core.editor "~/Sublime\ Text\ 3/sublime_text -w"</code></pre>
+```git
+$ git config --global core.editor "~/Sublime\ Text\ 3/sublime_text -w"
+```
 
 ## Track a remote branch
 
@@ -109,51 +131,65 @@ Large scale projects have many Git branches: developers create new ones every da
 
 It's possible to track a remote branch, which displays useful informations in the `git status` command:
 
-<pre class="language-git"><code>$ git status
+```git
+$ git status
 # On branch infinite-scroll
 # Your branch and 'origin/sharedBranches/frontendTeam/infinite-scroll' have diverged,
 # and have 1 and 2 different commits each, respectively.
-nothing to commit (working directory clean)</code></pre>
+nothing to commit (working directory clean)
+```
 
 In the previous example, I'm on a local *infinite-scroll* branch which is tracking a *sharedBranches/frontendTeam/infinite-scroll* branch in the *origin* repository. My branch and the remote one have differed: my branch contains 1 commit which is not in the remote branch and the remote branch contains 2 commits which are not in my local branch. I will have to merge or rebase the remote branch if I want to push in the same remote location.
 
 To track a remote branch you can type the following command:
 
-<pre class="language-git"><code>$ git branch --set-upstream [name of the local branch] [name of the remote branch]</code></pre>
+```git
+$ git branch --set-upstream [name of the local branch] [name of the remote branch]
+```
 
 For instance:
 
-<pre class="language-git"><code>$ git branch --set-upstream infinite-scroll origin/sharedBranches/frontendTeam/infinite-scroll</code></pre>
+```git
+$ git branch --set-upstream infinite-scroll origin/sharedBranches/frontendTeam/infinite-scroll
+```
 
 If you happen to be running Git version >= 1.8.0, you can use the `-u` or `--set-upstream-to` parameter:
 
-<pre class="language-git"><code>$ git branch -u [remote branch]
+```git
+$ git branch -u [remote branch]
 $ git branch -u origin/sharedBranches/frontendTeam/infinite-scroll
-$ git branch --set-upstream-to origin/sharedBranches/frontendTeam/infinite-scroll</code></pre>
+$ git branch --set-upstream-to origin/sharedBranches/frontendTeam/infinite-scroll
+```
 
 When you create a new branch, you can specify a starting point. If this starting point is a remote branch (and not a local branch or a commit), the new branch will track the starting point.
 
-<pre class="language-git"><code>$ git branch foo origin/master
+```git
+$ git branch foo origin/master
 Branch foo set up to track remote branch master from origin.
 $ git checkout foo
 Switched to branch 'foo'
-Your branch is up-to-date with 'origin/master'.</code></pre>
+Your branch is up-to-date with 'origin/master'.
+```
 
 This is the default behavior but can be changed in your configuration with the `branch.autosetupmerge` parameter. The default value is `true` but if you want to track the starting point even if it's a local branch, switch it to `always`.
 
-<pre class="language-git"><code>$ git config --global branch.autosetupmerge always
+```git
+$ git config --global branch.autosetupmerge always
 $ git branch bar foo
-Branch bar set up to track local branch foo.</code></pre>
+Branch bar set up to track local branch foo.
+```
 
 If you don't want to track the starting point neither it's a local nor remote branch, use `false`.
 
-<pre class="language-git"><code>$ git config --global branch.autosetupmerge false
+```git
+$ git config --global branch.autosetupmerge false
 $ git branch foo origin/master
 $ git checkout foo
 Switched to branch 'foo'
 $ git status
 # On branch foo
-nothing to commit, working directory clean</code></pre>
+nothing to commit, working directory clean
+```
 
 ## How to delete a remote branch
 
@@ -162,11 +198,15 @@ It's quite easy to delete a local branch with the `-d` and `-D` parameters of `g
 The `git push origin master` command is a shortcut to the command `git push origin master:master`. The `master:master` syntax means `local-branch-name:destination-branch-name`.
 So to push *nothing* to a remote branch, you can use the following command:
 
-<pre class="language-git"><code>$ git push origin :myBranch</code></pre>
+```git
+$ git push origin :myBranch
+```
 
 Luckily, since Git 1.7.0, there is an easier syntax to do this:
 
-<pre class="language-git"><code>$ git push origin --delete myBranch</code></pre>
+```git
+$ git push origin --delete myBranch
+```
 
 ## Use a Git message template
 
@@ -176,13 +216,17 @@ Using a message template for Git commits is a good practice, especially in big p
 
 To change the default template, you can write a small text file somewhere on your disk, then reference it in your Git configuration:
 
-<pre class="language-git"><code>$ git config --global commit.template /home/loic/git/committemplate.txt</code></pre>
+```git
+$ git config --global commit.template /home/loic/git/committemplate.txt
+```
 
 Here's what my `committemplate.txt` looks like:
 
-<pre class="language-git"><code>$ cat /home/loic/git/committemplate.txt
+```git
+$ cat /home/loic/git/committemplate.txt
 [MyTeam] [#FeatureId] - Description of the feature
-More informations about the feature</code></pre>
+More informations about the feature
+```
 
 Unfortunately, it's not possible to use a bash script instead of a text message, to &mdash; let's say &mdash; dynamically add the branch name. Fortunately, the same thing can be done with Git hooks.
 
@@ -190,7 +234,8 @@ Unfortunately, it's not possible to use a bash script instead of a text message,
 
 With Git, you can create a client-side hook running before user writes his commit message. A hook can retrieve some informations to pre-fill the commit message. Let's create one in order to fill the commit message with the local branch name, shall we?
 
-<pre class="language-git"><code>$ cat .git/hooks/prepare-commit-msg
+```git
+$ cat .git/hooks/prepare-commit-msg
 #/bin/bash
 
 branchname=`git rev-parse --abbrev-ref HEAD`
@@ -217,29 +262,37 @@ else
     echo "[$branchname] " > $commitMsgFile
   fi
 
-fi</code></pre>
+fi
+```
 
 Now let's try our new hook:
 
-<pre class="language-git"><code>$ git checkout -b my-local-branch
+```git
+$ git checkout -b my-local-branch
 Switched to a new branch 'my-local-branch'
 $ echo 'Some text' > file1
 $ git add file1
-$ git commit</code></pre>
+$ git commit
+```
 
 My text editor opens with the following content:
 
-<pre class="language-git"><code>[my-local-branch] </code></pre>
+```git
+[my-local-branch] 
+```
 
 I can update this message to add some informations. If I amend my commit to change the message, it shouldn't overwrite my message :
 
-<pre class="language-git"><code>$ git log -1 --oneline
+```git
+$ git log -1 --oneline
 cd2b660 [my-local-branch] This is my awesome feature.
-$ git commit --amend</code></pre>
+$ git commit --amend
+```
 
 My text editor opens with the following content:
 
-<pre class="language-git"><code>[my-local-branch] This is my awesome feature.
+```git
+[my-local-branch] This is my awesome feature.
 
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
@@ -249,15 +302,18 @@ My text editor opens with the following content:
 #
 # Untracked files:
 #   commit
-#</code></pre>
+#
+```
 
 And if I try to commit with a `-m` parameter:
 
-<pre class="language-git"><code>$ echo 'Some text' > file2
+```git
+$ echo 'Some text' > file2
 $ git add file2
 $ git commit -m 'This is another feature'
 $ git log -1 --oneline
-4d169f5 [my-local-branch] This is another feature</code></pre>
+4d169f5 [my-local-branch] This is another feature
+```
 
 ## Split a file modification into two commits
 
@@ -277,13 +333,16 @@ To do this you can use the `--patch` (or `-p`) parameter with the `git add` comm
 
 Let's take an example:
 
-<pre class="language-git"><code>$ echo "Here's my tetx file" > file.txt
+```git
+$ echo "Here's my tetx file" > file.txt
 $ git add -A
-$ git commit -m 'Initial commit'</code></pre>
+$ git commit -m 'Initial commit'
+```
 
 I've just created a text file with only one line. Now, I just want to add a second line but while editing my file, I see that I wrote "tetx file" and not "text file" so I add my new line and I fix the first one in the same time. Let's see what our diff looks like:
 
-<pre class="language-git"><code>$ git diff
+```git
+$ git diff
 diff --git file.txt file.txt
 index 6214953..1d54a52 100644
 &ndash;&ndash;&ndash; file.txt
@@ -291,11 +350,13 @@ index 6214953..1d54a52 100644
 @@ -1 +1,2 @@
 -Here's my tetx file
 +Here's my text file
-+And this is the second line</code></pre>
++And this is the second line
+```
 
 If I want to split the two changes in two separate commits, I can use the `--patch` parameter. Let's try to create a first commit fixing the mistake and a second commit adding the new line:
 
-<pre class="language-git"><code>$ git add --patch file.txt
+```git
+$ git add --patch file.txt
 diff --git a/file.txt b/file.txt
 index 6214953..1d54a52 100644
 &ndash;&ndash;&ndash; a/file.txt
@@ -304,7 +365,8 @@ index 6214953..1d54a52 100644
 -Here's my tetx file
 +Here's my text file
 +And this is the second line
-Stage this hunk [y,n,q,a,d,/,e,?]?</code></pre>
+Stage this hunk [y,n,q,a,d,/,e,?]?
+```
 
 At the end of the `git add` command, there is a prompt message asking me if I want to add this hunk to the commit. The available options are:
 
@@ -319,7 +381,8 @@ At the end of the `git add` command, there is a prompt message asking me if I wa
 
 If I type **e**, the hunk will be opened in my text editor:
 
-<pre class="language-git"><code># Manual hunk edit mode -- see bottom for a quick guide
+```git
+# Manual hunk edit mode -- see bottom for a quick guide
 @@ -1 +1,2 @@
 -Here's my tetx file
 +Here's my text file
@@ -332,53 +395,61 @@ If I type **e**, the hunk will be opened in my text editor:
 # If the patch applies cleanly, the edited hunk will immediately be
 # marked for staging. If it does not apply cleanly, you will be given
 # an opportunity to edit again. If all lines of the hunk are removed,
-# then the edit is aborted and the hunk is left unchanged.</code></pre>
+# then the edit is aborted and the hunk is left unchanged.
+```
 
 The first commit should only fix the mistake so let's remove the **+And this is the second line** line and save the change:
 
 Now, if I launch a `git status` command, I can see this:
 
-<pre class="language-git"><code>$ git status
+```git
+$ git status
 # On branch master
 # Your branch is ahead of 'origin/master' by 1 commit.
 #
 # Changes to be committed:
-#   (use "git reset HEAD &lt;file>..." to unstage)
+#   (use "git reset HEAD <file>..." to unstage)
 #
 # modified:   file.txt
 #
 # Changes not staged for commit:
-#   (use "git add &lt;file>..." to update what will be committed)
-#   (use "git checkout -- &lt;file>..." to discard changes in working directory)
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
 #
 # modified:   file.txt
-#</code></pre>
+#
+```
 
 My file is partially staged. If I want to see the staged part:
 
-<pre class="language-git"><code>$ git diff --cached
+```git
+$ git diff --cached
 diff --git file.txt file.txt
 index 6214953..cc58d14 100644
 &ndash;&ndash;&ndash; file.txt
 +++ file.txt
 @@ -1 +1 @@
 -Here's my tetx file
-+Here's my text file</code></pre>
++Here's my text file
+```
 
 If I want to see the unstaged part:
 
-<pre class="language-git"><code>$ git diff
+```git
+$ git diff
 diff --git file.txt file.txt
 index cc58d14..1d54a52 100644
 &ndash;&ndash;&ndash; file.txt
 +++ file.txt
 @@ -1 +1,2 @@
  Here's my text file
-+And this is the second line</code></pre>
++And this is the second line
+```
 
 Now, I can create my first commit easily, then create the second one:
 
-<pre class="language-git"><code>$ git commit -m 'Typo fix'
+```git
+$ git commit -m 'Typo fix'
 [master 87edc4a] Typo fix
  1 file changed, 1 insertion(+), 1 deletion(-)
 
@@ -401,7 +472,8 @@ Author: lgiraudel <lgiraudel@mydomain.com>
 commit 3102416a90c431400d2e2a14e707fb7fd6d9e06d
 Author: lgiraudel <lgiraudel@mydomain.com>
 
-    Initial commit</code></pre>
+    Initial commit
+```
 
 ## Pick a commit from another branch
 
@@ -409,7 +481,9 @@ It's sometimes useful to pick a commit from another branch to add it in the curr
 
 The command to do this is really simple:
 
-<pre class="language-git"><code>$ git cherry-pick [commit SHA1]</code></pre>
+```git
+$ git cherry-pick [commit SHA1]
+```
 
 This command has some useful parameters:
 

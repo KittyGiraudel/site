@@ -23,7 +23,8 @@ To understand what this is all about, you need to know what the `unique-id()` is
 
 I'm not a Ruby pro, but with the help of a kind folk on Twitter, I could [make it work on CodePad](http://codepad.org/lojd8zLH). Here is what a couple of run of the function looks like:
 
-<pre class="language-"><code>u84ec5b4cdecd4299
+```
+u84ec5b4cdecd4299
 u871ec9c6e6049323
 u8865b8a8e572e4e8
 u85f6c40bb775eff2
@@ -32,7 +33,8 @@ u89cf1fa575a7a765
 u89184d7511933cd3
 u8a7287c699a82902
 u8547f4133644af4c
-u86fb16af4800d46b</code></pre>
+u86fb16af4800d46b
+```
 
 So the function returns a 19-characters long alphanumeric string. As you may have noticed, the returned string always starts with a `u`. This is actually hard-coded inside the function core to make sure the string always start with a letter in order to be able to be used as a class / placeholder / id, whatever.
 
@@ -42,7 +44,8 @@ To put it very simple, the function randoms a 19-digits number, convert it to ba
 
 My first attempt to get a random number from this string was to remove all alpha characters from it, then keep only the number of digits we want (or we still have). To do this, I used the incoming string manipulation functions (`str-length()`, `str-slice()`, `str-insert()`):
 
-<pre class="language-scss"><code>@function rand($digits: 16) {
+```scss
+@function rand($digits: 16) {
     /* Array of characters to remove */
     $letters : a b c d e f u;
     $result  : unquote("");
@@ -66,18 +69,21 @@ My first attempt to get a random number from this string was to remove all alpha
 
     /* Return the result */
     @return $result;
-}</code></pre>
+}
+```
 
 I think the code is pretty much self-explanatory. I check each character individually: if it's not a letter, I append it to the `$result` variable. When I'm done, if the length of `$result` is still greater than the number of digits we asked for (`$digits`) we truncate it.
 
 And there we have a random number between 1 and 9999999999999999 (in case the 16 characters are 9).
 
-<pre class="language-scss"><code>$number: rand();   /* Random between 1 and 9999999999999999 */
+```scss
+$number: rand();   /* Random between 1 and 9999999999999999 */
 $number: rand(1);  /* Random between 1 and 9 */
 $number: rand(4);  /* Random between 1 and 9999 */
 $number: rand(0);  /* Random between 1 and 9999999999999999 */
 $number: rand(-1); /* Random between 1 and 9999999999999999 */
-</code></pre>
+
+```
 
 ## Random, the clean way
 
@@ -85,11 +91,13 @@ Okay, let's say it: the first version I came with is really dirty. That's why I 
 
 To put it simple, instead of stripping alpha characters, we take the alphanumeric string and convert it back into an integer. Then, we get a fully random integer we simply have to manipulate around min and max values.
 
-<pre class="language-scss"><code>@function rand($min: 0, $max: 100) {
+```scss
+@function rand($min: 0, $max: 100) {
   $str : str-slice(unique-id(), 2);
   $res : toInt($str, 16);
   @return ($res % ($max - $min)) + $min;
-}</code></pre>
+}
+```
 
 The first line in the function core is the `unique-id()` function call. We immediately pass it into the `str-slice()` function to remove the very first character which is always a `u`.
 
@@ -99,7 +107,8 @@ The second line calls a `toInt()` function, passing it both the string (`$str`) 
 
 Before going to the last line, let's have a look at the `toInt` function:
 
-<pre class="language-scss"><code>@function toInt($str, $base: 10) {
+```scss
+@function toInt($str, $base: 10) {
   $res   : 0;
   $chars : charsFromBase($base);
   @if $chars !== false {
@@ -112,7 +121,8 @@ Before going to the last line, let's have a look at the `toInt` function:
     @return $res;
   }
   @return false;
-}</code></pre>
+}
+```
 
 `$res` will store the result we will return once we're done. `$chars` contains the array of characters used by base `$base`; we'll see the `charsFromBase()` function right after. Then, if the base is supported we loop through each characters of the string.
 
@@ -120,20 +130,23 @@ For every character, we isolate it (`$char`) and convert it to its numeric equiv
 
 The `pow()` function used to raise a value to an exponent is part of [Compass Math helpers](http://compass-style.org/reference/compass/helpers/math/). In case you don't want to use Compass or simply can't use Compass, here is the `pow()` function in pure Sass:
 
-<pre class="language-scss"><code>@function pow($val, $pow) {
+```scss
+@function pow($val, $pow) {
   $res: 1;
   @while($pow > 0) {
     $res: $res * $val;
     $pow: $pow - 1;
   }
   @return $res;
-}</code></pre>
+}
+```
 
 And of course, we add this to the result (`$res`). Once we're done with the string, we return the result to the `rand()` function. Then, we simply return `($res % ($max - $min)) + $min` to the user resulting in a random number between min and max values.
 
 Regarding the `charsFromBase()` function, here is what it looks like:
 
-<pre class="language-scss"><code>@function charsFromBase($base: 10) {
+```scss
+@function charsFromBase($base: 10) {
   /* Binary */
   @if $base == 2 {
     @return 0 1;  }
@@ -153,7 +166,8 @@ Regarding the `charsFromBase()` function, here is what it looks like:
   @if $base == 64 {
     @return A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 + /;  }
   @return false;
-}</code></pre>
+}
+```
 
 I only added most common standard bases (binary, octal, decimal, hexadecimal, 36, 64) but I guess we could probably add a couple of others. Actually this is already too much since we know the `unique-id()` function will return a base16 or base36 encoded string (depending on the implementation they'll keep).
 

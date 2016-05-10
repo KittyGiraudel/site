@@ -62,11 +62,13 @@ Opening pull-requests can be done directly on GitHub, without having to clone th
 
 To work around this issue, there are two options: either waiting for the story to be started by someone (with at least a commit) so there is actually something to compare between the feature branch and the main branch. Although that is not ideal as the idea would be to have it from the beginning of the sprint so that all stories have their own PR opened directly. A possible workaround to this issue would be to do an empty commit like so:
 
-<pre class="language-git"><code># Creating the branch
+```git
+# Creating the branch
 git checkout -b feature/42-basic-teaser
 
 # Adding an empty commit (with a meaningful name) to make the pull-request possible
-git commit --allow-empty -m "Feature 42: Basic teaser component"</code></pre>
+git commit --allow-empty -m "Feature 42: Basic teaser component"
+```
 
 The point of this commit is to initialize the branch and the feature so that a pull-request can be created on GitHub. 
 
@@ -82,10 +84,12 @@ Name the pull-request after the feature name, and prefix it with `[WIP]` for *Wo
 
 In the description of the story, create a list of tasks where a task is a checkbox, a short description and importantly enough, one or several persons involved in the making. From the Markdown side, it might look like this:
 
-<pre class="language-git"><code>* [ ] Create the basic React component (@hugogiraudel)  
+```git
+* [ ] Create the basic React component (@hugogiraudel)  
 * [ ] Design the icons (@sharonwalsh)  
 * [ ] Integrate component in current page (@mattberridge)  
-* [ ] Clarify types of teasers with client (@moritzguth)</code></pre>
+* [ ] Clarify types of teasers with client (@moritzguth)
+```
 
 <figure class="figure">
   <img src="/assets/images/github-as-a-workflow/02.png" alt="The PR description contains the task to be accomplished for the feature" />

@@ -15,7 +15,8 @@ SassyCast making possible to go from any data type to any data type (or almost),
 
 The `to-list` function core is pretty straightforward. If the given value is a map, we iterate over it to create a 2-dimensional list like this: `( "key-1" "value 1", "key-2" "value 20" )`.
 
-<pre class="language-scss"><code>@function to-list($value) {
+```scss
+@function to-list($value) {
   @if type-of($value) == 'map' {
     $keys: ();
     $values: ();
@@ -29,7 +30,8 @@ The `to-list` function core is pretty straightforward. If the given value is a m
   }
 
   @return if(type-of($value) != 'list', ($value,), $value);
-}</code></pre>
+}
+```
 
 To be a little more precise about what's being done here: we loop through each map entry, store the key in a `$keys` list and the value in a `$values` list. Then we [zip](http://sass-lang.com/documentation/Sass/Script/Functions.html#zip-instance_method) both to return a 2-dimensional list where the first element of each list if the former key and the second element of each list is the former value.
 
@@ -41,7 +43,8 @@ Julien thought it would be cool to be able to keep only keys, or only values or 
 
 Then depending on the flag, he returns either `$keys` or `$values` or a zip of both.
 
-<pre class="language-scss"><code>@function to-list($value, $keep: 'both') {
+```scss
+@function to-list($value, $keep: 'both') {
   $keep: if(index('keys' 'values', $keep), $keep, 'both');
 
   @if type-of($value) == 'map' {
@@ -64,11 +67,14 @@ Then depending on the flag, he returns either `$keys` or `$values` or a zip of b
 
   @return if(type-of($value) != 'list', ($value,), $value);
 
-}</code></pre>
+}
+```
 
 If you don't like conditional return statements or if you simply want to look like a badass with an unreadable ternary mess, you could return something like this:
 
-<pre class="language-scss"><code>@return if($keep == 'keys', $keys, if($keep == 'values', $values, zip($keys, $values)));</code></pre>
+```scss
+@return if($keep == 'keys', $keys, if($keep == 'values', $values, zip($keys, $values)));
+```
 
 Literally:
 
@@ -80,22 +86,26 @@ Literally:
 
 Let's try it with a little example, shall we? First, our map.
 
-<pre class="language-scss"><code>$breakpoints: (
+```scss
+$breakpoints: (
   'small': 600px,
   'medium': 900px,
   'large': 1200px
-);</code></pre>
+);
+```
 
 And now, we cast it to a list.
 
-<pre class="language-scss"><code>$breakpoints-list: to-list($breakpoints, 'both');
+```scss
+$breakpoints-list: to-list($breakpoints, 'both');
 // ('small' 600px, 'medium' 900px, 'large' 1200px)
 
 $breakpoints-keys: to-list($breakpoints, 'keys');
 // ('small' 'medium' 'large')
 
 $breakpoints-values: to-list($breakpoints, 'values');
-// (600px 900px 1200px)</code></pre>
+// (600px 900px 1200px)
+```
 
 That's all folks! Thanks again Julien!
 

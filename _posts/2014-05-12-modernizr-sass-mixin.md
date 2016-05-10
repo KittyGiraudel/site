@@ -22,23 +22,28 @@ Before jumping into the code for the actual mixin, let's see how we actually wri
 
 This is how we can write a rule-set to add a CSS3 gradient background:
 
-<pre class="language-css"><code>.cssgradients .my-selector {
+```css
+.cssgradients .my-selector {
   background-image: linear-gradient(to bottom, #fff, #000);
-}</code></pre>
+}
+```
 
 For browsers that don't support CSS gradients or for those where Javascript is not available or disabled and thus we can't test for support, we will need a fallback rule-set:
 
-<pre class="language-css"><code>.no-js .my-selector,
+```css
+.no-js .my-selector,
 .no-cssgradients .my-selector {
   background-image: url('gradient.png');
   background-repeat: repeat-x;
-}</code></pre>
+}
+```
 
 ## Making it Sassier
 
 Sass allows selectors and rules to be [nested](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_rules) so we can make that code prettier and much more organized, avoiding repetition of the selector:
 
-<pre class="language-scss"><code>.my-selector {
+```scss
+.my-selector {
   .cssgradients & {
     background-image: linear-gradient(to bottom, #fff, #000);   
   }
@@ -48,7 +53,8 @@ Sass allows selectors and rules to be [nested](http://sass-lang.com/documentatio
     background-image: url('gradient.png');
     background-repeat: repeat-x;
   }
-}</code></pre>
+}
+```
 
 ## Even better with a mixin
     
@@ -58,7 +64,8 @@ Having written a lot of selectors and rules like the above, I got a bit tired of
 
 One mixin would write the rule-set for available features. I called it `yep`. The other one, `nope`, would add the fallback rule-set. We use them like so:
 
-<pre class="language-scss"><code>.my-selector {
+```scss
+.my-selector {
   @include yep(cssgradients) {
     // ...
   }
@@ -66,11 +73,13 @@ One mixin would write the rule-set for available features. I called it `yep`. Th
   @include nope(cssgradients) {
     // ...
   }
-}</code></pre>
+}
+```
     
 That's extremely easy, I thought. This is all the code we actually need to make those two mixins work:
 
-<pre class="language-scss"><code>@mixin yep($feature) {
+```scss
+@mixin yep($feature) {
   .#{$feature} & { 
     @content;
   }
@@ -81,7 +90,8 @@ That's extremely easy, I thought. This is all the code we actually need to make 
   .no-#{$feature} & {
     @content;
   }
-}</code></pre>
+}
+```
 
 ## Multiple features at once
 
@@ -91,7 +101,8 @@ It isn't as straightforward as I first thought. The `yep` mixin should not produ
 
 This is the compiled CSS we are looking for:
 
-<pre class="language-scss"><code>.csstransforms.opacity .my-selector {
+```scss
+.csstransforms.opacity .my-selector {
   // ...
 }
     
@@ -99,7 +110,8 @@ This is the compiled CSS we are looking for:
 .no-csstransforms .my-selector,
 .no-opacity .my-selector {
   // ...
-}</code></pre>
+}
+```
     
 One thing I strived for was to keep the code as DRY as possible using some of the newness in Sass 3.3. As I worked through the logic I found that a single mixin could handle both cases.
 
@@ -109,7 +121,8 @@ I created a main `modernizr` mixin to handle both situations. You won't use it d
 
 That's it, they're meant to be easier to remember because they require only one parameter: `$features...`, faster to write because they are shorter and make the whole thing extremely easy to read because you instantly know what the intention of the code is.
 
-<pre class="language-scss"><code>// `yep` is an alias for modernizr($features, $supports: true)
+```scss
+// `yep` is an alias for modernizr($features, $supports: true)
 @mixin yep($features...) {
   @include modernizr($features, $supports: true) {
     @content;
@@ -121,15 +134,18 @@ That's it, they're meant to be easier to remember because they require only one 
   @include modernizr($features, $supports: false) {
     @content;
   }
-}</code></pre>
+}
+```
 
 ## The ultimate mixin
 
 The `modernizr` mixin expects two arguments: `$features` which is our `argList`, a comma-separated list of features and `$supports`, a boolean which will be used to output the yep or the nope rules.
 
-<pre class="language-scss"><code>@mixin modernizr($features, $supports) {
+```scss
+@mixin modernizr($features, $supports) {
   // Sass magic
-}</code></pre>
+}
+```
     
 Inside the mixin I set three variables to handle everything we need to generate.
 
@@ -137,19 +153,25 @@ Inside the mixin I set three variables to handle everything we need to generate.
 
 We need to use the `no-` prefix if checking for unsupported features (e.g. `.no-opacity`). If checking for supported features we need no prefix at all so we'll use an empty string in this case:
 
-<pre class="language-scss"><code>$prefix: if($supports, '', 'no-');</code></pre>
+```scss
+$prefix: if($supports, '', 'no-');
+```
 
 ### The selector
 
 To generate our feature selector (e.g. `.opacity.csstransforms` or `.no-opacity, .no-csstransforms`), we need two different strategies. We have to create a string if checking for supported features and we'll concatenate the class names later on. Or create a list if checking for unsupported features. We'll append class names later on too.
 
-<pre class="language-scss"><code>$selector: if($supports, '', unquote('.no-js'));</code></pre>
+```scss
+$selector: if($supports, '', unquote('.no-js'));
+```
     
 ### The placeholder
 
 You'll see that all the magic that handles this thing is done by a placeholder. We'll need to give it a name that will look something like `%yep-feature` or `%nope-feature`.
 
-<pre class="language-scss"><code>$placeholder: if($supports, '%yep', '%nope');</code></pre>
+```scss
+$placeholder: if($supports, '%yep', '%nope');
+```
 
 ### Error handling
 
@@ -159,72 +181,92 @@ I also set a variable `$everything-okay: true` which is meant for error handling
 
 Now it's time to create our feature selectors and our placeholder names. We'll loop through the passed `$features` to do so:
 
-<pre class="language-scss"><code>@each $feature in $features {
+```scss
+@each $feature in $features {
   // ...
-}</code></pre>
+}
+```
     
 Within that loop we just need three lines of code. They're a bit heavy, but what they accomplish is quite simple:
 
 ### Generate our placeholder name
 
-<pre class="language-scss"><code>$placeholder: $placeholder + '-' + $feature;</code></pre>
+```scss
+$placeholder: $placeholder + '-' + $feature;
+```
 
 The resulting `$placeholder` variables will look something like `%yep-opacity-csstransforms` or `%nope-opacity-csstransforms`
 
 ### Generate our selector name
 
-<pre class="language-scss"><code>$new-selector: #{'.' + $prefix + $feature};
-$selector: if($supports, $selector + $new-selector, append($selector, $new-selector, comma));</code></pre>
+```scss
+$new-selector: #{'.' + $prefix + $feature};
+$selector: if($supports, $selector + $new-selector, append($selector, $new-selector, comma));
+```
 
 `$new-selector` will look something like `.csstransforms` or `.no-csstransforms`. We then concatenate `$new-selector` or append it to the list (e.g. `.opacity.csstransforms` or `.no-opacity, .no-csstransforms`).
 
 That's it for generating our placeholder and selector names. Take the `opacity` and `csstransforms` example. This is the result of using `@include yep(opacity, csstransforms)`;
 
-<pre class="language-scss"><code>@debug $placeholder; // %yep-opacity-csstransforms
-@debug $selector; // .opacity.csstransforms</code></pre>
+```scss
+@debug $placeholder; // %yep-opacity-csstransforms
+@debug $selector; // .opacity.csstransforms
+```
 
 And this the result of using `@include nope(opacity, csstransforms)`:
 
-<pre class="language-scss"><code>@debug $placeholder; // %nope-opacity-csstransforms
-@debug $selector; // .no-js, .no-opacity, .no-csstransforms</code></pre>
+```scss
+@debug $placeholder; // %nope-opacity-csstransforms
+@debug $selector; // .no-js, .no-opacity, .no-csstransforms
+```
 
 ### The placeholder and @content
 
 It's time to write our placeholder. We use [Sass interpolation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_) to write the name we've generated within the loop and then print the declaration block (`@content`) we've passed within the `yep` or `nope` mixin.
 
-<pre class="language-scss"><code>#{$placeholder} & {
+```scss
+#{$placeholder} & {
   @content;
-}</code></pre>
+}
+```
 
 ### Extending with @at-root
 
 Now we'll print our features `$selector`(s) and extend the placeholder. But, there's a little problem here, if we extend the placeholder as-is: 
 
-<pre class="language-scss"><code>#{$selector} {
+```scss
+#{$selector} {
   @extend #{$placeholder}; 
-}</code></pre>
+}
+```
 
 we'll get an unexpected CSS output:
     
-<pre class="language-scss"><code>.my-selector .opacity.csstransforms .my-selector { 
+```scss
+.my-selector .opacity.csstransforms .my-selector { 
   // ...
-}</code></pre>
+}
+```
 We need something to fix this. Sass 3.3's @at-root directive comes to the rescue:
 
-<pre class="language-scss"><code>@at-root #{$selector} {
+```scss
+@at-root #{$selector} {
   @extend #{$placeholder};
-}</code></pre>
+}
+```
 
 Now our features selector isn't placed  before the actual selector because `@at-root` cancels the selector nesting.
 
 ## Error handling
 
-<pre class="language-scss"><code>@if type-of($feature) != "string" {
+```scss
+@if type-of($feature) != "string" {
   $everything-okay: false;
   @warn '`#{$feature}` is not a string for `modernizr`';
 } @else {
   // proceed ...
-}</code></pre>
+}
+```
 
 Within the previous loop we'll also check if every `$feature` is a `string`. As Hugo Giraudel explains in his [introduction to error handling in Sass](http://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996) we shouldn't let the Sass compiler fail and punch us in the face with an error. That's why we should prevent things like `10px` or even nested lists like `(opacity csstransforms), hsla`  to stop our stylesheet from successfully compiling.
 

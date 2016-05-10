@@ -20,33 +20,37 @@ Since not all of you are Twig masters (neither am I though), I am going to expla
 
 Twig is mostly about extending templates ([`@extend`](http://twig.sensiolabs.org/doc/tags/extends.html)). Thus we start with setting up a base template outputing some HTML (`<html>`, `<head>`, `<body>`...) and defining Twig blocks. Quick example:
 
-<pre class="language-markup"><code>&lt;!-- base.html.twig -->
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>&lt;!-- whatever -->&lt;/head>
-&lt;body>
-    { % block header % }{ % endblock % }
-    { % block main   % }{ % endblock % }
-    { % block footer % }{ % endblock % }
-&lt;/body>
-&lt;/html></code></pre>
+```html
+{% raw %}<!-- base.html.twig -->
+<!DOCTYPE html>
+<html>
+  <head><!-- whatever --></head>
+  <body>
+    {% block header %}{% endblock %}
+    {% block main   %}{% endblock %}
+    {% block footer %}{% endblock %}
+  </body>
+</html>{% endraw %}
+```
 
 When a second template extends from the first one, it can dump stuff into those blocks that will bubble up into the first one to finally output content. There is no maximum level of nesting for such a thing so you can do this as deep as you want. Let's continue our example:
 
-<pre class="language-markup"><code>&lt;!-- page.html.twig -->
-{ % extends 'base.html.twig' % }
+```html
+{% raw %}<!-- page.html.twig -->
+{% extends 'base.html.twig' %}
 
-{ % block header % }
-    &lt;h1>Title&lt;/h1>
-{ % endblock % }
+{% block header %}
+  <h1>Title</h1>
+{% endblock %}
 
-{ % block main % }
-    &lt;p>My first page&lt;/p>
-{ % endblock % }
+{% block main %}
+  <p>My first page</p>
+{% endblock %}
 
-{ % block footer % }
-    &lt;footer>Credits & copyright&lt;/footer>
-{ % endblock % }</code></pre>
+{% block footer %}
+  <footer>Credits & copyright</footer>
+{% endblock %}{% endraw %}
+```
 
 That's pretty much how you work a project with Twig.
 
@@ -54,9 +58,13 @@ That's pretty much how you work a project with Twig.
 
 Now you also can also include files ([`@include`](http://twig.sensiolabs.org/doc/tags/include.html)) which work has you would expect: this is basically the `@include` from PHP. So if you have some static content, like a footer for example, you can include a partials (a bunch of HTML if you will) directly into your footer block like this:
 
-<pre class="language-markup"><code>{ % block footer % }
-    { % include 'partials/footer.html.twig' % }
-{ % endblock % }</code></pre>
+```html
+{% raw %}
+{% block footer %}
+  {% include 'partials/footer.html.twig' %}
+{% endblock %}
+{% endraw %}
+```
 
 ### Embed
 
@@ -72,9 +80,11 @@ We have half a dozen of themes &mdash; one per section of site &mdash; (`shoppin
 
 Back to the issue: we had to be able to define both the theme and the layout on a page per page basis. Something like this:
 
-<pre class="language-markup"><code>&lt;!-- This doesn't work. -->
-{ % extends '@layout' % }
-{ % extends '@theme' % }</code></pre>
+```html
+{% raw %}<!-- This doesn't work. -->
+{% extends '@layout' %}
+{% extends '@theme' %}{% endraw %}
+```
 
 Unfortunately, it's not possible to extend multiple templates in Twig (which seems obvious) so we had to find a workaround.
 
@@ -94,7 +104,7 @@ One possible way to go &mdash; the one we wanted to avoid at all costs &mdash; w
     * 2-7-3 (layout)
 * ...
 
-With this solution, you could do somethink like `{ % extends 'shopping/12' % }`. Or the other way around:
+With this solution, you could do somethink like {% raw %}`{% extends 'shopping/12' %}`{% endraw %}. Or the other way around:
 
 * 12 (layout)
     * shopping (theme)
@@ -106,7 +116,7 @@ With this solution, you could do somethink like `{ % extends 'shopping/12' % }`.
     * ...
 * ...
 
-With this solution, you could do somethink like `{ % extends '12/shopping' % }`.
+With this solution, you could do somethink like {% raw %}`{% extends '12/shopping' %}`{% endraw %}.
 
 Both sucks. Really bad. It is not only very ugly but also a nightmare to maintain. Guys, don't do this. This is not a good idea. Especially since Twig is the most powerful template engine out there: there is a better way.
 
@@ -129,23 +139,27 @@ This may sound a bit complicated so why not doing this step by step, shall we?
 
 As seen previously, the base file creates the HTML root document, the major HTML tags and defines the major Twig blocks, especially the one used to define the HTML class on the body element.
 
-<pre class="language-markup"><code>&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>&lt;!-- whatever -->&lt;/head>
-&lt;body class="{ % block theme % }default{ % endblock % }">
-    { % block layout % }{ % endblock % }
-&lt;/body>
-&lt;/html></code></pre>
+```html
+{% raw %}<!DOCTYPE html>
+<html>
+  <head><!-- whatever --></head>
+  <body class="{% block theme %}default{% endblock %}">
+    {% block layout %}{% endblock %}
+  </body>
+</html>{% endraw %}
+```
 
 ### Defining a theme
 
 Next, we need to define a theme. A theme file will directly extends the base file, and will be extended by the page file. The content of the theme file is very light. Let's say we have a *shopping* theme; so we have the `shopping.html.twig` file:
 
-<pre class="language-markup"><code>{ % extends 'base.html.twig' % }
+```html
+{% raw %}{% extends 'base.html.twig' %}
 
-{ % block theme 'shopping' % }</code></pre>
+{% block theme 'shopping' %}{% endraw %}
+```
 
-The last line of this code example may look a little weird to you: it is the short way for `{ % block theme % }shopping{ % endblock % }`. I like this way better when the content block is like a word or two without any HTML.
+The last line of this code example may look a little weird to you: it is the short way for {% raw %}`{% block theme %}shopping{% endblock %}`{% endraw %}. I like this way better when the content block is like a word or two without any HTML.
 
 Anyway, when using this theme, the `theme` block defined in `base.html.twig` will be filled with `shopping`, setting a `shopping` class to the body element.
 
@@ -153,52 +167,53 @@ Anyway, when using this theme, the `theme` block defined in `base.html.twig` wil
 
 Let's say our page will use the shopping theme we just created with a 2-columns layout with a 2/1 ratio. Right? As I said previously, I like to call my themes the way they work with columns so in this case: `9-3.html.twig`.
 
-<pre class="language-markup"><code>&lt;div class="wrapper">
-    &lt;div class="col-md-9  content">
-        { % block content % }{ % endblock % }
-    &lt;/div>
-    &lt;div class="col-md-3  sidebar">
-        { % block sidebar % }{ % endblock % }
-    &lt;/div>
-&lt;/div></code></pre>
+```html
+{% raw %}<div class="wrapper">
+  <div class="col-md-9  content">
+    {% block content %}{% endblock %}
+  </div>
+  <div class="col-md-3  sidebar">
+    {% block sidebar %}{% endblock %}
+  </div>
+</div>{% endraw %}
+```
 
 ### Creating the page
 
 We only need the last piece of the puzzle: the page file. In this file, not much to do except dumping our content in the accurate blocks:
 
-<pre class="language-markup"><code>{ % extends 'shopping.html.twig' % }
+```html
+{% raw %}{% extends 'shopping.html.twig' %}
 
-&lt;!-- Filling the 'layout' block defined in base template -->
-{ % block layout % }
-    { % embed '9-3.html.twig' % }
-        { % block content % }
-
-            My awesome content
-        { % endblock% }
-        { % block sidebar % }
-
-            My sidebar content
-        { % endblock % }
-    { % endembed % }
-{ % endblock % }
-</code></pre>
+<!-- Filling the 'layout' block defined in base template -->
+{% block layout %}
+  {% embed '9-3.html.twig' %}
+    {% block content %}
+      My awesome content
+    {% endblock%}
+    {% block sidebar %}
+      My sidebar content
+    {% endblock %}
+  {% endembed %}
+{% endblock %}{% endraw %}
+```
 
 ### Rendered HTML
 
-<pre class="language-markup"><code>&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>&lt;!-- whatever -->&lt;/head>
-&lt;body class="shopping">
-    &lt;div class="col-md-9  content">
-
-        My awesome content
-    &lt;/div>
-    &lt;div class="col-md-3  sidebar">
-
-        My sidebar content
-    &lt;/div>
-&lt;/body>
-&lt;/html></code></pre>
+```html
+<!DOCTYPE html>
+<html>
+<head><!-- whatever --></head>
+<body class="shopping">
+  <div class="col-md-9  content">
+    My awesome content
+  </div>
+  <div class="col-md-3  sidebar">
+    My sidebar content
+  </div>
+</body>
+</html>
+```
 
 Voila! Pretty neat, right?
 

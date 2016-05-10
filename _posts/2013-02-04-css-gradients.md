@@ -30,7 +30,8 @@ The pen below shows graphically how to layer the multiple backgrounds. It also h
 
 For both the original pen and this helper demo, the interesting part is this one:
 
-<pre class="language-css"><code>background: 
+```css
+background: 
 linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
 linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%),
 linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0,
@@ -41,7 +42,8 @@ linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%,
 linear-gradient(-72deg, transparent 24.52%, #9a1d34 24.52%) 0 100%, 
 #43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
 background-repeat: no-repeat;
-background-size: 50% 50%;</code></pre>
+background-size: 50% 50%;
+```
 
 We first specify the nine gradient backgrounds, their positioning and the `background-color` using the shorthand `background` syntax.
 
@@ -83,8 +85,10 @@ The *gradient angle* is the angle - measured clockwise - between the vertical ax
 
 What this means is that we (almost always) have different angle values in the standard syntax and in the current WebKit syntax. So, if we are not using something like [-prefix-free](http://leaverou.github.com/prefixfree/) (which I do almost all the time), then we should to be able to compute one when knowing the other. That is actually pretty simple. They are going in opposite directions, so the formula for one includes the other with a minus sign. Also, there is a `90°` difference between them so this is how we get them: 
 
-<pre class="language-javascript"><code>newSyntax = 90° - oldSyntax;
-oldSyntax = 90° - newSyntax;</code></pre>
+```js
+newSyntax = 90° - oldSyntax;
+oldSyntax = 90° - newSyntax;
+```
 
 *Note: if no gradient angle or destination side is specified (for example, `linear-gradient(lime, yellow)`), then the resulting gradient is going to have a gradient angle of `180°`, not `0°`.*
 

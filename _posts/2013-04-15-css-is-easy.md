@@ -19,11 +19,13 @@ Yes. CSS has a very easy syntax based on english words. I don't think it could b
 
 A 8-year-old child could do some CSS without even having any explanation on how to do so. Even HTML has a more complicated syntax than CSS since there are some elements which need a closing tag, some don't, some have attributes, some don't, some can't be inside others and so on. CSS is always the same.
 
-<pre class="language-css"><code>selector [, selector2, ...] [:pseudo-class] {
+```css
+selector [, selector2, ...] [:pseudo-class] {
  property: value;
  [property2: value2;
  ...]
-}</code></pre>
+}
+```
 
 Most of all, CSS means something. It uses real words, understandable by anyone. When you read `.element { color: red; }`, you can be pretty sure it means an item called “element” is red. It's a no brainer.
 
@@ -45,14 +47,16 @@ Anyway, in order to write consistent CSS, you have to know which browser support
 
 Take the Flexbox module for example. It has been introduced in 2009 and has known 3 different syntaxes since then resulting in a blurry mess when trying to have the best browser support:
 
-<pre class="language-css"><code>.flex {
+```css
+.flex {
 	-ms-box-orient: horizontal;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: flex;
-}</code></pre>
+}
+```
 
 This is the kind of thing that makes CSS tricky (some people would say annoying).
 
