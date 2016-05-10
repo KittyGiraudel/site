@@ -366,7 +366,7 @@ CSS preprocessors (at least some of them) provide built-in functions to play wit
 
 ### LESS (<a href="http://lesscss.org/#-color-functions">doc)
 
-```scss
+```less
 lighten(@color, @percentage);               /* Makes lighter */
 darken(@color, @percentage);                /* Makes darker */
 
@@ -424,7 +424,7 @@ a-adjust($color $value)             /* Changes the alpha-channel */
 
 ### Stylus (<a href="http://learnboost.github.com/stylus/docs/bifs.html">doc)
 
-```scss
+```stylus
 red(color)          /* Gets the red component */
 green(color)        /* Gets the green component */
 blue(color)         /* Gets the blue component */

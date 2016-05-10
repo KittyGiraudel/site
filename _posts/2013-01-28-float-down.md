@@ -127,33 +127,32 @@ Now let's get to the funny part. I figured out there is some kind of pattern to 
 ```scss
 $i: $rows; // Initializing the loop
 
-@while $i > 1 {
+@while ($i > 1) {
+  li:nth-child(#{$rows}n + #{$i}) {
+    $j: ($i - 1); // Setting a $i-1 variable
 
-  li:nth-child(#{$rows}n+#{$i}) {
-    $j: $i - 1; // Setting a $i-1 variable
-
-    margin-top: $j * $height + $i * $margin;
+    margin-top: ($j * $height + $i * $margin);
     margin-left: -($width + $margin);
   }
 
-  $i: $i - 1;
+  $i: ($i - 1);
 }
 ```
 
 It is pretty tough. Let me show you how it compiles when $rows is set to 4 (other variables remain unchanged):
 
 ```scss
-li:nth-child(4n+4) {
+li:nth-child(4n + 4) {
   margin-top: 13.6em;  // (3 * 4em) + (4 * 0.4em)
   margin-left: -4.4em; // -(4em + 0.4em)
 }
 
-li:nth-child(4n+3) {
+li:nth-child(4n + 3) {
   margin-top: 9.2em;   // (2 * 4em) + (3 * 0.4em)
   margin-left: -4.4em; // -(4em + 0.4em)
 }
 
-li:nth-child(4n+2) {
+li:nth-child(4n + 2) {
   margin-top: 4.8em;   // (1 * 4em) + (2 * 0.4em)
   margin-left: -4.4em; // -(4em + 0.4em)
 }

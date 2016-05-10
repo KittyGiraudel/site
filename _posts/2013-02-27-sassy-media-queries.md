@@ -49,11 +49,11 @@ Now we have the list, we only have to loop through all items in it and do someth
 $max: 1910px; /* [1] */
 .be:after {
   @each $word in $words { /* [2] */
-      @media screen and (max-width: $max) { /* [3] */
-        content: "Be #{$word}."; /* [4] */
-      }
-      $max: $max - 10; /* [5] */
+    @media screen and (max-width: $max) { /* [3] */
+      content: "Be #{$word}."; /* [4] */
     }
+    $max: ($max - 10); /* [5] */
+  }
 }
 ```
 
@@ -70,10 +70,10 @@ $max: 1910px;
 @each $word in $words {
   @media screen and (max-width: $max) {
     .be:after {
-        content: "Be #{$word}.";
-      }
+      content: "Be #{$word}.";
     }
-    $max: $max - 10;
+  }
+  $max: ($max - 10);
 }
 ```
 
