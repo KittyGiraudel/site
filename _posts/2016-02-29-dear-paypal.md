@@ -26,7 +26,7 @@ Let me try to clear this up a bit. For starters, there is absolutely no good rea
 You surely know the saying: “hard to guess, easy to remember.” It turns out, we humans are very good at remembering sentences. Because they make sense. By preventing a password from being longer than 20 characters and most importantly from containing any space, you basically prevent people from using sentences. And when you prevent people from using *passphrases*, you make them choose something small and simple enough to be remembered, which is a dull and ridiculously easy-to-crack password.
 
 <figure class="figure">
-  <img src="/images/dear-paypal/xkcd.png" alt="Hard to guess, easy to remember" />
+  <img src="/assets/images/dear-paypal/xkcd.png" alt="Hard to guess, easy to remember" />
   <figcaption>From <a href="http://xkcd.com/936/">xkcd #936</a></figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ Now I guess the funny part is how I managed to solve this. I signed in with my p
 Last but not least, I would like to tell you about phone numbers. For starters, phone numbers are not actual numbers. I know the name is misleading, but you cannot reasonably think that a phone number is made exclusively of numbers. There are also spaces, plus signs, parentheses, and a lot of things. So `[0-9]*` is not a correct pattern for this. 
 
 <figure class="figure">
-  <img src="/images/dear-paypal/phone-html.png" alt="Incorrect pattern attribute for a phone number" />
+  <img src="/assets/images/dear-paypal/phone-html.png" alt="Incorrect pattern attribute for a phone number" />
   <figcaption>Incorrect <code>pattern</code> for a phone number</figcaption>
 </figure>
 

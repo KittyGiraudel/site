@@ -52,7 +52,7 @@ Everybody, from the Scrum Master to the Product Owner, needs a GitHub account. I
 The idea is that every feature involving some development has its own pull-request opened at the beginning of the sprint. Tasks are handled as a checklist in the description of the pull-request. The good thing with this is that GitHub is clever and shows the progress of the pull-request in the list view directly.
 
 <figure class="figure">
-  <img alt="The progress is shown directly in the PR view" src="/images/github-as-a-workflow/01.png" />
+  <img alt="The progress is shown directly in the PR view" src="/assets/images/github-as-a-workflow/01.png" />
   <figcaption>The progress is shown directly in the PR view</figcaption>
 </figure>
 
@@ -88,7 +88,7 @@ In the description of the story, create a list of tasks where a task is a checkb
 * [ ] Clarify types of teasers with client (@moritzguth)</code></pre>
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/02.png" alt="The PR description contains the task to be accomplished for the feature" />
+  <img src="/assets/images/github-as-a-workflow/02.png" alt="The PR description contains the task to be accomplished for the feature" />
   <figcaption>The PR description contains the task to be accomplished for the feature</figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ As long as all actors from a project are part of the GitHub organisation behind 
 *Note: GitHub Flavoured Markdown will automatically convert `[ ]` into an unticked checkbox and `[x]` into a ticked one. It will also remember the state of the checkbox so you can actually rely on it.*
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/03.png" alt="The PR description contains checkboxes that can be checked to show current progress" />
+  <img src="/assets/images/github-as-a-workflow/03.png" alt="The PR description contains checkboxes that can be checked to show current progress" />
   <figcaption>The PR description contains checkboxes that can be checked to show current progress</figcaption>
 </figure>
 
@@ -106,7 +106,7 @@ As long as all actors from a project are part of the GitHub organisation behind 
 The comments on the pull-request can be used to discuss the story or specific tasks. We can safely ask questions in there, tagging relevant contributors by prefixing their GitHub username with a `@` sign, include code blocks, quotations, images and pretty much whatever else we want. Also, everything is in Markdown, making it super easy to use.
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/04.png" alt="Comments are used to discuss some concerns and ask questions" />
+  <img src="/assets/images/github-as-a-workflow/04.png" alt="Comments are used to discuss some concerns and ask questions" />
   <figcaption>Comments are used to discuss some concerns and ask questions</figcaption>
 </figure>
 
@@ -117,14 +117,14 @@ Once all checkboxes from the description have been checked, the name of the pull
 To review a pull-request, we use GitHub inline comments in the *Files changed* tab. In there, we can comment any line to ask for modification. Adding a line comment notifies the owner of the pull-request so that he knows he has some re-working to do, and the comment shows up in the *Conversation* tab.
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/05.png" alt="GitHub inline comments are the ideal way for collaborating on code" />
+  <img src="/assets/images/github-as-a-workflow/05.png" alt="GitHub inline comments are the ideal way for collaborating on code" />
   <figcaption>GitHub inline comments are the ideal way for collaborating on code</figcaption>
 </figure>
 
 When updating a line that is the object of an inline comment, the latter disappears because it is not relevant anymore. Then, as comments get fixed, they disappear so the pull-request remains clean.
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/06.png" alt="When an inline comment has been taken care of, it disappears to avoid cluttering the diff" />
+  <img src="/assets/images/github-as-a-workflow/06.png" alt="When an inline comment has been taken care of, it disappears to avoid cluttering the diff" />
   <figcaption>When an inline comment has been taken care of, it disappears to avoid cluttering the diff</figcaption>
 </figure>
 
@@ -141,14 +141,14 @@ Labels can be very helpful to add extra pieces of information to a pull-request 
 There is no limit regarding the amount of labels a project can have. They also are associated with colors, building a little yet powerful nomenclaturing system. Labels can be something such as *Design*, *Front-end*, *Back-end*, or even *Waiting for info*, *Waiting for review* or *To be started*. You name it.
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/07.png" alt="Labels are used to create a nomenclature" />
+  <img src="/assets/images/github-as-a-workflow/07.png" alt="Labels are used to create a nomenclature" />
   <figcaption>Labels are used to create a nomenclature</figcaption>
 </figure>
 
  On a project involving design, front-end, back-end and devops teams, I would recommend having these team names as labels so each team is aware of the stories they have to be working on.
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/08.png" alt="Labels are applied to stories to be able to filter them as well as givin more information from the PR view directly" />
+  <img src="/assets/images/github-as-a-workflow/08.png" alt="Labels are applied to stories to be able to filter them as well as givin more information from the PR view directly" />
   <figcaption>Labels are applied to stories to be able to filter them as well as givin more information from the PR view directly</figcaption>
 </figure>
 
@@ -157,7 +157,7 @@ There is no limit regarding the amount of labels a project can have. They also a
 More often than not, a story is mostly for one person. Or when several actors have to get involved in a story, it usually happens one after the other (the designer does the mockup, then the front-end developer does the component, then the back-end developer integrates it in the process, etc.). Because of this, it might be interesting to *assign* the pull-request to the relevant actor on GitHub, and change this assignment when needed.
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/09.png" alt="Assignees are a good way of knowing who works on what from the PR view" />
+  <img src="/assets/images/github-as-a-workflow/09.png" alt="Assignees are a good way of knowing who works on what from the PR view" />
   <figcaption>Assignees are a good way of knowing who works on what from the PR view</figcaption>
 </figure>
 
@@ -168,14 +168,14 @@ Because GitHub is a platform for Git, it is a great tool to conserve a clean his
 Applying this to a Scrum project could mean having a milestone per sprint (named after the number of the sprint), with a due date matching the one from the end of the sprint and the goals of the sprint in the description. All pull-requests (stories) would be tagged as part of the milestone. 
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/10.png" alt="In this workflow, a milestone equals a sprint" />
+  <img src="/assets/images/github-as-a-workflow/10.png" alt="In this workflow, a milestone equals a sprint" />
   <figcaption>In this workflow, a milestone equals a sprint</figcaption>
 </figure>
 
 While not very helpful for the develop because all open pull-requests are part of the current sprint anyway, it might be interesting to have this as an history, where all pull-requests are gathered in milestones corresponding to sprints.
 
 <figure class="figure">
-  <img src="/images/github-as-a-workflow/11.png" alt="From the view, we can know to which sprint a story belongs, in case some of them are late to be resolved" />
+  <img src="/assets/images/github-as-a-workflow/11.png" alt="From the view, we can know to which sprint a story belongs, in case some of them are late to be resolved" />
   <figcaption>From the view, we can know to which sprint a story belongs, in case some of them are late to be resolved</figcaption>
 </figure>
 

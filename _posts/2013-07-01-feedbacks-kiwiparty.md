@@ -10,7 +10,7 @@ Hey guys! It's been a while I haven't post anything; last month has been pretty 
 It's a one-day French conference at Strasbourg (France) gathering 10 speakers and more than 150 persons to talk about front-end technologies, accessibility, ergonomy, webdesign, and so much more.
 
 <figure class="figure">
-<img src="/images/feedbacks-kiwiparty/code-is-poetry.jpg" alt="">
+<img src="/assets/images/feedbacks-kiwiparty/code-is-poetry.jpg" alt="">
 <figcaption>Code is poetry - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
@@ -23,7 +23,7 @@ Basically, my talk is a collection of code snippets and real-life usecases of Sa
 I'd never been at a conference before so it was pretty much what I could expect. A bunch of awesome people, great talks, food, and most of all: web. It was an amazing day, for sure.
 
 <figure class="figure">
-<img src="/images/feedbacks-kiwiparty/laptops-and-food.jpg" alt="">
+<img src="/assets/images/feedbacks-kiwiparty/laptops-and-food.jpg" alt="">
 <figcaption>Laptops and food - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ I could also meet all those great French guys and girls from Twitter and put som
 It went great. People seemed very interested in the topic and I felt like they were understanding the main point of the conference, so it's something!
 
 <figure class="figure">
-<img src="/images/feedbacks-kiwiparty/hugo-giraudel.jpg" alt="">
+<img src="/assets/images/feedbacks-kiwiparty/hugo-giraudel.jpg" alt="">
 <figcaption>Focus - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ Oh, and of course here are my [slides](http://slid.es/hugogiraudel/css-kick-ass-
 ## Final words
 
 <figure class="figure--right">
-<img src="/images/feedbacks-kiwiparty/stuff.jpg" alt="">
+<img src="/assets/images/feedbacks-kiwiparty/stuff.jpg" alt="">
 <figcaption>Stuff - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 

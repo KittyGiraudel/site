@@ -13,7 +13,7 @@ Here and now is really an exciting time as a web developer or web designer. You 
 This is one of the thousand reasons why I love my job. What you see is what you get and the only thing you need to start is a computer and Internet access. Pants are not a must! Voila, here you go.
 
 <figure class="figure">
-<img src="/images/your-work-is-not-good-enough/catch-phrase.png" alt="" />
+<img src="/assets/images/your-work-is-not-good-enough/catch-phrase.png" alt="" />
 <figcaption>Or is it?</figcaption>
 </figure>
 

@@ -12,7 +12,7 @@ At work, many of our pages present one or more collection of items, like product
 Now, this is the core of a lot of other components. For instance, we have a component featuring top products, with the same list of items but in a better wrapper with a heading, a "see more" link, a large left border for some visual impact and stuff. It's just an example but the `elements` component is used in at least 3 to 4 other components of our architecture.
 
 <figure class="figure">
-<img src="/images/why-element-queries-matter/thumbs-list.png" alt="" />
+<img src="/assets/images/why-element-queries-matter/thumbs-list.png" alt="" />
 <figcaption>A sketch of our main component</figcaption>
 </figure>
 

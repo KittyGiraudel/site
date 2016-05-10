@@ -10,7 +10,7 @@ tags:
 A couple of weeks ago, I have been invited by the [FeWeb](http://www.lafeweb.be/) (which stands for *La fédération des métiers du web*, literally *Web professions Federation*) to talk about Sass at [Co.Station](http://www.co-station.com/) in Bruxelles, Belgium.
 
 <figure class="figure">
-<img src="/images/feedbacks-feweb/feweb-costation.jpg" alt="">
+<img src="/assets/images/feedbacks-feweb/feweb-costation.jpg" alt="">
 <figcaption>FeWeb's event, hosted by Co.Station</figcaption>
 </figure>
 
@@ -25,7 +25,7 @@ The Co.Station is a great spot in the heart of Bruxelles, aiming at helping star
 The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But... it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor guys who had to stand up for almost 2 hours, it sucks.
 
 <figure class="figure">
-<img src="/images/feedbacks-feweb/room.jpg" alt="">
+<img src="/assets/images/feedbacks-feweb/room.jpg" alt="">
 <figcaption>Crowded room is crowded.</figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ The room we were in was lovely. Completely made of white wood, perfectly lighted
 FeWeb's events are usually composed of 2 successive talks, then a couple of beers (remember it's in Belgium). Thus, [Thierry Michel](https://twitter.com/thierrymichel) was giving an introduction to Sass and Compass, then I talked about architecture and components. 
 
 <figure class="figure">
-<img src="/images/feedbacks-feweb/speakers.jpg" alt="">
+<img src="/assets/images/feedbacks-feweb/speakers.jpg" alt="">
 <figcaption>Thierry and I on stage.</figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ Also when tensed I tend to speak in low voice, certainly as an attempt to calm t
 Anyway, I eventually went through the whole session and ended my talk peacefully. The audience was receptive and we got some interesting questions (what about post-processors, Autoprefixer...), so it was pretty cool.
 
 <figure class="figure">
-<img src="/images/feedbacks-feweb/talk.jpg" alt="">
+<img src="/assets/images/feedbacks-feweb/talk.jpg" alt="">
 <figcaption>Because LEGOs are cool.</figcaption>
 </figure>
 

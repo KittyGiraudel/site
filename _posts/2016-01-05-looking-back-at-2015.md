@@ -21,7 +21,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 🇩🇪 **March 15th**. I moved from Grenoble (France) to Berlin (Germany), despite not knowing a single word of German. I learnt a few words since then but it’s still far from ideal. In any case, I learnt to love the city and its how open-minded people. Planning on staying there for a while.
 
 <figure class="figure">
-  <img src="/images/looking-back-at-2015/alps.jpg" alt="Picture of the Alps" />
+  <img src="/assets/images/looking-back-at-2015/alps.jpg" alt="Picture of the Alps" />
   <figcaption>This, is what I left behind.</figcaption>
 </figure>
 
@@ -40,7 +40,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 🏆 **July 20th**. I made it to the [shortlist](http://www.edenspiekermann.com/blog/posts/net-awards-shortlist) for the “Developer of the Year” Net Award. At 23, needless to say it is a huge honor. [Sara Soueidan](https://sarasoueidan.com/blog/developer-of-the-year-2-15-net-award/) later won the well-deserved award on September 21st.
 
 <figure class="figure--right">
-<img src="/images/looking-back-at-2015/coding.jpg" alt="Picture of me coding" />
+<img src="/assets/images/looking-back-at-2015/coding.jpg" alt="Picture of me coding" />
 <figcaption>Me, casually writing some code. Courtesy of <a href="https://twitter.com/franklyandrea">Andrea Franke</a>.</figcaption>
 </figure>
 

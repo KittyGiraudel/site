@@ -7,7 +7,7 @@ tags:
   - riddle
 ---
 <figure class="figure--right">
-<img src="/images/calc-css-riddle/gollum-riddle.gif" alt="">
+<img src="/assets/images/calc-css-riddle/gollum-riddle.gif" alt="">
 <figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
 </figure>
 

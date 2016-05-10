@@ -7,7 +7,7 @@ tags:
   - css
 ---
 
-<img src="/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="CSS 3, Pratique du Design Web" class="pull-image--right" />
+<img src="/assets/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="CSS 3, Pratique du Design Web" class="pull-image--right" />
 
 In a couple of days, my book "CSS 3 Pratique de Design Web" (*CSS 3 Practicing Web Design*) will be on sale. It has been a one-year road to get there, and one hell of a journey so I thought I'd relate it to you in case you find yourself in my position.
 

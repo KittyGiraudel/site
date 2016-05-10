@@ -14,7 +14,7 @@ Anyway, since we do not have a blog for Browserhacks, I have no choice but to an
 
 ## Moving to grunt
 
-<img src="/images/whats-up-at-browserhacks/grunt.jpg" alt="Grunt.js is a JavaScript task runner" class="pull-image--right" />
+<img src="/assets/images/whats-up-at-browserhacks/grunt.jpg" alt="Grunt.js is a JavaScript task runner" class="pull-image--right" />
 
 We have decided to put aside our PHP tools to move to a [Grunt](http://gruntjs.com) workflow. As you may know, Grunt is  a task-builder in JavaScript which is involving a lot of things to us.
 
@@ -79,7 +79,7 @@ This is a [feature request by Lea Verou](https://github.com/4ae9b8/browserhacks/
 Thanks to both Fabrice and Grunt, we managed to have all our CSS hacks checked with CSS Lint so you can know right away if a hack is valid or not. We'll very soon have the same thing for JavaScript hacks with JSLint.
 
 <figure class="figure">
-<img src="/images/whats-up-at-browserhacks/validity.jpg" alt="">
+<img src="/assets/images/whats-up-at-browserhacks/validity.jpg" alt="">
 <figcaption>Display hacks validity and CSS Lint errors</figcaption>
 </figure>
 

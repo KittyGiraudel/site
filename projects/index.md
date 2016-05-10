@@ -10,7 +10,7 @@ tags:
 
 # Open-source Projects
 
-<img src="/images/banners/coding.jpg" alt="Photography by Alexandra Lucas" />
+<img src="/assets/images/banners/coding.jpg" alt="Photography by Alexandra Lucas" />
 
 {% include ad.html %}
 

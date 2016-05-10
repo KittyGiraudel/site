@@ -16,7 +16,7 @@ Let's say things straight: I'd never have the opportunity to work on an image ga
 
 <figure class="figure">
 <a href="http://alexandralucas.com" target="_blank">
-<img src="/images/designing-an-image-gallery/alexandralucas.jpg" alt="">
+<img src="/assets/images/designing-an-image-gallery/alexandralucas.jpg" alt="">
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">Alexandralucas.com</a></figcaption>
 </figure>
@@ -73,7 +73,7 @@ Regarding the second feature, I basically needed a little lightbox thingie to di
 
 <figure class="figure">
 <a href="http://alexandralucas.com" target="_blank">
-<img src="/images/designing-an-image-gallery/lightbox.jpg" alt="">
+<img src="/assets/images/designing-an-image-gallery/lightbox.jpg" alt="">
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">Lightbox powered by Avgrund</a></figcaption>
 </figure>
@@ -112,7 +112,7 @@ Of course, we wanted the site to look acceptable (if not good!) on small devices
 
 <figure class="figure--right">
 <a href="http://alexandralucas.com" target="_blank">
-<img src="/images/designing-an-image-gallery/phoneview.png" alt="">
+<img src="/assets/images/designing-an-image-gallery/phoneview.png" alt="">
 </a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">View on most smartphone</a></figcaption>
 </figure>

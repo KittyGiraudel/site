@@ -26,7 +26,7 @@ Also, we are so used to browsing incredible websites on a daily basis that I bel
 When teaching the basics of front-end development, I like to work on cooking recipes. A cooking recipe is usually a very simple and straight-forward document that can make sense on its own, even when undesigned. A cooking recipe is enough to learn about HTML without feeling overwhelmed, and more than enough to experiment with CSS for literally hours.
 
 <figure class="figure">
-  <img src="/images/giving-a-front-end-workshop/recipe-example.png" alt="Example of a recipe that I prepared for the workshop" />
+  <img src="/assets/images/giving-a-front-end-workshop/recipe-example.png" alt="Example of a recipe that I prepared for the workshop" />
   <figcaption>Example of a recipe that I prepared for the workshop</figcaption>
 </figure>
 
@@ -119,11 +119,11 @@ All participants seemed happy with what they came up with in just a few hours, s
 If you have any tip or comment, please be sure to share in the comment section. In the mean time, here are a few screenshots of the work done by some participants:
 
 <figure class="figure">
-  <img src="/images/giving-a-front-end-workshop/recipe-1.png" alt="Screenshot of a participant’s recipe" />
+  <img src="/assets/images/giving-a-front-end-workshop/recipe-1.png" alt="Screenshot of a participant’s recipe" />
 
-  <img src="/images/giving-a-front-end-workshop/recipe-2.png" alt="Screenshot of a participant’s recipe" />
+  <img src="/assets/images/giving-a-front-end-workshop/recipe-2.png" alt="Screenshot of a participant’s recipe" />
 
-  <img src="/images/giving-a-front-end-workshop/recipe-3.png" alt="Screenshot of a participant’s recipe" />
+  <img src="/assets/images/giving-a-front-end-workshop/recipe-3.png" alt="Screenshot of a participant’s recipe" />
   
   <figcaption>Screenshots of some participants’ recipes</figcaption>
 </figure>

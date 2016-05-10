@@ -14,7 +14,7 @@ tags:
 A few months ago I tested Netflix, immediately got hooked and got myself an account. I started watching a lot of series that I usually had to view elsewhere. Each episode or movie starts with the Netflix logo animation.
 
 <figure class="figure">
-<img src="/images/netflix-logo-in-css/logo.gif" alt="" />
+<img src="/assets/images/netflix-logo-in-css/logo.gif" alt="" />
 <figcaption>Original animated Netflix logo</figcaption>
 </figure>
 
@@ -131,7 +131,7 @@ Here's a demo on CodePen
 Let's write a function for the 3d-effect and the shadow. I paused on one frame of the video I had made before and looked at it in detail.
 
 <figure class="figure">
-<img src="/images/netflix-logo-in-css/shadow.png" alt="" />
+<img src="/assets/images/netflix-logo-in-css/shadow.png" alt="" />
 <figcaption>Image extracted from the original animated Netflix logo</figcaption>
 </figure>
 
@@ -148,7 +148,7 @@ We will call this function inside keyframes so we want it to be able to handle a
 We need one more argument to define the depth of the shadow or 3d-effect.
 
 <figure class="figure">
-<img src="/images/netflix-logo-in-css/shadow-css.png" alt="" />
+<img src="/assets/images/netflix-logo-in-css/shadow-css.png" alt="" />
 <figcaption>My CSS implementation of the previously shown image</figcaption>
 </figure>
 
