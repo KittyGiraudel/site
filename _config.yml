@@ -20,6 +20,13 @@ sass:
   sass_dir: assets/sass
   style: :compressed
 gems: [jekyll-paginate]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - README.md
+  - CNAME
+  - node_modules
 
 # Navigation
 nav:
