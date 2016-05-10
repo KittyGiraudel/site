@@ -25,21 +25,21 @@ http://ogp.me/ns/article#">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
   <!-- Web fonts -->
   <script>
   {% include utilities.js %}
-  loadFont('sg', '/css/fonts/data-woff.css', '/css/fonts/data-woff2.css', '/css/fonts/data-ttf.css');
+  loadFont('sg', '/assets/css/fonts/data-woff.css', '/assets/css/fonts/data-woff2.css', '/assets/css/fonts/data-ttf.css');
   </script>
   
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/rss" | prepend: site.baseurl | prepend: site.url }}" />
 
   <!-- Favicon -->
-  <link rel="icon" href="/favicon.png">
-  <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+  <link rel="icon" href="/assets/images/favicon.png">
+  <!--[if IE]><link rel="shortcut icon" href="/assets/images/favicon.ico"><![endif]-->
 
   <!-- Open Graph data -->
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
