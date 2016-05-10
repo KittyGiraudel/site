@@ -10,7 +10,7 @@ tags:
 The other day, I was having a look at featured pens from CodePen to kill some time before getting a haircut. I ended up checking [a pen from Yelp Devs'](http://codepen.io/yelp/pen/aLxbG) (in the person of [Benjamin Knight](https://twitter.com/benjamin_knight)) in which they featured their star-rating system we can see pretty much all over their site.
 
 <figure class="figure--right">
-<img src="/images/stars-rating-widget-with-sass/rating-widget.png" alt="" />
+<img src="/assets/images/stars-rating-widget-with-sass/rating-widget.png" alt="" />
 <figcaption>Star-rating widget from Yelp</figcaption>
 </figure>
 
@@ -26,13 +26,16 @@ First of all, the way they approach the whole widget is *very* clever. To deal w
 
 So the few things I noticed were definitely not about their idea but more the way they use Sass. The first and most obvious mistake is they output a rule for 5.5-stars rating which simply cannot exist since it goes from 1 to 5.
 
-<pre class="language-css"><code>.rating-5-half .star-6 {
+```css
+.rating-5-half .star-6 {
   border-left-color: #dd050b;
-}</code></pre>
+}
+```
 
 Next and probably the biggest flaws in their code, they got a lot of duplicated rules. It's not terrible but it could definitely be improved. Here is a little section of their output:
 
-<pre class="language-css"><code>.rating-3 .star-1,
+```css
+.rating-3 .star-1,
 .rating-3-half .star-1 {
   border-color: #f0991e;
   background: #f0991e;
@@ -48,13 +51,15 @@ Next and probably the biggest flaws in their code, they got a lot of duplicated 
 .rating-3-half .star-3 {
   border-color: #f0991e;
   background: #f0991e;
-}</code></pre>
+}
+```
 
 This is only for 3-stars ratings, but it's the same for other ratings as well. We could merge the selectors into one in order to have a single rule with only two declarations in there which would be much better.
 
 Last but not least, their `stars-color` function returning a color based on a number (of stars) is repetitive and could be refactored.
 
-<pre class="language-scss"><code>@function stars-color($num) {
+```scss
+@function stars-color($num) {
   @if $num == 5 {
     @return #dd050b;
   } @else if $num == 4 {
@@ -66,7 +71,8 @@ Last but not least, their `stars-color` function returning a color based on a nu
   } @else if $num == 1 {
     @return #cc8b1f;
   }
-}</code></pre>
+}
+```
 
 ## Solving problems, one at a time 
 
@@ -74,11 +80,13 @@ Last but not least, their `stars-color` function returning a color based on a nu
 
 One thing I've been surprised to see is they use classes instead of data-attributes for their ratings. In my opinion the only valid option to do so is because you still have to support Internet Explorer 6 but I'm not sure Yelp does. So I decided to move everything to data-attributes.
 
-<pre class="language-markup"><code>&lt;!-- No more -->
-&lt;div class="rating rating-1-half">&lt;/div>
+```html
+<!-- No more -->
+<div class="rating rating-1-half"></div>
 
-&lt;!-- Instead -->
-&lt;div class="rating" data-rating="1.5">&lt;/div></code></pre>
+<!-- Instead -->
+<div class="rating" data-rating="1.5"></div>
+```
 
 There are two main reasons for this. The first one is it allows me to use data-attributes modulators to target both `x` and `x.y` by doing `data-rating^='x'`. This may seem insignificant but it makes a selector like `.rating-1 .star-1, .rating-1-half .star-1` turn into `[data-rating^='1'] .star-1`. Much shorter.
 
@@ -88,14 +96,16 @@ Another interesting about moving to data-attributes is it makes any JavaScript e
 
 We'll start with the simplest thing we can do to improve the code: refactoring the `stars-color` function. My idea was to have a list of colors (sorted from the lowest rating to the best one) so we can pick a color from its index in the list. 
 
-<pre class="language-scss"><code>@function stars-color($stars) {
+```scss
+@function stars-color($stars) {
   @if type-of($stars) != number {
     @warn '#{$stars} is not a number for `stars-color`.';
     @return false;
   }
   $colors: #cc8b1f #dcb228 #f0991e #f26a2c #dd050b;
   @return if($stars <= length($colors), nth($colors, $stars), #333);
-}</code></pre>
+}
+```
 
 Here we have a `$colors` Sass list containing 5 colors, the first being the color for 1 and 1.5 ratings, and the last for 5-stars ratings. The function accepts a single argument: `$stars` which is the rating. 
 
@@ -111,7 +121,8 @@ Yelp Devs are using nested loops to output their CSS. The outer loop goes from 1
 
 Because it does the work well and is quite smart, I kept this as is. However I decided not to output anything in the inner loop and instead use it to build a compound selector to avoid duplicated CSS rules.
 
-<pre class="language-scss"><code>@for $i from 1 to 5 {
+```scss
+@for $i from 1 to 5 {
   $color: stars-color($i);
   $selector: ();
 
@@ -131,7 +142,8 @@ Because it does the work well and is quite smart, I kept this as is. However I d
   [data-rating='#{$i + 0.5}'] .star-#{$i + 1} {
     border-left-color: $color;
   }
-}</code></pre>
+}
+```
 
 This may look a little complicated but I can assure you it is actually quite simple to understand. First, we retrieve the color for the current loop run and store it in a `$color` variable to avoid having to get it multiple times. We also instanciate an empty list named `$selector` which will contain our generated selector.
 
@@ -152,11 +164,13 @@ There are 2 things that are different in this case:
 
 Then dealing with this case is as easy as writing:
 
-<pre class="language-scss"><code>$color: stars-color(5);
+```scss
+$color: stars-color(5);
 [data-rating='5'] i {
   border-color: $color;
   background: $color;
-}</code></pre>
+}
+```
 
 ## Final code 
 
@@ -167,7 +181,8 @@ To see how efficient those little optimizations have been, I've minified both de
 
 And here is what the loops' output looks like in my case:
 
-<pre class="language-css"><code>[data-rating^='1'] .star-1 {
+```css
+[data-rating^='1'] .star-1 {
   border-color: #cc8b1f;
   background: #cc8b1f;
 }
@@ -212,7 +227,8 @@ And here is what the loops' output looks like in my case:
 [data-rating='5'] i {
   border-color: #dd050b;
   background: #dd050b;
-}</code></pre>
+}
+```
 
 Looks quite efficient, doesn't it?
 

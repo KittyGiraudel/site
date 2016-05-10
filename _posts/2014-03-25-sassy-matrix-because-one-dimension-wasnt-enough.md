@@ -20,12 +20,14 @@ If you wonder whether I succeeded or failed, I succeeded. You can play with [the
 
 Now back to our main topic: I needed matrices. A matrix is basically a two-dimensional array (or list). For example this is a Sass matrix:
 
-<pre class="language-scss"><code>$matrix: (
+```scss
+$matrix: (
   (0 1 2 3)
   (1 0 0 0)
   (2 0 0 0)
   (3 0 0 0)
-)</code></pre>
+)
+```
 
 Well this was pretty easy. Now what if we want to dynamically create a matrix? Update values? Retreive values? And more stuff? This is getting harder. So I created a couple of functions to ease the pain. 
 
@@ -33,16 +35,19 @@ Well this was pretty easy. Now what if we want to dynamically create a matrix? U
 
 JavaScript allows you to instanciate a new array of `n` cells. This makes creating empty matrices quite easy, you only need a single for-loop like this:
 
-<pre class="language-javascript"><code>var matrix = new Array(9);
-for (var i = 0; i &lt; matrix.length; i++) {
+```javascript
+var matrix = new Array(9);
+for (var i = 0; i < matrix.length; i++) {
   matrix[i] = new Array(9);
-}</code></pre>
+}
+```
 
 This would be enough to create an empty matrix of 9x9 with all cells filled with `undefined`. In Sass, you cannot create a new list of `n` cell. If you do `$list: (9)`, you are basically assigning the number `9` to the `$list` variable which is not what you want.
 
 Thus I found out it's much easier to simply instanciate a new list with dummy values to be updated later than creating a matrix with definitive value right away. Let's do that shall we?
 
-<pre class="language-scss"><code>@function matrix($x, $y: $x) {
+```scss
+@function matrix($x, $y: $x) {
   $matrix: ();
   @for $i from 1 through $x {
     $tmp: ();
@@ -52,7 +57,8 @@ Thus I found out it's much easier to simply instanciate a new list with dummy va
     $matrix: append($matrix, $tmp);
   }
   @return $matrix;
-}</code></pre>
+}
+```
 
 See how we make the `$y` parameter optional by defaulting it to `$x`? It makes instanciating squared matrices easier: `matrix(5)`. Little things matter. ;)
 
@@ -60,27 +66,33 @@ See how we make the `$y` parameter optional by defaulting it to `$x`? It makes i
 
 Being able to instanciate an empty matrix is cool but being able to fill it with real values is even better! What if we had a `set-entry` function setting given value at given position on given matrix?
 
-<pre class="language-scss"><code>@function set-entry($matrix, $coords, $value) {
+```scss
+@function set-entry($matrix, $coords, $value) {
   $x: nth($coords, 1);
   $y: nth($coords, 2);
   $matrix: set-nth(set-nth(nth($matrix, $x), $y, $value), $x, $matrix);
   @return $matrix;
-}</code></pre>
+}
+```
 
 We could have requested two distinct parameters for `$x` and `$y` but I feel like it's better asking for a 2-items long list `($x $y)`. It keeps the signature cleaner and makes more sense to me. However we need to make sure `$coords` is actually a 2-items long list of coordinates, so why don't we make a little helper for this?
 
-<pre class="language-scss"><code>@function _valid-coords($coords) {
+```scss
+@function _valid-coords($coords) {
   @if length($coords) != 2 or type-of(nth($coords, 1)) != number or type-of(nth($coords, 2)) != number {
     @return false;
   }
   @return true;
-}</code></pre>
+}
+```
 
 *Note: I like to prefix private functions with an underscore. By "private" I mean functions that are not supposed to be called from the outside. Unfortunately Sass doesn't provide any way to privatize stuff.*
 
 All we did was checking for the length and the type. This doesn't deal with out of bounds coordinates but that's more than enough for now. Anyway, to set a value in the grid it is nothing easier than:
 
-<pre class="language-scss"><code>$matrix: set-entry($matrix, (1 1), 42);</code></pre>
+```scss
+$matrix: set-entry($matrix, (1 1), 42);
+```
 
 What is also pretty cool is you can use negative indexes to start from the end of columns/rows. So to fill the last entry from the last row of the grid, you'd do something like `set-entry($matrix, (-1 -1), 42)`.
 
@@ -88,24 +100,29 @@ What is also pretty cool is you can use negative indexes to start from the end o
 
 Now that we are able to easily set values in the grid, we need a way to retrieve those values! Let's build a `get-entry` function working exactly like the one we just did.
 
-<pre class="language-scss"><code>@function get-entry($matrix, $coords) {
+```scss
+@function get-entry($matrix, $coords) {
   @if not _valid-coords($coords) {
     @warn "Invalid coords `#{$coords}` for `get-entry`.";
     @return false;
   }
 
   @return nth(nth($matrix, nth($coords, 1)), nth($coords, 2));
-}</code></pre>
+}
+```
 
 See how we check for coordinates validity with our brand new helper? I don't know for you, but I think it looks pretty neat! Anyway, to retrieve a value at position (x y), all we have to do is:
 
-<pre class="language-scss"><code>$value: get-entry($matrix, (1 1)); // 42</code></pre>
+```scss
+$value: get-entry($matrix, (1 1)); // 42
+```
 
 ## Displaying a matrix 
 
 What I always found difficult when working with matrices (no matter the language) is actually seeing what's going on. I need a visual representation of the grid to understand what I am doing and whether I'm doing it properly. Unfortunately [my debug function from SassyLists](https://github.com/Team-Sass/SassyLists/blob/master/stylesheets/SassyLists/_debug.scss) isn't quite suited for such a case but the main idea is the same. I just had to revamp it a little bit.
 
-<pre class="language-scss"><code>@function display($matrix) {
+```scss
+@function display($matrix) {
   $str: "";
   @each $line in $matrix {
     $tmp: "";
@@ -115,17 +132,21 @@ What I always found difficult when working with matrices (no matter the language
     $str: $str + $tmp + "\A ";
   }
   @return $str;
-}</code></pre>
+}
+```
 
 This function returns a string like this: `" 0 0 0\A  0 0 0\A  0 0 0\A "`. As is, it is not very useful but when you couple it with generated content and white-space wrapping, you got something like this:
 
-<pre class="language-"><code>0 0 0
+```
 0 0 0
-0 0 0</code></pre>
+0 0 0
+0 0 0
+```
 
 ... which is pretty nice. Basically I used the mixin from SassyLists which takes a string and displays it in the body pseudo-element with `white-space: pre-wrap`, allowing for line breaks.
 
-<pre class="language-scss"><code>@mixin display($matrix, $pseudo: before) {
+```scss
+@mixin display($matrix, $pseudo: before) {
   body:#{$pseudo} {
     content: display($matrix)                 !important;
 
@@ -142,7 +163,8 @@ This function returns a string like this: `" 0 0 0\A  0 0 0\A  0 0 0\A "`. As is
     text-shadow: 0 1px white                  !important;
     white-space: pre-wrap                     !important;
   }
-}</code></pre>
+}
+```
 
 Since there are two pseudo-elements (`::after` and `::before`), you can watch for 2 matrices at the same time. Pretty convenient when working on complicated stuff or debugging a matrix.
 

@@ -25,7 +25,8 @@ Everything started when I realized a function to stringify a list. At first, my 
 
 It was pretty easy to do.
 
-<pre class="language-scss"><code>@function debug($list) {
+```scss
+@function debug($list) {
 	// We open the bracket
 	$result: "[ ";
 
@@ -53,15 +54,18 @@ It was pretty easy to do.
     // And return the string
     $result: $result + " ]";
     @return quote($result);
-}</code></pre>
+}
+```
 
 This simple functions turns a Sass list into a readable string. It also deals with nested lists. Please have a look at the following example:
 
-<pre class="language-scss"><code>$list: a, b, c, d e f, g, h i, j;
+```scss
+$list: a, b, c, d e f, g, h i, j;
 body:before {
 	content: debug($list);
     // [ a, b, c, [ d, e, f ], g, [ h, i ], j ]
-}</code></pre>
+}
+```
 
 Okay, this is pretty neat, right? However everytime I wanted to debug a list, I had to create a `body:before` rule, set the content property and all... I wanted something easier.
 
@@ -69,7 +73,8 @@ Okay, this is pretty neat, right? However everytime I wanted to debug a list, I 
 
 Basically I wanted to go `@include debug($list)` and have everything displayed. Perfect usecase for a mixin, right?
 
-<pre class="language-scss"><code>@mixin debug($list) {
+```scss
+@mixin debug($list) {
 	body:before {
         content: debug($list)                     !important;
 
@@ -86,7 +91,8 @@ Basically I wanted to go `@include debug($list)` and have everything displayed. 
     	text-shadow: 0 1px white                  !important;
     	white-space: pre-wrap                     !important;
     }
-}</code></pre>
+}
+```
 
 In case you wonder, I bash `!important` in case `body:before` is already defined for something. Basically I force this pseudo-element to behave exactly how I want.
 
@@ -106,7 +112,8 @@ If you've ever read the [CSS specifications for the content property](http://www
 
 This is pretty much what we will do here.
 
-<pre class="language-scss"><code>@function debug($list) {
+```scss
+@function debug($list) {
 	$line-break: "\A ";
 	$result: "[ " + $line-break;
 
@@ -128,13 +135,15 @@ This is pretty much what we will do here.
 
 	$result: $result + $line-break + "]";
 	@return quote($result);
-}</code></pre>
+}
+```
 
 All we did was adding a line-break after the bracket, after each value, then before the closing bracket. That looks great, but we need to handle the indentation now. This is where it gets a little tricky.
 
 Actually the only way I could manage a perfect indentation is the same trick I used for the `to-string()` function: with an internal boolean to make a distinction between the root level (the one you called) and the inner levels (from nested lists). Problem with this boolean is it messes with the function signature but that's the only way I found.
 
-<pre class="language-scss"><code>@function debug($list, $root: true) {
+```scss
+@function debug($list, $root: true) {
   $line-break: "\A ";
   $result: "[ " + $line-break;
   $space: if($root, "", "  ");
@@ -158,7 +167,8 @@ Actually the only way I could manage a perfect indentation is the same trick I u
 
   $result: $result + $line-break + $space + "]";
   @return quote($result);
-}</code></pre>
+}
+```
 
 The list should now be properly indented. So should be the nested lists. Okaaaay this is getting quite cool! We can now output a list in a clean `var_dump()` way.
 
@@ -166,7 +176,8 @@ The list should now be properly indented. So should be the nested lists. Okaaaay
 
 Now the icing on top of the cake would be displaying variable types, right? Thanks to the `type-of()` function and some tweaks to our `debug` function, it is actually quite simple to do. Far simpler than what we previously did with indents and line breaks.
 
-<pre class="language-scss"><code>@function debug($list, $type: false, $root: true) {
+```scss
+@function debug($list, $type: false, $root: true) {
   $line-break: "\A ";
   $result: if($type,
 	  "(list:#{length($list)})[ "+ $line-break,
@@ -198,7 +209,8 @@ Now the icing on top of the cake would be displaying variable types, right? Than
 
 	$result: $result + $line-break + $space + "]");
 	@return quote($result);
-}</code></pre>
+}
+```
 
 As you can see, it is pretty much the same. We only check for the `$type` boolean and add the value types accordingly wherever they belong. We're almost there!
 
@@ -208,7 +220,8 @@ As you can see, it is pretty much the same. We only check for the `$type` boolea
 
 The only problem left is that if you debug a single value, it will wrap it into `(list:1) [ ... ]`. While this is true, it doesn't really help the user so we should get rid of this. Fairly easy! We just have to add a condition when entering the function.
 
-<pre class="language-scss"><code>@function debug($list, $type: false, $root: true) {
+```scss
+@function debug($list, $type: false, $root: true) {
 	@if length($list) == 1 {
     	@return if($type,
     		quote("(#{type-of($list)}) #{$list}"),
@@ -217,7 +230,8 @@ The only problem left is that if you debug a single value, it will wrap it into 
 	}
 	...
 }
-</code></pre>
+
+```
 
 ## Final words
 

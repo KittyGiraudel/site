@@ -31,9 +31,11 @@ If you simply want to add a file to your project, you can get the [dist file](ht
 
 Then you've access to a neat little API:
 
-<pre class="language-scss"><code>$list: oranges pears apples strawberries bananas;
+```scss
+$list: oranges pears apples strawberries bananas;
 $sort: sort($list);
-// => apples bananas oranges pears strawberries</code></pre>
+// => apples bananas oranges pears strawberries
+```
 
 That's pretty much the end of it.
 
@@ -43,13 +45,17 @@ That's pretty much the end of it.
 
 Looking back at my code, I think it's pretty cool how I handled the whole thing.There are a couple of algorithms available but I wanted to keep the function name simple: `sort()` and not `bubble-sort()` or `insertion-sort()`. So you can pass the algorithm name as argument.
 
-<pre class="language-scss"><code>$sort: sort($list, $algorithm: "bubble");</code></pre>
+```scss
+$sort: sort($list, $algorithm: "bubble");
+```
 
 This will use the Bubble Sort implementation, because of the way the `sort()` function works:
 
-<pre class="language-scss"><code>@function sort($list, $order: $default-order, $algorithm: "quick") {
+```scss
+@function sort($list, $order: $default-order, $algorithm: "quick") {
   @return call("#{$algorithm}-sort", $list, $order);
-}</code></pre>
+}
+```
 
 <blockquote class="pull-quote--right">Quicksort is... quicker.</blockquote>
 
@@ -61,17 +67,21 @@ Depending on what you aim at doing with this sorting function, you might or migh
 
 And this somewhere is in the `$default-order` variable:
 
-<pre class="language-scss"><code>$default-order:
+```scss
+$default-order:
 	"!" "#" "$" "%" "&" "'" "(" ")" "*" "+" "," "-" "." "/" "[" "\\" "]" "^" "_" "{" "|" "}" "~"
 	"0" "1" "2" "3" "4" "5" "6" "7" "8" "9"
-	"a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z" !default;</code></pre>
+	"a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z" !default;
+```
 
 As you can see, it only deals with a restricted amount of characters. Mostly special characters, numbers and letters. You might notice there are no uppercase letters. I decided I wouldn't deal with case when sorting. It simply added to much complexity to sorting functions.
 
 Anyway, if you need to add extra characters, you can override this list or make your own variable and pass it to the sort function as the `$order` (2nd) argument.
 
-<pre class="language-scss"><code>$custom-order: /* your custom order */;
-$sort: sort($list, $order: $custom-order);</code></pre>
+```scss
+$custom-order: /* your custom order */;
+$sort: sort($list, $order: $custom-order);
+```
 
 Note that if an unrecognized character is found, it is skipped.
 

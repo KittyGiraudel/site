@@ -15,7 +15,7 @@ Please note I may do a lot of comparisons with both a MacBook Pro since my girlf
 So, **the Chromebook is an ultraportable laptop from Google running on Chrome OS** (Linux core) mostly made for web browsing sold at a lovely price: €299.
 
 <figure class="figure">
-<img src="/images/chromebook-review/chromebook.jpg" alt="">
+<img src="/assets/images/chromebook-review/chromebook.jpg" alt="">
 <figcaption>Samsung Chromebook - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
@@ -68,7 +68,7 @@ For in-depth tests on Samsung Chromebook's battery, please refer to [this articl
 The keyboard is pretty nice, really. **Keys are large and smooth** so typing is quite easy and most importantly, noiseless.
 
 <figure class="figure--right">
-<img src="/images/chromebook-review/chromebook-keyboard.jpg" alt="">
+<img src="/assets/images/chromebook-review/chromebook-keyboard.jpg" alt="">
 <figcaption>Samsung Chromebook - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
@@ -101,7 +101,7 @@ Beware, HDMI connection may be a problem if you plan on connecting your laptop t
 Chrome OS is freaking fast. It takes about 6 seconds between the moment you press the power button and the moment you're on the desktop. This is probably due to the fact **most applications and services run in the browser**. Indeed, there are very few things installed on the computer aside of Google Chrome.
 
 <figure class="figure">
-<img src="/images/chromebook-review/chrome-os.png">
+<img src="/assets/images/chromebook-review/chrome-os.png">
 <figcaption>Minimal desktop of Chrome OS</figcaption>
 </figure>
 

@@ -4,7 +4,7 @@
   </h1>
   <nav role="navigation" class="nav">
     <ul class="clearfix">
-      {% for item in site.data.nav %}
+      {% for item in site.nav %}
       <li {% if page.url == item.url %}class="is-active"{% endif %}><a href="{{ item.url }}">{{ item.label }}</a></li>
       {% endfor %}
     </ul>

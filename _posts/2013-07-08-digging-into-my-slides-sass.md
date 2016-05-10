@@ -40,7 +40,8 @@ The `@extend` feature has to be the one which made Sass so popular compared to o
 
 As a very simple example, let's make a placeholder of the [clearfix method by Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/).
 
-<pre class="language-scss"><code>%clearfix:after {
+```scss
+%clearfix:after {
   content: '';
   display: table;
   clear: both;
@@ -49,15 +50,18 @@ As a very simple example, let's make a placeholder of the [clearfix method by Ni
 .element {
   @extend %clearfix;
 }
-</code></pre>
+
+```
 
 Outputs:
 
-<pre class="language-scss"><code>.element:after {
+```scss
+.element:after {
   content: '';
   display: table;
   clear: both;
-}</code></pre>
+}
+```
 
 This example shows how we can use `@extend` and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you're familiar with [Twitter Bootstrap](http://twitter.github.io/bootstrap/components.html#alerts), then you'll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).
 
@@ -71,7 +75,8 @@ With vanilla CSS, you have 3 ways to do this:
 
 Let's see how we can Sass it:
 
-<pre class="language-scss"><code>%message {
+```scss
+%message {
   /* shared styles */
 }
 .message-error {
@@ -101,11 +106,13 @@ Let's see how we can Sass it:
   color: $color;
   background: lighten($color, 38%);
   border-color: lighten(adjust-hue($color, -10), 20%);
-}</code></pre>
+}
+```
 
 Outputs:
 
-<pre class="language-css"><code>.message-error, .message-ok, .message-warn, .message-info {
+```css
+.message-error, .message-ok, .message-warn, .message-info {
   /* shared styles */
 }
 .message-error {
@@ -127,20 +134,24 @@ Outputs:
   color: #3a87ad;
   background: #bfdcea;
   border-color: #7ac4d3;
-}</code></pre>
+}
+```
 
 No styles repeated, no heavy selector, only one class assigned in the markup. Pretty neat. However, even if there is no repeated styles in the final CSS, there are repeated lines in the Sass stylesheet. They are repeated because the `$color` variable changes in the scope. Isn't this the perfect usecase for a mixin?
 
-<pre class="language-scss"><code>@mixin message($color) {
+```scss
+@mixin message($color) {
   @extend %message;
   color: $color;
   background: lighten($color, 38%);
   border-color: lighten(adjust-hue($color, -10), 20%);
-}</code></pre>
+}
+```
 
 Then, we change our Sass a little bit:
 
-<pre class="language-scss"><code>.message-error {
+```scss
+.message-error {
   @include message(#b94a48);
 }
 .message-ok {
@@ -151,7 +162,8 @@ Then, we change our Sass a little bit:
 }
 .message-info {
   @include message(#3a87ad);
-}</code></pre>
+}
+```
 
 Quite cool, right? And this is only a very easy example of what you can do with `@extend` and placeholders. Feel free to think of clever usecases as well.
 
@@ -161,27 +173,32 @@ REM (root EM) is awesome. Problem is [IE8 doesn't understand it](http://caniuse.
 
 But duplicating every `font-size` declaration can be tedious and converting REM to PX can be annoying. Let's do it with Sass!
 
-<pre class="language-scss"><code>@mixin rem($value, $base: 16) {
+```scss
+@mixin rem($value, $base: 16) {
   font-size: $value + px;
   font-size: $value / $base + rem;
 }
 
 .element {
   @include rem(24);
-}</code></pre>
+}
+```
 
 Outputs:
 
-<pre class="language-css"><code>.element {
+```css
+.element {
   font-size: 24px;
   font-size: 1.5rem;
-}</code></pre>
+}
+```
 
 Calculations and fallbacks are handled by Sass. What about pushing things a little further by enabling some sort of flag for IE8 instead of always outputing the PX line? Let's say you are using this in a constantly evolving project or in a library or something. You might want to easily enable or disable IE8 support.
 
 Simple enough: wrap the PX line in a conditional statement (`@if`) depending on a boolean you initialize either at the top of your stylesheet or in a configuration file.
 
-<pre class="language-scss"><code>$support-IE8: false;
+```scss
+$support-IE8: false;
 
 @mixin rem($value, $base: 16) {
 	@if $support-IE8 {
@@ -193,13 +210,16 @@ Simple enough: wrap the PX line in a conditional statement (`@if`) depending on 
 
 .element {
 	@include rem(24);
-}</code></pre>
+}
+```
 
 Outputs:
 
-<pre class="language-css"><code>.element {
+```css
+.element {
 	font-size: 1.5rem;
-}</code></pre>
+}
+```
 
 On topic, I have writen a blog post about a robust and extensive PX/REM Sass mixin called [The Ultimate REM mixin](http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/).
 
@@ -207,7 +227,8 @@ On topic, I have writen a blog post about a robust and extensive PX/REM Sass mix
 
 I don't know for you but I don't really like manipulating media queries. The syntax isn't very typing-friendly, they require values, braces and all. Plus, I really like to manage breakpoints with keywords instead of values. Sass makes it happening; please consider the following mixin.
 
-<pre class="language-scss"><code>@mixin mq($keyword) {
+```scss
+@mixin mq($keyword) {
 	@if $keyword == small {
 		@media (max-width: 48em) { @content; }
 	}
@@ -215,7 +236,8 @@ I don't know for you but I don't really like manipulating media queries. The syn
 		@media (max-width: 58em) { @content; }
 	}
 	/* … */
-}</code></pre>
+}
+```
 
 When I want to declare alternative styles for a given breakpoint, I call the `mq()` mixin with the according keyword as argument like `@include mq(small) { … }`.
 
@@ -223,7 +245,8 @@ I like to name my breakpoints “small/medium/large” but you can chose whateve
 
 We can even push things further by adding retina support to the mixin (based on [HiDPI from Kaelig](https://github.com/kaelig/hidpi)):
 
-<pre class="language-scss"><code>@mixin mq($keyword) {
+```scss
+@mixin mq($keyword) {
 	/* … */
 	@if $keyword == retina {
 		@media 
@@ -233,11 +256,13 @@ We can even push things further by adding retina support to the mixin (based on 
 				@content;
 		}
 	}
-}</code></pre>
+}
+```
 
 We can now safely use this mixin as below:
 
-<pre class="language-scss"><code>.element {
+```scss
+.element {
 	/* regular styles */
 
 	@include mq(small) {
@@ -247,11 +272,13 @@ We can now safely use this mixin as below:
 	@include mq(retina) {
 		/* retina-only styles */
 	}
-}</code></pre>
+}
+```
 
 Outputs:
 
-<pre class="language-css"><code>.element {
+```css
+.element {
 	/* regular styles */
 }
 
@@ -267,7 +294,8 @@ Outputs:
 		.element {
 			/* retina-only styles */
 		}
-}</code></pre>
+}
+```
 
 The Sass way makes it way easier to debug and update in my opinion; lisibility is well preserved since alternative styles are based on keywords instead of arbitrary values.
 
@@ -275,7 +303,8 @@ The Sass way makes it way easier to debug and update in my opinion; lisibility i
 
 Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes [you just want to build your own](http://css-tricks.com/dont-overthink-it-grids/). Especially when you don't need a whole Rube Goldberg machine for your simple layout. Let's see how we can build a very simple grid system in Sass in about 12 lines:
 
-<pre class="language-scss"><code>/* Your variables */
+```scss
+/* Your variables */
 $nb-columns : 6; 
 $wrap-width : 1140px; 
 $column-width : 180px; 
@@ -295,7 +324,8 @@ $gutter-pct : ($gutter-width / $wrap-width) * 100;
 		width: 100%; 
 		margin-right: 0; 
 	} 
-}</code></pre>
+}
+```
 
 Now let's see what the code does exactly:
 
@@ -319,7 +349,8 @@ Now, what if you want nested counters? Where headings level 1 are numbered like 
 
 Doing this with vanilla CSS isn't too hard but require code repetition and quite a lot of lines. With a Sass `@for` loop, we can do it with less than 10 lines of code.
 
-<pre class="language-scss"><code>/* Initialize counters */
+```scss
+/* Initialize counters */
 body { 
 	counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
 } 
@@ -344,11 +375,13 @@ $nest: ();
 
 	/* Concatenate counters */
 	$nest: append($nest, counter(ct#{$i}) ".");
-}</code></pre>
+}
+```
 
 The code might be complicated to understand but it's really not that hard once you're familiar with Sass. Now, we can push things further by turning this shit into a mixin in order to make it both clean and reusable.
 
-<pre class="language-scss"><code>@mixin numbering($from: 1, $to: 6) {
+```scss
+@mixin numbering($from: 1, $to: 6) {
 	counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
 	$nest: (); 
 
@@ -367,7 +400,8 @@ The code might be complicated to understand but it's really not that hard once y
 
 .wrapper {
 	@include numbering(1, 4);
-}</code></pre>
+}
+```
 
 *Note: a couple of guys came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.
 
@@ -377,17 +411,20 @@ The last part of my talk was probably slightly more technical thus more complica
 
 To fully understand it, I thought it was better to introduce Sass loops and lists (remember there was quite a few guys not knowing a bit about Sass in the room).
 
-<pre class="language-scss"><code>/* All equivalents */
+```scss
+/* All equivalents */
 $list: ("item-1", "item-2", "item-3", "item-4");
 $list: ("item-1" "item-2" "item-3" "item-4");
 $list: "item-1", "item-2", "item-3", "item-4";
-$list: "item-1" "item-2" "item-3" "item-4";</code></pre>
+$list: "item-1" "item-2" "item-3" "item-4";
+```
 
 So basically you can ommit braces and can either comma-separate or space-separate values.
 
 A quick look at nested lists:
 
-<pre class="language-scss"><code>$list: ( 
+```scss
+$list: ( 
   (item-1, item-2, item-3)
   (item-4, item-5, item-6)
   (item-7, item-8, item-9) 
@@ -398,25 +435,31 @@ A quick look at nested lists:
 // inner lists are space-separated 
 $list:  item-1 item-2 item-3, 
 	      item-4 item-5 item-6, 
-        item-7 item-8 item-9;</code></pre>
+        item-7 item-8 item-9;
+```
 
 Now, here is how to use a list to access item one by one.
 
-<pre class="language-scss"><code>@each $item in $list {
+```scss
+@each $item in $list {
 	/* Access item with $item */
-}</code></pre>
+}
+```
 
 You can do the exact same thing with a `@for` loop as you would probably do in JavaScript thanks to Sass advanced list functions.
 
-<pre class="language-scss"><code>@for $i from 1 through length($list) {
+```scss
+@for $i from 1 through length($list) {
 	/* Access item with nth($list, $i) */
-}</code></pre>
+}
+```
 
 *Note: I have a very in-depth article on Sass lists scheduled for next week. Stay tuned for some Sass awesomeness. ;)*
 
 Now that we introduced loops and lists, we can move forward. My idea was to build a little Sass script that output a specific background based on a page name where file names would not follow any guide name (hyphens, underscores, .jpg, .png, random folders...). So home page would have background X, contact page background Y, etc.
 
-<pre class="language-scss"><code>// Two-levels list
+```scss
+// Two-levels list
 // Top level contains pages
 // Inner level contains page-specific informations 
 $pages : 
@@ -433,7 +476,8 @@ $pages :
   .#{$selector} body {
     background: url('../images/#{ $path }');
   }
-}</code></pre>
+}
+```
 
 Here is what happen:
 
@@ -443,10 +487,12 @@ Here is what happen:
 
 Outputs:
 
-<pre class="language-css"><code>.home     body { background: url('../images/bg-home.jpg'); }
+```css
+.home     body { background: url('../images/bg-home.jpg'); }
 .about    body { background: url('../images/about.png'); }
 .products body { background: url('../images/prod_bg.jpg'); }
-.contact  body { background: url('../images/assets/contact.jpg'); }</code></pre>
+.contact  body { background: url('../images/assets/contact.jpg'); }
+```
 
 I finished my talk with a last example with lists and loops, to show how to build an "active menu" without JavaScript or server-side; only CSS. To put it simple, it relies on the page name matching and the link name. So the link to home page is highlighted if it's a child of `.home` (class on html element); the link to the contact page is highlighted if it's a child of the `.contact` page. You get the idea.
 
@@ -454,22 +500,27 @@ To show the difference between nice and very nice Sass, I made two versions of t
 
 Let's save the best for last. The idea behind the first version is to loop through the pages and output styles for each one of them.
 
-<pre class="language-scss"><code>@each $item in home, about, products, contact {
+```scss
+@each $item in home, about, products, contact {
   .#{$item} .nav-#{ $item } { 
     style: awesome;
   }
-}</code></pre>
+}
+```
 
 Outputs:
 
-<pre class="language-css"><code>.home     .nav-home     { style: awesome; }
+```css
+.home     .nav-home     { style: awesome; }
 .about    .nav-about    { style: awesome; }
 .products .nav-products { style: awesome; }
-.contact  .nav-contact  { style: awesome; }</code></pre>
+.contact  .nav-contact  { style: awesome; }
+```
 
 Not bad. At least it works. But it repeats a bunch of things and this sucks. There has to be a better way to write this.
 
-<pre class="language-scss"><code>$selector: ();
+```scss
+$selector: ();
 
 @each $item in home, about, products, contact {
   $selector: append($selector, unquote(".#{$item} .nav-#{$item}"));
@@ -477,16 +528,19 @@ Not bad. At least it works. But it repeats a bunch of things and this sucks. The
 
 #{$selector} { 
   style: awesome; 
-}</code></pre>
+}
+```
 
 Outputs:
 
-<pre class="language-css"><code>.home     .nav-home, 
+```css
+.home     .nav-home, 
 .about    .nav-about,
 .products .nav-products, 
 .contact  .nav-contact {
   style: awesome;
-}</code></pre>
+}
+```
 
 This is hot! Instead of outputing shit in the loop, we use it to create a selector that we then use to define our "active" styles.
 

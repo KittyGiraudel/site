@@ -22,43 +22,44 @@ Below is [Harry’s comment](https://github.com/csswizardry/csswizardry.github.c
 
 > Scroll the carousel (all hard-coded; yuk!) and apply a subtle blur to imply motion/speed. Equation for the carousel’s transitioning and delayed points in order to complete an entire animation (i.e. 100%):
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Carousel formula' src='/images/automating-css-animations-with-sass/formula-1.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Carousel formula' src='/assets/images/automating-css-animations-with-sass/formula-1.png' />
 >
 > where <var>n</var> is the number of slides, <var>x</var> is the percentage of the animation spent static, and <var>y</var> is the percentage of the animation spent animating.
 >
 > This carousel has five panes, so:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='5 frames' src='/images/automating-css-animations-with-sass/formula-2.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='5 frames' src='/assets/images/automating-css-animations-with-sass/formula-2.png' />
 >
 > To work out <var>y</var> if we know <var>n</var> and decide on a value for <var>x</var>:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Formula to find Y' src='/images/automating-css-animations-with-sass/formula-3.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Formula to find Y' src='/assets/images/automating-css-animations-with-sass/formula-3.png' />
 >
 > If we choose that <var>x</var> equals 17.5 (i.e. a frame spends 17.5% of the animation’s total time *not* animating), and we know that <var>n</var> equals 5, then <var>y</var> = 3.125:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Y when X equals 17.5' src='/images/automating-css-animations-with-sass/formula-4.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Y when X equals 17.5' src='/assets/images/automating-css-animations-with-sass/formula-4.png' />
 >
 > Static for 17.5%, transition for 3.125%, and so on, until we hit 100%.
 >
 > If we were to choose that <var>x</var> equals 15, then we would find that <var>y</var> equals 6.25:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Y when X equals 15' src='/images/automating-css-animations-with-sass/formula-5.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Y when X equals 15' src='/assets/images/automating-css-animations-with-sass/formula-5.png' />
 >
 > If <var>y</var> comes out as zero-or-below, it means the number we chose for <var>x</var> was too large: pick again.
 >
 > N.B. We also include a halfway point in the middle of our transitioning frames to which we apply a subtle blur. This number is derived from:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Computing a halfway point' src='/images/automating-css-animations-with-sass/formula-6.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Computing a halfway point' src='/assets/images/automating-css-animations-with-sass/formula-6.png' />
 >
 > where <var>a</var> is the frame in question (out of <var>n</var> frames). The halfway point between frames 3 and 4 is:
 >
-> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Halfway point between frames 3 and 4' src='/images/automating-css-animations-with-sass/formula-7.png' />
+> <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Halfway point between frames 3 and 4' src='/assets/images/automating-css-animations-with-sass/formula-7.png' />
 >
 > I’m pretty sure this is all a mess. To any kind person reading this who would be able to improve it, I would be very grateful if you would advise :)
 
 And the result is:
 
-<pre class="language-css"><code>@keyframes carousel {
+```css
+@keyframes carousel {
   0% {
     transform: translate3d(0, 0, 0);
     filter: blur(0);
@@ -111,7 +112,8 @@ And the result is:
     transform: translate3d(-80%, 0, 0);
     filter: blur(0);
   }
-}</code></pre>
+}
+```
 
 Holy moly!
 
@@ -119,7 +121,8 @@ Holy moly!
 
 Before even thinking about Sass, let's lighten the animation a little bit. As we can see from the previous code block, some keyframes are identical. Let's combine them to make the whole animation simpler:
 
-<pre class="language-css"><code>@keyframes carousel {
+```css
+@keyframes carousel {
   0%,
   17.5% {
     transform: translate3d(0, 0, 0);
@@ -165,7 +168,8 @@ Before even thinking about Sass, let's lighten the animation a little bit. As we
     transform: translate3d(-80%, 0, 0);
     filter: blur(0);
   }
-}</code></pre>
+}
+```
 
 Fine! That's less code to output.
 
@@ -179,46 +183,58 @@ First, bring the basics. For sake of consistency, I kept Harry's variable names:
 * `$x` is the percentage of the animation spent static for each frame. Logic wants it to be less than `100% / $n` then.
 * `$y` is the percentage of the animation spent animation for each frame.
 
-<pre class="language-scss"><code>$n: 5;
+```scss
+$n: 5;
 $x: 17.5%;
-$y: (100% - $n * $x) / ($n - 1);</code></pre>
+$y: (100% - $n * $x) / ($n - 1);
+```
 
 Now, we need to open the `@keyframes` directive, then a loop.
 
-<pre class="language-scss"><code>@keyframes carousel {
+```scss
+@keyframes carousel {
   @for $i from 0 to $n { // 0, 1, 2, 3, 4
     // Sass Magic
   }
-}</code></pre>
+}
+```
 
 Inside the loop, we will use Harry's formulas to compute each pair of identical keyframes (for instance, 41.25% and 58.75%):
 
-<pre class="language-scss"><code>$current-frame: ($i * $x) + ($i * $y);
-$next-frame: (($i + 1) * $x) + ($i + $y);</code></pre>
+```scss
+$current-frame: ($i * $x) + ($i * $y);
+$next-frame: (($i + 1) * $x) + ($i + $y);
+```
 
 *Note: braces are completely optional here, we just use them to keep things clean.*
 
 And now, we use those variables to generate a keyframe inside the loop. Let's not forget to interpolate them so they are correctly output in the resulting CSS (more informations about [Sass interpolation on Tuts+](http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)).
 
-<pre class="language-scss"><code>#{$current-frame, $next-frame} {
+```scss
+#{$current-frame, $next-frame} {
   transform: translateX($i * -100% / $frames);
   filter: blur(0);
-}</code></pre>
+}
+```
 
 Quite simple, isn't it? For the first loop run, this would output:
 
-<pre class="language-css"><code>0%, 17.5% {
+```css
+0%, 17.5% {
   transform: translate3d(0%, 0, 0);
   filter: blur(0);
-}</code></pre>
+}
+```
 
 All we have left is outputing what Harry calls *an halfway frame* to add a little blur effect. Then again, we'll use his formula to compute the keyframe selectors:
 
-<pre class="language-scss"><code>$halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
+```scss
+$halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
 
 #{$halfway-frame} {
   filter: blur(2px);
-}</code></pre>
+}
+```
 
 Oh-ho! We got an error here!
 
@@ -226,15 +242,18 @@ Oh-ho! We got an error here!
 
 As you can see, we end up with a negative keyframe selector. This is prohibited by the [CSS specifications](http://www.w3.org/TR/css3-animations/#keyframes) and Sass considers this a syntax error so we need to make sure this does not happen. Actually, it only happens when `$i` is `0`, so basically on first loop run. An easy way to prevent this error from happening is to condition the output of this rule to the value of `$i`:
 
-<pre class="language-scss"><code>@if $i > 0 {
+```scss
+@if $i > 0 {
   #{$halfway-frame} {
     filter: blur(2px);
   }
-}</code></pre>
+}
+```
 
 Error gone, all good! So here is how our code looks so far:
 
-<pre class="language-scss"><code>$n: 5;
+```scss
+$n: 5;
 $x: 17.5%;
 $y: (100% - $n * $x) / ($n - 1);
 
@@ -255,7 +274,8 @@ $y: (100% - $n * $x) / ($n - 1);
       }
     }
   }
-}</code></pre>
+}
+```
 
 ## Pushing things further with a mixin
 
@@ -271,15 +291,18 @@ So we have variables and possible duplicated content: [perfect case for a mixin]
 
 Also, because a mixin can be called several times with different arguments, we should make sure it outputs different animations. For this, we need to add a 3rd parameter: the animation name.
 
-<pre class="language-scss"><code>@mixin carousel-animation($frames, $static, $name: 'carousel') {
+```scss
+@mixin carousel-animation($frames, $static, $name: 'carousel') {
   $animating: (100% - $frames * $static) / ($frames - 1);
 
   // Moar Sass
-}</code></pre>
+}
+```
 
 Since it is now a mixin, it can be called from several places: probably the root level, but there is nothing preventing us from including it from within a selector. Because `@`-directives need to be stand at root level in CSS, we'll use `@at-root` from Sass to make sure the animation gets output at root level.
 
-<pre class="language-scss"><code>@mixin carousel-animation($frames, $static, $name: 'carousel') {
+```scss
+@mixin carousel-animation($frames, $static, $name: 'carousel') {
   $animating: (100% - $frames * $static) / ($frames - 1);
 
   @at-root {
@@ -287,18 +310,22 @@ Since it is now a mixin, it can be called from several places: probably the root
       // Animation logic here
     }
   }
-}</code></pre>
+}
+```
 
 Rest is pretty much the same. Calling it is quite easy now:
 
-<pre class="language-scss"><code>@include carousel-animation(
+```scss
+@include carousel-animation(
   $frames: 5,
   $static: 17.5%
-);</code></pre>
+);
+```
 
 Resulting in:
 
-<pre class="language-css"><code>@keyframes carousel {
+```css
+@keyframes carousel {
   0%, 17.5% {
     transform: translateX(0%);
     filter: blur(0);
@@ -331,15 +358,18 @@ Resulting in:
     transform: translateX(-80%);
     filter: blur(0);
   }
-}</code></pre>
+}
+```
 
 Mission accomplished! And if we want another animation for the contact page for instance:
 
-<pre class="language-scss"><code>@include carousel-animation(
+```scss
+@include carousel-animation(
   $name: 'carousel-contact',
   $frames: 3,
   $static: 20%
-);</code></pre>
+);
+```
 
 Pretty neat, heh?
 

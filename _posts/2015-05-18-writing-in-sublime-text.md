@@ -11,7 +11,7 @@ tags:
 I use to write a lot.<sup>[citation needed]</sup> I have spent countless hours writing articles, books, mails and what else. And for all that, I use a single tool: Sublime Text. As far as I am concerned, Sublime Text is the perfect environment for writing, especially tech writing. In this article, I'd like to show you my setup so you can use Sublime Text for writing as well.
 
 <figure class="figure" style="clear: both">
-  <img src="/images/writing-in-sublime-text/preview.png" alt="" />
+  <img src="/assets/images/writing-in-sublime-text/preview.png" alt="" />
   <figcaption>My writing environment in Sublime Text</figcaption>
 </figure>
 
@@ -33,7 +33,8 @@ If there is one thing I do like with Sublime Text, it is the amount of options. 
 
 Most options default value make sense although there are some of theme that you might want to change. Here is my own configuration file (omitting a few boring things), annotated with comments to explain each choice:
 
-<pre class="language-javascript"><code>{
+```javascript
+{
   // Bold folder labels in the sidebar 
   // so they are distinguishable from regular files
   "bold_folder_labels": true,
@@ -71,7 +72,8 @@ Most options default value make sense although there are some of theme that you 
   
   // Make sure there are no tabs, only spaces
   "translate_tabs_to_spaces": true
-}</code></pre>
+}
+```
 
 ## Extra plugins
 
@@ -83,14 +85,14 @@ Sublime Text comes with a default Markdown syntax highlighter, although you migh
 and sub-highlighting of fenced code blocks. *This*, is absolutely amazing. Basically, that allows you to have Markdown syntax highlighting in the current file **and** highlighting code blocks with their relevant highlighter (CSS, JS or whatever).
 
 <figure class="figure">
-  <img src="/images/writing-in-sublime-text/sub-highlighting.png" alt="" />
+  <img src="/assets/images/writing-in-sublime-text/sub-highlighting.png" alt="" />
   <figcaption>Lines 31 to 37 are being highlighted as SCSS</figcaption>
 </figure>
 
 Last but not least tool for Markdown: [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview). This plugin is actually quite huge, but there is one thing I use it for: previewing the current file in the browser using the GitHub API (or Python-Markdown when running offline). I don't use it that often, but sometimes it is better to actual render the file in a browser to see what it looks like (especially when it involves images).
 
 <figure class="figure">
-  <img src="/images/writing-in-sublime-text/preview-in-browser.png" alt="" />
+  <img src="/assets/images/writing-in-sublime-text/preview-in-browser.png" alt="" />
   <figcaption>This article previewed in Chrome locally thanks to Markdown Preview</figcaption>
 </figure>
 
@@ -111,7 +113,7 @@ Last major Sublime Text plugin for me: [Sidebar Enhancements](https://github.com
 Sidebar Enhancements, as the name states, improves the sidebar projet manager by adding extra options on right click, such as a clipboard to actually copy and paste files, a move command, and much more.
 
 <figure class="figure">
-  <img src="/images/writing-in-sublime-text/sidebar-enhancements.png" alt="" />
+  <img src="/assets/images/writing-in-sublime-text/sidebar-enhancements.png" alt="" />
   <figcaption>Right click on file provides a lot of new options thanks to Sidebar Enhancements</figcaption>
 </figure>
 
@@ -121,8 +123,10 @@ Last time I had a fresh install of Sublime Text, I realized how poor the default
 
 Paweł Grzybek, in the comments, asked for a spell checking feature. I don't use it myself, but I know that Sublime Text does support spell checking through 2 options:
 
-<pre class="language-javascript"><code>"spell_check": true,
-"dictionary": "Packages/Language - English/en_US.dic"</code></pre>
+```javascript
+"spell_check": true,
+"dictionary": "Packages/Language - English/en_US.dic"
+```
 
 The first one enables spell checking, and the second one is the dictionary used to perform the corrections. I am not entirely sure where to download a language dictionary file, but I suppose this is actually quite easy to find. If English is the only language you need spell checking for, then you can have direct out-of-the-box support for it. 
 

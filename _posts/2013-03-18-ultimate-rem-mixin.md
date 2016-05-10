@@ -24,13 +24,15 @@ To avoid this, a new unit has been created: [`rem`](http://snook.ca/archives/htm
 
 You may have already seen something like this in frameworks, demo, blog posts and such:
 
-<pre class="language-css"><code>html {
+```css
+html {
   font-size: 62.5%
 }
 
 body {
   font-size: 1.6rem;
-}</code></pre>
+}
+```
 
 Because all browsers have a default font-size of `16px`, setting the font-size to 62.5% on the html element gives it a font-size of 10px (10 / 16 * 100 = 62.5) without explicitely setting it to `10px` which would prevent zooming. Then, setting a font-size of 1.6rem on the body element simply results in a font-size of `16px`, cascading through the whole DOM tree.
 
@@ -53,7 +55,8 @@ There are already many mixins handling `px` fallback for `rem` usage, most of th
 
 ### Let's open the beast
 
-<pre class="language-scss"><code>html {
+```scss
+html {
   font-size: 62.5%; /* 1 */
 }
 
@@ -94,7 +97,8 @@ There are already many mixins handling `px` fallback for `rem` usage, most of th
     #{$property}: $px;  /* 9 */
     #{$property}: $rem; /* 9 */
   }
-}</code></pre>
+}
+```
 
 This may be a bit rough so let me explain it:
 
@@ -114,18 +118,21 @@ This may be a bit rough so let me explain it:
 
 Using it is pretty straightforward:
 
-<pre class="language-scss"><code>html {
+```scss
+html {
   font-size: 62.5%;
 }
 
 body {
   @include rem(font-size, 1.6rem);
   @include rem(padding, 20px 10px);
-}</code></pre>
+}
+```
 
 ... outputs:
 
-<pre class="language-css"><code>html {
+```css
+html {
   font-size: 62.5%;
 }
 
@@ -134,7 +141,8 @@ body {
   font-size: 1.6rem;
   padding: 20px 10px; /* Fallback for IE8 */
   padding: 2rem 1rem;
-}</code></pre>
+}
+```
 
 ### Remaining issues
 

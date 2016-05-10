@@ -8,7 +8,7 @@ tags:
 
 A couple of days ago, I saw a [fellow French developer say how much he hates (Twitter) Bootstrap](https://twitter.com/Gandoulfe/status/392640481634422785) for websites on Twitter. And I saw a couple of fellow French developers agree with him.
 
-![Twitter Bootstrap 3](/images/how-i-learnt-to-like-bootstrap/bootstrap.jpg)
+![Twitter Bootstrap 3](/assets/images/how-i-learnt-to-like-bootstrap/bootstrap.jpg)
 
 This reminded me that no so long ago, I was a fervent defender of the tell *"Bootstrap is good for prototypes and back offices or stuff like this"*.
 

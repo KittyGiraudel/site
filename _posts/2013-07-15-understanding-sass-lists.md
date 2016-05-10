@@ -20,23 +20,29 @@ First things first. <span style="text-decoration: line-through">Even creating a 
 
 <blockquote class="pull-quote--right">Sass isn't very strict with variable type.</blockquote>
 
-<pre class="language-scss"><code>$a: ();
+```scss
+$a: ();
 $b: unquote('');
 $c: null;
-$d: (null);</code></pre>
+$d: (null);
+```
 
 Now we have defined our variables, we will check their type. Just for fun.
 
-<pre class="language-scss"><code>type-of($a) -> list
+```scss
+type-of($a) -> list
 type-of($b) -> string
 type-of($c) -> null
-type-of($d) -> null</code></pre>
+type-of($d) -> null
+```
 
 Since `$c` and `$d` are stricly equivalent, we will remove the later from the next tests. Let's check the length of each variable.
 
-<pre class="language-scss"><code>length($a) -> 0
+```scss
+length($a) -> 0
 length($b) -> 1
-length($c) -> 1</code></pre>
+length($c) -> 1
+```
 
 `$a` being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn't that odd either since it is a string. <span style="text-decoration: line-through">However the <code>null</code> variable being 1 item long is kind of weird; more on this later.</span> *It's not weird either; `null` is pretty much a value like another, so it has a length of 1.*
 
@@ -46,14 +52,17 @@ This section has been quickly covered in the article at CSS-Tricks but since it 
 
 **You can use spaces or commas as separator.** Even if I feel more comfortable with commas since it is the classic separator for arrays (JavaScript, PHP...). *You can check the separator of a list with the `list-separator($list)` function.*
 
-<pre class="language-scss"><code>$list-space: "item-1" "item-2" "item-3";
-$list-comma: "item-1", "item-2", "item-3";</code></pre>
+```scss
+$list-space: "item-1" "item-2" "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+```
 
 *Note: As in CSS, you can ommit quotes for your strings as long as they don't contain any special characters. So `$list: item-1, item-2, item-3` is perfectly valid.*
 
 **You can nest lists.** As for JavaScript or any other language, there is no limit regarding the level of depth you can have with nested lists. Just go as deep as you need to, bro. 
 
-<pre class="language-scss"><code>/* Nested lists with braces and same separator */
+```scss
+/* Nested lists with braces and same separator */
 $list: ( 
     ("item-1.1", "item-1.2", "item-1.3"), 
     ("item-2.1", "item-2.2", "item-2.3"),
@@ -63,7 +72,8 @@ $list: (
 /* Nested lists without braces using different separators to distinguish levels */
 $list: "item-1.1" "item-1.2" "item-1.3", 
        "item-2.1" "item-2.2" "item-2.3",
-       "item-3.1" "item-3.2" "item-3.3";</code></pre>
+       "item-3.1" "item-3.2" "item-3.3";
+```
 
 
 **You can ommit parentheses** (as you can guess from the previous example). You can define a non-empty list without any parentheses if you feel so. This is because -contrarily to what most people think- [parentheses are not what create lists](https://github.com/nex3/sass/issues/837#issuecomment-20429965) in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.
@@ -72,17 +82,23 @@ $list: "item-1.1" "item-1.2" "item-1.3",
 
 <blockquote class="pull-quote--right">Manipulating 5+ nested lists is a pain in the ass.</blockquote>
 
-<pre class="language-scss"><code>$list: "item-1", "item-2", "item-3";</code></pre>
+```scss
+$list: "item-1", "item-2", "item-3";
+```
 
 **Indexes start at 1, not 0.** This is one of the most disturbing once you start experimenting with Sass lists. <span style="text-decoration: line-through">Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).</span> *No, it doesn't.*
 
-<pre class="language-scss"><code>nth($list, 0) -> throws error
-nth($list, 1) -> "item-1"</code></pre>
+```scss
+nth($list, 0) -> throws error
+nth($list, 1) -> "item-1"
+```
 
 **Every value in Sass is treated as a <span style="text-decoration: line-through">list</span> _one-element list_.** Strings, numbers, boolean, whatever you can put in a variable. This means you're fine to use some list functions even on things that don't look like one.
 
-<pre class="language-scss"><code>$variable: "Sass is awesome";
-length($variable) -> 1</code></pre>
+```scss
+$variable: "Sass is awesome";
+length($variable) -> 1
+```
 
 *Beware! If you remove the quotes around this string, it will be parsed as a 3-items long list (1: Sass; 2: is; 3: awesome). I recommand you quotes your strings to avoid some unpleasant surprises.*
 
@@ -108,18 +124,21 @@ This is where things get very interesting. And quite complicated as well. I thin
 
 Please consider an extended selector like:
 
-<pre class="language-css"><code>
+```css
+
 .home .nav-home,
 .about .nav-about,
 .products .nav-products,
 .contact .nav-contact {}
-</code></pre>
+
+```
 
 ...based on a list of keywords `$pages: ('home', 'about', 'products', 'contact')`. I found 3 ways to generate this selector based on the list; we'll see them one by one.
 
 But first, we will write the skeleton of our testcase:
 
-<pre class="language-scss"><code>$pages: ('home', 'about', 'products', 'contact');
+```scss
+$pages: ('home', 'about', 'products', 'contact');
 $selector: ();
 
 @each $item in $pages {
@@ -128,20 +147,23 @@ $selector: ();
 
 #{$selector} {
   style: awesome;
-}</code></pre>
+}
+```
 
 ### The long and dirty way
 
 This is the method I was still using a couple of weeks ago. It works but it involves an extra conditional statement to handle commas *(also it's ugly)*. Please see below.
 
-<pre class="language-scss"><code>@each $item in $pages {
+```scss
+@each $item in $pages {
   $selector: $selector unquote('.#{$item} .nav-#{$item}');
     
   // Add comma if not dealing with the last item of list
   @if $item != nth($pages, length($pages)) {
     $selector: $selector unquote(',');
   }
-}</code></pre>
+}
+```
 
 Basically, we add the new selector to `$selector` and if we are not dealing with the last item of the list, we add a comma.
 
@@ -151,9 +173,11 @@ Basically, we add the new selector to `$selector` and if we are not dealing with
 
 This one is the cleanest way you can use between the three; not the shortest though. Anyway, it uses `append(..)` properly.
 
-<pre class="language-scss"><code>@each $item in $pages {
+```scss
+@each $item in $pages {
   $selector: append($selector, unquote('.#{$item} .nav-#{$item}'), 'comma');
-}</code></pre>
+}
+```
 
 I think this is pretty straightforward: we append to `$selector` the new selector by explicitly separating it from the previous one with a comma.
 
@@ -161,9 +185,11 @@ I think this is pretty straightforward: we append to `$selector` the new selecto
 
 <span style="text-decoration: line-through">Probably my favorite version above all since it's the shortest.</span> It relies on implicit appending; <span style="text-decoration: line-through">very neat.</span> *so I highly recommend you to use the `append(..)` way.*
 
-<pre class="language-scss"><code>@each $item in $pages {
+```scss
+@each $item in $pages {
   $selector: $selector, unquote('.#{$item} .nav-#{$item}');
-}</code></pre>
+}
+```
 
 Instead of using `append(..)` and setting the 3rd parameter to `comma` we implicitly do it via removing the function and using a comma right after `$selector`.
 

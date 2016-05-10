@@ -10,9 +10,31 @@ github_username:  HugoGiraudel
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 paginate_path: /blog/page:num
 paginate: 10
 permalink: pretty
 sass:
+  sass_dir: assets/sass
   style: :compressed
 gems: [jekyll-paginate]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - README.md
+  - CNAME
+  - node_modules
+
+# Navigation
+nav:
+  - label: Writing
+    url: /blog/
+  - label: Coding
+    url: /projects/
+  - label: Speaking
+    url: /speaking/
+  - label: About
+    url: /about/

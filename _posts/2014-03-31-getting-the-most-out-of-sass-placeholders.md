@@ -36,7 +36,8 @@ My idea was the following: extend the placeholder when possible, else include th
 
 For our example, let's consider a basic need: a [micro-clearfix hack](http://nicolasgallagher.com/micro-clearfix-hack/) mixin. Here is how I decided to tackle things:
 
-<pre class="language-scss"><code>@mixin clear($extend: true) {
+```scss
+@mixin clear($extend: true) {
   @if $extend {
     @extend %clear;
   }
@@ -51,7 +52,8 @@ For our example, let's consider a basic need: a [micro-clearfix hack](http://nic
 
 %clear {
   @include clear($extend: false);
-}</code></pre>
+}
+```
 
 Okay, that looks nasty. Here is what we do: first we define the `clear` mixin. The only parameter from the signature is `$extend`, which is a boolean set to `true` per default.
 
@@ -61,7 +63,8 @@ Out of the mixin, we define the placeholder `%clear`. To avoid repeating the CSS
 
 Here is a boilerplate to code your own:
 
-<pre class="language-scss"><code>@mixin myMixin($extend: true) {
+```scss
+@mixin myMixin($extend: true) {
   @if $extend {
     @extend %myMixin;
   }
@@ -72,46 +75,57 @@ Here is a boilerplate to code your own:
 
 %myMixin {
   @include myMixin($extend: false);
-}</code></pre>
+}
+```
 
 ## Using it
 
 There it is. Now let's try it:
 
-<pre class="language-scss"><code>.a { @include clear; }
-.b { @include clear; }</code></pre>
+```scss
+.a { @include clear; }
+.b { @include clear; }
+```
 
 This will result in the following CSS output:
 
-<pre class="language-scss"><code>.a:after, .b:after {
+```scss
+.a:after, .b:after {
   content: '';
   display: table;
   clear: both;
-}</code></pre>
+}
+```
 
 Until now, quite nice isn't it? Even if we are using a mixin, we have the behaviour of a placeholder since both selectors get merged into a single one, like extending a placeholder would do.
 
 Now let's imagine we need to have a clear fix at a certain breakpoint:
 
-<pre class="language-scss"><code>@media (min-width: 48em) {
+```scss
+@media (min-width: 48em) {
   .c {
     @include clear;
   }
-}</code></pre>
+}
+```
 
 This will throw an error:
 
-<pre class="language-scss"><code>You may not @extend an outer selector from within @media.
+```scss
+You may not @extend an outer selector from within @media.
 You may only @extend selectors within the same directive.
-From "@extend %clear" on line 3.</code></pre>
+From "@extend %clear" on line 3.
+```
 
 This is exactly the issue we are trying to work around. Now, thanks to the way we wrote our mixin, we only have to move `$extend` to `false` in order to make it work:
 
-<pre class="language-scss"><code>@media (min-width: 48em) {
+```scss
+@media (min-width: 48em) {
   .c {
     @include clear(false);
   }
-}</code></pre>
+}
+```
 
 No more error! The code is being output as usual because in this case, we are not extending a placeholder anymore (which would produce an error) but actually dumping CSS rules like a regular mixin.
 

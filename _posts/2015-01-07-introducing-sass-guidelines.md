@@ -23,7 +23,7 @@ After two days working on them, I am very proud and excited to release a 10000 w
 
 I think we have been on a need for Sass guidelines for months now. Here is my shot at it. However note that this document is very opinionated. This is *a* styleguide, *the* styleguide.
 
-![Sass Guidelines](/images/introducing-sass-guidelines/preview.png)
+![Sass Guidelines](/assets/images/introducing-sass-guidelines/preview.png)
 
 In it, I tackle almost all aspects of the Sass language: colors, strings, nesting, variables, mixins, extend, warnings, architecture, tools... I may have missed something, but I would be glad to complete it with your ideas.
 

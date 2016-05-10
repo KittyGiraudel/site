@@ -16,7 +16,7 @@ I had no idea how powerful CSS gradients could be until late 2011, when I found 
 Recently, while browsing through the demos on CodePen, I came across [a CSS3 Color Wheel](http://codepen.io/bitmap/pen/eBbHt) and thought *hey, I could do it with just one element and gradients*. So I did and the result can be seen [here](http://codepen.io/thebabydino/pen/hkxGp). And now I'm going to explain the reasoning behind it.
 
 <figure class="figure--right">
-<img src="/images/css-gradients/rainbow_wheel_screen.gif" alt="" />
+<img src="/assets/images/css-gradients/rainbow_wheel_screen.gif" alt="" />
 <figcaption>Rainbow wheel made of CSS</figcaption>
 </figure>
 
@@ -30,7 +30,8 @@ The pen below shows graphically how to layer the multiple backgrounds. It also h
 
 For both the original pen and this helper demo, the interesting part is this one:
 
-<pre class="language-css"><code>background: 
+```css
+background: 
 linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
 linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%),
 linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0,
@@ -41,7 +42,8 @@ linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%,
 linear-gradient(-72deg, transparent 24.52%, #9a1d34 24.52%) 0 100%, 
 #43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
 background-repeat: no-repeat;
-background-size: 50% 50%;</code></pre>
+background-size: 50% 50%;
+```
 
 We first specify the nine gradient backgrounds, their positioning and the `background-color` using the shorthand `background` syntax.
 
@@ -83,15 +85,17 @@ The *gradient angle* is the angle - measured clockwise - between the vertical ax
 
 What this means is that we (almost always) have different angle values in the standard syntax and in the current WebKit syntax. So, if we are not using something like [-prefix-free](http://leaverou.github.com/prefixfree/) (which I do almost all the time), then we should to be able to compute one when knowing the other. That is actually pretty simple. They are going in opposite directions, so the formula for one includes the other with a minus sign. Also, there is a `90°` difference between them so this is how we get them: 
 
-<pre class="language-javascript"><code>newSyntax = 90° - oldSyntax;
-oldSyntax = 90° - newSyntax;</code></pre>
+```js
+newSyntax = 90° - oldSyntax;
+oldSyntax = 90° - newSyntax;
+```
 
 *Note: if no gradient angle or destination side is specified (for example, `linear-gradient(lime, yellow)`), then the resulting gradient is going to have a gradient angle of `180°`, not `0°`.*
 
 All the points on a line that is [perpendicular](http://www.mathopenref.com/perpendicular.html) on the gradient line have the same color. The perpendicular from the corner in the quadrant that's opposite to the quadrant of the angle is the `0%` line (the crimson line in the demo) and its intersection with the gradient line is the *starting point* of the gradient (let's call it `S`). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the `100%` line (the black line in the demo) and its intersection with the gradient line is the *ending point* of the gradient (let's call it `E`).
 
 <figure class="figure">
-<img src="/images/css-gradients/gradient.png" alt="" />
+<img src="/assets/images/css-gradients/gradient.png" alt="" />
 <figcaption>Gradient with gradient line, 0% line and 100% line</figcaption>
 </figure>
 
@@ -104,7 +108,7 @@ Now let's see how we apply this for the particular case of the rainbow wheel.
 Let's first consider a gradient that creates a single slice (one with a central angle of `36°`). This is a square image (see below), with a blue slice having an angle of `36°` in the lower part. We draw the horizontal and vertical axes through the point `O` at which the diagonals intersect. We draw a perpendicular from that point to the line that separates the dark blue part from the transparent part. This is going to be the gradient line. As it can be seen, there is a `36°` angle between the vertical axis and the gradient line, so the angle of the gradient is `36°`.
 
 <figure class="figure">
-<img src="/images/css-gradients/slice_1.png" alt="" />
+<img src="/assets/images/css-gradients/slice_1.png" alt="" />
 <figcaption>Applying the theory for the first slice</figcaption>
 </figure>
 
@@ -113,21 +117,21 @@ We now draw a perpendicular from the corner of the square in the quadrant that i
 The [intersection of the diagonals of a square splits each one of them into two](http://www.mathopenref.com/square.html), so `AO` and `BO` are equal. The `BOE` and `AOS` angles are equal, as they are [vertical angles](http://www.mathopenref.com/anglesvertical.html). Moreover, the `BOE` and `AOS` triangles are [right triangles](http://www.mathopenref.com/righttriangle.html). All these three [mean that the two triangles are also congruent](http://en.wikipedia.org/wiki/Triangle#Similarity_and_congruence). Which in turn means that `SO` and `EO` are equal, so the length of `SE` is going to be twice the length of `EO` or twice the length of `SO`.
 
 <figure class="figure--right">
-<img src="/images/css-gradients/right_triangle_trigonometric_functions.png" alt="" />
+<img src="/assets/images/css-gradients/right_triangle_trigonometric_functions.png" alt="" />
 <figcaption>A right angled triangle and how to compute sin and cos functions</figcaption>
 </figure>
 
 *Note: before moving further, let's go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it's called the [hypotenuse](http://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](http://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](http://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](http://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse.*
 
 <figure class="figure--right">
-<img src="/images/css-gradients/slice_1_BOE.png" alt="" />
+<img src="/assets/images/css-gradients/slice_1_BOE.png" alt="" />
 <figcaption>The BOE triangle</figcaption>
 </figure>
 
 Computing the length of `EO` in the right triangle `BOE` is really simple. If we take the length of the side of the square to be `a`, then the length of the half diagonal `BO` is going to be `a*sqrt(2)/2`. The `BOE` angle is equal to the difference between the `BOM` angle, which is `45°`, and the `EOM` angle, which is `36°`. This makes `BOE` have `9°`. Since `BO` is also the hypotenuse in the right triangle `BOE`, the length of `EO` is going to be `(a*sqrt(2)/2)*cos9°`. Which makes the length of `SE` be `a*sqrt(2)*cos9°`.
 
 <figure class="figure--right">
-<img src="/images/css-gradients/slice_1_APD.png" alt="" />
+<img src="/assets/images/css-gradients/slice_1_APD.png" alt="" />
 <figcaption>The APD triangle</figcaption>
 </figure>
 

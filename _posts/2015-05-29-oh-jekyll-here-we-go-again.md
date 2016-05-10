@@ -9,7 +9,7 @@ tags:
 
 I [created this site](http://hugogiraudel.com/2012/11/09/redesign-blog/) in November 2012, with a strictly static old school set up. I quickly moved on to a custom PHP workflow only to move to [Jekyll](http://jekyllrb.com) about 3 months later (February 2013). I wrote about the experience in [this article](http://hugogiraudel.com/2013/02/21/jekyll/).
 
-![Mixture.io](/images/oh-jekyll-here-we-go-again/mixture.png)
+![Mixture.io](/assets/images/oh-jekyll-here-we-go-again/mixture.png)
 
 Over a year later (June 2014), I decided to give [Mixture](http://mixture.io/) a go. Mixture is a static site generator as well, but it is packaged as an application with a nice interface and a couple of extra features that Jekyll does not have. The kind folks at Mixture offered me to write about the transition [on their blog](http://mixture.io/blog/jekyll-mixture/).
 

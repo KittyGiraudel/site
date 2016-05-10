@@ -36,7 +36,8 @@ A translation of Sass Guidelines consists on a folder named after the [language 
 
 For instance, the [French translation](https://github.com/HugoGiraudel/sass-guidelines/tree/gh-pages/fr) looks like this:
 
-<pre class="language-"><code>fr/
+```
+fr/
  |- _architecture.md
  |- _author.md
  |- _comments.md
@@ -55,24 +56,28 @@ For instance, the [French translation](https://github.com/HugoGiraudel/sass-guid
  |- _toc.md
  |- _tools.md
  |- _variables.md
- `- index.md</code></pre>
+ `- index.md
+```
 
 However I did not want each translation's index to be in charge of importing the chapters in the correct order. What if I want to switch the position of two chapters? Having to update all `index.md` is not very convenient. Furthermore, some chapters are separated by the [donate partial](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_includes/donate.html). This should not be language-specific but a global configuration.
 
 Thus, I found a way to keep `index.md` clean and tidy, like so:
 
-<pre class="language-liquid"><code>---
+```liquid
+---
 layout: default
 language: fr
 ---
 
-{% include chapters.html %}</code></pre>
+{% include chapters.html %}
+```
 
 That's it. The only difference between the French index and the Polish index is the `language` variable in the YAML Front Matter. Everything else is handled by `chapters.html`.
 
 [This file](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_includes/chapters.html) (living in the `_includes` folder) is in charge of including all chapters from the current page language in the right order, including the donate partials. Thanks to `include_relative` tag, it gets extremely easy to do:
 
-<pre class="language-liquid"><code>{% include_relative _author.md %}
+```liquid
+{% include_relative _author.md %}
 {% include_relative _contributing.md %}
 {% include_relative _toc.md %}
 
@@ -101,7 +106,8 @@ That's it. The only difference between the French index and the Polish index is 
 {% include_relative _tools.md %}
 {% include_relative _tldr.md %}
 
-{% include donate.html %}</code></pre>
+{% include donate.html %}
+```
 
 [This tag](http://jekyllrb.com/docs/templates/#including-files-relative-to-another-file) from Jekyll makes it possible to include a file not from the `_includes` folder but from the current folder. Now this is where it's getting tricky: while `chapters.html` lives in `_includes`, `{% include_relative %}` doesn't include from the `_includes` folder but from the folder where lives the requested page (including `chapters.html`), for instance `fr/`.
 
@@ -113,7 +119,8 @@ Now, content is not everything <sup>[citation needed]</sup>. There are also some
 
 In a matter of convenience, all UI translations live in a [`translations.yml`](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/translations.yml) file in the `_data` folder so they can be accessed from the views. This file is structured as follow:
 
-<pre class="language-yml"><code>en:
+```yml
+en:
   donate:
     content: "If you enjoy Sass Guidelines, please consider supporting them."
     button: "Support Sass Guidelines"
@@ -123,25 +130,29 @@ In a matter of convenience, all UI translations live in a [`translations.yml`](h
     content: "Made with love by [Hugo Giraudel](http://hugogiraudel.com)"
   note: "Note"
 
-# Other languages...</code></pre>
+# Other languages...
+```
 
 At this point, it is a breeze to access to this content from a partial, such as `donate.html`.
 
-<pre class="language-markup"><code>&lt;div class="donate">
-  &lt;div class="donate__content">
-    &lt;p>{{ site.data.translations[page.language].donate.content }}&lt;/p>
-    &lt;a href="https://gum.co/sass-guidelines" target="_blank" class="button">
+```html
+<div class="donate">
+  <div class="donate__content">
+    <p>{{ site.data.translations[page.language].donate.content }}</p>
+    <a href="https://gum.co/sass-guidelines" target="_blank" class="button">
       {{ site.data.translations[page.language].donate.button }}
-    &lt;/a>
-  &lt;/div>
-&lt;/div></code></pre>
+    </a>
+  </div>
+</div>
+```
 Easy peasy! It works exactly the same for the baseline, the footer and pretty much any UI component we want to translate to the current language. Pretty neat, right?
 
 ## Displaying credits per translation
 
 If you have checked one of the currently available translations, you may have noticed a message right under the baseline introducting the translators and warning about outdated information. Obviously, this is not manually computed. Actually, data is pulled from another YML file, [`languages.yml`](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml) this time, looking like this:
 
-<pre class="language-yml"><code>fr:
+```yml
+fr:
   version: 1.0.0
   label: French
   prefix: /fr/
@@ -150,32 +161,36 @@ If you have checked one of the currently available translations, you may have no
     - name: Pierre Choffé
       link: http://la-cascade.ghost.io
 
-# Other languages...</code></pre>
+# Other languages...
+```
 
 I am sure you have figured out where this is going. We only need [a partial included within the layout itself](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_layouts/default.html#L13) (since it is always there). Let's call it [`translation-warning.html`](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_includes/translation-warning.html). One thing before jumping on the code: we need to display a completely different message on the English version. I took this as an opportunity to tell people Sass Guidelines are being translated in other languages so they can switch from the options panel.
 
-<pre class="language-markup"><code>{% if page.language == "en" %}
+```html
+{% if page.language == "en" %}
 
-  &lt;div class="translation-warning">
-    &lt;p>The Sass Guidelines project has been translated into several languages by &lt;a target="_blank" href="https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml">generous contributors&lt;/a>. Open the &lt;span data-toggle="aside" class="link-like" role="button" aria-expanded>options panel&lt;/span> to switch.&lt;/p>
-  &lt;/div>
+  <div class="translation-warning">
+    <p>The Sass Guidelines project has been translated into several languages by <a target="_blank" href="https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml">generous contributors</a>. Open the <span data-toggle="aside" class="link-like" role="button" aria-expanded>options panel</span> to switch.</p>
+  </div>
 
 {% else %}
 
-  {% capture translators %}{% for translator in site.data.languages[page.language].translators %}&lt;a href="{{ translator.link }}" target="_blank">{{ translator.name }}&lt;/a>{% if forloop.last == false %}, {% endif %}{% endfor %}{% endcapture %}
+  {% capture translators %}{% for translator in site.data.languages[page.language].translators %}<a href="{{ translator.link }}" target="_blank">{{ translator.name }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}{% endcapture %}
 
-  &lt;div class="translation-warning">
-    &lt;p>You are viewing the {{ site.data.languages[page.language].label }} translation by {{ translators }} of the original &lt;a href="/">Sass Guidelines&lt;/a> from &lt;a target="_blank" href="http://hugogiraudel.com">Hugo Giraudel&lt;/a>.&lt;/p>
-    &lt;p>This version is exclusively maintained by contributors without the review of the main author, therefore might not be completely up-to-date{% if site.data.languages[page.language].version != site.data.languages.en.version %}, especially since it is currently in version {{ site.data.languages[page.language].version }} while the &lt;a href="/">English version&lt;/a> is in version {{ site.data.languages.en.version }}{% endif %}.&lt;/p>
-  &lt;/div>
+  <div class="translation-warning">
+    <p>You are viewing the {{ site.data.languages[page.language].label }} translation by {{ translators }} of the original <a href="/">Sass Guidelines</a> from <a target="_blank" href="http://hugogiraudel.com">Hugo Giraudel</a>.</p>
+    <p>This version is exclusively maintained by contributors without the review of the main author, therefore might not be completely up-to-date{% if site.data.languages[page.language].version != site.data.languages.en.version %}, especially since it is currently in version {{ site.data.languages[page.language].version }} while the <a href="/">English version</a> is in version {{ site.data.languages.en.version }}{% endif %}.</p>
+  </div>
 
-{% endif %}</code></pre>
+{% endif %}
+```
 
 Okay, that might look a little complicated. Worry not, it is not as complex as it looks. Let's leave aside the English part since it is fairly obvious, to focus on the `{% else %}` block. The first thing we need is to compute a string from the array of translators with have in our YML file. This is what the `{% capture %}` tag does.
 
 A YML such as:
 
-<pre class="language-yaml"><code>gr:
+```yaml
+gr:
   version: 1.0.0
   label: Greek
   prefix: /gr/
@@ -184,11 +199,14 @@ A YML such as:
     - name: Adonis K.
       link: https://github.com/varemenos
     - name: Konstantinos Margaritis
-      link: https://github.com/kmargaritis</code></pre>
+      link: https://github.com/kmargaritis
+```
 
 ... will be captured as this HTML string
 
-<pre class="language-markup"><code>&lt;a href="https://github.com/varemenos">Adonis K.&lt;/a>, &lt;a href="https://github.com/kmargaritis">Konstantinos Margaritis&lt;/a></code></pre>
+```html
+<a href="https://github.com/varemenos">Adonis K.</a>, <a href="https://github.com/kmargaritis">Konstantinos Margaritis</a>
+```
 
 Then this HTML string can be safely used as part of our paragraph with `{{ translators }}`.
 

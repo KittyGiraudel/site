@@ -22,7 +22,9 @@ So whenever you have a list of values and want to apply a given function to each
 
 Pretty much like the `array_walk` function actually. Here is the syntax:
 
-<pre class="language-scss"><code>walk(list $list, function $function, argList $args...)</code></pre>
+```scss
+walk(list $list, function $function, argList $args...)
+```
 
 The first argument is the list you are walking through. The second argument is the function you want to call to each item from the list. Any argument after those 2 are optional and will be passed as extra argument to the function call.
 
@@ -30,17 +32,21 @@ This is why we add `...` to the `$args` parameter; because it is an `argList`. T
 
 For example let's say you have a list of colors you want to revert, in order to get complementary colors.
 
-<pre class="language-scss"><code>$colors: hotpink deepskyblue firebrick;
+```scss
+$colors: hotpink deepskyblue firebrick;
 $complementary-colors: walk($colors, complementary);
-// #69ffb4 #ff4000 #22b2b2</code></pre>
+// #69ffb4 #ff4000 #22b2b2
+```
 
 As you can see, this is pretty straight-forward. The first argument is the list of colors (`$colors`) and the second argument is the name of the function you want to apply to each item from the list.
 
 Now let's move on to something slightly more complicated, with an extra parameter. Shall we? Instead of finding the complementary color of each item from the list, let's lighten all those colors.
 
-<pre class="language-scss"><code>$colors: hotpink deepskyblue firebrick;
+```scss
+$colors: hotpink deepskyblue firebrick;
 $complementary-colors: walk($colors, lighten, 20%);
-// #ffcfe7 #66d9ff #e05a5a</code></pre>
+// #ffcfe7 #66d9ff #e05a5a
+```
 
 Not much harder, is it? The second argument is still the function, and we pass a 3rd argument to the function: the percentage for the `lighten` function. This value will be passed as a 2nd argument to the `lighten` function, the first being the color of course.
 
@@ -48,13 +54,15 @@ Not much harder, is it? The second argument is still the function, and we pass a
 
 Okay, let's move on to the code now. Surprisingly enough, the function core is extremely short and simple. Actually, the `call` function is doing all the job.
 
-<pre class="language-scss"><code>@function walk($list, $function, $args...) {
+```scss
+@function walk($list, $function, $args...) {
   @for $i from 1 through length($list) {
     $list: set-nth($list, $i, call($function, nth($list, $i), $args...));
   }
 
   @return $list;
-}</code></pre>
+}
+```
 
 Let's have a little recap about both `call` and `set-nth` so you can fully understand what's going on here. First, `set-nth` is a function added in Sass 3.3, aiming at updating a specific value from a list. The first argument is the list, the second is the index to be updated and the third the new value.
 
@@ -79,14 +87,16 @@ Also, we can't make sure values from `$list` are valid for `$function`. What if 
 
 In the end, the only things we can check is whether or not the function exists thanks to `function-exists`:
 
-<pre class="language-scss"><code>@function walk($list, $function, $args...) {
+```scss
+@function walk($list, $function, $args...) {
   @if not function-exists($function) {
     @warn "There is no `#{$function}` function.";
     @return false;
   }
 
   /* Function core ... */
-}</code></pre>
+}
+```
 
 Thanks to the new `function-exists` from Sass 3.3, we can test whether or not a function exists. In our case, we test if `$function` refers to an existing function. If it doesn't, we warn the user and return false.
 

@@ -10,7 +10,7 @@ tags:
 
 # Speaking events
 
-<img src="/images/banners/speaking.jpg" alt="Photography by Alexandra Lucas" />
+<img src="/assets/images/banners/speaking.jpg" alt="Photography by Alexandra Lucas" />
 
 {% include ad.html %}
 

@@ -7,7 +7,7 @@ tags:
   - css
 ---
 
-<img src="/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="CSS 3, Pratique du Design Web" class="pull-image--right" />
+<img src="/assets/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="CSS 3, Pratique du Design Web" class="pull-image--right" />
 
 In a couple of days, my book "CSS 3 Pratique de Design Web" (*CSS 3 Practicing Web Design*) will be on sale. It has been a one-year road to get there, and one hell of a journey so I thought I'd relate it to you in case you find yourself in my position.
 
@@ -26,7 +26,7 @@ I should have kept this in mind during those months, and so should you if you ha
 
 The first thing I can tell is that you will run out of time, I guarantee it. And this, no matter how long your editor gives you to write your book. There is never enough time, because it is never finished.
 
-![You will run out of time, I guarantee it.](/images/what-i-learnt-from-writing-a-book/book-meme.jpeg)
+![You will run out of time, I guarantee it.](/assets/images/what-i-learnt-from-writing-a-book/book-meme.jpeg)
 
 Trust me, you will always find things to improve. I found myself writing new sections and examples a couple of hours before handing the book back to the editor. And if I had a couple of extra days, I'd have spent those until I needed three more...
 

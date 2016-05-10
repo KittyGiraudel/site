@@ -28,11 +28,15 @@ So here comes [Object Oriented JavaScript](http://tobyho.com/2010/11/22/javascri
 
 Well, obviously you need to include the script in your page. But I made it pretty tiny plus it doesn't have any requirement! It's under 2Kb minified (which is about ~1.3Kb once gzipped).
 
-<pre class="language-html"><code><script src="js/countdown.js"></script></code></pre>
+```html
+<script src="js/countdown.js"></script>
+```
 
 Then using the countdown is as easy as instanciating the `Countdown` class:
 
-<pre class="language-javascript"><code>var countdown = new Countdown();</code></pre>
+```javascript
+var countdown = new Countdown();
+```
 
 This creates a new instance with all defaults values but you can pass quite a few options:
 
@@ -102,7 +106,8 @@ The function to run whenever the countdown stops.
 
 ### Example
 
-<pre class="language-javascript"><code>var countdown = new Countdown({
+```javascript
+var countdown = new Countdown({
     selector: '#timer',
     msgBefore: "Will start at Christmas!",
     msgAfter: "Happy new year folks!",
@@ -115,7 +120,8 @@ The function to run whenever the countdown stops.
     onEnd: function() {
     	console.log('Happy New Year!');
     }
-});</code></pre>
+});
+```
 
 ## Pushing things further
 
@@ -125,7 +131,8 @@ The script doesn't use jQuery at all, mostly because there is no need for such a
 
 As of today, two events are being fired: `countdownStart` and `countdownEnd`. You can use them as follow:
 
-<pre class="language-javascript"><code>var countdown = new Countdown({
+```javascript
+var countdown = new Countdown({
 	selector: '.timer'
 });
 
@@ -136,7 +143,8 @@ $('.timer').on('countdownStart', function() {
 $('.timer').on('countdownEnd', function() {
 	console.log('The countdown has reached 0.');
 });
-</code></pre>
+
+```
 
 Pretty neat, right?
 

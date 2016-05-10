@@ -14,20 +14,24 @@ About a year ago, I wrote about how I managed to come up with what I think is [a
 
 The mixin was directly inspired from [Nib](https://github.com/visionmedia/nib), [Stylus](http://learnboost.github.io/stylus/)' most popular framework. The idea is to be able to declare all desired offsets in a single declaration rather than having to write multiple CSS properties. 
 
-<pre class="language-scss"><code>// Stylus syntax
+```scss
+// Stylus syntax
 selector {
   absolute: top 1em right 100%
-}</code></pre>
+}
+```
 
 When looking back at Nib's documentation a couple of weeks ago, I noticed there are a couple of features I missed when implementing the Sass version of this little gem. Hence the brand new version of the mixin, and the blog post explaining the process.
 
 Unfortunately, Sass in its SCSS syntax doesn't provide as much abstraction as Stylus does, so we still have to use some extra characters, especially `@include`, parenthesis, colons and semi-colons... That being said, the result is quite good in my opinion.
 
 
-<pre class="language-scss"><code>// SCSS
+```scss
+// SCSS
 selector {
   @include absolute(top 1em right 100%)
-}</code></pre>
+}
+```
 
 ## What we want? Offsets!
 
@@ -38,42 +42,50 @@ Case 1. **The offset has not been found in the list.** Obviously, we stop there 
 Case 2. **The offset has been found at the last index of list.** We output it to `0`.
 
 
-<pre class="language-scss"><code>// SCSS
+```scss
+// SCSS
 @include absolute(top);
 
 // CSS
 position: absolute;
-top: 0;</code></pre>
+top: 0;
+```
 
 Case 3. **The offset has been found and the next item is another offset.** We output it to `0`.
 
 
-<pre class="language-scss"><code>// SCSS
+```scss
+// SCSS
 @include absolute(top left);
 
 // CSS
 position: absolute;
 top: 0;
-left: 0;</code></pre>
+left: 0;
+```
 
 Case 4. **The offset has been found and the next item is invalid.** An invalid value could be a string other than `auto`, `initial` and `inherit`, or any value that is not a number, or a unitless number. In any case, we do not output the offset.
 
 
-<pre class="language-scss"><code>// SCSS
+```scss
+// SCSS
 @include absolute(top "string");
 
 // CSS
-position: absolute;</code></pre>
+position: absolute;
+```
 
 Case 5. **The offset has been found and the next item is valid.** Of course then, we output the offset with the next item as a value.
 
 
-<pre class="language-scss"><code>// SCSS
+```scss
+// SCSS
 @include absolute(top 1em);
 
 // CSS
 position: absolute;
-top: 1em;</code></pre>
+top: 1em;
+```
 
 So if we sum up:
 
@@ -94,10 +106,12 @@ Should be considered as a valid length:
 * `initial`
 * `inherit`
 
-<pre class="language-scss"><code>@function is-valid-length($value) {
+```scss
+@function is-valid-length($value) {
   @return (type-of($value) == "number" and not unitless($value)) 
        or (index(auto initial inherit 0, $value) != false);
-}</code></pre>
+}
+```
 
 The function is as simple as that. First we check if it's a number with a unit. If it is not, we check whether it is an allowed value. If it is not again, then it is not a valid length for an offset property. 
 
@@ -106,18 +120,21 @@ The function is as simple as that. First we check if it's a number with a unit. 
 Now that we have our helper function and all our use-cases, it is time to move on to the mixin. 
 
 
-<pre class="language-scss"><code>@mixin position($position, $args: ()) {
+```scss
+@mixin position($position, $args: ()) {
   $offsets: top right bottom left;
   position: $position;
   
   @each $offset in $offsets {
     // Doing the magic trick
   }
-}</code></pre>
+}
+```
 
 From there, we iterate through the offsets list (so 4 times) and for each one, we do the checks we discussed in the first section of this article. I added comments to the code so you can follow along but it is pretty straight forward anyway.
 
-<pre class="language-scss"><code>// All this code happens inside the loop
+```scss
+// All this code happens inside the loop
 $index: index($args, $offset);
 
 // If offset is found in the list
@@ -147,11 +164,13 @@ $index: index($args, $offset);
       @warn "Invalid value `#{$next}` for offset `#{$offset}`.";
     }
   }
-}</code></pre>
+}
+```
 
 Then of course, there are still the 3 extra mixins `absolute`, `relative` and `fixed`. This doesn't change at all from the previous version.
 
-<pre class="language-scss"><code>@mixin absolute($args: ()) {
+```scss
+@mixin absolute($args: ()) {
   @include position(absolute, $args);
 }
  
@@ -161,29 +180,35 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
  
 @mixin relative($args: ()) {
   @include position(relative, $args);
-}</code></pre>
+}
+```
 
 ## Examples
 
 
-<pre class="language-scss"><code>.a { 
+```scss
+.a { 
   @include absolute()
 }
 
 .a {
   position: absolute;
-}</code></pre>
+}
+```
 
-<pre class="language-scss"><code>.b {
+```scss
+.b {
   @include absolute(top)
 }
 
 .b {
   position: absolute;
   top: 0;
-}</code></pre>
+}
+```
 
-<pre class="language-scss"><code>.c {
+```scss
+.c {
   @include absolute(top right)
 }
 
@@ -191,9 +216,11 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
   position: absolute;
   top: 0;
   right: 0;
-}</code></pre>
+}
+```
 
-<pre class="language-scss"><code>.d {
+```scss
+.d {
   @include absolute(top right bottom)
 }
 
@@ -202,9 +229,11 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
   top: 0;
   right: 0;
   bottom: 0;
-}</code></pre>
+}
+```
 
-<pre class="language-scss"><code>.e {
+```scss
+.e {
   @include absolute(top right bottom left)
 }
 
@@ -214,9 +243,11 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
   right: 0;
   bottom: 0;
   left: 0;
-}</code></pre>
+}
+```
 
-<pre class="language-scss"><code>.f {
+```scss
+.f {
   @include absolute(top right 1em)
 }
 
@@ -224,9 +255,11 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
   position: absolute;
   top: 0;
   right: 1em;
-}</code></pre>
+}
+```
 
-<pre class="language-scss"><code>.g {
+```scss
+.g {
   @include absolute(top 1em right)
 }
 
@@ -234,9 +267,11 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
   position: absolute;
   top: 1em;
   right: 0;
-}</code></pre>
+}
+```
 
-<pre class="language-scss"><code>.h {
+```scss
+.h {
   @include absolute(top 1em right 100%)
 }
 
@@ -244,18 +279,22 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
   position: absolute;
   top: 1em;
   right: 100%;
-}</code></pre>
+}
+```
 
-<pre class="language-scss"><code>.i {
+```scss
+.i {
   @include absolute(top right mistake)
 }
 
 .i {
   position: absolute;
   top: 0;
-}</code></pre>
+}
+```
 
-<pre class="language-scss"><code>.j {
+```scss
+.j {
   @include absolute(top 1em right 1em bottom 1em left 1em)
 }
 
@@ -265,7 +304,8 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
   right: 1em;
   bottom: 1em;
   left: 1em;
-}</code></pre>
+}
+```
 
 ## Final thoughts
 

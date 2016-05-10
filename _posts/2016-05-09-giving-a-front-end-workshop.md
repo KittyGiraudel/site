@@ -26,7 +26,7 @@ Also, we are so used to browsing incredible websites on a daily basis that I bel
 When teaching the basics of front-end development, I like to work on cooking recipes. A cooking recipe is usually a very simple and straight-forward document that can make sense on its own, even when undesigned. A cooking recipe is enough to learn about HTML without feeling overwhelmed, and more than enough to experiment with CSS for literally hours.
 
 <figure class="figure">
-  <img src="/images/giving-a-front-end-workshop/recipe-example.png" alt="Example of a recipe that I prepared for the workshop" />
+  <img src="/assets/images/giving-a-front-end-workshop/recipe-example.png" alt="Example of a recipe that I prepared for the workshop" />
   <figcaption>Example of a recipe that I prepared for the workshop</figcaption>
 </figure>
 
@@ -55,16 +55,16 @@ At this stage, I invited them to open the file inside Chrome (because I knew Chr
 
 We encountered the first encoding issues (since we did not add a charset meta) with German and Japanese characters. We solved it by adding the `<html>` element, the `<body>` element, and a `<head>` element with the charset meta tag only.
 
-<pre class="language-markup"><code>
-&lt;html lang="en">
-  &lt;head>
-    &lt;meta charset="utf-8" />
-  &lt;/head>
-  &lt;body>
+```html
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
     Content…
-  &lt;/body>
-&lt;/html>
-</code></pre>
+  </body>
+</html>
+```
 
 
 I took this as an opportunity to introduce HTML attributes, such as `lang` on the `<html>` element. Retrospectively, I am not sure it was a good timing for that. Maybe it was unnecessary complexity at this stage.
@@ -75,11 +75,13 @@ This marked the end of the first half-day and the HTML part.
 
 I did not want to start right away with the `<link>` tag and how to connect a stylesheet to the document, so I started the second half day with a practical example to introduce CSS. 
 
-<pre class="language-css"><code>
+```css
+
 h1 {
   color: pink;
 }
-</code></pre>
+
+```
 
 Simple enough, but for someone with no clue how CSS works, there are already quite a few things going on there: a selector, a rule, a property, a value, a declaration, a motherfucking semi-colon… After a few explanations on this snippet, we actually created a stylesheet and used the `<link>` tag to connect it to the HTML document.
 
@@ -119,11 +121,11 @@ All participants seemed happy with what they came up with in just a few hours, s
 If you have any tip or comment, please be sure to share in the comment section. In the mean time, here are a few screenshots of the work done by some participants:
 
 <figure class="figure">
-  <img src="/images/giving-a-front-end-workshop/recipe-1.png" alt="Screenshot of a participant’s recipe" />
+  <img src="/assets/images/giving-a-front-end-workshop/recipe-1.png" alt="Screenshot of a participant’s recipe" />
 
-  <img src="/images/giving-a-front-end-workshop/recipe-2.png" alt="Screenshot of a participant’s recipe" />
+  <img src="/assets/images/giving-a-front-end-workshop/recipe-2.png" alt="Screenshot of a participant’s recipe" />
 
-  <img src="/images/giving-a-front-end-workshop/recipe-3.png" alt="Screenshot of a participant’s recipe" />
+  <img src="/assets/images/giving-a-front-end-workshop/recipe-3.png" alt="Screenshot of a participant’s recipe" />
   
   <figcaption>Screenshots of some participants’ recipes</figcaption>
 </figure>

@@ -10,7 +10,7 @@ tags:
 
 A while back, a developer posted a little experiment in which the current time was being used as an hexadecimal color, applied to the body element. Better have a look at [the demo](http://www.jacopocolo.com/hexclock/#).
 
-![Hexclock experiment](/images/color-clock-experiment/hexclock.png)
+![Hexclock experiment](/assets/images/color-clock-experiment/hexclock.png)
 
 What a clever little experiment it was, yet I can't say I am completely fond of the way it has been implemented. Not only colors are restricted between `#000000` (00:00:00) and `#235959` (23:59:59), but the JavaScript part did not really please me. So here is my try.
 
@@ -27,7 +27,8 @@ Alright, let's go.
 
 Let's start with a little skeleton for our application:
 
-<pre class="language-javascript"><code>(function () {
+```javascript
+(function () {
   'use strict';
 
   // Our main function
@@ -37,7 +38,8 @@ Let's start with a little skeleton for our application:
 
   // Call our function every second
   var timer = setInterval(colorClock, 1000);
-}());</code></pre>
+}());
+```
 
 Nothing special here: at every second, we call the `colorClock` function. This function will have to do three things:
 
@@ -49,7 +51,8 @@ Nothing special here: at every second, we call the `colorClock` function. This f
 
 Displaying the current time is probably the easiest part of the exercise. Although I must say I got helped by a [StackOverflow answer](http://stackoverflow.com/a/12612778).
 
-<pre class="language-javascript"><code>function colorClock() {
+```javascript
+function colorClock() {
   // ...
 
   function dateToContent(date) {
@@ -58,7 +61,8 @@ Displaying the current time is probably the easiest part of the exercise. Althou
 
   var date = new Date();
   document.body.innerHTML = dateToContent(date);
-}</code></pre>
+}
+```
 
 ## Applying the computed color to the body
 
@@ -66,7 +70,8 @@ Let's tackle the actual challenge. My thought process was as follow. Our time is
 
 Alright. The first thing we need is to compute our color channels based on the current time. To do so, we need a `RGBFromDate` function that takes an instance of `Date`, and returns an array of 3 channels expressed as (rounded) numbers between 0 and 255.
 
-<pre class="language-javascript"><code>function RGBFromDate(date) {
+```javascript
+function RGBFromDate(date) {
   return [
     (date.getHours()   / 24 * 255),
     (date.getMinutes() / 60 * 255),
@@ -74,20 +79,24 @@ Alright. The first thing we need is to compute our color channels based on the c
   ].map(function (e) {
     return Math.round(e);
   });
-}</code></pre>
+}
+```
 
 At this point, we have everything we need to apply the color to the body.
 
-<pre class="language-javascript"><code>var date = new Date();
+```javascript
+var date = new Date();
 var channels = RGBFromDate(date);
 
-document.body.style.backgroundColor = 'rgb(' + channels.join(',') + ')';</code></pre>
+document.body.style.backgroundColor = 'rgb(' + channels.join(',') + ')';
+```
 
 ## Changing font color based on body color
 
 Last but not least, we need to find a way to change the font color if the background color is too dark or too light, so the text remains readable at all time. To do this, we have to compute the [luminance](http://en.wikipedia.org/wiki/Relative_luminance) of a color. If it is higher than `.7`, then the color is very bright and text should be black.
 
-<pre class="language-javascript"><code>function colorLuminance(red, green, blue) {
+```javascript
+function colorLuminance(red, green, blue) {
   return ((0.299 * red) + (0.587 * green) + (0.114 * blue)) / 256;
 }
 
@@ -95,13 +104,15 @@ function colorFromRGB(red, green, blue) {
   return colorLuminance(red, green, blue) > 0.7 ? 'black' : 'white';
 }
 
-document.body.style.color = colorFromRGB.apply(this, channels);</code></pre>
+document.body.style.color = colorFromRGB.apply(this, channels);
+```
 
 ## Final thoughts
 
 That's it. Here is the final code:
 
-<pre class="language-javascript"><code>(function () {
+```javascript
+(function () {
   'use strict';
 
   function colorClock() {
@@ -140,7 +151,8 @@ That's it. Here is the final code:
   }
 
   var t = setInterval(colorClock, 1000);
-}());</code></pre>
+}());
+```
 
 You can play with the code on CodePen:
 

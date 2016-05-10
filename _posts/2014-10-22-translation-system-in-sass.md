@@ -25,11 +25,13 @@ My idea was to have a `.scss` file per language, following a pattern like `a11y-
 
 For instance, `a11y-en.scss` would look like:
 
-<pre class="language-scss"><code>@charset "UTF-8";
+```scss
+@charset "UTF-8";
 
 @import "utils/all";
 @include set-locale("en");
-@import "a11y/a11y";</code></pre>
+@import "a11y/a11y";
+```
 
 Looking pretty neat, right?
 
@@ -37,7 +39,8 @@ Looking pretty neat, right?
 
 You've seen from the previous code snippet that we have a `set-locale` mixin accepting a language (shortcut) as a parameter. Let's see how it works:
 
-<pre class="language-scss"><code>/// Defines the language used by `a11y.css`. For now, only `fr` and `en` allowed.
+```scss
+/// Defines the language used by `a11y.css`. For now, only `fr` and `en` allowed.
 /// @group languages
 /// @param {String} $language
 /// @output Nothing
@@ -52,7 +55,8 @@ You've seen from the previous code snippet that we have a `set-locale` mixin acc
   }
 
   $language: $language !global;
-}</code></pre>
+}
+```
 
 There is very little done here. First, it makes sure the given language is supported. For now, only `fr` and `en` are. If it is not supported, it throws an error. Else, it creates a global variable called `$language` containing the language (`fr` or `en`). Easy, let's move on.
 
@@ -62,11 +66,13 @@ The point of this system is to gather all messages within a big Sass map. Thus, 
 
 Gaël has divided messages in different themes: `errors`, `advices` or `warnings`. This is the first level of our map.
 
-<pre class="language-scss"><code>$messages: (
+```scss
+$messages: (
   'errors': ( /* ... */ ),
   'advices': ( /* ... */ ),
   'warnings': ( /* ... */ )
-);</code></pre>
+);
+```
 
 Then each theme gets mapped to a sub-map (second level) containing keys for different situations. For instance, the `error` telling that there a missing `src` attribute on images:
 
@@ -74,17 +80,20 @@ Then each theme gets mapped to a sub-map (second level) containing keys for diff
 
 ... is arbitrary named `no-src`.
 
-<pre class="language-scss"><code>$messages: (
+```scss
+$messages: (
   'errors': (
     'no-src': ( /* ... */ )
   ),
   'advices': ( /* ... */ ),
   'warnings': ( /* ... */ )
-);</code></pre>
+);
+```
 
 And finally, this key is mapped to another sub-map (third level) where each key is the language and each value the translation:
 
-<pre class="language-scss"><code>$messages: (
+```scss
+$messages: (
   'errors': (
     'no-src': (
       'fr': 'Attribut [src] manquant ou vide. Bon.',
@@ -98,19 +107,25 @@ And finally, this key is mapped to another sub-map (third level) where each key 
   'warnings': (
     // ...
   )
-);</code></pre>
+);
+```
 
 However fetching `fr` key from `no-src` key from `errors` key from `$messages` map would look like:
 
-<pre class="language-scss"><code>$message: map-get(map-get(map-get($messages, 'errors'), 'no-src'), 'fr')));</code></pre>
+```scss
+$message: map-get(map-get(map-get($messages, 'errors'), 'no-src'), 'fr')));
+```
 
 This is both ugly and a pain in the ass to write. With a [`map-deep-get`](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_functions.scss#L6-L12) function, we could shorten this to:
 
-<pre class="language-scss"><code>$message: map-deep-get($messages, 'errors', 'no-src', 'fr');</code></pre>
+```scss
+$message: map-deep-get($messages, 'errors', 'no-src', 'fr');
+```
 
 Much better, isn't it? Although having to type the language over and over is not very convenient. And we could also make sure `errors` is a valid theme (which is the case) and `no-src` is a valid key from theme `errors` (which is also the case). To do all this, we need a little wrapper function. Let's call it `message`, in all its simplicity:
 
-<pre class="language-scss"><code>/// Retrieve message from series of keys
+```scss
+/// Retrieve message from series of keys
 /// @access private
 /// @param {String} $theme - Either `advice`, `error` or `warning`
 /// @param {String} $key - Key to find message for
@@ -128,19 +143,23 @@ Much better, isn't it? Although having to type the language over and over is not
   }
 
   @return map-deep-get($messages, $theme, $key, $locale);
-}</code></pre>
+}
+```
 
 The `message` function first deals with the language. If a global variable called `language` exists &mdash; which is the case if `set-locale` has been called &mdash; it uses it, else it falls back to `en`. Then, it makes sure arguments are valid. Finally, it returns the result of `map-deep-get` as we've seen above.
 
 So we could use it like this:
 
-<pre class="language-scss"><code>img:not([src])::after {
+```scss
+img:not([src])::after {
     content: message('errors', 'no-src');
-}</code></pre>
+}
+```
 
 Pretty cool! Although having to type `content` everywhere could be avoided. Plus, Gaël uses `!important` in order to make sure the messages are correctly being displayed. Let's have a `message` mixin wrapping around `message` function!
 
-<pre class="language-scss"><code>/// Get a message from the translation map based on the defined language.
+```scss
+/// Get a message from the translation map based on the defined language.
 /// The message contains the icon associated to the message type.
 /// @group languages
 /// @param {String} $theme - Theme name
@@ -157,13 +176,16 @@ Pretty cool! Although having to type `content` everywhere could be avoided. Plus
 /// }
 @mixin message($theme, $key) {
   content: message($theme, $key) !important;
-}</code></pre>
+}
+```
 
 Same arguments. No logic. Nothing but the `content` property with `!important`. Thus we would use it like this:
 
-<pre class="language-scss"><code>img:not([src])::after {
+```scss
+img:not([src])::after {
     @include message('errors', 'no-src');
-}</code></pre>
+}
+```
 
 We're done. It's over!
 

@@ -14,7 +14,7 @@ tags:
 A few months ago I tested Netflix, immediately got hooked and got myself an account. I started watching a lot of series that I usually had to view elsewhere. Each episode or movie starts with the Netflix logo animation.
 
 <figure class="figure">
-<img src="/images/netflix-logo-in-css/logo.gif" alt="" />
+<img src="/assets/images/netflix-logo-in-css/logo.gif" alt="" />
 <figcaption>Original animated Netflix logo</figcaption>
 </figure>
 
@@ -50,21 +50,24 @@ I do a lot of 3d experiments, so this wasn't that much of a difficulty to me.
 
 I started with some basic markup for the word "Netflix"
 
-<pre class="language-markup"><code>&lt;div class="logo">
-  &lt;span>N&lt;/span>
-  &lt;span>E&lt;/span>
-  &lt;span>T&lt;/span>
-  &lt;span>F&lt;/span>
-  &lt;span>L&lt;/span>
-  &lt;span>I&lt;/span>
-  &lt;span>X&lt;/span>
-&lt;/logo></code></pre>
+```html
+<div class="logo">
+  <span>N</span>
+  <span>E</span>
+  <span>T</span>
+  <span>F</span>
+  <span>L</span>
+  <span>I</span>
+  <span>X</span>
+</logo>
+```
 
 I made a wrapper with the class `logo` and wrapped each letter in a span.
 
 Then I rotated the letters on the y-axis and scaled them on the x-axis to retain its original width. The important part is setting a `perspective` on the wrapper and defining its `perspective-origin`.
 
-<pre class="language-scss"><code>// Basic letter styling
+```scss
+// Basic letter styling
 span {
   font-size: 8em;
   font-family: impact;
@@ -81,7 +84,8 @@ span {
 .logo span {
   transform-origin: 0 0;
   transform: scaleX(80) rotateY(89.5deg);
-}</code></pre>
+}
+```
 
 There are different way of doing this, like using a different perspective (e.g. `500px`), rotation-angle (e.g. `9deg`) and scale value (e.g. `0.5`) but these values turned out to work the best for my needs.
 
@@ -93,7 +97,8 @@ Next I had to apply this to all the letters respecting that the middle letter is
 
 To do this I needed to add some logic: I use Sass with the SCSS syntax to do this.
 
-<pre class="language-scss"><code>.logo {
+```scss
+.logo {
   perspective: 1000px;
   perspective-origin: 50% 0;
   font-size: 8em;
@@ -120,7 +125,8 @@ To do this I needed to add some logic: I use Sass with the SCSS syntax to do thi
       }
     }
   }
-}</code></pre>
+}
+```
 
 Here's a demo on CodePen
 
@@ -131,7 +137,7 @@ Here's a demo on CodePen
 Let's write a function for the 3d-effect and the shadow. I paused on one frame of the video I had made before and looked at it in detail.
 
 <figure class="figure">
-<img src="/images/netflix-logo-in-css/shadow.png" alt="" />
+<img src="/assets/images/netflix-logo-in-css/shadow.png" alt="" />
 <figcaption>Image extracted from the original animated Netflix logo</figcaption>
 </figure>
 
@@ -148,13 +154,14 @@ We will call this function inside keyframes so we want it to be able to handle a
 We need one more argument to define the depth of the shadow or 3d-effect.
 
 <figure class="figure">
-<img src="/images/netflix-logo-in-css/shadow-css.png" alt="" />
+<img src="/assets/images/netflix-logo-in-css/shadow-css.png" alt="" />
 <figcaption>My CSS implementation of the previously shown image</figcaption>
 </figure>
 
 Here's the function I am using to handle all these requirements:
 
-<pre class="language-scss"><code>/// Create a 3d-shadow in a certain direction
+```scss
+/// Create a 3d-shadow in a certain direction
 /// @author Gregor Adams
 /// @param  {Number}        $depth - length of the shadow
 /// @param  {Unit}          $color - color of the shadow
@@ -177,14 +184,17 @@ Here's the function I am using to handle all these requirements:
   }
 
   @return $shadow;
-}</code></pre>
+}
+```
 
 This function might be a little hard to understand for Sass-noobs or developers/designers that only use the basic features of the language,
 so let me explain it in detail.
 
 I start off with a variable I called `$shadow`. It is an empty list.
 
-<pre class="language-scss"><code>$shadow: ();</code></pre>
+```scss
+$shadow: ();
+```
 
 I am looping from 1 *through* the depth. `through` in Sass means that we iterate including this value.
 
@@ -193,10 +203,14 @@ I am looping from 1 *through* the depth. `through` in Sass means that we iterate
 
 In each iteration I append a text-shadow to the list. So in the end the variable looks something like this:
 
-<pre class="language-scss"><code>$shadow: (0 1px 0 red, 1px 2px 0 red, 2px 3px 0 red, ...);</code></pre>
+```scss
+$shadow: (0 1px 0 red, 1px 2px 0 red, 2px 3px 0 red, ...);
+```
 ... and I use it like this:
 
-<pre class="language-scss"><code>text-shadow: d3(5, red, [$x], [$y], [$blur], [$mix]);</code></pre>`
+```scss
+text-shadow: d3(5, red, [$x], [$y], [$blur], [$mix]);
+````
 
 `$x`, `$y`, `$blur` and `$mix` are optional arguments. I already mentioned that I will call this function inside keyframes so I need to be able to optionally change them. `$mix` will allow to add a second color so the shadow fades from one to the other.
 
@@ -212,7 +226,8 @@ Since I have created all the parts I need, I can now create the animation.
 
 I am using two variables `$offset` and `$trans` which I have already defined above. The animation has 3 stages, so I can carefully decide when it reaches a certain point.
 
-<pre class="language-scss"><code>@keyframes pop-out {
+```scss
+@keyframes pop-out {
   0% {
     transform:
       if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
@@ -239,13 +254,15 @@ I am using two variables `$offset` and `$trans` which I have already defined abo
       d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
       d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
   }
-}</code></pre>
+}
+```
 
 ### Fading back (animation-outro)
 
 Now let's do the same thing for fading back.
 
-<pre class="language-scss"><code>@keyframes fade-back {
+```scss
+@keyframes fade-back {
   0% {
     transform:
       if($offset == 0, scale(1.1, 1.1), scale(116.2 - abs($offset) * 10, 1.1))
@@ -272,28 +289,33 @@ Now let's do the same thing for fading back.
       d3(15, rgba($c_3d, 0), 0, 0),
       d3(50, rgba($c_shadow, 0), 0, 0);
   }
-}</code></pre>
+}
+```
 
 ### Change color
 
 I also needed to provide an animation to change the color.
 
-<pre class="language-scss"><code>@keyframes change-color {
+```scss
+@keyframes change-color {
   0% {
     color: $c_bg;
   }
   100% {
     color: $c_fg;
   }
-}</code></pre>
+}
+```
 
 ### Calling the animations
 
 Now we can chain these animations like so:
 
-<pre class="language-css"><code>animation-name: pop-out, fade-back, change-color;
+```css
+animation-name: pop-out, fade-back, change-color;
 animation-duration: 4s, 2s, 0.1s;
-animation-delay: 0s, 2s, 3.2s</code></pre>
+animation-delay: 0s, 2s, 3.2s
+```
 
 The code above is just an approximate example. Each letter has a different delay and duration. You can see the final implementation here [Netflix animation in pure CSS](http://codepen.io/pixelass/pen/MYYReK)
 

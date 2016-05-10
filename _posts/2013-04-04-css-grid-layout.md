@@ -55,17 +55,20 @@ Otherwise, the module is quite complicated by itself. It involves about 15 new p
 
 What I've found astonishing is the very little amount of required CSS to achieve a complex layout. I counted: with no more than 10 lines of CSS, I've been able to make a 3-columns layout including 2 fixed-size columns, with full-width header and footer. Oh, and source order independant. Please have a look at the following markup:
 
-<pre class="language-markup"><code>&lt;div class="wrapper">
-	&lt;article class="main" >My awesome content here &lt;/article>
-	&lt;footer class="footer">Some informations here  &lt;/footer>
-	&lt;header class="header">My site title goes here &lt;/header>
-	&lt;aside class="sidebar">Here is my side content &lt;/aside>
-	&lt;aside class="annexe" >Some more side content  &lt;/aside>
-&lt;/div></code></pre>
+```html
+<div class="wrapper">
+	<article class="main" >My awesome content here </article>
+	<footer class="footer">Some informations here  </footer>
+	<header class="header">My site title goes here </header>
+	<aside class="sidebar">Here is my side content </aside>
+	<aside class="annexe" >Some more side content  </aside>
+</div>
+```
 
 Now the CSS. Pay attention to the number of lines:
 
-<pre class="language-css"><code>.wrapper {
+```css
+.wrapper {
 	display: grid;
 	grid-columns: 200px 15px 1fr 15px 100px;
 	grid-rows: (auto 15px)[2] auto;
@@ -81,7 +84,8 @@ Now the CSS. Pay attention to the number of lines:
 
 .sidebar { grid-column: 1; }
 .main    { grid-column: 3; }
-.annexe  { grid-column: 5; }</code></pre>
+.annexe  { grid-column: 5; }
+```
 
 Done. **10 lines. No float. No inline-block. No height. No width. No margin.** And if you want to make everything nice on small devices, it will take no more than a couple of more lines (8 in this example).
 

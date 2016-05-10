@@ -7,7 +7,7 @@ tags:
   - riddle
 ---
 <figure class="figure--right">
-<img src="/images/calc-css-riddle/gollum-riddle.gif" alt="">
+<img src="/assets/images/calc-css-riddle/gollum-riddle.gif" alt="">
 <figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ Let me translate the post from Rémi for you:
 
 The tricky part is *5*. After checking at proposals submitted by various developers on Rémi's post, it seems most of them didn't catch that **all grey rectangles should be the same width**. Here is what you should be having:
 
-![The grid we want to create](/images/calc-css-riddle/css-grid.gif)
+![The grid we want to create](/assets/images/calc-css-riddle/css-grid.gif)
 
 Rémi made [a CodePen](http://codepen.io/hteumeuleu/pen/zLiGw) to kickstart the riddle if you'd like to give it a try. Go on, have a shot. I'll be waiting.
 
@@ -92,17 +92,20 @@ If you are using a templating engine (SPIP, Twig, Liquid...), there are high cha
 
 But since we only have to support a reasonably recent range of browsers, we could use advanced CSS selectors as well like `:nth-of-type()` to target side cells.
 
-<pre class="language-scss"><code>/* Side cells */
+```scss
+/* Side cells */
 .cell:nth-of-type(4n),       /* last  cells */
 .cell:nth-of-type(4n + 1) {  /* first cells */
   /* Do something */
-}</code></pre>
+}
+```
 
 ### Defining widths with calc
 
 In the end, the core of the solution is no more than this:
 
-<pre class="language-scss"><code>/* Middle cells */
+```scss
+/* Middle cells */
 .cell {
   width: calc(((100% - (200px * 4 + 10px * 6)) / 6) * 2 + 200px);
 }
@@ -111,7 +114,8 @@ In the end, the core of the solution is no more than this:
 .cell:nth-of-type(4n),
 .cell:nth-of-type(4n + 1) {
   width: calc(((100% - (200px * 4 + 10px * 6)) / 6) + 200px);
-}</code></pre>
+}
+```
 
 You can have a look at the [whole code directly on CodePen](http://codepen.io/HugoGiraudel/pen/tivIj).
 

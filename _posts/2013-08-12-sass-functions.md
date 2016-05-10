@@ -14,20 +14,24 @@ Mixins are usually quite easy to deal with. Functions are a little more undergro
 
 If you build mixins or just like to play around the syntax, you may have already faced a case where you'd need to strip the unit from a number. This is not very complicated:
 
-<pre class="language-scss"><code>@function strip-unit($value) {
+```scss
+@function strip-unit($value) {
 	@return $value / ($value * 0 + 1);
-}</code></pre>
+}
+```
 
 It might look weird at first but it's actually pretty logical: to get a number without its unit, you need to divide it by 1 of the same unit. To get `42` from `42em`, you need to divide `42em` by `1em`.
 
 So we divide our number by the same number multiplied by 0 to which we then add 1. With our example, here is what happen: `42em / 42em * 0 + 1`, so `42em / 0em + 1` so, `42em / 1em` so `42`.
 
-<pre class="language-scss"><code>@function strip-unit($value) {
+```scss
+@function strip-unit($value) {
 	@return $value / ($value * 0 + 1);
 }
 
 $length : 42em;
-$int    : strip-unit($length); // 42</code></pre>
+$int    : strip-unit($length); // 42
+```
 
 There has been [a request](https://github.com/nex3/sass/issues/533) to include this function to Sass core but Chris Eppstein declined it. According to him, there is no good usecase for such a thing, and most of existing usages are bad understanding of how units work. So, no `strip-unit()` into Sass!
 
@@ -41,9 +45,11 @@ Anyway, this is a function to clamp a number. Clamping a number means restrictin
 * `-5` clamped to `1-10` equals `1`.
 * `42` clamped to `10-100` equals `42`.
 
-<pre class="language-scss"><code>@function clamp($value, $min, $max) {
+```scss
+@function clamp($value, $min, $max) {
   @return if($value > $max, $max, if($value < $min, $min, $value));
-}</code></pre>
+}
+```
 
 To understand this function, you have to understand the `if()` function. `if()` is a function mimicing the well known one-line conditional statement: `var = condition ? true : false`. The first parameter of the `if()` function is the condition, the second one is the result if condition is true, and the first one is the value if condition is false.
 
@@ -58,14 +64,17 @@ What I like with this method is it is very concise and damn efficient. With nest
 
 Now what's the point of this function? I guess that could be useful when you want to be sure the number you pass to a function is between two values, like a percentage for color functions.
 
-<pre class="language-scss"><code>$pc: percentage(clamp($value, 0, 100));
-$darkColor: darken($color, $pc);</code></pre>
+```scss
+$pc: percentage(clamp($value, 0, 100));
+$darkColor: darken($color, $pc);
+```
 
 ## Unit conversion
 
 This one is a function by Chris Eppstein himself in order to convert an angle into another unit (because [there are 4 different ways of declaring an angle in CSS](http://codepen.io/HugoGiraudel/pen/rdgse)). This one converts angles but you could probably do this for anything fixed (px, in, cm, mm).
 
-<pre class="language-scss"><code>@function convert-angle($value, $unit) {
+```scss
+@function convert-angle($value, $unit) {
   $convertable-units: deg grad turn rad;
   $conversion-factors: 1 10grad/9deg 1turn/360deg 3.1415926rad/180deg;
   @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
@@ -75,13 +84,16 @@ This one is a function by Chris Eppstein himself in order to convert an angle in
   } @else {
     @warn "Cannot convert #{unit($value)} to #{$unit}";
   }
-}</code></pre>
+}
+```
 
 Here is how it works: you give it a value and the unit you want to convert your value into (let's say `30grad` into `turn`). If both are recognized as valid units for the function, the current value is first converted into degrees, then converted from degrees into the asked unit. Damn clever and pretty useful!
 
-<pre class="language-scss"><code>$angle-deg: 30deg;
+```scss
+$angle-deg: 30deg;
 $angle-rad: convert-angle($angle-deg, rad); // 0.5236rad
-</code></pre>
+
+```
 
 ## Import once
 
@@ -89,7 +101,8 @@ When you are working on very big Sass projects, you sometimes wish there was a `
 
 While we wait for [Sass 4.0](https://github.com/nex3/sass/issues/353#issuecomment-18626307) which will bring the brand new `@import` (solving this issue), we can rely on this little function I found in [an issue](https://github.com/nex3/sass/issues/156) on Sass' GitHub repo.
 
-<pre class="language-scss"><code>$imported-once-files: ();
+```scss
+$imported-once-files: ();
 
 @function import-once($filename) {
     @if index($imported-once-files, $filename) {
@@ -102,13 +115,15 @@ While we wait for [Sass 4.0](https://github.com/nex3/sass/issues/353#issuecommen
 
 @if import-once("_SharedBaseStuff.scss") {
     /* ...declare stuff that will only be imported once... */
-}</code></pre>
+}
+```
 
 The idea is pretty simple: everytime you import a file, you store its name in a list (`$imported-once-files`). If its name is stored, then you can't import it a second time.
 
 It took me a couple of minutes to get the point of this function. Actually, this is how you should probably use it:
 
-<pre class="language-scss"><code>/* _variables.scss: initialize the list */
+```scss
+/* _variables.scss: initialize the list */
 $imported-once-files: ();
 
 /* _functions.scss: define the function */
@@ -131,7 +146,8 @@ $imported-once-files: ();
   .element {
     /* ... */
   }
-}</code></pre>
+}
+```
 
 Now if you add another `@import "component"` in `styles.scss`, since the whole content of `_component.scss` is wrapped in a conditional statement calling the function, its content won't be outputed a second time. Clever.
 
@@ -139,10 +155,12 @@ Now if you add another `@import "component"` in `styles.scss`, since the whole c
 
 You probably wonder what prevents us from doing something like this:
 
-<pre class="language-scss"><code>/* styles.scss - this doesn't work */
+```scss
+/* styles.scss - this doesn't work */
 @if import-once('component') {
   @import "component";
-}</code></pre>
+}
+```
 
 Unfortunately, we cannot import a file in a conditional statement, [this just don't work](https://github.com/nex3/sass/issues/451). Here is the reason mentioned by Chris Eppstein:
 
@@ -154,7 +172,8 @@ Sass 3.3 will introduce *maps* which come very close to what we often call *asso
 
 Let's have a look at the following list `$list: a b, c d, e f;`. `a` is kind of mapped of to `b`, `c` to `d`, and so on. Now what if you want to retreive `b` from `a` (the value from the key) or even `a` from `b` (the key from the value, which is less frequent)? This is where our function is coming on stage.
 
-<pre class="language-scss"><code>@function match($haystack, $needle) {
+```scss
+@function match($haystack, $needle) {
   @each $item in $haystack {
     $index: index($item, $needle);
     @if $index {
@@ -163,14 +182,17 @@ Let's have a look at the following list `$list: a b, c d, e f;`. `a` is kind of 
     }
   }
   @return false;
-}</code></pre>
+}
+```
 
 Basically, the function loops through the pairs; if `$needle` you gave is found, it checks whether it has been found as the key or the value, and returns the other. So with our last example:
 
-<pre class="language-scss"><code>$list: a b, c d, e f;
+```scss
+$list: a b, c d, e f;
 $value: match($list, e); /* returns f */
 $value: match($list, b); /* returns a */
-$value: match($list, z); /* returns false */</code></pre>
+$value: match($list, z); /* returns false */
+```
 
 ## Final words
 

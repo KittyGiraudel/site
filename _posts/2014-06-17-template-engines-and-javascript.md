@@ -11,7 +11,7 @@ I couldn't find an appropriate title. I recently [moved my site from Jekyll to M
 
 ## Template what..?
 
-A template engine is some kind of tool helping you writing markup. [Twig]() is the template engine coming with Symfony. Both Jekyll and Mixture uses [Liquid](), the template engine from Shopify. You may also have heard of Smarty, Mustache.js or Handlebars.js.
+A template engine is some kind of tool helping you writing markup. [Twig](http://twig.sensiolabs.org/) is the template engine coming with Symfony. Both Jekyll and Mixture uses [Liquid](https://help.shopify.com/themes/liquid/basics), the template engine from Shopify. You may also have heard of Smarty, Mustache.js or Handlebars.js.
 
 The idea behind any template engine is to have template files that can be used and reused, imported and extended in order to have a dynamic, DRY and reusable HTML architecture. In this article, I will mostly talk about Liquid because it is the one used by Jekyll and Mixture, as well as Twig which I heavily use at work.
 
@@ -32,8 +32,9 @@ Let's get back to the initial topic: on my blog, I need to execute some JavaScri
 Before moving to Mixture, I handled the problem in a rather drastic (and dirty) way: all templates included a `scripts.liquid` file at the bottom. In this file, I wrapped JavaScript snippets with Liquid conditions. For instance:
 
 {% raw %}
-<pre class="language-markup"><code>{% if post.codepen %}
-  &lt;script src="... source to CodePen JS file ...">&lt;/script>
+```html
+{% if post.codepen %}
+  <script src="... source to CodePen JS file ..."></script>
 {% endif % }
 
 {% if post.comments %}
@@ -42,7 +43,8 @@ Before moving to Mixture, I handled the problem in a rather drastic (and dirty) 
 
 {% if post.tableOfContents %}
   ... Table of contents JavaScript snipppet ...
-{% endif %}</code></pre>
+{% endif %}
+```
 {% endraw %}
 
 As you can see, this is not ideal. First, JavaScript lays in a template file. We could work around the issue by moving JavaScript snippets to separate `.js` files, then only include them when needed but we would possibly do several HTTP requests while a single one could be enough. Secondly, it is ugly. Very ugly.
@@ -51,7 +53,8 @@ As you can see, this is not ideal. First, JavaScript lays in a template file. We
 
 When moving to Mixture, I took the time to think of how I would solve this issue to end up with a clean and DRY solution. The first thing I wanted to do was putting the JavaScript in [a `.js` file](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/mixture/assets/js/src/app.js), so let's start with that.
 
-<pre class="language-javascript"><code>// app.js
+```javascript
+// app.js
 (function (global) {
 
   var App = function (conf) {
@@ -76,11 +79,13 @@ When moving to Mixture, I took the time to think of how I would solve this issue
   App.prototype.initialize = function () { /* ... */ };
 
   global.App = App;
-}(window))</code></pre>
+}(window))
+```
 
 So what's going on here? In a JavaScript file, in a closure, we define a new class called `App`, that can be instantiated with an object of options (`conf`). This one is extended with an object of default parameters. When instantiated, it automatically calls the `initialize()` method. Let's see what it does.
 
-<pre class="language-javascript"><code>App.prototype.initialize = function () {
+```javascript
+App.prototype.initialize = function () {
   if (this.conf.tracking === true) {
     this.tracking();
   }
@@ -102,19 +107,23 @@ So what's going on here? In a JavaScript file, in a closure, we define a new cla
   }
 
   // ...
-};</code></pre>
+};
+```
 
 No magic here, the `initialize()` method simply calls other methods based on the configuration. We could simplify the code even more by calling the methods based on the configuration key names:
 
-<pre class="language-javascript"><code>['tracking', 'ad', 'comments', 'codepen', 'sassmeister'].forEach(function (key) {
+```javascript
+['tracking', 'ad', 'comments', 'codepen', 'sassmeister'].forEach(function (key) {
   if (this.conf[key] === true) {
     this[key]();
   }
-}.bind(this));</code></pre>
+}.bind(this));
+```
 
 But it's no big deal, we don't really need this. And now, the other methods:
 
-<pre class="language-javascript"><code>App.prototype.tracking = function () {
+```javascript
+App.prototype.tracking = function () {
   global._gaq = [
     ['_setAccount','UA-XXXXXXXX-X'],
     ['_trackPageview']
@@ -152,7 +161,8 @@ App.prototype._inject = function (url) {
   g.async = true;
   g.src = url;
   z.parentNode.insertBefore(g, z);
-};</code></pre>
+};
+```
 
 All resources are loaded asynchronously thanks to the `_inject` (pseudo-)private function.
 
@@ -161,9 +171,10 @@ All resources are loaded asynchronously thanks to the `_inject` (pseudo-)private
 We still haven't really solved the problem yet. How are we going to pass our Liquid variables to the JavaScript? Well, this is the moment we need to get back to [`scripts.liquid`](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/mixture/templates/includes/scripts.liquid) file. No more conditional JavaScript snippets; instead, we instanciate the `App` class.
 
 {% raw %}
-<pre class="language-markup"><code>&lt;script src="/assets/js/main.min.js">&lt;/script>
+```html
+<script src="/assets/js/main.min.js"></script>
 
-&lt;script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   var app = new App({
     codepen: {{ post.codepen }},
@@ -178,7 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
     ad: true
   });
 });
-&lt;/script></code></pre>
+</script>
+```
 {% endraw %}
 
 This is the only chunk of JavaScript in a template file. It is called on every page, once the DOM has been fully loaded. It grabs data from the YAML Front Matter in a clean and dynamic way. Than, JavaScript deals with the rest.
