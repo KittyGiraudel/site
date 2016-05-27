@@ -46,16 +46,3 @@ h2 + .list > .list__item:first-child::before {
   display: block;
   position: relative;
 }
-
-/**
- * List item links
- * 1. Colored as text
- */
-.list__item a {
-  color: inherit; /* 1 */
-  text-decoration: none;
-
-  &::before {
-    transition: transform 0.1s;
-  }
-}

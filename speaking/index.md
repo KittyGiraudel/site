@@ -19,10 +19,10 @@ It does not happen *that* often, but it happens! Why don't you come and see me a
 <ul class="list">
 {% for event in site.data.speaking %}
   <li class="list__item">
+    <p class="list__primary-content">
+      <a href="{{ event.link }}" target="_blank">{{ event.event }}</a>
+    </p>
     <span class="list__secondary-content">{{ event.date|date_to_string }} — {{ event.location }}</span>
-    <a class="list__primary-content" href="{{ event.link }}" target="_blank">
-      {{ event.event }}
-    </a>
     {% if event.actions %}
     <ul>
     {% for action in event.actions %}

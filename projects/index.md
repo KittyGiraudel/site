@@ -24,9 +24,9 @@ When I can, I try to invest a lot of time in open-source projects. Here are a fe
   {% assign projects = category.items|sort:"name" %}
   {% for project in projects %}
     <li class="list__item">
-      <a class="list__primary-content" href="{{ project.link }}" target="_blank">
-        {{ project.name }}
-      </a>
+      <p class="list__primary-content">
+        <a href="{{ project.link }}" target="_blank">{{ project.name }}</a>
+      </p>
       <span class="list__secondary-content">{{ project.description }}</span>
     </li>
   {% endfor %}
