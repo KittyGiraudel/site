@@ -1,5 +1,4 @@
 (function (global) {
-
   var App = function (conf) {
     this.conf = global.extend({
       codepen: false,
@@ -29,6 +28,40 @@
         this[key]();
       }
     }.bind(this));
+
+    if (window.matchMedia('(min-width: 750px').matches) {
+      var gridify = this.gridifyImages.bind(this);
+      window.addEventListener('resize', gridify);
+      gridify();
+    }
+  };
+
+  App.prototype.gridifyImage = function (image, containerWidth) {
+    var i = new Image();
+    i.onload = function () {
+      var height = i.height;
+      var width = Math.min(i.width, containerWidth);
+      var height = i.width > containerWidth
+        ? containerWidth * i.height / i.width
+        : i.height;
+      var roundedHeight = (Math.round(height / 40) * 40);
+
+      image.style.width = width + 'px';
+      image.style.height = roundedHeight + 'px';
+    };
+    i.src = image.src;
+  };
+
+  App.prototype.gridifyImages = function () {
+    var images = document.querySelectorAll('img');
+    var containerWidth = document
+      .querySelector('.container')
+      .offsetWidth - (40 * 2);
+
+    var gridify = this.gridifyImage;
+    Array.prototype.forEach.call(images, function (image) {
+      gridify(image, containerWidth);
+    });
   };
 
   App.prototype.tracking = function () {

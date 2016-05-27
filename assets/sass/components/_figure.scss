@@ -3,12 +3,11 @@
  * 2. Clear inner floats
  */
 .figure {
-  margin: 0 0 1.5em;
+  margin: 0 0 2em;
   overflow: hidden; /* 2 */
 }
 
 .figure img:only-of-type {
-  border: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 0;
 }
 
@@ -18,7 +17,7 @@
  */
 .figure figcaption {
   @extend em;
-  margin: -1em 0 0;
+  margin: -2em 0 0;
 }
 
 .figure--right,

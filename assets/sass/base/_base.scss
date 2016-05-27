@@ -25,8 +25,8 @@ body {
 
   @include respond-to('medium') {
     padding-left: $sidebar-width; /* 1 */
-    padding-bottom: 1.5em; /* 2 */
-    padding-top: 1.5em; /* 3 */
+    padding-bottom: 2em; /* 2 */
+    padding-top: 2em; /* 3 */
   }
 }
 
@@ -59,13 +59,11 @@ a:not([class]):hover::after {
 /**
  * Basic styles for images
  * 1. Warning, potentially dangerous if using inline images
- * 2. Prevent image from being taller than viewport
  */
 img {
   max-width: 100%;
   height: auto;
   display: block; /* 1 */
-  max-height: 80vh; /* 2 */
   margin: 2em 0;
 }
 
@@ -74,7 +72,7 @@ img {
  */
 hr {
   border: 0;
-  margin: 1.5em 0;
+  margin: 2em 0;
   display: block;
   height: 2em;
 }

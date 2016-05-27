@@ -15,8 +15,8 @@ body {
  */
 h1, h2, h3, h4 {
   font-size: 1em;
-  margin-top: 3em;
-  margin-bottom: 1.5em;
+  margin-top: 4em;
+  margin-bottom: 2em;
   color: $teal;
 }
 
@@ -34,7 +34,12 @@ h4:not([class])::before { content: '#### '; }
 hr + h1,
 hr + h2,
 hr + h3 {
-  margin-top: 1.5em;
+  margin-top: 2em;
+}
+
+.site-ad + h1,
+h1:first-child {
+  margin-top: 2em;
 }
 
 /**
@@ -47,7 +52,7 @@ h2:not([class]) a {
 }
 
 p, ul, ol {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 ul, ol {
@@ -91,18 +96,4 @@ em {
 em::before,
 em::after {
   content: '*';
-}
-
-p, h1, h2, h3, h4 {
-  &:not([class]):hover::after {
-    content: '';
-    width: 0;
-    height: 1em;
-    border-right: 1px solid;
-    animation: caret 1.25s infinite;
-  }
-}
-
-@keyframes caret {
-  to { opacity: 0; }
 }

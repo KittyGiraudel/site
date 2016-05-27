@@ -17,14 +17,14 @@ h2 + .list > .list__item:first-child::before {
  * List item
  */
 .list__item {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 .list__item::before {
   content: '---\A ';
   display: block;
   white-space: pre;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 /**
