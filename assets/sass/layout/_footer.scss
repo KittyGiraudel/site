@@ -1,7 +1,6 @@
 .footer {
   background-color: $black;
   color: $medium-grey;
-  font-family: $text-font-stack;
   padding: 0 0.5em;
 
   @include respond-to('medium') {
