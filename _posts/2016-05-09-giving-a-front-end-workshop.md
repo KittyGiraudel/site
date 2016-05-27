@@ -76,11 +76,9 @@ This marked the end of the first half-day and the HTML part.
 I did not want to start right away with the `<link>` tag and how to connect a stylesheet to the document, so I started the second half day with a practical example to introduce CSS. 
 
 ```css
-
 h1 {
   color: pink;
 }
-
 ```
 
 Simple enough, but for someone with no clue how CSS works, there are already quite a few things going on there: a selector, a rule, a property, a value, a declaration, a motherfucking semi-colon… After a few explanations on this snippet, we actually created a stylesheet and used the `<link>` tag to connect it to the HTML document.
