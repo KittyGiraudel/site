@@ -92,3 +92,17 @@ em::before,
 em::after {
   content: '*';
 }
+
+p, h1, h2, h3, h4 {
+  &:not([class]):hover::after {
+    content: '';
+    width: 0;
+    height: 1em;
+    border-right: 1px solid;
+    animation: caret 1.25s infinite;
+  }
+}
+
+@keyframes caret {
+  to { opacity: 0; }
+}
