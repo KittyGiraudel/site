@@ -48,6 +48,7 @@ a:not([class])::after {
   color: $orange;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 a:not([class]):hover::before,
