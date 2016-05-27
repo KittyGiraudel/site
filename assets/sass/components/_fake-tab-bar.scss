@@ -1,0 +1,25 @@
+.fake-tab-bar {
+  display: none;
+  background-color: $black;
+
+  @include respond-to('medium') {
+    display: block;
+    position: fixed;
+    left: $sidebar-width;
+    top: 0;
+    right: 0;
+    z-index: 10;
+  }
+}
+
+.fake-tab-bar__tab {
+  background-color: $dark-grey;
+  color: white;
+  display: inline-block;
+  padding: 0 0.5em;
+  padding: 0 1ch;
+}
+
+.fake-tab-bar__tab-text {
+  font-size: 70%;
+}

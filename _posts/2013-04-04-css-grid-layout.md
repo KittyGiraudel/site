@@ -36,7 +36,7 @@ The basic example would be something like this: my `.wrapper` is my grid; `.head
 
 ## What's complicated?
 
-<blockquote class="pull-quote--right">Specifications are definitely not for random people.</blockquote>
+> Specifications are definitely not for random people.
 
 First, **reading specifications**. If a spec author ever reads this, I am sorry; but the specifications are definitely not for random people. I believe they are mostly made for browser makers, and they are probably very well writen but for a guy like me, it's way too complicated. Unfortunately, I had to dig deep into the spec.
 
@@ -111,7 +111,7 @@ So as I understand this, **the Grid layout is "macro" while the Flexbox module i
 
 ## Final words
 
-<blockquote class="pull-quote--right">I have been amazed by its efficiency.</blockquote>
+> I have been amazed by its efficiency.
 
 For having [played](http://codepen.io/HugoGiraudel/pen/2befd6d225b69912af8561f7cb020124) with the module for hours, I can tell it is quite promising. I have been amazed by its efficiency, and I even could try to mix it with CSS preprocessors: it rocks. The fact it's fully number-based makes it very easy to use in [loops](http://codepen.io/HugoGiraudel/pen/fb0e46cde228e5437993ba1305459a22), [mixins and functions](http://codepen.io/HugoGiraudel/pen/aCliz).
 

@@ -210,7 +210,7 @@ $ git push origin --delete myBranch
 
 ## Use a Git message template
 
-<blockquote class="pull-quote--right">Using a message template for Git commits is a good practice.</blockquote>
+> Using a message template for Git commits is a good practice.
 
 Using a message template for Git commits is a good practice, especially in big projects with a lot of people involved. It helps finding commits relative to a specific feature, relative to a specific work team, etc.
 
@@ -325,7 +325,7 @@ Now we've covered the basics, let's move on to some advanced Git techniques. Tho
 * to juggle with many branches
 * to use some submodules to split your project into several parts
 
-<blockquote class="pull-quote--right">Each commit must have only one purpose.</blockquote>
+> Each commit must have only one purpose.
 
 Each commit must have only one purpose (c.f. Law #2 at the beginning of the Git Tips & Tricks - Part 1), but it's easy to find some small mistakes when editing a file. If you don't want to add those little fixes when you're creating your commit in order to put them in a dedicated commit, the best way is to split the file modifications when adding the file to the staging area.
 
@@ -503,4 +503,4 @@ That's it for today folks! In the next parts, we'll deal with the following subj
 
 Meanwhile keep practicing!
 
-> ![Loic Giraudel](http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg) Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](http://twitter.com/l_giraudel).
+> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](http://twitter.com/l_giraudel).

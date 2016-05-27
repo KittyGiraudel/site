@@ -62,7 +62,7 @@ If the `background-position` is not specified, then the `background-size` isn't 
 
 Since we have nine background layers and we want to have the same non-default values for `background-repeat` and `background-size` for all of them, we specify these outside the shorthand so that we don't have to write the same thing nine times.
 
-<blockquote class="pull-quote--right">Safari doesn't support background-size inside the shorthand.</blockquote>
+> Safari doesn't support background-size inside the shorthand.
 
 In the case of `background-size`, there is also another reason to do that: Safari doesn't support `background-size` inside the shorthand and, until recently (up to and including version 17), Firefox didn't support that either. Also, two values should be always given when the `background-image` is a gradient, because giving it just one value is going to produce different results in different browsers (unless that one value is 100%, in which case it might as well be missing as that is the default).
 
@@ -157,4 +157,4 @@ You can change the dimensions of the gradient box and you can also change the gr
 
 CSS gradients are really powerful and understanding how they work can be really useful for creating all sorts of imageless textures or shapes that would be difficult to obtain otherwise.
 
-> ![Ana Tudor](http://www.gravatar.com/avatar/bee436794e066a5423040cf673c7506f?s=200) Ana Tudor excels in CSS, especially when it comes to CSS transforms and well, as you may have seen, CSS gradients. You definitely should follow her on [Twitter](http://twitter.com/thebabydino) or have a look at [her profile](http://about.me/thebabydino) to know more about her and what she does.
+> Ana Tudor excels in CSS, especially when it comes to CSS transforms and well, as you may have seen, CSS gradients. You definitely should follow her on [Twitter](http://twitter.com/thebabydino) or have a look at [her profile](http://about.me/thebabydino) to know more about her and what she does.

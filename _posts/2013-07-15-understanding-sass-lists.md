@@ -18,7 +18,7 @@ First things first. <span style="text-decoration: line-through">Even creating a 
 
 <span style="text-decoration: line-through">Anyway, we have a couple of ways to initialize an empty variable (that could be treated as a list):</span> *There is a single way to initialize an empty variable (whatever that means), and it's with `null`.*
 
-<blockquote class="pull-quote--right">Sass isn't very strict with variable type.</blockquote>
+> Sass isn't very strict with variable type.
 
 ```scss
 $a: ();
@@ -80,7 +80,7 @@ $list: "item-1.1" "item-1.2" "item-1.3",
 
 *Note: This is the theory. I've noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we'll dig into this in another blog post.*
 
-<blockquote class="pull-quote--right">Manipulating 5+ nested lists is a pain in the ass.</blockquote>
+> Manipulating 5+ nested lists is a pain in the ass.
 
 ```scss
 $list: "item-1", "item-2", "item-3";
@@ -195,7 +195,7 @@ Instead of using `append(..)` and setting the 3rd parameter to `comma` we implic
 
 ## Final words
 
-<blockquote class="pull-quote--right">Having a very permissive syntax can be complicated.</blockquote>
+> Having a very permissive syntax can be complicated.
 
 The three versions we saw in the previous section work like a charm, <span style="text-decoration: line-through">the one you should use is really up to you</span> *although the one with `append(..)` is definitely the cleaner way of handling this. You can also do it in some other more complicated and dirty ways.*
 

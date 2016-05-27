@@ -20,7 +20,8 @@ I recently got hired for quite a big project as the only front-end developer in 
 
 So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly back-end devs.
 
-<blockquote class="pull-quote--right">Hugo, we'll use Bootstrap. NOOOOOO!</blockquote>
+> Hugo, we'll use Bootstrap.
+> — NOOOOOO!
 
 And then he told me what I didn't want to hear: *"we will use Twitter Bootstrap"* and I was like *"NOOOO!!"*.
 
@@ -58,7 +59,7 @@ At this point, every sites looked alike and it was kind of annoying for sure. Bu
 
 ## Final words
 
-<blockquote class="pull-quote--right">Bootstrap is not that bad. Just don't use it raw.</blockquote>
+> Bootstrap is not that bad. Just don't use it raw.
 
 In the end, I think I've changed my mind on Bootstrap and I really start to understand what it's for. On big websites, having a skeleton to work on is important. It's like managing a huge JavaScript structure without a library (could it be jQuery, MooTools, whatever).
 

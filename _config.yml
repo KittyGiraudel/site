@@ -38,3 +38,5 @@ nav:
     url: /speaking/
   - label: About
     url: /about/
+  - label: Search
+    url: /search/

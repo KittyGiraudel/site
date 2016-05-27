@@ -1,41 +1,34 @@
+$black: rgb(28, 31, 38);
+$very-dark-grey: rgb(35, 40, 48);
+$dark-grey: rgb(43, 48, 59);
+$medium-grey: rgb(101, 115, 128);
+$light-grey: #807d7c;
+$very-light-grey: #a5a2a2;
+$almost-white: rgb(192, 197, 206);
+$white: #f7f7f7;
+$red: rgb(195, 97, 107);
+$pink: rgb(181, 141, 174);
+$yellow: rgb(236, 204, 135);
+$green: rgb(162, 191, 138);
+$teal: rgb(144, 164, 184);
+$blue: #01a0e4;
+$purple: #a16a94;
+$orange: rgb(210, 135, 109);
+
+/// Sidebar width
+/// @type Length
+$sidebar-width: 225px;
+
 /// Container max-width
 /// @type Length
 $max-width: 800px;
-
-/// Lovely blue
-/// @type Color
-$blue: #107FC9;
-
-/// Hot pink
-/// @type Color
-$pink: #FF4F72;
-
-/// Main color
-/// @type Color
-$main-color: $blue;
-
-/// Secondary color
-/// @type Color
-$secondary-color: $pink;
-
-/// Dark grey
-/// @type Color
-$dark-grey: #444;
-
-/// Medium grey
-/// @type Color
-$medium-grey: #888;
-
-/// Light grey
-/// @type Color
-$light-grey: #EEE;
 
 /// Breakpoints
 /// @type Map
 /// @prop {String} key - Breakpoint name
 /// @prop {Map} value - Breakpoint value
 $breakpoints: (
-  'medium': (min-width: 600px)
+  'medium': (min-width: 750px)
 );
 
 /// Regular font stack

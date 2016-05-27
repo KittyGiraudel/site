@@ -86,7 +86,8 @@ I made two versions of this function: in the first one, the code is simple. In t
   @return null;
 }
 ```
-<blockquote class="pull-quote--right">Sass `@for` loops can't decrement.</blockquote>
+
+> Sass `@for` loops can't decrement.
 
 The second version is better because it starts from the end and returns the first occurence it finds instead of looping through all the items from the start.
 

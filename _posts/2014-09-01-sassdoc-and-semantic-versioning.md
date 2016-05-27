@@ -30,7 +30,7 @@ The project mature as we are working on it and as people start using it. There i
 
 Version `1.1.0` came on July 20th (3 days after `1.0.0`). Version `1.2.0` has been released on August 11th ([announced on Tuts+](http://webdesign.tutsplus.com/articles/new-features-and-a-new-look-for-sassdoc--cms-21914) the next day). Version `1.3.0` came one week later, on August 18th, and version `1.4.0` has been launched 2 days later, on August 20th. Finally, version `1.5.0` (latest stable as of writing) came on August 25th.
 
-<blockquote class="pull-quote--right">Between 10/08 and 25/08, we went from <code>1.1.0</code> to <code>1.5.0</code>.</blockquote>
+> Between 10/08 and 25/08, we went from `1.1.0` to `1.5.0`.
 
 So indeed, between August 10th and August 25th, we went from `1.1.0` to `1.5.0`. So what?
 

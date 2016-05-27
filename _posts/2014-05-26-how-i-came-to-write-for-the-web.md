@@ -83,7 +83,7 @@ I've seen friends working days on an article before delivering / releasing it. G
 
 This might seem silly, but I am a very fast typer and this is not trivial when writing a lot. I usually sit on a comfortable 80 to 100 words per minute while being able to hit up to 120 words per minute with [appropriate music in the ears](https://soundcloud.com/janskibeeeats/mini-montana). 
 
-<blockquote class="pull-quote--right">There has always been a computer at home.</blockquote>
+> There has always been a computer at home.
 
 I grew up without a TV but as far as I can remember, there has always been a computer at home. When I was 3, my brother put me on Street Fighter, and I was smashing the keyboard with my little fingers without understanding much what I was doing. Before I was even 10, I started playing online. Which means typing to talk with people.
 
@@ -95,7 +95,7 @@ Anyway, being a fast typer is part how I am able to release as many articles. Wr
 
 Well, it involves Markdown, for sure. If you ask me about the greatest improvement regarding writing for the web, I'd say it's Markdown. Being able to have structured content that doesn't hurt reading is essential. Add a syntax highlighter and you got the holy grail of web writing. I'm not sure I'd be writing that much if it wasn't for Markdown.
 
-<blockquote class="pull-quote--right">Markdown is the best way to write for the web.</blockquote>
+> Markdown is the best way to write for the web.
 
 Anyway, I usually open a [Github Gist](http://gist.github.com) or Sublime Text and start writing in Markdown mode. As I've explained in the previous section, once I've started I don't stop until the end. It usually takes no more than a couple of minutes or dozens of minutes depending on the article's length. If everything is not perfect at first, it's no big deal. What's important is I have a backbone.
 

@@ -180,7 +180,7 @@ So we should probably make a couple of checks to make sure everything's right be
 }
 ```
 
-<blockquote class="pull-quote--right">Always validate user input in your custom functions.</blockquote>
+> Always validate user input in your custom functions.
 
 Yes, it takes a decent amount of space. Yes, it makes the mixin longer. Yes, it's a pain in the ass to write. On the other hand, if the user makes a mistake with one of the arguments, he'll know what's going on, or why the mixin didn't output anything.
 

@@ -16,7 +16,7 @@ There is more than just a click on a button opening a list of options to the `<s
 
 Now don't get me wrong, the author at Pepsized did a wonderful job on this article, regarding both the design and the usability (which is far better than what I did at Codrops). (S)He is a good CSS developer, I don't even question that. But once again, (s)he didn't provide a CSS alternative to the `<select>` element. Let me clear things up point per point.
 
-<blockquote class="pull-quote--right">You can't do a CSS alternative to the Select element.</blockquote>
+> You can't do a CSS alternative to the Select element.
 
 ## Accessibility
 
@@ -53,7 +53,7 @@ Since the `<select>` element is a form element, it comes with a name attribute a
 
 Fine. Now let's do this with CSS only. Uh-ho, not possible. If you're clever enough, you'll come up with a solution involving hidden radio inputs within your list items. Sounds fair enough; so... you end up using multiple form elements... not to use a form element. Right?
 
-<blockquote class="pull-quote--right">You end up using multiple form elements not to use a form element.</blockquote>
+> You end up using multiple form elements not to use a form element.
 
 Let's say you don't mind the extra-processing that comes with the multiple radio buttons compared to the regular `<select>` element... 
 

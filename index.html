@@ -1,5 +1,6 @@
 ---
-layout: full
+layout: default
+title: Hugo Giraudel
 tags:
   - Hugo Giraudel
   - blog
@@ -8,56 +9,61 @@ tags:
 classes: home
 ---
 
-<section class="home-section">
-  <div class="home-section__inner  container">
-    <img class="home-section__image" src="/assets/images/hugo-giraudel.jpg" alt="Photo Hugo Giraudel"  />
-    <h2 class="home-section__title">Hello, I'm...</h2>
-    <p class="home-section__primary-content"><a href="https://twitter.com/hugogiraudel">Hugo Giraudel</a></p>
-    <p class="home-section__secondary-content">Front-end developer at <a href="http://edenspiekermann.com" target="_blank">Edenspiekermann</a> in Berlin</p>
-    {% include ad.html %}
-  </div>
-  <footer class="home-section__footer">
-    <p>Know more <a href="/about/">about me</a>.</p>
-  </footer>
-</section>
+<h1>Hello, I’m Hugo Giraudel.</h1>
+
+<p>A French front-end developer working at <a href="http://edenspiekermann.com" target="_blank">Edenspiekermann</a> in Berlin. Feel free to <a href="/about/">read more about me</a>.</p>
+
+<hr />
+
+<h2>Latest article</h2>
 
 {% for post in site.posts limit:1 %}
-<section class="home-section">
-  <div class="home-section__inner  container">
-    <h2 class="home-section__title">Latest article is...</h2>
-    <p class="home-section__primary-content"><a href="{% if post.external %}{{ post.external.url }}{% else %}{{ post.url }}{% endif %}" {% if post.external %}target="_blank"{% endif %}>{{ post.title }}</a></p>
-    <p class="home-section__secondary-content">Published on {{ post.date|date: "%B %d, %Y" }}{% if post.guest %} by {{ post.guest }}{% endif %}{% if post.external %} at {{ post.external.host }}{% endif %}</p>
-  </div>
-  <footer class="home-section__footer">
-    <p><a href="/blog/">Browse</a> or <a href="/search/">search</a> other articles.</p>
-  </footer>
-</section>
+<ul class="list">
+  {% include post-list.html post=post %}
+</ul>
 {% endfor %}
 
+<p>Read <a href="/blog/">more articles from me</a>.</p>
+
+<hr />
+
+<h2>Latest project</h2>
+
+<ul class="list">
 {% for project in site.data.projects limit:1 %}
-<section class="home-section">
-  <div class="home-section__inner  container">
-    <h2 class="home-section__title">Latest project is...</h2>
-    <p class="home-section__primary-content"><a href="{{ project.link }}" target="_blank">{{ project.name }}</a></p>
-    <p class="home-section__secondary-content">{{ project.description }}</p>
-  </div>
-  <footer class="home-section__footer">
-    <p><a href="/projects/">Browse</a> other projects.</p>
-  </footer>
-</section>
+  <li class="list__item">
+    <span class="list__secondary-content">{{ project.description }}</span>
+    <a class="list__primary-content" href="{{ project.link }}" target="_blank">
+      {{ project.name }}
+    </a>
+  </li>
 {% endfor %}
+</ul>
 
-{% for talk in site.data.speaking limit:1 %}
-{% unless talk.date < site.time %}
-<section class="home-section">
-  <div class="home-section__inner  container">
-    <h2 class="home-section__title">Next public speaking is...</h2>
-    <p class="home-section__primary-content"><a href="{{ talk.link }}">{{ talk.event }}</a></p>
-    <p class="home-section__secondary-content">On {{ talk.date|date_to_string }} in {{ talk.location }}</p>
-  </div>
-  <footer class="home-section__footer">
-    <p><a href="/speaking/">Browse</a> other talks.</p>
-  </footer>
-</section>
+<p>Discover <a href="/projects/">more of my projects</a>.</p>
+
+<hr />
+
+<h2>Next talk</h2>
+
+<ul class="list">
+{% for event in site.data.speaking limit:1 %}
+{% unless event.date < site.time %}
+  <li class="event  list__item{% if event.past %}  event--past{% endif %}">
+    <span class="event__data  list__secondary-content">{{ event.date|date_to_string }} — {{ event.location }}</span>
+    <a class="event__link  list__primary-content" href="{{ event.link }}" target="_blank">
+      {{ event.event }}
+    </a>
+    {% if event.actions %}
+    <ul class="event__actions">
+    {% for action in event.actions %}
+      <li><a target="_blank" href="{{ action.link }}">{{ action.name }}</a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
 {% endunless %}
 {% endfor %}
+</ul>
+
+<p>Have a look at <a href="/speaking/">my past talks</a>.</p>

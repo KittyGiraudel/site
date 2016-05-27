@@ -38,7 +38,7 @@ Ah, browsers. Our main tools. For the record, not so long ago I swear only by Fi
 
 So I switched to Chrome and never looked back. I even pushed it one step further, using [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html). This in order to access to a few things Chrome doesn't support (or didn't support at the time I switched to Canary) like CSS shaders, exclusions, regions and so on.
 
-<blockquote class="pull-quote--right">I don't dislike Firefox -it's a wonderful browser- but I clearly prefer Chrome.</blockquote>
+> I don't dislike Firefox -it's a wonderful browser- but I clearly prefer Chrome.
 
 At work for something which looks like SSL issue, I am also running [Firefox Aurora](http://www.mozilla.org/fr/firefox/channel/) which is the future version of Firefox, like Canary for Chrome. I don't dislike Firefox -it's a wonderful browser- but I clearly prefer Chrome.
 

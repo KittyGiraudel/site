@@ -15,7 +15,7 @@ I'm Manoela, a 31 year old web designer and developer and I create things for [C
 
 I worked in a software company for a while before I decided to become a freelancer and launch Codrops. Since I was a kid I was always fascinated with computers and I created my first website when I was 16 (it had some fancy Flash buttons, I remember) :)
 
-<blockquote class="pull-quote--right">I created my first website when I was 16.</blockquote>
+> I created my first website when I was 16.
 
 In my personal life I like to travel a lot (in fact, most of the time I am travelling). I love to eat and make good food, drink a great wine and take care of my balcony herb garden whenever I have some spare time.
 
@@ -38,7 +38,7 @@ I guess the most challenging but also most exciting part is to come up with inte
 
 #### Sounds lovely. If you could go back and change something at Codrops, what would it be?
 
-<blockquote class="pull-quote--right">If you are happy with what you've learned, it was a good path to choose.</blockquote>
+> If you are happy with what you've learned, it was a good path to choose.
 
 There are always things that could be done better when looking back. But in general I am quite happy with how Codrops turned out thanks to our readers and I wouldn't want to change anything about that I guess. It's just like with everything else in life: if you wouldn't have done it that exact way, you might have not learned what you know now. And if you are happy with what you've learned, it probably was a good path to choose. 
 

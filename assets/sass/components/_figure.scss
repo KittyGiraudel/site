@@ -1,19 +1,15 @@
 /**
  * Figures
- * 1. Poor man's vertical rhythm
  * 2. Clear inner floats
  */
 .figure {
-  margin: 0 -20px 40px; /* 1 */
+  margin: 0 0 1.5em;
   overflow: hidden; /* 2 */
-
-  @include respond-to('medium') {
-    margin: 0 -40px 40px;
-  }
 }
 
 .figure img:only-of-type {
   border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 0;
 }
 
 /**
@@ -21,56 +17,11 @@
  * 1. Right aligned
  */
 .figure figcaption {
-  float: right; /* 1 */
-  font-size: 16px;
-  color: $medium-grey;
-  margin: 10px 40px 0;
+  @extend em;
+  margin: -1em 0 0;
 }
 
-/**
- * Left floated figures
- */
+.figure--right,
 .figure--left {
   @extend .figure;
-
-  @include respond-to('medium') {
-    float: left;
-    margin-right: 20px;
-  }
-
-  /**
-   * Left align caption then
-   */
-  figcaption {
-    float: left;
-  }
-}
-
-/**
- * Right floated figures
- */
-.figure--right {
-  @extend .figure;
-
-  @include respond-to('medium') {
-    float: right;
-    margin-left: 20px;
-  }
-}
-
-/**
- * Floated figures
- * 1. Poor man's vertical rhythm
- */
-.figure--left,
-.figure--right {
-  margin-bottom: 40px; /* 1 */
-
-  @include respond-to('medium') {
-    max-width: 250px;
-  }
-
-  @media (min-width: 800px) {
-    max-width: 400px;
-  }
 }

@@ -276,7 +276,7 @@ We could have used advanced CSS selectors (e.g. `:nth-of-type`) to avoid having 
 
 ### Why box-shadows and not borders?
 
-<blockquote class="pull-quote--right"><code>box-sizing: border-box</code> is a bless.</blockquote>
+> `box-sizing: border-box` is a bless.
 
 Some of you used the same trick with borders instead of box-shadows. I think the main pro of using box-shadows is it doesn't conflict with the box-model since it's being rendered on its own layer. When you're dealing with borders, you have to make sure you include the border in the width/height if you're using `box-sizing: border-box`. And if you don't... well that's stupid, this property is golden.
 
@@ -284,7 +284,7 @@ However the major downside of box-shadows is they can be quite intensive for the
 
 ### What about Internet Explorer 8?
 
-<blockquote class="pull-quote--right">Best fallback is no fallback.</blockquote>
+> Best fallback is no fallback.
 
 When it comes to Internet Explorer 8, or actually any browser not supporting any of the 3 major properties (pseudo-elements, box-shadow, border-radius, pick the lowest common denomitor which happens to be box-shadow), we simply apply a appropriate background color to the `.box__cut` elements. No circle, no big deal.
 

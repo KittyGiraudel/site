@@ -51,7 +51,7 @@ Anyway, I eventually went through the whole session and ended my talk peacefully
 
 ## Slides
 
-<blockquote class="pull-quote--right">Not disappointed by <a href="https://slides.com">Slid.es</a>.</blockquote>
+> Not disappointed by [Slid.es](https://slides.com).
 
 Once again I have made my slides with [Slid.es](https://slides.com), the CMS for [Reveal.js](http://lab.hakim.se/reveal-js/#/). I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF...). I also used the *presentation mode* from Slid.es, which is great. Absolutely not disappointed.
 

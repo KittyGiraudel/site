@@ -7,23 +7,24 @@ code {
   overflow-wrap: break-word;
 }
 
-/**
- * Make code blocks slightly smaller
- */
-pre > code {
-  font-size: 90%;
+:not(pre) > code {
+  color: $green;
+}
+
+:not(pre) > code::before,
+:not(pre) > code::after {
+  content: '`';
 }
 
 /**
  * Poor man's vertical rhythm
- * 1. Overrides Prism.js
  */
 pre {
-  margin: 0 -20px 40px !important; /* 1 */
-  padding: 20px !important; /* 1 */
+  margin-bottom: 1.5em !important;
+}
 
-  @include respond-to('medium') {
-    margin: 0 -40px 40px !important; /* 1 */
-    padding: 20px 40px !important; /* 1 */
-  }
+pre::before,
+pre::after {
+  content: '```';
+  display: block;
 }

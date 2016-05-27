@@ -1,51 +1,75 @@
-/**
- * Header
- */
+
 .header {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
+  background-color: $very-dark-grey;
+  color: $medium-grey;
+  padding: 1em;
 
   @include respond-to('medium') {
-    text-align: initial;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.5em;
+    width: $sidebar-width;
   }
 }
 
-/**
- * Header title 
- * 1. Poor man's vertical rhythm
- * 2. Same size as copy text
- */
+
+@include respond-to('medium') {
+  .header::before {
+    content: 'folders';
+    text-transform: uppercase;
+    display: block;
+    font-size: 70%;
+  }
+}
+
 .header__title {
-  margin: 0 0 20px; /* 1 */
-  font-size: 1em; /* 2 */
-  position: relative;
-
-  @include respond-to('medium') {
-    float: left;
-    margin: 0;
-  }
-
-  /**
-   * Header title link
-   */
-  a {
-    color: white;
-    text-decoration: none;
-  }
+  margin: 0;
+  color: inherit;
 }
 
-/**
- * Blinking carret
- */
-.blink {
-  color: $secondary-color;
-  animation: blink 1s infinite steps(1);
-
-  @keyframes blink {
-    50% { opacity: 0; }
-  }
+.nav__list {
+  margin: 0;
 }
 
+.nav__item {
+  margin-bottom: 0;
+  text-transform: lowercase;
+  line-height: 1.5;
+  padding-left: 0.2em;
+}
+
+.nav__item::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 1px solid transparent;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-right-color: currentcolor;
+  border-top-color: currentcolor;
+}
+
+.nav__item.is-active::before {
+  border-top-color: transparent;
+  border-bottom-color: currentcolor;
+  -webkit-transform: rotate(45deg) translate(0px, -4px);
+  -ms-transform: rotate(45deg) translate(0px, -4px);
+  transform: rotate(45deg) translate(0px, -4px);
+}
+
+.header__link,
+.nav__link {
+  color: inherit;
+  font-size: 0.8em
+}
+
+.header__link:active,
+.header__link:hover,
+.nav__link:active,
+.nav__link:hover {
+  color: $almost-white;
+}

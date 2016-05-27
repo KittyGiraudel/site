@@ -11,8 +11,8 @@ tags:
 
 I don't know why I did not think of writing Sass guidelines when [Harry Roberts](http://csswizardry.com) first released his [CSS Guidelines](http://cssguidelin.es) a couple of months back. Anyway, on saturday evening I had a *eureka moment*:
 
-> I SHOULD WRITE SASS GUIDELINES!
-> &mdash; Me, under the shower.
+> I SHOULD WRITE SASS GUIDELINES!  
+> &mdash; Me, in the shower.
 
 After two days working on them, I am very proud and excited to release a 10000 words long styleguide on working with Sass: [sass-guidelin.es](http://sass-guidelin.es).
 

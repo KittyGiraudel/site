@@ -15,23 +15,20 @@
 @import "layout/header";
 @import "layout/footer";
 @import "layout/main";
-@import "layout/nav";
 
 @import "components/figure";
-@import "components/toc";
 @import "components/pagination";
 @import "components/images";
 @import "components/list";
 @import "components/ads";
 @import "components/code";
 @import "components/blockquote";
+@import "components/reading-time";
+@import "components/post-date";
+@import "components/fake-tab-bar";
 @import "components/table";
 
-@import "pages/home";
 @import "pages/blog";
-@import "pages/post";
-@import "pages/about";
-@import "pages/speaking";
 @import "pages/search";
 
 @import "base/shame";

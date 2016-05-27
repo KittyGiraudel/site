@@ -103,7 +103,7 @@ head {
 
 Meanwhile `json-decode` has been a pain in the ass to write, so much that I was very close to give up. Between nested lists, maps, null values, falsy values and hundreds of other tricky cases it is probably one of the hardest thing I've ever done in Sass.
 
-<blockquote class="pull-quote--right">It was so difficult I was close to giving up.</blockquote>
+> It was so difficult I was close to giving up.
 
 One of the main problem we faced was the ability to retrieve numbers and colors. You see, when you parse a string, everything is a *string*. Even if *you* now this part is a number and this part is a boolean, when you slice your string all you have is shorter strings. Not numbers and booleans.
 
@@ -115,7 +115,7 @@ It took me 3 completely different tries before I come up with something that act
 
 I ended up in an obscure StackOverflow thread pointing to JSON parser implementations by browser vendors. Chrome's one was impossible for me to understand, so I gave a shot at [Mozilla's](https://github.com/mozilla/rhino/blob/master/src/org/mozilla/javascript/json/JsonParser.java) and it looked actually understandable! Mozilla is using Java for their JSON parser, and their code is quite simple to catch up even for someone with absolutely no experience with Java at all (a.k.a. me).
 
-<blockquote class="pull-quote--right">Sass and Java are quite different.</blockquote>
+> Sass and Java are quite different.
 
 So I followed the Fox' steps and began implementing it approximately like they did. Breaking news folks: Sass and Java are two very different languages. I had to be creative for some stuff because it was simply impossible to do it their way (number casting, anyone?).
 

@@ -28,7 +28,7 @@ I wanted to push this idea further last year by joining what comes close to "Com
 
 ## According to you, what are the required qualifications for your job?
 
-<blockquote class="pull-quote--right">I love experimenting and trying new things.</blockquote>
+> I love experimenting and trying new things.
 
 That ain't easy. I think the biggest "problem" of client-side languages is that they are dependent on the client. This implies a lot of hacks and tricks to make everything work everywhere. This is even more true today with mobile devices like tablets and smartphones or even TV screens! So this asks for a lot of patience and experience (the latter comes with time, hopefully).
 
@@ -38,7 +38,7 @@ I also think we really have to love experimenting and trying new things. We work
 
 My favourite thing in my job has to be **learning things**. It's definitely because I'm passionate that I'm comfortable with some things today. As good as my web teacher has been, I don't owe him my skills (not all of them at least). Long story short, I enjoy reading web related stuff.
 
-<blockquote class="pull-quote--right">I enjoy reading web related stuff.</blockquote>
+> I enjoy reading web related stuff.
 
 Beyond reading, it's great to be able to easily discover and learn new things like CSS features, JavaScript APIs, preprocessors and much more (especially thanks to tools like [CodePen](http://codepen.io) and [GitHub](http://github.com)). And if we ever happen to use what we've learnt in real-life projects, then it's even better!
 

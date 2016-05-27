@@ -5,14 +5,7 @@
  * 3. Shift it off in the right margin
  */
 .toc {
-  font-size: 90%; /* 1 */
-  margin-bottom: 40px;
-
-  @include respond-to('medium') {
-    float: right;
-    margin-left: 20px;
-    text-align: right;
-  }
+  margin-bottom: 2em;
 }
 
 /**
@@ -20,8 +13,7 @@
  * 1. Same size as copy text
  */
 .toc__title {
-  font-size: 1em; /* 1 */
-  margin: 0 0 10px;
+  margin: 0 0 1.5em;
 }
 
 /**
@@ -32,11 +24,8 @@
   padding: 0;
   margin: 0;
   list-style-position: inside;
-
-  @include respond-to('medium') {
-    list-style: none;
-    counter-reset: toc; /* 1 */
-  }
+  list-style: none;
+  counter-reset: toc; /* 1 */
 }
 
 /**
@@ -49,16 +38,7 @@
 /**
  * Add numbers on the right of table of contents item
  */ 
-.toc__item::after {
-  @include respond-to('medium') {
-    counter-increment: toc;
-    content: ' .' counter(toc);
-  }
-}
-
-/**
- * Table of contents link
- */
-.toc__item a {
-  text-decoration: none;
+.toc__item::before {
+  counter-increment: toc;
+  content: counter(toc) '. ';
 }

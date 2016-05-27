@@ -12,7 +12,7 @@ I think mine was like two years ago or something and since then my CSS has been 
 
 God, that sounds stupid now but it really helped in understanding how to make efficient CSS. You know, at first you don't necessarily get that a line of text isn't shaped around the text but follows the same pattern as all other elements.
 
-<blockquote class="pull-quote--right">All elements on a page are rectangles.</blockquote>
+> All elements on a page are rectangles.
 
 And when you get that and most generally the whole box-model (that says width equals `width + padding-left + padding-right + border-left + border-right.`), everything becomes so simple.
 

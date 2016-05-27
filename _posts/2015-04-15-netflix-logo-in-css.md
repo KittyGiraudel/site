@@ -328,4 +328,4 @@ I rewrote the entire Sass code prior to writing this article but I still feel th
 
 I barely make use of techniques like these in real-life projects but I very often use the functions I needed to implement that effect. Anyway, I hope you enjoyed this article.
 
-> ![Gregor Adams](https://pbs.twimg.com/profile_images/587377981871562753/f0Wybmz8_400x400.jpg) [Gregor Adams](https://twitter.com/gregoradams) is a front-end developer from Hamburg, Germany. He is passionate about CSS and Sass, thus happens to be the author of [amazing demos on CodePen](http://codepen.io/pixelass) featuring his great CSS skills.
+> [Gregor Adams](https://twitter.com/gregoradams) is a front-end developer from Hamburg, Germany. He is passionate about CSS and Sass, thus happens to be the author of [amazing demos on CodePen](http://codepen.io/pixelass) featuring his great CSS skills.

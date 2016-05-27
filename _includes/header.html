@@ -1,12 +1,30 @@
-<header class="header  container  clearfix" role="banner">
+<header class="header" role="banner">
   <h1 class="header__title{% if page.url == '/' %}  is-active{% endif %}">
-    <a href="/">Hugo Giraudel<span class="blink">_</span></a>
+    <a class="header__link" href="/">hugogiraudel.com</a>
   </h1>
   <nav role="navigation" class="nav">
-    <ul class="clearfix">
+    <ul class="nav__list">
       {% for item in site.nav %}
-      <li {% if page.url == item.url %}class="is-active"{% endif %}><a href="{{ item.url }}">{{ item.label }}</a></li>
+      <li class="nav__item{% if page.url == item.url %}  is-active{% endif %}">
+        <a class="nav__link" href="{{ item.url }}">{{ item.label }}</a>
+      </li>
       {% endfor %}
     </ul>
   </nav>
+
+  <div class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a class="nav__link" href="/rss/">RSS</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="https://plus.google.com/u/0/101697878480386449961?rel=author" target="blank">Google+</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="https://github.com/HugoGiraudel" target="blank">GitHub</a>
+      <li class="nav__item">
+        <a class="nav__link" href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a>
+      </li>
+    </ul>
+  </div>
 </header>

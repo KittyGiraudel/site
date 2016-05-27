@@ -15,54 +15,38 @@ html {
   box-sizing: inherit;
 } 
 
-/**
- * Flat background color for the whole page
- */
 body {
-  background: $main-color;
+  background: $dark-grey;
+
+  @include respond-to('medium') {
+    padding-left: $sidebar-width;
+    padding-bottom: 1em;
+  }
 }
 
 /**
  * Basic styles for links
- * 1. Position context for pseudo-element
  */
 a {
-  color: $secondary-color;
-  transition: 0.15s;
+  color: $red;
   text-decoration: none;
-  position: relative; /* 1 */
-  display: inline-block;
+}
 
-  /**
-   * Underline
-   * 1. Same transition as link
-   * 2. Full width below content
-   * 3. Same color as link
-   * 4. Scaled down to 0 to be invisible
-   */
-  &::before {
-    content: '';
-    transition: inherit; /* 1 */
-    position: absolute; /* 2 */
-    top: 100%; /* 2 */
-    left: 0; /* 2 */
-    right: 0; /* 2 */
-    height: 1px;
-    background: currentcolor; /* 3 */
-    -webkit-transform: scaleX(0); /* 4 */
-    -ms-transform: scaleX(0); /* 4 */
-    transform: scaleX(0); /* 4 */
-  }
+a:not([class])::before {
+  content: '[';
+  color: $orange;
+}
 
-  /**
-   * Display underline on hover
-   */
-  &:active::before,
-  &:hover::before {
-    -webkit-transform: scaleX(1);
-    -moz-transform: scaleX(1);
-    transform: scaleX(1);
-  }
+a:not([class])::after {
+  content: '](' attr(href) ')';
+  color: $orange;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+a:not([class]):hover::before,
+a:not([class]):hover::after {
+  color: $almost-white;
 }
 
 /**
@@ -75,5 +59,20 @@ img {
   height: auto;
   display: block; /* 1 */
   max-height: 80vh; /* 2 */
-  margin: 0 auto;
+  margin: 2em 0;
+}
+
+hr {
+  border: 0;
+  margin: 1.5em 0;
+  display: block;
+  height: 2em;
+}
+
+hr::after {
+  content: '---';
+}
+
+::selection {
+  background-color: rgba(255, 255, 255, 0.3);
 }

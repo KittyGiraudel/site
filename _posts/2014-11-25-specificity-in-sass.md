@@ -2,6 +2,7 @@
 guest: "David Khourshid"
 layout: post
 title: "Calculating Specificity in Sass"
+sassmeister: true
 tags:
   - sass
   - css
@@ -161,7 +162,7 @@ This [complex selector](http://dev.w3.org/csswg/selectors4/#complex) doesn't loo
 
 In reality, even a selector with a single class should have greater specificity than a selector with **any** number of (solely) element type selectors.
 
-<blockquote class="pull-quote--right">We're going to need a bigger base.</blockquote>
+> We’re going to need a bigger base.
 
 ![What if we tried more power by XKCD](/assets/images/specificity-in-sass/xkcd.png)
 

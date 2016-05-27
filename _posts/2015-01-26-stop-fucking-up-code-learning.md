@@ -11,7 +11,7 @@ During Christmas holidays, I have had the pleasure to see my little cousin. If I
 
 *Why would we care?*, you think. Wait, I am not done yet. They have been taught to use tables for layout. It's 2015 and some *web teacher* in some public school is teaching their student to use HTML tables for layout and Dreamweaver as a working environment. This is wrong on so many levels.
 
-<blockquote class="pull-quote--left">They are taught to use tables for layout.</blockquote>
+> They are taught to use tables for layout.
 
 Then I thought, okay, maybe the teacher is more like a design person than an actual developer. I was wrong all again. The teacher forbade them to use bright colors because it would look *unprofessionnal*. Along the same lines, the teacher advised them to have a 800px wide centered container, good ol' fashion style. Please.
 
@@ -29,7 +29,7 @@ Meanwhile, many people end up saying they don't like to code. Understandable, th
 
 There are few people who like code for what it is. I am one of those people, but that does not matter. Most people see code as *an* end, not *the* end. To make them enjoy coding, you need to give them a real project. Something they want to achieve. A goal. It could be anything: a portfolio, a little app to write cooking recipes, a game, whatever as long as it's stimulating.
 
-<blockquote class="pull-quote--right">Code is an end, not the end.</blockquote>
+> Code is an end, not the end.
 
 My little cousin was asked to do a cooking website. She had to scrap some recipes from Marmiton.org, then put them as a website. While the idea makes sense, I still don't think it is a good one. This is certainly not something exciting for her, hence I don't see how she could enjoy building this site. And, oh, she didn't.
 

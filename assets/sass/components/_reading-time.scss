@@ -1,0 +1,4 @@
+.reading-time {
+  &::after { content: ')'; }
+  &::before { content: '('; }
+}

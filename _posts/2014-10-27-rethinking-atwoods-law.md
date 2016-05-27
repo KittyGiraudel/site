@@ -38,7 +38,7 @@ And there are countless more examples I'm probably not even aware of.
 
 ## How did we get there?
 
-<blockquote class="pull-quote--right">Challenge is fun.</blockquote>
+> Challenge is fun.
 
 I think the main reason is it's challenging. Because Sass is a very limited language, doing advanced things can turn out to be quite challenging. And as we all know, challenge is fun.
 

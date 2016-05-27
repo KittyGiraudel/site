@@ -56,7 +56,7 @@ function computeHeight(x, skewAngle) {
 }
 ```
 
-<blockquote class="pull-quote--right">I had never heard of any `sin()` function in Sass.</blockquote>
+> I had never heard of any `sin()` function in Sass.
 
 From there, I knew how to get the height from the width, I only had to turn this into SCSS. First problem: <em>sin()</em>. I had never heard of any `sin()` function in Sass. Damn it.
 

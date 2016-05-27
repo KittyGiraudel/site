@@ -62,7 +62,7 @@ This is the kind of thing that makes CSS tricky (some people would say annoying)
 
 ## Final words
 
-<blockquote class="pull-quote--right">A simple syntax doesn't make an easy language.</blockquote>
+> A simple syntax doesn't make an easy language.
 
 CSS isn't easy. Combining a very permissive (somewhat broken) syntax with constantly evolving features and rendering inconsistencies makes CSS not that easy at all. Yes, the syntax is simple, but a simple syntax doesn't make an easy language.
 

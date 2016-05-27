@@ -28,7 +28,7 @@ Ultimately, because Grunt is a task builder we will be able to do a lot of thing
 
 I think this is the one of the biggest change we've made to the site so far: **merging both the home page and the test page**. See, from the very beginning we had a separate test page. First it was all static, then I managed to generate it dynamically from our database.
 
-<blockquote class="pull-quote--right">You can still disable the tests if you want.</blockquote>
+> You can still disable the tests if you want.
 
 This was a huge step forward but did we really need a separate page just for testing? It looks like *no*. It involved quite a bit of work but I'm glad we've made it. What do you guys think?
 
@@ -48,7 +48,7 @@ I think the very first issue we've opened for Browserhacks was a request for a *
 * `XUL`: only available in Mozilla, and kind of buggy
 * `execCommand`: both hacky and buggy
 
-<blockquote class="pull-quote--right">A cross-browser *copy-to-clipboard* is not realistic.</blockquote>
+> A cross-browser *copy-to-clipboard* is not realistic.
 
 Basically it's a mess and a cross-browser *copy-to-clipboard* is not realistic. So we had to think of something and by *we* I mean [Tim Pietrusky](http://timpietrusky.com) of course. He came up with a clever idea which would allow the user to select a hack &mdash; for lack of copying &mdash; in one click.
 
@@ -95,7 +95,7 @@ In addition we added, fixed and removed a lot of hacks.
 
 Well, there is always work to do: if only fixing bugs, adding hacks, verifying hacks, and so on. We still have quite a couple of features on the way.
 
-<blockquote class="pull-quote--right">Many of the hacks we provide are likely to break when passed in a preprocessor.</blockquote>
+> Many of the hacks we provide are likely to break when passed in a preprocessor.
 
 For example we need to give you a hint about the [safety of a hack](https://github.com/4ae9b8/browserhacks/issues/96). Many of the hacks we provide are likely to break when passed in a preprocessor. Some of them can even break upon minification. While we can't prevent this from happening, we should be able to tell you which hacks are *safe* and which are not. We only need to think of a way to test all this stuff with Grunt. If you want to help, you'd be more than welcome!
 

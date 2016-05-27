@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang|default: en|downcase }}">
+<html lang="{{ page.lang|default: 'en' }}">
 
   {% include head.html %}
 
   <body {% if page.classes %}class="{{ page.classes }}"{% endif %}>
     {% include header.html %}
-    
+    {% include fake-tab-bar.html %}
+
     {{ content }}
 
     {% include footer.html %}

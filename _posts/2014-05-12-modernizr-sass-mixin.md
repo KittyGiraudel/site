@@ -58,7 +58,7 @@ Sass allows selectors and rules to be [nested](http://sass-lang.com/documentatio
 
 ## Even better with a mixin
     
-<blockquote class="pull-quote--right">Easy? Yep and Nope.</blockquote>
+> Easy? Yep and Nope.
 
 Having written a lot of selectors and rules like the above, I got a bit tired of that code. It's not a complicated code at all, but it's a bit messy, it isn't that easy to read and maintain and I tend to forget to add the `.no-js &` bit. So I thought a couple of mixins would do the job.
 
@@ -282,4 +282,4 @@ That's it, you can play with the code on [SassMeister](http://sassmeister.com/gi
 
 <p class="sassmeister" data-gist-id="10578910" data-height="480"><a href="http://sassmeister.com/gist/10578910">Play with this gist on SassMeister.</a></p><script src="http://static.sassmeister.com/js/embed.js" async></script>
 
-> ![Daniel Guillan](http://cdn.shopify.com/s/files/1/0240/0941/t/4/assets/daniel-guillan-cdo.jpg?16714) Daniel Guillan is the co-founder and chief design officer at Vintisis. Not only designer but also front-end developer, Daniel likes using Sass to make his life easier. You should catch him on [Twitter](https://twitter.com/danielguillan).
+> Daniel Guillan is the co-founder and chief design officer at Vintisis. Not only designer but also front-end developer, Daniel likes using Sass to make his life easier. You should catch him on [Twitter](https://twitter.com/danielguillan).

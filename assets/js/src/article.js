@@ -44,9 +44,8 @@
       items.push("<a href='#" + headings[i].id + "'>" + content.substr(0, content.length - 1) + "</a>");
     }
     
-    html += "<h2 class='toc__title'>Table of contents</h2>";
-    html += "<ol class='toc__list'>";    
-    html += "<li class='toc__item'>" + items.join("</li><li class='toc__item'>") + '</li>';
+    html += "<ol>";    
+    html += "<li>" + items.join("</li><li>") + '</li>';
     html += "</ol>";
         
     var anchor = document.querySelector(".post-date"),

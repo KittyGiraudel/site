@@ -1,14 +1,15 @@
 /**
  * Blockquotes
  * 1. Clear inner floats (if any)
- * 2. Poor man's vertical rhythm
  */
 blockquote {
-  font-style: italic;
-  border-left: 5px solid $light-grey;
-  padding-left: 20px;
   overflow: hidden; /* 1 */
-  margin: 0 0 40px; /* 2 */
+  margin: 0 0 1.5em;
+  color: $orange;
+}
+
+blockquote > ::before {
+  content: '> ';
 }
 
 /**
@@ -31,8 +32,8 @@ blockquote > :last-child {
 blockquote img {
   @include respond-to('medium') {
     float: left;
-    max-width: 33%;
-    margin-right: 20px;
+    max-width: (100% / 3);
+    margin-right: 1em;
   }
 }
 

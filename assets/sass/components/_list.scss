@@ -9,20 +9,22 @@
   clear: both;
 }
 
+h2 + .list > .list__item:first-child::before {
+  content: none;
+}
+
 /**
  * List item
  */
 .list__item {
-  margin: 10px 0;
-  padding: 20px 0;
-  border-bottom: 1px solid $light-grey;
+  margin-bottom: 1.5em;
 }
 
-/**
- * Remove bottom border on last item
- */
-.list__item:last-of-type {
-  border-bottom: 0;
+.list__item::before {
+  content: '---\A ';
+  display: block;
+  white-space: pre;
+  margin-bottom: 1.5em;
 }
 
 /**
@@ -30,8 +32,8 @@
  * 1. Reset any weight (if any)
  */
 .list__primary-content {
-  margin: 0 0 5px;
-  font-size: 24px;
+  margin: 0;
+  display: block;
   font-weight: normal; /* 1 */
 }
 
@@ -39,11 +41,10 @@
  * List item secondary content
  */
 .list__secondary-content {
-  color: $medium-grey;
+  @extend em;
+  margin: 0;
   display: block;
-  font-family: $code-font-stack;
-  margin: 0 0 5px;
-  font-size: 80%;
+  position: relative;
 }
 
 /**
@@ -56,9 +57,5 @@
 
   &::before {
     transition: transform 0.1s;
-  }
-
-  &:hover {
-    color: $secondary-color;
   }
 }

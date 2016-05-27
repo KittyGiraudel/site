@@ -2,7 +2,6 @@
  * Site advertisement
  */
 body:not(.home) .site-ad {
-  margin-top: -10px;
 
   /**
    * Floated on medium screens
@@ -15,7 +14,7 @@ body:not(.home) .site-ad {
 }
 
 .home .site-ad {
-  margin: 20px 0;
+  margin: 1em 0;
 }
 
 /**
@@ -25,9 +24,14 @@ body:not(.home) .site-ad {
 .carbonad {
   background: transparent !important; /* 1 */
   height: auto !important; /* 1 */
-  border-radius: 3px !important; /* 1 */
   border: 0 !important; /* 1 */
   margin: 0 auto;
+  color: $almost-white !important;
+  max-width: 100% !important;
+}
+
+.carbonad a {
+  color: inherit !important;
 }
 
 /**
@@ -35,4 +39,9 @@ body:not(.home) .site-ad {
  */
 #azcarbon > img {
   display: inline !important;
+}
+
+.carbonad a::before,
+.carbonad a::after {
+  content: none;
 }

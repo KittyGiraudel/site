@@ -1,29 +1,22 @@
-/**
- * Footer
- * 1. Make it slightly smaller than copy text
- */
 .footer {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 90%; /* 1 */
-  text-align: center;
+  background-color: $black;
+  color: $medium-grey;
+  font-family: $text-font-stack;
+  padding: 0 0.5em;
 
   @include respond-to('medium') {
-    text-align: initial;
-    padding-left: 40px;
-    padding-right: 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
   }
 }
 
-/**
- * Footer copyright
- */
 .footer p {
-  margin: 20px 0 0;
-  color: white;
-
+  margin: 0;
+  
   @include respond-to('medium') {
-    float: left;
-    margin: 0;
+    font-size: 70%;
   }
 }

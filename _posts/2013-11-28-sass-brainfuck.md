@@ -31,7 +31,7 @@ I can't help but to grind my teeth when I see that the previous assertion return
 
 ## Strict equality operator
 
-<blockquote class="pull-quote--right">Sass makes no distrinction between `==` and `===`.</blockquote>
+> Sass makes no distrinction between `==` and `===`.
 
 Sometimes I wish Sass would make a distinction between `==` and `===`. As a reminder, the first one checks whether values are equal while the latter makes sure both are of the same type. This is to prevent something like `5 == '5'` from returning `true`. When checking with `===`, it should return `false`.
 
@@ -195,7 +195,7 @@ And now with a one-item long list:
 $c: f( bazinga );
 // List index is 2 but list is only 1 item long for `nth'
 ```
-<blockquote class="pull-quote--right">`if()` parses all arguments no matter what.</blockquote>
+> `if()` parses all arguments no matter what.
 
 BAZINGA! The `if()` function returns an error. It looks like it's trying to access the second item in the list, even if the list is only one item long. *Why* you ask? Because the ternary function from Sass parses both 2nd and 3rd arguments no matter what.
 

@@ -2,39 +2,35 @@
  * Basic typography style for copy text
  */
 body {
-  font: 1.25em/1.6 $text-font-stack;
-  color: $dark-grey;
+  font: 1em / 2 $code-font-stack;
+  color: $almost-white;
+
+  @include respond-to('medium') {
+    font-size: 1.25em;
+  }
 }
 
-/**
- * Apply some basic styles to main headings
- * 1. Poor man's vertical rhythm
- */
-h1 {
-  font-size: 36px;
-  margin-top: 10px; /* 1 */
-  margin-bottom: 50px; /* 1 */
+h1, h2, h3 {
+  font-size: 1em;
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  color: $teal;
+}
+
+h1:not([class])::before {
+  content: '# ';
 }
 
 /**
  * Headings level 2
  * 1. Enable position context for anchor links
- * 2. Clear any pull-image / pull-quote
- * 3. Poor man's vertical rhythm
  */
 h2 {
   position: relative; /* 1 */
-  clear: both; /* 2 */
-  margin-top: 70px; /* 3 */
-  margin-bottom: 20px; /* 3 */
 }
 
-/**
- * Headingds level 3
- * 1. Poor man's vertical rhythm
- */
-h3 {
-  margin-bottom: 40px; /* 1 */
+h2:not([class])::before {
+  content: '## ';
 }
 
 /**
@@ -44,9 +40,11 @@ h3 {
  */
 h2:not([class]) a {
   position: absolute; /* 1 */
-  left: -25px; /* 1 */
+  left: -1em; /* 1 */
   text-decoration: none;
   color: $light-grey;
+
+  display: none;
 }
 
 /**
@@ -54,19 +52,56 @@ h2:not([class]) a {
  */
 h2:hover a,
 h2:active a {
-  color: $secondary-color;
+  // color: $secondary-color;
 }
 
-/**
- * Poor man's vertical rhythm
- */
+h3:not([class])::before {
+  content: '### ';
+}
+
 p, ul, ol {
-  margin-bottom: 25px;
+  margin-bottom: 1.5em;
 }
 
-/**
- * Poor man's vertical rhythm
- */
-li {
-  margin-bottom: 10px;
+ul, ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+ol {
+  counter-reset: ol;
+}
+
+li:not([class]) {
+  padding-left: 1.4em;
+  text-indent: -1.4em;
+  color: $red;
+}
+
+ul > li:not([class])::before {
+  content: '* ';
+}
+
+ol > li:not([class])::before {
+  counter-increment: ol;
+  content: counter(ol) '. ';
+}
+
+strong {
+  color: $yellow;
+}
+
+strong::before,
+strong::after {
+  content: '**';
+}
+
+em {
+  color: $pink;
+  font-style: italic;
+}
+
+em::before,
+em::after {
+  content: '*';
 }

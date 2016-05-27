@@ -16,7 +16,7 @@ I was working on [Browserhacks](http://browserhacks.com) pretty late very other 
 
 And everything seemed okay until I noticed one deficient [hack](http://browserhacks.com/#hack-ac2480b5c83038f2d838e2a62e28a307) we added a couple of days earlier, aiming for Chrome 29+ and Opera 16+. My Chrome 31.0.1650.57 didn't seem targeted so I removed the hack from our database and added a note about it on our GitHub repository. No big deal.
 
-<blockquote class="pull-quote--right">All our CSS hacks were broken.</blockquote>
+> All our CSS hacks were broken.
 
 But just to be sure, I launched Firefox (Aurora) to make some tests and then the same phenomenum happened: I noticed a deficient hack. And then another one. And another one. And another one. And again. What the fuck? All of our 9 hacks supposed to target latest Firefox seemed to be completely pointless against Firefox Aurora. Either this browser has become bulletproof during its last releases, or there was a problem on our side. The latter the more plausible, unfortunately.
 

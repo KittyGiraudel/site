@@ -32,7 +32,7 @@ Let's start with a quick reminder. First of all, the `list` data type isn't spec
 
 All these properties (and many more) use lists as values. To my knowledge, only `font-family` uses a comma-separated list though. Anyway, most of them are shorthands for multiple properties, so that's not surprising but still. Even the selector itself is a (comma-separated) list!
 
-<blockquote class="pull-quote--right">There have been lists for long in CSS.</blockquote>
+> There have been lists for long in CSS.
 
 Lists have been around for a long time now, we just didn't call them "lists" because we didn't have to. Now, Sass officially uses the word "list" as a data type, but that doesn't mean Sass introduced lists to the CSS background.
 

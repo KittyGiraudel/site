@@ -7,19 +7,22 @@
 
 /**
  * Article icons on the home page
- * 1. Magic number, sorry :(
  */
 .article__icon {
   display: inline;
+  -webkit-filter: invert(1);
+  -moz-filter: invert(1);
+  filter: invert(1);
   
   @include respond-to('medium') {
     position: absolute;
     right: 0;
     top: 50%;
-    -webkit-transform: translateY(-80%); /* 1 */
-    -ms-transform: translateY(-80%); /* 1 */
-    transform: translateY(-80%); /* 1 */
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     opacity: 0.35;
+    margin: 0;
   }
 }
 
@@ -45,7 +48,6 @@
     @include respond-to('medium') {
       position: absolute; /* 2 */
       left: 100%; /* 2 */
-      top: 0; /* 2 */
     }
   }
 

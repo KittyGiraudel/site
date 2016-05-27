@@ -19,7 +19,7 @@ So let's try a not-so-easy exercise: write a script to optimize a directory of i
 * it's not quite simple to use it in an industrial process,
 * it's always interesting to learn how those services work.
 
-<blockquote class="pull-quote--right">Shell scripting is a powerful skill to improve development efficiency by automating common tasks.</blockquote>
+> Shell scripting is a powerful skill to improve development efficiency by automating common tasks.
 
 But first, a simple warning: don't expect big optimizations. To have the best results, you have to decrease the image quality but it's better to do this manually than automatically. We are going to script simple operations that remove metadata and other losslessly informations.
 
@@ -435,4 +435,4 @@ Of course this is just a simple sample (no pun intended); there is still a lot o
 * add an auto-upload function to upload to your FTP,
 * use a configuration file to tweak the optimization tools...
 
-> ![Loic Giraudel](http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg) Loïc Giraudel works as a front-end developer at BestOfMedia (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](http://twitter.com/l_giraudel).
+> Loïc Giraudel works as a front-end developer at BestOfMedia (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](http://twitter.com/l_giraudel).

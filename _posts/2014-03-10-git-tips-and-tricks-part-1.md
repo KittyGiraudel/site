@@ -25,7 +25,7 @@ Ok, now let's start with the real tips & tricks...
 
 ## Use an awesome prompt
 
-<blockquote class="pull-quote--right">Each commit should leave the branch stable.</blockquote>
+> Each commit should leave the branch stable.
 
 If you have to often switch from one branch to another (like a Git monkey), having a great prompt is quite useful to know what is the current branch you're working on, if you have modified some files, if you have some commits to push or to pull from the server, and so on.
 
@@ -62,7 +62,7 @@ This is the very basic when working with Git. Have you ever found yourself askin
 
 Thankfully there are quite a few ways to do this.
 
-<blockquote class="pull-quote--right">Each commit has only one purpose.</blockquote>
+> Each commit has only one purpose.
 
 ### With `git log -p`
 
@@ -236,4 +236,4 @@ It's now easier to catch up with the changes: I've replaced the test wrapping my
 
 I hope those little tricks will help. In the next part, I'll continue with other small smart tricks before tackling some advanced Fit useful features.
 
-> ![Loic Giraudel](http://m.c.lnkd.licdn.com/mpr/pub/image-BuKiTUmt49Y4eE_bkOrrlmdwEAiHjpWWXurflnl3E-MLjUHUBuKfzCKtEGCxjpCb0ioX/loic-giraudel.jpg) Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](http://twitter.com/l_giraudel).
+> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](http://twitter.com/l_giraudel).

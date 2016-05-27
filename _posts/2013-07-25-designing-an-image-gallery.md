@@ -31,7 +31,7 @@ At first I thought about doing it myself and then...
 
 It would have been a pain in the ass to work out such a "complicated" layout so I thought about [Masonry](http://masonry.desandro.com/) but that's kind of old school, right? In the end, I went with Isotope for layouting the items.
 
-<blockquote class="pull-quote--right">Isotope is the best JavaScript plugin I ever worked with.</blockquote>
+> Isotope is the best JavaScript plugin I ever worked with.
 
 [Isotope](https://github.com/desandro/isotope) has to be the best JavaScript plugin I ever worked with. Developed by [David Desandro](http://v3.desandro.com/), **you can think of it as *Masonry 2.0***. It makes complicated box-based layouts fully customizable and above all **easy**.
 
@@ -133,7 +133,7 @@ Regarding the modal, I first tweaked it on small screens so it takes almost the 
 
 ## Dealing with high density displays
 
-<blockquote class="pull-quote--right">Dealing with retina displays is a pain in the ass.</blockquote>
+> Dealing with retina displays is a pain in the ass.
 
 Let me tell you this: dealing with retina displays is a pain in the ass. God, this is so annoying. I don't even know why we came to have such a thing... Did we really need it? In any case, this so-called "feature" involves a lot of things like:
 
@@ -176,7 +176,7 @@ The next step was to load images when they are needed. To put it simple, only lo
 </li>
 ```
 
-<blockquote class="pull-quote--right">When viewing it on mobile, it goes down to 700 bytes.</blockquote>
+> When viewing it on mobile, it goes down to 700 bytes.
 
 As you can see, the image source is a 1*1px blank GIF while the actual source lies in the `data-original` attribute. Then the LazyLoad script checks all images to see whether they are above the fold or not; if they are, it swaps `src` with `data-original`. Everytime there is a scroll, it checks again. Lightweight and comfy.
 

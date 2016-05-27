@@ -154,7 +154,7 @@ While the code does the job well, I am not sure how I feel about this. To be per
 
 First, there is a big problem with this version: since we are relying on the fact CSS declarations can be stored as keys/values in a Sass map, it makes it impossible to use nesting (including `&`), inner mixins, or `@extend` in the mixin core. Thus, it does the job for simple placeholders as we've seen in our demo, but wouldn't work for more complex pieces of code.
 
-<blockquote class="pull-quote--right">I love playing with Sass syntax.</blockquote>
+> I love playing with Sass syntax.
 
 Secondly, I don't like storing CSS declarations in a map, no matter how clever it is. In the end, I feel like it adds too much code complexity. [Someone once told me it's like a preprocessor in a preprocessor](http://codepen.io/HugoGiraudel/details/yGFri#comment-id-25055). I don't think it's worth the pain.
 

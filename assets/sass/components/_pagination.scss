@@ -1,33 +1,6 @@
 /**
  * Pagination
- * 1. Poor man's vertical rhythm
  */
 .pagination {
-  padding: 0;
-  margin: 60px 0; /* 1 */
-  text-align: center;
-    
-  li {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 5px;
-  }
-
-  a {
-    text-decoration: none;
-    display: block;
-    margin: 0 15px;
-  }
-}
-
-/**
- * Pagination icons
- * 1. Allow transforms
- * 2. Slightly scale down and re-position icon
- */
-.pagination__icon {
-  display: inline-block; /* 1 */
-  -webkit-transform: scale(0.7) translateY(1px); /* 2 */
-  -ms-transform: scale(0.7) translateY(1px); /* 2 */
-  transform: scale(0.7) translateY(1px); /* 2 */
+  margin: 3em 0;
 }

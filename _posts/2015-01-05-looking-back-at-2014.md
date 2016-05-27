@@ -15,14 +15,14 @@ The end of the year often means looking back at the last dozen of months to see 
 
 Early 2014, I officially started writing as a freelancer. Since then, my secondary activity has been giving me the ability to invoice sites for articles, including SitePoint and Tuts+.
 
-<blockquote class="pull-quote--left">I have written 91 articles in 2014.</blockquote>
+> I have written 91 articles in 2014.
 
 Along the same lines, I have written a total of 91 articles published on 6 different sites in 2014. It is not quite but very close to 2 articles a week. I am very proud of such a pace and hope I'll be able to keep writing at a decent rate, if not as much.
 
 <h2 style="clear: both">I gave my first talk out of France</h2>
 
 <figure class="figure--left">
-<img src="/assets/images/feedbacks-feweb__speakers.jpg" alt="">
+<img src="/assets/images/feedbacks-feweb/speakers.jpg" alt="">
 <figcaption>Thierry Michel and I on stage.</figcaption>
 </figure>
 
@@ -60,7 +60,7 @@ SassDoc has been very welcomed, and some massive projects already use it to mana
 Well, aside from releasing my book, I'd like to keep doing talks possibly in English now that I know I am capable of speaking in English in front of people. My goal would be a talk per quarter, but we all know timing is hard so we'll see.
 
 <figure class="figure--left">
-<img src="/assets/images/feedback-on-dotcss__hugo.jpg" alt="" />
+<img src="/assets/images/feedback-on-dotcss/hugo.jpg" alt="" />
 <figcaption>Me on stage. Photo by dotCSS.</figcaption>
 </figure>
 

@@ -1,0 +1,7 @@
+{% if page.title %} 
+<div class="fake-tab-bar" aria-hidden="true">
+  <span class="fake-tab-bar__tab">
+    <span class="fake-tab-bar__tab-text">{{ page.title | slugify }}.md</span>
+  <span>
+</div>
+{% endif %}
