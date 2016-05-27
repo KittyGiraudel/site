@@ -1,4 +1,8 @@
 .main {
   position: relative;
   padding: 1.5em 0;
+
+  @include respond-to('medium') {
+    padding: 0;
+  }
 }

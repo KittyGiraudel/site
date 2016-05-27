@@ -182,26 +182,25 @@ RGB is slightly better, especially when you’re using percentage values but it�
 
 That’s why there are keywords. Keywords are real color names like red, green and blue associated to actual RGB / hex triplets. Back in the days, the HTML 4.01 Standard proposed 16 different keywords:
 
-<ul style="list-style: none; margin-left: 0;">
-<li style="padding: 5px; margin-bottom: 2px; background: aqua">Aqua</li>
-<li style="padding: 5px; margin-bottom: 2px; background: black; color: white">Black</li>
-<li style="padding: 5px; margin-bottom: 2px; background: blue; color: white">Blue</li>
-<li style="padding: 5px; margin-bottom: 2px; background: fuchsia;">Fuchsia</li>
-<li style="padding: 5px; margin-bottom: 2px; background: gray; color: white">Gray</li>
-<li style="padding: 5px; margin-bottom: 2px; background: green; color: white">Green</li>
-<li style="padding: 5px; margin-bottom: 2px; background: lime;">Lime</li>
-<li style="padding: 5px; margin-bottom: 2px; background: maroon; color: white">Maroon</li>
-<li style="padding: 5px; margin-bottom: 2px; background: navy; color: white">Navy</li>
-<li style="padding: 5px; margin-bottom: 2px; background: olive; color: white">Olive</li>
-<li style="padding: 5px; margin-bottom: 2px; background: purple; color: white">Purple</li>
-<li style="padding: 5px; margin-bottom: 2px; background: red; color: white">Red</li>
-<li style="padding: 5px; margin-bottom: 2px; background: silver;">Silver</li>
-<li style="padding: 5px; margin-bottom: 2px; background: teal; color: white">Teal</li>
-<li style="padding: 5px; margin-bottom: 2px; background: white;">White</li>
-<li style="padding: 5px; margin-bottom: 2px; background: yellow;">Yellow</li>
-</ul>
 
-<p>Then the CSS2.1 specification added the <span style="background: orange; display: inline-block; padding: 0 5px;">orange</span> keyword. Finally, CSS3 came with 130 additional keywords for a total of 147 keywords (134 non-gray, 13 gray).</p>
+* Aqua
+* Black
+* Blue
+* Fuchsia
+* Gray
+* Green
+* Lime
+* Maroon
+* Navy
+* Olive
+* Purple
+* Red
+* Silver
+* Teal
+* White
+* Yellow
+
+<p>Then the CSS2.1 specification added the orange keyword. Finally, CSS3 came with 130 additional keywords for a total of 147 keywords (134 non-gray, 13 gray).</p>
 
 I won’t list all of them here because it would be too long however, this is a visualization of all of them on a hue wheel by [Eric Meyer](http://meyerweb.com/eric/css/colors/hsl-147.html) (see [annotated version by Tab Atkins Jr.](http://www.xanthir.com/blog/b4JC0)):
 

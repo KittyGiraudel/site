@@ -3,7 +3,7 @@
  */
 table {
   width: 100%;
-  margin: 0 0 2em;
+  margin: 0 0 1.5em;
   border-collapse: collapse;
 
   thead {
@@ -17,10 +17,10 @@ tr + tr {
 
 td,
 th {
-  padding: .5em;
+  padding: 0.5em;
 }
 
 th {
+  text-align: left;
   font-weight: bold;
-  text-align: center;
 }

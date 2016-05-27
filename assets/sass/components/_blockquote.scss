@@ -27,17 +27,6 @@ blockquote > :last-child {
 }
 
 /**
- * Make images inside blockquotes left floated starting medium screens
- */
-blockquote img {
-  @include respond-to('medium') {
-    float: left;
-    max-width: (100% / 3);
-    margin-right: 1em;
-  }
-}
-
-/**
  * Some legacy articles still use `.quote` for blockquotes
  * This makes them behave exactly like regular blockquotes
  */

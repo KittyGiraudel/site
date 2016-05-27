@@ -15,12 +15,18 @@ html {
   box-sizing: inherit;
 } 
 
+/**
+ * 1. Leave room for sidebar
+ * 2. Leave room for footer
+ * 3. Leave room for header
+ */
 body {
   background: $dark-grey;
 
   @include respond-to('medium') {
-    padding-left: $sidebar-width;
-    padding-bottom: 1em;
+    padding-left: $sidebar-width; /* 1 */
+    padding-bottom: 1.5em; /* 2 */
+    padding-top: 1.5em; /* 3 */
   }
 }
 
@@ -62,6 +68,9 @@ img {
   margin: 2em 0;
 }
 
+/**
+ * Basic styles for <hr />
+ */
 hr {
   border: 0;
   margin: 1.5em 0;

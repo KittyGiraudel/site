@@ -5,36 +5,17 @@ $medium-grey: rgb(101, 115, 128);
 $light-grey: #807d7c;
 $very-light-grey: #a5a2a2;
 $almost-white: rgb(192, 197, 206);
-$white: #f7f7f7;
 $red: rgb(195, 97, 107);
 $pink: rgb(181, 141, 174);
 $yellow: rgb(236, 204, 135);
 $green: rgb(162, 191, 138);
 $teal: rgb(144, 164, 184);
-$blue: #01a0e4;
-$purple: #a16a94;
 $orange: rgb(210, 135, 109);
 
-/// Sidebar width
-/// @type Length
 $sidebar-width: 225px;
-
-/// Container max-width
-/// @type Length
 $max-width: 800px;
 
-/// Breakpoints
-/// @type Map
-/// @prop {String} key - Breakpoint name
-/// @prop {Map} value - Breakpoint value
-$breakpoints: (
-  'medium': (min-width: 750px)
-);
+$breakpoints: ( 'medium': (min-width: 750px) );
 
-/// Regular font stack
-/// @type List
 $text-font-stack: "Roboto", "Helvetica", "Arial", sans-serif;
-
-/// Code font stack
-/// @type List
 $code-font-stack: "Source Code Pro", "Courier New", monospace;

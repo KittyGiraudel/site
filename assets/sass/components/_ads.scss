@@ -1,20 +1,16 @@
 /**
  * Site advertisement
  */
-body:not(.home) .site-ad {
+.site-ad {
 
   /**
    * Floated on medium screens
    */ 
-  @media (min-width: 700px) {
+  @include respond-to('medium') {
     float: right;
-    margin-right: -20px;
-    margin-left: 20px;
+    margin-right: -1em;
+    margin-left: 1em;
   }
-}
-
-.home .site-ad {
-  margin: 1em 0;
 }
 
 /**
@@ -25,7 +21,6 @@ body:not(.home) .site-ad {
   background: transparent !important; /* 1 */
   height: auto !important; /* 1 */
   border: 0 !important; /* 1 */
-  margin: 0 auto;
   color: $almost-white !important;
   max-width: 100% !important;
 }

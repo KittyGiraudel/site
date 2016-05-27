@@ -1,13 +1,4 @@
 /**
- * Clear inner floats
- */
-.clearfix::after {
-  clear: both;
-  content: '';
-  display: table;
-}
-
-/**
  * Main content containers
  * 1. Make the container full-width with a maximum width
  * 3. Leave some space on the edges, especially valuable on small screens

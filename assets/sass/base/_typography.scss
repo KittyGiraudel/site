@@ -10,29 +10,28 @@ body {
   }
 }
 
-h1, h2, h3 {
+/**
+ * Basic styling for titles
+ */
+h1, h2, h3, h4 {
   font-size: 1em;
   margin-top: 3em;
   margin-bottom: 1.5em;
   color: $teal;
 }
 
-h1:not([class])::before {
-  content: '# ';
-}
+/**
+ * Add Markdown styles
+ */
+h1:not([class])::before { content: '# '; }
+h2:not([class])::before { content: '## '; }
+h3:not([class])::before { content: '### '; }
+h4:not([class])::before { content: '#### '; }
 
 /**
- * Headings level 2
- * 1. Enable position context for anchor links
+ * Prevent too large gap when title comes after a horizontal rule
  */
-h2 {
-  position: relative; /* 1 */
-}
-
-h2:not([class])::before {
-  content: '## ';
-}
-
+hr + h1,
 hr + h2,
 hr + h3 {
   margin-top: 1.5em;
@@ -44,24 +43,7 @@ hr + h3 {
  * 1. Put it slightly off in the left margin
  */
 h2:not([class]) a {
-  position: absolute; /* 1 */
-  left: -1em; /* 1 */
-  text-decoration: none;
-  color: $light-grey;
-
   display: none;
-}
-
-/**
- * Make the anchor link highlighter when hovering the heading
- */
-h2:hover a,
-h2:active a {
-  // color: $secondary-color;
-}
-
-h3:not([class])::before {
-  content: '### ';
 }
 
 p, ul, ol {
@@ -73,14 +55,14 @@ ul, ol {
   list-style: none;
 }
 
-ol {
-  counter-reset: ol;
-}
-
 li:not([class]) {
   padding-left: 1.4em;
   text-indent: -1.4em;
   color: $red;
+}
+
+ol {
+  counter-reset: ol;
 }
 
 ul > li:not([class])::before {
