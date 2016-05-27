@@ -10,8 +10,6 @@ tags:
 
 # Speaking events
 
-<img src="/assets/images/banners/speaking.jpg" alt="Photography by Alexandra Lucas" />
-
 {% include ad.html %}
 
 It does not happen *that* often, but it happens! Why don't you come and see me at one of the few conferences I attend. I'm sure it would be nice to meet!

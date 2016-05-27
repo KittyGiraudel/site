@@ -10,8 +10,6 @@ tags:
 
 # Open-source Projects
 
-<img src="/assets/images/banners/coding.jpg" alt="Photography by Alexandra Lucas" />
-
 {% include ad.html %}
 
 When I can, I try to invest a lot of time in open-source projects. Here are a few of them I initiated myself:
