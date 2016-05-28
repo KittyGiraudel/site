@@ -15,9 +15,7 @@ Hey guys! I recently had the opportunity to work on a cool little project I'd li
 Let's say things straight: I'd never have the opportunity to work on an image gallery before. Actually I did but back then I didn't give a shit about performance, responsive design, high-density displays and all the topics cool kids always talk about. So this time I've been faced with some difficulties I had not encountered before; meaning I had to solve them by myself.
 
 <figure class="figure">
-<a href="http://alexandralucas.com" target="_blank">
 <img src="/assets/images/designing-an-image-gallery/alexandralucas.jpg" alt="">
-</a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">Alexandralucas.com</a></figcaption>
 </figure>
 
@@ -76,9 +74,7 @@ I didn't want to add classes for this so I added a `data-album` attribute to eve
 Regarding the second feature, I basically needed a little lightbox thingie to display an image in fullsize when clicked. I could have made one but since I am definitely not a JavaScript ninja, I would probably have ended with a code that could be improved. So I decided to rely on a built-in solution; I wanted something which is both nice and efficient so I went with Avgrund from [Hakim El Hattab](http://hakim.se/).
 
 <figure class="figure">
-<a href="http://alexandralucas.com" target="_blank">
 <img src="/assets/images/designing-an-image-gallery/lightbox.jpg" alt="">
-</a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">Lightbox powered by Avgrund</a></figcaption>
 </figure>
 
@@ -119,9 +115,7 @@ Basically, I assigned `opacity: 0` to all items so they don't appear at first. T
 Of course, we wanted the site to look acceptable (if not good!) on small devices. I wasn't sure about the way to display this photo gallery on mobile so I opted for the easy solution: put everything into one column. I'll try to think of something better for a future version.
 
 <figure class="figure--right">
-<a href="http://alexandralucas.com" target="_blank">
 <img src="/assets/images/designing-an-image-gallery/phoneview.png" alt="">
-</a>
 <figcaption><a href="http://alexandralucas.com" target="_blank">View on most smartphone</a></figcaption>
 </figure>
 
