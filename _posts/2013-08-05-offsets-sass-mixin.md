@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Sass mixin for offsets"
 tags:
   - sass

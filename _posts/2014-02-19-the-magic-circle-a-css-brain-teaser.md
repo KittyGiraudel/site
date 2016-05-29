@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The Magic Circle: a CSS brain teaser"
 tags:
   - css

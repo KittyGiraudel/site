@@ -1,8 +1,6 @@
 ---
 guest: "David Khourshid"
-layout: post
 title: "Calculating Specificity in Sass"
-sassmeister: true
 tags:
   - sass
   - css

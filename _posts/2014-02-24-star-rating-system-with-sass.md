@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Star-rating widget with Sass"
 tags:
   - sass

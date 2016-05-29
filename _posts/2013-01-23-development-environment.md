@@ -1,6 +1,5 @@
 ---
 disqus: http://hugogiraudel.com/blog/development-environment
-layout: post
 title: "My development environment"
 tags:
   - thoughts

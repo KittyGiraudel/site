@@ -1,6 +1,5 @@
 ---
 title: "Twitter as a techie"
-layout: post
 tags:
   - techie
   - twitter

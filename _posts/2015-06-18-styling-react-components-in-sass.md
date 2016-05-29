@@ -1,6 +1,5 @@
 ---
 guest: "David Khourshid"
-layout: post
 title: "Styling React Components in Sass"
 tags:
   - sass

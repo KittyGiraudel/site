@@ -1,8 +1,6 @@
 ---
 disqus: http://hugogiraudel.com/blog/css-gradients
 guest: "Ana Tudor"
-layout: post
-numberedFigures: true
 title: "Dig deep into CSS linear gradients"
 tags:
   - css

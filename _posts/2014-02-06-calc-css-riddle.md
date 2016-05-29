@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "CSS trickery and calc function"
 tags:
   - css

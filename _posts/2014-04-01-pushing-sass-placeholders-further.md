@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Pushing Sass placeholders further"
 tags:
   - sass

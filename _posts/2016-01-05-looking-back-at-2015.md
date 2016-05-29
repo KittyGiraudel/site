@@ -1,6 +1,5 @@
 ---
 title: "Looking back at 2015"
-layout: post
 tags:
   - 2015
   - thoughts

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Bitwise operators in Sass"
 tags:
   - sass

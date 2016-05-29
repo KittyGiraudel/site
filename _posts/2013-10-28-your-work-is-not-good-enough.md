@@ -1,6 +1,5 @@
 ---
 guest: "Christoph Rumpel"
-layout: post
 title: "Your work is not good enough"
 tags:
   - thoughts

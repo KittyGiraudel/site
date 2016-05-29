@@ -1,6 +1,5 @@
 ---
 guest: "Ezekiel Gabrielse"
-layout: post
 title: "Building a customization API in Sass"
 tags:
   - sass

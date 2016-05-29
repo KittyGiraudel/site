@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Feedback on dotCSS 2014"
 tags:
   - thoughts

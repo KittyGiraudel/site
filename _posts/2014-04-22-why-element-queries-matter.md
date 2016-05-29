@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Why Element Queries matter"
 tags:
   - css

@@ -1,6 +1,5 @@
 ---
 disqus: http://hugogiraudel.com/blog/blog-changes
-layout: post
 title: "Blog changes"
 tags:
   - blog

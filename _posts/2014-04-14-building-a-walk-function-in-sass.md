@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Building a walk function in Sass"
 tags:
   - sass

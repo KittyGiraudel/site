@@ -1,6 +1,4 @@
 ---
-guest: false
-layout: post
 title: "Template engines and JavaScript"
 tags:
   - template

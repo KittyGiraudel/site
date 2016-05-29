@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Stop fucking up code learning"
 tags:
   - css

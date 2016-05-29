@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "GitHub As A Workflow"
 tags: 
   - github

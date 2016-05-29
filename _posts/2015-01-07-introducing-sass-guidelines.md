@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Introducing Sass Guidelines"
 tags:
   - sass

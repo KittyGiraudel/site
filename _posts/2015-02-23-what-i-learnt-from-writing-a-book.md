@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "What I learnt from writing a book"
 tags:
   - writing

@@ -1,5 +1,4 @@
 ---
-layout: post
 summary: true
 title: "Can I afford a preprocessor?"
 tags:

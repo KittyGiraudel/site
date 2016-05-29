@@ -1,6 +1,5 @@
 ---
 disqus: http://hugogiraudel.com/blog/float-down
-layout: post
 title: "Simulate float: down"
 tags:
   - css

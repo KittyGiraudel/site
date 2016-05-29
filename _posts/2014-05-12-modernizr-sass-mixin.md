@@ -1,6 +1,5 @@
 ---
 guest: Daniel Guillan
-layout: post
 title: "Modernizr Sass mixin"
 tags:
   - sass

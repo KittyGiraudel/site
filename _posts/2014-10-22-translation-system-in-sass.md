@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Translation system in Sass"
 tags:
   - translation

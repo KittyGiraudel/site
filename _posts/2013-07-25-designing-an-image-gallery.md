@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Designing an image gallery"
 tags:
   - design

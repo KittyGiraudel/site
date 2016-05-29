@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Looking back at 2014"
 tags:
   - thoughts

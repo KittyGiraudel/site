@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Bringing configuration objects to Sass"
 tags:
   - sass

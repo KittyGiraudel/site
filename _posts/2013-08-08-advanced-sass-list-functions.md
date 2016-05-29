@@ -1,5 +1,4 @@
 ---
-layout: post
 summary: true
 title: "Advanced Sass list functions"
 tags:

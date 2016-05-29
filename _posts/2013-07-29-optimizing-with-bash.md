@@ -1,6 +1,5 @@
 ---
 guest: "Loïc Giraudel"
-layout: post
 title: "Optimizing images with Bash script"
 tags:
   - bash

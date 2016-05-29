@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "“CSS is easy”"
 tags:
   - css

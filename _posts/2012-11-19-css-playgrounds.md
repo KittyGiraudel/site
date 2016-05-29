@@ -1,6 +1,5 @@
 ---
 disqus: http://hugogiraudel.com/blog/css-playgrounds.html
-layout: post
 title: "A round-up on CSS playgrounds"
 tags:
   - css

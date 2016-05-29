@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Parent selector: on has() and ^"
 tags:
   - thoughts

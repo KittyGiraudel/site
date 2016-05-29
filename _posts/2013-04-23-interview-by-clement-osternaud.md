@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "My interview by Clément Osternaud"
 tags:
   - interview

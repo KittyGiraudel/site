@@ -1,5 +1,4 @@
 ---
-layout: post
 summary: true
 title: "Why a CSS alternative to &lt;select&gt; is impossible"
 tags:

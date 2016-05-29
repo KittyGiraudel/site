@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "My CSS Aha moment"
 tags:
   - css

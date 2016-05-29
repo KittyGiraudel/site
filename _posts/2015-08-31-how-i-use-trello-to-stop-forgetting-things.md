@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "How I use Trello to Stop Forgetting Things"
 tags: 
   - trello

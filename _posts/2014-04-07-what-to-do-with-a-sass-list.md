@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "What to do with a Sass list?"
 tags:
   - sass

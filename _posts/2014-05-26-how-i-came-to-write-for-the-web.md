@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "How I came to write for the web"
 tags:
   - blog

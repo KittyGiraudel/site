@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Feedback on another conf"
 tags:
   - thoughts

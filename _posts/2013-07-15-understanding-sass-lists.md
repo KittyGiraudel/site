@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Understanding Sass lists"
 tags:
   - sass

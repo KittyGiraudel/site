@@ -1,5 +1,4 @@
 ---
-layout: post
 summary: true
 title: "Future of CSS layout: CSS Grid"
 tags:

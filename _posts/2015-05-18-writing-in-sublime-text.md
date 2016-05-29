@@ -1,6 +1,5 @@
 ---
 title: Writing in Sublime Text
-layout: post
 summary: true
 tags:
   - sublime text

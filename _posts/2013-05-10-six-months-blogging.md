@@ -1,6 +1,4 @@
 ---
-layout: post
-numberedFigures: true
 title: "Six months of blogging"
 tags:
   - blog

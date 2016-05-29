@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Casting a map into a list in Sass"
 tags:
   - sass

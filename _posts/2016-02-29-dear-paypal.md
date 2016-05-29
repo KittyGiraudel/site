@@ -1,6 +1,5 @@
 ---
 title: "Dear PayPal"
-layout: post
 tags:
   - paypal
   - user experience

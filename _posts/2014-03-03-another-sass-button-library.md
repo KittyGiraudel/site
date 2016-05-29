@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Another Sass button library"
 tags:
   - sass

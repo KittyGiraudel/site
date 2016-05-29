@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The ultimate PX/REM mixin"
 tags:
   - sass

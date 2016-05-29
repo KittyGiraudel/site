@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Learning Regular Expressions: The Practical Way"
 tags: 
   - regular expressions

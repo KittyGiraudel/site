@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "SassyJSON: Talk to the browser!"
 tags:
   - sass

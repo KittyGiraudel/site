@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "SassDoc and Semantic Versioning"
 tags:
   - sass

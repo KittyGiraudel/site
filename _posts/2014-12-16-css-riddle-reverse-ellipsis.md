@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "CSS Riddle: reverse ellipsis"
 tags:
   - css

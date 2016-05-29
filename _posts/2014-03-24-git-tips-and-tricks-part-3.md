@@ -1,7 +1,5 @@
 ---
 guest: "Loïc Giraudel"
-layout: post
-prism: true
 title: "Git tips and tricks - Part 3"
 tags:
   - git

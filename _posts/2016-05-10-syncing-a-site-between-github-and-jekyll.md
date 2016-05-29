@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Syncing a site between GitHub and Jekyll"
 tags:
   - jekyll

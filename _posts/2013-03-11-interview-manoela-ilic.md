@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Interview with Manoela Ilic"
 tags:
   - interview

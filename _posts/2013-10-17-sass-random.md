@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Random function with Sass 3.3"
 tags:
   - sass

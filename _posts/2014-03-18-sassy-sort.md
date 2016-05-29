@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "SassySort: sorting algorithms in Sass"
 tags:
   - sass

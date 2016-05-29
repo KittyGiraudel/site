@@ -1,5 +1,4 @@
 ---
-layout: post
 summary: true
 title: "Sass-ify a CSS shape"
 tags:

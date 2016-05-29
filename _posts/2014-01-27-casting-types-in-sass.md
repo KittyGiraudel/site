@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "SassyCast: type conversion in Sass"
 tags:
   - sass

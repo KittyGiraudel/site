@@ -8,18 +8,36 @@ url: "http://hugogiraudel.com" # the base hostname & protocol for your site
 twitter_username: HugoGiraudel
 github_username:  HugoGiraudel
 
-# Build settings
+# Markdown settings
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+# Pagination settings
+gems: [jekyll-paginate]
 paginate_path: /blog/page:num
 paginate: 10
+
+# Posts settings
 permalink: pretty
+future: true
+
+# Default settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Sass settings
 sass:
   sass_dir: assets/sass
   style: :compressed
-gems: [jekyll-paginate]
+
+# Build settings
 exclude:
   - Gemfile
   - Gemfile.lock

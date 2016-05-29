@@ -1,5 +1,4 @@
 ---
-layout: post
 summary: true
 title: "What's up at Browserhacks?"
 tags:

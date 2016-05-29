@@ -1,6 +1,5 @@
 ---
 disqus: http://hugogiraudel.com/blog/css-challenge.html
-layout: post
 title: "A CSS challenge"
 tags:
   - css

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "How I learnt to like Bootstrap"
 tags:
   - css

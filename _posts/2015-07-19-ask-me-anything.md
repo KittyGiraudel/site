@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Ask Me Anything"
 tags: 
   - blog

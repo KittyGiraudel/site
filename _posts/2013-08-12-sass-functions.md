@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "A couple of Sass functions"
 tags:
   - sass

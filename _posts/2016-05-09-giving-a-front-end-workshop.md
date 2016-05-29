@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Giving a front-end workshop
 tags:
   - workshop

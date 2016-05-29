@@ -1,6 +1,5 @@
 ---
 title: "The Sound of Bullets"
-layout: post
 tags: 
   - miscellaneous
   - thoughts

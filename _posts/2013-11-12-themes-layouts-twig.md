@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Dealing with themes and layouts with Twig"
 tags:
   - templates

@@ -1,6 +1,5 @@
 ---
 guest: "Gregor Adams"
-layout: post
 title: "Netflix Logo in CSS"
 tags:
   - css

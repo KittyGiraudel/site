@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Casting a string to a number in Sass"
 tags:
   - sass

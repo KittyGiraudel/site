@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Feedback on my first conf"
 tags:
   - thoughts

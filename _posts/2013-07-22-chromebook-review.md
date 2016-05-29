@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Chromebook review"
 tags:
   - chromebook

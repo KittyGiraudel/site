@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Use lengths, not strings"
 tags:
   - sass

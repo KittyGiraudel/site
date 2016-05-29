@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Automating CSS animations with Sass"
 tags:
   - sass

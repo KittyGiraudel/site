@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "SassyMatrix: because one dimension wasn't enough"
 tags:
   - sass

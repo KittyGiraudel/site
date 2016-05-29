@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Sass brainfuck"
 tags:
   - sass

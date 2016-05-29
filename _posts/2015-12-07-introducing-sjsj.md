@@ -1,6 +1,5 @@
 ---
 title: "Introducing Simplified JavaScript Jargon"
-layout: post
 tags:
   - JavaScript
   - JS
