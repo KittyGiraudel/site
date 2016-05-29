@@ -1,7 +1,9 @@
-<script async src="/assets/js/main.min.js"></script>
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+  loadJS('{{ "/assets/js/main.min.js" | prepend: site.baseurl }}', init);
+});
+
+function init() {
   var app = new App({
     codepen: document.querySelector && !!document.querySelector('.codepen'),
     sassmeister: document.querySelector && !!document.querySelector('.sassmeister'),
@@ -15,5 +17,5 @@ document.addEventListener('DOMContentLoaded', function() {
     tracking: true,
     ad: true
   });
-});
+}
 </script>
