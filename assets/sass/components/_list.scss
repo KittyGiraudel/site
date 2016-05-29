@@ -1,48 +1,49 @@
-/**
- * List component (e.g. home, speaking)
- * 1. Undo default styling
- */
-.list {
-  padding: 0; /* 1 */
-  margin: 0; /* 1 */
-  list-style: none; /* 1 */
-  clear: both;
+ul {
+  list-style: none;
 }
 
-h2 + .list > .list__item:first-child::before {
-  content: none;
+ul, ol {
+  padding-left: 0;
+  list-style-position: inside;
+  margin-bottom: line(1);
 }
 
-/**
- * List item
- */
+li:not([class]) {
+  padding-left: 1.3em;
+  padding-left: 2ch;
+  text-indent: -1.3em;
+  text-indent: -2ch;
+  color: $red;
+}
+
+ul > li:not([class])::before {
+  content: '* ';
+}
+
 .list__item {
-  margin-bottom: 2em;
+  margin-bottom: line(1);
 }
 
 .list__item::before {
   content: '---\A ';
   display: block;
   white-space: pre;
-  margin-bottom: 2em;
+  margin-bottom: line(1);
 }
 
 /**
- * List item primary content, emphasized
- * 1. Reset any weight (if any)
+ * Prevent initial `---` when coming right after a heading
  */
-.list__primary-content {
-  margin: 0;
-  display: block;
-  font-weight: normal; /* 1 */
+h2 + .list > .list__item:first-child::before {
+  content: none;
 }
 
-/**
- * List item secondary content
- */
+.list__primary-content,
 .list__secondary-content {
-  @extend em;
-  margin: 0;
   display: block;
-  position: relative;
+  margin: 0;
+}
+
+.list__secondary-content {
+  @include em-styles;
 }

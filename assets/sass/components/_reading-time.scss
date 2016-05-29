@@ -1,4 +1,7 @@
-.reading-time {
-  &::after { content: ')'; }
-  &::before { content: '('; }
+.reading-time::after {
+  content: ')';
+}
+
+.reading-time::before {
+  content: '(';
 }

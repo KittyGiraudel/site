@@ -1,15 +1,11 @@
 .search-container {
   clear: both;
-  margin-top: 4em;
+  margin-top: line(2);
 }
 
 .search-input {
   width: 100%;
   display: block;
   padding: 0.25em;
-  margin-bottom: 2em;
-}
-
-.search-results {
-
+  margin-bottom: line(1);
 }

@@ -1,0 +1,25 @@
+/**
+ * Basic styles for links
+ */
+a {
+  color: $red;
+  text-decoration: none;
+}
+
+a:not([class])::before {
+  content: '[';
+  color: $orange;
+}
+
+a:not([class])::after {
+  content: '](' attr(href) ')';
+  color: $orange;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+a:not([class]):hover::before,
+a:not([class]):hover::after {
+  color: $almost-white;
+}

@@ -2,8 +2,6 @@ $black: rgb(28, 31, 38);
 $very-dark-grey: rgb(35, 40, 48);
 $dark-grey: rgb(43, 48, 59);
 $medium-grey: rgb(101, 115, 128);
-$light-grey: #807d7c;
-$very-light-grey: #a5a2a2;
 $almost-white: rgb(192, 197, 206);
 $red: rgb(195, 97, 107);
 $pink: rgb(181, 141, 174);
@@ -13,9 +11,8 @@ $teal: rgb(144, 164, 184);
 $orange: rgb(210, 135, 109);
 
 $sidebar-width: 225px;
-$max-width: 800px;
 
 $breakpoints: ( 'medium': (min-width: 750px) );
 
-$text-font-stack: "Roboto", "Helvetica", "Arial", sans-serif;
-$code-font-stack: "Source Code Pro", "Courier New", monospace;
+$text-font-stack: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+$code-font-stack: 'Source Code Pro', 'Courier New', monospace;

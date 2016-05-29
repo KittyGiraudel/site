@@ -1,0 +1,23 @@
+h1, h2, h3, h4 {
+  font-size: 1em;
+  margin-top: line(2);
+  margin-bottom: line(1);
+  color: $teal;
+}
+
+h1, h3, h4 {
+  margin-top: line(1);
+}
+
+h1:not([class])::before { content: '# '; }
+h2:not([class])::before { content: '## '; }
+h3:not([class])::before { content: '### '; }
+h4:not([class])::before { content: '#### '; }
+
+/**
+ * Prevent too large gap when title comes after a horizontal rule
+ */
+hr + h2,
+hr + h3 {
+  margin-top: line(1);
+}

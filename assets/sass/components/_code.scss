@@ -1,8 +1,5 @@
-/**
- * Force the correct font-stack on all code elements, overriding Prism.js
- */
 code {
-  font-family: $code-font-stack !important;
+  font-family: $code-font-stack;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -16,11 +13,8 @@ code {
   content: '`';
 }
 
-/**
- * Poor man's vertical rhythm
- */
 pre {
-  margin-bottom: 2em !important;
+  margin-bottom: line(1);
 }
 
 pre::before,

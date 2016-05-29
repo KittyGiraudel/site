@@ -1,0 +1,13 @@
+/**
+ * Basic styles for <hr />
+ */
+hr {
+  border: 0;
+  margin: line(1) 0;
+  display: block;
+  height: line(1);
+}
+
+hr::after {
+  content: '---';
+}

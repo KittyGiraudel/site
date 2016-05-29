@@ -1,0 +1,12 @@
+strong {
+  color: $yellow;
+}
+
+strong::before,
+strong::after {
+  content: '**';
+}
+
+em {
+  @include em-styles;
+}

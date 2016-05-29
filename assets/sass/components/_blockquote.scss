@@ -1,10 +1,8 @@
 /**
  * Blockquotes
- * 1. Clear inner floats (if any)
  */
 blockquote {
-  overflow: hidden; /* 1 */
-  margin: 0 0 2em;
+  margin: 0 0 line(1);
   color: $orange;
 }
 
@@ -24,12 +22,4 @@ blockquote > :first-child {
  */
 blockquote > :last-child {
   margin-bottom: 0;
-}
-
-/**
- * Some legacy articles still use `.quote` for blockquotes
- * This makes them behave exactly like regular blockquotes
- */
-.quote {
-  @extend blockquote;
 }

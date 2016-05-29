@@ -1,0 +1,26 @@
+/**
+ * Basic styles for images
+ * 1. Warning, potentially dangerous if using inline images
+ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* 1 */
+  margin: line(1) 0;
+}
+
+/**
+ * Figures
+ */
+.figure {
+  margin: 0 0 line(1);
+}
+
+/**
+ * Figcaption
+ * 1. Move the caption one line up, inside the image’s bottom margin
+ */
+.figure figcaption {
+  @include em-styles;
+  margin-top: line(-1); /* 1 */
+}

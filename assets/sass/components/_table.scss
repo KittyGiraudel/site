@@ -3,12 +3,12 @@
  */
 table {
   width: 100%;
-  margin: 0 0 2em;
+  margin-bottom: line(1);
   border-collapse: collapse;
+}
 
-  thead {
-    border-bottom: 2px solid $medium-grey;
-  }
+thead {
+  border-bottom: 0.1em solid $medium-grey;
 }
 
 tr + tr {
