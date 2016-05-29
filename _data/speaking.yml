@@ -2,60 +2,44 @@
   link: https://2016.fromthefront.it/
   location: Bologna, Italy
   date: 2016-09-15 12:00:00 +0100
-  past: false
 
 - event: DEVit Conference
   link: http://devitconf.org/
   location: Thessaloniki, Greece
   date: 2016-05-20 12:00:00 +0100
-  past: true
   actions:
-    - name: Slides
-      link: https://speakerdeck.com/hugogiraudel/local-styling-with-css-modules
+    Slides: https://speakerdeck.com/hugogiraudel/local-styling-with-css-modules
 
 - event: Frontend Conference Zurich
   link: http://frontendconf.ch/
   location: Zurich, Switzerland
   date: 2015-08-27 00:00:00 +0100
   image: /images/events/fec.png
-  past: true
   actions:
-    - name: Video
-      link: https://youtu.be/dGz6y6glEmI?t=8h17m40s
-    - name: Slides
-      link: https://speakerdeck.com/hugogiraudel/three-years-of-purging-sass
+    Video: https://youtu.be/dGz6y6glEmI?t=8h17m40s
+    Slides: https://speakerdeck.com/hugogiraudel/three-years-of-purging-sass
 
 - event: dotCSS
   link: http://www.dotcss.io/
   location: Paris, France
   date: 2014-11-15 00:00:00 +0100
-  past: true
   actions:
-    - name: Feedback
-      link: http://hugogiraudel.com/2014/11/17/feedback-on-dotcss/
-    - name: Video
-      link: http://www.thedotpost.com/2014/11/hugo-giraudel-keep-calm-and-write-sass
-    - name: Slides
-      link: https://speakerdeck.com/hugogiraudel/keep-calm-and-write-sass
+    Feedback: http://hugogiraudel.com/2014/11/17/feedback-on-dotcss/
+    Video: http://www.thedotpost.com/2014/11/hugo-giraudel-keep-calm-and-write-sass
+    Slides: https://speakerdeck.com/hugogiraudel/keep-calm-and-write-sass
 
 - event: FeWeb
   link: http://www.lafeweb.be/fiche-agenda/sass-and-compass-et-le-css-devient-fantastique
   location: Bruxelles, Belgium
   date: 2014-05-08 00:00:00 +0100
-  past: true
   actions:
-    - name: Feedback
-      link: http://hugogiraudel.com/2014/06/02/feedbacks-feweb/
-    - name: Slides
-      link: http://slides.com/hugogiraudel/sass-une-architecture-composee#/
+    Feedback: http://hugogiraudel.com/2014/06/02/feedbacks-feweb/
+    Slides: http://slides.com/hugogiraudel/sass-une-architecture-composee#/
 
 - event: KiwiParty
   link: http://kiwiparty.fr
   location: Strasbourg, France
   date: 2013-06-23 00:00:00 +0100
-  past: true
   actions:
-    - name: Feedback
-      link: http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/
-    - name: Slides
-      link: http://slides.com/hugogiraudel/css-kick-ass-avec-sass#/
+    Feedback: http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/
+    Slides: http://slides.com/hugogiraudel/css-kick-ass-avec-sass#/

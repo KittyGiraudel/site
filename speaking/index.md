@@ -24,7 +24,9 @@ It does not happen *that* often, but it happens! Why don't you come and see me a
     {% if event.actions %}
     <ul>
     {% for action in event.actions %}
-      <li><a target="_blank" href="{{ action.link }}">{{ action.name }}</a></li>
+      <li>
+        <a target="_blank" href="{{ action[1] }}">{{ action[0] }}</a>
+      </li>
     {% endfor %}
     </ul>
     {% endif %}
