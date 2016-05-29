@@ -12,7 +12,7 @@ Before I get started though, don’t take this as the bible or anything. It’s 
 
 **How do you make something out of your Twitter account as a worker of the IT industry?** And by this, I mean how do you grow a Twitter audience, if there is even such a thing.
 
-# Use Twitter
+## Use Twitter
 
 I’ll start by stating the obvious, but the first thing to enjoy using Twitter is to actually use Twitter. Follow people, read what they say, react to what they say, and bring your own content. You know, nothing ground-breaking there.
 
