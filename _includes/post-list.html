@@ -1,9 +1,9 @@
 <li class="list__item">
-  <p class="list__secondary-content">{{ include.post.date | date: "%B %d, %Y" }}{% if include.post.guest %} by {{ include.post.guest }}{% endif %}{% if include.post.external %} at {{ include.post.external.host }}{% else %}{% endif %}</p>
+  <span class="list__secondary-content">{{ include.post.date | date: "%B %d, %Y" }}{% if include.post.guest %} by {{ include.post.guest }}{% endif %}{% if include.post.external %} at {{ include.post.external.host }}{% else %}{% endif %}</span>
 
-  <p class="list__primary-content">
+  <span class="list__primary-content">
       {% if include.post.external %}
         <a {% if include.post.lang %}hreflang="{{ include.post.lang|downcase }}"{% endif %} href="{{ include.post.external.url }}">{% else %}
         <a {% if include.post.lang %}hreflang="{{ include.post.lang|downcase }}"{% endif %} href="{{ include.post.url }}">{% endif %}{% if include.post.lang %}[{{ include.post.lang|upcase }}] {% endif %}{{ include.post.title }}</a>
-  </p>
+  </span>
 </li>
