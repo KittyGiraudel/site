@@ -91,7 +91,7 @@ There are different way of doing this, like using a different perspective (e.g. 
 
 Here's a demo on CodePen:
 
-<p data-height="446" data-theme-id="0" data-slug-hash="raEojV" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='http://codepen.io/pixelass/pen/raEojV/'>netflix logo | (figure--1)</a> by Gregor Adams (<a href='http://codepen.io/pixelass'>@pixelass</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="440" data-theme-id="0" data-slug-hash="raEojV" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='http://codepen.io/pixelass/pen/raEojV/'>netflix logo | (figure--1)</a> by Gregor Adams (<a href='http://codepen.io/pixelass'>@pixelass</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 Next I had to apply this to all the letters respecting that the middle letter is not transformed, the ones to the right are tilted in the opposite direction and the height of the letters changes.
 
@@ -130,7 +130,7 @@ To do this I needed to add some logic: I use Sass with the SCSS syntax to do thi
 
 Here's a demo on CodePen
 
-<p data-height="213" data-theme-id="0" data-slug-hash="yydGPL" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='http://codepen.io/pixelass/pen/yydGPL/'>netflix logo (figure--2)</a> by Gregor Adams (<a href='http://codepen.io/pixelass'>@pixelass</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="240" data-theme-id="0" data-slug-hash="yydGPL" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='http://codepen.io/pixelass/pen/yydGPL/'>netflix logo (figure--2)</a> by Gregor Adams (<a href='http://codepen.io/pixelass'>@pixelass</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 ## A function for the shadow
 
@@ -216,7 +216,7 @@ text-shadow: d3(5, red, [$x], [$y], [$blur], [$mix]);
 
 Here's a demo on CodePen:
 
-<p data-height="297" data-theme-id="0" data-slug-hash="XJLOXg" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='http://codepen.io/pixelass/pen/XJLOXg/'>netflix logo (figure--3)</a> by Gregor Adams (<a href='http://codepen.io/pixelass'>@pixelass</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="320" data-theme-id="0" data-slug-hash="XJLOXg" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='http://codepen.io/pixelass/pen/XJLOXg/'>netflix logo (figure--3)</a> by Gregor Adams (<a href='http://codepen.io/pixelass'>@pixelass</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 ## Putting it all together
 

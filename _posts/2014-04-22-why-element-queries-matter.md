@@ -60,7 +60,7 @@ Then when a min-width is matched, the element can be selected using an attribute
 
 I have designed a little test case (you might want to test it on CodePen directly and resize the screen):
 
-<p data-height="462" data-theme-id="0" data-slug-hash="cfdf5410e622f1e5f41035232de4260c" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/cfdf5410e622f1e5f41035232de4260c'>cfdf5410e622f1e5f41035232de4260c</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="460" data-theme-id="0" data-slug-hash="cfdf5410e622f1e5f41035232de4260c" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/cfdf5410e622f1e5f41035232de4260c'>cfdf5410e622f1e5f41035232de4260c</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 The first collection (top) is the 1-column layout, the second one (middle) is when we got a sidebar and the last one (bottom) is when we got both the filter bar and the sidebar. As you can see, the number of elements per row adapts to the available width to the component (not the screen size).
 

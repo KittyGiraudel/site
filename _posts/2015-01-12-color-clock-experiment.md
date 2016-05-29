@@ -21,7 +21,7 @@ There are two things I wanted to give specific attention to:
 
 Alright, let's go.
 
-<p data-height="314" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/JobxQR/'>Color Clock</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="320" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/JobxQR/'>Color Clock</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 ## Building the app
 
@@ -156,6 +156,6 @@ That's it. Here is the final code:
 
 You can play with the code on CodePen:
 
-<p data-height="314" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/JobxQR/'>Color Clock</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="320" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/JobxQR/'>Color Clock</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 Hope you liked it!

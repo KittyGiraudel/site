@@ -45,7 +45,7 @@ I personally used this extension in this very site, when it comes to images and 
 
 So `$opposite` equals *right* when `$direction` is *left* and vice versa. Allows me to make only one mixin instead of 2!
 
-## Elements-of-type() <a href="#display-helpers" class="section-anchor">#</h2>
+## Elements-of-type()
 
 [Element-of-type()](http://compass-style.org/reference/compass/helpers/display/) is a built-in function to detect the display type of an element: `block`, `inline`, `inline-block`, `table`, `table-row-group`, `table-header-group`, `table-footer-group`, `table-row`, `table-cell`, `list-item` and -as odd as it may look- `html5`, `html5-inline` and `html5-block`.
 
@@ -110,7 +110,7 @@ This outputs:
 }
 ```
 
-## Hacks <a href="#hacks" class="section-anchor">#</h2>
+## Hacks
 
 Hum, [hacks](http://compass-style.org/reference/compass/utilities/general/hacks/). I know what you think: *NOOOOOO!*. Anyway, Compass provides a couple of features to take advantage of Internet Explorer inconsistencies and weaknesses.
 

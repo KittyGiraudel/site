@@ -300,4 +300,4 @@ Last but not least, [Vithun Kumar Gajendra](http://codepen.io/vithun/full/gazbD)
 
 Anyway, you can have a look at my fully commented pen here: 
 
-<p data-height="500" data-theme-id="0" data-slug-hash="b8e914a2caf8090a9fffa7cf194afc18" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/b8e914a2caf8090a9fffa7cf194afc18'>b8e914a2caf8090a9fffa7cf194afc18</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="520" data-theme-id="0" data-slug-hash="b8e914a2caf8090a9fffa7cf194afc18" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/b8e914a2caf8090a9fffa7cf194afc18'>b8e914a2caf8090a9fffa7cf194afc18</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>

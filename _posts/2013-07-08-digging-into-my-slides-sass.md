@@ -65,7 +65,7 @@ Outputs:
 
 This example shows how we can use `@extend` and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you're familiar with [Twitter Bootstrap](http://twitter.github.io/bootstrap/components.html#alerts), then you'll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).
 
-<pre class="codepen" data-height="300" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="320" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
 
 With vanilla CSS, you have 3 ways to do this:
 
@@ -335,7 +335,7 @@ Now let's see what the code does exactly:
 
 And there you have a very simple yet responsive Sass grid.
 
-<pre class="codepen" data-height="300" data-type="result" data-href="9581fd77d4c244288a6a115981ee1d1d" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/FpDdm">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="320" data-type="result" data-href="9581fd77d4c244288a6a115981ee1d1d" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/FpDdm">Check out this Pen!</a></pre>
 
 ## CSS counters and Sass
 

@@ -189,4 +189,4 @@ Et voila! We now have a mixin working back to IE7 (maybe even 6) thanks to very 
 
 That’s all folks! If you have any suggestion to improve it, please be sure to share! Meanwhile, you can play with my [demo](http://codepen.io/HugoGiraudel/pen/Bigqr) on CodePen.
 
-<pre class="codepen" data-height="550" data-type="result" data-href="Bigqr" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Bigqr">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="560" data-type="result" data-href="Bigqr" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Bigqr">Check out this Pen!</a></pre>

@@ -292,6 +292,6 @@ The problems that Christopher Chedeau lists in his "CSS in JS" presentation are 
 
 Check out the [example simple React datepicker](https://github.com/davidkpiano/react-simple-datepicker) on Github for an example of how Sass can be used to style React components. Oh, and here is a CodePen for you, as a treat!
 
-<p data-height="268" data-theme-id="0" data-slug-hash="1e170149edee4b13737894b435b21724" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/1e170149edee4b13737894b435b21724/'>1e170149edee4b13737894b435b21724</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="280" data-theme-id="0" data-slug-hash="1e170149edee4b13737894b435b21724" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/1e170149edee4b13737894b435b21724/'>1e170149edee4b13737894b435b21724</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 > [David Khourshid](https://twitter.com/davidkpiano) is a front-end web developer in Orlando, Florida. He is passionate about JavaScript, Sass, and cutting-edge front-end technologies. He is also a pianist and enjoys mathematics, and is constantly finding new ways to apply both math and music theory to web development.

@@ -72,13 +72,13 @@ ul {
 
 Congratulations to her for such a smart solution. :)
 
-## Pushing it further<a href="#moar" class="section-anchor">#</h2>
+## Pushing it further
 
 A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitter.com/chriscoyier/status/295223893516500993) about it. Someone (in the person of [Arash Milani](http://twitter.com/arashmilan)) answered it wasn't possible to do it with more than 2 rows.
 
 **CHALLENGE ACCEPTED!** This made me want to give it a shot. Honestly, it took me a few tries and no more than 10 minutes to find a solution for 3 rows.
 
-<pre class="codepen" data-height="450" data-type="result" data-href="DoAIB" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/DoAIB">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="480" data-type="result" data-href="DoAIB" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/DoAIB">Check out this Pen!</a></pre>
 
 Instead of doing `:nth-child(even)`, we need two different selectors:
 
@@ -158,11 +158,11 @@ li:nth-child(4n + 2) {
 }
 ```
 
-I think the pattern should be easier to see now thanks to the comments. For X rows you'll have `X-1` different selectors starting from `:nth-child(Xn+Y)` (where X and Y are the same) until Y becomes stricly superior than 1 (so Y equals 2).
+I think the pattern should be easier to see now thanks to the comments. For X rows you’ll have `X-1` different selectors starting from `:nth-child(Xn+Y)` (where X and Y are the same) until Y becomes stricly superior than 1 (so Y equals 2).
 
 ## Demo
 
-<pre class="codepen" data-height="530" data-type="result" data-href="AxmBK" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/AxmBK">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="560" data-type="result" data-href="AxmBK" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/AxmBK">Check out this Pen!</a></pre>
 
 Try changing the number of rows by editing `$rows` and see the magic happen.
 

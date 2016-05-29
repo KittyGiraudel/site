@@ -26,7 +26,7 @@ The wheel - or you can think of it as a pie - is first split horizontally into t
 
 The pen below shows graphically how to layer the multiple backgrounds. It also has a pause button so that the infinite animation doesn't turn into a performance problem.
 
-<pre class="codepen" data-height="340" data-type="result" data-href="Kuvom" data-user="thebabydino" data-safe="true"><code></code><a href="http://codepen.io/thebabydino/pen/qgoBL">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="360" data-type="result" data-href="Kuvom" data-user="thebabydino" data-safe="true"><code></code><a href="http://codepen.io/thebabydino/pen/qgoBL">Check out this Pen!</a></pre>
 
 For both the original pen and this helper demo, the interesting part is this one:
 
