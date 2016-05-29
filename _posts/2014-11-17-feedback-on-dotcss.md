@@ -9,8 +9,6 @@ tags:
 
 I have been invited to speak at the very first [dotCSS](http://dotcss.eu) in Paris on November 14th, as part of a beautiful lineup of incredible speakers and not less than 400 attendees. It was a truely great experience, hence a little article to sum up the journey.
 
-<img alt="dotCSS logo" src="/assets/images/feedback-on-dotcss/logo.png" class="pull-image--right" />
-
 ## About the event
 
 It was the first time that organisers of [dotConferences](https://twitter.com/dotconferences), mostly famous for [dotJS](http://dotjs.eu) happening on November 17th, were producing a [dotCSS](http://dotcss.eu) and I have to say [Sylvain Zimmer](https://twitter.com/sylvinus), [Ferdinand Boas](https://twitter.com/ferdinandboas) and [Maurice Svay](https://twitter.com/mauriz) (as well as all the people who helped) really did a great job with this one.

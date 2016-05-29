@@ -46,8 +46,6 @@ I also have Opera and Safari on some computers to make unusual tests. Since I am
 
 ## IDE
 
-<img src="/assets/images/development-environment/sublime-text.png" alt="Sublime Text 2" class="pull-image--right">
-
 I used to be a huge fan of Notepad++, even if everybody was using Dreamweaver. Honestly I never liked DW; it is super heavy while doing not much than a regular text editor.
 
 Now I am standing on [Sublime Text 2](http://www.sublimetext.com/2) on all my computers, with no intention to change soon. The thing Sublime Text 2 provides that Notepad++ doesn't is the ability to open a whole folder in order to have access to any file of your project in the arborescence. This is really cool. Plus Sublime Text 2 looks better in my opinion. :)
@@ -73,8 +71,6 @@ You may find this silly but 9 out of 10 times, I use Photoshop to resize and sav
 I didn't know how to call this section because it gathers various tools doing various things I use at various occasions. I hope it's clear enough. :P
 
 ### Sass and Compass
-
-<img src="/assets/images/development-environment/sass-compass.jpg" alt="Sass and Compass" class="pull-image--right">
 
 Not so long ago I gave a try to CSS preprocessors, because I am both curious and a CSS lover. It turned out I like CSS preprocessors, they give a lot more options than regular CSS.
 

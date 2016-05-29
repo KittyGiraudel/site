@@ -14,8 +14,6 @@ Anyway, since we do not have a blog for Browserhacks, I have no choice but to an
 
 ## Moving to grunt
 
-<img src="/assets/images/whats-up-at-browserhacks/grunt.jpg" alt="Grunt.js is a JavaScript task runner" class="pull-image--right" />
-
 We have decided to put aside our PHP tools to move to a [Grunt](http://gruntjs.com) workflow. As you may know, Grunt is  a task-builder in JavaScript which is involving a lot of things to us.
 
 Well obviously the first thing is we need to learn how to Grunt. [Fabrice Weinberg](http://blog.weinberg.me/) has helped us for the porting (a million thanks to him) but at the end of the day we should be able to do this on our own.

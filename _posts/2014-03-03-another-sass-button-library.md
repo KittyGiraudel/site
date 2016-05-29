@@ -38,7 +38,10 @@ $btn-background: (
 ) !default;
 ```
 
-<img class="pull-image--right" alt='Variable all the things!' src='http://i.imgur.com/shEzy8H.jpg'/>
+<figure class="figure">
+<img src="http://i.imgur.com/shEzy8H.jpg" alt="Variable all the things!" />
+<figcaption>Variable all the things!</figcaption>
+</figure>
 
 Everything might not be intuitive so let me explain what each variable is for:
 
