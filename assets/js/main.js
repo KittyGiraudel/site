@@ -27,8 +27,6 @@
   };
   
   Article.prototype.initialize = function () {   
-    this.createSections();
-    
     if (this.conf.tableOfContent === true) { 
       this.createTableOfContent();
     }
@@ -70,18 +68,7 @@
       gridify(image, containerWidth);
     });
   };
-  
-  Article.prototype.createSections = function () {
-    var link, name, headings = document.querySelectorAll('.main h2[id]');
-    
-    for (var i = 0; i < headings.length; i++) {
-      link = document.createElement('a');
-      link.setAttribute('href', '#' + headings[i].id);
-      link.innerHTML = '#';
-      headings[i].appendChild(link);
-    }
-  };
-  
+
   Article.prototype.createTableOfContent = function () {
     var content, 
         items = [],
@@ -105,17 +92,14 @@
         nav  = document.createElement("nav"),
         frag = document.createDocumentFragment(); 
     
-    console.log(anchor);
-
-    nav.setAttribute("class", "toc");
     nav.setAttribute("role", "navigation");
     nav.innerHTML = html;
     frag.appendChild(nav);
     
     if (anchor && anchor.nextSibling) {
-        anchor.parentNode.insertBefore(frag, anchor.nextSibling)
+      anchor.parentNode.insertBefore(frag, anchor.nextSibling)
     } else {
-        anchor.parentNode.appendChild(frag)
+      anchor.parentNode.appendChild(frag)
     }
   };
 
@@ -131,7 +115,6 @@
       tracking: true,
       ad: true,
       comments: true,
-      layout: 'default',
       disqus: {
         name: 'hugogiraudel',
         title: false,

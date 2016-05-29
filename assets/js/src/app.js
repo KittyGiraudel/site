@@ -7,7 +7,6 @@
       tracking: true,
       ad: true,
       comments: true,
-      layout: 'default',
       disqus: {
         name: 'hugogiraudel',
         title: false,
