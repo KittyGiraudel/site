@@ -6,7 +6,6 @@ tags:
   - blog
   - css
   - sass
-classes: home
 ---
 
 # Hello, I’m Hugo Giraudel.

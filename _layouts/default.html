@@ -1,9 +1,20 @@
----
-layout: full
----
+<!DOCTYPE html>
+<html lang="{{ page.lang|default: 'en' }}">
 
-<main class="main" role="main">
-  <div class="container">
-  {{ content }}
-  </div>
-</main>
+  {% include head.html %}
+
+  <body>
+    {% include header.html %}
+    {% include fake-tab-bar.html %}
+
+    <main class="main" role="main">
+      <div class="container">
+      {{ content }}
+      </div>
+    </main>
+
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
+
+</html>
