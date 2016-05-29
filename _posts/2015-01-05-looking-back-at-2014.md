@@ -21,7 +21,7 @@ Along the same lines, I have written a total of 91 articles published on 6 diffe
 
 <h2 style="clear: both">I gave my first talk out of France</h2>
 
-<figure class="figure--left">
+<figure class="figure">
 <img src="/assets/images/feedbacks-feweb/speakers.jpg" alt="">
 <figcaption>Thierry Michel and I on stage.</figcaption>
 </figure>
@@ -38,7 +38,7 @@ Later this year, in November, [I gave my first talk in English](http://hugogirau
 ## I wrote a book
 
 
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/looking-back-at-2014/book-cover.png" alt="" />
 <figcaption>My upcoming book</figcaption>
 </figure>
@@ -59,7 +59,7 @@ SassDoc has been very welcomed, and some massive projects already use it to mana
 
 Well, aside from releasing my book, I'd like to keep doing talks possibly in English now that I know I am capable of speaking in English in front of people. My goal would be a talk per quarter, but we all know timing is hard so we'll see.
 
-<figure class="figure--left">
+<figure class="figure">
 <img src="/assets/images/feedback-on-dotcss/hugo.jpg" alt="" />
 <figcaption>Me on stage. Photo by dotCSS.</figcaption>
 </figure>

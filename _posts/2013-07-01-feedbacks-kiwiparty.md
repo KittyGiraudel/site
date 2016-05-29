@@ -75,7 +75,7 @@ Oh, and of course here are my [slides](http://slid.es/hugogiraudel/css-kick-ass-
 
 ## Final words
 
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/feedbacks-kiwiparty/stuff.jpg" alt="">
 <figcaption>Stuff - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>

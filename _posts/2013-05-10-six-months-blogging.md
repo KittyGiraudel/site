@@ -33,7 +33,7 @@ Enough about me, let's talk about you: **28% of users come from United States**,
 
 Regarding browser, I'm a lucky bastard: **Chrome gets more than 60% of the browser share** on my site, then it's Firefox with 17.5%, and then Safari with 16%. Internet Explorer comes further with 1.8%.
 
-<figure class="figure--left">
+<figure class="figure">
 <img src="/assets/images/six-months-blogging/mobile-vs-desktop.png" alt="">
 <figcaption><span style="color: #50b432">Mobile</span> vs <span style="color: #058dc7">Desktop</span></figcaption>
 </figure>

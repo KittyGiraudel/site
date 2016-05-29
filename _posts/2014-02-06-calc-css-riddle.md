@@ -6,7 +6,7 @@ tags:
   - calc
   - riddle
 ---
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/calc-css-riddle/gollum-riddle.gif" alt="">
 <figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
 </figure>

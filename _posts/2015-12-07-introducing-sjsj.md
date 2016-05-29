@@ -16,7 +16,7 @@ The general idea is that the JavaScript ecosystem has gotten both complex and bl
 
 ## Involving the community
 
-<figure class="figure--right">
+<figure class="figure">
   <img src="http://stream1.gifsoup.com/view/1036636/cat-in-bathtub-o.gif" alt="Doing JavaScript in 2015" />
   <figcaption>Doing JavaScript in 2015.</figcaption>
 </figure>

@@ -39,7 +39,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 🏆 **July 20th**. I made it to the [shortlist](http://www.edenspiekermann.com/blog/posts/net-awards-shortlist) for the “Developer of the Year” Net Award. At 23, needless to say it is a huge honor. [Sara Soueidan](https://sarasoueidan.com/blog/developer-of-the-year-2-15-net-award/) later won the well-deserved award on September 21st.
 
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/looking-back-at-2015/coding.jpg" alt="Picture of me coding" />
 <figcaption>Me, casually writing some code. Courtesy of <a href="https://twitter.com/franklyandrea">Andrea Franke</a>.</figcaption>
 </figure>

@@ -9,7 +9,7 @@ tags:
 
 The single fact that you clicked on that link to come here shows that you are brave. Most people just run away when it comes to regular expressions. They are wrong to do so! Not only are they extremely valuable, but their foundations also are actually quite easy to grasp.
 
-<figure class="figure--right">
+<figure class="figure">
   <img src="/assets/images/learning-regular-expressions/scared-cat.gif" alt="People when seeing a regex" />
   <figcaption>People when seeing a regex</figcaption>
 </figure>

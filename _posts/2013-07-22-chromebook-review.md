@@ -67,7 +67,7 @@ For in-depth tests on Samsung Chromebook's battery, please refer to [this articl
 
 The keyboard is pretty nice, really. **Keys are large and smooth** so typing is quite easy and most importantly, noiseless.
 
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/chromebook-review/chromebook-keyboard.jpg" alt="">
 <figcaption>Samsung Chromebook - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>

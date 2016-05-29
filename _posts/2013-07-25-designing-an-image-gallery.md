@@ -114,7 +114,7 @@ Basically, I assigned `opacity: 0` to all items so they don't appear at first. T
 
 Of course, we wanted the site to look acceptable (if not good!) on small devices. I wasn't sure about the way to display this photo gallery on mobile so I opted for the easy solution: put everything into one column. I'll try to think of something better for a future version.
 
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/designing-an-image-gallery/phoneview.png" alt="">
 <figcaption><a href="http://alexandralucas.com" target="_blank">View on most smartphone</a></figcaption>
 </figure>

@@ -42,7 +42,7 @@ It might sound silly but I also really dig using Trello for the groceries. I use
 
 For time-boxed items, I use the “Due date” feature from Trello. The coupling of the date with a color system getting more and more proheminent as the date comes closer makes it very valuable to actually achieve things before it’s too late. Could it be having an appointment, sending an invoice, or finishing this chapter the editor keeps asking for.
 
-<figure class="figure--right">
+<figure class="figure">
   <img src="/assets/images/how-i-use-trello/trello-labels.png" alt="One label per project in the Web column" />
   <figcaption>One label per project in the Web column</figcaption>
 </figure>
@@ -53,7 +53,7 @@ One good thing from Trello is also the ability to re-order cards in a column whi
 
 ## Final thoughts
 
-<figure class="figure--right">
+<figure class="figure">
   <img src="/assets/images/how-i-use-trello/trello-due-date.png" alt="Using due date for time-boxed items" />
   <figcaption>Using due date for time-boxed items</figcaption>
 </figure>

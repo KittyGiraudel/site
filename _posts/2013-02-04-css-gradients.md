@@ -15,7 +15,7 @@ I had no idea how powerful CSS gradients could be until late 2011, when I found 
 
 Recently, while browsing through the demos on CodePen, I came across [a CSS3 Color Wheel](http://codepen.io/bitmap/pen/eBbHt) and thought *hey, I could do it with just one element and gradients*. So I did and the result can be seen [here](http://codepen.io/thebabydino/pen/hkxGp). And now I'm going to explain the reasoning behind it.
 
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/css-gradients/rainbow_wheel_screen.gif" alt="" />
 <figcaption>Rainbow wheel made of CSS</figcaption>
 </figure>
@@ -116,21 +116,21 @@ We now draw a perpendicular from the corner of the square in the quadrant that i
 
 The [intersection of the diagonals of a square splits each one of them into two](http://www.mathopenref.com/square.html), so `AO` and `BO` are equal. The `BOE` and `AOS` angles are equal, as they are [vertical angles](http://www.mathopenref.com/anglesvertical.html). Moreover, the `BOE` and `AOS` triangles are [right triangles](http://www.mathopenref.com/righttriangle.html). All these three [mean that the two triangles are also congruent](http://en.wikipedia.org/wiki/Triangle#Similarity_and_congruence). Which in turn means that `SO` and `EO` are equal, so the length of `SE` is going to be twice the length of `EO` or twice the length of `SO`.
 
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/css-gradients/right_triangle_trigonometric_functions.png" alt="" />
 <figcaption>A right angled triangle and how to compute sin and cos functions</figcaption>
 </figure>
 
 *Note: before moving further, let's go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it's called the [hypotenuse](http://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](http://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](http://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](http://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse.*
 
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/css-gradients/slice_1_BOE.png" alt="" />
 <figcaption>The BOE triangle</figcaption>
 </figure>
 
 Computing the length of `EO` in the right triangle `BOE` is really simple. If we take the length of the side of the square to be `a`, then the length of the half diagonal `BO` is going to be `a*sqrt(2)/2`. The `BOE` angle is equal to the difference between the `BOM` angle, which is `45°`, and the `EOM` angle, which is `36°`. This makes `BOE` have `9°`. Since `BO` is also the hypotenuse in the right triangle `BOE`, the length of `EO` is going to be `(a*sqrt(2)/2)*cos9°`. Which makes the length of `SE` be `a*sqrt(2)*cos9°`.
 
-<figure class="figure--right">
+<figure class="figure">
 <img src="/assets/images/css-gradients/slice_1_APD.png" alt="" />
 <figcaption>The APD triangle</figcaption>
 </figure>
