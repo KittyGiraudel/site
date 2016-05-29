@@ -8,11 +8,11 @@ tags:
   - writing
 ---
 
-<h1>Search</h1>
+# Search
 
 {% include ad.html %}
 
-<p>In about 200 posts, I probably have written something at least a bit interesting. What about giving it a search?</p>
+In over 200 posts, I probably have written something at least a bit interesting. What about giving it a search?
 
 <noscript>Unfortunately this site has no server-side search available, so please enable JavaScript in your browser to be able to use the provided search engine. Or you could give <a href="https://cse.google.com/cse/publicurl?cx=009396935484082696627:sfmsndgcu2q" target="_blank">a try</a>.</noscript>
 
@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: 'data.json',
-    searchResultTemplate: '<li class="article  list__item">\
-      <p class="article__date  list__secondary-content">{date}{guest}{external}</p>\
-      <h2 class="article__title  list__primary-content">\
-        <a class="article__link" href="{url}">{title}</a>\
-      </h2>\
+    searchResultTemplate: '<li class="list__item">\
+      <p class="list__secondary-content">{date}{guest}{external}</p>\
+      <p class="list__primary-content">\
+        <a href="{url}">{title}</a>\
+      </p>\
     </li>',
     noResultsText: 'Sorry, I could not find any result for your search. :( Hey, if you really wanna have results, I suggest looking for "sass"!'
   });
