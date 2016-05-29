@@ -1,3 +1,3 @@
 <footer class="footer" role="contentinfo">
-  <p>&copy;&nbsp;2012-{{ 'now' | date: '%Y' }} Hugo Giraudel{% if content %}, {{ content | number_of_words }} words{% endif %}</p>
+  <p>&copy;&nbsp;2012-{{ 'now' | date: '%Y' }} Hugo Giraudel{% if content %}, {{ content | number_of_words }} words, {% include reading-time.html %}{% endif %}</p>
 </footer>

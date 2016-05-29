@@ -2,6 +2,7 @@
 layout: default
 ---
 
+{% capture reading_time %}{% include reading-time.html %}{% endcapture %}
 {% include ad.html %}
 
 {% if page.title %} 
@@ -11,7 +12,7 @@ layout: default
 {% if page.date %}
   <p class="post-date">{{ page.date | date: "%B %d, %Y" }}
   {% if page.guest %} &mdash; by {{ page.guest }}{% endif %}
-  {% include reading-time.html content=content %}</p> 
+  ({{ reading_time | strip }})</p>
 {% endif %}
 
 {% if page.external %}
