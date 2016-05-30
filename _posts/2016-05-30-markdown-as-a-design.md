@@ -14,7 +14,7 @@ So I was thinking… hey, why not trying something *different* for once?
 
 Markdown is one of my favourite things in this industry. I use it so much. For articles. For books. For sites. For mails. For personal content. It is such an amazing text format, both simple and obvious.
 
-Last year, I have written about [how I use Sublime Text as a writing environment](http://localhost:4000/2015/05/18/writing-in-sublime-text/). And now, I wanted to move my Sublime Text design in the browser. Here we are.
+Last year, I have written about [how I use Sublime Text as a writing environment](http://hugogiraudel.com/2015/05/18/writing-in-sublime-text/). And now, I wanted to move my Sublime Text design in the browser. Here we are.
 
 ## What the hell is this?
 
