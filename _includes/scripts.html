@@ -5,17 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function init() {
   var app = new App({
-    codepen: document.querySelector && !!document.querySelector('.codepen'),
-    sassmeister: document.querySelector && !!document.querySelector('.sassmeister'),
-    tableOfContent: {% if page.summary %}true{% else %}false{% endif %},
-    comments: document.querySelector && !!document.querySelector('#disqus_thread') && {% unless page.comments == false or page.external %}true{% else %}false{% endunless %},
-    disqus: {
+    createToC: {% if page.summary %}true{% else %}false{% endif %},
+    loadComments: {% unless page.comments == false or page.external %}true{% else %}false{% endunless %},
+    disqusOptions: {
       title: "{{ page.title }}",
       url: {% if page.disqus %}'{{ page.disqus }}'{% else %}window.location.href{% endif %},
       name: 'hugogiraudel'
-    },
-    tracking: true,
-    ad: true
+    }
   });
 }
 </script>
