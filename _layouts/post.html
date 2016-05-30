@@ -2,25 +2,29 @@
 layout: default
 ---
 
-{% capture reading_time %}{% include reading-time.html %}{% endcapture %}
-{% include ad.html %}
+<article itemscope itemtype="http://schema.org/Article" class="article">
+  {% capture reading_time %}{% include reading-time.html %}{% endcapture %}
+  {% include ad.html %}
 
-{% if page.title %} 
-  <h1>{{ page.title }}</h1> 
-{% endif %}
+  {% if page.title %} 
+    <h1 itemprop="title">{{ page.title }}</h1> 
+  {% endif %}
 
-{% if page.date %}
-  <p class="post-date">{{ page.date | date: "%B %d, %Y" }}
-  {% if page.guest %} &mdash; by {{ page.guest }}{% endif %}
-  ({{ reading_time | strip }})</p>
-{% endif %}
+  {% if page.date %}
+    <p itemprop="datePublished" class="post-date">{{ page.date | date: "%B %d, %Y" }}
+    {% if page.guest %} &mdash; by <span itemprop="author">{{ page.guest }}</span>{% endif %}
+    <span itemtype="timeRequired">({{ reading_time | strip }})</span></p>
+  {% endif %}
 
-{% if page.external %}
-  <p>The post is not hosted on <a href="/">hugogiraudel.com</a>. Please go to <a href="{{ page.external.url }}">{{ page.external.host }}</a> to read it.</p>
-{% endif %}
+  {% if page.external %}
+    <p>The post is not hosted on <a href="/">hugogiraudel.com</a>. Please go to <a href="{{ page.external.url }}">{{ page.external.host }}</a> to read it.</p>
+  {% endif %}
 
-{{ content }}
+  <div itemtype="articleBody">
+  {{ content }}
+  </div>
 
-{% unless page.comments == false or page.external %}
-  <div id="disqus_thread"></div> 
-{% endunless %}
+  {% unless page.comments == false or page.external %}
+    <div id="disqus_thread" itemprop="comment"></div> 
+  {% endunless %}
+</article>
