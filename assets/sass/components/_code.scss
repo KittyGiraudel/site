@@ -17,6 +17,10 @@ pre {
   margin-bottom: line(1);
 }
 
+pre code {
+  display: block;
+}
+
 pre::before,
 pre::after {
   content: '```';
