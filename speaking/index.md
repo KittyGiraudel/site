@@ -8,9 +8,9 @@ tags:
   - conferences
 ---
 
-# Speaking events
-
 {% include ad.html %}
+
+# Speaking events
 
 It does not happen *that* often, but it happens! Why don't you come and see me at one of the few conferences I attend. I'm sure it would be nice to meet!
 

@@ -8,9 +8,9 @@ tags:
   - writing
 ---
 
-# Search
-
 {% include ad.html %}
+
+# Search
 
 In over 200 posts, I probably have written something at least a bit interesting. What about giving it a search?
 

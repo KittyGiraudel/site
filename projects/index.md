@@ -8,9 +8,9 @@ tags:
   - github
 ---
 
-# Open-source Projects
-
 {% include ad.html %}
+
+# Open-source Projects
 
 When I can, I try to invest a lot of time in open-source projects. Here are a few of them I initiated myself:
 

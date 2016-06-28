@@ -8,9 +8,9 @@ tags:
   - sass
 ---
 
-# Hello, I’m Hugo Giraudel.
-
 {% include ad.html %}
+
+# Hello, I’m Hugo Giraudel.
 
 A French front-end developer working at [Edenspiekermann](http://edenspiekermann.com) in Berlin. Feel free to [read more about me](/about/).
 

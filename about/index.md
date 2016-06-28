@@ -7,9 +7,9 @@ tags:
   - about
 ---
 
-# About me
-
 {% include ad.html %}
+
+# About me
 
 I am a French front-end developer based in Berlin. After a couple of years working as a developer in the banking industry, I had the great opportunity to join [Edenspiekermann](http://edenspiekermann.com) in Berlin to work on client projects.
 
