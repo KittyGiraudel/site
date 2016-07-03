@@ -130,7 +130,6 @@ Let's be honest: there is none. Sass is not a low-level programming language. It
 
 Here is a great [introduction to bit flags](http://forum.codecall.net/topic/56591-bit-fields-flags-tutorial-with-example/) but I'll try to sum up. The idea behind *bit flags* is to have a collection of flags (think of them as options) mapped to powers of 2 (usually with an `enum` field in C/C++). Each option will have its own bit flag.
 
-<div style="line-height: .9">
 ```
 00000000 Bin    | Dec
 │││││││└ 1 << 0 | 1
@@ -142,7 +141,6 @@ Here is a great [introduction to bit flags](http://forum.codecall.net/topic/5659
 │└────── 1 << 6 | 64
 └─────── 1 << 7 | 128
 ```
-</div>
 
 Now, let's say option A is `1 << 0` (DEC 1) and option B is `1 << 1` (DEC 2). If we *OR* them:
 
