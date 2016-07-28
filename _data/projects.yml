@@ -24,9 +24,9 @@
   category: Accessibility
 
 - name: Spritesh
-  description: "A Bash script to build a SVG sprite from a folder of SVG files."
+  description: "A Node.js script to build a SVG sprite from a folder of SVG files."
   link: https://github.com/edenspiekermann/sprite.sh
-  category: Bash
+  category: JavaScript
 
 - name: Transync
   description: "A Node.js script to synchronise keys from translation files."
