@@ -3,9 +3,8 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="{{ page.theme | default: layout.theme }}">
     {% include header.html %}
-    {% include fake-tab-bar.html %}
 
     <main class="main" role="main">
       <div class="container">

@@ -50,11 +50,19 @@ exclude:
 nav:
   - label: Writing
     url: /blog/
+    theme: t-teal
   - label: Coding
     url: /projects/
+    theme: t-green
   - label: Speaking
     url: /speaking/
-  - label: About
+    theme: t-yellow
+  - label: About me
     url: /about/
+    theme: t-orange
+  - label: Guests posts
+    url: /guest/
+    theme: t-red
   - label: Search
     url: /search/
+    theme: t-pink

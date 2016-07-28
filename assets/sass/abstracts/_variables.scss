@@ -1,16 +1,17 @@
 $black: rgb(28, 31, 38);
 $very-dark-grey: rgb(35, 40, 48);
-$dark-grey: rgb(43, 48, 59);
+$dark-grey: #2c3e50;
 $medium-grey: rgb(101, 115, 128);
 $almost-white: rgb(192, 197, 206);
-$red: rgb(195, 97, 107);
-$pink: rgb(181, 141, 174);
-$yellow: rgb(236, 204, 135);
-$green: rgb(162, 191, 138);
-$teal: rgb(144, 164, 184);
-$orange: rgb(210, 135, 109);
+$red: #e74c3c;
+$pink: #9b59b6;
+$yellow: #f39c12;
+$green: #27ae60;
+$teal: #16a085;
+$blue: #3498db;
+$orange: #d35400;
 
-$sidebar-width: 225px;
+$sidebar-width: (100% - (100% / 1.618));
 
 $breakpoints: ( 'medium': (min-width: 750px) );
 

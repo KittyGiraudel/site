@@ -3,10 +3,11 @@
  * Floated on medium screens
  */
 .site-ad {
+  margin-top: 1.5em;
+
   @include respond-to('medium') {
     float: right;
-    margin-right: -1em;
-    margin-left: 1em;
+    margin-right: 2em;
   }
 }
 
@@ -20,6 +21,7 @@
   border: 0 !important;
   color: $almost-white !important;
   max-width: 100% !important;
+  margin: 0 auto;
 }
 
 .carbonad a {
@@ -31,9 +33,4 @@
  */
 #azcarbon > img {
   display: inline !important;
-}
-
-.carbonad a::before,
-.carbonad a::after {
-  content: none !important;
 }

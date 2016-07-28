@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<div class="title-wrapper title-wrapper--{{ page.title | slugify }}">
+  <div>
+  {% if page.title %} 
+    <h1 class="title" itemprop="title">{{ page.title }}</h1> 
+  {% endif %}
+  </div>
+</div>
+
+{{ content }}

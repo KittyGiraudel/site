@@ -159,7 +159,6 @@
 
     shouldLoadComments && loadComments(disqusOptions)
     shouldCreateToC && createToC()
-    shouldGridifyImages && window.addEventListener('resize', gridifyImages)
   }
 
   global.App = App;

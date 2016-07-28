@@ -1,15 +1,12 @@
 ---
-layout: default
-title: "About"
+layout: page
+theme: t-orange
+title: About me
 excerpt: "Everything about me related to the tech-industry, as well as a couple of hints about this site and how it was built."
 tags:
   - Hugo Giraudel
   - about
 ---
-
-{% include ad.html %}
-
-# About me
 
 I am a French front-end developer based in Berlin. After a couple of years working as a developer in the banking industry, I had the great opportunity to join [Edenspiekermann](http://edenspiekermann.com) in Berlin to work on client projects.
 

@@ -1,7 +1,6 @@
 .header {
-  background-color: $very-dark-grey;
   color: $medium-grey;
-  padding: 1em;
+  padding: 2em 0;
 
   @include respond-to('medium') {
     position: fixed;
@@ -9,16 +8,8 @@
     top: 0;
     bottom: 0;
     width: $sidebar-width;
-  }
-}
-
-
-@include respond-to('medium') {
-  .header::before {
-    content: 'folders';
-    text-transform: uppercase;
-    display: block;
-    font-size: 70%;
+    text-align: right;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -28,47 +19,56 @@
   color: inherit;
 }
 
+.nav {
+  @include respond-to('medium') {
+    margin-top: 1.5em;
+  }
+}
+
 .nav__list {
+  list-style: none;
   margin: 0;
 }
 
 .nav__item {
   text-transform: lowercase;
   line-height: 1.5;
-  padding-left: 0.4em;
-  padding-left: 1ch;
+  border-right: 0.5em solid rgba(255, 255, 255, 0.25);
+  transform: translateX(0.5em);
+  transition: background-color 0.15s,
+              color 0.15s,
+              transform 0.3s 0.1s;
 }
 
-.nav__item::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border: 1px solid transparent;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  border-right-color: currentcolor;
-  border-top-color: currentcolor;
+.nav__item:hover,
+.nav__item:active {
+  background-color: $dark-grey;
+  color: rgb(255, 255, 255);
+  transform: translateX(0);
 }
 
-.nav__item.is-active::before {
-  border-top-color: transparent;
-  border-bottom-color: currentcolor;
-  -webkit-transform: rotate(45deg) translate(0px, -4px);
-  -ms-transform: rotate(45deg) translate(0px, -4px);
-  transform: rotate(45deg) translate(0px, -4px);
-}
-
-.header__link,
 .nav__link {
   color: inherit;
-  font-size: 80%;
+  border-bottom: 0;
+  padding: 0.25em 2em;
+  display: block;
+  transition: transform 0.3s 0.1s;
 }
 
-.header__link:active,
-.header__link:hover,
+.nav__link::after {
+  content: '.';
+  color: $dark-grey;
+}
+
 .nav__link:active,
 .nav__link:hover {
-  color: $almost-white;
+  border-color: transparent;
+}
+
+.nav__item:hover .nav__link {
+  transform: translateX(0.5em);
+}
+
+.nav__item:hover .nav__link::after {
+  color: rgb(255, 255, 255);
 }

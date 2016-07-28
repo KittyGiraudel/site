@@ -1,21 +1,16 @@
 .footer {
-  background-color: $black;
+  padding: 2em 0;
   color: $medium-grey;
-  padding: 0 0.5em;
+  text-align: center;
 
   @include respond-to('medium') {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
+    padding: 5em 0 2em;
+    text-align: left;
+    text-align: initial;
   }
 }
 
 .footer p {
+  font-size: 0.75em;
   margin: 0;
-  
-  @include respond-to('medium') {
-    font-size: 70%;
-  }
 }

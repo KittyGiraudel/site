@@ -6,21 +6,25 @@ img {
   max-width: 100%;
   height: auto;
   display: block; /* 1 */
-  margin: line(1) 0;
+  margin: 1.5em 0;
 }
 
-/**
- * Figures
- */
 .figure {
-  margin: 0 0 line(1);
+  margin: 0 0 1.5em;
 }
 
-/**
- * Figcaption
- * 1. Move the caption one line up, inside the image’s bottom margin
- */
 .figure figcaption {
-  @include em-styles;
-  margin-top: line(-1); /* 1 */
+  color: $medium-grey;
+  font-family: $code-font-stack;
+  font-size: 75%;
+}
+
+.figure figcaption::before {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 1px;
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+  background-color: $blue;
 }

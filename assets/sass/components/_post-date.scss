@@ -1,3 +1,12 @@
 .post-date {
-  @include em-styles;
+  font-family: $code-font-stack;
+}
+
+.post-date::after {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 1px;
+  margin-top: 1.5em;
+  background-color: $blue;
 }

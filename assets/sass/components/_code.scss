@@ -5,24 +5,14 @@ code {
 }
 
 :not(pre) > code {
-  color: $green;
-}
-
-:not(pre) > code::before,
-:not(pre) > code::after {
-  content: '`';
 }
 
 pre {
-  margin-bottom: line(1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5em;
+  padding: 1em;
 }
 
 pre code {
-  display: block;
-}
-
-pre::before,
-pre::after {
-  content: '```';
   display: block;
 }

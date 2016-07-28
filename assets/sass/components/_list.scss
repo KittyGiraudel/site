@@ -1,49 +1,66 @@
-ul {
-  list-style: none;
-}
-
 ul, ol {
   padding-left: 0;
   list-style-position: inside;
-  margin-bottom: line(1);
+  margin-bottom: 1.5em;
 }
 
 li:not([class]) {
-  padding-left: 1.3em;
-  padding-left: 2ch;
-  text-indent: -1.3em;
-  text-indent: -2ch;
-  color: $red;
+  padding-left: 1em;
+  text-indent: -1em;
 }
 
-ul > li:not([class])::before {
-  content: '* ';
+.list {
+  list-style: none;
+  margin: 0 -2em;
 }
 
 .list__item {
-  margin-bottom: line(1);
+  padding: 1em 2em;
+  border-left: 0.5em solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s 0.1s;
+  transform: translateX(-0.5em);
+
+  @include respond-to('medium') {
+    padding: 1.5em 2em;
+  }
 }
 
-.list__item::before {
-  content: '---\A ';
-  display: block;
-  white-space: pre;
-  margin-bottom: line(1);
+.list__item:hover,
+.list__item:active {
+  background-color: #EFEFEF;
+  transform: translateX(0);
 }
 
-/**
- * Prevent initial `---` when coming right after a heading
- */
-h2 + .list > .list__item:first-child::before {
-  content: none;
+.list__item-inner {
+  transition: inherit;
+}
+
+.list__item:hover .list__item-inner,
+.list__item:active .list__item-inner {
+  transform: translateX(-0.5em);
 }
 
 .list__primary-content,
 .list__secondary-content {
-  display: block;
+  display: inline;
   margin: 0;
 }
 
+.list__primary-content::after,
+.list__secondary-content::after {
+  content: '';
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.list__primary-content {
+  font-size: 1.5em;
+  line-height: 1.1;
+  color: $medium-grey;
+}
+
 .list__secondary-content {
-  @include em-styles;
+  font-size: 0.75em;
+  font-family: $code-font-stack;
 }

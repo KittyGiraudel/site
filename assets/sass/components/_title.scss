@@ -1,0 +1,50 @@
+.title-wrapper {
+  background: #2c3e50;
+  color: rgb(255, 255, 255);
+  margin: 0 -2em 2em;
+
+  @include respond-to('medium') {
+    padding-top: (100% / 1.618);
+    position: relative;
+    margin: -2em -2em 2em -2em;
+  }
+}
+
+.title-wrapper > * {
+  padding: 2em;
+
+  @include respond-to('medium') {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 3.5em;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.title::after {
+  content: '.';
+}
+
+.title-wrapper--about-me { background-color: $yellow; }
+.title-wrapper--blog { background-color: $orange; }
+.title-wrapper--open-source-projects { background-color: $red; }
+.title-wrapper--speaking-events { background-color: $green; }
+.title-wrapper--about-me { background-color: $teal; }
+.title-wrapper--search { background-color: $pink; }
+.title-wrapper--guest-posts { background-color: $blue; }

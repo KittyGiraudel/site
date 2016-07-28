@@ -1,11 +1,11 @@
 <header class="header" role="banner">
-  <span class="header__title{% if page.url == '/' %}  is-active{% endif %}">
-    <a class="header__link" href="/">hugogiraudel.com</a>
+  <span class="header__title{% if page.url == '/' %}  is-active{% endif %} t-dark-grey nav__item nav__item--logo">
+    <a class="nav__link nav__link--logo" href="/">hugogiraudel.com</a>
   </span>
   <nav role="navigation" class="nav">
     <ul class="nav__list">
       {% for item in site.nav %}
-      <li class="nav__item{% if page.url == item.url %}  is-active{% endif %}">
+      <li class="nav__item{% if page.url == item.url %}  is-active{% endif %} {{ item.theme }}">
         <a class="nav__link" href="{{ item.url }}">{{ item.label }}</a>
       </li>
       {% endfor %}
@@ -24,4 +24,6 @@
       </li>
     </ul>
   </div>
+
+  {% include ad.html %}
 </header>

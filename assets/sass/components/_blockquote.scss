@@ -2,12 +2,10 @@
  * Blockquotes
  */
 blockquote {
-  margin: 0 0 line(1);
-  color: $orange;
-}
-
-blockquote > ::before {
-  content: '> ';
+  margin: 0 0 1.5em;
+  border-left: 0.5em solid;
+  padding: 1em 0 1em 2em;
+  color: #777;
 }
 
 /**

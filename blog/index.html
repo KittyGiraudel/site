@@ -1,6 +1,7 @@
 ---
-layout: default
-title: "Blog"
+layout: page
+theme: t-teal
+title: "Years of writing"
 excerpt: "All articles from me, published on this site as well as at other places such as SitePoint, Tuts+, Codrops and CSS-Tricks. Also contains some guest posts."
 tags:
   - blog
@@ -8,11 +9,7 @@ tags:
   - articles
 ---
 
-{% include ad.html %}
-
-<h1>Latest articles</h1>
-
-<p>I write <em>a lot</em> of articles for different sites. External articles are annotated with an external link icon. Articles with the user icon are guest posts. If you are looking for something specific, hit <a href="/search">the search</a>, or check all <a href="/blog/guest/">guest posts</a>.</p>
+<p>I write <em>a lot</em> of articles for different sites. External articles are annotated with an external link icon. Articles with the user icon are guest posts. If you are looking for something specific, hit <a href="/search">the search</a>, or check all <a href="/guest/">guest posts</a>.</p>
 
 <ul class="list">
 {% for post in paginator.posts %}
@@ -21,8 +18,6 @@ tags:
   {% endunless %}
 {% endfor %}
 </ul>
-
-<hr />
 
 <ul class="pagination">
   {% if paginator.previous_page %}
