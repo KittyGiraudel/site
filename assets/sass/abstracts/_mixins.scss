@@ -13,13 +13,3 @@
     @content;
   }
 }
-
-@mixin em-styles() {
-  font-style: italic;
-  color: $pink;
-
-  &::before,
-  &::after {
-    content: '*';
-  }
-}

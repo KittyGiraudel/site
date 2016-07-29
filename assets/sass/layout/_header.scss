@@ -64,7 +64,8 @@
 
 .nav__link::after {
   content: '.';
-  color: $dark-grey;
+  display: inline-block;
+  transition: 0.25s;
 }
 
 .nav__link:active,
@@ -72,10 +73,14 @@
   border-color: transparent;
 }
 
+.nav__item:active .nav__link,
 .nav__item:hover .nav__link {
   transform: translateX(0.5em);
 }
 
+.nav__item:active .nav__link::after,
 .nav__item:hover .nav__link::after {
   color: rgb(255, 255, 255);
+  transform: translateY(1em);
+  opacity: 0;
 }

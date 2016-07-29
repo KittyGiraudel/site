@@ -1,13 +1,13 @@
 /**
  * Main content containers
- * 1. Make the container full-width with a maximum width
- * 3. Leave some space on the edges, especially valuable on small screens
+ * 1. Make the container full-width with a maximum width.
+ * 2. Leave some space on the edges, especially valuable on small screens.
  */
 .container {
   max-width: 950px; /* 1 */
   max-width: 80ch; /* 1 */
-  padding-left: 1em; /* 3 */
-  padding-right: 1em; /* 3 */
+  padding-left: 1em; /* 2 */
+  padding-right: 1em; /* 2 */
   width: 100%; /* 1 */
 
   @include respond-to('medium') {
