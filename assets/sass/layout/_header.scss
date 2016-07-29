@@ -33,11 +33,14 @@
 .nav__item {
   text-transform: lowercase;
   line-height: 1.5;
-  border-right: 0.5em solid rgba(255, 255, 255, 0.25);
-  transform: translateX(0.5em);
   transition: background-color 0.15s,
               color 0.15s,
               transform 0.3s 0.1s;
+
+  @include respond-to('medium') {
+    border-right: 0.5em solid rgba(255, 255, 255, 0.25);
+    transform: translateX(0.5em);
+  }
 }
 
 .nav__item:hover,
@@ -50,9 +53,13 @@
 .nav__link {
   color: inherit;
   border-bottom: 0;
-  padding: 0.25em 2em;
+  padding: 0.25em 1em;
   display: block;
   transition: transform 0.3s 0.1s;
+
+  @include respond-to('medium') {
+    padding: 0.25em 2em;
+  }
 }
 
 .nav__link::after {
