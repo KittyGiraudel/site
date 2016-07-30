@@ -88,8 +88,8 @@ Luckily for me, they all started applying styles to their pages. First the main 
 
 It was not without a few mistakes though. Here are a few things I noticed:
 
-- When using unitless numbers in place of lengths, Chrome assumes pixels, which led some participants to omit the unit more often than not.
-- The hash symbol (`#`) appears to be optional in Chrome for it to render colors accurately, which led some participants to omit this more often than not.
+- Because we worked exclusively in pixels, some participants used to author lengths without a unit.
+- For participants with no design background at all, the hexadecimal notation for colors was not so straightforward, leading them to omit the hash symbol (`#`).
 - Most if not all participants really struggled with semi-colons and syntax in general. Missing semi-colons, braces closed twice, typos and such. It generated a bit of frustration for some of them to not have more information about where they made a mistake.
 
 Eventually, all participants managed to have their recipe styled pretty much how they wanted it. I even went further than expected with some of them, including these topics:
