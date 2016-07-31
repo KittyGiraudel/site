@@ -29,22 +29,20 @@
     return document.querySelector(ARTICLE_PAGE_SELECTOR)
   }
 
-  function isLargeScreen () {
-    return window.matchMedia('(min-width: 750px').matches
-  }
-
-  function getContainerWidth () {
-    var container = $(CONTAINER_SELECTOR)
-    if (!container) return 0
-    return container.offsetWidth - (40 * 2)
-  }
-
   function insertAfter(node, anchor) {
     if (anchor && anchor.nextSibling) {
       anchor.parentNode.insertBefore(node, anchor.nextSibling)
     } else {
       anchor.parentNode.appendChild(node)
     }
+  }
+
+  function generateHeadingLink (heading) {
+    var content = heading.innerText
+    var href = '#' + heading.id
+    var text = content.substr(0, content.length)
+
+    return '<a href="' + href + '">' + text + '</a>'
   }
 
   function getToCMarkup () {
@@ -54,17 +52,9 @@
       return ''
     }
 
-    var items = headings.map(function (heading) {
-      var content = heading.innerText
-      var href = '#' + heading.id
-      var text = content.substr(0, content.length - 1)
-
-      return '<a href="' + href + '">' + text + '</a>'
-    })
-    
     return '<ol>'
       + '<li>'
-      + items.join('</li><li>')
+      + headings.map(generateHeadingLink).join('</li><li>')
       + '</li>'
       + '</ol>'
   }
@@ -79,30 +69,6 @@
     frag.appendChild(nav)
     
     insertAfter(frag, anchor)
-  }
-
-  function gridifyImage (image) {
-    var containerWidth = getContainerWidth()
-    var i = new Image()
-
-    i.onload = function () {
-      var height = i.height
-      var width = Math.min(i.width, containerWidth)
-      var height = i.width > containerWidth
-        ? containerWidth * i.height / i.width
-        : i.height
-      var roundedHeight = (Math.round(height / 40) * 40)
-
-      image.style.width = width + 'px'
-      image.style.height = roundedHeight + 'px'
-    }
-
-    i.src = image.src
-  }
-
-  function gridifyImages () {
-    var images = $('.main img')
-    Array.prototype.forEach.call(images, gridifyImage)
   }
 
   function loadAnalytics (callback) {
@@ -131,26 +97,19 @@
   function loadSassMeister (callback) {
     $('.sassmeister') && loadJS(SASSMEISTER_URL, callback)
   }
-  
-  function extend (obj, extObj) {
-    obj = obj || {};
-    if (arguments.length > 2) {
-      for (var a = 1; a < arguments.length; a++) {
-        global.extend(obj, arguments[a])
-      }
-    } else {
-      for (var i in extObj) {
-        obj[i] = extObj[i]
-      }
+
+  function getDisqusOptions (options) {
+    return {
+      name: options.name || DISQUS_OPTIONS.name,
+      title: options.title || DISQUS_OPTIONS.title,
+      url: options.url || DISQUS_OPTIONS.url
     }
-    return obj
   }
   
   function App (options) {
     var shouldLoadComments = options.loadComments || true
-    var shouldCreateToC = isArticlePage() && options.createToC || false
-    var shouldGridifyImages = isArticlePage() && isLargeScreen()
-    var disqusOptions = extend(DISQUS_OPTIONS, options.disqusOptions)
+    var shouldCreateToC = (isArticlePage() && options.createToC) || false
+    var disqusOptions = getDisqusOptions(options.disqusOptions)
 
     loadAnalytics()
     loadAds()
