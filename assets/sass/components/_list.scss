@@ -18,7 +18,7 @@ li:not([class]) {
   padding: 1em 2em;
   transition: all 0.3s 0.1s;
 
-  @include respond-to('medium') {
+  @include media('>=medium') {
     transform: translateX(-0.5em);
     border-left: 0.5em solid rgba(255, 255, 255, 0.5);
     padding: 1.5em 2em;

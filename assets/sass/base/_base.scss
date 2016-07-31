@@ -7,9 +7,9 @@ html {
 
 /**
  * 1. Make all elements from the DOM inherit from the parent box-sizing
- *   Since `*` has a specificity of 0, it does not override the `html` value
- *   making all elements inheriting from the root box-sizing value.
- *   See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ *    Since `*` has a specificity of 0, it does not override the `html` value
+ *    making all elements inheriting from the root box-sizing value.
+ *    See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
 *, ::before, ::after {
   box-sizing: inherit; /* 1 */
@@ -17,14 +17,14 @@ html {
 
 /**
  * 1. Prevent horizontal scrolling.
- * 1. Leave room for sidebar.
+ * 2. Leave room for sidebar.
  */
 body {
   color: #444;
   font: 1em / 1.5 $text-font-stack;
   overflow-x: hidden; /* 1 */
 
-  @include respond-to('medium') {
+  @include media('>=medium') {
     font-size: 1.25em;
     padding-left: $sidebar-width; /* 2 */
   }

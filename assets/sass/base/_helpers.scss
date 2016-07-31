@@ -10,7 +10,7 @@
   padding-right: 1em; /* 2 */
   width: 100%; /* 1 */
 
-  @include respond-to('medium') {
+  @include media('>=medium') {
     padding-left: 2em;
     padding-right: 2em;
   }

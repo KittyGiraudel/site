@@ -1,8 +1,5 @@
-$black: rgb(28, 31, 38);
-$very-dark-grey: rgb(35, 40, 48);
 $dark-grey: #2c3e50;
 $medium-grey: rgb(101, 115, 128);
-$almost-white: rgb(192, 197, 206);
 $red: #e74c3c;
 $pink: #9b59b6;
 $yellow: #f39c12;
@@ -10,10 +7,7 @@ $green: #27ae60;
 $teal: #16a085;
 $blue: #3498db;
 $orange: #d35400;
-
 $sidebar-width: (100% - (100% / 1.618));
-
-$breakpoints: ( 'medium': (min-width: 750px) );
-
+$breakpoints: ('medium': 750px);
 $text-font-stack: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
 $code-font-stack: 'Source Code Pro', 'Courier New', monospace;

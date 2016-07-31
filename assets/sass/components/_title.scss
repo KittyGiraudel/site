@@ -3,7 +3,7 @@
   color: rgb(255, 255, 255);
   margin: 0 -2em 2em;
 
-  @include respond-to('medium') {
+  @include media('>=medium') {
     padding-top: (100% / 1.618);
     position: relative;
     margin: -2em -2em 2em -2em;
@@ -13,7 +13,7 @@
 .title-wrapper > * {
   padding: 2em;
 
-  @include respond-to('medium') {
+  @include media('>=medium') {
     position: absolute;
     top: 0;
     right: 0;

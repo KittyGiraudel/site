@@ -3,7 +3,7 @@
   color: $medium-grey;
   text-align: center;
 
-  @include respond-to('medium') {
+  @include media('>=medium') {
     padding: 5em 0 2em;
     text-align: left;
     text-align: initial;

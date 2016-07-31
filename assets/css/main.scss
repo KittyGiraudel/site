@@ -2,12 +2,10 @@
 ---
 @charset 'utf-8';
 
-@import "vendor/highlight";
+@import "vendor/include-media";
 @import "vendor/normalize";
 
 @import "abstracts/variables";
-@import "abstracts/functions";
-@import "abstracts/mixins";
 
 @import "base/base";
 @import "base/helpers";
@@ -24,10 +22,9 @@
 @import "components/list";
 @import "components/pagination";
 @import "components/post-date";
+@import "components/search";
 @import "components/table";
 @import "components/title";
-
-@import "pages/search";
 
 @import "themes/themes";
 
