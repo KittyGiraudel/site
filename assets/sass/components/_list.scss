@@ -16,11 +16,11 @@ li:not([class]) {
 
 .list__item {
   padding: 1em 2em;
-  border-left: 0.5em solid rgba(255, 255, 255, 0.5);
   transition: all 0.3s 0.1s;
-  transform: translateX(-0.5em);
 
   @include respond-to('medium') {
+    transform: translateX(-0.5em);
+    border-left: 0.5em solid rgba(255, 255, 255, 0.5);
     padding: 1.5em 2em;
   }
 }
@@ -32,7 +32,7 @@ li:not([class]) {
 }
 
 .list__item-inner {
-  transition: inherit;
+  transition: transform 0.3s 0.1s;
 }
 
 .list__item:hover .list__item-inner,
