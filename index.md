@@ -38,7 +38,7 @@ A French front-end developer working at [Edenspiekermann](http://edenspiekermann
 {% endcapture %}
 {% endfor %}
 
-I write a lot. My {{ last_article_index | strip }} and latest article is entitled [{{ last_article_title | strip }}]({{ last_article_link }}). You can read [more articles from me](/blog/), or [search for something specific](/search/).
+I write a lot. My {{ last_article_index | strip }} and latest article is entitled [{{ last_article_title | strip }}]({{ last_article_link }}). You can read [more articles from me](/blog/), or [search for something specific](/search/). I also had the great chance of having [wonderful people writing here](/guest/).
 
 {% for project in site.data.projects limit:1 %}
 {% capture last_project_title %}
