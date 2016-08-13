@@ -8,7 +8,7 @@ tags:
   - about
 ---
 
-I am a French front-end developer based in Berlin. After a couple of years working as a developer in the banking industry, I had the great opportunity to join [Edenspiekermann](http://edenspiekermann.com) in Berlin to work on client projects.
+I am a French front-end developer based in Berlin. After a couple of years working as a developer in the French banking industry, I had the great opportunity to join [Edenspiekermann](http://edenspiekermann.com) in Berlin to work on client projects. I recently quit to join [N26](https://n26.com/) in order to improve mobile banking in Germany and Europe.
 
 I dare call myself an active open-source community member as I have contributed to many projects, as well as initiated a few of my own as well. Among them, let's mention [Browserhacks](http://browserhacks.com), [SassDoc](http://sassdoc.com), [Sass Guidelines](http://sass-guidelin.es) and [Sass Compatibility](http://sass-compatibility.github.io) and the [SitePoint Sass Reference](http://www.sitepoint.com/sass-reference/).
 
