@@ -50,7 +50,7 @@
 
 - name: Sass Guidelines
   description: "An opinionated styleguide for writing sane, maintainable and scalable Sass."
-  link: http://sass-guidelin.es
+  link: https://sass-guidelin.es
   category: Sass
 
 - name: Sass Boilerplate
