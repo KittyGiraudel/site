@@ -202,7 +202,7 @@ Hopefully this issue is supposed to be solved in the incoming Sass 3.3 according
 
 ## Final words
 
-I love how powerfull Sass has become but there are things that keep boggling my mind. [Mehdi Kabab](http://twitter.com/pioupioum), a fellow French developer (and author of a fresh new book called [Advanced Sass and Compass](http://livre-sass-compass.fr/)) told me it was because I wasn't using Sass as a preprocessor.
+I love how powerful Sass has become but there are things that keep boggling my mind. [Mehdi Kabab](http://twitter.com/pioupioum), a fellow French developer (and author of a fresh new book called [Advanced Sass and Compass](http://livre-sass-compass.fr/)) told me it was because I wasn't using Sass as a preprocessor.
 
 <blockquote class="twitter-tweet" data-partner="tweetdeck">
 <a href="https://twitter.com/HugoGiraudel">@HugoGiraudel</a> the main problem is you want use Sass like PHP oe Ruby, and not like a CSS preprocessor ;) /cc <a href="https://twitter.com/kaelig">@kaelig</a>&mdash; Mehdi Kabab (@piouPiouM) <a href="https://twitter.com/piouPiouM/statuses/401427568592957441">November 15, 2013</a></blockquote>
