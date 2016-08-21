@@ -1,3 +1,8 @@
+- name: Scrabble-Helper
+  description: "A CLI helper for Scrabble."
+  link: https://github.com/HugoGiraudel/scrabble-helper
+  category: JavaScript
+
 - name: Hangman.js
   description: "A Redux-powered multilingual CLI hangman game."
   link: https://github.com/HugoGiraudel/hangman.js
