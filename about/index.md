@@ -22,4 +22,4 @@ You can ask me anything on the [Ask Me Anything](https://github.com/hugogiraudel
 
 This site is made with [Jekyll](http://jekyllrb.com) and hosted on [Github Pages](https://pages.github.com/) under the [HugoGiraudel / hugogiraudel.github.com](https://github.com/HugoGiraudel/hugogiraudel.github.com) repository. 
 
-The Sass code base respects [Sass Guidelines](http://sass-guidelin.es) and sticks to the [7-1 architecture pattern](http://sass-guidelin.es/#architecture). Moreover, the entire uncompiled stylesheets are heavily commented, so feel free to [have a look](https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/_sass).
+The Sass code base respects [Sass Guidelines](http://sass-guidelin.es) and sticks to the [7-1 architecture pattern](http://sass-guidelin.es/#architecture). Moreover, the entire uncompiled stylesheets are heavily commented, so feel free to [have a look](https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/assets/sass).
