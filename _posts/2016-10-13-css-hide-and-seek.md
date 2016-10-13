@@ -1,5 +1,6 @@
 ---
 title: "CSS Hide-and-Seek"
+guest: "Gaël Poupard"
 tags:
   - css
   - accessibility
