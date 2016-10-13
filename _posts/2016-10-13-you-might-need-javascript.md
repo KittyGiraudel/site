@@ -46,7 +46,7 @@ The problem with blindly banishing JavaScript from interactive components is tha
 
 While it is strongly encouraged to make websites work without JavaScript (because it can fail to load or execute and be blocked or disabled), it does not mean JavaScript should be avoided at all cost. It means it shouldn’t be used in a critical way.
 
-If there is one thing I learnt while building [a11y-dialog](https://github.com/edenspierkemann/a11y-dialog) and [a11y-toggle](https://github.com/edenspierkemann/a11y-toggle), it’s that JavaScript is necessary for interactive modules to be fully accessible for people using assistive technologies (such as a screen reader for instance).
+If there is one thing I learnt while building [a11y-dialog](https://github.com/edenspiekermann/a11y-dialog) and [a11y-toggle](https://github.com/edenspiekermann/a11y-toggle), it’s that JavaScript is necessary for interactive modules to be fully accessible for people using assistive technologies (such as a screen reader for instance).
 
 A dialog element is not going to be accessible with CSS only. The `aria-hidden` attribute needs to be toggled, the focus needs to be trapped, the escape key needs to close the dialog, and I could go on. 
 
