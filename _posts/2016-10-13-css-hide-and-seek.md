@@ -47,7 +47,7 @@ Problem solved again.
 
 ## The full gist
 
-Here is the final version I came up with, with [another trick from Yvain Liechti](https://twitter.com/ryuran78/status/786531490343550977) to prevent already positionned elements to be stretched:
+Here is the final version I came up with, with [another trick from Yvain Liechti](https://twitter.com/ryuran78/status/786531490343550977) to prevent already positionned elements from being stretched:
 
 ```css  
 .sr-only {
