@@ -52,12 +52,12 @@ A dialog element is not going to be accessible with CSS only. The `aria-hidden` 
 
 Maybe instead of trying to reproduce the exact same module without JavaScript by using CSS hacks, we could display the content in a way that is suited for no JavaScript behaviour. Nothing states that both JS and no-JS environments should behave the same. If a module cannot fully exist without JavaScript, don’t use it in a no-JS environment; find something else.
 
-## Final Thoughts
+## Final thoughts
 
-Be pragmatic about your approach. If something can be done in HTML exclusively, it probably means it should be done in HTML. If the browser support is likely to be an option, fix it with JavaScript.
+**Be pragmatic about your approach.** If something can be done in HTML exclusively, it probably means it should be done in HTML. If the lack of browser support is likely to be an issue, fix it with JavaScript.
 
 If something needs interactivity and state handling, it is likely to be a job for JavaScript, not CSS. A CSS hack is not any better than a clean JavaScript solution.
 
 If you want to make it work without JavaScript: go simple. Accessible content powered by clean code is better than non-accessible content made with hacks.
 
-With that, happy coding. :)
+With that said, happy coding. 💖
