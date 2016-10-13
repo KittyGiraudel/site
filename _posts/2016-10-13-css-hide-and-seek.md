@@ -53,15 +53,15 @@ Here is the final version I came up with, with [another trick from Yvain Liechti
 .sr-only {
   border: 0 !important;
   bottom: auto !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
   height: 1px !important;
-  overflow: hidden;
+  overflow: hidden !important;
   padding: 0 !important;
   position: absolute !important;
   right: auto !important;
   width: 1px !important;
-  white-space: nowrap;
+  white-space: nowrap !important;
 }
 ```
   
