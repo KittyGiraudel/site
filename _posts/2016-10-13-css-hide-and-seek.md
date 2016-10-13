@@ -67,13 +67,14 @@ Here is the final version I came up with, with [another trick from Yvain Liechti
 
 ### Warning
 
-You should be masking only text, this way. In other words, there shouldn't be any focusable element **inside** your hidden tag. This would produce annonyiong behaviors, since browsers scroll to the focused tag. If it's hidden, user won't know where the focus has gone to. And that's really bad. Try another solution to accomplish this.
+This technique should only be used to mask **text**. In other words, there shouldn’t be any focusable element **inside** the hidden element. This could lead to annoying behaviours, like scrolling to an invisible element.
 
-However you may want to hide a focusable element **itself**. You usually do this for **skip links**. [Skip links are a WCAG 2.0 technique](https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1), but most of the time we hide them until they get the focus.
+That being said, you may want to hide a focusable element **itself**; a common candidate are **skip links** ([a WCAG 2.0 technique](https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1)). Most of the time we hide them until they get the focus.
 
-[Bootstrap](https://github.com/twbs/bootstrap/blob/cf5d94f6d5685c371dcb157af74a3c6b14ec8d8e/scss/mixins/_screen-reader.scss) and [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate/blob/a2356c1cbfc560c2b140d4ab507c2a4fdc9f58f0/src/css/main.css#L119) have a pretty good solution for this: another class meant to reset properties.
+[Bootstrap](https://github.com/twbs/bootstrap/blob/cf5d94f6d5685c371dcb157af74a3c6b14ec8d8e/scss/mixins/_screen-reader.scss) and [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate/blob/a2356c1cbfc560c2b140d4ab507c2a4fdc9f58f0/src/css/main.css#L119) have a pretty good solution for this: another class meant to reset these properties.
 
-And since I changed the hiding class, I need to update this showing class too. Here it is:
+Here is the adapted version:
+
 ```css
 .sr-only-focusable:focus,
 .sr-only-focusable:active {
@@ -86,6 +87,7 @@ And since I changed the hiding class, I need to update this showing class too. H
   white-space: normal !important;
 }
 ```
+
 ## Go for it
   
 You can find it [on CodePen](http://codepen.io/ffoodd/pen/gwKZyq?editors=1100#) or in [this Gist](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034). What do you think?
