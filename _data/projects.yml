@@ -1,3 +1,10 @@
+
+
+- name: react-a11y-dialog
+  description: "A React component wrapper around a11y-dialog."
+  link: https://github.com/HugoGiraudel/react-a11y-dialog
+  category: JavaScript
+
 - name: Scrabble-Helper
   description: "A CLI helper for Scrabble."
   link: https://github.com/HugoGiraudel/scrabble-helper
