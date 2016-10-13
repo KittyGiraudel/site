@@ -1,5 +1,5 @@
 ---
-title: "CSS Hide-and-Seek
+title: "CSS Hide-and-Seek"
 tags:
   - css
   - accessibility
