@@ -47,19 +47,17 @@ Problem solved again.
 
 ## Wrapping things up
 
-Here is the final version I came up with, with [another trick from Yvain Liechti](https://twitter.com/ryuran78/status/786531490343550977) to prevent already positionned elements from being stretched:
+Here is the final version I came up with:
 
 ```css  
 .sr-only {
   border: 0 !important;
-  bottom: auto !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   clip-path: inset(50%) !important;
   height: 1px !important;
   overflow: hidden !important;
   padding: 0 !important;
   position: absolute !important;
-  right: auto !important;
   width: 1px !important;
   white-space: nowrap !important;
 }
@@ -78,7 +76,6 @@ Here is the adapted version:
 ```css
 .sr-only-focusable:focus,
 .sr-only-focusable:active {
-  clip: auto !important;
   clip-path: none !important;
   height: auto !important;
   overflow: visible !important;
