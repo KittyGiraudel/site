@@ -53,7 +53,8 @@ Here is the final version I came up with:
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
-  clip-path: inset(50%) !important;
+  -webkit-clip-path: inset(50%) !important;
+          clip-path: inset(50%) !important;
   height: 1px !important;
   overflow: hidden !important;
   padding: 0 !important;
@@ -76,10 +77,11 @@ Here is the adapted version:
 ```css
 .sr-only-focusable:focus,
 .sr-only-focusable:active {
-  clip-path: none !important;
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+          clip-path: none !important;
   height: auto !important;
   overflow: visible !important;
-  position: static !important;
   width: auto !important;
   white-space: normal !important;
 }
@@ -88,3 +90,25 @@ Here is the adapted version:
 ## Go for it
   
 You can find it [on CodePen](http://codepen.io/ffoodd/pen/gwKZyq?editors=1100#) or in [this Gist](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034). What do you think?
+
+## Edit
+10/19/2016
+
+### Screen readers and touch devices
+
+Seeking some testers to make sure I didn't do any regressions, [Johan Ramon met a strange bug with VoiceOver](https://twitter.com/johan_ramon/status/788372720224526336). Digging further with [Sylvain Pigeard](https://github.com/PigeardSylvain) we found that `position: static` was buggy on iOS 10 + VO when `.sr-only-focusable` were focused.
+
+As we thought we discovered a real bug, I headed up to Bootstrap in order to open an issue. But it came out that [an issue was already opened, inovking TalkBack too](https://github.com/twbs/bootstrap/issues/20732). I shared our result to contribute, then [Patrick H. Lauke](https://twitter.com/patrick_h_lauke) did an awesome (and still in progress) work to determinate and describe precisely the bugs. As a result, he filled many bugs:
+
+* [Narrator](https://microsoftaccessibility.uservoice.com/forums/307429-microsoft-accessibility-feedback/suggestions/16717318-focusable-elements-should-fire-focus-event-recei), included in Windows 10 and Windows Phone;
+* [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=657157), impacting TalkBack on Android;
+* [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1000082) — this one was already opened, but also by Patrick Lauke recently;
+* and finally, [two](https://bugs.webkit.org/show_bug.cgi?id=116046 "First webkit bug") [bugs](https://bugs.webkit.org/show_bug.cgi?id=163658 "Second webkit bug") for Webkit, impacting VoiceOver.
+
+So. In fact, **skip links don't work with screen readers on touch devices at the time of writing**. Nice.
+
+### SEO
+
+[Steve Faulkner](https://twitter.com/stevefaulkner) from [the Pacielle Group](https://www.paciellogroup.com/blog/) asked to the Google Webmaster Central Help Forum directly if [extra context for vision impaired users has a negative effect on search ranking?](https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ).
+
+Short answer: **nope**. However visually hidden content are considered secondary, in order to prevent abuses. And that's great.
