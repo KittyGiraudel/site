@@ -106,6 +106,6 @@ So. In fact, **skip links don’t work with screen readers on touch devices at t
 
 ### SEO
 
-[Steve Faulkner](https://twitter.com/stevefaulkner) from [the Pacielle Group](https://www.paciellogroup.com/blog/) asked to the Google Webmaster Central Help Forum directly if [extra context for vision impaired users has a negative effect on search ranking?](https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ).
+[Steve Faulkner](https://twitter.com/stevefaulkner) from [the Paciello Group](https://www.paciellogroup.com/blog/) asked to the Google Webmaster Central Help Forum directly if [extra context for vision impaired users has a negative effect on search ranking?](https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ).
 
 Short answer: **nope**. However visually hidden content are considered secondary, in order to prevent abuses. And that's great.
