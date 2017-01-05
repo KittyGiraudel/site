@@ -1,9 +1,15 @@
+- event: DEVit Conference 2017
+  link: http://devitconf.org/
+  location: Thessaloniki, Greece
+  date: 2017-05-20 12:00:00 +0100
+
 - event: From The Front
   link: https://2016.fromthefront.it/
   location: Bologna, Italy
   date: 2016-09-15 12:00:00 +0100
+    Slides: https://speakerdeck.com/hugogiraudel/local-styling-with-css-modules
 
-- event: DEVit Conference
+- event: DEVit Conference 2016
   link: http://devitconf.org/
   location: Thessaloniki, Greece
   date: 2016-05-20 12:00:00 +0100
