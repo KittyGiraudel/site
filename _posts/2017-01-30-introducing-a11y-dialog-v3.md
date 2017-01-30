@@ -7,7 +7,7 @@ tags:
 ---
 
 
-Just a couple of words to talk about the work I’ve done to get a11y-dialog v3.0.0 out of the door, and so you can safely upgrade to the newest and shiniest!
+Just a couple of words to talk about the work I’ve done to get [a11y-dialog v3.0.0](https://github.com/edenspiekermann/a11y-dialog/releases/tag/3.0.0) out of the door, and so you can safely upgrade to the newest and shiniest!
 
 All in all, it’s quite a big version as the script has been almost entirely rewritten. There are not much rationale behind it except that it seemed like a good time to dust everything.
 
