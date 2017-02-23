@@ -1,12 +1,6 @@
 ul, ol {
-  padding-left: 0;
-  list-style-position: inside;
-  margin-bottom: 1.5em;
-}
-
-li:not([class]) {
   padding-left: 1em;
-  text-indent: -1em;
+  margin-bottom: 1.5em;
 }
 
 .list {
