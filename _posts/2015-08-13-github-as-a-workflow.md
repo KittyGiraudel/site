@@ -117,7 +117,7 @@ The comments on the pull-request can be used to discuss the story or specific ta
 
 Once all checkboxes from the description have been checked, the name of the pull-request can be updated to `[RFR]` for *Ready For Review*. Ideally, the person checking the last bullet might want to ping someone to get the reviewing process started. Doing so avoid having a pull-request done but unmerged because nobody has reviewed it.
 
-To review a pull-request, we use GitHub inline comments in the *Files changed* tab. In there, we can comment any line to ask for modification. Adding a line comment notifies the owner of the pull-request so that he knows he has some re-working to do, and the comment shows up in the *Conversation* tab.
+To review a pull-request, we use GitHub inline comments in the *Files changed* tab. In there, we can comment any line to ask for modification. Adding a line comment notifies the owner of the pull-request so that they know they have some re-working to do, and the comment shows up in the *Conversation* tab.
 
 <figure class="figure">
   <img src="/assets/images/github-as-a-workflow/05.png" alt="GitHub inline comments are the ideal way for collaborating on code" />
