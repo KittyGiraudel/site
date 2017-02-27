@@ -10,7 +10,7 @@ tags:
 
 I am a French front-end developer based in Berlin. After a couple of years working as a developer in the French banking industry, I had the great opportunity to join [Edenspiekermann](http://edenspiekermann.com) in Berlin to work on client projects. I recently quit to join [N26](https://n26.com/) in order to improve mobile banking in Germany and Europe.
 
-I dare call myself an active open-source community member as I have contributed to many projects, as well as initiated a few of my own as well. Among them, let's mention [Browserhacks](http://browserhacks.com), [SassDoc](http://sassdoc.com), [Sass Guidelines](http://sass-guidelin.es) and [Sass Compatibility](http://sass-compatibility.github.io) and the [SitePoint Sass Reference](http://www.sitepoint.com/sass-reference/).
+I dare call myself an active open-source community member as I have contributed to many projects, as well as initiated a few of my own as well. Among them, let’s mention [Browserhacks](http://browserhacks.com), [SassDoc](http://sassdoc.com), [Sass Guidelines](http://sass-guidelin.es), [Simplified JavaScript Jargon](http://jargon.js.org) and [a11y-dialog](https://edenspiekermann.github.com/a11y-dialog).
 
 Early 2014, I co-authored with [Raphaël Goetter](http://goetter.fr) a French book on CSS 3 entitled [CSS 3 Pratique du Design Web](http://css3-pratique.fr/). In 2016, I published a book about Sass entitled [Jump Start Sass](https://learnable.com/books/jump-start-sass), with [Miriam Suzanne](http://www.miriamsuzanne.com/).
 
