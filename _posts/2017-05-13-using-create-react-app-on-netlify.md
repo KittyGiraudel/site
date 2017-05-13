@@ -29,7 +29,7 @@ The solution ends up being super simple. Duplicate the `index.html` file under `
 
 ```json
 {
-  "build": "react-scripts build && cp build/index.html build/404.html",
+  "build": "react-scripts build && cp build/index.html build/404.html"
 }
 ```
 
