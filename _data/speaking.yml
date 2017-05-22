@@ -2,6 +2,8 @@
   link: http://devitconf.org/
   location: Thessaloniki, Greece
   date: 2017-05-20 12:00:00 +0100
+  actions:
+    Slides: https://speakerdeck.com/hugogiraudel/clever-stop-being-so-1
 
 - event: From The Front
   link: https://2016.fromthefront.it/
