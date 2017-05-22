@@ -10,6 +10,7 @@
   location: Bologna, Italy
   date: 2016-09-15 12:00:00 +0100
   actions:
+    Video: https://www.youtube.com/watch?v=ouFvuwMBgfk&t=71s
     Slides: https://speakerdeck.com/hugogiraudel/local-styling-with-css-modules
 
 - event: DEVit Conference 2016
@@ -17,6 +18,7 @@
   location: Thessaloniki, Greece
   date: 2016-05-20 12:00:00 +0100
   actions:
+    Video: https://www.youtube.com/watch?v=LIUdaegJi20
     Slides: https://speakerdeck.com/hugogiraudel/local-styling-with-css-modules
 
 - event: Frontend Conference Zurich
