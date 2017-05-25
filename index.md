@@ -62,4 +62,4 @@ I like to think that I am an active open-source contributor. My latest project i
 {% endif %}
 {% endfor %}
 
-I also enjoy talking at conferences when I find time. I will be speaking at [{{ next_event_name }}]({{ next_event_link }}), on {{ next_event_date | date: "%B %d, %Y" }}. Come say hi! You can have a look at [my past talks](/speaking/).
+I also enjoy talking at conferences when I find time. If you would like me to attend one of your events, feel free to get in touch! You can have a look at [my past talks](/speaking/).{% if next_event_name %} Note that I will be speaking at [{{ next_event_name }}]({{ next_event_link }}), on {{ next_event_date | date: "%B %d, %Y" }}. Come say hi!{% endif %}
