@@ -63,11 +63,11 @@
     var anchor = $(TOC_ANCHOR_SELECTOR),
         nav  = document.createElement('nav'),
         frag = document.createDocumentFragment()
-    
+
     nav.setAttribute('role', 'navigation')
     nav.innerHTML = getToCMarkup()
     frag.appendChild(nav)
-    
+
     insertAfter(frag, anchor)
   }
 
@@ -105,7 +105,7 @@
       url: options.url || DISQUS_OPTIONS.url
     }
   }
-  
+
   function App (options) {
     var shouldLoadComments = options.loadComments || true
     var shouldCreateToC = (isArticlePage() && options.createToC) || false
@@ -119,6 +119,25 @@
     shouldLoadComments && loadComments(disqusOptions)
     shouldCreateToC && createToC()
   }
+
+  // Install service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/service-worker.js', { scope: '/' })
+      .then(function (registration) {
+        console.log(
+          '%cserviceworker:registration', 'color:green',
+          `successful with scope: ${registration.scope}`
+        )
+      })
+      .catch(function (error) {
+        console.error(
+          '%cserviceworker:registration', 'color:red',
+          'failed: ', error
+        )
+      })
+  }
+}())
 
   global.App = App;
 
