@@ -11,8 +11,8 @@ http://ogp.me/ns/article#">
   <meta name="robots" content="noindex,nofollow">
   <meta http-equiv="refresh" content="0;url={{ page.external.url }}" />
   {% else %}
-  <meta name="robots" content="index,follow"> 
-  <meta name="revisit-after" content="1 days"> 
+  <meta name="robots" content="index,follow">
+  <meta name="revisit-after" content="1 days">
   {% endif %}
 
   <!-- Page specific content -->
@@ -21,7 +21,7 @@ http://ogp.me/ns/article#">
   {% if page.tags %}
   <meta name="keywords" content="{{ page.tags|join: ',' }}" />
   {% endif %}
-  <meta name="author" content="{% if page.guest %}{{ page.guest }}{% else %}Hugo Giraudel{% endif %}"> 
+  <meta name="author" content="{% if page.guest %}{{ page.guest }}{% else %}Hugo Giraudel{% endif %}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
   <!-- Stylesheets -->
@@ -33,13 +33,12 @@ http://ogp.me/ns/article#">
   {% include utilities.js %}
   loadFont('sg', '/assets/css/fonts/data-woff.css', '/assets/css/fonts/data-woff2.css', '/assets/css/fonts/data-ttf.css');
   </script>
-  
+
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/rss" | prepend: site.baseurl | prepend: site.url }}" />
 
   <!-- Favicon -->
-  <link rel="icon" href="/assets/images/favicon.png">
-  <!--[if IE]><link rel="shortcut icon" href="/assets/images/favicon.ico"><![endif]-->
+  <link rel="shortcut icon" href="/assets/images/favicon.png">
 
   <!-- Open Graph data -->
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
@@ -47,7 +46,7 @@ http://ogp.me/ns/article#">
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
   <meta property="og:site_name" content="HugoGiraudel.com" />
-  
+
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@HugoGiraudel">
