@@ -1,9 +1,6 @@
+<script src="/assets/js/main.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  loadJS('{{ "/assets/js/main.min.js" | prepend: site.baseurl }}', init);
-});
-
-function init() {
   var app = new App({
     createToC: {% if page.summary %}true{% else %}false{% endif %},
     loadComments: {% unless page.comments == false or page.external %}true{% else %}false{% endunless %},
@@ -12,12 +9,10 @@ function init() {
       url: {% if page.disqus %}'{{ page.disqus }}'{% else %}window.location.href{% endif %},
       name: 'hugogiraudel'
     }
-  });
-}
+  })
+})
 </script>
-
 <script>
-// Install service worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('/service-worker.js', { scope: '/' })
