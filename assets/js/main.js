@@ -127,7 +127,7 @@
       .then(function (registration) {
         console.log(
           '%cserviceworker:registration', 'color:green',
-          `successful with scope: ${registration.scope}`
+          'successful with scope: ' + registration.scope
         )
       })
       .catch(function (error) {
@@ -137,8 +137,6 @@
         )
       })
   }
-}())
 
   global.App = App;
-
 }(window));
