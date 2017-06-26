@@ -47,6 +47,8 @@ exclude:
   - LICENSE
   - node_modules
   - sw-precache-config.js
+include:
+  - _redirects
 
 # Navigation
 nav:
