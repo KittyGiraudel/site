@@ -4,7 +4,7 @@ email: hugo.giraudel@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   My name is Hugo Giraudel, I am a French front-end developer based in Berlin, focused on accessibility and inclusivity.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://hugogiraudel.com" # the base hostname & protocol for your site
+url: "https://hugogiraudel.com" # the base hostname & protocol for your site
 twitter_username: HugoGiraudel
 github_username:  HugoGiraudel
 
