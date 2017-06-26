@@ -1,1 +1,2 @@
-/rss/index.html /rss/index.xml 301
+/rss /rss/index.xml 301!
+/rss/* /rss/index.xml 301!
