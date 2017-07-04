@@ -1,4 +1,10 @@
-- event: DEVit Conference 2017
+- event: CSS-Minsk-JS
+  link: http://css-minsk-js.by/
+  location: Minsk, Republic of Belarus
+  date: 2017-09-10 12:00:00 +0100
+  actions:
+
+- event: DEVit Conference
   link: http://devitconf.org/
   location: Thessaloniki, Greece
   date: 2017-05-20 12:00:00 +0100
@@ -14,7 +20,7 @@
     Video: https://www.youtube.com/watch?v=ouFvuwMBgfk&t=71s
     Slides: https://speakerdeck.com/hugogiraudel/local-styling-with-css-modules
 
-- event: DEVit Conference 2016
+- event: DEVit Conference
   link: http://devitconf.org/
   location: Thessaloniki, Greece
   date: 2016-05-20 12:00:00 +0100
