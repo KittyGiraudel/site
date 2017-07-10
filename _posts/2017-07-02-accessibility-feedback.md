@@ -79,7 +79,7 @@ It’s super insightful but there are hundreds of response so I thought I’d wr
 
 * A person with Asperger syndrom says certain types of humor are “hard to process”. <sup>[[1]](https://twitter.com/pherring/status/871087733661462528)</sup>
 
-* Some people —some with ADHD or <abbr title="Post Traumatic Stress Disorder">PTSD</a> (Post Traumatic Stress Disorder), some without— share their experience about zoning out and following links like Alice and the rabbit hole. <sup>[[1]](https://twitter.com/soylentqueen/status/871240090181390336)</sup> <sup>[[2]](https://twitter.com/penguinmlle/status/871128658303479809)</sup> <sup>[[3]](https://twitter.com/linzlovesyou/status/871264822439985153)</sup>
+* Some people —some with ADHD or <abbr title="Post Traumatic Stress Disorder">PTSD</abbr> (Post Traumatic Stress Disorder), some without— share their experience about zoning out and following links like Alice and the rabbit hole. <sup>[[1]](https://twitter.com/soylentqueen/status/871240090181390336)</sup> <sup>[[2]](https://twitter.com/penguinmlle/status/871128658303479809)</sup> <sup>[[3]](https://twitter.com/linzlovesyou/status/871264822439985153)</sup>
 
 * A person suffering from epilepsy says how the lack of content warnings is a problem. <sup>[[1]](https://twitter.com/angeltrainee/status/871267069068681216)</sup> <sup>[[2]](https://twitter.com/LittleLittlexo/status/871185188461715456)</sup>
 
