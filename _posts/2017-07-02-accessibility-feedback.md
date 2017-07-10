@@ -49,7 +49,7 @@ It’s super insightful but there are hundreds of response so I thought I’d wr
 
 * Someone having a cerebral palsy shares the same problem and literally cannot use a mouse because of that; they use touch screens instead. <sup>[[1]](https://twitter.com/garyrozanc/status/871061173545963522)</sup>
 
-* Someone says click/tap targets that are either too small to aim precisely, or —interestingly enough— bigger they need to be (such as headline + excerpt instead of just headline). <sup>[[1]](https://twitter.com/csixty4/status/871116171566862337)</sup>
+* Someone says click/tap targets that are either too small to aim precisely, or —interestingly enough— bigger than they need to be (such as headline + excerpt instead of just headline) are sometimes hard to use. <sup>[[1]](https://twitter.com/csixty4/status/871116171566862337)</sup>
 
 * A person explains their fingers sort of stop working after a little while of using the computer / touch screen at which point they have to rely on voice-to-text. <sup>[[1]](https://twitter.com/WhitCoko/status/871108709652496385)</sup>
 
