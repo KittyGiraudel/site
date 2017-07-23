@@ -1,3 +1,8 @@
+- name: express-simple-locale
+  description: "A simple Express middleware to guess the short-locale of a user."
+  link: https://github.com/Papayer-GmbH/express-simple-locale
+  category: JavaScript
+
 - name: react-menu-button
   description: "A React component wrapper around inclusive-menu-button."
   link: https://github.com/HugoGiraudel/react-menu-button
