@@ -9,7 +9,7 @@ tags:
   - sass
 ---
 
-A French front-end developer working at [N26](http://n26.com) in Berlin. Feel free to [read more about me](/about/).
+A French front-end developer working as an accessibility advocate at [N26](http://n26.com) in Berlin. Feel free to [read more about me](/about/).
 
 {% capture last_article_index_suffix %}
   {% assign article_count = site.posts | size %}
