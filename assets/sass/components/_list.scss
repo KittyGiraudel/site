@@ -1,6 +1,11 @@
-ul, ol {
+ul,
+ol {
   padding-left: 1em;
   margin-bottom: 1.5em;
+}
+
+ul ul {
+  margin-bottom: 0;
 }
 
 .list {
@@ -22,7 +27,7 @@ ul, ol {
 
 .list__item:hover,
 .list__item:active {
-  background-color: #EFEFEF;
+  background-color: #efefef;
   transform: translateX(0);
 }
 

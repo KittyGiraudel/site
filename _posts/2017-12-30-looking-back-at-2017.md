@@ -1,0 +1,148 @@
+---
+title: "Looking back at 2017"
+tags:
+  - thoughts
+---
+
+Hey friends! This is the time of the year where I look back at these last 12 months. With emojis, as per us’! It’s a bit long so feel free to skip to what you want to read.
+
+* [Things I’ve done](#things-ive-done)
+  * [Timeline](#timeline)
+  * [On the work side](#on-the-work-side)
+  * [On the personal side](#on-the-personal-side)
+* [Things I’ve learnt](#things-ive-learnt)
+* [Things I’d like to do](#things-id-like-to-do)
+
+## Things I’ve done
+
+### Timeline
+
+📦 **January 30th**. I started the year with releasing the version 3 of [a11y-dialog](https://github.com/edenspiekermann/a11y-dialog), nicely refining the API. I went to release a version 4 (although less interesting) on October 4th. To this day, a11y-dialog remains the open-source project I’m the most happy with. I highly encourage you to use it in your projects. And for y’all React fans, I wrote a component wrapper: [react-a11y-dialog](https://github.com/hugogiraudel/react-a11y-dialog).
+
+👩‍💻 **May 19th**. DEVit in Thessaloniki (Greece) was so much fun last year that I decided to go back in 2017. I went with my friend and co-worker [Mike Smart](https://twitter.com/smartmike) where we conducted a workshop (our very first) on React. It had way more success than originally expected since we ended up with 45 participants! So if you’d like us to run a workshop on React, let us know.
+
+🎤 **May 20th**. Back at DEVit in Thessaloniki (Greece) to talk about diversity in gender and names in our industry. It felt very good not giving a technical talk and focusing on a topic that I think really matters. Also the conference was a blast, just like last year!
+
+🐦 **June 20th**. I went on a Twitter frenzy and did a [100-tweets long thread on accessibility](https://twitter.com/i/moments/877084869309980672) and inclusive design. It contains tips, advice, comments, and all in all a lot of information about these topics.
+
+📦 **July 27th**. I open-sourced the first web project from N26. [express-simple-locale](https://github.com/n26/express-simple-locale) a small Express middleware to retreive the language of a user, intended to replace the more convoluted `express-locale`.
+
+🎤 **September 10th**. I went to Minsk (Republic of Belarus) for the first time, to give my “Clever, stop being so” talk about inclusive design for the CSS-Minsk-JS conference. It was quite interesting realising about the cultural differences between France/Germany and Belarus.
+
+📦 **September 21st**. At N26, we use GitHub releases to list our changes for each release. They present a lot of benefits: they live with the code without having to be versioned, they support Markdown, they’re readable without having to clone the repo… But they are not searchable. Until now! I wrote a [script to search for text within GitHub releases](https://github.com/HugoGiraudel/github-release-search). I hope it helps!
+
+👥 **October**. It was the month when I got the opportunity to take the role of a facilitator in my team, acting as a part-time (unofficial) scrum master (thanks to my friend and outstanding co-worker [Andrea Franke](https://twitter.com/franklyandrea)). I’ve been endorsing that function since, getting more and more interested in processes, agile methodologies and how to create a safe environment for a team to work in.
+
+📦 **October 13th**. After multiple failed attempts at setting up Greenkeeper at work, I decided to make my life easier and wrote a tiny [Node script to check for outdated dependencies](https://github.com/HugoGiraudel/dependency-checker) in a `package.json`. Feel free to go nuts with it!
+
+🎤 **October 26th**. Invited by the kind folks from Locastic to speak at their Tinel event, I gave my very first talk at a local meetup in Split, Croatia. It was a lot of fun and felt super good going back to Croatia after a few years. Also had the tuna steak of a lifetime there!
+
+### On the work side
+
+In September 2016, [Mike Smart](https://twitter.com/smartmike) and I joined N26 to build the new web platform. Over the course of 2017, we have rebuilt the registration process, the Mastercard selection, all the logged-out pages (login, password reset…) and half the website. All of this runs on a unique repository (deployed across multiple servers), giving us the ability to share and reuse infrastructure and components between projects.
+
+We have a lot of freedom to make this entreprise as good as it can be, which gives us room to experiment with a lot of interesting technologies such as [React](https://reactjs.org/), [GraphQL](http://graphql.org/) (with [Apollo](https://www.apollographql.com/)), [Fela](https://fela.js.org), [Cypress](https://www.cypress.io/), [Prettier](https://prettier.io/), [Docker](https://www.docker.com/), [Jenkins](https://jenkins.io/)…
+
+With more projects coming up and a lot of work to do, we have been and still are hiring for our team, currently made of 5 developers from diverse backgrounds and skillsets. We should see 3 new faces joining us during 2018, and I’m very excited to see what we can achieve with such a talented team!
+
+### On the personal side
+
+I started burning out a little mid-2016. I say a little, because it was nowhere near as bad as a proper burnout. But it definitely was noticeable: I stopped writing, I slowed down with my open-source contributions, I spent less time on Twitter…
+
+2017 has been sort of on the same track. But I think I figured out why. As much as I enjoy coding, I get to find it quite boring. We tend to solve the same problems over and over. And while some projects are exciting, all in all, we build the same thing a little different, again and again.
+
+This is why I got really into accessibility and inclusive design. This is why I stopped giving technical talks and started talking about building interfaces with diversity in mind. This is what I want to do now, because I think at the end of the day it matters way more than the name of that function or the character used for indentation.
+
+Therefore if you’d like me to speak at your event in 2018, feel free to get in touch. Let’s see if we can make this happen. :)
+
+## Things I’ve learnt
+
+✨ Prettier is an outstanding project. Of all the technical decisions we made during this year at work, this is the one I’m the most happy with. Even though I was quite skeptical to start with. Having Prettier autoformatting our code on commit massively improved our code review process. Because there is no questioning formatting anymore, comments and questions are now focused on the logic of the code itself rather than its appearance. I highly recommend Prettier to all teams.
+
+---
+
+❗️ Along the same line, I’ve realised how good can be a well-tuned linter. We moved from [standard](https://standardjs.com/) to a custom ESLint configuration to make it play nicely with Prettier. Which allowed us to pimp it further. We added [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) to statically evaluate JSX in order to spot obvious accessibility mistakes. We disabled some rules with extensive documentation explaining why it was worth removing. Most if not all of use have linting integration within our IDE, and we lint (and run prettier) on a pre-commit hook to ensure no incorrect code reaches the repository.
+
+<details markdown="1">
+<summary style="cursor: pointer">➡️ In case you’re interested, here is our ESLint configuration.</summary>
+
+```js
+module.exports = {
+  parser: 'babel-eslint',
+  extends: ['standard', 'standard-react', 'plugin:jsx-a11y/recommended'],
+  plugins: ['jsx-a11y'],
+  env: { jest: true },
+  rules: {
+    // We always want a blank line before a `return` statement. This rule
+    // enforces that and saves us from pinpointing this in every code review.
+    // Ref: https://eslint.org/docs/rules/padding-line-between-statements
+    'padding-line-between-statements': [
+      2,
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: 'return'
+      }
+    ],
+    // These rules conflict with Prettier formatting and therefore need to be
+    // disabled.
+    // Ref: https://eslint.org/docs/rules/operator-linebreak
+    // Ref: https://github.com/xjamundx/eslint-plugin-standard/blob/master/rules/computed-property-even-spacing.js
+    'operator-linebreak': 0,
+    'standard/computed-property-even-spacing': 0,
+    // PropTypes validation does improve readability and understandability of
+    // React components, but authoring and maintaining them everywhere is
+    // unrealistic.
+    // Ref: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+    'react/prop-types': 0,
+    // This rule enforcers that `onClick` handlers come with key handlers as
+    // well. There are cases where this is not what we want, such as for the
+    // `SideTracker` higher-order component.
+    // Ref: https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/click-events-have-key-events.md.
+    'jsx-a11y/click-events-have-key-events': 0,
+    // This rule prevents using the `autofocus` HTML attribute (`autoFocus` in
+    // JSX) because the W3C warns against possible accessibility issues.
+    // Ref: https://w3c.github.io/html/sec-forms.html#autofocusing-a-form-control-the-autofocus-attribute
+    // As long as we don’t abuse this and we pay attention to how we use it,
+    // there is no good reason not to use it.
+    // Ref: https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-autofocus.md.
+    'jsx-a11y/no-autofocus': 0,
+    // By default, this rule expects all form controls to have an associated
+    // label with a `htmlFor` props mapped to their `id` prop *and* that their
+    // label wraps them entirely. This latter behaviour is undesired.
+    // Ref: https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
+    'jsx-a11y/label-has-for': [2, { required: 'id' }]
+  }
+}
+```
+
+</details>
+
+---
+
+✅ Tests are nice. Like, really nice. Throughout the year, I’ve been working hard on our testing setup. My goal was (still is in fact) to make tests easy to write, and enjoyable to run. We’re still not quite there yet, but I’m super happy with what we have so far. It looks more or less like this:
+
+* All helpers are unit-tested with [Jest](https://facebook.github.com/jest) (right now about 93% coverage).
+* All routes are tested with [Supertest](https://github.com/visionmedia/supertest) (expecting 200, 301…).
+* All pages are tested for basic accessibility with [pa11y](https://github.com/pa11y/pa11y) and [outline-audit](https://github.com/edenspiekermann/outline-audit).
+* All critical paths are tested end-to-end with [Cypress](https://www.cypress.io).
+
+Having such a strong focus on testing enabled us to do 195 live releases between March and December (~9 months) without stressing about breaking something. It also allows me to tell new team members what I told the CTO when I got hired: “[I] plan on writing tests and go home on time.” I stand by this, and don’t want any of my teammate to pull extra hours, especially for something that could have been prevented with proper test coverage.
+
+---
+
+💢 On most projects, technical expertise is not the bottleneck. It does matter. It does help to have experienced developers in a team. But the idea under which having a team made of highly skilled developers is going to outperform is very misguided. Most problems coming up, especially in a fast growing company, are human-related issues (lack of communication, ego clashes, misunderstandings…). During this year, I’ve tried my best to give a safe space for my teams to enable everyone to work at their best, no matter their technical skills to begin with. I only want to keep doing that in 2018.
+
+## Things I’d like to do
+
+I know it’s a bit out of scope for the yearly retrospective, but I think it’s worth mentioning what I would like to focus on for next year. If only for me.
+
+👭 I get my energy from enabling people to work better. Both from a technical standpoint as well as a process and communication side. I would like to keep doing that next year. I learn a lot doing so, and develop a social side of me that has long been lagging behind. It’s helpful, both for me and other people.
+
+🌱 I should try to be a bit more healthy next year. Maybe do some sports, eat better, or at least more regularly. Clean my flat more often. All in all, get my shit together. I tend to enter phases where I just let myself go, and that’s not good. I need to work on that.
+
+📝 I didn’t write much in 2017, and in many subtle ways, I realise I’ve missed it. Maybe I should try to write a bit more in 2018, even if it’s only small write-ups. I’d like to share more of what I do at work, because I’m very proud of the platform our team have been building. Hopefully I’ll be able to write about small parts every now and then.
+
+---
+
+I think that’s it for this year, folks. I hope you had it good yourself, and are ready for the new year!
