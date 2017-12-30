@@ -37,6 +37,8 @@ Hey friends! This is the time of the year where I look back at these last 12 mon
 
 🎤 **October 26th**. Invited by the kind folks from Locastic to speak at their Tinel event, I gave my very first talk at a local meetup in Split, Croatia. It was a lot of fun and felt super good going back to Croatia after a few years. Also had the tuna steak of a lifetime there!
 
+💻 **November 17th.** I switched from Sublime Text 3 to Visual Studio Code after my co-workers convinced me to try it out. It took me half a day on VSC to realise I wasn’t switching back. I’ve been delighted to work within this IDE since, it’s brilliant.
+
 ### On the work side
 
 In September 2016, [Mike Smart](https://twitter.com/smartmike) and I joined N26 to build the new web platform. Over the course of 2017, we have rebuilt the registration process, the Mastercard selection, all the logged-out pages (login, password reset…) and half the website. All of this runs on a unique repository (deployed across multiple servers), giving us the ability to share and reuse infrastructure and components between projects.
