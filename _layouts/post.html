@@ -8,8 +8,8 @@ theme: t-blue
 
   <div class="title-wrapper">
     <div>
-    {% if page.title %} 
-      <h1 class="title" itemprop="title">{{ page.title }}</h1> 
+    {% if page.title %}
+      <h1 class="title" itemprop="title">{{ page.title }}</h1>
     {% endif %}
     </div>
   </div>
@@ -29,6 +29,8 @@ theme: t-blue
   </div>
 
   {% unless page.comments == false or page.external %}
-    <div id="disqus_thread" itemprop="comment"></div> 
+  {% comment %}
+    <div id="disqus_thread" itemprop="comment"></div>
+  {% endcomment %}
   {% endunless %}
 </article>
