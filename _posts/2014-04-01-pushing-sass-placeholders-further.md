@@ -149,7 +149,7 @@ You can have a look at the fully commented code [here on SassMeister](http://sas
 
 <p class="sassmeister" data-gist-id="9910527" data-height="480"><a href="http://sassmeister.com/gist/9910527">Play with this gist on SassMeister.</a></p>
 
-While the code does the job well, I am not sure how I feel about this. To be perfectly honest with you guys, I think I'd rather use the version from yesterday's article (which I already do at work) and this for two reasons.
+While the code does the job well, I am not sure how I feel about this. To be perfectly honest with you people, I think I'd rather use the version from yesterday's article (which I already do at work) and this for two reasons.
 
 First, there is a big problem with this version: since we are relying on the fact CSS declarations can be stored as keys/values in a Sass map, it makes it impossible to use nesting (including `&`), inner mixins, or `@extend` in the mixin core. Thus, it does the job for simple placeholders as we've seen in our demo, but wouldn't work for more complex pieces of code.
 

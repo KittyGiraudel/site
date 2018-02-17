@@ -237,7 +237,7 @@ Let's try it before adding the last bites to our code. Once again, we simply run
 <figcaption>Outputing optimization stats</figcaption>
 </figure>
 
-Keep it up guys, we are almost done! We just have to display progress output if the quiet mode is off.
+Keep it up people, we are almost done! We just have to display progress output if the quiet mode is off.
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/quiet-mode.png" alt="" />

@@ -15,7 +15,7 @@ tags:
 
 > **Edit (2013/02/21):** this post might contain outdated informations since I [moved my site to Jekyll and GitHub Pages](http://hugogiraudel.com/2013/02/21/jekyll/).
 
-Hey guys! I recently blogged about the tools I use for front-end development, but someone pointed out on Twitter I didn't tell anything about my development environment. Let's fix my mistake and talk about it!
+Hey people! I recently blogged about the tools I use for front-end development, but someone pointed out on Twitter I didn't tell anything about my development environment. Let's fix my mistake and talk about it!
 
 Well, first of all, it is kind of complicated because I work at 3 different places, which means I have 3 different development environments (5 actually, I have 3 computers at home). There is -well- home, but I also happen to do some stuff at school or at work when I have some time, mostly during the lunch break.
 
@@ -93,5 +93,5 @@ When I have to do some server side stuff, mostly PHP (sometimes MySQL), I use Ea
 
 Well I guess I have covered pretty much everything I thought about. If I missed anything, just tell me and I will edit the post.
 
-What about you guys? What's your development environment?
+What about you people? What's your development environment?
 

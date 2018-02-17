@@ -37,7 +37,7 @@ Feel free to add as many classes and attributes as needed, and to use a CSS prep
 Regarding browser support, I came up with a solution working from Internet Explorer 9 gracefully degrading on Internet Explorer 8. As far as I know, you simply can't do this on IE 8 without images (or SVG or whatever).
 
 ## Game on! 
-y much it. In a week or so, I'll update the post with my solution and I'll talk about the more creative and effective proposals you gave me. Surprise me guys, and be sure to have fun doing it. It's a tricky CSS brain-teaser, I'm sure you're going to love it. ;)
+y much it. In a week or so, I'll update the post with my solution and I'll talk about the more creative and effective proposals you gave me. Surprise me people, and be sure to have fun doing it. It's a tricky CSS brain-teaser, I'm sure you're going to love it. ;)
 
 To help you start, I created [a very basic CodePen](http://codepen.io/HugoGiraudel/pen/cffeb2facdf797f46617e9615105f38d) you can fork and link to in the comments.
 

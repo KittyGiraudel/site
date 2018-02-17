@@ -402,13 +402,13 @@ The code might be complicated to understand but it's really not that hard once y
 }
 ```
 
-*Note: a couple of guys came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.
+*Note: a couple of people came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.
 
 ## Foreach
 
 The last part of my talk was probably slightly more technical thus more complicated. I wanted to show where we can go with Sass, especially with lists and loops.  
 
-To fully understand it, I thought it was better to introduce Sass loops and lists (remember there was quite a few guys not knowing a bit about Sass in the room).
+To fully understand it, I thought it was better to introduce Sass loops and lists (remember there was quite a few people not knowing a bit about Sass in the room).
 
 ```scss
 /* All equivalents */

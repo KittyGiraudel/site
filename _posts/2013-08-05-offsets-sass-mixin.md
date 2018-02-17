@@ -10,7 +10,7 @@ tags:
 
 Over the last months, I have seen a ton of mixins to handle offsets when dealing with absolute / fixed / relative positioning. I also made a lot of them myself. And in the end, none of them really suited me. Either they were far too long or complicated, or the calling didn't feel right to me.
 
-A couple of days ago I came with a fairly new solution (to me) and I must say I am pretty satisfied with it so far. I might stick with this mixin for the next projects. Thus, I wanted to share it with you guys.
+A couple of days ago I came with a fairly new solution (to me) and I must say I am pretty satisfied with it so far. I might stick with this mixin for the next projects. Thus, I wanted to share it with you people.
 
 But first, let's take a minute to think about what our mixin have to do:
 

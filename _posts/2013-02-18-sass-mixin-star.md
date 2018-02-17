@@ -189,7 +189,7 @@ Here is the full code for the mixin. As you can see, it is really not that big (
 
 ## Final words 
 
-Well guys, that’s pretty much it. You have a perfectly working [Sass mixin](http://codepen.io/HugoGiraudel/pen/Lcexi) to create customized single-element 6-point stars in CSS. Pretty neat, right?
+Well people, that’s pretty much it. You have a perfectly working [Sass mixin](http://codepen.io/HugoGiraudel/pen/Lcexi) to create customized single-element 6-point stars in CSS. Pretty neat, right?
 
 Using it couldn't be simpler:
 

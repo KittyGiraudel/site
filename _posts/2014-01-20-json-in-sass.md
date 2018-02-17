@@ -20,7 +20,7 @@ body::before {
 }
 ```
 
-Well, you have to tell it is actually kind of cool to be able to do so, right? This is neat! Well fasten your belt guys because [Fabrice Weinberg](https://twitter.com/fweinb) and I pushed this to an upper level.
+Well, you have to tell it is actually kind of cool to be able to do so, right? This is neat! Well fasten your belt people because [Fabrice Weinberg](https://twitter.com/fweinb) and I pushed this to an upper level.
 
 ## Introducing SassyJSON
 
@@ -30,7 +30,7 @@ Fabrice and I recently released [SassyJSON](https://github.com/HugoGiraudel/Sass
 
 On my side, I already found a usecase. You may know [Bootcamp](https://github.com/thejameskyle/bootcamp), a Jasmine-like testing framework made in Sass for Sass by [James Kyle](https://twitter.com/thejameskyle) (with a Grunt port). I am using Bootcamp for [SassyLists](https://github.com/Team-Sass/SassyLists). I am using Bootcamp for [SassyMatrix](https://github.com/HugoGiraudel/SassyMatrix). We are using Bootcamp for [SassyJSON](https://github.com/HugoGiraudel/SassyJSON). This makes sure our Sass code is clean and efficient.
 
-Back to my point: Bootcamp 2 (work in progress) [will use maps](https://github.com/thejameskyle/bootcamp/issues/75#issuecomment-32131963) to handle test results. Encoding this map to JSON makes it easy to parse it with JavaScript in order to make a real page for tests result, kind of like Jasmine SpecRunner. This is cool. Picture it guys:
+Back to my point: Bootcamp 2 (work in progress) [will use maps](https://github.com/thejameskyle/bootcamp/issues/75#issuecomment-32131963) to handle test results. Encoding this map to JSON makes it easy to parse it with JavaScript in order to make a real page for tests result, kind of like Jasmine SpecRunner. This is cool. Picture it people:
 
 1. You write a Sass library
 2. You write Jasmine-like tests for your library

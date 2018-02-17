@@ -219,7 +219,7 @@ Anyway, this was waaaaay too much for me. **The point of CSS preprocessors is to
 
 ## Why I think Sass is better 
 
-I won't make a complete and detailed comparison between Sass and LESS because some guys did it very well already ([Chris Coyier](http://css-tricks.com/sass-vs-less/), [Kewin Powell](http://fr.slideshare.net/utbkevin/less-vs-sass-css-precompiler-showdown-14068991), etc.). I'll only cover the few points I talked about earlier.
+I won't make a complete and detailed comparison between Sass and LESS because some people did it very well already ([Chris Coyier](http://css-tricks.com/sass-vs-less/), [Kewin Powell](http://fr.slideshare.net/utbkevin/less-vs-sass-css-precompiler-showdown-14068991), etc.). I'll only cover the few points I talked about earlier.
 
 ### Sass and conditional statements
 

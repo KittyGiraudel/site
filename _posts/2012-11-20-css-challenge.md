@@ -22,7 +22,7 @@ Will you be able to do this (I'm talking about the small line behind the text) f
 * No HTTP request, no image, no JavaScript
 * The best browser support the better of course
 
-I can't wait to see the way you'll figure this out guys. I personally found something with a few downsides sadly. I'm sure some of you will be able to find a kick-ass solution. ;)
+I can't wait to see the way you'll figure this out people. I personally found something with a few downsides sadly. I'm sure some of you will be able to find a kick-ass solution. ;)
 
 Good luck!
 

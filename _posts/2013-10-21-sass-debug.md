@@ -234,6 +234,6 @@ The only problem left is that if you debug a single value, it will wrap it into 
 
 ## Final words
 
-That's pretty much it guys. I hope you like it. This has been added to [SassyLists](https://github.com/Team-Sass/Sass-list-functions), so if you think of something to improve it be sure to share!
+That's pretty much it people. I hope you like it. This has been added to [SassyLists](https://github.com/Team-Sass/Sass-list-functions), so if you think of something to improve it be sure to share!
 
 Some of you might find this kind of overkill. Then you can try [this `@debug`-powered version](https://gist.github.com/piouPiouM/7030210) by [Mehdi Kabab](http://twitter.com/pioupioum) that does pretty much the same thing but in the Ruby console.

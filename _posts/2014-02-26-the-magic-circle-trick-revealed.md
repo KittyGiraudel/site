@@ -7,7 +7,7 @@ tags:
 
 > Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](http://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/).
 
-Time's up guys! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it's pretty cool to dig into your code to see how you've worked around the problem. 
+Time's up people! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it's pretty cool to dig into your code to see how you've worked around the problem. 
 
 Among the possible solutions, I thought about:
 
@@ -153,7 +153,7 @@ One of the rules of the game was to keep the same gutter between left and right 
 }
 ```
 
-Boxes spread across half the width of the parent. Some of you guys did use `calc` to handle the gutter between left and right boxes right away but it lowers the browser support so we'll do it differently. For horizontal gutter, here is how we can handle it:
+Boxes spread across half the width of the parent. Some of you people did use `calc` to handle the gutter between left and right boxes right away but it lowers the browser support so we'll do it differently. For horizontal gutter, here is how we can handle it:
 
 ```scss
 // Inner box wrapper
@@ -289,7 +289,7 @@ When it comes to Internet Explorer 8, or actually any browser not supporting any
 
 ## Your clever solutions 
 
-[Giulia Alfonsi](http://codepen.io/electric_g/pen/tyAcn), [Lokesh Suthar](http://codepen.io/magnus16/pen/sadEg), [One div](http://codepen.io/onediv/pen/Krypb), [mh-nichts](http://codepen.io/mh-nichts/pen/Giokl) and [Hugo Darby-Brown](http://codepen.io/hugo/pen/mIvfz) made it either with borders or box-shadows. Some of them did use `calc` for positioning/sizing although that wasn't necessary. Good job guys.
+[Giulia Alfonsi](http://codepen.io/electric_g/pen/tyAcn), [Lokesh Suthar](http://codepen.io/magnus16/pen/sadEg), [One div](http://codepen.io/onediv/pen/Krypb), [mh-nichts](http://codepen.io/mh-nichts/pen/Giokl) and [Hugo Darby-Brown](http://codepen.io/hugo/pen/mIvfz) made it either with borders or box-shadows. Some of them did use `calc` for positioning/sizing although that wasn't necessary. Good job people.
 
 [Rafał Krupiński](http://codepen.io/rkrupinski/pen/psrBm) came up with a solution using radial-gradients. Even better, he used `calc` **in** the radial-gradients declaration to keep things fluid. You've to admit that's clever. His solution is probably the one involving the lowest amount of code, at the price of browser support though. Anyway, congratulations Rafał!
 

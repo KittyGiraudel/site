@@ -21,7 +21,7 @@ Well, it went very well! Except for the weather which was pretty ugly and the fa
 
 The Co.Station is a great spot in the heart of Bruxelles, aiming at helping startups, associations and business growing. In this case, Co.Station was hosting FeWeb's event.
 
-The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But... it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor guys who had to stand up for almost 2 hours, it sucks.
+The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But... it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor people who had to stand up for almost 2 hours, it sucks.
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-feweb/room.jpg" alt="">

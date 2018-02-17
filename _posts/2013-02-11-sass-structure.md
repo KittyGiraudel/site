@@ -12,7 +12,7 @@ tags:
 
 > **Edit (2013/02/27):** this post contains valuable yet outdated informations. To have a look at my current Sass structure, please have a look at <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/sass">the GitHub repo.
 
-Hi guys! Ever since the redesign a few weeks ago I have never stopped trying optimizing the performance of the site. One of my biggest concerns was having a stylesheet which is both nice and efficient.
+Hi people! Ever since the redesign a few weeks ago I have never stopped trying optimizing the performance of the site. One of my biggest concerns was having a stylesheet which is both nice and efficient.
 
 I think I’ve come pretty close to this point thus I thought it might be a good idea to write a bit about it and give you an inside glance at the whole thing.
 
@@ -261,7 +261,7 @@ This is not optional, every project needs to use some kind of way to reset CSS s
 }
 ```
 
-Yes I know, this is dirty. I shouldn’t not reset CSS this way but honestly on small projects like this, it’s really not a big deal. At first I used Normalize CSS but then I realized loading kilobytes of code when 2 lines are enough is not necessary. So barbarian CSS reset guys!
+Yes I know, this is dirty. I shouldn’t not reset CSS this way but honestly on small projects like this, it’s really not a big deal. At first I used Normalize CSS but then I realized loading kilobytes of code when 2 lines are enough is not necessary. So barbarian CSS reset people!
 
 
 Please note I use the simplest box-sizing since IE (all versions) represents less than 1.5% of my traffic.

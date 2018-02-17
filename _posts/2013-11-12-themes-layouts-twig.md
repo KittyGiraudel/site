@@ -7,7 +7,7 @@ tags:
   - layouts
 ---
 
-Hey guys! This post is going to be quite different from what I usually write about since it will talk about [Twig](http://twig.sensiolabs.org/), the template engine used by [Symfony 2](http://symfony.com/). I came across a pretty complicated case at work so I thought I'd write a little something about it.
+Hey people! This post is going to be quite different from what I usually write about since it will talk about [Twig](http://twig.sensiolabs.org/), the template engine used by [Symfony 2](http://symfony.com/). I came across a pretty complicated case at work so I thought I'd write a little something about it.
 
 But let's put some context first: Twig presents itself as a *template engine for PHP*. Kind of Jekyll, but far more powerful. The basic idea is to create reusable templates also called "views" (basically HTML blocks) to avoid repeating the same code again and again.
 

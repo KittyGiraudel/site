@@ -8,7 +8,7 @@ tags:
 
 > I am glad to have [Ezekiel Gabrielse](http://ezekielg.com/) today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts boys, this is quite intense!
 
-Hey guys! I am the creator of a relatively new Sass grid-system called [Flint](https://github.com/ezekg/flint), and a lightweight Compass extension called [SassyExport](https://github.com/ezekg/SassyExport), which we will be discussing throughout this series.
+Hey people! I am the creator of a relatively new Sass grid-system called [Flint](https://github.com/ezekg/flint), and a lightweight Compass extension called [SassyExport](https://github.com/ezekg/SassyExport), which we will be discussing throughout this series.
 
 Since I already mentioned the word *series*, this article will be the first post of a 2 part series. Today we're going to create a Sass-powered customization API that can be plugged into a front-end API, such as a Wordpress theming framework or even allow live customization through JS. 
 

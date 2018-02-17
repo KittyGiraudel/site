@@ -9,7 +9,7 @@ tags:
 ---
 
 
-Hi guys! As you can see, I have big news. I've changed a few things on hugogiraudel.com in order to make it look like a little bit more aesthetic and/or professionnal. What do you say?
+Hi people! As you can see, I have big news. I've changed a few things on hugogiraudel.com in order to make it look like a little bit more aesthetic and/or professionnal. What do you say?
 
 Actually, this is the very recent redesign of [http://daverupert.com](http://daverupert.com) (nice job by the way) who led me to do such a task. You see, for months (almost years!) and I don't really know why, I thought I had to manage a CMS like WordPress or whatever to handle a blog. But why bother? Simple HTML/CSS pushing on a server and this is done, right?
 

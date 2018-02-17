@@ -132,4 +132,4 @@ No more error! The code is being output as usual because in this case, we are no
 
 It's a shame we have to hack around the syntax in order to get the best from Sass placeholders. Hopefully cross-scope extending will save us from doing such nasty things whenever it comes live.
 
-In any case, this looks like a robust way to get the most from both mixins and placeholders. Hope you like it guys!
+In any case, this looks like a robust way to get the most from both mixins and placeholders. Hope you like it people!

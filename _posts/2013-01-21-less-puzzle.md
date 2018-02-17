@@ -7,7 +7,7 @@ tags:
   - riddle
 ---
 
-Hi guys! What do you think of a little puzzle to wake up your neurons? I think I've found something tricky enough to worth a blog post and a little challenge about it.
+Hi people! What do you think of a little puzzle to wake up your neurons? I think I've found something tricky enough to worth a blog post and a little challenge about it.
 
 First of all, this will be a LESS puzzle, so if you're really unfamiliar with this CSS preprocessor, I think you might feel a bit lost here. Sorry! :(
 
@@ -47,6 +47,6 @@ Loïc Giraudel (secondarily my dear brother) pointed out [a thread on GitHub](ht
 
 However as of today, **there is no fix for this neither is there a workaround**. So unless anyone comes up with a solution, this is currently not possible unfortunately.
 
-Plus, the guys behind LESS imply fixing this bug would require a large amount of work and deep code restructuration.
+Plus, the people behind LESS imply fixing this bug would require a large amount of work and deep code restructuration.
 
 No luck.

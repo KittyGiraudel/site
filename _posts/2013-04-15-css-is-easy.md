@@ -8,7 +8,7 @@ tags:
 
 > [Véronique Bouvier](https://twitter.com/verobouvier) translated [this article in French](http://www.veronique-bouvier.com/css-cest-facile-par-hugo-giraudel/) on her blog.
 
-I am studying what comes close to “Programming Sciences“. My mates are hardware, server or back-end guys. When I tell them I prefer front-end, especially HTML/CSS I always get the same reaction “CSS is easy”.
+I am studying what comes close to “Programming Sciences“. My mates are hardware, server or back-end people. When I tell them I prefer front-end, especially HTML/CSS I always get the same reaction “CSS is easy”.
 
 And I always tell myself the same thing “Yeaaaaah... so that should explain why your CSS is a fucking mess”.
 

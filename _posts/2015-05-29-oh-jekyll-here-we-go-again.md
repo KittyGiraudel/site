@@ -21,7 +21,7 @@ And here we are, almost a year later again, back to Jekyll, one more time. I tho
 
 ## What was wrong?
 
-Let me get something straight before going any further: Mixture is a terrific tool. Moreover, [Neil Kinnish](https://twitter.com/neiltak) and [Pete Nelson](https://twitter.com/petetak) are great guys who provide one of the best support I've ever seen. So Mixture definitely is an interesting piece of software.
+Let me get something straight before going any further: Mixture is a terrific tool. Moreover, [Neil Kinnish](https://twitter.com/neiltak) and [Pete Nelson](https://twitter.com/petetak) are great people who provide one of the best support I've ever seen. So Mixture definitely is an interesting piece of software.
 
 Okay, now what did I dislike with it? I think the most annoying thing for me was to push the compiled sources to the repository instead of the actual development sources. While this seems irrelevant it actually prevented me from quickly fixing a typo directly from the GitHub interface. 
 

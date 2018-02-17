@@ -9,7 +9,7 @@ tags:
 
 > In case you have missed my first article about this Advanced Sass List Functions library, I recommand you to read [it](http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/).
 
-Heys guys, it's been a while I haven't posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what's new on my Sass list functions library.
+Heys people, it's been a while I haven't posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what's new on my Sass list functions library.
 
 Well first of all, it has been added as a [Team-Sass](https://github.com/Team-Sass) repository on GitHub (the [pen](http://codepen.io/HugoGiraudel/pen/loAgq is still updated). You probably know the Team-Sass collective. They have done ton of awesome things like [Breakpoint](https://github.com/Team-Sass/breakpoint), [Sassy Math](https://github.com/Team-Sass/Sassy-math) and [UIKit](https://github.com/Team-Sass/uikit).
 
@@ -197,7 +197,7 @@ You can even do it recursively if you feel so, by enabling recursivity with `tru
 
 ### Debug
 
-Last but not least, I added a `debug()` function to help you guys debugging your lists. Basically all it does is displaying the content of your list like a `console.log()` in JavaScript.
+Last but not least, I added a `debug()` function to help you people debugging your lists. Basically all it does is displaying the content of your list like a `console.log()` in JavaScript.
 
 ```scss
 @function debug($list) {

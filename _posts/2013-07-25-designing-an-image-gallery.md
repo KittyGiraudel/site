@@ -9,7 +9,7 @@ tags:
 
 > **Edit (2014/11/16):** I took time to improve this site. It now works fine without JavaScript and has been ported to Jekyll. Also both Sass and JavaScript code have been improved.
 
-Hey guys! I recently had the opportunity to work on a cool little project I'd like to talk about: an advanced image gallery with some really cool features. Indeed, I've been asked to design and develop the site of [Alexandra Lucas](http://alexandralucas.com) to promote her work as a French photographer. Since I'm a big fan of her work, I accepted and it turned out to be quite fun to work on this project.
+Hey people! I recently had the opportunity to work on a cool little project I'd like to talk about: an advanced image gallery with some really cool features. Indeed, I've been asked to design and develop the site of [Alexandra Lucas](http://alexandralucas.com) to promote her work as a French photographer. Since I'm a big fan of her work, I accepted and it turned out to be quite fun to work on this project.
 
 Let's say things straight: I'd never have the opportunity to work on an image gallery before. Actually I did but back then I didn't give a shit about performance, responsive design, high-density displays and all the topics cool kids always talk about. So this time I've been faced with some difficulties I had not encountered before; meaning I had to solve them by myself.
 

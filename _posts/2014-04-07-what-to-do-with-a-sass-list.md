@@ -5,13 +5,13 @@ tags:
   - lists
 ---
 
-A few weeks ago, [Louis Lazaris](https://twitter.com/ImpressiveWebs) has been invited at [Shop Talk Show](http://shoptalkshow.com/episodes/103-louis-lazaris/), the front-end podcast by [Chris Coyier](https://twitter.com/chriscoyier) and [Dave Rupert](https://twitter.com/davatron5000). I joined in the middle of the show and it was kind of cool hearing Louis talking about various stuff including Sass. By the way, if one of you guys come over here, thanks for mentioning me. ;)
+A few weeks ago, [Louis Lazaris](https://twitter.com/ImpressiveWebs) has been invited at [Shop Talk Show](http://shoptalkshow.com/episodes/103-louis-lazaris/), the front-end podcast by [Chris Coyier](https://twitter.com/chriscoyier) and [Dave Rupert](https://twitter.com/davatron5000). I joined in the middle of the show and it was kind of cool hearing Louis talking about various stuff including Sass. By the way, if one of you people come over here, thanks for mentioning me. ;)
 
 Anyway, at some point someone asked a very interesting question about Sass:
 
 > I’m enjoying learning Sass, but one of those things I can’t wrap my head around is use cases for lists. What would you stuff in a Sass list?
 
-I can see why this nice folk came up with such a question. When you've been used to vanilla CSS for years, you hardly can see the use case for a Sass list. I'll try to enlight the path guys!
+I can see why this nice folk came up with such a question. When you've been used to vanilla CSS for years, you hardly can see the use case for a Sass list. I'll try to enlight the path people!
 
 ## A quick reminder 
 

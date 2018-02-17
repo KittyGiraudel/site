@@ -27,7 +27,7 @@ I think this is the one of the biggest change we've made to the site so far: **m
 
 > You can still disable the tests if you want.
 
-This was a huge step forward but did we really need a separate page just for testing? It looks like *no*. It involved quite a bit of work but I'm glad we've made it. What do you guys think?
+This was a huge step forward but did we really need a separate page just for testing? It looks like *no*. It involved quite a bit of work but I'm glad we've made it. What do you people think?
 
 Nothing changed in the way we test hacks though: if your browser recognize a line of code, it turns it into a lovely green. If you don't like seeing green lines everywhere on the home page, you can still disable the tests by unchecking the checkbox `Enable tests` at the top of the page. Or you could download a browser that doesn't spread green lines everywhere... :)
 
@@ -100,4 +100,4 @@ And last but not least, we want to be able to automate the testing. This is prob
 
 If you feel like helping for anything at all, that would be really awesome. Shoot us on [Twitter](http://twitter.com/browserhacks) or on [Github](https://github.com/4ae9b8/browserhacks/). 
 
-*Note: by the way, I'd really like not having to retweet everything from the Browserhacks Twitter account, so if you guys could follow it, that'd be cool. :D*
+*Note: by the way, I'd really like not having to retweet everything from the Browserhacks Twitter account, so if you people could follow it, that'd be cool. :D*

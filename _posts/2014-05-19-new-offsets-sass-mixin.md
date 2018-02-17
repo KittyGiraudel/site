@@ -308,7 +308,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ## Final thoughts
 
-So here we go with the new version guys. It is slightly better than the old since you can now chain offsets to set them to `0`, and extra keywords like `auto`, `initial` and `inherit` are allowed, which wasn't the case before.
+So here we go with the new version people. It is slightly better than the old since you can now chain offsets to set them to `0`, and extra keywords like `auto`, `initial` and `inherit` are allowed, which wasn't the case before.
 
 I hope you like it. If you think of anything to improve it, be sure to share!
 

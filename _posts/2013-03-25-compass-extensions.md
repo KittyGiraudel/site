@@ -249,5 +249,5 @@ Outputs...
 
 ## Final words
 
-So guys, how many of these features did you know? If you have some free time, I highly recommand you to dig into [Compass documentation](http://compass-style.org/reference/compass/). You'd be surprised how little you know about the framework in most cases.
+So people, how many of these features did you know? If you have some free time, I highly recommand you to dig into [Compass documentation](http://compass-style.org/reference/compass/). You'd be surprised how little you know about the framework in most cases.
 

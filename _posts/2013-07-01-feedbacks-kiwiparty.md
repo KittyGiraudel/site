@@ -4,7 +4,7 @@ tags:
   - thoughts
 ---
 
-Hey guys! It's been a while I haven't post anything; last month has been pretty intense. Especially since I recently had the amazing opportunity to be a speaker at [KiwiParty](http://kiwiparty.fr)!
+Hey people! It's been a while I haven't post anything; last month has been pretty intense. Especially since I recently had the amazing opportunity to be a speaker at [KiwiParty](http://kiwiparty.fr)!
 
 It's a one-day French conference at Strasbourg (France) gathering 10 speakers and more than 150 persons to talk about front-end technologies, accessibility, ergonomy, webdesign, and so much more.
 
@@ -31,7 +31,7 @@ Plus, we had the opportunity to meet two awesome dudes of our field:
 * [Bert Bos](http://en.wikipedia.org/wiki/Bert_Bos) -co-creator of CSS- introduced the day by telling us about [CSS for books](http://www.w3.org/Talks/2013/0628-CSS-Strasbourg/). Pretty amazing what we can know do with CSS when we know it was first intented to style basic text documents.
 * [Tristan Nitot](http://twitter.com/nitot) -founder of Mozilla Europe- concluded the conference by talking about Firefox OS. He's such an awesome speaker; totally worth seeing him.
 
-I could also meet all those great French guys and girls from Twitter and put some faces on names. Probably the best thing of this day. :)
+I could also meet all those great French people and girls from Twitter and put some faces on names. Probably the best thing of this day. :)
 
 ## About my talk
 
@@ -50,7 +50,7 @@ This experience was kind of incredible actually. I walked into that room where d
 
 Then a little voice popped in my head saying "dude, this is too complicated", or "this is obvious to you but not for them" or "what the hell are you trying to explain?". It stayed there during the whole conference and was kind of disturbing. I couldn't have real-time feedback of course (imagine what it would look like) so I had no idea if people were enjoying my talk or hoping it was soon finished.
 
-In the end, I had a couple of questions (most of them very relevant) which I was prepared to answer. Yeah that's right, I prepared the Q&A guys! 
+In the end, I had a couple of questions (most of them very relevant) which I was prepared to answer. Yeah that's right, I prepared the Q&A people! 
 
 ## Why Sass?
 
@@ -64,7 +64,7 @@ Retrospectively, it was a risky bet. Speaking of CSS preprocessors can be quite 
 
 ## Moar!
 
-Unfortunately, my talk wasn't recorded so no way to access it online, sorry guys. :(
+Unfortunately, my talk wasn't recorded so no way to access it online, sorry people. :(
 
 Regarding pictures, my [girlfriend](http://alexandralucas.com) took a couple of photos as you can see in this article. Otherwise, you can find more pics of the whole event on Flickr tagged [#KiwiParty](http://www.flickr.com/search/?q=kiwiparty).
 
