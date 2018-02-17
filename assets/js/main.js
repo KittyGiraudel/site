@@ -3,16 +3,10 @@
   var ADS_URL = '//engine.carbonads.com/z/24598/azcarbon_2_1_0_HORIZ'
   var CODEPEN_URL = '//codepen.io/assets/embed/ei.js'
   var SASSMEISTER_URL = '//static.sassmeister.com/js/embed.js'
-  var DISQUS_URL = '//{shortname}.disqus.com/embed.js'
   var ANALYTICS_OPTIONS = [
     ['_setAccount','UA-30333387-2'],
     ['_trackPageview']
   ]
-  var DISQUS_OPTIONS = {
-    name: 'hugogiraudel',
-    title: false,
-    url: window.location.href
-  }
   var TOC_SELECTOR = '.article h2[id]'
   var CONTAINER_SELECTOR = '.container'
   var ARTICLE_PAGE_SELECTOR = '.article'
@@ -80,16 +74,6 @@
     loadJS(ADS_URL, callback)
   }
 
-  function loadComments (options, callback) {
-    global.disqus_shortname = options.name
-    global.disqus_url = options.url
-    global.disqus_title = options.title
-
-    var url = DISQUS_URL.replace('{shortname}', disqus_shortname)
-
-    $('#disqus_thread') && loadJS(url, callback)
-  }
-
   function loadCodePen (callback) {
     $('.codepen') && loadJS(CODEPEN_URL, callback)
   }
@@ -98,25 +82,14 @@
     $('.sassmeister') && loadJS(SASSMEISTER_URL, callback)
   }
 
-  function getDisqusOptions (options) {
-    return {
-      name: options.name || DISQUS_OPTIONS.name,
-      title: options.title || DISQUS_OPTIONS.title,
-      url: options.url || DISQUS_OPTIONS.url
-    }
-  }
-
   function App (options) {
-    var shouldLoadComments = options.loadComments || true
     var shouldCreateToC = (isArticlePage() && options.createToC) || false
-    var disqusOptions = getDisqusOptions(options.disqusOptions)
 
     loadAnalytics()
     loadAds()
     loadSassMeister()
     loadCodePen()
 
-    shouldLoadComments && loadComments(disqusOptions)
     shouldCreateToC && createToC()
   }
 

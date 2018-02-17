@@ -1,5 +1,4 @@
 ---
-disqus: http://hugogiraudel.com/blog/float-down
 title: "Simulate float: down"
 tags:
   - css

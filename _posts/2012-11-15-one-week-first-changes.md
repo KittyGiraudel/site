@@ -1,5 +1,4 @@
 ---
-disqus: http://hugogiraudel.com/blog/one-week-first-changes.html
 title: "One week, first changes"
 tags:
   - blog

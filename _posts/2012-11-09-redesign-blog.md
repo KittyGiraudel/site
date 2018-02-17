@@ -1,5 +1,4 @@
 ---
-disqus: http://hugogiraudel.com/blog/redesign-blog
 title: "Hugogiraudel.com redesigned + new blog"
 tags:
   - design

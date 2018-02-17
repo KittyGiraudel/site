@@ -65,12 +65,7 @@ When moving to Mixture, I took the time to think of how I would solve this issue
         tracking: true,
         ad: true,
         comments: false,
-        layout: 'default',
-        disqus: {
-          name: 'hugogiraudel',
-          title: false,
-          url: window.location.href
-        }
+        layout: 'default'
       },
       conf || {}
     )
@@ -139,14 +134,6 @@ App.prototype.ad = function() {
   this._inject('//engine.carbonads.com/z/24598/azcarbon_2_1_0_HORIZ')
 }
 
-App.prototype.comments = function() {
-  global.disqus_shortname = this.conf.disqus.name
-  global.disqus_url = this.conf.disqus.url
-  global.disqus_title = this.conf.disqus.title
-
-  this._inject('//' + disqus_shortname + '.disqus.com/embed.js')
-}
-
 App.prototype.codepen = function() {
   this._inject('//codepen.io/assets/embed/ei.js')
 }
@@ -184,11 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
     codepen: {{ post.codepen }},
     sassmeister: {{ post.sassmeister }},
     tableOfContent: {{ post.summary }},
-    comments: {{ post.comments }},
     layout: '{{ post.layout }}',
-    disqus: {
-      title: '{{ post.title }}',
-    },
     tracking: true,
     ad: true
   });

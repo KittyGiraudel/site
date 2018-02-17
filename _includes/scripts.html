@@ -2,13 +2,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var app = new App({
-    createToC: {% if page.summary %}true{% else %}false{% endif %},
-    loadComments: {% unless page.comments == false or page.external %}true{% else %}false{% endunless %},
-    disqusOptions: {
-      title: "{{ page.title }}",
-      url: {% if page.disqus %}'{{ page.disqus }}'{% else %}window.location.href{% endif %},
-      name: 'hugogiraudel'
-    }
+    createToC: {% if page.summary %}true{% else %}false{% endif %}
   })
 })
 </script>

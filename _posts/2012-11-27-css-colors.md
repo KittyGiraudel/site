@@ -1,5 +1,4 @@
 ---
-disqus: http://hugogiraudel.com/blog/css-colors.html
 title: "Colors in CSS"
 tags:
   - css

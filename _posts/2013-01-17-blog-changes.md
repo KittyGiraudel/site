@@ -1,5 +1,4 @@
 ---
-disqus: http://hugogiraudel.com/blog/blog-changes
 title: "Blog changes"
 tags:
   - blog

@@ -1,5 +1,4 @@
 ---
-disqus: http://hugogiraudel.com/blog/less-to-sass.html
 title: "Why I switched from LESS to Sass"
 tags:
   - less

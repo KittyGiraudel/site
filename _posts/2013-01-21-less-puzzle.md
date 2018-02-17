@@ -1,5 +1,4 @@
 ---
-disqus: http://hugogiraudel.com/blog/less-puzzle
 title: "A little LESS puzzle"
 tags:
   - css

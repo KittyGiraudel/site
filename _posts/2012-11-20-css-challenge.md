@@ -1,5 +1,4 @@
 ---
-disqus: http://hugogiraudel.com/blog/css-challenge.html
 title: "A CSS challenge"
 tags:
   - css

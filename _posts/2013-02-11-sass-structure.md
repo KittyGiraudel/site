@@ -1,5 +1,4 @@
 ---
-disqus: http://hugogiraudel.com/blog/sass-structure
 title: "A closer look at my Sass structure"
 tags:
   - sass

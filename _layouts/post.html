@@ -27,10 +27,4 @@ theme: t-blue
   <div itemtype="articleBody">
   {{ content }}
   </div>
-
-  {% unless page.comments == false or page.external %}
-  {% comment %}
-    <div id="disqus_thread" itemprop="comment"></div>
-  {% endcomment %}
-  {% endunless %}
 </article>
