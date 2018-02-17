@@ -19,12 +19,12 @@ The `to-list` function core is pretty straightforward. If the given value is a m
   @if type-of($value) == 'map' {
     $keys: ();
     $values: ();
-    
+
     @each $key, $val in $value {
       $keys: append($keys, $key);
       $values: append($values, $val);
     }
-    
+
     @return zip($keys, $values);
   }
 
@@ -49,7 +49,7 @@ Then depending on the flag, he returns either `$keys` or `$values` or a zip of b
   @if type-of($value) == 'map' {
     $keys: ();
     $values: ();
-    
+
     @each $key, $val in $value {
       $keys: append($keys, $key);
       $values: append($values, $val);
@@ -65,7 +65,6 @@ Then depending on the flag, he returns either `$keys` or `$values` or a zip of b
   }
 
   @return if(type-of($value) != 'list', ($value,), $value);
-
 }
 ```
 
@@ -107,4 +106,3 @@ $breakpoints-values: to-list($breakpoints, 'values');
 ```
 
 That's all folks! Thanks again Julien!
-

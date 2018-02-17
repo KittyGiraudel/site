@@ -25,9 +25,9 @@ Ana’s work is great, I’m not questioning this. However, adding or removing e
 
 ```scss
 .deg{desired_angle} {
-  transform: 
-    rotate({desired_angle}) 
-    translate({half_parent_size}) 
+  transform:
+    rotate({desired_angle})
+    translate({half_parent_size})
     rotate(-{desired_angle});
 }
 ```
@@ -62,28 +62,28 @@ Thus, usage is pretty straight forward:
 ```scss
 .my-container {
   /**
-   * With no support for old IE 
-   */
+     * With no support for old IE
+     */
   @include distribute-on-circle(
-    $nb-items: 8,
-    $circle-size: 24em,
-    $item-size: 6em
-  );
+        $nb-items: 8,
+        $circle-size: 24em,
+        $item-size: 6em
+      );
 
   /**
-   * With support for old IE
-   * Using class “item” (.item1, .item2, .item3, etc.)
-   */
+     * With support for old IE
+     * Using class “item” (.item1, .item2, .item3, etc.)
+     */
   @include distribute-on-circle(
-    $nb-items: 8,
-    $circle-size: 24em, 
-    $item-size: 6em, 
-    $class-for-IE: 'item'
-  );
+        $nb-items: 8,
+        $circle-size: 24em,
+        $item-size: 6em,
+        $class-for-IE: 'item'
+      );
 }
 ```
 
-*If the number of items in the container is superior to the parameter given in the mixin, left children are nicely stacked on top of each other at the center of the parent, not breaking anything.*
+_If the number of items in the container is superior to the parameter given in the mixin, left children are nicely stacked on top of each other at the center of the parent, not breaking anything._
 
 ## How does it work?
 
@@ -94,15 +94,9 @@ $rot: 0; /* Rotation angle for the current item */
 $angle: (360 / $nb-items); /* Angle between two items */
 
 @for $i from 1 through $nb-items {
-
   &:nth-of-type(#{$i}) {
-    transform: 
-      // Rotate the axis
-      rotate($rot * 1deg)
-      // Move the item from the center
-      translate($circle-size / 2)
-      // Rotate the item back to its default position
-      rotate($rot * -1deg);
+    transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot *
+          -1deg);
   }
 
   // Increments the `$rot` variable for next item
@@ -113,14 +107,30 @@ $angle: (360 / $nb-items); /* Angle between two items */
 Outputs (with 8 items and a `24em` large container)…
 
 ```css
-.container > *:nth-of-type(1) { transform: rotate(0deg)   translate(12em) rotate(-0deg);   }
-.container > *:nth-of-type(2) { transform: rotate(45deg)  translate(12em) rotate(-45deg);  }
-.container > *:nth-of-type(3) { transform: rotate(90deg)  translate(12em) rotate(-90deg);  }
-.container > *:nth-of-type(4) { transform: rotate(135deg) translate(12em) rotate(-135deg); }
-.container > *:nth-of-type(5) { transform: rotate(180deg) translate(12em) rotate(-180deg); }
-.container > *:nth-of-type(6) { transform: rotate(225deg) translate(12em) rotate(-225deg); }
-.container > *:nth-of-type(7) { transform: rotate(270deg) translate(12em) rotate(-270deg); }
-.container > *:nth-of-type(8) { transform: rotate(315deg) translate(12em) rotate(-315deg); }
+.container > *:nth-of-type(1) {
+  transform: rotate(0deg) translate(12em) rotate(-0deg);
+}
+.container > *:nth-of-type(2) {
+  transform: rotate(45deg) translate(12em) rotate(-45deg);
+}
+.container > *:nth-of-type(3) {
+  transform: rotate(90deg) translate(12em) rotate(-90deg);
+}
+.container > *:nth-of-type(4) {
+  transform: rotate(135deg) translate(12em) rotate(-135deg);
+}
+.container > *:nth-of-type(5) {
+  transform: rotate(180deg) translate(12em) rotate(-180deg);
+}
+.container > *:nth-of-type(6) {
+  transform: rotate(225deg) translate(12em) rotate(-225deg);
+}
+.container > *:nth-of-type(7) {
+  transform: rotate(270deg) translate(12em) rotate(-270deg);
+}
+.container > *:nth-of-type(8) {
+  transform: rotate(315deg) translate(12em) rotate(-315deg);
+}
 ```
 
 ## What about old browsers?
@@ -130,24 +140,22 @@ The main problem with this technic is that **IE8- doesn't support pseudo-selecto
 The first thing is easily fixed either with a plugin like [Selectivizr](http://selectivizr.com/) to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it (with jQuery):
 
 ```javascript
-var $items = $('.parent').children();
+var $items = $('.parent').children()
 
-$items.each(function () {
-  var $item = $(this);
-  var index = $item.index() + 1;
-  $item.addClass('item' + index);
-});
+$items.each(function() {
+  var $item = $(this)
+  var index = $item.index() + 1
+  $item.addClass('item' + index)
+})
 ```
 
 Then, the CSS would be slightly altered:
 
 ```scss
 @for $i from 1 through $nb-items {
-
   &.#{$class-for-IE}#{$i} {
     /* … */
   }
-
 }
 ```
 

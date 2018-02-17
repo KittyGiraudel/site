@@ -68,41 +68,52 @@ Now the CSS. Pay attention to the number of lines:
 
 ```css
 .wrapper {
-	display: grid;
-	grid-columns: 200px 15px 1fr 15px 100px;
-	grid-rows: (auto 15px)[2] auto;
+  display: grid;
+  grid-columns: 200px 15px 1fr 15px 100px;
+  grid-rows: (auto 15px)[2] auto;
 }
 
-.header, .footer { grid-column-span: 5; }
+.header,
+.footer {
+  grid-column-span: 5;
+}
 
 .sidebar,
 .main,
-.annexe { grid-row: 3; }
-.header { grid-row: 1; }
-.footer { grid-row: 5; }
+.annexe {
+  grid-row: 3;
+}
+.header {
+  grid-row: 1;
+}
+.footer {
+  grid-row: 5;
+}
 
-.sidebar { grid-column: 1; }
-.main    { grid-column: 3; }
-.annexe  { grid-column: 5; }
+.sidebar {
+  grid-column: 1;
+}
+.main {
+  grid-column: 3;
+}
+.annexe {
+  grid-column: 5;
+}
 ```
 
 Done. **10 lines. No float. No inline-block. No height. No width. No margin.** And if you want to make everything nice on small devices, it will take no more than a couple of more lines (8 in this example).
 
-*Note: I won't explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at [CSS-Tricks' Almanac entry](http://css-tricks.com/almanac/properties/g/grid/).*
+_Note: I won't explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at [CSS-Tricks' Almanac entry](http://css-tricks.com/almanac/properties/g/grid/)._
 
 ## What about Flexbox?
 
-> Are Flexbox and Grid both solutions to the same problem or do they both have their own use case?
-&mdash; [@Lezz](https://twitter.com/Lezz/status/319376112679522304)
-
+> Are Flexbox and Grid both solutions to the same problem or do they both have their own use case? &mdash; [@Lezz](https://twitter.com/Lezz/status/319376112679522304)
 
 This question comes from Twitter. However I've been questioning myself regarding this while making the entry for CSS-Tricks. Let's have a look at both specifications:
 
 > The **Flexbox specification** describes a CSS box model optimized for user interface design. In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions.
 
-> **Grid Layout** contains features targeted at web application authors. The Grid can be used to achieve many different layouts. It excels at dividing up space for major regions of an application, or defining the relationship in terms of size, position, and layer between parts of a control built from HTML primitives.
-> Like tables, the Grid enables an author to align elements into columns and rows, but unlike tables, the Grid doesn’t have content structure, and thus enables a wide variety of layouts not possible with tables. For example, the children of the Grid can position themselves with Grid lines such that they overlap and layer similar to positioned elements.
-> In addition, the absence of content structure in the Grid helps to manage changes to layout by using fluid and source order independent layout techniques. By combining media queries with the CSS properties that control layout of the Grid and its children, authors can adapt their layout to changes in device form factors, orientation, and available space, without needing to alter the semantic nature of their content.</blockquote>
+> **Grid Layout** contains features targeted at web application authors. The Grid can be used to achieve many different layouts. It excels at dividing up space for major regions of an application, or defining the relationship in terms of size, position, and layer between parts of a control built from HTML primitives. Like tables, the Grid enables an author to align elements into columns and rows, but unlike tables, the Grid doesn’t have content structure, and thus enables a wide variety of layouts not possible with tables. For example, the children of the Grid can position themselves with Grid lines such that they overlap and layer similar to positioned elements. In addition, the absence of content structure in the Grid helps to manage changes to layout by using fluid and source order independent layout techniques. By combining media queries with the CSS properties that control layout of the Grid and its children, authors can adapt their layout to changes in device form factors, orientation, and available space, without needing to alter the semantic nature of their content.</blockquote>
 
 So as I understand this, **the Grid layout is "macro" while the Flexbox module is "micro".** I think Grid will be perfect to organize the layout structure with high-level elements whereas Flexbox will be best-suited for some modules that require specific alignments, ordering and so like a fluid navigation for example.
 
@@ -121,7 +132,7 @@ Then let's hope in a year from now, the browser support will be great in all mod
 Meanwhile, you can still experiment with it on Internet Explorer. Here are a couple of useful resources on the topic:
 
 * [CSS Grid Layout in the CSS specifications](http://www.w3.org/TR/css3-grid-layout/)
-* [CSS Grid Layout by Microsoft](http://msdn.microsoft.com/en-us/library/ie/hh673533(v=vs.85).aspx)
+* [CSS Grid Layout by Microsoft](<http://msdn.microsoft.com/en-us/library/ie/hh673533(v=vs.85).aspx>)
 * [Microsoft's CSS Grid layout playground](http://ie.microsoft.com/testdrive/Graphics/hands-on-css3/hands-on_grid.htm)
 * [CSS Grid Layout by 24Ways](http://24ways.org/2012/css3-grid-layout/)
 * [CSS Grid Layout by Raphael Goetter (FR)](http://www.alsacreations.com/article/lire/1388-css3-grid-layout.html)

@@ -9,6 +9,3 @@ tags:
   - preprocessor
   - architecture
 ---
-
-
-

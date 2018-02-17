@@ -13,15 +13,18 @@ One thing I was really looking forward with [Sass maps](http://viget.com/extend/
 Before digging into Sass awesomeness, let's first have a look at how we would do it in JavaScript:
 
 ```javascript
-var Class = function (conf) {
-  this.conf = extend({
-    duration: 2000,
-    name: 'class',
-    theme: 'dark',
-    speed: 500
-  }, conf || {});
+var Class = function(conf) {
+  this.conf = extend(
+    {
+      duration: 2000,
+      name: 'class',
+      theme: 'dark',
+      speed: 500
+    },
+    conf || {}
+  )
 
-  this.init();
+  this.init()
 }
 ```
 
@@ -44,10 +47,10 @@ f({
   close: false,
   error: 42,
   type: 'error'
-});
+})
 
 // ... is easier to understand than this
-f('You shall not pass!', false, 42, 'error');
+f('You shall not pass!', false, 42, 'error')
 ```
 
 But the readibility argument is kind of a poor one. Some would say that they feel very comfortable with the multiple-arguments notation as long as they use a proper indentation for each argument (kind of like the object one) so let's move on to something more robust.
@@ -63,14 +66,14 @@ var conf = {
   close: false,
   error: 42,
   type: 'error'
-};
+}
 
-f(conf);
+f(conf)
 
 // ... is easier to read than this
-var conf = ['You shall not pass!', false, 42, 'error'];
+var conf = ['You shall not pass!', false, 42, 'error']
 
-f.apply(void 0, conf);
+f.apply(void 0, conf)
 ```
 
 Still not convince? Let's move on.
@@ -87,10 +90,10 @@ f({
   error: 42,
   type: 'error',
   duration: 5000
-});
+})
 
 // ... while you have to put your required parameters before optional one in the signature
-f('You shall not pass!', 42, false, 5000, 'error');
+f('You shall not pass!', 42, false, 5000, 'error')
 ```
 
 ### Harder to provide default parameters
@@ -101,14 +104,14 @@ I think we can agree on the fact that using a configuration object as a unique p
 
 ## Bringing it to Sass
 
-In a way, we don't really need this in Sass because it already provides *named arguments*. [Named arguments](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments) give the ability to call a function without having to specify all its parameters. You can call it specifying only the arguments you want, no matter their index in the parameter list, like this.
+In a way, we don't really need this in Sass because it already provides _named arguments_. [Named arguments](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments) give the ability to call a function without having to specify all its parameters. You can call it specifying only the arguments you want, no matter their index in the parameter list, like this.
 
 ```scss
-@mixin mixin($a: "a", $b: "b", $c: "c") {
+@mixin mixin($a: 'a', $b: 'b', $c: 'c') {
   /* ... */
 }
 
-@include mixin($b: "boat");
+@include mixin($b: 'boat');
 ```
 
 This is pretty neat. But if like me you'd rather have a single object instead of a collection of arguments, then read on.
@@ -133,11 +136,9 @@ $default-object: (
   this: is awesome
 );
 
-$object: (
-  this: is amazing
-);
+$object: (this: is amazing);
 
-$merge: extend($default-object, $object);
+$merge:extend($default-object, $object);
 
 /**
  * This results in
@@ -159,15 +160,14 @@ Now what's the point of all of this? Let's say you have a component you call wit
     animation: fade $duration;
 
     @if $border {
-      border-top: .25em solid;
+      border-top: 0.25em solid;
     }
 
-    @if $theme == "dark" {
+    @if $theme == 'dark' {
       background: #333;
-      color: #FEFEFE;
-    }
-    @else if $theme == "light" {
-      background: #FEFEFE;
+      color: #fefefe;
+    } @else if $theme == 'light' {
+      background: #fefefe;
       color: #333;
     }
   }
@@ -177,18 +177,15 @@ Now what's the point of all of this? Let's say you have a component you call wit
 @include component(dark, $name: 'module');
 ```
 
-This works great. It is easily readable, it does the job very well. However there is *one* thing that still sucks with this method: you can't move the configuration elsewhere. Actually you can, but it will be like 5 variables which is getting a lot. Having a configuration map would be easier to move in a variable file or something.
+This works great. It is easily readable, it does the job very well. However there is _one_ thing that still sucks with this method: you can't move the configuration elsewhere. Actually you can, but it will be like 5 variables which is getting a lot. Having a configuration map would be easier to move in a variable file or something.
 
 ```scss
 @mixin component($conf: ()) {
   // Extending the default arguments with the given object
-  $conf: extend((
-    size: 100%,
-    theme: dark,
-    duration: 250ms,
-    name: 'component',
-    border: true
-  ), $conf);
+  $conf:extend(
+    (size: 100%, theme: dark, duration: 250ms, name: 'component', border: true),
+    $conf
+  );
 
   // Dumping CSS
   .#{map-get($conf, name)} {
@@ -196,12 +193,11 @@ This works great. It is easily readable, it does the job very well. However ther
     animation: fade map-get($conf, duration);
 
     $theme: map-get($conf, theme);
-    @if $theme == "dark" {
+    @if $theme == 'dark' {
       background: #333;
-      color: #FEFEFE;
-    }
-    @else if $theme == "light" {
-      background: #FEFEFE;
+      color: #fefefe;
+    } @else if $theme == 'light' {
+      background: #fefefe;
       color: #333;
     }
   }
@@ -209,9 +205,9 @@ This works great. It is easily readable, it does the job very well. However ther
 
 // Including component
 @include component((
-  theme: dark,
-  name: 'module'
-));
+    theme: dark,
+    name: 'module'
+  ));
 ```
 
 Both doesn't look much different except the core function from the object-way looks more crowded. True, but now separating the setup from the code is getting very easy. All you have to do is defining a map and pass it to the mixin. No need to move around a couple of variables which can quickly become a mess.
@@ -220,7 +216,7 @@ Both doesn't look much different except the core function from the object-way lo
 // In `_config.scss` along with your other setup variables
 $component-conf: (
   theme: light,
-  name: 'module',
+  name: 'module'
 );
 
 // In `_component.scss`
@@ -231,6 +227,6 @@ $component-conf: (
 
 There you go folks. This is definitely a more "Object" approach than the previous one and I can understand some people not liking it because it doesn't look like we are dealing with CSS anymore.
 
-Now if you ask me, not only does it make both the mixin signature cleaner, but it also gives you more flexibility about your code structure and *this* is a big deal when working on a huge project with countless components. Being able to gather configuration maps in a variables file can make a huge difference when it comes to code maintenance.
+Now if you ask me, not only does it make both the mixin signature cleaner, but it also gives you more flexibility about your code structure and _this_ is a big deal when working on a huge project with countless components. Being able to gather configuration maps in a variables file can make a huge difference when it comes to code maintenance.
 
 And while the mixin core is a little more crowded due to the map getters, the trade-off can be worth it in some cases.

@@ -36,33 +36,35 @@ Here is the way I [did it](http://jsfiddle.net/HugoGiraudel/cyeGM/1/):
 
 ```css
 body {
-	text-align: center;
-	overflow: hidden;
-	background: #ffa;
+  text-align: center;
+  overflow: hidden;
+  background: #ffa;
 }
 
 h1 {
-	display: -moz-inline-box;
-	display: inline-block;
-	*display: inline;
-	*zoom: 1;
-	position: relative;
-	font-size: 30px;
-	margin-top: 20px;
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: relative;
+  font-size: 30px;
+  margin-top: 20px;
 }
 
 h1:after,
 h1:before {
-	content: "";
-	position: absolute;
-	height: 1px;
-	width: 1000px;
-	top: 50%;
-	right: 100%;
-	background: black;
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 1000px;
+  top: 50%;
+  right: 100%;
+  background: black;
 }
 
-h1:after { left: 100%; }
+h1:after {
+  left: 100%;
+}
 ```
 
 So basically, I used both pseudo-elements to create the line. To place them, I set the title to inline-block, and the parent (`body`) text-align to center.

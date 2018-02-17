@@ -39,7 +39,9 @@ I first managed to do it with `:nth-child()` selectors, replacing manually each 
 I was very upset not finding any proper way to do it with CSS so I did it with a mix of CSS and JavaScript (in fact jQuery). I don't know if it's the best way to do it in JavaScript but here is what I came up with:
 
 ```javascript
-$('.myList > li:odd').remove().appendTo('.myList');
+$('.myList > li:odd')
+  .remove()
+  .appendTo('.myList')
 ```
 
 Basically I target one out of two items with `:nth-child(even)` then remove it from the DOM to finally append it again. This does exactly what was asked so I think it's a decent solution ([JSFiddle](http://jsfiddle.net/VAdT3/6/)).
@@ -50,7 +52,7 @@ Finally someone came up with a better idea (and probably a better understanding 
 
 ```css
 li:nth-child(even) {
-  margin: 110px 0 0 -110px; 
+  margin: 110px 0 0 -110px;
   /* Given a 100*100px element with a 10px margin */
 }
 ```
@@ -61,7 +63,7 @@ However it relies on CSS advanced pseudo-selectors so for a deeper browser suppo
 
 ### Columns (edit 31/01/2013)
 
-I just noticed [Estelle Weyl](http://codepen.io/estelle) did it in another clever way with CSS columns ([CodePen](http://codepen.io/estelle/pen/zkjrn)). I'm actually wondering if it's not the better option all in all since it requires only one single CSS line (prefixes omitted). 
+I just noticed [Estelle Weyl](http://codepen.io/estelle) did it in another clever way with CSS columns ([CodePen](http://codepen.io/estelle/pen/zkjrn)). I'm actually wondering if it's not the better option all in all since it requires only one single CSS line (prefixes omitted).
 
 ```css
 ul {
@@ -82,12 +84,12 @@ A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitt
 Instead of doing `:nth-child(even)`, we need two different selectors:
 
 ```css
-li:nth-child(3n+2){
+li:nth-child(3n + 2) {
   margin: 120px 0 0 -110px;
   background: limegreen;
 }
 
-li:nth-child(3n+3) {
+li:nth-child(3n + 3) {
   margin: 230px 0 0 -110px;
   background: crimson;
 }
@@ -102,7 +104,7 @@ So I found a solution to do it with the number of rows we want, pretty cool. Imm
 First, I had to move everything to em units in order to make the whole thing easier to customize. I also created a few variables:
 
 ```scss
-$rows: 4; 
+$rows: 4;
 $baseline: 10px;
 $width: 4em;
 $height: 4em;
@@ -117,7 +119,7 @@ A few explanations about the variables:
 * `$height` is the height of each item; in my demo it equals 100px as well,
 * `$margin` is the gap between each item; I set it to 10% of the size of an item.
 
-*Note: you may wonder why using 2 different variables for size when one would be enough. This allows you to use non-square items if you want to: try it, it works.*
+_Note: you may wonder why using 2 different variables for size when one would be enough. This allows you to use non-square items if you want to: try it, it works._
 
 ### Looping!
 
@@ -142,17 +144,17 @@ It is pretty tough. Let me show you how it compiles when $rows is set to 4 (othe
 
 ```scss
 li:nth-child(4n + 4) {
-  margin-top: 13.6em;  // (3 * 4em) + (4 * 0.4em)
+  margin-top: 13.6em; // (3 * 4em) + (4 * 0.4em)
   margin-left: -4.4em; // -(4em + 0.4em)
 }
 
 li:nth-child(4n + 3) {
-  margin-top: 9.2em;   // (2 * 4em) + (3 * 0.4em)
+  margin-top: 9.2em; // (2 * 4em) + (3 * 0.4em)
   margin-left: -4.4em; // -(4em + 0.4em)
 }
 
 li:nth-child(4n + 2) {
-  margin-top: 4.8em;   // (1 * 4em) + (2 * 0.4em)
+  margin-top: 4.8em; // (1 * 4em) + (2 * 0.4em)
   margin-left: -4.4em; // -(4em + 0.4em)
 }
 ```

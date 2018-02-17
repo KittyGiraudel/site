@@ -34,11 +34,10 @@ Well, obviously you need to include the script in your page. But I made it prett
 Then using the countdown is as easy as instanciating the `Countdown` class:
 
 ```javascript
-var countdown = new Countdown();
+var countdown = new Countdown()
 ```
 
 This creates a new instance with all defaults values but you can pass quite a few options:
-
 
 ### `selector`
 
@@ -46,13 +45,11 @@ Default: `.timer`
 
 The selector you want to inject Countdown into. It should be a valid string for `document.querySelector()`.
 
-
 ### `dateStart`
 
 Default: `new Date()` (now)
 
 The date to start the countdown to. It should be a valid instance of class `Date`
-
 
 ### `dateEnd`
 
@@ -60,20 +57,17 @@ Default: `new Date(new Date().getTime() + (24 * 60 * 60 * 1000))` (tomorrow)
 
 The date to end the countdown to. It should be a valid instance of class `Date`
 
-
 ### `msgBefore`
 
 Default: `Be ready!`
 
 The message to display before reaching `dateStart`
 
-
 ### `msgAfter`
 
 Default: `It's over, sorry folks!`
 
 The message to display once reaching `dateEnd`
-
 
 ### `msgPattern`
 
@@ -95,31 +89,30 @@ Default: `null`
 
 The function to run whenever the countdown starts.
 
-
 ### `onEnd`
 
 Default: `null`
 
 The function to run whenever the countdown stops.
 
-
 ### Example
 
 ```javascript
 var countdown = new Countdown({
-    selector: '#timer',
-    msgBefore: "Will start at Christmas!",
-    msgAfter: "Happy new year folks!",
-    msgPattern: "{days} days, {hours} hours and {minutes} minutes before new year!",
-    dateStart: new Date('2013/12/25 12:00'),
-    dateEnd: new Date('Jan 1, 2014 12:00'),
-    onStart: function() {
-    	console.log('Merry Christmas!');
-    },
-    onEnd: function() {
-    	console.log('Happy New Year!');
-    }
-});
+  selector: '#timer',
+  msgBefore: 'Will start at Christmas!',
+  msgAfter: 'Happy new year folks!',
+  msgPattern:
+    '{days} days, {hours} hours and {minutes} minutes before new year!',
+  dateStart: new Date('2013/12/25 12:00'),
+  dateEnd: new Date('Jan 1, 2014 12:00'),
+  onStart: function() {
+    console.log('Merry Christmas!')
+  },
+  onEnd: function() {
+    console.log('Happy New Year!')
+  }
+})
 ```
 
 ## Pushing things further
@@ -132,17 +125,16 @@ As of today, two events are being fired: `countdownStart` and `countdownEnd`. Yo
 
 ```javascript
 var countdown = new Countdown({
-	selector: '.timer'
-});
+  selector: '.timer'
+})
 
 $('.timer').on('countdownStart', function() {
-	console.log('The countdown has been started.');
-});
+  console.log('The countdown has been started.')
+})
 
 $('.timer').on('countdownEnd', function() {
-	console.log('The countdown has reached 0.');
-});
-
+  console.log('The countdown has reached 0.')
+})
 ```
 
 Pretty neat, right?
@@ -164,4 +156,3 @@ That's all folks! I hope you like this script and if you find anything worth men
 Oh and if you only want to hack around the code, check this pen:
 
 <p data-height="320" data-theme-id="0" data-slug-hash="vCyJq" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/vCyJq'>Object-oriented JS Countdown Class</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>
-

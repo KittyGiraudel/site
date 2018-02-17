@@ -33,7 +33,6 @@ Let's start with the skeleton:
 @function str-replace($string, $old, $new) {
   // Doing magic
   @return $string;
-
 }
 ```
 
@@ -49,8 +48,7 @@ First things first, we need to check if the `$string` actually contains `$old`. 
 }
 ```
 
-Note how we also make sure the `$new` string is different from the `$old` one. Obviously there is nothing to replace if both are the same!
-Now let's dig into the core of our function. The first thing we need to do is to remove the `$old` string from the `$string`. To do this, we don't have any other choice than recreating a new string by looping through each character of the string and not appending the one from `$old`. Because performance matters, we can start looping from `$index` instead of `1`.
+Note how we also make sure the `$new` string is different from the `$old` one. Obviously there is nothing to replace if both are the same! Now let's dig into the core of our function. The first thing we need to do is to remove the `$old` string from the `$string`. To do this, we don't have any other choice than recreating a new string by looping through each character of the string and not appending the one from `$old`. Because performance matters, we can start looping from `$index` instead of `1`.
 
 ```scss
 $new-string: quote(str-slice($string, 1, $index - 1));

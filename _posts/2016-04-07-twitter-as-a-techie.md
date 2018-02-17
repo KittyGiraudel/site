@@ -22,7 +22,7 @@ Try to find your limit: when you can’t really browse through your timeline any
 
 ## Tweet often
 
-The main problem is that Twitter is fundamentally broken for new comers. It is a social network where nobody can initially read you. Let this sink for a second. When you join Twitter, you can read everybody’s words, but nobody can read yours. 
+The main problem is that Twitter is fundamentally broken for new comers. It is a social network where nobody can initially read you. Let this sink for a second. When you join Twitter, you can read everybody’s words, but nobody can read yours.
 
 Joining Twitter is like arriving at a party and talking alone in your side of the room, hoping that someone will care enough to join you. Trust me, it sucks.
 
@@ -46,11 +46,11 @@ I have really no problem with people tweeting about their life, what they enjoy 
 
 If you want your Twitter account to grow, I would advise not to do too much off-topic. It’s fine once in a while, but I guess on Twitter we all follow someone for a reason. For instance, I follow [Brad Frost](https://twitter.com/brad_frost) because he tweets insightful links and content about Responsive Web Design. That said I am perfectly fine with him talking about anything else from time to time. But when it gets too much like [Christian Heilmann](https://twitter.com/codepo8), I am losing interest. That’s also the nice thing on Twitter: we can kind of pick what/who we want to read.
 
-But again, some people will be completely fine with this, and some people won’t like it at all. You can’t please everybody, so it really depends on how you envision your Twitter account. 
+But again, some people will be completely fine with this, and some people won’t like it at all. You can’t please everybody, so it really depends on how you envision your Twitter account.
 
 ## Take care of your profile
 
-Ironically, I believe this is the kind of thing that matters less and less when your account is getting more and more attention. However when you get started and nobody knows you, it is worth spending a bit of time on your profile to show who you are, what you do and what you are using Twitter for. 
+Ironically, I believe this is the kind of thing that matters less and less when your account is getting more and more attention. However when you get started and nobody knows you, it is worth spending a bit of time on your profile to show who you are, what you do and what you are using Twitter for.
 
 Put a picture, a background image and find a short bio. I hate writing bios so I am definitely not an example here, but that can be short and sweet. I personally tend to dislike bios that are a super serious list of all the achievements and titles of a person. I don’t really care. I’d rather have a smile at a joke, or simply see what is the person interested in.
 
@@ -64,7 +64,6 @@ The feature being fairly new, I am not entirely just about what is the best to p
 
 Last piece of advice would be to just enjoy it. It should not be a pain for you to tweet or to browse your timeline. Twitter is also so specific that I’d say it’s not for everybody. Not in the way that some people should not use it; just that I understand how some people could dislike it.
 
-Find what works for you on both sides of Twitter: reading, and tweeting, then stick to it. Patience is what works on this social network. It takes time, but that’s part of the journey. 
+Find what works for you on both sides of Twitter: reading, and tweeting, then stick to it. Patience is what works on this social network. It takes time, but that’s part of the journey.
 
 Enjoy it. The more you do, the more you will. :)
-

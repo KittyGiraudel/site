@@ -27,9 +27,9 @@ For instance, `a11y-en.scss` would look like:
 ```scss
 @charset "UTF-8";
 
-@import "utils/all";
-@include set-locale("en");
-@import "a11y/a11y";
+@import 'utils/all';
+@include set-locale('en');
+@import 'a11y/a11y';
 ```
 
 Looking pretty neat, right?
@@ -67,9 +67,9 @@ Gaël has divided messages in different themes: `errors`, `advices` or `warnings
 
 ```scss
 $messages: (
-  'errors': ( /* ... */ ),
-  'advices': ( /* ... */ ),
-  'warnings': ( /* ... */ )
+  'errors': (),
+  'advices': (),
+  'warnings': ()
 );
 ```
 
@@ -81,11 +81,9 @@ Then each theme gets mapped to a sub-map (second level) containing keys for diff
 
 ```scss
 $messages: (
-  'errors': (
-    'no-src': ( /* ... */ )
-  ),
-  'advices': ( /* ... */ ),
-  'warnings': ( /* ... */ )
+  'errors': ('no-src': ()),
+  'advices': (),
+  'warnings': ()
 );
 ```
 
@@ -93,19 +91,10 @@ And finally, this key is mapped to another sub-map (third level) where each key 
 
 ```scss
 $messages: (
-  'errors': (
-    'no-src': (
-      'fr': 'Attribut [src] manquant ou vide. Bon.',
-      'en': '[src] attribute missing or empty. Oh, well…'
-    ),
-    // ...
-  ),
-  'advices': (
-    // ...
-  ),
-  'warnings': (
-    // ...
-  )
+  'errors': ('no-src': ('fr': 'Attribut [src] manquant ou vide. Bon.', 'en':
+            '[src] attribute missing or empty. Oh, well…')),
+  'advices': (),
+  'warnings': ()
 );
 ```
 
@@ -151,7 +140,7 @@ So we could use it like this:
 
 ```scss
 img:not([src])::after {
-    content: message('errors', 'no-src');
+  content: message('errors', 'no-src');
 }
 ```
 
@@ -182,7 +171,7 @@ Same arguments. No logic. Nothing but the `content` property with `!important`. 
 
 ```scss
 img:not([src])::after {
-    @include message('errors', 'no-src');
+  @include message('errors', 'no-src');
 }
 ```
 

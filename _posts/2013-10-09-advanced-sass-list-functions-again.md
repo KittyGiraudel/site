@@ -6,7 +6,6 @@ tags:
   - SassyLists
 ---
 
-
 > In case you have missed my first article about this Advanced Sass List Functions library, I recommand you to read [it](http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/).
 
 Heys people, it's been a while I haven't posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what's new on my Sass list functions library.
@@ -31,20 +30,18 @@ I have added a couple of functions to make the library even more awesome like `p
 
 ### Purge
 
-I can't believe I didn't make the `purge()` function a while ago. Basically, it removes all non-true value of a list. Compass includes the `compact()` function which does pretty much the same thing. 
+I can't believe I didn't make the `purge()` function a while ago. Basically, it removes all non-true value of a list. Compass includes the `compact()` function which does pretty much the same thing.
 
 ```scss
 @function purge($list) {
   $result: ();
-  
+
   @each $item in $list {
-    @if $item != null 
-    and $item != false 
-    and $item != "" {
+    @if $item != null and $item != false and $item != '' {
       $result: append($result, $item);
     }
   }
-  
+
   @return $result;
 }
 
@@ -61,7 +58,7 @@ I don't think this function has any major usecase, but you know, just in case I 
 
 ```scss
 @function is-symmetrical($list) {
-  @return reverse($list) == reverse(reverse($list)); 
+  @return reverse($list) == reverse(reverse($list));
 }
 ```
 
@@ -74,7 +71,7 @@ Same here, I don't think it has much point but I wanted to add it anyway. It tak
 ```scss
 @function sum($list, $force: false) {
   $result: 0;
-  
+
   @each $item in $list {
     @if type-of($item) == number {
       @if $force and unit($item) {
@@ -85,14 +82,13 @@ Same here, I don't think it has much point but I wanted to add it anyway. It tak
       }
     }
   }
-  
+
   @return $result;
 }
 
 $list: 1 2 3 4px;
-$sum: sum($list);       // -> 6
+$sum: sum($list); // -> 6
 $sum: sum($list, true); // -> 10
-
 ```
 
 ### Chunk
@@ -138,19 +134,18 @@ Same as above, the `count-values()` function is inspired by `array_count_values(
 
 ```scss
 @function count-values($list) {
-  $keys   : ();
-  $counts : ();
+  $keys: ();
+  $counts: ();
 
   @each $item in $list {
     $index: index($keys, $item);
 
     @if not $index {
-      $keys   : append($keys, $item);
-      $counts : append($counts, 1);
-    }
-    @else {
-      $count  : nth($counts, $index) + 1;
-      $counts : replace-nth($counts, $index, $count);
+      $keys: append($keys, $item);
+      $counts: append($counts, 1);
+    } @else {
+      $count: nth($counts, $index) + 1;
+      $counts: replace-nth($counts, $index, $count);
     }
   }
 
@@ -173,18 +168,17 @@ There are times when you want to remove values that are present multiple times i
 ```scss
 @function remove-duplicates($list, $recursive: false) {
   $result: ();
-  
+
   @each $item in $list {
     @if not index($result, $item) {
       @if length($item) > 1 and $recursive {
         $result: append($result, remove-duplicates($item, $recursive));
-      }
-      @else {
+      } @else {
         $result: append($result, $item);
       }
     }
   }
-  
+
   @return $result;
 }
 
@@ -201,21 +195,20 @@ Last but not least, I added a `debug()` function to help you people debugging yo
 
 ```scss
 @function debug($list) {
-  $result: #{"[ "};
+  $result: #{'[ '};
 
   @each $item in $list {
     @if length($item) > 1 {
       $result: $result#{debug($item)};
-    }
-    @else {
+    } @else {
       $result: $result#{$item};
     }
     @if index($list, $item) != length($list) {
-      $result: $result#{", "};
+      $result: $result#{', '};
     }
-  } 
+  }
 
-  $result: $result#{" ]"};
+  $result: $result#{' ]'};
 
   @return $result;
 }
@@ -225,7 +218,7 @@ $debug: debug($list);
 // -> [ a, b, [ c, d, [ e, f, [ [ g, h, [ i, j, k] ], l, m ] ] ] ]
 ```
 
-## Improvements 
+## Improvements
 
 Not only I try to add new functions but I also do my best to make all functions as fast as they can be and the library as simple to understand as it can be so you can dig into it to change / learn stuff.
 
@@ -233,11 +226,11 @@ For example, you know we have [two remove functions](http://hugogiraudel.com/201
 
 ```scss
 @function remove($list, $value, $recursive: false) {
-  @return replace($list, $value, "", $recursive);
+  @return replace($list, $value, '', $recursive);
 }
 
 @function remove-nth($list, $index) {
-  @return replace-nth($list, $index, "");
+  @return replace-nth($list, $index, '');
 }
 ```
 
@@ -247,11 +240,11 @@ This is why I had to create the `purge()` function. Both `replace()` and `replac
 
 I have also used quite a couple of ternary operators along the way to make code lighter.
 
-## What now? 
+## What now?
 
 Quite a few things! I still have to clean some functions because they are kind of messy at the time. I could still add new functions if you think of something.
 
-I am unable to wait for Sass 3.3, it is going to be awesome. First, the `if()` will be completely reworked to have a built-in parser so it stop bugging around. 
+I am unable to wait for Sass 3.3, it is going to be awesome. First, the `if()` will be completely reworked to have a built-in parser so it stop bugging around.
 
 But there will also be new string manipulation functions (`str-length()`, `str-slice()`...) and the `call()` function which will allow me to make a lot of new functions like [`every()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
 

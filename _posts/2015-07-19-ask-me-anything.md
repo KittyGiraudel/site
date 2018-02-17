@@ -6,9 +6,9 @@ tags:
   - answers
 ---
 
-I recently discovered the *Ask Me Anything* concept, through the [AMA repository](https://github.com/sindresorhus/ama) of [Sindre Sorhus](https://twitter.com/sindresorhus), the author of countless node modules. 
+I recently discovered the _Ask Me Anything_ concept, through the [AMA repository](https://github.com/sindresorhus/ama) of [Sindre Sorhus](https://twitter.com/sindresorhus), the author of countless node modules.
 
-The idea is simple: people can ask questions about basically anything on the repository, to whom the author reply the way they feels. Once a question has been answered, the issue gets closed and that's it. 
+The idea is simple: people can ask questions about basically anything on the repository, to whom the author reply the way they feels. Once a question has been answered, the issue gets closed and that's it.
 
 It turns out he is not the only one with an Ask Me Anything repository; there are [a whole bunch of people](https://github.com/sindresorhus/amas) replying to questions about them on GitHub!
 
@@ -24,7 +24,7 @@ I already replied to about [20 questions](https://github.com/HugoGiraudel/ama/is
 
 * [I roughly spend 62.5% of my time working](https://github.com/HugoGiraudel/ama/issues/15),
 * [I have spent an average of 36% of my life in my bed](https://github.com/HugoGiraudel/ama/issues/12),
-* [my superpower would definitely be *teleportation*](https://github.com/HugoGiraudel/ama/issues/4),
+* [my superpower would definitely be _teleportation_](https://github.com/HugoGiraudel/ama/issues/4),
 * [I don't believe in God](https://github.com/HugoGiraudel/ama/issues/14),
 * [I enjoy a solid workflow](https://github.com/HugoGiraudel/ama/issues/17).
 

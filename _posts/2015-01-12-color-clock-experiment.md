@@ -27,8 +27,8 @@ Alright, let's go.
 Let's start with a little skeleton for our application:
 
 ```javascript
-(function () {
-  'use strict';
+;(function() {
+  'use strict'
 
   // Our main function
   function colorClock() {
@@ -36,8 +36,8 @@ Let's start with a little skeleton for our application:
   }
 
   // Call our function every second
-  var timer = setInterval(colorClock, 1000);
-}());
+  var timer = setInterval(colorClock, 1000)
+})()
 ```
 
 Nothing special here: at every second, we call the `colorClock` function. This function will have to do three things:
@@ -55,11 +55,11 @@ function colorClock() {
   // ...
 
   function dateToContent(date) {
-    return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+    return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1')
   }
 
-  var date = new Date();
-  document.body.innerHTML = dateToContent(date);
+  var date = new Date()
+  document.body.innerHTML = dateToContent(date)
 }
 ```
 
@@ -72,22 +72,22 @@ Alright. The first thing we need is to compute our color channels based on the c
 ```javascript
 function RGBFromDate(date) {
   return [
-    (date.getHours()   / 24 * 255),
-    (date.getMinutes() / 60 * 255),
-    (date.getSeconds() / 60 * 255)
-  ].map(function (e) {
-    return Math.round(e);
-  });
+    date.getHours() / 24 * 255,
+    date.getMinutes() / 60 * 255,
+    date.getSeconds() / 60 * 255
+  ].map(function(e) {
+    return Math.round(e)
+  })
 }
 ```
 
 At this point, we have everything we need to apply the color to the body.
 
 ```javascript
-var date = new Date();
-var channels = RGBFromDate(date);
+var date = new Date()
+var channels = RGBFromDate(date)
 
-document.body.style.backgroundColor = 'rgb(' + channels.join(',') + ')';
+document.body.style.backgroundColor = 'rgb(' + channels.join(',') + ')'
 ```
 
 ## Changing font color based on body color
@@ -96,14 +96,14 @@ Last but not least, we need to find a way to change the font color if the backgr
 
 ```javascript
 function colorLuminance(red, green, blue) {
-  return ((0.299 * red) + (0.587 * green) + (0.114 * blue)) / 256;
+  return (0.299 * red + 0.587 * green + 0.114 * blue) / 256
 }
 
 function colorFromRGB(red, green, blue) {
-  return colorLuminance(red, green, blue) > 0.7 ? 'black' : 'white';
+  return colorLuminance(red, green, blue) > 0.7 ? 'black' : 'white'
 }
 
-document.body.style.color = colorFromRGB.apply(this, channels);
+document.body.style.color = colorFromRGB.apply(this, channels)
 ```
 
 ## Final thoughts
@@ -111,46 +111,46 @@ document.body.style.color = colorFromRGB.apply(this, channels);
 That's it. Here is the final code:
 
 ```javascript
-(function () {
-  'use strict';
+;(function() {
+  'use strict'
 
   function colorClock() {
     // Get RGB channels from a date
     function RGBFromDate(date) {
       return [
-        (date.getHours()   / 24 * 255),
-        (date.getMinutes() / 60 * 255),
-        (date.getSeconds() / 60 * 255)
-      ].map(function (e) {
-        return Math.round(e);
-      });
+        date.getHours() / 24 * 255,
+        date.getMinutes() / 60 * 255,
+        date.getSeconds() / 60 * 255
+      ].map(function(e) {
+        return Math.round(e)
+      })
     }
 
     // Get color luminance as a float from RGB channels
     function colorLuminance(red, green, blue) {
-      return ((0.299 * red) + (0.587 * green) + (0.114 * blue)) / 256;
+      return (0.299 * red + 0.587 * green + 0.114 * blue) / 256
     }
 
     // Get font color from RGB channels from background
     function colorFromRGB(red, green, blue) {
-      return colorLuminance(red, green, blue) > 0.7 ? 'black' : 'white';
+      return colorLuminance(red, green, blue) > 0.7 ? 'black' : 'white'
     }
 
     // Get formatted date
     function dateToContent(date) {
-      return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+      return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1')
     }
 
-    var date = new Date();
-    var channels = RGBFromDate(date);
+    var date = new Date()
+    var channels = RGBFromDate(date)
 
-    document.body.style.color = colorFromRGB.apply(this, channels);
-    document.body.style.backgroundColor = 'rgb(' + channels.join(',') + ')';
-    document.body.innerHTML = dateToContent(date);
+    document.body.style.color = colorFromRGB.apply(this, channels)
+    document.body.style.backgroundColor = 'rgb(' + channels.join(',') + ')'
+    document.body.innerHTML = dateToContent(date)
   }
 
-  var t = setInterval(colorClock, 1000);
-}());
+  var t = setInterval(colorClock, 1000)
+})()
 ```
 
 You can play with the code on CodePen:

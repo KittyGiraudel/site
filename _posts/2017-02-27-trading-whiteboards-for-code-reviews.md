@@ -6,7 +6,7 @@ tags:
   - code review
 ---
 
-Yesterday night, hundreds of developers, engineers, tech leads and more generally IT workers have [shared on Twitter](https://twitter.com/i/moments/835942450103451649) their inability to perform some simple tasks without help despite being entirely qualified and doing a respectful job. It is a great thread of comically funny short stories that I highly recommend you to read. All this to protest against whiteboard interviews. 
+Yesterday night, hundreds of developers, engineers, tech leads and more generally IT workers have [shared on Twitter](https://twitter.com/i/moments/835942450103451649) their inability to perform some simple tasks without help despite being entirely qualified and doing a respectful job. It is a great thread of comically funny short stories that I highly recommend you to read. All this to protest against whiteboard interviews.
 
 “Whiteboard interview” is a term describing the practice of asking a candidate to perform a coding exercise on a whiteboard (hence the name) to judge their technical skills. The usual example is to ask an applying engineer to revert a binary tree using nothing but a pen.
 
@@ -46,7 +46,7 @@ I have been thinking about this quite a lot, and I found many benefits to conduc
 
 ## Crafting the perfect pull-request
 
-Now it’s always the same: the content still matters. You can’t ask any candidate to review any kind of code. I think the best would be to create a pull-request specifically for that. 
+Now it’s always the same: the content still matters. You can’t ask any candidate to review any kind of code. I think the best would be to create a pull-request specifically for that.
 
 If hiring a senior JavaScript engineer to build an engine, you don’t want them to review CSS code, but you definitely want to test their knowledge about performance and their attention to documentation and testing. Similarly, if hiring a front-end designer, you want to make sure they know a good deal of valid, accessible HTML/CSS and have an eye for design.
 
@@ -67,7 +67,7 @@ For a more general approach, I recommend creating a pull-request that covers an 
 
 Now there are several ways to tackle this. Either you create this pull-request the way you would write and submit it for review. Or you make it contain some errors to see if the candidate would notice them.
 
-If you go this way, you might want to include some admittedly big issues: invalid HTML, unsupported CSS with no fallback, JavaScript bug, accessibility mistake, XSS vulnerability, poorly performing code… Then you could introduce some smaller issues, like typos in documentation, lack of comment on something obscure, duplicated code, non-tested edge-case, inconsistent naming convention, etc. 
+If you go this way, you might want to include some admittedly big issues: invalid HTML, unsupported CSS with no fallback, JavaScript bug, accessibility mistake, XSS vulnerability, poorly performing code… Then you could introduce some smaller issues, like typos in documentation, lack of comment on something obscure, duplicated code, non-tested edge-case, inconsistent naming convention, etc.
 
 If you want to test git knowledge, work on your commits. Craft a commit that leave the branch in an unstable state, one that do several things at once, one that does not respect the wording convention, and so on.
 

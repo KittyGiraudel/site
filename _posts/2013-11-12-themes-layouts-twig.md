@@ -9,7 +9,7 @@ tags:
 
 Hey people! This post is going to be quite different from what I usually write about since it will talk about [Twig](http://twig.sensiolabs.org/), the template engine used by [Symfony 2](http://symfony.com/). I came across a pretty complicated case at work so I thought I'd write a little something about it.
 
-But let's put some context first: Twig presents itself as a *template engine for PHP*. Kind of Jekyll, but far more powerful. The basic idea is to create reusable templates also called "views" (basically HTML blocks) to avoid repeating the same code again and again.
+But let's put some context first: Twig presents itself as a _template engine for PHP_. Kind of Jekyll, but far more powerful. The basic idea is to create reusable templates also called "views" (basically HTML blocks) to avoid repeating the same code again and again.
 
 ## Some leveling-up about Twig
 
@@ -71,7 +71,7 @@ And finally, you can embed ([`@embed`](http://twig.sensiolabs.org/doc/tags/embed
 
 ## The problem
 
-The problem I faced at work was finding a way to manage both themes and layouts in Twig with *themes* being design schemes (mostly color-based) and *layouts* basically being the number of columns we use for the layout as well as their size.
+The problem I faced at work was finding a way to manage both themes and layouts in Twig with _themes_ being design schemes (mostly color-based) and _layouts_ basically being the number of columns we use for the layout as well as their size.
 
 So the theme is passed as a class to the body element (e.g. `<body class="shopping">`), while the layout defines what kind of dom nodes / HTML classes we will use for the main content of the site.
 
@@ -92,27 +92,27 @@ Unfortunately, it's not possible to extend multiple templates in Twig (which see
 One possible way to go &mdash; the one we wanted to avoid at all costs &mdash; was having either every layouts for every themes, or every themes for every layouts. Basically something like this:
 
 * admin (theme)
-    * 12 (layout)
-    * 8-4 (layout)
-    * 9-3 (layout)
-    * 2-7-3 (layout)
+  * 12 (layout)
+  * 8-4 (layout)
+  * 9-3 (layout)
+  * 2-7-3 (layout)
 * shopping (theme)
-    * 12 (layout)
-    * 8-4 (layout)
-    * 9-3 (layout)
-    * 2-7-3 (layout)
+  * 12 (layout)
+  * 8-4 (layout)
+  * 9-3 (layout)
+  * 2-7-3 (layout)
 * ...
 
 With this solution, you could do somethink like {% raw %}`{% extends 'shopping/12' %}`{% endraw %}. Or the other way around:
 
 * 12 (layout)
-    * shopping (theme)
-    * news (theme)
-    * ...
+  * shopping (theme)
+  * news (theme)
+  * ...
 * 9-3 (layout)
-    * shopping (theme)
-    * news (theme)
-    * ...
+  * shopping (theme)
+  * news (theme)
+  * ...
 * ...
 
 With this solution, you could do somethink like {% raw %}`{% extends '12/shopping' %}`{% endraw %}.
@@ -150,7 +150,7 @@ As seen previously, the base file creates the HTML root document, the major HTML
 
 ### Defining a theme
 
-Next, we need to define a theme. A theme file will directly extends the base file, and will be extended by the page file. The content of the theme file is very light. Let's say we have a *shopping* theme; so we have the `shopping.html.twig` file:
+Next, we need to define a theme. A theme file will directly extends the base file, and will be extended by the page file. The content of the theme file is very light. Let's say we have a _shopping_ theme; so we have the `shopping.html.twig` file:
 
 ```html
 {% raw %}{% extends 'base.html.twig' %}

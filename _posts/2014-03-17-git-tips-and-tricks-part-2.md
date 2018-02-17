@@ -9,7 +9,7 @@ tags:
 
 <!-- -->
 
-> Hi dear folks! This is the 2nd part of the *Git Tips & Tricks* series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
+> Hi dear folks! This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
 
 Hey people! I hope you enjoyed the first part of the series. In this one, I will introduce you even more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced Git concepts and commands. Ready?
 
@@ -137,7 +137,7 @@ $ git status
 nothing to commit (working directory clean)
 ```
 
-In the previous example, I'm on a local *infinite-scroll* branch which is tracking a *sharedBranches/frontendTeam/infinite-scroll* branch in the *origin* repository. My branch and the remote one have differed: my branch contains 1 commit which is not in the remote branch and the remote branch contains 2 commits which are not in my local branch. I will have to merge or rebase the remote branch if I want to push in the same remote location.
+In the previous example, I'm on a local _infinite-scroll_ branch which is tracking a _sharedBranches/frontendTeam/infinite-scroll_ branch in the _origin_ repository. My branch and the remote one have differed: my branch contains 1 commit which is not in the remote branch and the remote branch contains 2 commits which are not in my local branch. I will have to merge or rebase the remote branch if I want to push in the same remote location.
 
 To track a remote branch you can type the following command:
 
@@ -191,10 +191,9 @@ nothing to commit, working directory clean
 
 ## How to delete a remote branch
 
-It's quite easy to delete a local branch with the `-d` and `-D` parameters of `git branch` command, but the syntax to delete a remote branch is not so instinctive. Actually you don't really *delete* a remote branch per se; instead you push *nothing* to an existing destination.
+It's quite easy to delete a local branch with the `-d` and `-D` parameters of `git branch` command, but the syntax to delete a remote branch is not so instinctive. Actually you don't really _delete_ a remote branch per se; instead you push _nothing_ to an existing destination.
 
-The `git push origin master` command is a shortcut to the command `git push origin master:master`. The `master:master` syntax means `local-branch-name:destination-branch-name`.
-So to push *nothing* to a remote branch, you can use the following command:
+The `git push origin master` command is a shortcut to the command `git push origin master:master`. The `master:master` syntax means `local-branch-name:destination-branch-name`. So to push _nothing_ to a remote branch, you can use the following command:
 
 ```git
 $ git push origin :myBranch
@@ -228,7 +227,7 @@ More informations about the feature
 
 Unfortunately, it's not possible to use a bash script instead of a text message, to &mdash; let's say &mdash; dynamically add the branch name. Fortunately, the same thing can be done with Git hooks.
 
-*Hooking* is a common programming pattern to allow user to improve the behavior of a software by allowing custom piece of code to run at a specific moment.
+_Hooking_ is a common programming pattern to allow user to improve the behavior of a software by allowing custom piece of code to run at a specific moment.
 
 With Git, you can create a client-side hook running before user writes his commit message. A hook can retrieve some informations to pre-fill the commit message. Let's create one in order to fill the commit message with the local branch name, shall we?
 
@@ -276,7 +275,7 @@ $ git commit
 My text editor opens with the following content:
 
 ```git
-[my-local-branch] 
+[my-local-branch]
 ```
 
 I can update this message to add some informations. If I amend my commit to change the message, it shouldn't overwrite my message :

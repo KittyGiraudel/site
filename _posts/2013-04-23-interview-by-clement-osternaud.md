@@ -5,7 +5,7 @@ tags:
   - thoughts
 ---
 
-> French front-end developer Clément Osternaud interviewed me for [his site](http://myressources.com/interview-hugo-giraudel/). Below is the translation of the whole interview. 
+> French front-end developer Clément Osternaud interviewed me for [his site](http://myressources.com/interview-hugo-giraudel/). Below is the translation of the whole interview.
 
 ## Could you introduce yourself in a few lines
 

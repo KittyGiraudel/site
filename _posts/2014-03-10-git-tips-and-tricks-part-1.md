@@ -13,11 +13,9 @@ tags:
 
 Hi people! Today, I'm gonna share with you some Git tips & tricks I've already shared with my workmates at Best Of Media. But before even starting let's never forget the more important laws of Git.
 
-**Law #1**: **each commit must let the branch into a stable state**.
-You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn't be splitted into several commits. For instance, don't put the HTML, CSS and JS of a new feature in three separate commits: the functionality requires all of them to work so they should all belong to the same commit. If you have to pause your work (time to grab lunch, go home, switch to another thing or whatever), create a temporary commit which will be enhanced later.
+**Law #1**: **each commit must let the branch into a stable state**. You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn't be splitted into several commits. For instance, don't put the HTML, CSS and JS of a new feature in three separate commits: the functionality requires all of them to work so they should all belong to the same commit. If you have to pause your work (time to grab lunch, go home, switch to another thing or whatever), create a temporary commit which will be enhanced later.
 
-**Law #2**: **each commit has only one purpose**.
-If you see a bug while you're working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.
+**Law #2**: **each commit has only one purpose**. If you see a bug while you're working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.
 
 Ok, now let's start with the real tips & tricks...
 
@@ -78,7 +76,7 @@ git log -S console.log --author lgiraudel --before="2013-10-01 00:00" --after="2
 
 ### With `git blame`
 
-`git blame` displays each line of a file and the last commit which has modified the line. It's the better way to find who, when and why a specific line has been added to a file. Actually the command name kind of speaks for itself: *blame*.
+`git blame` displays each line of a file and the last commit which has modified the line. It's the better way to find who, when and why a specific line has been added to a file. Actually the command name kind of speaks for itself: _blame_.
 
 It requires a filepath to works:
 

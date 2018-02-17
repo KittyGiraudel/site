@@ -15,7 +15,7 @@ The single fact that you clicked on that link to come here shows that you are br
 
 However, regular expressions are hard to read, if not to say barely decipherable. That’s why I thought an article on the basics of regular expressions would not be such a bad idea after all. And to avoid the very theoretical approach, I feel like actually building a regular expression the hard way from the ground up would be a good way to learn.
 
-*Disclaimer!* I am not an expert in regular expressions, although I guess I can make my way in most situations with them, as long as it’s not getting overly complex. If you happen to find a way to improve this code, be kind enough to explain what you would do in the comments. That would be super great. :)
+_Disclaimer!_ I am not an expert in regular expressions, although I guess I can make my way in most situations with them, as long as it’s not getting overly complex. If you happen to find a way to improve this code, be kind enough to explain what you would do in the comments. That would be super great. :)
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/xkcd-1.png" alt="Everybody stands back, I know regular expressions!" />
@@ -26,14 +26,14 @@ However, regular expressions are hard to read, if not to say barely decipherable
 
 In case you are not entirely sure what this is all about, allow me to put you back on track. A [regular expression](https://en.wikipedia.org/wiki/Regular_expression), often shortened as “regex” or “regexp”, is a sequence of characters that define a search pattern. Because of their usefulness, regular expressions are built-in in most programming languages. A very practical example would be a regular expression to validate an email address.
 
-That being said it is important to point out that not all regular expression engines are the same. You might have heard of [PCRE](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions) (*Perl Compatible Regular Expression*) or POSIX regular expressions. PCRE is the engine used in many languages including PHP, and can be thought as *regex on steroids*. It is the “new standard” so to say. However not all languages stick to PCRE. For instance JavaScript has a limited support of PCRE and a lot of features, such as the ability to write regular expressions on several lines using safe spaces and line-breaks, are absent.
+That being said it is important to point out that not all regular expression engines are the same. You might have heard of [PCRE](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions) (_Perl Compatible Regular Expression_) or POSIX regular expressions. PCRE is the engine used in many languages including PHP, and can be thought as _regex on steroids_. It is the “new standard” so to say. However not all languages stick to PCRE. For instance JavaScript has a limited support of PCRE and a lot of features, such as the ability to write regular expressions on several lines using safe spaces and line-breaks, are absent.
 
 Also, as it is forbidden to write about regular expressions without dropping some bombs, here is a famous quote to get started:
 
 > Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems.  
 > &mdash; Jamie Zawinski
 
-*Note: to play with regular expressions, I highly recommend [Regexr](http://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions.*
+_Note: to play with regular expressions, I highly recommend [Regexr](http://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions._
 
 ## Finding a use-case
 
@@ -78,11 +78,11 @@ We will also assume that selectors are correctly written, sticking to what is po
 
 Alright? Let’s get started slowly but surely.
 
-*Note: for sake of readability, I omitted the [PCRE delimiters](http://php.net/manual/en/regexp.reference.delimiters.php) (`/.../`) from all regular expressions in this article. We also won't talk about [flags](http://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion.*
+_Note: for sake of readability, I omitted the [PCRE delimiters](http://php.net/manual/en/regexp.reference.delimiters.php) (`/.../`) from all regular expressions in this article. We also won't talk about [flags](http://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion._
 
 ## Matching a raw attribute selector
 
-Let’s start easy. We want to match an attribute selector that only checks for the presence of the attribute, without checking its value, such as `[href]`. To do so, we are looking for a word inside of brackets. 
+Let’s start easy. We want to match an attribute selector that only checks for the presence of the attribute, without checking its value, such as `[href]`. To do so, we are looking for a word inside of brackets.
 
 To match a word character, we can use the `\w` meta character. This literally means:
 
@@ -142,7 +142,7 @@ We now want to match raw attribute selectors as well as attribute selectors chec
 \[[a-z][a-z0-9-]*]
 ```
 
-To match a value, we need to check for the presence of an equal sign (`=`), then a series of at least one character that is not a closing square bracket (for now). To match anything that is not a specific character we use a *negated set*, written as: `[^X]` where `X` is the character you do not want to match (escaped if needed).
+To match a value, we need to check for the presence of an equal sign (`=`), then a series of at least one character that is not a closing square bracket (for now). To match anything that is not a specific character we use a _negated set_, written as: `[^X]` where `X` is the character you do not want to match (escaped if needed).
 
 > A negated set is a way to match any character that is not in the set.
 
@@ -163,7 +163,7 @@ Oh-ho though... Now `[foo]` doesn't match anymore! That’s because we did not m
 \[[a-z][a-z0-9-]*(=[^\]]+)?]
 ```
 
-The question mark says: 
+The question mark says:
 
 > Matches 0 or 1 of the preceding token, effectively making it optional.
 
@@ -193,11 +193,11 @@ So instead of matching anything but a closing square bracket, we want to match e
 * or a single quote (`'`) followed by anything that is not a single quote or a line break, then a single quote again: `'[^'\n]*'`.
 * or anything (yet at least 1 character) that is not a double quote, a single quote, a space-like character (using the `\s` character class) or a closing square bracket: `[^"'\s\]]+`.
 
-To achieve this, we can use the alternation operator `|`: 
+To achieve this, we can use the alternation operator `|`:
 
 > Acts like a boolean OR. Matches the expression before or after the `|`. It can operate within a group, or on a whole expression. The patterns will be tested in order.
 
-It gives us this pattern: 
+It gives us this pattern:
 
 ```regex
 ("[^"\n]*"|'[^'\n]*'|[^"'\s]+)
@@ -233,7 +233,7 @@ This flag (noted `i`) must be present after at least 1 space right before the cl
 
 Regular expressions are not exclusively made for matching and validating content. They are also super useful when it comes to capturing some dynamic content as part of a search pattern. For instance, let’s say we want to grab the attribute value in our regular expression.
 
-Capturing content as part of a regular expression is made with parentheses (`(..)`). This is called a *capturing group*:
+Capturing content as part of a regular expression is made with parentheses (`(..)`). This is called a _capturing group_:
 
 > Groups multiple tokens together and creates a capture group for extracting a substring or using a backreference.
 
@@ -267,7 +267,7 @@ If we want to grab the value only, without the possible quotes, we need to move 
 
 That’s it! The final state of our regular expression is able to correctly match and validate a CSS attribute selector. I have run some tests on it and could not find a reasonable way to break it (as long as the selectors are sticking to what is allowed by the CSS specifications).
 
-As you can see, it is not *that* hard to write a decent regular expression, especially when you take it slow and build it step by step. Do not try to rush the perfect solution right away. Start with the basic match, then enhance it to deal with more complex scenarios and edge cases.
+As you can see, it is not _that_ hard to write a decent regular expression, especially when you take it slow and build it step by step. Do not try to rush the perfect solution right away. Start with the basic match, then enhance it to deal with more complex scenarios and edge cases.
 
 It is worth noting that the difficulty with regular expressions is usually not to write them but to read them, and thus maintain them. Therefore, it is highly recommended to extensively unit-test code snippets relying on regular expressions. It can be a huge time-saviour when updating a regular expression to have a few dozens of tests making sure that the behaviour didn't break.
 
@@ -285,4 +285,4 @@ Last but not least, Adonis mentioned in the comments a very handy tool to visual
 
 I hope you learnt a few things anyway. And if you find a way to improve it, be sure to share in the comments!
 
-*Huge thanks to [my brother Loïc](https://twitter.com/l_giraudel) for helping me making this article a valuable piece of information about regular expressions. :)*
+_Huge thanks to [my brother Loïc](https://twitter.com/l_giraudel) for helping me making this article a valuable piece of information about regular expressions. :)_

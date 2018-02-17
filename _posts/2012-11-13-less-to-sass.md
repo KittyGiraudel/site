@@ -13,7 +13,7 @@ So this post will be about my own experience with CSS preprocessors. For the con
 
 Anyway and before anything, please note I’m not a hardcore CSS preprocessor user. I’m more like a novice with these tools, but I’ve already worked a little bit on 2 of them: firstly LESS then Sass. I recently moved from LESS to Sass and don’t plan on going back.
 
-## Why LESS as a first try 
+## Why LESS as a first try
 
 A few weeks ago, I wanted to have a real shot with CSS preprocessors after hours of playing on [CodePen](http://codepen.io) so I read a few things to make a choice. To put it simple, there are currently 4 major CSS preprocessors:
 
@@ -30,7 +30,7 @@ I’ve played with LESS a few days, tried a few things and even built my own fra
 
 Anyway, that wasn’t the worst thing. I still could learn how to run the server-side part of LESS to compile, or switch to LESSPHP with the help of my brother who uses it at work. No, the worst thing occurred to me when I tried to dig deep down into the entrails of LESS.
 
-## When I started realizing LESS wasn’t the Eldorado 
+## When I started realizing LESS wasn’t the Eldorado
 
 One of the first “complicated” thing I tried to create was a mixin handling CSS arrows the same way [CSSArrowPlease](http://cssarrowplease.com/) does. It took me a couple of hours but I finally succeeded and [hosted it on GitHub](https://github.com/HugoGiraudel/LESS-Mixin-for-CSS-arrows). However I noticed something counter-intuitive: conditional statements.
 
@@ -41,10 +41,18 @@ The way I wanted to handle my mixin was something which would look like this:
 ```less
 .mixin(parameters) {
   /* Basic stuff here */
-  if (direction = top)    { /* Conditional stuff here */ }
-  else if (direction = bottom) { /* Conditional stuff here */ }
-  else if (direction = left)   { /* Conditional stuff here */ }
-  else if (direction = right)  { /* Conditional stuff here */ }
+  if (direction = top) {
+    /* Conditional stuff here */
+  }
+  else if (direction = bottom) {
+    /* Conditional stuff here */
+  }
+  else if (direction = left) {
+    /* Conditional stuff here */
+  }
+  else if (direction = right) {
+    /* Conditional stuff here */
+  }
 }
 ```
 
@@ -85,7 +93,9 @@ Loops are cool: they can handle a huge amount of operations in only a few lines 
 ```scss
 @nbElements: 10;
 for(@i = 0; @i < @nbElements; @i++) {
-  .my-element:nth-child(@i) { animation-name: loading-@i; }
+  .my-element:nth-child(@i) {
+    animation-name: loading-@i;
+  }
 }
 ```
 
@@ -94,8 +104,8 @@ Well, this is absolutely not how LESS is handling loops. Actually **LESS doesn't
 ```less
 /* Define loop */
 .loop(@index) when (@index &gt; 0) {
-  (~".my-element:nth-child(@{index})") {
-    animation-name: "loading-@{index}";
+  (~'.my-element:nth-child(@{index})') {
+    animation-name: 'loading-@{index}';
   }
 
   /* Call itself */
@@ -103,7 +113,8 @@ Well, this is absolutely not how LESS is handling loops. Actually **LESS doesn't
 }
 
 /* Stop loop */
-.loop (0) {}
+.loop (0) {
+}
 
 /* Use loop */
 @nbElements: 10;
@@ -135,7 +146,7 @@ I know concatenation can be somewhat annoying to handle depending on the languag
 }
 
 /* But this works */
-(~"@{my-element}") {
+(~'@{my-element}') {
   color: @my-value;
 }
 
@@ -153,61 +164,60 @@ It is somewhat well thought out since CSS is using this sign for “alternative 
 
 But come on... How come they didn’t think about variable concatenations and @keyframes/@page uses inside mixins?
 
-
 Basically, LESS fails to understand @page and @keyframes inside mixins because it throws an exception according to [its source code](https://github.com/cloudhead/less.js/blob/b235734a11f646252db8f0947fee406ce67cf904/lib/less/parser.js#L1158). So you'll need two nested mixins: one handling your animation, the second one to handle the keyframes. Sounds heavy and complicated, well it is. So let’s say you want to create a custom mixin using @keyframes and vendor prefixes (not much, right?) this is what you have to do:
 
 ```less
-@newline: `"\n"`; /* Newline */
+@newline: `'\n'`; /* Newline */
 .my-mixin(@selector, @name, @other-parameters) {
-  /* @selector is the element using your animation 
-   * @name is the name of your animation
-   * @other-parameters are the parameters of your animation
-   */ 
+  /* @selector is the element using your animation
+     * @name is the name of your animation
+     * @other-parameters are the parameters of your animation
+     */
 
   .keyframe-mixin(@pre, @post, @vendor) {
     /* @pre is the newline hack (empty on the first declaration)
-     * @post is a variable fix to detect the last declaration (1 on the last one)
-     * @vendor is the vendor prefix you want  
-     */
+         * @post is a variable fix to detect the last declaration (1 on the last one)
+         * @vendor is the vendor prefix you want  
+         */
 
-    (~"@{pre}@@{vendor}keyframes @{name} {@{newline} 0%") {
-      /* 0% stuff here */ 
-    } 
+    (~'@{pre}@@{vendor}keyframes @{name} {@{newline} 0%') {
+      /* 0% stuff here */
+    }
 
-    100%  { 
+    100% {
       /* 100% stuff here */
-    } 
+    }
 
-    .Local(){}
+    .Local() {
+    }
     .Local() when (@post=1) {
-      (~"}@{newline}@{selector}") {
+      (~'}@{newline}@{selector}') {
         -webkit-animation: @name;
-        -moz-animation:    @name;
-        -ms-animation:     @name;
-        -o-animation:      @name;
-        animation:         @name;
-      } 
-    }    
-  .Local;
+        -moz-animation: @name;
+        -ms-animation: @name;
+        -o-animation: @name;
+        animation: @name;
+      }
+    }
+    .Local;
   }
 
-.keyframe-mixin(""            , 0, "-webkit-");
-.keyframe-mixin(~"}@{newline}", 0,    "-moz-");
-.keyframe-mixin(~"}@{newline}", 0,     "-ms-");
-.keyframe-mixin(~"}@{newline}", 0,      "-o-");
-.keyframe-mixin(~"}@{newline}", 1,         "");
-
-} 
-.my-mixin("#whatever", name, other-parameters);
+  .keyframe-mixin(''            , 0, '-webkit-');
+  .keyframe-mixin(~'}@{newline}', 0,    '-moz-');
+  .keyframe-mixin(~'}@{newline}', 0,     '-ms-');
+  .keyframe-mixin(~'}@{newline}', 0,      '-o-');
+  .keyframe-mixin(~'}@{newline}', 1,         '');
+}
+.my-mixin('#whatever', name, other-parameters);
 ```
 
 Yeah, this is a complete nightmare. I'm not the one who wrote this; I've been searching for hours how to do this before finding [a very complete answer](http://stackoverflow.com/questions/13160991/chaining-keyframe-attributes-with-less) on StackOverflow leading to two others related topic with wonderful answers ([here](http://stackoverflow.com/questions/11551313/less-css-pass-mixin-as-a-parameter-to-another-mixin/11589227#11589227) and [there](http://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css)).
 
-*Note: the `.Local()` thing seems to be a keyword for "this" but I couldn't find any confirmation on this. If you have, please catch me on Twitter.*
+_Note: the `.Local()` thing seems to be a keyword for "this" but I couldn't find any confirmation on this. If you have, please catch me on Twitter._
 
 So basically, here is what there is to say ([still not from me](http://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css/11028622#11028622)):
 
-* The initial selector `(~"@keyframes @{name}{") { ... }` renders as `@keyframes name { { ... }   
+* The initial selector `(~"@keyframes @{name}{") { ... }` renders as `@keyframes name { { ... }
 * To avoid `{ {`, it requires a newline which cannot be escaped directly so through the variable `@newline: \`"\n"\``;. LESS parses anything between backticks as JavaScript, so the resulting value is a newline character.
 * Since `{ ... }` requires a selector to be valid, we use the first step of the animation (0%).
 * But the curly braces do not match. To fix this, we can add a dummy selector in the end, which starts with `(~"} dummy") { .. }`. How ugly is that?
@@ -215,9 +225,9 @@ So basically, here is what there is to say ([still not from me](http://stackover
 * `@{pre}` has to be `"}@{newline}"` for every keyframes block after the first one.
 * Instead of a dummy selector for the last curly brace, we define the keyframe mixins. We're using a guarded mixin to implement this.
 
-Anyway, this was waaaaay too much for me. **The point of CSS preprocessors is to easy the CSS development, not to make it harder**. So this is the moment I realized LESS wasn't *that* good.
+Anyway, this was waaaaay too much for me. **The point of CSS preprocessors is to easy the CSS development, not to make it harder**. So this is the moment I realized LESS wasn't _that_ good.
 
-## Why I think Sass is better 
+## Why I think Sass is better
 
 I won't make a complete and detailed comparison between Sass and LESS because some people did it very well already ([Chris Coyier](http://css-tricks.com/sass-vs-less/), [Kewin Powell](http://fr.slideshare.net/utbkevin/less-vs-sass-css-precompiler-showdown-14068991), etc.). I'll only cover the few points I talked about earlier.
 
@@ -238,11 +248,11 @@ This is the Sass syntax for conditional statements in a mixin. Okay, it may lack
 
 ```scss
 @for $i from 1 through 10 {
-/* My stuff here */
+  /* My stuff here */
 }
 ```
 
-Once again, it may lack of a few brackets but we still understand very well how it works. It's almost plain language: *"for variable i from 1 through 10, do this"*. It looks very intuitive to me.
+Once again, it may lack of a few brackets but we still understand very well how it works. It's almost plain language: _"for variable i from 1 through 10, do this"_. It looks very intuitive to me.
 
 ### Sass and concatenation
 
@@ -265,7 +275,7 @@ Very quickly, here are the few things making me tell Sass is better than LESS. T
 * <span style="text-decoration: line-through;">Sass provides a minifying function to compress your CSS files</span> (so does LESS server-side)
 * Sass is slightly more active, development speaking
 
-## LESS is not so bad 
+## LESS is not so bad
 
 Well, I've been moaning about LESS the whole article, but honestly this is not so bad. At least, it's no so bad if you don't plan on complicated and advanced things. Actually there are things LESS are better at, let me tell you my opinion about it:
 

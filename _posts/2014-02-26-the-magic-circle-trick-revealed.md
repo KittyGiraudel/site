@@ -7,7 +7,7 @@ tags:
 
 > Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](http://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/).
 
-Time's up people! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it's pretty cool to dig into your code to see how you've worked around the problem. 
+Time's up people! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it's pretty cool to dig into your code to see how you've worked around the problem.
 
 Among the possible solutions, I thought about:
 
@@ -19,7 +19,7 @@ Among the possible solutions, I thought about:
 
 In this post I will be explaining my solution step by step and I'll end the article by talking about some of the clever proposals you sent me.
 
-## My solution 
+## My solution
 
 First, let's give to Caesar what belongs to Caesar: the original idea comes from [Ana Tudor](https://twitter.com/thebabydino) which I then revisited to make it backward-compatible, decent on small screens, easily maintainable with Sass and so on. So thanks Ana!
 
@@ -29,43 +29,43 @@ Then, be sure to know there is nothing magic in this trick. As a proof, some of 
 
 ```html
 <ul class="boxes">
-  
+
   <li class="box  box--top  box--left  box--alpha">
     <section class="box__content">
       <header class="box__header"></header>
       <footer class="box__footer  box__cut"></footer>
     </section>
   </li>
-  
+
   <li class="box  box--top  box--right  box--beta">
     <section class="box__content">
       <header class="box__header"></header>
       <footer class="box__footer  box__cut"></footer>
     </section>
   </li>
-  
+
   <li class="box  box--bottom  box--left  box--gamma">
     <section class="box__content">
       <header class="box__header  box__cut"></header>
       <footer class="box__footer"></footer>
     </section>
   </li>
-  
+
   <li class="box  box--bottom  box--right  box--delta">
     <section class="box__content">
       <header class="box__header  box__cut"></header>
       <footer class="box__footer"></footer>
     </section>
   </li>
-  
+
 </ul>
 ```
 
 As you can see I added a couple of classes to make the code DRYer:
 
-* `.box--left` to left boxes, 
-* `.box--right` to right boxes, 
-* `.box--top` to top boxes 
+* `.box--left` to left boxes,
+* `.box--right` to right boxes,
+* `.box--top` to top boxes
 * `.box--bottom` to bottom boxes,
 * `.box__cut` to the cropped section of each box (`.box__footer` for top boxes, `.box__header` for bottom boxes).
 
@@ -76,20 +76,20 @@ Also every box has its own name like `.box--alpha`. This is meant to be able to 
 Using Sass really helped me achieving such a tricky component. Thanks to Sass variables, it's getting easy to maintain support for small screens, old browsers or simply update the gutter size or the invisible circle radius.
 
 ```scss
-$gutter:          2em;
-$mask-size:      12em; // Invisible circle
-$circle-size:     5em; // Inner disk
-$breakpoint:    700px;
-$border-radius: .25em; // Boxes radius 
+$gutter: 2em;
+$mask-size: 12em; // Invisible circle
+$circle-size: 5em; // Inner disk
+$breakpoint: 700px;
+$border-radius: 0.25em; // Boxes radius
 $colors: (
-  alpha: #1abc9c, 
-  beta:  #2ecc71, 
-  gamma: #3498db, 
+  alpha: #1abc9c,
+  beta: #2ecc71,
+  gamma: #3498db,
   delta: #9b59b6
 );
 ```
 
-Everything is computed from there. There will be absolutely no magic number anywhere. 
+Everything is computed from there. There will be absolutely no magic number anywhere.
 
 ### Styling the container
 
@@ -100,30 +100,30 @@ Let's start with applying some default styles to our element (`.boxes`, `.box`..
 // 1. Clearing inner float
 // 2. Enabling position context for pseudo-element
 .boxes {
-  list-style: none; 
+  list-style: none;
   padding: 0 $gutter;
   margin: 0;
-  overflow: hidden;   // 1
+  overflow: hidden; // 1
   position: relative; // 2
-  
+
   // Central dark disk
   &:after {
     content: '';
     position: absolute;
-    width:  $circle-size;
+    width: $circle-size;
     height: $circle-size;
-    top:  50%;
+    top: 50%;
     left: 50%;
     margin: -$circle-size/2 (0 0) -$circle-size/2;
     border-radius: 50%;
-    border: .5em solid #2c3e50;
+    border: 0.5em solid #2c3e50;
     background: #34495e;
-  
+
     // Hiding it on small screens
     @media (max-width: $breakpoint) {
       content: none;
     }
-    
+
     // Hiding it on browsers not supporting box-shadow/border-radius/pseudo-elements
     // Thanks to Modernizr
     .no-boxshadow & {
@@ -144,7 +144,7 @@ One of the rules of the game was to keep the same gutter between left and right 
   float: left;
   width: 50%;
   margin: $gutter 0;
-  
+
   // Moving them back to a single column on small screens
   @media (max-width: $breakpoint) {
     width: 100%;
@@ -158,17 +158,16 @@ Boxes spread across half the width of the parent. Some of you people did use `ca
 ```scss
 // Inner box wrapper
 .box__content {
-  
   // Adding a right padding on left boxes for the central gutter
   .box--left & {
     padding-right: $margin;
   }
-  
+
   // Adding a left padding on right boxes for the central gutter
   .box--right & {
     padding-left: $margin;
   }
-  
+
   // Removing padding on small screens
   @media (max-width: $breakpoint) {
     padding: 0 !important;
@@ -193,7 +192,7 @@ Yes, finally. As I explained at the beginning of the article, the idea consists 
   background: none !important; // 1
   overflow: hidden; // 2
   position: relative; // 3
-  
+
   // Transparent circle
   // 1. Moving it on a lower plan
   // 2. Applying a very large box-shadow, using currentColor as color
@@ -206,28 +205,28 @@ Yes, finally. As I explained at the beginning of the article, the idea consists 
     border-radius: 50%;
     margin: -($mask-size / 2 + $margin);
     box-shadow: 0 0 0 55em; // 2
-    
+
     // Hiding it on small screens
-    @media (max-width: $breakpoint) {   
+    @media (max-width: $breakpoint) {
       content: none;
     }
   }
-  
+
   // Positioning transparent circle for left boxes
   .box--left &:after {
     right: 0;
   }
-  
+
   // Positioning transparent circle for right boxes
   .box--right &:after {
     left: 0;
   }
-  
+
   // Positioning transparent circle for top boxes
   .box--top &:after {
     bottom: 0;
   }
-  
+
   // Positioning transparent circle for bottom boxes
   .box--bottom &:after {
     top: 0;
@@ -249,19 +248,19 @@ Last but not least, we have to apply colors all over our code like some sort of 
     .box__footer {
       background: $value;
     }
-  
+
     // Will be used a color for box-shadow
     .box__cut {
       &:after {
-        color: darken($value, 10%); 
+        color: darken($value, 10%);
       }
-  
+
       // Applying background for small screens
       // since the pseudo-element will be hidden
       @media (max-width: $breakpoint) {
         background: darken($value, 10%) !important;
       }
-     
+
       // Applying background on browsers not supporting box-shadow/border-radius/pseudo-elements
       .no-boxshadow & {
         background: darken($value, 10%) !important;
@@ -287,7 +286,7 @@ However the major downside of box-shadows is they can be quite intensive for the
 
 When it comes to Internet Explorer 8, or actually any browser not supporting any of the 3 major properties (pseudo-elements, box-shadow, border-radius, pick the lowest common denomitor which happens to be box-shadow), we simply apply a appropriate background color to the `.box__cut` elements. No circle, no big deal.
 
-## Your clever solutions 
+## Your clever solutions
 
 [Giulia Alfonsi](http://codepen.io/electric_g/pen/tyAcn), [Lokesh Suthar](http://codepen.io/magnus16/pen/sadEg), [One div](http://codepen.io/onediv/pen/Krypb), [mh-nichts](http://codepen.io/mh-nichts/pen/Giokl) and [Hugo Darby-Brown](http://codepen.io/hugo/pen/mIvfz) made it either with borders or box-shadows. Some of them did use `calc` for positioning/sizing although that wasn't necessary. Good job people.
 
@@ -297,6 +296,6 @@ I was hoping for one, [Gaël Poupard](http://codepen.io/ffoodd/pen/xHFjg) did it
 
 Last but not least, [Vithun Kumar Gajendra](http://codepen.io/vithun/full/gazbD) made an interesting demo animating the pseudo-elements to show the trick. Note he used duplicated background-image on pseudo-elements rather than box-shadows/borders, that's a cool one too!
 
-Anyway, you can have a look at my fully commented pen here: 
+Anyway, you can have a look at my fully commented pen here:
 
 <p data-height="520" data-theme-id="0" data-slug-hash="b8e914a2caf8090a9fffa7cf194afc18" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/b8e914a2caf8090a9fffa7cf194afc18'>b8e914a2caf8090a9fffa7cf194afc18</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>

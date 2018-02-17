@@ -6,7 +6,6 @@ tags:
   - dialog
 ---
 
-
 Just a couple of words to talk about the work I’ve done to get [a11y-dialog v3.0.0](https://github.com/edenspiekermann/a11y-dialog/releases/tag/3.0.0) out of the door, and so you can safely upgrade to the newest and shiniest!
 
 All in all, it’s quite a big version as the script has been almost entirely rewritten. There are not much rationale behind it except that it seemed like a good time to dust everything.
@@ -31,7 +30,7 @@ This should hopefully make CMS integrations easier.
 To maintain the exact same behaviour as before, you can do:
 
 ```js
-const el = document.querySelector('#your-dialog') 
+const el = document.querySelector('#your-dialog')
 const dialog = new A11yDialog(el, '#main')
 ```
 
@@ -61,10 +60,10 @@ In version 2.\*, the dialog element itself was firing DOM events when shown or h
 ```js
 // Version 2.*
 dialogEl
-  .addEventListener('show', function () {
+  .addEventListener('show', function() {
     // Do something
   })
-  .addEventListener('hide', function () {
+  .addEventListener('hide', function() {
     // Do something
   })
 ```
@@ -74,10 +73,10 @@ From version 3, it is now possible to register event listeners on the dialog ins
 ```js
 // Version 3
 dialog
-  .on('show', function () {
+  .on('show', function() {
     // Do something
   })
-  .on('hide', function () {
+  .on('hide', function() {
     // Do something
   })
 ```
@@ -96,7 +95,7 @@ In version 2.\*, custom (DOM) events used to pass an object to the registered ca
 
 ```js
 // Version 2.*
-dialogEl.addEventListener('show', function (event) {
+dialogEl.addEventListener('show', function(event) {
   // event.target = dialog element
   // event.detail = trigger element
 })
@@ -106,7 +105,7 @@ From version 3, events pass two separate arguments to the registered listeners: 
 
 ```js
 // Version 3
-dialog.on('show', function (dialogEl, triggerEl) {
+dialog.on('show', function(dialogEl, triggerEl) {
   // …
 })
 ```
@@ -122,9 +121,7 @@ From version 3, the `aria-hidden` attribute will be set to `true` when instantia
 This is nice little addition allowing you to chain all method calls.
 
 ```js
-dialog
-  .on('show', doSomething)
-  .show()
+dialog.on('show', doSomething).show()
 ```
 
 ## Wrapping things up
@@ -133,4 +130,4 @@ As stated before, this version also comes with brand new code that I took time t
 
 That’s it, and that’s already quite a lot if you want my opinion! I’d be glad to have some feedback about this if you happen to use a11y-dialog. Also, if you find any bug, please kindly [report them on GitHub](https://github.com/edenspiekermann/a11y-dialog/issues).
 
-*Thanks to [Mike Smart](https://twitter.com/smartmike) and [Loïc Giraudel](https://twitter.com/l_giraudel) for their insightful help.*
+_Thanks to [Mike Smart](https://twitter.com/smartmike) and [Loïc Giraudel](https://twitter.com/l_giraudel) for their insightful help._

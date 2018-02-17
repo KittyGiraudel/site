@@ -23,7 +23,7 @@ And here we are, almost a year later again, back to Jekyll, one more time. I tho
 
 Let me get something straight before going any further: Mixture is a terrific tool. Moreover, [Neil Kinnish](https://twitter.com/neiltak) and [Pete Nelson](https://twitter.com/petetak) are great people who provide one of the best support I've ever seen. So Mixture definitely is an interesting piece of software.
 
-Okay, now what did I dislike with it? I think the most annoying thing for me was to push the compiled sources to the repository instead of the actual development sources. While this seems irrelevant it actually prevented me from quickly fixing a typo directly from the GitHub interface. 
+Okay, now what did I dislike with it? I think the most annoying thing for me was to push the compiled sources to the repository instead of the actual development sources. While this seems irrelevant it actually prevented me from quickly fixing a typo directly from the GitHub interface.
 
 Fixing anything required me to have the Mixture application installed (which is less of a problem now that I don't work on Linux anymore), the repository cloned and up-to-date, then to make the change, compiled the sources and finally push it back to the repository. Tedious at best, highly annoying at worst.
 
@@ -35,7 +35,7 @@ So being able to push uncompiled sources to the GitHub repository and let [GitHu
 
 ## How hard was it to switch back?
 
-Since it was a going back and not actually a completely new migration, it ended up being extremely easy. Not only both generators rely on Liquid, but they also pretty much work the same. Only Jekyll relies on a specific naming convention for posts which I stuck to during this year using Mixture. So moving back took me something like 10 minutes I'd say. 
+Since it was a going back and not actually a completely new migration, it ended up being extremely easy. Not only both generators rely on Liquid, but they also pretty much work the same. Only Jekyll relies on a specific naming convention for posts which I stuck to during this year using Mixture. So moving back took me something like 10 minutes I'd say.
 
 The 4 next hours were spent redesigning the site (which I suck at).
 
@@ -45,4 +45,4 @@ Anyway, that's done now. And I am glad to be back. Also I can't wait for Jekyll 
 
 Also, if you have any recommendation for the design part, please feel free to suggest. I'm not quite convinced with the current design so I'd be glad to have some feedback.&nbsp;:)
 
-*PS: all Sass stylesheets from this site are heavily documented so feel free to [have a look](https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/_sass).*
+_PS: all Sass stylesheets from this site are heavily documented so feel free to [have a look](https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/_sass)._

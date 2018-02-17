@@ -19,11 +19,10 @@ SJSJ is community-driven. It means that while I take care of the repository and 
 The main problem is that when contributors want to link to another entry from their content, they do something like this:
 
 ```markdown
-Redux is an alternative to [Flux](/glossary/FLUX.md) and used a lot together with [React](/glossary/REACT.md),
-but you can use it with any other view library.
+Redux is an alternative to [Flux](/glossary/FLUX.md) and used a lot together with [React](/glossary/REACT.md), but you can use it with any other view library.
 ```
 
-When clicking such a link on GitHub, it will head to the file `FLUX.md` file located in the `glossary/` folder for instance. Very good. Except that I needed these links to work the same on the Jekyll website. 
+When clicking such a link on GitHub, it will head to the file `FLUX.md` file located in the `glossary/` folder for instance. Very good. Except that I needed these links to work the same on the Jekyll website.
 
 **One source of content. Two ways of browsing it. Two URL structures. A lot of troubles.**
 

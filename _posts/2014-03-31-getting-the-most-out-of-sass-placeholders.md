@@ -23,7 +23,7 @@ Because extending takes the current selector to move it to the extended selector
 
 > Cross-scope extends is the most wanted feature from Sass.
 
-And *this* is a huge issue. Fortunately, this has to be the most expected feature request from Sass (according to the outrageous number of issues mentioning this on their repo: [#501](https://github.com/nex3/sass/issues/501), [#640](https://github.com/nex3/sass/issues/640), [#915](https://github.com/nex3/sass/issues/915), [#1050](https://github.com/nex3/sass/issues/1050), [#1083](https://github.com/nex3/sass/issues/1083)). At this point, we believe Sass maintainers will find a way to allow cross-scope extending.
+And _this_ is a huge issue. Fortunately, this has to be the most expected feature request from Sass (according to the outrageous number of issues mentioning this on their repo: [#501](https://github.com/nex3/sass/issues/501), [#640](https://github.com/nex3/sass/issues/640), [#915](https://github.com/nex3/sass/issues/915), [#1050](https://github.com/nex3/sass/issues/1050), [#1083](https://github.com/nex3/sass/issues/1083)). At this point, we believe Sass maintainers will find a way to allow cross-scope extending.
 
 Meanwhile, this is why Ken didn't use placeholders and stuck to mixins. However from my experience, it's not very common to have to include a mixin/extend a placeholder at a very specific breakpoint and not the others. Usually, rules scoped into mixins/placeholders are the core of the element they are applied to, meaning they should be there in all circumstancies. So I decided to find a solution.
 
@@ -39,8 +39,7 @@ For our example, let's consider a basic need: a [micro-clearfix hack](http://nic
 @mixin clear($extend: true) {
   @if $extend {
     @extend %clear;
-  }
-  @else {
+  } @else {
     &:after {
       content: '';
       display: table;
@@ -66,8 +65,7 @@ Here is a boilerplate to code your own:
 @mixin myMixin($extend: true) {
   @if $extend {
     @extend %myMixin;
-  }
-  @else {
+  } @else {
     // Mixin core
   }
 }
@@ -82,14 +80,19 @@ Here is a boilerplate to code your own:
 There it is. Now let's try it:
 
 ```scss
-.a { @include clear; }
-.b { @include clear; }
+.a {
+  @include clear;
+}
+.b {
+  @include clear;
+}
 ```
 
 This will result in the following CSS output:
 
 ```scss
-.a:after, .b:after {
+.a:after,
+.b:after {
   content: '';
   display: table;
   clear: both;

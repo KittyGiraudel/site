@@ -8,6 +8,3 @@ tags:
   - scss-lint
   - code quality
 ---
-
-
-

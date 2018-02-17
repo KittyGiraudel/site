@@ -8,9 +8,9 @@ tags:
 
 A short post to talk about the recent redesign of this site.
 
-I’ve never been quite happy with the design of this blog. Let’s face it: I am no designer, and coming up with a fancy layout is not really my strong suit. 
+I’ve never been quite happy with the design of this blog. Let’s face it: I am no designer, and coming up with a fancy layout is not really my strong suit.
 
-So I was thinking… hey, why not trying something *different* for once? 
+So I was thinking… hey, why not trying something _different_ for once?
 
 Markdown is one of my favourite things in this industry. I use it so much. For articles. For books. For sites. For mails. For personal content. It is such an amazing text format, both simple and obvious.
 
@@ -68,7 +68,7 @@ This declaration is usually to avoid because it does not respect language-specif
 
 When I launched the redesign, there was no line numbers, and I could not help thinking it really was missing. I was not sure how to implement it best and I must say my current solution is quite fragile.
 
-Right now, the main container has an absolutely positioned pseudo-element displaying numbers through the `content` property. Line breaks between numbers are made with `\A ` and the `white-space` property. It looks like this (shortened for sanity):
+Right now, the main container has an absolutely positioned pseudo-element displaying numbers through the `content` property. Line breaks between numbers are made with `\A` and the `white-space` property. It looks like this (shortened for sanity):
 
 ```css
 .main {
@@ -93,7 +93,7 @@ Numbers go up to about 700, a magic number that I estimated would cover all of m
 * The `content` property itself is so long that it weights 4.31Kb, which is almost a third of the stylesheet.
 * The page does not necessarily (and most likely does not) have a round height, resulting in a line number being half displayed.
 
-I tried playing with CSS counters but I could not come up with something working as nicely. If someone has a solution to make this more elegant, please tell! My bet is that we can probably remove the `\A ` from the `content` property by relying on natural line breaking. That would shorten the whole thing a hell lot already. 
+I tried playing with CSS counters but I could not come up with something working as nicely. If someone has a solution to make this more elegant, please tell! My bet is that we can probably remove the `\A` from the `content` property by relying on natural line breaking. That would shorten the whole thing a hell lot already.
 
 ### Aligning images on a grid
 

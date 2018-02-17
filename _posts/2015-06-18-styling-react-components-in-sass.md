@@ -11,10 +11,10 @@ tags:
 
 Chances are, as a front-end developer, you've heard of Facebook's library for building user interfaces, [React](https://facebook.github.io/react/). Of course, an important part of building UI is styling it, as well. React strongly enforces the idea that a user interface is composed of many ["reusable components with well-defined interfaces"](https://facebook.github.io/react/docs/reusable-components.html), and many CSS methodologies and architectures embrace this as well, including:
 
-- [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
-- [SMACSS](https://smacss.com/)
-- [OOCSS](http://oocss.org/)
-- [The 7-1 Pattern](http://sass-guidelin.es/#architecture)
+* [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
+* [SMACSS](https://smacss.com/)
+* [OOCSS](http://oocss.org/)
+* [The 7-1 Pattern](http://sass-guidelin.es/#architecture)
 
 Fortunately, any of these architectures can be used for styling React components, or any components for that matter! ("Styling Components in Sass" sounded a bit too dry for an article title, though.) We will be focusing on Hugo's own [7-1 pattern](http://sass-guidelin.es/#the-7-1-pattern) for this article, which I have used in multiple projects.
 
@@ -22,19 +22,19 @@ Fortunately, any of these architectures can be used for styling React components
 
 Just like with any language, writing CSS without a well-defined architecture and/or organizational pattern quickly becomes an unmaintainable mess. Christopher Chedeau, a developer at Facebook, listed the problems in his ["CSS in JS" presentation](https://speakerdeck.com/vjeux/react-css-in-js):
 
-- Global Namespace
-- Dependencies
-- Dead Code Elimination
-- Minification
-- Sharing Constants
-- Non-deterministic Resolution
-- Isolation
+* Global Namespace
+* Dependencies
+* Dead Code Elimination
+* Minification
+* Sharing Constants
+* Non-deterministic Resolution
+* Isolation
 
 We will explore how using proper organization and architecture in Sass can mitigate these problems, especially within the context of styling React components.
 
 ## The Result
 
-If you want to jump straight to the code, you can check the [sample React component](https://github.com/davidkpiano/react-simple-datepicker) I put on GitHub. 
+If you want to jump straight to the code, you can check the [sample React component](https://github.com/davidkpiano/react-simple-datepicker) I put on GitHub.
 
 Before we dive into how each of the above problems are solved, let's take a look at the end result by styling a simple React datepicker component from this mock-up:
 
@@ -42,11 +42,11 @@ Before we dive into how each of the above problems are solved, let's take a look
 
 Our solution will have these characteristics:
 
-- Only Sass (SCSS), no extra frameworks/libraries
-- No dependencies
-- Truly framework-agnostic - can be used with React, Angular, Ember, etc.
-- Naming system agnostic - can use BEM, SUIT, etc.
-- No JavaScript overhead in rendering styles
+* Only Sass (SCSS), no extra frameworks/libraries
+* No dependencies
+* Truly framework-agnostic - can be used with React, Angular, Ember, etc.
+* Naming system agnostic - can use BEM, SUIT, etc.
+* No JavaScript overhead in rendering styles
 
 ### File Organization and Architecture
 
@@ -86,9 +86,9 @@ Yes, the imports are wrapped inside a `.my-datepicker-component` block, which is
 
 Each `.scss` component file should only have these concerns:
 
-- Its own inherent styling
-- Styling of its different variants/modifiers/states
-- Styling of its descendents (i.e. children) and/or siblings (if necessary)
+* Its own inherent styling
+* Styling of its different variants/modifiers/states
+* Styling of its descendents (i.e. children) and/or siblings (if necessary)
 
 If you want your components to be able to be themed externally, limit the declarations to only structural styles, such as dimensions (width/height), padding, margins, alignment, etc. Exclude styles such as colors, shadows, font rules, background rules, etc.
 
@@ -106,7 +106,8 @@ Here's an example rule set for the "date" component:
   transition: background-color 0.25s ease-in-out;
 
   // Variants
-  &.past, &.future {
+  &.past,
+  &.future {
     opacity: 0.5;
   }
 
@@ -127,27 +128,28 @@ I'm using a very thin naming system for component selectors; that is, I'm only p
 It goes without saying that we will be referencing styles in our React components using **classes**. There is a very useful, framework-independent utility for conditionally assigning classes by Jed Watson called [classnames](https://github.com/JedWatson/classnames), which is often used in React:
 
 ```javascript
-import React from 'react';
-import classnames from 'classnames';
+import React from 'react'
+import classnames from 'classnames'
 
 export default class CalendarDate extends React.Component {
   render() {
-    let date = this.props.date;
+    let date = this.props.date
 
     let classes = classnames('sd-date', {
-      'current': date.month() === this.props.month,
-      'future': date.month() > this.props.month,
-      'past': date.month() < this.props.month
-    });
+      current: date.month() === this.props.month,
+      future: date.month() > this.props.month,
+      past: date.month() < this.props.month
+    })
 
     return (
       <div
         className={classes}
         key={date}
-        onClick={this.props.updateDate.bind(this, date)}>
+        onClick={this.props.updateDate.bind(this, date)}
+      >
         {date.date()}
       </div>
-    );
+    )
   }
 }
 
@@ -162,15 +164,13 @@ The simple convention here is that the (prefixed) component class (`sd-date` in 
 Depending on your build system, there are a number of ways that a stylesheet can be exported and used within a project. Sass files can be compiled and bundled with Webpack (or Browserify), in which case you would require it within your `index.js` file...
 
 ```javascript
-import React from 'react';
+import React from 'react'
 
-import Datepicker from './components/datepicker';
+import Datepicker from './components/datepicker'
 
-require('./stylesheets/main.scss');
+require('./stylesheets/main.scss')
 
-React.render(
-  <Datepicker />,
-  document.querySelector('.my-datepicker-component'));
+React.render(<Datepicker />, document.querySelector('.my-datepicker-component'))
 ```
 
 ... and include the proper loader ([sass-loader](https://github.com/jtangelder/sass-loader), in this case) in `webpack.config.js`. You can also compile Sass files separately into CSS, and embed them inside the bundle using `require('./stylesheets/main.css')`. For more info, check out the [Webpack documentation on stylesheets](http://webpack.github.io/docs/stylesheets.html).
@@ -185,17 +185,17 @@ Now, let's see how using a proper Sass architecture and organizational method so
 
 It's worth mentioning (repeatedly) that **CSS selectors are not variables**. Selectors are "patterns that match against elements in a tree" (see [the W3C specification on Selectors](http://dev.w3.org/csswg/selectors-4/#abstract)) and **constrain declarations** to the matched elements. With that said, a global selector is one that runs the risk of styling an element that it did not intend to style. These kinds of selectors are potentially hazardous, and should be avoided:
 
-- Universal selector (`*`)
-- Type selectors (e.g. `div`, `nav`, `ul li`, `.foo > span`)
-- Non-namespaced class selectors (e.g. `.button`, `.text-right`, `.foo > .bar`)
-- Non-namespaced attribute selectors (e.g. `[aria-checked], [data-foo], [type]`)
-- A pseudoselector that's not within a [compound selector](http://dev.w3.org/csswg/selectors-4/#structure) (e.g. `:hover`, `.foo > :checked`)
+* Universal selector (`*`)
+* Type selectors (e.g. `div`, `nav`, `ul li`, `.foo > span`)
+* Non-namespaced class selectors (e.g. `.button`, `.text-right`, `.foo > .bar`)
+* Non-namespaced attribute selectors (e.g. `[aria-checked], [data-foo], [type]`)
+* A pseudoselector that's not within a [compound selector](http://dev.w3.org/csswg/selectors-4/#structure) (e.g. `:hover`, `.foo > :checked`)
 
 There are a few ways to "namespace" a selector so that there's very little risk of unintentional styling (not to be confused with [`@namespace`](http://www.w3.org/TR/css3-namespace/)):
 
-- Prefixing classes (e.g. `.sd-date`, `.sd-calendar`)
-- Prefixing attributes (e.g. `[data-sd-value]`)
-- Defining unprefixed classes inside unique/prefixed compound selectors (e.g. `.sd-date.past`)
+* Prefixing classes (e.g. `.sd-date`, `.sd-calendar`)
+* Prefixing attributes (e.g. `[data-sd-value]`)
+* Defining unprefixed classes inside unique/prefixed compound selectors (e.g. `.sd-date.past`)
 
 With the last namespacing suggestion, there is still the risk of 3rd-party styles leaking into these selectors. The simple solution is to strongly reduce your dependency on 3rd-party styles, or prefix all of your classes.
 
@@ -207,10 +207,10 @@ By doing this, the only way our selectors can possibly leak (i.e. cause collisio
 
 The organization of the component styles in the 7-1 pattern can be considered _parallel_ to that of the JavaScript (React) components, in that for every React component, there exists a Sass component partial file that styles the component. All of these component styles are contained in one `main.css` file. There are a few good reasons for this separation:
 
-- Component styles should be front-end framework-agnostic.
-- Component styles aren't necessarily hierarchical (e.g. a button inside a modal may look identical to a standalone button)
-- Component styles are guaranteed to only be defined once.
-- No overhead - JavaScript is never required to render static CSS.
+* Component styles should be front-end framework-agnostic.
+* Component styles aren't necessarily hierarchical (e.g. a button inside a modal may look identical to a standalone button)
+* Component styles are guaranteed to only be defined once.
+* No overhead - JavaScript is never required to render static CSS.
 
 The only potential performance-related issue with this is that each page will include all component styles, whether they're used or not. However, using the same file allows the browser to cache the main stylesheet, whereas an inversion-of-control scenario (e.g. `require('stylesheets/components/button.css');`) is likely to cause many cache misses, since the bundled stylesheet would be different for each page.
 
@@ -246,8 +246,8 @@ This is just a fancy way of saying "not knowing when styles are being unintentio
 
 Above, we are taking full advantage of specificity to solve our non-deterministic resolution woes. And we're doing so by using specificity intuitively, and with no specificity hacks! We have two button selectors:
 
-- `.my-button` (specificity 0 1 0)
-- `.my-overlay > .my-button` (specificity 0 2 0)
+* `.my-button` (specificity 0 1 0)
+* `.my-overlay > .my-button` (specificity 0 2 0)
 
 Since `.my-overlay > .my-button` has a higher specificity, its styles will _always_ override `.my-button` styles (as desired), regardless of declaration order. Furthermore, the intent is clear: "style this button" vs. "style this button _when_ it is inside an overlay." Having a selector such as `.my-overlay-button` might make sense to us, but CSS doesn't understand that it's intended for a button inside of an overlay. **Specificity is really useful.** Take advantage of it.
 
@@ -262,7 +262,7 @@ As a developer who understands the value of good, consistent design, you'll prob
 $sd-color-primary: rgb(41, 130, 217) !default;
 
 // in the main project stylesheet
-$sd-color-primary: #C0FF33; // overwrites default primary color
+$sd-color-primary: #c0ff33; // overwrites default primary color
 
 @import 'path/to/simple-datepicker/stylesheets/main';
 ```

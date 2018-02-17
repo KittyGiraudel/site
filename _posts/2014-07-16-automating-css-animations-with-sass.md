@@ -8,16 +8,13 @@ tags:
 
 The other day, [Harry Roberts](https://twitter.com/csswizardry) featured a snippet of code from his own site [on Twitter](https://twitter.com/csswizardry/status/489038580128686081), asking for some ways to improve it (if any). What Harry did was computing by hand the keyframes of a carousel animation, thus claiming that high school algebra indeed **is** useful.
 
-> “Why do we have to learn algebra, Miss? We’re never going to use it…”
-> &mdash;Everyone in my maths class
-> [bit.ly/UaM2wf](http://bit.ly/UaM2wf)
+> “Why do we have to learn algebra, Miss? We’re never going to use it…” &mdash;Everyone in my maths class [bit.ly/UaM2wf](http://bit.ly/UaM2wf)
 
 ## What’s the idea?
 
 As far as I can see, Harry uses a carousel to display quotes about his work on his [home page](http://csswizardry.com). Why use JavaScript when we can use CSS, right? So he uses a CSS animation to run the carousel. That sounds like a lovely idea, until you have to compute keyframes…
 
 Below is [Harry’s comment](https://github.com/csswizardry/csswizardry.github.com/blob/5e8de0bcdd845c1fc46d622a1c605af89ac13208/css/_components.carousel.scss#L42-L87) in his carousel component:
-
 
 > Scroll the carousel (all hard-coded; yuk!) and apply a subtle blur to imply motion/speed. Equation for the carousel’s transitioning and delayed points in order to complete an entire animation (i.e. 100%):
 >
@@ -33,7 +30,7 @@ Below is [Harry’s comment](https://github.com/csswizardry/csswizardry.github.c
 >
 > <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Formula to find Y' src='/assets/images/automating-css-animations-with-sass/formula-3.png' />
 >
-> If we choose that <var>x</var> equals 17.5 (i.e. a frame spends 17.5% of the animation’s total time *not* animating), and we know that <var>n</var> equals 5, then <var>y</var> = 3.125:
+> If we choose that <var>x</var> equals 17.5 (i.e. a frame spends 17.5% of the animation’s total time _not_ animating), and we know that <var>n</var> equals 5, then <var>y</var> = 3.125:
 >
 > <img style="display: block; margin: 0 0 1em 0; float: none; max-width: 100%;" alt='Y when X equals 17.5' src='/assets/images/automating-css-animations-with-sass/formula-4.png' />
 >
@@ -81,33 +78,33 @@ And the result is:
   39.6875% {
     filter: blur(2px);
   }
-  41.25%   {
+  41.25% {
     transform: translate3d(-40%, 0, 0);
     filter: blur(0);
   }
-  58.75%   {
+  58.75% {
     transform: translate3d(-40%, 0, 0);
     filter: blur(0);
   }
   60.3125% {
     filter: blur(2px);
   }
-  61.875%  {
+  61.875% {
     transform: translate3d(-60%, 0, 0);
     filter: blur(0);
   }
-  79.375%  {
+  79.375% {
     transform: translate3d(-60%, 0, 0);
     filter: blur(0);
   }
   80.9375% {
     filter: blur(2px);
   }
-  82.5%    {
+  82.5% {
     transform: translate3d(-80%, 0, 0);
     filter: blur(0);
   }
-  100%     {
+  100% {
     transform: translate3d(-80%, 0, 0);
     filter: blur(0);
   }
@@ -192,7 +189,8 @@ Now, we need to open the `@keyframes` directive, then a loop.
 
 ```scss
 @keyframes carousel {
-  @for $i from 0 to $n { // 0, 1, 2, 3, 4
+  @for $i from 0 to $n {
+    // 0, 1, 2, 3, 4
     // Sass Magic
   }
 }
@@ -205,12 +203,13 @@ $current-frame: ($i * $x) + ($i * $y);
 $next-frame: (($i + 1) * $x) + ($i + $y);
 ```
 
-*Note: braces are completely optional here, we just use them to keep things clean.*
+_Note: braces are completely optional here, we just use them to keep things clean._
 
 And now, we use those variables to generate a keyframe inside the loop. Let's not forget to interpolate them so they are correctly output in the resulting CSS (more informations about [Sass interpolation on Tuts+](http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)).
 
 ```scss
-#{$current-frame, $next-frame} {
+#{$current-frame,
+$next-frame} {
   transform: translateX($i * -100% / $frames);
   filter: blur(0);
 }
@@ -219,13 +218,14 @@ And now, we use those variables to generate a keyframe inside the loop. Let's no
 Quite simple, isn't it? For the first loop run, this would output:
 
 ```css
-0%, 17.5% {
+0%,
+17.5% {
   transform: translate3d(0%, 0, 0);
   filter: blur(0);
 }
 ```
 
-All we have left is outputing what Harry calls *an halfway frame* to add a little blur effect. Then again, we'll use his formula to compute the keyframe selectors:
+All we have left is outputing what Harry calls _an halfway frame_ to add a little blur effect. Then again, we'll use his formula to compute the keyframe selectors:
 
 ```scss
 $halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
@@ -261,7 +261,8 @@ $y: (100% - $n * $x) / ($n - 1);
     $current-frame: ($i * $x) + ($i * $y);
     $next-frame: (($i + 1) * $x) + ($i + $y);
 
-    #{$current-frame, $next-frame} {
+    #{$current-frame,
+    $next-frame} {
       transform: translate3d($i * -100% / $frames, 0, 0);
     }
 
@@ -316,44 +317,49 @@ Rest is pretty much the same. Calling it is quite easy now:
 
 ```scss
 @include carousel-animation(
-  $frames: 5,
-  $static: 17.5%
-);
+    $frames: 5,
+    $static: 17.5%
+  );
 ```
 
 Resulting in:
 
 ```css
 @keyframes carousel {
-  0%, 17.5% {
+  0%,
+  17.5% {
     transform: translateX(0%);
     filter: blur(0);
   }
   19.0625% {
     filter: blur(2px);
   }
-  20.625%, 38.125% {
+  20.625%,
+  38.125% {
     transform: translateX(-20%);
     filter: blur(0);
   }
   39.6875% {
     filter: blur(2px);
   }
-  41.25%, 58.75% {
+  41.25%,
+  58.75% {
     transform: translateX(-40%);
     filter: blur(0);
   }
   60.3125% {
     filter: blur(2px);
   }
-  61.875%, 79.375% {
+  61.875%,
+  79.375% {
     transform: translateX(-60%);
     filter: blur(0);
   }
   80.9375% {
     filter: blur(2px);
   }
-  82.5%, 100% {
+  82.5%,
+  100% {
     transform: translateX(-80%);
     filter: blur(0);
   }
@@ -364,10 +370,10 @@ Mission accomplished! And if we want another animation for the contact page for 
 
 ```scss
 @include carousel-animation(
-  $name: 'carousel-contact',
-  $frames: 3,
-  $static: 20%
-);
+    $name: 'carousel-contact',
+    $frames: 3,
+    $static: 20%
+  );
 ```
 
 Pretty neat, heh?

@@ -9,7 +9,7 @@ A couple of days ago, I saw a [fellow French developer say how much he hates (Tw
 
 ![Twitter Bootstrap 3](/assets/images/how-i-learnt-to-like-bootstrap/bootstrap.jpg)
 
-This reminded me that no so long ago, I was a fervent defender of the tell *"Bootstrap is good for prototypes and back offices or stuff like this"*.
+This reminded me that no so long ago, I was a fervent defender of the tell _"Bootstrap is good for prototypes and back offices or stuff like this"_.
 
 Until a recent project where I finally learnt to like Bootstrap, even for websites. But let's back up a little bit!
 
@@ -19,12 +19,11 @@ I recently got hired for quite a big project as the only front-end developer in 
 
 So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly back-end devs.
 
-> Hugo, we'll use Bootstrap.
-> — NOOOOOO!
+> Hugo, we'll use Bootstrap. — NOOOOOO!
 
-And then he told me what I didn't want to hear: *"we will use Twitter Bootstrap"* and I was like *"NOOOO!!"*.
+And then he told me what I didn't want to hear: _"we will use Twitter Bootstrap"_ and I was like _"NOOOO!!"_.
 
-But then he said something even worse: *"Bootstrap 2.3"* and then I was like *"NOOOOOOOO!!"* (note the number of *O* is increasing).
+But then he said something even worse: _"Bootstrap 2.3"_ and then I was like _"NOOOOOOOO!!"_ (note the number of _O_ is increasing).
 
 Since Bootstrap 3 was still in RC back then, it wasn't possible for us to use it. Thankfully a couple of days later, it got officially released so we jumped onto it and moved the little front-end we had already done to v3.
 
@@ -44,15 +43,15 @@ Also it provides a lot of helper classes like `.pull-left`, `.clearfix` and a go
 
 ## Less dependencies
 
-This heading can be confusing: I am not talking about *LESS*, the CSS preprocessor. I mean that using Bootstrap really reduces the number of dependencies used across a project.
+This heading can be confusing: I am not talking about _LESS_, the CSS preprocessor. I mean that using Bootstrap really reduces the number of dependencies used across a project.
 
-Carousel? Check. No need of *FancyJqueryAnythingCarouselSlider.js*. Icon fonts? Check. No need of *FontAwesome*. Modal? Check. Dropdowns? Tabs? Tooltips? Check, check, check. It may sounds trivial, but not having thousands of dependencies is really important to keep things maintainable.
+Carousel? Check. No need of _FancyJqueryAnythingCarouselSlider.js_. Icon fonts? Check. No need of _FontAwesome_. Modal? Check. Dropdowns? Tabs? Tooltips? Check, check, check. It may sounds trivial, but not having thousands of dependencies is really important to keep things maintainable.
 
-Of course we still have other dependencies than Bootstrap like *jQuery UI* (which could deserve a similar article I guess), *underscore.js* and quite a couple of other things but I can't imagine the number of external dependencies we would have right now if we were not using Bootstrap.
+Of course we still have other dependencies than Bootstrap like _jQuery UI_ (which could deserve a similar article I guess), _underscore.js_ and quite a couple of other things but I can't imagine the number of external dependencies we would have right now if we were not using Bootstrap.
 
 ## So where did it start?
 
-I believe this whole *"Bootstrap is evil"* thing started shortly after Twitter Bootstrap 2.x came out. Many people started creating websites with nothing more than the default collection of composents without even trying to customize them or to find a special scheme.
+I believe this whole _"Bootstrap is evil"_ thing started shortly after Twitter Bootstrap 2.x came out. Many people started creating websites with nothing more than the default collection of composents without even trying to customize them or to find a special scheme.
 
 At this point, every sites looked alike and it was kind of annoying for sure. But I feel like this time is over and now most Bootstrap powered sites are using it wisely, adding their own custom design on top of Bootstrap components. That's what Bootstrap is: a backbone for the site.
 

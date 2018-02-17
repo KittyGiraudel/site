@@ -9,7 +9,7 @@ tags:
 
 **Disclaimer:** I just want to share my thoughts on the topic. I won't try to convince you to use a preprocessor. So please, don't tell me how good you are without one; I trust you. I'm a developer too.
 
-A couple of days ago, the famous french front-end developer [Vincent De Oliveira](https://twitter.com/iamvdo) has written a blog post called [Why I don't use CSS preprocessors](http://blog.iamvdo.me/post/45259636008/pourquoi-je-nutilise-pas-les-preprocesseurs-css) (*Pourquoi je n'utilise pas les préprocesseurs CSS*). If you can read French, or stand [Google Translate](http://translate.google.fr/translate?sl=fr&tl=en&js=n&prev=_t&hl=fr&ie=UTF-8&eotf=1&u=http%3A%2F%2Fblog.iamvdo.me%2Fpost%2F45259636008%2Fpourquoi-je-nutilise-pas-les-preprocesseurs-css), then I highly recommand you this article, full of good points and interesting opinions.
+A couple of days ago, the famous french front-end developer [Vincent De Oliveira](https://twitter.com/iamvdo) has written a blog post called [Why I don't use CSS preprocessors](http://blog.iamvdo.me/post/45259636008/pourquoi-je-nutilise-pas-les-preprocesseurs-css) (_Pourquoi je n'utilise pas les préprocesseurs CSS_). If you can read French, or stand [Google Translate](http://translate.google.fr/translate?sl=fr&tl=en&js=n&prev=_t&hl=fr&ie=UTF-8&eotf=1&u=http%3A%2F%2Fblog.iamvdo.me%2Fpost%2F45259636008%2Fpourquoi-je-nutilise-pas-les-preprocesseurs-css), then I highly recommand you this article, full of good points and interesting opinions.
 
 Please don't consider this post as an answer to Vincent's one. I just wanted to **share my opinion on the topic**, not open a flame war. Especially since I like this guy. :)
 
@@ -21,7 +21,7 @@ There are cases where you don't want to use a preprocessor (whatever the languag
 
 The other case is when you are dealing with very small projects or one-shot websites, meaning you don't plan on updating often. Then, a preprocessor isn't that useful.
 
-## Quality code 
+## Quality code
 
 Let's make things clear right now: **preprocessors don't output bad code, bad developers do**. CSS preprocessors -whatever the one you (don't) use- do not generate top-heavy, unwiedly, unnecessarily complicated code. This is a lie bad developers will tell you to explain the quality of their code.
 
@@ -31,7 +31,7 @@ If the final stylesheet is less maintainable or heavier, or more complicated tha
 
 Vincent does an interesting comparison with PHP (HyperText Preprocessor): you can output shitty code with PHP too. Is it because of PHP? Definitely not. It's because you've messed up.
 
-## Speed 
+## Speed
 
 Some people say preprocessors don't make you write CSS faster. Indeed, you won't become Iron Man as soon as you run Sass, definitely not. Even if in the end, you write code slightly faster; simply by the fact you don't have to write vendor prefixes for example.
 
@@ -43,7 +43,7 @@ I think the key word here is **maintainability**. You will never ever reach the 
 
 > I think the key word here is maintainability.
 
-However, you might not need that level of maintainability. As [Kaelig](https://twitter.com/kaelig) says in his article [CSS preprocessors: renounce by choice or ignorance?](http://blog.kaelig.fr/post/24877648508/preprocesseurs-css-renoncer-par-choix-ou-par) (*Préprocesseurs CSS, renoncer par choix ou par ignorance?*): if you work on small projects or one-shot websites, you may not need a preprocessor. Let's be realistic for a minute: you won't update the site everyday, if at all. If you ever happen to do so, you can dig into the code without having to use of a preprocessor. 
+However, you might not need that level of maintainability. As [Kaelig](https://twitter.com/kaelig) says in his article [CSS preprocessors: renounce by choice or ignorance?](http://blog.kaelig.fr/post/24877648508/preprocesseurs-css-renoncer-par-choix-ou-par) (_Préprocesseurs CSS, renoncer par choix ou par ignorance?_): if you work on small projects or one-shot websites, you may not need a preprocessor. Let's be realistic for a minute: you won't update the site everyday, if at all. If you ever happen to do so, you can dig into the code without having to use of a preprocessor.
 
 ## Give CSS what CSS needs
 
@@ -59,7 +59,7 @@ In fact, **I don't need a preprocessor**. I say it: I don't. I'm not working on 
 
 But **Sass looks better than CSS to me** (at least in most cases). I like being able to use variables. I like being able to use mixins and functions. I like being able to use Compass. I like all of this stuff, even if I don't necessarily need it. It feels more normal to me.
 
-*Sass also gives multiple stylesheets concatenation and file minification (among others), which is kind out of the CSS range but still awesome features nevertheless.*
+_Sass also gives multiple stylesheets concatenation and file minification (among others), which is kind out of the CSS range but still awesome features nevertheless._
 
 ## Learning curve
 
@@ -75,5 +75,4 @@ If you happen to be a beginner or work with inexperienced developers, you probab
 
 In the end, most arguments against preprocessors are bullshit. All those things about not speeding up the development, outputing bad code, it's irrelevant. Most people telling you this are the one who have not even tried to use a preprocessor for real.
 
-The only thing to ask is: **can I afford one?** If you think you or one of your co-workers won't be able to handle everything correctly, then the answer is *no*. Otherwise just please yourself and go ahead. :)
-
+The only thing to ask is: **can I afford one?** If you think you or one of your co-workers won't be able to handle everything correctly, then the answer is _no_. Otherwise just please yourself and go ahead. :)

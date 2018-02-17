@@ -26,33 +26,33 @@ It was pretty easy to do.
 
 ```scss
 @function debug($list) {
-	// We open the bracket
-	$result: "[ ";
+  // We open the bracket
+  $result: '[ ';
 
-    // For each item in list
-    @each $item in $list {
-    	// We test its length
-    	// If it's more than one item long
-    	@if length($item) > 1 {
-    		// We deal with a nested list
-    		$result: $result + debug($item);
-    	}
-    	// Else we append the item to $result
-    	@else {
-    		$result: $result + $item;
-    	}
-
-    	// If we are not dealing with the last item of the list
-    	// We add a comma and a space
-    	@if index($list, $item) != length($list) {
-     		$result: $result + ", ";
-    	}
+  // For each item in list
+  @each $item in $list {
+    // We test its length
+    // If it's more than one item long
+    @if length($item) > 1 {
+      // We deal with a nested list
+      $result: $result + debug($item);
+    }
+    // Else we append the item to $result
+    @else {
+      $result: $result + $item;
     }
 
-    // We close the bracket
-    // And return the string
-    $result: $result + " ]";
-    @return quote($result);
+    // If we are not dealing with the last item of the list
+    // We add a comma and a space
+    @if index($list, $item) != length($list) {
+      $result: $result + ', ';
+    }
+  }
+
+  // We close the bracket
+  // And return the string
+  $result: $result + ' ]';
+  @return quote($result);
 }
 ```
 
@@ -61,8 +61,8 @@ This simple functions turns a Sass list into a readable string. It also deals wi
 ```scss
 $list: a, b, c, d e f, g, h i, j;
 body:before {
-	content: debug($list);
-    // [ a, b, c, [ d, e, f ], g, [ h, i ], j ]
+  content: debug($list);
+  // [ a, b, c, [ d, e, f ], g, [ h, i ], j ]
 }
 ```
 
@@ -74,22 +74,22 @@ Basically I wanted to go `@include debug($list)` and have everything displayed. 
 
 ```scss
 @mixin debug($list) {
-	body:before {
-        content: debug($list)                     !important;
+  body:before {
+    content: debug($list) !important;
 
-    	display: block                            !important;
-    	margin: 1em                               !important;
-    	padding: .5em                             !important;
+    display: block !important;
+    margin: 1em !important;
+    padding: 0.5em !important;
 
-    	background: #EFEFEF                       !important;
-    	border: 1px solid #DDD                    !important;
-    	border-radius: .2em                       !important;
+    background: #efefef !important;
+    border: 1px solid #ddd !important;
+    border-radius: 0.2em !important;
 
-    	color: #333                               !important;
-    	font: .75em/1.5 "Courier New", monospace  !important;
-    	text-shadow: 0 1px white                  !important;
-    	white-space: pre-wrap                     !important;
-    }
+    color: #333 !important;
+    font: 0.75em/1.5 'Courier New', monospace !important;
+    text-shadow: 0 1px white !important;
+    white-space: pre-wrap !important;
+  }
 }
 ```
 
@@ -107,33 +107,31 @@ I wanted two things: 1) explode the list into several lines to make it easier to
 
 If you are a reader of [TheSassWay.com](http://thesassway.com), you might have stumbled upon my article [Math sequences with Sass](http://thesassway.com/advanced/math-sequences-with-sass) in which I explain how I created famous math sequences in Sass and how I managed to display them with nothing more than CSS. Anyway, I kind of answer the question of linebreaks in CSS.
 
-If you've ever read the [CSS specifications for the content property](http://www.w3.org/TR/CSS2/generate.html#content) (don't worry, neither did I), you may know that there is a way to insert breaklines with `\A ` (don't forget the trailing white space). In TheSassWay article, I used it as a `$glue` for the [`to-string()`](https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss) function from SassyLists.
+If you've ever read the [CSS specifications for the content property](http://www.w3.org/TR/CSS2/generate.html#content) (don't worry, neither did I), you may know that there is a way to insert breaklines with `\A` (don't forget the trailing white space). In TheSassWay article, I used it as a `$glue` for the [`to-string()`](https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss) function from SassyLists.
 
 This is pretty much what we will do here.
 
 ```scss
 @function debug($list) {
-	$line-break: "\A ";
-	$result: "[ " + $line-break;
+  $line-break: '\A ';
+  $result: '[ ' + $line-break;
 
-	@each $item in $list {
-    	$result: $result + "  ";
+  @each $item in $list {
+    $result: $result + '  ';
 
-		@if length($item) > 1 {
-			$result: $result + debug($item);
-		}
+    @if length($item) > 1 {
+      $result: $result + debug($item);
+    } @else {
+      $result: $result + $item;
+    }
 
-		@else {
-			$result: $result + $item;
-		}
+    @if index($list, $item) != length($list) {
+      $result: $result + ', ' + $line-break;
+    }
+  }
 
-		@if index($list, $item) != length($list) {
-			$result: $result + ", " + $line-break;
-		}
- 	}
-
-	$result: $result + $line-break + "]";
-	@return quote($result);
+  $result: $result + $line-break + ']';
+  @return quote($result);
 }
 ```
 
@@ -143,28 +141,25 @@ Actually the only way I could manage a perfect indentation is the same trick I u
 
 ```scss
 @function debug($list, $root: true) {
-  $line-break: "\A ";
-  $result: "[ " + $line-break;
-  $space: if($root, "", "  ");
+  $line-break: '\A ';
+  $result: '[ ' + $line-break;
+  $space: if($root, '', '  ');
 
   @each $item in $list {
-    $result: $result + "  ";
+    $result: $result + '  ';
 
     @if length($item) > 1 {
       $result: $result + debug($item, false);
-    }
-
-    @else {
+    } @else {
       $result: $result + $space + $item;
     }
 
     @if index($list, $item) != length($list) {
-      $result: $result + ", " + $line-break;
+      $result: $result + ', ' + $line-break;
     }
-
   }
 
-  $result: $result + $line-break + $space + "]";
+  $result: $result + $line-break + $space + ']';
   @return quote($result);
 }
 ```
@@ -213,7 +208,7 @@ Now the icing on top of the cake would be displaying variable types, right? Than
 
 As you can see, it is pretty much the same. We only check for the `$type` boolean and add the value types accordingly wherever they belong. We're almost there!
 
-*Note: I've set the `$type` boolean to `false` as a default for the `debug` function but to `true` for the mixin.*
+_Note: I've set the `$type` boolean to `false` as a default for the `debug` function but to `true` for the mixin._
 
 ### Making it work for single values
 
@@ -229,7 +224,6 @@ The only problem left is that if you debug a single value, it will wrap it into 
 	}
 	...
 }
-
 ```
 
 ## Final words

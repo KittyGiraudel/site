@@ -6,13 +6,13 @@ tags:
   - writing
 ---
 
-## Design 
+## Design
 
 After the launch, it occured to me the design was a bit gloomy so I wanted to add a color to cheer things up. After a dark blue and a creepy green, I ended with the hot pink and a quick survey on Twitter encouraged me to keep it. So pink it is! Hope you like it.
 
 Speaking of survey, another quick one about text align told me to switch to left. It looks like people dislike when text is justified on blogs. I liked it but I'm not the main reader of this blog. :D
 
-## Development 
+## Development
 
 I was playing with [Sass](http://sass-lang.com/) during the last couple of days and decided it could be cool to build the blog on it, so now it is. Since the site is pretty small, it's no big deal. Actually I used only very few of the potential of Sass (or whatever other CSS preprocessor):
 
@@ -23,7 +23,7 @@ I was playing with [Sass](http://sass-lang.com/) during the last couple of days 
 
 Anyway, it's cool.
 
-## Features 
+## Features
 
 ### Prism as a syntax highlighter
 
@@ -41,7 +41,7 @@ Depending on how things go I'll have a closer look into options but for now it's
 
 You may or may not have noticed yet but from now on, my articles on Codrops will be featured on the index of the blog. To distinguish them from other articles, they are annotated with [Codrops]. What do you think? Good idea? Bad idea?
 
-## To do 
+## To do
 
 I've already made a bunch of tiny bug fixes like broken links, inadequate margins, little issues on mobile but some bugs may persist so if you still find one, please tell me: I'll fix it as soon as possible.
 

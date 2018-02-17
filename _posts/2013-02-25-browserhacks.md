@@ -23,7 +23,7 @@ The other reason is that we wanted to do something together for quite a while no
 
 ## Who is "we"?
 
-*We* is the short for a group of 6 persons gathered under the sweet name of [4ae9b8](http://4ae9b8.com). How cool is that name, right?! Anyway, we are:
+_We_ is the short for a group of 6 persons gathered under the sweet name of [4ae9b8](http://4ae9b8.com). How cool is that name, right?! Anyway, we are:
 
 * [Tim Pietrusky](https://twitter.com/timpietrusky)
 * [Mads Cordes](https://twitter.com/mobilpadde)
@@ -44,7 +44,7 @@ It couldn't be any simpler. If you ever happen to be stuck on a rendering bug in
 4. Paste it in your stylesheet,
 5. Keep CSS-ing worry-free!
 
-*If you don't feel like using this because you don't like CSS hacks (understandable), simply don't use it. However if you start trolling, God will kill many kittens.*
+_If you don't feel like using this because you don't like CSS hacks (understandable), simply don't use it. However if you start trolling, God will kill many kittens._
 
 ## Final words
 

@@ -38,13 +38,13 @@ In any case, you can tell it is a small computer halfway through a regular lapto
 
 ### Screen
 
-Chromebook 11.6" screen resolution is limited to 1366*768 which is enough if you want my opinion. However the **screen quality isn't awesome**. Indeed, the Chromebook uses a lower-end display with pretty bad sight angles. So you wouldn't buy the Chromebook for its screen.
+Chromebook 11.6" screen resolution is limited to 1366\*768 which is enough if you want my opinion. However the **screen quality isn't awesome**. Indeed, the Chromebook uses a lower-end display with pretty bad sight angles. So you wouldn't buy the Chromebook for its screen.
 
 Anyway, since this laptop is mostly made for web browsing and small applications, I think it's more than enough.
 
 Thus I can still enjoy fullscreen Youtube videos without having my eyes bleeding, but I still prefer watching movies on my TV when I'm home (especially given the screen size).
 
-*Note: the Chromebook comes with a 0.3 megapixels webcam.*
+_Note: the Chromebook comes with a 0.3 megapixels webcam._
 
 ### Audio
 
@@ -71,11 +71,11 @@ The keyboard is pretty nice, really. **Keys are large and smooth** so typing is 
 <figcaption>Samsung Chromebook - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
-The Chromebook keyboard has been rearranged and optimized for web browsing. Indeed, the upper row contains *"back"*, *"forward"* and *"refresh"* keys. You also have a *"fullscreen"* and a *"alt-tab"* like keys along with the traditional *"luminosity"*, *"volume"* and *"power"* buttons.
+The Chromebook keyboard has been rearranged and optimized for web browsing. Indeed, the upper row contains _"back"_, _"forward"_ and _"refresh"_ keys. You also have a _"fullscreen"_ and a _"alt-tab"_ like keys along with the traditional _"luminosity"_, _"volume"_ and _"power"_ buttons.
 
-Note the *"caps-lock"* button has been replaced by the *"search"* button (quite similar to the *"Windows"* button) and *"ctrl"* and *"alt"* are pretty huge.
+Note the _"caps-lock"_ button has been replaced by the _"search"_ button (quite similar to the _"Windows"_ button) and _"ctrl"_ and _"alt"_ are pretty huge.
 
-*One funny detail is how letters are in lowercase on the Chromebook keyboard when all other keyboards are using uppercase. Made me smile when I noticed it.&nbsp;:)*
+_One funny detail is how letters are in lowercase on the Chromebook keyboard when all other keyboards are using uppercase. Made me smile when I noticed it.&nbsp;:)_
 
 ### Trackpad
 
@@ -83,7 +83,7 @@ Chrome gives us a close to MBP trackpad with a double-finger vertical swipe to s
 
 However trible-finger swipe doesn't go back in history like on a MacBook Pro; instead, it moves one tab to the left or to the right depending on the direction.
 
-This is actually cool but kind of disturbing when you have a MBP background. In a way, it makes sense since there are *"backward"* and *"forward"* keys on the keyboard.
+This is actually cool but kind of disturbing when you have a MBP background. In a way, it makes sense since there are _"backward"_ and _"forward"_ keys on the keyboard.
 
 In any case, the surface is not only **smooth and pleasant**, but also quite large. It has to be the best trackpad I ever had on a not-Apple laptop.
 

@@ -9,7 +9,6 @@ tags:
 
 > The following is a guest post by [Gregor Adams](https://twitter.com/gregoradams) about how he managed to re-create the Netflix logo in CSS. Gregor is kind of the rising star when it comes to CSS, so needless to say it is a great honor to have him here.
 
-
 A few months ago I tested Netflix, immediately got hooked and got myself an account. I started watching a lot of series that I usually had to view elsewhere. Each episode or movie starts with the Netflix logo animation.
 
 <figure class="figure">
@@ -37,7 +36,7 @@ The logo:
 1. fades back;
 1. changes the font color to red.
 
-So these were the animation steps I needed to replicate. But there is something else about the logo that I needed to take care of: __the letters are tilted to the center of the logo__.
+So these were the animation steps I needed to replicate. But there is something else about the logo that I needed to take care of: **the letters are tilted to the center of the logo**.
 
 People have been asking me how I did that...
 
@@ -115,12 +114,12 @@ To do this I needed to add some logic: I use Sass with the SCSS syntax to do thi
       &:nth-child(#{$i}) {
         // trans/de-form the letters
         transform-origin: 50% + 50%/$offset 200%;
-        font-size: if($offset == 0,
-          0.85em,
-          0.9em + 0.015*pow(abs($offset),2));
-        transform:
-            if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
-            if($offset == 0, translatey(0%), rotatey($trans));
+        font-size: if($offset == 0, 0.85em, 0.9em + 0.015*pow(abs($offset), 2));
+        transform: if(
+            $offset == 0,
+            scale(1, 1),
+            scale(95.9 - abs($offset) * 10, 1)
+          ) if($offset == 0, translatey(0%), rotatey($trans));
       }
     }
   }
@@ -175,10 +174,17 @@ Here's the function I am using to handle all these requirements:
   @for $i from 1 through $depth {
     // append to the existing shadow
     @if type-of($mix) != 'color' {
-      $shadow: append($shadow, round($i * $x) round($i * $y) $blur $color, comma);
-
+      $shadow: append(
+        $shadow,
+        round($i * $x) round($i * $y) $blur $color,
+        comma
+      );
     } @else {
-      $shadow: append($shadow, round($i * $x) round($i * $y) $blur mix($mix, $color, 0.3%*$i), comma);
+      $shadow: append(
+        $shadow,
+        round($i * $x) round($i * $y) $blur mix($mix, $color, 0.3%*$i),
+        comma
+      );
     }
   }
 
@@ -186,8 +192,7 @@ Here's the function I am using to handle all these requirements:
 }
 ```
 
-This function might be a little hard to understand for Sass-noobs or developers/designers that only use the basic features of the language,
-so let me explain it in detail.
+This function might be a little hard to understand for Sass-noobs or developers/designers that only use the basic features of the language, so let me explain it in detail.
 
 I start off with a variable I called `$shadow`. It is an empty list.
 
@@ -195,7 +200,7 @@ I start off with a variable I called `$shadow`. It is an empty list.
 $shadow: ();
 ```
 
-I am looping from 1 *through* the depth. `through` in Sass means that we iterate including this value.
+I am looping from 1 _through_ the depth. `through` in Sass means that we iterate including this value.
 
 * `from 0 to 5 = 0, 1, 2, 3, 4`
 * `from 0 through 5 = 0, 1, 2, 3, 4, 5`
@@ -203,13 +208,19 @@ I am looping from 1 *through* the depth. `through` in Sass means that we iterate
 In each iteration I append a text-shadow to the list. So in the end the variable looks something like this:
 
 ```scss
-$shadow: (0 1px 0 red, 1px 2px 0 red, 2px 3px 0 red, ...);
+$shadow: (
+  0 1px 0 red,
+  1px 2px 0 red,
+  2px 3px 0 red,
+  ...
+);
 ```
+
 ... and I use it like this:
 
 ```scss
 text-shadow: d3(5, red, [$x], [$y], [$blur], [$mix]);
-````
+```
 
 `$x`, `$y`, `$blur` and `$mix` are optional arguments. I already mentioned that I will call this function inside keyframes so I need to be able to optionally change them. `$mix` will allow to add a second color so the shadow fades from one to the other.
 
@@ -228,30 +239,27 @@ I am using two variables `$offset` and `$trans` which I have already defined abo
 ```scss
 @keyframes pop-out {
   0% {
-    transform:
-      if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
+    transform: if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
       if($offset == 0, translatey(0%), rotatey($trans));
-    text-shadow:
-      d3(15, rgba($c_3d, 0), 0, 0),
-      d3(50, rgba($c_shadow, 0), 0, 0);
+    text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
   }
 
   50% {
-    transform:
-      if($offset == 0, scale(1.2, 1.2), scale(126.2 - abs($offset) * 10, 1.2))
-      if($offset == 0, translatey(-16%), rotatey($trans));
-    text-shadow:
-      d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
-      d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
+    transform: if(
+        $offset == 0,
+        scale(1.2, 1.2),
+        scale(126.2 - abs($offset) * 10, 1.2)
+      ) if($offset == 0, translatey(-16%), rotatey($trans));
+    text-shadow: d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px), d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
   }
 
   100% {
-    transform:
-      if($offset == 0, scale(1.1, 1.1), scale(116.2 - abs($offset) * 10, 1.1))
-      if($offset == 0, translatey(-12%), rotatey($trans));
-    text-shadow:
-      d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
-      d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
+    transform: if(
+        $offset == 0,
+        scale(1.1, 1.1),
+        scale(116.2 - abs($offset) * 10, 1.1)
+      ) if($offset == 0, translatey(-12%), rotatey($trans));
+    text-shadow: d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px), d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
   }
 }
 ```
@@ -263,30 +271,27 @@ Now let's do the same thing for fading back.
 ```scss
 @keyframes fade-back {
   0% {
-    transform:
-      if($offset == 0, scale(1.1, 1.1), scale(116.2 - abs($offset) * 10, 1.1))
-      if($offset == 0, translatey(-12%), rotatey($trans));
-    text-shadow:
-      d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
-      d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
+    transform: if(
+        $offset == 0,
+        scale(1.1, 1.1),
+        scale(116.2 - abs($offset) * 10, 1.1)
+      ) if($offset == 0, translatey(-12%), rotatey($trans));
+    text-shadow: d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px), d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
   }
 
   20% {
-    transform:
-      if($offset == 0, scale(1.05, 1.05), scale(105.9 - abs($offset) * 10, 1.05))
-      if($offset == 0, translatey(-7%), rotatey($trans));
-    text-shadow:
-      d3(15, rgba($c_3d, 0), 0, 0),
-      d3(50, rgba($c_shadow, 0), 0, 0);
+    transform: if(
+        $offset == 0,
+        scale(1.05, 1.05),
+        scale(105.9 - abs($offset) * 10, 1.05)
+      ) if($offset == 0, translatey(-7%), rotatey($trans));
+    text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
   }
 
   100% {
-    transform:
-      if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
+    transform: if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
       if($offset == 0, translatey(0%), rotatey($trans));
-    text-shadow:
-      d3(15, rgba($c_3d, 0), 0, 0),
-      d3(50, rgba($c_shadow, 0), 0, 0);
+    text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
   }
 }
 ```
@@ -313,13 +318,12 @@ Now we can chain these animations like so:
 ```css
 animation-name: pop-out, fade-back, change-color;
 animation-duration: 4s, 2s, 0.1s;
-animation-delay: 0s, 2s, 3.2s
+animation-delay: 0s, 2s, 3.2s;
 ```
 
 The code above is just an approximate example. Each letter has a different delay and duration. You can see the final implementation here [Netflix animation in pure CSS](http://codepen.io/pixelass/pen/MYYReK)
 
-Final notice: I added some magic to retrigger the animation in pure CSS
-but that's something I might explain in another article.
+Final notice: I added some magic to retrigger the animation in pure CSS but that's something I might explain in another article.
 
 I am never really happy with my experiments and while writing this article I found several ways how I could improve the code and effect.
 

@@ -28,7 +28,7 @@ Let's talk about each one of these definitions to understand them better.
 
 ## RGB
 
-Let me start with the RGB syntax since it’s the most fundamental thing to understand in order to comprehend how other notations like hexadecimal work. 
+Let me start with the RGB syntax since it’s the most fundamental thing to understand in order to comprehend how other notations like hexadecimal work.
 
 ### What is RGB?
 
@@ -77,35 +77,40 @@ A RGB value can be defined using four different syntaxes but only two of them ar
 So, summarized, we end up with two different ways to display CSS colors with the `rgb()` function: percentages and integers between 0 and 255. Let’s illustrate this with an example, shall we?
 
 ```css
-.black { /* I’m black! */
-	color: rgb(0, 0, 0);
-	color: rgb(0%, 0%, 0%);
+.black {
+  /* I’m black! */
+  color: rgb(0, 0, 0);
+  color: rgb(0%, 0%, 0%);
 }
 
-.white { /* I’m white! */
-	color: rgb(255, 255, 255);
-	color: rgb(100%, 100%, 100%);
+.white {
+  /* I’m white! */
+  color: rgb(255, 255, 255);
+  color: rgb(100%, 100%, 100%);
 }
 
-.purple { /* I’m medium purple! */
-	color: rgb(128, 0, 128);
-	color: rgb(50%, 0%, 50%);
+.purple {
+  /* I’m medium purple! */
+  color: rgb(128, 0, 128);
+  color: rgb(50%, 0%, 50%);
 }
 
-.light-purple { /* I’m fuchsia! */
-	color: rgb(255, 0, 255);
-	color: rgb(100%, 0%, 100%);
+.light-purple {
+  /* I’m fuchsia! */
+  color: rgb(255, 0, 255);
+  color: rgb(100%, 0%, 100%);
 }
 
-.dark-purple { /* I’m deep purple! */
-	color: rgb(64, 0, 64);
-	color: rgb(25%, 0%, 25%);
+.dark-purple {
+  /* I’m deep purple! */
+  color: rgb(64, 0, 64);
+  color: rgb(25%, 0%, 25%);
 }
 ```
 
 **Important**: when using percentages, you have to set the unit even if it is 0. If you don’t, some browsers may be unable to parse it.
 
-*Note: even if the percentage version seems more intuitive, it’s actually the integer version that seems to be more commonly used.*
+_Note: even if the percentage version seems more intuitive, it’s actually the integer version that seems to be more commonly used._
 
 ### What about the alpha-channel?
 
@@ -114,19 +119,22 @@ As seen previously, while using the RGB system we can also use an alpha channel 
 To use this channel in CSS, you’ll call the `rgba()` function instead of the `rgb()`. However note the alpha-channel is always defined with a float clamped between 0 and 1.
 
 ```css
-.black { /* I’m half transparent black! */
-	color: rgba(0, 0, 0, 0.5);
-	color: rgba(0%, 0%, 0%, 0.5);
+.black {
+  /* I’m half transparent black! */
+  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0%, 0%, 0%, 0.5);
 }
 
-.white { /* I’m 2/3 transparent white! */
-	color: rgba(255, 255, 255, 0.33);
-	color: rgba(100%, 100%, 100%, 0.33);
+.white {
+  /* I’m 2/3 transparent white! */
+  color: rgba(255, 255, 255, 0.33);
+  color: rgba(100%, 100%, 100%, 0.33);
 }
 
-.red { /* I’m fully transparent red, so kind of invisible */
-	color: rgba(255, 0, 0, 0);
-	color: rgba(100%, 0%, 0%, 0);
+.red {
+  /* I’m fully transparent red, so kind of invisible */
+  color: rgba(255, 0, 0, 0);
+  color: rgba(100%, 0%, 0%, 0);
 }
 ```
 
@@ -134,20 +142,20 @@ This can be very useful in various situation. Let’s say you have some kind of 
 
 ```css
 .parent {
-	background-image: url(‘my-picture.jpg’);
+  background-image: url(‘my-picture.jpg’);
 }
 
 .child {
-	background: rgba(255, 255, 255, 0.75);
-	color: rgb(51, 51, 51);
+  background: rgba(255, 255, 255, 0.75);
+  color: rgb(51, 51, 51);
 }
 ```
 
 This way, the child element will have a white background with 75% opacity, showing its parent’s background without risking any issue with readability.
 
-*Note: when dealing with decimal values between 0 and 1, you don’t have to write the 0 before the dot. So you can write `rgba(0, 0, 0, .5)` and still be perfectly valid.
+\*Note: when dealing with decimal values between 0 and 1, you don’t have to write the 0 before the dot. So you can write `rgba(0, 0, 0, .5)` and still be perfectly valid.
 
-*Note: the `rgb()` function is perfectly valid CSS2.1. However the `rgba()` function is part of the CSS3 specification and is not supported by all browsers (Internet Explorer 6, 7, 8).*
+_Note: the `rgb()` function is perfectly valid CSS2.1. However the `rgba()` function is part of the CSS3 specification and is not supported by all browsers (Internet Explorer 6, 7, 8)._
 
 ## Hexadecimal
 
@@ -157,13 +165,13 @@ Most of the time, CSS colors are specified using the hexadecimal format which is
 
 Okay, but what does this mean? I agree it’s not that simple. Basically, hexadecimal colors are some sort of code for RGB colors: the first two characters stand for the red value; the 3rd and 4th characters stand for greens; and the last two characters are here for the blue.
 
-Since the range of a 8-bit byte is 256, we usually use a base 16 system to display values. This system is called hexadecimal. So basically those 3*2 digits stand for 3 values from 0 to 255 converted to base 16, as you would do in RGB.
+Since the range of a 8-bit byte is 256, we usually use a base 16 system to display values. This system is called hexadecimal. So basically those 3\*2 digits stand for 3 values from 0 to 255 converted to base 16, as you would do in RGB.
 
 Okay, I can understand you’re lost here, so we’ll try a little example. Let’s say you want to make a pure red (rgb(255, 0, 0)): thanks to [this awesome converter](http://wims.unice.fr/wims/wims.cgi), you convert 255 to base 16 and know it equals FF. If you try to convert 0, you’ll see it’s 0 as well in base 16. So your hex triplet would be #FF0000. Simple, isn’t it?
 
 So this was the theory, alright? It doesn’t mean you have to use a base 16 converter every single time you want to use a color in CSS. I’m simply explaining you how are hexadecimal colors composed. Now in real life, you’ll simply use a color palette like Photoshop or whatever.
 
-*Note: you may see some hex triplets reduced to 3 digits instead of 6. It only happens when the two digits of each of the 3 components of the triplet are the same. To apply it on our previous example, the red color (#FF0000) can be written like #F00. If any of the 3 components have 2 different digits, you can’t do this.
+\*Note: you may see some hex triplets reduced to 3 digits instead of 6. It only happens when the two digits of each of the 3 components of the triplet are the same. To apply it on our previous example, the red color (#FF0000) can be written like #F00. If any of the 3 components have 2 different digits, you can’t do this.
 
 ### What about transparency?
 
@@ -180,7 +188,6 @@ The fact is, hexadecimal is really unfriendly. Nobody knows what color is associ
 RGB is slightly better, especially when you’re using percentage values but it’s not wonderful either. If I tell you `rgb(54%, 69%, 23%)`, can you tell me what color it will be? Even approximately? I guess not.
 
 That’s why there are keywords. Keywords are real color names like red, green and blue associated to actual RGB / hex triplets. Back in the days, the HTML 4.01 Standard proposed 16 different keywords:
-
 
 * Aqua
 * Black
@@ -213,7 +220,7 @@ Eric Meyer also created a color equivalents table in order to know what keyword 
 
 The point of keywords is to use basic colors with words that actually mean something. I say “basic” because most of the time, you’ll want a custom color who doesn’t have a keyword. But whenever you want to use a plain red or a silver grey, you don’t have to use a hex or RGB triplet; you can use the keyword.
 
-*Note: the 147 keywords are all perfectly valid, even on old browsers like Internet Explorer 6.*
+_Note: the 147 keywords are all perfectly valid, even on old browsers like Internet Explorer 6._
 
 ### Special keywords
 
@@ -233,8 +240,8 @@ The currentColor is a CSS3 value allowing you to take the color as a default val
 
 ```css
 .my-element {
-color: red;
-	border-color: 5px solid currentColor;
+  color: red;
+  border-color: 5px solid currentColor;
 }
 ```
 
@@ -250,14 +257,14 @@ It means you can do one of those and be perfectly valid:
 
 ```css
 .my-element {
-	color: red;
-	border-color: 5px solid;   /* This will be red */
-	box-shadow: 10px 10px 5px; /* This will be red */
-	text-shadow: 0 2px 1px;    /* This will be red */
+  color: red;
+  border-color: 5px solid; /* This will be red */
+  box-shadow: 10px 10px 5px; /* This will be red */
+  text-shadow: 0 2px 1px; /* This will be red */
 }
 ```
 
-*Note: the cap on the C letter is not required. It’s only a writing convention.*
+_Note: the cap on the C letter is not required. It’s only a writing convention._
 
 ## HSL
 
@@ -290,22 +297,25 @@ To describe a color using the HSL representation, you have to define parameters 
 * **Lightness**: if you want a pure color, then the lightness value will be 50%. If you want a light color, try something between 50% and 100%. If you want something dark, try below 50%.
 
 ```css
-.white { /* I’m white! */
-	color: hsl(0, 0%, 100%);
+.white {
+  /* I’m white! */
+  color: hsl(0, 0%, 100%);
 }
 
-.black { /* I’m black! */
-	color: hsl(0, 0%, 0%);
+.black {
+  /* I’m black! */
+  color: hsl(0, 0%, 0%);
 }
 
-.red { /* I’m red! */
-	color: hsl(0, 100%, 50%);
+.red {
+  /* I’m red! */
+  color: hsl(0, 100%, 50%);
 }
 ```
 
-*Note: when you want black or white, whatever the hue value you set since it’s not on the wheel. It means `hsl(0, 0%, 100%)`, `hsl(120, 0%, 100%)` and `hsl(240, 0%, 100%)` are all 3 white.
+\*Note: when you want black or white, whatever the hue value you set since it’s not on the wheel. It means `hsl(0, 0%, 100%)`, `hsl(120, 0%, 100%)` and `hsl(240, 0%, 100%)` are all 3 white.
 
-*Note: the hue value is expressed in degrees but you don’t have to set the unit. Actually you must not set the unit; the parser won’t understand it.
+\*Note: the hue value is expressed in degrees but you don’t have to set the unit. Actually you must not set the unit; the parser won’t understand it.
 
 ### What about the alpha-channel?
 
@@ -313,12 +323,12 @@ As for RGBa, you can set a value for the alpha-channel on a HSL color. It works 
 
 ```css
 .parent {
-	background-image: url(‘my-picture.jpg’);
+  background-image: url(‘my-picture.jpg’);
 }
 
 .child {
-	background: hsla(0, 0%, 100%, 0.75);
-	color: hsl(0, 0%, 30%);
+  background: hsla(0, 0%, 100%, 0.75);
+  color: hsl(0, 0%, 30%);
 }
 ```
 
@@ -338,15 +348,33 @@ Honestly, this is really up to you. In the end, a RGB triplet is generated, pars
 
 ```css
 /* This will be red, whatever you pick */
-.red { color: red; } 
-.red { color: #f00; }
-.red { color: #ff0000; }
-.red { color: rgb(255, 0, 0); } 
-.red { color: rgb(100%, 0%, 0%); } 
-.red { color: rgba(255, 0, 0, 1); }
-.red { color: rgba(100%, 0%, 0%, 1); }
-.red { color: hsl(0, 100%, 50%); }
-.red { color: hsla(0, 100%, 50%, 1); }
+.red {
+  color: red;
+}
+.red {
+  color: #f00;
+}
+.red {
+  color: #ff0000;
+}
+.red {
+  color: rgb(255, 0, 0);
+}
+.red {
+  color: rgb(100%, 0%, 0%);
+}
+.red {
+  color: rgba(255, 0, 0, 1);
+}
+.red {
+  color: rgba(100%, 0%, 0%, 1);
+}
+.red {
+  color: hsl(0, 100%, 50%);
+}
+.red {
+  color: hsla(0, 100%, 50%, 1);
+}
 ```
 
 Now if you want my way of doing with colors, here is what I do in most cases:
@@ -372,7 +400,7 @@ saturate(@color, @percentage);              /* Makes more saturated*/
 desaturate(@color, @percentage);            /* Makes less saturated*/
 
 fadein(@color, @percentage);                /* Makes more opaque */
-fadeout(@color, @percentage);               /* Makes more transparent */ 
+fadeout(@color, @percentage);               /* Makes more transparent */
 fade(@color, @percentage);                  /* Gives the color 50% opacity */
 
 spin(@color, @degrees);                     /* Rotates the hue wheel 10° */

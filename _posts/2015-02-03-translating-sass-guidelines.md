@@ -6,8 +6,7 @@ tags:
   - translation
 ---
 
-{% raw %}
-A couple of weeks ago, I [introduced Sass Guidelines](http://hugogiraudel.com/2015/01/07/introducing-sass-guidelines/), a huge styleguide to write efficient, sain and scalable Sass code in pretty much any project. It has known a massive success, so thank you all for your support! I am very glad to maintain this project knowning how popular it has gotten, especially this quick.
+{% raw %} A couple of weeks ago, I [introduced Sass Guidelines](http://hugogiraudel.com/2015/01/07/introducing-sass-guidelines/), a huge styleguide to write efficient, sain and scalable Sass code in pretty much any project. It has known a massive success, so thank you all for your support! I am very glad to maintain this project knowning how popular it has gotten, especially this quick.
 
 Actually, it was so welcome that some lovely folks started translating it in different languages. It is currently available in [English](http://sass-guidelin.es), [French](http://sass-guidelin.es/fr/), [Spanish](http://sass-guidelin.es/es/), [Polish](http://sass-guidelin.es/pl/), [Russian](http://sass-guidelin.es/ru/), [Korean](http://sass-guidelin.es/ko/) and [Chinese](http://sass-guidelin.es/zh/). [German](https://github.com/HugoGiraudel/sass-guidelines/issues/88), [Italian](https://github.com/HugoGiraudel/sass-guidelines/issues/91), [Portuguese](https://github.com/HugoGiraudel/sass-guidelines/issues/89), [Danish](https://github.com/HugoGiraudel/sass-guidelines/issues/84), [Dutch](https://github.com/HugoGiraudel/sass-guidelines/issues/86), [Czech](https://github.com/HugoGiraudel/sass-guidelines/issues/92) and [Greek](https://github.com/HugoGiraudel/sass-guidelines/issues/83) should soon follow. Let's give credits where it's due while we're at it.
 
@@ -27,7 +26,7 @@ Actually, it was so welcome that some lovely folks started translating it in dif
 
 If you read Sass Guidelines in anything but English, be sure to thank the translators. I am sure that will make their day. :)
 
-Anyway, managing different languages as part of a [Jekyll](http://jekyllrb.com) powered site turned out to be quite an interesting challenge in order to keep everything scalable, so I thought *why not writing about this*. Hence you reading this.
+Anyway, managing different languages as part of a [Jekyll](http://jekyllrb.com) powered site turned out to be quite an interesting challenge in order to keep everything scalable, so I thought _why not writing about this_. Hence you reading this.
 
 ## Translating the content
 
@@ -144,6 +143,7 @@ At this point, it is a breeze to access to this content from a partial, such as 
   </div>
 </div>
 ```
+
 Easy peasy! It works exactly the same for the baseline, the footer and pretty much any UI component we want to translate to the current language. Pretty neat, right?
 
 ## Displaying credits per translation
@@ -214,6 +214,5 @@ The second paragraph is intended to warn against outdated information. To make i
 ## Final thoughts
 
 I am still looking for extra languages, such as Japanese, Norwegian, Swedish, Finnish, and so on. If you speak one of these languages or know someone who would like to translate Sass Guidelines, please be sure to get in touch!
-
 
 {% endraw %}

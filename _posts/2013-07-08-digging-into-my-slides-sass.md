@@ -49,7 +49,6 @@ As a very simple example, let's make a placeholder of the [clearfix method by Ni
 .element {
   @extend %clearfix;
 }
-
 ```
 
 Outputs:
@@ -111,7 +110,10 @@ Let's see how we can Sass it:
 Outputs:
 
 ```css
-.message-error, .message-ok, .message-warn, .message-info {
+.message-error,
+.message-ok,
+.message-warn,
+.message-info {
   /* shared styles */
 }
 .message-error {
@@ -200,15 +202,15 @@ Simple enough: wrap the PX line in a conditional statement (`@if`) depending on 
 $support-IE8: false;
 
 @mixin rem($value, $base: 16) {
-	@if $support-IE8 {
-		font-size: $value + px;
-	}
+  @if $support-IE8 {
+    font-size: $value + px;
+  }
 
-	font-size: $value / $base + rem;
+  font-size: $value / $base + rem;
 }
 
 .element {
-	@include rem(24);
+  @include rem(24);
 }
 ```
 
@@ -216,7 +218,7 @@ Outputs:
 
 ```css
 .element {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 ```
 
@@ -228,13 +230,17 @@ I don't know for you but I don't really like manipulating media queries. The syn
 
 ```scss
 @mixin mq($keyword) {
-	@if $keyword == small {
-		@media (max-width: 48em) { @content; }
-	}
-	@if $keyword == medium {
-		@media (max-width: 58em) { @content; }
-	}
-	/* … */
+  @if $keyword == small {
+    @media (max-width: 48em) {
+      @content;
+    }
+  }
+  @if $keyword == medium {
+    @media (max-width: 58em) {
+      @content;
+    }
+  }
+  /* … */
 }
 ```
 
@@ -246,15 +252,12 @@ We can even push things further by adding retina support to the mixin (based on 
 
 ```scss
 @mixin mq($keyword) {
-	/* … */
-	@if $keyword == retina {
-		@media 
-			only screen and (-webkit-min-device-pixel-ratio: 1.3)
-			only screen and (min-resolution: 124.8dpi)
-			only screen and (min-resolution: 1.3dppx) {
-				@content;
-		}
-	}
+  /* … */
+  @if $keyword == retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3) only screen and (min-resolution: 124.8dpi) only screen and (min-resolution: 1.3dppx) {
+      @content;
+    }
+  }
 }
 ```
 
@@ -262,15 +265,15 @@ We can now safely use this mixin as below:
 
 ```scss
 .element {
-	/* regular styles */
+  /* regular styles */
 
-	@include mq(small) {
-		/* small-screen styles */
-	}
+  @include mq(small) {
+    /* small-screen styles */
+  }
 
-	@include mq(retina) {
-		/* retina-only styles */
-	}
+  @include mq(retina) {
+    /* retina-only styles */
+  }
 }
 ```
 
@@ -278,21 +281,21 @@ Outputs:
 
 ```css
 .element {
-	/* regular styles */
+  /* regular styles */
 }
 
 @media (max-width: 48em) {
-	{
-		/* small-screen styles */
-	}
+   {
+    /* small-screen styles */
+  }
 }
 
 @media only screen and (-webkit-min-device-pixel-ration: 1.3),
-	only screen and (min-resolution: 124.8dpi),
-	only screen and (min-resolution: 1.3dppx) {
-		.element {
-			/* retina-only styles */
-		}
+  only screen and (min-resolution: 124.8dpi),
+  only screen and (min-resolution: 1.3dppx) {
+  .element {
+    /* retina-only styles */
+  }
 }
 ```
 
@@ -304,25 +307,25 @@ Nowadays, using a grid system to build a responsive website has become a standar
 
 ```scss
 /* Your variables */
-$nb-columns : 6; 
-$wrap-width : 1140px; 
-$column-width : 180px; 
+$nb-columns: 6;
+$wrap-width: 1140px;
+$column-width: 180px;
 
 /* Calculations */
-$gutter-width : ($wrap-width - $nb-columns * $column-width) / $nb-columns; 
-$column-pct : ($column-width / $wrap-width) * 100; 
-$gutter-pct : ($gutter-width / $wrap-width) * 100; 
+$gutter-width: ($wrap-width - $nb-columns * $column-width) / $nb-columns;
+$column-pct: ($column-width / $wrap-width) * 100;
+$gutter-pct: ($gutter-width / $wrap-width) * 100;
 
 /* One single mixin */
-@mixin cols($cols) { 
-	width: $column-pct * $cols + $gutter-pct * ($cols - 1) + unquote('%'); 
-	margin-right: $gutter-pct + unquote('%'); 
-	float: left; 
+@mixin cols($cols) {
+  width: $column-pct * $cols + $gutter-pct * ($cols - 1) + unquote('%');
+  margin-right: $gutter-pct + unquote('%');
+  float: left;
 
-	@media screen and (max-width: 400px) { 
-		width: 100%; 
-		margin-right: 0; 
-	} 
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 ```
 
@@ -350,30 +353,28 @@ Doing this with vanilla CSS isn't too hard but require code repetition and quite
 
 ```scss
 /* Initialize counters */
-body { 
-	counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
-} 
+body {
+  counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
+}
 
 /* Create a variable (list) to store the concatenated counters */
-$nest: (); 
+$nest: ();
 
 /* Loop on each heading level */
 @for $i from 1 through 6 {
-	
-	/* For each heading level */
-	h#{$i} { 
+  /* For each heading level */
+  h#{$i} {
+    /* Increment the according counter */
+    counter-increment: ct#{$i};
 
-		/* Increment the according counter */
-		counter-increment: ct#{$i}; 
+    /* Display the concatenated counters in the according pseudo-element */
+    &:before {
+      content: $nest counter(ct#{$i}) '. ';
+    }
+  }
 
-		/* Display the concatenated counters in the according pseudo-element */
-		&:before { 
-			content: $nest counter(ct#{$i}) ". ";
-		} 
-	} 
-
-	/* Concatenate counters */
-	$nest: append($nest, counter(ct#{$i}) ".");
+  /* Concatenate counters */
+  $nest: append($nest, counter(ct#{$i}) '.');
 }
 ```
 
@@ -381,41 +382,46 @@ The code might be complicated to understand but it's really not that hard once y
 
 ```scss
 @mixin numbering($from: 1, $to: 6) {
-	counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
-	$nest: (); 
+  counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
+  $nest: ();
 
-	@for $i from 1 through 6 {
-		h#{$i} { 
-			counter-increment: ct#{$i}; 
+  @for $i from 1 through 6 {
+    h#{$i} {
+      counter-increment: ct#{$i};
 
-			&:before { 
-				content: $nest counter(ct#{$i}) ". ";
-			}	 
-		} 
+      &:before {
+        content: $nest counter(ct#{$i}) '. ';
+      }
+    }
 
-		$nest: append($nest, counter(ct#{$i}) ".");
-	}
+    $nest: append($nest, counter(ct#{$i}) '.');
+  }
 }
 
 .wrapper {
-	@include numbering(1, 4);
+  @include numbering(1, 4);
 }
 ```
 
-*Note: a couple of people came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.
+\*Note: a couple of people came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.
 
 ## Foreach
 
-The last part of my talk was probably slightly more technical thus more complicated. I wanted to show where we can go with Sass, especially with lists and loops.  
+The last part of my talk was probably slightly more technical thus more complicated. I wanted to show where we can go with Sass, especially with lists and loops.
 
 To fully understand it, I thought it was better to introduce Sass loops and lists (remember there was quite a few people not knowing a bit about Sass in the room).
 
 ```scss
 /* All equivalents */
-$list: ("item-1", "item-2", "item-3", "item-4");
-$list: ("item-1" "item-2" "item-3" "item-4");
-$list: "item-1", "item-2", "item-3", "item-4";
-$list: "item-1" "item-2" "item-3" "item-4";
+$list: (
+  'item-1',
+  'item-2',
+  'item-3',
+  'item-4'
+);
+$list: ('item-1' 'item-2' 'item-3' 'item-4');
+$list: 'item-1', 'item-2', 'item-3', 'item-4';
+$list: 'item-1' 'item-2' 'item-3' 'item-4';
 ```
 
 So basically you can ommit braces and can either comma-separate or space-separate values.
@@ -423,25 +429,21 @@ So basically you can ommit braces and can either comma-separate or space-separat
 A quick look at nested lists:
 
 ```scss
-$list: ( 
-  (item-1, item-2, item-3)
-  (item-4, item-5, item-6)
-  (item-7, item-8, item-9) 
+$list: (
+   (item-1, item-2, item-3) (item-4, item-5, item-6) (item-7, item-8, item-9)
 );
 
-// Or simpler: 
-// top-level list is comma-separated 
-// inner lists are space-separated 
-$list:  item-1 item-2 item-3, 
-	      item-4 item-5 item-6, 
-        item-7 item-8 item-9;
+// Or simpler:
+// top-level list is comma-separated
+// inner lists are space-separated
+$list: item-1 item-2 item-3, item-4 item-5 item-6, item-7 item-8 item-9;
 ```
 
 Now, here is how to use a list to access item one by one.
 
 ```scss
 @each $item in $list {
-	/* Access item with $item */
+  /* Access item with $item */
 }
 ```
 
@@ -449,28 +451,25 @@ You can do the exact same thing with a `@for` loop as you would probably do in J
 
 ```scss
 @for $i from 1 through length($list) {
-	/* Access item with nth($list, $i) */
+  /* Access item with nth($list, $i) */
 }
 ```
 
-*Note: I have a very in-depth article on Sass lists scheduled for next week. Stay tuned for some Sass awesomeness. ;)*
+_Note: I have a very in-depth article on Sass lists scheduled for next week. Stay tuned for some Sass awesomeness. ;)_
 
 Now that we introduced loops and lists, we can move forward. My idea was to build a little Sass script that output a specific background based on a page name where file names would not follow any guide name (hyphens, underscores, .jpg, .png, random folders...). So home page would have background X, contact page background Y, etc.
 
 ```scss
 // Two-levels list
 // Top level contains pages
-// Inner level contains page-specific informations 
-$pages : 
-  "home"     "bg-home.jpg", 
-  "about"    "about.png", 
-  "products" "prod_bg.jpg", 
-  "contact"  "assets/contact.jpg";
+// Inner level contains page-specific informations
+$pages: 'home' 'bg-home.jpg', 'about' 'about.png', 'products' 'prod_bg.jpg', 'contact'
+    'assets/contact.jpg';
 
 @each $page in $pages {
   // Scoped variables
-  $selector : nth($page, 1);
-  $path     : nth($page, 2);
+  $selector: nth($page, 1);
+  $path: nth($page, 2);
 
   .#{$selector} body {
     background: url('../images/#{ $path }');
@@ -487,10 +486,18 @@ Here is what happen:
 Outputs:
 
 ```css
-.home     body { background: url('../images/bg-home.jpg'); }
-.about    body { background: url('../images/about.png'); }
-.products body { background: url('../images/prod_bg.jpg'); }
-.contact  body { background: url('../images/assets/contact.jpg'); }
+.home body {
+  background: url('../images/bg-home.jpg');
+}
+.about body {
+  background: url('../images/about.png');
+}
+.products body {
+  background: url('../images/prod_bg.jpg');
+}
+.contact body {
+  background: url('../images/assets/contact.jpg');
+}
 ```
 
 I finished my talk with a last example with lists and loops, to show how to build an "active menu" without JavaScript or server-side; only CSS. To put it simple, it relies on the page name matching and the link name. So the link to home page is highlighted if it's a child of `.home` (class on html element); the link to the contact page is highlighted if it's a child of the `.contact` page. You get the idea.
@@ -501,7 +508,7 @@ Let's save the best for last. The idea behind the first version is to loop throu
 
 ```scss
 @each $item in home, about, products, contact {
-  .#{$item} .nav-#{ $item } { 
+  .#{$item} .nav-#{ $item } {
     style: awesome;
   }
 }
@@ -510,10 +517,18 @@ Let's save the best for last. The idea behind the first version is to loop throu
 Outputs:
 
 ```css
-.home     .nav-home     { style: awesome; }
-.about    .nav-about    { style: awesome; }
-.products .nav-products { style: awesome; }
-.contact  .nav-contact  { style: awesome; }
+.home .nav-home {
+  style: awesome;
+}
+.about .nav-about {
+  style: awesome;
+}
+.products .nav-products {
+  style: awesome;
+}
+.contact .nav-contact {
+  style: awesome;
+}
 ```
 
 Not bad. At least it works. But it repeats a bunch of things and this sucks. There has to be a better way to write this.
@@ -522,21 +537,21 @@ Not bad. At least it works. But it repeats a bunch of things and this sucks. The
 $selector: ();
 
 @each $item in home, about, products, contact {
-  $selector: append($selector, unquote(".#{$item} .nav-#{$item}"));
+  $selector: append($selector, unquote('.#{$item} .nav-#{$item}'));
 }
 
-#{$selector} { 
-  style: awesome; 
+#{$selector} {
+  style: awesome;
 }
 ```
 
 Outputs:
 
 ```css
-.home     .nav-home, 
-.about    .nav-about,
-.products .nav-products, 
-.contact  .nav-contact {
+.home .nav-home,
+.about .nav-about,
+.products .nav-products,
+.contact .nav-contact {
   style: awesome;
 }
 ```
@@ -553,7 +568,7 @@ However what can be considered odd is that the 2 classes are co-dependant, meani
 
 **Your @media mixin outputs a media-query block every time you use it. Ain't you afraid of performance issues?**
 
-That's true. Sass doesn't automatically merge media queries rules [yet](https://github.com/nex3/sass/issues/316). However, [tests have been done](http://sasscast.tumblr.com/post/38673939456/sass-and-media-queries) and they showed that once GZipped, there was no difference between duplicated and merged @media queries. 
+That's true. Sass doesn't automatically merge media queries rules [yet](https://github.com/nex3/sass/issues/316). However, [tests have been done](http://sasscast.tumblr.com/post/38673939456/sass-and-media-queries) and they showed that once GZipped, there was no difference between duplicated and merged @media queries.
 
 > "... we hashed out whether there were performance implications of combining vs scattering Media Queries and came to the conclusion that the difference, while ugly, is minimal at worst, essentially non-existent at best."
 
@@ -576,4 +591,3 @@ However they are including awesome features in Sass starting with the next versi
 ## Final words
 
 I think I've covered pretty much everything I talked about at KiwiParty, even more (I'm not limited by time on my blog). If you feel like some parts deserve deeper explanations, be sure to ask.
-

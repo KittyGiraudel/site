@@ -19,9 +19,9 @@ Although after a couple of minutes digging into their code, I noticed the CSS ou
 
 Hence, a short blog post relating all this.
 
-## What's the problem? 
+## What's the problem?
 
-First of all, the way they approach the whole widget is *very* clever. To deal with half-star ratings, they use left and right borders instead of background-color. This way, they can color only half of the background for a star. This is brilliant.
+First of all, the way they approach the whole widget is _very_ clever. To deal with half-star ratings, they use left and right borders instead of background-color. This way, they can color only half of the background for a star. This is brilliant.
 
 So the few things I noticed were definitely not about their idea but more the way they use Sass. The first and most obvious mistake is they output a rule for 5.5-stars rating which simply cannot exist since it goes from 1 to 5.
 
@@ -73,7 +73,7 @@ Last but not least, their `stars-color` function returning a color based on a nu
 }
 ```
 
-## Solving problems, one at a time 
+## Solving problems, one at a time
 
 ### Moving to data-attributes
 
@@ -93,7 +93,7 @@ Another interesting about moving to data-attributes is it makes any JavaScript e
 
 ### Revamping the `stars-color` function
 
-We'll start with the simplest thing we can do to improve the code: refactoring the `stars-color` function. My idea was to have a list of colors (sorted from the lowest rating to the best one) so we can pick a color from its index in the list. 
+We'll start with the simplest thing we can do to improve the code: refactoring the `stars-color` function. My idea was to have a list of colors (sorted from the lowest rating to the best one) so we can pick a color from its index in the list.
 
 ```scss
 @function stars-color($stars) {
@@ -106,7 +106,7 @@ We'll start with the simplest thing we can do to improve the code: refactoring t
 }
 ```
 
-Here we have a `$colors` Sass list containing 5 colors, the first being the color for 1 and 1.5 ratings, and the last for 5-stars ratings. The function accepts a single argument: `$stars` which is the rating. 
+Here we have a `$colors` Sass list containing 5 colors, the first being the color for 1 and 1.5 ratings, and the last for 5-stars ratings. The function accepts a single argument: `$stars` which is the rating.
 
 Then all we have to do is check if `$stars` is a valid index for `$colors`. If it is, we return the color at index `$stars`, else we return a default color (here `#333`). Simple and efficient.
 
@@ -127,8 +127,8 @@ Because it does the work well and is quite smart, I kept this as is. However I d
 
   @for $j from 1 through $i {
     $selector: append(
-      $selector, 
-      unquote("[data-rating^='#{$i}'] .star-#{$j}"), 
+      $selector,
+      unquote("[data-rating^='#{$i}'] .star-#{$j}"),
       comma
     );
   }
@@ -171,7 +171,7 @@ $color: stars-color(5);
 }
 ```
 
-## Final code 
+## Final code
 
 To see how efficient those little optimizations have been, I've minified both demo:
 
@@ -231,14 +231,14 @@ And here is what the loops' output looks like in my case:
 
 Looks quite efficient, doesn't it?
 
-## Final thoughts 
+## Final thoughts
 
 In the end, it's really not that much; saving 800 bytes is quite ridiculous. However I think it's interesting to see how we can use some features like Sass lists (often overlook by dervelopers) to improve CSS output.
 
-Thanks to Sass lists and the `append` function, we have been able to create a selector from a loop and use this selector outside the loop to minimize the amount of CSS that is being compiled. This is definitely something fun doing, even if it needs to roll up the sleeves and hack around the code. 
+Thanks to Sass lists and the `append` function, we have been able to create a selector from a loop and use this selector outside the loop to minimize the amount of CSS that is being compiled. This is definitely something fun doing, even if it needs to roll up the sleeves and hack around the code.
 
 Hope you liked the demo anyway folks. Cheers!
 
 <p data-height="480" data-theme-id="0" data-slug-hash="DqBkH" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/DqBkH'>CSS Rating Stars</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
-*Update: be sure to check [this version](http://codepen.io/piouPiouM/pen/beBcJ) from Mehdi Kabab, using placeholders to make it slightler lighter (14 bytes after gzip... :D).*
+_Update: be sure to check [this version](http://codepen.io/piouPiouM/pen/beBcJ) from Mehdi Kabab, using placeholders to make it slightler lighter (14 bytes after gzip... :D)._

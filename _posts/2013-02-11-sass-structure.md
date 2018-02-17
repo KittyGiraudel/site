@@ -18,7 +18,7 @@ I think I’ve come pretty close to this point thus I thought it might be a good
 
 Please, consider this post as both a way to introduce some people to Sass and a way to ask Sass experts some advices about the way I handled things. Any comment appreciated. :)
 
-## Divide and rule 
+## Divide and rule
 
 One of the biggest problem one faces when building a stylesheet is the size. Depending on the number of pages, elements and templates on your site, you might end up with a huge stylesheet heavy like hell and not so maintainable.
 
@@ -32,35 +32,30 @@ This is exactly what I did, spliting my stylesheets into parts. As of writing, I
 * `_helpers.scss`: this file contains my mixins, variables and helper classes
 * `_styles.scss`: the core of the CSS
 
-
-*Note: .scss files starting with a `_` are not compiled into .css files.*
+_Note: .scss files starting with a `_` are not compiled into .css files._
 
 Since my website isn’t that big, I didn’t have to split the code stylesheet into smaller parts like typography, header, footer, modules, etc.
 
 So basically, my central stylesheet (`styles.min.scss` compiled into `styles.min.css`) looks like this:
 
 ```scss
-@import "compass/css3/images";
-@import "compass/css3";
+@import 'compass/css3/images';
+@import 'compass/css3';
 
-@import "font-awesome", 
-        "google-fonts", 
-        "prism", 
-        "helpers", 
-        "styles";
+@import 'font-awesome', 'google-fonts', 'prism', 'helpers', 'styles';
 ```
 
 The first two lines are Compass related imports. It doesn’t compile into the final CSS. They enable use of Compass embedded mixins, sparing me from writing vendor prefixes. The last line imports the 5 files into a single one (top to bottom).
 
-*Note: when importing Sass/SCSS files, you don't need to add underscores or file extensions.*
+_Note: when importing Sass/SCSS files, you don't need to add underscores or file extensions._
 
-## KISS (Keep It Simple Stupid) 
+## KISS (Keep It Simple Stupid)
 
-At first I was using [the 1140px grid](http://cssgrid.net) but then it occurred to me I didn’t need a framework as simple as it is to handle a 2-columns layout. I could do it myself and so did I. 
+At first I was using [the 1140px grid](http://cssgrid.net) but then it occurred to me I didn’t need a framework as simple as it is to handle a 2-columns layout. I could do it myself and so did I.
 
 My point is: I decided to keep my stylesheet as simple (light) as possible. Thus, I did a huge cleaning in the font-awesome stylesheet. I only kept what was needed: the @font-face call, about ten lines to improve icons position, and the 8 icons I use on the whole site (instead of about 300).
 
-## Helpers 
+## Helpers
 
 Depending on your project size, you may have various files for that. Maybe one file for variables, one file for mixins, one file for helper classes, and whatever else you like.
 
@@ -72,38 +67,42 @@ My project is fairly (not to say really) small so I gathered everything into a s
 // Mixin providing a PX fallback for REM font-sizes
 
 @mixin font-size($val) {
-    font-size: ($val * 20) + px;
-    font-size: $val + rem;
+  font-size: ($val * 20) + px;
+  font-size: $val + rem;
 }
 
 // Mixin handling breakpoints for media queries
 
 @mixin breakpoint($point) {
-    @if $point == mama-bear {
-        @media (max-width: 48em) { @content; }
+  @if $point == mama-bear {
+    @media (max-width: 48em) {
+      @content;
     }
-    @if $point == baby-bear {
-        @media (max-width: 38em) { @content; } 
+  }
+  @if $point == baby-bear {
+    @media (max-width: 38em) {
+      @content;
     }
+  }
 }
 ```
 
-Just two. Why having one hundred mixins when you use just two? The first one allows me to use `rem` safely for font-size by providing a `px` fallback. This is a very nice mixin from Chris Coyier at [CSS-tricks](http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/). 
+Just two. Why having one hundred mixins when you use just two? The first one allows me to use `rem` safely for font-size by providing a `px` fallback. This is a very nice mixin from Chris Coyier at [CSS-tricks](http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/).
 
 The second one also comes from [CSS-tricks](http://css-tricks.com/media-queries-sass-3-2-and-codekit/) and is a nice way to handle breakpoints for Media Queries within a single MQ declaration. If either I want to change the breakpoints, I don’t have to go through all my stylesheets to find occurrences; all I have to do is edit it in the mixin.
 
 Whenever I want to use a Media Query, I just have to run `@include breakpoint(baby-bear) { /* My stuff here */ }`.
 
-*Note: I use `em` in media queries in order to prevent some layouts problem when zooming in the browser. More about it in [this article](http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/) from Lyza Gardner.
+\*Note: I use `em` in media queries in order to prevent some layouts problem when zooming in the browser. More about it in [this article](http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/) from Lyza Gardner.
 
 ### Variables
 
-Ah variables. The most awesome thing in any informatic language in the world. This little piece of thing that spare you from repeating again and again the same things. 
+Ah variables. The most awesome thing in any informatic language in the world. This little piece of thing that spare you from repeating again and again the same things.
 
 Native CSS variables are coming but currently only supported by Chrome so meanwhile we rely on CSS preprocessors for variables. I have to say I really didn’t use much in my project. Actually I used 4, not more.
 
 ```scss
-$pink: #FF3D7F;
+$pink: #ff3d7f;
 $lightgrey: #444;
 $mediumgrey: #666;
 $darkgrey: #999;
@@ -121,19 +120,22 @@ Let's start with the basics:
 
 * `%clearfix` is an invisible class meant to be extended (@extend) to clear floats in an element containing only floated elements
 * `.icon-left` and `.icon-right` are used on inline icons to prevent them from sticking the text
-                   
 
 ```scss
 %clearfix {
   &:after {
     display: table;
-    content: "";
-    clear: both 
+    content: '';
+    clear: both;
   }
 }
 
-.icon-left { margin-right: 5px }
-.iconright { margin-left: 5px }
+.icon-left {
+  margin-right: 5px;
+}
+.iconright {
+  margin-left: 5px;
+}
 ```
 
 Then, two helpers to give content specific meaning:
@@ -141,16 +143,16 @@ Then, two helpers to give content specific meaning:
 * `.visually-hidden` simply make the text disappear while keeping it accessible for both screen readers and search engine bots.
 * `.note` is used to tell a paragraph is a note which could be removed without affecting the sense of the content
 
-
 ```scss
-.visually-hidden { 
-  position: absolute; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height: 1px; width: 1px;
-  margin: -1px; 
-  padding: 0; 
-  border: none; 
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: none;
 }
 
 .note {
@@ -171,7 +173,7 @@ And now let's dig into more interesting stuff. I have built some useful classes 
   max-width: 15em;
   display: block;
 
-  @include breakpoint(baby-bear) { 
+  @include breakpoint(baby-bear) {
     float: none;
     width: 100%;
     margin: 1em auto;
@@ -202,10 +204,14 @@ And now let's dig into more interesting stuff. I have built some useful classes 
     font-weight: bold;
   }
 
-  &:before { content: '\201c'; }
-  &:after  { content: '\201d'; }
+  &:before {
+    content: '\201c';
+  }
+  &:after {
+    content: '\201d';
+  }
 
-  @include breakpoint(baby-bear) { 
+  @include breakpoint(baby-bear) {
     float: none;
     margin: 1em auto;
     border: 5px solid $pink;
@@ -241,7 +247,7 @@ Please note how I nest media queries inside their related selectors. There are t
 * This makes the stylesheet easier to maintain since you have everything at the same place: regular rules + conditional rules. No need of going at the bottom of the stylesheet to find all the conditional CSS.
 * When compiling, Sass doesn’t generate a bunch of media queries but a single one. So no performance issue on this point.
 
-*Note: if you ever wonder about the double dashes or underscores in class names, it is related to the BEM (Block Element Modifier) approach. More on the topic in [this excellent post](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) from Harry Roberts.*
+_Note: if you ever wonder about the double dashes or underscores in class names, it is related to the BEM (Block Element Modifier) approach. More on the topic in [this excellent post](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) from Harry Roberts._
 
 ## Core of styles
 
@@ -263,7 +269,6 @@ This is not optional, every project needs to use some kind of way to reset CSS s
 
 Yes I know, this is dirty. I shouldn’t not reset CSS this way but honestly on small projects like this, it’s really not a big deal. At first I used Normalize CSS but then I realized loading kilobytes of code when 2 lines are enough is not necessary. So barbarian CSS reset people!
 
-
 Please note I use the simplest box-sizing since IE (all versions) represents less than 1.5% of my traffic.
 
 ### Overall stuff
@@ -272,14 +277,15 @@ I didn’t really know how to call this.
 
 ```scss
 html {
-  font: 20px/1 "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif;
+  font: 20px/1 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica',
+    'Arial', 'Lucida Grande', sans-serif;
   color: #555;
-  text-shadow: 0 1px rgba(255,255,255,0.6);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
 
   border-left: 6px solid $pink;
-  background-image: url("data:image/png;base64,hErEiSaFuCkInGlOnGdAtAuRiaSaBaCkGrOuNd");
+  background-image: url('data:image/png;base64,hErEiSaFuCkInGlOnGdAtAuRiaSaBaCkGrOuNd');
 
-  @include breakpoint(baby-bear) { 
+  @include breakpoint(baby-bear) {
     border-left: none;
     border-top: 5px solid $pink;
   }
@@ -314,9 +320,9 @@ This used to be in the 1140px stylesheet but since I don’t use anymore, I move
   width: 68%;
   margin-right: 2%;
 
-  @include breakpoint(mama-bear) { 
+  @include breakpoint(mama-bear) {
     margin-right: 0;
-    border-bottom: 3px solid #D1D1D1;
+    border-bottom: 3px solid #d1d1d1;
   }
 }
 
@@ -326,7 +332,7 @@ This used to be in the 1140px stylesheet but since I don’t use anymore, I move
   padding-top: 2em;
 }
 
-%content { 
+%content {
   padding-bottom: 3em;
   float: left;
 
@@ -341,7 +347,7 @@ This used to be in the 1140px stylesheet but since I don’t use anymore, I move
 
 `.content` is an invisible shared class between both the main column and the sidebar.
 
-## Final words 
+## Final words
 
 I deliberately skipped the rest of the stylesheet since I think it's not the most interesting part in my opinion. It mostly consists on setting styles for various content elements like paragraphs, lists, tables, images, titles, and so on. Plus, it's classic CSS, not really SCSS magic.
 

@@ -17,7 +17,7 @@ It’s super insightful but there are hundreds of response so I thought I’d wr
 * [Cognitive & learning disabilities](#cognitive-learning-disabilities)
 * [Hearing impairments](#hearing-impairments)
 
-*Note: let me take this as an opportunity to link to this [introduction to web accessibility](https://gist.github.com/HugoGiraudel/5150c87d807f629ab006e2f6d2d9e86c) I wrote.*
+_Note: let me take this as an opportunity to link to this [introduction to web accessibility](https://gist.github.com/HugoGiraudel/5150c87d807f629ab006e2f6d2d9e86c) I wrote._
 
 ## Vision disability
 
@@ -85,7 +85,6 @@ It’s super insightful but there are hundreds of response so I thought I’d wr
 
 ## Hearing impairments
 
-* A <abbr title="Hard of Hearing">HoH</abbr> person points out that not enough videos/audios are captioned, which is a shame because they are useful to more people than just HoH/deafs. <sup>[[1]](https://twitter.com/UntoNuggan/status/871063079861268481)</sup> A large amount of people share this problem. <sup>[[2]](https://twitter.com/carolmcarpenter/status/871067344038219776)</sup> <sup>[[3]](https://twitter.com/tohereknowswhe/status/871061025642229761)</sup> <sup>[[4]](https://twitter.com/radcrochetqueer/status/871104664544137216)</sup> <sup>[[5]](https://twitter.com/jjackson/status/871209439856009216)</sup>
-<sup>[[6]](https://twitter.com/k_hack/status/871189568187322368)</sup> <sup>[[7]](https://twitter.com/Lesbiologist/status/871108939126939648)</sup> <sup>[[8]](https://twitter.com/domcorriveau/status/871259653170020352)</sup> <sup>[[9]](https://twitter.com/rad_fax/status/871244489561473024)</sup> <sup>[[10]](https://twitter.com/captainsafia/status/871061635485577217)</sup> <sup>[[11]](https://twitter.com/ai_valentin/status/871128518717046785)</sup>
+* A <abbr title="Hard of Hearing">HoH</abbr> person points out that not enough videos/audios are captioned, which is a shame because they are useful to more people than just HoH/deafs. <sup>[[1]](https://twitter.com/UntoNuggan/status/871063079861268481)</sup> A large amount of people share this problem. <sup>[[2]](https://twitter.com/carolmcarpenter/status/871067344038219776)</sup> <sup>[[3]](https://twitter.com/tohereknowswhe/status/871061025642229761)</sup> <sup>[[4]](https://twitter.com/radcrochetqueer/status/871104664544137216)</sup> <sup>[[5]](https://twitter.com/jjackson/status/871209439856009216)</sup> <sup>[[6]](https://twitter.com/k_hack/status/871189568187322368)</sup> <sup>[[7]](https://twitter.com/Lesbiologist/status/871108939126939648)</sup> <sup>[[8]](https://twitter.com/domcorriveau/status/871259653170020352)</sup> <sup>[[9]](https://twitter.com/rad_fax/status/871244489561473024)</sup> <sup>[[10]](https://twitter.com/captainsafia/status/871061635485577217)</sup> <sup>[[11]](https://twitter.com/ai_valentin/status/871128518717046785)</sup>
 
 * Someone says they feel like we sometimes abuse the video media on the web and not everything has to be a video. Simple text often is just fine. It seems shared by a few people. <sup>[[1]](https://twitter.com/Lesbiologist/status/871109089740210176)</sup> <sup>[[2]](https://twitter.com/Polenth/status/871080703370424321)</sup> <sup>[[3]](https://twitter.com/plathituudes/status/871082836362711044)</sup>

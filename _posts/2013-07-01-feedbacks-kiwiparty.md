@@ -50,7 +50,7 @@ This experience was kind of incredible actually. I walked into that room where d
 
 Then a little voice popped in my head saying "dude, this is too complicated", or "this is obvious to you but not for them" or "what the hell are you trying to explain?". It stayed there during the whole conference and was kind of disturbing. I couldn't have real-time feedback of course (imagine what it would look like) so I had no idea if people were enjoying my talk or hoping it was soon finished.
 
-In the end, I had a couple of questions (most of them very relevant) which I was prepared to answer. Yeah that's right, I prepared the Q&A people! 
+In the end, I had a couple of questions (most of them very relevant) which I was prepared to answer. Yeah that's right, I prepared the Q&A people!
 
 ## Why Sass?
 
@@ -60,7 +60,7 @@ When my girlfriend suggested I give a talk at KiwiParty back in April, I laughed
 
 > It was a risky bet.
 
-Retrospectively, it was a risky bet. Speaking of CSS preprocessors can be quite complicated, especially in France where the topic is pretty controversial. I could have been faced to fervent opposants to CSS preprocessing, turning my talk into a troll. Luckily, I haven't been. 
+Retrospectively, it was a risky bet. Speaking of CSS preprocessors can be quite complicated, especially in France where the topic is pretty controversial. I could have been faced to fervent opposants to CSS preprocessing, turning my talk into a troll. Luckily, I haven't been.
 
 ## Moar!
 

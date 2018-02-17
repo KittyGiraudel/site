@@ -9,7 +9,7 @@ tags:
 
 If you are not familiar with the concept of Semantic Versioning, I invite you to read [my article](http://www.sitepoint.com/semantic-versioning-why-you-should-using/) on topic at SitePoint. To sum things up, it is a way to version softwares in ordre to provide meaning across version number bumps.
 
-It looks like this: `major.minor.patch` (e.g. `1.3.37`). *Major* version is for API changes and backward incompatibilities, *minor* is for backward compatible features and *patch* is for bug fixes.
+It looks like this: `major.minor.patch` (e.g. `1.3.37`). _Major_ version is for API changes and backward incompatibilities, _minor_ is for backward compatible features and _patch_ is for bug fixes.
 
 [npm](http://npmjs.org) using Semantic Versioning for its packages, it is no surprise we use it at [SassDoc](https://github.com/SassDoc/sassdoc). Meanwhile, we have seen quite a few suprises regarding our version bumps, so I thought I would clarify some things in a short article.
 
@@ -21,7 +21,7 @@ We have started working on SassDoc mid-June and released the stable version of `
 
 When we were first talking about `1.0.0`, someone told us it was too soon because the projet needed to mature a bit first.
 
-While it makes sense in some way, I think releasing a stable version after a month of such a small project as SassDoc isn't *too soon*, especially when 4 developers have been working on it.
+While it makes sense in some way, I think releasing a stable version after a month of such a small project as SassDoc isn't _too soon_, especially when 4 developers have been working on it.
 
 The project mature as we are working on it and as people start using it. There is no need to wait weeks or months before launching it: we need feedbacks. And you don't get feedbacks when project is on `0.4.3`.
 

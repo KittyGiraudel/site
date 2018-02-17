@@ -94,4 +94,3 @@ When I have to do some server side stuff, mostly PHP (sometimes MySQL), I use Ea
 Well I guess I have covered pretty much everything I thought about. If I missed anything, just tell me and I will edit the post.
 
 What about you people? What's your development environment?
-

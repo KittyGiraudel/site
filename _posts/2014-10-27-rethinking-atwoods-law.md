@@ -20,7 +20,7 @@ And given my obsession for Sass, I'll go even further and add this extra part to
 
 > ... and chances are high that it will be done by me.
 
-*Disclaimer: as for the original law from Jeff Atwood, it is obvious that Sass (or JavaScript) is not always the best choice: more often than not, things should be done in a different way, but the fact that we __can__ usually makes use __do__ it nevertheless.*
+_Disclaimer: as for the original law from Jeff Atwood, it is obvious that Sass (or JavaScript) is not always the best choice: more often than not, things should be done in a different way, but the fact that we **can** usually makes use **do** it nevertheless._
 
 ## Nonsense you say!
 
@@ -48,4 +48,3 @@ I think I could not stress this enough: try things folks. Do silly stuff. The on
 ## Final thoughts
 
 Any application that can be written in Sass, will eventually be written in Sass. And we are already close to the end.
-

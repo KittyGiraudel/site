@@ -10,7 +10,7 @@ tags:
 
 > **Edit (2014/11/16):** remember that type casting is often a symptom of poorly designed code. This should probably stay an experiment.
 
-To *cast* an entity means changing its data type to another one. This very particular thing so common in all programming languages can turn out to be a huge pain in the (S)ass. Mostly because Sass is not a programming language but that's not the point.
+To _cast_ an entity means changing its data type to another one. This very particular thing so common in all programming languages can turn out to be a huge pain in the (S)ass. Mostly because Sass is not a programming language but that's not the point.
 
 Something so simple as changing a stringified number into an integer is actually quite difficult to do in Sass, yet sometimes you might find yourself in the need of doing that (which means there is probably something wrong somewhere in your code by the way).
 
@@ -57,7 +57,7 @@ Converting a value to a boolean is both simple and tricky. On the whole, the ope
 
 ```scss
 @function to-bool($value) {
-  @return not ($value or $value == "" or $value == 0 or $value == ());
+  @return not ($value or $value == '' or $value == 0 or $value == ());
 }
 ```
 
@@ -119,15 +119,14 @@ Feel free to replace `1` with whatever makes you feel happy.
 ```scss
 to-map("string") // (1: "string")
 to-map(1337)     // (1: 1337)
-
 ```
 
 ## To null
 
-Well, I don't think there is such a thing as *casting to null*. In JavaScript, `typeof null` returns an object (...) but in Sass there is a `null` type which has a single value bound to it: `null`. So casting to null is the same as returning `null`. Pointless.
+Well, I don't think there is such a thing as _casting to null_. In JavaScript, `typeof null` returns an object (...) but in Sass there is a `null` type which has a single value bound to it: `null`. So casting to null is the same as returning `null`. Pointless.
 
 ## Final words
 
 While we can find hacks and tricks to convert values from one type to another, I'd advise against doing so. By doing this, you are moving too much logic inside your stylesheet. More importantly, there is no good reason to cast a value in most cases.
 
-In any case, I think it's interesting to know *how* we can do such things. By tinkering around the syntax, we get to know it better and get more comfortable when it comes to do simple things.
+In any case, I think it's interesting to know _how_ we can do such things. By tinkering around the syntax, we get to know it better and get more comfortable when it comes to do simple things.

@@ -22,7 +22,7 @@ But let’s try to focus on the bright side, shall we? Last year, I did [a littl
 
 📦 **May 29th**. I silently shipped a small contribution to open source with [Jekyll Boilerplate](https://github.com/HugoGiraudel/jekyll-boilerplate), an improved fork of the initial Jekyll project to get started more quickly. If you work with Jekyll quite a bit, be sure to have a look!
 
-😰 **Summer**. I started feeling overwhelmed with my work in the web industry. I went through (and still kind of am in) a phase where I didn’t want to write technical articles anymore. Where I didn’t want to spend so much time doing open source. Where I just wanted to do something else. 
+😰 **Summer**. I started feeling overwhelmed with my work in the web industry. I went through (and still kind of am in) a phase where I didn’t want to write technical articles anymore. Where I didn’t want to spend so much time doing open source. Where I just wanted to do something else.
 
 💶 **September 1st**. After a year and a half at Edenspiekermann, I decided to leave the agency world for a while to join the kind folks at [N26](https://n26.com) in order to push the mobile banking forward.
 

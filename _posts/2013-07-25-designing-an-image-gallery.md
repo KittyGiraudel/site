@@ -30,20 +30,20 @@ It would have been a pain in the ass to work out such a "complicated" layout so 
 
 > Isotope is the best JavaScript plugin I ever worked with.
 
-[Isotope](https://github.com/desandro/isotope) has to be the best JavaScript plugin I ever worked with. Developed by [David Desandro](http://v3.desandro.com/), **you can think of it as *Masonry 2.0***. It makes complicated box-based layouts fully customizable and above all **easy**.
+[Isotope](https://github.com/desandro/isotope) has to be the best JavaScript plugin I ever worked with. Developed by [David Desandro](http://v3.desandro.com/), **you can think of it as _Masonry 2.0_**. It makes complicated box-based layouts fully customizable and above all **easy**.
 
 The idea is quite simple: you define a container that will draw boundaries for the layout and Isotope will move all its child elements according to the available room.
 
 ```javascript
 $container.isotope({
-  itemSelector : '.gallery__item',
-  masonry : {
-    columnWidth : 410
+  itemSelector: '.gallery__item',
+  masonry: {
+    columnWidth: 410
   }
-});
+})
 ```
 
- What is really nice is it takes advantage of hardware accelerated CSS transforms (essentially `translate`) if the browser support them (else it falls back on regular TRBL offsets).
+What is really nice is it takes advantage of hardware accelerated CSS transforms (essentially `translate`) if the browser support them (else it falls back on regular TRBL offsets).
 
 Anyway, I wanted to give some emphasis to the author content: her picture and her name, a short description and one or two ways to contact her. I first tried to include this as if it was another block in the layout, but it looked kind of crowded. Instead, I decided to go with a fixed column. Not only does it make this content more valuable but it also gives the page the space it needs to look nice.
 
@@ -68,7 +68,7 @@ We needed two major features for this image gallery:
 
 The first one was pretty easy to do since Isotope comes with a built-in way to filter and sort items. In the [documentation](http://isotope.metafizzy.co/docs/filtering.html), they recommand using a class as a tag and apply it to all elements you want to assign this tag to. Then you create a little list with a jQuery selector as a `data-filter` attribute (like `.tag`). When you click on an element of this list, the plugin parses this data-attribute and displays nothing but the items matching the given selector.
 
-I didn't want to add classes for this so I added a `data-album` attribute to every item and passed it the name of the album the image belongs to. Then, I give something like this to the `data-filter` attribute of the filter list: `[data-album\*='album-name']` (literally *everything with a `data-album` attribute containing 'album-name'*). Easy peasy!
+I didn't want to add classes for this so I added a `data-album` attribute to every item and passed it the name of the album the image belongs to. Then, I give something like this to the `data-filter` attribute of the filter list: `[data-album\*='album-name']` (literally _everything with a `data-album` attribute containing 'album-name'_). Easy peasy!
 
 Regarding the second feature, I basically needed a little lightbox thingie to display an image in fullsize when clicked. I could have made one but since I am definitely not a JavaScript ninja, I would probably have ended with a code that could be improved. So I decided to rely on a built-in solution; I wanted something which is both nice and efficient so I went with Avgrund from [Hakim El Hattab](http://hakim.se/).
 
@@ -81,14 +81,18 @@ Regarding the second feature, I basically needed a little lightbox thingie to di
 
 ### Adding some fanciness
 
-One thing I wanted to do is to progressively display the pictures when loading the page: the first one being immediately displayed, then after a quick instant the second one, then the third, and so on until all images have been displayed. It's definitely not  a key feature, just eye sugar.
+One thing I wanted to do is to progressively display the pictures when loading the page: the first one being immediately displayed, then after a quick instant the second one, then the third, and so on until all images have been displayed. It's definitely not a key feature, just eye sugar.
 
 Isn't it the perfect usecase for CSS animations? Let's jump on this opportunity, it's not that often we can safely use CSS animations. First the (really common) `@keyframes`:
 
 ```css
 @keyframes opacity {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 ```
 
@@ -98,11 +102,11 @@ Now all I had to do was applying it to all items with a varying delay. The highe
 @for $i from 1 through 20 {
   .gallery__item {
     opacity: 0;
-    animation: opacity .25s forwards;
+    animation: opacity 0.25s forwards;
   }
 
   .gallery__item:nth-of-type(#{$i}) {
-    animation-delay: $i * .1s;
+    animation-delay: $i * 0.1s;
   }
 }
 ```
@@ -120,7 +124,7 @@ Of course, we wanted the site to look acceptable (if not good!) on small devices
 
 Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to make the "sidebar" static, remove the left-margin of the main container, tweak a couple of things and it was okay.
 
-Thus when you load the page on your phone, you'll see nothing but the author information starting with her picture. You get to read the tiny description, then if you scroll there are photos. I think it's nice this way; it kind of reproduces the *"Hi, I'm X. Here is my work"* social flow.
+Thus when you load the page on your phone, you'll see nothing but the author information starting with her picture. You get to read the tiny description, then if you scroll there are photos. I think it's nice this way; it kind of reproduces the _"Hi, I'm X. Here is my work"_ social flow.
 
 Regarding the modal, I first tweaked it on small screens so it takes almost the full viewport (leaving a small gap on each side). Then after some tests it occurred to me it made absolutely no point to have a modal on small devices so I simply removed it.
 
@@ -144,7 +148,7 @@ Basically the script parses all your image tags, make an AJAX request on your se
 
 So I guess it is not that bad since this solution handles almost everything for us, but really. Does it worth it? Now we have to create like 2 or 3 files for each image so they can look good everywhere depending on the device's capacities. It sucks.
 
-*Edit: I finally wrote my own script to deal with high-density displays because RetinaJS and LazyLoad were kind of conflicting with each other.*
+_Edit: I finally wrote my own script to deal with high-density displays because RetinaJS and LazyLoad were kind of conflicting with each other._
 
 ## Think (and do) about performance
 
@@ -152,11 +156,11 @@ I think this is what took me the most time in the entire project even if I have 
 
 Of course I minified my stylesheets (with Sass) and my JS scripts (with [YUI Compressor](http://refresh-sf.com/yui/)). I set up Gzip with `.htaccess` along with some cache stuff. I even added a DNS prefect for Google Fonts. And even if all this stuff is really nice, the most important thing to optimize here is... images.
 
-When I first set up the layout with images and all, I used really big pictures like 1600*1059px and I was like *"I resize them automagically with CSS"*. Sure. And the page weighed about 35Mb. Ouch.
+When I first set up the layout with images and all, I used really big pictures like 1600*1059px and I was like *"I resize them automagically with CSS"\*. Sure. And the page weighed about 35Mb. Ouch.
 
-I quickly understood I had to handle 2 files for each image: one for the thumbnail (400*266) and a bigger one for when you click on it (800+). This is what I did. I also smushed all images with [JpegMini](http://www.jpegmini.com/) to remove unnecessary meta-data. The page went down to 750Kb. Not bad, right? Still not good enough though, especially for a small device on a crappy 3G connection.
+I quickly understood I had to handle 2 files for each image: one for the thumbnail (400\*266) and a bigger one for when you click on it (800+). This is what I did. I also smushed all images with [JpegMini](http://www.jpegmini.com/) to remove unnecessary meta-data. The page went down to 750Kb. Not bad, right? Still not good enough though, especially for a small device on a crappy 3G connection.
 
-The next step was to load images when they are needed. To put it simple, only load images that are actually displayed on the screen and not the one that are below the fold. This is called *lazy loading*. Thankfully, I found an amazing [JavaScript plugin doing this](http://www.appelsiini.net/projects/lazyload). All I had to do was turning my markup into something like this:
+The next step was to load images when they are needed. To put it simple, only load images that are actually displayed on the screen and not the one that are below the fold. This is called _lazy loading_. Thankfully, I found an amazing [JavaScript plugin doing this](http://www.appelsiini.net/projects/lazyload). All I had to do was turning my markup into something like this:
 
 ```html
 <li class='gallery__item' data-album='album-name'>
@@ -171,7 +175,7 @@ The next step was to load images when they are needed. To put it simple, only lo
 
 > When viewing it on mobile, it goes down to 700 bytes.
 
-As you can see, the image source is a 1*1px blank GIF while the actual source lies in the `data-original` attribute. Then the LazyLoad script checks all images to see whether they are above the fold or not; if they are, it swaps `src` with `data-original`. Everytime there is a scroll, it checks again. Lightweight and comfy.
+As you can see, the image source is a 1\*1px blank GIF while the actual source lies in the `data-original` attribute. Then the LazyLoad script checks all images to see whether they are above the fold or not; if they are, it swaps `src` with `data-original`. Everytime there is a scroll, it checks again. Lightweight and comfy.
 
 Thanks to LazyLoad, I could bring down the page to 380Kb on a regular desktop screen. Definitely good. When viewing it on mobile, it goes down to ... 700 bytes. Then it progressively load the images as the user scroll through them. How cool is that?
 

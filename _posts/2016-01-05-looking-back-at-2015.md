@@ -26,13 +26,13 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 💻 **April 1st**. I started as a front-end developer at [Edenspiekermann](http://edenspiekermann.com) in Berlin. Needless to say it has been a very exciting move, and working with so many inspiring people on a daily basis makes me very happy.
 
-🇳🇱 **April 2 — 5th**. I visited Amsterdam for the first time (yup, took some holidays directly after my start at ESPI ¯\\_(ツ)\_/¯). Lovely city, it goes without saying, although super crowded at that time of the year. I am likely to go back there for a talk in the next months.
+🇳🇱 **April 2 — 5th**. I visited Amsterdam for the first time (yup, took some holidays directly after my start at ESPI ¯\\\_(ツ)\_/¯). Lovely city, it goes without saying, although super crowded at that time of the year. I am likely to go back there for a talk in the next months.
 
 ✒ **May 12th**. I signed a contract with SitePoint to co-author [Jump Start Sass](https://www.sitepoint.com/premium/books/jump-start-sass) with [Miriam Suzanne](https://twitter.com/mirisuzanne) (author of Susy grid engine), an introduction book to Sass which will be released in February this year (if all goes right).
 
 🔙 **May 29th**. I [moved my site back to Jekyll](http://hugogiraudel.com/2015/05/29/oh-jekyll-here-we-go-again/) after roughly a year on Mixture. Took it at an opportunity to freshen up the design and add a few features. Might seem like nothing, but we all know that the project we usually deal the less with is our own site. :)
 
-📝 **June 24th**. I released in a joint effort with SitePoint the [SitePoint Sass Reference](http://www.sitepoint.com/introducing-the-sitepoint-sass-reference/), a platform aiming at explaining the Sass buzzwords, mostly targetted at new comers. 
+📝 **June 24th**. I released in a joint effort with SitePoint the [SitePoint Sass Reference](http://www.sitepoint.com/introducing-the-sitepoint-sass-reference/), a platform aiming at explaining the Sass buzzwords, mostly targetted at new comers.
 
 ❓**July 19th**. I opened a [Ask Me Anything](http://hugogiraudel.com/2015/07/19/ask-me-anything/) repository and replied to over 50 questions already. Feel free to add your owns!
 

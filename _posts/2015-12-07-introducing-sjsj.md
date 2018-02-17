@@ -20,7 +20,7 @@ The general idea is that the JavaScript ecosystem has gotten both complex and bl
   <figcaption>Doing JavaScript in 2015.</figcaption>
 </figure>
 
-I gave it a night and thought it would be a good idea to have a GitHub repository acting as a glossary for most (*all* is likely to be impossible) JavaScript buzzwords. This repository, I named [SJSJ](https://github.com/hugogiraudel/SJSJ) for *Simplified JavaScript Jargon*.
+I gave it a night and thought it would be a good idea to have a GitHub repository acting as a glossary for most (_all_ is likely to be impossible) JavaScript buzzwords. This repository, I named [SJSJ](https://github.com/hugogiraudel/SJSJ) for _Simplified JavaScript Jargon_.
 
 The reason why I introduce it in a proper blog post is because **I would need your help**. Indeed, I would like this to become a community-driven project, as:
 
@@ -36,13 +36,13 @@ The cool thing with this project is that an entry does not need to be long. Nobo
 
 Ideally, I would like this to follow the traces of [Things Explainer](http://amzn.com/0544668251) from xkcd, where Randall Munroe explains complicated concepts with nothing more than the thousand most used words from the English dictionary. If we can do that to explain the JavaScript ecosystem, we can make it accessible to everybody, even beginners and this is a big deal.
 
-So how can you contribute to this sweet little project? Well, as of today the best thing to do would be to check for *to be completed* entry in the README, and fill them. If you would like to document a term that is not part of the list, feel free to add one; as long as it is related to JavaScript.
+So how can you contribute to this sweet little project? Well, as of today the best thing to do would be to check for _to be completed_ entry in the README, and fill them. If you would like to document a term that is not part of the list, feel free to add one; as long as it is related to JavaScript.
 
 ## What’s next?
 
 There are a lot of things we can do from there. For starters, we can make sure that all existing entries are correctly documented, with no mistake, and in a way that is so simple that even somebody with little to no JavaScript background could understand it.
 
-Then, maybe it might be interesting to add categories to these entries, such as *libraries*, *frameworks*, *concepts*, *APIs*, etc. We could have an alphabetical glossary, and a category-based one. I am not sure it is necessary, but if we hit 100+ entries, it might eventually become needed.
+Then, maybe it might be interesting to add categories to these entries, such as _libraries_, _frameworks_, _concepts_, _APIs_, etc. We could have an alphabetical glossary, and a category-based one. I am not sure it is necessary, but if we hit 100+ entries, it might eventually become needed.
 
 I would also love to see links to related reads inside each entry so that people can actually go further with a concept by browsing these links. On topic, someone [suggested](https://twitter.com/PhilippeVay/status/671988998974406656) to add a link to a StackOverflow tag when possible. I like that idea, so there is that.
 

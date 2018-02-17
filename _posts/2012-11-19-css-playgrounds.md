@@ -49,7 +49,6 @@ Plus, it seems to be very buggy sometimes. Shortcuts don't work as expected, cur
 * [Blog](http://blog.dabblet.com/)
 * [Dabblet](https://twitter.com/dabblet) on Twitter
 
-
 ## JSFiddle
 
 JSFiddle is a wonderful playground when it comes to JavaScript development since it provides a wide range of JavaScript libraries, probably more than you'll ever need. Problem is it doesn't use a live reload system meaning you have to hit "Run" everytime you make a change. It's kind of annoying, but for JavaScript prototyping, it's amazing.
@@ -101,7 +100,6 @@ CSSDeck is fairly new in the playground scene but it's the only one providing th
 
 * [CSSDeck](http://cssdeck.com)
 * [CSSDeck](https://twitter.com/cssdeck) on Twitter
-
 
 ## CodePen
 

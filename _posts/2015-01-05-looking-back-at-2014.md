@@ -8,7 +8,7 @@ Happy New Year to y'all folks! I hope you enjoyed your holidays.
 
 The end of the year often means looking back at the last dozen of months to see what has been done and what's not. Because of this, this article is mostly personal; kind of a note to myself to keep track of what I have done this year.
 
-*Note: let me take this occasion as an opportunity to suggest you read [this article](http://meyerweb.com/eric/thoughts/2014/12/24/inadvertent-algorithmic-cruelty/) from Eric Meyer about this whole "your-year-on-our-network" thing. Quite heartbreaking, definitely insightful to us all designers and developers.*
+_Note: let me take this occasion as an opportunity to suggest you read [this article](http://meyerweb.com/eric/thoughts/2014/12/24/inadvertent-algorithmic-cruelty/) from Eric Meyer about this whole "your-year-on-our-network" thing. Quite heartbreaking, definitely insightful to us all designers and developers._
 
 ## I started writing for money
 
@@ -27,7 +27,6 @@ Along the same lines, I have written a total of 91 articles published on 6 diffe
 
 In May, I have given [my very first talk out of France](http://hugogiraudel.com/2014/06/02/feedbacks-feweb/), in Bruxelles, Belgium. It was almost 1000km away for a 30 minutes talk during a 2 hours event. Needless to say, I expected much from it! It went very well. Belgium is a very welcoming country, if you ever wondered.
 
-
 ## I gave my first talk in English
 
 Later this year, in November, [I gave my first talk in English](http://hugogiraudel.com/2014/11/17/feedback-on-dotcss/), in Paris for dotCSS. A 15-20 minutes long talk in front of 400 attendees at the Théâtre des Variétés. Amazing venue, great people, it was an incredible experience.
@@ -35,7 +34,6 @@ Later this year, in November, [I gave my first talk in English](http://hugogirau
 <script async class="speakerdeck-embed" data-id="117e5ae04f2501329d875e31c290001e" data-ratio="1.36898395721925" src="//speakerdeck.com/assets/embed.js"></script>
 
 ## I wrote a book
-
 
 <figure class="figure">
 <img src="/assets/images/looking-back-at-2014/book-cover.png" alt="" />

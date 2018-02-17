@@ -17,15 +17,15 @@ tags:
 
 Everybody loves relative units. They are handy and help us solve daily problems. However the most used one (`em`) presents some issues, especially when it comes to nesting.
 
-As an example, setting both `p` and `li` tags font-size to `1.2em` may seem fine. But if you ever happen to have a paragraph inside a list item, it would result in a font-size 1.44 times (1.2 * 1.2) bigger than parent font-size, and not 1.2 as wished.
+As an example, setting both `p` and `li` tags font-size to `1.2em` may seem fine. But if you ever happen to have a paragraph inside a list item, it would result in a font-size 1.44 times (1.2 \* 1.2) bigger than parent font-size, and not 1.2 as wished.
 
-To avoid this, a new unit has been created: [`rem`](http://snook.ca/archives/html_and_css/font-size-with-rem). It stands for *root em*. Basically, instead of being relative to the font-size of its direct parent, it's relative to the font-size defined for the `html` element.
+To avoid this, a new unit has been created: [`rem`](http://snook.ca/archives/html_and_css/font-size-with-rem). It stands for _root em_. Basically, instead of being relative to the font-size of its direct parent, it's relative to the font-size defined for the `html` element.
 
 You may have already seen something like this in frameworks, demo, blog posts and such:
 
 ```css
 html {
-  font-size: 62.5%
+  font-size: 62.5%;
 }
 
 body {
@@ -33,7 +33,7 @@ body {
 }
 ```
 
-Because all browsers have a default font-size of `16px`, setting the font-size to 62.5% on the html element gives it a font-size of 10px (10 / 16 * 100 = 62.5) without explicitely setting it to `10px` which would prevent zooming. Then, setting a font-size of 1.6rem on the body element simply results in a font-size of `16px`, cascading through the whole DOM tree.
+Because all browsers have a default font-size of `16px`, setting the font-size to 62.5% on the html element gives it a font-size of 10px (10 / 16 \* 100 = 62.5) without explicitely setting it to `10px` which would prevent zooming. Then, setting a font-size of 1.6rem on the body element simply results in a font-size of `16px`, cascading through the whole DOM tree.
 
 Then, if I want an element to have like a `28px` font-size, I simply have to do `.element { font-size: 2.8rem; }`, no matter the size of its parent.
 
@@ -51,7 +51,6 @@ There are already many mixins handling `px` fallback for `rem` usage, most of th
 * Accepts (almost) any property as an input, not only font-size
 * Accepts multiple values, like `10px 20px` (for padding or margin as an example)
 
-
 ### Let's open the beast
 
 ```scss
@@ -59,41 +58,45 @@ html {
   font-size: 62.5%; /* 1 */
 }
 
-@function parseInt($n) { /* 2 */
+@function parseInt($n) {
+  /* 2 */
   @return $n / ($n * 0 + 1);
 }
 
 @mixin rem($property, $values) {
-  $px : (); /* 3 */
+  $px: (); /* 3 */
   $rem: (); /* 3 */
 
-  @each $value in $values { /* 4 */
+  @each $value in $values {
+    /* 4 */
 
-    @if $value == 0 or $value == auto { /* 5 */
-      $px : append($px , $value);
+    @if $value == 0 or $value == auto {
+      /* 5 */
+      $px: append($px, $value);
       $rem: append($rem, $value);
-    }
-
-    @else {
-      $unit: unit($value);    /* 6 */
+    } @else {
+      $unit: unit($value); /* 6 */
       $val: parseInt($value); /* 6 */
 
-      @if $unit == "px" {  /* 7 */
-        $px : append($px,  $value);
-        $rem: append($rem, ($val / 10 + rem));
+      @if $unit == 'px' {
+        /* 7 */
+        $px: append($px, $value);
+        $rem: append($rem,  ($val / 10 + rem));
       }
 
-      @if $unit == "rem" { /* 7 */
-        $px : append($px,  ($val * 10 + px));
+      @if $unit == 'rem' {
+        /* 7 */
+        $px: append($px,  ($val * 10 + px));
         $rem: append($rem, $value);
       }
     }
   }
 
-  @if $px == $rem {     /* 8 */
-    #{$property}: $px;  /* 9 */
+  @if $px == $rem {
+    /* 8 */
+    #{$property}: $px; /* 9 */
   } @else {
-    #{$property}: $px;  /* 9 */
+    #{$property}: $px; /* 9 */
     #{$property}: $rem; /* 9 */
   }
 }
@@ -111,7 +114,7 @@ This may be a bit rough so let me explain it:
 1. If the two lists are the same, we ouput only one (like `margin-top: 0`)
 1. We output the result
 
-*Thanks to [Moving Primates](http://twitter.com/movingprimates) to improve the mixin by adding step 8. ;)*
+_Thanks to [Moving Primates](http://twitter.com/movingprimates) to improve the mixin by adding step 8. ;)_
 
 ### Usage
 
@@ -136,7 +139,7 @@ html {
 }
 
 body {
-  font-size: 16px;  /* Fallback for IE8 */
+  font-size: 16px; /* Fallback for IE8 */
   font-size: 1.6rem;
   padding: 20px 10px; /* Fallback for IE8 */
   padding: 2rem 1rem;
@@ -159,4 +162,3 @@ If you ever happen to find a decent solution to fix one, I'll be glad to know an
 That's pretty much it folks. I'd be glad to hear your opinion on this and improve it with your ideas. :)
 
 If you want a playground to test and hack, please feel free to fork [my pen](http://codepen.io/HugoGiraudel/pen/xsKdH).
-

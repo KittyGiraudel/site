@@ -6,9 +6,9 @@ tags:
   - ellipsis
 ---
 
-The other day, I wanted to do something in CSS that turned out to be quite complicated to achieve. Actually it's amazing that something *that* common ends up being so difficult to implement. Anyway, how would you do a reverse ellipsis in CSS, or *start ellipsis*?
+The other day, I wanted to do something in CSS that turned out to be quite complicated to achieve. Actually it's amazing that something _that_ common ends up being so difficult to implement. Anyway, how would you do a reverse ellipsis in CSS, or _start ellipsis_?
 
-A single-line *end-ellipsis* is often used when you have some long content that you want to hide behind a `...` to prevent a line-break. It is very easy to do. You can implement it with:
+A single-line _end-ellipsis_ is often used when you have some long content that you want to hide behind a `...` to prevent a line-break. It is very easy to do. You can implement it with:
 
 ```css
 /**
@@ -17,9 +17,9 @@ A single-line *end-ellipsis* is often used when you have some long content that 
  * 3. Add ellipsis at end of line
  */
 .ellipsis {
-    overflow: hidden;        /* 1 */
-    white-space: nowrap;     /* 2 */
-    text-overflow: ellipsis; /* 3 */
+  overflow: hidden; /* 1 */
+  white-space: nowrap; /* 2 */
+  text-overflow: ellipsis; /* 3 */
 }
 ```
 
@@ -35,7 +35,7 @@ Now what if you want to display the end of content and add ellipsis at beginning
 
 > ...niverse, and everything is 42.
 
-That is what I call a *reverse ellipsis*, although I suspect CSS specifications to call it *start ellipsis* since the current value for `text-overflow` is actually called *end-overflow-type*. Anyway, now it's your turn. I have created [a pen](http://codepen.io/HugoGiraudel/pen/5582f35c9596c40ae947bad2f5993fb2/) if you want to play with the initial code:
+That is what I call a _reverse ellipsis_, although I suspect CSS specifications to call it _start ellipsis_ since the current value for `text-overflow` is actually called _end-overflow-type_. Anyway, now it's your turn. I have created [a pen](http://codepen.io/HugoGiraudel/pen/5582f35c9596c40ae947bad2f5993fb2/) if you want to play with the initial code:
 
 <p data-height="280" data-theme-id="0" data-slug-hash="5582f35c9596c40ae947bad2f5993fb2" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/5582f35c9596c40ae947bad2f5993fb2/'>5582f35c9596c40ae947bad2f5993fb2</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
@@ -94,7 +94,7 @@ So there is no magic one-liner to make it work everywhere. Fortunately, some of 
   height: 1em;
   background-color: inherit;
   z-index: 200;
-  left: -.5em;
+  left: -0.5em;
 }
 ```
 

@@ -30,6 +30,7 @@ Let's get back to the initial topic: on my blog, I need to execute some JavaScri
 Before moving to Mixture, I handled the problem in a rather drastic (and dirty) way: all templates included a `scripts.liquid` file at the bottom. In this file, I wrapped JavaScript snippets with Liquid conditions. For instance:
 
 {% raw %}
+
 ```html
 {% if post.codepen %}
   <script src="... source to CodePen JS file ..."></script>
@@ -43,6 +44,7 @@ Before moving to Mixture, I handled the problem in a rather drastic (and dirty) 
   ... Table of contents JavaScript snipppet ...
 {% endif %}
 ```
+
 {% endraw %}
 
 As you can see, this is not ideal. First, JavaScript lays in a template file. We could work around the issue by moving JavaScript snippets to separate `.js` files, then only include them when needed but we would possibly do several HTTP requests while a single one could be enough. Secondly, it is ugly. Very ugly.
@@ -53,113 +55,116 @@ When moving to Mixture, I took the time to think of how I would solve this issue
 
 ```javascript
 // app.js
-(function (global) {
+;(function(global) {
+  var App = function(conf) {
+    this.conf = global.extend(
+      {
+        codepen: false,
+        sassmeister: false,
+        tableOfContent: false,
+        tracking: true,
+        ad: true,
+        comments: false,
+        layout: 'default',
+        disqus: {
+          name: 'hugogiraudel',
+          title: false,
+          url: window.location.href
+        }
+      },
+      conf || {}
+    )
 
-  var App = function (conf) {
-    this.conf = global.extend({
-      codepen: false,
-      sassmeister: false,
-      tableOfContent: false,
-      tracking: true,
-      ad: true,
-      comments: false,
-      layout: 'default',
-      disqus: {
-        name: 'hugogiraudel',
-        title: false,
-        url: window.location.href
-      }
-    }, conf || {});
+    this.initialize()
+  }
 
-    this.initialize();
-  };
+  App.prototype.initialize = function() {
+    /* ... */
+  }
 
-  App.prototype.initialize = function () { /* ... */ };
-
-  global.App = App;
-}(window))
+  global.App = App
+})(window)
 ```
 
 So what's going on here? In a JavaScript file, in a closure, we define a new class called `App`, that can be instantiated with an object of options (`conf`). This one is extended with an object of default parameters. When instantiated, it automatically calls the `initialize()` method. Let's see what it does.
 
 ```javascript
-App.prototype.initialize = function () {
+App.prototype.initialize = function() {
   if (this.conf.tracking === true) {
-    this.tracking();
+    this.tracking()
   }
 
   if (this.conf.ad === true) {
-    this.ad();
+    this.ad()
   }
 
   if (this.conf.comments === true) {
-    this.comments();
+    this.comments()
   }
 
   if (this.conf.codepen === true) {
-    this.codepen();
+    this.codepen()
   }
 
   if (this.conf.sassmeister === true) {
-    this.sassmeister();
+    this.sassmeister()
   }
 
   // ...
-};
+}
 ```
 
 No magic here, the `initialize()` method simply calls other methods based on the configuration. We could simplify the code even more by calling the methods based on the configuration key names:
 
 ```javascript
-['tracking', 'ad', 'comments', 'codepen', 'sassmeister'].forEach(function (key) {
-  if (this.conf[key] === true) {
-    this[key]();
-  }
-}.bind(this));
+;['tracking', 'ad', 'comments', 'codepen', 'sassmeister'].forEach(
+  function(key) {
+    if (this.conf[key] === true) {
+      this[key]()
+    }
+  }.bind(this)
+)
 ```
 
 But it's no big deal, we don't really need this. And now, the other methods:
 
 ```javascript
-App.prototype.tracking = function () {
-  global._gaq = [
-    ['_setAccount','UA-XXXXXXXX-X'],
-    ['_trackPageview']
-  ];
+App.prototype.tracking = function() {
+  global._gaq = [['_setAccount', 'UA-XXXXXXXX-X'], ['_trackPageview']]
 
-  this._inject("//www.google-analytics.com/ga.js");
-};
+  this._inject('//www.google-analytics.com/ga.js')
+}
 
-App.prototype.ad = function () {
-  this._inject("//engine.carbonads.com/z/24598/azcarbon_2_1_0_HORIZ");
-};
+App.prototype.ad = function() {
+  this._inject('//engine.carbonads.com/z/24598/azcarbon_2_1_0_HORIZ')
+}
 
-App.prototype.comments = function () {
-  global.disqus_shortname = this.conf.disqus.name;
-  global.disqus_url = this.conf.disqus.url;
-  global.disqus_title = this.conf.disqus.title;
+App.prototype.comments = function() {
+  global.disqus_shortname = this.conf.disqus.name
+  global.disqus_url = this.conf.disqus.url
+  global.disqus_title = this.conf.disqus.title
 
-  this._inject("//" + disqus_shortname + ".disqus.com/embed.js");
-};
+  this._inject('//' + disqus_shortname + '.disqus.com/embed.js')
+}
 
-App.prototype.codepen = function () {
-  this._inject("//codepen.io/assets/embed/ei.js");
-};
+App.prototype.codepen = function() {
+  this._inject('//codepen.io/assets/embed/ei.js')
+}
 
-App.prototype.sassmeister = function () {
-  this._inject("//static.sassmeister.com/js/embed.js");
-};
+App.prototype.sassmeister = function() {
+  this._inject('//static.sassmeister.com/js/embed.js')
+}
 
-App.prototype._inject = function (url) {
+App.prototype._inject = function(url) {
   var d = document,
-      s = "script",
-      g = d.createElement(s),
-      z = d.getElementsByTagName(s)[0];
+    s = 'script',
+    g = d.createElement(s),
+    z = d.getElementsByTagName(s)[0]
 
-  g.async = true;
-  g.src = url;
-  z.parentNode.insertBefore(g, z);
-};
+  g.async = true
+  g.src = url
+  z.parentNode.insertBefore(g, z)
+}
 ```
 
 All resources are loaded asynchronously thanks to the `_inject` (pseudo-)private function.
@@ -169,6 +174,7 @@ All resources are loaded asynchronously thanks to the `_inject` (pseudo-)private
 We still haven't really solved the problem yet. How are we going to pass our Liquid variables to the JavaScript? Well, this is the moment we need to get back to [`scripts.liquid`](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/mixture/templates/includes/scripts.liquid) file. No more conditional JavaScript snippets; instead, we instanciate the `App` class.
 
 {% raw %}
+
 ```html
 <script src="/assets/js/main.min.js"></script>
 
@@ -189,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 ```
+
 {% endraw %}
 
 This is the only chunk of JavaScript in a template file. It is called on every page, once the DOM has been fully loaded. It grabs data from the YAML Front Matter in a clean and dynamic way. Than, JavaScript deals with the rest.

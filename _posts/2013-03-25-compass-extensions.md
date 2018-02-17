@@ -25,38 +25,38 @@ $position: top right;
 $opposite: opposite-position($position); /* Outputs "bottom left" */
 ```
 
-*Note: the opposite of `center` is `center`.*
+_Note: the opposite of `center` is `center`._
 
 I personally used this extension in this very site, when it comes to images and quotes pulling ([L32](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L32) and [L47](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L47)).
 
 ```scss
 @mixin pull-quote($direction) {
-	$opposite: opposite-position($direction);
+  $opposite: opposite-position($direction);
 
-	text-align: $opposite;
-	float: $direction;
-	margin: 0 0 .5em 0;
-	margin-#{$opposite}: 1em;
-	border-#{$opposite}: 6px solid hotpink;
-	padding-#{$opposite}: 1em;
+  text-align: $opposite;
+  float: $direction;
+  margin: 0 0 0.5em 0;
+  margin-#{$opposite}: 1em;
+  border-#{$opposite}: 6px solid hotpink;
+  padding-#{$opposite}: 1em;
 }
 ```
 
-So `$opposite` equals *right* when `$direction` is *left* and vice versa. Allows me to make only one mixin instead of 2!
+So `$opposite` equals _right_ when `$direction` is _left_ and vice versa. Allows me to make only one mixin instead of 2!
 
 ## Elements-of-type()
 
 [Element-of-type()](http://compass-style.org/reference/compass/helpers/display/) is a built-in function to detect the display type of an element: `block`, `inline`, `inline-block`, `table`, `table-row-group`, `table-header-group`, `table-footer-group`, `table-row`, `table-cell`, `list-item` and -as odd as it may look- `html5`, `html5-inline` and `html5-block`.
 
-*Note: `html5`, `html5-inline` and `html5-block` are not real display values; they are just keywords to gather all html5 elements (inline, block or both).*
+_Note: `html5`, `html5-inline` and `html5-block` are not real display values; they are just keywords to gather all html5 elements (inline, block or both)._
 
 This may be useful as part of a CSS reset for example:
 
 ```scss
 @mixin reset-html5 {
-	#{elements-of-type(html5-block)} {
-		display: block;
-	}
+  #{elements-of-type(html5-block)} {
+    display: block;
+  }
 }
 ```
 
@@ -79,9 +79,9 @@ This outputs:
 
 ```css
 .element {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 ```
 
@@ -103,31 +103,29 @@ This outputs:
 
 ```css
 .element {
-	-webkit-animation: my-animation 3s ease;
-	   -moz-animation: my-animation 3s ease;
-	        animation: my-animation 3s ease;
+  -webkit-animation: my-animation 3s ease;
+  -moz-animation: my-animation 3s ease;
+  animation: my-animation 3s ease;
 }
 ```
 
 ## Hacks
 
-Hum, [hacks](http://compass-style.org/reference/compass/utilities/general/hacks/). I know what you think: *NOOOOOO!*. Anyway, Compass provides a couple of features to take advantage of Internet Explorer inconsistencies and weaknesses.
+Hum, [hacks](http://compass-style.org/reference/compass/utilities/general/hacks/). I know what you think: _NOOOOOO!_. Anyway, Compass provides a couple of features to take advantage of Internet Explorer inconsistencies and weaknesses.
 
 You may have already heard of `has-layout`. [This article](http://www.satzansatz.de/cssd/onhavinglayout.html) explains it way better than I could:
 
-> “Layout” is an IE/Win proprietary concept that determines how elements draw and bound their content, interact with and relate to other elements, and react on and transmit application/user events.
-> This quality can be irreversibly triggered by some CSS properties. Some HTML elements have “layout” by default.
-> Microsoft developers decided that elements should be able to acquire a “property” (in an object-oriented programming sense) they referred to as hasLayout, which is set to true when this rendering concept takes effect.
+> “Layout” is an IE/Win proprietary concept that determines how elements draw and bound their content, interact with and relate to other elements, and react on and transmit application/user events. This quality can be irreversibly triggered by some CSS properties. Some HTML elements have “layout” by default. Microsoft developers decided that elements should be able to acquire a “property” (in an object-oriented programming sense) they referred to as hasLayout, which is set to true when this rendering concept takes effect.
 
 Back to our business: Compass gives two ways to trigger `hasLayout` on elements: with `zoom` (using the `zoom` MS proprietary property) or with `block` (using the `display` property). I'd go with the zoom, even if it doesn't validate mostly because I'm used to.
 
 ```scss
 .element1 {
-	@include has-layout(zoom);
+  @include has-layout(zoom);
 }
 
 .element2 {
-	@include has-layout(block);
+  @include has-layout(block);
 }
 ```
 
@@ -135,14 +133,14 @@ Outputs...
 
 ```css
 .element1 {
-	*zoom: 1;
+  *zoom: 1;
 }
 
 .element2 {
-	display: inline-block;
+  display: inline-block;
 }
 .element2 {
-	display: block;
+  display: block;
 }
 ```
 
@@ -150,7 +148,7 @@ You now understand why I use the zoom approach. Otherwise, Compass also provides
 
 ```scss
 .element1 {
-	@include bang-hack(color, red, blue);
+  @include bang-hack(color, red, blue);
 }
 ```
 
@@ -158,8 +156,8 @@ Outputs...
 
 ```css
 .element1 {
-	color: red !important;
-	color: blue;
+  color: red !important;
+  color: blue;
 }
 ```
 
@@ -171,16 +169,16 @@ Compass gives you a way to know the [dimensions of an image](http://compass-styl
 
 ```scss
 .element {
-	$image: 'my-awesome-background.jpg';
-	background: url($image);
-	width:  image-width($image);
-	height: image-height($image);
+  $image: 'my-awesome-background.jpg';
+  background: url($image);
+  width: image-width($image);
+  height: image-height($image);
 }
 ```
 
 In this example, the element will have a size relative to the background-image it uses.
 
-*Note: beware, the path has to be relative to your project's image directory, defined in your `config.rb` file.*
+_Note: beware, the path has to be relative to your project's image directory, defined in your `config.rb` file._
 
 ## Math functions
 
@@ -190,7 +188,7 @@ I once had to use `sin()` in order to make a [mixin for a pure CSS 6-points star
 
 ```scss
 $n: 4;
-$pow :  pow($n); /* Returns 16 */
+$pow: pow($n); /* Returns 16 */
 $sqrt: sqrt($n); /* Returns 2  */
 ```
 
@@ -231,7 +229,7 @@ Compass provides several resources to ease a daily task: [image replacement](htt
 
 ```scss
 .element {
-	@include hide-text(right);
+  @include hide-text(right);
 }
 ```
 
@@ -239,15 +237,14 @@ Outputs...
 
 ```css
 .element {
-	text-indent: 110%;
-    white-space: nowrap;
-    overflow: hidden;
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 ```
 
-*The `hide-text()` mixin takes a direction as a parameter. The default one is `left`, resulting in a `text-indent: -199988px` with a `16px` baseline. You definitely should use `right` for better performance.*
+_The `hide-text()` mixin takes a direction as a parameter. The default one is `left`, resulting in a `text-indent: -199988px` with a `16px` baseline. You definitely should use `right` for better performance._
 
 ## Final words
 
 So people, how many of these features did you know? If you have some free time, I highly recommand you to dig into [Compass documentation](http://compass-style.org/reference/compass/). You'd be surprised how little you know about the framework in most cases.
-

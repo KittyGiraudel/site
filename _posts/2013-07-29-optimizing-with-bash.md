@@ -40,14 +40,14 @@ Since it can be quite a pain to set up a virtual machine, we will go for the lat
 <figcaption><a href="http://www.cygwin.com/">Cygwin</a> is a Linux simulator</figcaption>
 </figure>
 
-To add a package, click on the *"Skip"* label to switch it to a package version. Search for the following packages and add them (clicking on *"Skip"* is enough):
+To add a package, click on the _"Skip"_ label to switch it to a package version. Search for the following packages and add them (clicking on _"Skip"_ is enough):
 
 * optipng
 * pngcrush
 * jpeg
 * util-linux
 
-Once Cygwin is fully installed, simply open a Cygwin terminal. Let's create a workspace to host our optimization script: we create a *"workspace"* directory in the current user home:
+Once Cygwin is fully installed, simply open a Cygwin terminal. Let's create a workspace to host our optimization script: we create a _"workspace"_ directory in the current user home:
 
 ```bash
 # Create the workspace folder
@@ -61,27 +61,27 @@ cd workspace
 <figcaption>Creating a workspace in Cygwin</figcaption>
 </figure>
 
-By default, Cygwin is installed at `C:/cygwin/` so our new directory is at `C:/cygwin/home/[username]/workspace` (where `[username]` is your username). Let's create a *"images"* directory and fill it with some random images from the wild wild web (you can do this manually). For this exercise, we are going to take cat pictures because, you know, everybody love cats.
+By default, Cygwin is installed at `C:/cygwin/` so our new directory is at `C:/cygwin/home/[username]/workspace` (where `[username]` is your username). Let's create a _"images"_ directory and fill it with some random images from the wild wild web (you can do this manually). For this exercise, we are going to take cat pictures because, you know, everybody love cats.
 
 ## Optimizing an image with the command line
 
-For each file, our script is going to run *optipng* and *pngcrush* for PNG files and *jpegtran* for JPG files. Before going any further and start writing the script, let's make a first try with all of these tools starting with *optipng*:
+For each file, our script is going to run _optipng_ and _pngcrush_ for PNG files and _jpegtran_ for JPG files. Before going any further and start writing the script, let's make a first try with all of these tools starting with _optipng_:
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/optipng.png" alt="" />
 <figcaption>PNG optimization with <a href="http://optipng.sourceforge.net/">optipng</a></figcaption>
 </figure>
 
-*Note: the -o7 parameter force optipng to use the slowest mode. The fastest is -o0.*
+_Note: the -o7 parameter force optipng to use the slowest mode. The fastest is -o0._
 
-Then *pngcrush*:
+Then _pngcrush_:
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/pngcrush.png" alt="" />
 <figcaption>PNG optimization with <a href="http://pmt.sourceforge.net/pngcrush/">pngcrush</a></figcaption>
 </figure>
 
-And now a JPG optimization with *jpegtran*:
+And now a JPG optimization with _jpegtran_:
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/jpegtran.png" alt="" />
@@ -118,7 +118,7 @@ Then we are going to use the `getopt` command to parse the parameters passed to 
 
 ### Help function
 
-Now, we have to create two functions: 
+Now, we have to create two functions:
 
 * the `usage()` function, called in the parameters loop if there is a `-h` or `--help` parameter,
 * a `main()` function which will do the optimization of the images.
@@ -139,7 +139,7 @@ Let's try our help function. To be able to run the script, we have to add execut
 
 Pretty cool, isn't it ?
 
-*Note, if you get a couple of errors like "./optimize.sh: line 2: $'\r' : command not found", you have to turn line endings in Unix mode. To do so, open `optimize.sh` in Sublime Text 2 and go to View > Line endings > Unix.*
+_Note, if you get a couple of errors like "./optimize.sh: line 2: $'\r' : command not found", you have to turn line endings in Unix mode. To do so, open `optimize.sh` in Sublime Text 2 and go to View > Line endings > Unix._
 
 ### Main function
 
@@ -150,13 +150,13 @@ And now, let's create the main function. We won't deal with `--no-stats` and `--
 <figcaption>The main function of our script</figcaption>
 </figure>
 
-So our main function starts by initializing both input and output directories with passed parameters; if left empty we take the current folder as input and create an *output* folder in the current one (thanks to the `mkdir` command once again).
+So our main function starts by initializing both input and output directories with passed parameters; if left empty we take the current folder as input and create an _output_ folder in the current one (thanks to the `mkdir` command once again).
 
-*The `-p` parameter of the `mkdir` command forces the creation of all intermediate directories if they are missing.*
+_The `-p` parameter of the `mkdir` command forces the creation of all intermediate directories if they are missing._
 
-Once the input and output are ready, there is a little trick to deal with files containing spaces. Let's say I have a file named *"soft kitty warm kitty.png"* (little ball of fur, anyone?), the loop will split this into 4 elements which will obviously lead to errors. To prevent this from happening, we can change the Internal File Separator (which is a space character by default) to set an end-of-line character. We will restore the original IFS at the end of the loop.
+Once the input and output are ready, there is a little trick to deal with files containing spaces. Let's say I have a file named _"soft kitty warm kitty.png"_ (little ball of fur, anyone?), the loop will split this into 4 elements which will obviously lead to errors. To prevent this from happening, we can change the Internal File Separator (which is a space character by default) to set an end-of-line character. We will restore the original IFS at the end of the loop.
 
-The image files are retrieved with the `find` command, which accepts a regular expression as parameter. If the output directory is a subdirectory of input directory (which is the case if we don't specify any of both) and if the output directory is not empty, we don't want to process images from here so we skip  filepaths which contain the output directory path. We do this with the `grep -v $OUTPUT` command.
+The image files are retrieved with the `find` command, which accepts a regular expression as parameter. If the output directory is a subdirectory of input directory (which is the case if we don't specify any of both) and if the output directory is not empty, we don't want to process images from here so we skip filepaths which contain the output directory path. We do this with the `grep -v $OUTPUT` command.
 
 And then, we loop through the files and call an `optimize_image` function with two parameters: the input and output filename for the image.
 
@@ -188,10 +188,10 @@ Would be neat, wouldn't it? To do this, we first need to find the longest filena
 Then before our main loop, we:
 
 1. retrieve the length of the longest filename
-1. create a very long string of dots (*"."*)
-1. set a max line length equals to the length of the longest filename + the length of our *" [ DONE ]"* string (9 characters) + a small number (5 here) to have some space between the longest name and the *" [ DONE ]"* string.
+1. create a very long string of dots (_"."_)
+1. set a max line length equals to the length of the longest filename + the length of our _" [ DONE ]"_ string (9 characters) + a small number (5 here) to have some space between the longest name and the _" [ DONE ]"_ string.
 
-Finally, in the main loop we display the filename then the *"."* symbols and the the *" [ DONE ]"* string. 
+Finally, in the main loop we display the filename then the _"."_ symbols and the the _" [ DONE ]"_ string.
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/output.png" alt="" />
@@ -216,7 +216,7 @@ Let's try it by running the following command:
 
 ### Final stats
 
-For the final stats we are going to display the amount of space saved. The `optimize_image()</code> method will increase a `total_input_size` with the filesize of the image to optimize, and a `total_output_size` with the filesize of the output image. At the end of the loop, we will use this two counters to display the stats.
+For the final stats we are going to display the amount of space saved. The `optimize_image()</code> method will increase a`total_input_size`with the filesize of the image to optimize, and a`total_output_size` with the filesize of the output image. At the end of the loop, we will use this two counters to display the stats.
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/optimize-image-with-stats.png" alt="" />
@@ -250,21 +250,21 @@ Below lies the final script or you can grab it directly from [this GitHub gist](
 
 ```bash
 #!/bin/bash
- 
+
 PROGNAME=${0##*/}
 INPUT=''
 QUIET='0'
 NOSTATS='0'
 max_input_size=0
 max_output_size=0
- 
+
 usage()
 {
   cat <<EO
 Usage: $PROGNAME [options]
- 
+
 Script to optimize JPG and PNG images in a directory.
- 
+
 Options:
 EO
 cat <<EO | column -s\& -t
@@ -275,14 +275,14 @@ cat <<EO | column -s\& -t
 	-ns, --no-stats    & no stats at the end
 EO
 }
- 
+
 # $1: input image
-# $2: output image 
+# $2: output image
 optimize_image()
 {
 	input_file_size=$(stat -c%s "$1")
 	max_input_size=$(expr $max_input_size + $input_file_size)
- 
+
 	if [ "${1##*.}" = "png" ]; then
 		optipng -o1 -clobber -quiet $1 -out $2
 		pngcrush -q -rem alla -reduce $1 $2 &gt;/dev/null
@@ -290,56 +290,56 @@ optimize_image()
 	if [ "${1##*.}" = "jpg" -o "${1##*.}" = "jpeg" ]; then
 		jpegtran -copy none -progressive $1 &gt; $2
 	fi
- 
+
 	output_file_size=$(stat -c%s "$2")
 	max_output_size=$(expr $max_output_size + $output_file_size)
 }
- 
+
 get_max_file_length()
 {
 	local maxlength=0
- 
+
 	IMAGES=$(find $INPUT -regextype posix-extended -regex '.*\.(jpg|jpeg|png)' | grep -v $OUTPUT)
- 
+
 	for CURRENT_IMAGE in $IMAGES; do
 		filename=$(basename "$CURRENT_IMAGE")
 		if [[ ${#filename} -gt $maxlength ]]; then
 			maxlength=${#filename}
 		fi
 	done
- 
-	echo "$maxlength"	
+
+	echo "$maxlength"
 }
- 
+
 main()
 {
 	# If $INPUT is empty, then we use current directory
 	if [[ "$INPUT" == "" ]]; then
 		INPUT=$(pwd)
 	fi
- 
+
 	# If $OUTPUT is empty, then we use the directory "output" in the current directory
 	if [[ "$OUTPUT" == "" ]]; then
 		OUTPUT=$(pwd)/output
 	fi
- 
+
 	# We create the output directory
 	mkdir -p $OUTPUT
- 
+
 	# To avoid some troubles with filename with spaces, we store the current IFS (Internal File Separator)...
 	SAVEIFS=$IFS
 	# ...and we set a new one
 	IFS=$(echo -en "\n\b")
- 
+
 	max_filelength=`get_max_file_length`
 	pad=$(printf '%0.1s' "."{1..600})
 	sDone=' [ DONE ]'
 	linelength=$(expr $max_filelength + ${#sDone} + 5)
- 
+
 	# Search of all jpg/jpeg/png in $INPUT
 	# We remove images from $OUTPUT if $OUTPUT is a subdirectory of $INPUT
 	IMAGES=$(find $INPUT -regextype posix-extended -regex '.*\.(jpg|jpeg|png)' | grep -v $OUTPUT)
- 
+
 	if [ "$QUIET" == "0" ]; then
 		echo &ndash;&ndash;&ndash; Optimizing $INPUT &ndash;&ndash;&ndash;
 		echo
@@ -350,17 +350,17 @@ main()
 		    printf '%s ' "$filename"
 		    printf '%*.*s' 0 $((linelength - ${#filename} - ${#sDone} )) "$pad"
 		fi
- 
+
 		optimize_image $CURRENT_IMAGE $OUTPUT/$filename
- 
+
 		if [ "$QUIET" == "0" ]; then
 		    printf '%s\n' "$sDone"
 		fi
 	done
- 
+
 	# we restore the saved IFS
 	IFS=$SAVEIFS
- 
+
 	if [ "$NOSTATS" == "0" -a "$QUIET" == "0" ]; then
 		echo
 		echo "Input: " $(human_readable_filesize $max_input_size)
@@ -369,12 +369,12 @@ main()
 		echo "Space save: " $(human_readable_filesize $space_saved)
 	fi
 }
- 
+
 human_readable_filesize()
 {
 echo -n $1 | awk 'function human(x) {
      s=" b  Kb Mb Gb Tb"
-     while (x>=1024 && length(s)>1) 
+     while (x>=1024 && length(s)>1)
            {x/=1024; s=substr(s,4)}
      s=substr(s,1,4)
      xf=(s==" b ")?"%5d   ":"%.2f"
@@ -382,11 +382,11 @@ echo -n $1 | awk 'function human(x) {
   }
   {gsub(/^[0-9]+/, human($1)); print}'
 }
- 
+
 SHORTOPTS="h,i:,o:,q,s"
 LONGOPTS="help,input:,output:,quiet,no-stats"
 ARGS=$(getopt -s bash --options $SHORTOPTS --longoptions $LONGOPTS --name $PROGNAME -- "$@")
- 
+
 eval set -- "$ARGS"
 while true; do
 	case $1 in
@@ -419,7 +419,7 @@ while true; do
 	esac
 	shift
 done
- 
+
 main
 ```
 

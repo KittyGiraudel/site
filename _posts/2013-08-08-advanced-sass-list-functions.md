@@ -9,7 +9,7 @@ tags:
 
 A couple of weeks ago, I wrote a small guide to [understand Sass lists](http://hugogiraudel.com/2013/07/15/understanding-sass-lists/). I hope you've read it and learnt things from it!
 
-Anyway, a couple of days ago I stumbled upon [a comment in a Sass issue](https://github.com/nex3/sass/issues/852#issuecomment-22071664) listing a couple of advanced Sass functions to deal with lists. I found the idea quite appealing so I made my own function library for for this. In my opinion, it is always interesting to go deeper than *"it just works"*, so here is a short blog post to explain my code.
+Anyway, a couple of days ago I stumbled upon [a comment in a Sass issue](https://github.com/nex3/sass/issues/852#issuecomment-22071664) listing a couple of advanced Sass functions to deal with lists. I found the idea quite appealing so I made my own function library for for this. In my opinion, it is always interesting to go deeper than _"it just works"_, so here is a short blog post to explain my code.
 
 ## Selecting values from list
 
@@ -20,7 +20,7 @@ Let's start with something very simple: two small functions to target first and 
 ```scss
 $list: a, b, c, d, e, f;
 $first: first($list); // a
-$last: last($list);   // f
+$last: last($list); // f
 ```
 
 Nice, isn't it? Of course these functions are ridiculously simple to write:
@@ -45,7 +45,7 @@ Good. Now what if we want the last one?
 
 ```scss
 $list: a, b, c, d z, e, a, f;
-$first-index: index($list, a);     // 1
+$first-index: index($list, a); // 1
 $last-index: last-index($list, a); // 6
 $last-index: last-index($list, z); // null
 ```
@@ -76,7 +76,7 @@ I made two versions of this function: in the first one, the code is simple. In t
  * Better performance
  */
 @function last-index($list, $value) {
-  @for $i from length($list)*-1 through -1 {
+  @for $i from length($list) *-1 through -1 {
     @if nth($list, abs($i)) == $value {
       @return abs($i);
     }
@@ -100,15 +100,18 @@ You already know Sass comes with a built-in function to add values to a list cal
 
 ```scss
 $list: b, c, d, e, f;
-$new-list: prepend($list, a);               // a, b, c, d, e, f
-$new-list: prepend($list, now i know my a); // now, i, know, my, a, b, c, d, e, f
+$new-list: prepend($list, a); // a, b, c, d, e, f
+$new-list: prepend(
+  $list,
+  now i know my a
+); // now, i, know, my, a, b, c, d, e, f
 ```
 
 As you can see, the signature is the same as the one for the `append()` function. Now, let's open the beast; you'll be surprised how simple this is:
 
 ```scss
 @function prepend($list, $value) {
-	@return join($value, $list);
+  @return join($value, $list);
 }
 ```
 
@@ -121,9 +124,9 @@ We can append new values to a list, and now even prepend new values to a list. W
 ```scss
 $list: a, b, d, e, f;
 /* I want to add "c" as the 3rd index in the list */
-$new-list: insert-nth($list, 3, c);   // a, b, c, d, e, f
-$new-list: insert-nth($list, -1, z);  // error
-$new-list: insert-nth($list, 0, z);   // error
+$new-list: insert-nth($list, 3, c); // a, b, c, d, e, f
+$new-list: insert-nth($list, -1, z); // error
+$new-list: insert-nth($list, 0, z); // error
 $new-list: insert-nth($list, 100, z); // error
 $new-list: insert-nth($list, zog, z); // error
 ```
@@ -133,22 +136,16 @@ Now let's have a look at the function core:
 ```scss
 @function insert-nth($list, $index, $value) {
   $result: null;
-      
+
   @if type-of($index) != number {
     @warn "$index: #{quote($index)} is not a number for `insert-nth`.";
-  }
-
-  @else if $index < 1 {
+  } @else if $index < 1 {
     @warn "List index 0 must be a non-zero integer for `insert-nth`";
-  }
-
-  @else if $index > length($list) {
+  } @else if $index > length($list) {
     @warn "List index is #{$index} but list is only #{length($list)} item long for `insert-nth'.";
-  }
-
-  @else {
+  } @else {
     $result: ();
-        
+
     @for $i from 1 through length($list) {
       @if $i == $index {
         $result: append($result, $value);
@@ -174,7 +171,7 @@ We're good with adding new values to a list. Now what if we want to change value
 
 ```scss
 $list: a, b, r, a, c a, d a, b, r, a;
-$new-list: replace($list, a, u);       // u, b, r, u, c a, d a, b, r, u;
+$new-list: replace($list, a, u); // u, b, r, u, c a, d a, b, r, u;
 $new-list: replace($list, a, u, true); // u, b, r, u, c u, d u, b, r, u;
 ```
 
@@ -186,15 +183,14 @@ As you can see, the function also deals with nested lists if you pass the 4th op
 
   @for $i from 1 through length($list) {
     @if type-of(nth($list, $i)) == list and $recursive {
-      $result: append($result, replace(nth($list, $i), $old-value, $new-value, $recursive));
-    }
-
-    @else {
+      $result: append(
+        $result,
+        replace(nth($list, $i), $old-value, $new-value, $recursive)
+      );
+    } @else {
       @if nth($list, $i) == $old-value {
         $result: append($result, $new-value);
-      }
-
-      @else {
+      } @else {
         $result: append($result, nth($list, $i));
       }
     }
@@ -208,8 +204,8 @@ Getting a little more complicated, doesn't it? Don't worry, it's not that hard t
 
 * If it is and `$recursive` is set to `true`, we call the `replace()` function again on the nested list (recursive style!).
 * Else, we check if the element is strictly the same as the value we want to replace (`$old-value`).
-    * If it is, we append `$new-value`.
-    * Else we append the initial value.
+  * If it is, we append `$new-value`.
+  * Else we append the initial value.
 
 And there we have a recursive function to replace a given value by another given value in a list and all its nested lists.
 
@@ -219,9 +215,9 @@ Now if we want to replace a value at a specific index, it's a lot simpler.
 
 ```scss
 $list: a, b, z, d, e, f;
-$new-list: replace-nth($list,   3, c); // a, b, c, d, e, f
-$new-list: replace-nth($list,   0, c); // error
-$new-list: replace-nth($list,  -2, c); // a, b, c, d, z, f
+$new-list: replace-nth($list, 3, c); // a, b, c, d, e, f
+$new-list: replace-nth($list, 0, c); // error
+$new-list: replace-nth($list, -2, c); // a, b, c, d, z, f
 $new-list: replace-nth($list, -10, c); // error
 $new-list: replace-nth($list, 100, c); // error
 $new-list: replace-nth($list, zog, c); // error
@@ -232,42 +228,33 @@ As you can imagine, it works almost the same as the `insert-nth()` function.
 ```scss
 @function replace-nth($list, $index, $value) {
   $result: null;
-      
+
   @if type-of($index) != number {
     @warn "$index: #{quote($index)} is not a number for `replace-nth`.";
-  }
-
-  @else if $index == 0 {
+  } @else if $index == 0 {
     @warn "List index 0 must be a non-zero integer for `replace-nth`.";
-  }
-      
-  @else if abs($index) > length($list) {
+  } @else if abs($index) > length($list) {
     @warn "List index is #{$index} but list is only #{length($list)} item long for `replace-nth`.";
-  }
-
-  @else {
+  } @else {
     $result: ();
-    $index: if($index < 0, length($list) + $index + 1, $index);  
+    $index: if($index < 0, length($list) + $index + 1, $index);
 
     @for $i from 1 through length($list) {
       @if $i == $index {
         $result: append($result, $value);
-      }
-    
-      @else {
+      } @else {
         $result: append($result, nth($list, $i));
       }
     }
   }
- 
+
   @return $result;
 }
 ```
 
-I think the code is kind of self explanatory: we check for errors then loop through the values of the `$list` and if the current index (`$i`) is stricly equivalent to the index at which we want to replace the value (`$index`) we replace the value. Else, we simply append the initial value. 
+I think the code is kind of self explanatory: we check for errors then loop through the values of the `$list` and if the current index (`$i`) is stricly equivalent to the index at which we want to replace the value (`$index`) we replace the value. Else, we simply append the initial value.
 
 **Edit (2013/08/11):** I slightly tweaked the function to accept negative integers. Thus, `-1` means last item, `-2` means second-to-last, and so on. However if you go like `-100`, it throws an error.
-
 
 ## Removing values from list
 
@@ -277,7 +264,7 @@ Hey, it's getting pretty cool. We can add values to list pretty much wherever we
 
 ```scss
 $list: a, b z, c, z, d, z, e, f;
-$new-list: remove($list, z);       // a, b z, c, d, e, f;
+$new-list: remove($list, z); // a, b z, c, d, e, f;
 $new-list: remove($list, z, true); // a, b, c, d, e, f
 ```
 
@@ -290,9 +277,7 @@ Same as for the `replace()` function, it can be recursive so it works on nested 
   @for $i from 1 through length($list) {
     @if type-of(nth($list, $i)) == list and $recursive {
       $result: append($result, remove(nth($list, $i), $value, $recursive));
-    }
-
-    @else if nth($list, $i) != $value {
+    } @else if nth($list, $i) != $value {
       $result: append($result, nth($list, $i));
     }
   }
@@ -309,9 +294,9 @@ We only miss the ability to remove a value at a specific index.
 
 ```scss
 $list: a, b, z, c, d, e, f;
-$new-list: remove-nth($list,   3); // a, b, c, d, e, f
-$new-list: remove-nth($list,   0); // error
-$new-list: remove-nth($list,  -2); // a, b, z, c, d, f
+$new-list: remove-nth($list, 3); // a, b, c, d, e, f
+$new-list: remove-nth($list, 0); // error
+$new-list: remove-nth($list, -2); // a, b, z, c, d, f
 $new-list: remove-nth($list, -10); // error
 $new-list: remove-nth($list, 100); // error
 $new-list: remove-nth($list, zog); // error
@@ -322,22 +307,16 @@ This is a very easy function actually.
 ```scss
 @function remove-nth($list, $index) {
   $result: null;
-        
+
   @if type-of($index) != number {
     @warn "$index: #{quote($index)} is not a number for `remove-nth`.";
-  }
-
-  @else if $index == 0 {
+  } @else if $index == 0 {
     @warn "List index 0 must be a non-zero integer for `remove-nth`.";
-  }
-
-  @else if abs($index) > length($list) {
+  } @else if abs($index) > length($list) {
     @warn "List index is #{$index} but list is only #{length($list)} item long for `remove-nth`.";
-  }
-
-  @else {
+  } @else {
     $result: ();
-    $index: if($index < 0, length($list) + $index + 1, $index);  
+    $index: if($index < 0, length($list) + $index + 1, $index);
 
     @for $i from 1 through length($list) {
       @if $i != $index {
@@ -345,7 +324,7 @@ This is a very easy function actually.
       }
     }
   }
-        
+
   @return $result;
 }
 ```
@@ -353,7 +332,6 @@ This is a very easy function actually.
 We break down the list (`$list`) to build up the new one, appending all the items except the one that was on the index we want to delete (`$index`).
 
 **Edit (2013/08/11):** same as for the `replace-nth` function, I tweaked this one to accept negative integers. So `-1` means last item, `-2` means second-to-last, and so on.
-
 
 ## Miscellaneous
 
@@ -363,9 +341,9 @@ We did a lot of important things already, so why not ending our series of functi
 
 ```scss
 $list: a, b, c, d, e, f;
-$new-list: slice($list, 3, 5);   // c, d, e
-$new-list: slice($list, 4, 4);   // d
-$new-list: slice($list, 5, 3);   // error
+$new-list: slice($list, 3, 5); // c, d, e
+$new-list: slice($list, 4, 4); // d
+$new-list: slice($list, 5, 3); // error
 $new-list: slice($list, -1, 10); // error
 ```
 
@@ -374,11 +352,11 @@ In the first draft I made of this function, I edited `$start` and `$end` value s
 ```scss
 @function slice($list, $start: 1, $end: length($list)) {
   $result: null;
-              
+
   @if type-of($start) != number or type-of($end) != number {
     @warn "Either $start or $end are not a number for `slice`.";
   }
-             
+
   @else if $start > $end {
     @warn "The start index has to be lesser than or equals to the end index for `slice`.";
   }
@@ -390,14 +368,14 @@ In the first draft I made of this function, I edited `$start` and `$end` value s
   @else if $start > length($list) {
     @warn "List index is #{$start} but list is only #{length($list)} item long for `slice`.";
   }
-             
+
   @else if $end > length($list) {
     @warn "List index is #{$end} but list is only #{length($list)} item long for `slice`.";
   }
-  
+
   @else {
     $result: ();
-                
+
     @for $i from $start through $end {
       $result: append($result, nth($list, $i));
     }
@@ -414,7 +392,7 @@ Then we make sure `$start` is lesser or equals to `$end` and that they both are 
 
 And now we're sure our values are okay, we can loop through lists values from `$start` to `$end`, building up a new list from those.
 
-*Question: would you prefer a function slicing from index `n` for `x` indexes to this (so basically `$start` and `$length`)?*
+_Question: would you prefer a function slicing from index `n` for `x` indexes to this (so basically `$start` and `$length`)?_
 
 ### Reverse a list
 
@@ -422,7 +400,7 @@ Let's make a small function to reverse the order of elements within a list so th
 
 ```scss
 $list: a, b, c d e, f, g, h;
-$new-list: reverse($list);       // h, g, f, c d e, b, a
+$new-list: reverse($list); // h, g, f, c d e, b, a
 $new-list: reverse($list, true); // h, g, f, e d c, b, a
 ```
 
@@ -430,23 +408,21 @@ As you can see, by default the function do not reverse nested lists. As always, 
 
 ```scss
 @function reverse($list, $recursive: false) {
-   $result: ();
+  $result: ();
 
-   @for $i from length($list)*-1 through -1 {
-      @if type-of(nth($list, abs($i))) == list and $recursive {
-        $result: append($result, reverse(nth($list, abs($i)), $recursive));      
-      }
+  @for $i from length($list) *-1 through -1 {
+    @if type-of(nth($list, abs($i))) == list and $recursive {
+      $result: append($result, reverse(nth($list, abs($i)), $recursive));
+    } @else {
+      $result: append($result, nth($list, abs($i)));
+    }
+  }
 
-      @else {
-        $result: append($result, nth($list, abs($i)));
-      }
-   }
-
-   @return $result;
+  @return $result;
 }
 ```
 
-As we saw earlier, `@for` loops can't decrement so we use the negative indexes workaround to make it work. Quite easy to do in the end. 
+As we saw earlier, `@for` loops can't decrement so we use the negative indexes workaround to make it work. Quite easy to do in the end.
 
 ### Convert a list into a string
 
@@ -454,7 +430,7 @@ Let's finish with a function I had a hard time to name. I first wanted to call i
 
 ```scss
 $list: a, b, c d e, f, g, h;
-$new-list: to-string($list);      // abcdefgh
+$new-list: to-string($list); // abcdefgh
 $new-list: to-string($list, '-'); // a-b-c-d-e-f-g-h
 ```
 
@@ -469,10 +445,12 @@ The core of the function is slightly more complicated than others because there 
 
     @if type-of($e) == list {
       $result: $result#{to-string($e, $glue, true)};
-    }
-    
-    @else {
-      $result: if($i != length($list) or $is-nested, $result#{$e}#{$glue}, $result#{$e});
+    } @else {
+      $result: if(
+        $i != length($list) or $is-nested,
+        $result#{$e}#{$glue},
+        $result#{$e}
+      );
     }
   }
 
@@ -480,7 +458,7 @@ The core of the function is slightly more complicated than others because there 
 }
 ```
 
-*Note: recursivity is implied here. It would make no sense not to join elements from inner lists so you have no power over this: it is recursive.
+\*Note: recursivity is implied here. It would make no sense not to join elements from inner lists so you have no power over this: it is recursive.
 
 Now, my very first draft returned something like this `a-b-c-d-e-f-g-h-`. With an extra hyphen at the end.
 
@@ -494,21 +472,20 @@ This function comes from [Ana tudor](https://twitter.com/thebabydino). It aims a
 
 ```scss
 $list: a, b, c, d, e, f;
-$new-list: loop($list, 1);  // f, a, b, c, d, e
+$new-list: loop($list, 1); // f, a, b, c, d, e
 $new-list: loop($list, -3); // d, e, f, a, b, c
 ```
-
 
 Hopefully examples will make the point of this function clearer. The code isn't obvious in the end, so I'll just leave it here.
 
 ```scss
 @function loop($list, $value: 1) {
   $result: ();
-    
+
   @for $i from 0 to length($list) {
-    $result: append($result, nth($list, ($i - $value) % length($list) + 1));
+    $result: append($result, nth($list,  ($i - $value) % length($list) + 1));
   }
-  
+
   @return $result;
 }
 ```

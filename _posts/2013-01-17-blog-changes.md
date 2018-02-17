@@ -64,7 +64,6 @@ Among the many things I did on the topic, I:
 * Am still working on the JavaScript part to make it asynchronous.
 * Asked [Tim Pietrusky](http://twitter.com/timpietrusky) to improve caching and compressing at [WeLoveIconFonts.com](http://weloveiconfonts.com). Thanks dude!
 
-
 ## Accessibility
 
 I don't know if it's a sudden realisation or the recent [A11y project](http://a11yproject.com/) which motivated me to do that but I took some time to improve accessibility on the site. Plus, it gave me the opportunity to learn some things on the topic.
@@ -81,7 +80,7 @@ By the way, if some accessibility ninja is passing by and finds something wrong,
 
 ### Microdatas
 
-SEO, big thing! I decided to push it one step further by trying microdatas. Man, this is not an easy thing. If you're not familiar with microdatas, the main idea is to label content to describe a specific type of information (person, event, review, etc.). This aims at helping search engine bots understanding  the content they index.
+SEO, big thing! I decided to push it one step further by trying microdatas. Man, this is not an easy thing. If you're not familiar with microdatas, the main idea is to label content to describe a specific type of information (person, event, review, etc.). This aims at helping search engine bots understanding the content they index.
 
 Now if you inspect the sidebar code, you might see some microdatas about me including name, job title, nationality, urls, and so on. I believe it will help search engines indexing datas about me. We'll see if it works.
 

@@ -16,11 +16,11 @@ That could have been the end of that if Sam Richards (a.k.a [Snugug](https://twi
 
 It didn't take me long to update his function in order to sort anything, very quickly (actually as quickly as Ruby can get, which means, not much...). And I really enjoyed working on this, so I started implementing other famous algorithms in Sass, resulting in [SassySort](https://github.com/HugoGiraudel/SassySort).
 
-*Note: I recently wrote [an article](http://thesassway.com/advanced/implementing-bubble-sort-with-sass) about how to implement the Bubble Sort algorithm in Sass for The Sass Way. If you haven't read it, you should! At least for the beautiful header image!*
+_Note: I recently wrote [an article](http://thesassway.com/advanced/implementing-bubble-sort-with-sass) about how to implement the Bubble Sort algorithm in Sass for The Sass Way. If you haven't read it, you should! At least for the beautiful header image!_
 
-## How to use 
+## How to use
 
-SassySort is now a Compass Extension, which means you can easily include it in any of your project. 
+SassySort is now a Compass Extension, which means you can easily include it in any of your project.
 
 1. Run `gem install SassySort` in your terminal
 2. Add `require 'SassySort'` to your `config.rb`
@@ -38,21 +38,21 @@ $sort: sort($list);
 
 That's pretty much the end of it.
 
-*Note: also, [I've asked SassMeister to include it](https://github.com/jedfoster/SassMeister/issues/64#issuecomment-35530071), so you might be able to use it directly into [SassMeister](http://sassmeister.com/) in the not-so-far future.*
+_Note: also, [I've asked SassMeister to include it](https://github.com/jedfoster/SassMeister/issues/64#issuecomment-35530071), so you might be able to use it directly into [SassMeister](http://sassmeister.com/) in the not-so-far future._
 
-## Picking the algorithm 
+## Picking the algorithm
 
 Looking back at my code, I think it's pretty cool how I handled the whole thing.There are a couple of algorithms available but I wanted to keep the function name simple: `sort()` and not `bubble-sort()` or `insertion-sort()`. So you can pass the algorithm name as argument.
 
 ```scss
-$sort: sort($list, $algorithm: "bubble");
+$sort: sort($list, $algorithm: 'bubble');
 ```
 
 This will use the Bubble Sort implementation, because of the way the `sort()` function works:
 
 ```scss
-@function sort($list, $order: $default-order, $algorithm: "quick") {
-  @return call("#{$algorithm}-sort", $list, $order);
+@function sort($list, $order: $default-order, $algorithm: 'quick') {
+  @return call('#{$algorithm}-sort', $list, $order);
 }
 ```
 
@@ -60,17 +60,17 @@ This will use the Bubble Sort implementation, because of the way the `sort()` fu
 
 As you can see, the `sort()` function does no more than defering the return to a sub-function named after the algorithm you ask for (e.g.`%algorithm%-sort`). The default algorithm is `quick`, as specified in the function signature but you can use `bubble`, `insertion`, `shell`, `comb` and `selection` as well. However `quick` is simply... quicker.
 
-## Dealing with weird characters 
+## Dealing with weird characters
 
 Depending on what you aim at doing with this sorting function, you might or might not encounter some issues if you are trying to sort words with unexpected characters. This is because Sass doesn't have access to some universal sorting order or something; I had to hard-code the order to follow somewhere.
 
 And this somewhere is in the `$default-order` variable:
 
 ```scss
-$default-order:
-	"!" "#" "$" "%" "&" "'" "(" ")" "*" "+" "," "-" "." "/" "[" "\\" "]" "^" "_" "{" "|" "}" "~"
-	"0" "1" "2" "3" "4" "5" "6" "7" "8" "9"
-	"a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z" !default;
+$default-order: '!' '#' '$' '%' '&' "'" '(' ')' '*' '+' ',' '-' '.' '/' '[' '\\'
+  ']' '^' '_' '{' '|' '}' '~' '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'a' 'b'
+  'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u'
+  'v' 'w' 'x' 'y' 'z' !default;
 ```
 
 As you can see, it only deals with a restricted amount of characters. Mostly special characters, numbers and letters. You might notice there are no uppercase letters. I decided I wouldn't deal with case when sorting. It simply added to much complexity to sorting functions.
@@ -78,14 +78,14 @@ As you can see, it only deals with a restricted amount of characters. Mostly spe
 Anyway, if you need to add extra characters, you can override this list or make your own variable and pass it to the sort function as the `$order` (2nd) argument.
 
 ```scss
-$custom-order: /* your custom order */;
+$custom-order: ;
 $sort: sort($list, $order: $custom-order);
 ```
 
 Note that if an unrecognized character is found, it is skipped.
 
-## Final thoughts 
+## Final thoughts
 
-That's pretty much it folks. If you really want to dig in the code of the algorithms, be sure to have a look at the [repository](https://github.com/HugoGiraudel/SassySort) however it was mostly JavaScript to Sass code conversion, so there is no magic behind it. 
+That's pretty much it folks. If you really want to dig in the code of the algorithms, be sure to have a look at the [repository](https://github.com/HugoGiraudel/SassySort) however it was mostly JavaScript to Sass code conversion, so there is no magic behind it.
 
 If you feel like implementing other sorting algorithms, be sure to have a shot and open an issue / pull-request.

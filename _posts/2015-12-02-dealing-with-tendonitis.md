@@ -21,13 +21,13 @@ When you are in pain and not using your tendons (see first advice), **try puttin
 
 ## Health care
 
-Take anti-inflammatory pills only if you really need it (and if your doctor prescribes some) and stop when you feel like it’s going better. Still, try to **reduce the usage of your tendons to a bare minimum even under anti-inflammatory treatment** (*especially* when under treatment, actually): they do not heal, they just make the pain disappear. If you keep forcing on your tendons in the mean time, you are making things worse.
+Take anti-inflammatory pills only if you really need it (and if your doctor prescribes some) and stop when you feel like it’s going better. Still, try to **reduce the usage of your tendons to a bare minimum even under anti-inflammatory treatment** (_especially_ when under treatment, actually): they do not heal, they just make the pain disappear. If you keep forcing on your tendons in the mean time, you are making things worse.
 
 **Consider taking specialized food supplements**. [Cicatendon](http://cicatendon.com/) is a French brand focusing on helping getting rid of tendonitises. You can probably order it or find an equivalent in your country. You won’t notice a different within 2 days of course, but I suppose it can help in the long run.
 
 When dealing with wrist tendonitises, it might be a good idea to **wear a splint**. It is annoying and quite ugly I concede, but it helps maintaining the arm and preventing it from moving too much which would trigger pain (see first advice).
 
-If the pain is located in the arm and you notice your mouse or trackpad is causing partially responsible for this, **it might be worth looking for specialized equipment** allowing your arm to sit in a more comfortable (understand *less painful*) position. Most companies are well willing to help you with this kind of request, so be sure to talk about this with your employer.
+If the pain is located in the arm and you notice your mouse or trackpad is causing partially responsible for this, **it might be worth looking for specialized equipment** allowing your arm to sit in a more comfortable (understand _less painful_) position. Most companies are well willing to help you with this kind of request, so be sure to talk about this with your employer.
 
 When you finally feel better, still be careful. It can (and is likely to) come back quite quickly. Do not force as soon as you feel healed, or you will have to start over.
 

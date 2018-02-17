@@ -68,7 +68,7 @@ When I came up on stage, as for other speakers, I couldn't see a single face in 
 
 Interestingly enough, I realised that I feel much more confident when I don't see people's face. Seeing people is disturbing because you may assist to things that you don't want to see in order to provide a clear talk.
 
-* People that don't give a fuck and are coding or reading Twitter. Those people make you wonder whether or not your talk is interesting and this is not the kind of things you should be thinking *while* talking.
+* People that don't give a fuck and are coding or reading Twitter. Those people make you wonder whether or not your talk is interesting and this is not the kind of things you should be thinking _while_ talking.
 * People that seem completely lost. While it can be helpful to know that some people can't follow along because things are getting too technical, seeing those reactions directly put you back to the previous bullet: you'll end up wondering whether your talk is good enough.
 * People that are smiling or laughing when there is nothing to laugh about. If their laugh is communicative, you could start laughing as well which is not that bad obviously but kind of breaks the flow. More importantly, you could start thinking they are making fun of you for some reason, and again this is not something you want to deal with.
 

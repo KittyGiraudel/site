@@ -7,7 +7,7 @@ tags:
   - a11y
 ---
 
-It’s been a rough couple of months for JavaScript. Another day, another rant about it, another article about how the ecosystem is too fragmented, the language too convoluted, and what else. 
+It’s been a rough couple of months for JavaScript. Another day, another rant about it, another article about how the ecosystem is too fragmented, the language too convoluted, and what else.
 
 Recently enough, a project named [You Might Not Need JS](http://youmightnotneedjs.com) has seen the day. I have mixed opinions about it, and rather than writing a series of context-less tweets, I thought the sensible thing to do would be to write a couple of lines here.
 
@@ -42,13 +42,13 @@ I really appreciate this project promoting these new browser features in favor o
 
 ## A word on accessibility
 
-The problem with blindly banishing JavaScript from interactive components is that it often means making them inaccessible. It is a popular belief to think that JavaScript is an enemy of accessibility; that’s a fallacy. 
+The problem with blindly banishing JavaScript from interactive components is that it often means making them inaccessible. It is a popular belief to think that JavaScript is an enemy of accessibility; that’s a fallacy.
 
 While it is strongly encouraged to make websites work without JavaScript (because it can fail to load or execute and be blocked or disabled), it does not mean JavaScript should be avoided at all cost. It means it shouldn’t be used in a critical way.
 
 If there is one thing I learnt while building [a11y-dialog](https://github.com/edenspiekermann/a11y-dialog) and [a11y-toggle](https://github.com/edenspiekermann/a11y-toggle), it’s that JavaScript is necessary for interactive modules to be fully accessible for people using assistive technologies (such as a screen reader for instance).
 
-A dialog element is not going to be accessible with CSS only. The `aria-hidden` attribute needs to be toggled, the focus needs to be trapped, the escape key needs to close the dialog, and I could go on. 
+A dialog element is not going to be accessible with CSS only. The `aria-hidden` attribute needs to be toggled, the focus needs to be trapped, the escape key needs to close the dialog, and I could go on.
 
 Maybe instead of trying to reproduce the exact same module without JavaScript by using CSS hacks, we could display the content in a way that is suited for no JavaScript behaviour. Nothing states that both JS and no-JS environments should behave the same. If a module cannot fully exist without JavaScript, don’t use it in a no-JS environment; find something else.
 

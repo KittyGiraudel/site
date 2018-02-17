@@ -11,7 +11,7 @@ tags:
 
 I had no idea how powerful CSS gradients could be until late 2011, when I found the [CSS3 Patterns Gallery](http://lea.verou.me/css3patterns/) made by Lea Verou. The idea that you can obtain many shapes using just gradients was a starting point for many CSS experiments I would later do.
 
-Recently, while browsing through the demos on CodePen, I came across [a CSS3 Color Wheel](http://codepen.io/bitmap/pen/eBbHt) and thought *hey, I could do it with just one element and gradients*. So I did and the result can be seen [here](http://codepen.io/thebabydino/pen/hkxGp). And now I'm going to explain the reasoning behind it.
+Recently, while browsing through the demos on CodePen, I came across [a CSS3 Color Wheel](http://codepen.io/bitmap/pen/eBbHt) and thought _hey, I could do it with just one element and gradients_. So I did and the result can be seen [here](http://codepen.io/thebabydino/pen/hkxGp). And now I'm going to explain the reasoning behind it.
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/rainbow_wheel_screen.gif" alt="" />
@@ -29,23 +29,30 @@ The pen below shows graphically how to layer the multiple backgrounds. It also h
 For both the original pen and this helper demo, the interesting part is this one:
 
 ```css
-background: 
-linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
-linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%),
-linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0,
-linear-gradient(-72deg, #639b47 75.48%, transparent 75.48%) 100% 0, 
-linear-gradient(36deg, transparent 57.66%, #e1e23b 57.66%) 100% 100%,
-linear-gradient(72deg, transparent 24.52%, #f7941e 24.52%) 100% 100%,
-linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%,
-linear-gradient(-72deg, transparent 24.52%, #9a1d34 24.52%) 0 100%, 
-#43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
+background: linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
+  linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%),
+  linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0, linear-gradient(
+      -72deg,
+      #639b47 75.48%,
+      transparent 75.48%
+    ) 100% 0,
+  linear-gradient(36deg, transparent 57.66%, #e1e23b 57.66%) 100% 100%, linear-gradient(
+      72deg,
+      transparent 24.52%,
+      #f7941e 24.52%
+    ) 100% 100%,
+  linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%, linear-gradient(
+      -72deg,
+      transparent 24.52%,
+      #9a1d34 24.52%
+    ) 0 100%, #43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
 background-repeat: no-repeat;
 background-size: 50% 50%;
 ```
 
 We first specify the nine gradient backgrounds, their positioning and the `background-color` using the shorthand `background` syntax.
 
-## The background shorthand 
+## The background shorthand
 
 For anyone who doesn't remember, the background layers are listed from the top one to the bottom one and the `background-color` is specified together with the bottom layer. A background layer includes the following:
 
@@ -77,20 +84,20 @@ In order to better understand gradient angles and how the `%` values for color s
 <pre class="codepen" data-height="640" data-type="result" data-href="qgoBL" data-user="thebabydino" data-safe="true"><code></code>
 <a href="http://codepen.io/thebabydino/pen/qgoBL" target="_blank">Check out this Pen!</a></pre>
 
-The *gradient angle* is the angle - measured clockwise - between the vertical axis and the *gradient line* (the blue line in the demo). This is for the new syntax, which is not yet supported by WebKit browsers (however, [this is going to change](https://bugs.webkit.org/show_bug.cgi?id=67166)). The old syntax measured angles just like on the [trigonometric unit circle](http://en.wikipedia.org/wiki/Unit_circle) (counter-clockwise and starting from the horizontal axis).
+The _gradient angle_ is the angle - measured clockwise - between the vertical axis and the _gradient line_ (the blue line in the demo). This is for the new syntax, which is not yet supported by WebKit browsers (however, [this is going to change](https://bugs.webkit.org/show_bug.cgi?id=67166)). The old syntax measured angles just like on the [trigonometric unit circle](http://en.wikipedia.org/wiki/Unit_circle) (counter-clockwise and starting from the horizontal axis).
 
-*Note: coming from a mathematical background, I have to say the old way feels more natural to me. However, the new way feels consistent with other CSS features, like rotate transforms, for which the angle values are also clockwise.*
+_Note: coming from a mathematical background, I have to say the old way feels more natural to me. However, the new way feels consistent with other CSS features, like rotate transforms, for which the angle values are also clockwise._
 
-What this means is that we (almost always) have different angle values in the standard syntax and in the current WebKit syntax. So, if we are not using something like [-prefix-free](http://leaverou.github.com/prefixfree/) (which I do almost all the time), then we should to be able to compute one when knowing the other. That is actually pretty simple. They are going in opposite directions, so the formula for one includes the other with a minus sign. Also, there is a `90°` difference between them so this is how we get them: 
+What this means is that we (almost always) have different angle values in the standard syntax and in the current WebKit syntax. So, if we are not using something like [-prefix-free](http://leaverou.github.com/prefixfree/) (which I do almost all the time), then we should to be able to compute one when knowing the other. That is actually pretty simple. They are going in opposite directions, so the formula for one includes the other with a minus sign. Also, there is a `90°` difference between them so this is how we get them:
 
 ```js
 newSyntax = 90° - oldSyntax;
 oldSyntax = 90° - newSyntax;
 ```
 
-*Note: if no gradient angle or destination side is specified (for example, `linear-gradient(lime, yellow)`), then the resulting gradient is going to have a gradient angle of `180°`, not `0°`.*
+_Note: if no gradient angle or destination side is specified (for example, `linear-gradient(lime, yellow)`), then the resulting gradient is going to have a gradient angle of `180°`, not `0°`._
 
-All the points on a line that is [perpendicular](http://www.mathopenref.com/perpendicular.html) on the gradient line have the same color. The perpendicular from the corner in the quadrant that's opposite to the quadrant of the angle is the `0%` line (the crimson line in the demo) and its intersection with the gradient line is the *starting point* of the gradient (let's call it `S`). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the `100%` line (the black line in the demo) and its intersection with the gradient line is the *ending point* of the gradient (let's call it `E`).
+All the points on a line that is [perpendicular](http://www.mathopenref.com/perpendicular.html) on the gradient line have the same color. The perpendicular from the corner in the quadrant that's opposite to the quadrant of the angle is the `0%` line (the crimson line in the demo) and its intersection with the gradient line is the _starting point_ of the gradient (let's call it `S`). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the `100%` line (the black line in the demo) and its intersection with the gradient line is the _ending point_ of the gradient (let's call it `E`).
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/gradient.png" alt="" />
@@ -99,7 +106,7 @@ All the points on a line that is [perpendicular](http://www.mathopenref.com/perp
 
 In order to compute the `%` value of any point `P`, we first draw a perpendicular on the gradient line starting from that point. The intersection between the gradient line and this perpendicular is going to be a point we'll name `I`. We now compute the ratio between the lengths of `SI` and `SE` and the `%` value for that point is going to be `100%` times that ratio.
 
-## Putting it all to work 
+## Putting it all to work
 
 Now let's see how we apply this for the particular case of the rainbow wheel.
 
@@ -119,7 +126,7 @@ The [intersection of the diagonals of a square splits each one of them into two]
 <figcaption>A right angled triangle and how to compute sin and cos functions</figcaption>
 </figure>
 
-*Note: before moving further, let's go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it's called the [hypotenuse](http://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](http://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](http://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](http://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse.*
+_Note: before moving further, let's go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it's called the [hypotenuse](http://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](http://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](http://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](http://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse._
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/slice_1_BOE.png" alt="" />
@@ -141,7 +148,7 @@ In this way, we've arrived at: `linear-gradient(36deg, #272b66 42.34%, transpare
 
 Computing the `%` values for the other background layers is done in the exact same manner.
 
-## Automating all this 
+## Automating all this
 
 By now, you're probably thinking it sucks to do so many computations. And it must be even worse when there are more gradients with different angles...
 
@@ -151,7 +158,7 @@ Even though for creating the rainbow wheel experiment I did compute everything o
 
 You can change the dimensions of the gradient box and you can also change the gradient itself. It accepts the newest syntax for linear gradients, with angle values in degrees, `to <side>` values or no value at all for describing the direction of the gradient.
 
-## Final words 
+## Final words
 
 CSS gradients are really powerful and understanding how they work can be really useful for creating all sorts of imageless textures or shapes that would be difficult to obtain otherwise.
 

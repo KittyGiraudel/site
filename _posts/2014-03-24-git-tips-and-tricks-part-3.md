@@ -5,7 +5,7 @@ tags:
   - git
 ---
 
-> Hey folks! This is the 3rd part of the *Git Tips & Tricks* series from Loïc Giraudel. If you missed the [first post](http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/) and the [the second one](http://hugogiraudel.com/2014/03/17/git-tips-and-tricks-part-2/), be sure to give them a read! And now roll up your sleeves, because this is getting wicked!
+> Hey folks! This is the 3rd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the [first post](http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/) and the [the second one](http://hugogiraudel.com/2014/03/17/git-tips-and-tricks-part-2/), be sure to give them a read! And now roll up your sleeves, because this is getting wicked!
 
 Hi people ! Welcome to the third part of this Git Tips & Tricks series ! This week I'm going to start with 2 useful tricks to fix conflicts or just see diff in a graphical tool instead of command line. Then we'll explore the magic of the Git `bisect` command. Finally I will show how to merge commits into a single one before pushing it. What do you think? Let's go?
 
@@ -29,7 +29,7 @@ Receiving objects: 100% (64/64), 17.83 KiB, done.
 Resolving deltas: 100% (31/31), done.
 ```
 
-Then, create a new alias *meld* in Git, for example by adding the following line in the **[alias]** part of you *.git/config* file:
+Then, create a new alias _meld_ in Git, for example by adding the following line in the **[alias]** part of you _.git/config_ file:
 
 ```bash
 meld = !/home/workspace/git-meld/git-meld.pl
@@ -48,18 +48,17 @@ This command will ask you which diff tool to use, then open the whole directory 
 
 When a new bug appears in your application, the best way to fix the bug is to find which commit introduced it. Git has an awesome method to find a specific commit with a dichotomic search solution.
 
-> In computer science, a dichotomic search is a search algorithm that operates by selecting between two distinct alternatives (dichotomies) at each step. It is a specific type of divide and conquer algorithm. A well-known example is binary search.
-> &mdash; [Wikipedia - Dichotomic Search](http://en.wikipedia.org/wiki/Dichotomic_search)
+> In computer science, a dichotomic search is a search algorithm that operates by selecting between two distinct alternatives (dichotomies) at each step. It is a specific type of divide and conquer algorithm. A well-known example is binary search. &mdash; [Wikipedia - Dichotomic Search](http://en.wikipedia.org/wiki/Dichotomic_search)
 
 The magic Git command is `git bisect`. This command requires 2 commits SHA1 (or references) to work: an old commit where the bug is not there and a recent commit where the bug is there. The command will checkout the commit in the middle of the interval of the two commits.
 
-Once checkout of the *middle commit* has been done, user has to test if the bug is still there or not and inform `git bisect` command. According to user answer, `git bisect` will checkout a commit in the middle of the first or the second half of the initial interval.
+Once checkout of the _middle commit_ has been done, user has to test if the bug is still there or not and inform `git bisect` command. According to user answer, `git bisect` will checkout a commit in the middle of the first or the second half of the initial interval.
 
 Then the user has to check the bug again and inform `git bisect`. At each step of the process, `git bisect` reduce the interval and finally returns the SHA1 of the commit which has introduced the bug.
 
 ### Manual version
 
-Let's take an example. I'm going to create 20 commits; each commit adding a new line "line number #" in *file.txt*. One of the insertions will have a typing error *"numer"* instead of *"number"*. We are going to try to find the commit which has the typo with `git bisect`.
+Let's take an example. I'm going to create 20 commits; each commit adding a new line "line number #" in _file.txt_. One of the insertions will have a typing error _"numer"_ instead of _"number"_. We are going to try to find the commit which has the typo with `git bisect`.
 
 ```bash
 $ # I create 20 commits here
@@ -69,7 +68,7 @@ $ cat file.txt | grep numer | wc -l
 1
 ```
 
-Ok, I have 19 occurences of *"number"* and 1 occurrence of *"numer"*, let's find which commit inserted the typo. To do so, I run `git bisect` with two commits references. I know that the bug was not there 20 commits ago and is present now. So I can pass `HEAD` and `HEAD~20` for my two references.
+Ok, I have 19 occurences of _"number"_ and 1 occurrence of _"numer"_, let's find which commit inserted the typo. To do so, I run `git bisect` with two commits references. I know that the bug was not there 20 commits ago and is present now. So I can pass `HEAD` and `HEAD~20` for my two references.
 
 ```git
 $ git bisect start HEAD HEAD~20
@@ -77,9 +76,9 @@ Bisecting: 9 revisions left to test after this (roughly 3 steps)
 [2128ffe8f612d40bc15b617600b6de5f5231d58e] Commit 10
 ```
 
-Git checks my interval and calculates that I will need 3 steps to find the wrong commit after current step. The commit in the middle of my interval has been checkout ("Commit 10"). If I look at my *master* branch in Gitg (or Gitk, Gitx or any Git graphical tool...), I can see that Git has created two references *refs/bisect/start* and *refs/bisect/good-[...]* next to my `HEAD` and `HEAD~20` commits.
+Git checks my interval and calculates that I will need 3 steps to find the wrong commit after current step. The commit in the middle of my interval has been checkout ("Commit 10"). If I look at my _master_ branch in Gitg (or Gitk, Gitx or any Git graphical tool...), I can see that Git has created two references _refs/bisect/start_ and _refs/bisect/good-[...]_ next to my `HEAD` and `HEAD~20` commits.
 
-*Note: It's possible to use `git bisect visualize` or `git bisect view` to see the remaining interval in graphical tool. For a console view, you can use `git bisect view --stat`.*
+_Note: It's possible to use `git bisect visualize` or `git bisect view` to see the remaining interval in graphical tool. For a console view, you can use `git bisect view --stat`._
 
 ![After starting git bisect](/assets/images/git-tips-and-tricks-part-3/bisect-1.png)
 
@@ -102,7 +101,7 @@ Git bisect has reduced the commit interval and checkout the "Commit 5". I will f
 
 ![After first git bisect bad](/assets/images/git-tips-and-tricks-part-3/bisect-2.png)
 
-The *refs/bisect/bad* reference has been moved to the "Commit 10". I check if the bug is still there or not.
+The _refs/bisect/bad_ reference has been moved to the "Commit 10". I check if the bug is still there or not.
 
 ```bash
 $ cat file.txt | grep numer | wc -l
@@ -124,7 +123,7 @@ Bisecting: 0 revisions left to test after this (roughly 1 step)
 [a21e6e97e003b614793cffccbdc1a53985fc11d4] Commit 4
 ```
 
-The bug wasn't there in this step, so I use `git bisect good` instead of `git bisect bad`. Gitg has created a new *refs/bisect/good-[...]* reference.
+The bug wasn't there in this step, so I use `git bisect good` instead of `git bisect bad`. Gitg has created a new _refs/bisect/good-[...]_ reference.
 
 ![After first git bisect good](/assets/images/git-tips-and-tricks-part-3/bisect-4.png)
 
@@ -249,7 +248,6 @@ bisect run success
 ```
 
 ## Merge several commits into a single one before pushing
-
 
 If you are working on a big task, it's a good thing to regularly commit, especially if you have to switch to other branches and don't want to stash all your work. But you should remind that each commit must let the branch in a stable state: it will be easier to pick up a specific commit to another branch, revert a specific commit that doesn't work as expected or just do a `git bisect` without skipping commits.
 

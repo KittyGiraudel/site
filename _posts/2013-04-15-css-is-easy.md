@@ -48,12 +48,12 @@ Take the Flexbox module for example. It has been introduced in 2009 and has know
 
 ```css
 .flex {
-	-ms-box-orient: horizontal;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: flex;
+  -ms-box-orient: horizontal;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
 }
 ```
 

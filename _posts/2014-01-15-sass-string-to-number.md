@@ -21,7 +21,7 @@ As I said, the function is actually simple. It relies on parsing the string char
 @function number($string) {
   // Matrices
   $strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
-  $numbers:  0   1   2   3   4   5   6   7   8   9;
+  $numbers: 0 1 2 3 4 5 6 7 8 9;
 
   // Result
   $result: 0;
@@ -81,7 +81,6 @@ $minus: false;
 
 As I said, it is pretty straight forward.
 
-
 ## Dealing with decimal dot
 
 Making sure we can convert floats and doubles took me a couple of minutes. I couldn't find a way to deal with numbers once the decimal dot has been found. I always ended up with a completely wrong result until I find a tricky way.
@@ -96,13 +95,9 @@ Making sure we can convert floats and doubles took me a couple of minutes. I cou
     // ...
     @if $character == '-' {
       // ...
-    }
-
-    @else if $character == '.' {
+    } @else if $character == '.' {
       $divider: 1;
-    }
-
-    @else {
+    } @else {
       // ...
 
       // Decimal dot hasn't been found yet
@@ -129,22 +124,21 @@ Since it can be a little tricky to understand, let's try with a quick example. H
 
 1. We set `$divider` and `$result` variables to `0`
 2. `"1"` gets found
-    1. `$divider` is `0` so `$result` gets multiplied by `10` (still `0`)
-    2. `1` gets added to `$result` (now `1`)
+   1. `$divider` is `0` so `$result` gets multiplied by `10` (still `0`)
+   2. `1` gets added to `$result` (now `1`)
 3. `"3"` gets found
-    1. `$divider` is `0` so `$result` gets multiplied by `10` (now `10`)
-    2. `3` gets added to `$result` (now `13`)
+   1. `$divider` is `0` so `$result` gets multiplied by `10` (now `10`)
+   2. `3` gets added to `$result` (now `13`)
 4. `"."` gets found
-    1. `$divider` is now set to `1`
+   1. `$divider` is now set to `1`
 5. `"3"` gets found
-    1. `$divider` is greater than `0` so it gets multiplied by `10` (now `10`)
-    2. `3` gets divided by `$divider` (now `0.3`)
-    3. `0.3` gets added to `$result` (now `13.3`)
+   1. `$divider` is greater than `0` so it gets multiplied by `10` (now `10`)
+   2. `3` gets divided by `$divider` (now `0.3`)
+   3. `0.3` gets added to `$result` (now `13.3`)
 6. `"7"` gets found
-    1. `$divider` is greater than `0` so it gets multiplied by `10` (now `100`)
-    2. `7` gets divided by `$divider` (now `0.07`)
-    3. `0.07` gets added to `$result` (now `13.37`)
-
+   1. `$divider` is greater than `0` so it gets multiplied by `10` (now `100`)
+   2. `7` gets divided by `$divider` (now `0.07`)
+   3. `0.07` gets added to `$result` (now `13.37`)
 
 ## Dealing with CSS lengths
 
@@ -159,11 +153,9 @@ First we need to get the unit as a string. It's basically the string starting fr
     // ...
     @if $char == '-' {
       // ...
-    }
-    @else if $char == '.' {
+    } @else if $char == '.' {
       // ...
-    }
-    @else {
+    } @else {
       @if not $index {
         $result: if($minus, $result * -1, $result);
         @return _length($result, str-slice($string, $i));
@@ -179,8 +171,9 @@ If we come to find a character that is neither `-`, nor `.` nor a number, it mea
 
 ```scss
 @function _length($number, $unit) {
-  $strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw' 'vh' 'vmin' 'vmax';
-  $units:   1px  1cm  1mm  1%  1ch  1pica  1in  1em  1rem  1pt  1pc  1ex  1vw  1vh  1vmin  1vmax;
+  $strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw'
+    'vh' 'vmin' 'vmax';
+  $units: 1px 1cm 1mm 1% 1ch 1pica 1in 1em 1rem 1pt 1pc 1ex 1vw 1vh 1vmin 1vmax;
   $index: index($strings, $unit);
 
   @if not $index {
@@ -200,25 +193,25 @@ If you want to play with the code or the function, you can check it on [SassMeis
 
 ```scss
 sass {
-  cast: number("-15");    // -15
-  cast: number("-1");     // -1
-  cast: number("-.5");    // -.5
-  cast: number("-0");     // 0
-  cast: number("0");      // 0
-  case: number(".10");    // 0.1
-  cast: number("1");      // 1
-  cast: number("1.5");    // 1.5
-  cast: number("10.");    // 10
-  cast: number("12.380"); // 12.38
-  cast: number("42");     // 42
-  cast: number("1337");   // 1337
+  cast: number('-15'); // -15
+  cast: number('-1'); // -1
+  cast: number('-.5'); // -.5
+  cast: number('-0'); // 0
+  cast: number('0'); // 0
+  case: number('.10'); // 0.1
+  cast: number('1'); // 1
+  cast: number('1.5'); // 1.5
+  cast: number('10.'); // 10
+  cast: number('12.380'); // 12.38
+  cast: number('42'); // 42
+  cast: number('1337'); // 1337
 
-  cast: number("-10px");  // -10px
-  cast: number("20em");   // 20em
-  cast: number("30ch");   // 30ch
+  cast: number('-10px'); // -10px
+  cast: number('20em'); // 20em
+  cast: number('30ch'); // 30ch
 
-  cast: number("1fail");  // Error
-  cast: number("string"); // Error
+  cast: number('1fail'); // Error
+  cast: number('string'); // Error
 }
 ```
 

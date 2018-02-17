@@ -31,7 +31,7 @@ When teaching the basics of front-end development, I like to work on cooking rec
 
 So before the workshop, I asked every participant to prepare a recipe as text format: a title, a few meta data such as the preparation time or the number of portions, a list of ingredients, a list of steps to reproduce and at least an image.
 
-Over the course of these 2 days, every participant was working on their own recipe, with their own content, and their own design, then I gathered them all into a small website that we named “ESPI Cookbook”. 
+Over the course of these 2 days, every participant was working on their own recipe, with their own content, and their own design, then I gathered them all into a small website that we named “ESPI Cookbook”.
 
 ## The scenario
 
@@ -45,8 +45,8 @@ At first, I thought I could start with the doctype, then the `<html>` tag, then 
 
 So I started by introducing what HTML is meant for and how to write it. Opening a tag, putting some content, closing a tag. Easy peasy. From there, they could put their title in a `<h1>`, their sub-titles in `<h2>` and their content in `<p>`. Two interesting things there:
 
-- Most of the participants turned out a bit confused about the headings hierarchy; some of them thought the first heading had to be `h1`, the second `h2`, the third `h3` and so on. Maybe I just went a bit too fast on what the number in the tags meant.
-- Almost at the same time, all participants were puzzled about how to mark up lists, which was a good sign to me: `<p>` did not seem correct to any of them.
+* Most of the participants turned out a bit confused about the headings hierarchy; some of them thought the first heading had to be `h1`, the second `h2`, the third `h3` and so on. Maybe I just went a bit too fast on what the number in the tags meant.
+* Almost at the same time, all participants were puzzled about how to mark up lists, which was a good sign to me: `<p>` did not seem correct to any of them.
 
 The next hour (and a half or so) was about marking up all the content from the recipe. Still no mention of the `<body>` tag, let alone anything outside of it. We kept moving forward with HTML while remaining heavily focused on our content. It took a bit of time to some participants to understand where to close tags, but eventually everyone got there.
 
@@ -65,14 +65,13 @@ We encountered the first encoding issues (since we did not add a charset meta) w
 </html>
 ```
 
-
 I took this as an opportunity to introduce HTML attributes, such as `lang` on the `<html>` element. Retrospectively, I am not sure it was a good timing for that. Maybe it was unnecessary complexity at this stage.
 
 This marked the end of the first half-day and the HTML part.
 
 ### Learning CSS
 
-I did not want to start right away with the `<link>` tag and how to connect a stylesheet to the document, so I started the second half day with a practical example to introduce CSS. 
+I did not want to start right away with the `<link>` tag and how to connect a stylesheet to the document, so I started the second half day with a practical example to introduce CSS.
 
 ```css
 h1 {
@@ -88,18 +87,18 @@ Luckily for me, they all started applying styles to their pages. First the main 
 
 It was not without a few mistakes though. Here are a few things I noticed:
 
-- Because we worked exclusively in pixels, some participants used to author lengths without a unit.
-- For participants with no design background at all, the hexadecimal notation for colors was not so straightforward, leading them to omit the hash symbol (`#`).
-- Most if not all participants really struggled with semi-colons and syntax in general. Missing semi-colons, braces closed twice, typos and such. It generated a bit of frustration for some of them to not have more information about where they made a mistake.
+* Because we worked exclusively in pixels, some participants used to author lengths without a unit.
+* For participants with no design background at all, the hexadecimal notation for colors was not so straightforward, leading them to omit the hash symbol (`#`).
+* Most if not all participants really struggled with semi-colons and syntax in general. Missing semi-colons, braces closed twice, typos and such. It generated a bit of frustration for some of them to not have more information about where they made a mistake.
 
 Eventually, all participants managed to have their recipe styled pretty much how they wanted it. I even went further than expected with some of them, including these topics:
 
-- Floats;
-- CSS Columns;
-- CSS Counters;
-- Replaced bullets with pseudo-elements;
-- Class composition;
-- Inline SVG…
+* Floats;
+* CSS Columns;
+* CSS Counters;
+* Replaced bullets with pseudo-elements;
+* Class composition;
+* Inline SVG…
 
 ## Things I noticed
 

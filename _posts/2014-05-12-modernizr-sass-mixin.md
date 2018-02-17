@@ -44,9 +44,9 @@ Sass allows selectors and rules to be [nested](http://sass-lang.com/documentatio
 ```scss
 .my-selector {
   .cssgradients & {
-    background-image: linear-gradient(to bottom, #fff, #000);   
+    background-image: linear-gradient(to bottom, #fff, #000);
   }
-        
+
   .no-js &,
   .no-cssgradients & {
     background-image: url('gradient.png');
@@ -56,7 +56,7 @@ Sass allows selectors and rules to be [nested](http://sass-lang.com/documentatio
 ```
 
 ## Even better with a mixin
-    
+
 > Easy? Yep and Nope.
 
 Having written a lot of selectors and rules like the above, I got a bit tired of that code. It's not a complicated code at all, but it's a bit messy, it isn't that easy to read and maintain and I tend to forget to add the `.no-js &` bit. So I thought a couple of mixins would do the job.
@@ -68,22 +68,22 @@ One mixin would write the rule-set for available features. I called it `yep`. Th
   @include yep(cssgradients) {
     // ...
   }
-        
+
   @include nope(cssgradients) {
     // ...
   }
 }
 ```
-    
+
 That's extremely easy, I thought. This is all the code we actually need to make those two mixins work:
 
 ```scss
 @mixin yep($feature) {
-  .#{$feature} & { 
+  .#{$feature} & {
     @content;
   }
 }
-    
+
 @mixin nope($feature) {
   .no-js &,
   .no-#{$feature} & {
@@ -94,7 +94,7 @@ That's extremely easy, I thought. This is all the code we actually need to make 
 
 ## Multiple features at once
 
-Ouch! What if we need to test for multiple features at the same time? 
+Ouch! What if we need to test for multiple features at the same time?
 
 It isn't as straightforward as I first thought. The `yep` mixin should not produce the same kind of selectors as the `nope` mixin. Take this example: we want to test for `csstransforms` **and** `opacity` and declare a specific rule-set. But if one of those features isn't supported, we need to fall back on another rule-set.
 
@@ -104,19 +104,19 @@ This is the compiled CSS we are looking for:
 .csstransforms.opacity .my-selector {
   // ...
 }
-    
+
 .no-js .my-selector,
 .no-csstransforms .my-selector,
 .no-opacity .my-selector {
   // ...
 }
 ```
-    
+
 One thing I strived for was to keep the code as DRY as possible using some of the newness in Sass 3.3. As I worked through the logic I found that a single mixin could handle both cases.
 
 ## Aliases
 
-I created a main `modernizr` mixin to handle both situations. You won't use it directly on your Sass stylesheet, but it's used internally by `yep` and `nope`.  In fact, `yep` and `nope`  are merely aliases of this more complex mixin. They only do one thing: call the `modernizr` mixin with the set of features you're passing, and set a `$supports` variable you won't need to remember. 
+I created a main `modernizr` mixin to handle both situations. You won't use it directly on your Sass stylesheet, but it's used internally by `yep` and `nope`. In fact, `yep` and `nope` are merely aliases of this more complex mixin. They only do one thing: call the `modernizr` mixin with the set of features you're passing, and set a `$supports` variable you won't need to remember.
 
 That's it, they're meant to be easier to remember because they require only one parameter: `$features...`, faster to write because they are shorter and make the whole thing extremely easy to read because you instantly know what the intention of the code is.
 
@@ -145,7 +145,7 @@ The `modernizr` mixin expects two arguments: `$features` which is our `argList`,
   // Sass magic
 }
 ```
-    
+
 Inside the mixin I set three variables to handle everything we need to generate.
 
 ### The prefix
@@ -163,7 +163,7 @@ To generate our feature selector (e.g. `.opacity.csstransforms` or `.no-opacity,
 ```scss
 $selector: if($supports, '', unquote('.no-js'));
 ```
-    
+
 ### The placeholder
 
 You'll see that all the magic that handles this thing is done by a placeholder. We'll need to give it a name that will look something like `%yep-feature` or `%nope-feature`.
@@ -185,7 +185,7 @@ Now it's time to create our feature selectors and our placeholder names. We'll l
   // ...
 }
 ```
-    
+
 Within that loop we just need three lines of code. They're a bit heavy, but what they accomplish is quite simple:
 
 ### Generate our placeholder name
@@ -200,7 +200,11 @@ The resulting `$placeholder` variables will look something like `%yep-opacity-cs
 
 ```scss
 $new-selector: #{'.' + $prefix + $feature};
-$selector: if($supports, $selector + $new-selector, append($selector, $new-selector, comma));
+$selector: if(
+  $supports,
+  $selector + $new-selector,
+  append($selector, $new-selector, comma)
+);
 ```
 
 `$new-selector` will look something like `.csstransforms` or `.no-csstransforms`. We then concatenate `$new-selector` or append it to the list (e.g. `.opacity.csstransforms` or `.no-opacity, .no-csstransforms`).
@@ -231,21 +235,22 @@ It's time to write our placeholder. We use [Sass interpolation](http://sass-lang
 
 ### Extending with @at-root
 
-Now we'll print our features `$selector`(s) and extend the placeholder. But, there's a little problem here, if we extend the placeholder as-is: 
+Now we'll print our features `$selector`(s) and extend the placeholder. But, there's a little problem here, if we extend the placeholder as-is:
 
 ```scss
 #{$selector} {
-  @extend #{$placeholder}; 
+  @extend #{$placeholder};
 }
 ```
 
 we'll get an unexpected CSS output:
-    
+
 ```scss
-.my-selector .opacity.csstransforms .my-selector { 
+.my-selector .opacity.csstransforms .my-selector {
   // ...
 }
 ```
+
 We need something to fix this. Sass 3.3's @at-root directive comes to the rescue:
 
 ```scss
@@ -254,12 +259,12 @@ We need something to fix this. Sass 3.3's @at-root directive comes to the rescue
 }
 ```
 
-Now our features selector isn't placed  before the actual selector because `@at-root` cancels the selector nesting.
+Now our features selector isn't placed before the actual selector because `@at-root` cancels the selector nesting.
 
 ## Error handling
 
 ```scss
-@if type-of($feature) != "string" {
+@if type-of($feature) != 'string' {
   $everything-okay: false;
   @warn '`#{$feature}` is not a string for `modernizr`';
 } @else {
@@ -267,9 +272,9 @@ Now our features selector isn't placed  before the actual selector because `@at-
 }
 ```
 
-Within the previous loop we'll also check if every `$feature` is a `string`. As Hugo Giraudel explains in his [introduction to error handling in Sass](http://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996) we shouldn't let the Sass compiler fail and punch us in the face with an error. That's why we should prevent things like `10px` or even nested lists like `(opacity csstransforms), hsla`  to stop our stylesheet from successfully compiling.
+Within the previous loop we'll also check if every `$feature` is a `string`. As Hugo Giraudel explains in his [introduction to error handling in Sass](http://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996) we shouldn't let the Sass compiler fail and punch us in the face with an error. That's why we should prevent things like `10px` or even nested lists like `(opacity csstransforms), hsla` to stop our stylesheet from successfully compiling.
 
-If a wrong parameter is passed, the compilation won't fail, but nothing will be generated and you'll be warned of the problem. 
+If a wrong parameter is passed, the compilation won't fail, but nothing will be generated and you'll be warned of the problem.
 
 If `$everything-okay` is still `true` after we iterate through the list of features, we're ready to generate the output code.
 

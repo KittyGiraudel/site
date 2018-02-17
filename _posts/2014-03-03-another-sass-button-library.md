@@ -12,29 +12,30 @@ Anyway, I had a couple of minutes to kill the other day so I opened new [pen](ht
 
 Anyway, I came up with some interesting things and Stuart suggested I wrote a little something about it so here we are.
 
-## Main principles 
+## Main principles
 
 My point was to create a base class and a couple of modifiers to be used along with the base class using the brand new `&--modifier` syntax. Then you can stack as many modifiers as you want as long as they don't conflict with each others (multiple color schemes for instance).
 
 Also the code should be DRY and the CSS output well optimized. As light as it can be! And last but not least, the most important pieces of configuration should be handled with a couple of variables to avoid digging into the code.
 
-## Configuration 
+## Configuration
 
 Let's start with the configuration, shall we?
 
 ```scss
 // Configuration
-$btn-name:  'button' !default;
+$btn-name: 'button' !default;
 $btn-size-ratio: 1.2 !default;
-$btn-hover:  saturate 25% !default;
-$btn-border: darken   20% !default;
+$btn-hover: saturate 25% !default;
+$btn-border: darken 20% !default;
 $btn-background: (
-  'default': #565656,
-  'success': #468847,
-  'danger':  #b94a48,
-  'warning': #c09853,
-  'info':    #3a87ad
-) !default;
+    'default': #565656,
+    'success': #468847,
+    'danger': #b94a48,
+    'warning': #c09853,
+    'info': #3a87ad
+  )
+  !default;
 ```
 
 <figure class="figure">
@@ -55,20 +56,19 @@ Also note the 2 measures we take to avoid conflicts with user's code:
 * the `!default` flag for each variable,
 * namespacing all variables with `$btn-`
 
-
-## The module 
+## The module
 
 ```scss
 .#{$btn-name} {
   // Default styles
-  padding: .5em;
+  padding: 0.5em;
   margin-bottom: 1em;
   color: #fff;
 
   // Some sex appeal!
-  transition: background .15s;
-  border-radius: .15em;
-  box-shadow: inset 0 1px rgba(255, 255, 255, .15);
+  transition: background 0.15s;
+  border-radius: 0.15em;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
 
   // Border or not border?
   border: if($btn-border, 1px solid, none);
@@ -110,7 +110,7 @@ You can see we make the border conditional thanks to the ternary `if()` function
 
 Regarding color schemes, we simply loop through the `$btn-background` map, and call a `button-color` mixin passing the color as unique argument. Elegant.
 
-## The color mixin 
+## The color mixin
 
 The `button-color` mixin aims at dealing with color schemes. We have set up quite a few color schemes in the `$btn-background` map over which we've iterated to apply those color to the classes they belong to.
 
@@ -153,24 +153,21 @@ So we should probably make a couple of checks to make sure everything's right be
 
   // Making sure $btn-hover and $btn-border
   // are 2 items long
-  @if length($btn-hover)  != 2
-   or length($btn-border) != 2 {
+  @if length($btn-hover) != 2 or length($btn-border) != 2 {
     @warn "Both `$btn-hover` and `$btn-border` should be two items long for `button-color`.";
     $everything-okay: false;
   }
 
   // Making sure first items from $btn-hover and $btn-border
   // are valid functions
-  @if not function-exists(nth($btn-hover, 1))
-   or not function-exists(nth($btn-border, 1)) {
+  @if not function-exists(nth($btn-hover, 1)) or not function-exists(nth($btn-border, 1)) {
     @warn "Either `#{nth($btn-hover, 1)}` or `#{nth($btn-border, 1)}` is not a valid function for `button-color`.";
     $everything-okay: false;
   }
 
   // Making sure second items from $btn-hover and $btn-border
   // are percentages
-  @if type-of(nth($btn-hover,  2)) != number
-   or type-of(nth($btn-border, 2)) != number {
+  @if type-of(nth($btn-hover,  2)) != number or type-of(nth($btn-border, 2)) != number {
     @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
     $everything-okay: false;
   }
@@ -188,9 +185,9 @@ Yes, it takes a decent amount of space. Yes, it makes the mixin longer. Yes, it'
 
 Note how we use the new `function-exists` from Sass 3.3 to make sure the functions set in `$btn-border` and `$btn-hover` variables actually exists. We could push the tests further by making sure it's one of `saturate`, `desaturate`, `darken`, `lighten`, `adjust-hue`, `grayscale`, `complement` or `invert` but I feel like we already do a pretty good job covering potential mistakes here.
 
-## Final thoughts 
+## Final thoughts
 
-The module is quite simple right now but I feel like it introduces a couple of often overlooked and/or new notions like `call`, `function-exists`, `@warn`, `map`, BEM 3.3... 
+The module is quite simple right now but I feel like it introduces a couple of often overlooked and/or new notions like `call`, `function-exists`, `@warn`, `map`, BEM 3.3...
 
 You can have a look at the final code here:
 

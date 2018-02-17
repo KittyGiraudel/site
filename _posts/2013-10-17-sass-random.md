@@ -14,7 +14,7 @@ According to the [issue](https://github.com/nex3/sass/issues/771) which started 
 
 Anyway, I saw this unique id thingie as an opportunity to have a random number with Sass. Why? I don't know. I leave this question to you. Maybe some day I'll find a usecase for a random number in CSS.
 
-*Note: the code in this article has not been tested at all since it requires some Sass 3.3 functions that are not implemented yet. This is more like a proof of concept.*
+_Note: the code in this article has not been tested at all since it requires some Sass 3.3 functions that are not implemented yet. This is more like a proof of concept._
 
 ## About `unique-id()`
 
@@ -45,29 +45,29 @@ My first attempt to get a random number from this string was to remove all alpha
 
 ```scss
 @function rand($digits: 16) {
-    /* Array of characters to remove */
-    $letters : a b c d e f u;
-    $result  : unquote("");
-    $string  : unique-id();
+  /* Array of characters to remove */
+  $letters: a b c d e f u;
+  $result: unquote('');
+  $string: unique-id();
 
-    /* For each character in the given string */
-    @for $i from 1 through str-length($string) {
-        /* Isolate character */
-        $character: str-slice($string, $i, $i + 1);
-        /* If not a letter */
-        @if index($character, $letters) == false {
-            /* Append it to $value */
-            $value: str-insert($result, $character, str-length($result) + 1);
-        }
+  /* For each character in the given string */
+  @for $i from 1 through str-length($string) {
+    /* Isolate character */
+    $character: str-slice($string, $i, $i + 1);
+    /* If not a letter */
+    @if index($character, $letters) == false {
+      /* Append it to $value */
+      $value: str-insert($result, $character, str-length($result) + 1);
     }
+  }
 
-    /* Deal with the number of digits asked */
-    @if $digits !== 0 and $digits < length($result) {
-      $result: str-slice($result, 1, $digits);
-    }
+  /* Deal with the number of digits asked */
+  @if $digits !== 0 and $digits < length($result) {
+    $result: str-slice($result, 1, $digits);
+  }
 
-    /* Return the result */
-    @return $result;
+  /* Return the result */
+  @return $result;
 }
 ```
 
@@ -76,12 +76,11 @@ I think the code is pretty much self-explanatory. I check each character individ
 And there we have a random number between 1 and 9999999999999999 (in case the 16 characters are 9).
 
 ```scss
-$number: rand();   /* Random between 1 and 9999999999999999 */
-$number: rand(1);  /* Random between 1 and 9 */
-$number: rand(4);  /* Random between 1 and 9999 */
-$number: rand(0);  /* Random between 1 and 9999999999999999 */
+$number: rand(); /* Random between 1 and 9999999999999999 */
+$number: rand(1); /* Random between 1 and 9 */
+$number: rand(4); /* Random between 1 and 9999 */
+$number: rand(0); /* Random between 1 and 9999999999999999 */
 $number: rand(-1); /* Random between 1 and 9999999999999999 */
-
 ```
 
 ## Random, the clean way
@@ -92,15 +91,15 @@ To put it simple, instead of stripping alpha characters, we take the alphanumeri
 
 ```scss
 @function rand($min: 0, $max: 100) {
-  $str : str-slice(unique-id(), 2);
-  $res : toInt($str, 16);
+  $str: str-slice(unique-id(), 2);
+  $res: toInt($str, 16);
   @return ($res % ($max - $min)) + $min;
 }
 ```
 
 The first line in the function core is the `unique-id()` function call. We immediately pass it into the `str-slice()` function to remove the very first character which is always a `u`.
 
-*Note: According to my tests, the min value used in both implementations of `unique-id()` is such that the second character of the returned string is always the same (`8` in base 16, `1` in base 36). Thus we may need to strip it too, like this `str-slice(unique-id(), 3)`.*
+_Note: According to my tests, the min value used in both implementations of `unique-id()` is such that the second character of the returned string is always the same (`8` in base 16, `1` in base 36). Thus we may need to strip it too, like this `str-slice(unique-id(), 3)`._
 
 The second line calls a `toInt()` function, passing it both the string (`$str`) and the base we want to convert the string from (not to). This is why I say we're ready for both implementations: we only have to change this `16` to `36` and everything should work like a charm.
 
@@ -108,14 +107,14 @@ Before going to the last line, let's have a look at the `toInt` function:
 
 ```scss
 @function toInt($str, $base: 10) {
-  $res   : 0;
-  $chars : charsFromBase($base);
+  $res: 0;
+  $chars: charsFromBase($base);
   @if $chars !== false {
-    $str   : if($base < 64, to-lower-case($str), $str);
+    $str: if($base < 64, to-lower-case($str), $str);
     @for $i from 1 through str-length($str) {
-      $char    : str-slice($str, $i, $i + 1);
-      $charVal : index($char, $chars) - 1;
-      $res     : $res + pow(length($base), str-length($str) - $i) * $charVal;
+      $char: str-slice($str, $i, $i + 1);
+      $charVal: index($char, $chars) - 1;
+      $res: $res + pow(length($base), str-length($str) - $i) * $charVal;
     }
     @return $res;
   }
@@ -132,7 +131,7 @@ The `pow()` function used to raise a value to an exponent is part of [Compass Ma
 ```scss
 @function pow($val, $pow) {
   $res: 1;
-  @while($pow > 0) {
+  @while ($pow > 0) {
     $res: $res * $val;
     $pow: $pow - 1;
   }
@@ -148,22 +147,28 @@ Regarding the `charsFromBase()` function, here is what it looks like:
 @function charsFromBase($base: 10) {
   /* Binary */
   @if $base == 2 {
-    @return 0 1;  }
+    @return 0 1;
+  }
   /* Octal */
   @if $base == 8 {
-    @return 0 1 2 3 4 5 6 7;  }
+    @return 0 1 2 3 4 5 6 7;
+  }
   /* Decimal */
   @if $base == 10 {
-    @return 0 1 2 3 4 5 6 7 8 9;  }
+    @return 0 1 2 3 4 5 6 7 8 9;
+  }
   /* Hexadecimal */
   @if $base == 16 {
-    @return 0 1 2 3 4 5 6 7 8 9 a b c d e f;  }
+    @return 0 1 2 3 4 5 6 7 8 9 a b c d e f;
+  }
   /* Base 36 */
   @if $base == 36 {
-    @return 0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x y z;  }
+    @return 0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x y z;
+  }
   /* Base 64 */
   @if $base == 64 {
-    @return A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 + /;  }
+    @return A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 + /;
+  }
   @return false;
 }
 ```

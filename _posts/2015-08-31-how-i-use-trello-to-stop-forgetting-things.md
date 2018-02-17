@@ -16,13 +16,13 @@ Therefore I started looking for a solution to work around this problem. I am not
 
 If I were to use Trello to manage my life, the first thing to do was opening a dedicated board, and creating relevant columns. I went with a 7-columns system:
 
-- A “House” column where I store everything that needs to be done in the flat;
-- A “People” column where lives everything related to friends, family and contacts;
-- A “Web” column to keep track of all that needs to be done about my open-source projects;
-- A “Twitter” column holding ideas for tweets and links to post, as I try to tweet meaningful content at specific moments in the day
-- An “Invoice” column to make sure I don’t forget to invoice some work at the end of the month;
-- A “Groceries” column where I write things I need to buy next time I go do the groceries so I stop coming home only to realize I forgot to buy milk;
-- A “Miscellaneous” column where I put anything that cannot fit in the 6 others, such as appointments.
+* A “House” column where I store everything that needs to be done in the flat;
+* A “People” column where lives everything related to friends, family and contacts;
+* A “Web” column to keep track of all that needs to be done about my open-source projects;
+* A “Twitter” column holding ideas for tweets and links to post, as I try to tweet meaningful content at specific moments in the day
+* An “Invoice” column to make sure I don’t forget to invoice some work at the end of the month;
+* A “Groceries” column where I write things I need to buy next time I go do the groceries so I stop coming home only to realize I forgot to buy milk;
+* A “Miscellaneous” column where I put anything that cannot fit in the 6 others, such as appointments.
 
 <figure class="figure">
   <img src="/assets/images/how-i-use-trello/trello-overview.png" alt="An overview of my Trello board" />
@@ -46,7 +46,7 @@ For time-boxed items, I use the “Due date” feature from Trello. The coupling
   <figcaption>One label per project in the Web column</figcaption>
 </figure>
 
-As my *Web* column usually contains a large number of cards, I like to use labels to filter them. By having one colour (label) per project, it gets easier to spot which projects need extra attention. Another use of labels could be to adopt a more *Scrum-y* approach, with only 3 columns: *To do*, *Doing* and *Done*, and then use colors to replace my current category-based column setup. You’d have a label for Web, a label for People, a label for Twitter and so on. Although given the boolean state (done or not done) of most items and the fact that we don’t care about an item once done, I don’t feel like this Agile approach would suit me well.
+As my _Web_ column usually contains a large number of cards, I like to use labels to filter them. By having one colour (label) per project, it gets easier to spot which projects need extra attention. Another use of labels could be to adopt a more _Scrum-y_ approach, with only 3 columns: _To do_, _Doing_ and _Done_, and then use colors to replace my current category-based column setup. You’d have a label for Web, a label for People, a label for Twitter and so on. Although given the boolean state (done or not done) of most items and the fact that we don’t care about an item once done, I don’t feel like this Agile approach would suit me well.
 
 One good thing from Trello is also the ability to re-order cards in a column which can come in handy for prioritizing. I usually put important cards at the top (such as time-boxed ones) and cards with low priority at the very bottom. It then gets super easy to visualise important items by scanning the top cards of each column.
 

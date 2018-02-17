@@ -8,15 +8,14 @@ tags:
 
 > **Edit (2015/06/06)**: One year later, I know think it's better not to have a mixin for this. Less Sass, more native CSS.
 
+About a year ago, I wrote about how I managed to come up with what I think is [a clever Sass mixin to deal with offset positioning](http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/) in CSS, also known as `top`, `right`, `bottom` and `left`.
 
-About a year ago, I wrote about how I managed to come up with what I think is [a clever Sass mixin to deal with offset positioning](http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/) in CSS, also known as `top`, `right`, `bottom` and `left`. 
-
-The mixin was directly inspired from [Nib](https://github.com/visionmedia/nib), [Stylus](http://learnboost.github.io/stylus/)' most popular framework. The idea is to be able to declare all desired offsets in a single declaration rather than having to write multiple CSS properties. 
+The mixin was directly inspired from [Nib](https://github.com/visionmedia/nib), [Stylus](http://learnboost.github.io/stylus/)' most popular framework. The idea is to be able to declare all desired offsets in a single declaration rather than having to write multiple CSS properties.
 
 ```scss
 // Stylus syntax
 selector {
-  absolute: top 1em right 100%
+  absolute: top 1em right 100%;
 }
 ```
 
@@ -24,11 +23,10 @@ When looking back at Nib's documentation a couple of weeks ago, I noticed there 
 
 Unfortunately, Sass in its SCSS syntax doesn't provide as much abstraction as Stylus does, so we still have to use some extra characters, especially `@include`, parenthesis, colons and semi-colons... That being said, the result is quite good in my opinion.
 
-
 ```scss
 // SCSS
 selector {
-  @include absolute(top 1em right 100%)
+  @include absolute(top 1em right 100%);
 }
 ```
 
@@ -40,7 +38,6 @@ Case 1. **The offset has not been found in the list.** Obviously, we stop there 
 
 Case 2. **The offset has been found at the last index of list.** We output it to `0`.
 
-
 ```scss
 // SCSS
 @include absolute(top);
@@ -51,7 +48,6 @@ top: 0;
 ```
 
 Case 3. **The offset has been found and the next item is another offset.** We output it to `0`.
-
 
 ```scss
 // SCSS
@@ -65,17 +61,15 @@ left: 0;
 
 Case 4. **The offset has been found and the next item is invalid.** An invalid value could be a string other than `auto`, `initial` and `inherit`, or any value that is not a number, or a unitless number. In any case, we do not output the offset.
 
-
 ```scss
 // SCSS
-@include absolute(top "string");
+@include absolute(top 'string');
 
 // CSS
 position: absolute;
 ```
 
 Case 5. **The offset has been found and the next item is valid.** Of course then, we output the offset with the next item as a value.
-
 
 ```scss
 // SCSS
@@ -92,7 +86,6 @@ So if we sum up:
 * if offset exist as last item or offset is followed by another offset, we output it to `0`
 * if offset exist and is followed by valid value, we output it to the value
 
-
 ## Starting with the helper
 
 As you may have understood from what we have just seen, we will need to determine if the value directly following the offset is a valid value for an offset property (`top`, `right`, `bottom` or `left`). Nothing better than a little function to do that.
@@ -107,23 +100,21 @@ Should be considered as a valid length:
 
 ```scss
 @function is-valid-length($value) {
-  @return (type-of($value) == "number" and not unitless($value)) 
-       or (index(auto initial inherit 0, $value) != false);
+  @return (type-of($value) == 'number' and not unitless($value)) or (index(auto initial inherit 0, $value) != false);
 }
 ```
 
-The function is as simple as that. First we check if it's a number with a unit. If it is not, we check whether it is an allowed value. If it is not again, then it is not a valid length for an offset property. 
+The function is as simple as that. First we check if it's a number with a unit. If it is not, we check whether it is an allowed value. If it is not again, then it is not a valid length for an offset property.
 
 ## Building the mixin
 
-Now that we have our helper function and all our use-cases, it is time to move on to the mixin. 
-
+Now that we have our helper function and all our use-cases, it is time to move on to the mixin.
 
 ```scss
 @mixin position($position, $args: ()) {
   $offsets: top right bottom left;
   position: $position;
-  
+
   @each $offset in $offsets {
     // Doing the magic trick
   }
@@ -138,7 +129,6 @@ $index: index($args, $offset);
 
 // If offset is found in the list
 @if $index {
-
   // If it is found at last position
   @if $index == length($args) {
     #{$offset}: 0;
@@ -172,11 +162,11 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 @mixin absolute($args: ()) {
   @include position(absolute, $args);
 }
- 
+
 @mixin fixed($args: ()) {
   @include position(fixed, $args);
 }
- 
+
 @mixin relative($args: ()) {
   @include position(relative, $args);
 }
@@ -184,10 +174,9 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ## Examples
 
-
 ```scss
-.a { 
-  @include absolute()
+.a {
+  @include absolute();
 }
 
 .a {
@@ -197,7 +186,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .b {
-  @include absolute(top)
+  @include absolute(top);
 }
 
 .b {
@@ -208,7 +197,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .c {
-  @include absolute(top right)
+  @include absolute(top right);
 }
 
 .c {
@@ -220,7 +209,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .d {
-  @include absolute(top right bottom)
+  @include absolute(top right bottom);
 }
 
 .d {
@@ -233,7 +222,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .e {
-  @include absolute(top right bottom left)
+  @include absolute(top right bottom left);
 }
 
 .e {
@@ -247,7 +236,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .f {
-  @include absolute(top right 1em)
+  @include absolute(top right 1em);
 }
 
 .f {
@@ -259,7 +248,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .g {
-  @include absolute(top 1em right)
+  @include absolute(top 1em right);
 }
 
 .g {
@@ -271,7 +260,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .h {
-  @include absolute(top 1em right 100%)
+  @include absolute(top 1em right 100%);
 }
 
 .h {
@@ -283,7 +272,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .i {
-  @include absolute(top right mistake)
+  @include absolute(top right mistake);
 }
 
 .i {
@@ -294,7 +283,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .j {
-  @include absolute(top 1em right 1em bottom 1em left 1em)
+  @include absolute(top 1em right 1em bottom 1em left 1em);
 }
 
 .j {

@@ -8,7 +8,7 @@ tags:
 
 > **Edit (2015/01/07):** over 20000 visits on [Sass Guidelines](http://sass-guidelin.es) during the last 24 hours. Thank you so much for your support!
 
-I don't know why I did not think of writing Sass guidelines when [Harry Roberts](http://csswizardry.com) first released his [CSS Guidelines](http://cssguidelin.es) a couple of months back. Anyway, on saturday evening I had a *eureka moment*:
+I don't know why I did not think of writing Sass guidelines when [Harry Roberts](http://csswizardry.com) first released his [CSS Guidelines](http://cssguidelin.es) a couple of months back. Anyway, on saturday evening I had a _eureka moment_:
 
 > I SHOULD WRITE SASS GUIDELINES!  
 > &mdash; Me, in the shower.
@@ -20,7 +20,7 @@ After two days working on them, I am very proud and excited to release a 10000 w
 
 ## What is that?
 
-I think we have been on a need for Sass guidelines for months now. Here is my shot at it. However note that this document is very opinionated. This is *a* styleguide, *the* styleguide.
+I think we have been on a need for Sass guidelines for months now. Here is my shot at it. However note that this document is very opinionated. This is _a_ styleguide, _the_ styleguide.
 
 ![Sass Guidelines](/assets/images/introducing-sass-guidelines/preview.png)
 
@@ -30,7 +30,7 @@ In it, I tackle almost all aspects of the Sass language: colors, strings, nestin
 
 I worked like crazy for two days to have a first version that is good enough to be released. I think I nailed it. Now, we can always improve things. For instance, some people have been complaining about the use of double quotes, which seem to be a pain to type on an american keyboard. Fair enough. I opened a [pull request](https://github.com/HugoGiraudel/sass-guidelines/pull/27) to move to simple quotes instead.
 
-Similarly, there is [Ian Carrico](https://github.com/iamcarrico) who seems a bit upset by my agressive *no `@extend`* rule. While this is an opinionated document, I feel like I can still round up the edges and make things a little better for everybody so I need to rewrite the section about extending selectors.
+Similarly, there is [Ian Carrico](https://github.com/iamcarrico) who seems a bit upset by my agressive _no `@extend`_ rule. While this is an opinionated document, I feel like I can still round up the edges and make things a little better for everybody so I need to rewrite the section about extending selectors.
 
 Also, and I need your help with this, for such a styleguide to make sense, it has to get popular. It has already received some good vibes yesterday thanks to all your tweets (especially [CSS-Tricks](https://twitter.com/real_css_tricks) and [Smashing Magazine](https://twitter.com/smashingmagazine), let's be honest).
 

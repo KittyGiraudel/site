@@ -24,7 +24,7 @@ At N26, I had the luck to start fresh. We had an empty code-base and a platform 
 
 For the first few months, we never mentioned accessibility in plannings, and Just Did It™. We made our interfaces as inclusive as possible. We tried our best to accomodate to different usages of the web (devices, possible handicaps, sizes…). During review, we would usually point out how we made this component or user interface robust for different scenarios, including for people with disabilities.
 
-This is how we slowly implemented in everyone’s mind —including our product owner— that web accessibility doesn’t have too be hard or longer to implement. We could just do it as we do everything else provided we’d consider it from the ground up. And this is how we made it a non-functional requirement. In systems engineering, a non-functional requirement (or NFR for short) is a criterion that describes how a system should *be* (rather than what it should *do*). Practically speaking, it means we now have to make things accessible for them to be considered done: accessibility is part of our baseline for quality.
+This is how we slowly implemented in everyone’s mind —including our product owner— that web accessibility doesn’t have too be hard or longer to implement. We could just do it as we do everything else provided we’d consider it from the ground up. And this is how we made it a non-functional requirement. In systems engineering, a non-functional requirement (or NFR for short) is a criterion that describes how a system should _be_ (rather than what it should _do_). Practically speaking, it means we now have to make things accessible for them to be considered done: accessibility is part of our baseline for quality.
 
 ## Preventing mistakes early
 
@@ -34,7 +34,7 @@ The good thing about this, is that mistakes are easily prevented with proper too
 
 ### Linting
 
-The new N26 web platform is an isomorphic React application. One of the cool things about this is that everything is written on JavaScript (don’t quote me on this statement). Including our markup, which is authored using JSX. JSX is an extension of JavaScript used to represent HTML structure in a declarative way. The reason I mention JSX is because since it’s JavaScript (even though eventually compiled), it can be linted with ESLint. And the nice thing about this, is because there is an ESLint plugin called [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y). 
+The new N26 web platform is an isomorphic React application. One of the cool things about this is that everything is written on JavaScript (don’t quote me on this statement). Including our markup, which is authored using JSX. JSX is an extension of JavaScript used to represent HTML structure in a declarative way. The reason I mention JSX is because since it’s JavaScript (even though eventually compiled), it can be linted with ESLint. And the nice thing about this, is because there is an ESLint plugin called [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y).
 
 This plugin does static evaluation of the JSX to look for possible accessibility issues. Because it is fully static (which means it does not operate in a runtime environment, such as a browser), its effectiveness is limited. But it can help catching early mistakes such as missing alternative content for images, lack of label for fields or possible broken or inexisting keyboard support.
 
@@ -69,7 +69,7 @@ This developer tool helper does not prevent us from making mistakes of course, b
 
 The bigger the code base, the more developers contribute to it, and the higher are the chances that someone makes a mistake, causing a user experience to be sub-optimal at best, unusable at worst. This will happen, that’s alright. Still there are things we can do to prevent that.
 
-Like often in software development, the idea is to do things once correctly so they don’t have to be done again (with the increasingly likely possibility of them being done wrong). 
+Like often in software development, the idea is to do things once correctly so they don’t have to be done again (with the increasingly likely possibility of them being done wrong).
 
 Consider an a11y 101 rule: all form fields should have an associated label, even though visually hidden. In order to make sure never to forget it, you write a thin layer around the `<input>` element which accepts a label and renders it. In React for instance:
 
@@ -90,7 +90,7 @@ Input.propTypes = {
 }
 ```
 
-This way, the label is required to render an `Input` component, making sure never to introduce an unlabelled form field. Then, you could add a prop to [make the label correctly invisible to assistive technologies](https://hugogiraudel.com/2016/10/13/css-hide-and-seek/) so that no developer has to write it by hand, risking doing something incorrect such as `display: none`. 
+This way, the label is required to render an `Input` component, making sure never to introduce an unlabelled form field. Then, you could add a prop to [make the label correctly invisible to assistive technologies](https://hugogiraudel.com/2016/10/13/css-hide-and-seek/) so that no developer has to write it by hand, risking doing something incorrect such as `display: none`.
 
 The general idea is to make sure all accessibility related considerations don’t have to be repeated and are implicitly embedded in the development process. Again, this obviously won’t prevent all mistakes from happening, but over time it will dramatically reduce the number of flagged issues.
 
@@ -121,7 +121,7 @@ We also have a Markdown document on accessibility. It contains a definition of t
 
 ## Testing what’s testable
 
-Accessibility is not something trivial to test. Fortunately, some brilliant people with their heart in the right place built tooling around it, such as aXe for instance. A fantastic tool to automate accessibility testing is [pa11y](https://github.com/pa11y/pa11y). 
+Accessibility is not something trivial to test. Fortunately, some brilliant people with their heart in the right place built tooling around it, such as aXe for instance. A fantastic tool to automate accessibility testing is [pa11y](https://github.com/pa11y/pa11y).
 
 Pa11y is a Node / CLI utility running HTML Code Sniffer (a library to analyse HTML code) in a headless browser (Phantom in v4, Puppeteer in v5). Like aXe, it embeds the rules from accessibility standards, and test them against given URLs. From their, it gives an extensive report with hints on how to fix.
 
@@ -139,13 +139,13 @@ In the future, we might be able to access the Accessibility Object Model (or AOM
 
 As Heydon Pickering says, accessibility is not about doing more work but doing the work correctly. And it’s never truely finished. It’s something we should keep doing all the time to make our products accessible to the many.
 
-This is hard to do. It requires expertise, and often seems like an ideal beyond reach. I hope this write-up helped you find ways to introduce an accessibility mindset to your team. 
+This is hard to do. It requires expertise, and often seems like an ideal beyond reach. I hope this write-up helped you find ways to introduce an accessibility mindset to your team.
 
 If we sum up:
 
-- Make sure everybody is on the same page, from the product owner to the designers to the development team. It becomes much easier to implement things correctly when everybody is aware of the constraints and implications.
-- Set up linting and developer tools to help you prevent mistakes, as early as possible in the development process. You should not catch a missing `alt` attribute or `label` element when deploying to production.
-- Build a culture around accessibility. Involve everyone in your team. Make people ask questions. Document everything related to the topic. Share knowledge as much as possible. One shall not own all the expertise on a single topic.
-- Consider implementing test automation to catch problems before they impact your users. It might require a bit of infrastructure to get started, but once set up, it just works.
+* Make sure everybody is on the same page, from the product owner to the designers to the development team. It becomes much easier to implement things correctly when everybody is aware of the constraints and implications.
+* Set up linting and developer tools to help you prevent mistakes, as early as possible in the development process. You should not catch a missing `alt` attribute or `label` element when deploying to production.
+* Build a culture around accessibility. Involve everyone in your team. Make people ask questions. Document everything related to the topic. Share knowledge as much as possible. One shall not own all the expertise on a single topic.
+* Consider implementing test automation to catch problems before they impact your users. It might require a bit of infrastructure to get started, but once set up, it just works.
 
 Thanks for doing the Right Thing™ and happy coding!

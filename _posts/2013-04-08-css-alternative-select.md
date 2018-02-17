@@ -22,13 +22,13 @@ Now don't get me wrong, the author at Pepsized did a wonderful job on this artic
 The major concern here is **accessibility**. The default `<select>` element is completely usable either with a mouse or a keyboard, following this process:
 
 1. Mouse: move your cursor over the `<select>` element  
-	Keyboard: use the tab key to focus the `<select>` element
+   Keyboard: use the tab key to focus the `<select>` element
 1. Mouse: click on the `<select>` element  
-	Keyboard: press enter
+   Keyboard: press enter
 1. Mouse: move your cursor over the desired option  
-	Keyboard: use the top and bottom arrow keys to pick an option
+   Keyboard: use the top and bottom arrow keys to pick an option
 1. Mouse: click on the desired option  
-	Keyboard: press enter
+   Keyboard: press enter
 
 While making a pure CSS dropdown easily usable with the mouse can be done by pretty much any one with some CSS knowledge, making it usable with keyboard navigation is a whole other story.
 
@@ -54,7 +54,7 @@ Fine. Now let's do this with CSS only. Uh-ho, not possible. If you're clever eno
 
 > You end up using multiple form elements not to use a form element.
 
-Let's say you don't mind the extra-processing that comes with the multiple radio buttons compared to the regular `<select>` element... 
+Let's say you don't mind the extra-processing that comes with the multiple radio buttons compared to the regular `<select>` element...
 
 ## Native options
 

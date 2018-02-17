@@ -9,7 +9,7 @@ tags:
 
 > **Edit (2014/11/16):** more functional programming to be found [here](http://sassmeister.com/gist/c36be3440dc2b5ae9ba2).
 
-In the last couple of weeks, I have done some decent amount of code reviewing for various Sass frameworks and I have seen quite  clever things. Meanwhile, I keep experimenting with Sass to find cool stuff, and I think this one will get frameworks' maintainers interested.
+In the last couple of weeks, I have done some decent amount of code reviewing for various Sass frameworks and I have seen quite clever things. Meanwhile, I keep experimenting with Sass to find cool stuff, and I think this one will get frameworks' maintainers interested.
 
 To please [Joey Hoer's request for SassyLists](https://github.com/Team-Sass/SassyLists/issues/24), I have built a little `walk` function. The idea is the same as for the `array_walk` function from PHP if you're familiar.
 

@@ -8,7 +8,7 @@ tags:
 
 > **Edit (2015/06/06)**: this is an experiment, please don't use this code in production.
 
-Yesterday I released [Getting the most out of Sass placeholders](http://hugogiraudel.com/2014/03/31/getting-the-most-out-of-sass-placeholders/), where I explained how I came up with a little technique to work around the fact `@extend` doesn't work whenever you're in a `@media` block. 
+Yesterday I released [Getting the most out of Sass placeholders](http://hugogiraudel.com/2014/03/31/getting-the-most-out-of-sass-placeholders/), where I explained how I came up with a little technique to work around the fact `@extend` doesn't work whenever you're in a `@media` block.
 
 The trick was to wrap the placeholder extension in a mixin. This mixin accepts a single boolean, defining if it should extend the placeholder or include the mixin's content as a regular mixin would do. Here is a short example:
 
@@ -16,8 +16,7 @@ The trick was to wrap the placeholder extension in a mixin. This mixin accepts a
 @mixin clearfix($extend: true) {
   @if $extend {
     @extend %clearfix;
-  }
-  @else {
+  } @else {
     overflow: hidden;
   }
 }
@@ -29,7 +28,7 @@ The trick was to wrap the placeholder extension in a mixin. This mixin accepts a
 
 For more informations about this technique and to understand this post, I suggest you read the article. Don't worry, I'll be there. I'll wait, go ahead.
 
-## Pushing things further 
+## Pushing things further
 
 All good? Fine. This morning, [Matt Stow](https://twitter.com/stowball/status/450917879047651328) suggested a new version where we wouldn't have to create a mixin for every placeholder we want to have. Instead, we would have a single mixin &mdash; let's call it `extend()` &mdash; asking for a placeholder's name, and extending it or including the mixin's content as we did yesterday.
 
@@ -39,12 +38,10 @@ You can fin [Matt's demo on SassMeister](http://sassmeister.com/gist/9910272). I
 @mixin extend($placeholder, $extend: true) {
   @if $extend {
     @extend %#{$placeholder};
-  }
-  @else {
+  } @else {
     @if $placeholder == clearfix {
       overflow: hidden;
-    }
-    @else if $placeholder == hide-text {
+    } @else if $placeholder == hide-text {
       overflow: hidden;
       text-indent: 100%;
       white-space: nowrap;
@@ -69,9 +66,9 @@ This technique is great if you want to reduce the number of mixins. Indeed, you 
 
 However it can quickly become very messy when you have a lot of placeholders to deal with. I can see the `extend()` mixin's core being dozens of lines long which is probably not a good idea. Also, I don't like having a lot of conditional statements, especially since [Sass doesn't and won't ever provide a `@switch` directive](https://github.com/nex3/sass/issues/554).
 
-## Improving the improved version 
+## Improving the improved version
 
-That being said, I liked Matt's idea so I tried to push things even further! To prevent from having a succession of conditional directives, we need a loop. And to use a loop, we need either a list or a map. 
+That being said, I liked Matt's idea so I tried to push things even further! To prevent from having a succession of conditional directives, we need a loop. And to use a loop, we need either a list or a map.
 
 What's cool with CSS declarations is they look like keys/values from a map. I think you can see where this is going.
 
@@ -79,14 +76,8 @@ My idea was to move all the mixin's core to a configuration map so it only deals
 
 ```scss
 $placeholders-map: (
-  clearfix: (
-    overflow: hidden
-  ),
-  hide-text: (
-    overflow: hidden,
-    text-indent: 100%,
-    white-space: nowrap
-  )
+  clearfix: (overflow: hidden),
+  hide-text: (overflow: hidden, text-indent: 100%, white-space: nowrap)
 );
 ```
 
@@ -97,19 +88,19 @@ Now that we have a map to loop through, we can slightly rethink Matt's work:
 ```scss
 @mixin extend($placeholder, $extend: true) {
   $content: map-get($placeholders-map, $placeholder);
-  
-  // If the key doesn't exist in map, 
+
+  // If the key doesn't exist in map,
   // Do nothing and warn the user
   @if $content == null {
     @warn "`#{$class}` doesn't exist in $extend-map.";
   }
-  
+
   // If $extend is set to true (most cases)
   // Extend the placeholder
   @else if $extend == true {
-     @extend %#{$placeholder};
+    @extend %#{$placeholder};
   }
-  
+
   // If $extend is set to false
   // Include placeholder's content directly
   @else {
@@ -132,7 +123,7 @@ Last but not least, let's not forget to create our Sass placeholders! And this i
 ```scss
 // Looping through `$placeholders-map`
 // Instanciating a placeholder everytime
-// With $extend set to false so it dumps 
+// With $extend set to false so it dumps
 // mixin's core in the placeholder's content
 @each $placeholder, $content in $placeholders-map {
   %#{$placeholder} {
@@ -143,7 +134,7 @@ Last but not least, let's not forget to create our Sass placeholders! And this i
 
 Done.
 
-## Final thoughts 
+## Final thoughts
 
 You can have a look at the fully commented code [here on SassMeister](http://sassmeister.com/gist/9910527):
 

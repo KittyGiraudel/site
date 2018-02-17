@@ -21,7 +21,7 @@ Unfortunately it’s not without issue anymore.
 
 The “magic trick” of this solution relies on the `clip` property. It’s simple to understand and very efficient. Only downside: `clip` has been deprecated by the [CSS Masking Level 1 module](https://www.w3.org/TR/css-masking-1/).
 
-No worries. This technique being quite old now, there is no surprise it’s getting obsolete. The new specification recommends using `clip-path` to replace `clip`. Which is not ideal, because [`clip-path` support is still so-so](http://caniuse.com/#feat=css-clip-path). Thus we have to keep `clip` *and* add `clip-path` as progressive enhancement.
+No worries. This technique being quite old now, there is no surprise it’s getting obsolete. The new specification recommends using `clip-path` to replace `clip`. Which is not ideal, because [`clip-path` support is still so-so](http://caniuse.com/#feat=css-clip-path). Thus we have to keep `clip` _and_ add `clip-path` as progressive enhancement.
 
 That being said, the syntax is different. After a bit of research, [Yvain Liechti suggested this short version](https://twitter.com/ryuran78/status/778943389819604992) to get the expected result:
 
@@ -33,7 +33,7 @@ Problem solved.
 
 ## Shrinked text
 
-[J. Renée Beach warned](https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe) about the `width: 1px` declaration having side effects on text rendering and therefore on its vocalisation by screen readers. 
+[J. Renée Beach warned](https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe) about the `width: 1px` declaration having side effects on text rendering and therefore on its vocalisation by screen readers.
 
 The suggested solution is both simple and logical: preventing the text from wrapping so that spaces between words are preserved.
 
@@ -49,12 +49,12 @@ Problem solved again.
 
 Here is the final version I came up with:
 
-```css  
+```css
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
-          clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
   height: 1px !important;
   overflow: hidden !important;
   padding: 0 !important;
@@ -79,7 +79,7 @@ Here is the adapted version:
 .sr-only-focusable:active {
   clip: auto !important;
   -webkit-clip-path: none !important;
-          clip-path: none !important;
+  clip-path: none !important;
   height: auto !important;
   overflow: visible !important;
   width: auto !important;
@@ -88,7 +88,7 @@ Here is the adapted version:
 ```
 
 ## Go for it
-  
+
 You can find it [on CodePen](http://codepen.io/ffoodd/pen/gwKZyq?editors=1100#) or in [this Gist](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034). What do you think?
 
 ### Screen readers and touch devices (edit: 19/10/2016)
@@ -100,7 +100,7 @@ As we thought we discovered a real bug, I headed up to Bootstrap in order to ope
 * [Narrator](https://microsoftaccessibility.uservoice.com/forums/307429-microsoft-accessibility-feedback/suggestions/16717318-focusable-elements-should-fire-focus-event-recei), included in Windows 10 and Windows Phone;
 * [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=657157), impacting TalkBack on Android;
 * [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1000082) — this one was already opened, but also by Patrick Lauke recently;
-* and finally, [two](https://bugs.webkit.org/show_bug.cgi?id=116046 "First webkit bug") [bugs](https://bugs.webkit.org/show_bug.cgi?id=163658 "Second webkit bug") for Webkit, impacting VoiceOver.
+* and finally, [two](https://bugs.webkit.org/show_bug.cgi?id=116046 'First webkit bug') [bugs](https://bugs.webkit.org/show_bug.cgi?id=163658 'Second webkit bug') for Webkit, impacting VoiceOver.
 
 So. In fact, **skip links don’t work with screen readers on touch devices at the time of writing**. Nice.
 

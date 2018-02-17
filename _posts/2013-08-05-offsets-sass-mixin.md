@@ -25,7 +25,7 @@ What I always wanted to be able to is something like this:
 
 ```scss
 .element {
-	absolute: left 1em top 1.5em
+  absolute: left 1em top 1.5em;
 }
 ```
 
@@ -33,9 +33,9 @@ And this should output:
 
 ```scss
 .element {
-	position: absolute;
-	left: 1em;
-	top: 1.5em;
+  position: absolute;
+  left: 1em;
+  top: 1.5em;
 }
 ```
 
@@ -43,11 +43,11 @@ Unfortunately, we cannot do something like this in Sass and won't probably ever 
 
 ### The skeleton
 
-First, we will build the skeleton for our mixin. We seem to want to call our mixin with the keyword *absolute* so why not calling it `absolute`? And we pass it a list.
+First, we will build the skeleton for our mixin. We seem to want to call our mixin with the keyword _absolute_ so why not calling it `absolute`? And we pass it a list.
 
 ```scss
 @mixin absolute($args) {
-	/* Mixin stuff here */
+  /* Mixin stuff here */
 }
 ```
 
@@ -59,8 +59,8 @@ The first thing to do is to tell our mixin what are the keywords we want to chec
 
 ```scss
 @mixin absolute($args) {
-	$offsets: top right bottom left;
-	/* Order doesn't matter */
+  $offsets: top right bottom left;
+  /* Order doesn't matter */
 }
 ```
 
@@ -72,17 +72,15 @@ Now, we will loop through the offsets and make three verifications:
 
 ```scss
 @mixin absolute($args) {
-	$offsets: top right bottom left;
+  $offsets: top right bottom left;
 
-	@each $o in $offsets {
-		$i: index($args, $o);
+  @each $o in $offsets {
+    $i: index($args, $o);
 
-		@if $i
-		and $i + 1 <= length($args)
-		and type-of( nth($args, $i + 1) ) == number {
-			#{$o}: nth($args, $i + 1);
-		}
-	}
+    @if $i and $i + 1 <= length($args) and type-of( nth($args, $i + 1) ) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
 }
 ```
 
@@ -90,40 +88,36 @@ Okay, this might look quite complicated. Why don't we simply take it over with c
 
 ```scss
 @mixin absolute($args) {
-	/**
-	 * List of offsets to check for in $args
- 	 */
-	$offsets: top right bottom left;
+  /**
+  	 * List of offsets to check for in $args
+   	 */
+  $offsets: top right bottom left;
 
-	/**
-	 * We loop through $offsets to deal with them one by one
-	 */
-	@each $o in $offsets {
+  /**
+  	 * We loop through $offsets to deal with them one by one
+  	 */
+  @each $o in $offsets {
+    /**
+    		 * If current offset found in $args
+    		 * assigns its index to $i
+    		 * Or `false` if not found
+    		 */
+    $i: index($args, $o);
 
-		/**
-		 * If current offset found in $args
-		 * assigns its index to $i
-		 * Or `false` if not found
-		 */
-		$i: index($args, $o);
-
-		/**
-		 * Now we do the verifications
-		 * 1. Is the offset listed in $args? (not false)
-		 * 2. Is the offset value within the list range?
-		 * 3. Is the offset value valid?
-		 */
-		@if $i                                      /* 1 */
-		and $i + 1 <= length($args)                 /* 2 */
-		and type-of( nth($args, $i + 1) ) == number /* 3 */ {
-
-			/**
-			 * If everything is okay
-			 * We assign the according value to the current offset
-			 */
-			#{$o}: nth($args, $i + 1);
-		}
-	}
+    /**
+    		 * Now we do the verifications
+    		 * 1. Is the offset listed in $args? (not false)
+    		 * 2. Is the offset value within the list range?
+    		 * 3. Is the offset value valid?
+    		 */
+    @if $i and $i + 1 <= length($args) and type-of( nth($args, $i + 1) ) == number {
+      /**
+      			 * If everything is okay
+      			 * We assign the according value to the current offset
+      			 */
+      #{$o}: nth($args, $i + 1);
+    }
+  }
 }
 ```
 
@@ -133,14 +127,14 @@ I guess this is pretty clear now. Not quite hard in the end, is it?
 
 We now have to deal with `relative` and `fixed`. I guess we could duplicate the whole mixin 3 times and simple rename it but would it be the best solution? Definitely not.
 
-Why don't we create a *private mixin* instead? Something that isn't meant to be called and only helps us for our internal stuff. To do so, I renamed the mixin `position()` and overloaded it with another argument: the position type.
+Why don't we create a _private mixin_ instead? Something that isn't meant to be called and only helps us for our internal stuff. To do so, I renamed the mixin `position()` and overloaded it with another argument: the position type.
 
-*Note: you might want to rename it differently to avoid conflict with other mixins of your project. Indeed "position" is a quite common keyword.*
+_Note: you might want to rename it differently to avoid conflict with other mixins of your project. Indeed "position" is a quite common keyword._
 
 ```scss
 @mixin position($position, $args) {
-	/* Stuff we saw before */
-	position: $position;
+  /* Stuff we saw before */
+  position: $position;
 }
 ```
 
@@ -148,21 +142,21 @@ And now, we create the 3 mixins we need: `absolute()`, `fixed()` and `relative()
 
 ```scss
 @mixin absolute($args) {
-	@include position(absolute, $args);
+  @include position(absolute, $args);
 }
 
 @mixin fixed($args) {
-	@include position(fixed, $args);
+  @include position(fixed, $args);
 }
 
 @mixin relative($args) {
-	@include position(relative, $args);
+  @include position(relative, $args);
 }
 ```
 
 Almost done. To indicate `position()` is a private mixin, I wanted to prefix it with something. I first thought about `private-position()` but it didn't feel great. In the end I went with `_position()`. Since I use hyphens to separate words in CSS, the underscore was unused. No risk of conflicts with anything in a project!
 
-*Note: remember hyphens and underscores are treated the same way in Sass. It means `-position()` will work as well. This is meant to be: "hyphens or underscores" is only a matter of presentational preference.*
+_Note: remember hyphens and underscores are treated the same way in Sass. It means `-position()` will work as well. This is meant to be: "hyphens or underscores" is only a matter of presentational preference._
 
 ## Usage
 
@@ -170,7 +164,7 @@ Using this mixin is pretty simple:
 
 ```scss
 .element {
-	@include absolute(top 1em right 10%);
+  @include absolute(top 1em right 10%);
 }
 ```
 
@@ -178,9 +172,9 @@ Outputs:
 
 ```scss
 .element {
-	position: absolute;
-	top: 1em;
-	right: 10%;
+  position: absolute;
+  top: 1em;
+  right: 10%;
 }
 ```
 
@@ -188,7 +182,7 @@ Now, what if we try to do bad things like assigning no value to an offset, or an
 
 ```scss
 .element {
-	@include absolute(top 1em left "HAHAHA!" right 10% bottom);
+  @include absolute(top 1em left 'HAHAHA!' right 10% bottom);
 }
 ```
 
@@ -201,9 +195,9 @@ In this case:
 
 ```scss
 .element {
-	position: absolute;
-	top: 1em;
-	right: 10%;
+  position: absolute;
+  top: 1em;
+  right: 10%;
 }
 ```
 
@@ -217,13 +211,13 @@ Hopefully, some day we will see a shorter way to call mixins in Sass. Indeed, so
 
 ```scss
 abcd {
-	+efgh {
-		property: value;
-	}
+  + efgh {
+    property: value;
+  }
 }
 ```
 
-Is it supposed to mean *"assign `property: value` to a direct sibling `efgh` of `abcd`"* or *"call mixin `efgh` in `abcd`"*? Thus someone proposed `++` instead and it seems quite good so far. No idea when or if we will ever see this coming though. Let's hope.
+Is it supposed to mean _"assign `property: value` to a direct sibling `efgh` of `abcd`"_ or _"call mixin `efgh` in `abcd`"_? Thus someone proposed `++` instead and it seems quite good so far. No idea when or if we will ever see this coming though. Let's hope.
 
 ## Final words
 

@@ -9,7 +9,7 @@ tags:
 
 > **Edit: I missed the fact that there already was [a documented fix](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#netlify) in create-react-app docs using the [redirect feature from Netlify](https://www.netlify.com/docs/redirects/). You might want to prefer that.**
 
-A short article about how to work around the 404 issue with create-react-app on [Netlify](https://www.netlify.com) (and possibly other hosting platforms like [GitHub Pages](https://pages.github.com/)). 
+A short article about how to work around the 404 issue with create-react-app on [Netlify](https://www.netlify.com) (and possibly other hosting platforms like [GitHub Pages](https://pages.github.com/)).
 
 ## What’s the problem?
 
@@ -27,7 +27,7 @@ Indeed, create-react-app dynamically adds the script tag to your bundle (as well
 
 ## The solution
 
-The solution ends up being super simple. Duplicate the `index.html` file under `404.html` post-build. To do so, update the `build` task like so: 
+The solution ends up being super simple. Duplicate the `index.html` file under `404.html` post-build. To do so, update the `build` task like so:
 
 ```json
 {

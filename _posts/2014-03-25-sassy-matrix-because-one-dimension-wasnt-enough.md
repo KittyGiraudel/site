@@ -20,24 +20,19 @@ If you wonder whether I succeeded or failed, I succeeded. You can play with [the
 Now back to our main topic: I needed matrices. A matrix is basically a two-dimensional array (or list). For example this is a Sass matrix:
 
 ```scss
-$matrix: (
-  (0 1 2 3)
-  (1 0 0 0)
-  (2 0 0 0)
-  (3 0 0 0)
-)
+$matrix: ( (0 1 2 3) (1 0 0 0) (2 0 0 0) (3 0 0 0));
 ```
 
-Well this was pretty easy. Now what if we want to dynamically create a matrix? Update values? Retreive values? And more stuff? This is getting harder. So I created a couple of functions to ease the pain. 
+Well this was pretty easy. Now what if we want to dynamically create a matrix? Update values? Retreive values? And more stuff? This is getting harder. So I created a couple of functions to ease the pain.
 
-## Creating a matrix 
+## Creating a matrix
 
 JavaScript allows you to instanciate a new array of `n` cells. This makes creating empty matrices quite easy, you only need a single for-loop like this:
 
 ```javascript
-var matrix = new Array(9);
+var matrix = new Array(9)
 for (var i = 0; i < matrix.length; i++) {
-  matrix[i] = new Array(9);
+  matrix[i] = new Array(9)
 }
 ```
 
@@ -61,7 +56,7 @@ Thus I found out it's much easier to simply instanciate a new list with dummy va
 
 See how we make the `$y` parameter optional by defaulting it to `$x`? It makes instanciating squared matrices easier: `matrix(5)`. Little things matter. ;)
 
-## Updating a matrix 
+## Updating a matrix
 
 Being able to instanciate an empty matrix is cool but being able to fill it with real values is even better! What if we had a `set-entry` function setting given value at given position on given matrix?
 
@@ -85,17 +80,17 @@ We could have requested two distinct parameters for `$x` and `$y` but I feel lik
 }
 ```
 
-*Note: I like to prefix private functions with an underscore. By "private" I mean functions that are not supposed to be called from the outside. Unfortunately Sass doesn't provide any way to privatize stuff.*
+_Note: I like to prefix private functions with an underscore. By "private" I mean functions that are not supposed to be called from the outside. Unfortunately Sass doesn't provide any way to privatize stuff._
 
 All we did was checking for the length and the type. This doesn't deal with out of bounds coordinates but that's more than enough for now. Anyway, to set a value in the grid it is nothing easier than:
 
 ```scss
-$matrix: set-entry($matrix, (1 1), 42);
+$matrix: set-entry($matrix,  (1 1), 42);
 ```
 
 What is also pretty cool is you can use negative indexes to start from the end of columns/rows. So to fill the last entry from the last row of the grid, you'd do something like `set-entry($matrix, (-1 -1), 42)`.
 
-## Reading a matrix 
+## Reading a matrix
 
 Now that we are able to easily set values in the grid, we need a way to retrieve those values! Let's build a `get-entry` function working exactly like the one we just did.
 
@@ -113,28 +108,28 @@ Now that we are able to easily set values in the grid, we need a way to retrieve
 See how we check for coordinates validity with our brand new helper? I don't know for you, but I think it looks pretty neat! Anyway, to retrieve a value at position (x y), all we have to do is:
 
 ```scss
-$value: get-entry($matrix, (1 1)); // 42
+$value: get-entry($matrix,  (1 1)); // 42
 ```
 
-## Displaying a matrix 
+## Displaying a matrix
 
 What I always found difficult when working with matrices (no matter the language) is actually seeing what's going on. I need a visual representation of the grid to understand what I am doing and whether I'm doing it properly. Unfortunately [my debug function from SassyLists](https://github.com/Team-Sass/SassyLists/blob/master/stylesheets/SassyLists/_debug.scss) isn't quite suited for such a case but the main idea is the same. I just had to revamp it a little bit.
 
 ```scss
 @function display($matrix) {
-  $str: "";
+  $str: '';
   @each $line in $matrix {
-    $tmp: "";
+    $tmp: '';
     @each $item in $line {
-      $tmp: $tmp + " " + $item;
+      $tmp: $tmp + ' ' + $item;
     }
-    $str: $str + $tmp + "\A ";
+    $str: $str + $tmp + '\A ';
   }
   @return $str;
 }
 ```
 
-This function returns a string like this: `" 0 0 0\A  0 0 0\A  0 0 0\A "`. As is, it is not very useful but when you couple it with generated content and white-space wrapping, you got something like this:
+This function returns a string like this: `" 0 0 0\A 0 0 0\A 0 0 0\A "`. As is, it is not very useful but when you couple it with generated content and white-space wrapping, you got something like this:
 
 ```
 0 0 0
@@ -147,27 +142,27 @@ This function returns a string like this: `" 0 0 0\A  0 0 0\A  0 0 0\A "`. As is
 ```scss
 @mixin display($matrix, $pseudo: before) {
   body:#{$pseudo} {
-    content: display($matrix)                 !important;
+    content: display($matrix) !important;
 
-    display: block                            !important;
-    margin: 1em                               !important;
-    padding: .5em                             !important;
+    display: block !important;
+    margin: 1em !important;
+    padding: 0.5em !important;
 
-    background: #EFEFEF                       !important;
-    border: 1px solid #DDD                    !important;
-    border-radius: .2em                       !important;
+    background: #efefef !important;
+    border: 1px solid #ddd !important;
+    border-radius: 0.2em !important;
 
-    color: #333                               !important;
-    font: 1.5em/1.5 "Courier New", monospace  !important;
-    text-shadow: 0 1px white                  !important;
-    white-space: pre-wrap                     !important;
+    color: #333 !important;
+    font: 1.5em/1.5 'Courier New', monospace !important;
+    text-shadow: 0 1px white !important;
+    white-space: pre-wrap !important;
   }
 }
 ```
 
 Since there are two pseudo-elements (`::after` and `::before`), you can watch for 2 matrices at the same time. Pretty convenient when working on complicated stuff or debugging a matrix.
 
-## What's next? 
+## What's next?
 
 So far we managed to initialize a matrix, set values in it, retreive those values and display the whole thing as a two dimensional grid directly from CSS. This is quite a lot for a first roll with matrices don't you think?
 

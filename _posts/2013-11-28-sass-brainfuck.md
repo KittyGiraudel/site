@@ -18,7 +18,7 @@ $value: 42px;
 }
 ```
 
-You can do this just because lengths are treated as numbers. Else, you would have an error like *"42px is not a number for 42px gt 10"*.
+You can do this just because lengths are treated as numbers. Else, you would have an error like _"42px is not a number for 42px gt 10"_.
 
 That being said...
 
@@ -54,22 +54,27 @@ While we would expect an empty list to be `false`, it turns out it is not. If it
 Okay so it makes sense that the previous example returns `false` in both cases! Nevertheless, `()` being evaluated to `false` would be quite cool when checking for a valid value to append to a list. Please consider the following code:
 
 ```scss
-$list: (a, b, c);
+$list: (
+  a,
+  b,
+  c
+);
 $value: ();
 
-@if $value { // Short for `$value == true` which is the same as `$value != false`
-    $list: append($list, $value);
+@if $value {
+  // Short for `$value == true` which is the same as `$value != false`
+  $list: append($list, $value);
 }
 ```
 
 If `()` was treated as a falsy value, the condition wouldn't match and the 4th element of `$list` wouldn't be an empty list. This is how it works in JavaScript:
 
 ```javascript
-var array = ['a', 'b', 'c'];
-var value = [];
+var array = ['a', 'b', 'c']
+var value = []
 
-if(value != false) {
-    array.push(value);
+if (value != false) {
+  array.push(value)
 }
 ```
 
@@ -110,12 +115,12 @@ $color: tomato;
 
 // Override it in an impossible @media directive
 @media (min-width: 10000em), (-webkit-min-device-pixel-ratio: 42) {
-    $color: lightgreen;
+  $color: lightgreen;
 }
 
 // Use it
 body {
-    background: $color; // lightgreen;
+  background: $color; // lightgreen;
 }
 ```
 
@@ -128,17 +133,17 @@ Okay, let's take another example with Sass scope in mixin directives shall we?
 $size: 1em;
 
 // Define a mixin with an argument named `$size`
-@mixin whatever($size: .5em) {
-    // Include the `@content` directive in the mixin core
-    @content;
-    margin-bottom: $size * 1.2;
+@mixin whatever($size: 0.5em) {
+  // Include the `@content` directive in the mixin core
+  @content;
+  margin-bottom: $size * 1.2;
 }
 
 // Use the mixin
 el {
-    @include whatever {
-        font-size: $size;
-    }
+  @include whatever {
+    font-size: $size;
+  }
 }
 ```
 
@@ -148,8 +153,8 @@ The correct answer is:
 
 ```scss
 el {
-    font-size: 1em;
-    margin-bottom: .6em;
+  font-size: 1em;
+  margin-bottom: 0.6em;
 }
 ```
 
@@ -177,26 +182,27 @@ Let's have a try, shall we? Consider a function accepting a list as its only arg
 
 ```scss
 @function f($a) {
-    @return if(length($a) > 1, nth($a, 2), $a);
+  @return if(length($a) > 1, nth($a, 2), $a);
 }
 ```
 
 And this is how to use it:
 
 ```scss
-$c: f( bazinga gloubiboulga );
+$c: f(bazinga gloubiboulga);
 // returns `gloubiboulga`
 ```
 
 And now with a one-item long list:
 
 ```scss
-$c: f( bazinga );
+$c: f(bazinga);
 // List index is 2 but list is only 1 item long for `nth'
 ```
+
 > `if()` parses all arguments no matter what.
 
-BAZINGA! The `if()` function returns an error. It looks like it's trying to access the second item in the list, even if the list is only one item long. *Why* you ask? Because the ternary function from Sass parses both 2nd and 3rd arguments no matter what.
+BAZINGA! The `if()` function returns an error. It looks like it's trying to access the second item in the list, even if the list is only one item long. _Why_ you ask? Because the ternary function from Sass parses both 2nd and 3rd arguments no matter what.
 
 Hopefully this issue is supposed to be solved in the incoming Sass 3.3 according to [this GitHub issue](https://github.com/nex3/sass/issues/470). Meanwhile, a workaround would be to use a real `@if/@else` statement to bypass the issue. Not ideal but still better than nothing.
 

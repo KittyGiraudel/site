@@ -14,9 +14,9 @@ But first, let me introduce the topic because you probably wonder what the hell 
 ```scss
 $value: 13.37;
 $length: $value + em;
-    
+
 whatever {
-    padding-top: $length;
+  padding-top: $length;
 }
 ```
 
@@ -26,7 +26,7 @@ Well obviously, it works like a charm. That's probably why you can see it so muc
 
 ## The problem
 
-Then you ask *"if it works, why bother?"*. That's actually a very fair question. Let's continue our example, shall we? What if we apply &mdash; let's say &mdash; the `round()` function to our length?
+Then you ask _"if it works, why bother?"_. That's actually a very fair question. Let's continue our example, shall we? What if we apply &mdash; let's say &mdash; the `round()` function to our length?
 
 ```scss
 $rounded-length: round($length);
@@ -36,9 +36,9 @@ Aaaaaand... bummer.
 
 > "13.37em" is not a number for 'round'.
 
-Same problem with any function requiring a number (lengths are numbers in Sass) like `abs()`, `ceil()`, `floor()`, `min()`... Even worse! The `unit()` function will also fail to return the unit. 
+Same problem with any function requiring a number (lengths are numbers in Sass) like `abs()`, `ceil()`, `floor()`, `min()`... Even worse! The `unit()` function will also fail to return the unit.
 
-This is because **there is no unit** since it's now a string. When you append a string (in this case *em*) to a number (*13.37*), you implicitly cast it into a string.
+This is because **there is no unit** since it's now a string. When you append a string (in this case _em_) to a number (_13.37_), you implicitly cast it into a string.
 
 Indeed, if you check the type of your variable with the `type-of()` function, you'll see it's not a number but a string.
 
@@ -48,14 +48,14 @@ type-of($length); // string
 
 ## The solution
 
-There is a very simple solution. Instead of appending the unit, simply multiply the number by 1 unit. For example, *3 apples* is strictly equivalent to *3 times 1 apple*, right? Same thing.
+There is a very simple solution. Instead of appending the unit, simply multiply the number by 1 unit. For example, _3 apples_ is strictly equivalent to _3 times 1 apple_, right? Same thing.
 
 ```scss
 $value: 13.37;
 $length: $value * 1em;
-    
+
 whatever {
-    padding-top: round($length); // 13em
+  padding-top: round($length); // 13em
 }
 ```
 

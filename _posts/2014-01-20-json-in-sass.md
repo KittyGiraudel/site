@@ -26,7 +26,7 @@ Well, you have to tell it is actually kind of cool to be able to do so, right? T
 
 Fabrice and I recently released [SassyJSON](https://github.com/HugoGiraudel/SassyJSON), a Sass-powered API to communicate with JavaScript through JSON. Basically it's `json-decode` and `json-encode` in Sass.
 
-*Why*, you ask? Well, I guess that could be useful at some point. With maps coming up in Sass 3.3, we are about to have real structured data in Sass. It will soon be very easy to have a config object (understand a map) or a media-query handler (a map again). Being able to encode those objects to JSON and move them out of the stylesheet opens us to a lot of new horizons. I'll leave you the only judge of what you'll do with this.
+_Why_, you ask? Well, I guess that could be useful at some point. With maps coming up in Sass 3.3, we are about to have real structured data in Sass. It will soon be very easy to have a config object (understand a map) or a media-query handler (a map again). Being able to encode those objects to JSON and move them out of the stylesheet opens us to a lot of new horizons. I'll leave you the only judge of what you'll do with this.
 
 On my side, I already found a usecase. You may know [Bootcamp](https://github.com/thejameskyle/bootcamp), a Jasmine-like testing framework made in Sass for Sass by [James Kyle](https://twitter.com/thejameskyle) (with a Grunt port). I am using Bootcamp for [SassyLists](https://github.com/Team-Sass/SassyLists). I am using Bootcamp for [SassyMatrix](https://github.com/HugoGiraudel/SassyMatrix). We are using Bootcamp for [SassyJSON](https://github.com/HugoGiraudel/SassyJSON). This makes sure our Sass code is clean and efficient.
 
@@ -41,16 +41,17 @@ How awesome is that?
 
 ## Sass to JSON
 
-Writing the `json-encode` part has been very easy to do. It took us less than an hour to have everything set up. We are able to encode properly any Sass type to JSON, including lists and maps. We have a `json-encode` function delaying the encoding to type-specific *private* functions like `_json-encode--string`, `_json-encode--list` thanks to the brand new `call` function from Sass 3.3:
+Writing the `json-encode` part has been very easy to do. It took us less than an hour to have everything set up. We are able to encode properly any Sass type to JSON, including lists and maps. We have a `json-encode` function delaying the encoding to type-specific _private_ functions like `_json-encode--string`, `_json-encode--list` thanks to the brand new `call` function from Sass 3.3:
 
 ```scss
 @function json-encode($value) {
-  $type: type-of($value);                            /* 1 */
-  @if function_exists('_json-encode--#{$type}') {    /* 2 */
-    @return call('_json-encode--#{$type}', $value);  /* 3 */
+  $type: type-of($value); /* 1 */
+  @if function_exists('_json-encode--#{$type}') {
+    /* 2 */
+    @return call('_json-encode--#{$type}', $value); /* 3 */
   }
-  @warn "Unknown type for #{$value} (#{$type}).";    /* 4 */
-  @return false;                                     /* 4 */
+  @warn "Unknown type for #{$value} (#{$type}) ."; /* 4 */
+  @return false; /* 4 */
 }
 ```
 
@@ -75,7 +76,9 @@ Once you've encoded your Sass into JSON, you'll want to dump the JSON string int
 Since we don't like to choose, we picked all of them. We simply made [a mixin with a flag](https://github.com/HugoGiraudel/SassyJSON/blob/master/src/encode/mixins/_json.scss) as a parameter defining the type of output you'll get: `regular` for option 1 and 2 (cross-browser mess), `media` for the media query and `comment` for the comment or even `all` for all of them (which is the default). Judge for yourselves:
 
 ```scss
-$map: ((a: (1 2 ( b : 1 )), b: ( #444444, false, ( a: 1, b: test ) ), c: (2 3 4 string)));
+$map: (
+  (a: (1 2 (b : 1)), b: (#444444, false,  (a: 1, b: test)), c: (2 3 4 string))
+);
 @include json-encode($map, $flag: all);
 ```
 
@@ -104,7 +107,7 @@ Meanwhile `json-decode` has been a pain in the ass to write, so much that I was 
 
 > It was so difficult I was close to giving up.
 
-One of the main problem we faced was the ability to retrieve numbers and colors. You see, when you parse a string, everything is a *string*. Even if *you* now this part is a number and this part is a boolean, when you slice your string all you have is shorter strings. Not numbers and booleans.
+One of the main problem we faced was the ability to retrieve numbers and colors. You see, when you parse a string, everything is a _string_. Even if _you_ now this part is a number and this part is a boolean, when you slice your string all you have is shorter strings. Not numbers and booleans.
 
 And this is a big deal, because when you use those tiny bits of decoded JSON in your Sass, types matter. If you go `42px * 2` but `42px` is actually a `string` and not a `number` as it should be, [then your code breaks](http://hugogiraudel.com/2013/09/03/use-lengths-not-strings/) and Sass is furious and you are sad. Hence [this article](http://hugogiraudel.com/2014/01/15/sass-string-to-number/) about casting a string into a number in Sass.
 
@@ -134,7 +137,7 @@ This was kind of dirty. I didn't want the parser to rely on global variables and
 
 ## What's left?
 
-Almost nothing. I am very proud with what we have come up with. The *only* thing missing from our parser is the ability to detect special characters: `\"`, `\\`, `\/`, `\b`, `\f`, `\t` and `\u{{four-hex-digits}}`. We [found a way](https://github.com/HugoGiraudel/SassyJSON/blob/master/src/decode/helpers/_strip-token.scss) for `\n` and `\r` and `\"` but that's pretty much it. I'm not sure we will be able to parse them all, but we need to dig deeper into it before determining.
+Almost nothing. I am very proud with what we have come up with. The _only_ thing missing from our parser is the ability to detect special characters: `\"`, `\\`, `\/`, `\b`, `\f`, `\t` and `\u{{four-hex-digits}}`. We [found a way](https://github.com/HugoGiraudel/SassyJSON/blob/master/src/decode/helpers/_strip-token.scss) for `\n` and `\r` and `\"` but that's pretty much it. I'm not sure we will be able to parse them all, but we need to dig deeper into it before determining.
 
 Otherwise, I think we are good. We have already done almost [500 simple tests](https://github.com/HugoGiraudel/SassyJSON/tree/master/test) to cover all basic usages of JSON. Now, we are likely to find edge cases like weird encoding, a space at the wrong place and so on...
 
