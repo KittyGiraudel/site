@@ -167,7 +167,7 @@ $ git force
 
 I have quite a few other Git tricks up my sleeve, but that will be for another article. For a complete list of my Git aliases, refer to [my dotfiles repo](https://github.com/HugoGiraudel/dotfiles/blob/master/.gitconfig).
 
-Speaking of Git tricks, this is your reminde that my brother knows his shite and wrote on this very blog a 3-parts article on Git tips & tricks:
+Speaking of Git tricks, this is your reminde that my brother knows his shit and wrote on this very blog a 3-parts article on Git tips & tricks:
 
 * [Git Tips & Tricks — part 1](https://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/)
 * [Git Tips & Tricks — part 2](https://hugogiraudel.com/2014/03/17/git-tips-and-tricks-part-2/)
