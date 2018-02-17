@@ -31,7 +31,7 @@ Plus, we had the opportunity to meet two awesome dudes of our field:
 * [Bert Bos](http://en.wikipedia.org/wiki/Bert_Bos) -co-creator of CSS- introduced the day by telling us about [CSS for books](http://www.w3.org/Talks/2013/0628-CSS-Strasbourg/). Pretty amazing what we can know do with CSS when we know it was first intented to style basic text documents.
 * [Tristan Nitot](http://twitter.com/nitot) -founder of Mozilla Europe- concluded the conference by talking about Firefox OS. He's such an awesome speaker; totally worth seeing him.
 
-I could also meet all those great French people and girls from Twitter and put some faces on names. Probably the best thing of this day. :)
+I could also meet all those great French people from Twitter and put some faces on names. Probably the best thing of this day. :)
 
 ## About my talk
 
