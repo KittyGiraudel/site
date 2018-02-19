@@ -75,7 +75,7 @@ To undo a commit entirely, I created a `git undo` alias (short for `git reset --
 
 To move things out of the index (the opposite of `git add`), I have `git wait` (for `git reset HEAD`). And to remove things from the index entirely, I aliased `git checkout .` into `git abort`. I also had it under `git nope` for a while. Not sure why I ever changed though, `git nope` is gold.
 
-So let’s say I realised my last commit was complete puppycock and I want to undo all of it and never speak of it ever again:
+So let’s say I realised my last commit was complete poppycock and I want to undo all of it and never speak of it ever again:
 
 ```sh
 $ git undo  # This undoes the last commit
