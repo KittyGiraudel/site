@@ -438,15 +438,6 @@ transparentize($color, $percentage) /* Makes more transparent */
 fade-out($color, $percentage)       /* Makes more transparent */
 ```
 
-### CSS Crush (<a href="http://the-echoplex.net/csscrush/">doc)
-
-```scss
-h-adjust($color $value)             /* Rotates the hue wheel */
-s-adjust($color $value)             /* Changes the saturation */
-l-adjust($color $value)             /* Changes the lightness */
-a-adjust($color $value)             /* Changes the alpha-channel */
-```
-
 ### Stylus (<a href="http://learnboost.github.com/stylus/docs/bifs.html">doc)
 
 ```stylus
