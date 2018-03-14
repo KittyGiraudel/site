@@ -470,6 +470,7 @@ Thankfully in CSS we don’t have to use a base 16 converter everytime we want t
 
 Anyway, back to CSS, let me (re)introduce you a few awesome tools and resources to help you deal with colors:
 
+* [Canva](https://www.canva.com/colors/)
 * [CSS3 Colors slides](http://fr.slideshare.net/maxdesign/css3-colors) by Russ Weakley
 * [CSS Coloratum](http://css.coloratum.com/), a color converter by Lea Verou
 * [Build a color scheme: the fundamentals](http://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/) by Patrick Cox
