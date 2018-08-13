@@ -12,7 +12,7 @@ There are many reasons why making JavaScript optional is a Good Thing™. Some p
 
 ## The idea
 
-At N26, we recently discovered a nifty little bug which likely had been around for a few days unnoticed: enterering an initial white space in the IBAN field when performing a transfer would cause a JavaScript error. Not ideal I hear you say, and you’re right. In a typical client-side application, this would cause the entire page to fail Because JavaScript™.
+At N26, we recently discovered a nifty little bug which likely had been around for a few days unnoticed: entering an initial white space in the IBAN field when performing a transfer would cause a JavaScript error. Not ideal I hear you say, and you’re right. In a typical client-side application, this would cause the entire page to fail Because JavaScript™.
 
 What happens in our case is that we immediately reload the page without loading any JavaScript. At this stage, the user is informed they have been redirected to the “basic version”, and are free to continue using it or to go back to the interactive version.
 
