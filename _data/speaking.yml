@@ -1,7 +1,14 @@
+- event: Paris Web
+  link: https://www.paris-web.fr/2018/conferences/L-accessibilite-au-dela-des-specifications.php
+  location: Paris, France
+  date: 2018-10-04 17:30:00 +0100
+
 - event: A11y Meetup Berlin
   link: https://colloq.io/events/a11y-meetup-berlin/2018/berlin/3/slots/accessibility-designing-for-the-real-world
   location: Berlin, Germany
   date: 2018-05-17 20:15:00 +0100
+    Video: https://www.youtube.com/watch?v=ZUXxxYHYPcs
+    Slides: https://speakerdeck.com/hugogiraudel/designing-for-the-real-world
 
 - event: Tinel Meetup
   link: https://www.meetup.com/TinelMeetup/events/243912279/
