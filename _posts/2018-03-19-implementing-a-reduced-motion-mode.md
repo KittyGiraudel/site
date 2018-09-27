@@ -114,7 +114,7 @@ The second part will need a little bit of JavaScript.
 ```js
 document.addEventListener('DOMContentLoaded', function(event) {
   const checkbox = document.querySelector('#reduced-motion')
-  const query = 'prefers-reduced-motion: reduce'
+  const query = '(prefers-reduced-motion: reduce)'
   const hasOSReducedMotion = window.matchMedia(query).matches
 
   if (hasOSReducedMotion) {
