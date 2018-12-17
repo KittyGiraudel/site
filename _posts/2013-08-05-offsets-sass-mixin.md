@@ -6,7 +6,7 @@ tags:
   - mixin
 ---
 
-> **Edit (2014/05/19):** I updated this mixin to improve it, please focus on the [new article](http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/).
+> **Edit (2014/05/19):** I updated this mixin to improve it, please focus on the [new article](https://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/).
 
 Over the last months, I have seen a ton of mixins to handle offsets when dealing with absolute / fixed / relative positioning. I also made a lot of them myself. And in the end, none of them really suited me. Either they were far too long or complicated, or the calling didn't feel right to me.
 
@@ -223,4 +223,4 @@ Is it supposed to mean _"assign `property: value` to a direct sibling `efgh` of 
 
 I'm aware some of you won't like this. Some will say it is overly complicated, some will say it is useless and some will say their mixin is better. In no way this is a better way than an other. It simply suits my tastes. I like the way it works, and I like the way I can use it.
 
-Anyway, you can fork and play around [this pen](http://codepen.io/HugoGiraudel/pen/HDebE) if you feel so. And be sure to hit me if you ever need anything or want to propose something new. :)
+Anyway, you can fork and play around [this pen](https://codepen.io/HugoGiraudel/pen/HDebE) if you feel so. And be sure to hit me if you ever need anything or want to propose something new. :)

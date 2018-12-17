@@ -1,7 +1,7 @@
 ---
-external: 
+external:
   host: SitePoint
-  url: http://www.sitepoint.com/dealing-color-schemes-sass/
+  url: https://www.sitepoint.com/dealing-color-schemes-sass/
 title: "Dealing with color schemes in Sass"
 tags:
   - sass

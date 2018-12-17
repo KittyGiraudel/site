@@ -39,7 +39,7 @@ My favourite thing in my job has to be **learning things**. It's definitely beca
 
 > I enjoy reading web related stuff.
 
-Beyond reading, it's great to be able to easily discover and learn new things like CSS features, JavaScript APIs, preprocessors and much more (especially thanks to tools like [CodePen](http://codepen.io) and [GitHub](http://github.com)). And if we ever happen to use what we've learnt in real-life projects, then it's even better!
+Beyond reading, it's great to be able to easily discover and learn new things like CSS features, JavaScript APIs, preprocessors and much more (especially thanks to tools like [CodePen](https://codepen.io) and [GitHub](http://github.com)). And if we ever happen to use what we've learnt in real-life projects, then it's even better!
 
 Ironically, even if I am able to define what I like in my job I don't think I'm able to tell what I like the least. Maybe not being always able to use everything I know in real-life projects because of technical constraints like performance, maintainability or browser support. But this is part of the job; we can't use everything we know, especially when it comes to new &mdash; somewhat borderline &mdash; features ("hello CSS grid!").
 

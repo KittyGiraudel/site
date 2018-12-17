@@ -1,9 +1,9 @@
 ---
 external:
   host: SitePoint
-  url: http://www.sitepoint.com/sass-theming-neverending-story/
+  url: https://www.sitepoint.com/sass-theming-neverending-story/
 title: "Sass Theming: The Neverending Story"
-tags: 
+tags:
   - sass
   - themes
   - colors

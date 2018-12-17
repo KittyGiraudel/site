@@ -184,7 +184,7 @@ _Note: beware, the path has to be relative to your project's image directory, de
 
 If you're like a total nerd and want to do CSS with math, then you'll be pleased to know Compass has a bunch of built-in [math functions](http://compass-style.org/reference/compass/helpers/math/) like `sin()`, `cos()`, `pi()` among a few others.
 
-I once had to use `sin()` in order to make a [mixin for a pure CSS 6-points star](http://hugogiraudel.com/2013/02/18/sass-mixin-star/) but that's pretty much it. If you happen to have a real live use case for one of those functions, I'd be more than pleased to know more about it.
+I once had to use `sin()` in order to make a [mixin for a pure CSS 6-points star](https://hugogiraudel.com/2013/02/18/sass-mixin-star/) but that's pretty much it. If you happen to have a real live use case for one of those functions, I'd be more than pleased to know more about it.
 
 ```scss
 $n: 4;

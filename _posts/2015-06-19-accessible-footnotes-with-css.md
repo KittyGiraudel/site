@@ -1,9 +1,9 @@
 ---
 external:
   host: SitePoint
-  url: http://www.sitepoint.com/accessible-footnotes-css/
+  url: https://www.sitepoint.com/accessible-footnotes-css/
 title: "Accessible Footnotes with CSS"
-tags: 
+tags:
   - css
   - accessibility
   - footnotes

@@ -1,16 +1,16 @@
 ---
-title: "Syncing a site between GitHub and Jekyll"
+title: 'Syncing a site between GitHub and Jekyll'
 tags:
   - jekyll
   - github
   - structure
 ---
 
-The other day, I built a small Jekyll website for [Simplified JavaScript Jargon](http://jargon.js.org). If you are not familiar with the project, it is a community attempt at explaining JavaScript related buzzwords in simpler words to prevent JavaScript fatigue and ease adoption for new comers.
+The other day, I built a small Jekyll website for [Simplified JavaScript Jargon](https://jargon.js.org). If you are not familiar with the project, it is a community attempt at explaining JavaScript related buzzwords in simpler words to prevent JavaScript fatigue and ease adoption for new comers.
 
 The project has long lived as a self-sufficient GitHub repository (gaining a bit of traction and a lot of stars in the process), but I wanted to given a nicer way for users to browse it. Hence a small Jekyll website.
 
-The thing is, I did not want to make the GitHub repository non-usable anymore. Basically, I wanted everything to work both on GitHub and on [jargon.js.org](http://jargon.js.org). Tricky! I eventually found a way, not without a struggle though so here are a few lines to explain the process.
+The thing is, I did not want to make the GitHub repository non-usable anymore. Basically, I wanted everything to work both on GitHub and on [jargon.js.org](https://jargon.js.org). Tricky! I eventually found a way, not without a struggle though so here are a few lines to explain the process.
 
 ## The main problem
 
@@ -65,7 +65,7 @@ collections:
 
 Tada! Files are located at `/_glossary/<path>.md`, served over `/_glossary/<path>.md`. 1:1 mapping, site is browsable in both GitHub and Jekyll seamlessly.
 
-![The “AJAX” entry served over /_glossary/AJAX.md in Jekyll](http://i.imgur.com/HVuKEOr.png)
+![The “AJAX” entry served over /_glossary/AJAX.md in Jekyll](https://i.imgur.com/HVuKEOr.png)
 
 ## Final thoughts
 

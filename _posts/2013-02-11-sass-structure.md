@@ -5,7 +5,7 @@ tags:
   - architecture
 ---
 
-> **Edit (2014/05/13):** after a year, I got much better with Sass architecture. I suggest you have a look at <a href="http://www.sitepoint.com/architecture-sass-project/">this post.
+> **Edit (2014/05/13):** after a year, I got much better with Sass architecture. I suggest you have a look at <a href="https://www.sitepoint.com/architecture-sass-project/">this post.
 
 <!-- -->
 

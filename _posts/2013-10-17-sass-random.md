@@ -179,4 +179,4 @@ I only added most common standard bases (binary, octal, decimal, hexadecimal, 36
 
 That's pretty much it. As I said at the beginning of the article, I couldn't try this code since neither the `unique-id()` nor the string manipulation functions are currently implemented in the Sass 3.3 Alpha version. So this is pretty much blind coding here!
 
-If you think of anything that could improve this Sass random function, please be sure to tell. Meanwhile you can play with the code directly on [this pen](http://codepen.io/HugoGiraudel/pen/ohscb).
+If you think of anything that could improve this Sass random function, please be sure to tell. Meanwhile you can play with the code directly on [this pen](https://codepen.io/HugoGiraudel/pen/ohscb).

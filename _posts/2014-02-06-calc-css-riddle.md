@@ -37,7 +37,7 @@ The tricky part is _5_. After checking at proposals submitted by various develop
 
 ![The grid we want to create](/assets/images/calc-css-riddle/css-grid.gif)
 
-Rémi made [a CodePen](http://codepen.io/hteumeuleu/pen/zLiGw) to kickstart the riddle if you'd like to give it a try. Go on, have a shot. I'll be waiting.
+Rémi made [a CodePen](https://codepen.io/hteumeuleu/pen/zLiGw) to kickstart the riddle if you'd like to give it a try. Go on, have a shot. I'll be waiting.
 
 ## Computing the whole thing, one step at a time
 
@@ -118,7 +118,7 @@ In the end, the core of the solution is no more than this:
 }
 ```
 
-You can have a look at the [whole code directly on CodePen](http://codepen.io/HugoGiraudel/pen/tivIj).
+You can have a look at the [whole code directly on CodePen](https://codepen.io/HugoGiraudel/pen/tivIj).
 
 ## Pushing things further with Sass
 
@@ -134,7 +134,7 @@ Once you've set up those 3 variables, you don't have to edit the code anymore wh
 
 _Note: whenever you're trying to use Sass variables in `calc` function, be sure to escape them with `#{}`. For instance: `calc(#{$margin} + 42px)`._
 
-Again, [check code on CodePen](http://codepen.io/HugoGiraudel/pen/zFJvn).
+Again, [check code on CodePen](https://codepen.io/HugoGiraudel/pen/zFJvn).
 
 ## Final thoughts
 

@@ -6,17 +6,17 @@ tags:
   - function
 ---
 
-> The code explained in this article has been slightly revisited in [the pen](http://codepen.io/HugoGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen.
+> The code explained in this article has been slightly revisited in [the pen](https://codepen.io/HugoGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen.
 
 You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It's a shame there is so few functions to deal with them. This is why I made [SassyLists](https://github.com/Team-Sass/Sass-list-functions).
 
-Most importantly, I always wanted a `console.log()` for Sass. You know, something to debug a variable, a list, a value, whatever... There is the `[@debug](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4)` function but somehow it didn't completely satisfy me. Plus, there is no console on [CodePen.io](http://codepen.io) and since this is where I do most of my experiments I needed something else.
+Most importantly, I always wanted a `console.log()` for Sass. You know, something to debug a variable, a list, a value, whatever... There is the `[@debug](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4)` function but somehow it didn't completely satisfy me. Plus, there is no console on [CodePen.io](https://codepen.io) and since this is where I do most of my experiments I needed something else.
 
 So I rolled up my sleeves, got my hands dirty and made my own Sass debug function. This is how it looks like:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="unyBH" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/unyBH'>Debug Sass lists</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a></p>
+<p data-height="320" data-theme-id="0" data-slug-hash="unyBH" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/unyBH'>Debug Sass lists</a> by Hugo Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a></p>
 
-If you don't want to read but simply want to dig into the code, check [this pen](http://codepen.io/HugoGiraudel/pen/unyBH).
+If you don't want to read but simply want to dig into the code, check [this pen](https://codepen.io/HugoGiraudel/pen/unyBH).
 
 ## Stringify a list
 

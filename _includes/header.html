@@ -1,11 +1,15 @@
 <header class="header" role="banner">
-  <span class="header__title{% if page.url == '/' %}  is-active{% endif %} t-dark-grey nav__item nav__item--logo">
+  <span
+    class="header__title{% if page.url == '/' %}  is-active{% endif %} t-dark-grey nav__item nav__item--logo"
+  >
     <a class="nav__link nav__link--logo" href="/">hugogiraudel.com</a>
   </span>
   <nav role="navigation" class="nav">
     <ul class="nav__list">
       {% for item in site.nav %}
-      <li class="nav__item{% if page.url == item.url %}  is-active{% endif %} {{ item.theme }}">
+      <li
+        class="nav__item{% if page.url == item.url %}  is-active{% endif %} {{ item.theme }}"
+      >
         <a class="nav__link" href="{{ item.url }}">{{ item.label }}</a>
       </li>
       {% endfor %}
@@ -14,13 +18,23 @@
 
   <div class="nav">
     <ul class="nav__list">
+      <li class="nav__item"><a class="nav__link" href="/rss/">RSS</a></li>
       <li class="nav__item">
-        <a class="nav__link" href="/rss/">RSS</a>
+        <a
+          class="nav__link"
+          href="https://github.com/HugoGiraudel"
+          target="blank"
+          >GitHub</a
+        >
       </li>
+
       <li class="nav__item">
-        <a class="nav__link" href="https://github.com/HugoGiraudel" target="blank">GitHub</a>
-      <li class="nav__item">
-        <a class="nav__link" href="http://twitter.com/HugoGiraudel" target="blank">Twitter</a>
+        <a
+          class="nav__link"
+          href="https://twitter.com/HugoGiraudel"
+          target="blank"
+          >Twitter</a
+        >
       </li>
     </ul>
   </div>

@@ -1,5 +1,5 @@
 ---
-title: "Hugogiraudel.com redesigned + new blog"
+title: 'Hugogiraudel.com redesigned + new blog'
 tags:
   - design
   - blog
@@ -13,7 +13,7 @@ Actually, this is the very recent redesign of [http://daverupert.com](http://dav
 
 ## A blog, what for?
 
-This is a good question since I'm not planning on heavy blogging. You may know I'm a writer for [Codrops](http://tympanus.net/codrops/) and hell I'm proud of it. Anyway, it takes me a good amount of time, so I won't be able to post things everyday here.
+This is a good question since I'm not planning on heavy blogging. You may know I'm a writer for [Codrops](https://tympanus.net/codrops/) and hell I'm proud of it. Anyway, it takes me a good amount of time, so I won't be able to post things everyday here.
 
 However, I really wanted a place on the internet to talk about some things I can't write about at Codrops. I'm still talking about web, don't worry. Things like tools, personal experiences, stuff about my work, my side projects, or whatever.
 
@@ -37,6 +37,6 @@ But I may improve the design over the time of course. :)
 
 Honestly I don't know. Blogging when I have time and things to say. Maybe a contact page or something.
 
-For now, I'm not planning on adding a comments system because I don't think there is much need for it. Most people won't take the time to comment anyway, and those who would do can still catch me on [Twitter](http://twitter.com/hugoGiraudel). But if one day I feel like I should allow users to comment, I may think about [Disqus](http://disqus.com/). Mainly because I don't want to spend hours doing PHP stuff on this.
+For now, I'm not planning on adding a comments system because I don't think there is much need for it. Most people won't take the time to comment anyway, and those who would do can still catch me on [Twitter](https://twitter.com/hugoGiraudel). But if one day I feel like I should allow users to comment, I may think about [Disqus](https://disqus.com/). Mainly because I don't want to spend hours doing PHP stuff on this.
 
 Anyway, if you find any bug or have any suggestion, please catch me on GTalk or Twitter.

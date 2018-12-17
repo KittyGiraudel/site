@@ -7,7 +7,7 @@ tags:
   - star
 ---
 
-A couple of days ago, [Ana Tudor](http://twitter.com/thebabydino) showed me how she managed to do a [pure CSS 6-point star](http://codepen.io/thebabydino/pen/DmklE) with a single element.
+A couple of days ago, [Ana Tudor](http://twitter.com/thebabydino) showed me how she managed to do a [pure CSS 6-point star](https://codepen.io/thebabydino/pen/DmklE) with a single element.
 
 To be truely honest, I wasn’t impressed that much since I am pretty familiar with Ana’s work which is always amazing. If you haven’t seen [her 3D geometric shapes](http://stackoverflow.com/users/1397351/ana) made of pure CSS, then you definitely should.
 
@@ -16,7 +16,7 @@ To be truely honest, I wasn’t impressed that much since I am pretty familiar w
 <figcaption>A 6-points star mixin made with CSS</figcaption>
 </figure>
 
-Anyway, when I saw this I thought it could be fun to make a [Sass version](http://codepen.io/HugoGiraudel/pen/LkoGE) of it to clean the code and ease the use. Let me show you what I ended up with.
+Anyway, when I saw this I thought it could be fun to make a [Sass version](https://codepen.io/HugoGiraudel/pen/LkoGE) of it to clean the code and ease the use. Let me show you what I ended up with.
 
 ## Understand the shape
 
@@ -29,7 +29,7 @@ The first thing was to understand how Ana managed to achieve such a shape with a
 
 Basically she stacks the element and its 2 pseudo-elements on top of each other after applying several chained transforms to each of them to have the appropriate shape (a [rhombus](http://www.mathopenref.com/rhombus.html)).
 
-Instead of covering everything in here, I let you have a look at [this very clear explanation](http://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb) by Ana herself on CodePen.
+Instead of covering everything in here, I let you have a look at [this very clear explanation](https://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb) by Ana herself on CodePen.
 
 \*Note: we can do it with one single pseudo-element with the [border shaping trick](http://davidwalsh.name/css-triangles) but the hover doesn't feel right, and without pseudo-element with linear gradients.
 
@@ -39,7 +39,7 @@ I quickly noticed the height and the width of the main element were different. T
 
 At this point, I was already able to handle a mixin to create the star, but the user had to set both the width and the height. Yet, since the height has to be calculated, it wasn’t right. How is the user supposed to know the appropriate height for the width he set?
 
-The user couldn’t figure this out and neither could I. So I asked Ana how to compute the height of the element based on the width. After a few complicated explanations, she finally gave me the formula (explanation [here](http://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb)).
+The user couldn’t figure this out and neither could I. So I asked Ana how to compute the height of the element based on the width. After a few complicated explanations, she finally gave me the formula (explanation [here](https://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb)).
 
 ```javascript
 function computeHeight(x, skewAngle) {
@@ -189,7 +189,7 @@ Here is the full code for the mixin. As you can see, it is really not that big (
 
 ## Final words
 
-Well people, that’s pretty much it. You have a perfectly working [Sass mixin](http://codepen.io/HugoGiraudel/pen/Lcexi) to create customized single-element 6-point stars in CSS. Pretty neat, right?
+Well people, that’s pretty much it. You have a perfectly working [Sass mixin](https://codepen.io/HugoGiraudel/pen/Lcexi) to create customized single-element 6-point stars in CSS. Pretty neat, right?
 
 Using it couldn't be simpler:
 

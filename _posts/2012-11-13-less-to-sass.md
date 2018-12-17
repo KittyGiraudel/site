@@ -14,7 +14,7 @@ Anyway and before anything, please note I’m not a hardcore CSS preprocessor us
 
 ## Why LESS as a first try
 
-A few weeks ago, I wanted to have a real shot with CSS preprocessors after hours of playing on [CodePen](http://codepen.io) so I read a few things to make a choice. To put it simple, there are currently 4 major CSS preprocessors:
+A few weeks ago, I wanted to have a real shot with CSS preprocessors after hours of playing on [CodePen](https://codepen.io) so I read a few things to make a choice. To put it simple, there are currently 4 major CSS preprocessors:
 
 * [Sass](http://sass-lang.com/) built on Ruby
 * [LESS](http://lesscss.org/) built on JavaScript
@@ -83,7 +83,7 @@ It may look similar at the first glance but it involves a few things:
 
 Anyway, I was just a little frustrated not to be able to use what seems intuitive to me: real if/else conditional statements but all in all I succeeded in doing my mixin so it was not so bad. Things started getting bad when I wanted to do moar.
 
-For a recent [Codrops article on pure CSS loading animations](http://tympanus.net/codrops/2012/11/14/creative-css-loading-animations/), I wanted to include a few things about CSS preprocessors and how they are supposed to be easy to use. Actually, it could have been very very simple if I wasn’t using LESS. One of these things was a loop.
+For a recent [Codrops article on pure CSS loading animations](https://tympanus.net/codrops/2012/11/14/creative-css-loading-animations/), I wanted to include a few things about CSS preprocessors and how they are supposed to be easy to use. Actually, it could have been very very simple if I wasn’t using LESS. One of these things was a loop.
 
 ### LESS and loops
 
@@ -176,7 +176,7 @@ Basically, LESS fails to understand @page and @keyframes inside mixins because i
   .keyframe-mixin(@pre, @post, @vendor) {
     /* @pre is the newline hack (empty on the first declaration)
          * @post is a variable fix to detect the last declaration (1 on the last one)
-         * @vendor is the vendor prefix you want  
+         * @vendor is the vendor prefix you want
          */
 
     (~'@{pre}@@{vendor}keyframes @{name} {@{newline} 0%') {

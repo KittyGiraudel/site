@@ -1,6 +1,6 @@
 ---
 guest: Daniel Guillan
-title: "Modernizr Sass mixin"
+title: 'Modernizr Sass mixin'
 tags:
   - sass
   - mixin
@@ -284,6 +284,6 @@ It all started as a small Sass experiment and ended up being an incredibly inter
 
 That's it, you can play with the code on [SassMeister](http://sassmeister.com/gist/10578910) or [view the documentation and download on Github](https://github.com/danielguillan/modernizr-mixin). The Modernizr mixin is available as a [Compass extension](http://rubygems.org/gems/modernizr-mixin) too.
 
-<p class="sassmeister" data-gist-id="10578910" data-height="480"><a href="http://sassmeister.com/gist/10578910">Play with this gist on SassMeister.</a></p><script src="http://static.sassmeister.com/js/embed.js" async></script>
+<p class="sassmeister" data-gist-id="10578910" data-height="480"><a href="http://sassmeister.com/gist/10578910">Play with this gist on SassMeister.</a></p><script src="https://static.sassmeister.com/js/embed.js" async></script>
 
 > Daniel Guillan is the co-founder and chief design officer at Vintisis. Not only designer but also front-end developer, Daniel likes using Sass to make his life easier. You should catch him on [Twitter](https://twitter.com/danielguillan).

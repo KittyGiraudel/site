@@ -5,9 +5,9 @@ tags:
   - riddle
 ---
 
-> If you want the solution, be sure to read [this post](http://hugogiraudel.com/2014/02/26/the-magic-circle-trick-revealed/).
+> If you want the solution, be sure to read [this post](https://hugogiraudel.com/2014/02/26/the-magic-circle-trick-revealed/).
 
-Months back at work, I have been asked to code a piece of design for the home page of our site that ended up being quite tricky. You know [I like riddles](http://hugogiraudel.com/2014/02/06/calc-css-riddle/), right? Feelink tricksy my precious? Want to play a game?
+Months back at work, I have been asked to code a piece of design for the home page of our site that ended up being quite tricky. You know [I like riddles](https://hugogiraudel.com/2014/02/06/calc-css-riddle/), right? Feelink tricksy my precious? Want to play a game?
 
 ## What we want?!
 
@@ -40,6 +40,6 @@ Regarding browser support, I came up with a solution working from Internet Explo
 
 y much it. In a week or so, I'll update the post with my solution and I'll talk about the more creative and effective proposals you gave me. Surprise me people, and be sure to have fun doing it. It's a tricky CSS brain-teaser, I'm sure you're going to love it. ;)
 
-To help you start, I created [a very basic CodePen](http://codepen.io/HugoGiraudel/pen/cffeb2facdf797f46617e9615105f38d) you can fork and link to in the comments.
+To help you start, I created [a very basic CodePen](https://codepen.io/HugoGiraudel/pen/cffeb2facdf797f46617e9615105f38d) you can fork and link to in the comments.
 
 Game on!

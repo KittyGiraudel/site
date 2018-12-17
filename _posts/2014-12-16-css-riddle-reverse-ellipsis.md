@@ -35,9 +35,9 @@ Now what if you want to display the end of content and add ellipsis at beginning
 
 > ...niverse, and everything is 42.
 
-That is what I call a _reverse ellipsis_, although I suspect CSS specifications to call it _start ellipsis_ since the current value for `text-overflow` is actually called _end-overflow-type_. Anyway, now it's your turn. I have created [a pen](http://codepen.io/HugoGiraudel/pen/5582f35c9596c40ae947bad2f5993fb2/) if you want to play with the initial code:
+That is what I call a _reverse ellipsis_, although I suspect CSS specifications to call it _start ellipsis_ since the current value for `text-overflow` is actually called _end-overflow-type_. Anyway, now it's your turn. I have created [a pen](https://codepen.io/HugoGiraudel/pen/5582f35c9596c40ae947bad2f5993fb2/) if you want to play with the initial code:
 
-<p data-height="280" data-theme-id="0" data-slug-hash="5582f35c9596c40ae947bad2f5993fb2" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/5582f35c9596c40ae947bad2f5993fb2/'>5582f35c9596c40ae947bad2f5993fb2</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="280" data-theme-id="0" data-slug-hash="5582f35c9596c40ae947bad2f5993fb2" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/5582f35c9596c40ae947bad2f5993fb2/'>5582f35c9596c40ae947bad2f5993fb2</a> by Hugo Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 **Beware**, next content is spoiler!
 
@@ -111,6 +111,6 @@ That being said, it is &mdash; as far as I can tell &mdash; the only solution I 
 
 This is far from ideal, and Michael's solution prevents this so congratulations to Michael Godwin.
 
-<p data-height="280" data-theme-id="0" data-slug-hash="NPNZRx" data-default-tab="result" data-user="Godwin" class='codepen'>See the Pen <a href='http://codepen.io/Godwin/pen/NPNZRx/'>NPNZRx</a> by Godwin (<a href='http://codepen.io/Godwin'>@Godwin</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="280" data-theme-id="0" data-slug-hash="NPNZRx" data-default-tab="result" data-user="Godwin" class='codepen'>See the Pen <a href='https://codepen.io/Godwin/pen/NPNZRx/'>NPNZRx</a> by Godwin (<a href='https://codepen.io/Godwin'>@Godwin</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 Cheers to all of you who tried, and if you come up with something better, please be sure to share. ;)

@@ -7,7 +7,7 @@ tags:
   - select
 ---
 
-A couple of weeks ago, I came across an article from Pepsized featuring a [CSS-only alternative to the Select Element](http://pepsized.com/css-only-alternative-to-the-select-element/). Sounds nice! Especially since I recall doing some [dropdown styling at Codrops](http://tympanus.net/codrops/2012/10/04/custom-drop-down-list-styling/).
+A couple of weeks ago, I came across an article from Pepsized featuring a [CSS-only alternative to the Select Element](http://pepsized.com/css-only-alternative-to-the-select-element/). Sounds nice! Especially since I recall doing some [dropdown styling at Codrops](https://tympanus.net/codrops/2012/10/04/custom-drop-down-list-styling/).
 
 Yeah, it's very nice. Even if it's not an alternative to the Select Element. This is not possible. You cannot do a pure CSS alternative to the Select Element.
 
@@ -21,13 +21,13 @@ Now don't get me wrong, the author at Pepsized did a wonderful job on this artic
 
 The major concern here is **accessibility**. The default `<select>` element is completely usable either with a mouse or a keyboard, following this process:
 
-1. Mouse: move your cursor over the `<select>` element  
+1. Mouse: move your cursor over the `<select>` element
    Keyboard: use the tab key to focus the `<select>` element
-1. Mouse: click on the `<select>` element  
+1. Mouse: click on the `<select>` element
    Keyboard: press enter
-1. Mouse: move your cursor over the desired option  
+1. Mouse: move your cursor over the desired option
    Keyboard: use the top and bottom arrow keys to pick an option
-1. Mouse: click on the desired option  
+1. Mouse: click on the desired option
    Keyboard: press enter
 
 While making a pure CSS dropdown easily usable with the mouse can be done by pretty much any one with some CSS knowledge, making it usable with keyboard navigation is a whole other story.

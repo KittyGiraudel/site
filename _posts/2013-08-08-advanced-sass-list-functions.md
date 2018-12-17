@@ -7,7 +7,7 @@ tags:
   - function
 ---
 
-A couple of weeks ago, I wrote a small guide to [understand Sass lists](http://hugogiraudel.com/2013/07/15/understanding-sass-lists/). I hope you've read it and learnt things from it!
+A couple of weeks ago, I wrote a small guide to [understand Sass lists](https://hugogiraudel.com/2013/07/15/understanding-sass-lists/). I hope you've read it and learnt things from it!
 
 Anyway, a couple of days ago I stumbled upon [a comment in a Sass issue](https://github.com/nex3/sass/issues/852#issuecomment-22071664) listing a couple of advanced Sass functions to deal with lists. I found the idea quite appealing so I made my own function library for for this. In my opinion, it is always interesting to go deeper than _"it just works"_, so here is a short blog post to explain my code.
 
@@ -494,4 +494,4 @@ Thanks a lot for the input Ana!
 
 ## Final words
 
-I guess that's all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with [this pen](http://codepen.io/HugoGiraudel/pen/loAgq) or contribute to [this repo](https://github.com/HugoGiraudel/Sass-snippets/blob/master/list-functions/_all.scss).
+I guess that's all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with [this pen](https://codepen.io/HugoGiraudel/pen/loAgq) or contribute to [this repo](https://github.com/HugoGiraudel/Sass-snippets/blob/master/list-functions/_all.scss).

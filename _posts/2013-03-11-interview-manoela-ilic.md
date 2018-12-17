@@ -1,10 +1,10 @@
 ---
-title: "Interview with Manoela Ilic"
+title: 'Interview with Manoela Ilic'
 tags:
   - interview
 ---
 
-> The wonderful [Manoela Ilic](https://twitter.com/crnacura) also known as Mary Lou, co-founder of [Codrops](http://tympanus.net/codrops/) has accepted to answer a few questions. Below is her interview. Enjoy!
+> The wonderful [Manoela Ilic](https://twitter.com/crnacura) also known as Mary Lou, co-founder of [Codrops](https://tympanus.net/codrops/) has accepted to answer a few questions. Below is her interview. Enjoy!
 
 <figure class="figure">
 <img src="/assets/images/interview-manoela-ilic/manoela.jpg" alt="Photo Manoela Ilic" />
@@ -13,7 +13,7 @@ tags:
 
 #### You are kind of a mysterious person. Maybe could you introduce yourself?
 
-I'm Manoela, a 31 year old web designer and developer and I create things for [Codrops](http://tympanus.net/codrops/) since 2009. I studied Cognitive Science in Germany and then Computational Logic in Portugal.
+I'm Manoela, a 31 year old web designer and developer and I create things for [Codrops](https://tympanus.net/codrops/) since 2009. I studied Cognitive Science in Germany and then Computational Logic in Portugal.
 
 I worked in a software company for a while before I decided to become a freelancer and launch Codrops. Since I was a kid I was always fascinated with computers and I created my first website when I was 16 (it had some fancy Flash buttons, I remember) :)
 
@@ -56,10 +56,10 @@ We currently have about **850.000 unique visitor** and **9.5 million pageviews**
 
 #### What is the most successful article on Codrops so far? Related to the number of views.
 
-The most successful article was [Original Hover Effects](http://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/) by [Alessio Atzeni](https://twitter.com/Bluxart).
+The most successful article was [Original Hover Effects](https://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/) by [Alessio Atzeni](https://twitter.com/Bluxart).
 
 <figure class="figure">
-<a href="http://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/"><img src="http://cdn2.tympanus.net/codrops/wp-content/uploads/2011/11/OriginalHoverEffects.jpg?84cd58" alt=""></a>
+<a href="https://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/"><img src="https://cdn2.tympanus.net/codrops/wp-content/uploads/2011/11/OriginalHoverEffects.jpg?84cd58" alt=""></a>
 <figcaption>Original Hover Effects on Codrops</figcaption>
 </figure>
 
@@ -69,6 +69,6 @@ Yes, I have some side projects that I'm working on and I also work for some clie
 
 #### Anything left you’d like to say? :)
 
-I'd like to thank you for the opportunity and **I'd like to thank all the readers of [Codrops](http://tympanus.com/codrops/)** for their support. I'd also like to wish you all the best for your website and blog and I'm looking forward to read many of your articles :)
+I'd like to thank you for the opportunity and **I'd like to thank all the readers of [Codrops](https://tympanus.com/codrops/)** for their support. I'd also like to wish you all the best for your website and blog and I'm looking forward to read many of your articles :)
 
 > Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. Oh, and congratulations for being part of the [2013 Awwwards jury](http://www.awwwards.com/jury/2013)! :)

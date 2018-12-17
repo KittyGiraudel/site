@@ -5,9 +5,9 @@ tags:
   - release
 ---
 
-Hey people! Just a quick article to introduce [Countdown.js](https://github.com/HugoGiraudel/Countdown.js), a little script I recently made. During the last weeks, I've been practicing with JavaScript. It has been on [my wishlist](http://hugogiraudel.com/2013/05/13/things-to-do-2013/) for 2013 and I'm glad that I could made some progress with it.
+Hey people! Just a quick article to introduce [Countdown.js](https://github.com/HugoGiraudel/Countdown.js), a little script I recently made. During the last weeks, I've been practicing with JavaScript. It has been on [my wishlist](https://hugogiraudel.com/2013/05/13/things-to-do-2013/) for 2013 and I'm glad that I could made some progress with it.
 
-In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited [an old countdown script](http://codepen.io/HugoGiraudel/pen/jtJrq) I made a while back with the [object literal pattern](http://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/).
+In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited [an old countdown script](https://codepen.io/HugoGiraudel/pen/jtJrq) I made a while back with the [object literal pattern](http://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/).
 
 ## Why another countdown script?
 
@@ -155,4 +155,4 @@ That's all folks! I hope you like this script and if you find anything worth men
 
 Oh and if you only want to hack around the code, check this pen:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="vCyJq" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/vCyJq'>Object-oriented JS Countdown Class</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>
+<p data-height="320" data-theme-id="0" data-slug-hash="vCyJq" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/vCyJq'>Object-oriented JS Countdown Class</a> by Hugo Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>

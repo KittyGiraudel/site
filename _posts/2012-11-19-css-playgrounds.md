@@ -1,5 +1,5 @@
 ---
-title: "A round-up on CSS playgrounds"
+title: 'A round-up on CSS playgrounds'
 tags:
   - css
   - playground
@@ -13,10 +13,10 @@ A code playground is an online tool allowing you to do some code, then save and 
 
 Playgrounds are becoming more and more popular and there are a bunch of options when you want to use one. Let me introduce you the most popular ones:
 
-* <a href="http://codepen.io" title="CodePen">CodePen</a> from Chris Coyier, Tim Sabat and Alex Vasquez
-* <a href="http://dabblet.com" title="Dabblet">Dabblet</a> from Lea Verou
-* <a href="http://cssdeck.com" title="CSSDeck">CSSDeck</a> from Rishabh
-* <a href="http://jsfiddle.net" title="JSFiddle">JSFiddle</a> from Oskar Krawczyk
+- <a href="https://codepen.io" title="CodePen">CodePen</a> from Chris Coyier, Tim Sabat and Alex Vasquez
+- <a href="https://dabblet.com" title="Dabblet">Dabblet</a> from Lea Verou
+- <a href="http://cssdeck.com" title="CSSDeck">CSSDeck</a> from Rishabh
+- <a href="https://jsfiddle.net" title="JSFiddle">JSFiddle</a> from Oskar Krawczyk
 
 Basically, they all do more or less the same stuff but each one has its own strengths and weaknesses. So in the end the choice is up to the user. I'd like to give you my opinion on this stuff but first, let's make a little round-up.
 
@@ -30,23 +30,23 @@ Plus, it seems to be very buggy sometimes. Shortcuts don't work as expected, cur
 
 ### Pros
 
-* Live reload
-* Prefixfree by default (removable)
-* Modulable interface
-* User accounts via GitHub: gallery
+- Live reload
+- Prefixfree by default (removable)
+- Modulable interface
+- User accounts via GitHub: gallery
 
 ### Cons
 
-* <span style="text-decoration: line-through">No JS support</span> JS tab now in alpha stage
-* No preprocessors support
-* Cloned GitHub user accounts (followers/following GitHub users)
-* Sometimes very buggy
+- <span style="text-decoration: line-through">No JS support</span> JS tab now in alpha stage
+- No preprocessors support
+- Cloned GitHub user accounts (followers/following GitHub users)
+- Sometimes very buggy
 
 ### Resources
 
-* [Dabblet](http://dabblet.com)
-* [Blog](http://blog.dabblet.com/)
-* [Dabblet](https://twitter.com/dabblet) on Twitter
+- [Dabblet](https://dabblet.com)
+- [Blog](http://blog.dabblet.com/)
+- [Dabblet](https://twitter.com/dabblet) on Twitter
 
 ## JSFiddle
 
@@ -54,27 +54,27 @@ JSFiddle is a wonderful playground when it comes to JavaScript development since
 
 ### Pros
 
-* 22 JavaScript libraries available + multiple versions: Mootools, jQuery, Prototype, YUI, Glow, Dojo, Processing.js, ExtJS, Raphael, RightJS, Three.js, Zepto, Eny, Shipyard, Knockout, The X Toolkit, AngularJS, Ember, Underscore, Bonsai, KineticJS, FabricJS
-* Highly customizable for JS development
-* Built-in options for Normalize.css
-* Preprocessors: SCSS (CSS), CoffeeScript (JS), JavaScript 1.7 (JS)
-* Easy embedding of external stylesheets / JS scripts
-* Doctype accessible
-* Numbers versions of your work
-* User accounts: gallery
-* Mobile debugger
+- 22 JavaScript libraries available + multiple versions: Mootools, jQuery, Prototype, YUI, Glow, Dojo, Processing.js, ExtJS, Raphael, RightJS, Three.js, Zepto, Eny, Shipyard, Knockout, The X Toolkit, AngularJS, Ember, Underscore, Bonsai, KineticJS, FabricJS
+- Highly customizable for JS development
+- Built-in options for Normalize.css
+- Preprocessors: SCSS (CSS), CoffeeScript (JS), JavaScript 1.7 (JS)
+- Easy embedding of external stylesheets / JS scripts
+- Doctype accessible
+- Numbers versions of your work
+- User accounts: gallery
+- Mobile debugger
 
 ### Cons
 
-* No live reload
-* No HTML preprocessors support
-* No built-in option for Prefixfree and Modernizr
-* Interface somewhat a bit fixed
+- No live reload
+- No HTML preprocessors support
+- No built-in option for Prefixfree and Modernizr
+- Interface somewhat a bit fixed
 
 ### Resources
 
-* [JSFiddle](http://jsfiddle.net)
-* [JSFiddle](https://twitter.com/jsfiddle) and [JSFiddleSupport](https://twitter.com/jsfiddlesupport) on Twitter
+- [JSFiddle](https://jsfiddle.net)
+- [JSFiddle](https://twitter.com/jsfiddle) and [JSFiddleSupport](https://twitter.com/jsfiddlesupport) on Twitter
 
 ## CSSDeck
 
@@ -82,23 +82,23 @@ CSSDeck is fairly new in the playground scene but it's the only one providing th
 
 ### Pros
 
-* Live reload
-* Codecast feature (video coding)
-* 11 JavaScript libraries available: MooTools, jQuery, jQuery Mobile, Prototype, YUI, Underscore, Backbone, Modernizr, Sencha Touch, Dojo, Bootstrap
-* Preprocessors: ZenCoding (HTML), Markdown (HTML), Slim (HTML), Jade (HTML), HAML (HTML), LESS (CSS), Stylus (CSS), SCSS (CSS), Sass (CSS), Compass (CSS), CoffeeScript (JS)
-* Built-in options for Prefixfree and Normalize.css
-* User accounts via Twitter or GitHub: gallery, likes & follow
-* Possibility to make private stuff
+- Live reload
+- Codecast feature (video coding)
+- 11 JavaScript libraries available: MooTools, jQuery, jQuery Mobile, Prototype, YUI, Underscore, Backbone, Modernizr, Sencha Touch, Dojo, Bootstrap
+- Preprocessors: ZenCoding (HTML), Markdown (HTML), Slim (HTML), Jade (HTML), HAML (HTML), LESS (CSS), Stylus (CSS), SCSS (CSS), Sass (CSS), Compass (CSS), CoffeeScript (JS)
+- Built-in options for Prefixfree and Normalize.css
+- User accounts via Twitter or GitHub: gallery, likes & follow
+- Possibility to make private stuff
 
 ### Cons
 
-* Small community
-* Interface sometimes a bit messy
+- Small community
+- Interface sometimes a bit messy
 
 ### Resources
 
-* [CSSDeck](http://cssdeck.com)
-* [CSSDeck](https://twitter.com/cssdeck) on Twitter
+- [CSSDeck](http://cssdeck.com)
+- [CSSDeck](https://twitter.com/cssdeck) on Twitter
 
 ## CodePen
 
@@ -108,31 +108,31 @@ Plus, authors pick best pens on the site and feature them on the front page. Thi
 
 ### Pros
 
-* Live reload
-* 8 JavaScript libraries available: jQuery, jQuery UI, Zepto, MooTools, Prototype, YUI, ExtJS, Dojo
-* Preprocessors: ZenCoding (HTML), Markdown (HTML), Slim (HTML), HAML (HTML), LESS (CSS), SCSS (CSS), Sass (CSS), CoffeeScript (JS)
-* Built-in options for Prefixfree, Normalize.css, Reset.css and Modernizr
-* `<head>` accessible
-* Easy embedding of external stylesheets / JS scripts
-* User accounts via GitHub: gallery, likes & follow
-* Various themes available
-* Tags
-* Possibility to fork
-* Homepage featuring coolest pens
-* A PRO version with special features (teach mode, pair programming and much more)
+- Live reload
+- 8 JavaScript libraries available: jQuery, jQuery UI, Zepto, MooTools, Prototype, YUI, ExtJS, Dojo
+- Preprocessors: ZenCoding (HTML), Markdown (HTML), Slim (HTML), HAML (HTML), LESS (CSS), SCSS (CSS), Sass (CSS), CoffeeScript (JS)
+- Built-in options for Prefixfree, Normalize.css, Reset.css and Modernizr
+- `<head>` accessible
+- Easy embedding of external stylesheets / JS scripts
+- User accounts via GitHub: gallery, likes & follow
+- Various themes available
+- Tags
+- Possibility to fork
+- Homepage featuring coolest pens
+- A PRO version with special features (teach mode, pair programming and much more)
 
 ### Cons
 
-* Interface somewhat a bit fixed (preview with small height)
-* Everything is public without PRO version
-* Not registered pens are quickly deleted
-* Sometimes buggy with for loops
+- Interface somewhat a bit fixed (preview with small height)
+- Everything is public without PRO version
+- Not registered pens are quickly deleted
+- Sometimes buggy with for loops
 
 ### Resources
 
-* [CodePen](http://codepen.io)
-* [Blog](http//blog.codepen.io)
-* [CodePen](https://twitter.com/codepen) on Twitter
+- [CodePen](https://codepen.io)
+- [Blog](http//blog.codepen.io)
+- [CodePen](https://twitter.com/codepen) on Twitter
 
 ## What's my opinion
 
@@ -144,8 +144,8 @@ Shortly after the launch, I spent a huge amount of time on CodePen to play with 
 
 Anyway, if you'd like to have a glance behind the scenes of CodePen, [David Walsh recently interviewed Chris Coyier about it](http://davidwalsh.name/codepen-interview). They talk about challenges to get there, technical details and of course what's planned for the future.
 
-I've made a comparison of these 4 playgrounds as a table for more clarity. Here is [the JSFiddle](http://jsfiddle.net/FDDed/13/embedded/result/). Yeah, I made a **JSFiddle**, because on CodePen everything is public, and I don't want to drop those kind of things there. It's probably one of the only bad sides of CodePen, which will be soon gone.
+I've made a comparison of these 4 playgrounds as a table for more clarity. Here is [the JSFiddle](https://jsfiddle.net/FDDed/13/embedded/result/). Yeah, I made a **JSFiddle**, because on CodePen everything is public, and I don't want to drop those kind of things there. It's probably one of the only bad sides of CodePen, which will be soon gone.
 
-<iframe style="width: 100%; height: 500px; margin: 20px 0;" src="http://jsfiddle.net/FDDed/13/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe style="width: 100%; height: 500px; margin: 20px 0;" src="https://jsfiddle.net/FDDed/13/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 What about you? What's your favorite CSS playground?

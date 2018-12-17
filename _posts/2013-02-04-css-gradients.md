@@ -10,7 +10,7 @@ tags:
 
 I had no idea how powerful CSS gradients could be until late 2011, when I found the [CSS3 Patterns Gallery](http://lea.verou.me/css3patterns/) made by Lea Verou. The idea that you can obtain many shapes using just gradients was a starting point for many CSS experiments I would later do.
 
-Recently, while browsing through the demos on CodePen, I came across [a CSS3 Color Wheel](http://codepen.io/bitmap/pen/eBbHt) and thought _hey, I could do it with just one element and gradients_. So I did and the result can be seen [here](http://codepen.io/thebabydino/pen/hkxGp). And now I'm going to explain the reasoning behind it.
+Recently, while browsing through the demos on CodePen, I came across [a CSS3 Color Wheel](https://codepen.io/bitmap/pen/eBbHt) and thought _hey, I could do it with just one element and gradients_. So I did and the result can be seen [here](https://codepen.io/thebabydino/pen/hkxGp). And now I'm going to explain the reasoning behind it.
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/rainbow_wheel_screen.gif" alt="" />
@@ -23,7 +23,7 @@ The wheel - or you can think of it as a pie - is first split horizontally into t
 
 The pen below shows graphically how to layer the multiple backgrounds. It also has a pause button so that the infinite animation doesn't turn into a performance problem.
 
-<pre class="codepen" data-height="360" data-type="result" data-href="Kuvom" data-user="thebabydino" data-safe="true"><code></code><a href="http://codepen.io/thebabydino/pen/qgoBL">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="360" data-type="result" data-href="Kuvom" data-user="thebabydino" data-safe="true"><code></code><a href="https://codepen.io/thebabydino/pen/qgoBL">Check out this Pen!</a></pre>
 
 For both the original pen and this helper demo, the interesting part is this one:
 
@@ -81,7 +81,7 @@ The other eight are gradients from `transparent` to a solid color or from a soli
 In order to better understand gradient angles and how the `%` values for color stops are computed, let's see how a linear gradient is defined. Hopefully, this demo that lets you change the gradient angle helps with that - just click the dots.
 
 <pre class="codepen" data-height="640" data-type="result" data-href="qgoBL" data-user="thebabydino" data-safe="true"><code></code>
-<a href="http://codepen.io/thebabydino/pen/qgoBL" target="_blank">Check out this Pen!</a></pre>
+<a href="https://codepen.io/thebabydino/pen/qgoBL" target="_blank">Check out this Pen!</a></pre>
 
 The _gradient angle_ is the angle - measured clockwise - between the vertical axis and the _gradient line_ (the blue line in the demo). This is for the new syntax, which is not yet supported by WebKit browsers (however, [this is going to change](https://bugs.webkit.org/show_bug.cgi?id=67166)). The old syntax measured angles just like on the [trigonometric unit circle](http://en.wikipedia.org/wiki/Unit_circle) (counter-clockwise and starting from the horizontal axis).
 
@@ -153,7 +153,7 @@ By now, you're probably thinking it sucks to do so many computations. And it mus
 
 Even though for creating the rainbow wheel experiment I did compute everything on paper... I can only agree with that! This is why I made a really basic little tool that computes the `%` for any point inside the gradient box. You just need to click inside it and the `%` value appears in a box at the bottom center.
 
-<pre class="codepen" data-height="320" data-type="result" data-href="FDbdB" data-user="thebabydino" data-safe="true"><code></code><a href="http://codepen.io/thebabydino/pen/FDbdB" target="_blank">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="320" data-type="result" data-href="FDbdB" data-user="thebabydino" data-safe="true"><code></code><a href="https://codepen.io/thebabydino/pen/FDbdB" target="_blank">Check out this Pen!</a></pre>
 
 You can change the dimensions of the gradient box and you can also change the gradient itself. It accepts the newest syntax for linear gradients, with angle values in degrees, `to <side>` values or no value at all for describing the direction of the gradient.
 

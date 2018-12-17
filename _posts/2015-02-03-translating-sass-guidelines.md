@@ -1,28 +1,28 @@
 ---
-title: "Translating Sass Guidelines"
+title: 'Translating Sass Guidelines'
 tags:
   - sass
   - guidelines
   - translation
 ---
 
-{% raw %} A couple of weeks ago, I [introduced Sass Guidelines](http://hugogiraudel.com/2015/01/07/introducing-sass-guidelines/), a huge styleguide to write efficient, sain and scalable Sass code in pretty much any project. It has known a massive success, so thank you all for your support! I am very glad to maintain this project knowning how popular it has gotten, especially this quick.
+{% raw %} A couple of weeks ago, I [introduced Sass Guidelines](https://hugogiraudel.com/2015/01/07/introducing-sass-guidelines/), a huge styleguide to write efficient, sain and scalable Sass code in pretty much any project. It has known a massive success, so thank you all for your support! I am very glad to maintain this project knowning how popular it has gotten, especially this quick.
 
-Actually, it was so welcome that some lovely folks started translating it in different languages. It is currently available in [English](http://sass-guidelin.es), [French](http://sass-guidelin.es/fr/), [Spanish](http://sass-guidelin.es/es/), [Polish](http://sass-guidelin.es/pl/), [Russian](http://sass-guidelin.es/ru/), [Korean](http://sass-guidelin.es/ko/) and [Chinese](http://sass-guidelin.es/zh/). [German](https://github.com/HugoGiraudel/sass-guidelines/issues/88), [Italian](https://github.com/HugoGiraudel/sass-guidelines/issues/91), [Portuguese](https://github.com/HugoGiraudel/sass-guidelines/issues/89), [Danish](https://github.com/HugoGiraudel/sass-guidelines/issues/84), [Dutch](https://github.com/HugoGiraudel/sass-guidelines/issues/86), [Czech](https://github.com/HugoGiraudel/sass-guidelines/issues/92) and [Greek](https://github.com/HugoGiraudel/sass-guidelines/issues/83) should soon follow. Let's give credits where it's due while we're at it.
+Actually, it was so welcome that some lovely folks started translating it in different languages. It is currently available in [English](https://sass-guidelin.es), [French](https://sass-guidelin.es/fr/), [Spanish](https://sass-guidelin.es/es/), [Polish](https://sass-guidelin.es/pl/), [Russian](https://sass-guidelin.es/ru/), [Korean](https://sass-guidelin.es/ko/) and [Chinese](https://sass-guidelin.es/zh/). [German](https://github.com/HugoGiraudel/sass-guidelines/issues/88), [Italian](https://github.com/HugoGiraudel/sass-guidelines/issues/91), [Portuguese](https://github.com/HugoGiraudel/sass-guidelines/issues/89), [Danish](https://github.com/HugoGiraudel/sass-guidelines/issues/84), [Dutch](https://github.com/HugoGiraudel/sass-guidelines/issues/86), [Czech](https://github.com/HugoGiraudel/sass-guidelines/issues/92) and [Greek](https://github.com/HugoGiraudel/sass-guidelines/issues/83) should soon follow. Let's give credits where it's due while we're at it.
 
-* Greek: [Adonis K.](https://twitter.com/adon1sk) and [Konstantinos Margaritis](https://twitter.com/kmargaritis)
-* Danish: [Patrick Redzdaz](https://twitter.com/redzdaz)
-* French: [Pierre Choffé](https://twitter.com/pierrechoffe)
-* Dutch: [Tom De Witt](https://twitter.com/ttomdewit) and [Bart Veneman](https://twitter.com/BartVeneman)
-* Polish: [Andrzej Kłapeć](https://twitter.com/solidslash) and [Mateusz Chabros](https://twitter.com/matchabros)
-* German: [Kai Brueckers](https://twitter.com/kaibrueckers) and [Al Tembo](https://twitter.com/altembo)
-* Portuguese: [Ricardo Magalhães](https://twitter.com/magalhini), [Sara Vieira](https://twitter.com/nikkitaftw) and [Eduardo Bouças](https://twitter.com/eduardoboucas)
-* Spanish: [Sonia Conde](https://twitter.com/nonlessorganic) and [David Khourshid](https://twitter.com/davidkpiano)
-* Italian: [Simone Rescio](https://twitter.com/srescio)
-* Czech: [Pavel Antolík](https://twitter.com/pavelantolik)
-* Russian: [Даниил Пронин](https://twitter.com/grawl) and [Pavel Demyanenko](https://twitter.com/PavelDemyanenko)
-* Korean: [Donghee Kim](https://github.com/kimdhoe)
-* Chinese: [Airen](https://github.com/airen) and [Sean Sun](https://twitter.com/seansun)
+- Greek: [Adonis K.](https://twitter.com/adon1sk) and [Konstantinos Margaritis](https://twitter.com/kmargaritis)
+- Danish: [Patrick Redzdaz](https://twitter.com/redzdaz)
+- French: [Pierre Choffé](https://twitter.com/pierrechoffe)
+- Dutch: [Tom De Witt](https://twitter.com/ttomdewit) and [Bart Veneman](https://twitter.com/BartVeneman)
+- Polish: [Andrzej Kłapeć](https://twitter.com/solidslash) and [Mateusz Chabros](https://twitter.com/matchabros)
+- German: [Kai Brueckers](https://twitter.com/kaibrueckers) and [Al Tembo](https://twitter.com/altembo)
+- Portuguese: [Ricardo Magalhães](https://twitter.com/magalhini), [Sara Vieira](https://twitter.com/nikkitaftw) and [Eduardo Bouças](https://twitter.com/eduardoboucas)
+- Spanish: [Sonia Conde](https://twitter.com/nonlessorganic) and [David Khourshid](https://twitter.com/davidkpiano)
+- Italian: [Simone Rescio](https://twitter.com/srescio)
+- Czech: [Pavel Antolík](https://twitter.com/pavelantolik)
+- Russian: [Даниил Пронин](https://twitter.com/grawl) and [Pavel Demyanenko](https://twitter.com/PavelDemyanenko)
+- Korean: [Donghee Kim](https://github.com/kimdhoe)
+- Chinese: [Airen](https://github.com/airen) and [Sean Sun](https://twitter.com/seansun)
 
 If you read Sass Guidelines in anything but English, be sure to thank the translators. I am sure that will make their day. :)
 
@@ -120,14 +120,13 @@ In a matter of convenience, all UI translations live in a [`translations.yml`](h
 ```yml
 en:
   donate:
-    content: "If you enjoy Sass Guidelines, please consider supporting them."
-    button: "Support Sass Guidelines"
+    content: 'If you enjoy Sass Guidelines, please consider supporting them.'
+    button: 'Support Sass Guidelines'
   baseline:
-    content: "An opinionated styleguide for writing sane, maintainable and scalable Sass."
+    content: 'An opinionated styleguide for writing sane, maintainable and scalable Sass.'
   footer:
-    content: "Made with love by [Hugo Giraudel](http://hugogiraudel.com)"
-  note: "Note"
-
+    content: 'Made with love by [Hugo Giraudel](https://hugogiraudel.com)'
+  note: 'Note'
 # Other languages...
 ```
 
@@ -159,7 +158,6 @@ fr:
   translators:
     - name: Pierre Choffé
       link: http://la-cascade.ghost.io
-
 # Other languages...
 ```
 
@@ -168,18 +166,45 @@ I am sure you have figured out where this is going. We only need [a partial incl
 ```html
 {% if page.language == "en" %}
 
-  <div class="translation-warning">
-    <p>The Sass Guidelines project has been translated into several languages by <a target="_blank" href="https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml">generous contributors</a>. Open the <span data-toggle="aside" class="link-like" role="button" aria-expanded>options panel</span> to switch.</p>
-  </div>
+<div class="translation-warning">
+  <p>
+    The Sass Guidelines project has been translated into several languages by
+    <a
+      target="_blank"
+      href="https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml"
+      >generous contributors</a
+    >. Open the
+    <span data-toggle="aside" class="link-like" role="button" aria-expanded
+      >options panel</span
+    >
+    to switch.
+  </p>
+</div>
 
-{% else %}
+{% else %} {% capture translators %}{% for translator in
+site.data.languages[page.language].translators %}<a
+  href="{{ translator.link }}"
+  target="_blank"
+  >{{ translator.name }}</a
+>{% if forloop.last == false %}, {% endif %}{% endfor %}{% endcapture %}
 
-  {% capture translators %}{% for translator in site.data.languages[page.language].translators %}<a href="{{ translator.link }}" target="_blank">{{ translator.name }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}{% endcapture %}
-
-  <div class="translation-warning">
-    <p>You are viewing the {{ site.data.languages[page.language].label }} translation by {{ translators }} of the original <a href="/">Sass Guidelines</a> from <a target="_blank" href="http://hugogiraudel.com">Hugo Giraudel</a>.</p>
-    <p>This version is exclusively maintained by contributors without the review of the main author, therefore might not be completely up-to-date{% if site.data.languages[page.language].version != site.data.languages.en.version %}, especially since it is currently in version {{ site.data.languages[page.language].version }} while the <a href="/">English version</a> is in version {{ site.data.languages.en.version }}{% endif %}.</p>
-  </div>
+<div class="translation-warning">
+  <p>
+    You are viewing the {{ site.data.languages[page.language].label }}
+    translation by {{ translators }} of the original
+    <a href="/">Sass Guidelines</a> from
+    <a target="_blank" href="https://hugogiraudel.com">Hugo Giraudel</a>.
+  </p>
+  <p>
+    This version is exclusively maintained by contributors without the review of
+    the main author, therefore might not be completely up-to-date{% if
+    site.data.languages[page.language].version != site.data.languages.en.version
+    %}, especially since it is currently in version {{
+    site.data.languages[page.language].version }} while the
+    <a href="/">English version</a> is in version {{
+    site.data.languages.en.version }}{% endif %}.
+  </p>
+</div>
 
 {% endif %}
 ```
@@ -204,7 +229,8 @@ gr:
 ... will be captured as this HTML string
 
 ```html
-<a href="https://github.com/varemenos">Adonis K.</a>, <a href="https://github.com/kmargaritis">Konstantinos Margaritis</a>
+<a href="https://github.com/varemenos">Adonis K.</a>,
+<a href="https://github.com/kmargaritis">Konstantinos Margaritis</a>
 ```
 
 Then this HTML string can be safely used as part of our paragraph with `{{ translators }}`.

@@ -1,5 +1,5 @@
 ---
-title: "Another Sass button library"
+title: 'Another Sass button library'
 tags:
   - sass
   - button
@@ -8,7 +8,7 @@ tags:
 
 If you enjoy reading about Sass, you may have stumbled upon Stuart Robson's [recent article promoting BEM](http://www.alwaystwisted.com/post.php?s=2014-02-27-even-easier-bem-ing-with-sass-33) syntax with new Sass 3.3 features. Pretty cool article; if you haven't read it, you definitely should.
 
-Anyway, I had a couple of minutes to kill the other day so I opened new [pen](http://codepen.io) and started writing a little button library. Yes, another one! Actually my point wasn't to improve anything, I just wanted to code some Sass, just for the sake of it.
+Anyway, I had a couple of minutes to kill the other day so I opened new [pen](https://codepen.io) and started writing a little button library. Yes, another one! Actually my point wasn't to improve anything, I just wanted to code some Sass, just for the sake of it.
 
 Anyway, I came up with some interesting things and Stuart suggested I wrote a little something about it so here we are.
 
@@ -29,32 +29,31 @@ $btn-size-ratio: 1.2 !default;
 $btn-hover: saturate 25% !default;
 $btn-border: darken 20% !default;
 $btn-background: (
-    'default': #565656,
-    'success': #468847,
-    'danger': #b94a48,
-    'warning': #c09853,
-    'info': #3a87ad
-  )
-  !default;
+  'default': #565656,
+  'success': #468847,
+  'danger': #b94a48,
+  'warning': #c09853,
+  'info': #3a87ad
+) !default;
 ```
 
 <figure class="figure">
-<img src="http://i.imgur.com/shEzy8H.jpg" alt="Variable all the things!" />
+<img src="https://i.imgur.com/shEzy8H.jpg" alt="Variable all the things!" />
 <figcaption>Variable all the things!</figcaption>
 </figure>
 
 Everything might not be intuitive so let me explain what each variable is for:
 
-* `$btn-name` is the name of the module (e.g. the base class).
-* `$btn-size-ratio` is the ratio used for small and large modifiers. Basically large is `$btn-size-ratio` times bigger than usual, while small is `$btn-size-ratio` smaller than usual.
-* `$btn-hover` is a 2 items long list, the first item being the Sass color manipulation function used, while the second is the argument for this function (e.g. `saturate 25%`).
-* `$btn-border` kind of works the same way; if not false, it defines the function used to compute the border-color based on the button color. If `false`, it just disables the border.
-* `$btn-background` is a map of all color schemes; every color is mapped to a name so a modifier like `.button--default` will make a grey button.
+- `$btn-name` is the name of the module (e.g. the base class).
+- `$btn-size-ratio` is the ratio used for small and large modifiers. Basically large is `$btn-size-ratio` times bigger than usual, while small is `$btn-size-ratio` smaller than usual.
+- `$btn-hover` is a 2 items long list, the first item being the Sass color manipulation function used, while the second is the argument for this function (e.g. `saturate 25%`).
+- `$btn-border` kind of works the same way; if not false, it defines the function used to compute the border-color based on the button color. If `false`, it just disables the border.
+- `$btn-background` is a map of all color schemes; every color is mapped to a name so a modifier like `.button--default` will make a grey button.
 
 Also note the 2 measures we take to avoid conflicts with user's code:
 
-* the `!default` flag for each variable,
-* namespacing all variables with `$btn-`
+- the `!default` flag for each variable,
+- namespacing all variables with `$btn-`
 
 ## The module
 
@@ -160,14 +159,21 @@ So we should probably make a couple of checks to make sure everything's right be
 
   // Making sure first items from $btn-hover and $btn-border
   // are valid functions
-  @if not function-exists(nth($btn-hover, 1)) or not function-exists(nth($btn-border, 1)) {
+  @if not
+    function-exists(nth($btn-hover, 1)) or not
+    function-exists(nth($btn-border, 1))
+  {
     @warn "Either `#{nth($btn-hover, 1)}` or `#{nth($btn-border, 1)}` is not a valid function for `button-color`.";
     $everything-okay: false;
   }
 
   // Making sure second items from $btn-hover and $btn-border
   // are percentages
-  @if type-of(nth($btn-hover,  2)) != number or type-of(nth($btn-border, 2)) != number {
+  @if type-of(nth($btn-hover, 2)) !=
+    number or
+    type-of(nth($btn-border, 2)) !=
+    number
+  {
     @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
     $everything-okay: false;
   }
@@ -191,4 +197,4 @@ The module is quite simple right now but I feel like it introduces a couple of o
 
 You can have a look at the final code here:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="Dezad" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/Dezad'>(Another) Sass button lib</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="320" data-theme-id="0" data-slug-hash="Dezad" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/Dezad'>(Another) Sass button lib</a> by Hugo Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>

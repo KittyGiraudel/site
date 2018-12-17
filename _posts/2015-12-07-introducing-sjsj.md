@@ -1,5 +1,5 @@
 ---
-title: "Introducing Simplified JavaScript Jargon"
+title: 'Introducing Simplified JavaScript Jargon'
 tags:
   - JavaScript
   - JS
@@ -24,9 +24,9 @@ I gave it a night and thought it would be a good idea to have a GitHub repositor
 
 The reason why I introduce it in a proper blog post is because **I would need your help**. Indeed, I would like this to become a community-driven project, as:
 
-* it is likely to get outdated and die pretty soon if I maintain it by myself;
-* my JavaScript knowledge is good but I don’t know everything, hence the need your expertise;
-* I believe that this is precisely on such a project that the community can kick in.
+- it is likely to get outdated and die pretty soon if I maintain it by myself;
+- my JavaScript knowledge is good but I don’t know everything, hence the need your expertise;
+- I believe that this is precisely on such a project that the community can kick in.
 
 As of today, not even a week since the creation of the repository, there are already 66 terms listed, 40 of them being properly documented. And each day brings new kids on the block! Generous contributors are generous, I’m telling you.
 
@@ -34,7 +34,7 @@ As of today, not even a week since the creation of the repository, there are alr
 
 The cool thing with this project is that an entry does not need to be long. Nobody has to write 700 words on a concept or a JavaScript library. It is all about explaining a word in a few sentences, the simplest way as possible.
 
-Ideally, I would like this to follow the traces of [Things Explainer](http://amzn.com/0544668251) from xkcd, where Randall Munroe explains complicated concepts with nothing more than the thousand most used words from the English dictionary. If we can do that to explain the JavaScript ecosystem, we can make it accessible to everybody, even beginners and this is a big deal.
+Ideally, I would like this to follow the traces of [Things Explainer](https://amzn.com/0544668251) from xkcd, where Randall Munroe explains complicated concepts with nothing more than the thousand most used words from the English dictionary. If we can do that to explain the JavaScript ecosystem, we can make it accessible to everybody, even beginners and this is a big deal.
 
 So how can you contribute to this sweet little project? Well, as of today the best thing to do would be to check for _to be completed_ entry in the README, and fill them. If you would like to document a term that is not part of the list, feel free to add one; as long as it is related to JavaScript.
 

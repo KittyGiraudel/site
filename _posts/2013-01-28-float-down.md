@@ -1,5 +1,5 @@
 ---
-title: "Simulate float: down"
+title: 'Simulate float: down'
 tags:
   - css
   - riddle
@@ -10,11 +10,11 @@ Back in september, some guy exposed a very interesting problem on [CSS-tricks fo
 
 He started with:
 
-![Before](http://img401.imageshack.us/img401/4723/98791854.jpg)
+![Before](https://img401.imageshack.us/img401/4723/98791854.jpg)
 
 And wanted to end with:
 
-![After](http://imageshack.us/scaled/landing/88/51843399.jpg)
+![After](https://imageshack.us/scaled/landing/88/51843399.jpg)
 
 ## Solutions to the problem
 
@@ -22,16 +22,16 @@ And wanted to end with:
 
 Even if I'm not a flexbox expert, I'm pretty confident saying there is a way to do it very easily. The problem with flexbox is that it's not fully compatible so we had to look for another option.
 
-Actually [Bennett Feely](http://twitter.com/bennettfeely) did it very nicely already on [CodePen](http://codepen.io/bennettfeely/pen/firxL).
+Actually [Bennett Feely](http://twitter.com/bennettfeely) did it very nicely already on [CodePen](https://codepen.io/bennettfeely/pen/firxL).
 
 ### Manually
 
 I first managed to do it with `:nth-child()` selectors, replacing manually each one of the ten elements ([JSFiddle](http://jsfiddle.net/VAdT3/1/)). It sucked because it was:
 
-* Manual,
-* Dependant of the number of items,
-* CSS heavy,
-* Not elegant.
+- Manual,
+- Dependant of the number of items,
+- CSS heavy,
+- Not elegant.
 
 ### JavaScript
 
@@ -47,7 +47,7 @@ Basically I target one out of two items with `:nth-child(even)` then remove it f
 
 ### Margins
 
-Finally someone came up with a better idea (and probably a better understanding of CSS) than mine with a pure CSS and very elegant solution ([CodePen](http://codepen.io/wolfcry911/pen/IkBbu)).
+Finally someone came up with a better idea (and probably a better understanding of CSS) than mine with a pure CSS and very elegant solution ([CodePen](https://codepen.io/wolfcry911/pen/IkBbu)).
 
 ```css
 li:nth-child(even) {
@@ -62,7 +62,7 @@ However it relies on CSS advanced pseudo-selectors so for a deeper browser suppo
 
 ### Columns (edit 31/01/2013)
 
-I just noticed [Estelle Weyl](http://codepen.io/estelle) did it in another clever way with CSS columns ([CodePen](http://codepen.io/estelle/pen/zkjrn)). I'm actually wondering if it's not the better option all in all since it requires only one single CSS line (prefixes omitted).
+I just noticed [Estelle Weyl](https://codepen.io/estelle) did it in another clever way with CSS columns ([CodePen](https://codepen.io/estelle/pen/zkjrn)). I'm actually wondering if it's not the better option all in all since it requires only one single CSS line (prefixes omitted).
 
 ```css
 ul {
@@ -78,7 +78,7 @@ A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitt
 
 **CHALLENGE ACCEPTED!** This made me want to give it a shot. Honestly, it took me a few tries and no more than 10 minutes to find a solution for 3 rows.
 
-<pre class="codepen" data-height="480" data-type="result" data-href="DoAIB" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/DoAIB">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="480" data-type="result" data-href="DoAIB" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/DoAIB">Check out this Pen!</a></pre>
 
 Instead of doing `:nth-child(even)`, we need two different selectors:
 
@@ -112,11 +112,11 @@ $margin: 0.4em;
 
 A few explanations about the variables:
 
-* `$rows` stands for the number of rows you want,
-* `$baseline` is set as a font-size to the root element (`html`) in order to be able to use em everywhere,
-* `$width` is the width of each item; in my demo it equals 100px,
-* `$height` is the height of each item; in my demo it equals 100px as well,
-* `$margin` is the gap between each item; I set it to 10% of the size of an item.
+- `$rows` stands for the number of rows you want,
+- `$baseline` is set as a font-size to the root element (`html`) in order to be able to use em everywhere,
+- `$width` is the width of each item; in my demo it equals 100px,
+- `$height` is the height of each item; in my demo it equals 100px as well,
+- `$margin` is the gap between each item; I set it to 10% of the size of an item.
 
 _Note: you may wonder why using 2 different variables for size when one would be enough. This allows you to use non-square items if you want to: try it, it works._
 
@@ -139,7 +139,7 @@ $i: $rows; // Initializing the loop
 }
 ```
 
-It is pretty tough. Let me show you how it compiles when $rows is set to 4 (other variables remain unchanged):
+It is pretty tough. Let me show you how it compiles when \$rows is set to 4 (other variables remain unchanged):
 
 ```scss
 li:nth-child(4n + 4) {
@@ -162,7 +162,7 @@ I think the pattern should be easier to see now thanks to the comments. For X ro
 
 ## Demo
 
-<pre class="codepen" data-height="560" data-type="result" data-href="AxmBK" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/AxmBK">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="560" data-type="result" data-href="AxmBK" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/AxmBK">Check out this Pen!</a></pre>
 
 Try changing the number of rows by editing `$rows` and see the magic happen.
 

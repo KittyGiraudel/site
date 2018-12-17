@@ -1,6 +1,6 @@
 ---
-title: "CSS Hide-and-Seek"
-guest: "Gaël Poupard"
+title: 'CSS Hide-and-Seek'
+guest: 'Gaël Poupard'
 tags:
   - css
   - accessibility
@@ -21,7 +21,7 @@ Unfortunately it’s not without issue anymore.
 
 The “magic trick” of this solution relies on the `clip` property. It’s simple to understand and very efficient. Only downside: `clip` has been deprecated by the [CSS Masking Level 1 module](https://www.w3.org/TR/css-masking-1/).
 
-No worries. This technique being quite old now, there is no surprise it’s getting obsolete. The new specification recommends using `clip-path` to replace `clip`. Which is not ideal, because [`clip-path` support is still so-so](http://caniuse.com/#feat=css-clip-path). Thus we have to keep `clip` _and_ add `clip-path` as progressive enhancement.
+No worries. This technique being quite old now, there is no surprise it’s getting obsolete. The new specification recommends using `clip-path` to replace `clip`. Which is not ideal, because [`clip-path` support is still so-so](https://caniuse.com/#feat=css-clip-path). Thus we have to keep `clip` _and_ add `clip-path` as progressive enhancement.
 
 That being said, the syntax is different. After a bit of research, [Yvain Liechti suggested this short version](https://twitter.com/ryuran78/status/778943389819604992) to get the expected result:
 
@@ -89,7 +89,7 @@ Here is the adapted version:
 
 ## Go for it
 
-You can find it [on CodePen](http://codepen.io/ffoodd/pen/gwKZyq?editors=1100#) or in [this Gist](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034). What do you think?
+You can find it [on CodePen](https://codepen.io/ffoodd/pen/gwKZyq?editors=1100#) or in [this Gist](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034). What do you think?
 
 ### Screen readers and touch devices (edit: 19/10/2016)
 
@@ -97,10 +97,10 @@ Seeking some testers to make sure I didn’t cause any regression, [Johan Ramon 
 
 As we thought we discovered a real bug, I headed up to Bootstrap in order to open an issue. But it came out that [an issue was already opened, involving TalkBack too](https://github.com/twbs/bootstrap/issues/20732). I shared our result to contribute, then [Patrick H. Lauke](https://twitter.com/patrick_h_lauke) did an awesome (and still in progress) work to determinate and describe precisely the problem. As a result, he filled many bugs:
 
-* [Narrator](https://microsoftaccessibility.uservoice.com/forums/307429-microsoft-accessibility-feedback/suggestions/16717318-focusable-elements-should-fire-focus-event-recei), included in Windows 10 and Windows Phone;
-* [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=657157), impacting TalkBack on Android;
-* [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1000082) — this one was already opened, but also by Patrick Lauke recently;
-* and finally, [two](https://bugs.webkit.org/show_bug.cgi?id=116046 'First webkit bug') [bugs](https://bugs.webkit.org/show_bug.cgi?id=163658 'Second webkit bug') for Webkit, impacting VoiceOver.
+- [Narrator](https://microsoftaccessibility.uservoice.com/forums/307429-microsoft-accessibility-feedback/suggestions/16717318-focusable-elements-should-fire-focus-event-recei), included in Windows 10 and Windows Phone;
+- [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=657157), impacting TalkBack on Android;
+- [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1000082) — this one was already opened, but also by Patrick Lauke recently;
+- and finally, [two](https://bugs.webkit.org/show_bug.cgi?id=116046 'First webkit bug') [bugs](https://bugs.webkit.org/show_bug.cgi?id=163658 'Second webkit bug') for Webkit, impacting VoiceOver.
 
 So. In fact, **skip links don’t work with screen readers on touch devices at the time of writing**. Nice.
 

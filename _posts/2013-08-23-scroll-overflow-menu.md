@@ -147,7 +147,7 @@ I think you'll see a lot more menu's taking a horizontal approach in the future,
 
 I would love to hear your thoughts on `-webkit-overflow-scrolling: touch;` and the future possibilities.
 
-I would usually embed the demo but, unfortunately iframes don't play well with `overflow-scrolling:touch`, so it's best if you directly check [this link](http://darbybrown.com/menu) with your phone. You could also could play around the code at [CodePen](http://codepen.io/hugo/full/pwsLj) (caution! iframes, doesn't work great on some mobile browsers) or by [downloading the files](http://darbybrown.com/menu/download.zip)!
+I would usually embed the demo but, unfortunately iframes don't play well with `overflow-scrolling:touch`, so it's best if you directly check [this link](http://darbybrown.com/menu) with your phone. You could also could play around the code at [CodePen](https://codepen.io/hugo/full/pwsLj) (caution! iframes, doesn't work great on some mobile browsers) or by [downloading the files](http://darbybrown.com/menu/download.zip)!
 
 Thanks for reading! If you think of anything to improve this menu concept, feel free to share. :)
 

@@ -54,7 +54,7 @@ Anyway, I eventually went through the whole session and ended my talk peacefully
 
 Once again I have made my slides with [Slid.es](https://slides.com), the CMS for [Reveal.js](http://lab.hakim.se/reveal-js/#/). I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF...). I also used the _presentation mode_ from Slid.es, which is great. Absolutely not disappointed.
 
-I won't walk through my slides like I did for my talk at [KiwiParty 2013](http://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/) because in this case it is less focused on code. Plus, I think they are better designed than the previous one.
+I won't walk through my slides like I did for my talk at [KiwiParty 2013](https://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/) because in this case it is less focused on code. Plus, I think they are better designed than the previous one.
 
 Anyway, here they are (in French).
 

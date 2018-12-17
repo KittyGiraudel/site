@@ -8,7 +8,7 @@ tags:
 
 > **Edit (2015/06/06)**: this is an experiment, please don't use this code in production.
 
-Yesterday I released [Getting the most out of Sass placeholders](http://hugogiraudel.com/2014/03/31/getting-the-most-out-of-sass-placeholders/), where I explained how I came up with a little technique to work around the fact `@extend` doesn't work whenever you're in a `@media` block.
+Yesterday I released [Getting the most out of Sass placeholders](https://hugogiraudel.com/2014/03/31/getting-the-most-out-of-sass-placeholders/), where I explained how I came up with a little technique to work around the fact `@extend` doesn't work whenever you're in a `@media` block.
 
 The trick was to wrap the placeholder extension in a mixin. This mixin accepts a single boolean, defining if it should extend the placeholder or include the mixin's content as a regular mixin would do. Here is a short example:
 
@@ -146,6 +146,6 @@ First, there is a big problem with this version: since we are relying on the fac
 
 > I love playing with Sass syntax.
 
-Secondly, I don't like storing CSS declarations in a map, no matter how clever it is. In the end, I feel like it adds too much code complexity. [Someone once told me it's like a preprocessor in a preprocessor](http://codepen.io/HugoGiraudel/details/yGFri#comment-id-25055). I don't think it's worth the pain.
+Secondly, I don't like storing CSS declarations in a map, no matter how clever it is. In the end, I feel like it adds too much code complexity. [Someone once told me it's like a preprocessor in a preprocessor](https://codepen.io/HugoGiraudel/details/yGFri#comment-id-25055). I don't think it's worth the pain.
 
 That being said, it's pretty cool as experimental stuff. Playing around Sass' syntax has always been one of the things I love the most about this preprocessor. Hence this blog post, and the pretty crazy demo. Anyway, I hope you liked it, and thanks Matt!

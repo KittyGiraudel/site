@@ -16,7 +16,7 @@ A few months ago I tested Netflix, immediately got hooked and got myself an acco
 <figcaption>Original animated Netflix logo</figcaption>
 </figure>
 
-I immediately started thinking about implementing this in CSS. So after watching a few episodes I went over to [CodePen](http://codepen.io/pixelass) and started to work on the logo.
+I immediately started thinking about implementing this in CSS. So after watching a few episodes I went over to [CodePen](https://codepen.io/pixelass) and started to work on the logo.
 
 ## First concept
 
@@ -89,7 +89,7 @@ There are different way of doing this, like using a different perspective (e.g. 
 
 Here's a demo on CodePen:
 
-<p data-height="440" data-theme-id="0" data-slug-hash="raEojV" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='http://codepen.io/pixelass/pen/raEojV/'>netflix logo | (figure--1)</a> by Gregor Adams (<a href='http://codepen.io/pixelass'>@pixelass</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="440" data-theme-id="0" data-slug-hash="raEojV" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='https://codepen.io/pixelass/pen/raEojV/'>netflix logo | (figure--1)</a> by Gregor Adams (<a href='https://codepen.io/pixelass'>@pixelass</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 Next I had to apply this to all the letters respecting that the middle letter is not transformed, the ones to the right are tilted in the opposite direction and the height of the letters changes.
 
@@ -128,7 +128,7 @@ To do this I needed to add some logic: I use Sass with the SCSS syntax to do thi
 
 Here's a demo on CodePen
 
-<p data-height="240" data-theme-id="0" data-slug-hash="yydGPL" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='http://codepen.io/pixelass/pen/yydGPL/'>netflix logo (figure--2)</a> by Gregor Adams (<a href='http://codepen.io/pixelass'>@pixelass</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="240" data-theme-id="0" data-slug-hash="yydGPL" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='https://codepen.io/pixelass/pen/yydGPL/'>netflix logo (figure--2)</a> by Gregor Adams (<a href='https://codepen.io/pixelass'>@pixelass</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 ## A function for the shadow
 
@@ -226,7 +226,7 @@ text-shadow: d3(5, red, [$x], [$y], [$blur], [$mix]);
 
 Here's a demo on CodePen:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="XJLOXg" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='http://codepen.io/pixelass/pen/XJLOXg/'>netflix logo (figure--3)</a> by Gregor Adams (<a href='http://codepen.io/pixelass'>@pixelass</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="320" data-theme-id="0" data-slug-hash="XJLOXg" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='https://codepen.io/pixelass/pen/XJLOXg/'>netflix logo (figure--3)</a> by Gregor Adams (<a href='https://codepen.io/pixelass'>@pixelass</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 ## Putting it all together
 
@@ -321,7 +321,7 @@ animation-duration: 4s, 2s, 0.1s;
 animation-delay: 0s, 2s, 3.2s;
 ```
 
-The code above is just an approximate example. Each letter has a different delay and duration. You can see the final implementation here [Netflix animation in pure CSS](http://codepen.io/pixelass/pen/MYYReK)
+The code above is just an approximate example. Each letter has a different delay and duration. You can see the final implementation here [Netflix animation in pure CSS](https://codepen.io/pixelass/pen/MYYReK)
 
 Final notice: I added some magic to retrigger the animation in pure CSS but that's something I might explain in another article.
 
@@ -331,4 +331,4 @@ I rewrote the entire Sass code prior to writing this article but I still feel th
 
 I barely make use of techniques like these in real-life projects but I very often use the functions I needed to implement that effect. Anyway, I hope you enjoyed this article.
 
-> [Gregor Adams](https://twitter.com/gregoradams) is a front-end developer from Hamburg, Germany. He is passionate about CSS and Sass, thus happens to be the author of [amazing demos on CodePen](http://codepen.io/pixelass) featuring his great CSS skills.
+> [Gregor Adams](https://twitter.com/gregoradams) is a front-end developer from Hamburg, Germany. He is passionate about CSS and Sass, thus happens to be the author of [amazing demos on CodePen](https://codepen.io/pixelass) featuring his great CSS skills.

@@ -47,7 +47,7 @@ Another way to cast to string without quoting is adding an unquoted empty string
 
 ## To number
 
-I have already written an article about how to convert a stringified number into an actual number, even if it has a CSS unit in [this article](http://hugogiraudel.com/2014/01/15/sass-string-to-number/).
+I have already written an article about how to convert a stringified number into an actual number, even if it has a CSS unit in [this article](https://hugogiraudel.com/2014/01/15/sass-string-to-number/).
 
 I feel like the function could be improved to accept a boolean to be converted into `0` or `1` and things like that but that's mostly optimization at this point.
 

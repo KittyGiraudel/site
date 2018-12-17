@@ -1,9 +1,9 @@
 ---
 external:
   host: SitePoint
-  url: http://www.sitepoint.com/centering-with-sass/
+  url: https://www.sitepoint.com/centering-with-sass/
 title: "Centering with Sass"
-tags: 
+tags:
   - sass
   - css
   - preprocessor

@@ -1,9 +1,9 @@
 ---
 external:
   host: SitePoint
-  url: http://www.sitepoint.com/structuring-css-class-selectors-with-sass/
+  url: https://www.sitepoint.com/structuring-css-class-selectors-with-sass/
 title: "Structuring CSS Class Selectors with Sass"
-tags: 
+tags:
   - sass
   - css
   - preprocessor

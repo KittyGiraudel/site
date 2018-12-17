@@ -1,5 +1,5 @@
 ---
-title: "Markdown as a design"
+title: 'Markdown as a design'
 tags:
   - markdown
   - redesign
@@ -14,13 +14,13 @@ So I was thinking… hey, why not trying something _different_ for once?
 
 Markdown is one of my favourite things in this industry. I use it so much. For articles. For books. For sites. For mails. For personal content. It is such an amazing text format, both simple and obvious.
 
-Last year, I have written about [how I use Sublime Text as a writing environment](http://hugogiraudel.com/2015/05/18/writing-in-sublime-text/). And now, I wanted to move my Sublime Text design in the browser. Here we are.
+Last year, I have written about [how I use Sublime Text as a writing environment](https://hugogiraudel.com/2015/05/18/writing-in-sublime-text/). And now, I wanted to move my Sublime Text design in the browser. Here we are.
 
 ## What the hell is this?
 
 This site runs on Jekyll. Almost everything that is not structural (such as the sidebar, the footer, etc.) is written in Markdown. Jekyll compiles everything to static HTML. Then I use CSS to style HTML as raw Markdown.
 
-This is not a new concept. A couple of libraries style HTML like Markdown, such as [ReMarkdown](http://fvsch.com/code/remarkdown/) or [Markdown.css](http://mrcoles.com/demo/markdown-css/), and I myself made [a pretty detailed CodePen](http://codepen.io/HugoGiraudel/pen/JmonG) about this last year.
+This is not a new concept. A couple of libraries style HTML like Markdown, such as [ReMarkdown](http://fvsch.com/code/remarkdown/) or [Markdown.css](http://mrcoles.com/demo/markdown-css/), and I myself made [a pretty detailed CodePen](https://codepen.io/HugoGiraudel/pen/JmonG) about this last year.
 
 It is surprisingly easy to do. Basically, pseudo-elements are used to display characters at specific location, such as `#` before headings, or `**` around `<strong>` elements.
 
@@ -89,9 +89,9 @@ Right now, the main container has an absolutely positioned pseudo-element displa
 
 Numbers go up to about 700, a magic number that I estimated would cover all of my pages in a matter of length, even the very long ones. I can see 3 problems with this approach though:
 
-* If I ever write a super-duper long article, numbers might cease before the end of the page.
-* The `content` property itself is so long that it weights 4.31Kb, which is almost a third of the stylesheet.
-* The page does not necessarily (and most likely does not) have a round height, resulting in a line number being half displayed.
+- If I ever write a super-duper long article, numbers might cease before the end of the page.
+- The `content` property itself is so long that it weights 4.31Kb, which is almost a third of the stylesheet.
+- The page does not necessarily (and most likely does not) have a round height, resulting in a line number being half displayed.
 
 I tried playing with CSS counters but I could not come up with something working as nicely. If someone has a solution to make this more elegant, please tell! My bet is that we can probably remove the `\A` from the `content` property by relying on natural line breaking. That would shorten the whole thing a hell lot already.
 

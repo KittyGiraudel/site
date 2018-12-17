@@ -283,7 +283,7 @@ So far so good? It works pretty well in automating Harry's code so he does not h
 
 But we are basically polluting the global scope with our variables. Also, if he needs another carousel animation elsewhere, we will need to find other variable names, and copy the whole content of the animation into the new one. That's definitely not ideal.
 
-So we have variables and possible duplicated content: [perfect case for a mixin](http://www.sitepoint.com/sass-mixin-placeholder/)! In order to make things easier to understand, we will replace those one-letter variable names with actual words if you don't mind:
+So we have variables and possible duplicated content: [perfect case for a mixin](https://www.sitepoint.com/sass-mixin-placeholder/)! In order to make things easier to understand, we will replace those one-letter variable names with actual words if you don't mind:
 
 * `$n` becomes `$frames`
 * `$x` becomes `$static`

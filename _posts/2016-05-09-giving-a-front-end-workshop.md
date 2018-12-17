@@ -6,7 +6,7 @@ tags:
   - CSS
 ---
 
-Last week, I gave an internal workshop on HTML and CSS at [Edenspiekermann](http://edenspiekermann.com). The point was to give a short introduction on front-end development to whoever was interested. It was such an amazing experience that I thought it would be worth sharing my thoughts on the topic.
+Last week, I gave an internal workshop on HTML and CSS at [Edenspiekermann](https://edenspiekermann.com). The point was to give a short introduction on front-end development to whoever was interested. It was such an amazing experience that I thought it would be worth sharing my thoughts on the topic.
 
 ## The Setup
 
@@ -45,8 +45,8 @@ At first, I thought I could start with the doctype, then the `<html>` tag, then 
 
 So I started by introducing what HTML is meant for and how to write it. Opening a tag, putting some content, closing a tag. Easy peasy. From there, they could put their title in a `<h1>`, their sub-titles in `<h2>` and their content in `<p>`. Two interesting things there:
 
-* Most of the participants turned out a bit confused about the headings hierarchy; some of them thought the first heading had to be `h1`, the second `h2`, the third `h3` and so on. Maybe I just went a bit too fast on what the number in the tags meant.
-* Almost at the same time, all participants were puzzled about how to mark up lists, which was a good sign to me: `<p>` did not seem correct to any of them.
+- Most of the participants turned out a bit confused about the headings hierarchy; some of them thought the first heading had to be `h1`, the second `h2`, the third `h3` and so on. Maybe I just went a bit too fast on what the number in the tags meant.
+- Almost at the same time, all participants were puzzled about how to mark up lists, which was a good sign to me: `<p>` did not seem correct to any of them.
 
 The next hour (and a half or so) was about marking up all the content from the recipe. Still no mention of the `<body>` tag, let alone anything outside of it. We kept moving forward with HTML while remaining heavily focused on our content. It took a bit of time to some participants to understand where to close tags, but eventually everyone got there.
 
@@ -87,18 +87,18 @@ Luckily for me, they all started applying styles to their pages. First the main 
 
 It was not without a few mistakes though. Here are a few things I noticed:
 
-* Because we worked exclusively in pixels, some participants used to author lengths without a unit.
-* For participants with no design background at all, the hexadecimal notation for colors was not so straightforward, leading them to omit the hash symbol (`#`).
-* Most if not all participants really struggled with semi-colons and syntax in general. Missing semi-colons, braces closed twice, typos and such. It generated a bit of frustration for some of them to not have more information about where they made a mistake.
+- Because we worked exclusively in pixels, some participants used to author lengths without a unit.
+- For participants with no design background at all, the hexadecimal notation for colors was not so straightforward, leading them to omit the hash symbol (`#`).
+- Most if not all participants really struggled with semi-colons and syntax in general. Missing semi-colons, braces closed twice, typos and such. It generated a bit of frustration for some of them to not have more information about where they made a mistake.
 
 Eventually, all participants managed to have their recipe styled pretty much how they wanted it. I even went further than expected with some of them, including these topics:
 
-* Floats;
-* CSS Columns;
-* CSS Counters;
-* Replaced bullets with pseudo-elements;
-* Class composition;
-* Inline SVG…
+- Floats;
+- CSS Columns;
+- CSS Counters;
+- Replaced bullets with pseudo-elements;
+- Class composition;
+- Inline SVG…
 
 ## Things I noticed
 
@@ -122,7 +122,7 @@ If you have any tip or comment, please be sure to share in the comment section. 
   <img src="/assets/images/giving-a-front-end-workshop/recipe-2.png" alt="Screenshot of a participant’s recipe" />
 
   <img src="/assets/images/giving-a-front-end-workshop/recipe-3.png" alt="Screenshot of a participant’s recipe" />
-  
+
   <figcaption>Screenshots of some participants’ recipes</figcaption>
 </figure>
 

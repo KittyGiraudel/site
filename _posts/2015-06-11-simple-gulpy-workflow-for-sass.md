@@ -1,9 +1,9 @@
 ---
 external:
   host: SitePoint
-  url: http://www.sitepoint.com/simple-gulpy-workflow-sass/
+  url: https://www.sitepoint.com/simple-gulpy-workflow-sass/
 title: "Simple Gulpy Workflow for Sass"
-tags: 
+tags:
   - sass
   - gulp
   - workflow

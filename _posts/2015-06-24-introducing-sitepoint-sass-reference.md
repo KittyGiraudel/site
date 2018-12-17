@@ -1,9 +1,9 @@
 ---
 external:
   host: SitePoint
-  url: http://www.sitepoint.com/introducing-the-sitepoint-sass-reference/
+  url: https://www.sitepoint.com/introducing-the-sitepoint-sass-reference/
 title: "Introducing the SitePoint Sass Reference"
-tags: 
+tags:
   - sass
   - reference
   - sitepoint

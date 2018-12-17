@@ -1,6 +1,6 @@
 ---
-title: "GitHub As A Workflow"
-tags: 
+title: 'GitHub As A Workflow'
+tags:
   - github
   - workflow
   - process
@@ -36,11 +36,11 @@ The rough idea is that at the beginning of a [sprint](http://scrummethodology.co
 
 ## What problem does it solve
 
-* The code, code reviews, stories and tasks are all centralized in the same place, making it very easy for a developer to jump from one thing to the other.
-* [ScrumDo](https://app.scrumdo.com) and other process tools are not always the best place for discussions and commenting, while GitHub is actually meant for this.
-* GitHub has email notifications, which is helpful to know what's going in the project and where a developer might need to get involved.
-* GitHub has a lot of handy features, such as labels, Markdown, user pinging and code integration, which makes it a good tool for managing code projects.
-* Bonus: [Slack](http://slack.com) has GitHub integration, making the whole process seamless.
+- The code, code reviews, stories and tasks are all centralized in the same place, making it very easy for a developer to jump from one thing to the other.
+- [ScrumDo](https://app.scrumdo.com) and other process tools are not always the best place for discussions and commenting, while GitHub is actually meant for this.
+- GitHub has email notifications, which is helpful to know what's going in the project and where a developer might need to get involved.
+- GitHub has a lot of handy features, such as labels, Markdown, user pinging and code integration, which makes it a good tool for managing code projects.
+- Bonus: [Slack](https://slack.com) has GitHub integration, making the whole process seamless.
 
 ## What problem does it introduce
 
@@ -84,9 +84,9 @@ _Note: depending on your usage of GitHub labels, you can also ditch this part an
 In the description of the story, create a list of tasks where a task is a checkbox, a short description and importantly enough, one or several persons involved in the making. From the Markdown side, it might look like this:
 
 ```git
-* [ ] Create the basic React component (@hugogiraudel)  
-* [ ] Design the icons (@sharonwalsh)  
-* [ ] Integrate component in current page (@mattberridge)  
+* [ ] Create the basic React component (@hugogiraudel)
+* [ ] Design the icons (@sharonwalsh)
+* [ ] Integrate component in current page (@mattberridge)
 * [ ] Clarify types of teasers with client (@moritzguth)
 ```
 

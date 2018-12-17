@@ -1,6 +1,6 @@
 ---
 summary: true
-title: "Can I afford a preprocessor?"
+title: 'Can I afford a preprocessor?'
 tags:
   - css
   - sass
@@ -9,7 +9,7 @@ tags:
 
 **Disclaimer:** I just want to share my thoughts on the topic. I won't try to convince you to use a preprocessor. So please, don't tell me how good you are without one; I trust you. I'm a developer too.
 
-A couple of days ago, the famous french front-end developer [Vincent De Oliveira](https://twitter.com/iamvdo) has written a blog post called [Why I don't use CSS preprocessors](http://blog.iamvdo.me/post/45259636008/pourquoi-je-nutilise-pas-les-preprocesseurs-css) (_Pourquoi je n'utilise pas les préprocesseurs CSS_). If you can read French, or stand [Google Translate](http://translate.google.fr/translate?sl=fr&tl=en&js=n&prev=_t&hl=fr&ie=UTF-8&eotf=1&u=http%3A%2F%2Fblog.iamvdo.me%2Fpost%2F45259636008%2Fpourquoi-je-nutilise-pas-les-preprocesseurs-css), then I highly recommand you this article, full of good points and interesting opinions.
+A couple of days ago, the famous french front-end developer [Vincent De Oliveira](https://twitter.com/iamvdo) has written a blog post called [Why I don't use CSS preprocessors](http://blog.iamvdo.me/post/45259636008/pourquoi-je-nutilise-pas-les-preprocesseurs-css) (_Pourquoi je n'utilise pas les préprocesseurs CSS_). If you can read French, or stand [Google Translate](https://translate.google.fr/translate?sl=fr&tl=en&js=n&prev=_t&hl=fr&ie=UTF-8&eotf=1&u=http%3A%2F%2Fblog.iamvdo.me%2Fpost%2F45259636008%2Fpourquoi-je-nutilise-pas-les-preprocesseurs-css), then I highly recommand you this article, full of good points and interesting opinions.
 
 Please don't consider this post as an answer to Vincent's one. I just wanted to **share my opinion on the topic**, not open a flame war. Especially since I like this guy. :)
 

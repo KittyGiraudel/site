@@ -7,7 +7,7 @@ tags:
   - release
 ---
 
-If you are not familiar with the concept of Semantic Versioning, I invite you to read [my article](http://www.sitepoint.com/semantic-versioning-why-you-should-using/) on topic at SitePoint. To sum things up, it is a way to version softwares in ordre to provide meaning across version number bumps.
+If you are not familiar with the concept of Semantic Versioning, I invite you to read [my article](https://www.sitepoint.com/semantic-versioning-why-you-should-using/) on topic at SitePoint. To sum things up, it is a way to version softwares in ordre to provide meaning across version number bumps.
 
 It looks like this: `major.minor.patch` (e.g. `1.3.37`). _Major_ version is for API changes and backward incompatibilities, _minor_ is for backward compatible features and _patch_ is for bug fixes.
 

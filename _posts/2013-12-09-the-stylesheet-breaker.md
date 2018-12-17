@@ -79,9 +79,9 @@ I made some tests with an opening parenthesis and an open brace as well: same re
 
 ## Final words
 
-In the end I simply removed `.selector { [property: value; }` from our hacks database so that it doesn't harm anyone again. If you want to play around this glitch, simply have a look at [this pen](http://codepen.io/HugoGiraudel/pen/qztrl):
+In the end I simply removed `.selector { [property: value; }` from our hacks database so that it doesn't harm anyone again. If you want to play around this glitch, simply have a look at [this pen](https://codepen.io/HugoGiraudel/pen/qztrl):
 
-<p data-height="360" data-theme-id="0" data-slug-hash="qztrl" data-user="HugoGiraudel" data-default-tab="css" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/qztrl'>The stylesheet breaker line</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>
+<p data-height="360" data-theme-id="0" data-slug-hash="qztrl" data-user="HugoGiraudel" data-default-tab="css" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/qztrl'>The stylesheet breaker line</a> by Hugo Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>
 
 On a side note Sass, LESS and Stylus will all throw an error when encountering such a thing. In our case, we use Sass for everything but the hacks, for this very same reason: some hacks are not process-safe.
 

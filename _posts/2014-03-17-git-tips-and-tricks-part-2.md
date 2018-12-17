@@ -5,11 +5,11 @@ tags:
   - git
 ---
 
-> **Edit (2014/03/24):** Part 3 is out! Go check [it](http://hugogiraudel.com/2014/03/24/git-tips-and-tricks-part-3/).
+> **Edit (2014/03/24):** Part 3 is out! Go check [it](https://hugogiraudel.com/2014/03/24/git-tips-and-tricks-part-3/).
 
 <!-- -->
 
-> Hi dear folks! This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](http://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
+> Hi dear folks! This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](https://hugogiraudel.com/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
 
 Hey people! I hope you enjoyed the first part of the series. In this one, I will introduce you even more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced Git concepts and commands. Ready?
 

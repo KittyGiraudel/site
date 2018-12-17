@@ -12,7 +12,7 @@ tags:
 
 <!-- -->
 
-> **Edit (2013/02/21):** this post might contain outdated informations since I [moved my site to Jekyll and GitHub Pages](http://hugogiraudel.com/2013/02/21/jekyll/).
+> **Edit (2013/02/21):** this post might contain outdated informations since I [moved my site to Jekyll and GitHub Pages](https://hugogiraudel.com/2013/02/21/jekyll/).
 
 Hey people! I recently blogged about the tools I use for front-end development, but someone pointed out on Twitter I didn't tell anything about my development environment. Let's fix my mistake and talk about it!
 

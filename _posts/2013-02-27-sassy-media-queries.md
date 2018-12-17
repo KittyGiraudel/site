@@ -1,5 +1,5 @@
 ---
-title: "Sassy Media Queries"
+title: 'Sassy Media Queries'
 tags:
   - sass
   - media queries
@@ -8,11 +8,11 @@ tags:
 
 Here is a quick blog post aiming at explaining how I turned a ~250-line CSS experiment by [Arley McBlain](http://arleym.com) into less than 30 sexy lines of Sass.
 
-First, let me remind you what Arley did in his experiment, topic of a [great article at CSS-tricks](http://css-tricks.com/lark-queries/). His idea was to change some content according to the screen size.
+First, let me remind you what Arley did in his experiment, topic of a [great article at CSS-tricks](https://css-tricks.com/lark-queries/). His idea was to change some content according to the screen size.
 
 In order to do that, he used a pseudo-element and filled the `content` property accordingly. With about **160 media query calls**, he managed to change the content every 10px from 1920px to 300px (device width).
 
-Check it live on [his website home](http://arleym.com/) or at [CSS-tricks](http://css-tricks.com/examples/LarkQueries/).
+Check it live on [his website home](http://arleym.com/) or at [CSS-tricks](https://css-tricks.com/examples/LarkQueries/).
 
 ## Make it Sassy, make it easy
 
@@ -20,9 +20,9 @@ g idea, really. It works great, it looks great, the only downside is... it's a p
 
 This is where Sass &mdash; or any CSS preprocessor really &mdash; can be very efficient. **It took me about 10 minutes to divide the amount of required code by 4.** Plus, it makes everything so much easier to adapt and maintain.
 
-<pre class="codepen" data-height="320" data-type="result" data-href="kBzra" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/kBzra">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="320" data-type="result" data-href="kBzra" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/kBzra">Check out this Pen!</a></pre>
 
-If you simply want to see the code and don't care much about how I did it, please check [this CodePen](http://codepen.io/HugoGiraudel/pen/kBzra) ([fullsize here](http://codepen.io/HugoGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
+If you simply want to see the code and don't care much about how I did it, please check [this CodePen](https://codepen.io/HugoGiraudel/pen/kBzra) ([fullsize here](https://codepen.io/HugoGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
 
 ### Create the list
 
@@ -63,9 +63,9 @@ Pretty big, right? Don't worry, the worst part is over. Now it's all about easy 
 
 ### Let's loop!
 
-> One loop to rule them all,  
-> One loop to bind them,  
-> One loop to bring them all,  
+> One loop to rule them all,
+> One loop to bind them,
+> One loop to bring them all,
 > And in the Sass way bind them.
 
 Now we have the list, we only have to loop through all items in it and do something, right?

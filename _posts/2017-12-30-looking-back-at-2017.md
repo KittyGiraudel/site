@@ -1,17 +1,17 @@
 ---
-title: "Looking back at 2017"
+title: 'Looking back at 2017'
 tags:
   - thoughts
 ---
 
 Hey friends! This is the time of the year where I look back at these last 12 months. With emojis, as per us’! It’s a bit long so feel free to skip to what you want to read.
 
-* [Things I’ve done](#things-ive-done)
-  * [Timeline](#timeline)
-  * [On the work side](#on-the-work-side)
-  * [On the personal side](#on-the-personal-side)
-* [Things I’ve learnt](#things-ive-learnt)
-* [Things I’d like to do](#things-id-like-to-do)
+- [Things I’ve done](#things-ive-done)
+  - [Timeline](#timeline)
+  - [On the work side](#on-the-work-side)
+  - [On the personal side](#on-the-personal-side)
+- [Things I’ve learnt](#things-ive-learnt)
+- [Things I’d like to do](#things-id-like-to-do)
 
 ## Things I’ve done
 
@@ -43,7 +43,7 @@ Hey friends! This is the time of the year where I look back at these last 12 mon
 
 In September 2016, [Mike Smart](https://twitter.com/smartmike) and I joined N26 to build the new web platform. Over the course of 2017, we have rebuilt the registration process, the Mastercard selection, all the logged-out pages (login, password reset…) and half the website. All of this runs on a unique repository (deployed across multiple servers), giving us the ability to share and reuse infrastructure and components between projects.
 
-We have a lot of freedom to make this entreprise as good as it can be, which gives us room to experiment with a lot of interesting technologies such as [React](https://reactjs.org/), [GraphQL](http://graphql.org/) (with [Apollo](https://www.apollographql.com/)), [Fela](https://fela.js.org), [Cypress](https://www.cypress.io/), [Prettier](https://prettier.io/), [Docker](https://www.docker.com/), [Jenkins](https://jenkins.io/)…
+We have a lot of freedom to make this entreprise as good as it can be, which gives us room to experiment with a lot of interesting technologies such as [React](https://reactjs.org/), [GraphQL](https://graphql.org/) (with [Apollo](https://www.apollographql.com/)), [Fela](https://fela.js.org), [Cypress](https://www.cypress.io/), [Prettier](https://prettier.io/), [Docker](https://www.docker.com/), [Jenkins](https://jenkins.io/)…
 
 With more projects coming up and a lot of work to do, we have been and still are hiring for our team, currently made of 5 developers from diverse backgrounds and skillsets. We should see 3 new faces joining us during 2018, and I’m very excited to see what we can achieve with such a talented team!
 
@@ -124,10 +124,10 @@ module.exports = {
 
 ✅ Tests are nice. Like, really nice. Throughout the year, I’ve been working hard on our testing setup. My goal was (still is in fact) to make tests easy to write, and enjoyable to run. We’re still not quite there yet, but I’m super happy with what we have so far. It looks more or less like this:
 
-* All helpers are unit-tested with [Jest](https://facebook.github.com/jest) (right now about 93% coverage).
-* All routes are tested with [Supertest](https://github.com/visionmedia/supertest) (expecting 200, 301…).
-* All pages are tested for basic accessibility with [pa11y](https://github.com/pa11y/pa11y) and [outline-audit](https://github.com/edenspiekermann/outline-audit).
-* All critical paths are tested end-to-end with [Cypress](https://www.cypress.io).
+- All helpers are unit-tested with [Jest](https://facebook.github.com/jest) (right now about 93% coverage).
+- All routes are tested with [Supertest](https://github.com/visionmedia/supertest) (expecting 200, 301…).
+- All pages are tested for basic accessibility with [pa11y](https://github.com/pa11y/pa11y) and [outline-audit](https://github.com/edenspiekermann/outline-audit).
+- All critical paths are tested end-to-end with [Cypress](https://www.cypress.io).
 
 Having such a strong focus on testing enabled us to do 195 live releases between March and December (~9 months) without stressing about breaking something. It also allows me to tell new team members what I told the CTO when I got hired: “[I] plan on writing tests and go home on time.” I stand by this, and don’t want any of my teammate to pull extra hours, especially for something that could have been prevented with proper test coverage.
 

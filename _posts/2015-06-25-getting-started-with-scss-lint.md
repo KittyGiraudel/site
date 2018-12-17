@@ -1,9 +1,9 @@
 ---
 external:
   host: SitePoint
-  url: http://www.sitepoint.com/getting-started-with-scss-lint/
+  url: https://www.sitepoint.com/getting-started-with-scss-lint/
 title: "Getting Started with SCSS-lint"
-tags: 
+tags:
   - sass
   - scss-lint
   - code quality

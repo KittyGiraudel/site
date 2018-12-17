@@ -1,5 +1,5 @@
 ---
-title: "Colors in CSS"
+title: 'Colors in CSS'
 tags:
   - css
   - colors
@@ -7,21 +7,21 @@ tags:
 
 Hi everyone! Today, we will talk about colors in CSS. There are many color specifications and we'll be talking about their history, what they mean and how to use them.
 
-If you'd like to read about how to build a color scheme for a website then you might be interested in this article [Build a color scheme: the fundamentals](http://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/), or the article [Principles of Color and the Color Wheel](http://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/) if you'd like to read about the color wheel.
+If you'd like to read about how to build a color scheme for a website then you might be interested in this article [Build a color scheme: the fundamentals](https://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/), or the article [Principles of Color and the Color Wheel](https://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/) if you'd like to read about the color wheel.
 
 We will see how we can define colors in style sheets, what each one can be used for and more. But first, let me introduce the topic.
 
 ## Various types of colors in CSS
 
-Colors in CSS are defined on a [sRGB](http://en.wikipedia.org/wiki/SRGB) color space. sRGB stands for "Standard Red Green Blue" where colors are defined through three channels: Red, Green and Blue.
+Colors in CSS are defined on a [sRGB](https://en.wikipedia.org/wiki/SRGB) color space. sRGB stands for "Standard Red Green Blue" where colors are defined through three channels: Red, Green and Blue.
 
 From there, we have various ways to describe color with CSS. Some of them like keywords and hexadecimal has been there almost since the beginning of the web, while other like HSL or RGB came later.
 
-* **RGB** and **RGBA**
-* **Hexadecimal**
-* **Keywords** (+transparent and currentColor)
-* **HSL** and **HSLA**
-* **System colors**
+- **RGB** and **RGBA**
+- **Hexadecimal**
+- **Keywords** (+transparent and currentColor)
+- **HSL** and **HSLA**
+- **System colors**
 
 Let's talk about each one of these definitions to understand them better.
 
@@ -68,10 +68,10 @@ To describe a color using the RGB model, you have to define a value for the red 
 
 A RGB value can be defined using four different syntaxes but only two of them are available in CSS:
 
-* A percentage from 0% (black) to 100% (white)
-* An integer value from 0 (black) to 255 (white); 255 is the range of a 8-bit byte
-* A float number from 0 to 1 (0.58935); it’s more like a theoretical approach **unavailable in CSS**
-* A large integer 10, 16, 24, 32, 48 or even 64-bit units, but clearly that's **unavailable in CSS**
+- A percentage from 0% (black) to 100% (white)
+- An integer value from 0 (black) to 255 (white); 255 is the range of a 8-bit byte
+- A float number from 0 to 1 (0.58935); it’s more like a theoretical approach **unavailable in CSS**
+- A large integer 10, 16, 24, 32, 48 or even 64-bit units, but clearly that's **unavailable in CSS**
 
 So, summarized, we end up with two different ways to display CSS colors with the `rgb()` function: percentages and integers between 0 and 255. Let’s illustrate this with an example, shall we?
 
@@ -176,7 +176,7 @@ So this was the theory, alright? It doesn’t mean you have to use a base 16 con
 
 Alas, you can’t edit the alpha-channel when defining colors in hexadecimal, it’s actually not possible. If ever you really want to change the opacity, you still can turn your hex triplet to a RGBa quadruplet, or use the opacity property.
 
-**Important**: however beware of the opacity property. It changes the opacity of the element itself, and all its child elements. Plus, it is [not supported by Internet Explorer 6, 7 and 8](http://caniuse.com/#feat=css-opacity).
+**Important**: however beware of the opacity property. It changes the opacity of the element itself, and all its child elements. Plus, it is [not supported by Internet Explorer 6, 7 and 8](https://caniuse.com/#feat=css-opacity).
 
 ## Keywords
 
@@ -188,22 +188,22 @@ RGB is slightly better, especially when you’re using percentage values but it�
 
 That’s why there are keywords. Keywords are real color names like red, green and blue associated to actual RGB / hex triplets. Back in the days, the HTML 4.01 Standard proposed 16 different keywords:
 
-* Aqua
-* Black
-* Blue
-* Fuchsia
-* Gray
-* Green
-* Lime
-* Maroon
-* Navy
-* Olive
-* Purple
-* Red
-* Silver
-* Teal
-* White
-* Yellow
+- Aqua
+- Black
+- Blue
+- Fuchsia
+- Gray
+- Green
+- Lime
+- Maroon
+- Navy
+- Olive
+- Purple
+- Red
+- Silver
+- Teal
+- White
+- Yellow
 
 <p>Then the CSS2.1 specification added the orange keyword. Finally, CSS3 came with 130 additional keywords for a total of 147 keywords (134 non-gray, 13 gray).</p>
 
@@ -248,9 +248,9 @@ The border will be red since the defined color is red. If no color was set, it w
 
 You want to know what’s awesome? `currentColor` is a default value for a bunch of things. From my tests:
 
-* Border-color
-* Color component in box-shadow
-* Color component in text-shadow
+- Border-color
+- Color component in box-shadow
+- Color component in text-shadow
 
 It means you can do one of those and be perfectly valid:
 
@@ -291,9 +291,9 @@ The distance along the vertical axis corresponds to the “lightness” (also sa
 
 To describe a color using the HSL representation, you have to define parameters for hue, saturation and lightness. If you don’t know how to start, this is what I recommand:
 
-* **Hue**: choose your color on the chromatic wheel. If it’s red, then the value is 0. If it’s purple, the value would be about 300, and so on.
-* **Saturation**: if you want a pure color, then the saturation value will be 100%. If you want some kind of grey, try a value lower than 100%.
-* **Lightness**: if you want a pure color, then the lightness value will be 50%. If you want a light color, try something between 50% and 100%. If you want something dark, try below 50%.
+- **Hue**: choose your color on the chromatic wheel. If it’s red, then the value is 0. If it’s purple, the value would be about 300, and so on.
+- **Saturation**: if you want a pure color, then the saturation value will be 100%. If you want some kind of grey, try a value lower than 100%.
+- **Lightness**: if you want a pure color, then the lightness value will be 50%. If you want a light color, try something between 50% and 100%. If you want something dark, try below 50%.
 
 ```css
 .white {
@@ -378,10 +378,10 @@ Honestly, this is really up to you. In the end, a RGB triplet is generated, pars
 
 Now if you want my way of doing with colors, here is what I do in most cases:
 
-* **RGB**: by itself, I don’t use RGB since I usually use a color picker giving me hex triplet. But when I need to edit the alpha-channel, I use RGBa of course.
-* **Hexadecimal**: this is what I use the most in real projects. As said above, any web color picker on the internet will give you at least a hex code. It’s kind of the standard.
-* **Keywords**: I use them either for demos when I don’t care much about the color I pick, or for greyscale like white, black and silver.
-* **HSL**: I never use HSL because I’m not used to it. It’s a really really good representation of the RGB model but it doesn’t look very intuitive to me so I stick with RGB.
+- **RGB**: by itself, I don’t use RGB since I usually use a color picker giving me hex triplet. But when I need to edit the alpha-channel, I use RGBa of course.
+- **Hexadecimal**: this is what I use the most in real projects. As said above, any web color picker on the internet will give you at least a hex code. It’s kind of the standard.
+- **Keywords**: I use them either for demos when I don’t care much about the color I pick, or for greyscale like white, black and silver.
+- **HSL**: I never use HSL because I’m not used to it. It’s a really really good representation of the RGB model but it doesn’t look very intuitive to me so I stick with RGB.
 
 What I think is really cool with HSL however is the fact you can get a shade instead of another color by tweaking the lightness. This is a thing you can’t do with other syntaxes.
 
@@ -461,18 +461,18 @@ Thankfully in CSS we don’t have to use a base 16 converter everytime we want t
 
 Anyway, back to CSS, let me (re)introduce you a few awesome tools and resources to help you deal with colors:
 
-* [Canva](https://www.canva.com/colors/)
-* [CSS3 Colors slides](http://fr.slideshare.net/maxdesign/css3-colors) by Russ Weakley
-* [CSS Coloratum](http://css.coloratum.com/), a color converter by Lea Verou
-* [Build a color scheme: the fundamentals](http://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/) by Patrick Cox
-* [Using transparency in webdesign: dos and don'ts](http://tympanus.net/codrops/2012/11/26/using-transparency-in-web-design-dos-and-donts/) by Carrie Cousins
-* [Principles or Color and the Color Wheel](http://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/) by Carrie Cousins
-* [Kuler](https://kuler.adobe.com/) by Adobe
-* [Color Scheme Designer](http://colorschemedesigner.com/)
-* [0to255](http://0to255.com/)
-* [Color Equivalents Table](http://meyerweb.com/eric/css/colors/) by Eric Meyer
-* [CSS Color Keyword Distribution](http://www.xanthir.com/blog/b4JC0) by Tab Atkins Jr. ([original work](http://meyerweb.com/eric/css/colors/hsl-147.html) by Eric Meyer)
-* [Developers guide to images](http://www.jessechapo.com/posts/Developers-Guide-to-Images.html)
-* [Official Brand Colors](http://colour.charlottedann.com/) by Charlotte Dann
+- [Canva](https://www.canva.com/colors/)
+- [CSS3 Colors slides](http://fr.slideshare.net/maxdesign/css3-colors) by Russ Weakley
+- [CSS Coloratum](http://css.coloratum.com/), a color converter by Lea Verou
+- [Build a color scheme: the fundamentals](https://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/) by Patrick Cox
+- [Using transparency in webdesign: dos and don'ts](https://tympanus.net/codrops/2012/11/26/using-transparency-in-web-design-dos-and-donts/) by Carrie Cousins
+- [Principles or Color and the Color Wheel](https://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/) by Carrie Cousins
+- [Kuler](https://kuler.adobe.com/) by Adobe
+- [Color Scheme Designer](http://colorschemedesigner.com/)
+- [0to255](http://0to255.com/)
+- [Color Equivalents Table](http://meyerweb.com/eric/css/colors/) by Eric Meyer
+- [CSS Color Keyword Distribution](http://www.xanthir.com/blog/b4JC0) by Tab Atkins Jr. ([original work](http://meyerweb.com/eric/css/colors/hsl-147.html) by Eric Meyer)
+- [Developers guide to images](http://www.jessechapo.com/posts/Developers-Guide-to-Images.html)
+- [Official Brand Colors](http://colour.charlottedann.com/) by Charlotte Dann
 
 Thanks a lot for reading this article. If you have any question or feedback, please be sure to share. Also, if you find any mistake, I'd be glad to correct it. ;)

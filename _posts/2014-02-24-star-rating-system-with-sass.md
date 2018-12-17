@@ -6,7 +6,7 @@ tags:
   - rating
 ---
 
-The other day, I was having a look at featured pens from CodePen to kill some time before getting a haircut. I ended up checking [a pen from Yelp Devs'](http://codepen.io/yelp/pen/aLxbG) (in the person of [Benjamin Knight](https://twitter.com/benjamin_knight)) in which they featured their star-rating system we can see pretty much all over their site.
+The other day, I was having a look at featured pens from CodePen to kill some time before getting a haircut. I ended up checking [a pen from Yelp Devs'](https://codepen.io/yelp/pen/aLxbG) (in the person of [Benjamin Knight](https://twitter.com/benjamin_knight)) in which they featured their star-rating system we can see pretty much all over their site.
 
 <figure class="figure">
 <img src="/assets/images/stars-rating-widget-with-sass/rating-widget.png" alt="" />
@@ -15,7 +15,7 @@ The other day, I was having a look at featured pens from CodePen to kill some ti
 
 I was both surprised and pleased to see they are using Sass for their CSS codebase, and more interestingly, they are using it pretty well if I may. Their code looked both logic and efficient so that was kind of a cool pen to look at.
 
-Although after a couple of minutes digging into their code, I noticed the CSS output wasn't as good as it could be. A couple of minutes later, I submitted [a new verion](http://codepen.io/HugoGiraudel/pen/DqBkH) to them, taking care of a few optimizations they forgot.
+Although after a couple of minutes digging into their code, I noticed the CSS output wasn't as good as it could be. A couple of minutes later, I submitted [a new verion](https://codepen.io/HugoGiraudel/pen/DqBkH) to them, taking care of a few optimizations they forgot.
 
 Hence, a short blog post relating all this.
 
@@ -175,8 +175,8 @@ $color: stars-color(5);
 
 To see how efficient those little optimizations have been, I've minified both demo:
 
-* [Original](http://codepen.io/yelp/pen/aLxbG): 1.84Kb (2.38Kb unminified)
-* [Mine](http://codepen.io/HugoGiraudel/pen/DqBkH): 1.05Kb (1.36Kb unminified)
+* [Original](https://codepen.io/yelp/pen/aLxbG): 1.84Kb (2.38Kb unminified)
+* [Mine](https://codepen.io/HugoGiraudel/pen/DqBkH): 1.05Kb (1.36Kb unminified)
 
 And here is what the loops' output looks like in my case:
 
@@ -239,6 +239,6 @@ Thanks to Sass lists and the `append` function, we have been able to create a se
 
 Hope you liked the demo anyway folks. Cheers!
 
-<p data-height="480" data-theme-id="0" data-slug-hash="DqBkH" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/HugoGiraudel/pen/DqBkH'>CSS Rating Stars</a> by Hugo Giraudel (<a href='http://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="480" data-theme-id="0" data-slug-hash="DqBkH" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/DqBkH'>CSS Rating Stars</a> by Hugo Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
-_Update: be sure to check [this version](http://codepen.io/piouPiouM/pen/beBcJ) from Mehdi Kabab, using placeholders to make it slightler lighter (14 bytes after gzip... :D)._
+_Update: be sure to check [this version](https://codepen.io/piouPiouM/pen/beBcJ) from Mehdi Kabab, using placeholders to make it slightler lighter (14 bytes after gzip... :D)._

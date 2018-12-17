@@ -70,7 +70,7 @@ $darkColor: darken($color, $pc);
 
 ## Unit conversion
 
-This one is a function by Chris Eppstein himself in order to convert an angle into another unit (because [there are 4 different ways of declaring an angle in CSS](http://codepen.io/HugoGiraudel/pen/rdgse)). This one converts angles but you could probably do this for anything fixed (px, in, cm, mm).
+This one is a function by Chris Eppstein himself in order to convert an angle into another unit (because [there are 4 different ways of declaring an angle in CSS](https://codepen.io/HugoGiraudel/pen/rdgse)). This one converts angles but you could probably do this for anything fixed (px, in, cm, mm).
 
 ```scss
 @function convert-angle($value, $unit) {

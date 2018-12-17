@@ -1,6 +1,6 @@
 ---
-title: "Learning Regular Expressions: The Practical Way"
-tags: 
+title: 'Learning Regular Expressions: The Practical Way'
+tags:
   - regular expressions
   - regex
   - regexp
@@ -19,7 +19,7 @@ _Disclaimer!_ I am not an expert in regular expressions, although I guess I can 
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/xkcd-1.png" alt="Everybody stands back, I know regular expressions!" />
-  <figcaption>From <a href="http://xkcd.com/208/">xkcd #208</a></figcaption>
+  <figcaption>From <a href="https://xkcd.com/208/">xkcd #208</a></figcaption>
 </figure>
 
 ## What is this all about?
@@ -30,10 +30,10 @@ That being said it is important to point out that not all regular expression eng
 
 Also, as it is forbidden to write about regular expressions without dropping some bombs, here is a famous quote to get started:
 
-> Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems.  
+> Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems.
 > &mdash; Jamie Zawinski
 
-_Note: to play with regular expressions, I highly recommend [Regexr](http://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions._
+_Note: to play with regular expressions, I highly recommend [Regexr](https://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions._
 
 ## Finding a use-case
 
@@ -50,35 +50,35 @@ It does look illegible. As most regular expressions. I started discussing with G
 
 In this article, we will see how to come up with such a monster, and what are the required steps to get there. But first, let’s be clear on what we want to match: attribute selectors. These are some examples of selectors we want to match:
 
-* No value: `[foo]`
-* Empty value: `[foo=""]`
-* Unquoted valid value: `[foo=bar]`
-* Quoted value using double quotes: `[foo="bar baz"]`
-* Quoted value using simple quotes: `[foo='bar baz']`
-* Modulators: `[foo^='bar']`, `[foo$='bar']`, `[foo|='bar']`, `[foo~='bar']`, `[foo*='bar']`
-* Case-sensitivity flag with unquoted valid value: `[foo=bar i]`
-* Case-sensitivity flag with quoted value using double quotes: `[foo="bar" i]`
-* Case-sensitivity flag with quoted value using simple quotes: `[foo='bar' i]`
+- No value: `[foo]`
+- Empty value: `[foo=""]`
+- Unquoted valid value: `[foo=bar]`
+- Quoted value using double quotes: `[foo="bar baz"]`
+- Quoted value using simple quotes: `[foo='bar baz']`
+- Modulators: `[foo^='bar']`, `[foo$='bar']`, `[foo|='bar']`, `[foo~='bar']`, `[foo*='bar']`
+- Case-sensitivity flag with unquoted valid value: `[foo=bar i]`
+- Case-sensitivity flag with quoted value using double quotes: `[foo="bar" i]`
+- Case-sensitivity flag with quoted value using simple quotes: `[foo='bar' i]`
 
 On the other hand, these are some examples of things we do **not** want to match:
 
-* Invalid modulator: `[foo@='bar']`
-* Unquoted invalid value: `[foo=bar baz]`
-* Non-matching quotes: `[foo='bar"]`, `[foo="bar']`
-* Non-closed quotes: `[foo=']`, `[foo="]`
-* Non-closed brackets: `[foo`
-* Invalid flag: `[foo='bar' j]`
+- Invalid modulator: `[foo@='bar']`
+- Unquoted invalid value: `[foo=bar baz]`
+- Non-matching quotes: `[foo='bar"]`, `[foo="bar']`
+- Non-closed quotes: `[foo=']`, `[foo="]`
+- Non-closed brackets: `[foo`
+- Invalid flag: `[foo='bar' j]`
 
 We will also assume that selectors are correctly written, sticking to what is possible and allowed by the specifications. For instance, the following are theoretically invalid:
 
-* Attribute name starting with number: `[42foo]`
-* Attribute name containing undescores: `[foo_bar]`
-* Attribute name containing uppercase characters: `[FOO]`
-* Attribute name containing invalid characters: `[-\_(ツ)_/¯]`
+- Attribute name starting with number: `[42foo]`
+- Attribute name containing undescores: `[foo_bar]`
+- Attribute name containing uppercase characters: `[FOO]`
+- Attribute name containing invalid characters: `[-\_(ツ)_/¯]`
 
 Alright? Let’s get started slowly but surely.
 
-_Note: for sake of readability, I omitted the [PCRE delimiters](http://php.net/manual/en/regexp.reference.delimiters.php) (`/.../`) from all regular expressions in this article. We also won't talk about [flags](http://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion._
+_Note: for sake of readability, I omitted the [PCRE delimiters](https://php.net/manual/en/regexp.reference.delimiters.php) (`/.../`) from all regular expressions in this article. We also won't talk about [flags](https://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion._
 
 ## Matching a raw attribute selector
 
@@ -105,7 +105,7 @@ So far so good, right? Let’s check our test list to see how our regular expres
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/01.png" alt="\[\w+]" />
-  <figcaption>You can play with this regular expression on <a href="http://www.regexr.com/3bk5q" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk5q" target="_blank">Regexr</a></figcaption>
 </figure>
 
 Oops, `\w+` is actually not quite right! For starters, we do not want the attribute name to start with a number, and we don't want to allow underscores either, only hyphens. Along the same lines, uppercase letters are not actually allowed, so instead of `\w+` we should check for: `[a-z][a-z0-9-]*`. This means a mandatory latin letter that can be (but not necessarily) followed by any number of latin letters, numbers or hyphens. This is what the star (`*`) implies: from 0 to infinity. Our regex is now:
@@ -116,7 +116,7 @@ Oops, `\w+` is actually not quite right! For starters, we do not want the attrib
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/02.png" alt="\[[a-z][a-z0-9-]*]" />
-  <figcaption>You can play with this regular expression on <a href="http://www.regexr.com/3bk5t" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk5t" target="_blank">Regexr</a></figcaption>
 </figure>
 
 To be completely honest, we could actually very slightly tweak our regular expression and stop here. Think about it: what if we said that an attribute selector is an opening bracket followed by anything, and then a closing bracket? As a regular expression, that would look like this:
@@ -131,7 +131,7 @@ Broadly speaking, it is more than enough to find attribute selectors in a styles
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/03.png" alt="\[[^\]]+]" />
-  <figcaption>You can play with this regular expression on <a href="http://www.regexr.com/3bk60" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk60" target="_blank">Regexr</a></figcaption>
 </figure>
 
 ## Matching attribute selectors with values
@@ -154,7 +154,7 @@ So to match anything that is not a closing square bracket, it is: `[^\]]`, as we
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/04.png" alt="\[[a-z][a-z0-9-]*=[^\]]+]" />
-  <figcaption>You can play with this regular expression on <a href="http://www.regexr.com/3bk63" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk63" target="_blank">Regexr</a></figcaption>
 </figure>
 
 Oh-ho though... Now `[foo]` doesn't match anymore! That’s because we did not make the equal + something part optional. We can do that by wrapping it in parentheses and add a question mark right after it (`(..)?`). Like so:
@@ -169,10 +169,10 @@ The question mark says:
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/05.png" alt="\[[a-z][a-z0-9-]*(=[^\]]+)?]" />
-  <figcaption>You can play with this regular expression on <a href="http://www.regexr.com/3bk66" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk66" target="_blank">Regexr</a></figcaption>
 </figure>
 
-That’s going somewhere! Attribute selectors can involve [a modulator](http://www.w3.org/TR/selectors4/#attribute-selectors) before the equal sign to add extra validations. There can be only 0 or 1 modulator at a time, and it has to be one of: `|`, `*`, `$`, `^`, `~`. We can make sure the modulator is valid by using a character set. To make it optional, there again we will use the question mark:
+That’s going somewhere! Attribute selectors can involve [a modulator](https://www.w3.org/TR/selectors4/#attribute-selectors) before the equal sign to add extra validations. There can be only 0 or 1 modulator at a time, and it has to be one of: `|`, `*`, `$`, `^`, `~`. We can make sure the modulator is valid by using a character set. To make it optional, there again we will use the question mark:
 
 ```regex
 \[[a-z][a-z0-9-]*([|*$^~]?=[^\]]+)?]
@@ -180,7 +180,7 @@ That’s going somewhere! Attribute selectors can involve [a modulator](http://w
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/06.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=[^\]]+)?]" />
-  <figcaption>You can play with this regular expression on <a href="http://www.regexr.com/3bk69" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk69" target="_blank">Regexr</a></figcaption>
 </figure>
 
 ## Dealing with quotes
@@ -189,9 +189,9 @@ Like many languages, CSS does not enforce a specific quote style. It can be eith
 
 So instead of matching anything but a closing square bracket, we want to match either:
 
-* a double quote (`"`) followed by anything that is not a double quote or a forbidden line break (using the `\n` character class), then a double quote again: `"[^"\n]*"`.
-* or a single quote (`'`) followed by anything that is not a single quote or a line break, then a single quote again: `'[^'\n]*'`.
-* or anything (yet at least 1 character) that is not a double quote, a single quote, a space-like character (using the `\s` character class) or a closing square bracket: `[^"'\s\]]+`.
+- a double quote (`"`) followed by anything that is not a double quote or a forbidden line break (using the `\n` character class), then a double quote again: `"[^"\n]*"`.
+- or a single quote (`'`) followed by anything that is not a single quote or a line break, then a single quote again: `'[^'\n]*'`.
+- or anything (yet at least 1 character) that is not a double quote, a single quote, a space-like character (using the `\s` character class) or a closing square bracket: `[^"'\s\]]+`.
 
 To achieve this, we can use the alternation operator `|`:
 
@@ -211,7 +211,7 @@ Which we can now incorporate in our expression:
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/07.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+))?]" />
-  <figcaption>You can play with this regular expression on <a href="http://www.regexr.com/3bk6c" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6c" target="_blank">Regexr</a></figcaption>
 </figure>
 
 ## Testing the case-insensitive flag
@@ -226,7 +226,7 @@ This flag (noted `i`) must be present after at least 1 space right before the cl
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/08.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)(\s+i)?)?]" />
-  <figcaption>You can play with this regular expression on <a href="http://www.regexr.com/3bk6f" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6f" target="_blank">Regexr</a></figcaption>
 </figure>
 
 ## Capturing sections of content
@@ -273,10 +273,10 @@ It is worth noting that the difficulty with regular expressions is usually not t
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/xkcd-2.png" alt="xkcd comics about regular expressions" />
-  <figcaption>From <a href="http://xkcd.com/1171/">xkcd #1171</a></figcaption>
+  <figcaption>From <a href="https://xkcd.com/1171/">xkcd #1171</a></figcaption>
 </figure>
 
-Last but not least, Adonis mentioned in the comments a very handy tool to visualize the meaning of a regular expression in a graphical way. This tool, called [Regexper](http://regexper.com/) manages to define an render a graph based on a given regular expression. Impressive! Here is the graph for our regex (using non-capturing groups only for the sake of simplicity):
+Last but not least, Adonis mentioned in the comments a very handy tool to visualize the meaning of a regular expression in a graphical way. This tool, called [Regexper](https://regexper.com/) manages to define an render a graph based on a given regular expression. Impressive! Here is the graph for our regex (using non-capturing groups only for the sake of simplicity):
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/visualisation.png" alt="The graphical representation of our regular expression" />

@@ -9,13 +9,13 @@ tags:
 
 The other day I was looking at the source code from [GUFF](http://kenwheeler.github.io/guff/), a brand new Sass framework from [Ken Wheeler](https://github.com/kenwheeler). I like reviewing Sass code, I find it very interesting to have an insight at how other people tackle some common issues. By the way, if you want me to review your Sass code, I'll be glad to do so. ;)
 
-Anyway, I was looking at the code and to my surprise, Ken was mostly using mixins for common patterns, even when there was no variable involved whatsoever. You probably know it's considered bad practice to use a mixin when you don't need to make your styles varying according to passed arguments. Placeholders are best suited for such a thing. More informations on topic in [this article at SitePoint](http://www.sitepoint.com/sass-mixin-placeholder/).
+Anyway, I was looking at the code and to my surprise, Ken was mostly using mixins for common patterns, even when there was no variable involved whatsoever. You probably know it's considered bad practice to use a mixin when you don't need to make your styles varying according to passed arguments. Placeholders are best suited for such a thing. More informations on topic in [this article at SitePoint](https://www.sitepoint.com/sass-mixin-placeholder/).
 
 So [I opened an issue](https://github.com/kenwheeler/guff/issues/1) to prompt Ken to move away from mixins when there is no need for them, in favor of placeholders and while he was completely willing to do so, he was worried about usage in media queries. Let's pause here for some explanations.
 
 ## @extend and media queries
 
-This is something I covered before in [this article about `@extend`](http://www.sitepoint.com/sass-extend-nobody-told-you/) at SitePoint but I'll sum up here so you can follow along if you're not very comfortable with Sass yet.
+This is something I covered before in [this article about `@extend`](https://www.sitepoint.com/sass-extend-nobody-told-you/) at SitePoint but I'll sum up here so you can follow along if you're not very comfortable with Sass yet.
 
 When extending a selector, Sass doesn't take the CSS content from the extended selector to put it in the extending one. It works the other way around. It takes the extending selector and append it to the extended one. This is the reason why extending placeholders is better for final output than including mixins.
 

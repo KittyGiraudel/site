@@ -1,6 +1,6 @@
 ---
-title: "How I use Trello to Stop Forgetting Things"
-tags: 
+title: 'How I use Trello to Stop Forgetting Things'
+tags:
   - trello
   - workflow
   - process
@@ -10,19 +10,19 @@ Like everybody else, I have a lot going on in my life. There is working full-tim
 
 Over the months, I noticed that I started forgetting about stuff… Forgetting to reply to some emails. Forgetting to buy some stuff at the supermarket. Forgetting to do important things in the house. There is just so much going on that my brain prioritises and filters things, although not always in the correct order… Duh.
 
-Therefore I started looking for a solution to work around this problem. I am not much of a paper-and-pen kind of guy, so it was not really a solution for me to have post-it notes everywhere. After trying a few things, I finally realized that [Trello](http://trello.com) could actually do the trick!
+Therefore I started looking for a solution to work around this problem. I am not much of a paper-and-pen kind of guy, so it was not really a solution for me to have post-it notes everywhere. After trying a few things, I finally realized that [Trello](https://trello.com) could actually do the trick!
 
 ## Setting up the board
 
 If I were to use Trello to manage my life, the first thing to do was opening a dedicated board, and creating relevant columns. I went with a 7-columns system:
 
-* A “House” column where I store everything that needs to be done in the flat;
-* A “People” column where lives everything related to friends, family and contacts;
-* A “Web” column to keep track of all that needs to be done about my open-source projects;
-* A “Twitter” column holding ideas for tweets and links to post, as I try to tweet meaningful content at specific moments in the day
-* An “Invoice” column to make sure I don’t forget to invoice some work at the end of the month;
-* A “Groceries” column where I write things I need to buy next time I go do the groceries so I stop coming home only to realize I forgot to buy milk;
-* A “Miscellaneous” column where I put anything that cannot fit in the 6 others, such as appointments.
+- A “House” column where I store everything that needs to be done in the flat;
+- A “People” column where lives everything related to friends, family and contacts;
+- A “Web” column to keep track of all that needs to be done about my open-source projects;
+- A “Twitter” column holding ideas for tweets and links to post, as I try to tweet meaningful content at specific moments in the day
+- An “Invoice” column to make sure I don’t forget to invoice some work at the end of the month;
+- A “Groceries” column where I write things I need to buy next time I go do the groceries so I stop coming home only to realize I forgot to buy milk;
+- A “Miscellaneous” column where I put anything that cannot fit in the 6 others, such as appointments.
 
 <figure class="figure">
   <img src="/assets/images/how-i-use-trello/trello-overview.png" alt="An overview of my Trello board" />

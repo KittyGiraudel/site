@@ -1,6 +1,6 @@
 ---
 summary: true
-title: "Digging into my slides about Sass"
+title: 'Digging into my slides about Sass'
 tags:
   - sass
 ---
@@ -9,9 +9,9 @@ As you may know, I have been speaking at KiwiParty about Sass in late June. It h
 
 Because slides are not very self-explanatory, I think it might be cool to dig deep into the topic with expanded explanations, so that everybody can now fully understand what I was trying to explain. :D
 
-Just for your information, here are my slides in French powered by [Reveal.js](http://slid.es):
+Just for your information, here are my slides in French powered by [Reveal.js](https://slid.es):
 
-<iframe src="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## What is Sass?
 
@@ -21,13 +21,13 @@ Sass -and pretty much any preprocessor- is a program aiming at extending a langu
 
 Among other things, Sass can be very useful for:
 
-* **Variables**: it's been a while since we first asked for variables in CSS. They'll come native some day but meanwhile, we have to rely on CSS preprocessors.
-* **Nesting**: it is the ability to nest rules within each others to create expanded CSS selectors. Can be very interesting to avoid code repetition. Remember the [inception rule though](http://thesassway.com/beginner/the-inception-rule).
-* **Functions**: I don't think functions deserve an explanation. Give it parameters, it returns a result you can store in a variable or use as a value.
-* **Mixins**: same as functions except it outputs code instead of returning a result. Very useful to output chuncks of code depending on some parameters (mixin arguments).
-* **Color functions**: every preprocessor nowadays comes with a bunch of functions to ease color management (lighten, darken, transparentize, mix, complementary…). Very cool to avoid repeated back-and-forths between the IDE and Photoshop and having 50 shades of grey when you only need one (see what I did there?). Also easier to read than hexadecimal in my opinion.
-* **File concatenation**: we often want to split our large stylesheets into several smaller ones but doing so increases the number of HTTP requests, thus the time the page need to load. Sass makes this possible: multiple files in development environment, one single file compressed in production.
-* And it's also very cool for a bunch of other things like responsive web design, modular architecture, calculations, namespaces, and so much more...
+- **Variables**: it's been a while since we first asked for variables in CSS. They'll come native some day but meanwhile, we have to rely on CSS preprocessors.
+- **Nesting**: it is the ability to nest rules within each others to create expanded CSS selectors. Can be very interesting to avoid code repetition. Remember the [inception rule though](http://thesassway.com/beginner/the-inception-rule).
+- **Functions**: I don't think functions deserve an explanation. Give it parameters, it returns a result you can store in a variable or use as a value.
+- **Mixins**: same as functions except it outputs code instead of returning a result. Very useful to output chuncks of code depending on some parameters (mixin arguments).
+- **Color functions**: every preprocessor nowadays comes with a bunch of functions to ease color management (lighten, darken, transparentize, mix, complementary…). Very cool to avoid repeated back-and-forths between the IDE and Photoshop and having 50 shades of grey when you only need one (see what I did there?). Also easier to read than hexadecimal in my opinion.
+- **File concatenation**: we often want to split our large stylesheets into several smaller ones but doing so increases the number of HTTP requests, thus the time the page need to load. Sass makes this possible: multiple files in development environment, one single file compressed in production.
+- And it's also very cool for a bunch of other things like responsive web design, modular architecture, calculations, namespaces, and so much more...
 
 All of this is awesome. But when you just get started with Sass, you don't really know what to do. So you declare a couple of variables, maybe make a mixin or two that you don't really need and that's pretty much it.
 
@@ -63,7 +63,7 @@ Outputs:
 
 This example shows how we can use `@extend` and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you're familiar with [Twitter Bootstrap](http://twitter.github.io/bootstrap/components.html#alerts), then you'll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).
 
-<pre class="codepen" data-height="320" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="320" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
 
 With vanilla CSS, you have 3 ways to do this:
 
@@ -222,7 +222,7 @@ Outputs:
 }
 ```
 
-On topic, I have writen a blog post about a robust and extensive PX/REM Sass mixin called [The Ultimate REM mixin](http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/).
+On topic, I have writen a blog post about a robust and extensive PX/REM Sass mixin called [The Ultimate REM mixin](https://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/).
 
 ## Media queries made easy
 
@@ -331,13 +331,13 @@ $gutter-pct: ($gutter-width / $wrap-width) * 100;
 
 Now let's see what the code does exactly:
 
-* You have to define the number of columns you want your grid to be based on, the max-width of your container and the width of a column.
-* Gutter width will be automagically calculated based on the 3 values you previously set.
-* Then, you call the mixin and pass the number of columns you want your element to expand on as an argument.
+- You have to define the number of columns you want your grid to be based on, the max-width of your container and the width of a column.
+- Gutter width will be automagically calculated based on the 3 values you previously set.
+- Then, you call the mixin and pass the number of columns you want your element to expand on as an argument.
 
 And there you have a very simple yet responsive Sass grid.
 
-<pre class="codepen" data-height="320" data-type="result" data-href="9581fd77d4c244288a6a115981ee1d1d" data-user="HugoGiraudel" data-safe="true"><code></code><a href="http://codepen.io/HugoGiraudel/pen/FpDdm">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="320" data-type="result" data-href="9581fd77d4c244288a6a115981ee1d1d" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/FpDdm">Check out this Pen!</a></pre>
 
 ## CSS counters and Sass
 
@@ -413,12 +413,7 @@ To fully understand it, I thought it was better to introduce Sass loops and list
 
 ```scss
 /* All equivalents */
-$list: (
-  'item-1',
-  'item-2',
-  'item-3',
-  'item-4'
-);
+$list: ('item-1', 'item-2', 'item-3', 'item-4');
 $list: ('item-1' 'item-2' 'item-3' 'item-4');
 $list: 'item-1', 'item-2', 'item-3', 'item-4';
 $list: 'item-1' 'item-2' 'item-3' 'item-4';
@@ -430,7 +425,7 @@ A quick look at nested lists:
 
 ```scss
 $list: (
-   (item-1, item-2, item-3) (item-4, item-5, item-6) (item-7, item-8, item-9)
+  (item-1, item-2, item-3) (item-4, item-5, item-6) (item-7, item-8, item-9)
 );
 
 // Or simpler:
@@ -479,9 +474,9 @@ $pages: 'home' 'bg-home.jpg', 'about' 'about.png', 'products' 'prod_bg.jpg', 'co
 
 Here is what happen:
 
-* We deal with a 2-levels list. Each item is a list containing 2 strings: the name of the page (e.g. "home") and the name of the file (e.g. "bg-home.jpg").
-* We loop through the list then access inner items with the `nth()` function (e.g. `nth($page, 1)`).
-* We output CSS within the loop to have one rule for each page.
+- We deal with a 2-levels list. Each item is a list containing 2 strings: the name of the page (e.g. "home") and the name of the file (e.g. "bg-home.jpg").
+- We loop through the list then access inner items with the `nth()` function (e.g. `nth($page, 1)`).
+- We output CSS within the loop to have one rule for each page.
 
 Outputs:
 
@@ -584,7 +579,7 @@ So if you want my opinion: definitely Compass.
 
 **Do you think we will ever be able to connect Sass to some kind of database to auto-supply lists or something?**
 
-Honestly, I don't think so but I could be wrong. I know Sass developers want to do the right thing and try to stick as much as possible to the "CSS scope" (because in the end what is compiled is CSS). Connecting Sass to a database to generate lists then do things in Sass with these lists like [this pure Sass chart](http://codepen.io/thebabydino/pen/lHqbz) would probably be out of line (yet awesomely clever).
+Honestly, I don't think so but I could be wrong. I know Sass developers want to do the right thing and try to stick as much as possible to the "CSS scope" (because in the end what is compiled is CSS). Connecting Sass to a database to generate lists then do things in Sass with these lists like [this pure Sass chart](https://codepen.io/thebabydino/pen/lHqbz) would probably be out of line (yet awesomely clever).
 
 However they are including awesome features in Sass starting with the next version (3.3) which should include sourcemaps, a huge improvements to the parent selector (`&`), inner-string manipulation like `str-index()`, ...
 

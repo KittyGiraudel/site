@@ -93,7 +93,7 @@ Before we go any further, let's decide on how we want our API to work. To be abl
 
 In order to make the API easy to use and as close to the usual CSS syntax as possible, we're going to require the first argument to be a map called `$args` so that we can use `$key->$value` pairs for each customizable property, as well as allowing multiple properties to be passed to a single instance of the mixin.
 
-_Note: If you're unfamiliar with using maps as arguments, [Hugo wrote up a pretty nifty article on that](http://www.sitepoint.com/using-sass-maps/), as well as many other use-cases for maps._
+_Note: If you're unfamiliar with using maps as arguments, [Hugo wrote up a pretty nifty article on that](https://www.sitepoint.com/using-sass-maps/), as well as many other use-cases for maps._
 
 The next argument will be fetching a module from within the above `$customizer` map, which in this case will be our _"palette"_ module. We'll call this argument `$uses`, as we will be fetching (_using_) values from it for use in our first argument, `$args`.
 

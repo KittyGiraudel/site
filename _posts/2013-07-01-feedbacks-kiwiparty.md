@@ -1,5 +1,5 @@
 ---
-title: "Feedback on my first conf"
+title: 'Feedback on my first conf'
 tags:
   - thoughts
 ---
@@ -28,8 +28,8 @@ I'd never been at a conference before so it was pretty much what I could expect.
 
 Plus, we had the opportunity to meet two awesome dudes of our field:
 
-* [Bert Bos](http://en.wikipedia.org/wiki/Bert_Bos) -co-creator of CSS- introduced the day by telling us about [CSS for books](http://www.w3.org/Talks/2013/0628-CSS-Strasbourg/). Pretty amazing what we can know do with CSS when we know it was first intented to style basic text documents.
-* [Tristan Nitot](http://twitter.com/nitot) -founder of Mozilla Europe- concluded the conference by talking about Firefox OS. He's such an awesome speaker; totally worth seeing him.
+- [Bert Bos](http://en.wikipedia.org/wiki/Bert_Bos) -co-creator of CSS- introduced the day by telling us about [CSS for books](http://www.w3.org/Talks/2013/0628-CSS-Strasbourg/). Pretty amazing what we can know do with CSS when we know it was first intented to style basic text documents.
+- [Tristan Nitot](http://twitter.com/nitot) -founder of Mozilla Europe- concluded the conference by talking about Firefox OS. He's such an awesome speaker; totally worth seeing him.
 
 I could also meet all those great French people from Twitter and put some faces on names. Probably the best thing of this day. :)
 
@@ -54,7 +54,7 @@ In the end, I had a couple of questions (most of them very relevant) which I was
 
 ## Why Sass?
 
-Well, it's been [almost 9 months](http://hugogiraudel.com/2012/11/13/less-to-sass/) now I am using Sass on an almost-daily basis. In the last few months, I've been intensively hacking around the language, reading every tiny bit of documentation I could find (especially Compass' one) to push things further.
+Well, it's been [almost 9 months](https://hugogiraudel.com/2012/11/13/less-to-sass/) now I am using Sass on an almost-daily basis. In the last few months, I've been intensively hacking around the language, reading every tiny bit of documentation I could find (especially Compass' one) to push things further.
 
 When my girlfriend suggested I give a talk at KiwiParty back in April, I laughed. I had nothing to talk about. Then, it was kind of an inception; the idea kept spinning in my head looking for a topic to speak about. Until I found it: **Sass**.
 
@@ -70,7 +70,7 @@ Regarding pictures, my [girlfriend](http://alexandralucas.com) took a couple of 
 
 Oh, and of course here are my [slides](http://slid.es/hugogiraudel/css-kick-ass-avec-sass/) (in French, but it's mostly code); read top to bottom then left to right. I'm currently writing a blog post digging deep into my slides, so be patient English-speaking friends. :)
 
-<iframe src="http://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Final words
 
@@ -79,7 +79,7 @@ Oh, and of course here are my [slides](http://slid.es/hugogiraudel/css-kick-ass-
 <figcaption>Stuff - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
 </figure>
 
-So all in all, it was an amazing experience. Big thanks to the [Alsacreations](http://alsacreations.fr/) team and to all of you who were in the room to hear my talk.
+So all in all, it was an amazing experience. Big thanks to the [Alsacreations](https://alsacreations.fr/) team and to all of you who were in the room to hear my talk.
 
 I hope to be part of it next year as well. Meanwhile, I'm available to hack your Sass.&nbsp;;)
 

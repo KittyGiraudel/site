@@ -1,12 +1,12 @@
 ---
-title: "Oh Jekyll, here we go again..."
-tags: 
+title: 'Oh Jekyll, here we go again...'
+tags:
   - jekyll
   - mixture
   - blog
 ---
 
-I [created this site](http://hugogiraudel.com/2012/11/09/redesign-blog/) in November 2012, with a strictly static old school set up. I quickly moved on to a custom PHP workflow only to move to [Jekyll](http://jekyllrb.com) about 3 months later (February 2013). I wrote about the experience in [this article](http://hugogiraudel.com/2013/02/21/jekyll/).
+I [created this site](https://hugogiraudel.com/2012/11/09/redesign-blog/) in November 2012, with a strictly static old school set up. I quickly moved on to a custom PHP workflow only to move to [Jekyll](http://jekyllrb.com) about 3 months later (February 2013). I wrote about the experience in [this article](https://hugogiraudel.com/2013/02/21/jekyll/).
 
 ![Mixture.io](/assets/images/oh-jekyll-here-we-go-again/mixture.png)
 
@@ -15,7 +15,7 @@ Over a year later (June 2014), I decided to give [Mixture](http://mixture.io/) a
 And here we are, almost a year later again, back to Jekyll, one more time. I thought it would wait for Jekyll 3 to be released but it did not. To be perfectly honest with you, I don't see it changing anytime soon (but I might be wrong, I seem to be quite undecided regarding this).
 
 <figure class="figure">
-<img src="http://fc03.deviantart.net/fs70/f/2013/085/6/b/one_more_time_a_tribute_to_daft_punk_rainmeter_by_crazyxb-d5zbgb5.png" alt="" />
+<img src="https://fc03.deviantart.net/fs70/f/2013/085/6/b/one_more_time_a_tribute_to_daft_punk_rainmeter_by_crazyxb-d5zbgb5.png" alt="" />
 <figcaption>Wallpaper by <a href="http://crazyxb.deviantart.com/" target="_blank">crazyxb</a> DeviantArt user</figcaption>
 </figure>
 
