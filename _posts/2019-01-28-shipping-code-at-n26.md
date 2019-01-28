@@ -56,4 +56,4 @@ Being that verbose with contribution history makes it easier for us, but also te
 
 ---
 
-I hope this inspire you to make your deployment process and pipeline fast and efficient as well! Feel free to share your thoughts with me on Twitter. Oh, and don’t forget that we are currently [hiring in Berlin and Barcelona](https://n26.com/en/careers/departments/13426)!
+I hope this inspire you to make your deployment process and pipeline fast and efficient as well! Feel free to share your thoughts with me on Twitter. Oh, and don’t forget that we are currently [hiring in Berlin and Barcelona](https://grnh.se/4f88b7891)!
