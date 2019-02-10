@@ -2,6 +2,6 @@
   "title": "HugoGiraudel.com",
   "homepage": "https://hugogiraudel.com",
   "dependencies": {
-    "sw-precache": "^5.1.1"
+    "sw-precache": "^5.2.1"
   }
 }
