@@ -14,7 +14,7 @@ But let’s try to focus on the bright side, shall we? Last year, I did [a littl
 
 ♿️ **March 7th**. Not even a month after a11y-dialog, I released [a11y-toggle](https://github.com/edenspiekermann/a11y-toggle), a small script for content toggles. Slightly less popular than the first one, but still worth it!
 
-📘 **April 4th**. I released [Jump Start Sass](http://howsass.works), my second book (in English this time). I had the luck to co-author it with [Miriam Suzanne](https://twitter.com/mirisuzanne) and am super happy with the result. I believe it’s a short yet insightful piece to learn how to use Sass efficiently.
+📘 **April 4th**. I released Jump Start Sass, my second book (in English this time). I had the luck to co-author it with [Miriam Suzanne](https://twitter.com/mirisuzanne) and am super happy with the result. I believe it’s a short yet insightful piece to learn how to use Sass efficiently.
 
 🏆 **May 13th**. Google made me [a Google Expert in front-end development](https://developers.google.com/experts/people/hugo-giraudel) after a few weeks of going through the process. It’s quite an honor being amongst such brilliant minds!
 

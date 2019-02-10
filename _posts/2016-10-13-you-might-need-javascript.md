@@ -1,5 +1,5 @@
 ---
-title: "You Might Need JavaScript"
+title: 'You Might Need JavaScript'
 tags:
   - js
   - css
@@ -9,13 +9,13 @@ tags:
 
 It’s been a rough couple of months for JavaScript. Another day, another rant about it, another article about how the ecosystem is too fragmented, the language too convoluted, and what else.
 
-Recently enough, a project named [You Might Not Need JS](http://youmightnotneedjs.com) has seen the day. I have mixed opinions about it, and rather than writing a series of context-less tweets, I thought the sensible thing to do would be to write a couple of lines here.
+Recently enough, a project named [You Might Not Need JS](https://youmightnotneedjs.com) has seen the day. I have mixed opinions about it, and rather than writing a series of context-less tweets, I thought the sensible thing to do would be to write a couple of lines here.
 
 Needless to say, this is obviously not meant as an offense to the project’s author, especially since I believe they (mostly) did a great job. More on that later.
 
 ## A word about the inspiration
 
-The project which has inspired the aforementioned one is [You Might Not Need jQuery](http://youmightnotneedjquery.com/), in which its author outlined ways to use plain JavaScript rather than the jQuery library for simple tasks. It was quite a hit when it came out.
+The project which has inspired the aforementioned one is [You Might Not Need jQuery](https://youmightnotneedjquery.com/), in which its author outlined ways to use plain JavaScript rather than the jQuery library for simple tasks. It was quite a hit when it came out.
 
 What I liked with this attempt is that it showed the world that JavaScript had come a long way and was not as hard to author as when jQuery was first invented. It also had the benefit of introducing new browser APIs (`.querySelectorAll`, `.classList`, `.matches`, `bind`) which is obviously a Good Thing™.
 
@@ -23,11 +23,11 @@ What I liked with this attempt is that it showed the world that JavaScript had c
 
 Coming back to my initial point: I am all for teaching people not to abuse JavaScript and not to use it when it is not needed. No need to convince me that progressive enhancement is the way to go, and that relying on JavaScript for critical features is to be avoided. For that, I think Una (the project’s author) did a fantastic job.
 
-However, I don’t believe replacing JavaScript with [CSS hacks](http://youmightnotneedjs.com/#view_switcher) is any better. People, JavaScript is not a problem. I repeat it, because it doesn’t seem that obvious these days: **JavaScript is not a problem**. It has been invented for a reason. Replacing it for the sake of replacing it is not only useless, it’s also quite harmful.
+However, I don’t believe replacing JavaScript with [CSS hacks](https://youmightnotneedjs.com/#view_switcher) is any better. People, JavaScript is not a problem. I repeat it, because it doesn’t seem that obvious these days: **JavaScript is not a problem**. It has been invented for a reason. Replacing it for the sake of replacing it is not only useless, it’s also quite harmful.
 
 CSS is not meant to handle logic and states. It has some simple mechanisms to ease styling based on states (pseudo-classes mostly), but it is not meant to control states. JavaScript is.
 
-At the end of the day, it boils down to knowing your browser. There are some excellent examples in this project, and almost all of them are about replacing JavaScript with native HTML. A good one is [the color picker](http://youmightnotneedjs.com/#color_picker):
+At the end of the day, it boils down to knowing your browser. There are some excellent examples in this project, and almost all of them are about replacing JavaScript with native HTML. A good one is [the color picker](https://youmightnotneedjs.com/#color_picker):
 
 ```html
 <label for="color-picker">Select a color</label>

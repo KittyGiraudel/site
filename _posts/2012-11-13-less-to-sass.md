@@ -1,5 +1,5 @@
 ---
-title: "Why I switched from LESS to Sass"
+title: 'Why I switched from LESS to Sass'
 tags:
   - less
   - sass
@@ -16,10 +16,10 @@ Anyway and before anything, please note I’m not a hardcore CSS preprocessor us
 
 A few weeks ago, I wanted to have a real shot with CSS preprocessors after hours of playing on [CodePen](https://codepen.io) so I read a few things to make a choice. To put it simple, there are currently 4 major CSS preprocessors:
 
-* [Sass](http://sass-lang.com/) built on Ruby
-* [LESS](http://lesscss.org/) built on JavaScript
-* [Stylus](http://learnboost.github.com/stylus/) built on JavaScript
-* [CSS Crush](http://the-echoplex.net/csscrush/) built on PHP
+- [Sass](https://sass-lang.com/) built on Ruby
+- [LESS](https://lesscss.org/) built on JavaScript
+- [Stylus](https://learnboost.github.com/stylus/) built on JavaScript
+- [CSS Crush](https://the-echoplex.net/csscrush/) built on PHP
 
 I’ve never heard much about Stylus so it was not an option to me. I wanted to have a quick access to complete documentation since I was a little bit scared to take the plunge. And even if CSS Crush sounded really cool because I’m familiar with PHP, I’ve read too few on it to consider this as real choice.
 
@@ -77,9 +77,9 @@ The fact is **LESS doesn’t handle if / else statements**. Instead, it provides
 
 It may look similar at the first glance but it involves a few things:
 
-* it multiplies the number of mixin declarations. It’s not one mixin with conditions, it’s multiple mixins varying according to their parameters,
-* it becomes hard to understand when multiple conditions are gathered at once,
-* it looks counter-intuitive to me since I would like to do as mentioned earlier.
+- it multiplies the number of mixin declarations. It’s not one mixin with conditions, it’s multiple mixins varying according to their parameters,
+- it becomes hard to understand when multiple conditions are gathered at once,
+- it looks counter-intuitive to me since I would like to do as mentioned earlier.
 
 Anyway, I was just a little frustrated not to be able to use what seems intuitive to me: real if/else conditional statements but all in all I succeeded in doing my mixin so it was not so bad. Things started getting bad when I wanted to do moar.
 
@@ -93,7 +93,7 @@ Loops are cool: they can handle a huge amount of operations in only a few lines 
 @nbElements: 10;
 for(@i = 0; @i < @nbElements; @i++) {
   .my-element:nth-child(@i) {
-    animation-name: loading-@i;
+    animation-name: loading- @i;
   }
 }
 ```
@@ -166,7 +166,7 @@ But come on... How come they didn’t think about variable concatenations and @k
 Basically, LESS fails to understand @page and @keyframes inside mixins because it throws an exception according to [its source code](https://github.com/cloudhead/less.js/blob/b235734a11f646252db8f0947fee406ce67cf904/lib/less/parser.js#L1158). So you'll need two nested mixins: one handling your animation, the second one to handle the keyframes. Sounds heavy and complicated, well it is. So let’s say you want to create a custom mixin using @keyframes and vendor prefixes (not much, right?) this is what you have to do:
 
 ```less
-@newline: `'\n'`; /* Newline */
+@newline: ` '\n'`; /* Newline */
 .my-mixin(@selector, @name, @other-parameters) {
   /* @selector is the element using your animation
      * @name is the name of your animation
@@ -201,11 +201,11 @@ Basically, LESS fails to understand @page and @keyframes inside mixins because i
     .Local;
   }
 
-  .keyframe-mixin(''            , 0, '-webkit-');
-  .keyframe-mixin(~'}@{newline}', 0,    '-moz-');
-  .keyframe-mixin(~'}@{newline}', 0,     '-ms-');
-  .keyframe-mixin(~'}@{newline}', 0,      '-o-');
-  .keyframe-mixin(~'}@{newline}', 1,         '');
+  .keyframe-mixin('', 0, '-webkit-');
+  .keyframe-mixin(~'}@{newline}', 0, '-moz-');
+  .keyframe-mixin(~'}@{newline}', 0, '-ms-');
+  .keyframe-mixin(~'}@{newline}', 0, '-o-');
+  .keyframe-mixin(~'}@{newline}', 1, '');
 }
 .my-mixin('#whatever', name, other-parameters);
 ```
@@ -216,13 +216,13 @@ _Note: the `.Local()` thing seems to be a keyword for "this" but I couldn't find
 
 So basically, here is what there is to say ([still not from me](http://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css/11028622#11028622)):
 
-* The initial selector `(~"@keyframes @{name}{") { ... }` renders as `@keyframes name { { ... }
-* To avoid `{ {`, it requires a newline which cannot be escaped directly so through the variable `@newline: \`"\n"\``;. LESS parses anything between backticks as JavaScript, so the resulting value is a newline character.
-* Since `{ ... }` requires a selector to be valid, we use the first step of the animation (0%).
-* But the curly braces do not match. To fix this, we can add a dummy selector in the end, which starts with `(~"} dummy") { .. }`. How ugly is that?
-* But wait, we already know that vendor prefixes are going to be added in sequel. So, let the final first selector be `(~"@{pre} @@{vendor}keyframes @{name} {@{newline}0%")`. What a nightmare...
-* `@{pre}` has to be `"}@{newline}"` for every keyframes block after the first one.
-* Instead of a dummy selector for the last curly brace, we define the keyframe mixins. We're using a guarded mixin to implement this.
+- The initial selector `(~"@keyframes @{name}{") { ... }` renders as `@keyframes name { { ... }
+- To avoid `{ {`, it requires a newline which cannot be escaped directly so through the variable `@newline: \`"\n"\``;. LESS parses anything between backticks as JavaScript, so the resulting value is a newline character.
+- Since `{ ... }` requires a selector to be valid, we use the first step of the animation (0%).
+- But the curly braces do not match. To fix this, we can add a dummy selector in the end, which starts with `(~"} dummy") { .. }`. How ugly is that?
+- But wait, we already know that vendor prefixes are going to be added in sequel. So, let the final first selector be `(~"@{pre} @@{vendor}keyframes @{name} {@{newline}0%")`. What a nightmare...
+- `@{pre}` has to be `"}@{newline}"` for every keyframes block after the first one.
+- Instead of a dummy selector for the last curly brace, we define the keyframe mixins. We're using a guarded mixin to implement this.
 
 Anyway, this was waaaaay too much for me. **The point of CSS preprocessors is to easy the CSS development, not to make it harder**. So this is the moment I realized LESS wasn't _that_ good.
 
@@ -267,21 +267,21 @@ Sass has absolutely no problem with concatenation neither in selectors nor in pr
 
 Very quickly, here are the few things making me tell Sass is better than LESS. Those are well explained in the above links.
 
-* Sass has [Compass](http://compass-style.org/) which keeps CSS3 support up to date
-* Sass provides the `@extend` feature allowing you to extend a class from another one
-* Sass handles media queries in a better and more advanced ways than others
-* Sass throws errors instead of miscalculations when doing operations with units
-* <span style="text-decoration: line-through;">Sass provides a minifying function to compress your CSS files</span> (so does LESS server-side)
-* Sass is slightly more active, development speaking
+- Sass has [Compass](http://compass-style.org/) which keeps CSS3 support up to date
+- Sass provides the `@extend` feature allowing you to extend a class from another one
+- Sass handles media queries in a better and more advanced ways than others
+- Sass throws errors instead of miscalculations when doing operations with units
+- <span style="text-decoration: line-through;">Sass provides a minifying function to compress your CSS files</span> (so does LESS server-side)
+- Sass is slightly more active, development speaking
 
 ## LESS is not so bad
 
 Well, I've been moaning about LESS the whole article, but honestly this is not so bad. At least, it's no so bad if you don't plan on complicated and advanced things. Actually there are things LESS are better at, let me tell you my opinion about it:
 
-* <span style="text-decoration: line-through;">LESS provides some really cool color functions (darken, lighten, spin, de/saturate, fade, fadein, fadeout, mix, contrast)</span> (so does Sass)
-* LESS has a nicer and more accessible documentation on [lesscss.org](http://lesscss.org/)
-* LESS is not dependent to either command line skills or a third program
-* LESS can be used locally without any install required (simple JS script)
-* [Twitter Bootstrap](http://twitter.github.com/bootstrap/) which is probably the biggest framework outhere running thousands of websites is built on LESS; it sounds like a nice proof that LESS is a good CSS preprocessor to me
+- <span style="text-decoration: line-through;">LESS provides some really cool color functions (darken, lighten, spin, de/saturate, fade, fadein, fadeout, mix, contrast)</span> (so does Sass)
+- LESS has a nicer and more accessible documentation on [lesscss.org](http://lesscss.org/)
+- LESS is not dependent to either command line skills or a third program
+- LESS can be used locally without any install required (simple JS script)
+- [Twitter Bootstrap](http://twitter.github.com/bootstrap/) which is probably the biggest framework outhere running thousands of websites is built on LESS; it sounds like a nice proof that LESS is a good CSS preprocessor to me
 
 Whatsoever, the choice is really up to you. All of this was only my opinion based on my experience. **LESS is still a good CSS preprocessor, but in the end I think Sass is simply better**.

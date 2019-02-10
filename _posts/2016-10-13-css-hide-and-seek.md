@@ -7,7 +7,7 @@ tags:
   - a11y
 ---
 
-> This article is a translation from [Cache-cache CSS](http://www.ffoodd.fr/cache-cache-css/) by accessibility expert [Gaël Poupard](https://twitter.com/ffoodd_fr). All credits to him.
+> This article is a translation from [Cache-cache CSS](https://www.ffoodd.fr/cache-cache-css/) by accessibility expert [Gaël Poupard](https://twitter.com/ffoodd_fr). All credits to him.
 
 **Or how to visually hide some text while keeping it accessible.**
 
