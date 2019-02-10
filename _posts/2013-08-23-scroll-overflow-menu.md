@@ -1,6 +1,6 @@
 ---
-guest: "Hugo Darby-Brown"
-title: "Scroll overflow menu"
+guest: 'Hugo Darby-Brown'
+title: 'Scroll overflow menu'
 tags:
   - css
   - experiment
@@ -14,18 +14,13 @@ Before I start off I'd like to say that this is more of **a proof of concept**, 
 
 I wanted to create a horizontal scrolling navigation, similar to that of the iOS taskbar. Lots of responsive menu's take the approach of displaying list items vertically on small screens, but I wanted to play with the idea of having menu items off the screen and swiping to reveal them.
 
-<figure class="figure">
-  <img src="http://darbybrown.com/img/scroll-overflow-menu.jpg" alt="" />
-  <figcaption>The scroll-overflow menu by Hugo</figcaption>
-</figure>
-
 ## The Basic Effect
 
 I wanted the HTML markup to be as clean as possible, this I guess it's pretty self explanatory.
 
 ```html
 <header>
-  <nav role='navigation'>
+  <nav role="navigation">
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
@@ -130,16 +125,16 @@ A mobile only menu isn't much use these days is it? So using a few `min-width` m
 
 The support is really not that bad, without being awesome either. As far as I know, it looks like this:
 
-* iOS 5+
-* Android 3.0
-* Blackberry 6+
-* Windows Phone (IE10) supports momentum scrolling natively
+- iOS 5+
+- Android 3.0
+- Blackberry 6+
+- Windows Phone (IE10) supports momentum scrolling natively
 
 For unsupported browsers, there are a few of polyfills that can help you, should you want to use it:
 
-* [iScroll](http://cubiq.org/iscroll-4)
-* [Overthrow](http://filamentgroup.github.io/Overthrow/)
-* [Scrollability](https://github.com/joehewitt/scrollability/)
+- [iScroll](http://cubiq.org/iscroll-4)
+- [Overthrow](http://filamentgroup.github.io/Overthrow/)
+- [Scrollability](https://github.com/joehewitt/scrollability/)
 
 ## Final thoughts
 
