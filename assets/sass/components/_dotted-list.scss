@@ -1,0 +1,12 @@
+.dotted-list {
+  list-style: none;
+}
+
+.dotted-list > li {
+  display: inline-block;
+}
+
+.dotted-list > li:not(:last-of-type)::after {
+  content: '·';
+  font-family: monospace;
+}

@@ -1,6 +1,5 @@
 ---
-summary: true
-title: "Advanced Sass list functions"
+title: 'Advanced Sass list functions'
 tags:
   - sass
   - lists
@@ -76,7 +75,7 @@ I made two versions of this function: in the first one, the code is simple. In t
  * Better performance
  */
 @function last-index($list, $value) {
-  @for $i from length($list) *-1 through -1 {
+  @for $i from length($list) * -1 through -1 {
     @if nth($list, abs($i)) == $value {
       @return abs($i);
     }
@@ -202,10 +201,10 @@ As you can see, the function also deals with nested lists if you pass the 4th op
 
 Getting a little more complicated, doesn't it? Don't worry, it's not that hard to understand. For every element in the list (`nth($list, $i)`), we check whether or not it is a nested list.
 
-* If it is and `$recursive` is set to `true`, we call the `replace()` function again on the nested list (recursive style!).
-* Else, we check if the element is strictly the same as the value we want to replace (`$old-value`).
-  * If it is, we append `$new-value`.
-  * Else we append the initial value.
+- If it is and `$recursive` is set to `true`, we call the `replace()` function again on the nested list (recursive style!).
+- Else, we check if the element is strictly the same as the value we want to replace (`$old-value`).
+  - If it is, we append `$new-value`.
+  - Else we append the initial value.
 
 And there we have a recursive function to replace a given value by another given value in a list and all its nested lists.
 
@@ -410,7 +409,7 @@ As you can see, by default the function do not reverse nested lists. As always, 
 @function reverse($list, $recursive: false) {
   $result: ();
 
-  @for $i from length($list) *-1 through -1 {
+  @for $i from length($list) * -1 through -1 {
     @if type-of(nth($list, abs($i))) == list and $recursive {
       $result: append($result, reverse(nth($list, abs($i)), $recursive));
     } @else {
@@ -483,7 +482,7 @@ Hopefully examples will make the point of this function clearer. The code isn't 
   $result: ();
 
   @for $i from 0 to length($list) {
-    $result: append($result, nth($list,  ($i - $value) % length($list) + 1));
+    $result: append($result, nth($list, ($i - $value) % length($list) + 1));
   }
 
   @return $result;

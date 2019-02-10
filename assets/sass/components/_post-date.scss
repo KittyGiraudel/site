@@ -1,5 +1,6 @@
 .post-date {
-  font-family: $code-font-stack;
+  text-align: center;
+  margin-bottom: 3em;
 }
 
 .post-date::after {
@@ -7,6 +8,6 @@
   display: block;
   width: 25%;
   height: 1px;
-  margin-top: 1.5em;
+  margin: 1em auto 0;
   background-color: $blue;
 }

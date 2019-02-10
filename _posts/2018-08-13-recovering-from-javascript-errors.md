@@ -53,8 +53,6 @@ Object.keys(webpackBundles).map(bundleName => (
 ))
 ```
 
----
-
 While the user technically doesn’t have to know they have been redirected to a lite version, it might be more transparent and less confusing to tell them. In our case, we render a fixed message at the bottom of the screen with a link to reload the page with JavaScript enabled.
 
 There has been [an interesting discussion on Twitter around the wording](https://twitter.com/HugoGiraudel/status/1022762218075697152). Something along these lines should work:

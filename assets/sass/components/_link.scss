@@ -1,4 +1,5 @@
 a {
+  color: $soft-blue;
   border-bottom: 1px dotted;
   text-decoration: none;
 }
@@ -6,4 +7,9 @@ a {
 a:hover,
 a:active {
   border-bottom-style: solid;
+  color: darken($soft-blue, 10%);
+}
+
+a:visited {
+  color: inherit;
 }

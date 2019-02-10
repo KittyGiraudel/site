@@ -1,7 +1,6 @@
 ---
 layout: page
-theme: t-red
-title: "Articles from guest authors"
+title: 'Articles from guest authors'
 tags:
   - blog
   - writing

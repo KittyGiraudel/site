@@ -1,5 +1,5 @@
 ---
-title: "Template engines and JavaScript"
+title: 'Template engines and JavaScript'
 tags:
   - template
   - javascript
@@ -33,15 +33,9 @@ Before moving to Mixture, I handled the problem in a rather drastic (and dirty) 
 
 ```html
 {% if post.codepen %}
-  <script src="... source to CodePen JS file ..."></script>
-{% endif % }
-
-{% if post.comments %}
-  ... Disqus JavaScript snippet ...
-{% endif %}
-
-{% if post.tableOfContents %}
-  ... Table of contents JavaScript snipppet ...
+<script src="... source to CodePen JS file ..."></script>
+{% endif % } {% if post.comments %} ... Disqus JavaScript snippet ... {% endif
+%} {% if post.tableOfContents %} ... Table of contents JavaScript snipppet ...
 {% endif %}
 ```
 
@@ -166,16 +160,15 @@ We still haven't really solved the problem yet. How are we going to pass our Liq
 <script src="/assets/js/main.min.js"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var app = new App({
-    codepen: {{ post.codepen }},
-    sassmeister: {{ post.sassmeister }},
-    tableOfContent: {{ post.summary }},
-    layout: '{{ post.layout }}',
-    tracking: true,
-    ad: true
+  document.addEventListener('DOMContentLoaded', function() {
+    var app = new App({
+      codepen: {{ post.codepen }},
+      sassmeister: {{ post.sassmeister }},
+      layout: '{{ post.layout }}',
+      tracking: true,
+      ad: true
+    });
   });
-});
 </script>
 ```
 

@@ -38,33 +38,28 @@
   link: https://github.com/edenspiekermann/outline-audit
   category: Accessibility
 
-- name: A11y Toggle
+- name: A11y-toggle
   description: 'A script to make accessible content toggles to assistive technology users.'
   link: https://github.com/edenspiekermann/a11y-toggle
   category: Accessibility
 
-- name: A11y Dialog
+- name: A11y-dialog
   description: 'A script to make modal dialogs accessible to assistive technology users.'
   link: https://github.com/edenspiekermann/a11y-dialog
   category: Accessibility
 
 - name: Spritesh
-  description: 'A Node.js script to build a SVG sprite from a folder of SVG files.'
+  description: 'A script to build a SVG sprite from a folder of SVG files.'
   link: https://github.com/edenspiekermann/sprite.sh
   category: JavaScript
 
-- name: Transync
-  description: 'A Node.js script to synchronise keys from translation files.'
-  link: https://github.com/edenspiekermann/transync
-  category: JavaScript
-
 - name: Sass Semver
-  description: 'A small Semantic Versioning (SemVer) parser in Sass.'
+  description: 'A small Semantic Versioning parser in Sass.'
   link: https://github.com/HugoGiraudel/sass-semver
   category: Sass
 
 - name: SJSJ
-  description: 'Simplified JavaScript Jargon (short SJSJ) is a community-driven attempt at explaining the loads of buzzwords making the current JavaScript ecosystem in a few simple words.'
+  description: 'A community-driven attempt at explaining JavaScript concepts and buzzwords.'
   link: https://jargon.js.org
   category: JavaScript
 
@@ -74,12 +69,12 @@
   category: Sass
 
 - name: Sass Boilerplate
-  description: 'A Sass boilerplate to kickstart a project sticking to Sass Guidelines recommendations.'
+  description: 'A Sass boilerplate to kickstart a project.'
   link: https://github.com/HugoGiraudel/sass-boilerplate
   category: Sass
 
 - name: SassDoc
-  description: 'A documentation system to build pretty and powerful Sass docs.'
+  description: 'A documentation system for Sass.'
   link: http://sassdoc.com
   category: Sass
 
@@ -89,27 +84,27 @@
   category: Sass
 
 - name: Browserhacks
-  description: 'An extensive list of browser specific CSS and JavaScript hacks.'
+  description: 'An extensive list of browser specific hacks.'
   link: http://browserhacks.com/
   category: CSS
 
 - name: node-legofy
-  description: 'Node.js version of Legofy, a script to convert an image into a mosaic of LEGO pieces.'
+  description: 'A script to convert an image into a mosaic of LEGO pieces.'
   link: https://github.com/HugoGiraudel/node-legofy
   category: JavaScript
 
 - name: CRUD.js
-  description: 'An interface for CRUD (Create Read Update Delete) in JavaScript.'
+  description: 'A lightweight interface for CRUD.'
   link: https://github.com/HugoGiraudel/CRUD.js
   category: JavaScript
 
 - name: ImagePreloader
-  description: 'A lightweight JavaScript implementation of an image preloader relying on ES6 Promises.'
+  description: 'A lightweight image preloader.'
   link: https://github.com/HugoGiraudel/imagepreloader
   category: JavaScript
 
 - name: Countdown.js
-  description: 'A small yet cutstomizable countdown in JavaScript.'
+  description: 'A small yet customisable countdown in JavaScript.'
   link: https://github.com/HugoGiraudel/countdown.js
   category: JavaScript
 
@@ -119,51 +114,46 @@
   category: Sass
 
 - name: SassyGradients
-  description: 'A lightweight wrapper for the linear-gradient CSS function.'
+  description: 'A lightweight wrapper for CSS gradients.'
   link: https://github.com/HugoGiraudel/SassyGradients
   category: Sass
 
 - name: SassyBitwise
-  description: 'A fully working implementation of bitwise operators in Sass.'
+  description: 'An implementation of bitwise operators in Sass.'
   link: https://github.com/HugoGiraudel/SassyBitwise
   category: Sass
 
-- name: SassyIteratorsGenerators
-  description: 'An experimental implementation of iterators and generators in Sass.'
-  link: https://github.com/HugoGiraudel/SassyIteratorsGenerators
-  category: Sass
-
 - name: SassyStrings
-  description: 'A collection of Sass functions to ease string manipulation.'
+  description: 'A collection of Sass functions for string manipulation.'
   link: https://github.com/HugoGiraudel/SassyStrings
   category: Sass
 
 - name: SassyLists
-  description: 'A collection of Sass functions to ease list manipulation.'
+  description: 'A collection of Sass functions for list manipulation.'
   link: https://github.com/at-import/SassyLists
   category: Sass
 
 - name: SassyMatrix
-  description: 'A collection of Sass functions to ease matrix (bi-dimensional maps) manipulation.'
+  description: 'A collection of Sass functions for matrix manipulation.'
   link: https://github.com/HugoGiraudel/SassyMatrix
   category: Sass
 
 - name: SassyLogger
-  description: 'A powerful logging system built in Sass, for Sass.'
+  description: 'A powerful logging system built for Sass.'
   link: https://github.com/HugoGiraudel/SassyLogger
   category: Sass
 
 - name: SassyJSON
-  description: 'An experimental and partially working implementation of a JSON parser in Sass.'
+  description: 'A partially working JSON parser in Sass.'
   link: https://github.com/HugoGiraudel/SassyJSON
   category: Sass
 
 - name: SassyCast
-  description: 'A collection of Sass functions to ease type conversion.'
+  description: 'A collection of Sass functions for type conversion.'
   link: https://github.com/HugoGiraudel/SassyCast
   category: Sass
 
 - name: SassySort
-  description: 'A collection of popular sorting algorithms implementations in Sass.'
+  description: 'A collection of sorting algorithms implementations in Sass.'
   link: https://github.com/HugoGiraudel/SassySort
   category: Sass

@@ -1,6 +1,5 @@
 ---
-summary: true
-title: "Why a CSS alternative to &lt;select&gt; is impossible"
+title: 'Why a CSS alternative to &lt;select&gt; is impossible'
 tags:
   - css
   - thoughts
@@ -68,8 +67,8 @@ If you come up with a CSS-only solution to force the user to select an option by
 
 You could still use JavaScript. But then:
 
-* it's no more a CSS-only alternative to the `<select>` element
-* it adds even more code to your page, slowing it down
+- it's no more a CSS-only alternative to the `<select>` element
+- it adds even more code to your page, slowing it down
 
 ## Performance
 

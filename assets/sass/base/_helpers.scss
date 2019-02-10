@@ -9,6 +9,7 @@
   padding-left: 1em; /* 2 */
   padding-right: 1em; /* 2 */
   width: 100%; /* 1 */
+  margin: 0 auto;
 
   @include media('>=medium') {
     padding-left: 2em;

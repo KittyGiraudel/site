@@ -11,13 +11,14 @@ html {
  *    making all elements inheriting from the root box-sizing value.
  *    See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: inherit; /* 1 */
-} 
+}
 
 /**
  * 1. Prevent horizontal scrolling.
- * 2. Leave room for sidebar.
  */
 body {
   color: #444;
@@ -26,7 +27,6 @@ body {
 
   @include media('>=medium') {
     font-size: 1.25em;
-    padding-left: $sidebar-width; /* 2 */
   }
 }
 

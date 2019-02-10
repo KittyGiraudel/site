@@ -1,12 +1,11 @@
 # Site settings
-title: Hugo Giraudel, front-end developer in Berlin
-email: hugo.giraudel@gmail.com
+title: Hugo Giraudel, web developer in Berlin
 description: > # this means to ignore newlines until "baseurl:"
-  My name is Hugo Giraudel, I am a French front-end developer based in Berlin, focused on accessibility and inclusivity.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://hugogiraudel.com" # the base hostname & protocol for your site
+  My name is Hugo Giraudel, a web developer based in Berlin, focused on accessibility and inclusivity.
+baseurl: '' # the subpath of your site, e.g. /blog/
+url: 'https://hugogiraudel.com' # the base hostname & protocol for your site
 twitter_username: HugoGiraudel
-github_username:  HugoGiraudel
+github_username: HugoGiraudel
 
 # Markdown settings
 markdown: kramdown
@@ -25,12 +24,11 @@ future: true
 
 # Default settings
 defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
+  - scope:
+      path: ''
+      type: 'posts'
     values:
-      layout: "post"
+      layout: 'post'
 
 # Sass settings
 sass:
@@ -54,19 +52,13 @@ include:
 nav:
   - label: Writing
     url: /blog/
-    theme: t-teal
   - label: Coding
     url: /projects/
-    theme: t-green
   - label: Speaking
     url: /speaking/
-    theme: t-yellow
-  - label: About me
+  - label: About
     url: /about/
-    theme: t-orange
-  - label: Guests posts
+  - label: Guests
     url: /guest/
-    theme: t-red
   - label: Search
     url: /search/
-    theme: t-pink

@@ -1,4 +1,9 @@
 .pagination {
   margin: 1.5em 0;
-  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.pagination a:visited {
+  color: $soft-blue;
 }

@@ -1,26 +1,22 @@
 ---
 layout: page
-theme: t-yellow
-title: "Speaking events"
-excerpt: "An overview of all my talks, past and to come, including slides and videos."
+title: 'Speaking events'
+excerpt: 'An overview of all my talks, past and to come, including slides and videos.'
 tags:
   - speaking
   - talks
   - conferences
 ---
 
-It does not happen *that* often, but it happens! Why don't you come and see me at one of the few conferences I attend. I'm sure it would be nice to meet!
+Over the last few years I’ve had the amazing opportunity to be a speaker at some great events. If you would like me to speak at your conference, be sure to get in touch!
 
 <ul class="list">
 {% for event in site.data.speaking %}
   <li class="list__item">
     <div class="list__item-inner">
-      <span class="list__primary-content">
-        <a href="{{ event.link }}" target="_blank">{{ event.event }}</a>
-      </span>
-      <span class="list__secondary-content">{{ event.date|date_to_string }} — {{ event.location }}</span>
+      <span class="list__secondary-content">{{ event.date|date_to_string }} — {{ event.location }}
       {% if event.actions %}
-      <ul>
+      <ul class="dotted-list">
       {% for action in event.actions %}
         <li>
           <a target="_blank" href="{{ action[1] }}">{{ action[0] }}</a>
@@ -28,6 +24,8 @@ It does not happen *that* often, but it happens! Why don't you come and see me a
       {% endfor %}
       </ul>
       {% endif %}
+      </span>
+      <a href="{{ event.link }}" class="list__primary-content" target="_blank">{{ event.event }}</a>
     </div>
   </li>
 {% endfor %}

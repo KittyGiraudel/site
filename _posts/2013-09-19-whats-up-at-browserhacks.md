@@ -1,5 +1,4 @@
 ---
-summary: true
 title: "What's up at Browserhacks?"
 tags:
   - css
@@ -39,11 +38,11 @@ I think the very first issue we've opened for Browserhacks was a request for a _
 
 [This article by Brooknovak](http://brooknovak.wordpress.com/2009/07/28/accessing-the-system-clipboard-with-javascript/) explains it in details, but basically here are the possible solutions to insert content into the clipboard:
 
-* `clipboardData`: only available in IE
-* `ZeroClipboard`: relies on Flash
-* `Liveconnect`: relies on Java
-* `XUL`: only available in Mozilla, and kind of buggy
-* `execCommand`: both hacky and buggy
+- `clipboardData`: only available in IE
+- `ZeroClipboard`: relies on Flash
+- `Liveconnect`: relies on Java
+- `XUL`: only available in Mozilla, and kind of buggy
+- `execCommand`: both hacky and buggy
 
 > A cross-browser _copy-to-clipboard_ is not realistic.
 

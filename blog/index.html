@@ -1,6 +1,5 @@
 ---
 layout: page
-theme: t-teal
 title: "Years of writing"
 excerpt: "All articles from me, published on this site as well as at other places such as SitePoint, Tuts+, Codrops and CSS-Tricks. Also contains some guest posts."
 tags:
@@ -9,7 +8,7 @@ tags:
   - articles
 ---
 
-<p>I write <em>a lot</em> of articles for different sites. External articles are annotated with an external link icon. Articles with the user icon are guest posts. If you are looking for something specific, hit <a href="/search">the search</a>, or check all <a href="/guest/">guest posts</a>.</p>
+<p>Over the last few years, I have spent a lot of time writing. Mostly about tech, but also about some other topics from time to time. If you are looking for something specific, use <a href="/search">the search</a>. I also had the great opportunity of having very talented people writing here, so be sure to check all <a href="/guest/">guest posts</a>.</p>
 
 <ul class="list">
 {% for post in paginator.posts %}
@@ -19,15 +18,15 @@ tags:
 {% endfor %}
 </ul>
 
-<ul class="pagination">
+<ul class="pagination dotted-list">
   {% if paginator.previous_page %}
     <li>
-      <a href="{{ paginator.previous_page_path }}"><span class="pagination__icon">◀</span> Previous</a>
+      <a href="{{ paginator.previous_page_path }}"><span class="pagination__icon">←</span> Previous</a>
     </li>
   {% endif %}
   {% if paginator.next_page %}
     <li>
-      <a href="{{ paginator.next_page_path }}">Next <span class="pagination__icon">►</span></a>
+      <a href="{{ paginator.next_page_path }}">Next <span class="pagination__icon">→</span></a>
     </li>
   {% endif %}
 </ul>

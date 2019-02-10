@@ -1,5 +1,4 @@
 ---
-summary: true
 title: 'Digging into my slides about Sass'
 tags:
   - sass

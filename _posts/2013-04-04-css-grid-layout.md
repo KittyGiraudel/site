@@ -1,6 +1,5 @@
 ---
-summary: true
-title: "Future of CSS layout: CSS Grid"
+title: 'Future of CSS layout: CSS Grid'
 tags:
   - css
   - grid
@@ -19,17 +18,17 @@ Anyway, if `perspective` and `perspective-origin` have been quite easy to do, I 
 
 The [CSS Grid Layout](http://www.w3.org/TR/css3-grid-layout/) is currently a W3C Working Draft aiming at fixing issues with older layout techniques by providing a better way to achieve complex interface design. Indeed, each solution we (have) use(d) to make web pages has at least a flaw:
 
-* **HTML tables**: markup dependant, not flexible
-* **float**: clearing
-* **inline-blocks**: spacing between blocks
+- **HTML tables**: markup dependant, not flexible
+- **float**: clearing
+- **inline-blocks**: spacing between blocks
 
 The CSS Grid Layout consists on defining a 2-dimensional grid in which the children can be positioned as desired. The main benefits of this technique are:
 
-* source order independant (!)
-* no need for widths or heights
-* no need for floats or inline-blocks
-* no need for margins to space columns from each others
-* easily adjustable when it comes to responsive
+- source order independant (!)
+- no need for widths or heights
+- no need for floats or inline-blocks
+- no need for margins to space columns from each others
+- easily adjustable when it comes to responsive
 
 The basic example would be something like this: my `.wrapper` is my grid; `.header` will all columns of the first row; `.main` will by displayed in the second row and the first column; `.sidebar` in the second row, second column; and `.footer` in the third row, all columns.
 
@@ -43,8 +42,8 @@ What has been difficult as well is that the only supported browser &mdash; as of
 
 Not only their implementation is at a very early stage (about half the spec is currently supported), but it also differs from the spec at some point. Among other things:
 
-* `grid-rows` and `grid-columns` have been renamed in `grid-definition-rows` and `grid-definition-columns`
-* `grid-row` is supposed to be a shorthand for `grid-row-position` and `grid-row-span`. The current implementation in Internet Explorer 10 for `grid-row` should be the one for `grid-row-position` (which isn't supported). Same goes for `grid-column`.
+- `grid-rows` and `grid-columns` have been renamed in `grid-definition-rows` and `grid-definition-columns`
+- `grid-row` is supposed to be a shorthand for `grid-row-position` and `grid-row-span`. The current implementation in Internet Explorer 10 for `grid-row` should be the one for `grid-row-position` (which isn't supported). Same goes for `grid-column`.
 
 This kind of stuff definitely doesn't make things easier.
 
@@ -56,11 +55,11 @@ What I've found astonishing is the very little amount of required CSS to achieve
 
 ```html
 <div class="wrapper">
-	<article class="main" >My awesome content here </article>
-	<footer class="footer">Some informations here  </footer>
-	<header class="header">My site title goes here </header>
-	<aside class="sidebar">Here is my side content </aside>
-	<aside class="annexe" >Some more side content  </aside>
+  <article class="main">My awesome content here</article>
+  <footer class="footer">Some informations here</footer>
+  <header class="header">My site title goes here</header>
+  <aside class="sidebar">Here is my side content</aside>
+  <aside class="annexe">Some more side content</aside>
 </div>
 ```
 
@@ -70,7 +69,7 @@ Now the CSS. Pay attention to the number of lines:
 .wrapper {
   display: grid;
   grid-columns: 200px 15px 1fr 15px 100px;
-  grid-rows: (auto 15px)[2] auto;
+  grid-rows: (auto 15px) [2] auto;
 }
 
 .header,
@@ -131,8 +130,8 @@ Then let's hope in a year from now, the browser support will be great in all mod
 
 Meanwhile, you can still experiment with it on Internet Explorer. Here are a couple of useful resources on the topic:
 
-* [CSS Grid Layout in the CSS specifications](http://www.w3.org/TR/css3-grid-layout/)
-* [CSS Grid Layout by Microsoft](<http://msdn.microsoft.com/en-us/library/ie/hh673533(v=vs.85).aspx>)
-* [Microsoft's CSS Grid layout playground](http://ie.microsoft.com/testdrive/Graphics/hands-on-css3/hands-on_grid.htm)
-* [CSS Grid Layout by 24Ways](http://24ways.org/2012/css3-grid-layout/)
-* [CSS Grid Layout by Raphael Goetter (FR)](http://www.alsacreations.com/article/lire/1388-css3-grid-layout.html)
+- [CSS Grid Layout in the CSS specifications](http://www.w3.org/TR/css3-grid-layout/)
+- [CSS Grid Layout by Microsoft](<http://msdn.microsoft.com/en-us/library/ie/hh673533(v=vs.85).aspx>)
+- [Microsoft's CSS Grid layout playground](http://ie.microsoft.com/testdrive/Graphics/hands-on-css3/hands-on_grid.htm)
+- [CSS Grid Layout by 24Ways](http://24ways.org/2012/css3-grid-layout/)
+- [CSS Grid Layout by Raphael Goetter (FR)](http://www.alsacreations.com/article/lire/1388-css3-grid-layout.html)

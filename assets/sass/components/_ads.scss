@@ -4,9 +4,10 @@
 .site-ad {
   margin-top: 1.5em;
 
-  @include media('>=medium') {
-    float: right;
-    margin-right: 2em;
+  @include media('>=1300px') {
+    position: absolute;
+    top: 1em;
+    right: 1em;
   }
 }
 

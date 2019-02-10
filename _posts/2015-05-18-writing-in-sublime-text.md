@@ -1,6 +1,5 @@
 ---
 title: Writing in Sublime Text
-summary: true
 tags:
   - sublime text
   - writing
@@ -20,9 +19,9 @@ Let's get started with the basics: a beautiful theme for Sublime Text. If you as
 
 Spacegray provides three different themes:
 
-* Spacegray Grey Dark
-* Spacegray Grey Light
-* Spacegray Eighties
+- Spacegray Grey Dark
+- Spacegray Grey Light
+- Spacegray Eighties
 
 I've been running on the dark grey default theme for a while but I recently moved on to Eighties which has a browish style that is very appealing.
 
