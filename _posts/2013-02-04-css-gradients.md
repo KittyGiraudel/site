@@ -1,6 +1,6 @@
 ---
-guest: "Ana Tudor"
-title: "Dig deep into CSS linear gradients"
+guest: 'Ana Tudor'
+title: 'Dig deep into CSS linear gradients'
 tags:
   - css
   - gradient
@@ -55,12 +55,12 @@ We first specify the nine gradient backgrounds, their positioning and the `backg
 
 For anyone who doesn't remember, the background layers are listed from the top one to the bottom one and the `background-color` is specified together with the bottom layer. A background layer includes the following:
 
-* `<background-image>`
-* `<background-position>` / `<background-size>`
-* `<background-repeat>`
-* `<background-attachment>`
-* `<background-origin>`
-* `<background-clip>`
+- `<background-image>`
+- `<background-position>` / `<background-size>`
+- `<background-repeat>`
+- `<background-attachment>`
+- `<background-origin>`
+- `<background-clip>`
 
 If the `background-position` is not specified, then the `background-size` isn't specified either. Also, since `background-origin` and `background-clip` both need the same kind of value (that is, a box value like `border-box` or `content-box`), then, if there is only one such value, that value is given to both `background-origin` and `background-clip`. Other than that, any value except the one for `background-image` can be missing and then it is assumed to be the default.
 
@@ -81,7 +81,7 @@ The other eight are gradients from `transparent` to a solid color or from a soli
 In order to better understand gradient angles and how the `%` values for color stops are computed, let's see how a linear gradient is defined. Hopefully, this demo that lets you change the gradient angle helps with that - just click the dots.
 
 <pre class="codepen" data-height="640" data-type="result" data-href="qgoBL" data-user="thebabydino" data-safe="true"><code></code>
-<a href="https://codepen.io/thebabydino/pen/qgoBL" target="_blank">Check out this Pen!</a></pre>
+<a href="https://codepen.io/thebabydino/pen/qgoBL" target="_blank" rel="noopener noreferrer">Check out this Pen!</a></pre>
 
 The _gradient angle_ is the angle - measured clockwise - between the vertical axis and the _gradient line_ (the blue line in the demo). This is for the new syntax, which is not yet supported by WebKit browsers (however, [this is going to change](https://bugs.webkit.org/show_bug.cgi?id=67166)). The old syntax measured angles just like on the [trigonometric unit circle](http://en.wikipedia.org/wiki/Unit_circle) (counter-clockwise and starting from the horizontal axis).
 
@@ -153,7 +153,7 @@ By now, you're probably thinking it sucks to do so many computations. And it mus
 
 Even though for creating the rainbow wheel experiment I did compute everything on paper... I can only agree with that! This is why I made a really basic little tool that computes the `%` for any point inside the gradient box. You just need to click inside it and the `%` value appears in a box at the bottom center.
 
-<pre class="codepen" data-height="320" data-type="result" data-href="FDbdB" data-user="thebabydino" data-safe="true"><code></code><a href="https://codepen.io/thebabydino/pen/FDbdB" target="_blank">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="320" data-type="result" data-href="FDbdB" data-user="thebabydino" data-safe="true"><code></code><a href="https://codepen.io/thebabydino/pen/FDbdB" target="_blank" rel="noopener noreferrer">Check out this Pen!</a></pre>
 
 You can change the dimensions of the gradient box and you can also change the gradient itself. It accepts the newest syntax for linear gradients, with angle values in degrees, `to <side>` values or no value at all for describing the direction of the gradient.
 

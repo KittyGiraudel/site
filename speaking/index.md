@@ -19,13 +19,13 @@ Over the last few years I’ve had the amazing opportunity to be a speaker at so
       <ul class="dotted-list">
       {% for action in event.actions %}
         <li>
-          <a target="_blank" href="{{ action[1] }}">{{ action[0] }}</a>
+          <a target="_blank" rel="noopener noreferrer" href="{{ action[1] }}">{{ action[0] }}</a>
         </li>
       {% endfor %}
       </ul>
       {% endif %}
       </span>
-      <a href="{{ event.link }}" class="list__primary-content" target="_blank">{{ event.event }}</a>
+      <a href="{{ event.link }}" class="list__primary-content" target="_blank" rel="noopener noreferrer">{{ event.event }}</a>
     </div>
   </li>
 {% endfor %}

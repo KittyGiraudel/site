@@ -16,7 +16,7 @@ And here we are, almost a year later again, back to Jekyll, one more time. I tho
 
 <figure class="figure">
 <img src="https://fc03.deviantart.net/fs70/f/2013/085/6/b/one_more_time_a_tribute_to_daft_punk_rainmeter_by_crazyxb-d5zbgb5.png" alt="" />
-<figcaption>Wallpaper by <a href="http://crazyxb.deviantart.com/" target="_blank">crazyxb</a> DeviantArt user</figcaption>
+<figcaption>Wallpaper by <a href="http://crazyxb.deviantart.com/" target="_blank" rel="noopener noreferrer">crazyxb</a> DeviantArt user</figcaption>
 </figure>
 
 ## What was wrong?

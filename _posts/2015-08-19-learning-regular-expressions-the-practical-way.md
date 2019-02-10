@@ -105,7 +105,7 @@ So far so good, right? Let’s check our test list to see how our regular expres
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/01.png" alt="\[\w+]" />
-  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk5q" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk5q" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
 Oops, `\w+` is actually not quite right! For starters, we do not want the attribute name to start with a number, and we don't want to allow underscores either, only hyphens. Along the same lines, uppercase letters are not actually allowed, so instead of `\w+` we should check for: `[a-z][a-z0-9-]*`. This means a mandatory latin letter that can be (but not necessarily) followed by any number of latin letters, numbers or hyphens. This is what the star (`*`) implies: from 0 to infinity. Our regex is now:
@@ -116,7 +116,7 @@ Oops, `\w+` is actually not quite right! For starters, we do not want the attrib
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/02.png" alt="\[[a-z][a-z0-9-]*]" />
-  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk5t" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk5t" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
 To be completely honest, we could actually very slightly tweak our regular expression and stop here. Think about it: what if we said that an attribute selector is an opening bracket followed by anything, and then a closing bracket? As a regular expression, that would look like this:
@@ -131,7 +131,7 @@ Broadly speaking, it is more than enough to find attribute selectors in a styles
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/03.png" alt="\[[^\]]+]" />
-  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk60" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk60" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
 ## Matching attribute selectors with values
@@ -154,7 +154,7 @@ So to match anything that is not a closing square bracket, it is: `[^\]]`, as we
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/04.png" alt="\[[a-z][a-z0-9-]*=[^\]]+]" />
-  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk63" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk63" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
 Oh-ho though... Now `[foo]` doesn't match anymore! That’s because we did not make the equal + something part optional. We can do that by wrapping it in parentheses and add a question mark right after it (`(..)?`). Like so:
@@ -169,7 +169,7 @@ The question mark says:
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/05.png" alt="\[[a-z][a-z0-9-]*(=[^\]]+)?]" />
-  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk66" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk66" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
 That’s going somewhere! Attribute selectors can involve [a modulator](https://www.w3.org/TR/selectors4/#attribute-selectors) before the equal sign to add extra validations. There can be only 0 or 1 modulator at a time, and it has to be one of: `|`, `*`, `$`, `^`, `~`. We can make sure the modulator is valid by using a character set. To make it optional, there again we will use the question mark:
@@ -180,7 +180,7 @@ That’s going somewhere! Attribute selectors can involve [a modulator](https://
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/06.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=[^\]]+)?]" />
-  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk69" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk69" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
 ## Dealing with quotes
@@ -211,7 +211,7 @@ Which we can now incorporate in our expression:
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/07.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+))?]" />
-  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6c" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6c" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
 ## Testing the case-insensitive flag
@@ -226,7 +226,7 @@ This flag (noted `i`) must be present after at least 1 space right before the cl
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/08.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)(\s+i)?)?]" />
-  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6f" target="_blank">Regexr</a></figcaption>
+  <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6f" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
 ## Capturing sections of content

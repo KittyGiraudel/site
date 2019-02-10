@@ -1,5 +1,5 @@
 ---
-title: "Designing an image gallery"
+title: 'Designing an image gallery'
 tags:
   - design
   - css
@@ -15,7 +15,7 @@ Let's say things straight: I'd never have the opportunity to work on an image ga
 
 <figure class="figure">
 <img src="/assets/images/designing-an-image-gallery/alexandralucas.jpg" alt="">
-<figcaption><a href="http://alexandralucas.com" target="_blank">Alexandralucas.com</a></figcaption>
+<figcaption><a href="http://alexandralucas.com" target="_blank" rel="noopener noreferrer">Alexandralucas.com</a></figcaption>
 </figure>
 
 ## Working on the layout
@@ -50,12 +50,14 @@ Anyway, I wanted to give some emphasis to the author content: her picture and he
 Meanwhile the pictures are all wrapped in a regular unordered list which has a huge left margin (to bypass the fixed sidebar).
 
 ```html
-<li class='gallery__item'>
+<li class="gallery__item">
   <img
-    class='gallery__image'
+    class="gallery__image"
     src="images/filename.jpg"
     alt="Alt text"
-    width="400" height="266" />
+    width="400"
+    height="266"
+  />
 </li>
 ```
 
@@ -63,8 +65,8 @@ Meanwhile the pictures are all wrapped in a regular unordered list which has a h
 
 We needed two major features for this image gallery:
 
-* being able to filter images by tags to manage albums
-* display a scaled up image when clicking it
+- being able to filter images by tags to manage albums
+- display a scaled up image when clicking it
 
 The first one was pretty easy to do since Isotope comes with a built-in way to filter and sort items. In the [documentation](http://isotope.metafizzy.co/docs/filtering.html), they recommand using a class as a tag and apply it to all elements you want to assign this tag to. Then you create a little list with a jQuery selector as a `data-filter` attribute (like `.tag`). When you click on an element of this list, the plugin parses this data-attribute and displays nothing but the items matching the given selector.
 
@@ -74,7 +76,7 @@ Regarding the second feature, I basically needed a little lightbox thingie to di
 
 <figure class="figure">
 <img src="/assets/images/designing-an-image-gallery/lightbox.jpg" alt="">
-<figcaption><a href="http://alexandralucas.com" target="_blank">Lightbox powered by Avgrund</a></figcaption>
+<figcaption><a href="http://alexandralucas.com" target="_blank" rel="noopener noreferrer">Lightbox powered by Avgrund</a></figcaption>
 </figure>
 
 [Avgrund](http://lab.hakim.se/avgrund/) is a very lightweight modal plugin that does exactly what I want: open a modal on click, close it with a close button or the `ESC` key or clicking out of the lightbox.
@@ -119,7 +121,7 @@ Of course, we wanted the site to look acceptable (if not good!) on small devices
 
 <figure class="figure">
 <img src="/assets/images/designing-an-image-gallery/phoneview.png" alt="">
-<figcaption><a href="http://alexandralucas.com" target="_blank">View on most smartphone</a></figcaption>
+<figcaption><a href="http://alexandralucas.com" target="_blank" rel="noopener noreferrer">View on most smartphone</a></figcaption>
 </figure>
 
 Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to make the "sidebar" static, remove the left-margin of the main container, tweak a couple of things and it was okay.
@@ -134,9 +136,9 @@ Regarding the modal, I first tweaked it on small screens so it takes almost the 
 
 Let me tell you this: dealing with retina displays is a pain in the ass. God, this is so annoying. I don't even know why we came to have such a thing... Did we really need it? In any case, this so-called "feature" involves a lot of things like:
 
-* having to deal with more files for every image,
-* having to deal with big files that can be heavy,
-* having to deal with more CSS and/or JavaScript to handle convertion between retina and not-retina.
+- having to deal with more files for every image,
+- having to deal with big files that can be heavy,
+- having to deal with more CSS and/or JavaScript to handle convertion between retina and not-retina.
 
 There are quite a few ways to handle graphics on retina displays and it is no surprise most of them include getting rid off images when possible by using SVG, CSS, fonts, canvas... When it comes to real images, the number of solutions get lower: replace with CSS or replace with JavaScript. Or do nothing which is a solution I highly considered.
 
@@ -163,13 +165,15 @@ I quickly understood I had to handle 2 files for each image: one for the thumbna
 The next step was to load images when they are needed. To put it simple, only load images that are actually displayed on the screen and not the one that are below the fold. This is called _lazy loading_. Thankfully, I found an amazing [JavaScript plugin doing this](http://www.appelsiini.net/projects/lazyload). All I had to do was turning my markup into something like this:
 
 ```html
-<li class='gallery__item' data-album='album-name'>
+<li class="gallery__item" data-album="album-name">
   <img
-    class='gallery__image'
+    class="gallery__image"
     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
     data-original="images/filename.jpg"
     alt="Alt text"
-    width="400" height="266" />
+    width="400"
+    height="266"
+  />
 </li>
 ```
 

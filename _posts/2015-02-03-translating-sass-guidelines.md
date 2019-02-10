@@ -136,7 +136,12 @@ At this point, it is a breeze to access to this content from a partial, such as 
 <div class="donate">
   <div class="donate__content">
     <p>{{ site.data.translations[page.language].donate.content }}</p>
-    <a href="https://gum.co/sass-guidelines" target="_blank" class="button">
+    <a
+      href="https://gum.co/sass-guidelines"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button"
+    >
       {{ site.data.translations[page.language].donate.button }}
     </a>
   </div>
@@ -171,6 +176,7 @@ I am sure you have figured out where this is going. We only need [a partial incl
     The Sass Guidelines project has been translated into several languages by
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml"
       >generous contributors</a
     >. Open the
@@ -185,6 +191,7 @@ I am sure you have figured out where this is going. We only need [a partial incl
 site.data.languages[page.language].translators %}<a
   href="{{ translator.link }}"
   target="_blank"
+  rel="noopener noreferrer"
   >{{ translator.name }}</a
 >{% if forloop.last == false %}, {% endif %}{% endfor %}{% endcapture %}
 
@@ -193,7 +200,9 @@ site.data.languages[page.language].translators %}<a
     You are viewing the {{ site.data.languages[page.language].label }}
     translation by {{ translators }} of the original
     <a href="/">Sass Guidelines</a> from
-    <a target="_blank" href="https://hugogiraudel.com">Hugo Giraudel</a>.
+    <a target="_blank" rel="noopener noreferrer" href="https://hugogiraudel.com"
+      >Hugo Giraudel</a
+    >.
   </p>
   <p>
     This version is exclusively maintained by contributors without the review of

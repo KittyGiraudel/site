@@ -21,7 +21,7 @@ I used to be an active member of the open-source community. I contributed to man
     <li class="list__item">
       <div class="list__item-inner">
         <span class="list__secondary-content">{{ category.name }} · {{ project.description }}</span>
-        <a href="{{ project.link }}" class="list__primary-content" target="_blank">{{ project.name }}</a>
+        <a href="{{ project.link }}" class="list__primary-content" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
       </div>
     </li>
   {% endfor %}
