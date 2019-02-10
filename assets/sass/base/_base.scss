@@ -22,11 +22,11 @@ html {
  */
 body {
   color: #444;
-  font: 1em / 1.5 $text-font-stack;
+  font: 1.25em / 1.5 $text-font-stack;
   overflow-x: hidden; /* 1 */
 
   @include media('>=medium') {
-    font-size: 1.25em;
+    font-size: 1.4em;
   }
 }
 
