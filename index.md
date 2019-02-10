@@ -8,7 +8,7 @@ tags:
   - sass
 ---
 
-I’m a non-binary developer working leading the web team at [N26](https://n26.com) in Berlin. For a longer version, [read more about me](/about/).
+I’m a non-binary developer leading the web team at [N26](https://n26.com) in Berlin. For a longer version, [read more about me](/about/).
 
 {% capture last_article_index_suffix %} {% assign article_count = site.posts | size %} {% assign modulo = article_count | modulo: 10 %} {% if modulo == 1 %} st {% elsif modulo == 2 %} nd {% elsif modulo == 3 %} rd {% else %} th {% endif %} {% endcapture %}
 
