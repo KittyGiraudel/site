@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Articles from guest authors'
+title: 'Articles from guests'
 tags:
   - blog
   - writing
