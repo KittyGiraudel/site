@@ -16,15 +16,23 @@ img {
 .figure figcaption {
   color: $medium-grey;
   font-family: $code-font-stack;
-  font-size: 75%;
+  font-size: 70%;
+  margin-top: -1em;
+
+  @include media('>=medium') {
+    text-align: right;
+  }
 }
 
-.figure figcaption::before {
+.figure figcaption::after {
   content: '';
   display: block;
   width: 25%;
   height: 1px;
-  margin-top: -0.5em;
-  margin-bottom: 1em;
-  background-color: $blue;
+  margin-top: 1em;
+  background-color: $soft-pink;
+
+  @include media('>=medium') {
+    margin-left: 75%;
+  }
 }
