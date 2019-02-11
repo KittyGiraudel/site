@@ -15,23 +15,15 @@ img {
 
 .figure figcaption {
   font-family: $code-font-stack;
-  font-size: 70%;
+  font-size: 60%;
   margin-top: -1em;
-
-  @include media('>=medium') {
-    text-align: right;
-  }
 }
 
 .figure figcaption::after {
   content: '';
   display: block;
-  width: 25%;
   height: 1px;
-  margin-top: 1em;
+  width: 25%;
   background-color: $soft-pink;
-
-  @include media('>=medium') {
-    margin-left: 75%;
-  }
+  margin-top: 1em;
 }
