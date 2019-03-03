@@ -13,6 +13,6 @@ I used to be an active open-source community member. I have contributed to many 
 
 Early 2014, I authored a French book on CSS 3 entitled CSS 3 Pratique du Design Web with [Raphaël Goetter](https://goetter.fr). Early 2016, I authored a book about Sass entitled [Jump Start Sass](https://learnable.com/books/jump-start-sass) with [Miriam Suzanne](http://www.miriamsuzanne.com/).
 
-I’ve used to be a Google Developer Expert in front-end development, and one of the 5 nominees for the [Net Awards](https://thenetawards.com) under the [Developer of the Year](https://thenetawards.com/vote/developer/) category.
+I used to be a Google Developer Expert in front-end development, and one of the 5 nominees for the [Net Awards](https://thenetawards.com) under the [Developer of the Year](https://thenetawards.com/vote/developer/) category.
 
 If you have any question, feel free to ask me anything on me [Ask Me Anything](https://github.com/hugogiraudel/ama) repository.
