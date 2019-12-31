@@ -1,0 +1,70 @@
+---
+title: "Looking back at 2019"
+tags:
+  - thoughts
+---
+
+Hey friends! This is the time of the year where I look back at these last 12 months. It’s a bit long and is more of an introspection, so feel free to skip to what you want to read.
+
+- [Things I’ve done](#things-ive-done)
+  - [Timeline](#timeline)
+  - [On the work side](#on-the-work-side)
+  - [On the personal side](#on-the-personal-side)
+- [Things I’ve learnt](#things-ive-learnt)
+- [Things I’d like to do](#things-id-like-to-do)
+
+## Things I’ve done
+
+### Timeline
+
+✨ **February 10th.** After long overdue, I took some time to redesign this website, with a softer palette and design. I went with large typography, white and pastel rose and a rather minimalistic approach. 10 months in, I still like it very much so I guess it was a success.
+
+🔏 **February 18th.** After 1.5 year of working relentlessly with the security engineers at N26, I got to publish one of the company’s most comprehensive technical articles about [web security at N26](https://medium.com/insiden26/web-security-at-n26-d1b4644c32fb). A lot of work went into it, and I’m still very proud of this write-up.
+
+🇳🇱 **March 21st.** In an attempt at understanding my partner’s culture and family better, I started learning Dutch on Duolingo on a daily basis. I can now read menus, signs and simple texts, and get to ask small things without struggling too much. Learning a new language is difficult, but I’m slowly getting there.
+
+🏃‍♀️ **August.** I tried myself at running. I managed to run a few kilometers every weekend for a couple of months, until I stopped late October. I kind of liked it and might get back at it next year.
+
+🇦🇹 **August 9th.** I have been to Vienna for the very first time for a get-away weekend. I got the great opportunity to attend a live and intimist piano performance, making for a lovely memory. All in all, I haven’t been disappointed and am looking forward to going back.
+
+👩‍💻 **September 1st.** This day marked 3 years of me working for N26, the longest I have been in a company so far. I’ve achieved a lot, and am looking forward to keep making digital banking good and accessible to y’all.
+
+🐟 **November 15th.** After a year to the day without eating meat, I stopped eating fish as well. That’s it, I am now vegetarian!
+
+📦 **December 11th.** I moved into a bigger and nicer flat with my partner and our 3 cats and although it has been a stressful few weeks, it’s very nice to get to start fresh somewhere new.
+
+🎄 **December 25th.** I was in Delft (Netherlands) with my partner to celebrate their birthday and Christmas alongside their family — now marking my 3rd visit to this city, which I like very much for all the food and drinks I get to have there.
+
+### On the work side
+
+We expanded our team from 9 to 25 web engineers, now in 4 different countries, still all working on a unique code base. We have yet to solve all communication challenges that arise with a cross-office working environment, but I am confident we are on a good track for that.
+
+I kept pushing for more accessibility and diversity in the work place, organising the Accessibility Championship Program with my incredible coworker [Mariia Punda](https://twitter.com/mariiapunda). We are raising awareness about accessibility issues across teams in order to hopefully make N26 a front-runner for accessible banking.
+
+I also invested quite some time into our deployment pipeline, namely Jenkins, in order to improve our efficiency and reliability. It’s an area I have been notoriously bad at, yet it was very interesting and enjoyable having to navigate the complexity of the matter.
+
+Another ongoing personal achievement of my work at N26 is the documentation we have for our web platform — [about which I’ve tweeted a few times](https://twitter.com/HugoGiraudel/status/1189941543156797442?s=20). It is about 60,000 words (or the equivalent of a ~200 pages book) divided in 50+ chapters, published with Gitbook on internal servers for the entire company to have access to it.
+
+### On the personal side
+
+Following 2018, I spent 2019 feeling less and less guilty about not hustling all the time. I spent less time writing, less time coding, less time on side projects, less time on open-source software. It took me years to get to a point where I feel like time spent doing something else than banking on my career is time well spent as well. I have the feeling 2020 is going to be similar.
+
+## Things I’ve learnt
+
+🌱 Over the last two years, I decided to try being more healthy in general, especially when it comes to food. I stopped eating meat and fish (although reasons are mostly environmental), as well as candy and soda, and reduced my consumption of refined sugars, caffein and, to a lesser extent, alcohol. As a result, I have been feeling more healthy and less self-conscious.
+
+---
+
+🤯 Early in the year, it occurred to me that less comfortable I am with a technical topic, the more I tend to use overly complicated words when explaining it in order to convince myself I'm familiar with it. It took some conscious effort, but I feel like I got way better at admitting I don’t know things, or that I don’t know enough to explain them.
+
+## Things I’d like to do
+
+I know it’s a bit out of scope for a yearly retrospective, but I think it’s worth mentioning what I would like to focus on for next year. If only for me.
+
+👩‍🍳 In 2020, I would like to brew my own beer and make my own cheese, at least once, to know how it works and whether I like it or not. Along the same line, I hope I will keep cooking more and more as I have been doing this year.
+
+💧 I need to drink more water. I’m not drinking enough water, and I still haven’t found a reminder that works for me. I tried a few apps, but they all got in the way somehow.
+
+---
+
+I think that’s it for this year, folks. I hope you had it good yourself, and are ready for the new year!
