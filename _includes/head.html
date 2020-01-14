@@ -22,7 +22,7 @@ http://ogp.me/ns/article#">
   {% if page.tags %}
   <meta name="keywords" content="{{ page.tags|join: ',' }}" />
   {% endif %}
-  <meta name="author" content="{% if page.guest %}{{ page.guest }}{% else %}Hugo Giraudel{% endif %}">
+  <meta name="author" content="{{ page.guest | default: 'Hugo Giraudel' }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
   <!-- Stylesheets -->
