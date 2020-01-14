@@ -1,5 +1,6 @@
 ---
 title: 'Translating Sass Guidelines'
+excerpt_separator: <!--more-->
 tags:
   - sass
   - guidelines
