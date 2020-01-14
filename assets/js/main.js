@@ -22,11 +22,11 @@
     $('.sassmeister') && loadJS(SASSMEISTER_URL, callback)
   }
 
-  function App() {
+  function loadApp() {
     loadAds()
     loadSassMeister()
     loadCodePen()
   }
 
-  global.App = App
+  global.loadApp = loadApp
 })(window)
