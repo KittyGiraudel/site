@@ -14,7 +14,7 @@ kramdown:
   syntax_highlighter: rouge
 
 # Pagination settings
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate_path: /blog/page:num
 paginate: 10
 
