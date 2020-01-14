@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-excerpt: 'Everything about me related to the tech-industry, as well as a couple of hints about this site and how it was built.'
+excerpt: 'Everything about me related to the tech-industry.'
 tags:
   - Hugo Giraudel
   - about
