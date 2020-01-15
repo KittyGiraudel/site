@@ -139,4 +139,6 @@ const TitleAnnouncer = props => {
 
 That is all that is needed to handle page titles in an accessible way in a single-page React application. The `react-router` and `react-helmet` libraries are not necessary either, and the same pattern should be applicable regardless of the library (or lack thereof) in use.
 
+Note that if you have a simple application and can guarantee there is always a relevant `<h1>` element (independently of loading states, query errors and such), another, possibly simpler solution arises. It should be possible to skip that hidden element altogether, and focus the `<h1>` element instead (still with `tabIndex={-1}`). This solution could not scale for us as we have hundreds of sometimes complex and dynamic pages, some with a visible `<h1>` element, some with a hidden one, and so on.
+
 Feel free to [play with the code](https://codesandbox.io/s/accessible-page-title-in-single-page-react-applications-u9e52) on CodeSandbox.
