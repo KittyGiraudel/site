@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article itemscope itemtype="https://schema.org/Article" class="article">
-  {% capture reading_time %}{% include reading-time.html %}{% endcapture %}
+  {% capture reading_time %}{% include components/reading_time.html %}{% endcapture %}
 
   {% if page.date %}
     <p itemprop="datePublished" class="post-date">{{ page.date | date: "%B %d, %Y" }}

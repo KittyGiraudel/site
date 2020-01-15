@@ -1,9 +1,0 @@
-<li class="list__item">
-  <div class="list__item-inner">
-    <span class="list__secondary-content">{{ include.post.date | date: "%B %d, %Y" }}{% if include.post.guest %} by {{ include.post.guest }}{% endif %}{% if include.post.external %} at {{ include.post.external.host }}{% else %}{% endif %}</span>
-
-    {% if include.post.external %}
-    <a class="list__primary-content" {% if include.post.lang %}hreflang="{{ include.post.lang|downcase }}"{% endif %} href="{{ include.post.external.url }}">{% else %}
-    <a class="list__primary-content" {% if include.post.lang %}hreflang="{{ include.post.lang|downcase }}"{% endif %} href="{{ include.post.url }}">{% endif %}{% if include.post.lang %}[{{ include.post.lang|upcase }}] {% endif %}{{ include.post.title }}</a>
-  </div>
-</li>
