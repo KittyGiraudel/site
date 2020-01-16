@@ -14,7 +14,7 @@ In almost 300 posts, I probably have written something at least a bit interestin
 
 <div class="search-container" id="search-container">
   <label for="search-input" class="search-label visually-hidden">Search</label>
-  <input type="text" id="search-input" class="search-input" placeholder="Search..." role="search" autofocus>
+  <input type="text" id="search-input" class="search-input" placeholder="Search…" role="search" autofocus>
   <ul id="results-container" class="search-results  articles  list"></ul>
 </div>
 

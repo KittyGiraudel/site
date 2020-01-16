@@ -42,7 +42,7 @@ It went great. People seemed very interested in the topic and I felt like they w
 <figcaption>Focus - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
 </figure>
 
-I was kind of nervous, obviously. My laptop dying the night before the big day was not to help though... Hopefully I could buy a Chromebook (which will probably the topic for another article) and all went well.
+I was kind of nervous, obviously. My laptop dying the night before the big day was not to help though… Hopefully I could buy a Chromebook (which will probably the topic for another article) and all went well.
 
 > This experience was kind of incredible actually.
 

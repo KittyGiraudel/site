@@ -88,7 +88,7 @@ Now that we've computed everything on paper, we need to move all this stuff to t
 
 ### How to distinguish side cells from middle cells
 
-If you are using a templating engine (SPIP, Twig, Liquid...), there are high chances you generate your rows within a loop. This allows you to dynamically add a class to side-cells. Basically every multiples of 4, and every multiple of 4 + 1 (1, 4, 5, 8, 9, 12, 13, 16...).
+If you are using a templating engine (SPIP, Twig, Liquid…), there are high chances you generate your rows within a loop. This allows you to dynamically add a class to side-cells. Basically every multiples of 4, and every multiple of 4 + 1 (1, 4, 5, 8, 9, 12, 13, 16…).
 
 But since we only have to support a reasonably recent range of browsers, we could use advanced CSS selectors as well like `:nth-of-type()` to target side cells.
 

@@ -21,7 +21,7 @@ Well, it went very well! Except for the weather which was pretty ugly and the fa
 
 The Co.Station is a great spot in the heart of Bruxelles, aiming at helping startups, associations and business growing. In this case, Co.Station was hosting FeWeb's event.
 
-The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But... it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor people who had to stand up for almost 2 hours, it sucks.
+The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But… it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor people who had to stand up for almost 2 hours, it sucks.
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-feweb/room.jpg" alt="">
@@ -41,7 +41,7 @@ Both talks have received positive feedback so I guess we did the job well. Howev
 
 Also when tensed I tend to speak in low voice, certainly as an attempt to calm things down. Because of that, I had to hold the mic in my hand during the whole presentation. Trust me, figuring out the distance between the mouth and the mic every single time you say something is definitely not the kind of things you want to think about.
 
-Anyway, I eventually went through the whole session and ended my talk peacefully. The audience was receptive and we got some interesting questions (what about post-processors, Autoprefixer...), so it was pretty cool.
+Anyway, I eventually went through the whole session and ended my talk peacefully. The audience was receptive and we got some interesting questions (what about post-processors, Autoprefixer…), so it was pretty cool.
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-feweb/talk.jpg" alt="">
@@ -52,7 +52,7 @@ Anyway, I eventually went through the whole session and ended my talk peacefully
 
 > Not disappointed by [Slid.es](https://slides.com).
 
-Once again I have made my slides with [Slid.es](https://slides.com), the CMS for [Reveal.js](https://lab.hakim.se/reveal-js/#/). I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF...). I also used the _presentation mode_ from Slid.es, which is great. Absolutely not disappointed.
+Once again I have made my slides with [Slid.es](https://slides.com), the CMS for [Reveal.js](https://lab.hakim.se/reveal-js/#/). I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF…). I also used the _presentation mode_ from Slid.es, which is great. Absolutely not disappointed.
 
 I won't walk through my slides like I did for my talk at [KiwiParty 2013](https://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/) because in this case it is less focused on code. Plus, I think they are better designed than the previous one.
 

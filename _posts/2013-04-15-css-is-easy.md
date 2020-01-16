@@ -8,19 +8,19 @@ tags:
 
 I am studying what comes close to “Programming Sciences“. My mates are hardware, server or back-end people. When I tell them I prefer front-end, especially HTML/CSS I always get the same reaction “CSS is easy”.
 
-And I always tell myself the same thing “Yeaaaaah... so that should explain why your CSS is a fucking mess”.
+And I always tell myself the same thing “Yeaaaaah… so that should explain why your CSS is a fucking mess”.
 
-## CSS is easy... syntactically
+## CSS is easy… syntactically
 
 Yes. CSS has a very easy syntax based on english words. I don't think it could be much simpler since it can be summed up in 3 words: **selector, property, value**.
 
 A 8-year-old child could do some CSS without even having any explanation on how to do so. Even HTML has a more complicated syntax than CSS since there are some elements which need a closing tag, some don't, some have attributes, some don't, some can't be inside others and so on. CSS is always the same.
 
 ```css
-selector [, selector2, ...] [:pseudo-class] {
+selector [, selector2, …] [:pseudo-class] {
  property: value;
  [property2: value2;
- ...]
+ …]
 }
 ```
 

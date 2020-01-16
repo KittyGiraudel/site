@@ -26,7 +26,7 @@ Among other things, Sass can be very useful for:
 - **Mixins**: same as functions except it outputs code instead of returning a result. Very useful to output chuncks of code depending on some parameters (mixin arguments).
 - **Color functions**: every preprocessor nowadays comes with a bunch of functions to ease color management (lighten, darken, transparentize, mix, complementary…). Very cool to avoid repeated back-and-forths between the IDE and Photoshop and having 50 shades of grey when you only need one (see what I did there?). Also easier to read than hexadecimal in my opinion.
 - **File concatenation**: we often want to split our large stylesheets into several smaller ones but doing so increases the number of HTTP requests, thus the time the page need to load. Sass makes this possible: multiple files in development environment, one single file compressed in production.
-- And it's also very cool for a bunch of other things like responsive web design, modular architecture, calculations, namespaces, and so much more...
+- And it's also very cool for a bunch of other things like responsive web design, modular architecture, calculations, namespaces, and so much more…
 
 All of this is awesome. But when you just get started with Sass, you don't really know what to do. So you declare a couple of variables, maybe make a mixin or two that you don't really need and that's pretty much it.
 
@@ -245,7 +245,7 @@ I don't know for you but I don't really like manipulating media queries. The syn
 
 When I want to declare alternative styles for a given breakpoint, I call the `mq()` mixin with the according keyword as argument like `@include mq(small) { … }`.
 
-I like to name my breakpoints “small/medium/large” but you can chose whatever pleases you: “mobile/tablet/desktop”, “baby-bear/mama-bear/papa-bear”...
+I like to name my breakpoints “small/medium/large” but you can chose whatever pleases you: “mobile/tablet/desktop”, “baby-bear/mama-bear/papa-bear”…
 
 We can even push things further by adding retina support to the mixin (based on [HiDPI from Kaelig](https://github.com/kaelig/hidpi)):
 
@@ -346,7 +346,7 @@ CSS counters are part of the [CSS 2.1 "Generated content" module](https://www.w3
 1. at each occurrence of a specific item, increment the counter with `counter-increment`,
 1. at each occurrence of a specific item, display the current counter with the `:before` pseudo-element and `content: counter(my-counter)`.
 
-Now, what if you want nested counters? Where headings level 1 are numbered like 1, 2, 3, headings level 2 are numbered x.1, x.2, x.3, headings level 3 are numbered x.x.1, x.x.2, x.x.3...
+Now, what if you want nested counters? Where headings level 1 are numbered like 1, 2, 3, headings level 2 are numbered x.1, x.2, x.3, headings level 3 are numbered x.x.1, x.x.2, x.x.3…
 
 Doing this with vanilla CSS isn't too hard but require code repetition and quite a lot of lines. With a Sass `@for` loop, we can do it with less than 10 lines of code.
 
@@ -451,7 +451,7 @@ You can do the exact same thing with a `@for` loop as you would probably do in J
 
 _Note: I have a very in-depth article on Sass lists scheduled for next week. Stay tuned for some Sass awesomeness. ;)_
 
-Now that we introduced loops and lists, we can move forward. My idea was to build a little Sass script that output a specific background based on a page name where file names would not follow any guide name (hyphens, underscores, .jpg, .png, random folders...). So home page would have background X, contact page background Y, etc.
+Now that we introduced loops and lists, we can move forward. My idea was to build a little Sass script that output a specific background based on a page name where file names would not follow any guide name (hyphens, underscores, .jpg, .png, random folders…). So home page would have background X, contact page background Y, etc.
 
 ```scss
 // Two-levels list
@@ -564,7 +564,7 @@ However what can be considered odd is that the 2 classes are co-dependant, meani
 
 That's true. Sass doesn't automatically merge media queries rules [yet](https://github.com/nex3/sass/issues/316). However, [tests have been done](https://sasscast.tumblr.com/post/38673939456/sass-and-media-queries) and they showed that once GZipped, there was no difference between duplicated and merged @media queries.
 
-> "... we hashed out whether there were performance implications of combining vs scattering Media Queries and came to the conclusion that the difference, while ugly, is minimal at worst, essentially non-existent at best."
+> "… we hashed out whether there were performance implications of combining vs scattering Media Queries and came to the conclusion that the difference, while ugly, is minimal at worst, essentially non-existent at best."
 
 In any case, if you feel dirty having duplicated media queries in your final CSS even if it doesn't make any difference, you can still use [this Ruby gem](https://github.com/aaronjensen/sass-media_query_combiner) to merge them. Please note merging media queries may mean reordering CSS which may involve some specificity issues. More tests needed.
 
@@ -580,7 +580,7 @@ So if you want my opinion: definitely Compass.
 
 Honestly, I don't think so but I could be wrong. I know Sass developers want to do the right thing and try to stick as much as possible to the "CSS scope" (because in the end what is compiled is CSS). Connecting Sass to a database to generate lists then do things in Sass with these lists like [this pure Sass chart](https://codepen.io/thebabydino/pen/lHqbz) would probably be out of line (yet awesomely clever).
 
-However they are including awesome features in Sass starting with the next version (3.3) which should include sourcemaps, a huge improvements to the parent selector (`&`), inner-string manipulation like `str-index()`, ...
+However they are including awesome features in Sass starting with the next version (3.3) which should include sourcemaps, a huge improvements to the parent selector (`&`), inner-string manipulation like `str-index()`…
 
 ## Final words
 

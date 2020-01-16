@@ -139,7 +139,7 @@ This was kind of dirty. I didn't want the parser to rely on global variables and
 
 Almost nothing. I am very proud with what we have come up with. The _only_ thing missing from our parser is the ability to detect special characters: `\"`, `\\`, `\/`, `\b`, `\f`, `\t` and `\u{{four-hex-digits}}`. We [found a way](https://github.com/HugoGiraudel/SassyJSON/blob/master/src/decode/helpers/_strip-token.scss) for `\n` and `\r` and `\"` but that's pretty much it. I'm not sure we will be able to parse them all, but we need to dig deeper into it before determining.
 
-Otherwise, I think we are good. We have already done almost [500 simple tests](https://github.com/HugoGiraudel/SassyJSON/tree/master/test) to cover all basic usages of JSON. Now, we are likely to find edge cases like weird encoding, a space at the wrong place and so on...
+Otherwise, I think we are good. We have already done almost [500 simple tests](https://github.com/HugoGiraudel/SassyJSON/tree/master/test) to cover all basic usages of JSON. Now, we are likely to find edge cases like weird encoding, a space at the wrong place and so on…
 
 Also, I'd like to be able to cover every case of invalid JSON with a `false` return along with an error message in the console. I don't want to have a compiler error whenever the JSON string is invalid: this is dirty. To find all the error cases, I need tests. And if you feel like helping you testing it, you'd be more than welcome.
 

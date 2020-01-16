@@ -5,11 +5,11 @@ tags:
   - brainfuck
 ---
 
-After months of experimenting with Sass, making crazy and useless things, hacking aroung the syntax and trying to do things not meant to be done, I have come up with a list of things that still kind of boggle my mind when it comes to Sass. Some of them are rather normal and some are just... plain weird. Please, follow my lead.
+After months of experimenting with Sass, making crazy and useless things, hacking aroung the syntax and trying to do things not meant to be done, I have come up with a list of things that still kind of boggle my mind when it comes to Sass. Some of them are rather normal and some are just… plain weird. Please, follow my lead.
 
 ## Lengths are numbers
 
-Like... for real. There is no distinction in Sass between what you'd call a number (e.g. `42`) and what you'd call a length (e.g. `1337px`). In a sense, that makes sense (see what I did there?). You want to be able to do something like this:
+Like… for real. There is no distinction in Sass between what you'd call a number (e.g. `42`) and what you'd call a length (e.g. `1337px`). In a sense, that makes sense (see what I did there?). You want to be able to do something like this:
 
 ```scss
 $value: 42px;
@@ -20,13 +20,13 @@ $value: 42px;
 
 You can do this just because lengths are treated as numbers. Else, you would have an error like _"42px is not a number for 42px gt 10"_.
 
-That being said...
+That being said…
 
 ```scss
 42px == 42; // true
 ```
 
-I can't help but to grind my teeth when I see that the previous assertion returns `true`. Yes, both are some kind of a number, but still... One has a unit and one does not. I don't think the strict equality operator should return true for such a case.
+I can't help but to grind my teeth when I see that the previous assertion returns `true`. Yes, both are some kind of a number, but still… One has a unit and one does not. I don't think the strict equality operator should return true for such a case.
 
 ## Strict equality operator
 
@@ -160,7 +160,7 @@ el {
 
 This is actually not fucked up at all: it's the expected behaviour from correct variable scoping. While it might look silly for an advanced Sass user, I bet it's not that obvious to the beginner. The declared `$size` variable is used for the font-size while the default value for the `$size` argument is used for the bottom margin since it is inside the mixin, where the variable is scoped.
 
-## If ternary then... Sass error
+## If ternary then… Sass error
 
 Since Sass 3.3, this is no longer a bug. It has been [fixed](https://sass-lang.com/documentation/file.SASS_CHANGELOG.html#smaller_improvements).
 

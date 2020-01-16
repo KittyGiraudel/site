@@ -193,7 +193,7 @@ Note how we use the new `function-exists` from Sass 3.3 to make sure the functio
 
 ## Final thoughts
 
-The module is quite simple right now but I feel like it introduces a couple of often overlooked and/or new notions like `call`, `function-exists`, `@warn`, `map`, BEM 3.3...
+The module is quite simple right now but I feel like it introduces a couple of often overlooked and/or new notions like `call`, `function-exists`, `@warn`, `map`, BEM 3.3…
 
 You can have a look at the final code here:
 

@@ -80,7 +80,7 @@ Simple, isn't it?
 
 ## What about error handling?
 
-The main problem I can see with this function is you can't really make sure everything's okay. For instance, there is absolutely no way to know the number of arguments expected by `$function`. If it's `complementary`, then it's 1; if it's `lighten`, it needs 2; if it's `rgba`, it's 4, and so on... It really depends on the function name passed.
+The main problem I can see with this function is you can't really make sure everything's okay. For instance, there is absolutely no way to know the number of arguments expected by `$function`. If it's `complementary`, then it's 1; if it's `lighten`, it needs 2; if it's `rgba`, it's 4, and so on… It really depends on the function name passed.
 
 Also, we can't make sure values from `$list` are valid for `$function`. What if you try to `to-upper-case` a list of numbers? It won't work! Although we can't make this check.
 
@@ -93,7 +93,7 @@ In the end, the only things we can check is whether or not the function exists t
     @return false;
   }
 
-  /* Function core ... */
+  /* Function core … */
 }
 ```
 

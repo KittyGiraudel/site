@@ -78,7 +78,7 @@ We will also assume that selectors are correctly written, sticking to what is po
 
 Alright? Let’s get started slowly but surely.
 
-_Note: for sake of readability, I omitted the [PCRE delimiters](https://php.net/manual/en/regexp.reference.delimiters.php) (`/.../`) from all regular expressions in this article. We also won't talk about [flags](https://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion._
+_Note: for sake of readability, I omitted the [PCRE delimiters](https://php.net/manual/en/regexp.reference.delimiters.php) (`/…/`) from all regular expressions in this article. We also won't talk about [flags](https://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion._
 
 ## Matching a raw attribute selector
 
@@ -157,7 +157,7 @@ So to match anything that is not a closing square bracket, it is: `[^\]]`, as we
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk63" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
-Oh-ho though... Now `[foo]` doesn't match anymore! That’s because we did not make the equal + something part optional. We can do that by wrapping it in parentheses and add a question mark right after it (`(..)?`). Like so:
+Oh-ho though… Now `[foo]` doesn't match anymore! That’s because we did not make the equal + something part optional. We can do that by wrapping it in parentheses and add a question mark right after it (`(..)?`). Like so:
 
 ```regex
 \[[a-z][a-z0-9-]*(=[^\]]+)?]
@@ -239,7 +239,7 @@ Capturing content as part of a regular expression is made with parentheses (`(..
 
 You might be confused as we already used parentheses in our expression but not for capturing. We used them to group tokens together. This kind of behaviour is what makes the language of regular expressions difficult to grasp: it is not regular, and some characters have different meanings depending on their position or the context they are used in.
 
-To use parentheses as a grouping feature without capturing anything, it is needed to start their content with a question mark (`?`) directly followed by a colon (`:`), like this: `(?: ... )`. This intimates the engine not to capture what is being matched inside the parentheses. We should update our expression to avoid capturing the equal part (as well as the case-sentivity flag):
+To use parentheses as a grouping feature without capturing anything, it is needed to start their content with a question mark (`?`) directly followed by a colon (`:`), like this: `(?: … )`. This intimates the engine not to capture what is being matched inside the parentheses. We should update our expression to avoid capturing the equal part (as well as the case-sentivity flag):
 
 ```regex
 \[[a-z][a-z0-9-]*(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(?:\s+i)?)?]

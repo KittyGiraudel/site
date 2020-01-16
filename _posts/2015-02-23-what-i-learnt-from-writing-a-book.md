@@ -32,7 +32,7 @@ The first thing I can tell is that you will run out of time, I guarantee it. And
 <figcaption>You will run out of time, I guarantee it.</figcaption>
 </figure>
 
-Trust me, you will always find things to improve. I found myself writing new sections and examples a couple of hours before handing the book back to the editor. And if I had a couple of extra days, I'd have spent those until I needed three more...
+Trust me, you will always find things to improve. I found myself writing new sections and examples a couple of hours before handing the book back to the editor. And if I had a couple of extra days, I'd have spent those until I needed three more…
 
 > Our work is never over. &mdash; [Daft Punk, Harder Better Faster Stronger](https://www.youtube.com/watch?v=gAjR4_CbPpQ)
 
@@ -52,7 +52,7 @@ It's okay. Keep in mind people won't be reading your book over and over again, a
 
 When Eyrolles came to me asking if I would like to write a book, I was like "yeeepeee! it's like a really long article!". I thought I would just have to sit in front on the keyboard, unleash the beast and be done with 300 pages of writing.
 
-Nope. It doesn't work like this. There is the fun part: writing content. And there is all the boring stuff that comes with: taking screenshots, indexing everything, making sure content flows correctly...
+Nope. It doesn't work like this. There is the fun part: writing content. And there is all the boring stuff that comes with: taking screenshots, indexing everything, making sure content flows correctly…
 
 Also you have to make sure people are okay with you using their work in your book. Cool demo? Make sure the author is okay. Beautiful photo? Ask the photographer if he's cool with you using it. This is not fun, this is annoying. But it has to be done.
 

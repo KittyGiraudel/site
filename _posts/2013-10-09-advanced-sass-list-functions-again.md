@@ -246,6 +246,6 @@ Quite a few things! I still have to clean some functions because they are kind o
 
 I am unable to wait for Sass 3.3, it is going to be awesome. First, the `if()` will be completely reworked to have a built-in parser so it stop bugging around.
 
-But there will also be new string manipulation functions (`str-length()`, `str-slice()`...) and the `call()` function which will allow me to make a lot of new functions like [`every()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
+But there will also be new string manipulation functions (`str-length()`, `str-slice()`…) and the `call()` function which will allow me to make a lot of new functions like [`every()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).
 
 Oh, and of course Sass 3.3 will bring map support which will be a whole another story, with a ton of new functions to make. Anyway it is going to be amazing, really!

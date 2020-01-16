@@ -66,11 +66,11 @@ One mixin would write the rule-set for available features. I called it `yep`. Th
 ```scss
 .my-selector {
   @include yep(cssgradients) {
-    // ...
+    // …
   }
 
   @include nope(cssgradients) {
-    // ...
+    // …
   }
 }
 ```
@@ -102,13 +102,13 @@ This is the compiled CSS we are looking for:
 
 ```scss
 .csstransforms.opacity .my-selector {
-  // ...
+  // …
 }
 
 .no-js .my-selector,
 .no-csstransforms .my-selector,
 .no-opacity .my-selector {
-  // ...
+  // …
 }
 ```
 
@@ -182,7 +182,7 @@ Now it's time to create our feature selectors and our placeholder names. We'll l
 
 ```scss
 @each $feature in $features {
-  // ...
+  // …
 }
 ```
 
@@ -247,7 +247,7 @@ we'll get an unexpected CSS output:
 
 ```scss
 .my-selector .opacity.csstransforms .my-selector {
-  // ...
+  // …
 }
 ```
 
@@ -268,7 +268,7 @@ Now our features selector isn't placed before the actual selector because `@at-r
   $everything-okay: false;
   @warn '`#{$feature}` is not a string for `modernizr`';
 } @else {
-  // proceed ...
+  // proceed …
 }
 ```
 

@@ -8,7 +8,7 @@ tags:
 
 The other day, I wanted to do something in CSS that turned out to be quite complicated to achieve. Actually it's amazing that something _that_ common ends up being so difficult to implement. Anyway, how would you do a reverse ellipsis in CSS, or _start ellipsis_?
 
-A single-line _end-ellipsis_ is often used when you have some long content that you want to hide behind a `...` to prevent a line-break. It is very easy to do. You can implement it with:
+A single-line _end-ellipsis_ is often used when you have some long content that you want to hide behind a `…` to prevent a line-break. It is very easy to do. You can implement it with:
 
 ```css
 /**
@@ -29,11 +29,11 @@ For instance, consider this content:
 
 If you have some restricted width and applies the `.ellipsis` class:
 
-> The answer to life, the univer...
+> The answer to life, the univer…
 
 Now what if you want to display the end of content and add ellipsis at beginning of line? Something like:
 
-> ...niverse, and everything is 42.
+> …niverse, and everything is 42.
 
 That is what I call a _reverse ellipsis_, although I suspect CSS specifications to call it _start ellipsis_ since the current value for `text-overflow` is actually called _end-overflow-type_. Anyway, now it's your turn. I have created [a pen](https://codepen.io/HugoGiraudel/pen/5582f35c9596c40ae947bad2f5993fb2/) if you want to play with the initial code:
 
@@ -51,7 +51,7 @@ That being said, I am not sure why but Firefox does eat the full stop at the end
 
 In other browsers, especially Chrome, the start ellipsis is correctly displayed but not the end of content. It leads to something like:
 
-> ...The answer to life, the univer
+> …The answer to life, the univer
 
 No luck. :(
 
@@ -107,7 +107,7 @@ A couple issues with Michael's solution:
 
 That being said, it is &mdash; as far as I can tell &mdash; the only solution I have seen that does work even if content does not overflow. All over solutions always display the ellipsis, even when content does fit within the container, which is a bit agressive, yielding something like:
 
-> ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here is some short content.
+> …&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here is some short content.
 
 This is far from ideal, and Michael's solution prevents this so congratulations to Michael Godwin.
 

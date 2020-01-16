@@ -42,17 +42,17 @@ Compound and complex selectors are composed of simple selectors. To calculate sp
 }
 ```
 
-...has **1 ID (type A)** selector, **2 class + 1 attribute + 1 pseudo-class (type B)** selector, and **3 element type (type C)** selectors, giving it a specificity of `1, 4, 3`. We'll talk about how we can represent this accurately as an integer value later.
+…has **1 ID (type A)** selector, **2 class + 1 attribute + 1 pseudo-class (type B)** selector, and **3 element type (type C)** selectors, giving it a specificity of `1, 4, 3`. We'll talk about how we can represent this accurately as an integer value later.
 
 ## The Specifics
 
-Now that we have our basic algorithm, let's dive right in to calculating specificity with Sass. In Sass 3.4 (Selective Steve), one of the major new features was the addition of many useful [selector functions](https://sass-lang.com/documentation/Sass/Script/Functions.html#selector_functions) that might have seemed pretty useless...
+Now that we have our basic algorithm, let's dive right in to calculating specificity with Sass. In Sass 3.4 (Selective Steve), one of the major new features was the addition of many useful [selector functions](https://sass-lang.com/documentation/Sass/Script/Functions.html#selector_functions) that might have seemed pretty useless…
 
-..._until now._ (Okay, I'm sure people have found perfectly good uses for them, but still.)
+…_until now._ (Okay, I'm sure people have found perfectly good uses for them, but still.)
 
 First things first, let's determine what our API is going to look like. The simpler, the better. I want two things:
 
-* A **function** that returns specificity as a type map or integer, given a selector (string), and...
+* A **function** that returns specificity as a type map or integer, given a selector (string), and…
 * A **mixin** that outputs both a type map and an integer value inside the generated CSS of the _current selector's_ specificity.
 
 Great; our API will look like this, respectively:
@@ -310,7 +310,7 @@ You can take this even further and, if you have dynamic selectors in your SCSS, 
 
 ```scss
 @if specificity($foo-selector, true) > specificity($bar-selector, true) {
-  // ...
+  // …
 }
 ```
 

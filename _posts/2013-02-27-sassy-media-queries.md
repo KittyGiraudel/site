@@ -16,7 +16,7 @@ Check it live on [his website home](https://arleym.com/) or at [CSS-tricks](http
 
 ## Make it Sassy, make it easy
 
-g idea, really. It works great, it looks great, the only downside is... it's a pain in the ass to code.
+g idea, really. It works great, it looks great, the only downside is… it's a pain in the ass to code.
 
 This is where Sass &mdash; or any CSS preprocessor really &mdash; can be very efficient. **It took me about 10 minutes to divide the amount of required code by 4.** Plus, it makes everything so much easier to adapt and maintain.
 

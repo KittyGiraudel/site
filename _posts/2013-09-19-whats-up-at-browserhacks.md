@@ -28,7 +28,7 @@ I think this is the one of the biggest change we've made to the site so far: **m
 
 This was a huge step forward but did we really need a separate page just for testing? It looks like _no_. It involved quite a bit of work but I'm glad we've made it. What do you people think?
 
-Nothing changed in the way we test hacks though: if your browser recognize a line of code, it turns it into a lovely green. If you don't like seeing green lines everywhere on the home page, you can still disable the tests by unchecking the checkbox `Enable tests` at the top of the page. Or you could download a browser that doesn't spread green lines everywhere... :)
+Nothing changed in the way we test hacks though: if your browser recognize a line of code, it turns it into a lovely green. If you don't like seeing green lines everywhere on the home page, you can still disable the tests by unchecking the checkbox `Enable tests` at the top of the page. Or you could download a browser that doesn't spread green lines everywhere… :)
 
 There are still a couple of hacks that are not tested at all essentially all the hacks using IE-specific HTML comments. There is a simple reason for that: we do not know how to test them efficiently for now. We'll think of something.
 

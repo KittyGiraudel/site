@@ -110,7 +110,7 @@ $imported-once-files: ();
 }
 
 @if import-once('_SharedBaseStuff.scss') {
-  /* ...declare stuff that will only be imported once... */
+  /* …declare stuff that will only be imported once… */
 }
 ```
 
@@ -140,7 +140,7 @@ $imported-once-files: ();
 /* _component.scss: wrap content depending on function return */
 @if import-once('component') {
   .element {
-    /* ... */
+    /* … */
   }
 }
 ```

@@ -22,7 +22,7 @@ Let's say things straight: I'd never have the opportunity to work on an image ga
 
 The main content of the site is **photographs**. The goal is to show them. Alix wanted something "Flickr-like". Some sort of wall of photos that automagically adapt to the size of your screen. Kind of a cool layout, really.
 
-At first I thought about doing it myself and then...
+At first I thought about doing it myself and then…
 
 ![Coding a responsive image gallery by hand? What about no!](/assets/images/designing-an-image-gallery/how-about-no-bear.jpg)
 
@@ -98,7 +98,7 @@ Isn't it the perfect usecase for CSS animations? Let's jump on this opportunity,
 }
 ```
 
-Now all I had to do was applying it to all items with a varying delay. The highest the index of the item in the list, the longest the delay. Perfect! Let's loop! But wait... I don't know the number of images in the page. I guess I could have gone to something like 100 to be sure it works everywhere but that would have bloated the CSS. Plus, I realized 20 is more than enough for most screens (including my 29").
+Now all I had to do was applying it to all items with a varying delay. The highest the index of the item in the list, the longest the delay. Perfect! Let's loop! But wait… I don't know the number of images in the page. I guess I could have gone to something like 100 to be sure it works everywhere but that would have bloated the CSS. Plus, I realized 20 is more than enough for most screens (including my 29").
 
 ```scss
 @for $i from 1 through 20 {
@@ -134,15 +134,15 @@ Regarding the modal, I first tweaked it on small screens so it takes almost the 
 
 > Dealing with retina displays is a pain in the ass.
 
-Let me tell you this: dealing with retina displays is a pain in the ass. God, this is so annoying. I don't even know why we came to have such a thing... Did we really need it? In any case, this so-called "feature" involves a lot of things like:
+Let me tell you this: dealing with retina displays is a pain in the ass. God, this is so annoying. I don't even know why we came to have such a thing… Did we really need it? In any case, this so-called "feature" involves a lot of things like:
 
 - having to deal with more files for every image,
 - having to deal with big files that can be heavy,
 - having to deal with more CSS and/or JavaScript to handle convertion between retina and not-retina.
 
-There are quite a few ways to handle graphics on retina displays and it is no surprise most of them include getting rid off images when possible by using SVG, CSS, fonts, canvas... When it comes to real images, the number of solutions get lower: replace with CSS or replace with JavaScript. Or do nothing which is a solution I highly considered.
+There are quite a few ways to handle graphics on retina displays and it is no surprise most of them include getting rid off images when possible by using SVG, CSS, fonts, canvas… When it comes to real images, the number of solutions get lower: replace with CSS or replace with JavaScript. Or do nothing which is a solution I highly considered.
 
-CSS image replacement within `@media` blocks can work great... if you deal with background-images. It is even simpler with a preprocessor thanks to clever mixins ([HiDPI](https://github.com/kaelig/hidpi) for Sass, [Retina.less](https://github.com/imulus/retinajs/blob/master/src/retina.less) for LESS).
+CSS image replacement within `@media` blocks can work great… if you deal with background-images. It is even simpler with a preprocessor thanks to clever mixins ([HiDPI](https://github.com/kaelig/hidpi) for Sass, [Retina.less](https://github.com/imulus/retinajs/blob/master/src/retina.less) for LESS).
 
 But when you only have `img` tags, you can't do it with CSS only. So you start looking for a JavaScript solution and hopefully you find [RetinaJS](https://imulus.github.io/retinajs/) which is a great little script to handle high-density displays image convertion.
 
@@ -156,7 +156,7 @@ _Edit: I finally wrote my own script to deal with high-density displays because 
 
 I think this is what took me the most time in the entire project even if I have a decent knowledge of front-end performance (without being an expert).
 
-Of course I minified my stylesheets (with Sass) and my JS scripts (with [YUI Compressor](https://refresh-sf.com/)). I set up Gzip with `.htaccess` along with some cache stuff. I even added a DNS prefect for Google Fonts. And even if all this stuff is really nice, the most important thing to optimize here is... images.
+Of course I minified my stylesheets (with Sass) and my JS scripts (with [YUI Compressor](https://refresh-sf.com/)). I set up Gzip with `.htaccess` along with some cache stuff. I even added a DNS prefect for Google Fonts. And even if all this stuff is really nice, the most important thing to optimize here is… images.
 
 When I first set up the layout with images and all, I used really big pictures like 1600*1059px and I was like *"I resize them automagically with CSS"\*. Sure. And the page weighed about 35Mb. Ouch.
 
@@ -181,7 +181,7 @@ The next step was to load images when they are needed. To put it simple, only lo
 
 As you can see, the image source is a 1\*1px blank GIF while the actual source lies in the `data-original` attribute. Then the LazyLoad script checks all images to see whether they are above the fold or not; if they are, it swaps `src` with `data-original`. Everytime there is a scroll, it checks again. Lightweight and comfy.
 
-Thanks to LazyLoad, I could bring down the page to 380Kb on a regular desktop screen. Definitely good. When viewing it on mobile, it goes down to ... 700 bytes. Then it progressively load the images as the user scroll through them. How cool is that?
+Thanks to LazyLoad, I could bring down the page to 380Kb on a regular desktop screen. Definitely good. When viewing it on mobile, it goes down to … 700 bytes. Then it progressively load the images as the user scroll through them. How cool is that?
 
 ## Final words
 

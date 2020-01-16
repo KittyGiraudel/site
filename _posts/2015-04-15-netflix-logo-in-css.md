@@ -38,7 +38,7 @@ The logo:
 
 So these were the animation steps I needed to replicate. But there is something else about the logo that I needed to take care of: **the letters are tilted to the center of the logo**.
 
-People have been asking me how I did that...
+People have been asking me how I did that…
 
 > A trick from up my sleeve ;)
 
@@ -212,11 +212,11 @@ $shadow: (
   0 1px 0 red,
   1px 2px 0 red,
   2px 3px 0 red,
-  ...
+  …
 );
 ```
 
-... and I use it like this:
+… and I use it like this:
 
 ```scss
 text-shadow: d3(5, red, [$x], [$y], [$blur], [$mix]);

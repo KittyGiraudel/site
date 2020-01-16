@@ -161,7 +161,7 @@ Two very annoying things there: we definitely can't use variables as property na
 
 It is somewhat well thought out since CSS is using this sign for “alternative stuff” like media queries (@media), animation keyframes (@keyframes) and probably other things in the future (@page for example). I got the reasoning and I admire the will of sticking to the regular CSS syntax.
 
-But come on... How come they didn’t think about variable concatenations and @keyframes/@page uses inside mixins?
+But come on… How come they didn’t think about variable concatenations and @keyframes/@page uses inside mixins?
 
 Basically, LESS fails to understand @page and @keyframes inside mixins because it throws an exception according to [its source code](https://github.com/cloudhead/less.js/blob/b235734a11f646252db8f0947fee406ce67cf904/lib/less/parser.js#L1158). So you'll need two nested mixins: one handling your animation, the second one to handle the keyframes. Sounds heavy and complicated, well it is. So let’s say you want to create a custom mixin using @keyframes and vendor prefixes (not much, right?) this is what you have to do:
 
@@ -216,11 +216,11 @@ _Note: the `.Local()` thing seems to be a keyword for "this" but I couldn't find
 
 So basically, here is what there is to say ([still not from me](https://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css/11028622#11028622)):
 
-- The initial selector `(~"@keyframes @{name}{") { ... }` renders as `@keyframes name { { ... }
+- The initial selector `(~"@keyframes @{name}{") { … }` renders as `@keyframes name { { … }`
 - To avoid `{ {`, it requires a newline which cannot be escaped directly so through the variable `@newline: \`"\n"\``;. LESS parses anything between backticks as JavaScript, so the resulting value is a newline character.
-- Since `{ ... }` requires a selector to be valid, we use the first step of the animation (0%).
+- Since `{ … }` requires a selector to be valid, we use the first step of the animation (0%).
 - But the curly braces do not match. To fix this, we can add a dummy selector in the end, which starts with `(~"} dummy") { .. }`. How ugly is that?
-- But wait, we already know that vendor prefixes are going to be added in sequel. So, let the final first selector be `(~"@{pre} @@{vendor}keyframes @{name} {@{newline}0%")`. What a nightmare...
+- But wait, we already know that vendor prefixes are going to be added in sequel. So, let the final first selector be `(~"@{pre} @@{vendor}keyframes @{name} {@{newline}0%")`. What a nightmare…
 - `@{pre}` has to be `"}@{newline}"` for every keyframes block after the first one.
 - Instead of a dummy selector for the last curly brace, we define the keyframe mixins. We're using a guarded mixin to implement this.
 

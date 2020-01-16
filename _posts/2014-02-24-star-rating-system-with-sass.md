@@ -116,7 +116,7 @@ Also note how we make our function secure by making sure `$stars` is a number. W
 
 ### Looping is fun, wheeee!
 
-Yelp Devs are using nested loops to output their CSS. The outer loop goes from 1 through 5 and the inner one is going from 1 to the value of the outer loop. So during the first loop run of the outer loop, the inner loop will go from 1 through... 1. During the second, from 1 through 2, and so on.
+Yelp Devs are using nested loops to output their CSS. The outer loop goes from 1 through 5 and the inner one is going from 1 to the value of the outer loop. So during the first loop run of the outer loop, the inner loop will go from 1 through… 1. During the second, from 1 through 2, and so on.
 
 Because it does the work well and is quite smart, I kept this as is. However I decided not to output anything in the inner loop and instead use it to build a compound selector to avoid duplicated CSS rules.
 
@@ -241,4 +241,4 @@ Hope you liked the demo anyway folks. Cheers!
 
 <p data-height="480" data-theme-id="0" data-slug-hash="DqBkH" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/DqBkH'>CSS Rating Stars</a> by Hugo Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
-_Update: be sure to check [this version](https://codepen.io/piouPiouM/pen/beBcJ) from Mehdi Kabab, using placeholders to make it slightler lighter (14 bytes after gzip... :D)._
+_Update: be sure to check [this version](https://codepen.io/piouPiouM/pen/beBcJ) from Mehdi Kabab, using placeholders to make it slightler lighter (14 bytes after gzip… :D)._

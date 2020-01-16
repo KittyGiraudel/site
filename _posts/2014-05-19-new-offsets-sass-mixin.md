@@ -21,7 +21,7 @@ selector {
 
 When looking back at Nib's documentation a couple of weeks ago, I noticed there are a couple of features I missed when implementing the Sass version of this little gem. Hence the brand new version of the mixin, and the blog post explaining the process.
 
-Unfortunately, Sass in its SCSS syntax doesn't provide as much abstraction as Stylus does, so we still have to use some extra characters, especially `@include`, parenthesis, colons and semi-colons... That being said, the result is quite good in my opinion.
+Unfortunately, Sass in its SCSS syntax doesn't provide as much abstraction as Stylus does, so we still have to use some extra characters, especially `@include`, parenthesis, colons and semi-colons… That being said, the result is quite good in my opinion.
 
 ```scss
 // SCSS

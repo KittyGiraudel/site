@@ -49,7 +49,7 @@ length($c) -> 1
 
 This section has been quickly covered in the article at CSS-Tricks but since it is the very basics I have to put this here as well.
 
-**You can use spaces or commas as separator.** Even if I feel more comfortable with commas since it is the classic separator for arrays (JavaScript, PHP...). _You can check the separator of a list with the `list-separator($list)` function._
+**You can use spaces or commas as separator.** Even if I feel more comfortable with commas since it is the classic separator for arrays (JavaScript, PHP…). _You can check the separator of a list with the `list-separator($list)` function._
 
 ```scss
 $list-space: 'item-1' 'item-2' 'item-3';
@@ -129,7 +129,7 @@ Please consider an extended selector like:
 }
 ```
 
-...based on a list of keywords `$pages: ('home', 'about', 'products', 'contact')`. I found 3 ways to generate this selector based on the list; we'll see them one by one.
+…based on a list of keywords `$pages: ('home', 'about', 'products', 'contact')`. I found 3 ways to generate this selector based on the list; we'll see them one by one.
 
 But first, we will write the skeleton of our testcase:
 

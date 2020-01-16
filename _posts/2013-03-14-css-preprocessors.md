@@ -62,7 +62,7 @@ _Sass also gives multiple stylesheets concatenation and file minification (among
 
 ## Learning curve
 
-> Preprocessors make CSS more complex. [...] I said more "complex" not more "complicated". You can think preprocessor's syntax is simple, it is still more complex than the default one.
+> Preprocessors make CSS more complex. […] I said more "complex" not more "complicated". You can think preprocessor's syntax is simple, it is still more complex than the default one.
 
 Vincent is definitely right on this one. Preprocessors sometimes make the syntax more complex by adding new features; not necessarily more complicated, simply more complex (no pun intended).
 

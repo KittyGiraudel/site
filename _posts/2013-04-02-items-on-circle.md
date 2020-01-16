@@ -21,7 +21,7 @@ But what if you could do it very simply with CSS? That’s what [Ana Tudor did i
 
 Ana’s work is great, I’m not questioning this. However, adding or removing elements can be tricky. Before going any further, let’s see how she does this:
 
-> [...] You then decide on the angles at which you want to have your links with the images and you add a class deg{desired_angle} (for example deg0 or deg45 or whatever). Then for each such class you apply chained CSS transforms, like this:
+> […] You then decide on the angles at which you want to have your links with the images and you add a class deg{desired_angle} (for example deg0 or deg45 or whatever). Then for each such class you apply chained CSS transforms, like this:
 
 ```scss
 .deg{desired_angle} {
@@ -32,7 +32,7 @@ Ana’s work is great, I’m not questioning this. However, adding or removing e
 }
 ```
 
-...where you replace `{desired_angle}` with `0`, `45`, and so on...
+…where you replace `{desired_angle}` with `0`, `45`, and so on…
 
 > The first rotate transform rotates the object and its axes, the translate transform translates the object along the rotated X axis and the second rotate transform brings back the object into position - [demo to illustrate how this works](https://dabblet.com/gist/3866686).
 

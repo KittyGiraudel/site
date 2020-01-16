@@ -32,7 +32,7 @@ Let's start with a little skeleton for our application:
 
   // Our main function
   function colorClock() {
-    // ...
+    // …
   }
 
   // Call our function every second
@@ -52,7 +52,7 @@ Displaying the current time is probably the easiest part of the exercise. Althou
 
 ```javascript
 function colorClock() {
-  // ...
+  // …
 
   function dateToContent(date) {
     return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1')

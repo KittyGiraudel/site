@@ -17,7 +17,7 @@ Since not all of you are Twig masters (neither am I though), I am going to expla
 
 ### Extend
 
-Twig is mostly about extending templates ([`@extend`](hhttps://twig.symfony.com/doc/tags/extends.html)). Thus we start with setting up a base template outputing some HTML (`<html>`, `<head>`, `<body>`...) and defining Twig blocks. Quick example:
+Twig is mostly about extending templates ([`@extend`](hhttps://twig.symfony.com/doc/tags/extends.html)). Thus we start with setting up a base template outputing some HTML (`<html>`, `<head>`, `<body>`…) and defining Twig blocks. Quick example:
 
 ```html
 {% raw %}<!-- base.html.twig -->
@@ -75,7 +75,7 @@ The problem I faced at work was finding a way to manage both themes and layouts 
 
 So the theme is passed as a class to the body element (e.g. `<body class="shopping">`), while the layout defines what kind of dom nodes / HTML classes we will use for the main content of the site.
 
-We have half a dozen of themes &mdash; one per section of site &mdash; (`shopping`, `news`, `admin`, `regular`, ...) and 4 different layouts based on the 12-columns grid system from Bootstrap (`12` for a full-width one-column template, `9-3` for two columns with a 3/1 ratio, `8-4` for a two columns with a 2/1 ratio and `2-7-3` for 3-columns).
+We have half a dozen of themes &mdash; one per section of site &mdash; (`shopping`, `news`, `admin`, `regular`…) and 4 different layouts based on the 12-columns grid system from Bootstrap (`12` for a full-width one-column template, `9-3` for two columns with a 3/1 ratio, `8-4` for a two columns with a 2/1 ratio and `2-7-3` for 3-columns).
 
 Back to the issue: we had to be able to define both the theme and the layout on a page per page basis. Something like this:
 
@@ -101,19 +101,19 @@ One possible way to go &mdash; the one we wanted to avoid at all costs &mdash; w
   * 8-4 (layout)
   * 9-3 (layout)
   * 2-7-3 (layout)
-* ...
+* …
 
 With this solution, you could do somethink like {% raw %}`{% extends 'shopping/12' %}`{% endraw %}. Or the other way around:
 
 * 12 (layout)
   * shopping (theme)
   * news (theme)
-  * ...
+  * …
 * 9-3 (layout)
   * shopping (theme)
   * news (theme)
-  * ...
-* ...
+  * …
+* …
 
 With this solution, you could do somethink like {% raw %}`{% extends '12/shopping' %}`{% endraw %}.
 

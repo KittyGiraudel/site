@@ -15,7 +15,7 @@ There are like a billion scripts for countdowns, timers and clocks made of JavaS
 
 Well, for one it was mostly about practicing. Making a timer script is something quite simple yet there is often lot of room for improvements. It turns out to be quite a nice playground to work in.
 
-Secondly, I needed a script able to display a countdown in the way I like and not only `hh:mm:ss`. I wanted to be able to display a sentence like `There are still X days, Y hours and Z minutes left` or whatever. And since I didn't know any script that allowed the use of patterns in a string (`{days}`, `{years}`...), I started building one.
+Secondly, I needed a script able to display a countdown in the way I like and not only `hh:mm:ss`. I wanted to be able to display a sentence like `There are still X days, Y hours and Z minutes left` or whatever. And since I didn't know any script that allowed the use of patterns in a string (`{days}`, `{years}`…), I started building one.
 
 It worked pretty well and the code was clean enough so that I wasn't ashamed to release it on CodePen in early September. But I wanted to try something else than the litteral object pattern.
 

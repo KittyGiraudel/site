@@ -175,7 +175,7 @@ Let's add some useful output to see progress and the final stats. What about som
 file1 ...................... [ DONE ]
 file2 ...................... [ DONE ]
 file_with_a_long_name ...... [ DONE ]
-...
+…
 ```
 
 Would be neat, wouldn't it? To do this, we first need to find the longest filename by doing a fast loop on the files.
@@ -326,9 +326,9 @@ main()
 	# We create the output directory
 	mkdir -p $OUTPUT
 
-	# To avoid some troubles with filename with spaces, we store the current IFS (Internal File Separator)...
+	# To avoid some troubles with filename with spaces, we store the current IFS (Internal File Separator)…
 	SAVEIFS=$IFS
-	# ...and we set a new one
+	# …and we set a new one
 	IFS=$(echo -en "\n\b")
 
 	max_filelength=`get_max_file_length`
@@ -432,6 +432,6 @@ Of course this is just a simple sample (no pun intended); there is still a lot o
 * add a progress bar,
 * try to add some lossy optimizations for JPG,
 * add an auto-upload function to upload to your FTP,
-* use a configuration file to tweak the optimization tools...
+* use a configuration file to tweak the optimization tools…
 
 > Loïc Giraudel works as a front-end developer at BestOfMedia (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

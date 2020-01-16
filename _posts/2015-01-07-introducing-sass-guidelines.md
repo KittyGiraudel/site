@@ -24,7 +24,7 @@ I think we have been on a need for Sass guidelines for months now. Here is my sh
 
 ![Sass Guidelines](/assets/images/introducing-sass-guidelines/preview.png)
 
-In it, I tackle almost all aspects of the Sass language: colors, strings, nesting, variables, mixins, extend, warnings, architecture, tools... I may have missed something, but I would be glad to complete it with your ideas.
+In it, I tackle almost all aspects of the Sass language: colors, strings, nesting, variables, mixins, extend, warnings, architecture, tools… I may have missed something, but I would be glad to complete it with your ideas.
 
 ## What now?
 

@@ -12,9 +12,9 @@ The idea of building a sorting function in pure Sass isn't new. I think everythi
 
 Although at this point, sorting numbers was not enough to me. I wanted to sort more. I wanted to sort everything! Thankfully, Sass 3.3 was providing me exactly what I needed: string manipulation functions. So I started hacking around to make a sorting function. It took me two days but eventually I did it.
 
-That could have been the end of that if Sam Richards (a.k.a [Snugug](https://twitter.com/snugug)) had not put his Quick Sort implementation on my way. God, it was both fast and beautiful but... it was for numeric values only. Challenge accepted!
+That could have been the end of that if Sam Richards (a.k.a [Snugug](https://twitter.com/snugug)) had not put his Quick Sort implementation on my way. God, it was both fast and beautiful but… it was for numeric values only. Challenge accepted!
 
-It didn't take me long to update his function in order to sort anything, very quickly (actually as quickly as Ruby can get, which means, not much...). And I really enjoyed working on this, so I started implementing other famous algorithms in Sass, resulting in [SassySort](https://github.com/HugoGiraudel/SassySort).
+It didn't take me long to update his function in order to sort anything, very quickly (actually as quickly as Ruby can get, which means, not much…). And I really enjoyed working on this, so I started implementing other famous algorithms in Sass, resulting in [SassySort](https://github.com/HugoGiraudel/SassySort).
 
 _Note: I recently wrote [an article](http://thesassway.com/advanced/implementing-bubble-sort-with-sass) about how to implement the Bubble Sort algorithm in Sass for The Sass Way. If you haven't read it, you should! At least for the beautiful header image!_
 
@@ -58,7 +58,7 @@ This will use the Bubble Sort implementation, because of the way the `sort()` fu
 
 > Quicksort is… quicker.
 
-As you can see, the `sort()` function does no more than defering the return to a sub-function named after the algorithm you ask for (e.g.`%algorithm%-sort`). The default algorithm is `quick`, as specified in the function signature but you can use `bubble`, `insertion`, `shell`, `comb` and `selection` as well. However `quick` is simply... quicker.
+As you can see, the `sort()` function does no more than defering the return to a sub-function named after the algorithm you ask for (e.g.`%algorithm%-sort`). The default algorithm is `quick`, as specified in the function signature but you can use `bubble`, `insertion`, `shell`, `comb` and `selection` as well. However `quick` is simply… quicker.
 
 ## Dealing with weird characters
 

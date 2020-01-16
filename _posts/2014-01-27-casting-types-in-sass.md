@@ -123,7 +123,7 @@ to-map(1337)     // (1: 1337)
 
 ## To null
 
-Well, I don't think there is such a thing as _casting to null_. In JavaScript, `typeof null` returns an object (...) but in Sass there is a `null` type which has a single value bound to it: `null`. So casting to null is the same as returning `null`. Pointless.
+Well, I don't think there is such a thing as _casting to null_. In JavaScript, `typeof null` returns an object (…) but in Sass there is a `null` type which has a single value bound to it: `null`. So casting to null is the same as returning `null`. Pointless.
 
 ## Final words
 

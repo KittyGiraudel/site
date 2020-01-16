@@ -20,7 +20,7 @@ whatever {
 }
 ```
 
-I want to play a game... This example: working or not working?
+I want to play a game… This example: working or not working?
 
 Well obviously, it works like a charm. That's probably why you can see it so much in so many Sass demos.
 
@@ -32,11 +32,11 @@ Then you ask _"if it works, why bother?"_. That's actually a very fair question.
 $rounded-length: round($length);
 ```
 
-Aaaaaand... bummer.
+Aaaaaand… bummer.
 
 > "13.37em" is not a number for 'round'.
 
-Same problem with any function requiring a number (lengths are numbers in Sass) like `abs()`, `ceil()`, `floor()`, `min()`... Even worse! The `unit()` function will also fail to return the unit.
+Same problem with any function requiring a number (lengths are numbers in Sass) like `abs()`, `ceil()`, `floor()`, `min()`… Even worse! The `unit()` function will also fail to return the unit.
 
 This is because **there is no unit** since it's now a string. When you append a string (in this case _em_) to a number (_13.37_), you implicitly cast it into a string.
 

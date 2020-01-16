@@ -15,7 +15,7 @@ A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) a
 > **Val**: Yes.
 > **Hugo**: Do you think we could implement them in Sass?
 > **Val**: No.
-> (Loading...)
+> (Loading…)
 > **Val**: Well, in fact we could.
 > **Hugo**: LET'S DO IT!
 

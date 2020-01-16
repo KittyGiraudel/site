@@ -137,7 +137,7 @@ This function returns a string like this: `" 0 0 0\A 0 0 0\A 0 0 0\A "`. As is, 
 0 0 0
 ```
 
-... which is pretty nice. Basically I used the mixin from SassyLists which takes a string and displays it in the body pseudo-element with `white-space: pre-wrap`, allowing for line breaks.
+… which is pretty nice. Basically I used the mixin from SassyLists which takes a string and displays it in the body pseudo-element with `white-space: pre-wrap`, allowing for line breaks.
 
 ```scss
 @mixin display($matrix, $pseudo: before) {
@@ -183,7 +183,7 @@ Some functions to know additional informations on the current matrix:
 * `is-upper-triangular($matrix, $flag: null)`: check wether all value below `$matrix` diagonal are equal to 0
 * `is-lower-triangular($matrix, $flag: null)`: check wether all value above `$matrix` diagonal are equal to 0
 
-... and much more. And because I needed a place to store all those functions I made a [GitHub repository](https://github.com/HugoGiraudel/SassyMatrix) so if you feel like contributing, be sure to have a glance!
+… and much more. And because I needed a place to store all those functions I made a [GitHub repository](https://github.com/HugoGiraudel/SassyMatrix) so if you feel like contributing, be sure to have a glance!
 
 Also, there is a Compass extension for SassyMatrix now:
 

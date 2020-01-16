@@ -73,7 +73,7 @@ My most used Git command is `git status` but instead of creating an alias like `
 
 ```git
 $ cat ~/.bashrc
-[...]
+[…]
 alias gst="git status"
 ```
 
@@ -241,7 +241,7 @@ commitMode=$2
 
 # $2 is the commit mode
 # if $2 == 'commit'  => user used `git commit`
-# if $2 == 'message' => user used `git commit -m '...'`
+# if $2 == 'message' => user used `git commit -m '…'`
 
 existingMsg=`cat $commitMsgFile`
 if [ "$commitMode" = "message" ]; then

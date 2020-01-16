@@ -57,7 +57,7 @@ Pretty weird, right? Anyway that wasn't the problem. Then I removed a second one
 .selector { |property: value; }
 ```
 
-Well... BINGO! No more issue and all the CSS hacks were working again. Now that I found the deficient hack, I had to figure out which line could make the whole world explode (well, kind of). Not much to do except trying to remove them one by one to find out this one was guilty:
+Well… BINGO! No more issue and all the CSS hacks were working again. Now that I found the deficient hack, I had to figure out which line could make the whole world explode (well, kind of). Not much to do except trying to remove them one by one to find out this one was guilty:
 
 ```css
 .selector { [property: value; }

@@ -104,7 +104,7 @@ Chrome OS is freaking fast. It takes about 6 seconds between the moment you pres
 
 The Chromebook is a web-based laptop, running on a web-based OS to use web-based applications. If you can't stand Google services or don't plan on having internet, this laptop isn't for you.
 
-Thus, the OS taskbar shortcuts essentially open new tabs in Chrome to Google services (Gmail, Google Drive, Youtube, Chrome Web Store, Google Maps, Google+...).
+Thus, the OS taskbar shortcuts essentially open new tabs in Chrome to Google services (Gmail, Google Drive, Youtube, Chrome Web Store, Google Maps, Google+…).
 
 On a side note, Chrome OS comes with a built-in yet very simplistic image editor. This may sounds irrelevant but when you have images you want to crop / rotate for articles, this is really rad.
 

@@ -131,7 +131,7 @@ body {
 }
 ```
 
-... outputs:
+… outputs:
 
 ```css
 html {

@@ -128,7 +128,7 @@ en:
   footer:
     content: 'Made with love by [Hugo Giraudel](https://hugogiraudel.com)'
   note: 'Note'
-# Other languages...
+# Other languages…
 ```
 
 At this point, it is a breeze to access to this content from a partial, such as `donate.html`.
@@ -164,7 +164,7 @@ fr:
   translators:
     - name: Pierre Choffé
       link: https://la-cascade.io/
-# Other languages...
+# Other languages…
 ```
 
 I am sure you have figured out where this is going. We only need [a partial included within the layout itself](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_layouts/default.html#L13) (since it is always there). Let's call it [`translation-warning.html`](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_includes/translation-warning.html). One thing before jumping on the code: we need to display a completely different message on the English version. I took this as an opportunity to tell people Sass Guidelines are being translated in other languages so they can switch from the options panel.
@@ -236,7 +236,7 @@ gr:
       link: https://github.com/kmargaritis
 ```
 
-... will be captured as this HTML string
+… will be captured as this HTML string
 
 ```html
 <a href="https://github.com/varemenos">Adonis K.</a>,

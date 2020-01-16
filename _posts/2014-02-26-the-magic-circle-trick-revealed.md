@@ -93,7 +93,7 @@ Everything is computed from there. There will be absolutely no magic number anyw
 
 ### Styling the container
 
-Let's start with applying some default styles to our element (`.boxes`, `.box`...).
+Let's start with applying some default styles to our element (`.boxes`, `.box`…).
 
 ```scss
 // Boxes wrapper
@@ -276,7 +276,7 @@ We could have used advanced CSS selectors (e.g. `:nth-of-type`) to avoid having 
 
 > `box-sizing: border-box` is a bless.
 
-Some of you used the same trick with borders instead of box-shadows. I think the main pro of using box-shadows is it doesn't conflict with the box-model since it's being rendered on its own layer. When you're dealing with borders, you have to make sure you include the border in the width/height if you're using `box-sizing: border-box`. And if you don't... well that's stupid, this property is golden.
+Some of you used the same trick with borders instead of box-shadows. I think the main pro of using box-shadows is it doesn't conflict with the box-model since it's being rendered on its own layer. When you're dealing with borders, you have to make sure you include the border in the width/height if you're using `box-sizing: border-box`. And if you don't… well that's stupid, this property is golden.
 
 However the major downside of box-shadows is they can be quite intensive for the CPU/GPU, causing expensive repaint when scrolling, especially on older browsers like Internet Explorer 9.
 

@@ -90,12 +90,12 @@ Okay. I believe this is a decent use case for a list. Now what about lists funct
 The code might be complex to understand so I suggest you read the related article. For instance, when `$i` is 4, the generated `$selector` would be:
 
 ```scss
-[data-rate^='4'] .star-1, [data-rate^='4'] .star-2, [data-rate^='4'] .star-3, [data-rate^='4'] .star-4 { ... }
+[data-rate^='4'] .star-1, [data-rate^='4'] .star-2, [data-rate^='4'] .star-3, [data-rate^='4'] .star-4 { … }
 ```
 
 Anyway, this is a valid usecase for `append` even if you could have worked around the problem using `@extend`.
 
-Another use case would be building a CSS gradient from a Sass list of colors. I have an article ready about this; SitePoint will release it in the next few weeks. By the way, I provide another example for lists in my article about making [a Sass component in 10 minutes](https://www.sitepoint.com/sass-component-10-minutes/) at SitePoint where I use one to store various message types (alert, danger, info...) as well as a base color (orange, red, blue...). Probably one of my best write-up so far, be sure to have a look.
+Another use case would be building a CSS gradient from a Sass list of colors. I have an article ready about this; SitePoint will release it in the next few weeks. By the way, I provide another example for lists in my article about making [a Sass component in 10 minutes](https://www.sitepoint.com/sass-component-10-minutes/) at SitePoint where I use one to store various message types (alert, danger, info…) as well as a base color (orange, red, blue…). Probably one of my best write-up so far, be sure to have a look.
 
 ## Final thoughts
 

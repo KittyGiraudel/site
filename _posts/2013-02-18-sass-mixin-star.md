@@ -60,7 +60,7 @@ From there, I knew how to get the height from the width, I only had to turn this
 
 After a little Google search, I stumbled upon [a not-documentated-at-all library](https://github.com/adambom/Sass-Math/blob/master/math.scss) to use advanced math functions in Sass (including `sin()`, `exp()`, `sqrt()`, and much more). Seemed good enough so I gave it a try.
 
-It turned out the `power()` function (called in the `sin()` one) was triggering a Sass error. I tried a few things but finally couldn’t make it work. So I did something unusual... Looked at the 2nd page on Google. And bam, [the Holy Grail](https://compass-style.org/reference/compass/helpers/math/)!
+It turned out the `power()` function (called in the `sin()` one) was triggering a Sass error. I tried a few things but finally couldn’t make it work. So I did something unusual… Looked at the 2nd page on Google. And bam, [the Holy Grail](https://compass-style.org/reference/compass/helpers/math/)!
 
 Compass has built-in functions for advanced math calculation including `sin()`. Isn’t that great? Like really awesome? Building the Sass function was a piece of cake:
 
@@ -127,7 +127,7 @@ You give this mixin a [list](https://sass-lang.com/docs/yardoc/file.SASS_REFEREN
 }
 ```
 
-... outputs:
+… outputs:
 
 ```scss
 .selector:before,

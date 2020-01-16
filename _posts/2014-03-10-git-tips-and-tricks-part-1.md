@@ -17,7 +17,7 @@ Hi people! Today, I'm gonna share with you some Git tips & tricks I've already s
 
 **Law #2**: **each commit has only one purpose**. If you see a bug while you're working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.
 
-Ok, now let's start with the real tips & tricks...
+Ok, now let's start with the real tips & tricks…
 
 ## Use an awesome prompt
 
@@ -66,7 +66,7 @@ The simplest is to use `git log`. If you add `-p` (or `-u` or `--patch`), you wi
 
 ### With `git log -S`
 
-A better method is to use the `-S` parameter to search for a specific string: `git log -S console.log` will search all commit which contains the string "console.log" in the patch content. It's better than the previous method because it doesn't search in the commit message or information (username, date, ...) and it's only searching in the patch content and not in the lines added before and after the patch content.
+A better method is to use the `-S` parameter to search for a specific string: `git log -S console.log` will search all commit which contains the string "console.log" in the patch content. It's better than the previous method because it doesn't search in the commit message or information (username, date…) and it's only searching in the patch content and not in the lines added before and after the patch content.
 
 You can add several parameters to reduce the commits related to the search:
 
@@ -100,7 +100,7 @@ $ git blame Gruntfile.js
 df9b1c21 (Seb  2013-10-11 11:50:08 +0200  7)       src: 'web/js/**/*.js',
 df9b1c21 (Seb  2013-10-11 11:50:08 +0200  8)       options: {
 df9b1c21 (Seb  2013-10-11 11:50:08 +0200  9)         vendor: [
-[...]
+[…]
 ```
 
 It's possible to limit the output to specific lines with the parameter `-L`: `git blame -L 10,20` will only output lines 10 to 20.

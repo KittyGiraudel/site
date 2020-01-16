@@ -80,7 +80,7 @@ And finally, the `main.scss` file, which imports all partial stylesheets:
 }
 ```
 
-Yes, the imports are wrapped inside a `.my-datepicker-component` block, which is the target selector of `React.render(...)` in this project. This is _completely optional_, and just allows greater isolation for the component via increased specificity.
+Yes, the imports are wrapped inside a `.my-datepicker-component` block, which is the target selector of `React.render(…)` in this project. This is _completely optional_, and just allows greater isolation for the component via increased specificity.
 
 ### Component-specific Styles
 
@@ -157,11 +157,11 @@ export default class CalendarDate extends React.Component {
 // Date is a native JavaScript object.
 ```
 
-The simple convention here is that the (prefixed) component class (`sd-date` in this example) is always included as the first argument in `classnames(...)`. No other CSS/style-specific dependencies are necessary for styling React components.
+The simple convention here is that the (prefixed) component class (`sd-date` in this example) is always included as the first argument in `classnames(…)`. No other CSS/style-specific dependencies are necessary for styling React components.
 
 ### Exporting Stylesheets
 
-Depending on your build system, there are a number of ways that a stylesheet can be exported and used within a project. Sass files can be compiled and bundled with Webpack (or Browserify), in which case you would require it within your `index.js` file...
+Depending on your build system, there are a number of ways that a stylesheet can be exported and used within a project. Sass files can be compiled and bundled with Webpack (or Browserify), in which case you would require it within your `index.js` file…
 
 ```javascript
 import React from 'react'
@@ -173,7 +173,7 @@ require('./stylesheets/main.scss')
 React.render(<Datepicker />, document.querySelector('.my-datepicker-component'))
 ```
 
-... and include the proper loader ([sass-loader](https://github.com/jtangelder/sass-loader), in this case) in `webpack.config.js`. You can also compile Sass files separately into CSS, and embed them inside the bundle using `require('./stylesheets/main.css')`. For more info, check out the [Webpack documentation on stylesheets](https://webpack.github.io/docs/stylesheets.html).
+… and include the proper loader ([sass-loader](https://github.com/jtangelder/sass-loader), in this case) in `webpack.config.js`. You can also compile Sass files separately into CSS, and embed them inside the bundle using `require('./stylesheets/main.css')`. For more info, check out the [Webpack documentation on stylesheets](https://webpack.github.io/docs/stylesheets.html).
 
 For bundle-independent compilation, you have a few options, such as [using Gulp](https://www.sitepoint.com/simple-gulpy-workflow-sass/), Grunt, or `sass --watch src/stylesheets/main.scss:dist/stylesheets/main.css`. To keep dependencies to a minimum, this project uses the `sass watch` command line option. Use whichever workflow you and your team are most comfortable with.
 
@@ -231,16 +231,16 @@ This is just a fancy way of saying "not knowing when styles are being unintentio
 ```scss
 // In components/_overlay.scss
 .my-overlay {
-  // ... overlay styles
+  // … overlay styles
 
   > .my-button {
-    // ... overlay-specific button styles
+    // … overlay-specific button styles
   }
 }
 
 // In components/_button.scss
 .my-button {
-  // ... button styles
+  // … button styles
 }
 ```
 
@@ -270,7 +270,7 @@ $sd-color-primary: #c0ff33; // overwrites default primary color
 Conversely, you can customize similar 3rd-party components by just styling equal (or more) specific selectors. As 3rd-party stylesheets should be loaded first, the CSS cascade works naturally to override styles to the desired ones.
 
 ```scss
-// after the simple datepicker stylesheet has been imported...
+// after the simple datepicker stylesheet has been imported…
 
 // in stylesheets/components/_sd-month.scss
 #my-app .sd-month {

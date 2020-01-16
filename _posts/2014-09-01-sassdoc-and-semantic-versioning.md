@@ -15,7 +15,7 @@ It looks like this: `major.minor.patch` (e.g. `1.3.37`). _Major_ version is for 
 
 ## Isn't it too soon for `1.0.0`?
 
-> ... I mean, project is not even a month old.
+> … I mean, project is not even a month old.
 
 We have started working on SassDoc mid-June and released the stable version of `1.0.0` on July 17th according to npm, so we basically took a month for the launch.
 
@@ -47,7 +47,7 @@ And so what? Is there some specific rule telling that v2 should happend like one
 
 For instance, if we ever come up with a way to allow both invisible comments and C-styles comments, chances are high that we will break something. Thus, we push it back to `2.0.0`. It may be in `2.0.0` or `2.4.0`, we don't know.
 
-Along the same line, we are considering providing a way to document BEM architecture (`@module`, `@element`...) but since this is likely to be one of the biggest feature we've ever shipped, we'll probably break something; probably minor, but still. So this is delayed to `~2.0.0`.
+Along the same line, we are considering providing a way to document BEM architecture (`@module`, `@element`…) but since this is likely to be one of the biggest feature we've ever shipped, we'll probably break something; probably minor, but still. So this is delayed to `~2.0.0`.
 
 Meanwhile, while we're able to add new features without breaking the API, we keep going. I can already tell there will be a `1.6.0` that we are currently working on (bringing YAML configuration on the tabl)e, and while I don't exclude a `1.7.0`, I think we will jump on `2.0.0` at this point.
 

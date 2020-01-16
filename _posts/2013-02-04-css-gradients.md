@@ -149,9 +149,9 @@ Computing the `%` values for the other background layers is done in the exact sa
 
 ## Automating all this
 
-By now, you're probably thinking it sucks to do so many computations. And it must be even worse when there are more gradients with different angles...
+By now, you're probably thinking it sucks to do so many computations. And it must be even worse when there are more gradients with different angles…
 
-Even though for creating the rainbow wheel experiment I did compute everything on paper... I can only agree with that! This is why I made a really basic little tool that computes the `%` for any point inside the gradient box. You just need to click inside it and the `%` value appears in a box at the bottom center.
+Even though for creating the rainbow wheel experiment I did compute everything on paper… I can only agree with that! This is why I made a really basic little tool that computes the `%` for any point inside the gradient box. You just need to click inside it and the `%` value appears in a box at the bottom center.
 
 <pre class="codepen" data-height="320" data-type="result" data-href="FDbdB" data-user="thebabydino" data-safe="true"><code></code><a href="https://codepen.io/thebabydino/pen/FDbdB" target="_blank" rel="noopener noreferrer">Check out this Pen!</a></pre>
 

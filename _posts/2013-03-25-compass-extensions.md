@@ -129,7 +129,7 @@ Back to our business: Compass gives two ways to trigger `hasLayout` on elements:
 }
 ```
 
-Outputs...
+Outputs…
 
 ```css
 .element1 {
@@ -152,7 +152,7 @@ You now understand why I use the zoom approach. Otherwise, Compass also provides
 }
 ```
 
-Outputs...
+Outputs…
 
 ```css
 .element1 {
@@ -233,7 +233,7 @@ Compass provides several resources to ease a daily task: [image replacement](htt
 }
 ```
 
-Outputs...
+Outputs…
 
 ```css
 .element {

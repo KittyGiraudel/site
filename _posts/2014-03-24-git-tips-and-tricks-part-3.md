@@ -76,7 +76,7 @@ Bisecting: 9 revisions left to test after this (roughly 3 steps)
 [2128ffe8f612d40bc15b617600b6de5f5231d58e] Commit 10
 ```
 
-Git checks my interval and calculates that I will need 3 steps to find the wrong commit after current step. The commit in the middle of my interval has been checkout ("Commit 10"). If I look at my _master_ branch in Gitg (or Gitk, Gitx or any Git graphical tool...), I can see that Git has created two references _refs/bisect/start_ and _refs/bisect/good-[...]_ next to my `HEAD` and `HEAD~20` commits.
+Git checks my interval and calculates that I will need 3 steps to find the wrong commit after current step. The commit in the middle of my interval has been checkout ("Commit 10"). If I look at my _master_ branch in Gitg (or Gitk, Gitx or any Git graphical tool…), I can see that Git has created two references _refs/bisect/start_ and _refs/bisect/good-[…]_ next to my `HEAD` and `HEAD~20` commits.
 
 _Note: It's possible to use `git bisect visualize` or `git bisect view` to see the remaining interval in graphical tool. For a console view, you can use `git bisect view --stat`._
 
@@ -123,7 +123,7 @@ Bisecting: 0 revisions left to test after this (roughly 1 step)
 [a21e6e97e003b614793cffccbdc1a53985fc11d4] Commit 4
 ```
 
-The bug wasn't there in this step, so I use `git bisect good` instead of `git bisect bad`. Gitg has created a new _refs/bisect/good-[...]_ reference.
+The bug wasn't there in this step, so I use `git bisect good` instead of `git bisect bad`. Gitg has created a new _refs/bisect/good-[…]_ reference.
 
 ![After first git bisect good](/assets/images/git-tips-and-tricks-part-3/bisect-4.png)
 

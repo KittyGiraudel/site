@@ -33,9 +33,11 @@ Before moving to Mixture, I handled the problem in a rather drastic (and dirty) 
 
 ```html
 {% if post.codepen %}
-<script src="... source to CodePen JS file ..."></script>
-{% endif % } {% if post.comments %} ... Disqus JavaScript snippet ... {% endif
-%} {% if post.tableOfContents %} ... Table of contents JavaScript snipppet ...
+<script src="… source to CodePen JS file …"></script>
+{% endif % }
+{% if post.comments %} … Disqus JavaScript snippet … {% endif
+%}
+{% if post.tableOfContents %} … Table of contents JavaScript snippet …
 {% endif %}
 ```
 
@@ -68,7 +70,7 @@ When moving to Mixture, I took the time to think of how I would solve this issue
   }
 
   App.prototype.initialize = function() {
-    /* ... */
+    /* … */
   }
 
   global.App = App
@@ -99,7 +101,7 @@ App.prototype.initialize = function() {
     this.sassmeister()
   }
 
-  // ...
+  // …
 }
 ```
 

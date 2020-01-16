@@ -10,7 +10,7 @@ tags:
 
 You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It's a shame there is so few functions to deal with them. This is why I made [SassyLists](https://github.com/Team-Sass/Sass-list-functions).
 
-Most importantly, I always wanted a `console.log()` for Sass. You know, something to debug a variable, a list, a value, whatever... There is the `[@debug](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4)` function but somehow it didn't completely satisfy me. Plus, there is no console on [CodePen.io](https://codepen.io) and since this is where I do most of my experiments I needed something else.
+Most importantly, I always wanted a `console.log()` for Sass. You know, something to debug a variable, a list, a value, whatever… There is the `[@debug](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4)` function but somehow it didn't completely satisfy me. Plus, there is no console on [CodePen.io](https://codepen.io) and since this is where I do most of my experiments I needed something else.
 
 So I rolled up my sleeves, got my hands dirty and made my own Sass debug function. This is how it looks like:
 
@@ -66,7 +66,7 @@ body:before {
 }
 ```
 
-Okay, this is pretty neat, right? However everytime I wanted to debug a list, I had to create a `body:before` rule, set the content property and all... I wanted something easier.
+Okay, this is pretty neat, right? However everytime I wanted to debug a list, I had to create a `body:before` rule, set the content property and all… I wanted something easier.
 
 ## Mixinify the function
 
@@ -212,7 +212,7 @@ _Note: I've set the `$type` boolean to `false` as a default for the `debug` func
 
 ### Making it work for single values
 
-The only problem left is that if you debug a single value, it will wrap it into `(list:1) [ ... ]`. While this is true, it doesn't really help the user so we should get rid of this. Fairly easy! We just have to add a condition when entering the function.
+The only problem left is that if you debug a single value, it will wrap it into `(list:1) [ … ]`. While this is true, it doesn't really help the user so we should get rid of this. Fairly easy! We just have to add a condition when entering the function.
 
 ```scss
 @function debug($list, $type: false, $root: true) {
@@ -222,7 +222,7 @@ The only problem left is that if you debug a single value, it will wrap it into 
     		quote($list)
     	);
 	}
-	...
+	…
 }
 ```
 

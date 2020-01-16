@@ -62,7 +62,7 @@ Well, I am a huge fan of this **design in the browser** thing, plus I am very su
 
 However I have the good luck to have an Adobe Creative Suite on most of my development workflows. Work provides official liences, we have student licences at school and I have a student licence at home as well.
 
-You may find this silly but 9 out of 10 times, I use Photoshop to resize and save a screenshot I just took. Yeah... A $3000 software to make screenshots is a bit expensive I guess.
+You may find this silly but 9 out of 10 times, I use Photoshop to resize and save a screenshot I just took. Yeah… A $3000 software to make screenshots is a bit expensive I guess.
 
 ## Other tools
 
@@ -80,7 +80,7 @@ I know there are CodeKit equivalents for Windows. Most people will tell you abou
 
 ### Git
 
-Yaaaaay! Git, my dear friend! Guys, **I suck at Git**. I understand the main idea, I even know how to do some very basic stuff but every single time I need to do something it takes me about 20 minutes, I have to try every command I know (which is about 6 or 7), fail, get upset, read the doc, don't understand anything either and finally ask my brother. Long story short, I don't like Git... yet.
+Yaaaaay! Git, my dear friend! Guys, **I suck at Git**. I understand the main idea, I even know how to do some very basic stuff but every single time I need to do something it takes me about 20 minutes, I have to try every command I know (which is about 6 or 7), fail, get upset, read the doc, don't understand anything either and finally ask my brother. Long story short, I don't like Git… yet.
 
 But I still have an [account at GitHub](https://github.com/HugoGiraudel) which only has 2 repositories as of today (good ones tho!). I hope I'll push other things in the not so distand future.
 

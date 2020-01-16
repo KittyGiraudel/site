@@ -6,7 +6,7 @@ tags:
   - editing
 ---
 
-Today, no cool Sass stuff or neat CSS trick. I'd like to address a slightly more personnal topic people keep asking me about: how I came up to write for big online magazine (SitePoint, Tuts+, Codrops...). It's true I have been very active lately and some people want to know how I can keep up with such a large amount of write ups. Well, if you happen to be one of those people, let me tell you my story (yes, you might find it boring!).
+Today, no cool Sass stuff or neat CSS trick. I'd like to address a slightly more personnal topic people keep asking me about: how I came up to write for big online magazine (SitePoint, Tuts+, Codrops…). It's true I have been very active lately and some people want to know how I can keep up with such a large amount of write ups. Well, if you happen to be one of those people, let me tell you my story (yes, you might find it boring!).
 
 First of all, let me introduce with a little bit of background: as far as I can remember, I always liked writing. Back in high-school, I spent most French lessons writing prose or short stories. A few years later (late 2010), I launched a blog (in French) about World of Warcraft that got quite popular by the time. This was mostly due to the fact I published about 1000 words a day, and this during almost a year.
 
@@ -20,7 +20,7 @@ In this section, I'll tell you how I went from doing CSS drawings on CodePen, to
 
 During the summer vacations from 2012, I got contacted by [Pedro Botelho](https://twitter.com/o_telho) one of the two folks behind [Codrops](https://tympanus.net/codrops/) (the other one being the awesome [Manoela Ilic](https://twitter.com/crnacura), whom [I interviewed later on this very blog](https://hugogiraudel.com/2013/03/11/interview-manoela-ilic/)) to know if I'd be interested in writing for Codrops. I was mostly unknown (not that I am specially popular today) at that time and I spent most of my free time doing silly CSS demos on CodePen.
 
-Obviously I said _yes_ and got to write quite [a couple of posts for Codrops](https://tympanus.net/codrops/author/hugogiraudel/) between September 2012 and July 2013, including some pretty popular ones like [Troubleshooting CSS](https://tympanus.net/codrops/2013/07/17/troubleshooting-css/). After a dozen articles over a year, I realized Codrops was looking for design-related posts while I felt more technic-focused. As a matter of facts, my last posts at Codrops were quite technical (dealing with CSS counters, `clip()`, click events...).
+Obviously I said _yes_ and got to write quite [a couple of posts for Codrops](https://tympanus.net/codrops/author/hugogiraudel/) between September 2012 and July 2013, including some pretty popular ones like [Troubleshooting CSS](https://tympanus.net/codrops/2013/07/17/troubleshooting-css/). After a dozen articles over a year, I realized Codrops was looking for design-related posts while I felt more technic-focused. As a matter of facts, my last posts at Codrops were quite technical (dealing with CSS counters, `clip()`, click events…).
 
 ### CSS-Tricks
 
@@ -66,7 +66,7 @@ So far, I have talked about all the places I've been writing for, but not really
 
 ### I know my topic
 
-Things are easier when you know what you're talking about. Have you ever tried to explain to someone something you barely know? It hurts. You stutter. You make sentences that don't always make sense. You take time to think before answering... It takes time and effort. When you know your topic, it's getting simple. You don't have to _think carefully before you speak_. It comes naturally.
+Things are easier when you know what you're talking about. Have you ever tried to explain to someone something you barely know? It hurts. You stutter. You make sentences that don't always make sense. You take time to think before answering… It takes time and effort. When you know your topic, it's getting simple. You don't have to _think carefully before you speak_. It comes naturally.
 
 Remember the article about JavaScript for David Walsh? That was longer. Some Almanac entries for Chris Coyier took me days to write, especially the one about CSS Grid. But when I write about Sass ([which is usually the case](https://gist.github.com/HugoGiraudel/8332582)), it's getting very easy. Except for the little things I still don't get about Sass, I'm okay with talking about it for hours.
 

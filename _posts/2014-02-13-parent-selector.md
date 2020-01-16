@@ -25,7 +25,7 @@ ses is how obvious the `:has()` proposal is. It speaks for itself. One thing I a
 a: has(B);
 ```
 
-... you only have to read it to understand it: _I want to select all elements `A` containing at least one element `B`_. You can try it for pretty much all CSS selectors, it works pretty well. The exception could be `~` (and `>` in a lesser extend) which isn't as obvious as it should be.
+… you only have to read it to understand it: _I want to select all elements `A` containing at least one element `B`_. You can try it for pretty much all CSS selectors, it works pretty well. The exception could be `~` (and `>` in a lesser extend) which isn't as obvious as it should be.
 
 Anyway, we got a first problem with `^` here: it doesn't make any sense. You have to know it to understand it. This is rather bad in my opinion but I guess it's not terrible and can still be a valid candidate for the parent selector.
 

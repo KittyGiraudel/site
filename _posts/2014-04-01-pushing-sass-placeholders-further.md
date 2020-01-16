@@ -46,7 +46,7 @@ You can fin [Matt's demo on SassMeister](https://sassmeister.com/gist/9910272). 
       text-indent: 100%;
       white-space: nowrap;
     }
-    /* ... any other placeholders you want ... */
+    /* … any other placeholders you want … */
     @else {
       @warn "`#{$placeholder}` doesn't exist.";
     }

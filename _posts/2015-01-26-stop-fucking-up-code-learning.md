@@ -20,7 +20,7 @@ Have you ever taken over a project only to find the code looks like it has been 
 
 Coding is slowly becoming an important skill that is being taught in many trainings, even when remotely related to web. Some schools even introduce code to very young children. I think this is amazing. Not only because I am a developer myself, but because I do think having basic coding skills is valuable in everyday's like now that Internet is everywhere.
 
-For instance, having a basic knowledge of what is the Internet, what is a browser, how it works, what are the essential languages to build websites, what is a database, what are the risks of giving sensible informations online, how to spot poor phishing... This would prevent situations where people feel the urge to reboot their computer when there is a JavaScript issue on a web page, or give their credit card informations on phishing websites.
+For instance, having a basic knowledge of what is the Internet, what is a browser, how it works, what are the essential languages to build websites, what is a database, what are the risks of giving sensible informations online, how to spot poor phishing… This would prevent situations where people feel the urge to reboot their computer when there is a JavaScript issue on a web page, or give their credit card informations on phishing websites.
 
 Meanwhile, many people end up saying they don't like to code. Understandable, this is a quite specific discipline. However more often than not, I think people don't cling to coding because they are being very poorly taught. Of course you cannot enjoy writing CSS if no one even bother explaining you the box model. This is the fucking base.
 

@@ -29,7 +29,7 @@ Meanwhile, this is why Ken didn't use placeholders and stuck to mixins. However 
 
 ## Mixin both mixin and placeholder
 
-See what I did? With the title? "Mixin".. Because it's like... Nevermind. I opened a SassMeister gist and started playing around to see if I could come up with a solution. First of all, what I ended up with is not unique. People have done it before me; and I remember seeing frameworks using it already.
+See what I did? With the title? "Mixin"… Because it's like… Nevermind. I opened a SassMeister gist and started playing around to see if I could come up with a solution. First of all, what I ended up with is not unique. People have done it before me; and I remember seeing frameworks using it already.
 
 My idea was the following: extend the placeholder when possible, else include the mixin. Also, I didn't want to have code duplicates. Whenever I need to make a change in the code, I don't want to edit both the placeholder and the mixin. There should be only a single place where the code lies.
 

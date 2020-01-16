@@ -18,7 +18,7 @@ The goal was not to switch the whole thing to English. I think Gaël wanted to k
 My idea was to have a `.scss` file per language, following a pattern like `a11y-<language>.scss` for convenience that gets compiled into a `a11y-<language>.css` file. This file shouldn't contain much. Actually only:
 
 1. defining `@charset` (obviously to `UTF-8`);
-1. importing utilities (translation map, mixins, configuration...);
+1. importing utilities (translation map, mixins, configuration…);
 1. defining the language to use (as of today `fr` or `en`);
 1. importing CSS styles.
 
@@ -77,7 +77,7 @@ Then each theme gets mapped to a sub-map (second level) containing keys for diff
 
 > [src] attribute missing or empty. Oh, well…
 
-... is arbitrary named `no-src`.
+… is arbitrary named `no-src`.
 
 ```scss
 $messages: (

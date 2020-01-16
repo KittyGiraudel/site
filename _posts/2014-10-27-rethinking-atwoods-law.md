@@ -18,7 +18,7 @@ That's why today, I hope he won't mind if I expand his thought to declare the re
 
 And given my obsession for Sass, I'll go even further and add this extra part to the quote, even if it won't ever be retained:
 
-> ... and chances are high that it will be done by me.
+> … and chances are high that it will be done by me.
 
 _Disclaimer: as for the original law from Jeff Atwood, it is obvious that Sass (or JavaScript) is not always the best choice: more often than not, things should be done in a different way, but the fact that we **can** usually makes use **do** it nevertheless._
 
@@ -31,7 +31,7 @@ Sass is 7 years old if no mistake, and has come a long since its early days. In 
 * [sorting algorithms](https://hugogiraudel.com/2014/03/18/sassy-sort/);
 * [functional programming](https://sassmeister.com/gist/c36be3440dc2b5ae9ba2);
 * [Levenshtein distance implementation](https://sassmeister.com/gist/8334461);
-* [inverse trigonometric functions](http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass) by Ana Tudor...
+* [inverse trigonometric functions](http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass) by Ana Tudor…
 
 And there are countless more examples I'm probably not even aware of.
 

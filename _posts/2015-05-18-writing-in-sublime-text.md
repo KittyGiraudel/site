@@ -77,7 +77,7 @@ Most options default value make sense although there are some of theme that you 
 
 ### Markdown all the things!
 
-The first thing to know is that I, as most tech writers, use Markdown for basically any write up. Markdown is a terrific format for both writing (obviously) and reading, no matter whether it's been compiled to HTML or not. Because Markdown uses text symbols to represent content hierarchy (`#` for title, `*` and `_` for emphasis, `>` for blockquotes...), it makes it very convenient to read an unprocessed Markdown file.
+The first thing to know is that I, as most tech writers, use Markdown for basically any write up. Markdown is a terrific format for both writing (obviously) and reading, no matter whether it's been compiled to HTML or not. Because Markdown uses text symbols to represent content hierarchy (`#` for title, `*` and `_` for emphasis, `>` for blockquotes…), it makes it very convenient to read an unprocessed Markdown file.
 
 Sublime Text comes with a default Markdown syntax highlighter, although you might need some extra features if you happen to write a lot in the editor. For this, there is [Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended). This plugin adds extra feature to the default Markdown highlighter, such as highlighting for any YAML Front Matter and sub-highlighting of fenced code blocks. _This_, is absolutely amazing. Basically, that allows you to have Markdown syntax highlighting in the current file **and** highlighting code blocks with their relevant highlighter (CSS, JS or whatever).
 
@@ -93,7 +93,7 @@ Last but not least tool for Markdown: [Markdown Preview](https://github.com/revo
   <figcaption>This article previewed in Chrome locally thanks to Markdown Preview</figcaption>
 </figure>
 
-### 1 word, 2 words, 3 words...
+### 1 word, 2 words, 3 words…
 
 Let's be honest: everything is about word count when writing. How long is this article? How many pages are there in this chapter? Knowing the number of words in a document is extremely handy.
 
@@ -131,4 +131,4 @@ The first one enables spell checking, and the second one is the dictionary used 
 
 That's it folks, you know all my secret to writing in Sublime Text! I have been using this set up for years now and I don't think this is going to change anytime soon. So far, so good.
 
-Although, if you have any advice... I'm all ears! :)
+Although, if you have any advice… I'm all ears! :)

@@ -114,7 +114,7 @@ I also want to make it fall back to outputting plain CSS if no module to use is 
     @if $uses != null {
       // Check if module exists
       @if exists($customizer, $uses) {
-        // ... All is safe, let's work with the arguments
+        // … All is safe, let's work with the arguments
       }
 
       // Module did not exist, throw error
@@ -125,7 +125,7 @@ I also want to make it fall back to outputting plain CSS if no module to use is 
 
     // No module specified, expecting plain CSS
     @else {
-      // ... Since we'll be expecting valid CSS, let's output it here
+      // … Since we'll be expecting valid CSS, let's output it here
 
       // Warn that customization mixin shouldn't be used without a module
       @warn "The customization mixin should not be used without specifying a module to use.";
@@ -158,7 +158,7 @@ Now, since we want to be able to pass multiple customizable properties into a si
 
   // Get values from module
   @if is-list($value) or exists($customizer, $value) {
-    $value: ; // ... We need to fetch the values from our module here;
+    $value: ; // … We need to fetch the values from our module here;
   }
 
   // Output styles

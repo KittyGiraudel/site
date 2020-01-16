@@ -41,7 +41,7 @@ One could ask what is wrong with having several arguments in the signature with 
 To begin with, using an object makes it easier to understand since you have to specify the key associated to each value. While slightly longer to write, it's easier to read; a fair trade-off in my opinion.
 
 ```javascript
-// This...
+// This…
 f({
   message: 'You shall not pass!',
   close: false,
@@ -49,7 +49,7 @@ f({
   type: 'error'
 })
 
-// ... is easier to understand than this
+// … is easier to understand than this
 f('You shall not pass!', false, 42, 'error')
 ```
 
@@ -60,7 +60,7 @@ But the readibility argument is kind of a poor one. Some would say that they fee
 It's generally simpler to store an object in a variable and then to pass it to the function rather than storing each individual parameter in its own variable. While `.call()` and `.apply()` let you do something around this, it's not exquisite for readability (again!).
 
 ```javascript
-// This...
+// This…
 var conf = {
   message: 'You shall not pass!',
   close: false,
@@ -70,7 +70,7 @@ var conf = {
 
 f(conf)
 
-// ... is easier to read than this
+// … is easier to read than this
 var conf = ['You shall not pass!', false, 42, 'error']
 
 f.apply(void 0, conf)
@@ -92,7 +92,7 @@ f({
   duration: 5000
 })
 
-// ... while you have to put your required parameters before optional one in the signature
+// … while you have to put your required parameters before optional one in the signature
 f('You shall not pass!', 42, false, 5000, 'error')
 ```
 
@@ -108,7 +108,7 @@ In a way, we don't really need this in Sass because it already provides _named a
 
 ```scss
 @mixin mixin($a: 'a', $b: 'b', $c: 'c') {
-  /* ... */
+  /* … */
 }
 
 @include mixin($b: 'boat');

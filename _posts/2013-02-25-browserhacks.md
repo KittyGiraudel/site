@@ -36,7 +36,7 @@ Even if in this project, Tim and I did most of the job. However everybody has pa
 
 ## How to use it?
 
-It couldn't be any simpler. If you ever happen to be stuck on a rendering bug in let's say... Internet Explorer 7 (only an example...), you could simply:
+It couldn't be any simpler. If you ever happen to be stuck on a rendering bug in let's say… Internet Explorer 7 (only an example…), you could simply:
 
 1. Come to [Browserhacks.com](http://browserhacks.com),
 2. Search for "IE7",

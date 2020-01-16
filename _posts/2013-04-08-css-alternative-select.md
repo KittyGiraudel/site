@@ -49,15 +49,15 @@ In most cases, as a developer you will use a `<select>` element because you want
 
 Since the `<select>` element is a form element, it comes with a name attribute and the ability to send POST or GET data through a form. This means you can access the selected option by no more than `$_POST['name-of-select-element']` in PHP. With JavaScript, it will probably be something like `document.getElementById('name-of-select-element').value;`.
 
-Fine. Now let's do this with CSS only. Uh-ho, not possible. If you're clever enough, you'll come up with a solution involving hidden radio inputs within your list items. Sounds fair enough; so... you end up using multiple form elements... not to use a form element. Right?
+Fine. Now let's do this with CSS only. Uh-ho, not possible. If you're clever enough, you'll come up with a solution involving hidden radio inputs within your list items. Sounds fair enough; so… you end up using multiple form elements… not to use a form element. Right?
 
 > You end up using multiple form elements not to use a form element.
 
-Let's say you don't mind the extra-processing that comes with the multiple radio buttons compared to the regular `<select>` element...
+Let's say you don't mind the extra-processing that comes with the multiple radio buttons compared to the regular `<select>` element…
 
 ## Native options
 
-... what if you want to give your user the ability to select multiple options? Okay, you could still use checkboxes, that sounds legit.
+… what if you want to give your user the ability to select multiple options? Okay, you could still use checkboxes, that sounds legit.
 
 Then let's talk about other options like: `required`, `disabled` and `autofocus`.
 
