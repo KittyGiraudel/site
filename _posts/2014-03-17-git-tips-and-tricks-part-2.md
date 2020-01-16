@@ -336,7 +336,7 @@ $ git add -A
 $ git commit -m 'Initial commit'
 ```
 
-I’ve just created a text file with only one line. Now, I just want to add a second line but while editing my file, I see that I wrote "tetx file" and not "text file" so I add my new line and I fix the first one in the same time. Let’s see what our diff looks like:
+I’ve just created a text file with only one line. Now, I just want to add a second line but while editing my file, I see that I wrote “tetx file” and not “text file” so I add my new line and I fix the first one in the same time. Let’s see what our diff looks like:
 
 ```git
 $ git diff

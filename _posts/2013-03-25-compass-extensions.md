@@ -19,10 +19,10 @@ The point of these inalterable variables is to use the `opposite-position()` fun
 
 ```scss
 $direction: left;
-$opposite: opposite-position($direction); /* Outputs "right" */
+$opposite: opposite-position($direction); /* Outputs “right” */
 
 $position: top right;
-$opposite: opposite-position($position); /* Outputs "bottom left" */
+$opposite: opposite-position($position); /* Outputs “bottom left” */
 ```
 
 _Note: the opposite of `center` is `center`._
@@ -209,7 +209,7 @@ nest(".class1, .class2", ".class3");
 append-selector(".class1", ".class2");
 /* Outputs ".class1.class2" */
 append-selector("a, p, li", ".class");
-/* Outputs "a.class, p.class, li.class" */
+/* Outputs `a.class, p.class, li.class` */
 
 /* headings() */
 #{headings()} {

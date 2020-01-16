@@ -13,7 +13,7 @@ We will see how we can define colors in style sheets, what each one can be used 
 
 ## Various types of colors in CSS
 
-Colors in CSS are defined on a [sRGB](https://en.wikipedia.org/wiki/SRGB) color space. sRGB stands for "Standard Red Green Blue" where colors are defined through three channels: Red, Green and Blue.
+Colors in CSS are defined on a [sRGB](https://en.wikipedia.org/wiki/SRGB) color space. sRGB stands for “Standard Red Green Blue” where colors are defined through three channels: Red, Green and Blue.
 
 From there, we have various ways to describe color with CSS. Some of them like keywords and hexadecimal has been there almost since the beginning of the web, while other like HSL or RGB came later.
 

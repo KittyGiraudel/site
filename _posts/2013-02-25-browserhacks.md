@@ -21,7 +21,7 @@ Anyway, we thought it could be a good idea to get our hands a little dirty and m
 
 The other reason is that we wanted to do something together for quite a while now and it was a very good opportunity to do it! So we did.
 
-## Who is "we"?
+## Who is “we”?
 
 _We_ is the short for a group of 6 persons gathered under the sweet name of [4ae9b8](http://4ae9b8.com). How cool is that name, right?! Anyway, we are:
 
@@ -39,7 +39,7 @@ Even if in this project, Tim and I did most of the job. However everybody has pa
 It couldn’t be any simpler. If you ever happen to be stuck on a rendering bug in let’s say… Internet Explorer 7 (only an example…), you could simply:
 
 1. Come to [Browserhacks.com](http://browserhacks.com),
-2. Search for "IE7",
+2. Search for “IE7”,
 3. Copy one of the proposed hacks,
 4. Paste it in your stylesheet,
 5. Keep CSS-ing worry-free!

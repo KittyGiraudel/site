@@ -33,7 +33,7 @@ All these properties (and many more) use lists as values. To my knowledge, only 
 
 > There have been lists for long in CSS.
 
-Lists have been around for a long time now, we just didn’t call them "lists" because we didn’t have to. Now, Sass officially uses the word "list" as a data type, but that doesn’t mean Sass introduced lists to the CSS background.
+Lists have been around for a long time now, we just didn’t call them “lists” because we didn’t have to. Now, Sass officially uses the word “list” as a data type, but that doesn’t mean Sass introduced lists to the CSS background.
 
 _Note: by the way, if you haven’t read [my article about Sass lists](https://hugogiraudel.com/2013/07/15/understanding-sass-lists/), I suggest you do._
 

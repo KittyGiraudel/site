@@ -5,7 +5,7 @@ tags:
   - thoughts
 ---
 
-I’d like to share with you my CSS "Aha moment". The "Aha moment" is when some day, in the very back of your head, two neurons get in touch and all of the sudden things become clear as crystal.
+I’d like to share with you my CSS “Aha moment”. The “Aha moment” is when some day, in the very back of your head, two neurons get in touch and all of the sudden things become clear as crystal.
 
 I think mine was like two years ago or something and since then my CSS has been better than ever. I don’t really remember how it came up, but suddenly I understood that **absolutely all elements on a page are rectangles**.
 

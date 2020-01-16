@@ -33,7 +33,7 @@ Moving on.
 
 ## Keeping target last
 
-The "ah-ah moment" I had a while back about CSS was that the target (refered as _subject_ in the specifications) of a CSS selector is always at the end of it. That’s also a reason why CSS parsers read selectors from right to left and not left to right. Because this is the way it makes sense.
+The “ah-ah moment” I had a while back about CSS was that the target (refered as _subject_ in the specifications) of a CSS selector is always at the end of it. That’s also a reason why CSS parsers read selectors from right to left and not left to right. Because this is the way it makes sense.
 
 ```css
 nav: hover span;

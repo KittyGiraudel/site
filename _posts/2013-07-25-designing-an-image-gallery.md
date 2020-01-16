@@ -20,13 +20,13 @@ Let’s say things straight: I’d never have the opportunity to work on an imag
 
 ## Working on the layout
 
-The main content of the site is **photographs**. The goal is to show them. Alix wanted something "Flickr-like". Some sort of wall of photos that automagically adapt to the size of your screen. Kind of a cool layout, really.
+The main content of the site is **photographs**. The goal is to show them. Alix wanted something “Flickr-like”. Some sort of wall of photos that automagically adapt to the size of your screen. Kind of a cool layout, really.
 
 At first I thought about doing it myself and then…
 
 ![Coding a responsive image gallery by hand? What about no!](/assets/images/designing-an-image-gallery/how-about-no-bear.jpg)
 
-It would have been a pain in the ass to work out such a "complicated" layout so I thought about [Masonry](https://masonry.desandro.com/) but that’s kind of old school, right? In the end, I went with Isotope for layouting the items.
+It would have been a pain in the ass to work out such a “complicated” layout so I thought about [Masonry](https://masonry.desandro.com/) but that’s kind of old school, right? In the end, I went with Isotope for layouting the items.
 
 > Isotope is the best JavaScript plugin I ever worked with.
 
@@ -124,7 +124,7 @@ Of course, we wanted the site to look acceptable (if not good!) on small devices
 <figcaption><a href="http://whyalix.com" target="_blank" rel="noopener noreferrer">View on most smartphone</a></figcaption>
 </figure>
 
-Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to make the "sidebar" static, remove the left-margin of the main container, tweak a couple of things and it was okay.
+Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to make the “sidebar” static, remove the left-margin of the main container, tweak a couple of things and it was okay.
 
 Thus when you load the page on your phone, you’ll see nothing but the author information starting with her picture. You get to read the tiny description, then if you scroll there are photos. I think it’s nice this way; it kind of reproduces the _"Hi, I’m X. Here is my work"_ social flow.
 
@@ -134,7 +134,7 @@ Regarding the modal, I first tweaked it on small screens so it takes almost the 
 
 > Dealing with retina displays is a pain in the ass.
 
-Let me tell you this: dealing with retina displays is a pain in the ass. God, this is so annoying. I don’t even know why we came to have such a thing… Did we really need it? In any case, this so-called "feature" involves a lot of things like:
+Let me tell you this: dealing with retina displays is a pain in the ass. God, this is so annoying. I don’t even know why we came to have such a thing… Did we really need it? In any case, this so-called “feature” involves a lot of things like:
 
 - having to deal with more files for every image,
 - having to deal with big files that can be heavy,

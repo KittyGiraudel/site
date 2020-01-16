@@ -58,7 +58,7 @@ Then the user has to check the bug again and inform `git bisect`. At each step o
 
 ### Manual version
 
-Let’s take an example. I’m going to create 20 commits; each commit adding a new line "line number #" in _file.txt_. One of the insertions will have a typing error _"numer"_ instead of _"number"_. We are going to try to find the commit which has the typo with `git bisect`.
+Let’s take an example. I’m going to create 20 commits; each commit adding a new line “line number #” in _file.txt_. One of the insertions will have a typing error _"numer"_ instead of _"number"_. We are going to try to find the commit which has the typo with `git bisect`.
 
 ```bash
 $ # I create 20 commits here
@@ -97,11 +97,11 @@ Bisecting: 4 revisions left to test after this (roughly 2 steps)
 [2c935028965bd60a8fe15d428feb1f3972245e75] Commit 5
 ```
 
-Git bisect has reduced the commit interval and checkout the "Commit 5". I will find the typo bug in 2 steps from now. In gitg, my master branch looks like this:
+Git bisect has reduced the commit interval and checkout the “Commit 5”. I will find the typo bug in 2 steps from now. In gitg, my master branch looks like this:
 
 ![After first git bisect bad](/assets/images/git-tips-and-tricks-part-3/bisect-2.png)
 
-The _refs/bisect/bad_ reference has been moved to the "Commit 10". I check if the bug is still there or not.
+The _refs/bisect/bad_ reference has been moved to the “Commit 10”. I check if the bug is still there or not.
 
 ```bash
 $ cat file.txt | grep numer | wc -l

@@ -40,7 +40,7 @@ This prompt displays:
 <figcaption>A Nguyen flavoured Git prompt</figcaption>
 </figure>
 
-In this image, I’m working on the "myFork" branch and I have modified and/or staged some files but I don’t have any commit to push or to pull.
+In this image, I’m working on the “myFork” branch and I have modified and/or staged some files but I don’t have any commit to push or to pull.
 
 To install this prompt in a linux environment, just download it somewhere and update your ~/.bashrc file to add this line:
 
@@ -66,7 +66,7 @@ The simplest is to use `git log`. If you add `-p` (or `-u` or `--patch`), you wi
 
 ### With `git log -S`
 
-A better method is to use the `-S` parameter to search for a specific string: `git log -S console.log` will search all commit which contains the string "console.log" in the patch content. It’s better than the previous method because it doesn’t search in the commit message or information (username, date…) and it’s only searching in the patch content and not in the lines added before and after the patch content.
+A better method is to use the `-S` parameter to search for a specific string: `git log -S console.log` will search all commit which contains the string `console.log` in the patch content. It’s better than the previous method because it doesn’t search in the commit message or information (username, date…) and it’s only searching in the patch content and not in the lines added before and after the patch content.
 
 You can add several parameters to reduce the commits related to the search:
 

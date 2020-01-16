@@ -11,7 +11,7 @@ In order to start making clean scripts and not poorly designed pieces of crappy 
 
 ## Why another countdown script?
 
-There are like a billion scripts for countdowns, timers and clocks made of JavaScript. That’s like the "hello world!" of JS scripts so why making another one? Everything has been done yet!
+There are like a billion scripts for countdowns, timers and clocks made of JavaScript. That’s like the “hello world!” of JS scripts so why making another one? Everything has been done yet!
 
 Well, for one it was mostly about practicing. Making a timer script is something quite simple yet there is often lot of room for improvements. It turns out to be quite a nice playground to work in.
 

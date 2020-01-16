@@ -225,7 +225,7 @@ $component-conf: (
 
 ## Final thoughts
 
-There you go folks. This is definitely a more "Object" approach than the previous one and I can understand some people not liking it because it doesn’t look like we are dealing with CSS anymore.
+There you go folks. This is definitely a more “Object” approach than the previous one and I can understand some people not liking it because it doesn’t look like we are dealing with CSS anymore.
 
 Now if you ask me, not only does it make both the mixin signature cleaner, but it also gives you more flexibility about your code structure and _this_ is a big deal when working on a huge project with countless components. Being able to gather configuration maps in a variables file can make a huge difference when it comes to code maintenance.
 

@@ -8,7 +8,7 @@ tags:
 
 At work, many of our pages present one or more collection of items, like products, shops, or whatever. It’s basically a list of thumbnails, with a title and a location and/or a price. When you click on it, it leads you to the page related to the item. We call this the `elements` component (we could have called it `thumbs-list` or something but that doesn’t matter).
 
-Now, this is the core of a lot of other components. For instance, we have a component featuring top products, with the same list of items but in a better wrapper with a heading, a "see more" link, a large left border for some visual impact and stuff. It’s just an example but the `elements` component is used in at least 3 to 4 other components of our architecture.
+Now, this is the core of a lot of other components. For instance, we have a component featuring top products, with the same list of items but in a better wrapper with a heading, a “see more” link, a large left border for some visual impact and stuff. It’s just an example but the `elements` component is used in at least 3 to 4 other components of our architecture.
 
 <figure class="figure">
 <img src="/assets/images/why-element-queries-matter/thumbs-list.png" alt="" />

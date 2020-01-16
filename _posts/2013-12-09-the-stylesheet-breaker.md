@@ -11,7 +11,7 @@ However this is definitely something good to know so you might want to move on w
 
 ## How did it start
 
-I was working on [Browserhacks](http://browserhacks.com) pretty late very other night and just when I was about to turn everything off and go to bed, I runned the site on Google Chrome to "check that everything’s okay".
+I was working on [Browserhacks](http://browserhacks.com) pretty late very other night and just when I was about to turn everything off and go to bed, I runned the site on Google Chrome to “check that everything’s okay”.
 
 And everything seemed okay until I noticed one deficient [hack](http://browserhacks.com/#hack-ac2480b5c83038f2d838e2a62e28a307) we added a couple of days earlier, aiming for Chrome 29+ and Opera 16+. My Chrome 31.0.1650.57 didn’t seem targeted so I removed the hack from our database and added a note about it on our GitHub repository. No big deal.
 

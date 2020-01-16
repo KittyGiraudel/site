@@ -147,7 +147,7 @@ el {
 }
 ```
 
-I want to play a game. In your opinion, what is the CSS rendered by this code (shamelessly stolen from [Mehdi Kabab](https://twitter.com/pioupioum)'s new book - "Advanced Sass and Compass")?
+I want to play a game. In your opinion, what is the CSS rendered by this code (shamelessly stolen from [Mehdi Kabab](https://twitter.com/pioupioum)'s new book - “Advanced Sass and Compass”)?
 
 The correct answer is:
 

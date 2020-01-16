@@ -56,7 +56,7 @@ I came next with a deck entitled [Keep Calm And Write Sass](https://speakerdeck.
 
 After a second break, [Nicolas Gallagher](https://twitter.com/necolas) presented an insightful talk about [scaling CSS](https://speakerdeck.com/necolas/making-twitter-ui-infrastructure), essentially based from his experience at Twitter. While not necessarily applicable right now in any project, it is interesting knowing how such a large-scale compary manage their CSS codebase.
 
-The inventor of CSS, [Bert Bos](https://en.wikipedia.org/wiki/Bert_Bos) came next with a presentation about typography on the web, and how HTML and CSS are currently poorly suited for it. What’s funny is that Bert actually ended up (implicitly) asking the audience how they would do it, rather than coming and saying "this is how it should be done". Food for thoughts.
+The inventor of CSS, [Bert Bos](https://en.wikipedia.org/wiki/Bert_Bos) came next with a presentation about typography on the web, and how HTML and CSS are currently poorly suited for it. What’s funny is that Bert actually ended up (implicitly) asking the audience how they would do it, rather than coming and saying “this is how it should be done”. Food for thoughts.
 
 Last but not least, [Ana Tudor](https://twitter.com/thebabydino) gave a talk about [shapes and CSS and Sass and geometry](https://codepen.io/thebabydino/full/1dac5e91f697438ea420d6f5b429c253) and craziness. Her scientific brain never fails to amuse me, and as always, her presentation was very impressive.
 

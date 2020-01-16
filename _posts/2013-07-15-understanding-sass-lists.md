@@ -45,7 +45,7 @@ length($c) -> 1
 
 `$a` being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn’t that odd either since it is a string. <span style="text-decoration: line-through">However the <code>null</code> variable being 1 item long is kind of weird; more on this later.</span> _It’s not weird either; `null` is pretty much a value like another, so it has a length of 1._
 
-## Sass list "fun" facts
+## Sass list “fun” facts
 
 This section has been quickly covered in the article at CSS-Tricks but since it is the very basics I have to put this here as well.
 
@@ -87,10 +87,10 @@ $list: 'item-1', 'item-2', 'item-3';
 
 ```scss
 nth($list, 0) -> throws error
-nth($list, 1) -> "item-1"
+nth($list, 1) -> “item-1”
 ```
 
-**Every value in Sass is treated as a <span style="text-decoration: line-through">list</span> _one-element list_.** Strings, numbers, boolean, whatever you can put in a variable. This means you’re fine to use some list functions even on things that don’t look like one.
+**Every value in Sass is treated as a ~~list~~ _one-element list_.** Strings, numbers, boolean, whatever you can put in a variable. This means you’re fine to use some list functions even on things that don’t look like one.
 
 ```scss
 $variable: "Sass is awesome";

@@ -46,7 +46,7 @@ I do a lot of 3d experiments, so this wasn’t that much of a difficulty to me.
 
 ## Deforming/Tilting the letters
 
-I started with some basic markup for the word "Netflix"
+I started with some basic markup for the word “Netflix”
 
 ```html
 <div class="logo">

@@ -14,7 +14,7 @@ _Why would we care?_, you think. Wait, I am not done yet. They have been taught 
 
 Then I thought, okay, maybe the teacher is more like a design person than an actual developer. I was wrong all again. The teacher forbade them to use bright colors because it would look _unprofessionnal_. Along the same lines, the teacher advised them to have a 800px wide centered container, good ol' fashion style. Please.
 
-Have you ever taken over a project only to find the code looks like it has been vomitted by some weird Godzilla? Me too. When it happens, we use to think "god, the developer was a mess". Not entirely wrong, I suppose. But if they have done things like this, it is probably because someone has told them to do it like this.
+Have you ever taken over a project only to find the code looks like it has been vomitted by some weird Godzilla? Me too. When it happens, we use to think “god, the developer was a mess”. Not entirely wrong, I suppose. But if they have done things like this, it is probably because someone has told them to do it like this.
 
 ## Poor teaching means no fun
 

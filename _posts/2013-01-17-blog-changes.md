@@ -48,7 +48,7 @@ I also decided to rely on a CDN rather than on self hosting for [Font Awesome](h
 I tried to add a few features in order to make your experience nicer. Nothing big, just a few things which are &mdash; according to me &mdash; UX improvements. Among those:
 
 * Links to articles on the home page are now paginated in order to make the whole page lighter. Only the last 7 articles will be displayed (including Codrops ones) on the first page. To see older blog posts, you’ll have to use the little buttons at the bottom of the screen.
-* You can now link to specific sections inside an article thanks to anchor tags on titles. When you hover a level-2 title (like "Features" or "Performances" for example), you’ll see a little # character appearing. Click on it to have a section-specific URL.
+* You can now link to specific sections inside an article thanks to anchor tags on titles. When you hover a level-2 title (like “Features” or “Performances” for example), you’ll see a little # character appearing. Click on it to have a section-specific URL.
 
 ## Performances
 
@@ -67,7 +67,7 @@ Among the many things I did on the topic, I:
 
 I don’t know if it’s a sudden realisation or the recent [A11y project](https://a11yproject.com/) which motivated me to do that but I took some time to improve accessibility on the site. Plus, it gave me the opportunity to learn some things on the topic.
 
-First of all, I switched a bunch of my divs to "new" HTML5 elements. So I’m now using `<header>`, `<article>`, `<aside>`, `<footer>`, `<section>`, and so on. I must say it feels right, really.
+First of all, I switched a bunch of my divs to “new” HTML5 elements. So I’m now using `<header>`, `<article>`, `<aside>`, `<footer>`, `<section>`, and so on. I must say it feels right, really.
 
 Secondly, I dug a little into ARIA roles. I have to say I didn’t know it was such a deep and complex topic, so I may have understand a few things wrong. Anyway, I added a `role=""` attribute to many elements in the site, especially on the home page.
 

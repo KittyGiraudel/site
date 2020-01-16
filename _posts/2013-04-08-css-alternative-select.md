@@ -72,7 +72,7 @@ You could still use JavaScript. But then:
 
 ## Performance
 
-Even if it’s not much a concern, using a HTML/CSS "alternative" to the `<select>` element means using at least a dozen of DOM nodes (quickly ramping up with the number of options) and maybe about 50 lines of CSS, perhaps including some heavy CSS properties like shadows or gradients.
+Even if it’s not much a concern, using a HTML/CSS “alternative” to the `<select>` element means using at least a dozen of DOM nodes (quickly ramping up with the number of options) and maybe about 50 lines of CSS, perhaps including some heavy CSS properties like shadows or gradients.
 
 Okay, it’s no big deal when you know the average page size is a little over 1.4Mb (according to [HTTP Archive](https://www.httparchive.org/interesting.php#bytesperpage)).
 

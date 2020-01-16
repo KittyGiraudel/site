@@ -22,7 +22,7 @@ Basically, they all do more or less the same stuff but each one has its own stre
 
 ## Dabblet
 
-Dabblet is an amazing playground<span style="text-decoration: line-through;">, however it doesn’t support JavaScript. That being said, its author presented Dabblet as a pure CSS playground, so it’s not very surprising JavaScript isn’t supported</span>.
+Dabblet is an amazing playground~~, however it doesn’t support JavaScript. That being said, its author presented Dabblet as a pure CSS playground, so it’s not very surprising JavaScript isn’t supported~~.
 
 What is a little bit more surprising however is that Dabblet doesn’t provide any support for preprocessors, especially CSS ones. Nowadays, it’s a pretty big deal when a playground doesn’t allow users to code with preprocessors.
 
@@ -50,7 +50,7 @@ Plus, it seems to be very buggy sometimes. Shortcuts don’t work as expected, c
 
 ## JSFiddle
 
-JSFiddle is a wonderful playground when it comes to JavaScript development since it provides a wide range of JavaScript libraries, probably more than you’ll ever need. Problem is it doesn’t use a live reload system meaning you have to hit "Run" everytime you make a change. It’s kind of annoying, but for JavaScript prototyping, it’s amazing.
+JSFiddle is a wonderful playground when it comes to JavaScript development since it provides a wide range of JavaScript libraries, probably more than you’ll ever need. Problem is it doesn’t use a live reload system meaning you have to hit “Run” everytime you make a change. It’s kind of annoying, but for JavaScript prototyping, it’s amazing.
 
 ### Pros
 

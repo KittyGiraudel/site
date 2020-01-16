@@ -13,7 +13,7 @@ It’s a one-day French conference at Strasbourg (France) gathering 10 speakers 
 <figcaption>Code is poetry - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
 </figure>
 
-So Friday June 28 at 2:00PM I was on stage to talk about Sass, and how we can use preprocessors to push our stylesheets to an upper level: "Kick-ass CSS with Sass" ("Des CSS kick-ass avec Sass").
+So Friday June 28 at 2:00PM I was on stage to talk about Sass, and how we can use preprocessors to push our stylesheets to an upper level: “Kick-ass CSS with Sass” (“Des CSS kick-ass avec Sass”).
 
 Basically, my talk is a collection of code snippets and real-life usecases of Sass to show how we can use a preprocessor further than declaring a couple of variables while keeping the code simple enough not to turn it into a Rube Goldberg machine.
 
@@ -48,7 +48,7 @@ I was kind of nervous, obviously. My laptop dying the night before the big day w
 
 This experience was kind of incredible actually. I walked into that room where dozens and dozens of boys and girls were waiting for me to talk to them. My hands were kind of sweaty and I was shivering a little at first but it all disappeared when I started talking.
 
-Then a little voice popped in my head saying "dude, this is too complicated", or "this is obvious to you but not for them" or "what the hell are you trying to explain?". It stayed there during the whole conference and was kind of disturbing. I couldn’t have real-time feedback of course (imagine what it would look like) so I had no idea if people were enjoying my talk or hoping it was soon finished.
+Then a little voice popped in my head saying “this is too complicated”, or “this is obvious to you but not for them” or “what the hell are you trying to explain?”. It stayed there during the whole conference and was kind of disturbing. I couldn’t have real-time feedback of course (imagine what it would look like) so I had no idea if people were enjoying my talk or hoping it was soon finished.
 
 In the end, I had a couple of questions (most of them very relevant) which I was prepared to answer. Yeah that’s right, I prepared the Q&A people!
 

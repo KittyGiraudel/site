@@ -340,7 +340,7 @@ And there you have a very simple yet responsive Sass grid.
 
 ## CSS counters and Sass
 
-CSS counters are part of the [CSS 2.1 "Generated content" module](https://www.w3.org/TR/CSS21/generate.html) (and not CSS3 as it is often claimed) making items numbering possible with CSS only. The main idea is the following:
+CSS counters are part of the [CSS 2.1 “Generated content” module](https://www.w3.org/TR/CSS21/generate.html) (and not CSS3 as it is often claimed) making items numbering possible with CSS only. The main idea is the following:
 
 1. initialize one or more counters with `counter-reset`,
 1. at each occurrence of a specific item, increment the counter with `counter-increment`,
@@ -473,7 +473,7 @@ $pages: 'home' 'bg-home.jpg', 'about' 'about.png', 'products' 'prod_bg.jpg', 'co
 
 Here is what happen:
 
-- We deal with a 2-levels list. Each item is a list containing 2 strings: the name of the page (e.g. "home") and the name of the file (e.g. "bg-home.jpg").
+- We deal with a 2-levels list. Each item is a list containing 2 strings: the name of the page (e.g. “home”) and the name of the file (e.g. “bg-home.jpg”).
 - We loop through the list then access inner items with the `nth()` function (e.g. `nth($page, 1)`).
 - We output CSS within the loop to have one rule for each page.
 
@@ -494,7 +494,7 @@ Outputs:
 }
 ```
 
-I finished my talk with a last example with lists and loops, to show how to build an "active menu" without JavaScript or server-side; only CSS. To put it simple, it relies on the page name matching and the link name. So the link to home page is highlighted if it’s a child of `.home` (class on html element); the link to the contact page is highlighted if it’s a child of the `.contact` page. You get the idea.
+I finished my talk with a last example with lists and loops, to show how to build an “active menu” without JavaScript or server-side; only CSS. To put it simple, it relies on the page name matching and the link name. So the link to home page is highlighted if it’s a child of `.home` (class on html element); the link to the contact page is highlighted if it’s a child of the `.contact` page. You get the idea.
 
 To show the difference between nice and very nice Sass, I made two versions of this one. The first one is cool but meh, the second one is clever as hell (if I may).
 
@@ -550,7 +550,7 @@ Outputs:
 }
 ```
 
-This is hot! Instead of outputing shit in the loop, we use it to create a selector that we then use to define our "active" styles.
+This is hot! Instead of outputing shit in the loop, we use it to create a selector that we then use to define our “active” styles.
 
 ## Questions & Answers
 
@@ -578,7 +578,7 @@ So if you want my opinion: definitely Compass.
 
 **Do you think we will ever be able to connect Sass to some kind of database to auto-supply lists or something?**
 
-Honestly, I don’t think so but I could be wrong. I know Sass developers want to do the right thing and try to stick as much as possible to the "CSS scope" (because in the end what is compiled is CSS). Connecting Sass to a database to generate lists then do things in Sass with these lists like [this pure Sass chart](https://codepen.io/thebabydino/pen/lHqbz) would probably be out of line (yet awesomely clever).
+Honestly, I don’t think so but I could be wrong. I know Sass developers want to do the right thing and try to stick as much as possible to the “CSS scope” (because in the end what is compiled is CSS). Connecting Sass to a database to generate lists then do things in Sass with these lists like [this pure Sass chart](https://codepen.io/thebabydino/pen/lHqbz) would probably be out of line (yet awesomely clever).
 
 However they are including awesome features in Sass starting with the next version (3.3) which should include sourcemaps, a huge improvements to the parent selector (`&`), inner-string manipulation like `str-index()`…
 

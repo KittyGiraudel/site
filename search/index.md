@@ -34,7 +34,7 @@ function search () {
         <a href="{url}" class="list__primary-content">{title}</a>\
       </div>\
     </li>',
-    noResultsText: '<li class="list__item">Sorry, I could not find any result for your search. :( Hey, if you really wanna have results, I suggest looking for "sass"!</li>'
+    noResultsText: '<li class="list__item">Sorry, I could not find any result for your search. :( Hey, if you really wanna have results, I suggest looking for “sass”!</li>'
   });
 }
 </script>

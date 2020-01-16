@@ -6,7 +6,7 @@ tags:
   - css
 ---
 
-In a couple of days, my book "CSS 3 Pratique de Design Web" (_CSS 3 Practicing Web Design_) will be on sale. It has been a one-year road to get there, and one hell of a journey so I thought I’d relate it to you in case you find yourself in my position.
+In a couple of days, my book “CSS 3 Pratique de Design Web” (_CSS 3 Practicing Web Design_) will be on sale. It has been a one-year road to get there, and one hell of a journey so I thought I’d relate it to you in case you find yourself in my position.
 
 <figure class="figure">
 <img src="/assets/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="Cover of “CSS 3 Pratique du Design Web”" />
@@ -36,7 +36,7 @@ Trust me, you will always find things to improve. I found myself writing new sec
 
 > Our work is never over. &mdash; [Daft Punk, Harder Better Faster Stronger](https://www.youtube.com/watch?v=gAjR4_CbPpQ)
 
-The last revision I made of the book, just before it went to press, involved not less than 250 editions. There is no such thing as "too much proofreading", or even "too much work" on such a colossal project. You could work on it forever.
+The last revision I made of the book, just before it went to press, involved not less than 250 editions. There is no such thing as “too much proofreading”, or even “too much work” on such a colossal project. You could work on it forever.
 
 My advice would be: **plan well, and start early**. Don’t be like "6 months is huge, I have plenty of time". When the due date comes closer, you’ll regreat not having spent more time on your work before.
 
@@ -44,13 +44,13 @@ My advice would be: **plan well, and start early**. Don’t be like "6 months is
 
 I spent the last week reading what I wrote over and over to make sure it was okay. I’ve read the whole book from A to Z at least 5 times, and I’ve spent countless hours on some sections (hey Grid Layout fucker). I was sick and tired of reading my own write-ups and I think it’s perfectly normal after months of working on the same thing.
 
-At some point, you’ll get paranoid about what you come up with. "What if it sounds dull? What if it makes no sense? What if it’s not interesting enough?".
+At some point, you’ll get paranoid about what you come up with. “What if it sounds dull? What if it makes no sense? What if it’s not interesting enough?”.
 
 It’s okay. Keep in mind people won’t be reading your book over and over again, and most of them will go pretty quickly through it, not paying extra attention to every single word. Don’t put too much on yourself.
 
 ## It’s not all fun
 
-When Eyrolles came to me asking if I would like to write a book, I was like "yeeepeee! it’s like a really long article!". I thought I would just have to sit in front on the keyboard, unleash the beast and be done with 300 pages of writing.
+When Eyrolles came to me asking if I would like to write a book, I was like “yeeepeee! it’s like a really long article!”. I thought I would just have to sit in front on the keyboard, unleash the beast and be done with 300 pages of writing.
 
 Nope. It doesn’t work like this. There is the fun part: writing content. And there is all the boring stuff that comes with: taking screenshots, indexing everything, making sure content flows correctly…
 

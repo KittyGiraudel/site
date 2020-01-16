@@ -129,7 +129,7 @@ We now have to deal with `relative` and `fixed`. I guess we could duplicate the 
 
 Why don’t we create a _private mixin_ instead? Something that isn’t meant to be called and only helps us for our internal stuff. To do so, I renamed the mixin `position()` and overloaded it with another argument: the position type.
 
-_Note: you might want to rename it differently to avoid conflict with other mixins of your project. Indeed "position" is a quite common keyword._
+_Note: you might want to rename it differently to avoid conflict with other mixins of your project. Indeed “position” is a quite common keyword._
 
 ```scss
 @mixin position($position, $args) {
@@ -156,7 +156,7 @@ And now, we create the 3 mixins we need: `absolute()`, `fixed()` and `relative()
 
 Almost done. To indicate `position()` is a private mixin, I wanted to prefix it with something. I first thought about `private-position()` but it didn’t feel great. In the end I went with `_position()`. Since I use hyphens to separate words in CSS, the underscore was unused. No risk of conflicts with anything in a project!
 
-_Note: remember hyphens and underscores are treated the same way in Sass. It means `-position()` will work as well. This is meant to be: "hyphens or underscores" is only a matter of presentational preference._
+_Note: remember hyphens and underscores are treated the same way in Sass. It means `-position()` will work as well. This is meant to be: “hyphens or underscores” is only a matter of presentational preference._
 
 ## Usage
 

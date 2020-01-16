@@ -92,7 +92,7 @@ Each `.scss` component file should only have these concerns:
 
 If you want your components to be able to be themed externally, limit the declarations to only structural styles, such as dimensions (width/height), padding, margins, alignment, etc. Exclude styles such as colors, shadows, font rules, background rules, etc.
 
-Here’s an example rule set for the "date" component:
+Here’s an example rule set for the “date” component:
 
 ```scss
 .sd-date {
@@ -183,7 +183,7 @@ Now, let’s see how using a proper Sass architecture and organizational method 
 
 ### Global Namespace and Breaking Isolation
 
-It’s worth mentioning (repeatedly) that **CSS selectors are not variables**. Selectors are "patterns that match against elements in a tree" (see [the W3C specification on Selectors](https://dev.w3.org/csswg/selectors-4/#abstract)) and **constrain declarations** to the matched elements. With that said, a global selector is one that runs the risk of styling an element that it did not intend to style. These kinds of selectors are potentially hazardous, and should be avoided:
+It’s worth mentioning (repeatedly) that **CSS selectors are not variables**. Selectors are “patterns that match against elements in a tree” (see [the W3C specification on Selectors](https://dev.w3.org/csswg/selectors-4/#abstract)) and **constrain declarations** to the matched elements. With that said, a global selector is one that runs the risk of styling an element that it did not intend to style. These kinds of selectors are potentially hazardous, and should be avoided:
 
 - Universal selector (`*`)
 - Type selectors (e.g. `div`, `nav`, `ul li`, `.foo > span`)
@@ -191,7 +191,7 @@ It’s worth mentioning (repeatedly) that **CSS selectors are not variables**. S
 - Non-namespaced attribute selectors (e.g. `[aria-checked], [data-foo], [type]`)
 - A pseudoselector that’s not within a [compound selector](https://dev.w3.org/csswg/selectors-4/#structure) (e.g. `:hover`, `.foo > :checked`)
 
-There are a few ways to "namespace" a selector so that there’s very little risk of unintentional styling (not to be confused with [`@namespace`](https://www.w3.org/TR/css3-namespace/)):
+There are a few ways to “namespace” a selector so that there’s very little risk of unintentional styling (not to be confused with [`@namespace`](https://www.w3.org/TR/css3-namespace/)):
 
 - Prefixing classes (e.g. `.sd-date`, `.sd-calendar`)
 - Prefixing attributes (e.g. `[data-sd-value]`)
@@ -226,7 +226,7 @@ You’re in luck -- Sass has [variables](https://sass-lang.com/documentation/fil
 
 ### Non-deterministic Resolution
 
-This is just a fancy way of saying "not knowing when styles are being unintentionally overridden by selectors of the _same specificity_." Turns out, this is rarely ever an issue when following a component-based architecture such as the 7-1 pattern. Take this example:
+This is just a fancy way of saying “not knowing when styles are being unintentionally overridden by selectors of the _same specificity_”. Turns out, this is rarely ever an issue when following a component-based architecture such as the 7-1 pattern. Take this example:
 
 ```scss
 // In components/_overlay.scss
@@ -249,13 +249,13 @@ Above, we are taking full advantage of specificity to solve our non-deterministi
 - `.my-button` (specificity 0 1 0)
 - `.my-overlay > .my-button` (specificity 0 2 0)
 
-Since `.my-overlay > .my-button` has a higher specificity, its styles will _always_ override `.my-button` styles (as desired), regardless of declaration order. Furthermore, the intent is clear: "style this button" vs. "style this button _when_ it is inside an overlay." Having a selector such as `.my-overlay-button` might make sense to us, but CSS doesn’t understand that it’s intended for a button inside of an overlay. **Specificity is really useful.** Take advantage of it.
+Since `.my-overlay > .my-button` has a higher specificity, its styles will _always_ override `.my-button` styles (as desired), regardless of declaration order. Furthermore, the intent is clear: “style this button” vs. “style this button _when_ it is inside an overlay”. Having a selector such as `.my-overlay-button` might make sense to us, but CSS doesn’t understand that it’s intended for a button inside of an overlay. **Specificity is really useful.** Take advantage of it.
 
 By the way, with a well-structured design system, contextual styling can (and should) be avoided. See [this article by Harry Roberts on contextual styling](https://csswizardry.com/2015/06/contextual-styling-ui-components-nesting-and-implementation-detail/) for more information.
 
 ### Customization
 
-As a developer who understands the value of good, consistent design, you’ll probably want a component to be customizable by any developer who decides to use it. There are many ways that you can make configurable styles and themes in Sass, but the simplest is to provide an "API" of default variables in the component stylesheets:
+As a developer who understands the value of good, consistent design, you’ll probably want a component to be customizable by any developer who decides to use it. There are many ways that you can make configurable styles and themes in Sass, but the simplest is to provide an “API” of default variables in the component stylesheets:
 
 ```scss
 // in base/_color.scss:
@@ -287,7 +287,7 @@ React components can be styled in Sass in an efficient, flexible, and maintainab
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/rmurphey">@rmurphey</a> those problems can all be solved with good architecture and preprocesseors  <a href="https://t.co/JqbK3SBD6d">https://t.co/JqbK3SBD6d</a></p>&mdash; Una Kravets (@Una) <a href="https://twitter.com/Una/status/608271323941486592">June 9, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-The problems that Christopher Chedeau lists in his "CSS in JS" presentation are valid problems, albeit ones that are easily solved with a well-defined stylesheet architecture, organizational structure, and Sass (or any other preprocessor). Styling the web isn’t easy, and there are many very useful open-source Sass tools and libraries for grids, typography, breakpoints, animations, UI pattern libraries, and more to help develop stylesheets for components much more efficiently. Take advantage of these Sassy resources.
+The problems that Christopher Chedeau lists in his “CSS in JS” presentation are valid problems, albeit ones that are easily solved with a well-defined stylesheet architecture, organizational structure, and Sass (or any other preprocessor). Styling the web isn’t easy, and there are many very useful open-source Sass tools and libraries for grids, typography, breakpoints, animations, UI pattern libraries, and more to help develop stylesheets for components much more efficiently. Take advantage of these Sassy resources.
 
 Check out the [example simple React datepicker](https://github.com/davidkpiano/react-simple-datepicker) on Github for an example of how Sass can be used to style React components. Oh, and here is a CodePen for you, as a treat!
 

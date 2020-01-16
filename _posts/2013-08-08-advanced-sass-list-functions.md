@@ -122,7 +122,7 @@ We can append new values to a list, and now even prepend new values to a list. W
 
 ```scss
 $list: a, b, d, e, f;
-/* I want to add "c" as the 3rd index in the list */
+/* I want to add “c” as the 3rd index in the list */
 $new-list: insert-nth($list, 3, c); // a, b, c, d, e, f
 $new-list: insert-nth($list, -1, z); // error
 $new-list: insert-nth($list, 0, z); // error
