@@ -2,7 +2,7 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/extra-map-functions-sass/
-title: "Extra Map Functions in Sass"
+title: Extra map functions in Sass
 tags:
   - sass
   - maps

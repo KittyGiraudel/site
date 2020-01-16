@@ -1,6 +1,6 @@
 ---
-guest: 'David Khourshid'
-title: 'Styling React Components in Sass'
+guest: David Khourshid
+title: Styling React Components in Sass
 tags:
   - sass
   - react

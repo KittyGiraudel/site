@@ -1,6 +1,6 @@
 ---
-guest: "Ezekiel Gabrielse"
-title: "Building a customization API in Sass"
+guest: Ezekiel Gabrielse
+title: Building a customization API in Sass
 tags:
   - sass
   - api

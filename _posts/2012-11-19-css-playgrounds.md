@@ -1,5 +1,5 @@
 ---
-title: 'A round-up on CSS playgrounds'
+title: A round-up on CSS playgrounds
 tags:
   - css
   - playground

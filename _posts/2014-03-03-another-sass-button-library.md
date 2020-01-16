@@ -1,5 +1,5 @@
 ---
-title: 'Another Sass button library'
+title: Another Sass button library
 tags:
   - sass
   - button

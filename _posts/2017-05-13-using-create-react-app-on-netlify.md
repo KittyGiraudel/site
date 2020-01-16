@@ -1,5 +1,5 @@
 ---
-title: "Using create-react-app on Netlify"
+title: Using create-react-app on Netlify
 tags:
   - netlify
   - create-react-app

@@ -1,5 +1,5 @@
 ---
-title: 'Looking back at 2017'
+title: Looking back at 2017
 tags:
   - thoughts
 ---

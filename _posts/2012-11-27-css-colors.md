@@ -1,5 +1,5 @@
 ---
-title: 'Colors in CSS'
+title: Colors in CSS
 tags:
   - css
   - colors

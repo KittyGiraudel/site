@@ -1,5 +1,5 @@
 ---
-title: "Bitwise operators in Sass"
+title: Bitwise operators in Sass
 tags:
   - sass
   - bitwise

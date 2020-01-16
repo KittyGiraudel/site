@@ -1,5 +1,5 @@
 ---
-title: "Looking back at 2014"
+title: Looking back at 2014
 tags:
   - thoughts
 ---

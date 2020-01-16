@@ -1,5 +1,5 @@
 ---
-title: 'Looking back at 2015'
+title: Looking back at 2015
 tags:
   - 2015
   - thoughts

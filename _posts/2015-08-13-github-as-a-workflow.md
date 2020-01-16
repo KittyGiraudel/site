@@ -1,5 +1,5 @@
 ---
-title: 'GitHub As A Workflow'
+title: GitHub as a workflow
 tags:
   - github
   - workflow

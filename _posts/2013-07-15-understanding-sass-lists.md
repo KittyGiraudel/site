@@ -1,5 +1,5 @@
 ---
-title: "Understanding Sass lists"
+title: Understanding Sass lists
 tags:
   - sass
   - lists

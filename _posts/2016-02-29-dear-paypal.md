@@ -1,5 +1,5 @@
 ---
-title: "Dear PayPal"
+title: Dear PayPal
 tags:
   - paypal
   - user experience

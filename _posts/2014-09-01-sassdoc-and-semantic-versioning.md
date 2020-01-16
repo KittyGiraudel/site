@@ -1,5 +1,5 @@
 ---
-title: "SassDoc and Semantic Versioning"
+title: SassDoc and Semantic Versioning
 tags:
   - sass
   - sassdoc

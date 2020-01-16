@@ -2,7 +2,7 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/cross-media-query-extend-sass/
-title: "Cross-Media Query @extend Directives in Sass"
+title: Cross-media query @extend directives in Sass
 tags:
   - sass
   - extend

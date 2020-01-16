@@ -1,6 +1,6 @@
 ---
-guest: "Gregor Adams"
-title: "Netflix Logo in CSS"
+guest: Gregor Adams
+title: Netflix logo in CSS
 tags:
   - css
   - experiment

@@ -1,6 +1,6 @@
 ---
-guest: "Christoph Rumpel"
-title: "Your work is not good enough"
+guest: Christoph Rumpel
+title: Your work is not good enough
 tags:
   - thoughts
 ---

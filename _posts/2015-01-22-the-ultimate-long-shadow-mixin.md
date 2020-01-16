@@ -2,7 +2,7 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/ultimate-long-shadow-sass-mixin/
-title: "The Ultimate Long Shadow Sass Mixin"
+title: The ultimate long shadow Sass mixin
 tags:
   - sass
   - mixin

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 'Looking for something'
-excerpt: 'Search page for all articles aggregated on the blog.'
+title: Looking for something
+excerpt: Search page for all articles aggregated on the blog.
 tags:
   - blog
   - search

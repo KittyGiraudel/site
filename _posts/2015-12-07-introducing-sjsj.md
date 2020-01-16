@@ -1,5 +1,5 @@
 ---
-title: 'Introducing Simplified JavaScript Jargon'
+title: Introducing Simplified JavaScript Jargon
 tags:
   - JavaScript
   - JS

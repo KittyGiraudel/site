@@ -2,8 +2,8 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/the-importance-of-code-reviews/
-title: "The Importance of Code Reviews"
-tags: 
+title: The importance of code reviews
+tags:
   - code
   - review
   - github

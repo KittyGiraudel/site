@@ -1,5 +1,5 @@
 ---
-title: 'Learning Regular Expressions: The Practical Way'
+title: "Learning regular expressions: the practical way"
 tags:
   - regular expressions
   - regex

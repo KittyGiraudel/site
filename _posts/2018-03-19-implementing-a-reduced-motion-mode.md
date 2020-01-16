@@ -1,5 +1,5 @@
 ---
-title: "Implementing a reduced-motion mode"
+title: Implementing a reduced-motion mode
 tags:
   - accessibility
   - reduced motion

@@ -1,5 +1,5 @@
 ---
-title: "Rethinking Atwood’s law"
+title: Rethinking Atwood’s law
 tags:
   - thoughts
   - atwood’s law

@@ -1,5 +1,5 @@
 ---
-title: "Automating CSS animations with Sass"
+title: Automating CSS animations with Sass
 tags:
   - sass
   - css

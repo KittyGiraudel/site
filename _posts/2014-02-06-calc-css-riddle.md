@@ -1,5 +1,5 @@
 ---
-title: "CSS trickery and calc function"
+title: CSS trickery and calc function
 tags:
   - css
   - calc

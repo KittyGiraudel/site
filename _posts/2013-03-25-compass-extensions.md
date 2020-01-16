@@ -1,5 +1,5 @@
 ---
-title: "8 Compass features you may not know"
+title: 8 Compass features you may not know
 tags:
   - sass
   - compass

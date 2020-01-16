@@ -1,5 +1,5 @@
 ---
-title: "Little steps for accessibility at N26"
+title: Little steps for accessibility at N26
 tags:
   - N26
   - a11y

@@ -1,5 +1,5 @@
 ---
-title: "Use lengths, not strings"
+title: Use lengths, not strings
 tags:
   - sass
   - type

@@ -1,5 +1,5 @@
 ---
-title: 'Feedback on my first conf'
+title: Feedback on my first conf
 tags:
   - thoughts
 ---

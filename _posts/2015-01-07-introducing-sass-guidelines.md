@@ -1,5 +1,5 @@
 ---
-title: 'Introducing Sass Guidelines'
+title: Introducing Sass Guidelines
 tags:
   - sass
   - guidelines

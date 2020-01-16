@@ -1,5 +1,5 @@
 ---
-title: "Dealing with themes and layouts with Twig"
+title: Dealing with themes and layouts with Twig
 tags:
   - templates
   - Twig
@@ -9,7 +9,7 @@ tags:
 
 Hey people! This post is going to be quite different from what I usually write about since it will talk about [Twig](https://twig.symfony.com/), the template engine used by [Symfony 2](https://symfony.com/). I came across a pretty complicated case at work so I thought I’d write a little something about it.
 
-But let’s put some context first: Twig presents itself as a _template engine for PHP_. Kind of Jekyll, but far more powerful. The basic idea is to create reusable templates also called "views" (basically HTML blocks) to avoid repeating the same code again and again.
+But let’s put some context first: Twig presents itself as a _template engine for PHP_. Kind of Jekyll, but far more powerful. The basic idea is to create reusable templates also called “views” (basically HTML blocks) to avoid repeating the same code again and again.
 
 ## Some leveling-up about Twig
 

@@ -1,5 +1,5 @@
 ---
-title: "“CSS is easy”"
+title: “CSS is easy”
 tags:
   - css
   - front-end

@@ -1,5 +1,5 @@
 ---
-title: "Looking back at 2019"
+title: Looking back at 2019
 tags:
   - thoughts
 ---

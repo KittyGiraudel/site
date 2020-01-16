@@ -1,5 +1,5 @@
 ---
-title: "What’s up at Browserhacks?"
+title: What’s up at Browserhacks?
 tags:
   - css
   - hacks

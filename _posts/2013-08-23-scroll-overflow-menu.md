@@ -1,6 +1,6 @@
 ---
-guest: 'Hugo Darby-Brown'
-title: 'Scroll overflow menu'
+guest: Hugo Darby-Brown
+title: Scroll overflow menu
 tags:
   - css
   - experiment

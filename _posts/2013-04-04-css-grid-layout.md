@@ -1,5 +1,5 @@
 ---
-title: 'Future of CSS layout: CSS Grid'
+title: "Future of CSS layout: CSS Grid"
 tags:
   - css
   - grid

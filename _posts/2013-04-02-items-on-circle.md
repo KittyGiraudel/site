@@ -1,5 +1,5 @@
 ---
-title: "Items on circle with CSS"
+title: Items on circle with CSS
 tags:
   - css
   - sass

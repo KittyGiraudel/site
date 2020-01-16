@@ -1,5 +1,5 @@
 ---
-title: "Sass mixin for offsets"
+title: Sass mixin for offsets
 tags:
   - sass
   - offsets

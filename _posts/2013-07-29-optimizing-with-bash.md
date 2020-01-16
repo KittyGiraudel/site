@@ -1,6 +1,6 @@
 ---
-guest: "Loïc Giraudel"
-title: "Optimizing images with Bash script"
+guest: Loïc Giraudel
+title: Optimizing images with Bash script
 tags:
   - bash
   - script

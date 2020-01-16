@@ -1,5 +1,5 @@
 ---
-title: "Feedback on another conf"
+title: Feedback on another conf
 tags:
   - thoughts
   - feweb

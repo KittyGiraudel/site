@@ -1,6 +1,6 @@
 ---
-guest: 'Ana Tudor'
-title: 'Dig deep into CSS linear gradients'
+guest: Ana Tudor
+title: Dig deep into CSS linear gradients
 tags:
   - css
   - gradient

@@ -1,5 +1,5 @@
 ---
-title: "An accessible visibility React component"
+title: An accessible visibility React component
 tags:
   - accessibility
   - a11y

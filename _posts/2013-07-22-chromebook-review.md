@@ -1,5 +1,5 @@
 ---
-title: "Chromebook review"
+title: Chromebook review
 tags:
   - chromebook
   - review

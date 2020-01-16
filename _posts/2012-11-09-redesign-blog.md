@@ -1,5 +1,5 @@
 ---
-title: 'Hugogiraudel.com redesigned + new blog'
+title: Hugogiraudel.com redesigned + new blog
 tags:
   - design
   - blog

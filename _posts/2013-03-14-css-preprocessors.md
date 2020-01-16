@@ -1,5 +1,5 @@
 ---
-title: 'Can I afford a preprocessor?'
+title: Can I afford a preprocessor?
 tags:
   - css
   - sass

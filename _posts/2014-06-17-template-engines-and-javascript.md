@@ -1,5 +1,5 @@
 ---
-title: 'Template engines and JavaScript'
+title: Template engines and JavaScript
 tags:
   - template
   - javascript

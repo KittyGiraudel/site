@@ -2,7 +2,7 @@
 external:
   host: CSS-Tricks
   url: https://css-tricks.com/css-pie-timer/
-title: 'CSS Pie Timer'
+title: CSS pie timer
 tags:
   - css
   - pie timer

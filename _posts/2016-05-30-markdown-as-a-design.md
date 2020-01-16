@@ -1,5 +1,5 @@
 ---
-title: 'Markdown as a design'
+title: Markdown as a design
 tags:
   - markdown
   - redesign

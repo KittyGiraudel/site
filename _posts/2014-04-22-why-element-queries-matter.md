@@ -1,5 +1,5 @@
 ---
-title: "Why Element Queries matter"
+title: Why Element Queries matter
 tags:
   - css
   - element queries

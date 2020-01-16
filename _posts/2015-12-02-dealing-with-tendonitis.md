@@ -1,5 +1,5 @@
 ---
-title: "Dealing with tendonitis"
+title: Dealing with tendonitis
 tags:
   - thoughts
   - tendonitis

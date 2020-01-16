@@ -1,5 +1,5 @@
 ---
-title: 'Oh Jekyll, here we go again…'
+title: Oh Jekyll, here we go again…
 tags:
   - jekyll
   - mixture

@@ -1,5 +1,5 @@
 ---
-title: 'Translating Sass Guidelines'
+title: Translating Sass Guidelines
 excerpt_separator: <!--more-->
 tags:
   - sass

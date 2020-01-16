@@ -1,5 +1,5 @@
 ---
-title: "Feedback on dotCSS 2014"
+title: Feedback on dotCSS 2014
 tags:
   - thoughts
   - dotCSS

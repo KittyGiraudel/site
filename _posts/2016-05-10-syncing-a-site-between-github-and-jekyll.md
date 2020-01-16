@@ -1,5 +1,5 @@
 ---
-title: 'Syncing a site between GitHub and Jekyll'
+title: Syncing a site between GitHub and Jekyll
 tags:
   - jekyll
   - github

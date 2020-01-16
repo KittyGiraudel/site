@@ -1,5 +1,5 @@
 ---
-title: "Introducing Countdown.js"
+title: Introducing Countdown.js
 tags:
   - javascript
   - release

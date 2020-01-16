@@ -1,5 +1,5 @@
 ---
-title: "Blog changes"
+title: Blog changes
 tags:
   - blog
   - writing

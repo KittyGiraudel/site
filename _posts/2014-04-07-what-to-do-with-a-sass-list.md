@@ -1,5 +1,5 @@
 ---
-title: "What to do with a Sass list?"
+title: What to do with a Sass list?
 tags:
   - sass
   - lists

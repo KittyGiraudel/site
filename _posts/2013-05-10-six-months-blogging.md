@@ -1,5 +1,5 @@
 ---
-title: "Six months of blogging"
+title: Six months of blogging
 tags:
   - blog
 ---

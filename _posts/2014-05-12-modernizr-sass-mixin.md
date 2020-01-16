@@ -1,6 +1,6 @@
 ---
 guest: Daniel Guillan
-title: 'Modernizr Sass mixin'
+title: Modernizr Sass mixin
 tags:
   - sass
   - mixin

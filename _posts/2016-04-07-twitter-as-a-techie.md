@@ -1,5 +1,5 @@
 ---
-title: "Twitter as a techie"
+title: Twitter as a techie
 tags:
   - techie
   - twitter

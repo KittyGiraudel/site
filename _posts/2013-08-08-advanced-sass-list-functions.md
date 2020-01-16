@@ -1,5 +1,5 @@
 ---
-title: 'Advanced Sass list functions'
+title: Advanced Sass list functions
 tags:
   - sass
   - lists

@@ -1,5 +1,5 @@
 ---
-title: "Star-rating widget with Sass"
+title: Star-rating widget with Sass
 tags:
   - sass
   - star

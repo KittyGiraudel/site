@@ -3,7 +3,7 @@ external:
   host: N26
   url: https://mag-fr.n26.com/quest-ce-que-l-accessibilit%C3%A9-web-4ede72ff2f81
 lang: fr
-title: "Qu’est-ce que l’accessibilité web ?"
+title: Qu’est-ce que l’accessibilité web ?
 tags:
   - accessibility
   - a11y

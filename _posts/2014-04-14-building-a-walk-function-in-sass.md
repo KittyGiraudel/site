@@ -1,5 +1,5 @@
 ---
-title: "Building a walk function in Sass"
+title: Building a walk function in Sass
 tags:
   - sass
   - walk

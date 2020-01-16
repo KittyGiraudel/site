@@ -1,5 +1,5 @@
 ---
-title: 'Accessible page title in a single-page React application'
+title: Accessible page title in a single-page React application
 tags:
   - accessibility
   - SPA

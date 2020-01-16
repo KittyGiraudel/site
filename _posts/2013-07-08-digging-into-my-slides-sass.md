@@ -1,5 +1,5 @@
 ---
-title: 'Digging into my slides about Sass'
+title: Digging into my slides about Sass
 tags:
   - sass
 ---

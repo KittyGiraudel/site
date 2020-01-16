@@ -1,5 +1,5 @@
 ---
-title: "A couple of Sass functions"
+title: A couple of Sass functions
 tags:
   - sass
   - function

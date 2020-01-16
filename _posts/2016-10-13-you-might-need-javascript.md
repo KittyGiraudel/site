@@ -1,5 +1,5 @@
 ---
-title: 'You Might Need JavaScript'
+title: You might need JavaScript
 tags:
   - js
   - css

@@ -80,7 +80,7 @@ We could have requested two distinct parameters for `$x` and `$y` but I feel lik
 }
 ```
 
-_Note: I like to prefix private functions with an underscore. By "private" I mean functions that are not supposed to be called from the outside. Unfortunately Sass doesn’t provide any way to privatize stuff._
+_Note: I like to prefix private functions with an underscore. By “private” I mean functions that are not supposed to be called from the outside. Unfortunately Sass doesn’t provide any way to privatize stuff._
 
 All we did was checking for the length and the type. This doesn’t deal with out of bounds coordinates but that’s more than enough for now. Anyway, to set a value in the grid it is nothing easier than:
 

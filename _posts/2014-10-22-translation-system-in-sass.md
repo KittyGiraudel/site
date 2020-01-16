@@ -1,5 +1,5 @@
 ---
-title: "Translation system in Sass"
+title: Translation system in Sass
 tags:
   - translation
   - sass

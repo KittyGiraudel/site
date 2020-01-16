@@ -1,5 +1,5 @@
 ---
-title: 'Recovering from JavaScript errors'
+title: Recovering from JavaScript errors
 tags:
   - accessibility
   - availability

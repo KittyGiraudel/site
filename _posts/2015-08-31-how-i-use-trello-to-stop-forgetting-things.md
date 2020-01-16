@@ -1,5 +1,5 @@
 ---
-title: 'How I use Trello to Stop Forgetting Things'
+title: How I use Trello to stop forgetting things
 tags:
   - trello
   - workflow

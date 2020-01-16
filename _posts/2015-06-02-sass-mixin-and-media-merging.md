@@ -2,7 +2,7 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/sass-mixin-media-merging/
-title: "Sass Mixin and Media Merging"
+title: Sass mixin and media merging
 tags:
   - sass
   - mixin

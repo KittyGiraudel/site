@@ -1,5 +1,5 @@
 ---
-title: "My development environment"
+title: My development environment
 tags:
   - thoughts
 ---

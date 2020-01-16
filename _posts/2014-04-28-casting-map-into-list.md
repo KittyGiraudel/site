@@ -1,5 +1,5 @@
 ---
-title: "Casting a map into a list in Sass"
+title: Casting a map into a list in Sass
 tags:
   - sass
   - lists

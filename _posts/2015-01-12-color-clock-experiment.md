@@ -1,5 +1,5 @@
 ---
-title: "Color Clock Experiment"
+title: Color Clock Experiment
 tags:
   - javascript
   - experiment

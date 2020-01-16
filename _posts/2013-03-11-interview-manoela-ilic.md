@@ -1,5 +1,5 @@
 ---
-title: 'Interview with Manoela Ilic'
+title: Interview with Manoela Ilic
 tags:
   - interview
 ---

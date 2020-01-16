@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 'Speaking events'
-excerpt: 'An overview of all my talks, past and to come, including slides and videos.'
+title: Speaking events
+excerpt: An overview of all my talks, past and to come, including slides and videos.
 tags:
   - speaking
   - talks

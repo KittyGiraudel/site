@@ -1,5 +1,5 @@
 ---
-title: "The stylesheet breaker"
+title: The stylesheet breaker
 tags:
   - css
   - riddle

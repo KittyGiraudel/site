@@ -1,5 +1,5 @@
 ---
-title: "Trading whiteboards for code reviews"
+title: Trading whiteboards for code reviews
 tags:
   - interview
   - thought

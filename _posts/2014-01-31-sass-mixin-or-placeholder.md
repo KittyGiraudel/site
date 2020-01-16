@@ -2,7 +2,7 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/sass-mixin-placeholder/
-title: "Sass: Mixin or Placeholder"
+title: "Sass: mixin or placeholder"
 tags:
   - sass
   - mixin

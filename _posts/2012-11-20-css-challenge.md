@@ -1,5 +1,5 @@
 ---
-title: 'A CSS challenge'
+title: A CSS challenge
 tags:
   - css
   - riddle

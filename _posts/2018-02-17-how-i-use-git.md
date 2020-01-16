@@ -1,5 +1,5 @@
 ---
-title: "How I Use Git"
+title: How I use Git
 tags:
   - git
   - tips

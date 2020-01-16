@@ -1,5 +1,5 @@
 ---
-title: "The Sound of Bullets"
+title: The Sound of Bullets
 tags:
   - miscellaneous
   - thoughts

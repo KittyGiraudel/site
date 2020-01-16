@@ -1,5 +1,5 @@
 ---
-title: "Building the N26 discreet mode"
+title: Building the N26 discreet mode
 tags:
   - accessibility
   - discreet

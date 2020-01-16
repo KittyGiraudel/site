@@ -1,5 +1,5 @@
 ---
-title: 'Ask Me Anything'
+title: Ask Me Anything
 tags:
   - blog
   - questions

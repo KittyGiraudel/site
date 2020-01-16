@@ -1,5 +1,5 @@
 ---
-title: 'CSS Hide-and-Seek'
+title: CSS hide-and-seek
 guest: 'Gaël Poupard'
 tags:
   - css

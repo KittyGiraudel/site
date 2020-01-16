@@ -1,5 +1,5 @@
 ---
-title: "A little LESS puzzle"
+title: A little LESS puzzle
 tags:
   - css
   - less

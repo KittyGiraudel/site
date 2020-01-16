@@ -1,5 +1,5 @@
 ---
-title: "SassyJSON: Talk to the browser!"
+title: "SassyJSON: talk to the browser!"
 tags:
   - sass
   - JSON

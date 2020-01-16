@@ -1,5 +1,5 @@
 ---
-title: "Boilerplate-ing Jekyll"
+title: Boilerplate-ing Jekyll
 tags:
   - jekyll
   - boilerplate

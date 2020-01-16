@@ -1,5 +1,5 @@
 ---
-title: "How I made a Sass debug function"
+title: How I made a Sass debug function
 tags:
   - sass
   - debug

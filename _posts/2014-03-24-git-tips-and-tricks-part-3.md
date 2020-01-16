@@ -1,6 +1,6 @@
 ---
-guest: "Loïc Giraudel"
-title: "Git tips and tricks - Part 3"
+guest: Loïc Giraudel
+title: Git tips and tricks — Part 3
 tags:
   - git
 ---

@@ -1,5 +1,5 @@
 ---
-title: "What I learnt from writing a book"
+title: What I learnt from writing a book
 tags:
   - writing
   - book

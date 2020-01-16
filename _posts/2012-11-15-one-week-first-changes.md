@@ -1,5 +1,5 @@
 ---
-title: 'One week, first changes'
+title: One week, first changes
 tags:
   - blog
   - writing

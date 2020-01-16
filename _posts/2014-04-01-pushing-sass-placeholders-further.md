@@ -1,5 +1,5 @@
 ---
-title: "Pushing Sass placeholders further"
+title: Pushing Sass placeholders further
 tags:
   - sass
   - placeholders

@@ -1,5 +1,5 @@
 ---
-title: "How I came to write for the web"
+title: How I came to write for the web
 tags:
   - blog
   - writing

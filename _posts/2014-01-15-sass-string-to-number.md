@@ -1,5 +1,5 @@
 ---
-title: "Casting a string to a number in Sass"
+title: Casting a string to a number in Sass
 tags:
   - sass
   - type

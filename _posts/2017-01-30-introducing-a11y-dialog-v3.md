@@ -1,5 +1,5 @@
 ---
-title: "Introducing a11y-dialog v3"
+title: Introducing a11y-dialog v3
 tags:
   - javascript
   - accessibility

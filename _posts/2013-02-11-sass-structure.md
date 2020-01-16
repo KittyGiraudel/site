@@ -1,5 +1,5 @@
 ---
-title: "A closer look at my Sass structure"
+title: A closer look at my Sass structure
 tags:
   - sass
   - architecture

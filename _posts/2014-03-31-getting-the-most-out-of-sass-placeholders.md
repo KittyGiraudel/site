@@ -1,5 +1,5 @@
 ---
-title: "Getting the most out of Sass placeholders"
+title: Getting the most out of Sass placeholders
 tags:
   - sass
   - placeholders

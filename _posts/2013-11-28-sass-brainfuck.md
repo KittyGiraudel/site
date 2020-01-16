@@ -1,5 +1,5 @@
 ---
-title: "Sass brainfuck"
+title: Sass brainfuck
 tags:
   - sass
   - brainfuck
