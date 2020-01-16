@@ -15,7 +15,7 @@ kramdown:
 
 # Pagination settings
 plugins: [jekyll-paginate]
-paginate_path: /blog/page:num
+paginate_path: /blog/:num
 paginate: 10
 
 # Posts settings
