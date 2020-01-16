@@ -264,7 +264,10 @@ $hl-black: #2d3436;
   background-color: #fff0f0;
 } /* Literal.String.Heredoc */
 
-.highlight .si {
+// Rouge incorrectly marks props spreading as an error (`{...props}`)
+.highlight .si,
+.language-jsx .err {
+  color: inherit;
   background-color: #e0e0e0;
 } /* Literal.String.Interpol */
 
