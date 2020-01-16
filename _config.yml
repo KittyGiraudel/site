@@ -20,7 +20,7 @@ paginate: 10
 
 # Posts settings
 permalink: pretty
-future: true
+future: false
 
 # Default settings
 defaults:
