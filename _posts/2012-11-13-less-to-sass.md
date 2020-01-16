@@ -98,7 +98,7 @@ for(@i = 0; @i < @nbElements; @i++) {
 }
 ```
 
-Well, this is absolutely not how LESS is handling loops. Actually **LESS doesn't handle loops**; you have to use a recursive function (a function calling itself) in order to reproduce the desired behaviour. This is what I ended up with:
+Well, this is absolutely not how LESS is handling loops. Actually **LESS doesn’t handle loops**; you have to use a recursive function (a function calling itself) in order to reproduce the desired behaviour. This is what I ended up with:
 
 ```less
 /* Define loop */
@@ -126,7 +126,7 @@ Things went very ugly when I wanted to manage @keyframes inside this for loop. Y
 
 ### LESS and concatenation
 
-I know concatenation can be somewhat annoying to handle depending on the language, but I was far from thinking LESS was so bad on this topic. First thing I discovered: **you can't use/concatenate a variable as a selector** without a work-around and **you absolutely can't use a variable as a property name** in LESS (at least as far as I can tell). Only as a value.
+I know concatenation can be somewhat annoying to handle depending on the language, but I was far from thinking LESS was so bad on this topic. First thing I discovered: **you can’t use/concatenate a variable as a selector** without a work-around and **you absolutely can’t use a variable as a property name** in LESS (at least as far as I can tell). Only as a value.
 
 ```less
 /* This works */
@@ -134,12 +134,12 @@ I know concatenation can be somewhat annoying to handle depending on the languag
   color: @my-value;
 }
 
-/* This doesn't work */
+/* This doesn’t work */
 @my-element {
   color: @my-value;
 }
 
-/* This doesn't work either */
+/* This doesn’t work either */
 @{my-element} {
   color: @my-value;
 }
@@ -149,7 +149,7 @@ I know concatenation can be somewhat annoying to handle depending on the languag
   color: @my-value;
 }
 
-/* And this can't work */
+/* And this can’t work */
 .my-element {
   @my-property: @my-value;
   @{my-property}: @my-value;
@@ -157,13 +157,13 @@ I know concatenation can be somewhat annoying to handle depending on the languag
 }
 ```
 
-Two very annoying things there: we definitely can't use variables as property names and the concatenation syntax is ugly as hell. `(~"@{variable}")`, really? But actually if you want my opinion, **the biggest mistake they made is to name variables with the at sign @**.
+Two very annoying things there: we definitely can’t use variables as property names and the concatenation syntax is ugly as hell. `(~"@{variable}")`, really? But actually if you want my opinion, **the biggest mistake they made is to name variables with the at sign @**.
 
 It is somewhat well thought out since CSS is using this sign for “alternative stuff” like media queries (@media), animation keyframes (@keyframes) and probably other things in the future (@page for example). I got the reasoning and I admire the will of sticking to the regular CSS syntax.
 
 But come on… How come they didn’t think about variable concatenations and @keyframes/@page uses inside mixins?
 
-Basically, LESS fails to understand @page and @keyframes inside mixins because it throws an exception according to [its source code](https://github.com/cloudhead/less.js/blob/b235734a11f646252db8f0947fee406ce67cf904/lib/less/parser.js#L1158). So you'll need two nested mixins: one handling your animation, the second one to handle the keyframes. Sounds heavy and complicated, well it is. So let’s say you want to create a custom mixin using @keyframes and vendor prefixes (not much, right?) this is what you have to do:
+Basically, LESS fails to understand @page and @keyframes inside mixins because it throws an exception according to [its source code](https://github.com/cloudhead/less.js/blob/b235734a11f646252db8f0947fee406ce67cf904/lib/less/parser.js#L1158). So you’ll need two nested mixins: one handling your animation, the second one to handle the keyframes. Sounds heavy and complicated, well it is. So let’s say you want to create a custom mixin using @keyframes and vendor prefixes (not much, right?) this is what you have to do:
 
 ```less
 @newline: ` '\n'`; /* Newline */
@@ -210,9 +210,9 @@ Basically, LESS fails to understand @page and @keyframes inside mixins because i
 .my-mixin('#whatever', name, other-parameters);
 ```
 
-Yeah, this is a complete nightmare. I'm not the one who wrote this; I've been searching for hours how to do this before finding [a very complete answer](https://stackoverflow.com/questions/13160991/chaining-keyframe-attributes-with-less) on StackOverflow leading to two others related topic with wonderful answers ([here](https://stackoverflow.com/questions/11551313/less-css-pass-mixin-as-a-parameter-to-another-mixin/11589227#11589227) and [there](https://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css)).
+Yeah, this is a complete nightmare. I’m not the one who wrote this; I’ve been searching for hours how to do this before finding [a very complete answer](https://stackoverflow.com/questions/13160991/chaining-keyframe-attributes-with-less) on StackOverflow leading to two others related topic with wonderful answers ([here](https://stackoverflow.com/questions/11551313/less-css-pass-mixin-as-a-parameter-to-another-mixin/11589227#11589227) and [there](https://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css)).
 
-_Note: the `.Local()` thing seems to be a keyword for "this" but I couldn't find any confirmation on this. If you have, please catch me on Twitter._
+_Note: the `.Local()` thing seems to be a keyword for "this" but I couldn’t find any confirmation on this. If you have, please catch me on Twitter._
 
 So basically, here is what there is to say ([still not from me](https://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css/11028622#11028622)):
 
@@ -222,13 +222,13 @@ So basically, here is what there is to say ([still not from me](https://stackove
 - But the curly braces do not match. To fix this, we can add a dummy selector in the end, which starts with `(~"} dummy") { .. }`. How ugly is that?
 - But wait, we already know that vendor prefixes are going to be added in sequel. So, let the final first selector be `(~"@{pre} @@{vendor}keyframes @{name} {@{newline}0%")`. What a nightmare…
 - `@{pre}` has to be `"}@{newline}"` for every keyframes block after the first one.
-- Instead of a dummy selector for the last curly brace, we define the keyframe mixins. We're using a guarded mixin to implement this.
+- Instead of a dummy selector for the last curly brace, we define the keyframe mixins. We’re using a guarded mixin to implement this.
 
-Anyway, this was waaaaay too much for me. **The point of CSS preprocessors is to easy the CSS development, not to make it harder**. So this is the moment I realized LESS wasn't _that_ good.
+Anyway, this was waaaaay too much for me. **The point of CSS preprocessors is to easy the CSS development, not to make it harder**. So this is the moment I realized LESS wasn’t _that_ good.
 
 ## Why I think Sass is better
 
-I won't make a complete and detailed comparison between Sass and LESS because some people did it very well already ([Chris Coyier](https://css-tricks.com/sass-vs-less/), [Kewin Powell](https://fr.slideshare.net/utbkevin/less-vs-sass-css-precompiler-showdown-14068991), etc.). I'll only cover the few points I talked about earlier.
+I won’t make a complete and detailed comparison between Sass and LESS because some people did it very well already ([Chris Coyier](https://css-tricks.com/sass-vs-less/), [Kewin Powell](https://fr.slideshare.net/utbkevin/less-vs-sass-css-precompiler-showdown-14068991), etc.). I’ll only cover the few points I talked about earlier.
 
 ### Sass and conditional statements
 
@@ -241,7 +241,7 @@ I won't make a complete and detailed comparison between Sass and LESS because so
 }
 ```
 
-This is the Sass syntax for conditional statements in a mixin. Okay, it may lack of some brackets but it's way easier than the LESS syntax in my opinion.
+This is the Sass syntax for conditional statements in a mixin. Okay, it may lack of some brackets but it’s way easier than the LESS syntax in my opinion.
 
 ### Sass and loops
 
@@ -251,7 +251,7 @@ This is the Sass syntax for conditional statements in a mixin. Okay, it may lack
 }
 ```
 
-Once again, it may lack of a few brackets but we still understand very well how it works. It's almost plain language: _"for variable i from 1 through 10, do this"_. It looks very intuitive to me.
+Once again, it may lack of a few brackets but we still understand very well how it works. It’s almost plain language: _"for variable i from 1 through 10, do this"_. It looks very intuitive to me.
 
 ### Sass and concatenation
 
@@ -276,7 +276,7 @@ Very quickly, here are the few things making me tell Sass is better than LESS. T
 
 ## LESS is not so bad
 
-Well, I've been moaning about LESS the whole article, but honestly this is not so bad. At least, it's no so bad if you don't plan on complicated and advanced things. Actually there are things LESS are better at, let me tell you my opinion about it:
+Well, I’ve been moaning about LESS the whole article, but honestly this is not so bad. At least, it’s no so bad if you don’t plan on complicated and advanced things. Actually there are things LESS are better at, let me tell you my opinion about it:
 
 - <span style="text-decoration: line-through;">LESS provides some really cool color functions (darken, lighten, spin, de/saturate, fade, fadein, fadeout, mix, contrast)</span> (so does Sass)
 - LESS has a nicer and more accessible documentation on [lesscss.org](http://lesscss.org/)

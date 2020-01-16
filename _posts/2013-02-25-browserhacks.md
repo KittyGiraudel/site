@@ -15,7 +15,7 @@ Hey people! Just a quick post to anounce the very recent launch of [Browserhacks
 
 There are two main reasons that lead us to create Browserhacks.
 
-The first one is that we couldn't find a place where all (at least many) hacks were gathered (or it was way too old; Netscape 4 says hi!). The best spot at the moment is [this great blog post by Paul Irish](https://paulirish.com/2009/browser-specific-css-hacks/), but it's a) a blog post; b) there are a lot of interesting stuff in the hundred of comments nobody will ever read anymore.
+The first one is that we couldn’t find a place where all (at least many) hacks were gathered (or it was way too old; Netscape 4 says hi!). The best spot at the moment is [this great blog post by Paul Irish](https://paulirish.com/2009/browser-specific-css-hacks/), but it’s a) a blog post; b) there are a lot of interesting stuff in the hundred of comments nobody will ever read anymore.
 
 Anyway, we thought it could be a good idea to get our hands a little dirty and merge [all](https://paulirish.com/2009/browser-specific-css-hacks/) [the](https://gist.github.com/983116) [cool sources](https://www.impressivewebs.com/ie10-css-hacks/) we could find on the topic into a lovely tool.
 
@@ -36,7 +36,7 @@ Even if in this project, Tim and I did most of the job. However everybody has pa
 
 ## How to use it?
 
-It couldn't be any simpler. If you ever happen to be stuck on a rendering bug in let's say… Internet Explorer 7 (only an example…), you could simply:
+It couldn’t be any simpler. If you ever happen to be stuck on a rendering bug in let’s say… Internet Explorer 7 (only an example…), you could simply:
 
 1. Come to [Browserhacks.com](http://browserhacks.com),
 2. Search for "IE7",
@@ -44,11 +44,11 @@ It couldn't be any simpler. If you ever happen to be stuck on a rendering bug in
 4. Paste it in your stylesheet,
 5. Keep CSS-ing worry-free!
 
-_If you don't feel like using this because you don't like CSS hacks (understandable), simply don't use it. However if you start trolling, God will kill many kittens._
+_If you don’t feel like using this because you don’t like CSS hacks (understandable), simply don’t use it. However if you start trolling, God will kill many kittens._
 
 ## Final words
 
-Browserhacks is built on a PHP/Backbone.js structure. The front-end stuff is built with [Tim's framework Crystallo](http://timpietrusky.github.com/crystallo/) and Sass.
+Browserhacks is built on a PHP/Backbone.js structure. The front-end stuff is built with [Tim’s framework Crystallo](http://timpietrusky.github.com/crystallo/) and Sass.
 
 The source code is available on [GitHub](https://github.com/4ae9b8/browserhacks). If you find a bug, want to make a suggestion or propose a hack, please open an issue in the [bug tracker](https://github.com/4ae9b8/browserhacks/issues?state=open). Many kudos to you!
 

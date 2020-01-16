@@ -6,7 +6,7 @@ tags:
   - mixin
 ---
 
-If you like to experiment or do a little bit of webdesign, then you have probably already tried to put elements on a circle. Unless you’re a CSS hacker, you've probably set a class/ID per item, then used `left` and `top` accordingly to position everything around the circle.
+If you like to experiment or do a little bit of webdesign, then you have probably already tried to put elements on a circle. Unless you’re a CSS hacker, you’ve probably set a class/ID per item, then used `left` and `top` accordingly to position everything around the circle.
 
 <figure class="figure">
 <img alt='5 images positioned along a circle with CSS' src='/assets/images/items-on-circle/5-items.png' />
@@ -135,7 +135,7 @@ Outputs (with 8 items and a `24em` large container)…
 
 ## What about old browsers?
 
-The main problem with this technic is that **IE8- doesn't support pseudo-selectors and CSS transforms**.
+The main problem with this technic is that **IE8- doesn’t support pseudo-selectors and CSS transforms**.
 
 The first thing is easily fixed either with a plugin like [Selectivizr](http://selectivizr.com/) to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it (with jQuery):
 

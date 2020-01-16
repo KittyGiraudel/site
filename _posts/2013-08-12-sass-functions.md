@@ -5,13 +5,13 @@ tags:
   - function
 ---
 
-We can do awesome things with Sass. It really pushes CSS to an upper level. More than that, it is so much fun to make Sass mixins and functions. Everytime I do something new, I'm like “whoaaa” even if it's a useless thing.
+We can do awesome things with Sass. It really pushes CSS to an upper level. More than that, it is so much fun to make Sass mixins and functions. Everytime I do something new, I’m like “whoaaa” even if it’s a useless thing.
 
 Mixins are usually quite easy to deal with. Functions are a little more underground in Sass. So what if we go through a couple of functions (including useless ones) to see how we can build an efficient ones?
 
 ## Strip unit function
 
-If you build mixins or just like to play around the syntax, you may have already faced a case where you'd need to strip the unit from a number. This is not very complicated:
+If you build mixins or just like to play around the syntax, you may have already faced a case where you’d need to strip the unit from a number. This is not very complicated:
 
 ```scss
 @function strip-unit($value) {
@@ -19,7 +19,7 @@ If you build mixins or just like to play around the syntax, you may have already
 }
 ```
 
-It might look weird at first but it's actually pretty logical: to get a number without its unit, you need to divide it by 1 of the same unit. To get `42` from `42em`, you need to divide `42em` by `1em`.
+It might look weird at first but it’s actually pretty logical: to get a number without its unit, you need to divide it by 1 of the same unit. To get `42` from `42em`, you need to divide `42em` by `1em`.
 
 So we divide our number by the same number multiplied by 0 to which we then add 1. With our example, here is what happen: `42em / 42em * 0 + 1`, so `42em / 0em + 1` so, `42em / 1em` so `42`.
 
@@ -61,7 +61,7 @@ Now back to our clamp function, here is what is going on:
 
 What I like with this method is it is very concise and damn efficient. With nested `if()`, there is no need of conditional statements, everything lies in one single line.
 
-Now what's the point of this function? I guess that could be useful when you want to be sure the number you pass to a function is between two values, like a percentage for color functions.
+Now what’s the point of this function? I guess that could be useful when you want to be sure the number you pass to a function is between two values, like a percentage for color functions.
 
 ```scss
 $pc: percentage(clamp($value, 0, 100));
@@ -84,7 +84,7 @@ This one is a function by Chris Eppstein himself in order to convert an angle in
 }
 ```
 
-Here is how it works: you give it a value and the unit you want to convert your value into (let's say `30grad` into `turn`). If both are recognized as valid units for the function, the current value is first converted into degrees, then converted from degrees into the asked unit. Damn clever and pretty useful!
+Here is how it works: you give it a value and the unit you want to convert your value into (let’s say `30grad` into `turn`). If both are recognized as valid units for the function, the current value is first converted into degrees, then converted from degrees into the asked unit. Damn clever and pretty useful!
 
 ```scss
 $angle-deg: 30deg;
@@ -114,7 +114,7 @@ $imported-once-files: ();
 }
 ```
 
-The idea is pretty simple: everytime you import a file, you store its name in a list (`$imported-once-files`). If its name is stored, then you can't import it a second time.
+The idea is pretty simple: everytime you import a file, you store its name in a list (`$imported-once-files`). If its name is stored, then you can’t import it a second time.
 
 It took me a couple of minutes to get the point of this function. Actually, this is how you should probably use it:
 
@@ -145,20 +145,20 @@ $imported-once-files: ();
 }
 ```
 
-Now if you add another `@import "component"` in `styles.scss`, since the whole content of `_component.scss` is wrapped in a conditional statement calling the function, its content won't be outputed a second time. Clever.
+Now if you add another `@import "component"` in `styles.scss`, since the whole content of `_component.scss` is wrapped in a conditional statement calling the function, its content won’t be outputed a second time. Clever.
 
 > We cannot import a file in a conditional statement.
 
 You probably wonder what prevents us from doing something like this:
 
 ```scss
-/* styles.scss - this doesn't work */
+/* styles.scss - this doesn’t work */
 @if import-once('component') {
   @import 'component';
 }
 ```
 
-Unfortunately, we cannot import a file in a conditional statement, [this just don't work](https://github.com/nex3/sass/issues/451). Here is the reason mentioned by Chris Eppstein:
+Unfortunately, we cannot import a file in a conditional statement, [this just don’t work](https://github.com/nex3/sass/issues/451). Here is the reason mentioned by Chris Eppstein:
 
 > It was never intended that `@import` would work in a conditional context, this makes it impossible for us to build a dependency tree for recompilation without fully executing the file -- which would be simply terrible for performance.
 
@@ -166,7 +166,7 @@ Unfortunately, we cannot import a file in a conditional statement, [this just do
 
 Sass 3.3 will introduce _maps_ which come very close to what we often call _associative arrays_. The point is to have a list of `key => value` pairs. It is already possible to emulate some kind of map workaround with nested lists.
 
-Let's have a look at the following list `$list: a b, c d, e f;`. `a` is kind of mapped of to `b`, `c` to `d`, and so on. Now what if you want to retreive `b` from `a` (the value from the key) or even `a` from `b` (the key from the value, which is less frequent)? This is where our function is coming on stage.
+Let’s have a look at the following list `$list: a b, c d, e f;`. `a` is kind of mapped of to `b`, `c` to `d`, and so on. Now what if you want to retreive `b` from `a` (the value from the key) or even `a` from `b` (the key from the value, which is less frequent)? This is where our function is coming on stage.
 
 ```scss
 @function match($haystack, $needle) {
@@ -192,4 +192,4 @@ $value: match($list, z); /* returns false */
 
 ## Final words
 
-That's all I got folk. Do you have any cool Sass functions you sometimes use, or even made just for the sake of it?
+That’s all I got folk. Do you have any cool Sass functions you sometimes use, or even made just for the sake of it?

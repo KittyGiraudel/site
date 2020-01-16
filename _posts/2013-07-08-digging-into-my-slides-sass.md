@@ -14,21 +14,21 @@ Just for your information, here are my slides in French powered by [Reveal.js](h
 
 ## What is Sass?
 
-I'll skip the part where I introduce myself, I don't think it has much point here. Instead, I'll go straight to the introduction to explain what is a CSS preprocessor.
+I’ll skip the part where I introduce myself, I don’t think it has much point here. Instead, I’ll go straight to the introduction to explain what is a CSS preprocessor.
 
-Sass -and pretty much any preprocessor- is a program aiming at extending a language in order to provide further features or a simplified syntax (or both). You can think of Sass as an extension of CSS; it adds to CSS what CSS doesn't have and what CSS needs (or might need).
+Sass -and pretty much any preprocessor- is a program aiming at extending a language in order to provide further features or a simplified syntax (or both). You can think of Sass as an extension of CSS; it adds to CSS what CSS doesn’t have and what CSS needs (or might need).
 
 Among other things, Sass can be very useful for:
 
-- **Variables**: it's been a while since we first asked for variables in CSS. They'll come native some day but meanwhile, we have to rely on CSS preprocessors.
+- **Variables**: it’s been a while since we first asked for variables in CSS. They’ll come native some day but meanwhile, we have to rely on CSS preprocessors.
 - **Nesting**: it is the ability to nest rules within each others to create expanded CSS selectors. Can be very interesting to avoid code repetition. Remember the [inception rule though](http://thesassway.com/beginner/the-inception-rule).
-- **Functions**: I don't think functions deserve an explanation. Give it parameters, it returns a result you can store in a variable or use as a value.
+- **Functions**: I don’t think functions deserve an explanation. Give it parameters, it returns a result you can store in a variable or use as a value.
 - **Mixins**: same as functions except it outputs code instead of returning a result. Very useful to output chuncks of code depending on some parameters (mixin arguments).
 - **Color functions**: every preprocessor nowadays comes with a bunch of functions to ease color management (lighten, darken, transparentize, mix, complementary…). Very cool to avoid repeated back-and-forths between the IDE and Photoshop and having 50 shades of grey when you only need one (see what I did there?). Also easier to read than hexadecimal in my opinion.
 - **File concatenation**: we often want to split our large stylesheets into several smaller ones but doing so increases the number of HTTP requests, thus the time the page need to load. Sass makes this possible: multiple files in development environment, one single file compressed in production.
-- And it's also very cool for a bunch of other things like responsive web design, modular architecture, calculations, namespaces, and so much more…
+- And it’s also very cool for a bunch of other things like responsive web design, modular architecture, calculations, namespaces, and so much more…
 
-All of this is awesome. But when you just get started with Sass, you don't really know what to do. So you declare a couple of variables, maybe make a mixin or two that you don't really need and that's pretty much it.
+All of this is awesome. But when you just get started with Sass, you don’t really know what to do. So you declare a couple of variables, maybe make a mixin or two that you don’t really need and that’s pretty much it.
 
 My talk aimed at giving some hints to get started with Sass, along with a collection of usecases and code snippets to show how to push stylesheets to an upper level.
 
@@ -36,7 +36,7 @@ My talk aimed at giving some hints to get started with Sass, along with a collec
 
 The `@extend` feature has to be the one which made Sass so popular compared to other CSS preprocessors including Less. Basically, you can make a selector inherits styles from another selector. It comes with abstract classes (also called placeholders), classes prefixed by a `%` symbol instead of a dot, that are not compiled in the final stylesheet, thus that cannot be used in the markup. Their use is exclusive to the stylesheet.
 
-As a very simple example, let's make a placeholder of the [clearfix method by Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/).
+As a very simple example, let’s make a placeholder of the [clearfix method by Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/).
 
 ```scss
 %clearfix:after {
@@ -60,7 +60,7 @@ Outputs:
 }
 ```
 
-This example shows how we can use `@extend` and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you're familiar with [Twitter Bootstrap](https://twitter.github.io/bootstrap/components.html#alerts), then you'll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).
+This example shows how we can use `@extend` and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you’re familiar with [Twitter Bootstrap](https://twitter.github.io/bootstrap/components.html#alerts), then you’ll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).
 
 <pre class="codepen" data-height="320" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
 
@@ -70,7 +70,7 @@ With vanilla CSS, you have 3 ways to do this:
 1. Targets all messages with an attribute selector like `[class^="message-"]`. Clever, but attribute selectors are quite greedy peformance-speaking. Probably what I would do without Sass anyway.
 1. You do it the jerk way with only 4 classes, repeating the shared styles in each of them. Not cool at all.
 
-Let's see how we can Sass it:
+Let’s see how we can Sass it:
 
 ```scss
 %message {
@@ -137,7 +137,7 @@ Outputs:
 }
 ```
 
-No styles repeated, no heavy selector, only one class assigned in the markup. Pretty neat. However, even if there is no repeated styles in the final CSS, there are repeated lines in the Sass stylesheet. They are repeated because the `$color` variable changes in the scope. Isn't this the perfect usecase for a mixin?
+No styles repeated, no heavy selector, only one class assigned in the markup. Pretty neat. However, even if there is no repeated styles in the final CSS, there are repeated lines in the Sass stylesheet. They are repeated because the `$color` variable changes in the scope. Isn’t this the perfect usecase for a mixin?
 
 ```scss
 @mixin message($color) {
@@ -169,9 +169,9 @@ Quite cool, right? And this is only a very easy example of what you can do with 
 
 ## Sass and REM <a href="#rem">#</h2>
 
-REM (root EM) is awesome. Problem is [IE8 doesn't understand it](https://caniuse.com/#feat=rem), and we cannot cross it out of our support chart yet. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.
+REM (root EM) is awesome. Problem is [IE8 doesn’t understand it](https://caniuse.com/#feat=rem), and we cannot cross it out of our support chart yet. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.
 
-But duplicating every `font-size` declaration can be tedious and converting REM to PX can be annoying. Let's do it with Sass!
+But duplicating every `font-size` declaration can be tedious and converting REM to PX can be annoying. Let’s do it with Sass!
 
 ```scss
 @mixin rem($value, $base: 16) {
@@ -193,7 +193,7 @@ Outputs:
 }
 ```
 
-Calculations and fallbacks are handled by Sass. What about pushing things a little further by enabling some sort of flag for IE8 instead of always outputing the PX line? Let's say you are using this in a constantly evolving project or in a library or something. You might want to easily enable or disable IE8 support.
+Calculations and fallbacks are handled by Sass. What about pushing things a little further by enabling some sort of flag for IE8 instead of always outputing the PX line? Let’s say you are using this in a constantly evolving project or in a library or something. You might want to easily enable or disable IE8 support.
 
 Simple enough: wrap the PX line in a conditional statement (`@if`) depending on a boolean you initialize either at the top of your stylesheet or in a configuration file.
 
@@ -225,7 +225,7 @@ On topic, I have writen a blog post about a robust and extensive PX/REM Sass mix
 
 ## Media queries made easy
 
-I don't know for you but I don't really like manipulating media queries. The syntax isn't very typing-friendly, they require values, braces and all. Plus, I really like to manage breakpoints with keywords instead of values. Sass makes it happening; please consider the following mixin.
+I don’t know for you but I don’t really like manipulating media queries. The syntax isn’t very typing-friendly, they require values, braces and all. Plus, I really like to manage breakpoints with keywords instead of values. Sass makes it happening; please consider the following mixin.
 
 ```scss
 @mixin mq($keyword) {
@@ -302,7 +302,7 @@ The Sass way makes it way easier to debug and update in my opinion; lisibility i
 
 ## Simple responsive grid with Sass <a href="#grid">#</h2>
 
-Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes [you just want to build your own](https://css-tricks.com/dont-overthink-it-grids/). Especially when you don't need a whole Rube Goldberg machine for your simple layout. Let's see how we can build a very simple grid system in Sass in about 12 lines:
+Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes [you just want to build your own](https://css-tricks.com/dont-overthink-it-grids/). Especially when you don’t need a whole Rube Goldberg machine for your simple layout. Let’s see how we can build a very simple grid system in Sass in about 12 lines:
 
 ```scss
 /* Your variables */
@@ -328,7 +328,7 @@ $gutter-pct: ($gutter-width / $wrap-width) * 100;
 }
 ```
 
-Now let's see what the code does exactly:
+Now let’s see what the code does exactly:
 
 - You have to define the number of columns you want your grid to be based on, the max-width of your container and the width of a column.
 - Gutter width will be automagically calculated based on the 3 values you previously set.
@@ -348,7 +348,7 @@ CSS counters are part of the [CSS 2.1 "Generated content" module](https://www.w3
 
 Now, what if you want nested counters? Where headings level 1 are numbered like 1, 2, 3, headings level 2 are numbered x.1, x.2, x.3, headings level 3 are numbered x.x.1, x.x.2, x.x.3…
 
-Doing this with vanilla CSS isn't too hard but require code repetition and quite a lot of lines. With a Sass `@for` loop, we can do it with less than 10 lines of code.
+Doing this with vanilla CSS isn’t too hard but require code repetition and quite a lot of lines. With a Sass `@for` loop, we can do it with less than 10 lines of code.
 
 ```scss
 /* Initialize counters */
@@ -377,7 +377,7 @@ $nest: ();
 }
 ```
 
-The code might be complicated to understand but it's really not that hard once you're familiar with Sass. Now, we can push things further by turning this shit into a mixin in order to make it both clean and reusable.
+The code might be complicated to understand but it’s really not that hard once you’re familiar with Sass. Now, we can push things further by turning this shit into a mixin in order to make it both clean and reusable.
 
 ```scss
 @mixin numbering($from: 1, $to: 6) {
@@ -494,11 +494,11 @@ Outputs:
 }
 ```
 
-I finished my talk with a last example with lists and loops, to show how to build an "active menu" without JavaScript or server-side; only CSS. To put it simple, it relies on the page name matching and the link name. So the link to home page is highlighted if it's a child of `.home` (class on html element); the link to the contact page is highlighted if it's a child of the `.contact` page. You get the idea.
+I finished my talk with a last example with lists and loops, to show how to build an "active menu" without JavaScript or server-side; only CSS. To put it simple, it relies on the page name matching and the link name. So the link to home page is highlighted if it’s a child of `.home` (class on html element); the link to the contact page is highlighted if it’s a child of the `.contact` page. You get the idea.
 
 To show the difference between nice and very nice Sass, I made two versions of this one. The first one is cool but meh, the second one is clever as hell (if I may).
 
-Let's save the best for last. The idea behind the first version is to loop through the pages and output styles for each one of them.
+Let’s save the best for last. The idea behind the first version is to loop through the pages and output styles for each one of them.
 
 ```scss
 @each $item in home, about, products, contact {
@@ -556,21 +556,21 @@ This is hot! Instead of outputing shit in the loop, we use it to create a select
 
 **Is there a performance difference between `.message` and `.message-error, .message-ok, .message-info, .message-warn`?**
 
-None. The only difference there is, is that in the first case you have to apply 2 classes to your element instead of one. Per se, having to use 2 classes on the same element isn't a problem at all.
+None. The only difference there is, is that in the first case you have to apply 2 classes to your element instead of one. Per se, having to use 2 classes on the same element isn’t a problem at all.
 
-However what can be considered odd is that the 2 classes are co-dependant, meaning they only make sense when they are together. `.message` on itself won't do much since it has no color chart. Meanwhile `.message-error` will look ugly since it lacks basic styles like padding and such.
+However what can be considered odd is that the 2 classes are co-dependant, meaning they only make sense when they are together. `.message` on itself won’t do much since it has no color chart. Meanwhile `.message-error` will look ugly since it lacks basic styles like padding and such.
 
-**Your @media mixin outputs a media-query block every time you use it. Ain't you afraid of performance issues?**
+**Your @media mixin outputs a media-query block every time you use it. Ain’t you afraid of performance issues?**
 
-That's true. Sass doesn't automatically merge media queries rules [yet](https://github.com/nex3/sass/issues/316). However, [tests have been done](https://sasscast.tumblr.com/post/38673939456/sass-and-media-queries) and they showed that once GZipped, there was no difference between duplicated and merged @media queries.
+That’s true. Sass doesn’t automatically merge media queries rules [yet](https://github.com/nex3/sass/issues/316). However, [tests have been done](https://sasscast.tumblr.com/post/38673939456/sass-and-media-queries) and they showed that once GZipped, there was no difference between duplicated and merged @media queries.
 
 > "… we hashed out whether there were performance implications of combining vs scattering Media Queries and came to the conclusion that the difference, while ugly, is minimal at worst, essentially non-existent at best."
 
-In any case, if you feel dirty having duplicated media queries in your final CSS even if it doesn't make any difference, you can still use [this Ruby gem](https://github.com/aaronjensen/sass-media_query_combiner) to merge them. Please note merging media queries may mean reordering CSS which may involve some specificity issues. More tests needed.
+In any case, if you feel dirty having duplicated media queries in your final CSS even if it doesn’t make any difference, you can still use [this Ruby gem](https://github.com/aaronjensen/sass-media_query_combiner) to merge them. Please note merging media queries may mean reordering CSS which may involve some specificity issues. More tests needed.
 
 **[Compass](https://compass-style.org/) or [Bourbon](https://bourbon.io/)?**
 
-Well, frankly it's up to you. However note that the Compass team works directly with the Sass team so they are and will always be up to date. Bourbon otherwise is a side-project which isn't affiliated with Sass in any way (well, except for the obvious).
+Well, frankly it’s up to you. However note that the Compass team works directly with the Sass team so they are and will always be up to date. Bourbon otherwise is a side-project which isn’t affiliated with Sass in any way (well, except for the obvious).
 
 Moreover, Compass comes with a [sprite generator](https://compass-style.org/reference/compass/helpers/sprites/), [Blueprint](https://compass-style.org/reference/blueprint/) for your grids, a [vertical rhytm module](https://compass-style.org/reference/compass/typography/vertical_rhythm/) and a bunch of other cool things like [math functions](https://compass-style.org/reference/compass/helpers/math/), [image dimensions](https://compass-style.org/reference/compass/helpers/image-dimensions/), and [much more](https://compass-style.org/reference/compass/helpers/)…
 
@@ -578,10 +578,10 @@ So if you want my opinion: definitely Compass.
 
 **Do you think we will ever be able to connect Sass to some kind of database to auto-supply lists or something?**
 
-Honestly, I don't think so but I could be wrong. I know Sass developers want to do the right thing and try to stick as much as possible to the "CSS scope" (because in the end what is compiled is CSS). Connecting Sass to a database to generate lists then do things in Sass with these lists like [this pure Sass chart](https://codepen.io/thebabydino/pen/lHqbz) would probably be out of line (yet awesomely clever).
+Honestly, I don’t think so but I could be wrong. I know Sass developers want to do the right thing and try to stick as much as possible to the "CSS scope" (because in the end what is compiled is CSS). Connecting Sass to a database to generate lists then do things in Sass with these lists like [this pure Sass chart](https://codepen.io/thebabydino/pen/lHqbz) would probably be out of line (yet awesomely clever).
 
 However they are including awesome features in Sass starting with the next version (3.3) which should include sourcemaps, a huge improvements to the parent selector (`&`), inner-string manipulation like `str-index()`…
 
 ## Final words
 
-I think I've covered pretty much everything I talked about at KiwiParty, even more (I'm not limited by time on my blog). If you feel like some parts deserve deeper explanations, be sure to ask.
+I think I’ve covered pretty much everything I talked about at KiwiParty, even more (I’m not limited by time on my blog). If you feel like some parts deserve deeper explanations, be sure to ask.

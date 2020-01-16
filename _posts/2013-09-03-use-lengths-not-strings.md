@@ -7,7 +7,7 @@ tags:
   - lengths
 ---
 
-This is something I see in a lot of Sass demos and tutorials. People tend to use strings instead of actual lengths, and if it's okay in most cases, there are a couple of situations when it is not anymore.
+This is something I see in a lot of Sass demos and tutorials. People tend to use strings instead of actual lengths, and if it’s okay in most cases, there are a couple of situations when it is not anymore.
 
 But first, let me introduce the topic because you probably wonder what the hell I am talking about. Nothing better than a little example for this.
 
@@ -22,11 +22,11 @@ whatever {
 
 I want to play a game… This example: working or not working?
 
-Well obviously, it works like a charm. That's probably why you can see it so much in so many Sass demos.
+Well obviously, it works like a charm. That’s probably why you can see it so much in so many Sass demos.
 
 ## The problem
 
-Then you ask _"if it works, why bother?"_. That's actually a very fair question. Let's continue our example, shall we? What if we apply &mdash; let's say &mdash; the `round()` function to our length?
+Then you ask _"if it works, why bother?"_. That’s actually a very fair question. Let’s continue our example, shall we? What if we apply &mdash; let’s say &mdash; the `round()` function to our length?
 
 ```scss
 $rounded-length: round($length);
@@ -38,9 +38,9 @@ Aaaaaand… bummer.
 
 Same problem with any function requiring a number (lengths are numbers in Sass) like `abs()`, `ceil()`, `floor()`, `min()`… Even worse! The `unit()` function will also fail to return the unit.
 
-This is because **there is no unit** since it's now a string. When you append a string (in this case _em_) to a number (_13.37_), you implicitly cast it into a string.
+This is because **there is no unit** since it’s now a string. When you append a string (in this case _em_) to a number (_13.37_), you implicitly cast it into a string.
 
-Indeed, if you check the type of your variable with the `type-of()` function, you'll see it's not a number but a string.
+Indeed, if you check the type of your variable with the `type-of()` function, you’ll see it’s not a number but a string.
 
 ```scss
 type-of($length); // string

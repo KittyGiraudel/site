@@ -8,7 +8,7 @@ tags:
 
 > **Edit (2015/09/09):** I just (re-)discovered [ZenHub](https://www.zenhub.io/) which is a highly advanced Google Chrome extension for Agile project management **inside** GitHub. Basically, ZenHub brings a lot of features inside the GitHub UI by connecting to your GitHub account (like the usual “Sign in with GitHub” button does), such as Scrum boards, burndown charts, as well as a lot of tiny yet handy extra features. We will try it seriously on an upcoming project at Edenspiekermann, but it definitely goes in the way of keeping things inside GitHub, including project management.
 
-This article is the result of a discussion about development workflow with one of our Scrum Masters at Edenspiekermann. Therefore, it assumes you have basic notions of [Agile](https://en.wikipedia.org/wiki/Agile_software_development) and [Scrum](<https://en.wikipedia.org/wiki/Scrum_(software_development)>). If you don't, you still might benefit from reading the article but might be missing some keys to fully appreciate it. It also uses (although does not rely on) the [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow/) workflow.
+This article is the result of a discussion about development workflow with one of our Scrum Masters at Edenspiekermann. Therefore, it assumes you have basic notions of [Agile](https://en.wikipedia.org/wiki/Agile_software_development) and [Scrum](<https://en.wikipedia.org/wiki/Scrum_(software_development)>). If you don’t, you still might benefit from reading the article but might be missing some keys to fully appreciate it. It also uses (although does not rely on) the [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow/) workflow.
 
 In this short document, I try to describe what I feel would be a great workflow for me, using [GitHub](https://github.com) as a central point rather than having a collection of tools. Obviously, this standpoint is highly developer-centric and might not fit all teams / projects.
 
@@ -30,7 +30,7 @@ Given how long this article is, here is a table of contents so you can quickly j
 
 ## Introduction
 
-Below is a short and informal methodology on how to use [GitHub](https://github.com) as a project workflow, heavily relying on [pull-requests](https://help.github.com/articles/using-pull-requests/). While it might sound scary as first, this approach actually has a lot of benefits that we'll investigate further in the next section.
+Below is a short and informal methodology on how to use [GitHub](https://github.com) as a project workflow, heavily relying on [pull-requests](https://help.github.com/articles/using-pull-requests/). While it might sound scary as first, this approach actually has a lot of benefits that we’ll investigate further in the next section.
 
 The rough idea is that at the beginning of a [sprint](http://scrummethodology.com/scrum-sprint/), we create a(n empty) pull-request for all [user stories](http://scrummethodology.com/scrum-user-stories/). In the description of the pull-request, we write tasks in (GitHub Flavoured) Markdown using [GitHub support for checkboxes](https://github.com/blog/1375%0A-task-lists-in-gfm-issues-pulls-comments). Then, affected developers commit their work to this branch, progressively checking out the tasks. Once all tasks from a pull-request have been treated, this one can be reviewed then merged.
 
@@ -38,7 +38,7 @@ The rough idea is that at the beginning of a [sprint](http://scrummethodology.co
 
 - The code, code reviews, stories and tasks are all centralized in the same place, making it very easy for a developer to jump from one thing to the other.
 - [ScrumDo](https://app.scrumdo.com) and other process tools are not always the best place for discussions and commenting, while GitHub is actually meant for this.
-- GitHub has email notifications, which is helpful to know what's going in the project and where a developer might need to get involved.
+- GitHub has email notifications, which is helpful to know what’s going in the project and where a developer might need to get involved.
 - GitHub has a lot of handy features, such as labels, Markdown, user pinging and code integration, which makes it a good tool for managing code projects.
 - Bonus: [Slack](https://slack.com) has GitHub integration, making the whole process seamless.
 
@@ -71,13 +71,13 @@ git commit --allow-empty -m "Feature 42: Basic teaser component"
 
 The point of this commit is to initialize the branch and the feature so that a pull-request can be created on GitHub.
 
-At this point, head onto the home of the GitHub repository and click on the big ol' green button. Then, create a pull-request from the relevant branch to the main one (automatically selected). That's it! For more details about how to name and fill the pull-request, refer to the next sections.
+At this point, head onto the home of the GitHub repository and click on the big ol' green button. Then, create a pull-request from the relevant branch to the main one (automatically selected). That’s it! For more details about how to name and fill the pull-request, refer to the next sections.
 
 ## Naming the pull-request
 
-Name the pull-request after the feature name, and prefix it with `[WIP]` for _Work In Progress_. This will then be changed to `[RFR]` for _Ready For Review_ once the story is done (see [Reviewing the pull-request](#reviewing-the-pull-request)). If it is someone's specific job to merge pull-requests and deploy, you can also change the name for `[RFM]` (for _Ready For Merging_) after the reviewing process so it's clear that the feature can be safely merged.
+Name the pull-request after the feature name, and prefix it with `[WIP]` for _Work In Progress_. This will then be changed to `[RFR]` for _Ready For Review_ once the story is done (see [Reviewing the pull-request](#reviewing-the-pull-request)). If it is someone’s specific job to merge pull-requests and deploy, you can also change the name for `[RFM]` (for _Ready For Merging_) after the reviewing process so it’s clear that the feature can be safely merged.
 
-_Note: depending on your usage of GitHub labels, you can also ditch this part and use `WIP`, `RFR` and `RFM` labels instead. I prefer saving labels for other things and stick the status in the PR name but it's really up to you._
+_Note: depending on your usage of GitHub labels, you can also ditch this part and use `WIP`, `RFR` and `RFM` labels instead. I prefer saving labels for other things and stick the status in the PR name but it’s really up to you._
 
 ## Filling the description
 

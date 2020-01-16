@@ -46,7 +46,7 @@ So basically, my central stylesheet (`styles.min.scss` compiled into `styles.min
 
 The first two lines are Compass related imports. It doesn’t compile into the final CSS. They enable use of Compass embedded mixins, sparing me from writing vendor prefixes. The last line imports the 5 files into a single one (top to bottom).
 
-_Note: when importing Sass/SCSS files, you don't need to add underscores or file extensions._
+_Note: when importing Sass/SCSS files, you don’t need to add underscores or file extensions._
 
 ## KISS (Keep It Simple Stupid)
 
@@ -115,7 +115,7 @@ Helpers are classes you can add to any element to have a quick effect without ha
 
 I have quite a few helper classes, some very useful, other a bit less but I use them all in the site. This kind of collection grow up as the project grow so for now it’s kind of small.
 
-Let's start with the basics:
+Let’s start with the basics:
 
 * `%clearfix` is an invisible class meant to be extended (@extend) to clear floats in an element containing only floated elements
 * `.icon-left` and `.icon-right` are used on inline icons to prevent them from sticking the text
@@ -160,7 +160,7 @@ Then, two helpers to give content specific meaning:
 }
 ```
 
-And now let's dig into more interesting stuff. I have built some useful classes to pull images or quotes out of the flow and put them on the side in order to emphasize them. Both are built in the same way:
+And now let’s dig into more interesting stuff. I have built some useful classes to pull images or quotes out of the flow and put them on the side in order to emphasize them. Both are built in the same way:
 
 * `%pull-quote` and `%pull-image` are invisible classes; it means they won’t be compiled in the stylesheet, they are only here to be extended
 * `.pull-quote--left`, `.pull-quote--right`, `.pull-image--left` and `.pull-image--right` respectively inherit (`@extend`) styles from `%pull-quote` and `%pull-image`
@@ -348,6 +348,6 @@ This used to be in the 1140px stylesheet but since I don’t use anymore, I move
 
 ## Final words
 
-I deliberately skipped the rest of the stylesheet since I think it's not the most interesting part in my opinion. It mostly consists on setting styles for various content elements like paragraphs, lists, tables, images, titles, and so on. Plus, it's classic CSS, not really SCSS magic.
+I deliberately skipped the rest of the stylesheet since I think it’s not the most interesting part in my opinion. It mostly consists on setting styles for various content elements like paragraphs, lists, tables, images, titles, and so on. Plus, it’s classic CSS, not really SCSS magic.
 
 I think I have covered most of my Sass structure. If you feel like something could be improved or if you have any question, please be sure to drop a comment. :)

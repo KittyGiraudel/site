@@ -115,7 +115,7 @@ Holy moly!
 
 ## Cleaning the animation
 
-Before even thinking about Sass, let's lighten the animation a little bit. As we can see from the previous code block, some keyframes are identical. Let's combine them to make the whole animation simpler:
+Before even thinking about Sass, let’s lighten the animation a little bit. As we can see from the previous code block, some keyframes are identical. Let’s combine them to make the whole animation simpler:
 
 ```css
 @keyframes carousel {
@@ -167,13 +167,13 @@ Before even thinking about Sass, let's lighten the animation a little bit. As we
 }
 ```
 
-Fine! That's less code to output.
+Fine! That’s less code to output.
 
 ## Bringing Sass in the game
 
-Keyframes are typically the kind of things you can optimize. Because they are heavily bound to numbers and loop iterations, it is usually quite easy to generate a repetitive `@keyframes` animation with a loop. Let's try that, shall we?
+Keyframes are typically the kind of things you can optimize. Because they are heavily bound to numbers and loop iterations, it is usually quite easy to generate a repetitive `@keyframes` animation with a loop. Let’s try that, shall we?
 
-First, bring the basics. For sake of consistency, I kept Harry's variable names: `n`, `x` and `y`. Let's not forget their meaning:
+First, bring the basics. For sake of consistency, I kept Harry’s variable names: `n`, `x` and `y`. Let’s not forget their meaning:
 
 * `$n` is the number of frames in the animation
 * `$x` is the percentage of the animation spent static for each frame. Logic wants it to be less than `100% / $n` then.
@@ -196,7 +196,7 @@ Now, we need to open the `@keyframes` directive, then a loop.
 }
 ```
 
-Inside the loop, we will use Harry's formulas to compute each pair of identical keyframes (for instance, 41.25% and 58.75%):
+Inside the loop, we will use Harry’s formulas to compute each pair of identical keyframes (for instance, 41.25% and 58.75%):
 
 ```scss
 $current-frame: ($i * $x) + ($i * $y);
@@ -205,7 +205,7 @@ $next-frame: (($i + 1) * $x) + ($i + $y);
 
 _Note: braces are completely optional here, we just use them to keep things clean._
 
-And now, we use those variables to generate a keyframe inside the loop. Let's not forget to interpolate them so they are correctly output in the resulting CSS (more informations about [Sass interpolation on Tuts+](https://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)).
+And now, we use those variables to generate a keyframe inside the loop. Let’s not forget to interpolate them so they are correctly output in the resulting CSS (more informations about [Sass interpolation on Tuts+](https://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)).
 
 ```scss
 #{$current-frame,
@@ -215,7 +215,7 @@ $next-frame} {
 }
 ```
 
-Quite simple, isn't it? For the first loop run, this would output:
+Quite simple, isn’t it? For the first loop run, this would output:
 
 ```css
 0%,
@@ -225,7 +225,7 @@ Quite simple, isn't it? For the first loop run, this would output:
 }
 ```
 
-All we have left is outputing what Harry calls _an halfway frame_ to add a little blur effect. Then again, we'll use his formula to compute the keyframe selectors:
+All we have left is outputing what Harry calls _an halfway frame_ to add a little blur effect. Then again, we’ll use his formula to compute the keyframe selectors:
 
 ```scss
 $halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
@@ -279,11 +279,11 @@ $y: (100% - $n * $x) / ($n - 1);
 
 ## Pushing things further with a mixin
 
-So far so good? It works pretty well in automating Harry's code so he does not have to compute everything from scratch again if he ever wants to display &mdash;let's say&mdash; 4 slides instead of 5, or wants the animation to be quicker or longer.
+So far so good? It works pretty well in automating Harry’s code so he does not have to compute everything from scratch again if he ever wants to display &mdash;let’s say&mdash; 4 slides instead of 5, or wants the animation to be quicker or longer.
 
-But we are basically polluting the global scope with our variables. Also, if he needs another carousel animation elsewhere, we will need to find other variable names, and copy the whole content of the animation into the new one. That's definitely not ideal.
+But we are basically polluting the global scope with our variables. Also, if he needs another carousel animation elsewhere, we will need to find other variable names, and copy the whole content of the animation into the new one. That’s definitely not ideal.
 
-So we have variables and possible duplicated content: [perfect case for a mixin](https://www.sitepoint.com/sass-mixin-placeholder/)! In order to make things easier to understand, we will replace those one-letter variable names with actual words if you don't mind:
+So we have variables and possible duplicated content: [perfect case for a mixin](https://www.sitepoint.com/sass-mixin-placeholder/)! In order to make things easier to understand, we will replace those one-letter variable names with actual words if you don’t mind:
 
 * `$n` becomes `$frames`
 * `$x` becomes `$static`
@@ -299,7 +299,7 @@ Also, because a mixin can be called several times with different arguments, we s
 }
 ```
 
-Since it is now a mixin, it can be called from several places: probably the root level, but there is nothing preventing us from including it from within a selector. Because `@`-directives need to be stand at root level in CSS, we'll use `@at-root` from Sass to make sure the animation gets output at root level.
+Since it is now a mixin, it can be called from several places: probably the root level, but there is nothing preventing us from including it from within a selector. Because `@`-directives need to be stand at root level in CSS, we’ll use `@at-root` from Sass to make sure the animation gets output at root level.
 
 ```scss
 @mixin carousel-animation($frames, $static, $name: 'carousel') {
@@ -380,7 +380,7 @@ Pretty neat, heh?
 
 ## Final thoughts
 
-That's pretty much it. While Harry's initial code is easier to read for the human eye, it's really not ideal when it comes to maintenance. That's where Sass can comes in handy, automating the whole thing with calculations and loops. It does make the code a little more complex, but it also makes it easier to maintain and update for future use cases.
+That’s pretty much it. While Harry’s initial code is easier to read for the human eye, it’s really not ideal when it comes to maintenance. That’s where Sass can comes in handy, automating the whole thing with calculations and loops. It does make the code a little more complex, but it also makes it easier to maintain and update for future use cases.
 
 You can play with the code on SassMeister:
 

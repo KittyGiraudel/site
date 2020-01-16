@@ -6,9 +6,9 @@ tags:
   - riddle
 ---
 
-Hi people! What do you think of a little puzzle to wake up your neurons? I think I've found something tricky enough to worth a blog post and a little challenge about it.
+Hi people! What do you think of a little puzzle to wake up your neurons? I think I’ve found something tricky enough to worth a blog post and a little challenge about it.
 
-First of all, this will be a LESS puzzle, so if you're really unfamiliar with this CSS preprocessor, I think you might feel a bit lost here. Sorry! :(
+First of all, this will be a LESS puzzle, so if you’re really unfamiliar with this CSS preprocessor, I think you might feel a bit lost here. Sorry! :(
 
 ## What are the requirements
 
@@ -38,7 +38,7 @@ h1 {
 }
 ```
 
-I struggled about one hour on this and couldn't make it work. All my respect to the one who will find the solution.
+I struggled about one hour on this and couldn’t make it work. All my respect to the one who will find the solution.
 
 Good luck!
 

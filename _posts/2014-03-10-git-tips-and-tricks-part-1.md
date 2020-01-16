@@ -9,21 +9,21 @@ tags:
 
 <!-- -->
 
-> Hey people! The following is the first post of a series written by my dear brother Loïc, Git expert at Best Of Media (Tom's Guide & Tom's Hardware). I'll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!
+> Hey people! The following is the first post of a series written by my dear brother Loïc, Git expert at Best Of Media (Tom’s Guide & Tom’s Hardware). I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!
 
-Hi people! Today, I'm gonna share with you some Git tips & tricks I've already shared with my workmates at Best Of Media. But before even starting let's never forget the more important laws of Git.
+Hi people! Today, I’m gonna share with you some Git tips & tricks I’ve already shared with my workmates at Best Of Media. But before even starting let’s never forget the more important laws of Git.
 
-**Law #1**: **each commit must let the branch into a stable state**. You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn't be splitted into several commits. For instance, don't put the HTML, CSS and JS of a new feature in three separate commits: the functionality requires all of them to work so they should all belong to the same commit. If you have to pause your work (time to grab lunch, go home, switch to another thing or whatever), create a temporary commit which will be enhanced later.
+**Law #1**: **each commit must let the branch into a stable state**. You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn’t be splitted into several commits. For instance, don’t put the HTML, CSS and JS of a new feature in three separate commits: the functionality requires all of them to work so they should all belong to the same commit. If you have to pause your work (time to grab lunch, go home, switch to another thing or whatever), create a temporary commit which will be enhanced later.
 
-**Law #2**: **each commit has only one purpose**. If you see a bug while you're working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.
+**Law #2**: **each commit has only one purpose**. If you see a bug while you’re working on a new functionality, try to fix this bug in a separate commit to be able to revert (or cherry-pick) one of both commit if needed.
 
-Ok, now let's start with the real tips & tricks…
+Ok, now let’s start with the real tips & tricks…
 
 ## Use an awesome prompt
 
 > Each commit should leave the branch stable.
 
-If you have to often switch from one branch to another (like a Git monkey), having a great prompt is quite useful to know what is the current branch you're working on, if you have modified some files, if you have some commits to push or to pull from the server, and so on.
+If you have to often switch from one branch to another (like a Git monkey), having a great prompt is quite useful to know what is the current branch you’re working on, if you have modified some files, if you have some commits to push or to pull from the server, and so on.
 
 My favorite so far has been created by [Tung Nguyen](https://gist.github.com/tung) and can be found [right here](https://gist.github.com/tung/409780).
 
@@ -40,7 +40,7 @@ This prompt displays:
 <figcaption>A Nguyen flavoured Git prompt</figcaption>
 </figure>
 
-In this image, I'm working on the "myFork" branch and I have modified and/or staged some files but I don't have any commit to push or to pull.
+In this image, I’m working on the "myFork" branch and I have modified and/or staged some files but I don’t have any commit to push or to pull.
 
 To install this prompt in a linux environment, just download it somewhere and update your ~/.bashrc file to add this line:
 
@@ -48,7 +48,7 @@ To install this prompt in a linux environment, just download it somewhere and up
 . /path/to/gitprompt
 ```
 
-That's it. Just re-open your terminal and go to a Git project directory.
+That’s it. Just re-open your terminal and go to a Git project directory.
 
 ## Find a commit
 
@@ -62,11 +62,11 @@ Thankfully there are quite a few ways to do this.
 
 ### With `git log -p`
 
-The simplest is to use `git log`. If you add `-p` (or `-u` or `--patch`), you will have the modifier code of each commit, there's nothing for it but to search in the output to find a specific string.
+The simplest is to use `git log`. If you add `-p` (or `-u` or `--patch`), you will have the modifier code of each commit, there’s nothing for it but to search in the output to find a specific string.
 
 ### With `git log -S`
 
-A better method is to use the `-S` parameter to search for a specific string: `git log -S console.log` will search all commit which contains the string "console.log" in the patch content. It's better than the previous method because it doesn't search in the commit message or information (username, date…) and it's only searching in the patch content and not in the lines added before and after the patch content.
+A better method is to use the `-S` parameter to search for a specific string: `git log -S console.log` will search all commit which contains the string "console.log" in the patch content. It’s better than the previous method because it doesn’t search in the commit message or information (username, date…) and it’s only searching in the patch content and not in the lines added before and after the patch content.
 
 You can add several parameters to reduce the commits related to the search:
 
@@ -76,7 +76,7 @@ git log -S console.log --author lgiraudel --before="2013-10-01 00:00" --after="2
 
 ### With `git blame`
 
-`git blame` displays each line of a file and the last commit which has modified the line. It's the better way to find who, when and why a specific line has been added to a file. Actually the command name kind of speaks for itself: _blame_.
+`git blame` displays each line of a file and the last commit which has modified the line. It’s the better way to find who, when and why a specific line has been added to a file. Actually the command name kind of speaks for itself: _blame_.
 
 It requires a filepath to works:
 
@@ -103,7 +103,7 @@ df9b1c21 (Seb  2013-10-11 11:50:08 +0200  9)         vendor: [
 […]
 ```
 
-It's possible to limit the output to specific lines with the parameter `-L`: `git blame -L 10,20` will only output lines 10 to 20.
+It’s possible to limit the output to specific lines with the parameter `-L`: `git blame -L 10,20` will only output lines 10 to 20.
 
 ## Improve diff output
 
@@ -138,7 +138,7 @@ When spaces are added in a line, the `git diff` command displays the line as cha
 
 To avoid this pollution in the git diff, you can add the `-w` option to omit spaces (and tabs) changes.
 
-Let's take an explicite example:
+Let’s take an explicite example:
 
 ```git
 $ git diff
@@ -198,7 +198,7 @@ index b2185a2..887387f 100755
      /**
 ```
 
-What are the important updates in this piece of code? It's not quite easy to check what have been done with a diff like this. But with the `-w` option:
+What are the important updates in this piece of code? It’s not quite easy to check what have been done with a diff like this. But with the `-w` option:
 
 ```git
 $ git diff -w
@@ -226,10 +226,10 @@ index b2185a2..887387f 100755
      /**
 ```
 
-It's now easier to catch up with the changes: I've replaced the test wrapping my Ajax call by a 3-lines test checking right before, which reduces the indentation level of the Ajax call.
+It’s now easier to catch up with the changes: I’ve replaced the test wrapping my Ajax call by a 3-lines test checking right before, which reduces the indentation level of the Ajax call.
 
 ## Final thoughts
 
-I hope those little tricks will help. In the next part, I'll continue with other small smart tricks before tackling some advanced Fit useful features.
+I hope those little tricks will help. In the next part, I’ll continue with other small smart tricks before tackling some advanced Fit useful features.
 
 > Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

@@ -10,7 +10,7 @@ tags:
 
 I had no idea how powerful CSS gradients could be until late 2011, when I found the [CSS3 Patterns Gallery](https://lea.verou.me/css3patterns/) made by Lea Verou. The idea that you can obtain many shapes using just gradients was a starting point for many CSS experiments I would later do.
 
-Recently, while browsing through the demos on CodePen, I came across [a CSS3 Color Wheel](https://codepen.io/bitmap/pen/eBbHt) and thought _hey, I could do it with just one element and gradients_. So I did and the result can be seen [here](https://codepen.io/thebabydino/pen/hkxGp). And now I'm going to explain the reasoning behind it.
+Recently, while browsing through the demos on CodePen, I came across [a CSS3 Color Wheel](https://codepen.io/bitmap/pen/eBbHt) and thought _hey, I could do it with just one element and gradients_. So I did and the result can be seen [here](https://codepen.io/thebabydino/pen/hkxGp). And now I’m going to explain the reasoning behind it.
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/rainbow_wheel_screen.gif" alt="" />
@@ -21,7 +21,7 @@ Recently, while browsing through the demos on CodePen, I came across [a CSS3 Col
 
 The wheel - or you can think of it as a pie - is first split horizontally into two halves and then each half is split into five slices, so there are ten slices in total. Which means that the [central angle](https://en.wikipedia.org/wiki/Central_angle) for each slice is [`360°`](https://www.mathopenref.com/degrees.html)`/10 = 36°`.
 
-The pen below shows graphically how to layer the multiple backgrounds. It also has a pause button so that the infinite animation doesn't turn into a performance problem.
+The pen below shows graphically how to layer the multiple backgrounds. It also has a pause button so that the infinite animation doesn’t turn into a performance problem.
 
 <pre class="codepen" data-height="360" data-type="result" data-href="Kuvom" data-user="thebabydino" data-safe="true"><code></code><a href="https://codepen.io/thebabydino/pen/qgoBL">Check out this Pen!</a></pre>
 
@@ -53,7 +53,7 @@ We first specify the nine gradient backgrounds, their positioning and the `backg
 
 ## The background shorthand
 
-For anyone who doesn't remember, the background layers are listed from the top one to the bottom one and the `background-color` is specified together with the bottom layer. A background layer includes the following:
+For anyone who doesn’t remember, the background layers are listed from the top one to the bottom one and the `background-color` is specified together with the bottom layer. A background layer includes the following:
 
 - `<background-image>`
 - `<background-position>` / `<background-size>`
@@ -62,23 +62,23 @@ For anyone who doesn't remember, the background layers are listed from the top o
 - `<background-origin>`
 - `<background-clip>`
 
-If the `background-position` is not specified, then the `background-size` isn't specified either. Also, since `background-origin` and `background-clip` both need the same kind of value (that is, a box value like `border-box` or `content-box`), then, if there is only one such value, that value is given to both `background-origin` and `background-clip`. Other than that, any value except the one for `background-image` can be missing and then it is assumed to be the default.
+If the `background-position` is not specified, then the `background-size` isn’t specified either. Also, since `background-origin` and `background-clip` both need the same kind of value (that is, a box value like `border-box` or `content-box`), then, if there is only one such value, that value is given to both `background-origin` and `background-clip`. Other than that, any value except the one for `background-image` can be missing and then it is assumed to be the default.
 
-Since we have nine background layers and we want to have the same non-default values for `background-repeat` and `background-size` for all of them, we specify these outside the shorthand so that we don't have to write the same thing nine times.
+Since we have nine background layers and we want to have the same non-default values for `background-repeat` and `background-size` for all of them, we specify these outside the shorthand so that we don’t have to write the same thing nine times.
 
-> Safari doesn't support background-size inside the shorthand.
+> Safari doesn’t support background-size inside the shorthand.
 
-In the case of `background-size`, there is also another reason to do that: Safari doesn't support `background-size` inside the shorthand and, until recently (up to and including version 17), Firefox didn't support that either. Also, two values should be always given when the `background-image` is a gradient, because giving it just one value is going to produce different results in different browsers (unless that one value is 100%, in which case it might as well be missing as that is the default).
+In the case of `background-size`, there is also another reason to do that: Safari doesn’t support `background-size` inside the shorthand and, until recently (up to and including version 17), Firefox didn’t support that either. Also, two values should be always given when the `background-image` is a gradient, because giving it just one value is going to produce different results in different browsers (unless that one value is 100%, in which case it might as well be missing as that is the default).
 
 The `background-color` is set to be a light blue (`#43a1cd`) and then, on top of it, there are layered nine non-repeating (`background-repeat: no-repeat` for all) background images created using CSS gradients. All nine of them are half the `width` and the `height` of the element (`background-size: 50% 50%`).
 
-The bottom one - horizontally centred (`50%`) and at the bottom (`100%`) - is really simple. It's just a gradient from a firebrick red to the same color (`linear-gradient(#ba3e2e, #ba3e2e)`), so the result is simply a solid color square.
+The bottom one - horizontally centred (`50%`) and at the bottom (`100%`) - is really simple. It’s just a gradient from a firebrick red to the same color (`linear-gradient(#ba3e2e, #ba3e2e)`), so the result is simply a solid color square.
 
 The other eight are gradients from `transparent` to a solid color or from a solid color to `transparent`. Four of them look like double slices, having a central angle of `2*36° = 72°`, but half of each such double slice gets covered by another single slice (having a central angle of `36°`).
 
 ## A few things about linear gradients
 
-In order to better understand gradient angles and how the `%` values for color stops are computed, let's see how a linear gradient is defined. Hopefully, this demo that lets you change the gradient angle helps with that - just click the dots.
+In order to better understand gradient angles and how the `%` values for color stops are computed, let’s see how a linear gradient is defined. Hopefully, this demo that lets you change the gradient angle helps with that - just click the dots.
 
 <pre class="codepen" data-height="640" data-type="result" data-href="qgoBL" data-user="thebabydino" data-safe="true"><code></code>
 <a href="https://codepen.io/thebabydino/pen/qgoBL" target="_blank" rel="noopener noreferrer">Check out this Pen!</a></pre>
@@ -96,20 +96,20 @@ oldSyntax = 90° - newSyntax;
 
 _Note: if no gradient angle or destination side is specified (for example, `linear-gradient(lime, yellow)`), then the resulting gradient is going to have a gradient angle of `180°`, not `0°`._
 
-All the points on a line that is [perpendicular](https://www.mathopenref.com/perpendicular.html) on the gradient line have the same color. The perpendicular from the corner in the quadrant that's opposite to the quadrant of the angle is the `0%` line (the crimson line in the demo) and its intersection with the gradient line is the _starting point_ of the gradient (let's call it `S`). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the `100%` line (the black line in the demo) and its intersection with the gradient line is the _ending point_ of the gradient (let's call it `E`).
+All the points on a line that is [perpendicular](https://www.mathopenref.com/perpendicular.html) on the gradient line have the same color. The perpendicular from the corner in the quadrant that’s opposite to the quadrant of the angle is the `0%` line (the crimson line in the demo) and its intersection with the gradient line is the _starting point_ of the gradient (let’s call it `S`). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the `100%` line (the black line in the demo) and its intersection with the gradient line is the _ending point_ of the gradient (let’s call it `E`).
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/gradient.png" alt="" />
 <figcaption>Gradient with gradient line, 0% line and 100% line</figcaption>
 </figure>
 
-In order to compute the `%` value of any point `P`, we first draw a perpendicular on the gradient line starting from that point. The intersection between the gradient line and this perpendicular is going to be a point we'll name `I`. We now compute the ratio between the lengths of `SI` and `SE` and the `%` value for that point is going to be `100%` times that ratio.
+In order to compute the `%` value of any point `P`, we first draw a perpendicular on the gradient line starting from that point. The intersection between the gradient line and this perpendicular is going to be a point we’ll name `I`. We now compute the ratio between the lengths of `SI` and `SE` and the `%` value for that point is going to be `100%` times that ratio.
 
 ## Putting it all to work
 
-Now let's see how we apply this for the particular case of the rainbow wheel.
+Now let’s see how we apply this for the particular case of the rainbow wheel.
 
-Let's first consider a gradient that creates a single slice (one with a central angle of `36°`). This is a square image (see below), with a blue slice having an angle of `36°` in the lower part. We draw the horizontal and vertical axes through the point `O` at which the diagonals intersect. We draw a perpendicular from that point to the line that separates the dark blue part from the transparent part. This is going to be the gradient line. As it can be seen, there is a `36°` angle between the vertical axis and the gradient line, so the angle of the gradient is `36°`.
+Let’s first consider a gradient that creates a single slice (one with a central angle of `36°`). This is a square image (see below), with a blue slice having an angle of `36°` in the lower part. We draw the horizontal and vertical axes through the point `O` at which the diagonals intersect. We draw a perpendicular from that point to the line that separates the dark blue part from the transparent part. This is going to be the gradient line. As it can be seen, there is a `36°` angle between the vertical axis and the gradient line, so the angle of the gradient is `36°`.
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/slice_1.png" alt="" />
@@ -125,7 +125,7 @@ The [intersection of the diagonals of a square splits each one of them into two]
 <figcaption>A right angled triangle and how to compute sin and cos functions</figcaption>
 </figure>
 
-_Note: before moving further, let's go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it's called the [hypotenuse](https://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](https://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](https://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](https://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse._
+_Note: before moving further, let’s go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it’s called the [hypotenuse](https://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](https://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](https://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](https://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse._
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/slice_1_BOE.png" alt="" />
@@ -143,13 +143,13 @@ We now draw a perpendicular from `A` to the `PI` line. `ASID` is a rectangle, wh
 
 Since we now know both `SI` and `SE`, we can compute their ratio. It is `sin36°/(sqrt(2)*cos9°) = 0.4234`. So the `%` value for the color stop is `42.34%`.
 
-In this way, we've arrived at: `linear-gradient(36deg, #272b66 42.34%, transparent 42.34%)`
+In this way, we’ve arrived at: `linear-gradient(36deg, #272b66 42.34%, transparent 42.34%)`
 
 Computing the `%` values for the other background layers is done in the exact same manner.
 
 ## Automating all this
 
-By now, you're probably thinking it sucks to do so many computations. And it must be even worse when there are more gradients with different angles…
+By now, you’re probably thinking it sucks to do so many computations. And it must be even worse when there are more gradients with different angles…
 
 Even though for creating the rainbow wheel experiment I did compute everything on paper… I can only agree with that! This is why I made a really basic little tool that computes the `%` for any point inside the gradient box. You just need to click inside it and the `%` value appears in a box at the bottom center.
 

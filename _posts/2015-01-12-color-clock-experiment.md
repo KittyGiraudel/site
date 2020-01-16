@@ -11,20 +11,20 @@ A while back, a developer posted a little experiment in which the current time w
 
 ![Hexclock experiment](/assets/images/color-clock-experiment/hexclock.png)
 
-What a clever little experiment it was, yet I can't say I am completely fond of the way it has been implemented. Not only colors are restricted between `#000000` (00:00:00) and `#235959` (23:59:59), but the JavaScript part did not really please me. So here is my try.
+What a clever little experiment it was, yet I can’t say I am completely fond of the way it has been implemented. Not only colors are restricted between `#000000` (00:00:00) and `#235959` (23:59:59), but the JavaScript part did not really please me. So here is my try.
 
 There are two things I wanted to give specific attention to:
 
 * Having a very wide range of colors available;
 * Making sure the clock is still readable on very dark/light colors.
 
-Alright, let's go.
+Alright, let’s go.
 
 <p data-height="320" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/JobxQR/'>Color Clock</a> by Hugo Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 ## Building the app
 
-Let's start with a little skeleton for our application:
+Let’s start with a little skeleton for our application:
 
 ```javascript
 ;(function() {
@@ -65,7 +65,7 @@ function colorClock() {
 
 ## Applying the computed color to the body
 
-Let's tackle the actual challenge. My thought process was as follow. Our time is made of 3 components: hours, minutes and seconds. A color is made of 3 components: red, green and blue channels. If I convert each component to a 255 value, I can have a color from the current time (where hours are converted to red, minutes to green and seconds to blue).
+Let’s tackle the actual challenge. My thought process was as follow. Our time is made of 3 components: hours, minutes and seconds. A color is made of 3 components: red, green and blue channels. If I convert each component to a 255 value, I can have a color from the current time (where hours are converted to red, minutes to green and seconds to blue).
 
 Alright. The first thing we need is to compute our color channels based on the current time. To do so, we need a `RGBFromDate` function that takes an instance of `Date`, and returns an array of 3 channels expressed as (rounded) numbers between 0 and 255.
 
@@ -108,7 +108,7 @@ document.body.style.color = colorFromRGB.apply(this, channels)
 
 ## Final thoughts
 
-That's it. Here is the final code:
+That’s it. Here is the final code:
 
 ```javascript
 ;(function() {

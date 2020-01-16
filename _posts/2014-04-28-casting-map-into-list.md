@@ -32,13 +32,13 @@ The `to-list` function core is pretty straightforward. If the given value is a m
 }
 ```
 
-To be a little more precise about what's being done here: we loop through each map entry, store the key in a `$keys` list and the value in a `$values` list. Then we [zip](https://sass-lang.com/documentation/Sass/Script/Functions.html#zip-instance_method) both to return a 2-dimensional list where the first element of each list if the former key and the second element of each list is the former value.
+To be a little more precise about what’s being done here: we loop through each map entry, store the key in a `$keys` list and the value in a `$values` list. Then we [zip](https://sass-lang.com/documentation/Sass/Script/Functions.html#zip-instance_method) both to return a 2-dimensional list where the first element of each list if the former key and the second element of each list is the former value.
 
 Does the job well.
 
 ## The new way
 
-Julien thought it would be cool to be able to keep only keys, or only values or both (what I've done) so he added an extra parameter to the function accepting either `keys` or `values` or `both`. Every other value would fallback to `both`.
+Julien thought it would be cool to be able to keep only keys, or only values or both (what I’ve done) so he added an extra parameter to the function accepting either `keys` or `values` or `both`. Every other value would fallback to `both`.
 
 Then depending on the flag, he returns either `$keys` or `$values` or a zip of both.
 
@@ -68,7 +68,7 @@ Then depending on the flag, he returns either `$keys` or `$values` or a zip of b
 }
 ```
 
-If you don't like conditional return statements or if you simply want to look like a badass with an unreadable ternary mess, you could return something like this:
+If you don’t like conditional return statements or if you simply want to look like a badass with an unreadable ternary mess, you could return something like this:
 
 ```scss
 @return if($keep == 'keys', $keys, if($keep == 'values', $values, zip($keys, $values)));
@@ -82,7 +82,7 @@ Literally:
 
 ## Final thoughts
 
-Let's try it with a little example, shall we? First, our map.
+Let’s try it with a little example, shall we? First, our map.
 
 ```scss
 $breakpoints: (
@@ -105,4 +105,4 @@ $breakpoints-values: to-list($breakpoints, 'values');
 // (600px 900px 1200px)
 ```
 
-That's all folks! Thanks again Julien!
+That’s all folks! Thanks again Julien!

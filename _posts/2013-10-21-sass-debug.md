@@ -8,15 +8,15 @@ tags:
 
 > The code explained in this article has been slightly revisited in [the pen](https://codepen.io/HugoGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen.
 
-You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It's a shame there is so few functions to deal with them. This is why I made [SassyLists](https://github.com/Team-Sass/Sass-list-functions).
+You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It’s a shame there is so few functions to deal with them. This is why I made [SassyLists](https://github.com/Team-Sass/Sass-list-functions).
 
-Most importantly, I always wanted a `console.log()` for Sass. You know, something to debug a variable, a list, a value, whatever… There is the `[@debug](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4)` function but somehow it didn't completely satisfy me. Plus, there is no console on [CodePen.io](https://codepen.io) and since this is where I do most of my experiments I needed something else.
+Most importantly, I always wanted a `console.log()` for Sass. You know, something to debug a variable, a list, a value, whatever… There is the `[@debug](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4)` function but somehow it didn’t completely satisfy me. Plus, there is no console on [CodePen.io](https://codepen.io) and since this is where I do most of my experiments I needed something else.
 
 So I rolled up my sleeves, got my hands dirty and made my own Sass debug function. This is how it looks like:
 
 <p data-height="320" data-theme-id="0" data-slug-hash="unyBH" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/unyBH'>Debug Sass lists</a> by Hugo Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a></p>
 
-If you don't want to read but simply want to dig into the code, check [this pen](https://codepen.io/HugoGiraudel/pen/unyBH).
+If you don’t want to read but simply want to dig into the code, check [this pen](https://codepen.io/HugoGiraudel/pen/unyBH).
 
 ## Stringify a list
 
@@ -32,7 +32,7 @@ It was pretty easy to do.
   // For each item in list
   @each $item in $list {
     // We test its length
-    // If it's more than one item long
+    // If it’s more than one item long
     @if length($item) > 1 {
       // We deal with a nested list
       $result: $result + debug($item);
@@ -95,7 +95,7 @@ Basically I wanted to go `@include debug($list)` and have everything displayed. 
 
 In case you wonder, I bash `!important` in case `body:before` is already defined for something. Basically I force this pseudo-element to behave exactly how I want.
 
-So. This mixin doesn't do much more than styling the output of the `debug` function. So now instead of having to open the `body:before` rule, the content property and all, we just need to go `@include debug($list)`.
+So. This mixin doesn’t do much more than styling the output of the `debug` function. So now instead of having to open the `body:before` rule, the content property and all, we just need to go `@include debug($list)`.
 
 Pretty neat, but I wanted moar.
 
@@ -107,7 +107,7 @@ I wanted two things: 1) explode the list into several lines to make it easier to
 
 If you are a reader of [TheSassWay.com](http://thesassway.com), you might have stumbled upon my article [Math sequences with Sass](http://thesassway.com/advanced/math-sequences-with-sass) in which I explain how I created famous math sequences in Sass and how I managed to display them with nothing more than CSS. Anyway, I kind of answer the question of linebreaks in CSS.
 
-If you've ever read the [CSS specifications for the content property](https://www.w3.org/TR/CSS2/generate.html#content) (don't worry, neither did I), you may know that there is a way to insert breaklines with `\A` (don't forget the trailing white space). In TheSassWay article, I used it as a `$glue` for the [`to-string()`](https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss) function from SassyLists.
+If you’ve ever read the [CSS specifications for the content property](https://www.w3.org/TR/CSS2/generate.html#content) (don’t worry, neither did I), you may know that there is a way to insert breaklines with `\A` (don’t forget the trailing white space). In TheSassWay article, I used it as a `$glue` for the [`to-string()`](https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss) function from SassyLists.
 
 This is pretty much what we will do here.
 
@@ -137,7 +137,7 @@ This is pretty much what we will do here.
 
 All we did was adding a line-break after the bracket, after each value, then before the closing bracket. That looks great, but we need to handle the indentation now. This is where it gets a little tricky.
 
-Actually the only way I could manage a perfect indentation is the same trick I used for the `to-string()` function: with an internal boolean to make a distinction between the root level (the one you called) and the inner levels (from nested lists). Problem with this boolean is it messes with the function signature but that's the only way I found.
+Actually the only way I could manage a perfect indentation is the same trick I used for the `to-string()` function: with an internal boolean to make a distinction between the root level (the one you called) and the inner levels (from nested lists). Problem with this boolean is it messes with the function signature but that’s the only way I found.
 
 ```scss
 @function debug($list, $root: true) {
@@ -206,13 +206,13 @@ Now the icing on top of the cake would be displaying variable types, right? Than
 }
 ```
 
-As you can see, it is pretty much the same. We only check for the `$type` boolean and add the value types accordingly wherever they belong. We're almost there!
+As you can see, it is pretty much the same. We only check for the `$type` boolean and add the value types accordingly wherever they belong. We’re almost there!
 
-_Note: I've set the `$type` boolean to `false` as a default for the `debug` function but to `true` for the mixin._
+_Note: I’ve set the `$type` boolean to `false` as a default for the `debug` function but to `true` for the mixin._
 
 ### Making it work for single values
 
-The only problem left is that if you debug a single value, it will wrap it into `(list:1) [ … ]`. While this is true, it doesn't really help the user so we should get rid of this. Fairly easy! We just have to add a condition when entering the function.
+The only problem left is that if you debug a single value, it will wrap it into `(list:1) [ … ]`. While this is true, it doesn’t really help the user so we should get rid of this. Fairly easy! We just have to add a condition when entering the function.
 
 ```scss
 @function debug($list, $type: false, $root: true) {
@@ -228,6 +228,6 @@ The only problem left is that if you debug a single value, it will wrap it into 
 
 ## Final words
 
-That's pretty much it people. I hope you like it. This has been added to [SassyLists](https://github.com/Team-Sass/Sass-list-functions), so if you think of something to improve it be sure to share!
+That’s pretty much it people. I hope you like it. This has been added to [SassyLists](https://github.com/Team-Sass/Sass-list-functions), so if you think of something to improve it be sure to share!
 
 Some of you might find this kind of overkill. Then you can try [this `@debug`-powered version](https://gist.github.com/piouPiouM/7030210) by [Mehdi Kabab](https://twitter.com/pioupioum) that does pretty much the same thing but in the Ruby console.

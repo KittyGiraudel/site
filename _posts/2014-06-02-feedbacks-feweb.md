@@ -10,7 +10,7 @@ A couple of weeks ago, I have been invited by the [FeWeb](https://www.feweb.be/f
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-feweb/feweb-costation.jpg" alt="">
-<figcaption>FeWeb's event, hosted by Co.Station</figcaption>
+<figcaption>FeWeb’s event, hosted by Co.Station</figcaption>
 </figure>
 
 Obviously I accepted and took a plane to travel 900 kilometers from home with my dearest in order to give a talk about Sass architecture. Hence a short blog post to relate how it went.
@@ -19,7 +19,7 @@ Well, it went very well! Except for the weather which was pretty ugly and the fa
 
 ## The place
 
-The Co.Station is a great spot in the heart of Bruxelles, aiming at helping startups, associations and business growing. In this case, Co.Station was hosting FeWeb's event.
+The Co.Station is a great spot in the heart of Bruxelles, aiming at helping startups, associations and business growing. In this case, Co.Station was hosting FeWeb’s event.
 
 The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But… it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor people who had to stand up for almost 2 hours, it sucks.
 
@@ -30,7 +30,7 @@ The room we were in was lovely. Completely made of white wood, perfectly lighted
 
 ## The talks
 
-FeWeb's events are usually composed of 2 successive talks, then a couple of beers (remember it's in Belgium). Thus, [Thierry Michel](https://twitter.com/thierrymichel) was giving an introduction to Sass and Compass, then I talked about architecture and components.
+FeWeb’s events are usually composed of 2 successive talks, then a couple of beers (remember it’s in Belgium). Thus, [Thierry Michel](https://twitter.com/thierrymichel) was giving an introduction to Sass and Compass, then I talked about architecture and components.
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-feweb/speakers.jpg" alt="">
@@ -54,7 +54,7 @@ Anyway, I eventually went through the whole session and ended my talk peacefully
 
 Once again I have made my slides with [Slid.es](https://slides.com), the CMS for [Reveal.js](https://lab.hakim.se/reveal-js/#/). I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF…). I also used the _presentation mode_ from Slid.es, which is great. Absolutely not disappointed.
 
-I won't walk through my slides like I did for my talk at [KiwiParty 2013](https://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/) because in this case it is less focused on code. Plus, I think they are better designed than the previous one.
+I won’t walk through my slides like I did for my talk at [KiwiParty 2013](https://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/) because in this case it is less focused on code. Plus, I think they are better designed than the previous one.
 
 Anyway, here they are (in French).
 
@@ -62,4 +62,4 @@ Anyway, here they are (in French).
 
 ## Final thoughts
 
-A warn thank to the FeWeb for their great welcome, the bear and the fries. And if you &mdash; whoever you are &mdash; were here on May 8th, thank you. If you were not, let's hope we meet at another event.
+A warn thank to the FeWeb for their great welcome, the bear and the fries. And if you &mdash; whoever you are &mdash; were here on May 8th, thank you. If you were not, let’s hope we meet at another event.

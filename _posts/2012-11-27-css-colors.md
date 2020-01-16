@@ -5,9 +5,9 @@ tags:
   - colors
 ---
 
-Hi everyone! Today, we will talk about colors in CSS. There are many color specifications and we'll be talking about their history, what they mean and how to use them.
+Hi everyone! Today, we will talk about colors in CSS. There are many color specifications and we’ll be talking about their history, what they mean and how to use them.
 
-If you'd like to read about how to build a color scheme for a website then you might be interested in this article [Build a color scheme: the fundamentals](https://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/), or the article [Principles of Color and the Color Wheel](https://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/) if you'd like to read about the color wheel.
+If you’d like to read about how to build a color scheme for a website then you might be interested in this article [Build a color scheme: the fundamentals](https://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/), or the article [Principles of Color and the Color Wheel](https://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/) if you’d like to read about the color wheel.
 
 We will see how we can define colors in style sheets, what each one can be used for and more. But first, let me introduce the topic.
 
@@ -23,7 +23,7 @@ From there, we have various ways to describe color with CSS. Some of them like k
 - **HSL** and **HSLA**
 - **System colors**
 
-Let's talk about each one of these definitions to understand them better.
+Let’s talk about each one of these definitions to understand them better.
 
 ## RGB
 
@@ -71,7 +71,7 @@ A RGB value can be defined using four different syntaxes but only two of them ar
 - A percentage from 0% (black) to 100% (white)
 - An integer value from 0 (black) to 255 (white); 255 is the range of a 8-bit byte
 - A float number from 0 to 1 (0.58935); it’s more like a theoretical approach **unavailable in CSS**
-- A large integer 10, 16, 24, 32, 48 or even 64-bit units, but clearly that's **unavailable in CSS**
+- A large integer 10, 16, 24, 32, 48 or even 64-bit units, but clearly that’s **unavailable in CSS**
 
 So, summarized, we end up with two different ways to display CSS colors with the `rgb()` function: percentages and integers between 0 and 255. Let’s illustrate this with an example, shall we?
 
@@ -464,7 +464,7 @@ Anyway, back to CSS, let me (re)introduce you a few awesome tools and resources 
 - [Canva](https://www.canva.com/colors/)
 - [CSS3 Colors slides](https://fr.slideshare.net/maxdesign/css3-colors) by Russ Weakley
 - [Build a color scheme: the fundamentals](https://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/) by Patrick Cox
-- [Using transparency in webdesign: dos and don'ts](https://tympanus.net/codrops/2012/11/26/using-transparency-in-web-design-dos-and-donts/) by Carrie Cousins
+- [Using transparency in webdesign: dos and don’ts](https://tympanus.net/codrops/2012/11/26/using-transparency-in-web-design-dos-and-donts/) by Carrie Cousins
 - [Principles or Color and the Color Wheel](https://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/) by Carrie Cousins
 - [Kuler](https://kuler.adobe.com/) by Adobe
 - [Paletton](http://paletton.com/)
@@ -473,4 +473,4 @@ Anyway, back to CSS, let me (re)introduce you a few awesome tools and resources 
 - [CSS Color Keyword Distribution](https://www.xanthir.com/blog/b4JC0) by Tab Atkins Jr. ([original work](https://meyerweb.com/eric/css/colors/hsl-147.html) by Eric Meyer)
 - [Developers guide to images](https://www.jessechapo.com/posts/Developers-Guide-to-Images.html)
 
-Thanks a lot for reading this article. If you have any question or feedback, please be sure to share. Also, if you find any mistake, I'd be glad to correct it. ;)
+Thanks a lot for reading this article. If you have any question or feedback, please be sure to share. Also, if you find any mistake, I’d be glad to correct it. ;)

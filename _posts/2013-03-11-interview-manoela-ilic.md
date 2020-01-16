@@ -13,7 +13,7 @@ tags:
 
 #### You are kind of a mysterious person. Maybe could you introduce yourself?
 
-I'm Manoela, a 31 year old web designer and developer and I create things for [Codrops](https://tympanus.net/codrops/) since 2009. I studied Cognitive Science in Germany and then Computational Logic in Portugal.
+I’m Manoela, a 31 year old web designer and developer and I create things for [Codrops](https://tympanus.net/codrops/) since 2009. I studied Cognitive Science in Germany and then Computational Logic in Portugal.
 
 I worked in a software company for a while before I decided to become a freelancer and launch Codrops. Since I was a kid I was always fascinated with computers and I created my first website when I was 16 (it had some fancy Flash buttons, I remember) :)
 
@@ -34,7 +34,7 @@ What I do is to plan, design, implement and write tutorials together with my par
 
 #### Why did you choose to land on Wordpress? Who did the development (CSS, scripts and stuff)?
 
-WordPress seemed like the most fitting blog engine at the time and I've been happy with it ever since. I love the community around it. All the development and implementation was done by me and Pedro.
+WordPress seemed like the most fitting blog engine at the time and I’ve been happy with it ever since. I love the community around it. All the development and implementation was done by me and Pedro.
 
 #### What is the biggest challenge at Codrops?
 
@@ -42,9 +42,9 @@ I guess the most challenging but also most exciting part is to come up with inte
 
 #### Sounds lovely. If you could go back and change something at Codrops, what would it be?
 
-> If you are happy with what you've learned, it was a good path to choose.
+> If you are happy with what you’ve learned, it was a good path to choose.
 
-There are always things that could be done better when looking back. But in general I am quite happy with how Codrops turned out thanks to our readers and I wouldn't want to change anything about that I guess. It's just like with everything else in life: if you wouldn't have done it that exact way, you might have not learned what you know now. And if you are happy with what you've learned, it probably was a good path to choose.
+There are always things that could be done better when looking back. But in general I am quite happy with how Codrops turned out thanks to our readers and I wouldn’t want to change anything about that I guess. It’s just like with everything else in life: if you wouldn’t have done it that exact way, you might have not learned what you know now. And if you are happy with what you’ve learned, it probably was a good path to choose.
 
 #### What do you plan for the future of Codrops?
 
@@ -65,10 +65,10 @@ The most successful article was [Original Hover Effects](https://tympanus.net/co
 
 #### Do you have any side project? What would you like to do if you had enough time?
 
-Yes, I have some side projects that I'm working on and I also work for some clients. If I had more time I would definitely spend it all on answering our reader's questions and help them with their problems.
+Yes, I have some side projects that I’m working on and I also work for some clients. If I had more time I would definitely spend it all on answering our reader’s questions and help them with their problems.
 
 #### Anything left you’d like to say? :)
 
-I'd like to thank you for the opportunity and **I'd like to thank all the readers of [Codrops](https://tympanus.com/codrops/)** for their support. I'd also like to wish you all the best for your website and blog and I'm looking forward to read many of your articles :)
+I’d like to thank you for the opportunity and **I’d like to thank all the readers of [Codrops](https://tympanus.com/codrops/)** for their support. I’d also like to wish you all the best for your website and blog and I’m looking forward to read many of your articles :)
 
 > Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. Oh, and congratulations for being part of the [2013 Awwwards jury](https://www.awwwards.com/jury/2013)! :)

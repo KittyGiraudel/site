@@ -6,7 +6,7 @@ tags:
   - editing
 ---
 
-I use to write a lot.<sup>[citation needed]</sup> I have spent countless hours writing articles, books, mails and what else. And for all that, I use a single tool: Sublime Text. As far as I am concerned, Sublime Text is the perfect environment for writing, especially tech writing. In this article, I'd like to show you my setup so you can use Sublime Text for writing as well.
+I use to write a lot.<sup>[citation needed]</sup> I have spent countless hours writing articles, books, mails and what else. And for all that, I use a single tool: Sublime Text. As far as I am concerned, Sublime Text is the perfect environment for writing, especially tech writing. In this article, I’d like to show you my setup so you can use Sublime Text for writing as well.
 
 <figure class="figure" style="clear: both">
   <img src="/assets/images/writing-in-sublime-text/preview.png" alt="" />
@@ -15,7 +15,7 @@ I use to write a lot.<sup>[citation needed]</sup> I have spent countless hours w
 
 ## Pimp my editor!
 
-Let's get started with the basics: a beautiful theme for Sublime Text. If you ask me, there is nothing better than [Spacegray](https://github.com/kkga/spacegray). Spacegray not only provides a new syntax highlighting theme for the coding area, but also redefines the whole UI to change color, styles and more generally the whole look and feel.
+Let’s get started with the basics: a beautiful theme for Sublime Text. If you ask me, there is nothing better than [Spacegray](https://github.com/kkga/spacegray). Spacegray not only provides a new syntax highlighting theme for the coding area, but also redefines the whole UI to change color, styles and more generally the whole look and feel.
 
 Spacegray provides three different themes:
 
@@ -23,11 +23,11 @@ Spacegray provides three different themes:
 - Spacegray Grey Light
 - Spacegray Eighties
 
-I've been running on the dark grey default theme for a while but I recently moved on to Eighties which has a browish style that is very appealing.
+I’ve been running on the dark grey default theme for a while but I recently moved on to Eighties which has a browish style that is very appealing.
 
 ## Customize the thing
 
-If there is one thing I do like with Sublime Text, it is the amount of options. If you haven't already, open the default settings file (_Sublime Text > Preferences > Settings - Default_) and browse through all the available options. You'll probably discover a thing or two.
+If there is one thing I do like with Sublime Text, it is the amount of options. If you haven’t already, open the default settings file (_Sublime Text > Preferences > Settings - Default_) and browse through all the available options. You’ll probably discover a thing or two.
 
 Most options default value make sense although there are some of theme that you might want to change. Here is my own configuration file (omitting a few boring things), annotated with comments to explain each choice:
 
@@ -77,7 +77,7 @@ Most options default value make sense although there are some of theme that you 
 
 ### Markdown all the things!
 
-The first thing to know is that I, as most tech writers, use Markdown for basically any write up. Markdown is a terrific format for both writing (obviously) and reading, no matter whether it's been compiled to HTML or not. Because Markdown uses text symbols to represent content hierarchy (`#` for title, `*` and `_` for emphasis, `>` for blockquotes…), it makes it very convenient to read an unprocessed Markdown file.
+The first thing to know is that I, as most tech writers, use Markdown for basically any write up. Markdown is a terrific format for both writing (obviously) and reading, no matter whether it’s been compiled to HTML or not. Because Markdown uses text symbols to represent content hierarchy (`#` for title, `*` and `_` for emphasis, `>` for blockquotes…), it makes it very convenient to read an unprocessed Markdown file.
 
 Sublime Text comes with a default Markdown syntax highlighter, although you might need some extra features if you happen to write a lot in the editor. For this, there is [Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended). This plugin adds extra feature to the default Markdown highlighter, such as highlighting for any YAML Front Matter and sub-highlighting of fenced code blocks. _This_, is absolutely amazing. Basically, that allows you to have Markdown syntax highlighting in the current file **and** highlighting code blocks with their relevant highlighter (CSS, JS or whatever).
 
@@ -86,7 +86,7 @@ Sublime Text comes with a default Markdown syntax highlighter, although you migh
   <figcaption>Lines 31 to 37 are being highlighted as SCSS</figcaption>
 </figure>
 
-Last but not least tool for Markdown: [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview). This plugin is actually quite huge, but there is one thing I use it for: previewing the current file in the browser using the GitHub API (or Python-Markdown when running offline). I don't use it that often, but sometimes it is better to actual render the file in a browser to see what it looks like (especially when it involves images).
+Last but not least tool for Markdown: [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview). This plugin is actually quite huge, but there is one thing I use it for: previewing the current file in the browser using the GitHub API (or Python-Markdown when running offline). I don’t use it that often, but sometimes it is better to actual render the file in a browser to see what it looks like (especially when it involves images).
 
 <figure class="figure">
   <img src="/assets/images/writing-in-sublime-text/preview-in-browser.png" alt="" />
@@ -95,7 +95,7 @@ Last but not least tool for Markdown: [Markdown Preview](https://github.com/revo
 
 ### 1 word, 2 words, 3 words…
 
-Let's be honest: everything is about word count when writing. How long is this article? How many pages are there in this chapter? Knowing the number of words in a document is extremely handy.
+Let’s be honest: everything is about word count when writing. How long is this article? How many pages are there in this chapter? Knowing the number of words in a document is extremely handy.
 
 I suppose there are countless (see what I did there?) word counter plugins for Sublime Text out there; I chose [WordCount](https://github.com/titoBouzout/WordCount). This simple plugin adds the number of words at the very left of the status bar, below the coding area.
 
@@ -118,7 +118,7 @@ Last time I had a fresh install of Sublime Text, I realized how poor the default
 
 ## Spell checking
 
-Paweł Grzybek, in the comments, asked for a spell checking feature. I don't use it myself, but I know that Sublime Text does support spell checking through 2 options:
+Paweł Grzybek, in the comments, asked for a spell checking feature. I don’t use it myself, but I know that Sublime Text does support spell checking through 2 options:
 
 ```javascript
 "spell_check": true,
@@ -129,6 +129,6 @@ The first one enables spell checking, and the second one is the dictionary used 
 
 ## Final thoughts
 
-That's it folks, you know all my secret to writing in Sublime Text! I have been using this set up for years now and I don't think this is going to change anytime soon. So far, so good.
+That’s it folks, you know all my secret to writing in Sublime Text! I have been using this set up for years now and I don’t think this is going to change anytime soon. So far, so good.
 
-Although, if you have any advice… I'm all ears! :)
+Although, if you have any advice… I’m all ears! :)

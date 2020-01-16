@@ -133,7 +133,7 @@ In order to test dynamic URLs (articles for instance), we start by retreiving th
 
 ---
 
-In the future, we might be able to access the Accessibility Object Model (or AOM for short) to unit-test accessibility. The Web Incubator Community Group is pushing for a proper [AOM](https://github.com/wicg/aom) implementation. If Chromium ever gets to implement it, we’ll be able to use it through Puppeteer which opens a whole new world for testing accessibility. If you are interested in the topic, I highly recommend [“Why you can't test a screen reader (yet)!”](https://robdodson.me/why-you-cant-test-a-screen-reader-yet/) for Rob Dodson.
+In the future, we might be able to access the Accessibility Object Model (or AOM for short) to unit-test accessibility. The Web Incubator Community Group is pushing for a proper [AOM](https://github.com/wicg/aom) implementation. If Chromium ever gets to implement it, we’ll be able to use it through Puppeteer which opens a whole new world for testing accessibility. If you are interested in the topic, I highly recommend [“Why you can’t test a screen reader (yet)!”](https://robdodson.me/why-you-cant-test-a-screen-reader-yet/) for Rob Dodson.
 
 ## Wrapping things up
 

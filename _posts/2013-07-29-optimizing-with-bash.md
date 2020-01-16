@@ -8,21 +8,21 @@ tags:
   - optimisation
 ---
 
-> The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at BestOfMedia (Grenoble, France) and in a lesser extend my brother. He also knows his way in Bash scripting and front-end performance. I'm very glad to have him writing here. :)
+> The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at BestOfMedia (Grenoble, France) and in a lesser extend my brother. He also knows his way in Bash scripting and front-end performance. I’m very glad to have him writing here. :)
 
-You can't talk about front-end performance without talking about images. They are the heaviest component of a webpage. This is why it is important to optimize images before pushing things live.
+You can’t talk about front-end performance without talking about images. They are the heaviest component of a webpage. This is why it is important to optimize images before pushing things live.
 
-So let's try a not-so-easy exercise: write a script to optimize a directory of images. Yup, I know there are a lot of web services offering this kind of feature but:
+So let’s try a not-so-easy exercise: write a script to optimize a directory of images. Yup, I know there are a lot of web services offering this kind of feature but:
 
-* most of them can't optimize several files at once,
-* it's not quite simple to use it in an industrial process,
-* it's always interesting to learn how those services work.
+* most of them can’t optimize several files at once,
+* it’s not quite simple to use it in an industrial process,
+* it’s always interesting to learn how those services work.
 
 > Shell scripting is a powerful skill to improve development efficiency by automating common tasks.
 
-But first, a simple warning: don't expect big optimizations. To have the best results, you have to decrease the image quality but it's better to do this manually than automatically. We are going to script simple operations that remove metadata and other losslessly informations.
+But first, a simple warning: don’t expect big optimizations. To have the best results, you have to decrease the image quality but it’s better to do this manually than automatically. We are going to script simple operations that remove metadata and other losslessly informations.
 
-I'm working on Linux environment so this script will be a Bash script. Don't worry! I will start with an introduction to Bash scripting in a Windows environment.
+I’m working on Linux environment so this script will be a Bash script. Don’t worry! I will start with an introduction to Bash scripting in a Windows environment.
 
 Bash is the GNU shell and the most common shell in Unix/Linux environment. A shell is a command-line interpreter allowing to access to all the functionalities of the OS. Shell scripting is a powerful skill to improve development efficiency by automating common tasks like building a project and deploying it.
 
@@ -47,7 +47,7 @@ To add a package, click on the _"Skip"_ label to switch it to a package version.
 * jpeg
 * util-linux
 
-Once Cygwin is fully installed, simply open a Cygwin terminal. Let's create a workspace to host our optimization script: we create a _"workspace"_ directory in the current user home:
+Once Cygwin is fully installed, simply open a Cygwin terminal. Let’s create a workspace to host our optimization script: we create a _"workspace"_ directory in the current user home:
 
 ```bash
 # Create the workspace folder
@@ -61,11 +61,11 @@ cd workspace
 <figcaption>Creating a workspace in Cygwin</figcaption>
 </figure>
 
-By default, Cygwin is installed at `C:/cygwin/` so our new directory is at `C:/cygwin/home/[username]/workspace` (where `[username]` is your username). Let's create a _"images"_ directory and fill it with some random images from the wild wild web (you can do this manually). For this exercise, we are going to take cat pictures because, you know, everybody love cats.
+By default, Cygwin is installed at `C:/cygwin/` so our new directory is at `C:/cygwin/home/[username]/workspace` (where `[username]` is your username). Let’s create a _"images"_ directory and fill it with some random images from the wild wild web (you can do this manually). For this exercise, we are going to take cat pictures because, you know, everybody love cats.
 
 ## Optimizing an image with the command line
 
-For each file, our script is going to run _optipng_ and _pngcrush_ for PNG files and _jpegtran_ for JPG files. Before going any further and start writing the script, let's make a first try with all of these tools starting with _optipng_:
+For each file, our script is going to run _optipng_ and _pngcrush_ for PNG files and _jpegtran_ for JPG files. Before going any further and start writing the script, let’s make a first try with all of these tools starting with _optipng_:
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/optipng.png" alt="" />
@@ -90,7 +90,7 @@ And now a JPG optimization with _jpegtran_:
 
 ## Building the script
 
-You'll find the whole script at the end of the article. If you want to try things as we go through all of this, you can save it (`optimize.sh`) now from [this GitHub gist](https://gist.github.com/lgiraudel/6065155).
+You’ll find the whole script at the end of the article. If you want to try things as we go through all of this, you can save it (`optimize.sh`) now from [this GitHub gist](https://gist.github.com/lgiraudel/6065155).
 
 ### Options parsing
 
@@ -130,20 +130,20 @@ To be called, the functions must be declared before the parameters loop.
 <figcaption>The help function</figcaption>
 </figure>
 
-Let's try our help function. To be able to run the script, we have to add execution mode (+x) on it with the command `chmod`.
+Let’s try our help function. To be able to run the script, we have to add execution mode (+x) on it with the command `chmod`.
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/usage-try.png" alt="" />
 <figcaption>Help function</figcaption>
 </figure>
 
-Pretty cool, isn't it ?
+Pretty cool, isn’t it ?
 
 _Note, if you get a couple of errors like "./optimize.sh: line 2: $'\r' : command not found", you have to turn line endings in Unix mode. To do so, open `optimize.sh` in Sublime Text 2 and go to View > Line endings > Unix._
 
 ### Main function
 
-And now, let's create the main function. We won't deal with `--no-stats` and `--quiet` parameters for now. Below is the skeleton of our main function; it might looks complicated but it's really not trust me.
+And now, let’s create the main function. We won’t deal with `--no-stats` and `--quiet` parameters for now. Below is the skeleton of our main function; it might looks complicated but it’s really not trust me.
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/main.png" alt="" />
@@ -154,9 +154,9 @@ So our main function starts by initializing both input and output directories wi
 
 _The `-p` parameter of the `mkdir` command forces the creation of all intermediate directories if they are missing._
 
-Once the input and output are ready, there is a little trick to deal with files containing spaces. Let's say I have a file named _"soft kitty warm kitty.png"_ (little ball of fur, anyone?), the loop will split this into 4 elements which will obviously lead to errors. To prevent this from happening, we can change the Internal File Separator (which is a space character by default) to set an end-of-line character. We will restore the original IFS at the end of the loop.
+Once the input and output are ready, there is a little trick to deal with files containing spaces. Let’s say I have a file named _"soft kitty warm kitty.png"_ (little ball of fur, anyone?), the loop will split this into 4 elements which will obviously lead to errors. To prevent this from happening, we can change the Internal File Separator (which is a space character by default) to set an end-of-line character. We will restore the original IFS at the end of the loop.
 
-The image files are retrieved with the `find` command, which accepts a regular expression as parameter. If the output directory is a subdirectory of input directory (which is the case if we don't specify any of both) and if the output directory is not empty, we don't want to process images from here so we skip filepaths which contain the output directory path. We do this with the `grep -v $OUTPUT` command.
+The image files are retrieved with the `find` command, which accepts a regular expression as parameter. If the output directory is a subdirectory of input directory (which is the case if we don’t specify any of both) and if the output directory is not empty, we don’t want to process images from here so we skip filepaths which contain the output directory path. We do this with the `grep -v $OUTPUT` command.
 
 And then, we loop through the files and call an `optimize_image` function with two parameters: the input and output filename for the image.
 
@@ -169,7 +169,7 @@ Now, we have to create this `optimize_image()` method which is going to be fairl
 
 ### Output informations
 
-Let's add some useful output to see progress and the final stats. What about something like this:
+Let’s add some useful output to see progress and the final stats. What about something like this:
 
 ```bash
 file1 ...................... [ DONE ]
@@ -178,7 +178,7 @@ file_with_a_long_name ...... [ DONE ]
 …
 ```
 
-Would be neat, wouldn't it? To do this, we first need to find the longest filename by doing a fast loop on the files.
+Would be neat, wouldn’t it? To do this, we first need to find the longest filename by doing a fast loop on the files.
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/get-max-file-length.png" alt="" />
@@ -198,7 +198,7 @@ Finally, in the main loop we display the filename then the _"."_ symbols and the
 <figcaption>Script handling the output</figcaption>
 </figure>
 
-Let's try it by running the following command:
+Let’s try it by running the following command:
 
 ```bash
 # All parameters to default
@@ -223,14 +223,14 @@ For the final stats we are going to display the amount of space saved. The `opti
 <figcaption>Adding stats output in optimize_image()</figcaption>
 </figure>
 
-To display human readable numbers, we can use a `human_readable_filesize()` method, retrieved from [StackExchange](https://unix.stackexchange.com/questions/44040/a-standard-tool-to-convert-a-byte-count-into-human-kib-mib-etc-like-du-ls1) (let's not reinvent the wheel, shall we?).
+To display human readable numbers, we can use a `human_readable_filesize()` method, retrieved from [StackExchange](https://unix.stackexchange.com/questions/44040/a-standard-tool-to-convert-a-byte-count-into-human-kib-mib-etc-like-du-ls1) (let’s not reinvent the wheel, shall we?).
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/display-stats.png" alt="" />
 <figcaption>A function to display human readable stats</figcaption>
 </figure>
 
-Let's try it before adding the last bites to our code. Once again, we simply run `./optimize.sh` (or with additional parameters if needed).
+Let’s try it before adding the last bites to our code. Once again, we simply run `./optimize.sh` (or with additional parameters if needed).
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/output-with-stats.png" alt="" />

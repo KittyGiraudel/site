@@ -8,19 +8,19 @@ tags:
 
 > In case you have missed my first article about this Advanced Sass List Functions library, I recommand you to read [it](https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/).
 
-Heys people, it's been a while I haven't posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what's new on my Sass list functions library.
+Heys people, it’s been a while I haven’t posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what’s new on my Sass list functions library.
 
 Well first of all, it has been added as a [Team-Sass](https://github.com/Team-Sass) repository on GitHub (the [pen](https://codepen.io/HugoGiraudel/pen/loAgq is still updated). You probably know the Team-Sass collective. They have done ton of awesome things like [Breakpoint](https://github.com/Team-Sass/breakpoint), [Sassy Math](https://github.com/Team-Sass/Sassy-math) and [UIKit](https://github.com/Team-Sass/uikit).
 
 I am very glad to see my repo in there, so big thanks to them. :)
 
-Even bigger news! It is now a Compass extension so you don't have to copy/paste functions into your projects anymore. All you have to do is:
+Even bigger news! It is now a Compass extension so you don’t have to copy/paste functions into your projects anymore. All you have to do is:
 
 1. Install the gem through your terminal: `gem install SassyLists`
 1. Require it in your `config.rb` file: `require 'SassyLists'`
 1. Import it in your stylesheet: `@import 'SassyLists';`
 
-Done. From there you can use all the functions you want. Isn't it awesome? Plus all you have to do to update the library is reinstalling the gem with the same command as step 1. No more checking your functions are up to date and copy pasting all over again.
+Done. From there you can use all the functions you want. Isn’t it awesome? Plus all you have to do to update the library is reinstalling the gem with the same command as step 1. No more checking your functions are up to date and copy pasting all over again.
 
 All of this thanks to [Vinay Raghu](https://www.vinayraghu.com/) who made the Compass extension out of my original work. A million thanks to him!
 
@@ -30,7 +30,7 @@ I have added a couple of functions to make the library even more awesome like `p
 
 ### Purge
 
-I can't believe I didn't make the `purge()` function a while ago. Basically, it removes all non-true value of a list. Compass includes the `compact()` function which does pretty much the same thing.
+I can’t believe I didn’t make the `purge()` function a while ago. Basically, it removes all non-true value of a list. Compass includes the `compact()` function which does pretty much the same thing.
 
 ```scss
 @function purge($list) {
@@ -50,11 +50,11 @@ $purge: purge($list);
 // -> a, b, c, d
 ```
 
-I think the code is self-explanatory. We loop through all items of the list: if it's not false, we append it then we return the new list. Easy peasy! It would be even easier if Sass had a boolean converter operator (`!!`). Then we could do something like this `@if !!$item { $result: append($result, $item); }`. Unfortunately, we can't.
+I think the code is self-explanatory. We loop through all items of the list: if it’s not false, we append it then we return the new list. Easy peasy! It would be even easier if Sass had a boolean converter operator (`!!`). Then we could do something like this `@if !!$item { $result: append($result, $item); }`. Unfortunately, we can’t.
 
 ### Is symmetrical
 
-I don't think this function has any major usecase, but you know, just in case I added it. It checks whether your list is symmetrical. It's based on my `reverse()` function.
+I don’t think this function has any major usecase, but you know, just in case I added it. It checks whether your list is symmetrical. It’s based on my `reverse()` function.
 
 ```scss
 @function is-symmetrical($list) {
@@ -62,11 +62,11 @@ I don't think this function has any major usecase, but you know, just in case I 
 }
 ```
 
-Why don't we compare the initial list with the reversed one? Because reversing a list modify its inner structure, resulting in a false assertion. This makes sure both list are properly compared.
+Why don’t we compare the initial list with the reversed one? Because reversing a list modify its inner structure, resulting in a false assertion. This makes sure both list are properly compared.
 
 ### Sum
 
-Same here, I don't think it has much point but I wanted to add it anyway. It takes all unitless number from the list and add them. The second parameter is a boolean enabling / disabling the removing of units. Basically, you can parseInt the value to get only the number.
+Same here, I don’t think it has much point but I wanted to add it anyway. It takes all unitless number from the list and add them. The second parameter is a boolean enabling / disabling the removing of units. Basically, you can parseInt the value to get only the number.
 
 ```scss
 @function sum($list, $force: false) {
@@ -124,7 +124,7 @@ $chunk: chunk($list, 3);
 // -> ( (a, b, c), (d, e, f), g)
 ```
 
-We could probably make the code slightly lighter but I didn't want to dig too deep into this. I'll eventually clean this up later. Meanwhile, it works great. If you find a usecase, hit me up!
+We could probably make the code slightly lighter but I didn’t want to dig too deep into this. I’ll eventually clean this up later. Meanwhile, it works great. If you find a usecase, hit me up!
 
 ### Count values
 
@@ -153,7 +153,7 @@ Same as above, the `count-values()` function is inspired by `array_count_values(
 }
 ```
 
-It's based on the built-in `zip()` function that merges several lists into a multi-dimensional list by preserving indexes.
+It’s based on the built-in `zip()` function that merges several lists into a multi-dimensional list by preserving indexes.
 
 ```scss
 $list: a, b, c, a, d, b, a, e;
@@ -187,7 +187,7 @@ $remove-duplicates: remove-duplicates($list);
 // -> a, b, c, d, e
 ```
 
-You can even do it recursively if you feel so, by enabling recursivity with `true` as a 2nd argument. Nice, isn't it?
+You can even do it recursively if you feel so, by enabling recursivity with `true` as a 2nd argument. Nice, isn’t it?
 
 ### Debug
 
@@ -234,7 +234,7 @@ For example, you know we have [two remove functions](https://hugogiraudel.com/20
 }
 ```
 
-Crazy simple, right? How come I haven't done this earlier? Well let's be honest, it has been a pain in the ass to come to this actually. I have faced an annoying issue: replacing by an empty string didn't remove the element from the list, it simply made it disappear. The difference is that the length of the list remained unchanged and this is a big deal.
+Crazy simple, right? How come I haven’t done this earlier? Well let’s be honest, it has been a pain in the ass to come to this actually. I have faced an annoying issue: replacing by an empty string didn’t remove the element from the list, it simply made it disappear. The difference is that the length of the list remained unchanged and this is a big deal.
 
 This is why I had to create the `purge()` function. Both `replace()` and `replace-nth()` functions return a purged list, which means the empty strings get actually deleted from the list.
 

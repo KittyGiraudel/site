@@ -90,7 +90,7 @@ For unix systems, this alias looks like this (put it in your `~/.bashrc` file):
 /home/workspace/myProject $
 ```
 
-If you happen to be curious, feel free to explore the `git rev-parse` command: it's a magic command used by many other commands to do many different things. The manual page says:
+If you happen to be curious, feel free to explore the `git rev-parse` command: it’s a magic command used by many other commands to do many different things. The manual page says:
 
 > "git-rev-parse - Pick out and massage parameters"
 
@@ -127,7 +127,7 @@ $ git config --global core.editor "~/Sublime\ Text\ 3/sublime_text -w"
 
 Large scale projects have many Git branches: developers create new ones every day, do many merges, switch to branches created by workmates, co-develop features in shared branches and so on.
 
-It's possible to track a remote branch, which displays useful informations in the `git status` command:
+It’s possible to track a remote branch, which displays useful informations in the `git status` command:
 
 ```git
 $ git status
@@ -137,7 +137,7 @@ $ git status
 nothing to commit (working directory clean)
 ```
 
-In the previous example, I'm on a local _infinite-scroll_ branch which is tracking a _sharedBranches/frontendTeam/infinite-scroll_ branch in the _origin_ repository. My branch and the remote one have differed: my branch contains 1 commit which is not in the remote branch and the remote branch contains 2 commits which are not in my local branch. I will have to merge or rebase the remote branch if I want to push in the same remote location.
+In the previous example, I’m on a local _infinite-scroll_ branch which is tracking a _sharedBranches/frontendTeam/infinite-scroll_ branch in the _origin_ repository. My branch and the remote one have differed: my branch contains 1 commit which is not in the remote branch and the remote branch contains 2 commits which are not in my local branch. I will have to merge or rebase the remote branch if I want to push in the same remote location.
 
 To track a remote branch you can type the following command:
 
@@ -169,7 +169,7 @@ Switched to branch 'foo'
 Your branch is up-to-date with 'origin/master'.
 ```
 
-This is the default behavior but can be changed in your configuration with the `branch.autosetupmerge` parameter. The default value is `true` but if you want to track the starting point even if it's a local branch, switch it to `always`.
+This is the default behavior but can be changed in your configuration with the `branch.autosetupmerge` parameter. The default value is `true` but if you want to track the starting point even if it’s a local branch, switch it to `always`.
 
 ```git
 $ git config --global branch.autosetupmerge always
@@ -177,7 +177,7 @@ $ git branch bar foo
 Branch bar set up to track local branch foo.
 ```
 
-If you don't want to track the starting point neither it's a local nor remote branch, use `false`.
+If you don’t want to track the starting point neither it’s a local nor remote branch, use `false`.
 
 ```git
 $ git config --global branch.autosetupmerge false
@@ -191,7 +191,7 @@ nothing to commit, working directory clean
 
 ## How to delete a remote branch
 
-It's quite easy to delete a local branch with the `-d` and `-D` parameters of `git branch` command, but the syntax to delete a remote branch is not so instinctive. Actually you don't really _delete_ a remote branch per se; instead you push _nothing_ to an existing destination.
+It’s quite easy to delete a local branch with the `-d` and `-D` parameters of `git branch` command, but the syntax to delete a remote branch is not so instinctive. Actually you don’t really _delete_ a remote branch per se; instead you push _nothing_ to an existing destination.
 
 The `git push origin master` command is a shortcut to the command `git push origin master:master`. The `master:master` syntax means `local-branch-name:destination-branch-name`. So to push _nothing_ to a remote branch, you can use the following command:
 
@@ -217,7 +217,7 @@ To change the default template, you can write a small text file somewhere on you
 $ git config --global commit.template /home/loic/git/committemplate.txt
 ```
 
-Here's what my `committemplate.txt` looks like:
+Here’s what my `committemplate.txt` looks like:
 
 ```git
 $ cat /home/loic/git/committemplate.txt
@@ -225,11 +225,11 @@ $ cat /home/loic/git/committemplate.txt
 More informations about the feature
 ```
 
-Unfortunately, it's not possible to use a bash script instead of a text message, to &mdash; let's say &mdash; dynamically add the branch name. Fortunately, the same thing can be done with Git hooks.
+Unfortunately, it’s not possible to use a bash script instead of a text message, to &mdash; let’s say &mdash; dynamically add the branch name. Fortunately, the same thing can be done with Git hooks.
 
 _Hooking_ is a common programming pattern to allow user to improve the behavior of a software by allowing custom piece of code to run at a specific moment.
 
-With Git, you can create a client-side hook running before user writes his commit message. A hook can retrieve some informations to pre-fill the commit message. Let's create one in order to fill the commit message with the local branch name, shall we?
+With Git, you can create a client-side hook running before user writes his commit message. A hook can retrieve some informations to pre-fill the commit message. Let’s create one in order to fill the commit message with the local branch name, shall we?
 
 ```git
 $ cat .git/hooks/prepare-commit-msg
@@ -254,7 +254,7 @@ else
   firstline=`head -n1 $commitMsgFile`
 
   # We check the fist line of the commit message file.
-  # If it's an empty string then user didn't use `git commit --amend` so we can fill the commit msg file
+  # If it’s an empty string then user didn’t use `git commit --amend` so we can fill the commit msg file
   if [ -z "$firstline" ]; then
     echo "[$branchname] " > $commitMsgFile
   fi
@@ -262,7 +262,7 @@ else
 fi
 ```
 
-Now let's try our new hook:
+Now let’s try our new hook:
 
 ```git
 $ git checkout -b my-local-branch
@@ -278,7 +278,7 @@ My text editor opens with the following content:
 [my-local-branch]
 ```
 
-I can update this message to add some informations. If I amend my commit to change the message, it shouldn't overwrite my message :
+I can update this message to add some informations. If I amend my commit to change the message, it shouldn’t overwrite my message :
 
 ```git
 $ git log -1 --oneline
@@ -314,7 +314,7 @@ $ git log -1 --oneline
 
 ## Split a file modification into two commits
 
-Now we've covered the basics, let's move on to some advanced Git techniques. Those tricks get useful when you have a complex Git environment which can require:
+Now we’ve covered the basics, let’s move on to some advanced Git techniques. Those tricks get useful when you have a complex Git environment which can require:
 
 * to regularly merge or rebase with other developers' stuff (which can introduce conflicts)
 * to play with commits (split, inject, merge, reorder)
@@ -324,19 +324,19 @@ Now we've covered the basics, let's move on to some advanced Git techniques. Tho
 
 > Each commit must have only one purpose.
 
-Each commit must have only one purpose (c.f. Law #2 at the beginning of the Git Tips & Tricks - Part 1), but it's easy to find some small mistakes when editing a file. If you don't want to add those little fixes when you're creating your commit in order to put them in a dedicated commit, the best way is to split the file modifications when adding the file to the staging area.
+Each commit must have only one purpose (c.f. Law #2 at the beginning of the Git Tips & Tricks - Part 1), but it’s easy to find some small mistakes when editing a file. If you don’t want to add those little fixes when you’re creating your commit in order to put them in a dedicated commit, the best way is to split the file modifications when adding the file to the staging area.
 
 To do this you can use the `--patch` (or `-p`) parameter with the `git add` command.
 
-Let's take an example:
+Let’s take an example:
 
 ```git
-$ echo "Here's my tetx file" > file.txt
+$ echo "Here’s my tetx file" > file.txt
 $ git add -A
 $ git commit -m 'Initial commit'
 ```
 
-I've just created a text file with only one line. Now, I just want to add a second line but while editing my file, I see that I wrote "tetx file" and not "text file" so I add my new line and I fix the first one in the same time. Let's see what our diff looks like:
+I’ve just created a text file with only one line. Now, I just want to add a second line but while editing my file, I see that I wrote "tetx file" and not "text file" so I add my new line and I fix the first one in the same time. Let’s see what our diff looks like:
 
 ```git
 $ git diff
@@ -345,12 +345,12 @@ index 6214953..1d54a52 100644
 &ndash;&ndash;&ndash; file.txt
 +++ file.txt
 @@ -1 +1,2 @@
--Here's my tetx file
-+Here's my text file
+-Here’s my tetx file
++Here’s my text file
 +And this is the second line
 ```
 
-If I want to split the two changes in two separate commits, I can use the `--patch` parameter. Let's try to create a first commit fixing the mistake and a second commit adding the new line:
+If I want to split the two changes in two separate commits, I can use the `--patch` parameter. Let’s try to create a first commit fixing the mistake and a second commit adding the new line:
 
 ```git
 $ git add --patch file.txt
@@ -359,8 +359,8 @@ index 6214953..1d54a52 100644
 &ndash;&ndash;&ndash; a/file.txt
 +++ b/file.txt
 @@ -1 +1,2 @@
--Here's my tetx file
-+Here's my text file
+-Here’s my tetx file
++Here’s my text file
 +And this is the second line
 Stage this hunk [y,n,q,a,d,/,e,?]?
 ```
@@ -371,7 +371,7 @@ At the end of the `git add` command, there is a prompt message asking me if I wa
 * **n**o,
 * **q**uit,
 * **a**ll later hunks (including current one),
-* **d**on't add all the later hunks (included current one),
+* **d**on’t add all the later hunks (included current one),
 * search for a hunk with a regexp (**/**),
 * **e**dit the current hunk,
 * show some help (**?**).
@@ -381,8 +381,8 @@ If I type **e**, the hunk will be opened in my text editor:
 ```git
 # Manual hunk edit mode -- see bottom for a quick guide
 @@ -1 +1,2 @@
--Here's my tetx file
-+Here's my text file
+-Here’s my tetx file
++Here’s my text file
 +And this is the second line
 # &ndash;&ndash;&ndash;
 # To remove '-' lines, make them ' ' lines (context).
@@ -395,7 +395,7 @@ If I type **e**, the hunk will be opened in my text editor:
 # then the edit is aborted and the hunk is left unchanged.
 ```
 
-The first commit should only fix the mistake so let's remove the **+And this is the second line** line and save the change:
+The first commit should only fix the mistake so let’s remove the **+And this is the second line** line and save the change:
 
 Now, if I launch a `git status` command, I can see this:
 
@@ -426,8 +426,8 @@ index 6214953..cc58d14 100644
 &ndash;&ndash;&ndash; file.txt
 +++ file.txt
 @@ -1 +1 @@
--Here's my tetx file
-+Here's my text file
+-Here’s my tetx file
++Here’s my text file
 ```
 
 If I want to see the unstaged part:
@@ -439,7 +439,7 @@ index cc58d14..1d54a52 100644
 &ndash;&ndash;&ndash; file.txt
 +++ file.txt
 @@ -1 +1,2 @@
- Here's my text file
+ Here’s my text file
 +And this is the second line
 ```
 
@@ -474,7 +474,7 @@ Author: lgiraudel <lgiraudel@mydomain.com>
 
 ## Pick a commit from another branch
 
-It's sometimes useful to pick a commit from another branch to add it in the current branch.
+It’s sometimes useful to pick a commit from another branch to add it in the current branch.
 
 The command to do this is really simple:
 
@@ -490,7 +490,7 @@ This command has some useful parameters:
 
 ## Final thoughts
 
-That's it for today folks! In the next parts, we'll deal with the following subjects:
+That’s it for today folks! In the next parts, we’ll deal with the following subjects:
 
 * fix conflicts with graphical tools
 * find a bug with a dichotomous process

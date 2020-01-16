@@ -7,7 +7,7 @@ tags:
   - release
 ---
 
-> **Edit (2015/06/06)**: this is an experiment, please don't use this code in production.
+> **Edit (2015/06/06)**: this is an experiment, please don’t use this code in production.
 
 A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) and I had the crazy idea of implementing bitwise operators in Sass. It went like this:
 
@@ -17,9 +17,9 @@ A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) a
 > **Val**: No.
 > (Loading…)
 > **Val**: Well, in fact we could.
-> **Hugo**: LET'S DO IT!
+> **Hugo**: LET’S DO IT!
 
-And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let's catch up on bitwise operators, shall we?
+And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let’s catch up on bitwise operators, shall we?
 
 _Note: project is on GitHub. Check out [SassyBitwise](https://github.com/HugoGiraudel/SassyBitwise)._
 
@@ -29,7 +29,7 @@ _Note: I am no programmer so please kindly apologize any shortcut I could make w
 
 You are probably not without knowing numbers we use in everyday life are expressed in base 10, also known as _decimal_. _Hexadecimal_ is base 16. _Octal_ is base 8. And _binary_ is base 2. Just to name a few popular bases.
 
-Let's put this very simple: bitwise operators are operators for numbers expressed in their binary form. Most common bitwise operators are AND (`&`), OR (`|`) and NOT (`~`), but there are also XOR (`^`), LEFT-SHIFT (`<<`) and RIGHT-SHIFT (`>>`).
+Let’s put this very simple: bitwise operators are operators for numbers expressed in their binary form. Most common bitwise operators are AND (`&`), OR (`|`) and NOT (`~`), but there are also XOR (`^`), LEFT-SHIFT (`<<`) and RIGHT-SHIFT (`>>`).
 
 To illustrate this explanation, allow me to have a little example (inspired from [Wikipedia](https://en.wikipedia.org/wiki/Bitwise_operation#Bitwise_operators)):
 
@@ -71,7 +71,7 @@ As you can see, the idea is pretty straightforward:
 * _LEFT-SHIFT_ shifts all bits from `n` to the left
 * _RIGHT-SHIFT_ shifts all bits from `n` to the right
 
-If you're more a _table_ kind of guy:
+If you’re more a _table_ kind of guy:
 
 |     | Bit | Result |
 | :-: | :-: | :----: |
@@ -100,9 +100,9 @@ Now, we wanted to implement this in Sass. There are two ways of doing it:
 * convert to binary string, then apply operations char per char (a char being a bit in this context)
 * rely on mathematical equivalents
 
-We could have decided to manipulate binary strings but god knows why, we ended up implementing the mathematical equivalents of all operators. Fortunately, we didn't have to figure out the formula (we are not _that_ clever): [Wikipedia has them](https://en.wikipedia.org/wiki/Bitwise_operation#Mathematical_equivalents).
+We could have decided to manipulate binary strings but god knows why, we ended up implementing the mathematical equivalents of all operators. Fortunately, we didn’t have to figure out the formula (we are not _that_ clever): [Wikipedia has them](https://en.wikipedia.org/wiki/Bitwise_operation#Mathematical_equivalents).
 
-You may think that we didn't need a decimal to binary converter since we use math rather than string manipulation. Actually, we had to write a `decimal-to-binary()` function because we needed to know the length of the binary string to compute bitwise operations.
+You may think that we didn’t need a decimal to binary converter since we use math rather than string manipulation. Actually, we had to write a `decimal-to-binary()` function because we needed to know the length of the binary string to compute bitwise operations.
 
 We could have figured this length without converting to binary if we had a `log()` function. And we could have made a `log()` function if we had a `frexp()` function. And we could have made a `frexp()` function if we had bitwise operators. Do you see the problem here?
 
@@ -114,7 +114,7 @@ Valérian summed it up quite nicely in a Tweet:
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
 
-I won't dig into Sass code because it doesn't have much point. Let's just have a look at the final implementation. We have implemented each operator as a Sass function called `bw-*` where `*` stands for the name of the operator (e.g. `and`). Except for `bw-not()` which is a rather particuliar operator, all functions accept 2 arguments: both decimal numbers.
+I won’t dig into Sass code because it doesn’t have much point. Let’s just have a look at the final implementation. We have implemented each operator as a Sass function called `bw-*` where `*` stands for the name of the operator (e.g. `and`). Except for `bw-not()` which is a rather particuliar operator, all functions accept 2 arguments: both decimal numbers.
 
 On top of that, we have built a `bitwise()` function (aliased as `bw()`) which provides a more friendly API when dealing with bitwise operations. It accepts any number of queued bitwise operations, where operators are quoted. For instance:
 
@@ -123,13 +123,13 @@ On top of that, we have built a `bitwise()` function (aliased as `bw()`) which p
 $value: bitwise(42 '|' 38 '|' 24);
 ```
 
-So that's not too bad. The fact that operators have to be quoted for Sass not to crash is kind of annoying, but I suppose we can live with it. Other than that, it's pretty much like if you were doing bitwise operations in other language, except you wrap all this stuff in `bitwise()` or `bw()`. In my opinion, the API is pretty simple to use.
+So that’s not too bad. The fact that operators have to be quoted for Sass not to crash is kind of annoying, but I suppose we can live with it. Other than that, it’s pretty much like if you were doing bitwise operations in other language, except you wrap all this stuff in `bitwise()` or `bw()`. In my opinion, the API is pretty simple to use.
 
 ## Applications
 
-Let's be honest: there is none. Sass is not a low-level programming language. It does not have any valid use case for bitwise operations. Meanwhile, we implemented bit flags. _Bit flags_ is a programming technique aiming at storing several booleans in a single integer in ordre to save memory.
+Let’s be honest: there is none. Sass is not a low-level programming language. It does not have any valid use case for bitwise operations. Meanwhile, we implemented bit flags. _Bit flags_ is a programming technique aiming at storing several booleans in a single integer in ordre to save memory.
 
-Here is a great [introduction to bit flags](http://forum.codecall.net/topic/56591-bit-fields-flags-tutorial-with-example/) but I'll try to sum up. The idea behind _bit flags_ is to have a collection of flags (think of them as options) mapped to powers of 2 (usually with an `enum` field in C/C++). Each option will have its own bit flag.
+Here is a great [introduction to bit flags](http://forum.codecall.net/topic/56591-bit-fields-flags-tutorial-with-example/) but I’ll try to sum up. The idea behind _bit flags_ is to have a collection of flags (think of them as options) mapped to powers of 2 (usually with an `enum` field in C/C++). Each option will have its own bit flag.
 
 ```
 00000000 Bin    | Dec
@@ -143,7 +143,7 @@ Here is a great [introduction to bit flags](http://forum.codecall.net/topic/5659
 └─────── 1 << 7 | 128
 ```
 
-Now, let's say option A is `1 << 0` (DEC 1) and option B is `1 << 1` (DEC 2). If we _OR_ them:
+Now, let’s say option A is `1 << 0` (DEC 1) and option B is `1 << 1` (DEC 2). If we _OR_ them:
 
 ```
    00000001 (A)
@@ -151,7 +151,7 @@ OR 00000010 (B)
  = 00000011
 ```
 
-The result &mdash; let's call it _Z_ &mdash; holds both options, right? To retrieve separately A and B from Z, we can use the _AND_ operator:
+The result &mdash; let’s call it _Z_ &mdash; holds both options, right? To retrieve separately A and B from Z, we can use the _AND_ operator:
 
 ```
     00000011 (Z)
@@ -171,9 +171,9 @@ AND 00000100 (C)
   = 00000000
 ```
 
-The result of `Z & C` isn't equal to `C`, so we can safely assume the C option hasn't been passed.
+The result of `Z & C` isn’t equal to `C`, so we can safely assume the C option hasn’t been passed.
 
-That's pretty much how bit flags work. Now let's apply it to Sass as an example of SassyBitwise. First thing to do, define a couple of flags:
+That’s pretty much how bit flags work. Now let’s apply it to Sass as an example of SassyBitwise. First thing to do, define a couple of flags:
 
 ```scss
 // Flags
@@ -218,6 +218,6 @@ test {
 
 ## Final thoughts
 
-That's it folks, SassyBitwise. No point, much fun. As always.
+That’s it folks, SassyBitwise. No point, much fun. As always.
 
 _Note: a huge thanks to [Valérian Galliat](https://twitter.com/valeriangalliat) for helping me out with this._

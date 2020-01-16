@@ -16,19 +16,19 @@ Check it live on [his website home](https://arleym.com/) or at [CSS-tricks](http
 
 ## Make it Sassy, make it easy
 
-g idea, really. It works great, it looks great, the only downside is… it's a pain in the ass to code.
+g idea, really. It works great, it looks great, the only downside is… it’s a pain in the ass to code.
 
 This is where Sass &mdash; or any CSS preprocessor really &mdash; can be very efficient. **It took me about 10 minutes to divide the amount of required code by 4.** Plus, it makes everything so much easier to adapt and maintain.
 
 <pre class="codepen" data-height="320" data-type="result" data-href="kBzra" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/kBzra">Check out this Pen!</a></pre>
 
-If you simply want to see the code and don't care much about how I did it, please check [this CodePen](https://codepen.io/HugoGiraudel/pen/kBzra) ([fullsize here](https://codepen.io/HugoGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
+If you simply want to see the code and don’t care much about how I did it, please check [this CodePen](https://codepen.io/HugoGiraudel/pen/kBzra) ([fullsize here](https://codepen.io/HugoGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
 
 ### Create the list
 
-Okay, this is no magic. I had to write all the words Arley used all over again. I guess I could write a little JavaScript that would have parsed Arley's stylesheet then making a list of it but it would have been ever more time consuming.
+Okay, this is no magic. I had to write all the words Arley used all over again. I guess I could write a little JavaScript that would have parsed Arley’s stylesheet then making a list of it but it would have been ever more time consuming.
 
-So basically I created a Sass list containing all words ordered from the longest to the shortest. Hopefully, Arley already did this part of the job before me so I didn't have to do it again.
+So basically I created a Sass list containing all words ordered from the longest to the shortest. Hopefully, Arley already did this part of the job before me so I didn’t have to do it again.
 
 ```scss
 $words: 'Unconventional', 'Flabbergasting', 'Scintillating', 'Extraordinary',
@@ -59,9 +59,9 @@ $words: 'Unconventional', 'Flabbergasting', 'Scintillating', 'Extraordinary',
   'Loud', 'Lean', 'Fine', 'Busy', 'Cool', 'Rare', 'Apt', 'Fun', 'Hot', 'Big';
 ```
 
-Pretty big, right? Don't worry, the worst part is over. Now it's all about easy and interesting stuff.
+Pretty big, right? Don’t worry, the worst part is over. Now it’s all about easy and interesting stuff.
 
-### Let's loop!
+### Let’s loop!
 
 > One loop to rule them all,
 > One loop to bind them,
@@ -104,11 +104,11 @@ $max: 1910px;
 }
 ```
 
-This outputs exactly the same thing. It's really a matter of where you want to put the Media Query call: inside or outside the selector.
+This outputs exactly the same thing. It’s really a matter of where you want to put the Media Query call: inside or outside the selector.
 
 ## Final words
 
-That's pretty much it. Fairly simple isn't it? This means we can easily add another word in the list without having to copy/paste or code anything. Simply put the word.
+That’s pretty much it. Fairly simple isn’t it? This means we can easily add another word in the list without having to copy/paste or code anything. Simply put the word.
 
 However if we add a couple of words, the last one will trigger under 300px device width, which gets kind of small. To prevent this, we could reverse the loop, starting from the smallest width, increasing from 10 to 10.
 

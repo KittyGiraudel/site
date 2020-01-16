@@ -1,5 +1,5 @@
 ---
-title: "SassyMatrix: because one dimension wasn't enough"
+title: "SassyMatrix: because one dimension wasn’t enough"
 tags:
   - sass
   - matrix
@@ -7,11 +7,11 @@ tags:
   - sassymatrix
 ---
 
-> **Edit (2015/06/06)**: this is an experiment, please don't use this code in production.
+> **Edit (2015/06/06)**: this is an experiment, please don’t use this code in production.
 
-Sass is much more than just a CSS preprocessor. You can do ton of things you're not supposed to do and won't ever do except in your crazy demos. This is what is amazing about Sass: it can be use for (pseudo-)programming as well!
+Sass is much more than just a CSS preprocessor. You can do ton of things you’re not supposed to do and won’t ever do except in your crazy demos. This is what is amazing about Sass: it can be use for (pseudo-)programming as well!
 
-A while back, I wanted to create a function to calculate the Levenshtein distance between two strings. The [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) is the number of manipulations you need to do to string A in order to have string B. If you want Wikipedia's definition, here it is:
+A while back, I wanted to create a function to calculate the Levenshtein distance between two strings. The [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) is the number of manipulations you need to do to string A in order to have string B. If you want Wikipedia’s definition, here it is:
 
 > In information theory and computer science, the Levenshtein distance is a string metric for measuring the difference between two sequences. Informally, the Levenshtein distance between two words is the minimum number of single-character edits (insertion, deletion, substitution) required to change one word into the other.
 
@@ -38,7 +38,7 @@ for (var i = 0; i < matrix.length; i++) {
 
 This would be enough to create an empty matrix of 9x9 with all cells filled with `undefined`. In Sass, you cannot create a new list of `n` cell. If you do `$list: (9)`, you are basically assigning the number `9` to the `$list` variable which is not what you want.
 
-Thus I found out it's much easier to simply instanciate a new list with dummy values to be updated later than creating a matrix with definitive value right away. Let's do that shall we?
+Thus I found out it’s much easier to simply instanciate a new list with dummy values to be updated later than creating a matrix with definitive value right away. Let’s do that shall we?
 
 ```scss
 @function matrix($x, $y: $x) {
@@ -69,7 +69,7 @@ Being able to instanciate an empty matrix is cool but being able to fill it with
 }
 ```
 
-We could have requested two distinct parameters for `$x` and `$y` but I feel like it's better asking for a 2-items long list `($x $y)`. It keeps the signature cleaner and makes more sense to me. However we need to make sure `$coords` is actually a 2-items long list of coordinates, so why don't we make a little helper for this?
+We could have requested two distinct parameters for `$x` and `$y` but I feel like it’s better asking for a 2-items long list `($x $y)`. It keeps the signature cleaner and makes more sense to me. However we need to make sure `$coords` is actually a 2-items long list of coordinates, so why don’t we make a little helper for this?
 
 ```scss
 @function _valid-coords($coords) {
@@ -80,19 +80,19 @@ We could have requested two distinct parameters for `$x` and `$y` but I feel lik
 }
 ```
 
-_Note: I like to prefix private functions with an underscore. By "private" I mean functions that are not supposed to be called from the outside. Unfortunately Sass doesn't provide any way to privatize stuff._
+_Note: I like to prefix private functions with an underscore. By "private" I mean functions that are not supposed to be called from the outside. Unfortunately Sass doesn’t provide any way to privatize stuff._
 
-All we did was checking for the length and the type. This doesn't deal with out of bounds coordinates but that's more than enough for now. Anyway, to set a value in the grid it is nothing easier than:
+All we did was checking for the length and the type. This doesn’t deal with out of bounds coordinates but that’s more than enough for now. Anyway, to set a value in the grid it is nothing easier than:
 
 ```scss
 $matrix: set-entry($matrix,  (1 1), 42);
 ```
 
-What is also pretty cool is you can use negative indexes to start from the end of columns/rows. So to fill the last entry from the last row of the grid, you'd do something like `set-entry($matrix, (-1 -1), 42)`.
+What is also pretty cool is you can use negative indexes to start from the end of columns/rows. So to fill the last entry from the last row of the grid, you’d do something like `set-entry($matrix, (-1 -1), 42)`.
 
 ## Reading a matrix
 
-Now that we are able to easily set values in the grid, we need a way to retrieve those values! Let's build a `get-entry` function working exactly like the one we just did.
+Now that we are able to easily set values in the grid, we need a way to retrieve those values! Let’s build a `get-entry` function working exactly like the one we just did.
 
 ```scss
 @function get-entry($matrix, $coords) {
@@ -105,7 +105,7 @@ Now that we are able to easily set values in the grid, we need a way to retrieve
 }
 ```
 
-See how we check for coordinates validity with our brand new helper? I don't know for you, but I think it looks pretty neat! Anyway, to retrieve a value at position (x y), all we have to do is:
+See how we check for coordinates validity with our brand new helper? I don’t know for you, but I think it looks pretty neat! Anyway, to retrieve a value at position (x y), all we have to do is:
 
 ```scss
 $value: get-entry($matrix,  (1 1)); // 42
@@ -113,7 +113,7 @@ $value: get-entry($matrix,  (1 1)); // 42
 
 ## Displaying a matrix
 
-What I always found difficult when working with matrices (no matter the language) is actually seeing what's going on. I need a visual representation of the grid to understand what I am doing and whether I'm doing it properly. Unfortunately [my debug function from SassyLists](https://github.com/Team-Sass/SassyLists/blob/master/stylesheets/SassyLists/_debug.scss) isn't quite suited for such a case but the main idea is the same. I just had to revamp it a little bit.
+What I always found difficult when working with matrices (no matter the language) is actually seeing what’s going on. I need a visual representation of the grid to understand what I am doing and whether I’m doing it properly. Unfortunately [my debug function from SassyLists](https://github.com/Team-Sass/SassyLists/blob/master/stylesheets/SassyLists/_debug.scss) isn’t quite suited for such a case but the main idea is the same. I just had to revamp it a little bit.
 
 ```scss
 @function display($matrix) {
@@ -162,9 +162,9 @@ This function returns a string like this: `" 0 0 0\A 0 0 0\A 0 0 0\A "`. As is, 
 
 Since there are two pseudo-elements (`::after` and `::before`), you can watch for 2 matrices at the same time. Pretty convenient when working on complicated stuff or debugging a matrix.
 
-## What's next?
+## What’s next?
 
-So far we managed to initialize a matrix, set values in it, retreive those values and display the whole thing as a two dimensional grid directly from CSS. This is quite a lot for a first roll with matrices don't you think?
+So far we managed to initialize a matrix, set values in it, retreive those values and display the whole thing as a two dimensional grid directly from CSS. This is quite a lot for a first roll with matrices don’t you think?
 
 But what if we want to push things further? While I am not ace with matrices (I never really did extremely well in math), I know someone who is: [Ana Tudor](https://twitter.com/thebabydino). You may be familiar with some of her crazy experiments from CodePen. Anyway, Ana is most certainly a brainiac so she gave me plenty of ideas of functions to ease the pain of having to deal with matrices!
 
@@ -191,4 +191,4 @@ Also, there is a Compass extension for SassyMatrix now:
 2. Add `require 'SassyMatrix'` in `config.rb`
 3. `@import "SassyMatrix"` in your stylesheet
 
-Also, you can play with SassyMatrix directly at [SassMeister](https://sassmeister.com), so be sure to give it a try. Plus, I'd love to have some feedbacks!
+Also, you can play with SassyMatrix directly at [SassMeister](https://sassmeister.com), so be sure to give it a try. Plus, I’d love to have some feedbacks!

@@ -6,21 +6,21 @@ tags:
   - library
 ---
 
-If you enjoy reading about Sass, you may have stumbled upon Stuart Robson's [recent article promoting BEM](http://www.alwaystwisted.com/post.php?s=2014-02-27-even-easier-bem-ing-with-sass-33) syntax with new Sass 3.3 features. Pretty cool article; if you haven't read it, you definitely should.
+If you enjoy reading about Sass, you may have stumbled upon Stuart Robson’s [recent article promoting BEM](http://www.alwaystwisted.com/post.php?s=2014-02-27-even-easier-bem-ing-with-sass-33) syntax with new Sass 3.3 features. Pretty cool article; if you haven’t read it, you definitely should.
 
-Anyway, I had a couple of minutes to kill the other day so I opened new [pen](https://codepen.io) and started writing a little button library. Yes, another one! Actually my point wasn't to improve anything, I just wanted to code some Sass, just for the sake of it.
+Anyway, I had a couple of minutes to kill the other day so I opened new [pen](https://codepen.io) and started writing a little button library. Yes, another one! Actually my point wasn’t to improve anything, I just wanted to code some Sass, just for the sake of it.
 
 Anyway, I came up with some interesting things and Stuart suggested I wrote a little something about it so here we are.
 
 ## Main principles
 
-My point was to create a base class and a couple of modifiers to be used along with the base class using the brand new `&--modifier` syntax. Then you can stack as many modifiers as you want as long as they don't conflict with each others (multiple color schemes for instance).
+My point was to create a base class and a couple of modifiers to be used along with the base class using the brand new `&--modifier` syntax. Then you can stack as many modifiers as you want as long as they don’t conflict with each others (multiple color schemes for instance).
 
 Also the code should be DRY and the CSS output well optimized. As light as it can be! And last but not least, the most important pieces of configuration should be handled with a couple of variables to avoid digging into the code.
 
 ## Configuration
 
-Let's start with the configuration, shall we?
+Let’s start with the configuration, shall we?
 
 ```scss
 // Configuration
@@ -50,7 +50,7 @@ Everything might not be intuitive so let me explain what each variable is for:
 - `$btn-border` kind of works the same way; if not false, it defines the function used to compute the border-color based on the button color. If `false`, it just disables the border.
 - `$btn-background` is a map of all color schemes; every color is mapped to a name so a modifier like `.button--default` will make a grey button.
 
-Also note the 2 measures we take to avoid conflicts with user's code:
+Also note the 2 measures we take to avoid conflicts with user’s code:
 
 - the `!default` flag for each variable,
 - namespacing all variables with `$btn-`
@@ -111,7 +111,7 @@ Regarding color schemes, we simply loop through the `$btn-background` map, and c
 
 ## The color mixin
 
-The `button-color` mixin aims at dealing with color schemes. We have set up quite a few color schemes in the `$btn-background` map over which we've iterated to apply those color to the classes they belong to.
+The `button-color` mixin aims at dealing with color schemes. We have set up quite a few color schemes in the `$btn-background` map over which we’ve iterated to apply those color to the classes they belong to.
 
 Now the mixin will actually apply the background-color to the button, as well as the hover/active state, and the border if not set to false.
 
@@ -136,9 +136,9 @@ Remember what our `$btn-hover` and `$btn-border` variables look like? First a co
 
 ### Smart error handling
 
-I don't know for you, but I don't like letting the compiler fail. I'd rather handle the potential errors myself; I feel like it's better for the end user.
+I don’t know for you, but I don’t like letting the compiler fail. I’d rather handle the potential errors myself; I feel like it’s better for the end user.
 
-So we should probably make a couple of checks to make sure everything's right before dumping our CSS in the `button-color` mixin. Here is how I did it:
+So we should probably make a couple of checks to make sure everything’s right before dumping our CSS in the `button-color` mixin. Here is how I did it:
 
 ```scss
 @mixin button-color($color) {
@@ -187,9 +187,9 @@ So we should probably make a couple of checks to make sure everything's right be
 
 > Always validate user input in your custom functions.
 
-Yes, it takes a decent amount of space. Yes, it makes the mixin longer. Yes, it's a pain in the ass to write. On the other hand, if the user makes a mistake with one of the arguments, he'll know what's going on, or why the mixin didn't output anything.
+Yes, it takes a decent amount of space. Yes, it makes the mixin longer. Yes, it’s a pain in the ass to write. On the other hand, if the user makes a mistake with one of the arguments, he’ll know what’s going on, or why the mixin didn’t output anything.
 
-Note how we use the new `function-exists` from Sass 3.3 to make sure the functions set in `$btn-border` and `$btn-hover` variables actually exists. We could push the tests further by making sure it's one of `saturate`, `desaturate`, `darken`, `lighten`, `adjust-hue`, `grayscale`, `complement` or `invert` but I feel like we already do a pretty good job covering potential mistakes here.
+Note how we use the new `function-exists` from Sass 3.3 to make sure the functions set in `$btn-border` and `$btn-hover` variables actually exists. We could push the tests further by making sure it’s one of `saturate`, `desaturate`, `darken`, `lighten`, `adjust-hue`, `grayscale`, `complement` or `invert` but I feel like we already do a pretty good job covering potential mistakes here.
 
 ## Final thoughts
 

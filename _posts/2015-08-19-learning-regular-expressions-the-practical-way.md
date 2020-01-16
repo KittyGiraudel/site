@@ -78,7 +78,7 @@ We will also assume that selectors are correctly written, sticking to what is po
 
 Alright? Let’s get started slowly but surely.
 
-_Note: for sake of readability, I omitted the [PCRE delimiters](https://php.net/manual/en/regexp.reference.delimiters.php) (`/…/`) from all regular expressions in this article. We also won't talk about [flags](https://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion._
+_Note: for sake of readability, I omitted the [PCRE delimiters](https://php.net/manual/en/regexp.reference.delimiters.php) (`/…/`) from all regular expressions in this article. We also won’t talk about [flags](https://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion._
 
 ## Matching a raw attribute selector
 
@@ -108,7 +108,7 @@ So far so good, right? Let’s check our test list to see how our regular expres
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk5q" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
-Oops, `\w+` is actually not quite right! For starters, we do not want the attribute name to start with a number, and we don't want to allow underscores either, only hyphens. Along the same lines, uppercase letters are not actually allowed, so instead of `\w+` we should check for: `[a-z][a-z0-9-]*`. This means a mandatory latin letter that can be (but not necessarily) followed by any number of latin letters, numbers or hyphens. This is what the star (`*`) implies: from 0 to infinity. Our regex is now:
+Oops, `\w+` is actually not quite right! For starters, we do not want the attribute name to start with a number, and we don’t want to allow underscores either, only hyphens. Along the same lines, uppercase letters are not actually allowed, so instead of `\w+` we should check for: `[a-z][a-z0-9-]*`. This means a mandatory latin letter that can be (but not necessarily) followed by any number of latin letters, numbers or hyphens. This is what the star (`*`) implies: from 0 to infinity. Our regex is now:
 
 ```regex
 \[[a-z][a-z0-9-]*]
@@ -127,7 +127,7 @@ To be completely honest, we could actually very slightly tweak our regular expre
 
 This bracket mess literally means “find an opening square bracket, followed by anything that is not a closing square bracket, followed by a closing square bracket”. To do so, it relies on a negated set that we will see more in-depth in the next section.
 
-Broadly speaking, it is more than enough to find attribute selectors in a stylesheet but we didn't learn much! Also, this version captures a lot of poorly formatted selectors, as well as some false-positive results as you can see in the next image. Let’s try to match a valid selector!
+Broadly speaking, it is more than enough to find attribute selectors in a stylesheet but we didn’t learn much! Also, this version captures a lot of poorly formatted selectors, as well as some false-positive results as you can see in the next image. Let’s try to match a valid selector!
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/03.png" alt="\[[^\]]+]" />
@@ -157,7 +157,7 @@ So to match anything that is not a closing square bracket, it is: `[^\]]`, as we
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk63" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
-Oh-ho though… Now `[foo]` doesn't match anymore! That’s because we did not make the equal + something part optional. We can do that by wrapping it in parentheses and add a question mark right after it (`(..)?`). Like so:
+Oh-ho though… Now `[foo]` doesn’t match anymore! That’s because we did not make the equal + something part optional. We can do that by wrapping it in parentheses and add a question mark right after it (`(..)?`). Like so:
 
 ```regex
 \[[a-z][a-z0-9-]*(=[^\]]+)?]
@@ -185,7 +185,7 @@ That’s going somewhere! Attribute selectors can involve [a modulator](https://
 
 ## Dealing with quotes
 
-Like many languages, CSS does not enforce a specific quote style. It can be either double (`"`) or simple (`'`). Actually most of the time, quotes can be safely omitted! It is the case for attribute values, as long as they don't contain any specific character. It is best practice to put them anyway, but our regular expression should make sure it works for valid unquoted values as well.
+Like many languages, CSS does not enforce a specific quote style. It can be either double (`"`) or simple (`'`). Actually most of the time, quotes can be safely omitted! It is the case for attribute values, as long as they don’t contain any specific character. It is best practice to put them anyway, but our regular expression should make sure it works for valid unquoted values as well.
 
 So instead of matching anything but a closing square bracket, we want to match either:
 
@@ -269,7 +269,7 @@ That’s it! The final state of our regular expression is able to correctly matc
 
 As you can see, it is not _that_ hard to write a decent regular expression, especially when you take it slow and build it step by step. Do not try to rush the perfect solution right away. Start with the basic match, then enhance it to deal with more complex scenarios and edge cases.
 
-It is worth noting that the difficulty with regular expressions is usually not to write them but to read them, and thus maintain them. Therefore, it is highly recommended to extensively unit-test code snippets relying on regular expressions. It can be a huge time-saviour when updating a regular expression to have a few dozens of tests making sure that the behaviour didn't break.
+It is worth noting that the difficulty with regular expressions is usually not to write them but to read them, and thus maintain them. Therefore, it is highly recommended to extensively unit-test code snippets relying on regular expressions. It can be a huge time-saviour when updating a regular expression to have a few dozens of tests making sure that the behaviour didn’t break.
 
 <figure class="figure">
   <img src="/assets/images/learning-regular-expressions/xkcd-2.png" alt="xkcd comics about regular expressions" />

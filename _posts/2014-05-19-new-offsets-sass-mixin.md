@@ -6,7 +6,7 @@ tags:
   - offsets
 ---
 
-> **Edit (2015/06/06)**: One year later, I know think it's better not to have a mixin for this. Less Sass, more native CSS.
+> **Edit (2015/06/06)**: One year later, I know think it’s better not to have a mixin for this. Less Sass, more native CSS.
 
 About a year ago, I wrote about how I managed to come up with what I think is [a clever Sass mixin to deal with offset positioning](https://hugogiraudel.com/2013/08/05/offsets-sass-mixin/) in CSS, also known as `top`, `right`, `bottom` and `left`.
 
@@ -19,9 +19,9 @@ selector {
 }
 ```
 
-When looking back at Nib's documentation a couple of weeks ago, I noticed there are a couple of features I missed when implementing the Sass version of this little gem. Hence the brand new version of the mixin, and the blog post explaining the process.
+When looking back at Nib’s documentation a couple of weeks ago, I noticed there are a couple of features I missed when implementing the Sass version of this little gem. Hence the brand new version of the mixin, and the blog post explaining the process.
 
-Unfortunately, Sass in its SCSS syntax doesn't provide as much abstraction as Stylus does, so we still have to use some extra characters, especially `@include`, parenthesis, colons and semi-colons… That being said, the result is quite good in my opinion.
+Unfortunately, Sass in its SCSS syntax doesn’t provide as much abstraction as Stylus does, so we still have to use some extra characters, especially `@include`, parenthesis, colons and semi-colons… That being said, the result is quite good in my opinion.
 
 ```scss
 // SCSS
@@ -32,7 +32,7 @@ selector {
 
 ## What we want? Offsets!
 
-Before jumping on the code, it is important to analyze the topic so we can implement things right. There are a few different use cases, but the main idea is always the same: we loop through the 4 offsets to see if they are being passed to our mixin. Then, depending on how it's going, various things happen. Let's see each case one by one.
+Before jumping on the code, it is important to analyze the topic so we can implement things right. There are a few different use cases, but the main idea is always the same: we loop through the 4 offsets to see if they are being passed to our mixin. Then, depending on how it’s going, various things happen. Let’s see each case one by one.
 
 Case 1. **The offset has not been found in the list.** Obviously, we stop there and do not output it.
 
@@ -82,7 +82,7 @@ top: 1em;
 
 So if we sum up:
 
-* if offset doesn't exist or offset exists but is followed by an invalid value, we don't output it
+* if offset doesn’t exist or offset exists but is followed by an invalid value, we don’t output it
 * if offset exist as last item or offset is followed by another offset, we output it to `0`
 * if offset exist and is followed by valid value, we output it to the value
 
@@ -104,7 +104,7 @@ Should be considered as a valid length:
 }
 ```
 
-The function is as simple as that. First we check if it's a number with a unit. If it is not, we check whether it is an allowed value. If it is not again, then it is not a valid length for an offset property.
+The function is as simple as that. First we check if it’s a number with a unit. If it is not, we check whether it is an allowed value. If it is not again, then it is not a valid length for an offset property.
 
 ## Building the mixin
 
@@ -156,7 +156,7 @@ $index: index($args, $offset);
 }
 ```
 
-Then of course, there are still the 3 extra mixins `absolute`, `relative` and `fixed`. This doesn't change at all from the previous version.
+Then of course, there are still the 3 extra mixins `absolute`, `relative` and `fixed`. This doesn’t change at all from the previous version.
 
 ```scss
 @mixin absolute($args: ()) {
@@ -297,7 +297,7 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ## Final thoughts
 
-So here we go with the new version people. It is slightly better than the old since you can now chain offsets to set them to `0`, and extra keywords like `auto`, `initial` and `inherit` are allowed, which wasn't the case before.
+So here we go with the new version people. It is slightly better than the old since you can now chain offsets to set them to `0`, and extra keywords like `auto`, `initial` and `inherit` are allowed, which wasn’t the case before.
 
 I hope you like it. If you think of anything to improve it, be sure to share!
 

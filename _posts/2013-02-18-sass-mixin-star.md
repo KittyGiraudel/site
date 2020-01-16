@@ -30,7 +30,7 @@ Basically she stacks the element and its 2 pseudo-elements on top of each other 
 
 Instead of covering everything in here, I let you have a look at [this very clear explanation](https://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb) by Ana herself on CodePen.
 
-\*Note: we can do it with one single pseudo-element with the [border shaping trick](https://davidwalsh.name/css-triangles) but the hover doesn't feel right, and without pseudo-element with linear gradients.
+\*Note: we can do it with one single pseudo-element with the [border shaping trick](https://davidwalsh.name/css-triangles) but the hover doesn’t feel right, and without pseudo-element with linear gradients.
 
 ## Compute the height
 
@@ -142,7 +142,7 @@ It’s really no big deal. We could totally write those 3 properties/value pairs
 
 ## Full code
 
-Here is the full code for the mixin. As you can see, it is really not that big (especially since Ana's original code is very light).
+Here is the full code for the mixin. As you can see, it is really not that big (especially since Ana’s original code is very light).
 
 ```scss
 @mixin val($properties, $value) {
@@ -190,7 +190,7 @@ Here is the full code for the mixin. As you can see, it is really not that big (
 
 Well people, that’s pretty much it. You have a perfectly working [Sass mixin](https://codepen.io/HugoGiraudel/pen/Lcexi) to create customized single-element 6-point stars in CSS. Pretty neat, right?
 
-Using it couldn't be simpler:
+Using it couldn’t be simpler:
 
 ```scss
 .star {

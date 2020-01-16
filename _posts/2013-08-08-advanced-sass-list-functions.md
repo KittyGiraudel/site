@@ -6,7 +6,7 @@ tags:
   - function
 ---
 
-A couple of weeks ago, I wrote a small guide to [understand Sass lists](https://hugogiraudel.com/2013/07/15/understanding-sass-lists/). I hope you've read it and learnt things from it!
+A couple of weeks ago, I wrote a small guide to [understand Sass lists](https://hugogiraudel.com/2013/07/15/understanding-sass-lists/). I hope you’ve read it and learnt things from it!
 
 Anyway, a couple of days ago I stumbled upon [a comment in a Sass issue](https://github.com/nex3/sass/issues/852#issuecomment-22071664) listing a couple of advanced Sass functions to deal with lists. I found the idea quite appealing so I made my own function library for for this. In my opinion, it is always interesting to go deeper than _"it just works"_, so here is a short blog post to explain my code.
 
@@ -14,7 +14,7 @@ Anyway, a couple of days ago I stumbled upon [a comment in a Sass issue](https:/
 
 ### First and last
 
-Let's start with something very simple: two small functions to target first and last elements of a list. I don't know for you, but I don't really like doing `nth($list, length($list))`. I'd rather do `last($list)`.
+Let’s start with something very simple: two small functions to target first and last elements of a list. I don’t know for you, but I don’t really like doing `nth($list, length($list))`. I’d rather do `last($list)`.
 
 ```scss
 $list: a, b, c, d, e, f;
@@ -22,7 +22,7 @@ $first: first($list); // a
 $last: last($list); // f
 ```
 
-Nice, isn't it? Of course these functions are ridiculously simple to write:
+Nice, isn’t it? Of course these functions are ridiculously simple to write:
 
 ```scss
 @function first($list) {
@@ -85,11 +85,11 @@ I made two versions of this function: in the first one, the code is simple. In t
 }
 ```
 
-> Sass `@for` loops can't decrement.
+> Sass `@for` loops can’t decrement.
 
 The second version is better because it starts from the end and returns the first occurence it finds instead of looping through all the items from the start.
 
-The code is a little ugly because as of today, Sass `@for` loops can't decrement. Thus, we have to use a ugly workaround to make the loop increment on negative value, then use the absolute value of `$i`. Not cool but it works.
+The code is a little ugly because as of today, Sass `@for` loops can’t decrement. Thus, we have to use a ugly workaround to make the loop increment on negative value, then use the absolute value of `$i`. Not cool but it works.
 
 ## Adding values to a list
 
@@ -106,7 +106,7 @@ $new-list: prepend(
 ); // now, i, know, my, a, b, c, d, e, f
 ```
 
-As you can see, the signature is the same as the one for the `append()` function. Now, let's open the beast; you'll be surprised how simple this is:
+As you can see, the signature is the same as the one for the `append()` function. Now, let’s open the beast; you’ll be surprised how simple this is:
 
 ```scss
 @function prepend($list, $value) {
@@ -114,7 +114,7 @@ As you can see, the signature is the same as the one for the `append()` function
 }
 ```
 
-Yup, that's all. `join()` is a built in function to merge two lists, the second being appended to the first. Since single values are considered as lists in Sass, we can safely join our new value with our existing list, resulting in prepending the new value to the list. How simple is that?
+Yup, that’s all. `join()` is a built in function to merge two lists, the second being appended to the first. Since single values are considered as lists in Sass, we can safely join our new value with our existing list, resulting in prepending the new value to the list. How simple is that?
 
 ### Inserting value at index `n`
 
@@ -130,7 +130,7 @@ $new-list: insert-nth($list, 100, z); // error
 $new-list: insert-nth($list, zog, z); // error
 ```
 
-Now let's have a look at the function core:
+Now let’s have a look at the function core:
 
 ```scss
 @function insert-nth($list, $index, $value) {
@@ -164,7 +164,7 @@ In any other case, we build a new list based on the one we pass to the function 
 
 ## Replacing values from list
 
-We're good with adding new values to a list. Now what if we want to change values from a list? Like changing all occurences of `a` into `z`? Or changing the value at index `n`? Sass provides nothing native for this, so let's do it ourself!
+We’re good with adding new values to a list. Now what if we want to change values from a list? Like changing all occurences of `a` into `z`? Or changing the value at index `n`? Sass provides nothing native for this, so let’s do it ourself!
 
 ### Replacing value `x`
 
@@ -199,7 +199,7 @@ As you can see, the function also deals with nested lists if you pass the 4th op
 }
 ```
 
-Getting a little more complicated, doesn't it? Don't worry, it's not that hard to understand. For every element in the list (`nth($list, $i)`), we check whether or not it is a nested list.
+Getting a little more complicated, doesn’t it? Don’t worry, it’s not that hard to understand. For every element in the list (`nth($list, $i)`), we check whether or not it is a nested list.
 
 - If it is and `$recursive` is set to `true`, we call the `replace()` function again on the nested list (recursive style!).
 - Else, we check if the element is strictly the same as the value we want to replace (`$old-value`).
@@ -210,7 +210,7 @@ And there we have a recursive function to replace a given value by another given
 
 ### Replacing value at index `n`
 
-Now if we want to replace a value at a specific index, it's a lot simpler.
+Now if we want to replace a value at a specific index, it’s a lot simpler.
 
 ```scss
 $list: a, b, z, d, e, f;
@@ -257,7 +257,7 @@ I think the code is kind of self explanatory: we check for errors then loop thro
 
 ## Removing values from list
 
-Hey, it's getting pretty cool. We can add values to list pretty much wherever we want. We can replace any value within a list. All we have left is to be able to remove values from lists.
+Hey, it’s getting pretty cool. We can add values to list pretty much wherever we want. We can replace any value within a list. All we have left is to be able to remove values from lists.
 
 ### Removing values `x`
 
@@ -285,7 +285,7 @@ Same as for the `replace()` function, it can be recursive so it works on nested 
 }
 ```
 
-I bet you're starting to get the idea. We check each element of the list (`nth($list, $i)`); if it is a list and `$recursive == true`, we call the `remove()` function on it to deal with nested lists. Else, we simply append the value to the new list as long as it isn't the same as the value we're trying to remove (`$value`).
+I bet you’re starting to get the idea. We check each element of the list (`nth($list, $i)`); if it is a list and `$recursive == true`, we call the `remove()` function on it to deal with nested lists. Else, we simply append the value to the new list as long as it isn’t the same as the value we’re trying to remove (`$value`).
 
 ### Removing value at index `n`
 
@@ -346,7 +346,7 @@ $new-list: slice($list, 5, 3); // error
 $new-list: slice($list, -1, 10); // error
 ```
 
-In the first draft I made of this function, I edited `$start` and `$end` value so they don't conflict with each other. In the end, I went with the safe mode: display error messages if anything seems wrong.
+In the first draft I made of this function, I edited `$start` and `$end` value so they don’t conflict with each other. In the end, I went with the safe mode: display error messages if anything seems wrong.
 
 ```scss
 @function slice($list, $start: 1, $end: length($list)) {
@@ -389,13 +389,13 @@ We make both `$start` and `$end` optional: if they are not specified, we go from
 
 Then we make sure `$start` is lesser or equals to `$end` and that they both are within list range.
 
-And now we're sure our values are okay, we can loop through lists values from `$start` to `$end`, building up a new list from those.
+And now we’re sure our values are okay, we can loop through lists values from `$start` to `$end`, building up a new list from those.
 
 _Question: would you prefer a function slicing from index `n` for `x` indexes to this (so basically `$start` and `$length`)?_
 
 ### Reverse a list
 
-Let's make a small function to reverse the order of elements within a list so the last index becomes the first, and the first the last.
+Let’s make a small function to reverse the order of elements within a list so the last index becomes the first, and the first the last.
 
 ```scss
 $list: a, b, c d e, f, g, h;
@@ -421,11 +421,11 @@ As you can see, by default the function do not reverse nested lists. As always, 
 }
 ```
 
-As we saw earlier, `@for` loops can't decrement so we use the negative indexes workaround to make it work. Quite easy to do in the end.
+As we saw earlier, `@for` loops can’t decrement so we use the negative indexes workaround to make it work. Quite easy to do in the end.
 
 ### Convert a list into a string
 
-Let's finish with a function I had a hard time to name. I first wanted to call it `join()` like in JavaScript but there is already one. I then thought about `implode()` and `to-string()`. I went with the latter. The point of this function is to convert an array into a string, with the ability to use a string to join elements with each others.
+Let’s finish with a function I had a hard time to name. I first wanted to call it `join()` like in JavaScript but there is already one. I then thought about `implode()` and `to-string()`. I went with the latter. The point of this function is to convert an array into a string, with the ability to use a string to join elements with each others.
 
 ```scss
 $list: a, b, c d e, f, g, h;
@@ -461,9 +461,9 @@ The core of the function is slightly more complicated than others because there 
 
 Now, my very first draft returned something like this `a-b-c-d-e-f-g-h-`. With an extra hyphen at the end.
 
-In a foolish attempt to fix this, I added a condition to check whether it is the last element of the list. If it is, we don't add the `$glue`. Unfortunately, it only moved the issue to nested lists. Then I had `a-b-c-d-ef-g-h` because the check was also made in inner lists, resulting in no glue after the last element of inner lists.
+In a foolish attempt to fix this, I added a condition to check whether it is the last element of the list. If it is, we don’t add the `$glue`. Unfortunately, it only moved the issue to nested lists. Then I had `a-b-c-d-ef-g-h` because the check was also made in inner lists, resulting in no glue after the last element of inner lists.
 
-That's why I had to add an extra argument to the function signature to differenciate the upper level from the nested ones. It is not very elegant but this is the only option I found. If you think of something else, be sure to tell.
+That’s why I had to add an extra argument to the function signature to differenciate the upper level from the nested ones. It is not very elegant but this is the only option I found. If you think of something else, be sure to tell.
 
 ### Shift indexes of a list
 
@@ -475,7 +475,7 @@ $new-list: loop($list, 1); // f, a, b, c, d, e
 $new-list: loop($list, -3); // d, e, f, a, b, c
 ```
 
-Hopefully examples will make the point of this function clearer. The code isn't obvious in the end, so I'll just leave it here.
+Hopefully examples will make the point of this function clearer. The code isn’t obvious in the end, so I’ll just leave it here.
 
 ```scss
 @function loop($list, $value: 1) {
@@ -493,4 +493,4 @@ Thanks a lot for the input Ana!
 
 ## Final words
 
-I guess that's all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with [this pen](https://codepen.io/HugoGiraudel/pen/loAgq) or contribute to [this repo](https://github.com/HugoGiraudel/Sass-snippets/blob/master/list-functions/_all.scss).
+I guess that’s all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with [this pen](https://codepen.io/HugoGiraudel/pen/loAgq) or contribute to [this repo](https://github.com/HugoGiraudel/Sass-snippets/blob/master/list-functions/_all.scss).

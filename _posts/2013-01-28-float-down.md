@@ -20,7 +20,7 @@ And wanted to end with:
 
 ### Flexbox
 
-Even if I'm not a flexbox expert, I'm pretty confident saying there is a way to do it very easily. The problem with flexbox is that it's not fully compatible so we had to look for another option.
+Even if I’m not a flexbox expert, I’m pretty confident saying there is a way to do it very easily. The problem with flexbox is that it’s not fully compatible so we had to look for another option.
 
 Actually [Bennett Feely](https://twitter.com/bennettfeely) did it very nicely already on [CodePen](https://codepen.io/bennettfeely/pen/firxL).
 
@@ -35,7 +35,7 @@ I first managed to do it with `:nth-child()` selectors, replacing manually each 
 
 ### JavaScript
 
-I was very upset not finding any proper way to do it with CSS so I did it with a mix of CSS and JavaScript (in fact jQuery). I don't know if it's the best way to do it in JavaScript but here is what I came up with:
+I was very upset not finding any proper way to do it with CSS so I did it with a mix of CSS and JavaScript (in fact jQuery). I don’t know if it’s the best way to do it in JavaScript but here is what I came up with:
 
 ```javascript
 $('.myList > li:odd')
@@ -43,7 +43,7 @@ $('.myList > li:odd')
   .appendTo('.myList')
 ```
 
-Basically I target one out of two items with `:nth-child(even)` then remove it from the DOM to finally append it again. This does exactly what was asked so I think it's a decent solution ([JSFiddle](https://jsfiddle.net/VAdT3/6/)).
+Basically I target one out of two items with `:nth-child(even)` then remove it from the DOM to finally append it again. This does exactly what was asked so I think it’s a decent solution ([JSFiddle](https://jsfiddle.net/VAdT3/6/)).
 
 ### Margins
 
@@ -56,13 +56,13 @@ li:nth-child(even) {
 }
 ```
 
-Wolfcry911 simply used margins to reposition one out of two items. It's a brilliant solution, really.
+Wolfcry911 simply used margins to reposition one out of two items. It’s a brilliant solution, really.
 
 However it relies on CSS advanced pseudo-selectors so for a deeper browser support, you might want get back to the JavaScript solution.
 
 ### Columns (edit 31/01/2013)
 
-I just noticed [Estelle Weyl](https://codepen.io/estelle) did it in another clever way with CSS columns ([CodePen](https://codepen.io/estelle/pen/zkjrn)). I'm actually wondering if it's not the better option all in all since it requires only one single CSS line (prefixes omitted).
+I just noticed [Estelle Weyl](https://codepen.io/estelle) did it in another clever way with CSS columns ([CodePen](https://codepen.io/estelle/pen/zkjrn)). I’m actually wondering if it’s not the better option all in all since it requires only one single CSS line (prefixes omitted).
 
 ```css
 ul {
@@ -74,7 +74,7 @@ Congratulations to her for such a smart solution. :)
 
 ## Pushing it further
 
-A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitter.com/chriscoyier/status/295223893516500993) about it. Someone (in the person of [Arash Milani](https://twitter.com/arashmilan)) answered it wasn't possible to do it with more than 2 rows.
+A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitter.com/chriscoyier/status/295223893516500993) about it. Someone (in the person of [Arash Milani](https://twitter.com/arashmilan)) answered it wasn’t possible to do it with more than 2 rows.
 
 **CHALLENGE ACCEPTED!** This made me want to give it a shot. Honestly, it took me a few tries and no more than 10 minutes to find a solution for 3 rows.
 
@@ -122,7 +122,7 @@ _Note: you may wonder why using 2 different variables for size when one would be
 
 ### Looping!
 
-Now let's get to the funny part. I figured out there is some kind of pattern to achieve this and to be honest it took me a while (no pun intended) to create the while loop for this, struggling between my comprehension of the problem and Sass syntax errors. Anyway, this is the main idea:
+Now let’s get to the funny part. I figured out there is some kind of pattern to achieve this and to be honest it took me a while (no pun intended) to create the while loop for this, struggling between my comprehension of the problem and Sass syntax errors. Anyway, this is the main idea:
 
 ```scss
 $i: $rows; // Initializing the loop

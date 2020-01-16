@@ -8,7 +8,7 @@ tags:
 
 > **Edit (2015/01/07):** over 20000 visits on [Sass Guidelines](https://sass-guidelin.es) during the last 24 hours. Thank you so much for your support!
 
-I don't know why I did not think of writing Sass guidelines when [Harry Roberts](https://csswizardry.com) first released his [CSS Guidelines](https://cssguidelin.es) a couple of months back. Anyway, on saturday evening I had a _eureka moment_:
+I don’t know why I did not think of writing Sass guidelines when [Harry Roberts](https://csswizardry.com) first released his [CSS Guidelines](https://cssguidelin.es) a couple of months back. Anyway, on saturday evening I had a _eureka moment_:
 
 > I SHOULD WRITE SASS GUIDELINES!
 > &mdash; Me, in the shower.
@@ -32,7 +32,7 @@ I worked like crazy for two days to have a first version that is good enough to 
 
 Similarly, there is [Ian Carrico](https://github.com/iamcarrico) who seems a bit upset by my agressive _no `@extend`_ rule. While this is an opinionated document, I feel like I can still round up the edges and make things a little better for everybody so I need to rewrite the section about extending selectors.
 
-Also, and I need your help with this, for such a styleguide to make sense, it has to get popular. It has already received some good vibes yesterday thanks to all your tweets (especially [CSS-Tricks](https://twitter.com/real_css_tricks) and [Smashing Magazine](https://twitter.com/smashingmagazine), let's be honest).
+Also, and I need your help with this, for such a styleguide to make sense, it has to get popular. It has already received some good vibes yesterday thanks to all your tweets (especially [CSS-Tricks](https://twitter.com/real_css_tricks) and [Smashing Magazine](https://twitter.com/smashingmagazine), let’s be honest).
 
 [Tweet it](https://twitter.com/share?text=Sass%20Guidelines%2C%20a%20styleguide%20for%20writing%20sane%2C%20maintainable%20and%20scalable%20Sass%20by%20%40HugoGiraudel%20%E2%80%94%20&url=https://sass-guidelin.es), upvote it on [Hacker News](https://news.ycombinator.com/item?id=8845421) and [reddit](https://redd.it/2rj36x) and above all: tell me what you think. This is the only way for me to improve it.
 

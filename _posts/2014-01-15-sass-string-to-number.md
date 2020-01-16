@@ -11,11 +11,11 @@ tags:
 
 Hey people! I am currently working on a JSON parser in Sass (yes, you read right) thus I faced an issue I thought unsolvable until now: casting a string into a number in Sass. Needless to say I found a solution! Even better, I found a solution to convert a string into a valid CSS length you can use as a CSS value, in calculations and stuff.
 
-I have to say I am pretty proud with what I have come up with. Not only does it work, but it is also very simple and from what I can tell quite efficient. This may be a bit slower for very large numbers but even there I'm not sure we can feel the difference in compilation time. It also lacks of support for very scientific notation like `e` but that's no big deal for now.
+I have to say I am pretty proud with what I have come up with. Not only does it work, but it is also very simple and from what I can tell quite efficient. This may be a bit slower for very large numbers but even there I’m not sure we can feel the difference in compilation time. It also lacks of support for very scientific notation like `e` but that’s no big deal for now.
 
 ## Building the function
 
-As I said, the function is actually simple. It relies on parsing the string character after character in order to map them to actual numbers. Then once you have numbers &mdash; well &mdash; you can do pretty much any thing. Let's start with the skeleton, shall we?
+As I said, the function is actually simple. It relies on parsing the string character after character in order to map them to actual numbers. Then once you have numbers &mdash; well &mdash; you can do pretty much any thing. Let’s start with the skeleton, shall we?
 
 ```scss
 @function number($string) {
@@ -35,7 +35,7 @@ As I said, the function is actually simple. It relies on parsing the string char
 }
 ```
 
-I think you can see where this is going. Now let's have a look at what happens inside the loop:
+I think you can see where this is going. Now let’s have a look at what happens inside the loop:
 
 ```scss
 @for $i from 1 through str-length($string) {
@@ -52,11 +52,11 @@ I think you can see where this is going. Now let's have a look at what happens i
 }
 ```
 
-And this is enough to cast any positive integer from a string. But wait! What about negative integers? Plus I told you `number`, not `integer`. Let's continue the journey!
+And this is enough to cast any positive integer from a string. But wait! What about negative integers? Plus I told you `number`, not `integer`. Let’s continue the journey!
 
 ## Dealing with negative numbers
 
-Dealing with negative numbers is very easy: if we spot a dash (`-`) as a first character, then it's a negative number. Thus, all we have to do is to multiply `$result` by `-1` (as soon as `$result` isn't `0`).
+Dealing with negative numbers is very easy: if we spot a dash (`-`) as a first character, then it’s a negative number. Thus, all we have to do is to multiply `$result` by `-1` (as soon as `$result` isn’t `0`).
 
 ```scss
 @function number($string) {
@@ -83,7 +83,7 @@ As I said, it is pretty straight forward.
 
 ## Dealing with decimal dot
 
-Making sure we can convert floats and doubles took me a couple of minutes. I couldn't find a way to deal with numbers once the decimal dot has been found. I always ended up with a completely wrong result until I find a tricky way.
+Making sure we can convert floats and doubles took me a couple of minutes. I couldn’t find a way to deal with numbers once the decimal dot has been found. I always ended up with a completely wrong result until I find a tricky way.
 
 ```scss
 @function number($string) {
@@ -100,7 +100,7 @@ Making sure we can convert floats and doubles took me a couple of minutes. I cou
     } @else {
       // …
 
-      // Decimal dot hasn't been found yet
+      // Decimal dot hasn’t been found yet
       @if $divider == 0 {
         $result: $result * 10;
       }
@@ -120,7 +120,7 @@ Making sure we can convert floats and doubles took me a couple of minutes. I cou
 }
 ```
 
-Since it can be a little tricky to understand, let's try with a quick example. Here is what happen when we try to cast "13.37" to a number:
+Since it can be a little tricky to understand, let’s try with a quick example. Here is what happen when we try to cast "13.37" to a number:
 
 1. We set `$divider` and `$result` variables to `0`
 2. `"1"` gets found
@@ -144,7 +144,7 @@ Since it can be a little tricky to understand, let's try with a quick example. H
 
 All we have left is the ability to retrieve the correct unit from the string and returning the length. At first I thought it would be hard to do, but it turned out to be very easy. I moved this to a second function to keep things clean but you could probably merge both functions.
 
-First we need to get the unit as a string. It's basically the string starting from the first not-numeric character. In `"42px"`, it would be `"px"`. We only need to slightly tweak our function to get this.
+First we need to get the unit as a string. It’s basically the string starting from the first not-numeric character. In `"42px"`, it would be `"px"`. We only need to slightly tweak our function to get this.
 
 ```scss
 @function number($string) {
@@ -185,7 +185,7 @@ If we come to find a character that is neither `-`, nor `.` nor a number, it mea
 }
 ```
 
-The idea is the same as for the `number` function. We retrieve the string in the `$strings` list in order to map it to an actual CSS length from the `$units` list, then we return the product of `$number` and the length. If the unit doesn't exist, we simply return false.
+The idea is the same as for the `number` function. We retrieve the string in the `$strings` list in order to map it to an actual CSS length from the `$units` list, then we return the product of `$number` and the length. If the unit doesn’t exist, we simply return false.
 
 ## Examples
 
@@ -217,6 +217,6 @@ sass {
 
 ## Final words
 
-So people, what do you think? Pretty cool isn't it? I'd be glad to see what you could be using this for so if you ever come up with a usecase, be sure to share. ;)
+So people, what do you think? Pretty cool isn’t it? I’d be glad to see what you could be using this for so if you ever come up with a usecase, be sure to share. ;)
 
 Oh by the way if you need to cast a number into a string, it is nothing easier than `$number + unquote("")`.

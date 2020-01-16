@@ -15,11 +15,11 @@ The other day, I was having a look at featured pens from CodePen to kill some ti
 
 I was both surprised and pleased to see they are using Sass for their CSS codebase, and more interestingly, they are using it pretty well if I may. Their code looked both logic and efficient so that was kind of a cool pen to look at.
 
-Although after a couple of minutes digging into their code, I noticed the CSS output wasn't as good as it could be. A couple of minutes later, I submitted [a new verion](https://codepen.io/HugoGiraudel/pen/DqBkH) to them, taking care of a few optimizations they forgot.
+Although after a couple of minutes digging into their code, I noticed the CSS output wasn’t as good as it could be. A couple of minutes later, I submitted [a new verion](https://codepen.io/HugoGiraudel/pen/DqBkH) to them, taking care of a few optimizations they forgot.
 
 Hence, a short blog post relating all this.
 
-## What's the problem?
+## What’s the problem?
 
 First of all, the way they approach the whole widget is _very_ clever. To deal with half-star ratings, they use left and right borders instead of background-color. This way, they can color only half of the background for a star. This is brilliant.
 
@@ -31,7 +31,7 @@ So the few things I noticed were definitely not about their idea but more the wa
 }
 ```
 
-Next and probably the biggest flaws in their code, they got a lot of duplicated rules. It's not terrible but it could definitely be improved. Here is a little section of their output:
+Next and probably the biggest flaws in their code, they got a lot of duplicated rules. It’s not terrible but it could definitely be improved. Here is a little section of their output:
 
 ```css
 .rating-3 .star-1,
@@ -53,7 +53,7 @@ Next and probably the biggest flaws in their code, they got a lot of duplicated 
 }
 ```
 
-This is only for 3-stars ratings, but it's the same for other ratings as well. We could merge the selectors into one in order to have a single rule with only two declarations in there which would be much better.
+This is only for 3-stars ratings, but it’s the same for other ratings as well. We could merge the selectors into one in order to have a single rule with only two declarations in there which would be much better.
 
 Last but not least, their `stars-color` function returning a color based on a number (of stars) is repetitive and could be refactored.
 
@@ -77,7 +77,7 @@ Last but not least, their `stars-color` function returning a color based on a nu
 
 ### Moving to data-attributes
 
-One thing I've been surprised to see is they use classes instead of data-attributes for their ratings. In my opinion the only valid option to do so is because you still have to support Internet Explorer 6 but I'm not sure Yelp does. So I decided to move everything to data-attributes.
+One thing I’ve been surprised to see is they use classes instead of data-attributes for their ratings. In my opinion the only valid option to do so is because you still have to support Internet Explorer 6 but I’m not sure Yelp does. So I decided to move everything to data-attributes.
 
 ```html
 <!-- No more -->
@@ -89,11 +89,11 @@ One thing I've been surprised to see is they use classes instead of data-attribu
 
 There are two main reasons for this. The first one is it allows me to use data-attributes modulators to target both `x` and `x.y` by doing `data-rating^='x'`. This may seem insignificant but it makes a selector like `.rating-1 .star-1, .rating-1-half .star-1` turn into `[data-rating^='1'] .star-1`. Much shorter.
 
-Another interesting about moving to data-attributes is it makes any JavaScript enhancement much lighter. Needless to say it's easier to parse a numeric data-attribute than to parse a string in class lists. But that's clearly out of the scope of this article though.
+Another interesting about moving to data-attributes is it makes any JavaScript enhancement much lighter. Needless to say it’s easier to parse a numeric data-attribute than to parse a string in class lists. But that’s clearly out of the scope of this article though.
 
 ### Revamping the `stars-color` function
 
-We'll start with the simplest thing we can do to improve the code: refactoring the `stars-color` function. My idea was to have a list of colors (sorted from the lowest rating to the best one) so we can pick a color from its index in the list.
+We’ll start with the simplest thing we can do to improve the code: refactoring the `stars-color` function. My idea was to have a list of colors (sorted from the lowest rating to the best one) so we can pick a color from its index in the list.
 
 ```scss
 @function stars-color($stars) {
@@ -146,7 +146,7 @@ Because it does the work well and is quite smart, I kept this as is. However I d
 
 This may look a little complicated but I can assure you it is actually quite simple to understand. First, we retrieve the color for the current loop run and store it in a `$color` variable to avoid having to get it multiple times. We also instanciate an empty list named `$selector` which will contain our generated selector.
 
-Then we run the inner loop. As we've seen previously, the inner loop goes from 1 through `$i`, and it doesn't do much. The only thing that is going on inside the inner loop is appending a piece of selector to the selector list.
+Then we run the inner loop. As we’ve seen previously, the inner loop goes from 1 through `$i`, and it doesn’t do much. The only thing that is going on inside the inner loop is appending a piece of selector to the selector list.
 
 Once we get off the inner loop, we can use the generated selector to dump the rules. For instance, if `$i = 2`, `$selector` equals `[data-rating^='2'] .star-1, [data-rating^='2'] .star-2`. It succeeds in targeting stars 1 and 2 in ratings going from 1 to 2.5.
 
@@ -158,8 +158,8 @@ You may have noticed from the last code snippet the outer loop is not dealing wi
 
 There are 2 things that are different in this case:
 
-1. There is no half-rating since 5.5 doesn't exist
-2. There is no need to be specific since it's the maximum rating: we should color all the stars anyway
+1. There is no half-rating since 5.5 doesn’t exist
+2. There is no need to be specific since it’s the maximum rating: we should color all the stars anyway
 
 Then dealing with this case is as easy as writing:
 
@@ -173,7 +173,7 @@ $color: stars-color(5);
 
 ## Final code
 
-To see how efficient those little optimizations have been, I've minified both demo:
+To see how efficient those little optimizations have been, I’ve minified both demo:
 
 * [Original](https://codepen.io/yelp/pen/aLxbG): 1.84Kb (2.38Kb unminified)
 * [Mine](https://codepen.io/HugoGiraudel/pen/DqBkH): 1.05Kb (1.36Kb unminified)
@@ -229,11 +229,11 @@ And here is what the loops' output looks like in my case:
 }
 ```
 
-Looks quite efficient, doesn't it?
+Looks quite efficient, doesn’t it?
 
 ## Final thoughts
 
-In the end, it's really not that much; saving 800 bytes is quite ridiculous. However I think it's interesting to see how we can use some features like Sass lists (often overlook by dervelopers) to improve CSS output.
+In the end, it’s really not that much; saving 800 bytes is quite ridiculous. However I think it’s interesting to see how we can use some features like Sass lists (often overlook by dervelopers) to improve CSS output.
 
 Thanks to Sass lists and the `append` function, we have been able to create a selector from a loop and use this selector outside the loop to minimize the amount of CSS that is being compiled. This is definitely something fun doing, even if it needs to roll up the sleeves and hack around the code.
 

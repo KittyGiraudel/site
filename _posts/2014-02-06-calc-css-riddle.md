@@ -13,7 +13,7 @@ tags:
 
 Yesterday, famous French front-end developer [Rémi Parmentier proposed a little CSS brain-teaser on his blog](https://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.
 
-I gave it a go and it turned out to be much easier than I firstly expected. No weird cross browser issue, no dirty hack and mostly just plain ol' good CSS. But you may want to give it a try, don't you?
+I gave it a go and it turned out to be much easier than I firstly expected. No weird cross browser issue, no dirty hack and mostly just plain ol' good CSS. But you may want to give it a try, don’t you?
 
 ## It likes riddles, praps it does, does it?
 
@@ -22,8 +22,8 @@ Let me translate the post from Rémi for you:
 1. The orange items have a fixed width of 200px
 2. The grid is fluid and contains 4 cells per row
 3. Grey cells have 10 left and right margins, except for:
-   * The first cell of each row which doesn't have left margin
-   * The last cell of each row which doesn't have right margin
+   * The first cell of each row which doesn’t have left margin
+   * The last cell of each row which doesn’t have right margin
 4. Items are horizontally centered in cells, except for:
    * The item of the first cell of each row which is left aligned
    * The item of the last cell of each row which is right aligned
@@ -33,25 +33,25 @@ Let me translate the post from Rémi for you:
 8. No JavaScript, only HTML and CSS.
 9. It should work from IE 9 and gracefully degrades on older browsers.
 
-The tricky part is _5_. After checking at proposals submitted by various developers on Rémi's post, it seems most of them didn't catch that **all grey rectangles should be the same width**. Here is what you should be having:
+The tricky part is _5_. After checking at proposals submitted by various developers on Rémi’s post, it seems most of them didn’t catch that **all grey rectangles should be the same width**. Here is what you should be having:
 
 ![The grid we want to create](/assets/images/calc-css-riddle/css-grid.gif)
 
-Rémi made [a CodePen](https://codepen.io/hteumeuleu/pen/zLiGw) to kickstart the riddle if you'd like to give it a try. Go on, have a shot. I'll be waiting.
+Rémi made [a CodePen](https://codepen.io/hteumeuleu/pen/zLiGw) to kickstart the riddle if you’d like to give it a try. Go on, have a shot. I’ll be waiting.
 
 ## Computing the whole thing, one step at a time
 
-**Spoilers!** I'll be giving the solution in a couple of lines or so, so if you don't feel like knowing or are afraid of what you could read, close the tabs, close the browser, shut down your computer and lock yourself in!
+**Spoilers!** I’ll be giving the solution in a couple of lines or so, so if you don’t feel like knowing or are afraid of what you could read, close the tabs, close the browser, shut down your computer and lock yourself in!
 
-The easiest (and best) solution was to use the `calc` function. A few came up with tricky things like absolute positioning but that doesn't seem like a good idea for a grid system.
+The easiest (and best) solution was to use the `calc` function. A few came up with tricky things like absolute positioning but that doesn’t seem like a good idea for a grid system.
 
 When I shared my solution on Twitter, some people seemed kind of amazed at how far I pushed the use of `calc()`. In the end I can assure you the solution is very easy to find, hence a little blog post to explain my thought process.
 
 ### Understanding the problem
 
-> All cells aren't the same width.
+> All cells aren’t the same width.
 
-Many devs including myself jumped on the code assuming all cells would be the same width, obviously 25% since there are 4 cells per row. This was the first mistake, **all cells don't share the same width**. Since all orange items are the same width (200px) and all grey spans are the same width (unknown) and some cells contain 2 grey spans while some contain only one, all cells can't be the same width. Cells on sides are shorter than cells in the middle of a row.
+Many devs including myself jumped on the code assuming all cells would be the same width, obviously 25% since there are 4 cells per row. This was the first mistake, **all cells don’t share the same width**. Since all orange items are the same width (200px) and all grey spans are the same width (unknown) and some cells contain 2 grey spans while some contain only one, all cells can’t be the same width. Cells on sides are shorter than cells in the middle of a row.
 
 Sometimes putting things on paper (well, in a text editor in my case) can help a lot to get things. Here is what I wrote:
 
@@ -62,9 +62,9 @@ This is what a row looks like.
 
 ### Finding `?`, a grey span width
 
-To compute the width of a cell (could it be one from the sides or one from the middle) we need to find the width of grey spans (marked as `?`). This is actually quite easy to do, isn't it? What do we know so far?
+To compute the width of a cell (could it be one from the sides or one from the middle) we need to find the width of grey spans (marked as `?`). This is actually quite easy to do, isn’t it? What do we know so far?
 
-1. We know a row's width is 100%,
+1. We know a row’s width is 100%,
 2. We know an orange item is 200px, and we got 4 of them,
 3. We know a margin is 10px and we go 6 of them.
 
@@ -74,7 +74,7 @@ Obviously the computed value depends on the actual width of the viewport. On a `
 
 ### Computing side cells width
 
-From there it's getting very easy. Side cells have a 200px wide inner item like every other cells but they only have one grey span instead of two since the orange item is stuck to the edge of the grid.
+From there it’s getting very easy. Side cells have a 200px wide inner item like every other cells but they only have one grey span instead of two since the orange item is stuck to the edge of the grid.
 
 So the width is _one orange item + one grey span_ or `200px + (100% - 860px) / 6`.
 
@@ -84,7 +84,7 @@ And the middle cells have two grey spans so their width is _one orange item + tw
 
 ## Doing it in CSS
 
-Now that we've computed everything on paper, we need to move all this stuff to the stylesheet. Thankfully CSS provides us the ultimate way to do cross-unit calculations: `calc`. Even better, `calc` is [supported from IE9](https://caniuse.com/#search=calc) so we only have to draw a quick and dirty fallback for IE8 and we're good to go.
+Now that we’ve computed everything on paper, we need to move all this stuff to the stylesheet. Thankfully CSS provides us the ultimate way to do cross-unit calculations: `calc`. Even better, `calc` is [supported from IE9](https://caniuse.com/#search=calc) so we only have to draw a quick and dirty fallback for IE8 and we’re good to go.
 
 ### How to distinguish side cells from middle cells
 
@@ -122,7 +122,7 @@ You can have a look at the [whole code directly on CodePen](https://codepen.io/H
 
 ## Pushing things further with Sass
 
-What's interesting when you put things on paper before coding is you quickly become aware of what would be good stored in a variable. And if you're using a CSS preprocessor, making this whole grid system working on no more than a couple of variables is within easy reach.
+What’s interesting when you put things on paper before coding is you quickly become aware of what would be good stored in a variable. And if you’re using a CSS preprocessor, making this whole grid system working on no more than a couple of variables is within easy reach.
 
 There are 3 things we could store:
 
@@ -130,15 +130,15 @@ There are 3 things we could store:
 * The margin (10px)
 * The number of cells per row (4)
 
-Once you've set up those 3 variables, you don't have to edit the code anymore whenever you want to change something, could it be the size of the margin or the number of cells per rows. Pretty neat.
+Once you’ve set up those 3 variables, you don’t have to edit the code anymore whenever you want to change something, could it be the size of the margin or the number of cells per rows. Pretty neat.
 
-_Note: whenever you're trying to use Sass variables in `calc` function, be sure to escape them with `#{}`. For instance: `calc(#{$margin} + 42px)`._
+_Note: whenever you’re trying to use Sass variables in `calc` function, be sure to escape them with `#{}`. For instance: `calc(#{$margin} + 42px)`._
 
 Again, [check code on CodePen](https://codepen.io/HugoGiraudel/pen/zFJvn).
 
 ## Final thoughts
 
-That's pretty much it folks. In the end it wasn't that hard, was it? I feel like the most difficult part of a such an exercice is to leave the code aside and taking a couple minutes to actually understand what happens.
+That’s pretty much it folks. In the end it wasn’t that hard, was it? I feel like the most difficult part of a such an exercice is to leave the code aside and taking a couple minutes to actually understand what happens.
 
 Too many developers including myself sometimes are too hurried to jump in the code and try things. When it comes to grid system, it turns out every single time I started coding stuff right away instead of taking a deep breath to get things right, I ended up rewriting most of my code.
 

@@ -6,11 +6,11 @@ tags:
   - configuration
 ---
 
-One thing I was really looking forward with [Sass maps](https://viget.com/extend/sass-maps-are-awesome) is the ability to have configuration objects for functions and mixins. You know how you pass objects to your JavaScript class constructors instead of several parameters? Well fasten your belt boys because I'm bringing this to Sass!
+One thing I was really looking forward with [Sass maps](https://viget.com/extend/sass-maps-are-awesome) is the ability to have configuration objects for functions and mixins. You know how you pass objects to your JavaScript class constructors instead of several parameters? Well fasten your belt boys because I’m bringing this to Sass!
 
 ## An insight in the JS way of doing
 
-Before digging into Sass awesomeness, let's first have a look at how we would do it in JavaScript:
+Before digging into Sass awesomeness, let’s first have a look at how we would do it in JavaScript:
 
 ```javascript
 var Class = function(conf) {
@@ -28,17 +28,17 @@ var Class = function(conf) {
 }
 ```
 
-So what's going on here? The `Class` constructor is accepting a `conf` parameter. Then it defines its own `conf` property by merging the given object with a default configuration via the `extend` function. If `conf` isn't defined, then it extends an empty object with default properties.
+So what’s going on here? The `Class` constructor is accepting a `conf` parameter. Then it defines its own `conf` property by merging the given object with a default configuration via the `extend` function. If `conf` isn’t defined, then it extends an empty object with default properties.
 
-Extending an object based on another one is very convenient when you want to allow the user to define his own configuration but still want to provide defaults in case he doesn't set all arguments.
+Extending an object based on another one is very convenient when you want to allow the user to define his own configuration but still want to provide defaults in case he doesn’t set all arguments.
 
-## What's wrong with several parameters?
+## What’s wrong with several parameters?
 
 One could ask what is wrong with having several arguments in the signature with a default value for each of them. Tl;dr version is that using an object is just easier and more convenient. Now if you want the detail, here are the reasons behind why an object as unique parameter instead of several parameters sounds better.
 
 ### Harder to read
 
-To begin with, using an object makes it easier to understand since you have to specify the key associated to each value. While slightly longer to write, it's easier to read; a fair trade-off in my opinion.
+To begin with, using an object makes it easier to understand since you have to specify the key associated to each value. While slightly longer to write, it’s easier to read; a fair trade-off in my opinion.
 
 ```javascript
 // This…
@@ -53,11 +53,11 @@ f({
 f('You shall not pass!', false, 42, 'error')
 ```
 
-But the readibility argument is kind of a poor one. Some would say that they feel very comfortable with the multiple-arguments notation as long as they use a proper indentation for each argument (kind of like the object one) so let's move on to something more robust.
+But the readibility argument is kind of a poor one. Some would say that they feel very comfortable with the multiple-arguments notation as long as they use a proper indentation for each argument (kind of like the object one) so let’s move on to something more robust.
 
 ### Harder to call
 
-It's generally simpler to store an object in a variable and then to pass it to the function rather than storing each individual parameter in its own variable. While `.call()` and `.apply()` let you do something around this, it's not exquisite for readability (again!).
+It’s generally simpler to store an object in a variable and then to pass it to the function rather than storing each individual parameter in its own variable. While `.call()` and `.apply()` let you do something around this, it’s not exquisite for readability (again!).
 
 ```javascript
 // This…
@@ -76,7 +76,7 @@ var conf = ['You shall not pass!', false, 42, 'error']
 f.apply(void 0, conf)
 ```
 
-Still not convince? Let's move on.
+Still not convince? Let’s move on.
 
 ### Harder to maintain
 
@@ -98,13 +98,13 @@ f('You shall not pass!', 42, false, 5000, 'error')
 
 ### Harder to provide default parameters
 
-Last but not least, I think an object notation makes it simpler to provide defaults arguments with an `extend` function than the multiple-arguments notation since JavaScript doesn't support default values for arguments in the function signature (while PHP, Sass and other languages do). Because of this, using an object is definitely more elegant than multiplying ternary operators to check if arguments are defined or not.
+Last but not least, I think an object notation makes it simpler to provide defaults arguments with an `extend` function than the multiple-arguments notation since JavaScript doesn’t support default values for arguments in the function signature (while PHP, Sass and other languages do). Because of this, using an object is definitely more elegant than multiplying ternary operators to check if arguments are defined or not.
 
-I think we can agree on the fact that using a configuration object as a unique parameter is both better and more elegant than using a bunch of chained arguments. Now let's move on to the core of this article: bringing this to Sass.
+I think we can agree on the fact that using a configuration object as a unique parameter is both better and more elegant than using a bunch of chained arguments. Now let’s move on to the core of this article: bringing this to Sass.
 
 ## Bringing it to Sass
 
-In a way, we don't really need this in Sass because it already provides _named arguments_. [Named arguments](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments) give the ability to call a function without having to specify all its parameters. You can call it specifying only the arguments you want, no matter their index in the parameter list, like this.
+In a way, we don’t really need this in Sass because it already provides _named arguments_. [Named arguments](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments) give the ability to call a function without having to specify all its parameters. You can call it specifying only the arguments you want, no matter their index in the parameter list, like this.
 
 ```scss
 @mixin mixin($a: 'a', $b: 'b', $c: 'c') {
@@ -114,7 +114,7 @@ In a way, we don't really need this in Sass because it already provides _named a
 @include mixin($b: 'boat');
 ```
 
-This is pretty neat. But if like me you'd rather have a single object instead of a collection of arguments, then read on.
+This is pretty neat. But if like me you’d rather have a single object instead of a collection of arguments, then read on.
 
 > Being able to use configuration objects in Sass is amazing.
 
@@ -151,7 +151,7 @@ $merge: (
 
 ## Using it for real
 
-Now what's the point of all of this? Let's say you have a component you call with a mixin. This mixin accepts quite a few parameters like &mdash; I don't know &mdash; the width, the color scheme, the animation duration, maybe a name or something. They probably have some default values defined to match a common use case. Until now, you have done it like this
+Now what’s the point of all of this? Let’s say you have a component you call with a mixin. This mixin accepts quite a few parameters like &mdash; I don’t know &mdash; the width, the color scheme, the animation duration, maybe a name or something. They probably have some default values defined to match a common use case. Until now, you have done it like this
 
 ```scss
 @mixin component($theme: light, $size: 100%, $duration: 250ms, $name: 'component', $border: true) {
@@ -177,7 +177,7 @@ Now what's the point of all of this? Let's say you have a component you call wit
 @include component(dark, $name: 'module');
 ```
 
-This works great. It is easily readable, it does the job very well. However there is _one_ thing that still sucks with this method: you can't move the configuration elsewhere. Actually you can, but it will be like 5 variables which is getting a lot. Having a configuration map would be easier to move in a variable file or something.
+This works great. It is easily readable, it does the job very well. However there is _one_ thing that still sucks with this method: you can’t move the configuration elsewhere. Actually you can, but it will be like 5 variables which is getting a lot. Having a configuration map would be easier to move in a variable file or something.
 
 ```scss
 @mixin component($conf: ()) {
@@ -210,7 +210,7 @@ This works great. It is easily readable, it does the job very well. However ther
   ));
 ```
 
-Both doesn't look much different except the core function from the object-way looks more crowded. True, but now separating the setup from the code is getting very easy. All you have to do is defining a map and pass it to the mixin. No need to move around a couple of variables which can quickly become a mess.
+Both doesn’t look much different except the core function from the object-way looks more crowded. True, but now separating the setup from the code is getting very easy. All you have to do is defining a map and pass it to the mixin. No need to move around a couple of variables which can quickly become a mess.
 
 ```scss
 // In `_config.scss` along with your other setup variables
@@ -225,7 +225,7 @@ $component-conf: (
 
 ## Final thoughts
 
-There you go folks. This is definitely a more "Object" approach than the previous one and I can understand some people not liking it because it doesn't look like we are dealing with CSS anymore.
+There you go folks. This is definitely a more "Object" approach than the previous one and I can understand some people not liking it because it doesn’t look like we are dealing with CSS anymore.
 
 Now if you ask me, not only does it make both the mixin signature cleaner, but it also gives you more flexibility about your code structure and _this_ is a big deal when working on a huge project with countless components. Being able to gather configuration maps in a variables file can make a huge difference when it comes to code maintenance.
 

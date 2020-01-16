@@ -4,9 +4,9 @@ tags:
   - thoughts
 ---
 
-Happy New Year to y'all folks! I hope you enjoyed your holidays.
+Happy New Year to y’all folks! I hope you enjoyed your holidays.
 
-The end of the year often means looking back at the last dozen of months to see what has been done and what's not. Because of this, this article is mostly personal; kind of a note to myself to keep track of what I have done this year.
+The end of the year often means looking back at the last dozen of months to see what has been done and what’s not. Because of this, this article is mostly personal; kind of a note to myself to keep track of what I have done this year.
 
 _Note: let me take this occasion as an opportunity to suggest you read [this article](https://meyerweb.com/eric/thoughts/2014/12/24/inadvertent-algorithmic-cruelty/) from Eric Meyer about this whole "your-year-on-our-network" thing. Quite heartbreaking, definitely insightful to us all designers and developers._
 
@@ -16,7 +16,7 @@ Early 2014, I officially started writing as a freelancer. Since then, my seconda
 
 > I have written 91 articles in 2014.
 
-Along the same lines, I have written a total of 91 articles published on 6 different sites in 2014. It is not quite but very close to 2 articles a week. I am very proud of such a pace and hope I'll be able to keep writing at a decent rate, if not as much.
+Along the same lines, I have written a total of 91 articles published on 6 different sites in 2014. It is not quite but very close to 2 articles a week. I am very proud of such a pace and hope I’ll be able to keep writing at a decent rate, if not as much.
 
 <h2 style="clear: both">I gave my first talk out of France</h2>
 
@@ -40,7 +40,7 @@ Later this year, in November, [I gave my first talk in English](https://hugogira
 <figcaption>My upcoming book</figcaption>
 </figure>
 
-Apparently I wrote a book this year. It is not published yet, will be in January 2015 if no mistake. Anyway I spent over 7 months working on it with the help of [Raphaël Goetter](https://twitter.com/goetter), so I think it deserves a big spot on the list of things I've done in 2014.
+Apparently I wrote a book this year. It is not published yet, will be in January 2015 if no mistake. Anyway I spent over 7 months working on it with the help of [Raphaël Goetter](https://twitter.com/goetter), so I think it deserves a big spot on the list of things I’ve done in 2014.
 
 The book will be entitled "[CSS 3, Pratique du Design Web](https://www.amazon.fr/dp/2212140231)" (French for "CSS 3 for Web Design"), and published by French editor [Eyrolles](https://www.eyrolles.com/). Oh, and the preface is from [Chris Coyier](https://twitter.com/chriscoyier) himself.
 
@@ -54,15 +54,15 @@ SassDoc has been very welcomed, and some massive projects already use it to mana
 
 ## What about 2015?
 
-Well, aside from releasing my book, I'd like to keep doing talks possibly in English now that I know I am capable of speaking in English in front of people. My goal would be a talk per quarter, but we all know timing is hard so we'll see.
+Well, aside from releasing my book, I’d like to keep doing talks possibly in English now that I know I am capable of speaking in English in front of people. My goal would be a talk per quarter, but we all know timing is hard so we’ll see.
 
 <figure class="figure">
 <img src="/assets/images/feedback-on-dotcss/hugo.jpg" alt="" />
 <figcaption>Me on stage. Photo by dotCSS.</figcaption>
 </figure>
 
-SassDoc should also hit v2 with major changes in the next few weeks, and we have a lot of plans for v2.1 and further. Our goal for this year is to make it the go-to tool for Sass documentation, let's hope we achieve this.
+SassDoc should also hit v2 with major changes in the next few weeks, and we have a lot of plans for v2.1 and further. Our goal for this year is to make it the go-to tool for Sass documentation, let’s hope we achieve this.
 
-Also, I should change job in the next few months, at the very beginning of quarter 2 if everything plays right but I think I'll deal with this in another article when it's all settled down.
+Also, I should change job in the next few months, at the very beginning of quarter 2 if everything plays right but I think I’ll deal with this in another article when it’s all settled down.
 
 What about you my friends, what have you been up to in 2014?

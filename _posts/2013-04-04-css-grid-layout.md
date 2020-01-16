@@ -8,9 +8,9 @@ tags:
 
 > **Edit (2014/05/13):** it looks like Internet Explorer is not the only browser to support the Grid Layout anymore since Chrome 34+ seems able to handle it quite well without any prefix. To the future!
 
-In the last few days/weeks, I have been helping Chris Coyier with [CSS-Tricks' Almanac](https://css-tricks.com/almanac/). It seems he doesn't have enough time to fill the last remaining entries, so we've been a few to help him out by writing them. I have done [perspective](https://css-tricks.com/almanac/properties/p/perspective/), [perspective-origin](https://css-tricks.com/almanac/properties/p/perspective-origin/) and [grid](https://css-tricks.com/almanac/properties/g/grid/).
+In the last few days/weeks, I have been helping Chris Coyier with [CSS-Tricks' Almanac](https://css-tricks.com/almanac/). It seems he doesn’t have enough time to fill the last remaining entries, so we’ve been a few to help him out by writing them. I have done [perspective](https://css-tricks.com/almanac/properties/p/perspective/), [perspective-origin](https://css-tricks.com/almanac/properties/p/perspective-origin/) and [grid](https://css-tricks.com/almanac/properties/g/grid/).
 
-I've to say it's been a real pleasure to do this, mostly because I've learnt literally a ton of stuff. Some people say the best way to learn is through teaching, I can say it's mostly true.
+I’ve to say it’s been a real pleasure to do this, mostly because I’ve learnt literally a ton of stuff. Some people say the best way to learn is through teaching, I can say it’s mostly true.
 
 Anyway, if `perspective` and `perspective-origin` have been quite easy to do, I must say `grid` has been a whole another story. This is by far the most complicated thing I have ever seen in CSS. Let me introduce the topic.
 
@@ -32,26 +32,26 @@ The CSS Grid Layout consists on defining a 2-dimensional grid in which the child
 
 The basic example would be something like this: my `.wrapper` is my grid; `.header` will all columns of the first row; `.main` will by displayed in the second row and the first column; `.sidebar` in the second row, second column; and `.footer` in the third row, all columns.
 
-## What's complicated?
+## What’s complicated?
 
 > Specifications are definitely not for random people.
 
-First, **reading specifications**. If a spec author ever reads this, I am sorry; but the specifications are definitely not for random people. I believe they are mostly made for browser makers, and they are probably very well writen but for a guy like me, it's way too complicated. Unfortunately, I had to dig deep into the spec.
+First, **reading specifications**. If a spec author ever reads this, I am sorry; but the specifications are definitely not for random people. I believe they are mostly made for browser makers, and they are probably very well writen but for a guy like me, it’s way too complicated. Unfortunately, I had to dig deep into the spec.
 
 What has been difficult as well is that the only supported browser &mdash; as of writing &mdash; is Internet Explorer 10 (mostly because 3 of 5 authors of the Grid spec are from Microsoft). And I believe they started implementing the module in their browser engine a while ago, resulting in some inconsistencies regarding the spec which keeps moving.
 
 Not only their implementation is at a very early stage (about half the spec is currently supported), but it also differs from the spec at some point. Among other things:
 
 - `grid-rows` and `grid-columns` have been renamed in `grid-definition-rows` and `grid-definition-columns`
-- `grid-row` is supposed to be a shorthand for `grid-row-position` and `grid-row-span`. The current implementation in Internet Explorer 10 for `grid-row` should be the one for `grid-row-position` (which isn't supported). Same goes for `grid-column`.
+- `grid-row` is supposed to be a shorthand for `grid-row-position` and `grid-row-span`. The current implementation in Internet Explorer 10 for `grid-row` should be the one for `grid-row-position` (which isn’t supported). Same goes for `grid-column`.
 
-This kind of stuff definitely doesn't make things easier.
+This kind of stuff definitely doesn’t make things easier.
 
 Otherwise, the module is quite complicated by itself. It involves about 15 new properties, a new unit, and more important: a whole new way of thinking. Fortunately, the currently supported part of the spec is quite easily understandable and it has been very fun to play around with.
 
 ## A little example
 
-What I've found astonishing is the very little amount of required CSS to achieve a complex layout. I counted: with no more than 10 lines of CSS, I've been able to make a 3-columns layout including 2 fixed-size columns, with full-width header and footer. Oh, and source order independant. Please have a look at the following markup:
+What I’ve found astonishing is the very little amount of required CSS to achieve a complex layout. I counted: with no more than 10 lines of CSS, I’ve been able to make a 3-columns layout including 2 fixed-size columns, with full-width header and footer. Oh, and source order independant. Please have a look at the following markup:
 
 ```html
 <div class="wrapper">
@@ -102,13 +102,13 @@ Now the CSS. Pay attention to the number of lines:
 
 Done. **10 lines. No float. No inline-block. No height. No width. No margin.** And if you want to make everything nice on small devices, it will take no more than a couple of more lines (8 in this example).
 
-_Note: I won't explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at [CSS-Tricks' Almanac entry](https://css-tricks.com/almanac/properties/g/grid/)._
+_Note: I won’t explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at [CSS-Tricks' Almanac entry](https://css-tricks.com/almanac/properties/g/grid/)._
 
 ## What about Flexbox?
 
 > Are Flexbox and Grid both solutions to the same problem or do they both have their own use case? &mdash; [@Lezz](https://twitter.com/Lezz/status/319376112679522304)
 
-This question comes from Twitter. However I've been questioning myself regarding this while making the entry for CSS-Tricks. Let's have a look at both specifications:
+This question comes from Twitter. However I’ve been questioning myself regarding this while making the entry for CSS-Tricks. Let’s have a look at both specifications:
 
 > The **Flexbox specification** describes a CSS box model optimized for user interface design. In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions.
 
@@ -120,11 +120,11 @@ So as I understand this, **the Grid layout is "macro" while the Flexbox module i
 
 > I have been amazed by its efficiency.
 
-For having [played](https://codepen.io/HugoGiraudel/pen/2befd6d225b69912af8561f7cb020124) with the module for hours, I can tell it is quite promising. I have been amazed by its efficiency, and I even could try to mix it with CSS preprocessors: it rocks. The fact it's fully number-based makes it very easy to use in [loops](https://codepen.io/HugoGiraudel/pen/fb0e46cde228e5437993ba1305459a22), [mixins and functions](https://codepen.io/HugoGiraudel/pen/aCliz).
+For having [played](https://codepen.io/HugoGiraudel/pen/2befd6d225b69912af8561f7cb020124) with the module for hours, I can tell it is quite promising. I have been amazed by its efficiency, and I even could try to mix it with CSS preprocessors: it rocks. The fact it’s fully number-based makes it very easy to use in [loops](https://codepen.io/HugoGiraudel/pen/fb0e46cde228e5437993ba1305459a22), [mixins and functions](https://codepen.io/HugoGiraudel/pen/aCliz).
 
-Unfortunately, it is way too soon to use the Grid layout in a real-life project, especially since the browser support is restricted to Internet Explorer 10. However, I've heard the support is coming to Firefox and Chrome nightly builds, so I think we will be able to safely play around with it in a few months from now.
+Unfortunately, it is way too soon to use the Grid layout in a real-life project, especially since the browser support is restricted to Internet Explorer 10. However, I’ve heard the support is coming to Firefox and Chrome nightly builds, so I think we will be able to safely play around with it in a few months from now.
 
-Then let's hope in a year from now, the browser support will be great in all modern browsers (Chrome, Firefox, Opera, IE10+, including some mobile browsers) giving us the ability to use it in projects that don't aim at old browsers.
+Then let’s hope in a year from now, the browser support will be great in all modern browsers (Chrome, Firefox, Opera, IE10+, including some mobile browsers) giving us the ability to use it in projects that don’t aim at old browsers.
 
 Meanwhile, you can still experiment with it on Internet Explorer. Here are a couple of useful resources on the topic:
 

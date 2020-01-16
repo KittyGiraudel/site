@@ -5,13 +5,13 @@ tags:
   - riddle
 ---
 
-Yesterday night, I've seen something in my Twitter timeline which excited my curiosity: a CSS challenge. It was proposed by [Raphael Goetter](https://twitter.com/goetter), a famous French front-end developer on his blog.
+Yesterday night, I’ve seen something in my Twitter timeline which excited my curiosity: a CSS challenge. It was proposed by [Raphael Goetter](https://twitter.com/goetter), a famous French front-end developer on his blog.
 
-Since I'm sure you'll be interested in a little CSS riddle (you will, will you?), let me tell you what this is about.
+Since I’m sure you’ll be interested in a little CSS riddle (you will, will you?), let me tell you what this is about.
 
 ![CSS challenge](https://i.imgur.com/fZkkw.jpg)
 
-Will you be able to do this (I'm talking about the small line behind the text) following the restrictions below?
+Will you be able to do this (I’m talking about the small line behind the text) following the restrictions below?
 
 - Only one single element (`h1`) in the body element
 - Element horizontally centered in its parent
@@ -21,15 +21,15 @@ Will you be able to do this (I'm talking about the small line behind the text) f
 - No HTTP request, no image, no JavaScript
 - The best browser support the better of course
 
-I can't wait to see the way you'll figure this out people. I personally found something with a few downsides sadly. I'm sure some of you will be able to find a kick-ass solution. ;)
+I can’t wait to see the way you’ll figure this out people. I personally found something with a few downsides sadly. I’m sure some of you will be able to find a kick-ass solution. ;)
 
 Good luck!
 
 ## [Edit] Solutions (November 24th, 2012)
 
-Thanks for participating! There have been a couple of answers for this trick. Druid of Lûhn proposed [something](https://codepen.io/Druid-of-Luhn/details/sclvk) which works but sadly it's pretty awful for SEO since it involves an empty `h1` tag.
+Thanks for participating! There have been a couple of answers for this trick. Druid of Lûhn proposed [something](https://codepen.io/Druid-of-Luhn/details/sclvk) which works but sadly it’s pretty awful for SEO since it involves an empty `h1` tag.
 
-Joshua Hibbert [used linear gradients](https://jsfiddle.net/joshnh/3PG8j/) to do it (so [did](https://codepen.io/raphaelgoetter/pen/dGxvL) Raphael Goetter). This is a clever technique I thought about but didn't give a try. My experience with gradients is not that good.
+Joshua Hibbert [used linear gradients](https://jsfiddle.net/joshnh/3PG8j/) to do it (so [did](https://codepen.io/raphaelgoetter/pen/dGxvL) Raphael Goetter). This is a clever technique I thought about but didn’t give a try. My experience with gradients is not that good.
 
 Here is the way I [did it](https://jsfiddle.net/HugoGiraudel/cyeGM/1/):
 
@@ -90,4 +90,4 @@ Hopefully the browser support is pretty good, at least way better than the gradi
 - Chrome for Android
 - Firefox for Android
 
-But since it's only a tiny design improvement, I'll definitely go with the gradient version on a live project. Thanks for participating. I'll try to drop another challenge soon. :)
+But since it’s only a tiny design improvement, I’ll definitely go with the gradient version on a live project. Thanks for participating. I’ll try to drop another challenge soon. :)

@@ -7,7 +7,7 @@ tags:
 
 > Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](https://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/).
 
-Time's up people! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it's pretty cool to dig into your code to see how you've worked around the problem.
+Time’s up people! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it’s pretty cool to dig into your code to see how you’ve worked around the problem.
 
 Among the possible solutions, I thought about:
 
@@ -17,11 +17,11 @@ Among the possible solutions, I thought about:
 * Radial-gradients
 * SVG?
 
-In this post I will be explaining my solution step by step and I'll end the article by talking about some of the clever proposals you sent me.
+In this post I will be explaining my solution step by step and I’ll end the article by talking about some of the clever proposals you sent me.
 
 ## My solution
 
-First, let's give to Caesar what belongs to Caesar: the original idea comes from [Ana Tudor](https://twitter.com/thebabydino) which I then revisited to make it backward-compatible, decent on small screens, easily maintainable with Sass and so on. So thanks Ana!
+First, let’s give to Caesar what belongs to Caesar: the original idea comes from [Ana Tudor](https://twitter.com/thebabydino) which I then revisited to make it backward-compatible, decent on small screens, easily maintainable with Sass and so on. So thanks Ana!
 
 Then, be sure to know there is nothing magic in this trick. As a proof, some of you came up with a very similar solution. The main idea behind it is to use pseudo-elements to draw the invisible circle **and** apply a background color to the cropped sections. So for each box, the not-cropped part is colored with a background-color rule, while the cropped part is made of a huge box-shadow (`55em` spread, no blur) on an absolutely positioned pseudo-element.
 
@@ -73,7 +73,7 @@ Also every box has its own name like `.box--alpha`. This is meant to be able to 
 
 ### Setting up Sass variables
 
-Using Sass really helped me achieving such a tricky component. Thanks to Sass variables, it's getting easy to maintain support for small screens, old browsers or simply update the gutter size or the invisible circle radius.
+Using Sass really helped me achieving such a tricky component. Thanks to Sass variables, it’s getting easy to maintain support for small screens, old browsers or simply update the gutter size or the invisible circle radius.
 
 ```scss
 $gutter: 2em;
@@ -93,7 +93,7 @@ Everything is computed from there. There will be absolutely no magic number anyw
 
 ### Styling the container
 
-Let's start with applying some default styles to our element (`.boxes`, `.box`…).
+Let’s start with applying some default styles to our element (`.boxes`, `.box`…).
 
 ```scss
 // Boxes wrapper
@@ -137,7 +137,7 @@ I think the code kind of speaks for itself until there. The `:after` pseudo-elem
 
 ### Gutters
 
-One of the rules of the game was to keep the same gutter between left and right boxes and top and bottom boxes. Let's start with the easiest of both: vertical gutter.
+One of the rules of the game was to keep the same gutter between left and right boxes and top and bottom boxes. Let’s start with the easiest of both: vertical gutter.
 
 ```scss
 .box {
@@ -153,7 +153,7 @@ One of the rules of the game was to keep the same gutter between left and right 
 }
 ```
 
-Boxes spread across half the width of the parent. Some of you people did use `calc` to handle the gutter between left and right boxes right away but it lowers the browser support so we'll do it differently. For horizontal gutter, here is how we can handle it:
+Boxes spread across half the width of the parent. Some of you people did use `calc` to handle the gutter between left and right boxes right away but it lowers the browser support so we’ll do it differently. For horizontal gutter, here is how we can handle it:
 
 ```scss
 // Inner box wrapper
@@ -186,7 +186,7 @@ Yes, finally. As I explained at the beginning of the article, the idea consists 
 ```scss
 // Part that is being truncated by the circle
 // 1. Removing background color
-// 2. Making sure the box-shadow from pseudo-element doesn't leak outside the container
+// 2. Making sure the box-shadow from pseudo-element doesn’t leak outside the container
 // 3. Enabling position context for pseudo-element
 .box__cut {
   background: none !important; // 1
@@ -276,7 +276,7 @@ We could have used advanced CSS selectors (e.g. `:nth-of-type`) to avoid having 
 
 > `box-sizing: border-box` is a bless.
 
-Some of you used the same trick with borders instead of box-shadows. I think the main pro of using box-shadows is it doesn't conflict with the box-model since it's being rendered on its own layer. When you're dealing with borders, you have to make sure you include the border in the width/height if you're using `box-sizing: border-box`. And if you don't… well that's stupid, this property is golden.
+Some of you used the same trick with borders instead of box-shadows. I think the main pro of using box-shadows is it doesn’t conflict with the box-model since it’s being rendered on its own layer. When you’re dealing with borders, you have to make sure you include the border in the width/height if you’re using `box-sizing: border-box`. And if you don’t… well that’s stupid, this property is golden.
 
 However the major downside of box-shadows is they can be quite intensive for the CPU/GPU, causing expensive repaint when scrolling, especially on older browsers like Internet Explorer 9.
 
@@ -288,13 +288,13 @@ When it comes to Internet Explorer 8, or actually any browser not supporting any
 
 ## Your clever solutions
 
-[Giulia Alfonsi](https://codepen.io/electric_g/pen/tyAcn), [Lokesh Suthar](https://codepen.io/magnus16/pen/sadEg), [One div](https://codepen.io/onediv/pen/Krypb), [mh-nichts](https://codepen.io/mh-nichts/pen/Giokl) and [Hugo Darby-Brown](https://codepen.io/hugo/pen/mIvfz) made it either with borders or box-shadows. Some of them did use `calc` for positioning/sizing although that wasn't necessary. Good job people.
+[Giulia Alfonsi](https://codepen.io/electric_g/pen/tyAcn), [Lokesh Suthar](https://codepen.io/magnus16/pen/sadEg), [One div](https://codepen.io/onediv/pen/Krypb), [mh-nichts](https://codepen.io/mh-nichts/pen/Giokl) and [Hugo Darby-Brown](https://codepen.io/hugo/pen/mIvfz) made it either with borders or box-shadows. Some of them did use `calc` for positioning/sizing although that wasn’t necessary. Good job people.
 
-[Rafał Krupiński](https://codepen.io/rkrupinski/pen/psrBm) came up with a solution using radial-gradients. Even better, he used `calc` **in** the radial-gradients declaration to keep things fluid. You've to admit that's clever. His solution is probably the one involving the lowest amount of code, at the price of browser support though. Anyway, congratulations Rafał!
+[Rafał Krupiński](https://codepen.io/rkrupinski/pen/psrBm) came up with a solution using radial-gradients. Even better, he used `calc` **in** the radial-gradients declaration to keep things fluid. You’ve to admit that’s clever. His solution is probably the one involving the lowest amount of code, at the price of browser support though. Anyway, congratulations Rafał!
 
 I was hoping for one, [Gaël Poupard](https://codepen.io/ffoodd/pen/xHFjg) did it: a solution with `clip-path`. Plus his code is fully commented so be sure to have a look at this beauty. [His comment](https://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/#comment-1259685947) on the original post is also worth a read. Nice one Gaël!
 
-Last but not least, [Vithun Kumar Gajendra](https://codepen.io/vithun/full/gazbD) made an interesting demo animating the pseudo-elements to show the trick. Note he used duplicated background-image on pseudo-elements rather than box-shadows/borders, that's a cool one too!
+Last but not least, [Vithun Kumar Gajendra](https://codepen.io/vithun/full/gazbD) made an interesting demo animating the pseudo-elements to show the trick. Note he used duplicated background-image on pseudo-elements rather than box-shadows/borders, that’s a cool one too!
 
 Anyway, you can have a look at my fully commented pen here:
 

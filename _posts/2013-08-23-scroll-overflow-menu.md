@@ -8,15 +8,15 @@ tags:
 
 > The following is a guest post by Hugo Darby-Brown, a talented front-end developer. I’m very glad to have him writing here today about a menu concept he came up with!
 
-Before I start off I'd like to say that this is more of **a proof of concept**, than a method that I'd recommend using on your next project. This menu uses the WebKit-specific CSS declaration `overflow-scrolling: touch` so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).
+Before I start off I’d like to say that this is more of **a proof of concept**, than a method that I’d recommend using on your next project. This menu uses the WebKit-specific CSS declaration `overflow-scrolling: touch` so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).
 
 ## Setting Out
 
-I wanted to create a horizontal scrolling navigation, similar to that of the iOS taskbar. Lots of responsive menu's take the approach of displaying list items vertically on small screens, but I wanted to play with the idea of having menu items off the screen and swiping to reveal them.
+I wanted to create a horizontal scrolling navigation, similar to that of the iOS taskbar. Lots of responsive menu’s take the approach of displaying list items vertically on small screens, but I wanted to play with the idea of having menu items off the screen and swiping to reveal them.
 
 ## The Basic Effect
 
-I wanted the HTML markup to be as clean as possible, this I guess it's pretty self explanatory.
+I wanted the HTML markup to be as clean as possible, this I guess it’s pretty self explanatory.
 
 ```html
 <header>
@@ -32,7 +32,7 @@ I wanted the HTML markup to be as clean as possible, this I guess it's pretty se
 </header>
 ```
 
-This is the CSS that makes the effect happen. I've stripped out all the styling to highlight the key components that make the effect work.
+This is the CSS that makes the effect happen. I’ve stripped out all the styling to highlight the key components that make the effect work.
 
 ```css
 nav {
@@ -57,7 +57,7 @@ li {
 }
 ```
 
-Okay, so what's going on here? In essence we're creating a navigation that is too large for the screen. We set the overflow to `scroll`, and the overflow-scroll type to `touch` to allow for momentum scrolling. Explained in a bit more detail below:
+Okay, so what’s going on here? In essence we’re creating a navigation that is too large for the screen. We set the overflow to `scroll`, and the overflow-scroll type to `touch` to allow for momentum scrolling. Explained in a bit more detail below:
 
 1. Setting `auto` will work on some devices, but set this to `scroll` just to be sure.
 1. This the _magic_ property that enables the _native feel_ scrolling.
@@ -68,7 +68,7 @@ Okay, so what's going on here? In essence we're creating a navigation that is to
 
 ## Toggling The Menu
 
-We're almost done, all we have to do is to deal with the toggling. We could use a CSS hack for this but this is not the point so we'll just use a tiny bit of JavaScript.
+We’re almost done, all we have to do is to deal with the toggling. We could use a CSS hack for this but this is not the point so we’ll just use a tiny bit of JavaScript.
 
 So we set the `max-height` of the navigation to `0` in order to initially hide it, and add a `transition` so when we toggle the class `.show` the menu will appear to slide in from the top, pretty basic mobile menu stuff.
 
@@ -83,7 +83,7 @@ nav {
 }
 ```
 
-Throw in some JS to toggle the class, and you've got yourself a basic slide down mobile menu.
+Throw in some JS to toggle the class, and you’ve got yourself a basic slide down mobile menu.
 
 ```javascript
 // jQuery version
@@ -102,7 +102,7 @@ document.querySelector('.nav-toggle').onclick = function(e) {
 
 ## What about larger devices?
 
-A mobile only menu isn't much use these days is it? So using a few `min-width` media queries we'll turn this menu into a responsive mobile first menu.
+A mobile only menu isn’t much use these days is it? So using a few `min-width` media queries we’ll turn this menu into a responsive mobile first menu.
 
 ```css
 @media (min-width: 31.25em) {
@@ -137,11 +137,11 @@ For unsupported browsers, there are a few of polyfills that can help you, should
 
 ## Final thoughts
 
-I think you'll see a lot more menu's taking a horizontal approach in the future, but unfortunately Android 2.X still makes up for a 1/3 of market share of all Android devices, so until that reduces significantly I wouldn't use this in any serious projects.
+I think you’ll see a lot more menu’s taking a horizontal approach in the future, but unfortunately Android 2.X still makes up for a 1/3 of market share of all Android devices, so until that reduces significantly I wouldn’t use this in any serious projects.
 
 I would love to hear your thoughts on `-webkit-overflow-scrolling: touch;` and the future possibilities.
 
-I would usually embed the demo but, unfortunately iframes don't play well with `overflow-scrolling:touch`, so it's best if you play around the code at [CodePen](https://codepen.io/hugo/full/pwsLj) (caution! iframes, doesn't work great on some mobile browsers)!
+I would usually embed the demo but, unfortunately iframes don’t play well with `overflow-scrolling:touch`, so it’s best if you play around the code at [CodePen](https://codepen.io/hugo/full/pwsLj) (caution! iframes, doesn’t work great on some mobile browsers)!
 
 Thanks for reading! If you think of anything to improve this menu concept, feel free to share. :)
 

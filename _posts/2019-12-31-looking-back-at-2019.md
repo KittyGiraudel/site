@@ -55,7 +55,7 @@ Following 2018, I spent 2019 feeling less and less guilty about not hustling all
 
 ---
 
-🤯 Early in the year, it occurred to me that the less comfortable I am with a technical topic, the more I tend to use overly complicated words when explaining it in order to convince myself I'm familiar with it. It took some conscious effort, but I feel like I got way better at admitting I don’t know things, or that I don’t know enough to explain them.
+🤯 Early in the year, it occurred to me that the less comfortable I am with a technical topic, the more I tend to use overly complicated words when explaining it in order to convince myself I’m familiar with it. It took some conscious effort, but I feel like I got way better at admitting I don’t know things, or that I don’t know enough to explain them.
 
 ## Things I’d like to do
 

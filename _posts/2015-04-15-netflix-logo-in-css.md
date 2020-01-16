@@ -24,7 +24,7 @@ My first implementation was a little dirty since I was trying a few things.
 
 For example: I wanted to do this in pure CSS and I also wanted to be able to run the animation again when I click a button, so I had to use some magic. Luckily I always have a few tricks up my sleeve when it comes to CSS.
 
-But let's talk about the actual animation.
+But let’s talk about the actual animation.
 
 I recorded the logo and looped it in Quicktime so I could examine it in detail. I tend to do that a lot because it allows me to stop at certain frames to figure out what is actually going on.
 
@@ -42,7 +42,7 @@ People have been asking me how I did that…
 
 > A trick from up my sleeve ;)
 
-I do a lot of 3d experiments, so this wasn't that much of a difficulty to me.
+I do a lot of 3d experiments, so this wasn’t that much of a difficulty to me.
 
 ## Deforming/Tilting the letters
 
@@ -87,7 +87,7 @@ span {
 
 There are different way of doing this, like using a different perspective (e.g. `500px`), rotation-angle (e.g. `9deg`) and scale value (e.g. `0.5`) but these values turned out to work the best for my needs.
 
-Here's a demo on CodePen:
+Here’s a demo on CodePen:
 
 <p data-height="440" data-theme-id="0" data-slug-hash="raEojV" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='https://codepen.io/pixelass/pen/raEojV/'>netflix logo | (figure--1)</a> by Gregor Adams (<a href='https://codepen.io/pixelass'>@pixelass</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
@@ -126,20 +126,20 @@ To do this I needed to add some logic: I use Sass with the SCSS syntax to do thi
 }
 ```
 
-Here's a demo on CodePen
+Here’s a demo on CodePen
 
 <p data-height="240" data-theme-id="0" data-slug-hash="yydGPL" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='https://codepen.io/pixelass/pen/yydGPL/'>netflix logo (figure--2)</a> by Gregor Adams (<a href='https://codepen.io/pixelass'>@pixelass</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 ## A function for the shadow
 
-Let's write a function for the 3d-effect and the shadow. I paused on one frame of the video I had made before and looked at it in detail.
+Let’s write a function for the 3d-effect and the shadow. I paused on one frame of the video I had made before and looked at it in detail.
 
 <figure class="figure">
 <img src="/assets/images/netflix-logo-in-css/shadow.png" alt="" />
 <figcaption>Image extracted from the original animated Netflix logo</figcaption>
 </figure>
 
-As you can see the 3d effect's vanishing point is in the center while the shadow drops to the bottom right. Now we know what our function has to be able to do.
+As you can see the 3d effect’s vanishing point is in the center while the shadow drops to the bottom right. Now we know what our function has to be able to do.
 
 We will call this function inside keyframes so we want it to be able to handle a few values like:
 
@@ -156,7 +156,7 @@ We need one more argument to define the depth of the shadow or 3d-effect.
 <figcaption>My CSS implementation of the previously shown image</figcaption>
 </figure>
 
-Here's the function I am using to handle all these requirements:
+Here’s the function I am using to handle all these requirements:
 
 ```scss
 /// Create a 3d-shadow in a certain direction
@@ -224,7 +224,7 @@ text-shadow: d3(5, red, [$x], [$y], [$blur], [$mix]);
 
 `$x`, `$y`, `$blur` and `$mix` are optional arguments. I already mentioned that I will call this function inside keyframes so I need to be able to optionally change them. `$mix` will allow to add a second color so the shadow fades from one to the other.
 
-Here's a demo on CodePen:
+Here’s a demo on CodePen:
 
 <p data-height="320" data-theme-id="0" data-slug-hash="XJLOXg" data-default-tab="result" data-user="pixelass" class='codepen'>See the Pen <a href='https://codepen.io/pixelass/pen/XJLOXg/'>netflix logo (figure--3)</a> by Gregor Adams (<a href='https://codepen.io/pixelass'>@pixelass</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
@@ -266,7 +266,7 @@ I am using two variables `$offset` and `$trans` which I have already defined abo
 
 ### Fading back (animation-outro)
 
-Now let's do the same thing for fading back.
+Now let’s do the same thing for fading back.
 
 ```scss
 @keyframes fade-back {
@@ -323,7 +323,7 @@ animation-delay: 0s, 2s, 3.2s;
 
 The code above is just an approximate example. Each letter has a different delay and duration. You can see the final implementation here [Netflix animation in pure CSS](https://codepen.io/pixelass/pen/MYYReK)
 
-Final notice: I added some magic to retrigger the animation in pure CSS but that's something I might explain in another article.
+Final notice: I added some magic to retrigger the animation in pure CSS but that’s something I might explain in another article.
 
 I am never really happy with my experiments and while writing this article I found several ways how I could improve the code and effect.
 

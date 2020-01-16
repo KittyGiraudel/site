@@ -7,7 +7,7 @@ tags:
   - mixin
 ---
 
-> **Edit (2014/11/16):** I have changed my mind again and no longer use Sass to remify. In most projects, I've noticed it's better to use a postprocessor such as [px_to_rem](https://github.com/songawee/px_to_rem).
+> **Edit (2014/11/16):** I have changed my mind again and no longer use Sass to remify. In most projects, I’ve noticed it’s better to use a postprocessor such as [px_to_rem](https://github.com/songawee/px_to_rem).
 
 <!-- -->
 
@@ -19,7 +19,7 @@ Everybody loves relative units. They are handy and help us solve daily problems.
 
 As an example, setting both `p` and `li` tags font-size to `1.2em` may seem fine. But if you ever happen to have a paragraph inside a list item, it would result in a font-size 1.44 times (1.2 \* 1.2) bigger than parent font-size, and not 1.2 as wished.
 
-To avoid this, a new unit has been created: [`rem`](https://snook.ca/archives/html_and_css/font-size-with-rem). It stands for _root em_. Basically, instead of being relative to the font-size of its direct parent, it's relative to the font-size defined for the `html` element.
+To avoid this, a new unit has been created: [`rem`](https://snook.ca/archives/html_and_css/font-size-with-rem). It stands for _root em_. Basically, instead of being relative to the font-size of its direct parent, it’s relative to the font-size defined for the `html` element.
 
 You may have already seen something like this in frameworks, demo, blog posts and such:
 
@@ -37,11 +37,11 @@ Because all browsers have a default font-size of `16px`, setting the font-size t
 
 Then, if I want an element to have like a `28px` font-size, I simply have to do `.element { font-size: 2.8rem; }`, no matter the size of its parent.
 
-Everything is great, however [rem isn't supported in all browsers](https://caniuse.com/#feat=rem), especially not in Internet Explorer 8, which is still required in most projects. It means we have to **give a fallback** for this browser.
+Everything is great, however [rem isn’t supported in all browsers](https://caniuse.com/#feat=rem), especially not in Internet Explorer 8, which is still required in most projects. It means we have to **give a fallback** for this browser.
 
 ## Mixin to the rescue!
 
-Having to define twice the font-size property everytime you have to set the size of a text element sucks. This is the moment you'd like to have a wonderful mixin handling everything for you. Well, **WISH GRANTED!**
+Having to define twice the font-size property everytime you have to set the size of a text element sucks. This is the moment you’d like to have a wonderful mixin handling everything for you. Well, **WISH GRANTED!**
 
 ### About the mixin
 
@@ -51,7 +51,7 @@ There are already many mixins handling `px` fallback for `rem` usage, most of th
 - Accepts (almost) any property as an input, not only font-size
 - Accepts multiple values, like `10px 20px` (for padding or margin as an example)
 
-### Let's open the beast
+### Let’s open the beast
 
 ```scss
 html {
@@ -150,15 +150,15 @@ body {
 
 There are still some issues with this mixin:
 
-- Doesn't work with all properties (border shorthand among others)
-- Doesn't fallback if you input a wrong value (wrong unit or unitless value as an example)
+- Doesn’t work with all properties (border shorthand among others)
+- Doesn’t fallback if you input a wrong value (wrong unit or unitless value as an example)
 - Relies on a defined baseline; however this is easily fixed by adding a `$baseline` parameter to the mixin
-- Relies on a `parseInt()` function; I've proposed it to Compass, let's hope they add it anytime soon
+- Relies on a `parseInt()` function; I’ve proposed it to Compass, let’s hope they add it anytime soon
 
-If you ever happen to find a decent solution to fix one, I'll be glad to know and add it!
+If you ever happen to find a decent solution to fix one, I’ll be glad to know and add it!
 
 ## Final words
 
-That's pretty much it folks. I'd be glad to hear your opinion on this and improve it with your ideas. :)
+That’s pretty much it folks. I’d be glad to hear your opinion on this and improve it with your ideas. :)
 
 If you want a playground to test and hack, please feel free to fork [my pen](https://codepen.io/HugoGiraudel/pen/xsKdH).

@@ -87,7 +87,7 @@ This outputs:
 
 `-o-`, `-ms-` (and `-khtml-`) are omitted because the `box-sizing()` mixin calls `experimental()` by specifically specifying not to output lines for Opera and Internet Explorer.
 
-Now what's the point of such a tool? As an example, there is no default mixin for CSS animation in Compass. Let's make one!
+Now what’s the point of such a tool? As an example, there is no default mixin for CSS animation in Compass. Let’s make one!
 
 ```scss
 @mixin animation($content) {
@@ -117,7 +117,7 @@ You may have already heard of `has-layout`. [This article](http://www.satzansatz
 
 > “Layout” is an IE/Win proprietary concept that determines how elements draw and bound their content, interact with and relate to other elements, and react on and transmit application/user events. This quality can be irreversibly triggered by some CSS properties. Some HTML elements have “layout” by default. Microsoft developers decided that elements should be able to acquire a “property” (in an object-oriented programming sense) they referred to as hasLayout, which is set to true when this rendering concept takes effect.
 
-Back to our business: Compass gives two ways to trigger `hasLayout` on elements: with `zoom` (using the `zoom` MS proprietary property) or with `block` (using the `display` property). I'd go with the zoom, even if it doesn't validate mostly because I'm used to.
+Back to our business: Compass gives two ways to trigger `hasLayout` on elements: with `zoom` (using the `zoom` MS proprietary property) or with `block` (using the `display` property). I’d go with the zoom, even if it doesn’t validate mostly because I’m used to.
 
 ```scss
 .element1 {
@@ -161,7 +161,7 @@ Outputs…
 }
 ```
 
-Since IE6 doesn't understand `!important`, it will apply the later declaratation while other browsers will follow the hammer bash flaged rule.
+Since IE6 doesn’t understand `!important`, it will apply the later declaratation while other browsers will follow the hammer bash flaged rule.
 
 ## Image dimensions
 
@@ -178,13 +178,13 @@ Compass gives you a way to know the [dimensions of an image](https://compass-sty
 
 In this example, the element will have a size relative to the background-image it uses.
 
-_Note: beware, the path has to be relative to your project's image directory, defined in your `config.rb` file._
+_Note: beware, the path has to be relative to your project’s image directory, defined in your `config.rb` file._
 
 ## Math functions
 
-If you're like a total nerd and want to do CSS with math, then you'll be pleased to know Compass has a bunch of built-in [math functions](https://compass-style.org/reference/compass/helpers/math/) like `sin()`, `cos()`, `pi()` among a few others.
+If you’re like a total nerd and want to do CSS with math, then you’ll be pleased to know Compass has a bunch of built-in [math functions](https://compass-style.org/reference/compass/helpers/math/) like `sin()`, `cos()`, `pi()` among a few others.
 
-I once had to use `sin()` in order to make a [mixin for a pure CSS 6-points star](https://hugogiraudel.com/2013/02/18/sass-mixin-star/) but that's pretty much it. If you happen to have a real live use case for one of those functions, I'd be more than pleased to know more about it.
+I once had to use `sin()` in order to make a [mixin for a pure CSS 6-points star](https://hugogiraudel.com/2013/02/18/sass-mixin-star/) but that’s pretty much it. If you happen to have a real live use case for one of those functions, I’d be more than pleased to know more about it.
 
 ```scss
 $n: 4;
@@ -196,7 +196,7 @@ $sqrt: sqrt($n); /* Returns 2  */
 
 Compass provides some [features](https://compass-style.org/reference/compass/helpers/selectors/) to play with selectors like `nest()`, `append-selector()` or `headings()`.
 
-Once again, I am not sure if there are a bunch of real life use cases for such functions. Let me show you with a demo, maybe you'll be able to find a use case:
+Once again, I am not sure if there are a bunch of real life use cases for such functions. Let me show you with a demo, maybe you’ll be able to find a use case:
 
 ```scss
 /* nest() */
@@ -247,4 +247,4 @@ _The `hide-text()` mixin takes a direction as a parameter. The default one is `l
 
 ## Final words
 
-So people, how many of these features did you know? If you have some free time, I highly recommand you to dig into [Compass documentation](https://compass-style.org/reference/compass/). You'd be surprised how little you know about the framework in most cases.
+So people, how many of these features did you know? If you have some free time, I highly recommand you to dig into [Compass documentation](https://compass-style.org/reference/compass/). You’d be surprised how little you know about the framework in most cases.
