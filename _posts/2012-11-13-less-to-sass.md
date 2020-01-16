@@ -17,7 +17,7 @@ Anyway and before anything, please note I’m not a hardcore CSS preprocessor us
 A few weeks ago, I wanted to have a real shot with CSS preprocessors after hours of playing on [CodePen](https://codepen.io) so I read a few things to make a choice. To put it simple, there are currently 4 major CSS preprocessors:
 
 - [Sass](https://sass-lang.com/) built on Ruby
-- [LESS](https://lesscss.org/) built on JavaScript
+- [LESS](http://lesscss.org/) built on JavaScript
 - [Stylus](https://learnboost.github.com/stylus/) built on JavaScript
 - [CSS Crush](https://the-echoplex.net/csscrush/) built on PHP
 
@@ -210,11 +210,11 @@ Basically, LESS fails to understand @page and @keyframes inside mixins because i
 .my-mixin('#whatever', name, other-parameters);
 ```
 
-Yeah, this is a complete nightmare. I'm not the one who wrote this; I've been searching for hours how to do this before finding [a very complete answer](http://stackoverflow.com/questions/13160991/chaining-keyframe-attributes-with-less) on StackOverflow leading to two others related topic with wonderful answers ([here](http://stackoverflow.com/questions/11551313/less-css-pass-mixin-as-a-parameter-to-another-mixin/11589227#11589227) and [there](http://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css)).
+Yeah, this is a complete nightmare. I'm not the one who wrote this; I've been searching for hours how to do this before finding [a very complete answer](https://stackoverflow.com/questions/13160991/chaining-keyframe-attributes-with-less) on StackOverflow leading to two others related topic with wonderful answers ([here](https://stackoverflow.com/questions/11551313/less-css-pass-mixin-as-a-parameter-to-another-mixin/11589227#11589227) and [there](https://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css)).
 
 _Note: the `.Local()` thing seems to be a keyword for "this" but I couldn't find any confirmation on this. If you have, please catch me on Twitter._
 
-So basically, here is what there is to say ([still not from me](http://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css/11028622#11028622)):
+So basically, here is what there is to say ([still not from me](https://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css/11028622#11028622)):
 
 - The initial selector `(~"@keyframes @{name}{") { ... }` renders as `@keyframes name { { ... }
 - To avoid `{ {`, it requires a newline which cannot be escaped directly so through the variable `@newline: \`"\n"\``;. LESS parses anything between backticks as JavaScript, so the resulting value is a newline character.
@@ -228,7 +228,7 @@ Anyway, this was waaaaay too much for me. **The point of CSS preprocessors is to
 
 ## Why I think Sass is better
 
-I won't make a complete and detailed comparison between Sass and LESS because some people did it very well already ([Chris Coyier](http://css-tricks.com/sass-vs-less/), [Kewin Powell](http://fr.slideshare.net/utbkevin/less-vs-sass-css-precompiler-showdown-14068991), etc.). I'll only cover the few points I talked about earlier.
+I won't make a complete and detailed comparison between Sass and LESS because some people did it very well already ([Chris Coyier](https://css-tricks.com/sass-vs-less/), [Kewin Powell](https://fr.slideshare.net/utbkevin/less-vs-sass-css-precompiler-showdown-14068991), etc.). I'll only cover the few points I talked about earlier.
 
 ### Sass and conditional statements
 
@@ -267,7 +267,7 @@ Sass has absolutely no problem with concatenation neither in selectors nor in pr
 
 Very quickly, here are the few things making me tell Sass is better than LESS. Those are well explained in the above links.
 
-- Sass has [Compass](http://compass-style.org/) which keeps CSS3 support up to date
+- Sass has [Compass](https://compass-style.org/) which keeps CSS3 support up to date
 - Sass provides the `@extend` feature allowing you to extend a class from another one
 - Sass handles media queries in a better and more advanced ways than others
 - Sass throws errors instead of miscalculations when doing operations with units
@@ -282,6 +282,6 @@ Well, I've been moaning about LESS the whole article, but honestly this is not s
 - LESS has a nicer and more accessible documentation on [lesscss.org](http://lesscss.org/)
 - LESS is not dependent to either command line skills or a third program
 - LESS can be used locally without any install required (simple JS script)
-- [Twitter Bootstrap](http://twitter.github.com/bootstrap/) which is probably the biggest framework outhere running thousands of websites is built on LESS; it sounds like a nice proof that LESS is a good CSS preprocessor to me
+- [Bootstrap](https://getbootstrap.com/) which is probably the biggest framework outhere running thousands of websites is built on LESS; it sounds like a nice proof that LESS is a good CSS preprocessor to me
 
 Whatsoever, the choice is really up to you. All of this was only my opinion based on my experience. **LESS is still a good CSS preprocessor, but in the end I think Sass is simply better**.

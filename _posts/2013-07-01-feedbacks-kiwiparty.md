@@ -10,7 +10,7 @@ It's a one-day French conference at Strasbourg (France) gathering 10 speakers an
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-kiwiparty/code-is-poetry.jpg" alt="">
-<figcaption>Code is poetry - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+<figcaption>Code is poetry - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
 </figure>
 
 So Friday June 28 at 2:00PM I was on stage to talk about Sass, and how we can use preprocessors to push our stylesheets to an upper level: "Kick-ass CSS with Sass" ("Des CSS kick-ass avec Sass").
@@ -23,13 +23,13 @@ I'd never been at a conference before so it was pretty much what I could expect.
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-kiwiparty/laptops-and-food.jpg" alt="">
-<figcaption>Laptops and food - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+<figcaption>Laptops and food - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
 </figure>
 
 Plus, we had the opportunity to meet two awesome dudes of our field:
 
-- [Bert Bos](http://en.wikipedia.org/wiki/Bert_Bos) -co-creator of CSS- introduced the day by telling us about [CSS for books](http://www.w3.org/Talks/2013/0628-CSS-Strasbourg/). Pretty amazing what we can know do with CSS when we know it was first intented to style basic text documents.
-- [Tristan Nitot](http://twitter.com/nitot) -founder of Mozilla Europe- concluded the conference by talking about Firefox OS. He's such an awesome speaker; totally worth seeing him.
+- [Bert Bos](https://en.wikipedia.org/wiki/Bert_Bos) -co-creator of CSS- introduced the day by telling us about [CSS for books](https://www.w3.org/Talks/2013/0628-CSS-Strasbourg/). Pretty amazing what we can know do with CSS when we know it was first intented to style basic text documents.
+- [Tristan Nitot](https://twitter.com/nitot) -founder of Mozilla Europe- concluded the conference by talking about Firefox OS. He's such an awesome speaker; totally worth seeing him.
 
 I could also meet all those great French people from Twitter and put some faces on names. Probably the best thing of this day. :)
 
@@ -39,7 +39,7 @@ It went great. People seemed very interested in the topic and I felt like they w
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-kiwiparty/hugo-giraudel.jpg" alt="">
-<figcaption>Focus - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+<figcaption>Focus - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
 </figure>
 
 I was kind of nervous, obviously. My laptop dying the night before the big day was not to help though... Hopefully I could buy a Chromebook (which will probably the topic for another article) and all went well.
@@ -66,9 +66,9 @@ Retrospectively, it was a risky bet. Speaking of CSS preprocessors can be quite 
 
 Unfortunately, my talk wasn't recorded so no way to access it online, sorry people. :(
 
-Regarding pictures, my [girlfriend](http://alexandralucas.com) took a couple of photos as you can see in this article. Otherwise, you can find more pics of the whole event on Flickr tagged [#KiwiParty](http://www.flickr.com/search/?q=kiwiparty).
+Regarding pictures, my [girlfriend](http://whyalix.com) took a couple of photos as you can see in this article. Otherwise, you can find more pics of the whole event on Flickr tagged [#KiwiParty](https://www.flickr.com/search/?q=kiwiparty).
 
-Oh, and of course here are my [slides](http://slid.es/hugogiraudel/css-kick-ass-avec-sass/) (in French, but it's mostly code); read top to bottom then left to right. I'm currently writing a blog post digging deep into my slides, so be patient English-speaking friends. :)
+Oh, and of course here are my [slides](https://slid.es/hugogiraudel/css-kick-ass-avec-sass/) (in French, but it's mostly code); read top to bottom then left to right. I'm currently writing a blog post digging deep into my slides, so be patient English-speaking friends. :)
 
 <iframe src="https://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -76,7 +76,7 @@ Oh, and of course here are my [slides](http://slid.es/hugogiraudel/css-kick-ass-
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-kiwiparty/stuff.jpg" alt="">
-<figcaption>Stuff - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+<figcaption>Stuff - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
 </figure>
 
 So all in all, it was an amazing experience. Big thanks to the [Alsacreations](https://alsacreations.fr/) team and to all of you who were in the room to hear my talk.

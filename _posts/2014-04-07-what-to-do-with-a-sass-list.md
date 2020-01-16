@@ -5,7 +5,7 @@ tags:
   - lists
 ---
 
-A few weeks ago, [Louis Lazaris](https://twitter.com/ImpressiveWebs) has been invited at [Shop Talk Show](http://shoptalkshow.com/episodes/103-louis-lazaris/), the front-end podcast by [Chris Coyier](https://twitter.com/chriscoyier) and [Dave Rupert](https://twitter.com/davatron5000). I joined in the middle of the show and it was kind of cool hearing Louis talking about various stuff including Sass. By the way, if one of you people come over here, thanks for mentioning me. ;)
+A few weeks ago, [Louis Lazaris](https://twitter.com/ImpressiveWebs) has been invited at [Shop Talk Show](https://shoptalkshow.com/episodes/103-louis-lazaris/), the front-end podcast by [Chris Coyier](https://twitter.com/chriscoyier) and [Dave Rupert](https://twitter.com/davatron5000). I joined in the middle of the show and it was kind of cool hearing Louis talking about various stuff including Sass. By the way, if one of you people come over here, thanks for mentioning me. ;)
 
 Anyway, at some point someone asked a very interesting question about Sass:
 

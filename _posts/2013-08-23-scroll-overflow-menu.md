@@ -6,7 +6,7 @@ tags:
   - experiment
 ---
 
-> The following is a guest post by [Hugo Darby-Brown](http://darbybrown.com/), a talented front-end developer. I’m very glad to have him writing here today about a menu concept he came up with!
+> The following is a guest post by Hugo Darby-Brown, a talented front-end developer. I’m very glad to have him writing here today about a menu concept he came up with!
 
 Before I start off I'd like to say that this is more of **a proof of concept**, than a method that I'd recommend using on your next project. This menu uses the WebKit-specific CSS declaration `overflow-scrolling: touch` so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).
 
@@ -132,8 +132,7 @@ The support is really not that bad, without being awesome either. As far as I kn
 
 For unsupported browsers, there are a few of polyfills that can help you, should you want to use it:
 
-- [iScroll](http://cubiq.org/iscroll-4)
-- [Overthrow](http://filamentgroup.github.io/Overthrow/)
+- [Overthrow](https://filamentgroup.github.io/Overthrow/)
 - [Scrollability](https://github.com/joehewitt/scrollability/)
 
 ## Final thoughts
@@ -142,8 +141,8 @@ I think you'll see a lot more menu's taking a horizontal approach in the future,
 
 I would love to hear your thoughts on `-webkit-overflow-scrolling: touch;` and the future possibilities.
 
-I would usually embed the demo but, unfortunately iframes don't play well with `overflow-scrolling:touch`, so it's best if you directly check [this link](http://darbybrown.com/menu) with your phone. You could also could play around the code at [CodePen](https://codepen.io/hugo/full/pwsLj) (caution! iframes, doesn't work great on some mobile browsers) or by [downloading the files](http://darbybrown.com/menu/download.zip)!
+I would usually embed the demo but, unfortunately iframes don't play well with `overflow-scrolling:touch`, so it's best if you play around the code at [CodePen](https://codepen.io/hugo/full/pwsLj) (caution! iframes, doesn't work great on some mobile browsers)!
 
 Thanks for reading! If you think of anything to improve this menu concept, feel free to share. :)
 
-> Hugo Darby-Brown is both a designer and a developer from UK, passionate with front-end technologies especially CSS. You can catch him on [Twitter](http://twitter.com/darbybrown) or on his brand new [site](http://darbybrown.com).
+> Hugo Darby-Brown is both a designer and a developer from UK, passionate with front-end technologies especially CSS. You can catch him on [Twitter](https://twitter.com/darbybrown).

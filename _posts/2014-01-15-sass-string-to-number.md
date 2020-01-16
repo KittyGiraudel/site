@@ -7,7 +7,7 @@ tags:
   - strings
 ---
 
-> **Edit (2015/06/06)**: a better version of the code can be found [here](http://sassmeister.com/gist/9fa19d254864f33d4a80).
+> **Edit (2015/06/06)**: a better version of the code can be found [here](https://sassmeister.com/gist/9fa19d254864f33d4a80).
 
 Hey people! I am currently working on a JSON parser in Sass (yes, you read right) thus I faced an issue I thought unsolvable until now: casting a string into a number in Sass. Needless to say I found a solution! Even better, I found a solution to convert a string into a valid CSS length you can use as a CSS value, in calculations and stuff.
 
@@ -189,7 +189,7 @@ The idea is the same as for the `number` function. We retrieve the string in the
 
 ## Examples
 
-If you want to play with the code or the function, you can check it on [SassMeister](http://sassmeister.com/gist/9647408). In any case, here are a couple of examples of our awesome little function:
+If you want to play with the code or the function, you can check it on [SassMeister](https://sassmeister.com/gist/9647408). In any case, here are a couple of examples of our awesome little function:
 
 ```scss
 sass {

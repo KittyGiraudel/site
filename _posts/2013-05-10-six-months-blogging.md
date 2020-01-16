@@ -4,7 +4,7 @@ tags:
   - blog
 ---
 
-Hey people! Yesterday, the blog was 6 months old. Launched in [November 9th 2012](https://hugogiraudel.com/2012/11/09/redesign-blog/) as a quick and dirty plateform to drop some posts when I get time, now built on [Jekyll](http://jekyllrb.com/), [Sass](http://sass-lang.com/) and [GitHub Pages](https://github.com/HugoGiraudel/hugogiraudel.github.com), I have to say I am pretty happy with what I have done so far with this.
+Hey people! Yesterday, the blog was 6 months old. Launched in [November 9th 2012](https://hugogiraudel.com/2012/11/09/redesign-blog/) as a quick and dirty plateform to drop some posts when I get time, now built on [Jekyll](https://jekyllrb.com/), [Sass](https://sass-lang.com/) and [GitHub Pages](https://github.com/HugoGiraudel/hugogiraudel.github.com), I have to say I am pretty happy with what I have done so far with this.
 
 I take this article as an opportunity to make some kind of assessment. Any comment appreciated of course. ;)
 
@@ -38,7 +38,7 @@ Regarding browser, I'm a lucky bastard: **Chrome gets more than 60% of the brows
 
 About **14% users are reading articles on their mobile phone** (cf. fig 2). and 7 out of 10 of them use an Apple phone. The 3 others use Android (I'm in).
 
-The most important traffic source is definitely [Twitter](http://twitter.com) (actually t.co), then it's [Reddit](http://reddit.com and then [Codrops](http://tympanus.com/codrops/). A little further behind, we have [Sidebar.io](http://sidebar.io), [Google](http://google.com) and [CSS-Tricks](http://css-tricks.com).
+The most important traffic source is definitely [Twitter](https://twitter.com) (actually t.co), then it's [Reddit](https://reddit.com) and then [Codrops](https://tympanus.com/codrops/). A little further behind, we have [Sidebar.io](https://sidebar.io), [Google](https://google.com) and [CSS-Tricks](https://css-tricks.com).
 
 ## What's next?
 

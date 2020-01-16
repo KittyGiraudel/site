@@ -23,7 +23,7 @@ Another thing that occured to me is that the lines were too long. It may be sill
 
 ### Responsive concern
 
-I felt like the old layout lacked of responsiveness. It wasn’t bad since it already provided a mobile-friendly version but I wanted a little bit more. This is why I landed on [the 1140px CSS grid](http://cssgrid.net/) by Andy Taylor.
+I felt like the old layout lacked of responsiveness. It wasn’t bad since it already provided a mobile-friendly version but I wanted a little bit more. This is why I landed on [the 1140px CSS grid](https://www.ramotion.com/agency/web-design/cssgrid/) by Andy Taylor.
 
 I’m particularly happy with this grid system. It is very easy to set up and as you can see it’s pretty darn efficient!
 
@@ -39,9 +39,9 @@ I now rely on a PHP structure for convenience. Actually, I was kind of sick of h
 
 But, switching all my files to .php means a terrible thing: old URLs won’t work anymore! What about all these tweets, links and poor souls unable to reach my blog posts? No worry. My brother helped me doing some .htaccess in order to allow reaching the blog posts through old URLs. Big thanks to him. :)
 
-While we’re talking about .htaccess: you can now access articles without the file extension like this: http://hugogiraudel/blog/tools. Pretty cool, right?
+While we’re talking about .htaccess: you can now access articles without the file extension like this: https://hugogiraudel/blog. Pretty cool, right?
 
-I also decided to rely on a CDN rather than on self hosting for [Font Awesome](http://fortawesome.github.com/Font-Awesome/) (now in v3.0.1 since a couple of days). I was especially concerned about the file size of my stylesheet because Font Awesome &mdash; as any other icon font &mdash; uses a lot of CSS. Anyway, I'm now using [Tim Pietrusky's](http://timpietrusky.com) CDN [WeLoveIconFonts](http://weloveiconfonts.com) and I'm pretty happy with it. ;)
+I also decided to rely on a CDN rather than on self hosting for [Font Awesome](https://fontawesome.com/?from=io) (now in v3.0.1 since a couple of days). I was especially concerned about the file size of my stylesheet because Font Awesome &mdash; as any other icon font &mdash; uses a lot of CSS. Anyway, I'm now using [Tim Pietrusky's](http://timpietrusky.com) CDN [WeLoveIconFonts](https://weloveiconfonts.com) and I'm pretty happy with it. ;)
 
 ## Features
 
@@ -61,11 +61,11 @@ Among the many things I did on the topic, I:
 * Did a lot of work on the CSS to clean it, make it faster, with less selectors, faster selectors, ans so on.
 * Reduced the number of HTTP requests.
 * Am still working on the JavaScript part to make it asynchronous.
-* Asked [Tim Pietrusky](http://twitter.com/timpietrusky) to improve caching and compressing at [WeLoveIconFonts.com](http://weloveiconfonts.com). Thanks dude!
+* Asked [Tim Pietrusky](https://twitter.com/timpietrusky) to improve caching and compressing at [WeLoveIconFonts.com](https://weloveiconfonts.com). Thanks dude!
 
 ## Accessibility
 
-I don't know if it's a sudden realisation or the recent [A11y project](http://a11yproject.com/) which motivated me to do that but I took some time to improve accessibility on the site. Plus, it gave me the opportunity to learn some things on the topic.
+I don't know if it's a sudden realisation or the recent [A11y project](https://a11yproject.com/) which motivated me to do that but I took some time to improve accessibility on the site. Plus, it gave me the opportunity to learn some things on the topic.
 
 First of all, I switched a bunch of my divs to "new" HTML5 elements. So I'm now using `<header>`, `<article>`, `<aside>`, `<footer>`, `<section>`, and so on. I must say it feels right, really.
 

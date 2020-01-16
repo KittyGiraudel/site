@@ -181,4 +181,4 @@ We're done. It's over!
 
 Cases where we need a translation system in Sass are close to zero, but for a11y.css this work proves to be useful after all. Adding a new language, for instance German, is as easy as adding a `de` key to all messages in the `$messages` map, and adding `de` to `$supported-languages` within `set-locale` mixin.
 
-That's it! Anyway, have a look at [a11y.css](http://ffoodd.github.io/a11y.css), contribute to this awesome project and share the love!
+That's it! Anyway, have a look at [a11y.css](https://ffoodd.github.io/a11y.css), contribute to this awesome project and share the love!

@@ -38,9 +38,9 @@ So I switched to Chrome and never looked back. I even pushed it one step further
 
 > I don't dislike Firefox -it's a wonderful browser- but I clearly prefer Chrome.
 
-At work for something which looks like SSL issue, I am also running [Firefox Aurora](http://www.mozilla.org/fr/firefox/channel/) which is the future version of Firefox, like Canary for Chrome. I don't dislike Firefox -it's a wonderful browser- but I clearly prefer Chrome.
+At work for something which looks like SSL issue, I am also running [Firefox Aurora](https://www.mozilla.org/fr/firefox/channel/) which is the future version of Firefox, like Canary for Chrome. I don't dislike Firefox -it's a wonderful browser- but I clearly prefer Chrome.
 
-I also have Opera and Safari on some computers to make unusual tests. Since I am not a freelance web designer living from the sites I make, I'm not using any browser testing tool like [BrowserStack](http://www.browserstack.com/). I would really love a BrowserStack license, but I can't (or don't want to) afford a $20/month subscription.
+I also have Opera and Safari on some computers to make unusual tests. Since I am not a freelance web designer living from the sites I make, I'm not using any browser testing tool like [BrowserStack](https://www.browserstack.com/). I would really love a BrowserStack license, but I can't (or don't want to) afford a $20/month subscription.
 
 ## IDE
 
@@ -52,7 +52,7 @@ That being said, I'm carefully looking into [Brackets](http://brackets.io/) from
 
 ## FTP
 
-Call me old fashioned, I do still use a FTP client. Yes, I know it's not 2000' anymore but I don't know how to use FTP from the command line, so I am stuck with a [FileZilla](http://filezilla-project.org/). It is actually pretty cool and very easy to use.
+Call me old fashioned, I do still use a FTP client. Yes, I know it's not 2000' anymore but I don't know how to use FTP from the command line, so I am stuck with a [FileZilla](https://filezilla-project.org/). It is actually pretty cool and very easy to use.
 
 However I would like to move forward, thus I am currently learning how to do some FTP stuff through the command line but I'm still not very good at it so for now I keep using my beloved FileZilla.
 
@@ -72,11 +72,11 @@ I didn't know how to call this section because it gathers various tools doing va
 
 Not so long ago I gave a try to CSS preprocessors, because I am both curious and a CSS lover. It turned out I like CSS preprocessors, they give a lot more options than regular CSS.
 
-Anyway, I am using [Sass](http://sass-lang.com/) and [Compass](http://compass-style.org/) on most of my projects now. As an example, this site is built on Sass.
+Anyway, I am using [Sass](https://sass-lang.com/) and [Compass](https://compass-style.org/) on most of my projects now. As an example, this site is built on Sass.
 
-I am running Sass through the command line. Yes, it's scary. But actually it is really not that hard. I would like to have some sort of application taking care of everything for me like [CodeKit](http://incident57.com/codekit/), unfortunately I am not always on Mac OS plus CodeKit is not free ($25). If I was always using the same development environment, I would definitely buy CodeKit but sadly I am not.
+I am running Sass through the command line. Yes, it's scary. But actually it is really not that hard. I would like to have some sort of application taking care of everything for me like [CodeKit](https://codekitapp.com/), unfortunately I am not always on Mac OS plus CodeKit is not free ($25). If I was always using the same development environment, I would definitely buy CodeKit but sadly I am not.
 
-I know there are CodeKit equivalents for Windows. Most people will tell you about [Scout](http://mhs.github.com/scout-app/). I tried it yesterday (as I told you I am curious). Guess what: it turns out Scout was messing with my stylesheets, introducing errors in those. My opinion about it? It sucks. Back to command line.
+I know there are CodeKit equivalents for Windows. Most people will tell you about [Scout](https://mhs.github.io/scout-app/). I tried it yesterday (as I told you I am curious). Guess what: it turns out Scout was messing with my stylesheets, introducing errors in those. My opinion about it? It sucks. Back to command line.
 
 ### Git
 

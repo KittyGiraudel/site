@@ -15,10 +15,6 @@ The general idea is that the JavaScript ecosystem has gotten both complex and bl
 
 ## Involving the community
 
-<figure class="figure">
-  <img src="http://stream1.gifsoup.com/view/1036636/cat-in-bathtub-o.gif" alt="Doing JavaScript in 2015" />
-  <figcaption>Doing JavaScript in 2015.</figcaption>
-</figure>
 
 I gave it a night and thought it would be a good idea to have a GitHub repository acting as a glossary for most (_all_ is likely to be impossible) JavaScript buzzwords. This repository, I named [SJSJ](https://github.com/hugogiraudel/SJSJ) for _Simplified JavaScript Jargon_.
 

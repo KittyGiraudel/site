@@ -500,4 +500,4 @@ That's it for today folks! In the next parts, we'll deal with the following subj
 
 Meanwhile keep practicing!
 
-> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](http://twitter.com/l_giraudel).
+> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

@@ -5,15 +5,13 @@ tags:
   - thoughts
 ---
 
-> French front-end developer Clément Osternaud interviewed me for [his site](http://myressources.com/interview-hugo-giraudel/). Below is the translation of the whole interview.
-
 ## Could you introduce yourself in a few lines
 
 My name is Hugo Giraudel. I'm a front-end developer on a work-based learning at Crédit Agricole Sud Rhône Alpes in Grenoble (France), hoping to work in a web agency starting from September. I'm really into front-end languages especially CSS & JS, as well as everything that comes with those languages: ergonomy, performance, accessibility, user experience, and much more.
 
-I am the co-author of [Browserhacks](http://browserhacks.com) &mdash; a website aiming at gathering all the dirty little secrets from browsers to do some browser sniffing ; not that I support that kind of thing but someone had to do such a tool. ;) I also developed Wild Web Watch &mdash; a web-related watch tool (which unfortunately gets old pretty badly). I also take care of the Sass port of Raphaël Goetter's framework, [KNACSS](http://knacss.com).
+I am the co-author of [Browserhacks](http://browserhacks.com) &mdash; a website aiming at gathering all the dirty little secrets from browsers to do some browser sniffing ; not that I support that kind of thing but someone had to do such a tool. ;) I also developed Wild Web Watch &mdash; a web-related watch tool (which unfortunately gets old pretty badly). I also take care of the Sass port of Raphaël Goetter's framework, [KNACSS](https://knacss.com).
 
-Beside that, I write a lot for the web, starting on my site but for [Codrops](http://tympanus.com/codrops/author/hugogiraudel) and [CSS-Tricks](http://css-tricks.com) as well, and on some other places as guest posts like for [Todd Motto](http://toddmotto.com/raw-javascript-jquery-style-fadein-fadeout-functions-hugo-giraudel/).
+Beside that, I write a lot for the web, starting on my site but for [Codrops](https://tympanus.com/codrops/author/hugogiraudel) and [CSS-Tricks](https://css-tricks.com) as well.
 
 ## What is your school/professional path?
 
@@ -39,7 +37,7 @@ My favourite thing in my job has to be **learning things**. It's definitely beca
 
 > I enjoy reading web related stuff.
 
-Beyond reading, it's great to be able to easily discover and learn new things like CSS features, JavaScript APIs, preprocessors and much more (especially thanks to tools like [CodePen](https://codepen.io) and [GitHub](http://github.com)). And if we ever happen to use what we've learnt in real-life projects, then it's even better!
+Beyond reading, it's great to be able to easily discover and learn new things like CSS features, JavaScript APIs, preprocessors and much more (especially thanks to tools like [CodePen](https://codepen.io) and [GitHub](https://github.com)). And if we ever happen to use what we've learnt in real-life projects, then it's even better!
 
 Ironically, even if I am able to define what I like in my job I don't think I'm able to tell what I like the least. Maybe not being always able to use everything I know in real-life projects because of technical constraints like performance, maintainability or browser support. But this is part of the job; we can't use everything we know, especially when it comes to new &mdash; somewhat borderline &mdash; features ("hello CSS grid!").
 

@@ -9,7 +9,7 @@ tags:
 
 > The following is a guest post by Daniel Guillan. Daniel is the co-founder and chief design officer at Vintisis. I am very glad to have him here today, writing about a clever mixin to ease the use of Modernizr with Sass.
 
-I use [Modernizr](http://modernizr.com/) on every single project I work on. In a nutshell, it's a JS library that helps us take decisions based on the capabilities of the browser accessing our site. Modernizr quickly performs tests to check for browser support of modern CSS and HTML implementations like CSS 3d Transforms, HTML5 Video or Touch Events among [many many others](http://modernizr.com/download/).
+I use [Modernizr](https://modernizr.com/) on every single project I work on. In a nutshell, it's a JS library that helps us take decisions based on the capabilities of the browser accessing our site. Modernizr quickly performs tests to check for browser support of modern CSS and HTML implementations like CSS 3d Transforms, HTML5 Video or Touch Events among [many many others](https://modernizr.com/download/).
 
 Once it has checked for the features we intend to use, Modernizr appends classes to the `<html>` tag. We can then provide a set of CSS rules to browsers that support those features and another set of fallback rules to browsers that don't support them.
 
@@ -39,7 +39,7 @@ For browsers that don't support CSS gradients or for those where Javascript is n
 
 ## Making it Sassier
 
-Sass allows selectors and rules to be [nested](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_rules) so we can make that code prettier and much more organized, avoiding repetition of the selector:
+Sass allows selectors and rules to be [nested](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_rules) so we can make that code prettier and much more organized, avoiding repetition of the selector:
 
 ```scss
 .my-selector {
@@ -225,7 +225,7 @@ And this the result of using `@include nope(opacity, csstransforms)`:
 
 ### The placeholder and @content
 
-It's time to write our placeholder. We use [Sass interpolation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_) to write the name we've generated within the loop and then print the declaration block (`@content`) we've passed within the `yep` or `nope` mixin.
+It's time to write our placeholder. We use [Sass interpolation](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_) to write the name we've generated within the loop and then print the declaration block (`@content`) we've passed within the `yep` or `nope` mixin.
 
 ```scss
 #{$placeholder} & {
@@ -272,7 +272,7 @@ Now our features selector isn't placed before the actual selector because `@at-r
 }
 ```
 
-Within the previous loop we'll also check if every `$feature` is a `string`. As Hugo Giraudel explains in his [introduction to error handling in Sass](http://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996) we shouldn't let the Sass compiler fail and punch us in the face with an error. That's why we should prevent things like `10px` or even nested lists like `(opacity csstransforms), hsla` to stop our stylesheet from successfully compiling.
+Within the previous loop we'll also check if every `$feature` is a `string`. As Hugo Giraudel explains in his [introduction to error handling in Sass](https://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996) we shouldn't let the Sass compiler fail and punch us in the face with an error. That's why we should prevent things like `10px` or even nested lists like `(opacity csstransforms), hsla` to stop our stylesheet from successfully compiling.
 
 If a wrong parameter is passed, the compilation won't fail, but nothing will be generated and you'll be warned of the problem.
 
@@ -282,8 +282,8 @@ If `$everything-okay` is still `true` after we iterate through the list of featu
 
 It all started as a small Sass experiment and ended up being an incredibly interesting challenge. I came up with a piece of code that I never thought would make me push the Sass syntax as far as I did. It was really interesting to develop a solution that uses so many different Sass features like the `@at-root` directive, loops (`@each`), the ampersand (`&`) to reference parent selectors, the `if()` function, placeholders, list manipulation, … and also stuff like mixin aliases and error handling.
 
-That's it, you can play with the code on [SassMeister](http://sassmeister.com/gist/10578910) or [view the documentation and download on Github](https://github.com/danielguillan/modernizr-mixin). The Modernizr mixin is available as a [Compass extension](http://rubygems.org/gems/modernizr-mixin) too.
+That's it, you can play with the code on [SassMeister](https://sassmeister.com/gist/10578910) or [view the documentation and download on Github](https://github.com/danielguillan/modernizr-mixin). The Modernizr mixin is available as a [Compass extension](https://rubygems.org/gems/modernizr-mixin) too.
 
-<p class="sassmeister" data-gist-id="10578910" data-height="480"><a href="http://sassmeister.com/gist/10578910">Play with this gist on SassMeister.</a></p><script src="https://static.sassmeister.com/js/embed.js" async></script>
+<p class="sassmeister" data-gist-id="10578910" data-height="480"><a href="https://sassmeister.com/gist/10578910">Play with this gist on SassMeister.</a></p><script src="https://static.sassmeister.com/js/embed.js" async></script>
 
 > Daniel Guillan is the co-founder and chief design officer at Vintisis. Not only designer but also front-end developer, Daniel likes using Sass to make his life easier. You should catch him on [Twitter](https://twitter.com/danielguillan).

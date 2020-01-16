@@ -15,7 +15,7 @@ Playgrounds are becoming more and more popular and there are a bunch of options 
 
 - <a href="https://codepen.io" title="CodePen">CodePen</a> from Chris Coyier, Tim Sabat and Alex Vasquez
 - <a href="https://dabblet.com" title="Dabblet">Dabblet</a> from Lea Verou
-- <a href="http://cssdeck.com" title="CSSDeck">CSSDeck</a> from Rishabh
+- <a href="https://cssdeck.com" title="CSSDeck">CSSDeck</a> from Rishabh
 - <a href="https://jsfiddle.net" title="JSFiddle">JSFiddle</a> from Oskar Krawczyk
 
 Basically, they all do more or less the same stuff but each one has its own strengths and weaknesses. So in the end the choice is up to the user. I'd like to give you my opinion on this stuff but first, let's make a little round-up.
@@ -45,7 +45,7 @@ Plus, it seems to be very buggy sometimes. Shortcuts don't work as expected, cur
 ### Resources
 
 - [Dabblet](https://dabblet.com)
-- [Blog](http://blog.dabblet.com/)
+- [Blog](https://blog.dabblet.com/)
 - [Dabblet](https://twitter.com/dabblet) on Twitter
 
 ## JSFiddle
@@ -97,7 +97,7 @@ CSSDeck is fairly new in the playground scene but it's the only one providing th
 
 ### Resources
 
-- [CSSDeck](http://cssdeck.com)
+- [CSSDeck](https://cssdeck.com)
 - [CSSDeck](https://twitter.com/cssdeck) on Twitter
 
 ## CodePen
@@ -142,7 +142,7 @@ I used to work a lot in Dabblet but I've always found those tiny little bugs ver
 
 Shortly after the launch, I spent a huge amount of time on CodePen to play with CSS. Back in the days, I did between 1 and 5 pens a day (inspired from Dribbble), most of them hitting the front page. It was very amusing. Now, I'm not doing much anymore because I use my free time for Codrops as part of articles.
 
-Anyway, if you'd like to have a glance behind the scenes of CodePen, [David Walsh recently interviewed Chris Coyier about it](http://davidwalsh.name/codepen-interview). They talk about challenges to get there, technical details and of course what's planned for the future.
+Anyway, if you'd like to have a glance behind the scenes of CodePen, [David Walsh recently interviewed Chris Coyier about it](https://davidwalsh.name/codepen-interview). They talk about challenges to get there, technical details and of course what's planned for the future.
 
 I've made a comparison of these 4 playgrounds as a table for more clarity. Here is [the JSFiddle](https://jsfiddle.net/FDDed/13/embedded/result/). Yeah, I made a **JSFiddle**, because on CodePen everything is public, and I don't want to drop those kind of things there. It's probably one of the only bad sides of CodePen, which will be soon gone.
 

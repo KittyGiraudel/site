@@ -6,7 +6,7 @@ tags:
   - configuration
 ---
 
-One thing I was really looking forward with [Sass maps](http://viget.com/extend/sass-maps-are-awesome) is the ability to have configuration objects for functions and mixins. You know how you pass objects to your JavaScript class constructors instead of several parameters? Well fasten your belt boys because I'm bringing this to Sass!
+One thing I was really looking forward with [Sass maps](https://viget.com/extend/sass-maps-are-awesome) is the ability to have configuration objects for functions and mixins. You know how you pass objects to your JavaScript class constructors instead of several parameters? Well fasten your belt boys because I'm bringing this to Sass!
 
 ## An insight in the JS way of doing
 
@@ -104,7 +104,7 @@ I think we can agree on the fact that using a configuration object as a unique p
 
 ## Bringing it to Sass
 
-In a way, we don't really need this in Sass because it already provides _named arguments_. [Named arguments](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments) give the ability to call a function without having to specify all its parameters. You can call it specifying only the arguments you want, no matter their index in the parameter list, like this.
+In a way, we don't really need this in Sass because it already provides _named arguments_. [Named arguments](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#keyword_arguments) give the ability to call a function without having to specify all its parameters. You can call it specifying only the arguments you want, no matter their index in the parameter list, like this.
 
 ```scss
 @mixin mixin($a: 'a', $b: 'b', $c: 'c') {

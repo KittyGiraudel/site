@@ -6,7 +6,7 @@ tags:
   - sass
 ---
 
-A couple years ago, the 17th of July 2007 to be exact, [Jeff Atwood](https://twitter.com/codinghorror), founder and builder of StackOverflow and StackExchange [wrote](http://blog.codinghorror.com/the-principle-of-least-power/) about the [principle of least power](http://www.w3.org/DesignIssues/Principles.html) and said:
+A couple years ago, the 17th of July 2007 to be exact, [Jeff Atwood](https://twitter.com/codinghorror), founder and builder of StackOverflow and StackExchange [wrote](https://blog.codinghorror.com/the-principle-of-least-power/) about the [principle of least power](https://www.w3.org/DesignIssues/Principles.html) and said:
 
 > [A]ny application that can be written in JavaScript, will eventually be written in JavaScript.
 
@@ -29,8 +29,8 @@ Sass is 7 years old if no mistake, and has come a long since its early days. In 
 * [a JSON parser](https://hugogiraudel.com/2014/01/20/json-in-sass/);
 * [bitwise operators](https://hugogiraudel.com/2014/06/22/bitwise-operators-in-sass/);
 * [sorting algorithms](https://hugogiraudel.com/2014/03/18/sassy-sort/);
-* [functional programming](http://sassmeister.com/gist/c36be3440dc2b5ae9ba2);
-* [Levenshtein distance implementation](http://sassmeister.com/gist/8334461);
+* [functional programming](https://sassmeister.com/gist/c36be3440dc2b5ae9ba2);
+* [Levenshtein distance implementation](https://sassmeister.com/gist/8334461);
 * [inverse trigonometric functions](http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass) by Ana Tudor...
 
 And there are countless more examples I'm probably not even aware of.

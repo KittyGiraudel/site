@@ -38,7 +38,7 @@ $sort: sort($list);
 
 That's pretty much the end of it.
 
-_Note: also, [I've asked SassMeister to include it](https://github.com/jedfoster/SassMeister/issues/64#issuecomment-35530071), so you might be able to use it directly into [SassMeister](http://sassmeister.com/) in the not-so-far future._
+_Note: also, [I've asked SassMeister to include it](https://github.com/jedfoster/SassMeister/issues/64#issuecomment-35530071), so you might be able to use it directly into [SassMeister](https://sassmeister.com/) in the not-so-far future._
 
 ## Picking the algorithm
 

@@ -6,7 +6,7 @@ tags:
   - sass
 ---
 
-A couple of weeks ago, I have been invited by the [FeWeb](http://www.lafeweb.be/) (which stands for _La fédération des métiers du web_, literally _Web professions Federation_) to talk about Sass at [Co.Station](http://www.co-station.com/) in Bruxelles, Belgium.
+A couple of weeks ago, I have been invited by the [FeWeb](https://www.feweb.be/fr/) (which stands for _La fédération des métiers du web_, literally _Web professions Federation_) to talk about Sass at [Co.Station](https://www.co-station.com/) in Bruxelles, Belgium.
 
 <figure class="figure">
 <img src="/assets/images/feedbacks-feweb/feweb-costation.jpg" alt="">
@@ -52,7 +52,7 @@ Anyway, I eventually went through the whole session and ended my talk peacefully
 
 > Not disappointed by [Slid.es](https://slides.com).
 
-Once again I have made my slides with [Slid.es](https://slides.com), the CMS for [Reveal.js](http://lab.hakim.se/reveal-js/#/). I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF...). I also used the _presentation mode_ from Slid.es, which is great. Absolutely not disappointed.
+Once again I have made my slides with [Slid.es](https://slides.com), the CMS for [Reveal.js](https://lab.hakim.se/reveal-js/#/). I even subscribed a PRO account to have access to all the cool features (offline and private decks, Dropbox sync, custom CSS, export to PDF...). I also used the _presentation mode_ from Slid.es, which is great. Absolutely not disappointed.
 
 I won't walk through my slides like I did for my talk at [KiwiParty 2013](https://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/) because in this case it is less focused on code. Plus, I think they are better designed than the previous one.
 

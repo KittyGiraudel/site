@@ -13,9 +13,9 @@ If you like to experiment or do a little bit of webdesign, then you have probabl
 <figcaption>5 images positioned along a circle with CSS</figcaption>
 </figure>
 
-But in most cases, you would have ended doing this with JavaScript, or jQuery. There are plenty of [plugins](http://addyosmani.com/blog/jquery-roundrr/) doing this out there, and no doubt they are all good.
+But in most cases, you would have ended doing this with JavaScript, or jQuery. There are plenty of plugins doing this out there, and no doubt they are all good.
 
-But what if you could do it very simply with CSS? That’s what [Ana Tudor did in an answer on StackOverflow](http://stackoverflow.com/questions/12813573/position-icons-into-circle). Instead of using basic positioning, she relies on chained CSS transforms to do it. God, this is brilliant. Well? Let’s push it further.
+But what if you could do it very simply with CSS? That’s what [Ana Tudor did in an answer on StackOverflow](https://stackoverflow.com/questions/12813573/position-icons-into-circle). Instead of using basic positioning, she relies on chained CSS transforms to do it. God, this is brilliant. Well? Let’s push it further.
 
 ## About the current solution
 
@@ -34,7 +34,7 @@ Ana’s work is great, I’m not questioning this. However, adding or removing e
 
 ...where you replace `{desired_angle}` with `0`, `45`, and so on...
 
-> The first rotate transform rotates the object and its axes, the translate transform translates the object along the rotated X axis and the second rotate transform brings back the object into position - [demo to illustrate how this works](http://dabblet.com/gist/3866686).
+> The first rotate transform rotates the object and its axes, the translate transform translates the object along the rotated X axis and the second rotate transform brings back the object into position - [demo to illustrate how this works](https://dabblet.com/gist/3866686).
 
 Because Ana adds specific classes to HTML elements, it’s not very fast to add or remove an element. It requires to add the according class to the new element, and change the name + CSS of all other classes to distribute evenly all items along the circle. Bummer.
 

@@ -301,4 +301,4 @@ So here we go with the new version people. It is slightly better than the old si
 
 I hope you like it. If you think of anything to improve it, be sure to share!
 
-<p class="sassmeister" data-gist-id="f8ab9cc308b84e37b18d" data-height="480"><a href="http://sassmeister.com/gist/f8ab9cc308b84e37b18d">Play with this gist on SassMeister.</a></p>
+<p class="sassmeister" data-gist-id="f8ab9cc308b84e37b18d" data-height="480"><a href="https://sassmeister.com/gist/f8ab9cc308b84e37b18d">Play with this gist on SassMeister.</a></p>

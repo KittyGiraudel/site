@@ -6,9 +6,9 @@ tags:
   - gradient
 ---
 
-> The following is a guest post by [Ana Tudor](http://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.
+> The following is a guest post by [Ana Tudor](https://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.
 
-I had no idea how powerful CSS gradients could be until late 2011, when I found the [CSS3 Patterns Gallery](http://lea.verou.me/css3patterns/) made by Lea Verou. The idea that you can obtain many shapes using just gradients was a starting point for many CSS experiments I would later do.
+I had no idea how powerful CSS gradients could be until late 2011, when I found the [CSS3 Patterns Gallery](https://lea.verou.me/css3patterns/) made by Lea Verou. The idea that you can obtain many shapes using just gradients was a starting point for many CSS experiments I would later do.
 
 Recently, while browsing through the demos on CodePen, I came across [a CSS3 Color Wheel](https://codepen.io/bitmap/pen/eBbHt) and thought _hey, I could do it with just one element and gradients_. So I did and the result can be seen [here](https://codepen.io/thebabydino/pen/hkxGp). And now I'm going to explain the reasoning behind it.
 
@@ -19,7 +19,7 @@ Recently, while browsing through the demos on CodePen, I came across [a CSS3 Col
 
 ## Breaking it down
 
-The wheel - or you can think of it as a pie - is first split horizontally into two halves and then each half is split into five slices, so there are ten slices in total. Which means that the [central angle](http://en.wikipedia.org/wiki/Central_angle) for each slice is [`360°`](http://www.mathopenref.com/degrees.html)`/10 = 36°`.
+The wheel - or you can think of it as a pie - is first split horizontally into two halves and then each half is split into five slices, so there are ten slices in total. Which means that the [central angle](https://en.wikipedia.org/wiki/Central_angle) for each slice is [`360°`](https://www.mathopenref.com/degrees.html)`/10 = 36°`.
 
 The pen below shows graphically how to layer the multiple backgrounds. It also has a pause button so that the infinite animation doesn't turn into a performance problem.
 
@@ -83,11 +83,11 @@ In order to better understand gradient angles and how the `%` values for color s
 <pre class="codepen" data-height="640" data-type="result" data-href="qgoBL" data-user="thebabydino" data-safe="true"><code></code>
 <a href="https://codepen.io/thebabydino/pen/qgoBL" target="_blank" rel="noopener noreferrer">Check out this Pen!</a></pre>
 
-The _gradient angle_ is the angle - measured clockwise - between the vertical axis and the _gradient line_ (the blue line in the demo). This is for the new syntax, which is not yet supported by WebKit browsers (however, [this is going to change](https://bugs.webkit.org/show_bug.cgi?id=67166)). The old syntax measured angles just like on the [trigonometric unit circle](http://en.wikipedia.org/wiki/Unit_circle) (counter-clockwise and starting from the horizontal axis).
+The _gradient angle_ is the angle - measured clockwise - between the vertical axis and the _gradient line_ (the blue line in the demo). This is for the new syntax, which is not yet supported by WebKit browsers (however, [this is going to change](https://bugs.webkit.org/show_bug.cgi?id=67166)). The old syntax measured angles just like on the [trigonometric unit circle](https://en.wikipedia.org/wiki/Unit_circle) (counter-clockwise and starting from the horizontal axis).
 
 _Note: coming from a mathematical background, I have to say the old way feels more natural to me. However, the new way feels consistent with other CSS features, like rotate transforms, for which the angle values are also clockwise._
 
-What this means is that we (almost always) have different angle values in the standard syntax and in the current WebKit syntax. So, if we are not using something like [-prefix-free](http://leaverou.github.com/prefixfree/) (which I do almost all the time), then we should to be able to compute one when knowing the other. That is actually pretty simple. They are going in opposite directions, so the formula for one includes the other with a minus sign. Also, there is a `90°` difference between them so this is how we get them:
+What this means is that we (almost always) have different angle values in the standard syntax and in the current WebKit syntax. So, if we are not using something like [-prefix-free](https://leaverou.github.com/prefixfree/) (which I do almost all the time), then we should to be able to compute one when knowing the other. That is actually pretty simple. They are going in opposite directions, so the formula for one includes the other with a minus sign. Also, there is a `90°` difference between them so this is how we get them:
 
 ```js
 newSyntax = 90° - oldSyntax;
@@ -96,7 +96,7 @@ oldSyntax = 90° - newSyntax;
 
 _Note: if no gradient angle or destination side is specified (for example, `linear-gradient(lime, yellow)`), then the resulting gradient is going to have a gradient angle of `180°`, not `0°`._
 
-All the points on a line that is [perpendicular](http://www.mathopenref.com/perpendicular.html) on the gradient line have the same color. The perpendicular from the corner in the quadrant that's opposite to the quadrant of the angle is the `0%` line (the crimson line in the demo) and its intersection with the gradient line is the _starting point_ of the gradient (let's call it `S`). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the `100%` line (the black line in the demo) and its intersection with the gradient line is the _ending point_ of the gradient (let's call it `E`).
+All the points on a line that is [perpendicular](https://www.mathopenref.com/perpendicular.html) on the gradient line have the same color. The perpendicular from the corner in the quadrant that's opposite to the quadrant of the angle is the `0%` line (the crimson line in the demo) and its intersection with the gradient line is the _starting point_ of the gradient (let's call it `S`). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the `100%` line (the black line in the demo) and its intersection with the gradient line is the _ending point_ of the gradient (let's call it `E`).
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/gradient.png" alt="" />
@@ -118,14 +118,14 @@ Let's first consider a gradient that creates a single slice (one with a central 
 
 We now draw a perpendicular from the corner of the square in the quadrant that is opposite to the one in which the gradient angle is found. This is the `0%` line. Then we draw a perpendicular from the corner of the square in the same quadrant (`Q I`) as the gradient angle - this is the `100%` line.
 
-The [intersection of the diagonals of a square splits each one of them into two](http://www.mathopenref.com/square.html), so `AO` and `BO` are equal. The `BOE` and `AOS` angles are equal, as they are [vertical angles](http://www.mathopenref.com/anglesvertical.html). Moreover, the `BOE` and `AOS` triangles are [right triangles](http://www.mathopenref.com/righttriangle.html). All these three [mean that the two triangles are also congruent](http://en.wikipedia.org/wiki/Triangle#Similarity_and_congruence). Which in turn means that `SO` and `EO` are equal, so the length of `SE` is going to be twice the length of `EO` or twice the length of `SO`.
+The [intersection of the diagonals of a square splits each one of them into two](https://www.mathopenref.com/square.html), so `AO` and `BO` are equal. The `BOE` and `AOS` angles are equal, as they are [vertical angles](httsp://www.mathopenref.com/anglesvertical.html). Moreover, the `BOE` and `AOS` triangles are [right triangles](https://www.mathopenref.com/righttriangle.html). All these three [mean that the two triangles are also congruent](https://en.wikipedia.org/wiki/Triangle#Similarity_and_congruence). Which in turn means that `SO` and `EO` are equal, so the length of `SE` is going to be twice the length of `EO` or twice the length of `SO`.
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/right_triangle_trigonometric_functions.png" alt="" />
 <figcaption>A right angled triangle and how to compute sin and cos functions</figcaption>
 </figure>
 
-_Note: before moving further, let's go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it's called the [hypotenuse](http://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](http://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](http://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](http://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse._
+_Note: before moving further, let's go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it's called the [hypotenuse](https://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](https://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](https://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](https://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse._
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/slice_1_BOE.png" alt="" />
@@ -161,4 +161,4 @@ You can change the dimensions of the gradient box and you can also change the gr
 
 CSS gradients are really powerful and understanding how they work can be really useful for creating all sorts of imageless textures or shapes that would be difficult to obtain otherwise.
 
-> Ana Tudor excels in CSS, especially when it comes to CSS transforms and well, as you may have seen, CSS gradients. You definitely should follow her on [Twitter](http://twitter.com/thebabydino) or have a look at [her profile](http://about.me/thebabydino) to know more about her and what she does.
+> Ana Tudor excels in CSS, especially when it comes to CSS transforms and well, as you may have seen, CSS gradients. You definitely should follow her on [Twitter](https://twitter.com/thebabydino) or have a look at [her profile](https://about.me/thebabydino) to know more about her and what she does.

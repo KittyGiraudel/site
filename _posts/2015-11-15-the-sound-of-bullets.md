@@ -1,11 +1,11 @@
 ---
 title: "The Sound of Bullets"
-tags: 
+tags:
   - miscellaneous
   - thoughts
 ---
 
-> Words cannot even begin to describe the horror that happened on November 13th in Paris. Yet Mehdi Meklat and Badroudine Said Abdallah did something touching in their essay entitled [“Le bruit des balles”](http://bondyblog.liberation.fr/201511141918/le-bruit-des-balles/#.Vke74a6rRE_) (literally “The sound of bullets”). That’s why I felt the urge to translate it in English, in the best way I could, so that more people could read it.
+> Words cannot even begin to describe the horror that happened on November 13th in Paris. Yet Mehdi Meklat and Badroudine Said Abdallah did something touching in their essay entitled [“Le bruit des balles”](https://bondyblog.liberation.fr/201511141918/le-bruit-des-balles/#.Vke74a6rRE_) (literally “The sound of bullets”). That’s why I felt the urge to translate it in English, in the best way I could, so that more people could read it.
 
 A street, very near République. It was around 10PM. And the sound of war…
 
@@ -21,4 +21,4 @@ It is in such a moment, so unique, so terrible, that we feel a swing.
 
 Our lives getting transformed, which will continue probably far away from here, when we will tell ourselves we have nothing left to do. “Shall we leave?”, messages are falling and networks are getting clogged up. We close the windows to get away from the way too noisy street, from the steeped in sounds that will play again for ever. We want to close our eyes. We want to wake up.
 
-&mdash; Mehdi Meklat and Badroudine Said Abdallah in [Le bruit des balles](http://bondyblog.liberation.fr/201511141918/le-bruit-des-balles/#.Vke74a6rRE_)
+&mdash; Mehdi Meklat and Badroudine Said Abdallah in [Le bruit des balles](https://bondyblog.liberation.fr/201511141918/le-bruit-des-balles/#.Vke74a6rRE_)

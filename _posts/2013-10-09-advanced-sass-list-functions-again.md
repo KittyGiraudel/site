@@ -22,7 +22,7 @@ Even bigger news! It is now a Compass extension so you don't have to copy/paste 
 
 Done. From there you can use all the functions you want. Isn't it awesome? Plus all you have to do to update the library is reinstalling the gem with the same command as step 1. No more checking your functions are up to date and copy pasting all over again.
 
-All of this thanks to [Vinay Raghu](http://viii.in/) who made the Compass extension out of my original work. A million thanks to him!
+All of this thanks to [Vinay Raghu](https://www.vinayraghu.com/) who made the Compass extension out of my original work. A million thanks to him!
 
 ## New functions
 
@@ -93,7 +93,7 @@ $sum: sum($list, true); // -> 10
 
 ### Chunk
 
-The `chunk()` function is based on the equivalent PHP function `array_chunk()`. From the [PHP.net manual](http://php.net/manual/en/function.array-chunk.php):
+The `chunk()` function is based on the equivalent PHP function `array_chunk()`. From the [PHP.net manual](https://php.net/manual/en/function.array-chunk.php):
 
 > Chunks an `$array` into `$size` large chunks. The last chunk may contain less than `$size` elements.
 

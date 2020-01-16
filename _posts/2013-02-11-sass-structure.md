@@ -25,9 +25,9 @@ I think one of the best things when using a CSS preprocessor -whatever is your c
 
 This is exactly what I did, spliting my stylesheets into parts. As of writing, I currently have 5 different pieces (5 different .scss files):
 
-* `_font-awesome.scss`: [Font Awesome](http://fortawesome.github.com/Font-Awesome/) is the icon font I use in the site
-* `_google-fonts.scss`: this is the snippet from [Google Web Fonts](http://www.google.com/webfonts)
-* `_prism.scss`: [Prism.js](http://prismjs.com/) is the syntax highlighter
+* `_font-awesome.scss`: [Font Awesome](https://fortawesome.github.com/Font-Awesome/) is the icon font I use in the site
+* `_google-fonts.scss`: this is the snippet from [Google Web Fonts](https://www.google.com/webfonts)
+* `_prism.scss`: [Prism.js](https://prismjs.com/) is the syntax highlighter
 * `_helpers.scss`: this file contains my mixins, variables and helper classes
 * `_styles.scss`: the core of the CSS
 
@@ -50,7 +50,7 @@ _Note: when importing Sass/SCSS files, you don't need to add underscores or file
 
 ## KISS (Keep It Simple Stupid)
 
-At first I was using [the 1140px grid](http://cssgrid.net) but then it occurred to me I didn’t need a framework as simple as it is to handle a 2-columns layout. I could do it myself and so did I.
+At first I was using [the 1140px grid](https://www.ramotion.com/agency/web-design/cssgrid/) but then it occurred to me I didn’t need a framework as simple as it is to handle a 2-columns layout. I could do it myself and so did I.
 
 My point is: I decided to keep my stylesheet as simple (light) as possible. Thus, I did a huge cleaning in the font-awesome stylesheet. I only kept what was needed: the @font-face call, about ten lines to improve icons position, and the 8 icons I use on the whole site (instead of about 300).
 
@@ -86,13 +86,13 @@ My project is fairly (not to say really) small so I gathered everything into a s
 }
 ```
 
-Just two. Why having one hundred mixins when you use just two? The first one allows me to use `rem` safely for font-size by providing a `px` fallback. This is a very nice mixin from Chris Coyier at [CSS-tricks](http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/).
+Just two. Why having one hundred mixins when you use just two? The first one allows me to use `rem` safely for font-size by providing a `px` fallback. This is a very nice mixin from Chris Coyier at [CSS-tricks](https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/).
 
-The second one also comes from [CSS-tricks](http://css-tricks.com/media-queries-sass-3-2-and-codekit/) and is a nice way to handle breakpoints for Media Queries within a single MQ declaration. If either I want to change the breakpoints, I don’t have to go through all my stylesheets to find occurrences; all I have to do is edit it in the mixin.
+The second one also comes from [CSS-tricks](https://css-tricks.com/media-queries-sass-3-2-and-codekit/) and is a nice way to handle breakpoints for Media Queries within a single MQ declaration. If either I want to change the breakpoints, I don’t have to go through all my stylesheets to find occurrences; all I have to do is edit it in the mixin.
 
 Whenever I want to use a Media Query, I just have to run `@include breakpoint(baby-bear) { /* My stuff here */ }`.
 
-\*Note: I use `em` in media queries in order to prevent some layouts problem when zooming in the browser. More about it in [this article](http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/) from Lyza Gardner.
+\*Note: I use `em` in media queries in order to prevent some layouts problem when zooming in the browser. More about it in [this article](https://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/) from Lyza Gardner.
 
 ### Variables
 
@@ -246,7 +246,7 @@ Please note how I nest media queries inside their related selectors. There are t
 * This makes the stylesheet easier to maintain since you have everything at the same place: regular rules + conditional rules. No need of going at the bottom of the stylesheet to find all the conditional CSS.
 * When compiling, Sass doesn’t generate a bunch of media queries but a single one. So no performance issue on this point.
 
-_Note: if you ever wonder about the double dashes or underscores in class names, it is related to the BEM (Block Element Modifier) approach. More on the topic in [this excellent post](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) from Harry Roberts._
+_Note: if you ever wonder about the double dashes or underscores in class names, it is related to the BEM (Block Element Modifier) approach. More on the topic in [this excellent post](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) from Harry Roberts._
 
 ## Core of styles
 
@@ -254,7 +254,7 @@ Now we’ve seen pretty much everything else than what makes the site what it is
 
 ### Reset
 
-This is not optional, every project needs to use some kind of way to reset CSS styles. Depending on your tastes it might be [Eric Meyer’s CSS reset](http://meyerweb.com/eric/tools/css/reset/), [Normalize CSS](http://necolas.github.com/normalize.css/) or as I like to call it the **barbarian CSS** as below.
+This is not optional, every project needs to use some kind of way to reset CSS styles. Depending on your tastes it might be [Eric Meyer’s CSS reset](https://meyerweb.com/eric/tools/css/reset/), [Normalize CSS](https://necolas.github.com/normalize.css/) or as I like to call it the **barbarian CSS** as below.
 
 ```scss
 *,

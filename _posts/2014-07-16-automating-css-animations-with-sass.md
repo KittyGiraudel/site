@@ -8,11 +8,11 @@ tags:
 
 The other day, [Harry Roberts](https://twitter.com/csswizardry) featured a snippet of code from his own site [on Twitter](https://twitter.com/csswizardry/status/489038580128686081), asking for some ways to improve it (if any). What Harry did was computing by hand the keyframes of a carousel animation, thus claiming that high school algebra indeed **is** useful.
 
-> “Why do we have to learn algebra, Miss? We’re never going to use it…” &mdash;Everyone in my maths class [bit.ly/UaM2wf](http://bit.ly/UaM2wf)
+> “Why do we have to learn algebra, Miss? We’re never going to use it…” &mdash;Everyone in my maths class [bit.ly/UaM2wf](https://bit.ly/UaM2wf)
 
 ## What’s the idea?
 
-As far as I can see, Harry uses a carousel to display quotes about his work on his [home page](http://csswizardry.com). Why use JavaScript when we can use CSS, right? So he uses a CSS animation to run the carousel. That sounds like a lovely idea, until you have to compute keyframes…
+As far as I can see, Harry uses a carousel to display quotes about his work on his [home page](https://csswizardry.com). Why use JavaScript when we can use CSS, right? So he uses a CSS animation to run the carousel. That sounds like a lovely idea, until you have to compute keyframes…
 
 Below is [Harry’s comment](https://github.com/csswizardry/csswizardry.github.com/blob/5e8de0bcdd845c1fc46d622a1c605af89ac13208/css/_components.carousel.scss#L42-L87) in his carousel component:
 
@@ -205,7 +205,7 @@ $next-frame: (($i + 1) * $x) + ($i + $y);
 
 _Note: braces are completely optional here, we just use them to keep things clean._
 
-And now, we use those variables to generate a keyframe inside the loop. Let's not forget to interpolate them so they are correctly output in the resulting CSS (more informations about [Sass interpolation on Tuts+](http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)).
+And now, we use those variables to generate a keyframe inside the loop. Let's not forget to interpolate them so they are correctly output in the resulting CSS (more informations about [Sass interpolation on Tuts+](https://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)).
 
 ```scss
 #{$current-frame,
@@ -239,7 +239,7 @@ Oh-ho! We got an error here!
 
 > Invalid CSS after "": expected keyframes selector (e.g. 10%), was "-1.5625%"
 
-As you can see, we end up with a negative keyframe selector. This is prohibited by the [CSS specifications](http://www.w3.org/TR/css3-animations/#keyframes) and Sass considers this a syntax error so we need to make sure this does not happen. Actually, it only happens when `$i` is `0`, so basically on first loop run. An easy way to prevent this error from happening is to condition the output of this rule to the value of `$i`:
+As you can see, we end up with a negative keyframe selector. This is prohibited by the [CSS specifications](https://www.w3.org/TR/css3-animations/#keyframes) and Sass considers this a syntax error so we need to make sure this does not happen. Actually, it only happens when `$i` is `0`, so basically on first loop run. An easy way to prevent this error from happening is to condition the output of this rule to the value of `$i`:
 
 ```scss
 @if $i > 0 {
@@ -384,4 +384,4 @@ That's pretty much it. While Harry's initial code is easier to read for the huma
 
 You can play with the code on SassMeister:
 
-<p class="sassmeister" data-gist-id="b657072d11c527f3a016" data-height="480"><a href="http://sassmeister.com/gist/b657072d11c527f3a016">Play with this gist on SassMeister.</a></p>
+<p class="sassmeister" data-gist-id="b657072d11c527f3a016" data-height="480"><a href="https://sassmeister.com/gist/b657072d11c527f3a016">Play with this gist on SassMeister.</a></p>

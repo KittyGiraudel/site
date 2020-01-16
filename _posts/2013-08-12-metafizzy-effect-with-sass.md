@@ -1,7 +1,7 @@
 ---
-external: 
+external:
   host: CSS-Tricks
-  url: http://css-tricks.com/metafizzy-effect-with-sass/
+  url: https://css-tricks.com/metafizzy-effect-with-sass/
 title: "MetaFizzy Effect with Sass"
 tags:
   - sass

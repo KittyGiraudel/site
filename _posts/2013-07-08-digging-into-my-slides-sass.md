@@ -60,7 +60,7 @@ Outputs:
 }
 ```
 
-This example shows how we can use `@extend` and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you're familiar with [Twitter Bootstrap](http://twitter.github.io/bootstrap/components.html#alerts), then you'll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).
+This example shows how we can use `@extend` and placeholders in a very basic way. We can think of a slightly more complex usecase: some kind of message module. If you're familiar with [Twitter Bootstrap](https://twitter.github.io/bootstrap/components.html#alerts), then you'll easily get what this is about: having a pattern for all types of message, then differenciate them based on their color chart (green for OK, red for error, yellow for warning, blue for information).
 
 <pre class="codepen" data-height="320" data-type="result" data-href="3d4097c1f7ee99bfe7b10d05f0db433e" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/Dzloe">Check out this Pen!</a></pre>
 
@@ -169,7 +169,7 @@ Quite cool, right? And this is only a very easy example of what you can do with 
 
 ## Sass and REM <a href="#rem">#</h2>
 
-REM (root EM) is awesome. Problem is [IE8 doesn't understand it](http://caniuse.com/#feat=rem), and we cannot cross it out of our support chart yet. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.
+REM (root EM) is awesome. Problem is [IE8 doesn't understand it](https://caniuse.com/#feat=rem), and we cannot cross it out of our support chart yet. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.
 
 But duplicating every `font-size` declaration can be tedious and converting REM to PX can be annoying. Let's do it with Sass!
 
@@ -302,7 +302,7 @@ The Sass way makes it way easier to debug and update in my opinion; lisibility i
 
 ## Simple responsive grid with Sass <a href="#grid">#</h2>
 
-Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes [you just want to build your own](http://css-tricks.com/dont-overthink-it-grids/). Especially when you don't need a whole Rube Goldberg machine for your simple layout. Let's see how we can build a very simple grid system in Sass in about 12 lines:
+Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes [you just want to build your own](https://css-tricks.com/dont-overthink-it-grids/). Especially when you don't need a whole Rube Goldberg machine for your simple layout. Let's see how we can build a very simple grid system in Sass in about 12 lines:
 
 ```scss
 /* Your variables */
@@ -340,7 +340,7 @@ And there you have a very simple yet responsive Sass grid.
 
 ## CSS counters and Sass
 
-CSS counters are part of the [CSS 2.1 "Generated content" module](http://www.w3.org/TR/CSS21/generate.html) (and not CSS3 as it is often claimed) making items numbering possible with CSS only. The main idea is the following:
+CSS counters are part of the [CSS 2.1 "Generated content" module](https://www.w3.org/TR/CSS21/generate.html) (and not CSS3 as it is often claimed) making items numbering possible with CSS only. The main idea is the following:
 
 1. initialize one or more counters with `counter-reset`,
 1. at each occurrence of a specific item, increment the counter with `counter-increment`,
@@ -562,17 +562,17 @@ However what can be considered odd is that the 2 classes are co-dependant, meani
 
 **Your @media mixin outputs a media-query block every time you use it. Ain't you afraid of performance issues?**
 
-That's true. Sass doesn't automatically merge media queries rules [yet](https://github.com/nex3/sass/issues/316). However, [tests have been done](http://sasscast.tumblr.com/post/38673939456/sass-and-media-queries) and they showed that once GZipped, there was no difference between duplicated and merged @media queries.
+That's true. Sass doesn't automatically merge media queries rules [yet](https://github.com/nex3/sass/issues/316). However, [tests have been done](https://sasscast.tumblr.com/post/38673939456/sass-and-media-queries) and they showed that once GZipped, there was no difference between duplicated and merged @media queries.
 
 > "... we hashed out whether there were performance implications of combining vs scattering Media Queries and came to the conclusion that the difference, while ugly, is minimal at worst, essentially non-existent at best."
 
 In any case, if you feel dirty having duplicated media queries in your final CSS even if it doesn't make any difference, you can still use [this Ruby gem](https://github.com/aaronjensen/sass-media_query_combiner) to merge them. Please note merging media queries may mean reordering CSS which may involve some specificity issues. More tests needed.
 
-**[Compass](http://compass-style.org/) or [Bourbon](http://bourbon.io/)?**
+**[Compass](https://compass-style.org/) or [Bourbon](https://bourbon.io/)?**
 
 Well, frankly it's up to you. However note that the Compass team works directly with the Sass team so they are and will always be up to date. Bourbon otherwise is a side-project which isn't affiliated with Sass in any way (well, except for the obvious).
 
-Moreover, Compass comes with a [sprite generator](http://compass-style.org/reference/compass/helpers/sprites/), [Blueprint](http://compass-style.org/reference/blueprint/) for your grids, a [vertical rhytm module](http://compass-style.org/reference/compass/typography/vertical_rhythm/) and a bunch of other cool things like [math functions](http://compass-style.org/reference/compass/helpers/math/), [image dimensions](http://compass-style.org/reference/compass/helpers/image-dimensions/), and [much more](http://compass-style.org/reference/compass/helpers/)...
+Moreover, Compass comes with a [sprite generator](https://compass-style.org/reference/compass/helpers/sprites/), [Blueprint](https://compass-style.org/reference/blueprint/) for your grids, a [vertical rhytm module](https://compass-style.org/reference/compass/typography/vertical_rhythm/) and a bunch of other cool things like [math functions](https://compass-style.org/reference/compass/helpers/math/), [image dimensions](https://compass-style.org/reference/compass/helpers/image-dimensions/), and [much more](https://compass-style.org/reference/compass/helpers/)…
 
 So if you want my opinion: definitely Compass.
 

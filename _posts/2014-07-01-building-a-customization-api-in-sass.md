@@ -6,7 +6,7 @@ tags:
   - api
 ---
 
-> I am glad to have [Ezekiel Gabrielse](http://ezekielg.com/) today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts boys, this is quite intense!
+> I am glad to have [Ezekiel Gabrielse](https://ezekielg.com/) today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts boys, this is quite intense!
 
 Hey people! I am the creator of a relatively new Sass grid-system called [Flint](https://github.com/ezekg/flint), and a lightweight Compass extension called [SassyExport](https://github.com/ezekg/SassyExport), which we will be discussing throughout this series.
 
@@ -47,7 +47,7 @@ _Throughout this article I will be using another project of mine called [Flint](
 
 This is the end result of what we will be building today. Take a look at the code, and follow along as we go through creating this API and understanding the methodology behind it, if that's your thing.
 
-<p class="sassmeister" data-gist-id="ccf842e5ee74287f1868" data-height="480"><a href="http://sassmeister.com/gist/ccf842e5ee74287f1868">Play with this gist on SassMeister.</a></p>
+<p class="sassmeister" data-gist-id="ccf842e5ee74287f1868" data-height="480"><a href="https://ssassmeister.com/gist/ccf842e5ee74287f1868">Play with this gist on SassMeister.</a></p>
 
 ## Building our palette
 
@@ -386,6 +386,6 @@ Then the new styles are fetched and outputted into the stylesheet.
 
 Now that we have these variables (`$customizer` and `$customizer-instances`) containing a wealth of useful data, in part 2 we'll walk through the basic syntax for [SassyExport](https://github.com/ezekg/SassyExport) and how we're going to use it to export all of this data into JSON. We will also discuss the various ways for this data to give opportunity to create some pretty impressive features when coupled with other languages, such as PHP.
 
-Until next time, you can play with the customization API on [SassMeister](http://sassmeister.com/gist/ccf842e5ee74287f1868), check out [SassyExport on Github](https://github.com/ezekg/SassyExport), or [download the gem](http://rubygems.org/gems/SassyExport) to use with Compass in your own project.
+Until next time, you can play with the customization API on [SassMeister](https://sassmeister.com/gist/ccf842e5ee74287f1868), check out [SassyExport on Github](https://github.com/ezekg/SassyExport), or [download the gem](https://rubygems.org/gems/SassyExport) to use with Compass in your own project.
 
-> Ezekiel Gabrielse is a [recent designer-turned-developer](http://ezekielg.com/2014/05/07/the-unintended/) based in north Texas currently employed at [Produce Results](http://produceresults.com/) as a developer, and on the odd day, designer. You should definitely follow him on [Twitter](https://twitter.com/ezekkkg).
+> Ezekiel Gabrielse is a [recent designer-turned-developer](https://ezekielg.com/2014/05/07/the-unintended/) based in north Texas currently employed at [Produce Results](https://produceresults.com/) as a developer, and on the odd day, designer. You should definitely follow him on [Twitter](https://twitter.com/ezekkkg).

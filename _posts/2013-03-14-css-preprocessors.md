@@ -26,7 +26,7 @@ Let's make things clear right now: **preprocessors don't output bad code, bad de
 
 > Preprocessors don't output bad code, bad developers do.
 
-If the final stylesheet is less maintainable or heavier, or more complicated than the vanilla CSS version you had before using a preprocessor, [it's because you messed up](http://pastebin.com/Jy9PqFTy). Not because of Sass.
+If the final stylesheet is less maintainable or heavier, or more complicated than the vanilla CSS version you had before using a preprocessor, [it's because you messed up](https://pastebin.com/Jy9PqFTy). Not because of Sass.
 
 Vincent does an interesting comparison with PHP (HyperText Preprocessor): you can output shitty code with PHP too. Is it because of PHP? Definitely not. It's because you've messed up.
 
@@ -42,7 +42,7 @@ I think the key word here is **maintainability**. You will never ever reach the 
 
 > I think the key word here is maintainability.
 
-However, you might not need that level of maintainability. As [Kaelig](https://twitter.com/kaelig) says in his article [CSS preprocessors: renounce by choice or ignorance?](http://blog.kaelig.fr/post/24877648508/preprocesseurs-css-renoncer-par-choix-ou-par) (_Préprocesseurs CSS, renoncer par choix ou par ignorance?_): if you work on small projects or one-shot websites, you may not need a preprocessor. Let's be realistic for a minute: you won't update the site everyday, if at all. If you ever happen to do so, you can dig into the code without having to use of a preprocessor.
+However, you might not need that level of maintainability. As [Kaelig](https://twitter.com/kaelig) says in his article [CSS preprocessors: renounce by choice or ignorance?](https://blog.kaelig.fr/post/24877648508/preprocesseurs-css-renoncer-par-choix-ou-par) (_Préprocesseurs CSS, renoncer par choix ou par ignorance?_): if you work on small projects or one-shot websites, you may not need a preprocessor. Let's be realistic for a minute: you won't update the site everyday, if at all. If you ever happen to do so, you can dig into the code without having to use of a preprocessor.
 
 ## Give CSS what CSS needs
 
@@ -68,7 +68,7 @@ Vincent is definitely right on this one. Preprocessors sometimes make the syntax
 
 One of the biggest concerns when talking about CSS preprocessors (and preprocessors in general) is the learning curve. Most try to stay as close as possible to the default syntax but they involve new features with their own syntax, which need to be learnt. Yes, **it needs some time to wrap one's head around a preprocessor**, especially if it involves a very different syntax from the original language (Sass, CoffeeScript).
 
-If you happen to be a beginner or work with inexperienced developers, you probably shouldn't use preprocessors. Someone who's not very comfortable with a language could do [pretty bad things](http://pastebin.com/Jy9PqFTy) with a preprocessor. Adapt your tools to your team.
+If you happen to be a beginner or work with inexperienced developers, you probably shouldn't use preprocessors. Someone who's not very comfortable with a language could do [pretty bad things](https://pastebin.com/Jy9PqFTy) with a preprocessor. Adapt your tools to your team.
 
 ## Final words
 

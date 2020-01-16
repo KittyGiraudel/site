@@ -7,7 +7,7 @@ tags:
   - layouts
 ---
 
-Hey people! This post is going to be quite different from what I usually write about since it will talk about [Twig](http://twig.sensiolabs.org/), the template engine used by [Symfony 2](http://symfony.com/). I came across a pretty complicated case at work so I thought I'd write a little something about it.
+Hey people! This post is going to be quite different from what I usually write about since it will talk about [Twig](https://twig.symfony.com/), the template engine used by [Symfony 2](https://symfony.com/). I came across a pretty complicated case at work so I thought I'd write a little something about it.
 
 But let's put some context first: Twig presents itself as a _template engine for PHP_. Kind of Jekyll, but far more powerful. The basic idea is to create reusable templates also called "views" (basically HTML blocks) to avoid repeating the same code again and again.
 
@@ -17,7 +17,7 @@ Since not all of you are Twig masters (neither am I though), I am going to expla
 
 ### Extend
 
-Twig is mostly about extending templates ([`@extend`](http://twig.sensiolabs.org/doc/tags/extends.html)). Thus we start with setting up a base template outputing some HTML (`<html>`, `<head>`, `<body>`...) and defining Twig blocks. Quick example:
+Twig is mostly about extending templates ([`@extend`](hhttps://twig.symfony.com/doc/tags/extends.html)). Thus we start with setting up a base template outputing some HTML (`<html>`, `<head>`, `<body>`...) and defining Twig blocks. Quick example:
 
 ```html
 {% raw %}<!-- base.html.twig -->
@@ -55,7 +55,7 @@ That's pretty much how you work a project with Twig.
 
 ### Include
 
-Now you also can also include files ([`@include`](http://twig.sensiolabs.org/doc/tags/include.html)) which work has you would expect: this is basically the `@include` from PHP. So if you have some static content, like a footer for example, you can include a partials (a bunch of HTML if you will) directly into your footer block like this:
+Now you also can also include files ([`@include`](https://twig.symfony.com/doc/tags/include.html)) which work has you would expect: this is basically the `@include` from PHP. So if you have some static content, like a footer for example, you can include a partials (a bunch of HTML if you will) directly into your footer block like this:
 
 ```html
 {% raw %}
@@ -67,7 +67,7 @@ Now you also can also include files ([`@include`](http://twig.sensiolabs.org/doc
 
 ### Embed
 
-And finally, you can embed ([`@embed`](http://twig.sensiolabs.org/doc/tags/embed.html)) files which is more complex. Embeding is a mix between both extending and including. Basically it includes a template with the ability to make blocks bubbling down instead of up. We'll come back to this.
+And finally, you can embed ([`@embed`](https://twig.symfony.com/doc/tags/embed.html)) files which is more complex. Embeding is a mix between both extending and including. Basically it includes a template with the ability to make blocks bubbling down instead of up. We'll come back to this.
 
 ## The problem
 

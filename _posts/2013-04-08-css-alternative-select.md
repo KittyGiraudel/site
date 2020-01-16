@@ -6,7 +6,7 @@ tags:
   - select
 ---
 
-A couple of weeks ago, I came across an article from Pepsized featuring a [CSS-only alternative to the Select Element](http://pepsized.com/css-only-alternative-to-the-select-element/). Sounds nice! Especially since I recall doing some [dropdown styling at Codrops](https://tympanus.net/codrops/2012/10/04/custom-drop-down-list-styling/).
+A couple of weeks ago, I came across an article from Pepsized featuring a [CSS-only alternative to the Select Element](https://pepsized.com/css-only-alternative-to-the-select-element/). Sounds nice! Especially since I recall doing some [dropdown styling at Codrops](https://tympanus.net/codrops/2012/10/04/custom-drop-down-list-styling/).
 
 Yeah, it's very nice. Even if it's not an alternative to the Select Element. This is not possible. You cannot do a pure CSS alternative to the Select Element.
 
@@ -74,7 +74,7 @@ You could still use JavaScript. But then:
 
 Even if it's not much a concern, using a HTML/CSS "alternative" to the `<select>` element means using at least a dozen of DOM nodes (quickly ramping up with the number of options) and maybe about 50 lines of CSS, perhaps including some heavy CSS properties like shadows or gradients.
 
-Okay, it's no big deal when you know the average page size is a little over 1.4Mb (according to [HTTP Archive](http://www.httparchive.org/interesting.php#bytesperpage)).
+Okay, it's no big deal when you know the average page size is a little over 1.4Mb (according to [HTTP Archive](https://www.httparchive.org/interesting.php#bytesperpage)).
 
 But still, you could have used a single element (including Shadow DOM) and 0 line of CSS for a result which beats your alternative on all points except on design (and this is yet to be determined).
 

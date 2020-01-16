@@ -7,7 +7,7 @@ tags:
   - clock
 ---
 
-A while back, a developer posted a little experiment in which the current time was being used as an hexadecimal color, applied to the body element. Better have a look at [the demo](http://www.jacopocolo.com/hexclock/#).
+A while back, a developer posted a little experiment in which the current time was being used as an hexadecimal color, applied to the body element. Better have a look at [the demo](http://www.jacopocolo.com/hexclock).
 
 ![Hexclock experiment](/assets/images/color-clock-experiment/hexclock.png)
 
@@ -48,7 +48,7 @@ Nothing special here: at every second, we call the `colorClock` function. This f
 
 ## Printing the current time
 
-Displaying the current time is probably the easiest part of the exercise. Although I must say I got helped by a [StackOverflow answer](http://stackoverflow.com/a/12612778).
+Displaying the current time is probably the easiest part of the exercise. Although I must say I got helped by a [StackOverflow answer](https://stackoverflow.com/a/12612778).
 
 ```javascript
 function colorClock() {
@@ -92,7 +92,7 @@ document.body.style.backgroundColor = 'rgb(' + channels.join(',') + ')'
 
 ## Changing font color based on body color
 
-Last but not least, we need to find a way to change the font color if the background color is too dark or too light, so the text remains readable at all time. To do this, we have to compute the [luminance](http://en.wikipedia.org/wiki/Relative_luminance) of a color. If it is higher than `.7`, then the color is very bright and text should be black.
+Last but not least, we need to find a way to change the font color if the background color is too dark or too light, so the text remains readable at all time. To do this, we have to compute the [luminance](https://en.wikipedia.org/wiki/Relative_luminance) of a color. If it is higher than `.7`, then the color is very bright and text should be black.
 
 ```javascript
 function colorLuminance(red, green, blue) {

@@ -5,7 +5,7 @@ tags:
   - thoughts
 ---
 
-> The following is a guest post by [Christoph Rumpel](http://christoph-rumpel.com/), a passionate Web developer from Austria. I'm very glad to have him writing a motivational post here.
+> The following is a guest post by [Christoph Rumpel](https://christoph-rumpel.com/), a passionate Web developer from Austria. I'm very glad to have him writing a motivational post here.
 
 Here and now is really an exciting time as a web developer or web designer. You can find everything; you need to start your career on the web. There are articles, screencasts, podcasts and forum discussions on really every topic you can think of and this is why you can start being a web designer or developer right now. It is not necessary to have a degree in order to get a job like it is the case in other branches. It is all about what really counts: your work and your personality.
 
@@ -36,4 +36,4 @@ But there is more: please don't be afraid to show what you have accomplished. Th
 
 This isn't just something you have to consider at the beginning of your career. These things are important to all of us and we are facing similar situations every day. I hope I could open your minds and you will stop being too critical with yourself, because there is no need to. Mr. Hugo himself is a great example. He is working a lot and sharing most of his work with us too. This is a great benefit for us and for him. He told me that there are times too, when he thinks his work is not good enough. I can tell you / him that his work is definitely good enough and **so is yours**!
 
-> Christoph Rumpel is a passionate Web developer from Austria who wants to make the web look and feel awesome. You should definitely check [his site](http://christoph-rumpel.com/) and follow him on [Twitter](https://twitter.com/christophrumpel).
+> Christoph Rumpel is a passionate Web developer from Austria who wants to make the web look and feel awesome. You should definitely check [his site](https://christoph-rumpel.com/) and follow him on [Twitter](https://twitter.com/christophrumpel).

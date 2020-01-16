@@ -65,7 +65,7 @@ Well... BINGO! No more issue and all the CSS hacks were working again. Now that 
 
 ## About the line
 
-Most CSS parsers are made in a way that if a line is not recognized as valid CSS, it is simply skipped. Mr. [Tab Atkins Jr.](https://twitter.com/tabatkins) explains it very well in his article [How CSS Handles Errors CSS](http://www.xanthir.com/blog/b4JF0):
+Most CSS parsers are made in a way that if a line is not recognized as valid CSS, it is simply skipped. Mr. [Tab Atkins Jr.](https://twitter.com/tabatkins) explains it very well in his article [How CSS Handles Errors CSS](https://www.xanthir.com/blog/b4JF0):
 
 > CSS was written from the beginning to be very forgiving of errors. When the browser encounters something in a CSS file that it doesn't understand, it does a very minimal freak-out, then continues on as soon as it can as if nothing bad had happened.
 

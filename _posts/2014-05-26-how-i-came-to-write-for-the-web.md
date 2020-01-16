@@ -24,15 +24,15 @@ Obviously I said _yes_ and got to write quite [a couple of posts for Codrops](ht
 
 ### CSS-Tricks
 
-At that time (mid 2013), [Chris Coyier](https://twitter.com/chriscoyier) from [CSS-Tricks](http://css-tricks.com) was looking for authors to help him complete the Almanac, an alternative to MDN Docs on CSS selectors and properties. Being a big fan of Chris' work for years now, I have been helping him as much as I could, especially with a few interesting entries like [CSS Grid System](http://css-tricks.com/almanac/properties/g/grid/), [A Complete Guide to Flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/) and a few other cool properties as well.
+At that time (mid 2013), [Chris Coyier](https://twitter.com/chriscoyier) from [CSS-Tricks](https://css-tricks.com) was looking for authors to help him complete the Almanac, an alternative to MDN Docs on CSS selectors and properties. Being a big fan of Chris' work for years now, I have been helping him as much as I could, especially with a few interesting entries like [CSS Grid System](https://css-tricks.com/almanac/properties/g/grid/), [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and a few other cool properties as well.
 
 I still keep helping Chris updating the Almanac whenever I can. I recently added a couple entries, and we will soon update the Flexbox guide if Chris is still willing me to do so. I'm learning a lot and it's a real pleasure to contribute to this famous site that is CSS-Tricks.
 
 ### David Walsh
 
-[David Walsh](https://twitter.com/davidwalshblog) and Chris being good buddies, David asked me if I'd be interested in writing a little article about Sass for his blog as a guest author (July 2013). A couple of days later, he released [Looking into the Future of Sass](http://davidwalsh.name/future-sass) where I explained what's coming up in Sass 3.3 which was on the tracks back then. Even today, this article is still getting linked to as an alternative to [Sass' official changelog](http://sass-lang.com/documentation/file.SASS_CHANGELOG.html). Needless to say you should check the changelog rather than external articles. ;)
+[David Walsh](https://twitter.com/davidwalshblog) and Chris being good buddies, David asked me if I'd be interested in writing a little article about Sass for his blog as a guest author (July 2013). A couple of days later, he released [Looking into the Future of Sass](https://davidwalsh.name/future-sass) where I explained what's coming up in Sass 3.3 which was on the tracks back then. Even today, this article is still getting linked to as an alternative to [Sass' official changelog](https://sass-lang.com/documentation/file.SASS_CHANGELOG.html). Needless to say you should check the changelog rather than external articles. ;)
 
-On the very beginning of 2014, I gathered my courage and let David release another guest post from me, this time about JavaScript. Yes, you read right! I explained how I built [a CRUD JavaScript class](http://davidwalsh.name/crud-javascript-class). I spent a couple of days working on this piece of code and that was kind of a big deal for a JavaScript newbie like me to talk about it, especially at David Walsh's which is well known for his JS skills. Thankfully I've got some positive feedbacks, so it's all good!
+On the very beginning of 2014, I gathered my courage and let David release another guest post from me, this time about JavaScript. Yes, you read right! I explained how I built [a CRUD JavaScript class](https://davidwalsh.name/crud-javascript-class). I spent a couple of days working on this piece of code and that was kind of a big deal for a JavaScript newbie like me to talk about it, especially at David Walsh's which is well known for his JS skills. Thankfully I've got some positive feedbacks, so it's all good!
 
 ### The Sass Way
 
@@ -42,7 +42,7 @@ Thankfully, John gave me some extra opportunities to release more interesting ar
 
 ### SitePoint
 
-In late January 2014, I got contacted by [Louis Lazaris](https://twitter.com/ImpressiveWebs) (who was just named at a new position at [SitePoint](http://sitepoint.com)) if I wanted to fill their CSS Section with a couple of Sass articles. Louis told me SitePoint at that time was willing to provide some content about CSS preprocessors, so he thought about me (thanks Louis!).
+In late January 2014, I got contacted by [Louis Lazaris](https://twitter.com/ImpressiveWebs) (who was just named at a new position at [SitePoint](https://sitepoint.com)) if I wanted to fill their CSS Section with a couple of Sass articles. Louis told me SitePoint at that time was willing to provide some content about CSS preprocessors, so he thought about me (thanks Louis!).
 
 The day after, I sent him a first article, ready to roll. And in the week-end that followed, I sent him 2 or 3 new write ups about Sass. At a point where my articles were not even passing by the _Approved topics_ and _Work in progress_ on Trello but directly popping into _Ready for edit_. For about 3 months now, SitePoint has been releasing an article from me every week and I have to say I am very glad to be part of this.
 
@@ -50,7 +50,7 @@ I'm busting my ass to provide interesting and fresh Sass content (when it's not 
 
 ### Webdesign Tuts+
 
-Finally, a few weeks ago (March 2014) Ian Yates from [Webdesign Tuts+](http://webdesign.tutsplus.com) got in touch with me to know if I could write a little something about Sass. A round of applause for Tuts+ because for once, someone contacted to ask me to write about something very specific, and not a _about Sass_ or _about CSS_. In this case, Ian asked me to talk about [error handling in Sass](design.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996).
+Finally, a few weeks ago (March 2014) Ian Yates from [Webdesign Tuts+](https://webdesign.tutsplus.com) got in touch with me to know if I could write a little something about Sass. A round of applause for Tuts+ because for once, someone contacted to ask me to write about something very specific, and not a _about Sass_ or _about CSS_. In this case, Ian asked me to talk about [error handling in Sass](https://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996).
 
 This led to the fastest turn around in history because the same day I was able to hand over the finished article to Ian, which could be released on Webdesign Tuts+ the day after. So in about 24 hours, we went from not knowing each other, to having released an article on the site. That being said, it was fast because he knew right away what he wanted from me (and because I had some free time that day).
 
@@ -96,7 +96,7 @@ Well, it involves Markdown, for sure. If you ask me about the greatest improveme
 
 > Markdown is the best way to write for the web.
 
-Anyway, I usually open a [Github Gist](http://gist.github.com) or Sublime Text and start writing in Markdown mode. As I've explained in the previous section, once I've started I don't stop until the end. It usually takes no more than a couple of minutes or dozens of minutes depending on the article's length. If everything is not perfect at first, it's no big deal. What's important is I have a backbone.
+Anyway, I usually open a [Github Gist](https://gist.github.com) or Sublime Text and start writing in Markdown mode. As I've explained in the previous section, once I've started I don't stop until the end. It usually takes no more than a couple of minutes or dozens of minutes depending on the article's length. If everything is not perfect at first, it's no big deal. What's important is I have a backbone.
 
 Once I'm done, I proof read the whole thing as if I were discovering it for the first time. I fix typos and try to level up my English so it's not too much pain for the reader (a.k.a _you_) to read. It's very unusual I have to re-write a whole section but it happens. In this case, I just fill the blanks or update as needed.
 

@@ -9,9 +9,9 @@ tags:
 
 > **Edit (2014/11/16):** please, don't use this in a live project. If you come up with a case where you need to parse/encode JSON in Sass, consider having a Ruby/C/whatever helper function for this.
 
-If you are a reader of CSS-Tricks, you might have come across this article a while back about [making Sass talk to JavaScript with JSON](http://css-tricks.com/making-sass-talk-to-javascript-with-json/). The main idea behind this write up is to provide a way for JavaScript to access content from the stylesheet (a.k.a. CSS).
+If you are a reader of CSS-Tricks, you might have come across this article a while back about [making Sass talk to JavaScript with JSON](https://css-tricks.com/making-sass-talk-to-javascript-with-json/). The main idea behind this write up is to provide a way for JavaScript to access content from the stylesheet (a.k.a. CSS).
 
-While the idea is solid, the realization is very simple. There was no CSS magic behind it at all. Les James (the author) manually wrote some [JSON](http://json.org/) in the `content` property of body's `::before` pseudo-element, like this:
+While the idea is solid, the realization is very simple. There was no CSS magic behind it at all. Les James (the author) manually wrote some [JSON](https://json.org/) in the `content` property of body's `::before` pseudo-element, like this:
 
 ```css
 body::before {
@@ -149,4 +149,4 @@ On the performance side, I suppose we could always do better. We try to make the
 
 That's pretty much it folks. We hope you like it! It's been one hell of a thing to do and we're glad to have made it through. Comments and suggestions are obviously welcome!
 
-If you want to test SassyJSON, you'll be pleased to know it's available on [npm](https://npmjs.org/) or as [Ruby Gem](http://rubygems.org/gems/SassyJSON). We also [asked SassMeister to support it](https://github.com/jedfoster/SassMeister/issues/70) so you should soon be able to play with it directly on SassMeister.
+If you want to test SassyJSON, you'll be pleased to know it's available on [npm](https://npmjs.org/) or as [Ruby Gem](https://rubygems.org/gems/SassyJSON). We also [asked SassMeister to support it](https://github.com/jedfoster/SassMeister/issues/70) so you should soon be able to play with it directly on SassMeister.

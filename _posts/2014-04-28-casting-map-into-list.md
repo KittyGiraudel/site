@@ -32,7 +32,7 @@ The `to-list` function core is pretty straightforward. If the given value is a m
 }
 ```
 
-To be a little more precise about what's being done here: we loop through each map entry, store the key in a `$keys` list and the value in a `$values` list. Then we [zip](http://sass-lang.com/documentation/Sass/Script/Functions.html#zip-instance_method) both to return a 2-dimensional list where the first element of each list if the former key and the second element of each list is the former value.
+To be a little more precise about what's being done here: we loop through each map entry, store the key in a `$keys` list and the value in a `$values` list. Then we [zip](https://sass-lang.com/documentation/Sass/Script/Functions.html#zip-instance_method) both to return a 2-dimensional list where the first element of each list if the former key and the second element of each list is the former value.
 
 Does the job well.
 

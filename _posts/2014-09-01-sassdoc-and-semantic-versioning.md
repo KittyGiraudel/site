@@ -11,7 +11,7 @@ If you are not familiar with the concept of Semantic Versioning, I invite you to
 
 It looks like this: `major.minor.patch` (e.g. `1.3.37`). _Major_ version is for API changes and backward incompatibilities, _minor_ is for backward compatible features and _patch_ is for bug fixes.
 
-[npm](http://npmjs.org) using Semantic Versioning for its packages, it is no surprise we use it at [SassDoc](https://github.com/SassDoc/sassdoc). Meanwhile, we have seen quite a few suprises regarding our version bumps, so I thought I would clarify some things in a short article.
+[npm](https://npmjs.org) using Semantic Versioning for its packages, it is no surprise we use it at [SassDoc](https://github.com/SassDoc/sassdoc). Meanwhile, we have seen quite a few suprises regarding our version bumps, so I thought I would clarify some things in a short article.
 
 ## Isn't it too soon for `1.0.0`?
 
@@ -27,7 +27,7 @@ The project mature as we are working on it and as people start using it. There i
 
 ## You've released 4 minor versions in 2 weeks!
 
-Version `1.1.0` came on July 20th (3 days after `1.0.0`). Version `1.2.0` has been released on August 11th ([announced on Tuts+](http://webdesign.tutsplus.com/articles/new-features-and-a-new-look-for-sassdoc--cms-21914) the next day). Version `1.3.0` came one week later, on August 18th, and version `1.4.0` has been launched 2 days later, on August 20th. Finally, version `1.5.0` (latest stable as of writing) came on August 25th.
+Version `1.1.0` came on July 20th (3 days after `1.0.0`). Version `1.2.0` has been released on August 11th ([announced on Tuts+](https://webdesign.tutsplus.com/articles/new-features-and-a-new-look-for-sassdoc--cms-21914) the next day). Version `1.3.0` came one week later, on August 18th, and version `1.4.0` has been launched 2 days later, on August 20th. Finally, version `1.5.0` (latest stable as of writing) came on August 25th.
 
 > Between 10/08 and 25/08, we went from `1.1.0` to `1.5.0`.
 

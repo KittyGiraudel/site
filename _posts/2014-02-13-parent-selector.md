@@ -6,7 +6,7 @@ tags:
   - parent selector
 ---
 
-Yesterday I stumbled upon [this Google Survey](https://docs.google.com/forms/d/1x0eXPBj1GN8Zau-7k9J_JGhoM6uGEqlJBkBBDFswT2w/viewform?edit_requested=true) about the selector syntax for the incoming parent selector from [Selectors Level 4](http://dev.w3.org/csswg/selectors4/#subject) module asking for developers' help on choosing the right syntax for this feature.
+Yesterday I stumbled upon [this Google Survey](https://docs.google.com/forms/d/1x0eXPBj1GN8Zau-7k9J_JGhoM6uGEqlJBkBBDFswT2w/viewform?edit_requested=true) about the selector syntax for the incoming parent selector from [Selectors Level 4](https://dev.w3.org/csswg/selectors4/#subject) module asking for developers' help on choosing the right syntax for this feature.
 
 The official syntax for this has yet to be determined and as of writing there are two proposals grabbing some attention:
 
@@ -59,7 +59,7 @@ Meanwhile `:has()` being a pseudo-class it preserves this golden rule by keeping
 
 ## Keeping it consistent
 
-Not only `:has()` is both more readable and more understandable, but it also goes very well with the existing pseudo-classes, especially [`:not()`](http://dev.w3.org/csswg/selectors4/#negation) and [`:matches()`](http://dev.w3.org/csswg/selectors4/#matches) (aliased as [`:any()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:any) in Firefox) which both work in the exact same way.
+Not only `:has()` is both more readable and more understandable, but it also goes very well with the existing pseudo-classes, especially [`:not()`](https://dev.w3.org/csswg/selectors4/#negation) and [`:matches()`](https://dev.w3.org/csswg/selectors4/#matches) (aliased as [`:any()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:any) in Firefox) which both work in the exact same way.
 
 > There are reasons why we have `:not()` and not `!` as a negative operator.
 

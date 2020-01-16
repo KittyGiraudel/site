@@ -147,7 +147,7 @@ el {
 }
 ```
 
-I want to play a game. In your opinion, what is the CSS rendered by this code (shamelessly stolen from [Mehdi Kabab](http://twitter.com/pioupioum)'s new book - "Advanced Sass and Compass")?
+I want to play a game. In your opinion, what is the CSS rendered by this code (shamelessly stolen from [Mehdi Kabab](https://twitter.com/pioupioum)'s new book - "Advanced Sass and Compass")?
 
 The correct answer is:
 
@@ -162,7 +162,7 @@ This is actually not fucked up at all: it's the expected behaviour from correct 
 
 ## If ternary then... Sass error
 
-Since Sass 3.3, this is no longer a bug. It has been [fixed](http://sass-lang.com/documentation/file.SASS_CHANGELOG.html#smaller_improvements).
+Since Sass 3.3, this is no longer a bug. It has been [fixed](https://sass-lang.com/documentation/file.SASS_CHANGELOG.html#smaller_improvements).
 
 You all know what a ternary is, right? Kind of a one-line `if`/`else` statement. It's pretty cool when you need to assign a variable differently depending on a condition. In JavaScript, you'd write something like this:
 
@@ -208,7 +208,7 @@ Hopefully this issue is supposed to be solved in the incoming Sass 3.3 according
 
 ## Final words
 
-I love how powerful Sass has become but there are things that keep boggling my mind. [Mehdi Kabab](http://twitter.com/pioupioum), a fellow French developer (and author of a fresh new book called [Advanced Sass and Compass](http://livre-sass-compass.fr/)) told me it was because I wasn't using Sass as a preprocessor.
+I love how powerful Sass has become but there are things that keep boggling my mind. [Mehdi Kabab](https://twitter.com/pioupioum), a fellow French developer (and author of a fresh new book called Advanced Sass and Compass) told me it was because I wasn't using Sass as a preprocessor.
 
 <blockquote class="twitter-tweet" data-partner="tweetdeck">
 <a href="https://twitter.com/HugoGiraudel">@HugoGiraudel</a> the main problem is you want use Sass like PHP oe Ruby, and not like a CSS preprocessor ;) /cc <a href="https://twitter.com/kaelig">@kaelig</a>&mdash; Mehdi Kabab (@piouPiouM) <a href="https://twitter.com/piouPiouM/statuses/401427568592957441">November 15, 2013</a></blockquote>

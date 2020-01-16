@@ -8,7 +8,7 @@ tags:
   - optimisation
 ---
 
-> The following is a guest post by [Loïc Giraudel](http://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at BestOfMedia (Grenoble, France) and in a lesser extend my brother. He also knows his way in Bash scripting and front-end performance. I'm very glad to have him writing here. :)
+> The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at BestOfMedia (Grenoble, France) and in a lesser extend my brother. He also knows his way in Bash scripting and front-end performance. I'm very glad to have him writing here. :)
 
 You can't talk about front-end performance without talking about images. They are the heaviest component of a webpage. This is why it is important to optimize images before pushing things live.
 
@@ -223,7 +223,7 @@ For the final stats we are going to display the amount of space saved. The `opti
 <figcaption>Adding stats output in optimize_image()</figcaption>
 </figure>
 
-To display human readable numbers, we can use a `human_readable_filesize()` method, retrieved from [StackExchange](http://unix.stackexchange.com/questions/44040/a-standard-tool-to-convert-a-byte-count-into-human-kib-mib-etc-like-du-ls1) (let's not reinvent the wheel, shall we?).
+To display human readable numbers, we can use a `human_readable_filesize()` method, retrieved from [StackExchange](https://unix.stackexchange.com/questions/44040/a-standard-tool-to-convert-a-byte-count-into-human-kib-mib-etc-like-du-ls1) (let's not reinvent the wheel, shall we?).
 
 <figure class="figure">
 <img src="/assets/images/optimizing-with-bash/display-stats.png" alt="" />
@@ -428,10 +428,10 @@ main
 Of course this is just a simple sample (no pun intended); there is still a lot of room for improvements. Here is a couple of things we could do to improve it:
 
 * add GIF support,
-* use other tools to optimize JPG and PNG in the `optimize_image` method (by the way, I highly recommand you to read [this great article](http://www.phpied.com/big-list-image-optimization-tools) by Stoyan Stefanov),
+* use other tools to optimize JPG and PNG in the `optimize_image` method (by the way, I highly recommand you to read [this great article](https://www.phpied.com/big-list-image-optimization-tools) by Stoyan Stefanov),
 * add a progress bar,
 * try to add some lossy optimizations for JPG,
 * add an auto-upload function to upload to your FTP,
 * use a configuration file to tweak the optimization tools...
 
-> Loïc Giraudel works as a front-end developer at BestOfMedia (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](http://twitter.com/l_giraudel).
+> Loïc Giraudel works as a front-end developer at BestOfMedia (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

@@ -6,11 +6,11 @@ tags:
   - sass
 ---
 
-I have been invited to speak at the very first [dotCSS](http://dotcss.eu) in Paris on November 14th, as part of a beautiful lineup of incredible speakers and not less than 400 attendees. It was a truely great experience, hence a little article to sum up the journey.
+I have been invited to speak at the very first [dotCSS](https://www.dotcss.io/) in Paris on November 14th, as part of a beautiful lineup of incredible speakers and not less than 400 attendees. It was a truely great experience, hence a little article to sum up the journey.
 
 ## About the event
 
-It was the first time that organisers of [dotConferences](https://twitter.com/dotconferences), mostly famous for [dotJS](http://dotjs.eu) happening on November 17th, were producing a [dotCSS](http://dotcss.eu) and I have to say [Sylvain Zimmer](https://twitter.com/sylvinus), [Ferdinand Boas](https://twitter.com/ferdinandboas) and [Maurice Svay](https://twitter.com/mauriz) (as well as all the people who helped) really did a great job with this one.
+It was the first time that organisers of [dotConferences](https://twitter.com/dotconferences), mostly famous for [dotJS](https://dotjs.io) happening on November 17th, were producing a [dotCSS](https://dotcss.io) and I have to say [Sylvain Zimmer](https://twitter.com/sylvinus), [Ferdinand Boas](https://twitter.com/ferdinandboas) and [Maurice Svay](https://twitter.com/mauriz) (as well as all the people who helped) really did a great job with this one.
 
 I can't tell for the attendees, but as as speaker I must say they took great care of me. Everything has been made so I, as for the others, don't get under too much pressure once on stage and actually enjoy the experience. Challenge completed, more about that later on.
 
@@ -18,7 +18,7 @@ Anyway, if you felt frisky coming to dotCSS this year because it was the first e
 
 ## About the stage
 
-The conference happened at the [Théâtre des Variétés](http://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_des_Vari%C3%A9t%C3%A9s) in Paris, a beautiful 19th century redish and goldish theatre with balconies, great lights and everything. It was absolutely gorgeous. The stage was not huge but definitely big enough to move a bit around. I think one could not dream of a best location to give a talk.
+The conference happened at the [Théâtre des Variétés](https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_des_Vari%C3%A9t%C3%A9s) in Paris, a beautiful 19th century redish and goldish theatre with balconies, great lights and everything. It was absolutely gorgeous. The stage was not huge but definitely big enough to move a bit around. I think one could not dream of a best location to give a talk.
 
 <figure class="figure">
 <img src="/assets/images/feedback-on-dotcss/theatre.jpg" alt="" />
@@ -44,7 +44,7 @@ Anyway, allow me to give you a quick round-up.
 
 [Daniel Glazman](https://twitter.com/glazou), co-chairman at the CSS Working Group opened the stage with [a talk about how CSS got there](http://disruptive-innovations.com/zoo/slides/20141114-dotCSS/dotCSS2014.pdf), what were the mistakes made, and why. I was not really familiar with Daniel's work before the event so I found his talk very insightful. Plus, he really is talented speaker with great humour, thus I could not think of a better person to open the event.
 
-Then [Kaelig](https://twitter.com/kaelig), French front-end developer previously at BBC and the Guardian, now at the Financial Times, presented a very interesting talk about [bridging the gap between designers and developers](http://www.slideshare.net/kaelig/bridging-the-gap-between-designers-and-developers-at-the-guardian) (essentially using Sass) in big teams such at The Guardian's.
+Then [Kaelig](https://twitter.com/kaelig), French front-end developer previously at BBC and the Guardian, now at the Financial Times, presented a very interesting talk about [bridging the gap between designers and developers](https://www.slideshare.net/kaelig/bridging-the-gap-between-designers-and-developers-at-the-guardian) (essentially using Sass) in big teams such at The Guardian's.
 
 Kaelig was followed by [Harry Roberts](https://twitter.com/csswizardry), with probably the less technical talk of the day (but definitely not the least interesting!): [Ten Principles for Front-End Development](https://speakerdeck.com/csswizardry/ten-principles-for-effective-front-end-development). In this case, Harry did apply it to CSS but it ended up being a very generic talk that could apply to many languages or even professions.
 
@@ -56,7 +56,7 @@ I came next with a deck entitled [Keep Calm And Write Sass](https://speakerdeck.
 
 After a second break, [Nicolas Gallagher](https://twitter.com/necolas) presented an insightful talk about [scaling CSS](https://speakerdeck.com/necolas/making-twitter-ui-infrastructure), essentially based from his experience at Twitter. While not necessarily applicable right now in any project, it is interesting knowing how such a large-scale compary manage their CSS codebase.
 
-The inventor of CSS, [Bert Bos](http://en.wikipedia.org/wiki/Bert_Bos) came next with a presentation about typography on the web, and how HTML and CSS are currently poorly suited for it. What's funny is that Bert actually ended up (implicitly) asking the audience how they would do it, rather than coming and saying "this is how it should be done". Food for thoughts.
+The inventor of CSS, [Bert Bos](https://en.wikipedia.org/wiki/Bert_Bos) came next with a presentation about typography on the web, and how HTML and CSS are currently poorly suited for it. What's funny is that Bert actually ended up (implicitly) asking the audience how they would do it, rather than coming and saying "this is how it should be done". Food for thoughts.
 
 Last but not least, [Ana Tudor](https://twitter.com/thebabydino) gave a talk about [shapes and CSS and Sass and geometry](https://codepen.io/thebabydino/full/1dac5e91f697438ea420d6f5b429c253) and craziness. Her scientific brain never fails to amuse me, and as always, her presentation was very impressive.
 

@@ -232,4 +232,4 @@ It's now easier to catch up with the changes: I've replaced the test wrapping my
 
 I hope those little tricks will help. In the next part, I'll continue with other small smart tricks before tackling some advanced Fit useful features.
 
-> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](http://twitter.com/l_giraudel).
+> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

@@ -6,9 +6,9 @@ tags:
   - star
 ---
 
-A couple of days ago, [Ana Tudor](http://twitter.com/thebabydino) showed me how she managed to do a [pure CSS 6-point star](https://codepen.io/thebabydino/pen/DmklE) with a single element.
+A couple of days ago, [Ana Tudor](https://twitter.com/thebabydino) showed me how she managed to do a [pure CSS 6-point star](https://codepen.io/thebabydino/pen/DmklE) with a single element.
 
-To be truely honest, I wasn’t impressed that much since I am pretty familiar with Ana’s work which is always amazing. If you haven’t seen [her 3D geometric shapes](http://stackoverflow.com/users/1397351/ana) made of pure CSS, then you definitely should.
+To be truely honest, I wasn’t impressed that much since I am pretty familiar with Ana’s work which is always amazing. If you haven’t seen [her 3D geometric shapes](https://stackoverflow.com/users/1397351/ana) made of pure CSS, then you definitely should.
 
 <figure class="figure">
 <img alt="" src="/assets/images/sass-mixin-star/css-star.png">
@@ -26,11 +26,11 @@ The first thing was to understand how Ana managed to achieve such a shape with a
 <figcaption>3 rhombius = a 6-points star</figcaption>
 </figure>
 
-Basically she stacks the element and its 2 pseudo-elements on top of each other after applying several chained transforms to each of them to have the appropriate shape (a [rhombus](http://www.mathopenref.com/rhombus.html)).
+Basically she stacks the element and its 2 pseudo-elements on top of each other after applying several chained transforms to each of them to have the appropriate shape (a [rhombus](https://www.mathopenref.com/rhombus.html)).
 
 Instead of covering everything in here, I let you have a look at [this very clear explanation](https://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb) by Ana herself on CodePen.
 
-\*Note: we can do it with one single pseudo-element with the [border shaping trick](http://davidwalsh.name/css-triangles) but the hover doesn't feel right, and without pseudo-element with linear gradients.
+\*Note: we can do it with one single pseudo-element with the [border shaping trick](https://davidwalsh.name/css-triangles) but the hover doesn't feel right, and without pseudo-element with linear gradients.
 
 ## Compute the height
 
@@ -60,7 +60,7 @@ From there, I knew how to get the height from the width, I only had to turn this
 
 After a little Google search, I stumbled upon [a not-documentated-at-all library](https://github.com/adambom/Sass-Math/blob/master/math.scss) to use advanced math functions in Sass (including `sin()`, `exp()`, `sqrt()`, and much more). Seemed good enough so I gave it a try.
 
-It turned out the `power()` function (called in the `sin()` one) was triggering a Sass error. I tried a few things but finally couldn’t make it work. So I did something unusual... Looked at the 2nd page on Google. And bam, [the Holy Grail](http://compass-style.org/reference/compass/helpers/math/)!
+It turned out the `power()` function (called in the `sin()` one) was triggering a Sass error. I tried a few things but finally couldn’t make it work. So I did something unusual... Looked at the 2nd page on Google. And bam, [the Holy Grail](https://compass-style.org/reference/compass/helpers/math/)!
 
 Compass has built-in functions for advanced math calculation including `sin()`. Isn’t that great? Like really awesome? Building the Sass function was a piece of cake:
 
@@ -85,10 +85,10 @@ So everything was already working great but I forced the user to give a em-based
 
 I had a look in the Sass documentation and I found two related built-in function:
 
-- [`unitless(number)`](http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#unitless-instance_method) returns a boolean wether the value has a unit or not
-- [`unit(number)`](http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#unit-instance_method) returns the unit of the value
+- [`unitless(number)`](https://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#unitless-instance_method) returns a boolean wether the value has a unit or not
+- [`unit(number)`](https://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#unit-instance_method) returns the unit of the value
 
-The first is useless in our case, but the second one is precisely what we need to store the unit of the value given by the user. However we still have no way to parse the integer from a value with a unit. At least not with a built-in function. A [quick run on Stack Overflow](http://stackoverflow.com/a/12335841) gave me what I was looking for:
+The first is useless in our case, but the second one is precisely what we need to store the unit of the value given by the user. However we still have no way to parse the integer from a value with a unit. At least not with a built-in function. A [quick run on Stack Overflow](https://stackoverflow.com/a/12335841) gave me what I was looking for:
 
 > You need to divide by 1 of the same unit. If you use unit(), you get a string instead of a number, but if you multiply by zero and add 1, you have what you need.
 
@@ -104,7 +104,7 @@ Anyway, at this point we can set the size in any unit we want, could it be `px`,
 
 ## Improve tiny bits
 
-Last but not least, Ana used the [inherit hack](http://xiel.de/webkit-fix-css-transitions-on-pseudo-elements/) to enable transition on pseudo-elements. She asked me if we had a way in Sass to assign the same value to several properties.
+Last but not least, Ana used the [inherit hack](https://xiel.dev/webkit-fix-css-transitions-on-pseudo-elements/) to enable transition on pseudo-elements. She asked me if we had a way in Sass to assign the same value to several properties.
 
 Of course we have, mixin to the rescue!
 
@@ -116,7 +116,7 @@ Of course we have, mixin to the rescue!
 }
 ```
 
-You give this mixin a [list](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists) of properties you want to share the same value and of course the value. Then, for each property in the list, the mixin outputs the given value. In our case:
+You give this mixin a [list](https://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists) of properties you want to share the same value and of course the value. Then, for each property in the list, the mixin outputs the given value. In our case:
 
 ```scss
 .selector {
@@ -204,4 +204,4 @@ Using it couldn't be simpler:
 }
 ```
 
-Thanks (and congratulations) to [Ana Tudor](http://twitter.com/thebabydino) for creating such a shape which made me do some cool Sass stuff.
+Thanks (and congratulations) to [Ana Tudor](https://twitter.com/thebabydino) for creating such a shape which made me do some cool Sass stuff.

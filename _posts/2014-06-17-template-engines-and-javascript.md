@@ -5,11 +5,11 @@ tags:
   - javascript
 ---
 
-I couldn't find an appropriate title. I recently [moved my site from Jekyll to Mixture](http://mixture.io/blog/jekyll-mixture/) and took the time to rethink the way I dealt with JavaScript. In this article, I will give you my opinion regarding this topic and show you how I managed to execute conditional JavaScript depending on global variables.
+I couldn't find an appropriate title. I recently moved my site from Jekyll to Mixture and took the time to rethink the way I dealt with JavaScript. In this article, I will give you my opinion regarding this topic and show you how I managed to execute conditional JavaScript depending on global variables.
 
 ## Template what..?
 
-A template engine is some kind of tool helping you writing markup. [Twig](http://twig.sensiolabs.org/) is the template engine coming with Symfony. Both Jekyll and Mixture uses [Liquid](https://help.shopify.com/themes/liquid/basics), the template engine from Shopify. You may also have heard of Smarty, Mustache.js or Handlebars.js.
+A template engine is some kind of tool helping you writing markup. [Twig](https://twig.symfony.com/) is the template engine coming with Symfony. Both Jekyll and Mixture uses [Liquid](https://help.shopify.com/themes/liquid/basics), the template engine from Shopify. You may also have heard of Smarty, Mustache.js or Handlebars.js.
 
 The idea behind any template engine is to have template files that can be used and reused, imported and extended in order to have a dynamic, DRY and reusable HTML architecture. In this article, I will mostly talk about Liquid because it is the one used by Jekyll and Mixture, as well as Twig which I heavily use at work.
 

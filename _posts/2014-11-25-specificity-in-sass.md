@@ -13,18 +13,18 @@ As any web developer who has to write CSS knows, specificity is both an importan
 
 ![CSS Specificity issue](/assets/images/specificity-in-sass/important.png)
 
-**TL;DR:** Check out the source (and examples) [here on SassMeister](http://sassmeister.com/gist/dbf20a242bcccd1d789c) or directly on [GitHub](https://github.com/davidkpiano/sass-specificity).
+**TL;DR:** Check out the source (and examples) [here on SassMeister](https://sassmeister.com/gist/dbf20a242bcccd1d789c) or directly on [GitHub](https://github.com/davidkpiano/sass-specificity).
 
 ## What is Specificity?
 
-In short, specificity determines **how specific** a selector is. This might sound like a tautology, but the concept is simple: rules contained in a _more specific_ selector will have greater **weight** over rules contained in a _less specific_ selector. This plays a role in the **cascading** part of CSS, and ultimately determines which style rule (the one with the greatest weight) will be applied to an element. Specifically, specificity of a selector is the collective [multiplicity](<http://en.wikipedia.org/wiki/Multiplicity_(mathematics)>) of its simple selector types.
+In short, specificity determines **how specific** a selector is. This might sound like a tautology, but the concept is simple: rules contained in a _more specific_ selector will have greater **weight** over rules contained in a _less specific_ selector. This plays a role in the **cascading** part of CSS, and ultimately determines which style rule (the one with the greatest weight) will be applied to an element. Specifically, specificity of a selector is the collective [multiplicity](https://en.wikipedia.org/wiki/Multiplicity_(mathematics)) of its simple selector types.
 
 There are plenty of articles that further explain/simplify specificity:
 
-* W3C - [the Cascade and Specificity](http://www.w3.org/TR/CSS2/cascade.html#specificity) and [Calculating Specificity](http://www.w3.org/TR/css3-selectors/#specificity);
-* Smashing Mag - [CSS Specificity: Things You Should Know](http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/);
-* CSS Tricks - [Specifics on CSS Specificity](http://css-tricks.com/specifics-on-css-specificity/);
-* CSS Specificity illustrated on [cssspecificity.com](http://cssspecificity.com/);
+* W3C - [the Cascade and Specificity](https://www.w3.org/TR/CSS2/cascade.html#specificity) and [Calculating Specificity](https://www.w3.org/TR/css3-selectors/#specificity);
+* Smashing Mag - [CSS Specificity: Things You Should Know](https://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/);
+* CSS Tricks - [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/);
+* CSS Specificity illustrated on [cssspecificity.com](https://cssspecificity.com/);
 * Sitepoint - [Specificity](https://www.sitepoint.com/web-foundations/specificity/).
 
 ## The Simplicity of Calculating Specificity
@@ -46,7 +46,7 @@ Compound and complex selectors are composed of simple selectors. To calculate sp
 
 ## The Specifics
 
-Now that we have our basic algorithm, let's dive right in to calculating specificity with Sass. In Sass 3.4 (Selective Steve), one of the major new features was the addition of many useful [selector functions](http://sass-lang.com/documentation/Sass/Script/Functions.html#selector_functions) that might have seemed pretty useless...
+Now that we have our basic algorithm, let's dive right in to calculating specificity with Sass. In Sass 3.4 (Selective Steve), one of the major new features was the addition of many useful [selector functions](https://sass-lang.com/documentation/Sass/Script/Functions.html#selector_functions) that might have seemed pretty useless...
 
 ..._until now._ (Okay, I'm sure people have found perfectly good uses for them, but still.)
 
@@ -91,7 +91,7 @@ $types: (
 
 You'll notice that the map is in reverse order, and that's because of our irritable colon (`:`) - both pseudo-elements and pseudo-classes start with one. The less general (pseudo-element) selectors are filtered out first so that they aren't accidentally categorized as a type B selector.
 
-Next, according to the [W3C spec](http://www.w3.org/TR/css3-selectors/#specificity), `:not()` does _not_ count towards specificity, but the simple selector _inside_ the parentheses does count. We can grab that with some string manipulation:
+Next, according to the [W3C spec](https://www.w3.org/TR/css3-selectors/#specificity), `:not()` does _not_ count towards specificity, but the simple selector _inside_ the parentheses does count. We can grab that with some string manipulation:
 
 ```scss
 @if  {
@@ -158,7 +158,7 @@ body nav ul > li > a + div > span ~ div.icon > i:before {
 }
 ```
 
-This [complex selector](http://dev.w3.org/csswg/selectors4/#complex) doesn't look _too_ ridiculous, but its type map is `a: 0, b: 1, c: 10`. If you multiply the types by 10<sup>2</sup>, 10<sup>1</sup>, and 10<sup>0</sup> respectively, and add them together, you get **20**. This implies that the above selector has the same specificity as _two classes_.
+This [complex selector](https://dev.w3.org/csswg/selectors4/#complex) doesn't look _too_ ridiculous, but its type map is `a: 0, b: 1, c: 10`. If you multiply the types by 10<sup>2</sup>, 10<sup>1</sup>, and 10<sup>0</sup> respectively, and add them together, you get **20**. This implies that the above selector has the same specificity as _two classes_.
 
 **This is inaccurate.**
 
@@ -168,7 +168,7 @@ In reality, even a selector with a single class should have greater specificity 
 
 ![What if we tried more power by XKCD](/assets/images/specificity-in-sass/xkcd.png)
 
-I chose base 256 (16<sup>2</sup>) to represent two hexadecimal digits per type. This is historically how specificity was calculated, but also lets [256 classes override an ID](http://www.thecssninja.com/css/extreme-specificity). The larger you make the base, the more accurate your (relative) specificity will be.
+I chose base 256 (16<sup>2</sup>) to represent two hexadecimal digits per type. This is historically how specificity was calculated, but also lets [256 classes override an ID](https://www.thecssninja.com/css/extreme-specificity). The larger you make the base, the more accurate your (relative) specificity will be.
 
 Our job is simple, now. Multiply the multiplicity (frequency) of each type by an exponent of the base according to the map `(a: 2, b: 1, c: 0)` (remember - type A selectors are the most specific). E.g. the selector `#foo .bar.baz > ul > li` would have a **specificity type map** `(a: 1, b: 2, c: 2)` which would give it a specificity of 1 _ 256<sup>2</sup> + 2 _ 256<sup>1</sup> + 2 \* 256<sup>0</sup> = 66050. Here's that function:
 
@@ -193,8 +193,8 @@ Our job is simple, now. Multiply the multiplicity (frequency) of each type by an
 
 Thankfully, with Sass 3.4's selector functions, we can split a selector list comprised of complex and compound selectors into simple selectors. We're going to be using two of these functions:
 
-* [`selector-parse($selector)`](http://sass-lang.com/documentation/Sass/Script/Functions.html#selector_parse-instance_method) to split a [selector list](http://dev.w3.org/csswg/selectors4/#selector-list) into a list of selectors;
-* [`simple-selectors($selector)`](http://sass-lang.com/documentation/Sass/Script/Functions.html#simple_selectors-instance_method) to split each compound/complex selector into a list of simple selectors.
+* [`selector-parse($selector)`](https://sass-lang.com/documentation/Sass/Script/Functions.html#selector_parse-instance_method) to split a [selector list](https://dev.w3.org/csswg/selectors4/#selector-list) into a list of selectors;
+* [`simple-selectors($selector)`](https://sass-lang.com/documentation/Sass/Script/Functions.html#simple_selectors-instance_method) to split each compound/complex selector into a list of simple selectors.
 
 Some points to note: I'm using a homemade `str-replace-batch` function to remove combinators, as these don't count towards specificity:
 
@@ -304,7 +304,7 @@ So, aside from this being another application of a [rethinking of Atwood's Law](
 }
 ```
 
-On top of this, you can [find some way](https://hugogiraudel.com/2014/01/20/json-in-sass/) to communicate the specificities of your selectors to the browser in development, and output a [specificity graph](http://csswizardry.com/2014/10/the-specificity-graph/) to ensure that your CSS is well-organized.
+On top of this, you can [find some way](https://hugogiraudel.com/2014/01/20/json-in-sass/) to communicate the specificities of your selectors to the browser in development, and output a [specificity graph](https://csswizardry.com/2014/10/the-specificity-graph/) to ensure that your CSS is well-organized.
 
 You can take this even further and, if you have dynamic selectors in your SCSS, know ahead of time which one will have the highest specificity:
 
@@ -314,8 +314,8 @@ You can take this even further and, if you have dynamic selectors in your SCSS, 
 }
 ```
 
-The full source for the specificity functions/mixins, as well as examples, are available [here on SassMeister](http://sassmeister.com/gist/dbf20a242bcccd1d789c):
+The full source for the specificity functions/mixins, as well as examples, are available [here on SassMeister](http:s//sassmeister.com/gist/dbf20a242bcccd1d789c):
 
-<p class="sassmeister" data-gist-id="dbf20a242bcccd1d789c" data-height="480" data-theme="tomorrow"><a href="http://sassmeister.com/gist/dbf20a242bcccd1d789c">Play with this gist on SassMeister.</a></p>
+<p class="sassmeister" data-gist-id="dbf20a242bcccd1d789c" data-height="480" data-theme="tomorrow"><a href="http:s//sassmeister.com/gist/dbf20a242bcccd1d789c">Play with this gist on SassMeister.</a></p>
 
 > [David Khourshid](https://twitter.com/davidkpiano) is a front-end web developer in Orlando, Florida. He is passionate about JavaScript, Sass, and cutting-edge front-end technologies. He is also a pianist and enjoys mathematics, and is constantly finding new ways to apply both math and music theory to web development.

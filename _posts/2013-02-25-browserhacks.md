@@ -15,9 +15,9 @@ Hey people! Just a quick post to anounce the very recent launch of [Browserhacks
 
 There are two main reasons that lead us to create Browserhacks.
 
-The first one is that we couldn't find a place where all (at least many) hacks were gathered (or it was way too old; Netscape 4 says hi!). The best spot at the moment is [this great blog post by Paul Irish](http://paulirish.com/2009/browser-specific-css-hacks/), but it's a) a blog post; b) there are a lot of interesting stuff in the hundred of comments nobody will ever read anymore.
+The first one is that we couldn't find a place where all (at least many) hacks were gathered (or it was way too old; Netscape 4 says hi!). The best spot at the moment is [this great blog post by Paul Irish](https://paulirish.com/2009/browser-specific-css-hacks/), but it's a) a blog post; b) there are a lot of interesting stuff in the hundred of comments nobody will ever read anymore.
 
-Anyway, we thought it could be a good idea to get our hands a little dirty and merge [all](http://paulirish.com/2009/browser-specific-css-hacks/) [the](https://gist.github.com/983116) [cool](http://www.impressivewebs.com/ie10-css-hacks/) [sources](http://www.webcredible.co.uk/user-friendly-resources/css/hacks-browser-detection.shtml") we could find on the topic into a lovely tool.
+Anyway, we thought it could be a good idea to get our hands a little dirty and merge [all](https://paulirish.com/2009/browser-specific-css-hacks/) [the](https://gist.github.com/983116) [cool sources](https://www.impressivewebs.com/ie10-css-hacks/) we could find on the topic into a lovely tool.
 
 The other reason is that we wanted to do something together for quite a while now and it was a very good opportunity to do it! So we did.
 

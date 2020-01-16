@@ -5,7 +5,7 @@ tags:
   - riddle
 ---
 
-Yesterday night, I've seen something in my Twitter timeline which excited my curiosity: a CSS challenge. It was proposed by [Raphael Goetter](https://twitter.com/goetter), a famous French front-end developer on [his blog](http://blog.goetter.fr/post/36084887039/tes-pas-cap-premiere-edition).
+Yesterday night, I've seen something in my Twitter timeline which excited my curiosity: a CSS challenge. It was proposed by [Raphael Goetter](https://twitter.com/goetter), a famous French front-end developer on his blog.
 
 Since I'm sure you'll be interested in a little CSS riddle (you will, will you?), let me tell you what this is about.
 

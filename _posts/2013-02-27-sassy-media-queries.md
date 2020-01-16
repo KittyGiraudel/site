@@ -6,13 +6,13 @@ tags:
   - experiment
 ---
 
-Here is a quick blog post aiming at explaining how I turned a ~250-line CSS experiment by [Arley McBlain](http://arleym.com) into less than 30 sexy lines of Sass.
+Here is a quick blog post aiming at explaining how I turned a ~250-line CSS experiment by [Arley McBlain](https://arleym.com) into less than 30 sexy lines of Sass.
 
 First, let me remind you what Arley did in his experiment, topic of a [great article at CSS-tricks](https://css-tricks.com/lark-queries/). His idea was to change some content according to the screen size.
 
 In order to do that, he used a pseudo-element and filled the `content` property accordingly. With about **160 media query calls**, he managed to change the content every 10px from 1920px to 300px (device width).
 
-Check it live on [his website home](http://arleym.com/) or at [CSS-tricks](https://css-tricks.com/examples/LarkQueries/).
+Check it live on [his website home](https://arleym.com/) or at [CSS-tricks](https://css-tricks.com/examples/LarkQueries/).
 
 ## Make it Sassy, make it easy
 
@@ -112,4 +112,4 @@ That's pretty much it. Fairly simple isn't it? This means we can easily add anot
 
 However if we add a couple of words, the last one will trigger under 300px device width, which gets kind of small. To prevent this, we could reverse the loop, starting from the smallest width, increasing from 10 to 10.
 
-Thanks again to [Arley McBlain](http://twitter.com/arleym) for his awesome CSS experiment!
+Thanks again to [Arley McBlain](https://twitter.com/arleym) for his awesome CSS experiment!

@@ -7,7 +7,7 @@ tags:
 
 Hey people! Just a quick article to introduce [Countdown.js](https://github.com/HugoGiraudel/Countdown.js), a little script I recently made. During the last weeks, I've been practicing with JavaScript. It has been on [my wishlist](https://hugogiraudel.com/2013/05/13/things-to-do-2013/) for 2013 and I'm glad that I could made some progress with it.
 
-In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited [an old countdown script](https://codepen.io/HugoGiraudel/pen/jtJrq) I made a while back with the [object literal pattern](http://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/).
+In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited [an old countdown script](https://codepen.io/HugoGiraudel/pen/jtJrq) I made a while back with the [object literal pattern](https://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/).
 
 ## Why another countdown script?
 
@@ -143,9 +143,9 @@ Pretty neat, right?
 
 My brother [Loïc](https://twitter.com/l_giraudel) helped me pushing things further by adding a couple of things to the project on GitHub:
 
-* [JSHint](http://www.jshint.com/) tests to check JavaScript code quality
-* [Jasmine](http://pivotal.github.io/jasmine/) tests to make sure the script does what it's supposed to do
-* [Grunt](http://gruntjs.com/) to automate building process (also thanks to [Lucas Churchill](https://twitter.com/_agtlucas) for this)
+* [JSHint](https://www.jshint.com/) tests to check JavaScript code quality
+* [Jasmine](https://jasmine.github.io/) tests to make sure the script does what it's supposed to do
+* [Grunt](https://gruntjs.com/) to automate building process (also thanks to [Lucas Churchill](https://twitter.com/_agtlucas) for this)
 
 Thanks bro! Anyway, I'm proud to tell this script as passed strict JSHint validations and Jasmine tests! Hurray!
 

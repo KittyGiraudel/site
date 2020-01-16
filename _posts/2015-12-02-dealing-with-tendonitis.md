@@ -23,7 +23,7 @@ When you are in pain and not using your tendons (see first advice), **try puttin
 
 Take anti-inflammatory pills only if you really need it (and if your doctor prescribes some) and stop when you feel like it’s going better. Still, try to **reduce the usage of your tendons to a bare minimum even under anti-inflammatory treatment** (_especially_ when under treatment, actually): they do not heal, they just make the pain disappear. If you keep forcing on your tendons in the mean time, you are making things worse.
 
-**Consider taking specialized food supplements**. [Cicatendon](http://cicatendon.com/) is a French brand focusing on helping getting rid of tendonitises. You can probably order it or find an equivalent in your country. You won’t notice a different within 2 days of course, but I suppose it can help in the long run.
+**Consider taking specialized food supplements**. Cicatendon is a French brand focusing on helping getting rid of tendonitises. You can probably order it or find an equivalent in your country. You won’t notice a different within 2 days of course, but I suppose it can help in the long run.
 
 When dealing with wrist tendonitises, it might be a good idea to **wear a splint**. It is annoying and quite ugly I concede, but it helps maintaining the arm and preventing it from moving too much which would trigger pain (see first advice).
 

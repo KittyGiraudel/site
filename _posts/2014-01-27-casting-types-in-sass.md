@@ -26,7 +26,7 @@ Sass provides a few types:
 
 Let's see how we can cast a value to another data type.
 
-> Update: I just released [SassyCast](https://github.com/HugoGiraudel/SassyCast), also available as an eponym [Compass extension](http://rubygems.org/gems/SassyCast).
+> Update: I just released [SassyCast](https://github.com/HugoGiraudel/SassyCast), also available as an eponym [Compass extension](https://rubygems.org/gems/SassyCast).
 
 ## To string
 

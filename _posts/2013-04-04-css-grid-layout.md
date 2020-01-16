@@ -8,7 +8,7 @@ tags:
 
 > **Edit (2014/05/13):** it looks like Internet Explorer is not the only browser to support the Grid Layout anymore since Chrome 34+ seems able to handle it quite well without any prefix. To the future!
 
-In the last few days/weeks, I have been helping Chris Coyier with [CSS-Tricks' Almanac](http://css-tricks.com/almanac/). It seems he doesn't have enough time to fill the last remaining entries, so we've been a few to help him out by writing them. I have done [perspective](http://css-tricks.com/almanac/properties/p/perspective/), [perspective-origin](http://css-tricks.com/almanac/properties/p/perspective-origin/) and [grid](http://css-tricks.com/almanac/properties/g/grid/).
+In the last few days/weeks, I have been helping Chris Coyier with [CSS-Tricks' Almanac](https://css-tricks.com/almanac/). It seems he doesn't have enough time to fill the last remaining entries, so we've been a few to help him out by writing them. I have done [perspective](https://css-tricks.com/almanac/properties/p/perspective/), [perspective-origin](https://css-tricks.com/almanac/properties/p/perspective-origin/) and [grid](https://css-tricks.com/almanac/properties/g/grid/).
 
 I've to say it's been a real pleasure to do this, mostly because I've learnt literally a ton of stuff. Some people say the best way to learn is through teaching, I can say it's mostly true.
 
@@ -16,7 +16,7 @@ Anyway, if `perspective` and `perspective-origin` have been quite easy to do, I 
 
 ## CSS Grid Layout
 
-The [CSS Grid Layout](http://www.w3.org/TR/css3-grid-layout/) is currently a W3C Working Draft aiming at fixing issues with older layout techniques by providing a better way to achieve complex interface design. Indeed, each solution we (have) use(d) to make web pages has at least a flaw:
+The [CSS Grid Layout](https://www.w3.org/TR/css3-grid-layout/) is currently a W3C Working Draft aiming at fixing issues with older layout techniques by providing a better way to achieve complex interface design. Indeed, each solution we (have) use(d) to make web pages has at least a flaw:
 
 - **HTML tables**: markup dependant, not flexible
 - **float**: clearing
@@ -102,7 +102,7 @@ Now the CSS. Pay attention to the number of lines:
 
 Done. **10 lines. No float. No inline-block. No height. No width. No margin.** And if you want to make everything nice on small devices, it will take no more than a couple of more lines (8 in this example).
 
-_Note: I won't explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at [CSS-Tricks' Almanac entry](http://css-tricks.com/almanac/properties/g/grid/)._
+_Note: I won't explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at [CSS-Tricks' Almanac entry](https://css-tricks.com/almanac/properties/g/grid/)._
 
 ## What about Flexbox?
 
@@ -116,8 +116,6 @@ This question comes from Twitter. However I've been questioning myself regarding
 
 So as I understand this, **the Grid layout is "macro" while the Flexbox module is "micro".** I think Grid will be perfect to organize the layout structure with high-level elements whereas Flexbox will be best-suited for some modules that require specific alignments, ordering and so like a fluid navigation for example.
 
-[Kyle Keeling](https://twitter.com/kyle_keeling) wrote [an entry](http://www.outsidethebracket.com/understanding-the-difference-between-css3-flexbox-grid-layout/) about this a couple of months ago, explaing what he thinks is the difference between Flexbox and Grid.
-
 ## Final words
 
 > I have been amazed by its efficiency.
@@ -130,8 +128,6 @@ Then let's hope in a year from now, the browser support will be great in all mod
 
 Meanwhile, you can still experiment with it on Internet Explorer. Here are a couple of useful resources on the topic:
 
-- [CSS Grid Layout in the CSS specifications](http://www.w3.org/TR/css3-grid-layout/)
-- [CSS Grid Layout by Microsoft](<http://msdn.microsoft.com/en-us/library/ie/hh673533(v=vs.85).aspx>)
-- [Microsoft's CSS Grid layout playground](http://ie.microsoft.com/testdrive/Graphics/hands-on-css3/hands-on_grid.htm)
-- [CSS Grid Layout by 24Ways](http://24ways.org/2012/css3-grid-layout/)
-- [CSS Grid Layout by Raphael Goetter (FR)](http://www.alsacreations.com/article/lire/1388-css3-grid-layout.html)
+- [CSS Grid Layout in the CSS specifications](https://www.w3.org/TR/css3-grid-layout/)
+- [CSS Grid Layout by 24Ways](https://24ways.org/2012/css3-grid-layout/)
+- [CSS Grid Layout by Raphael Goetter (FR)](https://www.alsacreations.com/article/lire/1388-css3-grid-layout.html)

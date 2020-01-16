@@ -9,13 +9,13 @@ tags:
 
 As you may know already, I recently bought a **Samsung Chromebook**. Since it is a fairly new computer and reviews can be quite rare, I thought it would be a good idea to give you my feeling after a couple of weeks of daily use.
 
-Please note I may do a lot of comparisons with both a MacBook Pro since my girlfriend has one, a [MacBook old generation](http://images.appleinsider.com/mb-081009.jpg) since it's the laptop I had before.
+Please note I may do a lot of comparisons with both a MacBook Pro since my girlfriend has one, a MacBook old generation since it's the laptop I had before.
 
 So, **the Chromebook is an ultraportable laptop from Google running on Chrome OS** (Linux core) mostly made for web browsing sold at a lovely price: €299.
 
 <figure class="figure">
 <img src="/assets/images/chromebook-review/chromebook.jpg" alt="">
-<figcaption>Samsung Chromebook - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+<figcaption>Samsung Chromebook - photo by <a href="http://alixlucas.com">Alix Lucas</a></figcaption>
 </figure>
 
 ## Hardware
@@ -60,15 +60,13 @@ Oh man, this is good. You can rely on an average 6.5 hours battery lifetime with
 
 This is definitely a plus not having to worry much about the battery (at least for me).
 
-For in-depth tests on Samsung Chromebook's battery, please refer to [this article](http://fr.ubergizmo.com/2013/03/test-du-chromebook-samsung-serie-3/) (in French, but graphs are in English).
-
 ### Keyboard
 
 The keyboard is pretty nice, really. **Keys are large and smooth** so typing is quite easy and most importantly, noiseless.
 
 <figure class="figure">
 <img src="/assets/images/chromebook-review/chromebook-keyboard.jpg" alt="">
-<figcaption>Samsung Chromebook - photo by <a href="http://alexandralucas.com">Alexandra Lucas</a></figcaption>
+<figcaption>Samsung Chromebook - photo by <a href="http://alixlucas.com">Alix Lucas</a></figcaption>
 </figure>
 
 The Chromebook keyboard has been rearranged and optimized for web browsing. Indeed, the upper row contains _"back"_, _"forward"_ and _"refresh"_ keys. You also have a _"fullscreen"_ and a _"alt-tab"_ like keys along with the traditional _"luminosity"_, _"volume"_ and _"power"_ buttons.

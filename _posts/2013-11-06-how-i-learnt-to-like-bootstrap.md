@@ -15,7 +15,7 @@ Until a recent project where I finally learnt to like Bootstrap, even for websit
 
 ## How did we get there
 
-I recently got hired for quite a big project as the only front-end developer in a team of a dozen of developers. The design itself is fairly complex since it involves various layouts, multiple themes, a lot of forms and a bunch of pages. Thankfully, <a href="">[Symfony 2](http://symfony.com/)</a> and its template engine <a href="">[Twig](http://twig.sensiolabs.org/)</a> make it a lot easier to manage but that's not the point.
+I recently got hired for quite a big project as the only front-end developer in a team of a dozen of developers. The design itself is fairly complex since it involves various layouts, multiple themes, a lot of forms and a bunch of pages. Thankfully, [Symfony 2](https://symfony.com/) and its template engine [Twig](https://twig.symfony.com/) make it a lot easier to manage but that's not the point.
 
 So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly back-end devs.
 

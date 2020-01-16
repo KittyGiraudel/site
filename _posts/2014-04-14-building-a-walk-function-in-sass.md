@@ -7,7 +7,7 @@ tags:
   - functional programming
 ---
 
-> **Edit (2014/11/16):** more functional programming to be found [here](http://sassmeister.com/gist/c36be3440dc2b5ae9ba2).
+> **Edit (2014/11/16):** more functional programming to be found [here](https://sassmeister.com/gist/c36be3440dc2b5ae9ba2).
 
 In the last couple of weeks, I have done some decent amount of code reviewing for various Sass frameworks and I have seen quite clever things. Meanwhile, I keep experimenting with Sass to find cool stuff, and I think this one will get frameworks' maintainers interested.
 
@@ -109,6 +109,6 @@ Regarding the function in itself now, I think it might be used by some framework
 
 By the way, you play with the code on SassMeister:
 
-<p class="sassmeister" data-gist-id="9730068" data-height="480"><a href="http://sassmeister.com/gist/9730068">Play with this gist on SassMeister.</a></p>
+<p class="sassmeister" data-gist-id="9730068" data-height="480"><a href="https://sassmeister.com/gist/9730068">Play with this gist on SassMeister.</a></p>
 
 If you think of anything about the code, be sure to have a word my friends. :)

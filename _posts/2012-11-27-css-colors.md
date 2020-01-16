@@ -207,13 +207,13 @@ That’s why there are keywords. Keywords are real color names like red, green a
 
 <p>Then the CSS2.1 specification added the orange keyword. Finally, CSS3 came with 130 additional keywords for a total of 147 keywords (134 non-gray, 13 gray).</p>
 
-I won’t list all of them here because it would be too long however, this is a visualization of all of them on a hue wheel by [Eric Meyer](http://meyerweb.com/eric/css/colors/hsl-147.html) (see [annotated version by Tab Atkins Jr.](http://www.xanthir.com/blog/b4JC0)):
+I won’t list all of them here because it would be too long however, this is a visualization of all of them on a hue wheel by [Eric Meyer](https://meyerweb.com/eric/css/colors/hsl-147.html) (see [annotated version by Tab Atkins Jr.](https://www.xanthir.com/blog/b4JC0)):
 
 ![Color wheel](/assets/images/css-colors/color-wheel.jpg)
 
 The point of this work is to show keywords are associated to random colors: they are chosen according to their position on the hue wheel.
 
-Eric Meyer also created a color equivalents table in order to know what keyword is associated to which color, with hexadecimal, RGB (both syntax) and HSL versions you [can find here](http://meyerweb.com/eric/css/colors/).
+Eric Meyer also created a color equivalents table in order to know what keyword is associated to which color, with hexadecimal, RGB (both syntax) and HSL versions you [can find here](https://meyerweb.com/eric/css/colors/).
 
 ### Keywords usage
 
@@ -389,7 +389,7 @@ What I think is really cool with HSL however is the fact you can get a shade ins
 
 CSS preprocessors (at least some of them) provide built-in functions to play with colors. Things like saturate, darken, hue rotation and such. Let me introduce some of them.
 
-### LESS (<a href="http://lesscss.org/#-color-functions">doc)
+### [LESS](http://lesscss.org/#-color-functions)
 
 ```less
 lighten(@color, @percentage);               /* Makes lighter */
@@ -408,7 +408,7 @@ mix(@color1, @color2, @percentage);         /* Mixes 2 colors with a default wei
 contrast(@color1, @darkcolor, @lightcolor); /* Returns @darkcolor if the color is >50% luma (i.e. is a light color) otherwise return @lightcolor */
 ```
 
-### Sass (<a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html">doc)
+### [Sass](https://sass-lang.com/docs/yardoc/Sass/Script/Functions.html)
 
 ```scss
 rgba($color, $alpha)               /* Convert a hex color into a RGBa one */
@@ -438,7 +438,7 @@ transparentize($color, $percentage) /* Makes more transparent */
 fade-out($color, $percentage)       /* Makes more transparent */
 ```
 
-### Stylus (<a href="http://learnboost.github.com/stylus/docs/bifs.html">doc)
+### [Stylus](http://stylus-lang.com/docs/bifs.html)
 
 ```stylus
 red(color)          /* Gets the red component */
@@ -462,17 +462,15 @@ Thankfully in CSS we don’t have to use a base 16 converter everytime we want t
 Anyway, back to CSS, let me (re)introduce you a few awesome tools and resources to help you deal with colors:
 
 - [Canva](https://www.canva.com/colors/)
-- [CSS3 Colors slides](http://fr.slideshare.net/maxdesign/css3-colors) by Russ Weakley
-- [CSS Coloratum](http://css.coloratum.com/), a color converter by Lea Verou
+- [CSS3 Colors slides](https://fr.slideshare.net/maxdesign/css3-colors) by Russ Weakley
 - [Build a color scheme: the fundamentals](https://tympanus.net/codrops/2012/09/17/build-a-color-scheme-the-fundamentals/) by Patrick Cox
 - [Using transparency in webdesign: dos and don'ts](https://tympanus.net/codrops/2012/11/26/using-transparency-in-web-design-dos-and-donts/) by Carrie Cousins
 - [Principles or Color and the Color Wheel](https://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/) by Carrie Cousins
 - [Kuler](https://kuler.adobe.com/) by Adobe
-- [Color Scheme Designer](http://colorschemedesigner.com/)
+- [Paletton](http://paletton.com/)
 - [0to255](http://0to255.com/)
-- [Color Equivalents Table](http://meyerweb.com/eric/css/colors/) by Eric Meyer
-- [CSS Color Keyword Distribution](http://www.xanthir.com/blog/b4JC0) by Tab Atkins Jr. ([original work](http://meyerweb.com/eric/css/colors/hsl-147.html) by Eric Meyer)
-- [Developers guide to images](http://www.jessechapo.com/posts/Developers-Guide-to-Images.html)
-- [Official Brand Colors](http://colour.charlottedann.com/) by Charlotte Dann
+- [Color Equivalents Table](https://meyerweb.com/eric/css/colors/) by Eric Meyer
+- [CSS Color Keyword Distribution](https://www.xanthir.com/blog/b4JC0) by Tab Atkins Jr. ([original work](https://meyerweb.com/eric/css/colors/hsl-147.html) by Eric Meyer)
+- [Developers guide to images](https://www.jessechapo.com/posts/Developers-Guide-to-Images.html)
 
 Thanks a lot for reading this article. If you have any question or feedback, please be sure to share. Also, if you find any mistake, I'd be glad to correct it. ;)

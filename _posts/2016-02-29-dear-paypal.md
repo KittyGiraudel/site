@@ -26,7 +26,7 @@ You surely know the saying: “hard to guess, easy to remember.” It turns out,
 
 <figure class="figure">
   <img src="/assets/images/dear-paypal/xkcd.png" alt="Hard to guess, easy to remember" />
-  <figcaption>From <a href="http://xkcd.com/936/">xkcd #936</a></figcaption>
+  <figcaption>From <a href="https://xkcd.com/936/">xkcd #936</a></figcaption>
 </figure>
 
 On top of that, you also make the process of choosing / changing a password so hard and painful. Finding a password is quite annoying in itself. How do you think people feel when they have to find 2, 3 or 4 passwords in a row because none of them fit your stupid “strength” criterias?

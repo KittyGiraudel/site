@@ -27,11 +27,11 @@ Actually, it was so welcome that some lovely folks started translating it in dif
 
 If you read Sass Guidelines in anything but English, be sure to thank the translators. I am sure that will make their day. :)
 
-Anyway, managing different languages as part of a [Jekyll](http://jekyllrb.com) powered site turned out to be quite an interesting challenge in order to keep everything scalable, so I thought _why not writing about this_. Hence you reading this.
+Anyway, managing different languages as part of a [Jekyll](https://jekyllrb.com) powered site turned out to be quite an interesting challenge in order to keep everything scalable, so I thought _why not writing about this_. Hence you reading this.
 
 ## Translating the content
 
-A translation of Sass Guidelines consists on a folder named after the [language code](http://www.w3.org/TR/html401/types.html#type-langcode) of the translation, for instance `en` for English, or `cz` for Czech. This folder should contain all 18 chapters in Markdown (one file per chapter) as well as an `index.md` file to import them all.
+A translation of Sass Guidelines consists on a folder named after the [language code](https://www.w3.org/TR/html401/types.html#type-langcode) of the translation, for instance `en` for English, or `cz` for Czech. This folder should contain all 18 chapters in Markdown (one file per chapter) as well as an `index.md` file to import them all.
 
 For instance, the [French translation](https://github.com/HugoGiraudel/sass-guidelines/tree/gh-pages/fr) looks like this:
 
@@ -108,7 +108,7 @@ That's it. The only difference between the French index and the Polish index is 
 {% include donate.html %}
 ```
 
-[This tag](http://jekyllrb.com/docs/templates/#including-files-relative-to-another-file) from Jekyll makes it possible to include a file not from the `_includes` folder but from the current folder. Now this is where it's getting tricky: while `chapters.html` lives in `_includes`, `{% include_relative %}` doesn't include from the `_includes` folder but from the folder where lives the requested page (including `chapters.html`), for instance `fr/`.
+[This tag](https://jekyllrb.com/docs/templates/#including-files-relative-to-another-file) from Jekyll makes it possible to include a file not from the `_includes` folder but from the current folder. Now this is where it's getting tricky: while `chapters.html` lives in `_includes`, `{% include_relative %}` doesn't include from the `_includes` folder but from the folder where lives the requested page (including `chapters.html`), for instance `fr/`.
 
 That's pretty much how it works.
 
@@ -163,7 +163,7 @@ fr:
   available: true
   translators:
     - name: Pierre Choffé
-      link: http://la-cascade.ghost.io
+      link: https://la-cascade.io/
 # Other languages...
 ```
 

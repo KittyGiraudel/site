@@ -13,7 +13,7 @@ Speaking of survey, another quick one about text align told me to switch to left
 
 ## Development
 
-I was playing with [Sass](http://sass-lang.com/) during the last couple of days and decided it could be cool to build the blog on it, so now it is. Since the site is pretty small, it's no big deal. Actually I used only very few of the potential of Sass (or whatever other CSS preprocessor):
+I was playing with [Sass](https://sass-lang.com/) during the last couple of days and decided it could be cool to build the blog on it, so now it is. Since the site is pretty small, it's no big deal. Actually I used only very few of the potential of Sass (or whatever other CSS preprocessor):
 
 - Variables
 - Nested styles
@@ -26,7 +26,7 @@ Anyway, it's cool.
 
 ### Prism as a syntax highlighter
 
-You may have also noticed I've included [Prism.js](http://prismjs.com/) from Lea Verou on the blog as a syntax highlighter for code snippets. I'm pretty happy with it, I think it makes the code easier to read.
+You may have also noticed I've included [Prism.js](https://prismjs.com/) from Lea Verou on the blog as a syntax highlighter for code snippets. I'm pretty happy with it, I think it makes the code easier to read.
 
 Only issue I see right now with Prism.js is it has some issues with processed CSS syntax such as LESS and Sass, but it's no big deal.
 

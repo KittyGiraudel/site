@@ -11,7 +11,7 @@ tags:
 
 <!-- -->
 
-> **Edit (2014/05/13):** this article is getting old and while it still is perfectly valid, I have kind of changed my mind about this whole px to rem thing. I now use something simpler, like [this](http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/).
+> **Edit (2014/05/13):** this article is getting old and while it still is perfectly valid, I have kind of changed my mind about this whole px to rem thing. I now use something simpler, like [this](https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/).
 
 ## About REM
 
@@ -19,7 +19,7 @@ Everybody loves relative units. They are handy and help us solve daily problems.
 
 As an example, setting both `p` and `li` tags font-size to `1.2em` may seem fine. But if you ever happen to have a paragraph inside a list item, it would result in a font-size 1.44 times (1.2 \* 1.2) bigger than parent font-size, and not 1.2 as wished.
 
-To avoid this, a new unit has been created: [`rem`](http://snook.ca/archives/html_and_css/font-size-with-rem). It stands for _root em_. Basically, instead of being relative to the font-size of its direct parent, it's relative to the font-size defined for the `html` element.
+To avoid this, a new unit has been created: [`rem`](https://snook.ca/archives/html_and_css/font-size-with-rem). It stands for _root em_. Basically, instead of being relative to the font-size of its direct parent, it's relative to the font-size defined for the `html` element.
 
 You may have already seen something like this in frameworks, demo, blog posts and such:
 
@@ -114,7 +114,7 @@ This may be a bit rough so let me explain it:
 1. If the two lists are the same, we ouput only one (like `margin-top: 0`)
 1. We output the result
 
-_Thanks to [Moving Primates](http://twitter.com/movingprimates) to improve the mixin by adding step 8. ;)_
+_Thanks to [Moving Primates](https://twitter.com/movingprimates) to improve the mixin by adding step 8. ;)_
 
 ### Usage
 

@@ -11,7 +11,7 @@ tags:
 <figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
 </figure>
 
-Yesterday, famous French front-end developer [Rémi Parmentier proposed a little CSS brain-teaser on his blog](http://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.
+Yesterday, famous French front-end developer [Rémi Parmentier proposed a little CSS brain-teaser on his blog](https://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.
 
 I gave it a go and it turned out to be much easier than I firstly expected. No weird cross browser issue, no dirty hack and mostly just plain ol' good CSS. But you may want to give it a try, don't you?
 
@@ -84,7 +84,7 @@ And the middle cells have two grey spans so their width is _one orange item + tw
 
 ## Doing it in CSS
 
-Now that we've computed everything on paper, we need to move all this stuff to the stylesheet. Thankfully CSS provides us the ultimate way to do cross-unit calculations: `calc`. Even better, `calc` is [supported from IE9](http://caniuse.com/#search=calc) so we only have to draw a quick and dirty fallback for IE8 and we're good to go.
+Now that we've computed everything on paper, we need to move all this stuff to the stylesheet. Thankfully CSS provides us the ultimate way to do cross-unit calculations: `calc`. Even better, `calc` is [supported from IE9](https://caniuse.com/#search=calc) so we only have to draw a quick and dirty fallback for IE8 and we're good to go.
 
 ### How to distinguish side cells from middle cells
 

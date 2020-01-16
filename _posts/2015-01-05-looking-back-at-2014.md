@@ -8,7 +8,7 @@ Happy New Year to y'all folks! I hope you enjoyed your holidays.
 
 The end of the year often means looking back at the last dozen of months to see what has been done and what's not. Because of this, this article is mostly personal; kind of a note to myself to keep track of what I have done this year.
 
-_Note: let me take this occasion as an opportunity to suggest you read [this article](http://meyerweb.com/eric/thoughts/2014/12/24/inadvertent-algorithmic-cruelty/) from Eric Meyer about this whole "your-year-on-our-network" thing. Quite heartbreaking, definitely insightful to us all designers and developers._
+_Note: let me take this occasion as an opportunity to suggest you read [this article](https://meyerweb.com/eric/thoughts/2014/12/24/inadvertent-algorithmic-cruelty/) from Eric Meyer about this whole "your-year-on-our-network" thing. Quite heartbreaking, definitely insightful to us all designers and developers._
 
 ## I started writing for money
 
@@ -42,7 +42,7 @@ Later this year, in November, [I gave my first talk in English](https://hugogira
 
 Apparently I wrote a book this year. It is not published yet, will be in January 2015 if no mistake. Anyway I spent over 7 months working on it with the help of [Raphaël Goetter](https://twitter.com/goetter), so I think it deserves a big spot on the list of things I've done in 2014.
 
-The book will be entitled "[CSS 3, Pratique du Design Web](http://www.amazon.fr/dp/2212140231)" (French for "CSS 3 for Web Design"), and published by French editor [Eyrolles](http://www.eyrolles.com/). Oh, and the preface is from [Chris Coyier](https://twitter.com/chriscoyier) himself.
+The book will be entitled "[CSS 3, Pratique du Design Web](https://www.amazon.fr/dp/2212140231)" (French for "CSS 3 for Web Design"), and published by French editor [Eyrolles](https://www.eyrolles.com/). Oh, and the preface is from [Chris Coyier](https://twitter.com/chriscoyier) himself.
 
 An article specifically about this will be released soon.
 

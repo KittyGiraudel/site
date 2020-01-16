@@ -9,7 +9,7 @@ tags:
 
 Lists have to be the most complicated and vicious thing in the whole Sass language. The main problem with lists -if a problem it is- is that the syntax is way too permissive. You can do pretty much whatever you want.
 
-Anyway, I recently had the opportunity to write [an article for CSS-Tricks](http://css-tricks.com/striped-background-gradients/) about a Sass function involving quite a lot of list manipulation. I introduced the topic by clearing a couple of things regarding Sass lists but I wanted to write a more in-depth article.
+Anyway, I recently had the opportunity to write [an article for CSS-Tricks](https://css-tricks.com/striped-background-gradients/) about a Sass function involving quite a lot of list manipulation. I introduced the topic by clearing a couple of things regarding Sass lists but I wanted to write a more in-depth article.
 
 ## Creating a Sass list
 

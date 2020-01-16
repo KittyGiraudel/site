@@ -8,7 +8,7 @@ tags:
 
 > I wrote this article months ago when I was first experimenting with Sass 3.3 alpha features. I came up with a pretty crazy solution to generate a random number in Sass. However it looks like [Sass 3.3 will implement a random function](https://github.com/nex3/sass/pull/968) so we won't need all this stuff. I still publish it for fun. :)
 
-Everything started when I was spying on Sass 3.3 source code on GitHub for my article about the [future of Sass](http://davidwalsh.name/future-sass) at David Walsh' Blog. I was sniffing the incoming functions when all of the sudden I came by a `unique-id()` function.
+Everything started when I was spying on Sass 3.3 source code on GitHub for my article about the [future of Sass](https://davidwalsh.name/future-sass) at David Walsh' Blog. I was sniffing the incoming functions when all of the sudden I came by a `unique-id()` function.
 
 According to the [issue](https://github.com/nex3/sass/issues/771) which started this idea, the `unique-id()` function should return a unique random alphanumeric identifier that could be used for whatever you like. As far as I understood the example provided by Chris Eppstein, it could be used to dynamically generate and extend a placeholder from within a mixin. Kind of complicated stuff, really.
 
@@ -126,7 +126,7 @@ Before going to the last line, let's have a look at the `toInt` function:
 
 For every character, we isolate it (`$char`) and convert it to its numeric equivalent (`$charVal`) thanks to the `$chars` array. Then, we multiply this number to the base raised to the reversed index in the string. That may sound a little complicated, let me rephrase it: in base 10, `426` equals `4*10^2` + `2*10^1` + `6*10^0`. That's pretty much what we do here, except instead of `10` we use the base, and instead of `2`, `1` and `0`, we use the length of string minus the index of the current character.
 
-The `pow()` function used to raise a value to an exponent is part of [Compass Math helpers](http://compass-style.org/reference/compass/helpers/math/). In case you don't want to use Compass or simply can't use Compass, here is the `pow()` function in pure Sass:
+The `pow()` function used to raise a value to an exponent is part of [Compass Math helpers](https://compass-style.org/reference/compass/helpers/math/). In case you don't want to use Compass or simply can't use Compass, here is the `pow()` function in pure Sass:
 
 ```scss
 @function pow($val, $pow) {

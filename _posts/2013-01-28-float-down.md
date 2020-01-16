@@ -6,7 +6,7 @@ tags:
   - float
 ---
 
-Back in september, some guy exposed a very interesting problem on [CSS-tricks forums](http://css-tricks.com/forums/discussion/19610/float-items). To sum up, he had a list of elements floated to the left. However, he wanted to float items top to bottom on each column and not left to right on each row.
+Back in september, some guy exposed a very interesting problem on [CSS-tricks forums](https://css-tricks.com/forums/discussion/19610/float-items). To sum up, he had a list of elements floated to the left. However, he wanted to float items top to bottom on each column and not left to right on each row.
 
 He started with:
 
@@ -22,11 +22,11 @@ And wanted to end with:
 
 Even if I'm not a flexbox expert, I'm pretty confident saying there is a way to do it very easily. The problem with flexbox is that it's not fully compatible so we had to look for another option.
 
-Actually [Bennett Feely](http://twitter.com/bennettfeely) did it very nicely already on [CodePen](https://codepen.io/bennettfeely/pen/firxL).
+Actually [Bennett Feely](https://twitter.com/bennettfeely) did it very nicely already on [CodePen](https://codepen.io/bennettfeely/pen/firxL).
 
 ### Manually
 
-I first managed to do it with `:nth-child()` selectors, replacing manually each one of the ten elements ([JSFiddle](http://jsfiddle.net/VAdT3/1/)). It sucked because it was:
+I first managed to do it with `:nth-child()` selectors, replacing manually each one of the ten elements ([JSFiddle](https://jsfiddle.net/VAdT3/1/)). It sucked because it was:
 
 - Manual,
 - Dependant of the number of items,
@@ -43,7 +43,7 @@ $('.myList > li:odd')
   .appendTo('.myList')
 ```
 
-Basically I target one out of two items with `:nth-child(even)` then remove it from the DOM to finally append it again. This does exactly what was asked so I think it's a decent solution ([JSFiddle](http://jsfiddle.net/VAdT3/6/)).
+Basically I target one out of two items with `:nth-child(even)` then remove it from the DOM to finally append it again. This does exactly what was asked so I think it's a decent solution ([JSFiddle](https://jsfiddle.net/VAdT3/6/)).
 
 ### Margins
 
@@ -74,7 +74,7 @@ Congratulations to her for such a smart solution. :)
 
 ## Pushing it further
 
-A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitter.com/chriscoyier/status/295223893516500993) about it. Someone (in the person of [Arash Milani](http://twitter.com/arashmilan)) answered it wasn't possible to do it with more than 2 rows.
+A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitter.com/chriscoyier/status/295223893516500993) about it. Someone (in the person of [Arash Milani](https://twitter.com/arashmilan)) answered it wasn't possible to do it with more than 2 rows.
 
 **CHALLENGE ACCEPTED!** This made me want to give it a shot. Honestly, it took me a few tries and no more than 10 minutes to find a solution for 3 rows.
 

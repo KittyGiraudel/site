@@ -11,7 +11,7 @@ tags:
 
 Chances are, as a front-end developer, you've heard of Facebook's library for building user interfaces, [React](https://facebook.github.io/react/). Of course, an important part of building UI is styling it, as well. React strongly enforces the idea that a user interface is composed of many ["reusable components with well-defined interfaces"](https://facebook.github.io/react/docs/reusable-components.html), and many CSS methodologies and architectures embrace this as well, including:
 
-- [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
+- [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)
 - [SMACSS](https://smacss.com/)
 - [OOCSS](http://oocss.org/)
 - [The 7-1 Pattern](https://sass-guidelin.es/#architecture)
@@ -54,7 +54,7 @@ Using the 7-1 pattern, the file organization for our datepicker component looks 
 
 ![Simple Datepicker file organization](https://i.imgur.com/5KxdGRH.png)
 
-All of our React components are in the `/components` folder, which are imported inside `index.js`. [Webpack](http://webpack.github.io/) is used in this example to bundle the JS (and optionally the CSS) files, which we'll explain later.
+All of our React components are in the `/components` folder, which are imported inside `index.js`. [Webpack](https://webpack.github.io/) is used in this example to bundle the JS (and optionally the CSS) files, which we'll explain later.
 
 Each component used is represented in Sass inside the `/stylesheets/components` folder, which is part of the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern). Inside `/stylesheets`, `/base` and `/utils` is also included -- `/base` includes a simple box-sizing reset, and `/utils` includes a clearfix mixin and shared constants (variables). The `/layout`, `/pages`, and `/vendors` folders are not necessary for this project.
 
@@ -173,7 +173,7 @@ require('./stylesheets/main.scss')
 React.render(<Datepicker />, document.querySelector('.my-datepicker-component'))
 ```
 
-... and include the proper loader ([sass-loader](https://github.com/jtangelder/sass-loader), in this case) in `webpack.config.js`. You can also compile Sass files separately into CSS, and embed them inside the bundle using `require('./stylesheets/main.css')`. For more info, check out the [Webpack documentation on stylesheets](http://webpack.github.io/docs/stylesheets.html).
+... and include the proper loader ([sass-loader](https://github.com/jtangelder/sass-loader), in this case) in `webpack.config.js`. You can also compile Sass files separately into CSS, and embed them inside the bundle using `require('./stylesheets/main.css')`. For more info, check out the [Webpack documentation on stylesheets](https://webpack.github.io/docs/stylesheets.html).
 
 For bundle-independent compilation, you have a few options, such as [using Gulp](https://www.sitepoint.com/simple-gulpy-workflow-sass/), Grunt, or `sass --watch src/stylesheets/main.scss:dist/stylesheets/main.css`. To keep dependencies to a minimum, this project uses the `sass watch` command line option. Use whichever workflow you and your team are most comfortable with.
 
@@ -191,7 +191,7 @@ It's worth mentioning (repeatedly) that **CSS selectors are not variables**. Sel
 - Non-namespaced attribute selectors (e.g. `[aria-checked], [data-foo], [type]`)
 - A pseudoselector that's not within a [compound selector](https://dev.w3.org/csswg/selectors-4/#structure) (e.g. `:hover`, `.foo > :checked`)
 
-There are a few ways to "namespace" a selector so that there's very little risk of unintentional styling (not to be confused with [`@namespace`](http://www.w3.org/TR/css3-namespace/)):
+There are a few ways to "namespace" a selector so that there's very little risk of unintentional styling (not to be confused with [`@namespace`](https://www.w3.org/TR/css3-namespace/)):
 
 - Prefixing classes (e.g. `.sd-date`, `.sd-calendar`)
 - Prefixing attributes (e.g. `[data-sd-value]`)
@@ -222,7 +222,7 @@ Add [clean-css](https://github.com/jakubpawlowicz/clean-css) to your build proce
 
 ### Sharing Constants
 
-You're in luck -- Sass has [variables](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_) for this very purpose. Lists and maps give you more flexibility in organizing shared values between components. In the 7-1 pattern, variables can be referenced in a `utils/_variables.scss` file, or you can get more granular and store related variables in the `base/` folder, such as `base/_typography.scss` for font sizes and names, or `base/_colors.scss` for brand and asset colors used in your project. Check out the [Sass guidelines](https://sass-guidelin.es/#variables) for more information.
+You're in luck -- Sass has [variables](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_) for this very purpose. Lists and maps give you more flexibility in organizing shared values between components. In the 7-1 pattern, variables can be referenced in a `utils/_variables.scss` file, or you can get more granular and store related variables in the `base/` folder, such as `base/_typography.scss` for font sizes and names, or `base/_colors.scss` for brand and asset colors used in your project. Check out the [Sass guidelines](https://sass-guidelin.es/#variables) for more information.
 
 ### Non-deterministic Resolution
 

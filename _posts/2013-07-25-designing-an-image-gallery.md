@@ -9,28 +9,28 @@ tags:
 
 > **Edit (2014/11/16):** I took time to improve this site. It now works fine without JavaScript and has been ported to Jekyll. Also both Sass and JavaScript code have been improved.
 
-Hey people! I recently had the opportunity to work on a cool little project I'd like to talk about: an advanced image gallery with some really cool features. Indeed, I've been asked to design and develop the site of [Alexandra Lucas](http://alexandralucas.com) to promote her work as a French photographer. Since I'm a big fan of her work, I accepted and it turned out to be quite fun to work on this project.
+Hey people! I recently had the opportunity to work on a cool little project I'd like to talk about: an advanced image gallery with some really cool features. Indeed, I've been asked to design and develop the site of [Alix Lucas](http://whyalix.com) to promote her work as a French photographer. Since I'm a big fan of her work, I accepted and it turned out to be quite fun to work on this project.
 
 Let's say things straight: I'd never have the opportunity to work on an image gallery before. Actually I did but back then I didn't give a shit about performance, responsive design, high-density displays and all the topics cool kids always talk about. So this time I've been faced with some difficulties I had not encountered before; meaning I had to solve them by myself.
 
 <figure class="figure">
-<img src="/assets/images/designing-an-image-gallery/alexandralucas.jpg" alt="">
-<figcaption><a href="http://alexandralucas.com" target="_blank" rel="noopener noreferrer">Alexandralucas.com</a></figcaption>
+<img src="/assets/images/designing-an-image-gallery/whyalix.jpg" alt="">
+<figcaption><a href="http://whyalix.com" target="_blank" rel="noopener noreferrer">whyalix.com</a></figcaption>
 </figure>
 
 ## Working on the layout
 
-The main content of the site is **photographs**. The goal is to show them. Alexandra wanted something "Flickr-like". Some sort of wall of photos that automagically adapt to the size of your screen. Kind of a cool layout, really.
+The main content of the site is **photographs**. The goal is to show them. Alix wanted something "Flickr-like". Some sort of wall of photos that automagically adapt to the size of your screen. Kind of a cool layout, really.
 
 At first I thought about doing it myself and then...
 
 ![Coding a responsive image gallery by hand? What about no!](/assets/images/designing-an-image-gallery/how-about-no-bear.jpg)
 
-It would have been a pain in the ass to work out such a "complicated" layout so I thought about [Masonry](http://masonry.desandro.com/) but that's kind of old school, right? In the end, I went with Isotope for layouting the items.
+It would have been a pain in the ass to work out such a "complicated" layout so I thought about [Masonry](https://masonry.desandro.com/) but that's kind of old school, right? In the end, I went with Isotope for layouting the items.
 
 > Isotope is the best JavaScript plugin I ever worked with.
 
-[Isotope](https://github.com/desandro/isotope) has to be the best JavaScript plugin I ever worked with. Developed by [David Desandro](http://v3.desandro.com/), **you can think of it as _Masonry 2.0_**. It makes complicated box-based layouts fully customizable and above all **easy**.
+[Isotope](https://github.com/desandro/isotope) has to be the best JavaScript plugin I ever worked with. Developed by [David Desandro](https://v3.desandro.com/), **you can think of it as _Masonry 2.0_**. It makes complicated box-based layouts fully customizable and above all **easy**.
 
 The idea is quite simple: you define a container that will draw boundaries for the layout and Isotope will move all its child elements according to the available room.
 
@@ -72,14 +72,14 @@ The first one was pretty easy to do since Isotope comes with a built-in way to f
 
 I didn't want to add classes for this so I added a `data-album` attribute to every item and passed it the name of the album the image belongs to. Then, I give something like this to the `data-filter` attribute of the filter list: `[data-album\*='album-name']` (literally _everything with a `data-album` attribute containing 'album-name'_). Easy peasy!
 
-Regarding the second feature, I basically needed a little lightbox thingie to display an image in fullsize when clicked. I could have made one but since I am definitely not a JavaScript ninja, I would probably have ended with a code that could be improved. So I decided to rely on a built-in solution; I wanted something which is both nice and efficient so I went with Avgrund from [Hakim El Hattab](http://hakim.se/).
+Regarding the second feature, I basically needed a little lightbox thingie to display an image in fullsize when clicked. I could have made one but since I am definitely not a JavaScript ninja, I would probably have ended with a code that could be improved. So I decided to rely on a built-in solution; I wanted something which is both nice and efficient so I went with Avgrund from [Hakim El Hattab](https://hakim.se/).
 
 <figure class="figure">
 <img src="/assets/images/designing-an-image-gallery/lightbox.jpg" alt="">
-<figcaption><a href="http://alexandralucas.com" target="_blank" rel="noopener noreferrer">Lightbox powered by Avgrund</a></figcaption>
+<figcaption><a href="http://whyalix.com" target="_blank" rel="noopener noreferrer">Lightbox powered by Avgrund</a></figcaption>
 </figure>
 
-[Avgrund](http://lab.hakim.se/avgrund/) is a very lightweight modal plugin that does exactly what I want: open a modal on click, close it with a close button or the `ESC` key or clicking out of the lightbox.
+[Avgrund](https://lab.hakim.se/avgrund/) is a very lightweight modal plugin that does exactly what I want: open a modal on click, close it with a close button or the `ESC` key or clicking out of the lightbox.
 
 ### Adding some fanciness
 
@@ -121,7 +121,7 @@ Of course, we wanted the site to look acceptable (if not good!) on small devices
 
 <figure class="figure">
 <img src="/assets/images/designing-an-image-gallery/phoneview.png" alt="">
-<figcaption><a href="http://alexandralucas.com" target="_blank" rel="noopener noreferrer">View on most smartphone</a></figcaption>
+<figcaption><a href="http://whyalix.com" target="_blank" rel="noopener noreferrer">View on most smartphone</a></figcaption>
 </figure>
 
 Thankfully, Isotope handled most of the work for me: when there is no more room for two columns, it wraps everything into a single one. I only had to make the "sidebar" static, remove the left-margin of the main container, tweak a couple of things and it was okay.
@@ -144,7 +144,7 @@ There are quite a few ways to handle graphics on retina displays and it is no su
 
 CSS image replacement within `@media` blocks can work great... if you deal with background-images. It is even simpler with a preprocessor thanks to clever mixins ([HiDPI](https://github.com/kaelig/hidpi) for Sass, [Retina.less](https://github.com/imulus/retinajs/blob/master/src/retina.less) for LESS).
 
-But when you only have `img` tags, you can't do it with CSS only. So you start looking for a JavaScript solution and hopefully you find [RetinaJS](http://retinajs.com/) which is a great little script to handle high-density displays image convertion.
+But when you only have `img` tags, you can't do it with CSS only. So you start looking for a JavaScript solution and hopefully you find [RetinaJS](https://imulus.github.io/retinajs/) which is a great little script to handle high-density displays image convertion.
 
 Basically the script parses all your image tags, make an AJAX request on your server to check whether there is a file with the same name and a `@2x` appended right before the extension and if there is it swaps the current source with the one it found. All of this only if you are using a retina display obviously.
 
@@ -156,13 +156,13 @@ _Edit: I finally wrote my own script to deal with high-density displays because 
 
 I think this is what took me the most time in the entire project even if I have a decent knowledge of front-end performance (without being an expert).
 
-Of course I minified my stylesheets (with Sass) and my JS scripts (with [YUI Compressor](http://refresh-sf.com/yui/)). I set up Gzip with `.htaccess` along with some cache stuff. I even added a DNS prefect for Google Fonts. And even if all this stuff is really nice, the most important thing to optimize here is... images.
+Of course I minified my stylesheets (with Sass) and my JS scripts (with [YUI Compressor](https://refresh-sf.com/)). I set up Gzip with `.htaccess` along with some cache stuff. I even added a DNS prefect for Google Fonts. And even if all this stuff is really nice, the most important thing to optimize here is... images.
 
 When I first set up the layout with images and all, I used really big pictures like 1600*1059px and I was like *"I resize them automagically with CSS"\*. Sure. And the page weighed about 35Mb. Ouch.
 
-I quickly understood I had to handle 2 files for each image: one for the thumbnail (400\*266) and a bigger one for when you click on it (800+). This is what I did. I also smushed all images with [JpegMini](http://www.jpegmini.com/) to remove unnecessary meta-data. The page went down to 750Kb. Not bad, right? Still not good enough though, especially for a small device on a crappy 3G connection.
+I quickly understood I had to handle 2 files for each image: one for the thumbnail (400\*266) and a bigger one for when you click on it (800+). This is what I did. I also smushed all images with [JpegMini](https://www.jpegmini.com/) to remove unnecessary meta-data. The page went down to 750Kb. Not bad, right? Still not good enough though, especially for a small device on a crappy 3G connection.
 
-The next step was to load images when they are needed. To put it simple, only load images that are actually displayed on the screen and not the one that are below the fold. This is called _lazy loading_. Thankfully, I found an amazing [JavaScript plugin doing this](http://www.appelsiini.net/projects/lazyload). All I had to do was turning my markup into something like this:
+The next step was to load images when they are needed. To put it simple, only load images that are actually displayed on the screen and not the one that are below the fold. This is called _lazy loading_. Thankfully, I found an amazing [JavaScript plugin doing this](https://www.appelsiini.net/projects/lazyload). All I had to do was turning my markup into something like this:
 
 ```html
 <li class="gallery__item" data-album="album-name">
@@ -187,4 +187,4 @@ Thanks to LazyLoad, I could bring down the page to 380Kb on a regular desktop sc
 
 Even if it is a really really small projects (took me a couple of hours), I have to say I am pretty satisfied with the current look. It feels nice and smooth on both a desktop screen and a mobile device. Image performance was pretty fun to deal with and I learnt quite a few things in the way.
 
-Anyway, if you got any tip, advice or comment, be sure to share! Meanwhile, you can still follow [@isendil](http://twitter.com/isendil) on Twitter for more awesome photos. ;)
+Anyway, if you got any tip, advice or comment, be sure to share! Meanwhile, you can still follow [@isendil](https://twitter.com/isendil) on Twitter for more awesome photos. ;)
