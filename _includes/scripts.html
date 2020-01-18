@@ -1,7 +1,9 @@
 <script src="/assets/js/main.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', loadApp)
-
+</script>
+{% if environment.production %}
+<script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('/service-worker.js', { scope: '/' })
@@ -19,3 +21,4 @@ if ('serviceWorker' in navigator) {
     })
 }
 </script>
+{% endif %}

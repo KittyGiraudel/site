@@ -47,6 +47,7 @@ exclude:
   - sw-precache-config.js
 include:
   - _redirects
+environment: production
 
 # Navigation
 nav:
