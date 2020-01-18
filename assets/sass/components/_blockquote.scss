@@ -1,9 +1,19 @@
 blockquote {
-  margin: 0 0 1.5em;
-  border-left: 0.5em solid $soft-pink;
-  padding: 0.75em 0.75em 0.75em 2em;
-  color: rgb(119, 119, 119);
-  background-color: rgb(255, 250, 253);
+  margin: 5px 0 1.5em;
+  padding: 0.75em 1.5em;
+  background-color: lighten($soft-pink, 30%);
+  position: relative;
+}
+
+blockquote::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-image: linear-gradient(to right, stripes($colors));
+  opacity: 0.7;
 }
 
 /**
