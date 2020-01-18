@@ -10,6 +10,7 @@
 
 .PostNavigation__item {
   position: relative;
+  line-height: 1.1;
 
   @include media('>tablet') {
     max-width: 50%;
@@ -26,7 +27,7 @@
   content: '';
   display: block;
   width: 100%;
-  margin: 0;
+  margin: 0.5em 0 0;
 }
 
 .PostNavigation__item--previous::before,
