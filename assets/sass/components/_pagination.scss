@@ -1,9 +1,3 @@
-.Pagination {
-  margin: 1.5em 0;
-  text-align: center;
-  padding: 0;
-}
-
-.Pagination__link:visited {
-  color: $soft-blue;
+.Pagination.PostNavigation {
+  font-size: 120%;
 }

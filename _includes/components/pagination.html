@@ -1,20 +1,20 @@
 {% assign paginator = include.paginator %}
 
 {% if paginator %}
-<ul class="Pagination DottedList">
+<div class="Pagination PostNavigation">
   {% if paginator.previous_page %}
-  <li class="Pagination__item">
-    <a class="Pagination__link" href="{{ paginator.previous_page_path }}">
-      ← Previous
+  <p class="PostNavigation__item">
+    <a class="PostNavigation__link" href="{{ paginator.previous_page_path }}">
+      ← Previous posts
     </a>
-  </li>
+  </p>
   {% endif %}
   {% if paginator.next_page %}
-  <li class="Pagination__item">
-    <a class="Pagination__link" href="{{ paginator.next_page_path }}">
-      Next →
+  <p class="PostNavigation__item">
+    <a class="PostNavigation__link" href="{{ paginator.next_page_path }}">
+      Next posts →
     </a>
-  </li>
+  </p>
   {% endif %}
-</ul>
+</div>
 {% endif %}
