@@ -1,0 +1,21 @@
+.SkipLink {
+  display: none;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  top: calc(0.5em + 10px);
+  left: 0.75em;
+  font-size: 80%;
+  outline: none;
+
+  @include media('>tablet') {
+    display: block;
+  }
+}
+
+.SkipLink:focus {
+  height: auto;
+  width: auto;
+  border-bottom: 2px solid $soft-pink;
+}

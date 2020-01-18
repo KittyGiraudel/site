@@ -11,7 +11,7 @@
   width: 100%; /* 1 */
   margin: 0 auto;
 
-  @include media('>=medium') {
+  @include media('>=tablet') {
     padding-left: 2em;
     padding-right: 2em;
   }

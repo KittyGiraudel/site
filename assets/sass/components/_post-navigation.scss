@@ -1,0 +1,56 @@
+.PostNavigation {
+  font-size: 90%;
+  margin-top: 3em;
+
+  @include media('>tablet') {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.PostNavigation__item {
+  position: relative;
+
+  @include media('>tablet') {
+    max-width: 50%;
+  }
+}
+
+.PostNavigation__item--next {
+  @include media('>tablet') {
+    text-align: right;
+  }
+}
+
+.PostNavigation__link::before {
+  content: '';
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+.PostNavigation__item--previous::before,
+.PostNavigation__item--next::after {
+  position: absolute;
+  top: 0;
+  color: $soft-pink;
+  font-weight: bold;
+}
+
+.PostNavigation__item--previous::before {
+  right: 100%;
+  margin-right: 1ch;
+
+  @include media('>tablet') {
+    content: '←';
+  }
+}
+
+.PostNavigation__item--next::after {
+  left: 100%;
+  margin-left: 1ch;
+
+  @include media('>tablet') {
+    content: '→';
+  }
+}

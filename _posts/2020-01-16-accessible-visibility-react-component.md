@@ -7,7 +7,7 @@ tags:
   - component
 ---
 
-In [Cache-Cache CSS](https://www.ffoodd.fr/cache-cache-css/) (translated by yours truly on this very blog as [CSS hide-and-seek](https://hugogiraudel.com/2016/10/13/css-hide-and-seek/)), Gaël Poupard offers a bulletproof solution to visually hide some content while keeping it accessible to assistive technologies.
+In [Cache-Cache CSS](https://www.ffoodd.fr/cache-cache-css/) (translated by yours truly on this very blog as [CSS hide-and-seek](/2016/10/13/css-hide-and-seek/)), Gaël Poupard offers a bulletproof solution to visually hide some content while keeping it accessible to assistive technologies.
 
 In this post, I want to show a teeny-tiny React component to make it more explicit and convenient to use the original utility class.
 

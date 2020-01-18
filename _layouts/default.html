@@ -5,9 +5,10 @@
 
   <body>
     <div class="container">
+      {% include components/skip_link.html %}
       {% include components/header.html %}
 
-      <main class="main" role="main">
+      <main class="Main" role="main" id="main">
         {{ content }}
       </main>
     </div>

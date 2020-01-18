@@ -1,4 +1,4 @@
-.title {
+.Title {
   color: $soft-pink;
   font-size: 2.5em;
   font-weight: 300;
@@ -6,12 +6,12 @@
   margin: 1em 0 0.5em;
   text-align: center;
 
-  @include media('>=medium') {
+  @include media('>=tablet') {
     font-size: 3.5em;
   }
 }
 
-.title > a {
+.Title__link {
   color: inherit;
   border-bottom: 0;
 }

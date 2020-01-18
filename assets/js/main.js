@@ -10,6 +10,25 @@
     return Array.prototype.slice.call(nodes)
   }
 
+
+  // http://joelcalifa.com/blog/revisiting-visited
+  function markVisitedLinks () {
+    localStorage.setItem('visited-' + window.location.pathname, true);
+    var links = $('.Main a');
+
+    for (i = 0; i < links.length; i += 1) {
+      var link = links[i];
+      var trailingSlash = link.pathname.endsWith('/') ? '' : '/'
+
+      if (
+        link.host === window.location.host &&
+        localStorage.getItem('visited-' + link.pathname + trailingSlash)
+      ) {
+        link.dataset.visited = true;
+      }
+    }
+  }
+
   function loadAds(callback) {
     loadJS(ADS_URL, callback)
   }
@@ -26,6 +45,7 @@
     loadAds()
     loadSassMeister()
     loadCodePen()
+    markVisitedLinks()
   }
 
   global.loadApp = loadApp

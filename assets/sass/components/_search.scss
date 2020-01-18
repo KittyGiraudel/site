@@ -1,12 +1,20 @@
-.search-container {
+.Search {
   clear: both;
   margin-top: 3em;
 }
 
-.search-input {
+.Search__input {
   width: 100%;
   display: block;
-  padding: 1em;
+  padding: 0.5em 0;
   margin-bottom: 1.5em;
   color: inherit;
+  border: 0;
+  border-bottom: 2px solid $soft-blue;
+}
+
+.Search__input:focus {
+  outline: 0;
+  border-bottom-style: double;
+  border-bottom-color: $soft-pink;
 }

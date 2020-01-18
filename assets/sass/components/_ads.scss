@@ -1,7 +1,7 @@
 /**
  * Site advertisement
  */
-.site-ad {
+.Ad {
   margin-top: 1.5em;
 
   @include media('>=1300px') {
@@ -15,7 +15,7 @@
  * Change default styles of CarbonAds
  * `!important` used to override inline styles
  */
-.carbonad {
+.Ad__container {
   background: transparent !important;
   height: auto !important;
   border: 0 !important;
@@ -23,7 +23,7 @@
   margin: 0 auto;
 }
 
-.carbonad a {
+.Ad__container a {
   color: inherit !important;
 }
 

@@ -22,19 +22,25 @@ html {
  */
 body {
   color: #444;
-  font: 1.25em / 1.5 $text-font-stack;
+  font: 125% / 1.5 'Baskerville', 'Lucida Bright', 'Perpetua', 'Times', 'Times New Roman',
+  'Palatino', 'Bookman', 'New Century Schoolbook', serif;
   overflow-x: hidden; /* 1 */
 
-  @include media(">=medium") {
-    font-size: 1.4em;
+  @include media(">=tablet") {
+    font-size: 140%;
   }
+}
+
+body::before {
+  content: '';
+  height: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(to right, stripes($colors));
 }
 
 p {
   margin-bottom: 1.5em;
-}
-
-abbr[title] {
-  border-bottom: 1px dotted inherit;
-  cursor: help;
 }

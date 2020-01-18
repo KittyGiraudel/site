@@ -10,13 +10,7 @@ tags:
 
 In almost 300 posts, I probably have written something at least a bit interesting. What about giving it a search?
 
-<noscript>Unfortunately this site has no server-side search available, so please enable JavaScript in your browser to be able to use the provided search engine. Or you could give <a href="https://cse.google.com/cse/publicurl?cx=009396935484082696627:sfmsndgcu2q" target="_blank" rel="noopener noreferrer">a try</a>.</noscript>
-
-<div class="search-container" id="search-container">
-  <label for="search-input" class="search-label visually-hidden">Search</label>
-  <input type="text" id="search-input" class="search-input" placeholder="Search…" role="search" autofocus>
-  <ul id="results-container" class="search-results  articles  list"></ul>
-</div>
+{% include components/search.html %}
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -28,13 +22,13 @@ function search () {
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: 'data.json',
-    searchResultTemplate: '<li class="list__item">\
-      <div class="list__item-inner">\
-        <span class="list__secondary-content">{date}{guest}{external}</span>\
-        <a href="{url}" class="list__primary-content">{title}</a>\
+    searchResultTemplate: '<li class="List__item">\
+      <div class="List__item-inner">\
+        <span class="List__secondary-content">{date}{guest}{external}</span>\
+        <a href="{url}" class="List__primary-content">{title}</a>\
       </div>\
     </li>',
-    noResultsText: '<li class="list__item">Sorry, I could not find any result for your search. :( Hey, if you really wanna have results, I suggest looking for “sass”!</li>'
+    noResultsText: '<li class="List__item">Sorry, I could not find any result for your search. :( Hey, if you really wanna have results, I suggest looking for “access” or “sass”!</li>'
   });
 }
 </script>

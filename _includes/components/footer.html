@@ -1,13 +1,13 @@
-<footer class="footer" role="contentinfo">
-
-  <div class="nav">
-    <ul class="nav__list dotted-list">
-      <li class="nav__item">
-        <a class="nav__link" href="/rss/">RSS</a>
+<footer class="Footer" role="contentinfo">
+  <div class="container">
+    <p class="Footer__copy">&copy;&nbsp;2012-{{ 'now' | date: '%Y' }} Hugo Giraudel</p><!--
+    --><ul class="Footer__list avigation__list DottedList">
+      <li class="Navigation__item">
+        <a class="Navigation__link" href="/rss/">RSS</a>
       </li>
-      <li class="nav__item">
+      <li class="Navigation__item">
         <a
-          class="nav__link"
+          class="Navigation__link"
           href="https://github.com/HugoGiraudel"
           target="_blank"
           rel="noopener noreferrer"
@@ -15,9 +15,9 @@
         >
       </li>
 
-      <li class="nav__item">
+      <li class="Navigation__item">
         <a
-          class="nav__link"
+          class="Navigation__link"
           href="https://twitter.com/HugoGiraudel"
           target="_blank"
           rel="noopener noreferrer"
@@ -25,9 +25,5 @@
         >
       </li>
     </ul>
-  </div>
-
-  <div class="container">
-    <p>&copy;&nbsp;2012-{{ 'now' | date: '%Y' }} Hugo Giraudel · hosted on <a href="https://netlify.com">Netlify</a></p>
   </div>
 </footer>

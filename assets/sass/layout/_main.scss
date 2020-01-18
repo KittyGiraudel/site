@@ -1,5 +1,29 @@
-.main {
-  background-color: rgb(255, 255, 255);
-  overflow: hidden;
-  padding: 1.5em 0;
+.Main {
+  @include media('>tablet') {
+    padding: 1em 0;
+  }
+}
+
+.Main a {
+  outline: 0;
+  color: inherit;
+  border-bottom: 0;
+  text-decoration: none;
+  background-image: linear-gradient(to right, lighten($soft-pink, 20%),lighten($soft-blue, 40%));
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: 250ms ease-in;
+}
+
+.Main a:hover,
+.Main a:active,
+.Main a:focus {
+  background-size: 100% 88%;
+}
+
+.Main a[data-visited]::after {
+  content: ' ✓';
+  opacity: 0.5;
+  font-size: 80%;
 }

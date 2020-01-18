@@ -2,20 +2,23 @@
 layout: default
 ---
 
-<article itemscope itemtype="https://schema.org/Article" class="article">
+
+<article itemscope itemtype="https://schema.org/Article" class="Post">
   {% capture reading_time %}{% include components/reading_time.html %}{% endcapture %}
 
   {% if page.date %}
-    <p itemprop="datePublished" class="post-date">{{ page.date | date: "%B %d, %Y" }}
+    <p itemprop="datePublished" class="PostDate">{{ page.date | date: "%B %d, %Y" }}
     {% if page.guest %} &mdash; by <span itemprop="author">{{ page.guest }}</span>{% endif %}
-    · <span itemtype="timeRequired">{{ reading_time | strip }}</span></p>
+    {% if page.external %}{% else %}· <span itemtype="timeRequired">{{ reading_time | strip }}</span>{% endif %}</p>
   {% endif %}
 
   {% if page.external %}
-    <p>The post is not hosted on <a href="/">hugogiraudel.com</a>. Please go to <a href="{{ page.external.url }}">{{ page.external.host }}</a> to read it.</p>
+    <p>This article is not hosted on <a href="/">hugogiraudel.com</a>. You will be automatically redirected to <a href="{{ page.external.url }}">{{ page.external.host }}</a> to read it. If it doesn’t work, please manually follow the link.</p>
   {% endif %}
 
   <div itemtype="articleBody">
   {{ content }}
   </div>
 </article>
+
+{% include components/post_navigation.html %}

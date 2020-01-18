@@ -1,19 +1,5 @@
-<header class="header" role="banner">
-  {% if page.title %}
-    <h1 class="title" itemprop="title"><a href="/">{{ page.title }}</a></h1>
-  {% endif %}
-
-  <nav role="navigation" class="nav">
-    <ul class="nav__list dotted-list">
-      {% for item in site.nav %}
-      <li
-        class="nav__item{% if page.url == item.url %}  is-active{% endif %} {{ item.theme }}"
-      >
-        <a class="nav__link" href="{{ item.url }}">{{ item.label }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </nav>
-
+<header class="Header" role="banner">
+  {% include components/title.html title = page.title %}
+  {% include components/navigation.html %}
   {% include components/ad.html %}
 </header>

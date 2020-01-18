@@ -1,13 +1,14 @@
-.post-date {
+.PostDate {
   text-align: center;
   margin-bottom: 3em;
 }
 
-.post-date::after {
+.PostDate::after {
   content: '';
   display: block;
   width: 25%;
   height: 1px;
   margin: 1em auto 0;
   background-color: $soft-blue;
+  background-image: linear-gradient(to right, $soft-pink, $soft-blue);
 }
