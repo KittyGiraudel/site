@@ -16,6 +16,13 @@ pre code {
   display: block;
 }
 
+:not(pre):not(a) > code {
+  background-color: lighten($soft-pink, 25%);
+  border-radius: 0.25em;
+  padding: 0 0.2em;
+  font-size: 70%;
+}
+
 $hl-light-green: #55efc4;
 $hl-green: #00b894;
 $hl-blue-light: #74b9ff;
