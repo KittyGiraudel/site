@@ -19,7 +19,7 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 - 🏠 I moved out of my parents’ house, in with my then partner in their apartment in Grenoble (France).
 - 🇩🇪 I moved from Grenoble (France) to Berlin (Germany), then moved two more times in Berlin, although both times on the same street (I like it here).
 - 🤓 I taught myself English and worked hard to disguise my accent as “non-native but not French either”.
-- ✊ I started learning a 3rd language (Dutch, as mentioned in [my article about 2019](https://hugogiraudel.com/2019/12/31/looking-back-at-2019/)).
+- ✊ I started learning a 3rd language (Dutch, as mentioned in [my article about 2019](/2019/12/31/looking-back-at-2019/)).
 - ✈️ I have been to 14 countries across Europe, and left Europe on a single occasion to visit Istanbul (Turkey).
 - 🐈 I got (and still have) 3 cats: [Griffith and Lilith, from my former relationship](https://twitter.com/HugoGiraudel/status/830035815036239872), and [Macbeth from my current partner](https://twitter.com/HugoGiraudel/status/1168626800425091073).
 - 💵 Thanks to hard work and more importantly a lot of privileges, I managed to become financially independent.
@@ -27,14 +27,14 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 ## Work
 
 - ❌ I failed to get my diploma in Computer Science.
-- 📚 I wrote 2 books: [one book on CSS](https://hugogiraudel.com/2015/02/23/what-i-learnt-from-writing-a-book/) and [one book on Sass](https://www.sitepoint.com/introducing-our-newest-book-jump-start-sass/).
+- 📚 I wrote 2 books: [one book on CSS](/2015/02/23/what-i-learnt-from-writing-a-book/) and [one book on Sass](https://www.sitepoint.com/introducing-our-newest-book-jump-start-sass/).
 - 👀 I got to endorse and be a reviewer for “CSS Secrets”, Lea Verou’s bestselling CSS book — which is not nothing for me given she is one of the figures who inspired me to pursue a career in web development.
-- 📝 I [wrote over 250 articles](https://hugogiraudel.com/blog/), some on highly regarded websites such as CSS-Tricks, Codrops, Tuts+ and SitePoint (read [how I got to write for the web](https://hugogiraudel.com/2014/05/26/how-i-came-to-write-for-the-web/)).
+- 📝 I [wrote over 250 articles](/blog/), some on highly regarded websites such as CSS-Tricks, Codrops, Tuts+ and SitePoint (read [how I got to write for the web](/2014/05/26/how-i-came-to-write-for-the-web/)).
 - 🏦 I worked in 4 different companies across 2 countries, 3 of them being banks or bank-related.
 - 🏆 I [got short-listed for Developer of the Year 2015](https://thenetawards.com/vote/developer/) by Net Awards (although I should have been in the “Young Developer of the Year” category at that time, since I was under 25).
 - 🤓 I have been a Google Developer Expert in web development.
-- 🎤 I [spoke at a dozen conferences](https://hugogiraudel.com/speaking/) over Europe.
-- 👩‍💻 I [authored or co-authored over 40 open-source projects](https://hugogiraudel.com/projects/), such as [Sass Guidelines](https://sass-guidelin.es/), [SassDoc](http://sassdoc.com/) and [Browserhacks](http://browserhacks.com/).
+- 🎤 I [spoke at a dozen conferences](/speaking/) over Europe.
+- 👩‍💻 I [authored or co-authored over 40 open-source projects](/projects/), such as [Sass Guidelines](https://sass-guidelin.es/), [SassDoc](http://sassdoc.com/) and [Browserhacks](http://browserhacks.com/).
 - 🐦 I have never been on Facebook, but did get on Twitter and have built a substantial audience, principally around web development.
 - ♿️ I got really invested in digital accessibility, making it the flagship of my current position, and trying my best to make the web a better place.
 
@@ -48,7 +48,7 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 
 ## Health & insights
 
-- 🖐 I [experienced some form of tendonitis](https://hugogiraudel.com/2015/12/02/dealing-with-tendonitis/) caused by high level of stress during the break-up with my former partner.
+- 🖐 I [experienced some form of tendonitis](/2015/12/02/dealing-with-tendonitis/) caused by high level of stress during the break-up with my former partner.
 - 🦶 I managed to twist both my ankles in one night, making for a fun trip home back from Croatia (not).
 - 🏳️‍🌈 I learnt that sexuality and, more importantly for me, gender as well as physical representation are flexible concepts and that it’s okay to experiment with them.
 - 😬 I’ve come to realise that I am not always good enough, that I have flaws, that I can be a jerk (with or without wanting to be one) and that being a good human being takes effort and self-reflection.

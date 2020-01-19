@@ -221,7 +221,7 @@ Outputs:
 }
 ```
 
-On topic, I have writen a blog post about a robust and extensive PX/REM Sass mixin called [The Ultimate REM mixin](https://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/).
+On topic, I have writen a blog post about a robust and extensive PX/REM Sass mixin called [The Ultimate REM mixin](/2013/03/18/ultimate-rem-mixin/).
 
 ## Media queries made easy
 

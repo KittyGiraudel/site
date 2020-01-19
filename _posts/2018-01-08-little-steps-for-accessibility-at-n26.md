@@ -90,7 +90,7 @@ Input.propTypes = {
 }
 ```
 
-This way, the label is required to render an `Input` component, making sure never to introduce an unlabelled form field. Then, you could add a prop to [make the label correctly invisible to assistive technologies](https://hugogiraudel.com/2016/10/13/css-hide-and-seek/) so that no developer has to write it by hand, risking doing something incorrect such as `display: none`.
+This way, the label is required to render an `Input` component, making sure never to introduce an unlabelled form field. Then, you could add a prop to [make the label correctly invisible to assistive technologies](/2016/10/13/css-hide-and-seek/) so that no developer has to write it by hand, risking doing something incorrect such as `display: none`.
 
 The general idea is to make sure all accessibility related considerations don’t have to be repeated and are implicitly embedded in the development process. Again, this obviously won’t prevent all mistakes from happening, but over time it will dramatically reduce the number of flagged issues.
 

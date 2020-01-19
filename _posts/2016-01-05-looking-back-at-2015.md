@@ -15,7 +15,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 💥 **February 5th**. I, with [SassDoc team](http://sassdoc.com/about/), [released the second major version](https://www.sitepoint.com/sassdoc-2-shiny-streamy-octopus/) of SassDoc, my big project of 2014. It was quite a large launch for us as it involved a complete rewriting, a redesign, a new site, a logo, a lot of tests, and so on. Pretty happy with what we have so far and for good reason: the [Zurb Foundation framework](https://foundation.zurb.com/sites/docs/v/5.5.3/sass.html) is using SassDoc to document all their Sass assets!
 
-📘 **February 27th**. I released my very first book, [CSS 3 Pratique du Design Web](https://css3-pratique.fr/). It took me about [half of 2014 to write](https://hugogiraudel.com/2015/02/23/what-i-learnt-from-writing-a-book/), and I am very proud to see it live. Holding your very first book in your hands is a priceless feeling and hopefully it is something I will renew!
+📘 **February 27th**. I released my very first book, [CSS 3 Pratique du Design Web](https://css3-pratique.fr/). It took me about [half of 2014 to write](/2015/02/23/what-i-learnt-from-writing-a-book/), and I am very proud to see it live. Holding your very first book in your hands is a priceless feeling and hopefully it is something I will renew!
 
 🇩🇪 **March 15th**. I moved from Grenoble (France) to Berlin (Germany), despite not knowing a single word of German. I learnt a few words since then but it’s still far from ideal. In any case, I learnt to love the city and its how open-minded people. Planning on staying there for a while.
 
@@ -30,11 +30,11 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 ✒ **May 12th**. I signed a contract with SitePoint to co-author [Jump Start Sass](https://www.sitepoint.com/premium/books/jump-start-sass) with [Miriam Suzanne](https://twitter.com/mirisuzanne) (author of Susy grid engine), an introduction book to Sass which will be released in February this year (if all goes right).
 
-🔙 **May 29th**. I [moved my site back to Jekyll](https://hugogiraudel.com/2015/05/29/oh-jekyll-here-we-go-again/) after roughly a year on Mixture. Took it at an opportunity to freshen up the design and add a few features. Might seem like nothing, but we all know that the project we usually deal the less with is our own site. :)
+🔙 **May 29th**. I [moved my site back to Jekyll](/2015/05/29/oh-jekyll-here-we-go-again/) after roughly a year on Mixture. Took it at an opportunity to freshen up the design and add a few features. Might seem like nothing, but we all know that the project we usually deal the less with is our own site. :)
 
 📝 **June 24th**. I released in a joint effort with SitePoint the [SitePoint Sass Reference](https://www.sitepoint.com/introducing-the-sitepoint-sass-reference/), a platform aiming at explaining the Sass buzzwords, mostly targetted at new comers.
 
-❓**July 19th**. I opened a [Ask Me Anything](https://hugogiraudel.com/2015/07/19/ask-me-anything/) repository and replied to over 50 questions already. Feel free to add your owns!
+❓**July 19th**. I opened a [Ask Me Anything](/2015/07/19/ask-me-anything/) repository and replied to over 50 questions already. Feel free to add your owns!
 
 🏆 **July 20th**. I made it to the [shortlist](https://www.edenspiekermann.com/blog/posts/net-awards-shortlist) for the “Developer of the Year” Net Award. At 23, needless to say it is a huge honor. [Sara Soueidan](https://sarasoueidan.com/blog/developer-of-the-year-2-15-net-award/) later won the well-deserved award on September 21st.
 
@@ -45,7 +45,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 🎤 **August 27 — 28th**. I gave a talk entitled [Three Years of Purging Sass](https://speakerdeck.com/hugogiraudel/three-years-of-purging-sass) at Frontend Conference in Zurich. It was a great venue, and as always, a good opportunity to meet all the nice folks from our industry.
 
-🔥 **August — September**. Some time at the end of the summer, I started suffering from tendonitis on my right wrist, probably (although yet to be confirmed) due to a larger than average amount of stress at that time. To this day, I still happen to feel some pain in the arm, even though I [found some tricks to leverage it](https://hugogiraudel.com/2015/12/02/dealing-with-tendonitis/).
+🔥 **August — September**. Some time at the end of the summer, I started suffering from tendonitis on my right wrist, probably (although yet to be confirmed) due to a larger than average amount of stress at that time. To this day, I still happen to feel some pain in the arm, even though I [found some tricks to leverage it](/2015/12/02/dealing-with-tendonitis/).
 
 🇹🇷 **September 17 — 21st**. I left Europe for the very first time, although didn’t go much further and visited Istanbul. Very interesting city, although probably not one I would like to live in. I have good memories though.
 
@@ -53,7 +53,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 ✨ **November 6th**. I built [node-legofy](https://github.com/HugoGiraudel/node-legofy) with my friend [Valérian Galliat](https://twitter.com/valeriangalliat), a script to convert your images to mosaics of LEGO. Super fun side project.
 
-💬 **December 7th**. I created the [SJSJ](https://hugogiraudel.com/2015/12/07/introducing-sjsj/) (Simplified JavaScript Jargon) repository as an attempt to make the JavaScript buzzwords a bit less obscure to new comers. I am astonished as how welcome the project is, with already over 1300 stars on GitHub. Keep it up you people!
+💬 **December 7th**. I created the [SJSJ](/2015/12/07/introducing-sjsj/) (Simplified JavaScript Jargon) repository as an attempt to make the JavaScript buzzwords a bit less obscure to new comers. I am astonished as how welcome the project is, with already over 1300 stars on GitHub. Keep it up you people!
 
 And that’s pretty much it I guess. Which is already a lot for a single year if you ask me! 2015 is also the year where I started pool (billards) as a serious hobby (quite antinomic some would say). Again, all in all, it was quite a good year, rich in new experiences and people. Let’s hope 2016 gets similar. :)
 

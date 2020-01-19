@@ -5,7 +5,7 @@ tags:
   - riddle
 ---
 
-> Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](https://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/).
+> Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](/2014/02/19/the-magic-circle-a-css-brain-teaser/).
 
 Time’s up people! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it’s pretty cool to dig into your code to see how you’ve worked around the problem.
 
@@ -292,7 +292,7 @@ When it comes to Internet Explorer 8, or actually any browser not supporting any
 
 [Rafał Krupiński](https://codepen.io/rkrupinski/pen/psrBm) came up with a solution using radial-gradients. Even better, he used `calc` **in** the radial-gradients declaration to keep things fluid. You’ve to admit that’s clever. His solution is probably the one involving the lowest amount of code, at the price of browser support though. Anyway, congratulations Rafał!
 
-I was hoping for one, [Gaël Poupard](https://codepen.io/ffoodd/pen/xHFjg) did it: a solution with `clip-path`. Plus his code is fully commented so be sure to have a look at this beauty. [His comment](https://hugogiraudel.com/2014/02/19/the-magic-circle-a-css-brain-teaser/#comment-1259685947) on the original post is also worth a read. Nice one Gaël!
+I was hoping for one, [Gaël Poupard](https://codepen.io/ffoodd/pen/xHFjg) did it: a solution with `clip-path`. Plus his code is fully commented so be sure to have a look at this beauty. [His comment](/2014/02/19/the-magic-circle-a-css-brain-teaser/#comment-1259685947) on the original post is also worth a read. Nice one Gaël!
 
 Last but not least, [Vithun Kumar Gajendra](https://codepen.io/vithun/full/gazbD) made an interesting demo animating the pseudo-elements to show the trick. Note he used duplicated background-image on pseudo-elements rather than box-shadows/borders, that’s a cool one too!
 

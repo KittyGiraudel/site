@@ -23,7 +23,7 @@ So the main idea is to enable a Google Web Font using a variable to have only on
 
 **Bonus:** make it work with compound font names (such as “Roboto Condensed”).
 
-Accustomed to Sass like me will wonder where is the difficulty in this little exercise. Problem is LESS is extremely annoying when it comes to both url() and string concatenation. I partially covered the topic in <a href="https://hugogiraudel.com/2012/11/13/less-to-sass/">this article</a>.
+Accustomed to Sass like me will wonder where is the difficulty in this little exercise. Problem is LESS is extremely annoying when it comes to both url() and string concatenation. I partially covered the topic in <a href="/2012/11/13/less-to-sass/">this article</a>.
 
 ```scss
 /* Sass version */

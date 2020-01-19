@@ -4,7 +4,7 @@ tags:
   - blog
 ---
 
-Hey people! Yesterday, the blog was 6 months old. Launched in [November 9th 2012](https://hugogiraudel.com/2012/11/09/redesign-blog/) as a quick and dirty plateform to drop some posts when I get time, now built on [Jekyll](https://jekyllrb.com/), [Sass](https://sass-lang.com/) and [GitHub Pages](https://github.com/HugoGiraudel/hugogiraudel.github.com), I have to say I am pretty happy with what I have done so far with this.
+Hey people! Yesterday, the blog was 6 months old. Launched in [November 9th 2012](/2012/11/09/redesign-blog/) as a quick and dirty plateform to drop some posts when I get time, now built on [Jekyll](https://jekyllrb.com/), [Sass](https://sass-lang.com/) and [GitHub Pages](https://github.com/HugoGiraudel/hugogiraudel.github.com), I have to say I am pretty happy with what I have done so far with this.
 
 I take this article as an opportunity to make some kind of assessment. Any comment appreciated of course. ;)
 
@@ -12,9 +12,9 @@ I take this article as an opportunity to make some kind of assessment. Any comme
 
 ### About the blog
 
-In 6 months, I’ve released exactly 30 articles (this is 31st) including 3 specials: 2 interviews ([one of me from Clément Osternaud](https://hugogiraudel.com/2013/04/23/interview-by-clement-osternaud/) and [one of Manoela Ilic from me](https://hugogiraudel.com/2013/03/11/interview-manoela-ilic/) and a guest post ([from Ana Tudor](https://hugogiraudel.com/2013/02/04/css-gradients/)).
+In 6 months, I’ve released exactly 30 articles (this is 31st) including 3 specials: 2 interviews ([one of me from Clément Osternaud](/2013/04/23/interview-by-clement-osternaud/) and [one of Manoela Ilic from me](/2013/03/11/interview-manoela-ilic/) and a guest post ([from Ana Tudor](/2013/02/04/css-gradients/)).
 
-The most successful article is definitely [Dig deep into CSS linear gradients](https://hugogiraudel.com/2013/02/04/css-gradients/) (the guest post from Ana Tudor) with more than 30,000 viewed pages and 32 comments. Then it is a very old one: [Why I switched from LESS to Sass](https://hugogiraudel.com/2012/11/13/less-to-sass/) with over 12,000 viewed pages for 29 comments. The third most read article is [My CSS aha moment](https://hugogiraudel.com/2013/04/30/css-aha-moment/) with about 11,000 viewed pages and 30 comments. Note that other articles like [Why a CSS alternative to the select element is not possible](https://hugogiraudel.com/2013/04/08/css-alternative-select/), [Simulate float: down](https://hugogiraudel.com/2013/01/28/float-down/) and [Future of CSS layout: Grid](https://hugogiraudel.com/2013/04/04/css-grid-layout/) has been very welcomed as well.
+The most successful article is definitely [Dig deep into CSS linear gradients](/2013/02/04/css-gradients/) (the guest post from Ana Tudor) with more than 30,000 viewed pages and 32 comments. Then it is a very old one: [Why I switched from LESS to Sass](/2012/11/13/less-to-sass/) with over 12,000 viewed pages for 29 comments. The third most read article is [My CSS aha moment](/2013/04/30/css-aha-moment/) with about 11,000 viewed pages and 30 comments. Note that other articles like [Why a CSS alternative to the select element is not possible](/2013/04/08/css-alternative-select/), [Simulate float: down](/2013/01/28/float-down/) and [Future of CSS layout: Grid](/2013/04/04/css-grid-layout/) has been very welcomed as well.
 
 All articles have drawn more than **82,000 unique visitors** for about **150,000 viewed pages**. The average visit duration is close to one minute, and the number of page per visit is around 1.4.
 

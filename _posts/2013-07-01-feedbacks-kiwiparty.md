@@ -54,7 +54,7 @@ In the end, I had a couple of questions (most of them very relevant) which I was
 
 ## Why Sass?
 
-Well, it’s been [almost 9 months](https://hugogiraudel.com/2012/11/13/less-to-sass/) now I am using Sass on an almost-daily basis. In the last few months, I’ve been intensively hacking around the language, reading every tiny bit of documentation I could find (especially Compass' one) to push things further.
+Well, it’s been [almost 9 months](/2012/11/13/less-to-sass/) now I am using Sass on an almost-daily basis. In the last few months, I’ve been intensively hacking around the language, reading every tiny bit of documentation I could find (especially Compass' one) to push things further.
 
 When my girlfriend suggested I give a talk at KiwiParty back in April, I laughed. I had nothing to talk about. Then, it was kind of an inception; the idea kept spinning in my head looking for a topic to speak about. Until I found it: **Sass**.
 

@@ -109,7 +109,7 @@ Meanwhile `json-decode` has been a pain in the ass to write, so much that I was 
 
 One of the main problem we faced was the ability to retrieve numbers and colors. You see, when you parse a string, everything is a _string_. Even if _you_ now this part is a number and this part is a boolean, when you slice your string all you have is shorter strings. Not numbers and booleans.
 
-And this is a big deal, because when you use those tiny bits of decoded JSON in your Sass, types matter. If you go `42px * 2` but `42px` is actually a `string` and not a `number` as it should be, [then your code breaks](https://hugogiraudel.com/2013/09/03/use-lengths-not-strings/) and Sass is furious and you are sad. Hence [this article](https://hugogiraudel.com/2014/01/15/sass-string-to-number/) about casting a string into a number in Sass.
+And this is a big deal, because when you use those tiny bits of decoded JSON in your Sass, types matter. If you go `42px * 2` but `42px` is actually a `string` and not a `number` as it should be, [then your code breaks](/2013/09/03/use-lengths-not-strings/) and Sass is furious and you are sad. Hence [this article](/2014/01/15/sass-string-to-number/) about casting a string into a number in Sass.
 
 ### Getting started
 

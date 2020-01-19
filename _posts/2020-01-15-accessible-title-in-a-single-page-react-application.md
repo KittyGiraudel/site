@@ -104,7 +104,7 @@ const Root = () => (
 The last missing piece of the puzzle is the actual title announcer. It does a few things:
 
 - It holds the page title in a local state.
-- It renders said title in a visually hidden paragraph (here with the [`.sr-only` class](https://hugogiraudel.com/2016/10/13/css-hide-and-seek/#wrapping-things-up)).
+- It renders said title in a visually hidden paragraph (here with the [`.sr-only` class](/2016/10/13/css-hide-and-seek/#wrapping-things-up)).
 - It listens to Helmet data change to update the local state.
 - It listens for page change to focus the hidden paragraph (hence the `tabIndex={-1}`).
 

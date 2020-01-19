@@ -8,7 +8,7 @@ tags:
 
 > **Edit (2015/06/06)**: One year later, I know think it’s better not to have a mixin for this. Less Sass, more native CSS.
 
-About a year ago, I wrote about how I managed to come up with what I think is [a clever Sass mixin to deal with offset positioning](https://hugogiraudel.com/2013/08/05/offsets-sass-mixin/) in CSS, also known as `top`, `right`, `bottom` and `left`.
+About a year ago, I wrote about how I managed to come up with what I think is [a clever Sass mixin to deal with offset positioning](/2013/08/05/offsets-sass-mixin/) in CSS, also known as `top`, `right`, `bottom` and `left`.
 
 The mixin was directly inspired from [Nib](https://github.com/visionmedia/nib), [Stylus](http://learnboost.github.io/stylus/)' most popular framework. The idea is to be able to declare all desired offsets in a single declaration rather than having to write multiple CSS properties.
 

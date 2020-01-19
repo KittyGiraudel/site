@@ -6,7 +6,7 @@ tags:
 
 Hey y’all! This is the time of the year again. And what a year, my friends. What a crappy petty miserable one of a year. I can’t tell for you, but those last 6 months have been just a permanent stream of bad news.
 
-But let’s try to focus on the bright side, shall we? Last year, I did [a little recap’](https://hugogiraudel.com/2016/01/05/looking-back-at-2015/) of the things I did that are worth mentioning. With emojis. Because everything is better with emojis. Here we go again!
+But let’s try to focus on the bright side, shall we? Last year, I did [a little recap’](/2016/01/05/looking-back-at-2015/) of the things I did that are worth mentioning. With emojis. Because everything is better with emojis. Here we go again!
 
 ♿️ **February 11th**. I released [a11y-dialog](https://github.com/edenspiekermann/a11y-dialog), a lightweight and flexible accessible dialog script without any dependency. To this day, it remains one of my best open source projects in terms of usefulness. Also was the project which drove me onto the accessility path.
 

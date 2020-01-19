@@ -295,7 +295,7 @@ Here’s the full function:
 
 ## The Applicability of Specificity
 
-So, aside from this being another application of a [rethinking of Atwood’s Law](https://hugogiraudel.com/2014/10/27/rethinking-atwoods-law/), knowing **exactly how specific** your selectors are can be much more beneficial than seeing in your dev tools that your desired styles have been overridden by another style for some relatively unknown reason (which I’m sure is a common frustration). You can easily output specificity as a mixin:
+So, aside from this being another application of a [rethinking of Atwood’s Law](/2014/10/27/rethinking-atwoods-law/), knowing **exactly how specific** your selectors are can be much more beneficial than seeing in your dev tools that your desired styles have been overridden by another style for some relatively unknown reason (which I’m sure is a common frustration). You can easily output specificity as a mixin:
 
 ```scss
 @mixin specificity() {
@@ -304,7 +304,7 @@ So, aside from this being another application of a [rethinking of Atwood’s Law
 }
 ```
 
-On top of this, you can [find some way](https://hugogiraudel.com/2014/01/20/json-in-sass/) to communicate the specificities of your selectors to the browser in development, and output a [specificity graph](https://csswizardry.com/2014/10/the-specificity-graph/) to ensure that your CSS is well-organized.
+On top of this, you can [find some way](/2014/01/20/json-in-sass/) to communicate the specificities of your selectors to the browser in development, and output a [specificity graph](https://csswizardry.com/2014/10/the-specificity-graph/) to ensure that your CSS is well-organized.
 
 You can take this even further and, if you have dynamic selectors in your SCSS, know ahead of time which one will have the highest specificity:
 

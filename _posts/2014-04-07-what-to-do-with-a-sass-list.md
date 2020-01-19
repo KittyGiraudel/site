@@ -35,7 +35,7 @@ All these properties (and many more) use lists as values. To my knowledge, only 
 
 Lists have been around for a long time now, we just didn’t call them “lists” because we didn’t have to. Now, Sass officially uses the word “list” as a data type, but that doesn’t mean Sass introduced lists to the CSS background.
 
-_Note: by the way, if you haven’t read [my article about Sass lists](https://hugogiraudel.com/2013/07/15/understanding-sass-lists/), I suggest you do._
+_Note: by the way, if you haven’t read [my article about Sass lists](/2013/07/15/understanding-sass-lists/), I suggest you do._
 
 ## Because looping is fun!
 
@@ -67,7 +67,7 @@ $zips: 07, 26, 38, 69, 'unknown';
 
 Thanks to the `$zips` list and the `@each` loop, we can make the whole process of assigning a specific background image depending on a class very simple. Also it gets damn simple to add/remove a zip-code: all we have to do is updating the list.
 
-Okay. I believe this is a decent use case for a list. Now what about lists functions like `append` or `length`? Finding a good example is getting tricky, but I suppose we could take the one I recently talked about in [this article about star rating widget in Sass](https://hugogiraudel.com/2014/02/24/star-rating-system-with-sass/) where I build a selector out of a Sass list.
+Okay. I believe this is a decent use case for a list. Now what about lists functions like `append` or `length`? Finding a good example is getting tricky, but I suppose we could take the one I recently talked about in [this article about star rating widget in Sass](/2014/02/24/star-rating-system-with-sass/) where I build a selector out of a Sass list.
 
 ```scss
 @for $i from 1 to 5 {

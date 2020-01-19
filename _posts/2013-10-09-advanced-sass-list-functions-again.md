@@ -6,7 +6,7 @@ tags:
   - SassyLists
 ---
 
-> In case you have missed my first article about this Advanced Sass List Functions library, I recommand you to read [it](https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/).
+> In case you have missed my first article about this Advanced Sass List Functions library, I recommand you to read [it](/2013/08/08/advanced-sass-list-functions/).
 
 Heys people, it’s been a while I haven’t posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what’s new on my Sass list functions library.
 
@@ -222,7 +222,7 @@ $debug: debug($list);
 
 Not only I try to add new functions but I also do my best to make all functions as fast as they can be and the library as simple to understand as it can be so you can dig into it to change / learn stuff.
 
-For example, you know we have [two remove functions](https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#removing): `remove()` and `remove-nth()`. I have simplified those two greatly:
+For example, you know we have [two remove functions](/2013/08/08/advanced-sass-list-functions/#removing): `remove()` and `remove-nth()`. I have simplified those two greatly:
 
 ```scss
 @function remove($list, $value, $recursive: false) {

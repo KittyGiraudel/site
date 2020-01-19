@@ -68,7 +68,7 @@
   location: Paris, France
   date: 2014-11-15 00:00:00 +0100
   actions:
-    Feedback: https://hugogiraudel.com/2014/11/17/feedback-on-dotcss/
+    Feedback: /2014/11/17/feedback-on-dotcss/
     Video: https://www.dotconferences.com/2014/11/hugo-giraudel-keep-calm-and-write-sass
     Slides: https://speakerdeck.com/hugogiraudel/keep-calm-and-write-sass
 
@@ -77,7 +77,7 @@
   location: Bruxelles, Belgium
   date: 2014-05-08 00:00:00 +0100
   actions:
-    Feedback: https://hugogiraudel.com/2014/06/02/feedbacks-feweb/
+    Feedback: /2014/06/02/feedbacks-feweb/
     Slides: https://slides.com/hugogiraudel/sass-une-architecture-composee#/
 
 - event: KiwiParty
@@ -85,5 +85,5 @@
   location: Strasbourg, France
   date: 2013-06-23 00:00:00 +0100
   actions:
-    Feedback: https://hugogiraudel.com/2013/07/01/feedbacks-kiwiparty/
+    Feedback: /2013/07/01/feedbacks-kiwiparty/
     Slides: https://slides.com/hugogiraudel/css-kick-ass-avec-sass#/

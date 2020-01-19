@@ -5,7 +5,7 @@ tags:
   - git
 ---
 
-> **Edit (2014/03/17):** Part 2 is out! Go check [it](https://hugogiraudel.com/2014/03/17/git-tips-and-tricks-part-2/).
+> **Edit (2014/03/17):** Part 2 is out! Go check [it](/2014/03/17/git-tips-and-tricks-part-2/).
 
 <!-- -->
 

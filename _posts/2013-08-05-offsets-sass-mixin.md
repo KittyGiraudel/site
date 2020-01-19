@@ -6,7 +6,7 @@ tags:
   - mixin
 ---
 
-> **Edit (2014/05/19):** I updated this mixin to improve it, please focus on the [new article](https://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/).
+> **Edit (2014/05/19):** I updated this mixin to improve it, please focus on the [new article](/2014/05/19/new-offsets-sass-mixin/).
 
 Over the last months, I have seen a ton of mixins to handle offsets when dealing with absolute / fixed / relative positioning. I also made a lot of them myself. And in the end, none of them really suited me. Either they were far too long or complicated, or the calling didn’t feel right to me.
 

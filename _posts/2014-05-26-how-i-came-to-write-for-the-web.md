@@ -18,7 +18,7 @@ In this section, I’ll tell you how I went from doing CSS drawings on CodePen, 
 
 ### Codrops
 
-During the summer vacations from 2012, I got contacted by [Pedro Botelho](https://twitter.com/o_telho) one of the two folks behind [Codrops](https://tympanus.net/codrops/) (the other one being the awesome [Manoela Ilic](https://twitter.com/crnacura), whom [I interviewed later on this very blog](https://hugogiraudel.com/2013/03/11/interview-manoela-ilic/)) to know if I’d be interested in writing for Codrops. I was mostly unknown (not that I am specially popular today) at that time and I spent most of my free time doing silly CSS demos on CodePen.
+During the summer vacations from 2012, I got contacted by [Pedro Botelho](https://twitter.com/o_telho) one of the two folks behind [Codrops](https://tympanus.net/codrops/) (the other one being the awesome [Manoela Ilic](https://twitter.com/crnacura), whom [I interviewed later on this very blog](/2013/03/11/interview-manoela-ilic/)) to know if I’d be interested in writing for Codrops. I was mostly unknown (not that I am specially popular today) at that time and I spent most of my free time doing silly CSS demos on CodePen.
 
 Obviously I said _yes_ and got to write quite [a couple of posts for Codrops](https://tympanus.net/codrops/author/hugogiraudel/) between September 2012 and July 2013, including some pretty popular ones like [Troubleshooting CSS](https://tympanus.net/codrops/2013/07/17/troubleshooting-css/). After a dozen articles over a year, I realized Codrops was looking for design-related posts while I felt more technic-focused. As a matter of facts, my last posts at Codrops were quite technical (dealing with CSS counters, `clip()`, click events…).
 
