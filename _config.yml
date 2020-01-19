@@ -1,11 +1,9 @@
 # Site settings
-title: Hugo Giraudel, web developer in Berlin
-description: > # this means to ignore newlines until "baseurl:"
-  My name is Hugo Giraudel, a web developer based in Berlin, focused on accessibility and inclusivity.
-baseurl: '' # the subpath of your site, e.g. /blog/
-url: 'https://hugogiraudel.com' # the base hostname & protocol for your site
-twitter_username: HugoGiraudel
-github_username: HugoGiraudel
+title: Hugo Giraudel
+description: >
+  I’m Hugo Giraudel, a non-binary web developer based in Berlin, focused on accessibility and inclusivity.
+baseurl: ''
+url: 'https://hugogiraudel.com'
 
 # Markdown settings
 markdown: kramdown
@@ -21,8 +19,6 @@ paginate: 10
 # Posts settings
 permalink: pretty
 future: false
-
-# Default settings
 defaults:
   - scope:
       path: ''
@@ -64,4 +60,5 @@ nav:
   - label: Search
     url: /search/
 
+# Liquid utilities
 empty_list: []

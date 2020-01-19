@@ -3,9 +3,9 @@ layout: page
 title: Hi there, I’m Hugo.
 tags:
   - Hugo Giraudel
-  - blog
-  - css
-  - sass
+  - author
+  - speaker
+  - developer
 ---
 
 I’m a non-binary developer leading the web team at [N26](https://n26.com) in Berlin. For a longer version, [read more about me](/about/).
