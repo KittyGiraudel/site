@@ -7,7 +7,7 @@ tags:
   - functional programming
 ---
 
-> **Edit (2014/11/16):** more functional programming to be found [here](https://sassmeister.com/gist/c36be3440dc2b5ae9ba2).
+> **Edit (2014/11/16):** more [functional programming code](https://sassmeister.com/gist/c36be3440dc2b5ae9ba2) in Sass to be found here.
 
 In the last couple of weeks, I have done some decent amount of code reviewing for various Sass frameworks and I have seen quite clever things. Meanwhile, I keep experimenting with Sass to find cool stuff, and I think this one will get frameworks' maintainers interested.
 

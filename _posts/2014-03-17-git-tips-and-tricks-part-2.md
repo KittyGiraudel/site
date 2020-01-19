@@ -5,11 +5,11 @@ tags:
   - git
 ---
 
-> **Edit (2014/03/24):** Part 3 is out! Go check [it](/2014/03/24/git-tips-and-tricks-part-3/).
+> **Edit (2014/03/24):** [Git tips and tricks — Part 3](/2014/03/24/git-tips-and-tricks-part-3/) is out! Go check it.
 
 <!-- -->
 
-> Hi dear folks! This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
+> This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
 
 Hey people! I hope you enjoyed the first part of the series. In this one, I will introduce you even more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced Git concepts and commands. Ready?
 
@@ -500,4 +500,4 @@ That’s it for today folks! In the next parts, we’ll deal with the following 
 
 Meanwhile keep practicing!
 
-> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).
+> Loïc Giraudel works as a front-end developer at Purch (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

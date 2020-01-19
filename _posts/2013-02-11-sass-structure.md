@@ -5,11 +5,11 @@ tags:
   - architecture
 ---
 
-> **Edit (2014/05/13):** after a year, I got much better with Sass architecture. I suggest you have a look at <a href="https://www.sitepoint.com/architecture-sass-project/">this post.
+> **Edit (2014/05/13):** after a year, I got much better with Sass. I suggest you have a look at [this post about Sass architecture](https://www.sitepoint.com/architecture-sass-project/).
 
 <!-- -->
 
-> **Edit (2013/02/27):** this post contains valuable yet outdated informations. To have a look at my current Sass structure, please have a look at <a href="https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/sass">the GitHub repo.
+> **Edit (2013/02/27):** this post contains valuable yet outdated informations. To have a look at my current Sass structure, please have a look at [the GitHub repo](https://github.com/HugoGiraudel/hugogiraudel.com/tree/master/assets/sass).
 
 Hi people! Ever since the redesign a few weeks ago I have never stopped trying optimizing the performance of the site. One of my biggest concerns was having a stylesheet which is both nice and efficient.
 

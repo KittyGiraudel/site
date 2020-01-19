@@ -6,7 +6,7 @@ tags:
   - SassyLists
 ---
 
-> In case you have missed my first article about this Advanced Sass List Functions library, I recommand you to read [it](/2013/08/08/advanced-sass-list-functions/).
+> In case you have missed my first article about this topic, I recommand you to read [Advanced Sass list functions](/2013/08/08/advanced-sass-list-functions/).
 
 Heys people, it’s been a while I haven’t posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what’s new on my Sass list functions library.
 

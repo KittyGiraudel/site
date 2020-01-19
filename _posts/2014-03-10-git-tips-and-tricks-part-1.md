@@ -5,13 +5,13 @@ tags:
   - git
 ---
 
-> **Edit (2014/03/17):** Part 2 is out! Go check [it](/2014/03/17/git-tips-and-tricks-part-2/).
+> **Edit (2014/03/17):** [Git tips and tricks — Part 2](/2014/03/17/git-tips-and-tricks-part-2/) is out! Go check it.
 
 <!-- -->
 
-> Hey people! The following is the first post of a series written by my dear brother Loïc, Git expert at Best Of Media (Tom’s Guide & Tom’s Hardware). I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!
+> The following is the first post of a series written by my dear brother Loïc, Git expert at Purch. I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!
 
-Hi people! Today, I’m gonna share with you some Git tips & tricks I’ve already shared with my workmates at Best Of Media. But before even starting let’s never forget the more important laws of Git.
+Hi people! Today, I’m gonna share with you some Git tips & tricks I’ve already shared with my workmates at Purch. But before even starting let’s never forget the more important laws of Git.
 
 **Law #1**: **each commit must let the branch into a stable state**. You must be able to checkout any commit in the project and still have a working application to play with. A functionality shouldn’t be splitted into several commits. For instance, don’t put the HTML, CSS and JS of a new feature in three separate commits: the functionality requires all of them to work so they should all belong to the same commit. If you have to pause your work (time to grab lunch, go home, switch to another thing or whatever), create a temporary commit which will be enhanced later.
 
@@ -232,4 +232,4 @@ It’s now easier to catch up with the changes: I’ve replaced the test wrappin
 
 I hope those little tricks will help. In the next part, I’ll continue with other small smart tricks before tackling some advanced Fit useful features.
 
-> Loïc Giraudel works as a front-end developer at Best Of Media (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).
+> Loïc Giraudel works as a front-end developer at Purch (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

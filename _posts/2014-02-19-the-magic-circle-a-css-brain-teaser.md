@@ -5,7 +5,7 @@ tags:
   - riddle
 ---
 
-> If you want the solution, be sure to read [this post](/2014/02/26/the-magic-circle-trick-revealed/).
+> If you are curious, be sure to read [this article for the solution](/2014/02/26/the-magic-circle-trick-revealed/).
 
 Months back at work, I have been asked to code a piece of design for the home page of our site that ended up being quite tricky. You know [I like riddles](/2014/02/06/calc-css-riddle/), right? Feelink tricksy my precious? Want to play a game?
 
