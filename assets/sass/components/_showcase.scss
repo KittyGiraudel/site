@@ -1,0 +1,52 @@
+.Showcase {
+  margin-bottom: 1.5em;
+}
+
+.Showcase::after {
+  content: '';
+  display: block;
+  clear: right;
+}
+
+.Showcase__title {
+  margin-bottom: 0.5em;
+}
+
+.Showcase__copy {
+  margin-top: 0;
+}
+
+.Showcase__container {
+  display: flex;
+  margin: 0 -0.5em;
+  flex-wrap: wrap;
+
+  @include media('>tablet') {
+    flex: 1 0 calc(100% / 3);
+  }
+}
+
+.Showcase__item {
+  padding: 0.5em;
+  flex: 1 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 100%;
+  margin-bottom: 0.75em;
+
+  @include media('>tablet') {
+    flex: 1 0 calc(100% / 3);
+    margin-bottom: 0;
+  }
+}
+
+.Showcase__link {
+  font-size: 80%;
+  float: right;
+}
+
+.Showcase__link::before {
+  content: '→ ';
+  color: $soft-pink;
+}

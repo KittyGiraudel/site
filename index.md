@@ -8,18 +8,35 @@ tags:
   - developer
 ---
 
-I’m a non-binary developer leading the web team at [N26](https://n26.com) in Berlin. For a longer version, [read more about me](/about/).
+I’m a non-binary developer leading the web team at [N26](https://n26.com) in Berlin. I specialise in accessibility and inclusivity. For a longer version, [read more about me](/about/).
 
-{% capture last_article_index_suffix %} {% assign article_count = site.posts | size %} {% assign modulo = article_count | modulo: 10 %} {% if modulo == 1 %} st {% elsif modulo == 2 %} nd {% elsif modulo == 3 %} rd {% else %} th {% endif %} {% endcapture %}
+{% assign latest_articles = site.posts | slice: 0, 3 %}
+{% assign articles_copy = "I love writing, and have been sharing my thoughts — mainly about web development — on this blog for years. If you are looking for something specific, [try the search](/search). I also had the pleasure of hosting [guest authors](/guests) and would recommend you read their posts!" | markdownify %}
+{% include components/showcase.html
+  type = "article"
+  title = "Latest articles"
+  copy = articles_copy
+  link_url = "/blog"
+  link_label = "Read more articles"
+  items = latest_articles
+%}
 
-{% capture last_article_index %} {{ site.posts | size }}{{ last_article_index_suffix | strip }} {% endcapture %}
+{% assign main_projects = site.data.projects | where_exp: "project", "project.showcase" | slice: 0, 3 %}
+{% include components/showcase.html
+  type = "project"
+  title = "Main projects"
+  copy= "I used to be quite involved in open-source development. I have initiated and contributed to many projects, most of which about Sass or digital accessibility."
+  link_url = "/projects"
+  link_label = "Browse more projects"
+  items = main_projects
+%}
 
-{% for post in site.posts limit:1 %} {% capture last_article_title %} {{ post.title }} {% endcapture %} {% capture last_article_link %} {% if post.external %}{{ post.external.url }}{% else %}{{ post.url }}{% endif %} {% endcapture %} {% endfor %}
-
-My {{ last_article_index | strip }} and latest article is titled “[{{ last_article_title | strip }}]({{ last_article_link }})”. You can read [more articles from me](/blog/), or [search for something specific](/search/). I also had the great chance of having [wonderful people writing here](/guest/).
-
-{% capture current_date %}{{ site.time | date: "%s" }}{% endcapture %}
-
-{% for event in site.data.speaking %} {% capture event_date %}{{ event.date | date: "%s" }}{% endcapture %} {% if event_date > current_date %} {% capture next_event_name %}{{ event.event }}{% endcapture %} {% capture next_event_link %}{{ event.link }}{% endcapture %} {% capture next_event_date %}{{ event.date | date_to_long_string }}{% endcapture %} {% endif %} {% endfor %}
-
-I enjoy talking at conferences when I find time. If you would like me to attend one of your events, feel free to get in touch! You can have a look at [my past talks](/speaking/).{% if next_event_name %} Note that I will be speaking at [{{ next_event_name }}]({{ next_event_link }}), on {{ next_event_date | date: "%B %d, %Y" }}. Come say hi!{% endif %}
+{% assign latest_events = site.data.speaking | slice: 0, 3 %}
+{% include components/showcase.html
+  type = "event"
+  title = "Recent events"
+  copy = "I enjoy talking at conferences when I find time. If you would like me to attend one of your events, feel free to get in touch! In the mean time, feel free to have a look at my past talks."
+  link_url = "/speaking"
+  link_label = "Check more events"
+  items = latest_events
+%}

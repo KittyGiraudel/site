@@ -1,0 +1,12 @@
+{% assign post = include.item %}
+{% assign title = post.title %}
+{% capture meta %}{{ post.date | date: "%B %d, %Y" }}{% if post.guest %}, by {{ post.guest }}{% endif %}{% endcapture %}
+{% capture link_url %}{% if post.external %}{{ post.external.url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
+{% capture link_label %}Read article <span class="visually-hidden">{{ title }}</span>{% endcapture %}
+
+{% include components/tile.html
+  primary = title
+  secondary = meta
+  link_url = link_url
+  link_label = link_label
+%}

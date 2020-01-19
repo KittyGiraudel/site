@@ -1,0 +1,12 @@
+{% assign event = include.item %}
+{% assign title = event.event %}
+{% assign link_url = event.link %}
+{% capture meta %}{{ event.date | date: "%B %d, %Y" }} · {{ event.location | split: ',' | first }}{% endcapture %}
+{% capture link_label %}Check event <span class="visually-hidden">{{ title }}</span>{% endcapture %}
+
+{% include components/tile.html
+  primary = title
+  secondary = meta
+  link_url = link_url
+  link_label = link_label
+%}

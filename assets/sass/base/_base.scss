@@ -39,6 +39,7 @@ body::before {
   left: 0;
   right: 0;
   background-image: linear-gradient(to right, stripes($colors));
+  z-index: 10;
 }
 
 p {

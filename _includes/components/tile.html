@@ -1,0 +1,10 @@
+{% assign primary = include.primary %}
+{% assign secondary = include.secondary %}
+{% assign link_url = include.link_url %}
+{% assign link_label = include.link_label %}
+
+<div class="Tile">
+  <p class="Tile__primary">{{ primary }}</p>
+  <p class="Tile__secondary">{{ secondary }}</p>
+  <a class="Tile__link" href="{{ link_url }}">{{ link_label }}</a>
+</div>

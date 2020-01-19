@@ -1,0 +1,21 @@
+{% assign type = include.type %}
+{% assign title = include.title %}
+{% assign copy = include.copy %}
+{% assign items = include.items %}
+{% assign more_link_url = include.link_url %}
+{% assign more_link_label = include.link_label %}
+
+<section class="Showcase">
+  <h2 class="Showcase__title">{{ title }}</h2>
+  <p class="Showcase__copy">{{ copy | replace: "<p>", "" | replace: "</p>", "" }}</p>
+  <div class="Showcase__container">
+    {% for item in items %}
+      <div class="Showcase__item">
+        {% include components/{{ type }}-tile.html item = item %}
+      </div>
+    {% endfor %}
+  </div>
+  {% if more_link_label and more_link_url %}
+  <a href="{{ more_link_url }}" class="Showcase__link">{{ more_link_label }}</a>
+  {% endif %}
+</section>
