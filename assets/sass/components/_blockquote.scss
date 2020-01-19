@@ -29,3 +29,7 @@ blockquote > :first-child {
 blockquote > :last-child {
   margin-bottom: 0;
 }
+
+blockquote p + p {
+  margin-top: -1em;
+}
