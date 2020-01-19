@@ -1,7 +1,7 @@
 ;(function(global) {
   var ADS_URL = '//engine.carbonads.com/z/24598/azcarbon_2_1_0_HORIZ'
   var CODEPEN_URL = '//codepen.io/assets/embed/ei.js'
-  var SASSMEISTER_URL = '//static.sassmeister.com/js/embed.js'
+  var SASSMEISTER_URL = '//cdn.sassmeister.com/js/embed.js'
 
   function $(selector, context) {
     var nodes = (context || document).querySelectorAll(selector)
