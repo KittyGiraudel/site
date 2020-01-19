@@ -210,8 +210,8 @@ Hopefully this issue is supposed to be solved in the incoming Sass 3.3 according
 
 I love how powerful Sass has become but there are things that keep boggling my mind. [Mehdi Kabab](https://twitter.com/pioupioum), a fellow French developer (and author of a fresh new book called Advanced Sass and Compass) told me it was because I wasn’t using Sass as a preprocessor.
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck">
-<a href="https://twitter.com/HugoGiraudel">@HugoGiraudel</a> the main problem is you want use Sass like PHP oe Ruby, and not like a CSS preprocessor ;) /cc <a href="https://twitter.com/kaelig">@kaelig</a>&mdash; Mehdi Kabab (@piouPiouM) <a href="https://twitter.com/piouPiouM/statuses/401427568592957441">November 15, 2013</a></blockquote>
+> @HugoGiraudel the main problem is you want use Sass like PHP oe Ruby, and not like a CSS preprocessor ;) /cc @kaelig  
+> — [Medhi Kabab, Twitter](https://twitter.com/piouPiouM/statuses/401427568592957441)
 
 That’s actually true! I’ve done many things with Sass that are really beycond the scope of CSS. But that’s where I think the fun is: thinking out of box, and hacking around the syntax. That’s how I learnt to use Sass, and that’s how I’ll keep going on. ;)
 

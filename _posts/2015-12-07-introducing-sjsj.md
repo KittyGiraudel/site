@@ -8,8 +8,8 @@ tags:
 
 Hey folks! Let’s talk JavaScript, shall we? It all started with a tweet from Nate Bailey:
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/brad_frost">@brad_frost</a> Brain wave: a cheat sheet for web developers that explains, in simple terms, what npm/composer/babel/etc are/do/require/etc</p>&mdash; Nate Bailey (@ntdb) <a href="https://twitter.com/ntdb/status/671821812536229888">December 1, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> @brad_frost Brain wave: a cheat sheet for web developers that explains, in simple terms, what npm/composer/babel/etc are/do/require/etc  
+> — [Nate Bailey, Twitter](https://twitter.com/ntdb/status/671821812536229888)
 
 The general idea is that the JavaScript ecosystem has gotten both complex and bloated in the last few years, to the point where it might look scary for newcomers (and even experienced developers). And this is too bad.
 

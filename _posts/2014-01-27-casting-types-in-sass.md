@@ -63,7 +63,7 @@ Converting a value to a boolean is both simple and tricky. On the whole, the ope
 
 Note how we have to manually check for `""`, `()` and `0` because both evaluate to `true` in Sass.
 
-```scss
+```js
 to-bool(0)           // false
 to-bool(false)       // false
 to-bool(null)        // false

@@ -39,8 +39,9 @@ _Note: to play with regular expressions, I highly recommend [Regexr](https://www
 
 Everything started from [a tweet](https://twitter.com/gregwhitworth/status/627218301622484992) from Greg Whitworth about regular expressions:
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">This is my most illegible regex to date: \w+\[\w+(\|\=|\*\=|\$\=|\^\=|~\=|\=)(|\&quot;)\w+(|\&quot;)](|\s+){</p>&mdash; gregwhitworth (@gregwhitworth) <a href="https://twitter.com/gregwhitworth/status/627218301622484992">July 31, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> This is my most illegible regex to date: `\w+\[\w+(\|\=|\*\=|\$\=|\^\=|~\=|\=)(|\&quot;)\w+(|\&quot;)](|\s+){`
+>
+> [Greg Whitworth, Twitter](https://twitter.com/gregwhitworth/status/627218301622484992)
 
 It does look illegible. As most regular expressions. I started discussing with Greg about what he was trying to achieve and learnt he wanted to find CSS attribute selectors in a document. It seemed like a fun challenge so I spent a few minutes on it and came up with this:
 

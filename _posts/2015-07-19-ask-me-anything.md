@@ -24,7 +24,7 @@ I already replied to about [20 questions](https://github.com/HugoGiraudel/ama/is
 
 - [I roughly spend 62.5% of my time working](https://github.com/HugoGiraudel/ama/issues/15),
 - [I have spent an average of 36% of my life in my bed](https://github.com/HugoGiraudel/ama/issues/12),
-- [my superpower would definitely be _teleportation_](https://github.com/HugoGiraudel/ama/issues/4),
+- [My superpower would definitely be _teleportation_](https://github.com/HugoGiraudel/ama/issues/4),
 - [I don’t believe in God](https://github.com/HugoGiraudel/ama/issues/14),
 - [I enjoy a solid workflow](https://github.com/HugoGiraudel/ama/issues/17).
 

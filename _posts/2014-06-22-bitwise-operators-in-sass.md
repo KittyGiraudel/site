@@ -11,12 +11,12 @@ tags:
 
 A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) and I had the crazy idea of implementing bitwise operators in Sass. It went like this:
 
-> **Hugo**: Do you know how bitwise operators work?
-> **Val**: Yes.
-> **Hugo**: Do you think we could implement them in Sass?
-> **Val**: No.
-> (Loading…)
-> **Val**: Well, in fact we could.
+> **Hugo**: Do you know how bitwise operators work?  
+> **Val**: Yes.  
+> **Hugo**: Do you think we could implement them in Sass?  
+> **Val**: No.  
+> (Loading…)  
+> **Val**: Well, in fact we could.  
 > **Hugo**: LET’S DO IT!
 
 And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let’s catch up on bitwise operators, shall we?

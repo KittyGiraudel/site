@@ -9,7 +9,7 @@ tags:
 
 This article is a response to a question I’ve recently received on Twitter:
 
-> I would be curious to learn how you approach releasing software at @n26. To be more precise, what has to happen to go from finishing something on your machine to releasing it to all customers. I would assume you have a pretty sophisticated test setup by now.
+> I would be curious to learn how you approach releasing software at @n26. To be more precise, what has to happen to go from finishing something on your machine to releasing it to all customers. I would assume you have a pretty sophisticated test setup by now.  
 > — [Florian Nagel, Twitter](https://twitter.com/_floriannagel/status/1074660340414205958)
 
 Note that I will be talking exclusively about the web services’ process. Backend microservices, native applications and other pieces of the N26 software architecture might have a different system in place due to their specific constraints and requirements.

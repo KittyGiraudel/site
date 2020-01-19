@@ -386,4 +386,4 @@ index 0000000..b636d88
 
 That’s all folks! I hope those tricks will help you in your daily work. Git bisect has deeply changed the way I search for weird bug : finding the guilty commit is easier than digging in the code. And merging commits before pushing help to keep a clean commit log.
 
-> Loïc Giraudel works as a front-end developer at Purch (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).
+> Loïc Giraudel works as a front-end developer at Future PLC (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

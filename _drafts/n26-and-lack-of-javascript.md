@@ -6,6 +6,8 @@ tags:
   - JavaScript
 ---
 
+I have been meaning to write about this topic for years now and always found a reason to postpone. Now is the time, and I am incredible excited to uncover one of the best features of the N26 web platform.
+
 - [Why bother?](#why-bother)
 - [Tailoring the experience](#tailoring-the-experience)
 - [Detecting JavaScript](#detecting-javascript)
