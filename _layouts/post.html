@@ -2,8 +2,7 @@
 layout: default
 ---
 
-
-<article itemscope itemtype="https://schema.org/Article" class="Post">
+<article itemscope itemtype="https://schema.org/Article" class="Post" {% if page.external %}{% else if page.lang %}lang="{{ page.lang }}"{% endif %}>
   {% capture reading_time %}{% include components/reading_time.html %}{% endcapture %}
 
   {% if page.date %}
