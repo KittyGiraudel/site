@@ -64,7 +64,7 @@ const MyComponent = props => {
 To avoid using a local state and a `useEffect` hook in every component that needs to know whether JavaScript is available, my amazing colleague [Juliette Pretot](https://twitter.com/JuliettePretot) suggested we do it at the top-level, and then provide that information through the React context.
 
 ```jsx
-const HasJavaScriptContext = React.useContext(false)
+export const HasJavaScriptContext = React.createContext(false)
 
 const App = props => {
   const [hasJavaScript, setHasJavaScript] = React.useState(false)
