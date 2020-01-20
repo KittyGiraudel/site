@@ -128,6 +128,6 @@ server.get('/js', () => {
 
 We track all JavaScript errors by sending some logs to our aggregator. Over the months, we realised we had an impressively high amount of errors coming from Internet Explorer 11, despite using [Polyfill.io](https://polyfill.io/v3/) to provide unsupported features.
 
-Eventually, we decided to route our Internet Explorer traffic to our no-JS version. On the server, we use [ua-parser-js](https://www.npmjs.com/package/ua-parser-js) to (hopefully) detect the browser; if it is Internet Explorer, we no longer render JavaScript bundles, effectively simulating the no-JavaScript experience.
+While we do manage to [recover from client-side JavaScript errors](/2018/08/13/recovering-from-javascript-errors/), we decided to route our Internet Explorer traffic to our no-JS version. On the server, we use [ua-parser-js](https://www.npmjs.com/package/ua-parser-js) to (hopefully) detect the browser; if it is Internet Explorer, we no longer render JavaScript bundles, effectively simulating the no-JavaScript experience.
 
 We realise it is an arbitrary and opinionated decision to make on behalf of the user, but we also believe a basic working experience is better than a fully broken one.
