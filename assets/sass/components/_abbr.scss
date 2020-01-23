@@ -1,4 +1,15 @@
 abbr[title] {
-  border-bottom: 1px dotted inherit;
   cursor: help;
+  text-decoration: none;
+  background-image: linear-gradient(
+      to right,
+      transparent,
+      transparent 50%,
+      rgb(255, 255, 255) 50%,
+      rgb(255, 255, 255) 100%
+    ),
+    linear-gradient(to right, $colors);
+  background-repeat: repeat-x;
+  background-size: 4px 2px, 100% 2px;
+  background-position: bottom;
 }
