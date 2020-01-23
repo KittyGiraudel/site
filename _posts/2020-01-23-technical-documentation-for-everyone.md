@@ -38,7 +38,7 @@ We keep our documentation on GitHub, alongside the code. The web platform is sto
 
 To make it even less likely to forget updating documentation, we also mention it in our GitHub pull-request template, so we have an extra reminder when submitting a pull-request for review.
 
-![Documentation being mentioned in the pull-request template](/assets/images/on-writing-documentation/pull-request-template.png)
+![Documentation being mentioned in the pull-request template](/assets/images/technical-documentation-for-everyone/pull-request-template.png)
 
 ## Keeping it real
 
@@ -88,4 +88,4 @@ The more people rely on it, the better its quality as there are more and more au
 
 Oh, and in case you came for the memes, you’ll be pleased to know that this has been in our README for pretty much ever:
 
-![Parody of the “they’re good dogs Brent” meme as “they’re good docs Brent”](/assets/images/on-writing-documentation/good-docs-brent.png)
+![Parody of the “they’re good dogs Brent” meme as “they’re good docs Brent”](/assets/images/technical-documentation-for-everyone/good-docs-brent.png)
