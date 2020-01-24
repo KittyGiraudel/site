@@ -72,12 +72,10 @@ const MutationForm = props => {
   };
 
   // Render a <form> with a ref to be able to serialise it, and a
-  // few hidden fields to hold the mutation, the name of the operation
-  // and the redirect paths.
+  // few hidden fields to hold the mutation and the redirect paths.
   return (
     <form action="/graphql" method="POST" ref={formRef} onSubmit={handleSubmit}>
       <input type="hidden" name="__mutation" value={props.mutation} />
-      <input type="hidden" name="__operationName" value={props.operationName} />
       <input type="hidden" name="__successPath" value={props.successPath} />
       <input type="hidden" name="__failurePath" value={props.failurePath} />
 
@@ -97,12 +95,7 @@ Then we can rewrite our `RemoveEntryButton` as follow. Note how we now provide t
 const MUTATION = "mutation removeEntry ($id: ID!) { removeEntry(id: $id) }";
 
 const RemoveEntryButton = props => (
-  <MutationForm
-    mutation={MUTATION}
-    operationName="removeEntry"
-    successPath="/"
-    failurePath="/"
-  >
+  <MutationForm mutation={MUTATION} successPath="/" failurePath="/">
     <input type="hidden" name="id" value={props.id} />
     <button type="submit">Remove entry</button>
   </MutationForm>
@@ -151,7 +144,6 @@ const handleNoJavaScriptGraphQL = schema => (request, response, next) => {
     __mutation: query,
     __successPath: successPath,
     __failurePath: failurePath,
-    __operationName: operationName,
     ...variables
   } = request.body;
 
@@ -159,19 +151,20 @@ const handleNoJavaScriptGraphQL = schema => (request, response, next) => {
   // they happen to be absent, return early and call `next`, as this
   // means the request was performed with JavaScript, and this
   // middleware has no purpose.
-  if (!query || !operationName || !successPath || !failurePath) {
+  if (!query || !successPath || !failurePath) {
     return next();
   }
 
-  // Pass the schema, the mutation, the operation name and the
-  // variables to Apollo manually to execute the mutation.
+  // Pass the schema, the mutation and the variables to Apollo manually
+  // to execute the mutation.
   return runHttpQuery([request, response], {
     method: request.method,
     options: { schema },
-    query: { query, operationName, variables }
+    query: { query, variables }
   })
     .then(({ graphqlResponse }) => {
       const { data } = JSON.parse(graphqlResponse);
+      const operationName = Object.keys(data)[0];
       const url = !data[operationName] ? failurePath : successPath;
 
       // CAUTION: be sure to sanitise that URL to make sure
