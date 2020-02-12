@@ -10,11 +10,11 @@
     </span>
 
     {% if post.external %}
-    <a class="List__primary-content" {% if post.lang %}hreflang="{{ post.lang | downcase }}"{% endif %} href="{{ post.external.url }}">
+    <a class="List__primary-content" {% if post.lang %}hreflang="{{ post.lang | downcase }}" lang="{{ post.lang | downcase }}"{% endif %} href="{{ post.external.url }}">
     {% else %}
-    <a class="List__primary-content" {% if post.lang %}hreflang="{{ post.lang | downcase }}"{% endif %} href="{{ post.url }}">
+    <a class="List__primary-content" {% if post.lang %}hreflang="{{ post.lang | downcase }}" lang="{{ post.lang | downcase }}"{% endif %} href="{{ post.url }}">
     {% endif %}
-      {% if post.lang %}[{{ post.lang | upcase }}] {% endif %}{{ post.title }}
+      {{ post.title }}
     </a>
   </div>
 </li>
