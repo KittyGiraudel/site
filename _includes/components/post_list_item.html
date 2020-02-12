@@ -4,7 +4,7 @@
 <li class="List__item">
   <div class="List__item-inner">
     <span class="List__secondary-content">
-      {{ post.date | date: "%B %d, %Y" }}
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
       {% if post.guest %} by {{ post.guest }}{% endif %}
       {% if post.external %} at {{ post.external.host }}{% endif %}
     </span>
