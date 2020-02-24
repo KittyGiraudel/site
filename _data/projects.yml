@@ -1,6 +1,12 @@
+- name: Selectors Explained
+  description: 'A CSS selector to plain English converter.'
+  link: https://github.com/HugoGiraudel/selectors-explained
+  category: CSS
+  showcase: true
+
 - name: express-simple-locale
   description: 'A simple Express middleware to guess the short-locale of a user.'
-  link: https://github.com/Papayer-GmbH/express-simple-locale
+  link: https://github.com/n26/express-simple-locale
   category: JavaScript
 
 - name: react-menu-button
@@ -89,7 +95,6 @@
   description: 'An extensive list of browser specific hacks.'
   link: http://browserhacks.com/
   category: CSS
-  showcase: true
 
 - name: node-legofy
   description: 'A script to convert an image into a mosaic of LEGO pieces.'
