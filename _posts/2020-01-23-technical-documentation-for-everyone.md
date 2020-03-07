@@ -64,7 +64,7 @@ if (!LIVE) {
 
 And voilà, look at this beauty:
 
-![N26 web platform documentation published with GitBook](https://pbs.twimg.com/media/EIOFeLSWoAciNh_?format=jpg&name=large)
+![N26 web platform documentation published with GitBook](/assets/images/technical-documentation-for-everyone/gitbook.jpeg)
 
 ### Promoting documentation
 
