@@ -7,11 +7,11 @@ tags:
   - function
 ---
 
-> **Edit (2014/11/16):** here is an [updated, more powerful version](https://sassmeister.com/gist/1b4f2da5527830088e4d).
+> **Edit (2014/11/16):** here is an [updated, more powerful version](https://www.sassmeister.com/gist/1b4f2da5527830088e4d).
 
 The other day, I caught up a discussion on Twitter where famous French developer [Nicolas Hoffman asked for a way to replace a string into another string in Sass](https://twitter.com/Nico3333fr/status/420557471745179648). He quickly got some answers to dig into string functions coming in Sass 3.3, but I know playing around such tools can be quite time consuming for someone who’s not like super comfortable with the syntax.
 
-So I thought I’d give it ago. Since I managed to have a decent result in a matter of minutes and I really enjoyed working on this little thing, here is an explanation of [the code](https://sassmeister.com/gist/8300738).
+So I thought I’d give it ago. Since I managed to have a decent result in a matter of minutes and I really enjoyed working on this little thing, here is an explanation of [the code](https://www.sassmeister.com/gist/8300738).
 
 ## A quick leveling-up with string functions
 

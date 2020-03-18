@@ -32,7 +32,7 @@ For more informations about this technique and to understand this post, I sugges
 
 All good? Fine. This morning, [Matt Stow](https://twitter.com/stowball/status/450917879047651328) suggested a new version where we wouldn’t have to create a mixin for every placeholder we want to have. Instead, we would have a single mixin &mdash; let’s call it `extend()` &mdash; asking for a placeholder’s name, and extending it or including the mixin’s content as we did yesterday.
 
-You can fin [Matt’s demo on SassMeister](https://sassmeister.com/gist/9910272). It looks about this:
+You can fin [Matt’s demo on SassMeister](https://www.sassmeister.com/gist/9910272). It looks about this:
 
 ```scss
 @mixin extend($placeholder, $extend: true) {
@@ -136,9 +136,9 @@ Done.
 
 ## Final thoughts
 
-You can have a look at the fully commented code [here on SassMeister](https://sassmeister.com/gist/9910527):
+You can have a look at the fully commented code [here on SassMeister](https://www.sassmeister.com/gist/9910527):
 
-<p class="sassmeister" data-gist-id="9910527" data-height="480"><a href="https://sassmeister.com/gist/9910527">Play with this gist on SassMeister.</a></p>
+<p class="sassmeister" data-gist-id="9910527" data-height="480"><a href="https://www.sassmeister.com/gist/9910527">Play with this gist on SassMeister.</a></p>
 
 While the code does the job well, I am not sure how I feel about this. To be perfectly honest with you people, I think I’d rather use the version from yesterday’s article (which I already do at work) and this for two reasons.
 

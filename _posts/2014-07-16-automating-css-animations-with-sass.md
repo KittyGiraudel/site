@@ -384,4 +384,4 @@ That’s pretty much it. While Harry’s initial code is easier to read for the 
 
 You can play with the code on SassMeister:
 
-<p class="sassmeister" data-gist-id="b657072d11c527f3a016" data-height="480"><a href="https://sassmeister.com/gist/b657072d11c527f3a016">Play with this gist on SassMeister.</a></p>
+<p class="sassmeister" data-gist-id="b657072d11c527f3a016" data-height="480"><a href="https://www.sassmeister.com/gist/b657072d11c527f3a016">Play with this gist on SassMeister.</a></p>

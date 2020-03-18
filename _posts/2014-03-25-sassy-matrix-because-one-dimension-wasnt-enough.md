@@ -15,7 +15,7 @@ A while back, I wanted to create a function to calculate the Levenshtein distanc
 
 > In information theory and computer science, the Levenshtein distance is a string metric for measuring the difference between two sequences. Informally, the Levenshtein distance between two words is the minimum number of single-character edits (insertion, deletion, substitution) required to change one word into the other.
 
-If you wonder whether I succeeded or failed, I succeeded. You can play with [the code](https://sassmeister.com/gist/8334461) directly on SassMeister. So if you ever wanted to calculate the Levenshtein distance between two strings in Sass, now you can. Useless thus essential.
+If you wonder whether I succeeded or failed, I succeeded. You can play with [the code](https://www.sassmeister.com/gist/8334461) directly on SassMeister. So if you ever wanted to calculate the Levenshtein distance between two strings in Sass, now you can. Useless thus essential.
 
 Now back to our main topic: I needed matrices. A matrix is basically a two-dimensional array (or list). For example this is a Sass matrix:
 
@@ -191,4 +191,4 @@ Also, there is a Compass extension for SassyMatrix now:
 2. Add `require 'SassyMatrix'` in `config.rb`
 3. `@import "SassyMatrix"` in your stylesheet
 
-Also, you can play with SassyMatrix directly at [SassMeister](https://sassmeister.com), so be sure to give it a try. Plus, I’d love to have some feedbacks!
+Also, you can play with SassyMatrix directly at [SassMeister](https://www.sassmeister.com), so be sure to give it a try. Plus, I’d love to have some feedbacks!

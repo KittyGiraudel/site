@@ -282,8 +282,8 @@ If `$everything-okay` is still `true` after we iterate through the list of featu
 
 It all started as a small Sass experiment and ended up being an incredibly interesting challenge. I came up with a piece of code that I never thought would make me push the Sass syntax as far as I did. It was really interesting to develop a solution that uses so many different Sass features like the `@at-root` directive, loops (`@each`), the ampersand (`&`) to reference parent selectors, the `if()` function, placeholders, list manipulation, … and also stuff like mixin aliases and error handling.
 
-That’s it, you can play with the code on [SassMeister](https://sassmeister.com/gist/10578910) or [view the documentation and download on Github](https://github.com/danielguillan/modernizr-mixin). The Modernizr mixin is available as a [Compass extension](https://rubygems.org/gems/modernizr-mixin) too.
+That’s it, you can play with the code on [SassMeister](https://www.sassmeister.com/gist/10578910) or [view the documentation and download on Github](https://github.com/danielguillan/modernizr-mixin). The Modernizr mixin is available as a [Compass extension](https://rubygems.org/gems/modernizr-mixin) too.
 
-<p class="sassmeister" data-gist-id="10578910" data-height="480"><a href="https://sassmeister.com/gist/10578910">Play with this gist on SassMeister.</a></p><script src="https://static.sassmeister.com/js/embed.js" async></script>
+<p class="sassmeister" data-gist-id="10578910" data-height="480"><a href="https://www.sassmeister.com/gist/10578910">Play with this gist on SassMeister.</a></p><script src="https://static.sassmeister.com/js/embed.js" async></script>
 
 > Daniel Guillan is the co-founder and chief design officer at Vintisis. Not only designer but also front-end developer, Daniel likes using Sass to make his life easier. You should catch him on [Twitter](https://twitter.com/danielguillan).

@@ -13,7 +13,7 @@ As any web developer who has to write CSS knows, specificity is both an importan
 
 ![CSS Specificity issue](/assets/images/specificity-in-sass/important.png)
 
-**TL;DR:** Check out the source (and examples) [here on SassMeister](https://sassmeister.com/gist/dbf20a242bcccd1d789c) or directly on [GitHub](https://github.com/davidkpiano/sass-specificity).
+**TL;DR:** Check out the source (and examples) [here on SassMeister](https://www.sassmeister.com/gist/dbf20a242bcccd1d789c) or directly on [GitHub](https://github.com/davidkpiano/sass-specificity).
 
 ## What is Specificity?
 
