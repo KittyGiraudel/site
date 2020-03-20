@@ -50,6 +50,6 @@ Alright, so let’s sum up what we just learnt:
 
 Some packages provide executables, some don’t. All packages providing an executable can be executed with `./node_modules/.bin/<package>`.
 
-Most packages do not providing a command-line executable, and are made to be imported within a JavaScript file. This can be done with `import something from '<package>'`. What is being imported depends on the package and can be figured out by reading its documentation.
+Most packages do not provide a command-line executable, and are made to be imported within a JavaScript file. This can be done with `import something from '<package>'`. What is being imported depends on the package and can be figured out by reading its documentation.
 
 I hope this helps!
