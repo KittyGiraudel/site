@@ -8,6 +8,13 @@
   }
 }
 
+.PostNavigation--end {
+  @include media('>tablet') {
+    justify-content: flex-end;
+  }
+}
+
+
 .PostNavigation__item {
   position: relative;
   line-height: 1.1;

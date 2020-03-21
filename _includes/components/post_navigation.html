@@ -1,8 +1,10 @@
-<div class="PostNavigation">
+{% assign name = include.name | default: 'post' %}
+
+<div class="PostNavigation {% if page.previous.url %}{% elsif page.next.url %}PostNavigation--end{% endif %} ">
   {% if page.previous.url %}
     <p class="PostNavigation__item PostNavigation__item--previous
     ">
-      Read previous post:
+      Read previous {{ name }}:
       <a class="PostNavigation__link " href="{{ page.previous.url }}" title="{{ page.previous.title }}">
         {{ page.previous.title }}
       </a>
@@ -10,7 +12,7 @@
   {% endif %}
   {% if page.next.url %}
     <p class="PostNavigation__item PostNavigation__item--next">
-      Read next post:
+      Read next {{ name }}:
       <a class="PostNavigation__link" href="{{ page.next.url }}" title="{{ page.next.title }}">
         {{ page.next.title }}
       </a>
