@@ -1,0 +1,35 @@
+.RecipeSteps {
+  padding: 0;
+  list-style: none;
+  counter-reset: steps;
+}
+
+.RecipeSteps > li {
+  margin-bottom: 1em;
+  text-align: start;
+  position: relative;
+  counter-increment: steps;
+  padding-left: 1.75em;
+}
+
+.RecipeSteps > li::before {
+  content: counter(steps);
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  border: 0.1em solid rgb(221, 126, 180);
+  left: 0;
+  transform: translateY(10%);
+}
+
+.RecipeIngredients {
+  column-width: 17em;
+  column-count: 2;
+  column-gap: 1em;
+}

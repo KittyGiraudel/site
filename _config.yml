@@ -2,8 +2,8 @@
 title: Hugo Giraudel
 description: >
   I’m Hugo Giraudel, a non-binary web developer based in Berlin, focused on accessibility and inclusivity.
-baseurl: ''
-url: 'https://hugogiraudel.com'
+baseurl: ""
+url: "https://hugogiraudel.com"
 
 # Markdown settings
 markdown: kramdown
@@ -21,10 +21,15 @@ permalink: pretty
 future: false
 defaults:
   - scope:
-      path: ''
-      type: 'posts'
+      path: ""
+      type: "posts"
     values:
-      layout: 'post'
+      layout: "post"
+  - scope:
+      path: ""
+      type: "recipes"
+    values:
+      layout: "recipe"
 
 # Sass settings
 sass:
@@ -62,3 +67,7 @@ nav:
 
 # Liquid utilities
 empty_list: []
+
+collections:
+  recipes:
+    output: true
