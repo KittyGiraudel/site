@@ -16,6 +16,8 @@
     localStorage.setItem('visited-' + window.location.pathname, true);
     var links = $('.Main a');
 
+    if (!links) return
+
     for (i = 0; i < links.length; i += 1) {
       var link = links[i];
       var trailingSlash = link.pathname.endsWith('/') ? '' : '/'
