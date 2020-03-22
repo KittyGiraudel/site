@@ -20,4 +20,3 @@ steps:
   - Repeat these 4 layers a second time and chill for at least 6 hours.
 ---
 
-An easy way to make keto (low-carb) bread that can be seasoned based on the dish it goes with. It can also be used as a pizza dough.
