@@ -71,6 +71,8 @@ Unfortunately, `line-height: calc(2px + 1.1 + 2px)` is invalid CSS, since unit &
 
 Kind of: the [`ex`](https://developer.mozilla.org/en-US/docs/Web/CSS/length#ex) unit computes to current font x-height (the height of the lowercase letter “x”), so we just find out the perfect match for our formula.
 
+In fact, any relative unit (em, rem ...) can be used, but since we're calculating line-height, it just makes sense to use a height unit.
+
 Since every typeface has its own `ex` value, we still need to fine-tune our `px` & `ex` values. Anyway, consider this a good starting point:
 
 ```scss
@@ -86,6 +88,31 @@ As you can see in following demo, it sets a very nice line height, in a wide ran
 </p>
 
 That’s valid CSS. Also, [the `ex` unit has very good browser support](https://caniuse.com/#feat=mdn-css_types_length_ex). Hooray!
+
+## Descendant elements
+
+If you apply the formula on a parent element, and `font-size` is a changed on a descendant element, `line-height` would be unafected on descendant, since it has been calculated based on parent `font-size`:
+
+```scss
+.parent {
+  font-size: 20px;
+  line-height: calc(2px + 2ex + 2px);
+  // computed: 2px + (2 * 20px) + 2px = 44px;
+  
+  .descendant {
+    font-size: 40px;
+    // desired:  2px + (2 * 40px) + 2px = 84px;
+    // computed: 2px + (2 * 20px) + 2px = 44px; (same as .parent)
+  }
+}
+```
+This can be solved by applying the formula to all descendants, with universal selector:
+
+```scss
+.parent * {
+  line-height: calc(2px + 2ex + 2px);
+}
+```
 
 ## On responsive typography
 
