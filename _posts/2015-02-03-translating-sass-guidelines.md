@@ -126,7 +126,7 @@ en:
   baseline:
     content: 'An opinionated styleguide for writing sane, maintainable and scalable Sass.'
   footer:
-    content: 'Made with love by [Hugo Giraudel]()'
+    content: 'Made with love by [Hugo “Kitty” Giraudel]()'
   note: 'Note'
 # Other languages…
 ```

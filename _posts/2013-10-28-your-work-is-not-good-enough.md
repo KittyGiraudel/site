@@ -34,6 +34,6 @@ But there is more: please don’t be afraid to show what you have accomplished. 
 
 ## Conclusion
 
-This isn’t just something you have to consider at the beginning of your career. These things are important to all of us and we are facing similar situations every day. I hope I could open your minds and you will stop being too critical with yourself, because there is no need to. Mr. Hugo himself is a great example. He is working a lot and sharing most of his work with us too. This is a great benefit for us and for him. He told me that there are times too, when he thinks his work is not good enough. I can tell you / him that his work is definitely good enough and **so is yours**!
+This isn’t just something you have to consider at the beginning of your career. These things are important to all of us and we are facing similar situations every day. I hope I could open your minds and you will stop being too critical with yourself, because there is no need to. Mx. Hugo themselves are a great example. They are working a lot and sharing most of their work with us too. This is a great benefit for us and for them. They told me that there are times too, when they think their work is not good enough. I can tell you / them that their work is definitely good enough and **so is yours**!
 
 > Christoph Rumpel is a passionate Web developer from Austria who wants to make the web look and feel awesome. You should definitely check [his site](https://christoph-rumpel.com/) and follow him on [Twitter](https://twitter.com/christophrumpel).

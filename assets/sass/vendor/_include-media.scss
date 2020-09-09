@@ -13,7 +13,7 @@
 //                https://include-media.com
 //
 //         Authors: Eduardo Boucas (@eduardoboucas)
-//                  Hugo Giraudel (@hugogiraudel)
+//                  Hugo “Kitty” Giraudel (@hugogiraudel)
 //
 //      This project is licensed under the terms of the MIT license
 
@@ -171,7 +171,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 
 ////
 /// Cross-engine logging engine
-/// @author Hugo Giraudel
+/// @author Hugo “Kitty” Giraudel
 /// @access private
 ////
 
@@ -250,7 +250,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 
 ////
 /// Parsing engine
-/// @author Hugo Giraudel
+/// @author Hugo “Kitty” Giraudel
 /// @access private
 ////
 
@@ -394,7 +394,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 
 ////
 /// String to number converter
-/// @author Hugo Giraudel
+/// @author Hugo “Kitty” Giraudel
 /// @access private
 ////
 
@@ -494,7 +494,7 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 /// configuration such as custom breakpoints (referred to as tweakpoints)
 /// for instance.
 ///
-/// @author Hugo Giraudel
+/// @author Hugo “Kitty” Giraudel
 ///
 /// @param {Map} $tweakpoints [()] - Map of tweakpoints to be merged with `$breakpoints`
 /// @param {Map} $tweak-media-expressions [()] - Map of tweaked media expressions to be merged with `$media-expression`

@@ -3,12 +3,11 @@ layout: page
 title: About me
 excerpt: 'Everything about me related to the tech-industry.'
 tags:
-  - Hugo Giraudel
+  - Hugo “Kitty” Giraudel
   - about
 ---
 
 I am a non-binary French web developer based in Berlin.
-
 
 After a couple of years working as a developer in the banking industry in the French Alps, I relocated to Berlin to join [Edenspiekermann](https://edenspiekermann.com), a design agency. In 2016, I quit to join [N26](https://n26.com/) as a web tech lead where I focus on digital accessibility and inclusion.
 

@@ -2,7 +2,7 @@
 layout: page
 title: Hi there, I’m Hugo.
 tags:
-  - Hugo Giraudel
+  - Hugo “Kitty” Giraudel
   - author
   - speaker
   - developer
