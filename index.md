@@ -34,7 +34,7 @@ I’m a non-binary developer leading the web team at [N26](https://n26.com) in B
 {% assign latest_events = site.data.speaking | slice: 0, 3 %}
 {% include components/showcase.html
   type = "event"
-  title = "Recent events"
+  title = "Last events"
   copy = "I enjoy talking at conferences when I find time. If you would like me to attend one of your events, feel free to get in touch! In the mean time, feel free to have a look at my past talks."
   link_url = "/speaking"
   link_label = "Check more events"
