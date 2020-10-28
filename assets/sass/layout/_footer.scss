@@ -3,7 +3,7 @@
   text-align: center;
   font-size: 0.75em;
 
-  @include media('>=tablet') {
+  @include media(">=tablet") {
     padding: 5em 0 2em;
   }
 }
@@ -14,7 +14,7 @@
 }
 
 .Footer__copy::after {
-  content: '–';
+  content: "–";
   margin-left: 1ch;
   margin-right: 1ch;
 }
@@ -23,4 +23,10 @@
   display: inline-block;
   padding-left: 0;
   margin: 0;
+}
+
+@media print {
+  .Footer {
+    display: none;
+  }
 }
