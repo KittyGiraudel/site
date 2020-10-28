@@ -1,0 +1,77 @@
+.Resume__photo {
+  float: left;
+  shape-outside: circle(50%);
+  margin: 0.5em 1em 0.5em 0;
+  border-radius: 50%;
+  max-width: 8em;
+}
+
+.Resume__links {
+  text-align: center;
+}
+
+.Resume__links--print {
+  display: none;
+}
+
+.Resume__intro {
+  margin-bottom: 2em;
+}
+
+.Resume__section {
+  display: flex;
+  margin-bottom: 2em;
+}
+
+.Resume__section > h2 {
+  flex: 0 0 8em;
+  border-right: 1px solid rgb(221, 126, 180);
+  margin-right: 1.5em;
+  font-style: italic;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 1.5em;
+  font-size: 100%;
+}
+
+.Resume__section > div {
+  padding-top: 0.9em;
+}
+
+.Resume__section > div > :first-child {
+  margin-top: 0;
+}
+
+.Resume__section h3 {
+  font-size: 90%;
+  display: flex;
+}
+
+.Resume__section h3 span {
+  margin-left: auto;
+  font-size: 80%;
+  opacity: 0.8;
+  font-weight: normal;
+  padding-left: 1em;
+  text-align: right;
+}
+
+.Resume__section li {
+  margin: 0.5em 0;
+}
+
+@media print {
+  .Resume {
+    font-size: 75%;
+  }
+
+  .no-print,
+  .Resume__links,
+  .Resume__photo {
+    display: none;
+  }
+
+  .Resume__links--print {
+    display: block;
+  }
+}
