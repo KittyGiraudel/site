@@ -6,7 +6,7 @@
   margin: 1em 0 0.5em;
   text-align: center;
 
-  @include media('>=tablet') {
+  @include media(">=tablet") {
     font-size: 3.5em;
   }
 }
@@ -14,4 +14,10 @@
 .Title__link {
   color: inherit;
   border-bottom: 0;
+}
+
+@media print {
+  .Title {
+    font-size: 2em;
+  }
 }
