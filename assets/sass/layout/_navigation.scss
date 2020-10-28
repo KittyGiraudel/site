@@ -5,7 +5,7 @@
   margin-bottom: 1em;
   text-align: center;
 
-  @include media('>=tablet') {
+  @include media(">=tablet") {
     padding: 0;
   }
 }
@@ -30,7 +30,7 @@
 }
 
 .Navigation__link::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 5%;
@@ -47,4 +47,10 @@
   opacity: 1;
   transform: translateY(0);
   transition: transform 200ms ease-out, opacity 200ms;
+}
+
+@media print {
+  .Navigation {
+    display: none;
+  }
 }
