@@ -49,9 +49,7 @@ A non-exhaustive list of responsibilities would go like this:
 
 ## The candidate
 
-I have voiced my aversion for ridiculous coding tech interviews over and over again because I strongly believe the difficult part of the job, especially as one gets into more senior roles, is not writing code per se. Nor should the goal of senior engineer or tech lead be crushing code all day. Not in my book at least.
-
-That being said, we do need someone with strong understanding of frontend development. While the mileage may vary, I think anyone who hasn’t worked in frontend and beyond for at least 5 years might be falling a little short for such a role. The code base is vast and somewhat complex, and this has to be balanced with difficult topics such as legal compliance, inclusive design, incident management, infrastructure work and of course, diplomacy and cross-team communication. This is not as scary as it sounds, but it definitely requires some experience. As much as I dislike the term, we probably need a senior fullstack engineer here.
+We need someone with strong understanding of frontend development. While the mileage may vary, I think anyone who hasn’t worked in frontend and beyond for at least 5 years might be falling a little short for such a role. The code base is vast and somewhat complex, and this has to be balanced with difficult topics such as legal compliance, inclusive design, incident management, infrastructure work and of course, diplomacy and cross-team communication. This is not as scary as it sounds, but it definitely requires some experience. In other words, we probably need a senior fullstack engineer here.
 
 More than that, we need someone who can join a team that puts people at the center of what they do—before code, before design, before product and bureaucracy. I believe this is one of the reasons people enjoy working in this environment, and I expect the next person to cultivate that empathetic mindset. That means making sure we run stress-free, we can make mistakes, we can learn from them.
 
