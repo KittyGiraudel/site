@@ -15,7 +15,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 💥 **February 5th**. I, with [SassDoc team](http://sassdoc.com/about/), [released the second major version](https://www.sitepoint.com/sassdoc-2-shiny-streamy-octopus/) of SassDoc, my big project of 2014. It was quite a large launch for us as it involved a complete rewriting, a redesign, a new site, a logo, a lot of tests, and so on. Pretty happy with what we have so far and for good reason: the [Zurb Foundation framework](https://foundation.zurb.com/sites/docs/v/5.5.3/sass.html) is using SassDoc to document all their Sass assets!
 
-📘 **February 27th**. I released my very first book, [CSS 3 Pratique du Design Web](https://css3-pratique.fr/). It took me about [half of 2014 to write](/2015/02/23/what-i-learnt-from-writing-a-book/), and I am very proud to see it live. Holding your very first book in your hands is a priceless feeling and hopefully it is something I will renew!
+📘 **February 27th**. I released my very first book, [CSS 3 Pratique du Design Web](https://www.amazon.fr/CSS3-Pratique-du-design-web/dp/2212678967). It took me about [half of 2014 to write](/2015/02/23/what-i-learnt-from-writing-a-book/), and I am very proud to see it live. Holding your very first book in your hands is a priceless feeling and hopefully it is something I will renew!
 
 🇩🇪 **March 15th**. I moved from Grenoble (France) to Berlin (Germany), despite not knowing a single word of German. I learnt a few words since then but it’s still far from ideal. In any case, I learnt to love the city and its how open-minded people. Planning on staying there for a while.
 
