@@ -4,6 +4,11 @@
   margin: 0.5em 1em 0.5em 0;
   border-radius: 50%;
   max-width: 8em;
+  display: none;
+
+  @include media(">=tablet") {
+    display: block;
+  }
 }
 
 .Resume__links {
@@ -20,22 +25,38 @@
 
 .Resume__section {
   display: flex;
+  flex-direction: column;
   margin-bottom: 2em;
+
+  @include media(">=tablet") {
+    margin-bottom: 3em;
+    flex-direction: row;
+  }
 }
 
 .Resume__section > h2 {
-  flex: 0 0 8em;
-  border-right: 1px solid rgb(221, 126, 180);
-  margin-right: 1.5em;
   font-style: italic;
   font-weight: bold;
-  text-align: right;
-  padding-right: 1.5em;
-  font-size: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  @include media(">=tablet") {
+    margin-top: revert;
+    padding-right: 1.5em;
+    font-size: 100%;
+    text-align: right;
+    border-right: 1px solid rgb(221, 126, 180);
+    margin-right: 1.5em;
+    flex: 0 0 8em;
+  }
 }
 
 .Resume__section > div {
   padding-top: 0.9em;
+}
+
+.Resume__section > div > :last-child {
+  margin-bottom: 0;
 }
 
 .Resume__section > div > :first-child {
@@ -44,16 +65,24 @@
 
 .Resume__section h3 {
   font-size: 90%;
-  display: flex;
+
+  @include media(">=tablet") {
+    display: flex;
+  }
 }
 
 .Resume__section h3 span {
   margin-left: auto;
-  font-size: 80%;
   opacity: 0.8;
   font-weight: normal;
-  padding-left: 1em;
-  text-align: right;
+  display: block;
+
+  @include media(">=tablet") {
+    font-size: 80%;
+    padding-left: 1em;
+    display: inline-block;
+    text-align: right;
+  }
 }
 
 .Resume__section li {
