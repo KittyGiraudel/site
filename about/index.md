@@ -11,6 +11,8 @@ I am a non-binary web developer based in Berlin.
 
 After a couple of years working as a developer in the banking industry in the French Alps, I relocated to Berlin to join [Edenspiekermann](https://edenspiekermann.com), a design agency. In 2016, I quit to join [N26](https://n26.com/) as a web tech lead where I focus on digital accessibility and inclusion.
 
+Four years down the line, fastforwarding to the end of ~~hell~~ 2020, I quit N26 and am currently looking for my next role. If you’d like to chat, please [hit me up on Twitter](https://twitter.com/HugoGiraudel).
+
 I used to be an active open-source community member. I have contributed to many projects, as well as initiated a few of my own as well. Among them, let’s mention [Browserhacks](http://browserhacks.com), [SassDoc](http://sassdoc.com), [Sass Guidelines](https://sass-guidelin.es), [Simplified JavaScript Jargon](https://jargon.js.org), [a11y-dialog](https://edenspiekermann.github.com/a11y-dialog) and [a11y-toggle](https://edenspiekermann.github.com/a11y-toggle).
 
 Early 2014, I authored a French book on CSS entitled [CSS 3 Pratique du Design Web](https://www.eyrolles.com/Informatique/Livre/css3-9782212678963/) (CSS 3 for Web Design). Two years later, I co-authored a book about Sass entitled [Jump Start Sass](https://learnable.com/books/jump-start-sass) with [Miriam Suzanne](https://www.miriamsuzanne.com/).

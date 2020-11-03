@@ -8,7 +8,7 @@ tags:
   - developer
 ---
 
-I’m a non-binary developer leading the web team at [N26](https://n26.com) in Berlin. I specialise in accessibility and inclusivity. For a longer version, [read more about me](/about/).
+I’m a non-binary developer in Berlin, currently looking for a new role after having led the web team at [N26](https://n26.com) for over 4 years. I specialise in accessibility and inclusivity. For a longer version, [read more about me](/about/).
 
 {% assign latest_articles = site.posts | slice: 0, 3 %}
 {% assign articles_copy = "I love writing, and have been sharing my thoughts — mainly about web development — on this blog for years. If you are looking for something specific, [try the search](/search). I also had the pleasure of hosting [guest authors](/guests) and would recommend you read their posts!" | markdownify %}
