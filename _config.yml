@@ -60,10 +60,6 @@ nav:
     url: /speaking/
   - label: About
     url: /about/
-  - label: Guests
-    url: /guest/
-  - label: Search
-    url: /search/
 
 # Liquid utilities
 empty_list: []
