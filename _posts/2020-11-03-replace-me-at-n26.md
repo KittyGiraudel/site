@@ -10,7 +10,7 @@ After about more than 4 years, my co-worker [Mike Smart](https://twitter.com/sma
 - [The candidate](#the-candidate)
 - [Why it’s a good opportunity](#why-its-a-good-opportunity)
 
-**Disclaimer: this is not an official job offer.** Please refer to the position on the N26 website to formally apply (which will be published in the next few days on the [N26 Careers](https://n26.com/en/careers/departments/13426)).
+**Disclaimer: this is not an official job offer.** Please refer to the [position on the N26 website](https://n26.com/en/careers/positions/2435542?gh_jid=2435542) to formally apply.
 
 ## Terminology
 
