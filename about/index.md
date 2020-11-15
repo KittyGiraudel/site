@@ -7,11 +7,9 @@ tags:
   - about
 ---
 
-I am a non-binary web developer based in Berlin.
+I am a non-binary web developer based in Berlin, leading frontend engineering at [Gorillas](https://gorillas.io) from January 2021.
 
-After a couple of years working as a developer in the banking industry in the French Alps, I relocated to Berlin to join [Edenspiekermann](https://edenspiekermann.com), a design agency. In 2016, I quit to join [N26](https://n26.com/) as a web tech lead where I focus on digital accessibility and inclusion.
-
-Four years down the line, fastforwarding to the end of ~~hell~~ 2020, I quit N26 and am currently looking for my next role. If you’d like to chat, please [hit me up on Twitter](https://twitter.com/HugoGiraudel).
+After a couple of years working as a developer in the banking industry in the French Alps, I relocated to Berlin to join [Edenspiekermann](https://edenspiekermann.com), a design agency. In 2016, I quit to join [N26](https://n26.com/) as a web tech lead where I focus on digital accessibility and inclusion. Four years down the line, fastforwarding to the end of ~~hell~~ 2020, I quit N26 and joined [Gorillas](https://gorillas.io) to tackle a new challenge.
 
 I used to be an active open-source community member. I have contributed to many projects, as well as initiated a few of my own as well. Among them, let’s mention [Browserhacks](http://browserhacks.com), [SassDoc](http://sassdoc.com), [Sass Guidelines](https://sass-guidelin.es), [Simplified JavaScript Jargon](https://jargon.js.org), [a11y-dialog](https://edenspiekermann.github.com/a11y-dialog) and [a11y-toggle](https://edenspiekermann.github.com/a11y-toggle).
 
