@@ -18,6 +18,7 @@ Please note that I am by no mean a Jenkins expert. I’m a frontend developer at
 - [Manual stage retry](#manual-stage-retry)
 - [Confirmation stage](#confirmation-stage)
 - [Handle aborted builds](#handle-aborted-builds)
+- [Build artefacts](#build-artefacts)
 
 ## Go scripted
 
@@ -178,6 +179,37 @@ node {
       // Build failed
     }
   }
+}
+```
+
+## Build artefacts
+
+It can be interesting for a build to archive some of its assets (known as “artefacts” in the Jenkins jargon). For instance, if you run Cypress tests as part of your pipeline, you might want to archive the failing screenshots so they can be browsed from the build page on Jenkins.
+
+```groovy
+try {
+  sh "cypress run"
+} catch (error) {
+  archiveArtifacts(
+    artifacts: "cypress/screenshots/**/*.png",
+    fingerprint: true,
+    allowEmptyArchive: true
+  )
+}
+```
+
+Artefacts can also be retrieved programmatically _across_ builds. We use that feature to know which tests to retry in subsequent runs. Our test job archives a JSON file listing failing specs, and the main job collects that file to run only these specs the 2nd time.
+
+```groovy
+final build = steps.build(job: 'path/to/job', propagate: false)
+
+// Copy in the root directory the artefacts archived by the sub-job,
+// referred to by its name and job number
+if (build.status = 'FAILURE') {
+  copyArtifacts(
+    projectName: 'path/to/job',
+    selector: specific("${build.number}")
+  )
 }
 ```
 
