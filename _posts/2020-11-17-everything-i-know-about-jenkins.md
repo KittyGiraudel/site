@@ -1,5 +1,5 @@
 ---
-title: Everything I Know About Jenkins
+title: Everything I know about Jenkins
 tags:
   - jenkins
   - ci

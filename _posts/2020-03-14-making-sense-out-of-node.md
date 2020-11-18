@@ -1,5 +1,5 @@
 ---
-title: "Making sense out of Node"
+title: Making sense out of Node
 tags:
   - node
   - npm
