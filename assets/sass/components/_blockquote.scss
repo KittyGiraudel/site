@@ -6,7 +6,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -32,4 +32,8 @@ blockquote > :last-child {
 
 blockquote p + p {
   margin-top: -1em;
+}
+
+.Info {
+  @extend blockquote;
 }
