@@ -9,7 +9,7 @@
 }
 
 .Tile::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 100%;
   left: -1px;
@@ -17,6 +17,11 @@
   height: 5px;
   background-image: linear-gradient(to right, stripes($colors));
   opacity: 0.7;
+  transition: opacity 250ms;
+}
+
+.Tile:hover::before {
+  opacity: 1;
 }
 
 .Tile__primary {
@@ -38,7 +43,10 @@
 }
 
 .Tile__link::before {
-  content: '→ ';
-  color: $soft-pink;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
-
