@@ -106,7 +106,7 @@ const onVPN = await ping("https://our.internal.api.domain");
 
 You might be familiar with the [native `os` Node module](https://nodejs.org/api/os.html) which grants some insights onto the operating system details such as the platform, the amount of CPUs, and so on and so forth.
 
-However, I wanted to detect the precise Mac version (e.g. Mac OS X 10.15.6) since we don’t all use the same. It turns out that this is not provided by the `os` module — the best we get is `darwin` as the platform. In another StackOverflow answer, I learnt that there is [a file on all Mac systems that contains basic information about the OS](https://stackoverflow.com/questions/14989081/node-js-to-get-determine-os-version).
+However, I wanted to detect the precise Mac version (e.g. Mac OS X 10.15.6) since we don’t all use the same. It turns out that this is not provided by the `os` module—the best we get is `darwin` as the platform. In another StackOverflow answer, I learnt that there is [a file on all Mac systems that contains basic information about the OS](https://stackoverflow.com/questions/14989081/node-js-to-get-determine-os-version).
 
 If we could read that file, we could get the information we need. It turns out that we can definitely do that. It’s a `plist` file which I came to understand is a flavour of XML for Apple systems (I guess?). In my case, I had `xml2js` at the ready, but [the `plist` npm package](https://www.npmjs.com/package/plist) might be even better.
 
@@ -133,7 +133,7 @@ After much searching, I found a StackOverflow answer that explains that [`nvm` i
 
 > `~/.nvm/nvm.sh` is not executable script, it is meant to be "sourced" (not run in a separate shell, but loaded and executed in the current shell context).
 
-I had to change strategies, and decided to keep things simple by checking whether the `$NVM_DIR` environment variable — installed by nvm — was empty or not.
+I had to change strategies, and decided to keep things simple by checking whether the `$NVM_DIR` environment variable—installed by nvm—was empty or not.
 
 ```js
 const exec = (command) => cp.execSync(command).toString().trim();
@@ -218,7 +218,7 @@ const lastCommit = exec("git log -1 --pretty=%B").trim();
 I am sure there are many other details we could add to the script ([find a lite version on GitHub Gist](https://gist.github.com/HugoGiraudel/143318842e836d6db2a28c621f3d49bc)), and it will likely evolve across the next few weeks and months. Some ideas I played with but didn’t complete for not wanting to install more npm packages just for the sake of it:
 
 - Display the current IP address.
-- Detect whether the OS dark mode preference is enabled — [`node-dark-mode`](https://github.com/sindresorhus/node-dark-mode) from Sindre Sorhus does just that by interacting with the OS.
+- Detect whether the OS dark mode preference is enabled—[`node-dark-mode`](https://github.com/sindresorhus/node-dark-mode) from Sindre Sorhus does just that by interacting with the OS.
 - Detect whether the camera is on with something like [`is-camera-on`](https://github.com/sindresorhus/is-camera-on) from you know who.
 
 Nevertheless, that was a lot of fun to write and figure out. If it helped you or you have any suggestion, please get in touch on Twitter! :)

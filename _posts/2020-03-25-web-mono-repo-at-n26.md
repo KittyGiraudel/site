@@ -56,7 +56,7 @@ Another possible drawback is that all projects use the exact same tech stack and
 
 Other than that, it’s pretty great.
 
-We all have an impact on each other’s work — for good or for bad. That means no one is truly isolated on their own project. They are an active member of our web community and see the platform grow and improve on a daily basis, which is a good thing both from a technical standpoint but also a communication one.
+We all have an impact on each other’s work—for good or for bad. That means no one is truly isolated on their own project. They are an active member of our web community and see the platform grow and improve on a daily basis, which is a good thing both from a technical standpoint but also a communication one.
 
 All projects become better by the day by the sheer fact that they belong to the mono-repo, and that’s pretty good for maintainability (and security, performance, consistency, and whatnot). I can’t stress enough how important this all is.
 

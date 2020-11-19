@@ -26,7 +26,7 @@ N26, like many startups, is growing fast. When I joined, we were just about 100 
 
 Hiring in the tech industry is just like the tech industry itself: completely messed up. We impose unrealistic and unreasonable expectations on people. We completely overstate the value of technical skills and we think writing code is way more difficult than it is. This, in turn, creates weak homogeneous teams of fragile egos.
 
-I [wrote extensively on how we hire](/2020/01/13/lets-talk-about-your-resume) and — while I do think I made a few mistakes along the way — I also feel like it worked exceptionally well. At the risk of sounding cheesy, the N26 web team is by far the best team I have ever worked in. It’s made of over 20 diverse individuals who respect each other to build a good product for everyone.
+I [wrote extensively on how we hire](/2020/01/13/lets-talk-about-your-resume) and—while I do think I made a few mistakes along the way—I also feel like it worked exceptionally well. At the risk of sounding cheesy, the N26 web team is by far the best team I have ever worked in. It’s made of over 20 diverse individuals who respect each other to build a good product for everyone.
 
 We are not just a group of technicians working for the same company. And by that, I don’t mean that we are necessarily all friends, or “like a family” (which I think is also an understated wrong trait of the startup culture). I mean that we are more than the sum of our skills. We have a shared vision, with shared values, like respect, trust, and inclusion (both within, and from a product standpoint).
 
@@ -34,8 +34,8 @@ We are not just a group of technicians working for the same company. And by that
 
 As your team grows, you want to cut as many sources of friction as possible when it comes to writing code. One way to do that is to make most discussions around the _way_ to write code over before they even start.
 
-Don’t spend time arguing about formatting: set up [Prettier](https://prettier.io/).  
-Don’t spend time reviewing coding errors: set up [ESLint](https://eslint.org/).  
+Don’t spend time arguing about formatting: set up [Prettier](https://prettier.io/).
+Don’t spend time reviewing coding errors: set up [ESLint](https://eslint.org/).
 Don’t spend time discussing about common patterns: define and [document them](#documentation-documentation-documentation).
 
 You will want your time spent discussing code to be about solving problems, not bikeshedding on the way to write said code. Writing the code truly is the easy part of our job, in part because it can be significantly eased with tools and processes.
@@ -46,7 +46,7 @@ I have recently [written about our documentation](/2020/01/23/technical-document
 
 Here are the things that it makes easier:
 
-👋🏻 Onboarding new team members. Having comprehensive documentation gives them autonomy, and enables them to get started faster and more comfortably. It gives people the tools to work and progress — especially to the people who crucially need these tools.
+👋🏻 Onboarding new team members. Having comprehensive documentation gives them autonomy, and enables them to get started faster and more comfortably. It gives people the tools to work and progress—especially to the people who crucially need these tools.
 
 ✅ Settling discussions by defining one way to do things. Of course this can change, and the one way might become another way down the line, but at any point in time, it is important to have a single common and agreed on approach.
 
@@ -60,7 +60,7 @@ One way to fight that problem is to not only invest in tests, but also invest in
 
 We noticed that a lot of junior and mid-level engineers have only very little experience with automated testing, if at all. For most of them, it’s a bit of Jest here, and sometimes some Cypress there. Given how complex it can be to set up automated testing, I can totally understand why testing knowledge is not more widely spread.
 
-What we want to avoid is having new joiners — especially less experienced ones — having to mess with dependencies, environment variables, configuration and whatnot. Have them focus on the meat: writing good and relevant tests. They should not have to worry too much about where or when these tests will be run. The system should guarantee that the tests they write will be run.
+having to mess with dependencies, environment variables, configuration and whatnot. Have them focus on the meat: writing good and relevant tests. They should not have to worry too much about where or when these tests will be run. The system should guarantee that the tests they write will be run.
 
 Invest in your testing setup, folks. Make it good. Make it robust. Make it helpful. Don’t let it fall through the cracks.
 
@@ -86,7 +86,7 @@ I have recently been taught the word “sonder”. That is the realisation that 
 
 I have absurdly high expectations for myself, and sometimes I expect people to do the same about themselves. That’s not quite how things work though, and every one is trying to do the best they can. The [Prime Directive of Agile](https://retrospectivewiki.org/index.php?title=The_Prime_Directive) says something similar:
 
-> “[W]e understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.”  
+> “[W]e understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.”
 > — [The Prime Directive of Agile](https://retrospectivewiki.org/index.php?title=The_Prime_Directive)
 
 I guess the lesson here is to manage expectations. Sometimes we’re in the wrong assuming people don’t want responsibilities. What’s important is that people get to decide when they’re ready, so they remain in control of their personal growth.

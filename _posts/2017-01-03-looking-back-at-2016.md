@@ -32,6 +32,6 @@ But let’s try to focus on the bright side, shall we? Last year, I did [a littl
 
 🇩🇪 **December 8th**. I left Berlin for another German city for the first time since i moved here last year. I visited Munich for a couple of days. What a lovely city!
 
-Last thing I didn’t mention — because that spreaded from March until now — is that I have been coding some Node.js with my mom on a personal project of hers. She had an initial PHP version last year which I rewrote entirely in Node.js to make it more flexible and structured. She took over it and maintains it (mostly) by herself since then. HOW FUCKING COOL IS THAT? ✨
+Last thing I didn’t mention—because that spreaded from March until now—is that I have been coding some Node.js with my mom on a personal project of hers. She had an initial PHP version last year which I rewrote entirely in Node.js to make it more flexible and structured. She took over it and maintains it (mostly) by herself since then. HOW FUCKING COOL IS THAT? ✨
 
 Anyway, that’s still a few things for this year, but that’s without counting all the downs and hard times. All in all, 2016 was pretty crappy. Let’s hope 2017 gets better.

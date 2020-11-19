@@ -33,7 +33,7 @@ Hey friends! This is the time of the year where I look back at these last 12 mon
 
 📦 **December 11th.** I moved into a bigger and nicer flat with my partner and our 3 cats and although it has been a stressful few weeks, it’s very nice to get to start fresh somewhere new.
 
-🎄 **December 25th.** I was in Delft (Netherlands) with my partner to celebrate their birthday and Christmas alongside their family — now marking my 3rd visit to this city, which I like very much for all the food and drinks I get to have there.
+🎄 **December 25th.** I was in Delft (Netherlands) with my partner to celebrate their birthday and Christmas alongside their family—now marking my 3rd visit to this city, which I like very much for all the food and drinks I get to have there.
 
 ### On the work side
 
@@ -43,7 +43,7 @@ I kept pushing for more accessibility and diversity in the work place, organisin
 
 I also invested quite some time into our deployment pipeline, namely Jenkins, in order to improve our efficiency and reliability. It’s an area I have been notoriously bad at, yet it was very interesting and enjoyable having to navigate the complexity of the matter.
 
-Another ongoing personal achievement of my work at N26 is the documentation we have for our web platform — [about which I’ve tweeted a few times](https://twitter.com/HugoGiraudel/status/1189941543156797442?s=20). It is about 60,000 words (or the equivalent of a ~200 pages book) divided in 50+ chapters, published with Gitbook on internal servers for the entire company to have access to it.
+Another ongoing personal achievement of my work at N26 is the documentation we have for our web platform—[about which I’ve tweeted a few times](https://twitter.com/HugoGiraudel/status/1189941543156797442?s=20). It is about 60,000 words (or the equivalent of a ~200 pages book) divided in 50+ chapters, published with Gitbook on internal servers for the entire company to have access to it.
 
 ### On the personal side
 

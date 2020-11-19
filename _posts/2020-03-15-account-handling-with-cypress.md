@@ -34,18 +34,18 @@ N26 has an internal service to create accounts. We created a Cypress command to 
 cy.createUser({
   confirmEmail: false,
   residenceCountry: "ITA",
-  topUp: 100
+  topUp: 100,
 });
 ```
 
-Under the hood, this command fires a request to the internal service, and receives the newly-created user’s information as a response. It contains a lot of data about the user, such as their identifier, name, birth date, residency, nationality — all of which is generated at random with [Faker](https://github.com/marak/Faker.js/).
+Under the hood, this command fires a request to the internal service, and receives the newly-created user’s information as a response. It contains a lot of data about the user, such as their identifier, name, birth date, residency, nationality—all of which is generated at random with [Faker](https://github.com/marak/Faker.js/).
 
 Then we would start all our tests with creating an account, then logging into that account with another custom command.
 
 ```js
 describe("Personal settings", () => {
   before(() => {
-    cy.createUser().then(user => cy.login(user));
+    cy.createUser().then((user) => cy.login(user));
   });
 });
 ```
@@ -81,7 +81,7 @@ export default function getAccount(conf = {}) {
       : cy.wrap(cache.get(key));
   }
 
-  return cy.createUser(conf).then(account => {
+  return cy.createUser(conf).then((account) => {
     if (conf.cache && account) {
       cache.set(key, account);
     }
