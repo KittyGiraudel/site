@@ -46,14 +46,19 @@ export const Settings = {};
 
 const WithMotion = ({ children }) =>
   useMatchMedia("(prefers-reduced-motion: no-preference)") ? children : null;
+
 const WithoutMotion = ({ children }) =>
   useMatchMedia("(prefers-reduced-motion: reduce)") ? children : null;
+
 const WithReducedData = ({ children }) =>
   useMatchMedia("(prefers-reduced-data: reduce)") ? children : null;
+
 const WithReducedTransparency = ({ children }) =>
   useMatchMedia("(prefers-reduced-transparency: reduce)") ? children : null;
+
 const DarkMode = ({ children }) =>
   useMatchMedia("(prefers-color-scheme: dark)") ? children : null;
+
 const LightMode = ({ children }) =>
   useMatchMedia("(prefers-color-scheme: light)") ? children : null;
 
