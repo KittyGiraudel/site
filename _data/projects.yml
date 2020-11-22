@@ -88,7 +88,7 @@
 
 - name: Sass Compatibility
   description: 'A project collecting incompatibilities between different Sass engines.'
-  link: https://sass-compatibility.github.io/
+  link: https://hugogiraudel.github.io/sass-compatibility/
   category: Sass
 
 - name: Browserhacks
