@@ -372,4 +372,4 @@ Despite its relatively small community, Fela has been around for 4 years, and is
 - A revamp of the plugin system for increased performance.
 - Small improvements and minor bugfixes across the board.
 
-Robin Weser has also been working on [Elodon](https://elodin-lang.org/) for a few years now, an experimental universal styling language, usable across platforms. If design languages are your thing, be sure to check it out!
+Robin Weser has also been working on [Elodin](https://elodin-lang.org/) for a few years now, an experimental universal styling language, usable across platforms. If design languages are your thing, be sure to check it out!
