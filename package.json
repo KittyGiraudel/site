@@ -1,6 +1,9 @@
 {
   "title": "HugoGiraudel.com",
   "homepage": "https://hugogiraudel.com",
+  "scripts": {
+    "start": "bundle exec jekyll s --config=_config.yml,_config.dev.yml"
+  },
   "dependencies": {
     "sw-precache": "^5.2.1"
   }
