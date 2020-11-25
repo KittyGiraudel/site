@@ -67,6 +67,8 @@ groom_deps devDependencies
 
 Note that some dependencies are required while not being imported anywhere in JavaScript code. For instance, `@babel/polyfill`, `iltorb` or other similar dependencies can be necessary while not being explicitly mentioned in JavaScript code. Therefore, tread carefully.
 
+<p class="Info">The above script requires <a href="https://stedolan.github.io/jq/" target="_blank" rel="noopener noreferrer">jq</a>, which is a command-line utility to manipulate JSON.</p>
+
 ## Outdated dependencies
 
 You might be familiar with third-party tools like [Dependabot](https://dependabot.com/) or [Greenkeeper](https://greenkeeper.io/) to automatically submit pull-requests to update dependencies. They are nice, but they also have downsides:
