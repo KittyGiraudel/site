@@ -45,7 +45,7 @@ exclude:
   - README.md
   - LICENSE
   - node_modules
-  - sw-precache-config.js
+  - workbox-config.js
 include:
   - _redirects
 environment: production
