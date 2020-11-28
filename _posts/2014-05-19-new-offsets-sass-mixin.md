@@ -10,7 +10,7 @@ tags:
 
 About a year ago, I wrote about how I managed to come up with what I think is [a clever Sass mixin to deal with offset positioning](/2013/08/05/offsets-sass-mixin/) in CSS, also known as `top`, `right`, `bottom` and `left`.
 
-The mixin was directly inspired from [Nib](https://github.com/visionmedia/nib), [Stylus](http://learnboost.github.io/stylus/)' most popular framework. The idea is to be able to declare all desired offsets in a single declaration rather than having to write multiple CSS properties.
+The mixin was directly inspired from [Nib](https://github.com/visionmedia/nib), [Stylus](https://stylus-lang.com/)' most popular framework. The idea is to be able to declare all desired offsets in a single declaration rather than having to write multiple CSS properties.
 
 ```scss
 // Stylus syntax
