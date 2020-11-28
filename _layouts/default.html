@@ -4,14 +4,14 @@
   {% include head.html %}
 
   <body>
-    <div class="container">
-      {% include components/skip_link.html %}
-      {% include components/header.html %}
+    {% include components/skip_link.html %}
+    {% include components/header.html %}
 
-      <main class="Main" role="main" id="main">
+    <main class="Main" role="main" id="main">
+      <div class="container">
         {{ content }}
-      </main>
-    </div>
+      </div>
+    </main>
 
     {% include components/footer.html %}
     {% include scripts.html %}
