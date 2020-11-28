@@ -1,7 +1,7 @@
 {% assign post = include.item %}
 {% assign title = post.title %}
 {% assign lang = post.lang %}
-{% capture meta %}{{ post.date | date: "%B %d, %Y" }}{% if post.guest %}, by {{ post.guest }}{% endif %}{% endcapture %}
+{% capture meta %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>{% if post.guest %}, by {{ post.guest }}{% endif %}{% endcapture %}
 {% capture link_url %}{% if post.external %}{{ post.external.url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
 {% capture link_label %}Read article <span class="visually-hidden">{{ title }}</span>{% endcapture %}
 

@@ -1,7 +1,7 @@
 {% assign event = include.item %}
 {% assign title = event.event %}
 {% assign link_url = event.link %}
-{% capture meta %}{{ event.date | date: "%B %d, %Y" }} · {{ event.location | split: ',' | first }}{% endcapture %}
+{% capture meta %}<time datetime="{{ event.date | date_to_xmlschema }}">{{ event.date | date: "%B %d, %Y" }}</time> · {{ event.location | split: ',' | first }}{% endcapture %}
 {% capture link_label %}Check event <span class="visually-hidden">{{ title }}</span>{% endcapture %}
 
 {% include components/tile.html

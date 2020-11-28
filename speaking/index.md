@@ -14,7 +14,7 @@ Over the last few years I’ve had the amazing opportunity to be a speaker at so
 {% for event in site.data.speaking %}
   <li class="List__item">
     <div class="List__item-inner">
-      <span class="List__secondary-content">{{ event.date|date_to_string }} — {{ event.location }}
+      <span class="List__secondary-content"><time datetime="{{ event.date | date_to_xmlschema }}">{{ event.date | date_to_string }}</time> — {{ event.location }}
       {% if event.actions %}
       <ul class="DottedList">
       {% for action in event.actions %}
