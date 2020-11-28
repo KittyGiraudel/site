@@ -24,7 +24,7 @@ My name is Hugo but I’m going by Kitty more and more. I’m a non-binary web d
 {% assign main_projects = site.data.projects | where_exp: "project", "project.showcase" | slice: 0, 3 %}
 {% include components/showcase.html
   type = "project"
-  title = "Main projects"
+  title = "Open-source projects"
   copy= "I used to be quite involved in open-source development. I have initiated and contributed to many projects, most of which about Sass or digital accessibility."
   link_url = "/projects"
   link_label = "Browse more projects"
@@ -34,7 +34,7 @@ My name is Hugo but I’m going by Kitty more and more. I’m a non-binary web d
 {% assign latest_events = site.data.speaking | slice: 0, 3 %}
 {% include components/showcase.html
   type = "event"
-  title = "Last events"
+  title = "Speaking events"
   copy = "I enjoy talking at conferences when I find time. If you would like me to attend one of your events, feel free to get in touch! In the mean time, feel free to have a look at my past talks."
   link_url = "/speaking"
   link_label = "Check more events"
