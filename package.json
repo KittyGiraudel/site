@@ -4,7 +4,8 @@
   "scripts": {
     "start": "bundle exec jekyll s --config=_config.yml,_config.dev.yml"
   },
-  "dependencies": {
-    "sw-precache": "^5.2.1"
+  "dependencies": {},
+  "devDependencies": {
+    "workbox-cli": "^5.1.4"
   }
 }
