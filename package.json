@@ -4,7 +4,7 @@
   "scripts": {
     "sw": "./node_modules/.bin/workbox generateSW workbox-config.js",
     "build": "npx @11ty/eleventy && npm run sw",
-    "start": "npx @11ty/eleventy --serve --quiet"
+    "start": "NODE_ENV=development npx @11ty/eleventy --serve --quiet"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",

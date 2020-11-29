@@ -24,9 +24,6 @@ module.exports = function (config) {
   config.addFilter('markdown', markdown)
   config.addPairedShortcode('markdown', markdown)
 
-  // Add a tag to restrict output to production environments
-  config.addPairedShortcode('production', production)
-
   // Reproduce some Liquid filters, sometimes losely
   config.addFilter('date_to_string', dateToString)
   config.addFilter('date_to_xmlschema', dateToXmlSchema)
@@ -110,8 +107,3 @@ function groupBy(array, key) {
   )
 }
 
-function production(content) {
-  if (process.env.NODE_ENV === 'production') {
-    return content
-  }
-}
