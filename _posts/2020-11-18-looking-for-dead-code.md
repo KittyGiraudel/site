@@ -19,7 +19,7 @@ import looksLikeEmail from "@helpers/looksLikeEmail";
 
 Now, we only have to loop through all paths in our `components` directory (or any other), and perform a search for every one of them. If the search yields nothing, the component is unused.
 
-```sh
+```bash
 # Loop over every entry within the given path
 for entry in src/components/*
 do
@@ -37,7 +37,7 @@ done
 
 A convenient way to execute that code is to define it as a function in one’s `.bashrc` or `.zshrc` file. When wrapped as a function, it might look like this:
 
-```sh
+```bash
 function groom {
   root="${2:-.}"
   for entry in "$1"/*
@@ -52,7 +52,7 @@ function groom {
 
 It can then be used by passing the folder to ‘groom’ as an argument, and the root directory for the code search as a second argument (`./` by default):
 
-```sh
+```bash
 groom src/components
 groom src/components src
 ```

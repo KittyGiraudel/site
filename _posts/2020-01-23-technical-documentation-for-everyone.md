@@ -50,7 +50,7 @@ In order not to restrict access to GitHub users, we decided to build it with [Gi
 
 Somewhere in our deployment pipeline, we run the following command:
 
-```sh
+```bash
 npx --package gitbook-cli gitbook build . build/docs
 ```
 

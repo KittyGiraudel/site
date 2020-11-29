@@ -16,7 +16,7 @@ As you will see, there is quite a lot of information in there. And while most of
 
 Without further ado, let me show you what the script outputs (without fancy colours, sorry):
 
-```sh
+```bash
 ===============================================================================
 * System                                                                      *
 ===============================================================================

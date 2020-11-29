@@ -38,7 +38,7 @@ To quickly jump between branches, I created a few aliases. At N26, the `master` 
 
 I aliased `git checkout` as `git co` and `git branch` as `git br`:
 
-```sh
+```bash
 $ git br -D feature/my-old-feature
 $ git co -b feature/my-new-feature
 ```
@@ -51,7 +51,7 @@ The basics of Git are adding some files to the index, committing the index in hi
 
 I didn’t alias the `add` command because it’s short enough that an alias is not necessarily going to bring me any value. I could alias to `git a` but at this stage it would be more annoying to deal with muscle memory than typing these two extra characters. I did alias `git commit -m` into `git cm` though.
 
-```sh
+```bash
 $ git add .
 $ git cm "Replace a regular expression with a split in the forwarder"
 $ git push
@@ -61,7 +61,7 @@ When it comes to pushing, I like to avoid having to type the name of the remote 
 
 Because this is a terrible default value (which has been changed in Git 2.\* for safety reasons), I updated the push configuration in my `.gitconfig` (and made all my coworkers do the same):
 
-```sh
+```bash
 # See: https://git-scm.com/docs/git-config#git-config-pushdefault
 [push]
   default = current
@@ -77,7 +77,7 @@ To move things out of the index (the opposite of `git add`), I have `git wait` (
 
 So let’s say I realised my last commit was complete poppycock and I want to undo all of it and never speak of it ever again:
 
-```sh
+```bash
 $ git undo  # This undoes the last commit
 $ git wait  # This moves staged files out of the index
 $ git abort # This cancels anything in the index
@@ -87,7 +87,7 @@ $ git abort # This cancels anything in the index
 
 Updating a branch with the main one is done through fetching and rebasing with the origin (or merging but that’s not my thing). I didn’t alias `git fetch`, but I did create `git rod` for `git rebase origin/develop` —mostly because I never remember if it should be a space or a slash.
 
-```sh
+```bash
 $ git fetch && git rod # Boom, up to date
 ```
 
@@ -133,7 +133,7 @@ I’m not a fan a Vim, so I made Visual Studio Code my editor for Git. You can d
 
 After running the `git rb` command, a Visual Studio Code tab gets open with content like this:
 
-```sh
+```bash
 pick a22f893d3 Inline outputPath and chunkOutputPath in the client-side configuration
 pick 5b861eb7f Add process.env.STATS_MODE to configure stats option
 

@@ -52,7 +52,7 @@ This specific search pattern will make sure to work for:
 
 When extracted as a little `groom_deps` function in one’s `.zshrc` or `.bashrc` file, it can be used within any project pretty conveniently. The type of dependencies (`dependencies`, `devDependencies` or `peerDependencies`) can be passed as an argument and defaults to `dependencies`.
 
-```sh
+```bash
 function groom_deps {
   key=${1:-dependencies}
   for dep in $(cat package.json | jq -cr ".$key|keys|.[]");
@@ -61,7 +61,7 @@ function groom_deps {
 }
 ```
 
-```sh
+```bash
 groom_deps devDependencies
 ```
 
@@ -83,7 +83,7 @@ It works like this: it goes through the `dependencies` (and optionally `devDepen
 
 The output could look something like this:
 
-```sh
+```bash
 Unsafe updates
 ==============
 Major version bumps or any version bumps prior to the first major release (0.y.z).
@@ -102,7 +102,7 @@ npm install --save-dev ava@3.13.0 standard@16.0.3
 
 I actually never published the package on npm because I couldn’t be bothered to find a name that wasn’t already taken yet. The current recommended usage is to clone it locally and use it through Node or the CLI. I personally added the little snippet to my `.zshrc` file so it provides me a `deps` function I can run in a project to look for dependency updates.
 
-```sh
+```bash
 function deps() {
   node ../dependency-checker/bin -p package.json --dev --no-pr
 }
