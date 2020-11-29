@@ -16,7 +16,7 @@ I don’t know why I did not think of writing Sass guidelines when [Harry Robert
 
 After two days working on them, I am very proud and excited to release a 10000 words long styleguide on working with Sass: [sass-guidelin.es](https://sass-guidelin.es).
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Game on, folks! <a href="https://twitter.com/SassCSS">@SassCSS</a> guidelines, just for you: <a href="https://t.co/8ybeXdBOFY">https://t.co/8ybeXdBOFY</a>.</p>&mdash; Hugo “Kitty” Giraudel (@HugoGiraudel) <a href="https://twitter.com/HugoGiraudel/status/552472109797371906">January 6, 2015</a></blockquote>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Game on, folks! <a href="https://twitter.com/SassCSS">@SassCSS</a> guidelines, just for you: <a href="https://t.co/8ybeXdBOFY">https://t.co/8ybeXdBOFY</a>.</p>— Hugo “Kitty” Giraudel (@HugoGiraudel) <a href="https://twitter.com/HugoGiraudel/status/552472109797371906">January 6, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## What is that?
