@@ -1,7 +1,7 @@
 ---
 guest: Ezekiel Gabrielse
 title: Building a customization API in Sass
-tags:
+keywords:
   - sass
   - api
 ---

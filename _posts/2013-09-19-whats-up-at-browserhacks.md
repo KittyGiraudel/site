@@ -1,6 +1,6 @@
 ---
 title: What’s up at Browserhacks?
-tags:
+keywords:
   - css
   - hacks
   - release

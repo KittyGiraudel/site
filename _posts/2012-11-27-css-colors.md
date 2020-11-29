@@ -1,6 +1,6 @@
 ---
 title: Colors in CSS
-tags:
+keywords:
   - css
   - colors
 ---

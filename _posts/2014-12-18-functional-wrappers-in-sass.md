@@ -3,7 +3,7 @@ external:
   host: SitePoint
   url: https://www.sitepoint.com/functional-wrappers-sass/
 title: Functional wrappers in Sass
-tags:
+keywords:
   - sass
   - functions
 ---

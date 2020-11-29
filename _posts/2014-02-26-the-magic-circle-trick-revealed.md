@@ -1,6 +1,6 @@
 ---
 title: "The Magic Circle: trick revealed"
-tags:
+keywords:
   - css
   - riddle
 ---

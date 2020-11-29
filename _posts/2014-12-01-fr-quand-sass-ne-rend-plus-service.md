@@ -4,7 +4,7 @@ external:
   url: https://www.24joursdeweb.fr/2014/quand-sass-ne-rend-plus-service/
 lang: fr
 title: Quand Sass ne rend plus service
-tags:
+keywords:
   - sass
   - thoughts
 ---

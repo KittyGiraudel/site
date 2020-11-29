@@ -1,6 +1,6 @@
 ---
 title: "SassyCast: type conversion in Sass"
-tags:
+keywords:
   - sass
   - type
   - release

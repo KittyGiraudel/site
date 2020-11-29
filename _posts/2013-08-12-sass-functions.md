@@ -1,6 +1,6 @@
 ---
 title: A couple of Sass functions
-tags:
+keywords:
   - sass
   - function
 ---

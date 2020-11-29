@@ -1,6 +1,6 @@
 ---
 title: Giving a front-end workshop
-tags:
+keywords:
   - workshop
   - HTML
   - CSS

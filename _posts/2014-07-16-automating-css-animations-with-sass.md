@@ -1,6 +1,6 @@
 ---
 title: Automating CSS animations with Sass
-tags:
+keywords:
   - sass
   - css
   - animations

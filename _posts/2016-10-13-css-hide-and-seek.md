@@ -1,7 +1,7 @@
 ---
 title: CSS hide-and-seek
 guest: "Gaël Poupard"
-tags:
+keywords:
   - css
   - accessibility
   - a11y

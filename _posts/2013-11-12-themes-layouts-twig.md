@@ -1,6 +1,6 @@
 ---
 title: Dealing with themes and layouts with Twig
-tags:
+keywords:
   - templates
   - Twig
   - themes

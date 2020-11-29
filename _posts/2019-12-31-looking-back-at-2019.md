@@ -1,6 +1,6 @@
 ---
 title: Looking back at 2019
-tags:
+keywords:
   - thoughts
 ---
 

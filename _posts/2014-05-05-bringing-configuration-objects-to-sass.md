@@ -1,6 +1,6 @@
 ---
 title: Bringing configuration objects to Sass
-tags:
+keywords:
   - sass
   - maps
   - configuration

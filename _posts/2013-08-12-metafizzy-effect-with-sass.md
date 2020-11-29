@@ -3,7 +3,7 @@ external:
   host: CSS-Tricks
   url: https://css-tricks.com/metafizzy-effect-with-sass/
 title: MetaFizzy effect with Sass
-tags:
+keywords:
   - sass
   - css
   - metafizzy

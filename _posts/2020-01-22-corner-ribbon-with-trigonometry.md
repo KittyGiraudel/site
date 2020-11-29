@@ -1,6 +1,6 @@
 ---
 title: Corner ribbon with trigonometry
-tags:
+keywords:
   - sass
   - design
   - ribbon

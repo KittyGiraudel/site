@@ -1,6 +1,6 @@
 ---
 title: Looking back at 2014
-tags:
+keywords:
   - thoughts
 ---
 

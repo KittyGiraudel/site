@@ -1,6 +1,6 @@
 ---
 title: The Sound of Bullets
-tags:
+keywords:
   - miscellaneous
   - thoughts
 ---

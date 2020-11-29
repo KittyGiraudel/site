@@ -1,6 +1,6 @@
 ---
 title: Feedback on another conf
-tags:
+keywords:
   - thoughts
   - feweb
   - sass

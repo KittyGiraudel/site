@@ -1,6 +1,6 @@
 ---
 title: Apollo GraphQL without JavaScript
-tags:
+keywords:
   - JavaScript
   - GraphQL
   - Apollo

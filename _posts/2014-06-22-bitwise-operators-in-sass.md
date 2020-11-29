@@ -1,6 +1,6 @@
 ---
 title: Bitwise operators in Sass
-tags:
+keywords:
   - sass
   - bitwise
   - experiment

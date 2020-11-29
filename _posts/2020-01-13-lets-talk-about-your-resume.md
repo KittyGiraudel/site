@@ -1,6 +1,6 @@
 ---
 title: Let’s talk about your resume
-tags:
+keywords:
   - hiring
   - resume
   - thoughts

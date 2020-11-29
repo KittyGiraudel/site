@@ -1,6 +1,6 @@
 ---
 title: String replacement function in Sass
-tags:
+keywords:
   - sass
   - strings
   - replace

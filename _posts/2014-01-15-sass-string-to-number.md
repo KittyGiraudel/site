@@ -1,6 +1,6 @@
 ---
 title: Casting a string to a number in Sass
-tags:
+keywords:
   - sass
   - type
   - cast

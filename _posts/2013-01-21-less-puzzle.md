@@ -1,6 +1,6 @@
 ---
 title: A little LESS puzzle
-tags:
+keywords:
   - css
   - less
   - riddle

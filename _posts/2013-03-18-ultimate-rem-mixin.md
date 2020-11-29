@@ -1,6 +1,6 @@
 ---
 title: The ultimate PX/REM mixin
-tags:
+keywords:
   - sass
   - px
   - rem

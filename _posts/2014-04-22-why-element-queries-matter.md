@@ -1,6 +1,6 @@
 ---
 title: Why Element Queries matter
-tags:
+keywords:
   - css
   - element queries
   - thoughts

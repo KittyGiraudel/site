@@ -1,6 +1,6 @@
 ---
 title: Boilerplate-ing Jekyll
-tags:
+keywords:
   - jekyll
   - boilerplate
   - framework

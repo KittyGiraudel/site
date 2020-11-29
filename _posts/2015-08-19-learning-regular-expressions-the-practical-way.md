@@ -1,6 +1,6 @@
 ---
 title: "Learning regular expressions: the practical way"
-tags:
+keywords:
   - regular expressions
   - regex
   - regexp

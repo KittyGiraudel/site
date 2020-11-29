@@ -1,6 +1,6 @@
 ---
 title: My interview by Clément Osternaud
-tags:
+keywords:
   - interview
   - thoughts
 ---

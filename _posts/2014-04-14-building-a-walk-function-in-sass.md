@@ -1,6 +1,6 @@
 ---
 title: Building a walk function in Sass
-tags:
+keywords:
   - sass
   - walk
   - functions

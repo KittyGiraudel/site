@@ -1,6 +1,6 @@
 ---
 title: How I use Trello to stop forgetting things
-tags:
+keywords:
   - trello
   - workflow
   - process

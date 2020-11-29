@@ -1,6 +1,6 @@
 ---
 title: What I learnt from writing a book
-tags:
+keywords:
   - writing
   - book
   - css

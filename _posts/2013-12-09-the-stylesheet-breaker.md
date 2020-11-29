@@ -1,6 +1,6 @@
 ---
 title: The stylesheet breaker
-tags:
+keywords:
   - css
   - riddle
 ---

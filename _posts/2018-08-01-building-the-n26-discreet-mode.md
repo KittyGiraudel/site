@@ -1,6 +1,6 @@
 ---
 title: Building the N26 discreet mode
-tags:
+keywords:
   - accessibility
   - discreet
   - a11y

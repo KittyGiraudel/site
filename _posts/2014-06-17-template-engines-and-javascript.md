@@ -1,6 +1,6 @@
 ---
 title: Template engines and JavaScript
-tags:
+keywords:
   - template
   - javascript
 ---

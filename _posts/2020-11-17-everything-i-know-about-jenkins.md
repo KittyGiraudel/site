@@ -1,6 +1,6 @@
 ---
 title: Everything I know about Jenkins
-tags:
+keywords:
   - jenkins
   - ci
   - groovy

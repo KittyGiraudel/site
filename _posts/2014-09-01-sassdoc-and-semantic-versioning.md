@@ -1,6 +1,6 @@
 ---
 title: SassDoc and Semantic Versioning
-tags:
+keywords:
   - sass
   - sassdoc
   - semver

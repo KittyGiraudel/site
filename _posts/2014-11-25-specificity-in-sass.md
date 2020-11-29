@@ -1,7 +1,7 @@
 ---
 guest: David Khourshid
 title: Calculating specificity in Sass
-tags:
+keywords:
   - sass
   - css
   - specificity

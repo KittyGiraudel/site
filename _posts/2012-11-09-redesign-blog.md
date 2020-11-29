@@ -1,6 +1,6 @@
 ---
 title: Hugogiraudel.com redesigned + new blog
-tags:
+keywords:
   - design
   - blog
   - writing

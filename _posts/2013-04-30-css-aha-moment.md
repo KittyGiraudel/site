@@ -1,6 +1,6 @@
 ---
 title: My CSS Aha moment
-tags:
+keywords:
   - css
   - thoughts
 ---

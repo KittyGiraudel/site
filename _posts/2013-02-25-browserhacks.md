@@ -1,6 +1,6 @@
 ---
 title: Introducing Browserhacks
-tags:
+keywords:
   - css
   - hacks
   - release

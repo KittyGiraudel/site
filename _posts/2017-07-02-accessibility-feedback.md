@@ -1,6 +1,6 @@
 ---
 title: Accessibility feedback from Twitter
-tags:
+keywords:
   - accessibility
   - a11y
   - disability

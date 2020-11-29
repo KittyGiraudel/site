@@ -1,6 +1,6 @@
 ---
 title: Introducing a11y-dialog v3
-tags:
+keywords:
   - javascript
   - accessibility
   - dialog

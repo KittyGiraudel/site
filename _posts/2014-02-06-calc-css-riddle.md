@@ -1,6 +1,6 @@
 ---
 title: CSS trickery and calc function
-tags:
+keywords:
   - css
   - calc
   - riddle

@@ -3,7 +3,7 @@ layout: page
 title: Recipes
 excerpt: |
   Recipes from my kitchen.
-tags:
+keywords:
   - recipes
   - cooking
   - food

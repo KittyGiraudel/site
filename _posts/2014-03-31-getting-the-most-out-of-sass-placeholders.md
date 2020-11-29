@@ -1,6 +1,6 @@
 ---
 title: Getting the most out of Sass placeholders
-tags:
+keywords:
   - sass
   - placeholders
   - extend

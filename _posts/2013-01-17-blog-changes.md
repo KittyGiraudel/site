@@ -1,6 +1,6 @@
 ---
 title: Blog changes
-tags:
+keywords:
   - blog
   - writing
 ---

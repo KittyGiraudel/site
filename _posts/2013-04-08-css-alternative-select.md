@@ -1,6 +1,6 @@
 ---
 title: "Why a CSS alternative to &lt;select&gt; is impossible"
-tags:
+keywords:
   - css
   - thoughts
   - select

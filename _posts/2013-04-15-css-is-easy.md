@@ -1,6 +1,6 @@
 ---
 title: “CSS is easy”
-tags:
+keywords:
   - css
   - front-end
   - back-end

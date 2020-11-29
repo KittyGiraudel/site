@@ -1,6 +1,6 @@
 ---
 title: Six months of blogging
-tags:
+keywords:
   - blog
 ---
 

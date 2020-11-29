@@ -1,6 +1,6 @@
 ---
 title: How I came to write for the web
-tags:
+keywords:
   - blog
   - writing
   - editing

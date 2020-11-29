@@ -1,6 +1,6 @@
 ---
 title: "SassyJSON: talk to the browser!"
-tags:
+keywords:
   - sass
   - JSON
   - SassyJSON

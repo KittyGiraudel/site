@@ -1,6 +1,6 @@
 ---
 title: "CSS Riddle: reverse ellipsis"
-tags:
+keywords:
   - css
   - riddle
   - ellipsis

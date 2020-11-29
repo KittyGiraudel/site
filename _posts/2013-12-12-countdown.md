@@ -1,6 +1,6 @@
 ---
 title: Introducing Countdown.js
-tags:
+keywords:
   - javascript
   - release
 ---

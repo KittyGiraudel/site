@@ -1,6 +1,6 @@
 ---
 title: A closer look at my Sass structure
-tags:
+keywords:
   - sass
   - architecture
 ---

@@ -1,6 +1,6 @@
 ---
 title: Accessible links and buttons with React
-tags:
+keywords:
   - accessibility
   - a11y
   - react

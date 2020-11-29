@@ -1,6 +1,6 @@
 ---
 title: Implementing a reduced-motion mode
-tags:
+keywords:
   - accessibility
   - reduced motion
   - a11y

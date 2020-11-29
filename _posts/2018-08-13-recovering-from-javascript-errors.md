@@ -1,6 +1,6 @@
 ---
 title: Recovering from JavaScript errors
-tags:
+keywords:
   - accessibility
   - availability
   - javascript

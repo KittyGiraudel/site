@@ -1,6 +1,6 @@
 ---
 title: Feedback on dotCSS 2014
-tags:
+keywords:
   - thoughts
   - dotCSS
   - sass

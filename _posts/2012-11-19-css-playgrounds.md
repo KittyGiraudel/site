@@ -1,6 +1,6 @@
 ---
 title: A round-up on CSS playgrounds
-tags:
+keywords:
   - css
   - playground
 ---

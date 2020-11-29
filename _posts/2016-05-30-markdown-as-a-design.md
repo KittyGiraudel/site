@@ -1,6 +1,6 @@
 ---
 title: Markdown as a design
-tags:
+keywords:
   - markdown
   - redesign
   - css

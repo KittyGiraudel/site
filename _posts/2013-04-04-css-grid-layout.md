@@ -1,6 +1,6 @@
 ---
 title: "Future of CSS layout: CSS Grid"
-tags:
+keywords:
   - css
   - grid
   - layout

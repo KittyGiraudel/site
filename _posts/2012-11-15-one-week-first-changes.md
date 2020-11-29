@@ -1,6 +1,6 @@
 ---
 title: One week, first changes
-tags:
+keywords:
   - blog
   - writing
 ---

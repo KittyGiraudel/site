@@ -1,6 +1,6 @@
 ---
 title: Oh Jekyll, here we go again…
-tags:
+keywords:
   - jekyll
   - mixture
   - blog

@@ -1,6 +1,6 @@
 ---
 title: How I made a Sass debug function
-tags:
+keywords:
   - sass
   - debug
   - function

@@ -1,6 +1,6 @@
 ---
 title: Color Clock Experiment
-tags:
+keywords:
   - javascript
   - experiment
   - color

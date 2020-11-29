@@ -1,6 +1,6 @@
 ---
 title: Translation system in Sass
-tags:
+keywords:
   - translation
   - sass
 ---

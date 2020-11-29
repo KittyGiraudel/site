@@ -1,6 +1,6 @@
 ---
 title: Writing in Sublime Text
-tags:
+keywords:
   - sublime text
   - writing
   - editing

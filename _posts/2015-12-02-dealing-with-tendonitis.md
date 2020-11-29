@@ -1,6 +1,6 @@
 ---
 title: Dealing with tendonitis
-tags:
+keywords:
   - thoughts
   - tendonitis
 ---

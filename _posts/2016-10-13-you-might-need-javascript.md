@@ -1,6 +1,6 @@
 ---
 title: You might need JavaScript
-tags:
+keywords:
   - js
   - css
   - accessibility

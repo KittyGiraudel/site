@@ -1,6 +1,6 @@
 ---
 title: Rethinking Atwood’s law
-tags:
+keywords:
   - thoughts
   - atwood’s law
   - sass

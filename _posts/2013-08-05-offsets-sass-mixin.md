@@ -1,6 +1,6 @@
 ---
 title: Sass mixin for offsets
-tags:
+keywords:
   - sass
   - offsets
   - mixin

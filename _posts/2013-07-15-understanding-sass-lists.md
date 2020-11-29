@@ -1,6 +1,6 @@
 ---
 title: Understanding Sass lists
-tags:
+keywords:
   - sass
   - lists
 ---

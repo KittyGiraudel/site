@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Kitty says hi.
-tags:
+keywords:
   - Hugo “Kitty” Giraudel
   - author
   - speaker

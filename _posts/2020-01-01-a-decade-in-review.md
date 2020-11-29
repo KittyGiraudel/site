@@ -1,6 +1,6 @@
 ---
 title: A decade in review
-tags:
+keywords:
   - thoughts
 ---
 

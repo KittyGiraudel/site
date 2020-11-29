@@ -1,7 +1,7 @@
 ---
 guest: David Khourshid
 title: Styling React Components in Sass
-tags:
+keywords:
   - sass
   - react
   - javascript

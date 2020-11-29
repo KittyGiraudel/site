@@ -1,6 +1,6 @@
 ---
 title: Accessible page title in a single-page React application
-tags:
+keywords:
   - accessibility
   - SPA
   - react

@@ -1,6 +1,6 @@
 ---
 title: Pushing Sass placeholders further
-tags:
+keywords:
   - sass
   - placeholders
   - extend

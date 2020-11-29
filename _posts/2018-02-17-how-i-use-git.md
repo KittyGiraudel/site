@@ -1,6 +1,6 @@
 ---
 title: How I use Git
-tags:
+keywords:
   - git
   - tips
   - workflow

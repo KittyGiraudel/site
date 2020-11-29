@@ -1,6 +1,6 @@
 ---
 title: Stop fucking up code learning
-tags:
+keywords:
   - css
   - code
   - learning

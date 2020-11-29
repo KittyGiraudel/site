@@ -1,6 +1,6 @@
 ---
 title: Dear PayPal
-tags:
+keywords:
   - paypal
   - user experience
   - thoughts

@@ -3,7 +3,7 @@ external:
   host: SitePoint
   url: https://www.sitepoint.com/rainbow-border-with-sass/
 title: Creating a rainbow border with Sass
-tags:
+keywords:
   - sass
   - gradient
   - mixin

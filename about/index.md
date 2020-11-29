@@ -2,7 +2,7 @@
 layout: page
 title: About me
 excerpt: "Everything about me related to the tech-industry."
-tags:
+keywords:
   - Hugo “Kitty” Giraudel
   - about
 ---

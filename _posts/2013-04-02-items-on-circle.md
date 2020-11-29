@@ -1,6 +1,6 @@
 ---
 title: Items on circle with CSS
-tags:
+keywords:
   - css
   - sass
   - mixin

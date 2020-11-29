@@ -1,6 +1,6 @@
 ---
 title: Digging into my slides about Sass
-tags:
+keywords:
   - sass
 ---
 

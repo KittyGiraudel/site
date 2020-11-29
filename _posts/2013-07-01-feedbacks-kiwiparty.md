@@ -1,6 +1,6 @@
 ---
 title: Feedback on my first conf
-tags:
+keywords:
   - thoughts
 ---
 

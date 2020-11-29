@@ -1,6 +1,6 @@
 ---
 title: Shipping code at N26
-tags:
+keywords:
   - N26
   - testing
   - process

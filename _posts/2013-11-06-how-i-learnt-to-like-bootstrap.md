@@ -1,6 +1,6 @@
 ---
 title: How I learnt to like Bootstrap
-tags:
+keywords:
   - css
   - bootstrap
 ---

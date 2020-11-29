@@ -1,6 +1,6 @@
 ---
 title: Another Sass button library
-tags:
+keywords:
   - sass
   - button
   - library

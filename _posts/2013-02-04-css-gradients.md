@@ -1,7 +1,7 @@
 ---
 guest: Ana Tudor
 title: Dig deep into CSS linear gradients
-tags:
+keywords:
   - css
   - gradient
 ---

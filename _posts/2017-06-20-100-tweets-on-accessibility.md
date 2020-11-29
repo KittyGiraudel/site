@@ -3,7 +3,7 @@ external:
   host: Twitter
   url: https://twitter.com/i/moments/877084869309980672
 title: 100 tweets on accessibility
-tags:
+keywords:
   - twitter
   - tweets
   - accessibility

@@ -1,6 +1,6 @@
 ---
 title: Little steps for accessibility at N26
-tags:
+keywords:
   - N26
   - a11y
   - accessibility

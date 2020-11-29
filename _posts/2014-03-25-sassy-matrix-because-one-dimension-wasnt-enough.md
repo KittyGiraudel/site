@@ -1,6 +1,6 @@
 ---
 title: "SassyMatrix: because one dimension wasn’t enough"
-tags:
+keywords:
   - sass
   - matrix
   - release

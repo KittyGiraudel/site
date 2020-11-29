@@ -1,6 +1,6 @@
 ---
 title: A CSS challenge
-tags:
+keywords:
   - css
   - riddle
 ---

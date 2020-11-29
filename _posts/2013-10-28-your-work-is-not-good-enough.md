@@ -1,7 +1,7 @@
 ---
 guest: Christoph Rumpel
 title: Your work is not good enough
-tags:
+keywords:
   - thoughts
 ---
 

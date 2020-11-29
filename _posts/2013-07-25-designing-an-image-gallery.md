@@ -1,6 +1,6 @@
 ---
 title: Designing an image gallery
-tags:
+keywords:
   - design
   - css
   - gallery

@@ -1,6 +1,6 @@
 ---
 title: "Simulate float: down"
-tags:
+keywords:
   - css
   - riddle
   - float

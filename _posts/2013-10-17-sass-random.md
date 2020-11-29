@@ -1,6 +1,6 @@
 ---
 title: Random function with Sass 3.3
-tags:
+keywords:
   - sass
   - random
   - function

@@ -2,7 +2,7 @@
 layout: page
 title: Open-source projects
 excerpt: 'A list of all my open-sourced projects, all hosted on GitHub. Fair warning: some of them are not maintained anymore.'
-tags:
+keywords:
   - projects
   - open-source
   - github

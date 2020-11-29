@@ -1,6 +1,6 @@
 ---
 title: Lessons from building “N26 for Web”
-tags:
+keywords:
   - thoughts
   - feedback
   - process

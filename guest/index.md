@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Articles from guests
-tags:
+keywords:
   - blog
   - writing
   - articles

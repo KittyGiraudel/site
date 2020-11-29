@@ -3,7 +3,7 @@ external:
   host: Edenspiekermann
   url: https://www.edenspiekermann.com/blog/posts/open-source-at-edenspiekermann
 title: Open Source at Edenspiekermann
-tags:
+keywords:
   - edenspiekermann
   - open source
   - oss

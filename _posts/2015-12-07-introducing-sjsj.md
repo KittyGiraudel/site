@@ -1,6 +1,6 @@
 ---
 title: Introducing Simplified JavaScript Jargon
-tags:
+keywords:
   - JavaScript
   - JS
   - glossary

@@ -1,6 +1,6 @@
 ---
 title: Use lengths, not strings
-tags:
+keywords:
   - sass
   - type
   - strings

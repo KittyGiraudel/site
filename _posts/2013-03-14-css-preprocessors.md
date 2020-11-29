@@ -1,6 +1,6 @@
 ---
 title: Can I afford a preprocessor?
-tags:
+keywords:
   - css
   - sass
   - preprocessor

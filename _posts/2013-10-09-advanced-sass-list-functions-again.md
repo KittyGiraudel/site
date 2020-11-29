@@ -1,6 +1,6 @@
 ---
 title: Advanced Sass list functions, again
-tags:
+keywords:
   - sass
   - function
   - SassyLists

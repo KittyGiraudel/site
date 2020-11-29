@@ -1,6 +1,6 @@
 ---
 title: N26 and lack of JavaScript
-tags:
+keywords:
   - accessibility
   - a11y
   - JavaScript

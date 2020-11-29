@@ -1,6 +1,6 @@
 ---
 title: "Parent selector: on has() and ^"
-tags:
+keywords:
   - thoughts
   - css
   - parent selector

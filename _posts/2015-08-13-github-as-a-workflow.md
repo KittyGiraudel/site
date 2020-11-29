@@ -1,6 +1,6 @@
 ---
 title: GitHub as a workflow
-tags:
+keywords:
   - github
   - workflow
   - process

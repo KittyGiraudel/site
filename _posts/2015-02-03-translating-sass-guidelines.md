@@ -1,7 +1,7 @@
 ---
 title: Translating Sass Guidelines
 excerpt_separator: <!--more-->
-tags:
+keywords:
   - sass
   - guidelines
   - translation

@@ -1,7 +1,7 @@
 ---
 guest: Gregor Adams
 title: Netflix logo in CSS
-tags:
+keywords:
   - css
   - experiment
   - animation

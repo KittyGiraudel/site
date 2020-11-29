@@ -1,6 +1,6 @@
 ---
 title: 8 Compass features you may not know
-tags:
+keywords:
   - sass
   - compass
 ---

@@ -1,6 +1,6 @@
 ---
 title: "The Magic Circle: a CSS brain teaser"
-tags:
+keywords:
   - css
   - riddle
 ---

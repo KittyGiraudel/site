@@ -1,6 +1,6 @@
 ---
 title: What to do with a Sass list?
-tags:
+keywords:
   - sass
   - lists
 ---

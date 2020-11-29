@@ -4,7 +4,7 @@ external:
   url: https://www.sitepoint.com/blogging-wordpress-or-jekyll/
 layout: post
 title: "Blogging: WordPress or Jekyll"
-tags:
+keywords:
   - blog
   - wordpress
   - jekyll

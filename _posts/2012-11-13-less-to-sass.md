@@ -1,6 +1,6 @@
 ---
 title: Why I switched from LESS to Sass
-tags:
+keywords:
   - less
   - sass
   - preprocessor

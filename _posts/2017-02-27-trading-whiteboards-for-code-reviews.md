@@ -1,6 +1,6 @@
 ---
 title: Trading whiteboards for code reviews
-tags:
+keywords:
   - interview
   - thought
   - code review

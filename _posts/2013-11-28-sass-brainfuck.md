@@ -1,6 +1,6 @@
 ---
 title: Sass brainfuck
-tags:
+keywords:
   - sass
   - brainfuck
 ---

@@ -1,6 +1,6 @@
 ---
 title: My development environment
-tags:
+keywords:
   - thoughts
 ---
 

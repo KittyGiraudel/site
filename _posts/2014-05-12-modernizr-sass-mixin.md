@@ -1,7 +1,7 @@
 ---
 guest: Daniel Guillan
 title: Modernizr Sass mixin
-tags:
+keywords:
   - sass
   - mixin
   - modernizr

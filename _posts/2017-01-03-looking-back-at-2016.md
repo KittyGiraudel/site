@@ -1,6 +1,6 @@
 ---
 title: Looking back at 2016
-tags:
+keywords:
   - thoughts
 ---
 

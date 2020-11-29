@@ -1,6 +1,6 @@
 ---
 title: Using create-react-app on Netlify
-tags:
+keywords:
   - netlify
   - create-react-app
   - 404

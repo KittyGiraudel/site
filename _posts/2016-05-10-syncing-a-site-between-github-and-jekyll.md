@@ -1,6 +1,6 @@
 ---
 title: Syncing a site between GitHub and Jekyll
-tags:
+keywords:
   - jekyll
   - github
   - structure

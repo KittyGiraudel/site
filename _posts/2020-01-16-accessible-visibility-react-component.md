@@ -1,6 +1,6 @@
 ---
 title: An accessible visibility React component
-tags:
+keywords:
   - accessibility
   - a11y
   - react

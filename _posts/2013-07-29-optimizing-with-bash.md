@@ -1,7 +1,7 @@
 ---
 guest: Loïc Giraudel
 title: Optimizing images with Bash script
-tags:
+keywords:
   - bash
   - script
   - images

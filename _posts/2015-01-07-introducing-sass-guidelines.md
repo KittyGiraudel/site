@@ -1,6 +1,6 @@
 ---
 title: Introducing Sass Guidelines
-tags:
+keywords:
   - sass
   - guidelines
   - release

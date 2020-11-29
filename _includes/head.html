@@ -22,8 +22,8 @@ http://ogp.me/ns/article#">
   <!-- Page specific content -->
   <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ page_description }}">
-  {% if page.tags %}
-  <meta name="keywords" content="{{ page.tags | join: ',' }}" />
+  {% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
   {% endif %}
   <meta name="author" content="{{ page.guest | default: 'Hugo “Kitty” Giraudel' }}">
   <link rel="canonical" href="{{ page_url }}">

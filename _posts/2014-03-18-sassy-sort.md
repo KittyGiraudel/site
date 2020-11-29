@@ -1,6 +1,6 @@
 ---
 title: "SassySort: sorting algorithms in Sass"
-tags:
+keywords:
   - sass
   - sort
   - release

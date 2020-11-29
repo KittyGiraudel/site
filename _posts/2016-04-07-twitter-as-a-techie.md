@@ -1,6 +1,6 @@
 ---
 title: Twitter as a techie
-tags:
+keywords:
   - techie
   - twitter
   - thoughts

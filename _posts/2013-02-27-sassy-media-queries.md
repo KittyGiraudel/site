@@ -1,6 +1,6 @@
 ---
 title: Sassy Media Queries
-tags:
+keywords:
   - sass
   - media queries
   - experiment

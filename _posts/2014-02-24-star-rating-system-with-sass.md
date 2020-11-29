@@ -1,6 +1,6 @@
 ---
 title: Star-rating widget with Sass
-tags:
+keywords:
   - sass
   - star
   - rating

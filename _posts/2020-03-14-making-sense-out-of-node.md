@@ -1,6 +1,6 @@
 ---
 title: Making sense out of Node
-tags:
+keywords:
   - node
   - npm
   - tutorial

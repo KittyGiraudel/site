@@ -1,6 +1,6 @@
 ---
 title: Casting a map into a list in Sass
-tags:
+keywords:
   - sass
   - lists
   - maps

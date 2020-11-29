@@ -1,6 +1,6 @@
 ---
 title: Sass-ify a CSS shape
-tags:
+keywords:
   - sass
   - mixin
   - star

@@ -1,6 +1,6 @@
 ---
 title: Looking back at 2015
-tags:
+keywords:
   - 2015
   - thoughts
 ---

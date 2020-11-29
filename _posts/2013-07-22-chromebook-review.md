@@ -1,6 +1,6 @@
 ---
 title: Chromebook review
-tags:
+keywords:
   - chromebook
   - review
 ---

@@ -1,7 +1,7 @@
 ---
 guest: Loïc Giraudel
 title: Git tips and tricks — Part 2
-tags:
+keywords:
   - git
 ---
 
