@@ -12,6 +12,8 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
     "eleventy-plugin-sass": "^1.1.1",
     "markdown-it": "^12.0.2",
+    "markdown-it-anchor": "^6.0.1",
+    "uslug": "^1.0.4",
     "workbox-cli": "^5.1.4"
   }
 }

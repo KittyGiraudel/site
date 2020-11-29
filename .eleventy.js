@@ -1,6 +1,8 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pluginSass = require('eleventy-plugin-sass')
 const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const uslugify = require('uslug')
 
 module.exports = function (config) {
   // Enable compilation plugins
@@ -36,6 +38,12 @@ module.exports = function (config) {
   // Register a collection for the posts and sort them from most to least recent
   config.addCollection('posts', collection =>
     collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date)
+  )
+
+  // Override the Markdown renderer to use link anchors
+  config.setLibrary(
+    'md',
+    markdownIt({ html: true }).use(markdownItAnchor, { slugify: uslugify })
   )
 
   return {

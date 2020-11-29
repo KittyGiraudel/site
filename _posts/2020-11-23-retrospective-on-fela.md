@@ -14,7 +14,7 @@ Over the years, I have tweeted about [Fela](https://fela.js.org) a few times. An
   - [Shorthands and longhands](#shorthand-and-longhands)
   - [Small community](#small-community)
   - [Pattern evolution (solved)](#solved-pattern-evolution)
-- [Tips & Tricks](#tips--tricks)
+- [Tips & Tricks](#tips-tricks)
   - [Fela dev utils as devDependencies](#fela-dev-utils-as-devdependencies)
   - [Integrating react-dates with Fela](#integrating-react-dates-with-fela)
   - [Avoid adblockers messing with styles](#avoid-adblockers-messing-with-styles)
