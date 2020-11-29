@@ -14,7 +14,7 @@ In almost 300 posts, I probably have written something at least a bit interestin
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  loadJS('{{ "/assets/js/vendors/jekyll-search.js" | prepend: site.baseurl }}', search)
+  loadJS('{{ "/assets/js/vendors/jekyll-search.js" }}', search)
 });
 
 function search () {
