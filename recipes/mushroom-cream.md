@@ -1,5 +1,7 @@
 ---
-name: Mushroom Cream
+tags: recipes
+layout: recipe
+title: Mushroom Cream
 preparation_time: 1 hour
 serves: 3-4 people
 ingredients:

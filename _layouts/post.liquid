@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+{% capture reading_time %}{% include "components/reading_time.html" %}{% endcapture %}
+
+<article itemscope itemtype="https://schema.org/Article" class="Post">
+  {% if page.date %}
+  <p itemprop="datePublished" class="PostDate">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    {%- if page.guest %}, by <span itemprop="author">{{ page.guest }}</span>{% endif %}
+    {% if page.external %}{% else %}· <span itemtype="timeRequired">{{ reading_time | strip }}</span>{% endif %}
+  </p>
+  {% endif %}
+
+  {% if external %}
+  <p>
+    This article is not hosted on <a href="/">hugogiraudel.com</a>. You will be
+    automatically redirected to <a href="{{ external.url }}">{{ external.host }}</a>
+    to read it. If it doesn’t work, please manually follow the link.
+  </p>
+  {% endif %}
+
+  <div itemtype="articleBody">
+    {{ content }}
+  </div>
+</article>
+
+{% include "components/post_navigation.html" page: page %}

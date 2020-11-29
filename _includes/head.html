@@ -1,5 +1,5 @@
 {% assign page_url = page.url | prepend: site.url %}
-{% capture page_description %}{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+{% capture page_description %}{% if excerpt %}{{ excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:
 http://ogp.me/ns/article#">
@@ -11,21 +11,21 @@ http://ogp.me/ns/article#">
   <link rel="manifest" href="/manifest.json">
 
   <!-- Robots & indexing -->
-  {% if page.external %}
+  {% if external %}
   <meta name="robots" content="noindex,nofollow">
-  <meta http-equiv="refresh" content="0;url={{ page.external.url }}" />
+  <meta http-equiv="refresh" content="0;url={{ external.url }}" />
   {% else %}
   <meta name="robots" content="index,follow">
   <meta name="revisit-after" content="1 days">
   {% endif %}
 
   <!-- Page specific content -->
-  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>{% if title %}{{ title }} | {{ site.author }}{% else %}{{ site.author }}{% endif %}</title>
   <meta name="description" content="{{ page_description }}">
-  {% if page.keywords %}
-  <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
+  {% if keywords %}
+  <meta name="keywords" content="{{ keywords | join: ',' }}" />
   {% endif %}
-  <meta name="author" content="{{ page.guest | default: 'Hugo “Kitty” Giraudel' }}">
+  <meta name="author" content="{{ guest | default: site.author }}">
   <link rel="canonical" href="{{ page_url }}">
 
   <!-- Stylesheets -->
@@ -33,17 +33,17 @@ http://ogp.me/ns/article#">
 
   <!-- JS utilities -->
   <script>
-  {% include utilities.js %}
+    {% include "utilities.js" %}
   </script>
 
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/rss" | prepend: site.url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.author }}" href="{{ "/rss" | prepend: site.url }}" />
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/assets/images/favicon.png">
 
   <!-- Open Graph data -->
-  <meta property="og:title" content="{{ page.title | default: site.title }}" />
+  <meta property="og:title" content="{{ title | default: site.author }}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ page_url }}" />
   <meta property="og:description" content="{{ page_description }}" />
@@ -52,7 +52,7 @@ http://ogp.me/ns/article#">
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@HugoGiraudel">
-  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+  <meta name="twitter:title" content="{{ title | default: site.author }}">
   <meta name="twitter:description" content="{{ page_description }}">
   <meta name="twitter:creator" content="@HugoGiraudel">
 </head>

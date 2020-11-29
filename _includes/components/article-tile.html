@@ -1,14 +1,13 @@
-{% assign post = include.item %}
-{% assign title = post.title %}
-{% assign lang = post.lang %}
-{% capture meta %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>{% if post.guest %}, by {{ post.guest }}{% endif %}{% endcapture %}
-{% capture link_url %}{% if post.external %}{{ post.external.url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
+{% assign post = item %}
+
+{% capture meta %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>{% if post.data.guest %}, by {{ post.data.guest }}{% endif %}{% endcapture %}
+{% capture link_url %}{% if post.data.external %}{{ post.data.external.url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
 {% capture link_label %}Read article <span class="visually-hidden">{{ title }}</span>{% endcapture %}
 
-{% include components/tile.html
-  primary_lang = lang
-  primary = title
-  secondary = meta
-  link_url = link_url
-  link_label = link_label
+{% include "components/tile.html",
+  primary_lang: post.data.lang,
+  primary: post.data.title,
+  secondary: meta,
+  link_url: link_url,
+  link_label: link_label
 %}

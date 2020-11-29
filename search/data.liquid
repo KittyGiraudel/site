@@ -1,0 +1,16 @@
+---
+permalink: /search/data.json
+---
+{% assign arr = '' | split: '' %}
+[
+  {% for post in collections.posts %}
+    {
+      "title"    : "{{ post.data.title | escape }}",
+      "tags"     : ["{{ post.data.keywords | default: arr | join: '", "' }}"],
+      "url"      : {% if post.data.external %}"{{ post.data.external.url }}"{% else %}"{{ post.url }}"{% endif %},
+      "date"     : "{{ post.date | date: '%B %d, %Y' }}",
+      "guest"    : {% if post.data.guest %}" by {{ post.data.guest }}"{% else %}"&#8203;"{% endif %},
+      "external" : {% if post.data.external %}" at {{ post.data.external.host }}"{% else %}"&#8203;"{% endif %}
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

@@ -1,0 +1,28 @@
+---
+layout: default
+title: Years of writing
+excerpt: "All articles from me, published on this site as well as at other places such as SitePoint, Tuts+, Codrops and
+CSS-Tricks. Also contains some guest posts."
+pagination: { data: collections.posts, size: 10, alias: posts }
+keywords:
+- blog
+- writing
+- articles
+---
+
+{% markdown %}
+Over the last few years, I have spent a lot of time writing. Mostly about tech,
+but also about some other topics from time to time. If you are looking for
+something specific, use [the search](/search). I also had the great opportunity
+of having very talented people writing here, so be sure to check all [guest
+posts](/guest).
+
+If you’re looking for something more tasty, you’ll be pleased to know I started
+blogging about [my personal recipes](/recipes). 👩‍🍳
+{% endmarkdown %}
+
+{% include "components/post_list.html", posts: posts %}
+{% include "components/pagination.html",
+  nextPageHref: pagination.nextPageHref,
+  previousPageHref: pagination.previousPageHref
+%}

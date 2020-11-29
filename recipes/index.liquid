@@ -1,0 +1,30 @@
+---
+layout: default
+title: Recipes
+excerpt: Recipes from my kitchen.
+keywords:
+- recipes
+- cooking
+- food
+---
+
+{% markdown %}
+Not everything has to be about coding. I do enjoy cooking (and eating, needless
+to say) as well as taking notes. Find below some of my recipes.
+{% endmarkdown %}
+
+<ul class="List">
+  {% for recipe in collections.recipes %}
+  <li class="List__item">
+    <div class="List__item-inner">
+      <span class="List__secondary-content">
+        For {{ recipe.data.serves }} · About {{ recipe.data.preparation_time }}
+      </span>
+
+      <a class="List__primary-content" href="{{ recipe.url }}">
+        {{ recipe.data.name }}
+      </a>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

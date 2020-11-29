@@ -4,7 +4,7 @@
   {% if words < 360 %}
   ~1 minute
   {% else %}
-  ~{{ words | divided_by:180 }} minutes
+  ~{{ words | divided_by: 180 | round }} minutes
   {% endif %}
 </span>
 {% endif %}

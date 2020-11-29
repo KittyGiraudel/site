@@ -1,8 +1,0 @@
-url: ""
-environment: development
-
-sass:
-  style: :expanded
-
-compress_html: false
-future: true
