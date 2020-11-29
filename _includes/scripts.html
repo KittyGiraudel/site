@@ -1,24 +1,24 @@
 <script src="/assets/js/main.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', loadApp)
+  document.addEventListener('DOMContentLoaded', loadApp)
 </script>
 {% if site.environment == 'production' %}
 <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/service-worker.js', { scope: '/' })
-    .then(function (registration) {
-      console.log(
-        '%cserviceworker:registration', 'color:green',
-        'successful with scope: ' + registration.scope
-      )
-    })
-    .catch(function (error) {
-      console.error(
-        '%cserviceworker:registration', 'color:red',
-        'failed: ', error
-      )
-    })
-}
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/service-worker.js', { scope: '/' })
+      .then(function (registration) {
+        console.log(
+          '%cserviceworker:registration', 'color:green',
+          'successful with scope: ' + registration.scope
+        )
+      })
+      .catch(function (error) {
+        console.error(
+          '%cserviceworker:registration', 'color:red',
+          'failed: ', error
+        )
+      })
+  }
 </script>
 {% endif %}
