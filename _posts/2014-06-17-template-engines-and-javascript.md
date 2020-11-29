@@ -3,6 +3,7 @@ title: Template engines and JavaScript
 keywords:
   - template
   - javascript
+templateEngineOverride: md
 ---
 
 I couldn’t find an appropriate title. I recently moved my site from Jekyll to Mixture and took the time to rethink the way I dealt with JavaScript. In this article, I will give you my opinion regarding this topic and show you how I managed to execute conditional JavaScript depending on global variables.
@@ -29,8 +30,6 @@ Let’s get back to the initial topic: on my blog, I need to execute some JavaSc
 
 Before moving to Mixture, I handled the problem in a rather drastic (and dirty) way: all templates included a `scripts.liquid` file at the bottom. In this file, I wrapped JavaScript snippets with Liquid conditions. For instance:
 
-{% raw %}
-
 ```html
 {% if post.codepen %}
 <script src="… source to CodePen JS file …"></script>
@@ -40,8 +39,6 @@ Before moving to Mixture, I handled the problem in a rather drastic (and dirty) 
 {% if post.tableOfContents %} … Table of contents JavaScript snippet …
 {% endif %}
 ```
-
-{% endraw %}
 
 As you can see, this is not ideal. First, JavaScript lays in a template file. We could work around the issue by moving JavaScript snippets to separate `.js` files, then only include them when needed but we would possibly do several HTTP requests while a single one could be enough. Secondly, it is ugly. Very ugly.
 
@@ -156,8 +153,6 @@ All resources are loaded asynchronously thanks to the `_inject` (pseudo-)private
 
 We still haven’t really solved the problem yet. How are we going to pass our Liquid variables to the JavaScript? Well, this is the moment we need to get back to [`scripts.liquid`](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/mixture/templates/includes/scripts.liquid) file. No more conditional JavaScript snippets; instead, we instanciate the `App` class.
 
-{% raw %}
-
 ```html
 <script src="/assets/js/main.min.js"></script>
 
@@ -173,8 +168,6 @@ We still haven’t really solved the problem yet. How are we going to pass our L
   });
 </script>
 ```
-
-{% endraw %}
 
 This is the only chunk of JavaScript in a template file. It is called on every page, once the DOM has been fully loaded. It grabs data from the YAML Front Matter in a clean and dynamic way. Than, JavaScript deals with the rest.
 

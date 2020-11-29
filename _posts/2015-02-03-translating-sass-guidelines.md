@@ -5,9 +5,10 @@ keywords:
   - sass
   - guidelines
   - translation
+templateEngineOverride: md
 ---
 
-{% raw %} A couple of weeks ago, I [introduced Sass Guidelines](/2015/01/07/introducing-sass-guidelines/), a huge styleguide to write efficient, sain and scalable Sass code in pretty much any project. It has known a massive success, so thank you all for your support! I am very glad to maintain this project knowning how popular it has gotten, especially this quick.
+A couple of weeks ago, I [introduced Sass Guidelines](/2015/01/07/introducing-sass-guidelines/), a huge styleguide to write efficient, sain and scalable Sass code in pretty much any project. It has known a massive success, so thank you all for your support! I am very glad to maintain this project knowning how popular it has gotten, especially this quick.
 
 Actually, it was so welcome that some lovely folks started translating it in different languages. It is currently available in [English](https://sass-guidelin.es), [French](https://sass-guidelin.es/fr/), [Spanish](https://sass-guidelin.es/es/), [Polish](https://sass-guidelin.es/pl/), [Russian](https://sass-guidelin.es/ru/), [Korean](https://sass-guidelin.es/ko/) and [Chinese](https://sass-guidelin.es/zh/). [German](https://github.com/HugoGiraudel/sass-guidelines/issues/88), [Italian](https://github.com/HugoGiraudel/sass-guidelines/issues/91), [Portuguese](https://github.com/HugoGiraudel/sass-guidelines/issues/89), [Danish](https://github.com/HugoGiraudel/sass-guidelines/issues/84), [Dutch](https://github.com/HugoGiraudel/sass-guidelines/issues/86), [Czech](https://github.com/HugoGiraudel/sass-guidelines/issues/92) and [Greek](https://github.com/HugoGiraudel/sass-guidelines/issues/83) should soon follow. Let’s give credits where it’s due while we’re at it.
 
@@ -250,5 +251,3 @@ The second paragraph is intended to warn against outdated information. To make i
 ## Final thoughts
 
 I am still looking for extra languages, such as Japanese, Norwegian, Swedish, Finnish, and so on. If you speak one of these languages or know someone who would like to translate Sass Guidelines, please be sure to get in touch!
-
-{% endraw %}
