@@ -1,12 +1,11 @@
-{% assign project = include.item %}
-{% assign name = project.name %}
-{% capture category %}About {{ project.category }}{% endcapture %}
-{% assign link_url = project.link %}
-{% capture link_label %}Look at project <span class="visually-hidden">{{ name }}</span>{% endcapture %}
+{% assign project = item %}
 
-{% include components/tile.html
-  primary = name
-  secondary = category
-  link_url = link_url
-  link_label = link_label
+{% capture category %}About {{ project.category }}{% endcapture %}
+{% capture link_label %}Look at project <span class="visually-hidden">{{ project.name }}</span>{% endcapture %}
+
+{% include "components/tile.html",
+  primary: project.name,
+  secondary: category,
+  link_url: project.link,
+  link_label: link_label
 %}

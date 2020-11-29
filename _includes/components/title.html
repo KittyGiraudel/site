@@ -1,8 +1,5 @@
-{% assign title = include.title %}
-{% assign lang = include.lang %}
-
 {% if title %}
-<h1 class="Title" itemprop="title" {% if lang != 'en' %}lang="{{ lang }}"{% endif %}>
+<h1 class="Title" itemprop="title" {% if lang != 'en' %}lang="{{ lang }}" {% endif %}>
   <a href="/" class="Title__link">{{ title }}</a>
 </h1>
 {% endif %}

@@ -1,5 +1,7 @@
 ---
-name: Keto Flat Bread
+tags: recipes
+layout: recipe
+title: Keto Flat Bread
 preparation_time: 10 minutes
 serves: 2 people
 ingredients:

@@ -11,6 +11,6 @@
 
     HTML, CSS, JavaScript
     Sass, Normalize.css
-    Jekyll, Simple-Jekyll-Search
+    11ty, Simple-Jekyll-Search
     GitHub Pages, Jekyll
     Netlify

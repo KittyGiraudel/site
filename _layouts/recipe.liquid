@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<article itemscope itemtype="https://schema.org/Article" class="Post">
+  <p class="PostDate">For {{ serves }} · About {{ preparation_time }}</p>
+
+  {{ content }}
+
+  <h2>Ingredients</h2>
+  <ul class="RecipeIngredients">
+    {% for ingredient in ingredients %}
+    <li>{{ ingredient }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Preparation</h2>
+  <ol class="RecipeSteps">
+    {% for step in steps %}
+    <li>{{ step }}</li>
+    {% endfor %}
+  </ol>
+
+  {% if notes %}
+  <h2>Notes</h2>
+  <ul>
+    {% for note in notes %}
+    <li>{{ note }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</article>
+
+{% include "components/post_navigation.html", name: "recipe" %}

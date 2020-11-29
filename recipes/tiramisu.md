@@ -1,5 +1,7 @@
 ---
-name: Tiramisu
+tags: recipes
+layout: recipe
+title: Tiramisu
 preparation_time: 30 minutes
 serves: 4-6 people
 ingredients:

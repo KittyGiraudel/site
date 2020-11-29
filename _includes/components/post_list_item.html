@@ -1,21 +1,26 @@
-{% assign post = include.post %}
+{% assign url = post.url %}
+{% assign date = post.date %}
+{% assign data = post.data %}
 
-{% if post %}
 <li class="List__item">
   <div class="List__item-inner">
     <span class="List__secondary-content">
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-      {% if post.guest %} by {{ post.guest }}{% endif %}
-      {% if post.external %} at {{ post.external.host }}{% endif %}
+      <time datetime="{{ date | date_to_xmlschema }}">{{ date | date: "%B %d, %Y" }}</time>
+      {% if data.guest %} by {{ data.guest }}{% endif %}
+      {% if data.external %} at {{ data.external.host }}{% endif %}
     </span>
 
-    {% if post.external %}
-    <a class="List__primary-content" {% if post.lang %}hreflang="{{ post.lang | downcase }}" lang="{{ post.lang | downcase }}"{% endif %} href="{{ post.external.url }}" target="_blank" rel="noopener noreferrer">
-    {% else %}
-    <a class="List__primary-content" {% if post.lang %}hreflang="{{ post.lang | downcase }}" lang="{{ post.lang | downcase }}"{% endif %} href="{{ post.url }}">
-    {% endif %}
-      {{ post.title }}
+    {% if data.external %}
+    <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
+      lang="{{ data.lang | downcase }}" {% endif %} href="{{ data.external.url }}" target="_blank"
+      rel="noopener noreferrer">
+      {{ data.title }}
     </a>
+    {% else %}
+    <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
+      lang="{{ data.lang | downcase }}" {% endif %} href="{{ post.url }}">
+      {{ data.title }}
+    </a>
+    {% endif %}
   </div>
 </li>
-{% endif %}

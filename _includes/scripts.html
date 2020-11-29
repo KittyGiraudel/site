@@ -2,7 +2,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', loadApp)
 </script>
-{% if site.environment == 'production' %}
+{% production %}
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
@@ -21,4 +21,4 @@
       })
   }
 </script>
-{% endif %}
+{% endproduction %}

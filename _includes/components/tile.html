@@ -1,9 +1,3 @@
-{% assign primary = include.primary %}
-{% assign primary_lang = include.primary_lang %}
-{% assign secondary = include.secondary %}
-{% assign link_url = include.link_url %}
-{% assign link_label = include.link_label %}
-
 <div class="Tile">
   <p class="Tile__primary" {% if primary_lang and primary_lang != 'en' %}lang="{{ primary_lang }}"{% endif %}>{{ primary }}</p>
   <p class="Tile__secondary">{{ secondary }}</p>
