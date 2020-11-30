@@ -6,8 +6,8 @@ layout: default
   {% if page.date %}
   <p itemprop="datePublished" class="PostDate">
     {{ page.date | time }}
-    {%- if page.guest %}, by <span itemprop="author">{{ page.guest }}</span>{% endif %}
-    {% if page.external %}{% else %}· <span itemtype="timeRequired" class="ReadingTime" title="Estimated read time">{{ content | strip_html | reading_time }}</span>{% endif %}
+    {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
+    {% if external %}{% else %}<span itemtype="timeRequired" title="Estimated read time">· {{ content | strip_html | reading_time }}</span>{% endif %}
   </p>
   {% endif %}
 
