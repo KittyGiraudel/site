@@ -1,0 +1,23 @@
+{% assign footnotes = "" | split: "" | footnotes: page %}
+{% assign count = footnotes | size %}
+
+{% if count > 0 %}
+<hr />
+
+<footer role="doc-endnotes">
+  <h2 id="footnotes-label">Footnotes</h2>
+  <ol>
+    {% for footnote in footnotes %}
+    <li id="{{ footnote.id }}-note">
+      {{ footnote.description }}
+      <a
+        href="#{{ footnote.id }}-ref"
+        aria-label="Back to content"
+        role="doc-backlink"
+        >↩</a
+      >
+    </li>
+    {% endfor %}
+  </ol>
+</footer>
+{% endif %}

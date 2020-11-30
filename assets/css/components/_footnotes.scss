@@ -1,0 +1,36 @@
+.Main {
+  counter-reset: footnotes;
+}
+
+.Footnote[role='doc-noteref'] {
+  counter-increment: footnotes;
+  background-image: none;
+  cursor: default;
+}
+
+.Footnote[role='doc-noteref']::after {
+  content: '[' counter(footnotes) ']';
+  vertical-align: super;
+  font-size: 0.6em;
+  margin-left: 2px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Footnote[role='doc-noteref']:focus::after {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+
+.Footnote[role='doc-noteref']:hover {
+  color: inherit;
+}
+
+.Footnote[role='doc-backlink']::after {
+  content: none;
+}
+
+[role='doc-endnotes'] {
+  font-size: 80%;
+}

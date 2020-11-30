@@ -24,6 +24,8 @@ layout: default
   <div itemtype="articleBody">
     {{ content }}
   </div>
+
+  {% include "components/footnotes.html" page: page %}
 </article>
 
 {% include "components/post_navigation.html" page: page %}

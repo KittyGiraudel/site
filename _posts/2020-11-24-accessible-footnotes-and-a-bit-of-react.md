@@ -2,39 +2,11 @@
 title: Accessible footnotes and a bit of React
 ---
 
-<style>
-body { counter-reset: footnotes }
-.Main a[role="doc-noteref"] {
-  counter-increment: footnotes;
-  background-image: none;
-  cursor: default;
-}
-
-.Main a[role="doc-noteref"]::after {
-  content: '[' counter(footnotes) ']';
-  vertical-align: super;
-  font-size: 0.6em;
-  margin-left: 2px;
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.Main a[role="doc-noteref"]:focus::after {
-  outline: thin dotted;
-  outline-offset: 2px;
-}
-
-.Main a[role="doc-backlink"]::after { content: none; }
-
-[role="doc-endnotes"] { font-size: 80%; }
-</style>
-
-<p><a id="footnotes-ref" href="#footnotes-note" aria-describedby="footnotes-label" role="doc-noteref">Footnotes</a> are not as straightforward as they seem to be. One might thing it’s just a matter of slapping an asterisk or a number after a word, and dumping some extra sweet knowledge at the bottom of the page, but that’s not it. Assistive technologies require some careful mapping in order to correctly associate the reference with its footnote.</p>
+{% footnote "footnotes" "Footnotes are notes placed at the bottom of a page. They cite references or comment on a designated part of the text above it." %}Footnotes{% endfootnote %} are not as straightforward as they seem to be. One might thing it’s just a matter of slapping an asterisk or a number after a word, and dumping some extra sweet knowledge at the bottom of the page, but that’s not it. Assistive technologies require some careful mapping in order to correctly associate the reference with its footnote.
 
 A few years back, I wrote [Accessible footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/), now the first result when asking Google for “accessible footnotes”. To this day, I still think it’s one of the most useful articles I’ve ever written because: a) most footnotes out there are not accessible and b) the CSS in that demo is actually pretty clever and was fun to write.
 
-<p>Today, I would like to revisit that implementation for using it in React. If you are interested in a ready-to-go solution, I am currently working on <a href="https://github.com/HugoGiraudel/react-a11y-footnotes">react-a11y-footnotes</a>, an <a id="experimental-ref" href="#experimental-note" aria-describedby="footnotes-label" role="doc-noteref">experimental</a> library that you can install directly from npm to use in your projects.</p>
+Today, I would like to revisit that implementation for using it in React. If you are interested in a ready-to-go solution, I am currently working on [react-a11y-footnotes](https://github.com/HugoGiraudel/react-a11y-footnotes), an {% footnote "experimental" "It is currently in v0.1 and the API might change a little. Additionally, I’m not too sure whether the styles I included are enough or too much. Any review or suggestion appreciated!" %}experimental{% endfootnote %} library that you can install directly from npm to use in your projects.
 
 ## What’s so hard about it?
 
@@ -135,28 +107,3 @@ I am also playing with providing optional basic styling—especially for the ref
 
 If you have any suggestion, comment or issue, feel free to share on Twitter or in an issue on the GitHub repository!
 
----
-
-<footer role="doc-endnotes">
-  <h2 id="footnotes-label">Footnotes</h2>
-  <ol>
-    <li id="footnotes-note">
-      Footnotes are notes placed at the bottom of a page. They cite references or comment on a designated part of the text above it.
-      <a
-        href="#footnotes-ref"
-        aria-label="Back to content"
-        role="doc-backlink"
-        >↩</a
-      >
-    </li>
-    <li id="experimental-note">
-      It is currently in v0.1 and the API might change a little. Additionally, I’m not too sure whether the styles I included are enough or too much. Any review or suggestion appreciated!
-      <a
-        href="#experimental-ref"
-        aria-label="Back to content"
-        role="doc-backlink"
-        >↩</a
-      >
-    </li>
-  </ol>
-</footer>
