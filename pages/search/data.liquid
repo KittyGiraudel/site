@@ -6,6 +6,7 @@ permalink: /blog/search/data.json
   {% for post in collections.posts %}
     {
       "title"    : "{{ post.data.title | escape }}",
+      "lang"     : "{{ post.data.lang | default: 'en' }}",
       "tags"     : ["{{ post.data.keywords | default: arr | join: '", "' }}"],
       "url"      : {% if post.data.external %}"{{ post.data.external.url }}"{% else %}"{{ post.url }}"{% endif %},
       "date"     : "{{ post.date | date: '%B %d, %Y' }}",

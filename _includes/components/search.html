@@ -3,8 +3,10 @@
   JavaScript in your browser to be able to use the provided search engine.
 </noscript>
 
-<div class="Search" id="search-container">
-  <label for="search-input" class="Search__label visually-hidden">Search</label>
-  <input type="text" id="search-input" class="Search__input" placeholder="Search…" role="search" autofocus>
-  <ul id="results-container" class="Search__results List"></ul>
-</div>
+<form class="Search" id="search-container" onsubmit="return false">
+  <div role="search">
+    <label for="search-input" class="Search__label visually-hidden">Search</label>
+    <input type="text" id="search-input" class="Search__input" placeholder="Search blog posts…" autofocus required aria-controls="results-container">
+  </div>
+</form>
+<ul id="results-container" class="Search__results List" role="region" aria-live="polite"></ul>
