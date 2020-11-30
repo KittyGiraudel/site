@@ -1,11 +1,10 @@
 {% assign url = post.url %}
-{% assign date = post.date %}
 {% assign data = post.data %}
 
 <li class="List__item">
   <div class="List__item-inner">
     <span class="List__secondary-content">
-      <time datetime="{{ date | date_to_xmlschema }}">{{ date | date: "%B %d, %Y" }}</time>
+      {{ post.date | time }}
       {% if data.guest %} by {{ data.guest }}{% endif %}
       {% if data.external %} at {{ data.external.host }}{% endif %}
     </span>

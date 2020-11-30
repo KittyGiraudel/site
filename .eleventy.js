@@ -26,6 +26,9 @@ module.exports = function (config) {
   config.addFilter('markdown', markdown)
   config.addPairedShortcode('markdown', markdown)
 
+  // Add a Liquid filter to format a date and wrap it in a <time> element
+  config.addFilter('time', time)
+
   // Provide a tag to register a footnote, and a filter to access the registered
   // footnotes for the page; a global would be better, but that’s not a thing in
   // Liquid so we hack it with a filter
@@ -36,7 +39,6 @@ module.exports = function (config) {
   config.addPairedShortcode('info', info)
 
   // Reproduce some Liquid filters, sometimes losely
-  config.addFilter('date_to_string', dateToString)
   config.addFilter('date_to_xmlschema', dateToXmlSchema)
   config.addFilter('group_by', groupBy)
   config.addFilter('number_of_words', numberOfWords)
@@ -92,7 +94,7 @@ function dateToString(value) {
   const date = new Date(value)
   const formatter = new Intl.DateTimeFormat('en', {
     year: 'numeric',
-    month: 'short',
+    month: 'long',
     day: '2-digit',
   })
   const parts = formatter.formatToParts(date)
@@ -133,4 +135,8 @@ function footnotes (_, page) {
 
 function info (content) {
   return `<div class="Info">${markdown(content)}</div>`
+}
+
+function time (value) {
+  return `<time datetime="${dateToXmlSchema(value)}">${dateToString(value)}</time>`
 }

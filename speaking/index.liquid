@@ -19,8 +19,7 @@ in touch!
   <li class="List__item">
     <div class="List__item-inner">
       <span class="List__secondary-content">
-        <time datetime="{{ event.date }}">{{ event.date | date_to_string }}</time> —
-        {{ event.location }}
+        {{ event.date | time }} — {{ event.location }}
         {% if event.actions %}
         <ul class="DottedList">
           {% for action in event.actions %}

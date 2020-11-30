@@ -1,6 +1,6 @@
 {% assign post = item %}
 
-{% capture meta %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>{% if post.data.guest %}, by {{ post.data.guest }}{% endif %}{% endcapture %}
+{% capture meta %}{{ item.date | time }}{% if post.data.guest %}, by {{ post.data.guest }}{% endif %}{% endcapture %}
 {% capture link_url %}{% if post.data.external %}{{ post.data.external.url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
 {% capture link_label %}Read article <span class="visually-hidden">{{ post.data.title }}</span>{% endcapture %}
 
