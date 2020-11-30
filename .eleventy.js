@@ -29,6 +29,9 @@ module.exports = function (config) {
   // Add a Liquid filter to format a date and wrap it in a <time> element
   config.addFilter('time', time)
 
+  // Add a Liquid filter to compute the reading time of given content
+  config.addFilter('reading_time', readingTime)
+
   // Provide a tag to register a footnote, and a filter to access the registered
   // footnotes for the page; a global would be better, but that’s not a thing in
   // Liquid so we hack it with a filter
@@ -120,7 +123,7 @@ function groupBy(array, key) {
   )
 }
 
-function footnote (content, id, description) {
+function footnote(content, id, description) {
   const footnotes = FOOTNOTES.get(this.page.inputPath) || {}
 
   footnotes[id] = { id, description }
@@ -129,14 +132,26 @@ function footnote (content, id, description) {
   return `<a href="#${id}-note" id="${id}-ref" aria-describedby="footnotes-label" role="doc-noteref" class="Footnote">${content}</a>`
 }
 
-function footnotes (_, page) {
+function footnotes(_, page) {
   return Object.values(FOOTNOTES.get(page.inputPath) || {})
 }
 
-function info (content) {
+function info(content) {
   return `<div class="Info">${markdown(content)}</div>`
 }
 
-function time (value) {
-  return `<time datetime="${dateToXmlSchema(value)}">${dateToString(value)}</time>`
+function time(value) {
+  return `<time datetime="${dateToXmlSchema(value)}">${dateToString(
+    value
+  )}</time>`
+}
+
+function readingTime(content) {
+  return content
+    ? '~' +
+        Math.ceil(
+          (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length / 300
+        ) +
+        ' minutes'
+    : ''
 }
