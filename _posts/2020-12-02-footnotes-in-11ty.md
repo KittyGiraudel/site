@@ -121,7 +121,6 @@ From there, we can render the necessary markup to output the footnotes using a f
 
 ## Wrapping up
 
-
 So to sum up:
 
 - We have a `footnoteref` Liquid tag to wrap footnote references in the text. It takes an id and the footnote description as arguments, and renders an anchor to the correct footnote.
