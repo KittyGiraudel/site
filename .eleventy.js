@@ -102,10 +102,11 @@ function dateToString(value) {
   })
   const parts = formatter.formatToParts(date)
   const month = parts[0].value
-  const day = parts[2].value
+  const day = Number(parts[2].value)
   const year = parts[4].value
+  const suffix = ['st', 'nd', 'rd'][day - 1] || 'th'
 
-  return month + ' ' + day + ', ' + year
+  return month + ' ' + day + suffix + ', ' + year
 }
 
 function groupBy(array, key) {
