@@ -6,11 +6,11 @@ keywords:
 - react
 ---
 
-{% footnote "footnotes" "Footnotes are notes placed at the bottom of a page. They cite references or comment on a designated part of the text above it." %}Footnotes{% endfootnote %} are not as straightforward as they seem to be. One might thing it’s just a matter of slapping an asterisk or a number after a word, and dumping some extra sweet knowledge at the bottom of the page, but that’s not it. Assistive technologies require some careful mapping in order to correctly associate the reference with its footnote.
+{% footnoteref "footnotes" "Footnotes are notes placed at the bottom of a page. They cite references or comment on a designated part of the text above it." %}Footnotes{% endfootnoteref %} are not as straightforward as they seem to be. One might thing it’s just a matter of slapping an asterisk or a number after a word, and dumping some extra sweet knowledge at the bottom of the page, but that’s not it. Assistive technologies require some careful mapping in order to correctly associate the reference with its footnote.
 
 A few years back, I wrote [Accessible footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/), now the first result when asking Google for “accessible footnotes”. To this day, I still think it’s one of the most useful articles I’ve ever written because: a) most footnotes out there are not accessible and b) the CSS in that demo is actually pretty clever and was fun to write.
 
-Today, I would like to revisit that implementation for using it in React. If you are interested in a ready-to-go solution, I am currently working on [react-a11y-footnotes](https://github.com/HugoGiraudel/react-a11y-footnotes), an {% footnote "experimental" "It is currently in v0.1 and the API might change a little. Additionally, I’m not too sure whether the styles I included are enough or too much. Any review or suggestion appreciated!" %}experimental{% endfootnote %} library that you can install directly from npm to use in your projects.
+Today, I would like to revisit that implementation for using it in React. If you are interested in a ready-to-go solution, I am currently working on [react-a11y-footnotes](https://github.com/HugoGiraudel/react-a11y-footnotes), an {% footnoteref "experimental" "It is currently in v0.1 and the API might change a little. Additionally, I’m not too sure whether the styles I included are enough or too much. Any review or suggestion appreciated!" %}experimental{% endfootnoteref %} library that you can install directly from npm to use in your projects.
 
 ## What’s so hard about it?
 

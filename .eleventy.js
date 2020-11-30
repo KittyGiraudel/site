@@ -1,11 +1,9 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pluginSass = require('eleventy-plugin-sass')
-const footnotes = require('./eleventy-plugin-footnotes')
+const footnotes = require('eleventy-plugin-footnotes')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const uslugify = require('uslug')
-
-const FOOTNOTE_MAP = []
 
 module.exports = function (config) {
   // Enable compilation plugins
@@ -33,12 +31,6 @@ module.exports = function (config) {
 
   // Add a Liquid filter to compute the reading time of given content
   config.addFilter('reading_time', readingTime)
-
-  // Provide a tag to register a footnote, and a filter to access the registered
-  // footnotes for the page; a global would be better, but that’s not a thing in
-  // Liquid so we hack it with a filter
-  config.addPairedShortcode('footnote', footnote)
-  config.addFilter('footnotes', footnotes)
 
   // Provide a tag to render info blocks
   config.addPairedShortcode('info', info)
@@ -126,7 +118,7 @@ function groupBy(array, key) {
   )
 }
 
-function info (content) {
+function info(content) {
   return `<div class="Info">${markdown(content)}</div>`
 }
 
