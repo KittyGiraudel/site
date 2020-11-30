@@ -10,6 +10,10 @@ I am between jobs with a bit of free time, so I thought I would try something ne
 
 I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel free to share your opinion and tips under that hashtag as well!
 
+- [Day 1: what is accessibility?](#day-1-what-is-accessibility)
+- [Day 2: measuring accessibility](#day-2-measuring-accessibility)
+- [Day 3: hiding content the right way](#day-3-hiding-content-the-right-way)
+
 ## Day 1: what is accessibility?
 
 I thought we would start this calendar by talking about what is accessibility. There is a common belief in the web industry that accessibility is only about blind users. While it certainly involves blind people, it also encompasses way more than that.
@@ -79,4 +83,4 @@ The quest for a combination of CSS declarations to visually hide an element whil
 }
 ```
 
-What is important to think through is when to hide content entirely (with `display: none` for instance), and when to hide it visually only. For instance, when providing additional information to an icon, it should be visually hidden since the point is to have it read by screen-readers. But when building tabs, or a content toggle, it should be hidden entirely, because there is an interaction required to access it. 
+What is important to think through is when to hide content entirely (with `display: none` for instance), and when to hide it visually only. For instance, when providing additional information to an icon, it should be visually hidden since the point is to have it read by screen-readers. But when building tabs, or a content toggle, it should be hidden entirely, because there is an interaction required to access it.
