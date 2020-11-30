@@ -2,13 +2,27 @@
   counter-reset: footnotes;
 }
 
-.Footnote[role='doc-noteref'] {
+.Footnotes {
+  position: relative;
+  margin-top: 4em;
+}
+
+.Footnotes::before {
+  content: '';
+  background-image: linear-gradient(to right, stripes($colors));
+  height: 4px;
+  border-radius: 4px;
+  width: 100%;
+  display: block;
+}
+
+.Footnotes__ref[role='doc-noteref'] {
   counter-increment: footnotes;
   background-image: none;
   cursor: default;
 }
 
-.Footnote[role='doc-noteref']::after {
+.Footnotes__ref[role='doc-noteref']::after {
   content: '[' counter(footnotes) ']';
   vertical-align: super;
   font-size: 0.6em;
@@ -18,16 +32,16 @@
   cursor: pointer;
 }
 
-.Footnote[role='doc-noteref']:focus::after {
+.Footnotes__ref[role='doc-noteref']:focus::after {
   outline: thin dotted;
   outline-offset: 2px;
 }
 
-.Footnote[role='doc-noteref']:hover {
+.Footnotes__ref[role='doc-noteref']:hover {
   color: inherit;
 }
 
-.Footnote[role='doc-backlink']::after {
+.Footnotes__ref[role='doc-backlink']::after {
   content: none;
 }
 

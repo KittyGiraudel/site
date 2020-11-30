@@ -1,15 +1,17 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pluginSass = require('eleventy-plugin-sass')
+const footnotes = require('./eleventy-plugin-footnotes')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const uslugify = require('uslug')
 
-const FOOTNOTES = new Map()
+const FOOTNOTE_MAP = []
 
 module.exports = function (config) {
   // Enable compilation plugins
   config.addPlugin(pluginSass, {})
   config.addPlugin(syntaxHighlight)
+  config.addPlugin(footnotes)
 
   // Pass through static files; the CSS file is handled through Sass and
   // therefore not explitly passed through here
@@ -124,20 +126,7 @@ function groupBy(array, key) {
   )
 }
 
-function footnote(content, id, description) {
-  const footnotes = FOOTNOTES.get(this.page.inputPath) || {}
-
-  footnotes[id] = { id, description }
-  FOOTNOTES.set(this.page.inputPath, footnotes)
-
-  return `<a href="#${id}-note" id="${id}-ref" aria-describedby="footnotes-label" role="doc-noteref" class="Footnote">${content}</a>`
-}
-
-function footnotes(_, page) {
-  return Object.values(FOOTNOTES.get(page.inputPath) || {})
-}
-
-function info(content) {
+function info (content) {
   return `<div class="Info">${markdown(content)}</div>`
 }
 
