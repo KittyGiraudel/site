@@ -34,7 +34,7 @@ And some of the things I was either a little frustrated or not super happy with:
 
 - I find the handling of global variables confusing at best. In Jekyll, I knew the difference between variables on the `include`, `page` or `site` objects. Here everything sort of blends together in an opaque way. 
 - I personally like YAML over JSON, and it was a little disappointing [not being able to maintain my data files in YAML by default](https://www.11ty.dev/docs/data-custom/#yaml). Not a huge deal, but I find authoring JSON tedious compared to YAML.
-- There is a lot of documentation, and the maintainers clearly care a lot about it—yet it did feel like there were some glaring caps somewhat. For instance, it was unclear to me how to issue a production build or how to [maintain dynamic permalings over a collection](#posts-permalinks)—both of which I’d consider pretty basic things. 
+- There is a lot of documentation, and the maintainers clearly care a lot about it—yet it did feel like there were some glaring caps somewhat. For instance, it was unclear to me how to issue a production build or how to [maintain dynamic permalinks over a collection](#posts-permalinks)—both of which I’d consider pretty basic things. 
 
 That being said, I am overall pleased with the migration and the tool as a whole. Interesting thing to point out is that the compilation didn’t get much faster for me: both systems take about 2 seconds to compile hundreds of pages. 
 
