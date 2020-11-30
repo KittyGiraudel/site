@@ -8,17 +8,18 @@ keywords:
 - blog
 - writing
 - articles
+permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 
 {% markdown %}
 Over the last few years, I have spent a lot of time writing. Mostly about tech,
 but also about some other topics from time to time. If you are looking for
-something specific, use [the search](/search). I also had the great opportunity
+something specific, use [the search](/blog/search). I also had the great opportunity
 of having very talented people writing here, so be sure to check all [guest
-posts](/guest).
+posts](/blog/guest).
 
 If you’re looking for something more tasty, you’ll be pleased to know I started
-blogging about [my personal recipes](/recipes). 👩‍🍳
+blogging about [my personal recipes](/blog/recipes). 👩‍🍳
 {% endmarkdown %}
 
 {% include "components/post_list.html", posts: posts %}

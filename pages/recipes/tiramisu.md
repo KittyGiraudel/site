@@ -1,6 +1,7 @@
 ---
 tags: recipes
 layout: recipe
+permalink: /blog/recipes/tiramisu/
 title: Tiramisu
 preparation_time: 30 minutes
 serves: 4-6 people

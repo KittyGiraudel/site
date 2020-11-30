@@ -1,6 +1,7 @@
 ---
 tags: recipes
 layout: recipe
+permalink: /blog/recipes/veggie-fajitas/
 title: Veggie Fajitas
 preparation_time: 30 minutes
 serves: 2 people

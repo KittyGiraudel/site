@@ -1,6 +1,7 @@
 ---
 tags: recipes
 layout: recipe
+permalink: /blog/recipes/mushroom-cream/
 title: Mushroom Cream
 preparation_time: 1 hour
 serves: 3-4 people
