@@ -13,7 +13,9 @@ http://ogp.me/ns/article#">
   <!-- Robots & indexing -->
   {% if external %}
   <meta name="robots" content="noindex,nofollow">
+  {% if site.environment == 'production' %}
   <meta http-equiv="refresh" content="0;url={{ external.url }}" />
+  {% endif %}
   {% else %}
   <meta name="robots" content="index,follow">
   <meta name="revisit-after" content="1 days">
