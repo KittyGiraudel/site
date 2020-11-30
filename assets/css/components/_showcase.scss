@@ -1,5 +1,5 @@
 .Showcase {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 .Showcase::after {
@@ -21,8 +21,14 @@
   margin: 0 -0.5em;
   flex-wrap: wrap;
 
-  @include media('>tablet') {
-    flex: 1 0 calc(100% / 3);
+  /**
+   * 1. Offset by half the extra width (10ch), half the container padding (2em)
+   *    and the left margin (0.5em).
+   */
+  @include media('>desktop') {
+    width: 90ch;
+    position: relative;
+    left: calc(-5ch - 1em - 0.5em); /* 1 */
   }
 }
 
@@ -44,6 +50,15 @@
 .Showcase__link {
   font-size: 80%;
   float: right;
+
+  /**
+   * 1. Offset by half the extra width (10ch), the container padding (2em) and
+   *    the right margin (0.5em).
+   */
+  @include media('>desktop') {
+    position: relative;
+    left: calc(5ch + 2em + 0.5em); /* 1 */
+  }
 }
 
 .Showcase__link::before {
