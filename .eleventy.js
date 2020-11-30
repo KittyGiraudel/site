@@ -32,6 +32,9 @@ module.exports = function (config) {
   config.addPairedShortcode('footnote', footnote)
   config.addFilter('footnotes', footnotes)
 
+  // Provide a tag to render info blocks
+  config.addPairedShortcode('info', info)
+
   // Reproduce some Liquid filters, sometimes losely
   config.addFilter('date_to_string', dateToString)
   config.addFilter('date_to_xmlschema', dateToXmlSchema)
@@ -126,4 +129,8 @@ function footnote (content, id, description) {
 
 function footnotes (_, page) {
   return Object.values(FOOTNOTES.get(page.inputPath) || {})
+}
+
+function info (content) {
+  return `<div class="Info">${markdown(content)}</div>`
 }

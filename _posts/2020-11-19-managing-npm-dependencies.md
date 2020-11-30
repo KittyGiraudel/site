@@ -48,7 +48,9 @@ This specific search pattern will make sure to work for:
 - `import` statements (e.g. `import lodash from 'lodash'`)
 - non-root paths (e.g. `import lodash from 'lodash/fp`)
 
-<p class="Info">If you happen to use double-quotes, you will need to update the script to reference a double-quote (`"`) instead of single-quote (`'`).</p>
+{% info %}
+If you happen to use double-quotes, you will need to update the script to reference a double-quote (`"`) instead of single-quote (`'`).
+{% endinfo %}
 
 When extracted as a little `groom_deps` function in one’s `.zshrc` or `.bashrc` file, it can be used within any project pretty conveniently. The type of dependencies (`dependencies`, `devDependencies` or `peerDependencies`) can be passed as an argument and defaults to `dependencies`.
 
@@ -67,7 +69,9 @@ groom_deps devDependencies
 
 Note that some dependencies are required while not being imported anywhere in JavaScript code. For instance, `@babel/polyfill`, `iltorb` or other similar dependencies can be necessary while not being explicitly mentioned in JavaScript code. Therefore, tread carefully.
 
-<p class="Info">The above script requires <a href="https://stedolan.github.io/jq/" target="_blank" rel="noopener noreferrer">jq</a>, which is a command-line utility to manipulate JSON.</p>
+{% info %}
+The above script requires [jq](https://stedolan.github.io/jq/), which is a command-line utility to manipulate JSON.
+{% endinfo %}
 
 ## Outdated dependencies
 
