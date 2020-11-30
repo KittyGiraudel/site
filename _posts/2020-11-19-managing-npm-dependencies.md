@@ -1,5 +1,9 @@
 ---
 title: Managing npm dependencies
+keywords:
+- npm
+- dependencies
+- node
 ---
 
 Dependencies are part of software development. It is unrealistic to expect running a project of any decent size without external dependencies. Not all code is worth writing, and a lot of clever people have written clever code which we would be clever to use in our projects.

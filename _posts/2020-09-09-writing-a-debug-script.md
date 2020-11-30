@@ -1,5 +1,9 @@
 ---
 title: Writing a debug script
+keywords:
+- debug
+- script
+- node
 ---
 
 To help debugging situations and collaborating with others when we cannot sit together, I came up with a little Node “doctor” script (in hommage to `brew doctor`). The goal is to emit a lot of information about the system and working environment (git status, system, environment variables…) so the output can be shared with someone to compare with.

@@ -1,5 +1,9 @@
 ---
 title: Accessible footnotes and a bit of React
+keywords:
+- footnotes
+- accessibility
+- react
 ---
 
 {% footnote "footnotes" "Footnotes are notes placed at the bottom of a page. They cite references or comment on a designated part of the text above it." %}Footnotes{% endfootnote %} are not as straightforward as they seem to be. One might thing it’s just a matter of slapping an asterisk or a number after a word, and dumping some extra sweet knowledge at the bottom of the page, but that’s not it. Assistive technologies require some careful mapping in order to correctly associate the reference with its footnote.

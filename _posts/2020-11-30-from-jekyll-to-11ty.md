@@ -1,6 +1,11 @@
 ---
 title: From Jekyll to 11ty
 templateEngineOverride: md
+keywords:
+- jekyll
+- 11ty
+- eleventy
+- blog
 ---
 
 Over the weekend, I decided to migrate my website from [Jekyll](https://jekyllrb.com/) to [11ty](https://www.11ty.dev/). If I’m being honest, there was no good reason for me to change blogging systems. I like Jekyll. I have been using Jekyll since 2013 and have built countless sites with it. 

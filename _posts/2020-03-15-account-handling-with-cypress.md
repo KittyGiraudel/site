@@ -1,5 +1,9 @@
 ---
 title: Account handling with Cypress
+keywords:
+- cypress
+- testing
+- qa
 ---
 
 At [N26](https://n26.com), we banked on [Cypress](https://cypress.io) (see what I did there?) pretty much from the start. We migrated our then small testing suite from Nightwatch and the horrors of Selenium to Cypress while it was still in closed beta. And we’ve been basing more and more of our testing infrastructure on it ever since.

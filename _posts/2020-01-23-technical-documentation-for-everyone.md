@@ -1,5 +1,9 @@
 ---
 title: Technical documentation for everyone
+keywords:
+- documentation
+- N26
+- docs
 ---
 
 I have [tweeted a few times about the web documentation](https://twitter.com/HugoGiraudel/status/1189941096559861760) we built at N26 and how I think this is one of the things we have truly nailed over the last few years. In this article, I would like to share my experience more in details, and give suggestions on how to write helpful documentation.

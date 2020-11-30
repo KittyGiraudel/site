@@ -1,5 +1,9 @@
 ---
 title: User preferences in React
+keywords:
+- react
+- preferences
+- media
 ---
 
 I have recently been playing with a concept of React hooks and React components to handle user preferences such as light/dark mode, reduced motion, reduced data usage, reduced transparency, or basically anything else.
