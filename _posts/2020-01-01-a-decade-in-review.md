@@ -33,7 +33,7 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 - 🏦 I worked in 4 different companies across 2 countries, 3 of them being banks or bank-related.
 - 🏆 I [got short-listed for Developer of the Year 2015](https://thenetawards.com/vote/developer/) by Net Awards (although I should have been in the “Young Developer of the Year” category at that time, since I was under 25).
 - 🤓 I have been a Google Developer Expert in web development.
-- 🎤 I [spoke at a dozen conferences](/speaking/) over Europe.
+- 🎤 I [spoke at a dozen conferences](/talks/) over Europe.
 - 👩‍💻 I [authored or co-authored over 40 open-source projects](/projects/), such as [Sass Guidelines](https://sass-guidelin.es/), [SassDoc](http://sassdoc.com/) and [Browserhacks](http://browserhacks.com/).
 - 🐦 I have never been on Facebook, but did get on Twitter and have built a substantial audience, principally around web development.
 - ♿️ I got really invested in digital accessibility, making it the flagship of my current position, and trying my best to make the web a better place.

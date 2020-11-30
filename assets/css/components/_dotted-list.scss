@@ -8,5 +8,7 @@
 
 .DottedList > li:not(:last-of-type)::after {
   content: '·';
+  color: initial;
+  opacity: 0.5;
   font-family: monospace;
 }
