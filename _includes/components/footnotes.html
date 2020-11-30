@@ -9,10 +9,10 @@
   <ol>
     {% for footnote in footnotes %}
     <li id="{{ footnote.id }}-note">
-      {{ footnote.description }}
+      {{ footnote.description | markdown | replace: "<p>", "" | replace: "</p>", "" }}
       <a
         href="#{{ footnote.id }}-ref"
-        aria-label="Back to content"
+        aria-label="Back to reference {{ forloop.index }}"
         role="doc-backlink"
         >↩</a
       >
