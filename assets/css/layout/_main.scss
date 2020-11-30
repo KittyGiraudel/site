@@ -22,7 +22,7 @@
   background-size: 100% 88%;
 }
 
-.Main a[data-visited]::after {
+.Main a[data-visited]:not([href^="#"])::after {
   content: ' ✓';
   opacity: 0.5;
   font-size: 80%;
