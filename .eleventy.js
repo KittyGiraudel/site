@@ -77,6 +77,7 @@ function minifyHTML(content, outputPath) {
         collapseWhitespace: true,
         conservativeCollapse: true,
         minifyCSS: true,
+        minifyJS: true,
         removeComments: true,
         sortAttributes: true,
         sortClassName: true,

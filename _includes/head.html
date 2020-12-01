@@ -47,9 +47,7 @@ http://ogp.me/ns/article#">
   " %}
 
   <!-- JS utilities -->
-  <script>
-    {% include "utilities.js" %}
-  </script>
+  {% include "script.html", paths: "utilities" %}
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="{{ site.author }}" href="{{ "/rss" | prepend: site.url }}" />

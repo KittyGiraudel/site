@@ -1,0 +1,11 @@
+{% if paths %}
+{% assign paths = paths | split: "," %}
+
+{% capture js %}
+{% for path in paths %}
+{% include "../assets/js/{{ path | strip }}.js" %}
+{% endfor %}
+{% endcapture %}
+
+<script>{{ js }}</script>
+{% endif %}

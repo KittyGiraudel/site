@@ -1,1 +1,0 @@
-function loadJS(e,t){"use strict";var n=document.getElementsByTagName("script")[0],r=document.createElement("script");return r.src=e,r.async=!0,n.parentNode.insertBefore(r,n),t&&"function"==typeof t&&(r.onload=t),r}
