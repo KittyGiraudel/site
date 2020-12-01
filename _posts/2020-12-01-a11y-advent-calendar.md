@@ -1,8 +1,12 @@
 ---
 title: A11y Advent Calendar
+keywords:
+- accessibility
+- a11y
+- tips
 ---
 
-I am between jobs with a bit of free time, so I thought I would try something new this year and publish an accessibility tip a day in that article. Nothing too ground-breaking, and I expect a lot of these tips to be common knowledge for many of you, yet we’ll end the month with a nice list of do’s & don’ts.
+I am between jobs with a bit of free time, so I thought I would try something new this year and publish **an accessibility tip a day** in that article. Nothing too ground-breaking, and I expect a lot of these tips to be common knowledge for many of you, yet we’ll end the month with a nice list of do’s & don’ts. ✨
 
 I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel free to share your opinion and tips under that hashtag as well!
 
