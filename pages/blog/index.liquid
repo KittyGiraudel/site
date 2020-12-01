@@ -11,7 +11,7 @@ keywords:
 permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
-{% include "components/styles.html", paths: "components/pagination" %}
+{% include "styles.html", paths: "components/pagination" %}
 
 {% markdown %}
 Over the last few years, I have spent a lot of time writing. Mostly about tech,
@@ -24,8 +24,8 @@ If you’re looking for something more tasty, you’ll be pleased to know I star
 blogging about [my personal recipes](/blog/recipes). 👩‍🍳
 {% endmarkdown %}
 
-{% include "components/post_list.html", posts: posts %}
-{% include "components/pagination.html",
+{% include "post_list.html", posts: posts %}
+{% include "pagination.html",
   nextPageHref: pagination.nextPageHref,
   previousPageHref: pagination.previousPageHref
 %}

@@ -7,7 +7,7 @@
   <div class="Showcase__container">
     {% for item in items %}
     <div class="Showcase__item">
-      {% include "components/{{ type }}-tile.html", item: item %}
+      {% include "{{ type }}-tile.html", item: item %}
     </div>
     {% endfor %}
   </div>

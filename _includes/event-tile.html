@@ -3,7 +3,7 @@
 {% capture meta %}{{ event.date | time }} · {{ event.location | split: ',' | first }}{% endcapture %}
 {% capture link_label %}Check event <span class="visually-hidden">{{ event.event }}</span>{% endcapture %}
 
-{% include "components/tile.html",
+{% include "tile.html",
   primary: event.event,
   secondary: meta,
   link_url: event.link,
