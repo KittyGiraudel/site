@@ -1,0 +1,11 @@
+{% if paths %}
+{% assign paths = paths | split: "," %}
+
+{% capture css %}
+{% for path in paths %}
+{% include "../assets/css/{{ path | strip }}.css" %}
+{% endfor %}
+{% endcapture %}
+
+<style>{{ css | cssmin }}</style>
+{% endif %}

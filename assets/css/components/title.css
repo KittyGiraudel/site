@@ -1,12 +1,14 @@
 .Title {
-  color: $soft-pink;
+  color: #dd7eb4;
   font-size: 2.5em;
   font-weight: 300;
   line-height: 1;
   margin: 1em 0 0.5em;
   text-align: center;
+}
 
-  @include media(">=tablet") {
+@media (min-width: 768px) {
+  .Title {
     font-size: 3.5em;
   }
 }

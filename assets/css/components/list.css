@@ -1,13 +1,3 @@
-ul,
-ol {
-  padding-left: 1em;
-  margin-bottom: 1.5em;
-}
-
-ul ul {
-  margin-bottom: 0;
-}
-
 .List {
   list-style: none;
   padding-left: 0;
@@ -16,8 +6,10 @@ ul ul {
 .List__item {
   padding: 1em 0;
   transition: all 0.3s 0.1s;
+}
 
-  @include media('>=tablet') {
+@media (min-width: 768px) {
+  .List__item {
     padding: 1.5em 0;
   }
 }
@@ -39,12 +31,13 @@ ul ul {
 .List__primary-content {
   font-size: 1.5em;
   line-height: 1.1;
-  color: $soft-pink;
+  color: #dd7eb4;
 }
 
 .List__secondary-content {
   font-size: 0.75em;
-  font-family: $code-font-stack;
+  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
+    'Courier', monospace;
 }
 
 .List__secondary-content ul {

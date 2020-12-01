@@ -1,5 +1,5 @@
+const CleanCSS = require('clean-css')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const pluginSass = require('eleventy-plugin-sass')
 const footnotes = require('eleventy-plugin-footnotes')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
@@ -7,9 +7,15 @@ const uslugify = require('uslug')
 
 module.exports = function (config) {
   // Enable compilation plugins
-  config.addPlugin(pluginSass, {})
   config.addPlugin(syntaxHighlight)
   config.addPlugin(footnotes)
+
+  // Provide a filter that compresses CSS in production
+  config.addFilter('cssmin', code =>
+    process.env.NODE_ENV === 'production'
+      ? new CleanCSS({ level: 2 }).minify(code).styles
+      : code
+  )
 
   // Pass through static files; the CSS file is handled through Sass and
   // therefore not explitly passed through here

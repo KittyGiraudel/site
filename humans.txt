@@ -10,7 +10,5 @@
 # TECHNOLOGY COLOPHON
 
     HTML, CSS, JavaScript
-    Sass, Normalize.css
     11ty, Simple-Jekyll-Search
-    GitHub Pages, Jekyll
     Netlify
