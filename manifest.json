@@ -3,8 +3,18 @@
   "name": "Hugo “Kitty” Giraudel",
   "icons": [
     {
-      "src": "/assets/images/favicon.png",
-      "sizes": "512x512",
+      "src": "/assets/images/favicon-400.png",
+      "sizes": "400x400",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/favicon-144.png",
+      "sizes": "144x144",
       "type": "image/png"
     }
   ],
