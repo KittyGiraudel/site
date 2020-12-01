@@ -2,7 +2,7 @@ blockquote,
 .Info {
   margin: 5px 0 1.5em;
   padding: 0.75em 1.5em;
-  background-color: lighten(#dd7eb4, 30%);
+  background-color: #fdf7fa;
   position: relative;
 }
 
