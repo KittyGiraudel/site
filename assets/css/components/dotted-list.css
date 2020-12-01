@@ -7,6 +7,7 @@
 }
 
 .DottedList > li:not(:last-of-type)::after {
+  margin: 0 0.5ch;
   content: '·';
   color: initial;
   opacity: 0.5;

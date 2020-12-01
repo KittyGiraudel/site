@@ -1,4 +1,4 @@
-const CleanCSS = require('clean-css')
+const htmlmin = require('html-minifier')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const footnotes = require('eleventy-plugin-footnotes')
 const markdownIt = require('markdown-it')
@@ -6,16 +6,14 @@ const markdownItAnchor = require('markdown-it-anchor')
 const uslugify = require('uslug')
 
 module.exports = function (config) {
+  // Minify HTML and CSS in production
+  if (process.env.NODE_ENV === 'production') {
+    config.addTransform('htmlmin', minifyHTML)
+  }
+
   // Enable compilation plugins
   config.addPlugin(syntaxHighlight)
   config.addPlugin(footnotes)
-
-  // Provide a filter that compresses CSS in production
-  config.addFilter('cssmin', code =>
-    process.env.NODE_ENV === 'production'
-      ? new CleanCSS({ level: 2 }).minify(code).styles
-      : code
-  )
 
   // Pass through static files; the CSS file is handled through Sass and
   // therefore not explitly passed through here
@@ -66,6 +64,21 @@ module.exports = function (config) {
       layouts: '_layouts',
     },
   }
+}
+
+function minifyHTML(content, outputPath) {
+  return outputPath.endsWith('.html')
+    ? htmlmin.minify(content, {
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        minifyCSS: true,
+        removeComments: true,
+        sortAttributes: true,
+        sortClassName: true,
+        useShortDoctype: true,
+      })
+    : content
 }
 
 function markdown(content) {
