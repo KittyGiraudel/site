@@ -1,0 +1,33 @@
+abbr[title] {
+  cursor: help;
+  text-decoration: none;
+  background-image: linear-gradient(
+      to right,
+      transparent,
+      transparent 50%,
+      rgb(255, 255, 255) 50%,
+      rgb(255, 255, 255) 100%
+    ),
+    linear-gradient(
+      to right,
+      #dd7eb4 0%,
+      #dd7eb4 12.5%,
+      #c37fb6 12.5%,
+      #c37fb6 25%,
+      #aa80b8 25%,
+      #aa80b8 37.5%,
+      #9081ba 37.5%,
+      #9081ba 50%,
+      #7681bc 50%,
+      #7681bc 62.5%,
+      #5c82be 62.5%,
+      #5c82be 75%,
+      #4383c0 75%,
+      #4383c0 87.5%,
+      #2984c2 87.5%,
+      #2984c2 100%
+    );
+  background-repeat: repeat-x;
+  background-size: 4px 2px, 100% 2px;
+  background-position: bottom;
+}

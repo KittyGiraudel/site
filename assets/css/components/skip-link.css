@@ -8,8 +8,10 @@
   left: 0.75em;
   font-size: 80%;
   outline: none;
+}
 
-  @include media('>tablet') {
+@media (min-width: 768px) {
+  .SkipLink {
     display: block;
   }
 }
@@ -17,5 +19,5 @@
 .SkipLink:focus {
   height: auto;
   width: auto;
-  border-bottom: 2px solid $soft-pink;
+  border-bottom: 2px solid #dd7eb4;
 }

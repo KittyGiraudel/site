@@ -3,8 +3,10 @@
  */
 .Ad {
   margin-top: 1.5em;
+}
 
-  @include media('>=1300px') {
+@media (min-width: 1300px) {
+  .Ad {
     position: absolute;
     top: 1em;
     right: 1em;

@@ -9,7 +9,6 @@
 
 .Footnotes::before {
   content: '';
-  background-image: linear-gradient(to right, stripes($colors));
   height: 4px;
   border-radius: 4px;
   width: 100%;

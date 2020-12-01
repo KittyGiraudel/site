@@ -1,0 +1,20 @@
+
+.figure {
+  margin: 0 0 1.5em;
+}
+
+.figure figcaption {
+  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
+    'Courier', monospace;
+  font-size: 60%;
+  margin-top: -1em;
+}
+
+.figure figcaption::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 25%;
+  background-color: #dd7eb4;
+  margin-top: 1em;
+}

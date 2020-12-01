@@ -2,8 +2,10 @@
   padding: 2em 0;
   text-align: center;
   font-size: 0.75em;
+}
 
-  @include media(">=tablet") {
+@media (min-width: 768px) {
+  .Footer {
     padding: 5em 0 2em;
   }
 }
@@ -14,7 +16,7 @@
 }
 
 .Footer__copy::after {
-  content: "–";
+  content: '–';
   margin-left: 1ch;
   margin-right: 1ch;
 }

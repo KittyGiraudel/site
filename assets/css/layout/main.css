@@ -1,5 +1,5 @@
-.Main {
-  @include media('>tablet') {
+@media (min-width: 768px) {
+  .Main {
     padding: 1em 0;
   }
 }
@@ -9,7 +9,7 @@
   color: inherit;
   border-bottom: 0;
   text-decoration: none;
-  background-image: linear-gradient(to right, lighten($soft-pink, 20%),lighten($soft-blue, 40%));
+  background-image: linear-gradient(to right, #f2cfe3, #c4e0f3);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;
@@ -22,7 +22,7 @@
   background-size: 100% 88%;
 }
 
-.Main a[data-visited]:not([href^="#"])::after {
+.Main a[data-visited]:not([href^='#'])::after {
   content: ' ✓';
   opacity: 0.5;
   font-size: 80%;

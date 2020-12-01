@@ -30,8 +30,21 @@ http://ogp.me/ns/article#">
   <meta name="author" content="{{ guest | default: site.author }}">
   <link rel="canonical" href="{{ page_url }}">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' }}">
+  <!-- Styles -->
+  {% include "components/styles.html", paths: "
+    base/base,
+    base/helpers,
+    layout/footer,
+    layout/main,
+    layout/navigation,
+    components/abbr,
+    components/ads,
+    components/dotted-list,
+    components/list,
+    components/skip-link,
+    components/title,
+    base/shame
+  " %}
 
   <!-- JS utilities -->
   <script>

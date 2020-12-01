@@ -10,8 +10,10 @@
   padding-right: 1em; /* 2 */
   width: 100%; /* 1 */
   margin: 0 auto;
+}
 
-  @include media('>=tablet') {
+@media (min-width: 768px) {
+  .container {
     padding-left: 2em;
     padding-right: 2em;
   }

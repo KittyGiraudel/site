@@ -2,6 +2,11 @@
 layout: default
 ---
 
+{% include "components/styles.html", paths: "
+  components/recipe,
+  components/post-date
+" %}
+
 <article itemscope itemtype="https://schema.org/Article" class="Post">
   <p class="PostDate">For {{ serves }} · About {{ preparation_time }}</p>
 

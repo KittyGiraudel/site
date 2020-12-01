@@ -4,15 +4,17 @@
   padding: 0 1em;
   margin-bottom: 1em;
   text-align: center;
+}
 
-  @include media(">=tablet") {
+@media (min-width: 768px) {
+  .Navigation__list {
     padding: 0;
   }
 }
 
 .Navigation__item {
   line-height: 1.5;
-  color: $soft-blue;
+  color: #2984c2;
 }
 
 .Navigation__item[aria-current] {
@@ -31,13 +33,13 @@
 }
 
 .Navigation__link::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 5%;
   right: 5%;
   height: 1px;
-  background-color: $soft-blue;
+  background-color: #2984c2;
   opacity: 0;
   transform: translateY(8px);
   transition: transform 0s ease-out, opacity 0s;

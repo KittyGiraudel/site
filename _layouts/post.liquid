@@ -2,6 +2,16 @@
 layout: default
 ---
 
+{% include "components/styles.html", paths: "
+  components/image,
+  components/footnotes,
+  components/post-date,
+  components/post-navigation,
+  components/blockquote,
+  components/code,
+  components/table
+" %}
+
 <article itemscope itemtype="https://schema.org/Article" class="Post">
   {% if page.date %}
   <p itemprop="datePublished" class="PostDate">
