@@ -11,6 +11,9 @@ module.exports = function (config) {
     config.addTransform('htmlmin', minifyHTML)
   }
 
+  // Force 11ty to watch CSS files
+  config.addWatchTarget('assets/css/**/*.css')
+
   // Enable compilation plugins
   config.addPlugin(syntaxHighlight)
   config.addPlugin(footnotes)
