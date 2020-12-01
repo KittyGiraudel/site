@@ -23,6 +23,7 @@ module.exports = function (config) {
   config.addPassthroughCopy('assets/images')
   config.addPassthroughCopy('assets/js')
   config.addPassthroughCopy('_redirects')
+  config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('humans.txt')
   config.addPassthroughCopy('manifest.json')
 
