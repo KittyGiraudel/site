@@ -3,6 +3,7 @@
  */
 .Ad {
   margin-top: 1.5em;
+  height: 118px;
 }
 
 @media (min-width: 1300px) {
