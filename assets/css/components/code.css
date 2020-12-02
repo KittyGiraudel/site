@@ -1,8 +1,29 @@
 pre {
-  margin-bottom: 1.5em;
-  padding: 1em;
+  margin: 5px 0 1.5em;
+  padding: 1.25em 1.5em;
   overflow: auto;
-  background-color: rgb(255, 250, 253);
+  position: relative;
+  background-color: #fff7fc;
+}
+
+@media (min-width: 1024px) {
+  pre {
+    margin: 2em 0;
+    width: calc(100% + 4em);
+    padding: 1.5em 2em;
+    position: relative;
+    left: -2em;
+  }
+}
+
+pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  opacity: 0.7;
 }
 
 code {

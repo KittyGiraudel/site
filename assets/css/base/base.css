@@ -80,7 +80,7 @@ a:visited {
  * Basic styles for images
  * 1. Warning, potentially dangerous if using inline images
  */
- img {
+img {
   max-width: 100%;
   height: auto;
   display: block; /* 1 */
@@ -97,6 +97,7 @@ ul ul {
   margin-bottom: 0;
 }
 
+pre::before,
 body::before,
 .Info::before,
 blockquote::before,
