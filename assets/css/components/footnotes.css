@@ -1,49 +1,45 @@
-.Main {
-  counter-reset: footnotes;
-}
-
 .Footnotes {
+  font-size: 80%;
+  margin: 2em 0;
+  padding: 0.75em 1.5em;
   position: relative;
-  margin-top: 4em;
+  background-color: #f6f4f9;
 }
 
-.Footnotes::before {
-  content: '';
-  height: 4px;
-  border-radius: 4px;
-  width: 100%;
-  display: block;
+@media (min-width: 1024px) {
+  /**
+   * 1. Increase width so the footnotes container looks wider than the body
+   *    text, but the text within it is aligned with the body text.
+   */
+  .Footnotes {
+    width: calc(100% + 4em); /* 1 */
+    padding: 1em 2em; /* 1 */
+    left: -2em; /* 1 */
+  }
+}
+
+.Footnotes__title {
+  margin-top: 0;
 }
 
 .Footnotes__ref[role='doc-noteref'] {
-  counter-increment: footnotes;
   background-image: none;
   cursor: default;
 }
 
 .Footnotes__ref[role='doc-noteref']::after {
   content: '[' counter(footnotes) ']';
+  counter-increment: footnotes;
   vertical-align: super;
   font-size: 0.6em;
   margin-left: 2px;
-  color: blue;
+  color: #2984c2;
   text-decoration: underline;
   cursor: pointer;
+  background-image: linear-gradient(to right, #f2cfe3, #c4e0f3);
+  background-size: 100% 0%;
 }
 
 .Footnotes__ref[role='doc-noteref']:focus::after {
-  outline: thin dotted;
-  outline-offset: 2px;
-}
-
-.Footnotes__ref[role='doc-noteref']:hover {
-  color: inherit;
-}
-
-.Footnotes__ref[role='doc-backlink']::after {
-  content: none;
-}
-
-[role='doc-endnotes'] {
-  font-size: 80%;
+  background-size: inherit;
 }

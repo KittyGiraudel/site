@@ -1,19 +1,21 @@
 blockquote,
 .Info {
-  margin: 5px 0 1.5em;
+  margin: 2em 0;
   padding: 0.75em 1.5em;
   position: relative;
   background-color: #f3f8fc;
 }
 
 @media (min-width: 1024px) {
+  /**
+   * 1. Increase width so the blockquote/info container looks wider than the
+   *    body text, but the text within it is aligned with the body text.
+   */
   blockquote,
   .Info {
-    margin: 2em 0;
-    width: calc(100% + 4em);
-    padding: 1em 2em;
-    position: relative;
-    left: -2em;
+    width: calc(100% + 4em); /* 1 */
+    padding: 1em 2em; /* 1 */
+    left: -2em; /* 1 */
   }
 }
 
@@ -26,23 +28,24 @@ blockquote::before {
   right: 0;
   height: 5px;
   opacity: 0.7;
-  transform: scaleX(-1);
+  border-radius: 5px 5px 0 0;
+  background-image: linear-gradient(to right, #2984c2, #dd7eb4);
 }
 
 /**
- * Prevent an odd gap when the first child of blockquote as a top margin
+ * 1. Prevent an odd gap when the first child of blockquote as a top margin
  */
 .Info > :first-child,
 blockquote > :first-child {
-  margin-top: 0;
+  margin-top: 0; /* 1 */
 }
 
 /**
- * Prevent an odd gap when the last child of blockquote as a bottom margin
+ * 1. Prevent an odd gap when the last child of blockquote as a bottom margin
  */
 .Info > :last-child,
 blockquote > :last-child {
-  margin-bottom: 0;
+  margin-bottom: 0; /* 1 */
 }
 
 .Info p + p,

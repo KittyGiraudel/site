@@ -1,18 +1,20 @@
 pre {
-  margin: 5px 0 1.5em;
+  margin: 2em 0;
   padding: 1.25em 1.5em;
   overflow: auto;
   position: relative;
-  background-color: #fff7fc;
+  background-color: #fffafd;
 }
 
 @media (min-width: 1024px) {
+  /**
+   * 1. Increase width so the code container looks wider than the body text, but
+   *    the text within it is aligned with the body text.
+   */
   pre {
-    margin: 2em 0;
-    width: calc(100% + 4em);
-    padding: 1.5em 2em;
-    position: relative;
-    left: -2em;
+    width: calc(100% + 4em); /* 1 */
+    padding: 1.5em 2em; /* 1 */
+    left: -2em; /* 1 */
   }
 }
 
@@ -23,12 +25,13 @@ pre::before {
   left: 0;
   right: 0;
   height: 5px;
+  border-radius: 5px 5px 0 0;
   opacity: 0.7;
+  background-image: linear-gradient(to right, #dd7eb4, #2984c2);
 }
 
 code {
-  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
-    'Courier', monospace;
+  font-family: var(--code-font);
   word-wrap: break-word;
   overflow-wrap: break-word;
   font-size: 80%;

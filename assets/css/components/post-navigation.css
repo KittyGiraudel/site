@@ -1,6 +1,5 @@
 .PostNavigation {
   font-size: 90%;
-  margin-top: 3em;
 }
 
 .PostNavigation__item {
@@ -32,7 +31,6 @@
   left: 100%;
   margin-left: 1ch;
 }
-
 
 @media (min-width: 768px) {
   .PostNavigation {

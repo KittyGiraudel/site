@@ -1,15 +1,16 @@
 /**
  * Site advertisement
+ * 1. Computed height to minimise CLS.
  */
 .Ad {
   margin-top: 1.5em;
-  height: 118px;
+  height: 118px; /* 1 */
 }
 
 @media (min-width: 1300px) {
   .Ad {
-    position: absolute;
-    top: 1em;
+    position: fixed;
+    bottom: 1em;
     right: 1em;
   }
 }

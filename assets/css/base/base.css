@@ -8,6 +8,8 @@ html {
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
   box-sizing: border-box; /* 3 */
+  --code-font: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
+    'Courier', monospace;
 }
 
 /**
@@ -39,6 +41,9 @@ body {
   }
 }
 
+/**
+ * Colorful horuzontal bar at the top of the site.
+ */
 body::before {
   content: '';
   height: 8px;
@@ -49,14 +54,19 @@ body::before {
   z-index: 10;
 }
 
-p {
-  margin-bottom: 1.5em;
+body::before,
+hr {
+  background-image: linear-gradient(to right, #dd7eb4, #2984c2);
 }
 
 hr {
   height: 4px;
   border-radius: 4px;
   border: 0;
+}
+
+p {
+  margin-bottom: 1.5em;
 }
 
 a {
@@ -95,32 +105,4 @@ ol {
 
 ul ul {
   margin-bottom: 0;
-}
-
-pre::before,
-body::before,
-.Info::before,
-blockquote::before,
-.Footnotes::before,
-.Tile::before,
-hr {
-  background-image: linear-gradient(
-    to right,
-    #dd7eb4 0%,
-    #dd7eb4 12.5%,
-    #c37fb6 12.5%,
-    #c37fb6 25%,
-    #aa80b8 25%,
-    #aa80b8 37.5%,
-    #9081ba 37.5%,
-    #9081ba 50%,
-    #7681bc 50%,
-    #7681bc 62.5%,
-    #5c82be 62.5%,
-    #5c82be 75%,
-    #4383c0 75%,
-    #4383c0 87.5%,
-    #2984c2 87.5%,
-    #2984c2 100%
-  );
 }

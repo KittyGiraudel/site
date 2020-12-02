@@ -36,8 +36,7 @@
 
 .List__secondary-content {
   font-size: 0.75em;
-  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
-    'Courier', monospace;
+  font-family: var(--code-font);
 }
 
 .List__secondary-content ul {

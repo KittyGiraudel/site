@@ -1,20 +1,19 @@
-
 .figure {
   margin: 0 0 1.5em;
 }
 
 .figure figcaption {
-  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
-    'Courier', monospace;
+  font-family: var(--code-font);
   font-size: 60%;
-  margin-top: -1em;
+  display: inline-block;
 }
 
-.figure figcaption::after {
+.figure figcaption::before {
   content: '';
   display: block;
-  height: 1px;
-  width: 25%;
-  background-color: #dd7eb4;
-  margin-top: 1em;
+  height: 4px;
+  border-radius: 4px;
+  background-image: linear-gradient(to right, #dd7eb4, #2984c2);
+  margin-top: -0.5em;
+  margin-bottom: 1em;
 }

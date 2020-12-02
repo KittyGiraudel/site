@@ -11,7 +11,7 @@ keywords:
 permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
-{% include "styles.html", paths: "components/pagination,components/post-navigation" %}
+{% include "styles.html", paths: "components/post-navigation" %}
 
 {% markdown %}
 Over the last few years, I have spent a lot of time writing. Mostly about tech,

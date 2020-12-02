@@ -1,8 +1,5 @@
-.DottedList {
-  list-style: none;
-}
-
 .DottedList > li {
+  list-style: none;
   display: inline-block;
 }
 
