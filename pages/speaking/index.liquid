@@ -18,24 +18,22 @@ in touch!
 <ul class="List">
   {% for event in speaking %}
   <li class="List__item">
-    <div class="List__item-inner">
-      <span class="List__secondary-content">
-        {{ event.date | time }} — {{ event.location }}
-      </span>
-      <a href="{{ event.link }}" class="List__primary-content" target="_blank" rel="noopener noreferrer">
-        {{ event.event }}
-      </a>
-      {% if event.actions %}
-        <ul class="DottedList">
-          {% for action in event.actions %}
-          <li>
-            <a target="_blank" rel="noopener noreferrer" href="{{ action[1] }}">
-              {{ action[0] }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
+    <span class="List__secondary-content">
+      {{ event.date | time }} — {{ event.location }}
+    </span>
+    <a href="{{ event.link }}" class="List__primary-content" target="_blank" rel="noopener noreferrer">
+      {{ event.event }}
+    </a>
+    {% if event.actions %}
+      <ul class="DottedList">
+        {% for action in event.actions %}
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="{{ action[1] }}">
+            {{ action[0] }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
   </li>
   {% endfor %}
 </ul>

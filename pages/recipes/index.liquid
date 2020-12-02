@@ -17,15 +17,13 @@ to say) as well as taking notes. Find below some of my recipes.
 <ul class="List">
   {% for recipe in collections.recipes %}
   <li class="List__item">
-    <div class="List__item-inner">
-      <span class="List__secondary-content">
-        For {{ recipe.data.serves }} · About {{ recipe.data.preparation_time }}
-      </span>
+    <span class="List__secondary-content">
+      For {{ recipe.data.serves }} · About {{ recipe.data.preparation_time }}
+    </span>
 
-      <a class="List__primary-content" href="{{ recipe.url }}">
-        {{ recipe.data.title }}
-      </a>
-    </div>
+    <a class="List__primary-content" href="{{ recipe.url }}">
+      {{ recipe.data.title }}
+    </a>
   </li>
   {% endfor %}
 </ul>

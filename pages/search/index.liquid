@@ -30,10 +30,8 @@ interesting. What about giving it a search?
       resultsContainer: document.getElementById('results-container'),
       json: 'data.json',
       searchResultTemplate: '<li class="List__item">\
-      <div class="List__item-inner">\
-        <span class="List__secondary-content">{date}{guest}{external}</span>\
-        <a href="{url}" class="List__primary-content" lang="{lang}" hreflang="{lang}">{title}</a>\
-      </div>\
+      <span class="List__secondary-content">{date}{guest}{external}</span>\
+      <a href="{url}" class="List__primary-content" lang="{lang}" hreflang="{lang}">{title}</a>\
     </li>',
       noResultsText: '<li class="List__item">Sorry, I could not find any result for your search. :( Hey, if you really wanna have results, I suggest looking for “access” or “sass”!</li>'
     });

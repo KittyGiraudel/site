@@ -5,21 +5,14 @@
 
 .List__item {
   padding: 1em 0;
-  transition: all 0.3s;
 }
 
-.List__item-inner p {
+.List__item p {
   margin: 0;
 }
 
-.List__item-inner .DottedList {
+.List__item .DottedList {
   padding-left: 0;
-}
-
-@media (min-width: 768px) {
-  .List__item {
-    padding: 1.5em 0;
-  }
 }
 
 .List__primary-content,

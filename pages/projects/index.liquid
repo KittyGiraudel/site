@@ -27,11 +27,9 @@ longer maintained.
   {% for project in projects %}
   <li class="List__item">
     <span class="List__secondary-content">{{ category.name }}</span>
-    <div class="List__item-inner">
-      <a href="{{ project.link }}" class="List__primary-content" target="_blank"
-        rel="noopener noreferrer">{{ project.name }}</a>
-      <p>{{ project.description }}</p>
-    </div>
+    <a href="{{ project.link }}" class="List__primary-content" target="_blank"
+      rel="noopener noreferrer">{{ project.name }}</a>
+    <p>{{ project.description }}</p>
   </li>
   {% endfor %}
 </ul>
