@@ -21,7 +21,6 @@ module.exports = function (config) {
   // Pass through static files; the CSS file is handled through Sass and
   // therefore not explitly passed through here
   config.addPassthroughCopy('assets/images')
-  config.addPassthroughCopy('assets/js')
   config.addPassthroughCopy('_redirects')
   config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('humans.txt')
