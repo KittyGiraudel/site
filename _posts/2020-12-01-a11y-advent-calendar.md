@@ -30,7 +30,7 @@ In other words, providing accessible interfaces and content is about considering
 
 As you can see, there are so many things to consider. It may be daunting, but it’s also the beauty of our job as designers and frontend developers. We get to work _for_ everyone. I don’t know about you, but I find it inspiring. ✨
 
-## Day 2: measuring accessibility
+## Day 2: evaluating accessibility
 
 Now that we have broadly defined what accessibility is, we need to discuss how to measure it. Accessibility is audited through the [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/) (WCAG for short), a technical standard currently in version 2.1, planned to reach 2.2 in 2021.
 
