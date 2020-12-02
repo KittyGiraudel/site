@@ -14,7 +14,7 @@ permalink: /rss/index.xml
     {% for post in collections.posts %}
     <item>
       <title>{{ post.data.title | xml_escape }}</title>
-      <description>{{ post.templateContent | replace: '<', '&lt;' | replace: '>', '&gt;' }}</description>
+      <description>{{ post.templateContent | replace: '<', '&lt;' | replace: '>', '&gt;' | replace: 'href="/', 'href="https://hugogiraudel.com/' | replace: 'src="/', 'src="https://hugogiraudel.com/' }}</description>
       <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
       <link>
       {% if post.data.external %}{{ post.data.external.url }}{% else %}{{ post.url | prepend: site.url }}{% endif %}
