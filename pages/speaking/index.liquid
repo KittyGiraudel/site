@@ -21,7 +21,11 @@ in touch!
     <div class="List__item-inner">
       <span class="List__secondary-content">
         {{ event.date | time }} — {{ event.location }}
-        {% if event.actions %}
+      </span>
+      <a href="{{ event.link }}" class="List__primary-content" target="_blank" rel="noopener noreferrer">
+        {{ event.event }}
+      </a>
+      {% if event.actions %}
         <ul class="DottedList">
           {% for action in event.actions %}
           <li>
@@ -31,10 +35,6 @@ in touch!
           {% endfor %}
         </ul>
         {% endif %}
-      </span>
-      <a href="{{ event.link }}" class="List__primary-content" target="_blank" rel="noopener noreferrer">
-        {{ event.event }}
-      </a>
     </div>
   </li>
   {% endfor %}

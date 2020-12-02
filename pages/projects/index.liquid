@@ -26,10 +26,11 @@ longer maintained.
   {% assign projects = category.items | sort_by: "name" %}
   {% for project in projects %}
   <li class="List__item">
+    <span class="List__secondary-content">{{ category.name }}</span>
     <div class="List__item-inner">
       <a href="{{ project.link }}" class="List__primary-content" target="_blank"
         rel="noopener noreferrer">{{ project.name }}</a>
-      <span class="List__secondary-content">{{ category.name }} · {{ project.description }}</span>
+      <p>{{ project.description }}</p>
     </div>
   </li>
   {% endfor %}

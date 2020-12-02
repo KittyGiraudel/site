@@ -5,7 +5,15 @@
 
 .List__item {
   padding: 1em 0;
-  transition: all 0.3s 0.1s;
+  transition: all 0.3s;
+}
+
+.List__item-inner p {
+  margin: 0;
+}
+
+.List__item-inner .DottedList {
+  padding-left: 0;
 }
 
 @media (min-width: 768px) {
