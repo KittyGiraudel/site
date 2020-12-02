@@ -44,6 +44,7 @@ module.exports = function (config) {
 
   // Reproduce some Liquid filters, sometimes losely
   config.addFilter('date_to_xmlschema', dateToXmlSchema)
+  config.addFilter('date_to_rfc822', dateToRFC822)
   config.addFilter('group_by', groupBy)
   config.addFilter('number_of_words', numberOfWords)
   config.addFilter('sort_by', sortBy)
@@ -108,6 +109,10 @@ function sortBy(array, key) {
 
 function dateToXmlSchema(value) {
   return new Date(value).toISOString()
+}
+
+function dateToRFC822(value) {
+  return new Date(value).toUTCString()
 }
 
 function dateToString(value) {

@@ -8,8 +8,8 @@ permalink: /rss/index.xml
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url }}/</link>
     <atom:link href="{{ "/rss/index.xml" | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    <pubDate>2012-11-10T12:00:00+01:00</pubDate>
-    <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
+    <pubDate>{{ site.pubDate | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>11ty</generator>
     {% for post in collections.posts %}
     <item>
