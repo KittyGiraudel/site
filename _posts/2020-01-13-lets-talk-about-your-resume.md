@@ -195,6 +195,4 @@ Also, final pet-peeve of mine: please don’t start your letter with “Dear Sir
 - ❌ Do not copy the content of your resume, and vice versa.
 - ❌ Do not use gendered term to begin with.
 
----
-
 That is pretty much all I have to share on this topic. I hope this helps you land your next job. And if you have any question or comment, as always, feel free to get in touch on Twitter. ✨

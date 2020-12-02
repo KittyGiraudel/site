@@ -21,20 +21,20 @@ As mentioned before, we [fully support the absence of JavaScript](/2020/01/18/n2
 To work with Apollo in React, we use [`react-apollo`](https://github.com/apollographql/react-apollo). This driver provides `useQuery` and `useMutation` hooks which are very handy to communicate with our Apollo server through React components. A simple example might look like this:
 
 ```jsx
-import { useMutation } from "react-apollo";
+import { useMutation } from 'react-apollo'
 
-const MUTATION = "mutation removeEntry ($id: ID!) { removeEntry(id: $id) }";
+const MUTATION = 'mutation removeEntry ($id: ID!) { removeEntry(id: $id) }'
 
 const RemoveEntryButton = props => {
-  const [removeEntry] = useMutation(MUTATION);
-  const handleClick = () => removeEntry({ variables: { id: props.id } });
+  const [removeEntry] = useMutation(MUTATION)
+  const handleClick = () => removeEntry({ variables: { id: props.id } })
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button type='button' onClick={handleClick}>
       Remove entry
     </button>
-  );
-};
+  )
+}
 ```
 
 When interacting with the button, the mutation is sent to the Express server by firing an AJAX request (that’s what `useMutation` does) with everything necessary for `apollo-server-express` to handle it.
@@ -52,32 +52,32 @@ Instead, my amazing colleague [Mike Smart](https://twitter.com/smartmike) came u
 Here is what our new `MutationForm` component looks like (with code comments for explanation):
 
 ```jsx
-import { useMutation } from "@apollo/react-hooks";
-import gql from "graphql-tag";
-import serialize from "form-serialize";
+import { useMutation } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
+import serialize from 'form-serialize'
 
 const MutationForm = props => {
-  const [mutate] = useMutation(gql(props.mutation));
-  const formRef = React.useRef();
+  const [mutate] = useMutation(gql(props.mutation))
+  const formRef = React.useRef()
   const handleSubmit = event => {
     // When submitting the form with JavaScript enabled, prevent the
     // default behaviour to avoid a page refresh.
-    event.preventDefault();
+    event.preventDefault()
 
     // Call the mutation with the serialised form for variables, then
     // redirect to the correct path accordingly.
     mutate({ variables: serialize(formRef.current, { hash: true }) })
       .then(() => window.history.pushState(null, null, props.successPath))
-      .catch(() => window.history.pushState(null, null, props.failurePath));
-  };
+      .catch(() => window.history.pushState(null, null, props.failurePath))
+  }
 
   // Render a <form> with a ref to be able to serialise it, and a
   // few hidden fields to hold the mutation and the redirect paths.
   return (
-    <form action="/graphql" method="POST" ref={formRef} onSubmit={handleSubmit}>
-      <input type="hidden" name="__mutation" value={props.mutation} />
-      <input type="hidden" name="__successPath" value={props.successPath} />
-      <input type="hidden" name="__failurePath" value={props.failurePath} />
+    <form action='/graphql' method='POST' ref={formRef} onSubmit={handleSubmit}>
+      <input type='hidden' name='__mutation' value={props.mutation} />
+      <input type='hidden' name='__successPath' value={props.successPath} />
+      <input type='hidden' name='__failurePath' value={props.failurePath} />
 
       {
         // Mutation-specific fields, as well as the submit <button>
@@ -85,21 +85,21 @@ const MutationForm = props => {
         props.children
       }
     </form>
-  );
-};
+  )
+}
 ```
 
 Then we can rewrite our `RemoveEntryButton` as follow. Note how we now provide the `id` as a hidden input within our form, and how the button has `type="submit"`.
 
 ```jsx
-const MUTATION = "mutation removeEntry ($id: ID!) { removeEntry(id: $id) }";
+const MUTATION = 'mutation removeEntry ($id: ID!) { removeEntry(id: $id) }'
 
 const RemoveEntryButton = props => (
-  <MutationForm mutation={MUTATION} successPath="/" failurePath="/">
-    <input type="hidden" name="id" value={props.id} />
-    <button type="submit">Remove entry</button>
+  <MutationForm mutation={MUTATION} successPath='/' failurePath='/'>
+    <input type='hidden' name='id' value={props.id} />
+    <button type='submit'>Remove entry</button>
   </MutationForm>
-);
+)
 ```
 
 ## Layering a custom GraphQL middleware
@@ -107,27 +107,27 @@ const RemoveEntryButton = props => (
 A typical integration between Apollo and Express might look like this:
 
 ```js
-const express = require("express");
-const bodyParser = require("body-parser");
-const { ApolloServer, makeExecutableSchema } = require("apollo-server-express");
-const { typeDefs, resolvers } = require("./schema");
+const express = require('express')
+const bodyParser = require('body-parser')
+const { ApolloServer, makeExecutableSchema } = require('apollo-server-express')
+const { typeDefs, resolvers } = require('./schema')
 
-const app = express();
-const schema = makeExecutableSchema({ typeDefs, resolvers });
-const server = new ApolloServer({ schema, uploads: false });
+const app = express()
+const schema = makeExecutableSchema({ typeDefs, resolvers })
+const server = new ApolloServer({ schema, uploads: false })
 
-app.use(bodyParser.urlencoded());
-server.applyMiddleware({ app });
+app.use(bodyParser.urlencoded())
+server.applyMiddleware({ app })
 
-app.listen(8081, () => console.log(`🚀 Server ready at ${server.graphqlPath}`));
+app.listen(8081, () => console.log(`🚀 Server ready at ${server.graphqlPath}`))
 ```
 
 What we are going to need is a custom GraphQL middleware (`handleNoJavaScriptGraphQL`). We are going to insert it before setting up ApolloServer, so that if our middleware doesn’t need to do anything (when the request comes from `useMutation` with JavaScript), it can forward it to ApolloServer:
 
 ```js
-app.use(bodyParser.urlencoded());
-app.post("/graphql", bodyParser.json(), handleNoJavaScriptGraphQL(schema));
-server.applyMiddleware({ app });
+app.use(bodyParser.urlencoded())
+app.post('/graphql', bodyParser.json(), handleNoJavaScriptGraphQL(schema))
+server.applyMiddleware({ app })
 ```
 
 Our middleware should do a few things. First, it should detect whether the request comes from a client-side request, or the form submission (basically whether or not JavaScript was available).
@@ -137,7 +137,7 @@ If the request was performed with JavaScript, there is nothing more to do. `Apol
 If the request comes from the form submission, it needs to call Apollo directly (with the undocumented but stable and exported [`runHttpQuery`](https://github.com/apollographql/apollo-server/blob/master/packages/apollo-server-core/src/runHttpQuery.ts) function), passing it all the necessary information to perform the mutation. Then, depending on the result of the mutation, it will redirect to the success URL or to the failure one.
 
 ```js
-const { runHttpQuery } = require("apollo-server-core");
+const { runHttpQuery } = require('apollo-server-core')
 
 const handleNoJavaScriptGraphQL = schema => (request, response, next) => {
   const {
@@ -145,14 +145,14 @@ const handleNoJavaScriptGraphQL = schema => (request, response, next) => {
     __successPath: successPath,
     __failurePath: failurePath,
     ...variables
-  } = request.body;
+  } = request.body
 
   // Pick the `MutationForm`’s hidden fields from the request body. If
   // they happen to be absent, return early and call `next`, as this
   // means the request was performed with JavaScript, and this
   // middleware has no purpose.
   if (!query || !successPath || !failurePath) {
-    return next();
+    return next()
   }
 
   // Pass the schema, the mutation and the variables to Apollo manually
@@ -160,19 +160,19 @@ const handleNoJavaScriptGraphQL = schema => (request, response, next) => {
   return runHttpQuery([request, response], {
     method: request.method,
     options: { schema },
-    query: { query, variables }
+    query: { query, variables },
   })
     .then(({ graphqlResponse }) => {
-      const { data } = JSON.parse(graphqlResponse);
-      const operationName = Object.keys(data)[0];
-      const url = !data[operationName] ? failurePath : successPath;
+      const { data } = JSON.parse(graphqlResponse)
+      const operationName = Object.keys(data)[0]
+      const url = !data[operationName] ? failurePath : successPath
 
       // CAUTION: be sure to sanitise that URL to make sure
       // it doesn’t redirect to a malicious website.
-      return response.redirect(url);
+      return response.redirect(url)
     })
-    .catch(error => response.redirect(failurePath));
-};
+    .catch(error => response.redirect(failurePath))
+}
 ```
 
 That’s it! We managed to issue and handle a mutation with Apollo without having JavaScript available in the browser. All we did was submitting all the necessary information for Apollo in a HTML form, and process it ourselves on the server.
@@ -199,22 +199,22 @@ In this article, we cover only the very basics to make it possible to use Apollo
 ⏳ It is commonly advised to visually represent that an action is taking place through a loading state (when client-side JavaScript is present). We can modify our `handleSubmit` handler to save that state.
 
 ```js
-const [isLoading, setIsLoading] = React.useState(false);
+const [isLoading, setIsLoading] = React.useState(false)
 const handleSubmit = event => {
-  event.preventDefault();
-  setIsLoading(true);
+  event.preventDefault()
+  setIsLoading(true)
 
   mutate({ variables: serialize(formRef.current, { hash: true }) })
     .then(() => window.history.pushState(null, null, props.successPath))
     .catch(() => window.history.pushState(null, null, props.failurePath))
-    .finally(() => setIsLoading(false));
-};
+    .finally(() => setIsLoading(false))
+}
 ```
 
 We can then pass that state to the React children by expecting a function instead of a React tree.
 
 ```js
-props.children({ isLoading });
+props.children({ isLoading })
 ```
 
 While let us re-author our `RemoveEntryButton` as such:
@@ -222,14 +222,12 @@ While let us re-author our `RemoveEntryButton` as such:
 ```jsx
 <MutationForm>
   {({ isLoading }) => (
-    <button type="submit" aria-disabled={isLoading}>
+    <button type='submit' aria-disabled={isLoading}>
       {isLoading && <Loader />}
-      {isLoading ? "Removing entry…" : "Remove entry"}
+      {isLoading ? 'Removing entry…' : 'Remove entry'}
     </button>
   )}
 </MutationForm>
 ```
-
----
 
 This entire concept required some outside-the-box thinking, but it enabled us to keep offering a JavaScript-less experience in a scalable way. We get no-JS support basically out-of-the-box by simply using our `MutationForm` component. Totally worth it. ✨

@@ -54,6 +54,4 @@ Due–among other things–to our banking requirements, we have to be very thoro
 
 Being that verbose with contribution history makes it easier for us, but also teams relying on our work, to know what goes in each release, and when was specific code changes shipped live.
 
----
-
 I hope this inspire you to make your deployment process and pipeline fast and efficient as well! Feel free to share your thoughts with me on Twitter. Oh, and don’t forget that we are currently [hiring in Berlin and Barcelona](https://n26.com/en/careers/departments/13426?gh_jid=1485191&gh_src=4f88b7891)!

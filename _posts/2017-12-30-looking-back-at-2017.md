@@ -83,8 +83,8 @@ module.exports = {
       {
         blankLine: 'always',
         prev: '*',
-        next: 'return'
-      }
+        next: 'return',
+      },
     ],
     // These rules conflict with Prettier formatting and therefore need to be
     // disabled.
@@ -113,8 +113,8 @@ module.exports = {
     // label with a `htmlFor` props mapped to their `id` prop *and* that their
     // label wraps them entirely. This latter behaviour is undesired.
     // Ref: https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
-    'jsx-a11y/label-has-for': [2, { required: 'id' }]
-  }
+    'jsx-a11y/label-has-for': [2, { required: 'id' }],
+  },
 }
 ```
 
@@ -144,7 +144,5 @@ I know it’s a bit out of scope for the yearly retrospective, but I think it’
 🌱 I should try to be a bit more healthy next year. Maybe do some sports, eat better, or at least more regularly. Clean my flat more often. All in all, get my shit together. I tend to enter phases where I just let myself go, and that’s not good. I need to work on that.
 
 📝 I didn’t write much in 2017, and in many subtle ways, I realise I’ve missed it. Maybe I should try to write a bit more in 2018, even if it’s only small write-ups. I’d like to share more of what I do at work, because I’m very proud of the platform our team have been building. Hopefully I’ll be able to write about small parts every now and then.
-
----
 
 I think that’s it for this year, folks. I hope you had it good yourself, and are ready for the new year!

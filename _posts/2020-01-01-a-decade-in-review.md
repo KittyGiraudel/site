@@ -71,6 +71,4 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 - 🌶 Thanks to my Dutch-with-Indonesian-heritage partner, I’m learning to appreciate spice, something sorely lacking from French cooking.
 - 🍽 I had diner at a Michelin Star restaurant on 3 occasions in 3 different countries (Les Terrasses d’Uriage in France, Bandol sur Mer in Germany, Niven in the Netherlands). Each occasion has been incredible, and they are memories I will not forget.
 
----
-
 I guess that’s a short and sweet recap’ of the last 10 years, focusing on the positive. Now onto 10 more!

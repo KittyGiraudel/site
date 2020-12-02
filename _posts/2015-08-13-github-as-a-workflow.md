@@ -188,6 +188,4 @@ The fact that this workflow is heavily focused on pull-requests does not mean th
 
 Also depending on the relationship with the client (internal or external), issues might be the good place for them to report problems, bugs and suggestions. Again, everything is centralized on GitHub: the pull-requests remain clean and focused on features; issues are kept for all side-discussions.
 
----
-
 That is all I have written about it so far. I would love to collect opinions and have feedback about this way of doing. Has anyone ever tried it? How does it perform? How does it scale? What are the flaws? What are the positive effects? Cheers!

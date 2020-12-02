@@ -1,9 +1,9 @@
 ---
 title: Managing npm dependencies
 keywords:
-- npm
-- dependencies
-- node
+  - npm
+  - dependencies
+  - node
 ---
 
 Dependencies are part of software development. It is unrealistic to expect running a project of any decent size without external dependencies. Not all code is worth writing, and a lot of clever people have written clever code which we would be clever to use in our projects.
@@ -24,10 +24,8 @@ A good practice could be to document when to add a dependency, and why a depende
 - Is the dependency needed or can it easily be done internally?
 - Is the dependency covered with tests and safe to use?
 - Is the dependency provided under a permissive license (e.g. MIT)?
-- Is the dependency maintained (date of last commit, number of open issues and
-  pull-requests…)?
-- Is the dependency a decent size (can be checked with
-  [bundlephobia](https://bundlephobia.com/))?
+- Is the dependency maintained (date of last commit, number of open issues and pull-requests…)?
+- Is the dependency a decent size (can be checked with [bundlephobia](https://bundlephobia.com/))?
 
 ## Auditing dependencies
 
@@ -52,9 +50,7 @@ This specific search pattern will make sure to work for:
 - `import` statements (e.g. `import lodash from 'lodash'`)
 - non-root paths (e.g. `import lodash from 'lodash/fp`)
 
-{% info %}
-If you happen to use double-quotes, you will need to update the script to reference a double-quote (`"`) instead of single-quote (`'`).
-{% endinfo %}
+{% info %} If you happen to use double-quotes, you will need to update the script to reference a double-quote (`"`) instead of single-quote (`'`). {% endinfo %}
 
 When extracted as a little `groom_deps` function in one’s `.zshrc` or `.bashrc` file, it can be used within any project pretty conveniently. The type of dependencies (`dependencies`, `devDependencies` or `peerDependencies`) can be passed as an argument and defaults to `dependencies`.
 
@@ -73,9 +69,7 @@ groom_deps devDependencies
 
 Note that some dependencies are required while not being imported anywhere in JavaScript code. For instance, `@babel/polyfill`, `iltorb` or other similar dependencies can be necessary while not being explicitly mentioned in JavaScript code. Therefore, tread carefully.
 
-{% info %}
-The above script requires [jq](https://stedolan.github.io/jq/), which is a command-line utility to manipulate JSON.
-{% endinfo %}
+{% info %} The above script requires [jq](https://stedolan.github.io/jq/), which is a command-line utility to manipulate JSON. {% endinfo %}
 
 ## Outdated dependencies
 
@@ -121,7 +115,5 @@ The script is by no mean perfect:
 - As mentioned, it’s not published on npm, so right now you need to clone it to use it. Not the most convenient, but heh, also not the worst.
 - If a dependency has a major available update, it will shadow any potential minor (safe) updates, so you might be missing on minor/patches if you’re down one or more major versions.
 - It doesn’t provide a link to changelogs (since there is no standardised way to do that), so you would have to search for them yourself.
-
----
 
 That’s all I have. What about you, what are your tricks to keep your sanity when dealing with lots of dependencies in large projects?

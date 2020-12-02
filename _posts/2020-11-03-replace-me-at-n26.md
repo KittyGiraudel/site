@@ -1,9 +1,9 @@
 ---
 title: Replace me at N26
 keywords:
-- hiring
-- N26
-- tech
+  - hiring
+  - N26
+  - tech
 ---
 
 After about more than 4 years, my co-worker [Mike Smart](https://twitter.com/smartmike) and I both have resigned from our position of web tech leads at N26. We will be sticking around for a few more weeks/months during our notice period, giving us enough time to look for someone to replace us as _tech lead of the Core segment_ (more on what it means further down).
@@ -78,8 +78,6 @@ If you’ve been following along this post, I think you’ll know what I’m goi
 - ♿️ We really care about accessibility. We have baked this topic in our ways of working virtually since day 1 and have been leading the topic at N26 for a long time. We automate accessibility testing where possible, and have documentation and knowledge sharing on the topic. This is not that common, and it’s a great environment to work in.
 
 - ✅ Our motto has long been “do your work and go home on time” (or “stay home” since, you know, COVID). I’ve spoken repeatedly against people working too early or too late or during weekends (although I have done it myself on many occasions, thus being both hypocritical and a poor leadership example). This means we focus on testing automation, so people _never_ have to deal with incidents. There is a formal on-call process which is opt-in and incredibly chill for web as anything seldom happens.
-
----
 
 If all of this sounds interesting to you, and you think you’d be a good fit, please apply on the official job posting. If you would like more information about the role or have any question, you can ask me on Twitter—my DMs are open.
 

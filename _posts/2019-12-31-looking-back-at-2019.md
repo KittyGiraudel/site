@@ -65,6 +65,4 @@ I know it’s a bit out of scope for a yearly retrospective, but I think it’s 
 
 💧 I need to drink more water. I’m not drinking enough water, and I still haven’t found a reminder that works for me. I tried a few apps, but they all got in the way somehow.
 
----
-
 I think that’s it for this year, folks. I hope you had it good yourself, and are ready for the new year!
