@@ -15,6 +15,7 @@ I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel
 - [Day 3: Hiding Content](#day-3-hiding-content)
 - [Day 4: Self-Explanatory Links](#day-4-self-explanatory-links)
 - [Day 5: Document Outline](#day-5-document-outline)
+- [Day 6: Skip to Content](#day-6-skip-to-content)
 
 ## Day 1: What is Accessibility?
 
@@ -124,6 +125,51 @@ In this article for instance, the post title is a `<h1>` and then we have a bunc
 
 To check the structure of a document, we can use the same [accessibility bookmarklet](https://xi.github.io/a11y-outline/) we’ve mentioned yesterday. When activating it, one of the options is “Headings”, which lists all headings in order and level. From there, we can make sure the structure makes sense, headings are in the right order, and no level is skipped.
 
-{% info %} For years now, there have been discussions (and even proposals) about taking into consideration sectioning elements like `section` into the document outline to create sort of sub-structures where every root would go back to `h1`. This has never been implemented by any browser or supported by any assistive technology so this is basically moot at this point. Stick to appropriate heading levels.
+{% info %}
+For years now, there have been discussions (and even proposals) about taking into consideration sectioning elements like `section` into the document outline to create sort of sub-structures where every root would go back to `h1`. This has never been implemented by any browser or supported by any assistive technology so this is basically moot at this point. Stick to appropriate heading levels.
 
-For more information about the history behind the document outline and the proposed resolution algorithm, I encourage you to read [the Document Outline Dilemna](https://css-tricks.com/document-outline-dilemma/) by Amelia Bellamy-Royds which is a fantastic overview of the topic. {% endinfo %}
+For more information about the history behind the document outline and the proposed resolution algorithm, I encourage you to read [the Document Outline Dilemna](https://css-tricks.com/document-outline-dilemma/) by Amelia Bellamy-Royds which is a fantastic overview of the topic.
+{% endinfo %}
+
+## Day 6: Skip to Content
+
+Let’s stay in the topic of navigation and talk about a feature that is too often forgotten: a link to go straight to the main content area of the site—often called “skip-to-content” or “skip-navigation” link.
+
+In traditional websites using hyperlinks the right way, the page is fully reloaded when following a link and the focus is restored to the top of the page. When navigating with the keyboard, that means having to tab through the entire header, navigation, sometimes even sidebar before getting to accesss the main content. This is bad.
+
+Single-page applications are not free from this consideration either. Following a link tends to reload the content area and therefore loses the current focus, which sends it to the top of the document, causing the same issue. So either way, there is work to do.
+
+{% assign skip_link = "As [Hidde rightfully pointed out on Twitter](https://twitter.com/hdv/status/1334435081952309253?s=20), this is a good candidate for the WebWeWant.fyi project. I submitted a [suggestion to have skip links natively implemented](https://github.com/WebWeWant/webwewant.fyi/issues/233) by browsers instead of relying on developers’ implementation." | markdown %}
+
+To work around the problem, a common design pattern is to {% footnoteref "skip_link" skip_link %}implement a skip link{% endfootnoteref %}, which is an anchor link sending to the main content area. So how shall our skip link work?
+
+- It should be at the top of the page, ideally as the first focusable element. It doesn’t have to be absolute first, but the more focusable elements there are before it, the less discoverable and thus less useful the skip link becomes.
+- Ideally it’s always visible, but it’s pretty uncommon that it fits nicely into design so it can be visually hidden and revealed on focus—more on that below.
+- It should lead to the main content area of the page.
+- It should ideally start with the word “Skip” so it’s easily recognisable (visually and aurally). It can say “Skip navigation”, “Skip to content”, or some similar flavours.
+
+Here is our HTML:
+
+```html
+<body>
+  <a href="#main" class="sr-only sr-only--focusable">Skip to content</a>
+</body>
+```
+
+For the styling we can use what we learnt in [day 3 of this calendar](#day-3-hiding-content), applying a small twist to undo the hiding styles when the element is focused.
+
+```css
+.sr-only.sr-only--focusable:focus,
+.sr-only.sr-only--focusable:active {
+  clip: auto !important;
+  -webkit-clip-path: auto !important;
+  clip-path: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  width: auto !important;
+  white-space: normal !important;
+}
+```
+
+You can play with a [live demo for skip links on CodePen](https://codepen.io/HugoGiraudel/pen/eYdpqoK).
+
