@@ -22,6 +22,10 @@
   margin-top: 0;
 }
 
+.Footnotes__list-item:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
 .Footnotes__ref[role='doc-noteref'] {
   background-image: none;
   cursor: default;
