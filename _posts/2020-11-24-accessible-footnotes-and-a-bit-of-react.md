@@ -49,7 +49,7 @@ And here is out the footnotes section would be authored:
 <footer role="doc-endnotes">
   <h2 id="footnotes-label">Footnotes</h2>
   <ol>
-    <li id="css-counters-note">
+    <li id="css-counters-note" role="doc-endnote">
       CSS counters are, in essence, variables maintained by CSS whose values may
       be incremented by CSS rules to track how many times they’re used.
       <a
