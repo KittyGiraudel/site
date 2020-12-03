@@ -10,11 +10,11 @@ I am between jobs with a bit of free time, so I thought I would try something ne
 
 I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel free to share your opinion and tips under that hashtag as well!
 
-- [Day 1: what is accessibility?](#day-1-what-is-accessibility)
-- [Day 2: measuring accessibility](#day-2-measuring-accessibility)
-- [Day 3: hiding content the right way](#day-3-hiding-content-the-right-way)
+- [Day 1: What is Accessibility?](#day-1-what-is-accessibility)
+- [Day 2: Measuring Accessibility](#day-2-measuring-accessibility)
+- [Day 3: Hiding Content](#day-3-hiding-content)
 
-## Day 1: what is accessibility?
+## Day 1: What is Accessibility?
 
 I thought we would start this calendar by talking about what is accessibility. There is a common belief in the web industry that accessibility is only about blind users. While it certainly involves blind people, it also encompasses way more than that.
 
@@ -34,7 +34,7 @@ In other words, providing accessible interfaces and content is about considering
 
 As you can see, there are so many things to consider. It may be daunting, but it’s also the beauty of our job as designers and frontend developers. We get to work _for_ everyone. I don’t know about you, but I find it inspiring. ✨
 
-## Day 2: evaluating accessibility
+## Day 2: Evaluating Accessibility
 
 Now that we have broadly defined what accessibility is, we need to discuss how to measure it. Accessibility is audited through the [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/) (WCAG for short), a technical standard currently in version 2.1, planned to reach 2.2 in 2021.
 
@@ -56,7 +56,7 @@ What is important to remember is that even beyond strict specification conforman
 
 <p class="Info">Interestingly enough, <a href="https://www.w3.org/TR/mobile-accessibility-mapping/">the WCAG also apply to mobile interfaces</a>. There is no other significant body of work covering mobile accessibility, so the WCAG can and should be followed (when applicable) for mobile applications, even though they are not written for web technologies.</p>
 
-## Day 3: hiding content the right way
+## Day 3: Hiding Content
 
 Today, let’s dive in a bit more technical topic and discuss how to hide content while keeping it accessible to assistive technologies.
 
