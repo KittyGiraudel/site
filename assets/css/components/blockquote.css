@@ -1,6 +1,6 @@
 blockquote,
 .Info {
-  margin: 2em 0;
+  margin: 1.5em 0;
   padding: 0.75em 1.5em;
   position: relative;
   background-color: #f3f8fc;
@@ -26,9 +26,9 @@ blockquote::before {
   bottom: 100%;
   left: 0;
   right: 0;
-  height: 5px;
+  height: 4px;
   opacity: 0.7;
-  border-radius: 5px 5px 0 0;
+  border-radius: 4px 4px 0 0;
   background-image: linear-gradient(to right, #2984c2, #dd7eb4);
 }
 
@@ -48,7 +48,10 @@ blockquote > :last-child {
   margin-bottom: 0; /* 1 */
 }
 
-.Info p + p,
-blockquote p + p {
-  margin-top: -1em;
+/**
+ * 1. Reduce the spacing between paragraphs.
+ */
+.Info p,
+blockquote p {
+  margin-bottom: 0.75em; /* 1 */
 }

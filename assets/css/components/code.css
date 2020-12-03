@@ -1,5 +1,5 @@
 pre {
-  margin: 2em 0;
+  margin: 1.5em 0;
   padding: 1.25em 1.5em;
   overflow: auto;
   position: relative;
@@ -24,8 +24,8 @@ pre::before {
   top: 0;
   left: 0;
   right: 0;
-  height: 5px;
-  border-radius: 5px 5px 0 0;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
   opacity: 0.7;
   background-image: linear-gradient(to right, #dd7eb4, #2984c2);
 }

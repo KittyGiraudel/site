@@ -3,37 +3,22 @@
  * 1. Computed height to minimise CLS.
  */
 .Ad {
-  margin-top: 1.5em;
+  margin: 1.5em 0;
   height: 118px; /* 1 */
 }
 
 @media (min-width: 1300px) {
   .Ad {
     position: fixed;
-    bottom: 1em;
+    bottom: -0.5em;
     right: 1em;
   }
 }
 
 /**
  * Change default styles of CarbonAds
- * `!important` used to override inline styles
  */
 .Ad__container {
-  background: transparent !important;
-  height: auto !important;
-  border: 0 !important;
-  max-width: 100% !important;
+  max-width: 100%;
   margin: 0 auto;
-}
-
-.Ad__container a {
-  color: inherit !important;
-}
-
-/**
- * Prevent hidden image from CarbonAds to mess with the layout
- */
-#azcarbon > img {
-  display: inline !important;
 }

@@ -1,13 +1,8 @@
 /**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
- * 3. Set up a decent box model on the root element.
+ * 1. Set up a decent box model on the root element.
  */
 html {
-  font-family: sans-serif; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  box-sizing: border-box; /* 3 */
+  box-sizing: border-box; /* 1 */
   --code-font: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
     'Courier', monospace;
 }
@@ -25,14 +20,15 @@ html {
 }
 
 /**
- * 1. Prevent horizontal scrolling.
+ * 1. Reset default margin.
+ * 2. Prevent horizontal scrolling.
  */
 body {
-  margin: 0;
+  margin: 0; /* 1 */
   color: #444;
   font: 125% / 1.5 'Baskerville', 'Lucida Bright', 'Perpetua', 'Times',
     'Times New Roman', 'Palatino', 'Bookman', 'New Century Schoolbook', serif;
-  overflow-x: hidden; /* 1 */
+  overflow-x: hidden; /* 2 */
 }
 
 @media (min-width: 768px) {
@@ -46,7 +42,7 @@ body {
  */
 body::before {
   content: '';
-  height: 8px;
+  height: 4px;
   position: fixed;
   top: 0;
   left: 0;
@@ -66,20 +62,24 @@ hr {
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin: 1.5em 0;
 }
 
+/**
+ * 1. Color for all links outside of the main container, since they are styled
+ *    in layout/main.css.
+ */
 a {
-  color: #2984c2;
+  color: #2984c2; /* 1 */
   border-bottom: 1px dotted;
   text-decoration: none;
 }
 
 a:hover,
 a:active {
-  outline-width: 0;
-  border-bottom-style: solid;
   color: #206798;
+  border-bottom-style: solid;
+  outline-width: 0;
 }
 
 a:visited {
@@ -87,20 +87,19 @@ a:visited {
 }
 
 /**
- * Basic styles for images
- * 1. Warning, potentially dangerous if using inline images
+ * 1. Warning, potentially dangerous if using inline images.
  */
 img {
   max-width: 100%;
   height: auto;
   display: block; /* 1 */
-  margin: 1.5em 0 1em;
+  margin: 1.5em 0;
 }
 
 ul,
 ol {
   padding-left: 1em;
-  margin-bottom: 1.5em;
+  margin: 1.5em 0;
 }
 
 ul ul {
