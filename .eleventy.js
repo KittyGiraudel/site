@@ -86,8 +86,10 @@ function minifyHTML(content, outputPath) {
     : content
 }
 
-function markdown(content) {
-  return markdownIt().render(content)
+function markdown(content, inline = true) {
+  const html = markdownIt().render(content)
+
+  return inline ? html.replace('<p>', '').replace('</p>', '') : html
 }
 
 function numberOfWords(content) {
@@ -147,7 +149,7 @@ function groupBy(array, key) {
 }
 
 function info(content) {
-  return `<div class="Info">${markdown(content)}</div>`
+  return `<div class="Info">${markdown(content, false)}</div>`
 }
 
 function time(value) {

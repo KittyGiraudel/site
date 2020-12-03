@@ -104,7 +104,7 @@ From there, we can render the necessary markup to output the footnotes using a f
   <ol>
     {% for footnote in footnotes %}
     <li id="{{ footnote.id }}-note">
-      {{ footnote.description | markdown | replace: "<p>", "" | replace: "</p>", "" }}
+      {{ footnote.description | markdown }}
       <a
         href="#{{ footnote.id }}-ref"
         aria-label="Back to reference {{ forloop.index }}"
