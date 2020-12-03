@@ -30,8 +30,8 @@ module.exports = function (config) {
   config.setLiquidOptions({ dynamicPartials: true })
 
   // Add a filter and a tag to parse content as Markdown in Liquid files
-  config.addFilter('markdown', markdown)
-  config.addPairedShortcode('markdown', markdown)
+  config.addFilter('markdown', content => markdown(content, true))
+  config.addPairedShortcode('markdown', content => markdown(content, false))
 
   // Add a Liquid filter to format a date and wrap it in a <time> element
   config.addFilter('time', time)
