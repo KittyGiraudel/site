@@ -1,23 +1,29 @@
+/**
+ * 1. Visually hide the link
+ * 2. Place the link at the top left of the page
+ */
 .SkipLink {
-  display: none;
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  top: calc(0.5em + 10px);
-  left: 0.75em;
+  clip: rect(1px, 1px, 1px, 1px); /* 1 */
+  overflow: hidden; /* 1 */
+  height: 1px; /* 1 */
+  width: 1px; /* 1 */
+  position: absolute; /* 2 */
+  top: 1em; /* 2 */
+  left: 1em; /* 2 */
   font-size: 80%;
   outline: none;
+  color: inherit;
+  border-bottom: 2px solid transparent;
 }
 
-@media (min-width: 768px) {
-  .SkipLink {
-    display: block;
-  }
-}
-
-.SkipLink:focus {
-  height: auto;
-  width: auto;
-  border-bottom: 2px solid #dd7eb4;
+/**
+ * 1. Display the link on focus/active
+ */
+.SkipLink:focus,
+.SkipLink:active {
+  clip: auto; /* 1 */
+  height: auto; /* 1 */
+  width: auto; /* 1 */
+  overflow: visible; /* 1 */
+  border-bottom-color: #dd7eb4;
 }
