@@ -1,5 +1,4 @@
 .Footnotes {
-  font-size: 80%;
   margin: 1.5em 0;
   padding: 0.75em 1.5em;
   position: relative;
@@ -19,7 +18,13 @@
 }
 
 .Footnotes__title {
-  margin-top: 0;
+  font-size: 100%;
+  margin: 0;
+}
+
+.Footnotes__list {
+  font-size: 80%;
+  margin: 0.5em 0;
 }
 
 .Footnotes__list-item:not(:last-child) {
