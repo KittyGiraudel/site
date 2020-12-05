@@ -10,7 +10,7 @@ keywords:
 
 Hey people! I am the creator of a relatively new Sass grid-system called [Flint](https://github.com/ezekg/flint), and a lightweight Compass extension called [SassyExport](https://github.com/ezekg/SassyExport), which we will be discussing throughout this series.
 
-Since I already mentioned the word _series_, this article will be the first post of a 2 part series. Today we’re going to create a Sass-powered customization API that can be plugged into a front-end API, such as a Wordpress theming framework or even allow live customization through JS.
+Since I already mentioned the word _series_, this article will be the first post of a 2 part series. Today we’re going to create a Sass-powered customization API that can be plugged into a frontend API, such as a Wordpress theming framework or even allow live customization through JS.
 
 Today’s discussion will focus on the Sass part, but it will flow straight into part 2 of this series, where we will be utilizing a brand new tool I developed called [SassyExport](https://github.com/ezekg/SassyExport), which allows you to _export_ JSON _from_ Sass and write it into a new file to use elsewhere in your projects.
 
@@ -22,7 +22,7 @@ To be able to track all this stuff, we are going to use Sass maps to sort the ou
 
 We are going to do this all within Sass, and as we will discuss in part 2 of the series, a language like PHP or JS can hook in to our Sass-API and use the data to modify our stylesheet for these specific `$selector->$property` relationships. For the sake of time, we’re going to keep this project simple and only stick to color customization.
 
-Therefore, we will create a color palette as a map, in order to pull _values_ from it. That way we can also hook into this palette _module_ through our front-end API and then allow the user to modify the original color palette.
+Therefore, we will create a color palette as a map, in order to pull _values_ from it. That way we can also hook into this palette _module_ through our frontend API and then allow the user to modify the original color palette.
 
 Furthermore, because we’ll be keeping track of which selectors (or if we’re getting really technical &mdash; which _sub-modules_) are using which color, we can then update their values if the user ever modifies that sub-module’s color _value_.
 
@@ -256,7 +256,7 @@ As you can see, we’re using the Ruby function I talked about ealier called `se
 
 Next, we’re going to create an empty map that is going to contain each customizable `$property` and all of the data for it such as its `$module` and the `$value` that is used from the module.
 
-Unlike the main mixin, we’re not going to keep track of what styles are actually outputted, but rather where those styles came from within our module (_"palette"_). That way, if say, the _"primary" "base"_ color changes via our front-end API, we know that this element is using that value, so we can then update the stylesheet to reflect the change.
+Unlike the main mixin, we’re not going to keep track of what styles are actually outputted, but rather where those styles came from within our module (_"palette"_). That way, if say, the _"primary" "base"_ color changes via our frontend API, we know that this element is using that value, so we can then update the stylesheet to reflect the change.
 
 But, as we can tell from the function above, it’s returning a merged map, but we haven’t actually told the new map to override the global `$customizer-instances` variable. Instead of making the function do that, let’s create a mixin to handle that part so we can simply include it into the main mixin where we need to. That way, if we ever needed to make small minor adjustments, we only have to update it in one area. This next mixin is going to be rather simple.
 

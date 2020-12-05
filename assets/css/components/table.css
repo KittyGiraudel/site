@@ -5,11 +5,11 @@ table {
 }
 
 thead {
-  border-bottom: 0.1em solid;
+  border-bottom: 2px solid;
 }
 
 tr + tr {
-  border-top: 1px solid;
+  border-top: 1px solid #dd7eb4;
 }
 
 td,

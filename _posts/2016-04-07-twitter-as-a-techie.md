@@ -16,7 +16,7 @@ Before I get started though, don’t take this as the bible or anything. It’s 
 
 I’ll start by stating the obvious, but the first thing to enjoy using Twitter is to actually use Twitter. Follow people, read what they say, react to what they say, and bring your own content. You know, nothing ground-breaking there.
 
-If you don’t know where to start as a front-end developer, [this Twitter list is full of good people](https://twitter.com/frontendrescue/lists/cool-people/members). If you want more than just people, have a look at [Front-end Rescue](https://uptodate.frontendrescue.org/#follow-cool-people).
+If you don’t know where to start as a frontend developer, [this Twitter list is full of good people](https://twitter.com/frontendrescue/lists/cool-people/members). If you want more than just people, have a look at [Frontend Rescue](https://uptodate.frontendrescue.org/#follow-cool-people).
 
 Try to find your limit: when you can’t really browse through your timeline anymore because there is too much noise, try unfollowing a few accounts to see if it gets better. My personal limit is 500 followed accounts. I can’t really keep up when it gets higher.
 

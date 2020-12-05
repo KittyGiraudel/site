@@ -154,7 +154,7 @@ _Edit: I finally wrote my own script to deal with high-density displays because 
 
 ## Think (and do) about performance
 
-I think this is what took me the most time in the entire project even if I have a decent knowledge of front-end performance (without being an expert).
+I think this is what took me the most time in the entire project even if I have a decent knowledge of frontend performance (without being an expert).
 
 Of course I minified my stylesheets (with Sass) and my JS scripts (with [YUI Compressor](https://refresh-sf.com/)). I set up Gzip with `.htaccess` along with some cache stuff. I even added a DNS prefect for Google Fonts. And even if all this stuff is really nice, the most important thing to optimize here is… images.
 

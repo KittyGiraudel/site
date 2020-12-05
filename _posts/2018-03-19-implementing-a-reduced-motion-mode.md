@@ -7,7 +7,7 @@ keywords:
   - ux
 ---
 
-There are quite [a few reasons for someone not to want animations](/2017/07/02/accessibility-feedback/). Some people suffer from motion sickness. Some people suffer from <abbr title='Attention Deficit and Hyperactivity Disorder'>ADHD</abbr>. Some people simply don’t like the fancy woosh-swoosh.
+There are quite [a few reasons for someone not to want animations](/2017/07/02/accessibility-feedback-from-twitter/). Some people suffer from motion sickness. Some people suffer from <abbr title='Attention Deficit and Hyperactivity Disorder'>ADHD</abbr>. Some people simply don’t like the fancy woosh-swoosh.
 
 It turns out implementing an option for users to disable animations across the board is surprisingly easy. This is what we’ve done at N26 as part of the rewriting of the web application. Here’s how we did it, and how you could too.
 

@@ -292,7 +292,7 @@ When it comes to Internet Explorer 8, or actually any browser not supporting any
 
 [Rafał Krupiński](https://codepen.io/rkrupinski/pen/psrBm) came up with a solution using radial-gradients. Even better, he used `calc` **in** the radial-gradients declaration to keep things fluid. You’ve to admit that’s clever. His solution is probably the one involving the lowest amount of code, at the price of browser support though. Anyway, congratulations Rafał!
 
-I was hoping for one, [Gaël Poupard](https://codepen.io/ffoodd/pen/xHFjg) did it: a solution with `clip-path`. Plus his code is fully commented so be sure to have a look at this beauty. [His comment](/2014/02/19/the-magic-circle-a-css-brain-teaser/#comment-1259685947) on the original post is also worth a read. Nice one Gaël!
+I was hoping for one, [Gaël Poupard](https://codepen.io/ffoodd/pen/xHFjg) did it: a solution with `clip-path`. Plus his code is fully commented so be sure to have a look at this beauty. Nice one Gaël!
 
 Last but not least, [Vithun Kumar Gajendra](https://codepen.io/vithun/full/gazbD) made an interesting demo animating the pseudo-elements to show the trick. Note he used duplicated background-image on pseudo-elements rather than box-shadows/borders, that’s a cool one too!
 

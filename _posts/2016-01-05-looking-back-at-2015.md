@@ -24,7 +24,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
   <figcaption>This, is what I left behind.</figcaption>
 </figure>
 
-💻 **April 1st**. I started as a front-end developer at [Edenspiekermann](https://edenspiekermann.com) in Berlin. Needless to say it has been a very exciting move, and working with so many inspiring people on a daily basis makes me very happy.
+💻 **April 1st**. I started as a frontend developer at [Edenspiekermann](https://edenspiekermann.com) in Berlin. Needless to say it has been a very exciting move, and working with so many inspiring people on a daily basis makes me very happy.
 
 🇳🇱 **April 2 — 5th**. I visited Amsterdam for the first time (yup, took some holidays directly after my start at ESPI ¯\\\_(ツ)\_/¯). Lovely city, it goes without saying, although super crowded at that time of the year. I am likely to go back there for a talk in the next months.
 

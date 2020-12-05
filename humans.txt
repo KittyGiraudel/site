@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Hugo "Kitty” Giraudel -- Front-end developer -- @HugoGiraudel
+    Hugo "Kitty” Giraudel -- Frontend developer -- @HugoGiraudel
     Hugo "Kitty” Giraudel -- Designer -- @HugoGiraudel
     Hugo "Kitty” Giraudel -- Author -- @HugoGiraudel
 

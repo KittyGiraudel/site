@@ -169,8 +169,8 @@ I have quite a few other Git tricks up my sleeve, but that will be for another a
 
 Speaking of Git tricks, this is your reminde that my brother knows his shit and wrote on this very blog a 3-parts article on Git tips & tricks:
 
-* [Git Tips & Tricks — part 1](/2014/03/10/git-tips-and-tricks-part-1/)
-* [Git Tips & Tricks — part 2](/2014/03/17/git-tips-and-tricks-part-2/)
-* [Git Tips & Tricks — part 3](/2014/03/24/git-tips-and-tricks-part-3/)
+* [Git Tips & Tricks – part 1](/2014/03/10/git-tips-and-tricks-part-1/)
+* [Git Tips & Tricks – part 2](/2014/03/17/git-tips-and-tricks-part-2/)
+* [Git Tips & Tricks – part 3](/2014/03/24/git-tips-and-tricks-part-3/)
 
 What about you, what are your Git secrets?

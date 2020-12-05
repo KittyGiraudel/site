@@ -6,7 +6,7 @@ keywords:
   - blog
 ---
 
-I [created this site](/2012/11/09/redesign-blog/) in November 2012, with a strictly static old school set up. I quickly moved on to a custom PHP workflow only to move to [Jekyll](https://jekyllrb.com) about 3 months later (February 2013). I wrote about the experience in [this article](/2013/02/21/jekyll/).
+I [created this site](/2012/11/09/site-redesign-new-blog/) in November 2012, with a strictly static old school set up. I quickly moved on to a custom PHP workflow only to move to [Jekyll](https://jekyllrb.com) about 3 months later (February 2013). I wrote about the experience in [this article](/2013/02/21/moving-to-jekyll/).
 
 ![Mixture.io](/assets/images/oh-jekyll-here-we-go-again/mixture.png)
 

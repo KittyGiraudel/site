@@ -71,7 +71,7 @@ As you can see, the idea is pretty straightforward:
 * _LEFT-SHIFT_ shifts all bits from `n` to the left
 * _RIGHT-SHIFT_ shifts all bits from `n` to the right
 
-If you’re more a _table_ kind of guy:
+If you’re more a _table_ kind of person:
 
 |     | Bit | Result |
 | :-: | :-: | :----: |

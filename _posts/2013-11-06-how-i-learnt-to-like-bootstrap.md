@@ -15,9 +15,9 @@ Until a recent project where I finally learnt to like Bootstrap, even for websit
 
 ## How did we get there
 
-I recently got hired for quite a big project as the only front-end developer in a team of a dozen of developers. The design itself is fairly complex since it involves various layouts, multiple themes, a lot of forms and a bunch of pages. Thankfully, [Symfony 2](https://symfony.com/) and its template engine [Twig](https://twig.symfony.com/) make it a lot easier to manage but that’s not the point.
+I recently got hired for quite a big project as the only frontend developer in a team of a dozen of developers. The design itself is fairly complex since it involves various layouts, multiple themes, a lot of forms and a bunch of pages. Thankfully, [Symfony 2](https://symfony.com/) and its template engine [Twig](https://twig.symfony.com/) make it a lot easier to manage but that’s not the point.
 
-So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly back-end devs.
+So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly backend devs.
 
 > Hugo, we’ll use Bootstrap. — NOOOOOO!
 
@@ -25,7 +25,7 @@ And then he told me what I didn’t want to hear: _"we will use Twitter Bootstra
 
 But then he said something even worse: _"Bootstrap 2.3"_ and then I was like _"NOOOOOOOO!!"_ (note the number of _O_ is increasing).
 
-Since Bootstrap 3 was still in RC back then, it wasn’t possible for us to use it. Thankfully a couple of days later, it got officially released so we jumped onto it and moved the little front-end we had already done to v3.
+Since Bootstrap 3 was still in RC back then, it wasn’t possible for us to use it. Thankfully a couple of days later, it got officially released so we jumped onto it and moved the little frontend we had already done to v3.
 
 ## The beginning
 

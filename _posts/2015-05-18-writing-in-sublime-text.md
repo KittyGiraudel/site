@@ -105,7 +105,7 @@ Neat addition: when selecting a portion of content, WordCount gives the number o
 
 ### Sidebar Enhancements
 
-Last major Sublime Text plugin for me: [Sidebar Enhancements](https://github.com/titoBouzout/SideBarEnhancements). For the record, this plugin has been made by the same guy behind WordCount, so you can say this is good stuff.
+Last major Sublime Text plugin for me: [Sidebar Enhancements](https://github.com/titoBouzout/SideBarEnhancements). For the record, this plugin has been made by the same person behind WordCount, so you can say this is good stuff.
 
 Sidebar Enhancements, as the name states, improves the sidebar projet manager by adding extra options on right click, such as a clipboard to actually copy and paste files, a move command, and much more.
 

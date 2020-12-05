@@ -48,7 +48,7 @@ That means the way your resume looks is absolutely critical. Now, I understand t
 
 What is important is that it looks clean, tidy and properly structured. The hierarchy of information needs to stand out (often helped by breathing space), and it should be inviting—which means it shouldn’t be 10 pages long, one or 2 pages at most is good. When I open the resume for the first time, I should say “Ah!” not “Oooh…”.
 
-Be careful with typos. Similarly, be weary with consistency. If you are going to write “front-end” with an hyphen, or “React.js” (although this is no longer correct), do so all the way through. Pay attention to capitalisation: it’s “JavaScript”, not “javascript”; [“Sass”, not “SASS”](https://sassnotsass.com/); “git” not “GIT”, and so on. Along the same line, pay attention to the punctuation: if you end a sentence with a fullstop, do the same for all the others sentences.
+Be careful with typos. Similarly, be weary with consistency. If you are going to write “frontend” with an hyphen, or “React.js” (although this is no longer correct), do so all the way through. Pay attention to capitalisation: it’s “JavaScript”, not “javascript”; [“Sass”, not “SASS”](https://sassnotsass.com/); “git” not “GIT”, and so on. Along the same line, pay attention to the punctuation: if you end a sentence with a fullstop, do the same for all the others sentences.
 
 All of this may sound silly, although what you want to avoid is to have these things distracting from the actual content. Every typo, every inconsistency, every minor mistake, every design glitch is something that catches the eye when it should not. And for a reviewer as nitpicky as I am, that’s not ideal.
 
@@ -77,7 +77,7 @@ I have seen candidates include a few short sentences about themselves and what t
 
 Let’s briefly talk about links to social networks:
 
-- **Personal website:** if you have one, by all mean, please link it. However note that I will look at the code if you apply as a web/front-end developer. That is basically a window into your skills, so it does matter to me.
+- **Personal website:** if you have one, by all mean, please link it. However note that I will look at the code if you apply as a web/frontend developer. That is basically a window into your skills, so it does matter to me.
 - **LinkedIn:** unless you really trimmed down your resume so that your LinkedIn contains more relevant information abour yourself, I would say this is not necessary. More often than not, the resume is a refactored PDF version of the LinkedIn profile.
 - **GitHub:** that can be interesting **if** you have something on there that is relevant for your application. In other words, if there are no repositories, no contributions, that’s unnecessary. Similarly, if all the code on there is years old, that’s not helping you either.
 - **Twitter:** I personally like it as I get to see what you are interested in, talk about and how you interact in a public forum. Having been a solid user of Twitter for about 8 years, I do go check your feed if you link it (and it’s not protected…).
@@ -139,7 +139,7 @@ If our job is not about diplomas, it is about experience. That’s sometimes dif
 
 If you have been working for a long time and happen to have a lot of experience, stay focused. List the last few positions you held, do not go all the way back to that internship you did in college. Your engineering profile from 2010 is likely to be so different and outdated that it is not relevant to that position you are applying for.
 
-For each held position, state the name of the company, the role you occupied and its time frame. I would advise against explaining what the company does as this information should be easily available on the company’s website. I am also not a fan of mentioning the tech stack, unless very relevant. I would expect a front-end developer to master the main languages of the web; the details of the tech stack itself are not very relevant in my opinion.
+For each held position, state the name of the company, the role you occupied and its time frame. I would advise against explaining what the company does as this information should be easily available on the company’s website. I am also not a fan of mentioning the tech stack, unless very relevant. I would expect a frontend developer to master the main languages of the web; the details of the tech stack itself are not very relevant in my opinion.
 
 Then, list a few of your responsibilities and accomplishments. There again, stay focused. Do not list that one time you had to write an Excel formula, it doesn’t matter. Write about what was the core of your job, and things you are proud of. They are the things you will bring with you in your next job, and they are the one that matter.
 

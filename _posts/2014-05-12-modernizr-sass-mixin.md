@@ -286,4 +286,4 @@ That’s it, you can play with the code on [SassMeister](https://www.sassmeister
 
 <p class="sassmeister" data-gist-id="10578910" data-height="480"><a href="https://www.sassmeister.com/gist/10578910">Play with this gist on SassMeister.</a></p><script src="https://static.sassmeister.com/js/embed.js" async></script>
 
-> Daniel Guillan is the co-founder and chief design officer at Vintisis. Not only designer but also front-end developer, Daniel likes using Sass to make his life easier. You should catch him on [Twitter](https://twitter.com/danielguillan).
+> Daniel Guillan is the co-founder and chief design officer at Vintisis. Not only designer but also frontend developer, Daniel likes using Sass to make his life easier. You should catch him on [Twitter](https://twitter.com/danielguillan).

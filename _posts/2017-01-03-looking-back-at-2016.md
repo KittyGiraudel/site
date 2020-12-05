@@ -16,7 +16,7 @@ But let’s try to focus on the bright side, shall we? Last year, I did [a littl
 
 📘 **April 4th**. I released Jump Start Sass, my second book (in English this time). I had the luck to co-author it with [Miriam Suzanne](https://twitter.com/mirisuzanne) and am super happy with the result. I believe it’s a short yet insightful piece to learn how to use Sass efficiently.
 
-🏆 **May 13th**. Google made me [a Google Expert in front-end development](https://developers.google.com/experts/people/hugo-giraudel) after a few weeks of going through the process. It’s quite an honor being amongst such brilliant minds!
+🏆 **May 13th**. Google made me [a Google Expert in frontend development](https://developers.google.com/experts/people/hugo-giraudel) after a few weeks of going through the process. It’s quite an honor being amongst such brilliant minds!
 
 🎤 **May 20th**. I gave a talk named [“Local styling with CSS Modules”](https://www.youtube.com/watch?v=LIUdaegJi20) in Thessaloniki (Greece) at DevIt conference. What an amazing conference it was my friends, can’t wait to get back there next year!
 

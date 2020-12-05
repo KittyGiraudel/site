@@ -141,14 +141,14 @@ _Note: in order to keep a relevant and clean commit history, it would be wise to
 
 Labels can be very helpful to add extra pieces of information to a pull-request on GitHub. They come in particularly handy as they show up in the list view, making it visible and obvious for everybody scanning through the open pull-requests.
 
-There is no limit regarding the amount of labels a project can have. They also are associated with colors, building a little yet powerful nomenclaturing system. Labels can be something such as _Design_, _Front-end_, _Back-end_, or even _Waiting for info_, _Waiting for review_ or _To be started_. You name it.
+There is no limit regarding the amount of labels a project can have. They also are associated with colors, building a little yet powerful nomenclaturing system. Labels can be something such as _Design_, _Frontend_, _Backend_, or even _Waiting for info_, _Waiting for review_ or _To be started_. You name it.
 
 <figure class="figure">
   <img src="/assets/images/github-as-a-workflow/07.png" alt="Labels are used to create a nomenclature" />
   <figcaption>Labels are used to create a nomenclature</figcaption>
 </figure>
 
-On a project involving design, front-end, back-end and devops teams, I would recommend having these team names as labels so each team is aware of the stories they have to be working on.
+On a project involving design, frontend, backend and devops teams, I would recommend having these team names as labels so each team is aware of the stories they have to be working on.
 
 <figure class="figure">
   <img src="/assets/images/github-as-a-workflow/08.png" alt="Labels are applied to stories to be able to filter them as well as givin more information from the PR view directly" />
@@ -157,7 +157,7 @@ On a project involving design, front-end, back-end and devops teams, I would rec
 
 ## Tip: using assignees
 
-More often than not, a story is mostly for one person. Or when several actors have to get involved in a story, it usually happens one after the other (the designer does the mockup, then the front-end developer does the component, then the back-end developer integrates it in the process, etc.). Because of this, it might be interesting to _assign_ the pull-request to the relevant actor on GitHub, and change this assignment when needed.
+More often than not, a story is mostly for one person. Or when several actors have to get involved in a story, it usually happens one after the other (the designer does the mockup, then the frontend developer does the component, then the backend developer integrates it in the process, etc.). Because of this, it might be interesting to _assign_ the pull-request to the relevant actor on GitHub, and change this assignment when needed.
 
 <figure class="figure">
   <img src="/assets/images/github-as-a-workflow/09.png" alt="Assignees are a good way of knowing who works on what from the PR view" />

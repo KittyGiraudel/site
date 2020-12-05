@@ -6,7 +6,7 @@ keywords:
   - gradient
 ---
 
-> The following is a guest post by [Jesús Ricarte](https://twitter.com/supersimplenet), a front-end developer and volunteer translator for A List Apart in Spanish. I’m very glad to have him writing here today about line heights and using math in CSS!
+> The following is a guest post by [Jesús Ricarte](https://twitter.com/supersimplenet), a frontend developer and volunteer translator for A List Apart in Spanish. I’m very glad to have him writing here today about line heights and using math in CSS!
 
 Although we can apply any CSS Unit to line-height, a [unitless](https://css-tricks.com/almanac/properties/l/line-height/#article-header-id-0) 1.5 value is the most recommended way to handle it. To begin with, an explanatory image on how line-height is applied by the browser:
 

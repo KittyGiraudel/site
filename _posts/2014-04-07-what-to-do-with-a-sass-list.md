@@ -5,7 +5,7 @@ keywords:
   - lists
 ---
 
-A few weeks ago, [Louis Lazaris](https://twitter.com/ImpressiveWebs) has been invited at [Shop Talk Show](https://shoptalkshow.com/episodes/103-louis-lazaris/), the front-end podcast by [Chris Coyier](https://twitter.com/chriscoyier) and [Dave Rupert](https://twitter.com/davatron5000). I joined in the middle of the show and it was kind of cool hearing Louis talking about various stuff including Sass. By the way, if one of you people come over here, thanks for mentioning me. ;)
+A few weeks ago, [Louis Lazaris](https://twitter.com/ImpressiveWebs) has been invited at [Shop Talk Show](https://shoptalkshow.com/episodes/103-louis-lazaris/), the frontend podcast by [Chris Coyier](https://twitter.com/chriscoyier) and [Dave Rupert](https://twitter.com/davatron5000). I joined in the middle of the show and it was kind of cool hearing Louis talking about various stuff including Sass. By the way, if one of you people come over here, thanks for mentioning me. ;)
 
 Anyway, at some point someone asked a very interesting question about Sass:
 
@@ -67,7 +67,7 @@ $zips: 07, 26, 38, 69, 'unknown';
 
 Thanks to the `$zips` list and the `@each` loop, we can make the whole process of assigning a specific background image depending on a class very simple. Also it gets damn simple to add/remove a zip-code: all we have to do is updating the list.
 
-Okay. I believe this is a decent use case for a list. Now what about lists functions like `append` or `length`? Finding a good example is getting tricky, but I suppose we could take the one I recently talked about in [this article about star rating widget in Sass](/2014/02/24/star-rating-system-with-sass/) where I build a selector out of a Sass list.
+Okay. I believe this is a decent use case for a list. Now what about lists functions like `append` or `length`? Finding a good example is getting tricky, but I suppose we could take the one I recently talked about in [this article about star rating widget in Sass](/2014/02/24/star-rating-widget-with-sass/) where I build a selector out of a Sass list.
 
 ```scss
 @for $i from 1 to 5 {

@@ -117,7 +117,7 @@ Before getting into the real topic, let’s make a round-up on Sass list functio
 
 ## Adding things to Sass lists
 
-This is where things get very interesting. And quite complicated as well. I think the best way to explain this kind of stuff is to use an example. I’ll use the same I talked about in [my Sass talk at KiwiParty](/2013/07/01/feedbacks-kiwiparty/) last month.
+This is where things get very interesting. And quite complicated as well. I think the best way to explain this kind of stuff is to use an example. I’ll use the same I talked about in [my Sass talk at KiwiParty](/2013/07/01/feedback-on-my-first-conf/) last month.
 
 Please consider an extended selector like:
 

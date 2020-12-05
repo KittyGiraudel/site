@@ -331,4 +331,4 @@ I rewrote the entire Sass code prior to writing this article but I still feel th
 
 I barely make use of techniques like these in real-life projects but I very often use the functions I needed to implement that effect. Anyway, I hope you enjoyed this article.
 
-> [Gregor Adams](https://twitter.com/gregoradams) is a front-end developer from Hamburg, Germany. He is passionate about CSS and Sass, thus happens to be the author of [amazing demos on CodePen](https://codepen.io/pixelass) featuring his great CSS skills.
+> [Gregor Adams](https://twitter.com/gregoradams) is a frontend developer from Hamburg, Germany. He is passionate about CSS and Sass, thus happens to be the author of [amazing demos on CodePen](https://codepen.io/pixelass) featuring his great CSS skills.

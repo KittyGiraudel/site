@@ -9,7 +9,7 @@ keywords:
 
 > The following is a guest post by David Khourshid about how he uses Sass and the [7-1 pattern](https://sass-guidelin.es/#architecture) to style React components. React being all over the place these days, I am very glad to have him talking about his experience here.
 
-Chances are, as a front-end developer, you’ve heard of Facebook’s library for building user interfaces, [React](https://facebook.github.io/react/). Of course, an important part of building UI is styling it, as well. React strongly enforces the idea that a user interface is composed of many ["reusable components with well-defined interfaces"](https://facebook.github.io/react/docs/reusable-components.html), and many CSS methodologies and architectures embrace this as well, including:
+Chances are, as a frontend developer, you’ve heard of Facebook’s library for building user interfaces, [React](https://facebook.github.io/react/). Of course, an important part of building UI is styling it, as well. React strongly enforces the idea that a user interface is composed of many ["reusable components with well-defined interfaces"](https://facebook.github.io/react/docs/reusable-components.html), and many CSS methodologies and architectures embrace this as well, including:
 
 - [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)
 - [SMACSS](https://smacss.com/)
@@ -207,7 +207,7 @@ By doing this, the only way our selectors can possibly leak (i.e. cause collisio
 
 The organization of the component styles in the 7-1 pattern can be considered _parallel_ to that of the JavaScript (React) components, in that for every React component, there exists a Sass component partial file that styles the component. All of these component styles are contained in one `main.css` file. There are a few good reasons for this separation:
 
-- Component styles should be front-end framework-agnostic.
+- Component styles should be frontend framework-agnostic.
 - Component styles aren’t necessarily hierarchical (e.g. a button inside a modal may look identical to a standalone button)
 - Component styles are guaranteed to only be defined once.
 - No overhead - JavaScript is never required to render static CSS.
@@ -293,4 +293,4 @@ Check out the [example simple React datepicker](https://github.com/davidkpiano/r
 
 <p data-height="280" data-theme-id="0" data-slug-hash="1e170149edee4b13737894b435b21724" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/1e170149edee4b13737894b435b21724/'>1e170149edee4b13737894b435b21724</a> by Hugo “Kitty” Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
-> [David Khourshid](https://twitter.com/davidkpiano) is a front-end web developer in Orlando, Florida. He is passionate about JavaScript, Sass, and cutting-edge front-end technologies. He is also a pianist and enjoys mathematics, and is constantly finding new ways to apply both math and music theory to web development.
+> [David Khourshid](https://twitter.com/davidkpiano) is a frontend web developer in Orlando, Florida. He is passionate about JavaScript, Sass, and cutting-edge frontend technologies. He is also a pianist and enjoys mathematics, and is constantly finding new ways to apply both math and music theory to web development.

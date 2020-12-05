@@ -1,11 +1,11 @@
 ---
 guest: Loïc Giraudel
-title: Git tips and tricks — Part 1
+title: Git tips and tricks – Part 1
 keywords:
   - git
 ---
 
-> **Edit (2014/03/17):** [Git tips and tricks — Part 2](/2014/03/17/git-tips-and-tricks-part-2/) is out! Go check it.
+> **Edit (2014/03/17):** [Git tips and tricks – Part 2](/2014/03/17/git-tips-and-tricks-part-2/) is out! Go check it.
 
 <!-- -->
 
@@ -232,4 +232,4 @@ It’s now easier to catch up with the changes: I’ve replaced the test wrappin
 
 I hope those little tricks will help. In the next part, I’ll continue with other small smart tricks before tackling some advanced Fit useful features.
 
-> Loïc Giraudel works as a front-end developer at Future PLC (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).
+> Loïc Giraudel works as a frontend developer at Future PLC (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

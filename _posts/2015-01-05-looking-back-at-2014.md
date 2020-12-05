@@ -29,7 +29,7 @@ In May, I have given [my very first talk out of France](), in Bruxelles, Belgium
 
 ## I gave my first talk in English
 
-Later this year, in November, [I gave my first talk in English](/2014/11/17/feedback-on-dotcss/), in Paris for dotCSS. A 15-20 minutes long talk in front of 400 attendees at the Théâtre des Variétés. Amazing venue, great people, it was an incredible experience.
+Later this year, in November, [I gave my first talk in English](/2014/11/17/feedback-on-dotcss-2014/), in Paris for dotCSS. A 15-20 minutes long talk in front of 400 attendees at the Théâtre des Variétés. Amazing venue, great people, it was an incredible experience.
 
 <script async class="speakerdeck-embed" data-id="117e5ae04f2501329d875e31c290001e" data-ratio="1.36898395721925" src="//speakerdeck.com/assets/embed.js"></script>
 

@@ -38,7 +38,7 @@ I have been thinking about this quite a lot, and I found many benefits to conduc
 
 **Perfect to judge technical skills.** There is no need to see someone code to judge their ability to write code. If you can trust someone’s technical knowledge from a Twitter timeline, you can definitely do that by watching them comment code. By skimming through a pull-request, a candidate can definitely show they know their thing (or not). Did not spot the obvious mistakes from the PR? Well, that’s worrying. Actually found a bug that silently sneaked in? Pretty impressive.
 
-**Excellent to get the full picture.** Provided the pull-request is not too narrowed down, reviewing code can tell a lot about the candidate’s attention to detail and general knowledge about the stack the company works with. In the case of a front-end developer for instance, a complete feature PR could involve HTML, CSS, JavaScript, accessibility, performance, design, documentation, security, etc. A good way to see if the candidate is curious about other topics or very much focused on a specific technology.
+**Excellent to get the full picture.** Provided the pull-request is not too narrowed down, reviewing code can tell a lot about the candidate’s attention to detail and general knowledge about the stack the company works with. In the case of a frontend developer for instance, a complete feature PR could involve HTML, CSS, JavaScript, accessibility, performance, design, documentation, security, etc. A good way to see if the candidate is curious about other topics or very much focused on a specific technology.
 
 **Focused on empathy.** Code review is not exclusively about code. It is also about empathy. It’s about phrasing comments in a positive, non-blaming way. It’s about focusing on the things that matter, and not necessarily nitpicking on details. It’s about sharing positive comments as well, and showing appreciation. For instance, I used to perform code reviews the way a code linter throws errors. I learnt to be more tactful.
 
@@ -48,9 +48,9 @@ I have been thinking about this quite a lot, and I found many benefits to conduc
 
 Now it’s always the same: the content still matters. You can’t ask any candidate to review any kind of code. I think the best would be to create a pull-request specifically for that.
 
-If hiring a senior JavaScript engineer to build an engine, you don’t want them to review CSS code, but you definitely want to test their knowledge about performance and their attention to documentation and testing. Similarly, if hiring a front-end designer, you want to make sure they know a good deal of valid, accessible HTML/CSS and have an eye for design.
+If hiring a senior JavaScript engineer to build an engine, you don’t want them to review CSS code, but you definitely want to test their knowledge about performance and their attention to documentation and testing. Similarly, if hiring a frontend designer, you want to make sure they know a good deal of valid, accessible HTML/CSS and have an eye for design.
 
-Here are a few topics you could involve when hiring a front-end position:
+Here are a few topics you could involve when hiring a frontend position:
 
 * HTML
 * CSS

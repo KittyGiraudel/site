@@ -12,7 +12,7 @@ _Why would we care?_, you think. Wait, I am not done yet. They have been taught 
 
 > They are taught to use tables for layout.
 
-Then I thought, okay, maybe the teacher is more like a design person than an actual developer. I was wrong all again. The teacher forbade them to use bright colors because it would look _unprofessionnal_. Along the same lines, the teacher advised them to have a 800px wide centered container, good ol' fashion style. Please.
+Then I thought, okay, maybe the teacher is more like a design person than an actual developer. I was wrong all again. The teacher forbade them to use bright colors because it would look _unprofessional_. Along the same lines, the teacher advised them to have a 800px wide centered container, good ol' fashion style. Please.
 
 Have you ever taken over a project only to find the code looks like it has been vomitted by some weird Godzilla? Me too. When it happens, we use to think “god, the developer was a mess”. Not entirely wrong, I suppose. But if they have done things like this, it is probably because someone has told them to do it like this.
 
@@ -38,7 +38,7 @@ This would be much better than asking them to have 25 HTML files with the header
 
 ## Things have changed
 
-Front-end development, and more generally web development, witnessed a tremendous evolution since its early stages. Because of this, people whose job is to teach web development should be aware that we don’t build website the way we did 10 years ago. Or 5 years ago. Things have changed, and teaching should change as well.
+Frontend development, and more generally web development, witnessed a tremendous evolution since its early stages. Because of this, people whose job is to teach web development should be aware that we don’t build website the way we did 10 years ago. Or 5 years ago. Things have changed, and teaching should change as well.
 
 You don’t teach people to build websites using tables for layout or Dreamweaver as an editor. You give them a project to think about, and teach them the basics: box model, and valid markup. You don’t teach aspiring web developer Flash or Flex. You tell them about mobile-first design. Git. JavaScript. Grids. Postprocessors and preprocessors. Tooling.
 

@@ -10,7 +10,7 @@ Like everybody else, I have a lot going on in my life. There is working full-tim
 
 Over the months, I noticed that I started forgetting about stuff… Forgetting to reply to some emails. Forgetting to buy some stuff at the supermarket. Forgetting to do important things in the house. There is just so much going on that my brain prioritises and filters things, although not always in the correct order… Duh.
 
-Therefore I started looking for a solution to work around this problem. I am not much of a paper-and-pen kind of guy, so it was not really a solution for me to have post-it notes everywhere. After trying a few things, I finally realized that [Trello](https://trello.com) could actually do the trick!
+Therefore I started looking for a solution to work around this problem. I am not much of a paper-and-pen kind of person, so it was not really a solution for me to have post-it notes everywhere. After trying a few things, I finally realized that [Trello](https://trello.com) could actually do the trick!
 
 ## Setting up the board
 

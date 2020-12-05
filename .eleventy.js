@@ -13,6 +13,7 @@ module.exports = function (config) {
 
   // Force 11ty to watch CSS files
   config.addWatchTarget('assets/css/**/*.css')
+  config.addWatchTarget('assets/js/**/*.js')
 
   // Enable compilation plugins
   config.addPlugin(syntaxHighlight)
