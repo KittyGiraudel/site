@@ -139,7 +139,7 @@ In traditional websites using hyperlinks the right way, the page is fully reload
 
 Single-page applications are not free from this consideration either. Following a link tends to reload the content area and therefore loses the current focus, which sends it to the top of the document, causing the same issue. So either way, there is work to do.
 
-{% assign skip_link = "As [Hidde rightfully pointed out on Twitter](https://twitter.com/hdv/status/1334435081952309253?s=20), this is a good candidate for the WebWeWant.fyi project. I submitted a [suggestion to have skip links natively implemented](https://github.com/WebWeWant/webwewant.fyi/issues/233) by browsers instead of relying on developers’ implementation." | markdown %}
+{% assign skip_link = "As [Hidde rightfully pointed out on Twitter](https://twitter.com/hdv/status/1334435081952309253?s=20), this is a good candidate for the WebWeWant.fyi project. I submitted a [suggestion to have skip links natively implemented](https://webwewant.fyi/wants/5fc8bb41d84cfbab3fb47320/) by browsers instead of relying on developers’ implementation." | markdown %}
 
 To work around the problem, a common design pattern is to {% footnoteref "skip_link" skip_link %}implement a skip link{% endfootnoteref %}, which is an anchor link sending to the main content area. So how shall our skip link work?
 
