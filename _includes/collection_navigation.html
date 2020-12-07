@@ -1,0 +1,27 @@
+{% assign collection = collection %}
+{% assign name = name | default: 'entry' %}
+
+{% if collection %}
+{% assign previous_entry = collection | getPreviousCollectionItem: page %}
+{% assign next_entry = collection | getNextCollectionItem: page %}
+
+<div class="CollectionNavigation {% if previous_entry %}{% elsif next_entry %}CollectionNavigation--end{% endif %} ">
+  {% if previous_entry.url %}
+  <p class="CollectionNavigation__item CollectionNavigation__item--previous
+    ">
+    Read previous {{ name }}:
+    <a class="CollectionNavigation__link " href="{{ previous_entry.url }}" {% if previous_entry.data.lang %}hreflang="{{ previous_entry.data.lang | downcase }}" lang="{{ previous_entry.data.lang | downcase }}"{% endif %}>
+      {{ previous_entry.data.title }}
+    </a>
+  </p>
+  {% endif %}
+  {% if next_entry.url %}
+  <p class="CollectionNavigation__item CollectionNavigation__item--next">
+    Read next {{ name }}:
+    <a class="CollectionNavigation__link" href="{{ next_entry.url }}" {% if next_entry.data.lang %}hreflang="{{ next_entry.data.lang | downcase }}" lang="{{ next_entry.data.lang | downcase }}"{% endif %}>
+      {{ next_entry.data.title }}
+    </a>
+  </p>
+  {% endif %}
+</div>
+{% endif %}

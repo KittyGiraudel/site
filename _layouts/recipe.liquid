@@ -3,11 +3,12 @@ layout: default
 ---
 
 {% include "styles.html", paths: "
+  components/collection-navigation,
   components/recipe,
   components/post-date
 " %}
 
-<article itemscope itemtype="https://schema.org/Article" class="Post">
+<article class="Post">
   <p class="PostDate">For {{ serves }} · About {{ preparation_time }}</p>
 
   {{ content }}
@@ -36,4 +37,10 @@ layout: default
   {% endif %}
 </article>
 
-{% include "post_navigation.html", name: "recipe" %}
+<hr />
+
+{% include "collection_navigation.html",
+  page: page,
+  collection: collections.recipes,
+  name: "recipe"
+%}

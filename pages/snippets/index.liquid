@@ -1,0 +1,41 @@
+---
+layout: default
+title: Code snippets
+excerpt: 'Ready-to-use code snippets for common problems that can be copied and pasted.'
+keywords:
+- snippets
+- code
+- open-source
+- github
+permalink: /snippets/
+---
+
+{% assign snippets = collections.snippets | group_by: 'data.language' %}
+{% assign languages = snippets | sort_by: "name" %}
+
+<ul class="List">
+  {% for language in languages %}
+    {% for snippet in language.items %}
+      {% assign related_post = '' %}
+
+      {% if snippet.data.related %}
+        {% for post in collections.posts %}
+          {% if post.url == snippet.data.related %}
+            {% assign related_post = post %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      <li class="List__item">
+        <span class="List__secondary-content">
+          {{ snippet.data.language }}{% if related_post.date %} · {{ related_post.date | time }}{% endif %}
+        </span>
+
+        <a class="List__primary-content" href="{{ snippet.url }}">
+          {{ snippet.data.title }}
+        </a>
+      </li>
+    {% endfor %}
+  {% endfor %}
+</ul>
+

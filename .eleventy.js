@@ -142,11 +142,16 @@ function dateToString(value) {
 }
 
 function groupBy(array, key) {
+  const get = entry => key.split('.').reduce((acc, key) => acc[key], entry)
+
   const map = array.reduce((acc, entry) => {
-    if (typeof acc[entry[key]] === 'undefined') {
-      acc[entry[key]] = []
+    const value = get(entry)
+
+    if (typeof acc[value] === 'undefined') {
+      acc[value] = []
     }
-    acc[entry[key]].push(entry)
+
+    acc[value].push(entry)
     return acc
   }, {})
 

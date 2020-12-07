@@ -1,12 +1,12 @@
-<div class="Pagination PostNavigation {% if previousPageHref %}{% elsif nextPageHref %}PostNavigation--end{% endif %}">
+<div class="Pagination CollectionNavigation {% if previousPageHref %}{% elsif nextPageHref %}CollectionNavigation--end{% endif %}">
   {% if previousPageHref %}
-  <p class="PostNavigation__item">
-    <a class="PostNavigation__link" href="{{ previousPageHref }}">← Previous posts</a>
+  <p class="CollectionNavigation__item">
+    <a class="CollectionNavigation__link" href="{{ previousPageHref }}">← Previous posts</a>
   </p>
   {% endif %}
   {% if nextPageHref %}
-  <p class="PostNavigation__item">
-    <a class="PostNavigation__link" href="{{ nextPageHref }}">Next posts →</a>
+  <p class="CollectionNavigation__item">
+    <a class="CollectionNavigation__link" href="{{ nextPageHref }}">Next posts →</a>
   </p>
   {% endif %}
 </div>

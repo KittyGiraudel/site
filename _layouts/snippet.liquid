@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+{% include "styles.html", paths: "
+  components/code,
+  components/collection-navigation,
+  components/post-date
+" %}
+
+<article class="Post">
+  {% if related %}
+    {% assign related_post = '' %}
+    {% for post in collections.posts %}
+      {% if post.url == related %}
+        {% assign related_post = post %}
+      {% endif %}
+    {% endfor %}
+
+  <p class="PostDate">
+    {{ related_post.date | time }} · From <a href="{{ related }}">{{ related_post.data.title }}</a>
+  </p>
+  {% endif %}
+
+  {{ content }}
+</article>
+
+<hr />
+
+{% include "collection_navigation.html",
+  page: page,
+  collection: collections.snippets,
+  name: "snippet"
+%}

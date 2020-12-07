@@ -3,10 +3,10 @@ layout: default
 ---
 
 {% include "styles.html", paths: "
+  components/collection-navigation,
   components/image,
   components/footnotes,
   components/post-date,
-  components/post-navigation,
   components/code,
   components/table
 " %}
@@ -37,5 +37,9 @@ layout: default
 
 <hr />
 
-{% include "post_navigation.html", page: page %}
+{% include "collection_navigation.html",
+  page: page,
+  collection: collections.posts,
+  name: "post"
+%}
 {% include "script.html", paths: "post" %}

@@ -1,16 +1,10 @@
 <nav class="Navigation" role="navigation">
   <ul class="Navigation__list DottedList">
-    <li class="Navigation__item"{% if page.url == "/blog/" %} aria-current="page"{% endif %}>
-      <a class="Navigation__link" href="/blog/">Blog</a>
+    {% for item in site.nav %}
+    {% assign check = page.url  | split:item.path %}
+    <li class="Navigation__item"{% if check[0] == '' %} aria-current="page"{% endif %}>
+      <a class="Navigation__link" href="{{ item.path }}">{{ item.label }}</a>
     </li>
-    <li class="Navigation__item"{% if page.url == "/projects/" %} aria-current="page"{% endif %}>
-      <a class="Navigation__link" href="/projects/">Projects</a>
-    </li>
-    <li class="Navigation__item"{% if page.url == "/talks/" %} aria-current="page"{% endif %}>
-      <a class="Navigation__link" href="/talks/">Talks</a>
-    </li>
-    <li class="Navigation__item"{% if page.url == "/about/" %} aria-current="page"{% endif %}>
-      <a class="Navigation__link" href="/about/">About</a>
-    </li>
+    {% endfor %}
   </ul>
 </nav>
