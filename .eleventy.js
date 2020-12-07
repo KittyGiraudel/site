@@ -40,6 +40,9 @@ module.exports = function (config) {
   // Add a Liquid filter to compute the reading time of given content
   config.addFilter('reading_time', readingTime)
 
+  // Add a Liquid filter to format amount of stars
+  config.addFilter('stars', stars)
+
   // Provide a tag to render info blocks
   config.addPairedShortcode('info', info)
 
@@ -95,6 +98,10 @@ function markdown(content, inline = true) {
 
 function numberOfWords(content) {
   return content.split(/\s+/g).length
+}
+
+function stars (amount) {
+  return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} <span role="img" aria-label="Star" title="Star">⭐️</span>`
 }
 
 function where(array, key, value) {

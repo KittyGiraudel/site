@@ -3,8 +3,7 @@
     "name": "Selectors Explained",
     "description": "A CSS selector to plain English converter.",
     "link": "https://github.com/HugoGiraudel/selectors-explained",
-    "category": "CSS",
-    "showcase": true
+    "category": "CSS"
   },
   {
     "name": "express-simple-locale",
@@ -65,7 +64,8 @@
     "description": "A script to make modal dialogs accessible to assistive technology users.",
     "link": "https://github.com/edenspiekermann/a11y-dialog",
     "category": "Accessibility",
-    "showcase": true
+    "showcase": true,
+    "stars": 1400
   },
   {
     "name": "Spritesh",
@@ -80,17 +80,20 @@
     "category": "Sass"
   },
   {
-    "name": "SJSJ",
+    "name": "Simplified JavaScript Jargon",
     "description": "A community-driven attempt at explaining JavaScript concepts and buzzwords.",
     "link": "https://jargon.js.org",
-    "category": "JavaScript"
+    "category": "JavaScript",
+    "showcase": true,
+    "stars": 2200
   },
   {
     "name": "Sass Guidelines",
     "description": "An opinionated styleguide for writing sane, maintainable and scalable Sass.",
     "link": "https://sass-guidelin.es",
     "category": "Sass",
-    "showcase": true
+    "showcase": true,
+    "stars": 700
   },
   {
     "name": "Sass Boilerplate",
