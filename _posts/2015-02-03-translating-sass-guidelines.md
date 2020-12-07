@@ -203,7 +203,7 @@ site.data.languages[page.language].translators %}<a
     translation by {{ translators }} of the original
     <a href="/">Sass Guidelines</a> from
     <a target="_blank" rel="noopener noreferrer" href=""
-      >Hugo Giraudel</a
+      >Hugo “Kitty” Giraudel</a
     >.
   </p>
   <p>

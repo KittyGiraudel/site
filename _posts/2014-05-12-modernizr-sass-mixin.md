@@ -272,7 +272,7 @@ Now our features selector isn’t placed before the actual selector because `@at
 }
 ```
 
-Within the previous loop we’ll also check if every `$feature` is a `string`. As Hugo Giraudel explains in their [introduction to error handling in Sass](https://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996) we shouldn’t let the Sass compiler fail and punch us in the face with an error. That’s why we should prevent things like `10px` or even nested lists like `(opacity csstransforms), hsla` to stop our stylesheet from successfully compiling.
+Within the previous loop we’ll also check if every `$feature` is a `string`. As Hugo “Kitty” Giraudel explains in their [introduction to error handling in Sass](https://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996) we shouldn’t let the Sass compiler fail and punch us in the face with an error. That’s why we should prevent things like `10px` or even nested lists like `(opacity csstransforms), hsla` to stop our stylesheet from successfully compiling.
 
 If a wrong parameter is passed, the compilation won’t fail, but nothing will be generated and you’ll be warned of the problem.
 
