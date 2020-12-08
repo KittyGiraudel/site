@@ -10,26 +10,32 @@ keywords:
 permalink: /projects/
 ---
 
-{% markdown %}
-I used to be an active member of the open-source community. I contributed to
-many projects, and started a few of my own. Below you can find a list of all
-projects I’ve taken part in over the years. Fair warning: many of them are no
-longer maintained.
-{% endmarkdown %}
+{% include "styles.html", paths: "
+  components/showcase,
+  components/tile
+" %}
+
+{% assign main_projects = projects | where: "showcase", true | slice: 0, 3 %}
+{% include "showcase.html",
+  type: "project",
+  title: "Showcased projects",
+  hidden_title: true,
+  copy: "I used to be an active member of the open-source community. I contributed to many projects, and started a few of my own. Below you can find a list of all projects I’ve taken part in over the years. Fair warning: many of them are no longer maintained.",
+  items: main_projects
+%}
 
 {% assign groups = projects | group_by: "category" %}
 {% assign sorted_groups = groups | sort_by: "name" %}
 
 {% for category in sorted_groups %}
-<h2 class="visually-hidden">{{ category.name }}</h2>
+<h2>{{ category.name }}</h2>
 <ul class="List">
   {% assign projects = category.items | sort_by: "name" %}
   {% for project in projects %}
   <li class="List__item">
-    <span class="List__secondary-content">{{ category.name }}</span>
     <a href="{{ project.link }}" class="List__primary-content" target="_blank"
       rel="noopener noreferrer">{{ project.name }}</a>
-    <p>{{ project.description }}</p>
+    <p class="List__secondary-content">{{ project.description }}</p>
   </li>
   {% endfor %}
 </ul>
