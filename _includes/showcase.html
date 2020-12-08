@@ -2,7 +2,7 @@
 {% assign more_link_url = link_url %}
 
 <section class="Showcase">
-  <h2 class="Showcase__title">{{ title }}</h2>
+  {% if title %}<h2 class="Showcase__title {% if hidden_title %}visually-hidden{% endif %}">{{ title }}</h2>{% endif %}
   <p class="Showcase__copy">{{ copy | markdown }}</p>
   <div class="Showcase__container">
     {% for item in items %}
