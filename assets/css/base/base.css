@@ -66,20 +66,39 @@ p {
 }
 
 /**
- * 1. Color for all links outside of the main container, since they are styled
- *    in layout/main.css.
+ * The `.Navigation__link` and `.Title__link` have very different styles and
+ * should not be applied a gradient background.
  */
-a {
-  color: #2984c2; /* 1 */
-  border-bottom: 1px dotted;
+a:not(.Navigation__link):not(.Title__link) {
+  outline: 0;
+  color: inherit;
+  border-bottom: 0;
   text-decoration: none;
+  background-image: linear-gradient(to right, #f2cfe3, #c4e0f3);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: 250ms ease-in;
 }
 
-a:hover,
-a:active {
-  color: #206798;
-  border-bottom-style: solid;
-  outline-width: 0;
+/**
+ * The `.Navigation__link` do not use backgrounds, so it is unnecessary to
+ * include this selector here.
+ */
+a:not(.Title__link):hover,
+a:not(.Title__link):active,
+a:not(.Title__link):focus {
+  background-size: 100% 88%;
+}
+
+/**
+ * The `data-visited` attribute is only added to links within `.Main`, so it is
+ * unnecessary to check for `.Navigation__link` and `.Title__link` here.
+ */
+a[data-visited]:not([href^='#'])::after {
+  content: ' ✓';
+  opacity: 0.5;
+  font-size: 80%;
 }
 
 a:visited {
