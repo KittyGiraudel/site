@@ -1,27 +1,24 @@
 <footer class="Footer" role="contentinfo">
   <div class="container">
-    <p class="Footer__copy">
-      &copy;&nbsp;2012-{{ 'now' | date: '%Y' }} {{ site.author }}
-    </p>
-    <!--
-    -->
-    <ul class="Footer__list avigation__list DottedList">
-      <li class="Navigation__item">
-        <a class="Navigation__link" href="/rss/">RSS</a>
-      </li>
-      <li class="Navigation__item">
-        <a class="Navigation__link" href="https://github.com/HugoGiraudel" target="_blank"
-          rel="noopener noreferrer">GitHub</a>
-      </li>
+    <div class="Footer__inner">
+      <div class="Footer__left">
+        <p>I’m Kitty, a non-binary frontend developer focused on accessibility and workplace safety, currently leading
+          the frontend team at <a href="https://gorillas.io">Gorillas</a> in
+          Berlin.
+        </p>
+        <p class="Footer__colophon">&copy;&nbsp;2012–2020 Hugo “Kitty” Giraudel. This website is made with 11ty, hosted
+          on Netlify and open-sourced on GitHub.</p>
+      </div>
 
-      <li class="Navigation__item">
-        <a class="Navigation__link" href="https://twitter.com/HugoGiraudel" target="_blank"
-          rel="noopener noreferrer">Twitter</a>
-      </li>
-
-      <li class="Navigation__item"{% if page.url == "/resume/" %} aria-current="page"{% endif %}>
-        <a class="Navigation__link" href="/resume/">Resume</a>
-      </li>
-    </ul>
+      <div class="Footer__right">
+        <ul class="Footer__list">
+          <li><a href="/rss">RSS</a></li>
+          <li><a href="https://twitter.com/HugoGiraudel">Twitter</a></li>
+          <li><a href="https://github.com/HugoGiraudel">GitHub</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="https://www.linkedin.com/in/hugo-giraudel/">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
