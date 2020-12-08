@@ -7,6 +7,8 @@ language: Git
 related: /2018/02/17/how-i-use-git/
 ---
 
+Here is my personal git configuration (living in `~/.gitconfig`) with comments to explain what every option does.
+
 ```bash
 [color]
   # Enable colors in color-supporting terminals

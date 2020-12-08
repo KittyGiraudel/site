@@ -7,6 +7,8 @@ language: Bash
 related: /2020/11/19/managing-npm-dependencies/
 ---
 
+This `groom_dependencies` Bash function performs loose grep checks to figure out whether `package.json` dependencies are imported in JavaScript files (either with `require` or `import`). It can lead to false positives though, tread carefully.
+
 Add this function to `.zshrc` or `.bashrc`:
 
 ```bash
@@ -22,4 +24,5 @@ Then use it like this:
 
 ```bash
 groom_dependencies devDependencies
+groom_dependencies dependencies
 ```

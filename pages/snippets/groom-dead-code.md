@@ -7,6 +7,8 @@ language: Bash
 related: /2020/11/18/looking-for-dead-code/
 ---
 
+This `groom_dead_code` Bash function performs loose grep checks to figure out whether files & folders in a given directory are imported in JavaScript files (either with `require` or `import`). It can lead to false positives though, tread carefully.
+
 Add this function to `.zshrc` or `.bashrc`:
 
 ```bash

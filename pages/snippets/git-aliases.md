@@ -7,6 +7,8 @@ language: Git
 related: /2018/02/17/how-i-use-git/
 ---
 
+Here are my git aliases, grouped by categories.
+
 ```bash
 [alias]
   # Discard duplicate leading “git” (e.g. “git git status”)

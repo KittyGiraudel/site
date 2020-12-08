@@ -10,6 +10,12 @@ keywords:
 permalink: /snippets/
 ---
 
+{% markdown %}
+These are small code snippets usually extracted from more in-depth articles so
+they can be easily retrieved and referenced. It should be possible to copy and
+paste them with minor effort.
+{% endmarkdown %}
+
 {% assign snippets = collections.snippets | group_by: 'data.language' %}
 {% assign languages = snippets | sort_by: "name" %}
 

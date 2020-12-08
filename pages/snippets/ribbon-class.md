@@ -2,10 +2,20 @@
 layout: snippet
 tags: snippets
 title: .ribbon {}
-permalink: /snippets/ribbon/
+permalink: /snippets/ribbon-class/
 language: CSS
 related: /2020/01/22/corner-ribbon-with-trigonometry/
 ---
+
+Placing a small piece of text as a corner ribbon of a box is a little tricky as it involves some trigonometry. The following class should work, provided it is inserted in a parent with `position: relative`.
+
+```html
+<div class="parent">
+  <span class="ribbon">Free</span>
+</div>
+```
+
+The following styles only included the required declarations for the ribbon positioning. Any aesthetic concern is left to the author.
 
 ```css
 /**

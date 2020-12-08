@@ -2,10 +2,12 @@
 layout: snippet
 tags: snippets
 title: getMacOsVersion()
-permalink: /snippets/getmacosversion/
+permalink: /snippets/get-mac-os-version/
 language: Node.js
 related: /2020/09/09/writing-a-debug-script/
 ---
+
+If you ever need to programmatically display the current macOS version from a Node.js script but do not want to rely on external dependencies such as [macos-release](https://github.com/sindresorhus/macos-release) or [os-name](https://github.com/sindresorhus/os-name), you can use the following technique:
 
 ```js
 const { readFileSync } = require('fs')
