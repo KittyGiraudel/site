@@ -30,12 +30,6 @@
     "category": "JavaScript"
   },
   {
-    "name": "Hangman.js",
-    "description": "A Redux-powered multilingual CLI hangman game.",
-    "link": "https://github.com/HugoGiraudel/hangman.js",
-    "category": "JavaScript"
-  },
-  {
     "name": "Inline-Styler",
     "description": "A teeny tiny JavaScript library to easily manipulate the style attribute of an element.",
     "link": "https://github.com/HugoGiraudel/inline-styler",
