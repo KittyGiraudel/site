@@ -100,8 +100,13 @@ function numberOfWords(content) {
   return content.split(/\s+/g).length
 }
 
-function stars (amount) {
-  return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} <span role="img" aria-label="Star" title="Star">⭐️</span>`
+function stars(amount) {
+  return `${amount
+    .toString()
+    .replace(
+      /\B(?=(\d{3})+(?!\d))/g,
+      ','
+    )} <span role="img" aria-label="Star" title="Star">⭐️</span>`
 }
 
 function where(array, key, value) {
@@ -114,7 +119,13 @@ function where(array, key, value) {
 function sortBy(array, key) {
   return array
     .slice(0)
-    .sort((a, b) => (a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0))
+    .sort((a, b) =>
+      a[key].toLowerCase() < b[key].toLowerCase()
+        ? -1
+        : a[key].toLowerCase() > b[key].toLowerCase()
+        ? 1
+        : 0
+    )
 }
 
 function dateToXmlSchema(value) {
