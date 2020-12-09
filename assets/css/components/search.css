@@ -1,6 +1,6 @@
 .Search {
   clear: both;
-  margin-top: 3em;
+  margin-top: calc(var(--vb) * 2);
 }
 
 .Search__input {

@@ -17,15 +17,13 @@ layout: default
       {% endif %}
     {% endfor %}
 
-  <p class="PostDate">
-    {{ related_post.date | time }} · From <a href="{{ related }}">{{ related_post.data.title }}</a>
-  </p>
+    <p class="PostDate">
+      {{ related_post.date | time }} · From <a href="{{ related }}">{{ related_post.data.title }}</a>
+    </p>
   {% endif %}
 
   {{ content }}
 </article>
-
-<hr />
 
 {% include "collection_navigation.html",
   page: page,

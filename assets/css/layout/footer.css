@@ -1,3 +1,8 @@
+.Footer {
+  position: relative;
+  padding: var(--vb) 0;
+}
+
 .Footer::after {
   content: '';
   position: absolute;
@@ -8,11 +13,6 @@
   opacity: 0.08;
   z-index: -1;
   background-image: linear-gradient(to right, #2984c2, #dd7eb4);
-}
-
-.Footer {
-  position: relative;
-  padding: 1em 0;
 }
 
 .Footer__inner {
@@ -41,9 +41,13 @@
   list-style: none;
 }
 
+.Footer__list > li {
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .Footer {
-    padding: 0;
+    padding: calc(var(--vb) / 2) 0;
   }
 
   .Footer__inner {

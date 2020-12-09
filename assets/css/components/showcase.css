@@ -1,5 +1,5 @@
 .Showcase {
-  margin: 1.5em 0;
+  margin: var(--vb) 0;
 }
 
 .Showcase::after {
@@ -9,7 +9,7 @@
 }
 
 .Showcase__title {
-  margin-bottom: 0.5em;
+  margin-bottom: calc(var(--vb) / 3);
 }
 
 .Showcase__copy {

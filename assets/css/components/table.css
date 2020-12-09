@@ -1,6 +1,6 @@
 table {
   width: 100%;
-  margin: 1.5em 0;
+  margin: var(--vb) 0;
   border-collapse: collapse;
 }
 

@@ -4,7 +4,7 @@
 }
 
 .List__item {
-  padding: 1em 0;
+  padding: calc(var(--vb) / 3 * 2) 0;
 }
 
 .List__item p {
@@ -30,12 +30,12 @@
 }
 
 .List__primary-content {
-  font-size: 1.5em;
+  font-size: 150%;
   line-height: 1.1;
 }
 
 .List__secondary-content {
-  font-size: 0.75em;
+  font-size: 75%;
   font-family: var(--code-font);
 }
 
