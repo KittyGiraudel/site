@@ -109,7 +109,7 @@ We could have figured this length without converting to binary if we had a `log(
 
 Valérian summed it up quite nicely in a Tweet:
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>&amp;, | and ^ bitwise operators math formulas needs log(), but log() needs frexp() which needs bitwise operators. Fak! cc <a href="https://twitter.com/HugoGiraudel">@HugoGiraudel</a></p>— Valérian Galliat (@valeriangalliat) <a href="https://twitter.com/valeriangalliat/statuses/474127810798555136">June 4, 2014</a></blockquote>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>&amp;, | and ^ bitwise operators math formulas needs log(), but log() needs frexp() which needs bitwise operators. Fak! cc <a href="https://twitter.com/HugoGiraudel">@HugoGiraudel</a><br />— Valérian Galliat (@valeriangalliat) <a href="https://twitter.com/valeriangalliat/statuses/474127810798555136">June 4, 2014</a></p></blockquote>
 
 I won’t dig into Sass code because it doesn’t have much point. Let’s just have a look at the final implementation. We have implemented each operator as a Sass function called `bw-*` where `*` stands for the name of the operator (e.g. `and`). Except for `bw-not()` which is a rather particuliar operator, all functions accept 2 arguments: both decimal numbers.
 
