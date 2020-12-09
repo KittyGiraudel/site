@@ -56,11 +56,6 @@ We currently have about **850.000 unique visitor** and **9.5 million pageviews**
 
 The most successful article was [Original Hover Effects](https://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/) by [Alessio Atzeni](https://twitter.com/Bluxart).
 
-<figure class="figure">
-<a href="https://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/"><img src="https://cdn2.tympanus.net/codrops/wp-content/uploads/2011/11/OriginalHoverEffects.jpg?84cd58" alt=""></a>
-<figcaption>Original Hover Effects on Codrops</figcaption>
-</figure>
-
 #### Do you have any side project? What would you like to do if you had enough time?
 
 Yes, I have some side projects that I’m working on and I also work for some clients. If I had more time I would definitely spend it all on answering our reader’s questions and help them with their problems.
