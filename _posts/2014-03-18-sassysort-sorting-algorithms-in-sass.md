@@ -57,8 +57,6 @@ This will use the Bubble Sort implementation, because of the way the `sort()` fu
 }
 ```
 
-> Quicksort is… quicker.
-
 As you can see, the `sort()` function does no more than defering the return to a sub-function named after the algorithm you ask for (e.g.`%algorithm%-sort`). The default algorithm is `quick`, as specified in the function signature but you can use `bubble`, `insertion`, `shell`, `comb` and `selection` as well. However `quick` is simply… quicker.
 
 ## Dealing with weird characters

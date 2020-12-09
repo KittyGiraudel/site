@@ -24,8 +24,6 @@ Ultimately, because Grunt is a task builder we will be able to do a lot of thing
 
 I think this is the one of the biggest change we’ve made to the site so far: **merging both the home page and the test page**. See, from the very beginning we had a separate test page. First it was all static, then I managed to generate it dynamically from our database.
 
-> You can still disable the tests if you want.
-
 This was a huge step forward but did we really need a separate page just for testing? It looks like _no_. It involved quite a bit of work but I’m glad we’ve made it. What do you people think?
 
 Nothing changed in the way we test hacks though: if your browser recognize a line of code, it turns it into a lovely green. If you don’t like seeing green lines everywhere on the home page, you can still disable the tests by unchecking the checkbox `Enable tests` at the top of the page. Or you could download a browser that doesn’t spread green lines everywhere… :)
@@ -43,8 +41,6 @@ I think the very first issue we’ve opened for Browserhacks was a request for a
 - `Liveconnect`: relies on Java
 - `XUL`: only available in Mozilla, and kind of buggy
 - `execCommand`: both hacky and buggy
-
-> A cross-browser _copy-to-clipboard_ is not realistic.
 
 Basically it’s a mess and a cross-browser _copy-to-clipboard_ is not realistic. So we had to think of something and by _we_ I mean [Tim Pietrusky](http://timpietrusky.com) of course. He came up with a clever idea which would allow the user to select a hack &mdash; for lack of copying &mdash; in one click.
 
@@ -90,8 +86,6 @@ In addition we added, fixed and removed a lot of hacks.
 ## What now?
 
 Well, there is always work to do: if only fixing bugs, adding hacks, verifying hacks, and so on. We still have quite a couple of features on the way.
-
-> Many of the hacks we provide are likely to break when passed in a preprocessor.
 
 For example we need to give you a hint about the [safety of a hack](https://github.com/4ae9b8/browserhacks/issues/96). Many of the hacks we provide are likely to break when passed in a preprocessor. Some of them can even break upon minification. While we can’t prevent this from happening, we should be able to tell you which hacks are _safe_ and which are not. We only need to think of a way to test all this stuff with Grunt. If you want to help, you’d be more than welcome!
 

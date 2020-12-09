@@ -6,7 +6,9 @@ keywords:
   - experiment
 ---
 
-> The following is a guest post by Hugo Darby-Brown, a talented frontend developer. I’m very glad to have him writing here today about a menu concept he came up with!
+{% info %}
+The following is a guest post by Hugo Darby-Brown, a talented frontend developer. I’m very glad to have him writing here today about a menu concept he came up with!
+{% endinfo %}
 
 Before I start off I’d like to say that this is more of **a proof of concept**, than a method that I’d recommend using on your next project. This menu uses the WebKit-specific CSS declaration `overflow-scrolling: touch` so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).
 
@@ -144,5 +146,3 @@ I would love to hear your thoughts on `-webkit-overflow-scrolling: touch;` and t
 I would usually embed the demo but, unfortunately iframes don’t play well with `overflow-scrolling:touch`, so it’s best if you play around the code at [CodePen](https://codepen.io/hugo/full/pwsLj) (caution! iframes, doesn’t work great on some mobile browsers)!
 
 Thanks for reading! If you think of anything to improve this menu concept, feel free to share. :)
-
-> Hugo Darby-Brown is both a designer and a developer from UK, passionate with frontend technologies especially CSS. You can catch him on [Twitter](https://twitter.com/darbybrown).

@@ -44,8 +44,6 @@ It went great. People seemed very interested in the topic and I felt like they w
 
 I was kind of nervous, obviously. My laptop dying the night before the big day was not to help though… Hopefully I could buy a Chromebook (which will probably the topic for another article) and all went well.
 
-> This experience was kind of incredible actually.
-
 This experience was kind of incredible actually. I walked into that room where dozens and dozens of boys and girls were waiting for me to talk to them. My hands were kind of sweaty and I was shivering a little at first but it all disappeared when I started talking.
 
 Then a little voice popped in my head saying “this is too complicated”, or “this is obvious to you but not for them” or “what the hell are you trying to explain?”. It stayed there during the whole conference and was kind of disturbing. I couldn’t have real-time feedback of course (imagine what it would look like) so I had no idea if people were enjoying my talk or hoping it was soon finished.
@@ -57,8 +55,6 @@ In the end, I had a couple of questions (most of them very relevant) which I was
 Well, it’s been [almost 9 months](/2012/11/13/why-i-switched-from-less-to-sass/) now I am using Sass on an almost-daily basis. In the last few months, I’ve been intensively hacking around the language, reading every tiny bit of documentation I could find (especially Compass' one) to push things further.
 
 When my girlfriend suggested I give a talk at KiwiParty back in April, I laughed. I had nothing to talk about. Then, it was kind of an inception; the idea kept spinning in my head looking for a topic to speak about. Until I found it: **Sass**.
-
-> It was a risky bet.
 
 Retrospectively, it was a risky bet. Speaking of CSS preprocessors can be quite complicated, especially in France where the topic is pretty controversial. I could have been faced to fervent opposants to CSS preprocessing, turning my talk into a troll. Luckily, I haven’t been.
 

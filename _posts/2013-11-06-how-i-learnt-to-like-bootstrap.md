@@ -22,7 +22,8 @@ I recently got hired for quite a big project as the only frontend developer in a
 
 So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly backend devs.
 
-> Hugo, we’ll use Bootstrap. — NOOOOOO!
+> Hugo, we’ll use Bootstrap.
+> — NOOOOOO!
 
 And then he told me what I didn’t want to hear: _"we will use Twitter Bootstrap"_ and I was like _"NOOOO!!"_.
 
@@ -59,8 +60,6 @@ I believe this whole _"Bootstrap is evil"_ thing started shortly after Twitter B
 At this point, every sites looked alike and it was kind of annoying for sure. But I feel like this time is over and now most Bootstrap powered sites are using it wisely, adding their own custom design on top of Bootstrap components. That’s what Bootstrap is: a backbone for the site.
 
 ## Final words
-
-> Bootstrap is not that bad. Just don’t use it raw.
 
 In the end, I think I’ve changed my mind on Bootstrap and I really start to understand what it’s for. On big websites, having a skeleton to work on is important. It’s like managing a huge JavaScript structure without a library (could it be jQuery, MooTools, whatever).
 

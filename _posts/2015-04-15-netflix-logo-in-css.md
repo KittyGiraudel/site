@@ -7,7 +7,9 @@ keywords:
   - animation
 ---
 
-> The following is a guest post by [Gregor Adams](https://twitter.com/gregoradams) about how he managed to re-create the Netflix logo in CSS. Gregor is kind of the rising star when it comes to CSS, so needless to say it is a great honor to have him here.
+{% info %}
+The following is a guest post by [Gregor Adams](https://twitter.com/gregoradams) about how he managed to re-create the Netflix logo in CSS. Gregor is kind of the rising star when it comes to CSS, so needless to say it is a great honor to have him here.
+{% endinfo %}
 
 A few months ago I tested Netflix, immediately got hooked and got myself an account. I started watching a lot of series that I usually had to view elsewhere. Each episode or movie starts with the Netflix logo animation.
 
@@ -38,11 +40,7 @@ The logo:
 
 So these were the animation steps I needed to replicate. But there is something else about the logo that I needed to take care of: **the letters are tilted to the center of the logo**.
 
-People have been asking me how I did that…
-
-> A trick from up my sleeve ;)
-
-I do a lot of 3d experiments, so this wasn’t that much of a difficulty to me.
+People have been asking me how I did that… I do a lot of 3d experiments, so this wasn’t that much of a difficulty to me.
 
 ## Deforming/Tilting the letters
 
@@ -330,5 +328,3 @@ I am never really happy with my experiments and while writing this article I fou
 I rewrote the entire Sass code prior to writing this article but I still feel that I can improve some parts. That is the main reason why I never stop making experiments. It just makes me smarter and bends my thoughts in directions I never knew existed.
 
 I barely make use of techniques like these in real-life projects but I very often use the functions I needed to implement that effect. Anyway, I hope you enjoyed this article.
-
-> [Gregor Adams](https://twitter.com/gregoradams) is a frontend developer from Hamburg, Germany. He is passionate about CSS and Sass, thus happens to be the author of [amazing demos on CodePen](https://codepen.io/pixelass) featuring his great CSS skills.

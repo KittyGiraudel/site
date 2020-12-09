@@ -126,8 +126,6 @@ It took me no more than a couple of hours with some motivating music to make my 
 
 Setting up a GitHub Pages based website couldn’t be simpler. It only consists of creating a repo named this way `username.github.com`. Easy, right?
 
-> GitHub Pages is built on Jekyll.
-
 The best thing with GitHub Pages is that it is built on Jekyll. This means **you can push raw Jekyll source to your repo** and GitHub Pages will automagically compile it through Jekyll (on their side). This also means you only really need Jekyll the very first time to set everything up, but then—unless you plan on changing your structure everyday—you don’t really need to use Jekyll at all since GitHub does the compilation.
 
 _I could also push the compiled code to the repo but that would mean I need Jekyll everytime I want to update anything on the site. Not great, especially since I work at 4 different places._
@@ -143,8 +141,6 @@ At this point, I had my site based on Jekyll running on GitHub Pages. However I 
 Basically I had to tell the GitHub server to serve hugogiraudel.github.com content from hugogiraudel.com, and to make hugogiraudel.com redirect at hugogiraudel.github.com.
 
 According to [GitHub Pages documentation](https://help.github.com/articles/setting-up-a-custom-domain-with-pages), and a couple of [posts on StackOverflow](https://stackoverflow.com/questions/9082499/custom-domain-for-github-project-pages), I understood I had to create a `CNAME` file at the root of the repo directing to the top-level domain I wanted to serve from (hugogiraudel.com) and set an A-record pointing to the GitHub IP from my own server.
-
-> My site was down and I had no idea whether or not it would get back up.
 
 This has been done and followed by 12 hours of worry. My site was down and I had no idea whether or not it would get back up. Since I don’t understand a thing about server stuff and DNS, I could have simply broken everything without even knowing it.
 

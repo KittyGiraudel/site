@@ -147,8 +147,6 @@ $imported-once-files: ();
 
 Now if you add another `@import "component"` in `styles.scss`, since the whole content of `_component.scss` is wrapped in a conditional statement calling the function, its content won’t be outputed a second time. Clever.
 
-> We cannot import a file in a conditional statement.
-
 You probably wonder what prevents us from doing something like this:
 
 ```scss

@@ -53,8 +53,6 @@ I tried to add a few features in order to make your experience nicer. Nothing bi
 
 ## Performances
 
-> I always try to load the page as fast as I can.
-
 I’m kind of psychotic when it comes to performance. I always try to make the page as fast as I can. I’m really pissed off when I’m waiting for a page to load more than 2 seconds, so I tried to do my best to make the loading time as quick as possible.
 
 Among the many things I did on the topic, I:

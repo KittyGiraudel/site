@@ -20,7 +20,7 @@ And given my obsession for Sass, I’ll go even further and add this extra part 
 
 > … and chances are high that it will be done by me.
 
-_Disclaimer: as for the original law from Jeff Atwood, it is obvious that Sass (or JavaScript) is not always the best choice: more often than not, things should be done in a different way, but the fact that we **can** usually makes use **do** it nevertheless._
+Disclaimer: as for the original law from Jeff Atwood, it is obvious that Sass (or JavaScript) is not always the best choice: more often than not, things should be done in a different way, but the fact that we **can** usually makes use **do** it nevertheless.
 
 ## Nonsense you say!
 
@@ -36,8 +36,6 @@ Sass is 7 years old if no mistake, and has come a long since its early days. In 
 And there are countless more examples I’m probably not even aware of.
 
 ## How did we get there?
-
-> Challenge is fun.
 
 I think the main reason is it’s challenging. Because Sass is a very limited language, doing advanced things can turn out to be quite challenging. And as we all know, challenge is fun.
 

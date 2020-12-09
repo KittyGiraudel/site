@@ -34,7 +34,8 @@ The first thing I can tell is that you will run out of time, I guarantee it. And
 
 Trust me, you will always find things to improve. I found myself writing new sections and examples a couple of hours before handing the book back to the editor. And if I had a couple of extra days, I’d have spent those until I needed three more…
 
-> Our work is never over. &mdash; [Daft Punk, Harder Better Faster Stronger](https://www.youtube.com/watch?v=gAjR4_CbPpQ)
+> Our work is never over.
+> &mdash; [Daft Punk, Harder Better Faster Stronger](https://www.youtube.com/watch?v=gAjR4_CbPpQ)
 
 The last revision I made of the book, just before it went to press, involved not less than 250 editions. There is no such thing as “too much proofreading”, or even “too much work” on such a colossal project. You could work on it forever.
 

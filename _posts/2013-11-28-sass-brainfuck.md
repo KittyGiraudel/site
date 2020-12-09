@@ -30,8 +30,6 @@ I can’t help but to grind my teeth when I see that the previous assertion retu
 
 ## Strict equality operator
 
-> Sass makes no distrinction between `==` and `===`.
-
 Sometimes I wish Sass would make a distinction between `==` and `===`. As a reminder, the first one checks whether values are equal while the latter makes sure both are of the same type. This is to prevent something like `5 == '5'` from returning `true`. When checking with `===`, it should return `false`.
 
 Anyway, every time you use `==` in Sass, it actually means `===`. So basically there is no way to check whether two values are equal without checking their type as well.
@@ -200,8 +198,6 @@ $c: f(bazinga);
 // List index is 2 but list is only 1 item long for `nth'
 ```
 
-> `if()` parses all arguments no matter what.
-
 BAZINGA! The `if()` function returns an error. It looks like it’s trying to access the second item in the list, even if the list is only one item long. _Why_ you ask? Because the ternary function from Sass parses both 2nd and 3rd arguments no matter what.
 
 Hopefully this issue is supposed to be solved in the incoming Sass 3.3 according to [this GitHub issue](https://github.com/nex3/sass/issues/470). Meanwhile, a workaround would be to use a real `@if/@else` statement to bypass the issue. Not ideal but still better than nothing.
@@ -210,7 +206,7 @@ Hopefully this issue is supposed to be solved in the incoming Sass 3.3 according
 
 I love how powerful Sass has become but there are things that keep boggling my mind. [Mehdi Kabab](https://twitter.com/pioupioum), a fellow French developer (and author of a fresh new book called Advanced Sass and Compass) told me it was because I wasn’t using Sass as a preprocessor.
 
-> @HugoGiraudel the main problem is you want use Sass like PHP oe Ruby, and not like a CSS preprocessor ;) /cc @kaelig  
+> @HugoGiraudel the main problem is you want use Sass like PHP or Ruby, and not like a CSS preprocessor ;) /cc @kaelig  
 > — [Medhi Kabab, Twitter](https://twitter.com/piouPiouM/statuses/401427568592957441)
 
 That’s actually true! I’ve done many things with Sass that are really beycond the scope of CSS. But that’s where I think the fun is: thinking out of box, and hacking around the syntax. That’s how I learnt to use Sass, and that’s how I’ll keep going on. ;)

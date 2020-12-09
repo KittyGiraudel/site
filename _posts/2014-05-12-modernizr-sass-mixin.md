@@ -7,7 +7,9 @@ keywords:
   - modernizr
 ---
 
-> The following is a guest post by Daniel Guillan. Daniel is the co-founder and chief design officer at Vintisis. I am very glad to have him here today, writing about a clever mixin to ease the use of Modernizr with Sass.
+{% info %}
+The following is a guest post by Daniel Guillan. Daniel is the co-founder and chief design officer at Vintisis. I am very glad to have him here today, writing about a clever mixin to ease the use of Modernizr with Sass.
+{% endinfo %}
 
 I use [Modernizr](https://modernizr.com/) on every single project I work on. In a nutshell, it’s a JS library that helps us take decisions based on the capabilities of the browser accessing our site. Modernizr quickly performs tests to check for browser support of modern CSS and HTML implementations like CSS 3d Transforms, HTML5 Video or Touch Events among [many many others](https://modernizr.com/download/).
 
@@ -56,8 +58,6 @@ Sass allows selectors and rules to be [nested](https://sass-lang.com/documentati
 ```
 
 ## Even better with a mixin
-
-> Easy? Yep and Nope.
 
 Having written a lot of selectors and rules like the above, I got a bit tired of that code. It’s not a complicated code at all, but it’s a bit messy, it isn’t that easy to read and maintain and I tend to forget to add the `.no-js &` bit. So I thought a couple of mixins would do the job.
 
@@ -285,5 +285,3 @@ It all started as a small Sass experiment and ended up being an incredibly inter
 That’s it, you can play with the code on [SassMeister](https://www.sassmeister.com/gist/10578910) or [view the documentation and download on Github](https://github.com/danielguillan/modernizr-mixin). The Modernizr mixin is available as a [Compass extension](https://rubygems.org/gems/modernizr-mixin) too.
 
 <p class="sassmeister" data-gist-id="10578910" data-height="480"><a href="https://www.sassmeister.com/gist/10578910">Play with this gist on SassMeister.</a></p><script src="https://static.sassmeister.com/js/embed.js" async></script>
-
-> Daniel Guillan is the co-founder and chief design officer at Vintisis. Not only designer but also frontend developer, Daniel likes using Sass to make his life easier. You should catch him on [Twitter](https://twitter.com/danielguillan).

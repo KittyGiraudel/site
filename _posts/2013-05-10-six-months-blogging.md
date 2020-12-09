@@ -25,8 +25,6 @@ All articles have drawn more than **82,000 unique visitors** for about **150,000
 
 ### About you
 
-> Chrome gets more than 60% of the browser share.
-
 Enough about me, let’s talk about you: **28% of users come from United States**, 8% come from United Kingdom, then a little more than 7% from France.
 
 Regarding browser, I’m a lucky bastard: **Chrome gets more than 60% of the browser share** on my site, then it’s Firefox with 17.5%, and then Safari with 16%. Internet Explorer comes further with 1.8%.

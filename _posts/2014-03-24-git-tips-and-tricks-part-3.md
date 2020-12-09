@@ -5,7 +5,9 @@ keywords:
   - git
 ---
 
-> This is the 3rd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the [first post](/2014/03/10/git-tips-and-tricks-part-1/) and the [the second one](/2014/03/17/git-tips-and-tricks-part-2/), be sure to give them a read! And now roll up your sleeves, because this is getting wicked!
+{% info %}
+This is the 3rd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the [first post](/2014/03/10/git-tips-and-tricks-part-1/) and the [the second one](/2014/03/17/git-tips-and-tricks-part-2/), be sure to give them a read! And now roll up your sleeves, because this is getting wicked!
+{% endinfo %}
 
 Hi people ! Welcome to the third part of this Git Tips & Tricks series ! This week I’m going to start with 2 useful tricks to fix conflicts or just see diff in a graphical tool instead of command line. Then we’ll explore the magic of the Git `bisect` command. Finally I will show how to merge commits into a single one before pushing it. What do you think? Let’s go?
 
@@ -385,5 +387,3 @@ index 0000000..b636d88
 ## Final thoughts
 
 That’s all folks! I hope those tricks will help you in your daily work. Git bisect has deeply changed the way I search for weird bug : finding the guilty commit is easier than digging in the code. And merging commits before pushing help to keep a clean commit log.
-
-> Loïc Giraudel works as a frontend developer at Future PLC (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

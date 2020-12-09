@@ -18,8 +18,6 @@ First things first. <span style="text-decoration: line-through">Even creating a 
 
 <span style="text-decoration: line-through">Anyway, we have a couple of ways to initialize an empty variable (that could be treated as a list):</span> _There is a single way to initialize an empty variable (whatever that means), and it’s with `null`._
 
-> Sass isn’t very strict with variable type.
-
 ```scss
 $a: ();
 $b: unquote('');
@@ -76,9 +74,9 @@ $list: 'item-1.1' 'item-1.2' 'item-1.3', 'item-2.1' 'item-2.2' 'item-2.3',
 
 **You can ommit parentheses** (as you can guess from the previous example). You can define a non-empty list without any parentheses if you feel so. This is because -contrarily to what most people think- [parentheses are not what create lists](https://github.com/nex3/sass/issues/837#issuecomment-20429965) in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.
 
-_Note: This is the theory. I’ve noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we’ll dig into this in another blog post._
-
-> Manipulating 5+ nested lists is a pain in the ass.
+{% info %}
+This is the theory. I’ve noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we’ll dig into this in another blog post._
+{% endinfo %}
 
 ```scss
 $list: 'item-1', 'item-2', 'item-3';
@@ -196,8 +194,6 @@ I think this is pretty straightforward: we append to `$selector` the new selecto
 Instead of using `append(..)` and setting the 3rd parameter to `comma` we implicitly do it via removing the function and using a comma right after `$selector`.
 
 ## Final words
-
-> Having a very permissive syntax can be complicated.
 
 The three versions we saw in the previous section work like a charm, <span style="text-decoration: line-through">the one you should use is really up to you</span> _although the one with `append(..)` is definitely the cleaner way of handling this. You can also do it in some other more complicated and dirty ways._
 

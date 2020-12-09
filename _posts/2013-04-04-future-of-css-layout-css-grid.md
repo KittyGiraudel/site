@@ -35,8 +35,6 @@ The basic example would be something like this: my `.wrapper` is my grid; `.head
 
 ## What’s complicated?
 
-> Specifications are definitely not for random people.
-
 First, **reading specifications**. If a spec author ever reads this, I am sorry; but the specifications are definitely not for random people. I believe they are mostly made for browser makers, and they are probably very well writen but for a person like me, it’s way too complicated. Unfortunately, I had to dig deep into the spec.
 
 What has been difficult as well is that the only supported browser &mdash; as of writing &mdash; is Internet Explorer 10 (mostly because 3 of 5 authors of the Grid spec are from Microsoft). And I believe they started implementing the module in their browser engine a while ago, resulting in some inconsistencies regarding the spec which keeps moving.
@@ -118,8 +116,6 @@ This question comes from Twitter. However I’ve been questioning myself regardi
 So as I understand this, **the Grid layout is “macro” while the Flexbox module is “micro”.** I think Grid will be perfect to organize the layout structure with high-level elements whereas Flexbox will be best-suited for some modules that require specific alignments, ordering and so like a fluid navigation for example.
 
 ## Final words
-
-> I have been amazed by its efficiency.
 
 For having [played](https://codepen.io/HugoGiraudel/pen/2befd6d225b69912af8561f7cb020124) with the module for hours, I can tell it is quite promising. I have been amazed by its efficiency, and I even could try to mix it with CSS preprocessors: it rocks. The fact it’s fully number-based makes it very easy to use in [loops](https://codepen.io/HugoGiraudel/pen/fb0e46cde228e5437993ba1305459a22), [mixins and functions](https://codepen.io/HugoGiraudel/pen/aCliz).
 

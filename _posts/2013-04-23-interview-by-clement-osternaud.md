@@ -25,8 +25,6 @@ I wanted to push this idea further last year by joining what comes close to “C
 
 ## According to you, what are the required qualifications for your job?
 
-> I love experimenting and trying new things.
-
 That ain’t easy. I think the biggest “problem” of client-side languages is that they are dependent on the client. This implies a lot of hacks and tricks to make everything work everywhere. This is even more true today with mobile devices like tablets and smartphones or even TV screens! So this asks for a lot of patience and experience (the latter comes with time, hopefully).
 
 I also think we really have to love experimenting and trying new things. We work with constantly evolving languages which implies reading as much docs and tutorials as we can. Being aware of incoming things is part of a web developer’s job.
@@ -34,8 +32,6 @@ I also think we really have to love experimenting and trying new things. We work
 ## What do you like the most in your job? And the least?
 
 My favourite thing in my job has to be **learning things**. It’s definitely because I’m passionate that I’m comfortable with some things today. As good as my web teacher has been, I don’t owe him my skills (not all of them at least). Long story short, I enjoy reading web related stuff.
-
-> I enjoy reading web related stuff.
 
 Beyond reading, it’s great to be able to easily discover and learn new things like CSS features, JavaScript APIs, preprocessors and much more (especially thanks to tools like [CodePen](https://codepen.io) and [GitHub](https://github.com)). And if we ever happen to use what we’ve learnt in real-life projects, then it’s even better!
 

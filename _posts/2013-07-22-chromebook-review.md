@@ -25,8 +25,6 @@ So, **the Chromebook is an ultraportable laptop from Google running on Chrome OS
 
 Let’s start by the whole hardware part. First of all, I think it’s pretty nice even if it doesn’t compete with the MacBook Pro. Obviously.
 
-> No fan, no noise.
-
 I’m not so comfortable with very technical specifications so I’ll just leave it here: Exynos 5 Dual Core 1.7Ghz, 2GB DDR3 RAM, 16GB SSD storage.
 
 Yes, you read right. Only 16GB hard-drive. This is because **you’re meant to store all your data on the cloud** (understand Google Drive). On the bright side: no fan, no noise. It’s absolutely silent. A fly would make more noise than this.
@@ -54,8 +52,6 @@ There are two speakers on the bottom case which isn’t great when the laptop is
 It’s not awful, definitely not awful but it’s not high-quality sound. So if you want high-quality sound, you may need to plug in external speakers or headphones.
 
 ### Battery
-
-> You can rely on an average 6.5 hours battery.
 
 Oh man, this is good. You can rely on an average 6.5 hours battery lifetime with a regular usage. This may vary according to your usage; from 5 hours when streaming, up to 9 hours when casual browsing.
 
@@ -94,8 +90,6 @@ Beware, HDMI connection may be a problem if you plan on connecting your laptop t
 
 ## Chrome OS
 
-> Chrome OS is blazingly fast.
-
 Chrome OS is freaking fast. It takes about 6 seconds between the moment you press the power button and the moment you’re on the desktop. This is probably due to the fact **most applications and services run in the browser**. Indeed, there are very few things installed on the computer aside of Google Chrome.
 
 <figure class="figure">
@@ -110,8 +104,6 @@ Thus, the OS taskbar shortcuts essentially open new tabs in Chrome to Google ser
 On a side note, Chrome OS comes with a built-in yet very simplistic image editor. This may sounds irrelevant but when you have images you want to crop / rotate for articles, this is really rad.
 
 ## Working offline
-
-> The Chromebook is a web-based laptop, running on a web-based OS to use web-based applications.
 
 Thankfully, Google thought about offline usage and made Gmail and Google Drive fully usable when not connected to internet. You can classify and even write mails on Gmail and write whole documents on Google Drive: everything will be synchronized / sent when WiFi is up again.
 

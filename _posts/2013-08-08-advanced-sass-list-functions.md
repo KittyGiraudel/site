@@ -85,8 +85,6 @@ I made two versions of this function: in the first one, the code is simple. In t
 }
 ```
 
-> Sass `@for` loops can’t decrement.
-
 The second version is better because it starts from the end and returns the first occurence it finds instead of looping through all the items from the start.
 
 The code is a little ugly because as of today, Sass `@for` loops can’t decrement. Thus, we have to use a ugly workaround to make the loop increment on negative value, then use the absolute value of `$i`. Not cool but it works.

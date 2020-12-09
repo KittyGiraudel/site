@@ -41,7 +41,11 @@ As I said above, RGB stands for Red, Green and Blue. Remember when you were a li
 | The less color you use, the brighter it is | The less color you use, the darker it is |
 | Representation is a circle with neither white nor black | Representation is a cube with black and white |
 
-> ![Color cube](/assets/images/colors-in-css/color-cube.jpg) This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.
+{% info %}
+![Color cube](/assets/images/colors-in-css/color-cube.jpg)
+
+This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.
+{% endinfo %}
 
 ### How do we define RGB colors?
 
@@ -90,13 +94,11 @@ So, summarized, we end up with two different ways to display CSS colors with the
 
 **Important**: when using percentages, you have to set the unit even if it is 0. If you don’t, some browsers may be unable to parse it.
 
-_Note: even if the percentage version seems more intuitive, it’s actually the integer version that seems to be more commonly used._
-
 ### What about the alpha-channel?
 
 As seen previously, while using the RGB system we can also use an alpha channel which is by default set to 1. This channel allows us to modify the opacity of a color, or its transparency if you will.
 
-To use this channel in CSS, you’ll call the `rgba()` function instead of the `rgb()`. However note the alpha-channel is always defined with a float clamped between 0 and 1.
+To use this channel in CSS, you’ll call the `rgba()` function instead of the `rgb()`. However note the alpha-channel is always defined with a float {% footnoteref "float" "When dealing with decimal values between 0 and 1, you don’t have to write the 0 before the dot. So you can write `rgba(0, 0, 0, .5)` and still be perfectly valid." %}clamped between 0 and 1{% endfootnoteref %}.
 
 ```css
 .black {
@@ -133,15 +135,11 @@ This can be very useful in various situation. Let’s say you have some kind of 
 
 This way, the child element will have a white background with 75% opacity, showing its parent’s background without risking any issue with readability.
 
-\*Note: when dealing with decimal values between 0 and 1, you don’t have to write the 0 before the dot. So you can write `rgba(0, 0, 0, .5)` and still be perfectly valid.
-
-_Note: the `rgb()` function is perfectly valid CSS2.1. However the `rgba()` function is part of the CSS3 specification and is not supported by all browsers (Internet Explorer 6, 7, 8)._
-
 ## Hexadecimal
 
 ### What is hexadecimal?
 
-Most of the time, CSS colors are specified using the hexadecimal format which is a 6 (or 3) characters long string using numbers from 0 to 9 and letters from A to F, starting by the hash sign # (ex: #1A2B3C). We refer as this syntax as a “hex triplet”.
+Most of the time, CSS colors are specified using the hexadecimal format which is {% footnoteref "hex" "You may see some hex triplets reduced to 3 digits instead of 6. It only happens when the two digits of each of the 3 components of the triplet are the same. To apply it on our previous example, the red color (#FF0000) can be written like #F00. If any of the 3 components have 2 different digits, you can’t do this." %}a 6 characters long string{% endfootnoteref %} using numbers from 0 to 9 and letters from A to F, starting by the hash sign # (ex: #1A2B3C). We refer as this syntax as a “hex triplet”.
 
 Okay, but what does this mean? I agree it’s not that simple. Basically, hexadecimal colors are some sort of code for RGB colors: the first two characters stand for the red value; the 3rd and 4th characters stand for greens; and the last two characters are here for the blue.
 
@@ -150,8 +148,6 @@ Since the range of a 8-bit byte is 256, we usually use a base 16 system to displ
 Okay, I can understand you’re lost here, so we’ll try a little example. Let’s say you want to make a pure red (rgb(255, 0, 0)): thanks to [this awesome converter](http://wims.unice.fr/wims/wims.cgi), you convert 255 to base 16 and know it equals FF. If you try to convert 0, you’ll see it’s 0 as well in base 16. So your hex triplet would be #FF0000. Simple, isn’t it?
 
 So this was the theory, alright? It doesn’t mean you have to use a base 16 converter every single time you want to use a color in CSS. I’m simply explaining you how are hexadecimal colors composed. Now in real life, you’ll simply use a color palette like Photoshop or whatever.
-
-\*Note: you may see some hex triplets reduced to 3 digits instead of 6. It only happens when the two digits of each of the 3 components of the triplet are the same. To apply it on our previous example, the red color (#FF0000) can be written like #F00. If any of the 3 components have 2 different digits, you can’t do this.
 
 ### What about transparency?
 
@@ -198,9 +194,7 @@ Eric Meyer also created a color equivalents table in order to know what keyword 
 
 ### Keywords usage
 
-The point of keywords is to use basic colors with words that actually mean something. I say “basic” because most of the time, you’ll want a custom color who doesn’t have a keyword. But whenever you want to use a plain red or a silver grey, you don’t have to use a hex or RGB triplet; you can use the keyword.
-
-_Note: the 147 keywords are all perfectly valid, even on old browsers like Internet Explorer 6._
+The point of keywords is to use basic colors with words that actually mean something. I say “basic” because most of the time, you’ll want a custom color who doesn’t have a keyword. But whenever you want to use a plain red or a silver grey, you don’t have to use a hex or RGB triplet; you can use one of the 147 keywords (all perfectly valid, even in old browsers like Internet Explorer 6).
 
 ### Special keywords
 
@@ -227,7 +221,7 @@ The currentColor is a CSS3 value allowing you to take the color as a default val
 
 The border will be red since the defined color is red. If no color was set, it would have been black, since the default value for the color property is black.
 
-You want to know what’s awesome? `currentColor` is a default value for a bunch of things. From my tests:
+You want to know what’s awesome? `currentColor` (case-insensitive) is a default value for a bunch of things. From my tests:
 
 - Border-color
 - Color component in box-shadow
@@ -243,8 +237,6 @@ It means you can do one of those and be perfectly valid:
   text-shadow: 0 2px 1px; /* This will be red */
 }
 ```
-
-_Note: the cap on the C letter is not required. It’s only a writing convention._
 
 ## HSL
 
@@ -272,7 +264,7 @@ The distance along the vertical axis corresponds to the “lightness” (also sa
 
 To describe a color using the HSL representation, you have to define parameters for hue, saturation and lightness. If you don’t know how to start, this is what I recommand:
 
-- **Hue**: choose your color on the chromatic wheel. If it’s red, then the value is 0. If it’s purple, the value would be about 300, and so on.
+- **Hue**: choose your color on the chromatic wheel. If it’s red, then the value is 0. If it’s purple, the {% footnoteref "hue" "The hue is expressed in degrees but you don’t have to (and should not) set the unit." %}value would be about 300{% endfootnoteref %}, and so on.
 - **Saturation**: if you want a pure color, then the saturation value will be 100%. If you want some kind of grey, try a value lower than 100%.
 - **Lightness**: if you want a pure color, then the lightness value will be 50%. If you want a light color, try something between 50% and 100%. If you want something dark, try below 50%.
 
@@ -293,9 +285,7 @@ To describe a color using the HSL representation, you have to define parameters 
 }
 ```
 
-\*Note: when you want black or white, whatever the hue value you set since it’s not on the wheel. It means `hsl(0, 0%, 100%)`, `hsl(120, 0%, 100%)` and `hsl(240, 0%, 100%)` are all 3 white.
-
-\*Note: the hue value is expressed in degrees but you don’t have to set the unit. Actually you must not set the unit; the parser won’t understand it.
+Note that when wanting black or white, whatever the hue value you set since it’s not on the wheel. It means `hsl(0, 0%, 100%)`, `hsl(120, 0%, 100%)` and `hsl(240, 0%, 100%)` are all 3 white.
 
 ### What about the alpha-channel?
 

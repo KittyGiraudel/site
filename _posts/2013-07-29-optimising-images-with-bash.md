@@ -8,7 +8,9 @@ keywords:
   - optimisation
 ---
 
-> The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at Future PLC (Grenoble, France) and my brother. He also knows his way in Bash scripting and frontend performance. I’m very glad to have him writing here. :)
+{% info %}
+The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at Future PLC (Grenoble, France) and my brother. He also knows his way in Bash scripting and frontend performance. I’m very glad to have him writing here. :)
+{% endinfo %}
 
 You can’t talk about frontend performance without talking about images. They are the heaviest component of a webpage. This is why it is important to optimise images before pushing things live.
 
@@ -433,5 +435,3 @@ Of course this is just a simple sample (no pun intended); there is still a lot o
 * try to add some lossy optimisations for JPG,
 * add an auto-upload function to upload to your FTP,
 * use a configuration file to tweak the optimisation tools…
-
-> Loïc Giraudel works as a frontend developer at Future PLC (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

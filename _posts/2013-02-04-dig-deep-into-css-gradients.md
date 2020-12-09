@@ -6,7 +6,9 @@ keywords:
   - gradient
 ---
 
-> The following is a guest post by [Ana Tudor](https://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.
+{% info %}
+The following is a guest post by [Ana Tudor](https://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.
+{% endinfo %}
 
 I had no idea how powerful CSS gradients could be until late 2011, when I found the [CSS3 Patterns Gallery](https://lea.verou.me/css3patterns/) made by Lea Verou. The idea that you can obtain many shapes using just gradients was a starting point for many CSS experiments I would later do.
 
@@ -65,8 +67,6 @@ For anyone who doesn’t remember, the background layers are listed from the top
 If the `background-position` is not specified, then the `background-size` isn’t specified either. Also, since `background-origin` and `background-clip` both need the same kind of value (that is, a box value like `border-box` or `content-box`), then, if there is only one such value, that value is given to both `background-origin` and `background-clip`. Other than that, any value except the one for `background-image` can be missing and then it is assumed to be the default.
 
 Since we have nine background layers and we want to have the same non-default values for `background-repeat` and `background-size` for all of them, we specify these outside the shorthand so that we don’t have to write the same thing nine times.
-
-> Safari doesn’t support background-size inside the shorthand.
 
 In the case of `background-size`, there is also another reason to do that: Safari doesn’t support `background-size` inside the shorthand and, until recently (up to and including version 17), Firefox didn’t support that either. Also, two values should be always given when the `background-image` is a gradient, because giving it just one value is going to produce different results in different browsers (unless that one value is 100%, in which case it might as well be missing as that is the default).
 
@@ -160,5 +160,3 @@ You can change the dimensions of the gradient box and you can also change the gr
 ## Final words
 
 CSS gradients are really powerful and understanding how they work can be really useful for creating all sorts of imageless textures or shapes that would be difficult to obtain otherwise.
-
-> Ana Tudor excels in CSS, especially when it comes to CSS transforms and well, as you may have seen, CSS gradients. You definitely should follow her on [Twitter](https://twitter.com/thebabydino) or have a look at [her profile](https://about.me/thebabydino) to know more about her and what she does.

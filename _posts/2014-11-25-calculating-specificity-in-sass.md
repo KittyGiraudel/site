@@ -7,7 +7,9 @@ keywords:
   - specificity
 ---
 
-> The following is a guest post by [David Khourshid](https://twitter.com/davidkpiano) about how he managed to build a specificity calculator in Sass. In all honesty, I would not have made any better than David with this, so I have to say I am very glad to have him talking about his experiment here.
+{% info %}
+The following is a guest post by [David Khourshid](https://twitter.com/davidkpiano) about how he managed to build a specificity calculator in Sass. In all honesty, I would not have made any better than David with this, so I have to say I am very glad to have him talking about his experiment here.
+{% endinfo %}
 
 As any web developer who has to write CSS knows, specificity is both an important and confusing concept. You might be familiar with principles such as avoiding nesting and IDs to keep specificity low, but knowing exactly _how_ specific your selectors are can provide you valuable insight for improving your stylesheets. Understanding specificity is especially important if you are culpable of sprinkling `!important` throughout your CSS rules in frustration, which ironically, makes specificity less important.
 
@@ -164,8 +166,6 @@ This [complex selector](https://dev.w3.org/csswg/selectors4/#complex) doesn’t 
 
 In reality, even a selector with a single class should have greater specificity than a selector with **any** number of (solely) element type selectors.
 
-> We’re going to need a bigger base.
-
 ![What if we tried more power by XKCD](/assets/images/calculating-specificity-in-sass/xkcd.png)
 
 I chose base 256 (16<sup>2</sup>) to represent two hexadecimal digits per type. This is historically how specificity was calculated, but also lets [256 classes override an ID](https://www.thecssninja.com/css/extreme-specificity). The larger you make the base, the more accurate your (relative) specificity will be.
@@ -317,5 +317,3 @@ You can take this even further and, if you have dynamic selectors in your SCSS, 
 The full source for the specificity functions/mixins, as well as examples, are available [here on SassMeister](http:s//sassmeister.com/gist/dbf20a242bcccd1d789c):
 
 <p class="sassmeister" data-gist-id="dbf20a242bcccd1d789c" data-height="480" data-theme="tomorrow"><a href="http:s//sassmeister.com/gist/dbf20a242bcccd1d789c">Play with this gist on SassMeister.</a></p>
-
-> [David Khourshid](https://twitter.com/davidkpiano) is a frontend web developer in Orlando, Florida. He is passionate about JavaScript, Sass, and cutting-edge frontend technologies. He is also a pianist and enjoys mathematics, and is constantly finding new ways to apply both math and music theory to web development.

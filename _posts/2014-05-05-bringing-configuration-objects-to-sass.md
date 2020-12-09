@@ -116,8 +116,6 @@ In a way, we don’t really need this in Sass because it already provides _named
 
 This is pretty neat. But if like me you’d rather have a single object instead of a collection of arguments, then read on.
 
-> Being able to use configuration objects in Sass is amazing.
-
 Sass 3.3 is bringing maps which are the exact equivalent of JavaScript objects. Now that we have maps, we can do all the cool stuff we just talked about and **this is amazing**. All we need is an `extend` function to be able to extend a given object with an object of default parameters.
 
 This could have been very easy to do but `map-merge` already does it for us. Indeed, when merging two maps it does exactly what we want: extend one map with the other. At best, we could alias the `map-merge` function with an `extend` function:

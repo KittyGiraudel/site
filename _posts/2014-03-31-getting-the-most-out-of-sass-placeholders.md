@@ -21,8 +21,6 @@ When extending a selector, Sass doesn’t take the CSS content from the extended
 
 Because extending takes the current selector to move it to the extended selector, it makes it impossible to use it from different scopes. For instance, you can’t extend a placeholder that has been declared in a `@media` block, nor can you extend a placeholder from root if you’re within a `@media` directive.
 
-> Cross-scope extends is the most wanted feature from Sass.
-
 And _this_ is a huge issue. Fortunately, this has to be the most expected feature request from Sass (according to the outrageous number of issues mentioning this on their repo: [#501](https://github.com/nex3/sass/issues/501), [#640](https://github.com/nex3/sass/issues/640), [#915](https://github.com/nex3/sass/issues/915), [#1050](https://github.com/nex3/sass/issues/1050), [#1083](https://github.com/nex3/sass/issues/1083)). At this point, we believe Sass maintainers will find a way to allow cross-scope extending.
 
 Meanwhile, this is why Ken didn’t use placeholders and stuck to mixins. However from my experience, it’s not very common to have to include a mixin/extend a placeholder at a very specific breakpoint and not the others. Usually, rules scoped into mixins/placeholders are the core of the element they are applied to, meaning they should be there in all circumstancies. So I decided to find a solution.

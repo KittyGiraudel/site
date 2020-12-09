@@ -6,7 +6,9 @@ keywords:
   - function
 ---
 
-> The code explained in this article has been slightly revisited in [the pen](https://codepen.io/HugoGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen.
+{% info %}
+The code explained in this article has been slightly revisited in [the pen](https://codepen.io/HugoGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen.
+{% endinfo %}
 
 You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It’s a shame there is so few functions to deal with them. This is why I made [SassyLists](https://github.com/Team-Sass/Sass-list-functions).
 

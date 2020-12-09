@@ -19,8 +19,6 @@ So in the last few months, we have assisted to a bunch of new CSS grid systems, 
 
 ## We don’t need yours
 
-> We do not need your own CSS grid.
-
 Sad but true. We do not need your CSS grid, framework or whatever you like to call it. There are already too much, some of them are built by professional, teams and CSS architects, which means they will always be better than yours.
 
 Now don’t get me wrong: **building your own is a good thing**. But people don’t need it. Ask yourself this: between all the existing grids, including ones with hundreds of closed issues, why would I chose yours?

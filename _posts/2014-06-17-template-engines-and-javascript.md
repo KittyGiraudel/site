@@ -18,8 +18,6 @@ The idea behind any template engine is to have template files that can be used a
 
 Template engines expose global variables. In Liquid, those are mostly the ones declared in your YAML Front Matter (the header from every post). In Twig, they can be data passed from the controller, or super-global variables, whatever.
 
-> Don’t write your JS in template files.
-
 Sometimes, you need to access such variables in your JavaScript code. Let me make this as clear as possible: writing JavaScript in a template file just because you need a variable from a template is not a clean solution. At work, we had developers writing huge chunks of JavaScript in `.html.twig` files because they needed some data from the controller in their JavaScript application. This sucks.
 
 JavaScript should mostly go in `.js` file. Markup should go in template files. Not the other way around. Especially not when it’s getting bigger than a couple of lines.

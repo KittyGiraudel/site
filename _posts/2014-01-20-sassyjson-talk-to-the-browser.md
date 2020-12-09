@@ -106,8 +106,6 @@ head {
 
 Meanwhile `json-decode` has been a pain in the ass to write, so much that I was very close to give up. Between nested lists, maps, null values, falsy values and hundreds of other tricky cases it is probably one of the hardest thing I’ve ever done in Sass.
 
-> It was so difficult I was close to giving up.
-
 One of the main problem we faced was the ability to retrieve numbers and colors. You see, when you parse a string, everything is a _string_. Even if _you_ now this part is a number and this part is a boolean, when you slice your string all you have is shorter strings. Not numbers and booleans.
 
 And this is a big deal, because when you use those tiny bits of decoded JSON in your Sass, types matter. If you go `42px * 2` but `42px` is actually a `string` and not a `number` as it should be, [then your code breaks](/2013/09/03/use-lengths-not-strings/) and Sass is furious and you are sad. Hence this article about [casting a string into a number in Sass](/2014/01/15/casting-a-string-to-a-number-in-sass/).
@@ -117,8 +115,6 @@ And this is a big deal, because when you use those tiny bits of decoded JSON in 
 It took me 3 completely different tries before I come up with something that actually succeeds in parsing JSON. Frankly I was about to give up after the 2nd one because I had absolutely no idea how to do this efficiently. Just in case, I started searching for algorithms like how to build one’s own JSON parser or something.
 
 I ended up in an obscure StackOverflow thread pointing to JSON parser implementations by browser vendors. Chrome’s one was impossible for me to understand, so I gave a shot at [Mozilla’s](https://github.com/mozilla/rhino/blob/master/src/org/mozilla/javascript/json/JsonParser.java) and it looked actually understandable! Mozilla is using Java for their JSON parser, and their code is quite simple to catch up even for someone with absolutely no experience with Java at all (a.k.a. me).
-
-> Sass and Java are quite different.
 
 So I followed the Fox' steps and began implementing it approximately like they did. Breaking news folks: Sass and Java are two very different languages. I had to be creative for some stuff because it was simply impossible to do it their way (number casting, anyone?).
 

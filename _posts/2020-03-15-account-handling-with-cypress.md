@@ -95,7 +95,9 @@ export default function getAccount(conf = {}) {
 }
 ```
 
-> Note that `JSON.stringify` does not guarantee key order, which means two identical objects with keys in a different order will not be stringified the same way. We use a lib that ensures key sorting to prevent that problem.
+{% info %}
+Note that `JSON.stringify` does not guarantee key order, which means two identical objects with keys in a different order will not be stringified the same way. We use a lib that ensures key sorting to prevent that problem.
+{% endinfo %}
 
 We can now start our tests with a single call to `getAccount` passing the `cache: true` option when possible so we retrieve accounts from local cache if available, or create and cache them otherwise.
 

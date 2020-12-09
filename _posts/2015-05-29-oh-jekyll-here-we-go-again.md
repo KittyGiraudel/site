@@ -27,8 +27,6 @@ Okay, now what did I dislike with it? I think the most annoying thing for me was
 
 Fixing anything required me to have the Mixture application installed (which is less of a problem now that I don’t work on Linux anymore), the repository cloned and up-to-date, then to make the change, compiled the sources and finally push it back to the repository. Tedious at best, highly annoying at worst.
 
-> The most annoying thing for was to push the compiled sources to the repository.
-
 Along the same lines, it was literally impossible for anybody to contribute in any way unless they happen to be Mixture subscribers. I will concede that it is not like hundreds of people would contribute to this blog, still some people do submit pull requests to fix typos. Also, as I often offer guest posts to people, I’d like them to be able to submit their work through a pull request as well.
 
 So being able to push uncompiled sources to the GitHub repository and let [GitHub Pages](https://pages.github.com/) do all the compilation and deployment work for me was actually the major factor for me to leave Mixture behind and go back to Jekyll.

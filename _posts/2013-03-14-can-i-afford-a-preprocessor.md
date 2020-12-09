@@ -24,8 +24,6 @@ The other case is when you are dealing with very small projects or one-shot webs
 
 Let’s make things clear right now: **preprocessors don’t output bad code, bad developers do**. CSS preprocessors -whatever the one you (don’t) use- do not generate top-heavy, unwiedly, unnecessarily complicated code. This is a lie bad developers will tell you to explain the quality of their code.
 
-> Preprocessors don’t output bad code, bad developers do.
-
 If the final stylesheet is less maintainable or heavier, or more complicated than the vanilla CSS version you had before using a preprocessor, [it’s because you messed up](https://pastebin.com/Jy9PqFTy). Not because of Sass.
 
 Vincent does an interesting comparison with PHP (HyperText Preprocessor): you can output shitty code with PHP too. Is it because of PHP? Definitely not. It’s because you’ve messed up.
@@ -40,8 +38,6 @@ You don’t save much time while coding. You save time when it comes to maintain
 
 I think the key word here is **maintainability**. You will never ever reach the same level of maintainability without a CSS preprocessor. Ever.
 
-> I think the key word here is maintainability.
-
 However, you might not need that level of maintainability. As [Kaelig](https://twitter.com/kaelig) says in his article [CSS preprocessors: renounce by choice or ignorance?](https://blog.kaelig.fr/post/24877648508/preprocesseurs-css-renoncer-par-choix-ou-par) (_Préprocesseurs CSS, renoncer par choix ou par ignorance?_): if you work on small projects or one-shot websites, you may not need a preprocessor. Let’s be realistic for a minute: you won’t update the site everyday, if at all. If you ever happen to do so, you can dig into the code without having to use of a preprocessor.
 
 ## Give CSS what CSS needs
@@ -49,8 +45,6 @@ However, you might not need that level of maintainability. As [Kaelig](https://t
 Vincent says preprocessors don’t add anything to the default language. In a sense, yes. Sass isn’t magic. CoffeeScript isn’t magic. Markdown isn’t magic. In the end, they render CSS, JS and HTML.
 
 But CSS preprocessors give CSS what CSS lacks of. CSS lacks of variables, above all. CSS possibly lacks of simple nesting for pseudo-classes. CSS might lack of functions and mixins. Preprocessors give developers all this stuff. **Without altering performances**.
-
-> CSS lacks of variables, above all.
 
 **Yes, we can do sites without these features.** It’s just nice to have them. Saying otherwise would be a big fat lie. But of course we can still make sites without preprocessors.
 

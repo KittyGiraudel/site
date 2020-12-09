@@ -4,7 +4,9 @@ keywords:
   - interview
 ---
 
-> The wonderful [Manoela Ilic](https://twitter.com/crnacura) also known as Mary Lou, co-founder of [Codrops](https://tympanus.net/codrops/) has accepted to answer a few questions. Below is her interview. Enjoy!
+{% info %}
+The wonderful [Manoela Ilic](https://twitter.com/crnacura) also known as Mary Lou, co-founder of [Codrops](https://tympanus.net/codrops/) has accepted to answer a few questions. Below is her interview. Enjoy!
+{% endinfo %}
 
 <figure class="figure">
 <img src="/assets/images/interview-manoela-ilic/manoela.jpg" alt="Photo Manoela Ilic" />
@@ -16,8 +18,6 @@ keywords:
 I’m Manoela, a 31 year old web designer and developer and I create things for [Codrops](https://tympanus.net/codrops/) since 2009. I studied Cognitive Science in Germany and then Computational Logic in Portugal.
 
 I worked in a software company for a while before I decided to become a freelancer and launch Codrops. Since I was a kid I was always fascinated with computers and I created my first website when I was 16 (it had some fancy Flash buttons, I remember) :)
-
-> I created my first website when I was 16.
 
 In my personal life I like to travel a lot (in fact, most of the time I am travelling). I love to eat and make good food, drink a great wine and take care of my balcony herb garden whenever I have some spare time.
 
@@ -41,8 +41,6 @@ WordPress seemed like the most fitting blog engine at the time and I’ve been h
 I guess the most challenging but also most exciting part is to come up with interesting and original ideas and concepts that are somehow inspiring and helpful to web designers and developers. At Codrops we try to provide ideas and new perspectives that serve as a source of inspiration. So we always create a story for what we want to show and setting up that story is the most delicate part.
 
 #### Sounds lovely. If you could go back and change something at Codrops, what would it be?
-
-> If you are happy with what you’ve learned, it was a good path to choose.
 
 There are always things that could be done better when looking back. But in general I am quite happy with how Codrops turned out thanks to our readers and I wouldn’t want to change anything about that I guess. It’s just like with everything else in life: if you wouldn’t have done it that exact way, you might have not learned what you know now. And if you are happy with what you’ve learned, it probably was a good path to choose.
 
@@ -71,4 +69,4 @@ Yes, I have some side projects that I’m working on and I also work for some cl
 
 I’d like to thank you for the opportunity and **I’d like to thank all the readers of [Codrops](https://tympanus.com/codrops/)** for their support. I’d also like to wish you all the best for your website and blog and I’m looking forward to read many of your articles :)
 
-> Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. Oh, and congratulations for being part of the [2013 Awwwards jury](https://www.awwwards.com/jury/2013)! :)
+Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. Oh, and congratulations for being part of the [2013 Awwwards jury](https://www.awwwards.com/jury/2013)! :)

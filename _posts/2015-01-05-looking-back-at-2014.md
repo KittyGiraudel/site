@@ -14,8 +14,6 @@ _Note: let me take this occasion as an opportunity to suggest you read [this art
 
 Early 2014, I officially started writing as a freelancer. Since then, my secondary activity has been giving me the ability to invoice sites for articles, including SitePoint and Tuts+.
 
-> I have written 91 articles in 2014.
-
 Along the same lines, I have written a total of 91 articles published on 6 different sites in 2014. It is not quite but very close to 2 articles a week. I am very proud of such a pace and hope I’ll be able to keep writing at a decent rate, if not as much.
 
 <h2 style="clear: both">I gave my first talk out of France</h2>

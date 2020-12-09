@@ -14,15 +14,11 @@ God, I suck at JS. Hopefully, I get slightly better each day. My code is more an
 
 I have good hope that once I’ll be more comfortable with JavaScript, I will also be more comfortable with Canvas. This is a fantastic tool offering close to endless possibilities. I had the opportunity to use it once or twice during the past, but it was mostly coming in some kind of library.
 
-> God, I suck at JavaScript.
-
 I know there are some [pretty](https://developer.mozilla.org/en-US/docs/HTML/Canvas/Tutorial) [good](https://www.canvasdemos.com/type/tutorials/) [tutorials](https://www.alsacreations.com/tuto/lire/1484-introduction.html) out there to learn how to use Canvas but I didn’t take the time to dig into them. What do you think people, worth it? Or we can live without it for now?
 
 ## Learn how to use Flexbox
 
 I have some basic knowledge regarding the [Flexible Box Module](https://www.w3.org/TR/css3-flexbox/). I even made all the [CSS-Tricks Almanac](https://css-tricks.com/almanac/) entries on this stuff and the [complete guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for it. But I am not comfortable with this. I haven’t implemented it in any project yet, and can’t wait to do so.
-
-> I truely believe Flexbox is the future of CSS layout.
 
 I truely believe Flexbox is the future of CSS layout, especially when it comes to RIA (Rich Internet Applications) and web apps. Floats and inline-blocks are sucky as hell when it comes to complex architectures.
 

@@ -47,9 +47,7 @@ The easiest (and best) solution was to use the `calc` function. A few came up wi
 
 When I shared my solution on Twitter, some people seemed kind of amazed at how far I pushed the use of `calc()`. In the end I can assure you the solution is very easy to find, hence a little blog post to explain my thought process.
 
-### Understanding the problem
-
-> All cells aren’t the same width.
+### Understanding the problem.
 
 Many devs including myself jumped on the code assuming all cells would be the same width, obviously 25% since there are 4 cells per row. This was the first mistake, **all cells don’t share the same width**. Since all orange items are the same width (200px) and all grey spans are the same width (unknown) and some cells contain 2 grey spans while some contain only one, all cells can’t be the same width. Cells on sides are shorter than cells in the middle of a row.
 

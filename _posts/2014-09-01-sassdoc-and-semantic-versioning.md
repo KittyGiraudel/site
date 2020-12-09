@@ -15,8 +15,6 @@ It looks like this: `major.minor.patch` (e.g. `1.3.37`). _Major_ version is for 
 
 ## Isn’t it too soon for `1.0.0`?
 
-> … I mean, project is not even a month old.
-
 We have started working on SassDoc mid-June and released the stable version of `1.0.0` on July 17th according to npm, so we basically took a month for the launch.
 
 When we were first talking about `1.0.0`, someone told us it was too soon because the projet needed to mature a bit first.
@@ -28,8 +26,6 @@ The project mature as we are working on it and as people start using it. There i
 ## You’ve released 4 minor versions in 2 weeks!
 
 Version `1.1.0` came on July 20th (3 days after `1.0.0`). Version `1.2.0` has been released on August 11th ([announced on Tuts+](https://webdesign.tutsplus.com/articles/new-features-and-a-new-look-for-sassdoc--cms-21914) the next day). Version `1.3.0` came one week later, on August 18th, and version `1.4.0` has been launched 2 days later, on August 20th. Finally, version `1.5.0` (latest stable as of writing) came on August 25th.
-
-> Between 10/08 and 25/08, we went from `1.1.0` to `1.5.0`.
 
 So indeed, between August 10th and August 25th, we went from `1.1.0` to `1.5.0`. So what?
 

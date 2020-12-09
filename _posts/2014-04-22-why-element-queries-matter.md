@@ -29,8 +29,6 @@ And all this has nothing to do with responsive design, yet. So you can imagine w
 
 ## The problem with media queries
 
-> Media queries are a hack.
-
 [Media queries are not a solution](https://ianstormtaylor.com/media-queries-are-a-hack/). At least not in this case. Media queries are great when we want to adapt the layout to the screen size. This is where they really kick off. But that’s not what we want. I mean, first we want to be able to make our component work great in all situations at a single screen width, we’ll see responsive issues _after_.
 
 And when switching from 1 to 2 to 3 columns, the viewport’s width has absolutely no impact on anything. It’s always the same. We don’t give a shit about the viewport’s size at the moment, we need to know how much space is available for the component depending on the layout used (and in a lesser extend the meta-component used).

@@ -6,7 +6,9 @@ keywords:
   - function
 ---
 
-> I wrote this article months ago when I was first experimenting with Sass 3.3 alpha features. I came up with a pretty wild solution to generate a random number in Sass. However it looks like [Sass 3.3 will implement a random function](https://github.com/nex3/sass/pull/968) so we won’t need all this stuff. I still publish it for fun. :)
+{% info %}
+I wrote this article months ago when I was first experimenting with Sass 3.3 alpha features. I came up with a pretty wild solution to generate a random number in Sass. However it looks like [Sass 3.3 will implement a random function](https://github.com/nex3/sass/pull/968) so we won’t need all this stuff. I still publish it for fun. :)
+{% endinfo %}
 
 Everything started when I was spying on Sass 3.3 source code on GitHub for my article about the [future of Sass](https://davidwalsh.name/future-sass) at David Walsh' Blog. I was sniffing the incoming functions when all of the sudden I came by a `unique-id()` function.
 

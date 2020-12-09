@@ -110,8 +110,6 @@ Here we have a `$colors` Sass list containing 5 colors, the first being the colo
 
 Then all we have to do is check if `$stars` is a valid index for `$colors`. If it is, we return the color at index `$stars`, else we return a default color (here `#333`). Simple and efficient.
 
-> Always verify inputs from your functions.
-
 Also note how we make our function secure by making sure `$stars` is a number. When building custom functions, always think about data validation. ;)
 
 ### Looping is fun, wheeee!

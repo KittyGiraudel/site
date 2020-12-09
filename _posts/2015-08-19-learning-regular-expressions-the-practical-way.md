@@ -33,7 +33,7 @@ Also, as it is forbidden to write about regular expressions without dropping som
 > Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems.
 > &mdash; Jamie Zawinski
 
-_Note: to play with regular expressions, I highly recommend [Regexr](https://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions._
+Note: to play with regular expressions, I highly recommend [Regexr](https://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions.
 
 ## Finding a use-case
 

@@ -8,7 +8,9 @@ edits:
     md: "[Git tips and tricks – Part 2](/2014/03/17/git-tips-and-tricks-part-2/) is out! Go check it."
 ---
 
-> The following is the first post of a series written by my dear brother Loïc, Git expert at Future PLC. I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!
+{% info %}
+The following is the first post of a series written by my dear brother Loïc, Git expert at Future PLC. I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!
+{% endinfo %}
 
 Hi people! Today, I’m gonna share with you some Git tips & tricks I’ve already shared with my workmates at Future PLC. But before even starting let’s never forget the more important laws of Git.
 
@@ -19,8 +21,6 @@ Hi people! Today, I’m gonna share with you some Git tips & tricks I’ve alrea
 Ok, now let’s start with the real tips & tricks…
 
 ## Use an awesome prompt
-
-> Each commit should leave the branch stable.
 
 If you have to often switch from one branch to another (like a Git monkey), having a great prompt is quite useful to know what is the current branch you’re working on, if you have modified some files, if you have some commits to push or to pull from the server, and so on.
 
@@ -56,8 +56,6 @@ This is the very basic when working with Git. Have you ever found yourself askin
 > How am I supposed to find a specific commit relative to a specific part of code?
 
 Thankfully there are quite a few ways to do this.
-
-> Each commit has only one purpose.
 
 ### With `git log -p`
 
@@ -230,5 +228,3 @@ It’s now easier to catch up with the changes: I’ve replaced the test wrappin
 ## Final thoughts
 
 I hope those little tricks will help. In the next part, I’ll continue with other small smart tricks before tackling some advanced Fit useful features.
-
-> Loïc Giraudel works as a frontend developer at Future PLC (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

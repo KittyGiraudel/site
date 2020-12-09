@@ -29,8 +29,6 @@ At first I thought about doing it myself and then…
 
 It would have been a pain in the ass to work out such a “complicated” layout so I thought about [Masonry](https://masonry.desandro.com/) but that’s kind of old school, right? In the end, I went with Isotope for layouting the items.
 
-> Isotope is the best JavaScript plugin I ever worked with.
-
 [Isotope](https://github.com/desandro/isotope) has to be the best JavaScript plugin I ever worked with. Developed by [David Desandro](https://v3.desandro.com/), **you can think of it as _Masonry 2.0_**. It makes complicated box-based layouts fully customizable and above all **easy**.
 
 The idea is quite simple: you define a container that will draw boundaries for the layout and Isotope will move all its child elements according to the available room.
@@ -133,8 +131,6 @@ Regarding the modal, I first tweaked it on small screens so it takes almost the 
 
 ## Dealing with high density displays
 
-> Dealing with retina displays is a pain in the ass.
-
 Let me tell you this: dealing with retina displays is a pain in the ass. God, this is so annoying. I don’t even know why we came to have such a thing… Did we really need it? In any case, this so-called “feature” involves a lot of things like:
 
 - having to deal with more files for every image,
@@ -177,8 +173,6 @@ The next step was to load images when they are needed. To put it simple, only lo
   />
 </li>
 ```
-
-> When viewing it on mobile, it goes down to 700 bytes.
 
 As you can see, the image source is a 1\*1px blank GIF while the actual source lies in the `data-original` attribute. Then the LazyLoad script checks all images to see whether they are above the fold or not; if they are, it swaps `src` with `data-original`. Everytime there is a scroll, it checks again. Lightweight and comfy.
 

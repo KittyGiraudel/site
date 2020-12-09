@@ -8,7 +8,9 @@ edits:
     md: "[Git tips and tricks – Part 3](/2014/03/24/git-tips-and-tricks-part-3/) is out! Go check it."
 ---
 
-> This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
+{% info %}
+This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
+{% endinfo %}
 
 Hey people! I hope you enjoyed the first part of the series. In this one, I will introduce you even more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced Git concepts and commands. Ready?
 
@@ -206,8 +208,6 @@ $ git push origin --delete myBranch
 
 ## Use a Git message template
 
-> Using a message template for Git commits is a good practice.
-
 Using a message template for Git commits is a good practice, especially in big projects with a lot of people involved. It helps finding commits relative to a specific feature, relative to a specific work team, etc.
 
 To change the default template, you can write a small text file somewhere on your disk, then reference it in your Git configuration:
@@ -320,8 +320,6 @@ Now we’ve covered the basics, let’s move on to some advanced Git techniques.
 * to dig deep in your commit history to find the origin of a bug
 * to juggle with many branches
 * to use some submodules to split your project into several parts
-
-> Each commit must have only one purpose.
 
 Each commit must have only one purpose (c.f. Law #2 at the beginning of the Git Tips & Tricks - Part 1), but it’s easy to find some small mistakes when editing a file. If you don’t want to add those little fixes when you’re creating your commit in order to put them in a dedicated commit, the best way is to split the file modifications when adding the file to the staging area.
 
@@ -498,5 +496,3 @@ That’s it for today folks! In the next parts, we’ll deal with the following 
 * submodules
 
 Meanwhile keep practicing!
-
-> Loïc Giraudel works as a frontend developer at Future PLC (Grenoble, France). He is a JavaScript and Git expert. You can catch him on Twitter: [@l_giraudel](https://twitter.com/l_giraudel).

@@ -14,8 +14,6 @@ There is more than just a click on a button opening a list of options to the `<s
 
 Now don’t get me wrong, the author at Pepsized did a wonderful job on this article, regarding both the design and the usability (which is far better than what I did at Codrops). (S)He is a good CSS developer, I don’t even question that. But once again, (s)he didn’t provide a CSS alternative to the `<select>` element. Let me clear things up point per point.
 
-> You can’t do a CSS alternative to the Select element.
-
 ## Accessibility
 
 The major concern here is **accessibility**. The default `<select>` element is completely usable either with a mouse or a keyboard, following this process:
@@ -50,8 +48,6 @@ In most cases, as a developer you will use a `<select>` element because you want
 Since the `<select>` element is a form element, it comes with a name attribute and the ability to send POST or GET data through a form. This means you can access the selected option by no more than `$_POST['name-of-select-element']` in PHP. With JavaScript, it will probably be something like `document.getElementById('name-of-select-element').value;`.
 
 Fine. Now let’s do this with CSS only. Uh-ho, not possible. If you’re clever enough, you’ll come up with a solution involving hidden radio inputs within your list items. Sounds fair enough; so… you end up using multiple form elements… not to use a form element. Right?
-
-> You end up using multiple form elements not to use a form element.
 
 Let’s say you don’t mind the extra-processing that comes with the multiple radio buttons compared to the regular `<select>` element…
 
