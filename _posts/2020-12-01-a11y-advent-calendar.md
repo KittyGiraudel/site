@@ -18,7 +18,7 @@ I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel
 - [Day 6: Skip to Content](#day-6-skip-to-content)
 - [Day 7: Page Title in SPA](#day-7-page-title-in-spa)
 - [Day 8: Alternative Text to Images](#day-8-alternative-text-to-images)
-- [Day 9: Forms](#day-9-connected-radio-inputs)
+- [Day 9: Forms](#day-9-forms)
 
 ## Day 1: What is Accessibility?
 
@@ -128,11 +128,9 @@ In this article for instance, the post title is a `<h1>` and then we have a bunc
 
 To check the structure of a document, we can use the same [accessibility bookmarklet](https://xi.github.io/a11y-outline/) we’ve mentioned yesterday. When activating it, one of the options is “Headings”, which lists all headings in order and level. From there, we can make sure the structure makes sense, headings are in the right order, and no level is skipped.
 
-{% info %}
-For years now, there have been discussions (and even proposals) about taking into consideration sectioning elements like `section` into the document outline to create sort of sub-structures where every root would go back to `h1`. This has never been implemented by any browser or supported by any assistive technology so this is basically moot at this point. Stick to appropriate heading levels.
+{% info %} For years now, there have been discussions (and even proposals) about taking into consideration sectioning elements like `section` into the document outline to create sort of sub-structures where every root would go back to `h1`. This has never been implemented by any browser or supported by any assistive technology so this is basically moot at this point. Stick to appropriate heading levels.
 
-For more information about the history behind the document outline and the proposed resolution algorithm, I encourage you to read [the Document Outline Dilemna](https://css-tricks.com/document-outline-dilemma/) by Amelia Bellamy-Royds which is a fantastic overview of the topic.
-{% endinfo %}
+For more information about the history behind the document outline and the proposed resolution algorithm, I encourage you to read [the Document Outline Dilemna](https://css-tricks.com/document-outline-dilemma/) by Amelia Bellamy-Royds which is a fantastic overview of the topic. {% endinfo %}
 
 ## Day 6: Skip to Content
 
@@ -178,9 +176,9 @@ You can play with a [live demo for skip links on CodePen](https://codepen.io/Hug
 
 ## Day 7: Page Title in SPA
 
-Single-page applications (SPA for short) have been all the hype for the last decade or so. The idea is that we can avoid reloading the entire page when navigating within a site and instead update only the moving parts (usually the content area). This comes from a great premise: faster interactions, no unnecessary HTTP roundtrips, less used bandwidth. 
+Single-page applications (SPA for short) have been all the hype for the last decade or so. The idea is that we can avoid reloading the entire page when navigating within a site and instead update only the moving parts (usually the content area). This comes from a great premise: faster interactions, no unnecessary HTTP roundtrips, less used bandwidth.
 
-The thing we usually don’t think about is that many assistive technologies such as screen-readers have been initially authored with the “original web” in mind and rely on page (re)loads to announce the page context, namely the page title (hold by the `<title>` element). 
+The thing we usually don’t think about is that many assistive technologies such as screen-readers have been initially authored with the “original web” in mind and rely on page (re)loads to announce the page context, namely the page title (hold by the `<title>` element).
 
 When building a SPA—no matter the framework—it is important to do some work to announce the title when following router links. Two things need to happen:
 
@@ -220,9 +218,7 @@ router.on('page:change', ({ title }) => {
 
 You can find a more in-depth [tutorial for React with `react-router` and `react-helmet`](https://hugogiraudel.com/2020/01/15/accessible-title-in-a-single-page-react-application/) on this blog. The core concept should be the same no matter the framework.
 
-{% info %}
-Note that if you have can guarantee there is **always** a relevant `<h1>` element (independently of loading states, query errors and such), another possibly simpler solution would be to skip that hidden element altogether, and focus the `<h1>` element instead (still with `tabindex="-1"`).
-{% endinfo %}
+{% info %} Note that if you have can guarantee there is **always** a relevant `<h1>` element (independently of loading states, query errors and such), another possibly simpler solution would be to skip that hidden element altogether, and focus the `<h1>` element instead (still with `tabindex="-1"`). {% endinfo %}
 
 ## Day 8: Alternative Text to Images
 
@@ -230,14 +226,14 @@ Ah, alt text! Alternative text to images has been an age old topic on the web. T
 
 There are countless resources on the web about authoring good alternative texts to images, my favourite of all is [this ultimate guide by Daniel Göransson](https://axesslab.com/alt-texts/), so I will just give a bit of a recap.
 
-- The alternative text is supposed to describe the image. This is not the appropriate place for credits or attributions. This is not the appropriate place for keywords stuffing (no place is). 
-- Focus on the main content and don’t go overboard with the details. Make it as concise and to the point as possible. 
+- The alternative text is supposed to describe the image. This is not the appropriate place for credits or attributions. This is not the appropriate place for keywords stuffing (no place is).
+- Focus on the main content and don’t go overboard with the details. Make it as concise and to the point as possible.
 - Do not mention that it is a photo, a picture or an image. This is already implied by the fact that this is in the `alt` attribute of an image.
 - If you can, end with a period so there is a pause after announcing it.
 
 Finally, there are some cases where you can leave out the alternative text entirely, and leave the attribute empty (`alt=""`):
 
-- If the image is decorative or does not help comprehension of the document. For instance, the image used as a masthead. 
+- If the image is decorative or does not help comprehension of the document. For instance, the image used as a masthead.
 - When the text would just repeat surrounding text, such as the image of an article tile or an icon within a link containing text.
 - When the image is part of a repeated list, such as users’ profile picture in a feed or a chat conversation.
 
@@ -264,15 +260,15 @@ Additionally, labels should indicate the expected format if any, and whether the
 
 ### Errors
 
-Poor error reporting has to be one of the main issues regarding forms on the web. And to some extent, I can understand why as it’s not very intuitive. 
+Poor error reporting has to be one of the main issues regarding forms on the web. And to some extent, I can understand why as it’s not very intuitive.
 
 First of all, errors should be reported per field instead of as a whole. Depending on the API in place, it’s not always possible unfortunately, and that’s why it’s important as frontend developers to be involved in API design as well.
 
-A field should be mapped to its error container through an `aria-describedby`/`id` attribute pair. It is very important that the error container is always present in the DOM regardless of whether there are errors (and not dynamically inserted with JS), so the mapping can be done on the accessibility tree. 
+A field should be mapped to its error container through an `aria-describedby`/`id` attribute pair. It is very important that the error container is always present in the DOM regardless of whether there are errors (and not dynamically inserted with JS), so the mapping can be done on the accessibility tree.
 
 ```html
 <label for="age">Age</label>
-<input type="number" name="age" id="age" aria-describedby="age-errors">
+<input type="number" name="age" id="age" aria-describedby="age-errors" />
 <div id="age-errors"></div>
 ```
 
@@ -282,11 +278,11 @@ After displaying an error, the focus should be moved to the relevant field. In c
 
 Disabled buttons cannot be discovered by screen-readers as they are, so-to-say, removed from the accessibility tree. Therefore, the usage of disabled buttons can cause an issue when the sole button of a form is undiscoverable by assistive technologies.
 
-To work around this problem, the submit button of a form should effectively never be `disabled` and should trigger form validation when pressed. 
+To work around this problem, the submit button of a form should effectively never be `disabled` and should trigger form validation when pressed.
 
-The button can have `aria-disabled="true"` to still be discoverable and indicate that it is technically not active (due to missing or invalid information for instance). CSS can be used to make a button with that ARIA attribute look like a disabled button to make it visually understandable as well. 
+The button can have `aria-disabled="true"` to still be discoverable and indicate that it is technically not active (due to missing or invalid information for instance). CSS can be used to make a button with that ARIA attribute look like a disabled button to make it visually understandable as well.
 
-There are some rare cases where having a fully `disabled` button is acceptable: 
+There are some rare cases where having a fully `disabled` button is acceptable:
 
 - A previous/next button when reaching the first/last item in a set. For instance, the navigation buttons of a slider.
 - Off-screen controls that should not be focusable at a given time. For instance, buttons within inactive slides in a slider.
@@ -298,14 +294,12 @@ Radio inputs with the same name should be grouped within a `<fieldset>` element 
 ```html
 <fieldset>
   <legend>How comfortable are you with #a11y?</legend>
-  <label for="very">
-    <input type="radio" name="a11y" id="very"> Very
-  </label>
+  <label for="very"> <input type="radio" name="a11y" id="very" /> Very </label>
   <label for="so-so">
-    <input type="radio" name="a11y" id="so-so"> So-so
+    <input type="radio" name="a11y" id="so-so" /> So-so
   </label>
   <label for="not-at-all">
-    <input type="radio" name="a11y" id="not-at-all"> Not at all
+    <input type="radio" name="a11y" id="not-at-all" /> Not at all
   </label>
 </fieldset>
 ```
