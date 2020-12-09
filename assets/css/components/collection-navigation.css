@@ -1,17 +1,24 @@
 .CollectionNavigation {
   font-size: 90%;
+  margin-top: calc(var(--vb) * 3);
+  position: relative;
+}
+
+.CollectionNavigation::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 4px;
+  background-image: linear-gradient(to right, #2984c2, #dd7eb4);
 }
 
 .CollectionNavigation__item {
   position: relative;
+  margin-top: var(--vb);
   line-height: 1.1;
-}
-
-.CollectionNavigation__link::before {
-  content: '';
-  display: block;
-  width: 100%;
-  margin: 0.5em 0 0;
 }
 
 .CollectionNavigation__item--previous::before,
@@ -56,5 +63,12 @@
 
   .CollectionNavigation__item--next::after {
     content: '→';
+  }
+
+  .CollectionNavigation__link::before {
+    content: '';
+    display: block;
+    width: 100%;
+    margin: calc(var(--vb) / 3) 0 0;
   }
 }

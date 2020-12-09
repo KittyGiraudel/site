@@ -5,6 +5,7 @@ html {
   box-sizing: border-box; /* 1 */
   --code-font: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
     'Courier', monospace;
+  --vb: 1.5em;
 }
 
 /**
@@ -61,8 +62,39 @@ hr {
   border: 0;
 }
 
+h2,
+h3 {
+  margin-top: var(--vb);
+  margin-bottom: calc(var(--vb) / 2);
+}
+
 p {
-  margin: 1.5em 0;
+  margin: calc(var(--vb) / 2) 0;
+}
+
+ul,
+ol {
+  padding-left: 1em;
+  margin: calc(var(--vb) / 2) 0;
+}
+
+li {
+  margin: calc(var(--vb) / 6) 0;
+}
+
+ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/**
+ * 1. Warning, potentially dangerous if using inline images.
+ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* 1 */
+  margin: var(--vb) 0;
 }
 
 /**
@@ -103,25 +135,4 @@ a[data-visited]:not([href^='#'])::after {
 
 a:visited {
   color: inherit;
-}
-
-/**
- * 1. Warning, potentially dangerous if using inline images.
- */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block; /* 1 */
-  margin: 1.5em 0;
-}
-
-ul,
-ol {
-  padding-left: 1em;
-  margin: 1.5em 0;
-}
-
-ul ul {
-  margin-top: 0;
-  margin-bottom: 0;
 }

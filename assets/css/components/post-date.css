@@ -1,6 +1,6 @@
 .PostDate {
   text-align: center;
-  margin-bottom: 3em;
+  margin-bottom: calc(var(--vb) * 2);
 }
 
 .PostDate::after {
@@ -8,7 +8,7 @@
   display: block;
   width: 25%;
   height: 1px;
-  margin: 1em auto 0;
+  margin: calc(var(--vb) / 2) auto 0;
   background-color: #2984c2;
   background-image: linear-gradient(to right, #dd7eb4, #2984c2);
 }

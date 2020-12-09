@@ -3,7 +3,7 @@
  * 1. Computed height to minimise CLS.
  */
 .Ad {
-  margin: 1.5em 0;
+  margin: var(--vb) 0;
   height: 118px; /* 1 */
 }
 

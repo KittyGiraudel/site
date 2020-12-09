@@ -1,6 +1,6 @@
 blockquote,
 .Info {
-  margin: 1.5em 0;
+  margin: var(--vb) 0;
   padding: 0.75em 1.5em;
   position: relative;
   background-color: #f3f8fc;
@@ -46,12 +46,4 @@ blockquote > :first-child {
 .Info > :last-child,
 blockquote > :last-child {
   margin-bottom: 0; /* 1 */
-}
-
-/**
- * 1. Reduce the spacing between paragraphs.
- */
-.Info p,
-blockquote p {
-  margin-bottom: 0.75em; /* 1 */
 }

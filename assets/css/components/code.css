@@ -1,9 +1,14 @@
+/**
+ * 1. Prevent `em` values from being different due to the browser applying a
+ *    monospace font by default.
+ */
 pre {
-  margin: 1.5em 0;
+  margin: var(--vb) 0;
   padding: 1.25em 1.5em;
   overflow: auto;
   position: relative;
   background-color: #fffafd;
+  font-family: inherit; /* 1 */
 }
 
 @media (min-width: 1024px) {
