@@ -5,13 +5,12 @@ keywords:
   - px
   - rem
   - mixin
+edits:
+  - date: 2014/11/16
+    md: I have changed my mind again and no longer use Sass to “remify”. In most projects, I’ve noticed it’s better to use a postprocessor such as [px_to_rem](https://github.com/songawee/px_to_rem).
+  - date: 2014/05/13
+    md: This article is getting old and while it still is perfectly valid, I have kind of changed my mind about this whole px to rem thing. I now use something simpler, like [this mixin](https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/).
 ---
-
-> **Edit (2014/11/16):** I have changed my mind again and no longer use Sass to “remify”. In most projects, I’ve noticed it’s better to use a postprocessor such as [px_to_rem](https://github.com/songawee/px_to_rem).
-
-<!-- -->
-
-> **Edit (2014/05/13):** this article is getting old and while it still is perfectly valid, I have kind of changed my mind about this whole px to rem thing. I now use something simpler, like [this mixin](https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/).
 
 ## About REM
 

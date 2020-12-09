@@ -5,9 +5,10 @@ keywords:
   - matrix
   - release
   - sassymatrix
+edits:
+  - date: 2015/06/06
+    md: This is an experiment, please don’t use this code in production.
 ---
-
-> **Edit (2015/06/06)**: this is an experiment, please don’t use this code in production.
 
 Sass is much more than just a CSS preprocessor. You can do ton of things you’re not supposed to do and won’t ever do except in your crazy demos. This is what is amazing about Sass: it can be use for (pseudo-)programming as well!
 

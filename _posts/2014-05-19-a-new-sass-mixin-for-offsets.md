@@ -4,9 +4,10 @@ keywords:
   - sass
   - mixin
   - offsets
+edits:
+  - date: 2015/06/06
+    md: One year later, I know think it’s better not to have a mixin for this. Less Sass, more native CSS.
 ---
-
-> **Edit (2015/06/06)**: One year later, I know think it’s better not to have a mixin for this. Less Sass, more native CSS.
 
 About a year ago, I wrote about how I managed to come up with what I think is [a clever Sass mixin to deal with offset positioning](/2013/08/05/sass-mixin-for-offsets/) in CSS, also known as `top`, `right`, `bottom` and `left`.
 

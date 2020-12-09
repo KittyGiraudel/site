@@ -4,9 +4,10 @@ keywords:
   - sass
   - placeholders
   - extend
+edits:
+  - date: 2015/06/06
+    md: This is an experiment, please don’t use this code in production.
 ---
-
-> **Edit (2015/06/06)**: this is an experiment, please don’t use this code in production.
 
 Yesterday I released [Getting the most out of Sass placeholders](/2014/03/31/getting-the-most-out-of-sass-placeholders/), where I explained how I came up with a little technique to work around the fact `@extend` doesn’t work whenever you’re in a `@media` block.
 

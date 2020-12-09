@@ -3,9 +3,10 @@ title: Blog changes
 keywords:
   - blog
   - writing
+edits:
+  - date: 2013/01/22
+    md: I did a lot of changes after writing this post notably regarding SEO, performances and accessibility. Be sure you read about it!
 ---
-
-> **Edit (2013/01/22):** I did a lot of changes after writing this post notably regarding SEO, performances and accessibility. Be sure you read about it!
 
 Hi people! It’s now been two months since I launched the new and active version of hugogiraudel.com and I took the opportunity to make a few changes. Let me introduce them, hoping you find them cool. :)
 

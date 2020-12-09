@@ -4,9 +4,10 @@ keywords:
   - css
   - grid
   - layout
+edits:
+  - date: 2014/05/13
+    md: It looks like Internet Explorer is not the only browser to support the Grid Layout anymore since Chrome 34+ seems able to handle it quite well without any prefix. To the future!
 ---
-
-> **Edit (2014/05/13):** it looks like Internet Explorer is not the only browser to support the Grid Layout anymore since Chrome 34+ seems able to handle it quite well without any prefix. To the future!
 
 In the last few days/weeks, I have been helping Chris Coyier with [CSS-Tricks' Almanac](https://css-tricks.com/almanac/). It seems he doesn’t have enough time to fill the last remaining entries, so we’ve been a few to help him out by writing them. I have done [perspective](https://css-tricks.com/almanac/properties/p/perspective/), [perspective-origin](https://css-tricks.com/almanac/properties/p/perspective-origin/) and [grid](https://css-tricks.com/almanac/properties/g/grid/).
 

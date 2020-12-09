@@ -3,9 +3,10 @@ title: Understanding Sass lists
 keywords:
   - sass
   - lists
+edits:
+  - date: 2015/05/28
+    md: After realising this article ranks up incredibly high on _Sass_ Google searches, I come back to it to clear a few things up. Deletions are lined-through, additions are in italic.
 ---
-
-> **Edit (2015/05/28):** After realising this article ranks up incredibly high on _Sass_ Google searches, I come back to it to clear a few things up. Deletions are lined-through, additions are in italic.
 
 Lists have to be the most complicated and vicious thing in the whole Sass language. The main problem with lists -if a problem it is- is that the syntax is way too permissive. You can do pretty much whatever you want.
 

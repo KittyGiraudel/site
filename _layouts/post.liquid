@@ -29,6 +29,7 @@ layout: default
   {% endif %}
 
   <div itemtype="articleBody">
+    {% include "post_edits.html", edits: edits %}
     {{ content }}
   </div>
 

@@ -3,9 +3,10 @@ title: Chromebook review
 keywords:
   - chromebook
   - review
+edits:
+  - date: 2014/11/16
+    md: I no longer own a Chromebook.
 ---
-
-> **Edit (2014/11/16):** I no longer own a Chromebook.
 
 As you may know already, I recently bought a **Samsung Chromebook**. Since it is a fairly new computer and reviews can be quite rare, I thought it would be a good idea to give you my feeling after a couple of weeks of daily use.
 

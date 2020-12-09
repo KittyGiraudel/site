@@ -4,9 +4,10 @@ keywords:
   - sass
   - guidelines
   - release
+edits:
+  - date: 2015/01/07
+    md: Over 20000 visits on [Sass Guidelines](https://sass-guidelin.es) during the last 24 hours. Thank you so much for your support!
 ---
-
-> **Edit (2015/01/07):** over 20000 visits on [Sass Guidelines](https://sass-guidelin.es) during the last 24 hours. Thank you so much for your support!
 
 I don’t know why I did not think of writing Sass guidelines when [Harry Roberts](https://csswizardry.com) first released his [CSS Guidelines](https://cssguidelin.es) a couple of months back. Anyway, on saturday evening I had a _eureka moment_:
 

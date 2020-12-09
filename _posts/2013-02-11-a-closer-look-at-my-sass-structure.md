@@ -3,9 +3,10 @@ title: A closer look at my Sass structure
 keywords:
   - sass
   - architecture
+edits:
+  - date: 2014/05/13
+    md: After a year, I got much better with Sass. I suggest you have a look at [this post about Sass architecture](https://www.sitepoint.com/architecture-sass-project/).
 ---
-
-> **Edit (2014/05/13):** after a year, I got much better with Sass. I suggest you have a look at [this post about Sass architecture](https://www.sitepoint.com/architecture-sass-project/).
 
 Hi people! Ever since the redesign a few weeks ago I have never stopped trying optimizing the performance of the site. One of my biggest concerns was having a stylesheet which is both nice and efficient.
 

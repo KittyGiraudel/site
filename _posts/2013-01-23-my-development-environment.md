@@ -2,17 +2,14 @@
 title: My development environment
 keywords:
   - thoughts
+edits:
+  - date: 2014/11/16
+    md: I don’t use Windows anymore. I moved to macOS and Ubuntu. Also I don’t use Canary/Aurora anymore, I switched back to regular versions. I updated Sublime Text to v3. And I suck much less at Git.
+  - date: 2014/05/13
+    md: Things have changed again. I don’t use a FTP client anymore, and I have ditched Compass from nearly all my projects.
+  - date: 2013/02/21
+    md: This post might contain outdated informations since I [moved my site to Jekyll and GitHub Pages](/2013/02/21/moving-to-jekyll/).
 ---
-
-> **Edit (2014/11/16):** I don’t use Windows anymore. I moved to macOS and Ubuntu. Also I don’t use Canary/Aurora anymore, I switched back to regular versions. I updated Sublime Text to v3. And I suck much less at Git.
-
-<!-- -->
-
-> **Edit (2014/05/13):** things have changed again. I don’t use a FTP client anymore, and I have ditched Compass from nearly all my projects.
-
-<!-- -->
-
-> **Edit (2013/02/21):** this post might contain outdated informations since I [moved my site to Jekyll and GitHub Pages](/2013/02/21/moving-to-jekyll/).
 
 Hey people! I recently blogged about the tools I use for frontend development, but someone pointed out on Twitter I didn’t tell anything about my development environment. Let’s fix my mistake and talk about it!
 

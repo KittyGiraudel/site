@@ -5,9 +5,10 @@ keywords:
   - JSON
   - SassyJSON
   - releaase
+edits:
+  - date: 2014/11/16
+    md: Please, don’t use this in a live project. If you come up with a case where you need to parse/encode JSON in Sass, consider having a Ruby/C/whatever helper function for this.
 ---
-
-> **Edit (2014/11/16):** please, don’t use this in a live project. If you come up with a case where you need to parse/encode JSON in Sass, consider having a Ruby/C/whatever helper function for this.
 
 If you are a reader of CSS-Tricks, you might have come across this article a while back about [making Sass talk to JavaScript with JSON](https://css-tricks.com/making-sass-talk-to-javascript-with-json/). The main idea behind this write up is to provide a way for JavaScript to access content from the stylesheet (a.k.a. CSS).
 

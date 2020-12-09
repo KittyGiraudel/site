@@ -6,9 +6,10 @@ keywords:
   - release
   - cast
   - SassyCast
+edits:
+  - date: 2014/11/16
+    md: Remember that type casting is often a symptom of poorly designed code. This should probably stay an experiment.
 ---
-
-> **Edit (2014/11/16):** remember that type casting is often a symptom of poorly designed code. This should probably stay an experiment.
 
 To _cast_ an entity means changing its data type to another one. This very particular thing so common in all programming languages can turn out to be a huge pain in the (S)ass. Mostly because Sass is not a programming language but that’s not the point.
 

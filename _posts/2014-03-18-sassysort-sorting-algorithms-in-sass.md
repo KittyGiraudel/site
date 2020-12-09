@@ -4,9 +4,10 @@ keywords:
   - sass
   - sort
   - release
+edits:
+  - date: 2015/06/06
+    md: This is an experiment, please don’t use this code in production.
 ---
-
-> **Edit (2015/06/06)**: this is an experiment, please don’t use this code in production.
 
 The idea of building a sorting function in pure Sass isn’t new. I think everything started months ago when a fellow folk on Twitter asked how I would build a Sass function to sort a list of numeric values in order to create a modular scale. It was actually quite easy to do even if it could probably be optimized.
 

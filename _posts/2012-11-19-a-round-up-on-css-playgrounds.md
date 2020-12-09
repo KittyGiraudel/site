@@ -3,9 +3,10 @@ title: A round-up on CSS playgrounds
 keywords:
   - css
   - playground
+edits:
+  - date: 2014/11/16
+    md: This article is quite old. Information might be incorrect.
 ---
-
-> **Edit (2014/11/16):** this article is quite old. Information might be incorrect.
 
 ## What is a code playground?
 

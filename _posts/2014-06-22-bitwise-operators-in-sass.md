@@ -5,9 +5,10 @@ keywords:
   - bitwise
   - experiment
   - release
+edits:
+  - date: 2015/06/06
+    md: This is an experiment, please don’t use this code in production.
 ---
-
-> **Edit (2015/06/06)**: this is an experiment, please don’t use this code in production.
 
 A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) and I had the crazy idea of implementing bitwise operators in Sass. It went like this:
 

@@ -3,11 +3,10 @@ guest: Loïc Giraudel
 title: Git tips and tricks – Part 2
 keywords:
   - git
+edits:
+  - date: 2014/03/24
+    md: "[Git tips and tricks – Part 3](/2014/03/24/git-tips-and-tricks-part-3/) is out! Go check it."
 ---
-
-> **Edit (2014/03/24):** [Git tips and tricks – Part 3](/2014/03/24/git-tips-and-tricks-part-3/) is out! Go check it.
-
-<!-- -->
 
 > This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
 

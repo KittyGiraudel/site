@@ -2,9 +2,10 @@
 title: How I start a new project
 keywords:
   - frontend
+edits:
+  - date: 2014/11/16
+    md: This post is outdated. Note that I do not work like this anymore.
 ---
-
-> **Edit (2014/11/16):** this post is outdated. Note that I do not work like this anymore.
 
 Hi people! I recently asked on Twitter a topic to blog about because I had frankly no idea. Christoph Rumpel ([@christophrumpel](https://twitter.com/christophrumpel)) proposed something about the way I start a new project. I thought it could be a good idea, plus I’m currently working on a new project at work so it may help me as well!
 

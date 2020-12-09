@@ -5,9 +5,10 @@ keywords:
   - css
   - gallery
   - release
+edits:
+  - date: 2014/11/16
+    md: I took time to improve this site. It now works fine without JavaScript and has been ported to Jekyll. Also both Sass and JavaScript code have been improved.
 ---
-
-> **Edit (2014/11/16):** I took time to improve this site. It now works fine without JavaScript and has been ported to Jekyll. Also both Sass and JavaScript code have been improved.
 
 Hey people! I recently had the opportunity to work on a cool little project I’d like to talk about: an advanced image gallery with some really cool features. Indeed, I’ve been asked to design and develop the site of [Alix Lucas](http://whyalix.com) to promote her work as a French photographer. Since I’m a big fan of her work, I accepted and it turned out to be quite fun to work on this project.
 

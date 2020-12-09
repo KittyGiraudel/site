@@ -3,9 +3,10 @@ title: 8 Compass features you may not know
 keywords:
   - sass
   - compass
+edits:
+  - date: 2014/11/16
+    md: I no longer use Compass. Just sayin'.
 ---
-
-> **Edit (2014/11/16):** I no longer use Compass. Just sayin'.
 
 [Compass](https://compass-style.org/) is a CSS authoring framework dedicated to [Sass](https://sass-lang.com/). Not only is it insanely powerful, but it also includes a large range of built-in functions and mixins, easing daily tasks.
 

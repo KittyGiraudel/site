@@ -1,0 +1,7 @@
+{% if edits %}
+<div class="Info">
+  {% for edit in edits %}
+    <p><strong>Edit {{ edit.date | time }}:</strong> {{ edit.md | markdown }}</p>
+  {% endfor %}
+</div>
+{% endif %}
