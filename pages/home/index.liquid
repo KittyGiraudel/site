@@ -22,7 +22,14 @@ at [N26](https://n26.com) for over 4 years and am about to get started at [Goril
 in accessibility and inclusivity. For a longer version, [read more about me](/about/).
 {% endmarkdown %}
 
-{% assign latest_articles = collections.posts | slice: 0, 3 %}
+{% assign advent_calendar = '' %}
+{% for post in collections.posts %}
+  {% if post.url == '/2020/12/01/a11y-advent-calendar/' %}
+    {% assign advent_calendar = post %}
+  {% endif %}
+{% endfor %}
+
+{% assign latest_articles = collections.posts | slice: 0, 2 | concat: advent_calendar %}
 {% include "showcase.html",
   type: "article",
   title: "Latest articles",
