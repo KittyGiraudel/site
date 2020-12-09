@@ -8,7 +8,8 @@ keywords:
 
 The other day, [Harry Roberts](https://twitter.com/csswizardry) featured a snippet of code from his own site [on Twitter](https://twitter.com/csswizardry/status/489038580128686081), asking for some ways to improve it (if any). What Harry did was computing by hand the keyframes of a carousel animation, thus claiming that high school algebra indeed **is** useful.
 
-> “Why do we have to learn algebra, Miss? We’re never going to use it…” &mdash;Everyone in my maths class [bit.ly/UaM2wf](https://bit.ly/UaM2wf)
+> “Why do we have to learn algebra, Miss? We’re never going to use it…”  
+> &mdash;Everyone in my maths class [bit.ly/UaM2wf](https://bit.ly/UaM2wf)
 
 ## What’s the idea?
 

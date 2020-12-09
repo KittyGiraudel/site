@@ -86,7 +86,7 @@ I have recently been taught the word “sonder”. That is the realisation that 
 
 I have absurdly high expectations for myself, and sometimes I expect people to do the same about themselves. That’s not quite how things work though, and every one is trying to do the best they can. The [Prime Directive of Agile](https://retrospectivewiki.org/index.php?title=The_Prime_Directive) says something similar:
 
-> “[W]e understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.”
+> “[W]e understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.”  
 > — [The Prime Directive of Agile](https://retrospectivewiki.org/index.php?title=The_Prime_Directive)
 
 I guess the lesson here is to manage expectations. Sometimes we’re in the wrong assuming people don’t want responsibilities. What’s important is that people get to decide when they’re ready, so they remain in control of their personal growth.
