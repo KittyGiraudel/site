@@ -182,4 +182,4 @@ Thanks to LazyLoad, I could bring down the page to 380Kb on a regular desktop sc
 
 Even if it is a really really small projects (took me a couple of hours), I have to say I am pretty satisfied with the current look. It feels nice and smooth on both a desktop screen and a mobile device. Image performance was pretty fun to deal with and I learnt quite a few things in the way.
 
-Anyway, if you got any tip, advice or comment, be sure to share! Meanwhile, you can still follow [@isendil](https://twitter.com/isendil) on Twitter for more awesome photos. ;)
+Anyway, if you got any tip, advice or comment, be sure to share! Meanwhile, you can still follow [@whyalix](https://twitter.com/whyalix) on Twitter for more awesome photos. ;)
