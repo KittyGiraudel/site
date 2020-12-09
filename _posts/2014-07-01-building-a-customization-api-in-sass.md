@@ -7,7 +7,7 @@ keywords:
 ---
 
 {% info %}
-I am glad to have [Ezekiel Gabrielse](https://ezekielg.com/) today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts boys, this is quite intense!
+I am glad to have [Ezekiel Gabrielse](https://ezekielg.com/) today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts peeps, this is quite intense!
 {% endinfo %}
 
 Hey people! I am the creator of a relatively new Sass grid-system called [Flint](https://github.com/ezekg/flint), and a lightweight Compass extension called [SassyExport](https://github.com/ezekg/SassyExport), which we will be discussing throughout this series.

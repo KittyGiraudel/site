@@ -6,7 +6,7 @@ keywords:
   - configuration
 ---
 
-One thing I was really looking forward with [Sass maps](https://viget.com/extend/sass-maps-are-awesome) is the ability to have configuration objects for functions and mixins. You know how you pass objects to your JavaScript class constructors instead of several parameters? Well fasten your belt boys because I’m bringing this to Sass!
+One thing I was really looking forward with [Sass maps](https://viget.com/extend/sass-maps-are-awesome) is the ability to have configuration objects for functions and mixins. You know how you pass objects to your JavaScript class constructors instead of several parameters? Well fasten your belt peeps because I’m bringing this to Sass!
 
 ## An insight in the JS way of doing
 
