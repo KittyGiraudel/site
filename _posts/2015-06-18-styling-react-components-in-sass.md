@@ -287,7 +287,6 @@ Personally, I wouldn’t include 3rd-party styling at all, as the more style dep
 React components can be styled in Sass in an efficient, flexible, and maintainable way by using a proper organizational structure, such as SMACSS and the 7-1 pattern. If you know Sass, there’s no new libraries to learn, and no extra dependencies besides React and Sass.
 
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/rmurphey">@rmurphey</a> those problems can all be solved with good architecture and preprocesseors  <a href="https://t.co/JqbK3SBD6d">https://t.co/JqbK3SBD6d</a></p>— Una Kravets (@Una) <a href="https://twitter.com/Una/status/608271323941486592">June 9, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 The problems that Christopher Chedeau lists in his “CSS in JS” presentation are valid problems, albeit ones that are easily solved with a well-defined stylesheet architecture, organizational structure, and Sass (or any other preprocessor). Styling the web isn’t easy, and there are many very useful open-source Sass tools and libraries for grids, typography, breakpoints, animations, UI pattern libraries, and more to help develop stylesheets for components much more efficiently. Take advantage of these Sassy resources.
 
