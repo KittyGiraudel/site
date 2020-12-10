@@ -24,7 +24,10 @@ a.demo-link.demo-link {
   vertical-align: middle;
 }
 
+a.demo-link.demo-link:hover,
+a.demo-link.demo-link:active,
 a.demo-link.demo-link:focus {
+  transform: rotate(-3deg);
   box-shadow: 0 0 0 3px white, 0 0 0 4px  #dd7eb4;
 }
 
