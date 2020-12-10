@@ -41,7 +41,7 @@ a.demo-link.demo-link:focus {
 
 In modern web design, it is not uncommon to have a link (or a button) that visually has no text, and is just an icon. Think about social icons, or items in a compact navbar. Relying solely on iconography can be tricky, but it can work, especially when icons are clear and well known.
 
-Yet, even if no text is technically displayed, it is important to provide alternative content for people using screen-readers. It turns out making an accessible *icon link* is not that straightforward and I thought it would deserve its own little article.
+Yet, even if no text is technically displayed, it is important to provide alternative content for people using screen-readers. It turns out making an accessible _icon link_ is not that straightforward and I thought it would deserve its own little article.
 
 ## Implementation
 
@@ -73,6 +73,10 @@ Unfortunately, at this stage this link contains no accessible name, which is a b
   <span class="sr-only">Twitter</span>
 </a>
 ```
+
+{% info %}
+Chris Heilmann asked me whether using the `aria-label` attribute or a `<title>` element in the SVG would be simpler than having a visually hidden element. The latter solution provides [better support with older assistive technologies](https://twitter.com/goetsu/status/1334596736833232896?s=20) and avoids [`aria-label` internationalisation issues](https://heydonworks.com/article/aria-label-is-a-xenophobe/).
+{% endinfo %}
 
 There is still a bit more we need to do. Since we provided a descriptive text, we can safely remove the SVG markup from the accessibility tree by adding the `aria-hidden` attribute.
 
