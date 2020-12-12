@@ -41,8 +41,8 @@ Now, I wanted to minimise the amount of boilerplate needed to include some speci
 {% include "styles.html", paths: "
   components/blockquote,
   components/code,
+  components/figure,
   components/footnotes,
-  components/image,
   components/post-date,
   components/post-navigation,
   components/table

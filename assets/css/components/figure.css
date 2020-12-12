@@ -1,5 +1,6 @@
 .figure {
   margin: var(--vb) 0;
+  position: relative;
 }
 
 .figure figcaption {
@@ -16,4 +17,20 @@
   background-image: linear-gradient(to right, #dd7eb4, #2984c2);
   margin-top: -0.5em;
   margin-bottom: 1em;
+}
+
+@media (min-width: 1400px) {
+  .figure figcaption {
+    width: 100%;
+    max-width: 250px;
+    position: absolute;
+    right: 100%;
+    top: 0.5em;
+    text-align: right;
+    padding-right: 2.5em;
+  }
+
+  .figure figcaption::before {
+    margin-bottom: 1.5em;
+  }
 }
