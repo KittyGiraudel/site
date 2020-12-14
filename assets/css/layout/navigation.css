@@ -31,6 +31,10 @@
   outline: 0;
 }
 
+.Navigation__link:visited {
+  color: #2984c2;
+}
+
 .Navigation__link::before {
   content: '';
   position: absolute;
