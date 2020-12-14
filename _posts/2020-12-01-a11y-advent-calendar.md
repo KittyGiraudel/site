@@ -23,6 +23,7 @@ I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel
 - [Day 11: Emojis](#day-11-emojis)
 - [Day 12: Readability](#day-12-readability)
 - [Day 13: Zooming](#day-13-zooming)
+- [Day 14: Captions](#day-14-captions)
 
 ## Day 1: What is Accessibility?
 
@@ -359,13 +360,11 @@ Assigning the description programmatically is harder. It turns out [there is no 
 
 For a medium as text-focused as the web, readability has to be something we have to talk about. Besides making it more comfortable for everyone, taking special care to make content readable helps people with a various range of disabilities, such as color-blindness or dyslexia.
 
-{% info %}
-While doing research for this article, I learnt about the difference between legibility and readability. The former is the product of the design of a font, based on its characteristics such as height, width, and thickness. Readability on the other hand is related to how the font is used, such as font size, letter spacing, line height and color.
-{% endinfo %}
+{% info %} While doing research for this article, I learnt about the difference between legibility and readability. The former is the product of the design of a font, based on its characteristics such as height, width, and thickness. Readability on the other hand is related to how the font is used, such as font size, letter spacing, line height and color. {% endinfo %}
 
 The first thing to remember when it comes to readability is that there is no one-size-fit-all solution. While there are commonly accepted suggestions such as avoiding small sizes and enabling decent color contrast, it is good to remember that everyone is different and what works for me might not work for you.
 
-As an example, a couple years back a person came to me after my talk on accessibility and told me that my advice about having super sharp contrast for body text was not always working for them, a dyslexic person who prefers something a little more toned down. Along the same lines, some people might find serif fonts easier to read, and some not. 
+As an example, a couple years back a person came to me after my talk on accessibility and told me that my advice about having super sharp contrast for body text was not always working for them, a dyslexic person who prefers something a little more toned down. Along the same lines, some people might find serif fonts easier to read, and some not.
 
 {% assign wcag_color = "It has been repeatedly shown that [the contrast model is flawed](https://mobile.twitter.com/adamwathan/status/1304490267769221121). It is [known and is being addressed](https://github.com/w3c/wcag/issues/695)." | markdown %}
 
@@ -401,3 +400,29 @@ Additionally, I use the pinch-and-zoom trackpad gesture from my MacBook Pro on e
 </figure>
 
 I’m fortunate that macOS provides this out of the box. Some people rely on assistive technologies for a similar feature. Note that screen magnifying techniques are ten times more common than usage of screen-readers, so it’s not an edge case that can easily be omitted. AxessLab has a good [post about considering screen magnifiers](https://axesslab.com/make-site-accessible-screen-magnifiers/).
+
+## Day 14: Captions
+
+Whether it’s for videos on the internet or cinematics in video games, captions are an essential accessibility feature. Note that we are talking about “closed captions” here, which are not about translating content—these are subtitles.
+
+For hard-of-hearing and deaf people of course, but also for people for whom processing audio might not be possible (such as those without headphones in a loud environment) or overwhelming (which can be the case for people on the autistic spectrum). They are also very handy for non-native speakers for whom understanding content might be easier when seeing it written rather than just spoken out.
+
+It turns out that authoring good captions is actually surprisingly difficult, and the quality from source to source greatly varies. Here is a collection of tips to make captions as useful as possible:
+
+- Captions should usually live in the safe area of a 16:9 screen resolution, at the bottom of the screen. They might be temporarily moved when obscuring relevant visual content such as embedded text.
+
+- Captions are meant to be read, and therefore their size matter. They should be big enough to be readable at most distances but not too big that they would need to be refreshed too often.
+
+- Like for any text content, contrast is key. The ideal colors for captions on a solid dark background are white, yellow and cyan. Colors can also be used to denote different speakers within a conversation, which can really help understanding.
+
+- The length of captions should be kept short (~40 characters) and the text should not stick to the sides since differences in screen calibrating could cut the edges off. A caption should usually not exceed 2, maybe 3 lines.
+
+- Captions should be displayed for 1 or 2 seconds and changes of captions should come with a brief (200—300ms) uncaptioned pause to make sure the reader can acknowledge a change of text even when lines look alike (length, etc.).
+
+- Language-specific typographic rules should be respected. Words should be broken where possible according to the language they are depicted in, and sentences should be split on punctuation as much as possible.
+
+- Special care can be taken to make sure not to spoil upcoming events before they appear on screen. Nothing like knowing what happens before it actually does because the caption was too revealing.
+
+- Important sound effects and subtility (such as tone, emotions, loudness, music…) should be explicitly mentioned. Same thing if the sound/dialogue comes from something off-screen.
+
+As you can see, there are a lot of things to consider to make captions accessible. Some content might be easier to caption that others (single speaker, few editorial cuts, no sound effects or music…). The more attention is devoted to captions, the more accessible the content becomes. It is particularly critical when the main content of a given page or product is provided through videos (movie, series, screencasts…).
