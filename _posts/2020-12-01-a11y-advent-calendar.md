@@ -11,7 +11,7 @@ I am between jobs with a bit of free time, so I thought I would try something ne
 I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel free to share your opinion and tips under that hashtag as well!
 
 - [Day 1: What is Accessibility?](#day-1-what-is-accessibility)
-- [Day 2: Measuring Accessibility](#day-2-measuring-accessibility)
+- [Day 2: Evaluating Accessibility](#day-2-evaluating-accessibility)
 - [Day 3: Hiding Content](#day-3-hiding-content)
 - [Day 4: Self-Explanatory Links](#day-4-self-explanatory-links)
 - [Day 5: Document Outline](#day-5-document-outline)
@@ -432,9 +432,7 @@ As you can see, there are a lot of things to consider to make captions accessibl
 
 Content warnings are notices preceding potentially sensitive content. This is so users can prepare themselves to engage or, if necessary, disengage for their own wellbeing. Trigger warnings are specific content warnings that attempt to warn users of content that may cause intense physiological and psychological symptoms for people with post-traumatic stress or anxiety disorder (PTSD).
 
-{% info %}
-This seems like the perfect opportunity to point out that jokingly using the word “triggered” to mean “being bothered by something” can be considered quite inappropriate and ableist. PTSD triggers are a real thing, which can have dire consequences. It is considerate not to dismiss and minimise the difficult of such experience by misusing the term to describe it. Possible alternative: “grinds one’s gears” or “bothers”.
-{% endinfo %}
+{% info %} This seems like the perfect opportunity to point out that jokingly using the word “triggered” to mean “being bothered by something” can be considered quite inappropriate and ableist. PTSD triggers are a real thing, which can have dire consequences. It is considerate not to dismiss and minimise the difficult of such experience by misusing the term to describe it. Possible alternative: “grinds one’s gears” or “bothers”. {% endinfo %}
 
 At the core of content warnings, there is the need to acknowledge that every individual is different, and what might not be a sensitive topic to you might in fact be very difficult to approach for someone else. Trigger warnings are essentially an empathetic feature, and they need to be designed with an open mind.
 
@@ -444,9 +442,7 @@ Of course, it is not possible to account for every potential trigger. Everybody 
 
 Regarding the implementation, it could be as simple as a paragraph at the top of the main section mentioning the potentially sensitive topics. For instance:
 
-{% info %}
-**Trigger warnings:** Explicit Sex Scene, Self-Harm, Transphobia
-{% endinfo %}
+{% info %} **Trigger warnings:** Explicit Sex Scene, Self-Harm, Transphobia {% endinfo %}
 
 This is a pretty basic but effective approach. It could be enhanced with more information about trauma triggers, link(s) to mental health websites, and even a way to complement or update the list.
 
@@ -460,7 +456,6 @@ This is a pretty basic but effective approach. It could be enhanced with more in
 </a> ·<a href="#" style="margin-left: 1ch">Suggest different warnings</a>
 </p>
 </div>
-
 
 For audio and video content, it could be announced and/or shown at the beginning of the track. For imagery, it could be overlayed on top of the image, requiring a user interaction to effectively display the media. This is the approach taken by many social media such as Twitter.
 
