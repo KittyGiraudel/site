@@ -27,6 +27,7 @@ I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel
 - [Day 15: Content Warnings](#day-15-content-warnings)
 - [Day 16: Animations](#day-16-animations)
 - [Day 17: Anxiety](#day-17-anxiety)
+- [Day 18: Internationalisation](#day-18-internationalisation)
 
 ## Day 1: What is Accessibility?
 
@@ -496,3 +497,23 @@ Ultimately, it is difficult to figure out what people will feel uncomfortable wi
 - Provide reassurance. Any sensitive action should be marked as such (like placing an order, or deleting an entry), and it should be clear whether {% footnoteref "amazong_review" "One thing Amazon does very well by the way—despite being an awful company that we should all use less. At every step of the checkout process, it is clearly indicated next to the confirmation button whether there will be an opportunity to review the order one more time before placing it. "%}there will be an opportunity to review before confirming{% endfootnoteref %}. The ability to undo actions is also helpful to know that mistakes can be made and recovered from.
 
 Ultimately, a lot of the work in that regard is about deeply caring for users and staying away from aggressive marketing tactics which are heavily relying on inducing anxiety. As a further read, I highly recommend reading [A web of Anxiety](https://developer.paciellogroup.com/blog/2018/08/a-web-of-anxiety-accessibility-for-people-with-anxiety-and-panic-disorders-part-1/) by David Swallow from the Pacellio Group which goes more in details.
+
+## Day 18: Internationalisation
+
+If accessibility is the discipline aiming at providing equal access to everyone, then the internationalisation of content has to play an important part in it. Content provided in a language that is not understood by the user is pretty inaccessible.
+
+Localisation and internationalisation (sometimes shortened l10n and i18n respectively) are broad topics requiring a lot of knowledge to do well. Large companies tend to have teams dedicated to internationalisation and the proper localisation of content. It takes time and effort.
+
+Nevertheless, we can outline a certain amount of advice and things to consider to make sure the content is properly localised:
+
+- The `html` element should have a `lang` attribute (as in ISO2 code, e.g. `lang="en"`). Besides being indexed by search engines, it is used by screen-readers to use the appropriate language profile using the correct accent and pronunciation. Elements containing text in another language should be equally marked as such, for the same reason. If a page in English contains a sentence in Arabic, the DOM element containing that text should be marked as `lang="ar"`.
+
+- Links pointing to a resource in another language than the one the page is displayed in should be marked with the `hreflang` attribute. For instance, if this page were to link to a page in Russian, the link would need to be marked with `hreflang="ru"`.
+
+- Flags should exclusively be used to represent countries, not languages. For instance, while French is mainly spoke in France, it is also spoken in Congo and Canada—among other territorial entities. Or Spanish, which is spoken all over South America, but too often represented with a Spain flag. Flags are for countries, not languages.
+
+- Dates and currencies should ideally be authored in the format conveyed by the language of the page. For instance, a document authored in American English should use the American date format `MM-DD-YYYY`, when a page in German should use the German one `DD.MM.YYYY`. Content in French should author currencies the French way such as “42 €” with a space between the amount and the symbol, which lives after the amount. Libraries like [Luxon](https://moment.github.io/luxon/) and [accounting.js](https://www.npmjs.com/package/accounting) can help with this process.
+
+- Be mindful of bias when designing interfaces and the systems supporting them. For instance, having one first name and one last name is quite an occidental structure. All around the world, people have many names, middle names, initials, no first name, no last name, names with a single character… If you have never read [Falsehoods Programmers Believe About Names](https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/), I cannot recommend it enough.
+
+Internationalisation is hard to do well. It takes time and effort, and remembering that what we consider “normal” might be very different from the norms and culture in other places of the globe. In a world as connected as ours, we need to put aside our bias and design systems which fit everyone, whoever they are, and wherever they come from.
