@@ -28,6 +28,7 @@ I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel
 - [Day 16: Animations](#day-16-animations)
 - [Day 17: Anxiety](#day-17-anxiety)
 - [Day 18: Internationalisation](#day-18-internationalisation)
+- [Day 19: Performance](#day-19-performance)
 
 ## Day 1: What is Accessibility?
 
@@ -519,3 +520,23 @@ Nevertheless, we can outline a certain amount of advice and things to consider t
 - Be mindful of bias when designing interfaces and the systems supporting them. For instance, having one first name and one last name is quite an occidental structure. All around the world, people have many names, middle names, initials, no first name, no last name, names with a single character… If you have never read [Falsehoods Programmers Believe About Names](https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/), I cannot recommend it enough.
 
 Internationalisation is hard to do well. Mistakes will be made, and it’s never going to be perfect. It’s a matter of iterating on it and doing better. In a world as connected as ours, we as organisations providing content and products, need to put aside our bias and design systems which fit everyone, whoever they are, and wherever they come from.
+
+## Day 19: Performance
+
+Performance, or rather the lack thereof, can definitely be considered an accessibility topic. If the content never shows up, it’s not accessible—in the most basic sense of the word.
+
+A few years back, [Harry Roberts mentioned an anecdote in one of his talks]() where he got the opportunity to ask a developer from Nepal whether his website was fast enough. Here is the transcript:
+
+> I said, “[W]hilst I have your attention, my analytics told me that Nepal is a problem region for my website. Nepal is apparently a very slow area to visit my website from. Is that true?”
+>
+> His reply almost knocked me out. He said, “No, no, I don’t think so. I click on your site and it loads within a minute,” and that doesn’t feel slow, right? Imagine a minute load time not feeling slow.
+>
+> Here in the middle of Germany, if we experienced a one-minute load time, we’d assume the site was down. We’d assume they were having an outage, and we’d probably go elsewhere.
+
+Nepal, like many regions of the world, suffers from what most of us would consider poor connectivity. A website as optimised as Harry’s takes almost a minute to load. Harry continues:
+
+> [M]y site is incredibly highly optimized. It has to be. It’s my job to sell fast websites. If you’re visiting my site from, say, Dublin or West Coast USA, it would be fully loaded, fully rendered within 1.3 seconds. The exact same website on the exact same hosting on the exact same code base takes a minute for this person, over 45 times slower just because of where he lives. That’s the geographic penalty, the geographic tax that a lot of people in the world have to pay.
+
+Performance is a critical topic, for many reasons. In e-commerce, any extra tenth of a second to display a page can have massive cost repercussions. Besides economical ramifications, ensuring sites are fast is important so that people from any region of the world can access them—regardless of bandwidth and internet speed.
+
+If you are interested in frontend performance and would like to ramp up your skills, I cannot recommend [this series by Harry Roberts](https://gumroad.com/l/eihdtmcwf)—definitely worth the money and a goldmine of information.
