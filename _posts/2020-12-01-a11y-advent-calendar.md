@@ -320,7 +320,7 @@ Radio inputs with the same name should be grouped within a `<fieldset>` element 
 
 Yesterday we discussed the usage of the `aria-disabled` and `aria-describedby` attributes so it’s a good time to talk more about ARIA as a whole. It stands for Accessible Rich Internet Applications. It’s a specification aiming at enhancing HTML in order to convey more meaning and semantics to assistive technologies, such as screen-readers.
 
-The {% footnoteref "aria" aria %}first advice when it comes to ARIA{% endfootnoteref %} is to avoid using it when possible. It is a powerful tools that can completely change the way a page or widget gets interpreted by assistive technologies, for good or for bad, so it needs to be used carefully. Generally speaking, prefer using native HTML when possible, and only use ARIA when HTML is not enough (such as for tabs or carousels).
+The {% footnoteref "aria" aria %}first advice when it comes to ARIA{% endfootnoteref %} is to avoid using it when possible. It is a powerful tool that can completely change the way a page or widget gets interpreted by assistive technologies, for good or for bad, so it needs to be used carefully. Generally speaking, prefer using native HTML when possible, and only use ARIA when HTML is not enough (such as for tabs or carousels).
 
 There are a lot of handy guides on the internet on building accessible widgets with the help of ARIA—[Inclusive Components](https://inclusive-components.design/) by Heydon Pickering has to be one of my favourite.
 
