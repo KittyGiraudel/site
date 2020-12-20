@@ -10,6 +10,8 @@ I am between jobs with a bit of free time, so I thought I would try something ne
 
 I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel free to share your opinion and tips under that hashtag as well!
 
+{% capture toc %}
+
 - [Day 1: What is Accessibility?](#day-1-what-is-accessibility)
 - [Day 2: Evaluating Accessibility](#day-2-evaluating-accessibility)
 - [Day 3: Hiding Content](#day-3-hiding-content)
@@ -29,6 +31,15 @@ I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel
 - [Day 17: Anxiety](#day-17-anxiety)
 - [Day 18: Internationalisation](#day-18-internationalisation)
 - [Day 19: Performance](#day-19-performance)
+- [Day 20: Content & Tone](#day-20-content-tone) {% endcapture %}
+
+<style>
+.toc { margin-top: 2em }
+.toc > ul { columns: 16em; column-fill: balance; margin-top: 0 }
+</style>
+<div class="toc">
+{{ toc }}
+</div>
 
 ## Day 1: What is Accessibility?
 
@@ -542,3 +553,17 @@ Performance is a critical topic, for many reasons. In e-commerce, any extra tent
 One specific thing I would like to mention though: [icon fonts are notoriously bad](https://css-tricks.com/icon-fonts-vs-svg/) for a variety of reasons—one of them being that they do not render until the font **and** styles have been fully downloaded, parsed and evaluated. When iconography is used as main content (such as in links and buttons), using an icon font might mean a broken and inaccessible interface until the font eventually shows up. The font could also fail to load, or be overwritten entirely by custom styles, leaving the UI in an awkward and possibly unusable state.
 
 If you are interested in frontend performance and would like to ramp up your skills, I cannot recommend [this series by Harry Roberts](https://gumroad.com/l/eihdtmcwf)—definitely worth the money and a goldmine of information.
+
+## Day 20: Content & Tone
+
+On [day 15](#day-15-content-warnongs) [and 17](#day-17-anxiety), we discussed the importance of paying attention to the content itself. It matters for everyone, but especially for people with cognitive disorders such as post-traumatic stress disorder (PTSD) and anxiety, as well as people on the autistic spectrum.
+
+Generally speaking, being straightforward and unambiguous is the best way to avoid people being uncomfortable or confused. Figures of speech and idioms should be used sporadically as they can be difficult to grasp, especially for non-native speakers. Similarly, acronyms and abbreviations should be defined and used consistently.
+
+The navigation, and generally speaking any sort of action, should be consistent across an entire platform. Main landmarks should not be moving around depending on the page, and a given action should be the same across pages.
+
+Regarding the tone, be mindful of being too formal or too casual. Over recent years, more and more software companies have taken a more casual and friendly approach with their communication, but it can be found a little childish or patronising. Not everyone wants a lighthearted relationship with their bank or insurance provider. Humour is subjective and can be delicate to do well.
+
+Similarly, error messages should be descriptive enough to understand what went wrong. Think twice before validating the wrong thing, and playfully shaming the user for making mistakes (such as “Woopsi-doopsie your name needs more than a character, silly!”). Be clear and succint with the expectations so the issue can be addressed.
+
+Copy-writing is a skill and issuing consistent and clear interfaces and content across an entire website or application takes time and dedication. It’s also never perfect and needs to be refined regularly.
