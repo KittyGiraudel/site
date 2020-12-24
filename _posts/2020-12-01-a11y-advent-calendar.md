@@ -34,7 +34,9 @@ I will also announce the daily tip on Twitter with the #A11yAdvent hashtag. Feel
 - [Day 20: Content & Tone](#day-20-content-tone)
 - [Day 21: Testing Accessibility](#day-21-testing-accessibility)
 - [Day 22: Interactive Widgets](#day-22-interactive-widgets)
-- [ Day 23: Oral interfaces](#day-23-oral-interfaces)
+- [Day 23: Oral interfaces](#day-23-oral-interfaces)
+- [Day 24: The Case for Accessibility](#day-24-the-case-for-accessibility)
+
 {% endcapture %}
 
 <style>
@@ -153,9 +155,11 @@ In this article for instance, the post title is a `<h1>` and then we have a bunc
 
 To check the structure of a document, we can use the same [accessibility bookmarklet](https://xi.github.io/a11y-outline/) we’ve mentioned yesterday. When activating it, one of the options is “Headings”, which lists all headings in order and level. From there, we can make sure the structure makes sense, headings are in the right order, and no level is skipped.
 
-{% info %} For years now, there have been discussions (and even proposals) about taking into consideration sectioning elements like `section` into the document outline to create sort of sub-structures where every root would go back to `h1`. This has never been implemented by any browser or supported by any assistive technology so this is basically moot at this point. Stick to appropriate heading levels.
+{% info %}
+For years now, there have been discussions (and even proposals) about taking into consideration sectioning elements like `section` into the document outline to create sort of sub-structures where every root would go back to `h1`. This has never been implemented by any browser or supported by any assistive technology so this is basically moot at this point. Stick to appropriate heading levels.
 
-For more information about the history behind the document outline and the proposed resolution algorithm, I encourage you to read [the Document Outline Dilemna](https://css-tricks.com/document-outline-dilemma/) by Amelia Bellamy-Royds which is a fantastic overview of the topic. {% endinfo %}
+For more information about the history behind the document outline and the proposed resolution algorithm, I encourage you to read [the Document Outline Dilemna](https://css-tricks.com/document-outline-dilemma/) by Amelia Bellamy-Royds which is a fantastic overview of the topic.
+{% endinfo %}
 
 ## Day 6: Skip to Content
 
@@ -243,7 +247,9 @@ router.on('page:change', ({ title }) => {
 
 You can find a more in-depth [tutorial for React with `react-router` and `react-helmet`](https://hugogiraudel.com/2020/01/15/accessible-title-in-a-single-page-react-application/) on this blog. The core concept should be the same no matter the framework.
 
-{% info %} Note that if you have can guarantee there is **always** a relevant `<h1>` element (independently of loading states, query errors and such), another possibly simpler solution would be to skip that hidden element altogether, and focus the `<h1>` element instead (still with `tabindex="-1"`). {% endinfo %}
+{% info %}
+Note that if you have can guarantee there is **always** a relevant `<h1>` element (independently of loading states, query errors and such), another possibly simpler solution would be to skip that hidden element altogether, and focus the `<h1>` element instead (still with `tabindex="-1"`).
+{% endinfo %}
 
 ## Day 8: Alternative Text to Images
 
@@ -380,7 +386,9 @@ Assigning the description programmatically is harder. It turns out [there is no 
 
 For a medium as text-focused as the web, readability has to be something we have to talk about. Besides making it more comfortable for everyone, taking special care to make content readable helps people with a various range of disabilities, such as color-blindness or dyslexia.
 
-{% info %} While doing research for this article, I learnt about the difference between legibility and readability. The former is the product of the design of a font, based on its characteristics such as height, width, and thickness. Readability on the other hand is related to how the font is used, such as font size, letter spacing, line height and color. {% endinfo %}
+{% info %}
+While doing research for this article, I learnt about the difference between legibility and readability. The former is the product of the design of a font, based on its characteristics such as height, width, and thickness. Readability on the other hand is related to how the font is used, such as font size, letter spacing, line height and color.
+{% endinfo %}
 
 The first thing to remember when it comes to readability is that there is no one-size-fit-all solution. While there are commonly accepted suggestions such as avoiding small sizes and enabling decent color contrast, it is good to remember that everyone is different and what works for me might not work for you.
 
@@ -451,7 +459,9 @@ As you can see, there are a lot of things to consider to make captions accessibl
 
 Content warnings are notices preceding potentially sensitive content. This is so users can prepare themselves to engage or, if necessary, disengage for their own wellbeing. Trigger warnings are specific content warnings that attempt to warn users of content that may cause intense physiological and psychological symptoms for people with post-traumatic stress or anxiety disorder (PTSD).
 
-{% info %} This seems like the perfect opportunity to point out that jokingly using the word “triggered” to mean “being bothered by something” can be considered quite inappropriate and ableist. PTSD triggers are a real thing, which can have dire consequences. It is considerate not to dismiss and minimise the difficult of such experience by misusing the term to describe it. Possible alternative: “grinds one’s gears” or “bothers”. {% endinfo %}
+{% info %}
+This seems like the perfect opportunity to point out that jokingly using the word “triggered” to mean “being bothered by something” can be considered quite inappropriate and ableist. PTSD triggers are a real thing, which can have dire consequences. It is considerate not to dismiss and minimise the difficult of such experience by misusing the term to describe it. Possible alternative: “grinds one’s gears” or “bothers”.
+{% endinfo %}
 
 At the core of content warnings, there is the need to acknowledge that every individual is different, and what might not be a sensitive topic to you might in fact be very difficult to approach for someone else. Trigger warnings are essentially an empathetic feature, and they need to be designed with an open mind.
 
@@ -461,7 +471,9 @@ Of course, it is not possible to account for every potential trigger. Everybody 
 
 Regarding the implementation, it could be as simple as a paragraph at the top of the main section mentioning the potentially sensitive topics. For instance:
 
-{% info %} **Trigger warnings:** Explicit Sex Scene, Self-Harm, Transphobia {% endinfo %}
+{% info %}
+**Trigger warnings:** Explicit Sex Scene, Self-Harm, Transphobia
+{% endinfo %}
 
 This is a pretty basic but effective approach. It could be enhanced with more information about trauma triggers, link(s) to mental health websites, and even a way to complement or update the list.
 
@@ -586,7 +598,9 @@ Testing the HTML can be done with a variety of tools:
 - [aXe](https://github.com/dequelabs/axe-core), an accessibility testing engine which can be integrated in a variety of ways (devtools, React, Cypress…).
 - There is also an endless list of browser extensions like [WAVE](https://wave.webaim.org/extension/).
 
-{% info %} This is the perfect time and place to remind or let you know that accessiBe, the supposedly #1 fully automated accessibility solution” is a scam. It feeds on companies believing they can solve all their accessibility concerns by implementing a 1-line JavaScript widget. They cannot. Do not fall for it. {% endinfo %}
+{% info %}
+This is the perfect time and place to remind or let you know that accessiBe, the supposedly #1 fully automated accessibility solution” is a scam. It feeds on companies believing they can solve all their accessibility concerns by implementing a 1-line JavaScript widget. They cannot. Do not fall for it.
+{% endinfo %}
 
 For copy-writing and content, I can recommend:
 
@@ -618,13 +632,13 @@ I am definitely forgetting a lot of tools here—this is just the tip of the ice
 
 ## Day 22: Interactive Widgets
 
-For the most part, the web is accessible by default. That means properly structured content should go a long way and be perceivable and consumable by everyone, regardless of how they browse the web. 
+For the most part, the web is accessible by default. That means properly structured content should go a long way and be perceivable and consumable by everyone, regardless of how they browse the web.
 
 As we make sites and applications more and more interactive however, accessibility sometimes suffer. Basically, anything that needs to be developed by hand because it is not natively supported by the web platform is at risk of causing accessibility issues down the line. Whether it is because of designers’ lack of awareness, or developers’ shotcoming in face of a difficult technical challenge.
 
 When adding interaction to a page that goes beyond links and forms, we have to be cautious and proceed carefully. First of all, is the solution really the best one or is there something simpler and more straightforward? Interactive widgets such as tabs, dialogs and toggles come at a cost: usability, clarity and performance.
 
-If you must though, rely on battle-tested implementations instead of rolling your own. While a dialog might seem as simple as displaying an element on top of the page, there is actually a *lot* of work going on there, and unless you’ve read the specifications or are well aware of the intricacies of such widget, you are most likely going to implement it incorrectly.
+If you must though, rely on battle-tested implementations instead of rolling your own. While a dialog might seem as simple as displaying an element on top of the page, there is actually a _lot_ of work going on there, and unless you’ve read the specifications or are well aware of the intricacies of such widget, you are most likely going to implement it incorrectly.
 
 Here is a collection of unflavoured JavaScript suggestions if you must implement an interactive widget:
 
@@ -637,13 +651,13 @@ Here is a collection of unflavoured JavaScript suggestions if you must implement
 - Notifications: [Inclusive Components’ Notifications](https://inclusive-components.design/notifications/)
 - Data tables: [Inclusive Components’ Data Tables](https://inclusive-components.design/data-tables/)
 
-If you don’t mind something a bit more rough around the edges, you could check the [WCAG Authoring Guidelines](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex) which have an entire sections dedicated to understanding the expectations of interactive widgets. [Scott O’Hara also maintains accessible components](https://github.com/scottaohara/accessible_components) on GitHub. Once again, avoid rolling your own implementation if you can, and use an accessible solution instead. 
+If you don’t mind something a bit more rough around the edges, you could check the [WCAG Authoring Guidelines](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex) which have an entire sections dedicated to understanding the expectations of interactive widgets. [Scott O’Hara also maintains accessible components](https://github.com/scottaohara/accessible_components) on GitHub. Once again, avoid rolling your own implementation if you can, and use an accessible solution instead.
 
 ## Day 23: Oral interfaces
 
 Before we wrap up tomorrow, I wanted to tackle a bit of an off-topic: oral interfaces. The web being primarily a written medium, there is very little room for supporting oral commands. Nevertheless, it is likely that the platform will go into that direction sooner or later, as many native applications already rely on oral interfaces as a possible way to interact with the software.
 
-Vocal interfaces can be tremendously useful. They enable people who cannot necessarily physically interact with a device to be able to. Over the last few years, there has been dozens of inspiring stories of people having gotten out of difficult situations thanks to being able to quickly interact with Siri, Alex or Cortana. 
+Vocal interfaces can be tremendously useful. They enable people who cannot necessarily physically interact with a device to be able to. Over the last few years, there has been dozens of inspiring stories of people having gotten out of difficult situations thanks to being able to quickly interact with Siri, Alex or Cortana.
 
 Nevertheless, it is important to remember that not everyone can benefit from oral interfaces the same way—starting with mute people for whom this is not an option. So the first thing to consider when designing software which is controled through voice commands is that it should not be the only way. The same way soundtracks need captions, oral interfaces need physical alternatives.
 
@@ -664,3 +678,27 @@ A good way to accommodate people with a stutter is to make the voice trigger (su
 > “[I] don’t think I can do it with all the g’s, the a’s, the s’s. They need to start with letters I can actually say.”
 
 Besides people who stutter, people born deaf often have a different speech than those having being used to hearing voices since childhood. These speech differences, and even non-native accents, are usually not accounted for in voice interface design, which can be exclusive and further alienating.
+
+## Day 24: The Case for Accessibility
+
+As the very last topic of this calendar, I would like to discuss “the case for accessibility.” In an ideal world, we would not have to make the case for accessibility, because it is a human right and ethically the right thing to do—so there really should be no one to convince that this is worth it. Unfortunately, we do not live in an ideal world, and more often than not, we have to convince managers and clients of all sorts that accessibility should be considered from the start.
+
+There is a famous quote from Heydon Pickering that says:
+
+> Accessibility is not about doing _more_ work but about doing the _right_ work.
+
+Indeed, when considered early on, accessibility does not necessarily equate doing more work. In fact, it is having to rebuild things further down the road because they cannot be made accessible which is costly. So I’d say that is a good point to make: by being more considered from the start, we can already get a very long way.
+
+Then, very simply put, increasing access to software and products means enlarging their audience and reach. It’s not rocket science: if more people have access to something, more people get to use it. As of writing, the W3C reports one person out of 7 with a disability (whether it is visible or not), which means about a billion users. Additionally, it’s good to remember that everyone benefits from more usable and accessible content, beyond disabled persons.
+
+If this still doesn’t do the trick, I guess the last argument to make is the legal one. Many if not most countries have pretty strict equal access laws and regulations in place (whether they are enforced is up for debate)—the Europe has the [Web and Mobile Accessibility Directive](https://www.w3.org/WAI/policies/european-union/#web-and-mobile-accessibility-directive) and the United States have [Section 508](https://www.w3.org/WAI/policies/united-states/#section-508-of-the-us-rehabilitation-act-of-1973-as-amended) and the [American with Disabilities Act](https://www.w3.org/WAI/policies/united-states/#americans-with-disabilities-act-of-1990-ada-as-amended) amongst other policies. You can find a [comprehensive list of accessibility laws and policies](https://www.w3.org/WAI/policies/) on the W3C website.
+
+As a prime example, in 2019 a blind man named Guillermo Robles sued Domino’s Pizza—an American company—for not being able to order pizza online because the website was not usable with a screen-reader. What made this court case special is that Domino’s doubled-down trying to find a loophole why they did not have to comply with the ADA instead of investing what is estimated to be €40,000 worth of work to make their website accessible to screen-readers. The US Court ruled that Domino’s Pizza had, in fact, to comply with accessibility regulations in place and is not exempt from providing equal access to all.
+
+Since then, the amount of accessibility lawsuits has been on the rise, especially in the US where the regulations in place apply to the private sector as well. A lawsuit on the ground of accessibility (or lack thereof) can be costly and time-consuming for companies.
+
+Making the case for accessibility might require bringing all these points to some extent. From my personal experience at N26, we didn’t have much buy-in from our product managers to begin with but still went out of our way to make things as accessible and inclusive as we could. Gradually, we showed that making things right wasn’t necessarily slower or more difficult which helped with raising awareness and having more disciplines considering the topic as part of their role. Eventually, prior launching in the US, N26 wanted to make sure the company was not at risk of a lawsuit. So the case evolved with time: it started because we wanted to do the right thing, became more normal in the product organisation and then got backed up by the company itself from a legal standpoint.
+
+---
+
+Alright friends, that’s the end of our #A11yAdvent calendar! Thank you very much for having followed along during the entire month, and I hope you learnt a thing or two. If you have any questions or comments, please be sure to [get in touch on Twitter](https://twitter.com/HugoGiraudel)—I’m happy to chat. In the meantime, I wish you a pleasant end of the year! <span role="img" aria-label="Star">🌟</span>
