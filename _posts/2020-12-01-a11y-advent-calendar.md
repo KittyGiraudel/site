@@ -118,6 +118,14 @@ The quest for a combination of CSS declarations to visually hide an element whil
 
 What is important to think through is when to hide content entirely (with `display: none` for instance), and when to hide it visually only. For instance, when providing additional information to an icon, it should be visually hidden since the point is to have it read by screen-readers. But when building tabs, or a content toggle, it should be hidden entirely, because there is an interaction required to access it.
 
+{% info %}
+In 2020, the `content-visibility` CSS property made its apparition as a way to improve performance by hinting the browser (Chrome, as of writing) to skip rendering of a certain element until it is within the viewport. While it comes from a good place, it is not without shortcomings in terms of accessibility.
+
+Indeed, content made hidden with `content-visibility` will effectively be absent from the accessibility tree entirely (just like with `display: none`) which can be quite an issue for things like landmarks, links or headings (see day 4 and 5 of this calendar). Therefore, reserve this CSS property for things which are neither landmarks nor headings or heading containers.
+
+For more information about the impact of `content-visibility` on content accessibility, I recommend [Content-visibility and Accessible Semantics](https://dev.to/marcysutton/content-visibility-and-accessible-semantics-2994) by Marcy Sutton and [Short note on content-visibility: hidden](https://html5accessibility.com/stuff/2020/08/25/short-note-on-content-visibility-hidden/) by Steve Faulkner.
+{% endinfo %}
+
 ## Day 4: Self-Explanatory Links
 
 Let’s stay in the topic of screen-readers and talk about links. I believe a relatively little known feature of many screen-readers is the ability to list all links in a page in order to navigate more rapidly. Besides that feature, tabbing through page means jumping from link to link, skipping the text between them. Either way, links end up being announced devoid of their surrounding content and grammatical context.
