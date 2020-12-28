@@ -2,7 +2,7 @@
 title: 'A11yAdvent Day 20: Content & Tone'
 ---
 
-On [day 15](#day-15-content-warnongs) [and 17](#day-17-anxiety), we discussed the importance of paying attention to the content itself. It matters for everyone, but especially for people with cognitive disorders such as post-traumatic stress disorder (PTSD) and anxiety, as well as people on the autistic spectrum.
+On [day 15](/2020/12/15/a11y-advent-content-warnings) [and 17](/2020/12/17/a11y-advent-anxiety), we discussed the importance of paying attention to the content itself. It matters for everyone, but especially for people with cognitive disorders such as post-traumatic stress disorder (PTSD) and anxiety, as well as people on the autistic spectrum.
 
 Generally speaking, being straightforward and unambiguous is the best way to avoid people being uncomfortable or confused. Figures of speech and idioms should be used sporadically as they can be difficult to grasp, especially for non-native speakers. Similarly, acronyms and abbreviations should be defined and used consistently.
 
