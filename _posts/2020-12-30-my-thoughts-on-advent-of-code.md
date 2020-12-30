@@ -6,6 +6,8 @@ I had some time off in December, so I decided to participate in [Advent of Code]
 
 I originally wrote a long article about my thoughts on every individual puzzle, but I realised truly nobody cared, so I’m swapping it for a quick draft of my thoughts on the event as a whole. If you want to see my code, it’s in my [aoc-2020 GitHub repo](https://github.com/HugoGiraudel/aoc-2020).
 
+I won’t be giving any explicit answer or solution here, but I do mention tricks or things to pay attention to I guess spoiler alert.
+
 ## Input parsing
 
 In the early days, I stumbled upon a problem where my tests were passing, but I could not get the correct result for my puzzle input. It turns out I had a trailing line in my input file, leading to hard-to-track errors down the line. I then tweaked my function which reads the input file so it trims the data:
