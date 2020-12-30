@@ -1,5 +1,5 @@
 ---
-title: 'My thoughts on Advent of Code'
+title: My thoughts on Advent of Code
 ---
 
 I had some time off in December, so I decided to participate in [Advent of Code](https://adventofcode.com/). If you are unfamiliar with it, it is a series of daily coding/logic puzzles made of two parts, the second usually a twist on the former. Advent of Code has been running for 5 years now, and while I did attempt it last year, I gave up after a few days for lack of time.

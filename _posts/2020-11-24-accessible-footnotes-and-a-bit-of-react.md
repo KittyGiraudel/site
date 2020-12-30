@@ -1,9 +1,9 @@
 ---
 title: Accessible footnotes and a bit of React
 keywords:
-- footnotes
-- accessibility
-- react
+  - footnotes
+  - accessibility
+  - react
 ---
 
 {% footnoteref "footnotes" "Footnotes are notes placed at the bottom of a page. They cite references or comment on a designated part of the text above it." %}Footnotes{% endfootnoteref %} are not as straightforward as they seem to be. One might thing it’s just a matter of slapping an asterisk or a number after a word, and dumping some extra sweet knowledge at the bottom of the page, but that’s not it. Assistive technologies require some careful mapping in order to correctly associate the reference with its footnote.
@@ -54,7 +54,7 @@ And here is out the footnotes section would be authored:
       be incremented by CSS rules to track how many times they’re used.
       <a
         href="#css-counters-ref"
-        aria-label="Back to content"
+        aria-label="Back to reference 1"
         role="doc-backlink"
         >↩</a
       >
@@ -84,12 +84,12 @@ My React implementation of footnotes aims at making it easier to author the refe
 Coming back at our initial example, the usage might look like this:
 
 ```jsx
-const BlogPage = (props) => (
+const BlogPage = props => (
   <FootnotesProvider>
     <article>
       <p>
-        Something about{" "}
-        <FootnoteRef description="CSS Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they’re used.">
+        Something about{' '}
+        <FootnoteRef description='CSS Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they’re used.'>
           CSS counters
         </FootnoteRef>
         that deserves a footnote explaining what they are.
@@ -98,7 +98,7 @@ const BlogPage = (props) => (
       <Footnotes />
     </article>
   </FootnotesProvider>
-);
+)
 ```
 
 What’s nice about this approach is that footnotes are essentially out of sight, out of mind. The footnote itself is authored as the `description` prop on the `FootnoteRef` component, which makes it easy to maintain. The `Footnotes` component does the work of laying out the footnotes in the order of appearance in the text.
@@ -110,4 +110,3 @@ I hope [react-a11y-footnotes](https://github.com/HugoGiraudel/react-a11y-footnot
 I am also playing with providing optional basic styling—especially for the references themselves since they currently rely on CSS counters—to make it easy to import the library, its styles, and start footnoting.
 
 If you have any suggestion, comment or issue, feel free to share on Twitter or in an issue on the GitHub repository!
-
