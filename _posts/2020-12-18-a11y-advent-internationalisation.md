@@ -12,7 +12,7 @@ Nevertheless, we can outline a certain amount of advice and things to consider t
 
 - Links pointing to a resource in another language than the one the page is displayed in should be marked with the `hreflang` attribute. For instance, if this page were to link to a page in Russian, the link would need to be marked with `hreflang="ru"`.
 
-- Flags should be used to represent countries, not languages. When listing languages, refrain from illustrating them with flags if possible. If flags are important for visual identity, consider reversing the logic so countries are listed (with their flag), followed by a language (for instance “<span role="img" aria-label="Canada">🇨🇦</span> Canada (English)” and “<span role="img" aria-label="Canada">🇨🇦</span> Canada (Français Canadien)”).
+- Flags should be used to represent countries, not languages. When listing languages, refrain from illustrating them with flags if possible. If flags are important for visual identity, consider reversing the logic so countries are listed (with their flag), followed by a language (for instance “🇨🇦 Canada (English)” and “🇨🇦 Canada (Français Canadien)”).
 
 - Flags should exclusively be used to represent countries, not languages. For instance, while French is mainly spoke in France, it is also spoken in Congo and Canada—among other territorial entities. Or Spanish, which is spoken all over South America, but too often represented with a Spain flag. Flags are for countries, not languages.
 
