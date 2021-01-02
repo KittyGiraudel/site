@@ -4,12 +4,17 @@ const footnotes = require('eleventy-plugin-footnotes')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const uslugify = require('uslug')
+const emojiRegex = require('emoji-regex/RGI_Emoji')()
+const emojiShortName = require('emoji-short-name')
 
 module.exports = function (config) {
   // Minify HTML and CSS in production
   if (process.env.NODE_ENV === 'production') {
     config.addTransform('htmlmin', minifyHTML)
   }
+
+  // Wrap emojis to give them more semantic meaning.
+  config.addTransform('emoji', a11yEmojis)
 
   // Force 11ty to watch CSS files
   config.addWatchTarget('assets/css/**/*.css')
@@ -91,6 +96,20 @@ function minifyHTML(content, outputPath) {
     : content
 }
 
+function replaceEmoji(match) {
+  const label = emojiShortName[match]
+
+  return label
+    ? `<span role="img" aria-label="${label}" title="${label}">${match}</span>`
+    : match
+}
+
+function a11yEmojis(content, outputPath) {
+  return outputPath.endsWith('.html')
+    ? content.replace(emojiRegex, replaceEmoji)
+    : content
+}
+
 function markdown(content, inline = true) {
   const html = markdownIt().render(content)
 
@@ -102,12 +121,7 @@ function numberOfWords(content) {
 }
 
 function stars(amount) {
-  return `${amount
-    .toString()
-    .replace(
-      /\B(?=(\d{3})+(?!\d))/g,
-      ','
-    )} <span role="img" aria-label="Star" title="Star">⭐️</span>`
+  return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} ⭐️`
 }
 
 function where(array, key, value) {
