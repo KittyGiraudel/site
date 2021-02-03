@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 20: Content & Tone'
+title: 'A11yAdvent Day 20: Content and Tone'
 ---
 
 On [day 15](/2020/12/15/a11y-advent-content-warnings) [and 17](/2020/12/17/a11y-advent-anxiety), we discussed the importance of paying attention to the content itself. It matters for everyone, but especially for people with cognitive disorders such as post-traumatic stress disorder (PTSD) and anxiety, as well as people on the autistic spectrum.
