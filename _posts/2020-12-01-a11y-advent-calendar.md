@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <li><a id="day-17-anxiety" href="/2020/12/17/a11y-advent-anxiety">Day 17: Anxiety</a></li>
 <li><a id="day-18-internationalisation" href="/2020/12/18/a11y-advent-internationalisation">Day 18: Internationalisation</a></li>
 <li><a id="day-19-performance" href="/2020/12/19/a11y-advent-performance">Day 19: Performance</a></li>
-<li><a id="day-20-content-tone" href="/2020/12/20/a11y-advent-content-tone">Day 20: Content & Tone</a></li>
+<li><a id="day-20-content-tone" href="/2020/12/20/a11y-advent-content-tone">Day 20: Content and Tone</a></li>
 <li><a id="day-21-testing-accessibility" href="/2020/12/21/a11y-advent-testing-accessibility">Day 21: Testing Accessibility</a></li>
 <li><a id="day-22-interactive-widgets" href="/2020/12/22/a11y-advent-interactive-widgets">Day 22: Interactive Widgets</a></li>
 <li><a id="day-23-oral-interfaces" href="/2020/12/23/a11y-advent-oral-interfaces">Day 23: Oral interfaces</a></li>
