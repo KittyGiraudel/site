@@ -9,7 +9,7 @@
     "name": "Focusable Selectors",
     "description": "A micro-lib exporting an array of CSS selectors for focusable HTML elements.",
     "link": "https://github.com/HugoGiraudel/focusable-selectors",
-    "category": "JavaScript"
+    "category": "Accessibility"
   },
   {
     "name": "express-simple-locale",
