@@ -62,7 +62,7 @@
   {
     "name": "A11y-dialog",
     "description": "A script to make modal dialogs accessible to assistive technology users.",
-    "link": "https://github.com/edenspiekermann/a11y-dialog",
+    "link": "https://github.com/HugoGiraudel/a11y-dialog",
     "category": "Accessibility",
     "showcase": true,
     "stars": 1400
