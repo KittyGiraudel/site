@@ -30,6 +30,12 @@
     "category": "Accessibility"
   },
   {
+    "name": "react-a11y-disclosure",
+    "description": "A small React hook to build accessible disclosure widgets.",
+    "link": "https://github.com/HugoGiraudel/react-a11y-disclosure",
+    "category": "Accessibility"
+  },
+  {
     "name": "Scrabble-Helper",
     "description": "A CLI helper for Scrabble.",
     "link": "https://github.com/HugoGiraudel/scrabble-helper",
