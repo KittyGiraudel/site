@@ -2,7 +2,7 @@
 title: Hiding Content Responsibly
 ---
 
-I wrote about [hiding content](/2020/12/03/a11y-advent-hiding-content/) during the A11yAdvent calendar, namely how to make something [invisible but still accessible for screen-readers](/2016/10/13/css-hide-and-seek/).
+I wrote about [hiding content](/2020/12/03/a11y-advent-hiding-content/) during the A11yAdvent calendar, namely how to make something [invisible but still accessible for screen readers](/2016/10/13/css-hide-and-seek/). I’m going to mention the “accessibility tree” a few times in this article, so be sure to read [how accessibility trees inform assistive technologies](https://hiddedevries.nl/en/blog/2019-06-27-how-accessibility-trees-inform-assistive-tech) by Hidde de Vries.
 
 In this article, I want to discuss all the ways to hide something, be it through HTML or CSS, and when to use which. Feel free to jump to the [summary](#summary).
 
@@ -23,7 +23,7 @@ In this article, I want to discuss all the ways to hide something, be it through
 
 ## The `.sr-only` class
 
-[This combination of CSS declarations](https://hugogiraudel.com/snippets/sr-only-class/) hides an element from the page, but keeps it accessible for screen-readers. It comes in very handy to provide more context to screen-readers when the visual layout is enough with it.
+[This combination of CSS declarations](https://hugogiraudel.com/snippets/sr-only-class/) hides an element from the page, but keeps it accessible for screen readers. It comes in very handy to provide more context to screen readers when the visual layout is enough with it.
 
 {% info %} This technique should only be used to mask text. In other words, there shouldn’t be any focusable element inside the hidden element. This could lead to annoying behaviours, like scrolling to an invisible element. {% endinfo %}
 
@@ -39,7 +39,7 @@ In this article, I want to discuss all the ways to hide something, be it through
 
 The [`aria-hidden` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute), when set to `true`, hides the content from the accessibility tree, while keeping it visually visible. That is because no browser applies any styling to elements `aria-hidden="true"` (which is a good thing).
 
-{% info %} It is important to note that any focusable elements within an element with `aria-hidden="true"` remains focusable, which can be a big problem for screen-readers. Make sure there are no focusable elements within such container and that the element itself is also not focusable either (see the [fourth rule of ARIA](https://www.w3.org/TR/using-aria/#fourth)). {% endinfo %}
+{% info %} It is important to note that any focusable elements within an element with `aria-hidden="true"` remains focusable, which can be a big problem for screen readers. Make sure there are no focusable elements within such container and that the element itself is also not focusable either (see the [fourth rule of ARIA](https://www.w3.org/TR/using-aria/#fourth)). {% endinfo %}
 
 **Summary:**
 
@@ -97,7 +97,7 @@ Whether the content remains accessible depends on assistive technologies. Some w
 
 The `transform: scale(0)` CSS declaration visually hides an element, but the place it takes is not freed, just like `visibility: hidden`, `opacity: 0` and `clip-path: circle(0)`.
 
-The content remains accessible to screen-readers though.
+The content remains accessible to screen readers though.
 
 **Summary:**
 
@@ -109,7 +109,7 @@ The content remains accessible to screen-readers though.
 
 ## The `width: 0` and `height: 0` declarations
 
-Resizing an element to a 0x0 box with the `width` and `height` CSS properties will cause the element not to appear on screen and as far as I know all screen-readers will skip it as inaccessible. However, this technique are usually considered quite fishy and could cause SEO penalties.
+Resizing an element to a 0x0 box with the `width` and `height` CSS properties will cause the element not to appear on screen and as far as I know all screen readers will skip it as inaccessible. However, this technique are usually considered quite fishy and could cause SEO penalties.
 
 **Summary:**
 
@@ -134,6 +134,8 @@ Content made hidden with `content-visibility: hidden` will effectively be absent
 **Verdict:** 👎 Poor support, poorly implemented, don’t.
 
 ## Summary
+
+Generally speaking, you want to avoid having too many discrepancies between the visual content, and the underlying content exposed to the accessibility layer. The more in sync they are, the better for everyone. Remember that a clearer visual interface with more explicit content benefits everyone.
 
 - If you need to hide something both visually and from the accessibility tree, use `display: none` or the `hidden` HTML attribute. Valid cases: show/hide widget, offscreen navigation, closed dialog.
 
