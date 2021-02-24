@@ -109,7 +109,7 @@ The content remains accessible to screen readers though.
 
 ## The `width: 0` and `height: 0` declarations
 
-Resizing an element to a 0x0 box with the `width` and `height` CSS properties will cause the element not to appear on screen and as far as I know all screen readers will skip it as inaccessible. However, this technique are usually considered quite fishy and could cause SEO penalties.
+Resizing an element to a 0x0 box with the `width` and `height` CSS properties and hiding its overflow will cause the element not to appear on screen and as far as I know all screen readers will skip it as inaccessible. However, this technique are usually considered quite fishy and could cause SEO penalties.
 
 **Summary:**
 
