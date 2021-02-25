@@ -1,5 +1,8 @@
 ---
 title: Hiding Content Responsibly
+edits:
+  - date: 2021/02/25
+    md: Vincent Valentin pointed out on Twitter that he has [a very detailed tabular version on CodePen](https://codepen.io/vincent-valentin/full/JjGmxzV). Thank you for sharing!
 ---
 
 I wrote about [hiding content](/2020/12/03/a11y-advent-hiding-content/) during the A11yAdvent calendar, namely how to make something [invisible but still accessible for screen readers](/2016/10/13/css-hide-and-seek/). I’m going to mention the “accessibility tree” a few times in this article, so be sure to read [how accessibility trees inform assistive technologies](https://hiddedevries.nl/en/blog/2019-06-27-how-accessibility-trees-inform-assistive-tech) by Hidde de Vries.
