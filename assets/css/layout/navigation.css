@@ -21,6 +21,7 @@
 }
 
 .Navigation__link {
+  color: inherit;
   position: relative;
   text-decoration: none;
   border-bottom: 0;
