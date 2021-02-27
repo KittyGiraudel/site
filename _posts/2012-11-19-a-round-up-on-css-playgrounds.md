@@ -14,10 +14,10 @@ A code playground is an online tool allowing you to do some code, then save and 
 
 Playgrounds are becoming more and more popular and there are a bunch of options when you want to use one. Let me introduce you the most popular ones:
 
-- <a href="https://codepen.io" title="CodePen">CodePen</a> from Chris Coyier, Tim Sabat and Alex Vasquez
-- <a href="https://dabblet.com" title="Dabblet">Dabblet</a> from Lea Verou
-- <a href="https://cssdeck.com" title="CSSDeck">CSSDeck</a> from Rishabh
-- <a href="https://jsfiddle.net" title="JSFiddle">JSFiddle</a> from Oskar Krawczyk
+- [CodePen](https://codepen.io) from Chris Coyier, Tim Sabat and Alex Vasquez
+- [Dabblet](https://dabblet.com) from Lea Verou
+- [CSSDeck](https://cssdeck.com) from Rishabh
+- [JSFiddle](https://jsfiddle.net) from Oskar Krawczyk
 
 Basically, they all do more or less the same stuff but each one has its own strengths and weaknesses. So in the end the choice is up to the user. I’d like to give you my opinion on this stuff but first, let’s make a little round-up.
 
