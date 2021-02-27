@@ -29,7 +29,7 @@ blockquote::before {
   height: 4px;
   opacity: 0.7;
   border-radius: 4px 4px 0 0;
-  background-image: linear-gradient(to right, #2984c2, #dd7eb4);
+  background-image: linear-gradient(to right, #267cb9, #dd7eb4);
 }
 
 /**

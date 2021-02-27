@@ -19,7 +19,7 @@
   opacity: 0.7;
   transition: opacity 250ms;
   border-radius: 4px 4px 0 0;
-  background-image: linear-gradient(to right, #dd7eb4, #2984c2 100%);
+  background-image: linear-gradient(to right, #dd7eb4, #267cb9 100%);
 }
 
 .Tile:hover::before {

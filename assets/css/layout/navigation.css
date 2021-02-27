@@ -13,7 +13,7 @@
 
 .Navigation__item {
   line-height: 1.5;
-  color: #2984c2;
+  color: #267cb9;
 }
 
 .Navigation__item[aria-current] {
@@ -33,7 +33,7 @@
 }
 
 .Navigation__link:visited {
-  color: #2984c2;
+  color: #267cb9;
 }
 
 .Navigation__link::before {
@@ -43,7 +43,7 @@
   left: 5%;
   right: 5%;
   height: 1px;
-  background-color: #2984c2;
+  background-color: #267cb9;
   opacity: 0;
   transform: translateY(8px);
   transition: transform 0s ease-out, opacity 0s;

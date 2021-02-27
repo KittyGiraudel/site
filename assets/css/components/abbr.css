@@ -8,7 +8,7 @@ abbr[title] {
       rgb(255, 255, 255) 50%,
       rgb(255, 255, 255) 100%
     ),
-    linear-gradient(to right, #dd7eb4, #2984c2 100%);
+    linear-gradient(to right, #dd7eb4, #267cb9 100%);
   background-repeat: repeat-x;
   background-size: 4px 2px, 100% 2px;
   background-position: bottom;

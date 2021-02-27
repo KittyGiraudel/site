@@ -53,14 +53,14 @@ body::before {
 
 body::before,
 hr {
-  background-image: linear-gradient(to right, #dd7eb4, #2984c2);
+  background-image: linear-gradient(to right, #dd7eb4, #267cb9);
 }
 
 hr {
   height: 4px;
   border-radius: 4px;
   border: 0;
-  margin: var(--vb) 0
+  margin: var(--vb) 0;
 }
 
 h2,
