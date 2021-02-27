@@ -127,7 +127,7 @@ en:
   baseline:
     content: 'An opinionated styleguide for writing sane, maintainable and scalable Sass.'
   footer:
-    content: 'Made with love by [Hugo “Kitty” Giraudel]()'
+    content: 'Made with love by [Kitty Giraudel]()'
   note: 'Note'
 # Other languages…
 ```
@@ -203,7 +203,7 @@ site.data.languages[page.language].translators %}<a
     translation by {{ translators }} of the original
     <a href="/">Sass Guidelines</a> from
     <a target="_blank" rel="noopener noreferrer" href=""
-      >Hugo “Kitty” Giraudel</a
+      >Kitty Giraudel</a
     >.
   </p>
   <p>

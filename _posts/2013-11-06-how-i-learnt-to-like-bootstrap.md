@@ -22,7 +22,7 @@ I recently got hired for quite a big project as the only frontend developer in a
 
 So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly backend devs.
 
-> Hugo, we’ll use Bootstrap.  
+> Kitty, we’ll use Bootstrap.  
 > — NOOOOOO!
 
 And then he told me what I didn’t want to hear: _"we will use Twitter Bootstrap"_ and I was like _"NOOOO!!"_.

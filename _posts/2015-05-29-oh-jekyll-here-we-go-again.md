@@ -39,8 +39,6 @@ The 4 next hours were spent redesigning the site (which I suck at).
 
 ## Final thoughts
 
-Anyway, that’s done now. And I am glad to be back. Also I can’t wait for Jekyll 3. I can now update small things directly from [GitHub](https://github.com/HugoGiraudel/hugogiraudel.github.com/) without having to worry about the computer I’m using. And you can now fix my many typos by submitting nice pull requests! :D
+Anyway, that’s done now. And I am glad to be back. Also I can’t wait for Jekyll 3. I can now update small things directly from [GitHub](https://github.com/HugoGiraudel/site) without having to worry about the computer I’m using. And you can now fix my many typos by submitting nice pull requests! :D
 
 Also, if you have any recommendation for the design part, please feel free to suggest. I’m not quite convinced with the current design so I’d be glad to have some feedback.&nbsp;:)
-
-_PS: all Sass stylesheets from this site are heavily documented so feel free to [have a look](https://github.com/HugoGiraudel/hugogiraudel.github.com/tree/master/_sass)._

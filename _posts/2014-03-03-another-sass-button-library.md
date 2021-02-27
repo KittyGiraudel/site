@@ -195,4 +195,4 @@ The module is quite simple right now but I feel like it introduces a couple of o
 
 You can have a look at the final code here:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="Dezad" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/Dezad'>(Another) Sass button lib</a> by Hugo “Kitty” Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+<p data-height="320" data-theme-id="0" data-slug-hash="Dezad" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/Dezad'>(Another) Sass button lib</a> by Kitty Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>

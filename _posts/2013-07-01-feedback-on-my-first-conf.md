@@ -64,9 +64,9 @@ Unfortunately, my talk wasn’t recorded so no way to access it online, sorry pe
 
 Regarding pictures, my [girlfriend](http://whyalix.com) took a couple of photos as you can see in this article. Otherwise, you can find more pics of the whole event on Flickr tagged [#KiwiParty](https://www.flickr.com/search/?q=kiwiparty).
 
-Oh, and of course here are my [slides](https://slid.es/hugogiraudel/css-kick-ass-avec-sass/) (in French, but it’s mostly code); read top to bottom then left to right. I’m currently writing a blog post digging deep into my slides, so be patient English-speaking friends. :)
+Oh, and of course here are my [slides](https://slid.es/kittygiraudel/css-kick-ass-avec-sass/) (in French, but it’s mostly code); read top to bottom then left to right. I’m currently writing a blog post digging deep into my slides, so be patient English-speaking friends. :)
 
-<iframe src="https://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://slid.es/kittygiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Final words
 

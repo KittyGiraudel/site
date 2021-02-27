@@ -7,7 +7,7 @@ keywords:
 
 ## Could you introduce yourself in a few lines
 
-My name is Hugo “Kitty” Giraudel. I’m a frontend developer on a work-based learning at Crédit Agricole Sud Rhône Alpes in Grenoble (France), hoping to work in a web agency starting from September. I’m really into frontend languages especially CSS & JS, as well as everything that comes with those languages: ergonomy, performance, accessibility, user experience, and much more.
+My name is Kitty Giraudel. I’m a frontend developer on a work-based learning at Crédit Agricole Sud Rhône Alpes in Grenoble (France), hoping to work in a web agency starting from September. I’m really into frontend languages especially CSS & JS, as well as everything that comes with those languages: ergonomy, performance, accessibility, user experience, and much more.
 
 I am the co-author of [Browserhacks](http://browserhacks.com) &mdash; a website aiming at gathering all the dirty little secrets from browsers to do some browser sniffing ; not that I support that kind of thing but someone had to do such a tool. ;) I also developed Wild Web Watch &mdash; a web-related watch tool (which unfortunately gets old pretty badly). I also take care of the Sass port of Raphaël Goetter’s framework, [KNACSS](https://knacss.com).
 

@@ -149,7 +149,7 @@ All resources are loaded asynchronously thanks to the `_inject` (pseudo-)private
 
 ## So what?
 
-We still haven’t really solved the problem yet. How are we going to pass our Liquid variables to the JavaScript? Well, this is the moment we need to get back to [`scripts.liquid`](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/mixture/templates/includes/scripts.liquid) file. No more conditional JavaScript snippets; instead, we instanciate the `App` class.
+We still haven’t really solved the problem yet. How are we going to pass our Liquid variables to the JavaScript? Well, this is the moment we need to get back to `scripts.liquid` file. No more conditional JavaScript snippets; instead, we instanciate the `App` class.
 
 ```html
 <script src="/assets/js/main.min.js"></script>

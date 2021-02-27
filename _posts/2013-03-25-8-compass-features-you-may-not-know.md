@@ -28,7 +28,7 @@ $opposite: opposite-position($position); /* Outputs “bottom left” */
 
 _Note: the opposite of `center` is `center`._
 
-I personally used this extension in this very site, when it comes to images and quotes pulling ([L32](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L32) and [L47](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/sass/_helpers.scss#L47)).
+I personally used this extension in this very site, when it comes to images and quotes pulling ([L32](https://github.com/HugoGiraudel/site/tree/main/sass/_helpers.scss#L32) and [L47](https://github.com/HugoGiraudel/site/tree/main/sass/_helpers.scss#L47)).
 
 ```scss
 @mixin pull-quote($direction) {

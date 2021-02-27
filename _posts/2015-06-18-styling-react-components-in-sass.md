@@ -18,7 +18,7 @@ Chances are, as a frontend developer, you’ve heard of Facebook’s library for
 - [OOCSS](http://oocss.org/)
 - [The 7-1 Pattern](https://sass-guidelin.es/#architecture)
 
-Fortunately, any of these architectures can be used for styling React components, or any components for that matter! ("Styling Components in Sass" sounded a bit too dry for an article title, though.) We will be focusing on Hugo’s own [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern) for this article, which I have used in multiple projects.
+Fortunately, any of these architectures can be used for styling React components, or any components for that matter! ("Styling Components in Sass" sounded a bit too dry for an article title, though.) We will be focusing on Kitty’s own [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern) for this article, which I have used in multiple projects.
 
 ## The Problems with (Unorganized) CSS at Scale
 
@@ -121,7 +121,7 @@ Here’s an example rule set for the “date” component:
 }
 ```
 
-Just as you’d expect, everything’s neatly contained inside `.sd-date`. There are quite a few magic numbers in this rule set, though, such as `font-size: 0.75rem;`. I implore you to use Sass `$variables` to reference these values, and Hugo [provides guidelines](https://sass-guidelin.es/#variables) on this.
+Just as you’d expect, everything’s neatly contained inside `.sd-date`. There are quite a few magic numbers in this rule set, though, such as `font-size: 0.75rem;`. I implore you to use Sass `$variables` to reference these values, and Kitty [provides guidelines](https://sass-guidelin.es/#variables) on this.
 
 I’m using a very thin naming system for component selectors; that is, I’m only prefixing each component with `sd-` (simple-datepicker). As previously mentioned, you can use any naming system you (and your team) are most comfortable with, such as BEM.
 
@@ -292,4 +292,4 @@ The problems that Christopher Chedeau lists in his “CSS in JS” presentation 
 
 Check out the [example simple React datepicker](https://github.com/davidkpiano/react-simple-datepicker) on Github for an example of how Sass can be used to style React components. Oh, and here is a CodePen for you, as a treat!
 
-<p data-height="280" data-theme-id="0" data-slug-hash="1e170149edee4b13737894b435b21724" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/1e170149edee4b13737894b435b21724/'>1e170149edee4b13737894b435b21724</a> by Hugo “Kitty” Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+<p data-height="280" data-theme-id="0" data-slug-hash="1e170149edee4b13737894b435b21724" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/1e170149edee4b13737894b435b21724/'>1e170149edee4b13737894b435b21724</a> by Kitty Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>

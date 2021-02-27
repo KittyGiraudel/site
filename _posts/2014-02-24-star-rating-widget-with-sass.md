@@ -237,6 +237,6 @@ Thanks to Sass lists and the `append` function, we have been able to create a se
 
 Hope you liked the demo anyway folks. Cheers!
 
-<p data-height="480" data-theme-id="0" data-slug-hash="DqBkH" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/DqBkH'>CSS Rating Stars</a> by Hugo “Kitty” Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+<p data-height="480" data-theme-id="0" data-slug-hash="DqBkH" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/DqBkH'>CSS Rating Stars</a> by Kitty Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 _Update: be sure to check [this version](https://codepen.io/piouPiouM/pen/beBcJ) from Mehdi Kabab, using placeholders to make it slightler lighter (14 bytes after gzip… :D)._

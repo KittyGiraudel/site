@@ -40,7 +40,7 @@ I now rely on a PHP structure for convenience. Actually, I was kind of sick of h
 
 But, switching all my files to .php means a terrible thing: old URLs won’t work anymore! What about all these tweets, links and poor souls unable to reach my blog posts? No worry. My brother helped me doing some .htaccess in order to allow reaching the blog posts through old URLs. Big thanks to him. :)
 
-While we’re talking about .htaccess: you can now access articles without the file extension like this: https://hugogiraudel/blog. Pretty cool, right?
+While we’re talking about .htaccess: you can now access articles without the file extension like this: https://kittygiraudel/blog. Pretty cool, right?
 
 I also decided to rely on a CDN rather than on self hosting for [Font Awesome](https://fontawesome.com/?from=io) (now in v3.0.1 since a couple of days). I was especially concerned about the file size of my stylesheet because Font Awesome &mdash; as any other icon font &mdash; uses a lot of CSS. Anyway, I’m now using [Tim Pietrusky’s](http://timpietrusky.com) CDN [WeLoveIconFonts](https://weloveiconfonts.com) and I’m pretty happy with it. ;)
 

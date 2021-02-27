@@ -491,4 +491,4 @@ Thanks a lot for the input Ana!
 
 ## Final words
 
-I guess that’s all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with [this pen](https://codepen.io/HugoGiraudel/pen/loAgq) or contribute to [this repo](https://github.com/HugoGiraudel/Sass-snippets/blob/master/list-functions/_all.scss).
+I guess that’s all I got folks! If you think of anything that could improve any of those functions, be sure to tell. Meanwhile, you can play with [this pen](https://codepen.io/HugoGiraudel/pen/loAgq).

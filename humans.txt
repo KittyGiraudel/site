@@ -3,9 +3,9 @@
 
 # TEAM
 
-    Hugo "Kitty” Giraudel -- Frontend developer -- @HugoGiraudel
-    Hugo "Kitty” Giraudel -- Designer -- @HugoGiraudel
-    Hugo "Kitty” Giraudel -- Author -- @HugoGiraudel
+    Kitty Giraudel -- Frontend developer -- @HugoGiraudel
+    Kitty Giraudel -- Designer -- @HugoGiraudel
+    Kitty Giraudel -- Author -- @HugoGiraudel
 
 # TECHNOLOGY COLOPHON
 
