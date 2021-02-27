@@ -20,9 +20,9 @@ g idea, really. It works great, it looks great, the only downside is… it’s a
 
 This is where Sass &mdash; or any CSS preprocessor really &mdash; can be very efficient. **It took me about 10 minutes to divide the amount of required code by 4.** Plus, it makes everything so much easier to adapt and maintain.
 
-<pre class="codepen" data-height="320" data-type="result" data-href="kBzra" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/kBzra">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="320" data-type="result" data-href="kBzra" data-user="KittyGiraudel" data-safe="true"><code></code><a href="https://codepen.io/KittyGiraudel/pen/kBzra">Check out this Pen!</a></pre>
 
-If you simply want to see the code and don’t care much about how I did it, please check [this CodePen](https://codepen.io/HugoGiraudel/pen/kBzra) ([fullsize here](https://codepen.io/HugoGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
+If you simply want to see the code and don’t care much about how I did it, please check [this CodePen](https://codepen.io/KittyGiraudel/pen/kBzra) ([fullsize here](https://codepen.io/KittyGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
 
 ### Create the list
 

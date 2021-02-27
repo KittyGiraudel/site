@@ -6,13 +6,11 @@ keywords:
   - SassyLists
 ---
 
-{% info %}
-In case you have missed my first article about this topic, I recommand you to read [Advanced Sass list functions](/2013/08/08/advanced-sass-list-functions/).
-{% endinfo %}
+{% info %} In case you have missed my first article about this topic, I recommand you to read [Advanced Sass list functions](/2013/08/08/advanced-sass-list-functions/). {% endinfo %}
 
 Heys people, it’s been a while I haven’t posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what’s new on my Sass list functions library.
 
-Well first of all, it has been added as a [Team-Sass](https://github.com/Team-Sass) repository on GitHub (the [pen](https://codepen.io/HugoGiraudel/pen/loAgq is still updated). You probably know the Team-Sass collective. They have done ton of awesome things like [Breakpoint](https://github.com/Team-Sass/breakpoint), [Sassy Math](https://github.com/Team-Sass/Sassy-math) and [UIKit](https://github.com/Team-Sass/uikit).
+Well first of all, it has been added as a [Team-Sass](https://github.com/Team-Sass) repository on GitHub (the [pen](https://codepen.io/KittyGiraudel/pen/loAgq is still updated). You probably know the Team-Sass collective. They have done ton of awesome things like [Breakpoint](https://github.com/Team-Sass/breakpoint), [Sassy Math](https://github.com/Team-Sass/Sassy-math) and [UIKit](https://github.com/Team-Sass/uikit).
 
 I am very glad to see my repo in there, so big thanks to them. :)
 
@@ -215,7 +213,7 @@ Last but not least, I added a `debug()` function to help you people debugging yo
   @return $result;
 }
 
-$list: (a b (c d (e f ( (g h (i j k)) l m))));
+$list: (a b (c d (e f ((g h (i j k)) l m))));
 $debug: debug($list);
 // -> [ a, b, [ c, d, [ e, f, [ [ g, h, [ i, j, k] ], l, m ] ] ] ]
 ```

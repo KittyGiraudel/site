@@ -19,9 +19,9 @@ Until now, no big deal. Au contraire, it looks pretty nice! DRY code, component-
 
 We also have a couple of different layouts:
 
-* one column: the content spreads across the whole page
-* two columns: there is a sidebar on the right, with ads and related links
-* three columns: there is a sidebar on the left, gathering all search filters
+- one column: the content spreads across the whole page
+- two columns: there is a sidebar on the right, with ads and related links
+- three columns: there is a sidebar on the left, gathering all search filters
 
 And now, here is the issue: depending on the component and the layout, we want to control the number of items to be displayed on a single row. For instance, in a one-column layout, we could spread to 6 items per row. 4 or 5 in a two-columns layout. 3 in the three-columns layout.
 
@@ -41,14 +41,17 @@ Yet, element queries would be so much better than media queries. The more I thin
 
 That’s why I’ve decided to give a serious go at element queries at work. I came across quite a couple of versions, all of them looking real good:
 
-* [CSS Element Queries](https://github.com/marcj/css-element-queries) from Marcj
-* [Element Queries](https://github.com/tysonmatanich/elementQuery) from Tyson Matanich
-* [EQ.js](https://github.com/Snugug/eq.js) from Sam Richards
+- [CSS Element Queries](https://github.com/marcj/css-element-queries) from Marcj
+- [Element Queries](https://github.com/tysonmatanich/elementQuery) from Tyson Matanich
+- [EQ.js](https://github.com/Snugug/eq.js) from Sam Richards
 
 I decided to set up on the last one which looks slightly better than the others. Also I like Sam Richards, that’s enough for me. Anyway, all we have to do to make it work &mdash; aside from including the script &mdash; is adding a `data-eq-pts` attribute to the component, listing breakpoints as a map.
 
 ```html
-<ul class="component" data-eq-pts="small: 300, medium: 500, large: 700, huge: 900">
+<ul
+  class="component"
+  data-eq-pts="small: 300, medium: 500, large: 700, huge: 900"
+>
   <!-- … -->
 </ul>
 ```
@@ -57,7 +60,7 @@ Then when a min-width is matched, the element can be selected using an attribute
 
 I have designed a little test case (you might want to test it on CodePen directly and resize the screen):
 
-<p data-height="460" data-theme-id="0" data-slug-hash="cfdf5410e622f1e5f41035232de4260c" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/cfdf5410e622f1e5f41035232de4260c'>cfdf5410e622f1e5f41035232de4260c</a> by Kitty Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+<p data-height="460" data-theme-id="0" data-slug-hash="cfdf5410e622f1e5f41035232de4260c" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/cfdf5410e622f1e5f41035232de4260c'>cfdf5410e622f1e5f41035232de4260c</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 The first collection (top) is the 1-column layout, the second one (middle) is when we got a sidebar and the last one (bottom) is when we got both the filter bar and the sidebar. As you can see, the number of elements per row adapts to the available width to the component (not the screen size).
 

@@ -6,9 +6,7 @@ keywords:
   - function
 ---
 
-{% info %}
-The code explained in this article has been slightly revisited in [the pen](https://codepen.io/HugoGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen.
-{% endinfo %}
+{% info %} The code explained in this article has been slightly revisited in [the pen](https://codepen.io/KittyGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen. {% endinfo %}
 
 You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It’s a shame there is so few functions to deal with them. This is why I made [SassyLists](https://github.com/Team-Sass/Sass-list-functions).
 
@@ -16,9 +14,9 @@ Most importantly, I always wanted a `console.log()` for Sass. You know, somethin
 
 So I rolled up my sleeves, got my hands dirty and made my own Sass debug function. This is how it looks like:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="unyBH" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/unyBH'>Debug Sass lists</a> by Kitty Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a></p>
+<p data-height="320" data-theme-id="0" data-slug-hash="unyBH" data-user="KittyGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/unyBH'>Debug Sass lists</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a></p>
 
-If you don’t want to read but simply want to dig into the code, check [this pen](https://codepen.io/HugoGiraudel/pen/unyBH).
+If you don’t want to read but simply want to dig into the code, check [this pen](https://codepen.io/KittyGiraudel/pen/unyBH).
 
 ## Stringify a list
 

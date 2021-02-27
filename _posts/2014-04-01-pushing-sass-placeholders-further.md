@@ -77,8 +77,14 @@ My idea was to move all the mixin’s core to a configuration map so it only dea
 
 ```scss
 $placeholders-map: (
-  clearfix: (overflow: hidden),
-  hide-text: (overflow: hidden, text-indent: 100%, white-space: nowrap)
+  clearfix: (
+    overflow: hidden,
+  ),
+  hide-text: (
+    overflow: hidden,
+    text-indent: 100%,
+    white-space: nowrap,
+  ),
 );
 ```
 
@@ -114,8 +120,8 @@ Now that we have a map to loop through, we can slightly rethink Matt’s work:
 
 First, we retreive placeholder’s content from `$placeholders-map` with `map-get($placeholders-map, $placeholder)`. If the name doesn’t exist as a key in the map (`null`) , we do nothing but warn the developer:
 
-* either he made a typo in the placeholder’s name,
-* or he didn’t set the placeholder in the configuration map.
+- either he made a typo in the placeholder’s name,
+- or he didn’t set the placeholder in the configuration map.
 
 If the placeholder’s name has been found and `$extend` is set to `true`, then we extend the actual Sass placeholder. Else if `$extend` is `false`, we dump the placeholder’s content from within the mixin. To do so, we loop through the inner map of declarations. Simple and comfy.
 
@@ -145,6 +151,6 @@ While the code does the job well, I am not sure how I feel about this. To be per
 
 First, there is a big problem with this version: since we are relying on the fact CSS declarations can be stored as keys/values in a Sass map, it makes it impossible to use nesting (including `&`), inner mixins, or `@extend` in the mixin core. Thus, it does the job for simple placeholders as we’ve seen in our demo, but wouldn’t work for more complex pieces of code.
 
-Secondly, I don’t like storing CSS declarations in a map, no matter how clever it is. In the end, I feel like it adds too much code complexity. [Someone once told me it’s like a preprocessor in a preprocessor](https://codepen.io/HugoGiraudel/details/yGFri#comment-id-25055). I don’t think it’s worth the pain.
+Secondly, I don’t like storing CSS declarations in a map, no matter how clever it is. In the end, I feel like it adds too much code complexity. [Someone once told me it’s like a preprocessor in a preprocessor](https://codepen.io/KittyGiraudel/details/yGFri#comment-id-25055). I don’t think it’s worth the pain.
 
 That being said, it’s pretty cool as experimental stuff. Playing around Sass' syntax has always been one of the things I love the most about this preprocessor. Hence this blog post, and the pretty crazy demo. Anyway, I hope you liked it, and thanks Matt!

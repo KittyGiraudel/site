@@ -6,9 +6,7 @@ keywords:
   - function
 ---
 
-{% info %}
-I wrote this article months ago when I was first experimenting with Sass 3.3 alpha features. I came up with a pretty wild solution to generate a random number in Sass. However it looks like [Sass 3.3 will implement a random function](https://github.com/nex3/sass/pull/968) so we won’t need all this stuff. I still publish it for fun. :)
-{% endinfo %}
+{% info %} I wrote this article months ago when I was first experimenting with Sass 3.3 alpha features. I came up with a pretty wild solution to generate a random number in Sass. However it looks like [Sass 3.3 will implement a random function](https://github.com/nex3/sass/pull/968) so we won’t need all this stuff. I still publish it for fun. :) {% endinfo %}
 
 Everything started when I was spying on Sass 3.3 source code on GitHub for my article about the [future of Sass](https://davidwalsh.name/future-sass) at David Walsh' Blog. I was sniffing the incoming functions when all of the sudden I came by a `unique-id()` function.
 
@@ -165,11 +163,13 @@ Regarding the `charsFromBase()` function, here is what it looks like:
   }
   /* Base 36 */
   @if $base == 36 {
-    @return 0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x y z;
+    @return 0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x
+      y z;
   }
   /* Base 64 */
   @if $base == 64 {
-    @return A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 + /;
+    @return A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h
+      i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 + /;
   }
   @return false;
 }
@@ -181,4 +181,4 @@ I only added most common standard bases (binary, octal, decimal, hexadecimal, 36
 
 That’s pretty much it. As I said at the beginning of the article, I couldn’t try this code since neither the `unique-id()` nor the string manipulation functions are currently implemented in the Sass 3.3 Alpha version. So this is pretty much blind coding here!
 
-If you think of anything that could improve this Sass random function, please be sure to tell. Meanwhile you can play with the code directly on [this pen](https://codepen.io/HugoGiraudel/pen/ohscb).
+If you think of anything that could improve this Sass random function, please be sure to tell. Meanwhile you can play with the code directly on [this pen](https://codepen.io/KittyGiraudel/pen/ohscb).

@@ -22,11 +22,11 @@ Let me translate the post from Rémi for you:
 1. The orange items have a fixed width of 200px
 2. The grid is fluid and contains 4 cells per row
 3. Grey cells have 10 left and right margins, except for:
-   * The first cell of each row which doesn’t have left margin
-   * The last cell of each row which doesn’t have right margin
+   - The first cell of each row which doesn’t have left margin
+   - The last cell of each row which doesn’t have right margin
 4. Items are horizontally centered in cells, except for:
-   * The item of the first cell of each row which is left aligned
-   * The item of the last cell of each row which is right aligned
+   - The item of the first cell of each row which is left aligned
+   - The item of the last cell of each row which is right aligned
 5. Items are equally distribued across each row and grey rectangles all share the same width
 6. First item and last item from each row are stuck to the edges of the grid
 7. All cells have the same parent so HTML should be something like `.grid > .cell > .item`. You can add specific classes if you need.
@@ -116,7 +116,7 @@ In the end, the core of the solution is no more than this:
 }
 ```
 
-You can have a look at the [whole code directly on CodePen](https://codepen.io/HugoGiraudel/pen/tivIj).
+You can have a look at the [whole code directly on CodePen](https://codepen.io/KittyGiraudel/pen/tivIj).
 
 ## Pushing things further with Sass
 
@@ -124,15 +124,15 @@ What’s interesting when you put things on paper before coding is you quickly b
 
 There are 3 things we could store:
 
-* The items' width (200px)
-* The margin (10px)
-* The number of cells per row (4)
+- The items' width (200px)
+- The margin (10px)
+- The number of cells per row (4)
 
 Once you’ve set up those 3 variables, you don’t have to edit the code anymore whenever you want to change something, could it be the size of the margin or the number of cells per rows. Pretty neat.
 
 _Note: whenever you’re trying to use Sass variables in `calc` function, be sure to escape them with `#{}`. For instance: `calc(#{$margin} + 42px)`._
 
-Again, [check code on CodePen](https://codepen.io/HugoGiraudel/pen/zFJvn).
+Again, [check code on CodePen](https://codepen.io/KittyGiraudel/pen/zFJvn).
 
 ## Final thoughts
 

@@ -40,9 +40,9 @@ I found this function in a [Sass issue](https://github.com/nex3/sass/pull/402) a
 
 Anyway, this is a function to clamp a number. Clamping a number means restricting it between min and max values.
 
-* `4` clamped to `1-3` equals `3`.
-* `-5` clamped to `1-10` equals `1`.
-* `42` clamped to `10-100` equals `42`.
+- `4` clamped to `1-3` equals `3`.
+- `-5` clamped to `1-10` equals `1`.
+- `42` clamped to `10-100` equals `42`.
 
 ```scss
 @function clamp($value, $min, $max) {
@@ -56,8 +56,8 @@ Now back to our clamp function, here is what is going on:
 
 1. If the value is greater than the maximum value, it returns `$max`
 1. If the value is lesser than or equals to the maximum value and
-   * if the value is lesser than the minimum value, it returns `$min`
-   * if the value is greater than or equals to the minimum value, it returns `$value`
+   - if the value is lesser than the minimum value, it returns `$min`
+   - if the value is greater than or equals to the minimum value, it returns `$value`
 
 What I like with this method is it is very concise and damn efficient. With nested `if()`, there is no need of conditional statements, everything lies in one single line.
 
@@ -70,14 +70,19 @@ $darkColor: darken($color, $pc);
 
 ## Unit conversion
 
-This one is a function by Chris Eppstein himself in order to convert an angle into another unit (because [there are 4 different ways of declaring an angle in CSS](https://codepen.io/HugoGiraudel/pen/rdgse)). This one converts angles but you could probably do this for anything fixed (px, in, cm, mm).
+This one is a function by Chris Eppstein himself in order to convert an angle into another unit (because [there are 4 different ways of declaring an angle in CSS](https://codepen.io/KittyGiraudel/pen/rdgse)). This one converts angles but you could probably do this for anything fixed (px, in, cm, mm).
 
 ```scss
 @function convert-angle($value, $unit) {
   $convertable-units: deg grad turn rad;
   $conversion-factors: 1 10grad/9deg 1turn/360deg 3.1415926rad/180deg;
-  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
-    @return $value / nth($conversion-factors, index($convertable-units, unit($value))) * nth($conversion-factors, index($convertable-units, $unit));
+  @if index($convertable-units, unit($value)) and
+    index($convertable-units, $unit)
+  {
+    @return $value / nth(
+        $conversion-factors,
+        index($convertable-units, unit($value))
+      ) * nth($conversion-factors, index($convertable-units, $unit));
   } @else {
     @warn "Cannot convert #{unit($value)} to #{$unit}";
   }

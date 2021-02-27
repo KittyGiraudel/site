@@ -1,5 +1,5 @@
 ---
-title: "Future of CSS layout: CSS Grid"
+title: 'Future of CSS layout: CSS Grid'
 keywords:
   - css
   - grid
@@ -118,7 +118,7 @@ So as I understand this, **the Grid layout is “macro” while the Flexbox modu
 
 ## Final words
 
-For having [played](https://codepen.io/HugoGiraudel/pen/2befd6d225b69912af8561f7cb020124) with the module for hours, I can tell it is quite promising. I have been amazed by its efficiency, and I even could try to mix it with CSS preprocessors: it rocks. The fact it’s fully number-based makes it very easy to use in [loops](https://codepen.io/HugoGiraudel/pen/fb0e46cde228e5437993ba1305459a22), [mixins and functions](https://codepen.io/HugoGiraudel/pen/aCliz).
+For having [played](https://codepen.io/KittyGiraudel/pen/2befd6d225b69912af8561f7cb020124) with the module for hours, I can tell it is quite promising. I have been amazed by its efficiency, and I even could try to mix it with CSS preprocessors: it rocks. The fact it’s fully number-based makes it very easy to use in [loops](https://codepen.io/KittyGiraudel/pen/fb0e46cde228e5437993ba1305459a22), [mixins and functions](https://codepen.io/KittyGiraudel/pen/aCliz).
 
 Unfortunately, it is way too soon to use the Grid layout in a real-life project, especially since the browser support is restricted to Internet Explorer 10. However, I’ve heard the support is coming to Firefox and Chrome nightly builds, so I think we will be able to safely play around with it in a few months from now.
 

@@ -15,10 +15,10 @@ A couple of days ago I came with a fairly new solution (to me) and I must say I 
 
 But first, let’s take a minute to think about what our mixin have to do:
 
-* We shouldn’t have to specify offsets we do not want to edit
-* We shouldn’t be forced to respect a given order (like top - right - bottom - left)
-* It should handle errors and invalid inputs responsibly
-* What about syntaxic sugar?
+- We shouldn’t have to specify offsets we do not want to edit
+- We shouldn’t be forced to respect a given order (like top - right - bottom - left)
+- It should handle errors and invalid inputs responsibly
+- What about syntaxic sugar?
 
 ## Building the mixin
 
@@ -78,7 +78,8 @@ Now, we will loop through the offsets and make three verifications:
   @each $o in $offsets {
     $i: index($args, $o);
 
-    @if $i and $i + 1 <= length($args) and type-of( nth($args, $i + 1) ) == number {
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+    {
       #{$o}: nth($args, $i + 1);
     }
   }
@@ -111,7 +112,8 @@ Okay, this might look quite complicated. Why don’t we simply take it over with
     		 * 2. Is the offset value within the list range?
     		 * 3. Is the offset value valid?
     		 */
-    @if $i and $i + 1 <= length($args) and type-of( nth($args, $i + 1) ) == number {
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+    {
       /**
       			 * If everything is okay
       			 * We assign the according value to the current offset
@@ -189,10 +191,10 @@ Now, what if we try to do bad things like assigning no value to an offset, or an
 
 In this case:
 
-* `top` will be defined to `1em`
-* `left` won’t be set since we gave it a string
-* `right` will be defined to `10%`
-* `bottom` won’t be set since we didn’t give it any value
+- `top` will be defined to `1em`
+- `left` won’t be set since we gave it a string
+- `right` will be defined to `10%`
+- `bottom` won’t be set since we didn’t give it any value
 
 ```scss
 .element {
@@ -224,4 +226,4 @@ Is it supposed to mean _"assign `property: value` to a direct sibling `efgh` of 
 
 I’m aware some of you won’t like this. Some will say it is overly complicated, some will say it is useless and some will say their mixin is better. In no way this is a better way than an other. It simply suits my tastes. I like the way it works, and I like the way I can use it.
 
-Anyway, you can fork and play around [this pen](https://codepen.io/HugoGiraudel/pen/HDebE) if you feel so. And be sure to hit me if you ever need anything or want to propose something new. :)
+Anyway, you can fork and play around [this pen](https://codepen.io/KittyGiraudel/pen/HDebE) if you feel so. And be sure to hit me if you ever need anything or want to propose something new. :)

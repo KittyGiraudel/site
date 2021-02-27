@@ -15,19 +15,19 @@ What a clever little experiment it was, yet I can’t say I am completely fond o
 
 There are two things I wanted to give specific attention to:
 
-* Having a very wide range of colors available;
-* Making sure the clock is still readable on very dark/light colors.
+- Having a very wide range of colors available;
+- Making sure the clock is still readable on very dark/light colors.
 
 Alright, let’s go.
 
-<p data-height="320" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/JobxQR/'>Color Clock</a> by Kitty Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+<p data-height="320" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="KittyGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/JobxQR/'>Color Clock</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 ## Building the app
 
 Let’s start with a little skeleton for our application:
 
 ```javascript
-;(function() {
+;(function () {
   'use strict'
 
   // Our main function
@@ -42,9 +42,9 @@ Let’s start with a little skeleton for our application:
 
 Nothing special here: at every second, we call the `colorClock` function. This function will have to do three things:
 
-* display the current time;
-* apply the computed color to the body;
-* change font color if too dark/light.
+- display the current time;
+- apply the computed color to the body;
+- change font color if too dark/light.
 
 ## Printing the current time
 
@@ -72,10 +72,10 @@ Alright. The first thing we need is to compute our color channels based on the c
 ```javascript
 function RGBFromDate(date) {
   return [
-    date.getHours() / 24 * 255,
-    date.getMinutes() / 60 * 255,
-    date.getSeconds() / 60 * 255
-  ].map(function(e) {
+    (date.getHours() / 24) * 255,
+    (date.getMinutes() / 60) * 255,
+    (date.getSeconds() / 60) * 255,
+  ].map(function (e) {
     return Math.round(e)
   })
 }
@@ -111,17 +111,17 @@ document.body.style.color = colorFromRGB.apply(this, channels)
 That’s it. Here is the final code:
 
 ```javascript
-;(function() {
+;(function () {
   'use strict'
 
   function colorClock() {
     // Get RGB channels from a date
     function RGBFromDate(date) {
       return [
-        date.getHours() / 24 * 255,
-        date.getMinutes() / 60 * 255,
-        date.getSeconds() / 60 * 255
-      ].map(function(e) {
+        (date.getHours() / 24) * 255,
+        (date.getMinutes() / 60) * 255,
+        (date.getSeconds() / 60) * 255,
+      ].map(function (e) {
         return Math.round(e)
       })
     }
@@ -155,6 +155,6 @@ That’s it. Here is the final code:
 
 You can play with the code on CodePen:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="HugoGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/JobxQR/'>Color Clock</a> by Kitty Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+<p data-height="320" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="KittyGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/JobxQR/'>Color Clock</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
 
 Hope you liked it!

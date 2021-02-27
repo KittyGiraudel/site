@@ -53,11 +53,9 @@ And some basic styling (without all purely aestethic considerations):
   right: 0; /* 1 */
   padding: 0 2em; /* 2 */
   text-align: center; /* 3 */
-  transform:
-    translateY(-100%)
-    rotate(90deg)
-    translateX(70.71067811865476%)
-    rotate(-45deg); /* 4 */
+  transform: translateY(-100%) rotate(90deg) translateX(70.71067811865476%) rotate(
+      -45deg
+    ); /* 4 */
   transform-origin: bottom right; /* 4 */
 }
 ```
@@ -86,4 +84,4 @@ This `transform` declaration is quite a mouthful. Let’s apply it left to right
 
 That’s it! ✨ What is nice with this solution is that tweaking the horizontal padding or the text content will automatically preserve the ribbon in the corner as expected. No need to change anything!
 
-Feel free to play with [the interactive demo on CodePen](https://codepen.io/HugoGiraudel/pen/ExaeLXW?editors=0100).
+Feel free to play with [the interactive demo on CodePen](https://codepen.io/KittyGiraudel/pen/ExaeLXW?editors=0100).

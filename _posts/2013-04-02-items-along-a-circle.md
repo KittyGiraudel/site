@@ -42,13 +42,13 @@ Because Ana adds specific classes to HTML elements, it’s not very fast to add 
 
 I was pretty sure I could do something cool and easy with Sass. Indeed, I ended with a mixin handling all the positioning automagically. Plus:
 
-* You can define the number of items you want on the circle
-* You can use any element you want as child of the container, even different ones (`li`, `div`, `span`, `a`, `img`, whatever)
-* It only places items, not more not less: all the fancy stuff is up to you
-* It includes a small reset in order to allow you to use it on unordered lists
-* It takes care of vendor prefixes for you thanks to Compass
-* It handles fallbacks for older browsers
-* It’s damn easy to use
+- You can define the number of items you want on the circle
+- You can use any element you want as child of the container, even different ones (`li`, `div`, `span`, `a`, `img`, whatever)
+- It only places items, not more not less: all the fancy stuff is up to you
+- It includes a small reset in order to allow you to use it on unordered lists
+- It takes care of vendor prefixes for you thanks to Compass
+- It handles fallbacks for older browsers
+- It’s damn easy to use
 
 Here are the arguments you can pass to the mixin in order to suit your needs:
 
@@ -65,21 +65,21 @@ Thus, usage is pretty straight forward:
      * With no support for old IE
      */
   @include distribute-on-circle(
-        $nb-items: 8,
-        $circle-size: 24em,
-        $item-size: 6em
-      );
+    $nb-items: 8,
+    $circle-size: 24em,
+    $item-size: 6em
+  );
 
   /**
      * With support for old IE
      * Using class “item” (.item1, .item2, .item3, etc.)
      */
   @include distribute-on-circle(
-        $nb-items: 8,
-        $circle-size: 24em,
-        $item-size: 6em,
-        $class-for-IE: 'item'
-      );
+    $nb-items: 8,
+    $circle-size: 24em,
+    $item-size: 6em,
+    $class-for-IE: 'item'
+  );
 }
 ```
 
@@ -95,8 +95,9 @@ $angle: (360 / $nb-items); /* Angle between two items */
 
 @for $i from 1 through $nb-items {
   &:nth-of-type(#{$i}) {
-    transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot *
-          -1deg);
+    transform: rotate($rot * 1deg)
+      translate($circle-size / 2)
+      rotate($rot * -1deg);
   }
 
   // Increments the `$rot` variable for next item
@@ -142,7 +143,7 @@ The first thing is easily fixed either with a plugin like [Selectivizr](http://s
 ```javascript
 var $items = $('.parent').children()
 
-$items.each(function() {
+$items.each(function () {
   var $item = $(this)
   var index = $item.index() + 1
   $item.addClass('item' + index)
@@ -174,7 +175,12 @@ Yes, it’s definitely not the easiest way to do it as it involves some complica
 Now how do we use all this stuff for IE8- without messing with modern browser stuff? I found that the easiest solution is to add a flag to the mixin: if it’s turned on, then it means we need to support old IE, thus we use classes and margins. Else, we use transforms and pseudo-selectors. Consider the following structure:
 
 ```scss
-@mixin distribute-on-circle($nb-items, $circle-size, $item-size, $class-for-IE: false) {
+@mixin distribute-on-circle(
+  $nb-items,
+  $circle-size,
+  $item-size,
+  $class-for-IE: false
+) {
   /* … */
   @for $i from 1 through $nb-items {
     @if not $class-for-IE {
@@ -194,6 +200,6 @@ Et voila! We now have a mixin working back to IE7 (maybe even 6) thanks to very 
 
 ## Final words
 
-That’s all folks! If you have any suggestion to improve it, please be sure to share! Meanwhile, you can play with my [demo](https://codepen.io/HugoGiraudel/pen/Bigqr) on CodePen.
+That’s all folks! If you have any suggestion to improve it, please be sure to share! Meanwhile, you can play with my [demo](https://codepen.io/KittyGiraudel/pen/Bigqr) on CodePen.
 
-<pre class="codepen" data-height="560" data-type="result" data-href="Bigqr" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/Bigqr">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="560" data-type="result" data-href="Bigqr" data-user="KittyGiraudel" data-safe="true"><code></code><a href="https://codepen.io/KittyGiraudel/pen/Bigqr">Check out this Pen!</a></pre>

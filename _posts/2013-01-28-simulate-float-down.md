@@ -1,5 +1,5 @@
 ---
-title: "Simulate float: down"
+title: 'Simulate float: down'
 keywords:
   - css
   - riddle
@@ -38,9 +38,7 @@ I first managed to do it with `:nth-child()` selectors, replacing manually each 
 I was very upset not finding any proper way to do it with CSS so I did it with a mix of CSS and JavaScript (in fact jQuery). I don’t know if it’s the best way to do it in JavaScript but here is what I came up with:
 
 ```javascript
-$('.myList > li:odd')
-  .remove()
-  .appendTo('.myList')
+$('.myList > li:odd').remove().appendTo('.myList')
 ```
 
 Basically I target one out of two items with `:nth-child(even)` then remove it from the DOM to finally append it again. This does exactly what was asked so I think it’s a decent solution ([JSFiddle](https://jsfiddle.net/VAdT3/6/)).
@@ -78,7 +76,7 @@ A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitt
 
 **CHALLENGE ACCEPTED!** This made me want to give it a shot. Honestly, it took me a few tries and no more than 10 minutes to find a solution for 3 rows.
 
-<pre class="codepen" data-height="480" data-type="result" data-href="DoAIB" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/DoAIB">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="480" data-type="result" data-href="DoAIB" data-user="KittyGiraudel" data-safe="true"><code></code><a href="https://codepen.io/KittyGiraudel/pen/DoAIB">Check out this Pen!</a></pre>
 
 Instead of doing `:nth-child(even)`, we need two different selectors:
 
@@ -162,7 +160,7 @@ I think the pattern should be easier to see now thanks to the comments. For X ro
 
 ## Demo
 
-<pre class="codepen" data-height="560" data-type="result" data-href="AxmBK" data-user="HugoGiraudel" data-safe="true"><code></code><a href="https://codepen.io/HugoGiraudel/pen/AxmBK">Check out this Pen!</a></pre>
+<pre class="codepen" data-height="560" data-type="result" data-href="AxmBK" data-user="KittyGiraudel" data-safe="true"><code></code><a href="https://codepen.io/KittyGiraudel/pen/AxmBK">Check out this Pen!</a></pre>
 
 Try changing the number of rows by editing `$rows` and see the magic happen.
 

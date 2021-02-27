@@ -15,7 +15,7 @@ To be truely honest, I wasn’t impressed that much since I am pretty familiar w
 <figcaption>A 6-points star mixin made with CSS</figcaption>
 </figure>
 
-Anyway, when I saw this I thought it could be fun to make a [Sass version](https://codepen.io/HugoGiraudel/pen/LkoGE) of it to clean the code and ease the use. Let me show you what I ended up with.
+Anyway, when I saw this I thought it could be fun to make a [Sass version](https://codepen.io/KittyGiraudel/pen/LkoGE) of it to clean the code and ease the use. Let me show you what I ended up with.
 
 ## Understand the shape
 
@@ -186,7 +186,7 @@ Here is the full code for the mixin. As you can see, it is really not that big (
 
 ## Final words
 
-Well people, that’s pretty much it. You have a perfectly working [Sass mixin](https://codepen.io/HugoGiraudel/pen/Lcexi) to create customized single-element 6-point stars in CSS. Pretty neat, right?
+Well people, that’s pretty much it. You have a perfectly working [Sass mixin](https://codepen.io/KittyGiraudel/pen/Lcexi) to create customized single-element 6-point stars in CSS. Pretty neat, right?
 
 Using it couldn’t be simpler:
 

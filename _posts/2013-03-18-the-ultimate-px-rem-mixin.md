@@ -160,4 +160,4 @@ If you ever happen to find a decent solution to fix one, I’ll be glad to know 
 
 That’s pretty much it folks. I’d be glad to hear your opinion on this and improve it with your ideas. :)
 
-If you want a playground to test and hack, please feel free to fork [my pen](https://codepen.io/HugoGiraudel/pen/xsKdH).
+If you want a playground to test and hack, please feel free to fork [my pen](https://codepen.io/KittyGiraudel/pen/xsKdH).

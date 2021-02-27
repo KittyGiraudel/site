@@ -58,7 +58,7 @@ Because this is a strictly visual concern, we don’t save this option in our da
 ```js
 document
   .querySelector('#reduced-motion')
-  .addEventListener('change', function(event) {
+  .addEventListener('change', function (event) {
     const reducedMotion = event.target.checked
 
     saveReducedMotionOption(reducedMotion)
@@ -79,7 +79,7 @@ function updateReducedMotionFlag(value) {
 On page load, we need to check the stored value and update the `--duration` custom property accordingly.
 
 ```js
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', function (event) {
   const reducedMotion = Boolean(localStorage.getItem('reducedMotion'))
 
   updateReducedMotionFlag(reducedMotion)
@@ -112,7 +112,7 @@ If we can detect the reduced mode, we can turn on the flag automatically and dis
 The second part will need a little bit of JavaScript.
 
 ```js
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', function (event) {
   const checkbox = document.querySelector('#reduced-motion')
   const query = '(prefers-reduced-motion: reduce)'
   const hasOSReducedMotion = window.matchMedia(query).matches
@@ -134,4 +134,4 @@ From there, we can use this reduced motion mode for more than just disabling ani
 
 One thing to be careful of however is not to remove important interactions such as hover / focus states. This “lite mode” is really about reduced motion on screen, but it doesn’t mean we abandon the concept of visual states.
 
-I hope you liked this article. You can play with [a small demo on CodePen](https://codepen.io/HugoGiraudel/pen/WzoLjM).
+I hope you liked this article. You can play with [a small demo on CodePen](https://codepen.io/KittyGiraudel/pen/WzoLjM).

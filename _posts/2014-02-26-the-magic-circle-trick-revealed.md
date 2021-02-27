@@ -1,23 +1,21 @@
 ---
-title: "The Magic Circle: trick revealed"
+title: 'The Magic Circle: trick revealed'
 keywords:
   - css
   - riddle
 ---
 
-{% info %}
-Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](/2014/02/19/the-magic-circle-a-css-brain-teaser/).
-{% endinfo %}
+{% info %} Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](/2014/02/19/the-magic-circle-a-css-brain-teaser/). {% endinfo %}
 
 Time’s up people! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it’s pretty cool to dig into your code to see how you’ve worked around the problem.
 
 Among the possible solutions, I thought about:
 
-* Pseudo-elements with box-shadows/borders (what I &mdash; and most of you &mdash; came up with)
-* Pseudo-elements with duplicated background
-* Clip-path
-* Radial-gradients
-* SVG?
+- Pseudo-elements with box-shadows/borders (what I &mdash; and most of you &mdash; came up with)
+- Pseudo-elements with duplicated background
+- Clip-path
+- Radial-gradients
+- SVG?
 
 In this post I will be explaining my solution step by step and I’ll end the article by talking about some of the clever proposals you sent me.
 
@@ -31,7 +29,6 @@ Then, be sure to know there is nothing magic in this trick. As a proof, some of 
 
 ```html
 <ul class="boxes">
-
   <li class="box  box--top  box--left  box--alpha">
     <section class="box__content">
       <header class="box__header"></header>
@@ -59,17 +56,16 @@ Then, be sure to know there is nothing magic in this trick. As a proof, some of 
       <footer class="box__footer"></footer>
     </section>
   </li>
-
 </ul>
 ```
 
 As you can see I added a couple of classes to make the code DRYer:
 
-* `.box--left` to left boxes,
-* `.box--right` to right boxes,
-* `.box--top` to top boxes
-* `.box--bottom` to bottom boxes,
-* `.box__cut` to the cropped section of each box (`.box__footer` for top boxes, `.box__header` for bottom boxes).
+- `.box--left` to left boxes,
+- `.box--right` to right boxes,
+- `.box--top` to top boxes
+- `.box--bottom` to bottom boxes,
+- `.box__cut` to the cropped section of each box (`.box__footer` for top boxes, `.box__header` for bottom boxes).
 
 Also every box has its own name like `.box--alpha`. This is meant to be able to apply color based on a Sass map.
 
@@ -87,7 +83,7 @@ $colors: (
   alpha: #1abc9c,
   beta: #2ecc71,
   gamma: #3498db,
-  delta: #9b59b6
+  delta: #9b59b6,
 );
 ```
 
@@ -296,4 +292,4 @@ Last but not least, [Vithun Kumar Gajendra](https://codepen.io/vithun/full/gazbD
 
 Anyway, you can have a look at my fully commented pen here:
 
-<p data-height="520" data-theme-id="0" data-slug-hash="b8e914a2caf8090a9fffa7cf194afc18" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/b8e914a2caf8090a9fffa7cf194afc18'>b8e914a2caf8090a9fffa7cf194afc18</a> by Kitty Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+<p data-height="520" data-theme-id="0" data-slug-hash="b8e914a2caf8090a9fffa7cf194afc18" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/b8e914a2caf8090a9fffa7cf194afc18'>b8e914a2caf8090a9fffa7cf194afc18</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>

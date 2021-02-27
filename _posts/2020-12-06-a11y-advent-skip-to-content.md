@@ -40,4 +40,4 @@ For the styling we can use what we learnt in [day 3 of this calendar](/2020/12/0
 }
 ```
 
-You can play with a [live demo for skip links on CodePen](https://codepen.io/HugoGiraudel/pen/eYdpqoK).
+You can play with a [live demo for skip links on CodePen](https://codepen.io/KittyGiraudel/pen/eYdpqoK).

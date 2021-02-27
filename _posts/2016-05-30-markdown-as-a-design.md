@@ -20,7 +20,7 @@ Last year, I have written about [how I use Sublime Text as a writing environment
 
 This site runs on Jekyll. Almost everything that is not structural (such as the sidebar, the footer, etc.) is written in Markdown. Jekyll compiles everything to static HTML. Then I use CSS to style HTML as raw Markdown.
 
-This is not a new concept. A couple of libraries style HTML like Markdown, such as [ReMarkdown](https://fvsch.com/remarkdown/) or [Markdown.css](http://mrcoles.com/demo/markdown-css/), and I myself made [a pretty detailed CodePen](https://codepen.io/HugoGiraudel/pen/JmonG) about this last year.
+This is not a new concept. A couple of libraries style HTML like Markdown, such as [ReMarkdown](https://fvsch.com/remarkdown/) or [Markdown.css](http://mrcoles.com/demo/markdown-css/), and I myself made [a pretty detailed CodePen](https://codepen.io/KittyGiraudel/pen/JmonG) about this last year.
 
 It is surprisingly easy to do. Basically, pseudo-elements are used to display characters at specific location, such as `#` before headings, or `**` around `<strong>` elements.
 

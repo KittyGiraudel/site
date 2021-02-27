@@ -7,7 +7,7 @@ keywords:
 
 Hey people! Just a quick article to introduce [Countdown.js](https://github.com/HugoGiraudel/Countdown.js), a little script I recently made. During the last weeks, I’ve been practicing with JavaScript. It has been on [my wishlist](/2013/05/13/things-id-like-to-do-in-2013/) for 2013 and I’m glad that I could made some progress with it.
 
-In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited [an old countdown script](https://codepen.io/HugoGiraudel/pen/jtJrq) I made a while back with the [object literal pattern](https://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/).
+In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited [an old countdown script](https://codepen.io/KittyGiraudel/pen/jtJrq) I made a while back with the [object literal pattern](https://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/).
 
 ## Why another countdown script?
 
@@ -75,13 +75,13 @@ Default: `{days} days, {hours} hours, {minutes} minutes and {seconds} seconds le
 
 The message to display during the countdown where values between braces get replaced by actual numeric values. The possible patterns are:
 
-* `{years}`
-* `{months}`
-* `{weeks}`
-* `{days}`
-* `{hours}`
-* `{minutes}`
-* `{seconds}`
+- `{years}`
+- `{months}`
+- `{weeks}`
+- `{days}`
+- `{hours}`
+- `{minutes}`
+- `{seconds}`
 
 ### `onStart`
 
@@ -106,12 +106,12 @@ var countdown = new Countdown({
     '{days} days, {hours} hours and {minutes} minutes before new year!',
   dateStart: new Date('2013/12/25 12:00'),
   dateEnd: new Date('Jan 1, 2014 12:00'),
-  onStart: function() {
+  onStart: function () {
     console.log('Merry Christmas!')
   },
-  onEnd: function() {
+  onEnd: function () {
     console.log('Happy New Year!')
-  }
+  },
 })
 ```
 
@@ -125,14 +125,14 @@ As of today, two events are being fired: `countdownStart` and `countdownEnd`. Yo
 
 ```javascript
 var countdown = new Countdown({
-  selector: '.timer'
+  selector: '.timer',
 })
 
-$('.timer').on('countdownStart', function() {
+$('.timer').on('countdownStart', function () {
   console.log('The countdown has been started.')
 })
 
-$('.timer').on('countdownEnd', function() {
+$('.timer').on('countdownEnd', function () {
   console.log('The countdown has reached 0.')
 })
 ```
@@ -143,9 +143,9 @@ Pretty neat, right?
 
 My brother [Loïc](https://twitter.com/l_giraudel) helped me pushing things further by adding a couple of things to the project on GitHub:
 
-* [JSHint](https://www.jshint.com/) tests to check JavaScript code quality
-* [Jasmine](https://jasmine.github.io/) tests to make sure the script does what it’s supposed to do
-* [Grunt](https://gruntjs.com/) to automate building process (also thanks to [Lucas Churchill](https://twitter.com/_agtlucas) for this)
+- [JSHint](https://www.jshint.com/) tests to check JavaScript code quality
+- [Jasmine](https://jasmine.github.io/) tests to make sure the script does what it’s supposed to do
+- [Grunt](https://gruntjs.com/) to automate building process (also thanks to [Lucas Churchill](https://twitter.com/_agtlucas) for this)
 
 Thanks bro! Anyway, I’m proud to tell this script as passed strict JSHint validations and Jasmine tests! Hurray!
 
@@ -155,4 +155,4 @@ That’s all folks! I hope you like this script and if you find anything worth m
 
 Oh and if you only want to hack around the code, check this pen:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="vCyJq" data-user="HugoGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/HugoGiraudel/pen/vCyJq'>Object-oriented JS Countdown Class</a> by Kitty Giraudel (<a href='https://codepen.io/HugoGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>
+<p data-height="320" data-theme-id="0" data-slug-hash="vCyJq" data-user="KittyGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/vCyJq'>Object-oriented JS Countdown Class</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>
