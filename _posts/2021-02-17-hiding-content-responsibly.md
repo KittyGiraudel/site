@@ -26,7 +26,7 @@ In this article, I want to discuss all the ways to hide something, be it through
 
 ## The `.sr-only` class
 
-[This combination of CSS declarations](https://hugogiraudel.com/snippets/sr-only-class/) hides an element from the page, but keeps it accessible for screen readers. It comes in very handy to provide more context to screen readers when the visual layout is enough with it.
+[This combination of CSS declarations](https://kittygiraudel.com/snippets/sr-only-class/) hides an element from the page, but keeps it accessible for screen readers. It comes in very handy to provide more context to screen readers when the visual layout is enough with it.
 
 {% info %} This technique should only be used to mask text. In other words, there shouldn’t be any focusable element inside the hidden element. This could lead to annoying behaviours, like scrolling to an invisible element. {% endinfo %}
 
@@ -144,4 +144,4 @@ Generally speaking, you want to avoid having too many discrepancies between the 
 
 - If you need to hide something from the accessibility tree but keep it visible, use `aria-hidden="true"`. Valid cases: visual content void of meaning, icons.
 
-- If you need to visually hide something but keep it accessible, use the [visually hidden CSS declaration group](https://hugogiraudel.com/snippets/sr-only-class/). Valid cases: complementary content to provide more context, such as for [icon buttons/links](https://hugogiraudel.com/2020/12/10/accessible-icon-links/).
+- If you need to visually hide something but keep it accessible, use the [visually hidden CSS declaration group](https://kittygiraudel.com/snippets/sr-only-class/). Valid cases: complementary content to provide more context, such as for [icon buttons/links](https://kittygiraudel.com/2020/12/10/accessible-icon-links/).

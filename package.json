@@ -1,6 +1,6 @@
 {
-  "title": "HugoGiraudel.com",
-  "homepage": "https://hugogiraudel.com",
+  "title": "KittyGiraudel.com",
+  "homepage": "https://kittygiraudel.com",
   "scripts": {
     "sw": "./node_modules/.bin/workbox generateSW workbox-config.js",
     "build": "npx @11ty/eleventy && npm run sw",

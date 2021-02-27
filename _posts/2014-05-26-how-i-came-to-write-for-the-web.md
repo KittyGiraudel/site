@@ -56,7 +56,7 @@ This led to the fastest turn around in history because the same day I was able t
 
 I really enjoyed how things went the first time so I hope Webdesign Tuts+ and I will keep working together in the future.
 
-### Hugogiraudel.com
+### kittygiraudel.com
 
 Last but not least, shortly after starting writing for Codrops, in November 2012, I launched my own blog to write about experiments and stuff. I’ve been writing almost once a week since then, and plan on keep doing so for as long as I can.
 
