@@ -21,27 +21,26 @@ paste them with minor effort.
 
 <ul class="List">
   {% for language in languages %}
-    {% for snippet in language.items %}
-      {% assign related_post = '' %}
+  {% for snippet in language.items %}
+  {% assign related_post = '' %}
 
-      {% if snippet.data.related %}
-        {% for post in collections.posts %}
-          {% if post.url == snippet.data.related %}
-            {% assign related_post = post %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+  {% if snippet.data.related %}
+  {% for post in collections.posts %}
+  {% if post.url == snippet.data.related %}
+  {% assign related_post = post %}
+  {% endif %}
+  {% endfor %}
+  {% endif %}
 
-      <li class="List__item">
-        <span class="List__secondary-content">
-          {{ snippet.data.language }}{% if related_post.date %} · {{ related_post.date | time }}{% endif %}
-        </span>
+  <li class="List__item">
+    <span class="List__secondary-content">
+      {{ snippet.data.language }}{% if related_post.date %} · {{ related_post.date | time }}{% endif %}
+    </span>
 
-        <a class="List__primary-content" href="{{ snippet.url }}">
-          {{ snippet.data.title }}
-        </a>
-      </li>
-    {% endfor %}
+    <a class="List__primary-content" href="{{ snippet.url }}">
+      {{ snippet.data.title }}
+    </a>
+  </li>
+  {% endfor %}
   {% endfor %}
 </ul>
-
