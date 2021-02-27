@@ -56,7 +56,7 @@ I won’t walk through my slides like I did for my talk at [KiwiParty 2013](http
 
 Anyway, here they are (in French).
 
-<iframe src="//slides.com/hugogiraudel/sass-une-architecture-composee/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="//slides.com/kittygiraudel/sass-une-architecture-composee/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Final thoughts
 

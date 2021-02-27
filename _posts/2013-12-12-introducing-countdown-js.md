@@ -155,4 +155,4 @@ That’s all folks! I hope you like this script and if you find anything worth m
 
 Oh and if you only want to hack around the code, check this pen:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="vCyJq" data-user="KittyGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/vCyJq'>Object-oriented JS Countdown Class</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>
+<p data-height="320" data-theme-id="0" data-slug-hash="vCyJq" data-user="KittyGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/vCyJq'>Object-oriented JS Countdown Class</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>

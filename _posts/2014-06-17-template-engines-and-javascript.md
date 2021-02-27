@@ -31,23 +31,20 @@ Before moving to Mixture, I handled the problem in a rather drastic (and dirty) 
 ```html
 {% if post.codepen %}
 <script src="… source to CodePen JS file …"></script>
-{% endif % }
-{% if post.comments %} … Disqus JavaScript snippet … {% endif
-%}
-{% if post.tableOfContents %} … Table of contents JavaScript snippet …
-{% endif %}
+{% endif % } {% if post.comments %} … Disqus JavaScript snippet … {% endif %} {%
+if post.tableOfContents %} … Table of contents JavaScript snippet … {% endif %}
 ```
 
 As you can see, this is not ideal. First, JavaScript lays in a template file. We could work around the issue by moving JavaScript snippets to separate `.js` files, then only include them when needed but we would possibly do several HTTP requests while a single one could be enough. Secondly, it is ugly. Very ugly.
 
 ## A possible solution
 
-When moving to Mixture, I took the time to think of how I would solve this issue to end up with a clean and DRY solution. The first thing I wanted to do was putting the JavaScript in [a `.js` file](https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/mixture/assets/js/src/app.js), so let’s start with that.
+When moving to Mixture, I took the time to think of how I would solve this issue to end up with a clean and DRY solution. The first thing I wanted to do was putting the JavaScript in a `.js` file, so let’s start with that.
 
 ```javascript
 // app.js
-;(function(global) {
-  var App = function(conf) {
+;(function (global) {
+  var App = function (conf) {
     this.conf = global.extend(
       {
         codepen: false,
@@ -56,7 +53,7 @@ When moving to Mixture, I took the time to think of how I would solve this issue
         tracking: true,
         ad: true,
         comments: false,
-        layout: 'default'
+        layout: 'default',
       },
       conf || {}
     )
@@ -64,7 +61,7 @@ When moving to Mixture, I took the time to think of how I would solve this issue
     this.initialize()
   }
 
-  App.prototype.initialize = function() {
+  App.prototype.initialize = function () {
     /* … */
   }
 
@@ -75,7 +72,7 @@ When moving to Mixture, I took the time to think of how I would solve this issue
 So what’s going on here? In a JavaScript file, in a closure, we define a new class called `App`, that can be instantiated with an object of options (`conf`). This one is extended with an object of default parameters. When instantiated, it automatically calls the `initialize()` method. Let’s see what it does.
 
 ```javascript
-App.prototype.initialize = function() {
+App.prototype.initialize = function () {
   if (this.conf.tracking === true) {
     this.tracking()
   }
@@ -104,7 +101,7 @@ No magic here, the `initialize()` method simply calls other methods based on the
 
 ```javascript
 ;['tracking', 'ad', 'comments', 'codepen', 'sassmeister'].forEach(
-  function(key) {
+  function (key) {
     if (this.conf[key] === true) {
       this[key]()
     }
@@ -115,25 +112,25 @@ No magic here, the `initialize()` method simply calls other methods based on the
 But it’s no big deal, we don’t really need this. And now, the other methods:
 
 ```javascript
-App.prototype.tracking = function() {
+App.prototype.tracking = function () {
   global._gaq = [['_setAccount', 'UA-XXXXXXXX-X'], ['_trackPageview']]
 
   this._inject('//www.google-analytics.com/ga.js')
 }
 
-App.prototype.ad = function() {
+App.prototype.ad = function () {
   this._inject('//engine.carbonads.com/z/24598/azcarbon_2_1_0_HORIZ')
 }
 
-App.prototype.codepen = function() {
+App.prototype.codepen = function () {
   this._inject('//codepen.io/assets/embed/ei.js')
 }
 
-App.prototype.sassmeister = function() {
+App.prototype.sassmeister = function () {
   this._inject('//static.sassmeister.com/js/embed.js')
 }
 
-App.prototype._inject = function(url) {
+App.prototype._inject = function (url) {
   var d = document,
     s = 'script',
     g = d.createElement(s),

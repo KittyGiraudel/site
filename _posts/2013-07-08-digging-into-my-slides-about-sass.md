@@ -10,7 +10,7 @@ Because slides are not very self-explanatory, I think it might be cool to dig de
 
 Just for your information, here are my slides in French powered by [Reveal.js](https://slid.es):
 
-<iframe src="https://slid.es/hugogiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://slid.es/kittygiraudel/css-kick-ass-avec-sass/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## What is Sass?
 

@@ -290,4 +290,4 @@ The problems that Christopher Chedeau lists in his “CSS in JS” presentation 
 
 Check out the [example simple React datepicker](https://github.com/davidkpiano/react-simple-datepicker) on Github for an example of how Sass can be used to style React components. Oh, and here is a CodePen for you, as a treat!
 
-<p data-height="280" data-theme-id="0" data-slug-hash="1e170149edee4b13737894b435b21724" data-default-tab="result" data-user="KittyGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/1e170149edee4b13737894b435b21724/'>1e170149edee4b13737894b435b21724</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@HugoGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+<p data-height="280" data-theme-id="0" data-slug-hash="1e170149edee4b13737894b435b21724" data-default-tab="result" data-user="KittyGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/1e170149edee4b13737894b435b21724/'>1e170149edee4b13737894b435b21724</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>

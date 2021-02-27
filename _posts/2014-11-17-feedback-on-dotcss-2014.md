@@ -50,7 +50,7 @@ Kaelig was followed by [Harry Roberts](https://twitter.com/csswizardry), with pr
 
 Then there was some lightning talks that I did not really catch because I was backstage getting prepared, but I always have a profound respect to lightning speakers: I feel like time management is hell for so short presentations.
 
-I came next with a deck entitled [Keep Calm And Write Sass](https://speakerdeck.com/hugogiraudel/keep-calm-and-write-sass). It was an 18 minutes talk about the do’s and don’ts of using Sass, especially the don’ts. My point was to try to get people focused on Sass main role: helping writing CSS, not making codebases more complex.
+I came next with a deck entitled [Keep Calm And Write Sass](https://speakerdeck.com/kittygiraudel/keep-calm-and-write-sass). It was an 18 minutes talk about the do’s and don’ts of using Sass, especially the don’ts. My point was to try to get people focused on Sass main role: helping writing CSS, not making codebases more complex.
 
 [Estelle Weyl](https://twitter.com/estellevw) then presented [CSS WTF](http://estelle.github.io/doyouknowcss/), a collection of little known facts about CSS that ended up being quite technical actually. Counters in HTML forms, SVG animations, contenteditable attribute for head elements and much more. If you like clever stuff, have a look at her deck.
 
@@ -68,9 +68,9 @@ When I came up on stage, as for other speakers, I couldn’t see a single face i
 
 Interestingly enough, I realised that I feel much more confident when I don’t see people’s face. Seeing people is disturbing because you may assist to things that you don’t want to see in order to provide a clear talk.
 
-* People that don’t give a fuck and are coding or reading Twitter. Those people make you wonder whether or not your talk is interesting and this is not the kind of things you should be thinking _while_ talking.
-* People that seem completely lost. While it can be helpful to know that some people can’t follow along because things are getting too technical, seeing those reactions directly put you back to the previous bullet: you’ll end up wondering whether your talk is good enough.
-* People that are smiling or laughing when there is nothing to laugh about. If their laugh is communicative, you could start laughing as well which is not that bad obviously but kind of breaks the flow. More importantly, you could start thinking they are making fun of you for some reason, and again this is not something you want to deal with.
+- People that don’t give a fuck and are coding or reading Twitter. Those people make you wonder whether or not your talk is interesting and this is not the kind of things you should be thinking _while_ talking.
+- People that seem completely lost. While it can be helpful to know that some people can’t follow along because things are getting too technical, seeing those reactions directly put you back to the previous bullet: you’ll end up wondering whether your talk is good enough.
+- People that are smiling or laughing when there is nothing to laugh about. If their laugh is communicative, you could start laughing as well which is not that bad obviously but kind of breaks the flow. More importantly, you could start thinking they are making fun of you for some reason, and again this is not something you want to deal with.
 
 So facing a black wall was actually much easier than expected. It allowed me to keep tracks of my thoughts without being disturbed. Loved it.
 
@@ -85,9 +85,9 @@ Now as a non-native English speaker, who never spent more than 4 days in an Engl
 
 Among things I should pay attention to though:
 
-* walking less. I end up having the same habits than when I’m on the phone: I keep walking around spinning.
-* watching the audience (a.k.a the black wall) more. Again, same as on the phone, I keep looking at the floor.
-* practicing the end of my talk. I think I could have managed to find some kind of punchline to have some impact when the talk is over.
+- walking less. I end up having the same habits than when I’m on the phone: I keep walking around spinning.
+- watching the audience (a.k.a the black wall) more. Again, same as on the phone, I keep looking at the floor.
+- practicing the end of my talk. I think I could have managed to find some kind of punchline to have some impact when the talk is over.
 
 ## Final thoughts
 

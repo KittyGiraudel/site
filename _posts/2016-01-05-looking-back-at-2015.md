@@ -43,7 +43,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 <figcaption>Me, casually writing some code. Courtesy of <a href="https://twitter.com/franklyandrea">Andrea Franke</a>.</figcaption>
 </figure>
 
-🎤 **August 27 — 28th**. I gave a talk entitled [Three Years of Purging Sass](https://speakerdeck.com/hugogiraudel/three-years-of-purging-sass) at Frontend Conference in Zurich. It was a great venue, and as always, a good opportunity to meet all the nice folks from our industry.
+🎤 **August 27 — 28th**. I gave a talk entitled [Three Years of Purging Sass](https://speakerdeck.com/kittygiraudel/three-years-of-purging-sass) at Frontend Conference in Zurich. It was a great venue, and as always, a good opportunity to meet all the nice folks from our industry.
 
 🔥 **August — September**. Some time at the end of the summer, I started suffering from tendonitis on my right wrist, probably (although yet to be confirmed) due to a larger than average amount of stress at that time. To this day, I still happen to feel some pain in the arm, even though I [found some tricks to leverage it](/2015/12/02/dealing-with-tendonitis/).
 
