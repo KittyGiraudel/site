@@ -8,7 +8,7 @@ edits:
     md: I did a lot of changes after writing this post notably regarding SEO, performances and accessibility. Be sure you read about it!
 ---
 
-Hi people! It’s now been two months since I launched the new and active version of hugogiraudel.com and I took the opportunity to make a few changes. Let me introduce them, hoping you find them cool. :)
+Hi people! It’s now been two months since I launched the new and active version of kittygiraudel.com and I took the opportunity to make a few changes. Let me introduce them, hoping you find them cool. :)
 
 ## Layout
 

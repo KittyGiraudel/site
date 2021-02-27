@@ -170,4 +170,4 @@ First of all, I must say I am very happy with the porting. All in all, everythin
 
 There are still a couple of things to take care of, like finding a way to preview articles before releasing them without having to run Jekyll but it’s nitpicking.
 
-If you ever happen to find any bug or if you have a suggestion, please [open an issue on GitHub](https://github.com/HugoGiraudel/hugogiraudel.github.com/issues) or drop me a comment here.
+If you ever happen to find any bug or if you have a suggestion, please [open an issue on GitHub](https://github.com/HugoGiraudel/site/issues) or drop me a comment here.

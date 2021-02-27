@@ -132,7 +132,7 @@ config.addFilter('sort_by', sortBy)
 config.addFilter('where', where)
 ```
 
-If you would like to read the code for these filters, open [the `.eleventy.js` file on GitHub](https://github.com/HugoGiraudel/hugogiraudel.com/blob/master/.eleventy.js).
+If you would like to read the code for these filters, open [the `.eleventy.js` file on GitHub](https://github.com/kittygiraudel/site/tree/main/.eleventy.js).
 
 ## Production specific code
 

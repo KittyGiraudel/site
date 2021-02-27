@@ -42,6 +42,6 @@ router.on('page:change', ({ title }) => {
 })
 ```
 
-You can find a more in-depth [tutorial for React with `react-router` and `react-helmet`](https://hugogiraudel.com/2020/01/15/accessible-title-in-a-single-page-react-application/) on this blog. The core concept should be the same no matter the framework.
+You can find a more in-depth [tutorial for React with `react-router` and `react-helmet`](https://kittygiraudel.com/2020/01/15/accessible-title-in-a-single-page-react-application/) on this blog. The core concept should be the same no matter the framework.
 
 {% info %} Note that if you have can guarantee there is **always** a relevant `<h1>` element (independently of loading states, query errors and such), another possibly simpler solution would be to skip that hidden element altogether, and focus the `<h1>` element instead (still with `tabindex="-1"`). {% endinfo %}
