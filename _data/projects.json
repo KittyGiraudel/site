@@ -2,13 +2,13 @@
   {
     "name": "Selectors Explained",
     "description": "A CSS selector to plain English converter.",
-    "link": "https://github.com/HugoGiraudel/selectors-explained",
+    "link": "https://github.com/KittyGiraudel/selectors-explained",
     "category": "CSS"
   },
   {
     "name": "Focusable Selectors",
     "description": "A micro-lib exporting an array of CSS selectors for focusable HTML elements.",
-    "link": "https://github.com/HugoGiraudel/focusable-selectors",
+    "link": "https://github.com/KittyGiraudel/focusable-selectors",
     "category": "Accessibility"
   },
   {
@@ -20,31 +20,31 @@
   {
     "name": "react-menu-button",
     "description": "A React component wrapper around inclusive-menu-button.",
-    "link": "https://github.com/HugoGiraudel/react-menu-button",
+    "link": "https://github.com/KittyGiraudel/react-menu-button",
     "category": "Accessibility"
   },
   {
     "name": "react-a11y-dialog",
     "description": "A React component wrapper around a11y-dialog.",
-    "link": "https://github.com/HugoGiraudel/react-a11y-dialog",
+    "link": "https://github.com/KittyGiraudel/react-a11y-dialog",
     "category": "Accessibility"
   },
   {
     "name": "react-a11y-disclosure",
     "description": "A small React hook to build accessible disclosure widgets.",
-    "link": "https://github.com/HugoGiraudel/react-a11y-disclosure",
+    "link": "https://github.com/KittyGiraudel/react-a11y-disclosure",
     "category": "Accessibility"
   },
   {
     "name": "Scrabble-Helper",
     "description": "A CLI helper for Scrabble.",
-    "link": "https://github.com/HugoGiraudel/scrabble-helper",
+    "link": "https://github.com/KittyGiraudel/scrabble-helper",
     "category": "JavaScript"
   },
   {
     "name": "Inline-Styler",
     "description": "A teeny tiny JavaScript library to easily manipulate the style attribute of an element.",
-    "link": "https://github.com/HugoGiraudel/inline-styler",
+    "link": "https://github.com/KittyGiraudel/inline-styler",
     "category": "JavaScript"
   },
   {
@@ -68,7 +68,7 @@
   {
     "name": "A11y-dialog",
     "description": "A script to make modal dialogs accessible to assistive technology users.",
-    "link": "https://github.com/HugoGiraudel/a11y-dialog",
+    "link": "https://github.com/KittyGiraudel/a11y-dialog",
     "category": "Accessibility",
     "showcase": true,
     "stars": 1600
@@ -82,7 +82,7 @@
   {
     "name": "Sass Semver",
     "description": "A small Semantic Versioning parser in Sass.",
-    "link": "https://github.com/HugoGiraudel/sass-semver",
+    "link": "https://github.com/KittyGiraudel/sass-semver",
     "category": "Sass"
   },
   {
@@ -104,7 +104,7 @@
   {
     "name": "Sass Boilerplate",
     "description": "A Sass boilerplate to kickstart a project.",
-    "link": "https://github.com/HugoGiraudel/sass-boilerplate",
+    "link": "https://github.com/KittyGiraudel/sass-boilerplate",
     "category": "Sass"
   },
   {
@@ -116,7 +116,7 @@
   {
     "name": "Sass Compatibility",
     "description": "A project collecting incompatibilities between different Sass engines.",
-    "link": "https://hugogiraudel.github.io/sass-compatibility/",
+    "link": "https://kittygiraudel.github.io/sass-compatibility/",
     "category": "Sass"
   },
   {
@@ -128,49 +128,49 @@
   {
     "name": "node-legofy",
     "description": "A script to convert an image into a mosaic of LEGO pieces.",
-    "link": "https://github.com/HugoGiraudel/node-legofy",
+    "link": "https://github.com/KittyGiraudel/node-legofy",
     "category": "JavaScript"
   },
   {
     "name": "CRUD.js",
     "description": "A lightweight interface for CRUD.",
-    "link": "https://github.com/HugoGiraudel/CRUD.js",
+    "link": "https://github.com/KittyGiraudel/CRUD.js",
     "category": "JavaScript"
   },
   {
     "name": "ImagePreloader",
     "description": "A lightweight image preloader.",
-    "link": "https://github.com/HugoGiraudel/imagepreloader",
+    "link": "https://github.com/KittyGiraudel/imagepreloader",
     "category": "JavaScript"
   },
   {
     "name": "Countdown.js",
     "description": "A small yet customisable countdown in JavaScript.",
-    "link": "https://github.com/HugoGiraudel/countdown.js",
+    "link": "https://github.com/KittyGiraudel/countdown.js",
     "category": "JavaScript"
   },
   {
     "name": "SassyTester",
     "description": "A minimalistic function tester in Sass.",
-    "link": "https://github.com/HugoGiraudel/SassyTester",
+    "link": "https://github.com/KittyGiraudel/SassyTester",
     "category": "Sass"
   },
   {
     "name": "SassyGradients",
     "description": "A lightweight wrapper for CSS gradients.",
-    "link": "https://github.com/HugoGiraudel/SassyGradients",
+    "link": "https://github.com/KittyGiraudel/SassyGradients",
     "category": "Sass"
   },
   {
     "name": "SassyBitwise",
     "description": "An implementation of bitwise operators in Sass.",
-    "link": "https://github.com/HugoGiraudel/SassyBitwise",
+    "link": "https://github.com/KittyGiraudel/SassyBitwise",
     "category": "Sass"
   },
   {
     "name": "SassyStrings",
     "description": "A collection of Sass functions for string manipulation.",
-    "link": "https://github.com/HugoGiraudel/SassyStrings",
+    "link": "https://github.com/KittyGiraudel/SassyStrings",
     "category": "Sass"
   },
   {
@@ -182,31 +182,31 @@
   {
     "name": "SassyMatrix",
     "description": "A collection of Sass functions for matrix manipulation.",
-    "link": "https://github.com/HugoGiraudel/SassyMatrix",
+    "link": "https://github.com/KittyGiraudel/SassyMatrix",
     "category": "Sass"
   },
   {
     "name": "SassyLogger",
     "description": "A powerful logging system built for Sass.",
-    "link": "https://github.com/HugoGiraudel/SassyLogger",
+    "link": "https://github.com/KittyGiraudel/SassyLogger",
     "category": "Sass"
   },
   {
     "name": "SassyJSON",
     "description": "A partially working JSON parser in Sass.",
-    "link": "https://github.com/HugoGiraudel/SassyJSON",
+    "link": "https://github.com/KittyGiraudel/SassyJSON",
     "category": "Sass"
   },
   {
     "name": "SassyCast",
     "description": "A collection of Sass functions for type conversion.",
-    "link": "https://github.com/HugoGiraudel/SassyCast",
+    "link": "https://github.com/KittyGiraudel/SassyCast",
     "category": "Sass"
   },
   {
     "name": "SassySort",
     "description": "A collection of sorting algorithms implementations in Sass.",
-    "link": "https://github.com/HugoGiraudel/SassySort",
+    "link": "https://github.com/KittyGiraudel/SassySort",
     "category": "Sass"
   }
 ]

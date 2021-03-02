@@ -10,7 +10,7 @@ templateEngineOverride: md
 
 A couple of weeks ago, I [introduced Sass Guidelines](/2015/01/07/introducing-sass-guidelines/), a huge styleguide to write efficient, sain and scalable Sass code in pretty much any project. It has known a massive success, so thank you all for your support! I am very glad to maintain this project knowning how popular it has gotten, especially this quick.
 
-Actually, it was so welcome that some lovely folks started translating it in different languages. It is currently available in [English](https://sass-guidelin.es), [French](https://sass-guidelin.es/fr/), [Spanish](https://sass-guidelin.es/es/), [Polish](https://sass-guidelin.es/pl/), [Russian](https://sass-guidelin.es/ru/), [Korean](https://sass-guidelin.es/ko/) and [Chinese](https://sass-guidelin.es/zh/). [German](https://github.com/HugoGiraudel/sass-guidelines/issues/88), [Italian](https://github.com/HugoGiraudel/sass-guidelines/issues/91), [Portuguese](https://github.com/HugoGiraudel/sass-guidelines/issues/89), [Danish](https://github.com/HugoGiraudel/sass-guidelines/issues/84), [Dutch](https://github.com/HugoGiraudel/sass-guidelines/issues/86), [Czech](https://github.com/HugoGiraudel/sass-guidelines/issues/92) and [Greek](https://github.com/HugoGiraudel/sass-guidelines/issues/83) should soon follow. Let’s give credits where it’s due while we’re at it.
+Actually, it was so welcome that some lovely folks started translating it in different languages. It is currently available in [English](https://sass-guidelin.es), [French](https://sass-guidelin.es/fr/), [Spanish](https://sass-guidelin.es/es/), [Polish](https://sass-guidelin.es/pl/), [Russian](https://sass-guidelin.es/ru/), [Korean](https://sass-guidelin.es/ko/) and [Chinese](https://sass-guidelin.es/zh/). [German](https://github.com/KittyGiraudel/sass-guidelines/issues/88), [Italian](https://github.com/KittyGiraudel/sass-guidelines/issues/91), [Portuguese](https://github.com/KittyGiraudel/sass-guidelines/issues/89), [Danish](https://github.com/KittyGiraudel/sass-guidelines/issues/84), [Dutch](https://github.com/KittyGiraudel/sass-guidelines/issues/86), [Czech](https://github.com/KittyGiraudel/sass-guidelines/issues/92) and [Greek](https://github.com/KittyGiraudel/sass-guidelines/issues/83) should soon follow. Let’s give credits where it’s due while we’re at it.
 
 - Greek: [Adonis K.](https://twitter.com/adon1sk) and [Konstantinos Margaritis](https://twitter.com/kmargaritis)
 - Danish: [Patrick Redzdaz](https://twitter.com/redzdaz)
@@ -34,7 +34,7 @@ Anyway, managing different languages as part of a [Jekyll](https://jekyllrb.com)
 
 A translation of Sass Guidelines consists on a folder named after the [language code](https://www.w3.org/TR/html401/types.html#type-langcode) of the translation, for instance `en` for English, or `cz` for Czech. This folder should contain all 18 chapters in Markdown (one file per chapter) as well as an `index.md` file to import them all.
 
-For instance, the [French translation](https://github.com/HugoGiraudel/sass-guidelines/tree/gh-pages/fr) looks like this:
+For instance, the [French translation](https://github.com/KittyGiraudel/sass-guidelines/tree/gh-pages/fr) looks like this:
 
 ```
 fr/
@@ -59,7 +59,7 @@ fr/
  `- index.md
 ```
 
-However I did not want each translation’s index to be in charge of importing the chapters in the correct order. What if I want to switch the position of two chapters? Having to update all `index.md` is not very convenient. Furthermore, some chapters are separated by the [donate partial](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_includes/donate.html). This should not be language-specific but a global configuration.
+However I did not want each translation’s index to be in charge of importing the chapters in the correct order. What if I want to switch the position of two chapters? Having to update all `index.md` is not very convenient. Furthermore, some chapters are separated by the [donate partial](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_includes/donate.html). This should not be language-specific but a global configuration.
 
 Thus, I found a way to keep `index.md` clean and tidy, like so:
 
@@ -74,7 +74,7 @@ language: fr
 
 That’s it. The only difference between the French index and the Polish index is the `language` variable in the YAML Front Matter. Everything else is handled by `chapters.html`.
 
-[This file](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_includes/chapters.html) (living in the `_includes` folder) is in charge of including all chapters from the current page language in the right order, including the donate partials. Thanks to `include_relative` tag, it gets extremely easy to do:
+[This file](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_includes/chapters.html) (living in the `_includes` folder) is in charge of including all chapters from the current page language in the right order, including the donate partials. Thanks to `include_relative` tag, it gets extremely easy to do:
 
 ```liquid
 {% include_relative _author.md %}
@@ -115,9 +115,9 @@ That’s pretty much how it works.
 
 ## Translating the UI
 
-Now, content is not everything <sup>[citation needed]</sup>. There are also some UI components to translate, such as the [baseline](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_layouts/default.html#L11), the [footer](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_includes/footer.html) and the [donate partial](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_includes/donate.html).
+Now, content is not everything <sup>[citation needed]</sup>. There are also some UI components to translate, such as the [baseline](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_layouts/default.html#L11), the [footer](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_includes/footer.html) and the [donate partial](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_includes/donate.html).
 
-In a matter of convenience, all UI translations live in a [`translations.yml`](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/translations.yml) file in the `_data` folder so they can be accessed from the views. This file is structured as follow:
+In a matter of convenience, all UI translations live in a [`translations.yml`](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_data/translations.yml) file in the `_data` folder so they can be accessed from the views. This file is structured as follow:
 
 ```yml
 en:
@@ -154,7 +154,7 @@ Easy peasy! It works exactly the same for the baseline, the footer and pretty mu
 
 ## Displaying credits per translation
 
-If you have checked one of the currently available translations, you may have noticed a message right under the baseline introducting the translators and warning about outdated information. Obviously, this is not manually computed. Actually, data is pulled from another YML file, [`languages.yml`](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml) this time, looking like this:
+If you have checked one of the currently available translations, you may have noticed a message right under the baseline introducting the translators and warning about outdated information. Obviously, this is not manually computed. Actually, data is pulled from another YML file, [`languages.yml`](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml) this time, looking like this:
 
 ```yml
 fr:
@@ -168,7 +168,7 @@ fr:
 # Other languages…
 ```
 
-I am sure you have figured out where this is going. We only need [a partial included within the layout itself](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_layouts/default.html#L13) (since it is always there). Let’s call it [`translation-warning.html`](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_includes/translation-warning.html). One thing before jumping on the code: we need to display a completely different message on the English version. I took this as an opportunity to tell people Sass Guidelines are being translated in other languages so they can switch from the options panel.
+I am sure you have figured out where this is going. We only need [a partial included within the layout itself](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_layouts/default.html#L13) (since it is always there). Let’s call it [`translation-warning.html`](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_includes/translation-warning.html). One thing before jumping on the code: we need to display a completely different message on the English version. I took this as an opportunity to tell people Sass Guidelines are being translated in other languages so they can switch from the options panel.
 
 ```html
 {% if page.language == "en" %}
@@ -179,7 +179,7 @@ I am sure you have figured out where this is going. We only need [a partial incl
     <a
       target="_blank"
       rel="noopener noreferrer"
-      href="https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml"
+      href="https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml"
       >generous contributors</a
     >. Open the
     <span data-toggle="aside" class="link-like" role="button" aria-expanded
@@ -246,7 +246,7 @@ gr:
 
 Then this HTML string can be safely used as part of our paragraph with `{{ translators }}`.
 
-The second paragraph is intended to warn against outdated information. To make it quite clear when a version is obsolete, we compare [the English version](https://github.com/HugoGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml#L29) (stored in the `languages.yml`) with the current language’s version. If the latter is lower, then it means the translation is outdated, in which case we explicitly say it.
+The second paragraph is intended to warn against outdated information. To make it quite clear when a version is obsolete, we compare [the English version](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml#L29) (stored in the `languages.yml`) with the current language’s version. If the latter is lower, then it means the translation is outdated, in which case we explicitly say it.
 
 ## Final thoughts
 

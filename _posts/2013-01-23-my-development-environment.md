@@ -77,7 +77,7 @@ I know there are CodeKit equivalents for Windows. Most people will tell you abou
 
 Yaaaaay! Git, my dear friend! Friends, **I suck at Git**. I understand the main idea, I even know how to do some very basic stuff but every single time I need to do something it takes me about 20 minutes, I have to try every command I know (which is about 6 or 7), fail, get upset, read the doc, don’t understand anything either and finally ask my brother. Long story short, I don’t like Git… yet.
 
-But I still have an [account at GitHub](https://github.com/HugoGiraudel) which only has 2 repositories as of today (good ones tho!). I hope I’ll push other things in the not so distand future.
+But I still have an [account at GitHub](https://github.com/KittyGiraudel) which only has 2 repositories as of today (good ones tho!). I hope I’ll push other things in the not so distand future.
 
 ### Local server
 

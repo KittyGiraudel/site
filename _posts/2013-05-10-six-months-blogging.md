@@ -4,7 +4,7 @@ keywords:
   - blog
 ---
 
-Hey people! Yesterday, the blog was 6 months old. Launched in [November 9th 2012](/2012/11/09/site-redesign-new-blog/) as a quick and dirty plateform to drop some posts when I get time, now built on [Jekyll](https://jekyllrb.com/), [Sass](https://sass-lang.com/) and [GitHub Pages](https://github.com/HugoGiraudel/site), I have to say I am pretty happy with what I have done so far with this.
+Hey people! Yesterday, the blog was 6 months old. Launched in [November 9th 2012](/2012/11/09/site-redesign-new-blog/) as a quick and dirty plateform to drop some posts when I get time, now built on [Jekyll](https://jekyllrb.com/), [Sass](https://sass-lang.com/) and [GitHub Pages](https://github.com/KittyGiraudel/site), I have to say I am pretty happy with what I have done so far with this.
 
 I take this article as an opportunity to make some kind of assessment. Any comment appreciated of course. ;)
 

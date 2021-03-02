@@ -219,7 +219,7 @@ const lastCommit = exec("git log -1 --pretty=%B").trim();
 
 ## Wrapping up
 
-I am sure there are many other details we could add to the script ([find a lite version on GitHub Gist](https://gist.github.com/HugoGiraudel/143318842e836d6db2a28c621f3d49bc)), and it will likely evolve across the next few weeks and months. Some ideas I played with but didn’t complete for not wanting to install more npm packages just for the sake of it:
+I am sure there are many other details we could add to the script ([find a lite version on GitHub Gist](https://gist.github.com/KittyGiraudel/143318842e836d6db2a28c621f3d49bc)), and it will likely evolve across the next few weeks and months. Some ideas I played with but didn’t complete for not wanting to install more npm packages just for the sake of it:
 
 - Display the current IP address.
 - Detect whether the OS dark mode preference is enabled—[`node-dark-mode`](https://github.com/sindresorhus/node-dark-mode) from Sindre Sorhus does just that by interacting with the OS.

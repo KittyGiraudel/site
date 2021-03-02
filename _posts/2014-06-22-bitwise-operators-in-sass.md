@@ -22,7 +22,7 @@ A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) a
 
 And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let’s catch up on bitwise operators, shall we?
 
-_Note: project is on GitHub. Check out [SassyBitwise](https://github.com/HugoGiraudel/SassyBitwise)._
+_Note: project is on GitHub. Check out [SassyBitwise](https://github.com/KittyGiraudel/SassyBitwise)._
 
 ## B-b-b-b-bitwise
 

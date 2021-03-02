@@ -15,7 +15,7 @@ Although at this point, sorting numbers was not enough to me. I wanted to sort m
 
 That could have been the end of that if Sam Richards (a.k.a [Snugug](https://twitter.com/snugug)) had not put his Quick Sort implementation on my way. God, it was both fast and beautiful but… it was for numeric values only. Challenge accepted!
 
-It didn’t take me long to update his function in order to sort anything, very quickly (actually as quickly as Ruby can get, which means, not much…). And I really enjoyed working on this, so I started implementing other famous algorithms in Sass, resulting in [SassySort](https://github.com/HugoGiraudel/SassySort).
+It didn’t take me long to update his function in order to sort anything, very quickly (actually as quickly as Ruby can get, which means, not much…). And I really enjoyed working on this, so I started implementing other famous algorithms in Sass, resulting in [SassySort](https://github.com/KittyGiraudel/SassySort).
 
 _Note: I recently wrote [an article](http://thesassway.com/advanced/implementing-bubble-sort-with-sass) about how to implement the Bubble Sort algorithm in Sass for The Sass Way. If you haven’t read it, you should! At least for the beautiful header image!_
 
@@ -27,7 +27,7 @@ SassySort is now a Compass Extension, which means you can easily include it in a
 2. Add `require 'SassySort'` to your `config.rb`
 3. Add `@import 'SassySort'` to your stylesheet
 
-If you simply want to add a file to your project, you can get the [dist file](https://github.com/HugoGiraudel/SassySort/blob/master/dist/_SassySort.scss) from the repository, copy and paste its content to your project and voila.
+If you simply want to add a file to your project, you can get the [dist file](https://github.com/KittyGiraudel/SassySort/blob/master/dist/_SassySort.scss) from the repository, copy and paste its content to your project and voila.
 
 Then you’ve access to a neat little API:
 
@@ -85,6 +85,6 @@ Note that if an unrecognized character is found, it is skipped.
 
 ## Final thoughts
 
-That’s pretty much it folks. If you really want to dig in the code of the algorithms, be sure to have a look at the [repository](https://github.com/HugoGiraudel/SassySort) however it was mostly JavaScript to Sass code conversion, so there is no magic behind it.
+That’s pretty much it folks. If you really want to dig in the code of the algorithms, be sure to have a look at the [repository](https://github.com/KittyGiraudel/SassySort) however it was mostly JavaScript to Sass code conversion, so there is no magic behind it.
 
 If you feel like implementing other sorting algorithms, be sure to have a shot and open an issue / pull-request.

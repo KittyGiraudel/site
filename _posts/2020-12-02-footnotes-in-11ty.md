@@ -2,7 +2,7 @@
 title: Footnotes in 11ty
 ---
 
-After having [moved from Jekyll to 11ty](/2020/11/30/from-jekyll-to-11ty/), I realised I could extend Liquid in fancy ways to make some things a little easier (or down right possible). In this article, I’d like to share how I built a tiny footnotes plugin with {% footnoteref "liquid" "I personally use Liquid at the time of writing, but this implementation should be relatively similar with Nunjucks, or even some other templating language." %}Liquid{% endfootnoteref %}. If you are not interested in how the sausage is made and just want to use the code, check [eleventy-plugin-footnotes](https://github.com/HugoGiraudel/eleventy-plugin-footnotes) for usage instructions.
+After having [moved from Jekyll to 11ty](/2020/11/30/from-jekyll-to-11ty/), I realised I could extend Liquid in fancy ways to make some things a little easier (or down right possible). In this article, I’d like to share how I built a tiny footnotes plugin with {% footnoteref "liquid" "I personally use Liquid at the time of writing, but this implementation should be relatively similar with Nunjucks, or even some other templating language." %}Liquid{% endfootnoteref %}. If you are not interested in how the sausage is made and just want to use the code, check [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/eleventy-plugin-footnotes) for usage instructions.
 
 {% info %}
 Nicolas Hoizey pointed out on Twitter that [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) does essentially the same thing with less integration and using Markdown syntax instead of Liquid.
@@ -129,4 +129,4 @@ So to sum up:
 
 That’s about it. Pretty cool, huh? ✨
 
-If you are interested in using these footnotes in 11ty, check out [eleventy-plugin-footnotes](https://github.com/HugoGiraudel/eleventy-plugin-footnotes) on GitHub. There are install instructions, guidelines and examples.
+If you are interested in using these footnotes in 11ty, check out [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/eleventy-plugin-footnotes) on GitHub. There are install instructions, guidelines and examples.

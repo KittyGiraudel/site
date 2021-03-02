@@ -51,7 +51,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 💔 **October 4th**. I ended a 4 years long relationship with my girlfriend.
 
-✨ **November 6th**. I built [node-legofy](https://github.com/HugoGiraudel/node-legofy) with my friend [Valérian Galliat](https://twitter.com/valeriangalliat), a script to convert your images to mosaics of LEGO. Super fun side project.
+✨ **November 6th**. I built [node-legofy](https://github.com/KittyGiraudel/node-legofy) with my friend [Valérian Galliat](https://twitter.com/valeriangalliat), a script to convert your images to mosaics of LEGO. Super fun side project.
 
 💬 **December 7th**. I created the [SJSJ](/2015/12/07/introducing-sjsj/) (Simplified JavaScript Jargon) repository as an attempt to make the JavaScript buzzwords a bit less obscure to new comers. I am astonished as how welcome the project is, with already over 1300 stars on GitHub. Keep it up you people!
 

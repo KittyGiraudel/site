@@ -16,17 +16,17 @@ It turns out he is not the only one with an Ask Me Anything repository; there ar
 
 I really dig this idea. I feel it’s a great way to know more about someone or to be able to ask questions in a more robust way than Twitter, and less private (so more searchable) than emails.
 
-That’s why I created an [Ask Me Anything](https://github.com/HugoGiraudel/ama) repository for me where you can ask me questions if you feel like it. Feel free to ask anything; code, Sass, life, hobbies, stupid, non-stupid, whatever.
+That’s why I created an [Ask Me Anything](https://github.com/KittyGiraudel/ama) repository for me where you can ask me questions if you feel like it. Feel free to ask anything; code, Sass, life, hobbies, stupid, non-stupid, whatever.
 
 ![This is an excellent question](https://media.giphy.com/media/dXICCcws9oxxK/giphy.gif)
 
-I already replied to about [20 questions](https://github.com/HugoGiraudel/ama/issues?q=is%3Aissue+is%3Aclosed) so far, among which you’ll learn that:
+I already replied to about [20 questions](https://github.com/KittyGiraudel/ama/issues?q=is%3Aissue+is%3Aclosed) so far, among which you’ll learn that:
 
-- [I roughly spend 62.5% of my time working](https://github.com/HugoGiraudel/ama/issues/15),
-- [I have spent an average of 36% of my life in my bed](https://github.com/HugoGiraudel/ama/issues/12),
-- [My superpower would definitely be _teleportation_](https://github.com/HugoGiraudel/ama/issues/4),
-- [I don’t believe in God](https://github.com/HugoGiraudel/ama/issues/14),
-- [I enjoy a solid workflow](https://github.com/HugoGiraudel/ama/issues/17).
+- [I roughly spend 62.5% of my time working](https://github.com/KittyGiraudel/ama/issues/15),
+- [I have spent an average of 36% of my life in my bed](https://github.com/KittyGiraudel/ama/issues/12),
+- [My superpower would definitely be _teleportation_](https://github.com/KittyGiraudel/ama/issues/4),
+- [I don’t believe in God](https://github.com/KittyGiraudel/ama/issues/14),
+- [I enjoy a solid workflow](https://github.com/KittyGiraudel/ama/issues/17).
 
 And much more! I realise this is probably something I should have done a while ago given the amount of questions I’ve been asked on Twitter / GitHub / email. Better late than never!
 

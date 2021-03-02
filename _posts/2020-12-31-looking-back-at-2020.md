@@ -6,7 +6,7 @@ I’m going to keep this year in review short because it was a crappy year and I
 
 ## Timeline
 
-🤯 **February 24th.** I worked on a fun little project called [Selectors Explained](https://hugogiraudel.github.io/selectors-explained/). It’s a teeny-tiny site explaining a CSS selector in plain English.
+🤯 **February 24th.** I worked on a fun little project called [Selectors Explained](https://kittygiraudel.github.io/selectors-explained/). It’s a teeny-tiny site explaining a CSS selector in plain English.
 
 🐈 **April 17th.** One of my cats passed away after several health complications. He’s been with me for almost 10 years, and it’s been difficult saying goodbye. Being always at home and missing his presence did not make things any easier.
 
@@ -28,9 +28,9 @@ I’m going to keep this year in review short because it was a crappy year and I
 
 Whether it is because I was less busy at work or had time off in December, it turns out I have done some contributions to open-source in 2020. Namely:
 
-- I published [react-a11y-dialog v5.0.0](https://github.com/HugoGiraudel/react-a11y-dialog/releases), a redesign of the API to provide hooks.
-- I created [react-a11y-footnotes](https://github.com/HugoGiraudel/react-a11y-footnotes), a React component to automate accessible footnotes.
-- I created [eleventy-plugin-footnotes](https://github.com/HugoGiraudel/eleventy-plugin-footnotes), an 11ty plugin to automate accessible footnotes.
+- I published [react-a11y-dialog v5.0.0](https://github.com/KittyGiraudel/react-a11y-dialog/releases), a redesign of the API to provide hooks.
+- I created [react-a11y-footnotes](https://github.com/KittyGiraudel/react-a11y-footnotes), a React component to automate accessible footnotes.
+- I created [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/eleventy-plugin-footnotes), an 11ty plugin to automate accessible footnotes.
 
 ## For next year
 

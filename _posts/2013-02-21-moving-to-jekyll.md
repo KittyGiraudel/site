@@ -26,7 +26,7 @@ There are a couple of reasons that made me take the decision to move my perfectl
 - **Fewer dependencies.**
   No more jQuery.paginate for pagination; Jekyll has a built in plugin to do it. No more Prism.js for syntax highlighting; Jekyll comes with Pygments, a Python based syntax highlighter. Less JS (and especially no more jQuery) means faster site.
 - **Hosted on GitHub.**
-  Not only are static files served from GitHub blazingly fast, but the [source code is now public](source code is now). I like the idea of making anyone able to have a look at the code behind the site. Plus, there is now a [bug tracker](https://github.com/HugoGiraudel/site/issues).
+  Not only are static files served from GitHub blazingly fast, but the [source code is now public](source code is now). I like the idea of making anyone able to have a look at the code behind the site. Plus, there is now a [bug tracker](https://github.com/KittyGiraudel/site/issues).
 - **Discover new things.**
   I’ve learnt to use the PHP/MySQL combo but I finally learnt how not to use it when it is not needed. I wanted to discover a new thing and it turned out to be quite simple to use in the end.
 
@@ -170,4 +170,4 @@ First of all, I must say I am very happy with the porting. All in all, everythin
 
 There are still a couple of things to take care of, like finding a way to preview articles before releasing them without having to run Jekyll but it’s nitpicking.
 
-If you ever happen to find any bug or if you have a suggestion, please [open an issue on GitHub](https://github.com/HugoGiraudel/site/issues) or drop me a comment here.
+If you ever happen to find any bug or if you have a suggestion, please [open an issue on GitHub](https://github.com/KittyGiraudel/site/issues) or drop me a comment here.

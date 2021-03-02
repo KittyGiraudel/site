@@ -20,7 +20,7 @@ _If you’re unaware what Git is, I wrote [Git, the practical very basis](http:/
 
 ## Getting information
 
-I quickly realised there is no way to be comfortable with command-line Git in the default OS terminal. On macOS, I recommend installing iTerm2 and [pimping it to display the branch name as part of the prompt](https://github.com/HugoGiraudel/dotfiles/blob/master/.bashrc). Also, colors. I mean, look at that beauty:
+I quickly realised there is no way to be comfortable with command-line Git in the default OS terminal. On macOS, I recommend installing iTerm2 and [pimping it to display the branch name as part of the prompt](https://github.com/KittyGiraudel/dotfiles/blob/master/.bashrc). Also, colors. I mean, look at that beauty:
 
 ![A display of my Git prompt including the branch name](/assets/images/how-i-use-git/git-prompt.png)
 
@@ -165,7 +165,7 @@ $ git force
 
 # Wrappings things up
 
-I have quite a few other Git tricks up my sleeve, but that will be for another article. For a complete list of my Git aliases, refer to [my dotfiles repo](https://github.com/HugoGiraudel/dotfiles/blob/master/.gitconfig).
+I have quite a few other Git tricks up my sleeve, but that will be for another article. For a complete list of my Git aliases, refer to [my dotfiles repo](https://github.com/KittyGiraudel/dotfiles/blob/master/.gitconfig).
 
 Speaking of Git tricks, this is your reminde that my brother knows his shit and wrote on this very blog a 3-parts article on Git tips & tricks:
 

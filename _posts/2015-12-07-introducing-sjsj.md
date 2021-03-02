@@ -16,7 +16,7 @@ The general idea is that the JavaScript ecosystem has gotten both complex and bl
 ## Involving the community
 
 
-I gave it a night and thought it would be a good idea to have a GitHub repository acting as a glossary for most (_all_ is likely to be impossible) JavaScript buzzwords. This repository, I named [SJSJ](https://github.com/hugogiraudel/SJSJ) for _Simplified JavaScript Jargon_.
+I gave it a night and thought it would be a good idea to have a GitHub repository acting as a glossary for most (_all_ is likely to be impossible) JavaScript buzzwords. This repository, I named [SJSJ](https://github.com/KittyGiraudel/SJSJ) for _Simplified JavaScript Jargon_.
 
 The reason why I introduce it in a proper blog post is because **I would need your help**. Indeed, I would like this to become a community-driven project, as:
 

@@ -5,7 +5,7 @@ keywords:
   - release
 ---
 
-Hey people! Just a quick article to introduce [Countdown.js](https://github.com/HugoGiraudel/Countdown.js), a little script I recently made. During the last weeks, I’ve been practicing with JavaScript. It has been on [my wishlist](/2013/05/13/things-id-like-to-do-in-2013/) for 2013 and I’m glad that I could made some progress with it.
+Hey people! Just a quick article to introduce [Countdown.js](https://github.com/KittyGiraudel/Countdown.js), a little script I recently made. During the last weeks, I’ve been practicing with JavaScript. It has been on [my wishlist](/2013/05/13/things-id-like-to-do-in-2013/) for 2013 and I’m glad that I could made some progress with it.
 
 In order to start making clean scripts and not poorly designed pieces of crappy jQuery dumped in the global object, I have revisited [an old countdown script](https://codepen.io/KittyGiraudel/pen/jtJrq) I made a while back with the [object literal pattern](https://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/).
 
@@ -151,7 +151,7 @@ Thanks bro! Anyway, I’m proud to tell this script as passed strict JSHint vali
 
 ## Final words
 
-That’s all folks! I hope you like this script and if you find anything worth mentioning, please be sure to shoot in the comments or directly on the [GitHub repo](https://github.com/HugoGiraudel/Countdown.js).
+That’s all folks! I hope you like this script and if you find anything worth mentioning, please be sure to shoot in the comments or directly on the [GitHub repo](https://github.com/KittyGiraudel/Countdown.js).
 
 Oh and if you only want to hack around the code, check this pen:
 

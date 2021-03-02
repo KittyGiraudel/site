@@ -33,7 +33,7 @@ Auditing dependencies is important to make sure we do not use packages afflicted
 
 I personally like `npm audit` because it’s baked by npm and free to use, but the console output can be daunting. That’s why I wrote a Node script wrapping `npm audit` to make the CLI output a little more digestable and actionable.
 
-It’s not published on npm because who has time for that, but it’s [available as a GitHub Gist](https://gist.github.com/HugoGiraudel/37438267cb36448a85d56b8501d91aab) and then can be copied and pasted in a JavaScript file in one’s project. Cool features include:
+It’s not published on npm because who has time for that, but it’s [available as a GitHub Gist](https://gist.github.com/KittyGiraudel/37438267cb36448a85d56b8501d91aab) and then can be copied and pasted in a JavaScript file in one’s project. Cool features include:
 
 - The ability to define a severity threshold, above which the script will return a non-zero exit code. For instance, finding a `critical` dependency would throw an error. This makes it easy to include it in CI/CD pipelines.
 - Similar dependencies are grouped, so they are not announced multiple times. That makes it more convenient to see the actual overview. npm audit might announce 9 vulnerabilities, but it could very well be only 2 issues to be fixed, because they occur in more than one package.
@@ -79,7 +79,7 @@ You might be familiar with third-party tools like [Dependabot](https://dependabo
 - They create a lot of noise, and a permanent stream of updates.
 - They could fail to pass security approvals in some organisation.
 
-That’s why a long time ago I authored [a small Node program to look for outdated dependencies](https://github.com/HugoGiraudel/dependency-checker). Similar packages exist as well, this is just my take on it.
+That’s why a long time ago I authored [a small Node program to look for outdated dependencies](https://github.com/KittyGiraudel/dependency-checker). Similar packages exist as well, this is just my take on it.
 
 It works like this: it goes through the `dependencies` (and optionally `devDependencies` and `peerDependencies`) of the given `package.json` file. For each package, it requests information from the npm registry, and compares the versions to see if the one listed is the latest one. If it is not, it mentions it.
 

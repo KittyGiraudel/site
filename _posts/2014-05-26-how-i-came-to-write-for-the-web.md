@@ -68,7 +68,7 @@ So far, I have talked about all the places I’ve been writing for, but not real
 
 Things are easier when you know what you’re talking about. Have you ever tried to explain to someone something you barely know? It hurts. You stutter. You make sentences that don’t always make sense. You take time to think before answering… It takes time and effort. When you know your topic, it’s getting simple. You don’t have to _think carefully before you speak_. It comes naturally.
 
-Remember the article about JavaScript for David Walsh? That was longer. Some Almanac entries for Chris Coyier took me days to write, especially the one about CSS Grid. But when I write about Sass ([which is usually the case](https://gist.github.com/HugoGiraudel/8332582)), it’s getting very easy. Except for the little things I still don’t get about Sass, I’m okay with talking about it for hours.
+Remember the article about JavaScript for David Walsh? That was longer. Some Almanac entries for Chris Coyier took me days to write, especially the one about CSS Grid. But when I write about Sass ([which is usually the case](https://gist.github.com/KittyGiraudel/8332582)), it’s getting very easy. Except for the little things I still don’t get about Sass, I’m okay with talking about it for hours.
 
 ### I _one-shot_ articles
 

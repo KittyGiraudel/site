@@ -17,7 +17,7 @@ Hey friends! This is the time of the year where I look back at these last 12 mon
 
 ### Timeline
 
-📦 **January 30th**. I started the year with releasing the version 3 of [a11y-dialog](https://github.com/edenspiekermann/a11y-dialog), nicely refining the API. I went to release a version 4 (although less interesting) on October 4th. To this day, a11y-dialog remains the open-source project I’m the most happy with. I highly encourage you to use it in your projects. And for y’all React fans, I wrote a component wrapper: [react-a11y-dialog](https://github.com/hugogiraudel/react-a11y-dialog).
+📦 **January 30th**. I started the year with releasing the version 3 of [a11y-dialog](https://github.com/edenspiekermann/a11y-dialog), nicely refining the API. I went to release a version 4 (although less interesting) on October 4th. To this day, a11y-dialog remains the open-source project I’m the most happy with. I highly encourage you to use it in your projects. And for y’all React fans, I wrote a component wrapper: [react-a11y-dialog](https://github.com/KittyGiraudel/react-a11y-dialog).
 
 👩‍💻 **May 19th**. DEVit in Thessaloniki (Greece) was so much fun last year that I decided to go back in 2017. I went with my friend and co-worker [Mike Smart](https://twitter.com/smartmike) where we conducted a workshop (our very first) on React. It had way more success than originally expected since we ended up with 45 participants! So if you’d like us to run a workshop on React, let us know.
 
@@ -29,11 +29,11 @@ Hey friends! This is the time of the year where I look back at these last 12 mon
 
 🎤 **September 10th**. I went to Minsk (Republic of Belarus) for the first time, to give my “Clever, stop being so” talk about inclusive design for the CSS-Minsk-JS conference. It was quite interesting realising about the cultural differences between France/Germany and Belarus.
 
-📦 **September 21st**. At N26, we use GitHub releases to list our changes for each release. They present a lot of benefits: they live with the code without having to be versioned, they support Markdown, they’re readable without having to clone the repo… But they are not searchable. Until now! I wrote a [script to search for text within GitHub releases](https://github.com/HugoGiraudel/github-release-search). I hope it helps!
+📦 **September 21st**. At N26, we use GitHub releases to list our changes for each release. They present a lot of benefits: they live with the code without having to be versioned, they support Markdown, they’re readable without having to clone the repo… But they are not searchable. Until now! I wrote a [script to search for text within GitHub releases](https://github.com/KittyGiraudel/github-release-search). I hope it helps!
 
 👥 **October**. It was the month when I got the opportunity to take the role of a facilitator in my team, acting as a part-time (unofficial) scrum master (thanks to my friend and outstanding co-worker [Andrea Franke](https://twitter.com/franklyandrea)). I’ve been endorsing that function since, getting more and more interested in processes, agile methodologies and how to create a safe environment for a team to work in.
 
-📦 **October 13th**. After multiple failed attempts at setting up Greenkeeper at work, I decided to make my life easier and wrote a tiny [Node script to check for outdated dependencies](https://github.com/HugoGiraudel/dependency-checker) in a `package.json`. Feel free to go nuts with it!
+📦 **October 13th**. After multiple failed attempts at setting up Greenkeeper at work, I decided to make my life easier and wrote a tiny [Node script to check for outdated dependencies](https://github.com/KittyGiraudel/dependency-checker) in a `package.json`. Feel free to go nuts with it!
 
 🎤 **October 26th**. Invited by the kind folks from Locastic to speak at their Tinel event, I gave my very first talk at a local meetup in Split, Croatia. It was a lot of fun and felt super good going back to Croatia after a few years. Also had the tuna steak of a lifetime there!
 

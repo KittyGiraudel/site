@@ -20,7 +20,7 @@ But let’s try to focus on the bright side, shall we? Last year, I did [a littl
 
 🎤 **May 20th**. I gave a talk named [“Local styling with CSS Modules”](https://www.youtube.com/watch?v=LIUdaegJi20) in Thessaloniki (Greece) at DevIt conference. What an amazing conference it was my friends, can’t wait to get back there next year!
 
-📦 **May 29th**. I silently shipped a small contribution to open source with [Jekyll Boilerplate](https://github.com/HugoGiraudel/jekyll-boilerplate), an improved fork of the initial Jekyll project to get started more quickly. If you work with Jekyll quite a bit, be sure to have a look!
+📦 **May 29th**. I silently shipped a small contribution to open source with [Jekyll Boilerplate](https://github.com/KittyGiraudel/jekyll-boilerplate), an improved fork of the initial Jekyll project to get started more quickly. If you work with Jekyll quite a bit, be sure to have a look!
 
 😰 **Summer**. I started feeling overwhelmed with my work in the web industry. I went through (and still kind of am in) a phase where I didn’t want to write technical articles anymore. Where I didn’t want to spend so much time doing open source. Where I just wanted to do something else.
 

@@ -28,7 +28,7 @@ Sass provides a few types:
 Let’s see how we can cast a value to another data type.
 
 {% info %}
-Update: I just released [SassyCast](https://github.com/HugoGiraudel/SassyCast), also available as an eponym [Compass extension](https://rubygems.org/gems/SassyCast).
+Update: I just released [SassyCast](https://github.com/KittyGiraudel/SassyCast), also available as an eponym [Compass extension](https://rubygems.org/gems/SassyCast).
 {% endinfo %}
 
 ## To string
@@ -41,7 +41,7 @@ Casting to a string has to be the easiest type of all thanks to the brand new `i
 }
 ```
 
-It works with anything, even lists and maps. However it does some color conversions (hsl being converted to rgb and things like that) so if it’s important for you that the result of `to-string` is precisely the same as the input, you might want to opt for a [proof quoting function](https://github.com/HugoGiraudel/SassyJSON/blob/master/stylesheets/encode/helpers/_quote.scss) instead. Same if you are running Sass 3.2 which doesn’t support `inspect`.
+It works with anything, even lists and maps. However it does some color conversions (hsl being converted to rgb and things like that) so if it’s important for you that the result of `to-string` is precisely the same as the input, you might want to opt for a [proof quoting function](https://github.com/KittyGiraudel/SassyJSON/blob/master/stylesheets/encode/helpers/_quote.scss) instead. Same if you are running Sass 3.2 which doesn’t support `inspect`.
 
 Another way to cast to string without quoting is adding an unquoted empty string to the value like this `$value + unquote("")` however it has two pitfalls:
 
@@ -85,7 +85,7 @@ We needed to be able to convert a stringified color into a real color for [Sassy
 
 Basically we parse the triplet, convert each of its three parts from hexadecimal to decimal and run them through the `rgb` function to have a color. Not very short but does the trick!
 
-I’ll let you have a look at [the files](https://github.com/HugoGiraudel/SassyJSON/tree/master/stylesheets/decode/helpers/color) from our repo if you’re interested in casting a string to a color.
+I’ll let you have a look at [the files](https://github.com/KittyGiraudel/SassyJSON/tree/master/stylesheets/decode/helpers/color) from our repo if you’re interested in casting a string to a color.
 
 ## To list
 

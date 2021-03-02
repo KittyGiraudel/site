@@ -58,7 +58,7 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 ## Hobbies
 
 - ✏️ I stopped drawing. I realised it was just getting frustrating. Drawing has always been very connected with difficult emotions for me, and that’s not something I wanted to keep carrying with me.
-- 👩‍💻 I discovered web development (more about [how I got there](https://github.com/HugoGiraudel/ama/issues/82)), enjoyed it, realised I was good at it, and made a career out of it.
+- 👩‍💻 I discovered web development (more about [how I got there](https://github.com/KittyGiraudel/ama/issues/82)), enjoyed it, realised I was good at it, and made a career out of it.
 - 🎱 I learnt how to play pool, to a level that is enjoyable. And I taught a dear friend how to play as well.
 - 📖 I still haven’t really got to enjoy reading literature, which is funny for someone who likes to write that much. I did manage to read a few books over the last years, mostly humourous or scientifical (or both) but it takes me a long time.
 - 🎮 For the better or worse, I kept my love for games, be it video games, board games, or even role-playing games.

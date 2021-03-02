@@ -25,11 +25,11 @@ Well, you have to tell it is actually kind of cool to be able to do so, right? T
 
 ## Introducing SassyJSON
 
-Fabrice and I recently released [SassyJSON](https://github.com/HugoGiraudel/SassyJSON), a Sass-powered API to communicate with JavaScript through JSON. Basically it’s `json-decode` and `json-encode` in Sass.
+Fabrice and I recently released [SassyJSON](https://github.com/KittyGiraudel/SassyJSON), a Sass-powered API to communicate with JavaScript through JSON. Basically it’s `json-decode` and `json-encode` in Sass.
 
 _Why_, you ask? Well, I guess that could be useful at some point. With maps coming up in Sass 3.3, we are about to have real structured data in Sass. It will soon be very easy to have a config object (understand a map) or a media-query handler (a map again). Being able to encode those objects to JSON and move them out of the stylesheet opens us to a lot of new horizons. I’ll leave you the only judge of what you’ll do with this.
 
-On my side, I already found a usecase. You may know [Bootcamp](https://github.com/thejameskyle/bootcamp), a Jasmine-like testing framework made in Sass for Sass by [James Kyle](https://twitter.com/thejameskyle) (with a Grunt port). I am using Bootcamp for [SassyLists](https://github.com/Team-Sass/SassyLists). I am using Bootcamp for [SassyMatrix](https://github.com/HugoGiraudel/SassyMatrix). We are using Bootcamp for [SassyJSON](https://github.com/HugoGiraudel/SassyJSON). This makes sure our Sass code is clean and efficient.
+On my side, I already found a usecase. You may know [Bootcamp](https://github.com/thejameskyle/bootcamp), a Jasmine-like testing framework made in Sass for Sass by [James Kyle](https://twitter.com/thejameskyle) (with a Grunt port). I am using Bootcamp for [SassyLists](https://github.com/Team-Sass/SassyLists). I am using Bootcamp for [SassyMatrix](https://github.com/KittyGiraudel/SassyMatrix). We are using Bootcamp for [SassyJSON](https://github.com/KittyGiraudel/SassyJSON). This makes sure our Sass code is clean and efficient.
 
 Back to my point: Bootcamp 2 (work in progress) [will use maps](https://github.com/thejameskyle/bootcamp/issues/75#issuecomment-32131963) to handle test results. Encoding this map to JSON makes it easy to parse it with JavaScript in order to make a real page for tests result, kind of like Jasmine SpecRunner. This is cool. Picture it people:
 
@@ -74,7 +74,7 @@ Once you’ve encoded your Sass into JSON, you’ll want to dump the JSON string
 * using a falsy media query
 * using a persistent comment (`/*!*/`)
 
-Since we don’t like to choose, we picked all of them. We simply made [a mixin with a flag](https://github.com/HugoGiraudel/SassyJSON/blob/master/src/encode/mixins/_json.scss) as a parameter defining the type of output you’ll get: `regular` for option 1 and 2 (cross-browser mess), `media` for the media query and `comment` for the comment or even `all` for all of them (which is the default). Judge for yourselves:
+Since we don’t like to choose, we picked all of them. We simply made [a mixin with a flag](https://github.com/KittyGiraudel/SassyJSON/blob/master/src/encode/mixins/_json.scss) as a parameter defining the type of output you’ll get: `regular` for option 1 and 2 (cross-browser mess), `media` for the media query and `comment` for the comment or even `all` for all of them (which is the default). Judge for yourselves:
 
 ```scss
 $map: (
@@ -134,9 +134,9 @@ This was kind of dirty. I didn’t want the parser to rely on global variables a
 
 ## What’s left?
 
-Almost nothing. I am very proud with what we have come up with. The _only_ thing missing from our parser is the ability to detect special characters: `\"`, `\\`, `\/`, `\b`, `\f`, `\t` and `\u{{four-hex-digits}}`. We [found a way](https://github.com/HugoGiraudel/SassyJSON/blob/master/src/decode/helpers/_strip-token.scss) for `\n` and `\r` and `\"` but that’s pretty much it. I’m not sure we will be able to parse them all, but we need to dig deeper into it before determining.
+Almost nothing. I am very proud with what we have come up with. The _only_ thing missing from our parser is the ability to detect special characters: `\"`, `\\`, `\/`, `\b`, `\f`, `\t` and `\u{{four-hex-digits}}`. We [found a way](https://github.com/KittyGiraudel/SassyJSON/blob/master/src/decode/helpers/_strip-token.scss) for `\n` and `\r` and `\"` but that’s pretty much it. I’m not sure we will be able to parse them all, but we need to dig deeper into it before determining.
 
-Otherwise, I think we are good. We have already done almost [500 simple tests](https://github.com/HugoGiraudel/SassyJSON/tree/master/test) to cover all basic usages of JSON. Now, we are likely to find edge cases like weird encoding, a space at the wrong place and so on…
+Otherwise, I think we are good. We have already done almost [500 simple tests](https://github.com/KittyGiraudel/SassyJSON/tree/master/test) to cover all basic usages of JSON. Now, we are likely to find edge cases like weird encoding, a space at the wrong place and so on…
 
 Also, I’d like to be able to cover every case of invalid JSON with a `false` return along with an error message in the console. I don’t want to have a compiler error whenever the JSON string is invalid: this is dirty. To find all the error cases, I need tests. And if you feel like helping you testing it, you’d be more than welcome.
 

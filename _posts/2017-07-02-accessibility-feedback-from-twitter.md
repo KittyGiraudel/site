@@ -17,7 +17,7 @@ It’s super insightful but there are hundreds of response so I thought I’d wr
 - [Cognitive & learning disabilities](#cognitive-learning-disabilities)
 - [Hearing impairments](#hearing-impairments)
 
-_Note: let me take this as an opportunity to link to this [introduction to web accessibility](https://gist.github.com/HugoGiraudel/5150c87d807f629ab006e2f6d2d9e86c) I wrote._
+_Note: let me take this as an opportunity to link to this [introduction to web accessibility](https://gist.github.com/KittyGiraudel/5150c87d807f629ab006e2f6d2d9e86c) I wrote._
 
 ## Vision disability
 

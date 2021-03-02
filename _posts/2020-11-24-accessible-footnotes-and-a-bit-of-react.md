@@ -10,7 +10,7 @@ keywords:
 
 A few years back, I wrote [Accessible footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/), now the first result when asking Google for “accessible footnotes”. To this day, I still think it’s one of the most useful articles I’ve ever written because: a) most footnotes out there are not accessible and b) the CSS in that demo is actually pretty clever and was fun to write.
 
-Today, I would like to revisit that implementation for using it in React. If you are interested in a ready-to-go solution, I am currently working on [react-a11y-footnotes](https://github.com/HugoGiraudel/react-a11y-footnotes), an {% footnoteref "experimental" "It is currently in v0.1 and the API might change a little. Additionally, I’m not too sure whether the styles I included are enough or too much. Any review or suggestion appreciated!" %}experimental{% endfootnoteref %} library that you can install directly from npm to use in your projects.
+Today, I would like to revisit that implementation for using it in React. If you are interested in a ready-to-go solution, I am currently working on [react-a11y-footnotes](https://github.com/KittyGiraudel/react-a11y-footnotes), an {% footnoteref "experimental" "It is currently in v0.1 and the API might change a little. Additionally, I’m not too sure whether the styles I included are enough or too much. Any review or suggestion appreciated!" %}experimental{% endfootnoteref %} library that you can install directly from npm to use in your projects.
 
 ## What’s so hard about it?
 
@@ -105,7 +105,7 @@ What’s nice about this approach is that footnotes are essentially out of sight
 
 ## Wrapping things up
 
-I hope [react-a11y-footnotes](https://github.com/HugoGiraudel/react-a11y-footnotes) will help people implement clean and accessible footnotes for everyone. I’m currently finalising the API and will most likely publish a first version some time this week.
+I hope [react-a11y-footnotes](https://github.com/KittyGiraudel/react-a11y-footnotes) will help people implement clean and accessible footnotes for everyone. I’m currently finalising the API and will most likely publish a first version some time this week.
 
 I am also playing with providing optional basic styling—especially for the references themselves since they currently rely on CSS counters—to make it easy to import the library, its styles, and start footnoting.
 
