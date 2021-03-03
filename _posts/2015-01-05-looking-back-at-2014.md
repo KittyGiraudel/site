@@ -55,7 +55,7 @@ SassDoc has been very welcomed, and some massive projects already use it to mana
 Well, aside from releasing my book, I’d like to keep doing talks possibly in English now that I know I am capable of speaking in English in front of people. My goal would be a talk per quarter, but we all know timing is hard so we’ll see.
 
 <figure class="figure">
-<img src="/assets/images/feedback-on-dotcss/hugo.jpg" alt="" />
+<img src="/assets/images/feedback-on-dotcss/kitty.jpg" alt="" />
 <figcaption>Me on stage. Photo by dotCSS.</figcaption>
 </figure>
 

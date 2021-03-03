@@ -38,7 +38,7 @@ I could also meet all those great French people from Twitter and put some faces 
 It went great. People seemed very interested in the topic and I felt like they were understanding the main point of the conference, so it’s something!
 
 <figure class="figure">
-<img src="/assets/images/feedbacks-kiwiparty/hugo-giraudel.jpg" alt="">
+<img src="/assets/images/feedbacks-kiwiparty/kitty-giraudel.jpg" alt="">
 <figcaption>Focus - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
 </figure>
 

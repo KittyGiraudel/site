@@ -75,7 +75,7 @@ Interestingly enough, I realised that I feel much more confident when I don’t 
 So facing a black wall was actually much easier than expected. It allowed me to keep tracks of my thoughts without being disturbed. Loved it.
 
 <figure class="figure">
-<img src="/assets/images/feedback-on-dotcss/hugo.jpg" alt="" />
+<img src="/assets/images/feedback-on-dotcss/kitty.jpg" alt="" />
 <figcaption>Me on stage. Photo by dotCSS.</figcaption>
 </figure>
 
