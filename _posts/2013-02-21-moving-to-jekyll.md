@@ -19,16 +19,11 @@ As a reminder or for those of you who don’t know what Jekyll and GitHub Pages 
 
 There are a couple of reasons that made me take the decision to move my perfectly-working site (or kind of) to Jekyll and GitHub Pages:
 
-- **No server-side language nor database.**
-  This is only good ol' HTML/CSS/JS. Frankly, I don’t want to have anything to do with a database unless I absolutely have to. This also means it’s worry-free: nothing to hack and unless GitHub goes down, no reason it won’t work.
-- **Simpler workflow.**
-  I only need a text editor and Git to update the site or release a blog post. No need for a local PHP server or anything. Plus, synchronizing my local environment with the one in production takes no more than a single command.
-- **Fewer dependencies.**
-  No more jQuery.paginate for pagination; Jekyll has a built in plugin to do it. No more Prism.js for syntax highlighting; Jekyll comes with Pygments, a Python based syntax highlighter. Less JS (and especially no more jQuery) means faster site.
-- **Hosted on GitHub.**
-  Not only are static files served from GitHub blazingly fast, but the [source code is now public](source code is now). I like the idea of making anyone able to have a look at the code behind the site. Plus, there is now a [bug tracker](https://github.com/KittyGiraudel/site/issues).
-- **Discover new things.**
-  I’ve learnt to use the PHP/MySQL combo but I finally learnt how not to use it when it is not needed. I wanted to discover a new thing and it turned out to be quite simple to use in the end.
+- **No server-side language nor database.** This is only good ol' HTML/CSS/JS. Frankly, I don’t want to have anything to do with a database unless I absolutely have to. This also means it’s worry-free: nothing to hack and unless GitHub goes down, no reason it won’t work.
+- **Simpler workflow.** I only need a text editor and Git to update the site or release a blog post. No need for a local PHP server or anything. Plus, synchronizing my local environment with the one in production takes no more than a single command.
+- **Fewer dependencies.** No more jQuery.paginate for pagination; Jekyll has a built in plugin to do it. No more Prism.js for syntax highlighting; Jekyll comes with Pygments, a Python based syntax highlighter. Less JS (and especially no more jQuery) means faster site.
+- **Hosted on GitHub.** Not only are static files served from GitHub blazingly fast, but the [source code is now public](source code is now). I like the idea of making anyone able to have a look at the code behind the site. Plus, there is now a [bug tracker](https://github.com/KittyGiraudel/site/issues).
+- **Discover new things.** I’ve learnt to use the PHP/MySQL combo but I finally learnt how not to use it when it is not needed. I wanted to discover a new thing and it turned out to be quite simple to use in the end.
 
 ## Before Jekyll
 
@@ -79,7 +74,7 @@ Also as a developer, I would probably have not felt very proud of running WordPr
 
 ## Here comes Jekyll
 
-This is why I wanted another simpler option, so I [asked](https://twitter.com/HugoGiraudel/status/302826818988290048) [on](https://twitter.com/HugoGiraudel/status/302839345277194240) [Twitter](https://twitter.com/HugoGiraudel/status/302910551363825665). A couple of people recommended either Jekyll or [Octopress](http://octopress.org/) (which runs on Jekyll). I had already heard about it since the site redesign has been motivated by [Dave Rupert’s](https://daverupert.com/2012/11/brander-newer/) when he moved to Jekyll.
+This is why I wanted another simpler option, so I [asked](https://twitter.com/KittyGiraudel/status/302826818988290048) [on](https://twitter.com/KittyGiraudel/status/302839345277194240) [Twitter](https://twitter.com/KittyGiraudel/status/302910551363825665). A couple of people recommended either Jekyll or [Octopress](http://octopress.org/) (which runs on Jekyll). I had already heard about it since the site redesign has been motivated by [Dave Rupert’s](https://daverupert.com/2012/11/brander-newer/) when he moved to Jekyll.
 
 Back then, I had a look at Jekyll and it seemed nice but overly complicated—at least to me. I am really not that smart when you put CSS aside. Anyway it seemed to be quite what I was looking for so I thought I should give a try.
 

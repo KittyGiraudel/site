@@ -85,7 +85,7 @@ _Note: depending on your usage of GitHub labels, you can also ditch this part an
 In the description of the story, create a list of tasks where a task is a checkbox, a short description and importantly enough, one or several persons involved in the making. From the Markdown side, it might look like this:
 
 ```git
-* [ ] Create the basic React component (@hugogiraudel)
+* [ ] Create the basic React component (@KittyGiraudel)
 * [ ] Design the icons (@sharonwalsh)
 * [ ] Integrate component in current page (@mattberridge)
 * [ ] Clarify types of teasers with client (@moritzguth)

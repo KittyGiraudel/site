@@ -66,4 +66,4 @@ For now, we only use the discreet mode to hide amounts. That being said, we are 
 
 We are also investigating faster ways to toggle this mode: either by long-tapping/double-clicking a discreet piece of information, or with a custom keyboard shortcut.
 
-If you have ideas on how to improve this feature, be sure to [get in touch with me on Twitter](https://twitter.com/HugoGiraudel)!
+If you have ideas on how to improve this feature, be sure to [get in touch with me on Twitter](https://twitter.com/KittyGiraudel)!

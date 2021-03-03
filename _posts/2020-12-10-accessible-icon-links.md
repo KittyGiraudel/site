@@ -59,7 +59,7 @@ Now, let’s start by wrapping it up with a link:
 
 ```html
 <!-- Incomplete: please do *not* copy and paste this snippet -->
-<a href="https://twitter.com/HugoGiraudel">
+<a href="https://twitter.com/KittyGiraudel">
   <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16">…</svg>
 </a>
 ```
@@ -68,21 +68,19 @@ Unfortunately, at this stage this link contains no accessible name, which is a b
 
 ```html
 <!-- Incomplete: please do *not* copy and paste this snippet -->
-<a href="https://twitter.com/HugoGiraudel">
+<a href="https://twitter.com/KittyGiraudel">
   <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16">…</svg>
   <span class="sr-only">Twitter</span>
 </a>
 ```
 
-{% info %}
-Chris Heilmann asked me whether using the `aria-label` attribute or a `<title>` element in the SVG would be simpler than having a visually hidden element. The latter solution provides [better support with older assistive technologies](https://twitter.com/goetsu/status/1334596736833232896?s=20) and avoids [`aria-label` internationalisation issues](https://heydonworks.com/article/aria-label-is-a-xenophobe/).
-{% endinfo %}
+{% info %} Chris Heilmann asked me whether using the `aria-label` attribute or a `<title>` element in the SVG would be simpler than having a visually hidden element. The latter solution provides [better support with older assistive technologies](https://twitter.com/goetsu/status/1334596736833232896?s=20) and avoids [`aria-label` internationalisation issues](https://heydonworks.com/article/aria-label-is-a-xenophobe/). {% endinfo %}
 
 There is still a bit more we need to do. Since we provided a descriptive text, we can safely remove the SVG markup from the accessibility tree by adding the `aria-hidden` attribute.
 
 ```html
 <!-- Incomplete: please do *not* copy and paste this snippet -->
-<a href="https://twitter.com/HugoGiraudel">
+<a href="https://twitter.com/KittyGiraudel">
   <svg
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +95,7 @@ There is still a bit more we need to do. Since we provided a descriptive text, w
 Last but not least, `svg` elements can be focused on Internet Explorer, which is becoming less and less of a problem overall—still, we should correct that with the `focusable` attribute.
 
 ```html
-<a href="https://twitter.com/HugoGiraudel">
+<a href="https://twitter.com/KittyGiraudel">
   <svg
     aria-hidden="true"
     focusable="false"
@@ -113,7 +111,7 @@ Last but not least, `svg` elements can be focused on Internet Explorer, which is
 As a last touch, I would recommend adding the text content in the `title` attribute on the link as well. This does not enhance accessibility per se, but it emits a small tooltip when hovering the link, which can be handy for non-obvious iconography.
 
 ```html
-<a href="https://twitter.com/HugoGiraudel" title="Twitter">
+<a href="https://twitter.com/KittyGiraudel" title="Twitter">
   <svg
     aria-hidden="true"
     focusable="false"
@@ -126,7 +124,7 @@ As a last touch, I would recommend adding the text content in the `title` attrib
 </a>
 ```
 
-<p>Our final link (with some additional styles to make it easier on the eye): <a href="https://twitter.com/HugoGiraudel" title="Twitter" class="demo-link">
+<p>Our final link (with some additional styles to make it easier on the eye): <a href="https://twitter.com/KittyGiraudel" title="Twitter" class="demo-link">
   <svg
     aria-hidden="true"
     focusable="false"
@@ -145,7 +143,7 @@ Now that we have sorted out how to make our icon links accessible, we can safely
 ```js
 const IconLink = ({ Icon, ...props }) => (
   <a {...props}>
-    <Icon aria-hidden="true" focusable="false" />
+    <Icon aria-hidden='true' focusable='false' />
     <VisuallyHidden>{props.title}</VisuallyHidden>
   </a>
 )
@@ -162,7 +160,7 @@ const Twitter = props => (
 
 const MyComponent = props => (
   <IconLink
-    href='https://twitter.com/HugoGiraudel'
+    href='https://twitter.com/KittyGiraudel'
     title='Twitter'
     Icon={Twitter}
   />

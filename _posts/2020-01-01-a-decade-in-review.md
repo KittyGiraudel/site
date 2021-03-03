@@ -21,7 +21,7 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 - 🤓 I taught myself English and worked hard to disguise my accent as “non-native but not French either”.
 - ✊ I started learning a 3rd language (Dutch, as mentioned in [my article about 2019](/2019/12/31/looking-back-at-2019/)).
 - ✈️ I have been to 14 countries across Europe, and left Europe on a single occasion to visit Istanbul (Turkey).
-- 🐈 I got (and still have) 3 cats: [Griffith and Lilith, from my former relationship](https://twitter.com/HugoGiraudel/status/830035815036239872), and [Macbeth from my current partner](https://twitter.com/HugoGiraudel/status/1168626800425091073).
+- 🐈 I got (and still have) 3 cats: [Griffith and Lilith, from my former relationship](https://twitter.com/KittyGiraudel/status/830035815036239872), and [Macbeth from my current partner](https://twitter.com/KittyGiraudel/status/1168626800425091073).
 - 💵 Thanks to hard work and more importantly a lot of privileges, I managed to become financially independent.
 
 ## Work

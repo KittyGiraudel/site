@@ -58,7 +58,7 @@ I also noticed that company / product / project accounts usually perform worse t
 
 You can also pin in a tweet on the top of your timeline. It has no impact on users browsing Twitter through a third party client such as Tweetdeck. But for those on the .com, they’ll see your tweet right away when visiting your profile.
 
-The feature being fairly new, I am not entirely just about what is the best to pin up there. I chose [a tweet](https://twitter.com/HugoGiraudel/status/656052512395362304) that had some impact and could be useful for beginning developers. But a fun tweet could also work I guess. Think about what you’d want people to think when checking your page.
+The feature being fairly new, I am not entirely just about what is the best to pin up there. I chose [a tweet](https://twitter.com/KittyGiraudel/status/656052512395362304) that had some impact and could be useful for beginning developers. But a fun tweet could also work I guess. Think about what you’d want people to think when checking your page.
 
 ## Just enjoy it
 

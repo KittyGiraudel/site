@@ -22,4 +22,4 @@ Making the case for accessibility might require bringing all these points to som
 
 ---
 
-Alright friends, that’s the end of our #A11yAdvent calendar! Thank you very much for having followed along during the entire month, and I hope you learnt a thing or two. If you have any questions or comments, please be sure to [get in touch on Twitter](https://twitter.com/HugoGiraudel)—I’m happy to chat. In the meantime, I wish you a pleasant end of the year! 🌟
+Alright friends, that’s the end of our #A11yAdvent calendar! Thank you very much for having followed along during the entire month, and I hope you learnt a thing or two. If you have any questions or comments, please be sure to [get in touch on Twitter](https://twitter.com/KittyGiraudel)—I’m happy to chat. In the meantime, I wish you a pleasant end of the year! 🌟

@@ -18,7 +18,7 @@ Online security is a tough topic, I think we can all agree on this. And password
 
 Then how comes you are so _terrible_ (and I strongly believe this is an understatement) at protecting all this?
 
-We have been advocating for years now that the strength of a password is a function of length and unpredictability, not character set complexity. Still, you stick to these [silly password requirements](https://twitter.com/HugoGiraudel/status/690477975804968960) such as 8 to 20 characters including at least one number or symbol (like !@#$%^) but no space ([amongst others](http://passrequirements.com/passwordrequirements/paypal)).
+We have been advocating for years now that the strength of a password is a function of length and unpredictability, not character set complexity. Still, you stick to these [silly password requirements](https://twitter.com/KittyGiraudel/status/690477975804968960) such as 8 to 20 characters including at least one number or symbol (like !@#$%^) but no space ([amongst others](http://passrequirements.com/passwordrequirements/paypal)).
 
 Let me try to clear this up a bit. For starters, there is absolutely no good reason to enforce a character limit on a password. Not one. Length is the primary criteria of a strong password. A 8-characters long password containing only latin characters is a matter of hours to a few days to brute force on a decent machine. A 12-characters long could take years and a 20+-characters long would take decades. Still, that is not a valid reason to limit the number of characters in a password to 20.
 

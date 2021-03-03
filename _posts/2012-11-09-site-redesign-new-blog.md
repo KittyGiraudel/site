@@ -37,6 +37,6 @@ But I may improve the design over the time of course. :)
 
 Honestly I don’t know. Blogging when I have time and things to say. Maybe a contact page or something.
 
-For now, I’m not planning on adding a comments system because I don’t think there is much need for it. Most people won’t take the time to comment anyway, and those who would do can still catch me on [Twitter](https://twitter.com/hugoGiraudel). But if one day I feel like I should allow users to comment, I may think about [Disqus](https://disqus.com/). Mainly because I don’t want to spend hours doing PHP stuff on this.
+For now, I’m not planning on adding a comments system because I don’t think there is much need for it. Most people won’t take the time to comment anyway, and those who would do can still catch me on [Twitter](https://twitter.com/KittyGiraudel). But if one day I feel like I should allow users to comment, I may think about [Disqus](https://disqus.com/). Mainly because I don’t want to spend hours doing PHP stuff on this.
 
 Anyway, if you find any bug or have any suggestion, please catch me on Twitter.

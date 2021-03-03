@@ -30,26 +30,26 @@ http://ogp.me/ns/article#">
 
   <!-- Styles -->
   {% include "styles.html", paths: "
-    base/base,
-    base/helpers,
-    layout/footer,
-    layout/main,
-    layout/navigation,
-    components/abbr,
-    components/ads,
-    components/blockquote,
-    components/dotted-list,
-    components/list,
-    components/skip-link,
-    components/title,
-    base/shame
+  base/base,
+  base/helpers,
+  layout/footer,
+  layout/main,
+  layout/navigation,
+  components/abbr,
+  components/ads,
+  components/blockquote,
+  components/dotted-list,
+  components/list,
+  components/skip-link,
+  components/title,
+  base/shame
   " %}
 
   <!-- JS utilities -->
   {% include "script.html", paths: "utilities" %}
 
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="{{ site.author }}" href="{{ "/rss" | prepend: site.url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.author }}" href="{{ " /rss" | prepend: site.url }}" />
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/assets/images/favicon.png">
@@ -67,10 +67,10 @@ http://ogp.me/ns/article#">
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:creator" content="@HugoGiraudel">
+  <meta name="twitter:creator" content="@KittyGiraudel">
   <meta name="twitter:description" content="{{ page_description }}">
   <meta name="twitter:domain" content="kittygiraudel.com">
   <meta name="twitter:image" content="https://kittygiraudel.com/assets/images/favicon-192.jpg">
-  <meta name="twitter:site" content="@HugoGiraudel">
+  <meta name="twitter:site" content="@KittyGiraudel">
   <meta name="twitter:title" content="{{ title | default: site.author }}">
 </head>

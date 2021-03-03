@@ -36,7 +36,7 @@ const Twitter = props => (
 )
 
 const MyComponent = props => (
-  <IconLink href='https://twitter.com/HugoGiraudel' label='Twitter'>
+  <IconLink href='https://twitter.com/KittyGiraudel' label='Twitter'>
     <Twitter />
   </IconLink>
 )

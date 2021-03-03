@@ -8,7 +8,7 @@ language: VSC
 
 I _love_ Visual Studio Code. It’s a fantastic editor, and I could not picture myself using anything else. But it’s so distracting in many aspects. There is _so much_ going on. So many things on the screen you don’t even realise is there.
 
-Here are part of my VSC configuration aiming at reducing visual noise and distractions. You can [read the rational behind some of the choices](https://twitter.com/HugoGiraudel/status/1365237163105939457?s=20) on Twitter.
+Here are part of my VSC configuration aiming at reducing visual noise and distractions. You can [read the rational behind some of the choices](https://twitter.com/KittyGiraudel/status/1365237163105939457?s=20) on Twitter.
 
 ```json
 {

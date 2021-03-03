@@ -25,12 +25,12 @@ The other reason is that we wanted to do something together for quite a while no
 
 _We_ is the short for a group of 6 persons gathered under the sweet name of [4ae9b8](http://4ae9b8.com). How cool is that name, right?! Anyway, we are:
 
-* [Tim Pietrusky](https://twitter.com/timpietrusky)
-* [Mads Cordes](https://twitter.com/mobilpadde)
-* [Fabrice Weinberg](https://twitter.com/fweinb)
-* [Ana Tudor](https://twitter.com/thebabydino)
-* [Sara Soueidan](https://twitter.com/sarasoueidan)
-* and of course [myself](https://twitter.com/hugogiraudel)
+- [Tim Pietrusky](https://twitter.com/timpietrusky)
+- [Mads Cordes](https://twitter.com/mobilpadde)
+- [Fabrice Weinberg](https://twitter.com/fweinb)
+- [Ana Tudor](https://twitter.com/thebabydino)
+- [Sara Soueidan](https://twitter.com/sarasoueidan)
+- and of course [myself](https://twitter.com/KittyGiraudel)
 
 Even if in this project, Tim and I did most of the job. However everybody has participated by giving opinion, advices and making tests. :)
 
@@ -54,9 +54,9 @@ The source code is available on [GitHub](https://github.com/4ae9b8/browserhacks)
 
 Here is what we plan on for the next version:
 
-* Put the hacks that matches in your browser first
-* Improve the search by adding moar filterz (like a type filter)
-* Improve the main site in Internet Explorer 8-
-* Add moar hackz!
+- Put the hacks that matches in your browser first
+- Improve the search by adding moar filterz (like a type filter)
+- Improve the main site in Internet Explorer 8-
+- Add moar hackz!
 
 Hope you like it, happy hacking!

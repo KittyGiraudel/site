@@ -7,14 +7,14 @@ keywords:
   - process
 ---
 
-After [a tweet about how I like Git but find it hard to use](https://twitter.com/HugoGiraudel/status/964875913371570177), I thought it would be interesting to share how I use it on a daily basis. Including some cool aliases and practices you can borrow right away. It’s a bit long so here is a table of contents:
+After [a tweet about how I like Git but find it hard to use](https://twitter.com/KittyGiraudel/status/964875913371570177), I thought it would be interesting to share how I use it on a daily basis. Including some cool aliases and practices you can borrow right away. It’s a bit long so here is a table of contents:
 
-* [Getting information](#getting-information)
-* [Working with branches](#working-with-branches)
-* [Doing some work](#doing-some-work)
-* [Undoing some work](#undoing-some-work)
-* [Getting up to date](#getting-up-to-date)
-* [Rewriting history](#rewriting-history)
+- [Getting information](#getting-information)
+- [Working with branches](#working-with-branches)
+- [Doing some work](#doing-some-work)
+- [Undoing some work](#undoing-some-work)
+- [Getting up to date](#getting-up-to-date)
+- [Rewriting history](#rewriting-history)
 
 _If you’re unaware what Git is, I wrote [Git, the practical very basis](http://adopteungit.fr/en/methodology/2017/07/02/git-practical-very-basics.html) on my brother’s blog where I explain the baby steps in version control. Check it out._
 
@@ -95,7 +95,7 @@ Updating `develop` with its remote counterpart is done through `git pur` (or `gi
 
 ## Rewriting history
 
-When working on a branch, I commit frequently and tend to rewrite my commits many times. The goal is that once the feature is done, the [branch history should be clean, helpful and explicit](https://twitter.com/HugoGiraudel/status/963003283156631554). Someone could start reviewing my PR by checking the list of commits and have a pretty good idea of what’s happening before even looking at the code.
+When working on a branch, I commit frequently and tend to rewrite my commits many times. The goal is that once the feature is done, the [branch history should be clean, helpful and explicit](https://twitter.com/KittyGiraudel/status/963003283156631554). Someone could start reviewing my PR by checking the list of commits and have a pretty good idea of what’s happening before even looking at the code.
 
 ![Example of a clean branch commits history](/assets/images/how-i-use-git/branch-commits-history.png)
 
@@ -169,8 +169,8 @@ I have quite a few other Git tricks up my sleeve, but that will be for another a
 
 Speaking of Git tricks, this is your reminde that my brother knows his shit and wrote on this very blog a 3-parts article on Git tips & tricks:
 
-* [Git Tips & Tricks – part 1](/2014/03/10/git-tips-and-tricks-part-1/)
-* [Git Tips & Tricks – part 2](/2014/03/17/git-tips-and-tricks-part-2/)
-* [Git Tips & Tricks – part 3](/2014/03/24/git-tips-and-tricks-part-3/)
+- [Git Tips & Tricks – part 1](/2014/03/10/git-tips-and-tricks-part-1/)
+- [Git Tips & Tricks – part 2](/2014/03/17/git-tips-and-tricks-part-2/)
+- [Git Tips & Tricks – part 3](/2014/03/24/git-tips-and-tricks-part-3/)
 
 What about you, what are your Git secrets?

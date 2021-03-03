@@ -65,12 +65,12 @@ XOR 1010 (decimal 10)
 
 As you can see, the idea is pretty straightforward:
 
-* _NOT_ converts `1`s in `0`s, and `0`s in `1`s
-* _AND_ takes `1`s if both are `1`s, else `0`
-* _OR_ takes `1` if any are `1`, else `0`
-* _XOR_ takes `1` if one of 2 is `1`, else `0`
-* _LEFT-SHIFT_ shifts all bits from `n` to the left
-* _RIGHT-SHIFT_ shifts all bits from `n` to the right
+- _NOT_ converts `1`s in `0`s, and `0`s in `1`s
+- _AND_ takes `1`s if both are `1`s, else `0`
+- _OR_ takes `1` if any are `1`, else `0`
+- _XOR_ takes `1` if one of 2 is `1`, else `0`
+- _LEFT-SHIFT_ shifts all bits from `n` to the left
+- _RIGHT-SHIFT_ shifts all bits from `n` to the right
 
 If you’re more a _table_ kind of person:
 
@@ -98,8 +98,8 @@ So you got bitwise.
 
 Now, we wanted to implement this in Sass. There are two ways of doing it:
 
-* convert to binary string, then apply operations char per char (a char being a bit in this context)
-* rely on mathematical equivalents
+- convert to binary string, then apply operations char per char (a char being a bit in this context)
+- rely on mathematical equivalents
 
 We could have decided to manipulate binary strings but god knows why, we ended up implementing the mathematical equivalents of all operators. Fortunately, we didn’t have to figure out the formula (we are not _that_ clever): [Wikipedia has them](https://en.wikipedia.org/wiki/Bitwise_operation#Mathematical_equivalents).
 
@@ -109,7 +109,7 @@ We could have figured this length without converting to binary if we had a `log(
 
 Valérian summed it up quite nicely in a Tweet:
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>&amp;, | and ^ bitwise operators math formulas needs log(), but log() needs frexp() which needs bitwise operators. Fak! cc <a href="https://twitter.com/HugoGiraudel">@HugoGiraudel</a><br />— Valérian Galliat (@valeriangalliat) <a href="https://twitter.com/valeriangalliat/statuses/474127810798555136">June 4, 2014</a></p></blockquote>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>&amp;, | and ^ bitwise operators math formulas needs log(), but log() needs frexp() which needs bitwise operators. Fak! cc <a href="https://twitter.com/KittyGiraudel">@KittyGiraudel</a><br />— Valérian Galliat (@valeriangalliat) <a href="https://twitter.com/valeriangalliat/statuses/474127810798555136">June 4, 2014</a></p></blockquote>
 
 I won’t dig into Sass code because it doesn’t have much point. Let’s just have a look at the final implementation. We have implemented each operator as a Sass function called `bw-*` where `*` stands for the name of the operator (e.g. `and`). Except for `bw-not()` which is a rather particuliar operator, all functions accept 2 arguments: both decimal numbers.
 
@@ -185,7 +185,7 @@ We also need a mixin that would theorically accepts multiple boolean options. As
 ```scss
 /// Custom mixin
 /// @param {Number} $options - Bitwise encoded flags
-@mixin custom-test( $options) {
+@mixin custom-test($options) {
   is-a-flag-set: bw($options '&' $A);
   is-b-flag-set: bw($options '&' $B);
   is-c-flag-set: bw($options '&' $C);

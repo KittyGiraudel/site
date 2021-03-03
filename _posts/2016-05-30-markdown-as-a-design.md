@@ -103,6 +103,6 @@ I managed to solve this with a little bit of JavaScript, to scale down an image 
 
 ## What’s next
 
-I don’t know yet if I am going to keep this design for a long time, but right now I am super happy with it. It looks very different to what I used to have, or to any other blog on the internet, for that matters. And [reactions on Twitter](https://twitter.com/HugoGiraudel/status/736181867653779456) were surprisingly very positive, so thank you for the support y’all!
+I don’t know yet if I am going to keep this design for a long time, but right now I am super happy with it. It looks very different to what I used to have, or to any other blog on the internet, for that matters. And [reactions on Twitter](https://twitter.com/KittyGiraudel/status/736181867653779456) were surprisingly very positive, so thank you for the support y’all!
 
 If you can think of anything to improve the design, or to make it look even more like Sublime Text while still providing value, please tell me! In the mean time, happy coding. :)

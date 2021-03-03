@@ -52,11 +52,7 @@ While we would expect an empty list to be `false`, it turns out it is not. If it
 Okay so it makes sense that the previous example returns `false` in both cases! Nevertheless, `()` being evaluated to `false` would be quite cool when checking for a valid value to append to a list. Please consider the following code:
 
 ```scss
-$list: (
-  a,
-  b,
-  c
-);
+$list: (a, b, c);
 $value: ();
 
 @if $value {
@@ -206,7 +202,7 @@ Hopefully this issue is supposed to be solved in the incoming Sass 3.3 according
 
 I love how powerful Sass has become but there are things that keep boggling my mind. [Mehdi Kabab](https://twitter.com/pioupioum), a fellow French developer (and author of a fresh new book called Advanced Sass and Compass) told me it was because I wasn’t using Sass as a preprocessor.
 
-> @HugoGiraudel the main problem is you want use Sass like PHP or Ruby, and not like a CSS preprocessor ;) /cc @kaelig  
+> @KittyGiraudel the main problem is you want use Sass like PHP or Ruby, and not like a CSS preprocessor ;) /cc @kaelig  
 > — [Medhi Kabab, Twitter](https://twitter.com/piouPiouM/statuses/401427568592957441)
 
 That’s actually true! I’ve done many things with Sass that are really beycond the scope of CSS. But that’s where I think the fun is: thinking out of box, and hacking around the syntax. That’s how I learnt to use Sass, and that’s how I’ll keep going on. ;)

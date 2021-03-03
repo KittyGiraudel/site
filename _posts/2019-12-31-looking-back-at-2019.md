@@ -43,7 +43,7 @@ I kept pushing for more accessibility and diversity in the work place, organisin
 
 I also invested quite some time into our deployment pipeline, namely Jenkins, in order to improve our efficiency and reliability. It’s an area I have been notoriously bad at, yet it was very interesting and enjoyable having to navigate the complexity of the matter.
 
-Another ongoing personal achievement of my work at N26 is the documentation we have for our web platform—[about which I’ve tweeted a few times](https://twitter.com/HugoGiraudel/status/1189941543156797442?s=20). It is about 60,000 words (or the equivalent of a ~200 pages book) divided in 50+ chapters, published with Gitbook on internal servers for the entire company to have access to it.
+Another ongoing personal achievement of my work at N26 is the documentation we have for our web platform—[about which I’ve tweeted a few times](https://twitter.com/KittyGiraudel/status/1189941543156797442?s=20). It is about 60,000 words (or the equivalent of a ~200 pages book) divided in 50+ chapters, published with Gitbook on internal servers for the entire company to have access to it.
 
 ### On the personal side
 
