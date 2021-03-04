@@ -40,7 +40,7 @@ In this article, I want to discuss all the ways to hide something, be it through
 
 ## The `aria-hidden` attribute
 
-The [`aria-hidden` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute), when set to `true`, hides the content from the accessibility tree, while keeping it visually visible. That is because no browser applies any styling to elements `aria-hidden="true"` (which is a good thing).
+The [`aria-hidden` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute), when set to `true`, hides the content from the accessibility tree, while keeping it visually visible. That is because no browser applies default styles to elements `aria-hidden="true"` (which is a good thing).
 
 {% info %} It is important to note that any focusable elements within an element with `aria-hidden="true"` remains focusable, which can be a big problem for screen readers. Make sure there are no focusable elements within such container and that the element itself is also not focusable either (see the [fourth rule of ARIA](https://www.w3.org/TR/using-aria/#fourth)). {% endinfo %}
 
