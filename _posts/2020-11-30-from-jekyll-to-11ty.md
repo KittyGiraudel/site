@@ -105,11 +105,11 @@ Then, I can safely author Markdown content within Liquid files:
 
 ```liquid
 {% markdown %}
-My name is Hugo but I’m going by Kitty more and more. I’m a non-binary
-web developer in Berlin. I have led the web team at
-[N26](https://n26.com) for over 4 years and am about to get started at
-[Gorillas](https://gorillas.io). I specialise in accessibility and
-inclusivity. For a longer version, [read more about me](/about/).
+My name is Kitty. I’m a non-binary web developer in Berlin. I have led
+the web team at [N26](https://n26.com) for over 4 years and am about
+to get started at [Gorillas](https://gorillas.io). I specialise in
+accessibility and inclusivity. For a longer version, [read more about
+me](/about/).
 {% endmarkdown %}
 ```
 
