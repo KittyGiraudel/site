@@ -17,10 +17,10 @@ permalink: /rss/index.xml
       <description>{{ post.templateContent | replace: '<', '&lt;' | replace: '>', '&gt;' | replace: 'href="/', 'href="https://kittygiraudel.com/' | replace: 'src="/', 'src="https://kittygiraudel.com/' }}</description>
       <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
       <link>
-      {% if post.data.external %}{{ post.data.external.url }}{% else %}{{ post.url | prepend: site.url }}{% endif %}
+      {%- if post.data.external -%}{{ post.data.external.url }}{%- else -%}{{ post.url | prepend: site.url }}{%- endif -%}
       </link>
       <guid isPermaLink="true">
-        {% if post.data.external %}{{ post.data.external.url }}{% else %}{{ post.url | prepend: site.url }}{% endif %}
+        {%- if post.data.external -%}{{ post.data.external.url }}{%- else -%}{{ post.url | prepend: site.url }}{%- endif -%}
       </guid>
       {% for keyword in post.data.keywords %}
       <category>{{ keyword | xml_escape }}</category>
