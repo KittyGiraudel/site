@@ -125,17 +125,17 @@ The best thing with GitHub Pages is that it is built on Jekyll. This means **you
 
 _I could also push the compiled code to the repo but that would mean I need Jekyll everytime I want to update anything on the site. Not great, especially since I work at 4 different places._
 
-From there, I only had to push the local Jekyll site to this repo and about 10 minutes later, the whole thing was hosted and available at hugogiraudel.github.com. Easy as a pie.
+From there, I only had to push the local Jekyll site to this repo and about 10 minutes later, the whole thing was hosted and available at kittygiraudel.github.com. Easy as a pie.
 
 ## Redirect, DNS and all this shit
 
 ### Domain changes
 
-At this point, I had my site based on Jekyll running on GitHub Pages. However I didn’t want to use hugogiraudel.github.com as the main domain name but hugogiraudel.com. Meanwhile, I had my (previous) website hosted on a OVH server, hugogiraudel.com pointing to a folder on this server.
+At this point, I had my site based on Jekyll running on GitHub Pages. However I didn’t want to use kittygiraudel.github.com as the main domain name but kittygiraudel.com. Meanwhile, I had my (previous) website hosted on a OVH server, kittygiraudel.com pointing to a folder on this server.
 
-Basically I had to tell the GitHub server to serve hugogiraudel.github.com content from hugogiraudel.com, and to make hugogiraudel.com redirect at hugogiraudel.github.com.
+Basically I had to tell the GitHub server to serve kittygiraudel.github.com content from kittygiraudel.com, and to make kittygiraudel.com redirect at kittygiraudel.github.com.
 
-According to [GitHub Pages documentation](https://help.github.com/articles/setting-up-a-custom-domain-with-pages), and a couple of [posts on StackOverflow](https://stackoverflow.com/questions/9082499/custom-domain-for-github-project-pages), I understood I had to create a `CNAME` file at the root of the repo directing to the top-level domain I wanted to serve from (hugogiraudel.com) and set an A-record pointing to the GitHub IP from my own server.
+According to [GitHub Pages documentation](https://help.github.com/articles/setting-up-a-custom-domain-with-pages), and a couple of [posts on StackOverflow](https://stackoverflow.com/questions/9082499/custom-domain-for-github-project-pages), I understood I had to create a `CNAME` file at the root of the repo directing to the top-level domain I wanted to serve from (kittygiraudel.com) and set an A-record pointing to the GitHub IP from my own server.
 
 This has been done and followed by 12 hours of worry. My site was down and I had no idea whether or not it would get back up. Since I don’t understand a thing about server stuff and DNS, I could have simply broken everything without even knowing it.
 
@@ -155,7 +155,7 @@ I opted for a very simple—yet not perfect—approach which consisted of creati
 <meta http-equiv="refresh" content="0;url=/2013/02/04/css-gradients/" />
 ```
 
-Thus, trying to reach `hugogiraudel.com/blog/css-gradients` (old URL) automagically redirects to `hugogiraudel.com/2013/02/04/css-gradients/`. Easy peasy.
+Thus, trying to reach `kittygiraudel.com/blog/css-gradients` (old URL) automagically redirects to `kittygiraudel.com/2013/02/04/css-gradients/`. Easy peasy.
 
 However it is not perfect since it requires me to have about 15 files like this in an unused /blog folder. I could do it because I only had 15 articles, but what if I had 300? So if anyone has a clean solution, I take it! :)
 

@@ -11,7 +11,7 @@ My name is Kitty Giraudel. I’m a frontend developer on a work-based learning a
 
 I am the co-author of [Browserhacks](http://browserhacks.com) &mdash; a website aiming at gathering all the dirty little secrets from browsers to do some browser sniffing ; not that I support that kind of thing but someone had to do such a tool. ;) I also developed Wild Web Watch &mdash; a web-related watch tool (which unfortunately gets old pretty badly). I also take care of the Sass port of Raphaël Goetter’s framework, [KNACSS](https://knacss.com).
 
-Beside that, I write a lot for the web, starting on my site but for [Codrops](https://tympanus.com/codrops/author/hugogiraudel) and [CSS-Tricks](https://css-tricks.com) as well.
+Beside that, I write a lot for the web, starting on my site but for [Codrops](https://tympanus.com/codrops/author/kittygiraudel) and [CSS-Tricks](https://css-tricks.com) as well.
 
 ## What is your school/professional path?
 

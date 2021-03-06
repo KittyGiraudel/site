@@ -1,7 +1,7 @@
 ---
 external:
   host: Marcus Herrmann
-  url: https://marcus.io/blog/interview-with-hugo-giraudel-of-n26
+  url: https://marcus.io/blog/interview-with-kitty-giraudel-of-n26
 title: Creating a banking web app with accessibility in mind
 keywords:
   - a11y
