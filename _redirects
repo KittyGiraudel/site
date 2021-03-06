@@ -1,3 +1,4 @@
 https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 /rss                       /rss/index.xml                   301!
 /rss/*                     /rss/index.xml                   301!
+/feeds/feed.xml            /rss/index.xml                   301!
