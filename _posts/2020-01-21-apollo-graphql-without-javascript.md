@@ -8,7 +8,7 @@ keywords:
 
 The N26 web platform is built on top of [GraphQL](https://www.apollographql.com/). Our Express server exposes a GraphQL API that proxies internal REST endpoints. This gives us a lot of flexibility and allows us to fill potential gaps while ensuring more consistency: we can rename fields and arguments, modify the response or even return data from several endpoints under a single operation.
 
-As mentioned before, we [fully support the absence of JavaScript](/2020/01/18/n26-and-lack-of-javascript) (thanks to a carefully creafted server-side rendering solution). This brings an interesting challenge: how to work with Apollo GraphQL when JavaScript is not available? That is what we’ll cover in that article.
+As mentioned before, we [fully support the absence of JavaScript](/2020/01/18/n26-and-lack-of-javascript/) (thanks to a carefully creafted server-side rendering solution). This brings an interesting challenge: how to work with Apollo GraphQL when JavaScript is not available? That is what we’ll cover in that article.
 
 - [Apollo in React](#apollo-in-react)
 - [Back to basics: forms](#back-to-basics-forms)

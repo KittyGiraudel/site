@@ -11,7 +11,7 @@ When building a SPA—no matter the framework—it is important to do some work 
 1. The title of the new view/page needs to be announced.
 2. The focus needs to be preserved or moved to a proper place.
 
-A nice solution is to have a [visually hidden](/2020/12/03/a11y-advent-hiding-content) element at the top of the page which receives the new title when navigating, and move the focus on that element so the content is read. Ideally, the [skip link](/2020/12/06/a11y-advent-skip-to-content) lives right after that node so the flow goes like this:
+A nice solution is to have a [visually hidden](/2020/12/03/a11y-advent-hiding-content/) element at the top of the page which receives the new title when navigating, and move the focus on that element so the content is read. Ideally, the [skip link](/2020/12/06/a11y-advent-skip-to-content/) lives right after that node so the flow goes like this:
 
 1. Press a link in the content area that causes a router change.
 2. The view gets loaded.

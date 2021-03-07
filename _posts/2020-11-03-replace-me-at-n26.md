@@ -22,7 +22,7 @@ I will use certain terms over and over in this post, so I’d like to clarify te
 
 - _Web team:_ this refers to the community of web engineers working on customer-facing applications at N26. It is not a team per se, since they are distributed across product teams and work on different topics. Consider it a synonym to “web discipline”.
 - _Web platform:_ The range of features and products served by the web team to N26 prospects and customers. This encompasses the [website](https://n26.com), the [support center](https://support.n26.com), the [signup](https://get.n26.com), the [web-app](https://app.n26.com) and some webviews.
-- _Web code base:_ the [single repository containing the entire code base](/2020/03/25/web-mono-repo-at-n26) used to build, deploy, test and serve the web platform.
+- _Web code base:_ the [single repository containing the entire code base](/2020/03/25/web-mono-repo-at-n26/) used to build, deploy, test and serve the web platform.
 - _Segment:_ a division of the N26 product organisation, with its own responsibilities, goals and objectives. For instance, the Growth segment, or Memberships segment, or Core segment.
 
 ## The team
@@ -43,7 +43,7 @@ A non-exhaustive list of responsibilities would go like this:
 
 - Make sure web engineers get to do their best work without being limited or restrained by technical decisions. That implies a good deal of communication with them on a regular basis to make sure they are doing alright, can progress and understand what’s going on.
 
-- Ensure the [web mono-repo](/2020/03/25/web-mono-repo-at-n26) remains up-to-date and tech-debt free, and continues to serve the goals of the company by enabling fast and continuous delivery of features and improvements across all web projects (website, support center, signup, web-app and webviews).
+- Ensure the [web mono-repo](/2020/03/25/web-mono-repo-at-n26/) remains up-to-date and tech-debt free, and continues to serve the goals of the company by enabling fast and continuous delivery of features and improvements across all web projects (website, support center, signup, web-app and webviews).
 
 - Continue to uphold high quality standards, especially when it comes to accessibility, security, testing and documentation. We have always gone to great lengths to deliver stellar work, which scales and stands the test of time, and it should continue this way.
 
@@ -73,7 +73,7 @@ If you’ve been following along this post, I think you’ll know what I’m goi
 
 - ⚙️ The web code base is modern and, for all intents and purposes, pretty damn clean. Keeping things tidy and understandable was a non-trivial part of my job for the last few years, and I hope that shows. Things are mostly consistent through and through, and all web features are built the same way, so the learning curve is essentially non-existent when navigating projects.
 
-- 📖 We have _a lot_ of documentation. If you have been following my work, you know how passionate I am about technical documentation. I have written about it on many occasions, and our docs is the pinnacle of my role at N26. I encourage you to [read more about the N26 docs](/2020/01/23/technical-documentation-for-everyone).
+- 📖 We have _a lot_ of documentation. If you have been following my work, you know how passionate I am about technical documentation. I have written about it on many occasions, and our docs is the pinnacle of my role at N26. I encourage you to [read more about the N26 docs](/2020/01/23/technical-documentation-for-everyone/).
 
 - ♿️ We really care about accessibility. We have baked this topic in our ways of working virtually since day 1 and have been leading the topic at N26 for a long time. We automate accessibility testing where possible, and have documentation and knowledge sharing on the topic. This is not that common, and it’s a great environment to work in.
 

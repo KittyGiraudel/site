@@ -2,7 +2,7 @@
 title: 'A11yAdvent Day 21: Testing Accessibility'
 ---
 
-On [day 2](/2020/12/02/a11y-advent-evaluating-accessibility), we talked about evaluating accessibility with the Web Content Accessibility Guidelines. It is time to see how to test it. But first of all, a disclaimer: if I hope to have shown anything with this calendar is that accessibility is a broad topic impacting many different kinds of people and a lot of the work is done beyond sheer compliance with the WCAG.
+On [day 2](/2020/12/02/a11y-advent-evaluating-accessibility/), we talked about evaluating accessibility with the Web Content Accessibility Guidelines. It is time to see how to test it. But first of all, a disclaimer: if I hope to have shown anything with this calendar is that accessibility is a broad topic impacting many different kinds of people and a lot of the work is done beyond sheer compliance with the WCAG.
 
 Therefore, it is important to acknowledge that not everything can be automated. In fact, only a few things can be automated in the grand scheme of things. Basically, the HTML (and to some extent the CSS) can be audited to see if there are any sort immediately appearing markup issues.
 

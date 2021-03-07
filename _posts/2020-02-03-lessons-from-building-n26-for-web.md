@@ -26,7 +26,7 @@ N26, like many startups, is growing fast. When I joined, we were just about 100 
 
 Hiring in the tech industry is just like the tech industry itself: completely messed up. We impose unrealistic and unreasonable expectations on people. We completely overstate the value of technical skills and we think writing code is way more difficult than it is. This, in turn, creates weak homogeneous teams of fragile egos.
 
-I [wrote extensively on how we hire](/2020/01/13/lets-talk-about-your-resume) and—while I do think I made a few mistakes along the way—I also feel like it worked exceptionally well. At the risk of sounding cheesy, the N26 web team is by far the best team I have ever worked in. It’s made of over 20 diverse individuals who respect each other to build a good product for everyone.
+I [wrote extensively on how we hire](/2020/01/13/lets-talk-about-your-resume/) and—while I do think I made a few mistakes along the way—I also feel like it worked exceptionally well. At the risk of sounding cheesy, the N26 web team is by far the best team I have ever worked in. It’s made of over 20 diverse individuals who respect each other to build a good product for everyone.
 
 We are not just a group of technicians working for the same company. And by that, I don’t mean that we are necessarily all friends, or “like a family” (which I think is also an understated wrong trait of the startup culture). I mean that we are more than the sum of our skills. We have a shared vision, with shared values, like respect, trust, and inclusion (both within, and from a product standpoint).
 
@@ -34,15 +34,13 @@ We are not just a group of technicians working for the same company. And by that
 
 As your team grows, you want to cut as many sources of friction as possible when it comes to writing code. One way to do that is to make most discussions around the _way_ to write code over before they even start.
 
-Don’t spend time arguing about formatting: set up [Prettier](https://prettier.io/).
-Don’t spend time reviewing coding errors: set up [ESLint](https://eslint.org/).
-Don’t spend time discussing about common patterns: define and [document them](#documentation-documentation-documentation).
+Don’t spend time arguing about formatting: set up [Prettier](https://prettier.io/). Don’t spend time reviewing coding errors: set up [ESLint](https://eslint.org/). Don’t spend time discussing about common patterns: define and [document them](#documentation-documentation-documentation).
 
 You will want your time spent discussing code to be about solving problems, not bikeshedding on the way to write said code. Writing the code truly is the easy part of our job, in part because it can be significantly eased with tools and processes.
 
 ## Documentation, documentation, documentation
 
-I have recently [written about our documentation](/2020/01/23/technical-documentation-for-everyone). I cannot stress this enough: it’s all about documentation. I think most developers seriously tend to underestimate the benefits of properly written and maintained docs.
+I have recently [written about our documentation](/2020/01/23/technical-documentation-for-everyone/). I cannot stress this enough: it’s all about documentation. I think most developers seriously tend to underestimate the benefits of properly written and maintained docs.
 
 Here are the things that it makes easier:
 

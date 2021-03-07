@@ -25,7 +25,7 @@ Here is our HTML:
 </body>
 ```
 
-For the styling we can use what we learnt in [day 3 of this calendar](/2020/12/03/a11y-advent-hiding-content), applying a small twist to undo the hiding styles when the element is focused.
+For the styling we can use what we learnt in [day 3 of this calendar](/2020/12/03/a11y-advent-hiding-content/), applying a small twist to undo the hiding styles when the element is focused.
 
 ```css
 .sr-only.sr-only--focusable:focus,

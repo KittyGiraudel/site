@@ -10,7 +10,7 @@ Let’s go through a little recap of what is important when building accessible 
 
 ### Labels
 
-All fields should be labeled, regardless of design considerations. Labels can always be [visually hidden](/2020/12/03/a11y-advent-hiding-content), but they have to be present in the DOM, and be correctly linked to their field through the `for`/`id` pair. Placeholders are not labels.
+All fields should be labeled, regardless of design considerations. Labels can always be [visually hidden](/2020/12/03/a11y-advent-hiding-content/), but they have to be present in the DOM, and be correctly linked to their field through the `for`/`id` pair. Placeholders are not labels.
 
 Additionally, labels should indicate the expected format if any, and whether the field is required or not. If all fields are required, an informative message can be issued at the top of the form to state so.
 
