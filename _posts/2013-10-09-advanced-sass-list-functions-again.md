@@ -10,7 +10,7 @@ keywords:
 
 Heys people, it’s been a while I haven’t posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what’s new on my Sass list functions library.
 
-Well first of all, it has been added as a [Team-Sass](https://github.com/Team-Sass) repository on GitHub (the [pen](https://codepen.io/KittyGiraudel/pen/loAgq is still updated). You probably know the Team-Sass collective. They have done ton of awesome things like [Breakpoint](https://github.com/Team-Sass/breakpoint), [Sassy Math](https://github.com/Team-Sass/Sassy-math) and [UIKit](https://github.com/Team-Sass/uikit).
+Well first of all, it has been added as a [Team-Sass](https://github.com/Team-Sass) repository on GitHub (the [pen](https://codepen.io/KittyGiraudel/pen/loAgq) is still updated). You probably know the Team-Sass collective. They have done ton of awesome things like [Breakpoint](https://github.com/Team-Sass/breakpoint), [Sassy Math](https://github.com/Team-Sass/Sassy-math) and [UIKit](https://github.com/Team-Sass/uikit).
 
 I am very glad to see my repo in there, so big thanks to them. :)
 
