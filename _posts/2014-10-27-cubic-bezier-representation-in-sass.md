@@ -46,7 +46,7 @@ Finally, the minimal value is added:
 p = (p1 - p0) * t + p0
 ```
 
-![Lerping](http://upload.wikimedia.org/wikipedia/commons/0/00/B%C3%A9zier_1_big.gif)
+![Lerping](https://upload.wikimedia.org/wikipedia/commons/0/00/B%C3%A9zier_1_big.gif)
 
 To get a point along a _curved path_, we do this for every line along the path. If the path consists of more than two lines, we get two or more interpolated points, and multiple points makes a line which can be lerped as well. This simply repeats until we have one single point left.
 
@@ -69,7 +69,7 @@ p = lerp(i0, i1, t)
 
 A Bézier of three points is called a Quadratic Bézier.
 
-![Quadratic bezier](http://upload.wikimedia.org/wikipedia/commons/3/3d/B%C3%A9zier_2_big.gif)
+![Quadratic bezier](https://upload.wikimedia.org/wikipedia/commons/3/3d/B%C3%A9zier_2_big.gif)
 
 We can do this for four points as well which requires a third iteration:
 
@@ -96,11 +96,11 @@ p = lerp(i10, i11)
 
 A curve of four points is called a Cubic Bézier.
 
-![Cubic bezier](http://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif)
+![Cubic bezier](https://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif)
 
 As stated before, the amount of points is irrelevant, so we can use five points, or six, or seven!
 
-![High order bezier](http://upload.wikimedia.org/wikipedia/commons/a/a4/B%C3%A9zier_4_big.gif)
+![High order bezier](https://upload.wikimedia.org/wikipedia/commons/a/a4/B%C3%A9zier_4_big.gif)
 
 As you add more points, the more coordinates play a part in the final curve, making it increasingly difficult to add desired detail. This is why the Cubic Bézier curve, the curve with four points is most common. If you’re familiar with software like Illustrator, you will know that between two points, you get two control points, which makes four.
 
@@ -112,7 +112,7 @@ Okay, at this point you should be in a pretty good shape to understand cubic Bé
 
 Such a function can be reprensented on a 2-axis plan with the transition/animation progression along the Y axis, and the time along the X axis. A curve is then drawen on the graph, representing the timing function.
 
-![What we'll come up with](http://i.imgur.com/OqWlIjv.png)
+![What we'll come up with](https://i.imgur.com/OqWlIjv.png)
 
 This is what we wanted to achieve. Although we wanted a very simple API, something like:
 
@@ -361,4 +361,4 @@ If you need to create your own cubic-bezier animation function,[this tool](http:
 
 I hope you enjoyed this experiment. You can play with the code on CodePen:
 
-<p data-height="380" data-theme-id="0" data-slug-hash="eqCvo" data-default-tab="result" data-user="KittyGiraudel" class='codepen'>See the Pen <a href='http://codepen.io/KittyGiraudel/pen/eqCvo/'>Cubic Bezier functions visualize</a> by Kitty Giraudel (<a href='http://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="380" data-theme-id="0" data-slug-hash="eqCvo" data-default-tab="result" data-user="KittyGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/eqCvo/'>Cubic Bezier functions visualize</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>

@@ -8,9 +8,9 @@ keywords:
 
 {% info %} The code explained in this article has been slightly revisited in [the pen](https://codepen.io/KittyGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen. {% endinfo %}
 
-You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It’s a shame there is so few functions to deal with them. This is why I made [SassyLists](https://github.com/Team-Sass/Sass-list-functions).
+You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It’s a shame there is so few functions to deal with them. This is why I made [SassyLists](https://github.com/at-import/SassyLists).
 
-Most importantly, I always wanted a `console.log()` for Sass. You know, something to debug a variable, a list, a value, whatever… There is the `[@debug](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4)` function but somehow it didn’t completely satisfy me. Plus, there is no console on [CodePen.io](https://codepen.io) and since this is where I do most of my experiments I needed something else.
+Most importantly, I always wanted a `console.log()` for Sass. You know, something to debug a variable, a list, a value, whatever… There is the `[@debug](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#_4)` function but somehow it didn’t completely satisfy me. Plus, there is no console on [CodePen](https://codepen.io) and since this is where I do most of my experiments I needed something else.
 
 So I rolled up my sleeves, got my hands dirty and made my own Sass debug function. This is how it looks like:
 
@@ -105,9 +105,9 @@ I wanted two things: 1) explode the list into several lines to make it easier to
 
 ### Dealing with line breaks
 
-If you are a reader of [thesassway.herokuapp.com/](https://thesassway.herokuapp.com/), you might have stumbled upon my article [Math sequences with Sass](https://thesassway.herokuapp.com/advanced/math-sequences-with-sass) in which I explain how I created famous math sequences in Sass and how I managed to display them with nothing more than CSS. Anyway, I kind of answer the question of linebreaks in CSS.
+You might have stumbled upon my article [Math sequences with Sass](/2013/10/14/math-sequences-with-sass/) in which I explain how I created famous math sequences in Sass and how I managed to display them with nothing more than CSS. Anyway, I kind of answer the question of linebreaks in CSS.
 
-If you’ve ever read the [CSS specifications for the content property](https://www.w3.org/TR/CSS2/generate.html#content) (don’t worry, neither did I), you may know that there is a way to insert breaklines with `\A` (don’t forget the trailing white space). In TheSassWay article, I used it as a `$glue` for the [`to-string()`](https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss) function from SassyLists.
+If you’ve ever read the [CSS specifications for the content property](https://www.w3.org/TR/CSS2/generate.html#content) (don’t worry, neither did I), you may know that there is a way to insert breaklines with `\A` (don’t forget the trailing white space). In the article, I used it as a `$glue` for the [`to-string()`](https://github.com/at-import/SassyLists/blob/master/stylesheets/functions/_to-string.scss) function from SassyLists.
 
 This is pretty much what we will do here.
 
@@ -228,6 +228,6 @@ The only problem left is that if you debug a single value, it will wrap it into 
 
 ## Final words
 
-That’s pretty much it people. I hope you like it. This has been added to [SassyLists](https://github.com/Team-Sass/Sass-list-functions), so if you think of something to improve it be sure to share!
+That’s pretty much it people. I hope you like it. This has been added to [SassyLists](https://github.com/at-import/SassyLists), so if you think of something to improve it be sure to share!
 
 Some of you might find this kind of overkill. Then you can try [this `@debug`-powered version](https://gist.github.com/piouPiouM/7030210) by [Mehdi Kabab](https://twitter.com/pioupioum) that does pretty much the same thing but in the Ruby console.

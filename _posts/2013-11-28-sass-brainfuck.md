@@ -78,7 +78,7 @@ We talked about the empty-list case in this section but there is the exact same 
 
 ## List append
 
-Even after [many](/2013/07/15/understanding-sass-lists/) [articles](/2013/08/08/advanced-sass-list-functions/) [about](/2013/10/09/advanced-sass-list-functions-again/) [Sass](https://thesassway.herokuapp.com/advanced/math-sequences-with-sass) lists, they keep surprising me with how messed up they are.
+Even after [many](/2013/07/15/understanding-sass-lists/) [articles](/2013/08/08/advanced-sass-list-functions/) [about](/2013/10/09/advanced-sass-list-functions-again/) [Sass](/2013/10/14/math-sequences-with-sass) lists, they keep surprising me with how messed up they are.
 
 As you may know, most single-values in Sass are considered as one item-long lists. This is to allow the use of `length()`, `nth()`, `index()` and more. Meanwhile, if you test the type of a single-value list, it won’t return `list` but whatever the type is (could it be `bool`, `number` or `string`). Quick example:
 

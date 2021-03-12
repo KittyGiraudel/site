@@ -6,15 +6,15 @@ keywords:
   - experiment
 ---
 
-A couple of weeks ago, I've been playing around math sequences in Sass, especially the [Fibonacci number](http://en.wikipedia.org/wiki/Fibonacci_number), the [Juggler sequence](http://en.wikipedia.org/wiki/Juggler_sequence) and the [Look-and-say sequence](http://en.wikipedia.org/wiki/Look-and-say_sequence) also known as _Conway's number_.
+A couple of weeks ago, I've been playing around math sequences in Sass, especially the [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number), the [Juggler sequence](https://en.wikipedia.org/wiki/Juggler_sequence) and the [Look-and-say sequence](http://en.wikipedia.org/wiki/Look-and-say_sequence) also known as _Conway's number_.
 
 Even if there is no practical application for such things, those were definitely fun Sass experiments and people seemed to be interested on Twitter so here is the how-to.
 
-If you're not interested in learning how I did it and just want to see the code, you can play around those pens: [Fibonacci number](http://codepen.io/KittyGiraudel/pen/krAes), [Juggler sequence](http://codepen.io/KittyGiraudel/pen/GnzfB), [Look-and-say sequence](http://codepen.io/KittyGiraudel/pen/tBhzs).
+If you're not interested in learning how I did it and just want to see the code, you can play around those pens: [Fibonacci number](https://codepen.io/KittyGiraudel/pen/krAes), [Juggler sequence](https://codepen.io/KittyGiraudel/pen/GnzfB), [Look-and-say sequence](https://codepen.io/KittyGiraudel/pen/tBhzs).
 
 ## Fibonacci number
 
-The [Fibonacci number](http://en.wikipedia.org/wiki/Fibonacci_number) is one of those math sequences that follow simple rules. The one ruling the Fibonacci sequence is that **each subsequent number is the sum of the previous two**. Here are the 10 first entries of this sequence:
+The [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number) is one of those math sequences that follow simple rules. The one ruling the Fibonacci sequence is that **each subsequent number is the sum of the previous two**. Here are the 10 first entries of this sequence:
 
 ```
 0 1 1 2 3 5 8 13 21 34 55
@@ -58,7 +58,7 @@ $fib: fibonacci(10);
 
 ## Juggler sequence
 
-I'll be totally honest with you guys: I'm not sure what's the [Juggler sequence](http://en.wikipedia.org/wiki/Juggler_sequence) is meant for. All I know is how it works. First of all, it is not an infinite sequence; secondly, it's different for each initial number.
+I'll be totally honest with you guys: I'm not sure what's the [Juggler sequence](https://en.wikipedia.org/wiki/Juggler_sequence) is meant for. All I know is how it works. First of all, it is not an infinite sequence; secondly, it's different for each initial number.
 
 Basically, every new entry in the sequence is the previous one either raised to `1/2` if it's even or raised to `3/2` if it's odd. Let's take an example with `3` as a starter:
 
@@ -117,7 +117,7 @@ $juggler: juggler(77);
 
 ## Look-and-say sequence
 
-The [Look-and-say sequence](http://en.wikipedia.org/wiki/Look-and-say_sequence) is a little bit less mathematical than the Fibonacci number. Its name is self explanatory: to generate a new entry from the previous one, read off the digits of the previous one, counting the number of digits in groups of the same digit.
+The [Look-and-say sequence](https://en.wikipedia.org/wiki/Look-and-say_sequence) is a little bit less mathematical than the Fibonacci number. Its name is self explanatory: to generate a new entry from the previous one, read off the digits of the previous one, counting the number of digits in groups of the same digit.
 
 ```scss
 $look-and-say: 1, 11, 21, 1211, 111221, 312211;
@@ -142,7 +142,7 @@ d 1d 111d 311d 13211d 111312211d 31131122211d
 
 ### Look-and-say in Sass
 
-To build this sequence with Sass, I got inspired by [an old pen of mine](http://codepen.io/KittyGiraudel/pen/wDkvc) where I attempted to do the sequence in JavaScript. The code is dirty as hell and definitely waaaay too heavy for such a thing, but it works.
+To build this sequence with Sass, I got inspired by [an old pen of mine](https://codepen.io/KittyGiraudel/pen/wDkvc) where I attempted to do the sequence in JavaScript. The code is dirty as hell and definitely waaaay too heavy for such a thing, but it works.
 
 Since Sass isn't as powerful as JavaScript (no regular expression, no replace...), I don't think there are many ways to go. If anyone has a better idea, I'd be glad to hear it! :)
 
@@ -295,7 +295,7 @@ First things first: to display textual content without any markup, I used a pseu
 
 Now to display it with line-breaks, I had to get tricky! The main idea is to convert the list into a string and to join elements with a line-break character.
 
-Thankfully, I recently wrote an article about [advanced Sass list functions](http://KittyGiraudel.com/2013/08/08/advanced-sass-list-functions/), and one of those is `to-string()`.
+Thankfully, I recently wrote an article about [advanced Sass list functions](https://KittyGiraudel.com/2013/08/08/advanced-sass-list-functions/), and one of those is `to-string()`.
 
 I think you can see where this is going now: to display the Fibonacci number line by line, I simply did this:
 
@@ -314,7 +314,7 @@ Here is what we do (from middle to edges):
 
 There you have it: displaying a whole list of data with line-breaks all through CSS. Pretty neat, isn't it?
 
-Note: for the Look-and-say sequence, it takes one extra step to convert nested lists into strings first. You check how I did it directly on [the pen](http://codepen.io/KittyGiraudel/pen/tBhzs).
+Note: for the Look-and-say sequence, it takes one extra step to convert nested lists into strings first. You check how I did it directly on [the pen](https://codepen.io/KittyGiraudel/pen/tBhzs).
 
 ## Final words
 
