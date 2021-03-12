@@ -105,7 +105,7 @@ I wanted two things: 1) explode the list into several lines to make it easier to
 
 ### Dealing with line breaks
 
-If you are a reader of [TheSassWay.com](http://thesassway.com), you might have stumbled upon my article [Math sequences with Sass](http://thesassway.com/advanced/math-sequences-with-sass) in which I explain how I created famous math sequences in Sass and how I managed to display them with nothing more than CSS. Anyway, I kind of answer the question of linebreaks in CSS.
+If you are a reader of [thesassway.herokuapp.com/](https://thesassway.herokuapp.com/), you might have stumbled upon my article [Math sequences with Sass](https://thesassway.herokuapp.com/advanced/math-sequences-with-sass) in which I explain how I created famous math sequences in Sass and how I managed to display them with nothing more than CSS. Anyway, I kind of answer the question of linebreaks in CSS.
 
 If you’ve ever read the [CSS specifications for the content property](https://www.w3.org/TR/CSS2/generate.html#content) (don’t worry, neither did I), you may know that there is a way to insert breaklines with `\A` (don’t forget the trailing white space). In TheSassWay article, I used it as a `$glue` for the [`to-string()`](https://github.com/Team-Sass/Sass-list-functions/blob/master/compass-extension/stylesheets/SassyLists/_to-string.scss) function from SassyLists.
 

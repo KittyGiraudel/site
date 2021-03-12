@@ -21,7 +21,7 @@ Sass -and pretty much any preprocessor- is a program aiming at extending a langu
 Among other things, Sass can be very useful for:
 
 - **Variables**: it’s been a while since we first asked for variables in CSS. They’ll come native some day but meanwhile, we have to rely on CSS preprocessors.
-- **Nesting**: it is the ability to nest rules within each others to create expanded CSS selectors. Can be very interesting to avoid code repetition. Remember the [inception rule though](http://thesassway.com/beginner/the-inception-rule).
+- **Nesting**: it is the ability to nest rules within each others to create expanded CSS selectors. Can be very interesting to avoid code repetition. Remember the [inception rule though](https://thesassway.herokuapp.com/beginner/the-inception-rule).
 - **Functions**: I don’t think functions deserve an explanation. Give it parameters, it returns a result you can store in a variable or use as a value.
 - **Mixins**: same as functions except it outputs code instead of returning a result. Very useful to output chuncks of code depending on some parameters (mixin arguments).
 - **Color functions**: every preprocessor nowadays comes with a bunch of functions to ease color management (lighten, darken, transparentize, mix, complementary…). Very cool to avoid repeated back-and-forths between the IDE and Photoshop and having 50 shades of grey when you only need one (see what I did there?). Also easier to read than hexadecimal in my opinion.

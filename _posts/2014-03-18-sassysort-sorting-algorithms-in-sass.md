@@ -1,5 +1,5 @@
 ---
-title: "SassySort: sorting algorithms in Sass"
+title: 'SassySort: sorting algorithms in Sass'
 keywords:
   - sass
   - sort
@@ -17,7 +17,7 @@ That could have been the end of that if Sam Richards (a.k.a [Snugug](https://twi
 
 It didn’t take me long to update his function in order to sort anything, very quickly (actually as quickly as Ruby can get, which means, not much…). And I really enjoyed working on this, so I started implementing other famous algorithms in Sass, resulting in [SassySort](https://github.com/KittyGiraudel/SassySort).
 
-_Note: I recently wrote [an article](http://thesassway.com/advanced/implementing-bubble-sort-with-sass) about how to implement the Bubble Sort algorithm in Sass for The Sass Way. If you haven’t read it, you should! At least for the beautiful header image!_
+_Note: I recently wrote [an article](https://thesassway.herokuapp.com/advanced/implementing-bubble-sort-with-sass) about how to implement the Bubble Sort algorithm in Sass for The Sass Way. If you haven’t read it, you should! At least for the beautiful header image!_
 
 ## How to use
 
@@ -66,8 +66,8 @@ Depending on what you aim at doing with this sorting function, you might or migh
 And this somewhere is in the `$default-order` variable:
 
 ```scss
-$default-order: '!' '#' '$' '%' '&' "'" '(' ')' '*' '+' ',' '-' '.' '/' '[' '\\'
-  ']' '^' '_' '{' '|' '}' '~' '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'a' 'b'
+$default-order: '!' '#' '$' '%' '&' "'" '(' ')' '*' '+' ',' '-' '.' '/' '['
+  '\\'']' '^' '_' '{' '|' '}' '~''0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'a' 'b'
   'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u'
   'v' 'w' 'x' 'y' 'z' !default;
 ```

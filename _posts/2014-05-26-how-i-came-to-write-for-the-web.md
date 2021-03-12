@@ -36,9 +36,9 @@ On the very beginning of 2014, I gathered my courage and let David release anoth
 
 ### The Sass Way
 
-A few months after my first article for David Walsh (October 2013), I think [John W. Long](https://twitter.com/johnwlong) from [The Sass Way](http://thesassway.com) asked me whether I’d like publishing a write up at The Sass Way. The Sass Way being one of the most central places for Sass related stuff, I jumped on the occasion and released a completely silly post about [Math sequences in Sass](http://thesassway.com/advanced/math-sequences-with-sass). While this was very interesting from a strictly technical point of view, it had absolutely no point whatsoever &mdash; making the article completely useless.
+A few months after my first article for David Walsh (October 2013), I think [John W. Long](https://twitter.com/johnwlong) from [The Sass Way](https://thesassway.herokuapp.com/) asked me whether I’d like publishing a write up at The Sass Way. The Sass Way being one of the most central places for Sass related stuff, I jumped on the occasion and released a completely silly post about [Math sequences in Sass](https://thesassway.herokuapp.com/advanced/math-sequences-with-sass). While this was very interesting from a strictly technical point of view, it had absolutely no point whatsoever &mdash; making the article completely useless.
 
-Thankfully, John gave me some extra opportunities to release more interesting articles on The Sass Way, including a cool one about [how to programmatically go from one color to another](http://thesassway.com/advanced/how-to-programtically-go-from-one-color-to-another-in-sass) which is &mdash; in my opinion &mdash; quite neat, especially if you’re interested in how colors work.
+Thankfully, John gave me some extra opportunities to release more interesting articles on The Sass Way, including a cool one about [how to programmatically go from one color to another](https://thesassway.herokuapp.com/advanced/how-to-programtically-go-from-one-color-to-another-in-sass) which is &mdash; in my opinion &mdash; quite neat, especially if you’re interested in how colors work.
 
 ### SitePoint
 
