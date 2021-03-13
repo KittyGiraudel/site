@@ -13,10 +13,10 @@ layout: default
 
 <article itemscope itemtype="https://schema.org/Article" class="Post">
   {% if page.date %}
-  <p itemprop="datePublished" class="PostDate">
-    {{ page.date | time }}
+  <p class="PostDate">
+    <span itemprop="datePublished">{{ page.date | time }}</span>
     {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
-    {% if external %}{% else %}<span itemtype="timeRequired" title="Estimated read time">· {{ content | strip_html | reading_time }}</span>{% endif %}
+    {% if external %}{% else %}<span itemprop="timeRequired" title="Estimated read time">· {{ content | strip_html | reading_time }}</span>{% endif %}
   </p>
   {% endif %}
 
@@ -28,7 +28,7 @@ layout: default
   </p>
   {% endif %}
 
-  <div itemtype="articleBody">
+  <div itemprop="articleBody">
     {% include "post_edits.html", edits: edits %}
     {{ content }}
   </div>
