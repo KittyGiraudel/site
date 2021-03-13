@@ -3,6 +3,7 @@ title: 'Gorillas’ nav: a case study'
 ---
 
 <style>
+  video { max-width: 100%; }
   @media (min-width: 700px) { video { float: right; margin-left: 1em; max-width: 320px } }
 </style>
 
@@ -38,6 +39,7 @@ Then I thought about using `<details>` and `<summary>` since we have pretty loos
  */
 summary {
   display: block; /* 1 */
+  cursor: pointer;
 }
 
 /**
