@@ -5,9 +5,10 @@ title: 'Gorillas’ nav: a case study'
 <style>
   video { max-width: 100%; }
   @media (min-width: 700px) { video { float: right; margin-left: 1em; max-width: 320px } }
+  h2:first-of-type { clear: both; }
 </style>
 
-<video playsinline autoplay muted loop aria-label="Gorillas.io site’s navigation featuring a skip link and a toggle with the brand logo in it, which displays a list of links as a dropdown when interacted with." disablepictureinpicture poster="https://pbs.twimg.com/tweet_video_thumb/EwXIW3CW8AI3mAh.jpg" src="https://video.twimg.com/tweet_video/EwXIW3CW8AI3mAh.mp4" type="video/mp4"></video>
+<video playsinline="" autoplay="" muted="" loop="" disablepictureinpicture="" aria-label="Gorillas.io site’s navigation featuring a skip link and a toggle with the brand logo in it, which displays a list of links as a dropdown when interacted with."  poster="https://pbs.twimg.com/tweet_video_thumb/EwXIW3CW8AI3mAh.jpg" src="https://video.twimg.com/tweet_video/EwXIW3CW8AI3mAh.mp4" type="video/mp4"></video>
 
 A few days ago, I posted [a few tweets](https://twitter.com/KittyGiraudel/status/1367834491977412608?s=20) about the new [Gorillas’ website](https://gorillas.io). It’s a pretty simple site at this stage: a couple pages, not much interaction, mostly there to showcase Gorillas’ branding as we expand rapidly across Europe (check it out if you can, it’s good stuff ⭐️).
 
@@ -20,8 +21,6 @@ One of the most interesting part of the site—at least from a technical standpo
 - [Nice curves](#nice-curves)
 - [Skip it](#skip-it)
 - [Language switcher](#language-switcher)
-
-<div style="clear: both"></div>
 
 ## Show me your content
 
