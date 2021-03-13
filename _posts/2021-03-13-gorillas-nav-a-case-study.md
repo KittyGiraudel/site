@@ -162,17 +162,17 @@ While it will most likely move out of the navigation soon as we add more and mor
 
 Still, a few things we paid attention to:
 
-- While the links say “EN”, “DE” and “NL”, it’s not fantastic from a verbal perspective. “EN” and “NL” are pronounced as you would expect, but “DE” is pronounced “duh”, which sucks. I assume most screen-reader users would be accustomed to this sort of pronunciation for language code, but we wanted to do better. ~~The 2-letter code is marked with `aria-hidden` so it’s not read out and~~ each link contains visually hidden text mentioning the full language name.
+While the links say “EN”, “DE” and “NL”, it’s not fantastic from a verbal perspective. “EN” and “NL” are pronounced as you would expect, but “DE” is pronounced “duh”, which sucks. I assume most screen-reader users would be accustomed to this sort of pronunciation for language code, but we wanted to do better. ~~The 2-letter code is marked with `aria-hidden` so it’s not read out and~~ each link contains visually hidden text mentioning the full language name.
 
-  {% info %}[Aurélien Levy rightfully pointed out on Twitter](https://twitter.com/goetsu/status/1370730365418143745?s=20) that marking the 2-letter code as `aria-hidden` would fail [WCAG SC 2.5.3 Label in name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html). As the visible label is, say, “EN”, voice navigation users can activate it using a command like “click EN”. It will not work anymore if the “EN” text is hidden with `aria-hidden`.{% endinfo %}
+{% info %}[Aurélien Levy rightfully pointed out on Twitter](https://twitter.com/goetsu/status/1370730365418143745?s=20) that marking the 2-letter code as `aria-hidden` would fail [WCAG SC 2.5.3 Label in name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html). As the visible label is, say, “EN”, voice navigation users can activate it using a command like “click EN”. It will not work anymore if the “EN” text is hidden with `aria-hidden`.{% endinfo %}
 
-- The language name is defined in the language itself, and _not_ in the current page language. Browsing the English navigation will read <span lang="de">“Deutsche”</span> for the German link, and not “German”. So it’s pronounced correctly, the language name is wrapped with a span with the `lang` attribute. This way, a screen-reader will switch to a German pronounciation to voice <span lang="de">“Deutsche”</span>.
+The language name is defined in the language itself, and _not_ in the current page language. Browsing the English navigation will read <span lang="de">“Deutsche”</span> for the German link, and not “German”. So it’s pronounced correctly, the language name is wrapped with a span with the `lang` attribute. This way, a screen-reader will switch to a German pronounciation to voice <span lang="de">“Deutsche”</span>.
 
-- Each link to an alternative version has the `hreflang` attribute to inform that the content of the page behind the link will be in a certain language. There is little information about the `hreflang` attribute on links out there, so it might do basically nothing. I’m not sure.
+Each link to an alternative version has the `hreflang` attribute to inform that the content of the page behind the link will be in a certain language. There is little information about the `hreflang` attribute on links out there, so it might do basically nothing. I’m not sure.
 
-- The separators between all 3 links are marked with `aria-hidden` since they are strictly decorative. They could have been made with CSS as well, but it was a little less convenient.
+The separators between all 3 links are marked with `aria-hidden` since they are strictly decorative. They could have been made with CSS as well, but it was a little less convenient.
 
-- We did not fall into the trap of using flags to represent languages, since flags are ultimately for countries, and not languages. While we often associate a country and a language, this thinking line falls short for many countries and languages.
+We did not fall into the trap of using flags to represent languages, since flags are ultimately for countries, and not languages. While we often associate a country and a language, this thinking line falls short for many countries and languages.
 
 This is basically what it looks like in the end:
 
