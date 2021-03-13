@@ -351,7 +351,7 @@ Regarding `draw-control-points` now, it gets called only if `control-points` key
 
 The way they are drawn are kind of tricky I must say (also quite complicated, so I won't display the code here). Basically, it consists on two pseudo-elements with their diagonal displayed thanks to a linear-gradient and some geometry magic using `atan` function ([from Compass](http://compass-style.org/reference/compass/helpers/math/#atan)).
 
-(Note: if you don't use Compass, you can use [this (Ruby) implementation](https://github.com/at-import/Sassy-math/blob/60d130108bcd20c5cd5aa50b52505afab9a40519/compass/lib/sassy-math.rb#L136) from Sassy-Math, or [this (Sass) one](http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass#coding-the-atan-function) from Ana Tudor.)
+(Note: if you don't use Compass, you can use [this (Ruby) implementation](https://github.com/at-import/Sassy-math/blob/60d130108bcd20c5cd5aa50b52505afab9a40519/compass/lib/sassy-math.rb#L136) from Sassy-Math, or [this (Sass) one](https://thesassway.herokuapp.com/advanced/inverse-trigonometric-functions-with-sass#coding-the-atan-function) from Ana Tudor.)
 
 ## Final thoughts
 
