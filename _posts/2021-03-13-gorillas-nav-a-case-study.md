@@ -63,7 +63,7 @@ That’s why when JavaScript is available, we replace them with a `<button>` (wi
     id="menu-toggle"
   >
     <svg aria-hidden="true" focusable="false"><!-- Logo --></svg>
-    <span class="sr-only">Open navigation</span>
+    <span class="sr-only">Navigation</span>
   </button>
   <div id="menu" aria-labelledby="menu-toggle" aria-hidden="true">
     <!-- Navigation content -->
@@ -94,7 +94,7 @@ Simplified and using `<details>` and `<summary>` in this example for sake of cla
   <details>
     <summary>
       <svg aria-hidden="true" focusable="false"><!-- Logo --></svg>
-      <span class="sr-only">Open navigation</span>
+      <span class="sr-only">Navigation</span>
     </summary>
     <ul>
       <!-- Navigation content -->
