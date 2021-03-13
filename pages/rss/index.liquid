@@ -1,34 +1,31 @@
 ---
 permalink: /rss/index.xml
+eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ site.author | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}/</link>
-    <atom:link href="{{ "/rss/index.xml" | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    <pubDate>{{ site.pubDate | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>11ty</generator>
-    {% for post in collections.posts %}
-    <item>
-      <title>{{ post.data.title | xml_escape }}</title>
-      <description><![CDATA[{{ post.templateContent | replace: 'href="/', 'href="https://kittygiraudel.com/' | replace: 'src="/', 'src="https://kittygiraudel.com/' }}]]></description>
-      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-      <link>
-      {%- if post.data.external -%}{{ post.data.external.url }}{%- else -%}{{ post.url | prepend: site.url }}{%- endif -%}
-      </link>
-      <guid isPermaLink="true">
-        {%- if post.data.external -%}{{ post.data.external.url }}{%- else -%}{{ post.url | prepend: site.url }}{%- endif -%}
-      </guid>
-      {% for keyword in post.data.keywords %}
-      <category>{{ keyword | xml_escape }}</category>
-      {% endfor %}
-      {% for cat in post.data.categories %}
-      <category>{{ cat | xml_escape }}</category>
-      {% endfor %}
-    </item>
-    {% endfor %}
-  </channel>
-</rss>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.author }}</title>
+  <subtitle>{{ site.description }}</subtitle>
+  <link href="{{ site.url }}/rss/index.xml" rel="self" type="application/atom+xml" />
+  <link href="{{ site.url }}" rel="alternate" type="text/html" />
+  <author>
+    <name>{{ site.author }}</name>
+  </author>
+  <updated>{{ site.time | date_to_rfc3339 }}</updated>
+  <generator>11ty</generator>
+  <id>{{ site.url }}/</id>
+  {% for post in collections.posts %}
+  {% capture absolute_post_url -%}
+  {%- if post.data.external -%}{{ post.data.external.url }}{%- else -%}{{ post.url | prepend: site.url }}{%- endif -%}
+  {%- endcapture %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolute_post_url }}" />
+    <published>{{ post.date | date_to_rfc3339 }}</published>
+    <id>{{ absolute_post_url }}</id>
+    {% unless post.data.external %}
+    <content type="html"><![CDATA[{{ post.templateContent | replace: 'href="/', 'href="https://kittygiraudel.com/' | replace: 'src="/', 'src="https://kittygiraudel.com/' }}]]></content>
+    {% endunless %}
+  </entry>
+  {% endfor %}
+</feed>
