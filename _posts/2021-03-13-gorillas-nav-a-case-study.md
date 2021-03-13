@@ -71,6 +71,8 @@ That’s why when JavaScript is available, we replace them with a `<button>` (wi
 </nav>
 ```
 
+{% info %}[Interesting point raised by Aurélien Levy on Twitter](https://twitter.com/goetsu/status/1370729035156779014?s=20): When using `aria-expanded="true"`, the label should not mention “open” or “close” (or similar) as the state is already conveyed via the attribute.{% endinfo %}
+
 Without getting too deep into technical details (especially because our implementation is in React), we use something along these lines to automatically close the menu when clicking outside of it or tabbing out of it.
 
 ```js
