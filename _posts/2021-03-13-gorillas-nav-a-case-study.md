@@ -165,7 +165,7 @@ While the links say “EN”, “DE” and “NL”, it’s not fantastic from a
 
 {% info %}[Aurélien Levy rightfully pointed out on Twitter](https://twitter.com/goetsu/status/1370730365418143745?s=20) that marking the 2-letter code as `aria-hidden` would fail [WCAG SC 2.5.3 Label in name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html). As the visible label is, say, “EN”, voice navigation users can activate it using a command like “click EN”. It will not work anymore if the “EN” text is hidden with `aria-hidden`.{% endinfo %}
 
-The language name is defined in the language itself, and _not_ in the current page language. Browsing the English navigation will read <span lang="de">“Deutsche”</span> for the German link, and not “German”. So it’s pronounced correctly, the language name is wrapped with a span with the `lang` attribute. This way, a screen-reader will switch to a German pronounciation to voice <span lang="de">“Deutsche”</span>.
+The language name is defined in the language itself, and _not_ in the current page language. Browsing the English navigation will read <span lang="de">“Deutsch”</span> for the German link, and not “German”. So it’s pronounced correctly, the language name is wrapped with a span with the `lang` attribute. This way, a screen-reader will switch to a German pronounciation to voice <span lang="de">“Deutsch”</span>.
 
 Each link to an alternative version has the `hreflang` attribute to inform that the content of the page behind the link will be in a certain language. There is little information about the `hreflang` attribute on links out there, so it might do basically nothing. I’m not sure.
 
@@ -181,7 +181,7 @@ This is basically what it looks like in the end:
 </a>
 <span aria-hidden="true">/</span>
 <a href="/de" hreflang="de">
-  <span class="sr-only" lang="de">Deutsche — </span>DE
+  <span class="sr-only" lang="de">Deutsch — </span>DE
 </a>
 <span aria-hidden="true">/</span>
 <a href="/nl" hreflang="nl">
