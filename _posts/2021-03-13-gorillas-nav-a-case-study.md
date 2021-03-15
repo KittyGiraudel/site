@@ -26,7 +26,7 @@ One of the most interesting part of the site—at least from a technical standpo
 
 For good or for bad, the navigation is some sort of a dropdown. It means it’s not just a few links at the top of the page, and there are therefore a few things we had to consider.
 
-We figured the [disclosure widget pattern](https://www.w3.org/TR/wai-aria-practices-1.1/) was the appropriate choice for the navigation. Basically, you have a `<button>` which controls the visibility of an adjacent container. The toggle contains [visually hidden text](/snippets/sr-only-class/) to mention what it’s for, since its only visible content is the brand logo.
+We figured the [disclosure widget pattern](https://www.w3.org/TR/wai-aria-practices-1.1/#disclosure) was the appropriate choice for the navigation. Basically, you have a `<button>` which controls the visibility of an adjacent container. The toggle contains [visually hidden text](/snippets/sr-only-class/) to mention what it’s for, since its only visible content is the brand logo.
 
 For when JavaScript is not available, we originally intended to have an anchor link sending to the footer, since most if not all pages are linked from there as well.
 
