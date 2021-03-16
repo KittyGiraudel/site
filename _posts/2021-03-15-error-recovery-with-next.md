@@ -159,7 +159,7 @@ class MyDocument extends Document {
 }
 ```
 
-Perfect. Now, all we need is a little JavaScript snippet to effectivement properly render these `<script>` tags if the `no_script` URL parameter is not present.
+Perfect. Now, all we need is a little JavaScript snippet to effectively properly render these `<script>` tags if the `no_script` URL parameter is not present.
 
 ```jsx
 const scriptInjector = `
