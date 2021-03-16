@@ -172,7 +172,7 @@ if (!window.location.search.includes('no_script')) {
     document.body.appendChild(script)
   })
 }
-`.trim())()
+`.trim()
 
 class MyDocument extends Document {
   static getInitialProps(ctx) {
