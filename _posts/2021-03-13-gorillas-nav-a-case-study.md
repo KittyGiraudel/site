@@ -163,7 +163,7 @@ Still, a few things we paid attention to:
 
 While the links say “EN”, “DE” and “NL”, it’s not fantastic from a verbal perspective. “EN” and “NL” are pronounced as you would expect, but “DE” is pronounced “duh”, which sucks. I assume most screen-reader users would be accustomed to this sort of pronunciation for language code, but we wanted to do better. ~~The 2-letter code is marked with `aria-hidden` so it’s not read out and~~ each link contains visually hidden text mentioning the full language name.
 
-{% info %}[Aurélien Levy rightfully pointed out on Twitter](https://twitter.com/goetsu/status/1370730365418143745?s=20) that marking the 2-letter code as `aria-hidden` would fail [WCAG SC 2.5.3 Label in name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html). As the visible label is, say, “EN”, voice navigation users can activate it using a command like “click EN”. It will not work anymore if the “EN” text is hidden with `aria-hidden`.{% endinfo %}
+{% info %}[Aurélien Levy rightfully pointed out on Twitter](https://twitter.com/goetsu/status/1370730365418143745?s=20) that marking the 2-letter code as `aria-hidden` would fail [WCAG SC 2.5.3 Label in name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html). As the visible label is, say, “EN”, voice navigation users can activate it using a command like “click EN”. It will not work anymore if the “EN” text is hidden with `aria-hidden`. [Sara Soueidan expands on the matter in her own blog](https://www.sarasoueidan.com/blog/accessible-text-labels/).{% endinfo %}
 
 The language name is defined in the language itself, and _not_ in the current page language. Browsing the English navigation will read <span lang="de">“Deutsch”</span> for the German link, and not “German”. So it’s pronounced correctly, the language name is wrapped with a span with the `lang` attribute. This way, a screen-reader will switch to a German pronounciation to voice <span lang="de">“Deutsch”</span>.
 
@@ -177,15 +177,15 @@ This is basically what it looks like in the end:
 
 ```html
 <a href="/en" hreflang="en">
-  <span class="sr-only" lang="en">English — </span>EN
+  EN<span class="sr-only" lang="en"> — English</span>
 </a>
 <span aria-hidden="true">/</span>
 <a href="/de" hreflang="de">
-  <span class="sr-only" lang="de">Deutsch — </span>DE
+  DE<span class="sr-only" lang="de"> — Deutsch</span>
 </a>
 <span aria-hidden="true">/</span>
 <a href="/nl" hreflang="nl">
-  <span class="sr-only" lang="nl">Nederlands — </span>NL
+  NL<span class="sr-only" lang="nl"> — Nederlands</span>
 </a>
 ```
 
