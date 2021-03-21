@@ -10,7 +10,7 @@
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
     "eleventy-plugin-footnotes": "^0.9.0",
-    "emoji-regex": "^9.2.1",
+    "emoji-regex": "^9.2.2",
     "emoji-short-name": "^1.0.0",
     "html-minifier": "^4.0.0",
     "markdown-it": "^12.0.4",
