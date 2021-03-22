@@ -4,7 +4,7 @@ title: A tale of languages
 
 Today, we released the [French version of the Gorillas website](https://gorillas.io/fr). It’s only once we went live that I noticed an interesting piece of trivia I want to share in this article.
 
-For good or for bad, we decided not to translate the word “rider” (as in, a delivery person delivering goods on a bike) in French. There are a few ways to translate it, such as “<span lang="fr">livreur·se</span>” or “<span lang="fr">coursier·ère</span>”, but we decided to land on the anglicism “rider”, which (hopefully) is understandable enough.
+For good or for bad, we decided not to translate the word “rider” (as in, a delivery person delivering goods on a bike) in French. There are a few ways to translate it, such as “<span lang="fr">livreur·se</span>” or “<span lang="fr">coursier·ère</span>”, but we decided to land on the Anglicism “rider”, which (hopefully) is understandable enough.
 
 Now, our top call-to-action on the home page states “Become a rider” in English. Once translated, it says “<span lang="fr">Devenir rider</span>”. The problem is that “rider” means something in French, and it becomes “wrinkles.” That means the CTA essentially is pronounced as “Become wrinkled” by French screen-readers. Uh-oh.
 
@@ -52,14 +52,14 @@ Not so fast. I am not the most efficient person with VoiceOver, but I’m starti
 
 {% info %} Fun fact: [Yakim](https://twitter.com/yakimvanzuijlen) explained that there are 3 levels of languages. There is the system language, the language specified on the html document as well as the language setting in the VoiceOver rotor. That last one basically overwrites both the language setting on the system and the webpage. {% endinfo %}
 
-[Gijs Veyfeyken](https://twitter.com/veyfeyken) confirmed what I experienced: it turns out that VoiceOver cannot switch language inside a link. Indeed, it works just fine when using a non-interactive element such a `<p>`. Barry Pollard was kind enough to create [some test cases](https://www.tunetheweb.com/experiments/lang/) for us to play with.
+[Gijs Veyfeyken](https://twitter.com/veyfeyken) confirmed what I experienced: it turns out that VoiceOver cannot always switch language inside a link. Indeed, it works in reader mode (although that appears to depend on browsers) or when using a non-interactive element such a `<p>`, but not when listing links for easy navigation.
 
-The long story short is that:
+[Barry Pollard](https://twitter.com/tunetheweb) was kind enough to create [some test cases](https://www.tunetheweb.com/experiments/lang/) for us to play with. The long story short is that:
 
-- Using a `<span>` or `<i>` with a `lang` attribute inside a `<a>` does not work. The `lang` attribute is basically ignored.
+- Using a `<span>` or `<i>` with a `lang` attribute inside a `<a>` does not work properly. The `lang` attribute is basically ignored.
 - Using a `<div>` with a `lang` attribute inside a `<a>` **does work**, provided the `<div>`’s display is not set to `inline`, or `inline-block`. Unfortunately, that breaks styling.
 
-We ran these tests with VoiceOver on Brave, Firefox, iOS Safari and Safari. It turns out only desktop Safari handles all this properly. Using a `<span>` with a `lang` attribute inside a `<a>` does not work anywhere else: the `lang` has essentially no effect.
+We ran these tests with VoiceOver on Brave, Firefox, iOS Safari and Safari. It turns out only desktop Safari handles all this properly. Using a `<span>` with a `lang` attribute inside a `<a>` does not work consistently elsewhere and often the `lang` has essentially no effect.
 
 Laura Ciporen shares a similar experience with JAWS where language markup works fine in a heading but not when listing headings for easy navigation, in which case the language markup is gone.
 
