@@ -1,5 +1,5 @@
 {% if title %}
-<h1 class="Title" itemprop="title" {% if lang != 'en' %}lang="{{ lang }}" {% endif %}
+<h1 class="Title" itemprop="title" {% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}
   {% if tags contains 'snippets' %}style="word-break: break-all" {% endif %}>
   <a href="/" class="Title__link">{{ title }}</a>
 </h1>
