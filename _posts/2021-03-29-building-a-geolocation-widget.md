@@ -58,20 +58,12 @@ Let’s break down what the component does in order:
 
 ## Markup
 
-There is not a whole lot going on in HTML, but still a few things worth pointing out. We use `aria-live='polite'` on the container so the content gets announced as it changes. It’s pretty important otherwise a screen-reader user will not be aware when the content gets updated.
-
-```html
-<div aria-live="polite">
-  <button type="button">Do you deliver to me?</button>
-</div>
-```
-
-When clicking the button, it gets replaced with the loading state. For that reason, we need to move the focus to the container (hence the negative `tabindex`), otherwise the focus gets lost entirely and a keyboard user will have to tab all the way to the widget.
+There is not a whole lot going on in HTML, but still a few things worth pointing out. When clicking the button, it gets replaced with the loading state. For that reason, we need to move the focus to the container (hence the negative `tabindex`), otherwise the focus gets lost entirely and a keyboard user will have to tab all the way to the widget.
 
 We also mark the widget as loading via `aria-busy` during waiting times. When supported, this can lead to assistive technologies waiting for `aria-busy` being false to vocalize the new content.
 
 ```html
-<div aria-live="polite" aria-busy="true" tabindex="-1">
+<div aria-busy="true" tabindex="-1">
   <p>Please wait, we are checking if we can deliver to you.</p>
 </div>
 ```
