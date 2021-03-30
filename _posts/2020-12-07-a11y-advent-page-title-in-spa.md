@@ -1,5 +1,8 @@
 ---
 title: 'A11yAdvent Day 7: Page Title in SPA'
+edits:
+  - date: 2021/03/30
+    md: As of v10.1.0, Next now comes with its own page title announcer, so no need to implement anything when using this framework.
 ---
 
 Single-page applications (SPA for short) have been all the hype for the last decade or so. The idea is that we can avoid reloading the entire page when navigating within a site and instead update only the moving parts (usually the content area). This comes from a great premise: faster interactions, no unnecessary HTTP roundtrips, less used bandwidth.
