@@ -14,6 +14,15 @@ html {
   unicode-range: U+00B7;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}
+
 /**
  * 1. Make all elements from the DOM inherit from the parent box-sizing
  *    Since `*` has a specificity of 0, it does not override the `html` value
@@ -33,8 +42,9 @@ html {
 body {
   margin: 0; /* 1 */
   color: #444;
-  font: 125% / 1.5 'MiddleDot', 'Baskerville', 'Lucida Bright', 'Perpetua', 'Times',
-    'Times New Roman', 'Palatino', 'Bookman', 'New Century Schoolbook', serif;
+  font: 125% / 1.5 'MiddleDot', 'Baskerville', 'Lucida Bright', 'Perpetua',
+    'Times', 'Times New Roman', 'Palatino', 'Bookman', 'New Century Schoolbook',
+    serif;
   overflow-x: hidden; /* 2 */
 }
 
