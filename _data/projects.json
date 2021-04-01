@@ -68,7 +68,7 @@
   {
     "name": "A11y-dialog",
     "description": "A script to make modal dialogs accessible to assistive technology users.",
-    "link": "https://github.com/KittyGiraudel/a11y-dialog",
+    "link": "https://a11y-dialog.netlify.app/",
     "category": "Accessibility",
     "showcase": true,
     "stars": 1600
