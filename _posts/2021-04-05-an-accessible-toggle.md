@@ -2,7 +2,7 @@
 title: An accessible toggle
 ---
 
-Toggles (or sometimes “sliding toggles”) are heavily used in modern interfaces. They tend to be relatively straightforward and can be thought as glorified checkboxes. Yet, they are often made inaccessible one way or another. 
+Toggles (or sometimes “toggle switches”) are heavily used in modern interfaces. They tend to be relatively straightforward and can be thought as glorified checkboxes. Yet, they are often made inaccessible one way or another. 
 
 In this article, I will show a small HTML + CSS only implementation of an accessible toggle that you can basically copy in your own projects and tweak at your own convenience.
 
@@ -22,6 +22,9 @@ As always, let’s start with the HTML. In this case, we are going to start with
   This is the label
 </label>
 ```
+
+{% info %}It’s worth mentioning that it is also possible to use 2 radio inputs instead (or even a button it should only work with JavaScript anyway). Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).
+{% endinfo %}
 
 Now, we are going to need a little more than this. To avoid conveying the status of the checkbox relying solely on color ([WCAG Success Criteria 1.4.1 Use of Color](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)), we are going to use a couple icons.
 
