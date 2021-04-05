@@ -2,7 +2,7 @@
 title: An accessible toggle
 ---
 
-Toggles (or sometimes “toggle switches”) are heavily used in modern interfaces. They tend to be relatively straightforward and can be thought as glorified checkboxes. Yet, they are often made inaccessible one way or another. 
+Toggles (or sometimes “toggle switches”) are heavily used in modern interfaces. They tend to be relatively straightforward and can be thought as glorified checkboxes. Yet, they are often made inaccessible one way or another.
 
 In this article, I will show a small HTML + CSS only implementation of an accessible toggle that you can basically copy in your own projects and tweak at your own convenience.
 
@@ -17,31 +17,53 @@ In this article, I will show a small HTML + CSS only implementation of an access
 As always, let’s start with the HTML. In this case, we are going to start with the very basics, which is a properly labelled checkbox. It’s an `<input>` with a `<label>`, with the correct attributes, and a visible label.
 
 ```html
-<label class='Toggle' for='toggle'>
-  <input type='checkbox' name='toggle' id='toggle' class="Toggle__input" />
+<label class="Toggle" for="toggle">
+  <input type="checkbox" name="toggle" id="toggle" class="Toggle__input" />
   This is the label
 </label>
 ```
 
-{% info %}It’s worth mentioning that it is also possible to use 2 radio inputs instead (or even a button it should only work with JavaScript anyway). Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).
-{% endinfo %}
+{% info %}It’s worth mentioning that it is also possible to use 2 radio inputs instead (or even a button it should only work with JavaScript anyway). Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/). {% endinfo %}
 
 Now, we are going to need a little more than this. To avoid conveying the status of the checkbox relying solely on color ([WCAG Success Criteria 1.4.1 Use of Color](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)), we are going to use a couple icons.
 
 The way it’s going to work is we’re going to have a small container between the input and the text label which contains 2 icons: a checkmark and a cross (taken from [Material UI icons](https://material.io/resources/icons/)). Then we’ll create the toggle handle with a pseudo-element to cover one of the icon at a time.
 
 ```html
-<label class='Toggle' for='toggle'>
-  <input type='checkbox' name='toggle' id='toggle' class="Toggle__input" />
+<label class="Toggle" for="toggle">
+  <input type="checkbox" name="toggle" id="toggle" class="Toggle__input" />
 
   <span class="Toggle__display" hidden>
-    <svg aria-hidden="true" focusable="false"
-         class="Toggle__icon Toggle__icon--checkmark" width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <path d='M6.08471 10.6237L2.29164 6.83059L1 8.11313L6.08471 13.1978L17 2.28255L15.7175 1L6.08471 10.6237Z' fill='currentcolor' stroke='currentcolor' />
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      class="Toggle__icon Toggle__icon--checkmark"
+      width="18"
+      height="14"
+      viewBox="0 0 18 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.08471 10.6237L2.29164 6.83059L1 8.11313L6.08471 13.1978L17 2.28255L15.7175 1L6.08471 10.6237Z"
+        fill="currentcolor"
+        stroke="currentcolor"
+      />
     </svg>
-    <svg aria-hidden="true" focusable="false"
-         class="Toggle__icon Toggle__icon--cross" width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <path d='M11.167 0L6.5 4.667L1.833 0L0 1.833L4.667 6.5L0 11.167L1.833 13L6.5 8.333L11.167 13L13 11.167L8.333 6.5L13 1.833L11.167 0Z' fill='currentcolor' />
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      class="Toggle__icon Toggle__icon--cross"
+      width="13"
+      height="13"
+      viewBox="0 0 13 13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.167 0L6.5 4.667L1.833 0L0 1.833L4.667 6.5L0 11.167L1.833 13L6.5 8.333L11.167 13L13 11.167L8.333 6.5L13 1.833L11.167 0Z"
+        fill="currentcolor"
+      />
     </svg>
   </span>
 
@@ -52,7 +74,7 @@ The way it’s going to work is we’re going to have a small container between 
 A few things to note about our markup here:
 
 - We use `aria-hidden="true"` on our SVGs, because they should not be discoverable by assistive technologies since they are strictly decorative.
-- We use `focusable="false"` on our SVGs as well to avoid an issue with Internet Explorer where SVGs are focusable by default. 
+- We use `focusable="false"` on our SVGs as well to avoid an issue with Internet Explorer where SVGs are focusable by default.
 - We use `hidden` on the `.Toggle__display` container to hide it when **CSS is not available**, since it should fall back to a basic checkbox. Its display value will be overriden in CSS.
 
 ## Styles
@@ -83,7 +105,7 @@ Let’s start with some basic styles for our container.
 
 ### The toggle and handle
 
-Then, our toggle. To make it easier to tweak its styles, we rely on some CSS custom properties for the offset *around* the handle, and the diameter of the handle itself.
+Then, our toggle. To make it easier to tweak its styles, we rely on some CSS custom properties for the offset _around_ the handle, and the diameter of the handle itself.
 
 ```css
 /**
@@ -99,14 +121,14 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
 .Toggle__display {
   --offset: 0.25em;
   --diameter: 1.8em;
-  
+
   display: inline-flex; /* 1 */
   align-items: center; /* 1 */
   justify-content: space-around; /* 1 */
 
   width: calc(var(--diameter) * 2 + var(--offset) * 2); /* 2 */
   height: calc(var(--diameter) + var(--offset) * 2); /* 2 */
-  
+
   position: relative; /* 3 */
   border-radius: 100vw; /* 4 */
   background-color: #fbe4e2; /* 5 */
@@ -141,9 +163,11 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
 }
 ```
 
+{% info %}The transition here is so the handle gently slides from one side to the other. This might be a little distracting or unsettling for some people, so it’s advised to disable this transition when the [reduced motion is enabled](/2018/03/19/implementing-a-reduced-motion-mode/).{% endinfo %}
+
 ### Focused styles
 
-The reason we inserted our toggle container *after* the input itself is so we can use the adjacent sibling combinator (`+`) to style the toggle depending on the state of the input (checked, focused, disabled…).
+The reason we inserted our toggle container _after_ the input itself is so we can use the adjacent sibling combinator (`+`) to style the toggle depending on the state of the input (checked, focused, disabled…).
 
 First, let’s deal with focus styles. As long as they’re noticeable, they can be as custom as we want them to be. In order to be quite neutral, I decided to display the native focus outline around the toggle when the input is focused.
 
@@ -244,7 +268,7 @@ Finally, we apply some styles to our icons, as recommended by [Florens Verscheld
 As you can see, there is nothing extremely difficult with it but still a lot of things to consider. Here is what we’ve accomplished:
 
 - We use an actual checkbox form element, which we style as a toggle.
-- It conveys its status with both iconography *and* color.
+- It conveys its status with both iconography _and_ color.
 - It leaves no artifacts when CSS is not available.
 - It has native focus styles, and can be customised.
 - It has a disabled state.
