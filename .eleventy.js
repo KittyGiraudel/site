@@ -32,6 +32,8 @@ module.exports = function (config) {
   config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('humans.txt')
   config.addPassthroughCopy('manifest.json')
+  config.addPassthroughCopy('apple-touch-icon.png')
+  config.addPassthroughCopy('favicon.ico')
 
   // Allow Liquid to import nested and dynamic partials
   config.setLiquidOptions({ dynamicPartials: true })
