@@ -6,7 +6,7 @@ Toggles (or sometimes “toggle switches”) are heavily used in modern interfac
 
 In this article, I will show a small HTML + CSS only implementation of an accessible toggle that you can basically copy in your own projects and tweak at your own convenience.
 
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="result" data-user="KittyGiraudel" data-slug-hash="xxgrPvg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxgrPvg">
+<p class="codepen" data-height="350" data-theme-id="light" data-default-tab="result" data-user="KittyGiraudel" data-slug-hash="xxgrPvg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxgrPvg">
   <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/xxgrPvg">
   xxgrPvg</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
