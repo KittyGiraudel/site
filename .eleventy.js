@@ -113,7 +113,7 @@ function a11yEmojis(content, outputPath) {
 }
 
 function markdown(content, inline = true) {
-  const html = markdownIt().render(content)
+  const html = markdownIt({ html: true }).render(content)
 
   return inline ? html.replace('<p>', '').replace('</p>', '') : html
 }

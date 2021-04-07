@@ -12,6 +12,10 @@ In this article, I will show a small HTML + CSS only implementation of an access
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
+{% assign toggles = "Dion mentions how [the toggle might look reversed](https://twitter.com/_diondiondion/status/1379828760585834497?s=20), a sentiment backed up by [Rawrmonstar](https://twitter.com/rawrawrmonstar/status/1379555735118352384?s=20), and Mikael Kundert mentions how [checkboxes are usually simpler](https://twitter.com/iMiksu/status/1379802269709897737?s=20)." | markdown %}
+
+{% info %} **Disclaimer:** Before using a toggle switch, consider whether this is the best user interface for the situation. {% footnoteref "toggles" toggles %}Toggles can be visually confusing{% endfootnoteref %} and in some cases, a button might be more suited (see the [markup](#markup) section for details). {% endinfo %}
+
 ## Markup
 
 As always, let’s start with the HTML. In this case, we are going to start with the very basics, which is a properly labelled checkbox. It’s an `<input>` with a `<label>`, with the correct attributes, and a visible label.
@@ -25,7 +29,7 @@ As always, let’s start with the HTML. In this case, we are going to start with
 
 {% info %} It is worth mentioning that this is not the only way to mark up such interface component. For instance, it is possible to use 2 radio inputs instead. Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).
 
-Adrian Roselli also pointed out that if this component is not used within a form which can be submitted, it should make use of a `<button>` with `aria-pressed` instead as it could be a violation of [WCAG SC 3.2.2](https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html). He expands on the matter in his article about [under-engineered toggles](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html). {% endinfo %}
+Adrian Roselli also pointed out that if this component is not used within a form which can be submitted, it should make use of a `<button>` with `aria-pressed` instead as it could be a violation of [WCAG Success Criteria 3.2.2 On Input](https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html). He expands on the matter in his article about [under-engineered toggles](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html). {% endinfo %}
 
 Now, we are going to need a little more than this. To avoid conveying the status of the checkbox relying solely on color ([WCAG Success Criteria 1.4.1 Use of Color](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)), we are going to use a couple icons.
 
@@ -96,7 +100,8 @@ Let’s start with some basic styles for our container.
 /**
  * 1. Vertically center the toggle and the label. `flex` could be used if a 
  *    block-level display is preferred.
- * 2. Grant a position context for the visually hidden input.
+ * 2. Grant a position context for the visually hidden and absolutely
+ *    positioned input.
  * 3. Provide spacing between the toggle and the text regardless of layout
  *    direction. If browser support is considered insufficient, use
  *    a right margin on `.Toggle__display` in LTR, and left margin in RTL.
@@ -117,8 +122,10 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
 ```css
 /**
  * 1. Vertically center the icons and space them evenly in the available 
- *    horizontal space essentially giving something like: [ ✔ ✗ ]
- * 2. Size the display according to the size of the handle.
+ *    horizontal space, essentially giving something like: [ ✔ ✗ ]
+ * 2. Size the display according to the size of the handle. `box-sizing`
+ *    could use `border-box` but the border would have to be considered
+ *    in the `width` computation. Either way works.
  * 3. For the toggle to be visible in Windows High-Contrast Mode, we apply a
  *    thin semi-transparent (or fully transparent) border.
  *    Kind thanks to Adrian Roselli for the tip:
@@ -127,7 +134,6 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
  * 5. Give a pill-like shape with rounded corners, regardless of the size.
  * 6. The default state is considered unchecked, hence why this pale red is
  *    used as a background color.
- * 7. Give a bit of spacing between the toggle and the text label.
  */
 .Toggle__display {
   --offset: 0.25em;
@@ -139,14 +145,13 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
 
   width: calc(var(--diameter) * 2 + var(--offset) * 2); /* 2 */
   height: calc(var(--diameter) + var(--offset) * 2); /* 2 */
+  box-sizing: content-box; /* 2 */
 
-  box-sizing: content-box; /* 3 */
   border: 0.1em solid rgb(0 0 0 / 0.2); /* 3 */
 
   position: relative; /* 4 */
   border-radius: 100vw; /* 5 */
   background-color: #fbe4e2; /* 6 */
-  margin-right: 1ch; /* 7 */
 
   transition: 250ms;
   cursor: pointer;
@@ -156,6 +161,7 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
  * 1. Size the round handle according to the diameter custom property.
  * 2. For the handle to be visible in Windows High-Contrast Mode, we apply a
  *    thin semi-transparent (or fully transparent) border.
+ *    Kind thanks to Adrian Roselli for the tip:
  *    https://twitter.com/aardrian/status/1379786724222631938?s=20
  * 3. Absolutely position the handle on top of the icons, vertically centered
  *    within the container and offset by the spacing amount on the left.
@@ -183,7 +189,15 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
 }
 ```
 
-{% info %}The transition here is so the handle gently slides from one side to the other. This might be a little distracting or unsettling for some people, so it’s advised to disable this transition when the [reduced motion is enabled](/2018/03/19/implementing-a-reduced-motion-mode/).{% endinfo %}
+The transition here is so the handle gently slides from one side to the other. This might be a little distracting or unsettling for some people, so it’s advised to disable this transition when the [reduced motion is enabled](/2018/03/19/implementing-a-reduced-motion-mode/). This could be done with the following snippet:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .Toggle__display {
+    transition-duration: 0ms;
+  }
+}
+```
 
 ### Focused styles
 
@@ -219,7 +233,7 @@ One interesting thing I’ve noticed is that when clicking a native checkbox or 
 
 ### Checked state
 
-Then, we have to deal with the checked state. There are 2 things we want to do in that case: update the toggle background color from red to green, and slide the handle to the right so it covers the cross and show the checkmark (100% of its own width).
+Then, we have to deal with the checked state. There are 2 things we want to do in that case: update the toggle background color from red to green, and slide the handle to the right so it covers the cross and shows the checkmark (100% of its own width).
 
 ```css
 /**
@@ -259,9 +273,9 @@ Finally, we can add some custom styles to make a disabled toggle a bit more expl
 
 ### Right-to-left support
 
-I originally forgot about right-to-left support and Adrian Roselli was kind enough to poke me so I update the code. Ideally, we would use the `:dir()` pseudo-class unfortunately browser support is pretty abysmal as of writing so we have to rely on the `[dir]` attribute selector instead.
+I originally forgot about right-to-left support and Adrian Roselli was kind enough to poke me so I update the code. Ideally, we would use the `:dir()` pseudo-class unfortunately [browser support is pretty abysmal](https://caniuse.com/css-dir-pseudo) as of writing so we have to rely on the `[dir]` attribute selector instead.
 
-We need to adjust everything that’s currently directional, so the spacing between the toggle and the text, the original position of the handle, and the check position of the handle.
+We need to adjust everything that’s currently directional so the original position of the handle, and the checked position of the handle.
 
 ```css
 /**
