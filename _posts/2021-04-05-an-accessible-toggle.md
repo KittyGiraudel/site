@@ -23,7 +23,9 @@ As always, let’s start with the HTML. In this case, we are going to start with
 </label>
 ```
 
-{% info %}It’s worth mentioning that it is also possible to use 2 radio inputs instead (or even a button it should only work with JavaScript anyway). Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/). {% endinfo %}
+{% info %} It is worth mentioning that this is not the only way to mark up such interface component. For instance, it is possible to use 2 radio inputs instead. Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).
+
+Adrian Roselli also pointed out that if this component is not used within a form which can be submitted, it should make use of a `<button>` with `aria-pressed` instead as it could be a violation of [WCAG SC 3.2.2](https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html). He expands on the matter in his article about [under-engineered toggles](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html). {% endinfo %}
 
 Now, we are going to need a little more than this. To avoid conveying the status of the checkbox relying solely on color ([WCAG Success Criteria 1.4.1 Use of Color](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)), we are going to use a couple icons.
 
