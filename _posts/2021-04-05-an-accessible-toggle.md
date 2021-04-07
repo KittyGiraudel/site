@@ -233,6 +233,8 @@ Then, we have to deal with the checked state. There are 2 things we want to do i
 }
 ```
 
+{% info %}[Adrian Roselli](https://twitter.com/aardrian/status/1379776239838322689?s=20) rightfully pointed out that this design does not account for a possibly “mixed” (or [“indeterminate” state](https://css-tricks.com/indeterminate-checkboxes/)). This is true for sake of simplicity since most checkboxes/toggles do not need such state, but should be considered when needed.{% endinfo %}
+
 ### Disabled state
 
 Finally, we can add some custom styles to make a disabled toggle a bit more explicit.
