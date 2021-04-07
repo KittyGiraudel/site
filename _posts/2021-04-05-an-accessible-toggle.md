@@ -112,11 +112,15 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
  * 1. Vertically center the icons and space them evenly in the available 
  *    horizontal space essentially giving something like: [ ✔ ✗ ]
  * 2. Size the display according to the size of the handle.
- * 3. Grant a position context for the pseudo-element making the handle.
- * 4. Give a pill-like shape with rounded corners, regardless of the size.
- * 5. The default state is considered unchecked, hence why this pale red is
+ * 3. For the toggle to be visible in Windows High-Contrast Mode and to improve
+ *    contrast, we apply a thin border tinted like native controls. Kind thanks
+ *    to Adrian Roselli for the tip:
+ *    https://twitter.com/aardrian/status/1379786724222631938?s=20
+ * 4. Grant a position context for the pseudo-element making the handle.
+ * 5. Give a pill-like shape with rounded corners, regardless of the size.
+ * 6. The default state is considered unchecked, hence why this pale red is
  *    used as a background color.
- * 6. Give a bit of spacing between the toggle and the text label.
+ * 7. Give a bit of spacing between the toggle and the text label.
  */
 .Toggle__display {
   --offset: 0.25em;
@@ -129,10 +133,13 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
   width: calc(var(--diameter) * 2 + var(--offset) * 2); /* 2 */
   height: calc(var(--diameter) + var(--offset) * 2); /* 2 */
 
-  position: relative; /* 3 */
-  border-radius: 100vw; /* 4 */
-  background-color: #fbe4e2; /* 5 */
-  margin-right: 1ch; /* 6 */
+  box-sizing: content-box; /* 3 */
+  border: 0.1em solid ButtonFace; /* 3 */
+
+  position: relative; /* 4 */
+  border-radius: 100vw; /* 5 */
+  background-color: #fbe4e2; /* 6 */
+  margin-right: 1ch; /* 7 */
 
   transition: 250ms;
   cursor: pointer;
@@ -140,9 +147,13 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
 
 /**
  * 1. Size the round handle according to the diameter custom property.
- * 2. Absolutely position the handle on top of the icons, vertically centered
+ * 2. For the handle to be visible in Windows High-Contrast Mode and to improve
+ *    contrast, we apply a thin border tinted like native controls. Kind thanks
+ *    to Adrian Roselli for the tip:
+ *    https://twitter.com/aardrian/status/1379786724222631938?s=20
+ * 3. Absolutely position the handle on top of the icons, vertically centered
  *    within the container and offset by the spacing amount on the left.
- * 3. Give the handle a solid background to hide the icon underneath. This
+ * 4. Give the handle a solid background to hide the icon underneath. This
  *    could be dark in a dark mode theme, as long as it’s solid.
  */
 .Toggle__display::before {
@@ -152,13 +163,16 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
   height: var(--diameter); /* 1 */
   border-radius: 50%; /* 1 */
 
-  position: absolute; /* 2 */
-  z-index: 2; /* 2 */
-  top: 50%; /* 2 */
-  left: var(--offset); /* 2 */
-  transform: translate(0, -50%); /* 2 */
+  box-sizing: border-box; /* 2 */
+  border: 0.1 solid ButtonFace; /* 2 */
 
-  background-color: #fff; /* 3 */
+  position: absolute; /* 3 */
+  z-index: 2; /* 3 */
+  top: 50%; /* 3 */
+  left: var(--offset); /* 3 */
+  transform: translate(0, -50%); /* 3 */
+
+  background-color: #fff; /* 4 */
   transition: inherit;
 }
 ```
