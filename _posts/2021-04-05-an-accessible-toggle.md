@@ -317,6 +317,7 @@ As you can see, there is nothing extremely difficult with it but still a lot of 
 - It leaves no artifacts when CSS is not available.
 - It has native focus styles, and can be customised.
 - It has a disabled state.
+- It has right-to-left support, if necessary.
 - It should be relatively easy to adapt to a dark mode provided there are some global custom properties exposed.
 
 Pretty neat! Feel free to [play with the code on CodePen](https://codepen.io/KittyGiraudel/pen/xxgrPvg?editors=0100) and I hope this helps y’all making your toggles accessible. ✨ I recommend reading these articles to go further:
