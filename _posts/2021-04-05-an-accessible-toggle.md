@@ -97,11 +97,16 @@ Let’s start with some basic styles for our container.
  * 1. Vertically center the toggle and the label. `flex` could be used if a 
  *    block-level display is preferred.
  * 2. Grant a position context for the visually hidden input.
+ * 3. Provide spacing between the toggle and the text regardless of layout
+ *    direction. If browser support is considered insufficient, use
+ *    a right margin on `.Toggle__display` in LTR, and left margin in RTL.
+ *    See: https://caniuse.com/flexbox-gap
  */
 .Toggle {
   display: inline-flex; /* 1 */
   align-items: center; /* 1 */
   position: relative; /* 2 */
+  gap: 1ch; /* 3 */
 }
 ```
 
@@ -249,6 +254,29 @@ Finally, we can add some custom styles to make a disabled toggle a bit more expl
   opacity: 0.6; /* 1 */
   filter: grayscale(40%); /* 1 */
   cursor: not-allowed; /* 1 */
+}
+```
+
+### Right-to-left support
+
+I originally forgot about right-to-left support and Adrian Roselli was kind enough to poke me so I update the code. Ideally, we would use the `:dir()` pseudo-class unfortunately browser support is pretty abysmal as of writing so we have to rely on the `[dir]` attribute selector instead.
+
+We need to adjust everything that’s currently directional, so the spacing between the toggle and the text, the original position of the handle, and the check position of the handle.
+
+```css
+/**
+ * 1. Flip the original position of the unchecked toggle in RTL.
+ */
+[dir='rtl'] .Toggle__display::before {
+  left: auto; /* 1 */
+  right: var(--offset); /* 1 */
+}
+
+/**
+ * 1. Move the handle in the correct direction in RTL.
+ */
+[dir='rtl'] .Toggle__input:checked + .Toggle__display::before {
+  transform: translate(-100%, -50%); /* 1 */
 }
 ```
 
