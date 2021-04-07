@@ -114,8 +114,8 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
  * 1. Vertically center the icons and space them evenly in the available 
  *    horizontal space essentially giving something like: [ ✔ ✗ ]
  * 2. Size the display according to the size of the handle.
- * 3. For the toggle to be visible in Windows High-Contrast Mode and to
- *    improve contrast, we apply a thin border tinted like native controls.
+ * 3. For the toggle to be visible in Windows High-Contrast Mode, we apply a
+ *    thin semi-transparent (or fully transparent) border.
  *    Kind thanks to Adrian Roselli for the tip:
  *    https://twitter.com/aardrian/status/1379786724222631938?s=20
  * 4. Grant a position context for the pseudo-element making the handle.
@@ -136,7 +136,7 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
   height: calc(var(--diameter) + var(--offset) * 2); /* 2 */
 
   box-sizing: content-box; /* 3 */
-  border: 0.1em solid ButtonFace; /* 3 */
+  border: 0.1em solid rgb(0 0 0 / 0.2); /* 3 */
 
   position: relative; /* 4 */
   border-radius: 100vw; /* 5 */
@@ -149,9 +149,8 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
 
 /**
  * 1. Size the round handle according to the diameter custom property.
- * 2. For the handle to be visible in Windows High-Contrast Mode and to
- *    improve contrast, we apply a thin border tinted like native controls.
- *    Kind thanks to Adrian Roselli for the tip:
+ * 2. For the handle to be visible in Windows High-Contrast Mode, we apply a
+ *    thin semi-transparent (or fully transparent) border.
  *    https://twitter.com/aardrian/status/1379786724222631938?s=20
  * 3. Absolutely position the handle on top of the icons, vertically centered
  *    within the container and offset by the spacing amount on the left.
@@ -166,7 +165,7 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
   border-radius: 50%; /* 1 */
 
   box-sizing: border-box; /* 2 */
-  border: 0.1 solid ButtonFace; /* 2 */
+  border: 0.1 solid rgb(0 0 0 / 0.2); /* 2 */
 
   position: absolute; /* 3 */
   z-index: 2; /* 3 */
