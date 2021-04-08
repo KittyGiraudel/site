@@ -112,9 +112,11 @@ Let’s start with some basic styles for our container.
 /**
  * 1. Vertically center the toggle and the label. `flex` could be used if a 
  *    block-level display is preferred.
- * 2. Grant a position context for the visually hidden and absolutely
+ * 2. Make sure the toggle remains clean and functional even if the label is
+ *    too wide to fit on one line. Thanks @jouni_kantola for the heads up!
+ * 3. Grant a position context for the visually hidden and absolutely
  *    positioned input.
- * 3. Provide spacing between the toggle and the text regardless of layout
+ * 4. Provide spacing between the toggle and the text regardless of layout
  *    direction. If browser support is considered insufficient, use
  *    a right margin on `.Toggle__display` in LTR, and left margin in RTL.
  *    See: https://caniuse.com/flexbox-gap
@@ -122,8 +124,9 @@ Let’s start with some basic styles for our container.
 .Toggle {
   display: inline-flex; /* 1 */
   align-items: center; /* 1 */
-  position: relative; /* 2 */
-  gap: 1ch; /* 3 */
+  flex-wrap: wrap; /* 2 */
+  position: relative; /* 3 */
+  gap: 1ch; /* 4 */
 }
 ```
 
