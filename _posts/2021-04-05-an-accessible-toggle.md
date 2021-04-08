@@ -6,6 +6,18 @@ Toggles (or sometimes “toggle switches”) are heavily used in modern interfac
 
 In this article, I will show a small HTML + CSS only implementation of an accessible toggle that you can basically copy in your own projects and tweak at your own convenience.
 
+- [Markup](#markup)
+- [Styling](#styling)
+  - [The container](#the-container)
+  - [The toggle and handle](#the-toggle-and-handle)
+  - [Focused styles](#focused-styles)
+  - [Checked state](#checked-state)
+  - [Disabled state](#disabled-state)
+  - [Right-to-left support](#right-to-left-support)
+  - [The icons](#the-icons)
+- [Button variant](#button-variant)
+- [Wrapping up](#wrapping-up)
+
 <p class="codepen" data-height="365" data-theme-id="light" data-default-tab="result" data-user="KittyGiraudel" data-slug-hash="xxgrPvg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxgrPvg">
   <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/xxgrPvg">
   xxgrPvg</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>)
@@ -14,11 +26,13 @@ In this article, I will show a small HTML + CSS only implementation of an access
 
 {% assign toggles = "Dion mentions how [the toggle might look reversed](https://twitter.com/_diondiondion/status/1379828760585834497?s=20), a sentiment backed up by [Rawrmonstar](https://twitter.com/rawrawrmonstar/status/1379555735118352384?s=20), and Mikael Kundert mentions how [checkboxes are usually simpler](https://twitter.com/iMiksu/status/1379802269709897737?s=20)." | markdown %}
 
-{% info %} **Disclaimer:** Before using a toggle switch, consider whether this is the best user interface for the situation. {% footnoteref "toggles" toggles %}Toggles can be visually confusing{% endfootnoteref %} and in some cases, a button might be more suited (see the [markup](#markup) section for details). {% endinfo %}
+{% info %} **Disclaimer:** Before using a toggle switch, consider whether this is the best user interface for the situation. {% footnoteref "toggles" toggles %}Toggles can be visually confusing{% endfootnoteref %} and in some cases, [a button might be more suited](#button-variant).{% endinfo %}
 
 ## Markup
 
 As always, let’s start with the HTML. In this case, we are going to start with the very basics, which is a properly labelled checkbox. It’s an `<input>` with a `<label>`, with the correct attributes, and a visible label.
+
+If the toggle causes an immediate action (such as switching a theme) and therefore relies on JavaScript, it should use a `<button>` instead. Refer to the [button variant](#button-variant) for more information about the markup—the [styles](#styles) are essentially the same. Thanks to Adrian Roselli for pointing this out!
 
 ```html
 <label class="Toggle" for="toggle">
@@ -27,9 +41,7 @@ As always, let’s start with the HTML. In this case, we are going to start with
 </label>
 ```
 
-{% info %} It is worth mentioning that this is not the only way to mark up such interface component. For instance, it is possible to use 2 radio inputs instead. Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).
-
-Adrian Roselli also pointed out that if this component is not used within a form which can be submitted, it should make use of a `<button>` with `aria-pressed` instead as it could be a violation of [WCAG Success Criteria 3.2.2 On Input](https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html). He expands on the matter in his article about [under-engineered toggles](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html) and how to decide which markup to us. {% endinfo %}
+{% info %} It is worth mentioning that this is not the only way to mark up such interface component. For instance, it is possible to use 2 radio inputs instead. Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).{% endinfo %}
 
 Now, we are going to need a little more than this. To avoid conveying the status of the checkbox relying solely on color ([WCAG Success Criteria 1.4.1 Use of Color](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)), we are going to use a couple icons.
 
@@ -322,6 +334,76 @@ Finally, we apply some styles to our icons, as recommended by [Florens Verscheld
 }
 ```
 
+## Button variant
+
+As mentioned previously, using a checkbox is not necessarily the most appropriate markup. If the toggle has an immediate effect (and therefore relies on JavaScript), and provided it cannot have an indeterminate state, then it should be a `<button>` element with the `aria-pressed` attribute instead.
+
+Adrian Roselli has an insightful decision tree to pick between a checkbox and a button in [his piece about toggles](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html).
+
+Fortunately, it is easy to adapt our code so it works all the same as a button. First, we tweak the HTML so the `<label>` becomes a `<button>`, and the `<input>` is removed.
+
+```html
+<button class="Toggle" type="button" aria-pressed="false">
+  <span class="Toggle__display" hidden>
+    <!-- The toggle does not change at all -->
+  </span>
+  This is the label
+</button>
+```
+
+Then, we need to make sure our `<button>` does not look like one. To do so, we reset the default button styles, including the focus outline since it is applied on the toggle instead.
+
+```css
+/**
+ * 1. Reset default <button> styles.
+ */
+button.Toggle {
+  border: 0; /* 1 */
+  padding: 0; /* 1 */
+  background: transparent; /* 1 */
+  font: inherit; /* 1 */
+}
+
+/**
+ * 1. The focus styles are applied on the toggle instead of the container, so
+ *    the default focus outline can be safely removed.
+ */
+.Toggle:focus {
+  outline: 0; /* 1 */
+}
+```
+
+Then, we need to complement all our input-related selectors with a variation for the button variant.
+
+```diff
++ .Toggle:focus .Toggle__display,
+.Toggle__input:focus + .Toggle__display {
+  /* … */
+}
+
++ .Toggle:focus:not(:focus-visible) .Toggle__display,
+.Toggle__input:focus:not(:focus-visible) + .Toggle__display {
+  /* … */
+}
+
++ .Toggle[aria-pressed="true"] .Toggle__display::before,
+.Toggle__input:checked + .Toggle__display::before {
+  /* … */
+}
+
++ .Toggle[disabled] .Toggle__display,
+.Toggle__input:disabled + .Toggle__display {
+  /* … */
+}
+
++ [dir="rtl"] .Toggle[aria-pressed="true"] + .Toggle__display::before,
+[dir="rtl"] .Toggle__input:checked + .Toggle__display::before {
+  /* … */
+}
+```
+
+That’s about it! This way, we can use either the checkbox markup or the button markup, depending on whats more appropriate for the situation, and have the same styles in both cases. Pretty handy!
+
 ## Wrapping up
 
 As you can see, there is nothing extremely difficult with it but still a lot of things to consider. Here is what we’ve accomplished:
@@ -339,3 +421,4 @@ Pretty neat! Feel free to [play with the code on CodePen](https://codepen.io/Kit
 - [Designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/) by Sara Soueidan
 - [Toggle buttons](https://inclusive-components.design/toggle-button/) by Heydon Pickering
 - [ARIA switch controls](https://scottaohara.github.io/aria-switch-control/) by Scott O'Hara
+- [Under-engineered toggles](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html) by Adrian Roselli
