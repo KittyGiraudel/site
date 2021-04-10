@@ -73,7 +73,7 @@ While icons were technically accessible to assistive technologies, I think (I mu
 
 Basically, they all had their own description (with `role="img"` + `aria-labelledby="…"`), but since they are all used within a link/button alongside additional content, the description ended up being read out twice—one for the icon, and one for the text.
 
-Because they are never used on their own and are always displayed alongside textual content (whether visible or not), they can in fact be safely ignored (with `aria-hidden="true"` + `focusabled="false"`).
+Because they are never used on their own and are always displayed alongside textual content (whether visible or not), they can in fact be safely ignored (with `aria-hidden="true"` + `focusable="false"`).
 
 ### Code blocks
 
