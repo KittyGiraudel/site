@@ -4,7 +4,7 @@ title: 'CSS Pie Timer Revisited'
 
 Almost 9 years ago, I wrote about making a [pure CSS pie timer on CSS-Tricks](https://css-tricks.com/css-pie-timer/). It’s something I struggled with and was very proud of solving at the time and I’m glad Chris let me write about it on his site.
 
-For some reason, I was thinking about it the other day and was wondering how quickly I could recreate it almost a decade later, without reading the original article. Well, something like 10 minutes, and I managed to remove 3 HTML elements.
+For some reason, I was thinking about it the other day and was wondering how quickly I could recreate it almost a decade later, without reading the original article. Well, something like 10 minutes, and I managed to remove 3 HTML elements. 💪
 
 <p class="codepen" data-height="265" data-theme-id="light" data-default-tab="css,result" data-user="KittyGiraudel" data-slug-hash="GRrQgYE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Single element CSS pie timer">
   <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/GRrQgYE">
