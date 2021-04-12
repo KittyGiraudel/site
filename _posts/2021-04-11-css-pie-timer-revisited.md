@@ -42,8 +42,8 @@ Let’s start with our container.
  * 2. Give a position context for the absolutely-positioned pseudo-
  *    elements.
  * 3. Give it a border so it can be visible despite being empty.
- * 4. Assign a color which is used as border-color, as well as 
- *    background-color by pseudo-elements via `currentcolor`.
+ * 4. Originally used `color` to be able to use `currentcolor`, but
+ *    Safari doesn’t like `currentcolor` in an animation. 🤯
  */
 .pie {
   font-size: 500%; /* 1 */
@@ -51,8 +51,8 @@ Let’s start with our container.
   height: 1em; /* 1 */
   border-radius: 50%; /* 1 */
   position: relative; /* 2 */
-  border: 0.05em solid; /* 3 */
-  color: deeppink; /* 4 */
+  border: 0.05em solid var(--color); /* 3 */
+  --color: deeppink; /* 4 */
 }
 ```
 
@@ -89,7 +89,7 @@ Then, the base styles for our pseudo-elements:
  * 1. Give the spinning pseudo-element the pie color.
  */
 .pie::after {
-  background-color: currentcolor; /* 1 */
+  background-color: var(--color); /* 1 */
 }
 ```
 
@@ -124,7 +124,7 @@ Finally, the animations:
 @keyframes mask {
   50%,
   100% {
-    background-color: currentcolor;
+    background-color: var(--color);
     transform: rotate(0.5turn);
   }
 }
