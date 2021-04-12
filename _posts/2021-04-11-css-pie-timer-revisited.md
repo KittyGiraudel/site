@@ -6,7 +6,7 @@ Almost 9 years ago, I wrote about making a [pure CSS pie timer on CSS-Tricks](ht
 
 For some reason, I was thinking about it the other day and was wondering how quickly I could recreate it almost a decade later, without reading the original article. Well, something like 10 minutes, and I managed to remove 3 HTML elements. 💪
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="css,result" data-user="KittyGiraudel" data-slug-hash="GRrQgYE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Single element CSS pie timer">
+<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="result" data-user="KittyGiraudel" data-slug-hash="GRrQgYE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Single element CSS pie timer">
   <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/GRrQgYE">
   Single element CSS pie timer</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -106,12 +106,11 @@ Finally, the animations:
 }
 
 /**
- * 1. Split the animation into 2 steps instead of a smooth transition,
- *    so it jumps to the final step halfway through.
+ * 1. We want the animation to have a single step halfway through.
  */
 .pie::before {
   animation-name: mask;
-  animation-timing-function: steps(2, jump-none); /* 1 */
+  animation-timing-function: steps(1); /* 1 */
 }
 
 /**
@@ -123,7 +122,8 @@ Finally, the animations:
 }
 
 @keyframes mask {
-  to {
+  50%,
+  100% {
     background-color: currentcolor;
     transform: rotate(0.5turn);
   }
