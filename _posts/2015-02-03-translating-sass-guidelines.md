@@ -10,23 +10,7 @@ templateEngineOverride: md
 
 A couple of weeks ago, I [introduced Sass Guidelines](/2015/01/07/introducing-sass-guidelines/), a huge styleguide to write efficient, sain and scalable Sass code in pretty much any project. It has known a massive success, so thank you all for your support! I am very glad to maintain this project knowning how popular it has gotten, especially this quick.
 
-Actually, it was so welcome that some lovely folks started translating it in different languages. It is currently available in [English](https://sass-guidelin.es), [French](https://sass-guidelin.es/fr/), [Spanish](https://sass-guidelin.es/es/), [Polish](https://sass-guidelin.es/pl/), [Russian](https://sass-guidelin.es/ru/), [Korean](https://sass-guidelin.es/ko/) and [Chinese](https://sass-guidelin.es/zh/). [German](https://github.com/KittyGiraudel/sass-guidelines/issues/88), [Italian](https://github.com/KittyGiraudel/sass-guidelines/issues/91), [Portuguese](https://github.com/KittyGiraudel/sass-guidelines/issues/89), [Danish](https://github.com/KittyGiraudel/sass-guidelines/issues/84), [Dutch](https://github.com/KittyGiraudel/sass-guidelines/issues/86), [Czech](https://github.com/KittyGiraudel/sass-guidelines/issues/92) and [Greek](https://github.com/KittyGiraudel/sass-guidelines/issues/83) should soon follow. Let’s give credits where it’s due while we’re at it.
-
-- Greek: [Adonis K.](https://twitter.com/adon1sk) and [Konstantinos Margaritis](https://twitter.com/kmargaritis)
-- Danish: [Patrick Redzdaz](https://twitter.com/redzdaz)
-- French: [Pierre Choffé](https://twitter.com/pierrechoffe)
-- Dutch: [Tom De Witt](https://twitter.com/ttomdewit) and [Bart Veneman](https://twitter.com/BartVeneman)
-- Polish: [Andrzej Kłapeć](https://twitter.com/solidslash) and [Mateusz Chabros](https://twitter.com/matchabros)
-- German: [Kai Brueckers](https://twitter.com/kaibrueckers) and [Al Tembo](https://twitter.com/altembo)
-- Portuguese: [Ricardo Magalhães](https://twitter.com/magalhini), [Sara Vieira](https://twitter.com/nikkitaftw) and [Eduardo Bouças](https://twitter.com/eduardoboucas)
-- Spanish: [Sonia Conde](https://twitter.com/nonlessorganic) and [David Khourshid](https://twitter.com/davidkpiano)
-- Italian: [Simone Rescio](https://twitter.com/srescio)
-- Czech: [Pavel Antolík](https://twitter.com/pavelantolik)
-- Russian: [Даниил Пронин](https://twitter.com/grawl) and [Pavel Demyanenko](https://twitter.com/PavelDemyanenko)
-- Korean: [Donghee Kim](https://github.com/kimdhoe)
-- Chinese: [Airen](https://github.com/airen) and [Sean Sun](https://twitter.com/seansun)
-
-If you read Sass Guidelines in anything but English, be sure to thank the translators. I am sure that will make their day. :)
+Actually, it was so welcome that some lovely folks started translating it in different languages. It is currently available in [English](https://sass-guidelin.es), [French](https://sass-guidelin.es/fr/), [Spanish](https://sass-guidelin.es/es/), [Polish](https://sass-guidelin.es/pl/), [Russian](https://sass-guidelin.es/ru/), [Korean](https://sass-guidelin.es/ko/), [Chinese](https://sass-guidelin.es/zh/). [German](https://sass-guidelin.es/de/), [Italian](https://sass-guidelin.es/it/), [Portuguese](https://sass-guidelin.es/pt/), [Danish](https://sass-guidelin.es/da/), [Dutch](https://sass-guidelin.es/nl/), [Czech](https://sass-guidelin.es/cz/) and [Greek](https://sass-guidelin.es/el/).
 
 Anyway, managing different languages as part of a [Jekyll](https://jekyllrb.com) powered site turned out to be quite an interesting challenge in order to keep everything scalable, so I thought _why not writing about this_. Hence you reading this.
 
@@ -202,9 +186,7 @@ site.data.languages[page.language].translators %}<a
     You are viewing the {{ site.data.languages[page.language].label }}
     translation by {{ translators }} of the original
     <a href="/">Sass Guidelines</a> from
-    <a target="_blank" rel="noopener noreferrer" href=""
-      >Kitty Giraudel</a
-    >.
+    <a target="_blank" rel="noopener noreferrer" href="">Kitty Giraudel</a>.
   </p>
   <p>
     This version is exclusively maintained by contributors without the review of
