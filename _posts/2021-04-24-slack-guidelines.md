@@ -16,7 +16,7 @@ title: Slack Guidelines
 
 My coworker [Anita Singh](https://twitter.com/anitas3791) and I have been working on some Slack guidelines for [Gorillas](https://gorillas.io) in order to encourage mindful behaviour and being respectful of everyone’s time in written communication.
 
-A lot of you seemed interested in us published them, so here they are. They are not a verbatim copy of our company guidelines since ours are quite Gorillas-specific, and they should be generic enough to be taken in most organizations.
+A lot of you seemed interested in us publishing them, so here they are. They are not a verbatim copy of our company guidelines since ours are quite Gorillas-specific, and they should be generic enough to be taken in most organizations.
 
 - [Setting up your profile](#setting-up-your-profile)
 - [Creating channels](#creating-channels)
