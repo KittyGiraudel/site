@@ -10,7 +10,7 @@ Testing the HTML can be done with a variety of tools:
 
 - [pa11y](https://pa11y.org/), which has a nice command-line interface to audit pages.
 - [a11y.css](https://ffoodd.github.io/a11y.css/), a handy bookmarklet relying on CSS only to highlight potential HTML issues.
-- [a11y-outline](https://xi.github.io/a11y-outline/), the accessibility boorkmarklet we’ve discussed in day 4 (very good to quickly audit landmarks, links and headings).
+- [a11y-outline](https://github.com/xi/a11y-outline), the accessibility boorkmarklet we’ve discussed in day 4 (very good to quickly audit landmarks, links and headings).
 - [aXe](https://github.com/dequelabs/axe-core), an accessibility testing engine which can be integrated in a variety of ways (devtools, React, Cypress…).
 - There is also an endless list of browser extensions like [WAVE](https://wave.webaim.org/extension/).
 
