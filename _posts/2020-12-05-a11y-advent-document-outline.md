@@ -17,7 +17,7 @@ In this article for instance, the post title is a `<h1>` and then we have a bunc
    1.5. Day 5. Document Outline
 ```
 
-To check the structure of a document, we can use the same [accessibility bookmarklet](https://xi.github.io/a11y-outline/) we’ve mentioned yesterday. When activating it, one of the options is “Headings”, which lists all headings in order and level. From there, we can make sure the structure makes sense, headings are in the right order, and no level is skipped.
+To check the structure of a document, we can use the same [accessibility bookmarklet or extension](https://github.com/xi/a11y-outline) we’ve mentioned yesterday. When activating it, one of the options is “Headings”, which lists all headings in order and level. From there, we can make sure the structure makes sense, headings are in the right order, and no level is skipped.
 
 {% info %} For years now, there have been discussions (and even proposals) about taking into consideration sectioning elements like `section` into the document outline to create sort of sub-structures where every root would go back to `h1`. This has never been implemented by any browser or supported by any assistive technology so this is basically moot at this point. Stick to appropriate heading levels.
 
