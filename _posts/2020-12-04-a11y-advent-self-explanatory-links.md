@@ -6,7 +6,7 @@ Let’s stay in the topic of screen-readers and talk about links. I believe a re
 
 That means it is important for links to be self-explanatory. In other words, a link should make sense on its own without the rest of the sentence it lives in or its visual surroundings. The content of the link should describe what the link does.
 
-To have a look at what links look like in a given page, I would highly commend this [accessibility bookmarklet](https://xi.github.io/a11y-outline/) by Tobias Bengfort. Drag it onto your bookmark bar, then activate it on any page to be prompted with a little dialog which contains a dropdown menu offering 3 options: landmarks, headings and links. The last one is the relevant one in this case.
+To have a look at what links look like in a given page, I would highly commend this [accessibility bookmarklet or extension](https://github.com/xi/a11y-outline) by Tobias Bengfort. Drag it onto your bookmark bar, then activate it on any page to be prompted with a little dialog which contains a dropdown menu offering 3 options: landmarks, headings and links. The last one is the relevant one in this case.
 
 If you spot a link that does not make much sense on its own, revise its content until it does. No more “click here”, “learn more” or other non-sensical links! Similarly, avoid mentioning “link” in the text since most screen-readers already do that.
 
