@@ -69,7 +69,7 @@ Now, we need a way to retrieve the footnotes from the page. That’s actually no
 I played around a few solutions, and eventually landed with a wacky filter. Basically I expose a `footnotes` filter which expects the page as argument, and returns the footnotes for that page. 
 
 {% raw %}
-```liquid
+```
 {% assign footnotes = '' | footnotes: page %}
 ```
 {% endraw %}

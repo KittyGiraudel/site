@@ -47,7 +47,7 @@ However I did not want each translation’s index to be in charge of importing t
 
 Thus, I found a way to keep `index.md` clean and tidy, like so:
 
-```liquid
+```
 ---
 layout: default
 language: fr
@@ -60,7 +60,7 @@ That’s it. The only difference between the French index and the Polish index i
 
 [This file](https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_includes/chapters.html) (living in the `_includes` folder) is in charge of including all chapters from the current page language in the right order, including the donate partials. Thanks to `include_relative` tag, it gets extremely easy to do:
 
-```liquid
+```
 {% include_relative _author.md %}
 {% include_relative _contributing.md %}
 {% include_relative _toc.md %}

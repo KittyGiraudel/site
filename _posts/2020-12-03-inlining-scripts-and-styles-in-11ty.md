@@ -37,7 +37,7 @@ Now, including files can be done with the {% raw %}`{% include %}`{% endraw %} t
 Now, I wanted to minimise the amount of boilerplate needed to include some specific styles or script in a template, and making it easy to maintain. For instance, in my `post.liquid` layout, I wanted to have this include at the top:
 
 {% raw %}
-```liquid
+```
 {% include "styles.html", paths: "
   components/blockquote,
   components/code,
@@ -53,7 +53,7 @@ Now, I wanted to minimise the amount of boilerplate needed to include some speci
 So I came up with this small `_includes/styles.html` Liquid partial:
 
 {% raw %}
-```liquid
+```
 {% if paths %}
   {% assign paths = paths | split: "," %}
 
