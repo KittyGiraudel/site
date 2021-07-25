@@ -39,7 +39,7 @@ Note: to play with regular expressions, I highly recommend [Regexr](https://www.
 
 Everything started from [a tweet](https://twitter.com/gregwhitworth/status/627218301622484992) from Greg Whitworth about regular expressions:
 
-> This is my most illegible regex to date: `\w+\[\w+(\|\=|\*\=|\$\=|\^\=|~\=|\=)(|\&quot;)\w+(|\&quot;)](|\s+){`
+> This is my most illegible regex to date: `\w+\[\w+(\|\=|\*\=|\$\=|\^\=|~\=|\=)(|\")\w+(|\")](|\s+){`
 >
 > [Greg Whitworth, Twitter](https://twitter.com/gregwhitworth/status/627218301622484992)
 
@@ -211,7 +211,7 @@ Which we can now incorporate in our expression:
 ```
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/07.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+))?]" />
+  <img src="/assets/images/learning-regular-expressions/07.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+))?]" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6c" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -226,7 +226,7 @@ This flag (noted `i`) must be present after at least 1 space right before the cl
 ```
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/08.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)(\s+i)?)?]" />
+  <img src="/assets/images/learning-regular-expressions/08.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(\s+i)?)?]" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6f" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -258,7 +258,7 @@ To make it easier to understand, consider this selector: `[href^="#"]`. When run
 2. `"#"`: the attribute value
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/09.png" alt="\[([a-z][a-z0-9-]*)(?:[|*$^~]?=(&quot;[^&quot;\n]*&quot;|'[^'\n]*'|[^&quot;'\s\]]+)(?:\s+i)?)?]" />
+  <img src="/assets/images/learning-regular-expressions/09.png" alt="\[([a-z][a-z0-9-]*)(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(?:\s+i)?)?]" />
   <figcaption>We use the regular expression to both match and capture some content</figcaption>
 </figure>
 
