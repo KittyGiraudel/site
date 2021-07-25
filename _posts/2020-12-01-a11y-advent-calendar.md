@@ -9,7 +9,7 @@ keywords:
 
 I am between jobs with a bit of free time, so I thought I would try something new this year and publish **an accessibility tip a day**. Nothing too ground-breaking, and I expect a lot of these tips to be common knowledge for many of you, yet we’ll end the month with a nice list of do’s & don’ts. ✨
 
-I will also announce the daily tip on Twitter with the [#A11yAdvent hashtag](https://twitter.com/search?q=from%3A%40HugoGiraudel%20%23A11yAdvent&src=typed_query). Feel free to share your opinion and tips under that hashtag as well!
+I will also announce the daily tip on Twitter with the [#A11yAdvent hashtag](https://twitter.com/search?q=from%3A%40KittyGiraudel%20%23A11yAdvent&src=typed_query). Feel free to share your opinion and tips under that hashtag as well!
 
 The calendar was originally entirely on this page, but I have decided to break it down in more digestible pieces under their own page. <span hidden id="hint">Given the link you just followed, it looks like you’re looking for: <span id="hint-title"></span>.</span>
 
