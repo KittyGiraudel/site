@@ -10,7 +10,7 @@ When working with React, it might sometimes be necessary to get a plain text rep
 
 ```js
 const getTextFromTree = tree => {
-  if (!tree) return ''
+  if (!tree && tree !== 0) return ''
   if (Array.isArray(tree)) return tree.map(getTextFromTree).join(' ')
   if (tree.props) return getTextFromTree(tree.props.children)
   return tree
