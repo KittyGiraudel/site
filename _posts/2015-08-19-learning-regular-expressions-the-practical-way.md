@@ -1,5 +1,5 @@
 ---
-title: "Learning regular expressions: the practical way"
+title: 'Learning regular expressions: the practical way'
 keywords:
   - regular expressions
   - regex
@@ -30,8 +30,7 @@ That being said it is important to point out that not all regular expression eng
 
 Also, as it is forbidden to write about regular expressions without dropping some bombs, here is a famous quote to get started:
 
-> Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems.
-> &mdash; Jamie Zawinski
+> Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems. &mdash; Jamie Zawinski
 
 Note: to play with regular expressions, I highly recommend [Regexr](https://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions.
 
@@ -105,7 +104,7 @@ Let’s dissect it:
 So far so good, right? Let’s check our test list to see how our regular expression performs.
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/01.png" alt="\[\w+]" />
+  <img src="/assets/images/learning-regular-expressions/01.png" alt="" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk5q" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -116,7 +115,7 @@ Oops, `\w+` is actually not quite right! For starters, we do not want the attrib
 ```
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/02.png" alt="\[[a-z][a-z0-9-]*]" />
+  <img src="/assets/images/learning-regular-expressions/02.png" alt="" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk5t" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -131,7 +130,7 @@ This bracket mess literally means “find an opening square bracket, followed by
 Broadly speaking, it is more than enough to find attribute selectors in a stylesheet but we didn’t learn much! Also, this version captures a lot of poorly formatted selectors, as well as some false-positive results as you can see in the next image. Let’s try to match a valid selector!
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/03.png" alt="\[[^\]]+]" />
+  <img src="/assets/images/learning-regular-expressions/03.png" alt="" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk60" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -154,7 +153,7 @@ So to match anything that is not a closing square bracket, it is: `[^\]]`, as we
 ```
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/04.png" alt="\[[a-z][a-z0-9-]*=[^\]]+]" />
+  <img src="/assets/images/learning-regular-expressions/04.png" alt="" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk63" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -169,7 +168,7 @@ The question mark says:
 > Matches 0 or 1 of the preceding token, effectively making it optional.
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/05.png" alt="\[[a-z][a-z0-9-]*(=[^\]]+)?]" />
+  <img src="/assets/images/learning-regular-expressions/05.png" alt="" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk66" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -180,7 +179,7 @@ That’s going somewhere! Attribute selectors can involve [a modulator](https://
 ```
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/06.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=[^\]]+)?]" />
+  <img src="/assets/images/learning-regular-expressions/06.png" alt="" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk69" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -211,7 +210,7 @@ Which we can now incorporate in our expression:
 ```
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/07.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+))?]" />
+  <img src="/assets/images/learning-regular-expressions/07.png" alt="" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6c" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -226,7 +225,7 @@ This flag (noted `i`) must be present after at least 1 space right before the cl
 ```
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/08.png" alt="\[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(\s+i)?)?]" />
+  <img src="/assets/images/learning-regular-expressions/08.png" alt="" />
   <figcaption>You can play with this regular expression on <a href="https://www.regexr.com/3bk6f" target="_blank" rel="noopener noreferrer">Regexr</a></figcaption>
 </figure>
 
@@ -258,7 +257,7 @@ To make it easier to understand, consider this selector: `[href^="#"]`. When run
 2. `"#"`: the attribute value
 
 <figure class="figure">
-  <img src="/assets/images/learning-regular-expressions/09.png" alt="\[([a-z][a-z0-9-]*)(?:[|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(?:\s+i)?)?]" />
+  <img src="/assets/images/learning-regular-expressions/09.png" alt="" />
   <figcaption>We use the regular expression to both match and capture some content</figcaption>
 </figure>
 
