@@ -36,11 +36,11 @@ In this article, I want to discuss all the ways to hide something, be it through
 - Accessible: yes
 - Element + children focusable: yes (⚠️)
 
-**Verdict:** 👍 Great to visually hide something while preserving it for assistive technologies.
+**Verdict:** 👍 Great to visually hide text content while preserving it for assistive technologies.
 
 ## The `aria-hidden` attribute
 
-The [`aria-hidden` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute), when set to `true`, hides the content from the accessibility tree, while keeping it visually visible. That is because no browser applies default styles to elements `aria-hidden="true"` (which is a good thing).
+The [`aria-hidden` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute), when set to `true`, hides the content from the accessibility tree, while keeping it visually visible. It stays visible because browsers do not apply styles to elements with `aria-hidden="true"` so this only impacts the accessibility tree.
 
 {% info %} It is important to note that any focusable elements within an element with `aria-hidden="true"` remains focusable, which can be a big problem for screen readers. Make sure there are no focusable elements within such container and that the element itself is also not focusable either (see the [fourth rule of ARIA](https://www.w3.org/TR/using-aria/#fourth)). {% endinfo %}
 
@@ -56,7 +56,7 @@ The [`aria-hidden` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/
 
 The `display: none` declaration and the `hidden` HTML attribute do the same thing: they visually remove an element from the rendering tree _and_ from the accessibility tree.
 
-What’s nice about the `hidden` attribute is that you can mask content entirely through HTML without having to write any CSS, which can be handy in some context.
+What’s nice about the `hidden` attribute is that you can mask content entirely through HTML without having to write any CSS, which can be handy in some contexts.
 
 {% info %} Interesting fact shared by [Aurélien Levy](https://twitter.com/goetsu): removed content with these methods can still be vocalized when referenced via `aria-describedby` or `aria-labelledby`. This can be handy to avoid double-vocalization. For instance, if a field references a text node via `aria-describedby`, this content can safely be hidden (with `hidden`, `display: none` or even `aria-hidden="true"`) so that it cannot be discovered normally, but still be announced when the field is focused. {% endinfo %}
 
@@ -94,7 +94,7 @@ Whether the content remains accessible depends on assistive technologies. Some w
 - Accessible: depends
 - Element + children focusable: yes (⚠️)
 
-**Verdict:** ✋ Shady and inconsistent, don’t expect for visual animations purposes.
+**Verdict:** ✋ Shady and inconsistent, so don’t except maybe for visual animations purposes.
 
 ## The `transform: scale(0)` declaration
 
