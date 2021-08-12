@@ -20,6 +20,7 @@ The quest for a combination of CSS declarations to visually hide an element whil
   clip-path: inset(50%) !important;
   height: 1px !important;
   overflow: hidden !important;
+  margin: -1px !important;
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;

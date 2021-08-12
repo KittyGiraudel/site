@@ -5,6 +5,11 @@ keywords:
   - css
   - accessibility
   - a11y
+edits:
+  - date: 2019/01/18
+    md: Updated the snippet with the margin property to overcome [issues related to containing overflow](#undesirable-overflows-18012019).
+  - date: 2016/10/19
+    md: Updated the article to mention some important information about [screen-readers on mobile devices.](#screen-readers-and-touch-devices-19102016) as well as [search engine optimisation](#seo-19102016).
 ---
 
 {% info %}
@@ -59,6 +64,7 @@ Here is the final version I came up with:
   clip-path: inset(50%) !important;
   height: 1px !important;
   overflow: hidden !important;
+  margin: -1px !important;
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
@@ -66,7 +72,7 @@ Here is the final version I came up with:
 }
 ```
 
-### Warning
+## Warning
 
 This technique should only be used to mask **text**. In other words, there shouldn’t be any focusable element **inside** the hidden element. This could lead to annoying behaviours, like scrolling to an invisible element.
 
@@ -93,7 +99,7 @@ Here is the adapted version:
 
 You can find it [on CodePen](https://codepen.io/ffoodd/pen/gwKZyq?editors=1100#) or in [this Gist](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034). What do you think?
 
-### Screen readers and touch devices (edit: 19/10/2016)
+## Screen readers and touch devices (19/10/2016)
 
 Seeking some testers to make sure I didn’t cause any regression, [Johan Ramon met a strange bug with VoiceOver](https://twitter.com/johan_ramon/status/788372720224526336). Digging further with [Sylvain Pigeard](https://github.com/PigeardSylvain), we found out that `position: static` is buggy on iOS 10 + VO when `.sr-only-focusable` is focused.
 
@@ -106,8 +112,16 @@ As we thought we discovered a real bug, I headed up to Bootstrap in order to ope
 
 So. In fact, **skip links don’t work with screen readers on touch devices at the time of writing**. Nice.
 
-### SEO
+## SEO (19/10/2016)
 
 [Steve Faulkner](https://twitter.com/stevefaulkner) from [the Paciello Group](https://www.paciellogroup.com/blog/) asked to the Google Webmaster Central Help Forum directly if [extra context for vision impaired users has a negative effect on search ranking?](https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ).
 
 Short answer: **nope**. However visually hidden content are considered secondary, in order to prevent abuses. And that’s great.
+
+## Undesirable overflows (18/01/2019)
+
+Multiple overflow-related issues were noticed, particularly on Chrome, when hidden elements live within a parent with `overflow: auto`. The problem was addressed in Orange’s Boosted framework by adding `margin: -1px` to the ruleset.
+
+```css
+margin: -1px;
+```
