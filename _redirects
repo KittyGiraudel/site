@@ -3,6 +3,8 @@ https://hugogiraudel.com/*                https://kittygiraudel.com/:splat      
 /rss                                      /rss/index.xml                           301!
 /rss/*                                    /rss/index.xml                           301!
 /feeds/feed.xml                           /rss/index.xml                           301!
+/feed                                     /rss/index.xml                           301!
+/feeds                                    /rss/index.xml                           301!
 
 /2013/02/04/css-gradients/                /2013/02/04/dig-deep-into-css-gradients/ 301!
 /2021/03/07/what-if-skip-links-were-good/ /2021/03/07/imagining-native-skip-links/ 301!
