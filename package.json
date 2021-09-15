@@ -16,6 +16,6 @@
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.3.0",
     "uslug": "^1.0.4",
-    "workbox-cli": "^6.2.4"
+    "workbox-cli": "^6.3.0"
   }
 }
