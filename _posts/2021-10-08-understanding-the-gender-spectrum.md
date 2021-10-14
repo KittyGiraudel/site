@@ -1,5 +1,5 @@
 ---
-title: Understanding gender non-conformity
+title: Understanding the gender spectrum
 ---
 
 > I originally wrote this piece for our documentation at Gorillas in order to advocate for a more inclusive workplace. After having [mentioned it on Twitter](https://twitter.com/KittyGiraudel/status/1446436115553177670?s=20) and been requested it a few times, I decided to publish it. I hope this helps!
@@ -18,7 +18,7 @@ It helps trying to see **gender as some sort of a spectrum rather than a binary 
 
 Gender and sex are somewhat related, but do not hold a one-to-one equivalency. Both words should not be used interchangeably. The right word should be picked depending on context, and most often it should be “gender”.
 
-Gender non-conforming people (people who are not cis, that is, who do not identify with the gender they were assigned at birth) have existed for the longest time. It is not a recent invention or a product of our time. We have many historical evidences that gender non-conforming people have been part of society, one way or another, for basically ever. It’s important to understand what it means not to perpetuate prejudices against this under-represented group of people.
+People who are not cis—that is, who do not identify with the gender they were assigned at birth—have existed for the longest time. It is not a recent invention or a product of our time. We have many historical evidences that trans people have been part of society, one way or another, for basically ever. It’s important to understand what it means not to perpetuate prejudices against this under-represented group of people.
 
 Generally speaking, we tend to use _non-binary_ as an umbrella term for anyone who’s not a woman or a man (regardless of whether they transitioned). It’s a pretty generic term. Some people use it but others might prefer something more specific to describe who they are. For instance, some people are agender (as in, they have no gender), other are gender-fluid, bigender, non-binary trans…
 
@@ -29,7 +29,7 @@ It might sound like a lot of jargon, and even a little silly sometimes, but we h
 - Gender identity is the personal sense of one’s own gender. Gender expression is how one decides to express their gender identity to the world (via mannerisms, interests, physical appearance…).
 - _Cis_ means to identify with the gender one is assigned at birth. For instance, a woman is said cis if she is born female and identify as a woman.
 - Some trans people, especially after having gone through transition, identify as man or woman. They don’t owe anyone the _trans_ prefix. They’re men and woman just as others.
-- “Non-binary” is an umbrella term for gender non-conforming. There are many variations and specific terms within it for people to describe more precisely what their gender is.
+- “Non-binary” is an umbrella term for people who are not men or women. There are many variations and specific terms within it for people to describe more precisely what their gender is.
 - The term _preferred_ whether it sits before _name_ or _gender_ is not as helpful as it is often intended, as preference implies it’s somewhat okay not to respect it. It’s never okay not to respect someone’s usual name, gender or pronouns.
 - Avoid using _custom_, _other_ or _X_ to describe a cis’ person’s gender as these terms can feel quite alienating. Refer to the section on collecting gender for more information.
 
@@ -41,7 +41,7 @@ Some people might prefer others using these pronouns when referring to them to a
 
 Not all non-binary people use they/them pronouns. Not all men/women use he/she pronouns. It depends on one’s gender expression.
 
-You can help gender non-conforming people by setting your pronouns on Slack (and other personal profiles) even if you are cis (as in, you use the pronouns going with the sex assigned at birth). This normalizes the respect of people’s pronouns and shifts the focus away from trans and non-binary people by avoiding them being the only ones talking about pronouns.
+You can help trans and non-binary people by setting your pronouns on Slack (and other personal profiles) even if you are cis (as in, you use the pronouns going with the sex assigned at birth). This normalizes the respect of people’s pronouns and shifts the focus away from trans and non-binary people by avoiding them being the only ones talking about pronouns.
 
 ## Etiquette
 
@@ -61,7 +61,7 @@ Minimum effort:
 
 - Woman (better than female, which is more of a biological term)
 - Man (better than male)
-- Non-binary (umbrella term for gender non-conformity)
+- Non-binary (umbrella term for trans identities)
 - Prefer not to say (if possible)
 
 Something a little more fleshed out (and therefore more respectful) would be:
@@ -74,10 +74,10 @@ Something a little more fleshed out (and therefore more respectful) would be:
 - Genderfluid
 - Two-spirit (a [gender specific to Native American traditions](https://en.wikipedia.org/wiki/Two-spirit))
 
-It is better to avoid the words _custom_, _other_ or _X_, as all can feel a little alienating to people who are gender non-conforming.
+It is better to avoid the words _custom_, _other_ or _X_, as all can feel a little alienating to trans people.
 
 - Prefer not to say
 
-Another important thing to mention is the availability of such information. Some people might not be comfortable openly disclosing themselves as gender non-conforming, yet they might want to be recognized as such in some contexts.
+Another important thing to mention is the availability of such information. Some people might not be comfortable openly disclosing themselves as trans, yet they might want to be recognized as such in some contexts.
 
 For that reason, it is always a good idea to specify who has access to that information in order to avoid inadvertently outing people. Having something as simple as “Your gender will be visible to all employees” or “Your gender will be restricted to People Operations team and will be treated as confidential information” is good, for example.
