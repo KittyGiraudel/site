@@ -11,6 +11,19 @@
     <div class="container">
       {{ content }}
     </div>
+
+    <button
+      type="button"
+      aria-pressed="false"
+      id="dark-mode-toggle"
+      hidden
+      class="DarkModeToggle"
+    >
+      <span class="visually-hidden">Dark mode</span>
+      <svg id="icon-adjust" viewBox="0 0 20 20">
+        <path d="M10 2v16c4.418 0 8-3.582 8-8s-3.582-8-8-8v0zM10 20c-5.523 0-10-4.477-10-10s4.477-10 10-10v0c5.523 0 10 4.477 10 10s-4.477 10-10 10v0z"></path>
+      </svg>
+    </button>
   </main>
 
   {% include "footer.html" %}
