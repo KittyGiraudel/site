@@ -8,7 +8,7 @@ keywords:
 
 I recently got [Harry Robert’s course on CSS performance](https://gumroad.com/l/eihdtmcwf) (you totally should to, it’s a goldmine of information) and worked on improving performance for this site. I quickly spotted 2 performance {% footnoteref "bottleneck" "Although we are playing fast and loose with the world “bottleneck” here because it really wasn’t that bad." %}bottlenecks{% endfootnoteref %}: requesting the stylesheet, and requesting the main script.
 
-I had about 4.7Kb of CSS, and less than 1Kb of JavaScript, so I figured the HTTP requests weren’t that necessary at all and I could inject styles and scripts directly within the page to avoid HTTP roundtrips. [Inlining CSS](https://www.11ty.dev/docs/quicktips/inline-css/) and [inlining JavaScript](https://www.11ty.dev/docs/quicktips/inline-js/) is explained in the 11ty docs, so not really warrant of a blog post I head you say.
+I had about 4.7Kb of CSS, and less than 1Kb of JavaScript, so I figured the HTTP requests weren’t that necessary at all and I could inject styles and scripts directly within the page to avoid HTTP roundtrips. [Inlining CSS](https://www.11ty.dev/docs/quicktips/inline-css/) and [inlining JavaScript](https://www.11ty.dev/docs/quicktips/inline-js/) is explained in the 11ty docs, so not really warrant of a blog post I hear you say.
 
 Now the thing is not all styles are necessary on all pages. For instance, the home page have some components that do not exist anywhere else on the site, and an article page like this one has a lot of styles which are not needed anywhere else (code snippets, figures, tables, post date…). So instead of inlining 5Kb of CSS in the head, most of which would not be needed, I decided to split it across pages.
 
@@ -88,7 +88,7 @@ When it comes to minification, there are a few approaches here. One way would be
 
 I went a slightly different path and have an [11ty transform](https://www.11ty.dev/docs/config/#transforms) to minify HTML with [html-minifier](https://github.com/kangax/html-minifier). The nice thing about it is that it offers a `minifyCSS` and a `minifyJS` option to compress styles and scripts authored in `<style>` and `<script>` tags respectively. Therefore I have a single transform to minify everything.
 
-I decided to run that transform only in production because a) I don’t like to have compressed styles and scripts in development since it can make them harder to debug and b) minification is actually not cheat and can take a few seconds on a site as small as mine which means it would dramatically slow down compilation.
+I decided to run that transform only in production because a) I don’t like to have compressed styles and scripts in development since it can make them harder to debug and b) minification is actually not cheap and can take a few seconds on a site as small as mine which means it would dramatically slow down compilation.
 
 ```js
 module.exports = function (config) {
