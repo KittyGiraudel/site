@@ -11,6 +11,10 @@ pre {
   font-family: inherit; /* 1 */
 }
 
+.dark pre {
+  background-color: #322d2f;
+}
+
 @media (min-width: 1024px) {
   /**
    * 1. Increase width so the code container looks wider than the body text, but
@@ -53,18 +57,32 @@ pre code {
   font-size: 70%;
 }
 
+.dark :not(pre):not(a) > code {
+  background-color: #3f393b;
+}
+
 .namespace {
   opacity: 0.7;
 }
+
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
   color: #6f7b80;
 }
+
+.dark .token.comment,
+.dark .token.prolog,
+.dark .token.doctype,
+.dark .token.cdata {
+  color: #a8afb2;
+}
+
 .token.punctuation {
   color: #95a6ad;
 }
+
 .token.property,
 .token.tag,
 .token.boolean,
@@ -74,6 +92,7 @@ pre code {
 .token.deleted {
   color: #fc4787;
 }
+
 .token.selector,
 .token.attr-name,
 .token.string,
@@ -82,19 +101,27 @@ pre code {
 .token.inserted {
   color: #009f7f;
 }
+
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
   color: #e17055;
-  background: #ffffff;
 }
+
 .token.atrule,
 .token.attr-value,
 .token.keyword {
   color: #087bd4;
 }
+
+.dark .token.atrule,
+.dark .token.attr-value,
+.dark .token.keyword {
+  color: #6aafe5;
+}
+
 .token.function {
   color: #e84393;
 }

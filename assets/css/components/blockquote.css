@@ -6,6 +6,10 @@ blockquote,
   background-color: #f3f8fc;
 }
 
+.dark blockquote, .dark .Info {
+  background-color: #303132;
+}
+
 @media (min-width: 1024px) {
   /**
    * 1. Increase width so the blockquote/info container looks wider than the
