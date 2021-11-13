@@ -9,6 +9,10 @@
   border-radius: 0 0 0.1em 0.1em;
 }
 
+.dark .Tile {
+  background-color: #3f393b;
+}
+
 .Tile::before {
   content: '';
   position: absolute;
@@ -36,6 +40,10 @@
   line-height: 1.2;
   font-size: 80%;
   color: #9a2869;
+}
+
+.dark .Tile__secondary {
+  color: pink;
 }
 
 .Tile__link {

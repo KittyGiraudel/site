@@ -8,6 +8,12 @@ html {
   --vb: 1.5em;
 }
 
+
+.dark body {
+  background-color: #222;
+  color: #eee;
+}
+
 @font-face {
   font-family: 'MiddleDot';
   src: local('Times New Roman');
@@ -130,6 +136,10 @@ a:not(.Navigation__link):not(.Title__link) {
   transition: 250ms ease-in;
 }
 
+.dark a:not(.Navigation__link):not(.Title__link) {
+  background-image: linear-gradient(to right, #f2cfe399, #c4e0f399);
+}
+
 /**
  * The `.Navigation__link` do not use backgrounds, so it is unnecessary to
  * include this selector here.
@@ -137,6 +147,14 @@ a:not(.Navigation__link):not(.Title__link) {
 a:not(.Title__link):hover,
 a:not(.Title__link):active,
 a:not(.Title__link):focus {
+  color: #222;
+  background-size: 100% 88%;
+}
+
+.dark a:not(.Title__link):hover,
+.dark a:not(.Title__link):active,
+.dark a:not(.Title__link):focus {
+  color: #ccc;
   background-size: 100% 88%;
 }
 
