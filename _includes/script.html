@@ -1,11 +1,15 @@
 {% if paths %}
-{% assign paths = paths | split: "," %}
+  {% assign paths = paths | split: "," %}
 
-{% capture js %}
-{% for path in paths %}
-{% include "../assets/js/{{ path | strip }}.js" %}
-{% endfor %}
-{% endcapture %}
+  {% if site.environment == 'production' %}
+    {% capture js %}
+      {% for path in paths %}{% include "../assets/js/{{ path | strip }}.js" %}{% endfor %}
+    {% endcapture %}
 
-<script>{{ js }}</script>
+    <script>{{ js }}</script>
+  {% else %}
+    {% for path in paths %}
+      <script src="/assets/js/{{ path | strip }}.js"></script>
+    {% endfor %}
+  {% endif %}
 {% endif %}

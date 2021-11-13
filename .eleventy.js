@@ -16,7 +16,7 @@ module.exports = function (config) {
   // Wrap emojis to give them more semantic meaning.
   config.addTransform('emoji', a11yEmojis)
 
-  // Force 11ty to watch CSS files
+  // Force 11ty to watch CSS and JS files
   config.addWatchTarget('assets/css/**/*.css')
   config.addWatchTarget('assets/js/**/*.js')
 
@@ -34,6 +34,19 @@ module.exports = function (config) {
   config.addPassthroughCopy('manifest.json')
   config.addPassthroughCopy('apple-touch-icon.png')
   config.addPassthroughCopy('favicon.ico')
+
+  // CSS and JavaScript are inlined in HTML for performance reasons. The problem
+  // with that is that saving a CSS or JavaScript file during development does
+  // not cause HTML files to be recompiled, which makes working on the site
+  // significantly more cumbersome. The problem is addressed by linking external
+  // stylesheets and scripts in development, and inlining their content in style
+  // script tags in production. For the assets to be linked to in development,
+  // they need to be passed through to the `_site` directory.
+  // See: https://kittygiraudel.com/2020/12/03/inlining-scripts-and-styles-in-11ty/
+  if (process.env.NODE_ENV !== 'production') {
+    config.addPassthroughCopy('assets/js')
+    config.addPassthroughCopy('assets/css')
+  }
 
   // Allow Liquid to import nested and dynamic partials
   config.setLiquidOptions({ dynamicPartials: true })
