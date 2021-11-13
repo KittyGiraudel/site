@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+  function getLocalValue (key) {
+    try {
+      return JSON.parse(localStorage.getItem(key))
+    } catch {
+      return null
+    }
+  }
+
   // http://joelcalifa.com/blog/revisiting-visited
   ;(function markVisitedLinks() {
     localStorage.setItem('visited-' + window.location.pathname, true)
@@ -13,24 +21,37 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })()
 
+  const savedPreference = getLocalValue('dark-mode')
   const modeToggle = document.querySelector('#dark-mode-toggle')
-  const savedState = JSON.parse(localStorage.getItem('dark-mode') || 'false')
 
-  document.documentElement.classList[savedState ? 'add' : 'remove']('dark')
-  modeToggle.setAttribute('aria-pressed', savedState)
+  // If dark mode has been enabled before (and thus found in local storage), or
+  // if there is no stored preference but the operating system is set in dark
+  // mode, turn on the dark mode.
+  if (
+    savedPreference ||
+    (
+      savedPreference === null &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    )
+  ) {
+    document.documentElement.classList.add('dark')
+    modeToggle.setAttribute('aria-pressed', true)
+  }
+
+  // Now that JavaScript is available, make the toggle visible.
   modeToggle.removeAttribute('hidden')
 
   modeToggle.addEventListener('click', function (event) {
-    const target = event.target.closest('button')
-    const current = JSON.parse(target.getAttribute('aria-pressed')) === true
+    const toggle = event.target.closest('button')
+    const isToggled = JSON.parse(toggle.getAttribute('aria-pressed')) === true
 
-    if (current) {
+    if (isToggled) {
       document.documentElement.classList.remove('dark')
-      target.setAttribute('aria-pressed', false)
+      toggle.setAttribute('aria-pressed', false)
       localStorage.setItem('dark-mode', false)
     } else {
       document.documentElement.classList.add('dark')
-      target.setAttribute('aria-pressed', true)
+      toggle.setAttribute('aria-pressed', true)
       localStorage.setItem('dark-mode', true)
     }
   })
