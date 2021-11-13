@@ -12,7 +12,7 @@ pre {
 }
 
 .dark pre {
-  background-color: #3f393b;
+  background-color: #322d2f;
 }
 
 @media (min-width: 1024px) {
@@ -108,15 +108,6 @@ pre code {
 .language-css .token.string,
 .style .token.string {
   color: #e17055;
-  background: #ffffff;
-}
-
-.dark .token.operator,
-.dark .token.entity,
-.dark .token.url,
-.dark .language-css .token.string,
-.dark .style .token.string {
-  background: #5b5255;
 }
 
 .token.atrule,

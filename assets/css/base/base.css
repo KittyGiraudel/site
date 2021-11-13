@@ -137,7 +137,7 @@ a:not(.Navigation__link):not(.Title__link) {
 }
 
 .dark a:not(.Navigation__link):not(.Title__link) {
-  background-image: linear-gradient(to right, #f2cfe399, #c4e0f399);
+  background-image: linear-gradient(to right, #796771, #758691);
 }
 
 /**

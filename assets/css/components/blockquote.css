@@ -7,7 +7,7 @@ blockquote,
 }
 
 .dark blockquote, .dark .Info {
-  background-color: #3f393b;
+  background-color: #303132;
 }
 
 @media (min-width: 1024px) {
