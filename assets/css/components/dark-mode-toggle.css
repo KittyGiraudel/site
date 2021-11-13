@@ -1,0 +1,30 @@
+.DarkModeToggle {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 250ms;
+
+  padding: 0.25em;
+  width: 2.6em;
+  height: 2.6em;
+  z-index: 10;
+}
+
+.DarkModeToggle:hover,
+.DarkModeToggle:focus {
+  box-shadow: 0 0 0 3px deeppink;
+}
+
+.DarkModeToggle > svg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentcolor;
+}
