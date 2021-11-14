@@ -4,6 +4,7 @@
  */
 .Ad {
   margin: var(--vb) auto;
+  width: max-content;
   max-width: 100%;
   height: 114px; /* 1 */
   background-color: white;
