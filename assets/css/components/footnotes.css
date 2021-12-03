@@ -5,6 +5,10 @@
   background-color: #f6f4f9;
 }
 
+.dark .Footnotes {
+  background-color: #303132;
+}
+
 @media (min-width: 1024px) {
   /**
    * 1. Increase width so the footnotes container looks wider than the body
