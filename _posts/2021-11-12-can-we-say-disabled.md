@@ -22,8 +22,10 @@ To summarize, the problem with shying away from the word “disabled” is twofo
 
 2. It risks slowing down support. Disability does not happen in a vacuum: it relates to the environment in which people live. The only way for society to provide support in regards to these difficulties is by acknowledging that some inviduals are disabled in the first place. As long as we will push the “differently abled” narrative (or other similar labels), accommodation and reform might be slow to come.
 
+{% info %} On that note, [Christiane Link](https://www.linkedin.com/feed/update/urn:li:activity:6874594820032126976?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6874594820032126976%2C6874609975428227073%29) rightfully points out that people are disabled by the environment, by attitudes and structural discrimination. Therefore, disability isn’t so much about deficits. Disabled people often do things differently and are very much used to find solutions others never had to find. That’s actually a skill. {% endinfo %}
+
 Ultimately, we shouldn’t try to sugar-coat or glorify disabilities. They exist, and we have to acknowledge them. By large, the disabled community is comfortable with that word and uses it to identify and describe themselves. If a **disabled** person tells you they prefer you use another qualificative when mentioning then, of course do so. Until then, using “disabled people” is a good and safe choice of words.
 
 {% info %} There is a lot of discussion between identity-first (e.g. “disabled person”) versus person-first (e.g. “person with a disability”) language, with no explicit consensus. The first promotes a [social model of disability](https://en.wikipedia.org/wiki/Social_model_of_disability), while the latter reflects a more [medical model of disability](https://en.wikipedia.org/wiki/Medical_model_of_disability). Which to use might depend on context and interlocutor, and in doubt, it’s always better to ask. That being said, the existence of both approaches in no way invalidates everything we’ve seen before. Both are significantly better than ableist alternatives. {% endinfo %}
 
-_Kind thanks to Eric Eggert, Ioanna Talasli and Ariel Burone for their insightful review._
+_Kind thanks to Eric Eggert, Ioanna Talasli, Ariel Burone and Christiane Link for their insightful review._
