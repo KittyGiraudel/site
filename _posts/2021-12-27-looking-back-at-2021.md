@@ -1,0 +1,43 @@
+---
+title: Looking back at 2021
+---
+
+Hard to really look at those last years feeling super positive to be honest, given life has basically been put on halt. But at least I feel fortunate this year was void of bad news from me.
+
+## Timeline
+
+🦍 **January 4th.** I started a new role at Gorillas as an Engineering Lead, after 4+ years at N26.
+
+📦 **February 17th.** I released [version 6 of a11y-dialog](https://github.com/KittyGiraudel/a11y-dialog/releases/tag/6.0.0) without many user-facing changes. It was mainly moving the bundling stage to rollup to be a bit more flexible.
+
+📦 **March 23rd.** I released [version 7 of a11y-dialog](https://github.com/KittyGiraudel/a11y-dialog/releases/tag/7.0.0), which was an interesting milestone which significantly reduced complexity. a11y-dialog has subsequently been recommended by Scott O’hara in his [long-standing rebutal of the native `<dialog>` element](https://www.scottohara.me/blog/2019/03/05/open-dialog.html).
+
+🏳️‍⚧️ **May 23rd.** I came out as being non-binary trans to my parents, something I was dreading for a long time.
+
+🏳️‍🌈 **June 30th.** I spoke at an internal Gorillas event about what it is like to be non-binary in the workplace, and what people and organizations can do to support people like me.
+
+👂 **July 3rd.** I got my ears pierced! I was a little nervous originally, but I’m super happy with it in the end. I get to wear cute earrings all the time!
+
+📝 **July 28th.** I finally got to write for Smashing Magazine for the very first time. I authored a nice [technical piece on building a dialog library](https://www.smashingmagazine.com/2021/07/accessible-dialog-from-scratch/) from scratch. I’ve been reading Smashing Magazine for years, and am honored having finally been able to contribute to that incredible publication.
+
+🪒 **July 30th.** I started facial hair removal therapy. As of writing, I have gone through 4 sessions already, and am looking for another 3 or 4 more to be completely finished. Having facial hair, even a little, has been a big source of dysphoria for me, so I’m super excited getting rid off it for good.
+
+👩‍💻 **August.** I took on a position of Group Engineering Lead, which is significantly less hands on than I’ve been used to — something I’m not necessarily unhappy with. This gave me the opportunity to have a bigger impact on the Product & Engineering organization as a whole, which is something I’m proud of.
+
+👀 **September 13th.** I got asked to be a reviewer for the [Smart Interface Design Patters course](https://smart-interface-design-patterns.com/) by Vitaly Friedman, the founder of Smashing Magazine. It was a lot of fun to be able to go through the whole content and give suggestions and feedback!
+
+💬 **September 25th.** I started getting some counceling in order to be able to discuss a variety of topics (difficult or not) with someone impartial and outside of them. It’s been helpful overall.
+
+🔨 **November 8th.** I submitted [my first pull-request to Next.js](https://github.com/vercel/next.js/pull/31147) aiming at improving the vocal announcement of page changes. While this was pretty minor, it feels nice having been able to contribute to such a big open-source project.
+
+🌱 **November 15th.** This day marked 3 years for me without eating meat and two years without fish.
+
+🎂 **December.** I turned 30. On this occasion, I wrote a [30-tweets long thread](https://twitter.com/KittyGiraudel/status/1468195514529296384?s=20) of advice on frontend development, in case you are into that sort of thing.
+
+🧩 **December 17th.** I unfortunately gave up on Advent of Code after a 16-days streak, being unable to solve the puzzle of the day. This killed my motivation to even attempt any day after that, so I’m leaving it at that.
+
+👗 **December 26th.** I wore a dress and heels outside for the first time, a personal accomplishment I’m glad to be ending the year on!
+
+## For next year
+
+Same as every year, I don’t set goals because I never follow through. The only thing I need to do is a full health checkup to make sure I’m all good. But that really is about it.
