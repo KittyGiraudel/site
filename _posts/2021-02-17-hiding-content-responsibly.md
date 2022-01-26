@@ -86,7 +86,7 @@ From the accessibility perspective, the declaration behave like `display: none` 
 
 The `opacity: 0` and `clip-path: circle(0)` CSS declarations visually hide an element, but the place it takes is not freed, just like `visibility: hidden`.
 
-Whether the content remains accessible depends on assistive technologies. Some will consider the content inaccessible and skip it, and some will still read it. For that reason, it is recommended not to use these declarations to consistently hide content.
+Whether the content remains accessible [depends on assistive technologies](https://zellwk.com/blog/hide-content-accessibly/). Some will consider the content inaccessible and skip it, and some will still read it. For that reason, it is recommended not to use these declarations to consistently hide content.
 
 **Summary:**
 
@@ -94,7 +94,7 @@ Whether the content remains accessible depends on assistive technologies. Some w
 - Accessible: depends
 - Element + children focusable: yes (⚠️)
 
-**Verdict:** ✋ Shady and inconsistent, so don’t except maybe for visual animations purposes.
+**Verdict:** ✋ Shady and inconsistent, so don’t use it except maybe for visual animations purposes.
 
 ## The `transform: scale(0)` declaration
 
