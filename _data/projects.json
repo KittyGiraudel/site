@@ -18,6 +18,12 @@
     "category": "JavaScript"
   },
   {
+    "name": "circularr",
+    "description": "A fast circular array implementation in JavaScript.",
+    "link": "https://github.com/KittyGiraudel/circularr",
+    "category": "JavaScript"
+  },
+  {
     "name": "react-menu-button",
     "description": "A React component wrapper around inclusive-menu-button.",
     "link": "https://github.com/KittyGiraudel/react-menu-button",
