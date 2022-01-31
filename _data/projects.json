@@ -12,12 +12,6 @@
     "category": "Accessibility"
   },
   {
-    "name": "express-simple-locale",
-    "description": "A simple Express middleware to guess the short-locale of a user.",
-    "link": "https://github.com/n26/express-simple-locale",
-    "category": "JavaScript"
-  },
-  {
     "name": "circularr",
     "description": "A fast circular array implementation in JavaScript.",
     "link": "https://github.com/KittyGiraudel/circularr",
