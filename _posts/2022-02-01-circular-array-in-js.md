@@ -14,7 +14,7 @@ A circular array is just that. A collection of items that loops on itself so tha
     5  4
 ```
 
-In this article, I’ll walk you through my implementation. If you just want to see the code, check the [circularr](https://github.com/KittyGiraudel/circularr/) repository on GitHub.
+In this article, I’ll walk you through my implementation. If you just want to see the code, check the [circularray](https://github.com/KittyGiraudel/circularray/) repository on GitHub.
 
 - [Nodes](#nodes)
 - [Circular](#circular-array)
@@ -298,6 +298,6 @@ console.log('Remaining item is', circle.pop()) // 3
 
 ## Wrapping up
 
-That’s about it! It might not be much, but it was a lot of fun for me to learn about linked lists and try my hands on one. The [code on GitHub](https://github.com/KittyGiraudel/circularr/) contains a few more features that we haven’t covered today like a `length` setting to truncate the array.
+That’s about it! It might not be much, but it was a lot of fun for me to learn about linked lists and try my hands on one. The [code on GitHub](https://github.com/KittyGiraudel/circularray/) contains a few more features that we haven’t covered today like a `length` setting to truncate the array.
 
 I hope you liked it!
