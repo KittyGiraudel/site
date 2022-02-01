@@ -6,7 +6,13 @@ I have been having fun with [Advent of Code](https://adventofcode.com/) recently
 
 Disclaimer: I have no Computer Science degree. I have been doing frontend development for the last 10 years, a discipline you rarely need linked lists for. So take my suggestions here with a grain of salt.
 
-A circular array is just that. A collection of items that loops on itself so that the last element connects to the first. This can be pretty handy in games and problems based on a circular structure (such as the [Josephus problem](#example) or the popular mobile game [Atomas](http://sirnic.com/atomas/)).
+A circular array is just that. A collection of items that loops on itself so that the last element connects to the first. This can be pretty handy in games and problems based on a circular structure (such as the [Josephus problem](#example) or the popular mobile game [Atomas](http://sirnic.com/atomas/)). For instance:
+
+```
+   (1) 2
+  6      3   →   … 6 (1) 2 …
+    5  4
+```
 
 In this article, I’ll walk you through my implementation. If you just want to see the code, check the [circularr](https://github.com/KittyGiraudel/circularr/) repository on GitHub.
 
@@ -70,7 +76,13 @@ class CircularArray {
 
 ## Adding items
 
-Adding items to our circle means inserting a node to the left of (before) the pointer. The first thing we need to do in our `push` method is wrap our given value with a node, since anything in our list needs to be a node.
+Adding items to our circle means inserting a node to the left of (before) the pointer. For instance, consider a circle with number 1 to 9 and the pointer being on number 1, adding 10 would imply:
+
+```
+… 9 (1) 2 …    →    … 9 10 (1) 2 …
+```
+
+The first thing we need to do in our `push` method is wrap our given value with a node, since anything in our list needs to be a node.
 
 ```js
 push (value) {
@@ -140,9 +152,21 @@ unshift(value) {
 }
 ```
 
+So if we were to push number 10 at the start, it would look like this:
+
+```
+… 9 (1) 2 …    →    … 9 (10) 1 2 …
+```
+
 ## Removing items
 
-Popping items means removing the item to the left of the pointer (the “last” item). Here is how our push method would look like. First, we make sure there is an item in the list, otherwise we can return `undefined` (like `Array.prototype.pop` does).
+Popping items means removing the item to the left of the pointer (the “last” item). On a circle with numbers from 1 to 9, dropping 9 would mean:
+
+```
+… 8 9 (1) 2 …    →    … 8 (1) 2 …
+```
+
+Here is how our `pop` method would look like. First, we make sure there is an item in the list, otherwise we can return `undefined` (like `Array.prototype.pop` does).
 
 ```js
 pop() {
@@ -203,11 +227,20 @@ pop() {
 
 </details>
 
-The `shift` method looks very similar so I’ll skip it for simplicity.
+The `shift` method looks very similar so I’ll skip it for simplicity. An example would be:
+
+```
+… 9 (1) 2 3 …    →    … 9 (2) 3 …
+```
 
 ## Rotating the array
 
 What if we want to remove items that are not at the start or the end of the array? This is where rotation comes into play. Rotating our array means moving the pointer around so that when we add or remove items, we do that where we want.
+
+```
+Current state  |  Clockwise by 1  |  Couter-clockwise by 1
+… 9 (1) 2 …    |  … 8 (9) 1 …     |  … 1 (2) 3 …
+```
 
 Our rotation function takes an “offset”, which is the number of times we want to move the pointer. If it’s positive, we rotate the circle clockwise (so we move the pointer to the left). If it’s negative, we rotate the circle counter-clockwise (so we move the pointer to the right).
 
