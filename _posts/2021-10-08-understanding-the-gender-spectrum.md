@@ -31,7 +31,7 @@ It might sound like a lot of jargon, and even a little silly sometimes, but we h
 - Some trans people, especially after having gone through transition, identify as man or woman. They don’t owe anyone the _trans_ prefix. They’re men and woman just as others.
 - “Non-binary” is an umbrella term for people who are not men or women. There are many variations and specific terms within it for people to describe more precisely what their gender is.
 - The term _preferred_ whether it sits before _name_ or _gender_ is not as helpful as it is often intended, as preference implies it’s somewhat okay not to respect it. It’s never okay not to respect someone’s usual name, gender or pronouns.
-- Avoid using _custom_, _other_ or _X_ to describe a cis’ person’s gender as these terms can feel quite alienating. Refer to the section on collecting gender for more information.
+- Avoid using _custom_, _other_ or _X_ to describe a trans’ person’s gender as these terms can feel quite alienating. Refer to the section on collecting gender for more information.
 
 ## Using pronouns
 
