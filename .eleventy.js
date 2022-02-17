@@ -27,7 +27,6 @@ module.exports = function (config) {
   // Pass through static files; the CSS file is handled through Sass and
   // therefore not explitly passed through here
   config.addPassthroughCopy('assets/images')
-  config.addPassthroughCopy('assets/js/vendors')
   config.addPassthroughCopy('_redirects')
   config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('humans.txt')
@@ -46,10 +45,9 @@ module.exports = function (config) {
   if (process.env.NODE_ENV !== 'production') {
     config.addPassthroughCopy('assets/js')
     config.addPassthroughCopy('assets/css')
+  } else {
+    config.addPassthroughCopy('assets/js/vendors')
   }
-
-  // Allow Liquid to import nested and dynamic partials
-  config.setLiquidOptions({ dynamicPartials: true })
 
   // Add a filter and a tag to parse content as Markdown in Liquid files
   config.addFilter('markdown', content => markdown(content, true))

@@ -38,7 +38,7 @@ Now, I wanted to minimise the amount of boilerplate needed to include some speci
 
 {% raw %}
 ```
-{% include "styles.html", paths: "
+{% include "styles.html", partials: "
   components/blockquote,
   components/code,
   components/figure,
