@@ -4,7 +4,7 @@ const footnotes = require('eleventy-plugin-footnotes')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const uslugify = require('uslug')
-const emojiRegex = require('emoji-regex/RGI_Emoji')()
+const emojiRegex = require('emoji-regex')()
 const emojiShortName = require('emoji-short-name')
 
 module.exports = function (config) {
