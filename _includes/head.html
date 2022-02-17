@@ -29,7 +29,7 @@ http://ogp.me/ns/article#">
   {% endif %}
 
   <!-- Styles -->
-  {% include "styles.html", paths: "
+  {% include "styles.html", partials: "
   base/base,
   base/helpers,
   layout/footer,
@@ -47,7 +47,7 @@ http://ogp.me/ns/article#">
   " %}
 
   <!-- JS utilities -->
-  {% include "script.html", paths: "utilities" %}
+  {% include "script.html", partials: "utilities" %}
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="{{ site.author }}" href="{{ '/rss/index.xml' | prepend: site.url }}" />

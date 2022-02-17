@@ -1,5 +1,5 @@
-{% if paths %}
-  {% assign paths = paths | split: "," %}
+{% if partials %}
+  {% assign paths = partials | split: "," %}
 
   {% if site.environment == 'production' %}
     {% capture js %}
