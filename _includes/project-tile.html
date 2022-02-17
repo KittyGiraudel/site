@@ -1,11 +1,11 @@
 {% assign project = item %}
 
-{% capture category %}{{ project.category }} · {{ project.stars | stars }}{% endcapture %}
-{% capture link_label %}Look at project <span class="visually-hidden">{{ project.name }}</span>{% endcapture %}
+{% capture project_category %}{{ project.category }} · {{ project.stars | stars }}{% endcapture %}
+{% capture project_label %}Look at project <span class="visually-hidden">{{ project.name }}</span>{% endcapture %}
 
 {% include "tile.html",
   primary: project.name,
-  secondary: category,
+  secondary: project_category,
   link_url: project.link,
-  link_label: link_label
+  link_label: project_label
 %}

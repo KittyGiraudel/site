@@ -1,11 +1,11 @@
 {% assign event = item %}
 
-{% capture meta %}{{ event.date | time }} · {{ event.location | split: ',' | first }}{% endcapture %}
-{% capture link_label %}Check event <span class="visually-hidden">{{ event.event }}</span>{% endcapture %}
+{% capture event_meta %}{{ event.date | time }} · {{ event.location | split: ',' | first }}{% endcapture %}
+{% capture event_label %}Check event <span class="visually-hidden">{{ event.event }}</span>{% endcapture %}
 
 {% include "tile.html",
   primary: event.event,
-  secondary: meta,
+  secondary: event_meta,
   link_url: event.link,
-  link_label: link_label
+  link_label: event_label
 %}
