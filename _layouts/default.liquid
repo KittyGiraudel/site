@@ -27,7 +27,7 @@
   </main>
 
   {% include "footer.html" %}
-  {% include "script.html", paths: "main" %}
+  {% include "script.html", partials: "main" %}
   {% if site.environment == 'production' %}
   <script>
     if ('serviceWorker' in navigator) {
