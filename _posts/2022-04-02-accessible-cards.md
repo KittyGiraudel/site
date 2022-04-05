@@ -138,6 +138,8 @@ The only thing we need to do is bump its `z-index` so it sits _above_ the pseudo
 }
 ```
 
+{% info %}[Adrian Roselli reached out](https://twitter.com/aardrian/status/1511302503324868612?s=20&t=ZhCo8_uclewkYiTpp0I5WA) to share his experience having tested this pattern with users. He found that having dead space around the button is important to avoid mis-taps. If possible, consider carving out some space for the additional control instead of placing on top of the card link. Read more information in his [article about interactive cards](https://adrianroselli.com/2020/02/block-links-cards-clickable-regions-etc.html#Additional).{% endinfo %}
+
 ## Heading or no heading?
 
 Let me take this post as an opportunity to discuss whether a card should contain a heading.
