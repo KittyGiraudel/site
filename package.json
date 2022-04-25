@@ -13,7 +13,7 @@
     "emoji-regex": "^10.1.0",
     "emoji-short-name": "^1.0.0",
     "html-minifier": "^4.0.0",
-    "markdown-it": "^12.3.2",
+    "markdown-it": "^13.0.0",
     "markdown-it-anchor": "^8.6.2",
     "uslug": "^1.0.4",
     "workbox-cli": "^6.5.3"
