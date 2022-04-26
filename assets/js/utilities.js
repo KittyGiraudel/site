@@ -1,6 +1,6 @@
 'use strict'
 
-function loadJS (src, onload) {
+function loadJS(src, onload) {
   const firstScript = document.getElementsByTagName('script')[0]
   const script = document.createElement('script')
 
@@ -14,10 +14,4 @@ function loadJS (src, onload) {
   }
 
   return script
-}
-
-function $(selector, context) {
-  var nodes = (context || document).querySelectorAll(selector)
-  if (!nodes.length) return null
-  return Array.prototype.slice.call(nodes)
 }

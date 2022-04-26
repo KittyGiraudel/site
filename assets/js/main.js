@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  function getLocalValue (key) {
+  function getLocalValue(key) {
     try {
       return JSON.parse(localStorage.getItem(key))
     } catch {
@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // http://joelcalifa.com/blog/revisiting-visited
   ;(function markVisitedLinks() {
     localStorage.setItem('visited-' + window.location.pathname, true)
-    ;($('.Main a') || []).forEach(function (link) {
+
+    Array.from(document.querySelectorAll('.Main a')).forEach(function (link) {
       if (
         link.host === window.location.host &&
         localStorage.getItem(
@@ -29,10 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // mode, turn on the dark mode.
   if (
     savedPreference ||
-    (
-      savedPreference === null &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    )
+    (savedPreference === null &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
     document.documentElement.classList.add('dark')
     modeToggle.setAttribute('aria-pressed', true)
