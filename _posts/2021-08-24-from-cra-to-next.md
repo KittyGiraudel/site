@@ -144,7 +144,7 @@ If you abstracted into hooks and components everything about routing and head ma
 
 ```js
 import NextLink from 'next/link'
-import { RRLink } from 'react-router-dom'
+import { Link as RRLink } from 'react-router-dom'
 
 // See: https://nextjs.org/docs/basic-features/environment-variables
 // See: https://create-react-app.dev/docs/adding-custom-environment-variables
