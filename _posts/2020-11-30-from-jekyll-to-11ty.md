@@ -31,7 +31,7 @@ Overall, the migration was relatively smooth. It took me about 10 hours spread a
 Here are some things I do like a lot from 11ty:
 
 - The configuration is really enjoyable to use. I like that it does not live in a JSON file which sometimes lacks flexibility, and that it exposes a class with lots of helper utilities to configure compilation.
-- I felt helped with templating errors. I don’t now to which extend 11ty customises error reporting to make it friendly, but it’s overall pretty good I would say.
+- I felt helped with templating errors. I don’t know to which extend 11ty customises error reporting to make it friendly, but it’s overall pretty good I would say.
 - The pagination is overall better than the Jekyll one I feel, because it can be used on any collection instead of exclusively for the posts. 
 - The automatic browser reload is a really nice touch that does not exist in Jekyll. It’s not much, but it’s appreciable during development. 
 
