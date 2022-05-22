@@ -179,4 +179,45 @@ The `readOnly` and `hidden` properties that can be defined on fields accept a fu
 }
 ```
 
-{%info%}If you hide a document type for a specific role, and that document type can be referenced in other documents, you might want to mark all its fields as readonly. Otherwise, editors could still follow a reference field and access the editing form on a type they’re not supposed to manage. {%endinfo%}
+{% info %}If you hide a document type for a specific role, and that document type can be referenced in other documents, you might want to mark all its fields as readonly. Otherwise, editors could still follow a reference field and access the editing form on a type they’re not supposed to manage.{% endinfo %}
+
+To make sure fields cannot be updated by editors even if they managed to reach a document they’re not supposed to see (which could happen when following a reference or link to such document), we can automate it. When defining our schema, we iterate over all fields of all documents, and add a `readOnly` property based on the role.
+
+```js
+import createSchema from 'part:@sanity/base/schema-creator'
+import schemaTypes from 'all:part:@sanity/base/schema-type'
+import blogPost from './blogPost'
+import page from './page'
+import { isAdmin, EDITOR_TYPES } from './deskStructure'
+
+export default createSchema({
+  name: 'default',
+  types: schemaTypes.concat(
+    Object.entries({ blogPost, page }).map(([type, document]) => ({
+      ...document,
+      fields: document.fields.map(addReadOnly(type)),
+    }))
+  ),
+})
+
+function addReadOnly(type) {
+  return function (field) {
+    // Block types do not support the `readOnly` property, so we can skip.
+    if (field.type === 'block') return field
+
+    // If the `readOnly` property is not already defined and the type is for
+    // admins only, we add the `readOnly` property to restrict it for editors.
+    if (typeof field.readOnly === 'undefined' && !EDITOR_TYPES.includes(type)) {
+      field.readOnly = ({ currentUser }) => !isAdmin(currentUser)
+    }
+
+    // If the fiels is an array, recursively add the `readOnly` property to
+    // nested fields.
+    if (typeof field.of !== 'undefined') {
+      field.of.forEach(addReadOnly(type))
+    }
+
+    return field
+  }
+}
+```
