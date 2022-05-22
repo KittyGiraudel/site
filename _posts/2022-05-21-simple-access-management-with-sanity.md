@@ -8,9 +8,10 @@ Access management is important to any CMS. Unfortunately, [Sanity](https://sanit
 2. [Accessing the user’s role](#accessing-the-users-role)
 3. [Updating the desk structure](#updating-the-desk-structure)
 4. [Updating the “Create new document” dialog](#updating-the-create-new-document-dialog)
-5. [Caveats](#caveats)
-6. [Bonus: Hiding other tools](#bonus-hiding-other-tools)
-7. [Bonus: Limiting specific fields](#bonus-limiting-specific-fields)
+5. [Updating the search](#updating-the-search)
+6. [Caveats](#caveats)
+7. [Bonus: Hiding other tools](#bonus-hiding-other-tools)
+8. [Bonus: Limiting specific fields](#bonus-limiting-specific-fields)
 
 ## Introduction
 
@@ -26,6 +27,7 @@ To hide pages away from editors, we need to do two things:
 
 - [Update the desk structure](<(#updating-the-desk-structure)>) so it does not show the page menu for editors.
 - [Update the “Create new document” dialog](#updating-the-create-new-document-dialog) so it doesn’t allow creating pages for editors.
+- [Update the search](#updating-the-search)
 - We will also see how to make things a little more tidy with a few extra features.
 
 ## Accessing the user’s role
@@ -127,12 +129,44 @@ const isShown = item => isAdmin() || EDITOR_TYPES.includes(item.getId())
 export default () => S.defaultInitialValueTemplateItems().filter(isShown)
 ```
 
+## Updating the search
+
+Unfortunately, the studio search cannot really be customized. There is an [experimental feature](https://www.sanity.io/docs/studio-search-config) to give more weight to certain results but there is no way to properly ignore some documents from the search.
+
+Not all hope is lost though! There is a [recent open pull-request](https://github.com/sanity-io/sanity/pull/3253) to implement that very feature, so hopefully it will get merged soon.
+
+Once it’s done, we can programmatically iterate over the documents of our schema to add this ignore flag for the admin-only types for editor users. It will look something like:
+
+```js
+// schema.js
+import createSchema from 'part:@sanity/base/schema-creator'
+import schemaTypes from 'all:part:@sanity/base/schema-type'
+import blogPost from './blogPost'
+import page from './page'
+import { isNotAdmin, EDITOR_TYPES } from './deskStructure'
+
+export default createSchema({
+  name: 'default',
+  types: schemaTypes.concat(
+    Object.entries({ blogPost, page }).map(([type, document]) => ({
+      ...document,
+      // As of writing, this is not yet a production feature. This is still in
+      // development and might not ever reach production.
+      // See: https://github.com/sanity-io/sanity/pull/3253
+      __experimental_search_ignore:
+        isNotAdmin() && !EDITOR_TYPES.includes(type),
+    }))
+  ),
+})
+```
+
 ## Caveats
 
 There are important caveats to take into consideration before implementing this solution:
 
 - This is purely obfuscation, and does not prevent editors from accessing or even updating documents via the API directly. This is **not** a secure access management system.
 - This can be spoofed relatively easily by anyone tech-savvy enough to manipulate client-side JavaScript code, so once again, this really is just obfuscation.
+- As mentioned in the previous section, the search cannot be customized so it’s essentially very easy for anyone to reach any document.
 
 That being said, if you just want to make sure your editors don’t modify the wrong thing by mistake, this is a good enough solution that is quite simple to implement.
 
@@ -179,11 +213,10 @@ The `readOnly` and `hidden` properties that can be defined on fields accept a fu
 }
 ```
 
-{% info %}If you hide a document type for a specific role, and that document type can be referenced in other documents, you might want to mark all its fields as readonly. Otherwise, editors could still follow a reference field and access the editing form on a type they’re not supposed to manage.{% endinfo %}
-
-To make sure fields cannot be updated by editors even if they managed to reach a document they’re not supposed to see (which could happen when following a reference or link to such document), we can automate it. When defining our schema, we iterate over all fields of all documents, and add a `readOnly` property based on the role.
+To make sure fields cannot be updated by editors even if they managed to reach a document they’re not supposed to see (which could happen when following a reference or reaching a document via the search), we can automate it. When defining our schema, we iterate over all fields of all documents, and add a `readOnly` property based on the role.
 
 ```js
+// schema.js
 import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import blogPost from './blogPost'
