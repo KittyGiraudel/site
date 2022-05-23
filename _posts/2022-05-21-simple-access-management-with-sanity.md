@@ -5,13 +5,14 @@ title: Simple access management with Sanity
 Access management is important to any CMS. Unfortunately, [Sanity](https://sanity.io)’s ability to define custom roles is restricted to customers of the business plan. In this article, we will see how to customize the studio based on default roles, something that is possible with all Sanity plans—albeit a little tricky to set up (kind thanks to [Knut](https://twitter.com/kmelve) for showing me the way).
 
 1. [Introduction](#introduction)
-2. [Accessing the user’s role](#accessing-the-users-role)
-3. [Updating the desk structure](#updating-the-desk-structure)
-4. [Updating the “Create new document” dialog](#updating-the-create-new-document-dialog)
-5. [Updating the search](#updating-the-search)
-6. [Caveats](#caveats)
-7. [Bonus: Hiding other tools](#bonus-hiding-other-tools)
-8. [Bonus: Limiting specific fields](#bonus-limiting-specific-fields)
+2. [Caveats](#caveats)
+3. [Accessing the user’s role](#accessing-the-users-role)
+4. [Updating the desk structure](#updating-the-desk-structure)
+5. [Updating the “Create new document” dialog](#updating-the-create-new-document-dialog)
+6. [Updating the search](#updating-the-search)
+7. [Locking fields for editors](#locking-fields-for-editors)
+8. [Locking actions for editors](#locking-actions-for-editors)
+9. [Bonus: Hiding other tools](#bonus-hiding-other-tools)
 
 ## Introduction
 
@@ -23,12 +24,22 @@ Sanity comes with a set of [predefined roles for all plans](https://www.sanity.i
 
 Now for sake of the argument, let’s imagine that our scheme has 2 different types: `blogPost` and `page`. We want editors to be able to handle blog posts themselves, but pages should be managed by administrators only.
 
-To hide pages away from editors, we need to do two things:
+To hide pages away from editors, we need to do a few things:
 
-- [Update the desk structure](<(#updating-the-desk-structure)>) so it does not show the page menu for editors.
+- [Update the desk structure](#updating-the-desk-structure) to hide the page section.
 - [Update the “Create new document” dialog](#updating-the-create-new-document-dialog) so it doesn’t allow creating pages for editors.
-- [Update the search](#updating-the-search)
-- We will also see how to make things a little more tidy with a few extra features.
+- [Update the search](#updating-the-search) to return conditional results based on the role.
+- [Locking page fields](#locking-fields-for-editors) for editors.
+- [Lock page actions](#locking-actions-for-editors) for editors.
+
+## Caveats
+
+There are important caveats to take into consideration before implementing this solution:
+
+- This is purely obfuscation, and does not prevent editors from accessing or even updating documents via the API directly. This is **not** a secure access management system.
+- This can be spoofed relatively easily by anyone tech-savvy enough to manipulate client-side JavaScript code, so once again, this really is just obfuscation.
+
+That being said, if you just want to make sure your editors don’t modify the wrong thing by mistake, this is a good enough solution that is quite simple to implement.
 
 ## Accessing the user’s role
 
@@ -51,25 +62,27 @@ It’s not overly advertised, but you can retrieve information about the current
 }
 ```
 
-The idea is that upon mounting the studio, we can get information about the current user and store it in a local variable or global object.
+The idea is that upon mounting the studio, we can get information about the current user and store it in a local variable or global object. Let’s create a `access.js` file and put the following code into it:
 
 ```js
-// deskStructure.js
+// access.js
 import userStore from 'part:@sanity/base/user'
 
-const getCurrentUser = () => {
+export const EDITOR_TYPES = ['blogPost']
+
+export const getCurrentUser = () => {
   userStore.me.subscribe(user => {
     window._sanityUser = user || undefined
   })
 }
 
-getCurrentUser()
-
 export const isAdmin = (user = window._sanityUser) =>
   user?.roles.map(role => role.name).includes('administrator')
+
+export const isNotAdmin = user => !isAdmin(user)
 ```
 
-Now, we can read the role from `window._sanityUser` via our `isAdmin` utility function to adapt our structure.
+Now, we can use our `isAdmin` and `isNotAdmin` utility functions to create logic based on the user’s role.
 
 ## Updating the desk structure
 
@@ -93,14 +106,21 @@ Let’s rework it a bit. For each document type, we want to render it if the cur
 
 ```js
 // deskStructure.js
-export const EDITOR_TYPES = ['blogPost']
+import { getCurrentUser, isAdmin, EDITOR_TYPES } from './access'
 
-const isShown = item => isAdmin() || EDITOR_TYPES.includes(item.getId())
+// Call our function to retrieve the current user first.
+getCurrentUser()
 
 export default () => {
-  const title = isAdmin() ? 'Content' : 'Editorial content'
+  const admin = isAdmin()
 
-  return S.list().title(title).items(S.documentTypeListItems().filter(isShown))
+  return S.list()
+    .title(admin ? 'Content' : 'Editorial content')
+    .items(
+      S.documentTypeListItems().filter(
+        item => admin || EDITOR_TYPES.includes(item.getId())
+      )
+    )
 }
 ```
 
@@ -122,11 +142,15 @@ And then rework it like this:
 ```js
 // newDocumentStructure.js
 import S from '@sanity/base/structure-builder'
-import { isAdmin, EDITOR_TYPES } from './deskStructure'
+import { isAdmin, EDITOR_TYPES } from './access'
 
-const isShown = item => isAdmin() || EDITOR_TYPES.includes(item.getId())
+export default () => {
+  const admin = isAdmin()
 
-export default () => S.defaultInitialValueTemplateItems().filter(isShown)
+  return S.defaultInitialValueTemplateItems().filter(
+    item => admin || EDITOR_TYPES.includes(item.getId())
+  )
+}
 ```
 
 ## Updating the search
@@ -143,7 +167,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import blogPost from './blogPost'
 import page from './page'
-import { isNotAdmin, EDITOR_TYPES } from './deskStructure'
+import { isNotAdmin, EDITOR_TYPES } from './access'
 
 export default createSchema({
   name: 'default',
@@ -160,58 +184,9 @@ export default createSchema({
 })
 ```
 
-## Caveats
-
-There are important caveats to take into consideration before implementing this solution:
-
-- This is purely obfuscation, and does not prevent editors from accessing or even updating documents via the API directly. This is **not** a secure access management system.
-- This can be spoofed relatively easily by anyone tech-savvy enough to manipulate client-side JavaScript code, so once again, this really is just obfuscation.
-- As mentioned in the previous section, the search cannot be customized so it’s essentially very easy for anyone to reach any document.
-
-That being said, if you just want to make sure your editors don’t modify the wrong thing by mistake, this is a good enough solution that is quite simple to implement.
-
-## Bonus: Hiding other tools
-
-Sanity doesn’t make it overly simple to manage the tools that appear at the top of the page in the upper menu (like the Desk tool, the [media library](https://www.sanity.io/plugins/sanity-plugin-media-library) or the [Groq Vision](https://www.sanity.io/docs/the-vision-plugin) plugin).
-
-If we wanted to hide away all tools but the Desk to editors, we would have to do that in our user observer (knowing that the desk is always the first one):
-
-```js
-import tools from 'all:part:@sanity/base/tool'
-import userStore from 'part:@sanity/base/user'
-
-const getCurrentUser = () => {
-  userStore.me.subscribe(user => {
-    window._sanityUser = user || undefined
-    if (!isAdmin(user)) tools.splice(1)
-  })
-}
-
-getCurrentUser()
-```
-
-A more thorough check could be done if we wanted to only allow some tools for editors instead of removing them all. Once again though, they could still access these tools by reaching the URL directly, so this is just obfuscation.
-
-## Bonus: Limiting specific fields
+## Locking fields for editors
 
 The `readOnly` and `hidden` properties that can be defined on fields accept a function that receives — among other things — the current user. This means it is possible to mark a certain field readonly, or fully hidden, for editors if we want to (as also [demonstrated in the documentation](https://www.sanity.io/docs/conditional-fields#1cd9fa233032)).
-
-```js
-{
-  title: "Unique identifier",
-  name: "id",
-  type: "string",
-  hidden: ({ currentUser }) => !isAdmin(currentUser),
-  validation: Rule => Rule.required()
-},
-{
-  title: "Slug",
-  name: "slug",
-  type: "slug",
-  readOnly: ({ currentUser }) => !isAdmin(currentUser),
-  validation: Rule => Rule.required()
-}
-```
 
 To make sure fields cannot be updated by editors even if they managed to reach a document they’re not supposed to see (which could happen when following a reference or reaching a document via the search), we can automate it. When defining our schema, we iterate over all fields of all documents, and add a `readOnly` property based on the role.
 
@@ -221,7 +196,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import blogPost from './blogPost'
 import page from './page'
-import { isAdmin, EDITOR_TYPES } from './deskStructure'
+import { isAdmin, EDITOR_TYPES } from './access'
 
 export default createSchema({
   name: 'default',
@@ -254,3 +229,48 @@ function addReadOnly(type) {
   }
 }
 ```
+
+## Locking actions for editors
+
+For the same reason we should prevent editors from updating page fields, we should also prevent them from performing actions on page documents. We can do that by [customizing document actions](https://www.sanity.io/docs/document-actions):
+
+```json
+{
+  "implements": "part:@sanity/base/document-actions/resolver",
+  "path": "./resolveDocumentActions.js"
+}
+```
+
+Then we can write a bit of logic to discard all actions on page documents if the user is not an admin:
+
+```js
+// resolveDocumentActions.js
+import defaultResolve from 'part:@sanity/base/document-actions'
+import { isNotAdmin, EDITOR_TYPES } from './access'
+
+export default function resolveDocumentActions(props) {
+  return isAdmin() || EDITOR_TYPES.includes(props.type)
+    ? defaultResolve(props)
+    : []
+}
+```
+
+## Bonus: Hiding other tools
+
+Sanity doesn’t make it overly straightforward to manage the tools that appear at the top of the page in the upper menu (like the Desk tool, the [media library](https://www.sanity.io/plugins/sanity-plugin-media-library) or the [Groq Vision](https://www.sanity.io/docs/the-vision-plugin) plugin).
+
+If we wanted to hide away all tools but the Desk to editors, we would have to do that in our user observer (knowing that the desk is always the first one):
+
+```js
+import tools from 'all:part:@sanity/base/tool'
+import userStore from 'part:@sanity/base/user'
+
+const getCurrentUser = () => {
+  userStore.me.subscribe(user => {
+    window._sanityUser = user || undefined
+    if (!isAdmin(user)) tools.splice(1)
+  })
+}
+```
+
+A more thorough check could be done if we wanted to only allow some tools for editors instead of removing them all. Once again though, they could still access these tools by reaching the URL directly, so this is just obfuscation.
