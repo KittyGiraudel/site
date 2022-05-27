@@ -7,14 +7,6 @@
   display: none;
 }
 
-.Resume__links {
-  text-align: center;
-}
-
-.Resume__links--print {
-  display: none;
-}
-
 .Resume__intro {
   margin-bottom: 2em;
 }
