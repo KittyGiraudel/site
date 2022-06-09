@@ -71,7 +71,7 @@
     "link": "https://a11y-dialog.netlify.app/",
     "category": "Accessibility",
     "showcase": true,
-    "stars": 1800
+    "stars": 2000
   },
   {
     "name": "Spritesh",
@@ -99,7 +99,7 @@
     "link": "https://sass-guidelin.es",
     "category": "Sass",
     "showcase": true,
-    "stars": 800
+    "stars": 850
   },
   {
     "name": "Sass Boilerplate",
