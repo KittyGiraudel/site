@@ -8,10 +8,10 @@ html {
   --vb: 1.5em;
 }
 
-
 .dark body {
   background-color: #222;
   color: #eee;
+  color-scheme: dark;
 }
 
 @font-face {
