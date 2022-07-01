@@ -31,7 +31,7 @@ module.exports = function (config) {
   config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('humans.txt')
   config.addPassthroughCopy('manifest.json')
-  config.addPassthroughCopy('apple-touch-icon.png')
+  config.addPassthroughCopy('apple-touch-icon.jpg')
   config.addPassthroughCopy('favicon.ico')
 
   // CSS and JavaScript are inlined in HTML for performance reasons. The problem
