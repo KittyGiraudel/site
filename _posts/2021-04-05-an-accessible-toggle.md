@@ -214,6 +214,17 @@ The transition here is so the handle gently slides from one side to the other. T
 }
 ```
 
+Let’s not forget to visually hide our actual checkbox, so it sits on top of our toggle and can be clicked, but isn’t actually visible.
+
+```css
+.Toggle__input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+```
+
 ### Focused styles
 
 The reason we inserted our toggle container _after_ the input itself is so we can use the adjacent sibling combinator (`+`) to style the toggle depending on the state of the input (checked, focused, disabled…).
