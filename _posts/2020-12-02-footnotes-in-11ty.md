@@ -103,7 +103,7 @@ From there, we can render the necessary markup to output the footnotes using a f
   <h2 id="footnotes-label">Footnotes</h2>
   <ol>
     {% for footnote in footnotes %}
-    <li id="{{ footnote.id }}-note" role="doc-endnote">
+    <li id="{{ footnote.id }}-note">
       {{ footnote.description | markdown }}
       <a
         href="#{{ footnote.id }}-ref"
