@@ -1,5 +1,5 @@
 ---
-title: Accessible Cards
+title: Accessible cards
 keywords:
   - accessibility
   - a11y

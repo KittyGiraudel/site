@@ -1,5 +1,5 @@
 ---
-title: Accessible Emojis with 11ty
+title: Accessible amojis with 11ty
 ---
 
 As part of the [A11y Advent calendar](/2020/12/01/a11y-advent-calendar/), we [discussed emojis](/2020/12/11/a11y-advent-emojis/) and how they are not always quite accessible by default despite being used a lot and being a key communication tool in this day and age. A couple days ago, I posted a tweet about how I found a cheap and lazy way to improve emojis’ accessibility in [11ty](https://www.11ty.dev/).

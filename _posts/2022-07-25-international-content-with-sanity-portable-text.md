@@ -1,5 +1,5 @@
 ---
-title: International Content with Sanity Portable Text
+title: International content with Sanity Portable Text
 ---
 
 [Portable Text](https://www.sanity.io/docs/presenting-block-text) is Sanity’s custom structured format and associated editor to author rich text documents. It is extensible and customizable to a great extent.
@@ -22,7 +22,7 @@ Taking the first example from the WCAG 3.1.2 page: “He maintained that the DDR
 
 ```html
 <p>
-  He maintained that the DDR (German Democratic Republic) was just a  
+  He maintained that the DDR (German Democratic Republic) was just a
   ‘<span lang="de">Treppenwitz der Weltgeschichte</span>’.
 </p>
 ```
@@ -34,7 +34,7 @@ The documentation for this success criterion outlines perfectly why doing this m
 - It allows braille translation software to follow changes in language, e.g., substitute control codes for accented characters, and insert control codes necessary to prevent erroneous creation of Grade 2 braille contractions.
 - Speech synthesizers that support multiple languages will be able to speak the text in the appropriate accent with proper pronunciation. If changes are not marked, the synthesizer will try its best to speak the words in the default language it works in. Thus, the French word for car, "voiture" would be pronounced "voyture" by a speech synthesizer that uses English as its default language.
 - Marking changes in language can benefit future developments in technology, for example users who are unable to translate between languages themselves will be able to use machines to translate unfamiliar languages.
-- Marking changes in language can also assist user agents in providing definitions using a dictionary. 
+- Marking changes in language can also assist user agents in providing definitions using a dictionary.
 
 Additionally, [Hidde de Vries](https://twitter.com/hdv) rightfully pointed out that [section B.2.1.1 of the Authoring Tools Accessibility Guidelines](https://www.w3.org/TR/ATAG20/#gl_b21) expects tools to make it possible to comply with the WCAG.
 
@@ -132,7 +132,9 @@ const COMPONENTS = {
 
 const Lang = props => <span lang={props.value.tag}>{props.children}</span>
 
-const RichText = props => <PortableText value={props.content} components={COMPONENTS} />
+const RichText = props => (
+  <PortableText value={props.content} components={COMPONENTS} />
+)
 ```
 
 ## Wrapping up

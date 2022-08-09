@@ -1,5 +1,5 @@
 ---
-title: Why Element Queries matter
+title: Why element queries matter
 keywords:
   - css
   - element queries

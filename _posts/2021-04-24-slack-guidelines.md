@@ -1,5 +1,5 @@
 ---
-title: Slack Guidelines
+title: Slack guidelines
 ---
 
 <style>

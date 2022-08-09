@@ -1,5 +1,5 @@
 ---
-title: 30 Frontend Tips
+title: 30 frontend tips
 ---
 
 I recently posted a [Twitter thread](https://twitter.com/KittyGiraudel/status/1468195514529296384) of 30 tweets on frontend development. Pieces of advice I wish I had when I started in the field over 10 years ago. This post is basically the thread verbatim, kept for posterity on this site.

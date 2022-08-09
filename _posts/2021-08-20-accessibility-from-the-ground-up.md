@@ -1,5 +1,5 @@
 ---
-title: Accessibility from the Ground Up
+title: Accessibility from the ground up
 ---
 
 So you are starting or restarting that website or webapp from scratch, and you want to do things well. You know about accessibility, you know it’s important, and no one up the food chain (all them bosses) is challenging this (or invested enough to care). That’s great news! Let’s make that project A C C E S S I B L E. ✨
