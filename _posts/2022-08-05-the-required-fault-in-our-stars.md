@@ -22,7 +22,7 @@ I was recently doing an accessibility review and someone asked me what was the i
 The first version is by far the simplest. All we do is append an asterisk to the label itself.
 
 ```html
-<label htmlFor="name">Name *</label> <input type="text" id="name" required="" />
+<label for="name">Name *</label> <input type="text" id="name" required="" />
 ```
 
 People will see the star and understand that the field is required. In theory, people using screen-readers should hear the asterisk character. However, as [Denis Boudreau explains](https://dboudreau.tumblr.com/post/80636672526/do-not-rely-on-asterisks-alone-to-define-required), the asterisk symbol is not part of the characters that are naturally conveyed at the default verbosity level of most screen readers. So it might be skipped altogether.
@@ -31,7 +31,7 @@ That being said, the field has the `required` attribute, so it will be announced
 
 ```html
 <!-- Not ideal, see below -->
-<label htmlFor="name">Name <span aria-hidden="true">*</span></label>
+<label for="name">Name <span aria-hidden="true">*</span></label>
 <input type="text" id="name" required="" />
 ```
 
@@ -42,7 +42,7 @@ I discussed this approach with [Hidde de Vries](https://twitter.com/hdv) and he 
 A minor improvement we could consider is adding a `title` attribute to the star to give it more context. The `title` attribute is not picked up consistently by assistive technologies, so this is more of a usability tip than an accessibility one — although it appears to be a [recommended WCAG technique (H90)](https://www.w3.org/WAI/WCAG21/Techniques/html/H90.html).
 
 ```html
-<label htmlFor="name">Name <span title="Required field">*</span></label>
+<label for="name">Name <span title="Required field">*</span></label>
 <input type="text" id="name" required="" />
 ```
 
@@ -51,7 +51,7 @@ A minor improvement we could consider is adding a `title` attribute to the star 
 A different approach I have seen used (and have implemented myself) is to vocally indicate that the field is required by providing visually hidden assistive text as part of the label.
 
 ```html
-<label htmlFor="name">
+<label for="name">
   Name
   <span aria-hidden="true" title="Required field">*</span>
   <span class="sr-only">Required field</span>
