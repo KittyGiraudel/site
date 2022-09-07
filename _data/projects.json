@@ -18,12 +18,6 @@
     "category": "JavaScript"
   },
   {
-    "name": "react-menu-button",
-    "description": "A React component wrapper around inclusive-menu-button.",
-    "link": "https://github.com/KittyGiraudel/react-menu-button",
-    "category": "Accessibility"
-  },
-  {
     "name": "react-a11y-dialog",
     "description": "A React component wrapper around a11y-dialog.",
     "link": "https://github.com/KittyGiraudel/react-a11y-dialog",
