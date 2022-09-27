@@ -49,6 +49,8 @@ summary::-webkit-details-marker {
 }
 ```
 
+{% info %} September 20th edit: using `<details>` and `<summary>` for a navigation menu is not fantastic, as [outlined by Gerardo Rodriguez](https://cloudfour.com/thinks/a-details-element-as-a-burger-menu-is-not-accessible/) and [Adrian Roselli](https://adrianroselli.com/2019/04/details-summary-are-not-insert-control-here.html). Because it gets progressively enhanced into a proper disclosure widget when JS kicks in, it _may_ be fine, but generally speaking this is not the right approach. I did not know this at the time. {% endinfo %}
+
 ## Shut it down
 
 As much as I love `<details>` and `<summary>`, they’re also not perfect for a navigation, because clicking elsewhere or tabbing out of it does not close it.
