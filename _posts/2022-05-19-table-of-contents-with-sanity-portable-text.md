@@ -45,7 +45,16 @@ Now, we can create a `findHeadings` function that look for nodes with a `style` 
 const findHeadings = ast => filter(ast, node => /h\d/.test(node.style))
 ```
 
-{%info%}Note that `style` has nothing to do with `style` HTML attribute. It’s a property called `style` on Portable Text nodes which may contain things like `normal`, `h2`, `h3`, etc. {%endinfo%}
+{%info%}Note that `style` has nothing to do with the `style` HTML attribute. It’s a property called `style` on Portable Text nodes which may contain things like `normal`, `h2`, `h3`, etc. {%endinfo%}
+
+**Edit from October 1st, 2022:** Simeon Griggs, from the Sanity team, came up with a clever way to retrieve headings directly in groq by leveraging new groq features. It avoids doing it in JavaScript like before, and could be faster for very large trees since groq is typically quite performant.
+
+```
+*[ _type == "article" ] {
+  body,
+  "headings": body[length(style) == 2 && string::startsWith(style, "h")]
+}
+```
 
 # Nesting headings
 
