@@ -1,5 +1,10 @@
 ---
 title: Templating in HTML
+edits:
+  - date: 2022/10/05
+    md: Some people on HackerNews pointed out that this is actually not “templating” the way Handlebars, Mustache, Twig or whatever else is. Okay? It’s just a title, that doesn’t invalidate the rest of the piece. 🤷‍♀️
+  - date: 2022/10/05
+    md: A lot of people asked about the differences with using a hidden DOM element (like a `<div>` for instance), so I added [a section about it](#why-not-a-hidden-element).
 ---
 
 After a nice discussion on Twitter following [a recent article from Manuel Matuzović](https://web.dev/website-navigation/), I thought it would be worth writing some quick thoughts here. Today, we have a quick look at the `<template>` element and how it can come in handy.
@@ -46,6 +51,25 @@ if ('content' in document.createElement('template')) {
   // `<template>` is supported.
 }
 ```
+
+## Why not a hidden element?
+
+Following this article, some people asked what would be the difference with using a hidden DOM element, such as a `<div>` to hold our template content. After all, it feels similar?
+
+```html
+<!-- Don’t do that, it’s just not as good or safe. -->
+<div id="template" style="display: none;">
+  <!-- Template content here -->
+</div>
+```
+
+There are a few reasons why using a `<template>` is better — some better than others ([thanks to Spankalee](https://news.ycombinator.com/item?id=33089975) for outlining a few I didn’t think of) — so pick what is most convincing to you:
+
+- Unlike content within a hidden container, the content of a `<template>` is _inert_: images and scripts do not load, styles do not apply, elements are not queried, etc.
+- The content model validation is turned off; a `<template>` can safely contain a `<td>`, `<li>` or `<dd>` without a validator complaining. Similarly, a `<template>` can be rendered virtually anywhere, which may not be the case for a `<div>`.
+- CSS can fail, be disabled or customized, so using a CSS declaration to hide a `<div>` is not really bulletproof. On the other hand, chances are that the `<template>` element will always be hidden, even without CSS. The `hidden` HTML attribute is probably a better choice if you go that route.
+- Search engines may be indexing content that’s hidden with CSS. Or maybe not. It’s unclear since their indexing algorithm is notoriously opaque. You probably don’t want meaningless templating data to be indexed.
+- `<template>` is just more semantic and obvious in intent that a hidden container if you ask me, which may be particularly relevant for third-party tools, extensions et al.
 
 ## Wrapping up
 
