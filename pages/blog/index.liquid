@@ -11,6 +11,8 @@ keywords:
 permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
+{% include "ad.html" %}
+
 {% include "styles.html", partials: "components/collection-navigation" %}
 
 {% markdown %}

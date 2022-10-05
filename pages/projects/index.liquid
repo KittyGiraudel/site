@@ -15,6 +15,8 @@ permalink: /projects/
   components/tile
 " %}
 
+{% include "ad.html" %}
+
 {% assign main_projects = projects | where: "showcase", true | slice: 0, 3 %}
 {% include "showcase.html",
   type: "project",

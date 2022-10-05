@@ -3,12 +3,12 @@ layout: default
 ---
 
 {% include "styles.html", partials: "
-  components/collection-navigation,
-  components/figure,
-  components/footnotes,
-  components/post-date,
-  components/code,
-  components/table
+components/collection-navigation,
+components/figure,
+components/footnotes,
+components/post-date,
+components/code,
+components/table
 " %}
 
 <article itemscope itemtype="https://schema.org/Article" class="Post">
@@ -16,9 +16,12 @@ layout: default
   <p class="PostDate">
     <span itemprop="datePublished">{{ page.date | time }}</span>
     {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
-    {% if external %}{% else %}<span itemprop="timeRequired" title="Estimated read time">· {{ content | strip_html | reading_time }}</span>{% endif %}
+    {% if external %}{% else %}<span itemprop="timeRequired" title="Estimated read time">· {{ content | strip_html |
+      reading_time }}</span>{% endif %}
   </p>
   {% endif %}
+
+  {% include "ad.html" %}
 
   {% if external %}
   <p>
@@ -37,8 +40,8 @@ layout: default
 </article>
 
 {% include "collection_navigation.html",
-  page: page,
-  collection: collections.posts,
-  name: "post"
+page: page,
+collection: collections.posts,
+name: "post"
 %}
 {% include "script.html", partials: "post" %}

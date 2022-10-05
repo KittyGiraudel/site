@@ -1,8 +1,9 @@
 .Navigation__list {
   list-style: none;
   margin: 0;
-  padding: 0 1em;
+  padding: 0;
   text-align: center;
+  font-size: 80%;
 }
 
 @media (min-width: 768px) {

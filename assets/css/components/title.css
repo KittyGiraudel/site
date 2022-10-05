@@ -3,13 +3,14 @@
   font-size: 2.5em;
   font-weight: 300;
   line-height: 1.15;
-  margin: 1em 0 0.5em;
+  margin: 0 auto 0.5em;
   text-align: center;
 }
 
 @media (min-width: 768px) {
   .Title {
     font-size: 3.5em;
+    margin-bottom: 0;
   }
 }
 
