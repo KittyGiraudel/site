@@ -13,7 +13,7 @@ I thought it was too bad to keep it exclusively in French so I opened [an issue]
 
 ## Introducing the API
 
-The goal was not to switch the whole thing to English. I think Gaël wanted to keep French and in the mean time provide an English version. So the idea was to find a way to generate a stylesheet per language. Feel like adding Spanish? Go for it, should be a breeze.
+The goal was not to switch the whole thing to English. I think Gaël wanted to keep French and in the meantime provide an English version. So the idea was to find a way to generate a stylesheet per language. Feel like adding Spanish? Go for it, should be a breeze.
 
 My idea was to have a `.scss` file per language, following a pattern like `a11y-<language>.scss` for convenience that gets compiled into a `a11y-<language>.css` file. This file shouldn’t contain much. Actually only:
 

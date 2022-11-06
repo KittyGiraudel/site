@@ -114,7 +114,7 @@ I have to say I found this very curious as being consistent seems like it would 
 
 All participants seemed happy with what they came up with in just a few hours, so there is that. On my side, I am super happy with the workshop. It was such a great teaching experience that I cannot wait to do it again.
 
-If you have any tip or comment, please be sure to share in the comment section. In the mean time, here are a few screenshots of the work done by some participants:
+If you have any tip or comment, please be sure to share in the comment section. In the meantime, here are a few screenshots of the work done by some participants:
 
 <figure class="figure">
   <img src="/assets/images/giving-a-frontend-workshop/recipe-1.png" alt="Screenshot of a participant’s recipe" />
