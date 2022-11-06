@@ -65,7 +65,7 @@
     "link": "https://a11y-dialog.netlify.app/",
     "category": "Accessibility",
     "showcase": true,
-    "stars": 2000
+    "stars": 2100
   },
   {
     "name": "Spritesh",
@@ -85,7 +85,7 @@
     "link": "https://jargon.js.org",
     "category": "JavaScript",
     "showcase": true,
-    "stars": 2200
+    "stars": 2300
   },
   {
     "name": "Sass Guidelines",
