@@ -14,7 +14,7 @@ I recently posted a [Twitter thread](https://twitter.com/KittyGiraudel/status/14
 
 5. Use an incremental approach as much as possible. Don’t prematurely optimize. Things don’t start perfect. Write that crappy code. Copy paste some stuff. Make it work first. Once it works and you get it, improve it, clean it up, polish it. Or not, sometimes it’s also fine!
 
-6. Set up [Prettier](https://prettier.io/) wherever you can, no matter what configuration you choose. Life is too short to argue about coding style. Automate that stuff so your code reviews are actually interesting and valuable. Don’t turn people into human linters — it’s costly and ineffective.
+6. Set up [Prettier](https://prettier.io/) wherever you can, no matter what configuration you choose. Life is too short to argue about coding style. Automate that stuff so your code reviews are actually interesting and valuable. Don’t turn people into human linters—it’s costly and ineffective.
 
 7. It eventually becomes interesting to know a bit about setting up automated deployment or perhaps even testing. No rush, and no big deal if you don’t know much about it. But it did come in handy for me to learn about continuous integration & deployment.
 
@@ -48,7 +48,7 @@ I recently posted a [Twitter thread](https://twitter.com/KittyGiraudel/status/14
 
 22. Following up on this, if you have the authority or position to make someone’s life easier, use it. Lend them your authority if that makes sense. Help them settle conflictual situations. Save them some battles if you can, by just being there and supporting them.
 
-23. Give constructive feedback when asked or possible, and welcome feedback given to you — be it technical or otherwise. It’s a good way to improve, to grow, and to be better towards others. Contribute to creating a culture of feedback in your organization/community.
+23. Give constructive feedback when asked or possible, and welcome feedback given to you—be it technical or otherwise. It’s a good way to improve, to grow, and to be better towards others. Contribute to creating a culture of feedback in your organization/community.
 
 24. If you notice someone being particularly good at something, tell them. Your acknowledgement might mean a lot to them, and be the push they need to keep doing that thing so well. Give praise when due, publicly ideally, otherwise at least in person.
 

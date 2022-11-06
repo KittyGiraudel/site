@@ -26,7 +26,7 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 
 💻 **April 1st**. I started as a frontend developer at [Edenspiekermann](https://edenspiekermann.com) in Berlin. Needless to say it has been a very exciting move, and working with so many inspiring people on a daily basis makes me very happy.
 
-🇳🇱 **April 2 — 5th**. I visited Amsterdam for the first time (yup, took some holidays directly after my start at ESPI ¯\\\_(ツ)\_/¯). Lovely city, it goes without saying, although super crowded at that time of the year. I am likely to go back there for a talk in the next months.
+🇳🇱 **April 2–5th**. I visited Amsterdam for the first time (yup, took some holidays directly after my start at ESPI ¯\\\_(ツ)\_/¯). Lovely city, it goes without saying, although super crowded at that time of the year. I am likely to go back there for a talk in the next months.
 
 ✒ **May 12th**. I signed a contract with SitePoint to co-author [Jump Start Sass](https://www.sitepoint.com/premium/books/jump-start-sass) with [Miriam Suzanne](https://twitter.com/mirisuzanne) (author of Susy grid engine), an introduction book to Sass which will be released in February this year (if all goes right).
 
@@ -43,11 +43,11 @@ All in all, 2015 was a very fine year, not without a few downs as well though. H
 <figcaption>Me, casually writing some code. Courtesy of <a href="https://twitter.com/franklyandrea">Andrea Franke</a>.</figcaption>
 </figure>
 
-🎤 **August 27 — 28th**. I gave a talk entitled [Three Years of Purging Sass](https://speakerdeck.com/kittygiraudel/three-years-of-purging-sass) at Frontend Conference in Zurich. It was a great venue, and as always, a good opportunity to meet all the nice folks from our industry.
+🎤 **August 27–28th**. I gave a talk entitled [Three Years of Purging Sass](https://speakerdeck.com/kittygiraudel/three-years-of-purging-sass) at Frontend Conference in Zurich. It was a great venue, and as always, a good opportunity to meet all the nice folks from our industry.
 
-🔥 **August — September**. Some time at the end of the summer, I started suffering from tendonitis on my right wrist, probably (although yet to be confirmed) due to a larger than average amount of stress at that time. To this day, I still happen to feel some pain in the arm, even though I [found some tricks to leverage it](/2015/12/02/dealing-with-tendonitis/).
+🔥 **August–September**. Some time at the end of the summer, I started suffering from tendonitis on my right wrist, probably (although yet to be confirmed) due to a larger than average amount of stress at that time. To this day, I still happen to feel some pain in the arm, even though I [found some tricks to leverage it](/2015/12/02/dealing-with-tendonitis/).
 
-🇹🇷 **September 17 — 21st**. I left Europe for the very first time, although didn’t go much further and visited Istanbul. Very interesting city, although probably not one I would like to live in. I have good memories though.
+🇹🇷 **September 17–21st**. I left Europe for the very first time, although didn’t go much further and visited Istanbul. Very interesting city, although probably not one I would like to live in. I have good memories though.
 
 💔 **October 4th**. I ended a 4 years long relationship with my girlfriend.
 

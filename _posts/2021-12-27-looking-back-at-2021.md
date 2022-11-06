@@ -22,7 +22,7 @@ Hard to really look at those last years feeling super positive to be honest, giv
 
 🪒 **July 30th.** I started facial hair removal therapy. As of writing, I have gone through 4 sessions already, and am looking for another 3 or 4 more to be completely finished. Having facial hair, even a little, has been a big source of dysphoria for me, so I’m super excited getting rid off it for good.
 
-👩‍💻 **August.** I took on a position of Group Engineering Lead, which is significantly less hands on than I’ve been used to — something I’m not necessarily unhappy with. This gave me the opportunity to have a bigger impact on the Product & Engineering organization as a whole, which is something I’m proud of.
+👩‍💻 **August.** I took on a position of Group Engineering Lead, which is significantly less hands on than I’ve been used to—something I’m not necessarily unhappy with. This gave me the opportunity to have a bigger impact on the Product & Engineering organization as a whole, which is something I’m proud of.
 
 👀 **September 13th.** I got asked to be a reviewer for the [Smart Interface Design Patters course](https://smart-interface-design-patterns.com/) by Vitaly Friedman, the founder of Smashing Magazine. It was a lot of fun to be able to go through the whole content and give suggestions and feedback!
 

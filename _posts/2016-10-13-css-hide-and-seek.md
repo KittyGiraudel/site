@@ -107,7 +107,7 @@ As we thought we discovered a real bug, I headed up to Bootstrap in order to ope
 
 - [Narrator](https://microsoftaccessibility.uservoice.com/forums/307429-microsoft-accessibility-feedback/suggestions/16717318-focusable-elements-should-fire-focus-event-recei), included in Windows 10 and Windows Phone;
 - [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=657157), impacting TalkBack on Android;
-- [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1000082) — this one was already opened, but also by Patrick Lauke recently;
+- [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1000082)—this one was already opened, but also by Patrick Lauke recently;
 - and finally, [two](https://bugs.webkit.org/show_bug.cgi?id=116046 "First webkit bug") [bugs](https://bugs.webkit.org/show_bug.cgi?id=163658 "Second webkit bug") for Webkit, impacting VoiceOver.
 
 So. In fact, **skip links don’t work with screen readers on touch devices at the time of writing**. Nice.

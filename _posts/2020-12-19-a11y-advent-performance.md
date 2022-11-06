@@ -20,4 +20,4 @@ Performance is a critical topic, for many reasons. In e-commerce, any extra tent
 
 One specific thing I would like to mention though: [icon fonts are notoriously bad](https://css-tricks.com/icon-fonts-vs-svg/) for a variety of reasons—one of them being that they do not render until the font **and** styles have been fully downloaded, parsed and evaluated. When iconography is used as main content (such as in links and buttons), using an icon font might mean a broken and inaccessible interface until the font eventually shows up. The font could also fail to load, or be overwritten entirely by custom styles, leaving the UI in an awkward and possibly unusable state.
 
-If you are interested in frontend performance and would like to ramp up your skills, I cannot recommend [this series by Harry Roberts](https://gumroad.com/l/eihdtmcwf) enough — definitely worth the money and a goldmine of information.
+If you are interested in frontend performance and would like to ramp up your skills, I cannot recommend [this series by Harry Roberts](https://gumroad.com/l/eihdtmcwf) enough—definitely worth the money and a goldmine of information.

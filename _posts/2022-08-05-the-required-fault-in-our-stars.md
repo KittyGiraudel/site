@@ -35,11 +35,11 @@ That being said, the field has the `required` attribute, so it will be announced
 <input type="text" id="name" required="" />
 ```
 
-I discussed this approach with [Hidde de Vries](https://twitter.com/hdv) and he suggested that it may be useful for screen-reader users to know that there’s a star in the label. For instance, if before the form there’s an intro that says “Fields marked with a star (`*`) are required” or something along those lines — a [recommended technique (G184)](https://www.w3.org/WAI/WCAG21/Techniques/general/G184.html) to satisfy [Success Criterion 3.3.2: Labels or Instructions](https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions).
+I discussed this approach with [Hidde de Vries](https://twitter.com/hdv) and he suggested that it may be useful for screen-reader users to know that there’s a star in the label. For instance, if before the form there’s an intro that says “Fields marked with a star (`*`) are required” or something along those lines—a [recommended technique (G184)](https://www.w3.org/WAI/WCAG21/Techniques/general/G184.html) to satisfy [Success Criterion 3.3.2: Labels or Instructions](https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions).
 
 {% info %} [Scott O’Hara](https://twitter.com/scottohara/status/1556684102983716865?s=20&t=76fQrM6OoA_cTHqyEIJd3A) points out that tweaking the wording to avoid focusing on the star character (e.g. “Fill in all required fields (`*`)”) might be a good idea. Then the `required` attibute (or `aria-required`) indicates the required nature of the field without having to try and make someone look for the `*` which may not even be announced. {% endinfo %}
 
-A minor improvement we could consider is adding a `title` attribute to the star to give it more context. The `title` attribute is not picked up consistently by assistive technologies, so this is more of a usability tip than an accessibility one — although it appears to be a [recommended WCAG technique (H90)](https://www.w3.org/WAI/WCAG21/Techniques/html/H90.html).
+A minor improvement we could consider is adding a `title` attribute to the star to give it more context. The `title` attribute is not picked up consistently by assistive technologies, so this is more of a usability tip than an accessibility one—although it appears to be a [recommended WCAG technique (H90)](https://www.w3.org/WAI/WCAG21/Techniques/html/H90.html).
 
 ```html
 <label for="name">Name <span title="Required field">*</span></label>

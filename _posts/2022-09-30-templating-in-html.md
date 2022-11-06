@@ -63,7 +63,7 @@ Following this article, some people asked what would be the difference with usin
 </div>
 ```
 
-There are a few reasons why using a `<template>` is better — some better than others ([thanks to Spankalee](https://news.ycombinator.com/item?id=33089975) for outlining a few I didn’t think of) — so pick what is most convincing to you:
+There are a few reasons why using a `<template>` is better—some better than others ([thanks to Spankalee](https://news.ycombinator.com/item?id=33089975) for outlining a few I didn’t think of)—so pick what is most convincing to you:
 
 - Unlike content within a hidden container, the content of a `<template>` is _inert_: images and scripts do not load, styles do not apply, elements are not queried, etc.
 - The content model validation is turned off; a `<template>` can safely contain a `<td>`, `<li>` or `<dd>` without a validator complaining. Similarly, a `<template>` can be rendered virtually anywhere, which may not be the case for a `<div>`.
