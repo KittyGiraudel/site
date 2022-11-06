@@ -11,6 +11,7 @@ title: Understanding the gender spectrum
 3. [Using pronouns](#using-pronouns)
 4. [Etiquette](#etiquette)
 5. [Collecting gender information](#collecting-gender-information)
+6. [Inclusive language](#inclusive-language)
 
 ## Introduction
 
@@ -81,3 +82,15 @@ It is better to avoid the words _custom_, _other_ or _X_, as all can feel a litt
 Another important thing to mention is the availability of such information. Some people might not be comfortable openly disclosing themselves as trans, yet they might want to be recognized as such in some contexts.
 
 For that reason, it is always a good idea to specify who has access to that information in order to avoid inadvertently outing people. Having something as simple as “Your gender will be visible to all employees” or “Your gender will be restricted to People Operations team and will be treated as confidential information” is good, for example.
+
+## Inclusive language
+
+There is a lot of discussion about the best way to phrase “people who do not identify as cisgender men.” There are a couple of options which range from sub-optimal to downright terrible, and I thought it might be helpful to walk through some of them.
+
+- *Women:* Pretty exclusive as it doesn’t include trans men and non-binary people. Fine to use when you want to say just that: women (cis and trans alike), but not good enough if you want to address everyone who’s not a cis man.
+- *Women & non-binary:* Better, but still doesn’t account for trans men. It also treats non-binary people as “women lite”, which might or might not be the case depending on the person. It can also feel awkward for AMAB non-binary people.
+- *Non men:* Generally not bad, as this gets pretty close to the goal, which is to address everyone who’s not a cis man. Still, it erases trans men, which is something that already happens to often.
+- *Womyn:* This term has been co-opted by the trans-exclusive radical feminism movement to explicitly single out trans women, so this is awful.
+- *Womxn:* Slightly better, but might be considered an attempt at implying that trans women are not real women by going out of one’s way not to just say “women”, so also no. And again, doesn’t account for trans men anyway.
+
+So where does that leave us? Ultimately, it depends a lot on what we’re trying to say of course. Yet, a pretty inclusive expression would be *“under-represented genders”* or *“marginalized genders”*, as it covers everyone who’s not a cis man. It doesn’t quite roll on the tongue, but at least it’s all encompassing and doesn’t exclusive or erase any group.
