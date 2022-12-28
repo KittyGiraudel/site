@@ -1,0 +1,49 @@
+---
+title: Looking back at 2022
+---
+
+Another year closing in. Honestly, it’s been pretty uneventful from my side this year. Year 3 of the pandemic and I’ve been relatively accustomed to, well, not doing a whole lot. No real travel plans, no conferences… It’s been quiet.
+
+## Timeline
+
+🧩 **January.** I got in a bit of an [Advent of Code](https://adventofcode.com) frenzy and did all the puzzles from all previous years, all the way back to 2015. It was fun, I learnt a lot, and sharpened my coding skills for this year.
+
+🎤 **January 20th.** I was kindly invited by Sarah Dayan and Bryan Robinson from Algolia to appear on the [Developer Experience podcast](https://developerexperience.buzzsprout.com/1806381/9919419-accessibility-and-developer-experience) to talk about the overlap between User Experience and Developer Experience, particularly in terms of accessibility.
+
+📦 **January 31st.** As a result, I open-sourced a small library called [Circularray](https://github.com/KittyGiraudel/circularray). It was a fun way for me to learn about double-ended queues (like the `deque` Python module) and implement them from scratch in JavaScript.
+
+🏳️‍⚧️ **March 15th.** First time seeing my parents in person since coming out to them. It wasn’t too easy, but also didn’t go too bad, so all in all I think it’s okay.
+
+🤧 **May 22nd.** I caught COVID, after 2 and a half years of avoiding it, despite 3 shots. A few bad days of fever and flu symptoms, followed by tiredness for another week. Could have been worse to be fair, but certainly not fun.
+
+🦍 **May 25th.** I got laid off from Gorillas along with 350 employees in an effort to reduce costs amid the company’s inability to raise sufficient money to keep operations running.
+
+☀️ **June 13–22th.** My brother and I visited our sisters in the south of France. A week full of warm weather, sun, beach and sea wind. Delightful (although I was still recovering from COVID)!
+
+🚶‍♀️ **June 25th.** I went on what became a daily walk of 30–60 minutes. Haven’t missed a day since then!
+
+⚡️ **September 1st.** I joined EVA Global as a Senior Engineering Manager.
+
+📣 **September 16th.** I became one of the first [Sanity](https://www.sanity.io/) Ambassadors, kickstarting their new community program after having spent months involved in the community.
+
+🚪 **September 27th.** I resigned from EVA Global. It just wasn’t for me, and I didn’t feel like extending my employment any longer.
+
+🎥 **October 1st.** I joined Cofenster as a VP of Engineering.
+
+🌆 **October 11–14th.** I visited Hamburg for the first time to meet the Cofenster teams. I gotta say, the city center is lovely when the weather in nice.
+
+👗 **November.** I did an entire month wearing only dresses or skirts, because I felt like it and because I wanted to make it more normal for me to wear that kind of outfit. It was nice, except for the cold!
+
+🏳️‍🌈 **November 29th.** I spoke at a webinar on Diversity, Equity & Inclusion in the workplace.
+
+🌱 **November 15th.** This day marked 4 years for me without eating meat and 3 years without fish.
+
+💻 **December.** I participated in Advent of Code again this year and managed to go all the way through although I have skipped a day or two due to overwhelming complexity (for me).
+
+👋 **December 19th.** I got the opportunity to meet Hidde de Vries during my short trip in the Netherlands! Lovely to finally meet in person after having crossed paths so many times online.
+
+## Some random stats
+
+- I have walked about 750 kilometers since this summer, or about 4 kilometers a day on average.
+- I wrote 19 articles this year, including [30 Frontend Tips](/2022/01/04/30-frontend-tips), [Hiring at Gorillas](https://gorillas.io/en/blog/how-we-hire-product-design-and-engineering) and [Help Me Help You: A Guide to Asking for Help](/2022/07/15/a-guide-to-asking-for-help).
+- I’ve grown my hair about 25 centimeters.
