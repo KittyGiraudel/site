@@ -31,8 +31,8 @@ For the styling we can use what we learnt in [day 3 of this calendar](/2020/12/0
 .sr-only.sr-only--focusable:focus,
 .sr-only.sr-only--focusable:active {
   clip: auto !important;
-  -webkit-clip-path: auto !important;
-  clip-path: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
   height: auto !important;
   overflow: visible !important;
   width: auto !important;
