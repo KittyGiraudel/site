@@ -120,6 +120,8 @@ As of version 3, the `readOnly` property no longer works if the field lives insi
 
 This is now [reported in #4124](https://github.com/sanity-io/sanity/issues/4124).
 
+**Edit:** This was fixed very rapidly. Kudos to the Sanity team for reacting so quickly.
+
 ## On the bright side
 
 As you can see, it’s sometimes a little rough around the edges when doing things that are not super basic. That being said, version 3 brings a lot of super nice improvements. In no particular order:
