@@ -1,5 +1,8 @@
 ---
 title: Understanding the gender spectrum
+edits:
+  - date: 2023/07/08
+    md: I updated the section on [inclusive language](#inclusive-language) to include the term “FINTA”.
 ---
 
 > I originally wrote this piece for our documentation at Gorillas in order to advocate for a more inclusive workplace. After having [mentioned it on Twitter](https://twitter.com/KittyGiraudel/status/1446436115553177670?s=20) and been requested it a few times, I decided to publish it. I hope this helps!
@@ -94,3 +97,5 @@ There is a lot of discussion about the best way to phrase “people who do not i
 - *Womxn:* Slightly better, but might be considered an attempt at implying that trans women are not real women by going out of one’s way not to just say “women”, so also no. And again, doesn’t account for trans men anyway.
 
 So where does that leave us? Ultimately, it depends a lot on what we’re trying to say of course. Yet, a pretty inclusive expression would be *“under-represented genders”* or *“marginalized genders”*, as it covers everyone who’s not a cis man. It doesn’t quite roll on the tongue, but at least it’s all encompassing and doesn’t exclusive or erase any group.
+
+There is also the German acronym FINTA which stands for “Frauen, Intergeschlechtliche, Nicht-binäre, Trans und Agender” and translates into “Female, Intersex, Non-binary, Trans and Agender.” This is a pretty great and inclusive term, although it’s not exactly obvious from the get go (since it’s an acronym). Nevertheless, it is my preferred term in circles where it can be established and further used.
