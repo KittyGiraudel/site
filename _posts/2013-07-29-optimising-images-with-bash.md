@@ -8,17 +8,15 @@ keywords:
   - optimisation
 ---
 
-{% info %}
-The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at Future PLC (Grenoble, France) and my brother. He also knows his way in Bash scripting and frontend performance. I’m very glad to have him writing here. :)
-{% endinfo %}
+{% info %} The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at Future PLC (Grenoble, France) and my brother. He also knows his way in Bash scripting and frontend performance. I’m very glad to have him writing here. :) {% endinfo %}
 
 You can’t talk about frontend performance without talking about images. They are the heaviest component of a webpage. This is why it is important to optimise images before pushing things live.
 
 So let’s try a not-so-easy exercise: write a script to optimise a directory of images. Yup, I know there are a lot of web services offering this kind of feature but:
 
-* most of them can’t optimise several files at once,
-* it’s not quite simple to use it in an industrial process,
-* it’s always interesting to learn how those services work.
+- most of them can’t optimise several files at once,
+- it’s not quite simple to use it in an industrial process,
+- it’s always interesting to learn how those services work.
 
 > Shell scripting is a powerful skill to improve development efficiency by automating common tasks.
 
@@ -44,10 +42,10 @@ Since it can be quite a pain to set up a virtual machine, we will go for the lat
 
 To add a package, click on the _"Skip"_ label to switch it to a package version. Search for the following packages and add them (clicking on _"Skip"_ is enough):
 
-* optipng
-* pngcrush
-* jpeg
-* util-linux
+- optipng
+- pngcrush
+- jpeg
+- util-linux
 
 Once Cygwin is fully installed, simply open a Cygwin terminal. Let’s create a workspace to host our optimisation script: we create a _"workspace"_ directory in the current user home:
 
@@ -98,11 +96,11 @@ You’ll find the whole script at the end of the article. If you want to try thi
 
 As obvious as it can be, our script needs some parameters:
 
-* `-i` or `--input` to specify an input directory
-* `-o` or `--output` to specify an output directory
-* `-q` or `--quiet` to disable verbose output
-* `-s` or `--no-stats` to disable the output of stats after the run
-* `-h` or `--help` to display some help
+- `-i` or `--input` to specify an input directory
+- `-o` or `--output` to specify an output directory
+- `-q` or `--quiet` to disable verbose output
+- `-s` or `--no-stats` to disable the output of stats after the run
+- `-h` or `--help` to display some help
 
 There is a common pattern to parse script options, based on the `getopt` command. First, we create two variables to store both the short and long version of each parameter. A parameter which requires a specific value (for example our input and output directories) must end with ":".
 
@@ -122,8 +120,8 @@ Then we are going to use the `getopt` command to parse the parameters passed to 
 
 Now, we have to create two functions:
 
-* the `usage()` function, called in the parameters loop if there is a `-h` or `--help` parameter,
-* a `main()` function which will do the optimisation of the images.
+- the `usage()` function, called in the parameters loop if there is a `-h` or `--help` parameter,
+- a `main()` function which will do the optimisation of the images.
 
 To be called, the functions must be declared before the parameters loop.
 
@@ -343,7 +341,7 @@ main()
 	IMAGES=$(find $INPUT -regextype posix-extended -regex '.*\.(jpg|jpeg|png)' | grep -v $OUTPUT)
 
 	if [ "$QUIET" == "0" ]; then
-		echo &ndash;&ndash;&ndash; Optimising $INPUT &ndash;&ndash;&ndash;
+		echo ––– Optimising $INPUT –––
 		echo
 	fi
 	for CURRENT_IMAGE in $IMAGES; do
@@ -429,9 +427,9 @@ main
 
 Of course this is just a simple sample (no pun intended); there is still a lot of room for improvements. Here is a couple of things we could do to improve it:
 
-* add GIF support,
-* use other tools to optimise JPG and PNG in the `optimise_image` method (by the way, I highly recommand you to read [this great article](https://www.phpied.com/big-list-image-optimisation-tools) by Stoyan Stefanov),
-* add a progress bar,
-* try to add some lossy optimisations for JPG,
-* add an auto-upload function to upload to your FTP,
-* use a configuration file to tweak the optimisation tools…
+- add GIF support,
+- use other tools to optimise JPG and PNG in the `optimise_image` method (by the way, I highly recommand you to read [this great article](https://www.phpied.com/big-list-image-optimisation-tools) by Stoyan Stefanov),
+- add a progress bar,
+- try to add some lossy optimisations for JPG,
+- add an auto-upload function to upload to your FTP,
+- use a configuration file to tweak the optimisation tools…

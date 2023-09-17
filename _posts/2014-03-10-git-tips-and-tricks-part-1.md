@@ -5,12 +5,10 @@ keywords:
   - git
 edits:
   - date: 2014/03/17
-    md: "[Git tips and tricks – Part 2](/2014/03/17/git-tips-and-tricks-part-2/) is out! Go check it."
+    md: '[Git tips and tricks – Part 2](/2014/03/17/git-tips-and-tricks-part-2/) is out! Go check it.'
 ---
 
-{% info %}
-The following is the first post of a series written by my dear brother Loïc, Git expert at Future PLC. I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!
-{% endinfo %}
+{% info %} The following is the first post of a series written by my dear brother Loïc, Git expert at Future PLC. I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness! {% endinfo %}
 
 Hi people! Today, I’m gonna share with you some Git tips & tricks I’ve already shared with my workmates at Future PLC. But before even starting let’s never forget the more important laws of Git.
 
@@ -28,11 +26,11 @@ My favorite so far has been created by [Tung Nguyen](https://gist.github.com/tun
 
 This prompt displays:
 
-* username@host
-* your current path
-* the current branch
-* a lightning if you have some modified files in your working directory or in your staging area, waiting to be packed in a commit
-* an up, down or up-and-down arrow if you have commits to push or pull from remote repository
+- username@host
+- your current path
+- the current branch
+- a lightning if you have some modified files in your working directory or in your staging area, waiting to be packed in a commit
+- an up, down or up-and-down arrow if you have commits to push or pull from remote repository
 
 <figure class="figure">
 <img src="/assets/images/git-tips-and-tricks-part-1/git-prompt.png" alt="" />
@@ -114,7 +112,7 @@ In the diff output, each change is displayed like this :
 $ git diff
 diff --git a/Gruntfile.js b/Gruntfile.js
 index 74d58f9..569449c 100755
-&ndash;&ndash;&ndash; a/Gruntfile.js
+––– a/Gruntfile.js
 +++ b/Gruntfile.js
 @@ -41,7 +41,7 @@ module.exports = function(grunt) {
      },
@@ -141,7 +139,7 @@ Let’s take an explicite example:
 $ git diff
 diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
 index b2185a2..887387f 100755
-&ndash;&ndash;&ndash; a/web/js/lazy.js
+––– a/web/js/lazy.js
 +++ b/web/js/lazy.js
 @@ -427,28 +427,30 @@
          return;
@@ -201,7 +199,7 @@ What are the important updates in this piece of code? It’s not quite easy to c
 $ git diff -w
 diff --git a/web/js/testedJs/lazy.js b/web/js/testedJs/lazy.js
 index b2185a2..887387f 100755
-&ndash;&ndash;&ndash; a/web/js/lazy.js
+––– a/web/js/lazy.js
 +++ b/web/js/lazy.js
 @@ -427,7 +427,10 @@
          return;

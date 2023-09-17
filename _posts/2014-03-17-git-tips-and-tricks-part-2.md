@@ -5,12 +5,10 @@ keywords:
   - git
 edits:
   - date: 2014/03/24
-    md: "[Git tips and tricks – Part 3](/2014/03/24/git-tips-and-tricks-part-3/) is out! Go check it."
+    md: '[Git tips and tricks – Part 3](/2014/03/24/git-tips-and-tricks-part-3/) is out! Go check it.'
 ---
 
-{% info %}
-This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!
-{% endinfo %}
+{% info %} This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu! {% endinfo %}
 
 Hey people! I hope you enjoyed the first part of the series. In this one, I will introduce you even more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced Git concepts and commands. Ready?
 
@@ -34,7 +32,7 @@ By default, the `git diff` command displays the filename with either `a/` or `b/
 $ git diff
 diff --git a/Gruntfile.js b/Gruntfile.js
 index 74d58f9..569449c 100755
-&ndash;&ndash;&ndash; a/Gruntfile.js
+––– a/Gruntfile.js
 +++ b/Gruntfile.js
 ```
 
@@ -44,7 +42,7 @@ This prefix can be a little bit annoying when you want to quickly copy and past 
 $ git diff --no-prefix
 diff --git Gruntfile.js Gruntfile.js
 index 74d58f9..569449c 100755
-&ndash;&ndash;&ndash; Gruntfile.js
+––– Gruntfile.js
 +++ Gruntfile.js
 ```
 
@@ -315,11 +313,11 @@ $ git log -1 --oneline
 
 Now we’ve covered the basics, let’s move on to some advanced Git techniques. Those tricks get useful when you have a complex Git environment which can require:
 
-* to regularly merge or rebase with other developers' stuff (which can introduce conflicts)
-* to play with commits (split, inject, merge, reorder)
-* to dig deep in your commit history to find the origin of a bug
-* to juggle with many branches
-* to use some submodules to split your project into several parts
+- to regularly merge or rebase with other developers' stuff (which can introduce conflicts)
+- to play with commits (split, inject, merge, reorder)
+- to dig deep in your commit history to find the origin of a bug
+- to juggle with many branches
+- to use some submodules to split your project into several parts
 
 Each commit must have only one purpose (c.f. Law #2 at the beginning of the Git Tips & Tricks - Part 1), but it’s easy to find some small mistakes when editing a file. If you don’t want to add those little fixes when you’re creating your commit in order to put them in a dedicated commit, the best way is to split the file modifications when adding the file to the staging area.
 
@@ -339,7 +337,7 @@ I’ve just created a text file with only one line. Now, I just want to add a se
 $ git diff
 diff --git file.txt file.txt
 index 6214953..1d54a52 100644
-&ndash;&ndash;&ndash; file.txt
+––– file.txt
 +++ file.txt
 @@ -1 +1,2 @@
 -Here’s my tetx file
@@ -353,7 +351,7 @@ If I want to split the two changes in two separate commits, I can use the `--pat
 $ git add --patch file.txt
 diff --git a/file.txt b/file.txt
 index 6214953..1d54a52 100644
-&ndash;&ndash;&ndash; a/file.txt
+––– a/file.txt
 +++ b/file.txt
 @@ -1 +1,2 @@
 -Here’s my tetx file
@@ -364,14 +362,14 @@ Stage this hunk [y,n,q,a,d,/,e,?]?
 
 At the end of the `git add` command, there is a prompt message asking me if I want to add this hunk to the commit. The available options are:
 
-* **y**es,
-* **n**o,
-* **q**uit,
-* **a**ll later hunks (including current one),
-* **d**on’t add all the later hunks (included current one),
-* search for a hunk with a regexp (**/**),
-* **e**dit the current hunk,
-* show some help (**?**).
+- **y**es,
+- **n**o,
+- **q**uit,
+- **a**ll later hunks (including current one),
+- **d**on’t add all the later hunks (included current one),
+- search for a hunk with a regexp (**/**),
+- **e**dit the current hunk,
+- show some help (**?**).
 
 If I type **e**, the hunk will be opened in my text editor:
 
@@ -381,7 +379,7 @@ If I type **e**, the hunk will be opened in my text editor:
 -Here’s my tetx file
 +Here’s my text file
 +And this is the second line
-# &ndash;&ndash;&ndash;
+# –––
 # To remove '-' lines, make them ' ' lines (context).
 # To remove '+' lines, delete them.
 # Lines starting with # will be removed.
@@ -420,7 +418,7 @@ My file is partially staged. If I want to see the staged part:
 $ git diff --cached
 diff --git file.txt file.txt
 index 6214953..cc58d14 100644
-&ndash;&ndash;&ndash; file.txt
+––– file.txt
 +++ file.txt
 @@ -1 +1 @@
 -Here’s my tetx file
@@ -433,7 +431,7 @@ If I want to see the unstaged part:
 $ git diff
 diff --git file.txt file.txt
 index cc58d14..1d54a52 100644
-&ndash;&ndash;&ndash; file.txt
+––– file.txt
 +++ file.txt
 @@ -1 +1,2 @@
  Here’s my text file
@@ -481,18 +479,18 @@ $ git cherry-pick [commit SHA1]
 
 This command has some useful parameters:
 
-* `-e` to edit git message
-* `-x` to add a line "Cherry-picked commit" in the commit message
-* `--no-commit` or `-n` to apply the commit changes in the unstaged area (unstead of creating a commit in the branch)
+- `-e` to edit git message
+- `-x` to add a line "Cherry-picked commit" in the commit message
+- `--no-commit` or `-n` to apply the commit changes in the unstaged area (unstead of creating a commit in the branch)
 
 ## Final thoughts
 
 That’s it for today folks! In the next parts, we’ll deal with the following subjects:
 
-* fix conflicts with graphical tools
-* find a bug with a dichotomous process
-* why push must be forced sometimes
-* understand difference between merge and rebase
-* submodules
+- fix conflicts with graphical tools
+- find a bug with a dichotomous process
+- why push must be forced sometimes
+- understand difference between merge and rebase
+- submodules
 
 Meanwhile keep practicing!
