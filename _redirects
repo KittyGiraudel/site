@@ -1,12 +1,16 @@
-https://hugogiraudel.com/*                https://kittygiraudel.com/:splat         301!
+https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 
-/rss                                      /rss/index.xml                           301!
-/rss/*                                    /rss/index.xml                           301!
-/feeds/feed.xml                           /rss/index.xml                           301!
-/feed                                     /rss/index.xml                           301!
-/feeds                                    /rss/index.xml                           301!
+/rss /rss/index.xml 301! /rss/\* /rss/index.xml 301! /feeds/feed.xml /rss/index.xml 301! /feed /rss/index.xml 301! /feeds /rss/index.xml 301!
 
-/2013/02/04/css-gradients/                /2013/02/04/dig-deep-into-css-gradients/ 301!
-/2021/03/07/what-if-skip-links-were-good/ /2021/03/07/imagining-native-skip-links/ 301!
-/2021/10/08/understanding-gender-non-conformity/ /2021/10/08/understanding-the-gender-spectrum/ 301!
-/2013/07/17/sass-future /2013/07/17/looking-into-the-future-of-sass 301!
+/2013/02/04/css-gradients/ /2013/02/04/dig-deep-into-css-gradients/ 301!  
+/2021/03/07/what-if-skip-links-were-good/ /2021/03/07/imagining-native-skip-links/ 301!  
+/2021/10/08/understanding-gender-non-conformity/ /2021/10/08/understanding-the-gender-spectrum/ 301!  
+/2013/07/17/sass-future /2013/07/17/looking-into-the-future-of-sass 301!  
+/2015/01/05/looking-back-at-2014 /2015/01/05/2014-in-review 301!  
+/2016/01/05/looking-back-at-2015 /2016/01/05/2015-in-review 301!  
+/2017/01/03/looking-back-at-2016 /2017/01/03/2016-in-review 301!  
+/2017/12/30/looking-back-at-2017 /2017/12/30/2017-in-review 301!  
+/2019/12/31/looking-back-at-2019 /2019/12/31/2019-in-review 301!  
+/2020/12/31/looking-back-at-2020 /2020/12/31/2020-in-review 301!  
+/2021/12/27/looking-back-at-2021 /2021/12/27/2021-in-review 301!  
+/2022/12/28/looking-back-at-2022 /2022/12/28/2022-in-review 301!
