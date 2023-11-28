@@ -109,6 +109,12 @@ There are some things we can do to squeeze some bites out:
 
 At the end of the day, there is only so much we can do though. Linear gradients use a verbose syntax, and we need a lot of color stops to make hard cuts between scenes.
 
+{% info %}[Roma Komarov](https://twitter.com/kizmarh) actually found a few additional ways to compress the gradient value even further (see [his CodePen for the code](https://codepen.io/kizu/pen/zYeJvxr?editors=1100)). I quote:
+
+1. Biggest one: we can use the [transition hints](https://drafts.csswg.org/css-images-4/#color-transition-hint) (a rather obscure feature of CSS gradients) with the `0` value to remove a bunch of duplication. The way it works: whenever the gradient has a color stop at a smaller distance value than the previous one, it uses the bigger of the two. The transition hint is basically a color stop without a color, so moving it to the “0” essentially makes the next color to start immediately from its full value.
+2. A smaller one: we can use the four characters hex value for transparent color: #FFF0, (or #0000 or anything else), which is probably the smallest way we can achieve a transparent color (though, not for all cases, as it retains the color information) :)
+3. A tiny one: we can store only the color stops inside the gradient, and use the variable inside the `linear-gradient()` itself, making it so we won't repeat that part every time.{% endinfo %}
+
 ## Accessibility
 
 Because it uses CSS, it’s not very accessible on its own. What I mean by this is that one would need to be able to _see_ the track to notice the scene stops; it is not available to screen-readers or keyboard navigation.
