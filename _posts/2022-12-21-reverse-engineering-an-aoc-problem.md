@@ -95,7 +95,7 @@ const getHumnNumberByBruteForce = input => {
   // (`==`) in the `root` value, we can instead replace it with a `-`
   // sign so it returns `0` when we find the right value (e.g.
   // `23622695042414 - 23622695042414`). This enables us to reuse the
-  // code from part 1 (which checks whether the `root` value is a
+  // code from part 1 (which checks whether the `root` value is
   // finally a number).
   map.root = map.root.replace('+', '-')
 
