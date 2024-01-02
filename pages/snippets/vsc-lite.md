@@ -20,13 +20,9 @@ Here are part of my VSC configuration aiming at reducing visual noise and distra
   "editor.lightbulb.enabled": false,
   "editor.minimap.enabled": false,
   "editor.parameterHints.enabled": false,
-  "editor.quickSuggestions": {
-    "other": false,
-    "comments": false,
-    "strings": false
-  },
+  "editor.quickSuggestions": { "other": true, "comments": false, "strings": true },
   "editor.suggestOnTriggerCharacters": false,
-  "explorer.openEditors.visible": 0,
+  "explorer.openEditors.visible": 1,
   "extensions.ignoreRecommendations": true,
   "git.enabled": false,
   "keyboard.touchbar.enabled": false,
