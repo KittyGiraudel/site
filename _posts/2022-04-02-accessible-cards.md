@@ -76,10 +76,7 @@ Now, we want the whole card to be interactive, not just the main content. So we 
 .Card-Primary-Action::before {
   content: ''; /* 1 */
   position: absolute; /* 2 */
-  top: 0; /* 2 */
-  left: 0; /* 2 */
-  right: 0; /* 2 */
-  bottom: 0; /* 2 */
+  inset: 0; /* 2 */
   z-index: 1; /* 3 */
 }
 ```
