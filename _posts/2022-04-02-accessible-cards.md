@@ -87,7 +87,7 @@ This does the job. Now the whole card is clickable. To make it look as such thou
 /**
  * 1. Show that the card is interactive.
  */
-.Card-Primary-Action {
+.Card-Primary-Action::before {
   cursor: pointer; /* 1 */
   border: 2px solid transparent; /* 1 */
   transition: border-color 200ms;
