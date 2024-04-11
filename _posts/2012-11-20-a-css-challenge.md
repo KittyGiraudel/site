@@ -31,7 +31,7 @@ Thanks for participating! There have been a couple of answers for this trick. Dr
 
 Joshua Hibbert [used linear gradients](https://jsfiddle.net/joshnh/3PG8j/) to do it (so [did](https://codepen.io/raphaelgoetter/pen/dGxvL) Raphael Goetter). This is a clever technique I thought about but didn’t give a try. My experience with gradients is not that good.
 
-Here is the way I [did it](https://jsfiddle.net/HugoGiraudel/cyeGM/1/):
+Here is the way I [did it](https://jsfiddle.net/KittyGiraudel/cyeGM/1/):
 
 ```css
 body {

@@ -12,7 +12,7 @@ If you must though, rely on battle-tested implementations instead of rolling you
 
 Here is a collection of unflavoured JavaScript suggestions if you must implement an interactive widget:
 
-- Dialogs: [a11y-dialog](https://edenspiekermann.github.io/a11y-dialog) or [aria-modal-dialog](https://github.com/scottaohara/accessible_modal_window)
+- Dialogs: [a11y-dialog](https://a11y-dialog.netlify.app/) or [aria-modal-dialog](https://github.com/scottaohara/accessible_modal_window)
 - Content visibility toggles: [a11y-toggle](https://edenspiekermann.github.io/a11y-toggle/) or [Inclusive Components’ Collapsible Sections](https://inclusive-components.design/collapsible-sections/)
 - Tabs: [Inclusive Components’ Tabbed Interface](https://inclusive-components.design/tabbed-interfaces/) or [a11y_tab_widget](https://github.com/scottaohara/a11y_tab_widget)
 - Dropdowns: [Inclusive Components’ Menu & Menu Buttons](https://inclusive-components.design/menus-menu-buttons/)

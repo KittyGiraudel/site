@@ -6,7 +6,7 @@ keywords:
   - dialog
 ---
 
-Just a couple of words to talk about the work I’ve done to get [a11y-dialog v3.0.0](https://github.com/edenspiekermann/a11y-dialog/releases/tag/3.0.0) out of the door, and so you can safely upgrade to the newest and shiniest!
+Just a couple of words to talk about the work I’ve done to get [a11y-dialog v3.0.0](https://github.com/KittyGiraudel/a11y-dialog/releases/tag/3.0.0) out of the door, and so you can safely upgrade to the newest and shiniest!
 
 All in all, it’s quite a big version as the script has been almost entirely rewritten. There are not much rationale behind it except that it seemed like a good time to dust everything.
 
@@ -14,7 +14,7 @@ Still, quite a few things changed for you, hence the major release. Let’s have
 
 ## Main element no longer assumed (breaking)
 
-In version 2.\*, the main element was assumed to have a `main` id. Not only was this highly arbitrary, but it also did not play quite well with CMS like Drupal or Wordpress. There was a [long discussion about it](https://github.com/edenspiekermann/a11y-dialog/issues/56).
+In version 2.\*, the main element was assumed to have a `main` id. Not only was this highly arbitrary, but it also did not play quite well with CMS like Drupal or Wordpress. There was a [long discussion about it](https://github.com/KittyGiraudel/a11y-dialog/issues/56).
 
 From version 3, all siblings of the dialog element will be toggled (understand via the `aria-hidden` attribute). Since the documentation has always recommended having the main content container and the dialog element side by side, it should not be a big deal for most projects.
 
@@ -36,7 +36,7 @@ const dialog = new A11yDialog(el, '#main')
 
 ## New `.create()` method
 
-In version 2.5.0 was added the `.destroy()` method, which essentially removed all bound listeners from dialog openers and closers (as per [#52](https://github.com/edenspiekermann/a11y-dialog/issues/52)). From there, the dialog was still sort of usable, but only programmatically through the JS API.
+In version 2.5.0 was added the `.destroy()` method, which essentially removed all bound listeners from dialog openers and closers (as per [#52](https://github.com/KittyGiraudel/a11y-dialog/issues/52)). From there, the dialog was still sort of usable, but only programmatically through the JS API.
 
 From version 3, there is now a `.create()` method in order to pair nicely with `.destroy()`. It is called automatically from the constructor when instantiating a dialog so nothing should change for the most part.
 
@@ -60,10 +60,10 @@ In version 2.\*, the dialog element itself was firing DOM events when shown or h
 ```js
 // Version 2.*
 dialogEl
-  .addEventListener('show', function() {
+  .addEventListener('show', function () {
     // Do something
   })
-  .addEventListener('hide', function() {
+  .addEventListener('hide', function () {
     // Do something
   })
 ```
@@ -73,10 +73,10 @@ From version 3, it is now possible to register event listeners on the dialog ins
 ```js
 // Version 3
 dialog
-  .on('show', function() {
+  .on('show', function () {
     // Do something
   })
-  .on('hide', function() {
+  .on('hide', function () {
     // Do something
   })
 ```
@@ -95,7 +95,7 @@ In version 2.\*, custom (DOM) events used to pass an object to the registered ca
 
 ```js
 // Version 2.*
-dialogEl.addEventListener('show', function(event) {
+dialogEl.addEventListener('show', function (event) {
   // event.target = dialog element
   // event.detail = trigger element
 })
@@ -105,7 +105,7 @@ From version 3, events pass two separate arguments to the registered listeners: 
 
 ```js
 // Version 3
-dialog.on('show', function(dialogEl, triggerEl) {
+dialog.on('show', function (dialogEl, triggerEl) {
   // …
 })
 ```
@@ -128,6 +128,6 @@ dialog.on('show', doSomething).show()
 
 As stated before, this version also comes with brand new code that I took time to heavily comment, as well as a brand new test suite (that should hopefully be much more thorough).
 
-That’s it, and that’s already quite a lot if you want my opinion! I’d be glad to have some feedback about this if you happen to use a11y-dialog. Also, if you find any bug, please kindly [report them on GitHub](https://github.com/edenspiekermann/a11y-dialog/issues).
+That’s it, and that’s already quite a lot if you want my opinion! I’d be glad to have some feedback about this if you happen to use a11y-dialog. Also, if you find any bug, please kindly [report them on GitHub](https://github.com/KittyGiraudel/a11y-dialog/issues).
 
 _Thanks to [Mike Smart](https://twitter.com/smartmike) and [Loïc Giraudel](https://twitter.com/l_giraudel) for their insightful help._
