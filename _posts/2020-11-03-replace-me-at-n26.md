@@ -27,7 +27,7 @@ I will use certain terms over and over in this post, so I’d like to clarify te
 
 ## The team
 
-As of today, there are about 15 engineers working on the customer-facing web platform, distributed across the product department in cross-functional teams, and located in our 4 offices (well, at least officially; they are currently working home)—Berlin, Barcelona, Vienna and New-York.
+As of today, there are about 15 engineers working on the customer-facing web platform, distributed across the product department in cross-functional teams, and located in our 4 offices (well, at least officially; they are currently working home) — Berlin, Barcelona, Vienna and New-York.
 
 The web team is absolutely fantastic. 💖 Not only is it quite mature with people having been there for several years, it also values inclusion and respect at its core. There are no overly inflated egos, no openly passive-aggressive behaviours.
 
@@ -55,7 +55,7 @@ A non-exhaustive list of responsibilities would go like this:
 
 We need someone with strong understanding of frontend development. While the mileage may vary, I think anyone who hasn’t worked in frontend and beyond for at least 5 years might be falling a little short for such a role. The code base is vast and somewhat complex, and this has to be balanced with difficult topics such as legal compliance, inclusive design, incident management, infrastructure work and of course, diplomacy and cross-team communication. This is not as scary as it sounds, but it definitely requires some experience. In other words, we probably need a senior fullstack engineer here.
 
-More than that, we need someone who can join a team that puts people at the center of what they do—before code, before design, before product and bureaucracy. I believe this is one of the reasons people enjoy working in this environment, and I expect the next person to cultivate that empathetic mindset. That means making sure we run stress-free, we can make mistakes, we can learn from them.
+More than that, we need someone who can join a team that puts people at the center of what they do — before code, before design, before product and bureaucracy. I believe this is one of the reasons people enjoy working in this environment, and I expect the next person to cultivate that empathetic mindset. That means making sure we run stress-free, we can make mistakes, we can learn from them.
 
 Summing up what kind of candidate we would like to see taking on that role:
 
@@ -79,6 +79,6 @@ If you’ve been following along this post, I think you’ll know what I’m goi
 
 - ✅ Our motto has long been “do your work and go home on time” (or “stay home” since, you know, COVID). I’ve spoken repeatedly against people working too early or too late or during weekends (although I have done it myself on many occasions, thus being both hypocritical and a poor leadership example). This means we focus on testing automation, so people _never_ have to deal with incidents. There is a formal on-call process which is opt-in and incredibly chill for web as anything seldom happens.
 
-If all of this sounds interesting to you, and you think you’d be a good fit, please apply on the official job posting. If you would like more information about the role or have any question, you can ask me on Twitter—my DMs are open.
+If all of this sounds interesting to you, and you think you’d be a good fit, please apply on the official job posting. If you would like more information about the role or have any question, you can ask me on Twitter — my DMs are open.
 
 Last but not least, **I would absolutely highly encourage people from under-represented groups** to apply. Please, please, do apply. ✨

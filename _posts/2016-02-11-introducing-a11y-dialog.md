@@ -7,13 +7,13 @@ keywords:
   - dialog
 ---
 
-If there’s one thing I try to push forward more and more at Edenspiekermann, it’s accessibility. I can’t help but feel that we don’t care enough about assistive technology users. That’s a shame, really. It’s not that we don’t want to—it’s more like we don’t really know where to start.
+If there’s one thing I try to push forward more and more at Edenspiekermann, it’s accessibility. I can’t help but feel that we don’t care enough about assistive technology users. That’s a shame, really. It’s not that we don’t want to — it’s more like we don’t really know where to start.
 
 Almost all projects involve some form of dialog window at one point or another. However, accessibility is all too often set aside in favor of quick implementation. Truth is, accessible dialog windows are hard. Very hard.
 
 Fortunately, there is a super clever guy named [Greg Kraus](https://github.com/gdkraus) who implemented an accessible modal dialog a few years ago and [open-sourced it on GitHub](https://github.com/gdkraus/accessible-modal-dialog). Now that’s nice!
 
-However, his version—no matter how good it is—requires jQuery. We try to avoid using jQuery as much as we can here. We realised we did not really need it most of the time. On top of that, his script is not very flexible: only one dialog window per page, hard-coded IDs inside the functions. Not very practical and certainly not a drop-in script for any project.
+However, his version — no matter how good it is — requires jQuery. We try to avoid using jQuery as much as we can here. We realised we did not really need it most of the time. On top of that, his script is not very flexible: only one dialog window per page, hard-coded IDs inside the functions. Not very practical and certainly not a drop-in script for any project.
 
 So I rolled up my sleeves and [improved it](https://github.com/KittyGiraudel/a11y-dialog).
 

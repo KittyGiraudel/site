@@ -63,7 +63,7 @@ This list was originally [posted on Twitter](https://twitter.com/i/moments/87708
 
 27. Don’t autoplay videos, seriously. If you do, mute them. Videos auto-playing with sound go from annoying to damaging.
 
-28. “CSS only” solutions—while clever—usually overlook the accessibility aspect of a feature, making them sub-optimal.
+28. “CSS only” solutions — while clever — usually overlook the accessibility aspect of a feature, making them sub-optimal.
 
 29. Parallax scrolling and heavy animations can cause nausea or sickness. Go easy on them or make it possible to disable them.
 

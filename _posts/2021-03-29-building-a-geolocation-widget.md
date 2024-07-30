@@ -4,7 +4,7 @@ title: Building a geolocation widget
 
 Gorillas being about delivering groceries, we recently released a small geolocation widget on the [homepage of our website](https://gorillas.io). We’re growing fast, but there are still some areas do not serve, so we wanted to make it easily accessible for people to know whether they could use our services.
 
-If I’m being honest, it wasn’t such a trivial piece of interface, so I want to go through how we built it—hopefully it helps others to make their geolocation widget clean and accessible.
+If I’m being honest, it wasn’t such a trivial piece of interface, so I want to go through how we built it — hopefully it helps others to make their geolocation widget clean and accessible.
 
 <video preload="none" playsinline="" controls aria-label="Button on Gorillas website stating “Do you deliver to my area?” Once clicking, it changes to “Please wait…” for a few seconds before stating “Yay! We deliver to your area.” under a round of confetti!" disablepictureinpicture="" poster="https://pbs.twimg.com/tweet_video_thumb/Ew2DNIPWQAIDa8_.jpg" src="https://video.twimg.com/tweet_video/Ew2DNIPWQAIDa8_.mp4" type="video/mp4" style="margin: auto; display: block;"></video>
 

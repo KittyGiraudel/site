@@ -76,7 +76,7 @@ I voluntarily omitted some styles for sake of simplicity, so you can see the res
 
 ## Going further
 
-As you might have noticed, this is a very under-engineering solution—which I personally like. We could go further though. Here are a few options:
+As you might have noticed, this is a very under-engineering solution — which I personally like. We could go further though. Here are a few options:
 
 - We could provide a bit more context about why the content is not displayed by default. For instance, Twitter states “The Tweet author flagged this Tweet as showing sensitive content.”
 

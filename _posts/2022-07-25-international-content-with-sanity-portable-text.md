@@ -22,8 +22,10 @@ Taking the first example from the WCAG 3.1.2 page: “He maintained that the DDR
 
 ```html
 <p>
-  He maintained that the DDR (German Democratic Republic) was just a
-  ‘<span lang="de">Treppenwitz der Weltgeschichte</span>’.
+  He maintained that the DDR (German Democratic Republic) was just a ‘<span
+    lang="de"
+    >Treppenwitz der Weltgeschichte</span
+  >’.
 </p>
 ```
 
@@ -81,7 +83,7 @@ export default {
 
 Now onto our annotation object. It needs a name (`lang` for simplicity, but feel free to call it whatever you want), and a text field to specify which language code it is.
 
-As per the HTML specification, the `lang` attribute expects a “language tag” following the [RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646) (also known as BCP 47 apparently—who knew). There are some good validators for this format out there, but I decided to go with something simple and flexible: some letters, optionally followed by an hyphen and some more letters. For instance, `de` or `en-GB`. To better understand language tags, I recommend [this dedicated section on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang#language_tag_syntax).
+As per the HTML specification, the `lang` attribute expects a “language tag” following the [RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646) (also known as BCP 47 apparently — who knew). There are some good validators for this format out there, but I decided to go with something simple and flexible: some letters, optionally followed by an hyphen and some more letters. For instance, `de` or `en-GB`. To better understand language tags, I recommend [this dedicated section on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang#language_tag_syntax).
 
 ```js
 const languageSwitch = {

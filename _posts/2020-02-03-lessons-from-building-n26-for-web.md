@@ -26,7 +26,7 @@ N26, like many startups, is growing fast. When I joined, we were just about 100 
 
 Hiring in the tech industry is just like the tech industry itself: completely messed up. We impose unrealistic and unreasonable expectations on people. We completely overstate the value of technical skills and we think writing code is way more difficult than it is. This, in turn, creates weak homogeneous teams of fragile egos.
 
-I [wrote extensively on how we hire](/2020/01/13/lets-talk-about-your-resume/) and—while I do think I made a few mistakes along the way—I also feel like it worked exceptionally well. At the risk of sounding cheesy, the N26 web team is by far the best team I have ever worked in. It’s made of over 20 diverse individuals who respect each other to build a good product for everyone.
+I [wrote extensively on how we hire](/2020/01/13/lets-talk-about-your-resume/) and — while I do think I made a few mistakes along the way — I also feel like it worked exceptionally well. At the risk of sounding cheesy, the N26 web team is by far the best team I have ever worked in. It’s made of over 20 diverse individuals who respect each other to build a good product for everyone.
 
 We are not just a group of technicians working for the same company. And by that, I don’t mean that we are necessarily all friends, or “like a family” (which I think is also an understated wrong trait of the startup culture). I mean that we are more than the sum of our skills. We have a shared vision, with shared values, like respect, trust, and inclusion (both within, and from a product standpoint).
 
@@ -44,7 +44,7 @@ I have recently [written about our documentation](/2020/01/23/technical-document
 
 Here are the things that it makes easier:
 
-👋🏻 Onboarding new team members. Having comprehensive documentation gives them autonomy, and enables them to get started faster and more comfortably. It gives people the tools to work and progress—especially to the people who crucially need these tools.
+👋🏻 Onboarding new team members. Having comprehensive documentation gives them autonomy, and enables them to get started faster and more comfortably. It gives people the tools to work and progress — especially to the people who crucially need these tools.
 
 ✅ Settling discussions by defining one way to do things. Of course this can change, and the one way might become another way down the line, but at any point in time, it is important to have a single common and agreed on approach.
 

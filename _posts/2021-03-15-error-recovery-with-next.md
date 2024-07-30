@@ -15,7 +15,7 @@ I recently announced [Gorillas’ new website](https://gorillas.io) built with N
 
 While we do use Next, we do not use the runtime. We essentially use Next as a static site generator. When deploying the site, we build all pages statically (with [Next’ static HTML export](https://nextjs.org/docs/advanced-features/static-html-export)), and serve them via Netlify. There is no Node server or anything like that. It’s just a bunch of HTML files eventually enhanced by a client-side React application.
 
-This means that the HTML files do contain `<script>` tags at the bottom of the body element to execute our bundles. We can’t decide not to render them because, once again, this is all just static files—there is no running server that can modify the response.
+This means that the HTML files do contain `<script>` tags at the bottom of the body element to execute our bundles. We can’t decide not to render them because, once again, this is all just static files — there is no running server that can modify the response.
 
 So that’s not even really Next’s fault per se. Any static site generator would have the same problem. Once the browser receives the HTML response, it’s done, we can’t modify it. It will read the `<script>` tags, download the files, parse them and execute them. So… rough one to solve I guess.
 
@@ -129,7 +129,7 @@ Alright people, lay it on me. How bad is this, and how ashamed shall I be?
 
 ## [Update] Clean solution
 
-[Maximilian Fellner](https://twitter.com/mxfellner/status/1371540362662133766?s=20) was kind enough to take the time to build a demo of a way to inject Next scripts dynamically. The solution is a little complicated so I won’t go into the details in this article—feel free to check [Maximilian’s proof of concept](https://github.com/mfellner/static-nextjs-without-js). Thanks for the hint Max!
+[Maximilian Fellner](https://twitter.com/mxfellner/status/1371540362662133766?s=20) was kind enough to take the time to build a demo of a way to inject Next scripts dynamically. The solution is a little complicated so I won’t go into the details in this article — feel free to check [Maximilian’s proof of concept](https://github.com/mfellner/static-nextjs-without-js). Thanks for the hint Max!
 
 Building on top of his work, I figured out a rather elegant way forward. Instead of rendering `<script>` tags and then trying to remove or not to execute them when the `no_script` parameter is present, let’s turn it around. Let’s _not_ render the `<script>` tags, and only dynamically inject them at runtime when the `no_script` URL parameter is absent.
 

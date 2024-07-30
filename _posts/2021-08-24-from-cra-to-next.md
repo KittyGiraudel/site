@@ -95,7 +95,7 @@ Note that [Next gives some interesting pointers to migrate from react-router](ht
 
 ## Code splitting
 
-There again, Next has a solution for manual code-splitting, [next/dynamic](https://nextjs.org/docs/api-reference/next/dynamic), while CRA doesn’t. The industry standard—as far as I can tell—is [@loadable/component](https://github.com/gregberge/loadable-components) (also [implied by Next docs](https://nextjs.org/docs/migrating/from-react-router#code-splitting)). Both libraries work basically the same though, so the migration should be a few search-and-replace away:
+There again, Next has a solution for manual code-splitting, [next/dynamic](https://nextjs.org/docs/api-reference/next/dynamic), while CRA doesn’t. The industry standard — as far as I can tell — is [@loadable/component](https://github.com/gregberge/loadable-components) (also [implied by Next docs](https://nextjs.org/docs/migrating/from-react-router#code-splitting)). Both libraries work basically the same though, so the migration should be a few search-and-replace away:
 
 ```diff
 - import loadable from '@loadable/component'

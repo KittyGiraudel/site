@@ -92,7 +92,7 @@ There is still a bit more we need to do. Since we provided a descriptive text, w
 </a>
 ```
 
-Last but not least, `svg` elements can be focused on Internet Explorer, which is becoming less and less of a problem overall—still, we should correct that with the `focusable` attribute.
+Last but not least, `svg` elements can be focused on Internet Explorer, which is becoming less and less of a problem overall — still, we should correct that with the `focusable` attribute.
 
 ```html
 <a href="https://twitter.com/KittyGiraudel">

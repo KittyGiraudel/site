@@ -1,9 +1,9 @@
 ---
 title: Retrospective on Fela
 keywords:
-- styling
-- CSS-in-JS
-- fela
+  - styling
+  - CSS-in-JS
+  - fela
 ---
 
 Over the years, I have tweeted about [Fela](https://fela.js.org) a few times. And as I am about to leave N26 and behind me the decisions I made, I want to properly reflect on the choice of going with Fela instead of any other CSS-in-JS library you might have heard of.
@@ -37,7 +37,7 @@ There were good things and bad things with CSS modules. On one hand, writing pla
 @value blue, teal from '../../styles/variables.css';
 
 .base {
-  composes: base from "./index.css";
+  composes: base from './index.css';
   background-color: blue;
   border: 2px solid blue;
   color: white;
@@ -47,7 +47,7 @@ There were good things and bad things with CSS modules. On one hand, writing pla
 
 We were already 2,000 commits in the making at that stage, and our roadmap was getting clearer and clearer: we’d end up with multiple large-scale projects within the same codebase, and I was growing worried of our CSS scaling poorly in the long run. That’s when on February 17th 2017, two weeks before our very first live release, I came to work one morning and told Mike “hear me out… how about CSS-in-JS?”
 
-I had done some research on JS libraries for styling, and while the ecosystem was nowhere near what it is today, there were a few contenders: [styled-components](https://styled-components.com/), [Fela](https://fela.js.org), [Aphrodite](https://github.com/Khan/aphrodite) and [Emotion](https://emotion.sh/) were all in 0.x or v1 at most and [JSS](https://cssinjs.org/?v=v10.5.0) was going strong for over 2 years already. So there were definitely options—or so we thought. Now, we had 2 main constraints (besides obvious aesthetic considerations):
+I had done some research on JS libraries for styling, and while the ecosystem was nowhere near what it is today, there were a few contenders: [styled-components](https://styled-components.com/), [Fela](https://fela.js.org), [Aphrodite](https://github.com/Khan/aphrodite) and [Emotion](https://emotion.sh/) were all in 0.x or v1 at most and [JSS](https://cssinjs.org/?v=v10.5.0) was going strong for over 2 years already. So there were definitely options — or so we thought. Now, we had 2 main constraints (besides obvious aesthetic considerations):
 
 1. We implemented server-side rendering (SSR) from day 1, and completely supported the absence of client-side JavaScript, so we needed an isomorphic solution which would deal properly with rehydration.
 2. The main reason to move away from CSS modules was to have critical CSS and most importantly atomic CSS out of the box so we needed a library able to provide that with minor effort.
@@ -78,17 +78,17 @@ Consider the following React components styling two `p` as a coloured squares (F
 
 ```jsx
 const a = () => ({
-  width: "5em",
-  height: "5em",
-  backgroundColor: "deepskyblue",
-});
+  width: '5em',
+  height: '5em',
+  backgroundColor: 'deepskyblue',
+})
 const b = () => ({
-  width: "5em",
-  height: "5em",
-  backgroundColor: "deeppink",
-});
-const SquareA = (props) => <p className={rule}>I’m deepskyblue!</p>;
-const SquareB = (props) => <p className={rule}>I’m pink!</p>;
+  width: '5em',
+  height: '5em',
+  backgroundColor: 'deeppink',
+})
+const SquareA = props => <p className={rule}>I’m deepskyblue!</p>
+const SquareB = props => <p className={rule}>I’m pink!</p>
 ```
 
 Now the output would look like this (prettified for illustration):
@@ -121,7 +121,7 @@ This is what makes Fela really stand out from other similar CSS-in-JS libraries.
 
 To this day, if there is one thing that I always found impressive about Fela is its [rich ecosystem of utilities and plugins](https://github.com/robinweser/fela/tree/master/packages), especially considering they are almost all authored and maintained by Robin Weser, the original creator, and part of the main lerna repo.
 
-Even pretty advanced behaviour such as [responsive properties](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-responsive-value)—properties whose value varies across pre-defined breakpoints—or [extensive testing of state-specific styles](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-simulate) (e.g. hover) are already built and ready to use.
+Even pretty advanced behaviour such as [responsive properties](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-responsive-value) — properties whose value varies across pre-defined breakpoints — or [extensive testing of state-specific styles](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-simulate) (e.g. hover) are already built and ready to use.
 
 And if something happens to be missing, Fela is very easy to customise with [plugins](http://fela.js.org/docs/advanced/Plugins.html) and [enhancers](http://fela.js.org/docs/advanced/Enhancers.html). Both are essentially functions to customise style processing.
 
@@ -152,47 +152,47 @@ On the bright side, it got us to actually invite Robin to come visit the N26 off
 Being almost 5 years old, Fela evolved alongside React. When we started using it in 2017, higher-order components were all the hype. So every component needing styles would end up being wrapped with the `connect` higher-order component that would provide resolved classNames.
 
 ```jsx
-import { connect } from "react-fela";
+import { connect } from 'react-fela'
 
-const square = () => ({ width: "5em", height: "5em" });
-const Square = connect({ square })((props) => (
+const square = () => ({ width: '5em', height: '5em' })
+const Square = connect({ square })(props => (
   <p className={props.styles.square}>I’m a square!</p>
-));
+))
 ```
 
 And soon enough, higher-order components were not the way to go anymore, and render functions were supposedly a better approach, so we’d use `FelaComponent` everywhere:
 
 ```jsx
-import { FelaComponent } from "react-fela";
+import { FelaComponent } from 'react-fela'
 
-const square = () => ({ width: "5em", height: "5em" });
-const Square = (props) => (
+const square = () => ({ width: '5em', height: '5em' })
+const Square = props => (
   <FelaComponent style={square}>
     {({ className }) => <p className={className}>I’m a square!</p>}
   </FelaComponent>
-);
+)
 ```
 
 And while render functions are great, they also clutter the JSX quite a lot so we turned to creating our styled containers with `createComponent`.
 
 ```jsx
-import { createComponent } from "react-fela";
+import { createComponent } from 'react-fela'
 
-const square = () => ({ width: "5em", height: "5em" });
-const Styled = createComponent(styles.square, "p");
-const Square = (props) => <Styled>I’m a square!</Styled>;
+const square = () => ({ width: '5em', height: '5em' })
+const Styled = createComponent(styles.square, 'p')
+const Square = props => <Styled>I’m a square!</Styled>
 ```
 
 And it’s pretty great until you start passing a lot of prop to your components for styling purposes, and only want some of them to make their way to the DOM as actual HTML attributes. So there is a hook instead:
 
 ```jsx
-import { useFela } from "react-fela";
+import { useFela } from 'react-fela'
 
-const square = () => ({ width: "5em", height: "5em" });
-const Square = (props) => {
-  const { css } = useFela();
-  return <p className={css(square)}>I’m a square!</p>;
-};
+const square = () => ({ width: '5em', height: '5em' })
+const Square = props => {
+  const { css } = useFela()
+  return <p className={css(square)}>I’m a square!</p>
+}
 ```
 
 As of writing, it seems that this is the way forward. Robin confirmed using the `useFela` hook was the recommended way, and the fact that there are so many approaches to using Fela is a side-effect of it growing alongside React and its evolving design patterns.
@@ -201,7 +201,7 @@ As of writing, it seems that this is the way forward. Robin confirmed using the 
 >
 > So the official recommend way will be hooks for everyone on react > 16.3 these days. I’m going to reflect that in the new docs. It’s the fastest and most simple API of all yet the others are totally fine.
 >
-> I just don’t like them anymore since you need to be more careful with e.g. the props passthrough where hooks are not tied to the rendering at all—they just provide a nice CSS API just like Emotion has.
+> I just don’t like them anymore since you need to be more careful with e.g. the props passthrough where hooks are not tied to the rendering at all — they just provide a nice CSS API just like Emotion has.
 >
 > — Robin Weser, creator of Fela about the evolution of its API
 
@@ -220,21 +220,21 @@ It took me a bit of fiddling to figure out a solution involving Webpack. I would
 The main idea is to have 2 different files exporting plugins and enhances: one for development (`fela.development.js`), and one for production (`fela.production.js`). The development one could look like this:
 
 ```js
-import beautifier from "fela-beautifier";
-import validator from "fela-plugin-validator";
-import embedded from "fela-plugin-embedded";
+import beautifier from 'fela-beautifier'
+import validator from 'fela-plugin-validator'
+import embedded from 'fela-plugin-embedded'
 
-export const enhancers = [beautifier()];
-export const plugins = [validator(), embedded()];
+export const enhancers = [beautifier()]
+export const plugins = [validator(), embedded()]
 ```
 
 And the production one:
 
 ```js
-import embedded from "fela-plugin-embedded";
+import embedded from 'fela-plugin-embedded'
 
-export const enhancers = [];
-export const plugins = [embedded()];
+export const enhancers = []
+export const plugins = [embedded()]
 ```
 
 Then in Webpack, provide the content of the correct file as a global variable (e.g. `FELA_CONFIG`) based on the environment:
@@ -246,7 +246,7 @@ Then in Webpack, provide the content of the correct file as a global variable (e
 // environments where `devDependencies` are absent.
 new webpack.ProvidePlugin({
   FELA_CONFIG: path.resolve(`src/fela.${process.env.NODE_ENV}.js`),
-});
+})
 ```
 
 Finally, when instantiating the Fela renderer, read the plugins and enhancers from the global `FELA_CONFIG` variable.
@@ -256,7 +256,7 @@ Finally, when instantiating the Fela renderer, read the plugins and enhancers fr
 export default createRenderer({
   plugins: FELA_CONFIG.plugins,
   enhancers: FELA_CONFIG.enhancers,
-});
+})
 ```
 
 ### Integrating react-dates with Fela
@@ -266,48 +266,48 @@ export default createRenderer({
 It took us some time to figure out how to integrate it properly with Fela so styles are applied atomically with Fela (and therefore optimised) instead of through the original CSS classes. Fortunately, react-dates offers a way to customise the rendering process with `react-with-styles` interfaces.
 
 ```js
-import ThemedStyleSheet from "react-with-styles/lib/ThemedStyleSheet";
+import ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet'
 
-ThemedStyleSheet.registerInterface(OurFelaInterface);
+ThemedStyleSheet.registerInterface(OurFelaInterface)
 ```
 
 Now we just had to write an interface for Fela. I’m going to save you the trouble and show you how it looks. It needs the Fela renderer as an argument in order to compute resolved class names.
 
 ```js
-import { StyleSheet } from "fela-tools";
-import { combineRules } from "fela";
+import { StyleSheet } from 'fela-tools'
+import { combineRules } from 'fela'
 
 // Custom `react-with-styles` interface for Fela:
 // https://github.com/airbnb/react-with-styles
-export default (renderer) => ({
+export default renderer => ({
   create(styleHash) {
-    return StyleSheet.create(styleHash);
+    return StyleSheet.create(styleHash)
   },
 
   resolve(stylesArray) {
-    const styles = stylesArray.flat();
-    const rules = [];
-    const classNames = [];
+    const styles = stylesArray.flat()
+    const rules = []
+    const classNames = []
 
     // This is run on potentially every node in the tree when rendering,
     // where performance is critical. Normally we would prefer using
     // `forEach`, but old-fashioned `for` loops are slightly faster.
     for (let i = 0; i < styles.length; i += 1) {
-      const style = styles[i];
+      const style = styles[i]
 
-      if (!style) continue;
-      if (style.ruleName) classNames.push(style.ruleName);
-      if (typeof style === "function") rules.push(style);
-      else rules.push(() => style);
+      if (!style) continue
+      if (style.ruleName) classNames.push(style.ruleName)
+      if (typeof style === 'function') rules.push(style)
+      else rules.push(() => style)
     }
 
-    const rule = combineRules(...rules);
-    const classes = renderer.renderRule(combineRules(...rules));
-    classNames.push(classes);
+    const rule = combineRules(...rules)
+    const classes = renderer.renderRule(combineRules(...rules))
+    classNames.push(classes)
 
-    return { className: classNames.join(" ") };
+    return { className: classNames.join(' ') }
   },
-});
+})
 ```
 
 ### Avoid adblockers messing with styles
@@ -319,21 +319,21 @@ By default, Fela now skips the `.ad` class, but there are more to add to the lis
 ```js
 const SKIPPED_CLASSNAMES = [
   // Short for “advertisment”
-  "ad",
-  "ads",
-  "adv",
+  'ad',
+  'ads',
+  'adv',
   // See: https://github.com/adblockultimate/AdBlocker-Ultimate-for-Chrome/blob/3f07afbffa5c389270abe9ee4dc13333ca35613e/filters/filter_9.txt#L867
-  "bi",
-  "fb",
-  "ig",
-  "pin",
-  "tw",
-  "vk",
-];
+  'bi',
+  'fb',
+  'ig',
+  'pin',
+  'tw',
+  'vk',
+]
 
 export default createRenderer({
-  filterClassName: (className) => !SKIPPED_CLASSNAMES.includes(className),
-});
+  filterClassName: className => !SKIPPED_CLASSNAMES.includes(className),
+})
 ```
 
 ### Custom processing
@@ -343,32 +343,32 @@ Thanks to the [fela-plugin-custom-property](https://github.com/robinweser/fela/t
 Consider for a moment that you expect all your durations to be authored in milliseconds instead of seconds. By surcharging the duration properties, you can warn or even manipulate their value through Fela. For instance, convertion the values into milliseconds:
 
 ```js
-import custom from "fela-plugin-custom-property";
+import custom from 'fela-plugin-custom-property'
 
-const handleDuration = (property) => (value) => ({
+const handleDuration = property => value => ({
   // Convert durations expressed in seconds into milliseconds
   // E.g. 0.2s, 1s -> 200ms, 1000ms
   [property]: value.replace(
     /([\d\.]+)[m^]*s/g,
-    (_, a) => Number(a) * 1000 + "ms"
+    (_, a) => Number(a) * 1000 + 'ms'
   ),
-});
+})
 
 const renderer = createRenderer({
   plugins: [
     custom({
-      transitionDuration: handleDuration("transitionDuration"),
-      transitionDelay: handleDuration("transitionDelay"),
-      animationDuration: handleDuration("animationDuration"),
-      animationDelay: handleDuration("animationDelay"),
+      transitionDuration: handleDuration('transitionDuration'),
+      transitionDelay: handleDuration('transitionDelay'),
+      animationDuration: handleDuration('animationDuration'),
+      animationDelay: handleDuration('animationDelay'),
     }),
   ],
-});
+})
 ```
 
 ## Wrapping up
 
-All in all, Fela is an amazing piece of software. It’s pretty powerful, relatively easy to use and very performant. For small to medium scale projects—especially those based on create-react-app—I would probably stick to plain CSS, or maybe Sass. But for anything large scale, I would highly recommend Fela as a bulletproof styling solution.
+All in all, Fela is an amazing piece of software. It’s pretty powerful, relatively easy to use and very performant. For small to medium scale projects — especially those based on create-react-app — I would probably stick to plain CSS, or maybe Sass. But for anything large scale, I would highly recommend Fela as a bulletproof styling solution.
 
 Despite its relatively small community, Fela has been around for 4 years, and is still actively maintained and update. The future roadmap includes:
 

@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v2
 ```
 
-Performing the backup is certainly the most complicated step of our workflow. We need to use the Sanity command line tool to perform an export of our dataset with its name (here `production`). You’ll note we specify the directory for our studio—here `studio`—as we need to execute that command within the context of a Sanity project.
+Performing the backup is certainly the most complicated step of our workflow. We need to use the Sanity command line tool to perform an export of our dataset with its name (here `production`). You’ll note we specify the directory for our studio — here `studio` — as we need to execute that command within the context of a Sanity project.
 
 We also need to pass 2 environments variables:
 

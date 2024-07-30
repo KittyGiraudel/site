@@ -71,7 +71,7 @@ This has been all fixed, and the document outline should be clean and consistent
 
 While icons were technically accessible to assistive technologies, I think (I must admit I cannot remember for sure) they caused double vocalisation of the content. I’ve also found an odd bug where they were incorrectly described.
 
-Basically, they all had their own description (with `role="img"` + `aria-labelledby="…"`), but since they are all used within a link/button alongside additional content, the description ended up being read out twice—one for the icon, and one for the text.
+Basically, they all had their own description (with `role="img"` + `aria-labelledby="…"`), but since they are all used within a link/button alongside additional content, the description ended up being read out twice — one for the icon, and one for the text.
 
 Because they are never used on their own and are always displayed alongside textual content (whether visible or not), they can in fact be safely ignored (with `aria-hidden="true"` + `focusable="false"`).
 

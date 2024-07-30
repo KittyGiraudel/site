@@ -2,15 +2,15 @@
 title: From Jekyll to 11ty
 templateEngineOverride: md
 keywords:
-- jekyll
-- 11ty
-- eleventy
-- blog
+  - jekyll
+  - 11ty
+  - eleventy
+  - blog
 ---
 
-Over the weekend, I decided to migrate my website from [Jekyll](https://jekyllrb.com/) to [11ty](https://www.11ty.dev/). If I’m being honest, there was no good reason for me to change blogging systems. I like Jekyll. I have been using Jekyll since 2013 and have built countless sites with it. 
+Over the weekend, I decided to migrate my website from [Jekyll](https://jekyllrb.com/) to [11ty](https://www.11ty.dev/). If I’m being honest, there was no good reason for me to change blogging systems. I like Jekyll. I have been using Jekyll since 2013 and have built countless sites with it.
 
-I guess I wanted to try 11ty since it’s all the cool kids talk about nowadays. Additionally, it feels nice leaving Ruby behind because that’s a pain to deal with as far as I’m concerned. 11ty is built on Node.js, which is more up my alley. 
+I guess I wanted to try 11ty since it’s all the cool kids talk about nowadays. Additionally, it feels nice leaving Ruby behind because that’s a pain to deal with as far as I’m concerned. 11ty is built on Node.js, which is more up my alley.
 
 Paul Lloyd wrote [a very good article on migrating from Jekyll](https://24ways.org/2018/turn-jekyll-up-to-eleventy/). [So did Steve Stedman](https://stedman.dev/2020/04/29/make-the-jump-from-jekyll-to-javascript/). [And Alex Pearce](https://alexpearce.me/2020/06/jekyll-to-eleventy/). And probably other smart people. I’d like to add my own contribution to the growing collection of articles about coming from Jekyll.
 
@@ -26,22 +26,22 @@ I’m mostly going to expand on things that took me a while to figure out, hopin
 
 ## TL;DR
 
-Overall, the migration was relatively smooth. It took me about 10 hours spread across a week-end, so I consider it an affordable amount of time for what is essentially changing build systems. 
+Overall, the migration was relatively smooth. It took me about 10 hours spread across a week-end, so I consider it an affordable amount of time for what is essentially changing build systems.
 
 Here are some things I do like a lot from 11ty:
 
 - The configuration is really enjoyable to use. I like that it does not live in a JSON file which sometimes lacks flexibility, and that it exposes a class with lots of helper utilities to configure compilation.
 - I felt helped with templating errors. I don’t know to which extend 11ty customises error reporting to make it friendly, but it’s overall pretty good I would say.
-- The pagination is overall better than the Jekyll one I feel, because it can be used on any collection instead of exclusively for the posts. 
-- The automatic browser reload is a really nice touch that does not exist in Jekyll. It’s not much, but it’s appreciable during development. 
+- The pagination is overall better than the Jekyll one I feel, because it can be used on any collection instead of exclusively for the posts.
+- The automatic browser reload is a really nice touch that does not exist in Jekyll. It’s not much, but it’s appreciable during development.
 
 And some of the things I was either a little frustrated or not super happy with:
 
-- I find the handling of global variables confusing at best. In Jekyll, I knew the difference between variables on the `include`, `page` or `site` objects. Here everything sort of blends together in an opaque way. 
+- I find the handling of global variables confusing at best. In Jekyll, I knew the difference between variables on the `include`, `page` or `site` objects. Here everything sort of blends together in an opaque way.
 - I personally like YAML over JSON, and it was a little disappointing [not being able to maintain my data files in YAML by default](https://www.11ty.dev/docs/data-custom/#yaml). Not a huge deal, but I find authoring JSON tedious compared to YAML.
-- There is a lot of documentation, and the maintainers clearly care a lot about it—yet it did feel like there were some glaring caps somewhat. For instance, it was unclear to me how to issue a production build or how to [maintain dynamic permalinks over a collection](#posts-permalinks)—both of which I’d consider pretty basic things. 
+- There is a lot of documentation, and the maintainers clearly care a lot about it — yet it did feel like there were some glaring caps somewhat. For instance, it was unclear to me how to issue a production build or how to [maintain dynamic permalinks over a collection](#posts-permalinks) — both of which I’d consider pretty basic things.
 
-That being said, I am overall pleased with the migration and the tool as a whole. Interesting thing to point out is that the compilation didn’t get much faster for me: both systems take about 2 seconds to compile hundreds of pages. 
+That being said, I am overall pleased with the migration and the tool as a whole. Interesting thing to point out is that the compilation didn’t get much faster for me: both systems take about 2 seconds to compile hundreds of pages.
 
 Anyway, without further ado let’s dive in.
 
@@ -51,14 +51,13 @@ I have about 300 articles on this blog, so there was no way I would do anything 
 
 ```js
 config.addCollection('posts', collection =>
-  collection.getFilteredByGlob('_posts/*.md')
-    .sort((a, b) => b.date - a.date)
+  collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date)
 )
 ```
 
 I use this collection in multiple places: in the blog, but also on the home page to list the most recent articles as well as in the RSS feed. I figured it was easier to sort the collection once in the configuration rather than everywhere I look up `collections.posts` since 11ty sorts it chronologically by default.
 
-Now, Jekyll being a *blogging* system at the core, it treats posts as first-class citizens and expects an article’s date to be in its slug—for instance `2020-11-30-from-jekyll-to-11ty.md` would then be compiled into `/2020/11/30/from-jekyll-to-11ty/index.html`.
+Now, Jekyll being a _blogging_ system at the core, it treats posts as first-class citizens and expects an article’s date to be in its slug — for instance `2020-11-30-from-jekyll-to-11ty.md` would then be compiled into `/2020/11/30/from-jekyll-to-11ty/index.html`.
 
 In its documentation, 11ty explains pretty extensively how to handle permalinks, but not really how to define a permalink pattern for an entire collection. It took me a while to figure out that I needed to create a `_posts.json` file in the `_posts` directory with the following JSON:
 
@@ -75,7 +74,7 @@ This way, every article has its permalink defined based on its file name, and it
 
 I do not provide an anchor for every single heading, but I do rely on headings having an `id` attribute to create table of contents in long articles like this one. I used to rely on Kramdown and its GFM option for that, but 11ty uses [markdown-it](https://github.com/markdown-it/markdown-it) which [does not come with automatic heading `id` generation](https://github.com/markdown-it/markdown-it/issues/28).
 
-To preserve that behaviour, we need to use our own markdown-it instance, as well as the [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) plugin. The latter comes with unicode support by default, which is not what GFM defaults to, so we also need to use [uslug](https://github.com/jeremys/uslug) [as a slugifier](https://github.com/valeriangalliat/markdown-it-anchor#unicode-support) to come closer to the original behaviour. 
+To preserve that behaviour, we need to use our own markdown-it instance, as well as the [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) plugin. The latter comes with unicode support by default, which is not what GFM defaults to, so we also need to use [uslug](https://github.com/jeremys/uslug) [as a slugifier](https://github.com/valeriangalliat/markdown-it-anchor#unicode-support) to come closer to the original behaviour.
 
 ```js
 config.setLibrary(
@@ -95,10 +94,7 @@ Jekyll, for good or for bad, seems to be playing fast and loose with file extens
 To work around the problem, I decided to use the `.liquid` file extension everywhere, and expose a `markdown` Liquid tag which would compile its content to Markdown.
 
 ```js
-config.addPairedShortcode(
-  'markdown',
-  content => markdownIt().render(content)
-)
+config.addPairedShortcode('markdown', content => markdownIt().render(content))
 ```
 
 Then, I can safely author Markdown content within Liquid files:
@@ -140,12 +136,11 @@ I used to have 2 Jekyll configuration files: one for the production site (`_conf
 
 As far as I understand, 11ty does not have a concept of environment. There is no such thing as a production build vs a development one. If anything, the development environment is just a build with watchers enabled. So it took me a while to come up with a way to know in which environment the code is compiled.
 
-Only the [Nunjucks templater allows injecting globals](https://github.com/11ty/eleventy/pull/1060) and I didn’t originally get that data files could be authored in something else than JSON, so I decided to create a Liquid tag which would only output its content in production. 
+Only the [Nunjucks templater allows injecting globals](https://github.com/11ty/eleventy/pull/1060) and I didn’t originally get that data files could be authored in something else than JSON, so I decided to create a Liquid tag which would only output its content in production.
 
 ```js
-config.addPairedShortcode(
-  'production',
-  content => process.env.NODE_ENV === 'production' ? content : undefined
+config.addPairedShortcode('production', content =>
+  process.env.NODE_ENV === 'production' ? content : undefined
 )
 ```
 
@@ -161,7 +156,7 @@ Then I used it in my Liquid templates to wrap content that should only be render
 {% endproduction %}
 ```
 
-Browsing the documentation, I eventually found out that [environment variables can be exposed through a `.js` data file](https://www.11ty.dev/docs/data-js/#example-exposing-environment-variables). That’s what I finally opted for:  `environment: process.env.NODE_ENV`.
+Browsing the documentation, I eventually found out that [environment variables can be exposed through a `.js` data file](https://www.11ty.dev/docs/data-js/#example-exposing-environment-variables). That’s what I finally opted for: `environment: process.env.NODE_ENV`.
 
 ```html
 {% if site.environment == 'production' %}

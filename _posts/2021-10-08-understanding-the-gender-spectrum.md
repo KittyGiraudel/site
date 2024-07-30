@@ -22,7 +22,7 @@ It helps trying to see **gender as some sort of a spectrum rather than a binary 
 
 Gender and sex are somewhat related, but do not hold a one-to-one equivalency. Both words should not be used interchangeably. The right word should be picked depending on context, and most often it should be “gender”.
 
-People who are not cis—that is, who do not identify with the gender they were assigned at birth—have existed for the longest time. It is not a recent invention or a product of our time. We have many historical evidences that trans people have been part of society, one way or another, for basically ever. It’s important to understand what it means not to perpetuate prejudices against this under-represented group of people.
+People who are not cis — that is, who do not identify with the gender they were assigned at birth — have existed for the longest time. It is not a recent invention or a product of our time. We have many historical evidences that trans people have been part of society, one way or another, for basically ever. It’s important to understand what it means not to perpetuate prejudices against this under-represented group of people.
 
 Generally speaking, we tend to use _non-binary_ as an umbrella term for anyone who’s not a woman or a man (regardless of whether they transitioned). It’s a pretty generic term. Some people use it but others might prefer something more specific to describe who they are. For instance, some people are agender (as in, they have no gender), other are gender-fluid, bigender, non-binary trans…
 
@@ -41,7 +41,7 @@ It might sound like a lot of jargon, and even a little silly sometimes, but we h
 
 Let’s briefly talk about pronouns because pronouns are important. They are how many languages convey a sense of gender. English being a great language, it has a neutral pronoun _they/them_. It is encouraged to use it when referring to someone whose gender is unknown or undescribed.
 
-Some people might prefer others using these pronouns when referring to them to avoid conveying one gender or the other—it’s neutral that way. Kindly respect that. It’s not a whim, it’s how to establish one’s sense of self and being respected for who one is. It matters, even when they’re not around to hear it.
+Some people might prefer others using these pronouns when referring to them to avoid conveying one gender or the other — it’s neutral that way. Kindly respect that. It’s not a whim, it’s how to establish one’s sense of self and being respected for who one is. It matters, even when they’re not around to hear it.
 
 Not all non-binary people use they/them pronouns. Not all men/women use he/she pronouns. It depends on one’s gender expression.
 

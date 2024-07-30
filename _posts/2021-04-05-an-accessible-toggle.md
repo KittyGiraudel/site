@@ -32,7 +32,7 @@ In this article, I will show a small HTML + CSS only implementation of an access
 
 As always, let’s start with the HTML. In this case, we are going to start with the very basics, which is a properly labelled checkbox. It’s an `<input>` with a `<label>`, with the correct attributes, and a visible label.
 
-If the toggle causes an immediate action (such as switching a theme) and therefore relies on JavaScript, it should use a `<button>` instead. Refer to the [button variant](#button-variant) for more information about the markup—the [styles](#styles) are essentially the same. Thanks to Adrian Roselli for pointing this out!
+If the toggle causes an immediate action (such as switching a theme) and therefore relies on JavaScript, it should use a `<button>` instead. Refer to the [button variant](#button-variant) for more information about the markup — the [styles](#styles) are essentially the same. Thanks to Adrian Roselli for pointing this out!
 
 ```html
 <label class="Toggle" for="toggle">

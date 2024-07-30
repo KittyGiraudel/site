@@ -75,7 +75,7 @@ As you can see, there is quite a lot to unpack, and you can soon realise why mai
 
 ## Here comes React
 
-My React implementation of footnotes aims at making it easier to author the references, and making it automatic to author the footnotes—including their numbering. To do that, it needs 3 different part:
+My React implementation of footnotes aims at making it easier to author the references, and making it automatic to author the footnotes — including their numbering. To do that, it needs 3 different part:
 
 - A `FootnoteRef` component that will render a reference (an anchor tag with all the necessary attributes).
 - A `Footnotes` component that will render the footer and all the footnotes in the correct order.
@@ -107,6 +107,6 @@ What’s nice about this approach is that footnotes are essentially out of sight
 
 I hope [react-a11y-footnotes](https://github.com/KittyGiraudel/react-a11y-footnotes) will help people implement clean and accessible footnotes for everyone. I’m currently finalising the API and will most likely publish a first version some time this week.
 
-I am also playing with providing optional basic styling—especially for the references themselves since they currently rely on CSS counters—to make it easy to import the library, its styles, and start footnoting.
+I am also playing with providing optional basic styling — especially for the references themselves since they currently rely on CSS counters — to make it easy to import the library, its styles, and start footnoting.
 
 If you have any suggestion, comment or issue, feel free to share on Twitter or in an issue on the GitHub repository!

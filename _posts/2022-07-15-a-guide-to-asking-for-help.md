@@ -77,11 +77,11 @@ On a similar note, Julia Evans recently shared [this zine on Twitter](https://tw
 
 ## Be patient
 
-Getting support online—be it via Stack Overflow, GitHub or Slack—can take time. Everyone has their own day and communication is very much asynchronous (yes, even on Slack). You’re not more important than anyone else, so be patient. Namely:
+Getting support online — be it via Stack Overflow, GitHub or Slack — can take time. Everyone has their own day and communication is very much asynchronous (yes, even on Slack). You’re not more important than anyone else, so be patient. Namely:
 
 - Do not post your message multiple times. It might feel like you have more chance of being seen, but it also comes out as needy and a little spammy.
 - Do not expect everyone to jump on to help you just because you’re on a tight deadline. I’ve seen numerous people crying for help because of some urgency on their side, but that’s not how community support works. One’s lack of planning or urgency does not constitude anyone else’s emergency. 😅
-- Do not ping people individually. It’s pretty uncommon, but I’ve seen it happen (and have been pinged as well). I get it might feel like a good way to get someone’s attention and support, but it feels a little awkward to me. Community members spend some of their time helping others, but it’s very much a proactive involvement. Similarly, support engineers have their day of tasks and projects ahead of them—they’re not sitting waiting to be pinged.
+- Do not ping people individually. It’s pretty uncommon, but I’ve seen it happen (and have been pinged as well). I get it might feel like a good way to get someone’s attention and support, but it feels a little awkward to me. Community members spend some of their time helping others, but it’s very much a proactive involvement. Similarly, support engineers have their day of tasks and projects ahead of them — they’re not sitting waiting to be pinged.
 
 Long story short, just be patient. You might get an answer within the hour, or in a day or two. The best thing you can do to speed up the resolution time is to make your request airtight: be kind, give all the information you have in a digestible form, and hope for someone to pick it up soon.
 

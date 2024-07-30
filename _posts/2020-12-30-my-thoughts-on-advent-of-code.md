@@ -31,7 +31,7 @@ I felt like a lot of the difficulty came from performance (or lack thereof). Mos
 
 For instance, both [day 15](https://adventofcode.com/2020/day/15) and [day 23](https://adventofcode.com/2020/day/23) were infinite number games, which were simple and quick in part 1 but required computing a very large number of rounds (10,000,000 if I’m not mistaken) for part 2. The naive array-based implementation worked fine to begin with, and completely collapsed later on when it cannot output a result within hours (!!). Rewriting the code using a hash table (such as an object or a `Map`) yields dramatic performance improvements, solving the puzzle within 10 seconds. Rewriting the code _again_ using an `UInt32Array` brings down computation time within a single second.
 
-Not everything has to be brute-forced, but ultimately everything is. Some puzzles could be solved efficiently in very clever ways such as using the Chinese Remainder Theorem in [day 13](https://adventofcode.com/2020/day/13), or bitwise operators in [day 14](https://adventofcode.com/2020/day/14), but unless one has some relatively advanced math and/or computer science knowledge, such solution is most likely out of reach. As a result, we resort to brute-forcing, and this is when performance can be an issue—because these problems are better solved otherwise.
+Not everything has to be brute-forced, but ultimately everything is. Some puzzles could be solved efficiently in very clever ways such as using the Chinese Remainder Theorem in [day 13](https://adventofcode.com/2020/day/13), or bitwise operators in [day 14](https://adventofcode.com/2020/day/14), but unless one has some relatively advanced math and/or computer science knowledge, such solution is most likely out of reach. As a result, we resort to brute-forcing, and this is when performance can be an issue — because these problems are better solved otherwise.
 
 ## Tests
 
@@ -62,7 +62,7 @@ test('Day 22 — Solutions', t => {
 
 Overall, it was a lot of fun. Difficulty varied greatly from day to day which was pretty interesting, and besides [day 20](https://adventofcode.com/2020/day/20) which was an absolute nightmare, I enjoyed solving the daily puzzle.
 
-What I particularly like about this event is that the amount of code to write is actually pretty low. Some challenges required barely more than a dozen lines. So it really is about solving problems more than writing code. My least favourite puzzles were the ones with a big code-to-solving ratio—that is, easy to solve, but hard or long to write.
+What I particularly like about this event is that the amount of code to write is actually pretty low. Some challenges required barely more than a dozen lines. So it really is about solving problems more than writing code. My least favourite puzzles were the ones with a big code-to-solving ratio — that is, easy to solve, but hard or long to write.
 
 My favourite ones were:
 

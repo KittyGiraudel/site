@@ -125,7 +125,7 @@ retry (3) {
 
 Our testing setup is pretty complex. We run _a lot_ of [Cypress](https://cypress.io) tests, and they interact with the staging backend, so they can be flaky. We cannot afford to restart the entire build from scratch every time a request fails during the tests, so we have built a lot of resilience within our test setup.
 
-On top of automatic retrying of failing steps (both [from Cypress behaviour](https://docs.cypress.io/guides/references/migration-guide.html#Tests-retries) and from a more advanced home made strategy), we also have a way to manually retry a stage if it failed. The idea is that it does not immediately fail the build—it waits for input (“Proceed” or “Abort”) until the stage either passes or is manually aborted.
+On top of automatic retrying of failing steps (both [from Cypress behaviour](https://docs.cypress.io/guides/references/migration-guide.html#Tests-retries) and from a more advanced home made strategy), we also have a way to manually retry a stage if it failed. The idea is that it does not immediately fail the build — it waits for input (“Proceed” or “Abort”) until the stage either passes or is manually aborted.
 
 ```groovy
 stage('Tests') {

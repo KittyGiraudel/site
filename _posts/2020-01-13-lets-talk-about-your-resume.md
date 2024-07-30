@@ -46,7 +46,7 @@ Many companies, especially tech startups, are constantly hiring. The job ads are
 
 That means the way your resume looks is absolutely critical. Now, I understand that not everyone has the time, the energy or the will to design their own resume. Fortunately, that is not necessary, because the internet is full of free or cheap CV templates that are ready to be filled.
 
-What is important is that it looks clean, tidy and properly structured. The hierarchy of information needs to stand out (often helped by breathing space), and it should be inviting—which means it shouldn’t be 10 pages long, one or 2 pages at most is good. When I open the resume for the first time, I should say “Ah!” not “Oooh…”.
+What is important is that it looks clean, tidy and properly structured. The hierarchy of information needs to stand out (often helped by breathing space), and it should be inviting — which means it shouldn’t be 10 pages long, one or 2 pages at most is good. When I open the resume for the first time, I should say “Ah!” not “Oooh…”.
 
 Be careful with typos. Similarly, be weary with consistency. If you are going to write “frontend” with an hyphen, or “React.js” (although this is no longer correct), do so all the way through. Pay attention to capitalisation: it’s “JavaScript”, not “javascript”; [“Sass”, not “SASS”](https://sassnotsass.com/); “git” not “GIT”, and so on. Along the same line, pay attention to the punctuation: if you end a sentence with a fullstop, do the same for all the others sentences.
 
@@ -96,7 +96,7 @@ Your resume is not the package.json of your last project. It cannot be just a co
 
 Focus on your top skills. And by top skills, I mean the ones you either excel in, or you want your next job to be about. Knowing you did a course of Visual Basic in college 7 years ago has little to no value for me. It certainly won’t have any for the company if you apply for building React applications or working on Rails systems.
 
-Give it a deep thought: what is it you’re passionate about and/or you are—comparatively to the rest of your skills—talented at? It should be a few skills top, not dozens. Statistically speaking, one doesn’t get to be an expert in many topics, especially not in the course of just a few years.
+Give it a deep thought: what is it you’re passionate about and/or you are — comparatively to the rest of your skills — talented at? It should be a few skills top, not dozens. Statistically speaking, one doesn’t get to be an expert in many topics, especially not in the course of just a few years.
 
 Myself, I would emphasise on HTML, CSS, React, accessibility and documentation (not necessarily in that order). Sure, I have some knowledge in Jenkins, Bash and PHP but a) I don’t want my job to focus on these and b) these are not my strong suit.
 

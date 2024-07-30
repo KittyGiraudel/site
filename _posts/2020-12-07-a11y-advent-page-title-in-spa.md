@@ -9,7 +9,7 @@ Single-page applications (SPA for short) have been all the hype for the last dec
 
 The thing we usually don’t think about is that many assistive technologies such as screen-readers have been initially authored with the “original web” in mind and rely on page (re)loads to announce the page context, namely the page title (hold by the `<title>` element).
 
-When building a SPA—no matter the framework—it is important to do some work to announce the title when following router links. Two things need to happen:
+When building a SPA — no matter the framework — it is important to do some work to announce the title when following router links. Two things need to happen:
 
 1. The title of the new view/page needs to be announced.
 2. The focus needs to be preserved or moved to a proper place.
@@ -32,7 +32,7 @@ Here is how our HTML should look like:
 </body>
 ```
 
-And our unflavoured JavaScript. Note that this is no specific framework—it’s just a made-up API to illustrate the concept.
+And our unflavoured JavaScript. Note that this is no specific framework — it’s just a made-up API to illustrate the concept.
 
 ```js
 const titleHandler = document.querySelector('body > p')
@@ -40,7 +40,7 @@ const titleHandler = document.querySelector('body > p')
 router.on('page:change', ({ title }) => {
   // Render the title of the new page in the <p>
   titleHandler.innerText = title
-  // Focus it—note that it *needs*  `tabindex="-1"` to be focusable!
+  // Focus it — note that it *needs*  `tabindex="-1"` to be focusable!
   titleHandler.focus()
 })
 ```

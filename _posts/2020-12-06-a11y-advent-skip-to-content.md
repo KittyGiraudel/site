@@ -2,7 +2,7 @@
 title: 'A11yAdvent Day 6: Skip to Content'
 ---
 
-Let’s stay in the topic of navigation and talk about a feature that is too often forgotten: a link to go straight to the main content area of the site—often called “skip-to-content” or “skip-navigation” link.
+Let’s stay in the topic of navigation and talk about a feature that is too often forgotten: a link to go straight to the main content area of the site — often called “skip-to-content” or “skip-navigation” link.
 
 In traditional websites using hyperlinks the right way, the page is fully reloaded when following a link and the focus is restored to the top of the page. When navigating with the keyboard, that means having to tab through the entire header, navigation, sometimes even sidebar before getting to accesss the main content. This is bad.
 
@@ -13,7 +13,7 @@ Single-page applications are not free from this consideration either. Following 
 To work around the problem, a common design pattern is to {% footnoteref "skip_link" skip_link %}implement a skip link{% endfootnoteref %}, which is an anchor link sending to the main content area. So how shall our skip link work?
 
 - It should be at the top of the page, ideally as the first focusable element. It doesn’t have to be absolute first, but the more focusable elements there are before it, the less discoverable and thus less useful the skip link becomes.
-- Ideally it’s always visible, but it’s pretty uncommon that it fits nicely into design so it can be visually hidden and revealed on focus—more on that below.
+- Ideally it’s always visible, but it’s pretty uncommon that it fits nicely into design so it can be visually hidden and revealed on focus — more on that below.
 - It should lead to the main content area of the page.
 - It should ideally start with the word “Skip” so it’s easily recognisable (visually and aurally). It can say “Skip navigation”, “Skip to content”, or some similar flavours.
 

@@ -52,6 +52,6 @@ Mathematics never were my passion. I always failed to appreciate their usefulnes
 
 <img src="https://m.media-amazon.com/images/I/41EEbh6mf+L.jpg" alt="Cover of “Technically Wrong”" class="BookCover" />
 
-I will never stop recommending [Technically Wrong](https://www.indiebound.org/book/9780393356045) by [Sara Wachter-Boettcher](https://twitter.com/sara_ann_marie), because it is an eye-opening fantastic piece on everything that’s wrong with the tech industry—from racist artificial intelligence algorithms to ethical conundrums, from corporate failures to systemic issues.
+I will never stop recommending [Technically Wrong](https://www.indiebound.org/book/9780393356045) by [Sara Wachter-Boettcher](https://twitter.com/sara_ann_marie), because it is an eye-opening fantastic piece on everything that’s wrong with the tech industry — from racist artificial intelligence algorithms to ethical conundrums, from corporate failures to systemic issues.
 
 Published in 2017, it still completely holds up and everyone working or even simply being interested in tech and its supposed promise to save the world should read it.

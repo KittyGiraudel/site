@@ -61,7 +61,7 @@ You can find more information about [accessibility testing and tooling](https://
 
 Accessibility is an ongoing battle. It’s never done, and you and your team can never stop caring about it. To avoid doing the same improvements and fixes over and over, a component-based architecture is key.
 
-The goal is going to create accessible components which can be reused across the application, ensuring that many expectations are matched from the get-go. The same way you’d have a centralized way to deal with, say, translations—you wouldn’t implement a translation pipeline in every component.
+The goal is going to create accessible components which can be reused across the application, ensuring that many expectations are matched from the get-go. The same way you’d have a centralized way to deal with, say, translations — you wouldn’t implement a translation pipeline in every component.
 
 Try to rely on existing (lightweight and flexible) implementations of complex components. Interfaces like dialogs, footnotes, tabs, and advanced form controls can be very difficult to build properly, and it’s better to use battle-tested solutions rather than risking rolling out your own at the detriment of your users.
 

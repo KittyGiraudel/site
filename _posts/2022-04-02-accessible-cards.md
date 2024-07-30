@@ -51,7 +51,7 @@ Cats. Let’s imagine we want to display a list of cats. Every cat card can be i
 
 Allow me to point out that the link (it could also be a button if it performed an action instead of going somewhere) is placed on the primary piece of information only. It does _not_ wrap the whole card.
 
-The reason for it is that links can be listed by assistive technologies (such as VoiceOver’s rotor or [a11y-outline](https://github.com/xi/a11y-outline)), so we want to provide just enough information so that they’re understandable and identifiable on their own. We don’t want the entire card’s content to be read out when listing the links—it’s too much.
+The reason for it is that links can be listed by assistive technologies (such as VoiceOver’s rotor or [a11y-outline](https://github.com/xi/a11y-outline)), so we want to provide just enough information so that they’re understandable and identifiable on their own. We don’t want the entire card’s content to be read out when listing the links — it’s too much.
 
 In that case, we want the link to be listed as “Lilith, link” not “Lilith, 10 year old British Shorthair, link”. And while the latter would still be acceptable, it quickly becomes problematic when cards hold more and more content (think product cards with a lot of meta data for instance).
 
@@ -143,7 +143,7 @@ Let me take this post as an opportunity to discuss whether a card should contain
 
 I don’t think there is a right or a wrong answer per se. There might be cases where making the primary content of a card a link is worth it, and cases where it’s not. I guess it depends whether the heading a) introduces a significant amount of content, and b) benefits from being listed among all the headings of the page.
 
-For what it’s worth, Heydon Pickering does use links in his [article about cards](https://inclusive-components.design/cards/). Looking back at the list of transactions we built for N26 back in the days, we certainly wouldn’t want dozens or hundreds of transactions to have their own heading—that would make the headings listing unusable.
+For what it’s worth, Heydon Pickering does use links in his [article about cards](https://inclusive-components.design/cards/). Looking back at the list of transactions we built for N26 back in the days, we certainly wouldn’t want dozens or hundreds of transactions to have their own heading — that would make the headings listing unusable.
 
 ## Wrapping up
 

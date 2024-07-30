@@ -34,7 +34,7 @@ This creates a nice graph with the commits id, message, branch name, etc. Like t
 
 ## Working with branches
 
-To quickly jump between branches, I created a few aliases. At N26, the `master` branch is the protected release branch, and `develop` is the main one—also protected. Everything goes through pull-requests against the main branch.
+To quickly jump between branches, I created a few aliases. At N26, the `master` branch is the protected release branch, and `develop` is the main one — also protected. Everything goes through pull-requests against the main branch.
 
 I aliased `git checkout` as `git co` and `git branch` as `git br`:
 

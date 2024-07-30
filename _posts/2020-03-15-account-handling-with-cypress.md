@@ -1,9 +1,9 @@
 ---
 title: Account handling with Cypress
 keywords:
-- cypress
-- testing
-- qa
+  - cypress
+  - testing
+  - qa
 ---
 
 At [N26](https://n26.com), we banked on [Cypress](https://cypress.io) (see what I did there?) pretty much from the start. We migrated our then small testing suite from Nightwatch and the horrors of Selenium to Cypress while it was still in closed beta. And we’ve been basing more and more of our testing infrastructure on it ever since.
@@ -19,13 +19,13 @@ Originally, we had a few static accounts that we manually created for test purpo
 These accounts’ credentials were stored in a JavaScript file, which we imported and used as part of our custom `login` [command](https://docs.cypress.io/api/cypress-api/custom-commands.html) at the beginning of each test.
 
 ```js
-import { STANDARD_ACCOUNT } from "@tests/utils/accounts";
+import { STANDARD_ACCOUNT } from '@tests/utils/accounts'
 
-describe("Personal settings", () => {
+describe('Personal settings', () => {
   before(() => {
-    cy.login(STANDARD_ACCOUNT);
-  });
-});
+    cy.login(STANDARD_ACCOUNT)
+  })
+})
 ```
 
 The problem with this strategy was that soon enough, these accounts were extensively bloated with hundred of thousands of transactions and hundreds of inactive credit cards. In turn, pages were getting slugish and the tests more and more flaky. Moreover, our tests were thus bound to a single environment.
@@ -37,21 +37,21 @@ N26 has an internal service to create accounts. We created a Cypress command to 
 ```js
 cy.createUser({
   confirmEmail: false,
-  residenceCountry: "ITA",
+  residenceCountry: 'ITA',
   topUp: 100,
-});
+})
 ```
 
-Under the hood, this command fires a request to the internal service, and receives the newly-created user’s information as a response. It contains a lot of data about the user, such as their identifier, name, birth date, residency, nationality—all of which is generated at random with [Faker](https://github.com/marak/Faker.js/).
+Under the hood, this command fires a request to the internal service, and receives the newly-created user’s information as a response. It contains a lot of data about the user, such as their identifier, name, birth date, residency, nationality — all of which is generated at random with [Faker](https://github.com/marak/Faker.js/).
 
 Then we would start all our tests with creating an account, then logging into that account with another custom command.
 
 ```js
-describe("Personal settings", () => {
+describe('Personal settings', () => {
   before(() => {
-    cy.createUser().then((user) => cy.login(user));
-  });
-});
+    cy.createUser().then(user => cy.login(user))
+  })
+})
 ```
 
 ## Caching accounts
@@ -74,39 +74,37 @@ It works like this:
 The code (stripped out of unnecessary things) looks like this:
 
 ```js
-const cache = new Map();
+const cache = new Map()
 
 export default function getAccount(conf = {}) {
-  const key = stringify(conf);
+  const key = stringify(conf)
 
   if (conf.cache && cache.has(key)) {
-    return typeof conf.login === "undefined" || conf.login
+    return typeof conf.login === 'undefined' || conf.login
       ? cy.login(cache.get(key))
-      : cy.wrap(cache.get(key));
+      : cy.wrap(cache.get(key))
   }
 
-  return cy.createUser(conf).then((account) => {
+  return cy.createUser(conf).then(account => {
     if (conf.cache && account) {
-      cache.set(key, account);
+      cache.set(key, account)
     }
 
-    return cy.wrap(account);
-  });
+    return cy.wrap(account)
+  })
 }
 ```
 
-{% info %}
-Note that `JSON.stringify` does not guarantee key order, which means two identical objects with keys in a different order will not be stringified the same way. We use a lib that ensures key sorting to prevent that problem.
-{% endinfo %}
+{% info %} Note that `JSON.stringify` does not guarantee key order, which means two identical objects with keys in a different order will not be stringified the same way. We use a lib that ensures key sorting to prevent that problem. {% endinfo %}
 
 We can now start our tests with a single call to `getAccount` passing the `cache: true` option when possible so we retrieve accounts from local cache if available, or create and cache them otherwise.
 
 ```js
-describe("Personal settings", () => {
+describe('Personal settings', () => {
   before(() => {
-    cy.getAccount({ cache: true });
-  });
-});
+    cy.getAccount({ cache: true })
+  })
+})
 ```
 
 ## Wrapping up

@@ -12,7 +12,7 @@ title: 'Gorillas’ nav: a case study'
 
 A few days ago, I posted [a few tweets](https://twitter.com/KittyGiraudel/status/1367834491977412608?s=20) about the new [Gorillas’ website](https://gorillas.io). It’s a pretty simple site at this stage: a couple pages, not much interaction, mostly there to showcase Gorillas’ branding as we expand rapidly across Europe (check it out if you can, it’s good stuff ✨).
 
-One of the most interesting part of the site—at least from a technical standpoint—has to be the navigation. So I thought I’d write a short piece about everything that went into it, from accessibility to behaviour to design.
+One of the most interesting part of the site — at least from a technical standpoint — has to be the navigation. So I thought I’d write a short piece about everything that went into it, from accessibility to behaviour to design.
 
 - [Show me your content](#show-me-your-content)
 - [Shut it down](#shut-it-down)
@@ -55,7 +55,7 @@ summary::-webkit-details-marker {
 
 As much as I love `<details>` and `<summary>`, they’re also not perfect for a navigation, because clicking elsewhere or tabbing out of it does not close it.
 
-That’s why when JavaScript is available, we replace them with a `<button>` (with `aria-controls` and `aria-expanded`) and a `<div>` with (`aria-hidden` and `aria-labelledby`), so we can have more control over the behaviour—particularly when to close the menu.
+That’s why when JavaScript is available, we replace them with a `<button>` (with `aria-controls` and `aria-expanded`) and a `<div>` with (`aria-hidden` and `aria-labelledby`), so we can have more control over the behaviour — particularly when to close the menu.
 
 ```html
 <nav role="navigation">
@@ -110,7 +110,7 @@ Simplified and using `<details>` and `<summary>` in this example for sake of cla
 
 ## It’s a blur, sir
 
-What’s a little subtle about the design is that the list doesn’t have a solid background—it’s a heavy blur, which gives a slight shade on top of the thick white on black typography underneath.
+What’s a little subtle about the design is that the list doesn’t have a solid background — it’s a heavy blur, which gives a slight shade on top of the thick white on black typography underneath.
 
 Fortunately, CSS now has a `backdrop-filter` property, which enables us to apply filter to the background of an element (in opposition to `filter` which applies to its entirety). We still need to make sure things look okay if the property is not supported though. `@supports` to the rescue!
 
@@ -131,7 +131,7 @@ Fortunately, CSS now has a `backdrop-filter` property, which enables us to apply
 
 This property is not without pitfalls though. Because the actual list is absolutely positioned, we could not set the backdrop filter on the `<nav>` container, because the list would end up with no background when open (against, absolutely positioned).
 
-We thought about setting it on both the nav and the list, but for some awkward reasons, nested backdrop-filter do not work on Chrome, the list end up with no blur—fine on Safari though. Don’t ask me why.
+We thought about setting it on both the nav and the list, but for some awkward reasons, nested backdrop-filter do not work on Chrome, the list end up with no blur — fine on Safari though. Don’t ask me why.
 
 So we ended up applying the filter on both the toggle and the list (thus covering the whole nav area with blur). As a result, we unfortunately end up with a thin yet noticeable line where the 2 blur areas meet. Sad, but I guess there is no way out.
 

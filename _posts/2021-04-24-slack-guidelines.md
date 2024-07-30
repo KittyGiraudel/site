@@ -57,7 +57,7 @@ Once having created a new channel, set its description for sake of clarity, and 
 
 ### Public or private
 
-Generally speaking, default to public when creating a channel. Private channels cannot be turned into public channels down the line, which means information within them will remain forever restricted—this should be intended for specific purposes only.
+Generally speaking, default to public when creating a channel. Private channels cannot be turned into public channels down the line, which means information within them will remain forever restricted — this should be intended for specific purposes only.
 
 There certainly are cases where private channels should be used, such as discussing confidential topics (legal, leadership…), but most conversations should hopefully be quite open. This encourages transparency and reduces duplicated communication and information loss.
 

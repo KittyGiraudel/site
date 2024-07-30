@@ -2,7 +2,7 @@
 title: Simple access management with Sanity
 ---
 
-Access management is important to any CMS. Unfortunately, [Sanity](https://sanity.io)’s ability to define custom roles is restricted to customers of the business plan. In this article, we will see how to customize the studio based on default roles, something that is possible with all Sanity plans—albeit a little tricky to set up (kind thanks to [Knut](https://twitter.com/kmelve) for showing me the way).
+Access management is important to any CMS. Unfortunately, [Sanity](https://sanity.io)’s ability to define custom roles is restricted to customers of the business plan. In this article, we will see how to customize the studio based on default roles, something that is possible with all Sanity plans — albeit a little tricky to set up (kind thanks to [Knut](https://twitter.com/kmelve) for showing me the way).
 
 1. [Introduction](#introduction)
 2. [Caveats](#caveats)
@@ -186,7 +186,7 @@ export default createSchema({
 
 ## Locking fields for editors
 
-The `readOnly` and `hidden` properties that can be defined on fields accept a function that receives—among other things—the current user. This means it is possible to mark a certain field readonly, or fully hidden, for editors if we want to (as also [demonstrated in the documentation](https://www.sanity.io/docs/conditional-fields#1cd9fa233032)).
+The `readOnly` and `hidden` properties that can be defined on fields accept a function that receives — among other things — the current user. This means it is possible to mark a certain field readonly, or fully hidden, for editors if we want to (as also [demonstrated in the documentation](https://www.sanity.io/docs/conditional-fields#1cd9fa233032)).
 
 To make sure fields cannot be updated by editors even if they managed to reach a document they’re not supposed to see (which could happen when following a reference or reaching a document via the search), we can automate it. When defining our schema, we iterate over all fields of all documents, and add a `readOnly` property based on the role.
 

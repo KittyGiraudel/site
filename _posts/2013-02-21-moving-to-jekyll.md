@@ -76,7 +76,7 @@ Also as a developer, I would probably have not felt very proud of running WordPr
 
 This is why I wanted another simpler option, so I [asked](https://twitter.com/KittyGiraudel/status/302826818988290048) [on](https://twitter.com/KittyGiraudel/status/302839345277194240) [Twitter](https://twitter.com/KittyGiraudel/status/302910551363825665). A couple of people recommended either Jekyll or [Octopress](http://octopress.org/) (which runs on Jekyll). I had already heard about it since the site redesign has been motivated by [Dave Rupert’s](https://daverupert.com/2012/11/brander-newer/) when he moved to Jekyll.
 
-Back then, I had a look at Jekyll and it seemed nice but overly complicated—at least to me. I am really not that smart when you put CSS aside. Anyway it seemed to be quite what I was looking for so I thought I should give a try.
+Back then, I had a look at Jekyll and it seemed nice but overly complicated — at least to me. I am really not that smart when you put CSS aside. Anyway it seemed to be quite what I was looking for so I thought I should give a try.
 
 I looked for tutorials to move a simple site to Jekyll and found a couple of posts explaining the whole process pretty well but the best one has to be [this one](https://www.andrewmunsell.com/tutorials/jekyll-by-example/) from Andrew Munsell. If you can read this Andrew, thank you a billion times because I couldn’t have made it without your post. Two or three reads later, I was fucking ready to move that shit to Jekyll.
 
@@ -121,7 +121,7 @@ It took me no more than a couple of hours with some motivating music to make my 
 
 Setting up a GitHub Pages based website couldn’t be simpler. It only consists of creating a repo named this way `username.github.com`. Easy, right?
 
-The best thing with GitHub Pages is that it is built on Jekyll. This means **you can push raw Jekyll source to your repo** and GitHub Pages will automagically compile it through Jekyll (on their side). This also means you only really need Jekyll the very first time to set everything up, but then—unless you plan on changing your structure everyday—you don’t really need to use Jekyll at all since GitHub does the compilation.
+The best thing with GitHub Pages is that it is built on Jekyll. This means **you can push raw Jekyll source to your repo** and GitHub Pages will automagically compile it through Jekyll (on their side). This also means you only really need Jekyll the very first time to set everything up, but then — unless you plan on changing your structure everyday — you don’t really need to use Jekyll at all since GitHub does the compilation.
 
 _I could also push the compiled code to the repo but that would mean I need Jekyll everytime I want to update anything on the site. Not great, especially since I work at 4 different places._
 
@@ -149,7 +149,7 @@ This was probably my biggest concern when I decided to change structure and host
 
 GitHub doesn’t allow `.htaccess` config for obvious reasons, so I couldn’t set server-side redirects. A [StackOverflow answer](https://stackoverflow.com/a/13676721) recommended a Jekyll plugin to handle automatic redirects through aliases but GitHub Pages compiles Jekyll in safe mode (no plugin), so it wasn’t an option either.
 
-I opted for a very simple—yet not perfect—approach which consisted of creating HTML files at the old locations redirecting to the new files with meta tags. For example, there is a file in a `/blog` folder called `css-gradients.html` containing only a the basic html/head/body tag and:
+I opted for a very simple — yet not perfect — approach which consisted of creating HTML files at the old locations redirecting to the new files with meta tags. For example, there is a file in a `/blog` folder called `css-gradients.html` containing only a the basic html/head/body tag and:
 
 ```html
 <meta http-equiv="refresh" content="0;url=/2013/02/04/css-gradients/" />

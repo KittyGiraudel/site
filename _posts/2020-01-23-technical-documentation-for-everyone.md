@@ -27,7 +27,7 @@ Speaking of the author, I believe it should be non-existent. The personal experi
 
 ## Fighting obsolescence
 
-The biggest problem of technical documentation—probably after the lack thereof—is keeping it up-to-date. You know how it goes: someone writes a handy guide for a feature of some sort. Then, months later, someone else changes the way the feature works, but completely forgets about the documentation. Then months later, someone finds the documentation to update the feature again, but it is completely obsolete and makes no sense whatsoever. And everybody’s sad.
+The biggest problem of technical documentation — probably after the lack thereof — is keeping it up-to-date. You know how it goes: someone writes a handy guide for a feature of some sort. Then, months later, someone else changes the way the feature works, but completely forgets about the documentation. Then months later, someone finds the documentation to update the feature again, but it is completely obsolete and makes no sense whatsoever. And everybody’s sad.
 
 N26, like many companies, uses the Atlassian tools suite, including Confluence for documentation. Most of the company’s documentation lives there so it can be searched, used and most importantly audited. That mostly matters for topics that are likely to be audited such as product, legal, compliance, data privacy, banking regulations, security and such.
 

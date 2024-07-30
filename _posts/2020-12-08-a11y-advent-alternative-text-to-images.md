@@ -17,4 +17,4 @@ Finally, there are some cases where you can leave out the alternative text entir
 - When the text would just repeat surrounding text, such as the image of an article tile or an icon within a link containing text.
 - When the image is part of a repeated list, such as users’ profile picture in a feed or a chat conversation.
 
-That’s the main gist. Images are a critical part of the web—we have to appreciate that not everyone can perceive them the same way, and that’s why it’s critical to describe them properly.
+That’s the main gist. Images are a critical part of the web — we have to appreciate that not everyone can perceive them the same way, and that’s why it’s critical to describe them properly.

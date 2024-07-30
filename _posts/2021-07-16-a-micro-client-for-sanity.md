@@ -17,7 +17,7 @@ To solve our first point, we’re going to author 2 functions: `getEntry` and `g
 Our second point is going to be addressed by passing different arguments to our functions, all of which will be combined to construct a GROQ query which will eventually be forwarded to the Sanity client. Both functions have the exact same signature for convenience, which goes like this:
 
 - `conditions` is a required array of individual conditions, which will be joined together with `&&`. This is what lives between `*[` and `]` at the beginning of our GROQ query.
-- `fields` is the core of the query. We use a string to preserve the power and flexibility of GROQ—no need to try to serialise this madness.
+- `fields` is the core of the query. We use a string to preserve the power and flexibility of GROQ — no need to try to serialise this madness.
 - `params` is an optional object of arguments referenced in the conditions.
 - `options` is an optional object of options such as order, limit and preview.
 

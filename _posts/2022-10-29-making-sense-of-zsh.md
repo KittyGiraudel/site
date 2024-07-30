@@ -2,7 +2,7 @@
 title: Making sense of zsh
 ---
 
-If you use a relatively recent macOS version, chances are good you’re using zsh ([Z shell](https://en.wikipedia.org/wiki/Z_shell)) as a terminal—even if you use a terminal that’s integrated to your IDE (like in Visual Studio Code for instance).
+If you use a relatively recent macOS version, chances are good you’re using zsh ([Z shell](https://en.wikipedia.org/wiki/Z_shell)) as a terminal — even if you use a terminal that’s integrated to your IDE (like in Visual Studio Code for instance).
 
 Having a nice and clean terminal is important (to me at least) and I’ve done my fair share on copying and pasting configuration snippets until I was happy enough over the years. For some reason, I decided to dig into exactly how things work under the hood, and since this is all new to me, I thought I’d write about my findings.
 
@@ -43,7 +43,7 @@ autoload -Uz vcs_info
 
 This, however, is not changing our prompt. It’s just letting us access the VCS (Version Control Software) information (typically Git, but perhaps SVN or Mercurial). Now we need to do something with it.
 
-I am clueless, but fortunately zsh comes with [nice prose about this very feature](https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples), and as they explain, there are plenty ways to achieve this. They say the easiest way to update one’s prompt with the VCS info is to—and I quote:
+I am clueless, but fortunately zsh comes with [nice prose about this very feature](https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples), and as they explain, there are plenty ways to achieve this. They say the easiest way to update one’s prompt with the VCS info is to — and I quote:
 
 > […] drop a `vcs_info` call to your `precmd` (or into a `precmd_functions[]` entry) and include a single-quoted `${vcs_info_msg_0_}` in your `PS1` definition.
 

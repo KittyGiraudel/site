@@ -8,7 +8,7 @@ Yesterday we discussed the usage of the `aria-disabled` and `aria-describedby` a
 
 The {% footnoteref "aria" aria %}first advice when it comes to ARIA{% endfootnoteref %} is to avoid using it when possible. It is a powerful tool that can completely change the way a page or widget gets interpreted by assistive technologies, for good or for bad, so it needs to be used carefully. Generally speaking, prefer using native HTML when possible, and only use ARIA when HTML is not enough (such as for tabs or carousels).
 
-There are a lot of handy guides on the internet on building accessible widgets with the help of ARIA—[Inclusive Components](https://inclusive-components.design/) by Heydon Pickering has to be one of my favourite.
+There are a lot of handy guides on the internet on building accessible widgets with the help of ARIA — [Inclusive Components](https://inclusive-components.design/) by Heydon Pickering has to be one of my favourite.
 
 One thing I would like to bring your attention to is the concept of “live” regions. A live region is an area of a page that announces its content to screen-readers as it gets updated. Consider a container for notifications (or snackbars, croutons or whatever yummy thing they are called) or a chat feed.
 
