@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 90%;
-  margin-top: calc(var(--vb) * 3);
+  margin-top: calc(var(--vb) * 2);
   position: relative;
 }
 
