@@ -5,7 +5,7 @@ edits:
     md: '[Adrian Roselli](https://twitter.com/aardrian/status/1374684368195702785?s=20) pointed out on Twitter that many things can impact how a screen-reader switches languages, some of them being quite weird. As a result, it might be preferable not to trying gaming screen-readers’ language heuristics and leave it at that. Especially since they can yield unexpected results and are difficult to test reliably.'
 ---
 
-Today, we released the [French version of the Gorillas website](https://gorillas.io/fr). It’s only once we went live that I noticed an interesting piece of trivia I want to share in this article.
+Today, we released the [French version of the Gorillas website](https://web.archive.org/web/20210310065642/https://gorillas.io/fr). It’s only once we went live that I noticed an interesting piece of trivia I want to share in this article.
 
 For good or for bad, we decided not to translate the word “rider” (as in, a delivery person delivering goods on a bike) in French. There are a few ways to translate it, such as “<span lang="fr">livreur·se</span>” or “<span lang="fr">coursier·ère</span>”, but we decided to land on the Anglicism “rider”, which (hopefully) is understandable enough.
 

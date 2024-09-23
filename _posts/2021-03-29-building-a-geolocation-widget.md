@@ -2,7 +2,7 @@
 title: Building a geolocation widget
 ---
 
-Gorillas being about delivering groceries, we recently released a small geolocation widget on the [homepage of our website](https://gorillas.io). We’re growing fast, but there are still some areas do not serve, so we wanted to make it easily accessible for people to know whether they could use our services.
+Gorillas being about delivering groceries, we recently released a small geolocation widget on the [homepage of our website](https://web.archive.org/web/20210310065642/https://gorillas.io/en). We’re growing fast, but there are still some areas do not serve, so we wanted to make it easily accessible for people to know whether they could use our services.
 
 If I’m being honest, it wasn’t such a trivial piece of interface, so I want to go through how we built it — hopefully it helps others to make their geolocation widget clean and accessible.
 

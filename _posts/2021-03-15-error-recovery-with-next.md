@@ -9,7 +9,7 @@ Almost 3 years ago, I wrote about [recovering from runtime JavaScript errors](/2
 
 The idea is to intercept runtime JavaScript errors, and reload the page with a query parameter which causes the JavaScript bundles not to be rendered, thus simulating a no-JavaScript experience. This way, the user can browse the no-JS version instead of being stuck on a broken page.
 
-I recently announced [Gorillas’ new website](https://gorillas.io) built with Next, which almost fully support JavaScript being disabled. So I was eager to try add a similar error recovery feature.
+I recently announced [Gorillas’ new website](https://web.archive.org/web/20210310065642/https://gorillas.io/en) built with Next, which almost fully support JavaScript being disabled. So I was eager to try add a similar error recovery feature.
 
 ## The problem
 
