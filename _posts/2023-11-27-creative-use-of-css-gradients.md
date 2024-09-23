@@ -2,7 +2,7 @@
 title: Creative use of CSS gradients
 ---
 
-I work at [Cofenster](https://cofenster.com) where we build a video creation platform. To do that, our customers can compose _scenes_, which we eventually style and stitch together to generate a resulting mp4 video file.
+I work at [cofenster](https://cofenster.com) where we build a video creation platform. To do that, our customers can compose _scenes_, which we eventually style and stitch together to generate a resulting mp4 video file.
 
 In our live preview editor, we want to display the scenes boundaries in the video player track. A little bit like [video chapters on YouTube](https://support.google.com/youtube/answer/9884579?hl=en) if you will.
 
