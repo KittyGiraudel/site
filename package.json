@@ -1,21 +1,21 @@
 {
-  "title": "KittyGiraudel.com",
-  "homepage": "https://kittygiraudel.com",
-  "scripts": {
-    "sw": "./node_modules/.bin/workbox generateSW workbox-config.js",
-    "build": "npx @11ty/eleventy && npm run sw",
-    "start": "NODE_ENV=development npx @11ty/eleventy --serve --quiet --incremental"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "eleventy-plugin-footnotes": "^0.11.0",
-    "emoji-regex": "^10.4.0",
-    "emoji-short-name": "^2.0.0",
-    "html-minifier": "^4.0.0",
-    "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^9.2.0",
-    "uslug": "^1.0.4",
-    "workbox-cli": "^7.3.0"
-  }
+	"title": "KittyGiraudel.com",
+	"homepage": "https://kittygiraudel.com",
+	"scripts": {
+		"sw": "./node_modules/.bin/workbox generateSW workbox-config.js",
+		"build": "npx @11ty/eleventy && npm run sw && cp bsa.verify.txt _site/",
+		"start": "NODE_ENV=development npx @11ty/eleventy --serve --quiet --incremental"
+	},
+	"dependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"eleventy-plugin-footnotes": "^0.11.0",
+		"emoji-regex": "^10.4.0",
+		"emoji-short-name": "^2.0.0",
+		"html-minifier": "^4.0.0",
+		"markdown-it": "^14.1.0",
+		"markdown-it-anchor": "^9.2.0",
+		"uslug": "^1.0.4",
+		"workbox-cli": "^7.3.0"
+	}
 }
