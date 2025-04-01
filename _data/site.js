@@ -1,7 +1,7 @@
 module.exports = {
   url: 'https://kittygiraudel.com',
   description:
-    'I’m Kitty Giraudel, a non-binary trans frontend developer based in Berlin, focused on accessibility and inclusivity.',
+    'I’m Kitty Giraudel, a transfeminine web engineer based in Berlin, focused on accessibility and inclusivity.',
   author: 'Kitty Giraudel',
   environment: process.env.NODE_ENV,
   time: new Date(),
