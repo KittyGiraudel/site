@@ -77,10 +77,9 @@ Something a little more fleshed out (and therefore more respectful) would be:
 - Bigender
 - Genderfluid
 - Two-spirit (a [gender specific to Native American traditions](https://en.wikipedia.org/wiki/Two-spirit))
+- Prefer not to say
 
 It is better to avoid the words _custom_, _other_ or _X_, as all can feel a little alienating to trans people.
-
-- Prefer not to say
 
 Another important thing to mention is the availability of such information. Some people might not be comfortable openly disclosing themselves as trans, yet they might want to be recognized as such in some contexts.
 
