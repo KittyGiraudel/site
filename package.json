@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "eleventy-plugin-footnotes": "^0.11.0",
     "emoji-regex": "^10.4.0",
     "emoji-short-name": "^2.0.0",
