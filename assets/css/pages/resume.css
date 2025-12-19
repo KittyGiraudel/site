@@ -1,14 +1,29 @@
-.Resume__photo {
-  float: left;
-  shape-outside: circle(50%);
-  margin: 0.5em 1em 0.5em 0;
-  border-radius: 50%;
-  max-width: 8em;
-  display: none;
+.Resume__header {
+  margin-top: -2.5em;
+  margin-bottom: 2em;
+  text-align: center;
+  color: #666;
 }
 
-.Resume__intro {
-  margin-bottom: 2em;
+.Resume__header p:first-child {
+  font-variant: small-caps;
+  font-size: 1.2em;
+}
+
+.Resume__subline {
+  font-size: 1.4em;
+}
+
+.Resume__contact {
+  font-size: 0.8em;
+}
+
+.Resume__contact span:nth-child(1)::before { content: "kitty.giraudel@gmail.com" }
+.Resume__contact span:nth-child(2)::before { content: "+491702295391" }
+
+
+.Resume__header p {
+  margin: 0;
 }
 
 .Resume__section {
@@ -38,6 +53,7 @@
 
 .Resume__section h3 {
   font-size: 90%;
+  break-after: avoid;
 }
 
 .Resume__section h3 span {
@@ -51,27 +67,7 @@
   margin: 0.5em 0;
 }
 
-@media print {
-  .Resume {
-    font-size: 75%;
-  }
-
-  .no-print,
-  .Resume__links,
-  .Resume__photo {
-    display: none;
-  }
-
-  .Resume__links--print {
-    display: block;
-  }
-}
-
-@media (min-width: 768px) {
-  .Resume__photo {
-    display: block;
-  }
-
+@media (min-width: 767px), print {
   .Resume__section {
     margin-bottom: 3em;
     flex-direction: row;
@@ -96,5 +92,18 @@
     padding-left: 1em;
     display: inline-block;
     text-align: right;
+  }
+}
+
+@media print {
+  .Resume {
+    font-size: 70%;
+  }
+
+  .Title {
+    font-size: 3.5em;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    position: relative;
   }
 }
