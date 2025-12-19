@@ -81,6 +81,15 @@ hr {
   background-image: linear-gradient(to right, #dd7eb4, #267cb9);
 }
 
+@media print {
+  /**
+   * 1. Prevent the horizontal bar from being visible on every page.
+   */
+  body::before {
+    position: absolute; /* 1 */
+  }
+}
+
 hr {
   height: 4px;
   border-radius: 4px;
