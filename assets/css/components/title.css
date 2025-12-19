@@ -23,9 +23,3 @@
   -webkit-text-fill-color: transparent;
   text-decoration: none;
 }
-
-@media print {
-  .Title {
-    font-size: 2em;
-  }
-}
