@@ -36,3 +36,19 @@
   width: 1px !important;
   white-space: nowrap !important;
 }
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
+
+@media not print {
+  .print-only {
+    display: none !important;
+  }
+}
