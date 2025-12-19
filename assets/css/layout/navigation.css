@@ -64,9 +64,3 @@
   transform: translateY(0);
   transition: transform 200ms ease-out, opacity 200ms;
 }
-
-@media print {
-  .Navigation {
-    display: none;
-  }
-}
