@@ -74,6 +74,10 @@
 }
 
 @media (min-width: 767px), print {
+  .Resume {
+    font-size: 90%;
+  }
+
   .Resume__section {
     flex-direction: row;
   }
