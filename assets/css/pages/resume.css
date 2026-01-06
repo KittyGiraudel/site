@@ -74,7 +74,6 @@
 
 @media (min-width: 767px), print {
   .Resume__section {
-    margin-bottom: 3em;
     flex-direction: row;
   }
 
