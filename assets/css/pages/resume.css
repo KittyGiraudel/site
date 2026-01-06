@@ -54,6 +54,7 @@
 .Resume__section h3 {
   font-size: 90%;
   break-after: avoid;
+  margin-bottom: 0.5em;
 }
 
 .Resume__section h3 span {
@@ -61,6 +62,10 @@
   opacity: 0.8;
   font-weight: normal;
   display: block;
+}
+
+.Resume__section h3 + p{
+  margin-top: 0;
 }
 
 .Resume__section li {
