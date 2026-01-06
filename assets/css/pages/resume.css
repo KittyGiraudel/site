@@ -1,3 +1,5 @@
+/* Note: this document doesn’t use the --vb variable on purpose to be more flexible. */
+
 .Resume__header {
   margin-top: -2.5em;
   margin-bottom: 2em;
@@ -106,22 +108,28 @@
 }
 
 @media print {
+  /**
+   * Tight fit for a 2-page resume.
+   */
   .Resume {
-    font-size: 70%;
+    font-size: 59%;
   }
 
   .Title {
-    font-size: 3.5em;
+    font-size: 3em;
     font-variant: small-caps;
     letter-spacing: 0.05em;
-    position: relative;
   }
 
   .Resume__section > div > :has(+ .no-print:last-child) {
     margin-bottom: 0;
   }
 
+  .Resume__section h3 {
+    margin-bottom: 0.25em;
+  }
+
   .Resume__section li {
-    margin: 0.25em 0 !important;
+    margin: 0.25em 0;
   }
 }
