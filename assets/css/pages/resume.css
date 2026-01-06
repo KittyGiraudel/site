@@ -57,14 +57,15 @@
   margin-bottom: 0.5em;
 }
 
-.Resume__section h3 span {
+.Resume__section h3 > span {
   margin-left: auto;
   opacity: 0.8;
   font-weight: normal;
   display: block;
+  white-space: nowrap;
 }
 
-.Resume__section h3 + p{
+.Resume__section h3 + p {
   margin-top: 0;
 }
 
@@ -91,11 +92,12 @@
     display: flex;
   }
 
-  .Resume__section h3 span {
+  .Resume__section h3 > span {
     font-size: 80%;
     padding-left: 1em;
     display: inline-block;
     text-align: right;
+    white-space: nowrap;
   }
 }
 
