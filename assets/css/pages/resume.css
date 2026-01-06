@@ -106,4 +106,8 @@
     letter-spacing: 0.05em;
     position: relative;
   }
+
+  .Resume__section > div > :has(+ .no-print:last-child) {
+    margin-bottom: 0;
+  }
 }
