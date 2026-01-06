@@ -116,4 +116,8 @@
   .Resume__section > div > :has(+ .no-print:last-child) {
     margin-bottom: 0;
   }
+
+  .Resume__section li {
+    margin: 0.25em 0 !important;
+  }
 }
