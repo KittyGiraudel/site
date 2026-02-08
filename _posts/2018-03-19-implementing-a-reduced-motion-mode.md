@@ -1,5 +1,6 @@
 ---
 title: Implementing a reduced-motion mode
+description: A guide on implementing a reduced motion mode that respects user preferences
 keywords:
   - accessibility
   - reduced motion

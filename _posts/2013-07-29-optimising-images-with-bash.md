@@ -1,6 +1,7 @@
 ---
 guest: Loïc Giraudel
 title: Optimising images with Bash
+description: A guest post by Loïc Giraudel on how to use Bash to optimize images
 keywords:
   - bash
   - script

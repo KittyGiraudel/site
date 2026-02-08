@@ -1,5 +1,6 @@
 ---
 title: How I use Trello to stop forgetting things
+description: A personal write-up on how I use Trello to stay organised
 keywords:
   - trello
   - workflow

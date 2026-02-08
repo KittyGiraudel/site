@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: getMacOsVersion()
+description: Retrieving the macOS version
 permalink: /snippets/get-mac-os-version/
 language: Node.js
 related: /2020/09/09/writing-a-debug-script/

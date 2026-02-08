@@ -1,5 +1,6 @@
 ---
 title: Testing skip links with Cypress
+description: A technical write-up on authoring Cypress tests to test accessibility skip links
 ---
 
 Testing skip navigation links can be tricky, since [Cypress still does not have proper support for the `Tab` key](https://github.com/cypress-io/cypress/issues/299). As a way around it, Cypress recommends [cypress-plugin-tab](https://github.com/kuceb/cypress-plugin-tab), but that module is no longer maintained, not to mention a little flaky.

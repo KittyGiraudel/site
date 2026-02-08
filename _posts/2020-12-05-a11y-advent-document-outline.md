@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 5: Document Outline'
+description: A11yAdvent entry on the Document Outline
 ---
 
 {% assign web_aim_survey = "According to [a WebAim survey from 2014](https://webaim.org/projects/screenreadersurvey5/#finding), two-thirds of screen-reader users scan headings as the first step of trying to find information on a long web page." | markdown %}

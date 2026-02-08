@@ -1,5 +1,6 @@
 ---
 title: Rethinking Atwood’s law
+description: A retrospective on Atwood’s law, and how it can be reframed in the context of Sass
 keywords:
   - thoughts
   - atwood’s law

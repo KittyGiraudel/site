@@ -1,5 +1,6 @@
 ---
 title: Cleaning a repo from sensitive info
+description: A technical write-up on how to clean up a git repository from sensitive information that was inadvertently committed
 ---
 
 I am participating in [Advent of Code](https://adventofcode.com) this year again, and I stumbled upon [a Reddit post](https://www.reddit.com/r/adventofcode/comments/zh2hk0/2022friendly_reminder_dont_commit_your_input/) that reminds people that [they should not publish their input data](https://twitter.com/ericwastl/status/1465805354214830081?s=20&t=f6i5IqlGF6UuzCou33ToLg). I won’t go too much into details here — feel free to read the thread — but the rationale is that it protects Advent of Code from malicious clones.

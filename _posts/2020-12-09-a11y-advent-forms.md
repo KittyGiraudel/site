@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 9: Forms'
+description: A11yAdvent entry on forms and accessibility
 ---
 
 The web is essentially forms. Any time we, as users, want to interact with a page in a way that goes beyond following links, it is done through forms. Search bar? A form. Chat window? A form. Questionaire? A form. Forms are an essential part of the web, yet they are too often hacked around.

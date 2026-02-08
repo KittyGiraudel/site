@@ -1,5 +1,6 @@
 ---
 title: Pushing Sass placeholders further
+description: A technical write-up on advanced usage of Sass placeholders
 keywords:
   - sass
   - placeholders

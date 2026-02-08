@@ -1,14 +1,13 @@
 ---
 guest: Ezekiel Gabrielse
 title: Building a customization API in Sass
+description: A technical guest post by Ezekiel Gabrielse on building a customization API in Sass
 keywords:
   - sass
   - api
 ---
 
-{% info %}
-I am glad to have [Ezekiel Gabrielse](https://ezekielg.com/) today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts peeps, this is quite intense!
-{% endinfo %}
+{% info %} I am glad to have [Ezekiel Gabrielse](https://ezekielg.com/) today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts peeps, this is quite intense! {% endinfo %}
 
 Hey people! I am the creator of a relatively new Sass grid-system called [Flint](https://github.com/ezekg/flint), and a lightweight Compass extension called [SassyExport](https://github.com/ezekg/SassyExport), which we will be discussing throughout this series.
 
@@ -32,14 +31,14 @@ Furthermore, because we’ll be keeping track of which selectors (or if we’re 
 
 **We need to create a global variable for our color palette.**
 
-* The palette naming convention should be semantic. For instance, we’ll prefer _primary_ and _complementary_ to _red_ and _blue_.
-* The code itself needs to be modular and flexible, allowing the user to create a color palette of any scale.
+- The palette naming convention should be semantic. For instance, we’ll prefer _primary_ and _complementary_ to _red_ and _blue_.
+- The code itself needs to be modular and flexible, allowing the user to create a color palette of any scale.
 
 **We need to keep another global variable of all customizable elements with the following data:**
 
-* the full selector name (kind of `&`);
-* its customizable properties;
-* default values for each property.
+- the full selector name (kind of `&`);
+- its customizable properties;
+- default values for each property.
 
 **We also need to output these default values into our stylesheet, that way our mixin will have two purposes: serve as our customization API and a way to retrieve our color palette to use within the actual stylesheet.**
 
@@ -60,13 +59,28 @@ We are going to keep our colors in a sub-map called _"palette"_ so we can keep o
 ```scss
 // Customization module defaults
 $customizer: (
-    'palette': ('primary': ('lightest': #eff3d1, 'light': #bbdfbc, 'base':
-              #8bb58e, 'dark': #0b3c42, 'darkest': #092226), 'complementary': ('light':
-              #f6616e, 'base': #f2192c, 'dark': #b40a19), 'gray': ('light':
-              #819699, 'base': #4b5557, 'dark': #333a3b), 'black': #131517, 'white':
-          #f2f9ff)
-  )
-  !global;
+  'palette': (
+    'primary': (
+      'lightest': #eff3d1,
+      'light': #bbdfbc,
+      'base': #8bb58e,
+      'dark': #0b3c42,
+      'darkest': #092226,
+    ),
+    'complementary': (
+      'light': #f6616e,
+      'base': #f2192c,
+      'dark': #b40a19,
+    ),
+    'gray': (
+      'light': #819699,
+      'base': #4b5557,
+      'dark': #333a3b,
+    ),
+    'black': #131517,
+    'white': #f2f9ff,
+  ),
+) !global;
 
 // Global variables
 $customizer-instances: () !global;
@@ -83,13 +97,13 @@ Before we go any further, let’s decide on how we want our API to work. To be a
 ```scss
 .selector {
   @include customizer(
-        $args: (
-          color: 'white',
-          background: 'primary' 'darkest',
-          border-color: 'complementary' 'base'
-        ),
-        $uses: 'palette'
-      );
+    $args: (
+      color: 'white',
+      background: 'primary' 'darkest',
+      border-color: 'complementary' 'base',
+    ),
+    $uses: 'palette'
+  );
 }
 ```
 
@@ -160,7 +174,7 @@ Now, since we want to be able to pass multiple customizable properties into a si
 
   // Get values from module
   @if is-list($value) or exists($customizer, $value) {
-    $value: ; // … We need to fetch the values from our module here;
+    $value:; // … We need to fetch the values from our module here;
   }
 
   // Output styles
@@ -242,12 +256,19 @@ The function will be called `new-customizer-instance()`. It will take two argume
     // Merge into argument map
     $instance-properties: map-merge(
       $instance-properties,
-       ('#{$property}': ('module': $module, 'value': $value))
+      (
+        '#{$property}': (
+            'module': $module,
+            'value': $value,
+          ),
+      )
     );
   }
 
   // Create new instance map for selector, save properties
-  $customizer-instance: ('#{$selector}': $instance-properties);
+  $customizer-instance: (
+    '#{$selector}': $instance-properties,
+  );
 
   // Merge into main map
   @return map-merge($customizer-instances, $customizer-instance);
@@ -342,11 +363,14 @@ Above, I simply added in our new functions, and if all went well, our code shoul
 
 ```scss
 .selector {
-  @include customizer($args: (
-        color: 'white',
-        background: 'primary' 'darkest',
-        border-color: 'complementary' 'base',
-      ), $uses: 'palette');
+  @include customizer(
+    $args: (
+      color: 'white',
+      background: 'primary' 'darkest',
+      border-color: 'complementary' 'base',
+    ),
+    $uses: 'palette'
+  );
 }
 ```
 

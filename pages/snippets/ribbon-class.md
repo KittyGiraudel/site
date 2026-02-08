@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: .ribbon {}
+description: CSS snippet to render a corner ribbon
 permalink: /snippets/ribbon-class/
 language: CSS
 related: /2020/01/22/corner-ribbon-with-trigonometry/
@@ -34,10 +35,7 @@ The following styles only included the required declarations for the ribbon posi
   right: 0; /* 1 */
   padding: 0 2em; /* 2 */
   text-align: center; /* 3 */
-  transform:
-    translateY(-100%)
-    rotate(90deg)
-    translateX(70.71067811865476%)
+  transform: translateY(-100%) rotate(90deg) translateX(70.71067811865476%)
     rotate(-45deg); /* 4 */
   transform-origin: bottom right; /* 4 */
 }

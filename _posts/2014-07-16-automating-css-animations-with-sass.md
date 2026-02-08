@@ -1,5 +1,6 @@
 ---
 title: Automating CSS animations with Sass
+description: A technical write-up on using Sass to ease authoring CSS animations
 keywords:
   - sass
   - css
@@ -176,9 +177,9 @@ Keyframes are typically the kind of things you can optimize. Because they are he
 
 First, bring the basics. For sake of consistency, I kept Harry’s variable names: `n`, `x` and `y`. Let’s not forget their meaning:
 
-* `$n` is the number of frames in the animation
-* `$x` is the percentage of the animation spent static for each frame. Logic wants it to be less than `100% / $n` then.
-* `$y` is the percentage of the animation spent animation for each frame.
+- `$n` is the number of frames in the animation
+- `$x` is the percentage of the animation spent static for each frame. Logic wants it to be less than `100% / $n` then.
+- `$y` is the percentage of the animation spent animation for each frame.
 
 ```scss
 $n: 5;
@@ -286,9 +287,9 @@ But we are basically polluting the global scope with our variables. Also, if he 
 
 So we have variables and possible duplicated content: [perfect case for a mixin](https://www.sitepoint.com/sass-mixin-placeholder/)! In order to make things easier to understand, we will replace those one-letter variable names with actual words if you don’t mind:
 
-* `$n` becomes `$frames`
-* `$x` becomes `$static`
-* `$y` becomes `$animating`
+- `$n` becomes `$frames`
+- `$x` becomes `$static`
+- `$y` becomes `$animating`
 
 Also, because a mixin can be called several times with different arguments, we should make sure it outputs different animations. For this, we need to add a 3rd parameter: the animation name.
 
@@ -317,10 +318,7 @@ Since it is now a mixin, it can be called from several places: probably the root
 Rest is pretty much the same. Calling it is quite easy now:
 
 ```scss
-@include carousel-animation(
-    $frames: 5,
-    $static: 17.5%
-  );
+@include carousel-animation($frames: 5, $static: 17.5%);
 ```
 
 Resulting in:
@@ -371,10 +369,10 @@ Mission accomplished! And if we want another animation for the contact page for 
 
 ```scss
 @include carousel-animation(
-    $name: 'carousel-contact',
-    $frames: 3,
-    $static: 20%
-  );
+  $name: 'carousel-contact',
+  $frames: 3,
+  $static: 20%
+);
 ```
 
 Pretty neat, heh?

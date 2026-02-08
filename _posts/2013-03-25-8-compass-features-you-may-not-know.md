@@ -1,5 +1,6 @@
 ---
 title: 8 Compass features you may not know
+description: A gallery of features from the Compass frameworks that is worth knowing
 keywords:
   - sass
   - compass
@@ -72,7 +73,16 @@ Basically, `experimental()` allows you to define mixins outputing content depend
 ```scss
 @mixin box-sizing($bs) {
   $bs: unquote($bs);
-  @include experimental(box-sizing, $bs, -moz, -webkit, not -o, not -ms, not -khtml, official);
+  @include experimental(
+    box-sizing,
+    $bs,
+    -moz,
+    -webkit,
+    not -o,
+    not -ms,
+    not -khtml,
+    official
+  );
 }
 ```
 
@@ -92,7 +102,15 @@ Now what’s the point of such a tool? As an example, there is no default mixin 
 
 ```scss
 @mixin animation($content) {
-  @include experimental(animation, $content, -webkit, -moz, not -o, not -ms, official);
+  @include experimental(
+    animation,
+    $content,
+    -webkit,
+    -moz,
+    not -o,
+    not -ms,
+    official
+  );
 }
 
 .element {

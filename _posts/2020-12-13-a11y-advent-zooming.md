@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 13: Zooming'
+description: A11yAdvent entry on zooming and responsive design
 ---
 
 Zooming. Good ol’ zooming. Why we even have to talk about zooming is a bit of a puzzler in itself. The long story short is that years ago, when responsive design became a real thing and everyone started building sites for mobile devices, it was fancy to prevent zooming so the site feels more “like an app”.

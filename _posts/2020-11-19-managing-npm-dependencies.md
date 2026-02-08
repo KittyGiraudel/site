@@ -1,5 +1,6 @@
 ---
 title: Managing npm dependencies
+description: A guide on managing npm dependencies and keeping them under control
 keywords:
   - npm
   - dependencies

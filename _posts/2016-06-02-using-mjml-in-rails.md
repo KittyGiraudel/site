@@ -1,5 +1,6 @@
 ---
 title: Using MJML in Rails
+description: A technical write-up on using MJML in Rails
 keywords:
   - mjml
   - email

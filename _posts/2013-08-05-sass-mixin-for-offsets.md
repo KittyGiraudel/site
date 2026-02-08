@@ -1,5 +1,6 @@
 ---
 title: Sass mixin for offsets
+description: A technical write-up on building a Sass mixin to ease the use of CSS offsets
 keywords:
   - sass
   - offsets

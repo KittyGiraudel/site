@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: groom_dependencies()
+description: Small bash function to retrieve unused npm dependencies
 permalink: /snippets/groom-dependencies/
 language: Bash
 related: /2020/11/19/managing-npm-dependencies/

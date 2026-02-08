@@ -1,5 +1,6 @@
 ---
-title: "Parent selector: on has() and ^"
+title: 'Parent selector: on has() and ^'
+description: My thoughts on the expected parent selector in CSS, and pros and cons of either proposed syntax
 keywords:
   - thoughts
   - css
@@ -10,8 +11,8 @@ Yesterday I stumbled upon [this Google Survey](https://docs.google.com/forms/d/1
 
 The official syntax for this has yet to be determined and as of writing there are two proposals grabbing some attention:
 
-* the `:has()` pseudo-class (e.g. `X:has(Y)`)
-* the `^` operator (e.g. `^X Y`) ; an old proposal also mentions `!` instead of `^` but the idea is the same
+- the `:has()` pseudo-class (e.g. `X:has(Y)`)
+- the `^` operator (e.g. `^X Y`) ; an old proposal also mentions `!` instead of `^` but the idea is the same
 
 I think it should be `:has()`. Definitely. And here is why.
 
@@ -41,9 +42,9 @@ nav: hover span;
 
 In this example, `span` is the target. Not `nav` or `a:hover`. Just `span`. This is the element you’re willing to style. The remaining pieces of the selector are nothing but the context. You may think of it this way:
 
-* _What we want?!_ &mdash; _`span`!_
-* _Where we want?!_ &mdash; _When hovering `a` in `nav`!_
-* _When we want?!_ &mdash; _Now!_
+- _What we want?!_ &mdash; _`span`!_
+- _Where we want?!_ &mdash; _When hovering `a` in `nav`!_
+- _When we want?!_ &mdash; _Now!_
 
 Adding a pseudo-class or a pseudo-element to the last element from the selector doesn’t change the target, it only adds some more context on the target itself.
 
@@ -80,7 +81,7 @@ What happens here? What is the selector’s target? Is it `C`? Is it `D`? We don
 On the other hand, the pseudo-class proposal makes it very easy to allow multiple occurrences of itself in a selector. Even better, chaining and nesting are possible.
 
 ```css
-a: has(B:has(C));
+a: has(B: has(C));
 ```
 
 This means we are looking for all `A` elements containing at least a `B` element, himself containing at least a `C` element. Doing this with the other syntax is close to impossible and if we can come up with a solution, would it be as clean as this one?

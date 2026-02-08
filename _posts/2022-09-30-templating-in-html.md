@@ -1,8 +1,9 @@
 ---
 title: Templating in HTML
+description: A technical write-up about using the template HTML element
 edits:
   - date: 2022/10/05
-    md: Some people on HackerNews pointed out that this is actually not “templating” the way Handlebars, Mustache, Twig or whatever else is. Okay? It’s just a title, that doesn’t invalidate the rest of the piece. 🤷‍♀️
+    md: Some people on HackerNews pointed out that this is actually not “templating” the way Handlebars, Mustache, Twig or whatever else is. Okay…? It’s just a title, that doesn’t invalidate the rest of the piece. 🤷‍♀️
   - date: 2022/10/05
     md: A lot of people asked about the differences with using a hidden DOM element (like a `<div>` for instance), so I added [a section about it](#why-not-a-hidden-element).
 ---
@@ -13,7 +14,7 @@ So to put it simply, the `<template>` HTML element is intended to store HTML tha
 
 ## What for
 
-Let’s start with the fact that `<template>` do not enabling you to do anything that’s not possible otherwise. In that way, it’s more of a convenience tool really. If you have significant HTML structures that need to be injected at runtime, it might be very cumbersome to do so manually with `document.createElement` and `element.setAttribute`.
+Let’s start with the fact that `<template>` does not enable you to do anything that’s not possible otherwise. In that way, it’s more of a convenience tool really. If you have significant HTML structures that need to be injected at runtime, it might be very cumbersome to do so manually with `document.createElement` and `element.setAttribute`.
 
 In [Manuel’s case](https://web.dev/website-navigation/#adding-a-burger-button), he uses a template to hold a button that needs to be injected when JavaScript is finally available, as it wouldn’t work before that. Creating that button manually in JS with the SVG and all with be quite cumbersome. It would also violate proper separation of concerns by moving HTML into the JS logic.
 
@@ -40,7 +41,7 @@ container.append(content)
 
 It’s also not limited to a single use. You can create as many clones as you want. The [MDN page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) has a good example of storing a table row in a template so you can easily clone and add a new row on demand.
 
-For instance, Sass Guidelines use templates to inject links to edit view or edit each chapter on GitHub directly. In an ideal world these links would be there all the time, but because Sass-Guidelines is built from plain ol’ Markdown files, these links are generated in JS. This is [the pull-request that implemented templates](https://github.com/KittyGiraudel/sass-guidelines/commit/03a5abb931026b5a4997fdf5ef43ba029e612d89).
+For instance, [Sass Guidelines](https://sass-guidelin.es) use templates to inject links to edit view or edit each chapter on GitHub directly. In an ideal world these links would be there all the time, but because Sass-Guidelines is built from plain ol’ Markdown files, these links are generated in JS. This is [the pull-request that implemented templates](https://github.com/KittyGiraudel/sass-guidelines/commit/03a5abb931026b5a4997fdf5ef43ba029e612d89).
 
 ## Browser support
 

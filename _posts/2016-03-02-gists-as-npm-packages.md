@@ -1,5 +1,6 @@
 ---
 title: Gists as npm packages
+description: A technical write-up on publishing GitHub Gists as npm packages
 keywords:
   - gist
   - npm

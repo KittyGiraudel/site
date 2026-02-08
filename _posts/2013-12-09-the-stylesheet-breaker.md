@@ -1,5 +1,6 @@
 ---
 title: The stylesheet breaker
+description: A short technical write-up about a CSS quirk that has the potential to breaking the entire stylesheet
 keywords:
   - css
   - riddle

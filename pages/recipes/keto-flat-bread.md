@@ -3,6 +3,7 @@ tags: recipes
 layout: recipe
 permalink: /blog/recipes/keto-flat-bread/
 title: Keto Flat Bread
+description: An easy recipe to make keto-friendly flat bread
 preparation_time: 10 minutes
 serves: 2 people
 ingredients:

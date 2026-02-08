@@ -1,5 +1,6 @@
 ---
 title: Creative use of CSS gradients
+description: A technical write-up about a clever use of CSS gradients to mark chapters on a video play bar
 ---
 
 I work at [cofenster](https://cofenster.com) where we build a video creation platform. To do that, our customers can compose _scenes_, which we eventually style and stitch together to generate a resulting mp4 video file.
@@ -103,7 +104,7 @@ linear-gradient(
 
 There are some things we can do to squeeze some bites out:
 
-- Use single-letter custom properties for colors longer than 8 characters long (e.g. `transparent`, `rebeccapurpler` or other longer notations).
+- Use single-letter custom properties for colors longer than 8 characters long (e.g. `transparent`, `rebeccapurple` or other longer notations).
 - Remove the spaces inside `calc()` expressions.
 - Lower the precision to 1 or 0 digit.
 

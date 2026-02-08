@@ -1,5 +1,6 @@
 ---
 title: Understanding Sass lists
+description: A technical deep-dive into the list type in Sass, and what to know to use them well
 keywords:
   - sass
   - lists
@@ -62,21 +63,21 @@ _Note: As in CSS, you can ommit quotes for your strings as long as they don’t 
 ```scss
 /* Nested lists with braces and same separator */
 $list: (
-   ('item-1.1', 'item-1.2', 'item-1.3'),
-   ('item-2.1', 'item-2.2', 'item-2.3'),
-   ('item-3.1', 'item-3.2', 'item-3.3')
+  ('item-1.1', 'item-1.2', 'item-1.3'),
+  ('item-2.1', 'item-2.2', 'item-2.3'),
+  ('item-3.1', 'item-3.2', 'item-3.3')
 );
 
 /* Nested lists without braces using different separators to distinguish levels */
-$list: 'item-1.1' 'item-1.2' 'item-1.3', 'item-2.1' 'item-2.2' 'item-2.3',
+$list:
+  'item-1.1' 'item-1.2' 'item-1.3',
+  'item-2.1' 'item-2.2' 'item-2.3',
   'item-3.1' 'item-3.2' 'item-3.3';
 ```
 
 **You can ommit parentheses** (as you can guess from the previous example). You can define a non-empty list without any parentheses if you feel so. This is because -contrarily to what most people think- [parentheses are not what create lists](https://github.com/nex3/sass/issues/837#issuecomment-20429965) in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.
 
-{% info %}
-This is the theory. I’ve noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we’ll dig into this in another blog post._
-{% endinfo %}
+{% info %} This is the theory. I’ve noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we’ll dig into this in another blog post. {% endinfo %}
 
 ```scss
 $list: 'item-1', 'item-2', 'item-3';
@@ -133,12 +134,7 @@ Please consider an extended selector like:
 But first, we will write the skeleton of our testcase:
 
 ```scss
-$pages: (
-  'home',
-  'about',
-  'products',
-  'contact'
-);
+$pages: ('home', 'about', 'products', 'contact');
 $selector: ();
 
 @each $item in $pages {

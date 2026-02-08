@@ -1,5 +1,6 @@
 ---
 title: Footnotes in 11ty
+description: A technical write-up on adding footnotes support in 11ty with Liquid
 ---
 
 After having [moved from Jekyll to 11ty](/2020/11/30/from-jekyll-to-11ty/), I realised I could extend Liquid in fancy ways to make some things a little easier (or down right possible). In this article, I’d like to share how I built a tiny footnotes plugin with {% footnoteref "liquid" "I personally use Liquid at the time of writing, but this implementation should be relatively similar with Nunjucks, or even some other templating language." %}Liquid{% endfootnoteref %}. If you are not interested in how the sausage is made and just want to use the code, check [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/eleventy-plugin-footnotes) for usage instructions.

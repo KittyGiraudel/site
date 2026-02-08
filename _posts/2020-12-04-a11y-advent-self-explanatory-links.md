@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 4: Self-Explanatory Links'
+description: A11yAdvent entry on self-explanatory links
 ---
 
 Let’s stay in the topic of screen-readers and talk about links. I believe a relatively little known feature of many screen-readers is the ability to list all links in a page in order to navigate more rapidly. Besides that feature, tabbing through page means jumping from link to link, skipping the text between them. Either way, links end up being announced devoid of their surrounding content and grammatical context.

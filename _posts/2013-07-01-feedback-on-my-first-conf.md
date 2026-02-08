@@ -1,5 +1,6 @@
 ---
 title: Feedback on my first conf
+description: Retrospective on my experience at Kiwi Party, my first conference
 keywords:
   - thoughts
 ---

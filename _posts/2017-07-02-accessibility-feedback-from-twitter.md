@@ -1,5 +1,6 @@
 ---
 title: Accessibility feedback from Twitter
+description: A summary of accessibility feedback I’ve gathered from Twitter
 keywords:
   - accessibility
   - a11y

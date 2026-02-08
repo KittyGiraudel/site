@@ -1,5 +1,6 @@
 ---
 title: My development environment
+description: A look into my software development environment
 keywords:
   - thoughts
 edits:

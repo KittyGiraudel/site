@@ -1,5 +1,6 @@
 ---
 title: Random function with Sass 3.3
+description: A technical write-up on creating a function to generate a random string in Sass
 keywords:
   - sass
   - random

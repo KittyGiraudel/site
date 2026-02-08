@@ -1,5 +1,6 @@
 ---
 title: Preventing cookie banners with Cypress
+description: A technical write-up on preventing cookie banners from breaking Cypress tests
 keywords:
 - cypress
 - testing

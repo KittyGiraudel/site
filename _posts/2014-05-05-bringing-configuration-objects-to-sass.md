@@ -1,5 +1,6 @@
 ---
 title: Bringing configuration objects to Sass
+description: A technical write-up on using configuration objects in Sass, similar to JavaScript
 keywords:
   - sass
   - maps
@@ -13,13 +14,13 @@ One thing I was really looking forward with [Sass maps](https://viget.com/extend
 Before digging into Sass awesomeness, let’s first have a look at how we would do it in JavaScript:
 
 ```javascript
-var Class = function(conf) {
+var Class = function (conf) {
   this.conf = extend(
     {
       duration: 2000,
       name: 'class',
       theme: 'dark',
-      speed: 500
+      speed: 500,
     },
     conf || {}
   )
@@ -46,7 +47,7 @@ f({
   message: 'You shall not pass!',
   close: false,
   error: 42,
-  type: 'error'
+  type: 'error',
 })
 
 // … is easier to understand than this
@@ -65,7 +66,7 @@ var conf = {
   message: 'You shall not pass!',
   close: false,
   error: 42,
-  type: 'error'
+  type: 'error',
 }
 
 f(conf)
@@ -89,7 +90,7 @@ f({
   close: false,
   error: 42,
   type: 'error',
-  duration: 5000
+  duration: 5000,
 })
 
 // … while you have to put your required parameters before optional one in the signature
@@ -131,12 +132,14 @@ So here it is:
 ```scss
 $default-object: (
   dont: you think,
-  this: is awesome
+  this: is awesome,
 );
 
-$object: (this: is amazing);
+$object: (
+  this: is amazing,
+);
 
-$merge:extend($default-object, $object);
+$merge: extend($default-object, $object);
 
 /**
  * This results in
@@ -152,7 +155,13 @@ $merge: (
 Now what’s the point of all of this? Let’s say you have a component you call with a mixin. This mixin accepts quite a few parameters like &mdash; I don’t know &mdash; the width, the color scheme, the animation duration, maybe a name or something. They probably have some default values defined to match a common use case. Until now, you have done it like this
 
 ```scss
-@mixin component($theme: light, $size: 100%, $duration: 250ms, $name: 'component', $border: true) {
+@mixin component(
+  $theme: light,
+  $size: 100%,
+  $duration: 250ms,
+  $name: 'component',
+  $border: true
+) {
   .#{$name} {
     width: $size;
     animation: fade $duration;
@@ -180,8 +189,14 @@ This works great. It is easily readable, it does the job very well. However ther
 ```scss
 @mixin component($conf: ()) {
   // Extending the default arguments with the given object
-  $conf:extend(
-    (size: 100%, theme: dark, duration: 250ms, name: 'component', border: true),
+  $conf: extend(
+    (
+      size: 100%,
+      theme: dark,
+      duration: 250ms,
+      name: 'component',
+      border: true,
+    ),
     $conf
   );
 
@@ -202,10 +217,12 @@ This works great. It is easily readable, it does the job very well. However ther
 }
 
 // Including component
-@include component((
+@include component(
+  (
     theme: dark,
-    name: 'module'
-  ));
+    name: 'module',
+  )
+);
 ```
 
 Both doesn’t look much different except the core function from the object-way looks more crowded. True, but now separating the setup from the code is getting very easy. All you have to do is defining a map and pass it to the mixin. No need to move around a couple of variables which can quickly become a mess.
@@ -214,7 +231,7 @@ Both doesn’t look much different except the core function from the object-way 
 // In `_config.scss` along with your other setup variables
 $component-conf: (
   theme: light,
-  name: 'module'
+  name: 'module',
 );
 
 // In `_component.scss`

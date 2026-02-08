@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 10: ARIA'
+description: A11yAdvent entry on ARIA
 ---
 
 {% assign aria = "“Don’t use ARIA, use native HTML instead” is the first rule of ARIA as described in the [top 5 rules of ARIA](https://www.deque.com/blog/top-5-rules-of-aria/) by Deque." | markdown %}

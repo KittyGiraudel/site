@@ -1,5 +1,6 @@
 ---
 title: Colors in CSS
+description: A deep-dive into colors in CSS, how they are defined, and how to use them
 keywords:
   - css
   - colors
@@ -34,18 +35,16 @@ Let me start with the RGB syntax since it’s the most fundamental thing to unde
 As I said above, RGB stands for Red, Green and Blue. Remember when you were a little kid and were painting with some cheap watercolor? Well, this is kind of the same thing, except that colors behave a little bit differently on screen and on paper. Let me explain myself:
 
 | On paper | On screen |
-|:-|:-|
+| :-- | :-- |
 | Main colors are Red, Yellow and Blue | Main colors are Red, Green and Blue |
 | Mixing 3 colors makes a brownish black | Mixing 3 colors makes a grey shade |
 | A bit of blue + some red make nice purple | A bit of blue + some red make dark purple |
 | The less color you use, the brighter it is | The less color you use, the darker it is |
 | Representation is a circle with neither white nor black | Representation is a cube with black and white |
 
-{% info %}
-![Color cube](/assets/images/colors-in-css/color-cube.jpg)
+{% info %} ![Color cube](/assets/images/colors-in-css/color-cube.jpg)
 
-This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view.
-{% endinfo %}
+This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view. {% endinfo %}
 
 ### How do we define RGB colors?
 

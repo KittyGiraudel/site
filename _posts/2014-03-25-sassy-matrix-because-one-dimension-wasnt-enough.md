@@ -1,5 +1,6 @@
 ---
-title: "SassyMatrix: because one dimension wasn’t enough"
+title: 'SassyMatrix: because one dimension wasn’t enough'
+description: An announcement post about SassyMatrix, an experimental library to handle matrices in Sass
 keywords:
   - sass
   - matrix
@@ -21,7 +22,7 @@ If you wonder whether I succeeded or failed, I succeeded. You can play with [the
 Now back to our main topic: I needed matrices. A matrix is basically a two-dimensional array (or list). For example this is a Sass matrix:
 
 ```scss
-$matrix: ( (0 1 2 3) (1 0 0 0) (2 0 0 0) (3 0 0 0));
+$matrix: ((0 1 2 3) (1 0 0 0) (2 0 0 0) (3 0 0 0));
 ```
 
 Well this was pretty easy. Now what if we want to dynamically create a matrix? Update values? Retreive values? And more stuff? This is getting harder. So I created a couple of functions to ease the pain.
@@ -74,7 +75,13 @@ We could have requested two distinct parameters for `$x` and `$y` but I feel lik
 
 ```scss
 @function _valid-coords($coords) {
-  @if length($coords) != 2 or type-of(nth($coords, 1)) != number or type-of(nth($coords, 2)) != number {
+  @if length($coords) !=
+    2 or
+    type-of(nth($coords, 1)) !=
+    number or
+    type-of(nth($coords, 2)) !=
+    number
+  {
     @return false;
   }
   @return true;
@@ -86,7 +93,7 @@ _Note: I like to prefix private functions with an underscore. By “private” I
 All we did was checking for the length and the type. This doesn’t deal with out of bounds coordinates but that’s more than enough for now. Anyway, to set a value in the grid it is nothing easier than:
 
 ```scss
-$matrix: set-entry($matrix,  (1 1), 42);
+$matrix: set-entry($matrix, (1 1), 42);
 ```
 
 What is also pretty cool is you can use negative indexes to start from the end of columns/rows. So to fill the last entry from the last row of the grid, you’d do something like `set-entry($matrix, (-1 -1), 42)`.
@@ -109,7 +116,7 @@ Now that we are able to easily set values in the grid, we need a way to retrieve
 See how we check for coordinates validity with our brand new helper? I don’t know for you, but I think it looks pretty neat! Anyway, to retrieve a value at position (x y), all we have to do is:
 
 ```scss
-$value: get-entry($matrix,  (1 1)); // 42
+$value: get-entry($matrix, (1 1)); // 42
 ```
 
 ## Displaying a matrix
@@ -154,7 +161,9 @@ This function returns a string like this: `" 0 0 0\A 0 0 0\A 0 0 0\A "`. As is, 
     border-radius: 0.2em !important;
 
     color: #333 !important;
-    font: 1.5em/1.5 'Courier New', monospace !important;
+    font:
+      1.5em/1.5 'Courier New',
+      monospace !important;
     text-shadow: 0 1px white !important;
     white-space: pre-wrap !important;
   }
@@ -171,18 +180,18 @@ But what if we want to push things further? While I am not ace with matrices (I 
 
 Among other things, there are a couple of functions to swap values and collection of values of position:
 
-* `swap-entries($matrix, $e1, $e2)`: swaps values `$e1` and `$e2` from `$matrix`
-* `swap-rows($matrix, $r1, $r2)`: swaps rows `$r1` and `$r2` from `$matrix`
-* `swap-columns($matrix, $c1, $c2)`: swaps columns `$c1` and `$c2` from `$matrix`
+- `swap-entries($matrix, $e1, $e2)`: swaps values `$e1` and `$e2` from `$matrix`
+- `swap-rows($matrix, $r1, $r2)`: swaps rows `$r1` and `$r2` from `$matrix`
+- `swap-columns($matrix, $c1, $c2)`: swaps columns `$c1` and `$c2` from `$matrix`
 
 Some functions to know additional informations on the current matrix:
 
-* `columns($matrix)`: return number of columns in `$matrix`
-* `rows($matrix)`: return number of rows in `$matrix`
-* `is-square($matrix)`: check wether `$matrix` has as many rows as columns
-* `is-diagonal($matrix)`: check wether all values from the main diagonal of `$matrix` are set while all other values are equal to 0
-* `is-upper-triangular($matrix, $flag: null)`: check wether all value below `$matrix` diagonal are equal to 0
-* `is-lower-triangular($matrix, $flag: null)`: check wether all value above `$matrix` diagonal are equal to 0
+- `columns($matrix)`: return number of columns in `$matrix`
+- `rows($matrix)`: return number of rows in `$matrix`
+- `is-square($matrix)`: check wether `$matrix` has as many rows as columns
+- `is-diagonal($matrix)`: check wether all values from the main diagonal of `$matrix` are set while all other values are equal to 0
+- `is-upper-triangular($matrix, $flag: null)`: check wether all value below `$matrix` diagonal are equal to 0
+- `is-lower-triangular($matrix, $flag: null)`: check wether all value above `$matrix` diagonal are equal to 0
 
 … and much more. And because I needed a place to store all those functions I made a [GitHub repository](https://github.com/KittyGiraudel/SassyMatrix) so if you feel like contributing, be sure to have a glance!
 

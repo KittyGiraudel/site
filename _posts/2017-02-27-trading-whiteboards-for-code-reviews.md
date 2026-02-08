@@ -1,5 +1,6 @@
 ---
 title: Trading whiteboards for code reviews
+description: A reflection on replacing whiteboard interviews with code reviews
 keywords:
   - interview
   - thought

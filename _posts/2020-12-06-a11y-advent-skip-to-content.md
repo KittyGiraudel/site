@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 6: Skip to Content'
+description: A11yAdvent entry on skip to content links
 ---
 
 Let’s stay in the topic of navigation and talk about a feature that is too often forgotten: a link to go straight to the main content area of the site — often called “skip-to-content” or “skip-navigation” link.

@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 12: Readability'
+description: A11yAdvent entry on readability
 ---
 
 For a medium as text-focused as the web, readability has to be something we have to talk about. Besides making it more comfortable for everyone, taking special care to make content readable helps people with a various range of disabilities, such as color-blindness or dyslexia.

@@ -3,6 +3,7 @@ tags: recipes
 layout: recipe
 permalink: /blog/recipes/reblochon-burger/
 title: Reblochon Burger
+description: Delicious burgers with Reblochon cheese from Savoie
 preparation_time: 15 minutes
 serves: 1 people
 ingredients:

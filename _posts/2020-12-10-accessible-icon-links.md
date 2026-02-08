@@ -1,5 +1,6 @@
 ---
 title: Accessible icon links
+description: A technical write-up on building accessible icon-only links
 keywords:
   - a11y
   - accessibility

@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: getTextFromTree()
+description: Retrieving text from a React component tree
 permalink: /snippets/get-text-from-tree/
 language: React
 ---

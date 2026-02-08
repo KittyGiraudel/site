@@ -1,5 +1,6 @@
 ---
 title: Making sense of zsh
+description: A technical write-up through zsh and my homemade configuration to get the most of it
 ---
 
 If you use a relatively recent macOS version, chances are good you’re using zsh ([Z shell](https://en.wikipedia.org/wiki/Z_shell)) as a terminal — even if you use a terminal that’s integrated to your IDE (like in Visual Studio Code for instance).
@@ -76,7 +77,6 @@ PROMPT='%(?.%F{green}●.%F{red}●%f) %F{211}%1~%f ${vcs_info_msg_0_} '
 It’s a bit of a beast though, so let’s break that down into digestible chunks:
 
 1. `%(?.%F{green}●.%F{red}●%f)` is a ternary expression:
-
    - `?` means the exit status of the previous command. It returns `true` if the previous command exited successfully.
    - `.` acts as a separator in the ternary expression. Everything between the two `.` is evaluated when the condition is truthy; everything after the second `.` otherwise.
    - `%F{…}` updates the text color (if supported by the terminal); here to green (and red later on in the expression).
@@ -84,7 +84,6 @@ It’s a bit of a beast though, so let’s break that down into digestible chunk
    - `%f` restores the text color to the default one.
 
 2. `%F{211}%1~%f` prints the current directory in pink.
-
    - `%F{211}` updates the text color to a lovely pink.
    - `%1~` is the name of the current directory (technically the current path to a single directory deep).
    - Again, `%f` resets the color to the default one.

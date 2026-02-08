@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: zsh prompt
+description: zsh configuration to have a pretty custom prompt
 permalink: /snippets/zsh-prompt/
 language: zsh
 related: /2022/10/29/making-sense-of-zsh/

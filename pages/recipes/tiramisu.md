@@ -3,6 +3,7 @@ tags: recipes
 layout: recipe
 permalink: /blog/recipes/tiramisu/
 title: Tiramisu
+description: My 30 years old battle tested tiramisu recipe
 preparation_time: 30 minutes
 serves: 4-6 people
 ingredients:
@@ -22,4 +23,3 @@ steps:
   - Then add a layer of cream, cacao and chocolat flakes.
   - Repeat these 4 layers a second time and chill for at least 6 hours.
 ---
-

@@ -1,5 +1,6 @@
 ---
 title: Shadow roots and inheritance
+description: A short explanation of an unintuitive behavior of CSS and shadow roots
 ---
 
 I encountered a bit of a HTML/CSS oddity the other day, and was a little stumped as to what was happening so I thought I’d share what I learnt in case that helps other people stumbling across the same thing.

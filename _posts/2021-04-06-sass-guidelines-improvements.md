@@ -1,5 +1,6 @@
 ---
 title: Sass Guidelines improvements
+description: A retrospective on the latest round of improvements to Sass Guidelines and the decisions behind them
 ---
 
 I authored the very first version of [Sass Guidelines](https://sass-guidelin.es) in the first week of 2015, inspired by Harry Robert’s [CSS guidelines](https://cssguidelin.es/). It went through 3 additional iterations: version 1.1 in April 2015, version 1.2 barely 6 months later in September 2015 and finally version 1.3 in Janvier 2017. Since then, not much, especially since I haven’t written a line of Sass since 2016.

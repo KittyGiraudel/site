@@ -1,5 +1,6 @@
 ---
 title: How I use Git
+description: A look at my Git workflow, aliases and habits
 keywords:
   - git
   - tips

@@ -1,5 +1,6 @@
 ---
 title: Recovering from JavaScript errors
+description: A technical write-up on making JavaScript optional and recovering from runtime errors
 keywords:
   - accessibility
   - availability

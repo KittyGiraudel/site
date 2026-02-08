@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: VSC Lite
+description: Short VSC configuration to trim out all the distracting fluff
 permalink: /snippets/vsc-lite/
 language: VSC
 ---
@@ -20,7 +21,11 @@ Here are part of my VSC configuration aiming at reducing visual noise and distra
   "editor.lightbulb.enabled": false,
   "editor.minimap.enabled": false,
   "editor.parameterHints.enabled": false,
-  "editor.quickSuggestions": { "other": true, "comments": false, "strings": true },
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
   "editor.suggestOnTriggerCharacters": false,
   "explorer.openEditors.visible": 1,
   "extensions.ignoreRecommendations": true,

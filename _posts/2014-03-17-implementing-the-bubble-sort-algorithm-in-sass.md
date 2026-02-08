@@ -1,5 +1,6 @@
 ---
 title: Implementing the bubble sort algorithm in Sass
+description: A technical write-up on implementing a sorting algorithm in Sass
 keywords:
   - sass
   - sort

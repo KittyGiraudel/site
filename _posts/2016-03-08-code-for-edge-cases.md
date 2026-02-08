@@ -1,5 +1,6 @@
 ---
 title: Code for edge cases
+description: A reflection on coding for edge cases and defensive programming
 keywords:
   - code
   - edge case

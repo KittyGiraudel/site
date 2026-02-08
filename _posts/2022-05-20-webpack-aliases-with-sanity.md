@@ -1,5 +1,6 @@
 ---
 title: Webpack aliases with Sanity
+description: A short technical write-up about handling Webpack aliases with Sanity
 edits:
   - date: 2023/01/22
     md: Added another section to explain how to do that in [version 3](#version-3) which is built with Vite and not Webpack.

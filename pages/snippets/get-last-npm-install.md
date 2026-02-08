@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: getLastNpmInstall()
+description: Retrieving the last time npm dependencies were installed
 permalink: /snippets/get-last-npm-install/
 language: Node.js
 related: /2020/09/09/writing-a-debug-script/

@@ -1,5 +1,6 @@
 ---
 title: Introducing Simplified JavaScript Jargon
+description: An announcement post for SJSJ, a glossary of JavaScript related terms
 keywords:
   - JavaScript
   - JS
@@ -14,7 +15,6 @@ Hey folks! Let’s talk JavaScript, shall we? It all started with a tweet from N
 The general idea is that the JavaScript ecosystem has gotten both complex and bloated in the last few years, to the point where it might look scary for newcomers (and even experienced developers). And this is too bad.
 
 ## Involving the community
-
 
 I gave it a night and thought it would be a good idea to have a GitHub repository acting as a glossary for most (_all_ is likely to be impossible) JavaScript buzzwords. This repository, I named [SJSJ](https://github.com/KittyGiraudel/SJSJ) for _Simplified JavaScript Jargon_.
 

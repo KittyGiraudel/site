@@ -3,6 +3,7 @@ tags: recipes
 layout: recipe
 permalink: /blog/recipes/mushroom-cream/
 title: Mushroom Cream
+description: A home made mushroom cream packed with flavors
 preparation_time: 1 hour
 serves: 3-4 people
 ingredients:
@@ -25,4 +26,3 @@ steps:
 notes:
   - You can replace the olive oil with truffle oil if you have.
 ---
-

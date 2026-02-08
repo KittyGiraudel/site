@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 8: Alternative Text to Images'
+description: A11yAdvent entry on alternative text for images
 ---
 
 Ah, alt text! Alternative text to images has been an age old topic on the web. The goal is to provide a description of the image in case it fails to load or for people who are not able to perceive images and rely on textual content to get their meaning. It is very important for people using screen-readers, as well as search engines.

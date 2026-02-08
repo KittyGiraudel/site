@@ -1,5 +1,6 @@
 ---
 title: Dominant hand respecting design
+description: A write-up on an experimental approach to interface designin considering the dominant hand
 edits:
   - date: 2022/09/14
     md: I published a small React hook for that on npm as a [standalone library](https://github.com/KittyGiraudel/dhand).

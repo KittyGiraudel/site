@@ -1,15 +1,14 @@
 ---
 guest: Gregor Adams
 title: Netflix logo in CSS
+description: A technical write-up by Gregor Adams on recreating the Netflix logo in CSS
 keywords:
   - css
   - experiment
   - animation
 ---
 
-{% info %}
-The following is a guest post by [Gregor Adams](https://twitter.com/gregoradams) about how he managed to re-create the Netflix logo in CSS. Gregor is kind of the rising star when it comes to CSS, so needless to say it is a great honor to have him here.
-{% endinfo %}
+{% info %} The following is a guest post by [Gregor Adams](https://twitter.com/gregoradams) about how he managed to re-create the Netflix logo in CSS. Gregor is kind of the rising star when it comes to CSS, so needless to say it is a great honor to have him here. {% endinfo %}
 
 A few months ago I tested Netflix, immediately got hooked and got myself an account. I started watching a lot of series that I usually had to view elsewhere. Each episode or movie starts with the Netflix logo animation.
 
@@ -111,13 +110,18 @@ To do this I needed to add some logic: I use Sass with the SCSS syntax to do thi
 
       &:nth-child(#{$i}) {
         // trans/de-form the letters
-        transform-origin: 50% + 50%/$offset 200%;
-        font-size: if($offset == 0, 0.85em, 0.9em + 0.015*pow(abs($offset), 2));
+        transform-origin: 50% + 50% / $offset 200%;
+        font-size: if(
+          $offset == 0,
+          0.85em,
+          0.9em + 0.015 * pow(abs($offset), 2)
+        );
         transform: if(
             $offset == 0,
             scale(1, 1),
             scale(95.9 - abs($offset) * 10, 1)
-          ) if($offset == 0, translatey(0%), rotatey($trans));
+          )
+          if($offset == 0, translatey(0%), rotatey($trans));
       }
     }
   }
@@ -141,11 +145,11 @@ As you can see the 3d effect’s vanishing point is in the center while the shad
 
 We will call this function inside keyframes so we want it to be able to handle a few values like:
 
-* color
-* x
-* y
-* blur
-* mix
+- color
+- x
+- y
+- blur
+- mix
 
 We need one more argument to define the depth of the shadow or 3d-effect.
 
@@ -180,7 +184,7 @@ Here’s the function I am using to handle all these requirements:
     } @else {
       $shadow: append(
         $shadow,
-        round($i * $x) round($i * $y) $blur mix($mix, $color, 0.3%*$i),
+        round($i * $x) round($i * $y) $blur mix($mix, $color, 0.3% * $i),
         comma
       );
     }
@@ -200,18 +204,13 @@ $shadow: ();
 
 I am looping from 1 _through_ the depth. `through` in Sass means that we iterate including this value.
 
-* `from 0 to 5 = 0, 1, 2, 3, 4`
-* `from 0 through 5 = 0, 1, 2, 3, 4, 5`
+- `from 0 to 5 = 0, 1, 2, 3, 4`
+- `from 0 through 5 = 0, 1, 2, 3, 4, 5`
 
 In each iteration I append a text-shadow to the list. So in the end the variable looks something like this:
 
 ```scss
-$shadow: (
-  0 1px 0 red,
-  1px 2px 0 red,
-  2px 3px 0 red,
-  …
-);
+$shadow: (0 1px 0 red, 1px 2px 0 red, 2px 3px 0 red, …);
 ```
 
 … and I use it like this:
@@ -247,8 +246,11 @@ I am using two variables `$offset` and `$trans` which I have already defined abo
         $offset == 0,
         scale(1.2, 1.2),
         scale(126.2 - abs($offset) * 10, 1.2)
-      ) if($offset == 0, translatey(-16%), rotatey($trans));
-    text-shadow: d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px), d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
+      )
+      if($offset == 0, translatey(-16%), rotatey($trans));
+    text-shadow:
+      d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
+      d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
   }
 
   100% {
@@ -256,8 +258,11 @@ I am using two variables `$offset` and `$trans` which I have already defined abo
         $offset == 0,
         scale(1.1, 1.1),
         scale(116.2 - abs($offset) * 10, 1.1)
-      ) if($offset == 0, translatey(-12%), rotatey($trans));
-    text-shadow: d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px), d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
+      )
+      if($offset == 0, translatey(-12%), rotatey($trans));
+    text-shadow:
+      d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
+      d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
   }
 }
 ```
@@ -273,8 +278,11 @@ Now let’s do the same thing for fading back.
         $offset == 0,
         scale(1.1, 1.1),
         scale(116.2 - abs($offset) * 10, 1.1)
-      ) if($offset == 0, translatey(-12%), rotatey($trans));
-    text-shadow: d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px), d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
+      )
+      if($offset == 0, translatey(-12%), rotatey($trans));
+    text-shadow:
+      d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
+      d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
   }
 
   20% {
@@ -282,7 +290,8 @@ Now let’s do the same thing for fading back.
         $offset == 0,
         scale(1.05, 1.05),
         scale(105.9 - abs($offset) * 10, 1.05)
-      ) if($offset == 0, translatey(-7%), rotatey($trans));
+      )
+      if($offset == 0, translatey(-7%), rotatey($trans));
     text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
   }
 

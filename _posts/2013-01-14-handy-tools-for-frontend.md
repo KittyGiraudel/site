@@ -1,5 +1,6 @@
 ---
 title: Handy tools for frontend
+description: A look into tools that are worth knowing when doing frontend development
 keywords:
   - tools
   - frontend
@@ -11,18 +12,18 @@ If you’re a webdesigner or developer, you’ve probably already stumbled upon 
 
 So here are the tools I’ll cover in this article:
 
-* CSS Coloratum
-* WeLoveIconFonts
-* PageSpeed Insights
-* Colorzilla Extension
-* Colorzilla Gradient Generator
-* CanIUse
+- CSS Coloratum
+- WeLoveIconFonts
+- PageSpeed Insights
+- Colorzilla Extension
+- Colorzilla Gradient Generator
+- CanIUse
 
 ## CSS Coloratum
 
-* Author: Lea Verou
-* Link: http://css.coloratum.com
-* Category: Design
+- Author: Lea Verou
+- Link: http://css.coloratum.com
+- Category: Design
 
 CSS Coloratum is a handful tool helping you convert colors in different syntaxes. It currently supports keywords, hexadecimal, RGB and HSL. Plus, it shows a preview.
 
@@ -35,9 +36,9 @@ Probably one of the best tools I know, especially when you’re working with hex
 
 ## WeLoveIconFonts
 
-* Author: Tim Pietrusky
-* Link: [https://weloveiconfonts.com/](https://weloveiconfonts.com)
-* Category: Development
+- Author: Tim Pietrusky
+- Link: [https://weloveiconfonts.com/](https://weloveiconfonts.com)
+- Category: Development
 
 WeLoveIconFonts (yes we do!) is some kind of CDN (Content Delivery Network) for icon fonts, like Google Web Fonts for web fonts. It currently supports Brandico, Entypo, Font Awesome, Fontelico, Maki, OpenWeb Icons, Typicons and Zocial.
 
@@ -50,9 +51,9 @@ It’s very easy to use. You pick one or more fonts, you copy the @import line i
 
 ## PageSpeed Insights
 
-* Author: Google
-* Link: [https://developers.google.com/speed/pagespeed/insights](https://developers.google.com/speed/pagespeed/insights) (+ [Chrome](https://chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli?utm_source=chrome-ntp-icon) and [Firefox](https://developers.google.com/speed/docs/insights/using_firefox) extensions)
-* Category: Optimization
+- Author: Google
+- Link: [https://developers.google.com/speed/pagespeed/insights](https://developers.google.com/speed/pagespeed/insights) (+ [Chrome](https://chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli?utm_source=chrome-ntp-icon) and [Firefox](https://developers.google.com/speed/docs/insights/using_firefox) extensions)
+- Category: Optimization
 
 PageSpeed Insights is a tool made by Google which analyzes the content of a web page, then generates suggestions to make things faster. What I really like about PSI is it also exists as a Chrome and a Firefox extension, which means you can inspect your page directly from the WebDeveloper Tools / Firebug. Isn’t that awesome?
 
@@ -63,9 +64,9 @@ PageSpeed Insights is a tool made by Google which analyzes the content of a web 
 
 ## Colorzilla
 
-* Author: Colorzilla
-* Link: [https://colorzilla.com/](https://colorzilla.com/) (+ [Chrome](https://www.colorzilla.com/chrome/) and [Firefox](https://www.colorzilla.com/firefox/) extensions)
-* Category: Design
+- Author: Colorzilla
+- Link: [https://colorzilla.com/](https://colorzilla.com/) (+ [Chrome](https://www.colorzilla.com/chrome/) and [Firefox](https://www.colorzilla.com/firefox/) extensions)
+- Category: Design
 
 ColorZilla provides 2 really awesome things: a CSS gradient generator and a Chrome / Firefox extension to deal with colors. I really recommand the 2, so I’ll talk about both.
 
@@ -87,20 +88,20 @@ Colorzilla Gradient Generator is, well, a CSS gradient generator and probably th
 
 Colorzilla is also a Chrome / Firefox extension to manage colors. This extension provides a lot of features, including:
 
-* An eyedropper (with copy to clipboard feature)
-* An advanced color picker
-* A webpage color analyzer
-* A palette viewer
-* A color history
-* Keyboard shortcuts
+- An eyedropper (with copy to clipboard feature)
+- An advanced color picker
+- A webpage color analyzer
+- A palette viewer
+- A color history
+- Keyboard shortcuts
 
 I know there are a bunch of colorpickers / eyedropper extensions outhere but you want find any like this. Colorzilla is really, really awesome and I wonder how I could work so long without using it.
 
 ## CanIUse
 
-* Author: Alexis Deveria
-* Link: <a href="https://weloveiconfont.com">https://caniuse.com/</a> (+ <a href="https://chrome.google.com/webstore/detail/can-i-use/kinefpelfmogilfkmjlbfkamgmofmedf/reviews?utm_source=chrome-ntp-icon">Chrome extension</a>)
-* Category: Development
+- Author: Alexis Deveria
+- Link: <a href="https://weloveiconfont.com">https://caniuse.com/</a> (+ <a href="https://chrome.google.com/webstore/detail/can-i-use/kinefpelfmogilfkmjlbfkamgmofmedf/reviews?utm_source=chrome-ntp-icon">Chrome extension</a>)
+- Category: Development
 
 CanIUse.com is the perfect tool when building HTML5 and CSS3 websites or applications. It groups together compatibility tables for most of HTML5, CSS3, SVG and JS API features. From there, you have access to browser support statistics coming from StatCounters for both desktop and mobiles browsers plus some various notes you may want to know about before using a feature.
 

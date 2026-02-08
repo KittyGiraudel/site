@@ -1,5 +1,6 @@
 ---
 title: Simple access management with Sanity
+description: A guide to creating a lightweight access management with Sanity
 ---
 
 Access management is important to any CMS. Unfortunately, [Sanity](https://sanity.io)’s ability to define custom roles is restricted to customers of the business plan. In this article, we will see how to customize the studio based on default roles, something that is possible with all Sanity plans — albeit a little tricky to set up (kind thanks to [Knut](https://twitter.com/kmelve) for showing me the way).

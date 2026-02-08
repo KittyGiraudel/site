@@ -1,14 +1,13 @@
 ---
 guest: Ana Tudor
 title: Dig deep into CSS linear gradients
+description: A deep-dive into CSS linear gradients by Ana Tudor
 keywords:
   - css
   - gradient
 ---
 
-{% info %}
-The following is a guest post by [Ana Tudor](https://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.
-{% endinfo %}
+{% info %} The following is a guest post by [Ana Tudor](https://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code. {% endinfo %}
 
 I had no idea how powerful CSS gradients could be until late 2011, when I found the [CSS3 Patterns Gallery](https://lea.verou.me/css3patterns/) made by Lea Verou. The idea that you can obtain many shapes using just gradients was a starting point for many CSS experiments I would later do.
 
@@ -30,23 +29,16 @@ The pen below shows graphically how to layer the multiple backgrounds. It also h
 For both the original pen and this helper demo, the interesting part is this one:
 
 ```css
-background: linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
+background:
+  linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
   linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%),
-  linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0, linear-gradient(
-      -72deg,
-      #639b47 75.48%,
-      transparent 75.48%
-    ) 100% 0,
-  linear-gradient(36deg, transparent 57.66%, #e1e23b 57.66%) 100% 100%, linear-gradient(
-      72deg,
-      transparent 24.52%,
-      #f7941e 24.52%
-    ) 100% 100%,
-  linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%, linear-gradient(
-      -72deg,
-      transparent 24.52%,
-      #9a1d34 24.52%
-    ) 0 100%, #43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
+  linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0,
+  linear-gradient(-72deg, #639b47 75.48%, transparent 75.48%) 100% 0,
+  linear-gradient(36deg, transparent 57.66%, #e1e23b 57.66%) 100% 100%,
+  linear-gradient(72deg, transparent 24.52%, #f7941e 24.52%) 100% 100%,
+  linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%,
+  linear-gradient(-72deg, transparent 24.52%, #9a1d34 24.52%) 0 100%,
+  #43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
 background-repeat: no-repeat;
 background-size: 50% 50%;
 ```

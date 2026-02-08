@@ -1,5 +1,6 @@
 ---
 title: Resolving Webpack aliases in Node
+description: A technical write-up on resolving Webpack aliases in Node when you need to reference aliased paths outside the bundle
 ---
 
 Say you have a project bundled with Webpack. And to avoid playing the relative path game, you use [Webpack aliases](https://webpack.js.org/configuration/resolve/) so you can import files from anywhere, always based on the root of your project. It might look something like this:

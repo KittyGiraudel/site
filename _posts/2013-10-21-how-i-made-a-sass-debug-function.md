@@ -1,5 +1,6 @@
 ---
 title: How I made a Sass debug function
+description: A technical write-up on creating a function to debug Sass data
 keywords:
   - sass
   - debug
@@ -59,7 +60,14 @@ It was pretty easy to do.
 This simple functions turns a Sass list into a readable string. It also deals with nested lists. Please have a look at the following example:
 
 ```scss
-$list: a, b, c, d e f, g, h i, j;
+$list:
+  a,
+  b,
+  c,
+  d e f,
+  g,
+  h i,
+  j;
 body:before {
   content: debug($list);
   // [ a, b, c, [ d, e, f ], g, [ h, i ], j ]
@@ -86,7 +94,9 @@ Basically I wanted to go `@include debug($list)` and have everything displayed. 
     border-radius: 0.2em !important;
 
     color: #333 !important;
-    font: 0.75em/1.5 'Courier New', monospace !important;
+    font:
+      0.75em/1.5 'Courier New',
+      monospace !important;
     text-shadow: 0 1px white !important;
     white-space: pre-wrap !important;
   }

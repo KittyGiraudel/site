@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 23: Oral interfaces'
+description: A11yAdvent entry on oral interfaces and the web
 ---
 
 Before we wrap up tomorrow, I wanted to tackle a bit of an off-topic: oral interfaces. The web being primarily a written medium, there is very little room for supporting oral commands. Nevertheless, it is likely that the platform will go into that direction sooner or later, as many native applications already rely on oral interfaces as a possible way to interact with the software.

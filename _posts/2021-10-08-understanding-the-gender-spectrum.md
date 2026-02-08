@@ -1,5 +1,6 @@
 ---
 title: Understanding the gender spectrum
+description: A lightweight guide gender, its spectrum, its considerations and inclusive language related to it
 edits:
   - date: 2023/07/08
     md: I updated the section on [inclusive language](#inclusive-language) to include the term “FINTA”.

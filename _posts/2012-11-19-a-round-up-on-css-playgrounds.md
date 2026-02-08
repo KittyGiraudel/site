@@ -1,5 +1,6 @@
 ---
 title: A round-up on CSS playgrounds
+description: A look into what CSS playgrounds are and what are the main contenders
 keywords:
   - css
   - playground

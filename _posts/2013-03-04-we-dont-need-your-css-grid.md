@@ -1,5 +1,6 @@
 ---
 title: We don’t need your CSS grid
+description: "A take on CSS grid systems and why we might not need another one — on consistency, responsive design and frameworks."
 keywords:
   - css
   - grid

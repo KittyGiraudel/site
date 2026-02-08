@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 24: The Case for Accessibility'
+description: A11yAdvent entry on making the case for accessibility
 ---
 
 As the very last topic of this calendar, I would like to discuss “the case for accessibility.” In an ideal world, we would not have to make the case for accessibility, because it is a human right and ethically the right thing to do — so there really should be no one to convince that this is worth it. Unfortunately, we do not live in an ideal world, and more often than not, we have to convince managers and clients of all sorts that accessibility should be considered from the start.

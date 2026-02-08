@@ -1,5 +1,6 @@
 ---
 title: CSS trickery and calc function
+description: A technical write-up about finding a solution to a tricky little CSS puzzle from Rémi Parmentier
 keywords:
   - css
   - calc
