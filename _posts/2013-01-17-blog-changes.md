@@ -1,11 +1,12 @@
 ---
 title: Blog changes
+description: A review of more changes applied to my website to improve SEO, performance and accessibility
 keywords:
   - blog
   - writing
 edits:
   - date: 2013/01/22
-    md: I did a lot of changes after writing this post notably regarding SEO, performances and accessibility. Be sure you read about it!
+    md: I did a lot of changes after writing this post notably regarding SEO, performance and accessibility. Be sure you read about it!
 ---
 
 Hi people! It’s now been two months since I launched the new and active version of kittygiraudel.com and I took the opportunity to make a few changes. Let me introduce them, hoping you find them cool. :)
@@ -48,8 +49,8 @@ I also decided to rely on a CDN rather than on self hosting for [Font Awesome](h
 
 I tried to add a few features in order to make your experience nicer. Nothing big, just a few things which are &mdash; according to me &mdash; UX improvements. Among those:
 
-* Links to articles on the home page are now paginated in order to make the whole page lighter. Only the last 7 articles will be displayed (including Codrops ones) on the first page. To see older blog posts, you’ll have to use the little buttons at the bottom of the screen.
-* You can now link to specific sections inside an article thanks to anchor tags on titles. When you hover a level-2 title (like “Features” or “Performances” for example), you’ll see a little # character appearing. Click on it to have a section-specific URL.
+- Links to articles on the home page are now paginated in order to make the whole page lighter. Only the last 7 articles will be displayed (including Codrops ones) on the first page. To see older blog posts, you’ll have to use the little buttons at the bottom of the screen.
+- You can now link to specific sections inside an article thanks to anchor tags on titles. When you hover a level-2 title (like “Features” or “Performances” for example), you’ll see a little # character appearing. Click on it to have a section-specific URL.
 
 ## Performances
 
@@ -57,10 +58,10 @@ I’m kind of psychotic when it comes to performance. I always try to make the p
 
 Among the many things I did on the topic, I:
 
-* Did a lot of work on the CSS to clean it, make it faster, with less selectors, faster selectors, ans so on.
-* Reduced the number of HTTP requests.
-* Am still working on the JavaScript part to make it asynchronous.
-* Asked [Tim Pietrusky](https://twitter.com/timpietrusky) to improve caching and compressing at [WeLoveIconFonts.com](https://weloveiconfonts.com). Thanks dude!
+- Did a lot of work on the CSS to clean it, make it faster, with less selectors, faster selectors, ans so on.
+- Reduced the number of HTTP requests.
+- Am still working on the JavaScript part to make it asynchronous.
+- Asked [Tim Pietrusky](https://twitter.com/timpietrusky) to improve caching and compressing at [WeLoveIconFonts.com](https://weloveiconfonts.com). Thanks dude!
 
 ## Accessibility
 

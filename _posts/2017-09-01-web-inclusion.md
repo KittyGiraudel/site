@@ -4,6 +4,7 @@ external:
   url: https://dev.by/lenta/main/web-inclusion
 lang: ru
 title: Инклюзивность в веб-разработке
+description: 'Инклюзивность в веб-разработке'
 keywords:
   - interview
   - a11y

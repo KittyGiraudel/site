@@ -1,5 +1,6 @@
 ---
 title: A closer look at my Sass structure
+description: A look about how I structure my Sass code for frontend projects
 keywords:
   - sass
   - architecture
@@ -22,13 +23,13 @@ I think one of the best things when using a CSS preprocessor -whatever is your c
 
 This is exactly what I did, spliting my stylesheets into parts. As of writing, I currently have 5 different pieces (5 different .scss files):
 
-* `_font-awesome.scss`: [Font Awesome](https://fortawesome.github.com/Font-Awesome/) is the icon font I use in the site
-* `_google-fonts.scss`: this is the snippet from [Google Web Fonts](https://www.google.com/webfonts)
-* `_prism.scss`: [Prism.js](https://prismjs.com/) is the syntax highlighter
-* `_helpers.scss`: this file contains my mixins, variables and helper classes
-* `_styles.scss`: the core of the CSS
+- `_font-awesome.scss`: [Font Awesome](https://fortawesome.github.com/Font-Awesome/) is the icon font I use in the site
+- `_google-fonts.scss`: this is the snippet from [Google Web Fonts](https://www.google.com/webfonts)
+- `_prism.scss`: [Prism.js](https://prismjs.com/) is the syntax highlighter
+- `_helpers.scss`: this file contains my mixins, variables and helper classes
+- `_styles.scss`: the core of the CSS
 
-_Note: .scss files starting with a `_` are not compiled into .css files._
+_Note: .scss files starting with a `_` are not compiled into .css files.\_
 
 Since my website isn’t that big, I didn’t have to split the code stylesheet into smaller parts like typography, header, footer, modules, etc.
 
@@ -114,8 +115,8 @@ I have quite a few helper classes, some very useful, other a bit less but I use 
 
 Let’s start with the basics:
 
-* `%clearfix` is an invisible class meant to be extended (@extend) to clear floats in an element containing only floated elements
-* `.icon-left` and `.icon-right` are used on inline icons to prevent them from sticking the text
+- `%clearfix` is an invisible class meant to be extended (@extend) to clear floats in an element containing only floated elements
+- `.icon-left` and `.icon-right` are used on inline icons to prevent them from sticking the text
 
 ```scss
 %clearfix {
@@ -136,8 +137,8 @@ Let’s start with the basics:
 
 Then, two helpers to give content specific meaning:
 
-* `.visually-hidden` simply make the text disappear while keeping it accessible for both screen readers and search engine bots.
-* `.note` is used to tell a paragraph is a note which could be removed without affecting the sense of the content
+- `.visually-hidden` simply make the text disappear while keeping it accessible for both screen readers and search engine bots.
+- `.note` is used to tell a paragraph is a note which could be removed without affecting the sense of the content
 
 ```scss
 .visually-hidden {
@@ -159,10 +160,10 @@ Then, two helpers to give content specific meaning:
 
 And now let’s dig into more interesting stuff. I have built some useful classes to pull images or quotes out of the flow and put them on the side in order to emphasize them. Both are built in the same way:
 
-* `%pull-quote` and `%pull-image` are invisible classes; it means they won’t be compiled in the stylesheet, they are only here to be extended
-* `.pull-quote--left`, `.pull-quote--right`, `.pull-image--left` and `.pull-image--right` respectively inherit (`@extend`) styles from `%pull-quote` and `%pull-image`
-* Plus, they have some specific styles like margins, float, borders, etc.
-* On small screens, they are not floated any more, pulled back in the flow and centered
+- `%pull-quote` and `%pull-image` are invisible classes; it means they won’t be compiled in the stylesheet, they are only here to be extended
+- `.pull-quote--left`, `.pull-quote--right`, `.pull-image--left` and `.pull-image--right` respectively inherit (`@extend`) styles from `%pull-quote` and `%pull-image`
+- Plus, they have some specific styles like margins, float, borders, etc.
+- On small screens, they are not floated any more, pulled back in the flow and centered
 
 ```scss
 %pull-image {
@@ -240,8 +241,8 @@ And now let’s dig into more interesting stuff. I have built some useful classe
 
 Please note how I nest media queries inside their related selectors. There are two main reasons for this:
 
-* This makes the stylesheet easier to maintain since you have everything at the same place: regular rules + conditional rules. No need of going at the bottom of the stylesheet to find all the conditional CSS.
-* When compiling, Sass doesn’t generate a bunch of media queries but a single one. So no performance issue on this point.
+- This makes the stylesheet easier to maintain since you have everything at the same place: regular rules + conditional rules. No need of going at the bottom of the stylesheet to find all the conditional CSS.
+- When compiling, Sass doesn’t generate a bunch of media queries but a single one. So no performance issue on this point.
 
 _Note: if you ever wonder about the double dashes or underscores in class names, it is related to the BEM (Block Element Modifier) approach. More on the topic in [this excellent post](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) from Harry Roberts._
 
@@ -273,8 +274,14 @@ I didn’t really know how to call this.
 
 ```scss
 html {
-  font: 20px/1 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica',
-    'Arial', 'Lucida Grande', sans-serif;
+  font:
+    20px/1 'HelveticaNeue-Light',
+    'Helvetica Neue Light',
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
+    'Lucida Grande',
+    sans-serif;
   color: #555;
   text-shadow: 0 1px rgba(255, 255, 255, 0.6);
 

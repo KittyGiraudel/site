@@ -1,5 +1,6 @@
 ---
 title: Let’s talk about your resume
+description: A short reflection on resumes and what I look for as a hiring manager
 keywords:
   - hiring
   - resume

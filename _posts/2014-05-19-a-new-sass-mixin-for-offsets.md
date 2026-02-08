@@ -1,5 +1,6 @@
 ---
 title: A new Sass mixin for offsets
+description: A technical write-up on a Sass mixin to help with CSS offsets
 keywords:
   - sass
   - mixin
@@ -83,9 +84,9 @@ top: 1em;
 
 So if we sum up:
 
-* if offset doesn’t exist or offset exists but is followed by an invalid value, we don’t output it
-* if offset exist as last item or offset is followed by another offset, we output it to `0`
-* if offset exist and is followed by valid value, we output it to the value
+- if offset doesn’t exist or offset exists but is followed by an invalid value, we don’t output it
+- if offset exist as last item or offset is followed by another offset, we output it to `0`
+- if offset exist and is followed by valid value, we output it to the value
 
 ## Starting with the helper
 
@@ -93,15 +94,16 @@ As you may have understood from what we have just seen, we will need to determin
 
 Should be considered as a valid length:
 
-* a number with a unit
-* `0`
-* `auto`
-* `initial`
-* `inherit`
+- a number with a unit
+- `0`
+- `auto`
+- `initial`
+- `inherit`
 
 ```scss
 @function is-valid-length($value) {
-  @return (type-of($value) == 'number' and not unitless($value)) or (index(auto initial inherit 0, $value) != false);
+  @return (type-of($value) == 'number' and not unitless($value)) or
+    (index(auto initial inherit 0, $value) != false);
 }
 ```
 

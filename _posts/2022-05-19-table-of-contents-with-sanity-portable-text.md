@@ -1,5 +1,6 @@
 ---
 title: Table of contents with Sanity Portable Text
+description: A technical write-up on how to create a Table of Contents components with Sanity Portable Text
 ---
 
 Sanity has this concept of “[portable text](https://www.sanity.io/docs/presenting-block-text)”. It’s basically an AST (Abstract Syntax Tree) generated via their rich text editor (called [blocks](https://www.sanity.io/docs/what-you-need-to-know-about-block-text)), which you can render in any format (HTML, JSX, Markdown…).

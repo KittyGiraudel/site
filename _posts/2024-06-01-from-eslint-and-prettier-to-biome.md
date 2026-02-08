@@ -1,5 +1,6 @@
 ---
 title: From ESLint and Prettier to Biome
+description: A technical write-up on my journey migrating from ESLint + Prettier to Biome
 ---
 
 A couple of weeks ago, I saw [Biome](https://biomejs.dev/) pop in my Twitter timeline again, and decided it was time to look into it. Here are my 2 cents on how the migration went, and what is great and not so great about Biome.

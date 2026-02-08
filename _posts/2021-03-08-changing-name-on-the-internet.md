@@ -1,5 +1,6 @@
 ---
 title: Changing name on the internet
+description: A personal note on changing my name on the internet and updating accounts and services
 ---
 
 I have been called Kitty for years. Originally by my siblings and closest friends, then by more friends and some colleagues. With the job change in January, I decided to make the switch and start using Kitty all the time. There’s nothing legal about it, I simply prefer it. I’ve never been a huge fan of my first name, and with that nickname catching on, it just feels more natural.

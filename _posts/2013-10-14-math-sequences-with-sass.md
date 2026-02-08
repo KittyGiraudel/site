@@ -1,5 +1,6 @@
 ---
 title: Math sequences with Sass
+description: A technical write-up on experimental functions to generate popular math sequences in Sass
 keywords:
   - sass
   - math
@@ -161,7 +162,12 @@ As for the Fibonacci number, there is no end so we have to define a limit. Again
 Before going any further, I think it's important to understand how we are going to store the whole sequence in Sass. Basically, it will be a list of lists. Like this:
 
 ```scss
-$sequence: 1, 1 1, 2 1, 1 2 1 1, 1 1 1 2 2 1;
+$sequence:
+  1,
+  1 1,
+  2 1,
+  1 2 1 1,
+  1 1 1 2 2 1;
 ```
 
 So the upper level (entries) are comma separated while the lower level (numbers in each entry) are space separated. Two-levels deep list. Alright back to our stuff.

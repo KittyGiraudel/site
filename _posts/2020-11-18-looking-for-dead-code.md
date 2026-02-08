@@ -1,5 +1,6 @@
 ---
 title: Looking for dead code
+description: A technical write-up on finding dead code in a large codebase
 keywords:
 - dead code
 - maintenance

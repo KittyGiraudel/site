@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 18: Internationalisation'
+description: A11yAdvent entry on internationalisation and accessibility
 ---
 
 If accessibility is the discipline aiming at providing equal access to everyone, then the internationalisation of content has to play an important part in it. Content provided in a language that is not understood by the user is pretty inaccessible.

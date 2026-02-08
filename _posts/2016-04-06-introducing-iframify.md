@@ -1,5 +1,6 @@
 ---
 title: Introducing iframify
+description: An announcement post for iframify, a small library to encapsulate a widget in an iframe
 keywords:
   - iframe
   - styleguide

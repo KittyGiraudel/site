@@ -1,5 +1,6 @@
 ---
 title: Writing in Sublime Text
+description: A look at my Sublime Text used for writing
 keywords:
   - sublime text
   - writing

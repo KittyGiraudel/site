@@ -1,5 +1,6 @@
 ---
-title: "Why a CSS alternative to select is impossible"
+title: 'Why a CSS alternative to select is impossible'
+description: On the select HTML element, and why just recreating it with CSS alone is not only impossible, but also not recommended
 keywords:
   - css
   - thoughts
@@ -18,13 +19,13 @@ Now don’t get me wrong, the author at Pepsized did a wonderful job on this art
 
 The major concern here is **accessibility**. The default `<select>` element is completely usable either with a mouse or a keyboard, following this process:
 
-1. Mouse: move your cursor over the `<select>` element
+1. Mouse: move your cursor over the `<select>` element  
    Keyboard: use the tab key to focus the `<select>` element
-1. Mouse: click on the `<select>` element
+1. Mouse: click on the `<select>` element  
    Keyboard: press enter
-1. Mouse: move your cursor over the desired option
+1. Mouse: move your cursor over the desired option  
    Keyboard: use the top and bottom arrow keys to pick an option
-1. Mouse: click on the desired option
+1. Mouse: click on the desired option  
    Keyboard: press enter
 
 While making a pure CSS dropdown easily usable with the mouse can be done by pretty much any one with some CSS knowledge, making it usable with keyboard navigation is a whole other story.

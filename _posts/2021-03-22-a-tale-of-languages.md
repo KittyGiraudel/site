@@ -1,5 +1,6 @@
 ---
 title: A tale of languages
+description: A short note on releasing the French version of the Gorillas website and a piece of language trivia
 edits:
   - date: 2021/03/25
     md: '[Adrian Roselli](https://twitter.com/aardrian/status/1374684368195702785?s=20) pointed out on Twitter that many things can impact how a screen-reader switches languages, some of them being quite weird. As a result, it might be preferable not to trying gaming screen-readers’ language heuristics and leave it at that. Especially since they can yield unexpected results and are difficult to test reliably.'

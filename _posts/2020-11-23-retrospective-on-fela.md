@@ -1,5 +1,6 @@
 ---
 title: Retrospective on Fela
+description: A retrospective on using Fela for CSS-in-JS at N26
 keywords:
   - styling
   - CSS-in-JS

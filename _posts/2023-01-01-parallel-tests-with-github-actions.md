@@ -1,5 +1,6 @@
 ---
 title: Parallel tests with GitHub Actions
+description: A technical write-up about running tests in parallel in a GitHub workflow
 ---
 
 First post of the year! I’ve been spending quite some time on my [Advent of Code](https://github.com/KittyGiraudel/advent-of-code) repository in December and decided I wanted to run the tests in a GitHub workflow. A short and sweet post about it.

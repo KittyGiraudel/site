@@ -1,5 +1,6 @@
 ---
 title: Building a walk function in Sass
+description: A technical write-up on writing an experimental walk function in Sass
 keywords:
   - sass
   - walk

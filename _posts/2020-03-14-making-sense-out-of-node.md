@@ -1,5 +1,6 @@
 ---
 title: Making sense out of Node
+description: A short guide for beginners on Node, npm and npx
 keywords:
   - node
   - npm

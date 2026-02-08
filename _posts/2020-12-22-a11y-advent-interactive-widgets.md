@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 22: Interactive Widgets'
+description: A11yAdvent entry on interactive widgets and accessibility
 ---
 
 For the most part, the web is accessible by default. That means properly structured content should go a long way and be perceivable and consumable by everyone, regardless of how they browse the web.

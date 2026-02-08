@@ -1,13 +1,12 @@
 ---
 title: The Sound of Bullets
+description: A translation of the breathtaking “Le bruit des balles” post by Said Abdallah following the terrorist attack in Paris on November 13th
 keywords:
   - miscellaneous
   - thoughts
 ---
 
-{% info %}
-Words cannot even begin to describe the horror that happened on November 13th in Paris. Yet Mehdi Meklat and Badroudine Said Abdallah did something touching in their essay entitled [“Le bruit des balles”](https://bondyblog.liberation.fr/201511141918/le-bruit-des-balles/#.Vke74a6rRE_) (literally “The sound of bullets”). That’s why I felt the urge to translate it in English, in the best way I could, so that more people could read it.
-{% endinfo %}
+{% info %} Words cannot even begin to describe the horror that happened on November 13th in Paris. Yet Mehdi Meklat and Badroudine Said Abdallah did something touching in their essay entitled [“Le bruit des balles”](https://bondyblog.liberation.fr/201511141918/le-bruit-des-balles/#.Vke74a6rRE_) (literally “The sound of bullets”). That’s why I felt the urge to translate it in English, in the best way I could, so that more people could read it. {% endinfo %}
 
 A street, very near République. It was around 10PM. And the sound of war…
 

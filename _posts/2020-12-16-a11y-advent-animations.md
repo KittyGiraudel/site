@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 16: Animations'
+description: A11yAdvent entry on animations and reduced motion
 ---
 
 Animations are everywhere nowadays. With devices and browsers more powerful than ever, and APIs making it easier and easier to craft complex and delightful animations, it is no surprise they are heavily used in modern software development. And for good reason! When used properly, animations can grealty enhance the experience, making it easier to understand what is going on.

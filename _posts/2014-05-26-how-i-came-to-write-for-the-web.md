@@ -1,5 +1,6 @@
 ---
 title: How I came to write for the web
+description: A retrospective on my writing journey and how I ended up being a technical writer
 keywords:
   - blog
   - writing

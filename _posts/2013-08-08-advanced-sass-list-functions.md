@@ -1,5 +1,6 @@
 ---
 title: Advanced Sass list functions
+description: A look at a collection of home-made functions to do advanced list manipulation in Sass
 keywords:
   - sass
   - lists
@@ -43,7 +44,14 @@ Sass already provides a `index()` function to retreive the index of a given valu
 Good. Now what if we want the last one?
 
 ```scss
-$list: a, b, c, d z, e, a, f;
+$list:
+  a,
+  b,
+  c,
+  d z,
+  e,
+  a,
+  f;
 $first-index: index($list, a); // 1
 $last-index: last-index($list, a); // 6
 $last-index: last-index($list, z); // null
@@ -167,7 +175,16 @@ We’re good with adding new values to a list. Now what if we want to change val
 ### Replacing value `x`
 
 ```scss
-$list: a, b, r, a, c a, d a, b, r, a;
+$list:
+  a,
+  b,
+  r,
+  a,
+  c a,
+  d a,
+  b,
+  r,
+  a;
 $new-list: replace($list, a, u); // u, b, r, u, c a, d a, b, r, u;
 $new-list: replace($list, a, u, true); // u, b, r, u, c u, d u, b, r, u;
 ```
@@ -260,7 +277,15 @@ Hey, it’s getting pretty cool. We can add values to list pretty much wherever 
 ### Removing values `x`
 
 ```scss
-$list: a, b z, c, z, d, z, e, f;
+$list:
+  a,
+  b z,
+  c,
+  z,
+  d,
+  z,
+  e,
+  f;
 $new-list: remove($list, z); // a, b z, c, d, e, f;
 $new-list: remove($list, z, true); // a, b, c, d, e, f
 ```
@@ -396,7 +421,13 @@ _Question: would you prefer a function slicing from index `n` for `x` indexes to
 Let’s make a small function to reverse the order of elements within a list so the last index becomes the first, and the first the last.
 
 ```scss
-$list: a, b, c d e, f, g, h;
+$list:
+  a,
+  b,
+  c d e,
+  f,
+  g,
+  h;
 $new-list: reverse($list); // h, g, f, c d e, b, a
 $new-list: reverse($list, true); // h, g, f, e d c, b, a
 ```
@@ -426,7 +457,13 @@ As we saw earlier, `@for` loops can’t decrement so we use the negative indexes
 Let’s finish with a function I had a hard time to name. I first wanted to call it `join()` like in JavaScript but there is already one. I then thought about `implode()` and `to-string()`. I went with the latter. The point of this function is to convert an array into a string, with the ability to use a string to join elements with each others.
 
 ```scss
-$list: a, b, c d e, f, g, h;
+$list:
+  a,
+  b,
+  c d e,
+  f,
+  g,
+  h;
 $new-list: to-string($list); // abcdefgh
 $new-list: to-string($list, '-'); // a-b-c-d-e-f-g-h
 ```

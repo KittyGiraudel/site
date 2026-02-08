@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: git-aliases
+description: List of useful git aliases grouped by categories
 permalink: /snippets/git-aliases/
 language: Git
 related: /2018/02/17/how-i-use-git/

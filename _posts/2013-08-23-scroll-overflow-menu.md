@@ -1,14 +1,13 @@
 ---
 guest: Hugo Darby-Brown
 title: Scroll overflow menu
+description: A technical write-up by Hugo Darby-Brown on creating a menu that overflows and scrolls nicely
 keywords:
   - css
   - experiment
 ---
 
-{% info %}
-The following is a guest post by Hugo Darby-Brown, a talented frontend developer. I’m very glad to have him writing here today about a menu concept he came up with!
-{% endinfo %}
+{% info %} The following is a guest post by Hugo Darby-Brown, a talented frontend developer. I’m very glad to have him writing here today about a menu concept he came up with! {% endinfo %}
 
 Before I start off I’d like to say that this is more of **a proof of concept**, than a method that I’d recommend using on your next project. This menu uses the WebKit-specific CSS declaration `overflow-scrolling: touch` so support is a little flakey on older devices, but there are a few polyfills, which I will cover later (should you feel the urge to use this menu).
 
@@ -89,13 +88,13 @@ Throw in some JS to toggle the class, and you’ve got yourself a basic slide do
 
 ```javascript
 // jQuery version
-$('.nav-toggle').on('click', function(e) {
+$('.nav-toggle').on('click', function (e) {
   $('nav').toggleClass('show')
   e.preventDefault()
 })
 
 // Vanilla JS version
-document.querySelector('.nav-toggle').onclick = function(e) {
+document.querySelector('.nav-toggle').onclick = function (e) {
   var nav = document.querySelector('nav')
   nav.classList.toggle('show')
   e.preventDefault()

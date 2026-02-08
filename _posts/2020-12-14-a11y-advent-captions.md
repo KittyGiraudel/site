@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 14: Captions'
+description: A11yAdvent entry on captions for video
 ---
 
 Whether it’s for videos on the internet or cinematics in video games, captions are an essential accessibility feature. Note that we are talking about “closed captions” here, which are not about translating content — these are subtitles.

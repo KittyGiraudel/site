@@ -1,5 +1,6 @@
 ---
 title: Translating Sass Guidelines
+description: A short announcement on translating Sass Guidelines in multiple languages
 keywords:
   - sass
   - guidelines

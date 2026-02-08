@@ -73,6 +73,9 @@ module.exports = function (config) {
   config.addFilter('sort_by', sortBy)
   config.addFilter('where', where)
 
+  // Replace emoji with short names so meta descriptions don't get broken by the emoji transform
+  config.addFilter('emoji_to_text', emojiToText)
+
   // Register a collection for the posts and sort them from most to least recent
   config.addCollection('posts', collection =>
     collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date)
@@ -114,6 +117,11 @@ function replaceEmoji(match) {
   return label
     ? `<span role="img" aria-label="${label}" title="${label}">${match}</span>`
     : match
+}
+
+function emojiToText(str) {
+  if (!str || typeof str !== 'string') return ''
+  return str.replace(emojiRegex, match => emojiShortName[match] || match)
 }
 
 function a11yEmojis(content, outputPath) {

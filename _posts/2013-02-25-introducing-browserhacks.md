@@ -1,5 +1,6 @@
 ---
 title: Introducing Browserhacks
+description: An announcement post about Browserhacks, a project aiming at listing browser specific CSS hacks
 keywords:
   - css
   - hacks

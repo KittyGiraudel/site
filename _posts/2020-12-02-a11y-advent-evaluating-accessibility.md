@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 2: Evaluating Accessibility'
+description: A11yAdvent entry on evaluating accessibility with WCAG
 ---
 
 Now that we have broadly defined what accessibility is, we need to discuss how to measure it. Accessibility is audited through the [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/) (WCAG for short), a technical standard currently in version 2.1, planned to reach 2.2 in 2021.

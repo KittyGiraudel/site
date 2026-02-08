@@ -1,5 +1,6 @@
 ---
 title: Reverse-engineering an AoC problem
+description: A technical write-up about my approach to solving Advent of Code Day 21 2022
 ---
 
 [Today’s Advent of Code](https://adventofcode.com/2022/day/21) (day 21 2022) was probably my favorite of the lot. I guess it’s a combination of having managed to solve it without relying on Reddit, having managed to solved it both manually _and_ programmatically, and having learnt things along the way.

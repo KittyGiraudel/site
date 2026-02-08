@@ -1,5 +1,6 @@
 ---
 title: Accessible cards
+description: A guide to creating an accessible card component
 keywords:
   - accessibility
   - a11y

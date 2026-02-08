@@ -1,5 +1,6 @@
 ---
 title: The required fault in our stars
+description: A short write-up about the use of asterisks to indicate required fields in forms
 keywords:
   - accessibility
   - a11y
@@ -10,7 +11,7 @@ keywords:
 
 I have been trying to figure why and when did we start using the asterisk character (`*`) to denote required fields on the web. There is little historical content about this out there, but Jared Spool pointed out that this design decision appears to predate the web:
 
-> [I]t predates the web. I've seen instances of an asterisk to indicate a required field on mainframe data entry screens from the 70s. So, it's a pretty old convention. As to where it first showed up or who was the mastermind behind it, I'm without a clue.  
+> [I]t predates the web. I've seen instances of an asterisk to indicate a required field on mainframe data entry screens from the 70s. So, it’s a pretty old convention. As to where it first showed up or who was the mastermind behind it, I’m without a clue.  
 > — [Jared Spool on UX Stack Exchange](https://ux.stackexchange.com/questions/10468/why-does-asterisk-mean-required-on-a-form-field#comment15243_10468)
 
 It may also be derived from the print industry commonly using it to mark footnotes. Regardless where it came from, it’s safe to say the asterisk character is now a well established convention, so much so that we get to ask ourselves: is the symbol enough in itself?

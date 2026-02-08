@@ -1,5 +1,6 @@
 ---
 title: Casting a map into a list in Sass
+description: A technical write-up into casting a Sass map into a list
 keywords:
   - sass
   - lists
@@ -28,7 +29,7 @@ The `to-list` function core is pretty straightforward. If the given value is a m
     @return zip($keys, $values);
   }
 
-  @return if(type-of($value) != 'list', ($value,), $value);
+  @return if(type-of($value) != 'list', ($value), $value);
 }
 ```
 
@@ -64,14 +65,18 @@ Then depending on the flag, he returns either `$keys` or `$values` or a zip of b
     }
   }
 
-  @return if(type-of($value) != 'list', ($value,), $value);
+  @return if(type-of($value) != 'list', ($value), $value);
 }
 ```
 
 If you don’t like conditional return statements or if you simply want to look like a badass with an unreadable ternary mess, you could return something like this:
 
 ```scss
-@return if($keep == 'keys', $keys, if($keep == 'values', $values, zip($keys, $values)));
+@return if(
+  $keep == 'keys',
+  $keys,
+  if($keep == 'values', $values, zip($keys, $values))
+);
 ```
 
 Literally:
@@ -88,7 +93,7 @@ Let’s try it with a little example, shall we? First, our map.
 $breakpoints: (
   'small': 600px,
   'medium': 900px,
-  'large': 1200px
+  'large': 1200px,
 );
 ```
 

@@ -1,5 +1,6 @@
 ---
 title: Accessible page title in a single-page React application
+description: A technical write-up on managing the page title in a React SPA for accessibility
 keywords:
   - accessibility
   - SPA

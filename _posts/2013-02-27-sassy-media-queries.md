@@ -1,5 +1,6 @@
 ---
 title: Sassy Media Queries
+description: A technical write-up about using Sass to shorten a complicated CSS experiment
 keywords:
   - sass
   - media queries
@@ -31,7 +32,8 @@ Okay, this is no magic. I had to write all the words Arley used all over again. 
 So basically I created a Sass list containing all words ordered from the longest to the shortest. Hopefully, Arley already did this part of the job before me so I didn’t have to do it again.
 
 ```scss
-$words: 'Unconventional', 'Flabbergasting', 'Scintillating', 'Extraordinary',
+$words:
+  'Unconventional', 'Flabbergasting', 'Scintillating', 'Extraordinary',
   'Unforgettable', 'Unpredictable', 'Dumbfounding', 'Electrifying',
   'Overwhelming', 'Incomparable', 'Entertaining', 'Magnificient', 'Confounding',
   'Resourceful', 'Interesting', 'Adventurous', 'Bewildering', 'Astonishing',

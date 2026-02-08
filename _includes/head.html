@@ -1,5 +1,6 @@
 {% assign page_url = page.url | prepend: site.url %}
-{% assign page_description = excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 %}
+{% assign page_description = description | default: site.description | strip_html | strip_newlines |
+truncate: 200 %}
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:
 http://ogp.me/ns/article#">
@@ -11,7 +12,7 @@ http://ogp.me/ns/article#">
 
   <!-- Page specific content -->
   <title>{% if title %}{{ title }} | {{ site.author }}{% else %}{{ site.author }}{% endif %}</title>
-  <meta name="description" content="{{ page_description }}">
+  <meta name="description" content="{{ page_description | emoji_to_text | escape }}">
   {% if keywords %}
   <meta name="keywords" content="{{ keywords | join: ',' }}" />
   {% endif %}
@@ -52,7 +53,8 @@ http://ogp.me/ns/article#">
   {% include "script.html", partials: "utilities" %}
 
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="{{ site.author }}" href="{{ '/rss/index.xml' | prepend: site.url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.author }}"
+    href="{{ '/rss/index.xml' | prepend: site.url }}" />
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/assets/images/favicon.jpg">
@@ -65,13 +67,13 @@ http://ogp.me/ns/article#">
   <meta property="og:title" content="{{ title | default: site.author }}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ page_url }}" />
-  <meta property="og:description" content="{{ page_description }}" />
+  <meta property="og:description" content="{{ page_description | emoji_to_text | escape }}" />
   <meta property="og:site_name" content="kittygiraudel.com" />
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@KittyGiraudel">
-  <meta name="twitter:description" content="{{ page_description }}">
+  <meta name="twitter:description" content="{{ page_description | emoji_to_text | escape }}">
   <meta name="twitter:domain" content="kittygiraudel.com">
   <meta name="twitter:image" content="https://kittygiraudel.com/assets/images/favicon-192.jpg">
   <meta name="twitter:site" content="@KittyGiraudel">

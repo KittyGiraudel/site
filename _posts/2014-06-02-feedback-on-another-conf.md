@@ -1,5 +1,6 @@
 ---
 title: Feedback on another conf
+description: A retrospective on my 2nd conference, the FeWeb in Belgium
 keywords:
   - thoughts
   - feweb

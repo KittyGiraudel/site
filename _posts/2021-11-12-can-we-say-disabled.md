@@ -1,5 +1,6 @@
 ---
 title: Can we say “disabled”?
+description: On whether the word “disabled” is appropriate (it is), and the discourse around its usage
 ---
 
 Time and time again, we get to witness a debate about whether it is okay to say that someone is disabled. This recently [happened on Twitter](https://twitter.com/MargoHannon/status/1458559790121111564?s=20) and the disabled community has been very vocal in explaining why policing the language they use to describe themselves is ableist.

@@ -1,5 +1,6 @@
 ---
 title: User preferences in React
+description: A technical write-up on React hooks and components for user preferences like dark mode and reduced motion
 keywords:
 - react
 - preferences

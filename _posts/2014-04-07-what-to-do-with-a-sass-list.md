@@ -1,5 +1,6 @@
 ---
 title: What to do with a Sass list?
+description: A technical write-up on Sass lists and what they are used for
 keywords:
   - sass
   - lists

@@ -1,5 +1,6 @@
 ---
 title: An introduction to hardware acceleration
+description: A technical write-up on hardware acceleration in CSS
 keywords:
   - css
   - performance

@@ -1,5 +1,6 @@
 ---
 title: Themes and layouts with Twig
+description: A technical write-up on using themes and layouts with Twig, the Symfony templating system
 keywords:
   - templates
   - Twig
@@ -24,11 +25,12 @@ Twig is mostly about extending templates ([`@extend`](hhttps://twig.symfony.com/
 <!-- base.html.twig -->
 <!DOCTYPE html>
 <html>
-  <head><!-- whatever --></head>
+  <head>
+    <!-- whatever -->
+  </head>
   <body>
-    {% block header %}{% endblock %}
-    {% block main   %}{% endblock %}
-    {% block footer %}{% endblock %}
+    {% block header %}{% endblock %} {% block main %}{% endblock %} {% block
+    footer %}{% endblock %}
   </body>
 </html>
 ```
@@ -37,18 +39,12 @@ When a second template extends from the first one, it can dump stuff into those 
 
 ```html
 <!-- page.html.twig -->
-{% extends 'base.html.twig' %}
-
-{% block header %}
-  <h1>Title</h1>
-{% endblock %}
-
-{% block main %}
-  <p>My first page</p>
-{% endblock %}
-
-{% block footer %}
-  <footer>Credits & copyright</footer>
+{% extends 'base.html.twig' %} {% block header %}
+<h1>Title</h1>
+{% endblock %} {% block main %}
+<p>My first page</p>
+{% endblock %} {% block footer %}
+<footer>Credits & copyright</footer>
 {% endblock %}
 ```
 
@@ -59,9 +55,7 @@ That’s pretty much how you work a project with Twig.
 Now you also can also include files ([`@include`](https://twig.symfony.com/doc/tags/include.html)) which work has you would expect: this is basically the `@include` from PHP. So if you have some static content, like a footer for example, you can include a partials (a bunch of HTML if you will) directly into your footer block like this:
 
 ```html
-{% block footer %}
-  {% include 'partials/footer.html.twig' %}
-{% endblock %}
+{% block footer %} {% include 'partials/footer.html.twig' %} {% endblock %}
 ```
 
 ### Embed
@@ -80,8 +74,7 @@ Back to the issue: we had to be able to define both the theme and the layout on 
 
 ```html
 <!-- This doesn’t work. -->
-{% extends '@layout' %}
-{% extends '@theme' %}
+{% extends '@layout' %} {% extends '@theme' %}
 ```
 
 Unfortunately, it’s not possible to extend multiple templates in Twig (which seems obvious) so we had to find a workaround.
@@ -90,29 +83,29 @@ Unfortunately, it’s not possible to extend multiple templates in Twig (which s
 
 One possible way to go &mdash; the one we wanted to avoid at all costs &mdash; was having either every layouts for every themes, or every themes for every layouts. Basically something like this:
 
-* admin (theme)
-  * 12 (layout)
-  * 8-4 (layout)
-  * 9-3 (layout)
-  * 2-7-3 (layout)
-* shopping (theme)
-  * 12 (layout)
-  * 8-4 (layout)
-  * 9-3 (layout)
-  * 2-7-3 (layout)
-* …
+- admin (theme)
+  - 12 (layout)
+  - 8-4 (layout)
+  - 9-3 (layout)
+  - 2-7-3 (layout)
+- shopping (theme)
+  - 12 (layout)
+  - 8-4 (layout)
+  - 9-3 (layout)
+  - 2-7-3 (layout)
+- …
 
 With this solution, you could do somethink like `{% extends 'shopping/12' %}`. Or the other way around:
 
-* 12 (layout)
-  * shopping (theme)
-  * news (theme)
-  * …
-* 9-3 (layout)
-  * shopping (theme)
-  * news (theme)
-  * …
-* …
+- 12 (layout)
+  - shopping (theme)
+  - news (theme)
+  - …
+- 9-3 (layout)
+  - shopping (theme)
+  - news (theme)
+  - …
+- …
 
 With this solution, you could do somethink like `{% extends '12/shopping' %}`.
 
@@ -126,10 +119,10 @@ After some searches, we finally found a way to do what we wanted with the `embed
 
 In the end, we need 4 files to create a page:
 
-* `base.html.twig` which defines the page core and the major blocks
-* `{theme}.html.twig` with `{theme}` being the name of the theme we want (e.g. `shopping`) which extends `base.html.twig` and defines the class for the body element (and if necessary some other theme-specific stuff)
-* `{layout}.html.twig` with `{layout}` being the layout we want (e.g. `9-3`), defining content blocks
-* `page.html.twig` which is the actual page, embeding the layout file in the main content to override its blocks
+- `base.html.twig` which defines the page core and the major blocks
+- `{theme}.html.twig` with `{theme}` being the name of the theme we want (e.g. `shopping`) which extends `base.html.twig` and defines the class for the body element (and if necessary some other theme-specific stuff)
+- `{layout}.html.twig` with `{layout}` being the layout we want (e.g. `9-3`), defining content blocks
+- `page.html.twig` which is the actual page, embeding the layout file in the main content to override its blocks
 
 This may sound a bit complicated so why not doing this step by step, shall we?
 
@@ -140,7 +133,9 @@ As seen previously, the base file creates the HTML root document, the major HTML
 ```html
 <!DOCTYPE html>
 <html>
-  <head><!-- whatever --></head>
+  <head>
+    <!-- whatever -->
+  </head>
   <body class="{% block theme %}default{% endblock %}">
     {% block layout %}{% endblock %}
   </body>
@@ -152,9 +147,7 @@ As seen previously, the base file creates the HTML root document, the major HTML
 Next, we need to define a theme. A theme file will directly extends the base file, and will be extended by the page file. The content of the theme file is very light. Let’s say we have a _shopping_ theme; so we have the `shopping.html.twig` file:
 
 ```html
-{% extends 'base.html.twig' %}
-
-{% block theme 'shopping' %}
+{% extends 'base.html.twig' %} {% block theme 'shopping' %}
 ```
 
 The last line of this code example may look a little weird to you: it is the short way for `{% block theme %}shopping{% endblock %}`. I like this way better when the content block is like a word or two without any HTML.
@@ -167,12 +160,8 @@ Let’s say our page will use the shopping theme we just created with a 2-column
 
 ```html
 <div class="wrapper">
-  <div class="col-md-9  content">
-    {% block content %}{% endblock %}
-  </div>
-  <div class="col-md-3  sidebar">
-    {% block sidebar %}{% endblock %}
-  </div>
+  <div class="col-md-9  content">{% block content %}{% endblock %}</div>
+  <div class="col-md-3  sidebar">{% block sidebar %}{% endblock %}</div>
 </div>
 ```
 
@@ -184,16 +173,9 @@ We only need the last piece of the puzzle: the page file. In this file, not much
 {% extends 'shopping.html.twig' %}
 
 <!-- Filling the 'layout' block defined in base template -->
-{% block layout %}
-  {% embed '9-3.html.twig' %}
-    {% block content %}
-      My awesome content
-    {% endblock%}
-    {% block sidebar %}
-      My sidebar content
-    {% endblock %}
-  {% endembed %}
-{% endblock %}
+{% block layout %} {% embed '9-3.html.twig' %} {% block content %} My awesome
+content {% endblock%} {% block sidebar %} My sidebar content {% endblock %} {%
+endembed %} {% endblock %}
 ```
 
 ### Rendered HTML
@@ -201,15 +183,13 @@ We only need the last piece of the puzzle: the page file. In this file, not much
 ```html
 <!DOCTYPE html>
 <html>
-<head><!-- whatever --></head>
-<body class="shopping">
-  <div class="col-md-9  content">
-    My awesome content
-  </div>
-  <div class="col-md-3  sidebar">
-    My sidebar content
-  </div>
-</body>
+  <head>
+    <!-- whatever -->
+  </head>
+  <body class="shopping">
+    <div class="col-md-9  content">My awesome content</div>
+    <div class="col-md-3  sidebar">My sidebar content</div>
+  </body>
 </html>
 ```
 

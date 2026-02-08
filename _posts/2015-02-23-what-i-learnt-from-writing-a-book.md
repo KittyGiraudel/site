@@ -1,5 +1,6 @@
 ---
 title: What I learnt from writing a book
+description: A retrospective on what I learned from writing a book about CSS
 keywords:
   - writing
   - book
@@ -17,9 +18,9 @@ In a couple of days, my book “CSS 3 Pratique de Design Web” (_CSS 3 Practici
 
 Let me start with a couple of things I should have told myself more often during this journey.
 
-* **You cannot update a book**. If you screw up, that’s too bad because there are 2500 copies out there. Don’t worry, you’ll update it next year.
-* **A book is not a 5 minutes read**. It should make sense and be accessible from the beginning to the end. If it’s annoying, readers won’t go through it; they’ll just throw it away.
-* **A book is not free**. People pay for it. And they don’t buy it in order to have something to do in the train; they want to learn from it.
+- **You cannot update a book**. If you screw up, that’s too bad because there are 2500 copies out there. Don’t worry, you’ll update it next year.
+- **A book is not a 5 minutes read**. It should make sense and be accessible from the beginning to the end. If it’s annoying, readers won’t go through it; they’ll just throw it away.
+- **A book is not free**. People pay for it. And they don’t buy it in order to have something to do in the train; they want to learn from it.
 
 I should have kept this in mind during those months, and so should you if you happen to write a book yourself.
 
@@ -34,8 +35,7 @@ The first thing I can tell is that you will run out of time, I guarantee it. And
 
 Trust me, you will always find things to improve. I found myself writing new sections and examples a couple of hours before handing the book back to the editor. And if I had a couple of extra days, I’d have spent those until I needed three more…
 
-> Our work is never over.
-> &mdash; [Daft Punk, Harder Better Faster Stronger](https://www.youtube.com/watch?v=gAjR4_CbPpQ)
+> Our work is never over. &mdash; [Daft Punk, Harder Better Faster Stronger](https://www.youtube.com/watch?v=gAjR4_CbPpQ)
 
 The last revision I made of the book, just before it went to press, involved not less than 250 editions. There is no such thing as “too much proofreading”, or even “too much work” on such a colossal project. You could work on it forever.
 

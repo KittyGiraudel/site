@@ -1,5 +1,6 @@
 ---
 title: String replacement function in Sass
+description: A technical write-up about writing a Sass function to replace a substring inside a string
 keywords:
   - sass
   - strings
@@ -15,11 +16,11 @@ So I thought I’d give it ago. Since I managed to have a decent result in a mat
 
 We will need a couple of string functions that are not currently available in Sass but will in Sass 3.3 (which should be released in January according to [this post](https://gist.github.com/nex3/8050187) by Nex3).
 
-* `str-length`: like `length` but for strings
-* `str-slice`: slicing a string from index A to index B
-* `str-insert`: insert a string in a string at index A`
-* `str-index`: finds first occurence of string in string
-* `to_lower_case`: move a whole string to lower case
+- `str-length`: like `length` but for strings
+- `str-slice`: slicing a string from index A to index B
+- `str-insert`: insert a string in a string at index A`
+- `str-index`: finds first occurence of string in string
+- `to_lower_case`: move a whole string to lower case
 
 You can find the Ruby source code for those functions in [this file](https://github.com/chriseppstein/sass/blob/string_functions/lib/sass/script/functions.rb). I don’t do any Ruby, but the code is well documented so it’s really easy to understand what’s going on.
 
@@ -83,7 +84,13 @@ You usually put those kind of verifications at the top of the function in order 
 
 ```scss
 @function str-replace($string, $old, $new) {
-  @if type-of($string) != string or type-of($old) != string or type-of($new) != string {
+  @if type-of($string) !=
+    string or
+    type-of($old) !=
+    string or
+    type-of($new) !=
+    string
+  {
     @warn "One of the 3 arguments is not a string.";
     @return $string;
   }

@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: '&lt;IconLink /&gt;'
+description: A small React component to render accessible icon links
 permalink: /snippets/icon-link-component/
 language: React
 related: /2020/12/10/accessible-icon-links/

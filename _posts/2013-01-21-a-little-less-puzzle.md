@@ -1,5 +1,6 @@
 ---
 title: A little LESS puzzle
+description: A short blog post to work around a shortcoming of the LESS CSS preprocessor
 keywords:
   - css
   - less

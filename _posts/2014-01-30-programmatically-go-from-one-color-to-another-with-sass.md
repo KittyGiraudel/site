@@ -1,5 +1,6 @@
 ---
 title: Programmatically go from one color to another with Sass
+description: A technical write-up about programmatically converting a color into another color in Sass
 keywords:
   - sass
   - experiment

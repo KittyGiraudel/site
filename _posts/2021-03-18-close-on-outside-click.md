@@ -1,5 +1,6 @@
 ---
 title: Closing on outside click
+description: A technical write-up on closing a menu on outside click or tab-out, as used on the Gorillas navigation
 ---
 
 As part of the [navigation on the Gorillas website](/2021/03/13/gorillas-nav-a-case-study/), we needed a way to close the menu when clicking outside of it or tabbing out of it. I briefly touched on how we do it in the aforementioned article, but we’ve since revisited it and I wanted to write a short note about it.

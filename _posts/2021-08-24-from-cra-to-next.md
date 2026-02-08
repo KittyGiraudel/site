@@ -1,5 +1,6 @@
 ---
 title: From Create-React-App to Next
+description: A retrospective post on moving a website from the now deprecated Create-React-App to Next.js
 ---
 
 I recently moved a significant codebase from [Create-React-App](https://create-react-app.dev/) (CRA for short) to [Next](https://nextjs.org/docs) and thought I would share my experience, because believe me or not, it was quite a journey (and not necessarily a pleasant one).

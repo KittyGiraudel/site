@@ -1,5 +1,6 @@
 ---
 title: Rate-limit Next.js API routes
+description: A technical write-up about protecting Next.js API routes with rate limiting
 ---
 
 Next.js provides a way to define [API routes](https://nextjs.org/docs/api-routes/introduction), which are essentially backend endpoints to run Node.js code. This is super neat to do server-side operations without having to maintain a full-blown server. Salma Alam-Naylor has [a good piece on serverless functions](https://whitep4nth3r.com/blog/what-is-the-edge-serverless-functions/).

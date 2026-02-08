@@ -1,5 +1,6 @@
 ---
 title: Why I switched from LESS to Sass
+description: My thoughts on switching from LESS to the Sass CSS preprocessor
 keywords:
   - less
   - sass
@@ -166,7 +167,7 @@ But come on… How come they didn’t think about variable concatenations and `@
 Basically, LESS fails to understand `@page` and `@keyframes` inside mixins because it throws an exception according to [its source code](https://github.com/cloudhead/less.js/blob/b235734a11f646252db8f0947fee406ce67cf904/lib/less/parser.js#L1158). So you’ll need two nested mixins: one handling your animation, the second one to handle the keyframes. Sounds heavy and complicated, well it is. So let’s say you want to create a custom mixin using `@keyframes` and vendor prefixes (not much, right?) this is what you have to do:
 
 ```less
-@newline: ` '\n'`; /* Newline */
+@newline: ` '\n' `; /* Newline */
 .my-mixin(@selector, @name, @other-parameters) {
   /* @selector is the element using your animation
      * @name is the name of your animation

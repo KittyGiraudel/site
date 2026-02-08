@@ -1,5 +1,6 @@
 ---
 title: Digging into my slides about Sass
+description: A longer version of my recent talk at Kiwi Party, digging into my slides about Sass
 keywords:
   - sass
 ---
@@ -430,7 +431,10 @@ $list: (
 // Or simpler:
 // top-level list is comma-separated
 // inner lists are space-separated
-$list: item-1 item-2 item-3, item-4 item-5 item-6, item-7 item-8 item-9;
+$list:
+  item-1 item-2 item-3,
+  item-4 item-5 item-6,
+  item-7 item-8 item-9;
 ```
 
 Now, here is how to use a list to access item one by one.
@@ -457,8 +461,11 @@ Now that we introduced loops and lists, we can move forward. My idea was to buil
 // Two-levels list
 // Top level contains pages
 // Inner level contains page-specific informations
-$pages: 'home' 'bg-home.jpg', 'about' 'about.png', 'products' 'prod_bg.jpg', 'contact'
-    'assets/contact.jpg';
+$pages:
+  'home' 'bg-home.jpg',
+  'about' 'about.png',
+  'products' 'prod_bg.jpg',
+  'contact' 'assets/contact.jpg';
 
 @each $page in $pages {
   // Scoped variables

@@ -1,5 +1,6 @@
 ---
 title: Sass brainfuck
+description: A rant about things that I find frustrating about Sass
 keywords:
   - sass
   - brainfuck

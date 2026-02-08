@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: .sr-only {}
+description: CSS utility class to visually content but not for screen-readers
 permalink: /snippets/sr-only-class/
 language: CSS
 related: /2016/10/13/css-hide-and-seek/

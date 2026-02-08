@@ -1,5 +1,6 @@
 ---
 title: Chromebook review
+description: A personal review of the Chromebook laptop
 keywords:
   - chromebook
   - review

@@ -2,6 +2,7 @@
 layout: snippet
 tags: snippets
 title: git-config
+description: Drop-in advanced git configuration file
 permalink: /snippets/git-config/
 language: Git
 related: /2018/02/17/how-i-use-git/

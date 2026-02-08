@@ -1,5 +1,6 @@
 ---
 title: Feature toggles with webpack
+description: A technical write-up on using Webpack to create feature flags/toggles
 ---
 
 I originally titled this post “Build flags with webpack”, but then remembered that the term _build flags_ is not as popular as _feature flags_ or _feature toggles_, so I renamed it.

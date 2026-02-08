@@ -1,5 +1,6 @@
 ---
 title: A couple Sass functions
+description: A look into some Sass functions that are worth keeping at the handy
 keywords:
   - sass
   - function
@@ -79,10 +80,9 @@ This one is a function by Chris Eppstein himself in order to convert an angle in
   @if index($convertable-units, unit($value)) and
     index($convertable-units, $unit)
   {
-    @return $value / nth(
-        $conversion-factors,
-        index($convertable-units, unit($value))
-      ) * nth($conversion-factors, index($convertable-units, $unit));
+    @return $value /
+      nth($conversion-factors, index($convertable-units, unit($value))) *
+      nth($conversion-factors, index($convertable-units, $unit));
   } @else {
     @warn "Cannot convert #{unit($value)} to #{$unit}";
   }
@@ -187,7 +187,10 @@ Let’s have a look at the following list `$list: a b, c d, e f;`. `a` is kind o
 Basically, the function loops through the pairs; if `$needle` you gave is found, it checks whether it has been found as the key or the value, and returns the other. So with our last example:
 
 ```scss
-$list: a b, c d, e f;
+$list:
+  a b,
+  c d,
+  e f;
 $value: match($list, e); /* returns f */
 $value: match($list, b); /* returns a */
 $value: match($list, z); /* returns false */

@@ -1,5 +1,6 @@
 ---
-title: "SassyCast: type conversion in Sass"
+title: 'SassyCast: type conversion in Sass'
+description: An announcement post about SassyCast, a small library to convert between types in Sass
 keywords:
   - sass
   - type
@@ -17,19 +18,17 @@ Something so simple as changing a stringified number into an integer is actually
 
 Sass provides a few types:
 
-* [string](#string) (with or without quotes)
-* [number](#number) (with or without CSS unit)
-* [bool](#bool) (`true` or `false`)
-* [color](#color) (hexadecimal, rgb, hsl, keyword)
-* [list](#list) (comma separated or space separated)
-* [map](#map) (from Sass 3.3)
-* [null](#null) (kind of a weird one)
+- [string](#string) (with or without quotes)
+- [number](#number) (with or without CSS unit)
+- [bool](#bool) (`true` or `false`)
+- [color](#color) (hexadecimal, rgb, hsl, keyword)
+- [list](#list) (comma separated or space separated)
+- [map](#map) (from Sass 3.3)
+- [null](#null) (kind of a weird one)
 
 Let’s see how we can cast a value to another data type.
 
-{% info %}
-Update: I just released [SassyCast](https://github.com/KittyGiraudel/SassyCast), also available as an eponym [Compass extension](https://rubygems.org/gems/SassyCast).
-{% endinfo %}
+{% info %} Update: I just released [SassyCast](https://github.com/KittyGiraudel/SassyCast), also available as an eponym [Compass extension](https://rubygems.org/gems/SassyCast). {% endinfo %}
 
 ## To string
 
@@ -45,8 +44,8 @@ It works with anything, even lists and maps. However it does some color conversi
 
 Another way to cast to string without quoting is adding an unquoted empty string to the value like this `$value + unquote("")` however it has two pitfalls:
 
-* it doesn’t work with `null`: throws `Invalid null operation: "null plus """.`
-* it doesn’t make maps displayble as CSS values: still throws `"(a: 1, b: 2) isn’t a valid CSS value."`
+- it doesn’t work with `null`: throws `Invalid null operation: "null plus """.`
+- it doesn’t make maps displayble as CSS values: still throws `"(a: 1, b: 2) isn’t a valid CSS value."`
 
 ## To number
 
@@ -60,7 +59,7 @@ Converting a value to a boolean is both simple and tricky. On the whole, the ope
 
 ```scss
 @function to-bool($value) {
-  @return not ($value or $value == '' or $value == 0 or $value == ());
+  @return not($value or $value == '' or $value == 0 or $value == ());
 }
 ```
 
@@ -93,7 +92,7 @@ Technically, Sass treats all values as single-item lists so in a way, your value
 
 ```scss
 @function to-list($value) {
-  @return if(type-of($value) != list, ($value,), $value);
+  @return if(type-of($value) != list, ($value), $value);
 }
 ```
 
@@ -113,7 +112,13 @@ Converting a single value to a map doesn’t make much sense since a map is a ke
 
 ```scss
 @function to-map($value) {
-  @return if(type-of($value) != map, (1: $value), $value);
+  @return if(
+    type-of($value) != map,
+    (
+      1: $value,
+    ),
+    $value
+  );
 }
 ```
 

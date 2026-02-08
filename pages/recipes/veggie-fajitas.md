@@ -3,6 +3,7 @@ tags: recipes
 layout: recipe
 permalink: /blog/recipes/veggie-fajitas/
 title: Veggie Fajitas
+description: My go-to recipe for unauthentic but delicious fajitas
 preparation_time: 30 minutes
 serves: 2 people
 ingredients:

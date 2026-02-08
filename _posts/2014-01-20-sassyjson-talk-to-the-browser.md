@@ -1,5 +1,6 @@
 ---
-title: "SassyJSON: talk to the browser!"
+title: 'SassyJSON: talk to the browser!'
+description: An announcement post about the experimental SassyJSON library, implementation a JSON parser and serializer in Sass
 keywords:
   - sass
   - JSON
@@ -69,16 +70,34 @@ We are very glad to be able to do clever stuff like this thanks to Sass 3.3 new 
 
 Once you’ve encoded your Sass into JSON, you’ll want to dump the JSON string into the CSS so that you can access it on the other side. There are several possibilities to dump a string into CSS without messing things up:
 
-* using the `content` property of a pseudo-element (`::after` and `::before`)
-* using the `font-family` property, preferably on an used element (e.g. `head`)
-* using a falsy media query
-* using a persistent comment (`/*!*/`)
+- using the `content` property of a pseudo-element (`::after` and `::before`)
+- using the `font-family` property, preferably on an used element (e.g. `head`)
+- using a falsy media query
+- using a persistent comment (`/*!*/`)
 
 Since we don’t like to choose, we picked all of them. We simply made [a mixin with a flag](https://github.com/KittyGiraudel/SassyJSON/blob/master/src/encode/mixins/_json.scss) as a parameter defining the type of output you’ll get: `regular` for option 1 and 2 (cross-browser mess), `media` for the media query and `comment` for the comment or even `all` for all of them (which is the default). Judge for yourselves:
 
 ```scss
 $map: (
-  (a: (1 2 (b : 1)), b: (#444444, false,  (a: 1, b: test)), c: (2 3 4 string))
+  (
+    a: (
+      1 2
+        (
+          b: 1,
+        ),
+    ),
+    b: (
+      #444444,
+      false,
+      (
+        a: 1,
+        b: test,
+      ),
+    ),
+    c: (
+      2 3 4 string,
+    ),
+  )
 );
 @include json-encode($map, $flag: all);
 ```

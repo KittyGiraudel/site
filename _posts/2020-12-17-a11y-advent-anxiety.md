@@ -1,5 +1,6 @@
 ---
 title: 'A11yAdvent Day 17: Anxiety'
+description: A11yAdvent entry on anxiety and the web
 ---
 
 Anxiety is a bit of an umbrella term for a range of mental conditions that are characterised by excessive feelings of fear, apprehension and dread. As a result, anxiety is a medical condition that cannot be just shaken away, just like depression cannot be cured by being more positive.

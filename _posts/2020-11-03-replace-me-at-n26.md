@@ -1,5 +1,6 @@
 ---
 title: Replace me at N26
+description: An announcement that I am leaving N26 and that my role is open
 keywords:
   - hiring
   - N26
