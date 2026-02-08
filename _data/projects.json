@@ -1,5 +1,11 @@
 [
   {
+    "name": "Par Odin! Solver",
+    "description": "A solver for the puzzle board game “Par Odin!”.",
+    "link": "https://github.com/KittyGiraudel/par-odin-solver",
+    "category": "JavaScript"
+  },
+  {
     "name": "Selectors Explained",
     "description": "A CSS selector to plain English converter.",
     "link": "https://github.com/KittyGiraudel/selectors-explained",
