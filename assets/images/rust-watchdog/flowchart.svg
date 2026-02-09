@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664.1650000000004 2821" width="1664.1650000000004" height="2821" style="--bg:#FFFFFF;--fg:#27272A;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 30%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="4.8" refX="8" refY="2.4" orient="auto">
+    <polygon points="0 0, 8 2.4, 0 4.8" fill="var(--_arrow)" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="4.8" refX="0" refY="2.4" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.4, 8 4.8" fill="var(--_arrow)" />
+  </marker>
+</defs>
+<rect x="40" y="819.9999999999998" width="190.4000000000001" height="112" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="40" y="819.9999999999998" width="190.4000000000001" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="52" y="833.9999999999998" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">systemd</text>
+<rect x="250.39999999999998" y="664" width="518.7225000000001" height="1017.3499999999999" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="250.39999999999998" y="664" width="518.7225000000001" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="262.4" y="678" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">watchdog.sh</text>
+<rect x="260.63750000000016" y="352" width="240.45000000000005" height="268" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="260.63750000000016" y="352" width="240.45000000000005" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="272.63750000000016" y="366" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">Rust health_check</text>
+<rect x="1035.2725000000003" y="40" width="588.8925" height="2741" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="1035.2725000000003" y="40" width="588.8925" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="1047.2725000000003" y="54" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">Rust Server</text>
+<rect x="789.1225000000002" y="1283.3999999999999" width="226.1500000000001" height="112" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="789.1225000000002" y="1283.3999999999999" width="226.1500000000001" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="801.1225000000002" y="1297.3999999999999" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">Monitoring</text>
+<polyline points="135.20000000000005,875.9999999999998 135.20000000000005,835.9999999999998 295.4875000000002,835.9999999999998 295.4875000000002,737.9999999999998 332.68750000000017,737.9999999999998" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="380.8625000000002,719.9999999999998 380.8625000000002,600" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="380.8625000000002,564 380.8625000000002,444" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="380.8625000000002,408 380.8625000000002,368 1312.2450000000003,368 1312.2450000000003,288" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1312.2450000000003,252 1312.2450000000003,114 1383.2025,114" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1492.1525000000001,132 1492.1525000000001,152 1548.6900000000003,152 1548.6900000000003,2637.4123043978957 1390.0048043978957,2637.4123043978957" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1346.0507435003171,2593.458243500317 1346.0507435003171,2556.3 1354.5300000000002,2556.3 1354.5300000000002,1799.35 1244.4400000000003,1799.35" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1273.319157303122,2631.8733426968784 1273.319157303122,2556.3 1159.1200000000003,2556.3 1159.1200000000003,2439.3" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1129.8153656658972,2291.0546343341034 1129.8153656658972,2241.75 1105.5200000000002,2241.75 1105.5200000000002,1597.9115566962605 625.9134433037395,1597.9115566962605" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1188.4246343341033,2291.054634334103 1188.4246343341033,2241.75 1212.7200000000003,2241.75 1212.7200000000003,2124.75" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1212.7200000000003,1954.35 1212.7200000000003,1596.322880579278 627.5021194207221,1596.322880579278" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1271.8128542821153,2013.442854282115 1271.8128542821153,1934.35 1450.8375000000003,1934.35 1450.8375000000003,1799.35 1526.6900000000003,1799.35" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="1385.5650000000003,1781.35 1385.5650000000003,1594.543149531641 629.2818504683593,1594.543149531641" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="607.4760320668566,1557.4010320668565 607.4760320668566,1492.3999999999999 706.7200000000001,1492.3999999999999 706.7200000000001,1357.3999999999999 811.1225000000002,1357.3999999999999" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="511.4046590436592,1563.470340956341 511.4046590436592,1492.3999999999999 356.32500000000005,1492.3999999999999 356.32500000000005,1375.3999999999999" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="356.32500000000005,1339.3999999999999 356.32500000000005,737.9999999999998 332.68750000000017,737.9999999999998" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="562.4750000000001,1512.4 562.4750000000001,1375.3999999999999" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="562.4750000000001,1339.3999999999999 562.4750000000001,1219.3999999999999" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="526.0567674671747,1085.4182325328252 526.0567674671747,1028.9999999999998 483.9375,1028.9999999999998 483.9375,737.9999999999998 429.0375000000002,737.9999999999998" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="597.1284534534536,1083.6534534534533 597.1284534534536,1028.9999999999998 634.5975000000001,1028.9999999999998 634.5975000000001,911.9999999999998" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<polyline points="634.5975000000001,875.9999999999998 634.5975000000001,737.9999999999998 429.0375000000002,737.9999999999998" fill="none" stroke="var(--_line)" stroke-width="0.75" marker-end="url(#arrowhead)" />
+<rect x="1340.8100000000002" y="2179.75" width="27.44" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1354.5300000000002" y="2193.25" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">No</text>
+<rect x="1142.5400000000004" y="2494.3" width="33.16" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1159.1200000000003" y="2507.8" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">Yes</text>
+<rect x="1091.8000000000002" y="1872.35" width="27.44" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1105.5200000000002" y="1885.85" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">No</text>
+<rect x="1196.1400000000003" y="2179.75" width="33.16" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1212.7200000000003" y="2193.25" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">Yes</text>
+<rect x="1199.0000000000002" y="1785.85" width="27.44" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1212.7200000000003" y="1799.35" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">No</text>
+<rect x="1434.2575000000004" y="1872.35" width="33.16" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1450.8375000000003" y="1885.85" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">Yes</text>
+<rect x="681.5600000000002" y="1430.3999999999999" width="50.32" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="706.7200000000001" y="1443.8999999999999" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">Either</text>
+<rect x="339.74500000000006" y="1430.3999999999999" width="33.16" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="356.32500000000005" y="1443.8999999999999" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">Yes</text>
+<rect x="548.7550000000001" y="1430.3999999999999" width="27.44" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="562.4750000000001" y="1443.8999999999999" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">No</text>
+<rect x="470.2175" y="880.4999999999998" width="27.44" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="483.9375" y="893.9999999999998" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">No</text>
+<rect x="618.0175" y="966.9999999999998" width="33.16" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="634.5975000000001" y="980.4999999999998" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">Yes</text>
+<rect x="62.00000000000004" y="875.9999999999998" width="146.4" height="36" rx="0" ry="0" fill="#C4E1E6" stroke="#A4CCD9" stroke-width="0.75" />
+<rect x="332.68750000000017" y="719.9999999999998" width="96.35000000000001" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<polygon points="562.4750000000001,1512.4 636.9500000000002,1586.875 562.4750000000001,1661.35 488.0000000000001,1586.875" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="464.2500000000001" y="1339.3999999999999" width="196.45000000000002" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<polygon points="562.4750000000001,1048.9999999999998 647.6750000000002,1134.1999999999998 562.4750000000001,1219.3999999999999 477.27500000000015,1134.1999999999998" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="522.0725000000001" y="875.9999999999998" width="225.05" height="36" rx="0" ry="0" fill="#fbd9d3" stroke="#ffb09c" stroke-width="0.75" />
+<rect x="272.40000000000003" y="1339.3999999999999" width="167.85000000000002" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="307.6625000000002" y="564" width="146.4" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="282.63750000000016" y="408" width="196.45000000000002" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="1221.1700000000003" y="252" width="182.15" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="1383.2025" y="96" width="217.9" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<polygon points="1328.8925000000002,2576.3 1421.2425,2668.65 1328.8925000000002,2761 1236.5425000000002,2668.65" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<polygon points="1159.1200000000003,2261.75 1247.8950000000004,2350.525 1159.1200000000003,2439.3 1070.3450000000003,2350.525" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<polygon points="1212.7200000000003,1954.35 1297.9200000000003,2039.55 1212.7200000000003,2124.75 1127.5200000000002,2039.55" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="1244.4400000000003" y="1781.35" width="282.25" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="811.1225000000002" y="1339.3999999999999" width="182.15" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<text x="135.20000000000005" y="893.9999999999998" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#0B2D72">watchdog.service</text>
+<text x="380.8625000000002" y="737.9999999999998" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Sleep 10s</text>
+<text x="562.4750000000001" y="1586.875" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Is health OK?</text>
+<text x="562.4750000000001" y="1357.3999999999999" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Increment failure count</text>
+<text x="562.4750000000001" y="1134.1999999999998" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Enough failures?</text>
+<text x="634.5975000000001" y="893.9999999999998" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="#ee2400">Restart via start_server.sh</text>
+<text x="356.32500000000005" y="1357.3999999999999" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Reset failure count</text>
+<text x="380.8625000000002" y="582" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Run health check</text>
+<text x="380.8625000000002" y="426" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Send HealthCheck packet</text>
+<text x="1312.2450000000003" y="270" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">WebSocket accept loop</text>
+<text x="1492.1525000000001" y="114" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Process HealthCheck packet</text>
+<text x="1328.8925000000002" y="2668.65" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Past grace period?</text>
+<text x="1159.1200000000003" y="2350.525" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Is population OK?</text>
+<text x="1212.7200000000003" y="2039.55" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Are timeouts OK?</text>
+<text x="1385.5650000000003" y="1799.35" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Send successful HealthCheckResponse</text>
+<text x="902.1975000000002" y="1357.3999999999999" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Heartbeat (pass/fail)</text>
+</svg>
