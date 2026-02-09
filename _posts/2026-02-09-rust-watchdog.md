@@ -1,5 +1,5 @@
 ---
-title: My journey to writing a watchdog script
+title: My journey writing a watchdog script
 ---
 
 One of the most frustrating kinds of outages is when everything _seems_ fine on paper, except things are very much _not_ fine and your users are yelling at you. The process is up. The logs are still flowing. The status page is all green. The usual metrics keep saying “all good”. Yet the reality is: no one is online, and nothing is moving.
