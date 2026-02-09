@@ -287,7 +287,7 @@ Then I modified the `is_server_running` function to execute that Rust ~~script~~
 
 ```sh
 is_server_running() {
-    ./target/release/ping_server
+    ./target/release/health_check
 }
 ```
 
