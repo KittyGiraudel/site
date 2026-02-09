@@ -9,7 +9,8 @@ components/footnotes,
 components/giscus,
 components/post-date,
 components/code,
-components/table
+components/table,
+components/tile
 " %}
 
 <article itemscope itemtype="https://schema.org/Article" class="Post">
@@ -34,6 +35,11 @@ components/table
 
   <div itemprop="articleBody">
     {% include "post_edits.html", edits: edits %}
+
+    <div class="Tile" style="margin-top: var(--vb);">
+      <p style="margin: 0"><strong>Pssst!</strong> I am currently looking for my next job opportunity for March 2026!<br><a href="https://www.linkedin.com/posts/kitty-giraudel_my-mission-as-vp-of-engineering-at-scilife-activity-7392127545925713921-qoGi?utm_source=share&utm_medium=member_desktop&rcm=ACoAADH-Z8wBKlEvSxzpoXA6lJuBciBD7TZuM0M" rel="noopener noreferrer">Read more on LinkedIn</a>. ✨</p>
+    </div>
+
     {{ content }}
   </div>
 
