@@ -459,8 +459,8 @@ From an operations perspective, I tried to make the watchdog as boring as possib
 Day‑to‑day, the team doesn’t think about the watchdog much; it just quietly does its job in the background. Speaking of which, this is a flowchart of the watchdog architecture:
 
 <figure class="figure">
-<img src="/assets/images/rust-watchdog/flowchart.png" alt="Mermaid diagram of the whole watchdog process" />
-<figcaption>Flowchart of the whole process (open <a href="/assets/images/rust-watchdog/flowchart.png" target="_blank">large size</a>)</figcaption>
+<img src="/assets/images/rust-watchdog/flowchart.svg" alt="Mermaid diagram of the whole watchdog process" />
+<figcaption>Flowchart of the whole process (open <a href="/assets/images/rust-watchdog/flowchart.svg" target="_blank">large size</a>)</figcaption>
 </figure>
 
 ## Lessons learned
