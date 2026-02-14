@@ -1,13 +1,15 @@
-const htmlmin = require('html-minifier')
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const footnotes = require('eleventy-plugin-footnotes')
-const markdownIt = require('markdown-it')
-const markdownItAnchor = require('markdown-it-anchor')
-const uslugify = require('uslug')
-const emojiRegex = require('emoji-regex')()
-const emojiShortName = require('emoji-short-name')
+import htmlmin from 'html-minifier'
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import footnotes from 'eleventy-plugin-footnotes'
+import markdownIt from 'markdown-it'
+import markdownItAnchor from 'markdown-it-anchor'
+import uslugify from 'uslug'
+import emojiRegex from 'emoji-regex'
+import emojiShortName from 'emoji-short-name'
 
-module.exports = function (config) {
+const EMOJI_REGEX = emojiRegex()
+
+export default function (config) {
   // Minify HTML and CSS in production
   if (process.env.NODE_ENV === 'production') {
     config.addTransform('htmlmin', minifyHTML)
@@ -98,16 +100,16 @@ module.exports = function (config) {
 function minifyHTML(content, outputPath) {
   return outputPath.endsWith('.html')
     ? htmlmin.minify(content, {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        conservativeCollapse: true,
-        minifyCSS: true,
-        minifyJS: true,
-        removeComments: true,
-        sortAttributes: true,
-        sortClassName: true,
-        useShortDoctype: true,
-      })
+      collapseBooleanAttributes: true,
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      minifyCSS: true,
+      minifyJS: true,
+      removeComments: true,
+      sortAttributes: true,
+      sortClassName: true,
+      useShortDoctype: true,
+    })
     : content
 }
 
@@ -121,12 +123,12 @@ function replaceEmoji(match) {
 
 function emojiToText(str) {
   if (!str || typeof str !== 'string') return ''
-  return str.replace(emojiRegex, match => emojiShortName[match] || match)
+  return str.replace(EMOJI_REGEX, match => emojiShortName[match] || match)
 }
 
 function a11yEmojis(content, outputPath) {
   return outputPath.endsWith('.html')
-    ? content.replace(emojiRegex, replaceEmoji)
+    ? content.replace(EMOJI_REGEX, replaceEmoji)
     : content
 }
 
@@ -158,8 +160,8 @@ function sortBy(array, key) {
       a[key].toLowerCase() < b[key].toLowerCase()
         ? -1
         : a[key].toLowerCase() > b[key].toLowerCase()
-        ? 1
-        : 0
+          ? 1
+          : 0
     )
 }
 
@@ -224,9 +226,9 @@ function time(value) {
 function readingTime(content) {
   return content
     ? '~' +
-        Math.ceil(
-          (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length / 300
-        ) +
-        ' minutes'
+    Math.ceil(
+      (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length / 300
+    ) +
+    ' minutes'
     : ''
 }
