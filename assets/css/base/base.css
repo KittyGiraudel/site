@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'MiddleDot';
+  src: local('Times New Roman');
+  unicode-range: U+00B7;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
 /**
  * 1. Set up a decent box model on the root element.
  */
@@ -6,21 +20,6 @@ html {
   --code-font: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
     'Courier', monospace;
   --vb: 1.5em;
-}
-
-.dark {
-  color-scheme: dark;
-}
-
-.dark body {
-  background-color: #222;
-  color: #eee;
-}
-
-@font-face {
-  font-family: 'MiddleDot';
-  src: local('Times New Roman');
-  unicode-range: U+00B7;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -50,11 +49,12 @@ html {
  */
 body {
   margin: 0; /* 1 */
-  color: #444;
   font: 125% / 1.5 'MiddleDot', 'Baskerville', 'Lucida Bright', 'Perpetua',
     'Times', 'Times New Roman', 'Palatino', 'Bookman', 'New Century Schoolbook',
     serif;
   overflow-x: hidden; /* 2 */
+  color: light-dark(#444, #eee);
+  background-color: light-dark(#fff, #222);
 }
 
 @media (min-width: 768px) {
@@ -159,14 +159,7 @@ a:not(.Navigation__link):not(.Title__link) {
 a:not(.Title__link):hover,
 a:not(.Title__link):active,
 a:not(.Title__link):focus {
-  color: #222;
-  background-size: 100% 88%;
-}
-
-.dark a:not(.Title__link):hover,
-.dark a:not(.Title__link):active,
-.dark a:not(.Title__link):focus {
-  color: #ccc;
+  color: light-dark(#222, #ccc);
   background-size: 100% 88%;
 }
 

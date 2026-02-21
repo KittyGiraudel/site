@@ -14,11 +14,7 @@
 
 .Navigation__item {
   line-height: 1.5;
-  color: #267cb9;
-}
-
-.dark .Navigation__item {
-  color: lightblue;
+  color: light-dark(#267cb9, lightblue);
 }
 
 .Navigation__item[aria-current] {
@@ -38,11 +34,7 @@
 }
 
 .Navigation__link:visited {
-  color: #267cb9;
-}
-
-.dark .Navigation__link:visited {
-  color: lightblue;
+  color: light-dark(#267cb9, lightblue);
 }
 
 .Navigation__link::before {

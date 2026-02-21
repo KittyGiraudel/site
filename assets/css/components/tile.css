@@ -1,16 +1,12 @@
 .Tile {
   padding: 1em;
-  background-color: #fdf7fa;
+  background-color: light-dark(#fdf7fa, #3f393b);
   position: relative;
   flex-grow: 1;
   border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   border-radius: 0 0 0.1em 0.1em;
-}
-
-.dark .Tile {
-  background-color: #3f393b;
 }
 
 .Tile::before {
@@ -39,11 +35,7 @@
   margin: 0 0 1em;
   line-height: 1.2;
   font-size: 80%;
-  color: #9a2869;
-}
-
-.dark .Tile__secondary {
-  color: pink;
+  color: light-dark(#9a2869, pink);
 }
 
 .Tile__link {

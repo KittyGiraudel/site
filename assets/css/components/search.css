@@ -14,10 +14,7 @@
   border-bottom: 2px solid #267cb9;
   -webkit-appearance: textfield;
   outline-offset: -2px;
-}
-
-.dark .Search__input {
-  background-color: #222;
+  background-color: light-dark(#fff, #222);
 }
 
 .Search__input:focus {
