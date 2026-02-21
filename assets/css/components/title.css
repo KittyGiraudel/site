@@ -5,6 +5,7 @@
   line-height: 1.15;
   margin: 0 auto 0.5em;
   text-align: center;
+  text-wrap: balance;
 }
 
 @media (min-width: 768px) {
