@@ -142,15 +142,11 @@ a:not(.Navigation__link):not(.Title__link) {
   color: inherit;
   border-bottom: 0;
   text-decoration: none;
-  background-image: linear-gradient(to right, #f2cfe3, #c4e0f3);
+  background-image: linear-gradient(to right, light-dark(#f2cfe3, #796771), light-dark(#c4e0f3, #758691));
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;
   transition: background-size 250ms ease-in;
-}
-
-.dark a:not(.Navigation__link):not(.Title__link) {
-  background-image: linear-gradient(to right, #796771, #758691);
 }
 
 /**
@@ -158,10 +154,19 @@ a:not(.Navigation__link):not(.Title__link) {
  * include this selector here.
  */
 a:not(.Title__link):hover,
-a:not(.Title__link):active,
-a:not(.Title__link):focus {
+a:not(.Title__link):active {
   color: light-dark(#222, #ccc);
   background-size: 100% 88%;
+}
+
+/**
+ * Apply explicit focus styles to all links to make keyboard navigation more visible.
+ */
+a:focus-visible {
+  outline: 2px solid #dd7eb4 !important;
+  outline-offset: 2px;
+  border-radius: 0.25em;
+  corner-shape: squircle;
 }
 
 /**
