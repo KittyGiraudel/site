@@ -7,12 +7,6 @@ keywords:
   - accessibility
 ---
 
----
-
-title: "Introducing A11y Toggle" author: kitty-giraudel layout: post
-
----
-
 A few weeks ago, [I introduced a11y-dialog](/2016/02/11/introducing-a11y-dialog). Today, I am coming back with another accessibility-focused module: [a11y-toggle](https://github.com/edenspiekermann/a11y-toggle).
 
 At Edenspiekermann, we used to heavily rely on the [checkbox hack](https://css-tricks.com/the-checkbox-hack/) to toggle content visibility. Unfortunately, this hack (the word is an understatement) involves some usability and accessibility concerns.
