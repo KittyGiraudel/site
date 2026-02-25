@@ -4,6 +4,12 @@ blockquote,
   padding: 0.75em 1.5em;
   position: relative;
   background-color: light-dark(#f3f8fc, #303132);
+  border-radius: 1em;
+  corner-shape: squircle;
+  border: 2px solid transparent;
+  background-image: linear-gradient(light-dark(#f3f8fc, #303132), light-dark(#f3f8fc, #303132)), linear-gradient(to right, #267cb9, #dd7eb4);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 @media (min-width: 1024px) {
@@ -17,19 +23,6 @@ blockquote,
     padding: 1em 2em; /* 1 */
     left: -2em; /* 1 */
   }
-}
-
-.Info::before,
-blockquote::before {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  height: 4px;
-  opacity: 0.7;
-  border-radius: 4px 4px 0 0;
-  background-image: linear-gradient(to right, #267cb9, #dd7eb4);
 }
 
 /**

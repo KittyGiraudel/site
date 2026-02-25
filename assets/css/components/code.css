@@ -6,9 +6,13 @@ pre {
   margin: var(--vb) 0;
   padding: 1.25em 1.5em;
   overflow: auto;
-  position: relative;
-  background-color: light-dark(#fffafd, #322d2f);
   font-family: inherit; /* 1 */
+  border-radius: 1em;
+  corner-shape: squircle;
+  border: 2px solid transparent;
+  background-image: linear-gradient(light-dark(#fffafd, #322d2f), light-dark(#fffafd, #322d2f)), linear-gradient(to right, #dd7eb4, #267cb9);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 @media (min-width: 1024px) {
@@ -21,18 +25,6 @@ pre {
     padding: 1.5em 2em; /* 1 */
     left: -2em; /* 1 */
   }
-}
-
-pre::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  border-radius: 4px 4px 0 0;
-  opacity: 0.7;
-  background-image: linear-gradient(to right, #dd7eb4, #267cb9);
 }
 
 code {

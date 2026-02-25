@@ -3,6 +3,9 @@
   padding: 0.75em 1.5em;
   position: relative;
   background-color: light-dark(#f6f4f9, #303132);
+  border-radius: 1em;
+  corner-shape: squircle;
+  border: 2px solid rgb(125 125 178);
 }
 
 @media (min-width: 1024px) {
