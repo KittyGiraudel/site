@@ -21,7 +21,7 @@ in touch!
   {% for event in speaking %}
   <li class="List__item">
     <span class="List__secondary-content">
-      {{ event.date | time }} — {{ event.location }}
+      {{ event.date | time }} · {{ event.location }}
     </span>
     <a href="{{ event.link }}" class="List__primary-content" target="_blank" rel="noopener noreferrer">
       {{ event.event }}
