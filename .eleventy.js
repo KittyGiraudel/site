@@ -143,7 +143,7 @@ function numberOfWords(content) {
 }
 
 function stars(amount) {
-  return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} ⭐️`
+  return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} ★`
 }
 
 function where(array, key, value) {
