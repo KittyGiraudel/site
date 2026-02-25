@@ -1,0 +1,13 @@
+.PostEdits::before {
+  content: '§';
+  transform: translate(-20%, 75%) rotate(-15deg);
+}
+
+.PostEdits__title {
+  font-size: 100%;
+  margin: 0;
+}
+
+.PostEdits__date {
+  color: light-dark(#267cb9, #dd7eb4);
+}
