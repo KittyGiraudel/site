@@ -19,7 +19,7 @@ steps:
   - Place the ball of dough between two sheets of oven paper, and roll with a pin until achieving the desired thickness.
   - Cook for 18 to 20 minutes at 200°C.
 notes:
-  - If used as a pizza dough, cooked 10 minutes, take out to garnish, then cook 10 more minutes with the pizza topping.
+  - If used as a pizza dough, cook 10 minutes, take out to garnish, then cook 10 more minutes with the pizza topping.
 ---
 
 This is an easy recipe my partner showed me to make keto (low-carb) bread that can be seasoned based on the dish it goes with. It can also be used as a pizza dough.
