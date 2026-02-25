@@ -6,6 +6,7 @@ pre {
   margin: var(--vb) 0;
   padding: 1.25em 1.5em;
   overflow: auto;
+  position: relative;
   font-family: inherit; /* 1 */
   border-radius: 1em;
   corner-shape: squircle;
