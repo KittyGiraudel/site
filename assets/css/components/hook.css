@@ -1,0 +1,15 @@
+.Hook {
+  font-size: 75%;
+  padding: 0.5em;
+  margin: var(--vb) 0;
+  background-color: light-dark(#fdf7fa, #3f393b);
+  border: 2px solid rgb(0 0 0 / 0.1);
+  border-radius: 0 0 0.1em 0.1em;
+  border-radius: 1em;
+  corner-shape: squircle;
+  text-align: center;
+}
+
+.Hook > p {
+  margin: 0;
+}
