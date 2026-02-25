@@ -20,6 +20,7 @@ html {
   --code-font: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
     'Courier', monospace;
   --vb: 1.5em;
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
