@@ -19,6 +19,7 @@ blockquote {
   margin: calc(var(--vb) * 1.5) 0; /* 1 */
 }
 
+.Info::before,
 blockquote::before,
 blockquote::after {
   position: absolute;
@@ -52,6 +53,15 @@ blockquote::after {
 blockquote > p {
   z-index: 2; /* 1 */
   position: relative; /* 1 */
+}
+
+.Info::before {
+  content: '‽';
+  bottom: 100%;
+  left: 0;
+  transform: translate(-10%, 69%) rotate(-30deg);
+  color: #267cb9;
+  font-weight: normal;
 }
 
 @media (min-width: 1024px) {
