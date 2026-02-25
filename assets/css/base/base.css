@@ -114,7 +114,7 @@ ol {
 }
 
 li {
-  margin: calc(var(--vb) / 6) 0;
+  margin: calc(var(--vb) / 4) 0;
 }
 
 ul ul {
