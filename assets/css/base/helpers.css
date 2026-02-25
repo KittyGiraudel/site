@@ -52,3 +52,11 @@
     display: none !important;
   }
 }
+
+.Fleuret {
+  display: inline-block;
+  transform: scale(0.75);
+  position: relative;
+  opacity: 0.8;
+  margin: 0 0.25ch;
+}
