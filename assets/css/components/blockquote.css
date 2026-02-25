@@ -12,6 +12,48 @@ blockquote,
   background-clip: padding-box, border-box;
 }
 
+/**
+ * 1. Add some extra spacing around the blockquote to give room to the quotation marks.
+ */
+blockquote {
+  margin: calc(var(--vb) * 1.5) 0; /* 1 */
+}
+
+blockquote::before,
+blockquote::after {
+  position: absolute;
+  font-size: 1000%;
+  opacity: 0.2;
+  font-family: Baskerville, serif;
+  font-weight: bold;
+  line-height: 1;
+  z-index: 1;
+}
+
+blockquote::before {
+  content: '“';
+  color: #267cb9;
+  bottom: 100%;
+  right: 100%;
+  transform: translate(67%, 73%);
+}
+
+blockquote::after {
+  content: '”';
+  color: #dd7eb4;
+  top: 100%;
+  left: 100%;
+  transform: translate(-67%, -37%);
+}
+
+/**
+ * 1. Ensure the text inside the blockquote sits on top of the quotation marks.
+ */
+blockquote > p {
+  z-index: 2; /* 1 */
+  position: relative; /* 1 */
+}
+
 @media (min-width: 1024px) {
   /**
    * 1. Increase width so the blockquote/info container looks wider than the
@@ -26,7 +68,7 @@ blockquote,
 }
 
 /**
- * 1. Prevent an odd gap when the first child of blockquote as a top margin
+ * 1. Prevent an odd gap when the first child of blockquote has a top margin
  */
 .Info > :first-child,
 blockquote > :first-child {
@@ -34,7 +76,7 @@ blockquote > :first-child {
 }
 
 /**
- * 1. Prevent an odd gap when the last child of blockquote as a bottom margin
+ * 1. Prevent an odd gap when the last child of blockquote has a bottom margin
  */
 .Info > :last-child,
 blockquote > :last-child {
