@@ -225,10 +225,10 @@ function time(value) {
 
 function readingTime(content) {
   return content
-    ? '~' +
+    ? +
     Math.ceil(
       (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length / 300
     ) +
-    ' minutes'
+    '–minute read'
     : ''
 }

@@ -18,7 +18,7 @@ components/tile
   <p class="PostDate">
     <span itemprop="datePublished">{{ page.date | time }}</span>
     {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
-    {% if external %}{% else %}<span itemprop="timeRequired" title="Estimated read time">· {{ content | strip_html |
+    {% if external %}{% else %}<span class="PostDate__fleuret">❦</span> <span itemprop="timeRequired" title="Estimated read time">{{ content | strip_html |
       reading_time }}</span>{% endif %}
   </p>
   {% endif %}
