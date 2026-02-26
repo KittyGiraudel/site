@@ -55,14 +55,16 @@ html {
 
 /**
  * 1. Reset default margin.
- * 2. Prevent horizontal scrolling.
+ * 2. Enable fluid typography.
+ * 3. Prevent horizontal scrolling.
  */
 body {
   margin: 0; /* 1 */
-  font: min(max(1.25rem, 4vw), 1.4rem) / 1.5 'MiddleDot', 'Baskerville', 'Lucida Bright', 'Perpetua',
+  font: 1.25rem / 1.5 'MiddleDot', 'Baskerville', 'Lucida Bright', 'Perpetua',
     'Times', 'Times New Roman', 'Palatino', 'Bookman', 'New Century Schoolbook',
     serif;
-  overflow-x: hidden; /* 2 */
+  font-size: min(max(1.25rem, 4vw), 1.4rem); /* 2 */
+  overflow-x: hidden; /* 3 */
   color: light-dark(#444, #eee);
   background-color: light-dark(#fff, #222);
 }
