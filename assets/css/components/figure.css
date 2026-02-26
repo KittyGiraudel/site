@@ -15,8 +15,8 @@
   height: 4px;
   border-radius: 4px;
   background-image: linear-gradient(to right, #dd7eb4, #267cb9);
-  margin-top: -0.5em;
-  margin-bottom: 1em;
+  margin-top: calc(var(--vb) / 3 * -1);
+  margin-bottom: calc(var(--vb) / 3 * 2);
 }
 
 @media (min-width: 1400px) {
@@ -31,6 +31,6 @@
   }
 
   .figure figcaption::before {
-    margin-bottom: 1.5em;
+    margin-bottom: var(--vb);
   }
 }

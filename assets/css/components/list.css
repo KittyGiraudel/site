@@ -26,7 +26,7 @@
   content: '';
   display: block;
   width: 100%;
-  margin: 10px 0;
+  margin: calc(var(--vb) / 3) 0;
 }
 
 .List__primary-content {

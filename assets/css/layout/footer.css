@@ -18,7 +18,7 @@
 .Footer__inner {
   display: flex;
   font-size: 80%;
-  margin: 0 -1em;
+  margin: 0 calc(var(--vb) / 3 * 2 * -1);
 }
 
 .Footer__left {
@@ -62,12 +62,12 @@
   .Footer__list {
     text-align: center;
     padding: 0;
-    margin: 0 0 1em;
+    margin: 0 0 calc(var(--vb) / 3 * 2);
   }
 
   .Footer__list > li {
     display: inline-block;
-    margin: 0.25em 0;
+    margin: calc(var(--vb) / 6) 0;
     list-style: none;
   }
 
