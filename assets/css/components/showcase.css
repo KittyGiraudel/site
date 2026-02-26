@@ -69,5 +69,5 @@
 
 .Showcase__link::before {
   content: '→ ';
-  color: #dd7eb4;
+  color: var(--pink);
 }

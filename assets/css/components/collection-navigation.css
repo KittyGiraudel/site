@@ -14,7 +14,7 @@
   right: 0;
   height: 4px;
   border-radius: 4px;
-  background-image: linear-gradient(to right, #267cb9, #dd7eb4);
+  background-image: linear-gradient(to right, var(--blue), var(--pink));
 }
 
 .CollectionNavigation__item {
@@ -32,7 +32,7 @@
 .CollectionNavigation__item--next::after {
   position: absolute;
   top: 0;
-  color: #dd7eb4;
+  color: var(--pink);
   font-weight: bold;
 }
 

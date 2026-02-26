@@ -6,5 +6,5 @@
 .DottedList > li:not(:last-of-type)::after {
   margin: 0 0.5ch;
   content: '·';
-  color: #dd7eb4;
+  color: var(--pink);
 }

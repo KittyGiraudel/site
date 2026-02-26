@@ -1,21 +1,22 @@
-blockquote {
-  margin: var(--vb) 0;
-  padding: 0.75em 1.5em;
-  position: relative;
-  background-color: light-dark(#f3f8fc, #303132);
-  border-radius: 1em;
-  corner-shape: squircle;
-  border: 2px solid transparent;
-  background-image: linear-gradient(light-dark(#f3f8fc, #303132), light-dark(#f3f8fc, #303132)), linear-gradient(to right, #267cb9, #dd7eb4);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-}
-
 /**
- * 1. Add some extra spacing around the blockquote to give room to the quotation marks.
+ * 1. Positioning context for the decorative pseudo-elements.
+ * 2. Add some extra spacing around the blockquote to give room to the quotation marks.
+ * 3. CSS trick to have a gradient border *with* rounded corners.
  */
 blockquote {
-  margin: var(--vb-1\.5) 0; /* 1 */
+  --background-color: light-dark(#f3f8fc, #303132);
+  position: relative; /* 1 */
+  margin: var(--vb-1\.5) 0; /* 2 */
+  padding: 0.75em 1.5em;
+  background-color: var(--background-color);
+  border-radius: 1em;
+  corner-shape: squircle;
+  border: 2px solid transparent; /* 3 */
+  background-image:
+    linear-gradient(var(--background-color), var(--background-color)),
+    linear-gradient(to right, var(--blue), var(--pink)); /* 3 */
+  background-origin: border-box; /* 3 */
+  background-clip: padding-box, border-box; /* 3 */
 }
 
 blockquote::before,
@@ -32,7 +33,7 @@ blockquote::after {
 
 blockquote::before {
   content: '“';
-  color: #267cb9;
+  color: var(--blue);
   bottom: 100%;
   right: 100%;
   transform: translate(67%, 73%);
@@ -40,7 +41,7 @@ blockquote::before {
 
 blockquote::after {
   content: '”';
-  color: #dd7eb4;
+  color: var(--pink);
   top: 100%;
   left: 100%;
   transform: translate(-67%, -37%);

@@ -40,6 +40,7 @@
 
 .Footnotes__list {
   font-size: 75%;
+  line-height: 1.4;
 }
 
 .Footnotes__list-item:not(:last-child) {
@@ -57,7 +58,7 @@
   vertical-align: super;
   font-size: 60%;
   margin-left: 2px;
-  color: #267cb9;
+  color: var(--blue);
   text-decoration: underline;
   cursor: pointer;
   background-image: linear-gradient(to right, #f2cfe3, #c4e0f3);

@@ -1,19 +1,25 @@
 /**
  * 1. Prevent `em` values from being different due to the browser applying a
  *    monospace font by default.
+ * 2. Positioning context for the decorative pseudo-elements.
+ * 3. CSS trick to have a gradient border *with* rounded corners.
  */
 pre {
+  --background-color: light-dark(#fffafd, #322d2f);
+  background-color: var(--background-color);
   margin: var(--vb) 0;
   padding: 1.25em 1.5em;
   overflow: auto;
-  position: relative;
   font-family: inherit; /* 1 */
+  position: relative; /* 2 */
   border-radius: 1em;
   corner-shape: squircle;
-  border: 2px solid transparent;
-  background-image: linear-gradient(light-dark(#fffafd, #322d2f), light-dark(#fffafd, #322d2f)), linear-gradient(to right, #dd7eb4, #267cb9);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  border: 2px solid transparent; /* 3 */
+  background-image:
+    linear-gradient(var(--background-color), var(--background-color)),
+    linear-gradient(to right, var(--pink), var(--blue)); /* 3 */
+  background-origin: border-box; /* 3 */
+  background-clip: padding-box, border-box; /* 3 */
 }
 
 @media (min-width: 1024px) {
@@ -40,7 +46,7 @@ pre code {
 }
 
 :not(pre):not(a) > code {
-  background-color: light-dark(#f8e3ef, #3f393b);
+  background-color: light-dark(#fffafd, #322d2f);
   border-radius: 0.25em;
   padding: 0.1em 0.25em;
   font-size: 70%;

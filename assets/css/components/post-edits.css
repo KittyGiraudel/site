@@ -9,5 +9,5 @@
 }
 
 .PostEdits__date {
-  color: light-dark(#267cb9, #dd7eb4);
+  color: light-dark(var(--blue), var(--pink));
 }

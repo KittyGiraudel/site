@@ -1,11 +1,11 @@
 .ThemeButton {
   position: fixed;
   bottom: 0.5em;
-  left: 0.5em;
+  right: 0.5em;
 
   background-color: light-dark(#fff, #222);
   color: inherit;
-  border: 1px solid;
+  border: 2px solid #666;
   border-radius: 2em;
   corner-shape: squircle;
   cursor: pointer;
@@ -50,7 +50,7 @@
 }
 
 .ThemeButton:focus {
-  outline: 2px solid #dd7eb4;
+  outline: 2px solid var(--pink);
   outline-offset: 2px;
 }
 

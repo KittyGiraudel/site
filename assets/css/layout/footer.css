@@ -1,18 +1,7 @@
 .Footer {
   position: relative;
   padding: var(--vb) 0;
-}
-
-.Footer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.08;
-  z-index: -1;
-  background-image: linear-gradient(to right, #267cb9, #dd7eb4);
+  background-image: linear-gradient(to right, rgb(238 244 248), rgb(251 243 248));
 }
 
 .Footer__inner {
@@ -74,7 +63,7 @@
   .Footer__list > li:not(:last-of-type)::after {
     margin: 0 0.5ch;
     content: '·';
-    color: #dd7eb4;
+    color: var(--pink);
     font-family: monospace;
   }
 }

@@ -1,34 +1,44 @@
+/**
+ * 1. Positioning context for the decorative pseudo-element.
+ * 2. CSS trick to have a gradient border *with* rounded corners.
+ */
 .Info {
+  --background-color: light-dark(#f3f8fc, #303132);
   margin: var(--vb) 0;
   padding: 0.75em 1.5em;
-  position: relative;
-  background-color: light-dark(#f3f8fc, #303132);
+  position: relative; /* 1 */
+  background-color: var(--background-color);
   border-radius: 1em;
   corner-shape: squircle;
-  border: 2px solid transparent;
-  background-image: linear-gradient(light-dark(#f3f8fc, #303132), light-dark(#f3f8fc, #303132)), linear-gradient(to right, #267cb9, #dd7eb4);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-}
-
-.Info::before {
-  position: absolute;
-  font-size: 1000%;
-  opacity: 0.2;
-  font-family: Baskerville, serif;
-  font-weight: bold;
-  line-height: 1;
-  z-index: 1;
-  transition: 150ms;
+  border: 2px solid transparent; /* 2 */
+  background-image:
+    linear-gradient(var(--background-color), var(--background-color)),
+    linear-gradient(to right, var(--blue), var(--pink)); /* 2 */
+  background-origin: border-box; /* 2 */
+  background-clip: padding-box, border-box; /* 2 */
 }
 
 .Info::before {
   content: '‽';
+  position: absolute;
+  font-size: 1000%;
+  opacity: 0.2;
+  font-family: Baskerville, serif;
+  font-weight: normal;
+  line-height: 1;
+  z-index: 1;
   bottom: 100%;
   left: 0;
   transform: translate(-10%, 69%) rotate(-30deg);
-  color: #267cb9;
-  font-weight: normal;
+  color: var(--blue);
+}
+
+/**
+ * 1. Ensure the text inside the info container sits on top of the decorative pseudo-element.
+ */
+.Info > * {
+  z-index: 2; /* 1 */
+  position: relative;
 }
 
 @media (min-width: 1024px) {

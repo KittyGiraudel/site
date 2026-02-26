@@ -3,8 +3,7 @@
   padding: 0.5em;
   margin: var(--vb) 0;
   background-color: light-dark(#fdf7fa, #3f393b);
-  border: 2px solid rgb(0 0 0 / 0.1);
-  border-radius: 0 0 0.1em 0.1em;
+  border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
   border-radius: 1em;
   corner-shape: squircle;
   text-align: center;

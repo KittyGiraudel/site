@@ -89,7 +89,7 @@
     padding-right: 1.5em;
     font-size: 100%;
     text-align: right;
-    border-right: 1px solid #dd7eb4;
+    border-right: 1px solid var(--pink);
     margin-right: 1.5em;
     flex: 0 0 8em;
   }

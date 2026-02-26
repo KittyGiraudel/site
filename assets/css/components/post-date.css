@@ -10,6 +10,6 @@
   width: 25%;
   height: 1px;
   margin: var(--vb) auto 0;
-  background-color: #267cb9;
-  background-image: linear-gradient(to right, #dd7eb4, #267cb9);
+  background-color: var(--blue);
+  background-image: linear-gradient(to right, var(--pink), var(--blue));
 }
