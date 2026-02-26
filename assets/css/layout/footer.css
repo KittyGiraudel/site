@@ -7,7 +7,7 @@
 .Footer__inner {
   display: flex;
   font-size: 80%;
-  margin: 0 -var(--vb-2\/3);
+  margin: 0 calc(var(--vb-2\/3) * -1);
 }
 
 .Footer__left {
