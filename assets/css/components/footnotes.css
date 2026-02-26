@@ -8,6 +8,19 @@
   border: 2px solid rgb(125 125 178);
 }
 
+.Footnotes::before {
+  content: '†';
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  transform: translate(-90%, 67%) rotate(11deg);
+  font-size: 1000%;
+  opacity: 0.2;
+  font-family: Baskerville, serif;
+  font-weight: bold;
+  color: #6A5ACD;
+}
+
 @media (min-width: 1024px) {
   /**
    * 1. Increase width so the footnotes container looks wider than the body
