@@ -1,7 +1,7 @@
 .Footer {
   position: relative;
   padding: var(--vb) 0;
-  background-image: linear-gradient(to right, rgb(238 244 248), rgb(251 243 248));
+  background-image: linear-gradient(to right, light-dark(rgb(238 244 248), rgb(54 60 63)), light-dark(rgb(251 243 248), rgb(46 38 42)));
 }
 
 .Footer__inner {
