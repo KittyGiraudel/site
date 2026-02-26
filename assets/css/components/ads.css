@@ -1,22 +1,60 @@
-/**
- * Site advertisement
- * 1. Computed height to minimise CLS.
- */
 .Ad {
-  margin: 0 auto var(--vb);
-  width: max-content;
-  max-width: 100%;
-  height: 114px; /* 1 */
-  background-color: white;
-  color: #444;
+  background-color: light-dark(#fffafd, #322d2f);
+  border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
+  border-radius: 1em;
+  corner-shape: squircle;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin: var(--vb) auto;
+  padding: 0.5em;
+  position: relative;
+}
+
+@media (min-width: 600px) {
+  .Ad {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 1300px) {
   .Ad {
+    display: contents;
+  }
+  
+  .Ad__content {
+    display: none;
+  }
+}
+
+.Ad__content {
+  font-size: 80%;
+}
+
+.Ad__content > p {
+  margin: 0;
+}
+
+/**
+ * Site advertisement
+ * 1. Computed height to minimise CLS.
+ */
+.Ad__holder {
+  width: max-content;
+  max-width: 100%;
+  min-height: 114px; /* 1 */
+  min-width: 284px;
+  background-color: light-dark(white, #222);
+  color: #444;
+}
+
+@media (min-width: 1300px) {
+  .Ad__holder {
     position: fixed;
-    bottom: -0.5em;
+    bottom: 0.5em;
     right: 1em;
-    height: auto;
+    min-height: 0;
     z-index: 100;
   }
 }
@@ -48,7 +86,7 @@
 
 #carbonads .carbon-wrap {
   display: flex;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(0 0 0 / 0.1);
 }
 
 #carbonads .carbon-img {

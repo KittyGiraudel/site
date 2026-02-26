@@ -11,10 +11,15 @@ layout: default
 <article class="Post">
   <p class="PostDate">For {{ serves }} <span class="Fleuret">❦</span> About {{ preparation_time }}</p>
 
+  {% assign parts = content | split: "</p>" %}
+  {{ parts | first }}</p>
+
   {% include "ad.html" %}
 
-  {{ content }}
-
+  {% for part in parts offset: 1 %}
+    {{ part }}{% unless forloop.last %}</p>{% endunless %}
+  {% endfor %}
+  
   <h2>Ingredients</h2>
   <ul class="RecipeIngredients">
     {% for ingredient in ingredients %}

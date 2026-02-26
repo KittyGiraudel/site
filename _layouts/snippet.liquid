@@ -22,9 +22,14 @@ layout: default
     </p>
   {% endif %}
 
+  {% assign parts = content | split: "</p>" %}
+  {{ parts | first }}</p>
+
   {% include "ad.html" %}
 
-  {{ content }}
+  {% for part in parts offset: 1 %}
+    {{ part }}{% unless forloop.last %}</p>{% endunless %}
+  {% endfor %}
 </article>
 
 {% include "collection_navigation.html",

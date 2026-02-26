@@ -12,8 +12,6 @@ keywords:
 permalink: /
 ---
 
-{% include "ad.html" %}
-
 {% include "styles.html", partials: "
 components/showcase,
 components/tile
@@ -28,9 +26,12 @@ inclusion. In recent years, I have led engineering teams at [N26](https://n26.co
 about me](/about/).
 {% endmarkdown %}
 
+{% include "ad.html" %}
+
 <div class="Tile" style="margin-top: var(--vb);">
   <p style="margin: 0"><strong>Heads up!</strong> I am currently looking for my next job opportunity for March 2026!<br><a href="https://www.linkedin.com/posts/kitty-giraudel_dear-network-i-am-still-looking-for-my-next-activity-7429088570906341376-YSpl?utm_source=share&utm_medium=member_desktop&rcm=ACoAADH-Z8wBKlEvSxzpoXA6lJuBciBD7TZuM0M" rel="noopener noreferrer">Read more on LinkedIn</a>. ✨</p>
 </div>
+
 
 {% assign latest_articles = collections.posts | slice: 0, 3 %}
 {% include "showcase.html",

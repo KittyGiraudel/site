@@ -11,8 +11,6 @@ keywords:
 permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
-{% include "ad.html" %}
-
 {% include "styles.html", partials: "components/collection-navigation" %}
 
 {% markdown %}
@@ -21,6 +19,8 @@ but also about some other topics from time to time. If you are looking for
 something specific, use [the search](/blog/search). I also had the great
 opportunity of having great people writing here, so be sure to check all [guest
 posts](/blog/guest).
+
+{% include "ad.html" %}
 
 If you’re looking for something more tasty, you’ll be pleased to know I started
 blogging about [my personal recipes](/blog/recipes). 👩‍🍳
