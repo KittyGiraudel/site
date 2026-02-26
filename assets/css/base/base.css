@@ -65,9 +65,21 @@ body {
   background-color: light-dark(#fff, #222);
 }
 
-@media (min-width: 768px) {
+/**
+ * 1. Enable fluid typopgraphy based on the viewport width.
+ */
+@media screen and (min-width: 320px) {
   body {
-    font-size: 140%;
+    font-size: calc(125% + 6 * ((100vw - 320px) / 680)); /* 1 */
+  }
+}
+
+/**
+ * 1. Prevent fluid typography to become unhinged on large screens.
+ */
+@media screen and (min-width: 800px) {
+  body {
+    font-size: 140%; /* 1 */
   }
 }
 
