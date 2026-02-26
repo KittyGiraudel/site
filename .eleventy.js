@@ -214,7 +214,7 @@ function groupBy(array, key) {
 }
 
 function info(content) {
-  return `<div class="Info">${markdown(content, false)}</div>`
+  return `<aside class="Info">${markdown(content, false)}</aside>`
 }
 
 function time(value) {
