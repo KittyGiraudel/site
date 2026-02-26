@@ -12,6 +12,10 @@
   position: relative;
 }
 
+.Ad:not(:has(#carbonads)) {
+  display: none;
+}
+
 @media (min-width: 600px) {
   .Ad {
     flex-direction: row;
