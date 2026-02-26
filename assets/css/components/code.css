@@ -8,7 +8,7 @@ pre {
   --background-color: light-dark(#fffafd, #322d2f);
   background-color: var(--background-color);
   margin: var(--vb) 0;
-  padding: 1.25em 1.5em;
+  padding: 1.25em;
   overflow: auto;
   font-family: inherit; /* 1 */
   position: relative; /* 2 */
