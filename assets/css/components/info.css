@@ -1,4 +1,4 @@
-blockquote {
+.Info {
   margin: var(--vb) 0;
   padding: 0.75em 1.5em;
   position: relative;
@@ -11,15 +11,7 @@ blockquote {
   background-clip: padding-box, border-box;
 }
 
-/**
- * 1. Add some extra spacing around the blockquote to give room to the quotation marks.
- */
-blockquote {
-  margin: calc(var(--vb) * 1.5) 0; /* 1 */
-}
-
-blockquote::before,
-blockquote::after {
+.Info::before {
   position: absolute;
   font-size: 1000%;
   opacity: 0.2;
@@ -30,35 +22,13 @@ blockquote::after {
   transition: 150ms;
 }
 
-blockquote::before {
-  content: '“';
-  color: #267cb9;
+.Info::before {
+  content: '‽';
   bottom: 100%;
-  right: 100%;
-  transform: translate(67%, 73%);
-}
-
-blockquote::after {
-  content: '”';
-  color: #dd7eb4;
-  top: 100%;
-  left: 100%;
-  transform: translate(-67%, -37%);
-}
-
-/**
- * 1. Ensure the text inside the blockquote sits on top of the quotation marks.
- */
-blockquote > p {
-  z-index: 2; /* 1 */
-  position: relative; /* 1 */
-}
-
-blockquote:focus-within::before,
-blockquote:focus-within::after,
-blockquote:hover::before,
-blockquote:hover::after {
-  rotate: 3deg;
+  left: 0;
+  transform: translate(-10%, 69%) rotate(-30deg);
+  color: #267cb9;
+  font-weight: normal;
 }
 
 @media (min-width: 1024px) {
@@ -66,7 +36,7 @@ blockquote:hover::after {
    * 1. Increase width so the blockquote/info container looks wider than the
    *    body text, but the text within it is aligned with the body text.
    */
-  blockquote {
+  .Info {
     width: calc(100% + 4em); /* 1 */
     padding: 1em 2em; /* 1 */
     left: -2em; /* 1 */
@@ -76,13 +46,13 @@ blockquote:hover::after {
 /**
  * 1. Prevent an odd gap when the first child of blockquote has a top margin
  */
-blockquote > :first-child {
+.Info > :first-child {
   margin-top: 0; /* 1 */
 }
 
 /**
  * 1. Prevent an odd gap when the last child of blockquote has a bottom margin
  */
-blockquote > :last-child {
+.Info > :last-child {
   margin-bottom: 0; /* 1 */
 }
