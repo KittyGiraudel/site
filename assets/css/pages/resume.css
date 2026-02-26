@@ -9,15 +9,15 @@
 
 .Resume__header p:first-child {
   font-variant: small-caps;
-  font-size: 1.2em;
+  font-size: 120%;
 }
 
 .Resume__subline {
-  font-size: 1.4em;
+  font-size: 140%;
 }
 
 .Resume__contact {
-  font-size: 0.8em;
+  font-size: 80%;
 }
 
 .Resume__contact span:nth-child(1)::before { content: "kitty.giraudel@gmail.com" }
@@ -116,7 +116,7 @@
   }
 
   .Title {
-    font-size: 3em;
+    font-size: 300%;
     font-variant: small-caps;
     letter-spacing: 0.05em;
   }
