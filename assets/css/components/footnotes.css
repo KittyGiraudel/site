@@ -39,7 +39,7 @@
 }
 
 .Footnotes__list {
-  font-size: 80%;
+  font-size: 75%;
 }
 
 .Footnotes__list-item:not(:last-child) {
@@ -55,7 +55,7 @@
   content: '[' counter(footnotes) ']';
   counter-increment: footnotes;
   vertical-align: super;
-  font-size: 0.6em;
+  font-size: 60%;
   margin-left: 2px;
   color: #267cb9;
   text-decoration: underline;
