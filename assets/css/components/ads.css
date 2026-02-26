@@ -22,15 +22,6 @@
   }
 }
 
-@media (min-width: 1300px) {
-  .Ad {
-    display: contents;
-  }
-  
-  .Ad__content {
-    display: none;
-  }
-}
 
 .Ad__content {
   font-size: 80%;
@@ -53,7 +44,15 @@
   color: #444;
 }
 
-@media (min-width: 1300px) {
+@media screen and (min-width: 1556px) {
+  .Ad {
+    display: contents;
+  }
+  
+  .Ad__content {
+    display: none;
+  }
+
   .Ad__holder {
     position: fixed;
     bottom: 0.5em;
