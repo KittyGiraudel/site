@@ -15,7 +15,7 @@ blockquote {
  * 1. Add some extra spacing around the blockquote to give room to the quotation marks.
  */
 blockquote {
-  margin: calc(var(--vb) * 1.5) 0; /* 1 */
+  margin: var(--vb-1\.5) 0; /* 1 */
 }
 
 blockquote::before,

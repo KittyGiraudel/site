@@ -43,7 +43,7 @@
 }
 
 .Footnotes__list-item:not(:last-child) {
-  margin: calc(var(--vb) / 3) 0;
+  margin: var(--vb-1\/3) 0;
 }
 
 .Footnotes__ref[role='doc-noteref'] {

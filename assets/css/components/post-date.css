@@ -1,7 +1,7 @@
 .PostDate {
   text-align: center;
   margin-top: 0;
-  margin-bottom: calc(var(--vb) * 1.5);
+  margin-bottom: var(--vb-1\.5);
 }
 
 .PostDate::after {

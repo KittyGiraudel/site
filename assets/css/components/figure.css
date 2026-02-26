@@ -15,8 +15,8 @@
   height: 4px;
   border-radius: 4px;
   background-image: linear-gradient(to right, #dd7eb4, #267cb9);
-  margin-top: calc(var(--vb) / 3 * -1);
-  margin-bottom: calc(var(--vb) / 3 * 2);
+  margin-top: -var(--vb-1\/3);
+  margin-bottom: var(--vb-2\/3);
 }
 
 @media (min-width: 1400px) {

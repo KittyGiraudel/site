@@ -18,7 +18,7 @@
 .Footer__inner {
   display: flex;
   font-size: 80%;
-  margin: 0 calc(var(--vb) / 3 * 2 * -1);
+  margin: 0 -var(--vb-2\/3);
 }
 
 .Footer__left {
@@ -47,7 +47,7 @@
 
 @media (max-width: 768px) {
   .Footer {
-    padding: calc(var(--vb) / 2) 0;
+    padding: var(--vb-1\/2) 0;
   }
 
   .Footer__inner {
@@ -62,12 +62,12 @@
   .Footer__list {
     text-align: center;
     padding: 0;
-    margin: 0 0 calc(var(--vb) / 3 * 2);
+    margin: 0 0 var(--vb-2\/3);
   }
 
   .Footer__list > li {
     display: inline-block;
-    margin: calc(var(--vb) / 6) 0;
+    margin: var(--vb-1\/6) 0;
     list-style: none;
   }
 
