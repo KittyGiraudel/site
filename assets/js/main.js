@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const THEME_STORAGE_KEY = 'dark-mode'
+  const Theme = {
+    AUTO: 'auto',
+    LIGHT: 'light',
+    DARK: 'dark',
+  }
+
   // http://joelcalifa.com/blog/revisiting-visited
   ; (function markVisitedLinks() {
     localStorage.setItem('visited-' + window.location.pathname, true)
@@ -14,17 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })()
 
-  const themeButton = document.querySelector('#theme-button')
+  const themeButton = document.querySelector('.js-theme-button')
 
   if (!themeButton) {
     return
-  }
-
-  const THEME_STORAGE_KEY = 'dark-mode'
-  const Theme = {
-    AUTO: 'auto',
-    LIGHT: 'light',
-    DARK: 'dark',
   }
 
   function getStoredTheme() {
