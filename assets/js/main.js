@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  function getLocalValue(key) {
-    try {
-      return JSON.parse(localStorage.getItem(key))
-    } catch {
-      return null
-    }
-  }
-
   // http://joelcalifa.com/blog/revisiting-visited
   ; (function markVisitedLinks() {
     localStorage.setItem('visited-' + window.location.pathname, true)
@@ -22,40 +14,121 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })()
 
-  const savedPreference = getLocalValue('dark-mode')
-  const modeToggle = document.querySelector('#dark-mode-toggle')
+  const themeButton = document.querySelector('#theme-button')
 
-  // If dark mode has been enabled before (and thus found in local storage), or
-  // if there is no stored preference but the operating system is set in dark
-  // mode, turn on the dark mode.
-  if (
-    savedPreference ||
-    (savedPreference === null &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    document.documentElement.classList.add('dark')
-    modeToggle.setAttribute('aria-pressed', true)
+  if (!themeButton) {
+    return
   }
 
-  // Now that JavaScript is available, make the toggle visible.
-  modeToggle.removeAttribute('hidden')
+  const THEME_STORAGE_KEY = 'dark-mode'
+  const Theme = {
+    AUTO: 'auto',
+    LIGHT: 'light',
+    DARK: 'dark',
+  }
 
-  modeToggle.addEventListener('click', function (event) {
-    const toggle = event.target.closest('button')
-    const isToggled = JSON.parse(toggle.getAttribute('aria-pressed')) === true
+  function getStoredTheme() {
+    const raw = localStorage.getItem(THEME_STORAGE_KEY)
+    if (raw === null) return null
 
-    if (isToggled) {
-      document.documentElement.classList.remove('dark')
-      toggle.setAttribute('aria-pressed', false)
-      localStorage.setItem('dark-mode', false)
-      setGiscusTheme('light')
-    } else {
-      document.documentElement.classList.add('dark')
-      toggle.setAttribute('aria-pressed', true)
-      localStorage.setItem('dark-mode', true)
-      setGiscusTheme('dark')
+    // Backwards compatibility with previous boolean storage
+    if (raw === 'true') return Theme.DARK
+    if (raw === 'false') return Theme.LIGHT
+
+    if (raw === Theme.DARK || raw === Theme.LIGHT || raw === Theme.AUTO) {
+      return raw
     }
+
+    return null
+  }
+
+  function getPreferredTheme() {
+    const stored = getStoredTheme()
+
+    if (stored && stored !== Theme.AUTO) {
+      return stored
+    }
+
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+
+    return prefersDark ? Theme.DARK : Theme.LIGHT
+  }
+
+  function saveTheme(theme) {
+    if (theme === null || theme === Theme.AUTO) {
+      // Automatic mode: follow OS preference and do not persist.
+      localStorage.removeItem(THEME_STORAGE_KEY)
+    } else {
+      localStorage.setItem(THEME_STORAGE_KEY, theme)
+    }
+  }
+
+  function applyTheme(theme) {
+    const isDark = theme === Theme.DARK
+
+    document.documentElement.classList.toggle('dark', isDark)
+
+    // Represent three states for assistive tech and styling.
+    if (theme === Theme.DARK) {
+      themeButton.setAttribute('aria-pressed', 'true')
+    } else if (theme === Theme.LIGHT) {
+      themeButton.setAttribute('aria-pressed', 'false')
+    } else {
+      themeButton.setAttribute('aria-pressed', 'mixed')
+    }
+
+    const label = theme === Theme.AUTO
+      ? 'Theme: automatic (follows system setting)'
+      : theme === Theme.DARK
+        ? 'Theme: dark'
+        : 'Theme: light'
+
+    themeButton.setAttribute('title', label)
+
+    setGiscusTheme(isDark ? 'dark' : 'light')
+  }
+
+  function getNextTheme(theme) {
+    if (theme === Theme.LIGHT) return Theme.DARK
+    if (theme === Theme.DARK) return Theme.AUTO
+    return Theme.LIGHT
+  }
+
+  let currentTheme = getPreferredTheme()
+  applyTheme(currentTheme)
+
+  // Now that JavaScript is available, make the toggle visible.
+  themeButton.removeAttribute('hidden')
+
+  themeButton.addEventListener('click', function () {
+    currentTheme = getNextTheme(currentTheme)
+    saveTheme(currentTheme)
+    applyTheme(currentTheme)
   })
+
+  if (window.matchMedia) {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+    function handleSystemThemeChange(event) {
+      const stored = getStoredTheme()
+
+      // Only react to OS changes when in automatic mode.
+      if (stored === null || stored === Theme.AUTO) {
+        const theme = event.matches ? Theme.DARK : Theme.LIGHT
+        currentTheme = theme
+        applyTheme(theme)
+      }
+    }
+
+    // Safari < 14 uses addListener/removeListener.
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handleSystemThemeChange)
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener(handleSystemThemeChange)
+    }
+  }
 })
 
 

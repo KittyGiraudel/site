@@ -1,0 +1,61 @@
+.ThemeButton {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+
+  background-color: light-dark(#fff, #222);
+  color: inherit;
+  border: 1px solid;
+  border-radius: 2em;
+  corner-shape: squircle;
+  cursor: pointer;
+  transition: 250ms;
+
+  padding: 0.25em;
+  width: 2.6em;
+  height: 2.6em;
+  z-index: 10;
+}
+
+.ThemeButton[aria-pressed="false"]  > .ThemeButton__icon:not([data-theme="light"]),
+.ThemeButton[aria-pressed="mixed"] > .ThemeButton__icon:not([data-theme="auto"]),
+.ThemeButton[aria-pressed="true"] > .ThemeButton__icon:not([data-theme="dark"]) {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .ThemeButton {
+    bottom: 2em;
+    right: 2em;
+  }
+}
+
+@media (min-width: 1300px) {
+  .ThemeButton {
+    left: 2em;
+  }
+}
+
+.ThemeButton:hover {
+  animation: pulse 500ms ease-out;
+}
+
+@keyframes pulse {
+  from { rotate: 0deg; }
+  40% { rotate: -15deg; }
+  80% { rotate: 10deg; }
+  to { rotate: 0 deg;  }
+}
+
+.ThemeButton:focus {
+  outline: 2px solid #dd7eb4;
+  outline-offset: 2px;
+}
+
+.ThemeButton > svg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentcolor;
+}
