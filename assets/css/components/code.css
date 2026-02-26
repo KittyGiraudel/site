@@ -45,8 +45,8 @@ pre code {
   display: block;
 }
 
-:not(pre):not(a) > code {
-  background-color: light-dark(#fffafd, #322d2f);
+:not(pre) > code {
+  background-color: light-dark(rgb(255 251 253 / 0.5), rgb(50 45 47 / 0.5));
   border-radius: 0.25em;
   padding: 0.1em 0.25em;
   font-size: 70%;
