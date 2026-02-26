@@ -29,6 +29,7 @@ blockquote::after {
   font-weight: bold;
   line-height: 1;
   z-index: 1;
+  transition: 150ms;
 }
 
 blockquote::before {
@@ -53,6 +54,13 @@ blockquote::after {
 blockquote > p {
   z-index: 2; /* 1 */
   position: relative; /* 1 */
+}
+
+blockquote:focus-within::before,
+blockquote:focus-within::after,
+blockquote:hover::before,
+blockquote:hover::after {
+  rotate: 3deg;
 }
 
 .Info::before {
