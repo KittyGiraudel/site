@@ -4,7 +4,7 @@
   margin-bottom: var(--vb-1\.5);
 }
 
-.PostDate::after {
+.PostDate:first-of-type::after {
   content: '';
   display: block;
   width: 25%;
