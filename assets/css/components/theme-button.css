@@ -1,7 +1,7 @@
 .ThemeButton {
   position: fixed;
-  bottom: 1em;
-  right: 1em;
+  bottom: 0.5em;
+  left: 0.5em;
 
   background-color: light-dark(#fff, #222);
   color: inherit;
@@ -11,9 +11,11 @@
   cursor: pointer;
   transition: 250ms;
 
-  padding: 0.25em;
-  width: 2.6em;
-  height: 2.6em;
+  font-size: 1.25em;
+  padding: 0;
+  width: 1.75em;
+  height: 1.75em;
+  line-height: 1.5em;
   z-index: 10;
 }
 
@@ -25,14 +27,14 @@
 
 @media (min-width: 1024px) {
   .ThemeButton {
-    bottom: 2em;
-    right: 2em;
+    bottom: 1em;
+    left: 1em;
   }
 }
 
 @media (min-width: 1300px) {
   .ThemeButton {
-    left: 2em;
+    left: 1em;
   }
 }
 
