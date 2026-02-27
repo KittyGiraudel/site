@@ -53,6 +53,7 @@ components/tile
   {% footnotes page %}
 </article>
 
+{% if not external %}
 <script src="https://giscus.app/client.js"
         data-repo="kittygiraudel/site"
         data-repo-id="MDEwOlJlcG9zaXRvcnk4MjUzNjQ0"
@@ -69,6 +70,7 @@ components/tile
         crossorigin="anonymous"
         async>
 </script>
+{% endif %}
 
 {% include "collection_navigation.html",
 page: page,
