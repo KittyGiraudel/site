@@ -237,23 +237,24 @@ function readingTime(content) {
     : ''
 }
 
+/**
+ * Split the content into 2 parts: the first content block on the page, and then the rest of the
+ * article. This way, we can inject the ad right between the two.
+ * @param {string} html - The HTML string to split (typically `content` variable from Liquid)
+ * @returns {[string, string]} A tuple of the first content block and the rest of the article.
+ */
 function splitContent(html) {
   if (!html || typeof html !== 'string') {
     return ['', '']
   }
 
-  // Load the HTML into Cheerio as a *fragment* so we don’t get the implicit `html` and `body` 
+  // Load the HTML into Cheerio as a *fragment* so we don’t get the implicit `html` and `body`
   // elements. The third argument set to `false` tells Cheerio this is not a full document.
   const $ = cheerio.load(html, { decodeEntities: false }, false)
 
-  // These are the candidates after which we want to insert the ad.
-  const candidates = new Set(['aside', 'blockquote', 'p', 'ul', 'ol'])
-
-  // Find the first node matching our candidates.
+  // Get the top-level nodes of the fragment and find the first *element* node.
   const nodes = $.root().contents().toArray()
-  const splitIndex = nodes.findIndex(
-    node => node.type === 'tag' && candidates.has(node.name)
-  )
+  const splitIndex = nodes.findIndex(node => node.type === 'tag')
 
   // If we couldn’t find any candidate, we return a tuple so that the ad is injected at the top
   // of the post content.
