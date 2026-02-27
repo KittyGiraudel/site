@@ -21,13 +21,11 @@ A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) a
 > **Val**: Well, in fact we could.  
 > **Kitty**: LET’S DO IT!
 
-And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let’s catch up on bitwise operators, shall we?
-
-_Note: project is on GitHub. Check out [SassyBitwise](https://github.com/KittyGiraudel/SassyBitwise)._
+And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let’s catch up on bitwise operators, shall we? Check out [SassyBitwise](https://github.com/KittyGiraudel/SassyBitwise) if all you want is the code.
 
 ## B-b-b-b-bitwise
 
-_Note: I am no programmer so please kindly apologize any shortcut I could make when explaining bitwise operators._
+I am no programmer so please kindly apologize any shortcut I could make when explaining bitwise operators.
 
 You are probably not without knowing numbers we use in everyday life are expressed in base 10, also known as _decimal_. _Hexadecimal_ is base 16. _Octal_ is base 8. And _binary_ is base 2. Just to name a few popular bases.
 
@@ -216,6 +214,4 @@ test {
 
 ## Final thoughts
 
-That’s it folks, SassyBitwise. No point, much fun. As always.
-
-_Note: a huge thanks to [Valérian Galliat](https://twitter.com/valeriangalliat) for helping me out with this._
+That’s it folks, SassyBitwise. No point, much fun. As always. A huge thanks to [Valérian Galliat](https://twitter.com/valeriangalliat) for helping me out with this.

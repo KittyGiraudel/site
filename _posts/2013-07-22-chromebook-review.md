@@ -44,7 +44,7 @@ Anyway, since this laptop is mostly made for web browsing and small applications
 
 Thus I can still enjoy fullscreen Youtube videos without having my eyes bleeding, but I still prefer watching movies on my TV when I’m home (especially given the screen size).
 
-_Note: the Chromebook comes with a 0.3 megapixels webcam._
+Note that the Chromebook comes with a 0.3 megapixels webcam.
 
 ### Audio
 

@@ -22,8 +22,6 @@ First of all, this is what you should come up with:
 
 Obviously the difficult part is the transparent circle in the middle of the picture, not adding border-radius to the boxes. Anyway, as you can see we got 4 boxes (2 per row), each with its own color scheme because it’s prettier. On the middle of the frame, the four boxes are kind of cropped to make place to some kind of invisible circle. And in this circle there is a dark disk.
 
-_Note: this is not an image I made on Photoshop or whatever, this is the result I ended up with._
-
 ## Rules
 
 There are no games without rules, so let me give you some constraints for the exercise, alright?

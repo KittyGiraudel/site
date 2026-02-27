@@ -6,7 +6,7 @@ keywords:
   - sass
 ---
 
-Lately, I have been actively contributing to [a11y.css](https://github.com/ffoodd/a11y.css) project. If you don’t know it yet and happen to be interested in accessibility, I highly recommand you give it a glance. It is a massive work from French developer and accessibility activist [Gaël Poupard](https://twitter.com/ffoodd_fr).
+Lately, I have been actively contributing to [a11y.css](https://github.com/ffoodd/a11y.css) project. If you don’t know it yet and happen to be interested in accessibility, I highly recommend you give it a glance. It is a massive work from French developer and accessibility activist [Gaël Poupard](https://twitter.com/ffoodd_fr).
 
 As far as I am concerned, I am no accessibility expert, so I always find this kind of initiatives very helpful. To briefly introduce a11y.css, it is a stylesheet that you can include in any web page to highlight possible mistakes, errors and improvements. Each notification comes with a message (displayed with pseudo-elements) explaining what’s going on and what should be done. Cool stuff, really.
 

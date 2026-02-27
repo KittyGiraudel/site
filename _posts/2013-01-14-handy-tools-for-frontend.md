@@ -68,7 +68,7 @@ PageSpeed Insights is a tool made by Google which analyzes the content of a web 
 - Link: [https://colorzilla.com/](https://colorzilla.com/) (+ [Chrome](https://www.colorzilla.com/chrome/) and [Firefox](https://www.colorzilla.com/firefox/) extensions)
 - Category: Design
 
-ColorZilla provides 2 really awesome things: a CSS gradient generator and a Chrome / Firefox extension to deal with colors. I really recommand the 2, so I’ll talk about both.
+ColorZilla provides 2 really awesome things: a CSS gradient generator and a Chrome / Firefox extension to deal with colors. I really recommend the 2, so I’ll talk about both.
 
 ### Colorzilla Gradient Generator
 

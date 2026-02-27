@@ -31,7 +31,7 @@ Basically she stacks the element and its 2 pseudo-elements on top of each other 
 
 Instead of covering everything in here, I let you have a look at [this very clear explanation](https://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb) by Ana herself on CodePen.
 
-\*Note: we can do it with one single pseudo-element with the [border shaping trick](https://davidwalsh.name/css-triangles) but the hover doesn’t feel right, and without pseudo-element with linear gradients.
+{% info %}We can do it with one single pseudo-element with the [border shaping trick](https://davidwalsh.name/css-triangles) but the hover doesn’t feel right, and without pseudo-element with linear gradients.{% endinfo %}
 
 ## Compute the height
 

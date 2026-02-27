@@ -261,7 +261,7 @@ The distance along the vertical axis corresponds to the “lightness” (also sa
 
 ### How do we define HSL colors?
 
-To describe a color using the HSL representation, you have to define parameters for hue, saturation and lightness. If you don’t know how to start, this is what I recommand:
+To describe a color using the HSL representation, you have to define parameters for hue, saturation and lightness. If you don’t know how to start, this is what I recommend:
 
 - **Hue**: choose your color on the chromatic wheel. If it’s red, then the value is 0. If it’s purple, the {% footnoteref "hue" "The hue is expressed in degrees but you don’t have to (and should not) set the unit." %}value would be about 300{% endfootnoteref %}, and so on.
 - **Saturation**: if you want a pure color, then the saturation value will be 100%. If you want some kind of grey, try a value lower than 100%.
@@ -427,7 +427,7 @@ lightness(color)    /* Gets the lightness component */
 
 As I was documenting myself to write this article, I understood color stuff is very complicated either in optical, in paint or in digital. Those notions of “hex triplet”, “chromatic wheel”, “base 16”, “alpha” are so abstract we can face some difficulties to understand what they mean, what they represent.
 
-Thankfully in CSS we don’t have to use a base 16 converter everytime we want to describe a color. Tools do it for us. But this is a really interesting topic, so I’d recommand you read about it. You’d be surprise how huge it can be!
+Thankfully in CSS we don’t have to use a base 16 converter everytime we want to describe a color. Tools do it for us. But this is a really interesting topic, so I’d recommend you read about it. You’d be surprise how huge it can be!
 
 Anyway, back to CSS, let me (re)introduce you a few awesome tools and resources to help you deal with colors:
 

@@ -403,7 +403,7 @@ The code might be complicated to understand but it’s really not that hard once
 }
 ```
 
-\*Note: a couple of people came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.
+{% info %}A couple of people came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.{% endinfo %}
 
 ## Foreach
 
@@ -452,8 +452,6 @@ You can do the exact same thing with a `@for` loop as you would probably do in J
   /* Access item with nth($list, $i) */
 }
 ```
-
-_Note: I have a very in-depth article on Sass lists scheduled for next week. Stay tuned for some Sass awesomeness. ;)_
 
 Now that we introduced loops and lists, we can move forward. My idea was to build a little Sass script that output a specific background based on a page name where file names would not follow any guide name (hyphens, underscores, .jpg, .png, random folders…). So home page would have background X, contact page background Y, etc.
 

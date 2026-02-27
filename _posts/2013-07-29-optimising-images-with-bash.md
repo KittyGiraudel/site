@@ -73,7 +73,7 @@ For each file, our script is going to run _optipng_ and _pngcrush_ for PNG files
 <figcaption>PNG optimisation with <a href="http://optipng.sourceforge.net/">optipng</a></figcaption>
 </figure>
 
-_Note: the -o7 parameter force optipng to use the slowest mode. The fastest is -o0._
+{% info %}The `-o7` parameter force optipng to use the slowest mode. The fastest is `-o0`.{% endinfo %}
 
 Then _pngcrush_:
 
@@ -429,7 +429,7 @@ main
 Of course this is just a simple sample (no pun intended); there is still a lot of room for improvements. Here is a couple of things we could do to improve it:
 
 - add GIF support,
-- use other tools to optimise JPG and PNG in the `optimise_image` method (by the way, I highly recommand you to read [this great article](https://www.phpied.com/big-list-image-optimisation-tools) by Stoyan Stefanov),
+- use other tools to optimise JPG and PNG in the `optimise_image` method (by the way, I highly recommend you to read [this great article](https://www.phpied.com/big-list-image-optimisation-tools) by Stoyan Stefanov),
 - add a progress bar,
 - try to add some lossy optimisations for JPG,
 - add an auto-upload function to upload to your FTP,

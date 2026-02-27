@@ -11,7 +11,7 @@ It all started when [Tim Severien](https://twitter.com/timseverien) showed me a 
 
 But before we get too far, let me turn it over to Tim to catch us up on some basic knowledge regarding Bezier functions. Tim, please.
 
-(Note: if you're only interested in the code, please head straight to [CodePen](http://codepen.io/KittyGiraudel/pen/eqCvo?editors=010).)
+If you're only interested in the code, please head straight to [CodePen](http://codepen.io/KittyGiraudel/pen/eqCvo?editors=010).
 
 ## What is a Bézier curve?
 
@@ -105,7 +105,7 @@ As stated before, the amount of points is irrelevant, so we can use five points,
 
 As you add more points, the more coordinates play a part in the final curve, making it increasingly difficult to add desired detail. This is why the Cubic Bézier curve, the curve with four points is most common. If you’re familiar with software like Illustrator, you will know that between two points, you get two control points, which makes four.
 
-_Note: if you haven't already, I highly recommand you to watch [this 4 minute video](http://vimeo.com/106757336) about the way Bézier curves are drawn by a computer. Fair warning: ah-ha moment triggerer._
+{% info %}If you haven't already, I highly recommend you to watch [this 4 minute video](http://vimeo.com/106757336) about the way Bézier curves are drawn by a computer. Fair warning: ah-ha moment triggerer.{% endinfo %}
 
 ## Coming back to Sass
 
@@ -352,7 +352,7 @@ Regarding `draw-control-points` now, it gets called only if `control-points` key
 
 The way they are drawn are kind of tricky I must say (also quite complicated, so I won't display the code here). Basically, it consists on two pseudo-elements with their diagonal displayed thanks to a linear-gradient and some geometry magic using `atan` function ([from Compass](http://compass-style.org/reference/compass/helpers/math/#atan)).
 
-(Note: if you don't use Compass, you can use [this (Ruby) implementation](https://github.com/at-import/Sassy-math/blob/60d130108bcd20c5cd5aa50b52505afab9a40519/compass/lib/sassy-math.rb#L136) from Sassy-Math, or [this (Sass) one](https://thesassway.herokuapp.com/advanced/inverse-trigonometric-functions-with-sass#coding-the-atan-function) from Ana Tudor.)
+{% info %}If you don't use Compass, you can use [this (Ruby) implementation](https://github.com/at-import/Sassy-math/blob/60d130108bcd20c5cd5aa50b52505afab9a40519/compass/lib/sassy-math.rb#L136) from Sassy-Math, or [this (Sass) one](https://thesassway.herokuapp.com/advanced/inverse-trigonometric-functions-with-sass#coding-the-atan-function) from Ana Tudor.{% endinfo %}
 
 ## Final thoughts
 

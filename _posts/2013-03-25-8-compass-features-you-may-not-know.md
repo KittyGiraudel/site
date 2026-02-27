@@ -27,8 +27,6 @@ $position: top right;
 $opposite: opposite-position($position); /* Outputs “bottom left” */
 ```
 
-_Note: the opposite of `center` is `center`._
-
 I personally used this extension in this very site, when it comes to images and quotes pulling ([L32](https://github.com/KittyGiraudel/site/tree/main/sass/_helpers.scss#L32) and [L47](https://github.com/KittyGiraudel/site/tree/main/sass/_helpers.scss#L47)).
 
 ```scss
@@ -50,7 +48,7 @@ So `$opposite` equals _right_ when `$direction` is _left_ and vice versa. Allows
 
 [Element-of-type()](https://compass-style.org/reference/compass/helpers/display/) is a built-in function to detect the display type of an element: `block`, `inline`, `inline-block`, `table`, `table-row-group`, `table-header-group`, `table-footer-group`, `table-row`, `table-cell`, `list-item` and -as odd as it may look- `html5`, `html5-inline` and `html5-block`.
 
-_Note: `html5`, `html5-inline` and `html5-block` are not real display values; they are just keywords to gather all html5 elements (inline, block or both)._
+{% info %}`html5`, `html5-inline` and `html5-block` are not real display values; they are just keywords to gather all html5 elements (inline, block or both).{% endinfo %}
 
 This may be useful as part of a CSS reset for example:
 
@@ -197,7 +195,7 @@ Compass gives you a way to know the [dimensions of an image](https://compass-sty
 
 In this example, the element will have a size relative to the background-image it uses.
 
-_Note: beware, the path has to be relative to your project’s image directory, defined in your `config.rb` file._
+{% info %}Beware, the path has to be relative to your project’s image directory, defined in your `config.rb` file.{% endinfo %}
 
 ## Math functions
 
@@ -266,4 +264,4 @@ _The `hide-text()` mixin takes a direction as a parameter. The default one is `l
 
 ## Final words
 
-So people, how many of these features did you know? If you have some free time, I highly recommand you to dig into [Compass documentation](https://compass-style.org/reference/compass/). You’d be surprised how little you know about the framework in most cases.
+So people, how many of these features did you know? If you have some free time, I highly recommend you to dig into [Compass documentation](https://compass-style.org/reference/compass/). You’d be surprised how little you know about the framework in most cases.

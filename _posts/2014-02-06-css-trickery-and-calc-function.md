@@ -7,16 +7,16 @@ keywords:
   - riddle
 ---
 
+Yesterday, famous French frontend developer [Rémi Parmentier proposed a little CSS brain-teaser on his blog](https://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.
+
+I gave it a go and it turned out to be much easier than I firstly expected. No weird cross browser issue, no dirty hack and mostly just plain ol' good CSS. But you may want to give it a try, don’t you?
+
 <figure class="figure">
 <img src="/assets/images/calc-css-riddle/gollum-riddle.gif" alt="">
 <figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
 </figure>
 
-Yesterday, famous French frontend developer [Rémi Parmentier proposed a little CSS brain-teaser on his blog](https://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.
-
-I gave it a go and it turned out to be much easier than I firstly expected. No weird cross browser issue, no dirty hack and mostly just plain ol' good CSS. But you may want to give it a try, don’t you?
-
-## It likes riddles, praps it does, does it?
+## It likes riddles, p’raps it does, does it?
 
 Let me translate the post from Rémi for you:
 
@@ -131,7 +131,7 @@ There are 3 things we could store:
 
 Once you’ve set up those 3 variables, you don’t have to edit the code anymore whenever you want to change something, could it be the size of the margin or the number of cells per rows. Pretty neat.
 
-_Note: whenever you’re trying to use Sass variables in `calc` function, be sure to escape them with `#{}`. For instance: `calc(#{$margin} + 42px)`._
+{% info %}Whenever you’re trying to use Sass variables in `calc` function, be sure to escape them with `#{}`. For instance: `calc(#{$margin} + 42px)`.{% endinfo %}
 
 Again, [check code on CodePen](https://codepen.io/KittyGiraudel/pen/zFJvn).
 

@@ -213,7 +213,7 @@ Basically, LESS fails to understand `@page` and `@keyframes` inside mixins becau
 
 Yeah, this is a complete nightmare. I’m not the one who wrote this; I’ve been searching for hours how to do this before finding [a very complete answer on StackOverflow](https://stackoverflow.com/questions/13160991/chaining-keyframe-attributes-with-less) leading to two others related topic with wonderful answers ([here](https://stackoverflow.com/questions/11551313/less-css-pass-mixin-as-a-parameter-to-another-mixin/11589227#11589227) and [there](https://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css)).
 
-_Note: the `.Local()` thing seems to be a keyword for “this” but I couldn’t find any confirmation on this. If you have, please catch me on Twitter._
+{% info %}The `.Local()` thing seems to be a keyword for “this” but I couldn’t find any confirmation on this. If you have, please catch me on Twitter.{% endinfo %}
 
 So basically, here is what there is to say ([still not from me](https://stackoverflow.com/questions/9166152/sign-and-variables-in-css-keyframes-using-less-css/11028622#11028622)):
 

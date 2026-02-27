@@ -16,9 +16,7 @@ Although at this point, sorting numbers was not enough to me. I wanted to sort m
 
 That could have been the end of that if Sam Richards (a.k.a [Snugug](https://twitter.com/snugug)) had not put his Quick Sort implementation on my way. God, it was both fast and beautiful but… it was for numeric values only. Challenge accepted!
 
-It didn’t take me long to update his function in order to sort anything, very quickly (actually as quickly as Ruby can get, which means, not much…). And I really enjoyed working on this, so I started implementing other famous algorithms in Sass, resulting in [SassySort](https://github.com/KittyGiraudel/SassySort).
-
-_Note: I recently wrote [an article](/2014/03/17/implementing-bubble-sort-with-sass) about how to implement the Bubble Sort algorithm in Sass. If you haven’t read it, you should!_
+It didn’t take me long to update his function in order to sort anything, very quickly (actually as quickly as Ruby can get, which means, not much…). And I really enjoyed working on this, so I started implementing other famous algorithms in Sass, resulting in [SassySort](https://github.com/KittyGiraudel/SassySort) (read [related article](/2014/03/17/implementing-bubble-sort-with-sass)).
 
 ## How to use
 
@@ -39,8 +37,6 @@ $sort: sort($list);
 ```
 
 That’s pretty much the end of it.
-
-_Note: also, [I’ve asked SassMeister to include it](https://github.com/jedfoster/SassMeister/issues/64#issuecomment-35530071), so you might be able to use it directly into [SassMeister](https://www.sassmeister.com/) in the not-so-far future._
 
 ## Picking the algorithm
 

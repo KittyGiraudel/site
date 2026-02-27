@@ -5,17 +5,12 @@ keywords:
   - CSS
   - riddle
   - float
+edits:
+  - date: 2026/02/27
+    md: The original forum post no longer exists, nor do the initial screenshots — I should have hosted them myself. 🫠
 ---
 
 Back in september, someone exposed a very interesting problem on [CSS-tricks forums](https://css-tricks.com/forums/discussion/19610/float-items). To sum up, he had a list of elements floated to the left. However, he wanted to float items top to bottom on each column and not left to right on each row.
-
-He started with:
-
-![Before](https://img401.imageshack.us/img401/4723/98791854.jpg)
-
-And wanted to end with:
-
-![After](https://imageshack.us/scaled/landing/88/51843399.jpg)
 
 ## Solutions to the problem
 
@@ -117,7 +112,7 @@ A few explanations about the variables:
 - `$height` is the height of each item; in my demo it equals 100px as well,
 - `$margin` is the gap between each item; I set it to 10% of the size of an item.
 
-_Note: you may wonder why using 2 different variables for size when one would be enough. This allows you to use non-square items if you want to: try it, it works._
+{% info %}You may wonder why using 2 different variables for size when one would be enough. This allows you to use non-square items if you want to: try it, it works.{% endinfo %}
 
 ### Looping!
 

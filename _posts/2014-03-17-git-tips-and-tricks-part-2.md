@@ -4,12 +4,9 @@ title: Git tips and tricks – Part 2
 description: A guest post by Loïc Giraudel on advanced git and how to get the most of it
 keywords:
   - git
-edits:
-  - date: 2014/03/24
-    md: '[Git tips and tricks – Part 3](/2014/03/24/git-tips-and-tricks-part-3/) is out! Go check it.'
 ---
 
-{% info %} This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu! {% endinfo %}
+{% info %}This is the 2nd part of the _Git Tips & Tricks_ series from Loïc Giraudel. If you missed the first post, be sure to [give it a read](/2014/03/10/git-tips-and-tricks-part-1/)! And now fasten your belts folks, because this is some serious Git fu!{% endinfo %}
 
 Hey people! I hope you enjoyed the first part of the series. In this one, I will introduce you even more tricks to improve the diff output, create some useful aliases and master (no pun intended) mandatory commands to be able to approach advanced Git concepts and commands. Ready?
 

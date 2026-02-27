@@ -4,9 +4,6 @@ title: Git tips and tricks – Part 1
 description: A guest post by Loïc Giraudel on advanced git and how to get the most of it
 keywords:
   - git
-edits:
-  - date: 2014/03/17
-    md: '[Git tips and tricks – Part 2](/2014/03/17/git-tips-and-tricks-part-2/) is out! Go check it.'
 ---
 
 {% info %} The following is the first post of a series written by my dear brother Loïc, Git expert at Future PLC. I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness! {% endinfo %}

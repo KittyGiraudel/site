@@ -69,6 +69,6 @@ The first collection (top) is the 1-column layout, the second one (middle) is wh
 
 I truely believe future of responsive web design lay somewhere around Element Queries. They are not just convenient, they are essential to build a DRY and maintainable architecture.
 
-However, they still come up with a couple of pitfalls like infinite loops and non-sense declarations. Imagine you tell a component to have a width of 399px when it is 400+ pixels large. This is brainfuck. This is probably because of such things element queries are still not natively implemented anywhere.
+However, they still come up with a couple of pitfalls like infinite loops and non-sense declarations. Imagine you tell a component to have a width of 399px when it is 400+ pixels large. This is mindfuck. This is probably because of such things element queries are still not natively implemented anywhere.
 
 But I hope we might get to it. Some day.

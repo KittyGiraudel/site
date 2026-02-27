@@ -56,7 +56,7 @@ $list-space: 'item-1' 'item-2' 'item-3';
 $list-comma: 'item-1', 'item-2', 'item-3';
 ```
 
-_Note: As in CSS, you can ommit quotes for your strings as long as they don’t contain any special characters. So `$list: item-1, item-2, item-3` is perfectly valid._
+{% info %}As in CSS, you can ommit quotes for your strings as long as they don’t contain any special characters. So `$list: item-1, item-2, item-3` is perfectly valid.{% endinfo %}
 
 **You can nest lists.** As for JavaScript or any other language, there is no limit regarding the level of depth you can have with nested lists. Just go as deep as you need to, bro.
 
@@ -97,7 +97,7 @@ $variable: "Sass is awesome";
 length($variable) -> 1
 ```
 
-_Beware! If you remove the quotes around this string, it will be parsed as a 3-items long list (1: Sass; 2: is; 3: awesome). I recommand you quotes your strings to avoid some unpleasant surprises._
+_Beware! If you remove the quotes around this string, it will be parsed as a 3-items long list (1: Sass; 2: is; 3: awesome). I recommend you quotes your strings to avoid some unpleasant surprises._
 
 ## Sass list functions
 
@@ -163,7 +163,7 @@ This is the method I was still using a couple of weeks ago. It works but it invo
 
 Basically, we add the new selector to `$selector` and if we are not dealing with the last item of the list, we add a comma.
 
-_Note: we have to use `unquote('')` to treat our new selector as an unquoted string._
+{% info %}We have to use `unquote('')` to treat our new selector as an unquoted string.{% endinfo %}
 
 ### The clean way
 

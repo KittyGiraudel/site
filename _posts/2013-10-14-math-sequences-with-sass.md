@@ -320,7 +320,7 @@ Here is what we do (from middle to edges):
 
 There you have it: displaying a whole list of data with line-breaks all through CSS. Pretty neat, isn't it?
 
-Note: for the Look-and-say sequence, it takes one extra step to convert nested lists into strings first. You check how I did it directly on [the pen](https://codepen.io/KittyGiraudel/pen/tBhzs).
+{% info %}For the Look-and-say sequence, it takes one extra step to convert nested lists into strings first. You check how I did it directly on [the pen](https://codepen.io/KittyGiraudel/pen/tBhzs).{% endinfo %}
 
 ## Final words
 

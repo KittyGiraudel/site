@@ -492,7 +492,7 @@ The core of the function is slightly more complicated than others because there 
 }
 ```
 
-\*Note: recursivity is implied here. It would make no sense not to join elements from inner lists so you have no power over this: it is recursive.
+{% info %}Recursion is implied here. It would make no sense not to join elements from inner lists so you have no power over this: it is recursive.{% endinfo %}
 
 Now, my very first draft returned something like this `a-b-c-d-e-f-g-h-`. With an extra hyphen at the end.
 

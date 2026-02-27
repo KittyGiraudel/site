@@ -93,5 +93,3 @@ For example we need to give you a hint about the [safety of a hack](https://gith
 And last but not least, we want to be able to automate the testing. This is probably our biggest project for Browserhacks, and we’ve yet to figure a way to do so. Ultimately, we’d like to be able to make all tests and proof-tests automated so we don’t have to spend countless hours on [Browserstack](https://browserstack.com) testing all the browsers / OS combos.
 
 If you feel like helping for anything at all, that would be really awesome. Shoot us on [Twitter](https://twitter.com/browserhacks) or on [Github](https://github.com/4ae9b8/browserhacks/).
-
-_Note: by the way, I’d really like not having to retweet everything from the Browserhacks Twitter account, so if you people could follow it, that’d be cool. :D_

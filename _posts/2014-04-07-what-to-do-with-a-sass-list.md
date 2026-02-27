@@ -34,8 +34,6 @@ All these properties (and many more) use lists as values. To my knowledge, only 
 
 Lists have been around for a long time now, we just didn’t call them “lists” because we didn’t have to. Now, Sass officially uses the word “list” as a data type, but that doesn’t mean Sass introduced lists to the CSS background.
 
-_Note: by the way, if you haven’t read [my article about Sass lists](/2013/07/15/understanding-sass-lists/), I suggest you do._
-
 ## Because looping is fun!
 
 I believe what we’ve just seen in the first section is a valid answer for the question. Since CSS supports lists for some values, why wouldn’t Sass? But you might want to have a deeper answer I suppose. Actually a Sass list hasn’t much point by itself. However it’s getting pretty cool when you can iterate over it with a loop. Thankfully Sass provides three types of loop: `@for`, `@each` and `@while`.

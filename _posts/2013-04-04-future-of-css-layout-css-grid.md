@@ -102,7 +102,7 @@ Now the CSS. Pay attention to the number of lines:
 
 Done. **10 lines. No float. No inline-block. No height. No width. No margin.** And if you want to make everything nice on small devices, it will take no more than a couple of more lines (8 in this example).
 
-_Note: I won’t explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at [CSS-Tricks' Almanac entry](https://css-tricks.com/almanac/properties/g/grid/)._
+{% info %}I won’t explain the syntax in this article. If you want to understand how works the Grid Layout, please have a look at [CSS-Tricks' Almanac entry](https://css-tricks.com/almanac/properties/g/grid/).{% endinfo %}
 
 ## What about Flexbox?
 
