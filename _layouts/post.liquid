@@ -36,14 +36,10 @@ components/tile
   <div itemprop="articleBody">
     {% include "post_edits.html", edits: edits %}
 
-    {% assign parts = content | split: "</p>" %}
-    {{ parts | first }}</p>
-
+    {% assign parts = content | split_content %}
+    {{ parts[0] }}
     {% include "ad.html" %}
-
-    {% for part in parts offset: 1 %}
-      {{ part }}{% unless forloop.last %}</p>{% endunless %}
-    {% endfor %}
+    {{ parts[1] }}
 
     <div class="Hook">
       <p><strong>Pssst!</strong> I am currently looking for my next job opportunity from March! <a href="https://www.linkedin.com/posts/kitty-giraudel_my-mission-as-vp-of-engineering-at-scilife-activity-7392127545925713921-qoGi?utm_source=share&utm_medium=member_desktop&rcm=ACoAADH-Z8wBKlEvSxzpoXA6lJuBciBD7TZuM0M" rel="noopener noreferrer">Read more on LinkedIn</a>. ✨</p>

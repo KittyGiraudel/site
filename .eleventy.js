@@ -6,6 +6,7 @@ import markdownItAnchor from 'markdown-it-anchor'
 import uslugify from 'uslug'
 import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
+import * as cheerio from 'cheerio'
 
 const EMOJI_REGEX = emojiRegex()
 
@@ -60,6 +61,9 @@ export default function (config) {
 
   // Add a Liquid filter to compute the reading time of given content
   config.addFilter('reading_time', readingTime)
+
+  // Split rendered HTML content into 2 parts to allow injecting the ad
+  config.addFilter('split_content', splitContent)
 
   // Add a Liquid filter to format amount of stars
   config.addFilter('stars', stars)
@@ -231,4 +235,44 @@ function readingTime(content) {
     ) +
     '–minute read'
     : ''
+}
+
+function splitContent(html) {
+  if (!html || typeof html !== 'string') {
+    return ['', '']
+  }
+
+  // Load the HTML into Cheerio as a *fragment* so we don’t get the implicit `html` and `body` 
+  // elements. The third argument set to `false` tells Cheerio this is not a full document.
+  const $ = cheerio.load(html, { decodeEntities: false }, false)
+
+  // These are the candidates after which we want to insert the ad.
+  const candidates = new Set(['aside', 'blockquote', 'p', 'ul', 'ol'])
+
+  // Find the first node matching our candidates.
+  const nodes = $.root().contents().toArray()
+  const splitIndex = nodes.findIndex(
+    node => node.type === 'tag' && candidates.has(node.name)
+  )
+
+  // If we couldn’t find any candidate, we return a tuple so that the ad is injected at the top
+  // of the post content.
+  if (splitIndex === -1) return ['', html]
+
+  // If we did find a candidate, slice the array of nodes into 2 parts: everything up to and
+  // including the candidate (so we inject the ad *after* it), and everything after it.
+  const beforeNodes = nodes.slice(0, splitIndex + 1)
+  const afterNodes = nodes.slice(splitIndex + 1)
+
+  // Serialize the nodes back into HTML, since this is what Liquid expects.
+  const serialize = nodeArray =>
+    nodeArray
+      .map(node => {
+        // $.html works for both element and text/comment nodes
+        const out = $.html(node)
+        return typeof out === 'string' ? out : ''
+      })
+      .join('')
+
+  return [serialize(beforeNodes), serialize(afterNodes)]
 }

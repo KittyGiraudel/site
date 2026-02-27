@@ -17,5 +17,8 @@
     "markdown-it-anchor": "^9.2.0",
     "uslug": "^1.0.4",
     "workbox-cli": "^7.4.0"
+  },
+  "devDependencies": {
+    "cheerio": "^1.2.0"
   }
 }
