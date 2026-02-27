@@ -20,4 +20,9 @@
     {{ data.title }}
   </a>
   {% endif %}
+  {% if data.keywords %}
+  <ul class="List__keywords">
+    <li class="List__keyword">{{ data.keywords | sort | join: '</li><li class="List__keyword">' }}</li>
+  </ul>
+  {% endif %}
 </li>
