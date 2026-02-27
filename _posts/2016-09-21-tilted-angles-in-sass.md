@@ -5,7 +5,7 @@ external:
 title: Tilted angles in Sass
 description: A technical write-up about tilted angles in Sass
 keywords:
-  - css
+  - CSS
   - sass
   - trigonometry
   - geometry

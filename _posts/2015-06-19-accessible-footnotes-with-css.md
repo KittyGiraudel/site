@@ -5,7 +5,7 @@ external:
 title: Accessible footnotes with CSS
 description: A technical write-up on creating accessible footnotes with CSS
 keywords:
-  - css
+  - CSS
   - accessibility
   - footnotes
 ---

@@ -1,6 +1,10 @@
 ---
 title: 30 frontend tips
 description: A collection of 30 frontend tips I’ve learnt the hard way to celebrate me turning 30
+keywords:
+  - Retrospective
+  - Frontend
+  - Engineering
 ---
 
 I recently posted a [Twitter thread](https://twitter.com/KittyGiraudel/status/1468195514529296384) of 30 tweets on frontend development. Pieces of advice I wish I had when I started in the field over 10 years ago. This post is basically the thread verbatim, kept for posterity on this site.

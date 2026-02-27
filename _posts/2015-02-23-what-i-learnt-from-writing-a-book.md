@@ -4,7 +4,7 @@ description: A retrospective on what I learned from writing a book about CSS
 keywords:
   - writing
   - book
-  - css
+  - CSS
 ---
 
 In a couple of days, my book “CSS 3 Pratique de Design Web” (_CSS 3 Practicing Web Design_) will be on sale. It has been a one-year road to get there, and one hell of a journey so I thought I’d relate it to you in case you find yourself in my position.

@@ -4,7 +4,7 @@ description: An announcement post for the redesign of my blog using Markdown sty
 keywords:
   - markdown
   - redesign
-  - css
+  - CSS
 ---
 
 A short post to talk about the recent redesign of this site.

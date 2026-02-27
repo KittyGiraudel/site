@@ -2,10 +2,10 @@
 title: Imagining native skip links
 description: A reflection on skip links and what a native HTML skip link could look like
 keywords:
-  - a11y
-  - skip
-  - link
-  - accessibility
+  - Component
+  - HTML
+  - UX
+  - Accessibility
 ---
 
 [We recently talked about skip links](https://kittygiraudel.com/2020/12/06/a11y-advent-skip-to-content/) in our [A11y Advent calendar](https://kittygiraudel.com/2020/12/01/a11y-advent-calendar/). In case you are not familiar with the concept, I quote:

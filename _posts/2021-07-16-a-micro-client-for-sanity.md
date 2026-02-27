@@ -1,6 +1,10 @@
 ---
 title: A micro-client for Sanity
 description: A technical write-up on building a pair of utility functions wrapping the Sanity JavaScript client for simpler data queries
+keywords:
+  - Sanity
+  - JavaScript
+  - Library
 ---
 
 In this article, we’ll go through creating a pair of utility functions wrapping the [Sanity JavaScript client](https://www.sanity.io/docs/js-client) to query data without losing your sanity. … I’m sorry. 😶

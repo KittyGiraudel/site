@@ -3,7 +3,7 @@ title: CSS hide-and-seek
 description: A technical write-up on hiding and showing content with CSS by Gaël Poupard
 guest: 'Gaël Poupard'
 keywords:
-  - css
+  - CSS
   - accessibility
   - a11y
 edits:

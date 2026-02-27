@@ -2,7 +2,7 @@
 title: Items along a circle
 description: A technical write-up about how to place items along a circle with CSS
 keywords:
-  - css
+  - CSS
   - sass
   - mixin
 ---

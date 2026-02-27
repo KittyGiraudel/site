@@ -4,6 +4,11 @@ description: A write-up on an experimental approach to interface designin consid
 edits:
   - date: 2022/09/14
     md: I published a small React hook for that on npm as a [standalone library](https://github.com/KittyGiraudel/dhand).
+keywords:
+  - UI
+  - UX
+  - Accessibility
+  - Design
 ---
 
 I recently [shared some thoughts on Twitter](https://twitter.com/KittyGiraudel/status/1569953249742016512?s=20&t=NhvxVDUHQ6lJW__sVXoPeA) about an idea Mike Smart and I had a few years back, while working on the new N26 mobile signup flow: **detecting the user’s dominant hand**.

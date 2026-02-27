@@ -1,6 +1,8 @@
 ---
 title: Making sense of zsh
 description: A technical write-up through zsh and my homemade configuration to get the most of it
+keywords:
+   - zsh
 ---
 
 If you use a relatively recent macOS version, chances are good you’re using zsh ([Z shell](https://en.wikipedia.org/wiki/Z_shell)) as a terminal — even if you use a terminal that’s integrated to your IDE (like in Visual Studio Code for instance).

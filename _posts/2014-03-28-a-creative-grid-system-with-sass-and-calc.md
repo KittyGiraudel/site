@@ -8,5 +8,5 @@ keywords:
   - sass
   - grid system
   - calc
-  - css
+  - CSS
 ---

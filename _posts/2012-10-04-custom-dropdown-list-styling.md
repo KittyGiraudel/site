@@ -6,6 +6,6 @@ title: Custom dropdown list styling
 description: A gallery of custom dropdown lists styled with CSS
 keywords:
   - dropdown
-  - design
-  - css
+  - Design
+  - CSS
 ---

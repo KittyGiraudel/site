@@ -5,6 +5,6 @@ external:
 title: Understanding CSS clip
 description: A technical deep-dive into the CSS clip property
 keywords:
-  - css
+  - CSS
   - clip
 ---

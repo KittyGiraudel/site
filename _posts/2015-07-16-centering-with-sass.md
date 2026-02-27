@@ -6,7 +6,7 @@ title: Centering with Sass
 description: A technical guide on centering with Sass
 keywords:
   - sass
-  - css
+  - CSS
   - preprocessor
   - centering
 ---

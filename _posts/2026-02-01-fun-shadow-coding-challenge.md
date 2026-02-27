@@ -2,10 +2,9 @@
 title: Fun shadow coding challenge
 description: A short technical write-up on my approach to this fun little challenge by Andy Bell
 keywords:
-  - css
-  - codepen
-  - challenge
-  - shadow
+  - CSS
+  - Challenge
+  - Shadow
 ---
 
 [Andy Bell shared a little CSS challenge](https://bell.bz/fun-shadow-coding-challenge/). The idea: a scroll-driven scene where a central light source affects the shadow direction of a box. His original prototype is from 8 years ago, and relies heavily on JavaScript to dynamically adjust the shadow. He wondered what we could do today with modern CSS.

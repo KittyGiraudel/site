@@ -5,7 +5,7 @@ external:
 title: Cleaning up a CSS codebase
 description: A deep-dive into cleaning up a CSS codebase
 keywords:
-  - css
+  - CSS
   - sass
   - debug
   - methodology

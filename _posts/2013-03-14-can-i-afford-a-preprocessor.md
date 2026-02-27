@@ -2,7 +2,7 @@
 title: Can I afford a preprocessor?
 description: Some thoughts about the pros and cons of CSS preprocessors and whether you should use one
 keywords:
-  - css
+  - CSS
   - sass
   - preprocessor
 ---

@@ -2,11 +2,10 @@
 title: The required fault in our stars
 description: A short write-up about the use of asterisks to indicate required fields in forms
 keywords:
-  - accessibility
-  - a11y
-  - field
-  - required
-  - asterisk
+  - Accessibility
+  - UI
+  - UI
+  - Design
 ---
 
 I have been trying to figure why and when did we start using the asterisk character (`*`) to denote required fields on the web. There is little historical content about this out there, but Jared Spool pointed out that this design decision appears to predate the web:

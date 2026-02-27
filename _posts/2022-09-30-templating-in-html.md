@@ -6,6 +6,10 @@ edits:
     md: Some people on HackerNews pointed out that this is actually not “templating” the way Handlebars, Mustache, Twig or whatever else is. Okay…? It’s just a title, that doesn’t invalidate the rest of the piece. 🤷‍♀️
   - date: 2022/10/05
     md: A lot of people asked about the differences with using a hidden DOM element (like a `<div>` for instance), so I added [a section about it](#why-not-a-hidden-element).
+keywords:
+  - HTML
+  - Templates
+  - JavaScript
 ---
 
 After a nice discussion on Twitter following [a recent article from Manuel Matuzović](https://web.dev/website-navigation/), I thought it would be worth writing some quick thoughts here. Today, we have a quick look at the `<template>` element and how it can come in handy.

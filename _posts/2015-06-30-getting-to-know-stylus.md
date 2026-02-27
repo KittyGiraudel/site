@@ -6,6 +6,6 @@ title: Getting to know Stylus
 description: A guide on getting to know Stylus
 keywords:
   - stylus
-  - css
+  - CSS
   - preprocessor
 ---

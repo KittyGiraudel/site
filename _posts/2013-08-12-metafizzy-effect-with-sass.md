@@ -6,7 +6,7 @@ title: MetaFizzy effect with Sass
 description: A technical write-up on recreating the MetaFizzy effect with Sass
 keywords:
   - sass
-  - css
+  - CSS
   - metafizzy
   - experiment
 ---

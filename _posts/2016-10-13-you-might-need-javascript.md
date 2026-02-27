@@ -3,7 +3,7 @@ title: You might need JavaScript
 description: A short reflection on when JavaScript might be needed, and the downsides of “pure CSS” solutions
 keywords:
   - js
-  - css
+  - CSS
   - accessibility
   - a11y
 ---

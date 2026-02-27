@@ -2,7 +2,7 @@
 title: 'Future of CSS layout: CSS Grid'
 description: An introduction post about CSS grid, the newest CSS layout module
 keywords:
-  - css
+  - CSS
   - grid
   - layout
 edits:

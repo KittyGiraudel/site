@@ -7,5 +7,5 @@ description: A guide on an easy way to document your Sass code
 keywords:
   - sass
   - documentation
-  - css
+  - CSS
 ---

@@ -5,7 +5,7 @@ external:
 title: A tale of CSS and Sass precision
 description: A technical write-up on CSS and Sass precision
 keywords:
-  - css
+  - CSS
   - sass
   - precision
 ---

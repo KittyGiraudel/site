@@ -2,11 +2,12 @@
 title: Accessible cards
 description: A guide to creating an accessible card component
 keywords:
-  - accessibility
-  - a11y
-  - card
-  - html
-  - css
+  - Accessibility
+  - UI
+  - UX
+  - HTML
+  - CSS
+  - Component
 ---
 
 I was recently helping my partner and their team with implementing an accessible card component. I’ve iterated a few times on the demo I created until I realized that it might be worth a blog post to walk through it since there are quite a few things going on.

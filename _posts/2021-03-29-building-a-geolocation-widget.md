@@ -1,6 +1,11 @@
 ---
 title: Building a geolocation widget
 description: A technical write-up on building a geolocation widget for the Gorillas homepage
+keywords:
+  - HTML
+  - Component
+  - Accessibility
+  - Design
 ---
 
 Gorillas being about delivering groceries, we recently released a small geolocation widget on the [homepage of our website](https://web.archive.org/web/20210310065642/https://gorillas.io/en). We’re growing fast, but there are still some areas do not serve, so we wanted to make it easily accessible for people to know whether they could use our services.

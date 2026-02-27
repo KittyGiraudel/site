@@ -3,7 +3,7 @@ title: Corner ribbon with trigonometry
 description: A technical write-up on building a corner ribbon with CSS and trigonometry
 keywords:
   - sass
-  - design
+  - Design
   - ribbon
 ---
 

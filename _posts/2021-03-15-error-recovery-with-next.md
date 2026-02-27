@@ -4,6 +4,10 @@ description: A follow-up on recovering from runtime JavaScript errors, this time
 edits:
   - date: 2021/03/16
     md: Thanks to [Maximilian Fellner’s proof of concept](https://twitter.com/mxfellner/status/1371540362662133766), I came up with a way cleaner solution than this original hack. See the [added section for the clean solution](#update-clean-solution).
+keywords:
+  - Next.js
+  - JavaScript
+  - Errors
 ---
 
 Almost 3 years ago, I wrote about [recovering from runtime JavaScript errors](/2018/08/13/recovering-from-javascript-errors/) thanks to a carefully crafted server-side rendering solution. This is something I was very proud of, and I think a testament of the quality of work that went into the N26 web platform.

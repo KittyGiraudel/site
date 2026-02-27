@@ -2,7 +2,7 @@
 title: 'The Magic Circle: a CSS brain teaser'
 description: A little CSS brain teaser on how to create a magic circle
 keywords:
-  - css
+  - CSS
   - riddle
 edits:
   - date: 2014/02/26

@@ -4,7 +4,7 @@ title: Calculating specificity in Sass
 description: A technical write-up on calculating CSS specificity in Sass
 keywords:
   - sass
-  - css
+  - CSS
   - specificity
 ---
 

@@ -2,7 +2,7 @@
 title: How I learnt to like Bootstrap
 description: A retrospective on the Bootstrap framework, and when it comes in handy
 keywords:
-  - css
+  - CSS
   - bootstrap
 edits:
   - date: 2020/12/9

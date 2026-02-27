@@ -1,6 +1,10 @@
 ---
 title: 'CSS pie timer revisited'
 description: A revisit of the pure CSS pie timer I built years ago, with an improved approach and lessons learned
+keywords:
+  - Challenge
+  - CSS
+  - HTML
 ---
 
 Almost 9 years ago, I wrote about making a [pure CSS pie timer on CSS-Tricks](https://css-tricks.com/css-pie-timer/). It’s something I struggled with and was very proud of solving at the time and I’m glad Chris let me write about it on his site.

@@ -2,7 +2,7 @@
 title: “CSS is easy”
 description: My thoughts on the common misconception that CSS is an easy language
 keywords:
-  - css
+  - CSS
   - frontend
   - backend
 ---

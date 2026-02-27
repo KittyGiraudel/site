@@ -5,8 +5,9 @@ external:
 title: Comparing React dialogs
 description: An honest comparison of React dialog libraries
 keywords:
-  - a11y
-  - react
-  - dialog
+  - Component
+  - JavaScript
+  - React
+  - Dialog
   - accessibility
 ---

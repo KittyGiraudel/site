@@ -1,6 +1,11 @@
 ---
 title: 2D-Grid helpers
 description: A technical write-up on the 2D-Grid helpers I wrote for the Advent of Code puzzles
+keywords:
+  - JavaScript
+  - TypeScript
+  - 2D
+  - AoC
 ---
 
 December is the month of [Advent of Code](https://adventofcode.com/), and with it came a lot of coding puzzles involving 2D-grids. I had a bucket of helpers under my belt, but decided to consolidate and improve them at the end of December. In this post, we’ll walk through the code ([find it on GitHub](https://github.com/KittyGiraudel/advent-of-code/blob/main/helpers/Grid.ts)).

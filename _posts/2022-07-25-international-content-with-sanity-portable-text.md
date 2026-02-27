@@ -1,6 +1,9 @@
 ---
 title: International content with Sanity Portable Text
 description: A guide on handling international content with Sanity Portable Text
+keywords:
+  - Sanity
+  - Internationalization
 ---
 
 [Portable Text](https://www.sanity.io/docs/presenting-block-text) is Sanity’s custom structured format and associated editor to author rich text documents. It is extensible and customizable to a great extent.

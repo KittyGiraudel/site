@@ -5,7 +5,7 @@ keywords:
   - accessibility
   - discreet
   - a11y
-  - css
+  - CSS
 ---
 
 When we launched “[N26 for web](https://n26.com/en-de/webapp)” a couple of weeks back, we introduced a sweet feature called the “discreet mode”. To put it simply, this switch masks all sensitive information from the user interface such as amounts and private tokens.

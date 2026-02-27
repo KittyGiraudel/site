@@ -1,6 +1,10 @@
 ---
 title: CSS-only bottom-anchored scrolling area
 description: A short technical write-up on anchoring a scrolling area to the bottom with CSS
+keywords:
+  - CSS
+  - Challenge
+  - UI
 ---
 
 Well, that title is a mouthful. This post will be short and sweet though.

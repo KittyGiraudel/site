@@ -1,6 +1,10 @@
 ---
 title: On disabled and aria-disabled attributes
 description: A write-up about the disabled and aria-disabled attributes and their impact on accessibility
+keywords:
+  - Accessibility
+  - HTML
+  - ARIA
 ---
 
 There was [this tweet](https://x.com/housecor/status/1773329972637134954?s=20) by Cory House about the `disabled` and `aria-disabled` attributes to which [I replied](https://x.com/KittyGiraudel/status/1773612870351065425?s=20) because I found it a little misleading. And I didn’t want to see like I was just making a snarky comment or something, so here is the longer version of my thoughts.

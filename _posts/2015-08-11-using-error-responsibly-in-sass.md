@@ -6,7 +6,7 @@ title: Using error responsibly in Sass
 description: A technical guide on using error responsibly in Sass
 keywords:
   - sass
-  - css
+  - CSS
   - preprocessor
   - error
 ---

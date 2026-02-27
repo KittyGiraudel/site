@@ -2,9 +2,9 @@
 title: Hiring at Gorillas
 description: A comprehensive write-up about the inclusive hiring process we have set up at Gorillas
 keywords:
-  - gorillas
-  - hiring
-  - engineering
+  - Hiring
+  - Interviews
+  - Engineering
 edits:
   - date: 2024/06/09
     md: This article was originally published on the Gorillas’ blog which has since been decommissioned following the company closing down. It was retrieved using a snapshot from the [Internet Archive](https://web.archive.org/web/20231209155847/https://gorillas.io/en/blog/how-we-hire-product-design-and-engineering).

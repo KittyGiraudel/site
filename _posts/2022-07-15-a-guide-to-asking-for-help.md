@@ -1,6 +1,8 @@
 ---
 title: 'Help me help you: a guide to asking for help'
-description: A guide to asking for help in development communityies
+description: A guide to asking for help in development communities
+keywords:
+  - Community
 ---
 
 Over the last few months, I have spent a considerable amount of time on the [Sanity community Slack](https://slack.sanity.io/) attempting to support people with their problems and questions. I have had the pleasure to chat with almost everyone from the Sanity team, and will most likely take part in their upcoming ambassador program. Long story short: I like [Sanity](https://sanity.io), and try to be a helpful community member.

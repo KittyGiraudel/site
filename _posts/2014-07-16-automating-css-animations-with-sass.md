@@ -3,7 +3,7 @@ title: Automating CSS animations with Sass
 description: A technical write-up on using Sass to ease authoring CSS animations
 keywords:
   - sass
-  - css
+  - CSS
   - animations
 ---
 

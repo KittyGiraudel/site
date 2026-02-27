@@ -2,7 +2,7 @@
 title: Colors in CSS
 description: A deep-dive into colors in CSS, how they are defined, and how to use them
 keywords:
-  - css
+  - CSS
   - colors
 ---
 

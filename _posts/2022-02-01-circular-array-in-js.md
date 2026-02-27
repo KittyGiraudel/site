@@ -1,6 +1,10 @@
 ---
 title: Circular array in JavaScript
 description: An introduction to Circularray, my homemade library for circular arrays
+keywords:
+  - JavaScript
+  - TypeScript
+  - Library
 ---
 
 I have been having fun with [Advent of Code](https://adventofcode.com/) recently. A few of the problems required some more advanced data structures than what JavaScript natively provides, such as linked lists, double-ended queues and circular arrays.

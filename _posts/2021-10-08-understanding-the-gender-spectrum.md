@@ -4,9 +4,12 @@ description: A lightweight guide gender, its spectrum, its considerations and in
 edits:
   - date: 2023/07/08
     md: I updated the section on [inclusive language](#inclusive-language) to include the term “FINTA”.
+keywords:
+  - Language
+  - Gender
 ---
 
-> I originally wrote this piece for our documentation at Gorillas in order to advocate for a more inclusive workplace. After having [mentioned it on Twitter](https://twitter.com/KittyGiraudel/status/1446436115553177670?s=20) and been requested it a few times, I decided to publish it. I hope this helps!
+I originally wrote this piece for our documentation at Gorillas in order to advocate for a more inclusive workplace. After having [mentioned it on Twitter](https://twitter.com/KittyGiraudel/status/1446436115553177670?s=20) and been requested it a few times, I decided to publish it. I hope this helps!
 
 ## Table of contents
 

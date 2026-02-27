@@ -5,7 +5,7 @@ external:
 title: Understanding CSS Modules methodology
 description: A guide on understanding the CSS Modules methodology
 keywords:
-  - css
+  - CSS
   - preprocessor
   - modules
 ---

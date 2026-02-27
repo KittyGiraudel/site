@@ -3,7 +3,7 @@ title: 'Parent selector: on has() and ^'
 description: My thoughts on the expected parent selector in CSS, and pros and cons of either proposed syntax
 keywords:
   - thoughts
-  - css
+  - CSS
   - parent selector
 ---
 

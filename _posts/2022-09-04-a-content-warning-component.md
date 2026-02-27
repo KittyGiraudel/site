@@ -1,6 +1,12 @@
 ---
 title: A content warning component
 description: An experimental journey to designing and building a content warning UI component
+keywords:
+  - UI
+  - UX
+  - Accessibility
+  - CSS
+  - Design
 ---
 
 I have already written about [content warnings on this blog](https://kittygiraudel.com/2020/12/15/a11y-advent-content-warnings/). To quote that article:
