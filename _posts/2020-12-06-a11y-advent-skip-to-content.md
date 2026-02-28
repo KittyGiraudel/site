@@ -2,6 +2,7 @@
 title: 'A11yAdvent Day 6: Skip to Content'
 description: A11yAdvent entry on skip to content links
 tags:
+  - _post
   - Accessibility
 ---
 

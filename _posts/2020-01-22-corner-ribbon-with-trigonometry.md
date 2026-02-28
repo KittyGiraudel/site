@@ -2,6 +2,7 @@
 title: Corner ribbon with trigonometry
 description: A technical write-up on building a corner ribbon with CSS and trigonometry
 tags:
+  - _post
   - Sass
   - Design
   - CSS

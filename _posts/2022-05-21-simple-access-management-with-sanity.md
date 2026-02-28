@@ -2,6 +2,7 @@
 title: Simple access management with Sanity
 description: A guide to creating a lightweight access management with Sanity
 tags:
+  - _post
   - Sanity
   - JavaScript
   - TypeScript

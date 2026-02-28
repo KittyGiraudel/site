@@ -2,6 +2,7 @@
 title: Links and accessibility
 description: A guide on links and accessibility and what to know to do things well
 tags:
+  - _post
   - Accessibility
   - HTML
 ---

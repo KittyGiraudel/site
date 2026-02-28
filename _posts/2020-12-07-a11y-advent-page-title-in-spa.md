@@ -2,6 +2,7 @@
 title: 'A11yAdvent Day 7: Page Title in SPA'
 description: A11yAdvent entry on page titles in single-page applications
 tags:
+  - _post
   - Accessibility
   - JavaScript
   - SPA

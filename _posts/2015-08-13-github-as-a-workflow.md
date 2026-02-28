@@ -2,6 +2,7 @@
 title: GitHub as a workflow
 description: A guide on using GitHub and pull requests as a workflow for task management
 tags:
+  - _post
   - GitHub
   - Process
   - CI

@@ -2,6 +2,7 @@
 title: Footnotes in 11ty
 description: A technical write-up on adding footnotes support in 11ty with Liquid
 tags:
+  - _post
   - Accessibility
   - Component
   - 11ty

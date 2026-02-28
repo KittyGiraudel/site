@@ -1,0 +1,218 @@
+---
+layout: default
+title: Stats
+permalink: /stats/
+---
+
+{% include "styles.html", partials: "components/table" %}
+
+{% markdown %}
+The metrics on this page are collected via the [eleventy-plugin-post-stats
+](https://github.com/johnwargo/eleventy-plugin-post-stats) 11ty plugin.
+The graphs at the bottom of this page are rendered using ApexCharts.
+{% endmarkdown %}
+
+{% if collections.postStats.postCount > 0 %} 
+  <h2>Global Statistics</h2>
+  <ul>
+    <li>
+      <strong>First post:</strong>
+      {{ collections.postStats.firstPostDate }}
+    </li>
+    <li>
+      <strong>Last post:</strong>
+      {{ collections.postStats.lastPostDate }}
+    </li>
+    <li>
+      <strong>Post count:</strong>
+      {{ collections.postStats.postCount }}
+    </li>
+    <li>
+      <strong>Average posts per year:</strong>
+      {{ collections.postStats.avgPostsPerYear }} (may exclude current year depending on year of last post)
+    </li>     
+    <li>
+      <strong>Average days between posts:</strong>
+      {{ collections.postStats.avgDays }}
+    </li>
+    <li>
+      <strong>Average characters per post:</strong>
+      {{ collections.postStats.avgCharacterCount }}
+    </li>
+    <li>
+      <strong>Average words per post:</strong>
+      {{ collections.postStats.avgWordCount }}
+    </li>
+    <li>
+      <strong>Average paragraphs per post:</strong>
+      {{ collections.postStats.avgParagraphCount }}
+    </li>
+    {%- if collections.postStats.avgCodeBlockCount > 0 -%}
+      <li>
+        <strong>Average code blocks per post:</strong>
+        {{ collections.postStats.avgCodeBlockCount }}
+      </li>
+    {% endif %}
+  </ul>
+
+  <h2>Yearly Statistics</h2>
+  <div class="Spreader">
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Post Count</th>
+          <th>Avgerage Days Between Posts&nbsp;</th>
+          <th>Avgerage Characters</th>
+          <th>Avgerage Words</th>
+          <th>Avgerage Paragraphs</th>
+          {% if collections.postStats.avgCodeBlockCount > 0 %}
+            <th>Avgerage Code Blocks</th>
+          {%- endif -%}
+        </tr>
+      </thead>
+      <tbody>
+        {% for year in collections.postStats.years %}
+          <tr>
+            <td>
+              <strong>{{ year.year }}</strong>
+            </td>
+            <td>{{ year.postCount }}</td>
+            <td>{{ year.avgDays }}</td>
+            <td>{{ year.avgCharacterCount }}</td>
+            <td>{{ year.avgWordCount }}</td>
+            <td>{{ year.avgParagraphCount }}</td>
+            {%- if collections.postStats.avgCodeBlockCount > 0 -%}
+              <td>{{ year.avgCodeBlockCount }}</td>
+            {%- endif -%}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Posts Heatmap</h2>
+  <div class="Spreader"><div id="heatmap"></div></div>
+
+  <h2>Data frequency</h2>
+  <div class="Spreader"><div id="statsChart1"></div></div>
+
+  <h2>Data size</h2>
+  <div class="Spreader"><div id="statsChart2"></div></div>
+
+  <h2>Data composition</h2>
+  <div class="Spreader"><div id="statsChart3"></div></div>
+{% else %}
+  <p>There is no data to display. Looks like something went wrong maybe?</p>
+{% endif %}
+
+<!-- Chart Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+  var YEARS_LENGTH = {{ collections.postStats.years.length }};
+  var CATEGORIES = [
+    {% for year in collections.postStats.years %}
+    '{{ year.year }}'{%- unless forloop.last -%}, {% endunless %}
+    {% endfor %}
+  ]
+  var NUMBER_OF_POSTS = [
+    {% for year in collections.postStats.years %}
+    {{ year.postCount }}{%- unless forloop.last -%}, {% endunless %}
+    {% endfor %}
+  ] 
+  var AVERAGE_DAYS = [
+    {% for year in collections.postStats.years %}
+    {{ year.avgDays }}{%- unless forloop.last -%}, {% endunless %}
+    {% endfor %}
+  ] 
+  var AVERAGE_POSTS = [
+    {% for year in collections.postStats.years %}
+    {{ collections.postStats.avgPostsPerYear }}{%- unless forloop.last -%}, {% endunless %}
+    {% endfor %}
+  ] 
+  var AVERAGE_CHARS =  [
+    {% for year in collections.postStats.years %}
+    {{ year.avgCharacterCount | truncate }}{%- unless forloop.last -%}, {% endunless %}
+    {% endfor %}
+  ] 
+  var AVERAGE_WORDS =  [
+    {% for year in collections.postStats.years %}
+    {{ year.avgWordCount | truncate }}{%- unless forloop.last -%}, {% endunless %}
+    {% endfor %}
+  ] 
+  var AVERAGE_PARAGRAPHS = [
+    {% for year in collections.postStats.years %}
+    {{ year.avgParagraphCount }}{%- unless forloop.last -%}, {% endunless %}
+    {% endfor %}
+  ] 
+  var AVERAGE_CODE_BLOCKS =  [
+    {% for year in collections.postStats.years %}
+    {{ year.avgCodeBlockCount }}{%- unless forloop.last -%}, {% endunless %}
+    {% endfor %}
+  ] 
+  var HEATMAP = [
+    {% for year in collections.postStats.years %}
+      {
+        name: '{{ year.year }}', 
+        data: [
+          {% for month in year.months %}
+          { x: '{{month.month}}', y: {{ month.postCount }} }{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        ]
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+  ]
+  
+  // Posts per month heatmap
+  var options = {
+    series: HEATMAP,
+    chart: { height: 100 * YEARS_LENGTH, type: 'heatmap' },
+    dataLabels: { enabled: true },
+    colors: ["#267cb9"]
+  };
+  var chart0 = new ApexCharts(document.querySelector("#heatmap"), options);
+  chart0.render();
+
+  var options1 = {
+    chart: { type: 'line' },
+    series: [
+      { type: 'column', name: 'Number of Posts', data: NUMBER_OF_POSTS  },
+      { type: 'line', name: 'Avg. Days Between Posts', data: AVERAGE_DAYS },       
+      { type: 'line', name: 'Avg. Posts/Year', data: AVERAGE_POSTS }
+    ],
+    dataLabels: { enabled: true, enabledOnSeries: [0, 1] },
+    stroke: { curve: 'smooth' },
+    xaxis: { categories: CATEGORIES }
+  }
+
+  var chart1 = new ApexCharts(document.querySelector("#statsChart1"), options1);
+  chart1.render();
+
+  var options2 = {
+    chart: { type: 'line' },
+    series: [
+      { type: 'column', name: 'Avg. Characters/Post', data: AVERAGE_CHARS },
+      { type: 'line', name: 'Avg. Words/Post', data: AVERAGE_WORDS }
+    ],
+    dataLabels: { enabled: true, enabledOnSeries: [0, 1] },
+    stroke: { curve: 'smooth' },
+    xaxis: { categories: CATEGORIES }
+  }
+
+  var chart2 = new ApexCharts(document.querySelector("#statsChart2"), options2);
+  chart2.render();
+
+  var options3 = {
+    chart: { type: 'line' },
+    series: [ 
+      { type: 'column', name: 'Avg. Paragraphs per Post', data: AVERAGE_PARAGRAPHS },
+      { type: 'line', name: 'Avg. Code Blocks per Post', data: AVERAGE_CODE_BLOCKS }      
+    ],
+    dataLabels: { enabled: true, enabledOnSeries: [0, 1] },
+    stroke: { curve: 'smooth' },
+    xaxis: { categories: CATEGORIES }
+  }
+
+  var chart3 = new ApexCharts(document.querySelector("#statsChart3"), options3);
+  chart3.render();
+</script>

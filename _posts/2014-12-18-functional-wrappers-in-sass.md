@@ -5,5 +5,6 @@ external:
 title: Functional wrappers in Sass
 description: A technical write-up on using functional wrappers in Sass
 tags:
+  - _post
   - Sass
 ---

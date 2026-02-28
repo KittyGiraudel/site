@@ -5,6 +5,7 @@ external:
 title: What’s up with SassDoc 1.2?
 description: An announcement post about version 1.2 of SassDoc
 tags:
+  - _post
   - Sass
   - Documentation
   - Release

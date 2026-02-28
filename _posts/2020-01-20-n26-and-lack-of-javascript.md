@@ -2,6 +2,7 @@
 title: N26 and lack of JavaScript
 description: A note on how the N26 web app behaves when JavaScript is disabled
 tags:
+  - _post
   - Accessibility
   - JavaScript
   - UX

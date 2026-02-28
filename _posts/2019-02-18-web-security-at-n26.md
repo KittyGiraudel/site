@@ -5,5 +5,6 @@ external:
 title: Web security at N26
 description: A deep-dive into the web security approach at N26
 tags:
+  - _post
   - Security
 ---

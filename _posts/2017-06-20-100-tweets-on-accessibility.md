@@ -2,6 +2,7 @@
 title: 100 tweets on accessibility
 description: A 100-tweet long Twitter thread about accessibility
 tags:
+  - _post
   - Accessibility
 ---
 

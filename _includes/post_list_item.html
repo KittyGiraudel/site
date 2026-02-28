@@ -23,9 +23,11 @@
   {% if data.tags %}
   <ul class="List__tags">
     {% for tag in data.tags | sort %}
-    <li class="List__tag">
-      <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>
-    </li>
+      {% if tag != "_post" %}
+        <li class="List__tag">
+          <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
   {% endif %}

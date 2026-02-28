@@ -2,6 +2,7 @@
 title: 'A11yAdvent Day 17: Anxiety'
 description: A11yAdvent entry on anxiety and the web
 tags:
+  - _post
   - Accessibility
 ---
 

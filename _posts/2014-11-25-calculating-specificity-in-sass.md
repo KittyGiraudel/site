@@ -3,6 +3,7 @@ guest: David Khourshid
 title: Calculating specificity in Sass
 description: A technical write-up on calculating CSS specificity in Sass
 tags:
+  - _post
   - Sass
   - CSS
 ---

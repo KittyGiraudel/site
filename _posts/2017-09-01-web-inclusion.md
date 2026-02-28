@@ -6,6 +6,7 @@ lang: ru
 title: Инклюзивность в веб-разработке
 description: 'Инклюзивность в веб-разработке'
 tags:
+  - _post
   - Interview
   - Accessibility
   - Podcast

@@ -5,6 +5,7 @@ external:
 title: A CRUD JavaScript class
 description: A technical write-up about building a small CRUD utility in JavaScript
 tags:
+  - _post
   - JavaScript
   - CRUD
   - Release

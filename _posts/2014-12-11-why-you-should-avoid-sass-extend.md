@@ -5,5 +5,6 @@ external:
 title: Why you should avoid Sass extend
 description: A guide on Sass extend, and why you should maybe avoid it
 tags:
+  - _post
   - Sass
 ---

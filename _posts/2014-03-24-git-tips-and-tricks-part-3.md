@@ -3,6 +3,7 @@ guest: Loïc Giraudel
 title: Git tips and tricks – Part 3
 description: A guest post by Loïc Giraudel on advanced git and how to get the most of it
 tags:
+  - _post
   - git
 ---
 

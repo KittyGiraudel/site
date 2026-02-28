@@ -5,6 +5,7 @@ external:
 title: About fintech and accessibility
 description: A conversation about fintech and accessibility
 tags:
+  - _post
   - AMA
   - Accessibility
 ---

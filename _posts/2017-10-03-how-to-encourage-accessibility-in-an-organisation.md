@@ -5,6 +5,7 @@ external:
 title: How to encourage accessibility in an organisation?
 description: A guide on how to encourage accessibility in an organisation
 tags:
+  - _post
   - AMA
   - Accessibility
   - Thoughts

@@ -1,6 +1,7 @@
 ---
 title: My journey writing a watchdog script
 tags:
+  - _post
   - Rust
   - Observability
 ---

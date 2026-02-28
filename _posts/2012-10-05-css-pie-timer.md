@@ -5,6 +5,7 @@ external:
 title: CSS pie timer
 description: A CSS experiment aiming at making a CSS pie timer without JavaScript
 tags:
+  - _post
   - CSS
   - Component
 ---

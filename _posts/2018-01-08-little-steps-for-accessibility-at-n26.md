@@ -2,6 +2,7 @@
 title: Little steps for accessibility at N26
 description: A reflection on the small steps we took for accessibility at N26
 tags:
+  - _post
   - Accessibility
   - Retrospective
 ---

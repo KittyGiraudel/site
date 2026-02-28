@@ -2,6 +2,7 @@
 title: Injecting element in Liquid content
 description: A technical write-up on how to find a specific spot within a Liquid post content to inject an element.
 tags:
+  - _post
   - JavaScript
   - Liquid
   - HTML

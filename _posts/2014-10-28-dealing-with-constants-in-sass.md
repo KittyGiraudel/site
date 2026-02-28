@@ -5,5 +5,6 @@ external:
 title: Dealing with constants in Sass
 description: A guide on dealing with constants in Sass
 tags:
+  - _post
   - Sass
 ---

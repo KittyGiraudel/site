@@ -5,6 +5,7 @@ external:
 title: The importance of code reviews
 description: A guide on the importance of code reviews
 tags:
+  - _post
   - Engineering
   - git
   - Thoughts

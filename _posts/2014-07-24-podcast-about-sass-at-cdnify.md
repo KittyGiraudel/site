@@ -5,6 +5,7 @@ external:
 title: Podcast about Sass at CDNify
 description: A podcast about Sass at CDNify
 tags:
+  - _post
   - Podcast
   - Sass
 ---

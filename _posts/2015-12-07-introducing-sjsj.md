@@ -2,6 +2,7 @@
 title: Introducing Simplified JavaScript Jargon
 description: An announcement post for SJSJ, a glossary of JavaScript related terms
 tags:
+  - _post
   - JavaScript
   - Open Source
   - Release

@@ -2,6 +2,7 @@
 title: 'The Magic Circle: a CSS brain teaser'
 description: A little CSS brain teaser on how to create a magic circle
 tags:
+  - _post
   - CSS
   - Challenge
 edits:

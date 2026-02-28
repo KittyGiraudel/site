@@ -2,6 +2,7 @@
 title: Why element queries matter
 description: A look at element queries, how they differ from media queries, and why they matter
 tags:
+  - _post
   - CSS
   - Thoughts
 ---

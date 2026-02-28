@@ -2,6 +2,7 @@
 title: Sass mindfuck
 description: A rant about things that I find frustrating about Sass
 tags:
+  - _post
   - Sass
   - Rant
 ---

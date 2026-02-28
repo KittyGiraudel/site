@@ -5,5 +5,6 @@ external:
 title: A bulletproof function to validate lengths in Sass
 description: 'A technical write-up on building a bulletproof function to validate lengths in Sass'
 tags:
+  - _post
   - Sass
 ---

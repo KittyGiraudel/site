@@ -5,6 +5,7 @@ external:
 title: Setting up a living styleguide in Jekyll
 description: A technical write-up about setting up a living styleguide in Jekyll
 tags:
+  - _post
   - Jekyll
   - Component
 ---

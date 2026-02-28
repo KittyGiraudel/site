@@ -5,6 +5,7 @@ external:
 title: Tilted angles in Sass
 description: A technical write-up about tilted angles in Sass
 tags:
+  - _post
   - CSS
   - Sass
 ---

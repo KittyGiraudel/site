@@ -2,6 +2,7 @@
 title: Accessible links and buttons with React
 description: A guide on building accessible links and buttons in React
 tags:
+  - _post
   - Accessibility
   - React
   - Component

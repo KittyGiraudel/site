@@ -2,6 +2,7 @@
 title: Sassy Media Queries
 description: A technical write-up about using Sass to shorten a complicated CSS experiment
 tags:
+  - _post
   - Sass
 ---
 

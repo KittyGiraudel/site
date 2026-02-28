@@ -2,6 +2,7 @@
 title: Building a geolocation widget
 description: A technical write-up on building a geolocation widget for the Gorillas homepage
 tags:
+  - _post
   - HTML
   - Component
   - Accessibility

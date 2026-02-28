@@ -2,6 +2,7 @@
 title: 'SassySort: sorting algorithms in Sass'
 description: An announcement post for SassySort, an experimental library implementing various sorting algorithms in Sass
 tags:
+  - _post
   - Sass
   - Release
   - Open Source

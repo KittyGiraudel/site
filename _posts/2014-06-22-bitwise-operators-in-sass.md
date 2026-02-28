@@ -2,6 +2,7 @@
 title: Bitwise operators in Sass
 description: A technical write-up on the experimental implementation of bitwise operators in Sass
 tags:
+  - _post
   - Sass
   - Release
   - Open Source

@@ -5,6 +5,7 @@ external:
 title: Inline CSS in Jekyll
 description: A technical write-up on using inline CSS in Jekyll
 tags:
+  - _post
   - CSS
   - Sass
   - Jekyll

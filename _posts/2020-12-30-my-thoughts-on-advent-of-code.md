@@ -2,6 +2,7 @@
 title: My thoughts on Advent of Code
 description: A reflection on participating in Advent of Code
 tags:
+  - _post
   - AoC
   - Retrospective
 ---

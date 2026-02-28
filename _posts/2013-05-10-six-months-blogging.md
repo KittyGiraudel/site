@@ -2,6 +2,7 @@
 title: Six months of blogging
 description: A retrospective on the last 6 months spent blogging on my own website
 tags:
+  - _post
   - Retrospective
   - Writing
 ---

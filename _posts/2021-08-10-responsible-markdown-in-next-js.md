@@ -5,6 +5,7 @@ external:
 title: Responsible Markdown in Next.js
 description: A technical write-up on using Markdown in Next.js, how to parse it and render it safely
 tags:
+  - _post
   - Next.js
   - Markdown
   - JavaScript

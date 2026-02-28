@@ -2,6 +2,7 @@
 title: Using create-react-app on Netlify
 description: A technical write-up on using Create-React-App on Netlify
 tags:
+  - _post
   - Netlify
   - React
   - SPA

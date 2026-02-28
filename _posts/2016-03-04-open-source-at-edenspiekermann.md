@@ -5,5 +5,6 @@ external:
 title: Open Source at Edenspiekermann
 description: A look at open source work at Edenspiekermann
 tags:
+  - _post
   - Open Source
 ---

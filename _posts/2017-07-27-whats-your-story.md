@@ -5,6 +5,7 @@ external:
 title: What’s your story?
 description: A retrospective post about my professional journey
 tags:
+  - _post
   - Retrospective
   - AMA
 ---

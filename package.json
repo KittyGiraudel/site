@@ -15,6 +15,7 @@
     "@zachleat/heading-anchors": "^1.0.5",
     "cheerio": "^1.2.0",
     "eleventy-plugin-footnotes": "^0.11.0",
+    "eleventy-plugin-post-stats": "^0.2.13",
     "emoji-regex": "^10.6.0",
     "emoji-short-name": "^2.1.0",
     "html-minifier": "^4.0.0",

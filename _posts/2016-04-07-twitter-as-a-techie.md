@@ -2,6 +2,7 @@
 title: Twitter as a techie
 description: A short reflection on being a techie on Twitter and how I use this social network
 tags:
+  - _post
   - Engineering
   - Retrospective
   - Thoughts

@@ -2,6 +2,7 @@
 title: Resolving Webpack aliases in Node
 description: A technical write-up on resolving Webpack aliases in Node when you need to reference aliased paths outside the bundle
 tags:
+  - _post
   - Webpack
   - JavaScript
   - Node.js

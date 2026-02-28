@@ -5,5 +5,6 @@ external:
 title: Sass multiple arguments, lists or arglists
 description: A guide on when to use multiple arguments, lists or arglists in Sass
 tags:
+  - _post
   - Sass
 ---

@@ -2,6 +2,7 @@
 title: Introducing spritesh
 description: An announcement post for Spritesh, a Bash library to generate a SVG sprite for icons
 tags:
+  - _post
   - SVG
   - Bash
   - Release

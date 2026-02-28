@@ -3,6 +3,7 @@ guest: Christoph Rumpel
 title: Your work is not good enough
 description: A guest article by Christoph Rumpel on the imposter syndrom and the feeling of always having to keep up
 tags:
+  - _post
   - Thoughts
 ---
 

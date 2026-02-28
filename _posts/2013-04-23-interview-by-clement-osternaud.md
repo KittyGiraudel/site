@@ -2,6 +2,7 @@
 title: Interview by Clément Osternaud
 description: My interview by Clément Osternaud on my professional journey, frontend and CSS
 tags:
+  - _post
   - Interview
   - Retrospective
 ---

@@ -2,6 +2,7 @@
 title: How I use Git
 description: A look at my Git workflow, aliases and habits
 tags:
+  - _post
   - git
   - Retrospective
   - Process

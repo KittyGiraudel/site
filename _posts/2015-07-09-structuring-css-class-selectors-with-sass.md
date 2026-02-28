@@ -5,6 +5,7 @@ external:
 title: Structuring CSS class selectors with Sass
 description: A technical guide on structuring CSS class selectors with Sass
 tags:
+  - _post
   - Sass
   - CSS
   - Architecture

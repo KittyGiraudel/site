@@ -5,6 +5,7 @@ external:
 title: MetaFizzy effect with Sass
 description: A technical write-up on recreating the MetaFizzy effect with Sass
 tags:
+  - _post
   - Sass
   - CSS
 ---

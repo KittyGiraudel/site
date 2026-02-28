@@ -17,6 +17,7 @@ function search() {
         return `<ul class="List__tags">
           ${value
             .sort((a, b) => a.localeCompare(b))
+            .filter(tag => tag !== "_post")
             .map(tag => `<li class="List__tag">
               <a href="/tags/${tag.toLowerCase().replace(/\s/g, '-')}">${tag}</a>
             </li>`)

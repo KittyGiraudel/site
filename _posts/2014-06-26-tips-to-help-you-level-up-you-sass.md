@@ -5,5 +5,6 @@ external:
 title: Tips to help you level up your Sass
 description: A collection of tips to help you level up your Sass
 tags:
+  - _post
   - Sass
 ---

@@ -3,6 +3,7 @@ title: A11y Advent Calendar
 description: An introduction to the A11y Advent calendar and publishing an accessibility tip a day
 date: 2020-12-01T10:00:00.000Z
 tags:
+  - _post
   - Accessibility
 ---
 

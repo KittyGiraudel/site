@@ -2,6 +2,7 @@
 title: 'A11yAdvent Day 2: Evaluating Accessibility'
 description: A11yAdvent entry on evaluating accessibility with WCAG
 tags:
+  - _post
   - Accessibility
 ---
 

@@ -2,6 +2,7 @@
 title: Casting a map into a list in Sass
 description: A technical write-up into casting a Sass map into a list
 tags:
+  - _post
   - Sass
 ---
 

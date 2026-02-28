@@ -5,5 +5,6 @@ external:
 title: Building an ad manager with Symfony
 description: A technical write-up on building an ad manager with Symfony
 tags:
+  - _post
   - PHP
 ---

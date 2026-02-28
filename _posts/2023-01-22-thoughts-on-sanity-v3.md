@@ -2,6 +2,7 @@
 title: Thoughts on Sanity Studio v3
 description: My personal thoughts about Sanity version 3, its difference with version 2, and what is good and less good
 tags:
+  - _post
   - Thoughts
   - JavaScript
   - Sanity

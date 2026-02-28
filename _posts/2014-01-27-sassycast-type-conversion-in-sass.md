@@ -2,6 +2,7 @@
 title: 'SassyCast: type conversion in Sass'
 description: An announcement post about SassyCast, a small library to convert between types in Sass
 tags:
+  - _post
   - Sass
   - Release
   - Open Source

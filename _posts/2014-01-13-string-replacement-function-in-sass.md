@@ -2,6 +2,7 @@
 title: String replacement function in Sass
 description: A technical write-up about writing a Sass function to replace a substring inside a string
 tags:
+  - _post
   - Sass
 ---
 

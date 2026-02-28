@@ -1,6 +1,7 @@
 ---
 title: Six months of Rust
 tags:
+  - _post
   - Rust
   - Retrospective
 ---

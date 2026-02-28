@@ -2,6 +2,7 @@
 title: 'A11yAdvent Day 21: Testing Accessibility'
 description: A11yAdvent entry on testing accessibility
 tags:
+  - _post
   - Accessibility
   - Testing
 ---

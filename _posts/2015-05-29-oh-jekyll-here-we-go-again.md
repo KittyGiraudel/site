@@ -2,6 +2,7 @@
 title: Oh Jekyll, here we go again…
 description: A retrospective on moving the blog to Jekyll back again after having been on Mixture
 tags:
+  - _post
   - Jekyll
   - Retrospective
   - Liquid

@@ -2,6 +2,7 @@
 title: Introducing Countdown.js
 description: A small announcement post for the Countdown.js library, a small utility to handle counters and countdowns
 tags:
+  - _post
   - JavaScript
   - Release
   - Open Source

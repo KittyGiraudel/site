@@ -5,6 +5,7 @@ external:
 title: Is Compass to Sass what jQuery is to JavaScript?
 description: A thinking post on Compass and jQuery and their position as frameworks
 tags:
+  - _post
   - Sass
   - Compass
   - JavaScript

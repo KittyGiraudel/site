@@ -5,6 +5,7 @@ external:
 title: Comparing React dialogs
 description: An honest comparison of React dialog libraries
 tags:
+  - _post
   - Component
   - JavaScript
   - React

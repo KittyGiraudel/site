@@ -7,6 +7,7 @@ edits:
   - date: 2022/10/05
     md: A lot of people asked about the differences with using a hidden DOM element (like a `<div>` for instance), so I added [a section about it](#why-not-a-hidden-element).
 tags:
+  - _post
   - HTML
   - JavaScript
 ---

@@ -5,6 +5,7 @@ external:
 title: Brainstorming on Dev Couch
 description: A post about the Dev Couch concept at Edenspiekermann
 tags:
+  - _post
   - Engineering
   - Thoughts
 ---

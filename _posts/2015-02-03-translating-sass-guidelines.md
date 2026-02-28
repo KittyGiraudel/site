@@ -2,6 +2,7 @@
 title: Translating Sass Guidelines
 description: A short announcement on translating Sass Guidelines in multiple languages
 tags:
+  - _post
   - Sass
   - Internationalisation
   - Open Source

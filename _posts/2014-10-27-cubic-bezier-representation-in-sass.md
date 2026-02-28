@@ -2,6 +2,7 @@
 title: Cubic Bézier representation in Sass
 description: A technical write-up on representing cubic-bezier in Sass with help from Tim Severien
 tags:
+  - _post
   - Sass
   - CSS
 ---

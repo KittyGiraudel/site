@@ -5,6 +5,7 @@ external:
 title: An easy way to document your Sass code
 description: A guide on an easy way to document your Sass code
 tags:
+  - _post
   - Sass
   - Documentation
   - CSS

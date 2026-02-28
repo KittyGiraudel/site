@@ -5,6 +5,7 @@ external:
 title: JavaScript functional testing with Nightwatch.js
 description: A guide to using Nightwatch.js for JavaScript functional testing
 tags:
+  - _post
   - JavaScript
   - Testing
 ---

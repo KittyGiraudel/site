@@ -5,6 +5,7 @@ external:
 title: SassDoc, a documentation tool for Sass
 description: An announcement post for SassDoc, a documentation tool for Sass
 tags:
+  - _post
   - Sass
   - Documentation
   - Release

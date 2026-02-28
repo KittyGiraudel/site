@@ -2,6 +2,7 @@ import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import * as cheerio from 'cheerio'
 import footnotes from 'eleventy-plugin-footnotes'
+import pluginStats from 'eleventy-plugin-post-stats'
 import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
 import htmlmin from 'html-minifier'
@@ -27,6 +28,7 @@ export default function (config) {
   config.addPlugin(syntaxHighlight)
   config.addPlugin(footnotes)
   config.addPlugin(IdAttributePlugin, { slugify: uslugify })
+  config.addPlugin(pluginStats, { tags: ['_post'], debugMode: false })
 
   // Pass through static files; the CSS file is handled through Sass and
   // therefore not explicitly passed through here
@@ -161,7 +163,11 @@ function sortBy(array, key) {
 }
 
 function dateToXmlSchema(value) {
-  return new Date(value).toISOString()
+  try {
+    return new Date(value).toISOString()
+  } catch {
+    return value
+  }
 }
 
 function dateToRFC3339(value) {
@@ -173,19 +179,23 @@ function dateToRFC3339(value) {
 }
 
 function dateToString(value) {
-  const date = new Date(value)
-  const formatter = new Intl.DateTimeFormat('en', {
-    year: 'numeric',
-    month: 'long',
-    day: '2-digit',
-  })
-  const parts = formatter.formatToParts(date)
-  const month = parts[0].value
-  const day = Number(parts[2].value)
-  const year = parts[4].value
-  const suffix = ['st', 'nd', 'rd'][day - 1] || 'th'
+  try {
+    const date = new Date(value)
+    const formatter = new Intl.DateTimeFormat('en', {
+      year: 'numeric',
+      month: 'long',
+      day: '2-digit',
+    })
+    const parts = formatter.formatToParts(date)
+    const month = parts[0].value
+    const day = Number(parts[2].value)
+    const year = parts[4].value
+    const suffix = ['st', 'nd', 'rd'][day - 1] || 'th'
 
-  return `${month} ${day}${suffix}, ${year}`
+    return `${month} ${day}${suffix}, ${year}`
+  } catch {
+    return value
+  }
 }
 
 function groupBy(array, key) {

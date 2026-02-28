@@ -2,6 +2,7 @@
 title: Stop fucking up code learning
 description: A reflective and ranty post on the messy approach to teaching coding nowadays
 tags:
+  - _post
   - CSS
   - Rant
 ---

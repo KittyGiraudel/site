@@ -2,6 +2,7 @@
 title: 'A11yAdvent Day 5: Document Outline'
 description: A11yAdvent entry on the Document Outline
 tags:
+  - _post
   - Accessibility
 ---
 

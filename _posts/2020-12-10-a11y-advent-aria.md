@@ -2,6 +2,7 @@
 title: 'A11yAdvent Day 10: ARIA'
 description: A11yAdvent entry on ARIA
 tags:
+  - _post
   - Accessibility
   - ARIA
 ---

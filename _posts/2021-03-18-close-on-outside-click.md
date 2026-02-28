@@ -2,6 +2,7 @@
 title: Closing on outside click
 description: A technical write-up on closing a menu on outside click or tab-out, as used on the Gorillas navigation
 tags:
+  - _post
   - Accessibility
   - JavaScript
   - React

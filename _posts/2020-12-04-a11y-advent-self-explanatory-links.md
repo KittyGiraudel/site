@@ -2,6 +2,7 @@
 title: 'A11yAdvent Day 4: Self-Explanatory Links'
 description: A11yAdvent entry on self-explanatory links
 tags:
+  - _post
   - Accessibility
 ---
 

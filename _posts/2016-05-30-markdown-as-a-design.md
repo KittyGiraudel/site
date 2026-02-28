@@ -2,6 +2,7 @@
 title: Markdown as a design
 description: An announcement post for the redesign of my blog using Markdown style
 tags:
+  - _post
   - Markdown
   - Design
   - CSS

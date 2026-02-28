@@ -2,6 +2,7 @@
 title: Introducing iframify
 description: An announcement post for iframify, a small library to encapsulate a widget in an iframe
 tags:
+  - _post
   - JavaScript
   - Release
   - Open Source

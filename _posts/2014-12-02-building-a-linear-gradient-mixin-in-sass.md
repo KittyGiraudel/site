@@ -5,5 +5,6 @@ external:
 title: Building a linear-gradient mixin in Sass
 description: A technical write-up on building a linear-gradient mixin in Sass
 tags:
+  - _post
   - Sass
 ---

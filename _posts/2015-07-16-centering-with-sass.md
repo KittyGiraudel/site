@@ -5,6 +5,7 @@ external:
 title: Centering with Sass
 description: A technical guide on centering with Sass
 tags:
+  - _post
   - Sass
   - CSS
 ---

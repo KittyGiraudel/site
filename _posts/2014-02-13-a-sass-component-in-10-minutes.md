@@ -5,6 +5,7 @@ external:
 title: A Sass component in 10 minutes
 description: A guide on how writing a small reusable Sass components from scratch
 tags:
+  - _post
   - Sass
   - Component
 ---

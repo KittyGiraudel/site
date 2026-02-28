@@ -3,6 +3,7 @@ guest: Daniel Guillan
 title: Modernizr Sass mixin
 description: A guest post by Daniel Guillan on writing a Sass mixin to help using Modernizr
 tags:
+  - _post
   - Sass
 ---
 

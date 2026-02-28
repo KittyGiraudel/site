@@ -2,6 +2,7 @@
 title: What’s up at Browserhacks?
 description: A review of the recent improvements on the Browserhacks project
 tags:
+  - _post
   - CSS
   - JavaScript
   - Open Source
