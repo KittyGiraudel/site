@@ -2,7 +2,7 @@
 title: Moving to Jekyll
 description: My feedback after having moved my website onto GitHub Pages, built with Jekyll
 tags:
-  - _post
+  - posts
   - Jekyll
   - Retrospective
   - Liquid

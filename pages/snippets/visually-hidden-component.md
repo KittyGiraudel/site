@@ -1,11 +1,17 @@
 ---
 layout: snippet
-tags: snippets
 title: '&lt;VisuallyHidden /&gt;'
 description: React component to visually hide a component but not for screen-readers
 permalink: /snippets/visually-hidden-component/
 language: React
+date: 2020-01-16
 related: /2020/01/16/accessible-visibility-react-component/
+tags:
+  - snippets
+  - Component
+  - React
+  - Accessibility
+  - CSS
 ---
 
 The `<VisuallyHidden />` React component aims at visually hiding a piece of text while leaving it accessible for assistive technologies such as screen-readers.

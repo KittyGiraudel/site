@@ -2,7 +2,7 @@
 title: How I built Tetris with Unity
 description: A look at a Tetris project I’ve built with Unity during my studies
 tags:
-  - _post
+  - posts
   - Unity
 ---
 

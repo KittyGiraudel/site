@@ -2,7 +2,7 @@
 title: 'A11yAdvent Day 19: Performance'
 description: A11yAdvent entry on performance as an accessibility topic
 tags:
-  - _post
+  - posts
   - Accessibility
   - Performance
 ---

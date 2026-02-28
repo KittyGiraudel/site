@@ -28,7 +28,7 @@ export default function (config) {
   config.addPlugin(syntaxHighlight)
   config.addPlugin(footnotes)
   config.addPlugin(IdAttributePlugin, { slugify: uslugify })
-  config.addPlugin(pluginStats, { tags: ['_post'], debugMode: false })
+  config.addPlugin(pluginStats, { tags: ['posts'], debugMode: false })
 
   // Pass through static files; the CSS file is handled through Sass and
   // therefore not explicitly passed through here
@@ -89,7 +89,7 @@ export default function (config) {
   config.addCollection('posts', collection =>
     collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
   )
-
+ 
   return {
     dir: {
       output: './_site',
@@ -153,13 +153,13 @@ function where(array, key, value) {
 function sortBy(array, key) {
   return array
     .slice(0)
-    .sort((a, b) =>
-      a[key].toLowerCase() < b[key].toLowerCase()
-        ? -1
-        : a[key].toLowerCase() > b[key].toLowerCase()
-          ? 1
-          : 0,
-    )
+    .sort((a, b) => {
+      if (typeof a === 'string' && typeof b === 'string') 
+        return a[key]?.localeCompare(b[key])
+      if (typeof a instanceof Date && typeof b instanceof Date)
+        return a.getTime() - b.getTime()
+      return 0
+    })
 }
 
 function dateToXmlSchema(value) {

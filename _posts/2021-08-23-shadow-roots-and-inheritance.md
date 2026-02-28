@@ -2,7 +2,7 @@
 title: Shadow roots and inheritance
 description: A short explanation of an unintuitive behavior of CSS and shadow roots
 tags:
-  - _post
+  - posts
   - CSS
   - Shadow DOM
   - HTML

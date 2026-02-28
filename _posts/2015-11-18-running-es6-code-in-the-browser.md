@@ -2,7 +2,7 @@
 title: Running ES6 code in the browser
 description: A technical write-up on running ES6 code in the browser
 tags:
-  - _post
+  - posts
   - JavaScript
 ---
 

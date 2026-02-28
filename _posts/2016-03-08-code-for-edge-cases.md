@@ -2,7 +2,7 @@
 title: Code for edge cases
 description: A reflection on coding for edge cases and defensive programming
 tags:
-  - _post
+  - posts
   - JavaScript
   - Thoughts
 ---

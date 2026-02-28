@@ -2,7 +2,7 @@
 title: Introducing A11y Toggle
 description: An announcement post for a11y-toggle, a small library for accessible toggle widgets
 tags:
-  - _post
+  - posts
   - Component
   - Release
   - Accessibility

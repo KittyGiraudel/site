@@ -2,7 +2,7 @@
 title: Digging into my slides about Sass
 description: A longer version of my recent talk at Kiwi Party, digging into my slides about Sass
 tags:
-  - _post
+  - posts
   - Sass
   - Conference
 ---

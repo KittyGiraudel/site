@@ -5,7 +5,7 @@ external:
 title: A working SVG workflow for accessible icons
 description: A guide on coming up with a working SVG workflow for accessible icons
 tags:
-  - _post
+  - posts
   - SVG
   - Process
 ---

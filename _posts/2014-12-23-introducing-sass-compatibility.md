@@ -5,7 +5,7 @@ external:
 title: Introducing Sass-Compatibility
 description: An announcement post for Sass-Compatibility
 tags:
-  - _post
+  - posts
   - Sass
   - Release
   - Open Source

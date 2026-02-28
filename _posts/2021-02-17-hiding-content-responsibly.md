@@ -5,7 +5,7 @@ edits:
   - date: 2021/02/25
     md: Vincent Valentin pointed out on Twitter that he has [a very detailed tabular version on CodePen](https://codepen.io/vincent-valentin/full/JjGmxzV). Thank you for sharing!
 tags:
-  - _post
+  - posts
   - Accessibility
   - UI
   - CSS

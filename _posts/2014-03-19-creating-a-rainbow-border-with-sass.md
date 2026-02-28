@@ -5,6 +5,6 @@ external:
 title: Creating a rainbow border with Sass
 description: A technical write-up on creating a rainbow border with Sass
 tags:
-  - _post
+  - posts
   - Sass
 ---

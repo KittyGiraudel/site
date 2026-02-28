@@ -2,7 +2,7 @@
 title: Feedback on dotCSS 2014
 description: A retrospective on speaking at dotCSS in Paris in 2014
 tags:
-  - _post
+  - posts
   - Retrospective
   - Conference
   - Sass

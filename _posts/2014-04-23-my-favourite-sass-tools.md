@@ -5,7 +5,7 @@ external:
 title: My favourite Sass tools
 description: A look at my favorite Sass tools
 tags:
-  - _post
+  - posts
   - Sass
   - Tooling
 ---

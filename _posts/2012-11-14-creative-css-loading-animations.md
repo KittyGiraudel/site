@@ -5,7 +5,7 @@ external:
 title: Creative CSS loading animations
 description: A gallery of creative CSS loading animations
 tags:
-  - _post
+  - posts
   - CSS
   - Design
   - Animations

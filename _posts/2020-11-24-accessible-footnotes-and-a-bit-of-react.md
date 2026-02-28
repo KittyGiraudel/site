@@ -2,7 +2,7 @@
 title: Accessible footnotes and a bit of React
 description: A technical write-up on accessible footnotes and a React implementation
 tags:
-  - _post
+  - posts
   - Component
   - Writing
   - Accessibility

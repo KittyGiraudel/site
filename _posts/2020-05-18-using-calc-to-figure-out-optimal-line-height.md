@@ -3,7 +3,7 @@ guest: Jesús Ricarte
 title: Using calc to figure out optimal line-height
 description: A guest post by Jesús Ricarte on using calc() to figure out optimal line-height
 tags:
-  - _post
+  - posts
   - CSS
   - Typography
 ---

@@ -5,7 +5,7 @@ external:
 title: Using error responsibly in Sass
 description: A technical guide on using error responsibly in Sass
 tags:
-  - _post
+  - posts
   - Sass
   - Errors
   - Debug

@@ -2,7 +2,7 @@
 title: 'SassyJSON: talk to the browser!'
 description: An announcement post about the experimental SassyJSON library, implementation a JSON parser and serializer in Sass
 tags:
-  - _post
+  - posts
   - Sass
   - JSON
   - Release

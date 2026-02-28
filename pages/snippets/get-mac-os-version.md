@@ -1,11 +1,15 @@
 ---
 layout: snippet
-tags: snippets
 title: getMacOsVersion()
 description: Retrieving the macOS version
 permalink: /snippets/get-mac-os-version/
 language: Node.js
+date: 2020-09-09
 related: /2020/09/09/writing-a-debug-script/
+tags:
+  - snippets
+  - Node.js
+  - Debug
 ---
 
 If you ever need to programmatically display the current macOS version from a Node.js script but do not want to rely on external dependencies such as [macos-release](https://github.com/sindresorhus/macos-release) or [os-name](https://github.com/sindresorhus/os-name), you can use the following technique:

@@ -1,11 +1,14 @@
 ---
 layout: snippet
-tags: snippets
 title: groom_dead_code()
 description: Small bash function to find dead code in a JavaScript project
 permalink: /snippets/groom-dead-code/
 language: Bash
+date: 2020-11-18
 related: /2020/11/18/looking-for-dead-code/
+tags:
+  - snippets
+  - Bash
 ---
 
 This `groom_dead_code` Bash function performs loose grep checks to figure out whether files & folders in a given directory are imported in JavaScript files (either with `require` or `import`). It can lead to false positives though, tread carefully.

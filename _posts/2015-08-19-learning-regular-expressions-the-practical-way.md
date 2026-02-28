@@ -2,7 +2,7 @@
 title: 'Learning regular expressions: the practical way'
 description: A guide on learning regular expressions in a practical way
 tags:
-  - _post
+  - posts
   - Regex
 ---
 

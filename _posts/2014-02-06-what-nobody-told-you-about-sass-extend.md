@@ -5,6 +5,6 @@ external:
 title: What nobody told you about Sass @extend
 description: A guide on the @extend directive in Sass and what you should know about it
 tags:
-  - _post
+  - posts
   - Sass
 ---

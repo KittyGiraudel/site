@@ -1,9 +1,9 @@
-{% assign url = post.url %}
-{% assign data = post.data %}
+{% assign url  = item.url %}
+{% assign data = item.data %}
 
 <li class="List__item">
   <span class="List__secondary-content">
-    {{ post.date | time }}
+    {{ item.date | time }}
     {% if data.guest %} by {{ data.guest }}{% endif %}
     {% if data.external %} at {{ data.external.host }}{% endif %}
   </span>
@@ -16,14 +16,14 @@
   </a>
   {% else %}
   <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
-    lang="{{ data.lang | downcase }}" {% endif %} href="{{ post.url }}">
+    lang="{{ data.lang | downcase }}" {% endif %} href="{{ item.url }}">
     {{ data.title }}
   </a>
   {% endif %}
   {% if data.tags %}
   <ul class="List__tags">
     {% for tag in data.tags | sort %}
-      {% if tag != "_post" %}
+      {% if tag != "posts" and tag != "snippets" %}
         <li class="List__tag">
           <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>
         </li>

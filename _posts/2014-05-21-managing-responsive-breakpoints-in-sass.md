@@ -5,7 +5,7 @@ external:
 title: Managing responsive breakpoints in Sass
 description: A technical write-up on managing responsive breakpoints in Sass
 tags:
-  - _post
+  - posts
   - Sass
   - Responsive
 ---

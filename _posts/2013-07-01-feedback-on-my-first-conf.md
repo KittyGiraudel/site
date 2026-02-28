@@ -2,7 +2,7 @@
 title: Feedback on my first conference
 description: Retrospective on my experience at Kiwi Party, my first conference
 tags:
-  - _post
+  - posts
   - Retrospective
   - Conference
 ---

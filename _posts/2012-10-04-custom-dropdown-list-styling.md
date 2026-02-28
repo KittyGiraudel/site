@@ -5,7 +5,7 @@ external:
 title: Custom dropdown list styling
 description: A gallery of custom dropdown lists styled with CSS
 tags:
-  - _post
+  - posts
   - Component
   - Design
   - CSS

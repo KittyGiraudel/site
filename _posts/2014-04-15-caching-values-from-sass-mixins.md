@@ -5,6 +5,6 @@ external:
 title: Caching values from Sass mixins
 description: A technical write-up on caching values from Sass mixins
 tags:
-  - _post
+  - posts
   - Sass
 ---

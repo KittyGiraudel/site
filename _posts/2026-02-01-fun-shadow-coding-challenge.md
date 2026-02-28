@@ -2,7 +2,7 @@
 title: Fun shadow coding challenge
 description: A short technical write-up on my approach to this fun little challenge by Andy Bell
 tags:
-  - _post
+  - posts
   - CSS
   - Challenge
   - Shadow DOM

@@ -2,7 +2,7 @@
 title: Syncing a site between GitHub and Jekyll
 description: A technical write-up on syncing a site between GitHub and Jekyll
 tags:
-  - _post
+  - posts
   - Jekyll
   - GitHub
 ---

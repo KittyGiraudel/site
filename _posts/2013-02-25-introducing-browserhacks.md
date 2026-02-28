@@ -2,7 +2,7 @@
 title: Introducing Browserhacks
 description: An announcement post about Browserhacks, a project aiming at listing browser specific CSS hacks
 tags:
-  - _post
+  - posts
   - CSS
   - Open Source
 ---

@@ -2,7 +2,7 @@
 title: Feedback on another conference
 description: A retrospective on my 2nd conference, the FeWeb in Belgium
 tags:
-  - _post
+  - posts
   - Retrospective
   - Conference
   - Sass

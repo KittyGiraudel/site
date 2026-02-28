@@ -1,11 +1,14 @@
 ---
 layout: snippet
-tags: snippets
 title: git-config
 description: Drop-in advanced git configuration file
 permalink: /snippets/git-config/
 language: Git
+date: 2018-02-17
 related: /2018/02/17/how-i-use-git/
+tags:
+  - snippets
+  - git
 ---
 
 Here is my personal git configuration (living in `~/.gitconfig`) with comments to explain what every option does.

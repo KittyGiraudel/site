@@ -1,10 +1,13 @@
 ---
 layout: snippet
-tags: snippets
 title: Portable-Text links
 description: GROQ rich text query to retrieve all links used in Portable Text
 permalink: /snippets/portable-text-links/
 language: GROQ
+tags:
+  - snippets
+  - Sanity
+  - GROQ
 ---
 
 Provided you have a rich text (portable text) field called `body`, you can query all links it contains like this:

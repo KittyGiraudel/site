@@ -5,6 +5,6 @@ external:
 title: Hacking a routing component in Jekyll
 description: A technical write-up on hacking a routing component in Jekyll
 tags:
-  - _post
+  - posts
   - Jekyll
 ---

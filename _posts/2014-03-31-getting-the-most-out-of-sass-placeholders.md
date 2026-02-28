@@ -2,7 +2,7 @@
 title: Getting the most out of Sass placeholders
 description: A guide on getting the most from Sass placeholders
 tags:
-  - _post
+  - posts
   - Sass
 ---
 

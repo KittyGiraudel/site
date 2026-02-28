@@ -2,7 +2,7 @@
 title: 'A11yAdvent Day 9: Forms'
 description: A11yAdvent entry on forms and accessibility
 tags:
-  - _post
+  - posts
   - Accessibility
 ---
 

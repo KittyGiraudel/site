@@ -1,7 +1,7 @@
 ---
 title: My journey writing a watchdog script
 tags:
-  - _post
+  - posts
   - Rust
   - Observability
 ---
@@ -326,7 +326,7 @@ This actually works quite nicely. During the next incident, players started gett
 One concern I had was how to handle times where we’d expect low or no traffic. There are 2 main cases for this:
 
 - Infrequent planned maintenances. I was not overly concerned with this, because I knew I could still manually turn off the systemd service, which in turn would stop the watchdog. Not perfect, but still acceptable especially if documented.
-- Post-deployment windows. We do not have blue/green deployments: our bootstrapping script runs `cargo build`, then kill the existing server and immediately runs `cargo run`. There is a brief 1–2 seconds window where players see a connection screen. My main worry was that the health check would see too few players shortly after a deployment, 3 times in a row, and restart the server again, effectively triggering a restart loop.
+- posts-deployment windows. We do not have blue/green deployments: our bootstrapping script runs `cargo build`, then kill the existing server and immediately runs `cargo run`. There is a brief 1–2 seconds window where players see a connection screen. My main worry was that the health check would see too few players shortly after a deployment, 3 times in a row, and restart the server again, effectively triggering a restart loop.
 
 To work around the latter problem, I decided to define a “grace period”, during which the health check would not look at the population. For X minutes after the server starts, the population check would essentially be ignored, even if there are less players than the threshold. This allows for a slow refill of the player count.
 

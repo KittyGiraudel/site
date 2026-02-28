@@ -2,7 +2,7 @@
 title: A couple Sass functions
 description: A look into some Sass functions that are worth keeping at the handy
 tags:
-  - _post
+  - posts
   - Sass
 ---
 

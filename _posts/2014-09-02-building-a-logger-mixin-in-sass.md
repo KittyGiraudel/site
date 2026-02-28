@@ -5,7 +5,7 @@ external:
 title: Building a logger mixin in Sass
 description: A technical write-up on building a logger mixin in Sass
 tags:
-  - _post
+  - posts
   - Sass
   - Debug
 ---

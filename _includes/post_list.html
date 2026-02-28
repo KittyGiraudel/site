@@ -1,5 +1,5 @@
 <ul class="List">
-  {% for post in posts %}
-  {% include "post_list_item.html", post: post %}
+  {% for item in items %}
+    {% include "post_list_item.html", item: item %}
   {% endfor %}
 </ul>

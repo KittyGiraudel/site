@@ -2,7 +2,7 @@
 title: 'A11yAdvent Day 8: Alternative Text to Images'
 description: A11yAdvent entry on alternative text for images
 tags:
-  - _post
+  - posts
   - Accessibility
 ---
 

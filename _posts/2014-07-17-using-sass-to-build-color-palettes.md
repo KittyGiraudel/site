@@ -5,6 +5,6 @@ external:
 title: Using Sass to build color palettes
 description: A technical write-up on using Sass to build color palettes
 tags:
-  - _post
+  - posts
   - Sass
 ---

@@ -5,6 +5,6 @@ external:
 title: CSS click events
 description: A technical writeup about capturing and reacting to click events in CSS, without JavaScript
 tags:
-  - _post
+  - posts
   - CSS
 ---

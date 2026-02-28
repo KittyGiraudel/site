@@ -5,7 +5,7 @@ external:
 title: Introducing Jump Start Sass
 description: An announcement post to introduce Jump Start Sass, my latest book on Sass
 tags:
-  - _post
+  - posts
   - CSS
   - Sass
   - Open Source

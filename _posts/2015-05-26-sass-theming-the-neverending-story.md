@@ -5,6 +5,6 @@ external:
 title: 'Sass theming: the neverending story'
 description: A technical write-up on using Sass to build themes
 tags:
-  - _post
+  - posts
   - Sass
 ---

@@ -2,7 +2,7 @@
 title: Sass mixin for offsets
 description: A technical write-up on building a Sass mixin to ease the use of CSS offsets
 tags:
-  - _post
+  - posts
   - Sass
 edits:
   - date: 2014/05/19

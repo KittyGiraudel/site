@@ -1,11 +1,15 @@
 ---
 layout: snippet
-tags: snippets
 title: .sr-only {}
 description: CSS utility class to visually content but not for screen-readers
 permalink: /snippets/sr-only-class/
 language: CSS
+date: 2016-10-13
 related: /2016/10/13/css-hide-and-seek/
+tags:
+  - snippets
+  - CSS
+  - Accessibility
 ---
 
 The `.sr-only` class is a utility class aiming at visually hiding the element while keeping it accessible to assistive technologies such as screen-readers. It relies on a carefully designed combination of declarations for maximum support, and `!important` bangs to make sure to override any more specific CSS.

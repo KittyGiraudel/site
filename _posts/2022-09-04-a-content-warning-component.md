@@ -2,7 +2,7 @@
 title: A content warning component
 description: An experimental journey to designing and building a content warning UI component
 tags:
-  - _post
+  - posts
   - UI
   - UX
   - Accessibility

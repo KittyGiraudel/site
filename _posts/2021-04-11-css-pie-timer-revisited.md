@@ -2,7 +2,7 @@
 title: 'CSS pie timer revisited'
 description: A revisit of the pure CSS pie timer I built years ago, with an improved approach and lessons learned
 tags:
-  - _post
+  - posts
   - Challenge
   - CSS
   - HTML

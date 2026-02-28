@@ -1,11 +1,16 @@
 ---
 layout: snippet
-tags: snippets
 title: '&lt;IconLink /&gt;'
 description: A small React component to render accessible icon links
 permalink: /snippets/icon-link-component/
 language: React
+date: 2020-12-10
 related: /2020/12/10/accessible-icon-links/
+tags:
+  - snippets
+  - Component
+  - React
+  - Accessibility
 ---
 
 The `<IconLink />` React component aims at rendering icons as links while making them accessible for assistive technologies such as screen-readers. It relies on the [`<VisuallyHidden />` component](/snippets/visually-hidden-component/).

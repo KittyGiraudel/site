@@ -1,11 +1,17 @@
 ---
 layout: snippet
-tags: snippets
 title: getLastNpmInstall()
 description: Retrieving the last time npm dependencies were installed
 permalink: /snippets/get-last-npm-install/
 language: Node.js
+date: 2020-09-09
 related: /2020/09/09/writing-a-debug-script/
+tags:
+  - snippets
+  - npm
+  - Dependencies
+  - Node.js
+  - Debug
 ---
 
 For debugging purposes, I needed to figure out when were `node_modules` last installed. It turns out to be surprisingly tricky to do.

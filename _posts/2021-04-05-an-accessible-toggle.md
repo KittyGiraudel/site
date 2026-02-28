@@ -2,7 +2,7 @@
 title: An accessible toggle
 description: A guide on building an accessible toggle component, from semantics to keyboard and screen reader support
 tags:
-  - _post
+  - posts
   - Accessibility
   - HTML
   - Component

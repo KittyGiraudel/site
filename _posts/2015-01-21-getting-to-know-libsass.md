@@ -5,6 +5,6 @@ external:
 title: Getting to know LibSass
 description: An introduction to LibSass and what to know about it
 tags:
-  - _post
+  - posts
   - Sass
 ---

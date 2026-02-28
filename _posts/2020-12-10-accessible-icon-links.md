@@ -2,7 +2,7 @@
 title: Accessible icon links
 description: A technical write-up on building accessible icon-only links
 tags:
-  - _post
+  - posts
   - Accessibility
   - React
   - Component

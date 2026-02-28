@@ -5,7 +5,7 @@ external:
 title: 'Speaking on SassBites #42'
 description: A podcast episode about Sass
 tags:
-  - _post
+  - posts
   - Sass
   - Podcast
 ---

@@ -2,7 +2,7 @@
 title: 'Simulate float: down'
 description: A technical write-up about simulating a conceptual float down CSS declaration
 tags:
-  - _post
+  - posts
   - CSS
   - Challenge
 edits:

@@ -7,18 +7,19 @@ pagination:
   filter:
     - all
     - posts
+    - snippets
 permalink: /tags/{{ tag | slugify }}/
 eleventyComputed:
   description: All the posts that are tagged with “{{ tag }}”.
   title: "{{ tag }}"
 ---
 
-{% assign taglist = collections[ tag ] | reverse %}
-{% assign count = taglist | size %}
+{% assign items = collections[ tag ] | reverse %}
+{% assign count = items | size %}
 
 {% info %}
-This page lists {% if count == 1 %}the *one* article{% else %}all <strong>{{ count }}</strong> articles{% endif %} tagged with the word “{{ tag }}”.
+This page lists {% if count == 1 %}the *one* entry{% else %}all <strong>{{ count }}</strong> entries{% endif %} tagged with the word “{{ tag }}”.
 I hope you find what you’re looking for. 🚀 If looking for something specific, try the [search](/blog/search).
 {% endinfo %}
 
-{% include "post_list.html", posts: taglist %}
+{% include "post_list.html", items: items %}

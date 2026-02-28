@@ -2,7 +2,7 @@
 title: Cursor for UI work
 description: A retrospective on using Cursor for a small and creative little frontend project
 tags:
-  - _post
+  - posts
   - Frontend
   - AI
   - Cursor

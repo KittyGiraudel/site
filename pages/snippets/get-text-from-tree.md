@@ -1,10 +1,13 @@
 ---
 layout: snippet
-tags: snippets
 title: getTextFromTree()
 description: Retrieving text from a React component tree
 permalink: /snippets/get-text-from-tree/
 language: React
+date: ~
+tags:
+  - snippets
+  - React
 ---
 
 When working with React, it might sometimes be necessary to get a plain text representation of a tree of components. This small utility function (which is probably not bulletproof) can help doing just that:

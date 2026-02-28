@@ -5,7 +5,7 @@ external:
 title: Preloading images in parallel with promises
 description: A technical write-up on preloading images in parallel with promises
 tags:
-  - _post
+  - posts
   - JavaScript
   - Performance
 ---

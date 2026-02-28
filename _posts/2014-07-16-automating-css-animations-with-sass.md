@@ -2,7 +2,7 @@
 title: Automating CSS animations with Sass
 description: A technical write-up on using Sass to ease authoring CSS animations
 tags:
-  - _post
+  - posts
   - Sass
   - CSS
   - Animations

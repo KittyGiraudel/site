@@ -2,7 +2,7 @@
 title: Apollo GraphQL without JavaScript
 description: A technical write-up on using Apollo GraphQL when JavaScript is disabled
 tags:
-  - _post
+  - posts
   - JavaScript
   - GraphQL
   - Apollo

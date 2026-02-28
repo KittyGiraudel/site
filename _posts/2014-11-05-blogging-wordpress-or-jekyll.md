@@ -6,7 +6,7 @@ layout: post
 title: 'Blogging: WordPress or Jekyll'
 description: A comparison of WordPress and Jekyll for blogging
 tags:
-  - _post
+  - posts
   - WordPress
   - Jekyll
   - Writing

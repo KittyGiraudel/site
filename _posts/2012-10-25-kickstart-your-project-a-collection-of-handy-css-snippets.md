@@ -5,6 +5,6 @@ external:
 title: 'Kickstart your project: a collection of handy CSS snippets'
 description: A collection of handy CSS snippets worth bringing into a project
 tags:
-  - _post
+  - posts
   - CSS
 ---

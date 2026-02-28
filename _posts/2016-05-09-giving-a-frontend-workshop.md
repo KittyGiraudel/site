@@ -2,7 +2,7 @@
 title: Giving a frontend workshop
 description: A retrospective on giving a frontend workshop for non-techies at Edenspiekermann
 tags:
-  - _post
+  - posts
   - Retrospective
   - HTML
   - CSS

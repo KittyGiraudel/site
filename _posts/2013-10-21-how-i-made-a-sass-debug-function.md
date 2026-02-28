@@ -2,7 +2,7 @@
 title: How I made a Sass debug function
 description: A technical write-up on creating a function to debug Sass data
 tags:
-  - _post
+  - posts
   - Sass
   - Debug
 ---

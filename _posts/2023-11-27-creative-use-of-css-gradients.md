@@ -2,7 +2,7 @@
 title: Creative use of CSS gradients
 description: A technical write-up about a clever use of CSS gradients to mark chapters on a video play bar
 tags:
-  - _post
+  - posts
   - CSS
   - UI
 ---

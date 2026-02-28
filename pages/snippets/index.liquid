@@ -18,31 +18,30 @@ paste them with minor effort.
 
 {% include "ad.html" %}
 
-{% assign snippets = collections.snippets | group_by: 'data.language' %}
-{% assign languages = snippets | sort_by: "name" %}
+{% assign snippets = collections.snippets | sort_by: 'date' %}
 
 <ul class="List">
-  {% for language in languages %}
-  {% for snippet in language.items %}
-  {% assign related_post = '' %}
-
-  {% if snippet.data.related %}
-  {% for post in collections.posts %}
-  {% if post.url == snippet.data.related %}
-  {% assign related_post = post %}
-  {% endif %}
-  {% endfor %}
-  {% endif %}
-
+  {% for snippet in snippets %}
   <li class="List__item">
-    <span class="List__secondary-content">
-      {{ snippet.data.language }}{% if related_post.date %} ❦ {{ related_post.date | time }}{% endif %}
-    </span>
+    {% if snippet.date %}
+      <span class="List__secondary-content">
+        {{ snippet.date | time }}
+      </span>
+    {% endif %}
 
     <a class="List__primary-content" href="{{ snippet.url }}">
       {{ snippet.data.title }}
     </a>
+
+    <ul class="List__tags">
+      {% for tag in snippet.data.tags %}
+        {% if tag != "snippets" %}
+          <li class="List__tag">
+            <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
   </li>
-  {% endfor %}
   {% endfor %}
 </ul>

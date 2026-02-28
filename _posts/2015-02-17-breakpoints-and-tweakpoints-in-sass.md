@@ -5,7 +5,7 @@ external:
 title: Breakpoints and tweakpoints in Sass
 description: A technical write-up on breakpoints and tweakpoints in Sass
 tags:
-  - _post
+  - posts
   - Sass
   - Responsive
 ---

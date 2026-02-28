@@ -2,7 +2,7 @@
 title: A CSS challenge
 description: My approach to this little CSS challenge by Raphaël Goetter
 tags:
-  - _post
+  - posts
   - CSS
   - Challenge
 ---

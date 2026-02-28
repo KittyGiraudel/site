@@ -5,6 +5,6 @@ external:
   host: CSS-Tricks
   url: https://css-tricks.com/there-is-no-normal/
 tags:
-  - _post
+  - posts
   - Thoughts
 ---

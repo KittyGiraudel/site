@@ -2,7 +2,7 @@
 title: 30 frontend tips
 description: A collection of 30 frontend tips I’ve learnt the hard way to celebrate me turning 30
 tags:
-  - _post
+  - posts
   - Retrospective
   - Frontend
   - Engineering

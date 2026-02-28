@@ -5,6 +5,6 @@ external:
 title: Extra map functions in Sass
 description: A technical write-up about advanced custom functions for Sass maps
 tags:
-  - _post
+  - posts
   - Sass
 ---

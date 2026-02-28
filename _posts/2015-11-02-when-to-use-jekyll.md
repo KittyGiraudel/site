@@ -5,7 +5,7 @@ external:
 title: When to use Jekyll?
 description: A guide on when to use Jekyll
 tags:
-  - _post
+  - posts
   - Jekyll
   - AMA
 ---

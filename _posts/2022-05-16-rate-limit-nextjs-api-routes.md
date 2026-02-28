@@ -2,7 +2,7 @@
 title: Rate-limit Next.js API routes
 description: A technical write-up about protecting Next.js API routes with rate limiting
 tags:
-  - _post
+  - posts
   - JavaScript
   - Next.js
   - Security

@@ -2,7 +2,7 @@
 title: Inlining scripts and styles in 11ty
 description: A technical write-up on inlining scripts and styles in 11ty for performance
 tags:
-  - _post
+  - posts
   - 11ty
   - Performance
   - JavaScript

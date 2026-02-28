@@ -2,7 +2,7 @@
 title: Parallel tests with GitHub Actions
 description: A technical write-up about running tests in parallel in a GitHub workflow
 tags:
-  - _post
+  - posts
   - Testing
   - GitHub
   - CI

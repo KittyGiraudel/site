@@ -2,7 +2,7 @@
 title: Advanced Sass list functions
 description: A look at a collection of home-made functions to do advanced list manipulation in Sass
 tags:
-  - _post
+  - posts
   - Sass
 ---
 

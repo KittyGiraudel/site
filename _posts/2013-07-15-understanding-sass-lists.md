@@ -2,7 +2,7 @@
 title: Understanding Sass lists
 description: A technical deep-dive into the list type in Sass, and what to know to use them well
 tags:
-  - _post
+  - posts
   - Sass
 edits:
   - date: 2015/05/28

@@ -2,7 +2,7 @@
 title: Use lengths, not strings
 description: A guide on using proper Sass lengths instead of strings for more idiomatic Sass
 tags:
-  - _post
+  - posts
   - Sass
 ---
 

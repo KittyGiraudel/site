@@ -2,7 +2,7 @@
 title: Shipping code at N26
 description: A reflection on how we ship code at N26
 tags:
-  - _post
+  - posts
   - Retrospective
   - Testing
   - Engineering

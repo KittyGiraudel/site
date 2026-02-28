@@ -1,11 +1,15 @@
 ---
 layout: snippet
-tags: snippets
 title: hasInternetAccess()
 description: Check whether there is currently access to internet
 permalink: /snippets/has-internet-access/
 language: Node.js
+date: 2020-09-09
 related: /2020/09/09/writing-a-debug-script/
+tags:
+  - snippets
+  - Node.js
+  - Debug
 ---
 
 I needed a way to detect internet access as part of a local Node.js script and it turns out to be a little convoluted as there is no built-in way to do that (which is not too surprising either). The gist is to try resolving the Google DNS (or any other, really but Google felt like a fine choice).

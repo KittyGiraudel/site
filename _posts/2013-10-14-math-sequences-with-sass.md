@@ -2,7 +2,7 @@
 title: Math sequences with Sass
 description: A technical write-up on experimental functions to generate popular math sequences in Sass
 tags:
-  - _post
+  - posts
   - Sass
 ---
 

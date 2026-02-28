@@ -2,7 +2,7 @@
 title: 'A11yAdvent Day 11: Emojis'
 description: A11yAdvent entry on emojis and accessibility
 tags:
-  - _post
+  - posts
   - Accessibility
 ---
 

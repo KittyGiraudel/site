@@ -5,7 +5,7 @@ external:
 title: 'Semantic Versioning: why you should be using it'
 description: A guide on semantic versioning and why it matters deeply
 tags:
-  - _post
+  - posts
   - Retrospective
   - Open Source
 ---

@@ -1,11 +1,15 @@
 ---
 layout: snippet
-tags: snippets
 title: groom_dependencies()
 description: Small bash function to retrieve unused npm dependencies
 permalink: /snippets/groom-dependencies/
 language: Bash
+date: 2020-11-19
 related: /2020/11/19/managing-npm-dependencies/
+tags:
+  - snippets
+  - Bash
+  - Dependencies
 ---
 
 This `groom_dependencies` Bash function performs loose grep checks to figure out whether `package.json` dependencies are imported in JavaScript files (either with `require` or `import`). It can lead to false positives though, tread carefully.

@@ -2,7 +2,7 @@
 title: From ESLint and Prettier to Biome
 description: A technical write-up on my journey migrating from ESLint + Prettier to Biome
 tags:
-  - _post
+  - posts
   - JavaScript
   - Tooling
 ---

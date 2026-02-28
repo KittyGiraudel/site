@@ -2,7 +2,7 @@
 title: Introducing a11y-dialog v3
 description: An announcement post for the 3rd version of a11y-dialog
 tags:
-  - _post
+  - posts
   - JavaScript
   - Accessibility
   - Dialog

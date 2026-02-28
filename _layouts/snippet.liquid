@@ -19,8 +19,8 @@ layout: default
 
     {% if related_post %}
       <p class="PostDate">
-        {% if related_post.date %}
-          {{ related_post.date | time }} <span class="Fleuron">❦</span> 
+        {% if date and show_date != false %}
+          {{ date | time }} <span class="Fleuron">❦</span> 
         {% endif %}
         From <a href="{{ related }}">{{ related_post.data.title }}</a>
       </p>

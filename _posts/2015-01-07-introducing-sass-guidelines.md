@@ -2,7 +2,7 @@
 title: Introducing Sass Guidelines
 description: An announcement post for Sass Guidelines, a styleguide for clean and scalable Sass
 tags:
-  - _post
+  - posts
   - Sass
   - Release
   - Open Source

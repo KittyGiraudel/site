@@ -5,7 +5,7 @@ external:
 title: A creative grid system with Sass and calc()
 description: A technical write-up on designing a creative grid system with Sass and CSS calc
 tags:
-  - _post
+  - posts
   - Sass
   - CSS
 ---

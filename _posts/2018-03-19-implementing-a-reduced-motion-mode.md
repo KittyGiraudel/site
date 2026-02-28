@@ -2,7 +2,7 @@
 title: Implementing a reduced-motion mode
 description: A guide on implementing a reduced motion mode that respects user preferences
 tags:
-  - _post
+  - posts
   - Accessibility
   - UX
   - Animations

@@ -5,7 +5,7 @@ external:
 title: Do you believe in God?
 description: A personal write-up on my relationship with belief and religion
 tags:
-  - _post
+  - posts
   - AMA
   - Thoughts
 ---
