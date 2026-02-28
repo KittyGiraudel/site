@@ -43,7 +43,7 @@
 
 @media (min-width: 1024px) {
   /**
-   * 1. Increase width so the blockquote/info container looks wider than the
+   * 1. Increase width so the info container looks wider than the
    *    body text, but the text within it is aligned with the body text.
    */
   .Info {
@@ -54,14 +54,14 @@
 }
 
 /**
- * 1. Prevent an odd gap when the first child of blockquote has a top margin
+ * 1. Prevent an odd gap when the first child of the info has a top margin
  */
 .Info > :first-child {
   margin-top: 0; /* 1 */
 }
 
 /**
- * 1. Prevent an odd gap when the last child of blockquote has a bottom margin
+ * 1. Prevent an odd gap when the last child of the info has a bottom margin
  */
 .Info > :last-child {
   margin-bottom: 0; /* 1 */
