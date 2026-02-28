@@ -5,7 +5,6 @@ description: GROQ rich text query to retrieve all links used in Portable Text
 permalink: /snippets/portable-text-links/
 language: GROQ
 tags:
-  - snippets
   - Sanity
   - GROQ
 ---

@@ -7,7 +7,6 @@ language: CSS
 date: 2016-10-13
 related: /2016/10/13/css-hide-and-seek/
 tags:
-  - snippets
   - CSS
   - Accessibility
 ---

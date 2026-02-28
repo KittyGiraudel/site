@@ -5,7 +5,6 @@ description: Short VSC configuration to trim out all the distracting fluff
 permalink: /snippets/vsc-lite/
 language: VSC
 tags:
-  - snippets
 ---
 
 I _love_ Visual Studio Code. It’s a fantastic editor, and I could not picture myself using anything else. But it’s so distracting in many aspects. There is _so much_ going on. So many things on the screen you don’t even realise is there.

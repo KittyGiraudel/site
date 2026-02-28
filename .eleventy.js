@@ -89,6 +89,14 @@ export default function (config) {
   config.addCollection('posts', collection =>
     collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
   )
+
+  config.addCollection('snippets', collection =>
+    collection.getFilteredByGlob('pages/snippets/*.md')
+  )
+
+  config.addCollection('recipes', collection =>
+    collection.getFilteredByGlob('pages/recipes/*.md')
+  )
  
   return {
     dir: {

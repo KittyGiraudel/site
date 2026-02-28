@@ -1,5 +1,4 @@
 ---
-tags: recipes
 layout: recipe
 permalink: /blog/recipes/reblochon-burger/
 title: Reblochon Burger

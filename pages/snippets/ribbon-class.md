@@ -7,7 +7,6 @@ language: CSS
 date: 2020-01-22
 related: /2020/01/22/corner-ribbon-with-trigonometry/
 tags:
-  - snippets
   - CSS
 ---
 

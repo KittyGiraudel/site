@@ -7,7 +7,6 @@ language: Node.js
 date: 2020-09-09
 related: /2020/09/09/writing-a-debug-script/
 tags:
-  - snippets
   - Node.js
   - Debug
 ---

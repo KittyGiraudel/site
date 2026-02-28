@@ -7,7 +7,6 @@ language: Bash
 date: 2020-11-18
 related: /2020/11/18/looking-for-dead-code/
 tags:
-  - snippets
   - Bash
 ---
 

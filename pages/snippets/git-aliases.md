@@ -7,7 +7,6 @@ language: Git
 date: 2018-02-17
 related: /2018/02/17/how-i-use-git/
 tags:
-  - snippets
   - git
 ---
 

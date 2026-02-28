@@ -7,7 +7,6 @@ language: Bash
 date: 2020-11-19
 related: /2020/11/19/managing-npm-dependencies/
 tags:
-  - snippets
   - Bash
   - Dependencies
 ---

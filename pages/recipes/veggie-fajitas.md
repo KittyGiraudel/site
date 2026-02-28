@@ -1,5 +1,4 @@
 ---
-tags: recipes
 layout: recipe
 permalink: /blog/recipes/veggie-fajitas/
 title: Veggie Fajitas

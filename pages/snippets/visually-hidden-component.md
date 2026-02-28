@@ -7,7 +7,6 @@ language: React
 date: 2020-01-16
 related: /2020/01/16/accessible-visibility-react-component/
 tags:
-  - snippets
   - Component
   - React
   - Accessibility

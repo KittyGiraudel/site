@@ -6,7 +6,6 @@ permalink: /snippets/get-text-from-tree/
 language: React
 date: ~
 tags:
-  - snippets
   - React
 ---
 

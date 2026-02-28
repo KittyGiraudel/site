@@ -7,7 +7,6 @@ language: zsh
 date: 2022-10-29
 related: /2022/10/29/making-sense-of-zsh/
 tags:
-  - snippets
   - zsh
   - Bash
 ---
