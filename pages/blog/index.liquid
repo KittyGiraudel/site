@@ -5,9 +5,9 @@ description: "All articles from me, published on this site as well as at other p
 CSS-Tricks. Also contains some guest posts."
 pagination: { data: collections.posts, size: 10, alias: posts }
 keywords:
-- blog
-- writing
-- articles
+  - blog
+  - writing
+  - articles
 permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
