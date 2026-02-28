@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (
         link.host === window.location.host &&
         localStorage.getItem(
-          'visited-' + link.pathname + link.pathname.endsWith('/') ? '' : '/'
+          'visited-' + link.pathname + (link.pathname.endsWith('/') ? '' : '/')
         )
       )
         link.dataset.visited = true
