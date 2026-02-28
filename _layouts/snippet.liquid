@@ -17,9 +17,11 @@ layout: default
       {% endif %}
     {% endfor %}
 
+    {% if related_post %}
     <p class="PostDate">
       {{ related_post.date | time }} <span class="Fleuron">❦</span> From <a href="{{ related }}">{{ related_post.data.title }}</a>
     </p>
+    {% endif %}
   {% endif %}
 
   {% assign parts = content | split_content %}
