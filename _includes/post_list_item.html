@@ -23,7 +23,7 @@
   {% if data.tags %}
   <ul class="List__tags">
     {% for tag in data.tags | sort %}
-      {% if tag != "posts" and tag != "snippets" %}
+      {% if tag != "posts" %}
         <li>
           <a class="List__tag" href="/tags/{{ tag | slugify }}">{{ tag }}</a>
         </li>

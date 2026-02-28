@@ -34,11 +34,9 @@ paste them with minor effort.
 
     <ul class="List__tags">
       {% for tag in snippet.data.tags %}
-        {% if tag != "snippets" %}
-          <li>
-            <a class="List__tag" href="/tags/{{ tag | slugify }}">{{ tag }}</a>
-          </li>
-        {% endif %}
+        <li>
+          <a class="List__tag" href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+        </li>
       {% endfor %}
     </ul>
   </li>
