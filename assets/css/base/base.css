@@ -20,9 +20,8 @@
   --vb-2: calc(var(--vb) * 2);
 }
 
-.dark {
-  color-scheme: dark;
-}
+.dark { color-scheme: dark; }
+.light { color-scheme: light; }
 
 /**
  * 1. Set up a decent box model on the root element.

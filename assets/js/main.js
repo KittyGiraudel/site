@@ -68,10 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Represent three states for assistive tech and styling.
     if (theme === Theme.DARK) {
+      document.documentElement.classList.remove('light')
+      document.documentElement.classList.add('dark')
       themeButton.setAttribute('aria-pressed', 'true')
     } else if (theme === Theme.LIGHT) {
+      document.documentElement.classList.add('light')
+      document.documentElement.classList.remove('dark')
       themeButton.setAttribute('aria-pressed', 'false')
     } else {
+      document.documentElement.classList.remove('light')
+      document.documentElement.classList.remove('dark')
       themeButton.setAttribute('aria-pressed', 'mixed')
     }
 
