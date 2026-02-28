@@ -31,7 +31,7 @@ Could you tell us a little bit more about Codrops? Where did the idea came from 
 >
 > What I do is to plan, design, implement and write tutorials together with my partner [Pedro](https://twitter.com/o_telho). I also manage the blog and review articles by our writers.
 
-Why did you choose to land on Wordpress? Who did the development (CSS, scripts and stuff)?
+Why did you choose to land on WordPress? Who did the development (CSS, scripts and stuff)?
 
 > WordPress seemed like the most fitting blog engine at the time and I’ve been happy with it ever since. I love the community around it. All the development and implementation was done by me and Pedro.
 

@@ -21,7 +21,7 @@ So let’s try a not-so-easy exercise: write a script to optimise a directory of
 
 > Shell scripting is a powerful skill to improve development efficiency by automating common tasks.
 
-But first, a simple warning: don’t expect big optimisations. To have the best results, you have to decrease the image quality but it’s better to do this manually than automatically. We are going to script simple operations that remove metadata and other losslessly informations.
+But first, a simple warning: don’t expect big optimisations. To have the best results, you have to decrease the image quality but it’s better to do this manually than automatically. We are going to script simple operations that remove metadata and other losslessly information.
 
 I’m working on Linux environment so this script will be a Bash script. Don’t worry! I will start with an introduction to Bash scripting in a Windows environment.
 
@@ -34,11 +34,11 @@ To be able to run Linux scripts on Windows, there are two methods:
 1. use a Virtual Machine with a Linux distribution on it,
 1. use a Linux simulator.
 
-Since it can be quite a pain to set up a virtual machine, we will go for the latter with [Cygwin](http://www.cygwin.com/). Cygwin is a Linux simulator. Go to the [download section](http://cygwin.com/install.html), grab the `setup.exe` file and execute it to launch the installer. You can leave all settings by default until you get to the step asking you which packages to install.
+Since it can be quite a pain to set up a virtual machine, we will go for the latter with [Cygwin](https://www.cygwin.com/). Cygwin is a Linux simulator. Go to the [download section](https://cygwin.com/install.html), grab the `setup.exe` file and execute it to launch the installer. You can leave all settings by default until you get to the step asking you which packages to install.
 
 <figure class="figure">
 <img src="/assets/images/optimising-with-bash/cygwin.png" alt="" />
-<figcaption><a href="http://www.cygwin.com/">Cygwin</a> is a Linux simulator</figcaption>
+<figcaption><a href="https://www.cygwin.com/">Cygwin</a> is a Linux simulator</figcaption>
 </figure>
 
 To add a package, click on the _"Skip"_ label to switch it to a package version. Search for the following packages and add them (clicking on _"Skip"_ is enough):
@@ -70,7 +70,7 @@ For each file, our script is going to run _optipng_ and _pngcrush_ for PNG files
 
 <figure class="figure">
 <img src="/assets/images/optimising-with-bash/optipng.png" alt="" />
-<figcaption>PNG optimisation with <a href="http://optipng.sourceforge.net/">optipng</a></figcaption>
+<figcaption>PNG optimisation with <a href="https://optipng.sourceforge.net/">optipng</a></figcaption>
 </figure>
 
 {% info %}The `-o7` parameter force optipng to use the slowest mode. The fastest is `-o0`.{% endinfo %}
@@ -79,14 +79,14 @@ Then _pngcrush_:
 
 <figure class="figure">
 <img src="/assets/images/optimising-with-bash/pngcrush.png" alt="" />
-<figcaption>PNG optimisation with <a href="http://pmt.sourceforge.net/pngcrush/">pngcrush</a></figcaption>
+<figcaption>PNG optimisation with <a href="https://pmt.sourceforge.net/pngcrush/">pngcrush</a></figcaption>
 </figure>
 
 And now a JPG optimisation with _jpegtran_:
 
 <figure class="figure">
 <img src="/assets/images/optimising-with-bash/jpegtran.png" alt="" />
-<figcaption>JPG optimisation with <a href="http://jpegclub.org/">jpegtran</a></figcaption>
+<figcaption>JPG optimisation with <a href="https://jpegclub.org/">jpegtran</a></figcaption>
 </figure>
 
 ## Building the script
@@ -168,7 +168,7 @@ Now, we have to create this `optimise_image()` method which is going to be fairl
 <figcaption>The actual image optimisation function</figcaption>
 </figure>
 
-### Output informations
+### Output information
 
 Let’s add some useful output to see progress and the final stats. What about something like this:
 

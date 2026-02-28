@@ -8,7 +8,7 @@ keywords:
   - scropt
 ---
 
-We at Edenspiekermann are big fans of [Gulp](http://gulpjs.com/). We use it in most of our projects, even Rails ones to replace or rather connect to the assets pipeline. Gulp is usually responsible for most of our build process in basically any project.
+We at Edenspiekermann are big fans of [Gulp](https://gulpjs.com/). We use it in most of our projects, even Rails ones to replace or rather connect to the assets pipeline. Gulp is usually responsible for most of our build process in basically any project.
 
 But on small projects, like single page websites or tiny websites, we don’t really need Gulp. However, we still need to be able to build our SVG sprites.
 

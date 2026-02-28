@@ -29,17 +29,17 @@ keywords:
 }
 </style>
 
-I am by no mean a avid reader, but every now and then I find a book I like and I cannot get enough of it. Here are the last few books I’ve read that I would absolutely recommend to all. :)
+I am by no means an avid reader, but every now and then I find a book I like and I cannot get enough of it. Here are the last few books I’ve read that I would absolutely recommend to all. :)
 
 ## The End of Everything
 
 <img src="https://images-na.ssl-images-amazon.com/images/I/51P9Q3mcHeL._SX324_BO1,204,203,200_.jpg" alt="Cover of “The End of Everything”" class="BookCover" />
 
-[The End of Everything (Astrophysically Speaking)](http://www.astrokatie.com/book) is a masterpiece from [Dr. Katie Mack](http://www.astrokatie.com/), a theoretical astrophysicist who studies a range of questions in cosmology, the study of the universe from beginning to end.
+[The End of Everything (Astrophysically Speaking)](https://www.astrokatie.com/book) is a masterpiece from [Dr. Katie Mack](https://www.astrokatie.com/), a theoretical astrophysicist who studies a range of questions in cosmology, the study of the universe from beginning to end.
 
-In this book that makes no asumption about the reader’s knowledge on astophysics, she takes us through existing theories about how everything will end, from the big rip to the big crunch. On top of being an accomplished astrophysist, Katie is a great writer, witty and engaging, making the whole piece an absolute delight to read.
+In this book that makes no assumption about the reader’s knowledge on astrophysics, she takes us through existing theories about how everything will end, from the big rip to the big crunch. On top of being an accomplished astrophysicist, Katie is a great writer, witty and engaging, making the whole piece an absolute delight to read.
 
-If you are still not convinced, feel free to read the [book’s reviews](http://www.astrokatie.com/book-reviews), all more stellar than the other.
+If you are still not convinced, feel free to read the [book’s reviews](https://www.astrokatie.com/book-reviews), all more stellar than the other.
 
 ## Alex’s Adventures in Numberland
 
@@ -47,7 +47,7 @@ If you are still not convinced, feel free to read the [book’s reviews](http://
 
 Mathematics never were my passion. I always failed to appreciate their usefulness, and they never came easy to me. Back in high-school, math exams were my dread and to this day, I cannot say I particularly enjoy solving problems revolving around maths. Still, I devoured this book.
 
-[Alex Bellos](http://www.alexbellos.com/) takes us through the history of maths and their applications in everyday’s topics. Far away from being a geeky book for mathletes, [Alex’s Adventures in Numberland](http://www.alexbellos.com/numberland) feels more like a collection of anecdotes about mathematics and geometry, from ancient civilisations to the place they hold in our society, whose central theme slowly unravel throughout the book.
+[Alex Bellos](https://www.alexbellos.com/) takes us through the history of maths and their applications in everyday’s topics. Far away from being a geeky book for mathletes, [Alex’s Adventures in Numberland](https://www.alexbellos.com/numberland) feels more like a collection of anecdotes about mathematics and geometry, from ancient civilisations to the place they hold in our society, whose central theme slowly unravel throughout the book.
 
 [The Guardian published a review of the book](https://www.theguardian.com/science/2011/nov/09/alex-adventures-numberland-alex-bellos-review) back in 2011 shortly after it got released. It might be worth reading if you’re not sure this book is for you.
 

@@ -17,8 +17,6 @@ After [a tweet about how I like Git but find it hard to use](https://twitter.com
 - [Getting up to date](#getting-up-to-date)
 - [Rewriting history](#rewriting-history)
 
-_If you’re unaware what Git is, I wrote [Git, the practical very basis](http://adopteungit.fr/en/methodology/2017/07/02/git-practical-very-basics.html) on my brother’s blog where I explain the baby steps in version control. Check it out._
-
 ## Getting information
 
 I quickly realised there is no way to be comfortable with command-line Git in the default OS terminal. On macOS, I recommend installing iTerm2 and [pimping it to display the branch name as part of the prompt](https://github.com/KittyGiraudel/dotfiles/blob/master/.bashrc). Also, colors. I mean, look at that beauty:

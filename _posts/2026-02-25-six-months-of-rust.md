@@ -141,7 +141,7 @@ The problem with these data structures, however necessary they may be, is that y
 
 In that case, thread A will hold the write lock for as long as it needs, and if it waits on a second thread that is itself waiting on the lock, both threads will end up in an unrecoverable deadlock. It’s not always a textbook ‘two locks, two threads’ deadlock, but the end result is the same: no progress and a hung server.
 
-This can absolutely bring your runtime to its knees and {% footnoteref "watchdog" "I have written a rather long article about <a href='/2026/02/09/rust-watchdog'>authoring a watchdog to recover from deadlocks</a>. Check it out, it’s good stuff!" %}make your server hang{% endfootnoteref %}, rendering it essentially broken even though it actually runs.
+This can absolutely bring your runtime to its knees and {% footnoteref "watchdog" "I have written a rather long article about <a href='/2026/02/09/rust-watchdog/'>authoring a watchdog to recover from deadlocks</a>. Check it out, it’s good stuff!" %}make your server hang{% endfootnoteref %}, rendering it essentially broken even though it actually runs.
 
 Now here is the thing: I know this is a skill issue. This is probably a problem that very experienced programmers no longer face because they have achieved the nirvana of thread-safe concurrency. But for anyone learning Rust on anything non-trivial, this can be a real ass-biting moment.
 

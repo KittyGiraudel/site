@@ -70,7 +70,7 @@ Try to rely on existing (lightweight and flexible) implementations of complex co
 
 I [expanded a bit on that topic](https://kittygiraudel.com/2020/12/22/a11y-advent-interactive-widgets/) in the A11y Advent Calendar, and you can also get started with that incredible [list of accessible components](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components) on Smashing Magazine.
 
-If you’re not sure how to implement something, you could ask on Twitter with the #a11y hashtag, or in the [web-a11y Slack](http://web-a11y.slack.com/). It requires an invite (because Slack), but has thousands of members and is a vibrant community of accessibility enthusiasts and specialists alike, where you can get information and support.
+If you’re not sure how to implement something, you could ask on Twitter with the #a11y hashtag, or in the [web-a11y Slack](https://web-a11y.slack.com/). It requires an invite (because Slack), but has thousands of members and is a vibrant community of accessibility enthusiasts and specialists alike, where you can get information and support.
 
 ## Raise awareness
 

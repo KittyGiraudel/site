@@ -8,7 +8,7 @@ keywords:
 
 ## Design
 
-After the launch, it occured to me the design was a bit gloomy so I wanted to add a color to cheer things up. After a dark blue and a creepy green, I ended with the hot pink and a quick survey on Twitter encouraged me to keep it. So pink it is! Hope you like it.
+After the launch, it occurred to me the design was a bit gloomy so I wanted to add a color to cheer things up. After a dark blue and a creepy green, I ended with the hot pink and a quick survey on Twitter encouraged me to keep it. So pink it is! Hope you like it.
 
 Speaking of survey, another quick one about text align told me to switch to left. It looks like people dislike when text is justified on blogs. I liked it but I’m not the main reader of this blog. :D
 

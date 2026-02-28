@@ -43,7 +43,7 @@ I don’t think the attention-span for a talk is meant to last any longer than 3
 
 Anyway, allow me to give you a quick round-up.
 
-[Daniel Glazman](https://twitter.com/glazou), co-chairman at the CSS Working Group opened the stage with [a talk about how CSS got there](http://disruptive-innovations.com/zoo/slides/20141114-dotCSS/dotCSS2014.pdf), what were the mistakes made, and why. I was not really familiar with Daniel’s work before the event so I found his talk very insightful. Plus, he really is talented speaker with great humour, thus I could not think of a better person to open the event.
+[Daniel Glazman](https://twitter.com/glazou), co-chairman at the CSS Working Group opened the stage with [a talk about how CSS got there](https://disruptive-innovations.com/zoo/slides/20141114-dotCSS/dotCSS2014.pdf), what were the mistakes made, and why. I was not really familiar with Daniel’s work before the event so I found his talk very insightful. Plus, he really is talented speaker with great humour, thus I could not think of a better person to open the event.
 
 Then [Kaelig](https://twitter.com/kaelig), French frontend developer previously at BBC and the Guardian, now at the Financial Times, presented a very interesting talk about [bridging the gap between designers and developers](https://www.slideshare.net/kaelig/bridging-the-gap-between-designers-and-developers-at-the-guardian) (essentially using Sass) in big teams such at The Guardian’s.
 
@@ -53,7 +53,7 @@ Then there was some lightning talks that I did not really catch because I was ba
 
 I came next with a deck entitled [Keep Calm And Write Sass](https://speakerdeck.com/kittygiraudel/keep-calm-and-write-sass). It was an 18 minutes talk about the do’s and don’ts of using Sass, especially the don’ts. My point was to try to get people focused on Sass main role: helping writing CSS, not making codebases more complex.
 
-[Estelle Weyl](https://twitter.com/estellevw) then presented [CSS WTF](http://estelle.github.io/doyouknowcss/), a collection of little known facts about CSS that ended up being quite technical actually. Counters in HTML forms, SVG animations, contenteditable attribute for head elements and much more. If you like clever stuff, have a look at her deck.
+[Estelle Weyl](https://twitter.com/estellevw) then presented [CSS WTF](https://estelle.github.io/doyouknowcss/), a collection of little known facts about CSS that ended up being quite technical actually. Counters in HTML forms, SVG animations, contenteditable attribute for head elements and much more. If you like clever stuff, have a look at her deck.
 
 After a second break, [Nicolas Gallagher](https://twitter.com/necolas) presented an insightful talk about [scaling CSS](https://speakerdeck.com/necolas/making-twitter-ui-infrastructure), essentially based from his experience at Twitter. While not necessarily applicable right now in any project, it is interesting knowing how such a large-scale compary manage their CSS codebase.
 

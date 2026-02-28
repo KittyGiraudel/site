@@ -11,9 +11,9 @@ My partner has started getting into test automation and has had fun playing with
 
 ## The jargon
 
-**[Node](http://jargon.js.org/_glossary/NODEJS.md):** Node (or Node.js) is a “runtime environment”. It’s a server-side environment that runs JavaScript code. The same way your browser has a JavaScript engine, well Node has one as well. This allows you to execute JavaScript code, like scripts, outside of a browser environment.
+**[Node](https://jargon.js.org/_glossary/NODEJS.md):** Node (or Node.js) is a “runtime environment”. It’s a server-side environment that runs JavaScript code. The same way your browser has a JavaScript engine, well Node has one as well. This allows you to execute JavaScript code, like scripts, outside of a browser environment.
 
-**[npm](http://jargon.js.org/_glossary/NPM.md):** npm is the package manager for Node (despite claims it doesn’t stand for “Node Package Manager”). All languages have a package manager (Java has Maven, PHP has Composer, Ruby has RubyGems, etc.). Npm allows you to manage Node dependencies (packages), such as installing and removing them. Npm comes bundled with Node by default, so you don’t have to install it yourself.
+**[npm](https://jargon.js.org/_glossary/NPM.md):** npm is the package manager for Node (despite claims it doesn’t stand for “Node Package Manager”). All languages have a package manager (Java has Maven, PHP has Composer, Ruby has RubyGems, etc.). Npm allows you to manage Node dependencies (packages), such as installing and removing them. Npm comes bundled with Node by default, so you don’t have to install it yourself.
 
 **Packages:** Packages are versioned little bundles of code that people write and publish for other to use. Cypress and Faker, amongst many many others, are packages (and big ones at that).
 

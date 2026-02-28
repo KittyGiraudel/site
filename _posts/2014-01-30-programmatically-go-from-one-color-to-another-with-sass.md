@@ -17,7 +17,7 @@ This got me thinking! What if we could calculate the mathematical relationship b
 
 ## Understanding colors
 
-Before we go too far, perhaps it would be a good idea to review how colors actually work in CSS. I've got an older article on my own website that gives a good overview of [Colors in CSS](http://Kittygiraudel.com/2012/11/27/css-colors/). Go on. Have a look! I can wait.
+Before we go too far, perhaps it would be a good idea to review how colors actually work in CSS. I've got an older article on my own website that gives a good overview of [Colors in CSS](/2012/11/27/css-colors/). Go on. Have a look! I can wait.
 
 Okay, ready now? So you've probably figured out that colors can be written using an HSL representation. HSL stands for _Hue Saturation Lightness_, the three main components of a color. According to Wikipedia:
 
@@ -150,6 +150,6 @@ What do you think of all this? Have you found interesting ways to morph and use 
 
 I hope you've enjoyed this experiment! If you'd like to play with the code in this project, check out this CodePen. Cheers!
 
-<div data-height="268" data-theme-id="0" data-slug-hash="gHEkA" data-default-tab="css" class='codepen'><p>See the Pen <a href='http://codepen.io/KittyGiraudel/pen/gHEkA'>Programmatically find one color from another one</a> by Kitty Giraudel (<a href='http://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='http://codepen.io'>CodePen</a>.</p> </div>
+<div data-height="268" data-theme-id="0" data-slug-hash="gHEkA" data-default-tab="css" class='codepen'><p>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/gHEkA'>Programmatically find one color from another one</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p> </div>
 
 On a side note, Brandon Mathis has also worked on [Color Hacker](https://github.com/imathis/color-hacker), a Compass extension providing some advanced color functions for dissecting your own color schemes.

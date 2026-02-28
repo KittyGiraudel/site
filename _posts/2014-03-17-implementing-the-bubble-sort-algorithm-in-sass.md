@@ -7,9 +7,9 @@ keywords:
   - bubble sort
 ---
 
-Several months ago someone asked me on Twitter if it was possible to sort a list of numeric values in Sass. They were trying to derive a [modular scale](http://alistapart.com/article/more-meaningful-typography) in Sass and needed a sorting function. After a little bit of work I came up with a way to do it for numbers. However, because of limitations in Sass, there was no way to build a sorting function for other Sass types (like Strings).
+Several months ago someone asked me on Twitter if it was possible to sort a list of numeric values in Sass. They were trying to derive a [modular scale](https://alistapart.com/article/more-meaningful-typography) in Sass and needed a sorting function. After a little bit of work I came up with a way to do it for numbers. However, because of limitations in Sass, there was no way to build a sorting function for other Sass types (like Strings).
 
-Fast forward to the present day. Sass 3.3 has been released and with it [a ton of new features](http://davidwalsh.name/future-sass). Today, I'd like to show you how to use some of these features to build a sorting function in Sass.
+Fast forward to the present day. Sass 3.3 has been released and with it [a ton of new features](https://davidwalsh.name/future-sass). Today, I'd like to show you how to use some of these features to build a sorting function in Sass.
 
 ## Comparing strings
 
@@ -59,7 +59,7 @@ The `str-compare()` function returns `true` if `$string-a` goes before `$string-
 
 ## Swapping two values
 
-For the sake of our example, I'm going to implement the sorting function using the [Bubble Sort](http://en.wikipedia.org/wiki/Bubble_sort) algorithm because it's easy to understand.
+For the sake of our example, I'm going to implement the sorting function using the [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) algorithm because it's easy to understand.
 
 Since Bubble Sort relies on swapping two values in a list we need one more function to make this easy for us:
 
@@ -120,4 +120,4 @@ Hurray! It works like a charm.
 
 ## Learning more
 
-My first attempts to create a sorting function in Sass used a much slower algorithm. But thanks to some prompting by [Sam Richards](http://twitter.com/snugug) (he got me started with QuickSort) I eventually explored a number of different sorting algorithms. I've now implemented several of these in Sass. You can find the code and tests in the [SassySort](https://github.com/KittyGiraudel/SassySort) repository.
+My first attempts to create a sorting function in Sass used a much slower algorithm. But thanks to some prompting by [Sam Richards](https://twitter.com/snugug) (he got me started with QuickSort) I eventually explored a number of different sorting algorithms. I've now implemented several of these in Sass. You can find the code and tests in the [SassySort](https://github.com/KittyGiraudel/SassySort) repository.

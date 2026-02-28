@@ -15,7 +15,7 @@ Still, quite a few things changed for you, hence the major release. Let’s have
 
 ## Main element no longer assumed (breaking)
 
-In version 2.\*, the main element was assumed to have a `main` id. Not only was this highly arbitrary, but it also did not play quite well with CMS like Drupal or Wordpress. There was a [long discussion about it](https://github.com/KittyGiraudel/a11y-dialog/issues/56).
+In version 2.\*, the main element was assumed to have a `main` id. Not only was this highly arbitrary, but it also did not play quite well with CMS like Drupal or WordPress. There was a [long discussion about it](https://github.com/KittyGiraudel/a11y-dialog/issues/56).
 
 From version 3, all siblings of the dialog element will be toggled (understand via the `aria-hidden` attribute). Since the documentation has always recommended having the main content container and the dialog element side by side, it should not be a big deal for most projects.
 

@@ -46,7 +46,7 @@ Now we have thought about the goal of the site/application, it’s time to **thi
 
 My way to do is to find the maximum of content for each of the objectives of the site/application. Then, if there is too much, I filter to keep only the best ideas. Too much is better than too few. You might want to readnotes from Luke Wroblewski about Jeffrey Zeldman talk at AEA Washington DC about [Content first](https://www.lukew.com/ff/entry.asp?1598).
 
-For this website, the content was pretty straight forward: the landing page should have some informations about me (like contact stuff). The resume should be, well, my resume. And I had already 2 ideas of articles for the new blog ([one about the redesign](redesign-blog.html), and one about [CSS preprocessors](less-to-sass.html)).
+For this website, the content was pretty straight forward: the landing page should have some information about me (like contact stuff). The resume should be, well, my resume. And I had already 2 ideas of articles for the new blog ([one about the redesign](redesign-blog.html), and one about [CSS preprocessors](less-to-sass.html)).
 
 ## The arborescence
 
@@ -61,7 +61,7 @@ This site’s structure is very easy:
   - Articles
 - Resume
 
-Plus, it occured to me doing that helps me creating the development environment during when I come to the coding part.
+Plus, it occurred to me doing that helps me creating the development environment during when I come to the coding part.
 
 ## The design
 
@@ -75,13 +75,13 @@ But there is still no code. We first have to **draw a sketch** of the website/ap
 
 **I like starting on paper**. I think it’s easier because you can’t hide behind visual effects like gradients, shadows and such. It’s all about structure and where will be positioned the various elements.
 
-When I’m finally happy with a sketch, I try to redo it on my computer. Sometimes I go straight to CSS when things look quite simple, but it occured to me there are better ways to go. I think one of the best would be to use an online tool like [WireFrame.cc](https://wireframe.cc/) to make a nicer sketch than the one you drew on paper but still focused on structure, not visual effects.
+When I’m finally happy with a sketch, I try to redo it on my computer. Sometimes I go straight to CSS when things look quite simple, but it occurred to me there are better ways to go. I think one of the best would be to use an online tool like [WireFrame.cc](https://wireframe.cc/) to make a nicer sketch than the one you drew on paper but still focused on structure, not visual effects.
 
 ![WireFrame.cc](/assets/images/how-i-start-a-new-project/wcc.jpg)
 
 When it looks good, I personally go for CSS. Some people prefer working a detailed mockup on PhotoShop first but since I’m shitty as hell when it comes to this software and I’m quite confident with CSS, I prefer go straight with CSS and design in the browser. Plus, designing in the browser is very trend those days!
 
-Although I know some designers simply can not design in the browser because they turn their brain to “technical mode”, losing their creative mind. I don’t blame at all since I’m not a designer, browser or not browser. Anyway, if you plan on using Photoshop, I’d suggest not doing too much on visual effects but it’s more like a matter of opinion here. I think this stuff can be figured out afterwards, and not necessarly during the design process but I could be wrong.
+Although I know some designers simply can not design in the browser because they turn their brain to “technical mode”, losing their creative mind. I don’t blame at all since I’m not a designer, browser or not browser. Anyway, if you plan on using Photoshop, I’d suggest not doing too much on visual effects but it’s more like a matter of opinion here. I think this stuff can be figured out afterwards, and not necessarily during the design process but I could be wrong.
 
 ## The development
 

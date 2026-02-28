@@ -12,7 +12,7 @@ Testing skip navigation links can be tricky, since [Cypress still does not have 
 
 I recently implemented a proper automated test using [cypress-real-events](https://github.com/dmtrKovalenko/cypress-real-events) instead. Unfortunately, it does not work in Firefox since it relies on the Chromium remote debugger protocol.
 
-As you’ll see, my test code makes very few asumptions about the way the skip link is implemented. Instead, it makes sure that:
+As you’ll see, my test code makes very few assumptions about the way the skip link is implemented. Instead, it makes sure that:
 
 - The skip link is not visible to begin with.
 - The skip link is the first interactive element in the page.

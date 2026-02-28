@@ -124,7 +124,7 @@ To this day, if there is one thing that I always found impressive about Fela is 
 
 Even pretty advanced behaviour such as [responsive properties](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-responsive-value) — properties whose value varies across pre-defined breakpoints — or [extensive testing of state-specific styles](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-simulate) (e.g. hover) are already built and ready to use.
 
-And if something happens to be missing, Fela is very easy to customise with [plugins](http://fela.js.org/docs/advanced/Plugins.html) and [enhancers](http://fela.js.org/docs/advanced/Enhancers.html). Both are essentially functions to customise style processing.
+And if something happens to be missing, Fela is very easy to customise with [plugins](https://fela.js.org/docs/advanced/Plugins.html) and [enhancers](https://fela.js.org/docs/advanced/Enhancers.html). Both are essentially functions to customise style processing.
 
 ### Extensive RTL support
 
@@ -140,7 +140,7 @@ Nothing is ever perfect, and while Fela has been fantastic looking back at the l
 
 Shorthand and longhands are somewhat conflicting, which can be messy when not properly enforced with either strict methodology or a plugin. For instance, if you apply `padding` with the shorthand in one component, but the longhand properties in another, these properties could end up conflicting (just like in CSS).
 
-This is actually outlined in [Fela’s documentation](http://fela.js.org/docs/introduction/Caveats.html#2-shorthand--longhand-properties), and recommended to use longhands everywhere to avoid these situations. There is also the [fela-plugin-expand-shorthand](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-expand-shorthand) official package to break down shorthand declarations in their longhand properties.
+This is actually outlined in [Fela’s documentation](https://fela.js.org/docs/introduction/Caveats.html#2-shorthand--longhand-properties), and recommended to use longhands everywhere to avoid these situations. There is also the [fela-plugin-expand-shorthand](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-expand-shorthand) official package to break down shorthand declarations in their longhand properties.
 
 ### Small community
 

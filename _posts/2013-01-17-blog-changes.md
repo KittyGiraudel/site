@@ -19,9 +19,9 @@ As you can see, the layout has been updated! It’s now a 2-columns website. The
 
 Let’s be realistic: the main content is the blog not the 20 lines about me you could see everytime you loaded the first page. I wanted to enhance the articles so now the main page lists available articles. It seems muuuch better to me this way, what do you think?
 
-However, I wanted to provide visitors a quick glance at who I am, so I thought it could be a good idea to have a little sidebar to display informations about me. Now, I’m thinking of adding a picture of me in the sidebar; I know a lot of people do that on their blog. Any thought about that?
+However, I wanted to provide visitors a quick glance at who I am, so I thought it could be a good idea to have a little sidebar to display information about me. Now, I’m thinking of adding a picture of me in the sidebar; I know a lot of people do that on their blog. Any thought about that?
 
-Another thing that occured to me is that the lines were too long. It may be silly but when lines are too extented, it makes the reading more difficult. Now the main column is narrower, reading an article is easier and de facto nicer.
+Another thing that occurred to me is that the lines were too long. It may be silly but when lines are too extended, it makes the reading more difficult. Now the main column is narrower, reading an article is easier and de facto nicer.
 
 ### Responsive concern
 
@@ -43,7 +43,7 @@ But, switching all my files to .php means a terrible thing: old URLs won’t wor
 
 While we’re talking about .htaccess: you can now access articles without the file extension like this: https://kittygiraudel/blog. Pretty cool, right?
 
-I also decided to rely on a CDN rather than on self hosting for [Font Awesome](https://fontawesome.com/?from=io) (now in v3.0.1 since a couple of days). I was especially concerned about the file size of my stylesheet because Font Awesome &mdash; as any other icon font &mdash; uses a lot of CSS. Anyway, I’m now using [Tim Pietrusky’s](http://timpietrusky.com) CDN [WeLoveIconFonts](https://weloveiconfonts.com) and I’m pretty happy with it. ;)
+I also decided to rely on a CDN rather than on self hosting for [Font Awesome](https://fontawesome.com/?from=io) (now in v3.0.1 since a couple of days). I was especially concerned about the file size of my stylesheet because Font Awesome &mdash; as any other icon font &mdash; uses a lot of CSS. Anyway, I’m now using [Tim Pietrusky’s](https://timpietrusky.com) CDN [WeLoveIconFonts](https://weloveiconfonts.com) and I’m pretty happy with it. ;)
 
 ## Features
 

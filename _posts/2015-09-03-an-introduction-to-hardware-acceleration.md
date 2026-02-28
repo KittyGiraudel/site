@@ -16,10 +16,10 @@ When applied to CSS, it is useful to know how a browser works in order to unders
 
 So applying hardware acceleration to the front-end world, it means telling the browser to delegate some visual things to the compositer in order to let it perform both important tasks on the main thread, and rendering tasks on the compositer. This improves performance and ensures a better frame-rate.
 
-I like this technical yet affordable explanation of hardware acceleration by [Ariya Hidayat](http://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/):
+I like this technical yet affordable explanation of hardware acceleration by [Ariya Hidayat](https://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/):
 
 > Among many different features of a GPU, it can hold a limited number of textures (a rectangle of pixels) and manipulate those textures efficiently, including applying a certain transformation (translation, scaling, rotating, etc). Instead of drawing the pixels for every animation frame, the browser will “snapshot” the DOM element and store it as a GPU texture (often called as layer). Later, the browser will simply tell the GPU to transform the said texture to give the perception of an animating DOM element. This is called GPU compositing, naturally referred to as “hardware acceleration”.  
-> &mdash; Ariya Hidayat in [Hardware Accelerated CSS: The Nice vs The Naughty](http://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/)
+> &mdash; Ariya Hidayat in [Hardware Accelerated CSS: The Nice vs The Naughty](https://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/)
 
 ## What about CSS?
 
@@ -37,7 +37,7 @@ It would basically be driving a very powerful sport car on a very crowded freewa
 
 ## Further reading
 
-- [Hardware Accelerated CSS: The Nice vs The Naughty](http://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/)
-- [Increase Site Performance With Hardware Accelerated CSS](http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
-- [Let's Play With Hardware Accelerated CSS](http://www.smashingmagazine.com/2012/06/play-with-hardware-accelerated-css/)
+- [Hardware Accelerated CSS: The Nice vs The Naughty](https://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/)
+- [Increase Site Performance With Hardware Accelerated CSS](https://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
+- [Let's Play With Hardware Accelerated CSS](https://www.smashingmagazine.com/2012/06/play-with-hardware-accelerated-css/)
 - [Everything You Need to Know About the CSS will-change Property](https://dev.opera.com/articles/css-will-change-property/)

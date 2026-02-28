@@ -90,7 +90,7 @@ This list was originally [posted on Twitter](https://twitter.com/i/moments/87708
 
 40. Dialog windows should be closable by clicking outside of them or pressing ESC. It saves people from aiming at the tiny cross.
 
-41. A good way to ensure sufficient color contrast between two colors is [this checker from @leaverou](http://leaverou.github.io/contrast-ratio/).
+41. A good way to ensure sufficient color contrast between two colors is [this checker from @leaverou](https://leaverou.github.io/contrast-ratio/).
 
 42. Don’t forget the `lang` attribute on the `html` element, and on any element in a different language than the rest of the document.
 
@@ -136,13 +136,13 @@ This list was originally [posted on Twitter](https://twitter.com/i/moments/87708
 
 63. The document outline (hierarchy of headlines) matters. It’s used by certain programs to navigate within a document. Take care of it.
 
-64. When you feel like bitching about Microsoft and their browser, remember that Edge is by far the most accessible one (see [browsers accessibility comparison](http://stevefaulkner.github.io/HTML5accessibility/)).
+64. When you feel like bitching about Microsoft and their browser, remember that Edge is by far the most accessible one (see [browsers accessibility comparison](https://stevefaulkner.github.io/HTML5accessibility/)).
 
 65. A survey from 2016 shows that one person out of 10 suffers from some sort of color-blindness (could be red/green, blue/yellow or complete).
 
 66. Don’t use a `tabindex` value greater than 0. It messes up with the tab order and can be very confusing.
 
-67. [WebAIM’s hierarchy for motivation](http://webaim.org/blog/motivating-accessibility-change/) to accessibility is: Inspire → Enlighten → Reward → Require → Punish → Guilt.
+67. [WebAIM’s hierarchy for motivation](https://webaim.org/blog/motivating-accessibility-change/) to accessibility is: Inspire → Enlighten → Reward → Require → Punish → Guilt.
 
 68. Vocal UI solve a lot of issues but also introduce some. Mute (temporary or permanently) people, and people with a stammer can struggle.
 
@@ -160,7 +160,7 @@ This list was originally [posted on Twitter](https://twitter.com/i/moments/87708
 
 75. ARIA should not be used as a fix for poor HTML. Start with clean HTML, then enhance with ARIA if necessary.
 
-76. [a11y.css](http://ffoodd.github.io/a11y.css/) is a clever bookmarklet from @ffoodd_fr using CSS to detect possible accessibility problems.
+76. [a11y.css](https://ffoodd.github.io/a11y.css/) is a clever bookmarklet from @ffoodd_fr using CSS to detect possible accessibility problems.
 
 77. In the US, 50% of people aged 75+, 25% of people aged 65-74 and 10% of people aged 21-64 suffer from some sort of disability.
 

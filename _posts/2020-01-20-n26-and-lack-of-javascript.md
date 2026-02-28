@@ -101,7 +101,7 @@ const MyComponent = props => {
 
 One slight inconvenience with the aforementionned solution, is that the no-JavaScript version is visible while the JavaScript bundles get downloaded, parsed and executed. In a way, that’s the entire point, so that if they fail to be, the page remains usable. However, that’s sometimes a little awkward when the no-JavaScript and the JavaScript versions are visually quite different.
 
-To try improving the user experience, my other amazing colleague [Alina Dzhepparova](https://github.com/dge808) started experimenting with an addition to our solution, still making no asumption whether the user wants JavaScript, let alone whether they are a good enough network to download it.
+To try improving the user experience, my other amazing colleague [Alina Dzhepparova](https://github.com/dge808) started experimenting with an addition to our solution, still making no assumption whether the user wants JavaScript, let alone whether they are a good enough network to download it.
 
 When a user visits one of our web pages for the first time, and provided their browser is executing JavaScript properly, we set a flag in a cookie. During subsequent visits, we retrieve that cookie on the server and prefill the `HasJavaScriptContext` with the correct value. This way, we can render the JavaScript version right away, although it only becomes fully usable once bundles finally kick in.
 

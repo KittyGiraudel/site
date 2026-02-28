@@ -125,7 +125,7 @@ So that’s not too bad. The fact that operators have to be quoted for Sass not 
 
 Let’s be honest: there is none. Sass is not a low-level programming language. It does not have any valid use case for bitwise operations. Meanwhile, we implemented bit flags. _Bit flags_ is a programming technique aiming at storing several booleans in a single integer in ordre to save memory.
 
-Here is a great [introduction to bit flags](http://forum.codecall.net/topic/56591-bit-fields-flags-tutorial-with-example/) but I’ll try to sum up. The idea behind _bit flags_ is to have a collection of flags (think of them as options) mapped to powers of 2 (usually with an `enum` field in C/C++). Each option will have its own bit flag.
+Here is a great [introduction to bit flags](https://forum.codecall.net/topic/56591-bit-fields-flags-tutorial-with-example/) but I’ll try to sum up. The idea behind _bit flags_ is to have a collection of flags (think of them as options) mapped to powers of 2 (usually with an `enum` field in C/C++). Each option will have its own bit flag.
 
 ```
 00000000 Bin    | Dec

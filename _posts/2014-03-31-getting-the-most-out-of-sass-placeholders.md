@@ -8,9 +8,9 @@ keywords:
   - mixin
 ---
 
-The other day I was looking at the source code from [GUFF](http://kenwheeler.github.io/guff/), a brand new Sass framework from [Ken Wheeler](https://github.com/kenwheeler). I like reviewing Sass code, I find it very interesting to have an insight at how other people tackle some common issues. By the way, if you want me to review your Sass code, I’ll be glad to do so. ;)
+The other day I was looking at the source code from [GUFF](https://kenwheeler.github.io/guff/), a brand new Sass framework from [Ken Wheeler](https://github.com/kenwheeler). I like reviewing Sass code, I find it very interesting to have an insight at how other people tackle some common issues. By the way, if you want me to review your Sass code, I’ll be glad to do so. ;)
 
-Anyway, I was looking at the code and to my surprise, Ken was mostly using mixins for common patterns, even when there was no variable involved whatsoever. You probably know it’s considered bad practice to use a mixin when you don’t need to make your styles varying according to passed arguments. Placeholders are best suited for such a thing. More informations on topic in [this article at SitePoint](https://www.sitepoint.com/sass-mixin-placeholder/).
+Anyway, I was looking at the code and to my surprise, Ken was mostly using mixins for common patterns, even when there was no variable involved whatsoever. You probably know it’s considered bad practice to use a mixin when you don’t need to make your styles varying according to passed arguments. Placeholders are best suited for such a thing. More information on topic in [this article at SitePoint](https://www.sitepoint.com/sass-mixin-placeholder/).
 
 So [I opened an issue](https://github.com/kenwheeler/guff/issues/1) to prompt Ken to move away from mixins when there is no need for them, in favor of placeholders and while he was completely willing to do so, he was worried about usage in media queries. Let’s pause here for some explanations.
 
@@ -32,7 +32,7 @@ See what I did? With the title? “Mixin”… Because it’s like… Nevermind.
 
 My idea was the following: extend the placeholder when possible, else include the mixin. Also, I didn’t want to have code duplicates. Whenever I need to make a change in the code, I don’t want to edit both the placeholder and the mixin. There should be only a single place where the code lies.
 
-For our example, let’s consider a basic need: a [micro-clearfix hack](http://nicolasgallagher.com/micro-clearfix-hack/) mixin. Here is how I decided to tackle things:
+For our example, let’s consider a basic need: a [micro-clearfix hack](https://nicolasgallagher.com/micro-clearfix-hack/) mixin. Here is how I decided to tackle things:
 
 ```scss
 @mixin clear($extend: true) {

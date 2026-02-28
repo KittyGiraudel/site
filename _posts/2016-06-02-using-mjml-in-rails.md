@@ -8,7 +8,7 @@ keywords:
   - gem
 ---
 
-Recently, I had to implement an email for the [Amaphiko](http://amaphiko.redbull.com) project. And since I won’t code email, at least not in this life, I had to find a workaround. There came [MJML](https://mjml.io/).
+Recently, I had to implement an email for the Red Bull Amaphiko project. And since I won’t code email, at least not in this life, I had to find a workaround. There came [MJML](https://mjml.io/).
 
 MJML introduces itself as “the responsive email framework”. Practically speaking, MJML is a markup language built on [React](https://facebook.github.io/react/) that produces email-compliant (whatever that means) markup once compiled.
 
@@ -16,7 +16,7 @@ MJML comes with about [20 components](https://mjml.io/documentation/#standard-co
 
 ## Setting up MJML in Rails
 
-Amaphiko is a [Rails](http://rubyonrails.org/) app. Therefore, I needed a way to integrate MJML in the Rails pipeline to be able to produce proper responsive emails based on dynamic data.
+Amaphiko is a [Rails](https://rubyonrails.org/) app. Therefore, I needed a way to integrate MJML in the Rails pipeline to be able to produce proper responsive emails based on dynamic data.
 
 While MJML is fairly recent, I was pleased to see there already is a fresh gem to plug it into Rails, called [mjml-rails](https://github.com/sighmon/mjml-rails).
 

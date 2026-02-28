@@ -84,7 +84,7 @@ Simple enough, but for someone with no clue how CSS works, there are already qui
 
 I’ll be honest and admit at this point I found myself a bit cornered. The thing is, there is usually only one good way to use HTML (especially on something that simple). But regarding CSS, and depending on what the result should be, there are dozens or hundreds of ways to write a stylesheet. And since they had free rein on the design, well… I had no idea how to move forward.
 
-Luckily for me, they all started applying styles to their pages. First the main title, then the sub-titles, then the paragraphs, the lists, and so on. Since I did not want to introduce hundreds of CSS properties, I suggested they check [the CSS cheatsheet from OverAPI.com](http://overapi.com/css). I accompagnied them one by one in what they wanted to. I was actually surprised at how fast they managed to get this and style their document.
+Luckily for me, they all started applying styles to their pages. First the main title, then the sub-titles, then the paragraphs, the lists, and so on. Since I did not want to introduce hundreds of CSS properties, I suggested they check [the CSS cheatsheet from OverAPI.com](https://overapi.com/css). I accompagnied them one by one in what they wanted to. I was actually surprised at how fast they managed to get this and style their document.
 
 It was not without a few mistakes though. Here are a few things I noticed:
 

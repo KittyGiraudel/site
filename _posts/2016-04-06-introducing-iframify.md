@@ -8,11 +8,11 @@ keywords:
   - javascript
 ---
 
-_If you want to check the code directly, [be my guest](https://github.com/edenspiekermann/iframify). Also, maybe [a demo](http://codepen.io/KittyGiraudel/pen/vGWpyr?editors=1000)?_
+_If you want to check the code directly, [be my guest](https://github.com/edenspiekermann/iframify). Also, maybe [a demo](https://codepen.io/KittyGiraudel/pen/vGWpyr?editors=1000)?_
 
 At Edenspiekermann, we like to work with styleguides. We shape our design experiences in a matter of modules that we then expose individually in a document for future reference and documentation.
 
-However, our technical setup is different from project to project, and while we have done [some pretty decent styleguide](http://doc-azdev.lovelysystems.com/styleguide/) with React and a solid Node.js structure… it’s sometimes slightly trickier when working on Rails or Middleman / Jekyll projects.
+However, our technical setup is different from project to project, and while we have done [some pretty decent styleguide](https://doc-azdev.lovelysystems.com/styleguide/) with React and a solid Node.js structure… it’s sometimes slightly trickier when working on Rails or Middleman / Jekyll projects.
 
 ## The problem with styleguides
 
@@ -32,11 +32,11 @@ However, it means rendering each component individually in its own page and sett
 
 I was curious about this specific issue and came up with a solution. Let me present [iframify](https://gist.github.com/KittyGiraudel/67b65acf64f57bff08cacbc71999f1f2). It is a tiny script that replaces a node with an iframe version of itself, and imports all its necessary styles to perform correctly.
 
-To do so, it relies on the `srcdoc` attribute on iframe which happens to have [a very decent support](http://caniuse.com/#search=srcdoc), or a local data encoded URL as a source when not supported.
+To do so, it relies on the `srcdoc` attribute on iframe which happens to have [a very decent support](https://caniuse.com/#search=srcdoc), or a local data encoded URL as a source when not supported.
 
 It gathers all the styles needed by the node and all its children by parsing the stylesheets and trying styles against the elements to import everything inside the generated iframe.
 
-<p data-height="268" data-theme-id="0" data-slug-hash="vGWpyr" data-default-tab="result" data-user="KittyGiraudel" class="codepen">See the Pen <a href="http://codepen.io/KittyGiraudel/pen/vGWpyr/">vGWpyr</a> by Kitty Giraudel (<a href="http://codepen.io/KittyGiraudel">@KittyGiraudel</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="268" data-theme-id="0" data-slug-hash="vGWpyr" data-default-tab="result" data-user="KittyGiraudel" class="codepen">See the Pen <a href="https://codepen.io/KittyGiraudel/pen/vGWpyr/">vGWpyr</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 
 ## What’s next?
 

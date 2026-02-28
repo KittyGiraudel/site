@@ -49,7 +49,7 @@ Yet, even if no text is technically displayed, it is important to provide altern
 As an example, let’s consider a Twitter icon link using the iconic bird. We will use SVG for the icon itself since it’s a scalar format that does not require an additional HTTP request.
 
 ```html
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16">
+<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 16 16">
   <path
     d="M16 3.538a6.461 6.461 0 0 1-1.884.516 3.301 3.301 0 0 0 1.444-1.816 6.607 6.607 0 0 1-2.084.797 3.28 3.28 0 0 0-2.397-1.034 3.28 3.28 0 0 0-3.197 4.028 9.321 9.321 0 0 1-6.766-3.431 3.284 3.284 0 0 0 1.015 4.381A3.301 3.301 0 0 1 .643 6.57v.041A3.283 3.283 0 0 0 3.277 9.83a3.291 3.291 0 0 1-1.485.057 3.293 3.293 0 0 0 3.066 2.281 6.586 6.586 0 0 1-4.862 1.359 9.286 9.286 0 0 0 5.034 1.475c6.037 0 9.341-5.003 9.341-9.341 0-.144-.003-.284-.009-.425a6.59 6.59 0 0 0 1.637-1.697z"
   />
@@ -61,7 +61,7 @@ Now, let’s start by wrapping it up with a link:
 ```html
 <!-- Incomplete: please do *not* copy and paste this snippet -->
 <a href="https://twitter.com/KittyGiraudel">
-  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16">…</svg>
+  <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 16 16">…</svg>
 </a>
 ```
 
@@ -70,7 +70,7 @@ Unfortunately, at this stage this link contains no accessible name, which is a b
 ```html
 <!-- Incomplete: please do *not* copy and paste this snippet -->
 <a href="https://twitter.com/KittyGiraudel">
-  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16">…</svg>
+  <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 16 16">…</svg>
   <span class="sr-only">Twitter</span>
 </a>
 ```
@@ -84,8 +84,8 @@ There is still a bit more we need to do. Since we provided a descriptive text, w
 <a href="https://twitter.com/KittyGiraudel">
   <svg
     aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
-    viewbox="0 0 16 16"
+    xmlns="https://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
   >
     …
   </svg>
@@ -100,8 +100,8 @@ Last but not least, `svg` elements can be focused on Internet Explorer, which is
   <svg
     aria-hidden="true"
     focusable="false"
-    xmlns="http://www.w3.org/2000/svg"
-    viewbox="0 0 16 16"
+    xmlns="https://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
   >
     …
   </svg>
@@ -116,8 +116,8 @@ As a last touch, I would recommend adding the text content in the `title` attrib
   <svg
     aria-hidden="true"
     focusable="false"
-    xmlns="http://www.w3.org/2000/svg"
-    viewbox="0 0 16 16"
+    xmlns="https://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
   >
     …
   </svg>
@@ -129,8 +129,8 @@ As a last touch, I would recommend adding the text content in the `title` attrib
   <svg
     aria-hidden="true"
     focusable="false"
-    xmlns="http://www.w3.org/2000/svg"
-    viewbox="0 0 16 16"
+    xmlns="https://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
   >
     <path d='M16 3.538a6.461 6.461 0 0 1-1.884.516 3.301 3.301 0 0 0 1.444-1.816 6.607 6.607 0 0 1-2.084.797 3.28 3.28 0 0 0-2.397-1.034 3.28 3.28 0 0 0-3.197 4.028 9.321 9.321 0 0 1-6.766-3.431 3.284 3.284 0 0 0 1.015 4.381A3.301 3.301 0 0 1 .643 6.57v.041A3.283 3.283 0 0 0 3.277 9.83a3.291 3.291 0 0 1-1.485.057 3.293 3.293 0 0 0 3.066 2.281 6.586 6.586 0 0 1-4.862 1.359 9.286 9.286 0 0 0 5.034 1.475c6.037 0 9.341-5.003 9.341-9.341 0-.144-.003-.284-.009-.425a6.59 6.59 0 0 0 1.637-1.697z' />
   </svg>
@@ -154,7 +154,7 @@ Then it can be used like this:
 
 ```js
 const Twitter = props => (
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' {...props}>
+  <svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 16 16' {...props}>
     <path d='M16 3.538a6.461 6.461 0 0 1-1.884.516 3.301 3.301 0 0 0 1.444-1.816 6.607 6.607 0 0 1-2.084.797 3.28 3.28 0 0 0-2.397-1.034 3.28 3.28 0 0 0-3.197 4.028 9.321 9.321 0 0 1-6.766-3.431 3.284 3.284 0 0 0 1.015 4.381A3.301 3.301 0 0 1 .643 6.57v.041A3.283 3.283 0 0 0 3.277 9.83a3.291 3.291 0 0 1-1.485.057 3.293 3.293 0 0 0 3.066 2.281 6.586 6.586 0 0 1-4.862 1.359 9.286 9.286 0 0 0 5.034 1.475c6.037 0 9.341-5.003 9.341-9.341 0-.144-.003-.284-.009-.425a6.59 6.59 0 0 0 1.637-1.697z' />
   </svg>
 )

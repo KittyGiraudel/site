@@ -28,7 +28,7 @@ The trick was to wrap the placeholder extension in a mixin. This mixin accepts a
 }
 ```
 
-For more informations about this technique and to understand this post, I suggest you read the article. Don’t worry, I’ll be there. I’ll wait, go ahead.
+For more information about this technique and to understand this post, I suggest you read the article. Don’t worry, I’ll be there. I’ll wait, go ahead.
 
 ## Pushing things further
 

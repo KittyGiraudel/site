@@ -68,7 +68,7 @@ We needed two major features for this image gallery:
 - being able to filter images by tags to manage albums
 - display a scaled up image when clicking it
 
-The first one was pretty easy to do since Isotope comes with a built-in way to filter and sort items. In the [documentation](http://isotope.metafizzy.co/docs/filtering.html), they recommend using a class as a tag and apply it to all elements you want to assign this tag to. Then you create a little list with a jQuery selector as a `data-filter` attribute (like `.tag`). When you click on an element of this list, the plugin parses this data-attribute and displays nothing but the items matching the given selector.
+The first one was pretty easy to do since Isotope comes with a built-in way to filter and sort items. In the [documentation](https://isotope.metafizzy.co/docs/filtering.html), they recommend using a class as a tag and apply it to all elements you want to assign this tag to. Then you create a little list with a jQuery selector as a `data-filter` attribute (like `.tag`). When you click on an element of this list, the plugin parses this data-attribute and displays nothing but the items matching the given selector.
 
 I didn’t want to add classes for this so I added a `data-album` attribute to every item and passed it the name of the album the image belongs to. Then, I give something like this to the `data-filter` attribute of the filter list: `[data-album\*='album-name']` (literally _everything with a `data-album` attribute containing 'album-name'_). Easy peasy!
 

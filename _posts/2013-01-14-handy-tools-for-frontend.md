@@ -6,9 +6,9 @@ keywords:
   - frontend
 ---
 
-So I’ve been thinking (yeah, true story). And it occured to me, it would be a good idea to write a little blog post about some of the cool tools I use almost everyday.
+So I’ve been thinking (yeah, true story). And it occurred to me, it would be a good idea to write a little blog post about some of the cool tools I use almost everyday.
 
-If you’re a webdesigner or developer, you’ve probably already stumbled upon some wonderful online tools / services. Not necessarly complicated things, just things you definitely need. There are really a bunch of them, and Wild Web Watch is pretty much focused on listing them, but I’d like to focus on just a few of them. The ones I use very often.
+If you’re a webdesigner or developer, you’ve probably already stumbled upon some wonderful online tools / services. Not necessarily complicated things, just things you definitely need. There are really a bunch of them, and Wild Web Watch is pretty much focused on listing them, but I’d like to focus on just a few of them. The ones I use very often.
 
 So here are the tools I’ll cover in this article:
 
@@ -22,7 +22,7 @@ So here are the tools I’ll cover in this article:
 ## CSS Coloratum
 
 - Author: Lea Verou
-- Link: http://css.coloratum.com
+- Link: [https://css.coloratum.com](https://css.coloratum.com)
 - Category: Design
 
 CSS Coloratum is a handful tool helping you convert colors in different syntaxes. It currently supports keywords, hexadecimal, RGB and HSL. Plus, it shows a preview.

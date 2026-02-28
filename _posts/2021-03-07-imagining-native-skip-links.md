@@ -90,7 +90,7 @@ if (!window.navigator.skipLink) {
 
 ## Wrapping up
 
-This is by no mean perfect. I don’t have a bulletproof solution to offer. And if there was one, I’m certain people way smarter and more educated than I am would have offered it already.
+This is by no means perfect. I don’t have a bulletproof solution to offer. And if there was one, I’m certain people way smarter and more educated than I am would have offered it already.
 
 Still, the lack of skip links represent a significant accessibility impediment to people using assistive technologies to browse the web. And considering every website needs one, with little to no variation from website to website, it does feel like something browsers could do on their side.
 

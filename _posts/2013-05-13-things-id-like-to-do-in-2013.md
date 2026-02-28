@@ -44,7 +44,7 @@ I’d really like to work with several developers on a same project before the e
 
 ## Final words
 
-It has been week since I first designed the first draft of this post in my head. Back then, I wanted to include “go to a conference”, and even “speak at a conference”. Hopefully, I don’t have to include them since **I’ll be attending the [KiwiParty](http://kiwiparty.fr/) as a speaker in late June**. Very excited. :)
+It has been week since I first designed the first draft of this post in my head. Back then, I wanted to include “go to a conference”, and even “speak at a conference”. Hopefully, I don’t have to include them since **I’ll be attending the [KiwiParty](https://kiwiparty.fr/) as a speaker in late June**. Very excited. :)
 
 Anyway, this is only the tip of the iceberg, there are so much more things I would love to learn and do before even the end of the month. Alas, time isn’t expandable!
 

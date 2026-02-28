@@ -21,7 +21,7 @@ Anyway, I saw this unique id thingie as an opportunity to have a random number w
 
 To understand what this is all about, you need to know what the `unique-id()` is and what it returns. First of all, there are two different functions for this in Sass source code, both from 2 months ago: one in tree `f3be0f40b7` (using base36) and [one in branch `unique_id`](https://github.com/nex3/sass/blob/unique_id/lib/sass/script/functions.rb#L1645) (using base16). I only worked on the latter since it’s most likely this is the one that will be implemented.
 
-I’m not a Ruby pro, but with the help of a kind folk on Twitter, I could [make it work on CodePad](http://codepad.org/lojd8zLH). Here is what a couple of run of the function looks like:
+I’m not a Ruby pro, but with the help of a kind folk on Twitter, I could [make it work on CodePad](https://codepad.org/lojd8zLH). Here is what a couple of run of the function looks like:
 
 ```
 u84ec5b4cdecd4299

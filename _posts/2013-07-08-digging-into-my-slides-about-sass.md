@@ -37,7 +37,7 @@ My talk aimed at giving some hints to get started with Sass, along with a collec
 
 The `@extend` feature has to be the one which made Sass so popular compared to other CSS preprocessors including Less. Basically, you can make a selector inherits styles from another selector. It comes with abstract classes (also called placeholders), classes prefixed by a `%` symbol instead of a dot, that are not compiled in the final stylesheet, thus that cannot be used in the markup. Their use is exclusive to the stylesheet.
 
-As a very simple example, let’s make a placeholder of the [clearfix method by Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/).
+As a very simple example, let’s make a placeholder of the [clearfix method by Nicolas Gallagher](https://nicolasgallagher.com/micro-clearfix-hack/).
 
 ```scss
 %clearfix:after {
@@ -458,7 +458,7 @@ Now that we introduced loops and lists, we can move forward. My idea was to buil
 ```scss
 // Two-levels list
 // Top level contains pages
-// Inner level contains page-specific informations
+// Inner level contains page-specific information
 $pages:
   'home' 'bg-home.jpg',
   'about' 'about.png',

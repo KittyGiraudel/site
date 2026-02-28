@@ -9,7 +9,7 @@ edits:
   - date: 2014/05/13
     md: Things have changed again. I don’t use a FTP client anymore, and I have ditched Compass from nearly all my projects.
   - date: 2013/02/21
-    md: This post might contain outdated informations since I [moved my site to Jekyll and GitHub Pages](/2013/02/21/moving-to-jekyll/).
+    md: This post might contain outdated information since I [moved my site to Jekyll and GitHub Pages](/2013/02/21/moving-to-jekyll/).
 ---
 
 Hey people! I recently blogged about the tools I use for frontend development, but someone pointed out on Twitter I didn’t tell anything about my development environment. Let’s fix my mistake and talk about it!
@@ -42,9 +42,9 @@ I also have Opera and Safari on some computers to make unusual tests. Since I am
 
 I used to be a huge fan of Notepad++, even if everybody was using Dreamweaver. Honestly I never liked DW; it is super heavy while doing not much than a regular text editor.
 
-Now I am standing on [Sublime Text 2](http://www.sublimetext.com/2) on all my computers, with no intention to change soon. The thing Sublime Text 2 provides that Notepad++ doesn’t is the ability to open a whole folder in order to have access to any file of your project in the arborescence. This is really cool. Plus Sublime Text 2 looks better in my opinion. :)
+Now I am standing on [Sublime Text 2](https://www.sublimetext.com/2) on all my computers, with no intention to change soon. The thing Sublime Text 2 provides that Notepad++ doesn’t is the ability to open a whole folder in order to have access to any file of your project in the arborescence. This is really cool. Plus Sublime Text 2 looks better in my opinion. :)
 
-That being said, I’m carefully looking into [Brackets](http://brackets.io/) from Adobe which is a web-based IDE looking pretty cool.
+That being said, I’m carefully looking into [Brackets](https://brackets.io/) from Adobe which is a web-based IDE looking pretty cool.
 
 ## FTP
 

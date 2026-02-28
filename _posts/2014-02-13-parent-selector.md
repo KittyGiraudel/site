@@ -101,4 +101,4 @@ If you ask me, the `^` proposal (or `!` for that matter) sucks. Syntactically it
 
 Meanwhile, `:has()` is robust, simple and very permissive. It’s the One folks.
 
-_Update: the `^` combinator is already used in Shadow DOM where it is a descendant selector crossing a single shadow boundary. More informations on this stuff at [HTML5Rocks](https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/webcomponents/shadowdom-201/en/index.md#the--and--combinators)._
+_Update: the `^` combinator is already used in Shadow DOM where it is a descendant selector crossing a single shadow boundary. More information on this stuff at [HTML5Rocks](https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/webcomponents/shadowdom-201/en/index.md#the--and--combinators)._

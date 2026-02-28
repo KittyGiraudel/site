@@ -9,7 +9,7 @@ keywords:
 
 Yaaay, another blog post on the web about CSS preprocessors, as if there wasn’t enough. Don’t worry: I won’t try to convince you to use a CSS preprocessor, neither about the one you should pick. These decisions are really up to you.
 
-So this post will be about my own experience with CSS preprocessors. For the record, I recently wrote an article for Codrops untitled “10 things I learnt about CSS” and I talked a lot about preprocessors, so I’ve read (and tried) a bunch of things on the topic lately.
+So this post will be about my own experience with CSS preprocessors. For the record, I recently wrote an article for Codrops entitled “10 things I learnt about CSS” and I talked a lot about preprocessors, so I’ve read (and tried) a bunch of things on the topic lately.
 
 Anyway and before anything, please note I’m not a hardcore CSS preprocessor user. I’m more like a novice with these tools, but I’ve already worked a little bit on 2 of them: first LESS then Sass. I recently moved from LESS to Sass and don’t plan on going back.
 
@@ -18,8 +18,8 @@ Anyway and before anything, please note I’m not a hardcore CSS preprocessor us
 A few weeks ago, I wanted to have a real shot with CSS preprocessors after hours of playing on [CodePen](https://codepen.io) so I read a few things to make a choice. To put it simple, there are currently 4 major CSS preprocessors:
 
 - [Sass](https://sass-lang.com/) built on Ruby
-- [LESS](http://lesscss.org/) built on JavaScript
-- [Stylus](https://learnboost.github.com/stylus/) built on JavaScript
+- [LESS](https://lesscss.org/) built on JavaScript
+- [Stylus](https://stylus-lang.com) built on JavaScript
 - [CSS Crush](https://the-echoplex.net/csscrush/) built on PHP
 
 I’ve never heard much about Stylus so it was not an option to me. I wanted to have a quick access to complete documentation since I was a little bit scared to take the plunge. And even if CSS Crush sounded really cool because I’m familiar with PHP, I’ve read too little on it to consider this as real choice.
@@ -32,7 +32,7 @@ Anyway, that wasn’t the worst thing. I still could learn how to run the server
 
 ## When I started realizing LESS wasn’t the Eldorado
 
-One of the first “complicated” thing I tried to create was a mixin handling CSS arrows the same way [CSSArrowPlease](http://cssarrowplease.com/) does. It took me a couple of hours but I finally succeeded. However I noticed something counter-intuitive: conditional statements.
+One of the first “complicated” thing I tried to create was a mixin handling CSS arrows the same way [CSSArrowPlease](https://cssarrowplease.com/) does. It took me a couple of hours but I finally succeeded. However I noticed something counter-intuitive: conditional statements.
 
 ### LESS and conditional statements
 
@@ -280,7 +280,7 @@ Very quickly, here are the few things making me tell Sass is better than LESS. T
 Well, I’ve been moaning about LESS the whole article, but honestly this is not so bad. At least, it’s no so bad if you don’t plan on complicated and advanced things. Actually there are things LESS are better at, let me tell you my opinion about it:
 
 - <span style="text-decoration: line-through;">LESS provides some really cool color functions (darken, lighten, spin, de/saturate, fade, fadein, fadeout, mix, contrast)</span> (so does Sass)
-- LESS has a nicer and more accessible documentation on [lesscss.org](http://lesscss.org/)
+- LESS has a nicer and more accessible documentation on [lesscss.org](https://lesscss.org/)
 - LESS is not dependent to either command line skills or a third program
 - LESS can be used locally without any install required (simple JS script)
 - [Bootstrap](https://getbootstrap.com/) which is probably the biggest framework outhere running thousands of websites is built on LESS; it sounds like a nice proof that LESS is a good CSS preprocessor to me

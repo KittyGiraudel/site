@@ -124,7 +124,7 @@ $ git config --global core.editor "~/Sublime\ Text\ 3/sublime_text -w"
 
 Large scale projects have many Git branches: developers create new ones every day, do many merges, switch to branches created by workmates, co-develop features in shared branches and so on.
 
-It’s possible to track a remote branch, which displays useful informations in the `git status` command:
+It’s possible to track a remote branch, which displays useful information in the `git status` command:
 
 ```git
 $ git status
@@ -217,14 +217,14 @@ Here’s what my `committemplate.txt` looks like:
 ```git
 $ cat /home/loic/git/committemplate.txt
 [MyTeam] [#FeatureId] - Description of the feature
-More informations about the feature
+More information about the feature
 ```
 
 Unfortunately, it’s not possible to use a bash script instead of a text message, to &mdash; let’s say &mdash; dynamically add the branch name. Fortunately, the same thing can be done with Git hooks.
 
 _Hooking_ is a common programming pattern to allow user to improve the behavior of a software by allowing custom piece of code to run at a specific moment.
 
-With Git, you can create a client-side hook running before user writes his commit message. A hook can retrieve some informations to pre-fill the commit message. Let’s create one in order to fill the commit message with the local branch name, shall we?
+With Git, you can create a client-side hook running before user writes his commit message. A hook can retrieve some information to pre-fill the commit message. Let’s create one in order to fill the commit message with the local branch name, shall we?
 
 ```git
 $ cat .git/hooks/prepare-commit-msg
@@ -273,7 +273,7 @@ My text editor opens with the following content:
 [my-local-branch]
 ```
 
-I can update this message to add some informations. If I amend my commit to change the message, it shouldn’t overwrite my message :
+I can update this message to add some information. If I amend my commit to change the message, it shouldn’t overwrite my message :
 
 ```git
 $ git log -1 --oneline

@@ -73,6 +73,6 @@ I’ve tried a version with a collection of boxes, and a light source at 25% hei
   <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/ZYOxxOB">Fun shadow coding challenge</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>) on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-I think this is one of these things where some JavaScript is not only needed, but also probably quite important to craft a solution that makes fewer asumptions and work nicely in more flexible circumstances — even if still relying on scroll-driven animations.
+I think this is one of these things where some JavaScript is not only needed, but also probably quite important to craft a solution that makes fewer assumptions and work nicely in more flexible circumstances — even if still relying on scroll-driven animations.
 
 Let me know if you come up with a better solution!

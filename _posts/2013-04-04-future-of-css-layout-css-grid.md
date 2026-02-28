@@ -56,7 +56,7 @@ What I’ve found astonishing is the very little amount of required CSS to achie
 ```html
 <div class="wrapper">
   <article class="main">My awesome content here</article>
-  <footer class="footer">Some informations here</footer>
+  <footer class="footer">Some information here</footer>
   <header class="header">My site title goes here</header>
   <aside class="sidebar">Here is my side content</aside>
   <aside class="annexe">Some more side content</aside>

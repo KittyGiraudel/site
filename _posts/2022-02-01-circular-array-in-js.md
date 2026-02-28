@@ -11,7 +11,7 @@ I have been having fun with [Advent of Code](https://adventofcode.com/) recently
 
 Disclaimer: I have no Computer Science degree. I have been doing frontend development for the last 10 years, a discipline you rarely need linked lists for. So take my suggestions here with a grain of salt.
 
-A circular array is just that. A collection of items that loops on itself so that the last element connects to the first. This can be pretty handy in games and problems based on a circular structure (such as the [Josephus problem](#example) or the popular mobile game [Atomas](http://sirnic.com/atomas/)). For instance:
+A circular array is just that. A collection of items that loops on itself so that the last element connects to the first. This can be pretty handy in games and problems based on a circular structure (such as the [Josephus problem](#example) or the popular mobile game [Atomas](https://sirnic.com/atomas/)). For instance:
 
 ```
    (1) 2

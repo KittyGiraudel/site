@@ -11,7 +11,7 @@ keywords:
 
 Hey people! I am the creator of a relatively new Sass grid-system called [Flint](https://github.com/ezekg/flint), and a lightweight Compass extension called [SassyExport](https://github.com/ezekg/SassyExport), which we will be discussing throughout this series.
 
-Since I already mentioned the word _series_, this article will be the first post of a 2 part series. Today we’re going to create a Sass-powered customization API that can be plugged into a frontend API, such as a Wordpress theming framework or even allow live customization through JS.
+Since I already mentioned the word _series_, this article will be the first post of a 2 part series. Today we’re going to create a Sass-powered customization API that can be plugged into a frontend API, such as a WordPress theming framework or even allow live customization through JS.
 
 Today’s discussion will focus on the Sass part, but it will flow straight into part 2 of this series, where we will be utilizing a brand new tool I developed called [SassyExport](https://github.com/ezekg/SassyExport), which allows you to _export_ JSON _from_ Sass and write it into a new file to use elsewhere in your projects.
 

@@ -84,7 +84,7 @@ So everything was already working great but I forced the user to give a em-based
 
 I had a look in the Sass documentation and I found two related built-in function:
 
-- [`unitless(number)`](https://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#unitless-instance_method) returns a boolean wether the value has a unit or not
+- [`unitless(number)`](https://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#unitless-instance_method) returns a boolean whether the value has a unit or not
 - [`unit(number)`](https://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#unit-instance_method) returns the unit of the value
 
 The first is useless in our case, but the second one is precisely what we need to store the unit of the value given by the user. However we still have no way to parse the integer from a value with a unit. At least not with a built-in function. A [quick run on Stack Overflow](https://stackoverflow.com/a/12335841) gave me what I was looking for:

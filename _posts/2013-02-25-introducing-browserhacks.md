@@ -24,7 +24,7 @@ The other reason is that we wanted to do something together for quite a while no
 
 ## Who is “we”?
 
-_We_ is the short for a group of 6 persons gathered under the sweet name of [4ae9b8](http://4ae9b8.com). How cool is that name, right?! Anyway, we are:
+_We_ is the short for a group of 6 persons gathered under the sweet name of 4ae9b8. How cool is that name, right?! Anyway, we are:
 
 - [Tim Pietrusky](https://twitter.com/timpietrusky)
 - [Mads Cordes](https://twitter.com/mobilpadde)
@@ -49,7 +49,7 @@ _If you don’t feel like using this because you don’t like CSS hacks (underst
 
 ## Final words
 
-Browserhacks is built on a PHP/Backbone.js structure. The frontend stuff is built with [Tim’s framework Crystallo](http://timpietrusky.github.com/crystallo/) and Sass.
+Browserhacks is built on a PHP/Backbone.js structure. The frontend stuff is built with [Tim’s framework Crystallo](https://timpietrusky.github.com/crystallo/) and Sass.
 
 The source code is available on [GitHub](https://github.com/4ae9b8/browserhacks). If you find a bug, want to make a suggestion or propose a hack, please open an issue in the [bug tracker](https://github.com/4ae9b8/browserhacks/issues?state=open). Many kudos to you!
 

@@ -16,7 +16,7 @@ We will see how we can define colors in style sheets, what each one can be used 
 
 Colors in CSS are defined on a [sRGB](https://en.wikipedia.org/wiki/SRGB) color space. sRGB stands for “Standard Red Green Blue” where colors are defined through three channels: Red, Green and Blue.
 
-From there, we have various ways to describe color with CSS. Some of them like keywords and hexadecimal has been there almost since the beginning of the web, while other like HSL or RGB came later.
+From there, we have various ways to describe color with CSS. Some of them like keywords and hexadecimal has been there almost since the beginning of the web, while others like HSL or RGB came later.
 
 - **RGB** and **RGBA**
 - **Hexadecimal**
@@ -144,7 +144,7 @@ Okay, but what does this mean? I agree it’s not that simple. Basically, hexade
 
 Since the range of a 8-bit byte is 256, we usually use a base 16 system to display values. This system is called hexadecimal. So basically those 3\*2 digits stand for 3 values from 0 to 255 converted to base 16, as you would do in RGB.
 
-Okay, I can understand you’re lost here, so we’ll try a little example. Let’s say you want to make a pure red (rgb(255, 0, 0)): thanks to [this awesome converter](http://wims.unice.fr/wims/wims.cgi), you convert 255 to base 16 and know it equals FF. If you try to convert 0, you’ll see it’s 0 as well in base 16. So your hex triplet would be #FF0000. Simple, isn’t it?
+Okay, I can understand you’re lost here, so we’ll try a little example. Let’s say you want to make a pure red (rgb(255, 0, 0)): thanks to [this awesome converter](https://wims.unice.fr/wims/wims.cgi), you convert 255 to base 16 and know it equals FF. If you try to convert 0, you’ll see it’s 0 as well in base 16. So your hex triplet would be #FF0000. Simple, isn’t it?
 
 So this was the theory, alright? It doesn’t mean you have to use a base 16 converter every single time you want to use a color in CSS. I’m simply explaining you how are hexadecimal colors composed. Now in real life, you’ll simply use a color palette like Photoshop or whatever.
 
@@ -359,7 +359,7 @@ What I think is really cool with HSL however is the fact you can get a shade ins
 
 CSS preprocessors (at least some of them) provide built-in functions to play with colors. Things like saturate, darken, hue rotation and such. Let me introduce some of them.
 
-### [LESS](http://lesscss.org/#-color-functions)
+### [LESS](https://lesscss.org/#-color-functions)
 
 ```less
 lighten(@color, @percentage);               /* Makes lighter */
@@ -408,7 +408,7 @@ transparentize($color, $percentage) /* Makes more transparent */
 fade-out($color, $percentage)       /* Makes more transparent */
 ```
 
-### [Stylus](http://stylus-lang.com/docs/bifs.html)
+### [Stylus](https://stylus-lang.com)
 
 ```stylus
 red(color)          /* Gets the red component */
@@ -437,8 +437,8 @@ Anyway, back to CSS, let me (re)introduce you a few awesome tools and resources 
 - [Using transparency in webdesign: dos and don’ts](https://tympanus.net/codrops/2012/11/26/using-transparency-in-web-design-dos-and-donts/) by Carrie Cousins
 - [Principles or Color and the Color Wheel](https://tympanus.net/codrops/2012/02/28/principles-of-color-and-the-color-wheel/) by Carrie Cousins
 - [Kuler](https://kuler.adobe.com/) by Adobe
-- [Paletton](http://paletton.com/)
-- [0to255](http://0to255.com/)
+- [Paletton](https://paletton.com/)
+- [0to255](https://0to255.com/)
 - [Color Equivalents Table](https://meyerweb.com/eric/css/colors/) by Eric Meyer
 - [CSS Color Keyword Distribution](https://www.xanthir.com/blog/b4JC0) by Tab Atkins Jr. ([original work](https://meyerweb.com/eric/css/colors/hsl-147.html) by Eric Meyer)
 - [Developers guide to images](https://www.jessechapo.com/posts/Developers-Guide-to-Images.html)

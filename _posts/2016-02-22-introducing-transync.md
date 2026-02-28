@@ -9,7 +9,7 @@ keywords:
 
 Hey folks, another day, another open-source module at Edenspiekermann! Today, I’d like to talk about translation files. We tend to do a lot of multilingual websites here at the company.
 
-For instance [Amaphiko](https://amaphiko.redbull.com/en) exists in both English and Brazilian Portuguese. And the [home page for the ESPI Card Builder](http://cards.edenspiekermann.com) project will soon be released in German as well as English. We have international clients and international teams, so it only makes sense for us to work a lot with several languages at the same time (which is a shame for me because I only speak French and English).
+For instance Red Bull Amaphiko exists in both English and Brazilian Portuguese. And the home page for the ESPI Card Builder project will soon be released in German as well as English. We have international clients and international teams, so it only makes sense for us to work a lot with several languages at the same time (which is a shame for me because I only speak French and English).
 
 Anyway, sometimes we need a way to synchronise translation files between them (depending on the tech stack; Rails handles everything pretty smoothly as far as I can tell). As we work in English, other languages often end up lagging behind and do not have all the translation keys from the English locale. So allow me to introduce [transync](https://github.com/edenspiekermann/transync).
 

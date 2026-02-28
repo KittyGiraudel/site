@@ -86,7 +86,7 @@ $max: 1910px; /* [1] */
 }
 ```
 
-1. First, we set a max value (not necessarly px) for the first Media Query call we will do; from there, it will decrease from 10 to 10,
+1. First, we set a max value (not necessarily px) for the first Media Query call we will do; from there, it will decrease from 10 to 10,
 2. We loop through all items in the list,
 3. We call the Media Query setting the according maximum width,
 4. We put the current word in the `content` property,

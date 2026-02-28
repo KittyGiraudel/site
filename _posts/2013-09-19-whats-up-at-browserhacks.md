@@ -15,7 +15,7 @@ Anyway, since we do not have a blog for Browserhacks, I have no choice but to an
 
 We have decided to put aside our PHP tools to move to a [Grunt](https://gruntjs.com) workflow. As you may know, Grunt is a task-builder in JavaScript which is involving a lot of things to us.
 
-Well obviously the first thing is we need to learn how to Grunt. [Fabrice Weinberg](http://blog.weinberg.me/) has helped us for the porting (a million thanks to him) but at the end of the day we should be able to do this on our own.
+Well obviously the first thing is we need to learn how to Grunt. [Fabrice Weinberg](https://blog.weinberg.me/) has helped us for the porting (a million thanks to him) but at the end of the day we should be able to do this on our own.
 
 Now we don’t use PHP anymore, we can host the whole thing on [GitHub Pages](https://pages.github.com/) which makes our repository always synchronized with the server and save us from all that server/hosting crap.
 
@@ -35,7 +35,7 @@ There are still a couple of hacks that are not tested at all essentially all the
 
 I think the very first issue we’ve opened for Browserhacks was a request for a _copy-to-clipboard_ feature in order to have a hack ready to be used in a single click. Unfortunately, accessing the user’s clipboard is very difficult due to obvious security reasons.
 
-[This article by Brooknovak](https://brooknovak.wordpress.com/2009/07/28/accessing-the-system-clipboard-with-javascript/) explains it in details, but basically here are the possible solutions to insert content into the clipboard:
+[This article by Brooknovak](https://brooknovak.WordPress.com/2009/07/28/accessing-the-system-clipboard-with-javascript/) explains it in details, but basically here are the possible solutions to insert content into the clipboard:
 
 - `clipboardData`: only available in IE
 - `ZeroClipboard`: relies on Flash
@@ -43,9 +43,9 @@ I think the very first issue we’ve opened for Browserhacks was a request for a
 - `XUL`: only available in Mozilla, and kind of buggy
 - `execCommand`: both hacky and buggy
 
-Basically it’s a mess and a cross-browser _copy-to-clipboard_ is not realistic. So we had to think of something and by _we_ I mean [Tim Pietrusky](http://timpietrusky.com) of course. He came up with a clever idea which would allow the user to select a hack &mdash; for lack of copying &mdash; in one click.
+Basically it’s a mess and a cross-browser _copy-to-clipboard_ is not realistic. So we had to think of something and by _we_ I mean [Tim Pietrusky](https://timpietrusky.com) of course. He came up with a clever idea which would allow the user to select a hack &mdash; for lack of copying &mdash; in one click.
 
-Thus, he released a little JavaScript library called [\_select()](http://timpietrusky.com/_select/) that allow anything to be selected in a single click: paragraphs, images, whole documents, anything.
+Thus, he released a little JavaScript library called [\_select()](https://timpietrusky.com/_select/) that allow anything to be selected in a single click: paragraphs, images, whole documents, anything.
 
 Anyway, we now use this cool little library to allow you to select a whole hack by simply clicking it. Then, you only have to press `ctrl`/`cmd` + `C`. Hopefully, this while make it easier to use for all of you with a trackpad.
 

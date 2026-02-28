@@ -7,7 +7,7 @@ keywords:
   - library
 ---
 
-If you enjoy reading about Sass, you may have stumbled upon Stuart Robson’s [recent article promoting BEM](http://www.alwaystwisted.com/post.php?s=2014-02-27-even-easier-bem-ing-with-sass-33) syntax with new Sass 3.3 features. Pretty cool article; if you haven’t read it, you definitely should.
+If you enjoy reading about Sass, you may have stumbled upon Stuart Robson’s [recent article promoting BEM](https://www.alwaystwisted.com/post.php?s=2014-02-27-even-easier-bem-ing-with-sass-33) syntax with new Sass 3.3 features. Pretty cool article; if you haven’t read it, you definitely should.
 
 Anyway, I had a couple of minutes to kill the other day so I opened new [pen](https://codepen.io) and started writing a little button library. Yes, another one! Actually my point wasn’t to improve anything, I just wanted to code some Sass, just for the sake of it.
 

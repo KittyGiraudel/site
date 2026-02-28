@@ -9,9 +9,9 @@ keywords:
   - N26
 ---
 
-In just about a month, that will be 3.5 years I am at N26. I was hired as the first web developer to rebuild the N26 web platform. At the time, that meant rebuilding the Wordpress website, rebuilding the Backbone webapp, rebuilding the Onsen UI webviews and rebuilding the custom support center, all in a new unified tech stack. And also, building a team, that could achieve all that, and work on the new platform to bring “N26 for Web” to a whole new shiny state.
+In just about a month, that will be 3.5 years I am at N26. I was hired as the first web developer to rebuild the N26 web platform. At the time, that meant rebuilding the WordPress website, rebuilding the Backbone webapp, rebuilding the Onsen UI webviews and rebuilding the custom support center, all in a new unified tech stack. And also, building a team, that could achieve all that, and work on the new platform to bring “N26 for Web” to a whole new shiny state.
 
-So I did, with incommensurable help from [Mike Smart](https://twitter.com/smartmike). So we did, us all, the web engineers that have been and are still with us to this day. In this article, I would like to share a few things I learnt and discovered along the way.
+So I did, with immeasurable help from [Mike Smart](https://twitter.com/smartmike). So we did, us all, the web engineers that have been and are still with us to this day. In this article, I would like to share a few things I learnt and discovered along the way.
 
 - [Hire people, not skills](#hire-people-not-skills)
 - [Don’t talk about code](#dont-talk-about-code)
@@ -23,7 +23,7 @@ So I did, with incommensurable help from [Mike Smart](https://twitter.com/smartm
 
 ## Hire people, not skills
 
-N26, like many startups, is growing fast. When I joined, we were just about 100 people. Now, it’s way over a thousand, in about 3 years. We had to hire a lot, and quickly. I am very thankful I got to lead hiring for the web team because I could made sure we balance hiring fast with hiring well.
+N26, like many startups, is growing fast. When I joined, we were just about 100 people. Now, it’s way over a thousand, in about 3 years. We had to hire a lot, and quickly. I am very thankful I got to lead hiring for the web team because I could make sure we balance hiring fast with hiring well.
 
 Hiring in the tech industry is just like the tech industry itself: completely messed up. We impose unrealistic and unreasonable expectations on people. We completely overstate the value of technical skills and we think writing code is way more difficult than it is. This, in turn, creates weak homogeneous teams of fragile egos.
 

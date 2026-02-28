@@ -24,13 +24,13 @@ However, that is the theory. In practice, unfortunately, it is dramatically diff
 
 It means that right now, regarding document outline (exclusively), these elements are no different than `<div>`. And that means that if you rely on these sectioning elements to put `<h1>` everywhere, you end up with a flat document outline composed exclusively of `<h1>`, which hurts accessibility and possibly SEO.
 
-> If you as a developer want to provide a meaningful document structure, use the `<h1>`–`<h6>` elements to express document structure. DO NOT rely upon the HTML5 document outline. By all means use the HTML5 section elements, but do not rely upon them to convey a meaningful structure. If at some point in the future the HTML5 document outline ceases to be a fiction, you will be covered as the use of h1–h6 is backwards compatible. — [Steve Faulkner](http://blog.paciellogroup.com/2013/10/html5-document-outline/)
+> If you as a developer want to provide a meaningful document structure, use the `<h1>`–`<h6>` elements to express document structure. DO NOT rely upon the HTML5 document outline. By all means use the HTML5 section elements, but do not rely upon them to convey a meaningful structure. If at some point in the future the HTML5 document outline ceases to be a fiction, you will be covered as the use of h1–h6 is backwards compatible. — [Steve Faulkner](https://blog.paciellogroup.com/2013/10/html5-document-outline/)
 
 To avoid these issues, we can make our heading structure consistent and meaningful. Basically, it does not matter what kind of container we use, the heading level must be meaningful in regard to the previous heading. If it is a sort of sub-section, go down one level in the heading structure. If it is an unrelated section, have the same kind of heading as before. When checking the page, we should have a logical heading structure (which also mean never skipping a heading level). It’s actually what the HTML5 specification recommends:
 
-> Sections may contain headings of any rank, and authors are strongly encouraged to use headings of the appropriate rank for the section’s nesting level. — [HTML 5.1 - Headings and sections](http://w3c.github.io/html/sections.html#headings-and-sections)
+> Sections may contain headings of any rank, and authors are strongly encouraged to use headings of the appropriate rank for the section’s nesting level. — [HTML 5.1 - Headings and sections](https://w3c.github.io/html/sections.html#headings-and-sections)
 
-One last thing to point out on this topic: the theory is so far away from the current state of things that the spec authors decided to review the whole thing and design something that will actually make sense and get implemented. [More to come in the next few months](https://github.com/w3c/html/issues/33). Meanwhile I highly recommend you read this [outstanding article about the document outline by Adrian Roselli](http://adrianroselli.com/2013/12/the-truth-about-truth-about-multiple-h1.html).
+One last thing to point out on this topic: the theory is so far away from the current state of things that the spec authors decided to review the whole thing and design something that will actually make sense and get implemented. [More to come in the next few months](https://github.com/w3c/html/issues/33). Meanwhile I highly recommend you read this [outstanding article about the document outline by Adrian Roselli](https://adrianroselli.com/2013/12/the-truth-about-truth-about-multiple-h1.html).
 
 ## Alright, what about the script?
 
@@ -40,7 +40,7 @@ One last thing to point out on this topic: the theory is so far away from the cu
 
 Given the size of the script (and that it doesn’t have any dependency), there are quite a few ways to use it. What you could do is save it as a snippet in your DevTools (see next screenshot).
 
-![Saving Outline Audit as a DevTools snippet](http://i.imgur.com/2kDj2ZI.png)
+![Saving Outline Audit as a DevTools snippet](https://i.imgur.com/2kDj2ZI.png)
 
 Or you could also have a bookmarklet for this:
 

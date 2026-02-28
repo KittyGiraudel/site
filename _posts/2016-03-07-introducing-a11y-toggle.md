@@ -13,7 +13,7 @@ At Edenspiekermann, we used to heavily rely on the [checkbox hack](https://css-t
 
 ## What’s wrong with the checkbox hack?
 
-For starters, the checkbox hack relies on the `:checked` pseudo-class which is unfortunately not supported everywhere (source [QuirksMode](http://quirksmode.org/css/selectors/mobile.html#t60)). In case you’re too lazy to check the compatibility tables, here is a list of browsers _not_ supporting `:checked`:
+For starters, the checkbox hack relies on the `:checked` pseudo-class which is unfortunately not supported everywhere (source [QuirksMode](https://quirksmode.org/css/selectors/mobile.html#t60)). In case you’re too lazy to check the compatibility tables, here is a list of browsers _not_ supporting `:checked`:
 
 - Internet Explorer up to 8;
 - Some versions of Firefox on Linux;
@@ -57,6 +57,6 @@ a11y-toggle is adding the initial `aria-hidden`, `aria-controls` and `aria-expan
 
 ## What’s next?
 
-I would like to investigate on the `<details>` and `<summary>` elements as they are basically a native implementation for content toggles. Given the [poor browser support](http://caniuse.com/#feat=details), I could consider making a11y-dialog a polyfill for these.
+I would like to investigate on the `<details>` and `<summary>` elements as they are basically a native implementation for content toggles. Given the [poor browser support](https://caniuse.com/#feat=details), I could consider making a11y-dialog a polyfill for these.
 
 Anyway, if you have any idea to make it better or if you found a bug, please [reach out to me on Twitter](https://twitter.com/KittyGiraudel) or [open an issue on GitHub](https://github.com/edenspiekermann/a11y-toggle).

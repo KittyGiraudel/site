@@ -11,11 +11,11 @@ I have recently been asked what made us go with a mono-repository approach for t
 
 ## Mono-repo, not monolith
 
-Quick back-story about web at N26: we started [rebuilding the web platform from scratch as well as the web team](/2020/02/03/lessons-from-building-n26-for-web/) about 3.5 years ago. We had a super fragmented tech stack at the time (webapp in Backbone, site in Wordpress, support center in Node + templates…) and wanted to unify all of it. We had a few options, but ultimately decided to go with a monolith approach.
+Quick back-story about web at N26: we started [rebuilding the web platform from scratch as well as the web team](/2020/02/03/lessons-from-building-n26-for-web/) about 3.5 years ago. We had a super fragmented tech stack at the time (webapp in Backbone, site in WordPress, support center in Node + templates…) and wanted to unify all of it. We had a few options, but ultimately decided to go with a monolith approach.
 
 For us, it works like this: the web platform is on a single repository, but serves 4 different projects (the registration flow, the online banking application, the website and the support center). We build projects individually with Webpack, but 95% of the code-base is considered shared. In a way, our repository is a framework on which we build web projects.
 
-N26 currently have about 20+ web engineers who all work full-time on the mono-repo albeit in different cross-functional teams. On top of that, we release our 4 web projects at the same time on a daily basis. That means we need our code-base to be in a constant “ready state”. We ensure that by having an easy to use feature flagging setup, a all-hands-on-deck peer review process, and an open and quick feedback loop. Expanding on these points below.
+N26 currently have about 20+ web engineers who all work full-time on the mono-repo albeit in different cross-functional teams. On top of that, we release our 4 web projects at the same time on a daily basis. That means we need our code-base to be in a constant “ready state”. We ensure that by having an easy to use feature flagging setup, an all-hands-on-deck peer review process, and an open and quick feedback loop. Expanding on these points below.
 
 ## Easy feature flags
 

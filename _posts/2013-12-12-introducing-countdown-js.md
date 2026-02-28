@@ -22,7 +22,7 @@ It worked pretty well and the code was clean enough so that I wasn’t ashamed t
 
 As good as this pattern can be, it becomes highly annoying when you have to deal with multiple occurrences of your widget on the same page. For some things, that’s not a problem at all. But you could definitely come with the need to display multiple timers/countdowns on the same page so I needed something moar.
 
-So here comes [Object Oriented JavaScript](http://tobyho.com/2010/11/22/javascript-constructors-and/) in all its glory!
+So here comes [Object Oriented JavaScript](https://tobyho.com/2010/11/22/javascript-constructors-and/) in all its glory!
 
 ## How to
 

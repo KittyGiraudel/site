@@ -34,7 +34,7 @@ Given how long this article is, here is a table of contents so you can quickly j
 
 Below is a short and informal methodology on how to use [GitHub](https://github.com) as a project workflow, heavily relying on [pull-requests](https://help.github.com/articles/using-pull-requests/). While it might sound scary as first, this approach actually has a lot of benefits that we’ll investigate further in the next section.
 
-The rough idea is that at the beginning of a [sprint](http://scrummethodology.com/scrum-sprint/), we create a(n empty) pull-request for all [user stories](http://scrummethodology.com/scrum-user-stories/). In the description of the pull-request, we write tasks in (GitHub Flavoured) Markdown using [GitHub support for checkboxes](https://github.com/blog/1375%0A-task-lists-in-gfm-issues-pulls-comments). Then, affected developers commit their work to this branch, progressively checking out the tasks. Once all tasks from a pull-request have been treated, this one can be reviewed then merged.
+The rough idea is that at the beginning of a [sprint](https://scrummethodology.com/scrum-sprint/), we create a(n empty) pull-request for all [user stories](https://scrummethodology.com/scrum-user-stories/). In the description of the pull-request, we write tasks in (GitHub Flavoured) Markdown using [GitHub support for checkboxes](https://github.com/blog/1375%0A-task-lists-in-gfm-issues-pulls-comments). Then, affected developers commit their work to this branch, progressively checking out the tasks. Once all tasks from a pull-request have been treated, this one can be reviewed then merged.
 
 ## What problem does it solve
 

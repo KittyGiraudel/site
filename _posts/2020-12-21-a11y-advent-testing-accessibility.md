@@ -20,7 +20,7 @@ Testing the HTML can be done with a variety of tools:
 For copy-writing and content, I can recommend:
 
 - [alex.js](https://alexjs.com/), a command-line utility to spot insensitive and inconsiderate writing.
-- [Hemingway App](http://www.hemingwayapp.com/), a web application to help improve writing styles by spotting redundancy and complexity in English text.
+- [Hemingway App](https://www.hemingwayapp.com/), a web application to help improve writing styles by spotting redundancy and complexity in English text.
 
 Low hanging-fruits which can be performed to test things:
 
@@ -33,7 +33,7 @@ Low hanging-fruits which can be performed to test things:
 For more all-around testing, there are pretty handy checklists:
 
 - The one from the [A11y Project](https://www.a11yproject.com/checklist/).
-- The one from [VoxMedia](http://accessibility.voxmedia.com/) going beyond technical implementation.
+- The one from [VoxMedia](https://accessibility.voxmedia.com/) going beyond technical implementation.
 - This one from [Elsevier](https://romeo.elsevier.com/accessibility_checklist/).
 
 For professional audits conducted by accessibility experts, I can recommend:

@@ -28,7 +28,7 @@ Another approach is to do it with CSS. The idea is to use a _reverse-column_ fle
 
 <p class="codepen" data-height="350" data-default-tab="html,result" data-slug-hash="ZEPgJEM" data-user="KittyGiraudel" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/ZEPgJEM">
-  Untitled</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>)
+  Bottom anchored scrolling area</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 

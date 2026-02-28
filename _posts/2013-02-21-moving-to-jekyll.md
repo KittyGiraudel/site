@@ -12,7 +12,7 @@ If you wonder why you may have experienced some issues when trying to reach the 
 
 As a reminder or for those of you who don’t know what Jekyll and GitHub Pages are:
 
-[Jekyll](https://github.com/mojombo/jekyll) is a simple, blog aware, static site generator written on Ruby by [Tom Preston Werner](http://tom.preston-werner.com/), GitHub co-founder. It takes a template directory (representing the raw form of a website), runs it through Markdown and Liquid converters to spit out a complete static website.
+[Jekyll](https://github.com/mojombo/jekyll) is a simple, blog aware, static site generator written on Ruby by [Tom Preston Werner](https://tom.preston-werner.com/), GitHub co-founder. It takes a template directory (representing the raw form of a website), runs it through Markdown and Liquid converters to spit out a complete static website.
 
 [GitHub Pages](https://pages.github.com/) are public webpages freely hosted and easily published through GitHub.
 
@@ -75,7 +75,7 @@ Also as a developer, I would probably have not felt very proud of running WordPr
 
 ## Here comes Jekyll
 
-This is why I wanted another simpler option, so I [asked](https://twitter.com/KittyGiraudel/status/302826818988290048) [on](https://twitter.com/KittyGiraudel/status/302839345277194240) [Twitter](https://twitter.com/KittyGiraudel/status/302910551363825665). A couple of people recommended either Jekyll or [Octopress](http://octopress.org/) (which runs on Jekyll). I had already heard about it since the site redesign has been motivated by [Dave Rupert’s](https://daverupert.com/2012/11/brander-newer/) when he moved to Jekyll.
+This is why I wanted another simpler option, so I [asked](https://twitter.com/KittyGiraudel/status/302826818988290048) [on](https://twitter.com/KittyGiraudel/status/302839345277194240) [Twitter](https://twitter.com/KittyGiraudel/status/302910551363825665). A couple of people recommended either Jekyll or [Octopress](https://octopress.org/) (which runs on Jekyll). I had already heard about it since the site redesign has been motivated by [Dave Rupert’s](https://daverupert.com/2012/11/brander-newer/) when he moved to Jekyll.
 
 Back then, I had a look at Jekyll and it seemed nice but overly complicated — at least to me. I am really not that smart when you put CSS aside. Anyway it seemed to be quite what I was looking for so I thought I should give a try.
 

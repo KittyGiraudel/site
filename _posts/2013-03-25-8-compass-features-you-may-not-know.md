@@ -130,7 +130,7 @@ This outputs:
 
 Hum, [hacks](https://compass-style.org/reference/compass/utilities/general/hacks/). I know what you think: _NOOOOOO!_. Anyway, Compass provides a couple of features to take advantage of Internet Explorer inconsistencies and weaknesses.
 
-You may have already heard of `has-layout`. [This article](http://www.satzansatz.de/cssd/onhavinglayout.html) explains it way better than I could:
+You may have already heard of `has-layout`. [This article](https://www.satzansatz.de/cssd/onhavinglayout.html) explains it way better than I could:
 
 > “Layout” is an IE/Win proprietary concept that determines how elements draw and bound their content, interact with and relate to other elements, and react on and transmit application/user events. This quality can be irreversibly triggered by some CSS properties. Some HTML elements have “layout” by default. Microsoft developers decided that elements should be able to acquire a “property” (in an object-oriented programming sense) they referred to as hasLayout, which is set to true when this rendering concept takes effect.
 

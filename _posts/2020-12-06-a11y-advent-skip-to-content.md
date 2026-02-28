@@ -5,7 +5,7 @@ description: A11yAdvent entry on skip to content links
 
 Let’s stay in the topic of navigation and talk about a feature that is too often forgotten: a link to go straight to the main content area of the site — often called “skip-to-content” or “skip-navigation” link.
 
-In traditional websites using hyperlinks the right way, the page is fully reloaded when following a link and the focus is restored to the top of the page. When navigating with the keyboard, that means having to tab through the entire header, navigation, sometimes even sidebar before getting to accesss the main content. This is bad.
+In traditional websites using hyperlinks the right way, the page is fully reloaded when following a link and the focus is restored to the top of the page. When navigating with the keyboard, that means having to tab through the entire header, navigation, sometimes even sidebar before getting to access the main content. This is bad.
 
 Single-page applications are not free from this consideration either. Following a link tends to reload the content area and therefore loses the current focus, which sends it to the top of the document, causing the same issue. So either way, there is work to do.
 

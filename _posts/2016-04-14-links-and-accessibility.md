@@ -10,7 +10,7 @@ keywords:
 
 The other day, [a friend](https://twitter.com/smartmike) and I were having a conversation about a tricky accessibility puzzle so I thought I’d write a few lines about it.
 
-Consider a search results page with a way to order results per criterias (date, price, availability, etc.). Each criteria has its own link, which refresh the page with some different query strings. So far, so good.
+Consider a search results page with a way to order results per criteria (date, price, availability, etc.). Each criteria has its own link, which refresh the page with some different query strings. So far, so good.
 
 Here is how we would instinctively write it:
 

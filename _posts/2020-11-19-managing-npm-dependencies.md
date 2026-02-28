@@ -111,7 +111,7 @@ function deps() {
 }
 ```
 
-The script is by no mean perfect:
+The script is by no means perfect:
 
 - As mentioned, it’s not published on npm, so right now you need to clone it to use it. Not the most convenient, but heh, also not the worst.
 - If a dependency has a major available update, it will shadow any potential minor (safe) updates, so you might be missing on minor/patches if you’re down one or more major versions.

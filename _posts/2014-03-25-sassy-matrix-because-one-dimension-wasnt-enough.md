@@ -184,14 +184,14 @@ Among other things, there are a couple of functions to swap values and collectio
 - `swap-rows($matrix, $r1, $r2)`: swaps rows `$r1` and `$r2` from `$matrix`
 - `swap-columns($matrix, $c1, $c2)`: swaps columns `$c1` and `$c2` from `$matrix`
 
-Some functions to know additional informations on the current matrix:
+Some functions to know additional information on the current matrix:
 
 - `columns($matrix)`: return number of columns in `$matrix`
 - `rows($matrix)`: return number of rows in `$matrix`
-- `is-square($matrix)`: check wether `$matrix` has as many rows as columns
-- `is-diagonal($matrix)`: check wether all values from the main diagonal of `$matrix` are set while all other values are equal to 0
-- `is-upper-triangular($matrix, $flag: null)`: check wether all value below `$matrix` diagonal are equal to 0
-- `is-lower-triangular($matrix, $flag: null)`: check wether all value above `$matrix` diagonal are equal to 0
+- `is-square($matrix)`: check whether `$matrix` has as many rows as columns
+- `is-diagonal($matrix)`: check whether all values from the main diagonal of `$matrix` are set while all other values are equal to 0
+- `is-upper-triangular($matrix, $flag: null)`: check whether all value below `$matrix` diagonal are equal to 0
+- `is-lower-triangular($matrix, $flag: null)`: check whether all value above `$matrix` diagonal are equal to 0
 
 … and much more. And because I needed a place to store all those functions I made a [GitHub repository](https://github.com/KittyGiraudel/SassyMatrix) so if you feel like contributing, be sure to have a glance!
 

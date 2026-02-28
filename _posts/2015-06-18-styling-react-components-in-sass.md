@@ -14,7 +14,7 @@ Chances are, as a frontend developer, you’ve heard of Facebook’s library for
 
 - [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)
 - [SMACSS](https://smacss.com/)
-- [OOCSS](http://oocss.org/)
+- [OOCSS](https://oocss.org/)
 - [The 7-1 Pattern](https://sass-guidelin.es/#architecture)
 
 Fortunately, any of these architectures can be used for styling React components, or any components for that matter! ("Styling Components in Sass" sounded a bit too dry for an article title, though.) We will be focusing on Kitty’s own [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern) for this article, which I have used in multiple projects.

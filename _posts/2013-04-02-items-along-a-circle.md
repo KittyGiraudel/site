@@ -139,7 +139,7 @@ Outputs (with 8 items and a `24em` large container)…
 
 The main problem with this technic is that **IE8- doesn’t support pseudo-selectors and CSS transforms**.
 
-The first thing is easily fixed either with a plugin like [Selectivizr](http://selectivizr.com/) to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it (with jQuery):
+The first thing is easily fixed either with a plugin like [Selectivizr](https://selectivizr.com/) to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it (with jQuery):
 
 ```javascript
 var $items = $('.parent').children()
