@@ -8,7 +8,7 @@ keywords:
 For the past {% footnoteref "timeline" "It’s actually been 8 months, but “six months” makes for a better title." %}~~6~~ 8 months{% endfootnoteref %}, I have been learning [Rust](https://rust-lang.org/). This article is a brain dump of my experience with the language, what I like and don’t like, and other miscellaneous thoughts. This is written from the perspective of a long-time JavaScript/TypeScript engineer coming to Rust for a real production system.
 
 - [Overview](#overview)
-- [You Cargo girl!](#cargo-girl)
+- [You Cargo girl!](#you-cargo-girl)
 - [Embracing the compiler](#embracing-the-compiler)
 - [Error handling done right](#error-handling-done-right)
 - [Locks and deadlocks](#locks-and-deadlocks)

@@ -1,3 +1,4 @@
+import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import * as cheerio from 'cheerio'
 import footnotes from 'eleventy-plugin-footnotes'
@@ -5,7 +6,6 @@ import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
 import htmlmin from 'html-minifier'
 import markdownIt from 'markdown-it'
-import markdownItAnchor from 'markdown-it-anchor'
 import uslugify from 'uslug'
 
 const EMOJI_REGEX = emojiRegex()
@@ -26,6 +26,7 @@ export default function (config) {
   // Enable compilation plugins
   config.addPlugin(syntaxHighlight)
   config.addPlugin(footnotes)
+  config.addPlugin(IdAttributePlugin, { slugify: uslugify })
 
   // Pass through static files; the CSS file is handled through Sass and
   // therefore not explicitly passed through here
@@ -86,9 +87,6 @@ export default function (config) {
   config.addCollection('posts', collection =>
     collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
   )
-
-  // Override the Markdown renderer to use link anchors
-  config.setLibrary('md', markdownIt({ html: true }).use(markdownItAnchor, { slugify: uslugify }))
 
   return {
     dir: {
