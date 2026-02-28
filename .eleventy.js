@@ -218,7 +218,7 @@ function groupBy(array, key) {
 }
 
 function info(content) {
-  return `<aside class="Info">${markdown(content, false)}</aside>`
+  return `<aside class="Info" role="note">${markdown(content, false)}</aside>`
 }
 
 function time(value) {
