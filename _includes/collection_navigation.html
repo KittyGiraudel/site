@@ -8,7 +8,7 @@
   {% if previous_entry.url %}
   <p class="CollectionNavigation__item CollectionNavigation__item--previous
     ">
-    Read previous {{ title }}:
+    Read previous {{ name }}:
     <span class="CollectionNavigation__link-container">
       <a class="CollectionNavigation__link " href="{{ previous_entry.url }}" {% if previous_entry.data.lang %}hreflang="{{ previous_entry.data.lang | downcase }}" lang="{{ previous_entry.data.lang | downcase }}"{% endif %}>
         {{ previous_entry.data.title }}
