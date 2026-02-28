@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   url: 'https://kittygiraudel.com',
   description:
     'I’m Kitty Giraudel, a transfeminine web engineer based in Berlin, focused on accessibility and inclusivity.',

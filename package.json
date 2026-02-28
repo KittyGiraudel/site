@@ -1,8 +1,9 @@
 {
   "title": "KittyGiraudel.com",
+  "type": "module",
   "homepage": "https://kittygiraudel.com",
   "scripts": {
-    "sw": "./node_modules/.bin/workbox generateSW workbox-config.js",
+    "sw": "./node_modules/.bin/workbox generateSW workbox-config.cjs",
     "build": "npx @11ty/eleventy && npm run sw",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve --quiet --incremental"
   },
