@@ -118,7 +118,7 @@ function minifyHTML(content, outputPath) {
 }
 
 function replaceEmoji(match) {
-  const label = emojiShortName[match]
+  const label = emojiShortName[match]?.replace(/"/g, '')
 
   return label
     ? `<span role="img" aria-label="${label}" title="${label}">${match}</span>`
