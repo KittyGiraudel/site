@@ -1,5 +1,6 @@
 ---
 title: My journey writing a watchdog script
+description: A walkthrough of how I got to write a watchdog script in Rust to ensure server reliability and availability.
 tags:
   - posts
   - Rust

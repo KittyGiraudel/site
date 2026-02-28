@@ -1,5 +1,6 @@
 ---
 title: Six months of Rust
+description: A retrospective on my last 6 months learning Rust from scratch, as a frontend engineer.
 tags:
   - posts
   - Rust
