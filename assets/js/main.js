@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     DARK: 'dark',
   }
 
-  // http://joelcalifa.com/blog/revisiting-visited
+  // https://joelcalifa.com/blog/revisiting-visited
   ; (function markVisitedLinks() {
     localStorage.setItem('visited-' + window.location.pathname, true)
 
@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function setGiscusTheme(theme) {
   const iframe = document.querySelector('iframe.giscus-frame');
-  if (!iframe) return;
-  iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app');
+  const giscus = document.querySelector('[src="https://giscus.app/client.js"]')
+  if (giscus) giscus.setAttribute('data-theme', theme)
+  if (iframe) iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app');
 }
