@@ -1,6 +1,7 @@
 {% assign project = item %}
+{% assign project_stars = github.stargazers[project.repository] | default: 0 %}
 
-{% capture project_category %}{{ project.category }} · {{ project.stars | stars }}{% endcapture %}
+{% capture project_category %}{{ project.category }} · {{ project_stars | stars }}{% endcapture %}
 {% capture project_label %}Look at project <span class="visually-hidden">{{ project.name }}</span>{% endcapture %}
 
 {% include "tile.html",

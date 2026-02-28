@@ -69,9 +69,9 @@
     "name": "A11y-dialog",
     "description": "A script to make modal dialogs accessible to assistive technology users.",
     "link": "https://a11y-dialog.netlify.app/",
+    "repository": "https://github.com/KittyGiraudel/a11y-dialog",
     "category": "Accessibility",
-    "showcase": true,
-    "stars": 2500
+    "showcase": true
   },
   {
     "name": "Spritesh",
@@ -89,17 +89,17 @@
     "name": "Simplified JavaScript Jargon",
     "description": "A community-driven attempt at explaining JavaScript concepts and buzzwords.",
     "link": "https://jargon.js.org",
+    "repository": "https://github.com/KittyGiraudel/SJSJ",
     "category": "JavaScript",
-    "showcase": true,
-    "stars": 2300
+    "showcase": true
   },
   {
     "name": "Sass Guidelines",
     "description": "An opinionated styleguide for writing sane, maintainable and scalable Sass.",
     "link": "https://sass-guidelin.es",
+    "repository": "https://github.com/KittyGiraudel/sass-guidelines",
     "category": "Sass",
-    "showcase": true,
-    "stars": 900
+    "showcase": true
   },
   {
     "name": "Sass Boilerplate",
