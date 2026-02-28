@@ -14,9 +14,9 @@ http://ogp.me/ns/article#">
   <title>{% if title %}{{ title }} | {{ site.author }}{% else %}{{ site.author }}{% endif %}</title>
   <meta name="description" content="{{ page_description | emoji_to_text | escape }}">
   {% if keywords %}
-  <meta name="keywords" content="{{ keywords | join: ',' }}" />
+  <meta name="keywords" content="{{ keywords | join: ',' | remove: 'posts,' }}" />
   {% elsif tags %}
-  <meta name="keywords" content="{{ tags | join: ',' }}" />
+  <meta name="keywords" content="{{ tags | join: ',' | remove: 'posts,' }}" />
   {% endif %}
   <meta name="author" content="{{ guest | default: site.author }}">
   <link rel="canonical" href="{{ page_url }}">
