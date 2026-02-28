@@ -1,5 +1,5 @@
 .PostEdits::before {
-  content: '§';
+  content: "§";
   transform: translate(-20%, 75%) rotate(-15deg);
 }
 

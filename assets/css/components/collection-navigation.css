@@ -7,7 +7,7 @@
 }
 
 .CollectionNavigation::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -57,11 +57,11 @@
 
 @media (min-width: 768px) {
   .CollectionNavigation__item--previous::before {
-    content: '←';
+    content: "←";
   }
 
   .CollectionNavigation__item--next::after {
-    content: '→';
+    content: "→";
   }
 }
 

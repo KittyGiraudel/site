@@ -19,7 +19,7 @@
   z-index: 10;
 }
 
-.ThemeButton[aria-pressed="false"]  > .ThemeButton__icon:not([data-theme="light"]),
+.ThemeButton[aria-pressed="false"] > .ThemeButton__icon:not([data-theme="light"]),
 .ThemeButton[aria-pressed="mixed"] > .ThemeButton__icon:not([data-theme="auto"]),
 .ThemeButton[aria-pressed="true"] > .ThemeButton__icon:not([data-theme="dark"]) {
   display: none;
@@ -38,16 +38,27 @@
   }
 }
 
-.ThemeButton:hover, .ThemeButton:focus {
+.ThemeButton:hover,
+.ThemeButton:focus {
   animation: wiggle 500ms ease-out;
 }
 
 @keyframes wiggle {
-  from {transform: rotate(10deg) }
-  25% {transform: rotate(-10deg) }
-  50% {transform: rotate(20deg) }
-  75% {transform: rotate(-5deg) }
-  to {transform: rotate(0deg) }
+  from {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 .ThemeButton:focus {

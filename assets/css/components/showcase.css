@@ -3,7 +3,7 @@
 }
 
 .Showcase::after {
-  content: '';
+  content: "";
   display: block;
   clear: right;
 }
@@ -68,6 +68,6 @@
 }
 
 .Showcase__link::before {
-  content: '→ ';
+  content: "→ ";
   color: var(--pink);
 }

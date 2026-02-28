@@ -23,7 +23,7 @@
 
 .List__primary-content::before,
 .List__secondary-content::before {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   margin: var(--vb-1\/3) 0;
@@ -45,7 +45,7 @@
 }
 
 .List__secondary-content ul::before {
-  content: '|';
+  content: "|";
 }
 
 .List__keywords {

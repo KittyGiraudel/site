@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const THEME_STORAGE_KEY = 'dark-mode'
   const Theme = {
     AUTO: 'auto',
@@ -7,15 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // https://joelcalifa.com/blog/revisiting-visited
-  ; (function markVisitedLinks() {
-    localStorage.setItem('visited-' + window.location.pathname, true)
+  ;(function markVisitedLinks() {
+    localStorage.setItem(`visited-${window.location.pathname}`, true)
 
-    Array.from(document.querySelectorAll('.Main a')).forEach(function (link) {
+    Array.from(document.querySelectorAll('.Main a')).forEach(link => {
       if (
         link.host === window.location.host &&
-        localStorage.getItem(
-          'visited-' + link.pathname + (link.pathname.endsWith('/') ? '' : '/')
-        )
+        localStorage.getItem(`visited-${link.pathname}${link.pathname.endsWith('/') ? '' : '/'}`)
       )
         link.dataset.visited = true
     })
@@ -49,9 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return stored
     }
 
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
+    const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches
 
     return prefersDark ? Theme.DARK : Theme.LIGHT
   }
@@ -79,11 +75,12 @@ document.addEventListener('DOMContentLoaded', function () {
       themeButton.setAttribute('aria-pressed', 'mixed')
     }
 
-    const label = theme === Theme.AUTO
-      ? 'Theme: automatic (follows system setting)'
-      : theme === Theme.DARK
-        ? 'Theme: dark'
-        : 'Theme: light'
+    const label =
+      theme === Theme.AUTO
+        ? 'Theme: automatic (follows system setting)'
+        : theme === Theme.DARK
+          ? 'Theme: dark'
+          : 'Theme: light'
 
     themeButton.setAttribute('title', label)
 
@@ -102,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Now that JavaScript is available, make the toggle visible.
   themeButton.removeAttribute('hidden')
 
-  themeButton.addEventListener('click', function () {
+  themeButton.addEventListener('click', () => {
     currentTheme = getNextTheme(currentTheme)
     saveTheme(currentTheme)
     applyTheme(currentTheme)
@@ -131,10 +128,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })
 
-
 function setGiscusTheme(theme) {
-  const iframe = document.querySelector('iframe.giscus-frame');
+  const iframe = document.querySelector('iframe.giscus-frame')
   const giscus = document.querySelector('[src="https://giscus.app/client.js"]')
   if (giscus) giscus.setAttribute('data-theme', theme)
-  if (iframe) iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app');
+  if (iframe)
+    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app')
 }

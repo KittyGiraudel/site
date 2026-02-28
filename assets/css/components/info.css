@@ -19,7 +19,7 @@
 }
 
 .Info::before {
-  content: '‽';
+  content: "‽";
   position: absolute;
   font-size: 1000%;
   opacity: 0.2;

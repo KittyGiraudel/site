@@ -20,9 +20,12 @@
   font-size: 80%;
 }
 
-.Resume__contact span:nth-child(1)::before { content: "kitty.giraudel@gmail.com" }
-.Resume__contact span:nth-child(2)::before { content: "+491702295391" }
-
+.Resume__contact span:nth-child(1)::before {
+  content: "kitty.giraudel@gmail.com";
+}
+.Resume__contact span:nth-child(2)::before {
+  content: "+491702295391";
+}
 
 .Resume__header p {
   margin: 0;

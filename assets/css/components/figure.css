@@ -10,7 +10,7 @@
 }
 
 .figure figcaption::before {
-  content: '';
+  content: "";
   display: block;
   height: 4px;
   border-radius: 4px;

@@ -22,7 +22,6 @@
   }
 }
 
-
 .Ad__content {
   font-size: 80%;
 }
@@ -48,7 +47,7 @@
   .Ad {
     display: contents;
   }
-  
+
   .Ad__content {
     display: none;
   }

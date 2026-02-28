@@ -5,7 +5,7 @@
 }
 
 .PostDate:first-of-type::after {
-  content: '';
+  content: "";
   display: block;
   width: 25%;
   height: 1px;

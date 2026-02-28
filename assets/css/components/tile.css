@@ -10,7 +10,7 @@
 }
 
 .Tile::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 100%;
   left: -1px;
@@ -45,7 +45,7 @@
 }
 
 .Tile__link::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
 }

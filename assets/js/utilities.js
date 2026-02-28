@@ -1,5 +1,4 @@
-'use strict'
-
+// biome-ignore lint/correctness/noUnusedVariables: available on the global scope
 function loadJS(src, onload) {
   const firstScript = document.getElementsByTagName('script')[0]
   const script = document.createElement('script')

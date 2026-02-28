@@ -23,15 +23,17 @@ EMBEDS.forEach(embed => {
 
   if (!node) return
 
-  const handler = entry =>
-    !embed.loaded &&
-    entry.isIntersecting &&
-    (loadJS(embed.url), (embed.loaded = true))
+  const handler = entry => {
+    if (!embed.loaded && entry.isIntersecting) {
+      loadJS(embed.url)
+      embed.loaded = true
+    }
+  }
 
-  const observer = new IntersectionObserver(
-    entries => entries.forEach(handler),
-    { root: null, threshold: 0.1 }
-  )
+  const observer = new IntersectionObserver(entries => entries.forEach(handler), {
+    root: null,
+    threshold: 0.1,
+  })
 
   observer.observe(node)
 })

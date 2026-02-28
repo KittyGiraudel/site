@@ -1,12 +1,12 @@
-import htmlmin from 'html-minifier'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import * as cheerio from 'cheerio'
 import footnotes from 'eleventy-plugin-footnotes'
+import emojiRegex from 'emoji-regex'
+import emojiShortName from 'emoji-short-name'
+import htmlmin from 'html-minifier'
 import markdownIt from 'markdown-it'
 import markdownItAnchor from 'markdown-it-anchor'
 import uslugify from 'uslug'
-import emojiRegex from 'emoji-regex'
-import emojiShortName from 'emoji-short-name'
-import * as cheerio from 'cheerio'
 
 const EMOJI_REGEX = emojiRegex()
 
@@ -84,14 +84,11 @@ export default function (config) {
 
   // Register a collection for the posts and sort them from most to least recent
   config.addCollection('posts', collection =>
-    collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date)
+    collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
   )
 
   // Override the Markdown renderer to use link anchors
-  config.setLibrary(
-    'md',
-    markdownIt({ html: true }).use(markdownItAnchor, { slugify: uslugify })
-  )
+  config.setLibrary('md', markdownIt({ html: true }).use(markdownItAnchor, { slugify: uslugify }))
 
   return {
     dir: {
@@ -104,25 +101,23 @@ export default function (config) {
 function minifyHTML(content, outputPath) {
   return outputPath.endsWith('.html')
     ? htmlmin.minify(content, {
-      collapseBooleanAttributes: true,
-      collapseWhitespace: true,
-      conservativeCollapse: true,
-      minifyCSS: true,
-      minifyJS: true,
-      removeComments: true,
-      sortAttributes: true,
-      sortClassName: true,
-      useShortDoctype: true,
-    })
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true,
+        sortAttributes: true,
+        sortClassName: true,
+        useShortDoctype: true,
+      })
     : content
 }
 
 function replaceEmoji(match) {
   const label = emojiShortName[match]?.replace(/"/g, '')
 
-  return label
-    ? `<span role="img" aria-label="${label}" title="${label}">${match}</span>`
-    : match
+  return label ? `<span role="img" aria-label="${label}" title="${label}">${match}</span>` : match
 }
 
 function emojiToText(str) {
@@ -131,9 +126,7 @@ function emojiToText(str) {
 }
 
 function a11yEmojis(content, outputPath) {
-  return outputPath.endsWith('.html')
-    ? content.replace(EMOJI_REGEX, replaceEmoji)
-    : content
+  return outputPath.endsWith('.html') ? content.replace(EMOJI_REGEX, replaceEmoji) : content
 }
 
 function markdown(content, inline = true) {
@@ -152,7 +145,7 @@ function stars(amount) {
 
 function where(array, key, value) {
   return array.filter(item => {
-    const data = item && item.data ? item.data : item
+    const data = item?.data ?? item
     return typeof value === 'undefined' ? key in data : data[key] === value
   })
 }
@@ -165,7 +158,7 @@ function sortBy(array, key) {
         ? -1
         : a[key].toLowerCase() > b[key].toLowerCase()
           ? 1
-          : 0
+          : 0,
     )
 }
 
@@ -174,11 +167,11 @@ function dateToXmlSchema(value) {
 }
 
 function dateToRFC3339(value) {
-  let date = new Date(value).toISOString()
-  let chunks = date.split('.')
+  const date = new Date(value).toISOString()
+  const chunks = date.split('.')
   chunks.pop()
 
-  return chunks.join('') + 'Z'
+  return `${chunks.join('')}Z`
 }
 
 function dateToString(value) {
@@ -194,7 +187,7 @@ function dateToString(value) {
   const year = parts[4].value
   const suffix = ['st', 'nd', 'rd'][day - 1] || 'th'
 
-  return month + ' ' + day + suffix + ', ' + year
+  return `${month} ${day}${suffix}, ${year}`
 }
 
 function groupBy(array, key) {
@@ -211,10 +204,7 @@ function groupBy(array, key) {
     return acc
   }, {})
 
-  return Object.keys(map).reduce(
-    (acc, key) => [...acc, { name: key, items: map[key] }],
-    []
-  )
+  return Object.keys(map).reduce((acc, key) => acc.concat({ name: key, items: map[key] }), [])
 }
 
 function info(content) {
@@ -222,18 +212,15 @@ function info(content) {
 }
 
 function time(value) {
-  return `<time datetime="${dateToXmlSchema(value)}">${dateToString(
-    value
-  )}</time>`
+  return `<time datetime="${dateToXmlSchema(value)}">${dateToString(value)}</time>`
 }
 
 function readingTime(content) {
   return content
-    ? +
-    Math.ceil(
+    ?
+    `${Math.ceil(
       (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length / 300
-    ) +
-    '–minute read'
+    )}–minute read`
     : ''
 }
 

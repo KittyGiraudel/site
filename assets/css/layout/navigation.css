@@ -34,7 +34,7 @@
 }
 
 .Navigation__link::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 5%;
@@ -43,12 +43,16 @@
   background-color: var(--blue);
   opacity: 0;
   transform: translateY(8px);
-  transition: transform 0s ease-out, opacity 0s;
+  transition:
+    transform 0s ease-out,
+    opacity 0s;
 }
 
 .Navigation__link:hover::before,
 .Navigation__link:focus::before {
   opacity: 1;
   transform: translateY(0);
-  transition: transform 200ms ease-out, opacity 200ms;
+  transition:
+    transform 200ms ease-out,
+    opacity 200ms;
 }
