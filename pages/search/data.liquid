@@ -7,7 +7,7 @@ permalink: /blog/search/data.json
     {
       "title"    : "{{ post.data.title | escape }}",
       "lang"     : "{{ post.data.lang | default: 'en' }}",
-      "tags"     : ["{{ post.data.keywords | default: arr | join: '", "' }}"],
+      "tags"     : ["{{ post.data.tags | default: arr | join: '", "' }}"],
       "url"      : {% if post.data.external %}"{{ post.data.external.url }}"{% else %}"{{ post.url }}"{% endif %},
       "date"     : "{{ post.date | date: '%B %d, %Y' }}",
       "guest"    : {% if post.data.guest %}" by {{ post.data.guest }}"{% else %}"&#8203;"{% endif %},

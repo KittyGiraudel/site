@@ -20,9 +20,13 @@
     {{ data.title }}
   </a>
   {% endif %}
-  {% if data.keywords %}
-  <ul class="List__keywords">
-    <li class="List__keyword">{{ data.keywords | sort | join: '</li><li class="List__keyword">' }}</li>
+  {% if data.tags %}
+  <ul class="List__tags">
+    {% for tag in data.tags | sort %}
+    <li class="List__tag">
+      <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+    </li>
+    {% endfor %}
   </ul>
   {% endif %}
 </li>
