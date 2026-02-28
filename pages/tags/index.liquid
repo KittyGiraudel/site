@@ -17,9 +17,11 @@ eleventyComputed:
 {% assign items = collections[ tag ] | reverse %}
 {% assign count = items | size %}
 
-{% info %}
+{% markdown %}
 This page lists {% if count == 1 %}the *one* entry{% else %}all <strong>{{ count }}</strong> entries{% endif %} tagged with the word “{{ tag }}”.
 I hope you find what you’re looking for. 🚀 If looking for something specific, try the [search](/blog/search).
-{% endinfo %}
+{% endmarkdown %}
+
+{% include "ad.html" %}
 
 {% include "post_list.html", items: items %}

@@ -5,6 +5,9 @@
 
 .List__item {
   padding: var(--vb-2\/3) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .List__item p {
@@ -15,23 +18,10 @@
   padding-left: 0;
 }
 
-.List__primary-content,
-.List__secondary-content {
-  display: inline;
-  margin: 0;
-}
-
-.List__primary-content::before,
-.List__secondary-content::before {
-  content: "";
-  display: block;
-  width: 100%;
-  margin: var(--vb-1\/3) 0;
-}
-
 .List__primary-content {
   font-size: 150%;
   line-height: 1.1;
+  margin: var(--vb-1\/3) 0 var(--vb-1\/4);
 }
 
 .List__secondary-content {
@@ -51,16 +41,27 @@
 .List__tags {
   display: flex;
   gap: 0.25em;
-  margin-top: var(--vb-1\/3);
   list-style: none;
   padding-left: 0;
 }
 
+.List__tags > li {
+  margin: 0;
+}
+
 .List__tag {
+  display: block;
   border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
   border-radius: 1em;
   corner-shape: squircle;
   padding: 0.1em 0.5em;
   font-size: 60%;
   background-color: light-dark(rgb(255 255 255 / 0.5), rgb(50 45 47 / 0.5));
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 200ms ease-in-out;
+}
+
+.List__tag:hover {
+  border-color: var(--blue);
 }
