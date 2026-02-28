@@ -19,6 +19,8 @@ interesting. What about giving it a search?
 {% include "search.html" %}
 {% include "ad.html" %}
 
+{% include "script.html", partials: "utilities" %}
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     loadJS('{{ "/assets/js/vendors/jekyll-search.js" }}', search)
