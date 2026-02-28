@@ -13,4 +13,11 @@ eleventyComputed:
 ---
 
 {% assign taglist = collections[ tag ] | reverse %}
+{% assign count = taglist | size %}
+
+{% info %}
+This page lists {% if count == 1 %}the *one* article{% else %}all <strong>{{ count }}</strong> articles{% endif %} tagged with the word “{{ tag }}”.
+I hope you find what you’re looking for. 🚀 If looking for something specific, try the [search](/blog/search).
+{% endinfo %}
+
 {% include "post_list.html", posts: taglist %}
