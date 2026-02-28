@@ -2,7 +2,7 @@ abbr[title] {
   cursor: help;
   text-decoration: none;
   background-image:
-    linear-gradient(to right, transparent, transparent 50%,white 50%,white 100%),
+    linear-gradient(to right, transparent, transparent 50%,light-dark(#fff, #222) 50%,light-dark(#fff, #222) 100%),
     linear-gradient(to right, var(--pink), var(--blue) 100%);
   background-repeat: repeat-x;
   background-size: 4px 2px, 100% 2px;
