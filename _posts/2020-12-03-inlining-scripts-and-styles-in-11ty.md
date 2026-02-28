@@ -6,6 +6,7 @@ tags:
   - Performance
   - JavaScript
   - CSS
+  - Liquid
 ---
 
 I recently got [Harry Robert’s course on CSS performance](https://gumroad.com/l/eihdtmcwf) (you totally should to, it’s a goldmine of information) and worked on improving performance for this site. I quickly spotted 2 performance {% footnoteref "bottleneck" "Although we are playing fast and loose with the world “bottleneck” here because it really wasn’t that bad." %}bottlenecks{% endfootnoteref %}: requesting the stylesheet, and requesting the main script.

@@ -4,6 +4,7 @@ description: My feedback after having moved my website onto GitHub Pages, built 
 tags:
   - Jekyll
   - Retrospective
+  - Liquid
 templateEngineOverride: md
 ---
 

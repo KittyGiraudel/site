@@ -3,7 +3,6 @@ title: Hiring at Gorillas
 description: A comprehensive write-up about the inclusive hiring process we have set up at Gorillas
 tags:
   - Hiring
-  - Interview
   - Engineering
 edits:
   - date: 2024/06/09

@@ -6,6 +6,7 @@ tags:
   - UI
   - Accessibility
   - CSS
+  - Liquid
 ---
 
 I’m currently looking for a job, so I have some free time. I decided to use it to work on the look and feel of this website some more, adding small design touches for a nicer, more accessible reading experience. I’ll share the highlights in this article!

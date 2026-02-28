@@ -5,7 +5,7 @@ tags:
   - JavaScript
   - Jekyll
   - HTML
-  - Templates
+  - Liquid
 templateEngineOverride: md
 ---
 

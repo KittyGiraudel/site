@@ -2,7 +2,6 @@
 title: Trading whiteboards for code reviews
 description: A reflection on replacing whiteboard interviews with code reviews
 tags:
-  - Interview
   - Hiring
   - Engineering
   - Thoughts

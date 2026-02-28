@@ -4,7 +4,6 @@ description: A technical write-up on using themes and layouts with Twig, the Sym
 tags:
   - Twig
   - HTML
-  - Templates
 templateEngineOverride: md
 ---
 

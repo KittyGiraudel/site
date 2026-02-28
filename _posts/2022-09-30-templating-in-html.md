@@ -9,7 +9,6 @@ edits:
 tags:
   - HTML
   - JavaScript
-  - Templates
 ---
 
 After a nice discussion on Twitter following [a recent article from Manuel Matuzović](https://web.dev/website-navigation/), I thought it would be worth writing some quick thoughts here. Today, we have a quick look at the `<template>` element and how it can come in handy.

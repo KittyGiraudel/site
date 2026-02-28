@@ -88,6 +88,9 @@ export default function (config) {
     collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
   )
 
+  // Create a collection of tag names, excluding the default and unrelated collections
+  config.addCollection('tagNames', getTagNames)
+
   return {
     dir: {
       output: './_site',
@@ -99,16 +102,16 @@ export default function (config) {
 function minifyHTML(content, outputPath) {
   return outputPath.endsWith('.html')
     ? htmlmin.minify(content, {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        conservativeCollapse: true,
-        minifyCSS: true,
-        minifyJS: true,
-        removeComments: true,
-        sortAttributes: true,
-        sortClassName: true,
-        useShortDoctype: true,
-      })
+      collapseBooleanAttributes: true,
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      minifyCSS: true,
+      minifyJS: true,
+      removeComments: true,
+      sortAttributes: true,
+      sortClassName: true,
+      useShortDoctype: true,
+    })
     : content
 }
 
@@ -258,4 +261,18 @@ function splitContent(html) {
       .join('')
 
   return [serialize(beforeNodes), serialize(afterNodes)]
+}
+
+function getTagNames(collection) {
+  const metaCollectionNames = new Set(['all', 'posts'])
+  const posts = collection.getFilteredByGlob('_posts/*.md')
+  const names = new Set()
+
+  for (const post of posts) {
+    const tags = Array.isArray(post.data?.tags) ? post.data.tags : [post.data.tags]
+    for (const tag of tags)
+      if (typeof tag === 'string' && !metaCollectionNames.has(tag)) names.add(tag)
+  }
+
+  return Array.from(names)
 }

@@ -1,0 +1,13 @@
+---
+layout: default
+pagination:
+  data: collections.tagNames
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+eleventyComputed:
+  title: "{{ tag }}"
+---
+
+{% assign taglist = collections[ tag ] | reverse %}
+{% include "post_list.html", posts: taglist %}
