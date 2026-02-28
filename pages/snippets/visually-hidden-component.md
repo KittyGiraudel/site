@@ -8,7 +8,7 @@ language: React
 related: /2020/01/16/accessible-visibility-react-component/
 ---
 
-The `<VisuallyHidden />` React component aims at visually hiding a piece of text which leaving it accessible for assistive technologies such as screen-readers.
+The `<VisuallyHidden />` React component aims at visually hiding a piece of text while leaving it accessible for assistive technologies such as screen-readers.
 
 ## Component
 
