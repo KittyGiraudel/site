@@ -18,8 +18,8 @@ steps:
   - Prepare a cup of coffee in a soup plate and let it cool down.
   - In a big bowl, mix the egg yolks the sugar and the mascarpone.
   - In another bowl, beat the egg whites with a pinch of salt until they are fluffy.
-  - Carefully bring the egg whites in the cream and slowly mix until they are properly blent in.
-  - In a dish, start with a layer of biscuits quickly run through the coffee. It’s important they don’t get soaked, as they will release the juice leading to a soaggy result.
-  - Then add a layer of cream, cacao and chocolat flakes.
+  - Carefully bring the egg whites in the cream and slowly mix until they are properly blended in.
+  - In a dish, start with a layer of biscuits quickly run through the coffee. It’s important they don’t get soaked, as they will release the juice leading to a soggy result.
+  - Then add a layer of cream, cacao and chocolate flakes.
   - Repeat these 4 layers a second time and chill for at least 6 hours.
 ---
