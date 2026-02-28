@@ -76,7 +76,7 @@ To achieve that, we can render a small icon with an associated label stating “
 ```html
 <a href="/about" target="_blank" class="link">
   Learn more about us
-  <svg aria-hidden="true" focusable="false" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 32 32" ><path d="M22 11L10.5 22.5M10.44 11H22v11.56" fill="none"></path></svg>
+  <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" ><path d="M22 11L10.5 22.5M10.44 11H22v11.56" fill="none"></path></svg>
   <span class="sr-only">(opens in new tab)</span>
 </a>
 ```
