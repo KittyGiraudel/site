@@ -29,10 +29,6 @@
   transition: 200ms color;
 }
 
-.Navigation__link:focus {
-  outline: 0;
-}
-
 .Navigation__link:visited {
   color: light-dark(var(--blue), lightblue);
 }
