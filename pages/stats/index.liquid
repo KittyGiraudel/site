@@ -17,41 +17,41 @@ The graphs at the bottom of this page are rendered using ApexCharts.
   <h2>Global Statistics</h2>
   <ul>
     <li>
-      <strong>First post:</strong>
-      {{ collections.postStats.firstPostDate }}
+      First post:
+      <strong>{{ collections.postStats.firstPostDate | time }}</strong>
     </li>
     <li>
-      <strong>Last post:</strong>
-      {{ collections.postStats.lastPostDate }}
+      Last post:
+      <strong>{{ collections.postStats.lastPostDate | time }}</strong>
     </li>
     <li>
-      <strong>Post count:</strong>
-      {{ collections.postStats.postCount }}
+      Post count:
+      <strong>{{ collections.postStats.postCount }}</strong>
     </li>
     <li>
-      <strong>Average posts per year:</strong>
-      {{ collections.postStats.avgPostsPerYear }} (may exclude current year depending on year of last post)
+      Average posts per year:
+      <strong>{{ collections.postStats.avgPostsPerYear }}</strong>
     </li>     
     <li>
-      <strong>Average days between posts:</strong>
-      {{ collections.postStats.avgDays }}
+      Average days between posts:
+      <strong>{{ collections.postStats.avgDays }}</strong>
     </li>
     <li>
-      <strong>Average characters per post:</strong>
-      {{ collections.postStats.avgCharacterCount }}
+      Average characters per post:
+      <strong>{{ collections.postStats.avgCharacterCount }}</strong>
     </li>
     <li>
-      <strong>Average words per post:</strong>
-      {{ collections.postStats.avgWordCount }}
+      Average words per post:
+      <strong>{{ collections.postStats.avgWordCount }}</strong>
     </li>
     <li>
-      <strong>Average paragraphs per post:</strong>
-      {{ collections.postStats.avgParagraphCount }}
+      Average paragraphs per post:
+      <strong>{{ collections.postStats.avgParagraphCount }}</strong>
     </li>
     {%- if collections.postStats.avgCodeBlockCount > 0 -%}
       <li>
-        <strong>Average code blocks per post:</strong>
-        {{ collections.postStats.avgCodeBlockCount }}
+        Average code blocks per post:
+        <strong>{{ collections.postStats.avgCodeBlockCount }}</strong>
       </li>
     {% endif %}
   </ul>
