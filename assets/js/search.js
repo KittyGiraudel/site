@@ -10,12 +10,28 @@ function search() {
     searchInput: searchInput,
     resultsContainer: resultsContainer,
     json: '/blog/search/data.json',
+    limit: 20,
     fuzzy: false,
+    templateMiddleware: (prop, value) => {
+      if (prop === 'tags') {
+        return `<ul class="List__tags">
+          ${value
+            .sort((a, b) => a.localeCompare(b))
+            .map(tag => `<li class="List__tag">
+              <a href="/tags/${tag.toLowerCase().replace(/\s/g, '-')}">${tag}</a>
+            </li>`)
+            .join('')
+        }
+        </ul>`
+      }
+    },
     searchResultTemplate:
       '<li class="List__item">\
       <span class="List__secondary-content">{date}{guest}{external}</span>\
       <a href="{url}" class="List__primary-content" lang="{lang}" hreflang="{lang}">{title}</a>\
+      {tags}\
     </li>',
+
     noResultsText:
       '<li class="List__item">Sorry, I could not find any result for your search. :( Hey, if you really wanna have results, I suggest looking for “accessib” or “sass”!</li>',
   })

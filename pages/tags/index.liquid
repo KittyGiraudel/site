@@ -7,7 +7,7 @@ pagination:
   filter:
     - all
     - posts
-permalink: /tags/{{ tag }}/
+permalink: /tags/{{ tag | slugify }}/
 eleventyComputed:
   title: "{{ tag }}"
 ---
