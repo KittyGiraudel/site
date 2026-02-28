@@ -23,7 +23,7 @@
   border-bottom-color: var(--pink);
 }
 
-::-webkit-input-placeholder {
+::placeholder {
   color: inherit;
   opacity: 0.54;
 }
