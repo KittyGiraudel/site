@@ -1,10 +1,9 @@
 ---
 title: 'CSS Riddle: reverse ellipsis'
 description: A technical write-up on a CSS riddle, how to create a reverse ellipsis
-keywords:
+tags:
   - CSS
-  - riddle
-  - ellipsis
+  - Challenge
 ---
 
 The other day, I wanted to do something in CSS that turned out to be quite complicated to achieve. Actually it’s amazing that something _that_ common ends up being so difficult to implement. Anyway, how would you do a reverse ellipsis in CSS, or _start ellipsis_?

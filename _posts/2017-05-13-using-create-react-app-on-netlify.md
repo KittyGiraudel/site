@@ -1,11 +1,10 @@
 ---
 title: Using create-react-app on Netlify
 description: A technical write-up on using Create-React-App on Netlify
-keywords:
-  - netlify
-  - create-react-app
-  - 404
-  - react
+tags:
+  - Netlify
+  - React
+  - SPA
 edits:
   - date: 2017/05/13
     md: I missed the fact that there already was [a documented fix](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#netlify) in create-react-app docs using the [redirect feature from Netlify](https://www.netlify.com/docs/redirects/). You might want to prefer that.

@@ -1,9 +1,8 @@
 ---
 title: Understanding Sass lists
 description: A technical deep-dive into the list type in Sass, and what to know to use them well
-keywords:
-  - sass
-  - lists
+tags:
+  - Sass
 edits:
   - date: 2015/05/28
     md: After realising this article ranks up incredibly high on _Sass_ Google searches, I come back to it to clear a few things up. Deletions are lined-through, additions are in italic.

@@ -1,11 +1,11 @@
 ---
 title: 'SassyJSON: talk to the browser!'
 description: An announcement post about the experimental SassyJSON library, implementation a JSON parser and serializer in Sass
-keywords:
-  - sass
+tags:
+  - Sass
   - JSON
-  - SassyJSON
-  - releaase
+  - Release
+  - Open Source
 edits:
   - date: 2014/11/16
     md: Please, don’t use this in a live project. If you come up with a case where you need to parse/encode JSON in Sass, consider having a Ruby/C/whatever helper function for this.

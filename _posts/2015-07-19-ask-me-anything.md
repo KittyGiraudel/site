@@ -1,10 +1,9 @@
 ---
 title: Ask Me Anything
 description: An announcement post to introduce my AMA
-keywords:
-  - blog
-  - questions
-  - answers
+tags:
+  - AMA
+  - Release
 ---
 
 I recently discovered the _Ask Me Anything_ concept, through the [AMA repository](https://github.com/sindresorhus/ama) of [Sindre Sorhus](https://twitter.com/sindresorhus), the author of countless node modules.

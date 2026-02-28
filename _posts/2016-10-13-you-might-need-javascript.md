@@ -1,11 +1,11 @@
 ---
 title: You might need JavaScript
 description: A short reflection on when JavaScript might be needed, and the downsides of “pure CSS” solutions
-keywords:
-  - js
+tags:
+  - JavaScript
   - CSS
-  - accessibility
-  - a11y
+  - Accessibility
+  - Thoughts
 ---
 
 It’s been a rough couple of months for JavaScript. Another day, another rant about it, another article about how the ecosystem is too fragmented, the language too convoluted, and what else.

@@ -1,11 +1,8 @@
 ---
 title: Site redesign + new blog
 description: A deep-dive into the recent redesign of my  website
-keywords:
+tags:
   - Design
-  - blog
-  - writing
-  - release
 ---
 
 Hi people! As you can see, I have big news. I’ve changed a few things on kittygiraudel.com in order to make it look like a little bit more aesthetic and/or professional. What do you say?

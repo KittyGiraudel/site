@@ -1,8 +1,8 @@
 ---
 title: A decade in review
 description: A look back at the 2010s and everything I have accomplished within that decade
-keywords:
-  - thoughts
+tags:
+  - Retrospective
 ---
 
 First day of the year, first blog post. For someone who use to write _so much_ over the last decade, I sure stopped writing in the last few years. Let’s hope this year will see me scribe down my thoughts a little more regularly.

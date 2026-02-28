@@ -2,10 +2,8 @@
 guest: Daniel Guillan
 title: Modernizr Sass mixin
 description: A guest post by Daniel Guillan on writing a Sass mixin to help using Modernizr
-keywords:
-  - sass
-  - mixin
-  - modernizr
+tags:
+  - Sass
 ---
 
 {% info %} The following is a guest post by Daniel Guillan. Daniel is the co-founder and chief design officer at Vintisis. I am very glad to have him here today, writing about a clever mixin to ease the use of Modernizr with Sass. {% endinfo %}

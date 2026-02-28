@@ -1,10 +1,10 @@
 ---
 title: What’s up at Browserhacks?
 description: A review of the recent improvements on the Browserhacks project
-keywords:
+tags:
   - CSS
-  - hacks
-  - release
+  - JavaScript
+  - Open Source
 ---
 
 Well, quite a lot actually! We’ve been working hard on [Browserhacks.com](http://browserhacks.com) lately to make this whole pool of hacks even easier for you to browse and use. So much we’ve recently crossed the 100 issues line on [GitHub](https://github.com/4ae9b8/browserhacks/); most of them are closed thankfully!

@@ -1,10 +1,8 @@
 ---
 title: Math sequences with Sass
 description: A technical write-up on experimental functions to generate popular math sequences in Sass
-keywords:
-  - sass
-  - math
-  - experiment
+tags:
+  - Sass
 ---
 
 A couple of weeks ago, I've been playing around math sequences in Sass, especially the [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number), the [Juggler sequence](https://en.wikipedia.org/wiki/Juggler_sequence) and the [Look-and-say sequence](https://en.wikipedia.org/wiki/Look-and-say_sequence) also known as _Conway's number_.

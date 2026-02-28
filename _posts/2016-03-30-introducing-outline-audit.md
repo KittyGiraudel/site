@@ -1,11 +1,11 @@
 ---
 title: Introducing Outline Audit
 description: An announcement post for Outline Audit, a small bookmarklet to audit the heading outline of a page
-keywords:
-  - outline
-  - document
-  - audit
-  - javascript
+tags:
+  - Accessibility
+  - JavaScript
+  - Release
+  - Open Source
 ---
 
 We recently had some minor issues in a project where the final document outline on some pages was somewhat broken. I investigated a little, and ended up building [a tiny tool](https://github.com/edenspiekermann/outline-audit) to audit the document outline. More on that in a bit, but first…

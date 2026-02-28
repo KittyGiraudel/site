@@ -1,9 +1,9 @@
 ---
 title: A CSS challenge
 description: My approach to this little CSS challenge by Raphaël Goetter
-keywords:
+tags:
   - CSS
-  - riddle
+  - Challenge
 ---
 
 Yesterday night, I’ve seen something in my Twitter timeline which excited my curiosity: a CSS challenge. It was proposed by [Raphaël Goetter](https://twitter.com/goetter), a famous French frontend developer on his blog.

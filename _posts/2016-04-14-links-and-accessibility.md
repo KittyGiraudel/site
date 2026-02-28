@@ -1,11 +1,9 @@
 ---
 title: Links and accessibility
 description: A guide on links and accessibility and what to know to do things well
-keywords:
-  - accessibility
-  - a11y
-  - links
-  - html
+tags:
+  - Accessibility
+  - HTML
 ---
 
 The other day, [a friend](https://twitter.com/smartmike) and I were having a conversation about a tricky accessibility puzzle so I thought I’d write a few lines about it.

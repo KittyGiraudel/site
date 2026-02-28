@@ -1,10 +1,11 @@
 ---
 title: Trading whiteboards for code reviews
 description: A reflection on replacing whiteboard interviews with code reviews
-keywords:
-  - interview
-  - thought
-  - code review
+tags:
+  - Interview
+  - Hiring
+  - Engineering
+  - Thoughts
 ---
 
 Yesterday night, hundreds of developers, engineers, tech leads and more generally IT workers have [shared on Twitter](https://twitter.com/i/moments/835942450103451649) their inability to perform some simple tasks without help despite being entirely qualified and doing a respectful job. It is a great thread of comically funny short stories that I highly recommend you to read. All this to protest against whiteboard interviews.

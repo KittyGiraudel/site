@@ -1,6 +1,10 @@
 ---
 title: 'A11yAdvent Day 15: Content Warnings'
 description: A11yAdvent entry on content warnings
+tags:
+  - Accessibility
+  - Component
+  - Reading
 ---
 
 Content warnings are notices preceding potentially sensitive content. This is so users can prepare themselves to engage or, if necessary, disengage for their own wellbeing. Trigger warnings are specific content warnings that attempt to warn users of content that may cause intense physiological and psychological symptoms for people with post-traumatic stress or anxiety disorder (PTSD).

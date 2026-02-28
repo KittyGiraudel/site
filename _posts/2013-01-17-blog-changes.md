@@ -1,9 +1,11 @@
 ---
 title: Blog changes
 description: A review of more changes applied to my website to improve SEO, performance and accessibility
-keywords:
-  - blog
-  - writing
+tags:
+  - Design
+  - Performance
+  - Accessibility
+  - Writing
 edits:
   - date: 2013/01/22
     md: I did a lot of changes after writing this post notably regarding SEO, performance and accessibility. Be sure you read about it!

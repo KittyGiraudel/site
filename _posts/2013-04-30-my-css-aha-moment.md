@@ -1,9 +1,9 @@
 ---
 title: My CSS Aha moment
 description: About the moment where CSS finally clicked and it became easy to use
-keywords:
+tags:
   - CSS
-  - thoughts
+  - Retrospective
 ---
 
 I’d like to share with you my CSS “Aha moment”. The “Aha moment” is when some day, in the very back of your head, two neurons get in touch and all of the sudden things become clear as crystal.

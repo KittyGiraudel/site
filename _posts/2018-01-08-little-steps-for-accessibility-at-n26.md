@@ -1,11 +1,9 @@
 ---
 title: Little steps for accessibility at N26
 description: A reflection on the small steps we took for accessibility at N26
-keywords:
-  - N26
-  - a11y
-  - accessibility
-  - process
+tags:
+  - Accessibility
+  - Retrospective
 ---
 
 Over the last year, I have been driving the accessibility initiative at N26 to a point where it’s interesting enough that I can write about it. Because it’s a step by step process, this write-up is divided in sections. Feel free to jump to the one relevant to your interests.

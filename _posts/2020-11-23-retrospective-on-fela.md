@@ -1,10 +1,11 @@
 ---
 title: Retrospective on Fela
 description: A retrospective on using Fela for CSS-in-JS at N26
-keywords:
-  - styling
-  - CSS-in-JS
-  - fela
+tags:
+  - Retrospective
+  - CSS
+  - Fela
+  - JavaScript
 ---
 
 Over the years, I have tweeted about [Fela](https://fela.js.org) a few times. And as I am about to leave N26 and behind me the decisions I made, I want to properly reflect on the choice of going with Fela instead of any other CSS-in-JS library you might have heard of.

@@ -1,11 +1,8 @@
 ---
 title: The ultimate PX/REM mixin
 description: A technical write-up about building an advanced Sass mixin for converting px to rem
-keywords:
-  - sass
-  - px
-  - rem
-  - mixin
+tags:
+  - Sass
 edits:
   - date: 2014/11/16
     md: I have changed my mind again and no longer use Sass to “remify”. In most projects, I’ve noticed it’s better to use a postprocessor such as [px_to_rem](https://github.com/songawee/px_to_rem).

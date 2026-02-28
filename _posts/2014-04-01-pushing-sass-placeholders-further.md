@@ -1,10 +1,8 @@
 ---
 title: Pushing Sass placeholders further
 description: A technical write-up on advanced usage of Sass placeholders
-keywords:
-  - sass
-  - placeholders
-  - extend
+tags:
+  - Sass
 edits:
   - date: 2015/06/06
     md: This is an experiment, please don’t use this code in production.

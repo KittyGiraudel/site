@@ -1,10 +1,8 @@
 ---
 title: Advanced Sass list functions, again
 description: A technical write-up on some more advanced Sass list functions
-keywords:
-  - sass
-  - function
-  - SassyLists
+tags:
+  - Sass
 ---
 
 {% info %} In case you have missed my first article about this topic, I recommend you to read [Advanced Sass list functions](/2013/08/08/advanced-sass-list-functions/). {% endinfo %}

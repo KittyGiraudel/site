@@ -1,9 +1,8 @@
 ---
 title: One week, first changes
 description: A review of the changes made in the first week after my website redesign
-keywords:
-  - blog
-  - writing
+tags:
+  - Writing
 ---
 
 ## Design

@@ -1,10 +1,10 @@
 ---
 title: Corner ribbon with trigonometry
 description: A technical write-up on building a corner ribbon with CSS and trigonometry
-keywords:
-  - sass
+tags:
+  - Sass
   - Design
-  - ribbon
+  - CSS
 ---
 
 I was never the best at trigonometry, so I was very proud finally cracking how to perfectly position a corner ribbon within a box with CSS.

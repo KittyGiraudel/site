@@ -1,10 +1,10 @@
 ---
 title: GitHub as a workflow
 description: A guide on using GitHub and pull requests as a workflow for task management
-keywords:
-  - github
-  - workflow
-  - process
+tags:
+  - GitHub
+  - Process
+  - CI
 edits:
   - date: 2015/09/09
     md: I just (re-)discovered [ZenHub](https://www.zenhub.io/) which is a highly advanced Google Chrome extension for Agile project management **inside** GitHub. Basically, ZenHub brings a lot of features inside the GitHub UI by connecting to your GitHub account (like the usual “Sign in with GitHub” button does), such as Scrum boards, burndown charts, as well as a lot of tiny yet handy extra features. We will try it seriously on an upcoming project at Edenspiekermann, but it definitely goes in the way of keeping things inside GitHub, including project management.

@@ -1,9 +1,9 @@
 ---
 title: Translation system in Sass
 description: A technical write-up on building a translation system in Sass
-keywords:
-  - translation
-  - sass
+tags:
+  - Internationalisation
+  - Sass
 ---
 
 Lately, I have been actively contributing to [a11y.css](https://github.com/ffoodd/a11y.css) project. If you don’t know it yet and happen to be interested in accessibility, I highly recommend you give it a glance. It is a massive work from French developer and accessibility activist [Gaël Poupard](https://twitter.com/ffoodd_fr).

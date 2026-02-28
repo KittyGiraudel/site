@@ -1,10 +1,9 @@
 ---
 title: Can I afford a preprocessor?
 description: Some thoughts about the pros and cons of CSS preprocessors and whether you should use one
-keywords:
+tags:
   - CSS
-  - sass
-  - preprocessor
+  - Sass
 ---
 
 **Disclaimer:** I just want to share my thoughts on the topic. I won’t try to convince you to use a preprocessor. So please, don’t tell me how good you are without one; I trust you. I’m a developer too.

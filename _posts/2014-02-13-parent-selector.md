@@ -1,10 +1,9 @@
 ---
 title: 'Parent selector: on has() and ^'
 description: My thoughts on the expected parent selector in CSS, and pros and cons of either proposed syntax
-keywords:
-  - thoughts
+tags:
+  - Thoughts
   - CSS
-  - parent selector
 ---
 
 Yesterday I stumbled upon [this Google Survey](https://docs.google.com/forms/d/1x0eXPBj1GN8Zau-7k9J_JGhoM6uGEqlJBkBBDFswT2w/viewform?edit_requested=true) about the selector syntax for the incoming parent selector from [Selectors Level 4](https://dev.w3.org/csswg/selectors4/#subject) module asking for developers' help on choosing the right syntax for this feature.

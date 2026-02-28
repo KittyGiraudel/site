@@ -1,8 +1,8 @@
 ---
 title: My development environment
 description: A look into my software development environment
-keywords:
-  - thoughts
+tags:
+  - Process
 edits:
   - date: 2014/11/16
     md: I don’t use Windows anymore. I moved to macOS and Ubuntu. Also I don’t use Canary/Aurora anymore, I switched back to regular versions. I updated Sublime Text to v3. And I suck much less at Git.

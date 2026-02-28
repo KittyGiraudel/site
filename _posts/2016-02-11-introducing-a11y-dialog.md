@@ -1,11 +1,11 @@
 ---
 title: Introducing A11y Dialog
 description: An announcement post for a11y-dialog, an accessible dialog library
-keywords:
-  - a11y
-  - modal
-  - accessibility
-  - dialog
+tags:
+  - Accessibility
+  - Dialog
+  - Release
+  - Open Source
 ---
 
 If there’s one thing I try to push forward more and more at Edenspiekermann, it’s accessibility. I can’t help but feel that we don’t care enough about assistive technology users. That’s a shame, really. It’s not that we don’t want to — it’s more like we don’t really know where to start.

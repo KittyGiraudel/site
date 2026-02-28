@@ -1,11 +1,10 @@
 ---
 title: Accessible links and buttons with React
 description: A guide on building accessible links and buttons in React
-keywords:
-  - accessibility
-  - a11y
-  - react
-  - component
+tags:
+  - Accessibility
+  - React
+  - Component
 ---
 
 An age old problem of the web platform when it comes to accessibility has been to confuse links and buttons. A link (`<a>`) leads to somewhere. A button (`<button>`) performs an action. It’s important to respect that convention.

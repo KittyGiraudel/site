@@ -1,11 +1,10 @@
 ---
 title: Building the N26 discreet mode
 description: A technical write-up on building a discreet mode for the N26 web app
-keywords:
-  - accessibility
-  - discreet
-  - a11y
+tags:
+  - Accessibility
   - CSS
+  - UX
 ---
 
 When we launched “[N26 for web](https://n26.com/en-de/webapp)” a couple of weeks back, we introduced a sweet feature called the “discreet mode”. To put it simply, this switch masks all sensitive information from the user interface such as amounts and private tokens.

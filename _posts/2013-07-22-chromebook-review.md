@@ -1,9 +1,8 @@
 ---
 title: Chromebook review
 description: A personal review of the Chromebook laptop
-keywords:
-  - chromebook
-  - review
+tags:
+  - Retrospective
 edits:
   - date: 2014/11/16
     md: I no longer own a Chromebook.

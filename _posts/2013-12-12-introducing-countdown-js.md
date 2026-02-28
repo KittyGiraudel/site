@@ -1,9 +1,10 @@
 ---
 title: Introducing Countdown.js
 description: A small announcement post for the Countdown.js library, a small utility to handle counters and countdowns
-keywords:
-  - javascript
-  - release
+tags:
+  - JavaScript
+  - Release
+  - Open Source
 ---
 
 Hey people! Just a quick article to introduce [Countdown.js](https://github.com/KittyGiraudel/Countdown.js), a little script I recently made. During the last weeks, I’ve been practicing with JavaScript. It has been on [my wishlist](/2013/05/13/things-id-like-to-do-in-2013/) for 2013 and I’m glad that I could made some progress with it.

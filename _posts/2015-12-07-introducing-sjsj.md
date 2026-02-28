@@ -1,10 +1,10 @@
 ---
 title: Introducing Simplified JavaScript Jargon
 description: An announcement post for SJSJ, a glossary of JavaScript related terms
-keywords:
+tags:
   - JavaScript
-  - JS
-  - glossary
+  - Open Source
+  - Release
 ---
 
 Hey folks! Let’s talk JavaScript, shall we? It all started with a tweet from Nate Bailey:

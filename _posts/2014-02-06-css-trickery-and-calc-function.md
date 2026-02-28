@@ -1,10 +1,9 @@
 ---
 title: CSS trickery and calc function
 description: A technical write-up about finding a solution to a tricky little CSS puzzle from Rémi Parmentier
-keywords:
+tags:
   - CSS
-  - calc
-  - riddle
+  - Challenge
 ---
 
 Yesterday, famous French frontend developer [Rémi Parmentier proposed a little CSS brain-teaser on his blog](https://www.hteumeuleu.fr/un-casse-tete-en-integration-a-base-de-grille/) and you know how much I like riddles. I am kind of a CSS version of Gollum from The Hobbit - An unexpected journey. Nevermind.

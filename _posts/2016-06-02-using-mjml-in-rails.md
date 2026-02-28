@@ -1,11 +1,9 @@
 ---
 title: Using MJML in Rails
 description: A technical write-up on using MJML in Rails
-keywords:
-  - mjml
-  - email
-  - rails
-  - gem
+tags:
+  - MJML
+  - Rails
 ---
 
 Recently, I had to implement an email for the Red Bull Amaphiko project. And since I won’t code email, at least not in this life, I had to find a workaround. There came [MJML](https://mjml.io/).

@@ -1,10 +1,8 @@
 ---
 title: Boilerplate-ing Jekyll
 description: A technical write-up on creating a boilerplate for Jekyll
-keywords:
-  - jekyll
-  - boilerplate
-  - framework
+tags:
+  - Jekyll
 ---
 
 I have long been a fan of the static website generator [Jekyll](https://jekyllrb.com/). It is a splendid project, fast and efficient, and I cannot count the number of sites I have built with it.

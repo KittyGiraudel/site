@@ -1,11 +1,12 @@
 ---
 title: Gists as npm packages
 description: A technical write-up on publishing GitHub Gists as npm packages
-keywords:
-  - gist
+tags:
+  - Dependencies
+  - GitHub
+  - Release
+  - Open Source
   - npm
-  - package
-  - github
 ---
 
 Have you ever heard of “bling dot js”? It is a [few lines of JavaScript](https://gist.github.com/paulirish/12fb951a8b893a454b32) code from no one else but [Paul Irish](https://twitter.com/paul_irish) to mimick the most popular features from jQuery (`$()`, `.on` and iterating on `NodeList`) without all the bloat. Pretty rad.

@@ -1,10 +1,11 @@
 ---
 title: Apollo GraphQL without JavaScript
 description: A technical write-up on using Apollo GraphQL when JavaScript is disabled
-keywords:
+tags:
   - JavaScript
   - GraphQL
   - Apollo
+  - Node.js
 ---
 
 The N26 web platform is built on top of [GraphQL](https://www.apollographql.com/). Our Express server exposes a GraphQL API that proxies internal REST endpoints. This gives us a lot of flexibility and allows us to fill potential gaps while ensuring more consistency: we can rename fields and arguments, modify the response or even return data from several endpoints under a single operation.

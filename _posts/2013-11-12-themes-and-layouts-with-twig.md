@@ -1,11 +1,10 @@
 ---
 title: Themes and layouts with Twig
 description: A technical write-up on using themes and layouts with Twig, the Symfony templating system
-keywords:
-  - templates
+tags:
   - Twig
-  - themes
-  - layouts
+  - HTML
+  - Templates
 templateEngineOverride: md
 ---
 

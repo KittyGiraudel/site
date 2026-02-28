@@ -1,10 +1,9 @@
 ---
 title: Everything I know about Jenkins
 description: A retrospective on Jenkins and what I learned running it at N26
-keywords:
-  - jenkins
-  - ci
-  - groovy
+tags:
+  - Jenkins
+  - CI
 ---
 
 N26 has been using Jenkins for as long as I’ve been part of this company. Over the last few years, I have been responsible for the quality of our delivery, and this involved getting my hands dirty with Jenkins. I learnt a lot, sometimes the hard way, and thought I’d share what I know before I leave the company and loose access to the code.

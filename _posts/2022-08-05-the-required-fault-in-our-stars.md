@@ -1,10 +1,10 @@
 ---
 title: The required fault in our stars
 description: A short write-up about the use of asterisks to indicate required fields in forms
-keywords:
+tags:
   - Accessibility
   - UI
-  - UI
+  - UX
   - Design
 ---
 

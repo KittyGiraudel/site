@@ -4,8 +4,9 @@ external:
   url: https://www.sitepoint.com/introducing-our-newest-book-jump-start-sass/
 title: Introducing Jump Start Sass
 description: An announcement post to introduce Jump Start Sass, my latest book on Sass
-keywords:
+tags:
   - CSS
-  - sass
-  - book
+  - Sass
+  - Open Source
+  - Release
 ---

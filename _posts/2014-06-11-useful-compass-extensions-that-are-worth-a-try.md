@@ -4,8 +4,7 @@ external:
   url: https://www.sitepoint.com/compass-extensions-worth-a-try/
 title: Useful Compass extensions that are worth a try
 description: A gallery of handy Compass extensions that are worth a try
-keywords:
-  - sass
-  - compass
-  - extension
+tags:
+  - Sass
+  - Compass
 ---

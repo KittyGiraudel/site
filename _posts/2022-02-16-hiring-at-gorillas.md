@@ -1,9 +1,9 @@
 ---
 title: Hiring at Gorillas
 description: A comprehensive write-up about the inclusive hiring process we have set up at Gorillas
-keywords:
+tags:
   - Hiring
-  - Interviews
+  - Interview
   - Engineering
 edits:
   - date: 2024/06/09
@@ -56,7 +56,7 @@ The point is, some of our hiring managers (myself included) are moving away from
 
 ### Dropping the test
 
-Generally speaking, we want to make sure our web engineers are somewhat versatile. They should be comfortable with web fundamental languages of course, but also accessibility, automated testing as well as working in cross-functional agile teams. Depending on the candidate’s interest, we might also brush on performance, internationalization and security. Basically we want to make sure they have a polyvalent frontend profile so they can join us and be comfortable relatively quickly, without having to learn fundamentals. A typical profile we try to avoid is the fullstack engineer who’s specialized in JavaScript but pretty inadequate when it comes to CSS and unaware of accessibility.
+Generally speaking, we want to make sure our web engineers are somewhat versatile. They should be comfortable with web fundamental languages of course, but also accessibility, automated testing as well as working in cross-functional agile teams. Depending on the candidate’s interest, we might also brush on performance, internationalisation and security. Basically we want to make sure they have a polyvalent frontend profile so they can join us and be comfortable relatively quickly, without having to learn fundamentals. A typical profile we try to avoid is the fullstack engineer who’s specialized in JavaScript but pretty inadequate when it comes to CSS and unaware of accessibility.
 
 We quickly realized that designing a take-home test that covers all these topics would be impossible, or way too difficult and/or time consuming. We have no intention of asking our candidates to do unpaid work, and we also can’t spend hours reviewing a project for every candidate going through that stage. Myself and my peer web engineers truly believe that take-home tests do not tell the full story.
 

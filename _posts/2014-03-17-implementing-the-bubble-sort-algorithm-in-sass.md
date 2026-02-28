@@ -1,10 +1,8 @@
 ---
 title: Implementing the bubble sort algorithm in Sass
 description: A technical write-up on implementing a sorting algorithm in Sass
-keywords:
-  - sass
-  - sort
-  - bubble sort
+tags:
+  - Sass
 ---
 
 Several months ago someone asked me on Twitter if it was possible to sort a list of numeric values in Sass. They were trying to derive a [modular scale](https://alistapart.com/article/more-meaningful-typography) in Sass and needed a sorting function. After a little bit of work I came up with a way to do it for numbers. However, because of limitations in Sass, there was no way to build a sorting function for other Sass types (like Strings).

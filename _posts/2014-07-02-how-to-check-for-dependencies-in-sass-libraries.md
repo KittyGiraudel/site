@@ -4,7 +4,7 @@ external:
   url: https://webdesign.tutsplus.com/tutorials/how-to-check-for-dependencies-in-sass-libraries--cms-21558
 title: How to check for dependencies in Sass libraries
 description: A guide on how to check for dependencies in Sass libraries
-keywords:
-  - sass
-  - dependencies
+tags:
+  - Sass
+  - Dependencies
 ---

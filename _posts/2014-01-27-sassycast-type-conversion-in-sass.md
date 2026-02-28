@@ -1,12 +1,10 @@
 ---
 title: 'SassyCast: type conversion in Sass'
 description: An announcement post about SassyCast, a small library to convert between types in Sass
-keywords:
-  - sass
-  - type
-  - release
-  - cast
-  - SassyCast
+tags:
+  - Sass
+  - Release
+  - Open Source
 edits:
   - date: 2014/11/16
     md: Remember that type casting is often a symptom of poorly designed code. This should probably stay an experiment.

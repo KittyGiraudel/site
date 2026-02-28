@@ -1,11 +1,8 @@
 ---
 title: Color Clock Experiment
 description: A technical write-up about a small color clock CSS experiment
-keywords:
-  - javascript
-  - experiment
-  - color
-  - clock
+tags:
+  - JavaScript
 ---
 
 A while back, a developer posted a little experiment in which the current time was being used as an hexadecimal color, applied to the body element. Better have a look at [the demo](https://www.jacopocolo.com/hexclock).

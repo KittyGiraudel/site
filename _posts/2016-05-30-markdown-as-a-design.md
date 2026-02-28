@@ -1,9 +1,9 @@
 ---
 title: Markdown as a design
 description: An announcement post for the redesign of my blog using Markdown style
-keywords:
-  - markdown
-  - redesign
+tags:
+  - Markdown
+  - Design
   - CSS
 ---
 

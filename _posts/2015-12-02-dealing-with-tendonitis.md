@@ -1,9 +1,8 @@
 ---
 title: Dealing with tendonitis
 description: A personal post about dealing with tendonitis and what I tried to help with the pain
-keywords:
-  - thoughts
-  - tendonitis
+tags:
+  - Thoughts
 ---
 
 Having a tendonitis is a painful experience. It is the kind of pain that you don’t feel all the time (unless it has gotten really bad…), but the single movement reminds you that your tendons are burning like hell fire. It takes time to get better, and the longer it takes, the most likely it is to come back at some point.

@@ -1,11 +1,10 @@
 ---
 title: Bitwise operators in Sass
 description: A technical write-up on the experimental implementation of bitwise operators in Sass
-keywords:
-  - sass
-  - bitwise
-  - experiment
-  - release
+tags:
+  - Sass
+  - Release
+  - Open Source
 edits:
   - date: 2015/06/06
     md: This is an experiment, please don’t use this code in production.

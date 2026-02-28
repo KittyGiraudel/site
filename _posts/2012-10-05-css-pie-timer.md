@@ -4,9 +4,7 @@ external:
   url: https://css-tricks.com/css-pie-timer/
 title: CSS pie timer
 description: A CSS experiment aiming at making a CSS pie timer without JavaScript
-keywords:
+tags:
   - CSS
-  - pie timer
-  - experiment
-  - animations
+  - Component
 ---

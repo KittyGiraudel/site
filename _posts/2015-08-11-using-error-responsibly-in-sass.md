@@ -4,9 +4,8 @@ external:
   url: https://www.sitepoint.com/using-error-responsibly-in-sass/
 title: Using error responsibly in Sass
 description: A technical guide on using error responsibly in Sass
-keywords:
-  - sass
-  - CSS
-  - preprocessor
-  - error
+tags:
+  - Sass
+  - Errors
+  - Debug
 ---

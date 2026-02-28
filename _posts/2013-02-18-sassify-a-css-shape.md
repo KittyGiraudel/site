@@ -1,10 +1,9 @@
 ---
 title: Sassify a CSS shape
 description: A technical writeup about building a mixin to generate a specific CSS shape
-keywords:
-  - sass
-  - mixin
-  - star
+tags:
+  - Sass
+  - CSS
 ---
 
 A couple of days ago, [Ana Tudor](https://twitter.com/thebabydino) showed me how she managed to do a [pure CSS 6-point star](https://codepen.io/thebabydino/pen/DmklE) with a single element.

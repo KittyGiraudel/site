@@ -1,10 +1,9 @@
 ---
 title: 2D-Grid helpers
 description: A technical write-up on the 2D-Grid helpers I wrote for the Advent of Code puzzles
-keywords:
+tags:
   - JavaScript
   - TypeScript
-  - 2D
   - AoC
 ---
 

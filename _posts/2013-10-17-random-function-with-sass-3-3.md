@@ -1,10 +1,8 @@
 ---
 title: Random function with Sass 3.3
 description: A technical write-up on creating a function to generate a random string in Sass
-keywords:
-  - sass
-  - random
-  - function
+tags:
+  - Sass
 ---
 
 {% info %} I wrote this article months ago when I was first experimenting with Sass 3.3 alpha features. I came up with a pretty wild solution to generate a random number in Sass. However it looks like [Sass 3.3 will implement a random function](https://github.com/nex3/sass/pull/968) so we won’t need all this stuff. I still publish it for fun. :) {% endinfo %}

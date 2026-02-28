@@ -1,12 +1,10 @@
 ---
 title: Recovering from JavaScript errors
 description: A technical write-up on making JavaScript optional and recovering from runtime errors
-keywords:
-  - accessibility
-  - availability
-  - javascript
-  - errors
-  - recovery
+tags:
+  - Accessibility
+  - Errors
+  - JavaScript
 ---
 
 There are many reasons why making JavaScript optional is a Good Thing™. Some people might disable JavaScript all together or JavaScript could fail to load. However, one reason that is often overlooked is the ability to recover from runtime errors. That’s what this article is about.

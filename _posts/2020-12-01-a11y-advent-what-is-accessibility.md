@@ -1,6 +1,8 @@
 ---
 title: 'A11yAdvent Day 1: What is Accessibility?'
 description: A11yAdvent entry on what is digital accessibility and why it matters
+tags:
+  - Accessibility
 date: 2020-12-01T12:00:00.000Z
 ---
 

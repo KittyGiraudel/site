@@ -1,10 +1,11 @@
 ---
 title: N26 and lack of JavaScript
 description: A note on how the N26 web app behaves when JavaScript is disabled
-keywords:
-  - accessibility
-  - a11y
+tags:
+  - Accessibility
   - JavaScript
+  - UX
+  - Node.js
 ---
 
 I have been meaning to write about this topic for years now and always found a reason to postpone. Now is the time, and I am incredible excited to uncover one of the best features of the N26 web platform.

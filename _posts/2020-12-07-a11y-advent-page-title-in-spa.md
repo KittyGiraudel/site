@@ -1,6 +1,10 @@
 ---
 title: 'A11yAdvent Day 7: Page Title in SPA'
 description: A11yAdvent entry on page titles in single-page applications
+tags:
+  - Accessibility
+  - JavaScript
+  - SPA
 edits:
   - date: 2021/03/30
     md: As of v10.1.0, Next now comes with its own page title announcer, so no need to implement anything when using this framework.

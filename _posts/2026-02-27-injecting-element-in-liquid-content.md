@@ -1,9 +1,10 @@
 ---
 title: Injecting element in Liquid content
 description: A technical write-up on how to find a specific spot within a Liquid post content to inject an element.
-keywords:
+tags:
   - JavaScript
   - Liquid
+  - HTML
 ---
 
 Yesterday, I published a post on [design tweaks](/2026/02/26/nerdy-design-details/) I have applied to this website. One thing I’ve improved is the ad placement. Yet, I was still not fully satisfied with how it worked, so I spent more time coming up with a better solution.

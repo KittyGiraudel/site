@@ -1,10 +1,9 @@
 ---
 title: Cubic Bézier representation in Sass
 description: A technical write-up on representing cubic-bezier in Sass with help from Tim Severien
-keywords:
-  - cubic bézier
-  - sass
-  - experiment
+tags:
+  - Sass
+  - CSS
 ---
 
 It all started when [Tim Severien](https://twitter.com/timseverien) showed me a pen where he managed to display a Bezier curve with nothing but Sass. After a couple of hours of fiddling, between his math/geometry knowledge and my love of Sass, we came up with a neat little tool to display a Cubic Bezier function in Sass. This is the story of how we we built that tool.

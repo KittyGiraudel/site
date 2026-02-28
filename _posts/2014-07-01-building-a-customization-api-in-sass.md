@@ -2,9 +2,8 @@
 guest: Ezekiel Gabrielse
 title: Building a customization API in Sass
 description: A technical guest post by Ezekiel Gabrielse on building a customization API in Sass
-keywords:
-  - sass
-  - api
+tags:
+  - Sass
 ---
 
 {% info %} I am glad to have [Ezekiel Gabrielse](https://ezekielg.com/) today, dropping some Sass knowledge on how to build a powerful Sass API to customize the feel and look of elements. Fasten your belts peeps, this is quite intense! {% endinfo %}

@@ -1,10 +1,8 @@
 ---
 title: Advanced Sass list functions
 description: A look at a collection of home-made functions to do advanced list manipulation in Sass
-keywords:
-  - sass
-  - lists
-  - function
+tags:
+  - Sass
 ---
 
 A couple of weeks ago, I wrote a small guide to [understand Sass lists](/2013/07/15/understanding-sass-lists/). I hope you’ve read it and learnt things from it!

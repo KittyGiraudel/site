@@ -1,10 +1,9 @@
 ---
 title: Making sense out of Node
 description: A short guide for beginners on Node, npm and npx
-keywords:
-  - node
-  - npm
-  - tutorial
+tags:
+  - Node.js
+  - Dependencies
 ---
 
 My partner has started getting into test automation and has had fun playing with Cypress, Backstop and Faker recently. However, the whole Node/npm/npx jargon was very obscure to them, so I wrote the little beginner’s guide you can find below.

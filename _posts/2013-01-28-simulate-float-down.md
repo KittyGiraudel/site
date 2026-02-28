@@ -1,10 +1,9 @@
 ---
 title: 'Simulate float: down'
 description: A technical write-up about simulating a conceptual float down CSS declaration
-keywords:
+tags:
   - CSS
-  - riddle
-  - float
+  - Challenge
 edits:
   - date: 2026/02/27
     md: The original forum post no longer exists, nor do the initial screenshots — I should have hosted them myself. 🫠

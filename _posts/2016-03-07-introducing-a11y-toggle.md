@@ -1,10 +1,11 @@
 ---
 title: Introducing A11y Toggle
 description: An announcement post for a11y-toggle, a small library for accessible toggle widgets
-keywords:
-  - a11y
-  - toggle
-  - accessibility
+tags:
+  - Component
+  - Release
+  - Accessibility
+  - Open Source
 ---
 
 A few weeks ago, [I introduced a11y-dialog](/2016/02/11/introducing-a11y-dialog). Today, I am coming back with another accessibility-focused module: [a11y-toggle](https://github.com/edenspiekermann/a11y-toggle).

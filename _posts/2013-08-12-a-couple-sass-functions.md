@@ -1,9 +1,8 @@
 ---
 title: A couple Sass functions
 description: A look into some Sass functions that are worth keeping at the handy
-keywords:
-  - sass
-  - function
+tags:
+  - Sass
 ---
 
 We can do awesome things with Sass. It really pushes CSS to an upper level. More than that, it is so much fun to make Sass mixins and functions. Everytime I do something new, I’m like “whoaaa” even if it’s a useless thing.

@@ -1,10 +1,9 @@
 ---
 title: How I made a Sass debug function
 description: A technical write-up on creating a function to debug Sass data
-keywords:
-  - sass
-  - debug
-  - function
+tags:
+  - Sass
+  - Debug
 ---
 
 {% info %} The code explained in this article has been slightly revisited in [the pen](https://codepen.io/KittyGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen. {% endinfo %}

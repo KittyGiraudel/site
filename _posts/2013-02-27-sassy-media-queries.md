@@ -1,10 +1,8 @@
 ---
 title: Sassy Media Queries
 description: A technical write-up about using Sass to shorten a complicated CSS experiment
-keywords:
-  - sass
-  - media queries
-  - experiment
+tags:
+  - Sass
 ---
 
 Here is a quick blog post aiming at explaining how I turned a ~250-line CSS experiment by [Arley McBlain](https://arleym.com) into less than 30 sexy lines of Sass.

@@ -1,11 +1,8 @@
 ---
 title: Building a walk function in Sass
 description: A technical write-up on writing an experimental walk function in Sass
-keywords:
-  - sass
-  - walk
-  - functions
-  - functional programming
+tags:
+  - Sass
 edits:
   - date: 2014/11/16
     md: More [functional programming code](https://gist.github.com/KittyGiraudel/c36be3440dc2b5ae9ba2) in Sass to be found here.

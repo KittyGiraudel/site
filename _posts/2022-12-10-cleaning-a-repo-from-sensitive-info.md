@@ -1,7 +1,7 @@
 ---
 title: Cleaning a repo from sensitive info
 description: A technical write-up on how to clean up a git repository from sensitive information that was inadvertently committed
-keywords:
+tags:
   - git
   - GitHub
   - Security

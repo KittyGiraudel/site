@@ -1,11 +1,10 @@
 ---
 title: An accessible toggle
 description: A guide on building an accessible toggle component, from semantics to keyboard and screen reader support
-keywords:
+tags:
   - Accessibility
   - HTML
   - Component
-  - Toggle
 ---
 
 Toggles (or sometimes “toggle switches”) are heavily used in modern interfaces. They tend to be relatively straightforward and can be thought as glorified checkboxes. Yet, they are often made inaccessible one way or another.

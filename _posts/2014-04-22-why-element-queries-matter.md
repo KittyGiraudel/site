@@ -1,10 +1,9 @@
 ---
 title: Why element queries matter
 description: A look at element queries, how they differ from media queries, and why they matter
-keywords:
+tags:
   - CSS
-  - element queries
-  - thoughts
+  - Thoughts
 ---
 
 At work, many of our pages present one or more collection of items, like products, shops, or whatever. It’s basically a list of thumbnails, with a title and a location and/or a price. When you click on it, it leads you to the page related to the item. We call this the `elements` component (we could have called it `thumbs-list` or something but that doesn’t matter).

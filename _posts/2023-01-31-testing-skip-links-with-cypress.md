@@ -1,7 +1,7 @@
 ---
 title: Testing skip links with Cypress
 description: A technical write-up on authoring Cypress tests to test accessibility skip links
-keywords:
+tags:
   - Accessibility
   - Cypress
   - Testing

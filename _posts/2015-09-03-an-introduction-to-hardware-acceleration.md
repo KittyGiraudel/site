@@ -1,11 +1,9 @@
 ---
 title: An introduction to hardware acceleration
 description: A technical write-up on hardware acceleration in CSS
-keywords:
+tags:
   - CSS
-  - performance
-  - hardware
-  - acceleration
+  - Performance
 ---
 
 Hardware acceleration is the process of delegating a task usually performed by the CPU (Central Processor Unit) to the GPU (Graphical Processor Unit) in order to speed up performance, hence the name _hardware acceleration_.

@@ -1,10 +1,10 @@
 ---
 title: A little LESS puzzle
 description: A short blog post to work around a shortcoming of the LESS CSS preprocessor
-keywords:
+tags:
   - CSS
-  - less
-  - riddle
+  - LESS
+  - Challenge
 ---
 
 Hi people! What do you think of a little puzzle to wake up your neurons? I think I’ve found something tricky enough to worth a blog post and a little challenge about it.

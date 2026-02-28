@@ -1,12 +1,11 @@
 ---
 title: Accessible icon links
 description: A technical write-up on building accessible icon-only links
-keywords:
-  - a11y
-  - accessibility
-  - react
-  - icon
-  - link
+tags:
+  - Accessibility
+  - React
+  - Component
+  - UI
 ---
 
 <style>

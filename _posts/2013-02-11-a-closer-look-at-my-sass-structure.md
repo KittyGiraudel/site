@@ -1,9 +1,9 @@
 ---
 title: A closer look at my Sass structure
 description: A look about how I structure my Sass code for frontend projects
-keywords:
-  - sass
-  - architecture
+tags:
+  - Sass
+  - Architecture
 edits:
   - date: 2014/05/13
     md: After a year, I got much better with Sass. I suggest you have a look at [this post about Sass architecture](https://www.sitepoint.com/architecture-sass-project/).

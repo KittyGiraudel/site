@@ -1,10 +1,9 @@
 ---
 title: Moving to Jekyll
 description: My feedback after having moved my website onto GitHub Pages, built with Jekyll
-keywords:
-  - blog
-  - jekyll
-  - writing
+tags:
+  - Jekyll
+  - Retrospective
 templateEngineOverride: md
 ---
 

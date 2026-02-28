@@ -1,11 +1,10 @@
 ---
 title: An accessible visibility React component
 description: A technical write-up on an accessible visibility component in React
-keywords:
-  - accessibility
-  - a11y
-  - react
-  - component
+tags:
+  - Accessibility
+  - React
+  - Component
 ---
 
 In [Cache-Cache CSS](https://www.ffoodd.fr/cache-cache-css/) (translated by yours truly on this very blog as [CSS hide-and-seek](/2016/10/13/css-hide-and-seek/)), Gaël Poupard offers a bulletproof solution to visually hide some content while keeping it accessible to assistive technologies.

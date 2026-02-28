@@ -1,10 +1,9 @@
 ---
 title: Looking for dead code
 description: A technical write-up on finding dead code in a large codebase
-keywords:
-- dead code
-- maintenance
-- bash
+tags:
+  - Bash
+  - npm
 ---
 
 The N26 web platform has about 1,000 components and over 300 helpers. It’s not a huge code base per se (certainly not Facebook size anyway), but with over 250,000 lines of code, it is definitely on the big side of the spectrum.

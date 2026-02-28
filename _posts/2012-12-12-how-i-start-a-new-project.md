@@ -1,8 +1,9 @@
 ---
 title: How I start a new project
 description: A look into my process when starting a new software project
-keywords:
-  - frontend
+tags:
+  - Frontend
+  - Process
 edits:
   - date: 2014/11/16
     md: This post is outdated. Note that I do not work like this anymore.

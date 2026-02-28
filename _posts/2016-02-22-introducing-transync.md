@@ -1,10 +1,9 @@
 ---
 title: Introducing transync
 description: An announcement post for Transync, a small library to manage translation files
-keywords:
-  - translations
-  - locales
-  - sync
+tags:
+  - Release
+  - Open Source
 ---
 
 Hey folks, another day, another open-source module at Edenspiekermann! Today, I’d like to talk about translation files. We tend to do a lot of multilingual websites here at the company.

@@ -1,10 +1,8 @@
 ---
 title: A new Sass mixin for offsets
 description: A technical write-up on a Sass mixin to help with CSS offsets
-keywords:
-  - sass
-  - mixin
-  - offsets
+tags:
+  - Sass
 edits:
   - date: 2015/06/06
     md: One year later, I now think it’s better not to have a mixin for this. Less Sass, more native CSS.

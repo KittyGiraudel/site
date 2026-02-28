@@ -1,10 +1,11 @@
 ---
 title: Giving a frontend workshop
 description: A retrospective on giving a frontend workshop for non-techies at Edenspiekermann
-keywords:
-  - workshop
+tags:
+  - Retrospective
   - HTML
   - CSS
+  - Frontend
 ---
 
 Last week, I gave an internal workshop on HTML and CSS at [Edenspiekermann](https://edenspiekermann.com). The point was to give a short introduction on frontend development to whoever was interested. It was such an amazing experience that I thought it would be worth sharing my thoughts on the topic.

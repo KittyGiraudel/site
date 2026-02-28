@@ -1,6 +1,9 @@
 ---
 title: 'A11yAdvent Day 19: Performance'
 description: A11yAdvent entry on performance as an accessibility topic
+tags:
+  - Accessibility
+  - Performance
 ---
 
 Performance, or rather the lack thereof, can definitely be considered an accessibility topic. If the content never shows up, it’s not accessible — in the most basic sense of the word.

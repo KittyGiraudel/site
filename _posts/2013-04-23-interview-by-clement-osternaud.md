@@ -1,9 +1,9 @@
 ---
 title: Interview by Clément Osternaud
 description: My interview by Clément Osternaud on my professional journey, frontend and CSS
-keywords:
-  - interview
-  - thoughts
+tags:
+  - Interview
+  - Retrospective
 ---
 
 ## Could you introduce yourself in a few lines

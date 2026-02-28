@@ -2,10 +2,8 @@
 title: A11y Advent Calendar
 description: An introduction to the A11y Advent calendar and publishing an accessibility tip a day
 date: 2020-12-01T10:00:00.000Z
-keywords:
-  - accessibility
-  - a11y
-  - tips
+tags:
+  - Accessibility
 ---
 
 I am between jobs with a bit of free time, so I thought I would try something new this year and publish **an accessibility tip a day**. Nothing too ground-breaking, and I expect a lot of these tips to be common knowledge for many of you, yet we’ll end the month with a nice list of do’s & don’ts. ✨

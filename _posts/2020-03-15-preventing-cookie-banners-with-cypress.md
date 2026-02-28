@@ -1,10 +1,10 @@
 ---
 title: Preventing cookie banners with Cypress
 description: A technical write-up on preventing cookie banners from breaking Cypress tests
-keywords:
-- cypress
-- testing
-- qa
+tags:
+  - Cypress
+  - Testing
+  - JavaScript
 ---
 
 If your company has one of these cookie banners and you use Cypress for testing, you might have had issues with your tests failing because the banner covers the page. Here is a super small article to explain how to work around that problem.

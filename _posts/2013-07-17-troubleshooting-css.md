@@ -4,7 +4,7 @@ external:
   url: https://tympanus.net/codrops/2013/07/17/troubleshooting-css/
 title: Troubleshooting CSS
 description: A guide into troubleshooting CSS problems, and how to get better at it
-keywords:
+tags:
   - CSS
-  - troubleshooting
+  - Debug
 ---

@@ -5,9 +5,8 @@ external:
 lang: ru
 title: Инклюзивность в веб-разработке
 description: 'Инклюзивность в веб-разработке'
-keywords:
-  - interview
-  - a11y
-  - ru
-  - thoughts
+tags:
+  - Interview
+  - Accessibility
+  - Podcast
 ---

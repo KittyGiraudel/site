@@ -1,11 +1,8 @@
 ---
 title: String replacement function in Sass
 description: A technical write-up about writing a Sass function to replace a substring inside a string
-keywords:
-  - sass
-  - strings
-  - replace
-  - function
+tags:
+  - Sass
 ---
 
 The other day, I caught up a discussion on Twitter where famous French developer [Nicolas Hoffman asked for a way to replace a string into another string in Sass](https://twitter.com/Nico3333fr/status/420557471745179648). He quickly got some answers to dig into string functions coming in Sass 3.3, but I know playing around such tools can be quite time consuming for someone who’s not like super comfortable with the syntax.

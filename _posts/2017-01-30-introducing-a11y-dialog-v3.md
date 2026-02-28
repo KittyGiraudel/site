@@ -1,10 +1,12 @@
 ---
 title: Introducing a11y-dialog v3
 description: An announcement post for the 3rd version of a11y-dialog
-keywords:
-  - javascript
-  - accessibility
-  - dialog
+tags:
+  - JavaScript
+  - Accessibility
+  - Dialog
+  - Release
+  - Open Source
 ---
 
 Just a couple of words to talk about the work I’ve done to get [a11y-dialog v3.0.0](https://github.com/KittyGiraudel/a11y-dialog/releases/tag/3.0.0) out of the door, and so you can safely upgrade to the newest and shiniest!

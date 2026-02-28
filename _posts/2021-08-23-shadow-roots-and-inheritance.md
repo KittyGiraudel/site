@@ -1,7 +1,7 @@
 ---
 title: Shadow roots and inheritance
 description: A short explanation of an unintuitive behavior of CSS and shadow roots
-keywords:
+tags:
   - CSS
   - Shadow DOM
   - HTML

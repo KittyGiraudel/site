@@ -1,10 +1,10 @@
 ---
 title: 'SassySort: sorting algorithms in Sass'
 description: An announcement post for SassySort, an experimental library implementing various sorting algorithms in Sass
-keywords:
-  - sass
-  - sort
-  - release
+tags:
+  - Sass
+  - Release
+  - Open Source
 edits:
   - date: 2015/06/06
     md: This is an experiment, please don’t use this code in production.

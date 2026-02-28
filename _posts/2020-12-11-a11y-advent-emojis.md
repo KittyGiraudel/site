@@ -1,6 +1,8 @@
 ---
 title: 'A11yAdvent Day 11: Emojis'
 description: A11yAdvent entry on emojis and accessibility
+tags:
+  - Accessibility
 ---
 
 Emojis are all around nowadays. Besides being cute and silly, they became an essential communication tool to suggest tone in the written world.

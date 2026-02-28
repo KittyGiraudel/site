@@ -1,10 +1,10 @@
 ---
 title: Introducing Sass Guidelines
 description: An announcement post for Sass Guidelines, a styleguide for clean and scalable Sass
-keywords:
-  - sass
-  - guidelines
-  - release
+tags:
+  - Sass
+  - Release
+  - Open Source
 edits:
   - date: 2015/01/07
     md: Over 20,000 visits on [Sass Guidelines](https://sass-guidelin.es) during the last 24 hours. Thank you so much for your support!

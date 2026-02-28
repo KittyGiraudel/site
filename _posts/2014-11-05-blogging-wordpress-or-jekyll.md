@@ -5,8 +5,8 @@ external:
 layout: post
 title: 'Blogging: WordPress or Jekyll'
 description: A comparison of WordPress and Jekyll for blogging
-keywords:
-  - blog
+tags:
   - WordPress
-  - jekyll
+  - Jekyll
+  - Writing
 ---

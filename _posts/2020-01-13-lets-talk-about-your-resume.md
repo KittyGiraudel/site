@@ -1,10 +1,9 @@
 ---
 title: Let’s talk about your resume
 description: A short reflection on resumes and what I look for as a hiring manager
-keywords:
-  - hiring
-  - resume
-  - thoughts
+tags:
+  - Hiring
+  - Thoughts
 ---
 
 Folks, we need to talk about resumes. Over the last 3 years at N26, I have had to get quite involved in hiring. I virtually interviewed every single person who joined the web team, and have probably reviewed enough CVs for a life time. The point is, I have come to spot red flags quickly and can notice candidates who care and invest time into their profile.

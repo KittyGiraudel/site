@@ -1,10 +1,8 @@
 ---
 title: How I built Tetris with Unity
 description: A look at a Tetris project I’ve built with Unity during my studies
-keywords:
-  - tetris
-  - unity
-  - C#
+tags:
+  - Unity
 ---
 
 As part of my formation in programming sciences, I had the opportunity to build a little Tetris game with C# on Unity and I thought it could be a good idea to write a little blog post about my experience. Plus, it changes a little from CSS things.

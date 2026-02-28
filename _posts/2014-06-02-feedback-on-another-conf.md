@@ -1,10 +1,10 @@
 ---
 title: Feedback on another conference
 description: A retrospective on my 2nd conference, the FeWeb in Belgium
-keywords:
-  - thoughts
-  - feweb
-  - sass
+tags:
+  - Retrospective
+  - Conference
+  - Sass
 ---
 
 A couple of weeks ago, I have been invited by the [FeWeb](https://www.feweb.be/fr/) (which stands for _La fédération des métiers du web_, literally _Web professions Federation_) to talk about Sass at [Co.Station](https://www.co-station.com/) in Bruxelles, Belgium.

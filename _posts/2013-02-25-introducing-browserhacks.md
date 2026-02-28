@@ -1,11 +1,9 @@
 ---
 title: Introducing Browserhacks
 description: An announcement post about Browserhacks, a project aiming at listing browser specific CSS hacks
-keywords:
+tags:
   - CSS
-  - hacks
-  - release
-  - browsers
+  - Open Source
 ---
 
 Hey people! Just a quick post to anounce the very recent launch of [Browserhacks](http://browserhacks.com)!

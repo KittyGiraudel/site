@@ -1,11 +1,8 @@
 ---
 title: Use lengths, not strings
 description: A guide on using proper Sass lengths instead of strings for more idiomatic Sass
-keywords:
-  - sass
-  - type
-  - strings
-  - lengths
+tags:
+  - Sass
 ---
 
 This is something I see in a lot of Sass demos and tutorials. People tend to use strings instead of actual lengths, and if it’s okay in most cases, there are a couple of situations when it is not anymore.

@@ -1,9 +1,10 @@
 ---
 title: The stylesheet breaker
 description: A short technical write-up about a CSS quirk that has the potential to breaking the entire stylesheet
-keywords:
+tags:
   - CSS
-  - riddle
+  - Challenge
+  - Debug
 ---
 
 Or **how I found the one line of CSS that can break your entire stylesheet**. Hopefully it is very unlikely that you’ll ever write this line so worry not; you should be safe.

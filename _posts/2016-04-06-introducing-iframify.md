@@ -1,11 +1,10 @@
 ---
 title: Introducing iframify
 description: An announcement post for iframify, a small library to encapsulate a widget in an iframe
-keywords:
-  - iframe
-  - styleguide
-  - styles
-  - javascript
+tags:
+  - JavaScript
+  - Release
+  - Open Source
 ---
 
 _If you want to check the code directly, [be my guest](https://github.com/edenspiekermann/iframify). Also, maybe [a demo](https://codepen.io/KittyGiraudel/pen/vGWpyr?editors=1000)?_

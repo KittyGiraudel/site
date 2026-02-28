@@ -2,10 +2,9 @@
 title: CSS hide-and-seek
 description: A technical write-up on hiding and showing content with CSS by Gaël Poupard
 guest: 'Gaël Poupard'
-keywords:
+tags:
   - CSS
-  - accessibility
-  - a11y
+  - Accessibility
 edits:
   - date: 2019/01/18
     md: Updated the snippet with the margin property to overcome [issues related to containing overflow](#undesirable-overflows-18012019).

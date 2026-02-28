@@ -1,10 +1,9 @@
 ---
 title: Items along a circle
 description: A technical write-up about how to place items along a circle with CSS
-keywords:
+tags:
   - CSS
-  - sass
-  - mixin
+  - Sass
 ---
 
 If you like to experiment or do a little bit of webdesign, then you have probably already tried to put elements on a circle. Unless you’re a CSS hacker, you’ve probably set a class/ID per item, then used `left` and `top` accordingly to position everything around the circle.

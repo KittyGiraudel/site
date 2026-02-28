@@ -1,9 +1,9 @@
 ---
 title: 'The Magic Circle: a CSS brain teaser'
 description: A little CSS brain teaser on how to create a magic circle
-keywords:
+tags:
   - CSS
-  - riddle
+  - Challenge
 edits:
   - date: 2014/02/26
     md: If you are curious, be sure to read [this article for the solution](/2014/02/26/the-magic-circle-trick-revealed/).

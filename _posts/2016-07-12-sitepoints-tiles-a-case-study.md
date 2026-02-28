@@ -4,8 +4,9 @@ external:
   url: https://www.sitepoint.com/sitepoints-tiles-a-case-study/
 title: 'SitePoint’s tiles: a case study'
 description: A case study about SitePoint’s tile component
-keywords:
-  - html
+tags:
+  - HTML
   - CSS
-  - separation of concerns
+  - Component
+  - Design
 ---

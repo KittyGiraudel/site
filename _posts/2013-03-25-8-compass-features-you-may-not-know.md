@@ -1,9 +1,9 @@
 ---
 title: 8 Compass features you may not know
 description: A gallery of features from the Compass frameworks that is worth knowing
-keywords:
-  - sass
-  - compass
+tags:
+  - Sass
+  - Compass
 edits:
   - date: 2014/11/16
     md: I no longer use Compass. Just sayin'.

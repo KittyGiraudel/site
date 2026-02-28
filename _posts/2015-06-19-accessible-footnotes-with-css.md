@@ -4,8 +4,9 @@ external:
   url: https://www.sitepoint.com/accessible-footnotes-css/
 title: Accessible footnotes with CSS
 description: A technical write-up on creating accessible footnotes with CSS
-keywords:
+tags:
   - CSS
-  - accessibility
-  - footnotes
+  - Accessibility
+  - Component
+  - Writing
 ---

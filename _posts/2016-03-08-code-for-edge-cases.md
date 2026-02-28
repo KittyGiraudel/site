@@ -1,11 +1,9 @@
 ---
 title: Code for edge cases
 description: A reflection on coding for edge cases and defensive programming
-keywords:
-  - code
-  - edge case
-  - javascript
-  - function
+tags:
+  - JavaScript
+  - Thoughts
 ---
 
 Lately I have been writing tests for a large JavaScript project. When testing helper functions, it occurred to me developers usually write the code for the perfect scenario without considering anything that could go wrong.

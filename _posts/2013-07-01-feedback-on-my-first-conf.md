@@ -1,8 +1,9 @@
 ---
 title: Feedback on my first conference
 description: Retrospective on my experience at Kiwi Party, my first conference
-keywords:
-  - thoughts
+tags:
+  - Retrospective
+  - Conference
 ---
 
 Hey people! It’s been a while I haven’t post anything; last month has been pretty intense. Especially since I recently had the amazing opportunity to be a speaker at [KiwiParty](http://kiwiparty.fr)!

@@ -2,11 +2,9 @@
 guest: Loïc Giraudel
 title: Optimising images with Bash
 description: A guest post by Loïc Giraudel on how to use Bash to optimize images
-keywords:
-  - bash
-  - script
-  - images
-  - optimisation
+tags:
+  - Bash
+  - Performance
 ---
 
 {% info %} The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at Future PLC (Grenoble, France) and my brother. He also knows his way in Bash scripting and frontend performance. I’m very glad to have him writing here. :) {% endinfo %}

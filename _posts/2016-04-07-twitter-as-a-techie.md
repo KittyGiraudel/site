@@ -1,10 +1,10 @@
 ---
 title: Twitter as a techie
 description: A short reflection on being a techie on Twitter and how I use this social network
-keywords:
-  - techie
-  - twitter
-  - thoughts
+tags:
+  - Engineering
+  - Retrospective
+  - Thoughts
 ---
 
 Hey there. I really hesitated before publishing this post, because it’s going to be about Twitter and how I use it, and I’m pretty sure this is an adequat topic for trolls and flame (and flaming trolls). But, a friend asked me to talk about this so here it is.

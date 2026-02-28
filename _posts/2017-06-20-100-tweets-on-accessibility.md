@@ -1,11 +1,8 @@
 ---
 title: 100 tweets on accessibility
 description: A 100-tweet long Twitter thread about accessibility
-keywords:
-  - twitter
-  - tweets
-  - accessibility
-  - a11y
+tags:
+  - Accessibility
 ---
 
 This list was originally [posted on Twitter](https://twitter.com/i/moments/877084869309980672) but with Twitter’s future being uncertain, I thought I would bring it here:

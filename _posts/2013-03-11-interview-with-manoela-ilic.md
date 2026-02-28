@@ -1,8 +1,8 @@
 ---
 title: Interview with Manoela Ilic
 description: 'The wonderful Manoela Ilic also known as Mary Lou, co-founder of Codrops has accepted to answer a few questions in an exciting interview'
-keywords:
-  - interview
+tags:
+  - Interview
 ---
 
 {% info %} The wonderful [Manoela Ilic](https://twitter.com/crnacura) also known as Mary Lou, co-founder of [Codrops](https://tympanus.net/codrops/) has accepted to answer a few questions. Below is her interview. Enjoy! {% endinfo %}

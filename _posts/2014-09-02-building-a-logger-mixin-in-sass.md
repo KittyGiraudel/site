@@ -4,8 +4,7 @@ external:
   url: https://webdesign.tutsplus.com/tutorials/building-a-logger-mixin-in-sass--cms-22070
 title: Building a logger mixin in Sass
 description: A technical write-up on building a logger mixin in Sass
-keywords:
-  - sass
-  - mixin
-  - logger
+tags:
+  - Sass
+  - Debug
 ---

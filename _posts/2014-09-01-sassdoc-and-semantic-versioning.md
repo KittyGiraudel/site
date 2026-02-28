@@ -1,11 +1,11 @@
 ---
 title: SassDoc and Semantic Versioning
 description: A short retrospective on the use of semantic versioning in the making of SassDoc
-keywords:
-  - sass
-  - sassdoc
-  - semver
-  - release
+tags:
+  - Sass
+  - Documentation
+  - Release
+  - Open Source
 ---
 
 If you are not familiar with the concept of Semantic Versioning, I invite you to read [my article](https://www.sitepoint.com/semantic-versioning-why-you-should-using/) on topic at SitePoint. To sum things up, it is a way to version softwares in ordre to provide meaning across version number bumps.

@@ -1,7 +1,7 @@
 ---
 title: Book recommendations for 2021
 description: A short list of book recommendations for 2021
-keywords:
+tags:
   - Reading
 ---
 

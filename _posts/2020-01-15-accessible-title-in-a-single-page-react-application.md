@@ -1,10 +1,10 @@
 ---
 title: Accessible page title in a single-page React application
 description: A technical write-up on managing the page title in a React SPA for accessibility
-keywords:
-  - accessibility
+tags:
+  - Accessibility
   - SPA
-  - react
+  - React
 ---
 
 Over the summer, we, at N26, got the company Temesis to audit the accessibility of our web application. As part of their comprehensive and exhaustive report, we learnt that we were not handling page titles properly.

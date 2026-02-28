@@ -1,10 +1,8 @@
 ---
 title: Programmatically go from one color to another with Sass
 description: A technical write-up about programmatically converting a color into another color in Sass
-keywords:
-  - sass
-  - experiment
-  - colors
+tags:
+  - Sass
 ---
 
 At work, we have four major sections on our site: _Shopping_, _News_, _Associations_, and something that could be translated _Ads_. Each section has its own color scheme to make it visually distinct from the others. Shopping is blue, News is purple, Associations is orange, and Ads is green.

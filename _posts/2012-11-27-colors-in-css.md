@@ -1,9 +1,8 @@
 ---
 title: Colors in CSS
 description: A deep-dive into colors in CSS, how they are defined, and how to use them
-keywords:
+tags:
   - CSS
-  - colors
 ---
 
 Hi everyone! Today, we will talk about colors in CSS. There are many color specifications and we’ll be talking about their history, what they mean and how to use them.
@@ -162,7 +161,7 @@ The fact is, hexadecimal is really unfriendly. Nobody knows what color is associ
 
 RGB is slightly better, especially when you’re using percentage values but it’s not wonderful either. If I tell you `rgb(54%, 69%, 23%)`, can you tell me what color it will be? Even approximately? I guess not.
 
-That’s why there are keywords. Keywords are real color names like red, green and blue associated to actual RGB / hex triplets. Back in the days, the HTML 4.01 Standard proposed 16 different keywords:
+That’s why there are keywords. Keywords are real color names like red, green and blue associated to actual RGB / hex triplets. Back in the days, the HTML 4.01 Standard proposed 16 different tags:
 
 - Aqua
 - Black

@@ -1,6 +1,8 @@
 ---
 title: 'A11yAdvent Day 3: Hiding Content'
 description: A11yAdvent entry on hiding content responsibly while preserving it for screen-readers
+tags:
+  - Accessibility
 ---
 
 Today, let’s dive in a bit more technical topic and discuss how to hide content while keeping it accessible to assistive technologies.

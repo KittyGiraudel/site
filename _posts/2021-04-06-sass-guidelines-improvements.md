@@ -1,7 +1,7 @@
 ---
 title: Sass Guidelines improvements
 description: A retrospective on the latest round of improvements to Sass Guidelines and the decisions behind them
-keywords:
+tags:
   - Sass
 ---
 

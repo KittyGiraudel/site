@@ -1,8 +1,9 @@
 ---
 title: Digging into my slides about Sass
 description: A longer version of my recent talk at Kiwi Party, digging into my slides about Sass
-keywords:
-  - sass
+tags:
+  - Sass
+  - Conference
 ---
 
 As you may know, I have been speaking at KiwiParty about Sass in late June. It has been a really great experience and people were really receptive even if my talk was a bit technical.

@@ -1,10 +1,10 @@
 ---
 title: Writing a debug script
 description: A technical write-up on a small Node doctor script for debugging and collaboration
-keywords:
-  - debug
-  - script
-  - node
+tags:
+  - Node.js
+  - Debug
+  - Bash
 ---
 
 To help debugging situations and collaborating with others when we cannot sit together, I came up with a little Node “doctor” script (in hommage to `brew doctor`). The goal is to emit a lot of information about the system and working environment (git status, system, environment variables…) so the output can be shared with someone to compare with.

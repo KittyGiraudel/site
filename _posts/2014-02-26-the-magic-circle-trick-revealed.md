@@ -1,9 +1,9 @@
 ---
 title: 'The Magic Circle: trick revealed'
 description: A technical write-up about the Magic Circle puzzle previously posted on this website
-keywords:
+tags:
   - CSS
-  - riddle
+  - Challenge
 ---
 
 {% info %} Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](/2014/02/19/the-magic-circle-a-css-brain-teaser/). {% endinfo %}

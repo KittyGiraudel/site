@@ -1,10 +1,9 @@
 ---
 title: Syncing a site between GitHub and Jekyll
 description: A technical write-up on syncing a site between GitHub and Jekyll
-keywords:
-  - jekyll
-  - github
-  - structure
+tags:
+  - Jekyll
+  - GitHub
 ---
 
 The other day, I built a small Jekyll website for [Simplified JavaScript Jargon](https://jargon.js.org). If you are not familiar with the project, it is a community attempt at explaining JavaScript related buzzwords in simpler words to prevent JavaScript fatigue and ease adoption for new comers.

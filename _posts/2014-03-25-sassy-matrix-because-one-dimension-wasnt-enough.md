@@ -1,11 +1,10 @@
 ---
 title: 'SassyMatrix: because one dimension wasn’t enough'
 description: An announcement post about SassyMatrix, an experimental library to handle matrices in Sass
-keywords:
-  - sass
-  - matrix
-  - release
-  - sassymatrix
+tags:
+  - Sass
+  - Release
+  - Open Source
 edits:
   - date: 2015/06/06
     md: This is an experiment, please don’t use this code in production.

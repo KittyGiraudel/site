@@ -1,9 +1,8 @@
 ---
 title: A round-up on CSS playgrounds
 description: A look into what CSS playgrounds are and what are the main contenders
-keywords:
+tags:
   - CSS
-  - playground
 edits:
   - date: 2014/11/16
     md: This article is quite old. Information might be incorrect.

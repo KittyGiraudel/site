@@ -1,10 +1,9 @@
 ---
 title: Dear PayPal
 description: An open letter to PayPal about their poor frontend practices
-keywords:
-  - paypal
-  - user experience
-  - thoughts
+tags:
+  - UX
+  - Rant
 ---
 
 I have been a long time user of your online services. I trust you with my money. I like how easy and convenient it is to send and receive cash through your service. I also like that you polished your interface over time. It got better.

@@ -1,10 +1,9 @@
 ---
 title: Why I switched from LESS to Sass
 description: My thoughts on switching from LESS to the Sass CSS preprocessor
-keywords:
-  - less
-  - sass
-  - preprocessor
+tags:
+  - LESS
+  - Sass
 ---
 
 Yaaay, another blog post on the web about CSS preprocessors, as if there wasn’t enough. Don’t worry: I won’t try to convince you to use a CSS preprocessor, neither about the one you should pick. These decisions are really up to you.

@@ -1,8 +1,8 @@
 ---
 title: Things I’d like to do in 2013
 description: Ambitions for 2013, and things I would like to accomplish by the end of the year
-keywords:
-  - thoughts
+tags:
+  - Retrospective
 ---
 
 This post will be kind of “personal” since I want to talk about things I would like to be able to do before the end of the year.

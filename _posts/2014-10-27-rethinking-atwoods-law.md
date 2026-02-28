@@ -1,10 +1,9 @@
 ---
 title: Rethinking Atwood’s law
 description: A retrospective on Atwood’s law, and how it can be reframed in the context of Sass
-keywords:
-  - thoughts
-  - atwood’s law
-  - sass
+tags:
+  - Thoughts
+  - Sass
 ---
 
 A couple years ago, the 17th of July 2007 to be exact, [Jeff Atwood](https://twitter.com/codinghorror), founder and builder of StackOverflow and StackExchange [wrote](https://blog.codinghorror.com/the-principle-of-least-power/) about the [principle of least power](https://www.w3.org/DesignIssues/Principles.html) and said:

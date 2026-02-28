@@ -1,9 +1,11 @@
 ---
 title: Template engines and JavaScript
 description: A retrospective on the challenges I faced when moving my website from Jekyll to Mixture
-keywords:
-  - template
-  - javascript
+tags:
+  - JavaScript
+  - Jekyll
+  - HTML
+  - Templates
 templateEngineOverride: md
 ---
 

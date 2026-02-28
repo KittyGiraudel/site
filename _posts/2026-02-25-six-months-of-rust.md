@@ -1,6 +1,6 @@
 ---
 title: Six months of Rust
-keywords:
+tags:
   - Rust
   - Retrospective
 ---

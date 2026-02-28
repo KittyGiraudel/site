@@ -1,7 +1,7 @@
 ---
 title: Changing name on the internet
 description: A personal note on changing my name on the internet and updating accounts and services
-keywords:
+tags:
   - Retrospective
   - Gender
 ---

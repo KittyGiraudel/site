@@ -2,10 +2,11 @@
 guest: David Khourshid
 title: Styling React Components in Sass
 description: A technical write-up on styling React components with Sass
-keywords:
-  - sass
-  - react
-  - javascript
+tags:
+  - Sass
+  - React
+  - JavaScript
+  - Component
 ---
 
 {% info %} The following is a guest post by David Khourshid about how he uses Sass and the [7-1 pattern](https://sass-guidelin.es/#architecture) to style React components. React being all over the place these days, I am very glad to have him talking about his experience here. {% endinfo %}

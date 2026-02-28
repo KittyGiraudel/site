@@ -5,7 +5,7 @@ external:
 lang: fr
 title: Quand Sass ne rend plus service
 description: Une réflexion sur Sass, ses limites et quand il ne rend plus service
-keywords:
-  - sass
-  - thoughts
+tags:
+  - Sass
+  - Thoughts
 ---
