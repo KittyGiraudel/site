@@ -28,7 +28,7 @@ export default function (config) {
   config.addPlugin(footnotes)
 
   // Pass through static files; the CSS file is handled through Sass and
-  // therefore not explitly passed through here
+  // therefore not explicitly passed through here
   config.addPassthroughCopy('assets/images')
   config.addPassthroughCopy('_redirects')
   config.addPassthroughCopy('_headers')
@@ -71,7 +71,7 @@ export default function (config) {
   // Provide a tag to render info blocks
   config.addPairedShortcode('info', info)
 
-  // Reproduce some Liquid filters, sometimes losely
+  // Reproduce some Liquid filters, sometimes loosely
   config.addFilter('date_to_xmlschema', dateToXmlSchema)
   config.addFilter('date_to_rfc3339', dateToRFC3339)
   config.addFilter('group_by', groupBy)

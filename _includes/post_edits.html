@@ -1,6 +1,6 @@
 {% if edits %}
 <div class="Info PostEdits">
-  <h2 class="PostEdits__title">Noteworhy edits</h2>
+  <h2 class="PostEdits__title">Noteworthy edits</h2>
   {% for edit in edits %}
     <p><span class="PostEdits__date">{{ edit.date | time }}:</span> {{ edit.md | markdown }}</p>
   {% endfor %}
