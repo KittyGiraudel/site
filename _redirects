@@ -1,19 +1,75 @@
 https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 
-/rss /rss/index.xml 301!
-/rss/\* /rss/index.xml 301!
+/atom /rss/index.xml 301!
+/atom.xml /rss/index.xml 301!
+/blog/atom.xml /rss/index.xml 301!
+/blog/feed /rss/index.xml 301!
+/blog/feed.xml /rss/index.xml 301!
+/blog/rss.xml /rss/index.xml 301!
+/feed /rss/index.xml 301!
+/feed/atom/ /rss/index.xml 301!
+/feeds /rss/index.xml 301!
+/feed.xml /rss/index.xml 301!
 /feeds/feed.xml /rss/index.xml 301!
-/feed /rss/index.xml 301! /feeds /rss/index.xml 301!
+/rss /rss/index.xml 301!
+/rss.xml /rss/index.xml 301!
+/rss/\* /rss/index.xml 301!
 
+# Fix some old broken URLs
+/2012/11/13/less-to-sass/ /2012/11/13/why-i-switched-from-less-to-sass/ 301!
+/2012/11/27/css-colors/ /2012/11/27/colors-in-css/ 301!
+/2013/01/28/float-down/ /2013/01/28/simulate-float-down/ 301!
 /2013/02/04/css-gradients/ /2013/02/04/dig-deep-into-css-gradients/ 301!  
-/2021/03/07/what-if-skip-links-were-good/ /2021/03/07/imagining-native-skip-links/ 301!  
-/2021/10/08/understanding-gender-non-conformity/ /2021/10/08/understanding-the-gender-spectrum/ 301!  
+/2013/02/11/sass-structure/ /2013/02/11/a-closer-look-at-my-sass-structure/ 301!
+/2013/02/21/jekyll/ /2013/02/21/moving-to-jekyll/ 301!
+/2013/02/25/browserhacks/ /2013/02/25/introducing-browserhacks/ 301!
+/2013/03/04/css-grids/ /2013/03/04/we-dont-need-your-css-grid/ 301!
+/2013/03/14/css-preprocessors/ /2013/03/14/can-i-afford-a-preprocessor/ 301!
+/2013/03/18/ultimate-rem-mixin/ /2013/03/18/ultimate-px-rem-mixin/ 301!
+/2013/03/25/compass-extensions/ /2013/03/25/8-compass-features-you-may-not-know/ 301!
+/2013/04/02/items-on-circle/ /2013/04/02/items-along-a-circle/ 301!
+/2013/04/04/css-grid-layout/ /2013/04/04/future-of-css-layout-css-grid/ 301!
+/2013/04/08/css-alternative-select/ /2013/04/08/why-a-css-alternative-to-select-is-impossible/ 301!
+/2013/04/30/css-aha-moment/ /2013/04/30/my-css-aha-moment/ 301!
+/2013/07/01/feedbacks-kiwiparty/ /2013/07/01/feedback-on-my-first-conf/ 301!
+/2013/07/08/digging-into-my-slides-sass/ /2013/07/08/digging-into-my-slides-about-sass/ 301!
 /2013/07/17/sass-future /2013/07/17/looking-into-the-future-of-sass 301!  
+/2013/07/29/optimizing-with-bash/ /2013/07/29/optimising-images-with-bash/ 301!
+/2013/08/05/offsets-sass-mixin/ /2013/08/05/sass-mixin-for-offsets/ 301!
+/2013/08/12/sass-functions/ /2013/08/12/a-couple-sass-functions/ 301!
+/2013/10/17/sass-random/ /2013/10/17/random-function-with-sass-3-3/ 301!
+/2013/10/21/sass-debug/ /2013/10/21/how-i-made-a-sass-debug-function/ 301!
+/2014/01/13/sass-string-replacement-function/ /2014/01/13/string-replacement-function-in-sass/ 301!
+/2014/01/15/sass-string-to-number/ /2014/01/15/casting-a-string-to-a-number-in-sass/ 301!
+/2014/01/20/json-in-sass/ /2014/01/20/sassyjson-talk-to-the-browser/ 301!
+/2014/01/27/casting-types-in-sass/ /2014/01/27/sassycast-type-conversion-in-sass/ 301!
+/2014/02/06/calc-css-riddle/ /2014/02/06/css-trickery-and-calc-function/ 301!
+/2014/02/24/star-rating-system-with-sass/ /2014/02/24/star-rating-widget-with-sass/ 301!
+/2014/02/26/the-magic-circle-trick-revealed/flatuicolors.com /2014/02/26/the-magic-circle-trick-revealed/ 301!
+/2014/03/18/sassy-sort/ /2014/03/18/sassysort-sorting-algorithms-in-sass/ 301!
+/2014/04/28/casting-map-into-list/ /2014/04/28/casting-a-map-into-a-list-in-sass/ 301!
+/2014/05/19/new-offsets-sass-mixin/ /2014/05/19/a-new-sass-mixin-for-offsets/ 301!
+/2014/06/02/feedbacks-feweb/ /2014/06/02/feedback-on-another-conf/ 301!
+/2014/11/17/feedback-on-dotcss/ /2014/11/17/feedback-on-dotcss-2014/ 301!
+/2014/11/25/specificity-in-sass/ /2014/11/25/calculating-specificity-in-sass/ 301!
 /2015/01/05/looking-back-at-2014 /2015/01/05/2014-in-review 301!  
 /2016/01/05/looking-back-at-2015 /2016/01/05/2015-in-review 301!  
+/2016/10/13/css-hide-and-seek//n/n@mixin /2016/10/13/css-hide-and-seek 301! # See https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap-utilities.css.map
+/2016/10/13/css-hide-and-seek/n/n@mixin /2016/10/13/css-hide-and-seek 301! # See https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap-utilities.css.map
 /2017/01/03/looking-back-at-2016 /2017/01/03/2016-in-review 301!  
+/2017/07/02/accessibility-feedback /2017/07/02/accessibility-feedback-from-twitter/ 301!
+/2017/07/02/accessibility-feedback/ /2017/07/02/accessibility-feedback-from-twitter/ 301!
 /2017/12/30/looking-back-at-2017 /2017/12/30/2017-in-review 301!  
 /2019/12/31/looking-back-at-2019 /2019/12/31/2019-in-review 301!  
+/2020/01/18/n26-and-lack-of-javascript/ /2020/01/20/n26-and-lack-of-javascript/ 301!
+/2020/12/03/a11y-advent-hiding-content//n /2020/12/03/a11y-advent-hiding-content/ 301!
 /2020/12/31/looking-back-at-2020 /2020/12/31/2020-in-review 301!  
+/2021/03/07/what-if-skip-links-were-good/ /2021/03/07/imagining-native-skip-links/ 301!  
+/2021/10/08/understanding-gender-non-conformity/ /2021/10/08/understanding-the-gender-spectrum/ 301!  
 /2021/12/27/looking-back-at-2021 /2021/12/27/2021-in-review 301!  
 /2022/12/28/looking-back-at-2022 /2022/12/28/2022-in-review 301!
+/2026/02/23/six-months-of-rust/ /2026/02/25/six-months-of-rust/ 301!
+
+/blog/css-gradients /2013/02/04/dig-deep-into-css-gradients/ 301!
+/blog/less-to-sass.html /2012/11/13/why-i-switched-from-less-to-sass/ 301!
+/blog/index.xml /blog/ 301!
