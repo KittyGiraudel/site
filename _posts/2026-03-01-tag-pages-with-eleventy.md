@@ -33,7 +33,7 @@ eleventyComputed:
 
 ## Removing the “all” page
 
-Eleventy exposes a [speciall “all” collection](https://www.11ty.dev/docs/collections/#the-special-all-collection), which contains all the content regardless of collection assignment. I didn’t want to end up with a tag page for that special collection, so I filtered it out.
+Eleventy exposes a [special “all” collection](https://www.11ty.dev/docs/collections/#the-special-all-collection), which contains all the content regardless of collection assignment. I didn’t want to end up with a tag page for that special collection, so I filtered it out.
 
 ```liquid
 ---
