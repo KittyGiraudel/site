@@ -29,9 +29,9 @@ time to time.
 {% endmarkdown %}
 
 {% include "ad.html" %}
-
 {% include "post_list.html", items: posts %}
 {% include "pagination.html",
+  label: "posts",
   nextPageHref: pagination.nextPageHref,
   previousPageHref: pagination.previousPageHref
 %}

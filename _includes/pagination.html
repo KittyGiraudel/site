@@ -1,12 +1,14 @@
+{% assign label = label | default: 'entry' %}
+
 <div class="Pagination CollectionNavigation {% if previousPageHref %}{% elsif nextPageHref %}CollectionNavigation--end{% endif %}">
   {% if previousPageHref %}
   <p class="CollectionNavigation__item">
-    <a class="CollectionNavigation__link" href="{{ previousPageHref }}">← Previous posts</a>
+    <a class="CollectionNavigation__link" href="{{ previousPageHref }}">← Previous {{ label }}</a>
   </p>
   {% endif %}
   {% if nextPageHref %}
   <p class="CollectionNavigation__item">
-    <a class="CollectionNavigation__link" href="{{ nextPageHref }}">Next posts →</a>
+    <a class="CollectionNavigation__link" href="{{ nextPageHref }}">Next {{ label }} →</a>
   </p>
   {% endif %}
 </div>
