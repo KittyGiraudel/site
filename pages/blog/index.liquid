@@ -3,7 +3,7 @@ layout: default
 title: Years of writing
 description: "All articles from me, published on this site as well as at other places such as SitePoint, Tuts+, Codrops and
 CSS-Tricks. Also contains some guest posts."
-pagination: { data: collections.posts, size: 10, alias: posts }
+pagination: { data: collections.posts, size: 12, alias: posts }
 keywords:
   - blog
   - writing
@@ -22,9 +22,9 @@ time to time.
 - 🦸‍♀️ Otherwise, we have lovely [guest posts](/blog/guest/).
 - 🧑‍🍳 I’ve also published some of my own [recipes](/blog/recipes/).
 - 👩‍💻 For *code* recipes, head to the [snippets](/snippets/) section.
+{% endmarkdown %}
 
 {% include "ad.html" %}
-{% endmarkdown %}
 
 {% include "post_list.html", items: posts %}
 {% include "pagination.html",
