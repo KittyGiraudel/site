@@ -2,7 +2,6 @@
 title: What I learnt from writing a book
 description: A retrospective on what I learned from writing a book about CSS
 tags:
-  - posts
   - Retrospective
   - CSS
   - Writing

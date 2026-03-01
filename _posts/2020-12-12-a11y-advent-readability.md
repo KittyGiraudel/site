@@ -2,7 +2,6 @@
 title: 'A11yAdvent Day 12: Readability'
 description: A11yAdvent entry on readability
 tags:
-  - posts
   - Accessibility
   - Reading
 ---

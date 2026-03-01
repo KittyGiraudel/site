@@ -2,7 +2,6 @@
 title: 8 Compass features you may not know
 description: A gallery of features from the Compass frameworks that is worth knowing
 tags:
-  - posts
   - Sass
   - Compass
 edits:

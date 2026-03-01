@@ -5,7 +5,6 @@ external:
 title: SassyLists moving to 2.x
 description: An announcement post about the 2nd major version of SassyLists
 tags:
-  - posts
   - Sass
   - Release
   - Open Source

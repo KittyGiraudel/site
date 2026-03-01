@@ -2,7 +2,6 @@
 title: Nerdy Design Details
 description: A closer look at the recent design changes I’ve made to this website, and the code behind them.
 tags:
-  - posts
   - Design
   - UI
   - Accessibility

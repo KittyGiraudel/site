@@ -2,7 +2,6 @@
 title: Web mono-repo at N26
 description: A reflection on why we chose a mono-repository for the N26 web platform
 tags:
-  - posts
   - Architecture
   - GitHub
   - Retrospective

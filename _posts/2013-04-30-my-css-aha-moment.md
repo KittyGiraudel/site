@@ -2,7 +2,6 @@
 title: My CSS Aha moment
 description: About the moment where CSS finally clicked and it became easy to use
 tags:
-  - posts
   - CSS
   - Retrospective
 ---

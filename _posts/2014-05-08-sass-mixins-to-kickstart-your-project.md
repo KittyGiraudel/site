@@ -5,6 +5,5 @@ external:
 title: Sass mixins to kickstart your project
 description: A gallery of handy Sass mixins to kickstart your project
 tags:
-  - posts
   - Sass
 ---

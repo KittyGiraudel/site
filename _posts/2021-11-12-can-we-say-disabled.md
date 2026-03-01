@@ -2,7 +2,6 @@
 title: Can we say “disabled”?
 description: On whether the word “disabled” is appropriate (it is), and the discourse around its usage
 tags:
-  - posts
   - Accessibility
   - Language
   - Thoughts

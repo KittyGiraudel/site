@@ -2,7 +2,6 @@
 title: Pushing Sass placeholders further
 description: A technical write-up on advanced usage of Sass placeholders
 tags:
-  - posts
   - Sass
 edits:
   - date: 2015/06/06

@@ -2,7 +2,6 @@
 title: Color Clock Experiment
 description: A technical write-up about a small color clock CSS experiment
 tags:
-  - posts
   - JavaScript
 ---
 

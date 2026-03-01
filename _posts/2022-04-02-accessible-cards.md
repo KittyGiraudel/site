@@ -2,7 +2,6 @@
 title: Accessible cards
 description: A guide to creating an accessible card component
 tags:
-  - posts
   - Accessibility
   - UI
   - UX

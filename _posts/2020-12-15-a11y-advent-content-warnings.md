@@ -2,7 +2,6 @@
 title: 'A11yAdvent Day 15: Content Warnings'
 description: A11yAdvent entry on content warnings
 tags:
-  - posts
   - Accessibility
   - Component
   - Reading

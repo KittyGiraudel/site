@@ -5,7 +5,6 @@ external:
 title: Getting to know Stylus
 description: A guide on getting to know Stylus
 tags:
-  - posts
   - Stylus
   - CSS
 ---

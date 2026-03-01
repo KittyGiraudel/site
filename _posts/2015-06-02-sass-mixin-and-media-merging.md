@@ -5,7 +5,6 @@ external:
 title: Sass mixin and media merging
 description: A technical write-up on Sass mixins and media merging
 tags:
-  - posts
   - Sass
   - Responsive
 ---

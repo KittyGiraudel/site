@@ -2,7 +2,6 @@
 title: Sassify a CSS shape
 description: A technical writeup about building a mixin to generate a specific CSS shape
 tags:
-  - posts
   - Sass
   - CSS
 ---

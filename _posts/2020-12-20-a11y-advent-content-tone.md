@@ -2,7 +2,6 @@
 title: 'A11yAdvent Day 20: Content and Tone'
 description: A11yAdvent entry on content and tone
 tags:
-  - posts
   - Accessibility
   - Writing
 ---

@@ -2,7 +2,6 @@
 title: Replace me at N26
 description: An announcement that I am leaving N26 and that my role is open
 tags:
-  - posts
   - Hiring
   - Engineering
 ---

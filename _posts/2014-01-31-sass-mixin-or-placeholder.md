@@ -5,6 +5,5 @@ external:
 title: 'Sass: mixin or placeholder'
 description: A guide on when to use a mixin or a use a placeholder in Sass
 tags:
-  - posts
   - Sass
 ---

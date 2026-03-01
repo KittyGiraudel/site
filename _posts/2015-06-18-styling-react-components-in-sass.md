@@ -3,7 +3,6 @@ guest: David Khourshid
 title: Styling React Components in Sass
 description: A technical write-up on styling React components with Sass
 tags:
-  - posts
   - Sass
   - React
   - JavaScript

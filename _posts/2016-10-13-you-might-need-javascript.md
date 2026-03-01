@@ -2,7 +2,6 @@
 title: You might need JavaScript
 description: A short reflection on when JavaScript might be needed, and the downsides of “pure CSS” solutions
 tags:
-  - posts
   - JavaScript
   - CSS
   - Accessibility

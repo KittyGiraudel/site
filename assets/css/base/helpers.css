@@ -59,13 +59,3 @@
   opacity: 0.8;
   margin: 0 0.25ch;
 }
-
-
-@media (min-width: 1024px) {
-  .Spreader {
-    position: relative;
-    width: calc(100% + 4em);
-    padding: 1em 2em;
-    left: -2em;
-  }
-}

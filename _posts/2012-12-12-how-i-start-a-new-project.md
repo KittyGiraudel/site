@@ -2,7 +2,6 @@
 title: How I start a new project
 description: A look into my process when starting a new software project
 tags:
-  - posts
   - Frontend
   - Process
 edits:

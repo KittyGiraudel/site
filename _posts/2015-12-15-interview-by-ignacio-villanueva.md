@@ -5,6 +5,5 @@ external:
 title: Interview by Ignacio Villanueva
 description: My interview by Ignacio Villanueva about frontend and my professional journey
 tags:
-  - posts
   - Interview
 ---

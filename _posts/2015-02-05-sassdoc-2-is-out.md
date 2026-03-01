@@ -5,7 +5,6 @@ external:
 title: SassDoc 2 is out!
 description: An announcement post about SassDoc version 2
 tags:
-  - posts
   - Sass
   - Documentation
   - Release

@@ -5,7 +5,6 @@ external:
 title: What’s the difference between Sass and SCSS?
 description: A deep-dive into Sass and SCSS and how they differ
 tags:
-  - posts
   - Sass
   - SCSS
 ---

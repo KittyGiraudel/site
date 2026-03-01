@@ -2,7 +2,6 @@
 title: Writing a debug script
 description: A technical write-up on a small Node doctor script for debugging and collaboration
 tags:
-  - posts
   - Node.js
   - Debug
   - Bash

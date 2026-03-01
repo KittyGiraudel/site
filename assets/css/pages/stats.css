@@ -1,0 +1,26 @@
+.StatsSection__table {
+  --background-color: light-dark(#fffafd, #322d2f);
+  background-color: var(--background-color);
+  border: 2px solid var(--pink);
+  border-radius: 1em;
+  corner-shape: squircle;
+  padding: 1em;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .StatsSection__table {
+    width: calc(100% + 4em);
+    padding: 1em 2em;
+    left: -2em;
+  }
+}
+
+.StatsSection__table table {
+  margin: 0;
+}
+
+.StatsSection--tags .Tags {
+  font-size: 120%;
+  gap: 0.5em;
+}

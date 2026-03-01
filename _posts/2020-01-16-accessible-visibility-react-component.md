@@ -2,7 +2,6 @@
 title: An accessible visibility React component
 description: A technical write-up on an accessible visibility component in React
 tags:
-  - posts
   - Accessibility
   - React
   - Component

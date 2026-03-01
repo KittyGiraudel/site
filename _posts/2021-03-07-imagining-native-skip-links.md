@@ -2,7 +2,6 @@
 title: Imagining native skip links
 description: A reflection on skip links and what a native HTML skip link could look like
 tags:
-  - posts
   - Component
   - HTML
   - UX

@@ -5,6 +5,5 @@ external:
 title: Cross-media query @extend directives in Sass
 description: A technical write-up on having cross-media query @extend directives in Sass
 tags:
-  - posts
   - Sass
 ---

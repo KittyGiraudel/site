@@ -5,7 +5,6 @@ external:
 title: Heading set styling with CSS
 description: A gallery of custom heading styles
 tags:
-  - posts
   - CSS
   - Design
 ---

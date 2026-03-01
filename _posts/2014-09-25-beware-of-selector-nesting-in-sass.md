@@ -5,6 +5,5 @@ external:
 title: Beware of selector nesting in Sass
 description: A guide on selector nesting in Sass and what to be aware of
 tags:
-  - posts
   - Sass
 ---

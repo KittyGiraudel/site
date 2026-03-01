@@ -2,7 +2,6 @@
 title: 'A11yAdvent Day 16: Animations'
 description: A11yAdvent entry on animations and reduced motion
 tags:
-  - posts
   - Accessibility
   - Animations
 ---

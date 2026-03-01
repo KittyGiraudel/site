@@ -2,7 +2,6 @@
 title: Why I switched from LESS to Sass
 description: My thoughts on switching from LESS to the Sass CSS preprocessor
 tags:
-  - posts
   - LESS
   - Sass
 ---

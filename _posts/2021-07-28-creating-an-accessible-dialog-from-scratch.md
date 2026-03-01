@@ -5,7 +5,6 @@ external:
 title: Creating an accessible dialog from scratch
 description: A technical write-up on creating an accessible dialog from scratch
 tags:
-  - posts
   - Accessibility
   - Component
   - HTML

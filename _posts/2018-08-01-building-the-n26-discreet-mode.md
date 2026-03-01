@@ -2,7 +2,6 @@
 title: Building the N26 discreet mode
 description: A technical write-up on building a discreet mode for the N26 web app
 tags:
-  - posts
   - Accessibility
   - CSS
   - UX

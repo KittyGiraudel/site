@@ -2,7 +2,6 @@
 title: Items along a circle
 description: A technical write-up about how to place items along a circle with CSS
 tags:
-  - posts
   - CSS
   - Sass
 ---

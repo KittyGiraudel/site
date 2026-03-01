@@ -2,7 +2,6 @@
 title: Account handling with Cypress
 description: A technical write-up on account handling and Cypress at N26
 tags:
-  - posts
   - Cypress
   - Testing
   - JavaScript

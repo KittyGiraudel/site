@@ -2,7 +2,6 @@
 title: Dear PayPal
 description: An open letter to PayPal about their poor frontend practices
 tags:
-  - posts
   - UX
   - Rant
 ---

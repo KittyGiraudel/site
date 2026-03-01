@@ -2,7 +2,6 @@
 title: 'Future of CSS layout: CSS Grid'
 description: An introduction post about CSS grid, the newest CSS layout module
 tags:
-  - posts
   - CSS
 edits:
   - date: 2014/05/13

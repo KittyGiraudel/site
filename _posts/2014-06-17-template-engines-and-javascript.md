@@ -2,7 +2,6 @@
 title: Template engines and JavaScript
 description: A retrospective on the challenges I faced when moving my website from Jekyll to Mixture
 tags:
-  - posts
   - JavaScript
   - Jekyll
   - HTML

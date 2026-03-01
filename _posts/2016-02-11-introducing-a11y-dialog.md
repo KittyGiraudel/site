@@ -2,7 +2,6 @@
 title: Introducing A11y Dialog
 description: An announcement post for a11y-dialog, an accessible dialog library
 tags:
-  - posts
   - Accessibility
   - Dialog
   - Release

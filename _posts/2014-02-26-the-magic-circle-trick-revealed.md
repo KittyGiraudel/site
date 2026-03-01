@@ -2,7 +2,6 @@
 title: 'The Magic Circle: trick revealed'
 description: A technical write-up about the Magic Circle puzzle previously posted on this website
 tags:
-  - posts
   - CSS
   - Challenge
 ---

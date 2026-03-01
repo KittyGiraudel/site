@@ -2,7 +2,6 @@
 title: Managing npm dependencies
 description: A guide on managing npm dependencies and keeping them under control
 tags:
-  - posts
   - npm
   - Dependencies
   - Node.js

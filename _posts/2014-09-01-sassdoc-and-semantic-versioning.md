@@ -2,7 +2,6 @@
 title: SassDoc and Semantic Versioning
 description: A short retrospective on the use of semantic versioning in the making of SassDoc
 tags:
-  - posts
   - Sass
   - Documentation
   - Release

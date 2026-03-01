@@ -2,7 +2,6 @@
 title: Bringing configuration objects to Sass
 description: A technical write-up on using configuration objects in Sass, similar to JavaScript
 tags:
-  - posts
   - Sass
 ---
 

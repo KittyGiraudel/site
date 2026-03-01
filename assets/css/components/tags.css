@@ -1,0 +1,34 @@
+.Tags {
+  display: flex;
+  gap: 0.25em;
+  list-style: none;
+  padding-left: 0;
+  flex-wrap: wrap;
+}
+
+.Tag {
+  margin: 0;
+}
+
+.Tag__link {
+  display: block;
+  border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
+  border-radius: 1em;
+  corner-shape: squircle;
+  padding: 0.1em 0.5em;
+  font-size: 60%;
+  background-color: light-dark(rgb(255 255 255 / 0.5), rgb(50 45 47 / 0.5));
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 200ms ease-in-out;
+}
+
+.Tag__link:hover {
+  border-color: var(--blue);
+}
+
+.Tag__link[data-extra]::after {
+  content: " (" attr(data-extra) ")" !important;
+  opacity: 0.8;
+  font-size: 80%;
+}

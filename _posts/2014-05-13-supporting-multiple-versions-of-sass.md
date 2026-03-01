@@ -5,6 +5,5 @@ external:
 title: Supporting multiple versions of Sass
 description: A technical guide on how to support multiple versions of Sass at once
 tags:
-  - posts
   - Sass
 ---

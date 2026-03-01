@@ -5,6 +5,5 @@ external:
 title: Learning principles for improving your CSS
 description: A guide about improving CSS by understand the fundamental principles of the language
 tags:
-  - posts
   - CSS
 ---

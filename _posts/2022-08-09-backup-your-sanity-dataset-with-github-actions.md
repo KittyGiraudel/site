@@ -2,7 +2,6 @@
 title: Backup your Sanity dataset with GitHub Actions
 description: A technical write about setting up a GitHub workflow to automatically backup a Sanity dataset
 tags:
-  - posts
   - Sanity
   - CI
   - Security

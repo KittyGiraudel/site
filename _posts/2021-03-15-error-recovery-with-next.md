@@ -5,7 +5,6 @@ edits:
   - date: 2021/03/16
     md: Thanks to [Maximilian Fellner’s proof of concept](https://twitter.com/mxfellner/status/1371540362662133766), I came up with a way cleaner solution than this original hack. See the [added section for the clean solution](#update-clean-solution).
 tags:
-  - posts
   - Next.js
   - JavaScript
   - Errors

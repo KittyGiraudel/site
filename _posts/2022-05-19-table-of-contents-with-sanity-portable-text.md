@@ -2,7 +2,6 @@
 title: Table of contents with Sanity Portable Text
 description: A technical write-up on how to create a Table of Contents components with Sanity Portable Text
 tags:
-  - posts
   - Sanity
   - JavaScript
   - GROQ

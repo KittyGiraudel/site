@@ -2,7 +2,6 @@
 title: Introducing Outline Audit
 description: An announcement post for Outline Audit, a small bookmarklet to audit the heading outline of a page
 tags:
-  - posts
   - Accessibility
   - JavaScript
   - Release

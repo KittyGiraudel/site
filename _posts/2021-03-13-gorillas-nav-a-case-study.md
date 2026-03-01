@@ -2,7 +2,6 @@
 title: 'Gorillas’ nav: a case study'
 description: "A short case study on the Gorillas website navigation: accessibility, behaviour and design, from disclosure widget to skip link and language switcher."
 tags:
-  - posts
   - UI
   - UX
   - Component

@@ -2,7 +2,6 @@
 title: A micro-client for Sanity
 description: A technical write-up on building a pair of utility functions wrapping the Sanity JavaScript client for simpler data queries
 tags:
-  - posts
   - Sanity
   - JavaScript
   - Release

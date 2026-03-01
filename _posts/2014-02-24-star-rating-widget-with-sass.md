@@ -2,7 +2,6 @@
 title: Star-rating widget with Sass
 description: A technical write-up on how to create a star rating system widget with Sass
 tags:
-  - posts
   - Sass
 ---
 

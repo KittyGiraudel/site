@@ -3,7 +3,6 @@ guest: Ana Tudor
 title: Dig deep into CSS linear gradients
 description: A deep-dive into CSS linear gradients by Ana Tudor
 tags:
-  - posts
   - CSS
 ---
 

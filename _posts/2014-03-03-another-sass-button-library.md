@@ -2,7 +2,6 @@
 title: Another Sass button library
 description: A technical write-up on how to create reusable buttons with Sass
 tags:
-  - posts
   - Sass
   - Component
 ---

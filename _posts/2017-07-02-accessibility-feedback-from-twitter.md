@@ -2,7 +2,6 @@
 title: Accessibility feedback from Twitter
 description: A summary of accessibility feedback I’ve gathered from Twitter
 tags:
-  - posts
   - Accessibility
 ---
 

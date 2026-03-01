@@ -37,31 +37,3 @@
 .List__secondary-content ul::before {
   content: "|";
 }
-
-.List__tags {
-  display: flex;
-  gap: 0.25em;
-  list-style: none;
-  padding-left: 0;
-}
-
-.List__tags > li {
-  margin: 0;
-}
-
-.List__tag {
-  display: block;
-  border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
-  border-radius: 1em;
-  corner-shape: squircle;
-  padding: 0.1em 0.5em;
-  font-size: 60%;
-  background-color: light-dark(rgb(255 255 255 / 0.5), rgb(50 45 47 / 0.5));
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 200ms ease-in-out;
-}
-
-.List__tag:hover {
-  border-color: var(--blue);
-}

@@ -3,7 +3,6 @@ guest: Ezekiel Gabrielse
 title: Building a customization API in Sass
 description: A technical guest post by Ezekiel Gabrielse on building a customization API in Sass
 tags:
-  - posts
   - Sass
 ---
 

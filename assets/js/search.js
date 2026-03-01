@@ -14,12 +14,12 @@ function search() {
     fuzzy: false,
     templateMiddleware: (prop, value) => {
       if (prop === 'tags') {
-        return `<ul class="List__tags">
+        return `<ul class="Tags">
           ${value
             .sort((a, b) => a.localeCompare(b))
             .filter(tag => tag !== "posts")
-            .map(tag => `<li>
-              <a class="List__tag" href="/tags/${tag.toLowerCase().replace(/\s/g, '-')}">${tag}</a>
+            .map(tag => `<li class="Tag">
+              <a class="Tag__link" href="/tags/${tag.toLowerCase().replace(/\s/g, '-')}">${tag}</a>
             </li>`)
             .join('')
         }

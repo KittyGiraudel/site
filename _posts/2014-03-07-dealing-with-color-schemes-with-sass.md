@@ -5,6 +5,5 @@ external:
 title: Dealing with color schemes in Sass
 description: A technical write-up on dealing with color schemes in Sass
 tags:
-  - posts
   - Sass
 ---

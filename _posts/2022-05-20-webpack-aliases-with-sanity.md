@@ -5,7 +5,6 @@ edits:
   - date: 2023/01/22
     md: Added another section to explain how to do that in [version 3](#version-3) which is built with Vite and not Webpack.
 tags:
-  - posts
   - JavaScript
   - Webpack
   - Sanity

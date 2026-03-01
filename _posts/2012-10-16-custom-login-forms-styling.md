@@ -5,7 +5,6 @@ external:
 title: Custom login form styling
 description: A gallery of creative login forms styled with CSS
 tags:
-  - posts
   - CSS
   - Design
   - Component

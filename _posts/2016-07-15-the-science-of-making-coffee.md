@@ -5,6 +5,5 @@ external:
 title: The science of making coffee
 description: A lighthearted post about the pleasure I get from making good coffee
 tags:
-  - posts
   - Thoughts
 ---

@@ -5,7 +5,6 @@ edits:
   - date: 2022/09/14
     md: I published a small React hook for that on npm as a [standalone library](https://github.com/KittyGiraudel/dhand).
 tags:
-  - posts
   - UI
   - UX
   - Accessibility

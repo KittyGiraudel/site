@@ -5,6 +5,5 @@ external:
 title: Automatic figure numbering with CSS counters
 description: A gallery of creative styling for CSS counters for figure numbering
 tags:
-  - posts
   - CSS
 ---

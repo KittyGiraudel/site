@@ -2,7 +2,6 @@
 title: A decade in review
 description: A look back at the 2010s and everything I have accomplished within that decade
 tags:
-  - posts
   - Retrospective
 ---
 

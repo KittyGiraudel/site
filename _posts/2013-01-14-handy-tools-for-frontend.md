@@ -2,7 +2,6 @@
 title: Handy tools for frontend
 description: A look into tools that are worth knowing when doing frontend development
 tags:
-  - posts
   - Frontend
 ---
 

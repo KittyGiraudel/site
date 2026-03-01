@@ -2,7 +2,6 @@
 title: Dealing with tendonitis
 description: A personal post about dealing with tendonitis and what I tried to help with the pain
 tags:
-  - posts
   - Thoughts
 ---
 

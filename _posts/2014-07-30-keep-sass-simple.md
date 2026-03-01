@@ -5,7 +5,6 @@ external:
 title: Keep Sass simple
 description: A reflective post on keeping Sass simple and close to native CSS
 tags:
-  - posts
   - Thoughts
   - Sass
 ---

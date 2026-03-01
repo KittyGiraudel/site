@@ -2,7 +2,6 @@
 title: 'Why a CSS alternative to select is impossible'
 description: On the select HTML element, and why just recreating it with CSS alone is not only impossible, but also not recommended
 tags:
-  - posts
   - CSS
   - Retrospective
   - Component

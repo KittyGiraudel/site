@@ -153,7 +153,7 @@ img {
  * The `.Navigation__link` and `.Title__link` have very different styles and
  * should not be applied a gradient background.
  */
-a:not(.Navigation__link):not(.Title__link):not(.List__tag) {
+a:not(.Navigation__link):not(.Title__link):not(.Tag__link) {
   outline: 0;
   color: inherit;
   border-bottom: 0;

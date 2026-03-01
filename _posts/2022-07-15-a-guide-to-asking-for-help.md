@@ -2,7 +2,6 @@
 title: 'Help me help you: a guide to asking for help'
 description: A guide to asking for help in development communities
 tags:
-  - posts
   - Community
   - Thoughts
 ---

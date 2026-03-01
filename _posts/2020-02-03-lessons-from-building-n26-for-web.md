@@ -2,7 +2,6 @@
 title: Lessons from building “N26 for Web”
 description: Lessons learned from building the N26 web platform over 3.5 years
 tags:
-  - posts
   - Retrospective
   - Hiring
   - Engineering

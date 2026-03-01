@@ -5,7 +5,6 @@ external:
 title: Introducing the SitePoint Sass Reference
 description: An announcement post introducing the SitePoint Sass Reference
 tags:
-  - posts
   - Sass
   - Documentation
   - Release

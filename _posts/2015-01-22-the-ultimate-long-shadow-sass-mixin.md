@@ -5,6 +5,5 @@ external:
 title: The ultimate long shadow Sass mixin
 description: A technical write-up about building the ultimate long shadow Sass mixin
 tags:
-  - posts
   - Sass
 ---

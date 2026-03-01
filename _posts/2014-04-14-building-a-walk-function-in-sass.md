@@ -2,7 +2,6 @@
 title: Building a walk function in Sass
 description: A technical write-up on writing an experimental walk function in Sass
 tags:
-  - posts
   - Sass
 edits:
   - date: 2014/11/16

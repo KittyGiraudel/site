@@ -5,7 +5,6 @@ external:
 title: The forms of gender
 description: A guide on the concept of gender, its spectrum and the inclusive language that goes with it
 tags:
-  - posts
   - Gender
   - Language
 ---

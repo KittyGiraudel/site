@@ -2,7 +2,6 @@
 title: 'A11yAdvent Day 14: Captions'
 description: A11yAdvent entry on captions for video
 tags:
-  - posts
   - Accessibility
 ---
 

@@ -2,7 +2,6 @@
 title: How I learnt to like Bootstrap
 description: A retrospective on the Bootstrap framework, and when it comes in handy
 tags:
-  - posts
   - CSS
   - Retrospective
 edits:

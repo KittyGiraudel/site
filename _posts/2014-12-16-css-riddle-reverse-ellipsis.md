@@ -2,7 +2,6 @@
 title: 'CSS Riddle: reverse ellipsis'
 description: A technical write-up on a CSS riddle, how to create a reverse ellipsis
 tags:
-  - posts
   - CSS
   - Challenge
 ---

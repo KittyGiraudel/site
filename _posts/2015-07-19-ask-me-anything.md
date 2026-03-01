@@ -2,7 +2,6 @@
 title: Ask Me Anything
 description: An announcement post to introduce my AMA
 tags:
-  - posts
   - AMA
   - Release
 ---

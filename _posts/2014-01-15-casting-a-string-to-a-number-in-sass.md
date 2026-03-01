@@ -2,7 +2,6 @@
 title: Casting a string to a number in Sass
 description: A technical write-up on how to cast a stringified string into an actual number in Sass
 tags:
-  - posts
   - Sass
 edits:
   - date: 2015/06/06

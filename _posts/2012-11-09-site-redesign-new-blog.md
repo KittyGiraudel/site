@@ -2,7 +2,6 @@
 title: Site redesign + new blog
 description: A deep-dive into the recent redesign of my  website
 tags:
-  - posts
   - Design
 ---
 

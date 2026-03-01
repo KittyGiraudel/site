@@ -5,7 +5,6 @@ external:
 title: Testing a Sass function in 5 minutes
 description: A technical write-up on using Sass to test a Sass function
 tags:
-  - posts
   - Sass
   - Testing
 ---

@@ -5,7 +5,6 @@ external:
 title: Architecture for a Sass project
 description: A guide on project architecture for a project using Sass
 tags:
-  - posts
   - Sass
   - Architecture
 ---

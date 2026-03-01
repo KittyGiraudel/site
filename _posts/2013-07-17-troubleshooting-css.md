@@ -5,7 +5,6 @@ external:
 title: Troubleshooting CSS
 description: A guide into troubleshooting CSS problems, and how to get better at it
 tags:
-  - posts
   - CSS
   - Debug
 ---

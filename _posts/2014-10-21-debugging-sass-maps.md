@@ -5,7 +5,6 @@ external:
 title: Debugging Sass maps
 description: A guide on how to best debug Sass maps
 tags:
-  - posts
   - Sass
   - Debug
 ---

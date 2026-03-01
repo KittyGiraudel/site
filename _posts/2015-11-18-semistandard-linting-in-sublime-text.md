@@ -2,7 +2,6 @@
 title: Semistandard linting in Sublime Text
 description: A technical write-up on using Semistandard linting in Sublime Text
 tags:
-  - posts
   - JavaScript
   - Testing
 ---

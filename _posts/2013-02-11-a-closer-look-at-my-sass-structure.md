@@ -2,7 +2,6 @@
 title: A closer look at my Sass structure
 description: A look about how I structure my Sass code for frontend projects
 tags:
-  - posts
   - Sass
   - Architecture
 edits:

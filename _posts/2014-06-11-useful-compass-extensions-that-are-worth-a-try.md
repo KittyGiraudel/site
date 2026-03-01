@@ -5,7 +5,6 @@ external:
 title: Useful Compass extensions that are worth a try
 description: A gallery of handy Compass extensions that are worth a try
 tags:
-  - posts
   - Sass
   - Compass
 ---

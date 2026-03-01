@@ -2,12 +2,12 @@ import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import * as cheerio from 'cheerio'
 import footnotes from 'eleventy-plugin-footnotes'
-import pluginStats from 'eleventy-plugin-post-stats'
 import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
 import htmlmin from 'html-minifier'
 import markdownIt from 'markdown-it'
 import uslugify from 'uslug'
+import postStatsPlugin from './_plugins/post-stats.js'
 
 const EMOJI_REGEX = emojiRegex()
 
@@ -28,7 +28,7 @@ export default function (config) {
   config.addPlugin(syntaxHighlight)
   config.addPlugin(footnotes)
   config.addPlugin(IdAttributePlugin, { slugify: uslugify })
-  config.addPlugin(pluginStats, { tags: ['posts'], debugMode: false })
+  config.addPlugin(postStatsPlugin)
 
   // Pass through static files; the CSS file is handled through Sass and
   // therefore not explicitly passed through here
@@ -91,13 +91,11 @@ export default function (config) {
   )
 
   config.addCollection('snippets', collection =>
-    collection.getFilteredByGlob('pages/snippets/*.md')
+    collection.getFilteredByGlob('pages/snippets/*.md'),
   )
 
-  config.addCollection('recipes', collection =>
-    collection.getFilteredByGlob('pages/recipes/*.md')
-  )
- 
+  config.addCollection('recipes', collection => collection.getFilteredByGlob('pages/recipes/*.md'))
+
   return {
     dir: {
       output: './_site',
@@ -159,15 +157,11 @@ function where(array, key, value) {
 }
 
 function sortBy(array, key) {
-  return array
-    .slice(0)
-    .sort((a, b) => {
-      if (typeof a === 'string' && typeof b === 'string') 
-        return a[key]?.localeCompare(b[key])
-      if (typeof a instanceof Date && typeof b instanceof Date)
-        return a.getTime() - b.getTime()
-      return 0
-    })
+  return array.slice(0).sort((a, b) => {
+    if (typeof a === 'string' && typeof b === 'string') return a[key]?.localeCompare(b[key])
+    if ((typeof a) instanceof Date && (typeof b) instanceof Date) return a.getTime() - b.getTime()
+    return 0
+  })
 }
 
 function dateToXmlSchema(value) {

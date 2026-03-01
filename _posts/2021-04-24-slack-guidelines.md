@@ -2,7 +2,6 @@
 title: Slack guidelines
 description: A set of guidelines for using Slack in a team, from channels and naming to etiquette and clarity
 tags:
-  - posts
   - Thoughts
   - Community
 ---

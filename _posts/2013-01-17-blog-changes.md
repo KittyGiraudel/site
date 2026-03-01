@@ -2,7 +2,6 @@
 title: Blog changes
 description: A review of more changes applied to my website to improve SEO, performance and accessibility
 tags:
-  - posts
   - Design
   - Performance
   - Accessibility

@@ -2,7 +2,6 @@
 title: Circular array in JavaScript
 description: An introduction to Circularray, my homemade library for circular arrays
 tags:
-  - posts
   - JavaScript
   - TypeScript
   - Release

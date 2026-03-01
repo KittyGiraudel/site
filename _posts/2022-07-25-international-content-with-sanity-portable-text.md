@@ -2,7 +2,6 @@
 title: International content with Sanity Portable Text
 description: A guide on handling international content with Sanity Portable Text
 tags:
-  - posts
   - Sanity
   - Internationalisation
 ---

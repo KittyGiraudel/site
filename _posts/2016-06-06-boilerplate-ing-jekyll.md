@@ -2,7 +2,6 @@
 title: Boilerplate-ing Jekyll
 description: A technical write-up on creating a boilerplate for Jekyll
 tags:
-  - posts
   - Jekyll
 ---
 

@@ -5,7 +5,6 @@ external:
 title: Accessibility and developer experience
 description: A podcast episode on Buzzsprout about accessibility and developer experience
 tags:
-  - posts
   - Development
   - Accessibility
   - Engineering

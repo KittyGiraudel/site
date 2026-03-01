@@ -5,7 +5,6 @@ external:
 title: Creating a banking web app with accessibility in mind
 description: An interview from Marcus Herrman on creating a banking web app with accessibility in mind
 tags:
-  - posts
   - Accessibility
   - Interview
 ---

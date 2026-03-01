@@ -2,7 +2,6 @@
 title: The Sound of Bullets
 description: A translation of the breathtaking “Le bruit des balles” post by Said Abdallah following the terrorist attack in Paris on November 13th
 tags:
-  - posts
   - Thoughts
 ---
 

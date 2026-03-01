@@ -2,7 +2,6 @@
 title: My development environment
 description: A look into my software development environment
 tags:
-  - posts
   - Process
 edits:
   - date: 2014/11/16

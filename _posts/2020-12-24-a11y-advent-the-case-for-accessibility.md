@@ -2,7 +2,6 @@
 title: 'A11yAdvent Day 24: The Case for Accessibility'
 description: A11yAdvent entry on making the case for accessibility
 tags:
-  - posts
   - Accessibility
 ---
 

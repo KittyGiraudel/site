@@ -2,7 +2,6 @@
 title: Introducing transync
 description: An announcement post for Transync, a small library to manage translation files
 tags:
-  - posts
   - Release
   - Open Source
 ---

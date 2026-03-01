@@ -2,7 +2,6 @@
 title: Accessible emojis with 11ty
 description: A technical write-up on making emojis accessible in 11ty using their short names
 tags:
-  - posts
   - Accessibility
   - 11ty
   - HTML

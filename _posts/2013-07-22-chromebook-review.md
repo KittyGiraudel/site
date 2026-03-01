@@ -2,7 +2,6 @@
 title: Chromebook review
 description: A personal review of the Chromebook laptop
 tags:
-  - posts
   - Retrospective
 edits:
   - date: 2014/11/16

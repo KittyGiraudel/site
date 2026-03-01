@@ -2,7 +2,6 @@
 title: Making sense out of Node
 description: A short guide for beginners on Node, npm and npx
 tags:
-  - posts
   - Node.js
   - Dependencies
 ---

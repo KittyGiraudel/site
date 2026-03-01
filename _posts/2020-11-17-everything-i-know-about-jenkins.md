@@ -2,7 +2,6 @@
 title: Everything I know about Jenkins
 description: A retrospective on Jenkins and what I learned running it at N26
 tags:
-  - posts
   - Jenkins
   - CI
 ---

@@ -2,7 +2,6 @@
 title: Reverse-engineering an AoC problem
 description: A technical write-up about my approach to solving Advent of Code Day 21 2022
 tags:
-  - posts
   - Challenge
   - AoC
   - JavaScript

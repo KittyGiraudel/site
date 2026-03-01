@@ -5,7 +5,6 @@ external:
 title: Compass or Bourbon
 description: A comparison of Compass and Bourbon, the 2 most popular Sass frameworks
 tags:
-  - posts
   - Sass
   - Compass
 ---

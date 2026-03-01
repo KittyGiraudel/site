@@ -5,7 +5,6 @@ external:
 title: Simple Gulpy workflow for Sass
 description: A technical write-up on using Gulp to compile Sass
 tags:
-  - posts
   - Sass
   - Gulp
   - JavaScript

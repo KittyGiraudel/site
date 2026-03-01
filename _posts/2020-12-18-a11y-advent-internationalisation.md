@@ -2,7 +2,6 @@
 title: 'A11yAdvent Day 18: Internationalisation'
 description: A11yAdvent entry on internationalisation and accessibility
 tags:
-  - posts
   - Accessibility
   - Internationalisation
 ---

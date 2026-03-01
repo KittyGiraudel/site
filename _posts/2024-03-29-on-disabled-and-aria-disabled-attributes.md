@@ -2,7 +2,6 @@
 title: On disabled and aria-disabled attributes
 description: A write-up about the disabled and aria-disabled attributes and their impact on accessibility
 tags:
-  - posts
   - Accessibility
   - HTML
   - ARIA

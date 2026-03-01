@@ -5,6 +5,5 @@ external:
 title: Using Sass maps
 description: A technical write-up on using maps in Sass
 tags:
-  - posts
   - Sass
 ---

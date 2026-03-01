@@ -5,7 +5,6 @@ external:
 title: 'SitePoint’s tiles: a case study'
 description: A case study about SitePoint’s tile component
 tags:
-  - posts
   - HTML
   - CSS
   - Component

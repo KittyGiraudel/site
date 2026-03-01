@@ -5,7 +5,6 @@ external:
 title: Where to start with accessibility?
 description: A guide on where to start with accessibility
 tags:
-  - posts
   - AMA
   - Accessibility
 ---

@@ -5,6 +5,5 @@ external:
 title: Understanding CSS Modules methodology
 description: A guide on understanding the CSS Modules methodology
 tags:
-  - posts
   - CSS
 ---

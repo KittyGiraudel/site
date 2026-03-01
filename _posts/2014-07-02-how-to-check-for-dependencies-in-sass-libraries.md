@@ -5,7 +5,6 @@ external:
 title: How to check for dependencies in Sass libraries
 description: A guide on how to check for dependencies in Sass libraries
 tags:
-  - posts
   - Sass
   - Dependencies
 ---

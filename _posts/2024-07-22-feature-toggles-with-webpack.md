@@ -2,7 +2,6 @@
 title: Feature toggles with webpack
 description: A technical write-up on using Webpack to create feature flags/toggles
 tags:
-  - posts
   - Webpack
   - JavaScript
 ---

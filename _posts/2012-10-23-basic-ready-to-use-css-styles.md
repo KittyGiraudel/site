@@ -5,7 +5,6 @@ external:
 title: Basic ready-to-use CSS styles
 description: A collection of handy CSS snippets worth bringing into a project
 tags:
-  - posts
   - CSS
   - Design
 ---

@@ -2,7 +2,6 @@
 title: Technical documentation for everyone
 description: A reflection on the web documentation we built at N26
 tags:
-  - posts
   - Documentation
   - Engineering
   - Writing

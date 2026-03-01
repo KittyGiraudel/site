@@ -2,7 +2,6 @@
 title: From Create-React-App to Next
 description: A retrospective post on moving a website from the now deprecated Create-React-App to Next.js
 tags:
-  - posts
   - React
   - Next.js
   - JavaScript

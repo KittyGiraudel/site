@@ -2,7 +2,6 @@
 title: 'A11yAdvent Day 23: Oral interfaces'
 description: A11yAdvent entry on oral interfaces and the web
 tags:
-  - posts
   - Accessibility
 ---
 

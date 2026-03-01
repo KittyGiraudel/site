@@ -5,7 +5,6 @@ external:
 title: An introduction to error handling in Sass
 description: A guide on handling errors with Sass
 tags:
-  - posts
   - Sass
   - Errors
   - Debug

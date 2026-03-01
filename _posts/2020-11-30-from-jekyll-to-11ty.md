@@ -3,7 +3,6 @@ title: From Jekyll to 11ty
 description: A retrospective on migrating this website from Jekyll to 11ty
 templateEngineOverride: md
 tags:
-  - posts
   - Jekyll
   - 11ty
   - Retrospective

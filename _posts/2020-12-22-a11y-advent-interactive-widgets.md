@@ -2,7 +2,6 @@
 title: 'A11yAdvent Day 22: Interactive Widgets'
 description: A11yAdvent entry on interactive widgets and accessibility
 tags:
-  - posts
   - Accessibility
 ---
 

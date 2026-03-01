@@ -5,6 +5,5 @@ external:
 title: All you ever need to know about Sass interpolation
 description: A technical guide on Sass interpolation
 tags:
-  - posts
   - Sass
 ---

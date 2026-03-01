@@ -5,7 +5,6 @@ external:
 title: Create striped backgrounds with gradients (and Sass)
 description: A look into how to use Sass to generated striped backgrounds easily
 tags:
-  - posts
   - Sass
   - CSS
 ---
