@@ -46,6 +46,9 @@ pagination:
 ---
 ```
 
+{% info %}I also noticed that some other collections ended up with their tag page due to the way it’s built, like `recipes`, `snippets`… I’ve updated the filter to remove them as well.
+{% endinfo %}
+
 ## Including snippets
 
 At some point, I added a [snippets](/snippets/) section to this website, inspired by [Josh W. Comeau](https://www.joshwcomeau.com/snippets/).
