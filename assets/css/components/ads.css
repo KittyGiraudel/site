@@ -1,4 +1,4 @@
-.Ad {
+.RandomName {
   background-color: light-dark(#fffafd, #322d2f);
   border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
   border-radius: 1em;
@@ -12,21 +12,17 @@
   position: relative;
 }
 
-.Ad:not(:has(#carbonads)) {
-  display: none;
-}
-
 @media (min-width: 600px) {
-  .Ad {
+  .RandomName {
     flex-direction: row;
   }
 }
 
-.Ad__content {
+.RandomName__content {
   font-size: 80%;
 }
 
-.Ad__content > p {
+.RandomName__content > p {
   margin: 0;
 }
 
@@ -34,7 +30,7 @@
  * Site advertisement
  * 1. Computed height to minimise CLS.
  */
-.Ad__holder {
+.RandomName__holder {
   width: max-content;
   max-width: 100%;
   min-height: 114px; /* 1 */
@@ -43,16 +39,28 @@
   color: #444;
 }
 
+.RandomName__holder:not(:has(#carbonads)) {
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.1);
+  --stripe-color: rgb(0 0 0 / 0.1); /* 4 */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 0.15em,
+    var(--stripe-color) 0.15em,
+    var(--stripe-color) 0.3em
+  ); /* 4 */
+}
+
 @media screen and (min-width: 1556px) {
-  .Ad {
+  .RandomName {
     display: contents;
   }
 
-  .Ad__content {
+  .RandomName__content {
     display: none;
   }
 
-  .Ad__holder {
+  .RandomName__holder {
     position: fixed;
     bottom: 0.5em;
     right: 1em;
