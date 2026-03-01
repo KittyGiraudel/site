@@ -107,16 +107,16 @@ export default function (config) {
 function minifyHTML(content, outputPath) {
   return outputPath.endsWith('.html')
     ? htmlmin.minify(content, {
-      collapseBooleanAttributes: true,
-      collapseWhitespace: true,
-      conservativeCollapse: true,
-      minifyCSS: true,
-      minifyJS: true,
-      removeComments: true,
-      sortAttributes: true,
-      sortClassName: true,
-      useShortDoctype: true,
-    })
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true,
+        sortAttributes: true,
+        sortClassName: true,
+        useShortDoctype: true,
+      })
     : content
 }
 

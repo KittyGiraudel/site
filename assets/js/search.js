@@ -17,12 +17,13 @@ function search() {
         return `<ul class="Tags">
           ${value
             .sort((a, b) => a.localeCompare(b))
-            .filter(tag => tag !== "posts")
-            .map(tag => `<li class="Tag">
+            .filter(tag => tag !== 'posts')
+            .map(
+              tag => `<li class="Tag">
               <a class="Tag__link" href="/tags/${tag.toLowerCase().replace(/\s/g, '-')}">${tag}</a>
-            </li>`)
-            .join('')
-        }
+            </li>`,
+            )
+            .join('')}
         </ul>`
       }
     },

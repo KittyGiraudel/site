@@ -42,10 +42,8 @@ function getPopularTags(posts, options = {}) {
 }
 
 export default function postStatsPlugin(eleventyConfig, options = {}) {
-  eleventyConfig.addCollection('postStats', (collection) => {
-    const posts = collection
-      .getFilteredByGlob('_posts/*.md')
-      .sort((a, b) => b.date - a.date)
+  eleventyConfig.addCollection('postStats', collection => {
+    const posts = collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date)
 
     const postCount = posts.length
 
@@ -76,7 +74,7 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
     const spanMonths = spanDays / 30.44
     const spanYears = spanDays / 365.25
 
-    const safe = (n) => (Number.isFinite(n) && n > 0 ? n : 1)
+    const safe = n => (Number.isFinite(n) && n > 0 ? n : 1)
 
     let totalChars = 0
     let totalWords = 0
@@ -105,8 +103,7 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
     const avgPostsPerWeek = Math.round((postCount / safe(spanWeeks)) * 100) / 100
     const avgPostsPerMonth = Math.round((postCount / safe(spanMonths)) * 100) / 100
     const avgPostsPerYear = Math.round((postCount / safe(spanYears)) * 100) / 100
-    const avgDaysBetweenPosts =
-      postCount > 1 ? Math.round(spanDays / (postCount - 1)) : 0
+    const avgDaysBetweenPosts = postCount > 1 ? Math.round(spanDays / (postCount - 1)) : 0
 
     const popularTags = getPopularTags(posts, {
       top: options.popularTagsTop ?? POPULAR_TAGS_TOP,
