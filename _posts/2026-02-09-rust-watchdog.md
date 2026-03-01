@@ -464,7 +464,7 @@ Day‑to‑day, the team doesn’t think about the watchdog much; it just quietl
 
 <figure class="figure">
 <img src="/assets/images/rust-watchdog/flowchart.svg" alt="Mermaid diagram of the whole watchdog process" />
-<figcaption>Flowchart of the whole process (open <a href="/assets/images/rust-watchdog/flowchart.svg" target="_blank">large size</a>)</figcaption>
+<figcaption>Flowchart of the whole process (open <a href="/assets/images/rust-watchdog/flowchart.svg" target="_blank" rel="noopener noreferrer">large size</a>)</figcaption>
 </figure>
 
 ## Lessons learned

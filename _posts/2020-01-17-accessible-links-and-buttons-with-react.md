@@ -73,7 +73,7 @@ The [technique G201](https://www.w3.org/TR/WCAG20-TECHS/G201.html) of the <abbr 
 To achieve that, we can render a small icon with an associated label stating “(opens in a new tab)”. The resulting markup would look like this:
 
 ```html
-<a href="/about" target="_blank" class="link">
+<a href="/about" class="link">
   Learn more about us
   <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" ><path d="M22 11L10.5 22.5M10.44 11H22v11.56" fill="none"></path></svg>
   <span class="sr-only">(opens in new tab)</span>
