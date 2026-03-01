@@ -4,7 +4,12 @@ title: Blog Statistics
 description: Vanity metrics about my writing habits on this blog over the years.
 permalink: /stats/
 ---
-{% include 'styles.html', partials: 'pages/stats, components/table, components/tags' %}
+
+{% include 'styles.html', partials: '
+  pages/stats,
+  components/table,
+  components/tags
+' %}
 
 {% assign stats = collections.postStats %}
 

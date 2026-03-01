@@ -9,7 +9,11 @@ keywords:
 permalink: /blog/search/
 ---
 
-{% include "styles.html", partials: "components/search" %}
+{% include "styles.html", partials: "
+  components/list,
+  components/search,
+  components/tags
+" %}
 
 {% markdown %}
 In almost 400 posts and snippets, I probably have written something at least a bit

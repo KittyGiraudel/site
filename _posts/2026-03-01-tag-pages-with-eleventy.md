@@ -6,6 +6,10 @@ tags:
   - 11ty
 ---
 
+{% include "styles.html", partials: "
+  components/tags
+" %}
+
 Nothing too fancy! Just a short article to share that it is now possible to list all posts tagged with a certain keyword. For instance, to list all posts I’ve written about accessibility, simply head to [this page](/tags/accessibility).
 
 This is not groundbreaking. Eleventy even has [documentation about tag pages](https://www.11ty.dev/docs/quicktips/tag-pages/), which is essentially what I’ve implemented.

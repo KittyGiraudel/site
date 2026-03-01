@@ -16,6 +16,11 @@ eleventyComputed:
   title: "{{ tag }}"
 ---
 
+{% include "styles.html", partials: "
+  components/list,
+  components/tags
+" %}
+
 {% assign items = collections[ tag ] | reverse %}
 {% assign count = items | size %}
 

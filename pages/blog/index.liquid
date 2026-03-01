@@ -11,7 +11,11 @@ keywords:
 permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
-{% include "styles.html", partials: "components/collection-navigation" %}
+{% include "styles.html", partials: "
+  components/collection-navigation,
+  components/list,
+  components/tags
+" %}
 
 {% markdown %}
 Over the last few years, I have spent a lot of time writing (see some [vanity
