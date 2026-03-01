@@ -6,6 +6,10 @@ pagination:
   alias: tag
   filter:
     - all
+    - posts
+    - snippets
+    - recipes
+    - postStats
 permalink: /tags/{{ tag | slugify }}/
 eleventyComputed:
   description: All the posts that are tagged with “{{ tag }}”.
