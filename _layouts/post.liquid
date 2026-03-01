@@ -43,9 +43,7 @@ components/tile
       {{ parts[1] }}
     </heading-anchors>
 
-    <div class="Hook">
-      <p><strong>Pssst!</strong> I am currently looking for my next job opportunity from March! <a href="https://www.linkedin.com/posts/kitty-giraudel_my-mission-as-vp-of-engineering-at-scilife-activity-7392127545925713921-qoGi?utm_source=share&utm_medium=member_desktop&rcm=ACoAADH-Z8wBKlEvSxzpoXA6lJuBciBD7TZuM0M" rel="noopener noreferrer">Read more on LinkedIn</a>. ✨</p>
-    </div>
+    {% include "job_notice.html", class: "Hook", label: "Pssst!" %}
   </div>
 
   {% footnotes page %}
