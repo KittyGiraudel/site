@@ -3,94 +3,94 @@
     "name": "Par Odin! Solver",
     "description": "A solver for the puzzle board game “Par Odin!”.",
     "link": "https://github.com/KittyGiraudel/par-odin-solver",
-    "category": "JavaScript"
+    "tags": ["JavaScript", "TypeScript"]
   },
   {
     "name": "Selectors Explained",
     "description": "A CSS selector to plain English converter.",
     "link": "https://github.com/KittyGiraudel/selectors-explained",
-    "category": "CSS"
+    "tags": ["CSS"]
   },
   {
     "name": "Focusable Selectors",
     "description": "A micro-lib exporting an array of CSS selectors for focusable HTML elements.",
     "link": "https://github.com/KittyGiraudel/focusable-selectors",
-    "category": "Accessibility"
+    "tags": ["Accessibility", "CSS"]
   },
   {
     "name": "Circularray",
     "description": "A fast circular array implementation in JavaScript.",
     "link": "https://github.com/KittyGiraudel/circularray",
-    "category": "JavaScript"
+    "tags": ["JavaScript", "TypeScript", "AoC"]
   },
   {
     "name": "react-a11y-dialog",
     "description": "A React component wrapper around a11y-dialog.",
     "link": "https://github.com/KittyGiraudel/react-a11y-dialog",
-    "category": "Accessibility"
+    "tags": ["Accessibility", "React"]
   },
   {
     "name": "react-a11y-disclosure",
     "description": "A small React hook to build accessible disclosure widgets.",
     "link": "https://github.com/KittyGiraudel/react-a11y-disclosure",
-    "category": "Accessibility"
+    "tags": ["Accessibility", "React"]
   },
   {
     "name": "Scrabble-Helper",
     "description": "A CLI helper for Scrabble.",
     "link": "https://github.com/KittyGiraudel/scrabble-helper",
-    "category": "JavaScript"
+    "tags": ["JavaScript"]
   },
   {
     "name": "Inline-Styler",
     "description": "A teeny tiny JavaScript library to easily manipulate the style attribute of an element.",
     "link": "https://github.com/KittyGiraudel/inline-styler",
-    "category": "JavaScript"
+    "tags": ["JavaScript", "CSS"]
   },
   {
     "name": "iframify",
     "description": "A script to replace a HTML element with an iframe version of itself. Especially useful for styleguides.",
     "link": "https://github.com/edenspiekermann/iframify",
-    "category": "JavaScript"
+    "tags": ["JavaScript"]
   },
   {
     "name": "Outline Audit",
     "description": "A script to audit the outline of a document.",
     "link": "https://github.com/edenspiekermann/outline-audit",
-    "category": "Accessibility"
+    "tags": ["Accessibility", "JavaScript"]
   },
   {
     "name": "A11y-toggle",
     "description": "A script to make accessible content toggles to assistive technology users.",
     "link": "https://github.com/edenspiekermann/a11y-toggle",
-    "category": "Accessibility"
+    "tags": ["Accessibility", "JavaScript", "HTML"]
   },
   {
     "name": "A11y-dialog",
     "description": "A script to make modal dialogs accessible to assistive technology users.",
     "link": "https://a11y-dialog.netlify.app/",
     "repository": "https://github.com/KittyGiraudel/a11y-dialog",
-    "category": "Accessibility",
+    "tags": ["Accessibility", "JavaScript", "HTML", "Dialog", "TypeScript"],
     "showcase": true
   },
   {
     "name": "Spritesh",
     "description": "A script to build a SVG sprite from a folder of SVG files.",
     "link": "https://github.com/edenspiekermann/sprite.sh",
-    "category": "JavaScript"
+    "tags": ["JavaScript", "Bash", "SVG"]
   },
   {
     "name": "Sass Semver",
     "description": "A small Semantic Versioning parser in Sass.",
     "link": "https://github.com/KittyGiraudel/sass-semver",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "Simplified JavaScript Jargon",
     "description": "A community-driven attempt at explaining JavaScript concepts and buzzwords.",
     "link": "https://jargon.js.org",
     "repository": "https://github.com/KittyGiraudel/SJSJ",
-    "category": "JavaScript",
+    "tags": ["JavaScript"],
     "showcase": true
   },
   {
@@ -98,115 +98,115 @@
     "description": "An opinionated styleguide for writing sane, maintainable and scalable Sass.",
     "link": "https://sass-guidelin.es",
     "repository": "https://github.com/KittyGiraudel/sass-guidelines",
-    "category": "Sass",
+    "tags": ["Sass"],
     "showcase": true
   },
   {
     "name": "Sass Boilerplate",
     "description": "A Sass boilerplate to kickstart a project.",
     "link": "https://github.com/KittyGiraudel/sass-boilerplate",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "SassDoc",
     "description": "A documentation system for Sass.",
     "link": "http://sassdoc.com",
-    "category": "Sass"
+    "tags": ["Sass", "Documentation"]
   },
   {
     "name": "Sass Compatibility",
     "description": "A project collecting incompatibilities between different Sass engines.",
     "link": "https://kittygiraudel.github.io/sass-compatibility/",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "Browserhacks",
     "description": "An extensive list of browser specific hacks.",
     "link": "http://browserhacks.com/",
-    "category": "CSS"
+    "tags": ["CSS", "JavaScript"]
   },
   {
     "name": "node-legofy",
     "description": "A script to convert an image into a mosaic of LEGO pieces.",
     "link": "https://github.com/KittyGiraudel/node-legofy",
-    "category": "JavaScript"
+    "tags": ["JavaScript", "Node.js"]
   },
   {
     "name": "CRUD.js",
     "description": "A lightweight interface for CRUD.",
     "link": "https://github.com/KittyGiraudel/CRUD.js",
-    "category": "JavaScript"
+    "tags": ["JavaScript"]
   },
   {
     "name": "ImagePreloader",
     "description": "A lightweight image preloader.",
     "link": "https://github.com/KittyGiraudel/imagepreloader",
-    "category": "JavaScript"
+    "tags": ["JavaScript", "Performance"]
   },
   {
     "name": "Countdown.js",
     "description": "A small yet customisable countdown in JavaScript.",
     "link": "https://github.com/KittyGiraudel/countdown.js",
-    "category": "JavaScript"
+    "tags": ["JavaScript"]
   },
   {
     "name": "SassyTester",
     "description": "A minimalistic function tester in Sass.",
     "link": "https://github.com/KittyGiraudel/SassyTester",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "SassyGradients",
     "description": "A lightweight wrapper for CSS gradients.",
     "link": "https://github.com/KittyGiraudel/SassyGradients",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "SassyBitwise",
     "description": "An implementation of bitwise operators in Sass.",
     "link": "https://github.com/KittyGiraudel/SassyBitwise",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "SassyStrings",
     "description": "A collection of Sass functions for string manipulation.",
     "link": "https://github.com/KittyGiraudel/SassyStrings",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "SassyLists",
     "description": "A collection of Sass functions for list manipulation.",
     "link": "https://github.com/at-import/SassyLists",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "SassyMatrix",
     "description": "A collection of Sass functions for matrix manipulation.",
     "link": "https://github.com/KittyGiraudel/SassyMatrix",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "SassyLogger",
     "description": "A powerful logging system built for Sass.",
     "link": "https://github.com/KittyGiraudel/SassyLogger",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "SassyJSON",
     "description": "A partially working JSON parser in Sass.",
     "link": "https://github.com/KittyGiraudel/SassyJSON",
-    "category": "Sass"
+    "tags": ["Sass", "JSON"]
   },
   {
     "name": "SassyCast",
     "description": "A collection of Sass functions for type conversion.",
     "link": "https://github.com/KittyGiraudel/SassyCast",
-    "category": "Sass"
+    "tags": ["Sass"]
   },
   {
     "name": "SassySort",
     "description": "A collection of sorting algorithms implementations in Sass.",
     "link": "https://github.com/KittyGiraudel/SassySort",
-    "category": "Sass"
+    "tags": ["Sass"]
   }
 ]

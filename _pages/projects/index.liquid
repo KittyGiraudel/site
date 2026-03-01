@@ -13,7 +13,8 @@ permalink: /projects/
 {% include "styles.html", partials: "
   components/list,
   components/showcase,
-  components/tile
+  components/tile,
+  components/tags
 " %}
 
 {% assign main_projects = projects | where: "showcase", true | slice: 0, 3 %}
@@ -27,19 +28,14 @@ permalink: /projects/
 
 {% include "ad.html" %}
 
-{% assign groups = projects | group_by: "category" %}
-{% assign sorted_groups = groups | sort_by: "name" %}
-
-{% for category in sorted_groups %}
-<h2>{{ category.name }}</h2>
+{% assign sorted_projects = projects | sort_by: "name" %}
 <ul class="List">
-  {% assign projects = category.items | sort_by: "name" %}
-  {% for project in projects %}
+  {% for project in sorted_projects %}
   <li class="List__item">
+    {% include "tags.html", tags: project.tags %}
     <a href="{{ project.link }}" class="List__primary-content" target="_blank"
       rel="noopener noreferrer">{{ project.name }}</a>
     <p class="List__secondary-content">{{ project.description }}</p>
   </li>
-  {% endfor %}
-</ul>
 {% endfor %}
+</ul>

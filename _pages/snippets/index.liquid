@@ -22,7 +22,7 @@ paste them with minor effort.
 
 {% include "ad.html" %}
 
-{% assign snippets = collections.snippets | sort_by: 'date' %}
+{% assign snippets = collections.snippets | sort_by: 'date' | reverse %}
 
 <ul class="List">
   {% for snippet in snippets %}
