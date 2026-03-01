@@ -1,6 +1,6 @@
 heading-anchors:not(:defined) :is(h2, h3, h4, h5, h6)[id]::after {
-  content: "#";
-  content: "#" / "";
+  content: "§";
+  content: "§" / "";
   padding: 0 0.25em;
   opacity: 0;
 }

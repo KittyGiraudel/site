@@ -183,10 +183,6 @@ a:focus-visible {
   corner-shape: squircle;
 }
 
-/**
- * The `data-visited` attribute is only added to links within `.Main`, so it is
- * unnecessary to check for `.Navigation__link` and `.Title__link` here.
- */
 a[data-visited]:not([href^="#"])::after {
   content: " ✓";
   opacity: 0.5;

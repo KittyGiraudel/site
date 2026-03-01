@@ -76,10 +76,6 @@
   color: inherit;
 }
 
-#carbonads a:focus {
-  outline: auto 5px -webkit-focus-ring-color;
-}
-
 #carbonads span {
   position: relative;
   display: block;

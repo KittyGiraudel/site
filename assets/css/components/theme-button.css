@@ -32,12 +32,6 @@
   }
 }
 
-@media (min-width: 1300px) {
-  .ThemeButton {
-    left: 1em;
-  }
-}
-
 .ThemeButton:hover,
 .ThemeButton:focus {
   animation: wiggle 500ms ease-out;

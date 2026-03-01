@@ -24,12 +24,3 @@
   font-size: 75%;
   font-family: var(--code-font);
 }
-
-.List__secondary-content ul {
-  display: inline-block;
-  padding: 0;
-}
-
-.List__secondary-content ul::before {
-  content: "|";
-}

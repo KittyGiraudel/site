@@ -4,10 +4,6 @@ table {
   border-collapse: collapse;
 }
 
-table thead tr:first-child > :first-child {
-  border-top-left-radius: 1em;
-}
-
 thead {
   border-bottom: 2px solid;
 }
