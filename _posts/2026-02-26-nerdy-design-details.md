@@ -7,6 +7,9 @@ tags:
   - Accessibility
   - CSS
   - Liquid
+edits:
+  - date: 2026-03-01
+    md: I decided to add a way to link to a specific heading, so I updated this article to mention [how I implemented that](#heading-anchors).
 ---
 
 I’m currently looking for a job, so I have some free time. I decided to use it to work on the look and feel of this website some more, adding small design touches for a nicer, more accessible reading experience. I’ll share the highlights in this article!
@@ -14,6 +17,7 @@ I’m currently looking for a job, so I have some free time. I decided to use it
 - [Working theme switcher](#working-theme-switcher)
 - [Fluid typography](#fluid-typography)
 - [Creative embeds](#creative-embeds)
+- [Heading anchors](#heading-anchors)
 - [Fleurons](#fleurons)
 - [Squircle corners](#squircle-corners)
 - [Clearer focus styles](#clearer-focus-styles)
@@ -155,11 +159,19 @@ To ensure the content within the callout sits on top of the decorative character
 .Info > * { position: relative; z-index: 2; }
 ```
 
-I have used the same design pattern for [footnotes](#footnotes-label), and the editorial changes (see [this article](https://kittygiraudel.com/2022/09/30/templating-in-html/) for an example). I really like the juxtaposition of a neatly bordered box, and a decorative element breaking out of it, bringing some dynamism!
+I have used the same design pattern for [footnotes](#footnotes-label), and the [editorial changes](#post-edits) for an example). I really like the juxtaposition of a neatly bordered box, and a decorative element breaking out of it, bringing some dynamism!
 
 {% info %}As you can see from the code blocks above, they use the inverted color scheme: they have a pink background, and their gradient border goes from pink to blue. I did consider putting some brackets on each side, but it felt too much, especially since they already stand out with their unique pink-ish theme.{% endinfo %}
 
+## Heading anchors
 
+I have had a love-hate relationship with heading anchors over the years. I’ve had them, removed them, had them again, removed them again. Well guess what? They’re back! I was seduced by Zach Leat’s elegant [heading-anchors](https://github.com/zachleat/heading-anchors) web component. It’s very light, accessible, and easy to use.
+
+```html
+<heading-anchors selector="h2,h3,h4" content="§">
+  <!-- Page content -->
+</heading-anchors>
+```
 
 ## Fleurons
 
