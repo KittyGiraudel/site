@@ -1,6 +1,6 @@
 /**
  * CodePen embedded iframes
  */
-.cp_embed_iframe {
+.cp_embed_wrapper {
   margin-bottom: var(--vb);
 }

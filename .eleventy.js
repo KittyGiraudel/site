@@ -91,10 +91,10 @@ export default function (config) {
   )
 
   config.addCollection('snippets', collection =>
-    collection.getFilteredByGlob('pages/snippets/*.md'),
+    collection.getFilteredByGlob('_pages/snippets/*.md'),
   )
 
-  config.addCollection('recipes', collection => collection.getFilteredByGlob('pages/recipes/*.md'))
+  config.addCollection('recipes', collection => collection.getFilteredByGlob('_pages/recipes/*.md'))
 
   return {
     dir: {
