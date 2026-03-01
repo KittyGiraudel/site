@@ -1,14 +1,12 @@
-{% if tags %}
+{% if tags.size > 0 %}
 <ul class="Tags">
-  {% for tag in tags | sort %}
-    {% assign name = tag.name | default: tag %}
-    {% assign extra = tag.extra %}
-    {% if tag != "posts" %}
-      <li class="Tag">
-        <a class="Tag__link" href="/tags/{{ name | slugify }}"
-        {% if extra %}data-extra="{{ extra }}"{% endif %}>{{ name }}</a>
-      </li>
-    {% endif %}
+  {%- for tag in tags | sort %}
+  {% assign name = tag.name | default: tag %}
+  <li class="Tag">
+    <a class="Tag__link" href="/tags/{{ name | slugify }}" {% if tag.extra %}data-extra="{{ tag.extra }}" {% endif %}>
+      {{ name }}
+    </a>
+  </li>
   {% endfor %}
 </ul>
 {% endif %}
