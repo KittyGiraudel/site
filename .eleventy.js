@@ -159,7 +159,7 @@ function where(array, key, value) {
 function sortBy(array, key) {
   return array.slice(0).sort((a, b) => {
     if (typeof a === 'string' && typeof b === 'string') return a[key]?.localeCompare(b[key])
-    if ((typeof a) instanceof Date && (typeof b) instanceof Date) return a.getTime() - b.getTime()
+    if (a instanceof Date && b instanceof Date) return a.getTime() - b.getTime()
     return 0
   })
 }
