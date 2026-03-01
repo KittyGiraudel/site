@@ -1,20 +1,25 @@
 ---
 layout: default
-title: Open-source projects
+title: Open-Source Projects
 description: 'A list of all my open-sourced projects, all hosted on GitHub. Fair warning: some of them are not
 maintained anymore.'
 keywords:
   - projects
   - open-source
   - github
-permalink: /projects/
+pagination:
+  data: projects
+  size: 12
+  alias: paginatedProjects
+permalink: "/projects/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
 {% include "styles.html", partials: "
   components/list,
   components/showcase,
   components/tile,
-  components/tags
+  components/tags,
+  components/collection-navigation
 " %}
 
 {% assign main_projects = projects | where: "showcase", true | slice: 0, 3 %}
@@ -28,9 +33,8 @@ permalink: /projects/
 
 {% include "ad.html" %}
 
-{% assign sorted_projects = projects | sort_by: "name" %}
 <ul class="List">
-  {% for project in sorted_projects %}
+  {% for project in paginatedProjects %}
   <li class="List__item">
     {% include "tags.html", tags: project.tags %}
     <a href="{{ project.link }}" class="List__primary-content" target="_blank"
@@ -39,3 +43,9 @@ permalink: /projects/
   </li>
 {% endfor %}
 </ul>
+
+{% include "pagination.html",
+  label: "projects",
+  nextPageHref: pagination.nextPageHref,
+  previousPageHref: pagination.previousPageHref
+%}
