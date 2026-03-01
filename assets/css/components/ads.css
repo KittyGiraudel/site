@@ -5,25 +5,47 @@
   corner-shape: squircle;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1em;
+  align-items: stretch;
+  gap: 2em;
   margin: var(--vb) auto;
-  padding: 0.5em;
+  padding: 1em;
+}
+
+.RandomName__content {
   position: relative;
+  display: flex;
+}
+
+.RandomName__content::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  top: -1em;
+  right: 0;
+  left: 0;
+  position: absolute;
+  background-image: linear-gradient(to right, var(--blue), var(--pink));
+}
+
+.RandomName__content > * {
+  font-size: 80%;
+  margin: auto;
 }
 
 @media (min-width: 600px) {
   .RandomName {
     flex-direction: row;
   }
-}
 
-.RandomName__content {
-  font-size: 80%;
-}
-
-.RandomName__content > p {
-  margin: 0;
+  .RandomName__content::before  {
+    width: 4px;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: -1em;
+    background-image: linear-gradient(to bottom, var(--blue), var(--pink));
+  }
 }
 
 /**
@@ -37,6 +59,7 @@
   min-width: 284px;
   background-color: light-dark(white, #222);
   color: #444;
+  margin: 0 auto;
 }
 
 .RandomName__holder:not(:has(#carbonads)) {

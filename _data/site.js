@@ -7,7 +7,7 @@ export default {
   time: new Date(),
   pubDate: new Date(2012, 10, 10),
   jobNotice: {
-    text: 'I am currently looking for my next job opportunity for March 2026!',
+    text: 'I am currently looking for a new role!',
     url: 'https://www.linkedin.com/posts/kitty-giraudel_dear-network-i-am-still-looking-for-my-next-activity-7429088570906341376-YSpl?utm_source=share&utm_medium=member_desktop&rcm=ACoAADH-Z8wBKlEvSxzpoXA6lJuBciBD7TZuM0M',
   },
   nav: [
