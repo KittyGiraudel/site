@@ -1,7 +1,7 @@
 ---
 title: Tag pages with Eleventy
-description: A short technical write-up about the introduction of a tag pages on this blog.
-keywords:
+description: A short technical write-up about the introduction of tag pages on this blog.
+tags:
   - Liquid
   - 11ty
 ---
