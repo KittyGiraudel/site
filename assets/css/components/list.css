@@ -14,10 +14,6 @@
   margin: 0;
 }
 
-.List__item .DottedList {
-  padding-left: 0;
-}
-
 .List__primary-content {
   font-size: 150%;
   line-height: 1.1;

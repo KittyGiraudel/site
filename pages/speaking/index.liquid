@@ -27,10 +27,10 @@ in touch!
       {{ event.event }}
     </a>
     {% if event.actions %}
-      <ul class="DottedList">
+      <ul class="Tags">
         {% for action in event.actions %}
-        <li>
-          <a target="_blank" rel="noopener noreferrer" href="{{ action[1] }}">
+        <li class="Tag">
+          <a class="Tag__link" target="_blank" rel="noopener noreferrer" href="{{ action[1] }}">
             {{ action[0] }}</a>
         </li>
         {% endfor %}

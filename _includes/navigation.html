@@ -1,5 +1,5 @@
 <nav class="Navigation no-print" role="navigation">
-  <ul class="Navigation__list DottedList">
+  <ul class="Navigation__list">
     {% for item in site.nav %}
     {% assign check = page.url | split:item.path %}
     <li class="Navigation__item" {% if check[0]=='' %} aria-current="page" {% endif %}>

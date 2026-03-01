@@ -13,8 +13,15 @@
 }
 
 .Navigation__item {
+  display: inline-block;
   line-height: 1.5;
   color: light-dark(var(--blue), lightblue);
+}
+
+.Navigation__item:not(:last-of-type)::after {
+  margin: 0 0.5ch;
+  content: "·";
+  color: var(--pink);
 }
 
 .Navigation__item[aria-current] {
