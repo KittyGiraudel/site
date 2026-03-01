@@ -25,5 +25,5 @@
   height: auto; /* 1 */
   width: auto; /* 1 */
   overflow: visible; /* 1 */
-  border-bottom-color: var(--pink);
+  border-bottom: 0;
 }
