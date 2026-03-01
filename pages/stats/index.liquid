@@ -88,9 +88,7 @@ permalink: /stats/
     {% if stats.popularTags.size > 0 %}
       <section class="StatsSection StatsSection--tags">
         <h2>Tags</h2>
-        <div>
-          {% include 'tags.html', tags: stats.popularTags %}
-        </div>
+        {% include 'tags.html', tags: stats.popularTags %}
       </section>
     {% endif %}
   </heading-anchors>
