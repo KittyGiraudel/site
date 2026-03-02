@@ -32,7 +32,17 @@ function renderPostsPerYearChart(container, years) {
     series: [{ name: 'Posts', data: counts }],
     xaxis: { categories },
     dataLabels: { enabled: true },
-    tooltip: { y: { formatter, }, },
+    tooltip: { y: { formatter } },
+    plotOptions: { bar: { horizontal: false } },
+    responsive: [
+      {
+        breakpoint: 768,
+        options: {
+          plotOptions: { bar: { horizontal: true } },
+          legend: { position: 'bottom' },
+        },
+      },
+    ],
   })
 
   chart.render()

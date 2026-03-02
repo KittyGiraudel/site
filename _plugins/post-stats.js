@@ -82,15 +82,9 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
       contentPostCount += 1
     }
 
-    const avgCharacterCount = contentPostCount
-      ? Math.round(totalChars / contentPostCount)
-      : 0
-    const avgWordCount = contentPostCount
-      ? Math.round(totalWords / contentPostCount)
-      : 0
-    const avgParagraphCount = contentPostCount
-      ? Math.round(totalParagraphs / contentPostCount)
-      : 0
+    const avgCharacterCount = contentPostCount ? Math.round(totalChars / contentPostCount) : 0
+    const avgWordCount = contentPostCount ? Math.round(totalWords / contentPostCount) : 0
+    const avgParagraphCount = contentPostCount ? Math.round(totalParagraphs / contentPostCount) : 0
 
     const avgPostsPerWeek = Math.round((postCount / safe(spanWeeks)) * 100) / 100
     const avgPostsPerMonth = Math.round((postCount / safe(spanMonths)) * 100) / 100

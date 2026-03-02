@@ -38,7 +38,7 @@
     flex-direction: row;
   }
 
-  .RandomName__content::before  {
+  .RandomName__content::before {
     width: 4px;
     height: auto;
     top: 0;
