@@ -4,7 +4,7 @@ description: A retrospective on migrating this website from Jekyll to Eleventy
 templateEngineOverride: md
 tags:
   - Jekyll
-  - 11ty
+  - Eleventy
   - Retrospective
   - Liquid
 ---
