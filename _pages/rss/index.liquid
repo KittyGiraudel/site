@@ -13,7 +13,7 @@ eleventyExcludeFromCollections: true
     <name>{{ site.author }}</name>
   </author>
   <updated>{{ site.time | date_to_rfc3339 }}</updated>
-  <generator>11ty</generator>
+  <generator>Eleventy</generator>
   <id>{{ site.url }}/</id>
   {% for post in collections.posts %}
   {% capture absolute_post_url -%}

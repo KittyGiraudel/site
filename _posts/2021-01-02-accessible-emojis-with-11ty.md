@@ -1,14 +1,14 @@
 ---
-title: Accessible emojis with 11ty
-description: A technical write-up on making emojis accessible in 11ty using their short names
+title: Accessible emojis with Eleventy
+description: A technical write-up on making emojis accessible in Eleventy using their short names
 tags:
   - Accessibility
-  - 11ty
+  - Eleventy
   - HTML
   - JavaScript
 ---
 
-As part of the [A11y Advent calendar](/2020/12/01/a11y-advent-calendar/), we [discussed emojis](/2020/12/11/a11y-advent-emojis/) and how they are not always quite accessible by default despite being used a lot and being a key communication tool in this day and age. A couple days ago, I posted a tweet about how I found a cheap and lazy way to improve emojis’ accessibility in [11ty](https://www.11ty.dev/).
+As part of the [A11y Advent calendar](/2020/12/01/a11y-advent-calendar/), we [discussed emojis](/2020/12/11/a11y-advent-emojis/) and how they are not always quite accessible by default despite being used a lot and being a key communication tool in this day and age. A couple days ago, I posted a tweet about how I found a cheap and lazy way to improve emojis’ accessibility in [Eleventy](https://www.11ty.dev/).
 
 Quick reminder of what we should do, courtesy of [Leonie Watson’s article on the matter](https://tink.uk/accessible-emoji/):
 
@@ -18,7 +18,7 @@ Quick reminder of what we should do, courtesy of [Leonie Watson’s article on t
 
 This is easy to do in content pages authored in HTML, but becomes more complicated in articles written in Markdown, let alone done retroactively on hundreds of pages. So the idea is to post-process the resulting HTML to wrap emojis with a span as shown above.
 
-Fortunately, 11ty allows us to post-process HTML with [transforms](https://www.11ty.dev/docs/config/#transforms). They are very handy to, well, _transform_ a template’s output, such as minifying the resulting HTML for instance.
+Fortunately, Eleventy allows us to post-process HTML with [transforms](https://www.11ty.dev/docs/config/#transforms). They are very handy to, well, _transform_ a template’s output, such as minifying the resulting HTML for instance.
 
 Here, we want a transform that will:
 
@@ -82,4 +82,4 @@ function wrapEmoji(emoji) {
 
 That’s about it! As I said, pretty cheap to implement. Now I’m going to be honest and don’t know how robust this solution is. Some emojis _might_ be missing (especially when new ones get added) and some descriptions might be sub-optimal. Additionally, it doesn’t check whether an emoji is already properly wrapped, which could cause a double-wrap (although I’d say this could be fixed relatively easily I guess).
 
-Still, it’s a pretty convenient way to make emojis a little more accessible with 11ty!
+Still, it’s a pretty convenient way to make emojis a little more accessible with Eleventy!

@@ -1,14 +1,14 @@
 ---
-title: Footnotes in 11ty
-description: A technical write-up on adding footnotes support in 11ty with Liquid
+title: Footnotes in Eleventy
+description: A technical write-up on adding footnotes support in Eleventy with Liquid
 tags:
   - Accessibility
   - Component
-  - 11ty
+  - Eleventy
   - Liquid
 ---
 
-After having [moved from Jekyll to 11ty](/2020/11/30/from-jekyll-to-11ty/), I realised I could extend Liquid in fancy ways to make some things a little easier (or down right possible). In this article, I’d like to share how I built a tiny footnotes plugin with {% footnoteref "liquid" "I personally use Liquid at the time of writing, but this implementation should be relatively similar with Nunjucks, or even some other templating language." %}Liquid{% endfootnoteref %}. If you are not interested in how the sausage is made and just want to use the code, check [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/eleventy-plugin-footnotes) for usage instructions.
+After having [moved from Jekyll to Eleventy](/2020/11/30/from-jekyll-to-11ty/), I realised I could extend Liquid in fancy ways to make some things a little easier (or down right possible). In this article, I’d like to share how I built a tiny footnotes plugin with {% footnoteref "liquid" "I personally use Liquid at the time of writing, but this implementation should be relatively similar with Nunjucks, or even some other templating language." %}Liquid{% endfootnoteref %}. If you are not interested in how the sausage is made and just want to use the code, check [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/eleventy-plugin-footnotes) for usage instructions.
 
 {% info %}
 Nicolas Hoizey pointed out on Twitter that [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) does essentially the same thing with less integration and using Markdown syntax instead of Liquid.
@@ -32,7 +32,7 @@ what they are.
 ```
 {% endraw %}
 
-The 11ty configuration would be authored like this:
+The Eleventy configuration would be authored like this:
 
 ```js
 const FOOTNOTE_MAP = []
@@ -54,7 +54,7 @@ config.addPairedShortcode(
 Here is how it works: when rendering the `footnoteref` Liquid tag, we retrieve the registered footnotes for the current page (if any) from the `FOOTNOTE_MAP` map. We add the newly registered footnote to it, and we render an anchor link to the footnote.
 
 {% info %}
-It is important not to use an arrow function but a function declaration since we need to access the page stored on the `this` context. The ability to [access page data values within shortcode definitions](https://www.11ty.dev/docs/languages/liquid/#access-to-page-data-values) comes from 11ty. 
+It is important not to use an arrow function but a function declaration since we need to access the page stored on the `this` context. The ability to [access page data values within shortcode definitions](https://www.11ty.dev/docs/languages/liquid/#access-to-page-data-values) comes from Eleventy. 
 {% endinfo %}
 
 ## Rendering footnotes
@@ -135,4 +135,4 @@ So to sum up:
 
 That’s about it. Pretty cool, huh? ✨
 
-If you are interested in using these footnotes in 11ty, check out [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/eleventy-plugin-footnotes) on GitHub. There are install instructions, guidelines and examples.
+If you are interested in using these footnotes in Eleventy, check out [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/eleventy-plugin-footnotes) on GitHub. There are install instructions, guidelines and examples.

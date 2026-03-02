@@ -3,7 +3,7 @@ title: Tag pages with Eleventy
 description: A short technical write-up about the introduction of tag pages on this blog.
 tags:
   - Liquid
-  - 11ty
+  - Eleventy
 ---
 
 {% include "styles.html", partials: "

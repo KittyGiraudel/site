@@ -20,14 +20,14 @@ export default function (config) {
   // Wrap emojis to give them more semantic meaning.
   config.addTransform('emoji', a11yEmojis)
 
-  // Force 11ty to watch CSS and JS files
+  // Force Eleventy to watch CSS and JS files
   config.addWatchTarget('assets/css/**/*.css')
   config.addWatchTarget('assets/js/**/*.js')
 
   // Enable compilation plugins
   config.addPlugin(syntaxHighlight)
   config.addPlugin(footnotes)
-  config.addPlugin(IdAttributePlugin, { slugify: uslugify })
+  config.addPlugin(IdAttributePlugin, { slugify: uslugify, checkDuplicates: false })
   config.addPlugin(postStatsPlugin)
 
   // Pass through static files; the CSS file is handled through Sass and
@@ -161,7 +161,8 @@ function sortBy(array, key) {
   return [...array].sort((a, b) => {
     const aVal = a?.[key]
     const bVal = b?.[key]
-    if (typeof aVal === 'string' && typeof bVal === 'string') return aVal.localeCompare(bVal, undefined, { sensitivity: 'base' })
+    if (typeof aVal === 'string' && typeof bVal === 'string')
+      return aVal.localeCompare(bVal, undefined, { sensitivity: 'base' })
     if (aVal instanceof Date && bVal instanceof Date) return aVal.getTime() - bVal.getTime()
     return 0
   })
