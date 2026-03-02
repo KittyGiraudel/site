@@ -90,6 +90,18 @@ permalink: /stats/
       </div>
     </section>
 
+    {% if stats.years and stats.years.size > 0 %}
+      <section class="StatsSection">
+        <h2>Posts per year</h2>
+        <div class="StatsSection__chart" id="stats-posts-per-year"></div>
+      </section>
+
+      <section class="StatsSection">
+        <h2>Content over time</h2>
+        <div class="StatsSection__chart" id="stats-content-trends"></div>
+      </section>
+    {% endif %}
+
     {% if stats.popularTags.size > 0 %}
       <section class="StatsSection StatsSection--tags">
         <h2>Tags</h2>
@@ -99,4 +111,21 @@ permalink: /stats/
   </heading-anchors>
 {% else %}
   <p>No posts yet — nothing to show here.</p>
+{% endif %}
+
+{% if stats.years and stats.years.size > 0 %}
+  <script>
+    window.__STATS_YEARS__ = [
+    {% for year in stats.years %}
+      {
+        year: {{ year.year }},
+        postCount: {{ year.postCount }},
+        avgCharacterCount: {{ year.avgCharacterCount }},
+        avgWordCount: {{ year.avgWordCount }},
+        avgParagraphCount: {{ year.avgParagraphCount }}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    ];
+  </script>
+  {% include "script.html", partials: "utilities, stats" %}
 {% endif %}
