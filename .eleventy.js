@@ -132,6 +132,12 @@ function emojiToText(str) {
 }
 
 function a11yEmojis(content, outputPath) {
+  // Post-processing all content can be slow, so we skip that phase entirely
+  // while in development to improve compilation times
+  if (process.env.NODE_ENV !== 'production') {
+    return content
+  }
+
   return outputPath.endsWith('.html') ? content.replace(EMOJI_REGEX, replaceEmoji) : content
 }
 
@@ -244,6 +250,12 @@ function readingTime(content) {
 function splitContent(html) {
   if (!html || typeof html !== 'string') {
     return ['', '']
+  }
+
+  // We don’t really need to bother too much with the ad placement during dev,
+  // so we skip the whole Cheerio parsing and just return the HTML as is.
+  if (process.env.NODE_ENV !== 'production') {
+    return ['', html]
   }
 
   // Load the HTML into Cheerio as a *fragment* so we don’t get the implicit `html` and `body`
