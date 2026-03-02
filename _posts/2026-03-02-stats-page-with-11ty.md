@@ -223,3 +223,16 @@ Tadaaaa — pretty cool if you ask me! The huge bump in 2020 is because I releas
 ## Wrapping up
 
 It’s all very vain of course, not to mention very unnecessary. But it was a good opportunity to play with Eleventy custom plugins, do some data visualisation, and satisfy my love for metrics. Maybe it’ll inspire you to do something similar on your own blog. :)
+
+<script>
+  // Ugly hack to undo the aggressive compression from html-minifier for that element specifically
+  document.addEventListener('DOMContentLoaded', () => {
+    const script = document.querySelector('script[style="display:block"]')
+    if (!script) return 
+    script.innerText = script.innerText
+      .replace(/=\[{/, ' = [\n  { ') // Start
+      .replace(/}]/, ' }\n]')        // End
+      .replace(/},{/g, ' },\n  { ')  // Lines
+      .replace(/([:,])/g, '$1 ')     // Inner
+  })
+</script>
