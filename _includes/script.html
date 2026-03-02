@@ -1,15 +1,15 @@
 {% if partials %}
   {% assign paths = partials | split: "," %}
 
-  {% if site.environment == 'production' %}
-    {% capture js %}
-      {% for path in paths %}{% include "../assets/js/{{ path | strip }}.js" %}{% endfor %}
-    {% endcapture %}
+  {%- if site.environment == 'production' -%}
+    {%- capture js -%}
+      {% for path in paths -%}{%- include "../assets/js/{{ path | strip }}.js" -%}{%- endfor %}
+    {%- endcapture -%}
 
     <script {% if type %}type="{{ type }}"{% endif %}>{{ js }}</script>
-  {% else %}
-    {% for path in paths %}
+  {%- else -%}
+    {% for path in paths -%}
       <script src="/assets/js/{{ path | strip }}.js" {% if type %}type="{{ type }}"{% endif %}></script>
-    {% endfor %}
-  {% endif %}
+    {%- endfor %}
+  {%- endif %}
 {% endif %}
