@@ -6,7 +6,7 @@ tags:
   - JavaScript
 ---
 
-The nice thing about having blogged for so long is that there is a lot of data to play with! I was curious whether I could pull some vanity metrics from all my writing. And yes, it’s certainly possible! I’ll show how I’ve done it.
+The nice thing about having blogged for so long is that there is a lot of data to play with! I was curious whether I could pull some vanity metrics from all my writing and yes, it’s certainly possible! I’ll show how I’ve done it.
 
 {% assign stats = collections.postStats %}
 
@@ -15,9 +15,9 @@ The nice thing about having blogged for so long is that there is a lot of data t
 
 ## Aggregating data
 
-I initially had a look at the [eleventy-plugin-post-stats](https://github.com/johnwargo/eleventy-plugin-post-stats) package. It’s well put together, but I didn’t like that it relies on post tags to collect data. That means you need a specific tag that is used by *all* posts, like `post` or something. I do not have that. It would have been easy to add of course, but I didn’t like having to keep a tag for data collection sake, because that meant having to filter it out in the frontend to avoid rendering it.
+I initially had a look at the [eleventy-plugin-post-stats](https://github.com/johnwargo/eleventy-plugin-post-stats) package. It’s well put together, but I didn’t like that it relies on post tags to collect data. That means you need a specific tag that is used by *all* posts, like `post` or something. I do not have that. It would have been easy to add of course, but I didn’t like having to keep a tag for data collection’s sake, because that meant having to filter it out in the frontend to avoid rendering it.
 
-Conceptually, it was on the money though: have an [Eleventy plugin](https://www.11ty.dev/docs/plugins/) that pulls all posts, compute a bunch of data, and expose it back as a collection to make it consumable in Liquid pages.
+Conceptually, it was on the money though: have an [Eleventy plugin](https://www.11ty.dev/docs/plugins/) that pulls all posts, computes a bunch of data, and exposes it back as a collection to make it consumable in Liquid pages.
 
 ```js
 export default function postStatsPlugin(eleventyConfig, options = {}) {
@@ -49,9 +49,9 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
 }
 ```
 
-By default, Eleventy collections are arrays. It doesn’t make a whole lot of sense for our case though, because we want a singleton object to be able to access `postStats.postCount` for instance.
+By default, Eleventy collections are arrays. That doesn’t make a whole lot of sense for our case though, because we want a singleton object to be able to access `postStats.postCount`, for instance.
 
-So we still return an array with a single object (our stats), but also assign all the properties from that object on the array itself — taking advantage of everything being in object in JavaScript.
+So we still return an array with a single object (our stats), but also assign all the properties from that object onto the array itself — taking advantage of everything being an object in JavaScript.
 
 ```js
 const collection = [stats]
@@ -59,7 +59,10 @@ Object.assign(collection, stats)
 return collection
 ```
 
-To be clear, we could totally skip the `Object.assign(..)` part and then access `postStats[0].postCount`, but that’s a bit more cumbersome, and also let’s obvious how the data is structured.
+To be clear, we could totally skip the `Object.assign(..)` part and then access `postStats[0].postCount`, but that’s a bit more cumbersome, and also less obvious how the data is structured.
+
+- Before: `collections.postStats[0].postCount`
+- After: `collections.postStats.postCount`
 
 {% info %}You can find the [complete code for the plugin](https://github.com/KittyGiraudel/site/blob/main/_plugins/post-stats.js) on GitHub. Be warned: there is a fair bit of proprietary logic, and most of it was written by Cursor. Still, you should be able to reuse most of it if you wanted.{% endinfo %}
 
@@ -95,7 +98,7 @@ for (const post of posts) {
 
 I noticed while working on this article that the plugin makes Eleventy compilation slower. It’s totally fine at build time, but when working in watch mode, Eleventy recomputes all stats — which involves hitting the file system for every single post. It’s not very efficient.
 
-So I’ve set up some lightweight caching for the plugin. It maintains a map of paths to their computed stats + the last time they were modified. When compiling, it looks into the cache to see if we have an entry for that post. If it does, and the last modified date hasn’t changed, it just return data from the cache, otherwise it computes the stats for that post.
+So I’ve set up some lightweight caching for the plugin. It maintains a map of paths to their computed stats + the last time they were modified. When compiling, it looks into the cache to see if we have an entry for that post. If it does, and the last modified date hasn’t changed, it just returns the data from the cache, otherwise it computes the stats for that post.
 
 ```js
 const CONTENT_STATS_CACHE = new Map()
@@ -172,10 +175,10 @@ permalink: /stats/
 {% if stats.years and stats.years.size > 0 %}
 ## Displaying graphs
 
-For funsies, I thought I’d add some data visualisation to my stats page. First, we need to dump some data into a global variable so our script can read it. I made the plugin return an array of years, each year with its own discrete stats. Then we can use a loop to output JavaScript in a variable.
+For funsies, I thought I’d add some data visualisation to my stats page. First, we need to dump some data into a global variable so our script can read it. I made the plugin return an array of years, each year with its own discrete stats. Then we can use a loop to populate a JavaScript variable.
 
 {% raw %}
-```liquid
+```js
 window.__STATS_YEARS__ = [
 {​%- for year in stats.years %}
   { year: {​{ year.year }}, postCount: {​{ year.postCount }}, avgCharacterCount: {​{ year.avgCharacterCount }}, avgWordCount: {​{ year.avgWordCount }}, avgParagraphCount: {​{ year.avgParagraphCount }} }{​% unless forloop.last %},{​% endunless %}
@@ -204,7 +207,7 @@ const chart = new ApexCharts(container, {
   series: [{ name: 'Posts', data: counts }],
   xaxis: { categories },
   dataLabels: { enabled: true },
-  tooltip: { y: { formatter, }, },
+  tooltip: { y: { formatter } },
 })
 
 chart.render()
@@ -219,4 +222,4 @@ Tadaaaa — pretty cool if you ask me! The huge bump in 2020 is because I releas
 
 ## Wrapping up
 
-It’s all very vain of course, not to mention very unnecessary. But it was a good opportunity to play with Eleventy custom plugins, do some data visualisation, and satisfy my love for metrics. Maybe it inspires you to do something similar on your own blog. :)
+It’s all very vain of course, not to mention very unnecessary. But it was a good opportunity to play with Eleventy custom plugins, do some data visualisation, and satisfy my love for metrics. Maybe it’ll inspire you to do something similar on your own blog. :)
