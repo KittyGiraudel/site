@@ -5,6 +5,7 @@ tags:
   - JavaScript
   - Next.js
   - Security
+  - Express
 ---
 
 Next.js provides a way to define [API routes](https://nextjs.org/docs/api-routes/introduction), which are essentially backend endpoints to run Node.js code. This is super neat to do server-side operations without having to maintain a full-blown server. Salma Alam-Naylor has [a good piece on serverless functions](https://whitep4nth3r.com/blog/what-is-the-edge-serverless-functions/).
