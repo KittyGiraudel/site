@@ -13,7 +13,8 @@ layout: default
   components/post-date,
   components/code,
   components/table,
-  components/tile
+  components/tile,
+  components/post-toc
 " %}
 
 <article itemscope itemtype="https://schema.org/Article" class="Post">
@@ -34,13 +35,17 @@ layout: default
   {% endif %}
 
   <div itemprop="articleBody">
-    {% include "post_edits.liquid", edits: edits %}
+    <heading-anchors selector="h2:not(#table-of-contents),h3,h4" content="§">
+      {% include "post_edits.liquid", edits: edits %}
+    
+      {% if toc != false %}
+        {% assign toc_items = content | toc %}
+        {% include "post_toc.liquid", items: toc_items %}
+      {% endif %}
 
-    <heading-anchors selector="h2,h3,h4" content="§">
-      {% assign parts = content | split_content %}
-      {{ parts[0] }}
       {% include "ad.liquid" %}
-      {{ parts[1] }}
+
+      {{ content }}
     </heading-anchors>
 
     {% include "job_notice.liquid", class: "Hook", label: "Pssst!" %}
