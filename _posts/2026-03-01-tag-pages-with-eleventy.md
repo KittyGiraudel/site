@@ -6,7 +6,7 @@ tags:
   - Eleventy
 ---
 
-{% include "styles.html", partials: "
+{% include "styles.liquid", partials: "
   components/tags
 " %}
 
@@ -67,7 +67,7 @@ I tried to instruct an AI to do it, and it also failed. It extracted keywords fr
 
 So I eventually accepted I had to bite the bullet and do it by hand. I’ve done several passes on it, and got to a satisfying result. There are very few lonely tags, which is something I wanted to avoid. Here are the top 20 tags:
 
-{% include 'tags.html', tags: collections.postStats.popularTags %}
+{% include "tags.liquid", tags: collections.postStats.popularTags %}
 
 ## Wrapping up
 

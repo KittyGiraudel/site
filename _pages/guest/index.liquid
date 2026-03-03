@@ -10,7 +10,7 @@ keywords:
 permalink: /blog/guest/
 ---
 
-{% include "styles.html", partials: "
+{% include "styles.liquid", partials: "
   components/list,
   components/tags
 " %}
@@ -22,7 +22,7 @@ have built something cool and would like to write about it, be sure to get in
 touch!
 {% endmarkdown %}
 
-{% include "ad.html" %}
+{% include "ad.liquid" %}
 
 {% assign guest_posts = collections.posts | where: "guest" %}
-{% include "post_list.html", items: guest_posts %}
+{% include "post_list.liquid", items: guest_posts %}

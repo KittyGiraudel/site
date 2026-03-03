@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% include "styles.html", partials: "
+{% include "styles.liquid", partials: "
   components/code,
   components/collection-navigation,
   components/post-date
@@ -29,11 +29,11 @@ layout: default
 
   {% assign parts = content | split_content %}
   {{ parts[0] }}
-  {% include "ad.html" %}
+  {% include "ad.liquid" %}
   {{ parts[1] }}
 </article>
 
-{% include "collection_navigation.html",
+{% include "collection_navigation.liquid",
   page: page,
   collection: collections.snippets,
   label: "snippet"

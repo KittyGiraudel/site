@@ -9,7 +9,7 @@ keywords:
 permalink: /blog/search/
 ---
 
-{% include "styles.html", partials: "
+{% include "styles.liquid", partials: "
   components/list,
   components/search,
   components/tags
@@ -20,7 +20,7 @@ In almost 400 posts and snippets, I probably have written something at least a b
 interesting. What about giving it a search?
 {% endmarkdown %}
 
-{% include "search.html" %}
-{% include "ad.html" %}
+{% include "search.liquid" %}
+{% include "ad.liquid" %}
 
-{% include "script.html", partials: "utilities, search" %}
+{% include "script.liquid", partials: "utilities, search" %}

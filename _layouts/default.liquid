@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include "head.html" %}
+{% include "head.liquid" %}
 
 <body>
-  {% include "skip_link.html" %}
-  {% include "header.html" %}
+  {% include "skip_link.liquid" %}
+  {% include "header.liquid" %}
 
   <main class="Main" role="main" id="main">
     <div class="container">
       {{ content }}
     </div>
 
-    {% include "theme_button.html" %}
+    {% include "theme_button.liquid" %}
   </main>
   
-  {% include "footer.html" %}
-  {% include "script.html", partials: "main" %}
-  {% include "script.html", partials: "vendors/heading-anchors", type: "module" %}
+  {% include "footer.liquid" %}
+  {% include "script.liquid", partials: "main" %}
+  {% include "script.liquid", partials: "vendors/heading-anchors", type: "module" %}
   {% if site.configuration.service_worker == true %}
   <script>
     if ('serviceWorker' in navigator) {

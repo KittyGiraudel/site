@@ -20,7 +20,7 @@ In my first pass, I rendered it at the top of the article. It’s fine, it works
 {% assign parts = content | split: "</p>" %}
 {{ parts | first }}</p>
 
-{% include "ad.html" %}
+{% include "ad.liquid" %}
 
 {% for part in parts offset: 1 %}
   {{ part }}{% unless forloop.last %}</p>{% endunless %}
@@ -46,7 +46,7 @@ What if we created a filter that splits the content into 2 parts: the first cont
 ```liquid
 {% assign parts = content | split_content %}
 {{ parts[0] }}
-{% include "ad.html" %}
+{% include "ad.liquid" %}
 {{ parts[1] }}
 ```
 

@@ -11,7 +11,7 @@ keywords:
 permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
-{% include "styles.html", partials: "
+{% include "styles.liquid", partials: "
   components/collection-navigation,
   components/list,
   components/tags
@@ -28,9 +28,9 @@ time to time.
 - 👩‍💻 For *code* recipes, head to the [snippets](/snippets/) section.
 {% endmarkdown %}
 
-{% include "ad.html" %}
-{% include "post_list.html", items: posts %}
-{% include "pagination.html",
+{% include "ad.liquid" %}
+{% include "post_list.liquid", items: posts %}
+{% include "pagination.liquid",
   label: "posts",
   nextPageHref: pagination.nextPageHref,
   previousPageHref: pagination.previousPageHref

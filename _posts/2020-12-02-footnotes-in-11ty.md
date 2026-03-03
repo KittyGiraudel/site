@@ -59,13 +59,13 @@ It is important not to use an arrow function but a function declaration since we
 
 ## Rendering footnotes
 
-For that I created a `footnotes.html` partial which I render at the bottom of the `post` layout (passing it the current page object), like so:
+For that I created a `footnotes.liquid` partial which I render at the bottom of the `post` layout (passing it the current page object), like so:
 
 {% raw %}
 ```html
 <article>
   {{ content }}
-  {% include "components/footnotes.html", page: page %}
+  {% include "components/footnotes.liquid", page: page %}
 </article>
 ```
 {% endraw %}

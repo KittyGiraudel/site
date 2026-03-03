@@ -9,7 +9,7 @@ keywords:
 permalink: /snippets/
 ---
 
-{% include "styles.html", partials: "
+{% include "styles.liquid", partials: "
   components/list,
   components/tags
 " %}
@@ -20,7 +20,7 @@ they can be easily retrieved and referenced. It should be possible to copy and
 paste them with minor effort.
 {% endmarkdown %}
 
-{% include "ad.html" %}
+{% include "ad.liquid" %}
 
 {% assign snippets = collections.snippets | sort_by: 'date' | reverse %}
 
@@ -37,7 +37,7 @@ paste them with minor effort.
       {{ snippet.data.title }}
     </a>
 
-    {% include "tags.html", tags: snippet.data.tags %}
+    {% include "tags.liquid", tags: snippet.data.tags %}
   </li>
   {% endfor %}
 </ul>

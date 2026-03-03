@@ -14,7 +14,7 @@ pagination:
 permalink: "/projects/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
-{% include "styles.html", partials: "
+{% include "styles.liquid", partials: "
   components/list,
   components/showcase,
   components/tile,
@@ -23,7 +23,7 @@ permalink: "/projects/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
 " %}
 
 {% assign main_projects = projects | where: "showcase", true | slice: 0, 3 %}
-{% include "showcase.html",
+{% include "showcase.liquid",
   type: "project",
   title: "Showcased projects",
   hidden_title: true,
@@ -31,12 +31,12 @@ permalink: "/projects/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
   items: main_projects
 %}
 
-{% include "ad.html" %}
+{% include "ad.liquid" %}
 
 <ul class="List">
   {% for project in paginatedProjects %}
   <li class="List__item">
-    {% include "tags.html", tags: project.tags %}
+    {% include "tags.liquid", tags: project.tags %}
     <a href="{{ project.link }}" class="List__primary-content" target="_blank"
       rel="noopener noreferrer">{{ project.name }}</a>
     <p class="List__secondary-content">{{ project.description }}</p>
@@ -44,7 +44,7 @@ permalink: "/projects/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
 {% endfor %}
 </ul>
 
-{% include "pagination.html",
+{% include "pagination.liquid",
   label: "projects",
   nextPageHref: pagination.nextPageHref,
   previousPageHref: pagination.previousPageHref

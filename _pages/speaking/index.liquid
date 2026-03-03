@@ -9,7 +9,7 @@ keywords:
 permalink: /talks/
 ---
 
-{% include "styles.html", partials: "
+{% include "styles.liquid", partials: "
   components/list,
   components/tags
 " %}
@@ -20,7 +20,7 @@ great events. If you would like me to speak at your conference, be sure to get
 in touch!
 {% endmarkdown %}
 
-{% include "ad.html" %}
+{% include "ad.liquid" %}
 
 <ul class="List">
   {% for event in speaking %}

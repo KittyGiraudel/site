@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% include "styles.html", partials: "
+{% include "styles.liquid", partials: "
 pages/post,
 components/blockquote,
 components/collection-navigation,
@@ -34,16 +34,16 @@ components/tile
   {% endif %}
 
   <div itemprop="articleBody">
-    {% include "post_edits.html", edits: edits %}
+    {% include "post_edits.liquid", edits: edits %}
 
     <heading-anchors selector="h2,h3,h4" content="§">
       {% assign parts = content | split_content %}
       {{ parts[0] }}
-      {% include "ad.html" %}
+      {% include "ad.liquid" %}
       {{ parts[1] }}
     </heading-anchors>
 
-    {% include "job_notice.html", class: "Hook", label: "Pssst!" %}
+    {% include "job_notice.liquid", class: "Hook", label: "Pssst!" %}
   </div>
 
   {% footnotes page %}
@@ -68,10 +68,10 @@ components/tile
 </script>
 {% endif %}
 
-{% include "collection_navigation.html",
+{% include "collection_navigation.liquid",
 page: page,
 collection: collections.posts,
 label: "post"
 %}
 
-{% include "script.html", partials: "utilities, post" %}
+{% include "script.liquid", partials: "utilities, post" %}

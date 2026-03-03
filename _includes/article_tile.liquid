@@ -4,7 +4,7 @@
 {% capture article_url %}{% if post.data.external %}{{ post.data.external.url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
 {% capture article_label %}Read article <span class="visually-hidden">{{ post.data.title }}</span>{% endcapture %}
 
-{% include "tile.html",
+{% include "tile.liquid",
   primary_lang: post.data.lang,
   primary: post.data.title,
   secondary: article_meta,

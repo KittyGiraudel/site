@@ -236,7 +236,7 @@ So I’ve implemented a few changes. First, I’ve moved the ad a little lower i
 {​% assign parts = content | split: "</p>" %}
 {​{ parts | first }}</p>
 
-{​% include "ad.html" %}
+{​% include "ad.liquid" %}
 
 {​% for part in parts offset: 1 %}
   {​{ part }}{​% unless forloop.last %}</p>{​% endunless %}
