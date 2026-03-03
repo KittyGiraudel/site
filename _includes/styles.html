@@ -6,8 +6,8 @@
       {% for path in paths -%}{%- include "../assets/css/{{ path | strip }}.css" -%}{%- endfor %}
     {%- endcapture -%}
 
-    <style>{{ css }}</style>
+    <style data-helmet>{{ css }}</style>
   {%- else -%}
-    {%- for path in paths %}<link rel="stylesheet" href="/assets/css/{{ path | strip }}.css" />{% endfor %}
+    {%- for path in paths %}<link data-helmet rel="stylesheet" href="/assets/css/{{ path | strip }}.css" />{% endfor %}
   {%- endif %}
 {% endif %}

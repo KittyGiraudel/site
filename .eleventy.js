@@ -21,6 +21,7 @@ export const CONFIG = {
   inlineStyles: PRODUCTION,
   serviceWorker: PRODUCTION,
   metaRefresh: PRODUCTION,
+  helmet: true,
 }
 
 /** @param {import('@11ty/eleventy/UserConfig').default} config */
@@ -29,6 +30,7 @@ export default function (config) {
   // ---------------------------------------------------------------------------
   if (CONFIG.minifyHTML) config.addTransform('htmlmin', minifyHTML)
   if (CONFIG.wrapEmojis) config.addTransform('emoji', a11yEmojis)
+  if (CONFIG.helmet) config.addTransform('helmet', helmet)
 
   // Watch targets
   // ---------------------------------------------------------------------------
@@ -281,4 +283,12 @@ function splitContent(html) {
       .join('')
 
   return [serialize(beforeNodes), serialize(afterNodes)]
+}
+
+function helmet(content, outputPath) {
+  if (!outputPath.endsWith('.html')) return content
+  const $ = cheerio.load(content)
+  const $head = $('head')
+  $('body [data-helmet]').each((_, el) => $head.append($(el).remove()))
+  return $.html()
 }
