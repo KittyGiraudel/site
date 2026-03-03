@@ -4,12 +4,12 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for page in collections.all %}
-    {% unless page.data.external %}
+    {%- for page in collections.all %}
+    {%- unless page.data.external %}
     <url>
         <loc>{{ site.url }}{{ page.url | url }}</loc>
         {% if page.date %}<lastmod>{{ page.date | date_to_xmlschema }}</lastmod>{% endif %}
     </url>
-    {% endunless %}
-    {% endfor %}
+    {%- endunless %}
+    {%- endfor %}
 </urlset>
