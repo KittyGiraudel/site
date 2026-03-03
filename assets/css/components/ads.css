@@ -86,7 +86,7 @@
   .RandomName__holder {
     position: fixed;
     bottom: 0.5em;
-    right: 1em;
+    left: 1em;
     min-height: 0;
     z-index: 100;
   }
