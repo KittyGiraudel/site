@@ -1,5 +1,6 @@
 {% assign label = label | default: "Heads up!" %}
 {% assign wrapper_class = class | default: "Tile" %}
+
 <div class="{{ wrapper_class }}"{% if style %} style="{{ style }}"{% endif %}>
   <p style="margin: 0"><strong>{{ label }}</strong> {{ site.jobNotice.text }} <a href="{{ site.jobNotice.url }}" rel="noopener noreferrer">Read more on LinkedIn</a>. ✨</p>
 </div>

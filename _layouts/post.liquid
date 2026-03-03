@@ -3,34 +3,34 @@ layout: default
 ---
 
 {% include "styles.liquid", partials: "
-pages/post,
-components/blockquote,
-components/collection-navigation,
-components/figure,
-components/footnotes,
-components/hook,
-components/giscus,
-components/post-date,
-components/code,
-components/table,
-components/tile
+  pages/post,
+  components/blockquote,
+  components/collection-navigation,
+  components/figure,
+  components/footnotes,
+  components/hook,
+  components/giscus,
+  components/post-date,
+  components/code,
+  components/table,
+  components/tile
 " %}
 
 <article itemscope itemtype="https://schema.org/Article" class="Post">
   {% if page.date %}
-  <p class="PostDate">
-    <span itemprop="datePublished">{{ page.date | time }}</span>
-    {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
-    {% if external %}{% else %}<span class="Fleuron">❦</span> <span itemprop="timeRequired" title="Estimated read time">{{ content | strip_html | reading_time }}</span>{% endif %}
-  </p>
+    <p class="PostDate">
+      <span itemprop="datePublished">{{ page.date | time }}</span>
+      {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
+      {% if external %}{% else %}<span class="Fleuron">❦</span> <span itemprop="timeRequired" title="Estimated read time">{{ content | strip_html | reading_time }}</span>{% endif %}
+    </p>
   {% endif %}
 
   {% if external %}
-  <p>
-    This article is not hosted on <a href="/">kittygiraudel.com</a>. You will be
-    automatically redirected to <a href="{{ external.url }}">{{ external.host }}</a>
-    to read it. If it doesn’t work, please manually follow the link.
-  </p>
+    <p>
+      This article is not hosted on <a href="/">kittygiraudel.com</a>. You will be
+      automatically redirected to <a href="{{ external.url }}">{{ external.host }}</a>
+      to read it. If it doesn’t work, please manually follow the link.
+    </p>
   {% endif %}
 
   <div itemprop="articleBody">

@@ -11,16 +11,16 @@
       </span>
     
       {% if data.external %}
-      <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
-        lang="{{ data.lang | downcase }}" {% endif %} href="{{ data.external.url }}" target="_blank"
-        rel="noopener noreferrer">
-        {{ data.title }}
-      </a>
+        <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
+          lang="{{ data.lang | downcase }}" {% endif %} href="{{ data.external.url }}" target="_blank"
+          rel="noopener noreferrer">
+          {{ data.title }}
+        </a>
       {% else %}
-      <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
-        lang="{{ data.lang | downcase }}" {% endif %} href="{{ item.url }}">
-        {{ data.title }}
-      </a>
+        <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
+          lang="{{ data.lang | downcase }}" {% endif %} href="{{ item.url }}">
+          {{ data.title }}
+        </a>
       {% endif %}
 
       {% include "tags.liquid", tags: data.tags %}

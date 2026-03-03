@@ -14,38 +14,38 @@ http://ogp.me/ns/article#">
   <title>{% if title %}{{ title }} | {{ site.author }}{% else %}{{ site.author }}{% endif %}</title>
   <meta name="description" content="{{ page_description | emoji_to_text | escape }}">
   {% if keywords %}
-  <meta name="keywords" content="{{ keywords | join: ',' }}" />
+    <meta name="keywords" content="{{ keywords | join: ',' }}" />
   {% elsif tags %}
-  <meta name="keywords" content="{{ tags | join: ',' }}" />
+    <meta name="keywords" content="{{ tags | join: ',' }}" />
   {% endif %}
   <meta name="author" content="{{ guest | default: site.author }}">
   <link rel="canonical" href="{{ page_url }}">
 
   <!-- Robots & indexing -->
   {% if external %}
-  <meta name="robots" content="noindex,nofollow">
-  {% if site.configuration.meta_refresh == true %}
-  <meta http-equiv="refresh" content="0;url={{ external.url }}" />
-  {% endif %}
+    <meta name="robots" content="noindex,nofollow">
+    {% if site.configuration.meta_refresh == true %}
+      <meta http-equiv="refresh" content="0;url={{ external.url }}" />
+    {% endif %}
   {% else %}
-  <meta name="robots" content="index,follow">
+    <meta name="robots" content="index,follow">
   {% endif %}
 
   <!-- Styles -->
   {% include "styles.liquid", partials: "
-  base/base,
-  base/helpers,
-  layout/header,
-  layout/footer,
-  layout/main,
-  layout/navigation,
-  components/abbr,
-  components/ads,
-  components/info,
-  components/skip-link,
-  components/theme-button,
-  components/title,
-  base/shame
+    base/base,
+    base/helpers,
+    layout/header,
+    layout/footer,
+    layout/main,
+    layout/navigation,
+    components/abbr,
+    components/ads,
+    components/info,
+    components/skip-link,
+    components/theme-button,
+    components/title,
+    base/shame
   " %}
 
   <!-- RSS -->

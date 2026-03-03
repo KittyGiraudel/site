@@ -19,24 +19,24 @@ layout: default
   <h2>Ingredients</h2>
   <ul class="RecipeIngredients">
     {% for ingredient in ingredients %}
-    <li>{{ ingredient }}</li>
+      <li>{{ ingredient }}</li>
     {% endfor %}
   </ul>
 
   <h2>Preparation</h2>
   <ol class="RecipeSteps">
     {% for step in steps %}
-    <li>{{ step }}</li>
+      <li>{{ step }}</li>
     {% endfor %}
   </ol>
 
   {% if notes %}
-  <h2>Notes</h2>
-  <ul>
-    {% for note in notes %}
-    <li>{{ note }}</li>
-    {% endfor %}
-  </ul>
+    <h2>Notes</h2>
+    <ul>
+      {% for note in notes %}
+      <li>{{ note }}</li>
+      {% endfor %}
+    </ul>
   {% endif %}
 </article>
 
