@@ -8,13 +8,6 @@ tags:
 
 Over the last year, I have been driving the accessibility initiative at N26 to a point where it’s interesting enough that I can write about it. Because it’s a step by step process, this write-up is divided in sections. Feel free to jump to the one relevant to your interests.
 
-* [Making it a non-functional requirement](##making-it-a-non-functional-requirement)
-* [Preventing mistakes early](#preventing-mistakes-early)
-* [Enabling power](#enabling-power)
-* [Sharing knowledge](#sharing-knowledge)
-* [Testing what’s testable](#testing-whats-testable)
-* [TL;DR](#wrapping-things-up)
-
 ## Making it a non-functional requirement
 
 An issue that often arises when it comes to introducing accessibility on a project is that there is either no time or no money for that. “That’s not our audience!” they say. Product owners, often by (understandable) lack of knowledge on the topic, dismiss accessibility for it being too inconvenient to implement.

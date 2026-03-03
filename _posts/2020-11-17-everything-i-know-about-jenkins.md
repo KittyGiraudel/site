@@ -10,16 +10,6 @@ N26 has been using Jenkins for as long as I’ve been part of this company. Over
 
 Please note that I am by no means a Jenkins expert. I’m a frontend developer at heart, so this is all pretty alien to me. I just wanted to share what I learnt but this might not be optimal in any way.
 
-- [Go scripted](#go-scripted)
-- [Jenkins fails fast](#jenkins-fails-fast)
-- [Conditional parallelisation](#conditional-parallelisation)
-- [Mark stages as skipped](#mark-stages-as-skipped)
-- [Built-in retry](#built-in-retry)
-- [Manual stage retry](#manual-stage-retry)
-- [Confirmation stage](#confirmation-stage)
-- [Handle aborted builds](#handle-aborted-builds)
-- [Build artefacts](#build-artefacts)
-
 ## Go scripted
 
 The declarative syntax is nice for simple things, but it is eventually quite limited in what can be done. For more complex things, consider using the scripted pipeline, which can be authored with Groovy.

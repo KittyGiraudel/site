@@ -9,7 +9,9 @@ tags:
   - Component
 ---
 
-{% info %} The following is a guest post by David Khourshid about how he uses Sass and the [7-1 pattern](https://sass-guidelin.es/#architecture) to style React components. React being all over the place these days, I am very glad to have him talking about his experience here. {% endinfo %}
+The following is a guest post by David Khourshid about how he uses Sass and the [7-1 pattern](https://sass-guidelin.es/#architecture) to style React components. React being all over the place these days, I am very glad to have him talking about his experience here.
+
+---
 
 Chances are, as a frontend developer, you’ve heard of Facebook’s library for building user interfaces, [React](https://facebook.github.io/react/). Of course, an important part of building UI is styling it, as well. React strongly enforces the idea that a user interface is composed of many ["reusable components with well-defined interfaces"](https://facebook.github.io/react/docs/reusable-components.html), and many CSS methodologies and architectures embrace this as well, including:
 

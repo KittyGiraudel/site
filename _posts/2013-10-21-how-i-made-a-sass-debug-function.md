@@ -4,9 +4,10 @@ description: A technical write-up on creating a function to debug Sass data
 tags:
   - Sass
   - Debug
+edits:
+  - date: 2013-10-22
+    md: The code explained in this article has been slightly revisited in [the pen](https://codepen.io/KittyGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen.
 ---
-
-{% info %} The code explained in this article has been slightly revisited in [the pen](https://codepen.io/KittyGiraudel/pen/unyBH) afterwards. For the ultimate version of the code, check the pen. {% endinfo %}
 
 You know how much I love playing with Sass lists. I think they are the most powerful and useful feature in Sass. It’s a shame there is so few functions to deal with them. This is why I made [SassyLists](https://github.com/at-import/SassyLists).
 

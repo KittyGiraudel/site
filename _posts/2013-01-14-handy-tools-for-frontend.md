@@ -9,15 +9,6 @@ So I’ve been thinking (yeah, true story). And it occurred to me, it would be a
 
 If you’re a webdesigner or developer, you’ve probably already stumbled upon some wonderful online tools / services. Not necessarily complicated things, just things you definitely need. There are really a bunch of them, and Wild Web Watch is pretty much focused on listing them, but I’d like to focus on just a few of them. The ones I use very often.
 
-So here are the tools I’ll cover in this article:
-
-- CSS Coloratum
-- WeLoveIconFonts
-- PageSpeed Insights
-- Colorzilla Extension
-- Colorzilla Gradient Generator
-- CanIUse
-
 ## CSS Coloratum
 
 - Author: Lea Verou

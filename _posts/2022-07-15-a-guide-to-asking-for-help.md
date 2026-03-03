@@ -10,13 +10,6 @@ Over the last few months, I have spent a considerable amount of time on the [San
 
 I’m going to use this blog post to dump a bunch of advice on how to best get support, because one thing became apparent after going through literally hundreds and hundreds of requests: a lot of people have no clue how to ask for help efficiently. So let’s go through some basics, shall we?
 
-- [Search first, ask second](#search-first-ask-second)
-- [Be polite](#be-polite)
-- [Be explicit](#be-explicit)
-- [Be patient](#be-patient)
-- [Slack specifics](#slack-specifics)
-- [Wrapping up](#wrapping-up)
-
 ## Search first, ask second
 
 The fastest support request is the one that doesn’t happen. Before jumping onto GitHub, Slack, Stack Overflow or whatnot, spend some time researching your problem. Give it a few Google searches. Browse through relevant GitHub issues, or even the code itself. Look around for something similar. Chances are that someone had a similar situation already, which has been addressed.

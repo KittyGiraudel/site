@@ -15,11 +15,6 @@ With single-page applications using a JavaScript-powered routing system, only th
 
 In this article, I will share what I learnt from Temesis and how to make sure the title of your React <abbr title='Single-Page Applications'>SPAs</abbr> is accessible to assistive technologies.
 
-- [Overview](#overview)
-- [Boilerplate code](#boilerplate-code)
-- [Title announcer](#title-announcer)
-- [Wrapping up](#wrapping-up)
-
 ## Overview
 
 We will build a teeny-tiny React application with [`react-router`](https://reacttraining.com/react-router) and [`react-helmet`](https://github.com/nfl/react-helmet). Our application will consist of:

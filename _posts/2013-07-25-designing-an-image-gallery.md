@@ -60,7 +60,7 @@ Meanwhile the pictures are all wrapped in a regular unordered list which has a h
 </li>
 ```
 
-## Building features over the layout
+## Adding features to the layout
 
 We needed two major features for this image gallery:
 

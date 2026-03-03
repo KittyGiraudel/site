@@ -11,11 +11,6 @@ Dependencies are part of software development. It is unrealistic to expect runni
 
 But managing dependencies can be tricky. In this article, I’ll share some thoughts on how we stayed sane with dependencies at N26.
 
-- [Documenting dependencies](#documenting-dependencies)
-- [Auditing dependencies](#auditing-dependencies)
-- [Unused dependencies](#unused-dependencies)
-- [Outdated dependencies](#outdated-dependencies)
-
 ## Documenting dependencies
 
 As a project grows bigger and older, it sometimes becomes difficult to know which dependency serves what purpose. For some of them, it’s pretty obvious, but for dependencies around tooling for instance, it can get tricky to keep track of what’s needed.

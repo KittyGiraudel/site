@@ -1,6 +1,7 @@
 ---
 title: Imagining native skip links
 description: A reflection on skip links and what a native HTML skip link could look like
+toc: false
 tags:
   - Component
   - HTML
@@ -11,12 +12,6 @@ tags:
 [We recently talked about skip links](https://kittygiraudel.com/2020/12/06/a11y-advent-skip-to-content/) in our [A11y Advent calendar](https://kittygiraudel.com/2020/12/01/a11y-advent-calendar/). In case you are not familiar with the concept, I quote:
 
 > [T]he page is […] reloaded when following a link and the focus is restored to the top of the page. When navigating with [assistive technologies], that means having to tab through the entire header, navigation, sometimes even sidebar before getting to access the main content. This is bad. […] To work around the problem, a common design pattern is to implement a skip link, which is an anchor link sending to the main content area.
-
-- [The problem](#the-problem)
-- [A browser feature?](#a-browser-feature)
-- [An HTML API](#an-html-api)
-- [What about existing skip links?](#what-about-existing-skip-links)
-- [Wrapping up](#wrapping-up)
 
 ## The problem
 

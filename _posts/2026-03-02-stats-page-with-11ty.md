@@ -10,8 +10,7 @@ The nice thing about having blogged for so long is that there is a lot of data t
 
 {% assign stats = collections.postStats %}
 
-{% info %}Here are the stats in case you’re curious: <strong>{{ stats.postCount }}</strong> posts between {{ stats.firstPostDate | time }} and {{ stats.lastPostDate | time }}. An average of <strong>{{ stats.avgPostsPerYear }}</strong> articles per year, <strong>{{ stats.avgPostsPerMonth }}</strong> per month, <strong>{{ stats.avgPostsPerWeek }}</strong> per week, with <strong>{{ stats.avgDaysBetweenPosts }}</strong> days between articles on average. Check out [the stats page](/stats/) for the full breakdown!
-{% endinfo %}
+Here are the stats in case you’re curious: <strong>{{ stats.postCount }}</strong> posts between {{ stats.firstPostDate | time }} and {{ stats.lastPostDate | time }}. An average of <strong>{{ stats.avgPostsPerYear }}</strong> articles per year, <strong>{{ stats.avgPostsPerMonth }}</strong> per month, <strong>{{ stats.avgPostsPerWeek }}</strong> per week, with <strong>{{ stats.avgDaysBetweenPosts }}</strong> days between articles on average. Check out [the stats page](/stats/) for the full breakdown!
 
 ## Aggregating data
 

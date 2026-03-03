@@ -10,16 +10,6 @@ tags:
 
 Access management is important to any CMS. Unfortunately, [Sanity](https://sanity.io)’s ability to define custom roles is restricted to customers of the business plan. In this article, we will see how to customize the studio based on default roles, something that is possible with all Sanity plans — albeit a little tricky to set up (kind thanks to [Knut](https://twitter.com/kmelve) for showing me the way).
 
-1. [Introduction](#introduction)
-2. [Caveats](#caveats)
-3. [Accessing the user’s role](#accessing-the-users-role)
-4. [Updating the desk structure](#updating-the-desk-structure)
-5. [Updating the “Create new document” dialog](#updating-the-create-new-document-dialog)
-6. [Updating the search](#updating-the-search)
-7. [Locking fields for editors](#locking-fields-for-editors)
-8. [Locking actions for editors](#locking-actions-for-editors)
-9. [Bonus: Hiding other tools](#bonus-hiding-other-tools)
-
 ## Introduction
 
 Sanity comes with a set of [predefined roles for all plans](https://www.sanity.io/docs/roles-reference#5ebb6b05ae21). They are:

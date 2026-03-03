@@ -6,7 +6,9 @@ tags:
   - CSS
 ---
 
-{% info %}The following is a guest post by [Ana Tudor](https://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code. {% endinfo %}
+The following is a guest post by [Ana Tudor](https://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.
+
+---
 
 I had no idea how powerful CSS gradients could be until late 2011, when I found the [CSS3 Patterns Gallery](https://lea.verou.me/css3patterns/) made by Lea Verou. The idea that you can obtain many shapes using just gradients was a starting point for many CSS experiments I would later do.
 

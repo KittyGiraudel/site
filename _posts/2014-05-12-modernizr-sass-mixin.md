@@ -6,7 +6,9 @@ tags:
   - Sass
 ---
 
-{% info %} The following is a guest post by Daniel Guillan. Daniel is the co-founder and chief design officer at Vintisis. I am very glad to have him here today, writing about a clever mixin to ease the use of Modernizr with Sass. {% endinfo %}
+The following is a guest post by Daniel Guillan. Daniel is the co-founder and chief design officer at Vintisis. I am very glad to have him here today, writing about a clever mixin to ease the use of Modernizr with Sass.
+
+---
 
 I use [Modernizr](https://modernizr.com/) on every single project I work on. In a nutshell, it’s a JS library that helps us take decisions based on the capabilities of the browser accessing our site. Modernizr quickly performs tests to check for browser support of modern CSS and HTML implementations like CSS 3d Transforms, HTML5 Video or Touch Events among [many many others](https://modernizr.com/download/).
 

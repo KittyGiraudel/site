@@ -9,8 +9,6 @@ tags:
 
 I [created this site](/2012/11/09/site-redesign-new-blog/) in November 2012, with a strictly static old school set up. I quickly moved on to a custom PHP workflow only to move to [Jekyll](https://jekyllrb.com) about 3 months later (February 2013). I wrote about the experience in [this article](/2013/02/21/moving-to-jekyll/).
 
-![Mixture.io](/assets/images/oh-jekyll-here-we-go-again/mixture.png)
-
 Over a year later (June 2014), I decided to give Mixture a go. Mixture is a static site generator as well, but it is packaged as an application with a nice interface and a couple of extra features that Jekyll does not have. The kind folks at Mixture offered me to write about the transition on their blog.
 
 And here we are, almost a year later again, back to Jekyll, one more time. I thought it would wait for Jekyll 3 to be released but it did not. To be perfectly honest with you, I don’t see it changing anytime soon (but I might be wrong, I seem to be quite undecided regarding this).

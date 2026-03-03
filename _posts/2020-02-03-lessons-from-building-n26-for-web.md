@@ -11,14 +11,6 @@ In just about a month, that will be 3.5 years I am at N26. I was hired as the fi
 
 So I did, with immeasurable help from [Mike Smart](https://twitter.com/smartmike). So we did, us all, the web engineers that have been and are still with us to this day. In this article, I would like to share a few things I learnt and discovered along the way.
 
-- [Hire people, not skills](#hire-people-not-skills)
-- [Don’t talk about code](#dont-talk-about-code)
-- [Documentation, documentation, documentation](#documentation-documentation-documentation)
-- [Make tests first-class citizens](#make-tests-first-class-citizens)
-- [So much to do, so little time](#so-much-to-do-so-little-time)
-- [Just do it (yourself)](#just-do-it-yourself)
-- [Wrapping up](#wrapping-up)
-
 ## Hire people, not skills
 
 N26, like many startups, is growing fast. When I joined, we were just about 100 people. Now, it’s way over a thousand, in about 3 years. We had to hire a lot, and quickly. I am very thankful I got to lead hiring for the web team because I could make sure we balance hiring fast with hiring well.

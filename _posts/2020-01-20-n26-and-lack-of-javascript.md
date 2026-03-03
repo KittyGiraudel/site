@@ -11,12 +11,6 @@ tags:
 
 I have been meaning to write about this topic for years now and always found a reason to postpone. Now is the time, and I am incredible excited to uncover one of the best features of the N26 web platform.
 
-- [Why bother?](#why-bother)
-- [Tailoring the experience](#tailoring-the-experience)
-- [Detecting JavaScript](#detecting-javascript)
-- [Avoiding mounting flash](#avoiding-mounting-flash)
-- [Minimising failure](#minimising-failure)
-
 ## Why bother?
 
 JavaScript is fickle. It can fail to load. It can be disabled. It can be blocked. It can fail to run. It probably is fine most of the time, but when it fails, everything tends to go bad. And having such a hard point of failure is not ideal.

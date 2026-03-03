@@ -13,17 +13,7 @@ I recently moved a significant codebase from [Create-React-App](https://create-r
 
 There are plenty reasons why you might want to move to Next from a CRA app. It provides server-side rendering (SSR), and even [incremental static regeneration](https://vercel.com/docs/next.js/incremental-static-regeneration) (ISR) when hosted on Vercel. It’s an encompassing framework with built-in routing, image optimization, development environment, and more.
 
-This post is a high-level walkthrough of things to deal with to finalized the migration from CRA to Next. Here’s what we’ll cover:
-
-- [HTML boilerplate](#html-boilerplate)
-- [Head content](#head-content)
-- [Routing](#routing)
-- [Code splitting](#code-splitting)
-- [Styling](#styling)
-- [CSR/SSR](#csr-ssr)
-- [Linting](#linting)
-- [Running both systems](#running-both-systems)
-- [Wrapping up](#wrapping-up)
+This post is a high-level walkthrough of things to deal with to finalized the migration from CRA to Next.
 
 ## HTML boilerplate
 

@@ -11,17 +11,6 @@ December is the month of [Advent of Code](https://adventofcode.com/), and with i
 
 Formerly, I used to have a lot of pure functions which accepted a bi-dimensional array, but I decided that using a Grid class would be better as it could keep track of its own data, and offer plenty methods to access and manipulate it.
 
-- [Terminology](#terminology)
-- [Instantiating a grid](#instantiating-a-grid)
-- [Getting dimensions](#getting-dimensions)
-- [Accessing data](#accessing-data)
-- [Writing data](#writing-data)
-- [Iterating over the grid](#iterating-over-the-grid)
-- [Rotating the grid](#rotating-the-grid)
-- [Rendering the grid](#rendering-the-grid)
-- [Full example](#full-example)
-- [Wrapping up](#wrapping-up)
-
 ## Terminology
 
 To represent a pair of coordinates, we’ll use a `Coords` type. It’s an alias for `[number, number]` where the first value is the row index (`ri`, or Y in a traditional coordinate system) and the second value the column index (`ci`, or X).

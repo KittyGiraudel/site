@@ -11,15 +11,6 @@ tags:
 
 I originally wrote this piece for our documentation at Gorillas in order to advocate for a more inclusive workplace. After having [mentioned it on Twitter](https://twitter.com/KittyGiraudel/status/1446436115553177670?s=20) and been requested it a few times, I decided to publish it. I hope this helps!
 
-## Table of contents
-
-1. [Introduction](#introduction)
-2. [Terminology](#terminology)
-3. [Using pronouns](#using-pronouns)
-4. [Etiquette](#etiquette)
-5. [Collecting gender information](#collecting-gender-information)
-6. [Inclusive language](#inclusive-language)
-
 ## Introduction
 
 It helps trying to see **gender as some sort of a spectrum rather than a binary thing**. Most people live somewhere on the edges of that spectrum, as men and women, usually on the side that correlates with their assigned sex at birth. A lot of people however live somewhere on that spectrum. That’s **gender identity, the personal sense of one’s own gender**. Then, there is gender expression, which is how one decides to show their gender identity to the world (via mannerisms, interests, physical appearance…).

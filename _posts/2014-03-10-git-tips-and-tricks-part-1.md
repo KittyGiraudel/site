@@ -6,7 +6,9 @@ tags:
   - git
 ---
 
-{% info %} The following is the first post of a series written by my dear brother Loïc, Git expert at Future PLC. I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness! {% endinfo %}
+The following is the first post of a series written by my dear brother Loïc, Git expert at Future PLC. I’ll release the next parts in the next few weeks, so be sure to stay tuned for more Git awesomeness!
+
+---
 
 Hi people! Today, I’m gonna share with you some Git tips & tricks I’ve already shared with my workmates at Future PLC. But before even starting let’s never forget the more important laws of Git.
 

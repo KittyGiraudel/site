@@ -22,15 +22,6 @@ My coworker [Anita Singh](https://twitter.com/anitas3791) and I have been workin
 
 A lot of you seemed interested in us publishing them, so here they are. They are not a verbatim copy of our company guidelines since ours are quite Gorillas-specific, and they should be generic enough to be taken in most organizations.
 
-- [Setting up your profile](#setting-up-your-profile)
-- [Creating channels](#creating-channels)
-  - [Public or private](#public-or-private)
-- [Writing at the right place](#writing-at-the-right-place)
-- [Notifying people](#notifying-people)
-- [Writing content](#writing-content)
-- [When not to use Slack](#when-not-to-use-slack)
-- [Personally-identifiable information](#personally-identifiable-information)
-
 ## Setting up your profile
 
 In many organizations, Slack is the primary communication tool, even supplanting email. And in this day and age of global pandemic and ever-growing remote working culture, Slack is often the only way we have to know the people we work with.

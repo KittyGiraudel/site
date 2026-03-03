@@ -6,7 +6,9 @@ tags:
   - Thoughts
 ---
 
-{% info %} The following is a guest post by [Christoph Rumpel](https://christoph-rumpel.com/), a passionate Web developer from Austria. I’m very glad to have him writing a motivational post here. {% endinfo %}
+The following is a guest post by [Christoph Rumpel](https://christoph-rumpel.com/), a passionate Web developer from Austria. I’m very glad to have him writing a motivational post here.
+
+---
 
 Here and now is really an exciting time as a web developer or web designer. You can find everything; you need to start your career on the web. There are articles, screencasts, podcasts and forum discussions on really every topic you can think of and this is why you can start being a web designer or developer right now. It is not necessary to have a degree in order to get a job like it is the case in other branches. It is all about what really counts: your work and your personality.
 

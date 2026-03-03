@@ -13,13 +13,6 @@ Now, in single page applications, things are bit more blurry because we no longe
 
 At N26, we have a pretty unique challenge: we support almost all of our features with and **without** JavaScript (thanks to server-side rendering). This implies that a lot of links should become buttons when JavaScript is enabled and running. To avoid authoring ternaries all over the place, we have a single component capable of rendering both links and buttons depending on the given props. We call it `Action`.
 
-- [What component to render](#what-component-to-render)
-- [Open a tab for me, will you?](#open-a-tab-for-me-will-you)
-- [No opener, no referrer](#no-opener-no-referrer)
-- [Is this your type?](#is-this-your-type)
-- [One component, many outfits](#one-component-many-outfits)
-- [Wrapping up](#wrapping-up)
-
 ## What component to render
 
 Our line of reasoning to determine what to render is as follow: if we have an `href` prop, we should render a link (`<a>` element), otherwise we should render a button. It would look like this:

@@ -12,16 +12,6 @@ In this article, I would like to share everything I have learnt about online app
 
 This is going to be a long one, so I broke it down into pieces so you can jump to a specific session more conveniently. The next section is a big summary of the article, and every section also contains its own little TL;DR at the end.
 
-- [Too Long; Didn’t Read](#too-long-didnt-read)
-- [Look after the look and feel](#look-after-the-look-and-feel)
-- [The basic info](#the-basic-info)
-- [Be cautious with links](#be-cautious-with-links)
-- [Mountains o’ skills](#mountains-o-skills)
-- [Education and lack thereof](#education-and-lack-thereof)
-- [It’s all about experience](#its-all-about-experience)
-- [We need something more](#we-need-something-more)
-- [To cover letter or not to cover letter?](#to-cover-letter-or-not-to-cover-letter)
-
 ## Too Long; Didn’t Read
 
 ✨ First impression is everything. Make sure your resume stands out nicely. Work on the presentation and the appearance. Beware of typos, inconsistencies and design flaws. Keep it within a page or two.

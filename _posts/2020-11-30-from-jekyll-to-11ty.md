@@ -15,15 +15,7 @@ I guess I wanted to try Eleventy since it’s all the cool kids talk about nowad
 
 Paul Lloyd wrote [a very good article on migrating from Jekyll](https://24ways.org/2018/turn-jekyll-up-to-eleventy/). [So did Steve Stedman](https://stedman.dev/2020/04/29/make-the-jump-from-jekyll-to-javascript/). [And Alex Pearce](https://alexpearce.me/2020/06/jekyll-to-eleventy/). And probably other smart people. I’d like to add my own contribution to the growing collection of articles about coming from Jekyll.
 
-I’m mostly going to expand on things that took me a while to figure out, hoping to help other poor souls lost in their journey. Find a short table of contents below:
-
-- [TL;DR](#tldr)
-- [Posts & permalinks](#posts-permalinks)
-- [Heading anchors](#heading-anchors)
-- [Markdown & Liquid](#markdown-liquid)
-- [Jekyll filters](#jekyll-filters)
-- [Production specific code](#production-specific-code)
-- [Wrapping up](#wrapping-up)
+I’m mostly going to expand on things that took me a while to figure out, hoping to help other poor souls lost in their journey.
 
 ## TL;DR
 

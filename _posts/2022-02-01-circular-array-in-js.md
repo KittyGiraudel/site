@@ -22,15 +22,6 @@ A circular array is just that. A collection of items that loops on itself so tha
 
 In this article, I’ll walk you through my implementation. If you just want to see the code, check the [circularray](https://github.com/KittyGiraudel/circularray/) repository on GitHub.
 
-- [Nodes](#nodes)
-- [Circular](#circular-array)
-- [Adding items](#adding-items)
-- [Removing items](#removing-items)
-- [Rotating the array](#rotating-the-array)
-- [Array representation](#array-representation)
-- [Example](#example)
-- [Wrapping up](#wrapping-up)
-
 ## Nodes
 
 Our circular array is implemented as a linked list for convenience and performance. That means we don’t maintain an actual array under the hood, just a bunch of “nodes” connected to one another. Like in your typical double-ended queue, every node has a previous and a next node.

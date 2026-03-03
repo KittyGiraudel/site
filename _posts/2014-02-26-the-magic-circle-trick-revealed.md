@@ -6,7 +6,9 @@ tags:
   - Challenge
 ---
 
-{% info %} Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](/2014/02/19/the-magic-circle-a-css-brain-teaser/). {% endinfo %}
+Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](/2014/02/19/the-magic-circle-a-css-brain-teaser/).
+
+---
 
 Time’s up people! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it’s pretty cool to dig into your code to see how you’ve worked around the problem.
 

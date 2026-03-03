@@ -13,12 +13,6 @@ The N26 web platform is built on top of [GraphQL](https://www.apollographql.com/
 
 As mentioned before, we [fully support the absence of JavaScript](/2020/01/18/n26-and-lack-of-javascript/) (thanks to a carefully creafted server-side rendering solution). This brings an interesting challenge: how to work with Apollo GraphQL when JavaScript is not available? That is what we’ll cover in that article.
 
-- [Apollo in React](#apollo-in-react)
-- [Back to basics: forms](#back-to-basics-forms)
-- [Layering a custom GraphQL middleware](#layering-a-custom-graphql-middleware)
-- [Error handling](#error-handling)
-- [Going further](#going-further)
-
 ## Apollo in React
 
 To work with Apollo in React, we use [`react-apollo`](https://github.com/apollographql/react-apollo). This driver provides `useQuery` and `useMutation` hooks which are very handy to communicate with our Apollo server through React components. A simple example might look like this:
