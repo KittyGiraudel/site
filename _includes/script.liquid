@@ -9,7 +9,7 @@
     <script {% if type %}type="{{ type }}"{% endif %}>{{ js }}</script>
   {%- else -%}
     {% for path in paths -%}
-      <script src="/assets/js/{{ path | strip }}.js" {% if type %}type="{{ type }}"{% endif %}></script>
+      <script defer src="/assets/js/{{ path | strip }}.js" {% if type %}type="{{ type }}"{% endif %}></script>
     {%- endfor %}
   {%- endif %}
 {% endif %}
