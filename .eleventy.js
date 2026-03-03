@@ -38,7 +38,11 @@ export default function (config) {
   // Compilation plugins
   // ---------------------------------------------------------------------------
   config.addPlugin(footnotes)
-  config.addPlugin(IdAttributePlugin, { slugify: uslugify, checkDuplicates: false })
+  config.addPlugin(IdAttributePlugin, {
+    slugify: uslugify,
+    checkDuplicates: false,
+    selector: 'h2,h3,h4',
+  })
   config.addPlugin(postStatsPlugin)
   if (CONFIG.syntaxHighlight) config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
 
