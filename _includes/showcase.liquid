@@ -1,8 +1,9 @@
 {% assign more_link_label = link_label %}
 {% assign more_link_url = link_url %}
+{% assign id = title | slugify %}
 
-<section class="Showcase">
-  {% if title %}<h2 class="Showcase__title {% if hidden_title %}visually-hidden{% endif %}">{{ title }}</h2>{% endif %}
+<section class="Showcase" aria-labelledby="{{ id }}">
+  {% if title %}<h2 class="Showcase__title {% if hidden_title %}visually-hidden{% endif %}" id="{{ id }}">{{ title }}</h2>{% endif %}
   <p class="Showcase__copy">{{ copy | markdown }}</p>
 
   <div class="Showcase__container">
