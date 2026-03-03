@@ -91,7 +91,7 @@ Alright, so there is quite a lot to unpack here. Here is the breakdown:
 
 When it comes to minification, there are a few approaches here. One way would be to have a `cssmin` filter based on [clean-css](https://github.com/jakubpawlowicz/clean-css) (or any other CSS minifier). Inside of the `styles.html` partial, we’d apply `| cssmin` to our CSS so it gets optimised.
 
-I went a slightly different path and have an [Eleventy transform](https://www.11ty.dev/docs/config/#transforms) to minify HTML with [html-minifier](https://github.com/kangax/html-minifier). The nice thing about it is that it offers a `minifyCSS` and a `minifyJS` option to compress styles and scripts authored in `<style>` and `<script>` tags respectively. Therefore I have a single transform to minify everything.
+I went a slightly different path and have an [Eleventy transform](https://www.11ty.dev/docs/config/#transforms) to minify HTML with [html-minifier-terser](https://github.com/terser/html-minifier-terser). The nice thing about it is that it offers a `minifyCSS` and a `minifyJS` option to compress styles and scripts authored in `<style>` and `<script>` tags respectively. Therefore I have a single transform to minify everything.
 
 I decided to run that transform only in production because a) I don’t like to have compressed styles and scripts in development since it can make them harder to debug and b) minification is actually not cheap and can take a few seconds on a site as small as mine which means it would dramatically slow down compilation.
 
