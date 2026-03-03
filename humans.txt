@@ -10,5 +10,6 @@
 # TECHNOLOGY COLOPHON
 
     HTML, CSS, JavaScript
-    Eleventy, Simple-Jekyll-Search
+    Eleventy, Simple-Jekyll-Search, heading-anchors
+    Workbox
     Netlify
