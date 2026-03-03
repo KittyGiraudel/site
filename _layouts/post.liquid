@@ -75,3 +75,7 @@ label: "post"
 %}
 
 {% include "script.liquid", partials: "utilities, post" %}
+
+{%  if site.environment != "production" %}
+  {% include "script.liquid", partials: "post-shortcuts" %}
+{% endif %}
