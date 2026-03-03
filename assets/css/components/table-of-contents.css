@@ -1,4 +1,4 @@
-.PostToc {
+.TableOfContents {
   padding: 1em 1.25em;
   border-radius: 1em;
   corner-shape: squircle;
@@ -9,7 +9,7 @@
 }
 
 @media (min-width: 700px) {
-  .PostToc {
+  .TableOfContents {
     float: right;
     max-width: 300px;
     margin-left: var(--vb);
@@ -17,7 +17,7 @@
 }
 
 @media (min-width: 1140px) {
-  .PostToc {
+  .TableOfContents {
     float: right;
     max-width: 300px;
     margin-right: -150px;
@@ -26,7 +26,7 @@
   }
 }
 
-.PostToc__title {
+.TableOfContents__title {
   margin: 0 0 var(--vb-1\/2);
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -35,27 +35,27 @@
   opacity: 0.8;
 }
 
-.PostToc__title .Fleuron {
+.TableOfContents__title .Fleuron {
   transform: scale(1.5);
   position: relative;
 }
 
-.PostToc__list {
+.TableOfContents__list {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
-.PostToc__item {
+.TableOfContents__item {
   margin: var(--vb-1\/6) 0;
   line-height: 1.2;
 }
 
-.PostToc__list--sublist {
+.TableOfContents__list--sublist {
   margin-top: var(--vb-1\/6);
   margin-left: 1.25rem;
 }
 
-.PostToc__list--sublist .PostToc__item {
+.TableOfContents__list--sublist .TableOfContents__item {
   font-size: 90%;
 }

@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio'
 import uslugify from 'uslug'
 
 export default function tocPlugin(eleventyConfig) {
-  eleventyConfig.addFilter('toc', html => {
+  eleventyConfig.addFilter('table_of_contents', html => {
     if (!html || typeof html !== 'string') {
       return []
     }

@@ -15,7 +15,7 @@
  * 1. If the ad is at the top of the content (and not sandwiched between other
  *    content blocks), increase its spacing.
  */
-.PostToc:first-child + .RandomName {
+.TableOfContents:first-child + .RandomName {
   margin-bottom: var(--vb); /* 1 */
 }
 
@@ -46,12 +46,12 @@
    * If the ad is not next to the table of contents, shift its layout early
    * since it has enough room for 2 columns.
    */
-  :not(.PostToc) + .RandomName,
+  :not(.TableOfContents) + .RandomName,
   .RandomName:first-child {
     flex-direction: row;
   }
 
-  :not(.PostToc) + .RandomName .RandomName__content::before,
+  :not(.TableOfContents) + .RandomName .RandomName__content::before,
   .RandomName:first-child .RandomName__content::before {
     width: 4px;
     height: auto;
@@ -67,11 +67,11 @@
    * If the ad is next to the table of contents, shift its layout late since it
    * has less room for 2 columns before the ToC goes floating.
    */
-  .PostToc + .RandomName {
+  .TableOfContents + .RandomName {
     flex-direction: row;
   }
 
-  .PostToc + .RandomName .RandomName__content::before {
+  .TableOfContents + .RandomName .RandomName__content::before {
     width: 4px;
     height: auto;
     top: 0;

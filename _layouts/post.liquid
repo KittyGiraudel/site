@@ -13,8 +13,8 @@ layout: default
   components/post-date,
   components/code,
   components/table,
-  components/tile,
-  components/post-toc
+  components/table-of-contents,
+  components/tile
 " %}
 
 <article itemscope itemtype="https://schema.org/Article" class="Post">
@@ -39,8 +39,8 @@ layout: default
       {% include "post_edits.liquid", edits: edits %}
     
       {% if toc != false %}
-        {% assign toc_items = content | toc %}
-        {% include "post_toc.liquid", items: toc_items %}
+        {% assign toc_items = content | table_of_contents %}
+        {% include "table_of_contents.liquid", items: toc_items %}
       {% endif %}
 
       {% include "ad.liquid" %}
