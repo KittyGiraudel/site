@@ -11,6 +11,10 @@
   cursor: pointer;
   transition: 250ms;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 125%;
   padding: 0;
   width: 1.75em;
