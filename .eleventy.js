@@ -8,6 +8,7 @@ import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
 import uslugify from 'uslug'
 import postStatsPlugin from './_plugins/post-stats.js'
+import tocPlugin from './_plugins/toc.js'
 
 const EMOJI_REGEX = emojiRegex()
 const PRODUCTION = process.env.NODE_ENV === 'production'
@@ -46,6 +47,7 @@ export default function (config) {
     selector: 'h2,h3,h4',
   })
   config.addPlugin(postStatsPlugin)
+  config.addPlugin(tocPlugin)
   if (CONFIG.syntaxHighlight) config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
 
   // Static file passthrough
