@@ -1,6 +1,7 @@
 .figure {
   margin: var(--vb) 0;
   position: relative;
+  clear: right;
 }
 
 .figure figcaption {

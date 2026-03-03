@@ -17,6 +17,7 @@ blockquote {
     linear-gradient(to right, var(--blue), var(--pink)); /* 3 */
   background-origin: border-box; /* 3 */
   background-clip: padding-box, border-box; /* 3 */
+  clear: right;
 }
 
 blockquote::before,
