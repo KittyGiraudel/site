@@ -18,7 +18,7 @@
   {% include "footer.html" %}
   {% include "script.html", partials: "main" %}
   {% include "script.html", partials: "vendors/heading-anchors", type: "module" %}
-  {% if site.environment == 'production' %}
+  {% if site.configuration.service_worker == true %}
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js', { scope: '/' })

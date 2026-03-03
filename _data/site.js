@@ -1,3 +1,5 @@
+import { CONFIG } from '../.eleventy.js'
+
 export default {
   url: 'https://kittygiraudel.com',
   description:
@@ -17,4 +19,11 @@ export default {
     { path: '/talks/', label: 'Talks' },
     { path: '/about/', label: 'About' },
   ],
+  configuration: {
+    minify_html: CONFIG.minifyHTML,
+    inline_scripts: CONFIG.inlineScripts,
+    inline_styles: CONFIG.inlineStyles,
+    service_worker: CONFIG.serviceWorker,
+    meta_refresh: CONFIG.metaRefresh,
+  },
 }

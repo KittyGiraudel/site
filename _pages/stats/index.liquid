@@ -121,10 +121,10 @@ permalink: /stats/
     {% for year in stats.years %}
       {
         year: {{ year.year }},
-        postCount: {{ year.postCount }},
-        avgCharacterCount: {{ year.avgCharacterCount }},
-        avgWordCount: {{ year.avgWordCount }},
-        avgParagraphCount: {{ year.avgParagraphCount }}
+        postCount: {{ year.postCount | format_number }},
+        avgCharacterCount: {{ year.avgCharacterCount | format_number }},
+        avgWordCount: {{ year.avgWordCount | format_number }},
+        avgParagraphCount: {{ year.avgParagraphCount | format_number }}
       }{% unless forloop.last %},{% endunless %}
     {% endfor %}
     ];

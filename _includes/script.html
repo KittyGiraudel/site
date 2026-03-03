@@ -1,7 +1,7 @@
 {% if partials %}
   {% assign paths = partials | split: "," %}
 
-  {%- if site.environment == 'production' -%}
+  {%- if site.configuration.inline_scripts == true -%}
     {%- capture js -%}
       {% for path in paths -%}{%- include "../assets/js/{{ path | strip }}.js" -%}{%- endfor %}
     {%- endcapture -%}

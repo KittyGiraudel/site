@@ -24,7 +24,7 @@ http://ogp.me/ns/article#">
   <!-- Robots & indexing -->
   {% if external %}
   <meta name="robots" content="noindex,nofollow">
-  {% if site.environment == 'production' %}
+  {% if site.configuration.meta_refresh == true %}
   <meta http-equiv="refresh" content="0;url={{ external.url }}" />
   {% endif %}
   {% else %}

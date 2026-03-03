@@ -10,29 +10,42 @@ import uslugify from 'uslug'
 import postStatsPlugin from './_plugins/post-stats.js'
 
 const EMOJI_REGEX = emojiRegex()
+const PRODUCTION = process.env.NODE_ENV === 'production'
+export const CONFIG = {
+  minifyHTML: PRODUCTION,
+  wrapEmojis: PRODUCTION,
+  splitContent: PRODUCTION,
+  syntaxHighlight: true,
+  githubStars: PRODUCTION,
+  inlineScripts: PRODUCTION,
+  inlineStyles: PRODUCTION,
+  serviceWorker: PRODUCTION,
+  metaRefresh: PRODUCTION,
+}
 
+/** @param {import('@11ty/eleventy/UserConfig').default} config */
 export default function (config) {
-  // Minify HTML and CSS in production
-  if (process.env.NODE_ENV === 'production') {
-    config.addTransform('htmlmin', minifyHTML)
-  }
+  // Content post-processing
+  // ---------------------------------------------------------------------------
+  if (CONFIG.minifyHTML) config.addTransform('htmlmin', minifyHTML)
+  if (CONFIG.wrapEmojis) config.addTransform('emoji', a11yEmojis)
 
-  // Wrap emojis to give them more semantic meaning.
-  config.addTransform('emoji', a11yEmojis)
-
-  // Force Eleventy to watch CSS and JS files
+  // Watch targets
+  // ---------------------------------------------------------------------------
   config.addWatchTarget('assets/css/**/*.css')
   config.addWatchTarget('assets/js/**/*.js')
 
-  // Enable compilation plugins
-  config.addPlugin(syntaxHighlight)
+  // Compilation plugins
+  // ---------------------------------------------------------------------------
   config.addPlugin(footnotes)
   config.addPlugin(IdAttributePlugin, { slugify: uslugify, checkDuplicates: false })
   config.addPlugin(postStatsPlugin)
+  if (CONFIG.syntaxHighlight) config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
 
-  // Pass through static files; the CSS file is handled through Sass and
-  // therefore not explicitly passed through here
+  // Static file passthrough
+  // ---------------------------------------------------------------------------
   config.addPassthroughCopy('assets/images')
+  config.addPassthroughCopy('assets/js/vendors')
   config.addPassthroughCopy('_redirects')
   config.addPassthroughCopy('_headers')
   config.addPassthroughCopy('humans.txt')
@@ -48,58 +61,41 @@ export default function (config) {
   // script tags in production. For the assets to be linked to in development,
   // they need to be passed through to the `_site` directory.
   // See: https://kittygiraudel.com/2020/12/03/inlining-scripts-and-styles-in-11ty/
-  if (process.env.NODE_ENV !== 'production') {
-    config.addPassthroughCopy('assets/js')
-    config.addPassthroughCopy('assets/css')
-  } else {
-    config.addPassthroughCopy('assets/js/vendors')
-  }
+  if (!CONFIG.inlineScripts) config.addPassthroughCopy('assets/js')
+  if (!CONFIG.inlineStyles) config.addPassthroughCopy('assets/css')
 
-  // Add a filter and a tag to parse content as Markdown in Liquid files
+  // Liquid filters and shortcodes
+  // ---------------------------------------------------------------------------
   config.addFilter('markdown', content => markdown(content, true))
   config.addPairedShortcode('markdown', content => markdown(content, false))
-
-  // Add a Liquid filter to format a date and wrap it in a <time> element
   config.addFilter('time', time)
-
-  // Add a Liquid filter to compute the reading time of given content
   config.addFilter('reading_time', readingTime)
-
-  // Split rendered HTML content into 2 parts to allow injecting the ad
   config.addFilter('split_content', splitContent)
-
-  // Add a Liquid filter to format amount of stars
-  config.addFilter('stars', stars)
-
-  // Provide a tag to render info blocks
-  config.addPairedShortcode('info', info)
-
-  // Reproduce some Liquid filters, sometimes loosely
+  config.addFilter('format_number', formatNumber)
   config.addFilter('date_to_xmlschema', dateToXmlSchema)
   config.addFilter('date_to_rfc3339', dateToRFC3339)
   config.addFilter('group_by', groupBy)
   config.addFilter('number_of_words', numberOfWords)
   config.addFilter('sort_by', sortBy)
   config.addFilter('where', where)
-
-  // Replace emoji with short names so meta descriptions don't get broken by the emoji transform
   config.addFilter('emoji_to_text', emojiToText)
+  config.addPairedShortcode('info', info)
 
-  // Register a collection for the posts and sort them from most to least recent
-  config.addCollection('posts', collection =>
-    collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
+  // Collections
+  // ---------------------------------------------------------------------------
+  config.addCollection('posts', c =>
+    c.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
   )
-
-  config.addCollection('snippets', collection =>
-    collection.getFilteredByGlob('_pages/snippets/*.md'),
-  )
-
+  config.addCollection('snippets', c => c.getFilteredByGlob('_pages/snippets/*.md'))
   config.addCollection('recipes', collection => collection.getFilteredByGlob('_pages/recipes/*.md'))
 
   return {
     dir: {
       output: './_site',
       layouts: '_layouts',
+      includes: '_includes',
+      data: '_data',
+      templateFormats: ['html', 'liquid', 'md', '11ty.js'],
     },
   }
 }
@@ -110,9 +106,17 @@ function minifyHTML(content, outputPath) {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,
         conservativeCollapse: true,
+        decodeEntities: true,
         minifyCSS: true,
         minifyJS: true,
+        minifyURLs: true,
+        noNewlinesBeforeTagClose: true,
+        removeAttributeQuotes: true,
         removeComments: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
         sortAttributes: true,
         sortClassName: true,
         useShortDoctype: true,
@@ -122,7 +126,6 @@ function minifyHTML(content, outputPath) {
 
 function replaceEmoji(match) {
   const label = emojiShortName[match]?.replace(/"/g, '')
-
   return label ? `<span role="img" aria-label="${label}" title="${label}">${match}</span>` : match
 }
 
@@ -132,18 +135,11 @@ function emojiToText(str) {
 }
 
 function a11yEmojis(content, outputPath) {
-  // Post-processing all content can be slow, so we skip that phase entirely
-  // while in development to improve compilation times
-  if (process.env.NODE_ENV !== 'production') {
-    return content
-  }
-
   return outputPath.endsWith('.html') ? content.replace(EMOJI_REGEX, replaceEmoji) : content
 }
 
 function markdown(content, inline = true) {
   const html = markdownIt({ html: true }).render(content)
-
   return inline ? html.replace('<p>', '').replace('</p>', '') : html
 }
 
@@ -151,8 +147,8 @@ function numberOfWords(content) {
   return content.split(/\s+/g).length
 }
 
-function stars(amount) {
-  return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} ★`
+function formatNumber(amount) {
+  return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
 }
 
 function where(array, key, value) {
@@ -186,7 +182,6 @@ function dateToRFC3339(value) {
   const date = new Date(value).toISOString()
   const chunks = date.split('.')
   chunks.pop()
-
   return `${chunks.join('')}Z`
 }
 
@@ -215,11 +210,7 @@ function groupBy(array, key) {
 
   const map = array.reduce((acc, entry) => {
     const value = get(entry)
-
-    if (typeof acc[value] === 'undefined') {
-      acc[value] = []
-    }
-
+    if (typeof acc[value] === 'undefined') acc[value] = []
     acc[value].push(entry)
     return acc
   }, {})
@@ -254,7 +245,7 @@ function splitContent(html) {
 
   // We don’t really need to bother too much with the ad placement during dev,
   // so we skip the whole Cheerio parsing and just return the HTML as is.
-  if (process.env.NODE_ENV !== 'production') {
+  if (!CONFIG.splitContent) {
     return ['', html]
   }
 
