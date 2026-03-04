@@ -4,6 +4,7 @@ description: A short technical write-up about aggregating blogging stats and dis
 tags:
   - Eleventy
   - JavaScript
+  - Liquid
 ---
 
 The nice thing about having blogged for so long is that there is a lot of data to play with! I was curious whether I could pull some vanity metrics from all my writing and yes, it’s certainly possible! I’ll show how I’ve done it.
