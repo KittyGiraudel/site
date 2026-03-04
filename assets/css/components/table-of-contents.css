@@ -18,10 +18,7 @@
 
 @media (min-width: 1140px) {
   .TableOfContents {
-    float: right;
-    max-width: 300px;
     margin-right: -150px;
-    margin-left: var(--vb);
     margin-bottom: var(--vb);
   }
 }
