@@ -20,6 +20,7 @@ pre {
     linear-gradient(to right, var(--pink), var(--blue)); /* 3 */
   background-origin: border-box; /* 3 */
   background-clip: padding-box, border-box; /* 3 */
+  clear: right;
 }
 
 @media (min-width: 1024px) {

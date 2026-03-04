@@ -10,23 +10,6 @@ tags:
 
 Over the years, I have tweeted about [Fela](https://fela.js.org) a few times. And as I am about to leave N26 and behind me the decisions I made, I want to properly reflect on the choice of going with Fela instead of any other CSS-in-JS library you might have heard of.
 
-- [Discovering Fela in 2016](#discovering-fela-in-2016)
-- [What’s Fela?](#whats-fela)
-- [What’s good about it?](#whats-good-about-it)
-  - [Transparent atomic output](#transparent-atomic-output)
-  - [Rich ecosystem](#rich-ecosystem)
-  - [Extensive RTL support](#extensive-RTL-support)
-- [What are the caveats?](#what-are-the-caveats)
-  - [Shorthands and longhands](#shorthand-and-longhands)
-  - [Small community](#small-community)
-  - [Pattern evolution (solved)](#solved-pattern-evolution)
-- [Tips & Tricks](#tips-tricks)
-  - [Fela dev utils as devDependencies](#fela-dev-utils-as-devdependencies)
-  - [Integrating react-dates with Fela](#integrating-react-dates-with-fela)
-  - [Avoid adblockers messing with styles](#avoid-adblockers-messing-with-styles)
-  - [Custom processing](#custom-processing)
-- [Wrapping up](#wrapping-up)
-
 ## Discovering Fela in 2016
 
 The year is 2016. [Mike Smart](https://twitter.com/smartmike) and I just joined N26 in Berlin to revamp their web strategy, hire a team and build a platform that will last longer than the previous one. With but a rough idea in mind of what we wanted to achieve, we had a mountain of decisions to take. Amongst them, how to author our styles.

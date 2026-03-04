@@ -10,17 +10,7 @@ edits:
     md: This is an experiment, please don’t use this code in production.
 ---
 
-A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) and I had the crazy idea of implementing bitwise operators in Sass. It went like this:
-
-> **Kitty**: Do you know how bitwise operators work?  
-> **Val**: Yes.  
-> **Kitty**: Do you think we could implement them in Sass?  
-> **Val**: No.  
-> (Loading…)  
-> **Val**: Well, in fact we could.  
-> **Kitty**: LET’S DO IT!
-
-And so we did, hence a short article to relate the story as well as providing a (useless) use case. But first let’s catch up on bitwise operators, shall we? Check out [SassyBitwise](https://github.com/KittyGiraudel/SassyBitwise) if all you want is the code.
+A couple of days ago, [Valérian Galliat](https://twitter.com/valeriangalliat) and I had the crazy idea of implementing bitwise operators in Sass. Hence a short article to relate the story as well as providing a (useless) use case. But first let’s catch up on bitwise operators, shall we? Check out [SassyBitwise](https://github.com/KittyGiraudel/SassyBitwise) if all you want is the code.
 
 ## B-b-b-b-bitwise
 

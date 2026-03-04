@@ -7,14 +7,7 @@ tags:
   - Process
 ---
 
-After [a tweet about how I like Git but find it hard to use](https://twitter.com/KittyGiraudel/status/964875913371570177), I thought it would be interesting to share how I use it on a daily basis. Including some cool aliases and practices you can borrow right away. It’s a bit long so here is a table of contents:
-
-- [Getting information](#getting-information)
-- [Working with branches](#working-with-branches)
-- [Doing some work](#doing-some-work)
-- [Undoing some work](#undoing-some-work)
-- [Getting up to date](#getting-up-to-date)
-- [Rewriting history](#rewriting-history)
+After [a tweet about how I like Git but find it hard to use](https://twitter.com/KittyGiraudel/status/964875913371570177), I thought it would be interesting to share how I use it on a daily basis. Including some cool aliases and practices you can borrow right away.
 
 ## Getting information
 

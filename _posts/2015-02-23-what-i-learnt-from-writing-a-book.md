@@ -9,11 +9,6 @@ tags:
 
 In a couple of days, my book “CSS 3 Pratique de Design Web” (_CSS 3 Practicing Web Design_) will be on sale. It has been a one-year road to get there, and one hell of a journey so I thought I’d relate it to you in case you find yourself in my position.
 
-<figure class="figure">
-<img src="/assets/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="Cover of “CSS 3 Pratique du Design Web”" />
-<figcaption>Cover of “CSS 3 Pratique du Design Web”</figcaption>
-</figure>
-
 ## Stating the obvious
 
 Let me start with a couple of things I should have told myself more often during this journey.
@@ -23,6 +18,11 @@ Let me start with a couple of things I should have told myself more often during
 - **A book is not free**. People pay for it. And they don’t buy it in order to have something to do in the train; they want to learn from it.
 
 I should have kept this in mind during those months, and so should you if you happen to write a book yourself.
+
+<figure class="figure">
+<img src="/assets/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="Cover of “CSS 3 Pratique du Design Web”" />
+<figcaption>Cover of “CSS 3 Pratique du Design Web”</figcaption>
+</figure>
 
 ## You will run out of time
 

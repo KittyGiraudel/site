@@ -169,7 +169,7 @@ Then, we change our Sass a little bit:
 
 Quite cool, right? And this is only a very easy example of what you can do with `@extend` and placeholders. Feel free to think of clever usecases as well.
 
-## Sass and REM <a href="#rem">#</h2>
+## Sass and REM
 
 REM (root EM) is awesome. Problem is [IE8 doesn’t understand it](https://caniuse.com/#feat=rem), and we cannot cross it out of our support chart yet. We have to deal with it. Thankfully, it is simple enough to provide IE8 a fallback for REM: give it a PX value.
 
@@ -302,7 +302,7 @@ Outputs:
 
 The Sass way makes it way easier to debug and update in my opinion; lisibility is well preserved since alternative styles are based on keywords instead of arbitrary values.
 
-## Simple responsive grid with Sass <a href="#grid">#</h2>
+## Simple responsive grid with Sass
 
 Nowadays, using a grid system to build a responsive website has become a standard. There are a bunch of amazing grid systems out there, but sometimes [you just want to build your own](https://css-tricks.com/dont-overthink-it-grids/). Especially when you don’t need a whole Rube Goldberg machine for your simple layout. Let’s see how we can build a very simple grid system in Sass in about 12 lines:
 

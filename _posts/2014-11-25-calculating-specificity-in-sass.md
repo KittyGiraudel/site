@@ -7,9 +7,9 @@ tags:
   - CSS
 ---
 
-{% info %}
 The following is a guest post by [David Khourshid](https://twitter.com/davidkpiano) about how he managed to build a specificity calculator in Sass. In all honesty, I would not have made any better than David with this, so I have to say I am very glad to have him talking about his experiment here.
-{% endinfo %}
+
+---
 
 As any web developer who has to write CSS knows, specificity is both an important and confusing concept. You might be familiar with principles such as avoiding nesting and IDs to keep specificity low, but knowing exactly _how_ specific your selectors are can provide you valuable insight for improving your stylesheets. Understanding specificity is especially important if you are culpable of sprinkling `!important` throughout your CSS rules in frustration, which ironically, makes specificity less important.
 

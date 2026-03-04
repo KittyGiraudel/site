@@ -71,3 +71,10 @@
   vertical-align: middle;
   fill: currentcolor;
 }
+
+@media screen and (min-width: 1556px) {
+  .ThemeButton {
+    right: 1em;
+    left: auto;
+  }
+}

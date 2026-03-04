@@ -5,6 +5,7 @@ tags:
   - Retrospective
   - Testing
   - Engineering
+toc: false
 ---
 
 This article is a response to a question I’ve recently received on Twitter:

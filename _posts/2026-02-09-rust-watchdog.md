@@ -10,18 +10,6 @@ One of the most frustrating kinds of outages is when everything _seems_ fine on 
 
 This is the story of the watchdog service I built for our RPG game server: a small, external process that doesn’t care whether the server is technically alive, only whether the game is actually working. It’s designed to recover from deadlocks, runaway timeouts, population loss, and all those “it’s technically running” incidents that typically page you at 3am.
 
-It’s relatively long, so here is a table of contents:
-
-1. [Ensuring the server _always_ runs](#ensuring-the-server-always-runs)
-2. [Incident #1: _running_ doesn't mean _healthy_](#incident-1-running-doesnt-mean-healthy)
-3. [Incident #2: _healthy_ is all _relative_](#incident-2-healthy-is-all-relative)
-4. [Incident #3: health checks are not live traffic](#incident-3-health-checks-are-not-live-traffic)
-5. [Incident #4: when minutes last forever](#incident-4-when-minutes-last-forever)
-6. [Why so many incidents?](#why-so-many-incidents)
-7. [Bonus: meaningful status page](#bonus-meaningful-status-page)
-8. [Bonus: operational ergonomics](#bonus-operational-ergonomics)
-9. [Lessons learned](#lessons-learned)
-
 ## Ensuring the server _always_ runs
 
 For the most part, our server is very stable. Metrics are healthy: CPU is hovering around 20–40%, memory is stable around 55% with plenty room for activity bursts and latency is very low. So it never really _goes down_ per se.

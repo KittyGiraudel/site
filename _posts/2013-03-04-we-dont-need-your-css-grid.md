@@ -5,9 +5,6 @@ tags:
   - CSS
 ---
 
-> You know what would be awesome? Another CSS grid system!  
-> &mdash; No one ever.
-
 In this era of multi devices, responsive design, frameworks and all this stuff, CSS grids have become more and more popular. The main purpose of these tools is to define a baseline in order to have a consistent and predictable layout in all situations.
 
 This is a good idea, even an important one. Being consistent on all devices is a big deal, and CSS grids really help to figure this out.
@@ -15,6 +12,9 @@ This is a good idea, even an important one. Being consistent on all devices is a
 So in the last few months, we have assisted to a bunch of new CSS grid systems, including [Twitter Bootstrap Grid module](https://getbootstrap.com/), [Zurb Fundation](https://foundation.zurb.com/), [960.gs](https://960.gs/), [The 1140px Grid](https://www.ramotion.com/agency/web-design/cssgrid/), [Blueprint](https://www.blueprintcss.org/), [KNACSS](https://www.knacss.com/),  [YAML](https://www.yaml.de/), [Ingrid](https://piira.se/projects/ingrid/), [Golden Grid System](https://goldengridsystem.com/), [InuitCSS Grid module](https://github.com/inuitcss), [Toast](https://daneden.github.io/Toast/) and I probably forget [a bunch of those](https://usablica.github.io/frontend-frameworks/compare.html).
 
 **They all are great grid systems**. This makes me get to the point…
+
+> You know what would be awesome? Another CSS grid system!  
+> &mdash; No one ever.
 
 ## We don’t need yours
 

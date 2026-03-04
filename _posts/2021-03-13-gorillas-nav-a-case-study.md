@@ -8,26 +8,15 @@ tags:
   - Accessibility
 ---
 
-<style>
-  video { max-width: 100%; }
-  @media (min-width: 700px) { video { float: right; margin-left: 1em; max-width: 320px } }
-  h2:first-of-type { clear: both; }
-</style>
-
-<video playsinline="" autoplay="" muted="" loop="" disablepictureinpicture="" aria-label="Gorillas.io site’s navigation featuring a skip link and a toggle with the brand logo in it, which displays a list of links as a dropdown when interacted with."  poster="https://pbs.twimg.com/tweet_video_thumb/EwXIW3CW8AI3mAh.jpg" src="https://video.twimg.com/tweet_video/EwXIW3CW8AI3mAh.mp4" type="video/mp4"></video>
-
 A few days ago, I posted [a few tweets](https://twitter.com/KittyGiraudel/status/1367834491977412608?s=20) about the new [Gorillas’ website](https://web.archive.org/web/20210310065642/https://gorillas.io/en). It’s a pretty simple site at this stage: a couple pages, not much interaction, mostly there to showcase Gorillas’ branding as we expand rapidly across Europe (check it out if you can, it’s good stuff ✨).
 
 One of the most interesting part of the site — at least from a technical standpoint — has to be the navigation. So I thought I’d write a short piece about everything that went into it, from accessibility to behaviour to design.
 
-- [Show me your content](#show-me-your-content)
-- [Shut it down](#shut-it-down)
-- [Preserving a landmark](#preserving-a-landmark)
-- [It’s a blur, sir](#its-a-blur-sir)
-- [Nice curves](#nice-curves)
-- [Skip it](#skip-it)
-- [Language switcher](#language-switcher)
-
+<figure class="figure">
+  <video playsinline="" autoplay="" muted="" loop="" disablepictureinpicture="" aria-label="Gorillas.io site’s navigation featuring a skip link and a toggle with the brand logo in it, which displays a list of links as a dropdown when interacted with." poster="https://pbs.twimg.com/tweet_video_thumb/EwXIW3CW8AI3mAh.jpg" src="https://video.twimg.com/tweet_video/EwXIW3CW8AI3mAh.mp4" type="video/mp4"></video>
+  <figcaption>Find the <a href="https://video.twimg.com/tweet_video/EwXIW3CW8AI3mAh.mp4" target="blank" rel="noopener noreferrer">full video on Twitter</a></figcaption>
+</figure>
+ 
 ## Show me your content
 
 For good or for bad, the navigation is some sort of a dropdown. It means it’s not just a few links at the top of the page, and there are therefore a few things we had to consider.

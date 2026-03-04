@@ -18,14 +18,6 @@ From the discussion we had, here are the requirements I understood:
 - A card _can_ be sitting in a list with other cards, and therefore should be announced as such. This is important as screen-readers enumerate items in lists (e.g. “list, four items”).
 - A card _can_ contain actions (links or buttons).
 
-On to a table of contents:
-
-- [Markup](#markup)
-- [CSS](#css)
-- [Nested actions](#nested-actions)
-- [Heading or no heading?](#heading-or-no-heading)
-- [Wrapping up](#wrapping-up)
-
 {%info%} If you just want the code, you can play with my [original React implementation on CodeSandbox](https://codesandbox.io/s/accessible-cards-7vu5ny?file=/src/App.js), or the [plain HTML/CSS version on CodePen](https://codepen.io/KittyGiraudel/pen/bGaoXxR). The CSS code should be fully commented either way. {%endinfo%}
 
 ## Markup

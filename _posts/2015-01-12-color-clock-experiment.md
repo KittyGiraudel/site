@@ -7,8 +7,6 @@ tags:
 
 A while back, a developer posted a little experiment in which the current time was being used as an hexadecimal color, applied to the body element. Better have a look at [the demo](https://www.jacopocolo.com/hexclock).
 
-![Hexclock experiment](/assets/images/color-clock-experiment/hexclock.png)
-
 What a clever little experiment it was, yet I can’t say I am completely fond of the way it has been implemented. Not only colors are restricted between `#000000` (00:00:00) and `#235959` (23:59:59), but the JavaScript part did not really please me. So here is my try.
 
 There are two things I wanted to give specific attention to:

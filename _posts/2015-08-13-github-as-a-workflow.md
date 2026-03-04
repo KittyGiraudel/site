@@ -14,22 +14,6 @@ This article is the result of a discussion about development workflow with one o
 
 In this short document, I try to describe what I feel would be a great workflow for me, using [GitHub](https://github.com) as a central point rather than having a collection of tools. Obviously, this standpoint is highly developer-centric and might not fit all teams / projects.
 
-Given how long this article is, here is a table of contents so you can quickly jump to the section you want:
-
-1. [Introduction](#introduction)
-1. [What problem does it solve](#what-problem-does-it-solve)
-1. [What problem does it introduce](#what-problem-does-it-introduce)
-1. [Creating the pull-request](#creating-the-pull-request)
-1. [Naming the pull-request](#naming-the-pull-request)
-1. [Filling the description](#filling-the-description)
-1. [Using comments](#using-comments)
-1. [Reviewing the pull-request](#reviewing-the-pull-request)
-1. [Merging the pull-request](#merging-the-pull-request)
-1. [Tip: using labels](#tip-using-labels)
-1. [Tip: using assignees](#tip-using-assignees)
-1. [Tip: using milestones](#tip-using-milestones)
-1. [Tip: using issues](#tip-using-issues)
-
 ## Introduction
 
 Below is a short and informal methodology on how to use [GitHub](https://github.com) as a project workflow, heavily relying on [pull-requests](https://help.github.com/articles/using-pull-requests/). While it might sound scary as first, this approach actually has a lot of benefits that we’ll investigate further in the next section.

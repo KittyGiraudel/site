@@ -6,9 +6,7 @@ tags:
   - Open Source
 ---
 
-Hey people! Just a quick post to anounce the very recent launch of [Browserhacks](http://browserhacks.com)!
-
-> Browserhacks is an extensive list of browser specific CSS (and somewhat JavaScript) hacks gathered from all over the interwebz.
+Hey people! Just a quick post to anounce the very recent launch of [Browserhacks](http://browserhacks.com)! Browserhacks is an extensive list of browser specific CSS (and somewhat JavaScript) hacks gathered from all over the interwebz.
 
 ## Why doing this?
 

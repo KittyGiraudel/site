@@ -7,16 +7,16 @@ tags:
 
 The other day, I was having a look at featured pens from CodePen to kill some time before getting a haircut. I ended up checking [a pen from Yelp Devs'](https://codepen.io/yelp/pen/aLxbG) (in the person of [Benjamin Knight](https://twitter.com/benjamin_knight)) in which they featured their star-rating system we can see pretty much all over their site.
 
-<figure class="figure">
-<img src="/assets/images/stars-rating-widget-with-sass/rating-widget.png" alt="" />
-<figcaption>Star-rating widget from Yelp</figcaption>
-</figure>
-
 I was both surprised and pleased to see they are using Sass for their CSS codebase, and more interestingly, they are using it pretty well if I may. Their code looked both logic and efficient so that was kind of a cool pen to look at.
 
 Although after a couple of minutes digging into their code, I noticed the CSS output wasn’t as good as it could be. A couple of minutes later, I submitted [a new verion](https://codepen.io/KittyGiraudel/pen/DqBkH) to them, taking care of a few optimizations they forgot.
 
 Hence, a short blog post relating all this.
+
+<figure class="figure">
+<img src="/assets/images/star-rating-widget-with-sass/rating-widget.png" alt="" />
+<figcaption>Star-rating widget from Yelp</figcaption>
+</figure>
 
 ## What’s the problem?
 

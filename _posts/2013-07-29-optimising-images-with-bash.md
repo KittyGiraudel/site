@@ -7,7 +7,9 @@ tags:
   - Performance
 ---
 
-{% info %} The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at Future PLC (Grenoble, France) and my brother. He also knows his way in Bash scripting and frontend performance. I’m very glad to have him writing here. :) {% endinfo %}
+The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at Future PLC (Grenoble, France) and my brother. He also knows his way in Bash scripting and frontend performance. I’m very glad to have him writing here. :)
+
+---
 
 You can’t talk about frontend performance without talking about images. They are the heaviest component of a webpage. This is why it is important to optimise images before pushing things live.
 

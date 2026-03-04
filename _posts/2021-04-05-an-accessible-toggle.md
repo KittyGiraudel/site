@@ -11,18 +11,6 @@ Toggles (or sometimes “toggle switches”) are heavily used in modern interfac
 
 In this article, I will show a small HTML + CSS only implementation of an accessible toggle that you can basically copy in your own projects and tweak at your own convenience.
 
-- [Markup](#markup)
-- [Styling](#styling)
-  - [The container](#the-container)
-  - [The toggle and handle](#the-toggle-and-handle)
-  - [Focused styles](#focused-styles)
-  - [Checked state](#checked-state)
-  - [Disabled state](#disabled-state)
-  - [Right-to-left support](#right-to-left-support)
-  - [The icons](#the-icons)
-- [Button variant](#button-variant)
-- [Wrapping up](#wrapping-up)
-
 <p class="codepen" data-height="365" data-theme-id="light" data-default-tab="result" data-user="KittyGiraudel" data-slug-hash="xxgrPvg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxgrPvg">
   <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/xxgrPvg">
   xxgrPvg</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>)

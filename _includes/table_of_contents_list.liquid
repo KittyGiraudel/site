@@ -1,0 +1,14 @@
+{% if items and items.size > 0 %}
+  <ol class="TableOfContents__list{% unless root %} TableOfContents__list--sublist{% endunless %}">
+    {% for item in items %}
+      <li class="TableOfContents__item TableOfContents__item--level{{ item.level }}">
+        <a href="#{{ item.id }}">{{ item.text }}</a>
+
+        {% if item.children and item.children.size > 0 %}
+          {% include "table_of_contents_list.liquid", items: item.children, root: false %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+{% endif %}
+

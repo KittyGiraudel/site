@@ -12,7 +12,9 @@ edits:
     md: Updated the article to mention some important information about [screen-readers on mobile devices.](#screen-readers-and-touch-devices-19102016) as well as [search engine optimisation](#seo-19102016).
 ---
 
-{% info %} This article is a translation from [Cache-cache CSS](https://www.ffoodd.fr/cache-cache-css/) by accessibility expert [Gaël Poupard](https://twitter.com/ffoodd_fr). All credits to him. {% endinfo %}
+This article is a translation from [Cache-cache CSS](https://www.ffoodd.fr/cache-cache-css/) by accessibility expert [Gaël Poupard](https://twitter.com/ffoodd_fr). All credits to him.
+
+---
 
 **Or how to visually hide some text while keeping it accessible.**
 

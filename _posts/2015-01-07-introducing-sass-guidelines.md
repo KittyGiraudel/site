@@ -5,6 +5,7 @@ tags:
   - Sass
   - Release
   - Open Source
+toc: false
 edits:
   - date: 2015/01/07
     md: Over 20,000 visits on [Sass Guidelines](https://sass-guidelin.es) during the last 24 hours. Thank you so much for your support!

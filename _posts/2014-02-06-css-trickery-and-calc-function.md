@@ -10,11 +10,6 @@ Yesterday, famous French frontend developer [Rémi Parmentier proposed a little 
 
 I gave it a go and it turned out to be much easier than I firstly expected. No weird cross browser issue, no dirty hack and mostly just plain ol' good CSS. But you may want to give it a try, don’t you?
 
-<figure class="figure">
-<img src="/assets/images/calc-css-riddle/gollum-riddle.gif" alt="">
-<figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
-</figure>
-
 ## It likes riddles, p’raps it does, does it?
 
 Let me translate the post from Rémi for you:
@@ -32,6 +27,11 @@ Let me translate the post from Rémi for you:
 7. All cells have the same parent so HTML should be something like `.grid > .cell > .item`. You can add specific classes if you need.
 8. No JavaScript, only HTML and CSS.
 9. It should work from IE 9 and gracefully degrades on older browsers.
+
+<figure class="figure">
+<img src="/assets/images/calc-css-riddle/gollum-riddle.gif" alt="">
+<figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
+</figure>
 
 The tricky part is _5_. After checking at proposals submitted by various developers on Rémi’s post, it seems most of them didn’t catch that **all grey rectangles should be the same width**. Here is what you should be having:
 

@@ -11,14 +11,6 @@ To help debugging situations and collaborating with others when we cannot sit to
 
 As you will see, there is quite a lot of information in there. And while most of it was relatively easy to access and display, some bits were trickier than I thought so, here we are.
 
-- [Detecting internet connection](#detecting-internet-connection)
-- [Detecting VPN access](#detecting-vpn-access)
-- [Detecting Mac version](#detecting-mac-version)
-- [Detecting nvm](#detecting-nvm)
-- [Detecting last npm install](#detecting-last-npm-install)
-- [Detecting whether Docker is running](#detecting-whether-docker-is-running)
-- [Displaying some Git information](#displaying-some-git-information)
-
 Without further ado, let me show you what the script outputs (without fancy colours, sorry):
 
 ```bash

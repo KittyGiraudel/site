@@ -10,13 +10,6 @@ So you are starting or restarting that website or webapp from scratch, and you w
 
 That’s pretty daunting though. It can be tricky to know how to even get started with such a big task. Fear not! In this piece, we’re going to see how to get started with accessibility so it’s considered all throughout the development lifecycle of the project instead of at the end like usual.
 
-- [Learn what accessibility is](#learn-what-accessibility-is)
-- [Write documentation](#write-documentation)
-- [Have a checklist](#have-a-checklist)
-- [Automate what you can](#automate-what-you-can)
-- [Centralize logic](#centralize-logic)
-- [Raise awareness](#raise-awareness)
-
 ## Learn what accessibility is
 
 I wrote about [what accessibility is](https://kittygiraudel.com/2020/12/01/a11y-advent-what-is-accessibility/) as the first piece of my A11y Advent calendar 2020 so I’ll keep things relatively concise here.

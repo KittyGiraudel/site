@@ -9,13 +9,6 @@ tags:
 
 I have [tweeted a few times about the web documentation](https://twitter.com/KittyGiraudel/status/1189941096559861760) we built at N26 and how I think this is one of the things we have truly nailed over the last few years. In this article, I would like to share my experience more in details, and give suggestions on how to write helpful documentation.
 
-- [Documentation 101](#documentation-101)
-- [Fighting obsolescence](#fighting-obsolescence)
-- [Keeping it real](#keeping-it-real)
-  - [Publishing documentation](#publishing-documentation)
-  - [Promoting documentation](#promoting-documentation)
-- [Wrapping up](#wrapping-up)
-
 ## Documentation 101
 
 The purpose of technical documentation is to help people, of any level, perform the task at hand. It should serve as a knowledge base and a guide. It should explain how things work and how to do things in a given project.

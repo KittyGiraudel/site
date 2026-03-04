@@ -9,12 +9,6 @@ I authored the very first version of [Sass Guidelines](https://sass-guidelin.es)
 
 For some reason, I recently came back to Sass Guidelines. Not to update the content, but to work on the site itself. It turns out I learnt a lot in the last few years and found many improvements worth doing. I thought it would be interesting to discuss them in this post. Here are the different topics we’ll go through:
 
-- [Localisation](#localisation)
-- [Search engine optimisation](#search-engine-optimisation)
-- [Accessibility](#accessibility)
-- [Performance](#performance)
-- [Tooling](#tooling)
-
 ## Localisation
 
 I think what I like the most about Sass Guidelines as a project is how I got to collaborate with many people to have it translated in **13 different languages**. On that note, [Sass Guidelines are now available in Dutch](https://sass-guidelin.es/nl/) thanks to [Noah van der Veer](https://github.com/noah-vdv)!
