@@ -37,7 +37,7 @@ permalink: /stats/
             </tr>
             <tr>
               <th scope="row">Total posts</th>
-              <td>{{ stats.postCount }}</td>
+              <td>{{ stats.postCount | format_number }}</td>
             </tr>
           </tbody>
         </table>
@@ -51,19 +51,19 @@ permalink: /stats/
           <tbody>
             <tr>
               <th scope="row">Average per week</th>
-              <td>{{ stats.avgPostsPerWeek }}</td>
+              <td>{{ stats.avgPostsPerWeek | format_number }}</td>
             </tr>
             <tr>
               <th scope="row">Average per month</th>
-              <td>{{ stats.avgPostsPerMonth }}</td>
+              <td>{{ stats.avgPostsPerMonth | format_number }}</td>
             </tr>
             <tr>
               <th scope="row">Average per year</th>
-              <td>{{ stats.avgPostsPerYear }}</td>
+              <td>{{ stats.avgPostsPerYear | format_number }}</td>
             </tr>
             <tr>
               <th scope="row">Average days between posts</th>
-              <td>{{ stats.avgDaysBetweenPosts }}</td>
+              <td>{{ stats.avgDaysBetweenPosts | format_number }}</td>
             </tr>
           </tbody>
         </table>
@@ -77,15 +77,15 @@ permalink: /stats/
           <tbody>
             <tr>
               <th scope="row">Average characters</th>
-              <td>{{ stats.avgCharacterCount }}</td>
+              <td>{{ stats.avgCharacterCount | format_number }}</td>
             </tr>
             <tr>
               <th scope="row">Average words</th>
-              <td>{{ stats.avgWordCount }}</td>
+              <td>{{ stats.avgWordCount | format_number }}</td>
             </tr>
             <tr>
               <th scope="row">Average paragraphs</th>
-              <td>{{ stats.avgParagraphCount }}</td>
+              <td>{{ stats.avgParagraphCount | format_number }}</td>
             </tr>
           </tbody>
         </table>
@@ -121,10 +121,10 @@ permalink: /stats/
     {% for year in stats.years %}
       {
         year: {{ year.year }},
-        postCount: {{ year.postCount | format_number }},
-        avgCharacterCount: {{ year.avgCharacterCount | format_number }},
-        avgWordCount: {{ year.avgWordCount | format_number }},
-        avgParagraphCount: {{ year.avgParagraphCount | format_number }}
+        postCount: {{ year.postCount }},
+        avgCharacterCount: {{ year.avgCharacterCount }},
+        avgWordCount: {{ year.avgWordCount }},
+        avgParagraphCount: {{ year.avgParagraphCount }}
       }{% unless forloop.last %},{% endunless %}
     {% endfor %}
     ];
