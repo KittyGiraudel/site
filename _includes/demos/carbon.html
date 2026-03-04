@@ -1,0 +1,407 @@
+<div id="carbon-viz">
+  <style>
+  #carbon-viz {
+    --viz-bg: #ffffff;
+    --viz-fg: #0f172a;
+    --viz-muted: #6b7280;
+    --viz-border: #e5e7eb;
+    --viz-accent: #2563eb;
+    --viz-accent-soft: rgba(37, 99, 235, 0.05);
+    --viz-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    font-family: sans-serif;
+  }
+  .chart-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    padding: 1rem 1.2rem 1.1rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: var(--vb);
+  }
+  .chart-card::after { content: none; }
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 600px) {
+    .chart-header {
+      flex-direction: column;
+    }
+  }
+  .chart-title {
+    font-size: 0.9rem;
+    color: var(--viz-fg);
+  }
+  .chart-subtitle {
+    font-size: 0.75rem;
+    color: var(--viz-muted);
+  }
+  .summary-card {
+    display: grid;
+    gap: var(--vb-1\/2);
+    align-content: flex-start;
+    margin-bottom: var(--vb-1\/2);
+  }
+  .summary-title {
+    font-size: 0.9rem;
+    color: var(--viz-fg);
+    margin-bottom: 0.2rem;
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.6rem;
+  }
+  .summary-item {
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.75rem;
+    background: var(--viz-accent-soft);
+    border: 1px solid #e5e7eb;
+    font-size: 0.8rem;
+  }
+  .summary-label {
+    color: var(--viz-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.15rem;
+  }
+  .summary-value {
+    font-weight: 600;
+    color: var(--viz-fg);
+    font-size: 0.95rem;
+  }
+  .range-toggle {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 600px) {
+    .range-toggle {
+      margin-top: var(--vb-1\/3);
+      flex-wrap: wrap;
+    }
+  }
+  .range-toggle button {
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: var(--viz-muted);
+    font-size: 0.7rem;
+    padding: 0.18rem 0.6rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+  }
+  .range-toggle button:is(:hover, :focus-visible) {
+    border-color: var(--viz-accent);
+    color: var(--viz-accent);
+    background: rgba(37, 99, 235, 0.04);
+  }
+  .range-toggle button.is-active {
+    background: rgba(37, 99, 235, 0.12);
+    border-color: var(--viz-accent);
+    color: #1d4ed8;
+    font-weight: 600;
+  }
+  canvas {
+    position: relative;
+    z-index: 1;
+    max-height: 320px;
+  }
+</style>
+
+  <section class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Monthly payouts (USD)</div>
+        <div class="chart-subtitle" id="rangeLabel"></div>
+      </div>
+      <div class="range-toggle" aria-label="Time range" role="radiogroup">
+        <button type="button" data-range="all" class="is-active">All</button>
+        <button type="button" data-range="5y">Last 5y</button>
+        <button type="button" data-range="3y">Last 3y</button>
+        <button type="button" data-range="2y">Last 2y</button>
+        <button type="button" data-range="1y">Last 1y</button>
+      </div>
+    </div>
+    <canvas id="payoutsChart" aria-label="Monthly Carbon payouts for giraudel.com" role="img"></canvas>
+  </section>
+
+  <section class="summary-card">
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="summary-label">Total for period</div>
+        <div class="summary-value" id="totalValue">$0.00</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-label">Months tracked</div>
+        <div class="summary-value" id="monthsValue">0</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-label">Best month</div>
+        <div class="summary-value" id="bestMonthValue">–</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-label">Average / month</div>
+        <div class="summary-value" id="avgValue">$0.00</div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const monthOrder = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    // Monthly payouts for kittygiraudel.com only, by period month/year.
+    // Static snapshot generated from payments.json after cleaning out other sites.
+    const allEntries = [
+      { year: 2019, monAbbr: 'Jan', amount:  8.73951156 },
+      { year: 2019, monAbbr: 'Feb', amount:  9.68258500 },
+      { year: 2019, monAbbr: 'Mar', amount: 10.96367237 },
+      { year: 2019, monAbbr: 'Apr', amount:  8.04959655 },
+      { year: 2019, monAbbr: 'May', amount:  6.66282224 },
+      { year: 2019, monAbbr: 'Jun', amount:  7.83673154 },
+      { year: 2019, monAbbr: 'Jul', amount:  8.21227877 },
+      { year: 2019, monAbbr: 'Aug', amount:  7.17482926 },
+      { year: 2019, monAbbr: 'Sep', amount:  7.58739536 },
+      { year: 2019, monAbbr: 'Oct', amount:  7.34602361 },
+      { year: 2019, monAbbr: 'Nov', amount:  6.02731769 },
+      { year: 2019, monAbbr: 'Dec', amount:  6.96580007 },
+
+      { year: 2020, monAbbr: 'Jan', amount:  6.61485015 },
+      { year: 2020, monAbbr: 'Feb', amount: 10.67647144 },
+      { year: 2020, monAbbr: 'Mar', amount: 11.60411443 },
+      { year: 2020, monAbbr: 'Apr', amount:  8.17513134 },
+      { year: 2020, monAbbr: 'May', amount:  5.39404875 },
+      { year: 2020, monAbbr: 'Jun', amount:  6.09955553 },
+      { year: 2020, monAbbr: 'Jul', amount:  4.40686684 },
+      { year: 2020, monAbbr: 'Aug', amount:  3.29938621 },
+      { year: 2020, monAbbr: 'Sep', amount:  3.57355504 },
+      { year: 2020, monAbbr: 'Oct', amount:  4.06965608 },
+      { year: 2020, monAbbr: 'Nov', amount:  3.93813885 },
+      { year: 2020, monAbbr: 'Dec', amount:  6.79141290 },
+
+      { year: 2021, monAbbr: 'Jan', amount: 11.96582883 },
+      { year: 2021, monAbbr: 'Feb', amount:  6.84122306 },
+      { year: 2021, monAbbr: 'Mar', amount: 12.24256229 },
+      { year: 2021, monAbbr: 'Apr', amount: 21.68630544 },
+      { year: 2021, monAbbr: 'May', amount: 15.95061504 },
+      { year: 2021, monAbbr: 'Jun', amount:  7.96196600 },
+      { year: 2021, monAbbr: 'Jul', amount:  8.90619975 },
+      { year: 2021, monAbbr: 'Aug', amount: 20.37398271 },
+      { year: 2021, monAbbr: 'Sep', amount: 16.34928310 },
+      { year: 2021, monAbbr: 'Oct', amount: 10.43340490 },
+      { year: 2021, monAbbr: 'Nov', amount: 14.28601199 },
+      { year: 2021, monAbbr: 'Dec', amount:  8.84000000 },
+
+      { year: 2022, monAbbr: 'Jan', amount: 19.86000000 },
+      { year: 2022, monAbbr: 'Feb', amount: 16.23000000 },
+      { year: 2022, monAbbr: 'Mar', amount: 10.76000000 },
+      { year: 2022, monAbbr: 'Apr', amount: 10.85000000 },
+      { year: 2022, monAbbr: 'May', amount:  9.73000000 },
+      { year: 2022, monAbbr: 'Jun', amount: 10.30000000 },
+      { year: 2022, monAbbr: 'Jul', amount:  9.55000000 },
+      { year: 2022, monAbbr: 'Aug', amount:  8.87000000 },
+      { year: 2022, monAbbr: 'Sep', amount:  9.89000000 },
+      { year: 2022, monAbbr: 'Oct', amount: 24.32000000 },
+      { year: 2022, monAbbr: 'Nov', amount:  9.25000000 },
+      { year: 2022, monAbbr: 'Dec', amount:  8.68000000 },
+
+      { year: 2023, monAbbr: 'Jan', amount:  6.23000000 },
+      { year: 2023, monAbbr: 'Feb', amount:  4.53000000 },
+      { year: 2023, monAbbr: 'Mar', amount:  4.18000000 },
+      { year: 2023, monAbbr: 'Apr', amount:  4.56000000 },
+      { year: 2023, monAbbr: 'May', amount:  4.36000000 },
+      { year: 2023, monAbbr: 'Jun', amount:  4.30000000 },
+      { year: 2023, monAbbr: 'Jul', amount:  4.36000000 },
+      { year: 2023, monAbbr: 'Aug', amount:  3.09223688 },
+      { year: 2023, monAbbr: 'Sep', amount:  3.23434821 },
+      { year: 2023, monAbbr: 'Oct', amount:  2.66990208 },
+      { year: 2023, monAbbr: 'Nov', amount:  2.99594491 },
+      { year: 2023, monAbbr: 'Dec', amount:  3.60106512 },
+
+      { year: 2024, monAbbr: 'Jan', amount:  3.47413936 },
+      { year: 2024, monAbbr: 'Feb', amount:  1.86560151 },
+      { year: 2024, monAbbr: 'Mar', amount:  4.87736070 },
+      { year: 2024, monAbbr: 'Apr', amount:  5.17992135 },
+      { year: 2024, monAbbr: 'May', amount:  3.01844994 },
+      { year: 2024, monAbbr: 'Jun', amount:  3.64555226 },
+      { year: 2024, monAbbr: 'Jul', amount:  2.27147664 },
+      { year: 2024, monAbbr: 'Aug', amount:  2.80412234 },
+      { year: 2024, monAbbr: 'Sep', amount:  2.19560483 },
+      { year: 2024, monAbbr: 'Oct', amount:  1.81763824 },
+      { year: 2024, monAbbr: 'Nov', amount:  2.39667252 },
+      { year: 2024, monAbbr: 'Dec', amount:  2.68102539 },
+
+      { year: 2025, monAbbr: 'Jan', amount:  1.53941288 },
+      { year: 2025, monAbbr: 'Feb', amount:  1.40939855 },
+      { year: 2025, monAbbr: 'Mar', amount:  2.13389396 },
+      { year: 2025, monAbbr: 'Apr', amount:  1.43456905 },
+      { year: 2025, monAbbr: 'May', amount:  2.03054590 },
+      { year: 2025, monAbbr: 'Jun', amount:  2.38932640 },
+      { year: 2025, monAbbr: 'Jul', amount:  1.63132579 },
+      { year: 2025, monAbbr: 'Aug', amount:  1.79497342 },
+      { year: 2025, monAbbr: 'Sep', amount:  1.68528404 },
+      { year: 2025, monAbbr: 'Oct', amount:  2.41536234 },
+      { year: 2025, monAbbr: 'Nov', amount:  3.04705484 },
+      { year: 2025, monAbbr: 'Dec', amount:  3.33372527 },
+
+      { year: 2026, monAbbr: 'Jan', amount:  1.50129623 }
+    ];
+
+    function filterEntries(range) {
+      if (range === 'all') return allEntries.slice();
+      if (!allEntries.length) return [];
+
+      // Trailing N×12 months based on the latest month in the data.
+      const last = allEntries[allEntries.length - 1];
+      const lastMonthIndex = monthOrder.indexOf(last.monAbbr);
+      const lastAbsolute = last.year * 12 + lastMonthIndex;
+
+      let yearsWindow = 0;
+      if (range === '5y') yearsWindow = 5;
+      if (range === '3y') yearsWindow = 3;
+      if (range === '2y') yearsWindow = 2;
+      if (range === '1y') yearsWindow = 1;
+      if (!yearsWindow) return allEntries.slice();
+
+      const monthsWindow = yearsWindow * 12;
+      const minAbsolute = lastAbsolute - (monthsWindow - 1);
+
+      return allEntries.filter(e => {
+        const idx = e.year * 12 + monthOrder.indexOf(e.monAbbr);
+        return idx >= minAbsolute;
+      });
+    }
+
+    function entriesToLabels(entries) {
+      return entries.map(e => {
+        const idx = monthOrder.indexOf(e.monAbbr);
+        const m = String(idx + 1).padStart(2, '0');
+        return `${e.year}-${m}`;
+      });
+    }
+
+    function updateRangeLabel(entries) {
+      const el = document.getElementById('rangeLabel');
+      if (!el) return;
+      if (!entries.length) {
+        el.textContent = 'No data';
+        return;
+      }
+      const first = entries[0];
+      const last = entries[entries.length - 1];
+      const firstLabel = `${first.monAbbr} ${first.year}`;
+      const lastLabel = `${last.monAbbr} ${last.year}`;
+      el.textContent = firstLabel === lastLabel
+        ? firstLabel
+        : `${firstLabel} → ${lastLabel}`;
+    }
+
+    function updateSummary(entries, labels) {
+      const values = entries.map(e => e.amount);
+      const total = values.reduce((s, v) => s + v, 0);
+      const avg = values.length ? total / values.length : 0;
+      const bestIndex = values.length
+        ? values.reduce((bestI, v, i) => (v > values[bestI] ? i : bestI), 0)
+        : -1;
+      const bestLabel = bestIndex >= 0 ? labels[bestIndex] : '–';
+      const bestValue = bestIndex >= 0 ? values[bestIndex] : 0;
+
+      document.getElementById('totalValue').textContent =
+        `$${total.toFixed(2)}`;
+      document.getElementById('monthsValue').textContent =
+        `${values.length}`;
+      document.getElementById('avgValue').textContent =
+        `$${avg.toFixed(2)}`;
+      document.getElementById('bestMonthValue').textContent =
+        `${bestLabel} · $${bestValue.toFixed(2)}`;
+
+      return values;
+    }
+
+    const ctx = document.getElementById('payoutsChart').getContext('2d');
+    const initialEntries = filterEntries('all');
+    const initialLabels = entriesToLabels(initialEntries);
+    updateRangeLabel(initialEntries);
+    const initialValues = updateSummary(initialEntries, initialLabels);
+
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: initialLabels,
+        datasets: [{
+          label: 'Payout (USD)',
+          data: initialValues,
+          borderRadius: 6,
+          backgroundColor: 'rgb(56 189 248 / 0.8)',
+          borderColor: 'rgb(56 189 248 / 0.9)',
+          borderWidth: 1.5,
+          maxBarThickness: 22
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => `$${ctx.parsed.y.toFixed(2)}`
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              maxRotation: 0,
+              minRotation: 0,
+              color: '#9ca3af',
+              autoSkip: true,
+              maxTicksLimit: 10
+            },
+            grid: { display: false }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: '#9ca3af',
+              callback: v => `$${v}`
+            },
+            grid: {
+              color: 'rgb(55 65 81 / 0.3)',
+              zeroLineColor: 'rgb(156 163 175 / 0.8)'
+            }
+          }
+        }
+      }
+    });
+
+    document.querySelectorAll('.range-toggle button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const range = btn.getAttribute('data-range');
+        document
+          .querySelectorAll('.range-toggle button')
+          .forEach(b => b.classList.toggle('is-active', b === btn));
+
+        const filtered = filterEntries(range);
+        const labels = entriesToLabels(filtered);
+        const values = updateSummary(filtered, labels);
+        updateRangeLabel(filtered);
+
+        chart.data.labels = labels;
+        chart.data.datasets[0].data = values;
+        chart.update();
+      });
+    });
+  </script>
+</div>
