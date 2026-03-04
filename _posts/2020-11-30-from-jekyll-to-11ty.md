@@ -65,7 +65,7 @@ This way, every article has its permalink defined based on its file name, and it
 
 ## Heading anchors
 
-I do not provide an anchor for every single heading, but I do rely on headings having an `id` attribute to create table of contents in long articles like this one. I used to rely on Kramdown and its GFM option for that, but Eleventy uses [markdown-it](https://github.com/markdown-it/markdown-it) which [does not come with automatic heading `id` generation](https://github.com/markdown-it/markdown-it/issues/28).
+I do rely on headings having an `id` attribute to create table of contents in long articles like this one. I used to rely on Kramdown and its GFM option for that, but Eleventy uses [markdown-it](https://github.com/markdown-it/markdown-it) which [does not come with automatic heading `id` generation](https://github.com/markdown-it/markdown-it/issues/28).
 
 To preserve that behaviour, we need to use our own markdown-it instance, as well as the [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) plugin. The latter comes with unicode support by default, which is not what GFM defaults to, so we also need to use [uslug](https://github.com/jeremys/uslug) [as a slugifier](https://github.com/valeriangalliat/markdown-it-anchor#unicode-support) to come closer to the original behaviour.
 

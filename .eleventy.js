@@ -6,7 +6,7 @@ import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
-import uslugify from 'uslug'
+import slugify from 'slugify'
 import postStatsPlugin from './_plugins/post-stats.js'
 import tocPlugin from './_plugins/toc.js'
 
@@ -42,7 +42,7 @@ export default function (config) {
   // ---------------------------------------------------------------------------
   config.addPlugin(footnotes)
   config.addPlugin(IdAttributePlugin, {
-    slugify: uslugify,
+    slugify,
     checkDuplicates: false,
     selector: 'h2,h3,h4',
   })

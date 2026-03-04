@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio'
-import uslugify from 'uslug'
+import slugify from 'slugify'
 
 export default function tocPlugin(eleventyConfig) {
   eleventyConfig.addFilter('table_of_contents', html => {
@@ -13,58 +13,41 @@ export default function tocPlugin(eleventyConfig) {
     return headings.length < 2 ? [] : buildTocTree($, headings)
   })
 }
+function buildTocTree($, headings) {
+  const tree = []
+  let currentL2 = null
+  let currentL3 = null
 
-function buildTocTree($, headingElements) {
-  /** @type {{ level: number; id: string; text: string; children: any[] }[]} */
-  const root = []
-  let currentLevel2 = null
-  let currentLevel3 = null
+  for (const heading of headings) {
+    const data = getHeadingData($, heading)
+    if (!data) continue
+    const node = { ...data, children: [] }
 
-  for (const el of headingElements) {
-    const level = getHeadingLevel(el)
-    const text = $(el).text().trim()
-    if (!text) continue
-
-    const id = getHeadingId(el, text)
-
-    const node = { level, id, text, children: [] }
-
-    if (level === 2) {
-      root.push(node)
-      currentLevel2 = node
-      currentLevel3 = null
-    } else if (level === 3) {
-      if (currentLevel2) {
-        currentLevel2.children.push(node)
-      } else {
-        root.push(node)
-      }
-      currentLevel3 = node
+    if (node.level === 2) {
+      tree.push(node)
+      currentL2 = node
+      currentL3 = null
+    } else if (node.level === 3) {
+      if (currentL2) currentL2.children.push(node)
+      else tree.push(node)
+      currentL3 = node
     } else {
-      // level >= 4: prefer nesting under the last h3, then h2, otherwise root
-      if (currentLevel3) {
-        currentLevel3.children.push(node)
-      } else if (currentLevel2) {
-        currentLevel2.children.push(node)
-      } else {
-        root.push(node)
-      }
+      if (currentL3) currentL3.children.push(node)
+      else if (currentL2) currentL2.children.push(node)
+      else tree.push(node)
     }
   }
 
-  return root
+  return tree
 }
 
-function getHeadingLevel(el) {
-  const name = el?.name || ''
-  const match = name.match(/^h([1-6])$/i)
-  if (!match) return 2
-  const level = Number(match[1])
-  if (!Number.isFinite(level)) return 2
-  return Math.min(Math.max(level, 1), 6)
-}
+function getHeadingData($, heading) {
+  const text = $(heading).text().trim()
+  if (!text) return null
 
-// Mirror IdAttributePlugin slugification so anchors match generated ids
-function getHeadingId(el, text) {
-  return el?.attribs?.id ?? uslugify(text)
+  const element = heading?.name ?? ''
+  const level = Number(element.match(/^h([1-6])$/i)?.[1] ?? 2)
+  const id = heading?.attribs?.id ?? slugify(text)
+
+  return { id, level, text }
 }

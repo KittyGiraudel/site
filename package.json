@@ -19,7 +19,6 @@
     "emoji-short-name": "^2.1.0",
     "html-minifier-terser": "^7.2.0",
     "markdown-it": "^14.1.1",
-    "uslug": "^1.0.4",
     "workbox-cli": "^7.4.0"
   },
   "devDependencies": {
