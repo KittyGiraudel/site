@@ -120,3 +120,9 @@ pre code {
 .token.entity {
   cursor: help;
 }
+
+.highlight-line-active {
+  background-color: light-dark(rgb(255 192 203 / 0.4), rgb(255 192 203 / 0.2));
+  color: inherit;
+  border-radius: 0.25em;
+}
