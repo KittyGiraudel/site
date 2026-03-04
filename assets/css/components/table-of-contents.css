@@ -47,8 +47,8 @@
 }
 
 .TableOfContents__item {
-  margin: var(--vb-1\/6) 0;
-  line-height: 1.2;
+  margin: var(--vb-1\/4) 0;
+  line-height: 1.1;
 }
 
 .TableOfContents__list--sublist {
