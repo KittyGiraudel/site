@@ -62,9 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function applyTheme(theme) {
-    const isDark = theme === Theme.DARK
 
-    document.documentElement.classList.toggle('dark', isDark)
+    document.documentElement.classList.toggle('dark', theme === Theme.DARK)
 
     // Represent three states for assistive tech and styling.
     if (theme === Theme.DARK) {
@@ -90,7 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     themeButton.setAttribute('title', label)
 
-    setGiscusTheme(isDark ? 'dark' : 'light')
+    if (theme === Theme.DARK) setGiscusTheme('dark')
+    else if (theme === Theme.LIGHT) setGiscusTheme('light')
+    else setGiscusTheme('preferred_color_scheme')
   }
 
   function getNextTheme(theme) {
