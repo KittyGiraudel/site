@@ -58,11 +58,11 @@ So here is the approach: find the first top-level element within the content sec
 
 Liquid doesn’t have a concept of HTML or DOM element though. It just renders strings of text. And I really didn’t want to start parsing HTML by hand with regular expressions.
 
-### Cheerio to the rescue!
+### cheerio to the rescue!
 
-I am amazed at how many times I’ve reached for [Cheerio](https://cheerio.js.org/) over the years. If you’re not familiar with it, it’s a rock solid library to manipulate HTML with jQuery-style selectors. The cool thing about Cheerio is that it doesn’t need a browser, it can run just fine on Node.js. You feed it a HTML string, it gives you a DOM tree that you can manipulate, and you can spit out some HTML back.
+I am amazed at how many times I’ve reached for [cheerio](https://cheerio.js.org/) over the years. If you’re not familiar with it, it’s a rock solid library to manipulate HTML with jQuery-style selectors. The cool thing about cheerio is that it doesn’t need a browser, it can run just fine on Node.js. You feed it a HTML string, it gives you a DOM tree that you can manipulate, and you can spit out some HTML back.
 
-So here is the plan: load our HTML in Cheerio, find the first top-level element, split the top-level collection of nodes there, and serialize both collections back to HTML strings.
+So here is the plan: load our HTML in cheerio, find the first top-level element, split the top-level collection of nodes there, and serialize both collections back to HTML strings.
 
 ```js
 /**
@@ -98,7 +98,7 @@ function serialize(nodeArray) {
 }
 ```
 
-It’s important to initialize Cheerio in [fragment mode](https://cheerio.js.org/docs/advanced/configuring-cheerio/#fragment-mode), so that it doesn’t automatically inject `<html>` and `<body>` elements. That’s what the third argument is (`isDocument: false`).
+It’s important to initialize cheerio in [fragment mode](https://cheerio.js.org/docs/advanced/configuring-cheerio/#fragment-mode), so that it doesn’t automatically inject `<html>` and `<body>` elements. That’s what the third argument is (`isDocument: false`).
 
 ## Wrapping up
 
