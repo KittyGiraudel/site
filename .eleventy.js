@@ -231,7 +231,7 @@ function info(content) {
 }
 
 function time(value) {
-  return `<time datetime="${dateToXmlSchema(value)}">${dateToString(value)}</time>`
+  return `<time datetime="${dateToXmlSchema(value)}" title="${value}">${dateToString(value)}</time>`
 }
 
 function readingTime(content) {
