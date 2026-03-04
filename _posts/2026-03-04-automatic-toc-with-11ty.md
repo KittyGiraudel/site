@@ -95,6 +95,9 @@ We can replace it in our top-level partial as well:
 {​% endif %}
 ```
 
+{% info %}The `root` parameter enables us to add a specific class to nested lists (`ToC__list--sublist`) so we can shift them to the right accordingly. It will also be handy to [make sublists smaller](#deeper-and-smaller).
+{% endinfo %}
+
 ## Generating the data
 
 Now that we know exactly how we want to render our markup, we can have our filter produce the necessary data. It needs to return an array of objects, each of which with `text`, `id`, `level` and optionally an array of `children` which are shaped identically.
@@ -235,4 +238,6 @@ That’s it! Every non-top-level `.ToC__item` item reduces its font-size by 10%,
 
 ## Wrapping up
 
-At the end of the day, that’s a pretty simple approach, but there were quite a few things to consider along the way. I’m not going to publish this as a plugin because a) I don’t think it solves an unsolved problem and b) I risk creating technical debt to people by being a lousy maintainer. But you should be able to duplicate the approach in your own Eleventy website very easily.
+At the end of the day, that’s a pretty simple approach, but there were quite a few things to consider along the way.
+
+I’m not going to publish this as a plugin because a) I don’t think it solves an unsolved problem and b) I risk creating technical debt to people by being a lousy maintainer. But you should be able to duplicate the approach in your own Eleventy website very easily.
