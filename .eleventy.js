@@ -1,12 +1,12 @@
 import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import slugify from '@sindresorhus/slugify'
 import * as cheerio from 'cheerio'
 import footnotes from 'eleventy-plugin-footnotes'
 import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
-import slugify from 'slugify'
 import postStatsPlugin from './_plugins/post-stats.js'
 import tocPlugin from './_plugins/toc.js'
 

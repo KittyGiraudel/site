@@ -1,5 +1,5 @@
+import slugify from '@sindresorhus/slugify'
 import * as cheerio from 'cheerio'
-import slugify from 'slugify'
 
 export default function tocPlugin(eleventyConfig) {
   eleventyConfig.addFilter('table_of_contents', html => {
