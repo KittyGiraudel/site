@@ -1,0 +1,41 @@
+.Project__header {
+  text-align: center;
+  margin-bottom: var(--vb);
+}
+
+.Project__description {
+  margin: 0 0 var(--vb-2\/3);
+  font-size: 110%;
+  text-wrap: balance;
+}
+
+.Project__tags .Tags {
+  margin-bottom: var(--vb-2\/3);
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.Project__meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: center;
+  font-size: 95%;
+}
+
+.Project__meta-link {
+  position: relative;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+.Project__stars {
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.Project__content {
+  margin-top: var(--vb);
+}
+
