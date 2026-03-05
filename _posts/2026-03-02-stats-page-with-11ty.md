@@ -179,21 +179,13 @@ For funsies, I thought I’d add some data visualisation to my stats page. First
 
 {% raw %}
 ```js
-window.__STATS_YEARS__ = [
-{​%- for year in stats.years %}
-  { year: {​{ year.year }}, postCount: {​{ year.postCount }}, avgCharacterCount: {​{ year.avgCharacterCount }}, avgWordCount: {​{ year.avgWordCount }}, avgParagraphCount: {​{ year.avgParagraphCount }} }{​% unless forloop.last %},{​% endunless %}
-{​%- endfor %}
-];
+window.__STATS_YEARS__ = {{ stats.years | json }};
 ```
 {% endraw %}
 
-Ultimately {% footnoteref "rendered-script" "Fun fact: This code block showcasing the <code>window.__STATS_YEARS__</code> is an actual <code>script</code> tag with <code>display: block</code>. Inspect it in your browser — so meta!" %}it spits this out{% endfootnoteref %}: 
+Ultimately {% footnoteref "rendered-script" "Fun fact: This code block showcasing the <code>window.__STATS_YEARS__</code> is an actual <code>script</code> tag with <code>display: block</code> — so meta. It’s the data source used by the visualization in this article. Inspect it in your browser!" %}it spits this out{% endfootnoteref %}: 
 
-<pre class="language-js"><code><script style="display: block">window.__STATS_YEARS__ = [
-{%- for year in stats.years %}
-  { year: {{ year.year }}, postCount: {{ year.postCount }}, avgCharacterCount: {{ year.avgCharacterCount }}, avgWordCount: {{ year.avgWordCount }}, avgParagraphCount: {{ year.avgParagraphCount }} }{% unless forloop.last %},{% endunless %}
-{%- endfor %}
-];</script></code></pre>
+<pre class="language-js"><code><script style="display:block">window.__STATS_YEARS__={{ stats.years | json }};</script></code></pre>
 
 Then, we can have some JavaScript read that global variable, and use [ApexCharts](https://apexcharts.com/) to render a chart. I let Cursor deal with that, because it’s much faster and better at processing documentation than I am.
 
@@ -224,7 +216,6 @@ Tadaaaa — pretty cool if you ask me! The huge bump in 2020 is because I releas
 
 It’s all very vain of course, not to mention very unnecessary. But it was a good opportunity to play with Eleventy custom plugins, do some data visualisation, and satisfy my love for metrics. Maybe it’ll inspire you to do something similar on your own blog. :)
 
-{% if site.minify_html == true %}
 <script>
   // Ugly hack to undo the aggressive compression from html-minifier for that element specifically
   document.addEventListener('DOMContentLoaded', () => {
@@ -237,4 +228,3 @@ It’s all very vain of course, not to mention very unnecessary. But it was a go
       .replace(/([:,])/g, '$1 ')     // Inner
   })
 </script>
-{% endif %}
