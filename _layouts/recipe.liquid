@@ -11,10 +11,7 @@ layout: default
 <article class="Post">
   <p class="PostDate">For {{ serves }} <span class="Fleuron">❦</span> About {{ preparation_time }}</p>
 
-  {% assign parts = content | split_content %}
-  {{ parts[0] }}
-  {% include "ad.liquid" %}
-  {{ parts[1] }}
+  {{ content }}
   
   <h2>Ingredients</h2>
   <ul class="RecipeIngredients">

@@ -214,7 +214,7 @@ h2 {
 
 ## Better ad placement
 
-For some reason, I am still running ads on this website. It’s not like I make a lot of money from it though. I’ve been with CarbonAds for over 10 years, and probably haven’t made more than a few hundred bucks from them in all that time. But still, it pays for the occasional cup of coffee, so it’s kind of nice I guess.
+{% footnoteref "no-more-ads" "I was serving ads at the time of writing. I am no longer doing that now." %}~~For some reason, I am still running ads on this website~~{% endfootnoteref %}. It’s not like I make a lot of money from it though. I’ve been with CarbonAds for over 10 years, and probably haven’t made more than a few hundred bucks from them in all that time. But still, it pays for the occasional cup of coffee, so it’s kind of nice I guess.
 
 Carbon requires the ad (which is ~330 &times; 114px) to be placed above the fold — for obvious reasons. I didn’t really know what to do with it, so I had placed it right below the title, centered. It didn’t look too great. Even worse, when running an ad-blocker (something I obviously also do), there would be this massive blank space under the page title for where the ad was supposed to show up. It would look awkward. 
 

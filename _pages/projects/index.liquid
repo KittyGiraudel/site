@@ -31,8 +31,6 @@ permalink: "/projects/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
   items: main_projects
 %}
 
-{% include "ad.liquid" %}
-
 <ul class="List">
   {% for project in paginatedProjects %}
   <li class="List__item">
