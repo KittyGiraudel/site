@@ -5,19 +5,24 @@
     "link": "https://a11y-dialog.netlify.app/",
     "repository": "https://github.com/KittyGiraudel/a11y-dialog",
     "tags": ["Accessibility", "JavaScript", "HTML", "Dialog", "TypeScript"],
-    "showcase": true
+    "showcase": true,
+    "detail_url": "/projects/a11y-dialog/"
   },
   {
     "name": "A11y-toggle",
     "description": "A script to make accessible content toggles to assistive technology users.",
     "link": "https://github.com/edenspiekermann/a11y-toggle",
-    "tags": ["Accessibility", "JavaScript", "HTML"]
+    "repository": "https://github.com/edenspiekermann/a11y-toggle",
+    "tags": ["Accessibility", "JavaScript", "HTML"],
+    "detail_url": "/projects/a11y-toggle/"
   },
   {
     "name": "Browserhacks",
     "description": "An extensive list of browser specific hacks.",
     "link": "http://browserhacks.com/",
-    "tags": ["CSS", "JavaScript"]
+    "repository": "https://github.com/4ae9b8/browserhacks",
+    "tags": ["CSS", "JavaScript"],
+    "detail_url": "/projects/browserhacks/"
   },
   {
     "name": "Circularray",
@@ -65,7 +70,9 @@
     "name": "node-legofy",
     "description": "A script to convert an image into a mosaic of LEGO pieces.",
     "link": "https://github.com/KittyGiraudel/node-legofy",
-    "tags": ["JavaScript", "Node.js"]
+    "repository": "https://github.com/KittyGiraudel/node-legofy",
+    "tags": ["JavaScript", "Node.js"],
+    "detail_url": "/projects/node-legofy/"
   },
   {
     "name": "Outline Audit",
@@ -77,7 +84,9 @@
     "name": "Par Odin! Solver",
     "description": "A solver for the puzzle board game “Par Odin!”.",
     "link": "https://github.com/KittyGiraudel/par-odin-solver",
-    "tags": ["JavaScript", "TypeScript"]
+    "repository": "https://github.com/KittyGiraudel/par-odin-solver",
+    "tags": ["JavaScript", "TypeScript"],
+    "detail_url": "/projects/par-odin-solver/"
   },
   {
     "name": "react-a11y-dialog",
@@ -108,8 +117,9 @@
     "description": "An opinionated styleguide for writing sane, maintainable and scalable Sass.",
     "link": "https://sass-guidelin.es",
     "repository": "https://github.com/KittyGiraudel/sass-guidelines",
-    "tags": ["Sass"],
-    "showcase": true
+    "tags": ["Sass", "CSS", "Documentation"],
+    "showcase": true,
+    "detail_url": "/projects/sass-guidelines/"
   },
   {
     "name": "Sass Semver",
@@ -121,7 +131,9 @@
     "name": "SassDoc",
     "description": "A documentation system for Sass.",
     "link": "http://sassdoc.com",
-    "tags": ["Sass", "Documentation"]
+    "repository": "https://github.com/SassDoc/sassdoc",
+    "tags": ["Sass", "Documentation"],
+    "detail_url": "/projects/sassdoc/"
   },
   {
     "name": "SassyBitwise",
@@ -193,15 +205,18 @@
     "name": "Selectors Explained",
     "description": "A CSS selector to plain English converter.",
     "link": "https://github.com/KittyGiraudel/selectors-explained",
-    "tags": ["CSS"]
+    "repository": "https://github.com/KittyGiraudel/selectors-explained",
+    "tags": ["CSS", "Documentation"],
+    "detail_url": "/projects/selectors-explained/"
   },
   {
     "name": "Simplified JavaScript Jargon",
     "description": "A community-driven attempt at explaining JavaScript concepts and buzzwords.",
     "link": "https://jargon.js.org",
     "repository": "https://github.com/KittyGiraudel/SJSJ",
-    "tags": ["JavaScript"],
-    "showcase": true
+    "tags": ["JavaScript", "Documentation"],
+    "showcase": true,
+    "detail_url": "/projects/sjsj/"
   },
   {
     "name": "Spritesh",
