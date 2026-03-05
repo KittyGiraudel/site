@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+{% include "styles.liquid", partials: "
+  components/title,
+  components/figure,
+  components/code,
+  components/tags,
+  components/tile,
+  components/project
+" %}
+
+{% assign project = projects | where: "name", project_name | first %}
+
+<article class="Project">
+  <header class="Project__header">
+    {% if project %}
+      <p class="Project__description">
+        {{ project.description }}
+      </p>
+
+      {% if project.tags %}
+        <div class="Project__tags">
+          {% include "tags.liquid", tags: project.tags %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <nav class="Project__meta" aria-label="Project links">
+      {% if project and project.link %}
+        <a class="Project__meta-link" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
+          Visit website
+        </a>
+      {% endif %}
+
+      {% if project and project.repository %}
+        {% assign project_stars = github.stargazers[project.repository] | default: 0 %}
+        <a class="Project__meta-link" href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">
+          View on GitHub
+          {% if project_stars > 0 %}
+            <span class="Project__stars">
+              · {{ project_stars | format_number }} ★
+            </span>
+          {% endif %}
+        </a>
+      {% endif %}
+    </nav>
+  </header>
+
+  {% include "ad.liquid" %}
+
+  {% if screenshot %}
+    <figure class="figure">
+      <img src="{{ screenshot }}" alt="{{ screenshot_alt }}">
+      {% if screenshot_caption %}
+        <figcaption class="figure__caption">
+          {{ screenshot_caption }}
+        </figcaption>
+      {% endif %}
+    </figure>
+  {% endif %}
+
+  <section class="Project__content">
+    {% markdown %}
+      {{ content }}
+    {% endmarkdown %}
+  </section>
+</article>
+
