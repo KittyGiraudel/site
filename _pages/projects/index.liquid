@@ -37,8 +37,16 @@ permalink: "/projects/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
   {% for project in paginatedProjects %}
   <li class="List__item">
     {% include "tags.liquid", tags: project.tags %}
-    <a href="{{ project.link }}" class="List__primary-content" target="_blank"
-      rel="noopener noreferrer">{{ project.name }}</a>
+
+    {% if project.detail_url %}
+      <a href="{{ project.detail_url }}" class="List__primary-content">
+        {{ project.name }}
+      </a>
+    {% else %}
+      <a href="{{ project.link }}" class="List__primary-content" target="_blank"
+        rel="noopener noreferrer">{{ project.name }}</a>
+    {% endif %}
+
     <p class="List__secondary-content">{{ project.description }}</p>
   </li>
 {% endfor %}

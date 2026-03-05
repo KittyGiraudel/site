@@ -1,0 +1,34 @@
+---
+layout: project
+title: Par Odin! Solver
+project_name: Par Odin! Solver
+screenshot: /assets/images/projects/par-odin-solver.png
+screenshot_alt: Screenshot of the Par Odin! Solver interface solving a puzzle board.
+permalink: /projects/par-odin-solver/index.html
+---
+
+Par Odin! Solver is a small solver for the puzzle board game “Par Odin!”. It
+explores possible configurations of gods and tiles to find valid solutions for a
+given board.
+
+## What it does
+
+- **Models the rules of the game** so that a board state can be represented and
+  evaluated programmatically.
+- **Searches the solution space** using an algorithm that prunes impossible
+  branches early, keeping the solver reasonably fast for typical boards.
+- **Outputs concrete solutions**, making it easier to verify results or explore
+  alternative layouts for tricky puzzles.
+
+It turns what can be a painstaking manual process into something closer to an
+interactive exploration tool.
+
+## Why I built it
+
+Par Odin! Solver started as a way to combine a puzzle I enjoy with an interest
+in algorithms and state search. Encoding the game rules surfaced plenty of
+edge‑cases and was a fun exercise in balancing correctness with performance.
+
+The repository contains usage instructions, board representations and examples
+if you want to try solving your own “Par Odin!” setups.
+

@@ -1,0 +1,40 @@
+---
+layout: project
+title: SassDoc
+project_name: SassDoc
+screenshot: /assets/images/projects/sassdoc.png
+screenshot_alt: Screenshot of the SassDoc documentation website.
+screenshot_caption: SassDoc generates a browsable, searchable reference straight from your Sass source.
+permalink: /projects/sassdoc/index.html
+---
+
+SassDoc is a documentation system for Sass that turns your source code and
+inline comments into a full‑featured reference website. It brings the kind of
+developer experience people expect from tools like JSDoc to the Sass ecosystem.
+
+{% info %}**Disclaimer:** SassDoc is no longer actively maintained. It remains totally usable though, and will still work as expected even in modern Sass codebases.
+{% endinfo %}
+
+## How it works
+
+- **Inline annotations**: you document your mixins, functions, variables and
+  placeholders using structured comments directly in your `.scss` files.
+- **Static generation**: a CLI parses those comments and emits a static site
+  that can be hosted anywhere alongside your project or design system.
+- **Search and navigation**: the generated UI makes it easy to browse APIs,
+  filter by type, and jump straight to what you need.
+
+Because the documentation lives next to the code, it is much easier to keep
+it in sync as things evolve.
+
+## Why it matters
+
+SassDoc was designed to support teams working on shared Sass toolkits, design
+systems and large codebases where “just reading the source” is no longer
+practical. It encourages better habits around documenting intent, not just
+implementation details, and helps newcomers build a mental model of what is
+available.
+
+The project is open‑source and has been used by many teams to document both
+internal and public Sass libraries.
+

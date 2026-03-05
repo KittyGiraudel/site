@@ -1,0 +1,55 @@
+---
+layout: project
+title: A11y-dialog
+project_name: A11y-dialog
+screenshot: /assets/images/projects/a11y-dialog.png
+screenshot_alt: Screenshot of the a11y-dialog documentation website.
+screenshot_caption: a11y-dialog has its own documentation website complete with examples and tips.
+permalink: /projects/a11y-dialog/index.html
+---
+
+A11y-dialog is a small, framework-agnostic helper to manage accessible modal dialogs.
+It focuses on doing one thing well: enforcing a robust accessibility contract so that
+keyboard and assistive technology users can reliably open, use and close dialogs
+without getting lost in the rest of the page.
+
+{% info %}**Disclaimer:** a11y-dialog is less useful than it used to be due to the native `<dialog>` element being now widely supported and generally consistent across browsers. Read [the documentation](https://a11y-dialog.netlify.app/further-reading/dialog-element) for more information.
+{% endinfo %}
+
+## What it does
+
+- **Focus management**: traps focus within the dialog while it is open, restores
+  it to the triggering element when it closes, and stays out of the way of
+  native browser focus behavior.
+- **ARIA wiring**: encourages using proper roles and relationships like
+  `role="dialog"`, `aria-modal="true"`, and `aria-labelledby` without hiding
+  complexity behind opaque abstractions.
+- **Progressive enhancement**: starts from plain, semantic HTML and only adds the
+  JavaScript needed to toggle dialog visibility and behaviour.
+
+You provide the markup and the visual design; A11y-dialog takes care of the
+accessibility details that are easy to miss or get subtly wrong.
+
+## Using it
+
+The project ships as a tiny, dependency-free script that can be used in several ways:
+
+- Loaded directly in the browser and instantiated with vanilla JavaScript.
+- Wrapped in framework-specific integrations such as `react-a11y-dialog`.
+- Embedded into existing codebases as a focused utility rather than a full UI kit.
+
+The [project website](https://a11y-dialog.netlify.app/) documents the public API,
+recommended markup structure, and common patterns like multiple dialogs on a page,
+nested dialogs, and custom open/close triggers.
+
+## My role and motivation
+
+I created a11y-dialog after repeatedly running into modal implementations that
+looked polished but were unusable with a keyboard or screen reader. The goal was
+not to invent a new design pattern, but to make the *correct* implementation of
+the existing pattern easy to reuse across projects.
+
+Over time, the project has grown with community feedback, bug reports and real
+world usage across a variety of products and tech stacks. It remains deliberately
+small and focused so that it can be audited, understood and adapted by people who
+care about both user experience and accessibility.
