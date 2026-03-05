@@ -14,7 +14,7 @@ layout: default
 {% assign project = projects | where: "name", project_name | first %}
 
 <article class="Project">
-  <header class="Project__header">
+  <section class="Project__header">
     {% if project %}
       <p class="Project__description">
         {{ project.description }}
@@ -27,7 +27,7 @@ layout: default
       {% endif %}
     {% endif %}
 
-    <nav class="Project__meta" aria-label="Project links">
+    <div class="Project__meta" aria-label="Project links">
       {% if project and project.link %}
         <a class="Project__meta-link" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
           Visit website
@@ -45,8 +45,8 @@ layout: default
           {% endif %}
         </a>
       {% endif %}
-    </nav>
-  </header>
+    </div>
+  </section>
 
   {% include "ad.liquid" %}
 
