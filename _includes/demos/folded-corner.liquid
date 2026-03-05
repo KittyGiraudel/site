@@ -1,0 +1,149 @@
+<style>
+#{{ id }} .ImageContainer {
+  --with-shadow: {% if with_shadow == true %}""{% else %}none{% endif %};
+  --with-fold:   {% if with_fold   == true %}""{% else %}none{% endif %};
+  {%  if with_shadow and not with_extra_shadows %}
+    --shade: rgb(0 0 0 / 0.1);
+  {% endif %}
+}
+</style>
+
+<div class="ImageContainer-wrapper" id="{{ id }}">
+  <div class="ImageContainer {% if forced %} ImageContainer--hover{% endif %}" tabindex="0">
+    {% if with_extra_shadows -%}
+      <div class="ImageContainer__shadow">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    {%- endif -%}
+    <img src="https://plus.unsplash.com/premium_photo-1677545183884-421157b2da02?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+  </div>
+</div>
+
+{% if with_styles %}
+{% raw %}
+<style>
+.ImageContainer-wrapper {
+  background-color: light-dark(#fffafd, #322d2f);
+  border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
+  border-radius: 1em;
+  corner-shape: squircle;
+  padding: 1em;
+}
+
+.ImageContainer {
+  max-width: 400px;
+  margin: auto;
+  background-color: white;
+  position: relative;
+  transition: clip-path 400ms;
+  
+  --image-back-color: white;
+  --shade: rgb(0 0 0 / 0.025);
+  --fold-start-y: 0%;
+  --fold-start-x: 0%;
+  --fold-corner-x: 0%;
+  --fold-corner-y: 0%;
+  --shadow-corner-x: 0%;
+  --shadow-corner-y: 0%;
+  --shadow-offset-x: 0.5px;
+  --shadow-offset-y: 1px;
+  
+  clip-path: polygon(
+    var(--fold-start-x)  0%,
+    100%                 0%,
+    100%               100%,
+    0%                 100%,
+    0%  var(--fold-start-y)
+  );
+}
+
+.ImageContainer::after,
+.ImageContainer::before,
+.ImageContainer__shadow,
+.ImageContainer__shadow > * {
+  transition: inherit;
+}
+
+.ImageContainer::after,
+.ImageContainer::before,
+.ImageContainer__shadow > * {
+  position: absolute;
+  inset: 0;
+}
+
+.ImageContainer--hover,
+.ImageContainer:hover,
+.ImageContainer:focus {
+  --fold-start-x: 30%;
+  --fold-start-y: 25%;
+  --fold-corner-x: 15%;
+  --fold-corner-y: 31%;
+  --shadow-corner-x: 16%;
+  --shadow-corner-y: 35%;
+}
+
+.ImageContainer::before {
+  content: var(--with-fold);
+  background-color: var(--image-back-color);
+  z-index: 2;
+  clip-path: polygon(
+    var(--fold-start-x)                    0%,
+    0%                    var(--fold-start-y),
+    var(--fold-corner-x) var(--fold-corner-y)
+  );
+}
+
+.ImageContainer::after,
+.ImageContainer__shadow > * {
+  background-color: var(--shade);
+}
+
+.ImageContainer::after {
+  content: var(--with-shadow);
+  z-index: 1;
+  clip-path: polygon(
+    var(--fold-start-x)                        0%,
+    0%                        var(--fold-start-y),
+    var(--shadow-corner-x) var(--shadow-corner-y)
+  );
+}
+
+.ImageContainer__shadow > * {
+  clip-path: polygon(
+    var(--fold-start-x) 0%,
+    0% var(--fold-start-y),
+    calc(var(--shadow-corner-x) + var(--shadow-offset-x) * var(--index))
+    calc(var(--shadow-corner-y) + var(--shadow-offset-y) * var(--index))
+  );
+}
+
+.ImageContainer__shadow > :nth-child(1)  { --index:  1; }
+.ImageContainer__shadow > :nth-child(2)  { --index:  2; }
+.ImageContainer__shadow > :nth-child(3)  { --index:  3; }
+.ImageContainer__shadow > :nth-child(4)  { --index:  4; }
+.ImageContainer__shadow > :nth-child(5)  { --index:  5; }
+.ImageContainer__shadow > :nth-child(6)  { --index:  6; }
+.ImageContainer__shadow > :nth-child(7)  { --index:  7; }
+.ImageContainer__shadow > :nth-child(8)  { --index:  8; }
+.ImageContainer__shadow > :nth-child(9)  { --index:  9; }
+.ImageContainer__shadow > :nth-child(10) { --index: 10; }
+
+.ImageContainer img {
+  max-height: 300px;
+  transform: scaleX(-1);
+  z-index: -1;
+  position: relative;
+  margin: 0 auto;
+}
+</style>
+{% endraw %}
+{% endif %}
