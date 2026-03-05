@@ -7,8 +7,12 @@
 <section class="chart-card">
   <div class="chart-header">
     <div>
-      <div class="chart-title">Monthly payouts (USD)</div>
+      <div class="chart-title">Payouts (USD)</div>
       <div class="chart-subtitle" id="rangeLabel"></div>
+      <div class="mode-toggle" aria-label="Granularity" role="radiogroup">
+        <button type="button" data-mode="yearly" class="is-active">Yearly</button>
+        <button type="button" data-mode="monthly">Monthly</button>
+      </div>
     </div>
     <div>
       <div class="range-toggle" aria-label="Time range" role="radiogroup">
@@ -20,7 +24,7 @@
       </div>
       <label class="estimates-toggle" id="estimatesWrapper">
         <input type="checkbox" id="estimatesToggle">
-        <span>Include extrapolated history back to 2013</span>
+        <span>Show extrapolated history</span>
       </label>
     </div>
   </div>
@@ -34,15 +38,15 @@
       <div class="summary-value" id="totalValue">$0.00</div>
     </div>
     <div class="summary-item">
-      <div class="summary-label">Months tracked</div>
+      <div class="summary-label"><span id="bestPeriodUnit">year</span>s tracked</div>
       <div class="summary-value" id="monthsValue">0</div>
     </div>
     <div class="summary-item">
-      <div class="summary-label">Best month</div>
+      <div class="summary-label">Best <span id="bestPeriodUnit">year</span></div>
       <div class="summary-value" id="bestMonthValue">–</div>
     </div>
     <div class="summary-item">
-      <div class="summary-label">Average / month</div>
+      <div class="summary-label">Average / <span id="avgPeriodUnit">year</span></div>
       <div class="summary-value" id="avgValue">$0.00</div>
     </div>
   </div>

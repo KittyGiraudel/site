@@ -103,6 +103,33 @@
   font-size: 0.95rem;
 }
 
+.mode-toggle {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.mode-toggle button {
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: var(--viz-muted);
+  font-size: 0.7rem;
+  padding: 0.16rem 0.55rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.mode-toggle button.is-active {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: var(--viz-accent);
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
 .range-toggle {
   display: inline-flex;
   gap: 0.35rem;

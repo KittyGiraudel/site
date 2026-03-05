@@ -68,13 +68,16 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
 
       yearBucket.postCount += 1
 
-      const monthKey = `${year}-${monthIndex}`
-      let monthBucket = monthsMap.get(monthKey)
-      if (!monthBucket) {
-        monthBucket = { year, monthIndex, postCount: 0 }
-        monthsMap.set(monthKey, monthBucket)
+      // For monthly article counts, we only want on-site content, not external links.
+      if (!isExternal) {
+        const monthKey = `${year}-${monthIndex}`
+        let monthBucket = monthsMap.get(monthKey)
+        if (!monthBucket) {
+          monthBucket = { year, monthIndex, postCount: 0 }
+          monthsMap.set(monthKey, monthBucket)
+        }
+        monthBucket.postCount += 1
       }
-      monthBucket.postCount += 1
 
       // There are no content stats to collect for external articles since they
       // do not have content, and are just links to other websites.

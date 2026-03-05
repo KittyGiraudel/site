@@ -1,5 +1,11 @@
 const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+const yearlyPostsMap = postsPerMonth.reduce((map, m) => {
+  const key = m.year;
+  map.set(key, (map.get(key) || 0) + m.postCount);
+  return map;
+}, new Map());
+
 function buildEstimatedEntries(baseEntries, yearsBack = 3) {
   if (!baseEntries.length) return [];
   const monthsToAdd = yearsBack * 12;
@@ -55,22 +61,50 @@ function buildEstimatedEntries(baseEntries, yearsBack = 3) {
       monAbbr,
       monthIndex,
       amount: scaledBaseline * jitter,
+      estimated: true,
     });
   }
 
   return estimates;
 }
 
-// Go ~6 years back from 2019 to reach your first known "ads existed" date in 2013.
-const estimatedEntries = buildEstimatedEntries(realEntries, 6);
+// Go back far enough to roughly reach your first known "ads existed" date in 2013.
+// With the current earliest real data in mid‑2018, 5 years of extrapolation
+// lands us around mid‑2013 instead of drifting into 2012.
+const estimatedEntries = buildEstimatedEntries(realEntries, 5);
 let allEntries = realEntries.slice();
 let currentRange = 'all';
+let currentMode = 'yearly'; // 'monthly' | 'yearly'
 
 function getArticleCount(year, monAbbr) {
   const monthIndex = monthOrder.indexOf(monAbbr)
   if (monthIndex === -1) return 0
   const hit = postsPerMonth.find(m => m.year === year && m.monthIndex === monthIndex)
   return hit ? hit.postCount : 0
+}
+
+function getYearlyArticleCount(year) {
+  return yearlyPostsMap.get(year) || 0;
+}
+
+function getArticlesForEntries(entries) {
+  if (currentMode === 'yearly') {
+    return entries.map(e => getYearlyArticleCount(e.year));
+  }
+  return entries.map(e => getArticleCount(e.year, e.monAbbr));
+}
+
+function buildYearlyEntries(sourceEntries) {
+  const byYear = new Map();
+  for (const e of sourceEntries) {
+    const year = e.year;
+    const existing =
+      byYear.get(year) || { year, monAbbr: 'Year', amount: 0, estimated: false };
+    existing.amount += e.amount;
+    if (e.estimated) existing.estimated = true;
+    byYear.set(year, existing);
+  }
+  return Array.from(byYear.values()).sort((a, b) => a.year - b.year);
 }
 
 function filterEntries(range) {
@@ -98,7 +132,30 @@ function filterEntries(range) {
   });
 }
 
+function getEntriesForCurrentMode(range) {
+  if (currentMode === 'yearly') {
+    const yearlyAll = buildYearlyEntries(allEntries);
+    if (range === 'all') return yearlyAll;
+    if (!yearlyAll.length) return [];
+    const years = yearlyAll.map(e => e.year);
+    const maxYear = Math.max(...years);
+    let yearsWindow = 0;
+    if (range === '5y') yearsWindow = 5;
+    if (range === '3y') yearsWindow = 3;
+    if (range === '2y') yearsWindow = 2;
+    if (range === '1y') yearsWindow = 1;
+    if (!yearsWindow) return yearlyAll;
+    const minYear = maxYear - (yearsWindow - 1);
+    return yearlyAll.filter(e => e.year >= minYear);
+  }
+  // Monthly mode
+  return filterEntries(range);
+}
+
 function entriesToLabels(entries) {
+  if (currentMode === 'yearly') {
+    return entries.map(e => String(e.year));
+  }
   return entries.map(e => {
     const idx = monthOrder.indexOf(e.monAbbr);
     const m = String(idx + 1).padStart(2, '0');
@@ -115,8 +172,14 @@ function updateRangeLabel(entries) {
   }
   const first = entries[0];
   const last = entries[entries.length - 1];
-  const firstLabel = `${first.monAbbr} ${first.year}`;
-  const lastLabel = `${last.monAbbr} ${last.year}`;
+  const firstLabel =
+    currentMode === 'yearly'
+      ? `${first.year}`
+      : `${first.monAbbr} ${first.year}`;
+  const lastLabel =
+    currentMode === 'yearly'
+      ? `${last.year}`
+      : `${last.monAbbr} ${last.year}`;
   el.textContent = firstLabel === lastLabel
     ? firstLabel
     : `${firstLabel} → ${lastLabel}`;
@@ -144,12 +207,22 @@ function updateSummary(entries, labels) {
   return values;
 }
 
+function updateSummaryUnitLabels() {
+  const unit = currentMode === 'yearly' ? 'year' : 'month';
+  const bestUnit = document.getElementById('bestPeriodUnit');
+  const avgUnit = document.getElementById('avgPeriodUnit');
+  if (bestUnit) bestUnit.textContent = unit;
+  if (avgUnit) avgUnit.textContent = unit;
+}
+
 const ctx = document.getElementById('payoutsChart').getContext('2d');
-const initialEntries = filterEntries(currentRange);
+const initialEntries = getEntriesForCurrentMode(currentRange);
 const initialLabels = entriesToLabels(initialEntries);
 updateRangeLabel(initialEntries);
+updateSummaryUnitLabels();
 const initialValues = updateSummary(initialEntries, initialLabels);
-const initialArticles = initialEntries.map(e => getArticleCount(e.year, e.monAbbr));
+const initialArticles = getArticlesForEntries(initialEntries);
+let currentEntriesForTooltip = initialEntries;
 
 const chart = new Chart(ctx, {
   type: 'bar',
@@ -200,7 +273,11 @@ const chart = new Chart(ctx, {
         callbacks: {
           label: ctx => {
             const label = ctx.dataset.label || ''
-            if (label === 'Payout (USD)') return `$${ctx.parsed.y.toFixed(2)}`
+            if (label === 'Payout (USD)') {
+              const entry = currentEntriesForTooltip?.[ctx.dataIndex];
+              const suffix = entry?.estimated ? ' (estimated)' : '';
+              return `$${ctx.parsed.y.toFixed(2)}${suffix}`;
+            }
             if (label === 'Articles') return `${ctx.parsed.y} article${ctx.parsed.y === 1 ? '' : 's'}`
             return ctx.parsed.y
           },
@@ -246,6 +323,53 @@ const chart = new Chart(ctx, {
 
 const estimatesWrapper = document.getElementById('estimatesWrapper');
 const estimatesToggle = document.getElementById('estimatesToggle');
+const modeButtons = Array.from(
+  document.querySelectorAll('.mode-toggle button'),
+);
+const rangeButtons = Array.from(
+  document.querySelectorAll('.range-toggle button'),
+);
+
+function updateRangeButtonsForMode() {
+  if (!rangeButtons.length) return;
+  rangeButtons.forEach(btn => {
+    const range = btn.getAttribute('data-range');
+    if (range !== 'all') {
+      btn.style.display = currentMode === 'yearly' ? 'none' : '';
+    }
+  });
+}
+
+if (modeButtons.length) {
+  modeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.getAttribute('data-mode');
+      if (!mode || mode === currentMode) return;
+      currentMode = mode;
+
+      modeButtons.forEach(b => {
+        b.classList.toggle('is-active', b === btn);
+      });
+
+      updateRangeButtonsForMode();
+
+      const entries = getEntriesForCurrentMode(currentRange);
+      const labels = entriesToLabels(entries);
+      const values = updateSummary(entries, labels);
+      updateRangeLabel(entries);
+      updateSummaryUnitLabels();
+      const articles = getArticlesForEntries(entries);
+
+      currentEntriesForTooltip = entries;
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = values;
+      chart.data.datasets[1].data = articles;
+      chart.update();
+    });
+  });
+}
+
+updateRangeButtonsForMode();
 
 document.querySelectorAll('.range-toggle button').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -270,12 +394,14 @@ document.querySelectorAll('.range-toggle button').forEach(btn => {
       estimatesWrapper.style.display = '';
     }
 
-    const filtered = filterEntries(range);
+    const filtered = getEntriesForCurrentMode(range);
     const labels = entriesToLabels(filtered);
     const values = updateSummary(filtered, labels);
     updateRangeLabel(filtered);
-    const articles = filtered.map(e => getArticleCount(e.year, e.monAbbr));
+    updateSummaryUnitLabels();
+    const articles = getArticlesForEntries(filtered);
 
+    currentEntriesForTooltip = filtered;
     chart.data.labels = labels;
     chart.data.datasets[0].data = values;
     chart.data.datasets[1].data = articles;
@@ -289,12 +415,14 @@ if (estimatesToggle) {
       ? estimatedEntries.concat(realEntries)
       : realEntries.slice();
 
-    const filtered = filterEntries(currentRange);
+    const filtered = getEntriesForCurrentMode(currentRange);
     const labels = entriesToLabels(filtered);
     const values = updateSummary(filtered, labels);
     updateRangeLabel(filtered);
-    const articles = filtered.map(e => getArticleCount(e.year, e.monAbbr));
+    updateSummaryUnitLabels();
+    const articles = getArticlesForEntries(filtered);
 
+    currentEntriesForTooltip = filtered;
     chart.data.labels = labels;
     chart.data.datasets[0].data = values;
     chart.data.datasets[1].data = articles;
