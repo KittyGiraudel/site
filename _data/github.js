@@ -19,6 +19,7 @@ export default async function () {
     'https://api.github.com/repos/KittyGiraudel/a11y-dialog',
     'https://api.github.com/repos/KittyGiraudel/SJSJ',
     'https://api.github.com/repos/KittyGiraudel/sass-guidelines',
+    'https://api.github.com/repos/SassDoc/sassdoc',
   ]
 
   try {
