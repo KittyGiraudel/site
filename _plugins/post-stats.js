@@ -16,6 +16,7 @@ const EMPTY_COLLECTION = {
   avgParagraphCount: 0,
   popularTags: [],
   years: [],
+  months: [],
 }
 
 export default function postStatsPlugin(eleventyConfig, options = {}) {
@@ -45,9 +46,11 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
     let contentPostCount = 0
 
     const yearsMap = new Map()
+    const monthsMap = new Map()
 
     for (const post of posts) {
       const year = post.date.getFullYear()
+      const monthIndex = post.date.getMonth()
       const isExternal = Boolean(post.data?.external)
 
       let yearBucket = yearsMap.get(year)
@@ -64,6 +67,14 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
       }
 
       yearBucket.postCount += 1
+
+      const monthKey = `${year}-${monthIndex}`
+      let monthBucket = monthsMap.get(monthKey)
+      if (!monthBucket) {
+        monthBucket = { year, monthIndex, postCount: 0 }
+        monthsMap.set(monthKey, monthBucket)
+      }
+      monthBucket.postCount += 1
 
       // There are no content stats to collect for external articles since they
       // do not have content, and are just links to other websites.
@@ -107,6 +118,10 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
       })
       .sort((a, b) => a.year - b.year)
 
+    const months = Array.from(monthsMap.values()).sort(
+      (a, b) => a.year - b.year || a.monthIndex - b.monthIndex,
+    )
+
     const stats = {
       firstPostDate,
       lastPostDate,
@@ -120,6 +135,7 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
       avgParagraphCount,
       popularTags,
       years,
+      months,
     }
 
     const arr = [stats]
