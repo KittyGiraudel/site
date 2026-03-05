@@ -4,9 +4,15 @@
 {% capture project_category %}{{ project.tags[0] }} · {{ project_stars | format_number }} ★{% endcapture %}
 {% capture project_label %}Look at project <span class="visually-hidden">{{ project.name }}</span>{% endcapture %}
 
+{% if project.detail_url %}
+  {% assign project_link = project.detail_url %}
+{% else %}
+  {% assign project_link = project.link %}
+{% endif %}
+
 {% include "tile.liquid",
   primary: project.name,
   secondary: project_category,
-  link_url: project.link,
+  link_url: project_link,
   link_label: project_label
 %}
