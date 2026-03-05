@@ -118,7 +118,6 @@
     "link": "https://sass-guidelin.es",
     "repository": "https://github.com/KittyGiraudel/sass-guidelines",
     "tags": ["Sass", "CSS", "Documentation"],
-    "showcase": true,
     "detail_url": "/projects/sass-guidelines/"
   },
   {
@@ -133,6 +132,7 @@
     "link": "http://sassdoc.com",
     "repository": "https://github.com/SassDoc/sassdoc",
     "tags": ["Sass", "Documentation"],
+    "showcase": true,
     "detail_url": "/projects/sassdoc/"
   },
   {

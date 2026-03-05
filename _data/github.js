@@ -5,6 +5,7 @@ const STATIC_DATA = {
   'https://github.com/KittyGiraudel/a11y-dialog': 2500,
   'https://github.com/KittyGiraudel/SJSJ': 2300,
   'https://github.com/KittyGiraudel/sass-guidelines': 900,
+  'https://github.com/SassDoc/sassdoc': 1400,
 }
 
 export default async function () {
