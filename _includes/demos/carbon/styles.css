@@ -1,28 +1,41 @@
 
 #carbon-viz {
-  --viz-bg: #ffffff;
-  --viz-fg: #0f172a;
-  --viz-muted: #6b7280;
-  --viz-border: #e5e7eb;
+  /* Core surface + text colours, using light-dark() like the rest of the site */
+  --viz-bg: light-dark(#ffffff, rgb(37 99 235 / 0.12));
+  --viz-fg: light-dark(#020617, #e5e7eb);
+  --viz-muted: light-dark(#6b7280, #9ca3af);
+  --viz-border: light-dark(rgb(31 41 55 / 0.1), rgb(229 231 235 / 0.1));
+
+  /* Accent palette (used for buttons, summaries, bars, etc.) */
   --viz-accent: #2563eb;
-  --viz-accent-soft: rgba(37, 99, 235, 0.05);
+  --viz-accent-soft: light-dark(
+    rgb(37 99 235 / 0.05),
+    rgb(37 99 235 / 0.12)
+  );
+
+  /* Chart-specific tokens so the host theme can override easily */
+  --viz-axis: #9ca3af;
+  --viz-grid: #9ca3af;
+  --viz-bar: rgb(56 189 248 / 0.65);
+  --viz-bar-border: rgb(56 189 248 / 0.8);
+  --viz-line: rgb(236 72 153 / 0.95);
+  --viz-line-fill: rgb(236 72 153 / 0.08);
+  --viz-line-point: rgb(236 72 153);
+
   --viz-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  
   font-family: sans-serif;
   margin: var(--vb) auto;
 }
 
 .chart-card {
-  background: #ffffff;
+  background-color: var(--viz-accent-soft);
   border-radius: 1rem;
-  border: 1px solid #e5e7eb;
+  border: 2px solid var(--viz-border);
   padding: 1rem 1.2rem 1.1rem;
   position: relative;
   overflow: hidden;
   margin: var(--vb) auto var(--vb-1\/2);
-}
-
-.chart-card::after {
-  content: none;
 }
 
 .chart-header {
@@ -34,7 +47,7 @@
   z-index: 1;
 }
 
-.chart-header>div:last-child {
+.chart-header > div:last-child {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -47,7 +60,7 @@
     align-items: flex-start;
   }
 
-  .chart-header>div:last-child {
+  .chart-header > div:last-child {
     align-items: flex-start;
   }
 }
@@ -84,8 +97,8 @@
 .summary-item {
   padding: 0.65rem 0.75rem;
   border-radius: 0.75rem;
-  background: var(--viz-accent-soft);
-  border: 1px solid #e5e7eb;
+  background-color: var(--viz-accent-soft);
+  border: 1px solid var(--viz-border);
   font-size: 0.8rem;
 }
 
@@ -112,8 +125,8 @@
 
 .mode-toggle button {
   border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
+  border: 1px solid var(--viz-border);
+  background: var(--viz-bg);
   color: var(--viz-muted);
   font-size: 0.7rem;
   padding: 0.16rem 0.55rem;
@@ -147,8 +160,8 @@
 
 .range-toggle button {
   border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
+  border: 1px solid var(--viz-border);
+  background: var(--viz-bg);
   color: var(--viz-muted);
   font-size: 0.7rem;
   padding: 0.18rem 0.6rem;
@@ -184,7 +197,7 @@
   width: 0.9rem;
   height: 0.9rem;
   border-radius: 0.25rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--viz-border);
   accent-color: var(--viz-accent);
 }
 

@@ -5,7 +5,9 @@ tags:
   - TBA
 ---
 
-In 2013, a fellow web developer recommended putting ads on my website to make some money. I was originally hesitant, not wanting to be too intrusive to my audience. They suggested looking into [Carbon Ads](https://www.carbonads.net/), an ad network dedicated to the tech industry. It seemed alright, so I enrolled into their program. Fastforward today, and I’ve finally removed the ads from this website.
+In 2013, a fellow web developer recommended putting ads on my website to make some money. I was originally hesitant, not wanting to be too intrusive to my audience. They suggested looking into [Carbon Ads](https://www.carbonads.net/), an ad network dedicated to the tech industry. It seemed alright, so I enrolled into their program. 
+
+Fastforward today, and I’ve finally removed the ads from this website. This article is a summary od my thought process (including data visualization) and the benefits from this decision.
 
 {% info %}
 **Disclaimer:** This article is not a diss on Carbon. Honestly, they’ve been totally fine. The ads have always been clean and minimal. The few times I had a question, they answered right away. No shade on their services, they’re good — I’m just not the right candidate.
