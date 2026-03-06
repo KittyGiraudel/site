@@ -12,7 +12,7 @@ There is a concerning controversy happening in the [chardet](https://github.com/
 
 ## Overview
 
-`chardet` is a widely used Python library for character encoding detection. It was originally created by [Mark Pilgrim](https://github.com/a2mark) and released under the [LGPL 2.1](https://www.tldrlegal.com/license/gnu-lesser-general-public-license-v2-1-lgpl-2-1) license. After Mark’s departure from public life in 2011, the library has been maintained by other people, most notably by [Dan Blanchard](https://github.com/dan-blanchard).
+`chardet` is a widely used Python library for character encoding detection. It was originally created by [Mark Pilgrim](https://github.com/a2mark) and released under the [LGPL 2.1](https://www.tldrlegal.com/license/gnu-lesser-general-public-license-v2-1-lgpl-2-1) license. Eventually, Mark delegated the maintenance of the library to other people, most notably to [Dan Blanchard](https://github.com/dan-blanchard).
 
 On March 4th, Dan released [version 7.0.0](https://github.com/chardet/chardet/releases/tag/7.0.0), an alleged complete rewrite of chardet from the ground up, and updated the license to [MIT](https://www.tldrlegal.com/license/mit-license).
 
