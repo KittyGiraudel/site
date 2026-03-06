@@ -83,7 +83,7 @@ Moreover, the notion that the AI agent was only fed a *high-level description* w
 
 ## On AI-written software
 
-One interesting point that is raised in the midst of the conversation is about the ability to copyright AI output. I think laws are catching up with the matter, but from my understanding, AI output on its own is not copyrightable:
+One interesting point that is raised in the midst of the conversation is about the ability to copyright AI output. I think laws are catching up with the matter, but from my understanding (as a layperson), AI output on its own is not copyrightable:
 
 - In the United States, AI output is not copyrightable unless a human’s creative contribution is significant enough to make the work an original expression (see [U.S. Copyright Office AI Policy (2023)](https://www.copyright.gov/ai/ai_policy_guidance.pdf) and [U.S. Copyright Compendium, Section 313.2](https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf)).
 - In Europe, the EU’s AI Act and copyright directives are still evolving, but the general principle aligns with the US in that human authorship is required (see [EU Copyright Directive (2019)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0790) and [EU AI Act (2024)](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)).
