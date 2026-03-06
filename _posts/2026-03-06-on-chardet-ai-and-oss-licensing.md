@@ -81,13 +81,13 @@ Moreover, the notion that the AI agent was only fed a *high-level description* w
 >
 > Fetch that file and use it as the authoritative reference for which encodings belong to which era. Do not invent era assignments.
 
-## On AI-written software
+## On AI-generated software
 
 One interesting point that is raised in the midst of the conversation is about the ability to copyright AI output. I think laws are catching up with the matter, but from my understanding (as a layperson), AI output on its own is not copyrightable:
 
 - In the United States, AI output is not copyrightable unless a human’s creative contribution is significant enough to make the work an original expression (see [U.S. Copyright Office AI Policy (2023)](https://www.copyright.gov/ai/ai_policy_guidance.pdf) and [U.S. Copyright Compendium, Section 313.2](https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf)).
 - In Europe, the EU’s AI Act and copyright directives are still evolving, but the general principle aligns with the US in that human authorship is required (see [EU Copyright Directive (2019)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0790) and [EU AI Act (2024)](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)).
-- Some countries are experimenting with limited protections for AI-generated content, but these are exceptions, not the rule. Generally speaking, it needs to be a human work (see [German Copyright Act (English translation)](https://www.gesetze-im-internet.de/englisch_urhg/englisch_urhg.html#p0002) and [French Intellectual Property Code, Article L111-1](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278864/)).
+- Some countries are experimenting with limited protections for AI-generated content, but these are exceptions, not the rule. Generally speaking, it needs to be a human work (see [German Copyright Act \[English translation\]](https://www.gesetze-im-internet.de/englisch_urhg/englisch_urhg.html#p0002) and [French Intellectual Property Code, Article L111-1](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278864/)).
 
 If AI-generated code is not copyrightable, it cannot be licensed under MIT, LGPL, or any other license. This would place it in the public domain, but it also raises a paradox: if the AI was trained on LGPL-licensed code, the output might still be considered a derivative work, even if it’s not copyrightable. This is why this whole situation is muddy and complicated.
 
@@ -106,6 +106,10 @@ It is concerning, because if that flies, it sets a dangerous precedent. Found a 
 As [Aditya Shankhar](https://github.com/chardet/chardet/issues/327#issuecomment-4003786038) puts it:
 
 > I have to admit this sounds like an argument to why licensing is useless altogether due to an agent always being able to reconstruct a project on the basis it's inputs and outputs, which may be true, but I think this opens the pathway to many more questions about the point of licensing in the first place
+
+Tuan-Anh Tran puts it eloquently in their article [Relicensing with AI-assisted rewrite](https://tuananh.net/2026/03/05/relicensing-with-ai-assisted-rewrite/):
+
+> If “AI-rewriting” is accepted as a valid way to change licenses, it represents the end of Copyleft. Any developer could take a GPL-licensed project, feed it into an LLM with the prompt “Rewrite this in a different style,” and release it under MIT. The legal and ethical lines are still being drawn, and the chardet v7.0.0 case is one of the first real-world tests.
 
 This situation is a microcosm of larger issues in both open source and AI (and where they intersect). This raises some difficult questions: 
 - Will this influence other OSS projects considering AI-assisted rewrites?
