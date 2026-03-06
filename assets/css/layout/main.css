@@ -4,6 +4,6 @@
 
 @media (min-width: 768px) {
   .Main {
-    padding: var(--vb-1\/2) 0 var(--vb);
+    padding: var(--vb-half) 0 var(--vb);
   }
 }

@@ -4,13 +4,13 @@
 }
 
 .Project__description {
-  margin: 0 0 var(--vb-2\/3);
+  margin: 0 0 var(--vb-thirds);
   font-size: 110%;
   text-wrap: balance;
 }
 
 .Project__tags .Tags {
-  margin-bottom: var(--vb-2\/3);
+  margin-bottom: var(--vb-thirds);
   justify-content: center;
   gap: 0.5em;
 }

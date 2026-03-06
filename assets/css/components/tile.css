@@ -27,12 +27,12 @@
 }
 
 .Tile__primary {
-  margin: 0 0 var(--vb-1\/6);
+  margin: 0 0 var(--vb-sixth);
   line-height: 1.2;
 }
 
 .Tile__secondary {
-  margin: 0 0 var(--vb-2\/3);
+  margin: 0 0 var(--vb-thirds);
   line-height: 1.2;
   font-size: 80%;
   color: light-dark(#9a2869, pink);

@@ -11,13 +11,13 @@
   --blue: #267cb9;
   --code-font: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
   --vb: 1.5em;
-  --vb-1\/2: calc(var(--vb) / 2);
-  --vb-1\/3: calc(var(--vb) / 3);
-  --vb-1\/4: calc(var(--vb) / 4);
-  --vb-1\/6: calc(var(--vb) / 6);
-  --vb-2\/3: calc(var(--vb) * 2 / 3);
+  --vb-half: calc(var(--vb) / 2);
+  --vb-third: calc(var(--vb) / 3);
+  --vb-quarter: calc(var(--vb) / 4);
+  --vb-sixth: calc(var(--vb) / 6);
+  --vb-thirds: calc(var(--vb) * 2 / 3);
   --vb-1\.5: calc(var(--vb) * 1.5);
-  --vb-2: calc(var(--vb) * 2);
+  --vb-double: calc(var(--vb) * 2);
 }
 
 .dark {
@@ -119,22 +119,22 @@ hr {
 h2,
 h3 {
   margin-top: var(--vb);
-  margin-bottom: var(--vb-1\/2);
-  scroll-margin-top: var(--vb-1\/2); /* 1 */
+  margin-bottom: var(--vb-half);
+  scroll-margin-top: var(--vb-half); /* 1 */
 }
 
 p {
-  margin: var(--vb-1\/2) 0;
+  margin: var(--vb-half) 0;
 }
 
 ul,
 ol {
   padding-left: 1em;
-  margin: var(--vb-1\/2) 0;
+  margin: var(--vb-half) 0;
 }
 
 li {
-  margin: var(--vb-1\/4) 0;
+  margin: var(--vb-quarter) 0;
 }
 
 ul ul {

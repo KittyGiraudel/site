@@ -24,7 +24,7 @@
 }
 
 .TableOfContents__title {
-  margin: 0 0 var(--vb-1\/2);
+  margin: 0 0 var(--vb-half);
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -44,12 +44,12 @@
 }
 
 .TableOfContents__item {
-  margin: var(--vb-1\/4) 0;
+  margin: var(--vb-quarter) 0;
   line-height: 1.1;
 }
 
 .TableOfContents__list--sublist {
-  margin-top: var(--vb-1\/6);
+  margin-top: var(--vb-sixth);
   margin-left: 1.25rem;
 }
 

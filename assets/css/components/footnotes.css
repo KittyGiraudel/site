@@ -44,7 +44,7 @@
 }
 
 .Footnotes__list-item:not(:last-child) {
-  margin: var(--vb-1\/3) 0;
+  margin: var(--vb-third) 0;
 }
 
 .Footnotes__ref[role="doc-noteref"] {
