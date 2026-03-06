@@ -66,6 +66,10 @@ Let’s start with the argument that suggests this is all legit, since they’re
 
 Some people, including Dan himself, point out to the fact that there is extremely low code similarity between version 7 and prior (about 1–2%), as an evidence that this is therefore a clean room implementation. Others argue that functional or structural similarity (even if the code *looks* different) could still make it a derivative work under copyright law.
 
+{% callout %}
+Although unrelated to the issue at hand, it is worth pointing out that version 7 seems to come with a [significant performance hit](https://github.com/chardet/chardet/issues/333) as well as [notable regressions](https://news.ycombinator.com/item?id=47261532). Not great for a full rewrite supposed to be bigger, better, grander and most importantly a “drop-in replacement”.
+{% endcallout %}
+
 ### The “definitely not” side
 
 Now, let’s look at why the whole clean room implementation angle doesn’t really hold when you start deconstructing the pieces a little.
