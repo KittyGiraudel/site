@@ -79,7 +79,7 @@ This is why I wanted another simpler option, so I [asked](https://twitter.com/Ki
 
 Back then, I had a look at Jekyll and it seemed nice but overly complicated — at least to me. I am really not that smart when you put CSS aside. Anyway it seemed to be quite what I was looking for so I thought I should give a try.
 
-I looked for tutorials to move a simple site to Jekyll and found a couple of posts explaining the whole process pretty well but the best one has to be [this one](https://www.andrewmunsell.com/tutorials/jekyll-by-example/) from Andrew Munsell. If you can read this Andrew, thank you a billion times because I couldn’t have made it without your post. Two or three reads later, I was fucking ready to move that shit to Jekyll.
+I looked for tutorials to move a simple site to Jekyll and found a couple of posts explaining the whole process pretty well but the best one has to be [this one](https://www.andrewmunsell.com/tutorials/jekyll-by-example/) from Andrew Munsell. If you can read this Andrew, thank you a billion times because I couldn’t have made it without your post. Two or three reads later, I was ready to move that shit to Jekyll.
 
 ### The install nightmare
 

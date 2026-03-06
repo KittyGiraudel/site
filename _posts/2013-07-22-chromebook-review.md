@@ -113,6 +113,6 @@ There is even a [section of the Chrome Web Store](https://chrome.google.com/webs
 
 ## Final thoughts
 
-So far, **I am pretty satisfied with this computer**. I guess you can say Chromebook is a no-surprise laptop: you know from start you will need WiFi to do most things. You know from start it’s not a fucking beast. You know from start it is mostly made for web browsing and writing documents.
+So far, **I am pretty satisfied with this computer**. I guess you can say Chromebook is a no-surprise laptop: you know from start you will need WiFi to do most things. You know from the start it’s not a beast. You know from start it is mostly made for web browsing and writing documents.
 
 Once you know that, you can decide if you still want / need a Chromebook or not. As far as I’m concerned, I don’t do much aside from reading Twitter, making demos on CodePen, and writing articles on a computer now that I don’t play games anymore and the Chromebook is really suited for this stuff.

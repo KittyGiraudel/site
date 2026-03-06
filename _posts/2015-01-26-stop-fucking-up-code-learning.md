@@ -1,5 +1,5 @@
 ---
-title: Stop fucking up code learning
+title: Stop messing up code learning
 description: A reflective and ranty post on the messy approach to teaching coding nowadays
 tags:
   - CSS
@@ -20,7 +20,7 @@ Coding is slowly becoming an important skill that is being taught in many traini
 
 For instance, having a basic knowledge of what is the Internet, what is a browser, how it works, what are the essential languages to build websites, what is a database, what are the risks of giving sensible information online, how to spot poor phishing… This would prevent situations where people feel the urge to reboot their computer when there is a JavaScript issue on a web page, or give their credit card information on phishing websites.
 
-Meanwhile, many people end up saying they don’t like to code. Understandable, this is a quite specific discipline. However more often than not, I think people don’t cling to coding because they are being very poorly taught. Of course you cannot enjoy writing CSS if no one even bother explaining you the box model. This is the fucking base.
+Meanwhile, many people end up saying they don’t like to code. Understandable, this is a quite specific discipline. However more often than not, I think people don’t cling to coding because they are being very poorly taught. Of course you cannot enjoy writing CSS if no one even bother explaining you the box model. This is the basics.
 
 ## Start with a project
 
@@ -38,4 +38,4 @@ Frontend development, and more generally web development, witnessed a tremendous
 
 You don’t teach people to build websites using tables for layout or Dreamweaver as an editor. You give them a project to think about, and teach them the basics: box model, and valid markup. You don’t teach aspiring web developer Flash or Flex. You tell them about mobile-first design. Git. JavaScript. Grids. Postprocessors and preprocessors. Tooling.
 
-Tell them about what they will use when building websites and applications. Not what you used when you started. This is likely to be outdated. Stop fucking up code learning.
+Tell them about what they will use when building websites and applications. Not what you used when you started. This is likely to be outdated. Stop messing up code learning.

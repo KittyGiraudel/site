@@ -14,7 +14,7 @@ As a reminder:
 - [**Unity**](<https://en.wikipedia.org/wiki/Unity_(game_engine)>): Unity is a cross-platform game engine and IDE developed by Unity Technologies, targeting web plugins, desktop platforms and mobile devices.
 - [**C#**](<https://en.wikipedia.org/wiki/C_Sharp_(programming_language)>): C# is a programming language developed by Microsoft within its .NET initiative and later approved as a standard by ECMA and ISO.
 
-If you don’t give a fuck about how I built this up and simply want to give it a try, please refer to the last section at the bottom of the article. Have fun! ;)
+If you don’t care about how I built this up and simply want to give it a try, please refer to the last section at the bottom of the article. Have fun! ;)
 
 {% callout "warning" %}
 **Disclaimer!** Please, understand this game is one of my first works in Unity with C#, so it’s pretty dirty. There are still some bugs, and there have been absolutely no work on the design layer. **The point was to try to make a game which is playable**.
@@ -29,7 +29,7 @@ If you don’t give a fuck about how I built this up and simply want to give it 
 
 ### Neuron Tetris
 
-Before doing any code, I had the “how the fuck am I supposed to do this?” moment. I had to think about the process behind the program, the way it would work. This is what I started with:
+Before doing any code, I had the “how the hell am I supposed to do this?” moment. I had to think about the process behind the program, the way it would work. This is what I started with:
 
 1. Instantiate a random brick
 1. Allow move and rotate on the current brick

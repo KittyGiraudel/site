@@ -153,7 +153,7 @@ el {
 }
 ```
 
-This is actually not fucked up at all: it’s the expected behaviour from correct variable scoping. While it might look silly for an advanced Sass user, I bet it’s not that obvious to the beginner. The declared `$size` variable is used for the font-size while the default value for the `$size` argument is used for the bottom margin since it is inside the mixin, where the variable is scoped.
+This is actually not messed up at all: it’s the expected behaviour from correct variable scoping. While it might look silly for an advanced Sass user, I bet it’s not that obvious to the beginner. The declared `$size` variable is used for the font-size while the default value for the `$size` argument is used for the bottom margin since it is inside the mixin, where the variable is scoped.
 
 ## If ternary then… Sass error
 

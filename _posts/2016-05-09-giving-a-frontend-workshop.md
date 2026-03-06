@@ -81,7 +81,7 @@ h1 {
 }
 ```
 
-Simple enough, but for someone with no clue how CSS works, there are already quite a few things going on there: a selector, a rule, a property, a value, a declaration, a motherfucking semi-colon… After a few explanations on this snippet, we actually created a stylesheet and used the `<link>` tag to connect it to the HTML document.
+Simple enough, but for someone with no clue how CSS works, there are already quite a few things going on there: a selector, a rule, a property, a value, a declaration, a goddamn semi-colon… After a few explanations on this snippet, we actually created a stylesheet and used the `<link>` tag to connect it to the HTML document.
 
 I’ll be honest and admit at this point I found myself a bit cornered. The thing is, there is usually only one good way to use HTML (especially on something that simple). But regarding CSS, and depending on what the result should be, there are dozens or hundreds of ways to write a stylesheet. And since they had free rein on the design, well… I had no idea how to move forward.
 

@@ -13,7 +13,7 @@ Yesterday night, hundreds of developers, engineers, tech leads and more generall
 
 While it may sound stupid, whiteboard interviews are actually quite popular including in very large corporations, and sometimes referred to as a good way to judge the technical ability for a candidate to fulfill a position.
 
-Well, this is fucking bullshit.
+Well, this is bullshit.
 
 ## What’s wrong with whiteboard interviews?
 
@@ -21,9 +21,9 @@ Short answer: it has little to no connection to the real world and what the cand
 
 Now for the long answer. I understand the idea behind the whiteboard exercise: testing the ability for a candidate to solve a problem without focusing too much on the code itself. On paper, that makes sense. In practice, it’s quite irrelevant. As the aforementioned Twitter thread shows, no developer —no matter the experience— is able to function fully without a little help from StackOverflow once in a while. Nor should they.
 
-Secondly, it puts a hell lot of pressure on the candidate. Not all of them can handle that. Hell, I’d be terrible. You know how you hate when someone stands behind your shoulder when you’re working? Well, guess what, it’s the same fucking thing. Nobody likes that. Ever heard of impostor syndrom? Nothing like someone silently judging every move to trigger that. I know some fantastic developers who would be petrified in such a session. They would be fully adequate to do the job though, and they would friggin’ nail it.
+Secondly, it puts a hell lot of pressure on the candidate. Not all of them can handle that. Hell, I’d be terrible. You know how you hate when someone stands behind your shoulder when you’re working? Well, guess what, it’s the same freaking thing. Nobody likes that. Ever heard of impostor syndrom? Nothing like someone silently judging every move to trigger that. I know some fantastic developers who would be petrified in such a session. They would be fully adequate to do the job though, and they would friggin’ nail it.
 
-I hear some people say “yes, but you can judge resilience to pressure”. Fuck. That. Putting pressure on employees is not a safe space and a good way to improve productivity. How about giving them the right mindset and environment so they feel empowered and willing to commit to their work?
+I hear some people say “yes, but you can judge resilience to pressure”. Screw that. Putting pressure on employees is not a safe space and a good way to improve productivity. How about giving them the right mindset and environment so they feel empowered and willing to commit to their work?
 
 Also, it usually puts the focus on the wrong point. Don’t ask someone to demonstrate algorithmic understanding on a whiteboard if they are going to be implementing REST APIs or CSS layers for the next two years. At least try to ask something related to what they will actually do. At the very least.
 

@@ -21,7 +21,7 @@ This is where Sass &mdash; or any CSS preprocessor really &mdash; can be very ef
 
 <pre class="codepen" data-height="320" data-type="result" data-href="kBzra" data-user="KittyGiraudel" data-safe="true"><code></code><a href="https://codepen.io/KittyGiraudel/pen/kBzra">Check out this Pen!</a></pre>
 
-If you simply want to see the code and don’t care much about how I did it, please check [this CodePen](https://codepen.io/KittyGiraudel/pen/kBzra) ([fullsize here](https://codepen.io/KittyGiraudel/full/kBzra)) and resize your browser like a fucking obsessive.
+If you simply want to see the code and don’t care much about how I did it, please check [this CodePen](https://codepen.io/KittyGiraudel/pen/kBzra) ([fullsize here](https://codepen.io/KittyGiraudel/full/kBzra)) and resize your browser like a mad person.
 
 ### Create the list
 

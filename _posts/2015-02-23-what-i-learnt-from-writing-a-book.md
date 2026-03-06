@@ -43,7 +43,7 @@ My advice would be: **plan well, and start early**. Don’t be like "6 months is
 
 ## You will get sick and tired of your work
 
-I spent the last week reading what I wrote over and over to make sure it was okay. I’ve read the whole book from A to Z at least 5 times, and I’ve spent countless hours on some sections (hey Grid Layout fucker). I was sick and tired of reading my own write-ups and I think it’s perfectly normal after months of working on the same thing.
+I spent the last week reading what I wrote over and over to make sure it was okay. I’ve read the whole book from A to Z at least 5 times, and I’ve spent countless hours on some sections (hey Grid Layout). I was sick and tired of reading my own write-ups and I think it’s perfectly normal after months of working on the same thing.
 
 At some point, you’ll get paranoid about what you come up with. “What if it sounds dull? What if it makes no sense? What if it’s not interesting enough?”.
 
