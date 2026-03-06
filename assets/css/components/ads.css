@@ -106,24 +106,6 @@
   ); /* 4 */
 }
 
-@media screen and (min-width: 1556px) {
-  .RandomName {
-    display: contents;
-  }
-
-  .RandomName__content {
-    display: none;
-  }
-
-  .RandomName__holder {
-    position: fixed;
-    bottom: 0.5em;
-    left: 1em;
-    min-height: 0;
-    z-index: 100;
-  }
-}
-
 #carbonads {
   display: flex;
   max-width: 330px;
