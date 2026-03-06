@@ -125,7 +125,7 @@ It’s a very clever approach: it uses a flat gradient (with no color change) ap
 Now, for the floating typographic marks, I’ve used absolutely positioned pseudo-elements: a curious [interrobang](https://en.wikipedia.org/wiki/Interrobang) for callouts, and curly quotation marks for blockquotes. For instance, here is the code for the callout:
 
 ```css
-.Info::before {
+.Callout::before {
   content: '‽';
 
   opacity: 0.2;
@@ -146,7 +146,7 @@ It’s worth pointing out that the `transform` value for the pseudo-element is t
 To ensure the content within the callout sits on top of the decorative character (even though the latter is semi-transparent), we bump its z-index:
 
 ```css
-.Info > * { position: relative; z-index: 2; }
+.Callout > * { position: relative; z-index: 2; }
 ```
 
 I have used the same design pattern for [footnotes](#footnotes-label), and the [editorial changes](#post-edits) for an example). I really like the juxtaposition of a neatly bordered box, and a decorative element breaking out of it, bringing some dynamism!

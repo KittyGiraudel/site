@@ -2,7 +2,7 @@
  * 1. Positioning context for the decorative pseudo-element.
  * 2. CSS trick to have a gradient border *with* rounded corners.
  */
-.Info {
+.Callout {
   --background-color: light-dark(#f3f8fc, #303132);
   margin: var(--vb) 0;
   padding: 0.75em 1.5em;
@@ -19,7 +19,7 @@
   clear: right;
 }
 
-.Info::before {
+.Callout::before {
   content: "‽";
   position: absolute;
   font-size: 1000%;
@@ -37,7 +37,7 @@
 /**
  * 1. Ensure the text inside the info container sits on top of the decorative pseudo-element.
  */
-.Info > * {
+.Callout > * {
   z-index: 2; /* 1 */
   position: relative;
 }
@@ -47,7 +47,7 @@
    * 1. Increase width so the info container looks wider than the
    *    body text, but the text within it is aligned with the body text.
    */
-  .Info {
+  .Callout {
     width: calc(100% + 4em); /* 1 */
     padding: 1em 2em; /* 1 */
     left: -2em; /* 1 */
@@ -57,13 +57,13 @@
 /**
  * 1. Prevent an odd gap when the first child of the info has a top margin
  */
-.Info > :first-child {
+.Callout > :first-child {
   margin-top: 0; /* 1 */
 }
 
 /**
  * 1. Prevent an odd gap when the last child of the info has a bottom margin
  */
-.Info > :last-child {
+.Callout > :last-child {
   margin-bottom: 0; /* 1 */
 }

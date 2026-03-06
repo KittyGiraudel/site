@@ -65,7 +65,7 @@ blockquote:hover::after {
 
 @media (min-width: 1024px) {
   /**
-   * 1. Increase width so the blockquote/info container looks wider than the
+   * 1. Increase width so the blockquote container looks wider than the
    *    body text, but the text within it is aligned with the body text.
    */
   blockquote {
