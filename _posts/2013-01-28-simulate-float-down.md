@@ -111,7 +111,7 @@ A few explanations about the variables:
 - `$height` is the height of each item; in my demo it equals 100px as well,
 - `$margin` is the gap between each item; I set it to 10% of the size of an item.
 
-{% info %}You may wonder why using 2 different variables for size when one would be enough. This allows you to use non-square items if you want to: try it, it works.{% endinfo %}
+{% callout %}You may wonder why using 2 different variables for size when one would be enough. This allows you to use non-square items if you want to: try it, it works.{% endcallout %}
 
 ### Looping!
 

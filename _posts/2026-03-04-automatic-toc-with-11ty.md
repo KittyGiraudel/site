@@ -95,8 +95,8 @@ We can replace it in our top-level partial as well:
 {​% endif %}
 ```
 
-{% info %}The `root` parameter enables us to add a specific class to nested lists (`ToC__list--sublist`) so we can shift them to the right accordingly. It will also be handy to [make sublists smaller](#deeper-and-smaller).
-{% endinfo %}
+{% callout %}The `root` parameter enables us to add a specific class to nested lists (`ToC__list--sublist`) so we can shift them to the right accordingly. It will also be handy to [make sublists smaller](#deeper-and-smaller).
+{% endcallout %}
 
 ## Generating the data
 

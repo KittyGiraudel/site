@@ -63,7 +63,7 @@ At this point, head onto the home of the GitHub repository and click on the big 
 
 Name the pull-request after the feature name, and prefix it with `[WIP]` for _Work In Progress_. This will then be changed to `[RFR]` for _Ready For Review_ once the story is done (see [Reviewing the pull-request](#reviewing-the-pull-request)). If it is someone’s specific job to merge pull-requests and deploy, you can also change the name for `[RFM]` (for _Ready For Merging_) after the reviewing process so it’s clear that the feature can be safely merged.
 
-{% info %}Depending on your usage of GitHub labels, you can also ditch this part and use `WIP`, `RFR` and `RFM` labels instead. I prefer saving labels for other things and stick the status in the PR name but it’s really up to you.{% endinfo %}
+{% callout %}Depending on your usage of GitHub labels, you can also ditch this part and use `WIP`, `RFR` and `RFM` labels instead. I prefer saving labels for other things and stick the status in the PR name but it’s really up to you.{% endcallout %}
 
 ## Filling the description
 
@@ -83,7 +83,7 @@ In the description of the story, create a list of tasks where a task is a checkb
 
 As long as all actors from a project are part of the GitHub organisation behind the project, everybody can edit/delete any comment, so anyone is able to add new tasks to the description if deemed necessary.
 
-{% info %}GitHub Flavoured Markdown will automatically convert `[ ]` into an unticked checkbox and `[x]` into a ticked one. It will also remember the state of the checkbox so you can actually rely on it.{% endinfo %}
+{% callout %}GitHub Flavoured Markdown will automatically convert `[ ]` into an unticked checkbox and `[x]` into a ticked one. It will also remember the state of the checkbox so you can actually rely on it.{% endcallout %}
 
 <figure class="figure">
   <img src="/assets/images/github-as-a-workflow/03.png" alt="The PR description contains checkboxes that can be checked to show current progress" />
@@ -121,7 +121,7 @@ When updating a line that is the object of an inline comment, the latter disappe
 
 Once the review has been done, the pull-request can be merged into the main branch. If everything is fine, it should be mergeable from GitHub directly but sometimes there are potential conflicts so we need to either rebase the branch to synchronize it with the main branch or merge it manually. Anybody can do it, but the pull-request owner is probably the best person to do it.
 
-{% info %}In order to keep a relevant and clean commit history, it would be wise to keep commit messages clear and meaningful. While this is not specific to this methodology, I think it is important enough to stress it.{% endinfo %}
+{% callout %}In order to keep a relevant and clean commit history, it would be wise to keep commit messages clear and meaningful. While this is not specific to this methodology, I think it is important enough to stress it.{% endcallout %}
 
 ## Tip: using labels
 

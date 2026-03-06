@@ -85,7 +85,7 @@ Alright, so there is quite a lot to unpack here. Here is the breakdown:
 6. We close our capture group after having imported the last path, yielding a `css` variable containing all our relevant styles.
 7. We render our styles within a `<style>` tag.
 
-{% info %} The `script.html` partial works exactly the same way except it looks into `assets/js` and renders a `<script>` tag. I guess both partials could be abstracted into a single one, but I don’t think it’s particularly necessary. {% endinfo %}
+{% callout %} The `script.html` partial works exactly the same way except it looks into `assets/js` and renders a `<script>` tag. I guess both partials could be abstracted into a single one, but I don’t think it’s particularly necessary. {% endcallout %}
 
 ## Minification
 

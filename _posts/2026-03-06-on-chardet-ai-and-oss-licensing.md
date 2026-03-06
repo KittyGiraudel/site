@@ -10,9 +10,9 @@ There is a concerning controversy happening in the [chardet](https://github.com/
 
 It concerns software licensing, the use of AI in the making of software, as well as general ethical and etiquette considerations when contributing to open source work. I tried my best to summarize the situation in this article. 
 
-{% info %}
+{% callout %}
 **Disclaimer:** This article touches on legal topics, and I am **not** a lawyer or an expert on copyright law. I do my best to understand and explain legal concepts in this blog post, but at the end of the day, this is not my area of expertise. Please kindly point out any issue in the comments.
-{% endinfo %}
+{% endcallout %}
 
 ## Overview
 
@@ -95,9 +95,9 @@ If AI-generated code is not copyrightable, it cannot be licensed under MIT, LGPL
 
 Licensing is legal stuff, why do we even care? Well, you don’t have to care, but if you use open-source software in your work (and if you’re reading this, there is a good chance you do), I think you *should* care.
 
-{% info %}
+{% callout %}
 During my time at Scilife (medical compliance), we had to show to our customers under which license our software and all its dependencies were distributed. As a result, our reliance on dependencies published under non-permissive licenses such as GPL was challenging, and we had to revisit some technical decisions.
-{% endinfo %}
+{% endcallout %}
 
 At the end of the day, this is the story of the maintainer of a software deciding to relicense said software in a more permissive license, and justifying the decision under the guise of a complete rewrite, AI-assisted no less.
 

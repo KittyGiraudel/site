@@ -27,7 +27,7 @@ const toPoint = (input: Coords) => input.join(',') as Point
 const toCoords = (input: Point) => input.split(',').map(Number) as Coords
 ```
 
-{% info %} Throughout the code, I will use `ri` (row index) and `ci` (column index) in place of Y and X respectively. I tend to find the code easier to understand when thinking in rows and columns rather than using the X,Y coordinate system. Coincidently, I express coordinates as Y,X (ri,ci) since I bi-dimensional arrays are read row-first, and then column.{% endinfo %}
+{% callout %} Throughout the code, I will use `ri` (row index) and `ci` (column index) in place of Y and X respectively. I tend to find the code easier to understand when thinking in rows and columns rather than using the X,Y coordinate system. Coincidently, I express coordinates as Y,X (ri,ci) since I bi-dimensional arrays are read row-first, and then column.{% endcallout %}
 
 ## Instantiating a grid
 

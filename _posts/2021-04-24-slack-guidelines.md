@@ -48,7 +48,7 @@ In tech organization, we tend to recommend avoid discipline-specific channels (s
 
 Once having created a new channel, set its description for sake of clarity, and open with an explanatory message about the purpose of the channel, and why/when people should use it.
 
-{% info %}Unless there will be ongoing discussions about a unique topic, it might be preferable to use direct messages or group messages.{% endinfo %}
+{% callout %}Unless there will be ongoing discussions about a unique topic, it might be preferable to use direct messages or group messages.{% endcallout %}
 
 ### Public or private
 

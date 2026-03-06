@@ -205,7 +205,7 @@ $current-frame: ($i * $x) + ($i * $y);
 $next-frame: (($i + 1) * $x) + ($i + $y);
 ```
 
-{% info %}Braces are completely optional here, we just use them to keep things clean.{% endinfo %}
+{% callout %}Braces are completely optional here, we just use them to keep things clean.{% endcallout %}
 
 And now, we use those variables to generate a keyframe inside the loop. Let’s not forget to interpolate them so they are correctly output in the resulting CSS (more information about [Sass interpolation on Tuts+](https://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)).
 

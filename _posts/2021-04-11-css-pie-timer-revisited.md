@@ -26,7 +26,7 @@ In my original approach, I needed a container and 3 child elements. In this vers
 <div class="pie"></div>
 ```
 
-{% info %}If you intend to use this as a loading state of some sort, please remember that it doesn’t convey any meaning to assistive technologies as is and should be accompanied with actual text content that can be read. Also SVG might be a better choice for such animation.{% endinfo %}
+{% callout %}If you intend to use this as a loading state of some sort, please remember that it doesn’t convey any meaning to assistive technologies as is and should be accompanied with actual text content that can be read. Also SVG might be a better choice for such animation.{% endcallout %}
 
 ## CSS
 

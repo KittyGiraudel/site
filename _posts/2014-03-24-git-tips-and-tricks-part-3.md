@@ -82,7 +82,7 @@ Bisecting: 9 revisions left to test after this (roughly 3 steps)
 
 Git checks my interval and calculates that I will need 3 steps to find the wrong commit after current step. The commit in the middle of my interval has been checkout ("Commit 10"). If I look at my _master_ branch in Gitg (or Gitk, Gitx or any Git graphical tool…), I can see that Git has created two references _refs/bisect/start_ and _refs/bisect/good-[…]_ next to my `HEAD` and `HEAD~20` commits.
 
-{% info %}It’s possible to use `git bisect visualize` or `git bisect view` to see the remaining interval in graphical tool. For a console view, you can use `git bisect view --stat`.{% endinfo %}
+{% callout %}It’s possible to use `git bisect visualize` or `git bisect view` to see the remaining interval in graphical tool. For a console view, you can use `git bisect view --stat`.{% endcallout %}
 
 ![After starting git bisect](/assets/images/git-tips-and-tricks-part-3/bisect-1.png)
 

@@ -48,7 +48,7 @@ So `$opposite` equals _right_ when `$direction` is _left_ and vice versa. Allows
 
 [Element-of-type()](https://compass-style.org/reference/compass/helpers/display/) is a built-in function to detect the display type of an element: `block`, `inline`, `inline-block`, `table`, `table-row-group`, `table-header-group`, `table-footer-group`, `table-row`, `table-cell`, `list-item` and -as odd as it may look- `html5`, `html5-inline` and `html5-block`.
 
-{% info %}`html5`, `html5-inline` and `html5-block` are not real display values; they are just keywords to gather all html5 elements (inline, block or both).{% endinfo %}
+{% callout %}`html5`, `html5-inline` and `html5-block` are not real display values; they are just keywords to gather all html5 elements (inline, block or both).{% endcallout %}
 
 This may be useful as part of a CSS reset for example:
 
@@ -195,7 +195,7 @@ Compass gives you a way to know the [dimensions of an image](https://compass-sty
 
 In this example, the element will have a size relative to the background-image it uses.
 
-{% info %}Beware, the path has to be relative to your project’s image directory, defined in your `config.rb` file.{% endinfo %}
+{% callout %}Beware, the path has to be relative to your project’s image directory, defined in your `config.rb` file.{% endcallout %}
 
 ## Math functions
 

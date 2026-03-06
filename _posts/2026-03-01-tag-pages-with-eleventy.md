@@ -50,8 +50,8 @@ pagination:
 ---
 ```
 
-{% info %}I also noticed that some other collections ended up with their tag page due to the way it’s built, like `recipes`, `snippets`… I’ve updated the filter to remove them as well.
-{% endinfo %}
+{% callout %}I also noticed that some other collections ended up with their tag page due to the way it’s built, like `recipes`, `snippets`… I’ve updated the filter to remove them as well.
+{% endcallout %}
 
 ## Including snippets
 

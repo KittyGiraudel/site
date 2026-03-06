@@ -9,7 +9,7 @@ tags:
 
 Content warnings are notices preceding potentially sensitive content. This is so users can prepare themselves to engage or, if necessary, disengage for their own wellbeing. Trigger warnings are specific content warnings that attempt to warn users of content that may cause intense physiological and psychological symptoms for people with post-traumatic stress or anxiety disorder (PTSD).
 
-{% info %} This seems like the perfect opportunity to point out that jokingly using the word “triggered” to mean “being bothered by something” can be considered quite inappropriate and ableist. PTSD triggers are a real thing, which can have dire consequences. It is considerate not to dismiss and minimise the difficult of such experience by misusing the term to describe it. Possible alternative: “grinds one’s gears” or “bothers”. {% endinfo %}
+{% callout %} This seems like the perfect opportunity to point out that jokingly using the word “triggered” to mean “being bothered by something” can be considered quite inappropriate and ableist. PTSD triggers are a real thing, which can have dire consequences. It is considerate not to dismiss and minimise the difficult of such experience by misusing the term to describe it. Possible alternative: “grinds one’s gears” or “bothers”. {% endcallout %}
 
 At the core of content warnings, there is the need to acknowledge that every individual is different, and what might not be a sensitive topic to you might in fact be very difficult to approach for someone else. Trigger warnings are essentially an empathetic feature, and they need to be designed with an open mind.
 
@@ -19,7 +19,7 @@ Of course, it is not possible to account for every potential trigger. Everybody 
 
 Regarding the implementation, it could be as simple as a paragraph at the top of the main section mentioning the potentially sensitive topics. For instance:
 
-{% info %} **Trigger warnings:** Explicit Sex Scene, Self-Harm, Transphobia {% endinfo %}
+{% callout %} **Trigger warnings:** Explicit Sex Scene, Self-Harm, Transphobia {% endcallout %}
 
 This is a pretty basic but effective approach. It could be enhanced with more information about trauma triggers, link(s) to mental health websites, and even a way to complement or update the list.
 

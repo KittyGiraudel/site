@@ -26,7 +26,7 @@ So that’s not even really Next’s fault per se. Any static site generator wou
 
 ## Hacking a solution
 
-{% info %} As mentioned in the update at the top of the article, this solution is a hack at best, and I came up with [a better solution](#update-clean-solution) thanks to Maximilian Fellner’s hints. Do not implement this `window.close()` hack and take the `<template>` route instead. {% endinfo %}
+{% callout %} As mentioned in the update at the top of the article, this solution is a hack at best, and I came up with [a better solution](#update-clean-solution) thanks to Maximilian Fellner’s hints. Do not implement this `window.close()` hack and take the `<template>` route instead. {% endcallout %}
 
 If we can’t do anything about the script tags being rendered in the HTML response, maybe we can prevent the browser from executing them? Well, again, not really. Browsers do not offer a fine-grained API into their resources’ system to tell them to ignore or prioritize certain assets.
 

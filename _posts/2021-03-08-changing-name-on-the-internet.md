@@ -10,7 +10,7 @@ I have been called Kitty for years. Originally by my siblings and closest friend
 
 This meant updating some things on the interwebs so that Kitty becomes more prominent, such as links, social profiles… Except I have been pretty active for the past decade and it turns out it’s pretty hard to do. 😅 In this short piece, I’ll just walk through a few of the steps I had to take.
 
-{% info %} If you ever mentioned me somewhere on your blog, site or platform, I would really appreciate if you could take a minute to update my name to **Kitty**. Thank you for your help! 🙏 {% endinfo %}
+{% callout %} If you ever mentioned me somewhere on your blog, site or platform, I would really appreciate if you could take a minute to update my name to **Kitty**. Thank you for your help! 🙏 {% endcallout %}
 
 ## Domain name
 
@@ -41,7 +41,7 @@ I contacted their support to know what was the best way to merge both accounts, 
 
 What is great about GitHub is that they maintain relevant redirects. All the links to my repositories using my old GitHub handle still work, because they redirect to the new one. Even the few sites using GitHub Pages got instantly migrated as well, no downtime. A+.
 
-{% info %} Bonus point: Commits and contributions are tied to an email address, so by adding the new email address I was using onto my main account, I managed to merge the stats from both accounts. Not only that, but the authorship of all my commits done under the name KittyGiraudel before deleting the account remained clean. {% endinfo %}
+{% callout %} Bonus point: Commits and contributions are tied to an email address, so by adding the new email address I was using onto my main account, I managed to merge the stats from both accounts. Not only that, but the authorship of all my commits done under the name KittyGiraudel before deleting the account remained clean. {% endcallout %}
 
 ## Blogs
 

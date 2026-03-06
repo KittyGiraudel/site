@@ -181,8 +181,8 @@ jobs:
           git push
 ```
 
-{% info %}I had to investigate a little to figure out which email address to use when issuing an automated commit. Some people recommended github-actions[bot]@users.noreply.github.com, but [some articles](https://www.junian.net/dev/github-actions-bot-username-email-address/) suggest using 41898282+github-actions[bot]@users.noreply.github.com. That’s what I’ve done, and it works, so good enough for me.
-{% endinfo %}
+{% callout %}I had to investigate a little to figure out which email address to use when issuing an automated commit. Some people recommended github-actions[bot]@users.noreply.github.com, but [some articles](https://www.junian.net/dev/github-actions-bot-username-email-address/) suggest using 41898282+github-actions[bot]@users.noreply.github.com. That’s what I’ve done, and it works, so good enough for me.
+{% endcallout %}
 
 We also want to run our workflow when pushing onto the `main` branch so that we can safely update our `README.md` template and have the script run. 
 

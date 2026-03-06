@@ -103,7 +103,7 @@ zstyle ':vcs_info:git:*' formats '%F{153}%b%f'
 
 In the `formats` argument, `%F{153}` is a light blue color code, `%b` stands for the branch name, and `%f` resets the text color to the default one, as always.
 
-{% info %}Changing the color of the bullet (`●`) from red to green might not be sufficient if you’re color-blind. In that case, you could use different characters, like `✓` and `𐄂`.{% endinfo %}
+{% callout %}Changing the color of the bullet (`●`) from red to green might not be sufficient if you’re color-blind. In that case, you could use different characters, like `✓` and `𐄂`.{% endcallout %}
 
 ### Displaying the time
 

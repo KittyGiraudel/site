@@ -78,7 +78,7 @@ In order to better understand gradient angles and how the `%` values for color s
 
 The _gradient angle_ is the angle - measured clockwise - between the vertical axis and the _gradient line_ (the blue line in the demo). This is for the new syntax, which is not yet supported by WebKit browsers (however, [this is going to change](https://bugs.webkit.org/show_bug.cgi?id=67166)). The old syntax measured angles just like on the [trigonometric unit circle](https://en.wikipedia.org/wiki/Unit_circle) (counter-clockwise and starting from the horizontal axis).
 
-{% info %}Coming from a mathematical background, I have to say the old way feels more natural to me. However, the new way feels consistent with other CSS features, like rotate transforms, for which the angle values are also clockwise.{% endinfo %}
+{% callout %}Coming from a mathematical background, I have to say the old way feels more natural to me. However, the new way feels consistent with other CSS features, like rotate transforms, for which the angle values are also clockwise.{% endcallout %}
 
 What this means is that we (almost always) have different angle values in the standard syntax and in the current WebKit syntax. So, if we are not using something like [-prefix-free](https://leaverou.github.com/prefixfree/) (which I do almost all the time), then we should to be able to compute one when knowing the other. That is actually pretty simple. They are going in opposite directions, so the formula for one includes the other with a minus sign. Also, there is a `90°` difference between them so this is how we get them:
 
@@ -87,7 +87,7 @@ newSyntax = 90° - oldSyntax;
 oldSyntax = 90° - newSyntax;
 ```
 
-{% info %}If no gradient angle or destination side is specified (for example, `linear-gradient(lime, yellow)`), then the resulting gradient is going to have a gradient angle of `180°`, not `0°`.{% endinfo %}
+{% callout %}If no gradient angle or destination side is specified (for example, `linear-gradient(lime, yellow)`), then the resulting gradient is going to have a gradient angle of `180°`, not `0°`.{% endcallout %}
 
 All the points on a line that is [perpendicular](https://www.mathopenref.com/perpendicular.html) on the gradient line have the same color. The perpendicular from the corner in the quadrant that’s opposite to the quadrant of the angle is the `0%` line (the crimson line in the demo) and its intersection with the gradient line is the _starting point_ of the gradient (let’s call it `S`). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the `100%` line (the black line in the demo) and its intersection with the gradient line is the _ending point_ of the gradient (let’s call it `E`).
 
@@ -118,7 +118,7 @@ The [intersection of the diagonals of a square splits each one of them into two]
 <figcaption>A right angled triangle and how to compute sin and cos functions</figcaption>
 </figure>
 
-{% info %}Before moving further, let’s go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it’s called the [hypotenuse](https://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](https://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](https://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](https://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse.{% endinfo %}
+{% callout %}Before moving further, let’s go through a couple of trigonometry concepts first. The longest side of a right-angled triangle is the one opposing that right angle and it’s called the [hypotenuse](https://www.mathopenref.com/hypotenuse.html). The other two sides (the ones forming the right angle) are called the [catheti](https://en.wikipedia.org/wiki/Cathetus) of the right triangle. The [sine](https://www.mathopenref.com/sine.html) of an acute angle in a right triangle is the ratio between the cathetus opposing that angle and the hypotenuse. The [cosine](https://www.mathopenref.com/cosine.html) of the same angle is the ratio between the adjacent cathetus and the hypothenuse.{% endcallout %}
 
 <figure class="figure">
 <img src="/assets/images/css-gradients/slice_1_BOE.png" alt="" />

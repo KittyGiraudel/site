@@ -73,7 +73,7 @@ For each file, our script is going to run _optipng_ and _pngcrush_ for PNG files
 <figcaption>PNG optimisation with <a href="https://optipng.sourceforge.net/">optipng</a></figcaption>
 </figure>
 
-{% info %}The `-o7` parameter force optipng to use the slowest mode. The fastest is `-o0`.{% endinfo %}
+{% callout %}The `-o7` parameter force optipng to use the slowest mode. The fastest is `-o0`.{% endcallout %}
 
 Then _pngcrush_:
 

@@ -13,7 +13,7 @@ Say you have a project bundled with Webpack. And to avoid playing the relative p
 import myHelper from '~/helpers/myHelper'
 ```
 
-{% info %} Sometimes, another prefix is used in place of `~/` such as `@` sign or something more fancy. We used a tilde because it kind of means “home” or “root”, so it felt nice. {% endinfo %}
+{% callout %} Sometimes, another prefix is used in place of `~/` such as `@` sign or something more fancy. We used a tilde because it kind of means “home” or “root”, so it felt nice. {% endcallout %}
 
 In our case, we have some Node scripts we use in our continuous deployment pipelines, which need to import modules from the project. Things like helpers or constants. The problem is that these aliased paths only really work because Webpack processes them. When going through Node only, they don’t exist and the whole thing crashes.
 

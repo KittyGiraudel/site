@@ -55,7 +55,7 @@ $list-space: 'item-1' 'item-2' 'item-3';
 $list-comma: 'item-1', 'item-2', 'item-3';
 ```
 
-{% info %}As in CSS, you can ommit quotes for your strings as long as they don’t contain any special characters. So `$list: item-1, item-2, item-3` is perfectly valid.{% endinfo %}
+{% callout %}As in CSS, you can ommit quotes for your strings as long as they don’t contain any special characters. So `$list: item-1, item-2, item-3` is perfectly valid.{% endcallout %}
 
 **You can nest lists.** As for JavaScript or any other language, there is no limit regarding the level of depth you can have with nested lists. Just go as deep as you need to, bro.
 
@@ -76,7 +76,7 @@ $list:
 
 **You can ommit parentheses** (as you can guess from the previous example). You can define a non-empty list without any parentheses if you feel so. This is because -contrarily to what most people think- [parentheses are not what create lists](https://github.com/nex3/sass/issues/837#issuecomment-20429965) in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.
 
-{% info %} This is the theory. I’ve noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we’ll dig into this in another blog post. {% endinfo %}
+{% callout %} This is the theory. I’ve noticed braces are not just a grouping mecanism. When manipulating matrices (4/5+ levels of nesting), braces are definitely not optional. This is too complicated for today though, we’ll dig into this in another blog post. {% endcallout %}
 
 ```scss
 $list: 'item-1', 'item-2', 'item-3';
@@ -162,7 +162,7 @@ This is the method I was still using a couple of weeks ago. It works but it invo
 
 Basically, we add the new selector to `$selector` and if we are not dealing with the last item of the list, we add a comma.
 
-{% info %}We have to use `unquote('')` to treat our new selector as an unquoted string.{% endinfo %}
+{% callout %}We have to use `unquote('')` to treat our new selector as an unquoted string.{% endcallout %}
 
 ### The clean way
 

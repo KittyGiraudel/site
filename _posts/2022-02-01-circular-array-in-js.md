@@ -138,7 +138,7 @@ push(value) {
 
 </details>
 
-{% info %} To make the circular array instantiation a little more convenient, we can iterate over the values (or array) given to the constructor and push them one by one. {% endinfo %}
+{% callout %} To make the circular array instantiation a little more convenient, we can iterate over the values (or array) given to the constructor and push them one by one. {% endcallout %}
 
 If we want to insert items at the “start” of our array, we can do the same exact same thing as we just did, and then move the pointer to the newly added item.
 
@@ -275,7 +275,7 @@ toArray(direction = 'next') {
 }
 ```
 
-{% info %} Note that our `prev` parameter is not the same as using `.reverse()`. In our case, the pointer is _always_ the first item, and then we enroll clockwise or counter-clockwise. {% endinfo %}
+{% callout %} Note that our `prev` parameter is not the same as using `.reverse()`. In our case, the pointer is _always_ the first item, and then we enroll clockwise or counter-clockwise. {% endcallout %}
 
 ## Examples
 

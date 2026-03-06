@@ -33,7 +33,7 @@ In this article, I want to discuss all the ways to hide something, be it through
 
 [This combination of CSS declarations](https://kittygiraudel.com/snippets/sr-only-class/) hides an element from the page, but keeps it accessible for screen readers. It comes in very handy to provide more context to screen readers when the visual layout is enough with it.
 
-{% info %} This technique should only be used to mask text. In other words, there shouldn’t be any focusable element inside the hidden element. This could lead to annoying behaviours, like scrolling to an invisible element. {% endinfo %}
+{% callout %} This technique should only be used to mask text. In other words, there shouldn’t be any focusable element inside the hidden element. This could lead to annoying behaviours, like scrolling to an invisible element. {% endcallout %}
 
 **Summary:**
 
@@ -47,7 +47,7 @@ In this article, I want to discuss all the ways to hide something, be it through
 
 The [`aria-hidden` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute), when set to `true`, hides the content from the accessibility tree, while keeping it visually visible. It stays visible because browsers do not apply styles to elements with `aria-hidden="true"` so this only impacts the accessibility tree.
 
-{% info %} It is important to note that any focusable elements within an element with `aria-hidden="true"` remains focusable, which can be a big problem for screen readers. Make sure there are no focusable elements within such container and that the element itself is also not focusable either (see the [fourth rule of ARIA](https://www.w3.org/TR/using-aria/#fourth)). {% endinfo %}
+{% callout %} It is important to note that any focusable elements within an element with `aria-hidden="true"` remains focusable, which can be a big problem for screen readers. Make sure there are no focusable elements within such container and that the element itself is also not focusable either (see the [fourth rule of ARIA](https://www.w3.org/TR/using-aria/#fourth)). {% endcallout %}
 
 **Summary:**
 
@@ -63,7 +63,7 @@ The `display: none` declaration and the `hidden` HTML attribute do the same thin
 
 What’s nice about the `hidden` attribute is that you can mask content entirely through HTML without having to write any CSS, which can be handy in some contexts.
 
-{% info %} Interesting fact shared by [Aurélien Levy](https://twitter.com/goetsu): removed content with these methods can still be vocalized when referenced via `aria-describedby` or `aria-labelledby`. This can be handy to avoid double-vocalization. For instance, if a field references a text node via `aria-describedby`, this content can safely be hidden (with `hidden`, `display: none` or even `aria-hidden="true"`) so that it cannot be discovered normally, but still be announced when the field is focused. {% endinfo %}
+{% callout %} Interesting fact shared by [Aurélien Levy](https://twitter.com/goetsu): removed content with these methods can still be vocalized when referenced via `aria-describedby` or `aria-labelledby`. This can be handy to avoid double-vocalization. For instance, if a field references a text node via `aria-describedby`, this content can safely be hidden (with `hidden`, `display: none` or even `aria-hidden="true"`) so that it cannot be discovered normally, but still be announced when the field is focused. {% endcallout %}
 
 **Summary:**
 

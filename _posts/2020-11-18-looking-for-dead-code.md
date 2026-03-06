@@ -17,9 +17,9 @@ import Input from "@components/Input";
 import looksLikeEmail from "@helpers/looksLikeEmail";
 ```
 
-{% info %}
+{% callout %}
 The leading at-sign (`@`) is a Webpack alias to mean “from the root of the project”. This makes it more convenient to import files from anywhere. It has no incidence on the purpose of this article however.
-{% endinfo %}
+{% endcallout %}
 
 **This means if we search for `/Input'` and find no result, it means the `Input` component is never imported anywhere.** This only works because we never add `/index` or `/index.js` at the end of our imports.
 

@@ -64,7 +64,7 @@ To be clear, we could totally skip the `Object.assign(..)` part and then access 
 - Before: `collections.postStats[0].postCount`
 - After: `collections.postStats.postCount`
 
-{% info %}You can find the [complete code for the plugin](https://github.com/KittyGiraudel/site/blob/main/_plugins/post-stats.js) on GitHub. Be warned: there is a fair bit of proprietary logic, and most of it was written by Cursor. Still, you should be able to reuse most of it if you wanted.{% endinfo %}
+{% callout %}You can find the [complete code for the plugin](https://github.com/KittyGiraudel/site/blob/main/_plugins/post-stats.js) on GitHub. Be warned: there is a fair bit of proprietary logic, and most of it was written by Cursor. Still, you should be able to reuse most of it if you wanted.{% endcallout %}
 
 ### Dealing with the front-matter
 

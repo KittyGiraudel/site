@@ -404,7 +404,7 @@ The code might be complicated to understand but it’s really not that hard once
 }
 ```
 
-{% info %}A couple of people came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.{% endinfo %}
+{% callout %}A couple of people came to me after the talk to warn me against making table of contents with CSS generated content (pseudo-elements) since most screen-readers cannot read it. More a CSS than Sass issue but still, good to note.{% endcallout %}
 
 ## Foreach
 

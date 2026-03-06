@@ -58,7 +58,7 @@ This builds the pronunciation fix within our translating function so we don’t 
 
 Not so fast. I am not the most efficient person with VoiceOver, but I’m starting to slowly get the hang of it. Unfortunately, I could not really confirm that my fix worked. I tried changing my browser language, and playing with various settings, but no dice. The pronunciation remained fully French despite the `span` marked English.
 
-{% info %} Fun fact: [Yakim](https://twitter.com/yakimvanzuijlen) explained that there are 3 levels of languages. There is the system language, the language specified on the html document as well as the language setting in the VoiceOver rotor. That last one basically overwrites both the language setting on the system and the webpage. {% endinfo %}
+{% callout %} Fun fact: [Yakim](https://twitter.com/yakimvanzuijlen) explained that there are 3 levels of languages. There is the system language, the language specified on the html document as well as the language setting in the VoiceOver rotor. That last one basically overwrites both the language setting on the system and the webpage. {% endcallout %}
 
 [Gijs Veyfeyken](https://twitter.com/veyfeyken) confirmed what I experienced: it turns out that VoiceOver cannot always switch language inside a link. Indeed, it works in reader mode (although that appears to depend on browsers) or when using a non-interactive element such a `<p>`, but not when listing links for easy navigation.
 

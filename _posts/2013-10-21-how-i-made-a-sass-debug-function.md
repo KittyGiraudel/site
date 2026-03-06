@@ -218,7 +218,7 @@ Now the icing on top of the cake would be displaying variable types, right? Than
 
 As you can see, it is pretty much the same. We only check for the `$type` boolean and add the value types accordingly wherever they belong. We’re almost there!
 
-{% info %}I’ve set the `$type` boolean to `false` as a default for the `debug` function but to `true` for the mixin.{% endinfo %}
+{% callout %}I’ve set the `$type` boolean to `false` as a default for the `debug` function but to `true` for the mixin.{% endcallout %}
 
 ### Making it work for single values
 

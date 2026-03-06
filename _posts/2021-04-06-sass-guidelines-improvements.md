@@ -13,7 +13,7 @@ For some reason, I recently came back to Sass Guidelines. Not to update the cont
 
 I think what I like the most about Sass Guidelines as a project is how I got to collaborate with many people to have it translated in **13 different languages**. On that note, [Sass Guidelines are now available in Dutch](https://sass-guidelin.es/nl/) thanks to [Noah van der Veer](https://github.com/noah-vdv)!
 
-{% info %}If you are interested in translating Sass Guidelines in a language that is currently not supported, please feel free to [get in touch on Twitter](https://twitter.com/KittyGiraudel) so we can discuss feasibility! We are also looking for people to update the Polish version (from v1.2) and the Czech and Danish versions (from v1.1). {% endinfo %}
+{% callout %}If you are interested in translating Sass Guidelines in a language that is currently not supported, please feel free to [get in touch on Twitter](https://twitter.com/KittyGiraudel) so we can discuss feasibility! We are also looking for people to update the Polish version (from v1.2) and the Czech and Danish versions (from v1.1). {% endcallout %}
 
 On any version but the English one, there is an English banner mentioning that this is a translation and therefore might not be 100% accurate. It says (for instance, for the German version):
 

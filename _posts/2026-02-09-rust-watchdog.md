@@ -305,7 +305,7 @@ if let Some(min_online_threshold) = config.min_online_threshold {
 }
 ```
 
-{% info %}Note: I’ve made it so that we can configure the threshold remotely. Not only does this enable us to have different thresholds for different environments, but it also makes it possible to disable this population check entirely by simply making it `None`.{% endinfo %}
+{% callout %}Note: I’ve made it so that we can configure the threshold remotely. Not only does this enable us to have different thresholds for different environments, but it also makes it possible to disable this population check entirely by simply making it `None`.{% endcallout %}
 
 This actually works quite nicely. During the next incident, players started getting disconnected. Since they couldn’t reconnectn, the server slowly drained out of online players. Eventually, the threshold was hit, the health check failed 3 times in a row, and the server was restarted. Yay!
 

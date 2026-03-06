@@ -130,7 +130,7 @@ There are 3 things we could store:
 
 Once you’ve set up those 3 variables, you don’t have to edit the code anymore whenever you want to change something, could it be the size of the margin or the number of cells per rows. Pretty neat.
 
-{% info %}Whenever you’re trying to use Sass variables in `calc` function, be sure to escape them with `#{}`. For instance: `calc(#{$margin} + 42px)`.{% endinfo %}
+{% callout %}Whenever you’re trying to use Sass variables in `calc` function, be sure to escape them with `#{}`. For instance: `calc(#{$margin} + 42px)`.{% endcallout %}
 
 Again, [check code on CodePen](https://codepen.io/KittyGiraudel/pen/zFJvn).
 

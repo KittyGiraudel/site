@@ -41,9 +41,9 @@ As I said above, RGB stands for Red, Green and Blue. Remember when you were a li
 | The less color you use, the brighter it is | The less color you use, the darker it is |
 | Representation is a circle with neither white nor black | Representation is a cube with black and white |
 
-{% info %} ![Color cube](/assets/images/colors-in-css/color-cube.jpg)
+{% callout %} ![Color cube](/assets/images/colors-in-css/color-cube.jpg)
 
-This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view. {% endinfo %}
+This picture is the RGB color model mapped to a cube. What you can see is this: the horizontal x-axis as red values increasing to the left, y-axis as blue increasing to the lower right, and the vertical z-axis as green towards the top. The origin, black, is the vertex hidden from the view. {% endcallout %}
 
 ### How do we define RGB colors?
 

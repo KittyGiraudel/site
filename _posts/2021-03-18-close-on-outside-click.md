@@ -37,7 +37,7 @@ Consider the following [disclosure widget pattern](https://www.w3.org/TR/wai-ari
 Some <a href="#">other link</a> or whatever.
 ```
 
-{% info %} For more information about why we went with this particulary HTML structure, please refer to the [comprehensive post about Gorillas’ navigation](/2021/03/13/gorillas-nav-a-case-study/). {% endinfo %}
+{% callout %} For more information about why we went with this particulary HTML structure, please refer to the [comprehensive post about Gorillas’ navigation](/2021/03/13/gorillas-nav-a-case-study/). {% endcallout %}
 
 ## Vanilla JS
 
@@ -72,7 +72,7 @@ It works more or less like this: we listen for click events and focus change on 
 
 One important thing to point out: we have to stop the propagationg of the click event on the toggle itself. Otherwise, it goes up to the window click listener, and since the toggle is not contained within the menu, it would close the latter as soon as we try to open it.
 
-{% info %} We originally used [`Event.composedPath`](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath), which provides the DOM path from the root of the document to the event target. Unfortunately, we noticed it wasn’t supported in many cases, so we had to revisit the implementation. {% endinfo %}
+{% callout %} We originally used [`Event.composedPath`](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath), which provides the DOM path from the root of the document to the event target. Unfortunately, we noticed it wasn’t supported in many cases, so we had to revisit the implementation. {% endcallout %}
 
 ## React
 

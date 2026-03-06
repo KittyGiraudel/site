@@ -87,7 +87,7 @@ export default function (config) {
   config.addFilter('sort_by', sortBy)
   config.addFilter('where', where)
   config.addFilter('emoji_to_text', emojiToText)
-  config.addPairedShortcode('info', info)
+  config.addPairedShortcode('callout', callout)
 
   // Collections
   // ---------------------------------------------------------------------------
@@ -226,7 +226,7 @@ function groupBy(array, key) {
   return Object.keys(map).reduce((acc, key) => acc.concat({ name: key, items: map[key] }), [])
 }
 
-function info(content) {
+function callout(content) {
   return `<aside class="Info" role="note">${markdown(content, false)}</aside>`
 }
 

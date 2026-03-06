@@ -24,8 +24,8 @@ The JavaScript ecosystem is often the butt of the joke, with its multiple runtim
 
 There are some old JavaScript projects I just don’t touch anymore, not because I’m bored of them, but because I know I’ll need to spend half a day updating 10 different major dependencies and fighting with CJS/ESM compatibility and life is just too short for this shit.
 
-{% info %}Side note: Cargo uses [TOML](https://toml.io/en/) as a configuration format and it’s just so much better than JSON. I understand that JavaScript uses JSON because the language had first-class support for it, but it’s a terrible format for configuration purposes.
-{% endinfo %}
+{% callout %}Side note: Cargo uses [TOML](https://toml.io/en/) as a configuration format and it’s just so much better than JSON. I understand that JavaScript uses JSON because the language had first-class support for it, but it’s a terrible format for configuration purposes.
+{% endcallout %}
 
 ## Embracing the compiler
 

@@ -44,7 +44,7 @@ export const MyApp: FC = () => {
 }
 ```
 
-{% info %} We are using JSX in this code snippet, but this has nothing to do with React. It’s just for illustration purposes. {% endinfo %}
+{% callout %} We are using JSX in this code snippet, but this has nothing to do with React. It’s just for illustration purposes. {% endcallout %}
 
 After bundling our code for production, `process.env.NODE_ENV === 'development'` becomes `false`, which makes the whole ternary moot, and therefore removed entirely. Because `FeatureInProgress` is no longer used, it gets removed from the tree in its entirety and its code will not feature in the bundle.
 

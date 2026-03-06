@@ -26,7 +26,7 @@ Also, as it is forbidden to write about regular expressions without dropping som
 
 > Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems. &mdash; Jamie Zawinski
 
-{% info %}To play with regular expressions, I highly recommend [Regexr](https://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions.{% endinfo %}
+{% callout %}To play with regular expressions, I highly recommend [Regexr](https://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions.{% endcallout %}
 
 ## Finding a use-case
 
@@ -72,7 +72,7 @@ We will also assume that selectors are correctly written, sticking to what is po
 
 Alright? Let’s get started slowly but surely.
 
-{% info %}For sake of readability, I omitted the [PCRE delimiters](https://php.net/manual/en/regexp.reference.delimiters.php) (`/…/`) from all regular expressions in this article. We also won’t talk about [flags](https://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion.{% endinfo %}
+{% callout %}For sake of readability, I omitted the [PCRE delimiters](https://php.net/manual/en/regexp.reference.delimiters.php) (`/…/`) from all regular expressions in this article. We also won’t talk about [flags](https://php.net/manual/en/reference.pcre.pattern.modifiers.php) as they are basically irrelevant to this discussion.{% endcallout %}
 
 ## Matching a raw attribute selector
 

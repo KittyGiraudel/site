@@ -8,9 +8,9 @@ tags:
 
 I have recently been playing with a concept of React hooks and React components to handle user preferences such as light/dark mode, reduced motion, reduced data usage, reduced transparency, or basically anything else.
 
-{% info %}
+{% callout %}
 You might be interested in reading [Implementing a reduced motion mode](/2018/03/19/implementing-a-reduced-motion-mode/) where I go in details on how to use the OS preference alongside CSS custom properties to manage motion preferences.
-{% endinfo %}
+{% endcallout %}
 
 The idea is to provide an easy way to access this information, and react (no pun intended) to it would it change thanks to media queries. It could be either a React hook to abstract that away, or a React component for a very declarative approach like below.
 

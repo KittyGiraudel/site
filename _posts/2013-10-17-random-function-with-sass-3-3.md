@@ -15,7 +15,7 @@ According to the [issue](https://github.com/nex3/sass/issues/771) which started 
 
 Anyway, I saw this unique id thingie as an opportunity to have a random number with Sass. Why? I don’t know. I leave this question to you. Maybe some day I’ll find a usecase for a random number in CSS.
 
-{% info %}The code in this article has not been tested at all since it requires some Sass 3.3 functions that are not implemented yet. This is more like a proof of concept.{% endinfo %}
+{% callout %}The code in this article has not been tested at all since it requires some Sass 3.3 functions that are not implemented yet. This is more like a proof of concept.{% endcallout %}
 
 ## About `unique-id()`
 
@@ -100,7 +100,7 @@ To put it simple, instead of stripping alpha characters, we take the alphanumeri
 
 The first line in the function core is the `unique-id()` function call. We immediately pass it into the `str-slice()` function to remove the very first character which is always a `u`.
 
-{% info %}According to my tests, the min value used in both implementations of `unique-id()` is such that the second character of the returned string is always the same (`8` in base 16, `1` in base 36). Thus we may need to strip it too, like this `str-slice(unique-id(), 3)`.{% endinfo %}
+{% callout %}According to my tests, the min value used in both implementations of `unique-id()` is such that the second character of the returned string is always the same (`8` in base 16, `1` in base 36). Thus we may need to strip it too, like this `str-slice(unique-id(), 3)`.{% endcallout %}
 
 The second line calls a `toInt()` function, passing it both the string (`$str`) and the base we want to convert the string from (not to). This is why I say we’re ready for both implementations: we only have to change this `16` to `36` and everything should work like a charm.
 

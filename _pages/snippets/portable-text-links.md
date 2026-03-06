@@ -32,4 +32,4 @@ And if instead you want to list _documents_ which contain a specific link (here 
 ]
 ```
 
-{% info %}Kind thanks to [Julia](https://twitter.com/julesisuppose) for her help with these queries.{% endinfo %}
+{% callout %}Kind thanks to [Julia](https://twitter.com/julesisuppose) for her help with these queries.{% endcallout %}

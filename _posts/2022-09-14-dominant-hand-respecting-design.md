@@ -149,7 +149,7 @@ CSS.registerMedia({
 
 The browser would then provide a native interface for the user to define their dominant hand (if they wish to do so). If/when they’ve done that, we can read the updated value with the media query suggested above. Now wouldn’t that be neat? Maybe something for [the Web We Want](https://webwewant.fyi/). :)
 
-{% info %} [Kilian expanded on this idea](https://kilianvalkhof.com/2022/css-html/on-better-browsers-arbitrary-media-queries-and-browser-uis/) on his own blog since I wrote this article. Be sure to have a read! {% endinfo %}
+{% callout %} [Kilian expanded on this idea](https://kilianvalkhof.com/2022/css-html/on-better-browsers-arbitrary-media-queries-and-browser-uis/) on his own blog since I wrote this article. Be sure to have a read! {% endcallout %}
 
 ## Wrapping up
 

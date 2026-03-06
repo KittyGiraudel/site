@@ -104,7 +104,7 @@ As stated before, the amount of points is irrelevant, so we can use five points,
 
 As you add more points, the more coordinates play a part in the final curve, making it increasingly difficult to add desired detail. This is why the Cubic Bézier curve, the curve with four points is most common. If you’re familiar with software like Illustrator, you will know that between two points, you get two control points, which makes four.
 
-{% info %}If you haven't already, I highly recommend you to watch [this 4 minute video](https://vimeo.com/106757336) about the way Bézier curves are drawn by a computer. Fair warning: ah-ha moment triggerer.{% endinfo %}
+{% callout %}If you haven't already, I highly recommend you to watch [this 4 minute video](https://vimeo.com/106757336) about the way Bézier curves are drawn by a computer. Fair warning: ah-ha moment triggerer.{% endcallout %}
 
 ## Coming back to Sass
 
@@ -351,7 +351,7 @@ Regarding `draw-control-points` now, it gets called only if `control-points` key
 
 The way they are drawn are kind of tricky I must say (also quite complicated, so I won't display the code here). Basically, it consists on two pseudo-elements with their diagonal displayed thanks to a linear-gradient and some geometry magic using `atan` function ([from Compass](https://compass-style.org/reference/compass/helpers/math/#atan)).
 
-{% info %}If you don't use Compass, you can use [this (Ruby) implementation](https://github.com/at-import/Sassy-math/blob/60d130108bcd20c5cd5aa50b52505afab9a40519/compass/lib/sassy-math.rb#L136) from Sassy-Math, or [this (Sass) one](https://thesassway.herokuapp.com/advanced/inverse-trigonometric-functions-with-sass#coding-the-atan-function) from Ana Tudor.{% endinfo %}
+{% callout %}If you don't use Compass, you can use [this (Ruby) implementation](https://github.com/at-import/Sassy-math/blob/60d130108bcd20c5cd5aa50b52505afab9a40519/compass/lib/sassy-math.rb#L136) from Sassy-Math, or [this (Sass) one](https://thesassway.herokuapp.com/advanced/inverse-trigonometric-functions-with-sass#coding-the-atan-function) from Ana Tudor.{% endcallout %}
 
 ## Final thoughts
 

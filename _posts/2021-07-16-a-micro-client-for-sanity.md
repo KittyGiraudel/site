@@ -60,7 +60,9 @@ export const createQuery = ({ conditions, fields = '...', options = {} }) => {
 }
 ```
 
-{%info%} Note that we use a type check for `options.slice` instead of just checking if it’s truthy to make it possible to pass `0` if necessary (which is a falsy value but should still be printed out as a slice). {%endinfo%}
+{% callout %}
+Note that we use a type check for `options.slice` instead of just checking if it’s truthy to make it possible to pass `0` if necessary (which is a falsy value but should still be printed out as a slice).
+{% endcallout %}
 
 Now that we can create a GROQ query, we can use it in our helpers.
 
@@ -203,7 +205,7 @@ const preserveDrafts = (current, _, array) =>
   findSameEntry(current, array) ? isDraftEntry(current) : true
 ```
 
-{% info %} Note that this all requires querying the documents’ `_id` as part of the fields when the preview mode is enabled, since the filtering is done by reading the `_id`. To make sure this is the case, one could add a little check in the `createQuery` function to ensure it’s part of the fields. {% endinfo %}
+{% callout %} Note that this all requires querying the documents’ `_id` as part of the fields when the preview mode is enabled, since the filtering is done by reading the `_id`. To make sure this is the case, one could add a little check in the `createQuery` function to ensure it’s part of the fields. {% endcallout %}
 
 ## Wrapping up
 

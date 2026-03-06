@@ -20,7 +20,7 @@ It kind of goes without saying, but you’d be surprised at how many people don�
 
 So you know, **start your message by saying hi** or something. Similarly, maybe **thank people who take time to support you**. Even if it is their job and they’re paid to do so. When you order food at a restaurant, you do thank the waiting staff (I hope). I don’t see why it should be any different online: if someone helps you or answers your question, say thanks? Seems so simple.
 
-{% info %}Speaking of saying hi, maybe consider an alternative to "hi guys”, as not everyone identifies as a guy, especially at Sanity where the support team is quite gender-diverse. I’m not going to make a big deal of using “guys” generically, but please understand that even though intended as such, [it is not a gender-neutral term](https://heyguys.cc/). Alternatives: “everone”, “folks”, “friends” or just nothing.{% endinfo %}
+{% callout %}Speaking of saying hi, maybe consider an alternative to "hi guys”, as not everyone identifies as a guy, especially at Sanity where the support team is quite gender-diverse. I’m not going to make a big deal of using “guys” generically, but please understand that even though intended as such, [it is not a gender-neutral term](https://heyguys.cc/). Alternatives: “everone”, “folks”, “friends” or just nothing.{% endcallout %}
 
 ## Be explicit
 

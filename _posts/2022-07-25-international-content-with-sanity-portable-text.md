@@ -122,7 +122,7 @@ const Lang = props => (
 )
 ```
 
-{% info %}It might be tempting to prefix or suffix the content with a little flag in the rich text editor, however remember that flags are intended for countries and localities, not for languages. So it’s probably best not to. {% endinfo %}
+{% callout %}It might be tempting to prefix or suffix the content with a little flag in the rich text editor, however remember that flags are intended for countries and localities, not for languages. So it’s probably best not to. {% endcallout %}
 
 ## Frontend rendering
 

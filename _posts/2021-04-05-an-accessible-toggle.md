@@ -19,7 +19,7 @@ In this article, I will show a small HTML + CSS only implementation of an access
 
 {% assign toggles = "Dion mentions how [the toggle might look reversed](https://twitter.com/_diondiondion/status/1379828760585834497?s=20), a sentiment backed up by [Rawrmonstar](https://twitter.com/rawrawrmonstar/status/1379555735118352384?s=20), and Mikael Kundert mentions how [checkboxes are usually simpler](https://twitter.com/iMiksu/status/1379802269709897737?s=20)." | markdown %}
 
-{% info %} **Disclaimer:** Before using a toggle switch, consider whether this is the best user interface for the situation. {% footnoteref "toggles" toggles %}Toggles can be visually confusing{% endfootnoteref %} and in some cases, [a button might be more suited](#button-variant).{% endinfo %}
+{% callout %} **Disclaimer:** Before using a toggle switch, consider whether this is the best user interface for the situation. {% footnoteref "toggles" toggles %}Toggles can be visually confusing{% endfootnoteref %} and in some cases, [a button might be more suited](#button-variant).{% endcallout %}
 
 ## Markup
 
@@ -34,7 +34,7 @@ If the toggle causes an immediate action (such as switching a theme) and therefo
 </label>
 ```
 
-{% info %} It is worth mentioning that this is not the only way to mark up such interface component. For instance, it is possible to use 2 radio inputs instead. Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).{% endinfo %}
+{% callout %} It is worth mentioning that this is not the only way to mark up such interface component. For instance, it is possible to use 2 radio inputs instead. Sara Soueidan goes more in details about [designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/).{% endcallout %}
 
 Now, we are going to need a little more than this. To avoid conveying the status of the checkbox relying solely on color ([WCAG Success Criteria 1.4.1 Use of Color](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)), we are going to use a couple icons.
 
@@ -272,7 +272,7 @@ Then, we have to deal with the checked state. There are 2 things we want to do i
 }
 ```
 
-{% info %}[Adrian Roselli](https://twitter.com/aardrian/status/1379776239838322689?s=20) rightfully pointed out that this design does not account for a possibly “mixed” (or [“indeterminate” state](https://css-tricks.com/indeterminate-checkboxes/)). This is true for sake of simplicity since most checkboxes/toggles do not need such state, but should be considered when needed.{% endinfo %}
+{% callout %}[Adrian Roselli](https://twitter.com/aardrian/status/1379776239838322689?s=20) rightfully pointed out that this design does not account for a possibly “mixed” (or [“indeterminate” state](https://css-tricks.com/indeterminate-checkboxes/)). This is true for sake of simplicity since most checkboxes/toggles do not need such state, but should be considered when needed.{% endcallout %}
 
 ### Disabled state
 

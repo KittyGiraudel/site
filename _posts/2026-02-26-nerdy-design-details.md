@@ -101,8 +101,8 @@ Let’s see them in action:
 
 And:
 
-{% info %}This is an informative callout. It is kind of an aside to the main content, not directly attached to it but also not irrelevant. It bears no particular semantics, although it could probably render an {% footnoteref "aside-element" "I have since decided to use the <code>&lt;aside&gt;</code> element for callouts. I think it is semantically appropriate, according to the <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/aside'>MDN page on this element</a>." %}`<aside>` element{% endfootnoteref %}.
-{% endinfo %}
+{% callout %}This is an informative callout. It is kind of an aside to the main content, not directly attached to it but also not irrelevant. It bears no particular semantics, although it could probably render an {% footnoteref "aside-element" "I have since decided to use the <code>&lt;aside&gt;</code> element for callouts. I think it is semantically appropriate, according to the <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/aside'>MDN page on this element</a>." %}`<aside>` element{% endfootnoteref %}.
+{% endcallout %}
 
 They still do look similar! They bear the same pale blue background color, and the blue to pink gradient border. Speaking of which, for some reason it does not seem to be possible to render a gradient border using `border-image` with rounded corners. I have resorted to using [this solution from StackOverflow](https://stackoverflow.com/a/53037637):
 
@@ -151,7 +151,7 @@ To ensure the content within the callout sits on top of the decorative character
 
 I have used the same design pattern for [footnotes](#footnotes-label), and the [editorial changes](#post-edits) for an example). I really like the juxtaposition of a neatly bordered box, and a decorative element breaking out of it, bringing some dynamism!
 
-{% info %}As you can see from the code blocks above, they use the inverted color scheme: they have a pink background, and their gradient border goes from pink to blue. I did consider putting some brackets on each side, but it felt too much, especially since they already stand out with their unique pink-ish theme.{% endinfo %}
+{% callout %}As you can see from the code blocks above, they use the inverted color scheme: they have a pink background, and their gradient border goes from pink to blue. I did consider putting some brackets on each side, but it felt too much, especially since they already stand out with their unique pink-ish theme.{% endcallout %}
 
 ## Heading anchors
 

@@ -74,7 +74,7 @@ Unfortunately, at this stage this link contains no accessible name, which is a b
 </a>
 ```
 
-{% info %} Chris Heilmann asked me whether using the `aria-label` attribute or a `<title>` element in the SVG would be simpler than having a visually hidden element. The latter solution provides [better support with older assistive technologies](https://twitter.com/goetsu/status/1334596736833232896?s=20) and avoids [`aria-label` internationalisation issues](https://heydonworks.com/article/aria-label-is-a-xenophobe/). {% endinfo %}
+{% callout %} Chris Heilmann asked me whether using the `aria-label` attribute or a `<title>` element in the SVG would be simpler than having a visually hidden element. The latter solution provides [better support with older assistive technologies](https://twitter.com/goetsu/status/1334596736833232896?s=20) and avoids [`aria-label` internationalisation issues](https://heydonworks.com/article/aria-label-is-a-xenophobe/). {% endcallout %}
 
 There is still a bit more we need to do. Since we provided a descriptive text, we can safely remove the SVG markup from the accessibility tree by adding the `aria-hidden` attribute.
 

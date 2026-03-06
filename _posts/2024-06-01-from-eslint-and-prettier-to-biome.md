@@ -36,7 +36,7 @@ At the time, I essentially:
 
 It took me an hour or two to reach a point where the output became manageable again, but thanks to Biome’s [extensive rules documentation](https://biomejs.dev/linter/rules/), it was relatively easy to come up with the right configuration.
 
-{% info %} One thing I love about Biome is that the configuration model is very easy, even in a monorepo. We have a _single_ configuration file at the root of the repository, and every package automatically uses that (as Biome walks up the file tree to find a configuration file). No need to specify anything in `package.json` files, and overrides can be done at the package level by having another Biome file extending from the first. {% endinfo %}
+{% callout %} One thing I love about Biome is that the configuration model is very easy, even in a monorepo. We have a _single_ configuration file at the root of the repository, and every package automatically uses that (as Biome walks up the file tree to find a configuration file). No need to specify anything in `package.json` files, and overrides can be done at the package level by having another Biome file extending from the first. {% endcallout %}
 
 Then, I ran Biome’s auto-fixes — including the ones deemed unsafe — on the whole codebase. I double-checked that everything was alright, and in case where the fixes were indeed unsafe, I reverted them manually or updated the code so the fix became safe.
 

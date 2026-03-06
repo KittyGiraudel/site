@@ -44,7 +44,7 @@ summary::-webkit-details-marker {
 }
 ```
 
-{% info %} September 20th edit: using `<details>` and `<summary>` for a navigation menu is not fantastic, as [outlined by Gerardo Rodriguez](https://cloudfour.com/thinks/a-details-element-as-a-burger-menu-is-not-accessible/) and [Adrian Roselli](https://adrianroselli.com/2019/04/details-summary-are-not-insert-control-here.html). Because it gets progressively enhanced into a proper disclosure widget when JS kicks in, it _may_ be fine, but generally speaking this is not the right approach. I did not know this at the time. {% endinfo %}
+{% callout %} September 20th edit: using `<details>` and `<summary>` for a navigation menu is not fantastic, as [outlined by Gerardo Rodriguez](https://cloudfour.com/thinks/a-details-element-as-a-burger-menu-is-not-accessible/) and [Adrian Roselli](https://adrianroselli.com/2019/04/details-summary-are-not-insert-control-here.html). Because it gets progressively enhanced into a proper disclosure widget when JS kicks in, it _may_ be fine, but generally speaking this is not the right approach. I did not know this at the time. {% endcallout %}
 
 ## Shut it down
 
@@ -69,7 +69,7 @@ That’s why when JavaScript is available, we replace them with a `<button>` (wi
 </nav>
 ```
 
-{% info %}[Interesting point raised by Aurélien Levy on Twitter](https://twitter.com/goetsu/status/1370729035156779014?s=20): When using `aria-expanded="true"`, the label should not mention “open” or “close” (or similar) as the state is already conveyed via the attribute.{% endinfo %}
+{% callout %}[Interesting point raised by Aurélien Levy on Twitter](https://twitter.com/goetsu/status/1370729035156779014?s=20): When using `aria-expanded="true"`, the label should not mention “open” or “close” (or similar) as the state is already conveyed via the attribute.{% endcallout %}
 
 Without getting too deep into technical details (especially because our implementation is in React), we use something along these lines to automatically close the menu when clicking outside of it or tabbing out of it.
 
@@ -160,7 +160,7 @@ Still, a few things we paid attention to:
 
 While the links say “EN”, “DE” and “NL”, it’s not fantastic from a verbal perspective. “EN” and “NL” are pronounced as you would expect, but “DE” is pronounced “duh”, which sucks. I assume most screen-reader users would be accustomed to this sort of pronunciation for language code, but we wanted to do better. ~~The 2-letter code is marked with `aria-hidden` so it’s not read out and~~ each link contains visually hidden text mentioning the full language name.
 
-{% info %}[Aurélien Levy rightfully pointed out on Twitter](https://twitter.com/goetsu/status/1370730365418143745?s=20) that marking the 2-letter code as `aria-hidden` would fail [WCAG SC 2.5.3 Label in name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html). As the visible label is, say, “EN”, voice navigation users can activate it using a command like “click EN”. It will not work anymore if the “EN” text is hidden with `aria-hidden`. [Sara Soueidan expands on the matter in her own blog](https://www.sarasoueidan.com/blog/accessible-text-labels/).{% endinfo %}
+{% callout %}[Aurélien Levy rightfully pointed out on Twitter](https://twitter.com/goetsu/status/1370730365418143745?s=20) that marking the 2-letter code as `aria-hidden` would fail [WCAG SC 2.5.3 Label in name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html). As the visible label is, say, “EN”, voice navigation users can activate it using a command like “click EN”. It will not work anymore if the “EN” text is hidden with `aria-hidden`. [Sara Soueidan expands on the matter in her own blog](https://www.sarasoueidan.com/blog/accessible-text-labels/).{% endcallout %}
 
 The language name is defined in the language itself, and _not_ in the current page language. Browsing the English navigation will read <span lang="de">“Deutsch”</span> for the German link, and not “German”. So it’s pronounced correctly, the language name is wrapped with a span with the `lang` attribute. This way, a screen-reader will switch to a German pronounciation to voice <span lang="de">“Deutsch”</span>.
 

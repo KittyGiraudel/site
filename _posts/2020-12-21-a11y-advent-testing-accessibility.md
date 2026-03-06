@@ -18,7 +18,7 @@ Testing the HTML can be done with a variety of tools:
 - [aXe](https://github.com/dequelabs/axe-core), an accessibility testing engine which can be integrated in a variety of ways (devtools, React, Cypress…).
 - There is also an endless list of browser extensions like [WAVE](https://wave.webaim.org/extension/).
 
-{% info %} This is the perfect time and place to remind or let you know that accessiBe, the supposedly #1 fully automated accessibility solution” is a scam. It feeds on companies believing they can solve all their accessibility concerns by implementing a 1-line JavaScript widget. They cannot. Do not fall for it. {% endinfo %}
+{% callout %} This is the perfect time and place to remind or let you know that accessiBe, the supposedly #1 fully automated accessibility solution” is a scam. It feeds on companies believing they can solve all their accessibility concerns by implementing a 1-line JavaScript widget. They cannot. Do not fall for it. {% endcallout %}
 
 For copy-writing and content, I can recommend:
 

@@ -120,7 +120,7 @@ export default () => {
 }
 ```
 
-{% info %}You can find [a similar example](https://www.sanity.io/schemas/desk-structure-with-custom-roles-332e8ada) in the Sanity documentation, making use of more roles (both default and custom).{% endinfo %}
+{% callout %}You can find [a similar example](https://www.sanity.io/schemas/desk-structure-with-custom-roles-332e8ada) in the Sanity documentation, making use of more roles (both default and custom).{% endcallout %}
 
 ## Updating the “Create new document” dialog
 

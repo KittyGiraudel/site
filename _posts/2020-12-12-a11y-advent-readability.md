@@ -8,7 +8,7 @@ tags:
 
 For a medium as text-focused as the web, readability has to be something we have to talk about. Besides making it more comfortable for everyone, taking special care to make content readable helps people with a various range of disabilities, such as color-blindness or dyslexia.
 
-{% info %} While doing research for this article, I learnt about the difference between legibility and readability. The former is the product of the design of a font, based on its characteristics such as height, width, and thickness. Readability on the other hand is related to how the font is used, such as font size, letter spacing, line height and color. {% endinfo %}
+{% callout %} While doing research for this article, I learnt about the difference between legibility and readability. The former is the product of the design of a font, based on its characteristics such as height, width, and thickness. Readability on the other hand is related to how the font is used, such as font size, letter spacing, line height and color. {% endcallout %}
 
 The first thing to remember when it comes to readability is that there is no one-size-fit-all solution. While there are commonly accepted suggestions such as avoiding small sizes and enabling decent color contrast, it is good to remember that everyone is different and what works for me might not work for you.
 

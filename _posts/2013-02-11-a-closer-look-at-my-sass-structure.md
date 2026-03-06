@@ -29,7 +29,7 @@ This is exactly what I did, spliting my stylesheets into parts. As of writing, I
 - `_helpers.scss`: this file contains my mixins, variables and helper classes
 - `_styles.scss`: the core of the CSS
 
-{% info %}`.scss` files starting with a `_` are not compiled into .css files.{% endinfo %}
+{% callout %}`.scss` files starting with a `_` are not compiled into .css files.{% endcallout %}
 
 Since my website isn’t that big, I didn’t have to split the code stylesheet into smaller parts like typography, header, footer, modules, etc.
 
@@ -44,7 +44,7 @@ So basically, my central stylesheet (`styles.min.scss` compiled into `styles.min
 
 The first two lines are Compass related imports. It doesn’t compile into the final CSS. They enable use of Compass embedded mixins, sparing me from writing vendor prefixes. The last line imports the 5 files into a single one (top to bottom).
 
-{% info %}When importing Sass/SCSS files, you don’t need to add underscores or file extensions.{% endinfo %}
+{% callout %}When importing Sass/SCSS files, you don’t need to add underscores or file extensions.{% endcallout %}
 
 ## KISS (Keep It Simple Stupid)
 
@@ -90,7 +90,7 @@ The second one also comes from [CSS-tricks](https://css-tricks.com/media-queries
 
 Whenever I want to use a Media Query, I just have to run `@include breakpoint(baby-bear) { /* My stuff here */ }`.
 
-{% info %}I use `em` in media queries in order to prevent some layouts problem when zooming in the browser. More about it in [this article](https://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/) from Lyza Gardner.{% endinfo %}
+{% callout %}I use `em` in media queries in order to prevent some layouts problem when zooming in the browser. More about it in [this article](https://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/) from Lyza Gardner.{% endcallout %}
 
 ### Variables
 
@@ -244,7 +244,7 @@ Please note how I nest media queries inside their related selectors. There are t
 - This makes the stylesheet easier to maintain since you have everything at the same place: regular rules + conditional rules. No need of going at the bottom of the stylesheet to find all the conditional CSS.
 - When compiling, Sass doesn’t generate a bunch of media queries but a single one. So no performance issue on this point.
 
-{% info %}If you ever wonder about the double dashes or underscores in class names, it is related to the BEM (Block Element Modifier) approach. More on the topic in [this excellent post](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) from Harry Roberts.{% endinfo %}
+{% callout %}If you ever wonder about the double dashes or underscores in class names, it is related to the BEM (Block Element Modifier) approach. More on the topic in [this excellent post](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) from Harry Roberts.{% endcallout %}
 
 ## Core of styles
 

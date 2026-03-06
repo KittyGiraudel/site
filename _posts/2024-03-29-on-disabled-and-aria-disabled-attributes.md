@@ -30,7 +30,7 @@ It kind of depends on what the **intent** is.
 
 If you have a form with plenty fields, and some of them become irrelevant based on the value of other previous fields, using the `disabled` attribute seems like a good option. These fields can be safely omitted entirely, they do not necessarily need to be discovered either if they are obsolete, and they shouldn’t be sent with the form because they are moot.
 
-{% info %}Side note: If a form control should not be editable but should have its value sent alongside the form, or if having access to its value is relevant for any reason, then prefer the `readonly` boolean attribute. {% endinfo %}
+{% callout %}Side note: If a form control should not be editable but should have its value sent alongside the form, or if having access to its value is relevant for any reason, then prefer the `readonly` boolean attribute. {% endcallout %}
 
 Now, if you have a form submit button that is not ready yet because the form needs to be completed first, then `aria-disabled` attribute is certainly better. This way, the button remains discoverable (it can be tabbed to) and interactive (it can be used to trigger form validation). This is what we want in a case like this, which is why there are more than a few articles about the danger of disabled **buttons** specifically:
 
