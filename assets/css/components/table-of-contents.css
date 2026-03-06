@@ -3,7 +3,7 @@
   border-radius: 1em;
   corner-shape: squircle;
   border: 2px solid color-mix(in srgb, currentColor 12%, transparent);
-  background: color-mix(in srgb, currentColor 4%, transparent);
+  background-color: color-mix(in srgb, currentColor 4%, transparent);
   font-size: 90%;
   margin-bottom: var(--vb);
 }

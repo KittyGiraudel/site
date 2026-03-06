@@ -16,7 +16,9 @@ As a reminder:
 
 If you don’t give a fuck about how I built this up and simply want to give it a try, please refer to the last section at the bottom of the article. Have fun! ;)
 
-**Disclaimer!** Please, understand this game is one of my first works in Unity with C#, so it’s pretty dirty. There are still some bugs, and there have been absolutely no work on the design layer. **The point was to try to make a game which is playable**. It’s more than enough for a first work, don’t you think?
+{% callout "warning" %}
+**Disclaimer!** Please, understand this game is one of my first works in Unity with C#, so it’s pretty dirty. There are still some bugs, and there have been absolutely no work on the design layer. **The point was to try to make a game which is playable**.
+{% endcallout %}
 
 ## The making of
 
@@ -124,7 +126,9 @@ It was pretty easy to do, however I felt like it could be really annoying for so
 
 ## About the game
 
+{% callout "warning" %}
 **Disclaimer (once again)!** This game is kind of a learning experiment so it may be pretty dirty. As explained above, there are still some bugs and the design layer hasn’t been done at all.
+{% endcallout %}
 
 ### Features
 

@@ -6,9 +6,13 @@ tags:
   - Engineering
 ---
 
-After about more than 4 years, my co-worker [Mike Smart](https://twitter.com/smartmike) and I both have resigned from our position of web tech leads at N26. We will be sticking around for a few more weeks/months during our notice period, giving us enough time to look for someone to replace us as _tech lead of the Core segment_ (more on what it means further down).
+After about more than 4 years, my co-worker [Mike Smart](https://twitter.com/smartmike) and I both have resigned from our position of web tech leads at N26.
 
+We will be sticking around for a few more weeks/months during our notice period, giving us enough time to look for someone to replace us as _tech lead of the Core segment_ (more on what it means further down).
+
+{% callout "warning" %}
 **Disclaimer: this is not an official job description.** Please refer to the [position on the N26 website](https://n26.com/en/careers/positions/2435542?gh_jid=2435542) to formally apply.
+{% endcallout %}
 
 ## Terminology
 

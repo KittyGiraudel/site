@@ -4,7 +4,10 @@
  */
 .Callout {
   --background-color: light-dark(#f3f8fc, #303132);
+  --gradient-start: var(--blue);
+  --gradient-end: var(--pink);
   margin: var(--vb) 0;
+  color: light-dark(#1e293b, #f1f5f9);
   padding: 0.75em 1.5em;
   position: relative; /* 1 */
   background-color: var(--background-color);
@@ -13,7 +16,7 @@
   border: 2px solid transparent; /* 2 */
   background-image:
     linear-gradient(var(--background-color), var(--background-color)),
-    linear-gradient(to right, var(--blue), var(--pink)); /* 2 */
+    linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* 2 */
   background-origin: border-box; /* 2 */
   background-clip: padding-box, border-box; /* 2 */
   clear: right;
@@ -32,6 +35,19 @@
   left: 0;
   transform: translate(-10%, 69%) rotate(-30deg);
   color: var(--blue);
+}
+
+.Callout--warning {
+  --background-color: light-dark(#fffbeb, #2a2115);
+  color: light-dark(#92400e, #f4d4a0);
+  --gradient-start: light-dark(#facc15, #eab308);
+  --gradient-end: light-dark(#f97316, #d97706);
+}
+
+.Callout--warning::before {
+  content: '!';
+  color: light-dark(#f97316, #eab308);
+  transform: translate(-10%, 69%) rotate(-20deg);
 }
 
 /**

@@ -226,8 +226,8 @@ function groupBy(array, key) {
   return Object.keys(map).reduce((acc, key) => acc.concat({ name: key, items: map[key] }), [])
 }
 
-function callout(content) {
-  return `<aside class="Callout" role="note">${markdown(content, false)}</aside>`
+function callout(content, type = 'info') {
+  return `<aside class="Callout Callout--${type}" role="note">${markdown(content, false)}</aside>`
 }
 
 function time(value) {
