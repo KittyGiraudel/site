@@ -2,5 +2,5 @@
  * CodePen embedded iframes
  */
 .cp_embed_wrapper {
-  margin-bottom: var(--vb);
+  margin: var(--vb) auto;
 }

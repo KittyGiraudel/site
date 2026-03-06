@@ -5,7 +5,6 @@ tags:
   - JavaScript
   - Open Source
   - Release
-toc: false
 ---
 
 Hey folks! Let’s talk JavaScript, shall we? It all started with a tweet from Nate Bailey:
