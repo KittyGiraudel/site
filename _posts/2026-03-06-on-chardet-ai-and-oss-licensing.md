@@ -52,7 +52,7 @@ Mark, the original author, argues that maintainers do not have the right to reli
 
 On the other hand, Dan, the main maintainer and rewriter, claims that this version is a “ground-up […] rewrite” — the term {% footnoteref "clean-room" "To put it simply (and to the extent I understand it), the concept of “clean room” is when someone authors software based on specifications without access to an existing implementation or proprietary materials. It’s a way to reimplement something while avoiding legal issues." %}“clean room”{% endfootnoteref %} pops up a lot in the long GitHub issue. And because it’s supposedly a clean room rewrite, the license can be freely changed since it’s ultimately a different software.
 
-## Was it *clean room*?
+## Was it *clean room*
 
 Again, this is not exactly a straightforward answer. But the more you look at it, the more it sure seems like it was *not*. 
 
@@ -85,7 +85,6 @@ One interesting point that is raised in the midst of the conversation is about t
 - In Europe, the EU’s AI Act and copyright directives are still evolving, but the general principle aligns with the US in so that human authorship is required (see [EU Copyright Directive (2019)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0790) and [EU AI Act (2024)](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)).
 - Some countries are experimenting with limited protections for AI-generated content, but these are exceptions, not the rule. Generally speaking, it needs to be a human work (see [German Copyright Act (English translation)](https://www.gesetze-im-internet.de/englisch_urhg/englisch_urhg.html#p0002) and [French Intellectual Property Code, Article L111-1](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278864/)).
 
-
 If AI-generated code is not copyrightable, it cannot be licensed under MIT, LGPL, or any other license. This would place it in the public domain, but it also raises a paradox: if the AI was trained on LGPL-licensed code, the output might still be considered a derivative work, even if it’s not copyrightable. This is why this whole situation is muddy and complicated.
 
 ## Why should we care
@@ -105,7 +104,7 @@ This situation is a microcosm of larger issues in both open source and AI (and w
 - Can this lead to more projects adopting contributor license agreements (CLA), or even some explicit relicensing policies?
 - What role does AI transparency (such as disclosing training data) play in resolving these issues?
 
-## What’s next?
+## What’s next
 
 It’s hard to say. At the moment, version 7.0.0 remains available under MIT, and all previous versions are available under LGPL. Dan Blanchard neither replied nor contributed to the GitHub issue where the debate unfolds.
 
