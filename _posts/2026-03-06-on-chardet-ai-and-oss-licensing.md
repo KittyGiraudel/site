@@ -6,9 +6,13 @@ tags:
   - Open Source
 ---
 
-There is a concerning controversy happening in the [chardet](https://github.com/chardet/chardet) open-source library, which I believe people should be aware of. I tried my best to summarize the situation in this article. 
+There is a concerning controversy happening in the [chardet](https://github.com/chardet/chardet) open-source library, which I believe people should be aware of.
 
+It concerns software licensing, the use of AI in the making of software, as well as general ethical and etiquette consideration when contributing to open source work. I tried my best to summarize the situation in this article. 
+
+{% info %}
 **Disclaimer:** This article touches on legal topics, and I am **not** a lawyer or an expert on copyright law. I do my best to understand and explain legal concepts in this blog post, but at the end of the day, this is not my area of expertise. Please kindly point out any issue in the comments.
+{% endinfo %}
 
 ## Overview
 
