@@ -7,16 +7,8 @@
   flex-direction: column;
   align-items: stretch;
   gap: 2em;
-  margin: 0 auto var(--vb-1\/2);
+  margin: 0 auto var(--vb);
   padding: 1em;
-}
-
-/**
- * 1. If the ad is at the top of the content (and not sandwiched between other
- *    content blocks), increase its spacing.
- */
-.TableOfContents:first-child + .RandomName {
-  margin-bottom: var(--vb); /* 1 */
 }
 
 .RandomName__content {
@@ -81,29 +73,28 @@
   }
 }
 
-/**
- * Site advertisement
- * 1. Computed height to minimise CLS.
- */
 .RandomName__holder {
   width: max-content;
   max-width: 100%;
-  min-height: 114px; /* 1 */
   min-width: 284px;
   background-color: light-dark(white, #222);
   margin: 0 auto;
 }
 
+/**
+ * 1. Computed height to minimise CLS.
+ */
 .RandomName__holder:not(:has(#carbonads)) {
   box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.1);
-  --stripe-color: rgb(0 0 0 / 0.1); /* 4 */
+  --stripe-color: rgb(0 0 0 / 0.1);
   background-image: repeating-linear-gradient(
     -45deg,
     transparent,
     transparent 0.15em,
     var(--stripe-color) 0.15em,
     var(--stripe-color) 0.3em
-  ); /* 4 */
+  );
+  min-height: 114px; /* 1 */
 }
 
 #carbonads {
