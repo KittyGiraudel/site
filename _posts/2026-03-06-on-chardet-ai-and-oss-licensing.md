@@ -8,7 +8,7 @@ tags:
 
 There is a concerning controversy happening in the [chardet](https://github.com/chardet/chardet) open-source library, which I believe people should be aware of.
 
-It concerns software licensing, the use of AI in the making of software, as well as general ethical and etiquette consideration when contributing to open source work. I tried my best to summarize the situation in this article. 
+It concerns software licensing, the use of AI in the making of software, as well as general ethical and etiquette considerations when contributing to open source work. I tried my best to summarize the situation in this article. 
 
 {% info %}
 **Disclaimer:** This article touches on legal topics, and I am **not** a lawyer or an expert on copyright law. I do my best to understand and explain legal concepts in this blog post, but at the end of the day, this is not my area of expertise. Please kindly point out any issue in the comments.
@@ -26,7 +26,7 @@ The change of license is at the heart of the controversy, something that [Mark P
 
 ## Understanding licenses
 
-To understand the problem, we need to understand the two licenses. Again, this is a complicated legal topic, so here is my best shot at explaining the differences between both with help of Mistral and the amazing [TL;DR Legal](https://www.tldrlegal.com) website.
+To understand the problem, we need to understand the two licenses. Again, this is a complicated legal topic, so here is my best shot at explaining the differences between both with the help of Mistral and the amazing [TL;DR Legal](https://www.tldrlegal.com) website.
 
 ### MIT
 
@@ -37,20 +37,20 @@ You are probably familiar with the MIT License, one of the most permissive open-
 
 ### LGPL v2.1
 
-The LGPL v2.1 (Lesser General Public License) is less common in the open-source world. It is what’s called a “weak copyleft” license. It allows you to use the library in proprietary software, but with important restrictions: if you modify the library itself, you must release those changes under the LGPL as well. This license LGPL is designed to ensure that improvements to the library remain open, while still allowing proprietary software to use it.
+The LGPL v2.1 (Lesser General Public License) is less common in the open-source world. It is what’s called a “weak copyleft” license. It allows you to use the library in proprietary software, but with important restrictions: if you modify the library itself, you must release those changes under the LGPL as well. This license is designed to ensure that improvements to the library remain open, while still allowing proprietary software to use it.
 
 > This license mainly applies to libraries. You may copy, distribute and modify the software provided that you state modifications and license them under LGPL-2.1. Anything statically linked to the library can only be redistributed under LGPL, but applications that use the library don't have to be. You must allow reverse engineering of your application as necessary to debug and relink the library.  
 > — [LGPL 2.1 on TL;DR Legal](https://www.tldrlegal.com/license/gnu-lesser-general-public-license-v2-1-lgpl-2-1)
 
 ### Main differences
 
-The main practical difference is *freedom* versus *reciprocity*. MIT gives total freedom to do whatever you want with the code, while LGPL ensures that any improvements to the library itself stay open-source, something the MIT license does not enforce.
+The main practical difference is *freedom* versus *reciprocity*. MIT gives total freedom to do whatever you want with the code, while LGPL ensures that any improvements to the library itself stay open-source, something the MIT license does not enforce. LGPL is more common in libraries where authors want improvements to stay open; MIT is popular in commercial ecosystems that value minimal friction.
 
 This is why the chardet license change from LGPL to MIT is controversial: it removes the reciprocity requirement, making the library more attractive for commercial use but potentially undermining the original intent of keeping improvements open.
 
 ## Changing the license
 
-There are a lot of things to discuss, and one important point is whether the change of license was allowed in the first place. Can you just go from a non-permissive license to a permissive one? If yes, what is the point of the non-permissive license to start with?
+There are a lot of things to discuss, and one important point is whether the change of license was allowed in the first place. Can you just go from a copyleft to a permissive one? If yes, what is the point of the non-permissive license to start with?
 
 Mark, the original author, argues that maintainers do not have the right to relicense the project. He’s very explicit about this. And by all accounts, it seems he’s right: the LGPL license clearly requires that derivative works (or modifications) remain under the LGPL license. 
 
@@ -58,21 +58,21 @@ On the other hand, Dan, the main maintainer and rewriter, claims that this versi
 
 ## Was it *clean room*
 
-Again, this is not exactly a straightforward answer. But the more you look at it, the more it sure seems like it was *not*. 
+Again, this is not exactly a straightforward answer. But the more you look at it, the more it sure seems like it was *not*. Ultimately, only a court (or at least qualified legal analysis) can decide this, but based on the facts available, the clean-room claim looks very weak.
 
-### On the “sure was” side
+### The “sure was” side
 
-Let’s start with the argument that suggest this is all legit, since they’re fewer (and weaker from my perspective, but that’s subjective). 
+Let’s start with the argument that suggests this is all legit, since they’re fewer (and weaker from my perspective, but that’s subjective). 
 
 Some people, including Dan himself, point out to the fact that there is extremely low code similarity between version 7 and prior (about 1–2%), as an evidence that this is therefore a clean room implementation. Others argue that functional or structural similarity (even if the code *looks* different) could still make it a derivative work under copyright law.
 
-### On the “definitely not” side
+### The “definitely not” side
 
 Now, let’s look at why the whole clean room implementation angle doesn’t really hold when you start deconstructing the pieces a little.
 
 For starters, Dan is a maintainer of chardet ([for 12+ years](https://github.com/chardet/chardet/releases/tag/2.2.0) at that), which means he has prime access and knowledge of the original software. Even if he decided *not* to use it to restart from scratch, he likely knows the code intimately. This undermines the clean room defense, as true clean room processes require the implementor to have no prior exposure to the original work.
 
-Secondly, he used AI (Claude Anthropic) to generate the code, which is how he argues that the new version is based on a high-level description and not the original code, thus being a clean room implementation. {% footnoteref "ai-training" "<a href='https://github.com/chardet/chardet/issues/327#issuecomment-4004572121'>Aleksandr Petrosyan</a> points out that whether or not the AI was trained on the original code is irrelevant. It <em>cannot</em> be construded as fair use, because it uses the same name, uses the original code to design the new version, and claims copyright over a derivative work, which is dubious." %}AI may have been trained on the original chardet code{% endfootnoteref %}, which could mean the output is still a derative work — where LGPL would apply. 
+Secondly, he used AI (Claude Anthropic) to generate the code, which is how he argues that the new version is based on a high-level description and not the original code, thus being a clean room implementation. {% footnoteref "ai-training" "<a href='https://github.com/chardet/chardet/issues/327#issuecomment-4004572121'>Aleksandr Petrosyan</a> points out that whether or not the AI was trained on the original code is irrelevant. It <em>cannot</em> be construed as fair use, because it uses the same name, uses the original code to design the new version, and claims copyright over a derivative work, which is dubious." %}AI may have been trained on the original chardet code{% endfootnoteref %}, which could mean the output is still a derivative work — where LGPL would apply. 
 
 Moreover, the notion that the AI agent was only fed a *high-level description* without using the existing code is demonstrably false. [Claude’s own implementation plan](https://github.com/chardet/chardet/commit/925bccbc85d1b13292e7dc782254fd44cc1e7856#diff-704d0561e3e878b036836b56870212b2d8b7e4a813bf2805df868a1bf9e0094cR309-R314) which was committed to the repository directly references chardet’s version 6 intricacies:
 
@@ -83,21 +83,25 @@ Moreover, the notion that the AI agent was only fed a *high-level description* w
 
 ## On AI-written software
 
-One interesting point that is raised in the midst of the conversation is about the ability to copyright AI output. I think laws are catching up with the matter, but from my understanding, AI output *cannot* be copyrighted:
+One interesting point that is raised in the midst of the conversation is about the ability to copyright AI output. I think laws are catching up with the matter, but from my understanding, AI output on its own is not copyrightable:
 
 - In the United States, AI output is not copyrightable unless a human’s creative contribution is significant enough to make the work an original expression (see [U.S. Copyright Office AI Policy (2023)](https://www.copyright.gov/ai/ai_policy_guidance.pdf) and [U.S. Copyright Compendium, Section 313.2](https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf)).
-- In Europe, the EU’s AI Act and copyright directives are still evolving, but the general principle aligns with the US in so that human authorship is required (see [EU Copyright Directive (2019)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0790) and [EU AI Act (2024)](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)).
+- In Europe, the EU’s AI Act and copyright directives are still evolving, but the general principle aligns with the US in that human authorship is required (see [EU Copyright Directive (2019)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0790) and [EU AI Act (2024)](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)).
 - Some countries are experimenting with limited protections for AI-generated content, but these are exceptions, not the rule. Generally speaking, it needs to be a human work (see [German Copyright Act (English translation)](https://www.gesetze-im-internet.de/englisch_urhg/englisch_urhg.html#p0002) and [French Intellectual Property Code, Article L111-1](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278864/)).
 
 If AI-generated code is not copyrightable, it cannot be licensed under MIT, LGPL, or any other license. This would place it in the public domain, but it also raises a paradox: if the AI was trained on LGPL-licensed code, the output might still be considered a derivative work, even if it’s not copyrightable. This is why this whole situation is muddy and complicated.
 
 ## Why should we care
 
-License is boring legal stuff, why do we even care? Well, you don’t have to care, but if you use open-source software in your work (and if you’re reading this, there is a good chance you do), I think you *should* care.
+Licensing is legal stuff, why do we even care? Well, you don’t have to care, but if you use open-source software in your work (and if you’re reading this, there is a good chance you do), I think you *should* care.
+
+{% info %}
+During my time at Scilife (medical compliance), we had to show to our customers under which license our software and all its dependencies were distributed. As a result, our reliance on dependencies published under non-permissive licenses such as GPL was challenging, and we had to revisit some technical decisions.
+{% endinfo %}
 
 At the end of the day, this is the story of the maintainer of a software deciding to relicense said software in a more permissive license, and justifying the decision under the guise of a complete rewrite, AI-assisted no less.
 
-It is concerning, because if that flies, it sets a dangerous precedent. Found a cool library but it’s distributed under a non-permissive license? Ask Claude to rewrite it enough so the code looks different, and you’re good to go. This isn’t how licensing works (as far as I understand). 
+It is concerning, because if that flies, it sets a dangerous precedent. Found a cool library but it’s distributed under a non-permissive license? Ask Claude to rewrite it until the code looks different enough, and you’re good to go. This isn’t how licensing works (as far as I understand). 
 
 As [Aditya Shankhar](https://github.com/chardet/chardet/issues/327#issuecomment-4003786038) puts it:
 
@@ -107,6 +111,8 @@ This situation is a microcosm of larger issues in both open source and AI (and w
 - Will this influence other OSS projects considering AI-assisted rewrites?
 - Can this lead to more projects adopting contributor license agreements (CLA), or even some explicit relicensing policies?
 - What role does AI transparency (such as disclosing training data) play in resolving these issues?
+
+At a minimum, it’s a reminder to check the licenses of critical dependencies and stay alert to sudden relicensing moves.
 
 ## What’s next
 
