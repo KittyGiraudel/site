@@ -1,9 +1,15 @@
 <nav class="Navigation no-print" role="navigation">
   <ul class="Navigation__list">
     {% for item in site.nav %}
-      {% assign check = page.url | split:item.path %}
-
-      <li class="Navigation__item" {% if check[0]=='' %} aria-current="page" {% endif %}>
+      {% assign active = page.url contains item.path %}
+      {% if item.path contains "/blog" %}
+        {% assign start = page.url | slice: 0, 4 %}
+        {% assign is_post = start == "/201" or start == "/202" %}
+        {% if page.url contains "tags" or is_post %}
+          {% assign active = true %}
+        {% endif %}
+      {% endif %}
+      <li class="Navigation__item" {% if active %} aria-current="page" {% endif %}>
         <a class="Navigation__link no-background" href="{{ item.path }}">{{ item.label }}</a>
       </li>
     {% endfor %}
