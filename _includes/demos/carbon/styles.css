@@ -35,7 +35,7 @@
   padding: 1rem 1.2rem 1.1rem;
   position: relative;
   overflow: hidden;
-  margin: var(--vb) auto var(--vb-1\/2);
+  margin: var(--vb) auto var(--vb-half);
 }
 
 .chart-header {
@@ -77,9 +77,9 @@
 
 .summary-card {
   display: grid;
-  gap: var(--vb-1\/2);
+  gap: var(--vb-half);
   align-content: flex-start;
-  margin-bottom: var(--vb-1\/2);
+  margin-bottom: var(--vb-half);
 }
 
 .summary-title {

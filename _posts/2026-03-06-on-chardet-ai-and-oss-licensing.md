@@ -10,10 +10,6 @@ There is a concerning controversy happening in the [chardet](https://github.com/
 
 It concerns software licensing, the use of AI in the making of software, as well as general ethical and etiquette considerations when contributing to open source work. I tried my best to summarize the situation in this article. 
 
-{% callout "warning" %}
-**Disclaimer:** This article touches on legal topics, and I am **not** a lawyer or an expert on copyright law. I do my best to understand and explain legal concepts in this blog post, but at the end of the day, this is not my area of expertise. Please kindly point out any issue in the comments.
-{% endcallout %}
-
 ## Overview
 
 `chardet` is a widely used Python library for character encoding detection. It was originally created by [Mark Pilgrim](https://github.com/a2mark) and released under the <abbr title="Lesser General Public License 2.1">LGPL 2.1</abbr> license. Eventually, Mark delegated the maintenance of the library to other people, most notably to [Dan Blanchard](https://github.com/dan-blanchard).
@@ -26,7 +22,11 @@ The change of license is at the heart of the controversy, something that [Mark P
 
 ## Understanding licenses
 
-To understand the problem, we need to understand the two licenses. Again, this is a complicated legal topic, so here is my best shot at explaining the differences between both with the help of Mistral and the amazing [TL;DR Legal](https://www.tldrlegal.com) website.
+To understand the problem, we need to understand the two licenses. Here is my best shot at explaining the differences between both with the help of Mistral and the amazing [TL;DR Legal](https://www.tldrlegal.com) website.
+
+{% callout "warning" %}
+**Disclaimer:** I am **not** a lawyer or an expert on copyright law. I do my best to understand and explain legal concepts in this blog post, but at the end of the day, this is not my area of expertise. Please kindly point out any issue in the comments.
+{% endcallout %}
 
 ### MIT
 

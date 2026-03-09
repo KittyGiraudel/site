@@ -16,6 +16,8 @@ In this article, I want to discuss all the ways to hide something, be it through
 
 ## Overview
 
+There is a lot going on in this article, and each approach has pros and cons. I recommend reading through the whole post to better understand the intricacies of hiding content, but if all you care about is the TL;DR then this table should do:
+
 | Method                       | Visible               | Accessible |
 | :--------------------------- | :-------------------- | :--------- |
 | `.sr-only` class             | No                    | Yes        |

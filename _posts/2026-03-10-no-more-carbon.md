@@ -9,9 +9,9 @@ In 2013, a fellow web developer recommended putting ads on my website to make so
 
 Fastforward today, and I’ve finally removed the ads from this website. This article is a summary od my thought process (including data visualization) and the benefits from this decision.
 
-{% info %}
+{% callout %}
 **Disclaimer:** This article is not a diss on Carbon. Honestly, they’ve been totally fine. The ads have always been clean and minimal. The few times I had a question, they answered right away. No shade on their services, they’re good — I’m just not the right candidate.
-{% endinfo %}
+{% endcallout %}
 
 ## Analyzing the data
 
