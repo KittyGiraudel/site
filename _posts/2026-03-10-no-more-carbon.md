@@ -1,8 +1,9 @@
 ---
 title: No more Carbon
-description: TBA
+description: A brief look into why I decided to stop serving ads on this website, including some data visualization.
 tags:
-  - TBA
+  - Writing
+  - UX
 ---
 
 In 2013, a fellow web developer recommended putting ads on my website to make some money. I was originally hesitant, not wanting to be too intrusive to my audience. They suggested looking into [Carbon Ads](https://www.carbonads.net/), an ad network dedicated to the tech industry. It seemed alright, so I enrolled into their program. 
