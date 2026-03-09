@@ -4,6 +4,9 @@ description: A technical write-up through zsh and my homemade configuration to g
 tags:
    - zsh
    - Bash
+edits:
+   - date: 2026-03-06
+     md: I have started using [Starship](https://starship.rs/) to manage my prompt, and I’ve been really happy with it so far. I can recommend it.
 ---
 
 If you use a relatively recent macOS version, chances are good you’re using zsh ([Z shell](https://en.wikipedia.org/wiki/Z_shell)) as a terminal — even if you use a terminal that’s integrated to your IDE (like in Visual Studio Code for instance).
