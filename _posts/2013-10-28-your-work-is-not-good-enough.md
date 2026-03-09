@@ -14,18 +14,11 @@ Here and now is really an exciting time as a web developer or web designer. You 
 
 This is one of the thousand reasons why I love my job. What you see is what you get and the only thing you need to start is a computer and Internet access. Pants are not a must! Voila, here you go.
 
-<figure class="figure">
-<img src="/assets/images/your-work-is-not-good-enough/catch-phrase.png" alt="" />
-<figcaption>Or is it?</figcaption>
-</figure>
-
 ## You are your own worst enemy
 
 This isn’t something new to you, so where am I going? As I already mentioned this awesome basis we have is a great advantage for starting your career, but at the same time it can be the opposite.
 
 People tend to think that their work is not good especially when they start learning and building something new. They aren’t satisfied with what they can accomplish. They are impatient alas for no reason. They avoid building real projects and hide what they do. And these are the two worst mistakes I can think of. Every beginning is hard, but this is the time where we learn the most and something we have to go through anyway. But who is telling you that your work is not good enough? It is only you!
-
-> Design is here and now.
 
 I have run into this problem when I started learning HTML and CSS. Of course I was quickly able to build a simple website with what I have learned, but the result didn’t match my expectations; my wrong expectations. This is why I told myself I need more time to learn and that I am not good enough yet. Wrong wrong wrong! Unfortunately it took me some time to realize the issue. It was one of my design teachers at university who opened my mind when he said: _"Start building things with your current skills now. If you can draw rectangles but no circles, draw something only with rectangles. Design is here and now!"_
 

@@ -75,11 +75,6 @@ Interestingly enough, I realised that I feel much more confident when I don’t 
 
 So facing a black wall was actually much easier than expected. It allowed me to keep tracks of my thoughts without being disturbed. Loved it.
 
-<figure class="figure">
-<img src="/assets/images/feedback-on-dotcss/kitty.jpg" alt="" />
-<figcaption>Me on stage. Photo by dotCSS.</figcaption>
-</figure>
-
 Anyhow, things went great from what I can tell. There were two screens right below the stage, one with the timer, one mirroring the current slide (so speakers don’t have to turn their back to the audience); both helped a lot feeling safe on stage.
 
 Now as a non-native English speaker, who never spent more than 4 days in an English-speaking country, I obviously chocked a bit once or twice but overall I feel like my English was quite understandable. Plus, this is only about practice, so it can only get better over time.
