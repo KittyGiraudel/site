@@ -1,19 +1,16 @@
 
 #carbon-viz {
-  /* Core surface + text colours, using light-dark() like the rest of the site */
   --viz-bg: light-dark(#ffffff, rgb(37 99 235 / 0.12));
   --viz-fg: light-dark(#020617, #e5e7eb);
   --viz-muted: light-dark(#6b7280, #9ca3af);
   --viz-border: light-dark(rgb(31 41 55 / 0.1), rgb(229 231 235 / 0.1));
 
-  /* Accent palette (used for buttons, summaries, bars, etc.) */
   --viz-accent: #2563eb;
   --viz-accent-soft: light-dark(
     rgb(37 99 235 / 0.05),
     rgb(37 99 235 / 0.12)
   );
 
-  /* Chart-specific tokens so the host theme can override easily */
   --viz-axis: #9ca3af;
   --viz-grid: #9ca3af;
   --viz-bar: rgb(56 189 248 / 0.65);
@@ -62,17 +59,20 @@
 
   .chart-header > div:last-child {
     align-items: flex-start;
+    margin-top: var(--vb-third);
   }
 }
 
 .chart-title {
   font-size: 0.9rem;
   color: var(--viz-fg);
+  margin: 0;
 }
 
 .chart-subtitle {
   font-size: 0.75rem;
   color: var(--viz-muted);
+  margin: 0;
 }
 
 .summary-card {
@@ -92,6 +92,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .summary-item {
@@ -107,6 +110,7 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  margin: 0;
   margin-bottom: 0.15rem;
 }
 
@@ -114,6 +118,7 @@
   font-weight: 600;
   color: var(--viz-fg);
   font-size: 0.95rem;
+  margin: 0;
 }
 
 .mode-toggle {
@@ -121,9 +126,11 @@
   gap: 0.35rem;
   align-items: center;
   margin-top: 0.25rem;
+  border: 0;
+  padding: 0;
 }
 
-.mode-toggle button {
+.mode-toggle label {
   border-radius: 999px;
   border: 1px solid var(--viz-border);
   background: var(--viz-bg);
@@ -136,7 +143,7 @@
   white-space: nowrap;
 }
 
-.mode-toggle button.is-active {
+.mode-toggle label.is-active {
   background: rgba(37, 99, 235, 0.08);
   border-color: var(--viz-accent);
   color: #1d4ed8;
@@ -149,6 +156,8 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  border: 0;
+  padding: 0;
 }
 
 @media (max-width: 600px) {
@@ -158,7 +167,7 @@
   }
 }
 
-.range-toggle button {
+.range-toggle label {
   border-radius: 999px;
   border: 1px solid var(--viz-border);
   background: var(--viz-bg);
@@ -171,17 +180,24 @@
   white-space: nowrap;
 }
 
-.range-toggle button:is(:hover, :focus-visible) {
+.range-toggle label:is(:hover, :focus-visible) {
   border-color: var(--viz-accent);
   color: var(--viz-accent);
   background: rgba(37, 99, 235, 0.04);
 }
 
-.range-toggle button.is-active {
+.range-toggle label.is-active {
   background: rgba(37, 99, 235, 0.12);
   border-color: var(--viz-accent);
   color: #1d4ed8;
   font-weight: 600;
+}
+
+.mode-toggle input[type="radio"],
+.range-toggle input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .estimates-toggle {

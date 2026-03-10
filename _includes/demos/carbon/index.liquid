@@ -1,61 +1,85 @@
-<div id="carbon-viz">
+<section id="carbon-viz">
 {% capture demo_styles -%}
 {%- include "demos/carbon/styles.css" -%}
 {%- endcapture %}
-<style>{{ demo_styles }}</style>
 
-<section class="chart-card">
-  <div class="chart-header">
-    <div>
-      <div class="chart-title">Payouts (USD)</div>
-      <div class="chart-subtitle" id="rangeLabel"></div>
-      <div class="mode-toggle" aria-label="Granularity" role="radiogroup">
-        <button type="button" data-mode="yearly" class="is-active">Yearly</button>
-        <button type="button" data-mode="monthly">Monthly</button>
+  <style>{{ demo_styles }}</style>
+
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <p class="chart-title">Payouts (USD)</p>
+        <p class="chart-subtitle" id="rangeLabel"></p>
+        <fieldset class="mode-toggle">
+          <legend class="visually-hidden">Granularity</legend>
+          <label>
+            <input type="radio" name="granularity" value="yearly" data-mode="yearly" checked>
+            <span>Yearly</span>
+          </label>
+          <label>
+            <input type="radio" name="granularity" value="monthly" data-mode="monthly">
+            <span>Monthly</span>
+          </label>
+        </fieldset>
+      </div>
+      <div>
+        <fieldset class="range-toggle">
+          <legend class="visually-hidden">Time range</legend>
+          <label>
+            <input type="radio" name="time-range" value="all" data-range="all" checked>
+            <span>All</span>
+          </label>
+          <label>
+            <input type="radio" name="time-range" value="5y" data-range="5y">
+            <span>Last 5y</span>
+          </label>
+          <label>
+            <input type="radio" name="time-range" value="3y" data-range="3y">
+            <span>Last 3y</span>
+          </label>
+          <label>
+            <input type="radio" name="time-range" value="2y" data-range="2y">
+            <span>Last 2y</span>
+          </label>
+          <label>
+            <input type="radio" name="time-range" value="1y" data-range="1y">
+            <span>Last 1y</span>
+          </label>
+        </fieldset>
+        <label class="estimates-toggle" id="estimatesWrapper">
+          <input type="checkbox" id="estimatesToggle">
+          <span>Show extrapolated history</span>
+        </label>
       </div>
     </div>
-    <div>
-      <div class="range-toggle" aria-label="Time range" role="radiogroup">
-        <button type="button" data-range="all" class="is-active">All</button>
-        <button type="button" data-range="5y">Last 5y</button>
-        <button type="button" data-range="3y">Last 3y</button>
-        <button type="button" data-range="2y">Last 2y</button>
-        <button type="button" data-range="1y">Last 1y</button>
-      </div>
-      <label class="estimates-toggle" id="estimatesWrapper">
-        <input type="checkbox" id="estimatesToggle">
-        <span>Show extrapolated history</span>
-      </label>
-    </div>
+    <canvas id="payoutsChart" aria-label="Carbon payouts for kittygiraudel.com" role="img"></canvas>
   </div>
-  <canvas id="payoutsChart" aria-label="Monthly Carbon payouts for giraudel.com" role="img"></canvas>
-</section>
 
-<section class="summary-card">
-  <div class="summary-grid">
-    <div class="summary-item">
-      <div class="summary-label">Total for period</div>
-      <div class="summary-value" id="totalValue">$0.00</div>
-    </div>
-    <div class="summary-item">
-      <div class="summary-label"><span id="bestPeriodUnit">year</span>s tracked</div>
-      <div class="summary-value" id="monthsValue">0</div>
-    </div>
-    <div class="summary-item">
-      <div class="summary-label">Best <span id="bestPeriodUnit">year</span></div>
-      <div class="summary-value" id="bestMonthValue">–</div>
-    </div>
-    <div class="summary-item">
-      <div class="summary-label">Average / <span id="avgPeriodUnit">year</span></div>
-      <div class="summary-value" id="avgValue">$0.00</div>
-    </div>
+  <div class="summary-card">
+    <ul class="summary-grid">
+      <li class="summary-item">
+        <p class="summary-label">Total for period</p>
+        <p class="summary-value" id="totalValue">$0.00</p>
+      </li>
+      <li class="summary-item">
+        <p class="summary-label"><span id="bestPeriodUnit">year</span>s tracked</p>
+        <p class="summary-value" id="monthsValue">0</p>
+      </li>
+      <li class="summary-item">
+        <p class="summary-label">Best <span id="bestPeriodUnit">year</span></p>
+        <p class="summary-value" id="bestMonthValue">–</p>
+      </li>
+      <li class="summary-item">
+        <p class="summary-label">Average / <span id="avgPeriodUnit">year</span></p>
+        <p class="summary-value" id="avgValue">$0.00</p>
+      </li>
+    </ul>
   </div>
-</section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-const postsPerMonth = {{ collections.postStats[0].months | json }};
-{%- include "demos/carbon/data.js" -%}
-{%- include "demos/carbon/script.js" -%}
-</script>
-</div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+  const postsPerMonth = {{ collections.postStats[0].months | json }};
+  {%- include "demos/carbon/data.js" -%}
+  {%- include "demos/carbon/script.js" -%}
+  </script>
+</section>

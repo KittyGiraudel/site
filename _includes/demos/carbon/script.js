@@ -560,11 +560,11 @@ if (typeof realEntries !== 'undefined' && typeof postsPerMonth !== 'undefined') 
     avgPeriodUnit: document.querySelector('#avgPeriodUnit'),
   };
 
-  const modeButtons = Array.from(
-    document.querySelectorAll('.mode-toggle button'),
+  const modeRadios = Array.from(
+    document.querySelectorAll('.mode-toggle input[type="radio"]'),
   );
-  const rangeButtons = Array.from(
-    document.querySelectorAll('.range-toggle button'),
+  const rangeRadios = Array.from(
+    document.querySelectorAll('.range-toggle input[type="radio"]'),
   );
 
   function updateText(element, text) {
@@ -584,16 +584,24 @@ if (typeof realEntries !== 'undefined' && typeof postsPerMonth !== 'undefined') 
     updateText(elements.bestPeriodUnit, state.summary.unit);
     updateText(elements.avgPeriodUnit, state.summary.unit);
 
-    modeButtons.forEach(btn => {
-      const mode = btn.getAttribute('data-mode');
-      btn.classList.toggle('is-active', mode === state.mode);
+    modeRadios.forEach(input => {
+      const mode = input.getAttribute('data-mode');
+      const label = input.closest('label');
+      input.checked = mode === state.mode;
+      if (label) {
+        label.classList.toggle('is-active', mode === state.mode);
+      }
     });
 
-    rangeButtons.forEach(btn => {
-      const range = btn.getAttribute('data-range');
-      btn.classList.toggle('is-active', range === state.range);
-      if (range !== 'all') {
-        btn.style.display = state.mode === 'yearly' ? 'none' : '';
+    rangeRadios.forEach(input => {
+      const range = input.getAttribute('data-range');
+      const label = input.closest('label');
+      input.checked = range === state.range;
+      if (label) {
+        label.classList.toggle('is-active', range === state.range);
+        if (range !== 'all') {
+          label.style.display = state.mode === 'yearly' ? 'none' : '';
+        }
       }
     });
 
@@ -610,17 +618,19 @@ if (typeof realEntries !== 'undefined' && typeof postsPerMonth !== 'undefined') 
   // Initial render
   applyState(carbonViz.refresh());
 
-  modeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const mode = btn.getAttribute('data-mode');
+  modeRadios.forEach(input => {
+    input.addEventListener('change', () => {
+      if (!input.checked) return;
+      const mode = input.getAttribute('data-mode');
       const state = carbonViz.setMode(mode);
       applyState(state);
     });
   });
 
-  rangeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const range = btn.getAttribute('data-range');
+  rangeRadios.forEach(input => {
+    input.addEventListener('change', () => {
+      if (!input.checked) return;
+      const range = input.getAttribute('data-range');
       const state = carbonViz.setRange(range);
       applyState(state);
     });
