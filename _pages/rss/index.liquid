@@ -24,6 +24,7 @@ eleventyExcludeFromCollections: true
     <link href="{{ absolute_post_url }}" />
     <published>{{ post.date | date_to_rfc3339 }}</published>
     <id>{{ absolute_post_url }}</id>
+    <summary>{{ post.data.description }}</summary>
     {% unless post.data.external %}
     <content type="html"><![CDATA[{{ post.templateContent | replace: 'href="/', 'href="https://kittygiraudel.com/' | replace: 'src="/', 'src="https://kittygiraudel.com/' }}]]></content>
     {% endunless %}
