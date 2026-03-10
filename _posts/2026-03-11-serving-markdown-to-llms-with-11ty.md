@@ -184,7 +184,7 @@ The end result:
 
 ### Development performance
 
-All of this is nice, but doing a bunch of extra file reads and writes in development is not. I have 400 articles on this website, which means an additional {% footnoteref "external-posts" "About a quarter of all articles were written for external publications like CSS-Tricks, so their content doesn’t actually live on this website directly. There is a technically a page with a <code>&lt;meta http-equiv='refresh'&gt;</code> for these, but they don’t need their own Markdown version, so I’ve discarded them as well." %}400 files to write{% endfootnoteref %} with every save. It can get slow (although I haven’t measured, so maybe this is premature optimization).
+All of this is nice, but doing a bunch of extra file reads and writes in development is not. I have 400 articles on this website, which means an additional {% footnoteref "external-posts" "Technically less. About a quarter of all articles were written for external publications like CSS-Tricks, so their content doesn’t actually live on this website directly." %}400 files to write{% endfootnoteref %} with every save. It can get slow (although I haven’t measured, so maybe this is premature optimization).
 
 To disable it while in development, we can tell Eleventy to ignore our new page processor:
 
