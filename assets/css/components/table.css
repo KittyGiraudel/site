@@ -4,6 +4,15 @@ table {
   border-collapse: collapse;
 }
 
+@media (min-width: 1024px) {
+  table {
+    width: calc(100% + 4em);
+    padding: 1em 2em;
+    left: -2em;
+    position: relative;
+  }
+}
+
 thead {
   border-bottom: 2px solid;
 }
