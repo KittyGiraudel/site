@@ -24,6 +24,5 @@ export default {
     inline_scripts: CONFIG.inlineScripts,
     inline_styles: CONFIG.inlineStyles,
     service_worker: CONFIG.serviceWorker,
-    meta_refresh: CONFIG.metaRefresh,
   },
 }

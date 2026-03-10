@@ -22,15 +22,7 @@ layout: default
     <p class="PostDate">
       <span itemprop="datePublished">{{ page.date | time }}</span>
       {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
-      {% if external %}{% else %}<span class="Fleuron" aria-hidden="true">❦</span> <span itemprop="timeRequired" title="Estimated read time">{{ content | strip_html | reading_time }}</span>{% endif %}
-    </p>
-  {% endif %}
-
-  {% if external %}
-    <p>
-      This article is not hosted on <a href="/">kittygiraudel.com</a>. You will be
-      automatically redirected to <a href="{{ external.url }}">{{ external.host }}</a>
-      to read it. If it doesn’t work, please manually follow the link.
+      <span class="Fleuron" aria-hidden="true">❦</span> <span itemprop="timeRequired" title="Estimated read time">{{ content | strip_html | reading_time }}</span>
     </p>
   {% endif %}
 
@@ -52,7 +44,6 @@ layout: default
   {% footnotes page %}
 </article>
 
-{% if not external %}
 <script src="https://giscus.app/client.js"
         data-repo="kittygiraudel/site"
         data-repo-id="MDEwOlJlcG9zaXRvcnk4MjUzNjQ0"
@@ -69,7 +60,6 @@ layout: default
         crossorigin="anonymous"
         async>
 </script>
-{% endif %}
 
 {% include "collection_navigation.liquid",
 page: page,

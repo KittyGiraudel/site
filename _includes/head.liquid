@@ -22,14 +22,7 @@ http://ogp.me/ns/article#">
   <link rel="canonical" href="{{ page_url }}">
 
   <!-- Robots & indexing -->
-  {% if external %}
-    <meta name="robots" content="noindex,nofollow">
-    {% if site.configuration.meta_refresh == true %}
-      <meta http-equiv="refresh" content="0;url={{ external.url }}" />
-    {% endif %}
-  {% else %}
-    <meta name="robots" content="index,follow">
-  {% endif %}
+  <meta name="robots" content="index,follow">
 
   <!-- Styles -->
   {% include "styles.liquid", partials: "
