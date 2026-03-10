@@ -108,7 +108,7 @@ export default function (config) {
 }
 
 function minifyHTML(content, outputPath) {
-  return outputPath.endsWith('.html')
+  return typeof outputPath === 'string' && outputPath.endsWith('.html')
     ? htmlmin.minify(content, {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,
@@ -142,7 +142,9 @@ function emojiToText(str) {
 }
 
 function a11yEmojis(content, outputPath) {
-  return outputPath.endsWith('.html') ? content.replace(EMOJI_REGEX, replaceEmoji) : content
+  return typeof outputPath === 'string' && outputPath.endsWith('.html')
+    ? content.replace(EMOJI_REGEX, replaceEmoji)
+    : content
 }
 
 function markdown(content, inline = true) {
@@ -240,7 +242,7 @@ function readingTime(content) {
 }
 
 function helmet(content, outputPath) {
-  if (!outputPath.endsWith('.html')) return content
+  if (typeof outputPath !== 'string' || !outputPath.endsWith('.html')) return content
   const $ = cheerio.load(content)
   const $head = $('head')
   $('body [data-helmet]').each((_, el) => $head.append($(el).remove()))
