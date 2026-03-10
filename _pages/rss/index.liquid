@@ -22,6 +22,12 @@ eleventyExcludeFromCollections: true
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolute_post_url }}" />
+    {% unless post.data.external %}
+      <link
+        rel="alternate"
+        type="text/markdown"
+        href="{{ post.url | prepend: site.url }}index.md" />
+    {% endunless %}
     <published>{{ post.date | date_to_rfc3339 }}</published>
     <id>{{ absolute_post_url }}</id>
     <summary>{{ post.data.description }}</summary>

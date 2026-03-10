@@ -219,6 +219,16 @@ In our HTML post layout, we can render the following `<link>` element in the `<h
 />
 ```
 
+We can do the same thing in the `sitemap.xml` page:
+
+```xml
+<link href="{{ post.url | prepend: site.url }}" />
+<link
+  rel="alternate"
+  type="text/markdown"
+  href="{{ post.url | prepend: site.url }}index.md" />
+```
+
 This basically says “there is an alternate Markdown representation of this HTML page at this URL”. The canonical page is still the HTML one (we also export it as `canonical_url` in the Markdown front matter).
 
 Will every bot respect it? Hard to say, but most likely no. But for the ones that care or that can infer meaning from it, it’s a very cheap signal to provide.
