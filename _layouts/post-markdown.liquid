@@ -12,5 +12,5 @@ canonical_url: "{{ post.url | url }}"
 
 # {{ post.data.title }}
 
-{{ post.data.page | to_markdown_content }}
+{{ post.data.page.rawInput | strip_html_entities }}
 

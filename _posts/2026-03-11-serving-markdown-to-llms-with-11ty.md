@@ -95,7 +95,7 @@ canonical_url: "{​{ post.url | url }}"
 
 # {​{ post.data.title }}
 
-{​{ post.data.page | to_markdown_content }}
+{{ post.data.page.rawInput }}
 ```
 {% endraw %}
 
@@ -104,7 +104,7 @@ There is a lot going on, so here are some notes:
 - We escape the title to make sure it doesn’t risk breaking the front matter in case it contains some YAML sequence.
 - We expose the date in a machine-friendly format (namely RFC3339, which looks like `2026-03-11T00:00:00Z`).
 - We also provide the tags and the canonical URL to the original article to provide additional context to the LLM.
-- Finally, we output the title (mine is not part of the page content itself), as well as the page content {% footnoteref "to-raw-markdown" "The <code>to_markdown_content</code> filter is a custom Liquid filter I added to my configuration to strip out the YAML front matter. I briefly touched on something similar in <em><a href='/2026/03/02/stats-page-with-11ty/#dealing-with-the-front-matter'>Stats Page with Eleventy</a></em>." %}**without** its original YAML front matter{% endfootnoteref %} since we write our own.
+- Finally, we output the title as well as the raw page content.
 
 ### Cleaning and optimizing content
 
@@ -122,25 +122,15 @@ It said they’re “fine” in the sense that everything will still work, and m
 noise and can hurt tokenization. I’ve implemented a small solution with the formidable [he](https://github.com/mathiasbynens/he) package.
 
 ```js
-function to_markdown_content(page) {
-  try {
-    const inputPath = page?.inputPath
-    if (!inputPath) return ''
+// .eleventy.js
+import he from 'he'
 
-    const source = fs.readFileSync(inputPath, 'utf8')
-    const content = stripFrontMatter(source)
+export default function (config) {
+  // …
 
-    return he
-      .decode(content)
-      .replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
-  } catch {
-    return ''
-  }
-}
-
-function stripFrontMatter(content) {
-  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
-  return match ? match[2].trim() : raw.trim()
+  config.addFilter('strip_html_entities', function strip_html_entities(content) {
+    return he.decode(content).replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
+  })
 }
 ```
 

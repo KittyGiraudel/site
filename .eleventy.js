@@ -91,7 +91,7 @@ export default function (config) {
   config.addFilter('where', where)
   config.addFilter('emoji_to_text', emojiToText)
   config.addPairedShortcode('callout', callout)
-  config.addFilter('to_markdown_content', toMarkdownContent)
+  config.addFilter('strip_html_entities', stripHtmlEntities)
 
   // Collections
   // ---------------------------------------------------------------------------
@@ -252,23 +252,8 @@ function readingTime(content) {
     : ''
 }
 
-function toMarkdownContent(page) {
-  try {
-    const inputPath = page?.inputPath
-    if (!inputPath) return ''
-
-    const source = fs.readFileSync(inputPath, 'utf8')
-    const content = stripFrontMatter(source)
-
-    return he.decode(content).replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
-  } catch {
-    return ''
-  }
-}
-
-export function stripFrontMatter(input) {
-  const match = input.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
-  return match ? match[2].trim() : input.trim()
+function stripHtmlEntities(content) {
+  return he.decode(content).replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
 }
 
 function helmet(content, outputPath) {

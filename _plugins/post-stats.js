@@ -1,6 +1,6 @@
 import fs from 'node:fs'
-import { stripFrontMatter } from '../.eleventy.js'
 
+const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/
 const CONTENT_STATS_CACHE = new Map()
 const POPULAR_TAGS_TOP = 20
 const EMPTY_COLLECTION = {
@@ -145,6 +145,11 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
     Object.assign(arr, stats)
     return arr
   })
+}
+
+function stripFrontMatter(raw) {
+  const match = raw.match(FRONT_MATTER_REGEX)
+  return match ? match[2].trim() : raw.trim()
 }
 
 function countWords(text) {
