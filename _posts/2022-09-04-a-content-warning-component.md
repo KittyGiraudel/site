@@ -8,6 +8,7 @@ tags:
   - CSS
   - Design
   - Component
+toc: false
 ---
 
 I have already written about [content warnings on this blog](https://kittygiraudel.com/2020/12/15/a11y-advent-content-warnings/). To quote that article:

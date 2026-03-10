@@ -27,10 +27,7 @@ layout: default
     {% endif %}
   {% endif %}
 
-  {% assign parts = content | split_content %}
-  {{ parts[0] }}
-  {% include "ad.liquid" %}
-  {{ parts[1] }}
+  {{ content }}
 </article>
 
 {% include "collection_navigation.liquid",

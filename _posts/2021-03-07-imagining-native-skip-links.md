@@ -6,6 +6,7 @@ tags:
   - HTML
   - UX
   - Accessibility
+toc: false
 ---
 
 [We recently talked about skip links](https://kittygiraudel.com/2020/12/06/a11y-advent-skip-to-content/) in our [A11y Advent calendar](https://kittygiraudel.com/2020/12/01/a11y-advent-calendar/). In case you are not familiar with the concept, I quote:

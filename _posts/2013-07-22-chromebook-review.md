@@ -14,11 +14,6 @@ Please note I may do a lot of comparisons with both a MacBook Pro since my girlf
 
 So, **the Chromebook is an ultraportable laptop from Google running on Chrome OS** (Linux core) mostly made for web browsing sold at a lovely price: €299.
 
-<figure class="figure">
-<img src="/assets/images/chromebook-review/chromebook.jpg" alt="">
-<figcaption>Samsung Chromebook - photo by <a href="http://alixlucas.com">Alix Lucas</a></figcaption>
-</figure>
-
 ## Hardware
 
 ### General
@@ -34,6 +29,11 @@ Yes, you read right. Only 16GB hard-drive. This is because **you’re meant to s
 The whole shell is not in aluminium but in (good) plastic which is why you don’t have the same feeling as the MBP, but that’s definitely better when it comes to the weight (and the price). Indeed, the Chromebook 11.6" is very lightweight with only 1.1Kg (which has to be 2.4lbs to some of you) for 1.8cm thick.
 
 In any case, you can tell it is a small computer halfway through a regular laptop and a netbook.
+
+<figure class="figure">
+<img src="/assets/images/chromebook-review/chromebook.jpg" alt="">
+<figcaption>Samsung Chromebook - photo by <a href="http://alixlucas.com">Alix Lucas</a></figcaption>
+</figure>
 
 ### Screen
 

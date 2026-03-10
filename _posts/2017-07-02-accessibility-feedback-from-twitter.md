@@ -9,7 +9,7 @@ tags:
 
 [Safia Abdalla started a thread](https://twitter.com/captainsafia/status/871056480799162368) about problems encountered on the web by people with (any kind) of disability. It’s super insightful but there are hundreds of response so I thought I’d write a TL;DR organised in categories (TL;DR which is still long…).
 
-{% callout %}Allow me to take this as an opportunity to link to this [introduction to web accessibility](https://gist.github.com/KittyGiraudel/5150c87d807f629ab006e2f6d2d9e86c) I wrote.{% endcallout %}
+Allow me to take this as an opportunity to link to this [introduction to web accessibility](https://gist.github.com/KittyGiraudel/5150c87d807f629ab006e2f6d2d9e86c) I wrote.
 
 ## Vision disability
 
