@@ -6,7 +6,8 @@
     "sw": "./node_modules/.bin/workbox generateSW workbox-config.cjs",
     "build": "npx @11ty/eleventy && npm run sw",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve --quiet --incremental",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "test": "node --test _tests/*.test.mjs"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
@@ -24,6 +25,7 @@
     "workbox-cli": "^7.4.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.6"
+    "@biomejs/biome": "^2.4.6",
+    "fast-xml-parser": "^4.5.4"
   }
 }
