@@ -19,13 +19,13 @@
     "eleventy-plugin-footnotes": "^0.11.0",
     "emoji-regex": "^10.6.0",
     "emoji-short-name": "^2.1.0",
+    "fast-xml-parser": "^5.5.1",
     "he": "^1.2.0",
     "html-minifier-terser": "^7.2.0",
     "markdown-it": "^14.1.1",
     "workbox-cli": "^7.4.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.6",
-    "fast-xml-parser": "^4.5.4"
+    "@biomejs/biome": "^2.4.6"
   }
 }
