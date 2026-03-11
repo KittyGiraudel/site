@@ -192,3 +192,11 @@ a[data-visited]:not([href^="#"])::after {
 a:visited {
   color: inherit;
 }
+
+/**
+ * 1. Strong elements can be quite in your face, and they can look jarring next
+ *    to titles especially, so this should soften them a little bit.
+ */
+strong {
+  opacity: 0.8; /* 1 */
+}
