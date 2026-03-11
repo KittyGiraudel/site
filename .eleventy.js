@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
@@ -5,6 +6,7 @@ import * as cheerio from 'cheerio'
 import footnotes from 'eleventy-plugin-footnotes'
 import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
+import he from 'he'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
 import postStatsPlugin from './_plugins/post-stats.js'
@@ -23,6 +25,7 @@ export const CONFIG = {
   serviceWorker: PRODUCTION,
   metaRefresh: PRODUCTION,
   helmet: true,
+  markdownAlternative: PRODUCTION,
 }
 
 /** @param {import('@11ty/eleventy/UserConfig').default} config */
@@ -49,6 +52,7 @@ export default function (config) {
   config.addPlugin(postStatsPlugin)
   config.addPlugin(tocPlugin)
   if (CONFIG.syntaxHighlight) config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
+  if (!CONFIG.markdownAlternative) config.ignores.add('_pages/blog/index-markdown.liquid')
 
   // Static file passthrough
   // ---------------------------------------------------------------------------
@@ -87,11 +91,18 @@ export default function (config) {
   config.addFilter('where', where)
   config.addFilter('emoji_to_text', emojiToText)
   config.addPairedShortcode('callout', callout)
+  config.addFilter('strip_html_entities', stripHtmlEntities)
 
   // Collections
   // ---------------------------------------------------------------------------
   config.addCollection('posts', c =>
     c.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
+  )
+  config.addCollection('internal_posts', c =>
+    c
+      .getFilteredByGlob('_posts/*.md')
+      .filter(item => !item.data?.external)
+      .sort((a, b) => b.date - a.date),
   )
   config.addCollection('snippets', c => c.getFilteredByGlob('_pages/snippets/*.md'))
   config.addCollection('recipes', collection => collection.getFilteredByGlob('_pages/recipes/*.md'))
@@ -239,6 +250,10 @@ function readingTime(content) {
   return content
     ? `${Math.ceil((content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length / 300)}–minute read`
     : ''
+}
+
+function stripHtmlEntities(content) {
+  return he.decode(content).replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
 }
 
 function helmet(content, outputPath) {

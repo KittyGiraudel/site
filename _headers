@@ -8,3 +8,6 @@
   cache-control: public
   cache-control: max-age=86400
 
+/*.md
+  X-Robots-Tag: noindex
+  Content-Type: text/markdown; charset=utf-8

@@ -1,0 +1,16 @@
+{{ '---' }}
+title: "{{ post.data.title | escape }}"
+date: "{{ post.date | date_to_rfc3339 }}"
+{% if post.data.tags %}
+tags:
+{%- for tag in post.data.tags %}
+  - "{{ tag }}"
+{%- endfor %}
+{% endif %}
+canonical_url: "{{ post.url | url }}"
+{{ '---' }}
+
+# {{ post.data.title }}
+
+{{ post.data.page.rawInput | strip_html_entities }}
+
