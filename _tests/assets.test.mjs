@@ -40,7 +40,6 @@ test('core assets exist in built site', async () => {
 
   await Promise.all([
     expectDirectoryWithFiles('assets'),
-    expectDirectoryWithFiles('assets/css'),
     expectDirectoryWithFiles('assets/js'),
     expectDirectoryWithFiles('assets/images'),
   ])

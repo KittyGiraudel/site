@@ -24,12 +24,14 @@ test('stats page renders metrics and chart data', async () => {
     'stats page should include content-trends chart container',
   )
 
+  const hasStatsBootstrap = /window\.__STATS_YEARS__\s*=\s*\[/.test(html)
   assert.ok(
-    html.includes('window.__STATS_YEARS__ = ['),
+    hasStatsBootstrap,
     'stats page should bootstrap window.__STATS_YEARS__ data for charts',
   )
+
   assert.ok(
-    html.includes('year:'),
+    /year\s*:/.test(html),
     'window.__STATS_YEARS__ data should contain at least one year entry',
   )
 }
