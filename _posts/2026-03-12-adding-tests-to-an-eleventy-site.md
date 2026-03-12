@@ -1,6 +1,6 @@
 ---
 title: Adding Tests to an Eleventy site
-description: TBA.
+description: A small walkthrough on how I added automated tests to this website to stop breaking it.
 tags:
   - Eleventy
   - JavaScript
