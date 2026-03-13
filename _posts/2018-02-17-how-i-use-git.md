@@ -11,7 +11,7 @@ After [a tweet about how I like Git but find it hard to use](https://twitter.com
 
 ## Getting information
 
-I quickly realised there is no way to be comfortable with command-line Git in the default OS terminal. On macOS, I recommend installing iTerm2 and [pimping it to display the branch name as part of the prompt](https://github.com/KittyGiraudel/dotfiles/blob/master/.bashrc). Also, colors. I mean, look at that beauty:
+I quickly realised there is no way to be comfortable with command-line Git in the default OS terminal. On macOS, I recommend installing iTerm2 and [pimping it to display the branch name as part of the prompt](https://github.com/KittyGiraudel/dotfiles/blob/main/.zshrc#L21-L28). Also, colors. I mean, look at that beauty:
 
 ![A display of my Git prompt including the branch name](/assets/images/how-i-use-git/git-prompt.png)
 
