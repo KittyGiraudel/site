@@ -43,6 +43,12 @@
   line-height: 1.4;
 }
 
+.Footnotes__list-item {
+  position: relative;
+  z-index: 1;
+  scroll-margin-top: 1em;
+}
+
 .Footnotes__list-item:not(:last-child) {
   margin: var(--vb-third) 0;
 }
@@ -67,4 +73,24 @@
 
 .Footnotes__ref[role="doc-noteref"]:focus::after {
   background-size: inherit;
+}
+
+.Footnotes__list-item::before {
+  inset: 0;
+  left: -1.5em;
+  position: absolute;
+  background-color: light-dark(rgb(255 255 0 / 0.3), rgb(255 255 0 / 0.15));
+  border-radius: 1em;
+  corner-shape: squircle;
+  z-index: -1;
+  animation: fade-out 1s 10s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.Footnotes__list-item:target::before {
+  content: '';
+}
+
+@keyframes fade-out {
+  to   { opacity: 0 }
 }
