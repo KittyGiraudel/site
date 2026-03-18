@@ -24,7 +24,7 @@ export const CONFIG = {
   inlineStyles: PRODUCTION,
   serviceWorker: PRODUCTION,
   metaRefresh: PRODUCTION,
-  helmet: true,
+  helmet: PRODUCTION,
   markdownAlternative: PRODUCTION,
 }
 
