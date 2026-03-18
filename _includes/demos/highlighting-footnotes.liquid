@@ -1,0 +1,97 @@
+{% if with_styles %}
+{% raw %}
+<style>
+:root {
+  --footnote-highlight-color: light-dark(rgb(255 255 0 / 0.3), rgb(255 255 0 / 0.15));
+}
+
+#just-background .Footnotes__list-item:first-of-type {
+  background-color: var(--footnote-highlight-color);
+}
+
+#with-pseudo-element .Footnotes__list-item:first-of-type::before,
+.demo-animating .Footnotes__list-item:first-of-type::before {
+  content: '';
+  inset: 0;
+  left: -1.5em;
+  position: absolute;
+  background-color: var(--footnote-highlight-color);
+  border-radius: 1em;
+  corner-shape: squircle;
+  z-index: -1;
+  animation: none;
+}
+</style>
+{% endraw %}
+{% endif %}
+
+{% if id == "with-animation" %}
+{% raw %}
+<style>
+.RestartAnimationButton {
+  appearance: none;
+  font-size: 80%;
+  font-family: inherit;
+  color: inherit;
+  padding: 0.25em 0.5em;
+  border-radius: 1em;
+  corner-shape: squircle;
+  background-color: light-dark(rgb(255 255 255 / 0.6), rgb(34 34 34 / 0.6));
+  border: 2px solid light-dark(rgb(0 0 0 / 0.15), rgb(255 255 255 / 0.15));
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.RestartAnimationButton:hover {
+  background-color: light-dark(rgb(243 248 252 / 0.8), rgb(48 49 50 / 0.8));
+  border-color: light-dark(rgb(0 0 0 / 0.25), rgb(255 255 255 / 0.25));
+}
+
+.RestartAnimationButton:active {
+  transform: translateY(1px);
+}
+
+.RestartAnimationButton:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
+
+.demo-animating .Footnotes__list-item:first-of-type::before {
+  animation: fade-out 1s 5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+  to { opacity: 0 }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const animContainer = document.querySelector('#with-animation')
+  const restartButton = document.querySelector('#restart-animation')
+
+  animContainer
+    .addEventListener("animationend", function (event) {
+      console.log('animationend', event.target)
+      animContainer.classList.remove("demo-animating")
+    })
+  
+  restartButton.addEventListener("click", function () {
+    animContainer.classList.add("demo-animating")
+  })
+})
+</script>
+{% endraw %}
+{% endif %}
+
+<div class="Footnotes" id="{{ id }}" {% if id == "with-animation" %}class="demo-animating"{% endif %}>
+  <p class="Footnotes__title" id="demo-footnotes-label" style="font-weight: bold;">Example footnotes</p>
+  <ol class="Footnotes__list">
+    <li class="Footnotes__list-item">
+      This is just dummy content to illustrate what a footnote would look like. Let’s make it a little longer so it looks more like the typical footnote I would author.
+    </li>
+    <li class="Footnotes__list-item">
+      Let’s add a second footnote so that we can better see the purpose and benefits of highlighting the linked footnote.
+    </li>
+  </ol>
+</div>
