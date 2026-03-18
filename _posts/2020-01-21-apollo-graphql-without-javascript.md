@@ -214,7 +214,7 @@ We can then pass that state to the React children by expecting a function instea
 props.children({ isLoading })
 ```
 
-While let us re-author our `RemoveEntryButton` as such:
+Which lets us re-author our `RemoveEntryButton` as such:
 
 ```jsx
 <MutationForm>
