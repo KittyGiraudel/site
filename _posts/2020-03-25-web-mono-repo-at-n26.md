@@ -25,6 +25,10 @@ We have build-time feature flags that can be toggled on and off per environment.
 
 When starting a new feature, we add a new feature flag which is only enabled in local environment. Once the feature is taking shape, we enable it for the dev environment. When it’s getting ready, we enable it on staging environment. And finally, after some staging testing (both manual and automated) we can turn it on for live. We leave the flag for a day or two in the code base in case we need to turn it off, and eventually remove all the new dead code around it.
 
+{% callout %}
+If you’re interested in the technical implementation, I have written how to set up a build-time [feature toggle system with Webpack](https://kittygiraudel.com/2024/07/22/feature-toggles-with-webpack/) supporting dead-code elimination.
+{% endcallout %}
+
 ## Efficient code reviews
 
 We take a very pragmatic approach to reviewing code: everybody should do it, regardless of seniority level, and we have no concept like “1 senior approval to merge”.
