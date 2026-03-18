@@ -44,7 +44,7 @@ container.append(content)
 
 It’s also not limited to a single use. You can create as many clones as you want. The [MDN page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) has a good example of storing a table row in a template so you can easily clone and add a new row on demand.
 
-For instance, [Sass Guidelines](https://sass-guidelin.es) use templates to inject links to edit view or edit each chapter on GitHub directly. In an ideal world these links would be there all the time, but because Sass-Guidelines is built from plain ol’ Markdown files, these links are generated in JS. This is [the pull-request that implemented templates](https://github.com/KittyGiraudel/sass-guidelines/commit/03a5abb931026b5a4997fdf5ef43ba029e612d89).
+For instance, [Sass Guidelines](/projects/sass-guidelines/) use templates to inject links to edit view or edit each chapter on GitHub directly. In an ideal world these links would be there all the time, but because Sass-Guidelines is built from plain ol’ Markdown files, these links are generated in JS. This is [the pull-request that implemented templates](https://github.com/KittyGiraudel/sass-guidelines/commit/03a5abb931026b5a4997fdf5ef43ba029e612d89).
 
 ## Browser support
 

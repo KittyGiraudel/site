@@ -7,7 +7,7 @@ tags:
   - Open Source
 ---
 
-Well, quite a lot actually! We’ve been working hard on [Browserhacks.com](http://browserhacks.com) lately to make this whole pool of hacks even easier for you to browse and use. So much we’ve recently crossed the 100 issues line on [GitHub](https://github.com/4ae9b8/browserhacks/); most of them are closed thankfully!
+Well, quite a lot actually! We’ve been working hard on [Browserhacks.com](/projects/browserhacks/) lately to make this whole pool of hacks even easier for you to browse and use. So much we’ve recently crossed the 100 issues line on [GitHub](https://github.com/4ae9b8/browserhacks/); most of them are closed thankfully!
 
 Anyway, since we do not have a blog for Browserhacks, I have no choice but to announce all those things here. Quick article to explain all we’ve done since last major update.
 

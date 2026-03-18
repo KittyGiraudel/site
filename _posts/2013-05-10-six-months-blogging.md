@@ -46,6 +46,6 @@ You tell me. Is there anything you’d like to see?
 
 I’m thinking about adding an excerpt for each blog post to the home page. I think some people asked for it. My problem with this is that excerpt are a pain in the ass to do if you want to do it right, and when generated, it generally sucks. I’ll see if I can come up with a decent solution.
 
-I would also like to add a small banner for [Browserhacks](http://browserhacks.com) in the sidebar. I’ll work that out anytime soon.
+I would also like to add a small banner for [Browserhacks](/projects/browserhacks/) in the sidebar. I’ll work that out anytime soon.
 
 Anyway, thank you all for reading. That’s what keeps me writing. ;)

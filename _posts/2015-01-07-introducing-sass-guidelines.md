@@ -15,7 +15,7 @@ I don’t know why I did not think of writing Sass guidelines when [Harry Robert
 > “I SHOULD WRITE SASS GUIDELINES!”  
 > &mdash; Me, in the shower.
 
-After two days working on them, I am very proud and excited to release a 10,000 words long styleguide on working with Sass: [sass-guidelin.es](https://sass-guidelin.es).
+After two days working on them, I am very proud and excited to release a 10,000 words long styleguide on working with Sass: [sass-guidelin.es](/projects/sass-guidelines/).
 
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Game on, folks! <a href="https://twitter.com/SassCSS">@SassCSS</a> guidelines, just for you: <a href="https://t.co/8ybeXdBOFY">https://t.co/8ybeXdBOFY</a>.<br />— Kitty Giraudel (@KittyGiraudel) <a href="https://twitter.com/KittyGiraudel/status/552472109797371906">January 6, 2015</a></p></blockquote>
 

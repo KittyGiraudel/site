@@ -11,7 +11,7 @@ tags:
 
 Have you ever heard of “bling dot js”? It is a [few lines of JavaScript](https://gist.github.com/paulirish/12fb951a8b893a454b32) code from no one else but [Paul Irish](https://twitter.com/paul_irish) to mimick the most popular features from jQuery (`$()`, `.on` and iterating on `NodeList`) without all the bloat. Pretty rad.
 
-I wanted to use bling dot js in the latest version of [Sass Guidelines](https://sass-guidelin.es), but it only exists as a GitHub Gist. Not a npm package, not a traditional GitHub repository. Just a Gist. And I really dislike copying and pasting third-party libraries inside a project. Losing connection to the source is quite not ideal.
+I wanted to use bling dot js in the latest version of [Sass Guidelines](/projects/sass-guidelines/), but it only exists as a GitHub Gist. Not a npm package, not a traditional GitHub repository. Just a Gist. And I really dislike copying and pasting third-party libraries inside a project. Losing connection to the source is quite not ideal.
 
 So [I had a look](https://docs.npmjs.com/cli/install), and it turns out that using a Gist as a npm package is surprisingly easy. The same way you can use GitHub repositories as npm packages, you can use a Gist as a package as long as it has a `package.json` file. After all, a Gist is really just a Git repository with a ridiculously simple UI.
 

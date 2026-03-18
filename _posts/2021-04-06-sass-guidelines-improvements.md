@@ -5,7 +5,7 @@ tags:
   - Sass
 ---
 
-I authored the very first version of [Sass Guidelines](https://sass-guidelin.es) in the first week of 2015, inspired by Harry Robert’s [CSS guidelines](https://cssguidelin.es/). It went through 3 additional iterations: version 1.1 in April 2015, version 1.2 barely 6 months later in September 2015 and finally version 1.3 in Janvier 2017. Since then, not much, especially since I haven’t written a line of Sass since 2016.
+I authored the very first version of [Sass Guidelines](/projects/sass-guidelines/) in the first week of 2015, inspired by Harry Robert’s [CSS guidelines](https://cssguidelin.es/). It went through 3 additional iterations: version 1.1 in April 2015, version 1.2 barely 6 months later in September 2015 and finally version 1.3 in Janvier 2017. Since then, not much, especially since I haven’t written a line of Sass since 2016.
 
 For some reason, I recently came back to Sass Guidelines. Not to update the content, but to work on the site itself. It turns out I learnt a lot in the last few years and found many improvements worth doing. I thought it would be interesting to discuss them in this post. Here are the different topics we’ll go through:
 
