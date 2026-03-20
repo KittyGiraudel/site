@@ -28,7 +28,7 @@ pre {
    * 1. Increase width so the code container looks wider than the body text, but
    *    the text within it is aligned with the body text.
    */
-  pre {
+  :not(aside) > pre {
     width: calc(100% + 4em); /* 1 */
     padding: 1.5em 2em; /* 1 */
     left: -2em; /* 1 */
