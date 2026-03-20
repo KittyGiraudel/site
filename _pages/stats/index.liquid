@@ -21,96 +21,94 @@ permalink: /stats/
   at all time. Read more about [how it works](/2026/03/02/stats-page-with-11ty/).
   {% endmarkdown %}
 
-  <heading-anchors selector="h2" content="§">
+  <section class="StatsSection">
+    <h2>Overview</h2>
+    <div class="StatsSection__table">
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">First post</th>
+            <td>{{ stats.firstPostDate | time }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Last post</th>
+            <td>{{ stats.lastPostDate | time }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Total posts</th>
+            <td>{{ stats.postCount | format_number }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="StatsSection">
+    <h2>Writing frequency</h2>
+    <div class="StatsSection__table">
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">Average per week</th>
+            <td>{{ stats.avgPostsPerWeek | format_number }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Average per month</th>
+            <td>{{ stats.avgPostsPerMonth | format_number }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Average per year</th>
+            <td>{{ stats.avgPostsPerYear | format_number }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Average days between posts</th>
+            <td>{{ stats.avgDaysBetweenPosts | format_number }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="StatsSection">
+    <h2>Content per post</h2>
+    <div class="StatsSection__table">
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">Average characters</th>
+            <td>{{ stats.avgCharacterCount | format_number }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Average words</th>
+            <td>{{ stats.avgWordCount | format_number }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Average paragraphs</th>
+            <td>{{ stats.avgParagraphCount | format_number }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {% if stats.years and stats.years.size > 0 %}
     <section class="StatsSection">
-      <h2>Overview</h2>
-      <div class="StatsSection__table">
-        <table>
-          <tbody>
-            <tr>
-              <th scope="row">First post</th>
-              <td>{{ stats.firstPostDate | time }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Last post</th>
-              <td>{{ stats.lastPostDate | time }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Total posts</th>
-              <td>{{ stats.postCount | format_number }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <h2>Posts per year</h2>
+      <div class="StatsSection__chart" id="stats-posts-per-year"></div>
     </section>
 
     <section class="StatsSection">
-      <h2>Writing frequency</h2>
-      <div class="StatsSection__table">
-        <table>
-          <tbody>
-            <tr>
-              <th scope="row">Average per week</th>
-              <td>{{ stats.avgPostsPerWeek | format_number }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Average per month</th>
-              <td>{{ stats.avgPostsPerMonth | format_number }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Average per year</th>
-              <td>{{ stats.avgPostsPerYear | format_number }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Average days between posts</th>
-              <td>{{ stats.avgDaysBetweenPosts | format_number }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <h2>Content over time</h2>
+      <div class="StatsSection__chart" id="stats-content-trends"></div>
     </section>
+  {% endif %}
 
-    <section class="StatsSection">
-      <h2>Content per post</h2>
-      <div class="StatsSection__table">
-        <table>
-          <tbody>
-            <tr>
-              <th scope="row">Average characters</th>
-              <td>{{ stats.avgCharacterCount | format_number }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Average words</th>
-              <td>{{ stats.avgWordCount | format_number }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Average paragraphs</th>
-              <td>{{ stats.avgParagraphCount | format_number }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  {% if stats.popularTags.size > 0 %}
+    <section class="StatsSection StatsSection--tags">
+      <h2>Tags</h2>
+      {% include "tags.liquid", tags: stats.popularTags %}
     </section>
-
-    {% if stats.years and stats.years.size > 0 %}
-      <section class="StatsSection">
-        <h2>Posts per year</h2>
-        <div class="StatsSection__chart" id="stats-posts-per-year"></div>
-      </section>
-
-      <section class="StatsSection">
-        <h2>Content over time</h2>
-        <div class="StatsSection__chart" id="stats-content-trends"></div>
-      </section>
-    {% endif %}
-
-    {% if stats.popularTags.size > 0 %}
-      <section class="StatsSection StatsSection--tags">
-        <h2>Tags</h2>
-        {% include "tags.liquid", tags: stats.popularTags %}
-      </section>
-    {% endif %}
-  </heading-anchors>
+  {% endif %}
 {% else %}
   <p>No posts yet — nothing to show here.</p>
 {% endif %}
