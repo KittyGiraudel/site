@@ -1,4 +1,3 @@
-import fs from 'node:fs'
 import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
@@ -9,6 +8,7 @@ import emojiShortName from 'emoji-short-name'
 import he from 'he'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
+import injectHeadingAnchors from './_plugins/heading-anchors.js'
 import postStatsPlugin from './_plugins/post-stats.js'
 import tocPlugin from './_plugins/toc.js'
 
@@ -26,6 +26,7 @@ export const CONFIG = {
   metaRefresh: PRODUCTION,
   helmet: PRODUCTION,
   markdownAlternative: PRODUCTION,
+  headingAnchors: true,
 }
 
 /** @param {import('@11ty/eleventy/UserConfig').default} config */
@@ -35,6 +36,7 @@ export default function (config) {
   if (CONFIG.minifyHTML) config.addTransform('htmlmin', minifyHTML)
   if (CONFIG.wrapEmojis) config.addTransform('emoji', a11yEmojis)
   if (CONFIG.helmet) config.addTransform('helmet', helmet)
+  if (CONFIG.headingAnchors) config.addTransform('headingAnchors', injectHeadingAnchors)
 
   // Watch targets
   // ---------------------------------------------------------------------------

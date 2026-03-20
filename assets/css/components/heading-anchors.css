@@ -1,0 +1,56 @@
+.ha {
+  font-weight: bold;
+}
+
+h2 + .ha {
+  font-size: 1.5em;
+}
+
+h3 + .ha {
+  font-size: 1.17em;
+}
+
+.ha-placeholder {
+  opacity: 0.3;
+  margin-left: 0.5ch;
+}
+
+.ha:is(:focus-within, :hover) {
+	opacity: 1;
+}
+
+/**
+ * 1. Disable selection of visually hidden label / placeholders
+ */
+.ha,
+.ha-placeholder {
+  display: inline-block;
+  padding: 0 0.1em;
+  -webkit-user-select: none; /* 1 */
+  user-select: none; /* 1 */
+}
+ 
+@supports (anchor-name: none) {
+  .ha {
+    position: absolute;
+    left: anchor(left);
+    top: anchor(top);
+    opacity: 0;
+  }
+}
+
+@supports not (anchor-name: none) {
+  /**
+   * 1. Fallback positioning in the gutter for browsers that don't support CSS
+   *  anchor positioning.
+   */
+  .ha {
+    transform: translate(-1.1em, -2.05em); /* 1 */
+    opacity: 0.5;
+	  position: absolute;
+  }
+
+  .ha-placeholder {
+    display: none;
+  }
+}

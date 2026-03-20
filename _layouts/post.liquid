@@ -8,6 +8,7 @@ layout: default
   components/collection-navigation,
   components/figure,
   components/footnotes,
+  components/heading-anchors,
   components/hook,
   components/giscus,
   components/post-date,
@@ -29,16 +30,14 @@ layout: default
   {% endif %}
 
   <div itemprop="articleBody">
-    <heading-anchors selector="h2:not(#table-of-contents),h3,h4" content="§">
-      {% include "post_edits.liquid", edits: edits %}
-    
-      {% if toc != false %}
-        {% assign toc_items = content | table_of_contents %}
-        {% include "table_of_contents.liquid", items: toc_items %}
-      {% endif %}
+    {% include "post_edits.liquid", edits: edits %}
 
-      {{ content }}
-    </heading-anchors>
+    {% if toc != false %}
+      {% assign toc_items = content | table_of_contents %}
+      {% include "table_of_contents.liquid", items: toc_items %}
+    {% endif %}
+
+    {{ content }}
 
     {% include "job_notice.liquid", class: "Hook", label: "Pssst!" %}
   </div>
