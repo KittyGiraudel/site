@@ -11,7 +11,7 @@ tags:
 
 I love {% footnoteref "footnotes-usage" "Nothing disappoints me more when reading non-fiction than footnotes being used to cite sources. Don’t get me wrong: it’s a totally legitimate use case for footnotes, but what I always hope for is tangential or anecdotal information, like little nuggets of content aside of the main course — not citations." %}footnotes{% endfootnoteref %}.
 
-I wrote about creating [accessible footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/) on {% footnoteref "sitepoint" "As someone who has written so much for SitePoint (and even recommended new authors), it deeply saddens me to see how it turned out. Code blocks are messy and not highlighted, there are ads everywhere, the design has gone downhill… It’s very unfortunate." %}SitePoint{% endfootnoteref %}. And [how to do it in Eleventy](/2020/12/02/footnotes-in-eleventy/). I’ve also created an [Eleventy plugin](https://github.com/KittyGiraudel/eleventy-plugin-footnotes) to make it easy. I’ve written [how to do it in React](https://kittygiraudel.com/2020/11/24/accessible-footnotes-and-a-bit-of-react/) as well. And open-sourced a [React component](https://github.com/KittyGiraudel/react-a11y-footnotes). What I’m trying to say is that if you like footnotes as much as I do, there are no excuses for not making them accessible.
+I wrote about creating [accessible footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/) on {% footnoteref "sitepoint" "As someone who has written so much for SitePoint (and even recommended new authors), it deeply saddens me to see how it turned out. Code blocks are messy and not highlighted, there are ads everywhere, the design has gone downhill… It’s very unfortunate." %}SitePoint{% endfootnoteref %}. And [how to do it in Eleventy](/2020/12/02/footnotes-in-eleventy/). I’ve also created an [Eleventy plugin](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/eleventy-plugin-footnotes) to make it easy. I’ve written [how to do it in React](https://kittygiraudel.com/2020/11/24/accessible-footnotes-and-a-bit-of-react/) as well. And open-sourced a [React component](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/react-a11y-footnotes). What I’m trying to say is that if you like footnotes as much as I do, there are no excuses for not making them accessible.
 
 But I digress, because that is not the point of today’s article. The point of today’s article is to share a teeny tiny improvement I’ve made to the footnotes on this blog — something simple that makes me happy. I’m here to share the joy.
 
@@ -71,7 +71,7 @@ To fix that, I decided to use a pseudo-element which I can extend in the outer d
  * 1. Actually display the highlight when the footnote is targeted.
  */
 .Footnotes li:target::before {
-  content: ''; /* 1 */
+  content: ""; /* 1 */
 }
 ```
 
@@ -106,7 +106,9 @@ We can use a CSS animation to fade-out the highlight:
 }
 
 @keyframes fade-out {
-  to { opacity: 0 }
+  to {
+    opacity: 0;
+  }
 }
 ```
 
@@ -119,14 +121,14 @@ There is no real right or wrong approach here: I’ve decided to keep it up for 
 
 ## Wrapping up
 
-It’s not ground-breaking, but it’s the sort of small design work I enjoy. It makes things a bit nicer, one littl tweak at a time. 
+It’s not ground-breaking, but it’s the sort of small design work I enjoy. It makes things a bit nicer, one littl tweak at a time.
 
 If you haven’t set up a proper way to have accessible footnotes on your websites, here is some materials for you to get started:
 
-- *[Accessible Footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/)*
-- *[Accessible Footnotes and a bit of React](https://kittygiraudel.com/2020/11/24/accessible-footnotes-and-a-bit-of-react/)*
-- *[Footnotes in Eleventy](/2020/12/02/footnotes-in-eleventy/)*
-- [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/eleventy-plugin-footnotes)
-- [react-a11y-footnotes](https://github.com/KittyGiraudel/react-a11y-footnotes)
+- _[Accessible Footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/)_
+- _[Accessible Footnotes and a bit of React](https://kittygiraudel.com/2020/11/24/accessible-footnotes-and-a-bit-of-react/)_
+- _[Footnotes in Eleventy](/2020/12/02/footnotes-in-eleventy/)_
+- [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/eleventy-plugin-footnotes)
+- [react-a11y-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/react-a11y-footnotes)
 
 I was even thinking of creating a web component for that. I’ve never created web components before, so maybe it would be a good occasion to learn something new!
