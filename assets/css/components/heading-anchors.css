@@ -1,5 +1,11 @@
 .ha {
   font-weight: bold;
+  position: absolute;
+  opacity: 0;
+}
+
+.ha:is(:focus-within, :hover) {
+	opacity: 1;
 }
 
 h2 + .ha {
@@ -15,10 +21,6 @@ h3 + .ha {
   margin-left: 0.5ch;
 }
 
-.ha:is(:focus-within, :hover) {
-	opacity: 1;
-}
-
 /**
  * 1. Disable selection of visually hidden label / placeholders
  */
@@ -32,10 +34,8 @@ h3 + .ha {
  
 @supports (anchor-name: none) {
   .ha {
-    position: absolute;
     left: anchor(left);
     top: anchor(top);
-    opacity: 0;
   }
 }
 
@@ -47,7 +47,6 @@ h3 + .ha {
   .ha {
     transform: translate(-1.1em, -2.05em); /* 1 */
     opacity: 0.5;
-	  position: absolute;
   }
 
   .ha-placeholder {
