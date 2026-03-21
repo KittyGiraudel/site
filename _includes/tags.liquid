@@ -10,7 +10,7 @@
     {% assign name = tag.name | default: tag %}
 
     <li class="Tag">
-      <a class="Tag__link no-background" href="/tags/{{ name | replace: '.', '-' | slugify }}" {% if tag.extra %}data-extra="{{ tag.extra }}" {% endif %}>
+      <a class="Tag__link no-background" href="/tags/{{ name | replace: '.', '-' | slugify }}/" {% if tag.extra %}data-extra="{{ tag.extra }}" {% endif %}>
         {{ name }}<span class="visually-hidden"> tag</span>
       </a>
     </li>

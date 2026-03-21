@@ -20,7 +20,7 @@ function search() {
             .filter(tag => tag !== 'posts')
             .map(
               tag => `<li class="Tag">
-              <a class="Tag__link" href="/tags/${tag.toLowerCase().replace(/\s/g, '-')}">${tag}</a>
+              <a class="Tag__link" href="/tags/${tag.toLowerCase().replace(/\s/g, '-')}/">${tag}</a>
             </li>`,
             )
             .join('')}
