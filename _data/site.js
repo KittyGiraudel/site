@@ -21,8 +21,7 @@ export default {
   ],
   configuration: {
     minify_html: CONFIG.minifyHTML,
-    inline_scripts: CONFIG.inlineScripts,
-    inline_styles: CONFIG.inlineStyles,
+    inline_assets: CONFIG.inlineAssets,
     service_worker: CONFIG.serviceWorker,
   },
 }

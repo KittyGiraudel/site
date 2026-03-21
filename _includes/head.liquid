@@ -5,8 +5,7 @@
   - page_url: The URL of the page
   - page_author: The author of the page
   - page_description: The description of the page
-  - inline_styles: Whether to inline the styles
-  - inline_scripts: Whether to inline the scripts
+  - inline_assets: Whether to inline the styles and scripts
   - title: The title of the page
   Optional:
   - layout: The layout of the page
@@ -14,8 +13,7 @@
   - generator: The generator of the page
 {% endcomment %}
  
-{% ensure inline_scripts, "Required value 'inline_scripts' is missing in head.liquid" %}
-{% ensure inline_styles, "Required value 'inline_styles' is missing in head.liquid" %}
+{% ensure inline_assets, "Required value 'inline_assets' is missing in head.liquid" %}
 {% ensure page_author, "Required value 'page_author' is missing in head.liquid" %}
 {% ensure page_description, "Required value 'page_description' is missing in head.liquid" %}
 {% ensure page_url, "Required value 'page_url' is missing in head.liquid" %}
@@ -47,7 +45,7 @@ http://ogp.me/ns/article#">
 
   <!-- Styles -->
   {% render "styles.liquid",
-    inline: inline_styles,
+    inline: inline_assets,
     partials: "
       base/base,
       base/helpers,
@@ -91,5 +89,8 @@ http://ogp.me/ns/article#">
   <meta name="twitter:site" content="@KittyGiraudel">
   <meta name="twitter:title" content="{{ title }}">
   
-  {% render "script.liquid", partials: "theme", inline: inline_scripts %}
+  {% render "script.liquid",
+    inline: inline_assets,
+    partials: "theme"
+  %}
 </head>

@@ -12,8 +12,7 @@
 
 {% render "head.liquid"
   generator: generator,
-  inline_scripts: site.configuration.inline_scripts,
-  inline_styles: site.configuration.inline_styles,
+  inline_assets: site.configuration.inline_assets,
   tags: tags,
   layout: layout,
   page_author: page_author,
@@ -44,7 +43,11 @@
   </main>
   
   {% render "footer.liquid", input_path: page.inputPath %}
-  {% render "script.liquid", partials: "main", inline: site.configuration.inline_scripts %}
+  
+  {% render "script.liquid",
+    inline: site.configuration.inline_assets,
+    partials: "main"
+  %}
 
   {% if site.configuration.service_worker == true %}
   <script>

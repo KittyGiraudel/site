@@ -20,8 +20,7 @@ export const CONFIG = {
   splitContent: PRODUCTION,
   syntaxHighlight: true,
   githubStars: PRODUCTION,
-  inlineScripts: PRODUCTION,
-  inlineStyles: PRODUCTION,
+  inlineAssets: PRODUCTION,
   serviceWorker: PRODUCTION,
   metaRefresh: PRODUCTION,
   helmet: PRODUCTION,
@@ -75,8 +74,10 @@ export default function (config) {
   // script tags in production. For the assets to be linked to in development,
   // they need to be passed through to the `_site` directory.
   // See: https://kittygiraudel.com/2020/12/03/inlining-scripts-and-styles-in-11ty/
-  if (!CONFIG.inlineScripts) config.addPassthroughCopy('assets/js')
-  if (!CONFIG.inlineStyles) config.addPassthroughCopy('assets/css')
+  if (!CONFIG.inlineAssets) {
+    config.addPassthroughCopy('assets/js')
+    config.addPassthroughCopy('assets/css')
+  }
 
   // Liquid filters and shortcodes
   // ---------------------------------------------------------------------------

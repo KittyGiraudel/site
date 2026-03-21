@@ -6,7 +6,7 @@ permalink: /stats/
 ---
 
 {% render "styles.liquid",
-  inline: site.configuration.inline_styles,
+  inline: site.configuration.inline_assets,
   partials: "
     pages/stats,
     components/table,
@@ -122,7 +122,7 @@ permalink: /stats/
   </script>
 
   {% render "script.liquid",
-    inline: site.configuration.inline_scripts,
+    inline: site.configuration.inline_assets,
     partials: "utilities, stats"
   %}
 {% endif %}

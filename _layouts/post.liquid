@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% render "styles.liquid",
-  inline: site.configuration.inline_styles,
+  inline: site.configuration.inline_assets,
   partials: "
     pages/post,
     components/blockquote,
@@ -64,13 +64,13 @@ layout: default
 %}
 
 {% render "script.liquid",
-  partials: "utilities, post",
-  inline: site.configuration.inline_scripts
+  inline: site.configuration.inline_assets,
+  partials: "utilities, post"
 %}
 
 {% if site.environment != "production" %}
   {% render "script.liquid",
-    partials: "post-shortcuts",
-    inline: site.configuration.inline_scripts
+    inline: site.configuration.inline_assets,
+    partials: "post-shortcuts"
   %}
 {% endif %}
