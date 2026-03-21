@@ -209,7 +209,7 @@ chart.render()
 
 Tadaaaa — pretty cool if you ask me! The huge bump in 2020 is because I released my [accessibility advent calendar](/2020/12/01/a11y-advent-calendar) that year, which added 31 posts to the count. As for 2025, well I just didn’t write at all besides my year in review. Fortunately I’m correcting that this year!
 
-{% include "script.liquid", partials: "utilities, stats" %}
+{% include "script.liquid", partials: "utilities, stats", inline: true %}
 {% endif %}
 
 ## Wrapping up

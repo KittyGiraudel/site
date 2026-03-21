@@ -8,7 +8,7 @@ tags:
 
 {% include "styles.liquid", partials: "
   components/tags
-" %}
+", inline: true %}
 
 Nothing too fancy! Just a short article to share that it is now possible to list all posts tagged with a certain keyword. For instance, to list all posts I’ve written about accessibility, simply head to [this page](/tags/accessibility).
 

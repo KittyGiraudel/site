@@ -1,13 +1,20 @@
-{% if partials -%}
-  {% assign paths = partials | split: "," %}
+{% comment %}
+  Required:
+  - partials: The partials to render
+  - inline: Whether to inline the styles
+{% endcomment %}
 
-  {%- if site.configuration.inline_styles == true -%}
-    {%- capture css -%}
-      {% for path in paths -%}{%- include "../assets/css/{{ path | strip }}.css" -%}{%- endfor %}
-    {%- endcapture -%}
+{% ensure partials, "Required value 'partials' is missing in styles.liquid" %}
+{% ensure inline, "Required value 'inline' is missing in styles.liquid" %}
 
-    <style data-helmet>{{ css }}</style>
-  {%- else -%}
-    {%- for path in paths %}<link data-helmet rel="stylesheet" href="/assets/css/{{ path | strip }}.css" />{% endfor %}
-  {%- endif %}
-{% endif %}
+{% assign paths = partials | split: "," %}
+
+{%- if inline -%}
+  {%- capture css -%}
+    {% for path in paths -%}{%- include "../assets/css/{{ path | strip }}.css" -%}{%- endfor %}
+  {%- endcapture -%}
+
+  <style data-helmet>{{ css }}</style>
+{%- else -%}
+  {%- for path in paths %}<link data-helmet rel="stylesheet" href="/assets/css/{{ path | strip }}.css" />{% endfor %}
+{%- endif %}

@@ -1,3 +1,12 @@
+{% comment %}
+  Required:
+  - item: The project object
+  Optional:
+  - github: Stargazer data from _data/github
+{% endcomment %}
+
+{% ensure item, "Required value 'item' is missing in project_tile.liquid" %}
+
 {% assign project = item %}
 {% assign project_stars = github.stargazers[project.repository] | default: 0 %}
 
@@ -10,7 +19,7 @@
   {% assign project_link = project.link %}
 {% endif %}
 
-{% include "tile.liquid",
+{% render "tile.liquid",
   primary: project.name,
   secondary: project_category,
   link_url: project_link,

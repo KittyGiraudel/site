@@ -2,59 +2,75 @@
 layout: default
 ---
 
-{% include "styles.liquid", partials: "
-  pages/post,
-  components/blockquote,
-  components/collection-navigation,
-  components/figure,
-  components/footnotes,
-  components/heading-anchors,
-  components/hook,
-  components/giscus,
-  components/post-date,
-  components/code,
-  components/table,
-  components/table-of-contents,
-  components/tile
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "
+    pages/post,
+    components/blockquote,
+    components/collection-navigation,
+    components/figure,
+    components/footnotes,
+    components/heading-anchors,
+    components/hook,
+    components/giscus,
+    components/post-date,
+    components/code,
+    components/table,
+    components/table-of-contents,
+    components/tile
+  "
+%}
 
 <link rel="alternate" type="text/markdown" href="{{ page.url }}index.md" data-helmet>
 
 <article itemscope itemtype="https://schema.org/Article" class="Post">
-  {% if page.date %}
-    <p class="PostDate">
-      <span itemprop="datePublished">{{ page.date | time }}</span>
-      {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
-      <span class="Fleuron" aria-hidden="true">❦</span> <span itemprop="timeRequired" title="Estimated read time">{{ content | strip_html | reading_time }}</span>
-    </p>
-  {% endif %}
+  {% assign reading_time = content | strip_html | reading_time %}
+  {% render "post_head.liquid",
+    date: page.date,
+    guest: page.guest,
+    reading_time: reading_time
+  %}
 
   <div itemprop="articleBody">
-    {% include "post_edits.liquid", edits: edits %}
+    {% if edits %}
+      {% render "post_edits.liquid", edits: edits %}
+    {% endif %}
 
     {% if toc != false %}
       {% assign toc_items = content | table_of_contents %}
-      {% include "table_of_contents.liquid", items: toc_items %}
+      {% if toc_items %}
+        {% render "table_of_contents.liquid", items: toc_items %}
+      {% endif %}
     {% endif %}
 
     {{ content }}
 
-    {% include "job_notice.liquid", class: "Hook", label: "Pssst!" %}
+    {% render "job_notice.liquid",
+      class: "Hook",
+      label: "Pssst!",
+      job_notice: site.job_notice
+    %}
   </div>
 
   {% footnotes page %}
 </article>
 
-<div class="giscus" id="giscus-holder" aria-label="Comments"></div>
+{% render "giscus.liquid" %}
 
-{% include "collection_navigation.liquid",
-page: page,
-collection: collections.posts,
-label: "post"
+{% render "collection_navigation.liquid",
+  page: page,
+  collection: collections.posts,
+  label: "post"
 %}
 
-{% include "script.liquid", partials: "utilities, post" %}
+{% render "script.liquid",
+  partials: "utilities, post",
+  inline: site.configuration.inline_scripts
+%}
 
 {% if site.environment != "production" %}
-  {% include "script.liquid", partials: "post-shortcuts" %}
+  {% render "script.liquid",
+    partials: "post-shortcuts",
+    inline: site.configuration.inline_scripts
+  %}
 {% endif %}

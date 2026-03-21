@@ -9,9 +9,10 @@ keywords:
 permalink: /blog/recipes/
 ---
 
-{% include "styles.liquid", partials: "
-  components/list
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "components/list"
+%}
 
 {% markdown %}
 Not everything has to be about coding. I do enjoy cooking (and eating, needless

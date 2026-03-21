@@ -1,15 +1,31 @@
-{% assign more_link_label = link_label %}
-{% assign more_link_url = link_url %}
+{% comment %}
+  Required:
+  - type: The type of showcase to render
+  - title: The title of the showcase
+  - copy: The copy of the showcase
+  - items: The items to render
+  Optional:
+  - hidden_title: Whether the title should be hidden
+  - github: GitHub stargazer data (required for project tiles; pass from the page so this render scope receives it)
+  - more_link_url: The URL of the link
+  - more_link_label: The label of the link
+{% endcomment %}
+
+{% ensure type, "Required value 'type' is missing in showcase.liquid" %}
+{% ensure title, "Required value 'title' is missing in showcase.liquid" %}
+{% ensure copy, "Required value 'copy' is missing in showcase.liquid" %}
+{% ensure items, "Required value 'items' is missing in showcase.liquid" %}
+
 {% assign id = title | slugify %}
 
 <section class="Showcase" aria-labelledby="{{ id }}">
-  {% if title %}<h2 class="Showcase__title {% if hidden_title %}visually-hidden{% endif %}" id="{{ id }}">{{ title }}</h2>{% endif %}
+  <h2 class="Showcase__title {% if hidden_title %}visually-hidden{% endif %}" id="{{ id }}">{{ title }}</h2>
   <p class="Showcase__copy">{{ copy | markdown }}</p>
 
   <div class="Showcase__container">
     {% for item in items %}
     <div class="Showcase__item">
-      {% include "{{ type }}_tile.liquid", item: item %}
+      {% render "{{ type }}_tile.liquid", item: item, github: github %}
     </div>
     {% endfor %}
   </div>

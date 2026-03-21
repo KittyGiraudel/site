@@ -1,11 +1,16 @@
-{% if edits %}
-  <div class="Callout PostEdits" id="post-edits">
-    <h2 class="PostEdits__title">Noteworthy edits</h2>
-    {% for edit in edits %}
-      <p>
-        <span class="PostEdits__date">{{ edit.date | time }}:</span>
-        {{ edit.md | markdown }}
-      </p>
-    {% endfor %}
-  </div>
-{% endif %}
+{% comment %}
+  Required:
+  - edits: The edits to render
+{% endcomment %}
+
+{% ensure edits, "Required value 'edits' is missing in post_edits.liquid" %}
+
+<div class="Callout PostEdits" id="post-edits">
+  <h2 class="PostEdits__title">Noteworthy edits</h2>
+  {% for edit in edits %}
+    <p>
+      <span class="PostEdits__date">{{ edit.date | time }}:</span>
+      {{ edit.md | markdown }}
+    </p>
+  {% endfor %}
+</div>

@@ -9,10 +9,13 @@ keywords:
 permalink: /snippets/
 ---
 
-{% include "styles.liquid", partials: "
-  components/list,
-  components/tags
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "
+    components/list,
+    components/tags
+  "
+%}
 
 {% markdown %}
 These are small code snippets usually extracted from more in-depth articles so
@@ -35,7 +38,9 @@ paste them with minor effort.
       {{ snippet.data.title }}
     </a>
 
-    {% include "tags.liquid", tags: snippet.data.tags %}
+    {% if snippet.data.tags %}
+      {% render "tags.liquid", tags: snippet.data.tags %}
+    {% endif %}
   </li>
   {% endfor %}
 </ul>

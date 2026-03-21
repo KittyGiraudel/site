@@ -1,6 +1,17 @@
+{% comment %}
+  Required:
+  - job_notice: The job notice object
+  Optional:
+  - label: The label for the job notice
+  - class: The class for the job notice
+  - style: The style for the job notice
+{% endcomment %}
+
+{% ensure job_notice, "Required value 'job_notice' is missing in job_notice.liquid" %}
+
 {% assign label = label | default: "Heads up!" %}
 {% assign wrapper_class = class | default: "Tile" %}
 
 <div class="{{ wrapper_class }}"{% if style %} style="{{ style }}"{% endif %}>
-  <p style="margin: 0"><strong>{{ label }}</strong> {{ site.jobNotice.text }} <a href="{{ site.jobNotice.url }}" rel="noopener noreferrer">Read more on LinkedIn</a>. ✨</p>
+  <p style="margin: 0"><strong>{{ label }}</strong> {{ job_notice.text }} <a href="{{ job_notice.url }}" rel="noopener noreferrer">Read more on LinkedIn</a>. ✨</p>
 </div>

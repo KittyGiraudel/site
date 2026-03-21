@@ -1,6 +1,14 @@
-{% if title %}
-  <h1 class="Title" itemprop="title" {% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}
-    {% if tags contains 'snippets' %}style="word-break: break-all" {% endif %}>
-    <a href="/" class="Title__link no-background">{{ title }}</a>
-  </h1>
-{% endif %}
+{% comment %}
+  Required:
+  - title: The title of the page
+  Optional:
+  - lang: The language of the page
+  - with_title_break: Whether to break the title
+{% endcomment %}
+
+{% ensure title, "Required value 'title' is missing in title.liquid" %}
+
+<h1 class="Title" itemprop="title" {% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}
+  {% if with_title_break %}style="word-break: break-all" {% endif %}>
+  <a href="/" class="Title__link no-background">{{ title }}</a>
+</h1>

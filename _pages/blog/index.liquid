@@ -11,11 +11,14 @@ keywords:
 permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
-{% include "styles.liquid", partials: "
-  components/collection-navigation,
-  components/list,
-  components/tags
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "
+    components/collection-navigation,
+    components/list,
+    components/tags
+  "
+%}
 
 {% markdown %}
 Over the last few years, I have spent a lot of time writing (see some [vanity
@@ -30,9 +33,9 @@ time to time.
 ---
 {% endmarkdown %}
 
-{% include "post_list.liquid", items: posts %}
-{% include "pagination.liquid",
+{% render "post_list.liquid", items: posts %}
+{% render "pagination.liquid",
   label: "posts",
-  nextPageHref: pagination.nextPageHref,
-  previousPageHref: pagination.previousPageHref
+  next_page_link: pagination.nextPageHref,
+  prev_page_link: pagination.previousPageHref
 %}

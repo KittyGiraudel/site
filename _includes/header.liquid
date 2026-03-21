@@ -1,6 +1,20 @@
+{% comment %}
+  Required:
+  - title: The title of the page
+  - navigation: The navigation menu data
+  - current_url: The current page path (not the absolute canonical URL)
+  Optional:
+  - lang: The language of the page
+  - with_title_break: Whether to break the title
+{% endcomment %}
+ 
+{% ensure title, "Required value 'title' is missing in header.liquid" %}
+{% ensure navigation, "Required value 'navigation' is missing in header.liquid" %}
+{% ensure current_url, "Required value 'current_url' is missing in header.liquid" %}
+
 <header class="Header" role="banner">
   <div class="container">
-    {% include "navigation.liquid" %}
-    {% include "title.liquid", title: title, lang: lang %}
+    {% render "navigation.liquid", current_url: current_url, navigation: navigation %}
+    {% render "title.liquid", title: title, lang: lang, with_title_break: with_title_break %}
   </div>
 </header>

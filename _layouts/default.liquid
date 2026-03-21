@@ -1,22 +1,50 @@
+{% assign page_url = page.url | prepend: site.url %}
+{% assign page_description = description | default: site.description | strip_html | strip_newlines | truncate: 200  | emoji_to_text | escape %}
+{% assign title = title | default: site.author %}
+{% assign page_author = guest | default: site.author %}
+{% assign site_author = site.author %}
+{% assign generator = generator | default: eleventy.generator %}
+{% assign site_url = site.url %}
+{% assign tags = tags | default: keywords %}
+
 <!DOCTYPE html>
 <html lang="en">
 
-{% include "head.liquid" %}
+{% render "head.liquid"
+  generator: generator,
+  inline_scripts: site.configuration.inline_scripts,
+  inline_styles: site.configuration.inline_styles,
+  tags: tags,
+  layout: layout,
+  page_author: page_author,
+  page_description: page_description,
+  page_url: page_url,
+  site_author: site_author,
+  site_url: site_url,
+  title: title,
+%}
 
 <body>
-  {% include "skip_link.liquid" %}
-  {% include "header.liquid" %}
+  {% assign with_title_break = tags contains 'snippets' %}
+  {% render "skip_link.liquid" %}
+  {% render "header.liquid"
+    title: title,
+    lang: lang,
+    with_title_break: with_title_break,
+    current_url: page.url,
+    navigation: site.nav
+  %}
 
   <main class="Main" role="main" id="main">
     <div class="container">
       {{ content }}
     </div>
 
-    {% include "theme_button.liquid" %}
+    {% render "theme_button.liquid" %}
   </main>
   
-  {% include "footer.liquid" %}
-  {% include "script.liquid", partials: "main" %}
+  {% render "footer.liquid", input_path: page.inputPath %}
+  {% render "script.liquid", partials: "main", inline: site.configuration.inline_scripts %}
 
   {% if site.configuration.service_worker == true %}
   <script>
