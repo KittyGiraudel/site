@@ -10,10 +10,13 @@ keywords:
 permalink: /blog/guest/
 ---
 
-{% include "styles.liquid", partials: "
-  components/list,
-  components/tags
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "
+    components/list,
+    components/tags
+  "
+%}
 
 {% markdown %}
 I had the amazing opportunity to have great writers sharing their experience on
@@ -23,4 +26,4 @@ touch!
 {% endmarkdown %}
 
 {% assign guest_posts = collections.posts | where: "guest" %}
-{% include "post_list.liquid", items: guest_posts %}
+{% render "post_list.liquid", items: guest_posts %}

@@ -9,10 +9,13 @@ keywords:
 permalink: /resume/
 ---
 
-{% include "styles.liquid", partials: "
-  pages/resume,
-  components/tile
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "
+    pages/resume,
+    components/tile
+  "
+%}
 
 <div class="Resume">
   <div class="Resume__header print-only">
@@ -29,7 +32,10 @@ permalink: /resume/
         Engineering leader with 15 years of experience, including 7 years in engineering management and 3 in executive leadership. I have played a key role in scaling engineering organizations across multiple startups through periods of rapid growth, restructuring, and regulatory pressure.
       </p>
 
-      {% include "job_notice.liquid", class: "Tile no-print" %}
+      {% render "job_notice.liquid",
+        class: "Tile no-print",
+        job_notice: site.job_notice
+      %}
 
       <p>
         With a background in frontend development, I bring a strong product mindset and a long-standing focus on quality, accessibility, security, and sustainable engineering practices. I have led departments of up to 35 engineers, supported due diligence and compliance efforts, and partnered closely with product, GTM, and leadership teams to deliver reliably at scale.

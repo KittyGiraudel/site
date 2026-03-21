@@ -9,10 +9,13 @@ keywords:
 permalink: /talks/
 ---
 
-{% include "styles.liquid", partials: "
-  components/list,
-  components/tags
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "
+    components/list,
+    components/tags
+  "
+%}
 
 {% markdown %}
 Over the last few years I’ve had the amazing opportunity to be a speaker at some

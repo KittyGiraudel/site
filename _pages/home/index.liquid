@@ -12,10 +12,13 @@ keywords:
 permalink: /
 ---
 
-{% include "styles.liquid", partials: "
-components/showcase,
-components/tile
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "
+    components/showcase,
+    components/tile
+  "
+%}
 
 {% markdown %}
 I’m Kitty. I’m a transfeminine web engineer and engineering leader based in Berlin, with nearly 15
@@ -26,39 +29,43 @@ inclusion. In recent years, I have led engineering teams at [N26](https://n26.co
 about me](/about/).
 {% endmarkdown %}
 
-{% include "job_notice.liquid", style: "margin-top: var(--vb);" %}
+{% render "job_notice.liquid",
+  style: "margin-top: var(--vb)",
+  job_notice: site.job_notice
+%}
 
 {% assign latest_articles = collections.posts | slice: 0, 3 %}
-{% include "showcase.liquid",
-type: "article",
-title: "Latest articles",
-copy: "I love writing, and have been sharing my thoughts — mainly about web development — on this blog for years. If you are
-looking for something specific, [try the search](/blog/search/). I also had the pleasure of hosting [guest
-authors](/blog/guest/) and would recommend you read their posts!",
-link_url: "/blog/",
-link_label: "Read more articles",
-items: latest_articles
+{% render "showcase.liquid",
+  type: "article",
+  title: "Latest articles",
+  copy: "I love writing, and have been sharing my thoughts — mainly about web development — on this blog for years. If you are
+  looking for something specific, [try the search](/blog/search/). I also had the pleasure of hosting [guest
+  authors](/blog/guest/) and would recommend you read their posts!",
+  more_link_url: "/blog/",
+  more_link_label: "Read more articles",
+  items: latest_articles
 %}
 
 {% assign main_projects = projects | where: "showcase", true | slice: 0, 3 %}
-{% include "showcase.liquid",
-type: "project",
-title: "Main projects",
-copy: "I used to be quite involved in open-source development. I have initiated and contributed to many projects, most
-of which about Sass or digital accessibility.",
-link_url: "/projects",
-link_label: "Browse more projects",
-items: main_projects
+{% render "showcase.liquid",
+  type: "project",
+  title: "Main projects",
+  copy: "I used to be quite involved in open-source development. I have initiated and contributed to many projects, most
+  of which about Sass or digital accessibility.",
+  more_link_url: "/projects",
+  more_link_label: "Browse more projects",
+  items: main_projects,
+  github: github
 %}
 
 {% assign latest_events = speaking | slice: 0, 3 %}
-{% include "showcase.liquid",
-type: "event",
-title: "Last events",
-copy: "I enjoy participating in events and talking at conferences when I find the time. If you would like me to attend
-one of your events, feel free to
-get in touch! In the meantime, feel free to have a look at my past talks.",
-link_url: "/talks",
-link_label: "Check more events",
-items: latest_events
+{% render "showcase.liquid",
+  type: "event",
+  title: "Last events",
+  copy: "I enjoy participating in events and talking at conferences when I find the time. If you would like me to attend
+  one of your events, feel free to
+  get in touch! In the meantime, feel free to have a look at my past talks.",
+  more_link_url: "/talks",
+  more_link_label: "Check more events",
+  items: latest_events
 %}

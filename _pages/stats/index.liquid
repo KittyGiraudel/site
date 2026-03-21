@@ -5,11 +5,14 @@ description: Vanity metrics about my writing habits on this blog over the years.
 permalink: /stats/
 ---
 
-{% include "styles.liquid", partials: "
-  pages/stats,
-  components/table,
-  components/tags
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "
+    pages/stats,
+    components/table,
+    components/tags
+  "
+%}
 
 {% assign stats = collections.postStats %}
 
@@ -106,7 +109,7 @@ permalink: /stats/
   {% if stats.popularTags.size > 0 %}
     <section class="StatsSection StatsSection--tags">
       <h2>Tags</h2>
-      {% include "tags.liquid", tags: stats.popularTags %}
+      {% render "tags.liquid", tags: stats.popularTags %}
     </section>
   {% endif %}
 {% else %}
@@ -115,17 +118,11 @@ permalink: /stats/
 
 {% if stats.years and stats.years.size > 0 %}
   <script>
-    window.__STATS_YEARS__ = [
-    {% for year in stats.years %}
-      {
-        year: {{ year.year }},
-        postCount: {{ year.postCount }},
-        avgCharacterCount: {{ year.avgCharacterCount }},
-        avgWordCount: {{ year.avgWordCount }},
-        avgParagraphCount: {{ year.avgParagraphCount }}
-      }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-    ];
+    window.__STATS_YEARS__ = {{ stats.years | json }};
   </script>
-  {% include "script.liquid", partials: "utilities, stats" %}
+
+  {% render "script.liquid",
+    inline: site.configuration.inline_scripts,
+    partials: "utilities, stats"
+  %}
 {% endif %}

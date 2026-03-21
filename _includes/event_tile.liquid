@@ -1,9 +1,16 @@
+{% comment %}
+  Required:
+  - item: The event object
+{% endcomment %}
+
+{% ensure item, "Required value 'item' is missing in event_tile.liquid" %}
+
 {% assign event = item %}
 
 {% capture event_meta %}{{ event.date | time }} · {{ event.location | split: ',' | first }}{% endcapture %}
 {% capture event_label %}Check event <span class="visually-hidden">{{ event.event }}</span>{% endcapture %}
 
-{% include "tile.liquid",
+{% render "tile.liquid",
   primary: event.event,
   secondary: event_meta,
   link_url: event.link,

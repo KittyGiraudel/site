@@ -1,14 +1,24 @@
+{% comment %}
+  Required: —
+  Optional:
+  - prev_page_link: The URL of the previous page
+  - next_page_link: The URL of the next page
+  - label: The label for the pagination
+{% endcomment %}
+
 {% assign label = label | default: 'entry' %}
 
-<div class="Pagination CollectionNavigation {% if previousPageHref %}{% elsif nextPageHref %}CollectionNavigation--end{% endif %}">
-  {% if previousPageHref %}
-    <p class="CollectionNavigation__item">
-      <a class="CollectionNavigation__link" href="{{ previousPageHref }}">← Previous {{ label }}</a>
-    </p>
-  {% endif %}
-  {% if nextPageHref %}
-    <p class="CollectionNavigation__item">
-      <a class="CollectionNavigation__link" href="{{ nextPageHref }}">Next {{ label }} →</a>
-    </p>
-  {% endif %}
-</div>
+{% if prev_page_link or next_page_link %}
+  <div class="Pagination CollectionNavigation {% if prev_page_link %}{% elsif next_page_link %}CollectionNavigation--end{% endif %}">
+    {% if prev_page_link %}
+      <p class="CollectionNavigation__item">
+        <a class="CollectionNavigation__link" href="{{ prev_page_link }}">← Previous {{ label }}</a>
+      </p>
+    {% endif %}
+    {% if next_page_link %}
+      <p class="CollectionNavigation__item">
+        <a class="CollectionNavigation__link" href="{{ next_page_link }}">Next {{ label }} →</a>
+      </p>
+    {% endif %}
+  </div>
+{% endif %}

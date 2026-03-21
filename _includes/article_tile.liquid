@@ -1,10 +1,17 @@
+{% comment %}
+  Required:
+  - item: The post object
+{% endcomment %}
+
+{% ensure item, "Required value 'item' is missing in article_tile.liquid" %}
+
 {% assign post = item %}
 
 {% capture article_meta %}{{ item.date | time }}{% if post.data.guest %}, by {{ post.data.guest }}{% endif %}{% endcapture %}
 {% capture article_url %}{% if post.data.external %}{{ post.data.external.url }}{% else %}{{ post.url }}{% endif %}{% endcapture %}
 {% capture article_label %}Read article <span class="visually-hidden">{{ post.data.title }}</span>{% endcapture %}
 
-{% include "tile.liquid",
+{% render "tile.liquid",
   primary_lang: post.data.lang,
   primary: post.data.title,
   secondary: article_meta,

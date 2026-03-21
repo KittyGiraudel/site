@@ -94,6 +94,7 @@ export default function (config) {
   config.addFilter('emoji_to_text', emojiToText)
   config.addPairedShortcode('callout', callout)
   config.addFilter('strip_html_entities', stripHtmlEntities)
+  config.addShortcode('ensure', ensureValue)
 
   // Collections
   // ---------------------------------------------------------------------------
@@ -256,6 +257,16 @@ function readingTime(content) {
 
 function stripHtmlEntities(content) {
   return he.decode(content).replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
+}
+
+function ensureValue(value, message) {
+  if (value === null || value === undefined || value === '') {
+    const detail =
+      typeof message === 'string' && message.trim() !== ''
+        ? message
+        : 'Required template value is missing'
+    throw new Error(detail)
+  }
 }
 
 function helmet(content, outputPath) {

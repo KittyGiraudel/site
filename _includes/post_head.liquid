@@ -1,0 +1,15 @@
+{% comment %}
+  Required:
+  - date: The date of the post
+  Optional:
+  - reading_time: The reading time of the post
+  - guest: The guest of the post
+{% endcomment %}
+
+{% ensure date, "Required value 'date' is missing in post_head.liquid" %}
+
+<p class="PostDate">
+  <span itemprop="datePublished">{{ date | time }}</span>
+  {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
+  <span class="Fleuron" aria-hidden="true">❦</span> {% if reading_time %}<span itemprop="timeRequired" title="Estimated read time">{{ reading_time }}</span>{% endif %}
+</p>

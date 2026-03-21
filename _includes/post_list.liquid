@@ -1,3 +1,10 @@
+{% comment %}
+  Required:
+  - items: The items to render
+{% endcomment %}
+
+{% ensure items, "Required value 'items' is missing in post_list.liquid" %}
+
 <ul class="List">
   {% for item in items %}
     {% assign url  = item.url %}
@@ -23,7 +30,9 @@
         </a>
       {% endif %}
 
-      {% include "tags.liquid", tags: data.tags %}
+      {% if data.tags %}
+        {% render "tags.liquid", tags: data.tags %}
+      {% endif %}
     </li>
   
   {% endfor %}

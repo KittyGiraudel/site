@@ -5,7 +5,10 @@ description: "Everything about me related to the tech-industry."
 permalink: /about/
 ---
 
-{% include "styles.liquid", partials: "components/tile" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "components/tile"
+%}
 
 {% markdown %}
 I’m Kitty. I’m a transfeminine web engineer and engineering leader based in Berlin, with nearly 15
@@ -14,7 +17,10 @@ inclusion. In recent years, I have led engineering teams at [N26](https://n26.co
 [Gorillas](<https://en.wikipedia.org/wiki/Gorillas_(company)>), [cofenster](https://cofenster.com/),
 and [Scilife](https://scilife.io) — all companies I helped grow and scale.
 
-{% include "job_notice.liquid", style: "margin-top: var(--vb);" %}
+{% render "job_notice.liquid",
+  style: "margin-top: var(--vb)",
+  job_notice: site.job_notice
+%}
 
 ## Professional journey
 

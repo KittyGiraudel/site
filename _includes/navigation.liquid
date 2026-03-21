@@ -1,11 +1,20 @@
+{% comment %}
+  Required:
+  - navigation: The nav item list (e.g. site.nav)
+  - current_url: The page path (used for active nav)
+{% endcomment %}
+
+{% ensure navigation, "Required value 'navigation' is missing in navigation.liquid" %}
+{% ensure current_url, "Required value 'current_url' is missing in navigation.liquid" %}
+
 <nav class="Navigation no-print" role="navigation">
   <ul class="Navigation__list">
-    {% for item in site.nav %}
-      {% assign active = page.url contains item.path %}
+    {% for item in navigation %}
+      {% assign active = current_url contains item.path %}
       {% if item.path contains "/blog" %}
-        {% assign start = page.url | slice: 0, 4 %}
+        {% assign start = current_url | slice: 0, 4 %}
         {% assign is_post = start == "/201" or start == "/202" %}
-        {% if page.url contains "tags" or is_post %}
+        {% if current_url contains "tags" or is_post %}
           {% assign active = true %}
         {% endif %}
       {% endif %}

@@ -1,6 +1,27 @@
-{% assign page_url = page.url | prepend: site.url %}
-{% assign page_description = description | default: site.description | strip_html | strip_newlines |
-truncate: 200 %}
+{% comment %}
+  Required:
+  - site_url: The URL of the site
+  - site_author: The author of the site
+  - page_url: The URL of the page
+  - page_author: The author of the page
+  - page_description: The description of the page
+  - inline_styles: Whether to inline the styles
+  - inline_scripts: Whether to inline the scripts
+  - title: The title of the page
+  Optional:
+  - layout: The layout of the page
+  - tags: Tag/keyword list for the page
+  - generator: The generator of the page
+{% endcomment %}
+ 
+{% ensure inline_scripts, "Required value 'inline_scripts' is missing in head.liquid" %}
+{% ensure inline_styles, "Required value 'inline_styles' is missing in head.liquid" %}
+{% ensure page_author, "Required value 'page_author' is missing in head.liquid" %}
+{% ensure page_description, "Required value 'page_description' is missing in head.liquid" %}
+{% ensure page_url, "Required value 'page_url' is missing in head.liquid" %}
+{% ensure site_author, "Required value 'site_author' is missing in head.liquid" %}
+{% ensure site_url, "Required value 'site_url' is missing in head.liquid" %}
+{% ensure title, "Required value 'title' is missing in head.liquid" %}
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:
 http://ogp.me/ns/article#">
@@ -8,41 +29,44 @@ http://ogp.me/ns/article#">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#dd7eb4">
-  <meta name="generator" content="{{ eleventy.generator }}">
+  {% if generator %}
+    <meta name="generator" content="{{ generator }}">
+  {% endif %}
 
   <!-- Page specific content -->
-  <title>{% if title %}{{ title }} | {{ site.author }}{% else %}{{ site.author }}{% endif %}</title>
-  <meta name="description" content="{{ page_description | emoji_to_text | escape }}">
-  {% if keywords %}
-    <meta name="keywords" content="{{ keywords | join: ',' }}" />
-  {% elsif tags %}
+  <title>{% if title %}{{ title }} | {{ site_author }}{% else %}{{ site_author }}{% endif %}</title>
+  <meta name="description" content="{{ page_description }}">
+  {% if tags %}
     <meta name="keywords" content="{{ tags | join: ',' }}" />
   {% endif %}
-  <meta name="author" content="{{ guest | default: site.author }}">
+  <meta name="author" content="{{ page_author }}">
   <link rel="canonical" href="{{ page_url }}">
 
   <!-- Robots & indexing -->
   <meta name="robots" content="index,follow">
 
   <!-- Styles -->
-  {% include "styles.liquid", partials: "
-    base/base,
-    base/helpers,
-    layout/header,
-    layout/footer,
-    layout/main,
-    layout/navigation,
-    components/abbr,
-    components/callout,
-    components/skip-link,
-    components/theme-button,
-    components/title,
-    base/shame
-  " %}
+  {% render "styles.liquid",
+    inline: inline_styles,
+    partials: "
+      base/base,
+      base/helpers,
+      layout/header,
+      layout/footer,
+      layout/main,
+      layout/navigation,
+      components/abbr,
+      components/callout,
+      components/skip-link,
+      components/theme-button,
+      components/title,
+      base/shame
+    "
+  %}
 
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="{{ site.author }}"
-    href="{{ '/rss/index.xml' | prepend: site.url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site_author }}"
+    href="{{ '/rss/index.xml' | prepend: site_url }}" />
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/assets/images/favicon.jpg">
@@ -52,20 +76,20 @@ http://ogp.me/ns/article#">
   <link rel="manifest" href="/manifest.json">
 
   <!-- Open Graph data -->
-  <meta property="og:title" content="{{ title | default: site.author }}" />
+  <meta property="og:title" content="{{ title }}" />
   <meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}" />
   <meta property="og:url" content="{{ page_url }}" />
-  <meta property="og:description" content="{{ page_description | emoji_to_text | escape }}" />
+  <meta property="og:description" content="{{ page_description }}" />
   <meta property="og:site_name" content="kittygiraudel.com" />
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@KittyGiraudel">
-  <meta name="twitter:description" content="{{ page_description | emoji_to_text | escape }}">
+  <meta name="twitter:description" content="{{ page_description }}">
   <meta name="twitter:domain" content="kittygiraudel.com">
   <meta name="twitter:image" content="https://kittygiraudel.com/assets/images/favicon-192.jpg">
   <meta name="twitter:site" content="@KittyGiraudel">
-  <meta name="twitter:title" content="{{ title | default: site.author }}">
+  <meta name="twitter:title" content="{{ title }}">
   
-  {% include "script.liquid", partials: "theme" %}
+  {% render "script.liquid", partials: "theme", inline: inline_scripts %}
 </head>

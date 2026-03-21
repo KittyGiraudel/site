@@ -1,3 +1,14 @@
+{% comment %}
+  Required:
+  - collection: The collection object
+  - page: The page object
+  Optional:
+  - label: The label for the navigation
+{% endcomment %}
+ 
+{% ensure collection, "Required value 'collection' is missing in collection_navigation.liquid" %}
+{% ensure page, "Required value 'page' is missing in collection_navigation.liquid" %}
+
 {% assign label = label | default: 'entry' %}
 
 {% if collection %}

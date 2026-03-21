@@ -2,14 +2,17 @@
 layout: default
 ---
 
-{% include "styles.liquid", partials: "
-  components/title,
-  components/figure,
-  components/code,
-  components/tags,
-  components/tile,
-  pages/project
-" %}
+{% render "styles.liquid",
+  inline: site.configuration.inline_styles,
+  partials: "
+    components/title,
+    components/figure,
+    components/code,
+    components/tags,
+    components/tile,
+    pages/project
+  "
+%}
 
 {% assign project = projects | where: "name", project_name | first %}
 
@@ -22,7 +25,7 @@ layout: default
 
       {% if project.tags %}
         <div class="Project__tags">
-          {% include "tags.liquid", tags: project.tags %}
+          {% render "tags.liquid", tags: project.tags %}
         </div>
       {% endif %}
     {% endif %}

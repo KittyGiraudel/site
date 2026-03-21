@@ -1,3 +1,18 @@
+{% comment %}
+  Required:
+  - primary: The primary text of the tile
+  - secondary: The secondary text of the tile
+  - link_url: The URL of the link
+  - link_label: The label of the link
+  Optional:
+  - primary_lang: The language of the primary text
+{% endcomment %}
+
+{% ensure primary, "Required value 'primary' is missing in tile.liquid" %}
+{% ensure secondary, "Required value 'secondary' is missing in tile.liquid" %}
+{% ensure link_url, "Required value 'link_url' is missing in tile.liquid" %}
+{% ensure link_label, "Required value 'link_label' is missing in tile.liquid" %}
+
 <div class="Tile">
   <p class="Tile__primary" {% if primary_lang and primary_lang != 'en' %}lang="{{ primary_lang }}"{% endif %}>{{ primary }}</p>
   <p class="Tile__secondary">{{ secondary }}</p>
