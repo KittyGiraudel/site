@@ -4,7 +4,8 @@ import { XMLParser } from 'fast-xml-parser'
 import { getSiteUrl, readText } from './helpers/site-paths.mjs'
 
 test('RSS feed is valid Atom with correct URLs', async () => {
-  const [xml, siteUrl] = await Promise.all([readText('rss/index.xml'), getSiteUrl()])
+  const xml = await readText('rss/index.xml')
+  const siteUrl = getSiteUrl()
 
   const parser = new XMLParser({ ignoreAttributes: false })
   const doc = parser.parse(xml)
@@ -34,11 +35,7 @@ test('RSS feed is valid Atom with correct URLs', async () => {
 
   const altLink = linkByRel.get('alternate')
   assert.ok(altLink, 'RSS feed should have an alternate HTML <link>')
-  assert.equal(
-    altLink['@_href'],
-    site.origin,
-    'alternate HTML link href should match site URL',
-  )
+  assert.equal(altLink['@_href'], site.origin, 'alternate HTML link href should match site URL')
 
   const entries = Array.isArray(doc.feed.entry) ? doc.feed.entry : [doc.feed.entry]
   assert.ok(entries.length > 0, 'RSS feed should contain at least one <entry>')
@@ -77,10 +74,7 @@ test('RSS feed is valid Atom with correct URLs', async () => {
     if (isInternal) {
       // Non-external entries: have HTML content and alternate markdown link
       assert.ok(entry.content, 'internal entry should have <content>')
-      assert.ok(
-        hasMarkdownAlternate,
-        'internal entry should have an alternate markdown <link>',
-      )
+      assert.ok(hasMarkdownAlternate, 'internal entry should have an alternate markdown <link>')
     } else {
       // External entries: no HTML content and no alternate markdown link
       assert.ok(!entry.content, 'external entry should not have <content>')
@@ -90,5 +84,4 @@ test('RSS feed is valid Atom with correct URLs', async () => {
       )
     }
   }
-}
-)
+})

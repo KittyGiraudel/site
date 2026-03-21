@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import siteData from '../../_data/site.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(__dirname, '..', '..')
@@ -18,10 +19,7 @@ export async function readJson(relativePath) {
   return JSON.parse(text)
 }
 
-export async function getSiteUrl() {
-  const pkgRaw = await readFile(path.join(repoRoot, 'package.json'), 'utf8')
-  const pkg = JSON.parse(pkgRaw)
-  const homepage = typeof pkg.homepage === 'string' ? pkg.homepage : 'https://kittygiraudel.com'
-  return homepage.replace(/\/+$/, '')
+/** Canonical site origin (matches `_data/site.js` `url`, no trailing slash). */
+export function getSiteUrl() {
+  return siteData.url.replace(/\/+$/, '')
 }
-

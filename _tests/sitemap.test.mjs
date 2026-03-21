@@ -4,7 +4,8 @@ import { XMLParser } from 'fast-xml-parser'
 import { getSiteUrl, readText } from './helpers/site-paths.mjs'
 
 test('sitemap.xml is valid and contains absolute URLs', async () => {
-  const [xml, siteUrl] = await Promise.all([readText('sitemap.xml'), getSiteUrl()])
+  const xml = await readText('sitemap.xml')
+  const siteUrl = getSiteUrl()
 
   const parser = new XMLParser({ ignoreAttributes: false })
   const doc = parser.parse(xml)
@@ -28,28 +29,29 @@ test('sitemap.xml is valid and contains absolute URLs', async () => {
     assert.equal(url.origin, site.origin, 'sitemap URL should use the correct site domain')
 
     if (pathname !== '/blog/search/data.json') {
-      assert.ok(
-        pathname.endsWith('/'),
-        `sitemap URL path should use a trailing slash: ${pathname}`,
-      )
+      assert.ok(pathname.endsWith('/'), `sitemap URL path should use a trailing slash: ${pathname}`)
     }
   }
 
-  const expectedPaths = ['/', '/blog/', '/projects/', '/snippets/', '/talks/', '/stats/', '/resume/', '/about/', '/accessibility-statement/']
+  const expectedPaths = [
+    '/',
+    '/blog/',
+    '/projects/',
+    '/snippets/',
+    '/talks/',
+    '/stats/',
+    '/resume/',
+    '/about/',
+    '/accessibility-statement/',
+  ]
   for (const path of expectedPaths) {
     const expected = new URL(path, site.origin).toString()
-    assert.ok(
-      locs.includes(expected),
-      `sitemap should include ${expected}`,
-    )
+    assert.ok(locs.includes(expected), `sitemap should include ${expected}`)
   }
 
   const forbiddenPaths = ['/blog/index-markdown/', '/README.md', '/404.html']
   for (const path of forbiddenPaths) {
     const forbidden = new URL(path, site.origin).toString()
-    assert.ok(
-      !locs.includes(forbidden),
-      `sitemap should not include ${forbidden}`,
-    )
+    assert.ok(!locs.includes(forbidden), `sitemap should not include ${forbidden}`)
   }
 })
