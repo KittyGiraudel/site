@@ -157,7 +157,7 @@ test('page head: home', async () => {
       'Transfeminine web engineer and engineering leader based in Berlin, focused on accessibility, diversity and inclusion.',
     author: siteAuthor,
     ogType: 'website',
-    keywords: 'author,speaker,developer,accessibility,diversity,non-binary',
+    keywords: 'author,speaker,developer,accessibility,diversity,trans',
     markdownAlternate: false,
   })
 })

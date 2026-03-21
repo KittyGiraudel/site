@@ -25,14 +25,10 @@ test('stats page renders metrics and chart data', async () => {
   )
 
   const hasStatsBootstrap = /window\.__STATS_YEARS__\s*=\s*\[/.test(html)
-  assert.ok(
-    hasStatsBootstrap,
-    'stats page should bootstrap window.__STATS_YEARS__ data for charts',
-  )
+  assert.ok(hasStatsBootstrap, 'stats page should bootstrap window.__STATS_YEARS__ data for charts')
 
   assert.ok(
-    /year\s*:/.test(html),
+    /"year"\s*:/.test(html),
     'window.__STATS_YEARS__ data should contain at least one year entry',
   )
-}
-)
+})
