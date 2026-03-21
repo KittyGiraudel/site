@@ -5,7 +5,7 @@
 }
 
 .ha:is(:focus-within, :hover) {
-	opacity: 1;
+  opacity: 1;
 }
 
 h2 + .ha {
@@ -31,7 +31,7 @@ h3 + .ha {
   -webkit-user-select: none; /* 1 */
   user-select: none; /* 1 */
 }
- 
+
 @supports (anchor-name: none) {
   .ha {
     left: anchor(left);

@@ -88,9 +88,11 @@
 }
 
 .Footnotes__list-item:target::before {
-  content: '';
+  content: "";
 }
 
 @keyframes fade-out {
-  to   { opacity: 0 }
+  to {
+    opacity: 0;
+  }
 }

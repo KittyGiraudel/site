@@ -45,7 +45,7 @@
 }
 
 .Callout--warning::before {
-  content: '!';
+  content: "!";
   color: light-dark(#f97316, #eab308);
   transform: translate(-10%, 69%) rotate(-20deg);
 }

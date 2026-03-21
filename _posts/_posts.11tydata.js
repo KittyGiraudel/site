@@ -15,4 +15,3 @@ export default {
     return `/${year}/${month}/${day}/${data.page.fileSlug}/`
   },
 }
-
