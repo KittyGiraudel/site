@@ -45,22 +45,7 @@ layout: default
   {% footnotes page %}
 </article>
 
-<script src="https://giscus.app/client.js"
-        data-repo="kittygiraudel/site"
-        data-repo-id="MDEwOlJlcG9zaXRvcnk4MjUzNjQ0"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOAH3wzM4ChZC4"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
+<div class="giscus" id="giscus-holder" aria-label="Comments"></div>
 
 {% include "collection_navigation.liquid",
 page: page,
@@ -70,6 +55,6 @@ label: "post"
 
 {% include "script.liquid", partials: "utilities, post" %}
 
-{%  if site.environment != "production" %}
+{% if site.environment != "production" %}
   {% include "script.liquid", partials: "post-shortcuts" %}
 {% endif %}
