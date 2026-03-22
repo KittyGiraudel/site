@@ -15,7 +15,7 @@ Here are the stats in case you’re curious: <strong>{{ stats.postCount }}</stro
 
 ## Aggregating data
 
-I initially had a look at the [eleventy-plugin-post-stats](https://github.com/johnwargo/eleventy-plugin-post-stats) package. It’s well put together, but I didn’t like that it relies on post tags to collect data. That means you need a specific tag that is used by *all* posts, like `post` or something. I do not have that. It would have been easy to add of course, but I didn’t like having to keep a tag for data collection’s sake, because that meant having to filter it out in the frontend to avoid rendering it.
+I initially had a look at the [eleventy-plugin-post-stats](https://github.com/johnwargo/eleventy-plugin-post-stats) package. It’s well put together, but I didn’t like that it relies on post tags to collect data. That means you need a specific tag that is used by _all_ posts, like `post` or something. I do not have that. It would have been easy to add of course, but I didn’t like having to keep a tag for data collection’s sake, because that meant having to filter it out in the frontend to avoid rendering it.
 
 Conceptually, it was on the money though: have an [Eleventy plugin](https://www.11ty.dev/docs/plugins/) that pulls all posts, computes a bunch of data, and exposes it back as a collection to make it consumable in Liquid pages.
 
@@ -85,7 +85,9 @@ for (const post of posts) {
     const raw = fs.readFileSync(post.inputPath, 'utf8')
     body = stripFrontMatter(raw)
   } catch {
-    console.warn(`Could not strip out the YAML front-matter for ${post.inputPath}`)
+    console.warn(
+      `Could not strip out the YAML front-matter for ${post.inputPath}`,
+    )
     continue
   }
 
@@ -127,7 +129,9 @@ function getCachedContentStats(post) {
     const raw = fs.readFileSync(inputPath, 'utf8')
     body = stripFrontMatter(raw)
   } catch {
-    console.warn(`Could not strip out the YAML front-matter for ${post.inputPath}`)
+    console.warn(
+      `Could not strip out the YAML front-matter for ${post.inputPath}`,
+    )
     return null
   }
 
@@ -173,17 +177,22 @@ permalink: /stats/
 ```
 
 {% if stats.years and stats.years.size > 0 %}
+
 ## Displaying graphs
 
 For funsies, I thought I’d add some data visualisation to my stats page. First, we need to dump some data into a global variable so our script can read it. I made the plugin return an array of years, each year with its own discrete stats. Then we can use a loop to populate a JavaScript variable.
 
 {% raw %}
+
 ```js
 window.__STATS_YEARS__ = {{ stats.years | json }};
 ```
+
 {% endraw %}
 
-Ultimately {% footnoteref "rendered-script" "Fun fact: This code block showcasing the <code>window.__STATS_YEARS__</code> is an actual <code>script</code> tag with <code>display: block</code> — so meta. It’s the data source used by the visualization in this article. Inspect it in your browser!" %}it spits this out{% endfootnoteref %}: 
+{% assign footnote_rendered_script = "Fun fact: This code block showcasing the <code>window.__STATS_YEARS__</code> is an actual <code>script</code> tag with <code>display: block</code> — so meta. It’s the data source used by the visualization in this article. Inspect it in your browser!" %}
+
+Ultimately {% footnoteref "rendered-script" footnote_rendered_script %}it spits this out{% endfootnoteref %}:
 
 <pre class="language-js"><code><script style="display:block">window.__STATS_YEARS__={{ stats.years | json }};</script></code></pre>
 

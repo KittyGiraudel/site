@@ -8,7 +8,9 @@ tags:
   - Liquid
 ---
 
-After having [moved from Jekyll to Eleventy](/2020/11/30/from-jekyll-to-11ty/), I realised I could extend Liquid in fancy ways to make some things a little easier (or down right possible). In this article, I’d like to share how I built a tiny footnotes plugin with {% footnoteref "liquid" "I personally use Liquid at the time of writing, but this implementation should be relatively similar with Nunjucks, or even some other templating language." %}Liquid{% endfootnoteref %}. If you are not interested in how the sausage is made and just want to use the code, check [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/eleventy-plugin-footnotes) for usage instructions.
+{% assign footnote_liquid = "I personally use Liquid at the time of writing, but this implementation should be relatively similar with Nunjucks, or even some other templating language." %}
+
+After having [moved from Jekyll to Eleventy](/2020/11/30/from-jekyll-to-11ty/), I realised I could extend Liquid in fancy ways to make some things a little easier (or down right possible). In this article, I’d like to share how I built a tiny footnotes plugin with {% footnoteref "liquid" footnote_liquid %}Liquid{% endfootnoteref %}. If you are not interested in how the sausage is made and just want to use the code, check [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/eleventy-plugin-footnotes) for usage instructions.
 
 {% callout %}
 Nicolas Hoizey pointed out on Twitter that [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) does essentially the same thing with less integration and using Markdown syntax instead of Liquid.
@@ -115,7 +117,7 @@ From there, we can render the necessary markup to output the footnotes using a f
   <ol>
     {% for footnote in footnotes %}
     <li id="{{ footnote.id }}-note">
-      {{ footnote.description | markdown }}
+      {{ footnote.description }}
       <a
         href="#{{ footnote.id }}-ref"
         aria-label="Back to reference {{ forloop.index }}"

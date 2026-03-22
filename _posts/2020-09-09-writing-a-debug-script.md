@@ -193,13 +193,13 @@ Getting the amount of commits between the current branch and the main branch (in
 ```js
 const mainBranch = 'develop'
 const difference = Number(
-  exec(`git log --oneline ${branch} ^${mainBranch} | wc -l`)
+  exec(`git log --oneline ${branch} ^${mainBranch} | wc -l`),
 )
 const threshold = 10
 
 if (difference > threshold) {
   console.warn(
-    `The local branch (${branch}) is over ${threshold} commits apart (${difference}) from ${mainBranch}; consider rebasing.`
+    `The local branch (${branch}) is over ${threshold} commits apart (${difference}) from ${mainBranch}; consider rebasing.`,
   )
 }
 ```

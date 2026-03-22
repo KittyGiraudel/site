@@ -20,7 +20,7 @@
 
 <section class="Showcase" aria-labelledby="{{ id }}">
   <h2 class="Showcase__title {% if hidden_title %}visually-hidden{% endif %}" id="{{ id }}">{{ title }}</h2>
-  <p class="Showcase__copy">{{ copy | markdown }}</p>
+  <div class="Showcase__copy">{% markdown %}{{ copy }}{% endmarkdown %}</div>
 
   <div class="Showcase__container">
     {% for item in items %}

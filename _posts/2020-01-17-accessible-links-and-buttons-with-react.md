@@ -68,7 +68,14 @@ To achieve that, we can render a small icon with an associated label stating “
 ```html
 <a href="/about" class="link">
   Learn more about us
-  <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" ><path d="M22 11L10.5 22.5M10.44 11H22v11.56" fill="none"></path></svg>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+  >
+    <path d="M22 11L10.5 22.5M10.44 11H22v11.56" fill="none"></path>
+  </svg>
   <span class="sr-only">(opens in new tab)</span>
 </a>
 ```
@@ -115,9 +122,7 @@ To make sure never to forget these attributes, we can bake this logic in our `Ac
 ```jsx
 const Action = props => {
   const Component = props.to ? Link : props.href ? 'a' : 'button'
-  const rel = props.target === '_blank'
-    ? 'noopener noreferrer'
-    : undefined
+  const rel = props.target === '_blank' ? 'noopener noreferrer' : undefined
 
   return (
     <Component {...props} rel={rel}>
@@ -176,7 +181,7 @@ const Action = props => {
   const type = Component === 'button' ? props.type || 'button' : undefined
   const className = [
     props.className,
-    props.theme === 'LINK' ? 'link' : 'button'
+    props.theme === 'LINK' ? 'link' : 'button',
   ]
     .filter(Boolean)
     .join(' ')
@@ -194,7 +199,9 @@ Then we can render a button, styled as a link:
 
 ```jsx
 const MyComponent = props => (
-  <Action theme='LINK' type='button' onClick={toggle}>Toggle</Action>
+  <Action theme='LINK' type='button' onClick={toggle}>
+    Toggle
+  </Action>
 )
 ```
 
@@ -202,7 +209,9 @@ Or a link, styled as a button:
 
 ```jsx
 const MyComponent = props => (
-  <Action theme='BUTTON' href='/about'>Learn more about us</Action>
+  <Action theme='BUTTON' href='/about'>
+    Learn more about us
+  </Action>
 )
 ```
 

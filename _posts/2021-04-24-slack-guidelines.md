@@ -30,9 +30,11 @@ In many organizations, Slack is the primary communication tool, even supplanting
 
 This is why it is important to fill your Slack profile.
 
+{% assign footnote_pronouns = "The pronouns field is not part of the default info and needs to be added via a Slack administrator. It is a great way to normalize the use of neo-pronouns and help non-binary people feel more included." %}
+
 - Name: Your full name, usually matching the company’s email address for convenience (e.g. Kitty Giraudel).
 - Display name: Your usual name or full name, used as Slack handle (e.g. Kitty).
-- Pronouns: {% footnoteref "pronouns" "The pronouns field is not part of the default info and needs to be added via a Slack administrator. It is a great way to normalize the use of neo-pronouns and help non-binary people feel more included." %}Your pronouns{% endfootnoteref %} (e.g. they/them).
+- Pronouns: {% footnoteref "pronouns" footnote_pronouns %}Your pronouns{% endfootnoteref %} (e.g. they/them).
 - Profile photo: Anything that’s not the default Slack avatar, really.
 - Profession: Your role or team. In an organization with hundreds of thousands of people, it can be difficult to figure out who does what. Adding one’s profession to the profile really helps with perspective.
 

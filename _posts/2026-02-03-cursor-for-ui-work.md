@@ -33,7 +33,9 @@ After exploring all 7 files, Cursor followed up with a few interesting questions
 - What kind of UI would you like for Par Odin? → A small browser-based UI (single page web app) that I can open in a browser.
 - If we build a browser UI, do you have a preference for the tech stack? → React + Vite (modern SPA).
 
-After that, it worked on it for a few minutes and spit out a relatively clean {% footnoteref "dashboard" "I insist on the word “dashboard” here. It looked <em>very</em> dashboard-y, with a 2-column layout, sections, tags, badges… Very far from a game interface." %}dashboard{% endfootnoteref %} for the game. It took care of the Vite setup, the `package.json` script, the React implementation, and created the necessary component with all the core logic wiring the existing solver.
+{% assign footnote_dashboard = "I insist on the word “dashboard” here. It looked <em>very</em> dashboard-y, with a 2-column layout, sections, tags, badges… Very far from a game interface." %}
+
+After that, it worked on it for a few minutes and spit out a relatively clean {% footnoteref "dashboard" footnote_dashboard %}dashboard{% endfootnoteref %} for the game. It took care of the Vite setup, the `package.json` script, the React implementation, and created the necessary component with all the core logic wiring the existing solver.
 
 It’s worth pointing out that it simply didn’t work to begin with. I had to ask it whether it even attempted to run it, because there were some TypeScript errors, and the browser couldn’t load anything. But after being prompted, it did fix the issues.
 

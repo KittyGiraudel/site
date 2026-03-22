@@ -1,6 +1,6 @@
 ---
-title: "Gorillas’ nav: a case study"
-description: "A short case study on the Gorillas website navigation: accessibility, behaviour and design, from disclosure widget to skip link and language switcher."
+title: 'Gorillas’ nav: a case study'
+description: 'A short case study on the Gorillas website navigation: accessibility, behaviour and design, from disclosure widget to skip link and language switcher.'
 tags:
   - UI
   - UX
@@ -74,13 +74,13 @@ That’s why when JavaScript is available, we replace them with a `<button>` (wi
 Without getting too deep into technical details (especially because our implementation is in React), we use something along these lines to automatically close the menu when clicking outside of it or tabbing out of it.
 
 ```js
-const menu = document.querySelector("#menu");
+const menu = document.querySelector('#menu')
 const handleFocusChange = (event) => {
-  if (isOpen && !event.composedPath().includes(menu)) setIsOpen(false);
-};
+  if (isOpen && !event.composedPath().includes(menu)) setIsOpen(false)
+}
 
-window.addEventListener("click", handleFocusChange);
-window.addEventListener("focusin", handleFocusChange);
+window.addEventListener('click', handleFocusChange)
+window.addEventListener('focusin', handleFocusChange)
 ```
 
 ## Preserving a landmark

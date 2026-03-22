@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 17: Anxiety'
+title: "A11yAdvent Day 17: Anxiety"
 description: A11yAdvent entry on anxiety and the web
 tags:
   - Accessibility
@@ -15,6 +15,8 @@ Ultimately, it is difficult to figure out what people will feel uncomfortable wi
 
 - Focus on clarity. The more straightforward the interface and its content, the less stressful it is. Avoid double-negatives and reversed checkboxes and be consistent with phrases and terminology. Stay away from scaremongering like dramatising non-critical actions (such as not wanting to benefit from a promotion), or shaming users for performing something (such as opting out from a newsletter).
 
-- Provide reassurance. Any sensitive action should be marked as such (like placing an order, or deleting an entry), and it should be clear whether {% footnoteref "amazong_review" "One thing Amazon does very well by the way — despite being an awful company that we should all use less. At every step of the checkout process, it is clearly indicated next to the confirmation button whether there will be an opportunity to review the order one more time before placing it. "%}there will be an opportunity to review before confirming{% endfootnoteref %}. The ability to undo actions is also helpful to know that mistakes can be made and recovered from.
+{% assign footnote_amazon_review = "One thing Amazon does very well by the way — despite being an awful company that we should all use less. At every step of the checkout process, it is clearly indicated next to the confirmation button whether there will be an opportunity to review the order one more time before placing it." %}
+
+- Provide reassurance. Any sensitive action should be marked as such (like placing an order, or deleting an entry), and it should be clear whether {% footnoteref "amazon_review" footnote_amazon_review %}there will be an opportunity to review before confirming{% endfootnoteref %}. The ability to undo actions is also helpful to know that mistakes can be made and recovered from.
 
 Ultimately, a lot of the work in that regard is about deeply caring for users and staying away from aggressive marketing tactics which are heavily relying on inducing anxiety. As a further read, I highly recommend reading [A web of Anxiety](https://developer.paciellogroup.com/blog/2018/08/a-web-of-anxiety-accessibility-for-people-with-anxiety-and-panic-disorders-part-1/) by David Swallow from the Pacellio Group which goes more in details.

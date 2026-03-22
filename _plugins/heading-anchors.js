@@ -10,26 +10,18 @@ function injectHeadingAnchors(content, outputPath) {
 
   const $ = cheerio.load(content, { decodeEntities: false }, true)
 
-  const $articleBody = $('article.Post div[itemprop="articleBody"]').first()
-  if (!$articleBody.length) return $.html()
-
   let anchorIndex = 0
 
-  $articleBody.find(':is(h2, h3, h4)[id]:not([data-ha-exclude])').each((_, el) => {
+  $('.Post :is(h2, h3, h4)[id]:not([data-ha-exclude])').each((_, el) => {
     const $heading = $(el)
-    const id = $heading.attr('id')
-
-    // Prevent duplicates in case Eleventy runs transforms more than once.
-    if ($heading.find('.ha-placeholder').length || $heading.find('a.ha').length) return
-
-    const headingText = $heading.text().trim()
     const anchorName = `--ha_0_${anchorIndex++}`
 
     const placeholder = $(
       `<span class="ha-placeholder" aria-hidden="true" style="anchor-name: ${anchorName};">§</span>`,
     )
-    const anchor = $(`<a class="ha" href="#${id}" style="position-anchor: ${anchorName};">
-      <span class="visually-hidden">Jump to section titled: ${headingText}</span>
+    const anchor =
+      $(`<a class="ha" href="#${$heading.attr('id')}" style="position-anchor: ${anchorName};">
+      <span class="visually-hidden">Jump to section titled: ${$heading.text().trim()}</span>
       <span aria-hidden="true">§</span>
     </a>`)
 

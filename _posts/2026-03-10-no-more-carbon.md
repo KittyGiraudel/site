@@ -6,7 +6,7 @@ tags:
   - UX
 ---
 
-In 2013, a fellow web developer recommended putting ads on my website to make some money. I was originally hesitant, not wanting to be too intrusive to my audience. They suggested looking into [Carbon Ads](https://www.carbonads.net/), an ad network dedicated to the tech industry. It seemed alright, so I enrolled into their program. 
+In 2013, a fellow web developer recommended putting ads on my website to make some money. I was originally hesitant, not wanting to be too intrusive to my audience. They suggested looking into [Carbon Ads](https://www.carbonads.net/), an ad network dedicated to the tech industry. It seemed alright, so I enrolled into their program.
 
 Fastforward today, and I’ve finally removed the ads from this website. This article is a summary of my thought process (including data visualization) and the benefits from this decision.
 
@@ -22,7 +22,7 @@ Then, I asked Cursor to create a little dashboard for me to visualize the data �
 
 {% include "demos/carbon/index.liquid" %}
 
-Summary: $670 over 8 years (excluding 2026). That’s about $80 per year, or $7 per month. And that’s because my earlier years were significantly more profitable (more on that later). Last year was closer to $2 per month. I’ve served *millions* of ads over the last decade, and I made just about enough for an outdated mid-range smartphone.
+Summary: $670 over 8 years (excluding 2026). That’s about $80 per year, or $7 per month. And that’s because my earlier years were significantly more profitable (more on that later). Last year was closer to $2 per month. I’ve served _millions_ of ads over the last decade, and I made just about enough for an outdated mid-range smartphone.
 
 ### Missing data
 
@@ -34,20 +34,24 @@ I wanted to get more accurate data for that missing period, but Carbon pays via 
 
 To me, the main takeaways are that:
 
+{% assign footnote_sitepoint_fare = "It is mind-boggling to me that I made more money by selling <em>a single article</em> to SitePoint than I did from Carbon in my 3 most profitable years <em>combined</em>. I wrote 40 articles for SitePoint in 2014, and I could typically come up with a full article in a couple of hours." %}
+
 - 2021 and 2022 paid well, with about $150 per year including a $24 payout in October 2022. I also wrote 22 articles in [2021](/2021/12/27/2021-in-review/), 20 in [2022](/2022/12/28/2022-in-review/), so that drove traffic, which led to higher payouts.
-- The last 3 years have been very under-performing, progressively getting worse: $100 in the last 3 years, $60 in the last 2, $25 made in the last 12 months. 
-- I’ve authored almost 100 articles from 2020 to 2022 and made $375. For context, this is a little over {% footnoteref "sitepoint-fare" "It is mind-boggling to me that I made more money by selling <em>a single article</em> to SitePoint than I did from Carbon in my 3 most profitable years <em>combined</em>. I wrote 40 articles for SitePoint in 2014, and I could typically come up with a full article in a couple of hours." %}what SitePoint used to pay me *per article*{% endfootnoteref %} as one of their primary CSS/Sass authors back in 2015.
+- The last 3 years have been very under-performing, progressively getting worse: $100 in the last 3 years, $60 in the last 2, $25 made in the last 12 months.
+- I’ve authored almost 100 articles from 2020 to 2022 and made $375. For context, this is a little over {% footnoteref "sitepoint-fare" footnote_sitepoint_fare %}what SitePoint used to pay me _per article_{% endfootnoteref %} as one of their primary CSS/Sass authors back in 2015.
 
 To be clear, it’s not the service that has changed: it’s me. I’ve gotten older, less interested in technology, got into management, wrote less technical pieces, had less traffic on this website and ultimately earned less money from ads. The system works as expected, this website is just low traffic.
 
-Speaking of traffic, it’s hard to quantify because I removed Google Analytics in 2021 because I simply didn’t care. My Netlify dashboard shows {% footnoteref "data-oddity" "I also do not believe these numbers, because it recorded 817,924 page views for <a href='/2020/02/03/lessons-from-building-n26-for-web/'>Lessons from building “N26 for Web”</a> for that period. I’ve noticed that this article has had an abnormal amount of traffic for years now, but to this day I still cannot figure out why. Google searches for <code>link:&lt;url&gt;</code> yield nothing either. That means if we remove that outlier, that’s half a million page views per month. Almost nothing." %}1,334,792 page views by 34,532 unique visitors{% endfootnoteref %} over the last 30 days. It’s not nothing, but it’s certainly not a lot. And with all major search engines now scrapping content for their AI summaries, there is even less traffic flowing through little websites like this one.
+{% assign footnote_data_oddity = "I also do not believe these numbers, because it recorded 817,924 page views for <a href='/2020/02/03/lessons-from-building-n26-for-web/'>Lessons from building “N26 for Web”</a> for that period. I’ve noticed that this article has had an abnormal amount of traffic for years now, but to this day I still cannot figure out why. Google searches for <code>link:&lt;url&gt;</code> yield nothing either. That means if we remove that outlier, that’s half a million page views per month. Almost nothing." %}
+
+Speaking of traffic, it’s hard to quantify because I removed Google Analytics in 2021 because I simply didn’t care. My Netlify dashboard shows {% footnoteref "data-oddity" footnote_data_oddity %}1,334,792 page views by 34,532 unique visitors{% endfootnoteref %} over the last 30 days. It’s not nothing, but it’s certainly not a lot. And with all major search engines now scrapping content for their AI summaries, there is even less traffic flowing through little websites like this one.
 
 > Free money is free money, why don’t you just keep serving ads?  
 > — Someone who could be asking this legitimate question.
 
-I never *loved* running ads on my personal website. I’ve done it at a time where I earned less money and ads were more profitable based on my traffic and audience. It was meaningful to me when I made $15–20 in ads every month, because it felt like it paid for my coffee or something — and it encouraged me to write more.
+I never _loved_ running ads on my personal website. I’ve done it at a time where I earned less money and ads were more profitable based on my traffic and audience. It was meaningful to me when I made $15–20 in ads every month, because it felt like it paid for my coffee or something — and it encouraged me to write more.
 
-I’ve held senior engineering positions for the last 7 years or so, where the monthly income vastly overshadows whatever meager earnings Carbon would pay for serving ads. And the vast disparity between both sources of income became only bigger with years gone by. 
+I’ve held senior engineering positions for the last 7 years or so, where the monthly income vastly overshadows whatever meager earnings Carbon would pay for serving ads. And the vast disparity between both sources of income became only bigger with years gone by.
 
 I’m at a point where ads basically don’t pay, but I still have to deal with them being a thing: layout, performance, etc. Which leads us to our next section.
 
@@ -57,7 +61,7 @@ I’m at a point where ads basically don’t pay, but I still have to deal with 
 
 **Maintenance:** On my end, it makes the code quite a bit simpler. I recently wrote how I [injected the ad inside Liquid content](/2026/02/27/injecting-element-in-liquid-content/) — which is no longer a thing. I also had to place the ad widget and the table of contents side-by-side at the top of articles, which was visually heavy — no more.
 
-**Performance:** The page should also be a tad faster, since we no longer load the JavaScript bundle from Carbon, which *had* to be hosted on their CDN as per their rendering guidelines. It was lightweight and fast, but the fastest JavaScript bundle is the one you don’t load.
+**Performance:** The page should also be a tad faster, since we no longer load the JavaScript bundle from Carbon, which _had_ to be hosted on their CDN as per their rendering guidelines. It was lightweight and fast, but the fastest JavaScript bundle is the one you don’t load.
 
 ## Wrapping up
 

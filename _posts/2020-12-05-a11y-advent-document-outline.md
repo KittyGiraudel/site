@@ -1,13 +1,13 @@
 ---
-title: 'A11yAdvent Day 5: Document Outline'
+title: "A11yAdvent Day 5: Document Outline"
 description: A11yAdvent entry on the Document Outline
 tags:
   - Accessibility
 ---
 
-{% assign web_aim_survey = "According to [a WebAim survey from 2014](https://webaim.org/projects/screenreadersurvey5/#finding), two-thirds of screen-reader users scan headings as the first step of trying to find information on a long web page." | markdown %}
+{% assign footnote_web_aim_survey = "According to <a href='https://webaim.org/projects/screenreadersurvey5/#finding'>a WebAim survey from 2014</a>, two-thirds of screen-reader users scan headings as the first step of trying to find information on a long web page." %}
 
-Ah, the mythical document outline! If you’re at least a little bit into HTML semantics, you might have heard of the phrase once or twice. Broadly speaking, the document outline is the content structure defined by the headings in a page. This structure is important as {% footnoteref "web_aim_survey" web_aim_survey %}heading navigation is one of the main ways for screen-reader users to browse a website{% endfootnoteref %}.
+Ah, the mythical document outline! If you’re at least a little bit into HTML semantics, you might have heard of the phrase once or twice. Broadly speaking, the document outline is the content structure defined by the headings in a page. This structure is important as {% footnoteref "web_aim_survey" footnote_web_aim_survey %}heading navigation is one of the main ways for screen-reader users to browse a website{% endfootnoteref %}.
 
 In this article for instance, the post title is a `<h1>` and then we have a bunch of `<h2>`. If any of these end up needing sub-sectioning, there would be `<h3>` and so on and so forth. The outline looks like this (as of writing):
 

@@ -111,7 +111,9 @@ Let’s see them in action:
 
 And:
 
-{% callout %}This is an informative callout. It is kind of an aside to the main content, not directly attached to it but also not irrelevant. It bears no particular semantics, although it could probably render an {% footnoteref "aside-element" "I have since decided to use the <code>&lt;aside&gt;</code> element for callouts. I think it is semantically appropriate, according to the <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/aside'>MDN page on this element</a>." %}`<aside>` element{% endfootnoteref %}.
+{% assign footnote_aside_element = "I have since decided to use the <code>&lt;aside&gt;</code> element for callouts. I think it is semantically appropriate, according to the <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/aside'>MDN page on this element</a>." %}
+
+{% callout %}This is an informative callout. It is kind of an aside to the main content, not directly attached to it but also not irrelevant. It bears no particular semantics, although it could probably render an {% footnoteref "aside-element" footnote_aside_element %}`<aside>` element{% endfootnoteref %}.
 {% endcallout %}
 
 They still do look similar! They bear the same pale blue background color, and the blue to pink gradient border. Speaking of which, for some reason it does not seem to be possible to render a gradient border using `border-image` with rounded corners. I have resorted to using [this solution from StackOverflow](https://stackoverflow.com/a/53037637):
@@ -180,7 +182,9 @@ I have had a love-hate relationship with heading anchors over the years. I’ve 
 
 ## Fleurons
 
-I am fascinated by obscure typographic features. One of my recent reads is [Shady Characters](https://shadycharacters.co.uk/) by Keith Houston {% footnoteref "emdash" "I understand the emdash has been co-opted by LLMs, and using it is discouraged to avoid looking like an AI, but the fact is I truly love the emdash — you will never take it away from me!" %}—{% endfootnoteref %} a fabulous walk through a dozen or so typographic characters, such as &, and #, and †.
+{% assign footnote_emdash = "I understand the emdash has been co-opted by LLMs, and using it is discouraged to avoid looking like an AI, but the fact is I truly love the emdash — you will never take it away from me!" %}
+
+I am fascinated by obscure typographic features. One of my recent reads is [Shady Characters](https://shadycharacters.co.uk/) by Keith Houston {% footnoteref "emdash" footnote_emdash %}—{% endfootnoteref %} a fabulous walk through a dozen or so typographic characters, such as &, and #, and †.
 
 The other day, I stumbled upon [this delightful website by Henry Desroches](https://henry.codes/writing/the-first-thing-i-did-last-year-was-run/). Just before the footer stands this gorgeous little guy: ❦. Would you just look at it? It turns out that _it_ has a name: the [fleuron](<https://en.wikipedia.org/wiki/Fleuron_(typography)>). Quoting Wikipedia:
 
@@ -229,7 +233,9 @@ h2 {
 
 ## Better ad placement
 
-{% footnoteref "no-more-ads" "I was serving ads at the time of writing. I am no longer doing that now." %}~~For some reason, I am still running ads on this website~~{% endfootnoteref %}. It’s not like I make a lot of money from it though. I’ve been with CarbonAds for over 10 years, and probably haven’t made more than a few hundred bucks from them in all that time. But still, it pays for the occasional cup of coffee, so it’s kind of nice I guess.
+{% assign footnote_no_more_ads = "I was serving ads at the time of writing. I am <a href='/2026/03/10/no-more-carbon/'>no longer doing that</a> now." %}
+
+{% footnoteref "no-more-ads" footnote_no_more_ads %}~~For some reason, I am still running ads on this website~~{% endfootnoteref %}. It’s not like I make a lot of money from it though. I’ve been with CarbonAds for over 10 years, and probably haven’t made more than a few hundred bucks from them in all that time. But still, it pays for the occasional cup of coffee, so it’s kind of nice I guess.
 
 Carbon requires the ad (which is ~330 &times; 114px) to be placed above the fold — for obvious reasons. I didn’t really know what to do with it, so I had placed it right below the title, centered. It didn’t look too great. Even worse, when running an ad-blocker (something I obviously also do), there would be this massive blank space under the page title for where the ad was supposed to show up. It would look awkward.
 

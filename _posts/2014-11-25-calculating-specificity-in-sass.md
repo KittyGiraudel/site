@@ -19,23 +19,23 @@ As any web developer who has to write CSS knows, specificity is both an importan
 
 ## What is Specificity?
 
-In short, specificity determines **how specific** a selector is. This might sound like a tautology, but the concept is simple: rules contained in a _more specific_ selector will have greater **weight** over rules contained in a _less specific_ selector. This plays a role in the **cascading** part of CSS, and ultimately determines which style rule (the one with the greatest weight) will be applied to an element. Specifically, specificity of a selector is the collective [multiplicity](https://en.wikipedia.org/wiki/Multiplicity_(mathematics)) of its simple selector types.
+In short, specificity determines **how specific** a selector is. This might sound like a tautology, but the concept is simple: rules contained in a _more specific_ selector will have greater **weight** over rules contained in a _less specific_ selector. This plays a role in the **cascading** part of CSS, and ultimately determines which style rule (the one with the greatest weight) will be applied to an element. Specifically, specificity of a selector is the collective [multiplicity](<https://en.wikipedia.org/wiki/Multiplicity_(mathematics)>) of its simple selector types.
 
 There are plenty of articles that further explain/simplify specificity:
 
-* W3C - [the Cascade and Specificity](https://www.w3.org/TR/CSS2/cascade.html#specificity) and [Calculating Specificity](https://www.w3.org/TR/css3-selectors/#specificity);
-* Smashing Mag - [CSS Specificity: Things You Should Know](https://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/);
-* CSS Tricks - [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/);
-* CSS Specificity illustrated on [cssspecificity.com](https://cssspecificity.com/);
-* Sitepoint - [Specificity](https://www.sitepoint.com/web-foundations/specificity/).
+- W3C - [the Cascade and Specificity](https://www.w3.org/TR/CSS2/cascade.html#specificity) and [Calculating Specificity](https://www.w3.org/TR/css3-selectors/#specificity);
+- Smashing Mag - [CSS Specificity: Things You Should Know](https://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/);
+- CSS Tricks - [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/);
+- CSS Specificity illustrated on [cssspecificity.com](https://cssspecificity.com/);
+- Sitepoint - [Specificity](https://www.sitepoint.com/web-foundations/specificity/).
 
 ## The Simplicity of Calculating Specificity
 
 The algorithm for calculating the specificity of a selector is surprisingly simple. A simple selector can fall into three types:
 
-* **Type A**: ID selectors;
-* **Type B**: class, attribute, and pseudo-class selectors;
-* **Type C**: element (type) and pseudo-element selectors.
+- **Type A**: ID selectors;
+- **Type B**: class, attribute, and pseudo-class selectors;
+- **Type C**: element (type) and pseudo-element selectors.
 
 Compound and complex selectors are composed of simple selectors. To calculate specificity, simply break apart your selector into simple selectors, and count the **occurances of each type**. For example:
 
@@ -54,8 +54,8 @@ Now that we have our basic algorithm, let’s dive right in to calculating speci
 
 First things first, let’s determine what our API is going to look like. The simpler, the better. I want two things:
 
-* A **function** that returns specificity as a type map or integer, given a selector (string), and…
-* A **mixin** that outputs both a type map and an integer value inside the generated CSS of the _current selector’s_ specificity.
+- A **function** that returns specificity as a type map or integer, given a selector (string), and…
+- A **mixin** that outputs both a type map and an integer value inside the generated CSS of the _current selector’s_ specificity.
 
 Great; our API will look like this, respectively:
 
@@ -96,7 +96,7 @@ You’ll notice that the map is in reverse order, and that’s because of our ir
 Next, according to the [W3C spec](https://www.w3.org/TR/css3-selectors/#specificity), `:not()` does _not_ count towards specificity, but the simple selector _inside_ the parentheses does count. We can grab that with some string manipulation:
 
 ```scss
-@if  {
+@if str-index($simple-selector, ':not(') == 1 {
   $simple-selector: str-slice($simple-selector, 6, -2);
 }
 ```
@@ -125,7 +125,7 @@ As a catch-all, if none of the type tokens matched, then the simple selector is 
 
   $simple-selector: str-replace-batch($simple-selector, '::', ':');
 
-  @if  {
+  @if str-index($simple-selector, ':not(') == 1 {
     $simple-selector: str-slice($simple-selector, 6, -2);
   }
 
@@ -177,12 +177,15 @@ Our job is simple, now. Multiply the multiplicity (frequency) of each type by an
   $exponent-map: (
     a: 2,
     b: 1,
-    c: 0
+    c: 0,
   );
   $specificity: 0;
 
   @each $specificity-type, $specificity-value in $specificity-map {
-    $specificity: $specificity + ($specificity-value * pow($base, map-get($exponent-map, $specificity-type)));
+    $specificity: $specificity + (
+      $specificity-value *
+      pow($base, map-get($exponent-map, $specificity-type))
+    );
   }
 
   @return $specificity;
@@ -193,13 +196,13 @@ Our job is simple, now. Multiply the multiplicity (frequency) of each type by an
 
 Thankfully, with Sass 3.4's selector functions, we can split a selector list comprised of complex and compound selectors into simple selectors. We’re going to be using two of these functions:
 
-* [`selector-parse($selector)`](https://sass-lang.com/documentation/Sass/Script/Functions.html#selector_parse-instance_method) to split a [selector list](https://dev.w3.org/csswg/selectors4/#selector-list) into a list of selectors;
-* [`simple-selectors($selector)`](https://sass-lang.com/documentation/Sass/Script/Functions.html#simple_selectors-instance_method) to split each compound/complex selector into a list of simple selectors.
+- [`selector-parse($selector)`](https://sass-lang.com/documentation/Sass/Script/Functions.html#selector_parse-instance_method) to split a [selector list](https://dev.w3.org/csswg/selectors4/#selector-list) into a list of selectors;
+- [`simple-selectors($selector)`](https://sass-lang.com/documentation/Sass/Script/Functions.html#simple_selectors-instance_method) to split each compound/complex selector into a list of simple selectors.
 
 Some points to note: I’m using a homemade `str-replace-batch` function to remove combinators, as these don’t count towards specificity:
 
 ```scss
-$initial-selector: str-replace-batch(#{$initial-selector},  ('+', '>', '~'));
+$initial-selector: str-replace-batch(#{$initial-selector}, ('+', '>', '~'));
 ```
 
 And more importantly, I’m keeping a running total of the multiplicity of each simple selector using a map:
@@ -208,7 +211,7 @@ And more importantly, I’m keeping a running total of the multiplicity of each 
 $selector-specificity-map: (
   a: 0,
   b: 0,
-  c: 0
+  c: 0,
 );
 ```
 
@@ -221,7 +224,6 @@ Then, I can just use my previously defined function `selector-type` to iterate t
   @if $specificity-type {
     $selector-specificity-map: map-merge(
       $selector-specificity-map,
-
       (
         #{$specificity-type}: map-get(
             $selector-specificity-map,
@@ -238,7 +240,7 @@ The rest of the function just returns the specificity map (or integer value, if 
 ```scss
 $specificities-map: map-merge(
   $specificities-map,
-   (specificity-value($selector-specificity-map): $selector-specificity-map)
+  (specificity-value($selector-specificity-map): $selector-specificity-map)
 );
 ```
 
@@ -246,7 +248,7 @@ Here’s the full function:
 
 ```scss
 @function specificity($initial-selector, $integer: false) {
-  $initial-selector: str-replace-batch(#{$initial-selector},  ('+', '>', '~'));
+  $initial-selector: str-replace-batch(#{$initial-selector}, ('+', '>', '~'));
   $selectors: selector-parse($initial-selector);
   $specificities-map: ();
 
@@ -255,7 +257,7 @@ Here’s the full function:
     $selector-specificity-map: (
       a: 0,
       b: 0,
-      c: 0
+      c: 0,
     );
 
     @each $simple-selectors in $selector {
@@ -269,7 +271,6 @@ Here’s the full function:
       @if $specificity-type {
         $selector-specificity-map: map-merge(
           $selector-specificity-map,
-
           (
             #{$specificity-type}: map-get(
                 $selector-specificity-map,
@@ -282,7 +283,7 @@ Here’s the full function:
 
     $specificities-map: map-merge(
       $specificities-map,
-       (specificity-value($selector-specificity-map): $selector-specificity-map)
+      (specificity-value($selector-specificity-map): $selector-specificity-map)
     );
   }
 

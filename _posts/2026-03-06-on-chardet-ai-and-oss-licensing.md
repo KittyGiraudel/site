@@ -8,7 +8,7 @@ tags:
 
 There is a concerning controversy happening in the [chardet](https://github.com/chardet/chardet) open-source library, which I believe people should be aware of.
 
-It concerns software licensing, the use of AI in the making of software, as well as general ethical and etiquette considerations when contributing to open source work. I tried my best to summarize the situation in this article. 
+It concerns software licensing, the use of AI in the making of software, as well as general ethical and etiquette considerations when contributing to open source work. I tried my best to summarize the situation in this article.
 
 ## Overview
 
@@ -44,7 +44,7 @@ The LGPL v2.1 (Lesser General Public License) is less common in the open-source 
 
 ### Main differences
 
-The main practical difference is *freedom* versus *reciprocity*. MIT gives total freedom to do whatever you want with the code, while LGPL ensures that any improvements to the library itself stay open-source, something the MIT license does not enforce. LGPL is more common in libraries where authors want improvements to stay open; MIT is popular in commercial ecosystems that value minimal friction.
+The main practical difference is _freedom_ versus _reciprocity_. MIT gives total freedom to do whatever you want with the code, while LGPL ensures that any improvements to the library itself stay open-source, something the MIT license does not enforce. LGPL is more common in libraries where authors want improvements to stay open; MIT is popular in commercial ecosystems that value minimal friction.
 
 This is why the chardet license change from LGPL to MIT is controversial: it removes the reciprocity requirement, making the library more attractive for commercial use but potentially undermining the original intent of keeping improvements open.
 
@@ -52,19 +52,21 @@ This is why the chardet license change from LGPL to MIT is controversial: it rem
 
 There are a lot of things to discuss, and one important point is whether the change of license was allowed in the first place. Can you just go from a copyleft to a permissive one? If yes, what is the point of the non-permissive license to start with?
 
-Mark, the original author, argues that maintainers do not have the right to relicense the project. He’s very explicit about this. And by all accounts, it seems he’s right: the LGPL license clearly requires that derivative works (or modifications) remain under the LGPL license. 
+Mark, the original author, argues that maintainers do not have the right to relicense the project. He’s very explicit about this. And by all accounts, it seems he’s right: the LGPL license clearly requires that derivative works (or modifications) remain under the LGPL license.
 
-On the other hand, Dan, the main maintainer and rewriter, claims that this version is a “ground-up […] rewrite” — the term {% footnoteref "clean-room" "To put it simply (and to the extent I understand it), the concept of “clean room” is when someone authors software based on specifications without access to an existing implementation or proprietary materials. It’s a way to reimplement something while avoiding legal issues." %}“clean room”{% endfootnoteref %} pops up a lot in the long GitHub issue. And because it’s supposedly a clean room rewrite, the license can be freely changed since it’s ultimately a different software.
+{% assign footnote_clean_room = "To put it simply (and to the extent I understand it), the concept of “clean room” is when someone authors software based on specifications without access to an existing implementation or proprietary materials. It’s a way to reimplement something while avoiding legal issues." %}
 
-## Was it *clean room*
+On the other hand, Dan, the main maintainer and rewriter, claims that this version is a “ground-up […] rewrite” — the term {% footnoteref "clean-room" footnote_clean_room %}“clean room”{% endfootnoteref %} pops up a lot in the long GitHub issue. And because it’s supposedly a clean room rewrite, the license can be freely changed since it’s ultimately a different software.
 
-Again, this is not exactly a straightforward answer. But the more you look at it, the more it sure seems like it was *not*. Ultimately, only a court (or at least qualified legal analysis) can decide this, but based on the facts available, the clean-room claim looks very weak.
+## Was it _clean room_
+
+Again, this is not exactly a straightforward answer. But the more you look at it, the more it sure seems like it was _not_. Ultimately, only a court (or at least qualified legal analysis) can decide this, but based on the facts available, the clean-room claim looks very weak.
 
 ### The “sure was” side
 
-Let’s start with the argument that suggests this is all legit, since they’re fewer (and weaker from my perspective, but that’s subjective). 
+Let’s start with the argument that suggests this is all legit, since they’re fewer (and weaker from my perspective, but that’s subjective).
 
-Some people, including Dan himself, point out to the fact that there is extremely low code similarity between version 7 and prior (about 1–2%), as an evidence that this is therefore a clean room implementation. Others argue that functional or structural similarity (even if the code *looks* different) could still make it a derivative work under copyright law.
+Some people, including Dan himself, point out to the fact that there is extremely low code similarity between version 7 and prior (about 1–2%), as an evidence that this is therefore a clean room implementation. Others argue that functional or structural similarity (even if the code _looks_ different) could still make it a derivative work under copyright law.
 
 {% callout %}
 Although unrelated to the issue at hand, it is worth pointing out that version 7 seems to come with a [significant performance hit](https://github.com/chardet/chardet/issues/333) as well as [notable regressions](https://news.ycombinator.com/item?id=47261532). Not great for a full rewrite supposed to be bigger, better, grander and most importantly a “drop-in replacement”.
@@ -74,11 +76,13 @@ Although unrelated to the issue at hand, it is worth pointing out that version 7
 
 Now, let’s look at why the whole clean room implementation angle doesn’t really hold when you start deconstructing the pieces a little.
 
-For starters, Dan is a maintainer of chardet ([for 12+ years](https://github.com/chardet/chardet/releases/tag/2.2.0) at that), which means he has prime access and knowledge of the original software. Even if he decided *not* to use it to restart from scratch, he likely knows the code intimately. This undermines the clean room defense, as true clean room processes require the implementor to have no prior exposure to the original work.
+For starters, Dan is a maintainer of chardet ([for 12+ years](https://github.com/chardet/chardet/releases/tag/2.2.0) at that), which means he has prime access and knowledge of the original software. Even if he decided _not_ to use it to restart from scratch, he likely knows the code intimately. This undermines the clean room defense, as true clean room processes require the implementor to have no prior exposure to the original work.
 
-Secondly, he used AI (Claude Anthropic) to generate the code, which is how he argues that the new version is based on a high-level description and not the original code, thus being a clean room implementation. {% footnoteref "ai-training" "<a href='https://github.com/chardet/chardet/issues/327#issuecomment-4004572121'>Aleksandr Petrosyan</a> points out that whether or not the AI was trained on the original code is irrelevant. It <em>cannot</em> be construed as fair use, because it uses the same name, uses the original code to design the new version, and claims copyright over a derivative work, which is dubious." %}AI may have been trained on the original chardet code{% endfootnoteref %}, which could mean the output is still a derivative work — where LGPL would apply. 
+{% assign footnote_ai_training = "<a href='https://github.com/chardet/chardet/issues/327#issuecomment-4004572121'>Aleksandr Petrosyan</a> points out that whether or not the AI was trained on the original code is irrelevant. It <em>cannot</em> be construed as fair use, because it uses the same name, uses the original code to design the new version, and claims copyright over a derivative work, which is dubious." %}
 
-Moreover, the notion that the AI agent was only fed a *high-level description* without using the existing code is demonstrably false. [Claude’s own implementation plan](https://github.com/chardet/chardet/commit/925bccbc85d1b13292e7dc782254fd44cc1e7856#diff-704d0561e3e878b036836b56870212b2d8b7e4a813bf2805df868a1bf9e0094cR309-R314) which was committed to the repository directly references chardet’s version 6 intricacies:
+Secondly, he used AI (Claude Anthropic) to generate the code, which is how he argues that the new version is based on a high-level description and not the original code, thus being a clean room implementation. {% footnoteref "ai-training" footnote_ai_training %}AI may have been trained on the original chardet code{% endfootnoteref %}, which could mean the output is still a derivative work — where LGPL would apply.
+
+Moreover, the notion that the AI agent was only fed a _high-level description_ without using the existing code is demonstrably false. [Claude’s own implementation plan](https://github.com/chardet/chardet/commit/925bccbc85d1b13292e7dc782254fd44cc1e7856#diff-704d0561e3e878b036836b56870212b2d8b7e4a813bf2805df868a1bf9e0094cR309-R314) which was committed to the repository directly references chardet’s version 6 intricacies:
 
 > **Context:** The registry maps every supported encoding to its metadata.
 > Era assignments MUST match chardet 6.0.0's [`chardet/metadata/charsets.py`](https://raw.githubusercontent.com/chardet/chardet/f0676c0d6a4263827924b78a62957547fca40052/chardet/metadata/charsets.py)
@@ -97,7 +101,7 @@ If AI-generated code is not copyrightable, it cannot be licensed under MIT, LGPL
 
 ## Why should we care
 
-Licensing is legal stuff, why do we even care? Well, you don’t have to care, but if you use open-source software in your work (and if you’re reading this, there is a good chance you do), I think you *should* care.
+Licensing is legal stuff, why do we even care? Well, you don’t have to care, but if you use open-source software in your work (and if you’re reading this, there is a good chance you do), I think you _should_ care.
 
 {% callout %}
 During my time at Scilife (medical compliance), we had to show to our customers under which license our software and all its dependencies were distributed. As a result, our reliance on dependencies published under non-permissive licenses such as GPL was challenging, and we had to revisit some technical decisions.
@@ -105,7 +109,7 @@ During my time at Scilife (medical compliance), we had to show to our customers 
 
 At the end of the day, this is the story of the maintainer of a software deciding to relicense said software in a more permissive license, and justifying the decision under the guise of a complete rewrite, AI-assisted no less.
 
-It is concerning, because if that flies, it sets a dangerous precedent. Found a cool library but it’s distributed under a non-permissive license? Ask Claude to rewrite it until the code looks different enough, and you’re good to go. This isn’t how licensing works (as far as I understand). 
+It is concerning, because if that flies, it sets a dangerous precedent. Found a cool library but it’s distributed under a non-permissive license? Ask Claude to rewrite it until the code looks different enough, and you’re good to go. This isn’t how licensing works (as far as I understand).
 
 As [Aditya Shankhar](https://github.com/chardet/chardet/issues/327#issuecomment-4003786038) puts it:
 
@@ -115,7 +119,8 @@ Tuan-Anh Tran puts it eloquently in their article [Relicensing with AI-assisted 
 
 > If “AI-rewriting” is accepted as a valid way to change licenses, it represents the end of Copyleft. Any developer could take a GPL-licensed project, feed it into an LLM with the prompt “Rewrite this in a different style,” and release it under MIT. The legal and ethical lines are still being drawn, and the chardet v7.0.0 case is one of the first real-world tests.
 
-This situation is a microcosm of larger issues in both open source and AI (and where they intersect). This raises some difficult questions: 
+This situation is a microcosm of larger issues in both open source and AI (and where they intersect). This raises some difficult questions:
+
 - Will this influence other OSS projects considering AI-assisted rewrites?
 - Can this lead to more projects adopting contributor license agreements (CLA), or even some explicit relicensing policies?
 - What role does AI transparency (such as disclosing training data) play in resolving these issues?
@@ -131,6 +136,8 @@ It’s hard to say. At the moment, version 7.0.0 remains available under MIT, an
 > - Retract chardet v7.0.0 and do not use v7.x.x as tags going forward.
 > - If you deem it prudent, at your own risk, release `aichardet` […] as a fork, allowing users downstream to choose among classic `chardet` under the original license, `PyYoshi/cchardet` (existing MPL project), or the new AI-written edition, as their risk profiles dictate.
 
-This makes a lot of sense to me. A {% footnoteref "fork" "It does seem like a fork would have been a more appropriate move for that rewrite, especially given most people using the chardet library would most likely never notice a licensing change." %}fork{% endfootnoteref %} with a new name avoids the confusion and legal ambiguity of reusing the chardet name and versioning. It would allow users to choose between the original LGPL-licensed chardet and the new MIT-licensed rewrite, based on their needs and risk tolerance.
+{% assign footnote_fork = "It does seem like a fork would have been a more appropriate move for that rewrite, especially given most people using the chardet library would most likely never notice a licensing change." %}
+
+This makes a lot of sense to me. A {% footnoteref "fork" footnote_fork %}fork{% endfootnoteref %} with a new name avoids the confusion and legal ambiguity of reusing the chardet name and versioning. It would allow users to choose between the original LGPL-licensed chardet and the new MIT-licensed rewrite, based on their needs and risk tolerance.
 
 For now, we wait and see. I will update this article as the situation evolves (if it does).

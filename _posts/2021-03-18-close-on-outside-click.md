@@ -82,7 +82,7 @@ Our implementation is actually in React, so I might as well share it. We use [re
 const useAutoClose = ({ setIsOpen, menu }) => {
   const handleClosure = React.useCallback(
     event => !menu.current.contains(event.target) && setIsOpen(false),
-    [setIsOpen, menu]
+    [setIsOpen, menu],
   )
 
   React.useEffect(() => {

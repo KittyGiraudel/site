@@ -114,8 +114,8 @@ export default () => {
     .title(admin ? 'Content' : 'Editorial content')
     .items(
       S.documentTypeListItems().filter(
-        item => admin || EDITOR_TYPES.includes(item.getId())
-      )
+        item => admin || EDITOR_TYPES.includes(item.getId()),
+      ),
     )
 }
 ```
@@ -144,7 +144,7 @@ export default () => {
   const admin = isAdmin()
 
   return S.defaultInitialValueTemplateItems().filter(
-    item => admin || EDITOR_TYPES.includes(item.getId())
+    item => admin || EDITOR_TYPES.includes(item.getId()),
   )
 }
 ```
@@ -175,7 +175,7 @@ export default createSchema({
       // See: https://github.com/sanity-io/sanity/pull/3253
       __experimental_search_ignore:
         isNotAdmin() && !EDITOR_TYPES.includes(type),
-    }))
+    })),
   ),
 })
 ```
@@ -200,7 +200,7 @@ export default createSchema({
     Object.entries({ blogPost, page }).map(([type, document]) => ({
       ...document,
       fields: document.fields.map(addReadOnly(type)),
-    }))
+    })),
   ),
 })
 

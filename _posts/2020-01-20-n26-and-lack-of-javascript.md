@@ -23,7 +23,7 @@ So here is the gist: we render the React tree on the server as a string, sends i
 
 ## Tailoring the experience
 
-Here is the thing though: we cannot expect the experience to be the same with and without JavaScript. That’s just not possible. JavaScript enables so many possibilities that the JavaScript-less experience will *always* feel worse in some ways.
+Here is the thing though: we cannot expect the experience to be the same with and without JavaScript. That’s just not possible. JavaScript enables so many possibilities that the JavaScript-less experience will _always_ feel worse in some ways.
 
 Therefore it’s important not to try making the no-JS experience work like the full one. The interface has to be revisited. Some features might even have to be removed, or dramatically reduced in scope. That’s also okay. As long as the main features are there and things work nicely, it should be fine that the experience is not as polished.
 
@@ -49,9 +49,15 @@ const MyComponent = props => {
   return (
     <>
       {hasJavaScript ? (
-        <p>This will not render on the server, only on the client when JavaScript is finally available.</p>
+        <p>
+          This will not render on the server, only on the client when JavaScript
+          is finally available.
+        </p>
       ) : (
-        <p>This will render on the server, and on the client until JavaScript is finally available.</p>
+        <p>
+          This will render on the server, and on the client until JavaScript is
+          finally available.
+        </p>
       )}
     </>
   )
@@ -84,9 +90,15 @@ const MyComponent = props => {
   return (
     <>
       {hasJavaScript ? (
-        <p>This will not render on the server, only on the client when JavaScript is finally available.</p>
+        <p>
+          This will not render on the server, only on the client when JavaScript
+          is finally available.
+        </p>
       ) : (
-        <p>This will render on the server, and on the client until JavaScript is finally available.</p>
+        <p>
+          This will render on the server, and on the client until JavaScript is
+          finally available.
+        </p>
       )}
     </>
   )

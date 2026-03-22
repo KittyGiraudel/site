@@ -25,7 +25,9 @@ The nice thing about Markdown is that we can use HTML comments. This way, they a
 ## Latest writing
 
 <!-- BLOG-POST-LIST:START -->
+
 Find my latest blog posts on [kittygiraudel.com](https://kittygiraudel.com/blog).
+
 <!-- BLOG-POST-LIST:END -->
 ```
 
@@ -49,7 +51,9 @@ async function fetchFeed() {
     // Fetch the RSS feed
     const response = await fetch('https://kittygiraudel.com/rss/index.xml')
     if (!response.ok) {
-      console.error(`Failed to fetch feed: ${response.status} ${response.statusText}`)
+      console.error(
+        `Failed to fetch feed: ${response.status} ${response.statusText}`,
+      )
       return null
     }
 
@@ -70,8 +74,10 @@ async function fetchFeed() {
     return items.slice(0, 5).map(entry => {
       const title = entry.title ?? 'Untitled'
       const url = entry.link?.['@_href']
-      const date = new Date(entry.published)
-        .toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })
+      const date = new Date(entry.published).toLocaleDateString('en-GB', {
+        month: 'short',
+        year: 'numeric',
+      })
 
       return { title, url, date }
     })
@@ -184,14 +190,14 @@ jobs:
 {% callout %}I had to investigate a little to figure out which email address to use when issuing an automated commit. Some people recommended github-actions[bot]@users.noreply.github.com, but [some articles](https://www.junian.net/dev/github-actions-bot-username-email-address/) suggest using 41898282+github-actions[bot]@users.noreply.github.com. That’s what I’ve done, and it works, so good enough for me.
 {% endcallout %}
 
-We also want to run our workflow when pushing onto the `main` branch so that we can safely update our `README.md` template and have the script run. 
+We also want to run our workflow when pushing onto the `main` branch so that we can safely update our `README.md` template and have the script run.
 
 ```yaml
 on:
   schedule:
     - cron: '0 6 * * *'
   push:
-    branches: [ main ]
+    branches: [main]
 ```
 
 ### Caveats

@@ -1,5 +1,5 @@
 {% assign page_url = page.url | prepend: site.url %}
-{% assign page_description = description | default: site.description | strip_html | strip_newlines | truncate: 200  | emoji_to_text | escape %}
+{% assign page_description = description | default: site.description | strip_html | strip_newlines | truncate: 200 | escape %}
 {% assign title = title | default: site.author %}
 {% assign page_author = guest | default: site.author %}
 {% assign site_author = site.author %}

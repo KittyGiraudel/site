@@ -17,7 +17,9 @@ In this article, I will show a small HTML + CSS only implementation of an access
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-{% assign toggles = "Dion mentions how [the toggle might look reversed](https://twitter.com/_diondiondion/status/1379828760585834497?s=20), a sentiment backed up by [Rawrmonstar](https://twitter.com/rawrawrmonstar/status/1379555735118352384?s=20), and Mikael Kundert mentions how [checkboxes are usually simpler](https://twitter.com/iMiksu/status/1379802269709897737?s=20)." | markdown %}
+{% capture toggles %}
+{% markdown "inline" %}Dion mentions how [the toggle might look reversed](https://twitter.com/_diondiondion/status/1379828760585834497?s=20), a sentiment backed up by [Rawrmonstar](https://twitter.com/rawrawrmonstar/status/1379555735118352384?s=20), and Mikael Kundert mentions how [checkboxes are usually simpler](https://twitter.com/iMiksu/status/1379802269709897737?s=20).{% endmarkdown %}
+{% endcapture %}
 
 {% callout "warning" %}
 **Disclaimer:** Before using a toggle switch, consider whether this is the best user interface for the situation. {% footnoteref "toggles" toggles %}Toggles can be visually confusing{% endfootnoteref %} and in some cases, [a button might be more suited](#button-variant).

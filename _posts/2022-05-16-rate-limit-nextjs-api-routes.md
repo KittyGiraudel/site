@@ -32,7 +32,7 @@ I personally like [express-rate-limit](https://www.npmjs.com/package/express-rat
 const applyMiddleware = middleware => (request, response) =>
   new Promise((resolve, reject) => {
     middleware(request, response, result =>
-      result instanceof Error ? reject(result) : resolve(result)
+      result instanceof Error ? reject(result) : resolve(result),
     )
   })
 ```
@@ -44,7 +44,7 @@ async function applyRateLimit(request, response) {
   await Promise.all(
     middlewares
       .map(applyMiddleware)
-      .map(middleware => middleware(request, response))
+      .map(middleware => middleware(request, response)),
   )
 }
 ```
@@ -108,7 +108,7 @@ const middlewares = getRateLimitMiddlewares({ limit: 50 }).map(applyMiddleware)
 export default async function handler(request, response) {
   try {
     await Promise.all(
-      middlewares.map(middleware => middleware(request, response))
+      middlewares.map(middleware => middleware(request, response)),
     )
   } catch {
     return response.status(429).send('Too Many Requests')
@@ -130,7 +130,7 @@ import slowDown from 'express-slow-down'
 const applyMiddleware = middleware => (request, response) =>
   new Promise((resolve, reject) => {
     middleware(request, response, result =>
-      result instanceof Error ? reject(result) : resolve(result)
+      result instanceof Error ? reject(result) : resolve(result),
     )
   })
 
@@ -156,7 +156,7 @@ async function applyRateLimit(request, response) {
   await Promise.all(
     middlewares
       .map(applyMiddleware)
-      .map(middleware => middleware(request, response))
+      .map(middleware => middleware(request, response)),
   )
 }
 
