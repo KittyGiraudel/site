@@ -8,7 +8,9 @@ tags:
   - Liquid
 ---
 
-Today, I’ve shipped a nice addition to this website: {% footnoteref "every-article" "It’s not exactly true. Articles with a single heading do not get a table of contents, and a few articles got opted out for design reasons." %}every article{% endfootnoteref %} now has its own table of contents (→ if you’re on desktop, ↑ if you’re on mobile). Of course it would be unthinkable to do that by hand for hundreds of articles, so we’re going to use some Eleventy goodness.
+{% assign footnote_every_article = "It’s not exactly true. Articles with a single heading do not get a table of contents, and a few articles got opted out for design reasons." %}
+
+Today, I’ve shipped a nice addition to this website: {% footnoteref "every-article" footnote_every_article %}every article{% endfootnoteref %} now has its own table of contents (→ if you’re on desktop, ↑ if you’re on mobile). Of course it would be unthinkable to do that by hand for hundreds of articles, so we’re going to use some Eleventy goodness.
 
 This is not a novel idea. There are already [plugins](https://github.com/jdsteinbach/eleventy-plugin-toc) and [literature](https://stevenwoodson.com/blog/adding-a-table-of-contents-to-dynamic-content-in-11ty/) on the topic. Yet I wasn’t entirely satisfied with them, so I thought I would give it a go myself. If you would like to see the whole code at once, these changes went through a [pull-request](https://github.com/KittyGiraudel/site/pull/205).
 
@@ -30,7 +32,6 @@ So now we know that we will declare a Liquid filter that returns a table of cont
 
 Once again, we can reach out to our lord and savior [cheerio](https://cheerio.js.org/)! cheerio is a library to parse and manipulate HTML. We can load our HTML to get a DOM representation, query all our titles, and generate our table of contents from there.
 
-
 ```js
 eleventyConfig.addFilter('table_of_contents', html => {
   if (!html || typeof html !== 'string') return []
@@ -46,7 +47,7 @@ eleventyConfig.addFilter('table_of_contents', html => {
 
 In my initial version, the filter would generate and return the expected HTML. It worked a charm! But it bothered me that we ended up with markup inside the Eleventy configuration. And not just a little bit of markup, there is the table of content section, the list, the list items, sub lists… It would be better if this lived in a Liquid partial, and we passed structured data to that partial instead.
 
-So let’s flip the problem on its head, and start from the HTML we *want* to render.
+So let’s flip the problem on its head, and start from the HTML we _want_ to render.
 
 ```liquid
 <!-- toc.liquid -->
@@ -139,7 +140,7 @@ function getHeadingData($, heading) {
   if (!text || !id) return null
 
   const element = heading?.name ?? ''
-  const level = Number((element).match(/^h([1-6])$/i)?.[1] ?? 2)
+  const level = Number(element.match(/^h([1-6])$/i)?.[1] ?? 2)
 
   return { id, level, text }
 }
@@ -155,9 +156,11 @@ eleventyConfig.addPlugin(IdAttributePlugin, {
 })
 ```
 
-And then it dawned on me that both that plugin and my `table_of_contents` filter occurred on the same rendering pass, and not one after the other. In other words, they both act on the same HTML of the page. My filter doesn’t happen *after*, it happens in the same compilation step. So by the time Liquid executes my filter, there is no `id` attribute on the headings yet.
+And then it dawned on me that both that plugin and my `table_of_contents` filter occurred on the same rendering pass, and not one after the other. In other words, they both act on the same HTML of the page. My filter doesn’t happen _after_, it happens in the same compilation step. So by the time Liquid executes my filter, there is no `id` attribute on the headings yet.
 
-To solve the problem, we can make our filter “figure out” what the headings ID will be. All we have to do is use the exact same logic as the `IdAttributePlugin` plugin, and we will end up with the same identifiers. Eleventy gracefully [highlights its dependency](https://www.11ty.dev/docs/filters/slugify/), so we can install the same one. Then, we need to {% footnoteref "line-highlighting" "I have been blogging for 14 years, and using Eleventy since 2020, and I <em>just</em> realised I can highlight specific lines in code blocks. What a time to be alive!" %}update{% endfootnoteref %} our `getHeadingData` function to generate the ID from the text.
+{% assign footnote_line_highlighting = "I have been blogging for 14 years, and using Eleventy since 2020, and I <em>just</em> realised I can highlight specific lines in code blocks. What a time to be alive!" %}
+
+To solve the problem, we can make our filter “figure out” what the headings ID will be. All we have to do is use the exact same logic as the `IdAttributePlugin` plugin, and we will end up with the same identifiers. Eleventy gracefully [highlights its dependency](https://www.11ty.dev/docs/filters/slugify/), so we can install the same one. Then, we need to {% footnoteref "line-highlighting" footnote_line_highlighting %}update{% endfootnoteref %} our `getHeadingData` function to generate the ID from the text.
 
 ```js/8
 import slugify from 'slugify'
@@ -189,9 +192,9 @@ config.addPlugin(IdAttributePlugin, {
 
 ### Avoid a ToC anchor
 
-As shared in [a recent article](/2026/02/26/nerdy-design-details/), I have [automatic heading anchors](https://github.com/zachleat/heading-anchors). 
+As shared in [a recent article](/2026/02/26/nerdy-design-details/), I have [automatic heading anchors](https://github.com/zachleat/heading-anchors).
 
-If rendering the table of contents within that `<heading-anchors>` web component, its own title will have an anchor, which is a bit odd? It’s not a problem per se, but I didn’t really want the table of contents to have its own visible anchor — it felt too meta. There are a few ways to solve it: either render the table of contents outside, or do not use a heading inside the table of contents, or exclude the table of contents’ heading from `<heading-anchors>`. I opted for the latter: 
+If rendering the table of contents within that `<heading-anchors>` web component, its own title will have an anchor, which is a bit odd? It’s not a problem per se, but I didn’t really want the table of contents to have its own visible anchor — it felt too meta. There are a few ways to solve it: either render the table of contents outside, or do not use a heading inside the table of contents, or exclude the table of contents’ heading from `<heading-anchors>`. I opted for the latter:
 
 ```html/0
 <heading-anchors selector="h2:not(#toc), h3, h4" content="§">
@@ -203,7 +206,7 @@ If rendering the table of contents within that `<heading-anchors>` web component
 
 ### Float into the layout
 
-From a layout perspective, the table of contents should obviously live near the top of the page, but I didn’t really want it to be full-width. After all, by the nature of its content, it tends to be taller than it is wide. I also wished for it to be a bit to the side, as to not obstruct the main content too much. I considered making it absolutely positioned, or even an off-screen drawer, but it felt a bit over-engineering. 
+From a layout perspective, the table of contents should obviously live near the top of the page, but I didn’t really want it to be full-width. After all, by the nature of its content, it tends to be taller than it is wide. I also wished for it to be a bit to the side, as to not obstruct the main content too much. I considered making it absolutely positioned, or even an off-screen drawer, but it felt a bit over-engineering.
 
 In the end, I pulled out a tool from the early 2000s: a float. Our table of contents lets the body flow around it, and when there is enough screen estate to allow it, it shifts into the margin to take even less space.
 
@@ -226,7 +229,7 @@ In the end, I pulled out a tool from the early 2000s: a float. Our table of cont
 
 ### Deeper and smaller
 
-Another minor yet interesting CSS aspect of the component is that it makes really good use of the cascade. I wanted every sub-list to render a bit smaller than the list above it, because headings become less and less important as you go deeper into the outline. 
+Another minor yet interesting CSS aspect of the component is that it makes really good use of the cascade. I wanted every sub-list to render a bit smaller than the list above it, because headings become less and less important as you go deeper into the outline.
 
 ```css
 .ToC__list--sublist .ToC__item {

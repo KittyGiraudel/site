@@ -9,7 +9,9 @@ tags:
   - Accessibility
 ---
 
-I love {% footnoteref "footnotes-usage" "Nothing disappoints me more when reading non-fiction than footnotes being used to cite sources. Don’t get me wrong: it’s a totally legitimate use case for footnotes, but what I always hope for is tangential or anecdotal information, like little nuggets of content aside of the main course — not citations." %}footnotes{% endfootnoteref %}.
+{% assign footnote_footnotes_usage = "Nothing disappoints me more when reading non-fiction than footnotes being used to cite sources. Don’t get me wrong: it’s a totally legitimate use case for footnotes, but what I always hope for is tangential or anecdotal information, like little nuggets of content aside of the main course — not citations." %}
+
+I love {% footnoteref "footnotes-usage" footnote_footnotes_usage %}footnotes{% endfootnoteref %}.
 
 I wrote about creating [accessible footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/) on {% footnoteref "sitepoint" "As someone who has written so much for SitePoint (and even recommended new authors), it deeply saddens me to see how it turned out. Code blocks are messy and not highlighted, there are ads everywhere, the design has gone downhill… It’s very unfortunate." %}SitePoint{% endfootnoteref %}. And [how to do it in Eleventy](/2020/12/02/footnotes-in-eleventy/). I’ve also created an [Eleventy plugin](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/eleventy-plugin-footnotes) to make it easy. I’ve written [how to do it in React](https://kittygiraudel.com/2020/11/24/accessible-footnotes-and-a-bit-of-react/) as well. And open-sourced a [React component](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/react-a11y-footnotes). What I’m trying to say is that if you like footnotes as much as I do, there are no excuses for not making them accessible.
 
@@ -71,7 +73,7 @@ To fix that, I decided to use a pseudo-element which I can extend in the outer d
  * 1. Actually display the highlight when the footnote is targeted.
  */
 .Footnotes li:target::before {
-  content: ""; /* 1 */
+  content: ''; /* 1 */
 }
 ```
 

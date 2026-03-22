@@ -1,0 +1,6 @@
+# Ignore everything
+* 
+
+# Except for posts
+# Biome cannot format Markdown, so we use Prettier for that
+!_posts/**

@@ -78,7 +78,7 @@ const Input = props => (
 
 Input.propTypes = {
   id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
 }
 ```
 
@@ -100,16 +100,16 @@ In the current team setup, I tend to be the one with the most knowledge on acces
 
 We also have a Markdown document on accessibility. It contains a definition of the term and what we do about it, as well as instructions around our linting and testing setup (as explained in this article). Every time a pull-request sparks an insightful discussion around the topic, we sum it up in our documentation. At the time of writing, here is the table of contents:
 
-* Introduction
-* Linting
-* Testing
-* Hiding content
-* Self-explanatory call-to-actions
-* Alternative text
-  * Icons
-* Forms & errors
-* DOM & Visual order
-* Going further
+- Introduction
+- Linting
+- Testing
+- Hiding content
+- Self-explanatory call-to-actions
+- Alternative text
+  - Icons
+- Forms & errors
+- DOM & Visual order
+- Going further
 
 ## Testing what’s testable
 
@@ -135,9 +135,9 @@ This is hard to do. It requires expertise, and often seems like an ideal beyond 
 
 If we sum up:
 
-* Make sure everybody is on the same page, from the product owner to the designers to the development team. It becomes much easier to implement things correctly when everybody is aware of the constraints and implications.
-* Set up linting and developer tools to help you prevent mistakes, as early as possible in the development process. You should not catch a missing `alt` attribute or `label` element when deploying to production.
-* Build a culture around accessibility. Involve everyone in your team. Make people ask questions. Document everything related to the topic. Share knowledge as much as possible. One shall not own all the expertise on a single topic.
-* Consider implementing test automation to catch problems before they impact your users. It might require a bit of infrastructure to get started, but once set up, it just works.
+- Make sure everybody is on the same page, from the product owner to the designers to the development team. It becomes much easier to implement things correctly when everybody is aware of the constraints and implications.
+- Set up linting and developer tools to help you prevent mistakes, as early as possible in the development process. You should not catch a missing `alt` attribute or `label` element when deploying to production.
+- Build a culture around accessibility. Involve everyone in your team. Make people ask questions. Document everything related to the topic. Share knowledge as much as possible. One shall not own all the expertise on a single topic.
+- Consider implementing test automation to catch problems before they impact your users. It might require a bit of infrastructure to get started, but once set up, it just works.
 
 Thanks for doing the Right Thing™ and happy coding!

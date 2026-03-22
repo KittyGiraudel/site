@@ -13,13 +13,22 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 ## Vision disability
 
-{% assign small_font_sizes = "About small font sizes: [Tweet by @brandonsavage](https://twitter.com/brandonsavage/status/871067906414608387), [tweet by @Rejistania](https://twitter.com/Rejistania/status/871103754409582592)" | markdown %} {% assign migraines = "About migraines: [Tweet by @kolyshkin](https://twitter.com/kolyshkin/status/871118386754801664), [tweet by @DiamonDie](https://twitter.com/DiamonDie/status/871064350097854464), [tweet by @morganestes](https://twitter.com/morganestes/status/871070319129145348), [tweet by @elazar](https://twitter.com/elazar/status/871070831970885634)" | markdown %}
+{% capture footnote_small_font_sizes %}
+{% markdown "inline" %}About small font sizes: [Tweet by @brandonsavage](https://twitter.com/brandonsavage/status/871067906414608387), [tweet by @Rejistania](https://twitter.com/Rejistania/status/871103754409582592)."{% endmarkdown %}
+{% endcapture %}
 
-- Someone explains their {% footnoteref "small_font_sizes" small_font_sizes %}frustration about small font sizes{% endfootnoteref %} that cannot be safely increased because it breaks the layout. A few persons —{% footnoteref "migraines" migraines %}some with, some without <abbr title="Myalgic Encephalopathy">ME</abbr> / <abbr title="Chronic Fatigue Syndrome">CFS</abbr>{% endfootnoteref %}— agree or express a similar statement.
+{% capture footnote_migraines %}
+{% markdown "inline" %}About migraines: [Tweet by @kolyshkin](https://twitter.com/kolyshkin/status/871118386754801664), [tweet by @DiamonDie](https://twitter.com/DiamonDie/status/871064350097854464), [tweet by @morganestes](https://twitter.com/morganestes/status/871070319129145348), [tweet by @elazar](https://twitter.com/elazar/status/871070831970885634).{% endmarkdown %}
+{% endcapture %}
 
-{% assign color_contrast = "About lack of contrast: [Tweet by @AndrewDixonSo](https://twitter.com/AndrewDixonSo/status/871062142799142913), [tweet by @may_gun](https://twitter.com/may_gun/status/871175194328539136), [tweet by @gamescharlie79](https://twitter.com/gamescharlie79/status/871069372655087617)" | markdown %}
+- Someone explains their {% footnoteref "small_font_sizes" footnote_small_font_sizes %}frustration about small font sizes{% endfootnoteref %} that cannot be safely increased because it breaks the layout. A few persons —{% footnoteref "migraines" footnote_migraines %}some with, some without <abbr title="Myalgic Encephalopathy">ME</abbr> / <abbr title="Chronic Fatigue Syndrome">CFS</abbr>{% endfootnoteref %}— agree or express a similar statement.
 
-- Some people extend the previous statement to include {% footnoteref "color_contrast" color_contrast %}poor color contrasts{% endfootnoteref %}, such as light grey on white background for instance or text on top of image.
+{% capture footnote_color_contrast %}
+{% markdown "inline" %}About lack of contrast: [Tweet by @AndrewDixonSo](https://twitter.com/AndrewDixonSo/status/871062142799142913), [tweet by @may_gun](https://twitter.com/may_gun/status/871175194328539136), [tweet by @gamescharlie79](https://twitter.com/gamescharlie79/status/871069372655087617).
+{% endmarkdown %}
+{% endcapture %}
+
+- Some people extend the previous statement to include {% footnoteref "color_contrast" footnote_color_contrast %}poor color contrasts{% endfootnoteref %}, such as light grey on white background for instance or text on top of image.
 
 - A colorblind person says [color-coded interfaces are very hard to use](https://twitter.com/AndrewDixonSo/status/871279577758392321) (toggles, heatmaps, etc.). This statement is shared by several other people having the [same kind of visually impairment](https://twitter.com/may_gun/status/871204180345729024).
 
@@ -41,9 +50,12 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 - A person with Parkinson disease explains how [mouse interactions are extremely hard to perform accurately](https://twitter.com/KodierKroete/status/871175620146982912).
 
-{% assign hand_tremor = "About hand tremors: [tweet by @SpoonsAndPOTS](https://twitter.com/SpoonsAndPOTS/status/871185534814531585), [tweet by @KristenAnneSF](https://twitter.com/KristenAnneSF/status/871230651357331460) and [tweet by @jenilg](https://twitter.com/jenilg/status/871187106936360960)." | markdown %}
+{% capture footnote_hand_tremor %}
+{% markdown "inline" %}About hand tremors: [tweet by @SpoonsAndPOTS](https://twitter.com/SpoonsAndPOTS/status/871185534814531585), [tweet by @KristenAnneSF](https://twitter.com/KristenAnneSF/status/871230651357331460) and [tweet by @jenilg](https://twitter.com/jenilg/status/871187106936360960).
+{% endmarkdown %}
+{% endcapture %}
 
-- People with hand tremor say {% footnoteref "hand_tremor" hand_tremor %}precise gestures such as double-clicking or tap-and-hold are difficult{% endfootnoteref %} to perform.
+- People with hand tremor say {% footnoteref "hand_tremor" footnote_hand_tremor %}precise gestures such as double-clicking or tap-and-hold are difficult{% endfootnoteref %} to perform.
 
 - Someone having a cerebral palsy shares the same problem and literally [cannot use a mouse](https://twitter.com/garyrozanc/status/871061173545963522) because of that; they use touch screens instead.
 
@@ -55,15 +67,21 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 ## Cognitive & learning disabilities
 
-{% assign adhd_animations = "About ADHD and animations: [Tweet by @elementnumber46](https://twitter.com/elementnumber46/status/871064762481872897), [tweet by @mojinations](https://twitter.com/mojinations/status/871173727601307648) and [tweet by @morganestes](https://twitter.com/morganestes/status/871070319129145348)." | markdown %}
+{% capture footnote_adhd_animations %}
+{% markdown "inline" %}About ADHD and animations: [Tweet by @elementnumber46](https://twitter.com/elementnumber46/status/871064762481872897), [tweet by @mojinations](https://twitter.com/mojinations/status/871173727601307648) and [tweet by @morganestes](https://twitter.com/morganestes/status/871070319129145348).
+{% endmarkdown %}
+{% endcapture %}
 
-- Someone with <abbr title="Attention Deficit Hyperactivity Disorder">ADHD</abbr> says [they can’t focus as soon as there is a “subtle” animation always running](https://twitter.com/tigt_/status/871061419600510978). {% footnoteref "adhd_animations" adhd_animations %}A lot of people suffering from ADHD to a certain level share the same opinion about animations{% endfootnoteref %}.
+- Someone with <abbr title="Attention Deficit Hyperactivity Disorder">ADHD</abbr> says [they can’t focus as soon as there is a “subtle” animation always running](https://twitter.com/tigt_/status/871061419600510978). {% footnoteref "adhd_animations" footnote_adhd_animations %}A lot of people suffering from ADHD to a certain level share the same opinion about animations{% endfootnoteref %}.
 
 - Along the same lines, someone [wishes they could disable GIFs](https://twitter.com/DaxAeterna/status/871205860285988865).
 
-{% assign adhd_wall_of_text = "About large blocks of text: [Tweet by @DotProto](https://twitter.com/DotProto/status/871231522455433216), [tweet by @Polenth](https://twitter.com/Polenth/status/871080703370424321), [tweet by @Mustafa_x](https://twitter.com/Mustafa_x/status/871138503408615428), [tweet by @MeBeShe4815](https://twitter.com/MeBeShe4815/status/871082326578548736), [tweet by @keannka](https://twitter.com/keannka/status/871093540100689921) and [tweet by @elementnumber46](https://twitter.com/elementnumber46/status/871064762481872897)." | markdown %}
+{% capture footnote_adhd_wall_of_text %}
+{% markdown "inline" %}About large blocks of text: [Tweet by @DotProto](https://twitter.com/DotProto/status/871231522455433216), [tweet by @Polenth](https://twitter.com/Polenth/status/871080703370424321), [tweet by @Mustafa_x](https://twitter.com/Mustafa_x/status/871138503408615428), [tweet by @MeBeShe4815](https://twitter.com/MeBeShe4815/status/871082326578548736), [tweet by @keannka](https://twitter.com/keannka/status/871093540100689921) and [tweet by @elementnumber46](https://twitter.com/elementnumber46/status/871064762481872897).
+{% endmarkdown %}
+{% endcapture %}
 
-- Another person with ADHD says {% footnoteref "adhd_wall_of_text" adhd_wall_of_text %}big walls of text can be difficult to get through{% endfootnoteref %}. To work around this problem, they use text-to-speech. This is a common problem for a lot of people suffering from a large variety of impairments and disorders.
+- Another person with ADHD says {% footnoteref "adhd_wall_of_text" footnote_adhd_wall_of_text %}big walls of text can be difficult to get through{% endfootnoteref %}. To work around this problem, they use text-to-speech. This is a common problem for a lot of people suffering from a large variety of impairments and disorders.
 
 - Similarly, another person says Wikipedia is hard to browse as pages often consist of long paragraphs where they get lost very quickly. This person also resorts to text-to-speech.
 
@@ -87,8 +105,11 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 ## Hearing impairments
 
-{% assign no_captions = "About lack of captions: [Tweet by @UntoNuggan](https://twitter.com/UntoNuggan/status/871063079861268481), [tweet by @carolmcarpenter](https://twitter.com/carolmcarpenter/status/871067344038219776), [tweet by @tohereknowswhe](https://twitter.com/tohereknowswhe/status/871061025642229761), [tweet by @radcrochetqueer](https://twitter.com/radcrochetqueer/status/871104664544137216), [tweet by @jjackson](https://twitter.com/jjackson/status/871209439856009216), [tweet by @k_hack](https://twitter.com/k_hack/status/871189568187322368), [tweet by @Lesbiologist](https://twitter.com/Lesbiologist/status/871108939126939648), [tweet by @domcorriveau](https://twitter.com/domcorriveau/status/871259653170020352), [tweet by @captainsafia](https://twitter.com/captainsafia/status/871061635485577217), [tweet by @ai_valentin](https://twitter.com/ai_valentin/status/871128518717046785)" | markdown %}
+{% capture footnote_no_captions %}
+{% markdown "inline" %}About lack of captions: [Tweet by @UntoNuggan](https://twitter.com/UntoNuggan/status/871063079861268481), [tweet by @carolmcarpenter](https://twitter.com/carolmcarpenter/status/871067344038219776), [tweet by @tohereknowswhe](https://twitter.com/tohereknowswhe/status/871061025642229761), [tweet by @radcrochetqueer](https://twitter.com/radcrochetqueer/status/871104664544137216), [tweet by @jjackson](https://twitter.com/jjackson/status/871209439856009216), [tweet by @k_hack](https://twitter.com/k_hack/status/871189568187322368), [tweet by @Lesbiologist](https://twitter.com/Lesbiologist/status/871108939126939648), [tweet by @domcorriveau](https://twitter.com/domcorriveau/status/871259653170020352), [tweet by @captainsafia](https://twitter.com/captainsafia/status/871061635485577217), [tweet by @ai_valentin](https://twitter.com/ai_valentin/status/871128518717046785).
+{% endmarkdown %}
+{% endcapture %}
 
-- A <abbr title="Hard of Hearing">HoH</abbr> person points out that {% footnoteref "no_captions" no_captions %}not enough videos/audios are captioned{% endfootnoteref %}, which is a shame because they are useful to more people than just HoH/deafs.
+- A <abbr title="Hard of Hearing">HoH</abbr> person points out that {% footnoteref "no_captions" footnote_no_captions %}not enough videos/audios are captioned{% endfootnoteref %}, which is a shame because they are useful to more people than just HoH/deafs.
 
 - Someone says they feel like we sometimes [abuse the video media on the web](https://twitter.com/Polenth/status/871080703370424321) and [not everything has to be a video](https://twitter.com/Lesbiologist/status/871109089740210176). Simple text often is just fine. It seems shared by a few people.

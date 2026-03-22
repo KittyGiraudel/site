@@ -6,7 +6,9 @@ tags:
   - Retrospective
 ---
 
-For the past {% footnoteref "timeline" "It’s actually been 8 months, but “six months” makes for a better title." %}~~6~~ 8 months{% endfootnoteref %}, I have been learning [Rust](https://rust-lang.org/). This article is a brain dump of my experience with the language, what I like and don’t like, and other miscellaneous thoughts. This is written from the perspective of a long-time JavaScript/TypeScript engineer coming to Rust for a real production system.
+{% assign footnote_timeline = "It’s actually been 8 months, but “six months” makes for a better title." %}
+
+For the past {% footnoteref "timeline" footnote_timeline %}~~6~~ 8 months{% endfootnoteref %}, I have been learning [Rust](https://rust-lang.org/). This article is a brain dump of my experience with the language, what I like and don’t like, and other miscellaneous thoughts. This is written from the perspective of a long-time JavaScript/TypeScript engineer coming to Rust for a real production system.
 
 ## Overview
 
@@ -14,13 +16,15 @@ In summer 2025, I started supporting a friend with the server of their mobile ga
 
 Now, it’s important to point out that my background is primarily in frontend. I have done some PHP during my studies back in 2010, and then a lot of Node.js throughout my career. I am by no means experienced with backend technology.
 
-Which means I have (and still do) relied a lot on AI coding agents to support me in my work. I would never have been able to pick up Rust that easily, let alone actually bring value to the system, without Cursor. 
+Which means I have (and still do) relied a lot on AI coding agents to support me in my work. I would never have been able to pick up Rust that easily, let alone actually bring value to the system, without Cursor.
 
 ## You Cargo girl!
 
 Cargo is Rust’s build system and package manager. It’s responsible for compiling your code, as well as installing dependencies. And let me tell you: it Just Works™. It’s incredibly stable, generally fast, and never disappoints. From installing dependencies to compiling the code to using workspaces, everything just works out of the box and without a hiccup. Very refreshing.
 
-The JavaScript ecosystem is often the butt of the joke, with its multiple runtimes (Node.js and deno and Bun), various package managers (npm and pnpm and yarn), many flavours (CJS and UMD and ESM) and {% footnoteref "dependencies" "I’ve noticed there seem to be far less fragmentation of packages (“crates” as they are called) with similar purposes. It could be because Rust doesn’t have the same ecosystem depth as npm, or just that there is less bikeshedding and rebuilding in the Rust community — not sure." %}countless dependencies{% endfootnoteref %}… And while you learn how to navigate them, it’s always a pain and a time sink.
+{% assign footnote_dependencies = "I’ve noticed there seem to be far less fragmentation of packages (“crates” as they are called) with similar purposes. It could be because Rust doesn’t have the same ecosystem depth as npm, or just that there is less bikeshedding and rebuilding in the Rust community — not sure." %}
+
+The JavaScript ecosystem is often the butt of the joke, with its multiple runtimes (Node.js and deno and Bun), various package managers (npm and pnpm and yarn), many flavours (CJS and UMD and ESM) and {% footnoteref "dependencies" footnote_dependencies %}countless dependencies{% endfootnoteref %}… And while you learn how to navigate them, it’s always a pain and a time sink.
 
 There are some old JavaScript projects I just don’t touch anymore, not because I’m bored of them, but because I know I’ll need to spend half a day updating 10 different major dependencies and fighting with CJS/ESM compatibility and life is just too short for this shit.
 
@@ -29,7 +33,7 @@ There are some old JavaScript projects I just don’t touch anymore, not because
 
 ## Embracing the compiler
 
-The first thing that struck me with Rust is that the compiler is *very picky*. Coming from JavaScript where basically anything goes (even with TypeScript which remains quite loose), it was a bit of a wall for me.
+The first thing that struck me with Rust is that the compiler is _very picky_. Coming from JavaScript where basically anything goes (even with TypeScript which remains quite loose), it was a bit of a wall for me.
 
 ### Compilation errors
 
@@ -120,22 +124,25 @@ async function main() {
 }
 ```
 
-Time and time again, I realise how elegant error management is in Rust. Between the `Result` enum that encapsulates either outcomes, the `match` keyword, the `?` operator shortcut for error propagation, and more… It’s just very well thought out, and it makes complex programs convenient and *readable*.
+Time and time again, I realise how elegant error management is in Rust. Between the `Result` enum that encapsulates either outcomes, the `match` keyword, the `?` operator shortcut for error propagation, and more… It’s just very well thought out, and it makes complex programs convenient and _readable_.
 
 ## Locks and deadlocks
 
-Now, *that* has been my nemesis. Rust has strong concurrency primitives. And because of that, it needs data structures that can guarantee consistency across multiple threads. There are a couple of them (namely `RwLock` for “read-write lock” and `Mutex` for “mutual exclusion”), and they rely on a *lock*, which *guards* the data it holds and limits access to a single thread at a time. The [Rust book has a good metaphor](https://doc.rust-lang.org/book/ch16-03-shared-state.html) for it:
+Now, _that_ has been my nemesis. Rust has strong concurrency primitives. And because of that, it needs data structures that can guarantee consistency across multiple threads. There are a couple of them (namely `RwLock` for “read-write lock” and `Mutex` for “mutual exclusion”), and they rely on a _lock_, which _guards_ the data it holds and limits access to a single thread at a time. The [Rust book has a good metaphor](https://doc.rust-lang.org/book/ch16-03-shared-state.html) for it:
 
 > For a real-world metaphor for a mutex, imagine a panel discussion at a conference with only one microphone. Before a panelist can speak, they have to ask or signal that they want to use the microphone. When they get the microphone, they can talk for as long as they want to and then hand the microphone to the next panelist who requests to speak. If a panelist forgets to hand the microphone off when they’re finished with it, no one else is able to speak. If management of the shared microphone goes wrong, the panel won’t work as planned!
 
-The problem with these data structures, however necessary they may be, is that you have the potential to put the runtime in a *deadlock*. In its simplest form, this can happen when:
+The problem with these data structures, however necessary they may be, is that you have the potential to put the runtime in a _deadlock_. In its simplest form, this can happen when:
+
 1. Thread A acquires the write lock of a data structure. This blocks all read attempts until the lock is released.
 2. Thread B attempts to acquire the read lock of the same data structure. It’s paused until the write lock is released.
 3. Thread A waits on thread B for any reason (for instance to acquire another lock held by thread B).
 
 In that case, thread A will hold the write lock for as long as it needs, and if it waits on a second thread that is itself waiting on the lock, both threads will end up in an unrecoverable deadlock. It’s not always a textbook ‘two locks, two threads’ deadlock, but the end result is the same: no progress and a hung server.
 
-This can absolutely bring your runtime to its knees and {% footnoteref "watchdog" "I have written a rather long article about <a href='/2026/02/09/rust-watchdog/'>authoring a watchdog to recover from deadlocks</a>. Check it out, it’s good stuff!" %}make your server hang{% endfootnoteref %}, rendering it essentially broken even though it actually runs.
+{% assign footnote_watchdog = "I have written a rather long article about <a href='/2026/02/09/rust-watchdog/'>authoring a watchdog to recover from deadlocks</a>. Check it out, it’s good stuff!" %}
+
+This can absolutely bring your runtime to its knees and {% footnoteref "watchdog" footnote_watchdog %}make your server hang{% endfootnoteref %}, rendering it essentially broken even though it actually runs.
 
 Now here is the thing: I know this is a skill issue. This is probably a problem that very experienced programmers no longer face because they have achieved the nirvana of thread-safe concurrency. But for anyone learning Rust on anything non-trivial, this can be a real ass-biting moment.
 
@@ -143,4 +150,4 @@ Now here is the thing: I know this is a skill issue. This is probably a problem 
 
 More Rust! To be honest, I could see myself pick it as a language of choice for a production backend project. It’s definitely a mature and performant language, with incredible developer experience, and a vibrant community.
 
-I guess it depends a lot on the project. After all, I’m still much more comfortable with TypeScript, but I’ve also written JS my entire career. So if like me you’re coming from JS/TS and would like to try Rust, start with small CLI tools or glue code before jumping into a heavily concurrent server. The compiler will teach you a lot, but locks and deadlocks are still a separate boss fight. 
+I guess it depends a lot on the project. After all, I’m still much more comfortable with TypeScript, but I’ve also written JS my entire career. So if like me you’re coming from JS/TS and would like to try Rust, start with small CLI tools or glue code before jumping into a heavily concurrent server. The compiler will teach you a lot, but locks and deadlocks are still a separate boss fight.

@@ -75,7 +75,9 @@ WantedBy=multi-user.target
 
 </details>
 
-Every 10 seconds, that bash script ensures there is a running game process. {% footnoteref "consecutive-failures" "This is important, as we don’t want to immediately restart the server in case there is a blip or something. We should make sure there is an actual problem." %}If it finds a problem 3 times in a row, it (re)starts the process{% endfootnoteref %}. This is how a simplified version looks:
+{% assign footnote_consecutive_failures = "This is important, as we don’t want to immediately restart the server in case there is a blip or something. We should make sure there is an actual problem." %}
+
+Every 10 seconds, that bash script ensures there is a running game process. {% footnoteref "consecutive-failures" footnote_consecutive_failures %}If it finds a problem 3 times in a row, it (re)starts the process{% endfootnoteref %}. This is how a simplified version looks:
 
 ```bash
 failure_count=0
@@ -114,7 +116,9 @@ done
 
 During my tests, I faced some issue with [thrashing](<https://en.wikipedia.org/wiki/Thrashing_(computer_science)>), which is when the watchdog runs the bash script to start the server, and while this happens, detects _again_ that the server is not running so executes the bash script _again_, and so on.
 
-It normally doesn’t happen because the start script is very fast, but it _can_ happen {% footnoteref "cargo-run" "<code>cargo run</code> <strong>will</strong> trigger a binary build if it detects that anything changed in the work tree. It is not possible to tell cargo to just run whatever is there, it will build first. On a 8-core machine like ours, it can take up to 1–2 minutes to do a full install + build." %}if `cargo run` ends up performing a build{% endfootnoteref %}. In such a case, the script can take 1 or 2 minutes, which would be long enough for the health check to fail 3 times in a row again, and trigger yet another restart, effectively putting the watchdog in an infinite loop.
+{% assign footnote_cargo_run = "<code>cargo run</code> <strong>will</strong> trigger a binary build if it detects that anything changed in the work tree. It is not possible to tell cargo to just run whatever is there, it will build first. On a 8-core machine like ours, it can take up to 1–2 minutes to do a full install + build." %}
+
+It normally doesn’t happen because the start script is very fast, but it _can_ happen {% footnoteref "cargo-run" footnote_cargo_run %}if `cargo run` ends up performing a build{% endfootnoteref %}. In such a case, the script can take 1 or 2 minutes, which would be long enough for the health check to fail 3 times in a row again, and trigger yet another restart, effectively putting the watchdog in an infinite loop.
 
 To avoid this situation, we can have a `restart_server` function that performs some automatic backoff.
 
@@ -158,7 +162,9 @@ It’s a lot of bash, but basically all it does is ensure no more than N restart
 
 At some point, I noticed something curious: when _restarting_ the systemd service (to update its configuration or whatnot), the game server would die (fortunately, I noticed that in our test environment). It took me a long time and some heated conversations with Cursor to figure out why.
 
-It turns out that {% footnoteref "systemd-killmode" "To be more accurate, the default behavior is to kill the “control group”, in which all the processes spawned by the service live. <a href='https://ihaveabackup.net/2022/01/30/systemd-killmodes-multithreading-and-graceful-shutdown/'>This article</a> does a good job expanding on that whole topic, highlighting essentially the same exact problem I faced." %}restarting a systemd service nukes all its subprocesses{% endfootnoteref %}. So any process that was started by that service also gets killed.
+{% assign footnote_systemd_killmode = "To be more accurate, the default behavior is to kill the “control group”, in which all the processes spawned by the service live. <a href='https://ihaveabackup.net/2022/01/30/systemd-killmodes-multithreading-and-graceful-shutdown/'>This article</a> does a good job expanding on that whole topic, highlighting essentially the same exact problem I faced." %}
+
+It turns out that {% footnoteref "systemd-killmode" footnote_systemd_killmode %}restarting a systemd service nukes all its subprocesses{% endfootnoteref %}. So any process that was started by that service also gets killed.
 
 The solution is to specify `KillMode=process` in the service definition so that it _only_ restarts the service process itself, and none of its sub-processes.
 
@@ -293,7 +299,9 @@ To this day, I still do not fully understand why, but we had an incident where t
 
 Unfortunately, this happened at 3am when I was busy, you know, being fast asleep. I woke up around 7am to an absolute shitstorm, immediately restarted the server, and started looking into what happened and how we could make things more resilient.
 
-We get hourly notifications about the server activity, and sure enough, there was {% footnoteref "non-zero-activity" "Curiously enough, there <em>were</em> a handful of online players. I still don’t understand how they could keep playing while every other player got faced with packets timing out." %}an alarmingly low activity{% endfootnoteref %} during the incident. So I thought maybe I could hook this up to the watchdog. If there are _not enough_ players online, surely it means the server is whacked and should be restarted.
+{% assign footnote_non_zero_activity = "Curiously enough, there <em>were</em> a handful of online players. I still don’t understand how they could keep playing while every other player got faced with packets timing out." %}
+
+We get hourly notifications about the server activity, and sure enough, there was {% footnoteref "non-zero-activity" footnote_non_zero_activity %}an alarmingly low activity{% endfootnoteref %} during the incident. So I thought maybe I could hook this up to the watchdog. If there are _not enough_ players online, surely it means the server is whacked and should be restarted.
 
 So when handling the health check packet on the server, we look at how many players are connected, and we compare it with our configured threshold (e.g. 100 or whatever we defined). If it’s lower than the threshold, we return a failed response.
 
@@ -346,14 +354,18 @@ One way would be to make the population threshold much much higher, but then you
 - You can say that anything below 200 players online is not normal. That means you need 800 players to time out and log out before your health check starts failing.
 - Now you can bump that threshold to 500 or even 800 players, which means the health check will start failing way faster! But then, what if you have just a traffic dip for any reason. Maybe it’s New Year’s Eve, or there is a massive internet outage in the biggest market. It’s risky.
 
-Instead, I decided to look into the main symptom for any major incident we had: timeouts. It always manifests the same way: all of the sudden, {% footnoteref "timeouts" "To be clear, the timeout is sent by our server. Our main packet handling logic defines a maximum time for a packet to be processed, in order to avoid spending too long on a weird packet and clogging the whole queue." %}all client-side packets start timing out{% endfootnoteref %}. The logs are all red and angry, everything just shows “deadline has elapsed”. There is no self-recovery either: it’s not a burst problem — it’s the runtime in a deadlock.
+{% assign footnote_timeouts = "To be clear, the timeout is sent by our server. Our main packet handling logic defines a maximum time for a packet to be processed, in order to avoid spending too long on a weird packet and clogging the whole queue." %}
+
+Instead, I decided to look into the main symptom for any major incident we had: timeouts. It always manifests the same way: all of the sudden, {% footnoteref "timeouts" footnote_timeouts %}all client-side packets start timing out{% endfootnoteref %}. The logs are all red and angry, everything just shows “deadline has elapsed”. There is no self-recovery either: it’s not a burst problem — it’s the runtime in a deadlock.
 
 <figure class="Figure">
 <img src="/assets/images/rust-watchdog/error-logs.png" alt="Screenshot of Better Stack live tail showing a lot of timeout errors" />
 <figcaption>Wall of “deadline has elapsed” error logs</figcaption>
 </figure>
 
-What if I could notice when this happens? To do so, I’ve started keeping track of when the server times a packet out. I’ve decided to {% footnoteref "segqueue" "One reason I ended up using a <code>SegQueue</code> is because I wanted a lock-free structure. When the server is in a deadlock, there can be hundreds or thousands of timeouts within a short window. I didn’t want lock acquisition to become a bottleneck for keeping track of timeouts." %}use a `SegQueue`{% endfootnoteref %} from the [`crossbeam_queue` crate](https://docs.rs/crossbeam-queue/latest/crossbeam_queue/).
+{% assign footnote_segqueue = "One reason I ended up using a <code>SegQueue</code> is because I wanted a lock-free structure. When the server is in a deadlock, there can be hundreds or thousands of timeouts within a short window. I didn’t want lock acquisition to become a bottleneck for keeping track of timeouts." %}
+
+What if I could notice when this happens? To do so, I’ve started keeping track of when the server times a packet out. I’ve decided to {% footnoteref "segqueue" footnote_segqueue %}use a `SegQueue`{% endfootnoteref %} from the [`crossbeam_queue` crate](https://docs.rs/crossbeam-queue/latest/crossbeam_queue/).
 
 ```rust
 pub struct HealthCheckConfig {

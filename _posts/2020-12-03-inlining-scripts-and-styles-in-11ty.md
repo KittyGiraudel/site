@@ -9,7 +9,9 @@ tags:
   - Liquid
 ---
 
-I recently got [Harry Robert’s course on CSS performance](https://gumroad.com/l/eihdtmcwf) (you totally should to, it’s a goldmine of information) and worked on improving performance for this site. I quickly spotted 2 performance {% footnoteref "bottleneck" "Although we are playing fast and loose with the world “bottleneck” here because it really wasn’t that bad." %}bottlenecks{% endfootnoteref %}: requesting the stylesheet, and requesting the main script.
+{% assign footnote_bottleneck = "Although we are playing fast and loose with the world “bottleneck” here because it really wasn’t that bad." %}
+
+I recently got [Harry Robert’s course on CSS performance](https://gumroad.com/l/eihdtmcwf) (you totally should to, it’s a goldmine of information) and worked on improving performance for this site. I quickly spotted 2 performance {% footnoteref "bottleneck" footnote_bottleneck %}bottlenecks{% endfootnoteref %}: requesting the stylesheet, and requesting the main script.
 
 I had about 4.7Kb of CSS, and less than 1Kb of JavaScript, so I figured the HTTP requests weren’t that necessary at all and I could inject styles and scripts directly within the page to avoid HTTP roundtrips. [Inlining CSS](https://www.11ty.dev/docs/quicktips/inline-css/) and [inlining JavaScript](https://www.11ty.dev/docs/quicktips/inline-js/) is explained in the Eleventy docs, so not really warrant of a blog post I hear you say.
 
@@ -101,7 +103,7 @@ module.exports = function (config) {
     config.addTransform('htmlmin', (content, path) =>
       path.endsWith('.html')
         ? htmlmin.minify(content, { minifyCSS: true, minifyJS: true })
-        : content
+        : content,
     )
   }
 }

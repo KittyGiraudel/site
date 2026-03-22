@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
     {%- unless page.data.external or page.url == '/404.html' %}
     <url>
         <loc>{{ site.url }}{{ page.url | url }}</loc>
-        {% if page.date %}<lastmod>{{ page.date | date_to_xmlschema }}</lastmod>{% endif %}
+        {% if page.date %}<lastmod>{{ page.date | date_to_rfc3339 }}</lastmod>{% endif %}
     </url>
     {%- endunless %}
     {%- endfor %}

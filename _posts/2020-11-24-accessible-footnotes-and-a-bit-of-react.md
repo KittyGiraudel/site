@@ -12,7 +12,9 @@ tags:
 
 A few years back, I wrote [Accessible footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/), now the first result when asking Google for “accessible footnotes”. To this day, I still think it’s one of the most useful articles I’ve ever written because: a) most footnotes out there are not accessible and b) the CSS in that demo is actually pretty clever and was fun to write.
 
-Today, I would like to revisit that implementation for using it in React. If you are interested in a ready-to-go solution, I am currently working on [react-a11y-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/react-a11y-footnotes), an {% footnoteref "experimental" "It is currently in v0.1 and the API might change a little. Additionally, I’m not too sure whether the styles I included are enough or too much. Any review or suggestion appreciated!" %}experimental{% endfootnoteref %} library that you can install directly from npm to use in your projects.
+{% assign footnote_experimental = "It is currently in v0.1 and the API might change a little. Additionally, I’m not too sure whether the styles I included are enough or too much. Any review or suggestion appreciated!" %}
+
+Today, I would like to revisit that implementation for using it in React. If you are interested in a ready-to-go solution, I am currently working on [react-a11y-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/react-a11y-footnotes), an {% footnoteref "experimental" footnote_experimental %}experimental{% endfootnoteref %} library that you can install directly from npm to use in your projects.
 
 ## What’s so hard about it?
 

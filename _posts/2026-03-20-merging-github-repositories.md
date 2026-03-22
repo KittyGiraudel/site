@@ -12,9 +12,11 @@ I am currently hyper-fixating on footnotes, and I have decided to bring my vario
 
 I know GitHub has some way to migrate a repository from an organization onto another, but that’s not really what I needed. I wanted to _merge several repositories into a new repository_, and in the process preserve:
 
+{% assign footnote_git_tags = "This is unfortunately not exactly possible since they would be colliding. For instance, both repositories had their own 0.1.0 tag pointing to different commits, so although I brought all releases + tags, I had to rename them." %}
+
 - All the commits from both repositories.
 - All the releases from both repositories.
-- All the {% footnoteref "git-tags" "This is unfortunately not exactly possible since they would be colliding. For instance, both repositories had their own 0.1.0 tag pointing to different commits, so although I brought all releases + tags, I had to rename them." %}tags from both repositories{% endfootnoteref %}.
+- All the {% footnoteref "git-tags" footnote_git_tags %}tags from both repositories{% endfootnoteref %}.
 
 What I decided not to bother with: issues and pull-requests. I also didn’t make use of discussions, environments, or wikis, so that made things easier.
 
@@ -64,7 +66,9 @@ I’ve decided to go with a Bash script using the [GitHub CLI](https://cli.githu
 3. Create a new release on the new repository.
 4. Upload the assets onto the new release.
 
-Here is {% footnoteref "script-dependencies" "It’s worth pointing out that the script relies on the <code>gh</code> and <code>jq</code> to work." %}the script{% endfootnoteref %} in all its glory, cleaned up and simplified a little compared to when I ran it. It has a generous amount of comments to make it easier to understand.
+{% assign footnote_script_dependencies = "It’s worth pointing out that the script relies on the <code>gh</code> and <code>jq</code> to work." %}
+
+Here is {% footnoteref "script-dependencies" footnote_script_dependencies %}the script{% endfootnoteref %} in all its glory, cleaned up and simplified a little compared to when I ran it. It has a generous amount of comments to make it easier to understand.
 
 ```bash
 #!/bin/bash

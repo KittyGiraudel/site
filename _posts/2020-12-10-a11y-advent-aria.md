@@ -6,11 +6,11 @@ tags:
   - ARIA
 ---
 
-{% assign aria = "“Don’t use ARIA, use native HTML instead” is the first rule of ARIA as described in the [top 5 rules of ARIA](https://www.deque.com/blog/top-5-rules-of-aria/) by Deque." | markdown %}
-
 Yesterday we discussed the usage of the `aria-disabled` and `aria-describedby` attributes so it’s a good time to talk more about ARIA as a whole. It stands for Accessible Rich Internet Applications. It’s a specification aiming at enhancing HTML in order to convey more meaning and semantics to assistive technologies, such as screen-readers.
 
-The {% footnoteref "aria" aria %}first advice when it comes to ARIA{% endfootnoteref %} is to avoid using it when possible. It is a powerful tool that can completely change the way a page or widget gets interpreted by assistive technologies, for good or for bad, so it needs to be used carefully. Generally speaking, prefer using native HTML when possible, and only use ARIA when HTML is not enough (such as for tabs or carousels).
+{% assign footnote_aria = "“Don’t use ARIA, use native HTML instead” is the first rule of ARIA as described in the <a href='https://www.deque.com/blog/top-5-rules-of-aria/'>top 5 rules of ARIA</a> by Deque." %}
+
+The {% footnoteref "aria" footnote_aria %}first advice when it comes to ARIA{% endfootnoteref %} is to avoid using it when possible. It is a powerful tool that can completely change the way a page or widget gets interpreted by assistive technologies, for good or for bad, so it needs to be used carefully. Generally speaking, prefer using native HTML when possible, and only use ARIA when HTML is not enough (such as for tabs or carousels).
 
 There are a lot of handy guides on the internet on building accessible widgets with the help of ARIA — [Inclusive Components](https://inclusive-components.design/) by Heydon Pickering has to be one of my favourite.
 

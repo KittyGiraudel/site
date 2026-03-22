@@ -13,11 +13,11 @@ In this post, I want to show a teeny-tiny React component to make it more explic
 
 ```jsx
 const VisuallyHidden = ({ as: Component, ...props }) => (
-  <Component {...props} className="sr-only" />
+  <Component {...props} className='sr-only' />
 )
 
 VisuallyHidden.defaultProps = {
-  as: 'span'
+  as: 'span',
 }
 ```
 
@@ -28,7 +28,11 @@ const TitleAnnouncer = props => {
   const [title, setTitle] = React.useState('')
   // More React code…
 
-  return <VisuallyHidden as='p' tabIndex={-1}>{title}</VisuallyHidden>
+  return (
+    <VisuallyHidden as='p' tabIndex={-1}>
+      {title}
+    </VisuallyHidden>
+  )
 }
 ```
 
@@ -41,4 +45,3 @@ The `as` prop is intended to provide a way to change the underlying DOM element 
 Finally, we spread the props so that it is possible to pass other DOM attributes to the underlying element (e.g. `tabIndex`). Note that we spread **before** the `className` prop so we don’t inadvertently override it.
 
 Feel free to [play with the code](https://codesandbox.io/s/accessible-visibility-react-component-o3nbv) on CodeSandbox.
-

@@ -8,9 +8,9 @@ tags:
 
 Animations are everywhere nowadays. With devices and browsers more powerful than ever, and APIs making it easier and easier to craft complex and delightful animations, it is no surprise they are heavily used in modern software development. And for good reason! When used properly, animations can grealty enhance the experience, making it easier to understand what is going on.
 
-{% assign vestibular = "According to [Vestibular.org](https://vestibular.org/understanding-vestibular-disorder), a large epidemiological study estimates that as many as 35% adults aged 40 years or older in the United States (roughly 70 million) have experienced some form of vestibular dysfunction." | markdown %}
+{% assign footnote_vestibular = "According to <a href='https://vestibular.org/understanding-vestibular-disorder'>Vestibular.org</a>, a large epidemiological study estimates that as many as 35% adults aged 40 years or older in the United States (roughly 70 million) have experienced some form of vestibular dysfunction." %}
 
-Animations can also be overused or misused. For most people, no big deal, but certain persons can react poorly to moving content. It can range from frustration to motion sickness (known as {% footnoteref "vestibular" vestibular %}vestibular disorder — which is shockingly common by the way{% endfootnoteref %}), to more critical outcomes like seizures. So it’s important to use animations responsibly.
+Animations can also be overused or misused. For most people, no big deal, but certain persons can react poorly to moving content. It can range from frustration to motion sickness (known as {% footnoteref "vestibular" footnote_vestibular %}vestibular disorder — which is shockingly common by the way{% endfootnoteref %}), to more critical outcomes like seizures. So it’s important to use animations responsibly.
 
 A relatively low hanging-fruit is to respect the `prefers-reduced-motion` media query when animating content on screen. Note that I use “animating” as a blanket word to cover animations and transitions alike. I wrote about [building a reduced-motion mode](https://kittygiraudel.com/2018/03/19/implementing-a-reduced-motion-mode/) in the past and would recommend reading the article to get the full picture.
 

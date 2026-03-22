@@ -40,14 +40,14 @@ class Grid<T> {
   constructor(
     width: number,
     height: number,
-    value: T | null | ((coords: Coords) => T) = null
+    value: T | null | ((coords: Coords) => T) = null,
   ) {
     this.data = Array.from({ length: height }, (_, ri) =>
       Array.from({ length: width }, (_, ci) =>
         typeof value === 'function'
           ? (value as CallableFunction)([ri, ci])
-          : value
-      )
+          : value,
+      ),
     )
   }
 
@@ -57,7 +57,7 @@ class Grid<T> {
 
   get columns() {
     return Array.from({ length: this.width }, (_, ci) =>
-      this.rows.map(row => row.at(ci) as T)
+      this.rows.map(row => row.at(ci) as T),
     )
   }
 
@@ -88,17 +88,17 @@ class Grid<T> {
 
   static from<I, O = I>(input: I[][], mapper: Mapper<I, O> = identity) {
     return new Grid<O>(input[0].length, input.length, ([ri, ci]) =>
-      mapper(input[ri][ci], [ri, ci])
+      mapper(input[ri][ci], [ri, ci]),
     )
   }
 
   static fromRows<O = string>(
     input: string[],
-    mapper: Mapper<string, O> = identity
+    mapper: Mapper<string, O> = identity,
   ) {
     return Grid.from(
       input.map(row => Array.from(row)),
-      mapper
+      mapper,
     )
   }
 }
@@ -178,13 +178,13 @@ class Grid<T> {
 
     if (ri < 0 || ri > this.height - 1) {
       throw new Error(
-        `Cannot set value at position ${position} since row ${ri} is out of bound for grid of height ${this.height}.`
+        `Cannot set value at position ${position} since row ${ri} is out of bound for grid of height ${this.height}.`,
       )
     }
 
     if (ci < 0 || ci > this.width - 1) {
       throw new Error(
-        `Cannot set value at position ${position} since column ${ci} is out of bound for grid of width ${this.width}.`
+        `Cannot set value at position ${position} since column ${ci} is out of bound for grid of width ${this.width}.`,
       )
     }
 
@@ -210,7 +210,7 @@ class Grid<T> {
 
   forEach(handler: (item: T, coords: Coords) => void) {
     this.rows.forEach((row, ri) =>
-      row.forEach((value, ci) => handler(value, [ri, ci]))
+      row.forEach((value, ci) => handler(value, [ri, ci])),
     )
   }
 }
@@ -259,9 +259,9 @@ class Grid<T> {
       (accRow, row, ri) =>
         row.reduce(
           (accCol, item, ci) => handler(accCol, item, [ri, ci]),
-          accRow
+          accRow,
         ),
-      initialValue
+      initialValue,
     )
   }
 }
@@ -281,7 +281,7 @@ class Grid<T> {
   findCoords(predicate: (item: T, coords: Coords) => boolean) {
     return this.reduce<Coords | undefined>(
       (acc, item, coords) => acc ?? (predicate(item, coords) ? coords : acc),
-      undefined
+      undefined,
     )
   }
 }
@@ -391,7 +391,7 @@ class Grid<T> {
 
   render(
     separator: string = '',
-    mapper: (value: T) => string = value => String(value)
+    mapper: (value: T) => string = value => String(value),
   ) {
     return this.rows.map(row => row.map(mapper).join(separator)).join('\n')
   }

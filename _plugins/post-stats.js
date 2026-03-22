@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import utilities from './utilities.js'
 
 const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/
 const CONTENT_STATS_CACHE = new Map()
@@ -128,17 +129,17 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
     const stats = {
       firstPostDate,
       lastPostDate,
-      postCount,
-      avgPostsPerWeek,
-      avgPostsPerMonth,
-      avgPostsPerYear,
-      avgDaysBetweenPosts,
-      avgCharacterCount,
-      avgWordCount,
-      avgParagraphCount,
+      postCount: utilities.formatNumber(postCount),
+      avgPostsPerWeek: utilities.formatNumber(avgPostsPerWeek),
+      avgPostsPerMonth: utilities.formatNumber(avgPostsPerMonth),
+      avgPostsPerYear: utilities.formatNumber(avgPostsPerYear),
+      avgDaysBetweenPosts: utilities.formatNumber(avgDaysBetweenPosts),
+      avgCharacterCount: utilities.formatNumber(avgCharacterCount),
+      avgWordCount: utilities.formatNumber(avgWordCount),
+      avgParagraphCount: utilities.formatNumber(avgParagraphCount),
       popularTags,
       years,
-      months,
+      months: utilities.formatNumber(months),
     }
 
     const arr = [stats]

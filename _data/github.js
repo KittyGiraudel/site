@@ -1,11 +1,12 @@
 import Fetch from '@11ty/eleventy-fetch'
 import { CONFIG } from '../.eleventy.js'
+import utilities from '../_plugins/utilities.js'
 
 const STATIC_DATA = {
-  'https://github.com/KittyGiraudel/a11y-dialog': 2500,
-  'https://github.com/KittyGiraudel/SJSJ': 2300,
-  'https://github.com/KittyGiraudel/sass-guidelines': 900,
-  'https://github.com/SassDoc/sassdoc': 1400,
+  'https://github.com/KittyGiraudel/a11y-dialog': utilities.formatNumber(2500),
+  'https://github.com/KittyGiraudel/SJSJ': utilities.formatNumber(2300),
+  'https://github.com/KittyGiraudel/sass-guidelines': utilities.formatNumber(900),
+  'https://github.com/SassDoc/sassdoc': utilities.formatNumber(1400),
 }
 
 export default async function () {
@@ -28,7 +29,7 @@ export default async function () {
     )
 
     const data = repositoriesData.reduce((acc, repo) => {
-      acc[repo.clone_url.replace('.git', '')] = repo.stargazers_count
+      acc[repo.clone_url.replace('.git', '')] = utilities.formatNumber(repo.stargazers_count)
       return acc
     }, {})
 
