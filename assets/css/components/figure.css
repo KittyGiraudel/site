@@ -1,16 +1,16 @@
-.figure {
+.Figure {
   margin: var(--vb) 0;
   position: relative;
   clear: right;
 }
 
-.figure figcaption {
+.Figure figcaption {
   font-family: var(--code-font);
   font-size: 60%;
   display: inline-block;
 }
 
-.figure figcaption::before {
+.Figure figcaption::before {
   content: "";
   display: block;
   height: 4px;
@@ -21,7 +21,7 @@
 }
 
 @media (min-width: 1400px) {
-  .figure figcaption {
+  .Figure figcaption {
     width: 100%;
     max-width: 250px;
     position: absolute;
@@ -31,7 +31,7 @@
     padding-right: 2.5em;
   }
 
-  .figure figcaption::before {
+  .Figure figcaption::before {
     margin-bottom: var(--vb);
   }
 }

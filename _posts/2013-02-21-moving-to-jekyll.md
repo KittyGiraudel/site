@@ -44,7 +44,7 @@ Everything was handled manually and I was pretty happy back then (what a fool…
 
 ### It was a bad idea
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/jekyll/oh-god-why.png" alt="Oh god… why?" />
 <figcaption>Oh god… why?</figcaption>
 </figure>

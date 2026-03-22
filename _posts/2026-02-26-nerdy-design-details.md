@@ -41,7 +41,7 @@ I’ve improved the control itself to be a tri-state button to support dark, lig
 <button
   type="button"
   aria-pressed="false"
-  class="ThemeButton no-print" 
+  class="ThemeButton NoPrint"
   title="Theme: light"
 >
   <span class="visually-hidden">Dark mode</span>
@@ -49,7 +49,7 @@ I’ve improved the control itself to be a tri-state button to support dark, lig
 </button>
 ```
 
-Semantically, this is a button to control the *dark mode* specifically (not exactly the theme per se). The `aria-pressed` attribute determines whether the dark mode is enabled: `true` for yes, `false` for no, `mixed` for automatic (according to the operating system preference).
+Semantically, this is a button to control the _dark mode_ specifically (not exactly the theme per se). The `aria-pressed` attribute determines whether the dark mode is enabled: `true` for yes, `false` for no, `mixed` for automatic (according to the operating system preference).
 
 The JavaScript code just rotates between the 3 states, and backs up the preference in the local storage of the browser. When you interact with the button, it computes the next state, updates the `aria-pressed` and `title` attributes, and stores the new value in local storage.
 
@@ -70,11 +70,21 @@ I’ve also added a playful little hover animation for that button, making it wi
 }
 
 @keyframes wiggle {
-  from { transform: rotate(10deg) }
-  25% { transform: rotate(-10deg) }
-  50% { transform: rotate(20deg) }
-  75% { transform: rotate(-5deg) }
-  to { transform: rotate(0deg) }
+  from {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 ```
 
@@ -126,10 +136,12 @@ Now, for the floating typographic marks, I’ve used absolutely positioned pseud
 
 ```css
 .Callout::before {
-  content: '‽';
+  content: "‽";
 
   opacity: 0.2;
-  font: 1000% / 1 Baskerville, serif;
+  font:
+    1000% / 1 Baskerville,
+    serif;
   color: var(--blue);
 
   position: absolute;
@@ -146,7 +158,10 @@ It’s worth pointing out that the `transform` value for the pseudo-element is t
 To ensure the content within the callout sits on top of the decorative character (even though the latter is semi-transparent), we bump its z-index:
 
 ```css
-.Callout > * { position: relative; z-index: 2; }
+.Callout > * {
+  position: relative;
+  z-index: 2;
+}
 ```
 
 I have used the same design pattern for [footnotes](#footnotes-label), and the [editorial changes](#post-edits) for an example). I really like the juxtaposition of a neatly bordered box, and a decorative element breaking out of it, bringing some dynamism!
@@ -165,9 +180,9 @@ I have had a love-hate relationship with heading anchors over the years. I’ve 
 
 ## Fleurons
 
-I am fascinated by obscure typographic features. One of my recent reads is [Shady Characters](https://shadycharacters.co.uk/) by Keith Houston {% footnoteref "emdash" "I understand the emdash has been co-opted by LLMs, and using it is discouraged to avoid looking like an AI, but the fact is I truly love the emdash — you will never take it away from me!" %}—{% endfootnoteref %} a fabulous walk through a dozen or so typographic characters, such as &, and #, and †. 
+I am fascinated by obscure typographic features. One of my recent reads is [Shady Characters](https://shadycharacters.co.uk/) by Keith Houston {% footnoteref "emdash" "I understand the emdash has been co-opted by LLMs, and using it is discouraged to avoid looking like an AI, but the fact is I truly love the emdash — you will never take it away from me!" %}—{% endfootnoteref %} a fabulous walk through a dozen or so typographic characters, such as &, and #, and †.
 
-The other day, I stumbled upon [this delightful website by Henry Desroches](https://henry.codes/writing/the-first-thing-i-did-last-year-was-run/). Just before the footer stands this gorgeous little guy: ❦. Would you just look at it? It turns out that *it* has a name: the [fleuron](https://en.wikipedia.org/wiki/Fleuron_(typography)). Quoting Wikipedia:
+The other day, I stumbled upon [this delightful website by Henry Desroches](https://henry.codes/writing/the-first-thing-i-did-last-year-was-run/). Just before the footer stands this gorgeous little guy: ❦. Would you just look at it? It turns out that _it_ has a name: the [fleuron](<https://en.wikipedia.org/wiki/Fleuron_(typography)>). Quoting Wikipedia:
 
 > A fleuron (/ˈflʊərɒn, -ən, ˈflɜːrɒn, -ən/), also known as a printers’ flower, is a typographical symbol, or glyph, used either as a punctuation mark or as an ornament for typographic compositions. Fleurons are stylized forms of flowers or leaves; the term derives from the Old French: floron (“flower”). Robert Bringhurst in The Elements of Typographic Style calls the forms “horticultural dingbats”. A commonly encountered fleuron is the ❦, the floral heart or hedera (ivy leaf), also known as an aldus leaf after Italian Renaissance printer Aldus Manutius.
 
@@ -216,11 +231,11 @@ h2 {
 
 {% footnoteref "no-more-ads" "I was serving ads at the time of writing. I am no longer doing that now." %}~~For some reason, I am still running ads on this website~~{% endfootnoteref %}. It’s not like I make a lot of money from it though. I’ve been with CarbonAds for over 10 years, and probably haven’t made more than a few hundred bucks from them in all that time. But still, it pays for the occasional cup of coffee, so it’s kind of nice I guess.
 
-Carbon requires the ad (which is ~330 &times; 114px) to be placed above the fold — for obvious reasons. I didn’t really know what to do with it, so I had placed it right below the title, centered. It didn’t look too great. Even worse, when running an ad-blocker (something I obviously also do), there would be this massive blank space under the page title for where the ad was supposed to show up. It would look awkward. 
+Carbon requires the ad (which is ~330 &times; 114px) to be placed above the fold — for obvious reasons. I didn’t really know what to do with it, so I had placed it right below the title, centered. It didn’t look too great. Even worse, when running an ad-blocker (something I obviously also do), there would be this massive blank space under the page title for where the ad was supposed to show up. It would look awkward.
 
-I had limited that problem a little by placing the ad in the bottom right corner of the screen for large viewports. But that wouldn’t happen before 1556-pixel-wide viewports. 
+I had limited that problem a little by placing the ad in the bottom right corner of the screen for large viewports. But that wouldn’t happen before 1556-pixel-wide viewports.
 
-So I’ve implemented a few changes. First, I’ve moved the ad a little lower in the page, while still living above the fold. When possible, I injected it *after* the first paragraph. This wasn’t too obvious in Liquid:
+So I’ve implemented a few changes. First, I’ve moved the ad a little lower in the page, while still living above the fold. When possible, I injected it _after_ the first paragraph. This wasn’t too obvious in Liquid:
 
 ```liquid
 {​% assign parts = content | split: "</p>" %}
@@ -233,17 +248,27 @@ So I’ve implemented a few changes. First, I’ve moved the ad a little lower i
 {​% endfor %}
 ```
 
-And for it to fit better within the flow of the article, I’ve wrapped the ad in a visible container, with a dedicated slot and some text to explicitly mention that this callout is for an ad display. 
+And for it to fit better within the flow of the article, I’ve wrapped the ad in a visible container, with a dedicated slot and some text to explicitly mention that this callout is for an ad display.
 
 Finally, I’ve made it so that if the ad couldn’t be loaded (because of an ad-blocker or any other reason), the ad container would be hidden entirely:
 
 ```css
-.Ad:not(:has(#carbonads)) { display: none }
+.Ad:not(:has(#carbonads)) {
+  display: none;
+}
 
 @media screen and (min-width: 1556px) {
-  .Ad          { display: contents }
-  .Ad__text    { display: none }
-  .Ad__carbon  { position: fixed; bottom: 0.5em; right: 1em }
+  .Ad {
+    display: contents;
+  }
+  .Ad__text {
+    display: none;
+  }
+  .Ad__carbon {
+    position: fixed;
+    bottom: 0.5em;
+    right: 1em;
+  }
 }
 ```
 

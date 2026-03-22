@@ -10,7 +10,7 @@ A couple of days ago, [Ana Tudor](https://twitter.com/thebabydino) showed me how
 
 To be truely honest, I wasn’t impressed that much since I am pretty familiar with Ana’s work which is always amazing. If you haven’t seen [her 3D geometric shapes](https://stackoverflow.com/users/1397351/ana) made of pure CSS, then you definitely should.
 
-<figure class="figure">
+<figure class="Figure">
 <img alt="" src="/assets/images/sass-mixin-star/css-star.png">
 <figcaption>A 6-points star mixin made with CSS</figcaption>
 </figure>
@@ -21,7 +21,7 @@ Anyway, when I saw this I thought it could be fun to make a [Sass version](https
 
 The first thing was to understand how Ana managed to achieve such a shape with a single element (and 2 pseudo-elements). Long story short: **chained CSS transforms**.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/sass-mixin-star/rhombius.png" alt="">
 <figcaption>3 rhombius = a 6-points star</figcaption>
 </figure>
@@ -42,7 +42,7 @@ The user couldn’t figure this out and neither could I. So I asked Ana how to c
 
 ```javascript
 function computeHeight(x, skewAngle) {
-  return Math.sin(((90 - skewAngle) * Math.PI) / 180) * x
+  return Math.sin(((90 - skewAngle) * Math.PI) / 180) * x;
 }
 ```
 
@@ -50,7 +50,7 @@ Okay, this is JavaScript but it is a good start. However this returns a radian v
 
 ```javascript
 function computeHeight(x, skewAngle) {
-  return Math.sin(90 - skewAngle) * x
+  return Math.sin(90 - skewAngle) * x;
 }
 ```
 
@@ -120,7 +120,7 @@ You give this mixin a [list](https://sass-lang.com/docs/yardoc/file.SASS_REFEREN
 .selector {
   &:after,
   &:before {
-    @include val(width height background, 'inherit');
+    @include val(width height background, "inherit");
   }
 }
 ```
@@ -170,9 +170,9 @@ Here is the full code for the mixin. As you can see, it is really not that big (
   &:before,
   &:after {
     $properties: width, height, background;
-    content: '';
+    content: "";
     position: absolute;
-    @include val($properties, 'inherit');
+    @include val($properties, "inherit");
   }
 
   &:before {

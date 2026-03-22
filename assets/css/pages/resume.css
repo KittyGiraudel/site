@@ -124,7 +124,7 @@
     letter-spacing: 0.05em;
   }
 
-  .Resume__section > div > :has(+ .no-print:last-child) {
+  .Resume__section > div > :has(+ .NoPrint:last-child) {
     margin-bottom: 0;
   }
 

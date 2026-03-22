@@ -8,9 +8,9 @@ tags:
 
 I use the terminal a lot. I think it’s primarily because my brother taught me how to use git when I started working in software development, and so I’ve gotten comfortable with it. We’ve covered git and terminal customization on this blog before:
 
-- *[How I use git](/2018/02/17/how-i-use-git/)* (on February 17th, 2018)
-- *[Making sense of zsh](/2022/10/29/making-sense-of-zsh/)* (on October 29th, 2022)
-- *[Git Tips & Tricks (Part 1)](/2014/03/10/git-tips-and-tricks-part-1/#use-an-awesome-prompt)* from my brother Loïc himself  (on March 10th, 2014)
+- _[How I use git](/2018/02/17/how-i-use-git/)_ (on February 17th, 2018)
+- _[Making sense of zsh](/2022/10/29/making-sense-of-zsh/)_ (on October 29th, 2022)
+- _[Git Tips & Tricks (Part 1)](/2014/03/10/git-tips-and-tricks-part-1/#use-an-awesome-prompt)_ from my brother Loïc himself (on March 10th, 2014)
 
 And because I spend so much time in the terminal, I really enjoy when it’s pretty and helpful. The default Terminal application on macOS always makes me cringe: it’s so monochromatic and gloomy.
 
@@ -18,7 +18,7 @@ I’ve used a variety of shells and apps over the years: Git Bash, iTerm2, VSC e
 
 ## What’s Starship
 
-Starship is a minimal, fast, and customizable prompt for any shell. It’s built with compatibility in mind, it’s written in Rust and it’s highly configurable, with very sensible defaults. It’s genuinely an impressive little piece of software, and you *have* to learn about it if you haven’t yet.
+Starship is a minimal, fast, and customizable prompt for any shell. It’s built with compatibility in mind, it’s written in Rust and it’s highly configurable, with very sensible defaults. It’s genuinely an impressive little piece of software, and you _have_ to learn about it if you haven’t yet.
 
 I’m taking the liberty to hotlink the video from their homepage:
 
@@ -140,6 +140,7 @@ truncation_length = 3
 truncate_to_repo = true
 use_logical_path = true
 ```
+
 </details>
 
 ## Nice details
@@ -149,7 +150,7 @@ Every time I play a bit more with Starship, I’m astounded at the level of care
 For instance, the `explain` subcommand provides information about each component from your current prompt in order to better understand how to customize it. Calling `starship explain` right now in my website’s directory shows this:
 
 ```
-site on main v24.14.0 ● starship explain                          10:33:47 
+site on main v24.14.0 ● starship explain                          10:33:47
 
  Here's a breakdown of your prompt:
  "on main " (17ms)    -  The active branch of the repo in your current directory
@@ -161,7 +162,7 @@ site on main v24.14.0 ● starship explain                          10:33:47
 
 It also provides a lot of [community presets](https://starship.rs/presets/) which are basically ready-to-use TOML configuration files. I’ve played with the [Catppuccin Powerline preset](https://starship.rs/presets/catppuccin-powerline) myself as a potential bold and colorful alternative.
 
-<figure class="figure">
+<figure class="Figure">
   <img src="https://starship.rs/presets/img/catppuccin-powerline.png" alt="Screenshot of a Git Bash terminal featuring the colorful rainbow-like Catppuccin Powerline theme" />
   <figcaption>Catppuccin Powerline comes in a few different flavours</figcaption>
 </figure>

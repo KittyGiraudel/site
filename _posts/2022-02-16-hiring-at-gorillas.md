@@ -63,7 +63,7 @@ So [Mike Smart](https://www.linkedin.com/in/mike-smart-83909a1b5/) and I designe
 
 This works surprisingly (or is it?) well. Not that we don’t reject anyone at that stage; we do. I say it works well because it’s a healthy way to assess technical expertise and we had good feedback about it. It’s relatively time-efficient (more so than any take-home challenge I’ve seen at least), and both parties benefit from it. The candidate also gets a chance to meet us, ask questions, get a feel for what it’s going to be like to work with us — none of which happens with a silly coding exercise given as homework.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/hiring-at-gorillas/woc-1.jpg" alt="Three women of color sitting on a couch, each with a laptop covered, some of them adorned with coding-related stickers">
 <figcaption>
 Picture courtesy of <a href="https://www.wocintechchat.com/" rel="noopener noreferrer">#WOCinTech Chat</a></figcaption>
@@ -98,7 +98,7 @@ Knowing all that, we wanted to find a way to get to know our candidates during o
 
 So, since pretty much the beginning, we have had a “culture-add interview” as part of the process for all our roles. Now I know what some of you may be thinking. Too often, the concept of a cultural interview — sometimes named “culture fit” — is problematic because it ultimately encourages homogeneity within an organization by rejecting anyone seemingly “different”. A woman in a predominantly male org, a person of color in an overwhelmingly white environment, a disabled person in a generally abled and unaware community. This is a recipe for cultivating systemic issues and perpetrating them at scale within a company. There is [this fantastic illustration from Meg](https://dribbble.com/shots/3810065-Not-a-culture-fit) that shows a woman sitting across the table of 6 men in suits, with the caption “Not a culture fit.” Touché.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/hiring-at-gorillas/not-a-culture-fit.png" alt="Illustration of a woman sitting at an interview table in front of 6 men in business suits" />
 <figcaption>“Not a culture fit” by <a href="https://dribbble.com/shots/3810065-Not-a-culture-fit" rel="noopener noreferrer">Meg</a></figcaption>
 </figure>

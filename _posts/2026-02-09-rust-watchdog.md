@@ -348,7 +348,7 @@ One way would be to make the population threshold much much higher, but then you
 
 Instead, I decided to look into the main symptom for any major incident we had: timeouts. It always manifests the same way: all of the sudden, {% footnoteref "timeouts" "To be clear, the timeout is sent by our server. Our main packet handling logic defines a maximum time for a packet to be processed, in order to avoid spending too long on a weird packet and clogging the whole queue." %}all client-side packets start timing out{% endfootnoteref %}. The logs are all red and angry, everything just shows “deadline has elapsed”. There is no self-recovery either: it’s not a burst problem — it’s the runtime in a deadlock.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/rust-watchdog/error-logs.png" alt="Screenshot of Better Stack live tail showing a lot of timeout errors" />
 <figcaption>Wall of “deadline has elapsed” error logs</figcaption>
 </figure>
@@ -450,7 +450,7 @@ From an operations perspective, I tried to make the watchdog as boring as possib
 
 Day‑to‑day, the team doesn’t think about the watchdog much; it just quietly does its job in the background. Speaking of which, this is a flowchart of the watchdog architecture:
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/rust-watchdog/flowchart.svg" alt="Mermaid diagram of the whole watchdog process" />
 <figcaption>Flowchart of the whole process (open <a href="/assets/images/rust-watchdog/flowchart.svg" target="_blank" rel="noopener noreferrer">large size</a>)</figcaption>
 </figure>

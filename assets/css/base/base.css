@@ -152,7 +152,7 @@ img {
   margin: var(--vb) 0;
 }
 
-a:not(.no-background) {
+a:not(.NoBackground) {
   outline: 0;
   color: inherit;
   text-decoration: none;
@@ -167,8 +167,8 @@ a:not(.no-background) {
   transition: background-size 250ms ease-in;
 }
 
-a:not(.no-background):hover,
-a:not(.no-background):active {
+a:not(.NoBackground):hover,
+a:not(.NoBackground):active {
   color: light-dark(#222, #ccc);
   background-size: 100% 88%;
 }

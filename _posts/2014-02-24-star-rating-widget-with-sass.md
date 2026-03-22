@@ -13,7 +13,7 @@ Although after a couple of minutes digging into their code, I noticed the CSS ou
 
 Hence, a short blog post relating all this.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/star-rating-widget-with-sass/rating-widget.png" alt="" />
 <figcaption>Star-rating widget from Yelp</figcaption>
 </figure>
@@ -135,7 +135,7 @@ Because it does the work well and is quite smart, I kept this as is. However I d
     background: $color;
   }
 
-  [data-rating='#{$i + 0.5}'] .star-#{$i + 1} {
+  [data-rating="#{$i + 0.5}"] .star-#{$i + 1} {
     border-left-color: $color;
   }
 }
@@ -162,7 +162,7 @@ Then dealing with this case is as easy as writing:
 
 ```scss
 $color: stars-color(5);
-[data-rating='5'] i {
+[data-rating="5"] i {
   border-color: $color;
   background: $color;
 }
@@ -178,49 +178,49 @@ To see how efficient those little optimizations have been, I’ve minified both 
 And here is what the loops' output looks like in my case:
 
 ```css
-[data-rating^='1'] .star-1 {
+[data-rating^="1"] .star-1 {
   border-color: #cc8b1f;
   background: #cc8b1f;
 }
 
-[data-rating='1.5'] .star-2 {
+[data-rating="1.5"] .star-2 {
   border-left-color: #cc8b1f;
 }
 
-[data-rating^='2'] .star-1,
-[data-rating^='2'] .star-2 {
+[data-rating^="2"] .star-1,
+[data-rating^="2"] .star-2 {
   border-color: #dcb228;
   background: #dcb228;
 }
 
-[data-rating='2.5'] .star-3 {
+[data-rating="2.5"] .star-3 {
   border-left-color: #dcb228;
 }
 
-[data-rating^='3'] .star-1,
-[data-rating^='3'] .star-2,
-[data-rating^='3'] .star-3 {
+[data-rating^="3"] .star-1,
+[data-rating^="3"] .star-2,
+[data-rating^="3"] .star-3 {
   border-color: #f0991e;
   background: #f0991e;
 }
 
-[data-rating='3.5'] .star-4 {
+[data-rating="3.5"] .star-4 {
   border-left-color: #f0991e;
 }
 
-[data-rating^='4'] .star-1,
-[data-rating^='4'] .star-2,
-[data-rating^='4'] .star-3,
-[data-rating^='4'] .star-4 {
+[data-rating^="4"] .star-1,
+[data-rating^="4"] .star-2,
+[data-rating^="4"] .star-3,
+[data-rating^="4"] .star-4 {
   border-color: #f26a2c;
   background: #f26a2c;
 }
 
-[data-rating='4.5'] .star-5 {
+[data-rating="4.5"] .star-5 {
   border-left-color: #f26a2c;
 }
 
-[data-rating='5'] i {
+[data-rating="5"] i {
   border-color: #dd050b;
   background: #dd050b;
 }

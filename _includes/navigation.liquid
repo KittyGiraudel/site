@@ -7,7 +7,7 @@
 {% ensure navigation, "Required value 'navigation' is missing in navigation.liquid" %}
 {% ensure current_url, "Required value 'current_url' is missing in navigation.liquid" %}
 
-<nav class="Navigation no-print" role="navigation">
+<nav class="Navigation NoPrint" role="navigation">
   <ul class="Navigation__list">
     {% for item in navigation %}
       {% assign active = current_url contains item.path %}
@@ -19,7 +19,7 @@
         {% endif %}
       {% endif %}
       <li class="Navigation__item" {% if active %} aria-current="page" {% endif %}>
-        <a class="Navigation__link no-background" href="{{ item.path }}">{{ item.label }}</a>
+        <a class="Navigation__link NoBackground" href="{{ item.path }}">{{ item.label }}</a>
       </li>
     {% endfor %}
   </ul>

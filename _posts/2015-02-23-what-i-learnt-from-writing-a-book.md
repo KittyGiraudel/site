@@ -19,7 +19,7 @@ Let me start with a couple of things I should have told myself more often during
 
 I should have kept this in mind during those months, and so should you if you happen to write a book yourself.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="Cover of “CSS 3 Pratique du Design Web”" />
 <figcaption>Cover of “CSS 3 Pratique du Design Web”</figcaption>
 </figure>
@@ -28,7 +28,7 @@ I should have kept this in mind during those months, and so should you if you ha
 
 The first thing I can tell is that you will run out of time, I guarantee it. And this, no matter how long your editor gives you to write your book. There is never enough time, because it is never finished.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/what-i-learnt-from-writing-a-book/book-meme.jpeg" alt="You will run out of time, I guarantee it." />
 <figcaption>You will run out of time, I guarantee it.</figcaption>
 </figure>

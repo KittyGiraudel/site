@@ -19,7 +19,7 @@ Let’s say we want to run our backup every 5 days. This is doable with a [cron]
 name: Sanity backup
 on:
   schedule:
-    - cron: '0 10 */5 * *'
+    - cron: "0 10 */5 * *"
 ```
 
 Now that we named our workflow and defined when it runs, we need to write some steps. Here is what we want to do:
@@ -69,7 +69,7 @@ Finally, we want to upload the resulting tarball to GitHub. This can be done wit
 
 That’s it really. From there, you can download your backup from the action interface itself, directly on GitHub.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/backup-your-sanity-dataset-with-github-actions/backup.png" alt="Screenshot of the page of a successful backup run, showing details about the run as well as the exported dataset which can be downloaded again" />
 <figcaption>The backup artifact can then be downloaded directly on GitHub</figcaption>
 </figure>

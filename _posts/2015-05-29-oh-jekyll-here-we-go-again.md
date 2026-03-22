@@ -13,7 +13,7 @@ Over a year later (June 2014), I decided to give Mixture a go. Mixture is a stat
 
 And here we are, almost a year later again, back to Jekyll, one more time. I thought it would wait for Jekyll 3 to be released but it did not. To be perfectly honest with you, I don’t see it changing anytime soon (but I might be wrong, I seem to be quite undecided regarding this).
 
-<figure class="figure">
+<figure class="Figure">
 <img src="https://fc03.deviantart.net/fs70/f/2013/085/6/b/one_more_time_a_tribute_to_daft_punk_rainmeter_by_crazyxb-d5zbgb5.png" alt="" />
 <figcaption>Wallpaper by <a href="https://www.deviantart.com/crazyxb" target="_blank" rel="noopener noreferrer">crazyxb</a> DeviantArt user</figcaption>
 </figure>

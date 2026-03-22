@@ -23,7 +23,7 @@ What we wanted was for the primary button to be on the side of the dominant hand
 
 The way we thought we could detect the user’s dominant hand was by recording and scoring taps based on whether they occur on the left- or right-side of full-width buttons. We assumed (perhaps incorrectly) a right-handed user would tap buttons towards the right side of the screen, while a left-handed user would tap buttons between the left edge and the center.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/dominant-hand-respecting-design/thumb-zone-mapping-opt.png" alt="An illustration of the reachable areas of a mobile screen with the thumb for the left hand, both hands, and the right hand" />
 <figcaption>
 Illustration from Samantha Ingram in <a href="https://www.smashingmagazine.com/2016/09/the-thumb-zone-designing-for-mobile-users/">The Thumb Zone: Designing For Mobile Users</a> on Smashing Magazine
@@ -45,45 +45,46 @@ const useDominantHandScore = ({
   // and can be a candidate for tap recording
   fullWidthThreshold = 0.8,
 } = {}) => {
-  const viewportWidth = useViewportWidth()
-  const [tapScore, setTapScore] = React.useState(0)
-  const [tapCount, setTapCount] = React.useState(0)
+  const viewportWidth = useViewportWidth();
+  const [tapScore, setTapScore] = React.useState(0);
+  const [tapCount, setTapCount] = React.useState(0);
 
   const handleTap = React.useCallback(
-    event => {
-      const consideredFullWidth = viewportWidth * fullWidthThreshold
-      const targetWidth = event.target.offsetWidth || 0
+    (event) => {
+      const consideredFullWidth = viewportWidth * fullWidthThreshold;
+      const targetWidth = event.target.offsetWidth || 0;
 
       // If not on mobile (not a great check but heh) or not a click event or
       // not a tap on a full-width element, do nothing
-      if (viewportWidth > maximumScreenWidth) return false
-      if (event.clientX === 0 && event.clientY === 0) return false
-      if (targetWidth < consideredFullWidth) return false
+      if (viewportWidth > maximumScreenWidth) return false;
+      if (event.clientX === 0 && event.clientY === 0) return false;
+      if (targetWidth < consideredFullWidth) return false;
 
-      setTapCount(count => count + 1)
-      setTapScore(score => score + getTapPosition(event))
+      setTapCount((count) => count + 1);
+      setTapScore((score) => score + getTapPosition(event));
     },
-    [viewportWidth, maximumScreenWidth, fullWidthThreshold]
-  )
+    [viewportWidth, maximumScreenWidth, fullWidthThreshold],
+  );
 
   React.useEffect(() => {
-    document.addEventListener('click', handleTap)
+    document.addEventListener("click", handleTap);
 
     return () => {
-      document.removeEventListener('click', handleTap)
-    }
-  }, [handleTap])
+      document.removeEventListener("click", handleTap);
+    };
+  }, [handleTap]);
 
-  return tapScore / tapCount || 0
-}
+  return tapScore / tapCount || 0;
+};
 
 function getTapPosition(event) {
   const percentage = Math.round(
-    ((event.clientX - event.target.offsetLeft) / event.target.offsetWidth) * 100
-  )
+    ((event.clientX - event.target.offsetLeft) / event.target.offsetWidth) *
+      100,
+  );
 
   // Convert the percentage (0–100) to a number on the -1/+1 scale
-  return (percentage - 50) / 50
+  return (percentage - 50) / 50;
 }
 ```
 
@@ -141,10 +142,10 @@ For instance, let’s imagine authoring this code snippet:
 ```js
 // This is not a real thing; it’s only for demonstration purposes
 CSS.registerMedia({
-  name: 'prefers-dominant-hand',
-  syntax: 'start | end | no-preference',
-  initialValue: 'no-preference',
-})
+  name: "prefers-dominant-hand",
+  syntax: "start | end | no-preference",
+  initialValue: "no-preference",
+});
 ```
 
 The browser would then provide a native interface for the user to define their dominant hand (if they wish to do so). If/when they’ve done that, we can read the updated value with the media query suggested above. Now wouldn’t that be neat? Maybe something for [the Web We Want](https://webwewant.fyi/). :)

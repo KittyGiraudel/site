@@ -28,7 +28,7 @@ Let me translate the post from Rémi for you:
 8. No JavaScript, only HTML and CSS.
 9. It should work from IE 9 and gracefully degrades on older browsers.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/calc-css-riddle/gollum-riddle.gif" alt="">
 <figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
 </figure>

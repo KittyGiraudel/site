@@ -2,11 +2,11 @@
 title: Making sense of zsh
 description: A technical write-up through zsh and my homemade configuration to get the most of it
 tags:
-   - zsh
-   - Bash
+  - zsh
+  - Bash
 edits:
-   - date: 2026-03-06
-     md: I have started using [Starship](https://starship.rs/) to manage my prompt, and I’ve been really happy with it so far. I can recommend it.
+  - date: 2026-03-06
+    md: I have started using [Starship](https://starship.rs/) to manage my prompt, and I’ve been really happy with it so far. I can recommend it.
 ---
 
 If you use a relatively recent macOS version, chances are good you’re using zsh ([Z shell](https://en.wikipedia.org/wiki/Z_shell)) as a terminal — even if you use a terminal that’s integrated to your IDE (like in Visual Studio Code for instance).
@@ -15,7 +15,7 @@ Having a nice and clean terminal is important (to me at least) and I’ve done m
 
 This blog post is a little unusual because I’m writing it as I’m doing research, so it may not be very straightforward and potentially contain inaccurate information. It’s a “learn-by-teaching” kind of thing so please, kindly point out any mistake to me on Twitter (or [edit this blog post on GitHub](https://github.com/KittyGiraudel/site/blob/main/_posts/2022-10-29-making-sense-of-zsh.md) directly).
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/making-sense-of-zsh/zsh-prompt.png" alt="Screenshot of a zsh prompt featuring: a green or red bullet based on the status of the previous command; the name of the current folder in pink; the name of the current branch in blue; the command in white; and the current time in gray on the right side." />
 <figcaption>
 This is what my zsh prompt looks like, and this is what we’re going to dig into today.

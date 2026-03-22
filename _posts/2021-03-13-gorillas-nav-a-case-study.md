@@ -1,5 +1,5 @@
 ---
-title: 'Gorillas’ nav: a case study'
+title: "Gorillas’ nav: a case study"
 description: "A short case study on the Gorillas website navigation: accessibility, behaviour and design, from disclosure widget to skip link and language switcher."
 tags:
   - UI
@@ -12,7 +12,7 @@ A few days ago, I posted [a few tweets](https://twitter.com/KittyGiraudel/status
 
 One of the most interesting part of the site — at least from a technical standpoint — has to be the navigation. So I thought I’d write a short piece about everything that went into it, from accessibility to behaviour to design.
 
-<figure class="figure">
+<figure class="Figure">
   <video playsinline="" autoplay="" muted="" loop="" disablepictureinpicture="" aria-label="Gorillas.io site’s navigation featuring a skip link and a toggle with the brand logo in it, which displays a list of links as a dropdown when interacted with." poster="https://pbs.twimg.com/tweet_video_thumb/EwXIW3CW8AI3mAh.jpg" src="https://video.twimg.com/tweet_video/EwXIW3CW8AI3mAh.mp4" type="video/mp4"></video>
   <figcaption>Find the <a href="https://video.twimg.com/tweet_video/EwXIW3CW8AI3mAh.mp4" target="blank" rel="noopener noreferrer">full video on Twitter</a></figcaption>
 </figure>
@@ -74,13 +74,13 @@ That’s why when JavaScript is available, we replace them with a `<button>` (wi
 Without getting too deep into technical details (especially because our implementation is in React), we use something along these lines to automatically close the menu when clicking outside of it or tabbing out of it.
 
 ```js
-const menu = document.querySelector('#menu')
-const handleFocusChange = event => {
-  if (isOpen && !event.composedPath().includes(menu)) setIsOpen(false)
-}
+const menu = document.querySelector("#menu");
+const handleFocusChange = (event) => {
+  if (isOpen && !event.composedPath().includes(menu)) setIsOpen(false);
+};
 
-window.addEventListener('click', handleFocusChange)
-window.addEventListener('focusin', handleFocusChange)
+window.addEventListener("click", handleFocusChange);
+window.addEventListener("focusin", handleFocusChange);
 ```
 
 ## Preserving a landmark

@@ -1,5 +1,5 @@
 ---
-title: 'The Magic Circle: a CSS brain teaser'
+title: "The Magic Circle: a CSS brain teaser"
 description: A little CSS brain teaser on how to create a magic circle
 tags:
   - CSS
@@ -15,7 +15,7 @@ Months back at work, I have been asked to code a piece of design for the home pa
 
 First of all, this is what you should come up with:
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/the-magic-circle-a-css-brain-teaser/result.jpg" alt="">
 <figcaption>Beautiful, isn’t it?</figcaption>
 </figure>

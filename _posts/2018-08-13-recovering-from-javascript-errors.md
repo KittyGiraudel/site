@@ -15,7 +15,7 @@ At N26, we recently discovered a nifty little bug which likely had been around f
 
 What happens in our case is that we immediately reload the page without loading any JavaScript. At this stage, the user is informed they have been redirected to the “basic version”, and are free to continue using it or to go back to the interactive version.
 
-<figure class="figure">
+<figure class="Figure">
 <img alt="Transfer page with an error banner about being redirected to the basic version of the site" src="https://user-images.githubusercontent.com/1889710/44032814-95fc7de0-9f08-11e8-8f10-cc79d95a5b50.png" />
 <figcaption>PS: we fixed that bug. 😅</figcaption>
 </figure>
@@ -34,10 +34,10 @@ A very simple implementation with React might look like this:
 ```js
 class Root extends React.Component {
   componentDidCatch(error) {
-    const { href, search, hash } = window.location
-    const query = search ? search + '&noscript=1' : '?noscript=1'
+    const { href, search, hash } = window.location;
+    const query = search ? search + "&noscript=1" : "?noscript=1";
 
-    window.location.href = href + query + hash
+    window.location.href = href + query + hash;
     // Feel free to log `error` in your error tracker as well.
   }
 }
@@ -48,9 +48,9 @@ Server-side setup is very project specific and tends to be quite complex so it i
 In our case, it looks a little bit like this:
 
 ```js
-Object.keys(webpackBundles).map(bundleName => (
+Object.keys(webpackBundles).map((bundleName) => (
   <script src={webpackBundles[bundleName].js} key={bundleName} defer />
-))
+));
 ```
 
 While the user technically doesn’t have to know they have been redirected to a lite version, it might be more transparent and less confusing to tell them. In our case, we render a fixed message at the bottom of the screen with a link to reload the page with JavaScript enabled.

@@ -21,7 +21,7 @@ Anyway, if you felt frisky coming to dotCSS this year because it was the first e
 
 The conference happened at the [Théâtre des Variétés](https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_des_Vari%C3%A9t%C3%A9s) in Paris, a beautiful 19th century redish and goldish theatre with balconies, great lights and everything. It was absolutely gorgeous. The stage was not huge but definitely big enough to move a bit around. I think one could not dream of a best location to give a talk.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/feedback-on-dotcss/theatre.jpg" alt="" />
 <figcaption>Théâtre des Variétés in Paris. Photo by dotCSS.</figcaption>
 </figure>
@@ -36,7 +36,7 @@ The 18-minutes format is probably one of the best if you ask me. Not only is tim
 
 I don’t think the attention-span for a talk is meant to last any longer than 30-something minutes. At some point, people just get bored. I feel like this point happens between 20 and 30 minutes; before if they are not interested in the topic, slightly after if the speaker is really good on stage.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/feedback-on-dotcss/speakers.jpg" alt="" />
 <figcaption>All speakers and organisers. Photo by dotCSS.</figcaption>
 </figure>

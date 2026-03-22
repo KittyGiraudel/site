@@ -10,7 +10,7 @@ I work at [cofenster](https://cofenster.com) where we build a video creation pla
 
 In our live preview editor, we want to display the scenes boundaries in the video player track. A little bit like [video chapters on YouTube](https://support.google.com/youtube/answer/9884579?hl=en) if you will.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/creative-use-of-css-gradients/video-scenes-markers.png" alt="Screenshot of the Cofenster customer player featuring the scene division of the player track" />
 <figcaption>The hard color stops indicate the different scenes composing the final video</figcaption>
 </figure>
@@ -39,40 +39,40 @@ We are going to loop over this array of scenes, and for each one, add some color
 
 ```js
 const getTrackMarkers = (scenes, options = {}) => {
-  const { trackColor = '#fff', thickness = 4, precision = 2 } = options
-  const markers = []
-  const totalDuration = scenes.at(-1)?.end
-  const halfThickness = `${thickness / 2}px`
+  const { trackColor = "#fff", thickness = 4, precision = 2 } = options;
+  const markers = [];
+  const totalDuration = scenes.at(-1)?.end;
+  const halfThickness = `${thickness / 2}px`;
 
   // Return nothing, and not `none`, as we want the default value from the CSS
   // custom property to be applied.
   if (!totalDuration || scenes.length === 1) {
-    return
+    return;
   }
 
-  scenes.forEach(scene => {
-    const percent = ((scene.end / totalDuration) * 100).toFixed(precision)
+  scenes.forEach((scene) => {
+    const percent = ((scene.end / totalDuration) * 100).toFixed(precision);
 
     // Marker start
-    markers.push(`${trackColor} calc(${percent}% - ${halfThickness})`)
-    markers.push(`transparent calc(${percent}% - ${halfThickness})`)
+    markers.push(`${trackColor} calc(${percent}% - ${halfThickness})`);
+    markers.push(`transparent calc(${percent}% - ${halfThickness})`);
     // Marker end
-    markers.push(`transparent calc(${percent}% + ${halfThickness})`)
-    markers.push(`${trackColor} calc(${percent}% + ${halfThickness})`)
-  })
+    markers.push(`transparent calc(${percent}% + ${halfThickness})`);
+    markers.push(`${trackColor} calc(${percent}% + ${halfThickness})`);
+  });
 
-  return `linear-gradient(to right, ${markers.join(', ')})`
-}
+  return `linear-gradient(to right, ${markers.join(", ")})`;
+};
 ```
 
 Finally, we can put this in a custom property in some upper container; doesn’t matter too much where and this may be very framework-specific.
 
 ```js
-const container = document.querySelector('.SomeContainer')
-const styles = container.style
-const gradient = getTrackMarkers(scenes)
+const container = document.querySelector(".SomeContainer");
+const styles = container.style;
+const gradient = getTrackMarkers(scenes);
 
-styles.setProperty('--preview-scene-markers', gradient)
+styles.setProperty("--preview-scene-markers", gradient);
 ```
 
 ## Output

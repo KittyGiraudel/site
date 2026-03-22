@@ -3,7 +3,7 @@
  * 1. Make the container full-width with a maximum width.
  * 2. Leave some space on the edges, especially valuable on small screens.
  */
-.container {
+.Container {
   max-width: 80ch; /* 1 */
   padding-left: 1em; /* 2 */
   padding-right: 1em; /* 2 */
@@ -12,7 +12,7 @@
 }
 
 @media (min-width: 768px) {
-  .container {
+  .Container {
     padding-left: 2em;
     padding-right: 2em;
   }
@@ -37,17 +37,17 @@
 }
 
 @media print {
-  .no-print {
+  .NoPrint {
     display: none !important;
   }
 
-  .print-only {
+  .PrintOnly {
     display: block !important;
   }
 }
 
 @media not print {
-  .print-only {
+  .PrintOnly {
     display: none !important;
   }
 }

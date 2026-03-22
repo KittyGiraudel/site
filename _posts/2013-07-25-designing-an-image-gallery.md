@@ -14,7 +14,7 @@ Hey people! I recently had the opportunity to work on a cool little project I’
 
 Let’s say things straight: I’d never have the opportunity to work on an image gallery before. Actually I did but back then I didn’t give a shit about performance, responsive design, high-density displays and all the topics cool kids always talk about. So this time I’ve been faced with some difficulties I had not encountered before; meaning I had to solve them by myself.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/designing-an-image-gallery/whyalix.jpg" alt="">
 <figcaption><a href="http://whyalix.com" target="_blank" rel="noopener noreferrer">whyalix.com</a></figcaption>
 </figure>
@@ -35,11 +35,11 @@ The idea is quite simple: you define a container that will draw boundaries for t
 
 ```javascript
 $container.isotope({
-  itemSelector: '.gallery__item',
+  itemSelector: ".gallery__item",
   masonry: {
     columnWidth: 410,
   },
-})
+});
 ```
 
 What is really nice is it takes advantage of hardware accelerated CSS transforms (essentially `translate`) if the browser support them (else it falls back on regular TRBL offsets).
@@ -73,7 +73,7 @@ I didn’t want to add classes for this so I added a `data-album` attribute to e
 
 Regarding the second feature, I basically needed a little lightbox thingie to display an image in fullsize when clicked. I could have made one but since I am definitely not a JavaScript ninja, I would probably have ended with a code that could be improved. So I decided to rely on a built-in solution; I wanted something which is both nice and efficient so I went with Avgrund from [Hakim El Hattab](https://hakim.se/).
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/designing-an-image-gallery/lightbox.jpg" alt="">
 <figcaption><a href="http://whyalix.com" target="_blank" rel="noopener noreferrer">Lightbox powered by Avgrund</a></figcaption>
 </figure>
@@ -118,7 +118,7 @@ Basically, I assigned `opacity: 0` to all items so they don’t appear at first.
 
 Of course, we wanted the site to look acceptable (if not good!) on small devices. I wasn’t sure about the way to display this photo gallery on mobile so I opted for the easy solution: put everything into one column. I’ll try to think of something better for a future version.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/designing-an-image-gallery/phoneview.png" alt="">
 <figcaption><a href="http://whyalix.com" target="_blank" rel="noopener noreferrer">View on most smartphone</a></figcaption>
 </figure>

@@ -24,20 +24,20 @@ Let’s start with the configuration, shall we?
 
 ```scss
 // Configuration
-$btn-name: 'button' !default;
+$btn-name: "button" !default;
 $btn-size-ratio: 1.2 !default;
 $btn-hover: saturate 25% !default;
 $btn-border: darken 20% !default;
 $btn-background: (
-  'default': #565656,
-  'success': #468847,
-  'danger': #b94a48,
-  'warning': #c09853,
-  'info': #3a87ad,
+  "default": #565656,
+  "success": #468847,
+  "danger": #b94a48,
+  "warning": #c09853,
+  "info": #3a87ad,
 ) !default;
 ```
 
-<figure class="figure">
+<figure class="Figure">
 <img src="https://i.imgur.com/shEzy8H.jpg" alt="Variable all the things!" />
 <figcaption>Variable all the things!</figcaption>
 </figure>

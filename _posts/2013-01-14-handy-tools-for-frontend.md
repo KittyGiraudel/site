@@ -19,7 +19,7 @@ CSS Coloratum is a handful tool helping you convert colors in different syntaxes
 
 Probably one of the best tools I know, especially when you’re working with hexadecimal colors you want to convert to colors accepting an alpha value (RGBa / HSLa).
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tools/css-coloratum.jpg" alt="Screenshot of CSS Coloratum" />
 <figcaption>Screenshot of CSS Coloratum</figcaption>
 </figure>
@@ -34,7 +34,7 @@ WeLoveIconFonts (yes we do!) is some kind of CDN (Content Delivery Network) for 
 
 It’s very easy to use. You pick one or more fonts, you copy the @import line into your stylesheet and you’re done. You can put icons all over your website. No more struggle with font files.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tools/weloveiconfonts.jpg" alt="Screenshot of WeLoveIconFonts" />
 <figcaption>Screenshot of WeLoveIconFonts</figcaption>
 </figure>
@@ -47,7 +47,7 @@ It’s very easy to use. You pick one or more fonts, you copy the @import line i
 
 PageSpeed Insights is a tool made by Google which analyzes the content of a web page, then generates suggestions to make things faster. What I really like about PSI is it also exists as a Chrome and a Firefox extension, which means you can inspect your page directly from the WebDeveloper Tools / Firebug. Isn’t that awesome?
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tools/page-speed-insights.jpg" alt="Screenshot of PageSpeed Insights" />
 <figcaption>Screenshot of PageSpeed Insights</figcaption>
 </figure>
@@ -64,14 +64,14 @@ ColorZilla provides 2 really awesome things: a CSS gradient generator and a Chro
 
 Colorzilla Gradient Generator is, well, a CSS gradient generator and probably the best you’ll find so far. It provides a bunch of options like gradient orientation, reversing, size, IE support with filters, color adjustments and much more. And of course, you can copy and paste the CSS code for all browsers. Plus, it also provides 137 presets gradients.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tools/cz-gradient-generator.jpg" alt="Screenshot of ColorZilla Gradient Generator" />
 <figcaption>Screenshot of ColorZilla Gradient Generator</figcaption>
 </figure>
 
 ### Colorzilla Extension
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tools/cz-extension.jpg" alt="Screenshot of ColorZilla extension" />
 <figcaption>Screenshot of ColorZilla extension</figcaption>
 </figure>
@@ -99,7 +99,7 @@ This awesome tool has quickly become **the reference** when it comes to browser 
 
 It also exists as a Chrome extension meaning you can search for features directly into your browser without having to visit caniuse.com but I don’t use it much since the search engine isn’t that good ("border-image" doesn’t give any result while “border image” does for example).
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tools/caniuse.jpg" alt="Screenshot of Can I Use" />
 <figcaption>Screenshot of Can I Use</figcaption>
 </figure>

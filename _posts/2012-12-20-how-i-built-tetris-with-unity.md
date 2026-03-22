@@ -22,7 +22,7 @@ If you don’t care about how I built this up and simply want to give it a try, 
 
 ## The making of
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tetris/tetris.jpg" alt="Tetris" />
 <figcaption>Screenshot of rendered Tetris</figcaption>
 </figure>
@@ -63,7 +63,7 @@ So what I did was casting rays in 3 direction (left, bottom, right) at a very sh
 
 Another problem of mine was placing the bricks correctly. During the first phase of testing, bricks were slightly overlapping each other (see figure). Not much, but enough to be seen and to involve some line destroying issues.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tetris/bricks-overlapping.png" alt="Screenshot of overlapping bricks" />
 <figcaption>Screenshot of overlapping bricks</figcaption>
 </figure>
@@ -76,7 +76,7 @@ I ended doing something I didn’t want to, but I had no choice: brick repositio
 
 When I started coding, I was expecting the brick rotation to be very simple. In some way, I wasn’t wrong: make the brick rotate on itself is the easy part. When pressing top or bottom arrow, the brick makes a 90° rotation clockwise or counter-clockwise, no problem.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tetris/tetris-bug.png" alt="Screenshot of rotation bug" />
 <figcaption>Screenshot of rotation bug</figcaption>
 </figure>
@@ -89,7 +89,7 @@ The other big problem I had and still have with brick rotation is rotating near 
 
 Once I figured out how to fix most of the previously seen problems, it was time to do some improvements to make the game enjoyable. This includes increasing difficulty overtime, displaying the next brick, showing the score, having a main screen, allow pause, and so on. Actually, it’s kind of all the features. Making the game work is the hard part, but making the game cool is very important as well.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tetris/tetris-options.jpg" alt="Screenshot of Tetris options" />
 <figcaption>Screenshot of Tetris options</figcaption>
 </figure>
@@ -117,7 +117,7 @@ From there, displaying some kind of level was only a math concern. The result is
 
 An interesting point of making a game on Unity is you’re using 3D. You can choose to ignore it, but I feel like it can be a plus to the game when used correctly (which is not the case in this game :D). I wanted to try slowly moving the camera during the game to increase difficulty. Hopefully, I didn’t have to struggle with quaternion calculations for rotation concerns since I managed to do everything directly in the IDE with default animations.
 
-<figure class="figure">
+<figure class="Figure">
 <img src="/assets/images/tetris/tetris-camera.jpg" alt="Screenshot of Tetris camera angle" />
 <figcaption>Screenshot of Tetris camera angle</figcaption>
 </figure>

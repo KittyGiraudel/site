@@ -13,7 +13,7 @@
 {% ensure current_url, "Required value 'current_url' is missing in header.liquid" %}
 
 <header class="Header" role="banner">
-  <div class="container">
+  <div class="Container">
     {% render "navigation.liquid", current_url: current_url, navigation: navigation %}
     {% render "title.liquid", title: title, lang: lang, with_title_break: with_title_break %}
   </div>
