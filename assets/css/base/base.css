@@ -183,10 +183,12 @@ a:focus-visible {
   corner-shape: squircle;
 }
 
-a[data-visited]:not([href^="#"])::after {
-  content: " ✓";
-  opacity: 0.5;
-  font-size: 80%;
+@media not print {
+  a[data-visited]:not([data-visited-ignore]):not([href^="#"])::after {
+    content: " ✓";
+    opacity: 0.5;
+    font-size: 80%;
+  }
 }
 
 a:visited {

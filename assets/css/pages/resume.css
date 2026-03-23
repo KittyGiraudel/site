@@ -1,7 +1,7 @@
 /* Note: this document doesn’t use the --vb variable on purpose to be more flexible. */
 
 .Resume__header {
-  margin-top: -2.5em;
+  margin-top: -0.5em;
   margin-bottom: 2em;
   text-align: center;
   color: #666;
@@ -115,7 +115,12 @@
    * Tight fit for a 2-page resume.
    */
   .Resume {
-    font-size: 59%;
+    font-size: 52%;
+  }
+
+  .Resume__subline a {
+    background-image: none;
+    pointer-events: none;
   }
 
   .Title {
