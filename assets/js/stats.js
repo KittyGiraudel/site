@@ -1,3 +1,40 @@
+/**
+ * Match site theme for charts. Tooltip defaults are light while body text uses
+ * light-dark(); without this, dark mode yields pale text on a pale tooltip.
+ * Mirrors ThemeManager (including before main.js calls mount()).
+ */
+function statsChartThemeMode() {
+  const tm = window.ThemeManager
+  if (tm?.themes) {
+    const { themes } = tm
+    const pref = tm.theme
+    if (pref === themes.DARK) return 'dark'
+    if (pref === themes.LIGHT) return 'light'
+  }
+  if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) return 'dark'
+  return 'light'
+}
+
+function statsChartTheme() {
+  return { mode: statsChartThemeMode() }
+}
+
+function statsChartSurface() {
+  return {
+    theme: statsChartTheme(),
+    chart: { background: 'transparent' },
+  }
+}
+
+function bindStatsChartsThemeListener(charts) {
+  if (!window.ThemeManager?.onThemeChanged || charts.length === 0) return
+  window.ThemeManager.onThemeChanged(() => {
+    charts.forEach(chart => {
+      chart.updateOptions(statsChartSurface())
+    })
+  })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const years = window.__STATS_YEARS__ || []
   const postsPerYearEl = document.querySelector('#stats-posts-per-year')
@@ -8,8 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const init = () => {
     if (!window.ApexCharts) return
-    if (postsPerYearEl) renderPostsPerYearChart(postsPerYearEl, years)
-    if (contentTrendsEl) renderContentTrendsChart(contentTrendsEl, years)
+    const charts = []
+    if (postsPerYearEl) charts.push(renderPostsPerYearChart(postsPerYearEl, years))
+    if (contentTrendsEl) charts.push(renderContentTrendsChart(contentTrendsEl, years))
+    bindStatsChartsThemeListener(charts.filter(Boolean))
   }
 
   if (typeof loadJS === 'function' && !window.ApexCharts) {
@@ -27,8 +66,10 @@ function renderPostsPerYearChart(container, years) {
 
   if (!categories.length) return
 
+  const surface = statsChartSurface()
   const chart = new ApexCharts(container, {
-    chart: { type: 'bar' },
+    ...surface,
+    chart: { ...surface.chart, type: 'bar' },
     series: [{ name: 'Posts', data: counts }],
     xaxis: { categories },
     dataLabels: { enabled: true },
@@ -46,6 +87,7 @@ function renderPostsPerYearChart(container, years) {
   })
 
   chart.render()
+  return chart
 }
 
 function renderContentTrendsChart(container, years) {
@@ -58,8 +100,10 @@ function renderContentTrendsChart(container, years) {
 
   if (!categories.length) return
 
+  const surface = statsChartSurface()
   const chart = new ApexCharts(container, {
-    chart: { type: 'line' },
+    ...surface,
+    chart: { ...surface.chart, type: 'line' },
     series: [
       { name: 'Avg words', data: avgWords },
       { name: 'Avg paragraphs', data: avgParagraphs },
@@ -85,6 +129,7 @@ function renderContentTrendsChart(container, years) {
   })
 
   chart.render()
+  return chart
 }
 
 function formatter(value) {
