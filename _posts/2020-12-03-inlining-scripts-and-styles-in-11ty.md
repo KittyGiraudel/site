@@ -61,15 +61,15 @@ So I came up with this small `_includes/styles.html` Liquid partial:
 
 {% raw %}
 
-```
+```liquid
 {% if paths %}
   {% assign paths = paths | split: "," %}
 
-  {% capture css %}
-    {% for path in paths %}
+  {% capture css -%}
+    {%- for path in paths -%}
       {% include "../assets/css/{{ path | strip }}.css" %}
-    {% endfor %}
-  {% endcapture %}
+    {%- endfor -%}
+  {%- endcapture %}
 
   <style>{{ css }}</style>
 {% endif %}
