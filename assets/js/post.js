@@ -20,6 +20,7 @@ const EMBEDS = [
     selector: '#giscus-holder',
     url: 'https://giscus.app/client.js',
     loaded: false,
+    insert: script => document.querySelector('#giscus-holder')?.appendChild(script),
     getAttributes: () => ({
       'data-repo': 'kittygiraudel/site',
       'data-repo-id': 'MDEwOlJlcG9zaXRvcnk4MjUzNjQ0',
@@ -45,7 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handler = entry => {
       if (!embed.loaded && entry.isIntersecting) {
-        loadJS(embed.url, () => (embed.loaded = true), embed.getAttributes?.())
+        loadJS(embed.url, () => (embed.loaded = true), {
+          insert: embed.insert,
+          attributes: embed.getAttributes?.(),
+        })
       }
     }
 

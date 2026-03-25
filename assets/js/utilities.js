@@ -1,6 +1,4 @@
-// biome-ignore lint/correctness/noUnusedVariables: available on the global scope
-function loadJS(src, onload, attributes = {}) {
-  const firstScript = document.getElementsByTagName('script')[0]
+function buildScript(src, onload, attributes = {}) {
   const script = document.createElement('script')
 
   script.src = src
@@ -18,11 +16,20 @@ function loadJS(src, onload, attributes = {}) {
     script.setAttribute(key, String(value))
   }
 
-  firstScript.parentNode.insertBefore(script, firstScript)
-
   if (typeof onload === 'function') {
     script.onload = onload
   }
 
   return script
+}
+
+// biome-ignore lint/correctness/noUnusedVariables: available on the global scope
+function loadJS(src, onload, options = {}) {
+  const script = buildScript(src, onload, options.attributes)
+
+  if (options.insert) options.insert(script)
+  else {
+    const firstScript = document.getElementsByTagName('script')[0]
+    firstScript.parentNode.insertBefore(script, firstScript)
+  }
 }
