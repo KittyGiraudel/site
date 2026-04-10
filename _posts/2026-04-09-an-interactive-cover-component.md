@@ -7,7 +7,7 @@ keywords:
   - CSS
 --- 
 
-{% assign protectors_memories_ref = "If you’re into role-playing game, I cannot recommend the <em>Protector’s Memories</em>. It’s a wonderful solo game focusing on exploration and discovery in a unique fantasy setting, with very little combat or magic." %}
+{% assign protectors_memories_ref = "If you’re into role-playing game, I definitely recommend the <em>Protector’s Memories</em>. It’s a wonderful solo game focusing on exploration and discovery in a unique fantasy setting, with very little combat or magic." %}
 {% assign style_differences_ref = "It actually looks a bit different from this one, because this one inherits a bunch of styles from this website — starting with the font styles. But overall and for the purpose of this article, it looks more or less like that." %}
 {% assign midjourney_ref = "Kind thanks to my dear sister who is patiently and creatively producing the images using Midjourney, following the original lore from the rulebook and my vision for the site." %}
 
