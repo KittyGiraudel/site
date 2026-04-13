@@ -1,7 +1,7 @@
 ---
 title: An Interactive Cover Component
 description: A technical walkthrough on how to build a small interactive cover component, with some nifty CSS tricks.
-keywords:
+tags:
   - UI
   - UX
   - CSS
