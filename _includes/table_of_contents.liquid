@@ -1,6 +1,7 @@
 {% comment %}
   Required:
   - items: The items to render
+  - toc_flat: Whether to only render top-level items
 {% endcomment %}
 
 {% ensure items, "Required value 'items' is missing in table_of_contents.liquid" %}
@@ -10,5 +11,5 @@
     <span class="Fleuron" aria-hidden="true">❦</span> On this page
   </h2>
 
-  {% render "table_of_contents_list.liquid", items: items, root: true %}
+  {% render "table_of_contents_list.liquid", items: items, root: true, toc_flat: toc_flat %}
 </aside>

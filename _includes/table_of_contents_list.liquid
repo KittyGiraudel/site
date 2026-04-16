@@ -3,6 +3,7 @@
   - items: The items to render
   Optional:
   - root: Whether the list is the root list
+  - toc_flat: Whether to only render top-level items
 {% endcomment %}
  
 {% ensure items, "Required value 'items' is missing in table_of_contents_list.liquid" %}
@@ -12,7 +13,7 @@
     <li class="TableOfContents__item TableOfContents__item--level{{ item.level }}">
       <a href="#{{ item.id }}">{{ item.text }}</a>
 
-      {% if item.children and item.children.size > 0 %}
+      {% if not toc_flat and item.children and item.children.size > 0 %}
         {% render "table_of_contents_list.liquid", items: item.children, root: false %}
       {% endif %}
     </li>
