@@ -4,6 +4,9 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
+/
+  Link: </rss/index.xml>; rel="alternate"; type="application/atom+xml", </blog/search/data.json>; rel="describedby"; type="application/json"
+
 /assets/images/*
   cache-control: public
   cache-control: max-age=86400
