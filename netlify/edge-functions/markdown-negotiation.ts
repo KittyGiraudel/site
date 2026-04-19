@@ -14,7 +14,8 @@ export const config: Config = {
   // `@netlify/edge-functions` types `HTTPMethod` without `HEAD`, but Netlify
   // Edge still matches HEAD here; we branch on `request.method` below.
   method: ['GET', 'HEAD'] as Config['method'],
-  header: { accept: '(?i)text/markdown' },
+  // JS `RegExp` only (no `(?i)`); case-insensitive gate for the substring.
+  header: { accept: '[Tt][Ee][Xx][Tt]/[Mm][Aa][Rr][Kk][Dd][Oo][Ww][Nn]' },
 }
 
 /**
