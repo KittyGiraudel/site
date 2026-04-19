@@ -1,4 +1,4 @@
-import { mediaType } from '@hapi/accept'
+import Accept from '@hapi/accept'
 import type { Config, Context } from '@netlify/edge-functions'
 
 /**
@@ -134,7 +134,7 @@ export default async function markdownNegotiation(
  */
 function prefersMarkdown(accept: string | null): boolean {
   if (!accept) return false
-  return mediaType(accept, ['text/html', 'text/markdown']) === 'text/markdown'
+  return Accept.mediaType(accept, ['text/html', 'text/markdown']) === 'text/markdown'
 }
 
 /**
