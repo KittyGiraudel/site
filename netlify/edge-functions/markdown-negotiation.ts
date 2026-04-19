@@ -13,8 +13,7 @@ export const config: Config = {
     String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.md$`,
   ],
   method: 'GET',
-  // JS `RegExp` only (no `(?i)`); case-insensitive gate for the substring.
-  header: { accept: '[Tt][Ee][Xx][Tt]/[Mm][Aa][Rr][Kk][Dd][Oo][Ww][Nn]' },
+  header: { accept: 'text/markdown' },
 }
 
 /**
