@@ -4,12 +4,16 @@ eleventyExcludeFromCollections: true
 ---
 Sitemap: {{ site.url }}/sitemap.xml
 
+# Content Signals (AI usage preferences): https://contentsignals.org/
+# IETF draft: https://datatracker.ietf.org/doc/draft-romm-aipref-contentsignals/
+User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
 # There is no search benefit to any AI models scraping sites - all they do is steal content for
 # their own profit, attribution free, which leads to them serving our content without ever sending
 # users to us.
 # Reference: https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/
 # See: https://github.com/MattWilcox/native-base/blob/45f6e7a837104f5ad83a5c7e280fb9a4eb126219/robots.txt
-
 User-agent: CCBot
 User-agent: ChatGPT-User
 User-agent: GPTBot
