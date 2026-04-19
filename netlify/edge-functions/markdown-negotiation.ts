@@ -2,8 +2,9 @@ import Accept from '@hapi/accept'
 import type { Config, Context } from '@netlify/edge-functions'
 
 /**
- * Scope at the platform boundary: internal post pathnames only, safe methods,
- * and `Accept` containing `text/markdown`.
+ * Scope at the platform boundary: internal post pathnames, `GET` only (Netlify
+ * Edge manifest allows no other safe method here), and `Accept` containing
+ * `text/markdown`.
  */
 export const config: Config = {
   pattern: [
@@ -11,9 +12,7 @@ export const config: Config = {
     String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.html$`,
     String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.md$`,
   ],
-  // `@netlify/edge-functions` types `HTTPMethod` without `HEAD`, but Netlify
-  // Edge still matches HEAD here; we branch on `request.method` below.
-  method: ['GET', 'HEAD'] as Config['method'],
+  method: 'GET',
   // JS `RegExp` only (no `(?i)`); case-insensitive gate for the substring.
   header: { accept: '[Tt][Ee][Xx][Tt]/[Mm][Aa][Rr][Kk][Dd][Oo][Ww][Nn]' },
 }
@@ -37,8 +36,8 @@ export const config: Config = {
  * ## Request flow (high level)
  *
  * 1. Platform filters: Netlify only invokes this function when the pathname
- *    matches an internal post URL, the method is `GET` or `HEAD`, and `Accept`
- *    mentions `text/markdown` (only a substring gate).
+ *    matches an internal post URL, the method is `GET`, and `Accept` mentions
+ *    `text/markdown` (only a substring gate).
  * 2. Direct `.md`: If the URL is already the twin (`…/index.md`), pass through
  *    to the static file (`context.next()`). Otherwise continue.
  * 3. Negotiation: use `@hapi/accept` so `q` values and `text/html` vs
@@ -103,17 +102,7 @@ export default async function markdownNegotiation(
   headers.set('content-type', 'text/markdown; charset=utf-8')
   headers.set('vary', 'accept')
 
-  // HEAD: no body, but Content-Length (if the origin sent one) should describe
-  // the GET body per RFC 9110. We do not re-read the file here.
-  if (request.method === 'HEAD') {
-    headers.delete('transfer-encoding')
-    const contentLength = upstream.headers.get('content-length')
-    const bytes = contentLength ? Number.parseInt(contentLength, 10) : Number.NaN
-    headers.set('x-markdown-tokens', String(estimateTokens(bytes)))
-    return new Response(null, { status: upstream.status, headers })
-  }
-
-  // GET: build the body as UTF-8 bytes so Content-Length matches what we send.
+  // Build the body as UTF-8 bytes so Content-Length matches what we send.
   // Dropping the copied header alone relies on the runtime to infer length from
   // a string body; setting it explicitly avoids any mismatch if headers were
   // merged oddly.
@@ -141,8 +130,8 @@ function prefersMarkdown(accept: string | null): boolean {
 /**
  * Rough token estimate from UTF-8 byte length (~4 bytes per token, common for
  * Latin-ish Markdown). Used for `x-markdown-tokens` only; not a tokenizer.
- * Returns `0` when the length is unknown or invalid (e.g. missing
- * `Content-Length` on HEAD). Empty body is reported as `1` so the header stays
+ * Returns `0` when the length is unknown or invalid. Empty body is reported as
+ * `1` so the header stays
  * a positive integer.
  */
 function estimateTokens(byteLength: number): number {
