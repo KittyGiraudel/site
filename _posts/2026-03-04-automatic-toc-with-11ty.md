@@ -19,7 +19,7 @@ This is not a novel idea. There are already [plugins](https://github.com/jdstein
 Off the bat, there are a few challenges to overcome:
 
 - How do we access the content of the page to be able to extract its headings?
-- How do we do the actual extraction out of a HTML string?
+- How do we do the actual extraction out of an HTML string?
 - How do we render back our table of contents?
 
 Let’s start with the first question. The page content is available to Liquid layouts via the `content` variable. It’s essentially a string that contains everything rendered below the YAML front-matter of the page rendering the layout. We need to be able to feed that variable to some sort of a function. Fortunately, that’s exactly what [Liquid filters](https://liquidjs.com/filters/overview.html) are!

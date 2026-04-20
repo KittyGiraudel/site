@@ -153,7 +153,7 @@ Alright, so we ask for permission if the button has been interacted with (as in 
 2. If accessing the coordinates through the geolocation succeeded, explicitly set the permission to `granted`. This is for browsers that do not support the permissions API but do support geolocation, such as Safari.
 3. Send the coordinates to the backend API (via the `getEligibility` function shared below) and expect a boolean result.
 4. Store the result from the backend in the state to refresh the view.
-5. If anything failed (either the geolocation API request, or the backend request), handle the error. If the error has a `code` property set to `1`, it means it’s a [permission error from the geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/code), and we should update our permission state to reflect it. Otherwise, it’s most likely a HTTP or uncaught error, and we turn on our error state.
+5. If anything failed (either the geolocation API request, or the backend request), handle the error. If the error has a `code` property set to `1`, it means it’s a [permission error from the geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/code), and we should update our permission state to reflect it. Otherwise, it’s most likely an HTTP or uncaught error, and we turn on our error state.
 
 Let’s have a look at our two utilities. First `getCoords`, which is a thin wrapper around the geolocation API in order to “promisify” it. We also pass our options to it:
 

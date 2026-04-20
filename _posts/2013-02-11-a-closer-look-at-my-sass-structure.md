@@ -13,7 +13,7 @@ Hi people! Ever since the redesign a few weeks ago I have never stopped trying o
 
 I think I’ve come pretty close to this point thus I thought it might be a good idea to write a bit about it and give you an inside glance at the whole thing.
 
-Please, consider this post as both a way to introduce some people to Sass and a way to ask Sass experts some advices about the way I handled things. Any comment appreciated. :)
+Please, consider this post as both a way to introduce some people to Sass and a way to ask Sass experts for advice about the way I handled things. Any comment appreciated. :)
 
 ## Divide and rule
 

@@ -6,7 +6,7 @@ tags:
   - CSS
 ---
 
-It all started when [Tim Severien](https://twitter.com/timseverien) showed me a pen where he managed to display a Bezier curve with nothing but Sass. After a couple of hours of fiddling, between his math/geometry knowledge and my love of Sass, we came up with a neat little tool to display a Cubic Bezier function in Sass. This is the story of how we we built that tool.
+It all started when [Tim Severien](https://twitter.com/timseverien) showed me a pen where he managed to display a Bezier curve with nothing but Sass. After a couple of hours of fiddling, between his math/geometry knowledge and my love of Sass, we came up with a neat little tool to display a Cubic Bezier function in Sass. This is the story of how we built that tool.
 
 But before we get too far, let me turn it over to Tim to catch us up on some basic knowledge regarding Bezier functions. Tim, please.
 

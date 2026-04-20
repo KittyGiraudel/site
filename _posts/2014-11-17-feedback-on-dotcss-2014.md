@@ -14,7 +14,7 @@ I have been invited to speak at the very first [dotCSS](https://www.dotcss.io/) 
 
 It was the first time that organisers of [dotConferences](https://twitter.com/dotconferences), mostly famous for [dotJS](https://dotjs.io) happening on November 17th, were producing a [dotCSS](https://dotcss.io) and I have to say [Sylvain Zimmer](https://twitter.com/sylvinus), [Ferdinand Boas](https://twitter.com/ferdinandboas) and [Maurice Svay](https://twitter.com/mauriz) (as well as all the people who helped) really did a great job with this one.
 
-I can’t tell for the attendees, but as as speaker I must say they took great care of me. Everything has been made so I, as for the others, don’t get under too much pressure once on stage and actually enjoy the experience. Challenge completed, more about that later on.
+I can’t tell for the attendees, but as a speaker I must say they took great care of me. Everything has been made so I, as for the others, don’t get under too much pressure once on stage and actually enjoy the experience. Challenge completed, more about that later on.
 
 Anyway, if you felt frisky coming to dotCSS this year because it was the first edition, be sure to come next year because it was so much fun!
 

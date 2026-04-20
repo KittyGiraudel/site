@@ -244,8 +244,8 @@ One interesting thing I’ve noticed is that when clicking a native checkbox or 
 
 ```css
 /**
- * 1. When the toggle is interacted with with a mouse click (and therefore
- *    the focus does not have to be ‘visible’ as per browsers heuristics),
+ * 1. When the toggle is activated with a mouse click (and therefore
+ *    the focus does not have to be ‘visible’ as per browser heuristics),
  *    remove the focus outline. This is the native checkbox’s behaviour where
  *    the focus is not visible when clicking it.
  */

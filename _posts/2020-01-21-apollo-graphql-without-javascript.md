@@ -172,7 +172,7 @@ const handleNoJavaScriptGraphQL = schema => (request, response, next) => {
 }
 ```
 
-That’s it! We managed to issue and handle a mutation with Apollo without having JavaScript available in the browser. All we did was submitting all the necessary information for Apollo in a HTML form, and process it ourselves on the server.
+That’s it! We managed to issue and handle a mutation with Apollo without having JavaScript available in the browser. All we did was submitting all the necessary information for Apollo in an HTML form, and process it ourselves on the server.
 
 ## Error handling
 

@@ -60,7 +60,7 @@ Liquid doesn’t have a concept of HTML or DOM element though. It just renders s
 
 ### cheerio to the rescue!
 
-I am amazed at how many times I’ve reached for [cheerio](https://cheerio.js.org/) over the years. If you’re not familiar with it, it’s a rock solid library to manipulate HTML with jQuery-style selectors. The cool thing about cheerio is that it doesn’t need a browser, it can run just fine on Node.js. You feed it a HTML string, it gives you a DOM tree that you can manipulate, and you can spit out some HTML back.
+I am amazed at how many times I’ve reached for [cheerio](https://cheerio.js.org/) over the years. If you’re not familiar with it, it’s a rock solid library to manipulate HTML with jQuery-style selectors. The cool thing about cheerio is that it doesn’t need a browser, it can run just fine on Node.js. You feed it an HTML string, it gives you a DOM tree that you can manipulate, and you can spit out some HTML back.
 
 So here is the plan: load our HTML in cheerio, find the first top-level element, split the top-level collection of nodes there, and serialize both collections back to HTML strings.
 

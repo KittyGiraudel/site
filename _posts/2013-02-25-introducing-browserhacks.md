@@ -29,7 +29,7 @@ _We_ is the short for a group of 6 persons gathered under the sweet name of 4ae9
 - [Sara Soueidan](https://twitter.com/sarasoueidan)
 - and of course [myself](https://twitter.com/KittyGiraudel)
 
-Even if in this project, Tim and I did most of the job. However everybody has participated by giving opinion, advices and making tests. :)
+Even if in this project, Tim and I did most of the job. However everybody has participated by sharing opinions, giving advice and running tests. :)
 
 ## How to use it?
 
