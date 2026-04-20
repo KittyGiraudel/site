@@ -2,6 +2,7 @@
 {% assign page_description = description | default: site.description | strip_html | strip_newlines | truncate: 200 | escape %}
 {% assign title = title | default: site.author %}
 {% assign page_author = guest | default: site.author %}
+{% assign page_image = image | default: '/assets/images/favicon-192.jpg' %}
 {% assign site_author = site.author %}
 {% assign generator = generator | default: eleventy.generator %}
 {% assign site_url = site.url %}
@@ -17,6 +18,7 @@
   layout: layout,
   page_author: page_author,
   page_description: page_description,
+  page_image: page_image,
   page_url: page_url,
   site_author: site_author,
   site_url: site_url,

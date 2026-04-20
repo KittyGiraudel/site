@@ -4,6 +4,7 @@
   - site_author: The author of the site
   - page_url: The URL of the page
   - page_author: The author of the page
+  - page_image: The image of the page
   - page_description: The description of the page
   - inline_assets: Whether to inline the styles and scripts
   - title: The title of the page
@@ -20,6 +21,11 @@
 {% ensure site_author, "Required value 'site_author' is missing in head.liquid" %}
 {% ensure site_url, "Required value 'site_url' is missing in head.liquid" %}
 {% ensure title, "Required value 'title' is missing in head.liquid" %}
+{% if page_image contains '://' %}
+  {% assign page_image_url = page_image %}
+{% else %}
+  {% assign page_image_url = page_image | prepend: site_url %}
+{% endif %}
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:
 http://ogp.me/ns/article#">
@@ -79,13 +85,14 @@ http://ogp.me/ns/article#">
   <meta property="og:url" content="{{ page_url }}" />
   <meta property="og:description" content="{{ page_description }}" />
   <meta property="og:site_name" content="kittygiraudel.com" />
+  <meta property="og:image" content="{{ page_image_url }}">
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@KittyGiraudel">
   <meta name="twitter:description" content="{{ page_description }}">
   <meta name="twitter:domain" content="kittygiraudel.com">
-  <meta name="twitter:image" content="https://kittygiraudel.com/assets/images/favicon-192.jpg">
+  <meta name="twitter:image" content="{{ page_image_url }}">
   <meta name="twitter:site" content="@KittyGiraudel">
   <meta name="twitter:title" content="{{ title }}">
   
