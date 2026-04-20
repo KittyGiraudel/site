@@ -3,6 +3,7 @@
 {% assign title = title | default: site.author %}
 {% assign page_author = guest | default: site.author %}
 {% assign page_image = image | default: '/assets/images/favicon-192.jpg' %}
+{% assign page_date = page.date %}
 {% assign site_author = site.author %}
 {% assign generator = generator | default: eleventy.generator %}
 {% assign site_url = site.url %}
@@ -17,6 +18,7 @@
   tags: tags,
   layout: layout,
   page_author: page_author,
+  page_date: page_date,
   page_description: page_description,
   page_image: page_image,
   page_url: page_url,

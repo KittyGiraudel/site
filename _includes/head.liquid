@@ -4,12 +4,13 @@
   - site_author: The author of the site
   - page_url: The URL of the page
   - page_author: The author of the page
-  - page_image: The image of the page
   - page_description: The description of the page
   - inline_assets: Whether to inline the styles and scripts
   - title: The title of the page
   Optional:
   - layout: The layout of the page
+  - page_image: The image of the page
+  - page_date: The date of the page
   - tags: Tag/keyword list for the page
   - generator: The generator of the page
 {% endcomment %}
@@ -90,6 +91,9 @@ http://ogp.me/ns/article#">
   {% if layout == 'post' %}
     <!-- Article tags -->
     <meta property="article:author" content="{{ page_author }}" />
+    {% if page_date %}
+      <meta property="article:published_time" content="{{ page_date | date_to_rfc3339 }}" />
+    {% endif %}
     {% for tag in tags %}
       <meta property="article:tag" content="{{ tag }}" />
     {% endfor %}
