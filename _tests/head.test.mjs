@@ -55,6 +55,7 @@ function assertCanonicalLink($, siteUrl, path, label = '') {
  *   description: string
  *   author: string
  *   ogType: 'article' | 'website'
+ *   ogImage?: string
  *   keywords?: string | null
  *   documentTitle?: string
  *   markdownAlternate?: boolean
@@ -63,6 +64,9 @@ function assertCanonicalLink($, siteUrl, path, label = '') {
 function assertHeadMetadata($, siteUrl, spec) {
   const documentTitle = spec.documentTitle ?? `${spec.title} | ${siteAuthor}`
   const canonical = assertCanonicalLink($, siteUrl, spec.path)
+  const expectedSocialImage = spec.ogImage
+    ? new URL(spec.ogImage, siteData.url).toString()
+    : new URL('/assets/images/favicon-192.jpg', siteData.url).toString()
 
   assert.ok($('head').length, 'document should have a <head>')
   assert.equal($('head meta[charset]').attr('charset'), 'utf-8')
@@ -110,16 +114,36 @@ function assertHeadMetadata($, siteUrl, spec) {
   assert.equal(metaProperty($, 'og:url'), canonical)
   assert.equal(metaProperty($, 'og:description'), spec.description)
   assert.equal(metaProperty($, 'og:site_name'), 'kittygiraudel.com')
+  assert.equal(metaProperty($, 'og:image'), expectedSocialImage)
+  if (spec.ogType === 'article') {
+    assert.ok(metaProperty($, 'article:published_time'))
+    assert.equal(metaProperty($, 'article:author'), spec.author)
+  } else {
+    assert.equal(metaProperty($, 'article:published_time'), undefined)
+    assert.equal(metaProperty($, 'article:author'), undefined)
+  }
 
   // Twitter Graph
-  const expectedTwitterImage = new URL('/assets/images/favicon-192.jpg', siteData.url).toString()
   assert.equal(metaName($, 'twitter:card'), 'summary')
   assert.equal(metaName($, 'twitter:creator'), '@KittyGiraudel')
   assert.equal(metaName($, 'twitter:description'), spec.description)
   assert.equal(metaName($, 'twitter:domain'), 'kittygiraudel.com')
-  assert.equal(metaName($, 'twitter:image'), expectedTwitterImage)
+  assert.equal(metaName($, 'twitter:image'), expectedSocialImage)
   assert.equal(metaName($, 'twitter:site'), '@KittyGiraudel')
   assert.equal(metaName($, 'twitter:title'), spec.title)
+
+  // Structured data
+  const jsonLdScripts = $('head script[type="application/ld+json"]')
+  assert.ok(jsonLdScripts.length >= 2, 'head should include structured data scripts')
+  const jsonLdContent = jsonLdScripts
+    .map((_, element) => $(element).text())
+    .get()
+    .join('\n')
+  assert.match(jsonLdContent, /"@type":\s*"WebSite"/)
+  assert.match(jsonLdContent, /"@type":\s*"Person"/)
+  if (spec.ogType === 'article') {
+    assert.match(jsonLdContent, /"@type":\s*"BlogPosting"/)
+  }
 
   // RSS
   const rss = $('head link[rel="alternate"][type="application/rss+xml"]')
@@ -205,6 +229,7 @@ test('page head: project', async () => {
     description: siteData.description,
     author: siteAuthor,
     ogType: 'website',
+    ogImage: '/assets/images/projects/a11y-dialog.png',
     keywords: null,
     markdownAlternate: false,
   })
@@ -238,6 +263,7 @@ test('page head: guest post (guest meta author)', async () => {
     description: 'A guest post by Jesús Ricarte on using calc() to figure out optimal line-height',
     author: 'Jesús Ricarte',
     ogType: 'article',
+    ogImage: '/assets/images/using-calc-to-figure-out-optimal-line-height/line-height.png',
     keywords: 'CSS,Typography',
     markdownAlternate: true,
   })
