@@ -17,6 +17,7 @@ https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 
 # Fix some old broken URLs
 /2012/11/13/less-to-sass/ /2012/11/13/why-i-switched-from-less-to-sass/ 301!
+/2012/11/20/learning-principes-for-improving-your-css/ /2012/11/20/learning-principles-for-improving-your-css/ 301!
 /2012/11/27/css-colors/ /2012/11/27/colors-in-css/ 301!
 /2013/01/28/float-down/ /2013/01/28/simulate-float-down/ 301!
 /2013/02/04/css-gradients/ /2013/02/04/dig-deep-into-css-gradients/ 301!  
@@ -51,6 +52,7 @@ https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 /2014/04/28/casting-map-into-list/ /2014/04/28/casting-a-map-into-a-list-in-sass/ 301!
 /2014/05/19/new-offsets-sass-mixin/ /2014/05/19/a-new-sass-mixin-for-offsets/ 301!
 /2014/06/02/feedbacks-feweb/ /2014/06/02/feedback-on-another-conf/ 301!
+/2014/06/26/tips-to-help-you-level-up-you-sass/ /2014/06/26/tips-to-help-you-level-up-your-sass/ 301!
 /2014/11/17/feedback-on-dotcss/ /2014/11/17/feedback-on-dotcss-2014/ 301!
 /2014/11/25/specificity-in-sass/ /2014/11/25/calculating-specificity-in-sass/ 301!
 /2015/01/05/looking-back-at-2014 /2015/01/05/2014-in-review 301!  
