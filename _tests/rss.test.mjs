@@ -3,6 +3,13 @@ import test from 'node:test'
 import { XMLParser } from 'fast-xml-parser'
 import { getSiteUrl, readText } from './helpers/site-paths.mjs'
 
+/** @param {string} value */
+function assertParsesAsDate(value) {
+  const ms = Date.parse(value)
+  assert.ok(Number.isFinite(ms), `should parse as a date: ${value}`)
+  return ms
+}
+
 test('RSS feed is valid Atom with correct URLs', async () => {
   const xml = await readText('rss/index.xml')
   const siteUrl = getSiteUrl()
@@ -40,12 +47,22 @@ test('RSS feed is valid Atom with correct URLs', async () => {
   const entries = Array.isArray(doc.feed.entry) ? doc.feed.entry : [doc.feed.entry]
   assert.ok(entries.length > 0, 'RSS feed should contain at least one <entry>')
 
+  const entryUpdatedMs = []
   for (const entry of entries) {
     // Basic data for each entry
     assert.ok(entry.title, 'entry should have a title')
     assert.ok(entry.id, 'entry should have an id')
-    assert.ok(entry.published, 'entry should have a published date')
+    assert.ok(entry.published, 'entry should have a <published> date')
+    assert.ok(entry.updated, 'entry should have an <updated> date')
     assert.ok(entry.summary, 'entry should have a summary')
+
+    const publishedMs = assertParsesAsDate(entry.published)
+    const updatedMs = assertParsesAsDate(entry.updated)
+    assert.ok(
+      updatedMs >= publishedMs,
+      'entry <updated> should be >= <published> (same moment is ok)',
+    )
+    entryUpdatedMs.push(updatedMs)
 
     const entryLinks = Array.isArray(entry.link) ? entry.link : [entry.link]
     assert.ok(entryLinks.length > 0, 'entry should have at least one link')
@@ -84,4 +101,15 @@ test('RSS feed is valid Atom with correct URLs', async () => {
       )
     }
   }
+
+  const feedUpdatedMs = assertParsesAsDate(doc.feed.updated)
+  const maxEntryUpdatedMs = Math.max(...entryUpdatedMs)
+  assert.ok(
+    feedUpdatedMs >= maxEntryUpdatedMs - 2000,
+    'feed <updated> should be at least the latest entry <updated> (small tolerance for formatting)',
+  )
+  assert.ok(
+    feedUpdatedMs <= maxEntryUpdatedMs + 2000,
+    'feed <updated> should match the latest entry <updated> (small tolerance for formatting)',
+  )
 })

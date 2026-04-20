@@ -250,6 +250,34 @@ test('page head: regular post', async () => {
     keywords: 'Eleventy,JavaScript,Liquid',
     markdownAlternate: true,
   })
+
+  const publishedTime = metaProperty($, 'article:published_time')
+  const modifiedTime = metaProperty($, 'article:modified_time')
+  assert.ok(publishedTime, 'article posts should expose article:published_time')
+  if (modifiedTime) {
+    assert.ok(
+      Date.parse(modifiedTime) >= Date.parse(publishedTime),
+      'article:modified_time should be >= article:published_time when present',
+    )
+  }
+
+  let blogPosting = null
+  $('head script[type="application/ld+json"]').each((_, el) => {
+    try {
+      const data = JSON.parse($(el).text())
+      if (data['@type'] === 'BlogPosting') blogPosting = data
+    } catch {
+      // ignore non-JSON-LD fragments
+    }
+  })
+  assert.ok(blogPosting, 'post page should include BlogPosting JSON-LD')
+  assert.ok(blogPosting.datePublished, 'BlogPosting should include datePublished')
+  if (blogPosting.dateModified) {
+    assert.ok(
+      Date.parse(blogPosting.dateModified) >= Date.parse(blogPosting.datePublished),
+      'BlogPosting dateModified should be >= datePublished when present',
+    )
+  }
 })
 
 test('page head: guest post (guest meta author)', async () => {
