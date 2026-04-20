@@ -5,6 +5,15 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
+  {% assign feed_updated_unix = 0 %}
+  {%- for post in collections.posts -%}
+    {% assign post_published = post.data.creation_date | default: post.date %}
+    {% assign post_updated = post.data.update_date | default: post_published %}
+    {% assign post_updated_unix = post_updated | date: "%s" | plus: 0 %}
+    {% if post_updated_unix > feed_updated_unix %}
+      {% assign feed_updated_unix = post_updated_unix %}
+    {% endif %}
+  {%- endfor %}
   <title>{{ site.author }}</title>
   <subtitle>{{ site.description }}</subtitle>
   <link href="{{ site.url }}/rss/index.xml" rel="self" type="application/atom+xml" />
@@ -12,10 +21,16 @@ eleventyExcludeFromCollections: true
   <author>
     <name>{{ site.author }}</name>
   </author>
+  {% if feed_updated_unix > 0 %}
+  <updated>{{ feed_updated_unix | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
+  {% else %}
   <updated>{{ site.time | date_to_rfc3339 }}</updated>
+  {% endif %}
   <generator>Eleventy</generator>
   <id>{{ site.url }}/</id>
   {% for post in collections.posts %}
+  {% assign post_published = post.data.creation_date | default: post.date %}
+  {% assign post_updated = post.data.update_date | default: post_published %}
   {% capture absolute_post_url -%}
   {%- if post.data.external -%}{{ post.data.external.url }}{%- else -%}{{ post.url | prepend: site.url }}{%- endif -%}
   {%- endcapture %}
@@ -28,7 +43,8 @@ eleventyExcludeFromCollections: true
         type="text/markdown"
         href="{{ post.url | prepend: site.url }}index.md" />
     {% endunless %}
-    <published>{{ post.date | date_to_rfc3339 }}</published>
+    <published>{{ post_published | date_to_rfc3339 }}</published>
+    <updated>{{ post_updated | date_to_rfc3339 }}</updated>
     <id>{{ absolute_post_url }}</id>
     <summary>{{ post.data.description }}</summary>
     {% unless post.data.external %}
