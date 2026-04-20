@@ -78,7 +78,7 @@ to-bool((a: 1, b: 2) // true
 
 ## To color
 
-We needed to be able to convert a stringified color into a real color for [SassyJSON]() and we succeeded in doing so without too much troubles. Since we can’t build an hexadecimal color from the `#` symbol (because it would result in a string), we went with the `rgb()` for hexadecimal colors.
+We needed to be able to convert a stringified color into a real color for [SassyJSON](http://github.com/kittygiraudel/sassyjson) and we succeeded in doing so without too much troubles. Since we can’t build an hexadecimal color from the `#` symbol (because it would result in a string), we went with the `rgb()` for hexadecimal colors.
 
 Basically we parse the triplet, convert each of its three parts from hexadecimal to decimal and run them through the `rgb` function to have a color. Not very short but does the trick!
 

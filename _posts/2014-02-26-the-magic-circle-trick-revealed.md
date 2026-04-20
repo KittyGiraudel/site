@@ -237,7 +237,7 @@ Yes, finally. As I explained at the beginning of the article, the idea consists 
 
 ### Dealing with colors
 
-Last but not least, we have to apply colors all over our code like some sort of rainbow unicorn on extasy. Thankfully we made a map binding each box to a fancy color from [FlatUIColors](flatuicolors.com).
+Last but not least, we have to apply colors all over our code like some sort of rainbow unicorn on extasy. Thankfully we made a map binding each box to a fancy color from [FlatUIColors](https://flatuicolors.com).
 
 ```scss
 // Applying colors by looping on the color map

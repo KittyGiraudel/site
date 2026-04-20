@@ -47,7 +47,7 @@ Now we have thought about the goal of the site/application, it’s time to **thi
 
 My way to do is to find the maximum of content for each of the objectives of the site/application. Then, if there is too much, I filter to keep only the best ideas. Too much is better than too few. You might want to readnotes from Luke Wroblewski about Jeffrey Zeldman talk at AEA Washington DC about [Content first](https://www.lukew.com/ff/entry.asp?1598).
 
-For this website, the content was pretty straight forward: the landing page should have some information about me (like contact stuff). The resume should be, well, my resume. And I had already 2 ideas of articles for the new blog ([one about the redesign](redesign-blog.html), and one about [CSS preprocessors](less-to-sass.html)).
+For this website, the content was pretty straight forward: the landing page should have some information about me (like contact stuff). The resume should be, well, my resume. And I had already 2 ideas of articles for the new blog ([one about the redesign](/2012/11/09/site-redesign-new-blog/), and one about [CSS preprocessors](/2012/11/13/why-i-switched-from-less-to-sass/)).
 
 ## The arborescence
 

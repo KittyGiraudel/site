@@ -8,7 +8,7 @@ tags:
 
 Performance, or rather the lack thereof, can definitely be considered an accessibility topic. If the content never shows up, it’s not accessible — in the most basic sense of the word.
 
-A few years back, [Harry Roberts mentioned an anecdote in one of his talks]() where he got the opportunity to ask a developer from Nepal whether his website was fast enough. Here is the transcript:
+A few years back, Harry Roberts mentioned an anecdote in one of his talks where he got the opportunity to ask a developer from Nepal whether his website was fast enough. Here is the transcript:
 
 > I said, “[W]hilst I have your attention, my analytics told me that Nepal is a problem region for my website. Nepal is apparently a very slow area to visit my website from. Is that true?”
 >
