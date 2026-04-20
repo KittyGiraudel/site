@@ -79,7 +79,7 @@ function assertHeadMetadata($, siteUrl, spec) {
 
   const shortcutIcon = $('head link[rel="shortcut icon"]')
   assert.equal(shortcutIcon.length, 1, 'head should have exactly one shortcut icon')
-  assert.equal(shortcutIcon.attr('href'), '/assets/images/favicon.jpg')
+  assert.equal(shortcutIcon.attr('href'), '/assets/images/favicon.png')
 
   const appleTouch = $('head link[rel="apple-touch-icon"]')
   assert.equal(appleTouch.length, 1, 'head should have exactly one apple-touch-icon')
