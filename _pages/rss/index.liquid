@@ -5,13 +5,12 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  {% assign feed_updated_unix = 0 %}
+  {% assign feed_updated = null %}
   {%- for post in collections.posts -%}
     {% assign post_published = post.data.creation_date | default: post.date %}
     {% assign post_updated = post.data.update_date | default: post_published %}
-    {% assign post_updated_unix = post_updated | date: "%s" | plus: 0 %}
-    {% if post_updated_unix > feed_updated_unix %}
-      {% assign feed_updated_unix = post_updated_unix %}
+    {% if feed_updated == null or post_updated > feed_updated %}
+      {% assign feed_updated = post_updated %}
     {% endif %}
   {%- endfor %}
   <title>{{ site.author }}</title>
@@ -21,8 +20,8 @@ eleventyExcludeFromCollections: true
   <author>
     <name>{{ site.author }}</name>
   </author>
-  {% if feed_updated_unix > 0 %}
-  <updated>{{ feed_updated_unix | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
+  {% if feed_updated %}
+  <updated>{{ feed_updated | date_to_rfc3339 }}</updated>
   {% else %}
   <updated>{{ site.time | date_to_rfc3339 }}</updated>
   {% endif %}

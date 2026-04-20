@@ -3,6 +3,13 @@ import test from 'node:test'
 import { XMLParser } from 'fast-xml-parser'
 import { getSiteUrl, readText } from './helpers/site-paths.mjs'
 
+/** @param {string} value */
+function assertParsesAsDate(value) {
+  const ms = Date.parse(value)
+  assert.ok(Number.isFinite(ms), `lastmod should parse as a date: ${value}`)
+  return ms
+}
+
 test('sitemap.xml is valid and contains absolute URLs', async () => {
   const xml = await readText('sitemap.xml')
   const siteUrl = getSiteUrl()
@@ -54,4 +61,19 @@ test('sitemap.xml is valid and contains absolute URLs', async () => {
     const forbidden = new URL(path, site.origin).toString()
     assert.ok(!locs.includes(forbidden), `sitemap should not include ${forbidden}`)
   }
+
+  const withLastmod = urls.filter(entry => Boolean(entry.lastmod))
+  assert.ok(
+    withLastmod.length / urls.length >= 0.85,
+    'most sitemap URLs should include <lastmod> (creation or update date)',
+  )
+  for (const entry of withLastmod) {
+    assertParsesAsDate(entry.lastmod)
+  }
+
+  const statsPostUrl = new URL('/2026/03/02/stats-page-with-11ty/', site.origin).toString()
+  const statsEntry = urls.find(u => u.loc === statsPostUrl)
+  assert.ok(statsEntry, 'sitemap should include the stats Eleventy post')
+  assert.ok(statsEntry.lastmod, 'golden post should have <lastmod>')
+  assertParsesAsDate(statsEntry.lastmod)
 })
