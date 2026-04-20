@@ -9,13 +9,15 @@ Sitemap: {{ site.url }}/sitemap.xml
 User-agent: *
 Content-Signal: ai-train=no, search=yes, ai-input=no
 
-# There is no search benefit to any AI models scraping sites - all they do is steal content for
-# their own profit, attribution free, which leads to them serving our content without ever sending
-# users to us.
+# Allow search/retrieval bots so they can cite content and link back to this site.
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+Allow: /
+
+# Block model training and broad AI scraping bots.
 # Reference: https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/
 # See: https://github.com/MattWilcox/native-base/blob/45f6e7a837104f5ad83a5c7e280fb9a4eb126219/robots.txt
 User-agent: CCBot
-User-agent: ChatGPT-User
 User-agent: GPTBot
 User-agent: Google-Extended
 User-agent: Omgilibot
@@ -27,6 +29,5 @@ User-agent: ClaudeBot
 User-agent: Diffbot
 User-agent: Bytespider
 User-agent: ImagesiftBot
-User-agent: PerplexityBot
 User-agent: cohere-ai
 Disallow: /
