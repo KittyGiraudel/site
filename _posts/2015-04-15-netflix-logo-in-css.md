@@ -138,7 +138,7 @@ Here’s a demo on CodePen
 Let’s write a function for the 3d-effect and the shadow. I paused on one frame of the video I had made before and looked at it in detail.
 
 <figure class="Figure">
-<img src="/assets/images/netflix-logo-in-css/shadow.png" alt="" />
+<img src="/assets/images/netflix-logo-in-css/shadow.png" alt="" loading="lazy" />
 <figcaption>Image extracted from the original animated Netflix logo</figcaption>
 </figure>
 
@@ -155,7 +155,7 @@ We will call this function inside keyframes so we want it to be able to handle a
 We need one more argument to define the depth of the shadow or 3d-effect.
 
 <figure class="Figure">
-<img src="/assets/images/netflix-logo-in-css/shadow-css.png" alt="" />
+<img src="/assets/images/netflix-logo-in-css/shadow-css.png" alt="" loading="lazy" />
 <figcaption>My CSS implementation of the previously shown image</figcaption>
 </figure>
 

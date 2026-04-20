@@ -26,7 +26,7 @@ The Co.Station is a great spot in the heart of Bruxelles, aiming at helping star
 The room we were in was lovely. Completely made of white wood, perfectly lighted, very comfy. But… it was not a room made for such a crowd. We were 120, yet I think it would be best for around 80 to 90 persons. Sorry for those poor people who had to stand up for almost 2 hours, it sucks.
 
 <figure class="Figure">
-<img src="/assets/images/feedbacks-feweb/room.jpg" alt="">
+<img src="/assets/images/feedbacks-feweb/room.jpg" alt="" loading="lazy" >
 <figcaption>Crowded room is crowded.</figcaption>
 </figure>
 

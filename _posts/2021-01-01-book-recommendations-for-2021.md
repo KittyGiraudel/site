@@ -33,7 +33,7 @@ I am by no means an avid reader, but every now and then I find a book I like and
 
 ## The End of Everything
 
-<img src="https://images-na.ssl-images-amazon.com/images/I/51P9Q3mcHeL._SX324_BO1,204,203,200_.jpg" alt="Cover of “The End of Everything”" class="BookCover" />
+<img src="https://images-na.ssl-images-amazon.com/images/I/51P9Q3mcHeL._SX324_BO1,204,203,200_.jpg" alt="Cover of “The End of Everything”" class="BookCover" loading="lazy" />
 
 [The End of Everything (Astrophysically Speaking)](https://www.astrokatie.com/book) is a masterpiece from [Dr. Katie Mack](https://www.astrokatie.com/), a theoretical astrophysicist who studies a range of questions in cosmology, the study of the universe from beginning to end.
 
@@ -43,7 +43,7 @@ If you are still not convinced, feel free to read the [book’s reviews](https:/
 
 ## Alex’s Adventures in Numberland
 
-<img src="https://m.media-amazon.com/images/I/515+oIAfvDL.jpg" alt="Cover of “Alex’s Adventures in Numberland”" class="BookCover" />
+<img src="https://m.media-amazon.com/images/I/515+oIAfvDL.jpg" alt="Cover of “Alex’s Adventures in Numberland”" class="BookCover" loading="lazy" />
 
 Mathematics never were my passion. I always failed to appreciate their usefulness, and they never came easy to me. Back in high-school, math exams were my dread and to this day, I cannot say I particularly enjoy solving problems revolving around maths. Still, I devoured this book.
 
@@ -53,7 +53,7 @@ Mathematics never were my passion. I always failed to appreciate their usefulnes
 
 ## Technically Wrong
 
-<img src="https://m.media-amazon.com/images/I/41EEbh6mf+L.jpg" alt="Cover of “Technically Wrong”" class="BookCover" />
+<img src="https://m.media-amazon.com/images/I/41EEbh6mf+L.jpg" alt="Cover of “Technically Wrong”" class="BookCover" loading="lazy" />
 
 I will never stop recommending [Technically Wrong](https://www.indiebound.org/book/9780393356045) by [Sara Wachter-Boettcher](https://twitter.com/sara_ann_marie), because it is an eye-opening fantastic piece on everything that’s wrong with the tech industry — from racist artificial intelligence algorithms to ethical conundrums, from corporate failures to systemic issues.
 

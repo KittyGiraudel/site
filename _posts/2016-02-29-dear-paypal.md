@@ -56,7 +56,7 @@ Now I guess the funny part is how I managed to solve this. I signed in with my p
 Last but not least, I would like to tell you about phone numbers. For starters, phone numbers are not actual numbers. I know the name is misleading, but you cannot reasonably think that a phone number is made exclusively of numbers. There are also spaces, plus signs, parentheses, and a lot of things. So `[0-9]*` is not a correct pattern for this.
 
 <figure class="Figure">
-  <img src="/assets/images/dear-paypal/phone-html.png" alt="Incorrect pattern attribute for a phone number" />
+  <img src="/assets/images/dear-paypal/phone-html.png" alt="Incorrect pattern attribute for a phone number" loading="lazy" />
   <figcaption>Incorrect <code>pattern</code> for a phone number</figcaption>
 </figure>
 

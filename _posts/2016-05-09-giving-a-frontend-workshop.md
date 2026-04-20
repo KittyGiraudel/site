@@ -119,11 +119,11 @@ All participants seemed happy with what they came up with in just a few hours, s
 If you have any tip or comment, please be sure to share in the comment section. In the meantime, here are a few screenshots of the work done by some participants:
 
 <figure class="Figure">
-  <img src="/assets/images/giving-a-frontend-workshop/recipe-1.png" alt="Screenshot of a participant’s recipe" />
+  <img src="/assets/images/giving-a-frontend-workshop/recipe-1.png" alt="Screenshot of a participant’s recipe" loading="lazy" />
 
-  <img src="/assets/images/giving-a-frontend-workshop/recipe-2.png" alt="Screenshot of a participant’s recipe" />
+  <img src="/assets/images/giving-a-frontend-workshop/recipe-2.png" alt="Screenshot of a participant’s recipe" loading="lazy" />
 
-  <img src="/assets/images/giving-a-frontend-workshop/recipe-3.png" alt="Screenshot of a participant’s recipe" />
+  <img src="/assets/images/giving-a-frontend-workshop/recipe-3.png" alt="Screenshot of a participant’s recipe" loading="lazy" />
 
   <figcaption>Screenshots of some participants’ recipes</figcaption>
 </figure>

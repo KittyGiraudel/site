@@ -19,7 +19,7 @@ So the takeaway is: do not disable zooming.
 Additionally, I use the pinch-and-zoom trackpad gesture from my MacBook Pro on every single website. Every time I want to read something, I pinch to zoom to dramatically enlarge the content, read, then pinch out to scroll or navigate. Rince and repeat.
 
 <figure class="Figure">
-<img src="/assets/images/a11y-advent-calendar/zoom.png" alt="Screenshot of this blog opened in the browser, zoomed in to the max so the content touches the edges of the browser frame" />
+<img src="/assets/images/a11y-advent-calendar/zoom.png" alt="Screenshot of this blog opened in the browser, zoomed in to the max so the content touches the edges of the browser frame" loading="lazy" />
 <figcaption>This is how I browse the web: zoomed in to the max every time I want to read something</figcaption>
 </figure>
 

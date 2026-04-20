@@ -22,7 +22,7 @@ The most successful article is definitely [Dig deep into CSS linear gradients](/
 All articles have drawn more than **82,000 unique visitors** for about **150,000 viewed pages**. The average visit duration is close to one minute, and the number of page per visit is around 1.4.
 
 <figure class="Figure">
-<img src="/assets/images/six-months-blogging/visits.jpg" alt="">
+<img src="/assets/images/six-months-blogging/visits.jpg" alt="" loading="lazy" >
 <figcaption>Spiky visits between February and April</figcaption>
 </figure>
 
@@ -33,7 +33,7 @@ Enough about me, let’s talk about you: **28% of users come from United States*
 Regarding browser, I’m a lucky bastard: **Chrome gets more than 60% of the browser share** on my site, then it’s Firefox with 17.5%, and then Safari with 16%. Internet Explorer comes further with 1.8%.
 
 <figure class="Figure">
-<img src="/assets/images/six-months-blogging/mobile-vs-desktop.png" alt="">
+<img src="/assets/images/six-months-blogging/mobile-vs-desktop.png" alt="" loading="lazy" >
 <figcaption><span style="color: #50b432">Mobile</span> vs <span style="color: #058dc7">Desktop</span></figcaption>
 </figure>
 

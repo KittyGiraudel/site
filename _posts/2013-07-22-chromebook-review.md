@@ -63,7 +63,7 @@ This is definitely a plus not having to worry much about the battery (at least f
 The keyboard is pretty nice, really. **Keys are large and smooth** so typing is quite easy and most importantly, noiseless.
 
 <figure class="Figure">
-<img src="/assets/images/chromebook-review/chromebook-keyboard.jpg" alt="">
+<img src="/assets/images/chromebook-review/chromebook-keyboard.jpg" alt="" loading="lazy" >
 <figcaption>Samsung Chromebook - photo by <a href="http://alixlucas.com">Alix Lucas</a></figcaption>
 </figure>
 
@@ -94,7 +94,7 @@ Beware, HDMI connection may be a problem if you plan on connecting your laptop t
 Chrome OS is freaking fast. It takes about 6 seconds between the moment you press the power button and the moment you’re on the desktop. This is probably due to the fact **most applications and services run in the browser**. Indeed, there are very few things installed on the computer aside of Google Chrome.
 
 <figure class="Figure">
-<img src="/assets/images/chromebook-review/chrome-os.png">
+<img src="/assets/images/chromebook-review/chrome-os.png" loading="lazy" >
 <figcaption>Minimal desktop of Chrome OS</figcaption>
 </figure>
 

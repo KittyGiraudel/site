@@ -93,7 +93,7 @@ oldSyntax = 90° - newSyntax;
 All the points on a line that is [perpendicular](https://www.mathopenref.com/perpendicular.html) on the gradient line have the same color. The perpendicular from the corner in the quadrant that’s opposite to the quadrant of the angle is the `0%` line (the crimson line in the demo) and its intersection with the gradient line is the _starting point_ of the gradient (let’s call it `S`). The perpendicular from the opposite corner (the one in the same quadrant as the gradient angle) is the `100%` line (the black line in the demo) and its intersection with the gradient line is the _ending point_ of the gradient (let’s call it `E`).
 
 <figure class="Figure">
-<img src="/assets/images/css-gradients/gradient.png" alt="" />
+<img src="/assets/images/css-gradients/gradient.png" alt="" loading="lazy" />
 <figcaption>Gradient with gradient line, 0% line and 100% line</figcaption>
 </figure>
 
@@ -106,7 +106,7 @@ Now let’s see how we apply this for the particular case of the rainbow wheel.
 Let’s first consider a gradient that creates a single slice (one with a central angle of `36°`). This is a square image (see below), with a blue slice having an angle of `36°` in the lower part. We draw the horizontal and vertical axes through the point `O` at which the diagonals intersect. We draw a perpendicular from that point to the line that separates the dark blue part from the transparent part. This is going to be the gradient line. As it can be seen, there is a `36°` angle between the vertical axis and the gradient line, so the angle of the gradient is `36°`.
 
 <figure class="Figure">
-<img src="/assets/images/css-gradients/slice_1.png" alt="" />
+<img src="/assets/images/css-gradients/slice_1.png" alt="" loading="lazy" />
 <figcaption>Applying the theory for the first slice</figcaption>
 </figure>
 
@@ -115,7 +115,7 @@ We now draw a perpendicular from the corner of the square in the quadrant that i
 The [intersection of the diagonals of a square splits each one of them into two](https://www.mathopenref.com/square.html), so `AO` and `BO` are equal. The `BOE` and `AOS` angles are equal, as they are [vertical angles](httsp://www.mathopenref.com/anglesvertical.html). Moreover, the `BOE` and `AOS` triangles are [right triangles](https://www.mathopenref.com/righttriangle.html). All these three [mean that the two triangles are also congruent](https://en.wikipedia.org/wiki/Triangle#Similarity_and_congruence). Which in turn means that `SO` and `EO` are equal, so the length of `SE` is going to be twice the length of `EO` or twice the length of `SO`.
 
 <figure class="Figure">
-<img src="/assets/images/css-gradients/right_triangle_trigonometric_functions.png" alt="" />
+<img src="/assets/images/css-gradients/right_triangle_trigonometric_functions.png" alt="" loading="lazy" />
 <figcaption>A right angled triangle and how to compute sin and cos functions</figcaption>
 </figure>
 
@@ -129,7 +129,7 @@ The [intersection of the diagonals of a square splits each one of them into two]
 Computing the length of `EO` in the right triangle `BOE` is really simple. If we take the length of the side of the square to be `a`, then the length of the half diagonal `BO` is going to be `a*sqrt(2)/2`. The `BOE` angle is equal to the difference between the `BOM` angle, which is `45°`, and the `EOM` angle, which is `36°`. This makes `BOE` have `9°`. Since `BO` is also the hypotenuse in the right triangle `BOE`, the length of `EO` is going to be `(a*sqrt(2)/2)*cos9°`. Which makes the length of `SE` be `a*sqrt(2)*cos9°`.
 
 <figure class="Figure">
-<img src="/assets/images/css-gradients/slice_1_APD.png" alt="" />
+<img src="/assets/images/css-gradients/slice_1_APD.png" alt="" loading="lazy" />
 <figcaption>The APD triangle</figcaption>
 </figure>
 

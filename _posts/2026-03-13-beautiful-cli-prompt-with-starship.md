@@ -164,7 +164,7 @@ site on main v24.14.0 ● starship explain                          10:33:47
 It also provides a lot of [community presets](https://starship.rs/presets/) which are basically ready-to-use TOML configuration files. I’ve played with the [Catppuccin Powerline preset](https://starship.rs/presets/catppuccin-powerline) myself as a potential bold and colorful alternative.
 
 <figure class="Figure">
-  <img src="https://starship.rs/presets/img/catppuccin-powerline.png" alt="Screenshot of a Git Bash terminal featuring the colorful rainbow-like Catppuccin Powerline theme" />
+  <img src="https://starship.rs/presets/img/catppuccin-powerline.png" alt="Screenshot of a Git Bash terminal featuring the colorful rainbow-like Catppuccin Powerline theme" loading="lazy" />
   <figcaption>Catppuccin Powerline comes in a few different flavours</figcaption>
 </figure>
 

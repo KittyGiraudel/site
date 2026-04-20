@@ -24,7 +24,7 @@ You are kind of a mysterious person. Maybe could you introduce yourself?
 Could you tell us a little bit more about Codrops? Where did the idea came from and what do you do for it?
 
 <figure class="Figure">
-<img src="/assets/images/interview-manoela-ilic/codrops.png" alt="Codrops logo" />
+<img src="/assets/images/interview-manoela-ilic/codrops.png" alt="Codrops logo" loading="lazy" />
 <figcaption>Codrops logo</figcaption>
 </figure>
 

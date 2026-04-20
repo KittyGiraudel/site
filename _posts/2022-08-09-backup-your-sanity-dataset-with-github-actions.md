@@ -71,7 +71,7 @@ Finally, we want to upload the resulting tarball to GitHub. This can be done wit
 That’s it really. From there, you can download your backup from the action interface itself, directly on GitHub.
 
 <figure class="Figure">
-<img src="/assets/images/backup-your-sanity-dataset-with-github-actions/backup.png" alt="Screenshot of the page of a successful backup run, showing details about the run as well as the exported dataset which can be downloaded again" />
+<img src="/assets/images/backup-your-sanity-dataset-with-github-actions/backup.png" alt="Screenshot of the page of a successful backup run, showing details about the run as well as the exported dataset which can be downloaded again" loading="lazy" />
 <figcaption>The backup artifact can then be downloaded directly on GitHub</figcaption>
 </figure>
 
