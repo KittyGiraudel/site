@@ -5,6 +5,11 @@ export default {
   description:
     'I’m Kitty Giraudel, a transfeminine web engineer based in Berlin, focused on accessibility and inclusivity.',
   author: 'Kitty Giraudel',
+  same_as: [
+    'https://github.com/KittyGiraudel',
+    'https://x.com/KittyGiraudel',
+    'https://www.linkedin.com/in/kittygiraudel/',
+  ],
   environment: process.env.NODE_ENV,
   time: new Date(),
   pubDate: new Date(2012, 10, 10),

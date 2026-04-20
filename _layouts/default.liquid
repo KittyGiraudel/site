@@ -8,6 +8,7 @@
 {% assign generator = generator | default: eleventy.generator %}
 {% assign site_url = site.url %}
 {% assign tags = tags | default: keywords %}
+{% assign site_same_as = site.same_as %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,7 @@
   page_image: page_image,
   page_url: page_url,
   site_author: site_author,
+  site_same_as: site_same_as,
   site_url: site_url,
   title: title,
 %}

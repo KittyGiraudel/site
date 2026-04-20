@@ -13,6 +13,7 @@
   - page_date: The date of the page
   - tags: Tag/keyword list for the page
   - generator: The generator of the page
+  - site_same_as: List of profile URLs for Person schema
 {% endcomment %}
  
 {% ensure inline_assets, "Required value 'inline_assets' is missing in head.liquid" %}
@@ -123,7 +124,8 @@ http://ogp.me/ns/article#">
       "@context": "https://schema.org",
       "@type": "Person",
       "name": {{ site_author | jsonify }},
-      "url": {{ site_url | jsonify }}
+      "url": {{ site_url | jsonify }}{% if site_same_as and site_same_as.size > 0 %},
+      "sameAs": {{ site_same_as | jsonify }}{% endif %}
     }
   </script>
   {% if layout == 'post' %}
