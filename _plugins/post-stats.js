@@ -4,6 +4,7 @@ import utilities from './utilities.js'
 const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/
 const CONTENT_STATS_CACHE = new Map()
 const POPULAR_TAGS_TOP = 20
+const getPostTimelineDate = post => new Date(post.data?.creation_date ?? post.date)
 const EMPTY_COLLECTION = {
   firstPostDate: null,
   lastPostDate: null,
@@ -22,7 +23,9 @@ const EMPTY_COLLECTION = {
 
 export default function postStatsPlugin(eleventyConfig, options = {}) {
   eleventyConfig.addCollection('postStats', collection => {
-    const posts = collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date)
+    const posts = collection
+      .getFilteredByGlob('_posts/*.md')
+      .sort((a, b) => getPostTimelineDate(b) - getPostTimelineDate(a))
     const postCount = posts.length
 
     if (postCount === 0) {
@@ -31,8 +34,8 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
       return arr
     }
 
-    const firstPostDate = posts[posts.length - 1].date
-    const lastPostDate = posts[0].date
+    const firstPostDate = getPostTimelineDate(posts[posts.length - 1])
+    const lastPostDate = getPostTimelineDate(posts[0])
     const spanMs = lastPostDate - firstPostDate
     const spanDays = spanMs / (24 * 60 * 60 * 1000)
     const spanWeeks = spanDays / 7
@@ -50,8 +53,9 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
     const monthsMap = new Map()
 
     for (const post of posts) {
-      const year = post.date.getFullYear()
-      const monthIndex = post.date.getMonth()
+      const timelineDate = getPostTimelineDate(post)
+      const year = timelineDate.getFullYear()
+      const monthIndex = timelineDate.getMonth()
       const isExternal = Boolean(post.data?.external)
 
       let yearBucket = yearsMap.get(year)

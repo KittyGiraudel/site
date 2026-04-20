@@ -11,6 +11,7 @@
   - layout: The layout of the page
   - page_image: The image of the page
   - page_date: The date of the page
+  - page_creation_date: The original creation date of the page
   - tags: Tag/keyword list for the page
   - generator: The generator of the page
   - site_same_as: List of profile URLs for Person schema
@@ -92,8 +93,11 @@ http://ogp.me/ns/article#">
   {% if layout == 'post' %}
     <!-- Article tags -->
     <meta property="article:author" content="{{ page_author }}" />
+    {% if page_creation_date %}
+      <meta property="article:published_time" content="{{ page_creation_date | date_to_rfc3339 }}" /> 
+    {% endif %}
     {% if page_date %}
-      <meta property="article:published_time" content="{{ page_date | date_to_rfc3339 }}" />
+      <meta property="article:modified_time" content="{{ page_date | date_to_rfc3339 }}" />
     {% endif %}
     {% for tag in tags %}
       <meta property="article:tag" content="{{ tag }}" />
@@ -145,7 +149,7 @@ http://ogp.me/ns/article#">
           "url": {{ site_url | jsonify }}
         },
         {% if page_date %}
-          "datePublished": {{ page_date | date_to_rfc3339 | jsonify }},
+          "datePublished": {{ page_creation_date | default: page_date | date_to_rfc3339 | jsonify }},
           "dateModified": {{ page_date | date_to_rfc3339 | jsonify }},
         {% endif %}
         "mainEntityOfPage": {

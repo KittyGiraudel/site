@@ -87,14 +87,15 @@ export default function (config) {
 
   // Collections
   // ---------------------------------------------------------------------------
+  const getPostSortDate = item => new Date(item.data?.creation_date ?? item.date)
   config.addCollection('posts', c =>
-    c.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
+    c.getFilteredByGlob('_posts/*.md').sort((a, b) => getPostSortDate(b) - getPostSortDate(a)),
   )
   config.addCollection('internal_posts', c =>
     c
       .getFilteredByGlob('_posts/*.md')
       .filter(item => !item.data?.external)
-      .sort((a, b) => b.date - a.date),
+      .sort((a, b) => getPostSortDate(b) - getPostSortDate(a)),
   )
   config.addCollection('snippets', c => c.getFilteredByGlob('_pages/snippets/*.md'))
   config.addCollection('recipes', collection => collection.getFilteredByGlob('_pages/recipes/*.md'))
