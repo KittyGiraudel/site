@@ -147,11 +147,14 @@ function estimateTokens(byteLength: number): number {
  * patterns inside template literals like regex literals.
  */
 function getMarkdownTwin(pathname: string): string | null {
-  let m = pathname.match(/^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/index\.html$/i)
-  if (!m?.[1] || !m[2] || !m[3] || !m[4]) {
-    m = pathname.match(/^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/?$/)
-    if (!m?.[1] || !m[2] || !m[3] || !m[4]) return null
+  const HTML_PATH_RE = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/index\.html$/i
+  const EXTLESS_PATH_RE = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/?$/
+
+  let match = pathname.match(HTML_PATH_RE)
+  if (!match?.[1] || !match[2] || !match[3] || !match[4]) {
+    match = pathname.match(EXTLESS_PATH_RE)
+    if (!match?.[1] || !match[2] || !match[3] || !match[4]) return null
   }
-  const [, year, month, day, slug] = m
+  const [, year, month, day, slug] = match
   return ['', year, month, day, slug, 'index.md'].join('/')
 }
