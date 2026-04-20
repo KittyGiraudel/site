@@ -98,7 +98,7 @@ http://ogp.me/ns/article#">
       <meta property="article:tag" content="{{ tag }}" />
     {% endfor %}
   {% endif %}
- 
+
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@KittyGiraudel">
@@ -107,6 +107,54 @@ http://ogp.me/ns/article#">
   <meta name="twitter:image" content="{{ page_image_url }}">
   <meta name="twitter:site" content="@KittyGiraudel">
   <meta name="twitter:title" content="{{ title }}">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": {{ site_author | jsonify }},
+      "url": {{ site_url | jsonify }},
+      "description": {{ page_description | jsonify }}
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": {{ site_author | jsonify }},
+      "url": {{ site_url | jsonify }}
+    }
+  </script>
+  {% if layout == 'post' %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": {{ title | jsonify }},
+        "description": {{ page_description | jsonify }},
+        "author": {
+          "@type": "Person",
+          "name": {{ page_author | jsonify }}
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": {{ site_author | jsonify }},
+          "url": {{ site_url | jsonify }}
+        },
+        {% if page_date %}
+          "datePublished": {{ page_date | date_to_rfc3339 | jsonify }},
+          "dateModified": {{ page_date | date_to_rfc3339 | jsonify }},
+        {% endif %}
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": {{ page_url | jsonify }}
+        },
+        "url": {{ page_url | jsonify }},
+        "image": {{ og_image_url | jsonify }}
+      }
+    </script>
+  {% endif %}
   
   {% render "script.liquid",
     inline: inline_assets,
