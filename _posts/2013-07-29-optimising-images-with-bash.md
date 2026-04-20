@@ -192,7 +192,7 @@ Then before our main loop, we:
 1. create a very long string of dots (_"."_)
 1. set a max line length equals to the length of the longest filename + the length of our _" [ DONE ]"_ string (9 characters) + a small number (5 here) to have some space between the longest name and the _" [ DONE ]"_ string.
 
-Finally, in the main loop we display the filename then the _"."_ symbols and the the _" [ DONE ]"_ string.
+Finally, in the main loop we display the filename then the _"."_ symbols and the _" [ DONE ]"_ string.
 
 <figure class="Figure">
 <img src="/assets/images/optimising-with-bash/output.png" alt="" loading="lazy" />

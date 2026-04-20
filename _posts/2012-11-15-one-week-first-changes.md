@@ -44,4 +44,4 @@ You may or may not have noticed yet but from now on, my articles on Codrops will
 
 I’ve already made a bunch of tiny bug fixes like broken links, inadequate margins, little issues on mobile but some bugs may persist so if you still find one, please tell me: I’ll fix it as soon as possible.
 
-If you have any suggestion to how we could make this place better, please feel free to speak. By the way I’d like to thanks all of you giving feedbacks and helping me improve this place. It means a lot, keep up! :)
+If you have any suggestions on how we could make this place better, please feel free to speak. By the way I’d like to thank all of you giving feedback and helping me improve this place. It means a lot, keep up! :)

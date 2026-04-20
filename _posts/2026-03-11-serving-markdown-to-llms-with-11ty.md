@@ -54,7 +54,7 @@ No matter how you look at it, the results are undeniable: if your content is pri
 
 The idea is not to modify the existing pages at all, and just generate a second version of every blog post using a different template. That template would not render HTML but generate some Markdown instead.
 
-For instance, this article is served at `/2026/03/11/serving-markdown-to-llms-with-11ty/index.html`. We would like to to additionally serve `/2026/03/11/serving-markdown-to-llms-with-11ty/index.md`.
+For instance, this article is served at `/2026/03/11/serving-markdown-to-llms-with-11ty/index.html`. We would like to additionally serve `/2026/03/11/serving-markdown-to-llms-with-11ty/index.md`.
 
 That Markdown file would contain a YAML front matter for metadata, and the original Markdown body of the article (without any HTML). This way, for crawlers and tools, the page would be just:
 

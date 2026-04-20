@@ -16,7 +16,7 @@ We will need a couple of string functions that are not currently available in Sa
 - `str-length`: like `length` but for strings
 - `str-slice`: slicing a string from index A to index B
 - `str-insert`: insert a string in a string at index A`
-- `str-index`: finds first occurence of string in string
+- `str-index`: finds first occurrence of string in string
 - `to_lower_case`: move a whole string to lower case
 
 You can find the Ruby source code for those functions in [this file](https://github.com/chriseppstein/sass/blob/string_functions/lib/sass/script/functions.rb). I don’t do any Ruby, but the code is well documented so it’s really easy to understand what’s going on.

@@ -72,7 +72,7 @@ $ cat file.txt | grep numer | wc -l
 1
 ```
 
-Ok, I have 19 occurences of _"number"_ and 1 occurrence of _"numer"_, let’s find which commit inserted the typo. To do so, I run `git bisect` with two commits references. I know that the bug was not there 20 commits ago and is present now. So I can pass `HEAD` and `HEAD~20` for my two references.
+Ok, I have 19 occurrences of _"number"_ and 1 occurrence of _"numer"_, let’s find which commit inserted the typo. To do so, I run `git bisect` with two commit references. I know that the bug was not there 20 commits ago and is present now. So I can pass `HEAD` and `HEAD~20` for my two references.
 
 ```git
 $ git bisect start HEAD HEAD~20

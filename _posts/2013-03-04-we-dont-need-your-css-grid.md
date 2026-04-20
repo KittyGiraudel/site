@@ -30,7 +30,7 @@ But wait… There’s more.
 
 Yes. Even you, do not need your own grid system. At least in most cases. Let’s think about it: either your project truely need a grid and you’d better go with an existing one which had proven to be reliable, or you project is small enough to not need one thus you don’t even need your own.
 
-Given this postulate, we can ask ourself why are there that many grid systems? Because it’s fun to do, especially when you’re building it upon a CSS preprocessor. It is a very good exercise to practice CSS skills and preprocessor learning.
+Given this postulate, we can ask ourselves why are there that many grid systems? Because it’s fun to do, especially when you’re building it upon a CSS preprocessor. It is a very good exercise to practice CSS skills and preprocessor learning.
 
 ## Keep It Simple, Stupid!
 

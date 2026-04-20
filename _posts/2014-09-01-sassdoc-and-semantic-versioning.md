@@ -22,7 +22,7 @@ When we were first talking about `1.0.0`, someone told us it was too soon becaus
 
 While it makes sense in some way, I think releasing a stable version after a month of such a small project as SassDoc isn’t _too soon_, especially when 4 developers have been working on it.
 
-The project mature as we are working on it and as people start using it. There is no need to wait weeks or months before launching it: we need feedbacks. And you don’t get feedbacks when project is on `0.4.3`.
+The project matures as we are working on it and as people start using it. There is no need to wait weeks or months before launching it: we need feedback. And you don’t get feedback when project is on `0.4.3`.
 
 ## You’ve released 4 minor versions in 2 weeks!
 
@@ -58,4 +58,4 @@ We’ve been working like crazy on SassDoc lately because not only is this Node 
 
 Plus, we have noticed people were really interested in having a powerful tool to document their Sass projects. We only hope SassDoc will soon be the go-to tool for this.
 
-By the way, we need feedbacks. And opinions. Consider joining us on [the repository](https://github.com/SassDoc/sassdoc) to chat on opened issues!
+By the way, we need feedback. And opinions. Consider joining us on [the repository](https://github.com/SassDoc/sassdoc) to chat on opened issues!

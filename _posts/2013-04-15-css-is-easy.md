@@ -32,7 +32,7 @@ The first “problem” (for lack of a better word) with CSS is that it is a con
 
 Some things I learnt 2 years ago are irrelevant now, and some things I’m learning today might disappear or become bad practices in the future. It is a non-stop evolution &mdash; which is cool but &mdash; which requires developers to be very careful.
 
-## Browser dependant
+## Browser dependent
 
 The thing is, since CSS is a language compiled on the client side (meaning by the browser itself), its interpretation depends on the compiler (once again, the browser).
 

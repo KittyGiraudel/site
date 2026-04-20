@@ -6,7 +6,7 @@ tags:
   - CI
 ---
 
-N26 has been using Jenkins for as long as I’ve been part of this company. Over the last few years, I have been responsible for the quality of our delivery, and this involved getting my hands dirty with Jenkins. I learnt a lot, sometimes the hard way, and thought I’d share what I know before I leave the company and loose access to the code.
+N26 has been using Jenkins for as long as I’ve been part of this company. Over the last few years, I have been responsible for the quality of our delivery, and this involved getting my hands dirty with Jenkins. I learnt a lot, sometimes the hard way, and thought I’d share what I know before I leave the company and lose access to the code.
 
 Please note that I am by no means a Jenkins expert. I’m a frontend developer at heart, so this is all pretty alien to me. I just wanted to share what I learnt but this might not be optimal in any way.
 

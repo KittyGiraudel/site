@@ -21,7 +21,7 @@ However, regular expressions are hard to read, if not to say barely decipherable
 
 ## What is this all about?
 
-In case you are not entirely sure what this is all about, allow me to put you back on track. A [regular expression](https://en.wikipedia.org/wiki/Regular_expression), often shortened as “regex” or “regexp”, is a sequence of characters that define a search pattern. Because of their usefulness, regular expressions are built-in in most programming languages. A very practical example would be a regular expression to validate an email address.
+In case you are not entirely sure what this is all about, allow me to put you back on track. A [regular expression](https://en.wikipedia.org/wiki/Regular_expression), often shortened as “regex” or “regexp”, is a sequence of characters that define a search pattern. Because of their usefulness, regular expressions are built into most programming languages. A very practical example would be a regular expression to validate an email address.
 
 That being said it is important to point out that not all regular expression engines are the same. You might have heard of [PCRE](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions) (_Perl Compatible Regular Expression_) or POSIX regular expressions. PCRE is the engine used in many languages including PHP, and can be thought as _regex on steroids_. It is the “new standard” so to say. However not all languages stick to PCRE. For instance JavaScript has a limited support of PCRE and a lot of features, such as the ability to write regular expressions on several lines using safe spaces and line-breaks, are absent.
 

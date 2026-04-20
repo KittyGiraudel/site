@@ -18,13 +18,13 @@ Anyway, if `perspective` and `perspective-origin` have been quite easy to do, I 
 
 The [CSS Grid Layout](https://www.w3.org/TR/css3-grid-layout/) is currently a W3C Working Draft aiming at fixing issues with older layout techniques by providing a better way to achieve complex interface design. Indeed, each solution we (have) use(d) to make web pages has at least a flaw:
 
-- **HTML tables**: markup dependant, not flexible
+- **HTML tables**: markup dependent, not flexible
 - **float**: clearing
 - **inline-blocks**: spacing between blocks
 
 The CSS Grid Layout consists on defining a 2-dimensional grid in which the children can be positioned as desired. The main benefits of this technique are:
 
-- source order independant (!)
+- source order independent (!)
 - no need for widths or heights
 - no need for floats or inline-blocks
 - no need for margins to space columns from each others
@@ -49,7 +49,7 @@ Otherwise, the module is quite complicated by itself. It involves about 15 new p
 
 ## A little example
 
-What I’ve found astonishing is the very little amount of required CSS to achieve a complex layout. I counted: with no more than 10 lines of CSS, I’ve been able to make a 3-columns layout including 2 fixed-size columns, with full-width header and footer. Oh, and source order independant. Please have a look at the following markup:
+What I’ve found astonishing is the very little amount of required CSS to achieve a complex layout. I counted: with no more than 10 lines of CSS, I’ve been able to make a 3-columns layout including 2 fixed-size columns, with full-width header and footer. Oh, and source order independent. Please have a look at the following markup:
 
 ```html
 <div class="wrapper">

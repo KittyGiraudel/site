@@ -28,7 +28,7 @@ This is how we can write a rule-set to add a CSS3 gradient background:
 }
 ```
 
-For browsers that don’t support CSS gradients or for those where Javascript is not available or disabled and thus we can’t test for support, we will need a fallback rule-set:
+For browsers that don’t support CSS gradients or for those where JavaScript is not available or disabled and thus we can’t test for support, we will need a fallback rule-set:
 
 ```css
 .no-js .my-selector,

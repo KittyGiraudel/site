@@ -564,7 +564,7 @@ This is hot! Instead of outputing shit in the loop, we use it to create a select
 
 None. The only difference there is, is that in the first case you have to apply 2 classes to your element instead of one. Per se, having to use 2 classes on the same element isn’t a problem at all.
 
-However what can be considered odd is that the 2 classes are co-dependant, meaning they only make sense when they are together. `.message` on itself won’t do much since it has no color chart. Meanwhile `.message-error` will look ugly since it lacks basic styles like padding and such.
+However what can be considered odd is that the 2 classes are co-dependent, meaning they only make sense when they are together. `.message` on itself won’t do much since it has no color chart. Meanwhile `.message-error` will look ugly since it lacks basic styles like padding and such.
 
 **Your @media mixin outputs a media-query block every time you use it. Ain’t you afraid of performance issues?**
 

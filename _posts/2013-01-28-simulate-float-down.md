@@ -24,7 +24,7 @@ Actually [Bennett Feely](https://twitter.com/bennettfeely) did it very nicely al
 I first managed to do it with `:nth-child()` selectors, replacing manually each one of the ten elements ([JSFiddle](https://jsfiddle.net/VAdT3/1/)). It sucked because it was:
 
 - Manual,
-- Dependant of the number of items,
+- Dependent on the number of items,
 - CSS heavy,
 - Not elegant.
 

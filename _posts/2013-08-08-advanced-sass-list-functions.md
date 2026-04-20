@@ -91,7 +91,7 @@ I made two versions of this function: in the first one, the code is simple. In t
 }
 ```
 
-The second version is better because it starts from the end and returns the first occurence it finds instead of looping through all the items from the start.
+The second version is better because it starts from the end and returns the first occurrence it finds instead of looping through all the items from the start.
 
 The code is a little ugly because as of today, Sass `@for` loops can’t decrement. Thus, we have to use a ugly workaround to make the loop increment on negative value, then use the absolute value of `$i`. Not cool but it works.
 
@@ -168,7 +168,7 @@ In any other case, we build a new list based on the one we pass to the function 
 
 ## Replacing values from list
 
-We’re good with adding new values to a list. Now what if we want to change values from a list? Like changing all occurences of `a` into `z`? Or changing the value at index `n`? Sass provides nothing native for this, so let’s do it ourself!
+We’re good with adding new values to a list. Now what if we want to change values from a list? Like changing all occurrences of `a` into `z`? Or changing the value at index `n`? Sass provides nothing native for this, so let’s do it ourselves!
 
 ### Replacing value `x`
 

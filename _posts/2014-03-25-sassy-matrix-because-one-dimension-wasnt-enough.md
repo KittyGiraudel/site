@@ -200,4 +200,4 @@ Also, there is a Compass extension for SassyMatrix now:
 2. Add `require 'SassyMatrix'` in `config.rb`
 3. `@import "SassyMatrix"` in your stylesheet
 
-Also, you can play with SassyMatrix directly at [SassMeister](https://www.sassmeister.com), so be sure to give it a try. Plus, I’d love to have some feedbacks!
+Also, you can play with SassyMatrix directly at [SassMeister](https://www.sassmeister.com), so be sure to give it a try. Plus, I’d love to have some feedback!

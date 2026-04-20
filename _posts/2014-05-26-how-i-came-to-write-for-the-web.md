@@ -32,7 +32,7 @@ I still keep helping Chris updating the Almanac whenever I can. I recently added
 
 [David Walsh](https://twitter.com/davidwalshblog) and Chris being good buddies, David asked me if I’d be interested in writing a little article about Sass for his blog as a guest author (July 2013). A couple of days later, he released [Looking into the Future of Sass](https://davidwalsh.name/future-sass) where I explained what’s coming up in Sass 3.3 which was on the tracks back then. Even today, this article is still getting linked to as an alternative to [Sass' official changelog](https://sass-lang.com/documentation/file.SASS_CHANGELOG.html). Needless to say you should check the changelog rather than external articles. ;)
 
-On the very beginning of 2014, I gathered my courage and let David release another guest post from me, this time about JavaScript. Yes, you read right! I explained how I built [a CRUD JavaScript class](https://davidwalsh.name/crud-javascript-class). I spent a couple of days working on this piece of code and that was kind of a big deal for a JavaScript newbie like me to talk about it, especially at David Walsh’s which is well known for his JS skills. Thankfully I’ve got some positive feedbacks, so it’s all good!
+On the very beginning of 2014, I gathered my courage and let David release another guest post from me, this time about JavaScript. Yes, you read right! I explained how I built [a CRUD JavaScript class](https://davidwalsh.name/crud-javascript-class). I spent a couple of days working on this piece of code and that was kind of a big deal for a JavaScript newbie like me to talk about it, especially at David Walsh’s which is well known for his JS skills. Thankfully I’ve got some positive feedback, so it’s all good!
 
 ### The Sass Way
 
