@@ -87,6 +87,14 @@ http://ogp.me/ns/article#">
   <meta property="og:site_name" content="kittygiraudel.com" />
   <meta property="og:image" content="{{ page_image_url }}">
 
+  {% if layout == 'post' %}
+    <!-- Article tags -->
+    <meta property="article:author" content="{{ page_author }}" />
+    {% for tag in tags %}
+      <meta property="article:tag" content="{{ tag }}" />
+    {% endfor %}
+  {% endif %}
+ 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@KittyGiraudel">
