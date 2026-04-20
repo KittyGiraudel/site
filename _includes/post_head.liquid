@@ -1,26 +1,30 @@
 {% comment %}
   Required:
   - created_at: The original creation/published date
-  - updated_at: Last updated date of the post
   Optional:
+  - updated_at: Last updated date of the post
   - reading_time: The reading time of the post
   - guest: The guest of the post
 {% endcomment %}
 
-{% ensure updated_at, "Required value 'updated_at' is missing in post_head.liquid" %}
 {% ensure created_at, "Required value 'created_at' is missing in post_head.liquid" %}
 
-{% assign created_date = created_at | date: "%Y-%m-%d" %}
-{% assign updated_date = updated_at | date: "%Y-%m-%d" %}
-{% assign was_updated = updated_date != created_date %}
-
 <p class="PostDate">
-  {% if was_updated %}
+  {% if not updated_at %}
     {{ created_at | time: "datePublished" }}
-    <span class="PostDate__updated">(edited {{ updated_at | time: "dateModified" }})</span>
   {% else %}
-    {{ created_at | time: "datePublished" }}
-  {%  endif  %}
+    {% assign created_date = created_at | date: "%Y-%m-%d" %}
+    {% assign updated_date = updated_at | date: "%Y-%m-%d" %}
+    {% assign was_updated = updated_date != created_date %}
+  
+    {% if was_updated %}
+      {{ created_at | time: "datePublished" }}
+      <span class="PostDate__updated">(edited {{ updated_at | time: "dateModified" }})</span>
+    {% else %}
+      {{ created_at | time: "datePublished" }}
+    {%  endif  %}
+  {% endif %}
+
   {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
   <span class="Fleuron" aria-hidden="true">❦</span> {% if reading_time %}<span itemprop="timeRequired" title="Estimated read time">{{ reading_time }}</span>{% endif %}
 </p>

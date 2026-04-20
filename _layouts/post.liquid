@@ -26,7 +26,7 @@ layout: default
 <article itemscope itemtype="https://schema.org/Article" class="Post">
   {% assign reading_time = content | strip_html | reading_time %}
   {% render "post_head.liquid",
-    updated_at: page.date,
+    updated_at: update_date,
     created_at: creation_date,
     guest: guest,
     reading_time: reading_time
