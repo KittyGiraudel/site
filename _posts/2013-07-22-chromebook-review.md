@@ -6,6 +6,7 @@ tags:
 edits:
   - date: 2014/11/16
     md: I no longer own a Chromebook.
+image: /assets/images/chromebook-review/chromebook.jpg
 ---
 
 As you may know already, I recently bought a **Samsung Chromebook**. Since it is a fairly new computer and reviews can be quite rare, I thought it would be a good idea to give you my feeling after a couple of weeks of daily use.

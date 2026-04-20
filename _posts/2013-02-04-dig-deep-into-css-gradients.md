@@ -4,6 +4,7 @@ title: Dig deep into CSS linear gradients
 description: A deep-dive into CSS linear gradients by Ana Tudor
 tags:
   - CSS
+image: /assets/images/css-gradients/gradient.png
 ---
 
 The following is a guest post by [Ana Tudor](https://twitter.com/thebabydino). She is passionate about experimenting and learning new things. Also she loves maths and enjoys playing with code.

@@ -5,6 +5,7 @@ tags:
   - Sass
   - Design
   - CSS
+image: /assets/images/corner-ribbon-with-trigonometry/ribbon.png
 ---
 
 I was never the best at trigonometry, so I was very proud finally cracking how to perfectly position a corner ribbon within a box with CSS.

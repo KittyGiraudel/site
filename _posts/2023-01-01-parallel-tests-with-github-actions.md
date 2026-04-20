@@ -5,6 +5,7 @@ tags:
   - Testing
   - GitHub
   - CI
+image: /assets/images/parallel-tests-with-github-actions/parallel-tests.png
 ---
 
 First post of the year! I’ve been spending quite some time on my [Advent of Code](https://github.com/KittyGiraudel/advent-of-code) repository in December and decided I wanted to run the tests in a GitHub workflow. A short and sweet post about it.

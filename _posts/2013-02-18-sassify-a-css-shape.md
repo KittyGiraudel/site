@@ -4,6 +4,7 @@ description: A technical writeup about building a mixin to generate a specific C
 tags:
   - Sass
   - CSS
+image: /assets/images/sass-mixin-star/css-star.png
 ---
 
 A couple of days ago, [Ana Tudor](https://twitter.com/thebabydino) showed me how she managed to do a [pure CSS 6-point star](https://codepen.io/thebabydino/pen/DmklE) with a single element.

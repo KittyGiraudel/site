@@ -5,6 +5,7 @@ description: A guest post by Jesús Ricarte on using calc() to figure out optima
 tags:
   - CSS
   - Typography
+image: /assets/images/using-calc-to-figure-out-optimal-line-height/line-height.png
 ---
 
 The following is a guest post by [Jesús Ricarte](https://twitter.com/supersimplenet), a frontend developer and volunteer translator for A List Apart in Spanish. I’m very glad to have him writing here today about line heights and using math in CSS!

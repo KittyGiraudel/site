@@ -7,6 +7,7 @@ tags:
 edits:
   - date: 2026-03-06
     md: I have started using [Starship](https://starship.rs/) to manage my prompt, and I’ve been really happy with it so far. I can recommend it.
+image: /assets/images/making-sense-of-zsh/zsh-prompt.png
 ---
 
 If you use a relatively recent macOS version, chances are good you’re using zsh ([Z shell](https://en.wikipedia.org/wiki/Z_shell)) as a terminal — even if you use a terminal that’s integrated to your IDE (like in Visual Studio Code for instance).

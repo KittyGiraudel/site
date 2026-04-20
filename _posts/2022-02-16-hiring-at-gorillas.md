@@ -7,6 +7,7 @@ tags:
 edits:
   - date: 2024/06/09
     md: This article was originally published on the Gorillas’ blog which has since been decommissioned following the company closing down. It was retrieved using a snapshot from the [Internet Archive](https://web.archive.org/web/20231209155847/https://gorillas.io/en/blog/how-we-hire-product-design-and-engineering).
+image: /assets/images/hiring-at-gorillas/not-a-culture-fit.png
 ---
 
 Gorillas was founded in spring 2020. By the end of its first year, the company decided to create a comprehensive Product, Design & Engineering department to support its ambitious growth and expansion. In December of that same year, the first hires for that department were made, myself included.

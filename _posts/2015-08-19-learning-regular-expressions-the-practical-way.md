@@ -3,6 +3,7 @@ title: 'Learning regular expressions: the practical way'
 description: A guide on learning regular expressions in a practical way
 tags:
   - Regex
+image: /assets/images/learning-regular-expressions/xkcd-1.png
 ---
 
 The single fact that you clicked on that link to come here shows that you are brave. Most people just run away when it comes to regular expressions. They are wrong to do so! Not only are they extremely valuable, but their foundations also are actually quite easy to grasp.

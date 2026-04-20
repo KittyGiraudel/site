@@ -5,6 +5,7 @@ tags:
   - Accessibility
   - UX
   - Animations
+image: /assets/images/implementing-a-reduced-motion-mode/reduced-motion.png
 ---
 
 There are quite [a few reasons for someone not to want animations](/2017/07/02/accessibility-feedback-from-twitter/). Some people suffer from motion sickness. Some people suffer from <abbr title='Attention Deficit and Hyperactivity Disorder'>ADHD</abbr>. Some people simply don’t like the fancy woosh-swoosh.

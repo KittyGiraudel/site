@@ -3,6 +3,7 @@ title: Colors in CSS
 description: A deep-dive into colors in CSS, how they are defined, and how to use them
 tags:
   - CSS
+image: /assets/images/colors-in-css/color-cube.jpg
 ---
 
 Hi everyone! Today, we will talk about colors in CSS. There are many color specifications and we’ll be talking about their history, what they mean and how to use them.

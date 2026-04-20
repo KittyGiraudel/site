@@ -4,6 +4,7 @@ description: A short article to promote Starship, a beautiful command line utili
 tags:
   - CLI
   - git
+image: https://starship.rs/presets/img/catppuccin-powerline.png
 ---
 
 I use the terminal a lot. I think it’s primarily because my brother taught me how to use git when I started working in software development, and so I’ve gotten comfortable with it. We’ve covered git and terminal customization on this blog before:

@@ -5,6 +5,7 @@ tags:
   - Sanity
   - CI
   - Security
+image: /assets/images/backup-your-sanity-dataset-with-github-actions/backup.png
 ---
 
 A short and sweet post explaining how to create a GitHub Workflow to automatically backup a Sanity dataset on a regular interval.

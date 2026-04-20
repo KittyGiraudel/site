@@ -4,6 +4,7 @@ description: A technical write-up about a clever use of CSS gradients to mark ch
 tags:
   - CSS
   - UI
+image: /assets/images/creative-use-of-css-gradients/video-scenes-markers.png
 ---
 
 I work at [cofenster](https://cofenster.com) where we build a video creation platform. To do that, our customers can compose _scenes_, which we eventually style and stitch together to generate a resulting mp4 video file.

@@ -4,6 +4,7 @@ description: A set of guidelines for using Slack in a team, from channels and na
 tags:
   - Thoughts
   - Community
+image: /assets/images/slack-guidelines/profile.png
 ---
 
 <style>

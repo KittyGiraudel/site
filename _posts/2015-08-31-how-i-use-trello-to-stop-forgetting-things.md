@@ -3,6 +3,7 @@ title: How I use Trello to stop forgetting things
 description: A personal write-up on how I use Trello to stay organised
 tags:
   - Process
+image: /assets/images/how-i-use-trello/trello-overview.png
 ---
 
 Like everybody else, I have a lot going on in my life. There is working full-time at Edenspiekermann, focusing on the relationship with my girlfriend, keeping the flat a non-chaotic place, seeing friends, petting the cats, enjoying the city, working on open-source projects, and much more. Handling everything at once can be hard and overwhelming.

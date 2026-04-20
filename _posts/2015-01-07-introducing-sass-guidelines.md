@@ -8,6 +8,7 @@ tags:
 edits:
   - date: 2015/01/07
     md: Over 20,000 visits on [Sass Guidelines](https://sass-guidelin.es) during the last 24 hours. Thank you so much for your support!
+image: /assets/images/introducing-sass-guidelines/preview.png
 ---
 
 I don’t know why I did not think of writing Sass guidelines when [Harry Roberts](https://csswizardry.com) first released his [CSS Guidelines](https://cssguidelin.es) a couple of months back. Anyway, on saturday evening I had a _eureka moment_:

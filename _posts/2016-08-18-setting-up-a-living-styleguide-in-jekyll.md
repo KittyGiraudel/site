@@ -4,6 +4,7 @@ description: A technical write-up about setting up a living styleguide in Jekyll
 tags:
   - Jekyll
   - Component
+image: /assets/images/jekyll-styleguide/styleguide-in-jekyll.png
 ---
 
 I was recently working on a small [Jekyll](https://jekyllrb.com/) project and wanted to see whether it would be possible to have a very component-ized approach driven by a styleguide, despite the fact that [Liquid](https://github.com/shopify/liquid) (the template engine behind Jekyll) is not meant to do that.

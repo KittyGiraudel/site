@@ -5,6 +5,7 @@ tags:
   - Retrospective
   - Conference
   - Sass
+image: /assets/images/feedbacks-feweb/feweb-costation.jpg
 ---
 
 A couple of weeks ago, I have been invited by the [FeWeb](https://www.feweb.be/fr/) (which stands for _La fédération des métiers du web_, literally _Web professions Federation_) to talk about Sass at [Co.Station](https://www.co-station.com/) in Bruxelles, Belgium.

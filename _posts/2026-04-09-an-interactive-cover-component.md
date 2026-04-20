@@ -5,6 +5,7 @@ tags:
   - UI
   - UX
   - CSS
+image: /assets/images/cover-component/banner-ruralSea.avif
 --- 
 
 {% assign protectors_memories_ref = "If you’re into role-playing game, I definitely recommend the <em>Protector’s Memories</em>. It’s a wonderful solo game focusing on exploration and discovery in a unique fantasy setting, with very little combat or magic." %}

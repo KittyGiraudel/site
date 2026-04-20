@@ -9,6 +9,7 @@ tags:
   - UX
   - Accessibility
   - Design
+image: /assets/images/dominant-hand-respecting-design/thumb-zone-mapping-opt.png
 ---
 
 I recently [shared some thoughts on Twitter](https://twitter.com/KittyGiraudel/status/1569953249742016512?s=20&t=NhvxVDUHQ6lJW__sVXoPeA) about an idea Mike Smart and I had a few years back, while working on the new N26 mobile signup flow: **detecting the user’s dominant hand**.

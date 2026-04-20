@@ -7,6 +7,7 @@ tags:
 edits:
   - date: 2014/02/26
     md: If you are curious, be sure to read [this article for the solution](/2014/02/26/the-magic-circle-trick-revealed/).
+image: /assets/images/the-magic-circle-a-css-brain-teaser/result.jpg
 ---
 
 Months back at work, I have been asked to code a piece of design for the home page of our site that ended up being quite tricky. You know [I like riddles](/2014/02/06/css-trickery-and-calc-function/), right? Feelink tricksy my precious? Want to play a game?

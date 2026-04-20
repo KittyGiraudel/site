@@ -7,6 +7,7 @@ tags:
   - Cursor
   - UI
   - CSS
+image: /assets/images/cursor-for-ui-work/par-odin.png
 ---
 
 ## The setup

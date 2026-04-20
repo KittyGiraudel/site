@@ -9,6 +9,7 @@ related: /2022/10/29/making-sense-of-zsh/
 tags:
   - zsh
   - Bash
+image: /assets/images/making-sense-of-zsh/zsh-prompt.png
 ---
 
 A small and neat zsh configuration to enable Git autocompletion and customize the prompt.
