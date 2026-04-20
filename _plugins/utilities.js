@@ -106,6 +106,15 @@ function helmet(content, outputPath) {
   return $.html()
 }
 
+function wrapEmDashes(content, outputPath) {
+  return typeof outputPath === 'string' && outputPath.endsWith('.html')
+    ? content.replace(
+        /—/g,
+        '<abbr title="Yes, it’s an em dash. No, it’s not AI. I just enjoy using them — leave me alone.">—</abbr>',
+      )
+    : content
+}
+
 export default {
   minifyHTML,
   a11yEmojis,
@@ -119,4 +128,5 @@ export default {
   stripHtmlEntities,
   ensureValue,
   helmet,
+  wrapEmDashes,
 }
