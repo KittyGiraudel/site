@@ -26,7 +26,7 @@
     "workbox-cli": "^7.4.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.11",
+    "@biomejs/biome": "^2.4.12",
     "@netlify/edge-functions": "^3.0.6"
   }
 }
