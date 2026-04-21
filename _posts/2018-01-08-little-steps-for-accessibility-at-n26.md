@@ -16,7 +16,7 @@ At N26, I had the luck to start fresh. We had an empty code-base and a platform 
 
 For the first few months, we never mentioned accessibility during planning, and Just Did It™. We made our interfaces as inclusive as possible. We tried our best to accommodate different usages of the web (devices, possible handicaps, sizes…). During review, we would usually point out how we made this component or user interface robust for different scenarios, including for people with disabilities.
 
-This is how we slowly implemented in everyone’s mind —including our product owner— that web accessibility doesn’t have too be hard or longer to implement. We could just do it as we do everything else provided we’d consider it from the ground up. And this is how we made it a non-functional requirement. In systems engineering, a non-functional requirement (or NFR for short) is a criterion that describes how a system should _be_ (rather than what it should _do_). Practically speaking, it means we now have to make things accessible for them to be considered done: accessibility is part of our baseline for quality.
+This is how we slowly implemented in everyone’s mind (including our product owner) that web accessibility doesn’t have too be hard or longer to implement. We could just do it as we do everything else provided we’d consider it from the ground up. And this is how we made it a non-functional requirement. In systems engineering, a non-functional requirement (or NFR for short) is a criterion that describes how a system should _be_ (rather than what it should _do_). Practically speaking, it means we now have to make things accessible for them to be considered done: accessibility is part of our baseline for quality.
 
 ## Preventing mistakes early
 
@@ -90,7 +90,7 @@ The general idea is to make sure all accessibility related considerations don’
 
 We mentioned it before: accessibility is a complex topic. It gets even more difficult when you start blurrying the line with inclusive design and consider accessibility as a way to offer anyone, regarding who they are or how they use your project, the best experience as possible.
 
-It is because it is so complex that communication is critical to make it successful on the long run. At N26 —at least on our platform— we have a strong code review culture. Everybody contributes to it. Everybody is encouraged to ask questions, comment, suggest improvements and pinpoint possible pitfalls or mistakes. There is no one directly assigned to do reviews, it’s everyone’s job.
+It is because it is so complex that communication is critical to make it successful on the long run. At N26 (at least on our platform) we have a strong code review culture. Everybody contributes to it. Everybody is encouraged to ask questions, comment, suggest improvements and pinpoint possible pitfalls or mistakes. There is no one directly assigned to do reviews, it’s everyone’s job.
 
 On top of the obvious fact that reviewing code carefully helps preventing mistakes, having everyone chiming in encourages communication across contributors and sparks discussions that might otherwise not have been had. As a result, people tend to learn from each other and understand why things are done (or not done) the way they are.
 

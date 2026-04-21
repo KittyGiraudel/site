@@ -29,7 +29,7 @@ If you ask me, a component styleguide should explain what a component does, how 
 
 ## Components in Jekyll
 
-I am getting more and more used to working with React and there is one thing I really like about it — everything, even the smallest chunk of UI, is (or could be) a component. As you will soon realize, this very concept drove my research here.
+I am getting more and more used to working with React and there is one thing I really like about it: everything, even the smallest chunk of UI, is (or could be) a component. As you will soon realize, this very concept drove my research here.
 
 Any interface module that could theoretically be reusable ended up in its own file, inside a components folder in the Jekyll `_includes` folder.
 

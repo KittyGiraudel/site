@@ -11,14 +11,14 @@ In 2013, a fellow web developer recommended putting ads on my website to make so
 Fastforward today, and I’ve finally removed the ads from this website. This article is a summary of my thought process (including data visualization) and the benefits from this decision.
 
 {% callout %}
-**Disclaimer:** This article is not a diss on Carbon. Honestly, they’ve been totally fine. The ads have always been clean and minimal. The few times I had a question, they answered right away. No shade on their services, they’re good — I’m just not the right candidate.
+**Disclaimer:** This article is not a diss on Carbon. Honestly, they’ve been totally fine. The ads have always been clean and minimal. The few times I had a question, they answered right away. No shade on their services, they’re good; I’m just not the right candidate.
 {% endcallout %}
 
 ## Analyzing the data
 
 Before making this decision, I wanted to look at the data. Unfortunately, Carbon doesn’t have an export feature, so I manually extracted the data from the React Dev Tools (god bless the right-click-to-copy-as-JSON feature), and created a big JSON file with every single payout transaction.
 
-Then, I asked Cursor to create a little dashboard for me to visualize the data — the pink link represents the amount of articles published on this blog during that time. Here it is:
+Then, I asked Cursor to create a little dashboard for me to visualize the data. The pink line represents the amount of articles published on this blog during that time. Here it is:
 
 {% include "demos/carbon/index.liquid" %}
 
@@ -28,7 +28,7 @@ Summary: $670 over 8 years (excluding 2026). That’s about $80 per year, or $7 
 
 It’s worth noting that Carbon does not show any payout before June 7th 2018, but I know for a fact that I was rendering their ads as far back as [May 14th 2015](https://github.com/KittyGiraudel/site/commit/3a095525082e3d0363f5dd93f549dc475408251e#diff-1f4e21ccc4bb8bc46f8d390a9a174ee5b7ca533e9c0929ca5c511be8112a9909), and found email exchanges dated March 13th 2013. That means 5 years of unaccounted for data. You can check the checkbox in the dashboard to enable estimated backtracking.
 
-I wanted to get more accurate data for that missing period, but Carbon pays via PayPal, and PayPal is a terrible product that doesn’t let you access data more than a year old so no luck. I could ask Carbon for that data, but if it’s not in the dashboard, I doubt a CSM will be able to magically pull it — especially now that I’m gone.
+I wanted to get more accurate data for that missing period, but Carbon pays via PayPal, and PayPal is a terrible product that doesn’t let you access data more than a year old so no luck. I could ask Carbon for that data, but if it’s not in the dashboard, I doubt a CSM will be able to magically pull it, especially now that I’m gone.
 
 ### Takeaways
 
@@ -49,7 +49,7 @@ Speaking of traffic, it’s hard to quantify because I removed Google Analytics 
 > Free money is free money, why don’t you just keep serving ads?  
 > — Someone who could be asking this legitimate question.
 
-I never _loved_ running ads on my personal website. I’ve done it at a time where I earned less money and ads were more profitable based on my traffic and audience. It was meaningful to me when I made $15–20 in ads every month, because it felt like it paid for my coffee or something — and it encouraged me to write more.
+I never _loved_ running ads on my personal website. I’ve done it at a time where I earned less money and ads were more profitable based on my traffic and audience. It was meaningful to me when I made $15–20 in ads every month, because it felt like it paid for my coffee or something, and it encouraged me to write more.
 
 I’ve held senior engineering positions for the last 7 years or so, where the monthly income vastly overshadows whatever meager earnings Carbon would pay for serving ads. And the vast disparity between both sources of income became only bigger with years gone by.
 
@@ -59,12 +59,12 @@ I’m at a point where ads basically don’t pay, but I still have to deal with 
 
 **Comfort:** I mean, the main benefit is for you all not to see ads anymore. Even though I assume everyone is running an ad-blocker, it’s simpler and easier this way. No more ad, no more screen estate dedicated to something that doesn’t render.
 
-**Maintenance:** On my end, it makes the code quite a bit simpler. I recently wrote how I [injected the ad inside Liquid content](/2026/02/27/injecting-element-in-liquid-content/) — which is no longer a thing. I also had to place the ad widget and the table of contents side-by-side at the top of articles, which was visually heavy — no more.
+**Maintenance:** On my end, it makes the code quite a bit simpler. I recently wrote how I [injected the ad inside Liquid content](/2026/02/27/injecting-element-in-liquid-content/) (which is thus no longer a thing). I also had to place the ad widget and the table of contents side-by-side at the top of articles, which was visually heavy.
 
 **Performance:** The page should also be a tad faster, since we no longer load the JavaScript bundle from Carbon, which _had_ to be hosted on their CDN as per their rendering guidelines. It was lightweight and fast, but the fastest JavaScript bundle is the one you don’t load.
 
 ## Wrapping up
 
-One more time, because I don’t want there to be any confusion: it’s not that Carbon is a bad network, or that they do not remunerate well. It’s just that this is a small personal website which doesn’t have a lot of visits, let alone ad clicks — so serving ads isn’t exactly a reliable source of income.
+One more time, because I don’t want there to be any confusion: it’s not that Carbon is a bad network, or that they do not remunerate well. It’s just that this is a small personal website which doesn’t have a lot of visits, let alone ad clicks, so serving ads isn’t exactly a reliable source of income.
 
 I’m sure larger publications with high traffic, such as CSS-Tricks or SitePoint, make a ton of money from ads. When you have several million page views per month, even ad with cheap return really starts to matter by accumulating. This site is just not the right target.

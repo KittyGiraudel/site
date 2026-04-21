@@ -6,7 +6,7 @@ tags:
   - Challenge
 edits:
   - date: 2026/02/27
-    md: The original forum post no longer exists, nor do the initial screenshots — I should have hosted them myself. 🫠
+    md: The original forum post no longer exists, nor do the initial screenshots. I should have hosted them myself. 🫠
 ---
 
 Back in september, someone exposed a very interesting problem on [CSS-tricks forums](https://css-tricks.com/forums/discussion/19610/float-items). To sum up, he had a list of elements floated to the left. However, he wanted to float items top to bottom on each column and not left to right on each row.

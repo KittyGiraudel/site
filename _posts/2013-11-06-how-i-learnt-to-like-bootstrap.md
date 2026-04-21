@@ -6,7 +6,7 @@ tags:
   - Retrospective
 edits:
   - date: 2020/12/09
-    md: This article is ye olde. I wouldn’t use Bootstrap outside of a quick prototyping phase anymore. I’d spend more time customising it than writing things from scratch so it’s just not worth it — especially since it’s quite heavy. Definitely would skip Bootstrap entirely today.
+    md: This article is ye olde. I wouldn’t use Bootstrap outside of a quick prototyping phase anymore. I’d spend more time customising it than writing things from scratch so it’s just not worth it, especially since it’s quite heavy. Definitely would skip Bootstrap entirely today.
 deprecated: true
 ---
 
@@ -22,12 +22,7 @@ I recently got hired for quite a big project as the only frontend developer in a
 
 So when I started working on this project, the project manager basically told me I would be the only one to deal with the front end which sounded great to me because other developers were mostly backend devs.
 
-> Kitty, we’ll use Bootstrap.  
-> — NOOOOOO!
-
-And then he told me what I didn’t want to hear: _"we will use Twitter Bootstrap"_ and I was like _"NOOOO!!"_.
-
-But then he said something even worse: _"Bootstrap 2.3"_ and then I was like _"NOOOOOOOO!!"_ (note the number of _O_ is increasing).
+And then he told me what I didn’t want to hear: _"we will use Twitter Bootstrap"_ and I was like _"NOOOO!!"_. But then he said something even worse: _"Bootstrap 2.3"_ and then I was like _"NOOOOOOOO!!"_ (note the number of _O_ is increasing).
 
 Since Bootstrap 3 was still in RC back then, it wasn’t possible for us to use it. Thankfully a couple of days later, it got officially released so we jumped onto it and moved the little frontend we had already done to v3.
 

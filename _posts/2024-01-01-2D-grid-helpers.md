@@ -332,7 +332,7 @@ grid.filter(value => value % 3 === 0) // [3, 6, 9]
 
 ## Rotating the grid
 
-I won’t go too deep into the next piece of code, mainly because I’ve written that a while ago and I’m not 100% sure on how it works — rotating matrices has never been my forte. Anyway, it provides a couple of methods to manipulate the data: `rotate`, `flip`, and `variants` to get all the possible rotations/flips of the grid.
+I won’t go too deep into the next piece of code, mainly because I’ve written that a while ago and I’m not 100% sure on how it works, rotating matrices has never been my forte. Anyway, it provides a couple of methods to manipulate the data: `rotate`, `flip`, and `variants` to get all the possible rotations/flips of the grid.
 
 ```ts
 class Grid<T> {

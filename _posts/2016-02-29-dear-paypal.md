@@ -39,7 +39,7 @@ That’s it. Regarding password entropy, this is all where it’s at. You make s
 
 Password is not the only thing that matters when it comes to users’ data security. There is also Two Factor Authentication (2FA). Broadly speaking, 2-factor authentication is a way to protect an account by asking for a regular password plus a code received by SMS, mail, or authentication application.
 
-Thanks to the insightful [twofactorauth.org](https://twofactorauth.org/), we can see that PayPal does support it —which is great— but only in 6 countries (USA, Canada, UK, Germany, Austria and Australia). 6 countries out of roughly 200. It’s 3%. Meanwhile, your [country picker page](https://www.paypal.com/en/webapps/mpp/country-worldwide) displays proudly “We are available in 203 markets and 26 currencies.”
+Thanks to the insightful [twofactorauth.org](https://twofactorauth.org/), we can see that PayPal does support it (which is great) but only in 6 countries (USA, Canada, UK, Germany, Austria and Australia). 6 countries out of roughly 200. It’s 3%. Meanwhile, your [country picker page](https://www.paypal.com/en/webapps/mpp/country-worldwide) displays proudly “We are available in 203 markets and 26 currencies.”
 
 For a company that pernickety about security and data privacy, I find your lack of concern about providing 2-factor authentication across the board very worrying. I’d love nothing more than being able to fully secure my money with 2-steps authentication. Especially given how poor you force my password to be.
 

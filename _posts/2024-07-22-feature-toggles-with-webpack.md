@@ -16,7 +16,7 @@ Anyway, in this post we’ll see how to set up flags (boolean variables, really)
 
 The idea is to be able to work on a feature without making it available just yet. We _could_ maintain a long-lasting git branch until the feature is ready to go, but that can be difficult to maintain, and even harder to eventually merge due to conflicts. By scoping code behind a specific condition, we can keep merging our new code onto the main branch without risking it impacting production.
 
-Beyond that, it is important to _remove_ that code from the resulting JavaScript bundle. It’s better for performance of course since it avoid shipping unreachable (ergo useless) code to the browser — we call that _Dead Code Elimination_ (or DCE for short). It’s also a bit safer since the code won’t end up in the bundle at all, making it unlikely to have any impact.
+Beyond that, it is important to _remove_ that code from the resulting JavaScript bundle. It’s better for performance of course since it avoid shipping unreachable (ergo useless) code to the browser. we call that _Dead Code Elimination_ (or DCE for short). It’s also a bit safer since the code won’t end up in the bundle at all, making it unlikely to have any impact.
 
 Funny story: back when I was working at N26, we leaked the upcoming new [Metal cards](https://n26.com/en-de/metal) and their colors ahead of official comms because our dead-code elimination did not work on our translation system. Some tech journalist sniffed our frontend code and found translation strings relating to the upcoming announcement. 🙃
 

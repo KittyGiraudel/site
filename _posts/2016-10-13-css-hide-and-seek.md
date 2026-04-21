@@ -18,9 +18,9 @@ This article is a translation from [Cache-cache CSS](https://www.ffoodd.fr/cache
 
 **Or how to visually hide some text while keeping it accessible.**
 
-And even if I find this stupid — hiding text from some users but not others seems inherently wrong from an accessibility stand point to me — it’s a recurring need.
+And even if I find this stupid, hiding text from some users but not others seems inherently wrong from an accessibility stand point to me. It’s a recurring need.
 
-There are many ways of doing this, that I won’t detail here. For the past few years, I’ve been using this technique from [Thierry Koblentz](https://twitter.com/thierrykoblentz) described on [his blog](https://www.cssmojo.com/hide-content-from-sighted-users/). It’s by far the most comprehensive, and — to my knowledge — the only way supporting <abbr title="Right To Left">RTL</abbr> text orientation.
+There are many ways of doing this, that I won’t detail here. For the past few years, I’ve been using this technique from [Thierry Koblentz](https://twitter.com/thierrykoblentz) described on [his blog](https://www.cssmojo.com/hide-content-from-sighted-users/). It’s by far the most comprehensive, and, to my knowledge, the only way supporting <abbr title="Right To Left">RTL</abbr> text orientation.
 
 Unfortunately it’s not without issue anymore.
 

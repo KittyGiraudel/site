@@ -5,7 +5,7 @@ import { execSync } from 'node:child_process'
 export default function () {
   const dates = {}
   try {
-    // `--name-only` doesn’t capture renames—accepted limitation
+    // `--name-only` doesn’t capture renames (accepted limitation)
     const log = execSync('git log --format="DATE:%ci" --name-only -- _posts/*.md', {
       encoding: 'utf8',
       maxBuffer: 50 * 1024 * 1024,

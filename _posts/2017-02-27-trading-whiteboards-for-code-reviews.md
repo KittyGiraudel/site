@@ -19,7 +19,7 @@ Well, this is bullshit.
 
 Short answer: it has little to no connection to the real world and what the candidate will actually do in their job would they be hired.
 
-Now for the long answer. I understand the idea behind the whiteboard exercise: testing the ability for a candidate to solve a problem without focusing too much on the code itself. On paper, that makes sense. In practice, it’s quite irrelevant. As the aforementioned Twitter thread shows, no developer —no matter the experience— is able to function fully without a little help from StackOverflow once in a while. Nor should they.
+Now for the long answer. I understand the idea behind the whiteboard exercise: testing the ability for a candidate to solve a problem without focusing too much on the code itself. On paper, that makes sense. In practice, it’s quite irrelevant. As the aforementioned Twitter thread shows, no developer (no matter the experience) is able to function fully without a little help from StackOverflow once in a while. Nor should they.
 
 Secondly, it puts a hell lot of pressure on the candidate. Not all of them can handle that. Hell, I’d be terrible. You know how you hate when someone stands behind your shoulder when you’re working? Well, guess what, it’s the same freaking thing. Nobody likes that. Ever heard of impostor syndrom? Nothing like someone silently judging every move to trigger that. I know some fantastic developers who would be petrified in such a session. They would be fully adequate to do the job though, and they would friggin’ nail it.
 

@@ -134,7 +134,7 @@ So this is great! No matter how you decide to tackle the issue on the HTML front
 
 [SassyIcons](https://github.com/pascalduez/SassyIcons) is a Sass tool that aims at helping to deal with icon sprites, SVG, PNG fallbacks, cross-browser support and all that sort of difficult stuff. Basically, it’s a wrapper for the [Compass sprite API](http://compass-style.org/help/tutorials/spriting/), using Modernizr classes.
 
-It was designed by [Pascal Duez](https://twitter.com/pascalduez) and — unlike many extensions — was tested on live projects, so you can be sure it’s rock solid by now.
+It was designed by [Pascal Duez](https://twitter.com/pascalduez) and, unlike many extensions, was tested on live projects, so you can be sure it’s rock solid by now.
 
 SassyIcons has a couple of goals:
 
@@ -274,7 +274,7 @@ Then, you end up with a .json file like this:
 
 From there, you can request this file with an Ajax request or whatever. Then, you could execute some JavaScript only when the `small` breakpoint is reached.
 
-If later you change this `767px` to, let’s say, `750px`, then your JavaScript won’t be out of sync — thanks to SassyExport.
+If later you change this `767px` to, let’s say, `750px`, then your JavaScript won’t be out of sync, thanks to SassyExport.
 
 ## Sass Color Helpers
 

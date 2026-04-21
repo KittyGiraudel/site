@@ -19,7 +19,7 @@ The idea is simple: instead of forcing AI crawlers (and other tools) to chew thr
 
 ## Why serve Markdown at all
 
-The short version is that AI tokens cost money and HTML is very verbose — Markdown gives you the same content in far fewer tokens. When all you need is the textual content, Markdown is significantly terser and cheaper.
+The short version is that AI tokens cost money and HTML is very verbose and Markdown gives you the same content in far fewer tokens. When all you need is the textual content, Markdown is significantly terser and cheaper.
 
 Every AI pipeline already converts formats internally (Claude, ChatGPT, Perplexity, Gemini…): they all fetch HTML, then spend compute and tokens to turn it into something more like plain text before the model ever sees it. You’re burning context window on cookie banners, nav bars, and `<div>` soup the model doesn’t actually need.
 
@@ -212,7 +212,7 @@ No entry point, no Markdown variants.
 
 ### Alternate links
 
-Right now, nothing links to the Markdown files. Crawlers would have to guess the `index.md` pattern or stumble across them. To make them easier to discover (and slightly more “official” so to speak), we can advertise them from the HTML pages with a `rel="alternate"` link — not unlike RSS feeds.
+Right now, nothing links to the Markdown files. Crawlers would have to guess the `index.md` pattern or stumble across them. To make them easier to discover (and slightly more “official” so to speak), we can advertise them from the HTML pages with a `rel="alternate"` link, not unlike RSS feeds.
 
 In our HTML post layout, we can render the following `<link>` element in the `<head>` of the page:
 
@@ -271,7 +271,7 @@ So there is this idea that LLMs could be requesting Markdown by sending a `Accep
 
 ## Closing thoughts
 
-I don’t know. At some point I was thinking “why are we optimizing the web for machines?” and then realised we’ve been doing it for decades already — we just called it SEO.
+I don’t know. At some point I was thinking “why are we optimizing the web for machines?” and then realised we’ve been doing it for decades already, we just called it SEO.
 
 I guess the difference is that we did that to improve our ranking in search results. This time around, we are optimizing _our_ websites to make it cheaper for machines that _steal our content_ to send it to other people. It feels weird.
 

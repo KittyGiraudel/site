@@ -18,7 +18,7 @@ This post is by no means a diss on `<heading-anchors>`. As I said, it’s a very
 
 I knew the insertion of HTML had to happen as a post-build transform. It’s not something I want to handle manually in my Markdown files, so it needs to be done automatically during a build. This is what [Eleventy Transforms](https://www.11ty.dev/docs/transforms/) are for.
 
-The core logic for the transform is relatively straightforward: only process blog posts; in each blog post, find all the headings (using [cheerio](https://cheerio.js.org/)), and insert the relevant markup — the same way `<heading-anchors>` does.
+The core logic for the transform is relatively straightforward: only process blog posts; in each blog post, find all the headings (using [cheerio](https://cheerio.js.org/)), and insert the relevant markup, the same way `<heading-anchors>` does.
 
 ## Eleventy transform
 
@@ -135,7 +135,7 @@ This is how it looks in a browser that doesn’t support anchor positioning:
   <span aria-hidden="true">§</span>
 </a>
 
-It’s not perfect, but it’s definitely good enough. Moreover, CSS Anchor Positioning is now [available across major browsers](https://caniuse.com/css-anchor-positioning) ([Baseline 2026](https://web-platform-dx.github.io/web-features/)) — and given the audience for this blog, chances are high that your browser handles CSS anchors just fine.
+It’s not perfect, but it’s definitely good enough. Moreover, CSS Anchor Positioning is now [available across major browsers](https://caniuse.com/css-anchor-positioning) ([Baseline 2026](https://web-platform-dx.github.io/web-features/)) and given the audience for this blog, chances are high that your browser handles CSS anchors just fine.
 
 ## Wrapping up
 

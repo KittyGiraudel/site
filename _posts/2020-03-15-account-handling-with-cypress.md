@@ -43,7 +43,7 @@ cy.createUser({
 })
 ```
 
-Under the hood, this command fires a request to the internal service, and receives the newly-created user’s information as a response. It contains a lot of data about the user, such as their identifier, name, birth date, residency, nationality — all of which is generated at random with [Faker](https://github.com/marak/Faker.js/).
+Under the hood, this command fires a request to the internal service, and receives the newly-created user’s information as a response. It contains a lot of data about the user, such as their identifier, name, birth date, residency, nationality, all of which is generated at random with [Faker](https://github.com/marak/Faker.js/).
 
 Then we would start all our tests with creating an account, then logging into that account with another custom command.
 

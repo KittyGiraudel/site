@@ -53,7 +53,7 @@ We explicitly define 3 requirements for our function to run:
 
 1. It should be a `GET` request. No other method will cause the function to run.
 2. It should have the `Accept` HTTP header and its value should contain `text/markdown`, which is kinda the whole point. Note that this is not a strict equality check, it’s more akin to a regular expression.
-3. It should be requesting a blog post (which uses the `/YYYY/MM/DD/slug` format) — any variant of it. Either the extension-less path (with or without a trailing slash), or the HTML file, or the Markdown file.
+3. It should be requesting a blog post (which uses the `/YYYY/MM/DD/slug` format), any variant of it. Either the extension-less path (with or without a trailing slash), or the HTML file, or the Markdown file.
 
 ### Core logic
 
@@ -233,7 +233,7 @@ curl -sS -D - "https://kittygiraudel.com/" \
   content-length: 25130
 ```
 
-{% callout %}It is a little unclear to me why we do not see the `Content-Length` header after negotiation, even though our function sets it — although it seems to be normal and fine.
+{% callout %}It is a little unclear to me why we do not see the `Content-Length` header after negotiation, even though our function sets it, although it seems to be normal and fine.
 
 Cursor says that in HTTP/2, this header is optional because “framing already knows body boundaries (`DATA` frames + `END_STREAM`)”, so servers often omit `Content-Length`. Alternatively, a proxy layer on Netlify’s side may re-encode/compress the payload (`Vary` has `Accept-Encoding`), and once transformed, it recalculates the length, and possibly omits it.
 {% endcallout %}

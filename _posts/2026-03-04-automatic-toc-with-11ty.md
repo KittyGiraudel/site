@@ -194,7 +194,7 @@ config.addPlugin(IdAttributePlugin, {
 
 As shared in [a recent article](/2026/02/26/nerdy-design-details/), I have [automatic heading anchors](https://github.com/zachleat/heading-anchors).
 
-If rendering the table of contents within that `<heading-anchors>` web component, its own title will have an anchor, which is a bit odd? It’s not a problem per se, but I didn’t really want the table of contents to have its own visible anchor — it felt too meta. There are a few ways to solve it: either render the table of contents outside, or do not use a heading inside the table of contents, or exclude the table of contents’ heading from `<heading-anchors>`. I opted for the latter:
+If rendering the table of contents within that `<heading-anchors>` web component, its own title will have an anchor, which is a bit odd? It’s not a problem per se, but I didn’t really want the table of contents to have its own visible anchor as it felt too meta. There are a few ways to solve it: either render the table of contents outside, or do not use a heading inside the table of contents, or exclude the table of contents’ heading from `<heading-anchors>`. I opted for the latter:
 
 ```html/0
 <heading-anchors selector="h2:not(#toc), h3, h4" content="§">

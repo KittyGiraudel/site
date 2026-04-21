@@ -106,7 +106,7 @@ Historically, blockquotes and informative callouts were rendered exactly the sam
 
 Let’s see them in action:
 
-> This is a blockquote. It is meant to represent a citation — from someone or somewhere, and renders a `<blockquote>` element.  
+> This is a blockquote. It is meant to represent a citation, from someone or somewhere, and renders a `<blockquote>` element.  
 > — Kitty Giraudel
 
 And:
@@ -237,7 +237,7 @@ h2 {
 
 {% footnoteref "no-more-ads" footnote_no_more_ads %}~~For some reason, I am still running ads on this website~~{% endfootnoteref %}. It’s not like I make a lot of money from it though. I’ve been with CarbonAds for over 10 years, and probably haven’t made more than a few hundred bucks from them in all that time. But still, it pays for the occasional cup of coffee, so it’s kind of nice I guess.
 
-Carbon requires the ad (which is ~330 &times; 114px) to be placed above the fold — for obvious reasons. I didn’t really know what to do with it, so I had placed it right below the title, centered. It didn’t look too great. Even worse, when running an ad-blocker (something I obviously also do), there would be this massive blank space under the page title for where the ad was supposed to show up. It would look awkward.
+Carbon requires the ad (which is ~330 &times; 114px) to be placed above the fold, for obvious reasons. I didn’t really know what to do with it, so I had placed it right below the title, centered. It didn’t look too great. Even worse, when running an ad-blocker (something I obviously also do), there would be this massive blank space under the page title for where the ad was supposed to show up. It would look awkward.
 
 I had limited that problem a little by placing the ad in the bottom right corner of the screen for large viewports. But that wouldn’t happen before 1556-pixel-wide viewports.
 

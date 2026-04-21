@@ -12,7 +12,7 @@ In the last couple of weeks, I have done some decent amount of code reviewing fo
 
 To please [Joey Hoer’s request for SassyLists](https://github.com/Team-Sass/SassyLists/issues/24), I have built a little `walk` function. The idea is the same as for the `array_walk` function from PHP if you’re familiar.
 
-> array_walk — Apply a user function to every member of an array
+> array_walk: Apply a user function to every member of an array
 
 So whenever you have a list of values and want to apply a given function to each of them, you either need to write a loop in order to do this manually, or you need a `walk` function. Luckily for you, I’ve written one and looking back at my code I feel like it’s interesting enough to write about it: `call`, `set-nth` and `function-exists` functions, `argList`, nothing but the good.
 

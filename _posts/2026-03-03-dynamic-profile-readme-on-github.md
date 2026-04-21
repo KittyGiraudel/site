@@ -140,7 +140,7 @@ function updateReadmeBlock(content, block) {
 
 ## Running our script
 
-We want to run our script on a regular basis — such as every day — to keep our profile README updated. We can create a GitHub workflow executing a CRON job.
+We want to run our script on a regular basis (such as every day) to keep our profile README updated. We can create a GitHub workflow executing a CRON job.
 
 ```yaml
 name: Update profile README

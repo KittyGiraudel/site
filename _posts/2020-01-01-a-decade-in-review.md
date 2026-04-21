@@ -29,7 +29,7 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 
 - ❌ I failed to get my diploma in Computer Science.
 - 📚 I wrote 2 books: [one book on CSS](/2015/02/23/what-i-learnt-from-writing-a-book/) and [one book on Sass](https://www.sitepoint.com/introducing-our-newest-book-jump-start-sass/).
-- 👀 I got to endorse and be a reviewer for “CSS Secrets”, Lea Verou’s bestselling CSS book — which is not nothing for me given she is one of the figures who inspired me to pursue a career in web development.
+- 👀 I got to endorse and be a reviewer for “CSS Secrets”, Lea Verou’s bestselling CSS book, which is not nothing for me given she is one of the figures who inspired me to pursue a career in web development.
 - 📝 I [wrote over 250 articles](/blog/), some on highly regarded websites such as CSS-Tricks, Codrops, Tuts+ and SitePoint (read [how I got to write for the web](/2014/05/26/how-i-came-to-write-for-the-web/)).
 - 🏦 I worked in 4 different companies across 2 countries, 3 of them being banks or bank-related.
 - 🏆 I [got short-listed for Developer of the Year 2015](https://thenetawards.com/vote/developer/) by Net Awards (although I should have been in the “Young Developer of the Year” category at that time, since I was under 25).

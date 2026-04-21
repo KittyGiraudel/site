@@ -49,7 +49,7 @@ Use '--' to separate paths from revisions, like this:
 fatal: working tree has modifications.  Cannot add.
 ```
 
-What’s interesting is that the error is very opaque, because my working tree was clean — it didn’t have any modification. Mistral AI wasn’t helpful either, because it relied on that error and kept suggesting I clear my local modifications before attempting again.
+What’s interesting is that the error is very opaque because my working tree was clean, it didn’t have any modification. Mistral AI wasn’t helpful either, because it relied on that error and kept suggesting I clear my local modifications before attempting again.
 
 It eventually clicked that the problem may be that the repository doesn’t have any commit yet. The “ambiguous argument 'HEAD'” error is something I’ve seen a few times when attempting to undo the very first commit of a repo with `git reset --soft HEAD^`, since `HEAD` doesn’t exist yet.
 

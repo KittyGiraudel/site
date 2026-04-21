@@ -51,7 +51,7 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
 
 By default, Eleventy collections are arrays. That doesn’t make a whole lot of sense for our case though, because we want a singleton object to be able to access `postStats.postCount`, for instance.
 
-So we still return an array with a single object (our stats), but also assign all the properties from that object onto the array itself — taking advantage of everything being an object in JavaScript.
+So we still return an array with a single object (our stats), but also assign all the properties from that object onto the array itself, taking advantage of everything being an object in JavaScript.
 
 ```js
 const collection = [stats]
@@ -98,7 +98,7 @@ for (const post of posts) {
 
 ### Caching data
 
-I noticed while working on this article that the plugin makes Eleventy compilation slower. It’s totally fine at build time, but when working in watch mode, Eleventy recomputes all stats — which involves hitting the file system for every single post. It’s not very efficient.
+I noticed while working on this article that the plugin makes Eleventy compilation slower. It’s totally fine at build time, but when working in watch mode, Eleventy recomputes all stats which involves hitting the file system for every single post. It’s not very efficient.
 
 So I’ve set up some lightweight caching for the plugin. It maintains a map of paths to their computed stats + the last time they were modified. When compiling, it looks into the cache to see if we have an entry for that post. If it does, and the last modified date hasn’t changed, it just returns the data from the cache, otherwise it computes the stats for that post.
 
@@ -216,7 +216,7 @@ chart.render()
 
 <div id="stats-posts-per-year"></div>
 
-Tadaaaa — pretty cool if you ask me! The huge bump in 2020 is because I released my [accessibility advent calendar](/2020/12/01/a11y-advent-calendar) that year, which added 31 posts to the count. As for 2025, well I just didn’t write at all besides my year in review. Fortunately I’m correcting that this year!
+Tadaaaa! Pretty cool if you ask me! The huge bump in 2020 is because I released my [accessibility advent calendar](/2020/12/01/a11y-advent-calendar) that year, which added 31 posts to the count. As for 2025, well I just didn’t write at all besides my year in review. Fortunately I’m correcting that this year!
 
 {% include "script.liquid", partials: "utilities, stats", inline: true %}
 {% endif %}

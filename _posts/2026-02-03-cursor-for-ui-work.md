@@ -16,7 +16,7 @@ A while ago, I received the board game called _[Par Odin!](https://boardgamegeek
 
 While the game is fun, I was more interested in writing an automated solution for all 50 challenges from the rulebook. After all, it’s essentially a basic math problem that can be brute-forced. So I wrote a [solver in TypeScript](https://github.com/KittyGiraudel/par-odin-solver).
 
-Just for fun, I also wanted to build a little UI so you can make your own drafts, and run the solver on them. It was also a good opportunity to see what Cursor is like for UI work — as someone who has done frontend for almost 15 years. You can [try the game for yourself here](https://github.com/KittyGiraudel/par-odin-solver/tree/main/src/solver).
+Just for fun, I also wanted to build a little UI so you can make your own drafts, and run the solver on them. It was also a good opportunity to see what Cursor is like for UI work, as someone who has done frontend for almost 15 years. You can [try the game for yourself here](https://github.com/KittyGiraudel/par-odin-solver/tree/main/src/solver).
 
 <figure class="Figure">
 <img src="/assets/images/cursor-for-ui-work/par-odin.png" alt="Screenshot of the Par Odin! solver interface in Chrome" />

@@ -25,7 +25,7 @@ This creates a nice graph with the commits id, message, branch name, etc. Like t
 
 ## Working with branches
 
-To quickly jump between branches, I created a few aliases. At N26, the `master` branch is the protected release branch, and `develop` is the main one — also protected. Everything goes through pull-requests against the main branch.
+To quickly jump between branches, I created a few aliases. At N26, the `master` branch is the protected release branch, and `develop` is the main one, also protected. Everything goes through pull-requests against the main branch.
 
 I aliased `git checkout` as `git co` and `git branch` as `git br`:
 
@@ -76,7 +76,7 @@ $ git abort # This cancels anything in the index
 
 ## Getting up to date
 
-Updating a branch with the main one is done through fetching and rebasing with the origin (or merging but that’s not my thing). I didn’t alias `git fetch`, but I did create `git rod` for `git rebase origin/develop` —mostly because I never remember if it should be a space or a slash.
+Updating a branch with the main one is done through fetching and rebasing with the origin (or merging but that’s not my thing). I didn’t alias `git fetch`, but I did create `git rod` for `git rebase origin/develop`, mostly because I never remember if it should be a space or a slash.
 
 ```bash
 $ git fetch && git rod # Boom, up to date

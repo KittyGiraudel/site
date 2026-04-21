@@ -69,6 +69,6 @@ In all honesty, we don’t want to encourage people to use our lite version. It�
 
 - If JavaScript is disabled by the user or if it fails to load due to connectivity issues.
 - For legacy or weak browsers such as Internet Explorer 11, which we force into this mode.
-- And as we’ve just seen — in case there is a runtime error.
+- And as we’ve just seen, in case there is a runtime error.
 
 That’s pretty much it. I hope you like this idea and you’ll consider making your apps working without JavaScript!

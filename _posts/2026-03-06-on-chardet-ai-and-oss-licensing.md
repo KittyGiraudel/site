@@ -56,7 +56,7 @@ Mark, the original author, argues that maintainers do not have the right to reli
 
 {% assign footnote_clean_room = "To put it simply (and to the extent I understand it), the concept of “clean room” is when someone authors software based on specifications without access to an existing implementation or proprietary materials. It’s a way to reimplement something while avoiding legal issues." %}
 
-On the other hand, Dan, the main maintainer and rewriter, claims that this version is a “ground-up […] rewrite” — the term {% footnoteref "clean-room" footnote_clean_room %}“clean room”{% endfootnoteref %} pops up a lot in the long GitHub issue. And because it’s supposedly a clean room rewrite, the license can be freely changed since it’s ultimately a different software.
+On the other hand, Dan, the main maintainer and rewriter, claims that this version is a “ground-up […] rewrite”. The term {% footnoteref "clean-room" footnote_clean_room %}“clean room”{% endfootnoteref %} pops up a lot in the long GitHub issue. And because it’s supposedly a clean room rewrite, the license can be freely changed since it’s ultimately a different software.
 
 ## Was it _clean room_
 
@@ -80,7 +80,7 @@ For starters, Dan is a maintainer of chardet ([for 12+ years](https://github.com
 
 {% assign footnote_ai_training = "<a href='https://github.com/chardet/chardet/issues/327#issuecomment-4004572121'>Aleksandr Petrosyan</a> points out that whether or not the AI was trained on the original code is irrelevant. It <em>cannot</em> be construed as fair use, because it uses the same name, uses the original code to design the new version, and claims copyright over a derivative work, which is dubious." %}
 
-Secondly, he used AI (Claude Anthropic) to generate the code, which is how he argues that the new version is based on a high-level description and not the original code, thus being a clean room implementation. {% footnoteref "ai-training" footnote_ai_training %}AI may have been trained on the original chardet code{% endfootnoteref %}, which could mean the output is still a derivative work — where LGPL would apply.
+Secondly, he used AI (Claude Anthropic) to generate the code, which is how he argues that the new version is based on a high-level description and not the original code, thus being a clean room implementation. {% footnoteref "ai-training" footnote_ai_training %}AI may have been trained on the original chardet code{% endfootnoteref %}, which could mean the output is still a derivative work where LGPL would apply.
 
 Moreover, the notion that the AI agent was only fed a _high-level description_ without using the existing code is demonstrably false. [Claude’s own implementation plan](https://github.com/chardet/chardet/commit/925bccbc85d1b13292e7dc782254fd44cc1e7856#diff-704d0561e3e878b036836b56870212b2d8b7e4a813bf2805df868a1bf9e0094cR309-R314) which was committed to the repository directly references chardet’s version 6 intricacies:
 

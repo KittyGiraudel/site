@@ -15,7 +15,7 @@ I love {% footnoteref "footnotes-usage" footnote_footnotes_usage %}footnotes{% e
 
 I wrote about creating [accessible footnotes with CSS](https://www.sitepoint.com/accessible-footnotes-css/) on {% footnoteref "sitepoint" "As someone who has written so much for SitePoint (and even recommended new authors), it deeply saddens me to see how it turned out. Code blocks are messy and not highlighted, there are ads everywhere, the design has gone downhill… It’s very unfortunate." %}SitePoint{% endfootnoteref %}. And [how to do it in Eleventy](/2020/12/02/footnotes-in-eleventy/). I’ve also created an [Eleventy plugin](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/eleventy-plugin-footnotes) to make it easy. I’ve written [how to do it in React](https://kittygiraudel.com/2020/11/24/accessible-footnotes-and-a-bit-of-react/) as well. And open-sourced a [React component](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/react-a11y-footnotes). What I’m trying to say is that if you like footnotes as much as I do, there are no excuses for not making them accessible.
 
-But I digress, because that is not the point of today’s article. The point of today’s article is to share a teeny tiny improvement I’ve made to the footnotes on this blog — something simple that makes me happy. I’m here to share the joy.
+But I digress, because that is not the point of today’s article. The point of today’s article is to share a teeny tiny improvement I’ve made to the footnotes on this blog, something simple that makes me happy. I’m here to share the joy.
 
 ---
 
@@ -40,7 +40,7 @@ We can use the good ol’ [`:target` pseudo-class](https://developer.mozilla.org
 
 The simple approach does the job, but it’s not the prettiest. There are a few things I don’t love about the highlight:
 
-1. It doesn’t encompass the number — only the text itself is highlighted.
+1. It doesn’t encompass the number; only the text itself is highlighted.
 2. It sticks very close to the edges of the text (which looks worse in dark mode).
 
 To fix that, I decided to use a pseudo-element which I can extend in the outer directions as much as I need. The code now looks like this:
@@ -114,7 +114,7 @@ We can use a CSS animation to fade-out the highlight:
 }
 ```
 
-There is no real right or wrong approach here: I’ve decided to keep it up for 5 seconds, and then fade-out within 1 second — which I thought were good enough values. You can restart the animation to see it again: <button id="restart-animation" type="button" class="RestartAnimationButton">Restart animation</button>
+There is no real right or wrong approach here: I’ve decided to keep it up for 5 seconds, and then fade-out within 1 second, which I thought were good enough values. You can restart the animation to see it again: <button id="restart-animation" type="button" class="RestartAnimationButton">Restart animation</button>
 
 {% include "demos/highlighting-footnotes.liquid"
   id: "with-animation",
