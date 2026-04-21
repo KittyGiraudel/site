@@ -1,55 +1,54 @@
-// Lazy-load embeds when they’re visible.
-// See: https://twitter.com/whitep4nth3r/status/1518978629593702403
-const EMBEDS = [
-  {
-    selector: '.codepen',
-    url: '//codepen.io/assets/embed/ei.js',
-    loaded: false,
-  },
-  {
-    selector: '#giscus-holder',
-    url: 'https://giscus.app/client.js',
-    loaded: false,
-    insert: script => document.querySelector('#giscus-holder')?.appendChild(script),
-    getAttributes: () => ({
-      'data-repo': 'kittygiraudel/site',
-      'data-repo-id': 'MDEwOlJlcG9zaXRvcnk4MjUzNjQ0',
-      'data-category': 'Announcements',
-      'data-category-id': 'DIC_kwDOAH3wzM4ChZC4',
-      'data-mapping': 'pathname',
-      'data-strict': '0',
-      'data-reactions-enabled': '1',
-      'data-emit-metadata': '0',
-      'data-input-position': 'top',
-      'data-theme': giscusThemeFromSiteTheme(),
-      'data-lang': 'en',
-      'data-loading': 'lazy',
-      crossorigin: 'anonymous',
-    }),
-  },
-]
+function observe(node, handler) {
+  const observer = new IntersectionObserver(entries => entries.forEach(handler), {
+    root: null,
+    threshold: 0.1,
+  })
+  observer.observe(node)
+  return observer
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  EMBEDS.forEach(embed => {
-    const node = document.querySelector(embed.selector)
-    if (!node) return
+  function loadCodepen(node) {
+    let loaded = false
+    const observer = observe(node, entry => {
+      if (entry.isIntersecting && !loaded) {
+        loaded = true
+        loadJS('//codepen.io/assets/embed/ei.js', () => observer.unobserve(node))
+      }
+    })
+  }
 
-    const handler = entry => {
-      if (!embed.loaded && entry.isIntersecting) {
-        loadJS(embed.url, () => (embed.loaded = true), {
-          insert: embed.insert,
-          attributes: embed.getAttributes?.(),
+  function loadGiscus(node) {
+    let loaded = false
+    const observer = observe(node, entry => {
+      if (entry.isIntersecting && !loaded) {
+        loaded = true
+        loadJS('https://giscus.app/client.js', () => observer.unobserve(node), {
+          insert: script => document.querySelector('#giscus-holder')?.appendChild(script),
+          attributes: {
+            'data-repo': 'kittygiraudel/site',
+            'data-repo-id': 'MDEwOlJlcG9zaXRvcnk4MjUzNjQ0',
+            'data-category': 'Announcements',
+            'data-category-id': 'DIC_kwDOAH3wzM4ChZC4',
+            'data-mapping': 'pathname',
+            'data-strict': '0',
+            'data-reactions-enabled': '1',
+            'data-emit-metadata': '0',
+            'data-input-position': 'top',
+            'data-theme': giscusThemeFromSiteTheme(),
+            'data-lang': 'en',
+            'data-loading': 'lazy',
+            crossorigin: 'anonymous',
+          },
         })
       }
-    }
-
-    const observer = new IntersectionObserver(entries => entries.forEach(handler), {
-      root: null,
-      threshold: 0.1,
     })
+  }
 
-    observer.observe(node)
-  })
+  const codepen = document.querySelector('.codepen')
+  const giscus = document.querySelector('#giscus-holder')
+  if (codepen) loadCodepen(codepen)
+  if (giscus) loadGiscus(giscus)
 
   window.ThemeManager.onThemeChanged(theme => {
     const iframe = document.querySelector('iframe.giscus-frame')
