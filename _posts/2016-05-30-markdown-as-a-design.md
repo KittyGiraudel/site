@@ -5,6 +5,9 @@ tags:
   - Markdown
   - Design
   - CSS
+edits:
+  - date: 2026/04/21
+    md: This design, however creative, comes with significant accessibility drawbacks since most screen-readers actually read the content of pseudo-elements. As a result, the reading experience would likely be awful for people using assistive technologies.
 ---
 
 A short post to talk about the recent redesign of this site.
