@@ -1,0 +1,13 @@
+{% comment %}
+  Required: —
+  Optional:
+  - date: The date of the article
+{% endcomment %}
+ 
+{% callout "warning" %}
+This article is old and references content that may no longer be available,
+relevant or accurate. It remains online as to
+[not break the web](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/The_web_standards_model#dont_break_the_web),
+but its content should be viewed in the context of its publication date
+{% if date %} in {{ date | date: "%Y" }}{%  endif %}.
+{% endcallout %}

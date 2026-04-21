@@ -6,11 +6,10 @@ tags:
   - Jekyll
   - Writing
 toc: false
+deprecated: true
 ---
 
-{% callout "warning" %}
 Disclaimer! I don’t really like writing comparisons. While I always try to stay neutral and factual, I feel like some people always feel offended and forced to nitpick or worse. So please let me remind you that this article is only intended to give a rough overview of both platforms and what you should expect from each.
-{% endcallout %}
 
 So you want to create your own blog, or port your blog over, but you may not know which platform is the right fit for your needs. Of course there is a world outside of WordPress or Jekyll, but for sake of simplicity we’ll only dig down into these two.
 

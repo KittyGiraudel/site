@@ -33,6 +33,9 @@ layout: default
   %}
 
   <div itemprop="articleBody">
+    {% if deprecated %}
+      {% render "post_deprecated.liquid", date: creation_date %}
+    {% endif %}
     {% if edits %}
       {% render "post_edits.liquid", edits: edits %}
     {% endif %}

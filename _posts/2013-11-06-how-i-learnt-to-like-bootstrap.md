@@ -7,6 +7,7 @@ tags:
 edits:
   - date: 2020/12/09
     md: This article is ye olde. I wouldn’t use Bootstrap outside of a quick prototyping phase anymore. I’d spend more time customising it than writing things from scratch so it’s just not worth it — especially since it’s quite heavy. Definitely would skip Bootstrap entirely today.
+deprecated: true
 ---
 
 A couple of days ago, I saw a [fellow French developer say how much he hates (Twitter) Bootstrap](https://twitter.com/Gandoulfe/status/392640481634422785) for websites on Twitter. And I saw a couple of fellow French developers agree with him.

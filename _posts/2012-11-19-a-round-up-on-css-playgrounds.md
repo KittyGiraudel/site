@@ -3,9 +3,7 @@ title: A round-up on CSS playgrounds
 description: A look into what CSS playgrounds are and what are the main contenders
 tags:
   - CSS
-edits:
-  - date: 2014/11/16
-    md: This article is quite old. Information might be incorrect.
+deprecated: true
 ---
 
 ## What is a code playground?

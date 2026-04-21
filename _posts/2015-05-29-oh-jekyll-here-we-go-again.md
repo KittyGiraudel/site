@@ -5,6 +5,7 @@ tags:
   - Jekyll
   - Retrospective
   - Liquid
+deprecated: true
 ---
 
 I [created this site](/2012/11/09/site-redesign-new-blog/) in November 2012, with a strictly static old school set up. I quickly moved on to a custom PHP workflow only to move to [Jekyll](https://jekyllrb.com) about 3 months later (February 2013). I wrote about the experience in [this article](/2013/02/21/moving-to-jekyll/).

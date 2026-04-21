@@ -4,9 +4,7 @@ description: A gallery of features from the Compass frameworks that is worth kno
 tags:
   - Sass
   - Compass
-edits:
-  - date: 2014/11/16
-    md: I no longer use Compass. Just sayin'.
+deprecated: true
 ---
 
 [Compass](https://compass-style.org/) is a CSS authoring framework dedicated to [Sass](https://sass-lang.com/). Not only is it insanely powerful, but it also includes a large range of built-in functions and mixins, easing daily tasks.

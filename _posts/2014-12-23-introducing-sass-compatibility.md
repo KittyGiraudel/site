@@ -5,6 +5,7 @@ tags:
   - Sass
   - Release
   - Open Source
+deprecated: true
 ---
 
 For weeks now, I – with the help of some folks – have been collecting inconsistencies between Ruby Sass and LibSass. At first, it was nothing but a GitHub Gist but then, I made a CodePen out of it with a custom stylesheet and everything. It still was not enough, so I made a full project out of it. Let me introduce [Sass-Compatibility](https://sass-compatibility.github.io/).

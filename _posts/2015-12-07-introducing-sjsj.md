@@ -6,6 +6,7 @@ tags:
   - Open Source
   - Release
 toc: false
+deprecated: true
 ---
 
 Hey folks! Let’s talk JavaScript, shall we? It all started with a tweet from Nate Bailey:

@@ -10,6 +10,7 @@ edits:
     md: Things have changed again. I don’t use a FTP client anymore, and I have ditched Compass from nearly all my projects.
   - date: 2013/02/21
     md: This post might contain outdated information since I [moved my site to Jekyll and GitHub Pages](/2013/02/21/moving-to-jekyll/).
+deprecated: true
 ---
 
 Hey people! I recently blogged about the tools I use for frontend development, but someone pointed out on Twitter I didn’t tell anything about my development environment. Let’s fix my mistake and talk about it!

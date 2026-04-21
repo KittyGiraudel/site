@@ -5,6 +5,7 @@ tags:
   - Sass
   - Documentation
   - Release
+deprecated: true
 ---
 
 I like Sass. It’s a nice language, when used correctly. The official documentation is a good place to start, but I think there is room for improvement. It is a one-page document which can be cumbersome to browse but overlooks a lot of details as far as I can tell. It is a good start, but we can surely do better. So I thought, why not give it a try?

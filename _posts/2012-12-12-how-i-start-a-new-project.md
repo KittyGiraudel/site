@@ -4,9 +4,7 @@ description: A look into my process when starting a new software project
 tags:
   - Frontend
   - Process
-edits:
-  - date: 2014/11/16
-    md: This post is outdated. Note that I do not work like this anymore.
+deprecated: true
 ---
 
 Hi people! I recently asked on Twitter a topic to blog about because I had frankly no idea. Christoph Rumpel ([@christophrumpel](https://twitter.com/christophrumpel)) proposed something about the way I start a new project. I thought it could be a good idea, plus I’m currently working on a new project at work so it may help me as well!

@@ -3,6 +3,7 @@ title: Handy tools for frontend
 description: A look into tools that are worth knowing when doing frontend development
 tags:
   - Frontend
+deprecated: true
 ---
 
 So I’ve been thinking (yeah, true story). And it occurred to me, it would be a good idea to write a little blog post about some of the cool tools I use almost everyday.
