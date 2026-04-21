@@ -7,11 +7,6 @@ const EMBEDS = [
     loaded: false,
   },
   {
-    selector: '.twitter-tweet',
-    url: '//platform.twitter.com/widgets.js',
-    loaded: false,
-  },
-  {
     selector: '#giscus-holder',
     url: 'https://giscus.app/client.js',
     loaded: false,
