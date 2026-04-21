@@ -195,4 +195,8 @@ The module is quite simple right now but I feel like it introduces a couple of o
 
 You can have a look at the final code here:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="Dezad" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/Dezad'>(Another) Sass button lib</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+{% render "codepen.liquid",
+  title: "(Another) Sass button lib",
+  slug: "Dezad",
+  height: 320
+%}

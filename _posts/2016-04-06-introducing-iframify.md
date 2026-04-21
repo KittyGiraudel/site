@@ -35,7 +35,11 @@ To do so, it relies on the `srcdoc` attribute on iframe which happens to have [a
 
 It gathers all the styles needed by the node and all its children by parsing the stylesheets and trying styles against the elements to import everything inside the generated iframe.
 
-<p data-height="268" data-theme-id="0" data-slug-hash="vGWpyr" data-default-tab="result" data-user="KittyGiraudel" class="codepen">See the Pen <a href="https://codepen.io/KittyGiraudel/pen/vGWpyr/">vGWpyr</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+{% render "codepen.liquid",
+  title: "vGWpyr",
+  slug: "vGWpyr",
+  height: 268
+%}
 
 ## What’s next?
 

@@ -77,11 +77,12 @@ Because we rely on `<details>` and `<summary>`, styles are are purely cosmetic a
 
 I voluntarily omitted some styles for sake of simplicity, so you can see the result in the following CodePen:
 
-<p class="codepen" data-height="500" data-default-tab="result" data-slug-hash="poVvyXV" data-user="KittyGiraudel" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/poVvyXV">
-  Content Warning</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% render "codepen.liquid",
+  title: "Content Warning",
+  slug: "poVvyXV",
+  default_tab: "html,result",
+  height: 500
+%}
 
 ## Going further
 

@@ -148,6 +148,11 @@ What do you think of all this? Have you found interesting ways to morph and use 
 
 I hope you've enjoyed this experiment! If you'd like to play with the code in this project, check out this CodePen. Cheers!
 
-<div data-height="268" data-theme-id="0" data-slug-hash="gHEkA" data-default-tab="css" class='codepen'><p>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/gHEkA'>Programmatically find one color from another one</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p> </div>
+{% render "codepen.liquid",
+  title: "Programmatically find one color from another one",
+  default_tab: "css",
+  slug: "gHEkA",
+  height: 268
+%}
 
 On a side note, Brandon Mathis has also worked on [Color Hacker](https://github.com/imathis/color-hacker), a Compass extension providing some advanced color functions for dissecting your own color schemes.

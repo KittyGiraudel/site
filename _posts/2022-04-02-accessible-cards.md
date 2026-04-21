@@ -149,8 +149,9 @@ I would also recommend reading [Heydon’s piece on an inclusive card component]
 
 Hope this helps! ✨
 
-<p class="codepen" data-height="500" data-default-tab="result" data-slug-hash="bGaoXxR" data-user="KittyGiraudel" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/bGaoXxR">
-  Accessible Cards</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% render "codepen.liquid",
+  title: "Accessible Cards",
+  slug: "bGaoXxR",
+  default_tab: "html,result",
+  height: 500
+%}

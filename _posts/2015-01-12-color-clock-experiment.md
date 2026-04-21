@@ -16,7 +16,11 @@ There are two things I wanted to give specific attention to:
 
 Alright, let’s go.
 
-<p data-height="320" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="KittyGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/JobxQR/'>Color Clock</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+{% render "codepen.liquid",
+  title: "Color Clock",
+  slug: "JobxQR",
+  height: 320
+%}
 
 ## Building the app
 
@@ -151,6 +155,10 @@ That’s it. Here is the final code:
 
 You can play with the code on CodePen:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="JobxQR" data-default-tab="result" data-user="KittyGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/JobxQR/'>Color Clock</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+{% render "codepen.liquid",
+  title: "Color Clock",
+  slug: "JobxQR",
+  height: 320
+%}
 
 Hope you liked it!

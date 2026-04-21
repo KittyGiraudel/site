@@ -35,11 +35,12 @@ line-height: calc(0.25 + 1 + 0.25);
 
 However, this approach has a maitenance downside: as you can note in following demo, it sets too much line height in larger font sizes. In order to establish an optimal readability, we must manually tweak it on every `font-size` increment, down to 1.1 on very large font sizes.
 
-<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="result" data-user="supersimplenet" data-slug-hash="RwWyjKV" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="calc line-height: demo 1">
-  <span>See the Pen <a href="https://codepen.io/supersimplenet/pen/RwWyjKV">
-  calc line-height: demo 1</a> by super-simple.net (<a href="https://codepen.io/supersimplenet">@supersimplenet</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% render "codepen.liquid",
+  title: "calc line-height: demo 1",
+  user: "supersimplenet",
+  slug: "RwWyjKV",
+  height: 400
+%}
 
 ## Looking for a formula
 
@@ -85,11 +86,12 @@ line-height: calc(2px + 2ex + 2px);
 
 As you can see in following demo, it sets a very nice line height, in a wide range of different typefaces:
 
-<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="result" data-user="supersimplenet" data-slug-hash="vYNjaem" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="calc line-height: demo 2">
-  <span>See the Pen <a href="https://codepen.io/supersimplenet/pen/vYNjaem">
-  calc line-height: demo 2</a> by super-simple.net (<a href="https://codepen.io/supersimplenet">@supersimplenet</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% render "codepen.liquid",
+  title: "calc line-height: demo 2",
+  user: "supersimplenet",
+  slug: "vYNjaem",
+  height: 400
+%}
 
 That’s valid CSS. Also, [the `ex` unit has very good browser support](https://caniuse.com/#feat=mdn-css_types_length_ex). Hooray!
 

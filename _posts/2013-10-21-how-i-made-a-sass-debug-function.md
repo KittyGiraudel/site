@@ -15,7 +15,11 @@ Most importantly, I always wanted a `console.log()` for Sass. You know, somethin
 
 So I rolled up my sleeves, got my hands dirty and made my own Sass debug function. This is how it looks like:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="unyBH" data-user="KittyGiraudel" data-default-tab="result" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/unyBH'>Debug Sass lists</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a></p>
+{% render "codepen.liquid",
+  title: "Debug Sass lists",
+  slug: "unyBH",
+  height: 320
+%}
 
 If you don’t want to read but simply want to dig into the code, check [this pen](https://codepen.io/KittyGiraudel/pen/unyBH).
 

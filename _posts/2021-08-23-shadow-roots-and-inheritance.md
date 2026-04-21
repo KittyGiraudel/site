@@ -39,9 +39,11 @@ html {
 
 While there is nothing too ground-breaking here, what’s interesting to note is that anything within the `<details>` element will have a `content-box` box sizing, and _not_ a `border-box` one.
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="KKmONwP" data-user="KittyGiraudel" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  Feel free to judge by yourself in this <a href="https://codepen.io/KittyGiraudel/pen/KKmONwP">demo</a>.
-</p>
+{% render "codepen.liquid",
+  slug: "KKmONwP",
+  default_tab: "html,result",
+  height: 300
+%}
 
 This is not specific to `box-sizing` though. There is nothing special about this property that would cause this behaviour. In face, all enforced inheritance break down at the `<details>` layer, as [Šime Vidas pointed out on Twitter](https://twitter.com/simevidas/status/1428503137816612871?s=20).
 

@@ -361,4 +361,8 @@ If you need to create your own cubic-bezier animation function,[this tool](https
 
 I hope you enjoyed this experiment. You can play with the code on CodePen:
 
-<p data-height="380" data-theme-id="0" data-slug-hash="eqCvo" data-default-tab="result" data-user="KittyGiraudel" class='codepen'>See the Pen <a href='https://codepen.io/KittyGiraudel/pen/eqCvo/'>Cubic Bezier functions visualize</a> by Kitty Giraudel (<a href='https://codepen.io/KittyGiraudel'>@KittyGiraudel</a>) on <a href='https://codepen.io'>CodePen</a>.</p>
+{% render "codepen.liquid",
+  title: "Cubic Bezier functions visualize",
+  slug: "eqCvo",
+  height: 380
+%}

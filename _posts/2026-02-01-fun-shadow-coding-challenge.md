@@ -11,9 +11,11 @@ tags:
 
 [I gave it a go](https://codepen.io/KittyGiraudel/pen/pvbaKBy?editors=0010). Scroll the demo and the shadow should adjust to where the “light” is.
 
-<p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="pvbaKBy" data-pen-title="Fun shadow coding challenge" data-user="KittyGiraudel" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/pvbaKBy">Fun shadow coding challenge</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>) on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% render "codepen.liquid",
+  title: "Fun shadow coding challenge",
+  slug: "pvbaKBy",
+  height: 600
+%}
 
 ## The setup
 
@@ -69,9 +71,11 @@ The approach is not without flaws. For starters, it still needs JavaScript to de
 
 I’ve tried a version with a collection of boxes, and a light source at 25% height (controlled with a CSS custom property), and it looks pretty good actually:
 
-<p class="codepen" data-height="600" data-default-tab="html,result" data-slug-hash="ZYOxxOB" data-pen-title="Fun shadow coding challenge" data-user="KittyGiraudel" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/KittyGiraudel/pen/ZYOxxOB">Fun shadow coding challenge</a> by Kitty Giraudel (<a href="https://codepen.io/KittyGiraudel">@KittyGiraudel</a>) on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% render "codepen.liquid",
+  title: "Fun shadow coding challenge",
+  slug: "ZYOxxOB",
+  height: 600
+%}
 
 I think this is one of these things where some JavaScript is not only needed, but also probably quite important to craft a solution that makes fewer assumptions and work nicely in more flexible circumstances — even if still relying on scroll-driven animations.
 
