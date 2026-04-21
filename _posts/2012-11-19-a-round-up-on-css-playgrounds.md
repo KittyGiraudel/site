@@ -36,7 +36,7 @@ Plus, it seems to be very buggy sometimes. Shortcuts don’t work as expected, c
 
 ### Cons
 
-- <span style="text-decoration: line-through">No JS support</span> JS tab now in alpha stage
+- ~No JS support~ JS tab now in alpha stage
 - No preprocessors support
 - Cloned GitHub user accounts (followers/following GitHub users)
 - Sometimes very buggy

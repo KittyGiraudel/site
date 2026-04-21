@@ -19,7 +19,7 @@ Before we go too far, perhaps it would be a good idea to review how colors actua
 
 Okay, ready now? So you've probably figured out that colors can be written using an HSL representation. HSL stands for _Hue Saturation Lightness_, the three main components of a color. According to Wikipedia:
 
-> HSL [is one of] the two most common cylindrical-coordinate representations of points in an RGB color model. HSL stands for hue, saturation, and lightness, and is often also called HLS. [T]he angle around the central vertical axis corresponds to "hue", the distance from the axis corresponds to "saturation", and the distance along the axis corresponds to "lightness", "value" or "brightness".
+> HSL [is one of] the two most common cylindrical-coordinate representations of points in an RGB color model. HSL stands for hue, saturation, and lightness, and is often also called HLS. [T]he angle around the central vertical axis corresponds to “hue”, the distance from the axis corresponds to “saturation”, and the distance along the axis corresponds to “lightness”, “value” or “brightness”.
 
 Hue is the base color that the color is derived from (red, green, blue...). Hue is defined based on the color wheel (given in degrees). Saturation defines if your color is bright or dull (given as a percentage). And lightness defines if you color is dark or light (also given as a percentage).
 

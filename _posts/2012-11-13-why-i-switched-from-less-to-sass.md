@@ -251,7 +251,7 @@ This is the Sass syntax for conditional statements in a mixin. Okay, it may lack
 }
 ```
 
-Once again, it may lack of a few brackets but we still understand very well how it works. It’s almost plain language: _"for variable i from 1 through 10, do this"_. It looks very intuitive to me.
+Once again, it may lack of a few brackets but we still understand very well how it works. It’s almost plain language: _“for variable i from 1 through 10, do this”_. It looks very intuitive to me.
 
 ### Sass and concatenation
 
@@ -271,14 +271,14 @@ Very quickly, here are the few things making me tell Sass is better than LESS. T
 - Sass provides the `@extend` feature allowing you to extend a class from another one
 - Sass handles media queries in a better and more advanced ways than others
 - Sass throws errors instead of miscalculations when doing operations with units
-- <span style="text-decoration: line-through;">Sass provides a minifying function to compress your CSS files</span> (so does LESS server-side)
+- ~Sass provides a minifying function to compress your CSS files~ (so does LESS server-side)
 - Sass is slightly more active, development speaking
 
 ## LESS is not so bad
 
 Well, I’ve been moaning about LESS the whole article, but honestly this is not so bad. At least, it’s no so bad if you don’t plan on complicated and advanced things. Actually there are things LESS are better at, let me tell you my opinion about it:
 
-- <span style="text-decoration: line-through;">LESS provides some really cool color functions (darken, lighten, spin, de/saturate, fade, fadein, fadeout, mix, contrast)</span> (so does Sass)
+- ~LESS provides some really cool color functions (darken, lighten, spin, de/saturate, fade, fadein, fadeout, mix, contrast)~ (so does Sass)
 - LESS has a nicer and more accessible documentation on [lesscss.org](https://lesscss.org/)
 - LESS is not dependent to either command line skills or a third program
 - LESS can be used locally without any install required (simple JS script)

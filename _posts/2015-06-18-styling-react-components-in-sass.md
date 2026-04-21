@@ -13,18 +13,18 @@ The following is a guest post by David Khourshid about how he uses Sass and the 
 
 ---
 
-Chances are, as a frontend developer, you’ve heard of Facebook’s library for building user interfaces, [React](https://facebook.github.io/react/). Of course, an important part of building UI is styling it, as well. React strongly enforces the idea that a user interface is composed of many ["reusable components with well-defined interfaces"](https://facebook.github.io/react/docs/reusable-components.html), and many CSS methodologies and architectures embrace this as well, including:
+Chances are, as a frontend developer, you’ve heard of Facebook’s library for building user interfaces, [React](https://facebook.github.io/react/). Of course, an important part of building UI is styling it, as well. React strongly enforces the idea that a user interface is composed of many [“reusable components with well-defined interfaces”](https://facebook.github.io/react/docs/reusable-components.html), and many CSS methodologies and architectures embrace this as well, including:
 
 - [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)
 - [SMACSS](https://smacss.com/)
 - [OOCSS](https://oocss.org/)
 - [The 7-1 Pattern](https://sass-guidelin.es/#architecture)
 
-Fortunately, any of these architectures can be used for styling React components, or any components for that matter! ("Styling Components in Sass" sounded a bit too dry for an article title, though.) We will be focusing on Kitty’s own [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern) for this article, which I have used in multiple projects.
+Fortunately, any of these architectures can be used for styling React components, or any components for that matter! (“Styling Components in Sass” sounded a bit too dry for an article title, though.) We will be focusing on Kitty’s own [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern) for this article, which I have used in multiple projects.
 
 ## The Problems with (Unorganized) CSS at Scale
 
-Just like with any language, writing CSS without a well-defined architecture and/or organizational pattern quickly becomes an unmaintainable mess. Christopher Chedeau, a developer at Facebook, listed the problems in his ["CSS in JS" presentation](https://speakerdeck.com/vjeux/react-css-in-js):
+Just like with any language, writing CSS without a well-defined architecture and/or organizational pattern quickly becomes an unmaintainable mess. Christopher Chedeau, a developer at Facebook, listed the problems in his [“CSS in JS” presentation](https://speakerdeck.com/vjeux/react-css-in-js):
 
 - Global Namespace
 - Dependencies

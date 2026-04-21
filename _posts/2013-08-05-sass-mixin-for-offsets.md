@@ -219,7 +219,7 @@ abcd {
 }
 ```
 
-Is it supposed to mean _"assign `property: value` to a direct sibling `efgh` of `abcd`"_ or _"call mixin `efgh` in `abcd`"_? Thus someone proposed `++` instead and it seems quite good so far. No idea when or if we will ever see this coming though. Let’s hope.
+Is it supposed to mean _“assign `property: value` to a direct sibling `efgh` of `abcd`”_ or _“call mixin `efgh` in `abcd`”_? Thus someone proposed `++` instead and it seems quite good so far. No idea when or if we will ever see this coming though. Let’s hope.
 
 ## Final words
 

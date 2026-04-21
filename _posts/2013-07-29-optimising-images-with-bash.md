@@ -41,14 +41,14 @@ Since it can be quite a pain to set up a virtual machine, we will go for the lat
 <figcaption><a href="https://www.cygwin.com/">Cygwin</a> is a Linux simulator</figcaption>
 </figure>
 
-To add a package, click on the _"Skip"_ label to switch it to a package version. Search for the following packages and add them (clicking on _"Skip"_ is enough):
+To add a package, click on the _“Skip”_ label to switch it to a package version. Search for the following packages and add them (clicking on _“Skip”_ is enough):
 
 - optipng
 - pngcrush
 - jpeg
 - util-linux
 
-Once Cygwin is fully installed, simply open a Cygwin terminal. Let’s create a workspace to host our optimisation script: we create a _"workspace"_ directory in the current user home:
+Once Cygwin is fully installed, simply open a Cygwin terminal. Let’s create a workspace to host our optimisation script: we create a _“workspace”_ directory in the current user home:
 
 ```bash
 # Create the workspace folder
@@ -62,7 +62,7 @@ cd workspace
 <figcaption>Creating a workspace in Cygwin</figcaption>
 </figure>
 
-By default, Cygwin is installed at `C:/cygwin/` so our new directory is at `C:/cygwin/home/[username]/workspace` (where `[username]` is your username). Let’s create a _"images"_ directory and fill it with some random images from the wild wild web (you can do this manually). For this exercise, we are going to take cat pictures because, you know, everybody love cats.
+By default, Cygwin is installed at `C:/cygwin/` so our new directory is at `C:/cygwin/home/[username]/workspace` (where `[username]` is your username). Let’s create a _“images”_ directory and fill it with some random images from the wild wild web (you can do this manually). For this exercise, we are going to take cat pictures because, you know, everybody love cats.
 
 ## Optimising an image with the command line
 
@@ -155,7 +155,7 @@ So our main function starts by initializing both input and output directories wi
 
 _The `-p` parameter of the `mkdir` command forces the creation of all intermediate directories if they are missing._
 
-Once the input and output are ready, there is a little trick to deal with files containing spaces. Let’s say I have a file named _"soft kitty warm kitty.png"_ (little ball of fur, anyone?), the loop will split this into 4 elements which will obviously lead to errors. To prevent this from happening, we can change the Internal File Separator (which is a space character by default) to set an end-of-line character. We will restore the original IFS at the end of the loop.
+Once the input and output are ready, there is a little trick to deal with files containing spaces. Let’s say I have a file named _“soft kitty warm kitty.png”_ (little ball of fur, anyone?), the loop will split this into 4 elements which will obviously lead to errors. To prevent this from happening, we can change the Internal File Separator (which is a space character by default) to set an end-of-line character. We will restore the original IFS at the end of the loop.
 
 The image files are retrieved with the `find` command, which accepts a regular expression as parameter. If the output directory is a subdirectory of input directory (which is the case if we don’t specify any of both) and if the output directory is not empty, we don’t want to process images from here so we skip filepaths which contain the output directory path. We do this with the `grep -v $OUTPUT` command.
 
@@ -189,10 +189,10 @@ Would be neat, wouldn’t it? To do this, we first need to find the longest file
 Then before our main loop, we:
 
 1. retrieve the length of the longest filename
-1. create a very long string of dots (_"."_)
-1. set a max line length equals to the length of the longest filename + the length of our _" [ DONE ]"_ string (9 characters) + a small number (5 here) to have some space between the longest name and the _" [ DONE ]"_ string.
+1. create a very long string of dots (_“.”_)
+1. set a max line length equals to the length of the longest filename + the length of our _“ [ DONE ]”_ string (9 characters) + a small number (5 here) to have some space between the longest name and the _“ [ DONE ]”_ string.
 
-Finally, in the main loop we display the filename then the _"."_ symbols and the _" [ DONE ]"_ string.
+Finally, in the main loop we display the filename then the _“.”_ symbols and the _“ [ DONE ]”_ string.
 
 <figure class="Figure">
 <img src="/assets/images/optimising-with-bash/output.png" alt="" loading="lazy" />

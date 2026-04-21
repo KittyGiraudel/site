@@ -62,7 +62,7 @@ Then the user has to check the bug again and inform `git bisect`. At each step o
 
 ### Manual version
 
-Let’s take an example. I’m going to create 20 commits; each commit adding a new line “line number #” in _file.txt_. One of the insertions will have a typing error _"numer"_ instead of _"number"_. We are going to try to find the commit which has the typo with `git bisect`.
+Let’s take an example. I’m going to create 20 commits; each commit adding a new line “line number #” in _file.txt_. One of the insertions will have a typing error _“numer”_ instead of _“number”_. We are going to try to find the commit which has the typo with `git bisect`.
 
 ```bash
 $ # I create 20 commits here
@@ -72,7 +72,7 @@ $ cat file.txt | grep numer | wc -l
 1
 ```
 
-Ok, I have 19 occurrences of _"number"_ and 1 occurrence of _"numer"_, let’s find which commit inserted the typo. To do so, I run `git bisect` with two commit references. I know that the bug was not there 20 commits ago and is present now. So I can pass `HEAD` and `HEAD~20` for my two references.
+Ok, I have 19 occurrences of _“number”_ and 1 occurrence of _“numer”_, let’s find which commit inserted the typo. To do so, I run `git bisect` with two commit references. I know that the bug was not there 20 commits ago and is present now. So I can pass `HEAD` and `HEAD~20` for my two references.
 
 ```git
 $ git bisect start HEAD HEAD~20

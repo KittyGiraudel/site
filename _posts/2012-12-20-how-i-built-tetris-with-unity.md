@@ -69,7 +69,7 @@ Another problem of mine was placing the bricks correctly. During the first phase
 <figcaption>Screenshot of overlapping bricks</figcaption>
 </figure>
 
-This was caused by the collision detection problem. Because whatever the method I could use (rays, OnCollisionEnter, OnTriggerEnter, …), the brick wasn’t stopped at the right position. It was always “more or less" where it should have ended. This lack of accuracy was problematic.
+This was caused by the collision detection problem. Because whatever the method I could use (rays, OnCollisionEnter, OnTriggerEnter, …), the brick wasn’t stopped at the right position. It was always “more or less” where it should have ended. This lack of accuracy was problematic.
 
 I ended doing something I didn’t want to, but I had no choice: brick repositioning after landing. Basically, it means when a brick stops moving, I round up its coordinates to place it where it should have ended. It’s not great, it involves some calculations, but I couldn’t think of any other option to fix this issue.
 

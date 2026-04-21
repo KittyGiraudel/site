@@ -71,7 +71,7 @@ I don’t know if it’s a sudden realisation or the recent [A11y project](https
 
 First of all, I switched a bunch of my divs to “new” HTML5 elements. So I’m now using `<header>`, `<article>`, `<aside>`, `<footer>`, `<section>`, and so on. I must say it feels right, really.
 
-Secondly, I dug a little into ARIA roles. I have to say I didn’t know it was such a deep and complex topic, so I may have understand a few things wrong. Anyway, I added a `role=""` attribute to many elements in the site, especially on the home page.
+Secondly, I dug a little into ARIA roles. I have to say I didn’t know it was such a deep and complex topic, so I may have understand a few things wrong. Anyway, I added a `role` attribute to many elements in the site, especially on the home page.
 
 I also gave a few tries to keyboard navigations and I have to say it’s really not that bad. If you have a few minutes left, try it on the home page and tell me what you think about it.
 

@@ -55,7 +55,7 @@ This is the end result of what we will be building today. Take a look at the cod
 
 Firstly, let’s create the map for our color palette setup.
 
-We are going to keep our colors in a sub-map called _"palette"_ so we can keep our main API’s code more modular to allow it to work with other customizable properties than just colors.
+We are going to keep our colors in a sub-map called _“palette”_ so we can keep our main API’s code more modular to allow it to work with other customizable properties than just colors.
 
 ```scss
 // Customization module defaults
@@ -112,7 +112,7 @@ In order to make the API easy to use and as close to the usual CSS syntax as pos
 
 {% callout %}If you’re unfamiliar with using maps as arguments, [Kitty wrote up a pretty nifty article on that](https://www.sitepoint.com/using-sass-maps/), as well as many other use-cases for maps.{% endcallout %}
 
-The next argument will be fetching a module from within the above `$customizer` map, which in this case will be our _"palette"_ module. We’ll call this argument `$uses`, as we will be fetching (_using_) values from it for use in our first argument, `$args`.
+The next argument will be fetching a module from within the above `$customizer` map, which in this case will be our _“palette”_ module. We’ll call this argument `$uses`, as we will be fetching (_using_) values from it for use in our first argument, `$args`.
 
 I also want to make it fall back to outputting plain CSS if no module to use is specified, rather than erroring out we can simply `@warn` the user that the mixin shouldn’t be used that way. Therefore, our API will be less frustrating to newer users that don’t happen to be using it correctly.
 
@@ -185,7 +185,7 @@ Now, since we want to be able to pass multiple customizable properties into a si
 // } @else module did not exist
 ```
 
-In order to loop through each argument, we use an `@each` loop. Within the loop, we retrieve both the `$property` and the `$value` using the `nth()` function. Then, we check if `$value` is either a list (when we’re fetching the value from a deeper sub-module such as _"primary"_), or that the module exists (for values that don’t have additional sub-modules, but rather a single value such as _"white"_). Assuming this check returns `true`, we need a way to fetch these values from their deeper sub-modules; so let’s create a function for that called `use-module()`.
+In order to loop through each argument, we use an `@each` loop. Within the loop, we retrieve both the `$property` and the `$value` using the `nth()` function. Then, we check if `$value` is either a list (when we’re fetching the value from a deeper sub-module such as _“primary”_), or that the module exists (for values that don’t have additional sub-modules, but rather a single value such as _“white”_). Assuming this check returns `true`, we need a way to fetch these values from their deeper sub-modules; so let’s create a function for that called `use-module()`.
 
 ## Fetching our colors
 
@@ -280,7 +280,7 @@ As you can see, we’re using the Ruby function I talked about ealier called `se
 
 Next, we’re going to create an empty map that is going to contain each customizable `$property` and all of the data for it such as its `$module` and the `$value` that is used from the module.
 
-Unlike the main mixin, we’re not going to keep track of what styles are actually outputted, but rather where those styles came from within our module (_"palette"_). That way, if say, the _"primary" "base"_ color changes via our frontend API, we know that this element is using that value, so we can then update the stylesheet to reflect the change.
+Unlike the main mixin, we’re not going to keep track of what styles are actually outputted, but rather where those styles came from within our module (_“palette”_). That way, if say, the _“primary" "base”_ color changes via our frontend API, we know that this element is using that value, so we can then update the stylesheet to reflect the change.
 
 But, as we can tell from the function above, it’s returning a merged map, but we haven’t actually told the new map to override the global `$customizer-instances` variable. Instead of making the function do that, let’s create a mixin to handle that part so we can simply include it into the main mixin where we need to. That way, if we ever needed to make small minor adjustments, we only have to update it in one area. This next mixin is going to be rather simple.
 

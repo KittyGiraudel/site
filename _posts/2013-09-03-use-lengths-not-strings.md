@@ -24,7 +24,7 @@ Well obviously, it works like a charm. That’s probably why you can see it so m
 
 ## The problem
 
-Then you ask _"if it works, why bother?"_. That’s actually a very fair question. Let’s continue our example, shall we? What if we apply &mdash; let’s say &mdash; the `round()` function to our length?
+Then you ask _“if it works, why bother?”_. That’s actually a very fair question. Let’s continue our example, shall we? What if we apply &mdash; let’s say &mdash; the `round()` function to our length?
 
 ```scss
 $rounded-length: round($length);
