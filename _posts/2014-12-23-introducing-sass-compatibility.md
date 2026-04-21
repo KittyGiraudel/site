@@ -19,7 +19,7 @@ The basic scenario is you wanting to move your code base over to LibSass but are
 
 ## How does it work?
 
-At the very start, it was mostly manual testing on [SassMeister](http://sassmeister.com/), then writing results in a table. Quite tedious, and not very scalable (especially since I had highlighted over 30 inconsistencies) so I quickly moved to a fully-automated system thanks to [Valérian Galliat](https://twitter.com/valeriangalliat).
+At the very start, it was mostly manual testing on SassMeister, then writing results in a table. Quite tedious, and not very scalable (especially since I had highlighted over 30 inconsistencies) so I quickly moved to a fully-automated system thanks to [Valérian Galliat](https://twitter.com/valeriangalliat).
 
 You may not know it, but there is a project called [sass-spec](https://github.com/sass/sass-spec). Sass-spec aims at providing a test suite for Sass engines to make sure they are compliant with the official Ruby version of Sass. However, we should note that the project is currently in an odd state where it has some tests for LibSass only, some old tests from Ruby Sass pre-3.0, some disabled tests… Basically, kind of a mess.
 

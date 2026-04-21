@@ -15,7 +15,7 @@ As any web developer who has to write CSS knows, specificity is both an importan
 
 ![CSS Specificity issue](/assets/images/calculating-specificity-in-sass/important.png)
 
-**TL;DR:** Check out the source (and examples) [here on SassMeister](https://www.sassmeister.com/gist/dbf20a242bcccd1d789c) or directly on [GitHub](https://github.com/davidkpiano/sass-specificity).
+**TL;DR:** Check out the source (and examples) on [GitHub](https://github.com/davidkpiano/sass-specificity).
 
 ## What is Specificity?
 
@@ -315,6 +315,4 @@ You can take this even further and, if you have dynamic selectors in your SCSS, 
 }
 ```
 
-The full source for the specificity functions/mixins, as well as examples, are available [here on SassMeister](http:s//sassmeister.com/gist/dbf20a242bcccd1d789c):
-
-<p class="sassmeister" data-gist-id="dbf20a242bcccd1d789c" data-height="480" data-theme="tomorrow"><a href="http:s//sassmeister.com/gist/dbf20a242bcccd1d789c">Play with this gist on SassMeister.</a></p>
+The full source for the specificity functions/mixins, as well as examples, are available [GitHub](https://github.com/davidkpiano/sass-specificity).

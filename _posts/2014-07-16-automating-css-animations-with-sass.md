@@ -381,6 +381,4 @@ Pretty neat, heh?
 
 That’s pretty much it. While Harry’s initial code is easier to read for the human eye, it’s really not ideal when it comes to maintenance. That’s where Sass can comes in handy, automating the whole thing with calculations and loops. It does make the code a little more complex, but it also makes it easier to maintain and update for future use cases.
 
-You can play with the code on SassMeister:
-
-<p class="sassmeister" data-gist-id="b657072d11c527f3a016" data-height="480"><a href="https://www.sassmeister.com/gist/b657072d11c527f3a016">Play with this gist on SassMeister.</a></p>
+You can check the [code on GitHub](https://gist.github.com/KittyGiraudel/b657072d11c527f3a016).

@@ -2,11 +2,6 @@
 // See: https://twitter.com/whitep4nth3r/status/1518978629593702403
 const EMBEDS = [
   {
-    selector: '.sassmeister',
-    url: '//cdn.sassmeister.com/js/embed.js',
-    loaded: false,
-  },
-  {
     selector: '.codepen',
     url: '//codepen.io/assets/embed/ei.js',
     loaded: false,

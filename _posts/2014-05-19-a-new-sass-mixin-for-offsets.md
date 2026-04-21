@@ -300,6 +300,4 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 So here we go with the new version people. It is slightly better than the old since you can now chain offsets to set them to `0`, and extra keywords like `auto`, `initial` and `inherit` are allowed, which wasn’t the case before.
 
-I hope you like it. If you think of anything to improve it, be sure to share!
-
-<p class="sassmeister" data-gist-id="f8ab9cc308b84e37b18d" data-height="480"><a href="https://www.sassmeister.com/gist/f8ab9cc308b84e37b18d">Play with this gist on SassMeister.</a></p>
+Here is [the code](https://gist.github.com/KittyGiraudel/f8ab9cc308b84e37b18d), I hope you like it. If you think of anything to improve it, be sure to share!

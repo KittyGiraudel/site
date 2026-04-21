@@ -30,8 +30,8 @@ Sass is 7 years old if no mistake, and has come a long since its early days. In 
 - [a JSON parser](/2014/01/20/sassyjson-talk-to-the-browser/);
 - [bitwise operators](/2014/06/22/bitwise-operators-in-sass/);
 - [sorting algorithms](/2014/03/18/sassysort-sorting-algorithms-in-sass/);
-- [functional programming](https://www.sassmeister.com/gist/c36be3440dc2b5ae9ba2);
-- [Levenshtein distance implementation](https://www.sassmeister.com/gist/8334461);
+- [functional programming](https://gist.github.com/KittyGiraudel/b94b72435717a759d37f);
+- [Levenshtein distance implementation](https://gist.github.com/KittyGiraudel/8334461);
 - [inverse trigonometric functions](https://thesassway.herokuapp.com/advanced/inverse-trigonometric-functions-with-sass) by Ana Tudor…
 
 And there are countless more examples I’m probably not even aware of.

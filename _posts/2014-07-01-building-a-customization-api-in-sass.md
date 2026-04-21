@@ -47,9 +47,7 @@ Furthermore, because we’ll be keeping track of which selectors (or if we’re 
 
 _Throughout this article I will be using another project of mine called [Flint](https://github.com/ezekg/flint) as a base. It has various helper-functions that we will be using such as `selector_string()`, a Ruby function returning a stringified version of the current selector (`&`) so that we can use it in interpolation (which currently isn’t possible). As well as a few others self-explanitory functions such as `exists()`, `is-map()`, `is-list()` and `map-fetch()`._
 
-This is the end result of what we will be building today. Take a look at the code, and follow along as we go through creating this API and understanding the methodology behind it, if that’s your thing.
-
-<p class="sassmeister" data-gist-id="ccf842e5ee74287f1868" data-height="480"><a href="https://ssassmeister.com/gist/ccf842e5ee74287f1868">Play with this gist on SassMeister.</a></p>
+This is the end result of what we will be building today. Take a [look at the code](https://gist.github.com/ezekg/ccf842e5ee74287f1868), and follow along as we go through creating this API and understanding the methodology behind it, if that’s your thing.
 
 ## Building our palette
 
@@ -413,4 +411,4 @@ Then the new styles are fetched and outputted into the stylesheet.
 
 Now that we have these variables (`$customizer` and `$customizer-instances`) containing a wealth of useful data, in part 2 we’ll walk through the basic syntax for [SassyExport](https://github.com/ezekg/SassyExport) and how we’re going to use it to export all of this data into JSON. We will also discuss the various ways for this data to give opportunity to create some pretty impressive features when coupled with other languages, such as PHP.
 
-Until next time, you can play with the customization API on [SassMeister](https://www.sassmeister.com/gist/ccf842e5ee74287f1868), check out [SassyExport on Github](https://github.com/ezekg/SassyExport), or [download the gem](https://rubygems.org/gems/SassyExport) to use with Compass in your own project.
+Until next time, you can play with the customization API on [GitHub](https://gist.github.com/ezekg/ccf842e5ee74287f1868), check out [SassyExport on Github](https://github.com/ezekg/SassyExport), or [download the gem](https://rubygems.org/gems/SassyExport) to use with Compass in your own project.

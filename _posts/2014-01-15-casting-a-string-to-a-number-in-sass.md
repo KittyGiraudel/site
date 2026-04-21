@@ -188,7 +188,7 @@ The idea is the same as for the `number` function. We retrieve the string in the
 
 ## Examples
 
-If you want to play with the code or the function, you can check it on [SassMeister](https://www.sassmeister.com/gist/9647408). In any case, here are a couple of examples of our awesome little function:
+If you want to play with the code or the function, you can check it on [SassMeister](https://gist.github.com/KittyGiraudel/9fa19d254864f33d4a80). In any case, here are a couple of examples of our awesome little function:
 
 ```scss
 sass {

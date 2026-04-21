@@ -16,7 +16,7 @@ A Compass extension is some kind of bundle packed as a gem, that can be installe
 
 The first step installs the gem on your machine. The second tells Compass to use the gem. The third imports the extension content so it can be used in your Sass files.
 
-Quite easy, isn’t it? Now that you know how to use them, what if I showed you a couple of Compass extensions that are definitely worth a try? Remember, all you have to do to try them is to run the 3 commands listed above. Also, most of these are included in the [SassMeister](https://www.sassmeister.com/) playground so you can try them online as well.
+Quite easy, isn’t it? Now that you know how to use them, what if I showed you a couple of Compass extensions that are definitely worth a try? Remember, all you have to do to try them is to run the 3 commands listed above. Also, most of these are included in the SassMeister playground so you can try them online as well.
 
 ## Modernizr Mixin
 

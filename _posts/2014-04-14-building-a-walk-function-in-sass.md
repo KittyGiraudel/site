@@ -106,8 +106,4 @@ With such a simple function we can see how much Sass 3.3 brought to Sass. In abo
 
 Regarding the function in itself now, I think it might be used by some frameworks. I don’t have any use case coming up at the top of my head right now, but being able to walk through an array is actually more useful than we first think.
 
-By the way, you play with the code on SassMeister:
-
-<p class="sassmeister" data-gist-id="9730068" data-height="480"><a href="https://www.sassmeister.com/gist/9730068">Play with this gist on SassMeister.</a></p>
-
-If you think of anything about the code, be sure to have a word my friends. :)
+Check the [code on GitHub](https://gist.github.com/KittyGiraudel/c36be3440dc2b5ae9ba2). If you think of anything about the code, be sure to have a word my friends. :)
