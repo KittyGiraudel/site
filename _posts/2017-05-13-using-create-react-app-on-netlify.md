@@ -7,7 +7,7 @@ tags:
   - SPA
 edits:
   - date: 2017/05/13
-    md: I missed the fact that there already was [a documented fix](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#netlify) in create-react-app docs using the [redirect feature from Netlify](https://www.netlify.com/docs/redirects/). You might want to prefer that.
+    md: I missed the fact that there already was [a documented fix](https://create-react-app.dev/docs/deployment/#netlify) in create-react-app docs using the [redirect feature from Netlify](https://www.netlify.com/docs/redirects/). You might want to prefer that.
 ---
 
 A short article about how to work around the 404 issue with create-react-app on [Netlify](https://www.netlify.com) (and possibly other hosting platforms like [GitHub Pages](https://pages.github.com/)).
