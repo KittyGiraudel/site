@@ -22,7 +22,10 @@ const EMPTY_COLLECTION = {
 
 export default function postStatsPlugin(eleventyConfig, options = {}) {
   eleventyConfig.addCollection('postStats', collection => {
-    const posts = collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date)
+    const posts = collection
+      .getFilteredByGlob('_posts/*.md')
+      .filter(utilities.isPostVisible)
+      .sort((a, b) => b.date - a.date)
     const postCount = posts.length
 
     if (postCount === 0) {

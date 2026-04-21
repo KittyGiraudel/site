@@ -1,3 +1,5 @@
+import utilities from '../_plugins/utilities.js'
+
 export default {
   layout: 'post',
   // Although Eleventy supports “Last Modified” and “git Last Modified” magic
@@ -27,8 +29,9 @@ export default {
     },
   },
   permalink(data) {
-    // Do not generate a permalink (and thus a page) for external posts
-    if (data.external) return false
+    // Do not generate a permalink (and thus a page) for posts that are not
+    // rendered.
+    if (!utilities.isPostRendered(data)) return false
 
     const inputPath = data.page?.inputPath
     const date = getPostDateFromPath(inputPath)

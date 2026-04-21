@@ -4,6 +4,7 @@ import emojiShortName from 'emoji-short-name'
 import he from 'he'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
+import { CONFIG } from '../.eleventy.js'
 
 const EMOJI_REGEX = emojiRegex()
 const DATE_FORMATTER = new Intl.DateTimeFormat('en', {
@@ -115,6 +116,20 @@ function wrapEmDashes(content, outputPath) {
     : content
 }
 
+function getFrontMatterData(value) {
+  return value?.data ?? value ?? {}
+}
+
+// A post is visible if it is not a draft or if drafts are enabled.
+function isPostVisible(value) {
+  return !getFrontMatterData(value).draft || CONFIG.renderDrafts
+}
+
+// A post is rendered if it is visible and not an external post.
+function isPostRendered(value) {
+  return isPostVisible(value) && !getFrontMatterData(value).external
+}
+
 export default {
   minifyHTML,
   a11yEmojis,
@@ -129,4 +144,6 @@ export default {
   ensureValue,
   helmet,
   wrapEmDashes,
+  isPostVisible,
+  isPostRendered,
 }

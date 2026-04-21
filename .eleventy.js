@@ -20,6 +20,7 @@ export const CONFIG = {
   helmet: PRODUCTION,
   markdownAlternative: PRODUCTION,
   headingAnchors: PRODUCTION,
+  renderDrafts: !PRODUCTION,
 }
 
 /** @param {import('@11ty/eleventy/UserConfig').default} config */
@@ -88,12 +89,15 @@ export default function (config) {
   // Collections
   // ---------------------------------------------------------------------------
   config.addCollection('posts', c =>
-    c.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date),
+    c
+      .getFilteredByGlob('_posts/*.md')
+      .filter(utilities.isPostVisible)
+      .sort((a, b) => b.date - a.date),
   )
   config.addCollection('internal_posts', c =>
     c
       .getFilteredByGlob('_posts/*.md')
-      .filter(item => !item.data?.external)
+      .filter(utilities.isPostRendered)
       .sort((a, b) => b.date - a.date),
   )
   config.addCollection('snippets', c => c.getFilteredByGlob('_pages/snippets/*.md'))
