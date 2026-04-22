@@ -107,12 +107,13 @@ p {
 
 ul,
 ol {
-  padding-left: 1em;
+  padding-left: 0;
   margin: var(--vb-half) 0;
 }
 
 li {
   margin: var(--vb-quarter) 0;
+  list-style-position: inside;
 }
 
 ul ul {

@@ -1,7 +1,7 @@
 .Figure {
   margin: var(--vb) 0;
   position: relative;
-  clear: right;
+  clear: both;
 }
 
 .Figure figcaption {

@@ -5,21 +5,21 @@
   border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
   background-color: light-dark(#f6f4f9, #303132);
   font-size: 90%;
-  margin-bottom: var(--vb);
+  margin-bottom: var(--vb-half);
 }
 
 @media (min-width: 700px) {
   .TableOfContents {
-    float: right;
+    float: left;
     max-width: 300px;
-    margin-left: var(--vb);
+    margin-right: var(--vb);
   }
 }
 
 @media (min-width: 1140px) {
   .TableOfContents {
-    margin-right: -150px;
-    margin-bottom: var(--vb);
+    margin-left: -150px;
+    margin-bottom: var(--vb-thirds);
   }
 }
 

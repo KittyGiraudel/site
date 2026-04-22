@@ -2,7 +2,7 @@
   color: var(--pink);
   font-size: 225%;
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.15;
   margin: 0;
   text-wrap: balance;
   background-image: linear-gradient(to right, var(--pink), var(--blue));

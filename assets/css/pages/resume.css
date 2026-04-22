@@ -3,6 +3,7 @@
 .Resume__header {
   margin-top: -0.5em;
   margin-bottom: 2em;
+  margin-left: calc(var(--margin-offset) * -1);
   color: #666;
 }
 
@@ -115,6 +116,10 @@
    */
   .Resume {
     font-size: 52%;
+  }
+
+  .Resume__header {
+    margin-left: 0;
   }
 
   .Resume__subline a {

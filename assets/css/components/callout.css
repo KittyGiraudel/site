@@ -19,7 +19,7 @@
     linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* 2 */
   background-origin: border-box; /* 2 */
   background-clip: padding-box, border-box; /* 2 */
-  clear: right;
+  clear: both;
 }
 
 .Callout::before {
