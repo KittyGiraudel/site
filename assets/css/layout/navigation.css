@@ -84,6 +84,7 @@
 
 .Navigation__item[aria-current] {
   position: relative;
+  font-weight: bold;
 }
 
 .Navigation__link {
