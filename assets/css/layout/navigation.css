@@ -99,7 +99,9 @@
     margin-bottom: var(--vb);
     justify-content: center;
     padding-block: 0.25em;
-    font-size: 90%;
+    --navigation-notch-left: 0px !important;
+    --navigation-notch-width: 0px !important;
+    --navigation-notch-opacity: 0 !important;
   }
 
   .Navigation__list {
@@ -108,6 +110,10 @@
 
   .Navigation__item {
     padding-inline: 0.5em;
+  }
+
+  .Navigation__item[aria-current] {
+    font-weight: bold;
   }
 
   .Navigation__link {
