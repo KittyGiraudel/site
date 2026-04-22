@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { load } from 'cheerio'
-import siteData from '../_data/site.js'
+import siteData from '../data/site.js'
 import { getSiteUrl, readText } from './helpers/site-paths.mjs'
 
 const siteAuthor = siteData.author
@@ -48,7 +48,7 @@ function assertCanonicalLink($, siteUrl, path, label = '') {
  * optional checks outside `<head>` (e.g. post layout markdown `alternate`).
  *
  * @param {import('cheerio').CheerioAPI} $
- * @param {string} siteUrl homepage URL without trailing slash (`_data/site.js`)
+ * @param {string} siteUrl homepage URL without trailing slash (`data/site.js`)
  * @param {{
  *   path: string
  *   title: string
@@ -170,7 +170,7 @@ function assertHeadMetadata($, siteUrl, spec) {
 }
 
 test('page head: home', async () => {
-  /** Golden: _pages/home/index.liquid */
+  /** Golden: pages/home/index.liquid */
   const html = await readText('index.html')
   const $ = load(html)
 
@@ -187,7 +187,7 @@ test('page head: home', async () => {
 })
 
 test('page head: resume', async () => {
-  /** Golden: _pages/resume/index.liquid */
+  /** Golden: pages/resume/index.liquid */
   const html = await readText('resume/index.html')
   const $ = load(html)
 
@@ -203,7 +203,7 @@ test('page head: resume', async () => {
 })
 
 test('page head: snippet', async () => {
-  /** Golden: _pages/snippets/get-last-npm-install.md */
+  /** Golden: pages/snippets/get-last-npm-install.md */
   const html = await readText('snippets/get-last-npm-install/index.html')
   const $ = load(html)
 
@@ -219,7 +219,7 @@ test('page head: snippet', async () => {
 })
 
 test('page head: project', async () => {
-  /** Golden: _pages/projects/a11y-dialog/index.liquid */
+  /** Golden: pages/projects/a11y-dialog/index.liquid */
   const html = await readText('projects/a11y-dialog/index.html')
   const $ = load(html)
 

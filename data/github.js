@@ -1,6 +1,6 @@
 import Fetch from '@11ty/eleventy-fetch'
 import { CONFIG } from '../.eleventy.js'
-import utilities from '../_plugins/utilities.js'
+import utilities from '../plugins/utilities.js'
 
 const STATIC_DATA = {
   'https://github.com/KittyGiraudel/a11y-dialog': utilities.formatNumber(2500),

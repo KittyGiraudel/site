@@ -7,7 +7,7 @@
     "build": "npx @11ty/eleventy && npm run sw",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve --quiet --incremental",
     "format": "biome format --write .",
-    "test": "node --test _tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",

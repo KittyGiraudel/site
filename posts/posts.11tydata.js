@@ -1,4 +1,4 @@
-import utilities from '../_plugins/utilities.js'
+import utilities from '../plugins/utilities.js'
 
 export default {
   layout: 'post',

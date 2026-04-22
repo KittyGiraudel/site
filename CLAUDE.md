@@ -7,11 +7,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 npm start        # Dev server with hot reload (incremental builds)
 npm run build    # Production build + service worker generation
-npm test         # Node.js native test runner (all _tests/*.test.mjs)
+npm test         # Node.js native test runner (all tests/*.test.mjs)
 npm run format   # Biome formatter (write mode)
 ```
 
-Single test: `node --test _tests/head.test.mjs`
+Single test: `node --test tests/head.test.mjs`
 
 ## Architecture
 
@@ -19,22 +19,22 @@ This is a personal blog/portfolio site (kittygiraudel.com) built with **Eleventy
 
 ### Content collections
 
-- `_posts/YYYY-MM-DD-slug.md` — Blog posts. Filenames determine the URL (`/:year/:month/:day/:slug/`) and `creation_date`. The `update_date` is derived from git history via `_data/git.js`.
-- `_pages/snippets/` — Code snippets (layout: `snippet`)
-- `_pages/recipes/` — Recipes (layout: `recipe`, with `ingredients` and `steps` front matter arrays)
-- `_pages/` — All other static pages (Liquid or Markdown)
+- `posts/YYYY-MM-DD-slug.md` — Blog posts. Filenames determine the URL (`/:year/:month/:day/:slug/`) and `creation_date`. The `update_date` is derived from git history via `data/git.js`.
+- `pages/snippets/` — Code snippets (layout: `snippet`)
+- `pages/recipes/` — Recipes (layout: `recipe`, with `ingredients` and `steps` front matter arrays)
+- `pages/` — All other static pages (Liquid or Markdown)
 
 ### Front matter conventions
 
 Posts support: `title`, `description`, `tags` (Title Case), `guest` (guest author name), `external` (URL — listed but not locally rendered), `deprecated` (boolean), `edits` (array), `toc` (boolean, default true), `image`.
 
-### Data files (`_data/`)
+### Data files (`data/`)
 
 - `site.js` — Global config: URL, author, nav, feature flags
 - `git.js` — Maps file paths to last-modified dates (used for `update_date`)
 - `projects.json`, `speaking.json` — Structured content for those pages
 
-### Custom plugins (`_plugins/`)
+### Custom plugins (`plugins/`)
 
 - `utilities.js` — HTML minification, emoji a11y wrapping (`<span role="img" aria-label>`), markdown rendering, callout shortcodes, custom Liquid filters
 - `post-stats.js` — Aggregates word counts, reading times, tag popularity across all posts; exposed as `postStats` collection
@@ -54,11 +54,11 @@ Posts support: `title`, `description`, `tags` (Title Case), `guest` (guest autho
 
 ### Testing
 
-Tests in `_tests/` use Node.js's native `test` module with Cheerio for DOM assertions. They validate the built output — run `npm run build` before running tests in CI. Tests cover: meta tags, Open Graph, structured data (JSON-LD), RSS, sitemap, asset paths.
+Tests in `tests/` use Node.js's native `test` module with Cheerio for DOM assertions. They validate the built output — run `npm run build` before running tests in CI. Tests cover: meta tags, Open Graph, structured data (JSON-LD), RSS, sitemap, asset paths.
 
 ### Deployment
 
-Hosted on Netlify. `_redirects` and `_headers` are passthrough-copied to output. Draft posts are hidden in production (`renderDrafts` flag in `.eleventy.js`).
+Hosted on Netlify. `public/_redirects` and `public/_headers` are passthrough-copied to the output root. Draft posts are hidden in production (`renderDrafts` flag in `.eleventy.js`).
 
 ### Edge function: Markdown content negotiation
 

@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import siteData from '../../_data/site.js'
+import siteData from '../../data/site.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(__dirname, '..', '..')
@@ -19,7 +19,7 @@ export async function readJson(relativePath) {
   return JSON.parse(text)
 }
 
-/** Canonical site origin (matches `_data/site.js` `url`, no trailing slash). */
+/** Canonical site origin (matches `data/site.js` `url`, no trailing slash). */
 export function getSiteUrl() {
   return siteData.url.replace(/\/+$/, '')
 }

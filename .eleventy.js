@@ -2,10 +2,10 @@ import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
 import footnotes from 'eleventy-plugin-footnotes'
-import injectHeadingAnchors from './_plugins/heading-anchors.js'
-import postStatsPlugin from './_plugins/post-stats.js'
-import tocPlugin from './_plugins/toc.js'
-import utilities from './_plugins/utilities.js'
+import injectHeadingAnchors from './plugins/heading-anchors.js'
+import postStatsPlugin from './plugins/post-stats.js'
+import tocPlugin from './plugins/toc.js'
+import utilities from './plugins/utilities.js'
 
 const PRODUCTION = process.env.NODE_ENV === 'production'
 export const CONFIG = {
@@ -49,7 +49,7 @@ export default function (config) {
   config.addPlugin(postStatsPlugin)
   config.addPlugin(tocPlugin)
   if (CONFIG.syntaxHighlight) config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
-  if (!CONFIG.markdownAlternative) config.ignores.add('_pages/blog/index-markdown.liquid')
+  if (!CONFIG.markdownAlternative) config.ignores.add('pages/blog/index-markdown.liquid')
   config.ignores.add('CLAUDE.md')
 
   // Static file passthrough
@@ -86,25 +86,25 @@ export default function (config) {
   // ---------------------------------------------------------------------------
   config.addCollection('posts', c =>
     c
-      .getFilteredByGlob('_posts/*.md')
+      .getFilteredByGlob('posts/*.md')
       .filter(utilities.isPostVisible)
       .sort((a, b) => b.date - a.date),
   )
   config.addCollection('internal_posts', c =>
     c
-      .getFilteredByGlob('_posts/*.md')
+      .getFilteredByGlob('posts/*.md')
       .filter(utilities.isPostRendered)
       .sort((a, b) => b.date - a.date),
   )
-  config.addCollection('snippets', c => c.getFilteredByGlob('_pages/snippets/*.md'))
-  config.addCollection('recipes', collection => collection.getFilteredByGlob('_pages/recipes/*.md'))
+  config.addCollection('snippets', c => c.getFilteredByGlob('pages/snippets/*.md'))
+  config.addCollection('recipes', collection => collection.getFilteredByGlob('pages/recipes/*.md'))
 
   return {
     dir: {
       output: './_site',
-      layouts: '_layouts',
-      includes: '_includes',
-      data: '_data',
+      layouts: 'layouts',
+      includes: 'includes',
+      data: 'data',
       templateFormats: ['html', 'liquid', 'md', '11ty.js'],
     },
   }
