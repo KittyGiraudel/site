@@ -32,10 +32,11 @@ This prompt displays:
 - a lightning if you have some modified files in your working directory or in your staging area, waiting to be packed in a commit
 - an up, down or up-and-down arrow if you have commits to push or pull from remote repository
 
-<figure class="Figure">
-<img src="/assets/images/git-tips-and-tricks-part-1/git-prompt.png" alt="" />
-<figcaption>A Nguyen flavoured Git prompt</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/git-tips-and-tricks-part-1/git-prompt.png",
+  caption: "A Nguyen flavoured Git prompt",
+  lazy: false
+%}
 
 In this image, I’m working on the “myFork” branch and I have modified and/or staged some files but I don’t have any commit to push or to pull.
 

@@ -14,10 +14,11 @@ Although after a couple of minutes digging into their code, I noticed the CSS ou
 
 Hence, a short blog post relating all this.
 
-<figure class="Figure">
-<img src="/assets/images/star-rating-widget-with-sass/rating-widget.png" alt="" />
-<figcaption>Star-rating widget from Yelp</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/star-rating-widget-with-sass/rating-widget.png",
+  caption: "Star-rating widget from Yelp",
+  lazy: false
+%}
 
 ## What’s the problem?
 

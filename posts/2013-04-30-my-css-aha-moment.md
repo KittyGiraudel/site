@@ -15,10 +15,10 @@ God, that sounds stupid now but it really helped in understanding how to make ef
 
 And when you get that and most generally the whole box-model (that says width equals `width + padding-left + padding-right + border-left + border-right.`), everything becomes so simple.
 
-<figure class="Figure">
-<img src="/assets/images/css-aha-moment/box-model.jpg" alt="" loading="lazy">
-<figcaption>CSS Box Model</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/css-aha-moment/box-model.jpg",
+  caption: "CSS Box Model"
+%}
 
 Seriously, the first thing to understand when learning CSS is that every element is following the same pattern: **a content-box in a padding-box in a border-box in a margin-box**; I don’t know why my teachers didn’t even start with that.
 

@@ -8,10 +8,11 @@ image: /assets/images/interview-manoela-ilic/manoela.jpg
 
 {% callout %} The wonderful [Manoela Ilic](https://twitter.com/crnacura) also known as Mary Lou, co-founder of [Codrops](https://tympanus.net/codrops/) has accepted to answer a few questions. Below is her interview. Enjoy! {% endcallout %}
 
-<figure class="Figure">
-<img src="/assets/images/interview-manoela-ilic/manoela.jpg" alt="Photo Manoela Ilic" />
-<figcaption>Portrait of Manoela Ilic</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/interview-manoela-ilic/manoela.jpg",
+  caption: "Portrait of Manoela Ilic",
+  lazy: false
+%}
 
 You are kind of a mysterious person. Maybe could you introduce yourself?
 
@@ -23,10 +24,10 @@ You are kind of a mysterious person. Maybe could you introduce yourself?
 
 Could you tell us a little bit more about Codrops? Where did the idea came from and what do you do for it?
 
-<figure class="Figure">
-<img src="/assets/images/interview-manoela-ilic/codrops.png" alt="Codrops logo" loading="lazy" />
-<figcaption>Codrops logo</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/interview-manoela-ilic/codrops.png",
+  caption: "Codrops logo"
+%}
 
 > I set up a WordPress blog in late 2009 thinking that I could share some useful snippets with fellow developers. I was doing some beginner mobile web development back then and I just wanted to share what I learnt and what I thought could be helpful. Snippets turned into tutorials over time and now Codrops turned into an almost full-time job :)
 >

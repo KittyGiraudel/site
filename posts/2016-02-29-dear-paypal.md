@@ -24,10 +24,12 @@ Let me try to clear this up a bit. For starters, there is absolutely no good rea
 
 You surely know the saying: “hard to guess, easy to remember.” It turns out, we humans are very good at remembering sentences. Because they make sense. By preventing a password from being longer than 20 characters and most importantly from containing any space, you basically prevent people from using sentences. And when you prevent people from using _passphrases_, you make them choose something small and simple enough to be remembered, which is a dull and ridiculously easy-to-crack password.
 
-<figure class="Figure">
-  <img src="/assets/images/dear-paypal/xkcd.png" alt="Hard to guess, easy to remember" />
-  <figcaption>From <a href="https://xkcd.com/936/">xkcd #936</a></figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/dear-paypal/xkcd.png",
+  caption: "From <a href='https://xkcd.com/936/'>xkcd #936</a>",
+  alt: "Hard to guess, easy to remember",
+  lazy: false
+%}
 
 On top of that, you also make the process of choosing / changing a password so hard and painful. Finding a password is quite annoying in itself. How do you think people feel when they have to find 2, 3 or 4 passwords in a row because none of them fit your stupid “strength” criteria?
 
@@ -55,10 +57,11 @@ Now I guess the funny part is how I managed to solve this. I signed in with my p
 
 Last but not least, I would like to tell you about phone numbers. For starters, phone numbers are not actual numbers. I know the name is misleading, but you cannot reasonably think that a phone number is made exclusively of numbers. There are also spaces, plus signs, parentheses, and a lot of things. So `[0-9]*` is not a correct pattern for this.
 
-<figure class="Figure">
-  <img src="/assets/images/dear-paypal/phone-html.png" alt="Incorrect pattern attribute for a phone number" loading="lazy" />
-  <figcaption>Incorrect <code>pattern</code> for a phone number</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/dear-paypal/phone-html.png",
+  caption: "Incorrect <code>pattern</code> for a phone number",
+  alt: "Incorrect pattern attribute for a phone number"
+%}
 
 Another problem of storing phone numbers as actual numbers is that leading zeros are getting removed. This is an issue. _0102030405_ is a valid phone number. _102030405_ is not. The leading zero matters. Again, a phone number is not an actual number. _01 02 03 04 05_ is a phone number. _102030405_ is not.
 

@@ -24,12 +24,12 @@ What we wanted was for the primary button to be on the side of the dominant hand
 
 The way we thought we could detect the user’s dominant hand was by recording and scoring taps based on whether they occur on the left- or right-side of full-width buttons. We assumed (perhaps incorrectly) a right-handed user would tap buttons towards the right side of the screen, while a left-handed user would tap buttons between the left edge and the center.
 
-<figure class="Figure">
-<img src="/assets/images/dominant-hand-respecting-design/thumb-zone-mapping-opt.png" alt="An illustration of the reachable areas of a mobile screen with the thumb for the left hand, both hands, and the right hand" />
-<figcaption>
-Illustration from Samantha Ingram in <a href="https://www.smashingmagazine.com/2016/09/the-thumb-zone-designing-for-mobile-users/">The Thumb Zone: Designing For Mobile Users</a> on Smashing Magazine
-</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/dominant-hand-respecting-design/thumb-zone-mapping-opt.png",
+  caption: "Illustration from Samantha Ingram in <a href='https://www.smashingmagazine.com/2016/09/the-thumb-zone-designing-for-mobile-users/'>The Thumb Zone: Designing For Mobile Users</a> on Smashing Magazine",
+  alt: "An illustration of the reachable areas of a mobile screen with the thumb for the left hand, both hands, and the right hand",
+  lazy: false
+%}
 
 We wrote a script that would intercept taps happening on elements considered full-width and check on which side they occurred, and give them a score between -1 (left edge) to +1 (right edge). As we recorded more taps, we would make that score more and more accurate.
 

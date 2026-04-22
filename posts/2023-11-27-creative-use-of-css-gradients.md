@@ -11,10 +11,12 @@ I work at [cofenster](https://cofenster.com) where we build a video creation pla
 
 In our live preview editor, we want to display the scenes boundaries in the video player track. A little bit like [video chapters on YouTube](https://support.google.com/youtube/answer/9884579?hl=en) if you will.
 
-<figure class="Figure">
-<img src="/assets/images/creative-use-of-css-gradients/video-scenes-markers.png" alt="Screenshot of the Cofenster customer player featuring the scene division of the player track" />
-<figcaption>The hard color stops indicate the different scenes composing the final video</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/creative-use-of-css-gradients/video-scenes-markers.png",
+  caption: "The hard color stops indicate the different scenes composing the final video",
+  alt: "Screenshot of the Cofenster customer player featuring the scene division of the player track",
+  lazy: false
+%}
 
 There are certainly plenty ways to build something like that, and I decided to implement it using CSS linear gradients. It was the simplest approach considering the rest of the code.
 

@@ -25,10 +25,10 @@ If I were to use Trello to manage my life, the first thing to do was opening a d
 - A “Groceries” column where I write things I need to buy next time I go do the groceries so I stop coming home only to realize I forgot to buy milk;
 - A “Miscellaneous” column where I put anything that cannot fit in the 6 others, such as appointments.
 
-<figure class="Figure">
-  <img src="/assets/images/how-i-use-trello/trello-overview.png" alt="An overview of my Trello board" loading="lazy" />
-  <figcaption>An overview of my Trello board</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/how-i-use-trello/trello-overview.png",
+  caption: "An overview of my Trello board"
+%}
 
 ## Actually using Trello
 
@@ -42,10 +42,10 @@ It might sound silly but I also really dig using Trello for the groceries. I use
 
 For time-boxed items, I use the “Due date” feature from Trello. The coupling of the date with a color system getting more and more proheminent as the date comes closer makes it very valuable to actually achieve things before it’s too late. Could it be having an appointment, sending an invoice, or finishing this chapter the editor keeps asking for.
 
-<figure class="Figure">
-  <img src="/assets/images/how-i-use-trello/trello-labels.png" alt="One label per project in the Web column" loading="lazy" />
-  <figcaption>One label per project in the Web column</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/how-i-use-trello/trello-labels.png",
+  caption: "One label per project in the Web column"
+%}
 
 As my _Web_ column usually contains a large number of cards, I like to use labels to filter them. By having one colour (label) per project, it gets easier to spot which projects need extra attention. Another use of labels could be to adopt a more _Scrum-y_ approach, with only 3 columns: _To do_, _Doing_ and _Done_, and then use colors to replace my current category-based column setup. You’d have a label for Web, a label for People, a label for Twitter and so on. Although given the boolean state (done or not done) of most items and the fact that we don’t care about an item once done, I don’t feel like this Agile approach would suit me well.
 
@@ -53,10 +53,10 @@ One good thing from Trello is also the ability to re-order cards in a column whi
 
 ## Final thoughts
 
-<figure class="Figure">
-  <img src="/assets/images/how-i-use-trello/trello-due-date.png" alt="Using due date for time-boxed items" loading="lazy" />
-  <figcaption>Using due date for time-boxed items</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/how-i-use-trello/trello-due-date.png",
+  caption: "Using due date for time-boxed items"
+%}
 
 I have been using Trello like this for the last few months and I must say it has proven to work well for me so far. I also shared this board with my girlfriend so she can deal with stuff that implies us both. She actually has a board of her own (which has waaaaay more cards than mine) to keep track of everything she has to do.
 

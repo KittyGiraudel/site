@@ -359,10 +359,11 @@ One way would be to make the population threshold much much higher, but then you
 
 Instead, I decided to look into the main symptom for any major incident we had: timeouts. It always manifests the same way: all of the sudden, {% footnoteref "timeouts" footnote_timeouts %}all client-side packets start timing out{% endfootnoteref %}. The logs are all red and angry, everything just shows “deadline has elapsed”. There is no self-recovery either: it’s not a burst problem — it’s the runtime in a deadlock.
 
-<figure class="Figure">
-<img src="/assets/images/rust-watchdog/error-logs.png" alt="Screenshot of Better Stack live tail showing a lot of timeout errors" loading="lazy" />
-<figcaption>Wall of “deadline has elapsed” error logs</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/rust-watchdog/error-logs.png",
+  caption: "Wall of “deadline has elapsed” error logs",
+  alt: "Screenshot of Better Stack live tail showing a lot of timeout errors"
+%}
 
 {% assign footnote_segqueue = "One reason I ended up using a <code>SegQueue</code> is because I wanted a lock-free structure. When the server is in a deadlock, there can be hundreds or thousands of timeouts within a short window. I didn’t want lock acquisition to become a bottleneck for keeping track of timeouts." %}
 
@@ -463,10 +464,11 @@ From an operations perspective, I tried to make the watchdog as boring as possib
 
 Day‑to‑day, the team doesn’t think about the watchdog much; it just quietly does its job in the background. Speaking of which, this is a flowchart of the watchdog architecture:
 
-<figure class="Figure">
-<img src="/assets/images/rust-watchdog/flowchart.svg" alt="Mermaid diagram of the whole watchdog process" loading="lazy" />
-<figcaption>Flowchart of the whole process (open <a href="/assets/images/rust-watchdog/flowchart.svg" target="_blank" rel="noopener noreferrer">large size</a>)</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/rust-watchdog/flowchart.svg",
+  caption: "Flowchart of the whole process (open <a href='/assets/images/rust-watchdog/flowchart.svg' target='_blank' rel='noopener noreferrer'>large size</a>)",
+  alt: "Mermaid diagram of the whole watchdog process"
+%}
 
 ## Lessons learned
 

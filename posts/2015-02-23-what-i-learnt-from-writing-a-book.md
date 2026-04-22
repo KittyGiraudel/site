@@ -20,10 +20,11 @@ Let me start with a couple of things I should have told myself more often during
 
 I should have kept this in mind during those months, and so should you if you happen to write a book yourself.
 
-<figure class="Figure">
-<img src="/assets/images/what-i-learnt-from-writing-a-book/book-cover.png" alt="Cover of “CSS 3 Pratique du Design Web”" />
-<figcaption>Cover of “CSS 3 Pratique du Design Web”</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/what-i-learnt-from-writing-a-book/book-cover.png",
+  caption: "Cover of “CSS 3 Pratique du Design Web”",
+  lazy: false
+%}
 
 ## You will run out of time
 

@@ -64,11 +64,11 @@ So [Mike Smart](https://www.linkedin.com/in/mike-smart-83909a1b5/) and I designe
 
 This works surprisingly (or is it?) well. Not that we don’t reject anyone at that stage; we do. I say it works well because it’s a healthy way to assess technical expertise and we had good feedback about it. It’s relatively time-efficient (more so than any take-home challenge I’ve seen at least), and both parties benefit from it. The candidate also gets a chance to meet us, ask questions, get a feel for what it’s going to be like to work with us — none of which happens with a silly coding exercise given as homework.
 
-<figure class="Figure">
-<img src="/assets/images/hiring-at-gorillas/woc-1.jpg" alt="Three women of color sitting on a couch, each with a laptop covered, some of them adorned with coding-related stickers" loading="lazy">
-<figcaption>
-Picture courtesy of <a href="https://www.wocintechchat.com/" rel="noopener noreferrer">#WOCinTech Chat</a></figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/hiring-at-gorillas/woc-1.jpg",
+  caption: "Picture courtesy of <a href='https://www.wocintechchat.com/'>#WOCinTech Chat</a>",
+  alt: "Three women of color sitting on a couch, each with a laptop covered, some of them adorned with coding-related stickers"
+%}
 
 ### Pre-assessing early
 
@@ -99,10 +99,11 @@ Knowing all that, we wanted to find a way to get to know our candidates during o
 
 So, since pretty much the beginning, we have had a “culture-add interview” as part of the process for all our roles. Now I know what some of you may be thinking. Too often, the concept of a cultural interview — sometimes named “culture fit” — is problematic because it ultimately encourages homogeneity within an organization by rejecting anyone seemingly “different”. A woman in a predominantly male org, a person of color in an overwhelmingly white environment, a disabled person in a generally abled and unaware community. This is a recipe for cultivating systemic issues and perpetrating them at scale within a company. There is [this fantastic illustration from Meg](https://dribbble.com/shots/3810065-Not-a-culture-fit) that shows a woman sitting across the table of 6 men in suits, with the caption “Not a culture fit.” Touché.
 
-<figure class="Figure">
-<img src="/assets/images/hiring-at-gorillas/not-a-culture-fit.png" alt="Illustration of a woman sitting at an interview table in front of 6 men in business suits" loading="lazy" />
-<figcaption>“Not a culture fit” by <a href="https://dribbble.com/shots/3810065-Not-a-culture-fit" rel="noopener noreferrer">Meg</a></figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/hiring-at-gorillas/not-a-culture-fit.png",
+  caption: "“Not a culture fit” by <a href='https://dribbble.com/shots/3810065-Not-a-culture-fit'>Meg</a>",
+  alt: "Illustration of a woman sitting at an interview table in front of 6 men in business suits"
+%}
 
 This is why we call it “culture-add” and not “culture fit.” The difference may be subtle but it matters. The goal is not to fit into our culture, but to enhance it. We emphasize on the fact that the objective is not to find out whether one would want to hang out with the candidate outside of work, but to look for wherever we believe there is the possibility of efficient collaboration. Truth be told, we haven‘t always been perfect with that: the first draft of our documentation dating back to January 2021 recommended conducting the “airport test”, in which the interviewer has to figure out whether they’d feel comfortable being stuck in an airport with the candidate. Needless to say this is a horrendous idea.
 

@@ -11,10 +11,11 @@ Hey people! It’s been a while I haven’t post anything; last month has been p
 
 It’s a one-day French conference at Strasbourg (France) gathering 10 speakers and more than 150 persons to talk about frontend technologies, accessibility, ergonomy, webdesign, and so much more.
 
-<figure class="Figure">
-<img src="/assets/images/feedbacks-kiwiparty/code-is-poetry.jpg" alt="">
-<figcaption>Code is poetry - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/feedbacks-kiwiparty/code-is-poetry.jpg",
+  caption: "Code is poetry - photo by <a href='http://whyalix.com'>Alix Lucas</a>",
+  lazy: false
+%}
 
 So Friday June 28 at 2:00PM I was on stage to talk about Sass, and how we can use preprocessors to push our stylesheets to an upper level: “Kick-ass CSS with Sass” (“Des CSS kick-ass avec Sass”).
 
@@ -24,10 +25,10 @@ Basically, my talk is a collection of code snippets and real-life usecases of Sa
 
 I’d never been at a conference before so it was pretty much what I could expect. A bunch of awesome people, great talks, food, and most of all: web. It was an amazing day, for sure.
 
-<figure class="Figure">
-<img src="/assets/images/feedbacks-kiwiparty/laptops-and-food.jpg" alt="" loading="lazy" >
-<figcaption>Laptops and food - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/feedbacks-kiwiparty/laptops-and-food.jpg",
+  caption: "Laptops and food - photo by <a href='http://whyalix.com'>Alix Lucas</a>"
+%}
 
 Plus, we had the opportunity to meet two awesome dudes of our field:
 
@@ -40,10 +41,10 @@ I could also meet all those great French people from Twitter and put some faces 
 
 It went great. People seemed very interested in the topic and I felt like they were understanding the main point of the conference, so it’s something!
 
-<figure class="Figure">
-<img src="/assets/images/feedbacks-kiwiparty/kitty-giraudel.jpg" alt="" loading="lazy" >
-<figcaption>Focus - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/feedbacks-kiwiparty/kitty-giraudel.jpg",
+  caption: "Focus - photo by <a href='http://whyalix.com'>Alix Lucas</a>"
+%}
 
 I was kind of nervous, obviously. My laptop dying the night before the big day was not to help though… Hopefully I could buy a Chromebook (which will probably the topic for another article) and all went well.
 
@@ -73,10 +74,10 @@ Oh, and of course here are my [slides](https://slid.es/kittygiraudel/css-kick-as
 
 ## Final words
 
-<figure class="Figure">
-<img src="/assets/images/feedbacks-kiwiparty/stuff.jpg" alt="" loading="lazy" >
-<figcaption>Stuff - photo by <a href="http://whyalix.com">Alix Lucas</a></figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/feedbacks-kiwiparty/stuff.jpg",
+  caption: "Stuff - photo by <a href='http://whyalix.com'>Alix Lucas</a>"
+%}
 
 So all in all, it was an amazing experience. Big thanks to the [Alsacreations](https://alsacreations.fr/) team and to all of you who were in the room to hear my talk.
 

@@ -11,10 +11,11 @@ A couple of days ago, [Ana Tudor](https://twitter.com/thebabydino) showed me how
 
 To be truely honest, I wasn’t impressed that much since I am pretty familiar with Ana’s work which is always amazing. If you haven’t seen [her 3D geometric shapes](https://stackoverflow.com/users/1397351/ana) made of pure CSS, then you definitely should.
 
-<figure class="Figure">
-<img alt="" src="/assets/images/sass-mixin-star/css-star.png">
-<figcaption>A 6-points star mixin made with CSS</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/sass-mixin-star/css-star.png",
+  caption: "A 6-points star mixin made with CSS",
+  lazy: false
+%}
 
 Anyway, when I saw this I thought it could be fun to make a [Sass version](https://codepen.io/KittyGiraudel/pen/LkoGE) of it to clean the code and ease the use. Let me show you what I ended up with.
 
@@ -22,10 +23,10 @@ Anyway, when I saw this I thought it could be fun to make a [Sass version](https
 
 The first thing was to understand how Ana managed to achieve such a shape with a single element (and 2 pseudo-elements). Long story short: **chained CSS transforms**.
 
-<figure class="Figure">
-<img src="/assets/images/sass-mixin-star/rhombius.png" alt="">
-<figcaption>3 rhombius = a 6-points star</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/sass-mixin-star/rhombius.png",
+  caption: "3 rhombius = a 6-points star"
+%}
 
 Basically she stacks the element and its 2 pseudo-elements on top of each other after applying several chained transforms to each of them to have the appropriate shape (a [rhombus](https://www.mathopenref.com/rhombus.html)).
 

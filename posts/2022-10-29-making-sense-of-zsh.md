@@ -16,12 +16,12 @@ Having a nice and clean terminal is important (to me at least) and I’ve done m
 
 This blog post is a little unusual because I’m writing it as I’m doing research, so it may not be very straightforward and potentially contain inaccurate information. It’s a “learn-by-teaching” kind of thing so please, kindly point out any mistake to me on Twitter (or [edit this blog post on GitHub](https://github.com/KittyGiraudel/site/blob/main/_posts/2022-10-29-making-sense-of-zsh.md) directly).
 
-<figure class="Figure">
-<img src="/assets/images/making-sense-of-zsh/zsh-prompt.png" alt="Screenshot of a zsh prompt featuring: a green or red bullet based on the status of the previous command; the name of the current folder in pink; the name of the current branch in blue; the command in white; and the current time in gray on the right side." />
-<figcaption>
-This is what my zsh prompt looks like, and this is what we’re going to dig into today.
-</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/making-sense-of-zsh/zsh-prompt.png",
+  caption: "This is what my zsh prompt looks like, and this is what we’re going to dig into today.",
+  alt: "Screenshot of a zsh prompt featuring: a green or red bullet based on the status of the previous command; the name of the current folder in pink; the name of the current branch in blue; the command in white; and the current time in gray on the right side.",
+  lazy: false
+%}
 
 ## Git completion
 

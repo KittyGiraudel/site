@@ -37,10 +37,11 @@ $btn-background: (
 ) !default;
 ```
 
-<figure class="Figure">
-<img src="https://i.imgur.com/shEzy8H.jpg" alt="Variable all the things!" />
-<figcaption>Variable all the things!</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "https://i.imgur.com/shEzy8H.jpg",
+  caption: "Variable all the things!",
+  lazy: false
+%}
 
 Everything might not be intuitive so let me explain what each variable is for:
 

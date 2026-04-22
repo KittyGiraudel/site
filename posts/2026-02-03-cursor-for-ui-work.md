@@ -18,10 +18,12 @@ While the game is fun, I was more interested in writing an automated solution fo
 
 Just for fun, I also wanted to build a little UI so you can make your own drafts, and run the solver on them. It was also a good opportunity to see what Cursor is like for UI work, as someone who has done frontend for almost 15 years. You can [try the game for yourself here](https://github.com/KittyGiraudel/par-odin-solver/tree/main/src/solver).
 
-<figure class="Figure">
-<img src="/assets/images/cursor-for-ui-work/par-odin.png" alt="Screenshot of the Par Odin! solver interface in Chrome" />
-<figcaption>The browser UI for the <em>Par&nbsp;Odin!</em> solver</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/cursor-for-ui-work/par-odin.png",
+  caption: "The browser UI for the <em>Par&nbsp;Odin!</em> solver",
+  alt: "Screenshot of the Par Odin! solver interface in Chrome",
+  lazy: false
+%}
 
 ## Getting it off the ground
 

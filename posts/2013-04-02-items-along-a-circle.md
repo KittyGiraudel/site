@@ -8,10 +8,10 @@ tags:
 
 If you like to experiment or do a little bit of webdesign, then you have probably already tried to put elements on a circle. Unless you’re a CSS hacker, you’ve probably set a class/ID per item, then used `left` and `top` accordingly to position everything around the circle.
 
-<figure class="Figure">
-<img alt='5 images positioned along a circle with CSS' src='/assets/images/items-on-circle/5-items.png' />
-<figcaption>5 images positioned along a circle with CSS</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/items-on-circle/5-items.png",
+  caption: "5 images positioned along a circle with CSS"
+%}
 
 But in most cases, you would have ended doing this with JavaScript, or jQuery. There are plenty of plugins doing this out there, and no doubt they are all good.
 

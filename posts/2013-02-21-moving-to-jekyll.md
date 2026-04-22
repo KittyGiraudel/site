@@ -44,11 +44,6 @@ Everything was handled manually and I was pretty happy back then (what a fool…
 
 ### It was a bad idea
 
-<figure class="Figure">
-<img src="/assets/images/jekyll/oh-god-why.png" alt="Oh god… why?" />
-<figcaption>Oh god… why?</figcaption>
-</figure>
-
 But soon enough I realized I couldn’t stand this any longer. Every time I had to edit a single comma in either the head, the sidebar or the footer, I had to open all the files all over again to fix it. YAAAAAAAAY!
 
 So I tried to make things work a little better by themselves. I turned everything to PHP and used `include()` for shared parts throughout all pages. It was already way better. But once again I wanted to push things further.

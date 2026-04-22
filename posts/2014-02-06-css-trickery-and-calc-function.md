@@ -28,10 +28,11 @@ Let me translate the post from Rémi for you:
 8. No JavaScript, only HTML and CSS.
 9. It should work from IE 9 and gracefully degrades on older browsers.
 
-<figure class="Figure">
-<img src="/assets/images/calc-css-riddle/gollum-riddle.gif" alt="">
-<figcaption>Me trying to figure out a solution to a CSS issue</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/calc-css-riddle/gollum-riddle.gif",
+  caption: "Me trying to figure out a solution to a CSS issue",
+  lazy: false
+%}
 
 The tricky part is _5_. After checking at proposals submitted by various developers on Rémi’s post, it seems most of them didn’t catch that **all grey rectangles should be the same width**. Here is what you should be having:
 
@@ -53,8 +54,10 @@ Many devs including myself jumped on the code assuming all cells would be the sa
 
 Sometimes putting things on paper (well, in a text editor in my case) can help a lot to get things. Here is what I wrote:
 
-    orange | grey | margin | margin | grey | orange | grey | margin | margin | grey | orange | grey | margin | margin | grey | orange
-      200  |  ?   |   10   |   10   |  ?   |   200  |  ?   |   10   |   10   |  ?   |   200  |  ?   |   10   |   10   |  ?   |  200
+```
+orange | grey | margin | margin | grey | orange | grey | margin | margin | grey | orange | grey | margin | margin | grey | orange
+  200  |  ?   |   10   |   10   |  ?   |   200  |  ?   |   10   |   10   |  ?   |   200  |  ?   |   10   |   10   |  ?   |  200
+```
 
 This is what a row looks like.
 

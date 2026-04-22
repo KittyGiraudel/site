@@ -83,17 +83,17 @@ The first thing to know is that I, as most tech writers, use Markdown for basica
 
 Sublime Text comes with a default Markdown syntax highlighter, although you might need some extra features if you happen to write a lot in the editor. For this, there is [Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended). This plugin adds extra feature to the default Markdown highlighter, such as highlighting for any YAML Front Matter and sub-highlighting of fenced code blocks. _This_, is absolutely amazing. Basically, that allows you to have Markdown syntax highlighting in the current file **and** highlighting code blocks with their relevant highlighter (CSS, JS or whatever).
 
-<figure class="Figure">
-  <img src="/assets/images/writing-in-sublime-text/sub-highlighting.png" alt="" loading="lazy" />
-  <figcaption>Lines 31 to 37 are being highlighted as SCSS</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/writing-in-sublime-text/sub-highlighting.png",
+  caption: "Lines 31 to 37 are being highlighted as SCSS"
+%}
 
 Last but not least tool for Markdown: [Markdown Preview](https://github.com/revolunet/sublimetext-markdown-preview). This plugin is actually quite huge, but there is one thing I use it for: previewing the current file in the browser using the GitHub API (or Python-Markdown when running offline). I don’t use it that often, but sometimes it is better to actual render the file in a browser to see what it looks like (especially when it involves images).
 
-<figure class="Figure">
-  <img src="/assets/images/writing-in-sublime-text/preview-in-browser.png" alt="" loading="lazy" />
-  <figcaption>This article previewed in Chrome locally thanks to Markdown Preview</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/writing-in-sublime-text/preview-in-browser.png",
+  caption: "This article previewed in Chrome locally thanks to Markdown Preview"
+%}
 
 ### 1 word, 2 words, 3 words…
 
@@ -111,10 +111,10 @@ Last major Sublime Text plugin for me: [Sidebar Enhancements](https://github.com
 
 Sidebar Enhancements, as the name states, improves the sidebar projet manager by adding extra options on right click, such as a clipboard to actually copy and paste files, a move command, and much more.
 
-<figure class="Figure">
-  <img src="/assets/images/writing-in-sublime-text/sidebar-enhancements.png" alt="" loading="lazy" />
-  <figcaption>Right click on file provides a lot of new options thanks to Sidebar Enhancements</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/writing-in-sublime-text/sidebar-enhancements.png",
+  caption: "Right click on file provides a lot of new options thanks to Sidebar Enhancements"
+%}
 
 Last time I had a fresh install of Sublime Text, I realized how poor the default sidebar is compared to the one provided by this excellent plugin. Highly recommended.
 

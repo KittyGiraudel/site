@@ -31,10 +31,11 @@ The whole shell is not in aluminium but in (good) plastic which is why you don�
 
 In any case, you can tell it is a small computer halfway through a regular laptop and a netbook.
 
-<figure class="Figure">
-<img src="/assets/images/chromebook-review/chromebook.jpg" alt="">
-<figcaption>Samsung Chromebook - photo by <a href="http://alixlucas.com">Alix Lucas</a></figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/chromebook-review/chromebook.jpg",
+  caption: "Samsung Chromebook - photo by <a href='http://alixlucas.com'>Alix Lucas</a>",
+  lazy: false
+%}
 
 ### Screen
 
@@ -62,10 +63,10 @@ This is definitely a plus not having to worry much about the battery (at least f
 
 The keyboard is pretty nice, really. **Keys are large and smooth** so typing is quite easy and most importantly, noiseless.
 
-<figure class="Figure">
-<img src="/assets/images/chromebook-review/chromebook-keyboard.jpg" alt="" loading="lazy" >
-<figcaption>Samsung Chromebook - photo by <a href="http://alixlucas.com">Alix Lucas</a></figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/chromebook-review/chromebook-keyboard.jpg",
+  caption: "Samsung Chromebook - photo by <a href='http://alixlucas.com'>Alix Lucas</a>"
+%}
 
 The Chromebook keyboard has been rearranged and optimized for web browsing. Indeed, the upper row contains _"back"_, _"forward"_ and _"refresh"_ keys. You also have a _"fullscreen"_ and a _"alt-tab"_ like keys along with the traditional _"luminosity"_, _"volume"_ and _"power"_ buttons.
 
@@ -93,10 +94,10 @@ Beware, HDMI connection may be a problem if you plan on connecting your laptop t
 
 Chrome OS is freaking fast. It takes about 6 seconds between the moment you press the power button and the moment you’re on the desktop. This is probably due to the fact **most applications and services run in the browser**. Indeed, there are very few things installed on the computer aside of Google Chrome.
 
-<figure class="Figure">
-<img src="/assets/images/chromebook-review/chrome-os.png" loading="lazy" >
-<figcaption>Minimal desktop of Chrome OS</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/chromebook-review/chrome-os.png",
+  caption: "Minimal desktop of Chrome OS"
+%}
 
 The Chromebook is a web-based laptop, running on a web-based OS to use web-based applications. If you can’t stand Google services or don’t plan on having internet, this laptop isn’t for you.
 

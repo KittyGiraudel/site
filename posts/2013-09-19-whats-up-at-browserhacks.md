@@ -72,10 +72,10 @@ This is a [feature request by Lea Verou](https://github.com/4ae9b8/browserhacks/
 
 Thanks to both Fabrice and Grunt, we managed to have all our CSS hacks checked with CSS Lint so you can know right away if a hack is valid or not. We’ll very soon have the same thing for JavaScript hacks with JSLint.
 
-<figure class="Figure">
-<img src="/assets/images/whats-up-at-browserhacks/validity.jpg" alt="" loading="lazy" >
-<figcaption>Display hacks validity and CSS Lint errors</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/whats-up-at-browserhacks/validity.jpg",
+  caption: "Display hacks validity and CSS Lint errors"
+%}
 
 Awesome little feature: in case the hack is invalid, we display the warning raised by CSS Lint when you hover the little cross at the bottom right of the hack. Pretty cool, right?
 

@@ -16,10 +16,11 @@ Months back at work, I have been asked to code a piece of design for the home pa
 
 First of all, this is what you should come up with:
 
-<figure class="Figure">
-<img src="/assets/images/the-magic-circle-a-css-brain-teaser/result.jpg" alt="">
-<figcaption>Beautiful, isn’t it?</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/the-magic-circle-a-css-brain-teaser/result.jpg",
+  caption: "Beautiful, isn’t it?",
+  lazy: false
+%}
 
 Obviously the difficult part is the transparent circle in the middle of the picture, not adding border-radius to the boxes. Anyway, as you can see we got 4 boxes (2 per row), each with its own color scheme because it’s prettier. On the middle of the frame, the four boxes are kind of cropped to make place to some kind of invisible circle. And in this circle there is a dark disk.
 

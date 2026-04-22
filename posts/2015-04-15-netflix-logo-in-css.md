@@ -13,10 +13,11 @@ The following is a guest post by [Gregor Adams](https://twitter.com/gregoradams)
 
 A few months ago I tested Netflix, immediately got hooked and got myself an account. I started watching a lot of series that I usually had to view elsewhere. Each episode or movie starts with the Netflix logo animation.
 
-<figure class="Figure">
-<img src="/assets/images/netflix-logo-in-css/logo.gif" alt="" />
-<figcaption>Original animated Netflix logo</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/netflix-logo-in-css/logo.gif",
+  caption: "Original animated Netflix logo",
+  lazy: false
+%}
 
 I immediately started thinking about implementing this in CSS. So after watching a few episodes I went over to [CodePen](https://codepen.io/pixelass) and started to work on the logo.
 
@@ -147,10 +148,10 @@ Here’s a demo on CodePen
 
 Let’s write a function for the 3d-effect and the shadow. I paused on one frame of the video I had made before and looked at it in detail.
 
-<figure class="Figure">
-<img src="/assets/images/netflix-logo-in-css/shadow.png" alt="" loading="lazy" />
-<figcaption>Image extracted from the original animated Netflix logo</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/netflix-logo-in-css/shadow.png",
+  caption: "Image extracted from the original animated Netflix logo"
+%}
 
 As you can see the 3d effect’s vanishing point is in the center while the shadow drops to the bottom right. Now we know what our function has to be able to do.
 
@@ -164,10 +165,10 @@ We will call this function inside keyframes so we want it to be able to handle a
 
 We need one more argument to define the depth of the shadow or 3d-effect.
 
-<figure class="Figure">
-<img src="/assets/images/netflix-logo-in-css/shadow-css.png" alt="" loading="lazy" />
-<figcaption>My CSS implementation of the previously shown image</figcaption>
-</figure>
+{% render "figure.liquid",
+  src: "/assets/images/netflix-logo-in-css/shadow-css.png",
+  caption: "My CSS implementation of the previously shown image"
+%}
 
 Here’s the function I am using to handle all these requirements:
 
