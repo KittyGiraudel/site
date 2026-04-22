@@ -1,11 +1,13 @@
 .Title {
   color: var(--pink);
-  font-size: 250%;
+  font-size: 225%;
   font-weight: 300;
   line-height: 1.15;
   margin: 0;
-  text-align: center;
   text-wrap: balance;
+  background-image: linear-gradient(to right, var(--pink), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (min-width: 768px) {
@@ -14,12 +16,8 @@
   }
 }
 
-.Title__link {
-  color: inherit;
-  display: inline-block;
-  border-bottom: 0;
-  background-image: linear-gradient(to right, var(--pink), var(--blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none;
+@media (min-width: 1024px) {
+  .Title {
+    margin-left: calc(var(--margin-offset) * -1);
+  }
 }

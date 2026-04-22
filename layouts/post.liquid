@@ -13,7 +13,7 @@ layout: default
     components/heading-anchors,
     components/hook,
     components/giscus,
-    components/post-date,
+    components/post-edits,
     components/code,
     components/table,
     components/table-of-contents,
@@ -24,13 +24,22 @@ layout: default
 <link rel="alternate" type="text/markdown" href="{{ page.url }}index.md" data-helmet>
 
 <article itemscope itemtype="https://schema.org/Article" class="Post">
-  {% assign reading_time = content | strip_html | reading_time %}
-  {% render "post_head.liquid",
-    updated_at: update_date,
-    created_at: creation_date,
-    guest: guest,
-    reading_time: reading_time
-  %}
+  <div class="Post__header">
+    {% assign reading_time = content | strip_html | reading_time %}
+    {% render "post_head.liquid",
+      updated_at: update_date,
+      created_at: creation_date,
+      guest: guest,
+      reading_time: reading_time
+    %}
+
+    {% if toc != false %}
+      {% assign toc_items = content | table_of_contents %}
+      {% if toc_items.size > 0 %}
+        {% render "table_of_contents.liquid", items: toc_items, toc_flat: toc_flat %}
+      {% endif %}
+    {% endif %}
+  </div>
 
   <div itemprop="articleBody">
     {% if deprecated %}
@@ -38,13 +47,6 @@ layout: default
     {% endif %}
     {% if edits %}
       {% render "post_edits.liquid", edits: edits %}
-    {% endif %}
-
-    {% if toc != false %}
-      {% assign toc_items = content | table_of_contents %}
-      {% if toc_items.size > 0 %}
-        {% render "table_of_contents.liquid", items: toc_items, toc_flat: toc_flat %}
-      {% endif %}
     {% endif %}
 
     {{ content }}

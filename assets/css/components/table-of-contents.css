@@ -1,35 +1,56 @@
+/**
+ * 1. Position context for the absolutely positioned content that pops out.
+ * 2. Reduce the font size of the table of contents to make it less intrusive.
+ */
 .TableOfContents {
-  padding: 1em 1.25em;
+  position: relative; /* 1 */
+  width: fit-content;
+  max-width: 300px;
+  min-width: 250px;
+  font-size: 80%; /* 2 */
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  /**
+   * 1. Make the table of contents full-width on small screens.
+   */
+  .TableOfContents {
+    width: 100%; /* 1 */
+    max-width: none; /* 1 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .TableOfContents {
+    margin-right: calc(var(--margin-offset) * -1);
+  }
+}
+
+/**
+ * 1. Cheap way to reduce the color of the title without introducing a new color.
+ * 2. Make the title appear interactive.
+ * 3. Prevent a weird text selection when double-clicking the title.
+ * 4. Remove the default little triangle from the summary.
+ * 5. Use the flex layout to push the custom arrow to the right.
+ */
+.TableOfContents__title {
+  opacity: 0.8; /* 1 */
+  cursor: pointer; /* 2 */
+  user-select: none; /* 3 */
+  list-style: none; /* 4 */
+  display: flex; /* 5 */
+  gap: 1ch; /* 5 */
+  padding: 0.75rem 1.25rem;
   border-radius: 1em;
   corner-shape: squircle;
   border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
   background-color: light-dark(#f6f4f9, #303132);
-  font-size: 90%;
-  margin-bottom: var(--vb);
 }
 
-@media (min-width: 700px) {
-  .TableOfContents {
-    float: right;
-    max-width: 300px;
-    margin-left: var(--vb);
-  }
-}
-
-@media (min-width: 1140px) {
-  .TableOfContents {
-    margin-right: -150px;
-    margin-bottom: var(--vb);
-  }
-}
-
-.TableOfContents__title {
-  margin: 0 0 var(--vb-half);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 80%;
-  opacity: 0.8;
+.TableOfContents__title:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
 }
 
 .TableOfContents__title .Fleuron {
@@ -55,4 +76,38 @@
 
 .TableOfContents__list--sublist .TableOfContents__item {
   font-size: 90%;
+}
+
+.TableOfContents::details-content {
+  position: absolute;
+  display: none;
+  background-color: light-dark(#f6f4f9, #303132);
+  padding: 0.75em 1.25em;
+  left: 0;
+  right: 0;
+  top: calc(100% - 2px);
+  border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
+  border-radius: 0 0 1em 1em;
+  corner-shape: squircle;
+}
+
+.TableOfContents[open]::details-content {
+  display: block;
+}
+
+.TableOfContents[open] .TableOfContents__title {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.TableOfContents .TableOfContents__title::after {
+  content: "↓";
+  font-family: monospace;
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+  margin-left: auto;
+}
+
+.TableOfContents[open] .TableOfContents__title::after {
+  transform: rotate(180deg);
 }

@@ -5,9 +5,9 @@ layout: default
 {% render "styles.liquid",
   inline: site.configuration.inline_assets,
   partials: "
+    pages/post,
     components/code,
-    components/collection-navigation,
-    components/post-date
+    components/collection-navigation
   "
 %}
 
@@ -21,12 +21,14 @@ layout: default
     {% endfor %}
 
     {% if related_post %}
-      <p class="PostDate">
+      <div class="Post__header">
+        <p class="Post__date">
         {% if date and show_date != false %}
           {{ date | time }} <span class="Fleuron" aria-hidden="true">❦</span> 
         {% endif %}
-        From <a href="{{ related }}">{{ related_post.data.title }}</a>
-      </p>
+          From <a href="{{ related }}">{{ related_post.data.title }}</a>
+        </p>
+      </div>
     {% endif %}
   {% endif %}
 

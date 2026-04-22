@@ -1,6 +1,11 @@
 .Project__header {
-  text-align: center;
   margin-bottom: var(--vb);
+}
+
+@media (min-width: 1024px) {
+  .Project__header {
+    margin-left: calc(var(--margin-offset) * -1);
+  }
 }
 
 .Project__description {
@@ -11,7 +16,6 @@
 
 .Project__tags .Tags {
   margin-bottom: var(--vb-thirds);
-  justify-content: center;
   gap: 0.5em;
 }
 

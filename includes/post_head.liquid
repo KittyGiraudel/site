@@ -9,22 +9,25 @@
 
 {% ensure created_at, "Required value 'created_at' is missing in post_head.liquid" %}
 
-<p class="PostDate">
+{% capture rest %}
+{%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
+<span class="Fleuron" aria-hidden="true">❦</span> {% if reading_time %}<span itemprop="timeRequired" title="Estimated read time">{{ reading_time }}</span>{% endif %}
+{% endcapture %}
+
+<p class="Post__date">
   {% if not updated_at %}
     {{ created_at | time: "datePublished" }}
+    {{ rest }}
   {% else %}
     {% assign created_date = created_at | date: "%Y-%m-%d" %}
     {% assign updated_date = updated_at | date: "%Y-%m-%d" %}
     {% assign was_updated = updated_date != created_date %}
   
     {% if was_updated %}
-      {{ created_at | time: "datePublished" }}
-      <span class="PostDate__updated">(edited {{ updated_at | time: "dateModified" }})</span>
+      {{ created_at | time: "datePublished" }}{{ rest }}
+      <span class="Post__date-updated">Edited on {{ updated_at | time: "dateModified" }}</span>
     {% else %}
-      {{ created_at | time: "datePublished" }}
+      {{ created_at | time: "datePublished" }}{{ rest }}
     {%  endif  %}
   {% endif %}
-
-  {%- if guest %}, by <span itemprop="author">{{ guest }}</span>{% endif %}
-  <span class="Fleuron" aria-hidden="true">❦</span> {% if reading_time %}<span itemprop="timeRequired" title="Estimated read time">{{ reading_time }}</span>{% endif %}
 </p>

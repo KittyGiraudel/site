@@ -3,6 +3,7 @@ title: Running ES6 code in the browser
 description: A technical write-up on running ES6 code in the browser
 tags:
   - JavaScript
+deprecated: true
 ---
 
 I recently wanted to create a tiny tiny React component outside of any React project I am currently working on. Something small, to be tested in the browser, just as an experiment. It actually took me some time to figure out the best way to work on this, so I thought it might be worth a short blog post in case you are in such a need too.

@@ -52,5 +52,49 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })()
 
+  ;(function setupNavigationNotch() {
+    const navigation = document.querySelector('.Navigation')
+    if (!navigation) return
+
+    const links = Array.from(navigation.querySelectorAll('.Navigation__item > .Navigation__link'))
+    if (!links.length) return
+
+    const getCurrentLink = () =>
+      navigation.querySelector('.Navigation__item[aria-current] > .Navigation__link') || links[0]
+
+    let currentLink = getCurrentLink()
+
+    const moveNotchTo = link => {
+      if (!link) return
+
+      const navigationRect = navigation.getBoundingClientRect()
+      const linkRect = link.getBoundingClientRect()
+
+      navigation.style.setProperty(
+        '--navigation-notch-left',
+        `${Math.round(linkRect.left - navigationRect.left)}px`,
+      )
+      navigation.style.setProperty('--navigation-notch-width', `${Math.round(linkRect.width)}px`)
+      navigation.style.setProperty('--navigation-notch-opacity', '1')
+      currentLink = link
+    }
+
+    moveNotchTo(currentLink)
+
+    links.forEach(link => {
+      link.addEventListener('pointerenter', () => moveNotchTo(link))
+      link.addEventListener('focus', () => moveNotchTo(link))
+    })
+
+    navigation.addEventListener('pointerleave', () => moveNotchTo(getCurrentLink()))
+    navigation.addEventListener('focusout', event => {
+      if (!event.relatedTarget || !navigation.contains(event.relatedTarget)) {
+        moveNotchTo(getCurrentLink())
+      }
+    })
+
+    window.addEventListener('resize', () => moveNotchTo(currentLink))
+  })()
+
   window.ThemeManager.mount()
 })
