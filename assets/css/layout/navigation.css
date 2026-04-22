@@ -86,10 +86,6 @@
 }
 
 @media (max-width: 768px) {
-  .Navigation > .Navigation__item {
-    display: none;
-  }
-
   .Navigation {
     margin-bottom: var(--vb);
     justify-content: center;
