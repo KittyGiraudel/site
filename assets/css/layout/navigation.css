@@ -99,6 +99,7 @@
     margin-bottom: var(--vb);
     justify-content: center;
     padding-block: 0.25em;
+    font-size: 90%;
   }
 
   .Navigation__list {
