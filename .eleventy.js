@@ -56,13 +56,7 @@ export default function (config) {
   // ---------------------------------------------------------------------------
   config.addPassthroughCopy('assets/images')
   config.addPassthroughCopy('assets/js/vendors')
-  config.addPassthroughCopy('_redirects')
-  config.addPassthroughCopy('_headers')
-  config.addPassthroughCopy('humans.txt')
-  config.addPassthroughCopy('manifest.json')
-  config.addPassthroughCopy('apple-touch-icon.png')
-  config.addPassthroughCopy('apple-touch-icon-precomposed.png')
-  config.addPassthroughCopy('favicon.ico')
+  config.addPassthroughCopy({ public: '.' })
 
   // CSS and JavaScript are inlined in HTML for performance reasons. The problem
   // with that is that saving a CSS or JavaScript file during development does
