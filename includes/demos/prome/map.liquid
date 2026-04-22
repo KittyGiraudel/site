@@ -1,0 +1,335 @@
+<div class="Map-wrapper" {% if with_perspective %}data-with-perspective="true"{% endif %}>
+  <div class="Map" {% if with_shadows %}data-with-shadows="true"{% endif %} {% if with_patterns %}data-with-patterns="true"{% endif %} {% if with_fallback %}data-with-fallback="true"{% endif %}>
+    <div class="Map__row">
+      <div class="Map__cell" data-biome="unexplored"></div>
+      <div class="Map__cell" data-biome="shadowForest"></div>
+      <div class="Map__cell" data-biome="silentDesert"></div>
+    </div>
+    <div class="Map__row">
+      <div class="Map__cell" data-biome="titanGardens"></div>
+      <div class="Map__cell" data-biome="unexplored"></div>
+      <div class="Map__cell" data-biome="floodedPlains"></div>
+    </div>
+    <div class="Map__row">
+      <div class="Map__cell" data-biome="unexplored"></div>
+      <div class="Map__cell" data-biome="fieldSea"></div>
+      <div class="Map__cell" data-biome="mushroomJungle"></div>
+    </div>
+  </div>
+</div>
+{% if with_styles %}
+<style>
+:root {
+
+  --biome-unexplored-light: light-dark(#f5f5f5, #2c3834);
+  --biome-unexplored-dark: light-dark(#d8e5df, #1a2320);
+
+  --biome-fieldSea-light: #7dc8a0;
+  --biome-fieldSea-dark: #4a9f72;
+
+  --biome-shadowForest-light: #a793c3;
+  --biome-shadowForest-dark: #57446f;
+
+  --biome-mushroomJungle-light: #ae9178;
+  --biome-mushroomJungle-dark: #624838;
+
+  --biome-floodedPlains-light: #5ec4e8;
+  --biome-floodedPlains-dark: #1a6f94;
+
+  --biome-silentDesert-light: #f3d58e;
+  --biome-silentDesert-dark: #af8c43;
+
+  --biome-titanGardens-light: #ffb3a7;
+  --biome-titanGardens-dark: #a64b3c;
+}
+
+.Map {
+  width: calc(var(--size) * 3.5);
+  margin: 1em auto;
+  padding-bottom: calc(var(--size) / (4 * cos(30deg)));
+  --size: 80px;
+}
+
+[data-with-perspective="true"] {
+  perspective: 1000px;
+}
+
+[data-with-perspective="true"] .Map {
+  transform:  rotateX(25deg);
+}
+
+[data-biome="unexplored"] {
+  --biome-light: var(--biome-unexplored-light);
+  --biome-dark: var(--biome-unexplored-dark);
+}
+
+[data-biome="shadowForest"] {
+  --biome-light: var(--biome-shadowForest-light);
+  --biome-dark: var(--biome-shadowForest-dark);
+}
+
+[data-biome="floodedPlains"] {
+  --biome-light: var(--biome-floodedPlains-light);
+  --biome-dark: var(--biome-floodedPlains-dark);
+}
+
+[data-biome="mushroomJungle"] {
+  --biome-light: var(--biome-mushroomJungle-light);
+  --biome-dark: var(--biome-mushroomJungle-dark);
+}
+
+[data-biome="fieldSea"] {
+  --biome-light: var(--biome-fieldSea-light);
+  --biome-dark: var(--biome-fieldSea-dark);
+}
+
+[data-biome="silentDesert"] {
+  --biome-light: var(--biome-silentDesert-light);
+  --biome-dark: var(--biome-silentDesert-dark);
+}
+
+[data-biome="titanGardens"] {
+  --biome-light: var(--biome-titanGardens-light);
+  --biome-dark: var(--biome-titanGardens-dark);
+}
+
+.Map__row {
+  display: flex;
+  position: relative;
+  margin-bottom: calc(var(--size) / (-4 * cos(30deg)));
+}
+
+.Map__row:nth-of-type(even) {
+  transform: translateX(calc(var(--size) / 2));
+}
+
+.Map__row:hover {
+  z-index: 2;
+}
+
+.Map__cell {
+  width: var(--size);
+  aspect-ratio: cos(30deg);
+  corner-shape: bevel;
+  border-radius: 50% / 25%;
+  background-color: var(--biome-light);
+  border: 1px solid var(--biome-dark);
+  transition: 300ms;
+}
+
+.Map__cell:hover {
+  outline: 3px solid var(--biome-dark);
+  outline-offset: 3px;
+  z-index: 2;
+}
+
+[data-with-shadows="true"] .Map__cell {
+  box-shadow: inset 0 0 1.25em var(--biome-dark);
+}
+
+[data-with-fallback="true"] .Map__row {
+  margin-bottom: 0;
+}
+
+[data-with-fallback="true"] .Map__cell {
+  corner-shape: unset;
+  border-radius: 50%;
+  margin-bottom: calc(var(--size) / (-8 * cos(30deg)));
+  aspect-ratio: 1;
+}
+
+@supports not ((corner-shape: bevel) and (aspect-ratio: cos(30deg))) {
+  .MapRow {
+    margin-bottom: 0;
+  }
+  .Map__cell {
+    corner-shape: unset; 
+    border-radius: 50%;
+    margin-bottom: calc(var(--size) / (-8 * cos(30deg)));
+    aspect-ratio: 1;
+  }
+}
+
+[data-with-patterns="true"] [data-biome="fieldSea"] {
+  --c1: #7dc892;
+  --c2: #63b66e;
+  --pattern-size: 30px;
+
+  --_g: var(--pattern-size) var(--pattern-size)
+    radial-gradient(var(--c1) 17%, var(--c2) 18% 35%, #0000 36.5%);
+  background:
+    calc(var(--pattern-size) / -4) calc(var(--pattern-size) / -4) / var(--_g),
+    calc(var(--pattern-size) / 4) calc(var(--pattern-size) / 4) / var(--_g),
+    radial-gradient(var(--c2) 34%, var(--c1) 36% 68%, #0000 70%) 0 0 /
+    calc(var(--pattern-size) / 2) calc(var(--pattern-size) / 2),
+    repeating-linear-gradient(45deg, var(--c1) -12.5% 12.5%, var(--c2) 0 37.5%)
+    0 0 / var(--pattern-size) var(--pattern-size);
+}
+
+[data-with-patterns="true"] [data-biome="titanGardens"] {
+  --c1: rgb(226 162 150);
+  --c2: rgb(244 182 170);
+  --pattern-size: 33px;
+
+  --_g: radial-gradient(
+    #0000 60%,
+    var(--c1) 61% 63%,
+    #0000 64% 77%,
+    var(--c1) 78% 80%,
+    #0000 81%
+  );
+  --_c: , #0000 75%, var(--c2) 0;
+
+  background-color: var(--c1);
+  background:
+    conic-gradient(at 12% 20% var(--_c)) calc(var(--pattern-size) * 0.44)
+    calc(0.9 * var(--pattern-size)),
+    conic-gradient(at 12% 20% var(--_c)) calc(var(--pattern-size) * -0.06)
+    calc(0.4 * var(--pattern-size)),
+    conic-gradient(at 20% 12% var(--_c)) calc(0.9 * var(--pattern-size))
+    calc(var(--pattern-size) * 0.44),
+    conic-gradient(at 20% 12% var(--_c)) calc(0.4 * var(--pattern-size))
+    calc(var(--pattern-size) * -0.06),
+    var(--_g),
+    var(--_g) calc(var(--pattern-size) / 2) calc(var(--pattern-size) / 2)
+    var(--c2);
+  background-size: var(--pattern-size) var(--pattern-size);
+}
+
+[data-with-patterns="true"] [data-biome="shadowForest"] {
+  --c1: rgb(177 162 203);
+  --c2: rgb(159 144 186);
+  --pattern-size: 26px;
+  --_g:
+    #0000 24%,
+    var(--c2) 26% 34%, var(--c1) 36% 44%,
+    var(--c2) 46% 54%, var(--c1) 56% 64%,
+    var(--c2) 66% 74%, #0000 76%;
+  background:
+    radial-gradient(100% 100% at 100% 0, var(--_g)),
+    radial-gradient(100% 100% at 0 100%, var(--_g)),
+    radial-gradient(var(--c2) 14%, var(--c1) 16%) calc(var(--pattern-size) / 2)
+    calc(var(--pattern-size) / 2);
+  background-size: var(--pattern-size) var(--pattern-size);
+}
+
+[data-with-patterns="true"] [data-biome="floodedPlains"] {
+  --c1: rgb(155 204 227);
+  --c2: rgb(160 191 211);
+  --pattern-size: 26px;
+
+  --_g:
+    var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%, var(--c1) 36% 44%,
+    var(--c2) 46% 54%, var(--c1) 56% 64%, var(--c2) 66% 74%, var(--c1) 76% 84%, var(
+      --c2
+    ) 86% 94%;
+  background-color: var(--c1);
+  background-image:
+    radial-gradient(
+      100% 100% at 100% 0,
+      var(--c1) 4%,
+      var(--_g),
+      #0002 96%,
+      #0000
+    ),
+    radial-gradient(
+      100% 100% at 0 100%,
+      #0000,
+      #0002 4%,
+      var(--_g),
+      var(--c1) 96%
+    );
+  background-size: var(--pattern-size) var(--pattern-size);
+}
+
+[data-with-patterns="true"] [data-biome="silentDesert"] {
+  --c1: rgb(238 214 151);
+  --c2: rgb(233 209 145);
+  --c3: rgb(228 203 140);
+  --pattern-size: 26px;
+
+  background-color: var(--c1);
+  background:
+    conic-gradient(
+      from 15deg at 86.6%,
+      var(--c3) 25%,
+      var(--c2) 0 150deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from -75deg at 50% 13.39%,
+      var(--c1) 60deg,
+      var(--c3) 0 150deg,
+      var(--c2) 0 210deg,
+      #0000 0
+    ),
+    conic-gradient(
+      from 15deg at 36.6% 63.4%,
+      var(--c1) 60deg,
+      var(--c3) 0 150deg,
+      var(--c1) 0 210deg,
+      var(--c2) 0 75%,
+      var(--c3) 0
+    );
+  background-size: var(--pattern-size) var(--pattern-size);
+}
+
+[data-with-patterns="true"] [data-biome="mushroomJungle"] {
+  --c1: rgb(170 146 123);
+  --c2: rgb(159 135 113);
+  --pattern-size: 14px;
+
+  --_g: radial-gradient(var(--c2) 49%, #0000 50%);
+  background-color: var(--c1);
+  background:
+    var(--_g) calc(var(--pattern-size) / -2) calc(var(--pattern-size) / 2),
+    repeating-conic-gradient(from 45deg, var(--c1) 0 25%, #0000 0 50%)
+    calc(var(--pattern-size) / 2) calc(var(--pattern-size) / 2),
+    var(--_g),
+    var(--_g) var(--pattern-size) var(--pattern-size) var(--c1);
+  background-size: calc(2 * var(--pattern-size)) calc(2 * var(--pattern-size));
+}
+
+.Tag {
+  background-color: var(--biome-light);
+  font-size: 0.75em;
+  padding: 0em 0.5em;
+  border-radius: 1em;
+  corner-shape: squircle;
+  border: 2px solid var(--biome-dark);
+  transform: translateY(-2px);
+  display: inline-block;
+}
+
+.Hex {
+  display: inline-block;
+  width: 0.6em;
+  aspect-ratio: cos(30deg);
+  corner-shape: bevel;
+  border-radius: 50% / 25%;
+  background-color: var(--biome-light);
+  border: 1px solid var(--biome-dark);
+  transition: 300ms;
+}
+
+.Success {
+  color: green;
+  font-weight: bold;
+}
+
+.Success::before {
+  content: "✓";
+  margin-right: 0.5ch;
+}
+
+.Failure {
+  color: red;
+  font-weight: bold;
+}
+
+.Failure::before {
+  content: "✗";
+  margin-right: 0.5ch;
+}
+</style>
+{% endif %}
