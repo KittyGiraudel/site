@@ -14,10 +14,10 @@ I used to write a lot.<sup>[citation needed]</sup> I have spent countless hours 
 
 Let’s get started with the basics: a beautiful theme for Sublime Text. If you ask me, there is nothing better than [Spacegray](https://github.com/kkga/spacegray). Spacegray not only provides a new syntax highlighting theme for the coding area, but also redefines the whole UI to change color, styles and more generally the whole look and feel.
 
-<figure class="Figure" style="clear: both">
-  <img src="/assets/images/writing-in-sublime-text/preview.png" alt="" />
-  <figcaption>My writing environment in Sublime Text</figcaption>
-</figure>
+{% render "figure.liquid"
+  src: "/assets/images/writing-in-sublime-text/preview.png",
+  caption: "My writing environment in Sublime Text"
+%}
 
 Spacegray provides three different themes:
 
