@@ -8,6 +8,9 @@
 {% ensure current_url, "Required value 'current_url' is missing in navigation.liquid" %}
 
 <nav class="Navigation NoPrint" role="navigation">
+  <p class="Navigation__item" {% if current_url == "/" %}aria-current="page"{% endif %}>
+    <a href="/" class="Navigation__link NoBackground">Kitty<span class="Fleuron" aria-hidden="true">❦</span>Giraudel</a>
+  </p>
   <ul class="Navigation__list">
     {% for item in navigation %}
       {% assign active = current_url contains item.path %}

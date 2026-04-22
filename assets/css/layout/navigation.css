@@ -1,65 +1,105 @@
+/**
+ * 1. Place the site name on the left and the navigation items on the right.
+ * 2. Position context for the gradient border and underline effect.
+ */
+.Navigation {
+  display: flex; /* 1 */
+  justify-content: space-between; /* 1 */
+  padding-inline: 1em;
+  margin-bottom: var(--vb-double);
+  position: relative; /* 2 */
+
+  --navigation-notch-left: 0px;
+  --navigation-notch-width: 0px;
+  --navigation-notch-opacity: 0;
+  --navigation-notch-offset: 4px;
+  --navigation-notch-transition-duration: 300ms;
+  --underline-height: 4px;
+}
+
+/**
+ * 1. Gradient border placed below the navigation.
+ */
+.Navigation::after {
+  content: ""; /* 1 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: var(--underline-height);
+  background-image: linear-gradient(to right, var(--blue), var(--pink));
+  z-index: 1;
+}
+
+/**
+ * 1. Notch indicating the current link or hovered link.
+ * 2. Rendering looks a tad better with a slight offset in some browsers.
+ * 3. Need to be the same color as the page background to give the illusion of a
+ *    hole through the gradient border.
+ */
+.Navigation::before {
+  content: ""; /* 1 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: calc(var(--underline-height) + 1px); /* 2 */
+  width: calc(var(--navigation-notch-width) + var(--navigation-notch-offset) * 2);
+  background-color: light-dark(#fff, #222); /* 3 */
+  transform: translateX(calc(var(--navigation-notch-left) - var(--navigation-notch-offset)));
+  opacity: var(--navigation-notch-opacity);
+  transition:
+    transform var(--navigation-notch-transition-duration) ease,
+    width var(--navigation-notch-transition-duration) ease,
+    opacity 100ms var(--navigation-notch-transition-duration) ease-out;
+  pointer-events: none;
+  z-index: 2;
+}
+
 .Navigation__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
-  font-size: 80%;
-}
-
-@media (min-width: 768px) {
-  .Navigation__list {
-    padding: 0;
-  }
 }
 
 .Navigation__item {
   display: inline-block;
   line-height: 1.5;
-  color: light-dark(var(--blue), lightblue);
-}
-
-.Navigation__item:not(:last-of-type)::after {
-  margin: 0 0.5ch;
-  content: "·";
-  color: var(--pink);
+  font-size: 75%;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding-inline: 1em;
 }
 
 .Navigation__item[aria-current] {
-  font-weight: bold;
+  position: relative;
 }
 
 .Navigation__link {
   color: inherit;
   position: relative;
   text-decoration: none;
-  border-bottom: 0;
-  transition: 200ms color;
+  padding-block: 0.75em;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.Navigation__link:visited {
-  color: light-dark(var(--blue), lightblue);
-}
+@media (max-width: 768px) {
+  .Navigation > .Navigation__item {
+    display: none;
+  }
 
-.Navigation__link::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 5%;
-  right: 5%;
-  height: 1px;
-  background-color: var(--blue);
-  opacity: 0;
-  transform: translateY(8px);
-  transition:
-    transform 0s ease-out,
-    opacity 0s;
-}
+  .Navigation {
+    margin-bottom: var(--vb);
+    justify-content: center;
+  }
 
-.Navigation__link:hover::before,
-.Navigation__link:focus::before {
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    transform 200ms ease-out,
-    opacity 200ms;
+  .Navigation__item {
+    padding-inline: 0.5em;
+  }
+
+  .Navigation__link {
+    padding-block: 0.75em;
+  }
 }

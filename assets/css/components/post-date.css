@@ -1,19 +1,38 @@
 .PostDate {
-  text-align: center;
   margin-top: 0;
   margin-bottom: var(--vb-1\.5);
+  width: max-content;
 }
 
 .PostDate:first-of-type::after {
   content: "";
   display: block;
-  width: 25%;
+  width: calc(100% + 4em);
   height: 1px;
-  margin: var(--vb) auto 0;
+  margin-left: -2em;
+  margin-top: var(--vb);
   background-color: var(--blue);
   background-image: linear-gradient(to right, var(--pink), var(--blue));
 }
 
 .PostDate__updated {
   opacity: 0.7;
+  display: block;
+  font-size: 90%;
+  position: relative;
+}
+
+.PostDate__updated::before {
+  content: "";
+  display: inline-block;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  opacity: 0.5;
+  width: 0.75em;
+  height: 0.75em;
+  margin-bottom: 0.25em;
+  margin-left: 0.5ch;
+  margin-right: 0.5ch;
+  border-bottom-left-radius: 0.5em;
+  corner-shape: squircle;
 }

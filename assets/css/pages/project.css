@@ -1,5 +1,4 @@
 .Project__header {
-  text-align: center;
   margin-bottom: var(--vb);
 }
 
@@ -11,7 +10,6 @@
 
 .Project__tags .Tags {
   margin-bottom: var(--vb-thirds);
-  justify-content: center;
   gap: 0.5em;
 }
 

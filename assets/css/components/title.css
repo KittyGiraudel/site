@@ -1,8 +1,8 @@
 .Title {
   color: var(--pink);
-  font-size: 250%;
+  font-size: 225%;
   font-weight: 300;
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 0;
   text-align: center;
   text-wrap: balance;
@@ -22,4 +22,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
+}
+
+.Title {
+  text-align: start;
 }

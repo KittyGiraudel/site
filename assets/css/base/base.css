@@ -80,31 +80,8 @@ body {
   background-color: light-dark(#fff, #222);
 }
 
-/**
- * Colorful horizontal bar at the top of the site.
- */
-body::before {
-  content: "";
-  height: 4px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-
-body::before,
 hr {
   background-image: linear-gradient(to right, var(--pink), var(--blue));
-}
-
-@media print {
-  /**
-   * 1. Prevent the horizontal bar from being visible on every page.
-   */
-  body::before {
-    position: absolute; /* 1 */
-  }
 }
 
 hr {
