@@ -60,9 +60,8 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .Navigation__item {
@@ -99,6 +98,11 @@
   .Navigation {
     margin-bottom: var(--vb);
     justify-content: center;
+    padding-block: 0.25em;
+  }
+
+  .Navigation__list {
+    justify-content: center;
   }
 
   .Navigation__item {
@@ -106,6 +110,6 @@
   }
 
   .Navigation__link {
-    padding-block: 0.75em;
+    padding-block: 0.25em;
   }
 }
