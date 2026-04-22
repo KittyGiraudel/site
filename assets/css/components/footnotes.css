@@ -64,7 +64,7 @@
   vertical-align: super;
   font-size: 60%;
   margin-left: 2px;
-  color: var(--blue);
+  color: light-dark(var(--blue), var(--pink));
   text-decoration: underline;
   cursor: pointer;
   background-image: linear-gradient(to right, #f2cfe3, #c4e0f3);
