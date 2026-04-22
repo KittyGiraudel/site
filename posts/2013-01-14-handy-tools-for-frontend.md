@@ -92,7 +92,7 @@ I know there are a bunch of colorpickers / eyedropper extensions outhere but you
 ## CanIUse
 
 - Author: Alexis Deveria
-- Link: <a href="https://weloveiconfont.com">https://caniuse.com/</a> (+ <a href="https://chrome.google.com/webstore/detail/can-i-use/kinefpelfmogilfkmjlbfkamgmofmedf/reviews?utm_source=chrome-ntp-icon">Chrome extension</a>)
+- Link: https://caniuse.com (+ [Chrome extension](https://chrome.google.com/webstore/detail/can-i-use/kinefpelfmogilfkmjlbfkamgmofmedf/reviews?utm_source=chrome-ntp-icon))
 - Category: Development
 
 CanIUse.com is the perfect tool when building HTML5 and CSS3 websites or applications. It groups together compatibility tables for most of HTML5, CSS3, SVG and JS API features. From there, you have access to browser support statistics coming from StatCounters for both desktop and mobiles browsers plus some various notes you may want to know about before using a feature.

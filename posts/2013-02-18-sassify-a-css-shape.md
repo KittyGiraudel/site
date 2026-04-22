@@ -56,7 +56,7 @@ function computeHeight(x, skewAngle) {
 }
 ```
 
-From there, I knew how to get the height from the width, I only had to turn this into SCSS. First problem: <em>sin()</em>. I had never heard of any `sin()` function in Sass. Damn it.
+From there, I knew how to get the height from the width, I only had to turn this into SCSS. First problem: `sin()`. I had never heard of any `sin()` function in Sass. Damn it.
 
 After a little Google search, I stumbled upon [a not-documentated-at-all library](https://github.com/adambom/Sass-Math/blob/master/math.scss) to use advanced math functions in Sass (including `sin()`, `exp()`, `sqrt()`, and much more). Seemed good enough so I gave it a try.
 

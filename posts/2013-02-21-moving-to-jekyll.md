@@ -97,17 +97,9 @@ Making everything work locally was pretty easy I have to say, especially since m
 To create a blog post, here is what I have to do:
 
 1. Create a new Markdown file (`.md`)
-1. Fill the “front-matter”, which is what Liquid needs to compile everything right. As an example, here is the header (front-matter) of this post:<br>
-
-```html
----
-title: Moving to Jekyll
-layout: post
----
-```
-
-1. Write my article (either in Markdown or in HTML)
-1. Push to the repo
+2. Fill the “front-matter”, which is what Liquid needs to compile everything right. As an example, here is the header (front-matter) of this post:
+3. Write my article (either in Markdown or in HTML)
+4. Push to the repo
 
 It is pretty straight forward. If I want to disable comments, it requires no more than switching the `comments` boolean to false. If it is a Codrops article, I only have to add `codrops: url`. If it is a guest post, I only have to add `guest: Ana Tudor`. See? Very simple.
 
