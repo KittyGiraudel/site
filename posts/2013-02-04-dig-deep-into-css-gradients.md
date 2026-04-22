@@ -27,7 +27,11 @@ The wheel - or you can think of it as a pie - is first split horizontally into t
 
 The pen below shows graphically how to layer the multiple backgrounds. It also has a pause button so that the infinite animation doesn’t turn into a performance problem.
 
-<pre class="codepen" data-height="360" data-type="result" data-href="Kuvom" data-user="thebabydino" data-safe="true"><code></code><a href="https://codepen.io/thebabydino/pen/qgoBL">Check out this Pen!</a></pre>
+{% render "codepen.liquid",
+  slug: "ALVMbB",
+  user: "thebabydino",
+  height: 360
+%}
 
 For both the original pen and this helper demo, the interesting part is this one:
 
@@ -75,8 +79,11 @@ The other eight are gradients from `transparent` to a solid color or from a soli
 
 In order to better understand gradient angles and how the `%` values for color stops are computed, let’s see how a linear gradient is defined. Hopefully, this demo that lets you change the gradient angle helps with that - just click the dots.
 
-<pre class="codepen" data-height="640" data-type="result" data-href="qgoBL" data-user="thebabydino" data-safe="true"><code></code>
-<a href="https://codepen.io/thebabydino/pen/qgoBL" target="_blank" rel="noopener noreferrer">Check out this Pen!</a></pre>
+{% render "codepen.liquid",
+  slug: "qgoBL",
+  user: "thebabydino",
+  height: 640
+%}
 
 The _gradient angle_ is the angle - measured clockwise - between the vertical axis and the _gradient line_ (the blue line in the demo). This is for the new syntax, which is not yet supported by WebKit browsers (however, [this is going to change](https://bugs.webkit.org/show_bug.cgi?id=67166)). The old syntax measured angles just like on the [trigonometric unit circle](https://en.wikipedia.org/wiki/Unit_circle) (counter-clockwise and starting from the horizontal axis).
 
@@ -148,7 +155,11 @@ By now, you’re probably thinking it sucks to do so many computations. And it m
 
 Even though for creating the rainbow wheel experiment I did compute everything on paper… I can only agree with that! This is why I made a really basic little tool that computes the `%` for any point inside the gradient box. You just need to click inside it and the `%` value appears in a box at the bottom center.
 
-<pre class="codepen" data-height="320" data-type="result" data-href="FDbdB" data-user="thebabydino" data-safe="true"><code></code><a href="https://codepen.io/thebabydino/pen/FDbdB" target="_blank" rel="noopener noreferrer">Check out this Pen!</a></pre>
+{% render "codepen.liquid",
+  slug: "FDbdB",
+  user: "thebabydino",
+  height: 320
+%}
 
 You can change the dimensions of the gradient box and you can also change the gradient itself. It accepts the newest syntax for linear gradients, with angle values in degrees, `to <side>` values or no value at all for describing the direction of the gradient.
 

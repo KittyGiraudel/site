@@ -71,7 +71,10 @@ A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitt
 
 **CHALLENGE ACCEPTED!** This made me want to give it a shot. Honestly, it took me a few tries and no more than 10 minutes to find a solution for 3 rows.
 
-<pre class="codepen" data-height="480" data-type="result" data-href="DoAIB" data-user="KittyGiraudel" data-safe="true"><code></code><a href="https://codepen.io/KittyGiraudel/pen/DoAIB">Check out this Pen!</a></pre>
+{% render "codepen.liquid",
+  slug: "DoAIB",
+  height: 480
+%}
 
 Instead of doing `:nth-child(even)`, we need two different selectors:
 
@@ -155,7 +158,10 @@ I think the pattern should be easier to see now thanks to the comments. For X ro
 
 ## Demo
 
-<pre class="codepen" data-height="560" data-type="result" data-href="AxmBK" data-user="KittyGiraudel" data-safe="true"><code></code><a href="https://codepen.io/KittyGiraudel/pen/AxmBK">Check out this Pen!</a></pre>
+{% render "codepen.liquid",
+  slug: "AxmBK",
+  height: 560
+%}
 
 Try changing the number of rows by editing `$rows` and see the magic happen.
 
