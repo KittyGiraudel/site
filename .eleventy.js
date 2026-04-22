@@ -60,6 +60,7 @@ export default function (config) {
   config.addPassthroughCopy('humans.txt')
   config.addPassthroughCopy('manifest.json')
   config.addPassthroughCopy('apple-touch-icon.png')
+  config.addPassthroughCopy('apple-touch-icon-precomposed.png')
   config.addPassthroughCopy('favicon.ico')
 
   // CSS and JavaScript are inlined in HTML for performance reasons. The problem
