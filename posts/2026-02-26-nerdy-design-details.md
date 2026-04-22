@@ -192,7 +192,7 @@ The other day, I stumbled upon [this delightful website by Henry Desroches](http
 
 I couldn’t resist inserting this “horticultural dingbat” in a few places, least of all between the post date and the expected reading time in the header of the article layout. Another tiny flourish that makes the layout feel more considered.
 
-<p class="PostDate">
+<p class="Post__date">
   <span>{{ page.date | time }}</span>
   <span class="Fleuron">❦</span> <span title="Estimated read time">6–minute read</span>
 </p>

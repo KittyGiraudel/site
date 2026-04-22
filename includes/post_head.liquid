@@ -14,7 +14,7 @@
 <span class="Fleuron" aria-hidden="true">❦</span> {% if reading_time %}<span itemprop="timeRequired" title="Estimated read time">{{ reading_time }}</span>{% endif %}
 {% endcapture %}
 
-<p class="PostDate">
+<p class="Post__date">
   {% if not updated_at %}
     {{ created_at | time: "datePublished" }}
     {{ rest }}
@@ -25,7 +25,7 @@
   
     {% if was_updated %}
       {{ created_at | time: "datePublished" }}{{ rest }}
-      <span class="PostDate__updated">Edited on {{ updated_at | time: "dateModified" }}</span>
+      <span class="Post__date-updated">Edited on {{ updated_at | time: "dateModified" }}</span>
     {% else %}
       {{ created_at | time: "datePublished" }}{{ rest }}
     {%  endif  %}

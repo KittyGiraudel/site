@@ -6,10 +6,10 @@
 
 {% ensure items, "Required value 'items' is missing in table_of_contents.liquid" %}
 
-<aside class="TableOfContents" aria-labelledby="table-of-contents">
-  <h2 class="TableOfContents__title" id="table-of-contents" data-ha-exclude>
+<details class="TableOfContents" id="table-of-contents">
+  <summary class="TableOfContents__title">
     <span class="Fleuron" aria-hidden="true">❦</span> On this page
-  </h2>
-
+  </summary>
   {% render "table_of_contents_list.liquid", items: items, root: true, toc_flat: toc_flat %}
-</aside>
+</details>
+

@@ -81,14 +81,11 @@ body {
 }
 
 hr {
-  background-image: linear-gradient(to right, var(--pink), var(--blue));
-}
-
-hr {
   height: 4px;
   border-radius: 4px;
   border: 0;
   margin: var(--vb) 0;
+  background-image: linear-gradient(to right, var(--pink), var(--blue));
 }
 
 /**
@@ -107,13 +104,12 @@ p {
 
 ul,
 ol {
-  padding-left: 0;
+  padding-left: 1em;
   margin: var(--vb-half) 0;
 }
 
 li {
   margin: var(--vb-quarter) 0;
-  list-style-position: inside;
 }
 
 ul ul {

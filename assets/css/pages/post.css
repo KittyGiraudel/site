@@ -1,13 +1,58 @@
-.PostEdits::before {
-  content: "§";
-  transform: translate(-20%, 75%) rotate(-15deg);
+.Post__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: var(--vb-1\.5);
+  gap: var(--vb-half);
 }
 
-.PostEdits__title {
-  font-size: 100%;
+.Post__date {
   margin: 0;
+  width: max-content;
 }
 
-.PostEdits__date {
-  color: light-dark(var(--blue), var(--pink));
+@media (min-width: 1024px) {
+  .Post__date {
+    margin-left: calc(var(--margin-offset) * -1);
+  }
+}
+
+.Post__date:first-of-type::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  margin-left: 0;
+  margin-top: var(--vb-thirds);
+  background-color: var(--blue);
+  background-image: linear-gradient(to right, var(--pink), var(--blue));
+}
+
+@media (max-width: 768px) {
+  .Post__date:first-of-type::after {
+    content: none;
+  }
+}
+
+.Post__date-updated {
+  opacity: 0.7;
+  display: block;
+  font-size: 90%;
+  position: relative;
+}
+
+.Post__date-updated::before {
+  content: "";
+  display: inline-block;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  opacity: 0.5;
+  width: 0.75em;
+  height: 0.75em;
+  margin-left: 0.5ch;
+  margin-right: 0.5ch;
+  border-bottom-left-radius: 0.5em;
+  corner-shape: squircle;
 }

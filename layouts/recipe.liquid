@@ -5,14 +5,17 @@ layout: default
 {% render "styles.liquid",
   inline: site.configuration.inline_assets,
   partials: "
+    pages/post,
     components/collection-navigation,
-    components/recipe,
-    components/post-date
+    components/heading-anchors,
+    components/recipe
   "
 %}
 
 <article class="Post">
-  <p class="PostDate">For {{ serves }} <span class="Fleuron" aria-hidden="true">❦</span> About {{ preparation_time }}</p>
+  <div class="Post__header">
+    <p class="Post__date">For {{ serves }} <span class="Fleuron" aria-hidden="true">❦</span> About {{ preparation_time }}</p>
+  </div>
 
   {{ content }}
   

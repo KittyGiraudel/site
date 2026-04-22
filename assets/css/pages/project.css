@@ -2,6 +2,12 @@
   margin-bottom: var(--vb);
 }
 
+@media (min-width: 1024px) {
+  .Project__header {
+    margin-left: calc(var(--margin-offset) * -1);
+  }
+}
+
 .Project__description {
   margin: 0 0 var(--vb-thirds);
   font-size: 110%;
