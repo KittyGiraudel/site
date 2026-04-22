@@ -40,9 +40,9 @@
 .Navigation::before {
   content: ""; /* 1 */
   position: absolute;
-  top: 100%;
+  top: calc(100% - 1px);
   left: 0;
-  height: calc(var(--underline-height) + 1px); /* 2 */
+  height: calc(var(--underline-height) + 2px); /* 2 */
   width: calc(var(--navigation-notch-width) + var(--navigation-notch-offset) * 2);
   background-color: light-dark(#fff, #222); /* 3 */
   transform: translateX(calc(var(--navigation-notch-left) - var(--navigation-notch-offset)));
