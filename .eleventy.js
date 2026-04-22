@@ -54,7 +54,6 @@ export default function (config) {
 
   // Static file passthrough
   // ---------------------------------------------------------------------------
-  config.addPassthroughCopy('assets/images')
   config.addPassthroughCopy('assets/js/vendors')
   config.addPassthroughCopy({ public: '.' })
 
