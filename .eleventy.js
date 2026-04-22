@@ -50,6 +50,7 @@ export default function (config) {
   config.addPlugin(tocPlugin)
   if (CONFIG.syntaxHighlight) config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
   if (!CONFIG.markdownAlternative) config.ignores.add('_pages/blog/index-markdown.liquid')
+  config.ignores.add('CLAUDE.md')
 
   // Static file passthrough
   // ---------------------------------------------------------------------------
