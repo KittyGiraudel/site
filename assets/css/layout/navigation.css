@@ -67,10 +67,11 @@
 .Navigation__item {
   display: inline-block;
   line-height: 1.5;
-  font-size: 75%;
+  font-size: 70%;
   font-variant: small-caps;
   text-transform: lowercase;
-  letter-spacing: 0.05em;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
   margin: 0;
   padding-inline: 1em;
 }
