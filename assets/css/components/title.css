@@ -4,26 +4,14 @@
   font-weight: 300;
   line-height: 1.1;
   margin: 0;
-  text-align: center;
   text-wrap: balance;
+  background-image: linear-gradient(to right, var(--pink), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (min-width: 768px) {
   .Title {
     font-size: 350%;
   }
-}
-
-.Title__link {
-  color: inherit;
-  display: inline-block;
-  border-bottom: 0;
-  background-image: linear-gradient(to right, var(--pink), var(--blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none;
-}
-
-.Title {
-  text-align: start;
 }
