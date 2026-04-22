@@ -119,8 +119,8 @@ index 74d58f9..569449c 100755
      },
      jshint: {
        all: [
--        'Gruntfile.js',</span>
-+        'gruntfile.js',</span>
+-        'Gruntfile.js',
++        'gruntfile.js',
          '/web/js/**/*.js'
        ],
        options: {
