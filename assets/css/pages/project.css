@@ -15,7 +15,7 @@
 }
 
 .Project__tags .Tags {
-  margin-bottom: var(--vb-thirds);
+  margin-bottom: var(--vb-third);
   gap: 0.5em;
 }
 
