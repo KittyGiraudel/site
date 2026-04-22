@@ -18,6 +18,7 @@
   --vb-thirds: calc(var(--vb) * 2 / 3);
   --vb-1\.5: calc(var(--vb) * 1.5);
   --vb-double: calc(var(--vb) * 2);
+  --margin-offset: 2rem;
 }
 
 .dark {

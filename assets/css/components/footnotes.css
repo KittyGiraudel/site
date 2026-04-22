@@ -27,9 +27,9 @@
    *    text, but the text within it is aligned with the body text.
    */
   .Footnotes {
-    width: calc(100% + 4em); /* 1 */
-    padding: 1em 2em; /* 1 */
-    left: -2em; /* 1 */
+    width: calc(100% + var(--margin-offset) * 2); /* 1 */
+    padding: 1em var(--margin-offset); /* 1 */
+    left: calc(var(--margin-offset) * -1); /* 1 */
   }
 }
 

@@ -6,9 +6,9 @@ table {
 
 @media (min-width: 1024px) {
   table {
-    width: calc(100% + 4em);
-    padding: 1em 2em;
-    left: -2em;
+    width: calc(100% + var(--margin-offset) * 2);
+    padding: 1em var(--margin-offset);
+    left: calc(var(--margin-offset) * -1);
     position: relative;
   }
 }
