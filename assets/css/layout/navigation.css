@@ -77,7 +77,7 @@
 }
 
 @media (min-width: 768px) {
-  .Navigation__item:first-child {
+  .Navigation__item:nth-child(2) {
     margin-right: auto;
   }
 }
@@ -85,6 +85,24 @@
 .Navigation__item[aria-current] {
   position: relative;
   font-weight: bold;
+}
+
+.Navigation__item--skip-link {
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}
+
+.Navigation__item--skip-link:focus-within {
+  clip: auto;
+  height: auto;
+  width: auto;
+  position: static;
+  overflow: visible;
 }
 
 .Navigation__link {
