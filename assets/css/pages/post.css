@@ -1,5 +1,20 @@
 .Header--post {
   margin-bottom: var(--vb-1\.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--vb-half);
+}
+
+@media (max-width: 768px) {
+  .Header--post {
+    margin-bottom: 0;
+  }
+}
+
+.Header--post .Title {
+  flex-basis: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -8,14 +23,6 @@
     width: calc(100% + var(--margin-offset) * 2);
     left: calc(var(--margin-offset) * -1);
   }
-}
-
-.Header--post__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: var(--vb-half);
 }
 
 .PostMetadata {

@@ -41,7 +41,6 @@
   flex-wrap: wrap;
   flex-direction: column;
   max-width: 100%;
-  margin-bottom: var(--vb-half);
 }
 
 @media (min-width: 768px) {

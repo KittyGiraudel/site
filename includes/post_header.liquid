@@ -19,17 +19,15 @@
       lang: lang,
     %}
 
-    <div class="Header--post__content">
-      {% render "post_metadata.liquid",
-        updated_at: updated_at,
-        created_at: created_at,
-        guest: guest,
-        reading_time: reading_time
-      %}
+    {% render "post_metadata.liquid",
+      updated_at: updated_at,
+      created_at: created_at,
+      guest: guest,
+      reading_time: reading_time
+    %}
 
-      {% if toc_items.size > 0 %}
-        {% render "table_of_contents.liquid", items: toc_items, toc_flat: toc_flat %}
-      {% endif %}
-    </div>
+    {% if toc_items.size > 0 %}
+      {% render "table_of_contents.liquid", items: toc_items, toc_flat: toc_flat %}
+    {% endif %}
   </header>
 </div>
