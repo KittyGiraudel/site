@@ -1,5 +1,5 @@
 .Showcase {
-  margin: var(--vb) 0;
+  margin: var(--vb-half) 0;
 }
 
 .Showcase::after {
