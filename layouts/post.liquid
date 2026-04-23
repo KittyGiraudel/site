@@ -23,51 +23,62 @@ layout: default
 
 <link rel="alternate" type="text/markdown" href="{{ page.url }}index.md" data-helmet>
 
-<article itemscope itemtype="https://schema.org/Article" class="Post">
-  <div class="Post__header">
-    {% assign reading_time = content | strip_html | reading_time %}
-    {% render "post_head.liquid",
-      updated_at: update_date,
-      created_at: creation_date,
-      guest: guest,
-      reading_time: reading_time
-    %}
+{% assign reading_time = content | strip_html | reading_time %}
+{% if toc != false %}
+  {% assign toc_items = content | table_of_contents %}
+{% endif %}
 
-    {% if toc != false %}
-      {% assign toc_items = content | table_of_contents %}
-      {% if toc_items.size > 0 %}
-        {% render "table_of_contents.liquid", items: toc_items, toc_flat: toc_flat %}
-      {% endif %}
-    {% endif %}
-  </div>
-
-  <div itemprop="articleBody">
-    {% if deprecated %}
-      {% render "post_deprecated.liquid", date: creation_date %}
-    {% endif %}
-    {% if edits %}
-      {% render "post_edits.liquid", edits: edits %}
-    {% endif %}
-
-    {{ content }}
-
-    {% render "job_notice.liquid",
-      class: "Hook",
-      label: "Pssst!",
-      job_notice: site.job_notice
-    %}
-  </div>
-
-  {% footnotes page %}
-</article>
-
-{% render "giscus.liquid" %}
-
-{% render "collection_navigation.liquid",
-  page: page,
-  collection: collections.posts,
-  label: "post"
+{% render "post_header.liquid",
+  title: title,
+  created_at: creation_date,
+  updated_at: update_date,
+  guest: guest,
+  reading_time: reading_time,
+  toc_items: toc_items,
+  toc_flat: toc_flat
 %}
+
+<main class="Main" role="main" id="main">
+  <div class="Container">
+    <article itemscope itemtype="https://schema.org/Article" itemref="post-title post-date-published post-date-modified post-author post-reading-time" class="Post">
+      {% if deprecated %}
+        {% render "post_deprecated.liquid", date: creation_date %}
+      {% endif %}
+
+      {% if edits %}
+        {% render "post_edits.liquid", edits: edits %}
+      {% endif %}
+      
+      <div itemprop="articleBody">
+        {{ content }}
+      </div>
+
+      {% render "job_notice.liquid",
+        class: "Hook",
+        label: "Pssst!",
+        job_notice: site.job_notice
+      %}
+
+      {% footnotes page %}
+    </article>
+
+    {% render "giscus.liquid" %}
+
+    {% render "collection_navigation.liquid",
+      page: page,
+      collection: collections.posts,
+      label: "post"
+    %}
+  </div>
+
+  {% comment %}
+  It’s not ideal having to render the theme button here instead of inside the 
+  default layout, but it should live within a landmark, so that’s kinda the only
+  option. The alternative is to place it inside the navigation, but it’s not 
+  semantically correct because it’s not a navigational element.
+  {% endcomment %}
+  {% render "theme_button.liquid" %}
+</main>
 
 {% render "script.liquid",
   inline: site.configuration.inline_assets,

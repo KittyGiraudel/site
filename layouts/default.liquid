@@ -32,23 +32,21 @@
 %}
 
 <body>
-  {% assign with_title_break = tags contains 'snippets' %}
-  {% render "skip_link.liquid" %}
-  {% render "header.liquid"
-    title: title,
-    lang: lang,
-    with_title_break: with_title_break,
-    current_url: page.url,
-    navigation: site.nav
-  %}
+  {% render "navigation.liquid", current_url: page.url, navigation: site.nav %}
 
-  <main class="Main" role="main" id="main">
-    <div class="Container">
-      {{ content }}
-    </div>
+  {% comment %}
+  Note that this default layout does not render:
+  - The header (i.e. <header>)
+  - The main (i.e. <main>)
+  - The theme button (i.e. theme-button.liquid)
+  That’s because some layouts like the post layout need to render a custom
+  header, and because the header and the main elements should be siblings, the
+  implementing layout needs to take care of both. As for the theme button, it
+  needs to live in a landmark like the main element, so it should also be rende-
+  red by the implementing layout.
+  {% endcomment %}
 
-    {% render "theme_button.liquid" %}
-  </main>
+  {{ content }}
   
   {% render "footer.liquid", input_path: page.inputPath %}
   

@@ -72,11 +72,11 @@ function callout(content, type = 'info') {
   return `<aside class="Callout Callout--${type}" role="note">${markdown(content, false)}</aside>`
 }
 
-function time(value, itemprop) {
+function time(value, itemprop, id) {
   const display = DATE_FORMATTER.format(new Date(value))
   const datetime = new Date(value).toISOString()
 
-  return `<time datetime="${datetime}" title="${value}" ${itemprop ? `itemprop="${itemprop}"` : ''}>${display}</time>`
+  return `<time datetime="${datetime}" title="${value}"${itemprop ? ` itemprop="${itemprop}"` : ''}${id ? ` id="${id}"` : ''}>${display}</time>`
 }
 
 function readingTime(content) {

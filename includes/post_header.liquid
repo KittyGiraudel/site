@@ -1,0 +1,35 @@
+{% comment %}
+  Required:
+  - title: The title of the page
+  - created_at: The original creation/published date
+  Optional:
+  - lang: The language of the page
+  - guest: The guest of the post
+  - reading_time: The reading time of the post
+  - updated_at: Last updated date of the post
+  - toc_items: The table of contents items
+  - toc_flat: Whether to only render top-level items
+{% endcomment %}
+
+<div class="Container">
+  <header class="Header Header--post" role="banner">
+    {% render "title.liquid",
+      title: title,
+      id: "post-title",
+      lang: lang,
+    %}
+
+    <div class="Header--post__content">
+      {% render "post_metadata.liquid",
+        updated_at: updated_at,
+        created_at: created_at,
+        guest: guest,
+        reading_time: reading_time
+      %}
+
+      {% if toc_items.size > 0 %}
+        {% render "table_of_contents.liquid", items: toc_items, toc_flat: toc_flat %}
+      {% endif %}
+    </div>
+  </header>
+</div>

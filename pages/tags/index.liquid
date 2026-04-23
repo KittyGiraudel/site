@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 pagination:
   data: collections
   size: 1
