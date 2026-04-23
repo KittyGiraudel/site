@@ -7,28 +7,64 @@
 {% ensure navigation, "Required value 'navigation' is missing in navigation.liquid" %}
 {% ensure current_url, "Required value 'current_url' is missing in navigation.liquid" %}
 
-<nav class="Navigation NoPrint" role="navigation">
+{% capture menu %}
+<li class="Navigation__item" {% if current_url == "/" %}aria-current="page"{% endif %}>
+  <a href="/" class="Navigation__link NoBackground">Home</a>
+</li>
+{% for item in navigation %}
+  {% assign active = current_url contains item.path %}
+  {% if item.path contains "/blog" %}
+    {% assign start = current_url | slice: 0, 4 %}
+    {% assign is_post = start == "/201" or start == "/202" %}
+    {% if current_url contains "tags" or is_post %}
+      {% assign active = true %}
+    {% endif %}
+  {% endif %}
+  <li class="Navigation__item" {% if active %} aria-current="page" {% endif %}>
+    <a class="Navigation__link NoBackground" href="{{ item.path }}">{{ item.label }}</a>
+  </li>
+{% endfor %}
+{% endcapture %}
+
+{% comment %}
+The desktop menu is not a popover, and has a skip link.
+{% endcomment %}
+<nav class="Navigation NoPrint" role="navigation" id="desktop-menu">
   <ul class="Navigation__list">
     <li class="Navigation__item Navigation__item--skip-link">
       <a href="#main" class="Navigation__link NoBackground">Skip to content</a>
     </li>
+    {{ menu }}
+  </ul>
+</nav>
 
-    <li class="Navigation__item" {% if current_url == "/" %}aria-current="page"{% endif %}>
-      <a href="/" class="Navigation__link NoBackground">Home</a>
+<button
+  class="IconButton OpenMenuButton"
+  popovertarget="mobile-menu"
+  popovertargetaction="show"
+  aria-controls="mobile-menu"
+  aria-label="Open site menu"
+  title="Open site menu"
+>
+  ☰
+</button>
+
+{% comment %}
+The mobile menu is a popover, has no skip link and contains a closing button.
+{% endcomment %}
+<nav class="Navigation NoPrint" role="navigation" id="mobile-menu" popover>
+  <ul class="Navigation__list">
+    {{ menu }}
+    <li class="Navigation__item">
+      <button
+        class="Navigation__link NoBackground"
+        popovertarget="mobile-menu"
+        popovertargetaction="hide"
+        aria-label="Close Site Menu"
+        aria-controls="mobile-menu"
+      >
+        Close menu
+      </button>
     </li>
-
-    {% for item in navigation %}
-      {% assign active = current_url contains item.path %}
-      {% if item.path contains "/blog" %}
-        {% assign start = current_url | slice: 0, 4 %}
-        {% assign is_post = start == "/201" or start == "/202" %}
-        {% if current_url contains "tags" or is_post %}
-          {% assign active = true %}
-        {% endif %}
-      {% endif %}
-      <li class="Navigation__item" {% if active %} aria-current="page" {% endif %}>
-        <a class="Navigation__link NoBackground" href="{{ item.path }}">{{ item.label }}</a>
-      </li>
-    {% endfor %}
   </ul>
 </nav>

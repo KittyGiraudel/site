@@ -2,25 +2,6 @@
   position: fixed;
   bottom: 0.5em;
   right: 0.5em;
-
-  background-color: light-dark(#fff, #222);
-  color: inherit;
-  border: 2px solid light-dark(rgb(0 0 0 / 0.4), rgb(255 255 255 / 0.4));
-  border-radius: 2em;
-  corner-shape: squircle;
-  cursor: pointer;
-  transition: 250ms;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 125%;
-  padding: 0;
-  width: 1.75em;
-  height: 1.75em;
-  line-height: 1.5em;
-  z-index: 10;
 }
 
 .ThemeButton[aria-pressed="false"] > .ThemeButton__icon:not([data-theme="light"]),
@@ -34,42 +15,6 @@
     bottom: 1em;
     left: 1em;
   }
-}
-
-.ThemeButton:hover,
-.ThemeButton:focus {
-  animation: wiggle 500ms ease-out;
-}
-
-@keyframes wiggle {
-  from {
-    transform: rotate(10deg);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(20deg);
-  }
-  75% {
-    transform: rotate(-5deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-.ThemeButton:focus {
-  outline: 2px solid var(--pink);
-  outline-offset: 2px;
-}
-
-.ThemeButton > svg {
-  width: 1em;
-  height: 1em;
-  display: inline-block;
-  vertical-align: middle;
-  fill: currentcolor;
 }
 
 @media screen and (min-width: 1556px) {

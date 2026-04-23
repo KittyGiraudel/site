@@ -2,11 +2,10 @@
  * 1. Place the site name on the left and the navigation items on the right.
  * 2. Position context for the gradient border and underline effect.
  */
-.Navigation {
+.Navigation:not([popover]) {
   display: flex; /* 1 */
   justify-content: space-between; /* 1 */
   padding-inline: 1em;
-  margin-bottom: var(--vb-double);
   position: relative; /* 2 */
 
   --navigation-notch-left: 0px;
@@ -18,9 +17,9 @@
 }
 
 /**
- * 1. Gradient border placed below the navigation.
+ * 1. Gradient border placed below the navigation on large screens.
  */
-.Navigation::after {
+.Navigation:not([popover])::after {
   content: ""; /* 1 */
   position: absolute;
   top: 100%;
@@ -32,12 +31,12 @@
 }
 
 /**
- * 1. Notch indicating the current link or hovered link.
+ * 1. Notch indicating the current link or hovered link on large screens.
  * 2. Rendering looks a tad better with a slight offset in some browsers.
  * 3. Need to be the same color as the page background to give the illusion of a
  *    hole through the gradient border.
  */
-.Navigation::before {
+.Navigation:not([popover])::before {
   content: ""; /* 1 */
   position: absolute;
   top: calc(100% - 1px);
@@ -60,26 +59,36 @@
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
 }
 
+/**
+ * 1. Reset styles applied to all list items globally.
+ */
 .Navigation__item {
   display: inline-block;
   line-height: 1.5;
-  font-size: 70%;
   font-variant: small-caps;
   text-transform: lowercase;
   font-family: sans-serif;
   letter-spacing: 0.1em;
-  margin: 0;
   padding-inline: 1em;
+  margin: 0; /* 1 */
 }
 
-@media (min-width: 768px) {
-  .Navigation__item:nth-child(2) {
-    margin-right: auto;
-  }
+/**
+ * 1. Reduce the navigation font size on large screens.
+ */
+.Navigation:not([popover]) .Navigation__item {
+  font-size: 70%; /* 1 */
+}
+
+/**
+ * 1. The first item is the skip link, the second item is the home link, any-
+ *    thing after that is pushed to the right on large screens.
+ */
+.Navigation:not([popover]) .Navigation__item:nth-child(2) /* 1 */ {
+  margin-right: auto;
 }
 
 .Navigation__item[aria-current] {
@@ -114,34 +123,104 @@
   cursor: pointer;
 }
 
-.Navigation__link:focus-visible {
-  outline: 0 !important;
+button.Navigation__link {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding-inline: unset;
+  text-align: start;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+button.Navigation__link:focus-visible {
+  outline: 2px solid var(--pink) !important;
+  outline-offset: 2px;
+  border-radius: 0.5em;
+  corner-shape: squircle;
+}
+
+/**
+ * 1. Remove the focus outline and add a underline on focus on large screens to
+ *    look better within the navigation.
+ */
+.Navigation:not([popover]) .Navigation__link:focus-visible {
+  outline: 0 !important; /* 1 */
+  text-decoration: underline; /* 1 */
+}
+
+/**
+ * 1. Double-selector to override the specificity of the `IconButton` class.
+ */
+.OpenMenuButton.OpenMenuButton /* 1 */ {
+  display: none;
+  position: fixed;
+  top: 0.5em;
+  right: 0.5em;
+}
+
+/**
+ * 1. Place the popover in the top right corner.
+ * 2. CSS trick to have a gradient border *with* rounded corners.
+ */
+.Navigation[popover] {
+  top: 0.5em; /* 1 */
+  right: 0.5em; /* 1 */
+  left: auto; /* 1 */
+  margin: 0; /* 1 */
+  padding: 1em 1.25em;
+  border-radius: 1em;
+  corner-shape: squircle;
+  --background-color: light-dark(#fffafd, #322d2f);
+  background-color: var(--background-color);
+  border: 2px solid transparent; /* 2 */
+  background-image:
+    linear-gradient(var(--background-color), var(--background-color)),
+    linear-gradient(to right, var(--pink), var(--blue)); /* 2 */
+  background-origin: border-box; /* 2 */
+  background-clip: padding-box, border-box; /* 2 */
+}
+
+/**
+ * 1. Show the popover when it is open.
+ */
+.Navigation[popover]:popover-open {
+  display: flex; /* 1 */
+}
+
+.Navigation[popover]::backdrop {
+  background-color: rgb(0 0 0 / 0.2);
+}
+
+/**
+ * 1. Stack the navigation items vertically on small screens.
+ */
+.Navigation[popover] .Navigation__list {
+  flex-direction: column; /* 1 */
+}
+
+/**
+ * 1. Remove the padding from the navigation items on small screens, and move it
+ *    to the link itself to improve the touch target and focus styles.
+ */
+.Navigation[popover] .Navigation__item {
+  padding-inline: 0; /* 1 */
+}
+.Navigation[popover] .Navigation__link {
+  padding: 0.25em 0.5em; /* 1 */
+}
+
+.Navigation[popover] .Navigation__link:hover {
   text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-  .Navigation {
-    margin-bottom: var(--vb);
-    justify-content: center;
-    padding-block: 0.25em;
-    --navigation-notch-left: 0px !important;
-    --navigation-notch-width: 0px !important;
-    --navigation-notch-opacity: 0 !important;
+  .Navigation:not([popover]) {
+    display: none;
   }
 
-  .Navigation__list {
-    justify-content: center;
-  }
-
-  .Navigation__item {
-    padding-inline: 0.5em;
-  }
-
-  .Navigation__item[aria-current] {
-    font-weight: bold;
-  }
-
-  .Navigation__link {
-    padding-block: 0.25em;
+  .OpenMenuButton.OpenMenuButton {
+    display: block;
   }
 }
