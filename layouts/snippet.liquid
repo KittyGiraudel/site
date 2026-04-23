@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 ---
 
 {% render "styles.liquid",
@@ -11,32 +11,30 @@ layout: page
   "
 %}
 
-<article class="Post">
-  {% if related %}
-    {% assign related_post = '' %}
-    {% for post in collections.posts %}
-      {% if post.url == related %}
-        {% assign related_post = post %}
-      {% endif %}
-    {% endfor %}
-
-    {% if related_post %}
-      <div class="Post__header">
-        <p class="Post__date">
-        {% if date and show_date != false %}
-          {{ date | time }} <span class="Fleuron" aria-hidden="true">❦</span> 
-        {% endif %}
-          From <a href="{{ related }}">{{ related_post.data.title }}</a>
-        </p>
-      </div>
+{% if related %}
+  {% assign related_post = '' %}
+  {% for post in collections.posts %}
+    {% if post.url == related %}
+      {% assign related_post = post %}
     {% endif %}
-  {% endif %}
+  {% endfor %}
+{% endif %}
 
-  {{ content }}
-</article>
-
-{% render "collection_navigation.liquid",
-  page: page,
-  collection: collections.snippets,
-  label: "snippet"
+{% render "snippet_header.liquid",
+  title: title,
+  related_post: related_post,
+  date: date,
 %}
+
+<main class="Main" role="main" id="main">
+  <div class="Container">
+    {{ content }}
+
+    {% render "collection_navigation.liquid",
+      page: page,
+      collection: collections.snippets,
+      label: "snippet"
+    %}
+  </div>
+</main>
+

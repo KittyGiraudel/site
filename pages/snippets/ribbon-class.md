@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: .ribbon {}
+title: Corner ribbon CSS class
 description: CSS snippet to render a corner ribbon
 permalink: /snippets/ribbon-class/
 language: CSS

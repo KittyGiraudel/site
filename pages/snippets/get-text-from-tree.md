@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: getTextFromTree()
+title: Extracting text from React tree
 description: Retrieving text from a React component tree
 permalink: /snippets/get-text-from-tree/
 language: React

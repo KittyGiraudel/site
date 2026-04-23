@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: .sr-only {}
+title: Screen-reader only CSS class
 description: CSS utility class to visually content but not for screen-readers
 permalink: /snippets/sr-only-class/
 language: CSS

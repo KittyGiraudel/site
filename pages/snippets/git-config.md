@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: git-config
+title: Base Git configuration
 description: Drop-in advanced git configuration file
 permalink: /snippets/git-config/
 language: Git

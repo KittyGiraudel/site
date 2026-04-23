@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: '&lt;IconLink /&gt;'
+title: Icon link React component
 description: A small React component to render accessible icon links
 permalink: /snippets/icon-link-component/
 language: React

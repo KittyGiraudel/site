@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: hasInternetAccess()
+title: Detecting internet access
 description: Check whether there is currently access to internet
 permalink: /snippets/has-internet-access/
 language: Node.js

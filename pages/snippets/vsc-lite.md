@@ -1,9 +1,10 @@
 ---
 layout: snippet
-title: VSC Lite
+title: VSC lite configuration
 description: Short VSC configuration to trim out all the distracting fluff
 permalink: /snippets/vsc-lite/
 language: VSC
+date: 2021-02-26
 tags:
 ---
 

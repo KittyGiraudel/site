@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: groom_dependencies()
+title: Finding unused JavaScript dependencies
 description: Small bash function to retrieve unused npm dependencies
 permalink: /snippets/groom-dependencies/
 language: Bash

@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: groom_dead_code()
+title: Finding dead JavaScript code
 description: Small bash function to find dead code in a JavaScript project
 permalink: /snippets/groom-dead-code/
 language: Bash

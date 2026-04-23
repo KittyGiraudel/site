@@ -1,0 +1,29 @@
+{% comment %}
+  Required:
+  - title: The title of the snippet
+  Optional:
+  - date: The date of the snippet
+  - related_post: The related post
+{% endcomment %}
+
+<header class="Header Header--post" role="banner">
+  <div class="Container">
+    {% render "title.liquid",
+      title: title,
+      id: "snippet-title",
+    %}
+
+    {% if related_post %}
+      <div class="Header--post__content">
+        <p class="PostMetadata">
+        From <a href="{{ related }}">{{ related_post.data.title }}</a>
+        <span class="PostMetadata__updated">{{ related_post.date | time }}</span>
+        </p>
+      </div>
+    {% elsif date %}
+      <div class="Header--post__content">
+        <p class="PostMetadata">{{ date | time }}</p>
+      </div>
+    {% endif %}
+  </div>
+</header>

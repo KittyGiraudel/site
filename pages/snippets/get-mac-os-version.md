@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: getMacOsVersion()
+title: Retrieving macOS version
 description: Retrieving the macOS version
 permalink: /snippets/get-mac-os-version/
 language: Node.js

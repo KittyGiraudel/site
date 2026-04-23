@@ -4,12 +4,10 @@
   Optional:
   - id: The id attribute for the h1 element
   - lang: The language of the page
-  - with_title_break: Whether to break the title
 {% endcomment %}
 
 {% ensure title, "Required value 'title' is missing in title.liquid" %}
 
-<h1 class="Title" itemprop="title" {% if id %}id="{{ id }}" {% endif %}{% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}
-  {% if with_title_break %}style="word-break: break-all" {% endif %}>
+<h1 class="Title" itemprop="title" {% if id %}id="{{ id }}" {% endif %}{% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}>
   {{ title }}
 </h1>

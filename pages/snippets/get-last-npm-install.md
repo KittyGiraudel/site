@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: getLastNpmInstall()
+title: Figuring out when modules were last installed
 description: Retrieving the last time npm dependencies were installed
 permalink: /snippets/get-last-npm-install/
 language: Node.js

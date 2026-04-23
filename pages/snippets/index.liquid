@@ -28,9 +28,9 @@ paste them with minor effort.
 <ul class="List">
   {% for snippet in snippets %}
   <li class="List__item">
-    {% if snippet.date %}
+    {% if snippet.data.date %}
       <span class="List__secondary-content">
-        {{ snippet.date | time }}
+        {{ snippet.data.date | time }}
       </span>
     {% endif %}
 

@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: '&lt;VisuallyHidden /&gt;'
+title: Visually hidden React component
 description: React component to visually hide a component but not for screen-readers
 permalink: /snippets/visually-hidden-component/
 language: React

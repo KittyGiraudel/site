@@ -1,6 +1,6 @@
 ---
 layout: snippet
-title: git-aliases
+title: Helpful git aliases
 description: List of useful git aliases grouped by categories
 permalink: /snippets/git-aliases/
 language: Git
