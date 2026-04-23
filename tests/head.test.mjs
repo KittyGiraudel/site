@@ -209,7 +209,7 @@ test('page head: snippet', async () => {
 
   assertHeadMetadata($, siteUrl, {
     path: '/snippets/get-last-npm-install/',
-    title: 'getLastNpmInstall()',
+    title: 'Figuring out when modules were last installed',
     description: 'Retrieving the last time npm dependencies were installed',
     author: siteAuthor,
     ogType: 'website',
