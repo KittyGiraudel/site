@@ -114,6 +114,11 @@
   cursor: pointer;
 }
 
+.Navigation__link:focus-visible {
+  outline: 0 !important;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .Navigation {
     margin-bottom: var(--vb);
