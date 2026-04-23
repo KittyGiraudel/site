@@ -73,16 +73,23 @@
 }
 
 .TableOfContents::details-content {
-  position: absolute;
   display: none;
   background-color: light-dark(#f6f4f9, #303132);
   padding: 0.75em 1.25em;
-  left: 0;
-  right: 0;
   top: calc(100% - 2px);
   border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
+  border-top-width: 0;
   border-radius: 0 0 1em 1em;
   corner-shape: squircle;
+}
+
+@media (min-width: 768px) {
+  .TableOfContents::details-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top-width: 2px;
+  }
 }
 
 .TableOfContents[open]::details-content {
