@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // Toggle the theme when the button is clicked
-    themeButton.addEventListener('click', event => {
+
+    function toggleTheme(event) {
       const button = event.target.closest('.js-theme-button')
       if (!button) return
 
@@ -49,6 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       window.ThemeManager.saveTheme(nextTheme)
       window.ThemeManager.applyTheme(nextTheme)
+    }
+
+    themeButton.addEventListener('click', event => {
+      if (document.startViewTransition) document.startViewTransition(() => toggleTheme(event))
+      else toggleTheme(event)
     })
   })()
 

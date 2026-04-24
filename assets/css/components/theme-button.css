@@ -13,7 +13,7 @@
 @media (min-width: 1024px) {
   .ThemeButton {
     bottom: 1em;
-    left: 1em;
+    right: 1em;
   }
 }
 

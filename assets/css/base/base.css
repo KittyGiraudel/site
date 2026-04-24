@@ -168,3 +168,25 @@ a:visited {
 strong {
   opacity: 0.8; /* 1 */
 }
+
+/**
+ * See: https://codepen.io/argyleink/pen/NWZZPLZ
+ */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: none;
+  }
+
+  ::view-transition-new(root) {
+    animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) switch-theme forwards;
+  }
+}
+
+@keyframes switch-theme {
+  from {
+    clip-path: circle(0% at bottom right);
+  }
+  to {
+    clip-path: circle(100% at center);
+  }
+}
