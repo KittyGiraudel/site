@@ -21,7 +21,7 @@
     {% endif %}
   {% endif %}
   <li class="Navigation__item" {% if active %} aria-current="page" {% endif %}>
-    <a class="Navigation__link NoBackground" href="{{ item.path }}">{{ item.label }}</a>
+    <a class="Navigation__link NoBackground {% if item.path contains "/resume/" %}Navigation__link--highlight{% endif %}" href="{{ item.path }}">{{ item.label }}</a>
   </li>
 {% endfor %}
 {% endcapture %}

@@ -34,8 +34,8 @@ export default {
     { path: '/projects/', label: 'Projects' },
     { path: '/snippets/', label: 'Snippets' },
     { path: '/talks/', label: 'Talks' },
-    { path: '/resume/', label: 'Resume' },
     { path: '/about/', label: 'About' },
+    { path: '/resume/', label: 'Hire me' },
   ],
   configuration: {
     minify_html: CONFIG.minifyHTML,
