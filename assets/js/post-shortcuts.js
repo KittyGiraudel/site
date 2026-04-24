@@ -6,7 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
     '.CollectionNavigation__item--next .CollectionNavigation__link',
   )
 
-  if (!previousLink && !nextLink) return
+  function isInternalLink(link) {
+    if (!link) return false
+
+    try {
+      const url = new URL(link.getAttribute('href'), window.location.href)
+      return url.origin === window.location.origin
+    } catch {
+      return false
+    }
+  }
+
+  const previousArticleLink = isInternalLink(previousLink) ? previousLink : null
+  const nextArticleLink = isInternalLink(nextLink) ? nextLink : null
+
+  if (!previousArticleLink && !nextArticleLink) return
 
   function isTypingTarget(target) {
     if (!target || target.nodeType !== Node.ELEMENT_NODE) return false
@@ -22,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.defaultPrevented) return
     if (isTypingTarget(event.target)) return
 
-    if (event.key === 'ArrowLeft' && previousLink) {
+    if (event.key === 'ArrowLeft' && previousArticleLink) {
       event.preventDefault()
-      window.location.href = previousLink.href
-    } else if (event.key === 'ArrowRight' && nextLink) {
+      window.location.href = previousArticleLink.href
+    } else if (event.key === 'ArrowRight' && nextArticleLink) {
       event.preventDefault()
-      window.location.href = nextLink.href
+      window.location.href = nextArticleLink.href
     }
   })
 })

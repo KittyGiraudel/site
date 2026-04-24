@@ -108,9 +108,19 @@ layout: default
 
     {% render "giscus.liquid" %}
 
+    {% assign navigation_collection = collections.posts %}
+    {% if site.environment != "production" %}
+      {% comment %}
+       In development, we have shortcuts using left and right arrow to navigate
+       between the posts, which rely on this navigation. External post are a 
+       problem, so we exclude them in development.
+      {% endcomment %}
+      {% assign navigation_collection = collections.internal_posts %}
+    {% endif %}
+
     {% render "collection_navigation.liquid",
       page: page,
-      collection: collections.posts,
+      collection: navigation_collection,
       label: "post"
     %}
   </div>
