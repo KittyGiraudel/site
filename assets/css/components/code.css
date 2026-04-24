@@ -22,6 +22,16 @@ pre {
   background-clip: padding-box, border-box; /* 3 */
 }
 
+pre {
+  container-type: inline-size;
+}
+/**
+ * See: https://blog.kizu.dev/responsive-tab-size/
+ */
+pre code {
+  tab-size: round(up, 100cqi / 20ch, 2);
+}
+
 @media (min-width: 1024px) {
   /**
    * 1. Increase width so the code container looks wider than the body text, but
