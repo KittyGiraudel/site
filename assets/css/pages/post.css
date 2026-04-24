@@ -58,13 +58,13 @@
 .PostMetadata__updated::before {
   content: "";
   display: inline-block;
-  border-left: 1px solid;
-  border-bottom: 1px solid;
+  border-left: 1.5px solid;
+  border-bottom: 1.5px solid;
   opacity: 0.5;
   width: 0.75em;
   height: 0.75em;
-  margin-inline-start: 0.5ch;
-  margin-inline-end: 0.5ch;
+  margin-inline: 0.5ch;
+  margin-block-end: 0.5ch;
   border-bottom-left-radius: 0.5em;
   corner-shape: squircle;
 }
