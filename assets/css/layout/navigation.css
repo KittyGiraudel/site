@@ -170,6 +170,7 @@ button.Navigation__link:focus-visible {
 .Navigation:not([popover]) .Navigation__link:focus-visible {
   outline: 0 !important; /* 1 */
   text-decoration: underline; /* 1 */
+  text-decoration-skip-ink: auto;
 }
 
 /**
@@ -235,6 +236,7 @@ button.Navigation__link:focus-visible {
 
 .Navigation[popover] .Navigation__link:hover {
   text-decoration: underline;
+  text-decoration-skip-ink: auto;
 }
 
 @media (max-width: 768px) {
