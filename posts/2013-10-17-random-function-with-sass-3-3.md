@@ -44,29 +44,29 @@ My first attempt to get a random number from this string was to remove all alpha
 
 ```scss
 @function rand($digits: 16) {
-  /* Array of characters to remove */
-  $letters: a b c d e f u;
-  $result: unquote('');
-  $string: unique-id();
+	/* Array of characters to remove */
+	$letters: a b c d e f u;
+	$result: unquote('');
+	$string: unique-id();
 
-  /* For each character in the given string */
-  @for $i from 1 through str-length($string) {
-    /* Isolate character */
-    $character: str-slice($string, $i, $i + 1);
-    /* If not a letter */
-    @if index($character, $letters) == false {
-      /* Append it to $value */
-      $value: str-insert($result, $character, str-length($result) + 1);
-    }
-  }
+	/* For each character in the given string */
+	@for $i from 1 through str-length($string) {
+		/* Isolate character */
+		$character: str-slice($string, $i, $i + 1);
+		/* If not a letter */
+		@if index($character, $letters) == false {
+			/* Append it to $value */
+			$value: str-insert($result, $character, str-length($result) + 1);
+		}
+	}
 
-  /* Deal with the number of digits asked */
-  @if $digits !== 0 and $digits < length($result) {
-    $result: str-slice($result, 1, $digits);
-  }
+	/* Deal with the number of digits asked */
+	@if $digits !== 0 and $digits < length($result) {
+		$result: str-slice($result, 1, $digits);
+	}
 
-  /* Return the result */
-  @return $result;
+	/* Return the result */
+	@return $result;
 }
 ```
 
@@ -90,9 +90,9 @@ To put it simple, instead of stripping alpha characters, we take the alphanumeri
 
 ```scss
 @function rand($min: 0, $max: 100) {
-  $str: str-slice(unique-id(), 2);
-  $res: to-int($str, 16);
-  @return ($res % ($max - $min)) + $min;
+	$str: str-slice(unique-id(), 2);
+	$res: to-int($str, 16);
+	@return ($res % ($max - $min)) + $min;
 }
 ```
 
@@ -106,18 +106,18 @@ Before going to the last line, let’s have a look at the `to-int` function:
 
 ```scss
 @function to-int($str, $base: 10) {
-  $res: 0;
-  $chars: chars-from-base($base);
-  @if $chars !== false {
-    $str: if($base < 64, to-lower-case($str), $str);
-    @for $i from 1 through str-length($str) {
-      $char: str-slice($str, $i, $i + 1);
-      $charVal: index($char, $chars) - 1;
-      $res: $res + pow(length($base), str-length($str) - $i) * $charVal;
-    }
-    @return $res;
-  }
-  @return false;
+	$res: 0;
+	$chars: chars-from-base($base);
+	@if $chars !== false {
+		$str: if($base < 64, to-lower-case($str), $str);
+		@for $i from 1 through str-length($str) {
+			$char: str-slice($str, $i, $i + 1);
+			$charVal: index($char, $chars) - 1;
+			$res: $res + pow(length($base), str-length($str) - $i) * $charVal;
+		}
+		@return $res;
+	}
+	@return false;
 }
 ```
 
@@ -129,12 +129,12 @@ The `pow()` function used to raise a value to an exponent is part of [Compass Ma
 
 ```scss
 @function pow($val, $pow) {
-  $res: 1;
-  @while ($pow > 0) {
-    $res: $res * $val;
-    $pow: $pow - 1;
-  }
-  @return $res;
+	$res: 1;
+	@while ($pow > 0) {
+		$res: $res * $val;
+		$pow: $pow - 1;
+	}
+	@return $res;
 }
 ```
 
@@ -144,33 +144,33 @@ Regarding the `chars-from-base()` function, here is what it looks like:
 
 ```scss
 @function chars-from-base($base: 10) {
-  /* Binary */
-  @if $base == 2 {
-    @return 0 1;
-  }
-  /* Octal */
-  @if $base == 8 {
-    @return 0 1 2 3 4 5 6 7;
-  }
-  /* Decimal */
-  @if $base == 10 {
-    @return 0 1 2 3 4 5 6 7 8 9;
-  }
-  /* Hexadecimal */
-  @if $base == 16 {
-    @return 0 1 2 3 4 5 6 7 8 9 a b c d e f;
-  }
-  /* Base 36 */
-  @if $base == 36 {
-    @return 0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x
-      y z;
-  }
-  /* Base 64 */
-  @if $base == 64 {
-    @return A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h
-      i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 + /;
-  }
-  @return false;
+	/* Binary */
+	@if $base == 2 {
+		@return 0 1;
+	}
+	/* Octal */
+	@if $base == 8 {
+		@return 0 1 2 3 4 5 6 7;
+	}
+	/* Decimal */
+	@if $base == 10 {
+		@return 0 1 2 3 4 5 6 7 8 9;
+	}
+	/* Hexadecimal */
+	@if $base == 16 {
+		@return 0 1 2 3 4 5 6 7 8 9 a b c d e f;
+	}
+	/* Base 36 */
+	@if $base == 36 {
+		@return 0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x
+			y z;
+	}
+	/* Base 64 */
+	@if $base == 64 {
+		@return A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h
+			i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 + /;
+	}
+	@return false;
 }
 ```
 

@@ -14,7 +14,7 @@ $value: 13.37;
 $length: $value + em;
 
 whatever {
-  padding-top: $length;
+	padding-top: $length;
 }
 ```
 
@@ -53,7 +53,7 @@ $value: 13.37;
 $length: $value * 1em;
 
 whatever {
-  padding-top: round($length); // 13em
+	padding-top: round($length); // 13em
 }
 ```
 

@@ -76,10 +76,10 @@ Ideally, the browser provides a way to know whether that feature is supported at
 
 ```js
 if (!window.navigator.skipLink) {
-  const skipLink = document.createElement('a')
-  skipLink.href = '#main'
-  skipLink.innerHTML = 'Skip to content'
-  document.body.prepend(skipLink)
+	const skipLink = document.createElement('a')
+	skipLink.href = '#main'
+	skipLink.innerHTML = 'Skip to content'
+	document.body.prepend(skipLink)
 }
 ```
 

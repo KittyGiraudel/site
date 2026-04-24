@@ -34,12 +34,12 @@ Once again, we can reach out to our lord and savior [cheerio](https://cheerio.js
 
 ```js
 eleventyConfig.addFilter('table_of_contents', html => {
-  if (!html || typeof html !== 'string') return []
+	if (!html || typeof html !== 'string') return []
 
-  const $ = cheerio.load(html, { decodeEntities: false }, false)
-  const headings = $('h2, h3, h4').toArray()
+	const $ = cheerio.load(html, { decodeEntities: false }, false)
+	const headings = $('h2, h3, h4').toArray()
 
-  return headings.length < 2 ? [] : buildTocTree($, headings)
+	return headings.length < 2 ? [] : buildTocTree($, headings)
 })
 ```
 
@@ -52,16 +52,16 @@ So let’s flip the problem on its head, and start from the HTML we _want_ to re
 ```liquid
 <!-- toc.liquid -->
 {​% if items and items.size > 0 %}
-  <aside class="ToC" aria-labelledby="toc">
-    <h2 class="ToC__title" id="toc">On this page</h2>
-    <ol class="ToC__list">
-      ​​{​% for item in items %}
-        <li class="ToC__item ToC__item--level{​{ item.level }}">
-          <a href="#{​{ item.id }}">{​{ item.text }}</a>
-        </li>
-      ​{​% endfor %}
-    </ol>
-  </aside>
+	<aside class="ToC" aria-labelledby="toc">
+		<h2 class="ToC__title" id="toc">On this page</h2>
+		<ol class="ToC__list">
+			​​{​% for item in items %}
+				<li class="ToC__item ToC__item--level{​{ item.level }}">
+					<a href="#{​{ item.id }}">{​{ item.text }}</a>
+				</li>
+			​{​% endfor %}
+		</ol>
+	</aside>
 {​% endif %}
 ```
 
@@ -70,17 +70,17 @@ This looks great, but it only covers top-level headings. What about nested secti
 ```liquid
 <!-- toc_list.liquid -->
 {​% if items and items.size > 0 %}
-  <ol class="ToC__list{​% unless root %} ToC__list--sublist{​% endunless %}">
-    {​% for item in items %}
-      <li class="ToC__item ToC__item--level{​{ item.level }}">
-        <a href="#{​{ item.id }}">{​{ item.text }}</a>
+	<ol class="ToC__list{​% unless root %} ToC__list--sublist{​% endunless %}">
+		{​% for item in items %}
+			<li class="ToC__item ToC__item--level{​{ item.level }}">
+				<a href="#{​{ item.id }}">{​{ item.text }}</a>
 
-        {​% if item.children and item.children.size > 0 %}
-          {​% include "toc_list.liquid", items: item.children, root: false %}
-        {​% endif %}
-      </li>
-    {​% endfor %}
-  </ol>
+				{​% if item.children and item.children.size > 0 %}
+					{​% include "toc_list.liquid", items: item.children, root: false %}
+				{​% endif %}
+			</li>
+		{​% endfor %}
+	</ol>
 {​% endif %}
 ```
 
@@ -89,10 +89,10 @@ We can replace it in our top-level partial as well:
 ```liquid
 <!-- toc.liquid -->
 {​% if items and items.size > 0 %}
-  <aside class="ToC" aria-labelledby="toc">
-    <h2 class="ToC__title" id="toc">On this page</h2>
-    {​% include "toc_list.liquid", items: items, root: true %}
-  </aside>
+	<aside class="ToC" aria-labelledby="toc">
+		<h2 class="ToC__title" id="toc">On this page</h2>
+		{​% include "toc_list.liquid", items: items, root: true %}
+	</aside>
 {​% endif %}
 ```
 
@@ -107,42 +107,42 @@ I won’t go too deep into the JavaScript code which isn’t incredibly interest
 
 ```js
 function buildTocTree($, headings) {
-  const tree = []
-  let currentL2 = null
-  let currentL3 = null
+	const tree = []
+	let currentL2 = null
+	let currentL3 = null
 
-  for (const heading of headings) {
-    const data = getHeadingData($, heading)
-    if (!data) continue
-    const node = { ...data, children: [] }
+	for (const heading of headings) {
+		const data = getHeadingData($, heading)
+		if (!data) continue
+		const node = { ...data, children: [] }
 
-    if (node.level === 2) {
-      tree.push(node)
-      currentL2 = node
-      currentL3 = null
-    } else if (node.level === 3) {
-      if (currentL2) currentL2.children.push(node)
-      else tree.push(node)
-      currentL3 = node
-    } else {
-      if (currentL3) currentL3.children.push(node)
-      else if (currentL2) currentL2.children.push(node)
-      else tree.push(node)
-    }
-  }
+		if (node.level === 2) {
+			tree.push(node)
+			currentL2 = node
+			currentL3 = null
+		} else if (node.level === 3) {
+			if (currentL2) currentL2.children.push(node)
+			else tree.push(node)
+			currentL3 = node
+		} else {
+			if (currentL3) currentL3.children.push(node)
+			else if (currentL2) currentL2.children.push(node)
+			else tree.push(node)
+		}
+	}
 
-  return tree
+	return tree
 }
 
 function getHeadingData($, heading) {
-  const text = $(heading).text().trim()
-  const id = heading?.attribs?.id
-  if (!text || !id) return null
+	const text = $(heading).text().trim()
+	const id = heading?.attribs?.id
+	if (!text || !id) return null
 
-  const element = heading?.name ?? ''
-  const level = Number(element.match(/^h([1-6])$/i)?.[1] ?? 2)
+	const element = heading?.name ?? ''
+	const level = Number(element.match(/^h([1-6])$/i)?.[1] ?? 2)
 
-  return { id, level, text }
+	return { id, level, text }
 }
 ```
 
@@ -152,7 +152,7 @@ In my first attempt, I noticed that my table of contents didn’t show up becaus
 
 ```js
 eleventyConfig.addPlugin(IdAttributePlugin, {
-  selector: 'h2,h3,h4',
+	selector: 'h2,h3,h4',
 })
 ```
 
@@ -166,14 +166,14 @@ To solve the problem, we can make our filter “figure out” what the headings 
 import slugify from 'slugify'
 
 function getHeadingData($, heading) {
-  const text = $(heading).text().trim()
-  if (!text) return null
+	const text = $(heading).text().trim()
+	if (!text) return null
 
-  const element = heading?.name ?? ''
-  const level = Number((element).match(/^h([1-6])$/i)?.[1] ?? 2)
-  const id = heading?.attribs?.id ?? slugify(text)
+	const element = heading?.name ?? ''
+	const level = Number((element).match(/^h([1-6])$/i)?.[1] ?? 2)
+	const id = heading?.attribs?.id ?? slugify(text)
 
-  return { id, level, text }
+	return { id, level, text }
 }
 ```
 
@@ -183,8 +183,8 @@ In order to avoid a deviation if Eleventy ever changes its dependency (after all
 import slugify from 'slugify'
 
 config.addPlugin(IdAttributePlugin, {
-  slugify,
-  selector: 'h2,h3,h4',
+	slugify,
+	selector: 'h2,h3,h4',
 })
 ```
 
@@ -198,9 +198,9 @@ If rendering the table of contents within that `<heading-anchors>` web component
 
 ```html/0
 <heading-anchors selector="h2:not(#toc), h3, h4" content="§">
-  {​% assign toc_items = content | table_of_contents %}
-  {​% include "toc.liquid", items: toc_items %}
-  {​{ content }}
+	{​% assign toc_items = content | table_of_contents %}
+	{​% include "toc.liquid", items: toc_items %}
+	{​{ content }}
 </heading-anchors>
 ```
 
@@ -212,18 +212,18 @@ In the end, I pulled out a tool from the early 2000s: a float. Our table of cont
 
 ```css
 @media (min-width: 700px) {
-  .ToC {
-    float: right;
-    max-width: 300px;
-    margin-left: 1.5em;
-  }
+	.ToC {
+		float: right;
+		max-width: 300px;
+		margin-left: 1.5em;
+	}
 }
 
 @media (min-width: 1140px) {
-  .ToC {
-    margin-right: -150px;
-    margin-bottom: 1.5em;
-  }
+	.ToC {
+		margin-right: -150px;
+		margin-bottom: 1.5em;
+	}
 }
 ```
 
@@ -233,7 +233,7 @@ Another minor yet interesting CSS aspect of the component is that it makes reall
 
 ```css
 .ToC__list--sublist .ToC__item {
-  font-size: 90%;
+	font-size: 90%;
 }
 ```
 

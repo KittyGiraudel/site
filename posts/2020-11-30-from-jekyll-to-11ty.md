@@ -44,7 +44,7 @@ I have about 300 articles on this blog, so there was no way I would do anything 
 
 ```js
 config.addCollection('posts', collection =>
-  collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date)
+	collection.getFilteredByGlob('_posts/*.md').sort((a, b) => b.date - a.date)
 )
 ```
 
@@ -56,8 +56,8 @@ In its documentation, Eleventy explains pretty extensively how to handle permali
 
 ```json
 {
-  "layout": "post",
-  "permalink": "/{{ page.date | date: '%Y/%m/%d' }}/{{ page.fileSlug }}/"
+	"layout": "post",
+	"permalink": "/{{ page.date | date: '%Y/%m/%d' }}/{{ page.fileSlug }}/"
 }
 ```
 
@@ -71,8 +71,8 @@ To preserve that behaviour, we need to use our own markdown-it instance, as well
 
 ```js
 config.setLibrary(
-  'md',
-  markdownIt({ html: true }).use(markdownItAnchor, { slugify: uslugify })
+	'md',
+	markdownIt({ html: true }).use(markdownItAnchor, { slugify: uslugify })
 )
 ```
 
@@ -133,7 +133,7 @@ Only the [Nunjucks templater allows injecting globals](https://github.com/11ty/e
 
 ```js
 config.addPairedShortcode('production', content =>
-  process.env.NODE_ENV === 'production' ? content : undefined
+	process.env.NODE_ENV === 'production' ? content : undefined
 )
 ```
 
@@ -142,9 +142,9 @@ Then I used it in my Liquid templates to wrap content that should only be render
 ```html
 {% production %}
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
-  }
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+	}
 </script>
 {% endproduction %}
 ```
@@ -154,9 +154,9 @@ Browsing the documentation, I eventually found out that [environment variables c
 ```html
 {% if site.environment == 'production' %}
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
-  }
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+	}
 </script>
 {% endif %}
 ```

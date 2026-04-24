@@ -43,10 +43,10 @@ Last but not least, we put them in our `package.json`:
 
 ```json
 {
-  "scripts": {
-    "build": "browserify src/browser.js -t babelify -o dist/index.js",
-    "watch": "watchify src/browser.js -t babelify -o dist/index.js"
-  }
+	"scripts": {
+		"build": "browserify src/browser.js -t babelify -o dist/index.js",
+		"watch": "watchify src/browser.js -t babelify -o dist/index.js"
+	}
 }
 ```
 

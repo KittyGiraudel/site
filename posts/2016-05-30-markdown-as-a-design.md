@@ -31,7 +31,7 @@ It is surprisingly easy to do. Basically, pseudo-elements are used to display ch
 ```css
 strong::before,
 strong::after {
-  content: '**';
+	content: '**';
 }
 ```
 
@@ -47,11 +47,11 @@ To make it look like Markdown, the `href` attribute of a link is being displayed
 
 ```css
 a::before {
-  content: '[';
+	content: '[';
 }
 
 a::after {
-  content: '](' attr(href) ')';
+	content: '](' attr(href) ')';
 }
 ```
 
@@ -59,10 +59,10 @@ The problem is that some URLs are very long. Veeeery long. Sometimes, it resulte
 
 ```css
 a::after {
-  content: '](' attr(href) ')';
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: break-all;
+	content: '](' attr(href) ')';
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	word-break: break-all;
 }
 ```
 
@@ -76,18 +76,18 @@ Right now, the main container has an absolutely positioned pseudo-element displa
 
 ```css
 .main {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .main::before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  white-space: pre;
-  text-align: right;
-  padding: 0 0.5em;
-  content: '1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 10\A 11\A 12…';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	white-space: pre;
+	text-align: right;
+	padding: 0 0.5em;
+	content: '1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 10\A 11\A 12…';
 }
 ```
 

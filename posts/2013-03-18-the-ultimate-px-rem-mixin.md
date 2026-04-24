@@ -22,11 +22,11 @@ You may have already seen something like this in frameworks, demo, blog posts an
 
 ```css
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 body {
-  font-size: 1.6rem;
+	font-size: 1.6rem;
 }
 ```
 
@@ -52,50 +52,50 @@ There are already many mixins handling `px` fallback for `rem` usage, most of th
 
 ```scss
 html {
-  font-size: 62.5%; /* 1 */
+	font-size: 62.5%; /* 1 */
 }
 
 @function parseInt($n) {
-  /* 2 */
-  @return $n / ($n * 0 + 1);
+	/* 2 */
+	@return $n / ($n * 0 + 1);
 }
 
 @mixin rem($property, $values) {
-  $px: (); /* 3 */
-  $rem: (); /* 3 */
+	$px: (); /* 3 */
+	$rem: (); /* 3 */
 
-  @each $value in $values {
-    /* 4 */
+	@each $value in $values {
+		/* 4 */
 
-    @if $value == 0 or $value == auto {
-      /* 5 */
-      $px: append($px, $value);
-      $rem: append($rem, $value);
-    } @else {
-      $unit: unit($value); /* 6 */
-      $val: parseInt($value); /* 6 */
+		@if $value == 0 or $value == auto {
+			/* 5 */
+			$px: append($px, $value);
+			$rem: append($rem, $value);
+		} @else {
+			$unit: unit($value); /* 6 */
+			$val: parseInt($value); /* 6 */
 
-      @if $unit == 'px' {
-        /* 7 */
-        $px: append($px, $value);
-        $rem: append($rem, ($val / 10 + rem));
-      }
+			@if $unit == 'px' {
+				/* 7 */
+				$px: append($px, $value);
+				$rem: append($rem, ($val / 10 + rem));
+			}
 
-      @if $unit == 'rem' {
-        /* 7 */
-        $px: append($px, ($val * 10 + px));
-        $rem: append($rem, $value);
-      }
-    }
-  }
+			@if $unit == 'rem' {
+				/* 7 */
+				$px: append($px, ($val * 10 + px));
+				$rem: append($rem, $value);
+			}
+		}
+	}
 
-  @if $px == $rem {
-    /* 8 */
-    #{$property}: $px; /* 9 */
-  } @else {
-    #{$property}: $px; /* 9 */
-    #{$property}: $rem; /* 9 */
-  }
+	@if $px == $rem {
+		/* 8 */
+		#{$property}: $px; /* 9 */
+	} @else {
+		#{$property}: $px; /* 9 */
+		#{$property}: $rem; /* 9 */
+	}
 }
 ```
 
@@ -119,12 +119,12 @@ Using it is pretty straightforward:
 
 ```scss
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 body {
-  @include rem(font-size, 1.6rem);
-  @include rem(padding, 20px 10px);
+	@include rem(font-size, 1.6rem);
+	@include rem(padding, 20px 10px);
 }
 ```
 
@@ -132,14 +132,14 @@ body {
 
 ```css
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 body {
-  font-size: 16px; /* Fallback for IE8 */
-  font-size: 1.6rem;
-  padding: 20px 10px; /* Fallback for IE8 */
-  padding: 2rem 1rem;
+	font-size: 16px; /* Fallback for IE8 */
+	font-size: 1.6rem;
+	padding: 20px 10px; /* Fallback for IE8 */
+	padding: 2rem 1rem;
 }
 ```
 

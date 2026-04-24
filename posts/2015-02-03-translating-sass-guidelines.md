@@ -121,17 +121,17 @@ At this point, it is a breeze to access to this content from a partial, such as 
 
 ```html
 <div class="donate">
-  <div class="donate__content">
-    <p>{{ site.data.translations[page.language].donate.content }}</p>
-    <a
-      href="https://gum.co/sass-guidelines"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="button"
-    >
-      {{ site.data.translations[page.language].donate.button }}
-    </a>
-  </div>
+	<div class="donate__content">
+		<p>{{ site.data.translations[page.language].donate.content }}</p>
+		<a
+			href="https://gum.co/sass-guidelines"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="button"
+		>
+			{{ site.data.translations[page.language].donate.button }}
+		</a>
+	</div>
 </div>
 ```
 
@@ -159,45 +159,45 @@ I am sure you have figured out where this is going. We only need [a partial incl
 {% if page.language == "en" %}
 
 <div class="translation-warning">
-  <p>
-    The Sass Guidelines project has been translated into several languages by
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href="https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml"
-      >generous contributors</a
-    >. Open the
-    <span data-toggle="aside" class="link-like" role="button" aria-expanded
-      >options panel</span
-    >
-    to switch.
-  </p>
+	<p>
+		The Sass Guidelines project has been translated into several languages by
+		<a
+			target="_blank"
+			rel="noopener noreferrer"
+			href="https://github.com/KittyGiraudel/sass-guidelines/blob/gh-pages/_data/languages.yml"
+			>generous contributors</a
+		>. Open the
+		<span data-toggle="aside" class="link-like" role="button" aria-expanded
+			>options panel</span
+		>
+		to switch.
+	</p>
 </div>
 
 {% else %} {% capture translators %}{% for translator in
 site.data.languages[page.language].translators %}<a
-  href="{{ translator.link }}"
-  target="_blank"
-  rel="noopener noreferrer"
-  >{{ translator.name }}</a
+	href="{{ translator.link }}"
+	target="_blank"
+	rel="noopener noreferrer"
+	>{{ translator.name }}</a
 >{% if forloop.last == false %}, {% endif %}{% endfor %}{% endcapture %}
 
 <div class="translation-warning">
-  <p>
-    You are viewing the {{ site.data.languages[page.language].label }}
-    translation by {{ translators }} of the original
-    <a href="/">Sass Guidelines</a> from
-    <a target="_blank" rel="noopener noreferrer" href="">Kitty Giraudel</a>.
-  </p>
-  <p>
-    This version is exclusively maintained by contributors without the review of
-    the main author, therefore might not be completely up-to-date{% if
-    site.data.languages[page.language].version != site.data.languages.en.version
-    %}, especially since it is currently in version {{
-    site.data.languages[page.language].version }} while the
-    <a href="/">English version</a> is in version {{
-    site.data.languages.en.version }}{% endif %}.
-  </p>
+	<p>
+		You are viewing the {{ site.data.languages[page.language].label }}
+		translation by {{ translators }} of the original
+		<a href="/">Sass Guidelines</a> from
+		<a target="_blank" rel="noopener noreferrer" href="">Kitty Giraudel</a>.
+	</p>
+	<p>
+		This version is exclusively maintained by contributors without the review of
+		the main author, therefore might not be completely up-to-date{% if
+		site.data.languages[page.language].version != site.data.languages.en.version
+		%}, especially since it is currently in version {{
+		site.data.languages[page.language].version }} while the
+		<a href="/">English version</a> is in version {{
+		site.data.languages.en.version }}{% endif %}.
+	</p>
 </div>
 
 {% endif %}

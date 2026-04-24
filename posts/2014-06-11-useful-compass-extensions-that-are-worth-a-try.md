@@ -27,9 +27,9 @@ Let’s say you build something that relies on both CSS transforms and opacity. 
 
 ```scss
 .csstransforms.opacity {
-  .element {
-    /* Do something if both CSS transfroms and opacity are supported */
-  }
+	.element {
+		/* Do something if both CSS transfroms and opacity are supported */
+	}
 }
 ```
 
@@ -37,9 +37,9 @@ Or if you build it the other way around, providing a fallback if any of the two 
 
 ```scss
 .no-csstransforms, .no-opacity {
-  .element {
-    /* Do something if either CSS transforms or opacity is not supported */
-  }
+	.element {
+		/* Do something if either CSS transforms or opacity is not supported */
+	}
 }
 ```
 
@@ -49,9 +49,9 @@ Modernizr Mixin makes things better:
 
 ```scss
 .element {
-  @include yep(csstransforms, opacity) {
-    // Do something if both CSS transforms and opacity are supported
-  }
+	@include yep(csstransforms, opacity) {
+		// Do something if both CSS transforms and opacity are supported
+	}
 }
 ```
 
@@ -59,9 +59,9 @@ Or again, using the reverse logic:
 
 ```scss
 .element {
-  @include nope(csstransforms, opacity) {
-    // Do something if CSS transforms and opacity are not supported
-  }
+	@include nope(csstransforms, opacity) {
+		// Do something if CSS transforms and opacity are not supported
+	}
 }
 ```
 
@@ -88,7 +88,7 @@ $supported-languages: en, fr, it, de;
 
 // Outputing accurate quote marks on `blockquote` element
 blockquote {
-  @include localized-quotation-marks($supported-languages);
+	@include localized-quotation-marks($supported-languages);
 }
 ```
 
@@ -99,25 +99,25 @@ And this compiles to:
 
 blockquote:lang(en):before, 
 blockquote:lang(de):after {
-  content: "“";
+	content: "“";
 }
 
 blockquote:lang(en):after {
-  content: "”";
+	content: "”";
 }
 
 blockquote:lang(fr):before, 
 blockquote:lang(it):before {
-  content: "«";
+	content: "«";
 }
 
 blockquote:lang(fr):after, 
 blockquote:lang(it):after {
-  content: "»";
+	content: "»";
 }
 
 blockquote:lang(de):before {
-  content: "„";
+	content: "„";
 }
 ```
 
@@ -158,7 +158,7 @@ Now, whenever you want to use an icon:
 
 ```scss
 .twitter {
-  @include icon(social, twitter);
+	@include icon(social, twitter);
 }
 ```
 
@@ -166,20 +166,20 @@ The first parameter is the sprite sheet name, the second is the icon name. The g
 
 ```css
 .twitter {
-  background-image: url('data:image/svg+xml;base64,...');
-  background-repeat: no-repeat;
+	background-image: url('data:image/svg+xml;base64,...');
+	background-repeat: no-repeat;
 }
 
 .no-svg .twitter, 
 .no-js .twitter/*, 
  other icons as well */ {
-  background-image: url('../img/icons/social/png-s62add47933.png');
-  background-repeat: no-repeat;
+	background-image: url('../img/icons/social/png-s62add47933.png');
+	background-repeat: no-repeat;
 }
 
 .no-svg .twitter, 
 .no-js .twitter {
-  background-position: 0 -186px;
+	background-position: 0 -186px;
 }
 ```
 
@@ -189,7 +189,7 @@ If you don’t want SVG but only PNG, you would do this:
 
 ```scss
 .twitter {
-  @include icon(social, twitter, $format: "png");
+	@include icon(social, twitter, $format: "png");
 }
 ```
 
@@ -198,26 +198,26 @@ Then:
 ```css
 .twitter/*,
  other icons as well */ {
-  background-image: url('../img/icons/social/png-s62add47933.png');
-  background-repeat: no-repeat;
+	background-image: url('../img/icons/social/png-s62add47933.png');
+	background-repeat: no-repeat;
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 125dpi), (min-resolution: 1.3dppx) {
-  .twitter/*,
-   other icons as well */ {
-    background-image: url('../img/icons/social/png_2x-s177eed3133.png');
-    background-size: 32px auto;
-  }
+	.twitter/*,
+	 other icons as well */ {
+		background-image: url('../img/icons/social/png_2x-s177eed3133.png');
+		background-size: 32px auto;
+	}
 }
 
 .twitter {
-  background-position: 0 -186px;
+	background-position: 0 -186px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 125dpi), (min-resolution: 1.3dppx) {
-  .twitter {
-    background-position: 0 -141px;
-  }
+	.twitter {
+		background-position: 0 -141px;
+	}
 }
 ```
 
@@ -237,7 +237,7 @@ SassyExport is a Compass extension that does a single thing: Exports a Sass map 
 @import "SassyExport";
 
 $map: (
-  hello: world,
+	hello: world,
 );
 
 @include SassyExport("/json/hello.json", $map, $pretty: true);
@@ -252,9 +252,9 @@ SassyExport can come in handy when you want to synchronize your breakpoints betw
 ```scss
 // _config.scss
 $breakpoints: (
-  "small": 767px,
-  "medium": 992px,
-  "large": 1200px
+	"small": 767px,
+	"medium": 992px,
+	"large": 1200px
 );
 
 // _export.scss
@@ -267,9 +267,9 @@ Then, you end up with a .json file like this:
 
 ```json
 {
-  "small": "767px",
-  "medium": "992px",
-  "large": "1200px"
+	"small": "767px",
+	"medium": "992px",
+	"large": "1200px"
 }
 ```
 
@@ -300,14 +300,14 @@ Thus, in order to achieve the desired result, you need to apply the following co
 
 ```scss
 .overlay {
-  $overlay-color: black;
-  $target-color: #16110e;
-  $bottom-color: #5e534f;
-  $alpha: ch-calculate-alpha($overlay-color, $bottom-color, $target-color);
+	$overlay-color: black;
+	$target-color: #16110e;
+	$bottom-color: #5e534f;
+	$alpha: ch-calculate-alpha($overlay-color, $bottom-color, $target-color);
 
-  // Accurate declaration
-  background: $overlay-color; // Fallback IE 8
-  background: rgba($overlay-color, $alpha);
+	// Accurate declaration
+	background: $overlay-color; // Fallback IE 8
+	background: rgba($overlay-color, $alpha);
 }
 ```
 
@@ -315,8 +315,8 @@ And we get the following result:
 
 ```css
 .overlay {
-  background: black;
-  background: rgba(0, 0, 0, .79464);
+	background: black;
+	background: rgba(0, 0, 0, .79464);
 }
 ```
 

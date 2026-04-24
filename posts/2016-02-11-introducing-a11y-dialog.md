@@ -38,13 +38,13 @@ I added a small DOM API to open and close dialog windows (`data-a11y-dialog-show
 
 ```html
 <button data-a11y-dialog-show="my-awesome-dialog" type="button">
-  Open the dialog window
+	Open the dialog window
 </button>
 ```
 
 ```html
 <button data-a11y-dialog-hide type="button" title="Close the dialog windows">
-  &times;
+	&times;
 </button>
 ```
 
@@ -53,9 +53,9 @@ There is also a teeny tiny JS API to allow you to manually hide and show a dialo
 ```js
 // Provided `dialog` contains a `A11yDialog` instance
 if (dialog.shown) {
-  dialog.hide()
+	dialog.hide()
 } else {
-  dialog.show()
+	dialog.show()
 }
 ```
 

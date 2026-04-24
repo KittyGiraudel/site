@@ -12,7 +12,7 @@ Let’s imagine we have a function to make a salad. This function expects an arr
 
 ```js
 function makeSalad(ingredients) {
-  return ingredients.join(', ')
+	return ingredients.join(', ')
 }
 ```
 
@@ -35,13 +35,13 @@ Indeed. Because we did not pass `ingredients`, its value is `undefined` which do
 ```js
 // ES6
 function makeSalad(ingredients = []) {
-  return ingredients.join(', ')
+	return ingredients.join(', ')
 }
 
 // ES5
 function makeSalad(ingredients) {
-  ingredients = ingredients || []
-  return ingredients.join(', ')
+	ingredients = ingredients || []
+	return ingredients.join(', ')
 }
 ```
 
@@ -56,9 +56,9 @@ Now what about the case where we pass something else than an array?
 
 ```js
 var salad = makeSalad({
-  lettuce: 'a lot',
-  tomatoes: 2,
-  sauce: '3 tea spoons',
+	lettuce: 'a lot',
+	tomatoes: 2,
+	sauce: '3 tea spoons',
 })
 // -> Error: ingredients.join is not a function
 ```
@@ -67,13 +67,13 @@ Again, `ingredients` is an object and an object does not have a `join(..)` funct
 
 ```js
 function makeSalad(ingredients) {
-  ingredients = ingredients || []
+	ingredients = ingredients || []
 
-  if (!Array.isArray(ingredients)) {
-    throw new TypeError('`ingredients` parameter should be an array.')
-  }
+	if (!Array.isArray(ingredients)) {
+		throw new TypeError('`ingredients` parameter should be an array.')
+	}
 
-  return ingredients.join(', ')
+	return ingredients.join(', ')
 }
 ```
 
@@ -81,9 +81,9 @@ In this case, the script will still throw an error but the error will be very ex
 
 ```js
 var salad = makeSalad({
-  lettuce: 'a lot',
-  tomatoes: 2,
-  sauce: '3 tea spoons',
+	lettuce: 'a lot',
+	tomatoes: 2,
+	sauce: '3 tea spoons',
 })
 // -> TypeError: `ingredients` parameter should be an array.
 ```

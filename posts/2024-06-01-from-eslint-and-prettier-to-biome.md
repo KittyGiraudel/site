@@ -45,159 +45,159 @@ Then, I ran Biome’s auto-fixes — including the ones deemed unsafe — on the
 
 ```json
 {
-  // See: https://biomejs.dev/reference/configuration/
-  "$schema": "https://biomejs.dev/schemas/1.7.0/schema.json",
-  // Enable auto-sorting of imports. When using Visual Studio Code, make sure
-  // that your settings contain:
-  // "editor.codeActionsOnSave": {
-  //   "quickfix.biome": "explicit",
-  //   "source.organizeImports.biome": "explicit"
-  // },
-  // See: https://biomejs.dev/reference/configuration/#organizeimports
-  "organizeImports": {
-    "enabled": true
-  },
-  "files": {
-    "ignoreUnknown": true,
-    // Ignore generated files.
-    // See: https://biomejs.dev/reference/configuration/#filesignore
-    "ignore": ["generated.ts", "**/generated/*", "**/dist/*", "bundle.js"]
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "a11y": {
-        // We use SVG a lot across our apps, but we rarely want to add a `title`
-        // attribute because we use SVG decoratively, and always add a label
-        // when necessary.
-        // See: https://biomejs.dev/linter/rules/no-svg-without-title/
-        "noSvgWithoutTitle": "off",
-        // We have our thing going for subtitles, so we do not want to enforce
-        // the use of captions with every native video and audio players.
-        // See: https://biomejs.dev/linter/rules/use-media-caption/
-        "useMediaCaption": "off"
-      },
-      "complexity": {
-        // Opposing `Array.prototype.forEach` in favor of for..of is a bit much
-        // for a linting rule. There are cases where `forEach` are perfectly
-        // legitimate.
-        // See: https://biomejs.dev/linter/rules/no-for-each/
-        "noForEach": "off"
-      },
-      "correctness": {
-        // Undeclared variables are not reported as a problem by default, but
-        // this is a behavior we want to enforce. Note that build flags need to
-        // be listed as available globals in the `javascript.global` array.
-        // See: https://biomejs.dev/linter/rules/no-undeclared-variables/
-        "noUndeclaredVariables": "error",
-        // Undeclared imports are not reported as a problem by default, but this
-        // is a behavior we want to enforce.
-        // See: https://biomejs.dev/linter/rules/no-undeclared-variables/
-        "noUnusedImports": "error",
-        // Unused variables are not reported as a problem by default, but this
-        // is a behavior we want to enforce. We have a SCM to keep track of
-        // unused code and should not resort to leaving it in the code base.
-        // See: https://biomejs.dev/linter/rules/no-unused-variables/
-        "noUnusedVariables": "error",
-        // Normally, we’d want to ensure all hooks have an exhaustive list of
-        // dependencies, but we have a lot of failing cases which would take a
-        // while to adjust and double-check.
-        // See: https://biomejs.dev/linter/rules/use-exhaustive-dependencies/
-        "useExhaustiveDependencies": "warn",
-        // This is the equivalent to the ESLint “rules-of-hooks” rule, which
-        // enforces using hooks inside components only, outside of conditional
-        // structures like `if` and ternary statements. It is not enabled by
-        // default but we should pay attention because it can avoid runtime
-        // errors.
-        // See: https://biomejs.dev/linter/rules/use-hook-at-top-level/
-        "useHookAtTopLevel": "error"
-      },
-      "performance": {
-        // Using the spread operator on `Array.prototype.reduce` accumulators
-        // is conceptually much slower than mutating the accumulator variable
-        // because it creates new data with every pass on the array. That being
-        // said, it’s not our performance bottleneck and we have a lot of cases
-        // where we do that, so we turn it off.
-        // See: https://biomejs.dev/linter/rules/no-accumulating-spread/
-        "noAccumulatingSpread": "off"
-      },
-      "style": {
-        // This rule prevents reassigned function parameters, but we do this a
-        // lot, particularly in the backend API so although we want to limit it
-        // as much as possible, we don’t want the rule to be an impediment.
-        // See: https://biomejs.dev/linter/rules/no-parameter-assign/
-        "noParameterAssign": "off",
-        // Marking type imports as such helps with readability, compatibility
-        // with bundlers and can avoid some weird performance edge cases.
-        // See: https://biomejs.dev/linter/rules/use-import-type/
-        "useImportType": "error"
-      },
-      "suspicious": {
-        // Yes, using the array index as a React key is an anti-pattern, but in
-        // many cases, it’s all we have as a differentiator, and it’s perfectly
-        // fine when the array doesn’t get reordered.
-        // See: https://biomejs.dev/linter/rules/no-array-index-key/
-        "noArrayIndexKey": "warn",
-        // Hooks shouldn’t need to be duplicated within `describe` blocks.
-        // See: https://biomejs.dev/linter/rules/no-duplicate-test-hooks/
-        "noDuplicateTestHooks": "error",
-        // Prevents exporting things from test files.
-        // See: https://biomejs.dev/linter/rules/no-exports-in-test/
-        "noExportsInTest": "error",
-        // Make sure we cannot commit a `describe` or `it` block with `.only`.
-        // See: https://biomejs.dev/linter/rules/no-focused-tests/
-        "noFocusedTests": "error",
-        // The `yup` library uses `then` for some advanced schema definitions,
-        // which is why we make this rule non-erroring.
-        // See: https://biomejs.dev/linter/rules/no-then-property/
-        "noThenProperty": "warn"
-      }
-    }
-  },
-  "formatter": {
-    "enabled": true,
-    "lineWidth": 120,
-    "indentWidth": 2,
-    "indentStyle": "space"
-  },
-  "javascript": {
-    "formatter": {
-      "arrowParentheses": "always",
-      "jsxQuoteStyle": "double",
-      "quoteStyle": "single",
-      "semicolons": "always",
-      "trailingComma": "es5"
-    },
-    "globals": [
-      // The following globals are the build flags, which need to be maintained
-      // here as well for the `noUndeclaredVariables` linting rule not to flag
-      // them as missing.
-      "__INTEGRATED_INTRO_OUTRO_EDITOR__",
-      "__DISABLE_COMOTION_NG__",
-      "__VIDEO_BRIEFING__",
-      "__DIRECT_TEMPLATE_BUNDLE_IMPORTS__",
-      // The following globals are test-related, covering both unit tests with
-      // Jest and end-to-end tests with Cypress.
-      "it",
-      "describe",
-      "expect",
-      "jest",
-      "before",
-      "beforeAll",
-      "beforeEach",
-      "after",
-      "afterAll",
-      "afterEach",
-      "Cypress",
-      "cy"
-    ]
-  },
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
-  }
+	// See: https://biomejs.dev/reference/configuration/
+	"$schema": "https://biomejs.dev/schemas/1.7.0/schema.json",
+	// Enable auto-sorting of imports. When using Visual Studio Code, make sure
+	// that your settings contain:
+	// "editor.codeActionsOnSave": {
+	//   "quickfix.biome": "explicit",
+	//   "source.organizeImports.biome": "explicit"
+	// },
+	// See: https://biomejs.dev/reference/configuration/#organizeimports
+	"organizeImports": {
+		"enabled": true
+	},
+	"files": {
+		"ignoreUnknown": true,
+		// Ignore generated files.
+		// See: https://biomejs.dev/reference/configuration/#filesignore
+		"ignore": ["generated.ts", "**/generated/*", "**/dist/*", "bundle.js"]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"a11y": {
+				// We use SVG a lot across our apps, but we rarely want to add a `title`
+				// attribute because we use SVG decoratively, and always add a label
+				// when necessary.
+				// See: https://biomejs.dev/linter/rules/no-svg-without-title/
+				"noSvgWithoutTitle": "off",
+				// We have our thing going for subtitles, so we do not want to enforce
+				// the use of captions with every native video and audio players.
+				// See: https://biomejs.dev/linter/rules/use-media-caption/
+				"useMediaCaption": "off"
+			},
+			"complexity": {
+				// Opposing `Array.prototype.forEach` in favor of for..of is a bit much
+				// for a linting rule. There are cases where `forEach` are perfectly
+				// legitimate.
+				// See: https://biomejs.dev/linter/rules/no-for-each/
+				"noForEach": "off"
+			},
+			"correctness": {
+				// Undeclared variables are not reported as a problem by default, but
+				// this is a behavior we want to enforce. Note that build flags need to
+				// be listed as available globals in the `javascript.global` array.
+				// See: https://biomejs.dev/linter/rules/no-undeclared-variables/
+				"noUndeclaredVariables": "error",
+				// Undeclared imports are not reported as a problem by default, but this
+				// is a behavior we want to enforce.
+				// See: https://biomejs.dev/linter/rules/no-undeclared-variables/
+				"noUnusedImports": "error",
+				// Unused variables are not reported as a problem by default, but this
+				// is a behavior we want to enforce. We have a SCM to keep track of
+				// unused code and should not resort to leaving it in the code base.
+				// See: https://biomejs.dev/linter/rules/no-unused-variables/
+				"noUnusedVariables": "error",
+				// Normally, we’d want to ensure all hooks have an exhaustive list of
+				// dependencies, but we have a lot of failing cases which would take a
+				// while to adjust and double-check.
+				// See: https://biomejs.dev/linter/rules/use-exhaustive-dependencies/
+				"useExhaustiveDependencies": "warn",
+				// This is the equivalent to the ESLint “rules-of-hooks” rule, which
+				// enforces using hooks inside components only, outside of conditional
+				// structures like `if` and ternary statements. It is not enabled by
+				// default but we should pay attention because it can avoid runtime
+				// errors.
+				// See: https://biomejs.dev/linter/rules/use-hook-at-top-level/
+				"useHookAtTopLevel": "error"
+			},
+			"performance": {
+				// Using the spread operator on `Array.prototype.reduce` accumulators
+				// is conceptually much slower than mutating the accumulator variable
+				// because it creates new data with every pass on the array. That being
+				// said, it’s not our performance bottleneck and we have a lot of cases
+				// where we do that, so we turn it off.
+				// See: https://biomejs.dev/linter/rules/no-accumulating-spread/
+				"noAccumulatingSpread": "off"
+			},
+			"style": {
+				// This rule prevents reassigned function parameters, but we do this a
+				// lot, particularly in the backend API so although we want to limit it
+				// as much as possible, we don’t want the rule to be an impediment.
+				// See: https://biomejs.dev/linter/rules/no-parameter-assign/
+				"noParameterAssign": "off",
+				// Marking type imports as such helps with readability, compatibility
+				// with bundlers and can avoid some weird performance edge cases.
+				// See: https://biomejs.dev/linter/rules/use-import-type/
+				"useImportType": "error"
+			},
+			"suspicious": {
+				// Yes, using the array index as a React key is an anti-pattern, but in
+				// many cases, it’s all we have as a differentiator, and it’s perfectly
+				// fine when the array doesn’t get reordered.
+				// See: https://biomejs.dev/linter/rules/no-array-index-key/
+				"noArrayIndexKey": "warn",
+				// Hooks shouldn’t need to be duplicated within `describe` blocks.
+				// See: https://biomejs.dev/linter/rules/no-duplicate-test-hooks/
+				"noDuplicateTestHooks": "error",
+				// Prevents exporting things from test files.
+				// See: https://biomejs.dev/linter/rules/no-exports-in-test/
+				"noExportsInTest": "error",
+				// Make sure we cannot commit a `describe` or `it` block with `.only`.
+				// See: https://biomejs.dev/linter/rules/no-focused-tests/
+				"noFocusedTests": "error",
+				// The `yup` library uses `then` for some advanced schema definitions,
+				// which is why we make this rule non-erroring.
+				// See: https://biomejs.dev/linter/rules/no-then-property/
+				"noThenProperty": "warn"
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"lineWidth": 120,
+		"indentWidth": 2,
+		"indentStyle": "space"
+	},
+	"javascript": {
+		"formatter": {
+			"arrowParentheses": "always",
+			"jsxQuoteStyle": "double",
+			"quoteStyle": "single",
+			"semicolons": "always",
+			"trailingComma": "es5"
+		},
+		"globals": [
+			// The following globals are the build flags, which need to be maintained
+			// here as well for the `noUndeclaredVariables` linting rule not to flag
+			// them as missing.
+			"__INTEGRATED_INTRO_OUTRO_EDITOR__",
+			"__DISABLE_COMOTION_NG__",
+			"__VIDEO_BRIEFING__",
+			"__DIRECT_TEMPLATE_BUNDLE_IMPORTS__",
+			// The following globals are test-related, covering both unit tests with
+			// Jest and end-to-end tests with Cypress.
+			"it",
+			"describe",
+			"expect",
+			"jest",
+			"before",
+			"beforeAll",
+			"beforeEach",
+			"after",
+			"afterAll",
+			"afterEach",
+			"Cypress",
+			"cy"
+		]
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	}
 }
 ```
 

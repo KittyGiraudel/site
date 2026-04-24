@@ -27,8 +27,8 @@ Let’s start with the skeleton:
 
 ```scss
 @function str-replace($string, $old, $new) {
-  // Doing magic
-  @return $string;
+	// Doing magic
+	@return $string;
 }
 ```
 
@@ -36,11 +36,11 @@ First things first, we need to check if the `$string` actually contains `$old`. 
 
 ```scss
 @function str-replace($string, $old, $new) {
-  $index: str-index($string, $old);
-  @if $index > 0 and $new != $old {
-    // Doing magic
-  }
-  @return $string;
+	$index: str-index($string, $old);
+	@if $index > 0 and $new != $old {
+		// Doing magic
+	}
+	@return $string;
 }
 ```
 
@@ -49,9 +49,9 @@ Note how we also make sure the `$new` string is different from the `$old` one. O
 ```scss
 $new-string: quote(str-slice($string, 1, $index - 1));
 @for $i from $index through str-length($string) {
-  @if $i < $index or $i >= $index + str-length($old) {
-    $new-string: $new-string + str-slice($string, $i, $i);
-  }
+	@if $i < $index or $i >= $index + str-length($old) {
+		$new-string: $new-string + str-slice($string, $i, $i);
+	}
 }
 ```
 
@@ -81,18 +81,18 @@ You usually put those kind of verifications at the top of the function in order 
 
 ```scss
 @function str-replace($string, $old, $new) {
-  @if type-of($string) !=
-    string or
-    type-of($old) !=
-    string or
-    type-of($new) !=
-    string
-  {
-    @warn "One of the 3 arguments is not a string.";
-    @return $string;
-  }
+	@if type-of($string) !=
+		string or
+		type-of($old) !=
+		string or
+		type-of($new) !=
+		string
+	{
+		@warn "One of the 3 arguments is not a string.";
+		@return $string;
+	}
 
-  // Doing magic
+	// Doing magic
 }
 ```
 
@@ -102,12 +102,12 @@ Because of the way we handle this function, we go recursive. That means if you i
 
 ```scss
 @function str-replace($string, $old, $new) {
-  @if str-index($new, $old) != 0 {
-    @warn "The string to be replaced is contained in the new string. Infinite recursion avoided.";
-    @return $string;
-  }
+	@if str-index($new, $old) != 0 {
+		@warn "The string to be replaced is contained in the new string. Infinite recursion avoided.";
+		@return $string;
+	}
 
-  // Doing magic
+	// Doing magic
 }
 ```
 
@@ -119,9 +119,9 @@ What we could do to allow case insentivity (when `$case-sensitive` is set to `fa
 
 ```scss
 $index: if(
-  not $case-sensitive,
-  str-index(to-lower-case($string), to-lower-case($old)),
-  str-index($string, $old)
+	not $case-sensitive,
+	str-index(to-lower-case($string), to-lower-case($old)),
+	str-index($string, $old)
 );
 ```
 

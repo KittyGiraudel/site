@@ -32,15 +32,15 @@ Then I thought about using `<details>` and `<summary>` since we have pretty loos
  * 1. Remove the <summary> arrow in Firefox.
  */
 summary {
-  display: block; /* 1 */
-  cursor: pointer;
+	display: block; /* 1 */
+	cursor: pointer;
 }
 
 /**
  * 1. Remove the <summary> arrow in all other browsers.
  */
 summary::-webkit-details-marker {
-  display: none; /* 1 */
+	display: none; /* 1 */
 }
 ```
 
@@ -54,18 +54,18 @@ That’s why when JavaScript is available, we replace them with a `<button>` (wi
 
 ```html
 <nav role="navigation">
-  <button
-    type="button"
-    aria-controls="menu"
-    aria-expanded="false"
-    id="menu-toggle"
-  >
-    <svg aria-hidden="true" focusable="false"><!-- Logo --></svg>
-    <span class="sr-only">Navigation</span>
-  </button>
-  <div id="menu" aria-labelledby="menu-toggle" aria-hidden="true">
-    <!-- Navigation content -->
-  </div>
+	<button
+		type="button"
+		aria-controls="menu"
+		aria-expanded="false"
+		id="menu-toggle"
+	>
+		<svg aria-hidden="true" focusable="false"><!-- Logo --></svg>
+		<span class="sr-only">Navigation</span>
+	</button>
+	<div id="menu" aria-labelledby="menu-toggle" aria-hidden="true">
+		<!-- Navigation content -->
+	</div>
 </nav>
 ```
 
@@ -76,7 +76,7 @@ Without getting too deep into technical details (especially because our implemen
 ```js
 const menu = document.querySelector('#menu')
 const handleFocusChange = (event) => {
-  if (isOpen && !event.composedPath().includes(menu)) setIsOpen(false)
+	if (isOpen && !event.composedPath().includes(menu)) setIsOpen(false)
 }
 
 window.addEventListener('click', handleFocusChange)
@@ -91,15 +91,15 @@ Simplified and using `<details>` and `<summary>` in this example for sake of cla
 
 ```html
 <nav role="navigation">
-  <details>
-    <summary>
-      <svg aria-hidden="true" focusable="false"><!-- Logo --></svg>
-      <span class="sr-only">Navigation</span>
-    </summary>
-    <ul>
-      <!-- Navigation content -->
-    </ul>
-  </details>
+	<details>
+		<summary>
+			<svg aria-hidden="true" focusable="false"><!-- Logo --></svg>
+			<span class="sr-only">Navigation</span>
+		</summary>
+		<ul>
+			<!-- Navigation content -->
+		</ul>
+	</details>
 </nav>
 ```
 
@@ -111,16 +111,16 @@ Fortunately, CSS now has a `backdrop-filter` property, which enables us to apply
 
 ```css
 #menu {
-  background-color: #201e1e;
-  color: #fff;
+	background-color: #201e1e;
+	color: #fff;
 }
 
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
-  #menu {
-    background-color: rgb(255 255 255 / 0.15);
-    -webkit-backdrop-filter: blur(40px);
-    backdrop-filter: blur(40px);
-  }
+	#menu {
+		background-color: rgb(255 255 255 / 0.15);
+		-webkit-backdrop-filter: blur(40px);
+		backdrop-filter: blur(40px);
+	}
 }
 ```
 
@@ -138,7 +138,7 @@ The toggle has the so-called “pill” style. The corners are soft and fully em
 
 ```css
 details[open] > summary {
-  border-radius: 30px 30px 0 0;
+	border-radius: 30px 30px 0 0;
 }
 ```
 
@@ -174,15 +174,15 @@ This is basically what it looks like in the end:
 
 ```html
 <a href="/en" hreflang="en">
-  EN<span class="sr-only" lang="en"> — English</span>
+	EN<span class="sr-only" lang="en"> — English</span>
 </a>
 <span aria-hidden="true">/</span>
 <a href="/de" hreflang="de">
-  DE<span class="sr-only" lang="de"> — Deutsch</span>
+	DE<span class="sr-only" lang="de"> — Deutsch</span>
 </a>
 <span aria-hidden="true">/</span>
 <a href="/nl" hreflang="nl">
-  NL<span class="sr-only" lang="nl"> — Nederlands</span>
+	NL<span class="sr-only" lang="nl"> — Nederlands</span>
 </a>
 ```
 

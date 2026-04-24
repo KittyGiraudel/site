@@ -243,18 +243,18 @@ commitMode=$2
 existingMsg=`cat $commitMsgFile`
 if [ "$commitMode" = "message" ]; then
 
-  echo -n "[$branchname] " > $commitMsgFile
-  echo $existingMsg >> $commitMsgFile
+	echo -n "[$branchname] " > $commitMsgFile
+	echo $existingMsg >> $commitMsgFile
 
 else
 
-  firstline=`head -n1 $commitMsgFile`
+	firstline=`head -n1 $commitMsgFile`
 
-  # We check the fist line of the commit message file.
-  # If it’s an empty string then user didn’t use `git commit --amend` so we can fill the commit msg file
-  if [ -z "$firstline" ]; then
-    echo "[$branchname] " > $commitMsgFile
-  fi
+	# We check the fist line of the commit message file.
+	# If it’s an empty string then user didn’t use `git commit --amend` so we can fill the commit msg file
+	if [ -z "$firstline" ]; then
+		echo "[$branchname] " > $commitMsgFile
+	fi
 
 fi
 ```
@@ -454,17 +454,17 @@ $ git log
 commit a11a14ef7e26f2ca62d4b35eac455ce636d0dc09
 Author: lgiraudel <lgiraudel@mydomain.com>
 
-    Add of a new line
+		Add of a new line
 
 commit 87edc4ad8c71b95f6e46f736eb98b742859abd95
 Author: lgiraudel <lgiraudel@mydomain.com>
 
-    Typo fix
+		Typo fix
 
 commit 3102416a90c431400d2e2a14e707fb7fd6d9e06d
 Author: lgiraudel <lgiraudel@mydomain.com>
 
-    Initial commit
+		Initial commit
 ```
 
 ## Pick a commit from another branch

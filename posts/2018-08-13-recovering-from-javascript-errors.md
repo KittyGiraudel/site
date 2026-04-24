@@ -35,13 +35,13 @@ A very simple implementation with React might look like this:
 
 ```js
 class Root extends React.Component {
-  componentDidCatch(error) {
-    const { href, search, hash } = window.location;
-    const query = search ? search + "&noscript=1" : "?noscript=1";
+	componentDidCatch(error) {
+		const { href, search, hash } = window.location;
+		const query = search ? search + "&noscript=1" : "?noscript=1";
 
-    window.location.href = href + query + hash;
-    // Feel free to log `error` in your error tracker as well.
-  }
+		window.location.href = href + query + hash;
+		// Feel free to log `error` in your error tracker as well.
+	}
 }
 ```
 
@@ -51,7 +51,7 @@ In our case, it looks a little bit like this:
 
 ```js
 Object.keys(webpackBundles).map((bundleName) => (
-  <script src={webpackBundles[bundleName].js} key={bundleName} defer />
+	<script src={webpackBundles[bundleName].js} key={bundleName} defer />
 ));
 ```
 

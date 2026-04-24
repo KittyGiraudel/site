@@ -39,53 +39,53 @@ I dug and found the code we wrote. However, it was a higher-order component and 
 // Returns a number between -1 and +1 to convey the guessed dominant hand, with
 // -1 being left side and +1 being right side.
 const useDominantHandScore = ({
-  // Arbitrary maximum screen width to compute score for; anything beyond that
-  // is considered not a mobile device and thus discarded
-  maximumScreenWidth = 500,
-  // Threshold above which an element is considered full-width (80% by default)
-  // and can be a candidate for tap recording
-  fullWidthThreshold = 0.8,
+	// Arbitrary maximum screen width to compute score for; anything beyond that
+	// is considered not a mobile device and thus discarded
+	maximumScreenWidth = 500,
+	// Threshold above which an element is considered full-width (80% by default)
+	// and can be a candidate for tap recording
+	fullWidthThreshold = 0.8,
 } = {}) => {
-  const viewportWidth = useViewportWidth()
-  const [tapScore, setTapScore] = React.useState(0)
-  const [tapCount, setTapCount] = React.useState(0)
+	const viewportWidth = useViewportWidth()
+	const [tapScore, setTapScore] = React.useState(0)
+	const [tapCount, setTapCount] = React.useState(0)
 
-  const handleTap = React.useCallback(
-    event => {
-      const consideredFullWidth = viewportWidth * fullWidthThreshold
-      const targetWidth = event.target.offsetWidth || 0
+	const handleTap = React.useCallback(
+		event => {
+			const consideredFullWidth = viewportWidth * fullWidthThreshold
+			const targetWidth = event.target.offsetWidth || 0
 
-      // If not on mobile (not a great check but heh) or not a click event or
-      // not a tap on a full-width element, do nothing
-      if (viewportWidth > maximumScreenWidth) return false
-      if (event.clientX === 0 && event.clientY === 0) return false
-      if (targetWidth < consideredFullWidth) return false
+			// If not on mobile (not a great check but heh) or not a click event or
+			// not a tap on a full-width element, do nothing
+			if (viewportWidth > maximumScreenWidth) return false
+			if (event.clientX === 0 && event.clientY === 0) return false
+			if (targetWidth < consideredFullWidth) return false
 
-      setTapCount(count => count + 1)
-      setTapScore(score => score + getTapPosition(event))
-    },
-    [viewportWidth, maximumScreenWidth, fullWidthThreshold],
-  )
+			setTapCount(count => count + 1)
+			setTapScore(score => score + getTapPosition(event))
+		},
+		[viewportWidth, maximumScreenWidth, fullWidthThreshold],
+	)
 
-  React.useEffect(() => {
-    document.addEventListener('click', handleTap)
+	React.useEffect(() => {
+		document.addEventListener('click', handleTap)
 
-    return () => {
-      document.removeEventListener('click', handleTap)
-    }
-  }, [handleTap])
+		return () => {
+			document.removeEventListener('click', handleTap)
+		}
+	}, [handleTap])
 
-  return tapScore / tapCount || 0
+	return tapScore / tapCount || 0
 }
 
 function getTapPosition(event) {
-  const percentage = Math.round(
-    ((event.clientX - event.target.offsetLeft) / event.target.offsetWidth) *
-      100,
-  )
+	const percentage = Math.round(
+		((event.clientX - event.target.offsetLeft) / event.target.offsetWidth) *
+			100,
+	)
 
-  // Convert the percentage (0–100) to a number on the -1/+1 scale
-  return (percentage - 50) / 50
+	// Convert the percentage (0–100) to a number on the -1/+1 scale
+	return (percentage - 50) / 50
 }
 ```
 
@@ -106,16 +106,16 @@ Once it’s an OS setting, it can be conveyed by the browser via a media query. 
 
 ```css
 .FloatingButton {
-  position: fixed;
-  top: 0;
-  right: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
 }
 
 /* This is not a real thing; it’s only for demonstration purposes */
 @media (prefers-dominant-hand: left) {
-  .FloatingButton {
-    left: 0;
-  }
+	.FloatingButton {
+		left: 0;
+	}
 }
 ```
 
@@ -143,9 +143,9 @@ For instance, let’s imagine authoring this code snippet:
 ```js
 // This is not a real thing; it’s only for demonstration purposes
 CSS.registerMedia({
-  name: 'prefers-dominant-hand',
-  syntax: 'start | end | no-preference',
-  initialValue: 'no-preference',
+	name: 'prefers-dominant-hand',
+	syntax: 'start | end | no-preference',
+	initialValue: 'no-preference',
 })
 ```
 

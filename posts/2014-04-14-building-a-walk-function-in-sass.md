@@ -51,11 +51,11 @@ Okay, let’s move on to the code now. Surprisingly enough, the function core is
 
 ```scss
 @function walk($list, $function, $args...) {
-  @for $i from 1 through length($list) {
-    $list: set-nth($list, $i, call($function, nth($list, $i), $args...));
-  }
+	@for $i from 1 through length($list) {
+		$list: set-nth($list, $i, call($function, nth($list, $i), $args...));
+	}
 
-  @return $list;
+	@return $list;
 }
 ```
 
@@ -84,12 +84,12 @@ In the end, the only things we can check is whether or not the function exists t
 
 ```scss
 @function walk($list, $function, $args...) {
-  @if not function-exists($function) {
-    @warn "There is no `#{$function}` function.";
-    @return false;
-  }
+	@if not function-exists($function) {
+		@warn "There is no `#{$function}` function.";
+		@return false;
+	}
 
-  /* Function core … */
+	/* Function core … */
 }
 ```
 

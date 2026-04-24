@@ -16,12 +16,12 @@ Take a basic `<details>` and `<summary>` combo:
 
 ```html
 <details>
-  <summary>System Requirements</summary>
-  <p>
-    Requires a computer running an operating system. The computer must have some
-    memory and ideally some kind of long-term storage. An input device as well
-    as some form of output device is recommended.
-  </p>
+	<summary>System Requirements</summary>
+	<p>
+		Requires a computer running an operating system. The computer must have some
+		memory and ideally some kind of long-term storage. An input device as well
+		as some form of output device is recommended.
+	</p>
 </details>
 ```
 
@@ -29,11 +29,11 @@ Now, consider the [following inocuous CSS](https://css-tricks.com/inheriting-box
 
 ```css
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 * {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 ```
 
@@ -59,20 +59,20 @@ Amelia then recommended enabling the “Show user agent shadow DOM” Chromium D
 
 ```html
 <details>
-  #shadow-root (user-agent)
-  <slot name="user-agent-custom-assign-slot" id="details-summary">
-    <!-- ↪ <summary> reveal -->
-  </slot>
-  <slot name="user-agent-default-slot" id="details-content">
-    <!-- ↪ <p> reveal -->
-  </slot>
+	#shadow-root (user-agent)
+	<slot name="user-agent-custom-assign-slot" id="details-summary">
+		<!-- ↪ <summary> reveal -->
+	</slot>
+	<slot name="user-agent-default-slot" id="details-content">
+		<!-- ↪ <p> reveal -->
+	</slot>
 
-  <summary>System Requirements</summary>
-  <p>
-    Requires a computer running an operating system. The computer must have some
-    memory and ideally some kind of long-term storage. An input device as well
-    as some form of output device is recommended.
-  </p>
+	<summary>System Requirements</summary>
+	<p>
+		Requires a computer running an operating system. The computer must have some
+		memory and ideally some kind of long-term storage. An input device as well
+		as some form of output device is recommended.
+	</p>
 </details>
 ```
 

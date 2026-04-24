@@ -47,14 +47,14 @@ You’ve seen from the previous code snippet that we have a `set-locale` mixin a
 /// @example scss - Defines the language to `fr`.
 ///  @include set-locale('fr');
 @mixin set-locale($language) {
-  $supported-languages: 'fr', 'en';
-  $language: to-lower-case($language);
+	$supported-languages: 'fr', 'en';
+	$language: to-lower-case($language);
 
-  @if not index($supported-languages, $language) {
-    @error "Language `#{$language}` is not supported. Pull request welcome!";
-  }
+	@if not index($supported-languages, $language) {
+		@error "Language `#{$language}` is not supported. Pull request welcome!";
+	}
 
-  $language: $language !global;
+	$language: $language !global;
 }
 ```
 
@@ -68,9 +68,9 @@ Gaël has divided messages in different themes: `errors`, `advices` or `warnings
 
 ```scss
 $messages: (
-  'errors': (),
-  'advices': (),
-  'warnings': ()
+	'errors': (),
+	'advices': (),
+	'warnings': ()
 );
 ```
 
@@ -82,9 +82,9 @@ Then each theme gets mapped to a sub-map (second level) containing keys for diff
 
 ```scss
 $messages: (
-  'errors': ('no-src': ()),
-  'advices': (),
-  'warnings': ()
+	'errors': ('no-src': ()),
+	'advices': (),
+	'warnings': ()
 );
 ```
 
@@ -92,10 +92,10 @@ And finally, this key is mapped to another sub-map (third level) where each key 
 
 ```scss
 $messages: (
-  'errors': ('no-src': ('fr': 'Attribut [src] manquant ou vide. Bon.', 'en':
-            '[src] attribute missing or empty. Oh, well…')),
-  'advices': (),
-  'warnings': ()
+	'errors': ('no-src': ('fr': 'Attribut [src] manquant ou vide. Bon.', 'en':
+						'[src] attribute missing or empty. Oh, well…')),
+	'advices': (),
+	'warnings': ()
 );
 ```
 
@@ -121,17 +121,17 @@ Much better, isn’t it? Although having to type the language over and over is n
 /// @requires $messages
 /// @return {String} Message
 @function message($theme, $key) {
-  $locale: if(global-variable-exists('language'), $language, 'en');
+	$locale: if(global-variable-exists('language'), $language, 'en');
 
-  @if not index(map-keys($messages), $theme) {
-    @error "Theme `#{$theme}` does not exist.";
-  }
+	@if not index(map-keys($messages), $theme) {
+		@error "Theme `#{$theme}` does not exist.";
+	}
 
-  @if not index(map-keys(map-get($messages, $theme)), $key) {
-    @error "No key `#{$key}` found for theme `#{$theme}`.";
-  }
+	@if not index(map-keys(map-get($messages, $theme)), $key) {
+		@error "No key `#{$key}` found for theme `#{$theme}`.";
+	}
 
-  @return map-deep-get($messages, $theme, $key, $locale);
+	@return map-deep-get($messages, $theme, $key, $locale);
 }
 ```
 
@@ -141,7 +141,7 @@ So we could use it like this:
 
 ```scss
 img:not([src])::after {
-  content: message('errors', 'no-src');
+	content: message('errors', 'no-src');
 }
 ```
 
@@ -164,7 +164,7 @@ Pretty cool! Although having to type `content` everywhere could be avoided. Plus
 ///   content: '[src] attribute missing or empty. Oh, well…';
 /// }
 @mixin message($theme, $key) {
-  content: message($theme, $key) !important;
+	content: message($theme, $key) !important;
 }
 ```
 
@@ -172,7 +172,7 @@ Same arguments. No logic. Nothing but the `content` property with `!important`. 
 
 ```scss
 img:not([src])::after {
-  @include message('errors', 'no-src');
+	@include message('errors', 'no-src');
 }
 ```
 

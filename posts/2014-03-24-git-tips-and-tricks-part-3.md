@@ -149,7 +149,7 @@ $ git bisect bad
 commit 7ae5192025b3a96520ee4897bd411ee7c9d0828f
 Author: lgiraudel <lgiraudel@mydomain.com>
 
-    Commit 3
+	Commit 3
 
 :100644 100644 d133004b66122208e5a1841e01b77db5862548c0 cd8061d8bb277cb08d8965487ff263181a82e2e4 M  file.txt
 ```
@@ -161,7 +161,7 @@ $ git log -1 -p
 commit 7ae5192025b3a96520ee4897bd411ee7c9d0828f
 Author: lgiraudel <lgiraudel@mydomain.com>
 
-    Commit 3
+		Commit 3
 
 diff --git file.txt file.txt
 index d133004..cd8061d 100644
@@ -203,7 +203,7 @@ $ git bisect good
 commit 7ae5192025b3a96520ee4897bd411ee7c9d0828f
 Author: lgiraudel <lgiraudel@mydomain.com>
 
-    Commit 3
+	Commit 3
 
 :100644 100644 d133004b66122208e5a1841e01b77db5862548c0 cd8061d8bb277cb08d8965487ff263181a82e2e4
 ```
@@ -245,7 +245,7 @@ running ./bisect_auto.sh
 commit 7ae5192025b3a96520ee4897bd411ee7c9d0828f
 Author: lgiraudel <lgiraudel@mydomain.com>
 
-    Commit 3
+	Commit 3
 
 :100644 100644 d133004b66122208e5a1841e01b77db5862548c0 cd8061d8bb277cb08d8965487ff263181a82e2e4 M  file.txt
 bisect run success
@@ -356,7 +356,7 @@ $ git log -1 -p
 commit f523330f8db0030eadc41836b54713aac2baf18b
 Author: lgiraudel <lgiraudel@mydomain.com>
 
-    Many commits instead of 20
+	Many commits instead of 20
 
 diff --git file.txt file.txt
 new file mode 100644

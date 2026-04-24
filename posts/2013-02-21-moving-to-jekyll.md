@@ -52,15 +52,15 @@ I created a PHP array which was kind of a database to me. It handled both the in
 
 ```php
 $articles = array(
-  array(
-    title => "Article title",
-    desc => "A little article description",
-    url => "/blog/url-of-the-article",
-    codrops => false,
-    guest => false,
-    status => true //public
-  ),
-  …
+	array(
+		title => "Article title",
+		desc => "A little article description",
+		url => "/blog/url-of-the-article",
+		codrops => false,
+		guest => false,
+		status => true //public
+	),
+	…
 );
 ```
 

@@ -63,15 +63,15 @@ So I came up with this small `_includes/styles.html` Liquid partial:
 
 ```liquid
 {% if paths %}
-  {% assign paths = paths | split: "," %}
+	{% assign paths = paths | split: "," %}
 
-  {% capture css -%}
-    {%- for path in paths -%}
-      {% include "../assets/css/{{ path | strip }}.css" %}
-    {%- endfor -%}
-  {%- endcapture %}
+	{% capture css -%}
+		{%- for path in paths -%}
+			{% include "../assets/css/{{ path | strip }}.css" %}
+		{%- endfor -%}
+	{%- endcapture %}
 
-  <style>{{ css }}</style>
+	<style>{{ css }}</style>
 {% endif %}
 ```
 
@@ -99,13 +99,13 @@ I decided to run that transform only in production because a) I don’t like to 
 
 ```js
 module.exports = function (config) {
-  if (process.env.NODE_ENV === 'production') {
-    config.addTransform('htmlmin', (content, path) =>
-      path.endsWith('.html')
-        ? htmlmin.minify(content, { minifyCSS: true, minifyJS: true })
-        : content,
-    )
-  }
+	if (process.env.NODE_ENV === 'production') {
+		config.addTransform('htmlmin', (content, path) =>
+			path.endsWith('.html')
+				? htmlmin.minify(content, { minifyCSS: true, minifyJS: true })
+				: content,
+		)
+	}
 }
 ```
 

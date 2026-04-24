@@ -29,14 +29,14 @@ I personally used this extension in this very site, when it comes to images and 
 
 ```scss
 @mixin pull-quote($direction) {
-  $opposite: opposite-position($direction);
+	$opposite: opposite-position($direction);
 
-  text-align: $opposite;
-  float: $direction;
-  margin: 0 0 0.5em 0;
-  margin-#{$opposite}: 1em;
-  border-#{$opposite}: 6px solid hotpink;
-  padding-#{$opposite}: 1em;
+	text-align: $opposite;
+	float: $direction;
+	margin: 0 0 0.5em 0;
+	margin-#{$opposite}: 1em;
+	border-#{$opposite}: 6px solid hotpink;
+	padding-#{$opposite}: 1em;
 }
 ```
 
@@ -52,9 +52,9 @@ This may be useful as part of a CSS reset for example:
 
 ```scss
 @mixin reset-html5 {
-  #{elements-of-type(html5-block)} {
-    display: block;
-  }
+	#{elements-of-type(html5-block)} {
+		display: block;
+	}
 }
 ```
 
@@ -68,17 +68,17 @@ Basically, `experimental()` allows you to define mixins outputing content depend
 
 ```scss
 @mixin box-sizing($bs) {
-  $bs: unquote($bs);
-  @include experimental(
-    box-sizing,
-    $bs,
-    -moz,
-    -webkit,
-    not -o,
-    not -ms,
-    not -khtml,
-    official
-  );
+	$bs: unquote($bs);
+	@include experimental(
+		box-sizing,
+		$bs,
+		-moz,
+		-webkit,
+		not -o,
+		not -ms,
+		not -khtml,
+		official
+	);
 }
 ```
 
@@ -86,9 +86,9 @@ This outputs:
 
 ```css
 .element {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 ```
 
@@ -98,19 +98,19 @@ Now what’s the point of such a tool? As an example, there is no default mixin 
 
 ```scss
 @mixin animation($content) {
-  @include experimental(
-    animation,
-    $content,
-    -webkit,
-    -moz,
-    not -o,
-    not -ms,
-    official
-  );
+	@include experimental(
+		animation,
+		$content,
+		-webkit,
+		-moz,
+		not -o,
+		not -ms,
+		official
+	);
 }
 
 .element {
-  @include animation(my-animation 3s ease);
+	@include animation(my-animation 3s ease);
 }
 ```
 
@@ -118,9 +118,9 @@ This outputs:
 
 ```css
 .element {
-  -webkit-animation: my-animation 3s ease;
-  -moz-animation: my-animation 3s ease;
-  animation: my-animation 3s ease;
+	-webkit-animation: my-animation 3s ease;
+	-moz-animation: my-animation 3s ease;
+	animation: my-animation 3s ease;
 }
 ```
 
@@ -136,11 +136,11 @@ Back to our business: Compass gives two ways to trigger `hasLayout` on elements:
 
 ```scss
 .element1 {
-  @include has-layout(zoom);
+	@include has-layout(zoom);
 }
 
 .element2 {
-  @include has-layout(block);
+	@include has-layout(block);
 }
 ```
 
@@ -148,14 +148,14 @@ Outputs…
 
 ```css
 .element1 {
-  *zoom: 1;
+	*zoom: 1;
 }
 
 .element2 {
-  display: inline-block;
+	display: inline-block;
 }
 .element2 {
-  display: block;
+	display: block;
 }
 ```
 
@@ -163,7 +163,7 @@ You now understand why I use the zoom approach. Otherwise, Compass also provides
 
 ```scss
 .element1 {
-  @include bang-hack(color, red, blue);
+	@include bang-hack(color, red, blue);
 }
 ```
 
@@ -171,8 +171,8 @@ Outputs…
 
 ```css
 .element1 {
-  color: red !important;
-  color: blue;
+	color: red !important;
+	color: blue;
 }
 ```
 
@@ -184,10 +184,10 @@ Compass gives you a way to know the [dimensions of an image](https://compass-sty
 
 ```scss
 .element {
-  $image: 'my-awesome-background.jpg';
-  background: url($image);
-  width: image-width($image);
-  height: image-height($image);
+	$image: 'my-awesome-background.jpg';
+	background: url($image);
+	width: image-width($image);
+	height: image-height($image);
 }
 ```
 
@@ -244,7 +244,7 @@ Compass provides several resources to ease a daily task: [image replacement](htt
 
 ```scss
 .element {
-  @include hide-text(right);
+	@include hide-text(right);
 }
 ```
 
@@ -252,9 +252,9 @@ Outputs…
 
 ```css
 .element {
-  text-indent: 110%;
-  white-space: nowrap;
-  overflow: hidden;
+	text-indent: 110%;
+	white-space: nowrap;
+	overflow: hidden;
 }
 ```
 

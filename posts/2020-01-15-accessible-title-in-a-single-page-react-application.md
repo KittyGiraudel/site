@@ -36,30 +36,30 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 const Home = () => (
-  <>
-    <h1>Home</h1>
-    <Helmet>
-      <title>Home</title>
-    </Helmet>
-  </>
+	<>
+		<h1>Home</h1>
+		<Helmet>
+			<title>Home</title>
+		</Helmet>
+	</>
 )
 
 const About = () => (
-  <>
-    <h1>About</h1>
-    <Helmet>
-      <title>About</title>
-    </Helmet>
-  </>
+	<>
+		<h1>About</h1>
+		<Helmet>
+			<title>About</title>
+		</Helmet>
+	</>
 )
 
 const Dashboard = () => (
-  <>
-    <h1>Dashboard</h1>
-    <Helmet>
-      <title>Dashboard</title>
-    </Helmet>
-  </>
+	<>
+		<h1>Dashboard</h1>
+		<Helmet>
+			<title>Dashboard</title>
+		</Helmet>
+	</>
 )
 ```
 
@@ -67,31 +67,31 @@ Now, let’s create a top-level component which will handle the routing to these
 
 ```jsx
 const Root = () => (
-  <Router>
-    <>
-      <TitleAnnouncer />
+	<Router>
+		<>
+			<TitleAnnouncer />
 
-      <nav role='navigation'>
-        <Link to='/'>Home</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/dashboard'>Dashboard</Link>
-      </nav>
+			<nav role='navigation'>
+				<Link to='/'>Home</Link>
+				<Link to='/about'>About</Link>
+				<Link to='/dashboard'>Dashboard</Link>
+			</nav>
 
-      <hr />
+			<hr />
 
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route path='/about'>
-          <About />
-        </Route>
-        <Route path='/dashboard'>
-          <Dashboard />
-        </Route>
-      </Switch>
-    </>
-  </Router>
+			<Switch>
+				<Route exact path='/'>
+					<Home />
+				</Route>
+				<Route path='/about'>
+					<About />
+				</Route>
+				<Route path='/dashboard'>
+					<Dashboard />
+				</Route>
+			</Switch>
+		</>
+	</Router>
 )
 ```
 
@@ -110,24 +110,24 @@ import { useLocation } from 'react-helmet'
 import { Helmet } from 'react-helmet'
 
 const TitleAnnouncer = props => {
-  const [title, setTitle] = React.useState('')
-  const titleRef = React.createRef()
-  const { pathname } = useLocation()
-  const onHelmetChange = ({ title }) => setTitle(title)
+	const [title, setTitle] = React.useState('')
+	const titleRef = React.createRef()
+	const { pathname } = useLocation()
+	const onHelmetChange = ({ title }) => setTitle(title)
 
-  React.useEffect(() => {
-    if (titleRef.current) titleRef.current.focus()
-  }, [pathname])
+	React.useEffect(() => {
+		if (titleRef.current) titleRef.current.focus()
+	}, [pathname])
 
-  return (
-    <>
-      <p tabIndex={-1} ref={titleRef} className='sr-only'>
-        {title}
-      </p>
+	return (
+		<>
+			<p tabIndex={-1} ref={titleRef} className='sr-only'>
+				{title}
+			</p>
 
-      <Helmet onChangeClientState={onHelmetChange} />
-    </>
-  )
+			<Helmet onChangeClientState={onHelmetChange} />
+		</>
+	)
 }
 ```
 

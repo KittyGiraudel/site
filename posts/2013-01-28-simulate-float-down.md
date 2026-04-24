@@ -44,8 +44,8 @@ Finally someone came up with a better idea (and probably a better understanding 
 
 ```css
 li:nth-child(even) {
-  margin: 110px 0 0 -110px;
-  /* Given a 100*100px element with a 10px margin */
+	margin: 110px 0 0 -110px;
+	/* Given a 100*100px element with a 10px margin */
 }
 ```
 
@@ -59,7 +59,7 @@ I just noticed [Estelle Weyl](https://codepen.io/estelle) did it in another clev
 
 ```css
 ul {
-  columns: 5;
+	columns: 5;
 }
 ```
 
@@ -80,13 +80,13 @@ Instead of doing `:nth-child(even)`, we need two different selectors:
 
 ```css
 li:nth-child(3n + 2) {
-  margin: 120px 0 0 -110px;
-  background: limegreen;
+	margin: 120px 0 0 -110px;
+	background: limegreen;
 }
 
 li:nth-child(3n + 3) {
-  margin: 230px 0 0 -110px;
-  background: crimson;
+	margin: 230px 0 0 -110px;
+	background: crimson;
 }
 ```
 
@@ -124,14 +124,14 @@ Now let’s get to the funny part. I figured out there is some kind of pattern t
 $i: $rows; // Initializing the loop
 
 @while ($i > 1) {
-  li:nth-child(#{$rows}n + #{$i}) {
-    $j: ($i - 1); // Setting a $i-1 variable
+	li:nth-child(#{$rows}n + #{$i}) {
+		$j: ($i - 1); // Setting a $i-1 variable
 
-    margin-top: ($j * $height + $i * $margin);
-    margin-left: -($width + $margin);
-  }
+		margin-top: ($j * $height + $i * $margin);
+		margin-left: -($width + $margin);
+	}
 
-  $i: ($i - 1);
+	$i: ($i - 1);
 }
 ```
 
@@ -139,18 +139,18 @@ It is pretty tough. Let me show you how it compiles when \$rows is set to 4 (oth
 
 ```scss
 li:nth-child(4n + 4) {
-  margin-top: 13.6em; // (3 * 4em) + (4 * 0.4em)
-  margin-left: -4.4em; // -(4em + 0.4em)
+	margin-top: 13.6em; // (3 * 4em) + (4 * 0.4em)
+	margin-left: -4.4em; // -(4em + 0.4em)
 }
 
 li:nth-child(4n + 3) {
-  margin-top: 9.2em; // (2 * 4em) + (3 * 0.4em)
-  margin-left: -4.4em; // -(4em + 0.4em)
+	margin-top: 9.2em; // (2 * 4em) + (3 * 0.4em)
+	margin-left: -4.4em; // -(4em + 0.4em)
 }
 
 li:nth-child(4n + 2) {
-  margin-top: 4.8em; // (1 * 4em) + (2 * 0.4em)
-  margin-left: -4.4em; // -(4em + 0.4em)
+	margin-top: 4.8em; // (1 * 4em) + (2 * 0.4em)
+	margin-left: -4.4em; // -(4em + 0.4em)
 }
 ```
 

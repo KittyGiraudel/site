@@ -17,6 +17,6 @@ As an example, consider a link visually stating “Edit” in a list of items. I
 
 ```html
 <a href="/edit/1234567890">
-  Edit <span class="sr-only">item [distinguishable item name]</span>
+	Edit <span class="sr-only">item [distinguishable item name]</span>
 </a>
 ```

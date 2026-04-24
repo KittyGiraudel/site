@@ -25,11 +25,11 @@ This is the perfect use case for a good ol’ `<details>` / `<summary>` combo. H
 
 ```html
 <details class="ContentWarning">
-  <summary><strong>⚠️ Content warning:</strong> Food</summary>
-  <img
-    src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGJ1cmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60"
-    alt="Juicy burger and fries on a wooden board"
-  />
+	<summary><strong>⚠️ Content warning:</strong> Food</summary>
+	<img
+		src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGJ1cmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60"
+		alt="Juicy burger and fries on a wooden board"
+	/>
 </details>
 ```
 
@@ -41,8 +41,8 @@ Because we rely on `<details>` and `<summary>`, styles are are purely cosmetic a
 
 ```css
 .ContentWarning {
-  border: 1px solid rgb(0 0 0 / 0.3);
-  border-radius: 0.2em;
+	border: 1px solid rgb(0 0 0 / 0.3);
+	border-radius: 0.2em;
 }
 
 /**
@@ -52,17 +52,17 @@ Because we rely on `<details>` and `<summary>`, styles are are purely cosmetic a
  * 4. Give the toggle a striped background to make it stand out
  */
 .ContentWarning > summary {
-  list-style: none; /* 1 */
-  cursor: pointer; /* 2 */
-  padding: 1em; /* 3 */
-  --stripe-color: rgb(0 0 0 / 0.1); /* 4 */
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 0.5em,
-    var(--stripe-color) 0.5em,
-    var(--stripe-color) 1em
-  ); /* 4 */
+	list-style: none; /* 1 */
+	cursor: pointer; /* 2 */
+	padding: 1em; /* 3 */
+	--stripe-color: rgb(0 0 0 / 0.1); /* 4 */
+	background-image: repeating-linear-gradient(
+		45deg,
+		transparent,
+		transparent 0.5em,
+		var(--stripe-color) 0.5em,
+		var(--stripe-color) 1em
+	); /* 4 */
 }
 
 /**
@@ -71,7 +71,7 @@ Because we rely on `<details>` and `<summary>`, styles are are purely cosmetic a
  */
 .ContentWarning > summary:hover,
 .ContentWarning > summary:focus {
-  --stripe-color: rgb(150 0 0 / 0.1); /* 1 */
+	--stripe-color: rgb(150 0 0 / 0.1); /* 1 */
 }
 ```
 

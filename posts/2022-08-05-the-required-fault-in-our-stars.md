@@ -52,9 +52,9 @@ A different approach I have seen used (and have implemented myself) is to vocall
 
 ```html
 <label for="name">
-  Name
-  <span aria-hidden="true" title="Required field">*</span>
-  <span class="sr-only">Required field</span>
+	Name
+	<span aria-hidden="true" title="Required field">*</span>
+	<span class="sr-only">Required field</span>
 </label>
 <input type="text" id="name" required="" />
 ```

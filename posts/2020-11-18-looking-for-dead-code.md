@@ -29,15 +29,15 @@ Now, we only have to loop through all paths in our `components` directory (or an
 # Loop over every entry within the given path
 for entry in src/components/*
 do
-  # Grab only the directory name
-  # (e.g. `Input` from `src/components/Input`)
-  name=$(basename $entry)
+	# Grab only the directory name
+	# (e.g. `Input` from `src/components/Input`)
+	name=$(basename $entry)
 
-  # Perform a search in the `./src` directory
-  # and echo the path if it yields nothing
-  if [[ -z "$(grep -r "/$name'" ./src)" ]]; then
-    echo "$entry is unused"
-  fi
+	# Perform a search in the `./src` directory
+	# and echo the path if it yields nothing
+	if [[ -z "$(grep -r "/$name'" ./src)" ]]; then
+		echo "$entry is unused"
+	fi
 done
 ```
 
@@ -45,14 +45,14 @@ A convenient way to execute that code is to define it as a function in one’s `
 
 ```bash
 function groom {
-  root="${2:-.}"
-  for entry in "$1"/*
-  do
-    name=$(basename $entry)
-    if [[ -z "$(grep -r "/$name'" $root)" ]]; then
-      echo "$entry is unused"
-    fi
-  done
+	root="${2:-.}"
+	for entry in "$1"/*
+	do
+		name=$(basename $entry)
+		if [[ -z "$(grep -r "/$name'" $root)" ]]; then
+			echo "$entry is unused"
+		fi
+	done
 }
 ```
 

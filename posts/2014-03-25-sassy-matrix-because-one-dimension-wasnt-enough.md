@@ -33,7 +33,7 @@ JavaScript allows you to instanciate a new array of `n` cells. This makes creati
 ```javascript
 var matrix = new Array(9)
 for (var i = 0; i < matrix.length; i++) {
-  matrix[i] = new Array(9)
+	matrix[i] = new Array(9)
 }
 ```
 
@@ -43,15 +43,15 @@ Thus I found out it’s much easier to simply instanciate a new list with dummy 
 
 ```scss
 @function matrix($x, $y: $x) {
-  $matrix: ();
-  @for $i from 1 through $x {
-    $tmp: ();
-    @for $j from 1 through $y {
-      $tmp: append($tmp, 0); // 0 is the filler value
-    }
-    $matrix: append($matrix, $tmp);
-  }
-  @return $matrix;
+	$matrix: ();
+	@for $i from 1 through $x {
+		$tmp: ();
+		@for $j from 1 through $y {
+			$tmp: append($tmp, 0); // 0 is the filler value
+		}
+		$matrix: append($matrix, $tmp);
+	}
+	@return $matrix;
 }
 ```
 
@@ -63,10 +63,10 @@ Being able to instanciate an empty matrix is cool but being able to fill it with
 
 ```scss
 @function set-entry($matrix, $coords, $value) {
-  $x: nth($coords, 1);
-  $y: nth($coords, 2);
-  $matrix: set-nth(set-nth(nth($matrix, $x), $y, $value), $x, $matrix);
-  @return $matrix;
+	$x: nth($coords, 1);
+	$y: nth($coords, 2);
+	$matrix: set-nth(set-nth(nth($matrix, $x), $y, $value), $x, $matrix);
+	@return $matrix;
 }
 ```
 
@@ -74,16 +74,16 @@ We could have requested two distinct parameters for `$x` and `$y` but I feel lik
 
 ```scss
 @function _valid-coords($coords) {
-  @if length($coords) !=
-    2 or
-    type-of(nth($coords, 1)) !=
-    number or
-    type-of(nth($coords, 2)) !=
-    number
-  {
-    @return false;
-  }
-  @return true;
+	@if length($coords) !=
+		2 or
+		type-of(nth($coords, 1)) !=
+		number or
+		type-of(nth($coords, 2)) !=
+		number
+	{
+		@return false;
+	}
+	@return true;
 }
 ```
 
@@ -103,12 +103,12 @@ Now that we are able to easily set values in the grid, we need a way to retrieve
 
 ```scss
 @function get-entry($matrix, $coords) {
-  @if not _valid-coords($coords) {
-    @warn "Invalid coords `#{$coords}` for `get-entry`.";
-    @return false;
-  }
+	@if not _valid-coords($coords) {
+		@warn "Invalid coords `#{$coords}` for `get-entry`.";
+		@return false;
+	}
 
-  @return nth(nth($matrix, nth($coords, 1)), nth($coords, 2));
+	@return nth(nth($matrix, nth($coords, 1)), nth($coords, 2));
 }
 ```
 
@@ -124,15 +124,15 @@ What I always found difficult when working with matrices (no matter the language
 
 ```scss
 @function display($matrix) {
-  $str: '';
-  @each $line in $matrix {
-    $tmp: '';
-    @each $item in $line {
-      $tmp: $tmp + ' ' + $item;
-    }
-    $str: $str + $tmp + '\A ';
-  }
-  @return $str;
+	$str: '';
+	@each $line in $matrix {
+		$tmp: '';
+		@each $item in $line {
+			$tmp: $tmp + ' ' + $item;
+		}
+		$str: $str + $tmp + '\A ';
+	}
+	@return $str;
 }
 ```
 
@@ -148,24 +148,24 @@ This function returns a string like this: `" 0 0 0\A 0 0 0\A 0 0 0\A "`. As is, 
 
 ```scss
 @mixin display($matrix, $pseudo: before) {
-  body:#{$pseudo} {
-    content: display($matrix) !important;
+	body:#{$pseudo} {
+		content: display($matrix) !important;
 
-    display: block !important;
-    margin: 1em !important;
-    padding: 0.5em !important;
+		display: block !important;
+		margin: 1em !important;
+		padding: 0.5em !important;
 
-    background: #efefef !important;
-    border: 1px solid #ddd !important;
-    border-radius: 0.2em !important;
+		background: #efefef !important;
+		border: 1px solid #ddd !important;
+		border-radius: 0.2em !important;
 
-    color: #333 !important;
-    font:
-      1.5em/1.5 'Courier New',
-      monospace !important;
-    text-shadow: 0 1px white !important;
-    white-space: pre-wrap !important;
-  }
+		color: #333 !important;
+		font:
+			1.5em/1.5 'Courier New',
+			monospace !important;
+		text-shadow: 0 1px white !important;
+		white-space: pre-wrap !important;
+	}
 }
 ```
 

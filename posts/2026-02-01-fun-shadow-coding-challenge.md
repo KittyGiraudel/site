@@ -36,12 +36,12 @@ In this demo, the box has a short keyframe animation that goes from one `box-sha
 
 ```css
 @keyframes shadow {
-  from {
-    box-shadow: 0px 10px 20px rgb(0 0 0 / 0.5);
-  }
-  to {
-    box-shadow: 0px -10px 20px rgb(0 0 0 / 0.5);
-  }
+	from {
+		box-shadow: 0px 10px 20px rgb(0 0 0 / 0.5);
+	}
+	to {
+		box-shadow: 0px -10px 20px rgb(0 0 0 / 0.5);
+	}
 }
 ```
 

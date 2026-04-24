@@ -19,7 +19,7 @@ Let’s start here, with the `body` prop containing the portable text queried fr
 
 ```js
 const BlogPost = props => {
-  return <PortableText value={props.body} />
+	return <PortableText value={props.body} />
 }
 ```
 
@@ -39,11 +39,11 @@ This is how we would create such a function:
 
 ```js
 const filter = (ast, match) =>
-  ast.reduce((acc, node) => {
-    if (match(node)) acc.push(node)
-    if (node.children) acc.push(...filter(node.children, match))
-    return acc
-  }, [])
+	ast.reduce((acc, node) => {
+		if (match(node)) acc.push(node)
+		if (node.children) acc.push(...filter(node.children, match))
+		return acc
+	}, [])
 ```
 
 Now, we can create a `findHeadings` function that look for nodes with a `style` prop like `h2`, `h3`…
@@ -72,30 +72,30 @@ Now, we want a function that nests these headings properly based on their level.
 ```js
 const get = (object, path) => path.reduce((prev, curr) => prev[curr], object)
 const getObjectPath = path =>
-  path.length === 0
-    ? path
-    : ['subheadings'].concat(path.join('.subheadings.').split('.'))
+	path.length === 0
+		? path
+		: ['subheadings'].concat(path.join('.subheadings.').split('.'))
 
 const parseOutline = ast => {
-  const outline = { subheadings: [] }
-  const headings = findHeadings(ast)
-  const path = []
-  let lastLevel = 0
+	const outline = { subheadings: [] }
+	const headings = findHeadings(ast)
+	const path = []
+	let lastLevel = 0
 
-  headings.forEach(heading => {
-    const level = Number(heading.style.slice(1))
-    heading.subheadings = []
+	headings.forEach(heading => {
+		const level = Number(heading.style.slice(1))
+		heading.subheadings = []
 
-    if (level < lastLevel) for (let i = lastLevel; i >= level; i--) path.pop()
-    else if (level === lastLevel) path.pop()
+		if (level < lastLevel) for (let i = lastLevel; i >= level; i--) path.pop()
+		else if (level === lastLevel) path.pop()
 
-    const prop = get(outline, getObjectPath(path))
-    prop.subheadings.push(heading)
-    path.push(prop.subheadings.length - 1)
-    lastLevel = level
-  })
+		const prop = get(outline, getObjectPath(path))
+		prop.subheadings.push(heading)
+		path.push(prop.subheadings.length - 1)
+		lastLevel = level
+	})
 
-  return outline.subheadings
+	return outline.subheadings
 }
 ```
 
@@ -107,14 +107,14 @@ We have everything we need to render our table of contents in the frontend!
 
 ```js
 const BlogPost = props => {
-  const outline = parseOutline(props.body)
+	const outline = parseOutline(props.body)
 
-  return (
-    <>
-      <TableOfContents outline={outline} />
-      <PortableText value={props.body} />
-    </>
-  )
+	return (
+		<>
+			<TableOfContents outline={outline} />
+			<PortableText value={props.body} />
+		</>
+	)
 }
 ```
 
@@ -122,21 +122,21 @@ And finally, our `TableOfContents` component:
 
 ```js
 const getChildrenText = props =>
-  props.children
-    .map(node => (typeof node === 'string' ? node : node.text || ''))
-    .join('')
+	props.children
+		.map(node => (typeof node === 'string' ? node : node.text || ''))
+		.join('')
 
 const TableOfContents = props => (
-  <ol>
-    {props.outline.map(heading => (
-      <li>
-        <a href={'#' + heading._key}>{getChildrenText(heading)}</a>
-        {heading.subheadings.length > 0 && (
-          <TableOfContents outline={heading.subheadings} />
-        )}
-      </li>
-    ))}
-  </ol>
+	<ol>
+		{props.outline.map(heading => (
+			<li>
+				<a href={'#' + heading._key}>{getChildrenText(heading)}</a>
+				{heading.subheadings.length > 0 && (
+					<TableOfContents outline={heading.subheadings} />
+				)}
+			</li>
+		))}
+	</ol>
 )
 ```
 
@@ -154,12 +154,12 @@ We can tweak our `findHeadings` function to provide more information for each no
 
 ```js
 const findHeadings = ast =>
-  filter(ast, node => /h\d/.test(node.style)).map(node => {
-    const text = getChildrenText(node)
-    const slug = speakingurl(text)
+	filter(ast, node => /h\d/.test(node.style)).map(node => {
+		const text = getChildrenText(node)
+		const slug = speakingurl(text)
 
-    return { ...node, text, slug }
-  })
+		return { ...node, text, slug }
+	})
 ```
 
 And we can update our component:

@@ -42,25 +42,25 @@ Thankfully, React makes it trivial to detect all that: when a component has moun
 
 ```jsx
 const MyComponent = props => {
-  const [hasJavaScript, setHasJavaScript] = React.useState(false)
+	const [hasJavaScript, setHasJavaScript] = React.useState(false)
 
-  React.useEffect(() => setHasJavaScript(true), [])
+	React.useEffect(() => setHasJavaScript(true), [])
 
-  return (
-    <>
-      {hasJavaScript ? (
-        <p>
-          This will not render on the server, only on the client when JavaScript
-          is finally available.
-        </p>
-      ) : (
-        <p>
-          This will render on the server, and on the client until JavaScript is
-          finally available.
-        </p>
-      )}
-    </>
-  )
+	return (
+		<>
+			{hasJavaScript ? (
+				<p>
+					This will not render on the server, only on the client when JavaScript
+					is finally available.
+				</p>
+			) : (
+				<p>
+					This will render on the server, and on the client until JavaScript is
+					finally available.
+				</p>
+			)}
+		</>
+	)
 }
 ```
 
@@ -70,14 +70,14 @@ To avoid using a local state and a `useEffect` hook in every component that need
 export const HasJavaScriptContext = React.createContext(false)
 
 const App = props => {
-  const [hasJavaScript, setHasJavaScript] = React.useState(false)
-  React.useEffect(() => setHasJavaScript(true), [])
+	const [hasJavaScript, setHasJavaScript] = React.useState(false)
+	React.useEffect(() => setHasJavaScript(true), [])
 
-  return (
-    <HasJavaScriptContext.Provider value={hasJavaScript}>
-      {props.children}
-    </HasJavaScriptContext.Provider>
-  )
+	return (
+		<HasJavaScriptContext.Provider value={hasJavaScript}>
+			{props.children}
+		</HasJavaScriptContext.Provider>
+	)
 }
 ```
 
@@ -85,23 +85,23 @@ Then components can read that value from the context:
 
 ```jsx
 const MyComponent = props => {
-  const hasJavaScript = React.useContext(HasJavaScriptContext)
+	const hasJavaScript = React.useContext(HasJavaScriptContext)
 
-  return (
-    <>
-      {hasJavaScript ? (
-        <p>
-          This will not render on the server, only on the client when JavaScript
-          is finally available.
-        </p>
-      ) : (
-        <p>
-          This will render on the server, and on the client until JavaScript is
-          finally available.
-        </p>
-      )}
-    </>
-  )
+	return (
+		<>
+			{hasJavaScript ? (
+				<p>
+					This will not render on the server, only on the client when JavaScript
+					is finally available.
+				</p>
+			) : (
+				<p>
+					This will render on the server, and on the client until JavaScript is
+					finally available.
+				</p>
+			)}
+		</>
+	)
 }
 ```
 
@@ -117,19 +117,19 @@ For users with JavaScript turned off, but with the cookie flag set somehow (from
 
 ```js
 ${props.hasJavaScriptCookie
-  ? `
-    <noscript>
-      <meta http-equiv='refresh' content='0; url=/js' />
-    </noscript>
-    `
-  : ''}
+	? `
+		<noscript>
+			<meta http-equiv='refresh' content='0; url=/js' />
+		</noscript>
+		`
+	: ''}
 ```
 
 This meta tag redirects to an Express route (simplified below), where the cookie is deleted and the user is redirected back to the page they were on, thus causing the process to start again.
 
 ```js
 server.get('/js', () => {
-  response.clearCookie('expects_javascript').redirect('back')
+	response.clearCookie('expects_javascript').redirect('back')
 })
 ```
 

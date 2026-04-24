@@ -21,31 +21,31 @@ Conceptually, it was on the money though: have an [Eleventy plugin](https://www.
 
 ```js
 export default function postStatsPlugin(eleventyConfig, options = {}) {
-  eleventyConfig.addCollection('postStats', collection => {
-    const posts = collection
-      .getFilteredByGlob('_posts/*.md')
-      .sort((a, b) => b.date - a.date)
+	eleventyConfig.addCollection('postStats', collection => {
+		const posts = collection
+			.getFilteredByGlob('_posts/*.md')
+			.sort((a, b) => b.date - a.date)
 
-    // Aggregate a bunch of data from posts
-    // …
+		// Aggregate a bunch of data from posts
+		// …
 
-    // Return the final stats
-    const stats = {
-      firstPostDate,
-      lastPostDate,
-      postCount,
-      avgPostsPerWeek,
-      avgPostsPerMonth,
-      avgPostsPerYear,
-      avgDaysBetweenPosts,
-      avgCharacterCount,
-      avgWordCount,
-      avgParagraphCount,
-      popularTags,
-    }
+		// Return the final stats
+		const stats = {
+			firstPostDate,
+			lastPostDate,
+			postCount,
+			avgPostsPerWeek,
+			avgPostsPerMonth,
+			avgPostsPerYear,
+			avgDaysBetweenPosts,
+			avgCharacterCount,
+			avgWordCount,
+			avgParagraphCount,
+			popularTags,
+		}
 
-    return [stats]
-  })
+		return [stats]
+	})
 }
 ```
 
@@ -72,27 +72,27 @@ To avoid considering the YAML front-matter when computing article lengths, we ne
 
 ```js
 function stripFrontMatter(content) {
-  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
-  return match ? match[2].trim() : content.trim()
+	const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
+	return match ? match[2].trim() : content.trim()
 }
 ```
 
 ```js
 for (const post of posts) {
-  let body = ''
+	let body = ''
 
-  try {
-    const raw = fs.readFileSync(post.inputPath, 'utf8')
-    body = stripFrontMatter(raw)
-  } catch {
-    console.warn(
-      `Could not strip out the YAML front-matter for ${post.inputPath}`,
-    )
-    continue
-  }
+	try {
+		const raw = fs.readFileSync(post.inputPath, 'utf8')
+		body = stripFrontMatter(raw)
+	} catch {
+		console.warn(
+			`Could not strip out the YAML front-matter for ${post.inputPath}`,
+		)
+		continue
+	}
 
-  const stats = getContentStats(body)
-  // … Add the stats to a shared object for all posts
+	const stats = getContentStats(body)
+	// … Add the stats to a shared object for all posts
 }
 ```
 
@@ -106,39 +106,39 @@ So I’ve set up some lightweight caching for the plugin. It maintains a map of 
 const CONTENT_STATS_CACHE = new Map()
 
 function getCachedContentStats(post) {
-  const inputPath = post.inputPath
-  if (!inputPath) return null
+	const inputPath = post.inputPath
+	if (!inputPath) return null
 
-  let stat
-  try {
-    stat = fs.statSync(inputPath)
-  } catch {
-    return null
-  }
+	let stat
+	try {
+		stat = fs.statSync(inputPath)
+	} catch {
+		return null
+	}
 
-  const lastModifiedTime = stat.mtimeMs
-  const cachedEntry = CONTENT_STATS_CACHE.get(inputPath)
+	const lastModifiedTime = stat.mtimeMs
+	const cachedEntry = CONTENT_STATS_CACHE.get(inputPath)
 
-  if (cachedEntry?.lastModifiedTime === lastModifiedTime) {
-    return cachedEntry.stats
-  }
+	if (cachedEntry?.lastModifiedTime === lastModifiedTime) {
+		return cachedEntry.stats
+	}
 
-  let body = ''
+	let body = ''
 
-  try {
-    const raw = fs.readFileSync(inputPath, 'utf8')
-    body = stripFrontMatter(raw)
-  } catch {
-    console.warn(
-      `Could not strip out the YAML front-matter for ${post.inputPath}`,
-    )
-    return null
-  }
+	try {
+		const raw = fs.readFileSync(inputPath, 'utf8')
+		body = stripFrontMatter(raw)
+	} catch {
+		console.warn(
+			`Could not strip out the YAML front-matter for ${post.inputPath}`,
+		)
+		return null
+	}
 
-  const stats = getContentStats(body)
-  CONTENT_STATS_CACHE.set(inputPath, { lastModifiedTime, stats })
+	const stats = getContentStats(body)
+	CONTENT_STATS_CACHE.set(inputPath, { lastModifiedTime, stats })
 
-  return stats
+	return stats
 }
 ```
 
@@ -159,20 +159,20 @@ permalink: /stats/
 {​% assign stats = collections.postStats %}
 
 <table>
-  <tbody>
-    <tr>
-      <th scope="row">First post</th>
-      <td>{​{ stats.firstPostDate | time }}</td>
-    </tr>
-    <tr>
-      <th scope="row">Last post</th>
-      <td>{​{ stats.lastPostDate | time }}</td>
-    </tr>
-    <tr>
-      <th scope="row">Total posts</th>
-      <td>{​{ stats.postCount }}</td>
-    </tr>
-  </tbody>
+	<tbody>
+		<tr>
+			<th scope="row">First post</th>
+			<td>{​{ stats.firstPostDate | time }}</td>
+		</tr>
+		<tr>
+			<th scope="row">Last post</th>
+			<td>{​{ stats.lastPostDate | time }}</td>
+		</tr>
+		<tr>
+			<th scope="row">Total posts</th>
+			<td>{​{ stats.postCount }}</td>
+		</tr>
+	</tbody>
 </table>
 ```
 
@@ -204,11 +204,11 @@ const categories = years.map(year => String(year.year))
 const counts = years.map(year => year.postCount)
 
 const chart = new ApexCharts(container, {
-  chart: { type: 'bar' },
-  series: [{ name: 'Posts', data: counts }],
-  xaxis: { categories },
-  dataLabels: { enabled: true },
-  tooltip: { y: { formatter } },
+	chart: { type: 'bar' },
+	series: [{ name: 'Posts', data: counts }],
+	xaxis: { categories },
+	dataLabels: { enabled: true },
+	tooltip: { y: { formatter } },
 })
 
 chart.render()

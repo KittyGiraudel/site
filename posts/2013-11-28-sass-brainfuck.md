@@ -15,7 +15,7 @@ Like… for real. There is no distinction in Sass between what you’d call a nu
 ```scss
 $value: 42px;
 @if $value > 10 {
-  // do something
+	// do something
 }
 ```
 
@@ -57,8 +57,8 @@ $list: (a, b, c);
 $value: ();
 
 @if $value {
-  // Short for `$value == true` which is the same as `$value != false`
-  $list: append($list, $value);
+	// Short for `$value == true` which is the same as `$value != false`
+	$list: append($list, $value);
 }
 ```
 
@@ -69,7 +69,7 @@ var array = ['a', 'b', 'c']
 var value = []
 
 if (value != false) {
-  array.push(value)
+	array.push(value)
 }
 ```
 
@@ -110,12 +110,12 @@ $color: tomato;
 
 // Override it in an impossible @media directive
 @media (min-width: 10000em), (-webkit-min-device-pixel-ratio: 42) {
-  $color: lightgreen;
+	$color: lightgreen;
 }
 
 // Use it
 body {
-  background: $color; // lightgreen;
+	background: $color; // lightgreen;
 }
 ```
 
@@ -129,16 +129,16 @@ $size: 1em;
 
 // Define a mixin with an argument named `$size`
 @mixin whatever($size: 0.5em) {
-  // Include the `@content` directive in the mixin core
-  @content;
-  margin-bottom: $size * 1.2;
+	// Include the `@content` directive in the mixin core
+	@content;
+	margin-bottom: $size * 1.2;
 }
 
 // Use the mixin
 el {
-  @include whatever {
-    font-size: $size;
-  }
+	@include whatever {
+		font-size: $size;
+	}
 }
 ```
 
@@ -148,8 +148,8 @@ The correct answer is:
 
 ```scss
 el {
-  font-size: 1em;
-  margin-bottom: 0.6em;
+	font-size: 1em;
+	margin-bottom: 0.6em;
 }
 ```
 
@@ -177,7 +177,7 @@ Let’s have a try, shall we? Consider a function accepting a list as its only a
 
 ```scss
 @function f($a) {
-  @return if(length($a) > 1, nth($a, 2), $a);
+	@return if(length($a) > 1, nth($a, 2), $a);
 }
 ```
 

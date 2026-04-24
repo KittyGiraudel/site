@@ -35,33 +35,33 @@ Our Grid class really is a wrapper around a bi-dimensional array. It can be inst
 
 ```ts
 class Grid<T> {
-  private data: T[][]
+	private data: T[][]
 
-  constructor(
-    width: number,
-    height: number,
-    value: T | null | ((coords: Coords) => T) = null,
-  ) {
-    this.data = Array.from({ length: height }, (_, ri) =>
-      Array.from({ length: width }, (_, ci) =>
-        typeof value === 'function'
-          ? (value as CallableFunction)([ri, ci])
-          : value,
-      ),
-    )
-  }
+	constructor(
+		width: number,
+		height: number,
+		value: T | null | ((coords: Coords) => T) = null,
+	) {
+		this.data = Array.from({ length: height }, (_, ri) =>
+			Array.from({ length: width }, (_, ci) =>
+				typeof value === 'function'
+					? (value as CallableFunction)([ri, ci])
+					: value,
+			),
+		)
+	}
 
-  get rows() {
-    return this.data
-  }
+	get rows() {
+		return this.data
+	}
 
-  get columns() {
-    return Array.from({ length: this.width }, (_, ci) =>
-      this.rows.map(row => row.at(ci) as T),
-    )
-  }
+	get columns() {
+		return Array.from({ length: this.width }, (_, ci) =>
+			this.rows.map(row => row.at(ci) as T),
+		)
+	}
 
-  // More to come …
+	// More to come …
 }
 
 // Examples
@@ -70,7 +70,7 @@ const grid = new Grid(3) // 3x3 grid
 const grid = new Grid(5, 3) // 3x5 grid
 const grid = new Grid(5, 3, null) // 3x5 grid with `null` everywhere
 const grid = new Grid(5, 3, (ri, ci) => {
-  // Initialize the cell at ri,ci to the return value from this functon
+	// Initialize the cell at ri,ci to the return value from this functon
 })
 ```
 
@@ -84,23 +84,23 @@ type Mapper<I, O> = (value: I, coords: Coords) => O
 const identity = <I, O>(value: I, coords: Coords) => value as unknown as O
 
 class Grid<T> {
-  // …
+	// …
 
-  static from<I, O = I>(input: I[][], mapper: Mapper<I, O> = identity) {
-    return new Grid<O>(input[0].length, input.length, ([ri, ci]) =>
-      mapper(input[ri][ci], [ri, ci]),
-    )
-  }
+	static from<I, O = I>(input: I[][], mapper: Mapper<I, O> = identity) {
+		return new Grid<O>(input[0].length, input.length, ([ri, ci]) =>
+			mapper(input[ri][ci], [ri, ci]),
+		)
+	}
 
-  static fromRows<O = string>(
-    input: string[],
-    mapper: Mapper<string, O> = identity,
-  ) {
-    return Grid.from(
-      input.map(row => Array.from(row)),
-      mapper,
-    )
-  }
+	static fromRows<O = string>(
+		input: string[],
+		mapper: Mapper<string, O> = identity,
+	) {
+		return Grid.from(
+			input.map(row => Array.from(row)),
+			mapper,
+		)
+	}
 }
 
 // Examples
@@ -118,15 +118,15 @@ Now that we have solid ways to instantiate grids, we can write getters to retrie
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  get width() {
-    return this.data.length ? this.data[0].length : 0
-  }
+	get width() {
+		return this.data.length ? this.data[0].length : 0
+	}
 
-  get height() {
-    return this.data.length
-  }
+	get height() {
+		return this.data.length
+	}
 }
 
 // Examples
@@ -141,18 +141,18 @@ Then, we need a way to read the value stored at a set of coordinates.
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  get(position: Point | Coords) {
-    const [ri, ci] =
-      typeof position === 'string' ? toCoords(position) : position
+	get(position: Point | Coords) {
+		const [ri, ci] =
+			typeof position === 'string' ? toCoords(position) : position
 
-    return this.data?.[ri]?.[ci]
-  }
+		return this.data?.[ri]?.[ci]
+	}
 
-  at(position: Point | Coords) {
-    return this.get(position)
-  }
+	at(position: Point | Coords) {
+		return this.get(position)
+	}
 }
 
 // Examples
@@ -170,28 +170,28 @@ When _setting_ a value though, we do want to make sure the coordinates exist in 
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  set(position: Point | Coords, value: T) {
-    const [ri, ci] =
-      typeof position === 'string' ? toCoords(position) : position
+	set(position: Point | Coords, value: T) {
+		const [ri, ci] =
+			typeof position === 'string' ? toCoords(position) : position
 
-    if (ri < 0 || ri > this.height - 1) {
-      throw new Error(
-        `Cannot set value at position ${position} since row ${ri} is out of bound for grid of height ${this.height}.`,
-      )
-    }
+		if (ri < 0 || ri > this.height - 1) {
+			throw new Error(
+				`Cannot set value at position ${position} since row ${ri} is out of bound for grid of height ${this.height}.`,
+			)
+		}
 
-    if (ci < 0 || ci > this.width - 1) {
-      throw new Error(
-        `Cannot set value at position ${position} since column ${ci} is out of bound for grid of width ${this.width}.`,
-      )
-    }
+		if (ci < 0 || ci > this.width - 1) {
+			throw new Error(
+				`Cannot set value at position ${position} since column ${ci} is out of bound for grid of width ${this.width}.`,
+			)
+		}
 
-    this.data[ri][ci] = value
+		this.data[ri][ci] = value
 
-    return this
-  }
+		return this
+	}
 }
 
 // Examples
@@ -206,20 +206,20 @@ In most cases, we want to be able to iterate on our grid though. We’re going t
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  forEach(handler: (item: T, coords: Coords) => void) {
-    this.rows.forEach((row, ri) =>
-      row.forEach((value, ci) => handler(value, [ri, ci])),
-    )
-  }
+	forEach(handler: (item: T, coords: Coords) => void) {
+		this.rows.forEach((row, ri) =>
+			row.forEach((value, ci) => handler(value, [ri, ci])),
+		)
+	}
 }
 
 // Examples
 const grid = Grid.fromRows('123\n456\n789'.split('\n'), Number)
 
 grid.forEach((value, coords) => {
-  console.log('Value at', coords, 'is', value)
+	console.log('Value at', coords, 'is', value)
 })
 ```
 
@@ -227,15 +227,15 @@ Now, mapping. Mapping is a bit special because the goal is to modify the grid va
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  map<O>(handler: (item: T, coords: Coords) => O) {
-    const next = Grid.from(this.data) as Grid<O>
+	map<O>(handler: (item: T, coords: Coords) => O) {
+		const next = Grid.from(this.data) as Grid<O>
 
-    this.forEach((value, coords) => next.set(coords, handler(value, coords)))
+		this.forEach((value, coords) => next.set(coords, handler(value, coords)))
 
-    return next
-  }
+		return next
+	}
 }
 
 // Examples
@@ -252,18 +252,18 @@ Next, reducing the grid into a single value. It works the same way as `Array.pro
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  reduce<O>(handler: (acc: O, item: T, coords: Coords) => O, initialValue: O) {
-    return this.data.reduce(
-      (accRow, row, ri) =>
-        row.reduce(
-          (accCol, item, ci) => handler(accCol, item, [ri, ci]),
-          accRow,
-        ),
-      initialValue,
-    )
-  }
+	reduce<O>(handler: (acc: O, item: T, coords: Coords) => O, initialValue: O) {
+		return this.data.reduce(
+			(accRow, row, ri) =>
+				row.reduce(
+					(accCol, item, ci) => handler(accCol, item, [ri, ci]),
+					accRow,
+				),
+			initialValue,
+		)
+	}
 }
 
 // Examples
@@ -276,14 +276,14 @@ We can use that new `reduce` method to build another thing that can be handy: a 
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  findCoords(predicate: (item: T, coords: Coords) => boolean) {
-    return this.reduce<Coords | undefined>(
-      (acc, item, coords) => acc ?? (predicate(item, coords) ? coords : acc),
-      undefined,
-    )
-  }
+	findCoords(predicate: (item: T, coords: Coords) => boolean) {
+		return this.reduce<Coords | undefined>(
+			(acc, item, coords) => acc ?? (predicate(item, coords) ? coords : acc),
+			undefined,
+		)
+	}
 }
 
 // Examples
@@ -296,12 +296,12 @@ Writing a `find` method becomes very easy now that we have this one:
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  find(predicate: (item: T, coords: Coords) => boolean) {
-    const coords = this.findCoords(predicate)
-    return coords ? this.get(coords) : undefined
-  }
+	find(predicate: (item: T, coords: Coords) => boolean) {
+		const coords = this.findCoords(predicate)
+		return coords ? this.get(coords) : undefined
+	}
 }
 
 // Examples
@@ -314,14 +314,14 @@ Although there are certainly more methods we can write, let’s end the iteratin
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  filter(predicate: (item: T, coords: Coords) => boolean) {
-    return this.rows
-      .map((row, ri) => row.filter((value, ci) => predicate(value, [ri, ci])))
-      .filter(row => row.length > 0)
-      .flat()
-  }
+	filter(predicate: (item: T, coords: Coords) => boolean) {
+		return this.rows
+			.map((row, ri) => row.filter((value, ci) => predicate(value, [ri, ci])))
+			.filter(row => row.length > 0)
+			.flat()
+	}
 }
 
 // Examples
@@ -336,48 +336,48 @@ I won’t go too deep into the next piece of code, mainly because I’ve written
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  clone() {
-    return Grid.from(structuredClone(this.data))
-  }
+	clone() {
+		return Grid.from(structuredClone(this.data))
+	}
 
-  rotate() {
-    const next = new Grid<T>(0)
+	rotate() {
+		const next = new Grid<T>(0)
 
-    this.columns.forEach((_, ci) => {
-      next.rows.push(this.rows.map(row => row[ci]).reverse())
-    })
+		this.columns.forEach((_, ci) => {
+			next.rows.push(this.rows.map(row => row[ci]).reverse())
+		})
 
-    return next
-  }
+		return next
+	}
 
-  flip() {
-    const flipped = this.clone()
+	flip() {
+		const flipped = this.clone()
 
-    flipped.rows.reverse()
+		flipped.rows.reverse()
 
-    return flipped
-  }
+		return flipped
+	}
 
-  variants() {
-    const variants: Grid<T>[] = []
+	variants() {
+		const variants: Grid<T>[] = []
 
-    const rotate = (rotations: number = 0) => {
-      let grid = this.clone()
-      for (let i = 0; i < rotations; i++) grid = grid.rotate()
-      return grid
-    }
+		const rotate = (rotations: number = 0) => {
+			let grid = this.clone()
+			for (let i = 0; i < rotations; i++) grid = grid.rotate()
+			return grid
+		}
 
-    for (let i = 0; i <= 3; i++) {
-      const rotated = rotate(i)
-      const flipped = rotated.flip()
-      variants.push(rotated)
-      variants.push(flipped)
-    }
+		for (let i = 0; i <= 3; i++) {
+			const rotated = rotate(i)
+			const flipped = rotated.flip()
+			variants.push(rotated)
+			variants.push(flipped)
+		}
 
-    return variants
-  }
+		return variants
+	}
 }
 ```
 
@@ -387,14 +387,14 @@ It can be useful to log the grid for debugging purposes. We can write a little `
 
 ```ts
 class Grid<T> {
-  // …
+	// …
 
-  render(
-    separator: string = '',
-    mapper: (value: T) => string = value => String(value),
-  ) {
-    return this.rows.map(row => row.map(mapper).join(separator)).join('\n')
-  }
+	render(
+		separator: string = '',
+		mapper: (value: T) => string = value => String(value),
+	) {
+		return this.rows.map(row => row.map(mapper).join(separator)).join('\n')
+	}
 }
 
 // Examples
@@ -443,16 +443,16 @@ To count the flashes and solve the puzzle, we are going to start by instantiatin
 type Octopus = { value: number; flashed: boolean }
 
 const countFlashes = (input: string) => {
-  const grid = Grid.fromRows<Octopus>(input.split('\n'), value => ({
-    value: +value,
-    flashed: false,
-  }))
+	const grid = Grid.fromRows<Octopus>(input.split('\n'), value => ({
+		value: +value,
+		flashed: false,
+	}))
 
-  let flashes = 0
+	let flashes = 0
 
-  for (let i = 0; i < 100; i++) flashes += cycle(grid)
+	for (let i = 0; i < 100; i++) flashes += cycle(grid)
 
-  return flashes
+	return flashes
 }
 ```
 
@@ -460,22 +460,22 @@ The `cycle` function implements the puzzle rules, making good use of our iterati
 
 ```ts
 const cycle = (grid: Grid<Octopus>) => {
-  // 1. Increment the energy value of each octopus
-  grid.forEach(octopus => octopus.value++)
+	// 1. Increment the energy value of each octopus
+	grid.forEach(octopus => octopus.value++)
 
-  // 2. Process the flashes (recursively)
-  processFlashes(grid)
+	// 2. Process the flashes (recursively)
+	processFlashes(grid)
 
-  // 2b. Count how many octopuses flashed
-  const flashes = grid.count(octopus => octopus.flashed)
+	// 2b. Count how many octopuses flashed
+	const flashes = grid.count(octopus => octopus.flashed)
 
-  // 3. Reset the octopuses that flashed
-  grid.forEach(octopus => {
-    octopus.flashed = false
-    if (octopus.value > 9) octopus.value = 0
-  })
+	// 3. Reset the octopuses that flashed
+	grid.forEach(octopus => {
+		octopus.flashed = false
+		if (octopus.value > 9) octopus.value = 0
+	})
 
-  return flashes
+	return flashes
 }
 ```
 
@@ -483,23 +483,23 @@ The missing miece is our `processFlashes` function:
 
 ```ts
 const processFlashes = (grid: Grid<Octopus>) => {
-  const toIncrement: Coords[] = []
+	const toIncrement: Coords[] = []
 
-  grid.forEach((octopus, coords) => {
-    if (!octopus.flashed && octopus.value > 9) {
-      octopus.flashed = true
-      // Not implemented here: the `surrounding` helper function returns the 8
-      // sets of coordinates surrounding the given set of coordinates
-      toIncrement.push(...surrounding(coords))
-    }
-  })
+	grid.forEach((octopus, coords) => {
+		if (!octopus.flashed && octopus.value > 9) {
+			octopus.flashed = true
+			// Not implemented here: the `surrounding` helper function returns the 8
+			// sets of coordinates surrounding the given set of coordinates
+			toIncrement.push(...surrounding(coords))
+		}
+	})
 
-  toIncrement.forEach(coords => {
-    const octopus = grid.get(coords)
-    if (octopus) octopus.value++
-  })
+	toIncrement.forEach(coords => {
+		const octopus = grid.get(coords)
+		if (octopus) octopus.value++
+	})
 
-  if (toIncrement.length > 0) processFlashes(grid)
+	if (toIncrement.length > 0) processFlashes(grid)
 }
 ```
 

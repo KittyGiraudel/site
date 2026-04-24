@@ -51,7 +51,7 @@ import ReactDOM from 'react-dom'
 // …
 
 if (__DEV__) {
-  require('react-axe')(React, ReactDOM, 1000)
+	require('react-axe')(React, ReactDOM, 1000)
 }
 ```
 
@@ -70,15 +70,15 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 const Input = props => (
-  <Fragment>
-    <label htmlFor={props.id}>{props.label}</label>
-    <input {...props} />
-  </Fragment>
+	<Fragment>
+		<label htmlFor={props.id}>{props.label}</label>
+		<input {...props} />
+	</Fragment>
 )
 
 Input.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+	label: PropTypes.string.isRequired,
 }
 ```
 

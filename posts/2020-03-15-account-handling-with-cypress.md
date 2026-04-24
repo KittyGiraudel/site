@@ -23,9 +23,9 @@ These accounts’ credentials were stored in a JavaScript file, which we importe
 import { STANDARD_ACCOUNT } from '@tests/utils/accounts'
 
 describe('Personal settings', () => {
-  before(() => {
-    cy.login(STANDARD_ACCOUNT)
-  })
+	before(() => {
+		cy.login(STANDARD_ACCOUNT)
+	})
 })
 ```
 
@@ -37,9 +37,9 @@ N26 has an internal service to create accounts. We created a Cypress command to 
 
 ```js
 cy.createUser({
-  confirmEmail: false,
-  residenceCountry: 'ITA',
-  topUp: 100,
+	confirmEmail: false,
+	residenceCountry: 'ITA',
+	topUp: 100,
 })
 ```
 
@@ -49,9 +49,9 @@ Then we would start all our tests with creating an account, then logging into th
 
 ```js
 describe('Personal settings', () => {
-  before(() => {
-    cy.createUser().then(user => cy.login(user))
-  })
+	before(() => {
+		cy.createUser().then(user => cy.login(user))
+	})
 })
 ```
 
@@ -78,21 +78,21 @@ The code (stripped out of unnecessary things) looks like this:
 const cache = new Map()
 
 export default function getAccount(conf = {}) {
-  const key = stringify(conf)
+	const key = stringify(conf)
 
-  if (conf.cache && cache.has(key)) {
-    return typeof conf.login === 'undefined' || conf.login
-      ? cy.login(cache.get(key))
-      : cy.wrap(cache.get(key))
-  }
+	if (conf.cache && cache.has(key)) {
+		return typeof conf.login === 'undefined' || conf.login
+			? cy.login(cache.get(key))
+			: cy.wrap(cache.get(key))
+	}
 
-  return cy.createUser(conf).then(account => {
-    if (conf.cache && account) {
-      cache.set(key, account)
-    }
+	return cy.createUser(conf).then(account => {
+		if (conf.cache && account) {
+			cache.set(key, account)
+		}
 
-    return cy.wrap(account)
-  })
+		return cy.wrap(account)
+	})
 }
 ```
 
@@ -102,9 +102,9 @@ We can now start our tests with a single call to `getAccount` passing the `cache
 
 ```js
 describe('Personal settings', () => {
-  before(() => {
-    cy.getAccount({ cache: true })
-  })
+	before(() => {
+		cy.getAccount({ cache: true })
+	})
 })
 ```
 

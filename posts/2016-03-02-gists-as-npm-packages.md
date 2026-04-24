@@ -19,8 +19,8 @@ So all I had to do is [fork Paul’s Gist](https://gist.github.com/KittyGiraudel
 
 ```json
 {
-  "name": "blingdotjs",
-  "version": "0.1.0"
+	"name": "blingdotjs",
+	"version": "0.1.0"
 }
 ```
 
@@ -40,12 +40,12 @@ Or if you want to automatically do it after an install, you can have a post-inst
 
 ```json
 {
-  "scripts": {
-    "postinstall": "cp node_modules/blingdotjs/bling.js assets/js/vendor"
-  },
-  "dependencies": {
-    "blingdotjs": "gist:7d867cda127e64d38f28"
-  }
+	"scripts": {
+		"postinstall": "cp node_modules/blingdotjs/bling.js assets/js/vendor"
+	},
+	"dependencies": {
+		"blingdotjs": "gist:7d867cda127e64d38f28"
+	}
 }
 ```
 

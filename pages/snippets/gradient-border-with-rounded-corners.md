@@ -22,16 +22,16 @@ For some reason it does not seem to be possible to render a gradient border usin
  * 3. Apply the gradient background all the way to the border, included. 
  */
 .container {
-  --background-color: light-dark(#f3f8fc, #303132);
-  background-color: var(--background-color);
-  border: 2px solid transparent;
-  background-image:
-    linear-gradient(var(--background-color), var(--background-color)), /* 1 */
-    linear-gradient(to right, var(--blue), var(--pink)); /* 2 */
-  background-clip:
-    padding-box, /* 1 */
-    border-box; /* 2 */
-  background-origin: border-box; /* 3 */
+	--background-color: light-dark(#f3f8fc, #303132);
+	background-color: var(--background-color);
+	border: 2px solid transparent;
+	background-image:
+		linear-gradient(var(--background-color), var(--background-color)), /* 1 */
+		linear-gradient(to right, var(--blue), var(--pink)); /* 2 */
+	background-clip:
+		padding-box, /* 1 */
+		border-box; /* 2 */
+	background-origin: border-box; /* 3 */
 }
 ```
 

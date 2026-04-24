@@ -13,17 +13,17 @@ Before digging into Sass awesomeness, let’s first have a look at how we would 
 
 ```javascript
 var Class = function (conf) {
-  this.conf = extend(
-    {
-      duration: 2000,
-      name: 'class',
-      theme: 'dark',
-      speed: 500,
-    },
-    conf || {}
-  )
+	this.conf = extend(
+		{
+			duration: 2000,
+			name: 'class',
+			theme: 'dark',
+			speed: 500,
+		},
+		conf || {}
+	)
 
-  this.init()
+	this.init()
 }
 ```
 
@@ -42,10 +42,10 @@ To begin with, using an object makes it easier to understand since you have to s
 ```javascript
 // This…
 f({
-  message: 'You shall not pass!',
-  close: false,
-  error: 42,
-  type: 'error',
+	message: 'You shall not pass!',
+	close: false,
+	error: 42,
+	type: 'error',
 })
 
 // … is easier to understand than this
@@ -61,10 +61,10 @@ It’s generally simpler to store an object in a variable and then to pass it to
 ```javascript
 // This…
 var conf = {
-  message: 'You shall not pass!',
-  close: false,
-  error: 42,
-  type: 'error',
+	message: 'You shall not pass!',
+	close: false,
+	error: 42,
+	type: 'error',
 }
 
 f(conf)
@@ -84,11 +84,11 @@ Adding or removing is as easy as updating the configuration object. No need to u
 ```javascript
 // Adding a parameter is simple; no need to worry about argument order
 f({
-  message: 'You shall not pass!',
-  close: false,
-  error: 42,
-  type: 'error',
-  duration: 5000,
+	message: 'You shall not pass!',
+	close: false,
+	error: 42,
+	type: 'error',
+	duration: 5000,
 })
 
 // … while you have to put your required parameters before optional one in the signature
@@ -107,7 +107,7 @@ In a way, we don’t really need this in Sass because it already provides _named
 
 ```scss
 @mixin mixin($a: 'a', $b: 'b', $c: 'c') {
-  /* … */
+	/* … */
 }
 
 @include mixin($b: 'boat');
@@ -121,7 +121,7 @@ This could have been very easy to do but `map-merge` already does it for us. Ind
 
 ```scss
 @function extend($obj, $ext-obj) {
-  @return map-merge($obj, $ext-obj);
+	@return map-merge($obj, $ext-obj);
 }
 ```
 
@@ -129,12 +129,12 @@ So here it is:
 
 ```scss
 $default-object: (
-  dont: you think,
-  this: is awesome,
+	dont: you think,
+	this: is awesome,
 );
 
 $object: (
-  this: is amazing,
+	this: is amazing,
 );
 
 $merge: extend($default-object, $object);
@@ -142,8 +142,8 @@ $merge: extend($default-object, $object);
 /**
  * This results in
 $merge: (
-  dont: you think,
-  this: is amazing
+	dont: you think,
+	this: is amazing
 );
  */
 ```
@@ -154,28 +154,28 @@ Now what’s the point of all of this? Let’s say you have a component you call
 
 ```scss
 @mixin component(
-  $theme: light,
-  $size: 100%,
-  $duration: 250ms,
-  $name: 'component',
-  $border: true
+	$theme: light,
+	$size: 100%,
+	$duration: 250ms,
+	$name: 'component',
+	$border: true
 ) {
-  .#{$name} {
-    width: $size;
-    animation: fade $duration;
+	.#{$name} {
+		width: $size;
+		animation: fade $duration;
 
-    @if $border {
-      border-top: 0.25em solid;
-    }
+		@if $border {
+			border-top: 0.25em solid;
+		}
 
-    @if $theme == 'dark' {
-      background: #333;
-      color: #fefefe;
-    } @else if $theme == 'light' {
-      background: #fefefe;
-      color: #333;
-    }
-  }
+		@if $theme == 'dark' {
+			background: #333;
+			color: #fefefe;
+		} @else if $theme == 'light' {
+			background: #fefefe;
+			color: #333;
+		}
+	}
 }
 
 // Including component
@@ -186,40 +186,40 @@ This works great. It is easily readable, it does the job very well. However ther
 
 ```scss
 @mixin component($conf: ()) {
-  // Extending the default arguments with the given object
-  $conf: extend(
-    (
-      size: 100%,
-      theme: dark,
-      duration: 250ms,
-      name: 'component',
-      border: true,
-    ),
-    $conf
-  );
+	// Extending the default arguments with the given object
+	$conf: extend(
+		(
+			size: 100%,
+			theme: dark,
+			duration: 250ms,
+			name: 'component',
+			border: true,
+		),
+		$conf
+	);
 
-  // Dumping CSS
-  .#{map-get($conf, name)} {
-    width: map-get($conf, size);
-    animation: fade map-get($conf, duration);
+	// Dumping CSS
+	.#{map-get($conf, name)} {
+		width: map-get($conf, size);
+		animation: fade map-get($conf, duration);
 
-    $theme: map-get($conf, theme);
-    @if $theme == 'dark' {
-      background: #333;
-      color: #fefefe;
-    } @else if $theme == 'light' {
-      background: #fefefe;
-      color: #333;
-    }
-  }
+		$theme: map-get($conf, theme);
+		@if $theme == 'dark' {
+			background: #333;
+			color: #fefefe;
+		} @else if $theme == 'light' {
+			background: #fefefe;
+			color: #333;
+		}
+	}
 }
 
 // Including component
 @include component(
-  (
-    theme: dark,
-    name: 'module',
-  )
+	(
+		theme: dark,
+		name: 'module',
+	)
 );
 ```
 
@@ -228,8 +228,8 @@ Both doesn’t look much different except the core function from the object-way 
 ```scss
 // In `_config.scss` along with your other setup variables
 $component-conf: (
-  theme: light,
-  name: 'module',
+	theme: light,
+	name: 'module',
 );
 
 // In `_component.scss`

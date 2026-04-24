@@ -37,10 +37,10 @@ The idea is quite simple: you define a container that will draw boundaries for t
 
 ```javascript
 $container.isotope({
-  itemSelector: ".gallery__item",
-  masonry: {
-    columnWidth: 410,
-  },
+	itemSelector: ".gallery__item",
+	masonry: {
+		columnWidth: 410,
+	},
 });
 ```
 
@@ -52,13 +52,13 @@ Meanwhile the pictures are all wrapped in a regular unordered list which has a h
 
 ```html
 <li class="gallery__item">
-  <img
-    class="gallery__image"
-    src="images/filename.jpg"
-    alt="Alt text"
-    width="400"
-    height="266"
-  />
+	<img
+		class="gallery__image"
+		src="images/filename.jpg"
+		alt="Alt text"
+		width="400"
+		height="266"
+	/>
 </li>
 ```
 
@@ -90,12 +90,12 @@ Isn’t it the perfect usecase for CSS animations? Let’s jump on this opportun
 
 ```css
 @keyframes opacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 ```
 
@@ -103,14 +103,14 @@ Now all I had to do was applying it to all items with a varying delay. The highe
 
 ```scss
 @for $i from 1 through 20 {
-  .gallery__item {
-    opacity: 0;
-    animation: opacity 0.25s forwards;
-  }
+	.gallery__item {
+		opacity: 0;
+		animation: opacity 0.25s forwards;
+	}
 
-  .gallery__item:nth-of-type(#{$i}) {
-    animation-delay: $i * 0.1s;
-  }
+	.gallery__item:nth-of-type(#{$i}) {
+		animation-delay: $i * 0.1s;
+	}
 }
 ```
 
@@ -165,14 +165,14 @@ The next step was to load images when they are needed. To put it simple, only lo
 
 ```html
 <li class="gallery__item" data-album="album-name">
-  <img
-    class="gallery__image"
-    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-    data-original="images/filename.jpg"
-    alt="Alt text"
-    width="400"
-    height="266"
-  />
+	<img
+		class="gallery__image"
+		src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+		data-original="images/filename.jpg"
+		alt="Alt text"
+		width="400"
+		height="266"
+	/>
 </li>
 ```
 

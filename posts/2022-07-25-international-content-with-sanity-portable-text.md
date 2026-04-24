@@ -27,10 +27,10 @@ Taking the first example from the WCAG 3.1.2 page: “He maintained that the DDR
 
 ```html
 <p>
-  He maintained that the DDR (German Democratic Republic) was just a ‘<span
-    lang="de"
-    >Treppenwitz der Weltgeschichte</span
-  >’.
+	He maintained that the DDR (German Democratic Republic) was just a ‘<span
+		lang="de"
+		>Treppenwitz der Weltgeschichte</span
+	>’.
 </p>
 ```
 
@@ -57,15 +57,15 @@ Let’s start with a very basic schema definition for some Portable Text.
 
 ```js
 export default {
-  title: 'Content',
-  name: 'content',
-  type: 'array',
-  of: [
-    {
-      type: 'block',
-      marks: { decorators: [{ title: 'Strong', value: 'strong' }] },
-    },
-  ],
+	title: 'Content',
+	name: 'content',
+	type: 'array',
+	of: [
+		{
+			type: 'block',
+			marks: { decorators: [{ title: 'Strong', value: 'strong' }] },
+		},
+	],
 }
 ```
 
@@ -73,16 +73,16 @@ We want to add a custom annotation to mark text snippets as being expressed in a
 
 ```js
 export default {
-  title: 'Content',
-  name: 'content',
-  type: 'array',
-  of: [
-    {
-      type: 'block',
-      marks: { decorators: [{ title: 'Strong', value: 'strong' }] },
-      annotations: [languageSwitch],
-    },
-  ],
+	title: 'Content',
+	name: 'content',
+	type: 'array',
+	of: [
+		{
+			type: 'block',
+			marks: { decorators: [{ title: 'Strong', value: 'strong' }] },
+			annotations: [languageSwitch],
+		},
+	],
 }
 ```
 
@@ -92,18 +92,18 @@ As per the HTML specification, the `lang` attribute expects a “language tag”
 
 ```js
 const languageSwitch = {
-  title: 'Language switch',
-  name: 'lang',
-  type: 'object',
-  fields: [
-    {
-      title: 'Language tag',
-      name: 'tag',
-      type: 'string',
-      validation: Rule =>
-        Rule.required().regex(/^[a-z]+(-[a-z]+)?$/i, { name: 'language tag' }),
-    },
-  ],
+	title: 'Language switch',
+	name: 'lang',
+	type: 'object',
+	fields: [
+		{
+			title: 'Language tag',
+			name: 'tag',
+			type: 'string',
+			validation: Rule =>
+				Rule.required().regex(/^[a-z]+(-[a-z]+)?$/i, { name: 'language tag' }),
+		},
+	],
 }
 ```
 
@@ -117,9 +117,9 @@ And we can write a small component to specify the way the snippet is rendered wi
 
 ```js
 const Lang = props => (
-  <span title={`Content expressed in “${props.tag}”`} lang={props.tag}>
-    {props.children}
-  </span>
+	<span title={`Content expressed in “${props.tag}”`} lang={props.tag}>
+		{props.children}
+	</span>
 )
 ```
 
@@ -133,14 +133,14 @@ So far we’ve only worked on the authoring experience. We need to make sure our
 import { PortableText } from '@portabletext/react'
 
 const COMPONENTS = {
-  /* All your component definitions … */
-  marks: { lang: Lang },
+	/* All your component definitions … */
+	marks: { lang: Lang },
 }
 
 const Lang = props => <span lang={props.value.tag}>{props.children}</span>
 
 const RichText = props => (
-  <PortableText value={props.content} components={COMPONENTS} />
+	<PortableText value={props.content} components={COMPONENTS} />
 )
 ```
 

@@ -20,12 +20,12 @@ Let’s start with a quick reminder. First of all, the `list` data type isn’t 
 ```css
 .element,
 .other-element {
-  font-family: 'Arial', 'Helvetica', sans-serif;
-  padding: 10px 5px 15px 0;
-  margin: 1em 0.5em;
-  background: url('my/awesome/image.png') 0 0 #666;
-  border: 1px solid silver;
-  box-shadow: 0 0.5em 0.25em -0.5em rgba(0, 0, 0, 0.1);
+	font-family: 'Arial', 'Helvetica', sans-serif;
+	padding: 10px 5px 15px 0;
+	margin: 1em 0.5em;
+	background: url('my/awesome/image.png') 0 0 #666;
+	border: 1px solid silver;
+	box-shadow: 0 0.5em 0.25em -0.5em rgba(0, 0, 0, 0.1);
 }
 ```
 
@@ -46,18 +46,18 @@ $zips: 07, 26, 38, 69, 'unknown';
 // 2. Header only
 // 3. Home page
 @each $zip in $zips {
-  .zipcode-#{$zip} {
-    // 1
-    .header {
-      // 2
-      background-image: url('../bundles/images/backgrounds/#{$zip}-small.jpg');
-    }
+	.zipcode-#{$zip} {
+		// 1
+		.header {
+			// 2
+			background-image: url('../bundles/images/backgrounds/#{$zip}-small.jpg');
+		}
 
-    &.home {
-      // 3
-      background-image: url('../bundles/images/backgrounds/#{$zip}-large.jpg');
-    }
-  }
+		&.home {
+			// 3
+			background-image: url('../bundles/images/backgrounds/#{$zip}-large.jpg');
+		}
+	}
 }
 ```
 
@@ -67,19 +67,19 @@ Okay. I believe this is a decent use case for a list. Now what about lists funct
 
 ```scss
 @for $i from 1 to 5 {
-  $selector: ();
+	$selector: ();
 
-  @for $j from 1 through $i {
-    $selector: append(
-      $selector,
-      unquote("[data-rating^='#{$i}'] .star-#{$j}"),
-      comma
-    );
-  }
+	@for $j from 1 through $i {
+		$selector: append(
+			$selector,
+			unquote("[data-rating^='#{$i}'] .star-#{$j}"),
+			comma
+		);
+	}
 
-  #{$selector} {
-    // CSS rules
-  }
+	#{$selector} {
+		// CSS rules
+	}
 }
 ```
 

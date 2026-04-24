@@ -22,15 +22,15 @@ I wanted the HTML markup to be as clean as possible, this I guess it’s pretty 
 
 ```html
 <header>
-  <nav role="navigation">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Clients</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <a href="#" class="nav-toggle">Menu</a>
+	<nav role="navigation">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Clients</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+	<a href="#" class="nav-toggle">Menu</a>
 </header>
 ```
 
@@ -38,24 +38,24 @@ This is the CSS that makes the effect happen. I’ve stripped out all the stylin
 
 ```css
 nav {
-  overflow-x: scroll; /* 1 */
-  -webkit-overflow-scrolling: touch; /* 2 */
+	overflow-x: scroll; /* 1 */
+	-webkit-overflow-scrolling: touch; /* 2 */
 }
 
 ul {
-  text-align: justify; /* 3 */
-  width: 30em; /* 4 */
+	text-align: justify; /* 3 */
+	width: 30em; /* 4 */
 }
 
 ul:after {
-  /* 5 */
-  content: '';
-  display: inline-block;
-  width: 100%;
+	/* 5 */
+	content: '';
+	display: inline-block;
+	width: 100%;
 }
 
 li {
-  display: inline-block; /* 6 */
+	display: inline-block; /* 6 */
 }
 ```
 
@@ -76,12 +76,12 @@ So we set the `max-height` of the navigation to `0` in order to initially hide i
 
 ```css
 nav {
-  max-height: 0;
-  transition: 0.6s ease-in-out;
+	max-height: 0;
+	transition: 0.6s ease-in-out;
 }
 
 .show {
-  max-height: 15em;
+	max-height: 15em;
 }
 ```
 
@@ -90,15 +90,15 @@ Throw in some JS to toggle the class, and you’ve got yourself a basic slide do
 ```javascript
 // jQuery version
 $('.nav-toggle').on('click', function (e) {
-  $('nav').toggleClass('show')
-  e.preventDefault()
+	$('nav').toggleClass('show')
+	e.preventDefault()
 })
 
 // Vanilla JS version
 document.querySelector('.nav-toggle').onclick = function (e) {
-  var nav = document.querySelector('nav')
-  nav.classList.toggle('show')
-  e.preventDefault()
+	var nav = document.querySelector('nav')
+	nav.classList.toggle('show')
+	e.preventDefault()
 }
 ```
 
@@ -108,18 +108,18 @@ A mobile only menu isn’t much use these days is it? So using a few `min-width`
 
 ```css
 @media (min-width: 31.25em) {
-  nav {
-    max-height: none; /* reset the max-height */
-    overflow: hidden; /* this prevents the scroll bar showing on large devices */
-  }
+	nav {
+		max-height: none; /* reset the max-height */
+		overflow: hidden; /* this prevents the scroll bar showing on large devices */
+	}
 
-  ul {
-    width: 100%;
-  }
+	ul {
+		width: 100%;
+	}
 
-  .nav-toggle {
-    display: none;
-  }
+	.nav-toggle {
+		display: none;
+	}
 }
 ```
 

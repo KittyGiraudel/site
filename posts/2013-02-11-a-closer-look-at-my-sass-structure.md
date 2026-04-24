@@ -64,23 +64,23 @@ My project is fairly (not to say really) small so I gathered everything into a s
 // Mixin providing a PX fallback for REM font-sizes
 
 @mixin font-size($val) {
-  font-size: ($val * 20) + px;
-  font-size: $val + rem;
+	font-size: ($val * 20) + px;
+	font-size: $val + rem;
 }
 
 // Mixin handling breakpoints for media queries
 
 @mixin breakpoint($point) {
-  @if $point == mama-bear {
-    @media (max-width: 48em) {
-      @content;
-    }
-  }
-  @if $point == baby-bear {
-    @media (max-width: 38em) {
-      @content;
-    }
-  }
+	@if $point == mama-bear {
+		@media (max-width: 48em) {
+			@content;
+		}
+	}
+	@if $point == baby-bear {
+		@media (max-width: 38em) {
+			@content;
+		}
+	}
 }
 ```
 
@@ -120,18 +120,18 @@ Let’s start with the basics:
 
 ```scss
 %clearfix {
-  &:after {
-    display: table;
-    content: '';
-    clear: both;
-  }
+	&:after {
+		display: table;
+		content: '';
+		clear: both;
+	}
 }
 
 .icon-left {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 .iconright {
-  margin-left: 5px;
+	margin-left: 5px;
 }
 ```
 
@@ -142,19 +142,19 @@ Then, two helpers to give content specific meaning:
 
 ```scss
 .visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: none;
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: none;
 }
 
 .note {
-  font-style: italic;
-  padding-left: 1em;
+	font-style: italic;
+	padding-left: 1em;
 }
 ```
 
@@ -167,75 +167,75 @@ And now let’s dig into more interesting stuff. I have built some useful classe
 
 ```scss
 %pull-image {
-  max-width: 15em;
-  display: block;
+	max-width: 15em;
+	display: block;
 
-  @include breakpoint(baby-bear) {
-    float: none;
-    width: 100%;
-    margin: 1em auto;
-  }
+	@include breakpoint(baby-bear) {
+		float: none;
+		width: 100%;
+		margin: 1em auto;
+	}
 }
 
 .pull-image--left {
-  @extend %pull-image;
-  float: left;
-  margin: 0 1em 1em 0;
+	@extend %pull-image;
+	float: left;
+	margin: 0 1em 1em 0;
 }
 
 .pull-image--right {
-  @extend %pull-image;
-  float: right;
-  margin: 0 0 1em 1em;
+	@extend %pull-image;
+	float: right;
+	margin: 0 0 1em 1em;
 }
 
 %pull-quote {
-  max-width: 250px;
-  width: 100%;
-  position: relative;
-  line-height: 1.35;
-  font-size: 1.5em;
+	max-width: 250px;
+	width: 100%;
+	position: relative;
+	line-height: 1.35;
+	font-size: 1.5em;
 
-  &:after,
-  &:before {
-    font-weight: bold;
-  }
+	&:after,
+	&:before {
+		font-weight: bold;
+	}
 
-  &:before {
-    content: '\201c';
-  }
-  &:after {
-    content: '\201d';
-  }
+	&:before {
+		content: '\201c';
+	}
+	&:after {
+		content: '\201d';
+	}
 
-  @include breakpoint(baby-bear) {
-    float: none;
-    margin: 1em auto;
-    border: 5px solid $pink;
-    border-left: none;
-    border-right: none;
-    text-align: center;
-    padding: 1em 0.5em;
-    max-width: 100%;
-  }
+	@include breakpoint(baby-bear) {
+		float: none;
+		margin: 1em auto;
+		border: 5px solid $pink;
+		border-left: none;
+		border-right: none;
+		text-align: center;
+		padding: 1em 0.5em;
+		max-width: 100%;
+	}
 }
 
 .pull-quote--left {
-  @extend %pull-quote;
-  text-align: right;
-  float: left;
-  padding-right: 1em;
-  margin: 0 1em 0 0;
-  border-right: 6px solid $pink;
+	@extend %pull-quote;
+	text-align: right;
+	float: left;
+	padding-right: 1em;
+	margin: 0 1em 0 0;
+	border-right: 6px solid $pink;
 }
 
 .pull-quote--right {
-  @extend %pull-quote;
-  text-align: left;
-  float: right;
-  padding-left: 1em;
-  margin: 0 0 0 1em;
-  border-left: 6px solid $pink;
+	@extend %pull-quote;
+	text-align: left;
+	float: right;
+	padding-left: 1em;
+	margin: 0 0 0 1em;
+	border-left: 6px solid $pink;
 }
 ```
 
@@ -258,9 +258,9 @@ This is not optional, every project needs to use some kind of way to reset CSS s
 *,
 *:before,
 *:after {
-  @include box-sizing(border-box);
-  padding: 0;
-  margin: 0;
+	@include box-sizing(border-box);
+	padding: 0;
+	margin: 0;
 }
 ```
 
@@ -274,33 +274,33 @@ I didn’t really know how to call this.
 
 ```scss
 html {
-  font:
-    20px/1 'HelveticaNeue-Light',
-    'Helvetica Neue Light',
-    'Helvetica Neue',
-    'Helvetica',
-    'Arial',
-    'Lucida Grande',
-    sans-serif;
-  color: #555;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+	font:
+		20px/1 'HelveticaNeue-Light',
+		'Helvetica Neue Light',
+		'Helvetica Neue',
+		'Helvetica',
+		'Arial',
+		'Lucida Grande',
+		sans-serif;
+	color: #555;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.6);
 
-  border-left: 6px solid $pink;
-  background-image: url('data:image/png;base64,hErEiSaFuCkInGlOnGdAtAuRiaSaBaCkGrOuNd');
+	border-left: 6px solid $pink;
+	background-image: url('data:image/png;base64,hErEiSaFuCkInGlOnGdAtAuRiaSaBaCkGrOuNd');
 
-  @include breakpoint(baby-bear) {
-    border-left: none;
-    border-top: 5px solid $pink;
-  }
+	@include breakpoint(baby-bear) {
+		border-left: none;
+		border-top: 5px solid $pink;
+	}
 }
 
 a {
-  color: $pink;
-  text-decoration: none;
+	color: $pink;
+	text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
+	&:hover {
+		text-decoration: underline;
+	}
 }
 ```
 
@@ -312,37 +312,37 @@ This used to be in the 1140px stylesheet but since I don’t use anymore, I move
 
 ```scss
 .row {
-  width: 100%;
-  max-width: 57em;
-  margin: 0 auto;
-  padding: 0 1em;
+	width: 100%;
+	max-width: 57em;
+	margin: 0 auto;
+	padding: 0 1em;
 }
 
 .main {
-  @extend %content;
-  width: 68%;
-  margin-right: 2%;
+	@extend %content;
+	width: 68%;
+	margin-right: 2%;
 
-  @include breakpoint(mama-bear) {
-    margin-right: 0;
-    border-bottom: 3px solid #d1d1d1;
-  }
+	@include breakpoint(mama-bear) {
+		margin-right: 0;
+		border-bottom: 3px solid #d1d1d1;
+	}
 }
 
 .sidebar {
-  @extend %content;
-  width: 30%;
-  padding-top: 2em;
+	@extend %content;
+	width: 30%;
+	padding-top: 2em;
 }
 
 %content {
-  padding-bottom: 3em;
-  float: left;
+	padding-bottom: 3em;
+	float: left;
 
-  @include breakpoint(mama-bear) {
-    float: none;
-    width: 100%;
-  }
+	@include breakpoint(mama-bear) {
+		float: none;
+		width: 100%;
+	}
 }
 ```
 

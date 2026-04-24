@@ -57,7 +57,7 @@ And our Express server has the following route:
 
 ```js
 if (!LIVE) {
-  server.use('/docs', express.static('build/docs'))
+	server.use('/docs', express.static('build/docs'))
 }
 ```
 

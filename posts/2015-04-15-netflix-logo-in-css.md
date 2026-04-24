@@ -49,13 +49,13 @@ I started with some basic markup for the word “Netflix”
 
 ```html
 <div class="logo">
-  <span>N</span>
-  <span>E</span>
-  <span>T</span>
-  <span>F</span>
-  <span>L</span>
-  <span>I</span>
-  <span>X</span>
+	<span>N</span>
+	<span>E</span>
+	<span>T</span>
+	<span>F</span>
+	<span>L</span>
+	<span>I</span>
+	<span>X</span>
 </logo>
 ```
 
@@ -66,21 +66,21 @@ Then I rotated the letters on the y-axis and scaled them on the x-axis to retain
 ```scss
 // Basic letter styling
 span {
-  font-size: 8em;
-  font-family: impact;
-  display: block;
+	font-size: 8em;
+	font-family: impact;
+	display: block;
 }
 
 // Enable a 3d space
 .logo {
-  perspective: 1000px;
-  perspective-origin: 50% 0;
+	perspective: 1000px;
+	perspective-origin: 50% 0;
 }
 
 // Transform the letter
 .logo span {
-  transform-origin: 0 0;
-  transform: scaleX(80) rotateY(89.5deg);
+	transform-origin: 0 0;
+	transform: scaleX(80) rotateY(89.5deg);
 }
 ```
 
@@ -101,37 +101,37 @@ To do this I needed to add some logic: I use Sass with the SCSS syntax to do thi
 
 ```scss
 .logo {
-  perspective: 1000px;
-  perspective-origin: 50% 0;
-  font-size: 8em;
-  display: inline-flex;
+	perspective: 1000px;
+	perspective-origin: 50% 0;
+	font-size: 8em;
+	display: inline-flex;
 
-  span {
-    font-family: impact;
-    display: block;
+	span {
+		font-family: impact;
+		display: block;
 
-    $letters: 7;
-    @for $i from 1 through $letters {
-      $offset: $i - ceil($letters / 2);
-      $trans: if($offset > 0, -89.5deg, 89.5deg);
+		$letters: 7;
+		@for $i from 1 through $letters {
+			$offset: $i - ceil($letters / 2);
+			$trans: if($offset > 0, -89.5deg, 89.5deg);
 
-      &:nth-child(#{$i}) {
-        // trans/de-form the letters
-        transform-origin: 50% + 50% / $offset 200%;
-        font-size: if(
-          $offset == 0,
-          0.85em,
-          0.9em + 0.015 * pow(abs($offset), 2)
-        );
-        transform: if(
-            $offset == 0,
-            scale(1, 1),
-            scale(95.9 - abs($offset) * 10, 1)
-          )
-          if($offset == 0, translatey(0%), rotatey($trans));
-      }
-    }
-  }
+			&:nth-child(#{$i}) {
+				// trans/de-form the letters
+				transform-origin: 50% + 50% / $offset 200%;
+				font-size: if(
+					$offset == 0,
+					0.85em,
+					0.9em + 0.015 * pow(abs($offset), 2)
+				);
+				transform: if(
+						$offset == 0,
+						scale(1, 1),
+						scale(95.9 - abs($offset) * 10, 1)
+					)
+					if($offset == 0, translatey(0%), rotatey($trans));
+			}
+		}
+	}
 }
 ```
 
@@ -183,26 +183,26 @@ Here’s the function I am using to handle all these requirements:
 /// @param  {Color|false}   $mix   - optionally add a color to mix in
 /// @return {List}          - returns a text-shadow
 @function d3($depth, $color, $x: 1px, $y: 1px, $blur: 0, $mix: false) {
-  $shadow: ();
+	$shadow: ();
 
-  @for $i from 1 through $depth {
-    // append to the existing shadow
-    @if type-of($mix) != "color" {
-      $shadow: append(
-        $shadow,
-        round($i * $x) round($i * $y) $blur $color,
-        comma
-      );
-    } @else {
-      $shadow: append(
-        $shadow,
-        round($i * $x) round($i * $y) $blur mix($mix, $color, 0.3% * $i),
-        comma
-      );
-    }
-  }
+	@for $i from 1 through $depth {
+		// append to the existing shadow
+		@if type-of($mix) != "color" {
+			$shadow: append(
+				$shadow,
+				round($i * $x) round($i * $y) $blur $color,
+				comma
+			);
+		} @else {
+			$shadow: append(
+				$shadow,
+				round($i * $x) round($i * $y) $blur mix($mix, $color, 0.3% * $i),
+				comma
+			);
+		}
+	}
 
-  @return $shadow;
+	@return $shadow;
 }
 ```
 
@@ -252,35 +252,35 @@ I am using two variables `$offset` and `$trans` which I have already defined abo
 
 ```scss
 @keyframes pop-out {
-  0% {
-    transform: if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
-      if($offset == 0, translatey(0%), rotatey($trans));
-    text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
-  }
+	0% {
+		transform: if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
+			if($offset == 0, translatey(0%), rotatey($trans));
+		text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
+	}
 
-  50% {
-    transform: if(
-        $offset == 0,
-        scale(1.2, 1.2),
-        scale(126.2 - abs($offset) * 10, 1.2)
-      )
-      if($offset == 0, translatey(-16%), rotatey($trans));
-    text-shadow:
-      d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
-      d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
-  }
+	50% {
+		transform: if(
+				$offset == 0,
+				scale(1.2, 1.2),
+				scale(126.2 - abs($offset) * 10, 1.2)
+			)
+			if($offset == 0, translatey(-16%), rotatey($trans));
+		text-shadow:
+			d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
+			d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
+	}
 
-  100% {
-    transform: if(
-        $offset == 0,
-        scale(1.1, 1.1),
-        scale(116.2 - abs($offset) * 10, 1.1)
-      )
-      if($offset == 0, translatey(-12%), rotatey($trans));
-    text-shadow:
-      d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
-      d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
-  }
+	100% {
+		transform: if(
+				$offset == 0,
+				scale(1.1, 1.1),
+				scale(116.2 - abs($offset) * 10, 1.1)
+			)
+			if($offset == 0, translatey(-12%), rotatey($trans));
+		text-shadow:
+			d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
+			d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
+	}
 }
 ```
 
@@ -290,33 +290,33 @@ Now let’s do the same thing for fading back.
 
 ```scss
 @keyframes fade-back {
-  0% {
-    transform: if(
-        $offset == 0,
-        scale(1.1, 1.1),
-        scale(116.2 - abs($offset) * 10, 1.1)
-      )
-      if($offset == 0, translatey(-12%), rotatey($trans));
-    text-shadow:
-      d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
-      d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
-  }
+	0% {
+		transform: if(
+				$offset == 0,
+				scale(1.1, 1.1),
+				scale(116.2 - abs($offset) * 10, 1.1)
+			)
+			if($offset == 0, translatey(-12%), rotatey($trans));
+		text-shadow:
+			d3(15, $c_3d, if($offset == 0, 0, -0.25px * $offset), 1px),
+			d3(50, $c_shadow, 1px, 3px, 3px, $c_shadow-mix);
+	}
 
-  20% {
-    transform: if(
-        $offset == 0,
-        scale(1.05, 1.05),
-        scale(105.9 - abs($offset) * 10, 1.05)
-      )
-      if($offset == 0, translatey(-7%), rotatey($trans));
-    text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
-  }
+	20% {
+		transform: if(
+				$offset == 0,
+				scale(1.05, 1.05),
+				scale(105.9 - abs($offset) * 10, 1.05)
+			)
+			if($offset == 0, translatey(-7%), rotatey($trans));
+		text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
+	}
 
-  100% {
-    transform: if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
-      if($offset == 0, translatey(0%), rotatey($trans));
-    text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
-  }
+	100% {
+		transform: if($offset == 0, scale(1, 1), scale(95.9 - abs($offset) * 10, 1))
+			if($offset == 0, translatey(0%), rotatey($trans));
+		text-shadow: d3(15, rgba($c_3d, 0), 0, 0), d3(50, rgba($c_shadow, 0), 0, 0);
+	}
 }
 ```
 
@@ -326,12 +326,12 @@ I also needed to provide an animation to change the color.
 
 ```scss
 @keyframes change-color {
-  0% {
-    color: $c_bg;
-  }
-  100% {
-    color: $c_fg;
-  }
+	0% {
+		color: $c_bg;
+	}
+	100% {
+		color: $c_fg;
+	}
 }
 ```
 

@@ -34,32 +34,32 @@ So basically I created a Sass list containing all words ordered from the longest
 
 ```scss
 $words:
-  'Unconventional', 'Flabbergasting', 'Scintillating', 'Extraordinary',
-  'Unforgettable', 'Unpredictable', 'Dumbfounding', 'Electrifying',
-  'Overwhelming', 'Incomparable', 'Entertaining', 'Magnificient', 'Confounding',
-  'Resourceful', 'Interesting', 'Adventurous', 'Bewildering', 'Astonishing',
-  'Fascinating', 'Outstanding', 'Influential', 'Imaginative', 'Nonsensical',
-  'Stimulating', 'Exceptional', 'Resplendent', 'Commanding', 'Determined',
-  'Remarkable', 'Incredible', 'Impressive', 'Perplexing', 'Passionate',
-  'Formidable', 'Stupefying', 'Refreshing', 'Delightful', 'Incredible',
-  'Innovative', 'Monumemtal', 'Surprising', 'Stupendous', 'Staggering',
-  'Delectable', 'Astounding', 'Responsive', 'Courageous', 'Outlandish',
-  'Marvelous', 'Whimsical', 'Versatile', 'Motivated', 'Brilliant', 'Eccentric',
-  'Wonderful', 'Excellent', 'Thrilling', 'Inspiring', 'Exquisite', 'Inventive',
-  'Colourful', 'Delicious', 'Fantastic', 'Audacious', 'Dexterous', 'Different',
-  'Confident', 'Enthused', 'Peculiar', 'Glorious', 'Smashing', 'Splendid',
-  'Adaptive', 'Daunting', 'Imposing', 'Striking', 'Charming', 'Dazzling',
-  'Engaging', 'Resolute', 'Intrepid', 'Dramatic', 'Original', 'Fearless',
-  'Flexible', 'Creative', 'Animated', 'Puzzling', 'Shocking', 'Intense',
-  'Elastic', 'Pointed', 'Unusual', 'Devoted', 'Amusing', 'Radiant', 'Refined',
-  'Natural', 'Dynamic', 'Radical', 'Bizarre', 'Curious', 'Amazing', 'Lively',
-  'Modest', 'Mighty', 'August', 'Unique', 'Absurd', 'Brazen', 'Crafty',
-  'Astute', 'Shrewd', 'Daring', 'Lovely', 'Nimble', 'Classy', 'Humble',
-  'Limber', 'Superb', 'Super', 'Ready', 'Crazy', 'Proud', 'First', 'Light',
-  'Alert', 'Lithe', 'Fiery', 'Eager', 'Quick', 'Risky', 'Adept', 'Sharp',
-  'Smart', 'Brisk', 'Fresh', 'Swift', 'Novel', 'Giant', 'Funky', 'Weird',
-  'Grand', 'Alive', 'Happy', 'Keen', 'Bold', 'Wild', 'Spry', 'Zany', 'Nice',
-  'Loud', 'Lean', 'Fine', 'Busy', 'Cool', 'Rare', 'Apt', 'Fun', 'Hot', 'Big';
+	'Unconventional', 'Flabbergasting', 'Scintillating', 'Extraordinary',
+	'Unforgettable', 'Unpredictable', 'Dumbfounding', 'Electrifying',
+	'Overwhelming', 'Incomparable', 'Entertaining', 'Magnificient', 'Confounding',
+	'Resourceful', 'Interesting', 'Adventurous', 'Bewildering', 'Astonishing',
+	'Fascinating', 'Outstanding', 'Influential', 'Imaginative', 'Nonsensical',
+	'Stimulating', 'Exceptional', 'Resplendent', 'Commanding', 'Determined',
+	'Remarkable', 'Incredible', 'Impressive', 'Perplexing', 'Passionate',
+	'Formidable', 'Stupefying', 'Refreshing', 'Delightful', 'Incredible',
+	'Innovative', 'Monumemtal', 'Surprising', 'Stupendous', 'Staggering',
+	'Delectable', 'Astounding', 'Responsive', 'Courageous', 'Outlandish',
+	'Marvelous', 'Whimsical', 'Versatile', 'Motivated', 'Brilliant', 'Eccentric',
+	'Wonderful', 'Excellent', 'Thrilling', 'Inspiring', 'Exquisite', 'Inventive',
+	'Colourful', 'Delicious', 'Fantastic', 'Audacious', 'Dexterous', 'Different',
+	'Confident', 'Enthused', 'Peculiar', 'Glorious', 'Smashing', 'Splendid',
+	'Adaptive', 'Daunting', 'Imposing', 'Striking', 'Charming', 'Dazzling',
+	'Engaging', 'Resolute', 'Intrepid', 'Dramatic', 'Original', 'Fearless',
+	'Flexible', 'Creative', 'Animated', 'Puzzling', 'Shocking', 'Intense',
+	'Elastic', 'Pointed', 'Unusual', 'Devoted', 'Amusing', 'Radiant', 'Refined',
+	'Natural', 'Dynamic', 'Radical', 'Bizarre', 'Curious', 'Amazing', 'Lively',
+	'Modest', 'Mighty', 'August', 'Unique', 'Absurd', 'Brazen', 'Crafty',
+	'Astute', 'Shrewd', 'Daring', 'Lovely', 'Nimble', 'Classy', 'Humble',
+	'Limber', 'Superb', 'Super', 'Ready', 'Crazy', 'Proud', 'First', 'Light',
+	'Alert', 'Lithe', 'Fiery', 'Eager', 'Quick', 'Risky', 'Adept', 'Sharp',
+	'Smart', 'Brisk', 'Fresh', 'Swift', 'Novel', 'Giant', 'Funky', 'Weird',
+	'Grand', 'Alive', 'Happy', 'Keen', 'Bold', 'Wild', 'Spry', 'Zany', 'Nice',
+	'Loud', 'Lean', 'Fine', 'Busy', 'Cool', 'Rare', 'Apt', 'Fun', 'Hot', 'Big';
 ```
 
 Pretty big, right? Don’t worry, the worst part is over. Now it’s all about easy and interesting stuff.
@@ -76,14 +76,14 @@ Now we have the list, we only have to loop through all items in it and do someth
 ```scss
 $max: 1910px; /* [1] */
 .be:after {
-  @each $word in $words {
-    /* [2] */
-    @media screen and (max-width: $max) {
-      /* [3] */
-      content: 'Be #{$word}.'; /* [4] */
-    }
-    $max: ($max - 10); /* [5] */
-  }
+	@each $word in $words {
+		/* [2] */
+		@media screen and (max-width: $max) {
+			/* [3] */
+			content: 'Be #{$word}.'; /* [4] */
+		}
+		$max: ($max - 10); /* [5] */
+	}
 }
 ```
 
@@ -98,12 +98,12 @@ Please note we also could write it this way:
 ```scss
 $max: 1910px;
 @each $word in $words {
-  @media screen and (max-width: $max) {
-    .be:after {
-      content: 'Be #{$word}.';
-    }
-  }
-  $max: ($max - 10);
+	@media screen and (max-width: $max) {
+		.be:after {
+			content: 'Be #{$word}.';
+		}
+	}
+	$max: ($max - 10);
 }
 ```
 

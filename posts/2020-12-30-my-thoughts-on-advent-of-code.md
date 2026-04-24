@@ -21,10 +21,10 @@ const fs = require('fs')
 const path = require('path')
 
 module.exports = (dir, delimiter = '\n') =>
-  fs
-    .readFileSync(path.resolve(dir + '/input.txt'), 'utf8')
-    .trim()
-    .split(delimiter)
+	fs
+		.readFileSync(path.resolve(dir + '/input.txt'), 'utf8')
+		.trim()
+		.split(delimiter)
 ```
 
 ## Performance
@@ -49,16 +49,16 @@ const input = require('../helpers/readInput')(__dirname, '\n\n')
 const example = ['Player 1:\n9\n2\n6\n3\n1', 'Player 2:\n5\n8\n4\n7\n10']
 
 test('Day 22.1', t => {
-  t.is(getGameScore(example), 306)
+	t.is(getGameScore(example), 306)
 })
 
 test('Day 22.2', t => {
-  t.is(getGameScore(example, fightRecursive), 291)
+	t.is(getGameScore(example, fightRecursive), 291)
 })
 
 test('Day 22 — Solutions', t => {
-  t.is(getGameScore(input), 34664)
-  t.is(getGameScore(input, fightRecursive), 32018)
+	t.is(getGameScore(input), 34664)
+	t.is(getGameScore(input, fightRecursive), 32018)
 })
 ```
 

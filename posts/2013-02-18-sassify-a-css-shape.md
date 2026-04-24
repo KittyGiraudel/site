@@ -44,7 +44,7 @@ The user couldn’t figure this out and neither could I. So I asked Ana how to c
 
 ```javascript
 function computeHeight(x, skewAngle) {
-  return Math.sin(((90 - skewAngle) * Math.PI) / 180) * x;
+	return Math.sin(((90 - skewAngle) * Math.PI) / 180) * x;
 }
 ```
 
@@ -52,7 +52,7 @@ Okay, this is JavaScript but it is a good start. However this returns a radian v
 
 ```javascript
 function computeHeight(x, skewAngle) {
-  return Math.sin(90 - skewAngle) * x;
+	return Math.sin(90 - skewAngle) * x;
 }
 ```
 
@@ -66,7 +66,7 @@ Compass has built-in functions for advanced math calculation including `sin()`. 
 
 ```scss
 @function computeHeight($x, $skewAngle) {
-  @return sin(90deg - $skewAngle) * $x;
+	@return sin(90deg - $skewAngle) * $x;
 }
 ```
 
@@ -94,7 +94,7 @@ The first is useless in our case, but the second one is precisely what we need t
 
 ```scss
 @function strip-units($number) {
-  @return $number / ($number * 0 + 1);
+	@return $number / ($number * 0 + 1);
 }
 ```
 
@@ -110,9 +110,9 @@ Of course we have, mixin to the rescue!
 
 ```scss
 @mixin val($properties, $value) {
-  @each $prop in $properties {
-    #{$prop}: #{$value};
-  }
+	@each $prop in $properties {
+		#{$prop}: #{$value};
+	}
 }
 ```
 
@@ -120,10 +120,10 @@ You give this mixin a [list](https://sass-lang.com/docs/yardoc/file.SASS_REFEREN
 
 ```scss
 .selector {
-  &:after,
-  &:before {
-    @include val(width height background, "inherit");
-  }
+	&:after,
+	&:before {
+		@include val(width height background, "inherit");
+	}
 }
 ```
 
@@ -132,9 +132,9 @@ You give this mixin a [list](https://sass-lang.com/docs/yardoc/file.SASS_REFEREN
 ```scss
 .selector:before,
 .selector:after {
-  width: inherit;
-  height: inherit;
-  background: inherit;
+	width: inherit;
+	height: inherit;
+	background: inherit;
 }
 ```
 
@@ -146,43 +146,43 @@ Here is the full code for the mixin. As you can see, it is really not that big (
 
 ```scss
 @mixin val($properties, $value) {
-  @each $prop in $properties {
-    #{$prop}: #{$value};
-  }
+	@each $prop in $properties {
+		#{$prop}: #{$value};
+	}
 }
 
 @function computeHeight($x, $skewAngle) {
-  @return sin(90deg - $skewAngle) * $x;
+	@return sin(90deg - $skewAngle) * $x;
 }
 
 @function strip-units($number) {
-  @return $number / ($number * 0 + 1);
+	@return $number / ($number * 0 + 1);
 }
 
 @mixin star($size) {
-  $height: computeHeight(strip-units($size), 30deg);
+	$height: computeHeight(strip-units($size), 30deg);
 
-  width: $size;
-  height: #{$height}#{unit($size)};
-  position: relative;
+	width: $size;
+	height: #{$height}#{unit($size)};
+	position: relative;
 
-  @include transition(all 0.3s);
-  @include transform(rotate(-30deg) skewX(30deg));
+	@include transition(all 0.3s);
+	@include transform(rotate(-30deg) skewX(30deg));
 
-  &:before,
-  &:after {
-    $properties: width, height, background;
-    content: "";
-    position: absolute;
-    @include val($properties, "inherit");
-  }
+	&:before,
+	&:after {
+		$properties: width, height, background;
+		content: "";
+		position: absolute;
+		@include val($properties, "inherit");
+	}
 
-  &:before {
-    @include transform(skewX(-30deg) skewX(-30deg));
-  }
-  &:after {
-    @include transform(skewX(-30deg) rotate(-60deg) skewX(-30deg));
-  }
+	&:before {
+		@include transform(skewX(-30deg) skewX(-30deg));
+	}
+	&:after {
+		@include transform(skewX(-30deg) rotate(-60deg) skewX(-30deg));
+	}
 }
 ```
 
@@ -194,13 +194,13 @@ Using it couldn’t be simpler:
 
 ```scss
 .star {
-  margin: 5em auto;
-  background: tomato;
-  @include star(10em);
+	margin: 5em auto;
+	background: tomato;
+	@include star(10em);
 
-  &:hover {
-    background: deepskyblue;
-  }
+	&:hover {
+		background: deepskyblue;
+	}
 }
 ```
 

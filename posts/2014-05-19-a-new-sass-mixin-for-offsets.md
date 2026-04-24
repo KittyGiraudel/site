@@ -17,7 +17,7 @@ The mixin was directly inspired from [Nib](https://github.com/visionmedia/nib), 
 ```scss
 // Stylus syntax
 selector {
-  absolute: top 1em right 100%;
+	absolute: top 1em right 100%;
 }
 ```
 
@@ -28,7 +28,7 @@ Unfortunately, Sass in its SCSS syntax doesn’t provide as much abstraction as 
 ```scss
 // SCSS
 selector {
-  @include absolute(top 1em right 100%);
+	@include absolute(top 1em right 100%);
 }
 ```
 
@@ -102,8 +102,8 @@ Should be considered as a valid length:
 
 ```scss
 @function is-valid-length($value) {
-  @return (type-of($value) == 'number' and not unitless($value)) or
-    (index(auto initial inherit 0, $value) != false);
+	@return (type-of($value) == 'number' and not unitless($value)) or
+		(index(auto initial inherit 0, $value) != false);
 }
 ```
 
@@ -115,12 +115,12 @@ Now that we have our helper function and all our use-cases, it is time to move o
 
 ```scss
 @mixin position($position, $args: ()) {
-  $offsets: top right bottom left;
-  position: $position;
+	$offsets: top right bottom left;
+	position: $position;
 
-  @each $offset in $offsets {
-    // Doing the magic trick
-  }
+	@each $offset in $offsets {
+		// Doing the magic trick
+	}
 }
 ```
 
@@ -132,30 +132,30 @@ $index: index($args, $offset);
 
 // If offset is found in the list
 @if $index {
-  // If it is found at last position
-  @if $index == length($args) {
-    #{$offset}: 0;
-  }
+	// If it is found at last position
+	@if $index == length($args) {
+		#{$offset}: 0;
+	}
 
-  // If it is followed by a value
-  @else {
-    $next: nth($args, $index + 1);
+	// If it is followed by a value
+	@else {
+		$next: nth($args, $index + 1);
 
-    // If the next value is value length
-    @if is-valid-length($next) {
-      #{$offset}: $next;
-    }
+		// If the next value is value length
+		@if is-valid-length($next) {
+			#{$offset}: $next;
+		}
 
-    // If the next value is another offset
-    @else if index($offsets, $next) {
-      #{$offset}: 0;
-    }
+		// If the next value is another offset
+		@else if index($offsets, $next) {
+			#{$offset}: 0;
+		}
 
-    // If it is invalid
-    @else {
-      @warn "Invalid value `#{$next}` for offset `#{$offset}`.";
-    }
-  }
+		// If it is invalid
+		@else {
+			@warn "Invalid value `#{$next}` for offset `#{$offset}`.";
+		}
+	}
 }
 ```
 
@@ -163,15 +163,15 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 @mixin absolute($args: ()) {
-  @include position(absolute, $args);
+	@include position(absolute, $args);
 }
 
 @mixin fixed($args: ()) {
-  @include position(fixed, $args);
+	@include position(fixed, $args);
 }
 
 @mixin relative($args: ()) {
-  @include position(relative, $args);
+	@include position(relative, $args);
 }
 ```
 
@@ -179,122 +179,122 @@ Then of course, there are still the 3 extra mixins `absolute`, `relative` and `f
 
 ```scss
 .a {
-  @include absolute();
+	@include absolute();
 }
 
 .a {
-  position: absolute;
+	position: absolute;
 }
 ```
 
 ```scss
 .b {
-  @include absolute(top);
+	@include absolute(top);
 }
 
 .b {
-  position: absolute;
-  top: 0;
+	position: absolute;
+	top: 0;
 }
 ```
 
 ```scss
 .c {
-  @include absolute(top right);
+	@include absolute(top right);
 }
 
 .c {
-  position: absolute;
-  top: 0;
-  right: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 ```
 
 ```scss
 .d {
-  @include absolute(top right bottom);
+	@include absolute(top right bottom);
 }
 
 .d {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
 }
 ```
 
 ```scss
 .e {
-  @include absolute(top right bottom left);
+	@include absolute(top right bottom left);
 }
 
 .e {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 ```
 
 ```scss
 .f {
-  @include absolute(top right 1em);
+	@include absolute(top right 1em);
 }
 
 .f {
-  position: absolute;
-  top: 0;
-  right: 1em;
+	position: absolute;
+	top: 0;
+	right: 1em;
 }
 ```
 
 ```scss
 .g {
-  @include absolute(top 1em right);
+	@include absolute(top 1em right);
 }
 
 .g {
-  position: absolute;
-  top: 1em;
-  right: 0;
+	position: absolute;
+	top: 1em;
+	right: 0;
 }
 ```
 
 ```scss
 .h {
-  @include absolute(top 1em right 100%);
+	@include absolute(top 1em right 100%);
 }
 
 .h {
-  position: absolute;
-  top: 1em;
-  right: 100%;
+	position: absolute;
+	top: 1em;
+	right: 100%;
 }
 ```
 
 ```scss
 .i {
-  @include absolute(top right mistake);
+	@include absolute(top right mistake);
 }
 
 .i {
-  position: absolute;
-  top: 0;
+	position: absolute;
+	top: 0;
 }
 ```
 
 ```scss
 .j {
-  @include absolute(top 1em right 1em bottom 1em left 1em);
+	@include absolute(top 1em right 1em bottom 1em left 1em);
 }
 
 .j {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  bottom: 1em;
-  left: 1em;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	bottom: 1em;
+	left: 1em;
 }
 ```
 

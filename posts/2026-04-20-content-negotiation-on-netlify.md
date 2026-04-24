@@ -39,13 +39,13 @@ Let’s start with the configuration. There are quite a few [available options](
 import type { Config } from '@netlify/edge-functions'
 
 export const config: Config = {
-  method: 'GET',
-  header: { accept: 'text/markdown' },
-  pattern: [
-    String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/?$`,
-    String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.html$`,
-    String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.md$`,
-  ],
+	method: 'GET',
+	header: { accept: 'text/markdown' },
+	pattern: [
+		String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/?$`,
+		String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.html$`,
+		String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.md$`,
+	],
 }
 ```
 
@@ -69,15 +69,15 @@ This is the shell of our function:
 
 ```ts
 export default async function markdownNegotiation(
-  request: Request,
-  context: Context,
+	request: Request,
+	context: Context,
 ): Promise<Response | undefined> {
-  const url = new URL(request.url)
-  const { pathname } = url
+	const url = new URL(request.url)
+	const { pathname } = url
 
-  // Our logic goes here …
+	// Our logic goes here …
 
-  return new Response(body, { status, headers })
+	return new Response(body, { status, headers })
 }
 ```
 
@@ -85,7 +85,7 @@ Let’s fill in the blanks. First, we want to return early if the Markdown file 
 
 ```ts
 if (pathname.toLowerCase().endsWith('.md')) {
-  return context.next()
+	return context.next()
 }
 ```
 
@@ -105,20 +105,20 @@ If we should return Markdown, the next step is to figure out the path to the Mar
 
 ```ts
 function getMarkdownTwin(pathname: string): string | null {
-  const HTML_PATH_RE    = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/index\.html$/i
-  const EXTLESS_PATH_RE = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/?$/
+	const HTML_PATH_RE    = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/index\.html$/i
+	const EXTLESS_PATH_RE = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/?$/
 
-  // Test the HTML path first
-  let m = pathname.match(HTML_PATH_RE)
-  // If it fails, test the extension-less path
-  if (!m?.[1] || !m[2] || !m[3] || !m[4]) {
-    m = pathname.match(EXTLESS_PATH_RE)
-    // If it fails, give up
-    if (!m?.[1] || !m[2] || !m[3] || !m[4]) return null
-  }
+	// Test the HTML path first
+	let m = pathname.match(HTML_PATH_RE)
+	// If it fails, test the extension-less path
+	if (!m?.[1] || !m[2] || !m[3] || !m[4]) {
+		m = pathname.match(EXTLESS_PATH_RE)
+		// If it fails, give up
+		if (!m?.[1] || !m[2] || !m[3] || !m[4]) return null
+	}
 
-  const [, year, month, day, slug] = m
-  return ['', year, month, day, slug, 'index.md'].join('/')
+	const [, year, month, day, slug] = m
+	return ['', year, month, day, slug, 'index.md'].join('/')
 }
 ```
 
@@ -142,15 +142,15 @@ innerHeaders.delete('accept')
 innerHeaders.set('accept', '*/*')
 
 const upstream = await context.next(
-  new Request(innerUrl, {
-    method: request.method,
-    headers: innerHeaders,
-    redirect: 'manual',
-  }),
+	new Request(innerUrl, {
+		method: request.method,
+		headers: innerHeaders,
+		redirect: 'manual',
+	}),
 )
 
 if (!upstream.ok || upstream.status === 404) {
-  return context.next(request)
+	return context.next(request)
 }
 ```
 

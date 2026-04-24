@@ -17,9 +17,9 @@ A single-line _end-ellipsis_ is often used when you have some long content that 
  * 3. Add ellipsis at end of line
  */
 .ellipsis {
-  overflow: hidden; /* 1 */
-  white-space: nowrap; /* 2 */
-  text-overflow: ellipsis; /* 3 */
+	overflow: hidden; /* 1 */
+	white-space: nowrap; /* 2 */
+	text-overflow: ellipsis; /* 3 */
 }
 ```
 
@@ -64,40 +64,40 @@ So there is no magic one-liner to make it work everywhere. Fortunately, some of 
 
 ```css
 .reverse-ellipsis {
-  text-overflow: clip;
-  position: relative;
-  background-color: white;
+	text-overflow: clip;
+	position: relative;
+	background-color: white;
 }
 
 .reverse-ellipsis:before {
-  content: '\02026';
-  position: absolute;
-  z-index: 1;
-  left: -1em;
-  background-color: inherit;
-  padding-left: 1em;
-  margin-left: 0.5em;
+	content: '\02026';
+	position: absolute;
+	z-index: 1;
+	left: -1em;
+	background-color: inherit;
+	padding-left: 1em;
+	margin-left: 0.5em;
 }
 
 .reverse-ellipsis span {
-  min-width: 100%;
-  position: relative;
-  display: inline-block;
-  float: right;
-  overflow: visible;
-  background-color: inherit;
-  text-indent: 0.5em;
+	min-width: 100%;
+	position: relative;
+	display: inline-block;
+	float: right;
+	overflow: visible;
+	background-color: inherit;
+	text-indent: 0.5em;
 }
 
 .reverse-ellipsis span:before {
-  content: '';
-  position: absolute;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-color: inherit;
-  z-index: 200;
-  left: -0.5em;
+	content: '';
+	position: absolute;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-color: inherit;
+	z-index: 200;
+	left: -0.5em;
 }
 ```
 

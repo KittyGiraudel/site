@@ -42,13 +42,13 @@ As a very simple example, let’s make a placeholder of the [clearfix method by 
 
 ```scss
 %clearfix:after {
-  content: '';
-  display: table;
-  clear: both;
+	content: '';
+	display: table;
+	clear: both;
 }
 
 .element {
-  @extend %clearfix;
+	@extend %clearfix;
 }
 ```
 
@@ -56,9 +56,9 @@ Outputs:
 
 ```scss
 .element:after {
-  content: '';
-  display: table;
-  clear: both;
+	content: '';
+	display: table;
+	clear: both;
 }
 ```
 
@@ -79,35 +79,35 @@ Let’s see how we can Sass it:
 
 ```scss
 %message {
-  /* shared styles */
+	/* shared styles */
 }
 .message-error {
-  @extend %message;
-  $color: #b94a48;
-  color: $color;
-  background: lighten($color, 38%);
-  border-color: lighten(adjust-hue($color, -10), 20%);
+	@extend %message;
+	$color: #b94a48;
+	color: $color;
+	background: lighten($color, 38%);
+	border-color: lighten(adjust-hue($color, -10), 20%);
 }
 .message-ok {
-  @extend %message;
-  $color: #468847;
-  color: $color;
-  background: lighten($color, 38%);
-  border-color: lighten(adjust-hue($color, -10), 20%);
+	@extend %message;
+	$color: #468847;
+	color: $color;
+	background: lighten($color, 38%);
+	border-color: lighten(adjust-hue($color, -10), 20%);
 }
 .message-warn {
-  @extend %message;
-  $color: #c09853;
-  color: $color;
-  background: lighten($color, 38%);
-  border-color: lighten(adjust-hue($color, -10), 20%);
+	@extend %message;
+	$color: #c09853;
+	color: $color;
+	background: lighten($color, 38%);
+	border-color: lighten(adjust-hue($color, -10), 20%);
 }
 .message-info {
-  @extend %message;
-  $color: #3a87ad;
-  color: $color;
-  background: lighten($color, 38%);
-  border-color: lighten(adjust-hue($color, -10), 20%);
+	@extend %message;
+	$color: #3a87ad;
+	color: $color;
+	background: lighten($color, 38%);
+	border-color: lighten(adjust-hue($color, -10), 20%);
 }
 ```
 
@@ -118,27 +118,27 @@ Outputs:
 .message-ok,
 .message-warn,
 .message-info {
-  /* shared styles */
+	/* shared styles */
 }
 .message-error {
-  color: #b94a48;
-  background: #efd5d4;
-  border-color: #d5929c;
+	color: #b94a48;
+	background: #efd5d4;
+	border-color: #d5929c;
 }
 .message-ok {
-  color: #468847;
-  background: #b6dab7;
-  border-color: #83ba7a;
+	color: #468847;
+	background: #b6dab7;
+	border-color: #83ba7a;
 }
 .message-warn {
-  color: #c09853;
-  background: #f4ede1;
-  border-color: #dbba9e;
+	color: #c09853;
+	background: #f4ede1;
+	border-color: #dbba9e;
 }
 .message-info {
-  color: #3a87ad;
-  background: #bfdcea;
-  border-color: #7ac4d3;
+	color: #3a87ad;
+	background: #bfdcea;
+	border-color: #7ac4d3;
 }
 ```
 
@@ -146,10 +146,10 @@ No styles repeated, no heavy selector, only one class assigned in the markup. Pr
 
 ```scss
 @mixin message($color) {
-  @extend %message;
-  color: $color;
-  background: lighten($color, 38%);
-  border-color: lighten(adjust-hue($color, -10), 20%);
+	@extend %message;
+	color: $color;
+	background: lighten($color, 38%);
+	border-color: lighten(adjust-hue($color, -10), 20%);
 }
 ```
 
@@ -157,16 +157,16 @@ Then, we change our Sass a little bit:
 
 ```scss
 .message-error {
-  @include message(#b94a48);
+	@include message(#b94a48);
 }
 .message-ok {
-  @include message(#468847);
+	@include message(#468847);
 }
 .message-warn {
-  @include message(#c09853);
+	@include message(#c09853);
 }
 .message-info {
-  @include message(#3a87ad);
+	@include message(#3a87ad);
 }
 ```
 
@@ -180,12 +180,12 @@ But duplicating every `font-size` declaration can be tedious and converting REM 
 
 ```scss
 @mixin rem($value, $base: 16) {
-  font-size: $value + px;
-  font-size: $value / $base + rem;
+	font-size: $value + px;
+	font-size: $value / $base + rem;
 }
 
 .element {
-  @include rem(24);
+	@include rem(24);
 }
 ```
 
@@ -193,8 +193,8 @@ Outputs:
 
 ```css
 .element {
-  font-size: 24px;
-  font-size: 1.5rem;
+	font-size: 24px;
+	font-size: 1.5rem;
 }
 ```
 
@@ -206,15 +206,15 @@ Simple enough: wrap the PX line in a conditional statement (`@if`) depending on 
 $support-IE8: false;
 
 @mixin rem($value, $base: 16) {
-  @if $support-IE8 {
-    font-size: $value + px;
-  }
+	@if $support-IE8 {
+		font-size: $value + px;
+	}
 
-  font-size: $value / $base + rem;
+	font-size: $value / $base + rem;
 }
 
 .element {
-  @include rem(24);
+	@include rem(24);
 }
 ```
 
@@ -222,7 +222,7 @@ Outputs:
 
 ```css
 .element {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 ```
 
@@ -234,17 +234,17 @@ I don’t know for you but I don’t really like manipulating media queries. The
 
 ```scss
 @mixin mq($keyword) {
-  @if $keyword == small {
-    @media (max-width: 48em) {
-      @content;
-    }
-  }
-  @if $keyword == medium {
-    @media (max-width: 58em) {
-      @content;
-    }
-  }
-  /* … */
+	@if $keyword == small {
+		@media (max-width: 48em) {
+			@content;
+		}
+	}
+	@if $keyword == medium {
+		@media (max-width: 58em) {
+			@content;
+		}
+	}
+	/* … */
 }
 ```
 
@@ -256,12 +256,12 @@ We can even push things further by adding retina support to the mixin (based on 
 
 ```scss
 @mixin mq($keyword) {
-  /* … */
-  @if $keyword == retina {
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.3) only screen and (min-resolution: 124.8dpi) only screen and (min-resolution: 1.3dppx) {
-      @content;
-    }
-  }
+	/* … */
+	@if $keyword == retina {
+		@media only screen and (-webkit-min-device-pixel-ratio: 1.3) only screen and (min-resolution: 124.8dpi) only screen and (min-resolution: 1.3dppx) {
+			@content;
+		}
+	}
 }
 ```
 
@@ -269,15 +269,15 @@ We can now safely use this mixin as below:
 
 ```scss
 .element {
-  /* regular styles */
+	/* regular styles */
 
-  @include mq(small) {
-    /* small-screen styles */
-  }
+	@include mq(small) {
+		/* small-screen styles */
+	}
 
-  @include mq(retina) {
-    /* retina-only styles */
-  }
+	@include mq(retina) {
+		/* retina-only styles */
+	}
 }
 ```
 
@@ -285,21 +285,21 @@ Outputs:
 
 ```css
 .element {
-  /* regular styles */
+	/* regular styles */
 }
 
 @media (max-width: 48em) {
-   {
-    /* small-screen styles */
-  }
+	 {
+		/* small-screen styles */
+	}
 }
 
 @media only screen and (-webkit-min-device-pixel-ration: 1.3),
-  only screen and (min-resolution: 124.8dpi),
-  only screen and (min-resolution: 1.3dppx) {
-  .element {
-    /* retina-only styles */
-  }
+	only screen and (min-resolution: 124.8dpi),
+	only screen and (min-resolution: 1.3dppx) {
+	.element {
+		/* retina-only styles */
+	}
 }
 ```
 
@@ -322,14 +322,14 @@ $gutter-pct: ($gutter-width / $wrap-width) * 100;
 
 /* One single mixin */
 @mixin cols($cols) {
-  width: $column-pct * $cols + $gutter-pct * ($cols - 1) + unquote('%');
-  margin-right: $gutter-pct + unquote('%');
-  float: left;
+	width: $column-pct * $cols + $gutter-pct * ($cols - 1) + unquote('%');
+	margin-right: $gutter-pct + unquote('%');
+	float: left;
 
-  @media screen and (max-width: 400px) {
-    width: 100%;
-    margin-right: 0;
-  }
+	@media screen and (max-width: 400px) {
+		width: 100%;
+		margin-right: 0;
+	}
 }
 ```
 
@@ -361,7 +361,7 @@ Doing this with vanilla CSS isn’t too hard but require code repetition and qui
 ```scss
 /* Initialize counters */
 body {
-  counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
+	counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
 }
 
 /* Create a variable (list) to store the concatenated counters */
@@ -369,19 +369,19 @@ $nest: ();
 
 /* Loop on each heading level */
 @for $i from 1 through 6 {
-  /* For each heading level */
-  h#{$i} {
-    /* Increment the according counter */
-    counter-increment: ct#{$i};
+	/* For each heading level */
+	h#{$i} {
+		/* Increment the according counter */
+		counter-increment: ct#{$i};
 
-    /* Display the concatenated counters in the according pseudo-element */
-    &:before {
-      content: $nest counter(ct#{$i}) '. ';
-    }
-  }
+		/* Display the concatenated counters in the according pseudo-element */
+		&:before {
+			content: $nest counter(ct#{$i}) '. ';
+		}
+	}
 
-  /* Concatenate counters */
-  $nest: append($nest, counter(ct#{$i}) '.');
+	/* Concatenate counters */
+	$nest: append($nest, counter(ct#{$i}) '.');
 }
 ```
 
@@ -389,24 +389,24 @@ The code might be complicated to understand but it’s really not that hard once
 
 ```scss
 @mixin numbering($from: 1, $to: 6) {
-  counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
-  $nest: ();
+	counter-reset: ct1 ct2 ct3 ct4 ct5 ct6;
+	$nest: ();
 
-  @for $i from 1 through 6 {
-    h#{$i} {
-      counter-increment: ct#{$i};
+	@for $i from 1 through 6 {
+		h#{$i} {
+			counter-increment: ct#{$i};
 
-      &:before {
-        content: $nest counter(ct#{$i}) '. ';
-      }
-    }
+			&:before {
+				content: $nest counter(ct#{$i}) '. ';
+			}
+		}
 
-    $nest: append($nest, counter(ct#{$i}) '.');
-  }
+		$nest: append($nest, counter(ct#{$i}) '.');
+	}
 }
 
 .wrapper {
-  @include numbering(1, 4);
+	@include numbering(1, 4);
 }
 ```
 
@@ -432,23 +432,23 @@ A quick look at nested lists:
 
 ```scss
 $list: (
-  (item-1, item-2, item-3) (item-4, item-5, item-6) (item-7, item-8, item-9)
+	(item-1, item-2, item-3) (item-4, item-5, item-6) (item-7, item-8, item-9)
 );
 
 // Or simpler:
 // top-level list is comma-separated
 // inner lists are space-separated
 $list:
-  item-1 item-2 item-3,
-  item-4 item-5 item-6,
-  item-7 item-8 item-9;
+	item-1 item-2 item-3,
+	item-4 item-5 item-6,
+	item-7 item-8 item-9;
 ```
 
 Now, here is how to use a list to access item one by one.
 
 ```scss
 @each $item in $list {
-  /* Access item with $item */
+	/* Access item with $item */
 }
 ```
 
@@ -456,7 +456,7 @@ You can do the exact same thing with a `@for` loop as you would probably do in J
 
 ```scss
 @for $i from 1 through length($list) {
-  /* Access item with nth($list, $i) */
+	/* Access item with nth($list, $i) */
 }
 ```
 
@@ -467,19 +467,19 @@ Now that we introduced loops and lists, we can move forward. My idea was to buil
 // Top level contains pages
 // Inner level contains page-specific information
 $pages:
-  'home' 'bg-home.jpg',
-  'about' 'about.png',
-  'products' 'prod_bg.jpg',
-  'contact' 'assets/contact.jpg';
+	'home' 'bg-home.jpg',
+	'about' 'about.png',
+	'products' 'prod_bg.jpg',
+	'contact' 'assets/contact.jpg';
 
 @each $page in $pages {
-  // Scoped variables
-  $selector: nth($page, 1);
-  $path: nth($page, 2);
+	// Scoped variables
+	$selector: nth($page, 1);
+	$path: nth($page, 2);
 
-  .#{$selector} body {
-    background: url('../images/#{ $path }');
-  }
+	.#{$selector} body {
+		background: url('../images/#{ $path }');
+	}
 }
 ```
 
@@ -493,16 +493,16 @@ Outputs:
 
 ```css
 .home body {
-  background: url('../images/bg-home.jpg');
+	background: url('../images/bg-home.jpg');
 }
 .about body {
-  background: url('../images/about.png');
+	background: url('../images/about.png');
 }
 .products body {
-  background: url('../images/prod_bg.jpg');
+	background: url('../images/prod_bg.jpg');
 }
 .contact body {
-  background: url('../images/assets/contact.jpg');
+	background: url('../images/assets/contact.jpg');
 }
 ```
 
@@ -514,9 +514,9 @@ Let’s save the best for last. The idea behind the first version is to loop thr
 
 ```scss
 @each $item in home, about, products, contact {
-  .#{$item} .nav-#{ $item } {
-    style: awesome;
-  }
+	.#{$item} .nav-#{ $item } {
+		style: awesome;
+	}
 }
 ```
 
@@ -524,16 +524,16 @@ Outputs:
 
 ```css
 .home .nav-home {
-  style: awesome;
+	style: awesome;
 }
 .about .nav-about {
-  style: awesome;
+	style: awesome;
 }
 .products .nav-products {
-  style: awesome;
+	style: awesome;
 }
 .contact .nav-contact {
-  style: awesome;
+	style: awesome;
 }
 ```
 
@@ -543,11 +543,11 @@ Not bad. At least it works. But it repeats a bunch of things and this sucks. The
 $selector: ();
 
 @each $item in home, about, products, contact {
-  $selector: append($selector, unquote('.#{$item} .nav-#{$item}'));
+	$selector: append($selector, unquote('.#{$item} .nav-#{$item}'));
 }
 
 #{$selector} {
-  style: awesome;
+	style: awesome;
 }
 ```
 
@@ -558,7 +558,7 @@ Outputs:
 .about .nav-about,
 .products .nav-products,
 .contact .nav-contact {
-  style: awesome;
+	style: awesome;
 }
 ```
 

@@ -37,15 +37,15 @@ For both the original pen and this helper demo, the interesting part is this one
 
 ```css
 background:
-  linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
-  linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%),
-  linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0,
-  linear-gradient(-72deg, #639b47 75.48%, transparent 75.48%) 100% 0,
-  linear-gradient(36deg, transparent 57.66%, #e1e23b 57.66%) 100% 100%,
-  linear-gradient(72deg, transparent 24.52%, #f7941e 24.52%) 100% 100%,
-  linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%,
-  linear-gradient(-72deg, transparent 24.52%, #9a1d34 24.52%) 0 100%,
-  #43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
+	linear-gradient(36deg, #272b66 42.34%, transparent 42.34%),
+	linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%),
+	linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0,
+	linear-gradient(-72deg, #639b47 75.48%, transparent 75.48%) 100% 0,
+	linear-gradient(36deg, transparent 57.66%, #e1e23b 57.66%) 100% 100%,
+	linear-gradient(72deg, transparent 24.52%, #f7941e 24.52%) 100% 100%,
+	linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%,
+	linear-gradient(-72deg, transparent 24.52%, #9a1d34 24.52%) 0 100%,
+	#43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
 background-repeat: no-repeat;
 background-size: 50% 50%;
 ```

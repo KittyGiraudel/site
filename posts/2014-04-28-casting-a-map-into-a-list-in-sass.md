@@ -15,19 +15,19 @@ The `to-list` function core is pretty straightforward. If the given value is a m
 
 ```scss
 @function to-list($value) {
-  @if type-of($value) == 'map' {
-    $keys: ();
-    $values: ();
+	@if type-of($value) == 'map' {
+		$keys: ();
+		$values: ();
 
-    @each $key, $val in $value {
-      $keys: append($keys, $key);
-      $values: append($values, $val);
-    }
+		@each $key, $val in $value {
+			$keys: append($keys, $key);
+			$values: append($values, $val);
+		}
 
-    @return zip($keys, $values);
-  }
+		@return zip($keys, $values);
+	}
 
-  @return if(type-of($value) != 'list', ($value), $value);
+	@return if(type-of($value) != 'list', ($value), $value);
 }
 ```
 
@@ -43,27 +43,27 @@ Then depending on the flag, he returns either `$keys` or `$values` or a zip of b
 
 ```scss
 @function to-list($value, $keep: 'both') {
-  $keep: if(index('keys' 'values', $keep), $keep, 'both');
+	$keep: if(index('keys' 'values', $keep), $keep, 'both');
 
-  @if type-of($value) == 'map' {
-    $keys: ();
-    $values: ();
+	@if type-of($value) == 'map' {
+		$keys: ();
+		$values: ();
 
-    @each $key, $val in $value {
-      $keys: append($keys, $key);
-      $values: append($values, $val);
-    }
+		@each $key, $val in $value {
+			$keys: append($keys, $key);
+			$values: append($values, $val);
+		}
 
-    @if $keep == 'keys' {
-      @return $keys;
-    } @else if $keep == 'values' {
-      @return $values;
-    } @else {
-      @return zip($keys, $values);
-    }
-  }
+		@if $keep == 'keys' {
+			@return $keys;
+		} @else if $keep == 'values' {
+			@return $values;
+		} @else {
+			@return zip($keys, $values);
+		}
+	}
 
-  @return if(type-of($value) != 'list', ($value), $value);
+	@return if(type-of($value) != 'list', ($value), $value);
 }
 ```
 
@@ -71,9 +71,9 @@ If you don’t like conditional return statements or if you simply want to look 
 
 ```scss
 @return if(
-  $keep == 'keys',
-  $keys,
-  if($keep == 'values', $values, zip($keys, $values))
+	$keep == 'keys',
+	$keys,
+	if($keep == 'values', $values, zip($keys, $values))
 );
 ```
 
@@ -89,9 +89,9 @@ Let’s try it with a little example, shall we? First, our map.
 
 ```scss
 $breakpoints: (
-  'small': 600px,
-  'medium': 900px,
-  'large': 1200px,
+	'small': 600px,
+	'medium': 900px,
+	'large': 1200px,
 );
 ```
 

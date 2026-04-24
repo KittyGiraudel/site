@@ -24,7 +24,7 @@ This is how we can write a rule-set to add a CSS3 gradient background:
 
 ```css
 .cssgradients .my-selector {
-  background-image: linear-gradient(to bottom, #fff, #000);
+	background-image: linear-gradient(to bottom, #fff, #000);
 }
 ```
 
@@ -33,8 +33,8 @@ For browsers that don’t support CSS gradients or for those where JavaScript is
 ```css
 .no-js .my-selector,
 .no-cssgradients .my-selector {
-  background-image: url('gradient.png');
-  background-repeat: repeat-x;
+	background-image: url('gradient.png');
+	background-repeat: repeat-x;
 }
 ```
 
@@ -44,15 +44,15 @@ Sass allows selectors and rules to be [nested](https://sass-lang.com/documentati
 
 ```scss
 .my-selector {
-  .cssgradients & {
-    background-image: linear-gradient(to bottom, #fff, #000);
-  }
+	.cssgradients & {
+		background-image: linear-gradient(to bottom, #fff, #000);
+	}
 
-  .no-js &,
-  .no-cssgradients & {
-    background-image: url('gradient.png');
-    background-repeat: repeat-x;
-  }
+	.no-js &,
+	.no-cssgradients & {
+		background-image: url('gradient.png');
+		background-repeat: repeat-x;
+	}
 }
 ```
 
@@ -64,13 +64,13 @@ One mixin would write the rule-set for available features. I called it `yep`. Th
 
 ```scss
 .my-selector {
-  @include yep(cssgradients) {
-    // …
-  }
+	@include yep(cssgradients) {
+		// …
+	}
 
-  @include nope(cssgradients) {
-    // …
-  }
+	@include nope(cssgradients) {
+		// …
+	}
 }
 ```
 
@@ -78,16 +78,16 @@ That’s extremely easy, I thought. This is all the code we actually need to mak
 
 ```scss
 @mixin yep($feature) {
-  .#{$feature} & {
-    @content;
-  }
+	.#{$feature} & {
+		@content;
+	}
 }
 
 @mixin nope($feature) {
-  .no-js &,
-  .no-#{$feature} & {
-    @content;
-  }
+	.no-js &,
+	.no-#{$feature} & {
+		@content;
+	}
 }
 ```
 
@@ -101,13 +101,13 @@ This is the compiled CSS we are looking for:
 
 ```scss
 .csstransforms.opacity .my-selector {
-  // …
+	// …
 }
 
 .no-js .my-selector,
 .no-csstransforms .my-selector,
 .no-opacity .my-selector {
-  // …
+	// …
 }
 ```
 
@@ -122,16 +122,16 @@ That’s it, they’re meant to be easier to remember because they require only 
 ```scss
 // `yep` is an alias for modernizr($features, $supports: true)
 @mixin yep($features...) {
-  @include modernizr($features, $supports: true) {
-    @content;
-  }
+	@include modernizr($features, $supports: true) {
+		@content;
+	}
 }
 
 // `nope` is an alias for modernizr($features, $supports: false)
 @mixin nope($features...) {
-  @include modernizr($features, $supports: false) {
-    @content;
-  }
+	@include modernizr($features, $supports: false) {
+		@content;
+	}
 }
 ```
 
@@ -141,7 +141,7 @@ The `modernizr` mixin expects two arguments: `$features` which is our `argList`,
 
 ```scss
 @mixin modernizr($features, $supports) {
-  // Sass magic
+	// Sass magic
 }
 ```
 
@@ -181,7 +181,7 @@ Now it’s time to create our feature selectors and our placeholder names. We’
 
 ```scss
 @each $feature in $features {
-  // …
+	// …
 }
 ```
 
@@ -200,9 +200,9 @@ The resulting `$placeholder` variables will look something like `%yep-opacity-cs
 ```scss
 $new-selector: #{'.' + $prefix + $feature};
 $selector: if(
-  $supports,
-  $selector + $new-selector,
-  append($selector, $new-selector, comma)
+	$supports,
+	$selector + $new-selector,
+	append($selector, $new-selector, comma)
 );
 ```
 
@@ -228,7 +228,7 @@ It’s time to write our placeholder. We use [Sass interpolation](https://sass-l
 
 ```scss
 #{$placeholder} & {
-  @content;
+	@content;
 }
 ```
 
@@ -238,7 +238,7 @@ Now we’ll print our features `$selector`(s) and extend the placeholder. But, t
 
 ```scss
 #{$selector} {
-  @extend #{$placeholder};
+	@extend #{$placeholder};
 }
 ```
 
@@ -246,7 +246,7 @@ we’ll get an unexpected CSS output:
 
 ```scss
 .my-selector .opacity.csstransforms .my-selector {
-  // …
+	// …
 }
 ```
 
@@ -254,7 +254,7 @@ We need something to fix this. Sass 3.3's @at-root directive comes to the rescue
 
 ```scss
 @at-root #{$selector} {
-  @extend #{$placeholder};
+	@extend #{$placeholder};
 }
 ```
 
@@ -264,10 +264,10 @@ Now our features selector isn’t placed before the actual selector because `@at
 
 ```scss
 @if type-of($feature) != 'string' {
-  $everything-okay: false;
-  @warn '`#{$feature}` is not a string for `modernizr`';
+	$everything-okay: false;
+	@warn '`#{$feature}` is not a string for `modernizr`';
 } @else {
-  // proceed …
+	// proceed …
 }
 ```
 

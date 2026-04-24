@@ -28,20 +28,20 @@ Cats. Let’s imagine we want to display a list of cats. Every cat card can be i
 
 ```html
 <ul>
-  <li class="Card">
-    <img
-      class="Card-Image"
-      src="https://placekitten.com/200/200"
-      alt="Picture of Lilith"
-    />
-    <div class="Card-Content">
-      <p class="Card-Title">
-        <a class="Card-Primary-Action" href="/cat/lilith">Lilith</a>
-      </p>
-      <p class="Card-Meta">10 year old British Shorthair</p>
-    </div>
-  </li>
-  <!-- More cards -->
+	<li class="Card">
+		<img
+			class="Card-Image"
+			src="https://placekitten.com/200/200"
+			alt="Picture of Lilith"
+		/>
+		<div class="Card-Content">
+			<p class="Card-Title">
+				<a class="Card-Primary-Action" href="/cat/lilith">Lilith</a>
+			</p>
+			<p class="Card-Meta">10 year old British Shorthair</p>
+		</div>
+	</li>
+	<!-- More cards -->
 </ul>
 ```
 
@@ -60,7 +60,7 @@ Now, we want the whole card to be interactive, not just the main content. So we 
  * 1. Position context for the link’s pseudo-element.
  */
 .Card {
-  position: relative; /* 1 */
+	position: relative; /* 1 */
 }
 
 /**
@@ -70,10 +70,10 @@ Now, we want the whole card to be interactive, not just the main content. So we 
  * 3. Place the pseudo-element on top of the whole card.
  */
 .Card-Primary-Action::before {
-  content: ''; /* 1 */
-  position: absolute; /* 2 */
-  inset: 0; /* 2 */
-  z-index: 1; /* 3 */
+	content: ''; /* 1 */
+	position: absolute; /* 2 */
+	inset: 0; /* 2 */
+	z-index: 1; /* 3 */
 }
 ```
 
@@ -84,9 +84,9 @@ This does the job. Now the whole card is clickable. To make it look as such thou
  * 1. Show that the card is interactive.
  */
 .Card-Primary-Action::before {
-  cursor: pointer; /* 1 */
-  border: 2px solid transparent; /* 1 */
-  transition: border-color 200ms;
+	cursor: pointer; /* 1 */
+	border: 2px solid transparent; /* 1 */
+	transition: border-color 200ms;
 }
 
 /**
@@ -94,14 +94,14 @@ This does the job. Now the whole card is clickable. To make it look as such thou
  */
 .Card-Primary-Action:hover::before,
 .Card-Primary-Action:focus::before {
-  border-color: hotpink; /* 1 */
+	border-color: hotpink; /* 1 */
 }
 
 /**
  * 1. Hide the default focus outline as it’s recreated with a border.
  */
 .Card-Primary-Action:focus {
-  outline: none; /* 1 */
+	outline: none; /* 1 */
 }
 ```
 
@@ -113,9 +113,9 @@ Ultimately, we can add other links and buttons at will. For instance, let’s sa
 
 ```html
 <li class="Card">
-  <img class="Card-Image" />
-  <div class="Card-Content">…</div>
-  <button class="Card-Secondary-Action">Details</button>
+	<img class="Card-Image" />
+	<div class="Card-Content">…</div>
+	<button class="Card-Secondary-Action">Details</button>
 </li>
 ```
 
@@ -126,8 +126,8 @@ The only thing we need to do is bump its `z-index` so it sits _above_ the pseudo
  * 1. Place the secondary action on top of the card.
  */
 .Card-Secondary-Action {
-  position: relative; /* 1 */
-  z-index: 2; /* 1 */
+	position: relative; /* 1 */
+	z-index: 2; /* 1 */
 }
 ```
 

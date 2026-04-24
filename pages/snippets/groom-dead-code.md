@@ -16,14 +16,14 @@ Add this function to `.zshrc` or `.bashrc`:
 
 ```bash
 function groom_dead_code {
-  root="${2:-.}"
-  for entry in "$1"/*
-  do
-    name=$(basename $entry)
-    if [[ -z "$(grep -r "/$name'" $root)" ]]; then
-      echo "$entry is unused"
-    fi
-  done
+	root="${2:-.}"
+	for entry in "$1"/*
+	do
+		name=$(basename $entry)
+		if [[ -z "$(grep -r "/$name'" $root)" ]]; then
+			echo "$entry is unused"
+		fi
+	done
 }
 ```
 

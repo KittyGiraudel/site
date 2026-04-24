@@ -24,9 +24,9 @@ We had to be a little creative with the implementation. It’s not the cleanest,
 
 ```html
 <html lang="fr">
-  <body>
-    <a href="#">Devenir <span lang="en">rider</span></a>
-  </body>
+	<body>
+		<a href="#">Devenir <span lang="en">rider</span></a>
+	</body>
 </html>
 ```
 
@@ -39,13 +39,13 @@ const translations = { 'home.riders.cta': 'Devenir rider' }
 const regExp = /\b(riders?)\b/
 
 const translate = term => {
-  const content = translations[term]
+	const content = translations[term]
 
-  if (language === 'fr' && regExp.test(content)) {
-    return content.replace(regExp, '<span lang="en">$1</span>')
-  }
+	if (language === 'fr' && regExp.test(content)) {
+		return content.replace(regExp, '<span lang="en">$1</span>')
+	}
 
-  return content
+	return content
 }
 
 translate('home.riders.cta')

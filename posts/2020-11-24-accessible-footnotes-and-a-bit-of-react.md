@@ -27,15 +27,15 @@ Here is how a footnote reference should be marked:
 
 ```html
 <p>
-  Something about
-  <a
-    href="#css-counters-note"
-    id="css-counters-ref"
-    aria-describedby="footnotes-label"
-    role="doc-noteref"
-    >CSS counters</a
-  >
-  that deserves a footnote explaining what they are.
+	Something about
+	<a
+		href="#css-counters-note"
+		id="css-counters-ref"
+		aria-describedby="footnotes-label"
+		role="doc-noteref"
+		>CSS counters</a
+	>
+	that deserves a footnote explaining what they are.
 </p>
 ```
 
@@ -51,19 +51,19 @@ And here is out the footnotes section would be authored:
 
 ```html
 <footer role="doc-endnotes">
-  <h2 id="footnotes-label">Footnotes</h2>
-  <ol>
-    <li id="css-counters-note">
-      CSS counters are, in essence, variables maintained by CSS whose values may
-      be incremented by CSS rules to track how many times they’re used.
-      <a
-        href="#css-counters-ref"
-        aria-label="Back to reference 1"
-        role="doc-backlink"
-        >↩</a
-      >
-    </li>
-  </ol>
+	<h2 id="footnotes-label">Footnotes</h2>
+	<ol>
+		<li id="css-counters-note">
+			CSS counters are, in essence, variables maintained by CSS whose values may
+			be incremented by CSS rules to track how many times they’re used.
+			<a
+				href="#css-counters-ref"
+				aria-label="Back to reference 1"
+				role="doc-backlink"
+				>↩</a
+			>
+		</li>
+	</ol>
 </footer>
 ```
 
@@ -89,19 +89,19 @@ Coming back at our initial example, the usage might look like this:
 
 ```jsx
 const BlogPage = (props) => (
-  <FootnotesProvider>
-    <article>
-      <p>
-        Something about{" "}
-        <FootnoteRef description="CSS Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they’re used.">
-          CSS counters
-        </FootnoteRef>
-        that deserves a footnote explaining what they are.
-      </p>
-      {/* Some more content */}
-      <Footnotes />
-    </article>
-  </FootnotesProvider>
+	<FootnotesProvider>
+		<article>
+			<p>
+				Something about{" "}
+				<FootnoteRef description="CSS Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they’re used.">
+					CSS counters
+				</FootnoteRef>
+				that deserves a footnote explaining what they are.
+			</p>
+			{/* Some more content */}
+			<Footnotes />
+		</article>
+	</FootnotesProvider>
 );
 ```
 

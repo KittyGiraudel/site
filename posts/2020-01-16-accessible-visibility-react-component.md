@@ -13,11 +13,11 @@ In this post, I want to show a teeny-tiny React component to make it more explic
 
 ```jsx
 const VisuallyHidden = ({ as: Component, ...props }) => (
-  <Component {...props} className='sr-only' />
+	<Component {...props} className='sr-only' />
 )
 
 VisuallyHidden.defaultProps = {
-  as: 'span',
+	as: 'span',
 }
 ```
 
@@ -25,14 +25,14 @@ And here is how you would use it (taking the example from [Accessible page title
 
 ```jsx
 const TitleAnnouncer = props => {
-  const [title, setTitle] = React.useState('')
-  // More React code…
+	const [title, setTitle] = React.useState('')
+	// More React code…
 
-  return (
-    <VisuallyHidden as='p' tabIndex={-1}>
-      {title}
-    </VisuallyHidden>
-  )
+	return (
+		<VisuallyHidden as='p' tabIndex={-1}>
+			{title}
+		</VisuallyHidden>
+	)
 }
 ```
 

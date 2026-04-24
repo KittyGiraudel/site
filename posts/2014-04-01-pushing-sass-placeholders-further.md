@@ -14,15 +14,15 @@ The trick was to wrap the placeholder extension in a mixin. This mixin accepts a
 
 ```scss
 @mixin clearfix($extend: true) {
-  @if $extend {
-    @extend %clearfix;
-  } @else {
-    overflow: hidden;
-  }
+	@if $extend {
+		@extend %clearfix;
+	} @else {
+		overflow: hidden;
+	}
 }
 
 %clear {
-  @include clearfix($extend: false);
+	@include clearfix($extend: false);
 }
 ```
 
@@ -36,29 +36,29 @@ Matt’s demo looks about likethis:
 
 ```scss
 @mixin extend($placeholder, $extend: true) {
-  @if $extend {
-    @extend %#{$placeholder};
-  } @else {
-    @if $placeholder == clearfix {
-      overflow: hidden;
-    } @else if $placeholder == hide-text {
-      overflow: hidden;
-      text-indent: 100%;
-      white-space: nowrap;
-    }
-    /* … any other placeholders you want … */
-    @else {
-      @warn "`#{$placeholder}` doesn’t exist.";
-    }
-  }
+	@if $extend {
+		@extend %#{$placeholder};
+	} @else {
+		@if $placeholder == clearfix {
+			overflow: hidden;
+		} @else if $placeholder == hide-text {
+			overflow: hidden;
+			text-indent: 100%;
+			white-space: nowrap;
+		}
+		/* … any other placeholders you want … */
+		@else {
+			@warn "`#{$placeholder}` doesn’t exist.";
+		}
+	}
 }
 
 %clearfix {
-  @include extend(clearfix, $extend: false);
+	@include extend(clearfix, $extend: false);
 }
 
 %hide-text {
-  @include extend(hide-text, $extend: false);
+	@include extend(hide-text, $extend: false);
 }
 ```
 
@@ -76,14 +76,14 @@ My idea was to move all the mixin’s core to a configuration map so it only dea
 
 ```scss
 $placeholders-map: (
-  clearfix: (
-    overflow: hidden,
-  ),
-  hide-text: (
-    overflow: hidden,
-    text-indent: 100%,
-    white-space: nowrap,
-  ),
+	clearfix: (
+		overflow: hidden,
+	),
+	hide-text: (
+		overflow: hidden,
+		text-indent: 100%,
+		white-space: nowrap,
+	),
 );
 ```
 
@@ -93,27 +93,27 @@ Now that we have a map to loop through, we can slightly rethink Matt’s work:
 
 ```scss
 @mixin extend($placeholder, $extend: true) {
-  $content: map-get($placeholders-map, $placeholder);
+	$content: map-get($placeholders-map, $placeholder);
 
-  // If the key doesn’t exist in map,
-  // Do nothing and warn the user
-  @if $content == null {
-    @warn "`#{$class}` doesn’t exist in $extend-map.";
-  }
+	// If the key doesn’t exist in map,
+	// Do nothing and warn the user
+	@if $content == null {
+		@warn "`#{$class}` doesn’t exist in $extend-map.";
+	}
 
-  // If $extend is set to true (most cases)
-  // Extend the placeholder
-  @else if $extend == true {
-    @extend %#{$placeholder};
-  }
+	// If $extend is set to true (most cases)
+	// Extend the placeholder
+	@else if $extend == true {
+		@extend %#{$placeholder};
+	}
 
-  // If $extend is set to false
-  // Include placeholder’s content directly
-  @else {
-    @each $property, $value in $content {
-      #{$property}: $value;
-    }
-  }
+	// If $extend is set to false
+	// Include placeholder’s content directly
+	@else {
+		@each $property, $value in $content {
+			#{$property}: $value;
+		}
+	}
 }
 ```
 
@@ -132,9 +132,9 @@ Last but not least, let’s not forget to create our Sass placeholders! And this
 // With $extend set to false so it dumps
 // mixin’s core in the placeholder’s content
 @each $placeholder, $content in $placeholders-map {
-  %#{$placeholder} {
-    @include extend($placeholder, $extend: false);
-  }
+	%#{$placeholder} {
+		@include extend($placeholder, $extend: false);
+	}
 }
 ```
 

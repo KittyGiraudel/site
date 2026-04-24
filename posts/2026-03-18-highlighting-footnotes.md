@@ -27,7 +27,7 @@ We can use the good ol’ [`:target` pseudo-class](https://developer.mozilla.org
 
 ```css/0
 .Footnotes li:target {
-  background-color: rgb(255 255 0 / 0.25);
+	background-color: rgb(255 255 0 / 0.25);
 }
 ```
 
@@ -51,8 +51,8 @@ To fix that, I decided to use a pseudo-element which I can extend in the outer d
  * 2. Ensure the text appears *above* the highlight.
  */
 .Footnotes li {
-  position: relative; /* 1 */
-  z-index: 0; /* 2 */
+	position: relative; /* 1 */
+	z-index: 0; /* 2 */
 }
 
 /**
@@ -60,20 +60,20 @@ To fix that, I decided to use a pseudo-element which I can extend in the outer d
  * 2. Ensure the text appears *above* the highlight.
  */
 .Footnotes li::before {
-  inset: 0;
-  left: -1.5em; /* 1 */
-  position: absolute;
-  background-color: rgb(255 255 0 / 0.25);
-  border-radius: 1em;
-  corner-shape: squircle;
-  z-index: -1; /* 2 */
+	inset: 0;
+	left: -1.5em; /* 1 */
+	position: absolute;
+	background-color: rgb(255 255 0 / 0.25);
+	border-radius: 1em;
+	corner-shape: squircle;
+	z-index: -1; /* 2 */
 }
 
 /**
  * 1. Actually display the highlight when the footnote is targeted.
  */
 .Footnotes li:target::before {
-  content: ''; /* 1 */
+	content: ''; /* 1 */
 }
 ```
 
@@ -88,7 +88,7 @@ Another thing I don’t love is that the targeted footnote ends up sticking to t
 
 ```css/1
 .Footnotes li {
-  scroll-margin-top: 1em;
+	scroll-margin-top: 1em;
 }
 ```
 
@@ -103,14 +103,14 @@ We can use a CSS animation to fade-out the highlight:
  * 1. Make sure the animation’s final state persists.
  */
 .Footnotes li:target::before {
-  animation: fade-out 1s 5s ease-in-out;
-  animation-fill-mode: forwards; /* 1 */
+	animation: fade-out 1s 5s ease-in-out;
+	animation-fill-mode: forwards; /* 1 */
 }
 
 @keyframes fade-out {
-  to {
-    opacity: 0;
-  }
+	to {
+		opacity: 0;
+	}
 }
 ```
 

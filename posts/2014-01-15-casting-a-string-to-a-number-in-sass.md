@@ -18,19 +18,19 @@ As I said, the function is actually simple. It relies on parsing the string char
 
 ```scss
 @function number($string) {
-  // Matrices
-  $strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
-  $numbers: 0 1 2 3 4 5 6 7 8 9;
+	// Matrices
+	$strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+	$numbers: 0 1 2 3 4 5 6 7 8 9;
 
-  // Result
-  $result: 0;
+	// Result
+	$result: 0;
 
-  // Looping through all characters
-  @for $i from 1 through str-length($string) {
-    // Do magic
-  }
+	// Looping through all characters
+	@for $i from 1 through str-length($string) {
+		// Do magic
+	}
 
-  @return $result;
+	@return $result;
 }
 ```
 
@@ -38,16 +38,16 @@ I think you can see where this is going. Now let’s have a look at what happens
 
 ```scss
 @for $i from 1 through str-length($string) {
-  $character: str-slice($string, $i, $i);
-  $index: index($strings, $character);
+	$character: str-slice($string, $i, $i);
+	$index: index($strings, $character);
 
-  @if not $index {
-    @warn "Unknown character `#{$character}`.";
-    @return false;
-  }
+	@if not $index {
+		@warn "Unknown character `#{$character}`.";
+		@return false;
+	}
 
-  $number: nth($numbers, $index);
-  $result: $result * 10 + $number;
+	$number: nth($numbers, $index);
+	$result: $result * 10 + $number;
 }
 ```
 
@@ -64,17 +64,17 @@ $result: 0;
 $minus: false;
 
 @for $i from 1 through str-length($string) {
-  // …
-  @if $character == '-' {
-    $minus: true;
-  }
+	// …
+	@if $character == '-' {
+		$minus: true;
+	}
 
-  @else {
-    // …
-    $result: $result * 10 + $number;
-  }
+	@else {
+		// …
+		$result: $result * 10 + $number;
+	}
 
-  @return if($minus, $result * -1, $result);
+	@return if($minus, $result * -1, $result);
 }
 ```
 
@@ -86,36 +86,36 @@ Making sure we can convert floats and doubles took me a couple of minutes. I cou
 
 ```scss
 @function number($string) {
-  // …
-  $result: 0;
-  $divider: 0;
+	// …
+	$result: 0;
+	$divider: 0;
 
-  @for $i from 1 through str-length($string) {
-    // …
-    @if $character == '-' {
-      // …
-    } @else if $character == '.' {
-      $divider: 1;
-    } @else {
-      // …
+	@for $i from 1 through str-length($string) {
+		// …
+		@if $character == '-' {
+			// …
+		} @else if $character == '.' {
+			$divider: 1;
+		} @else {
+			// …
 
-      // Decimal dot hasn’t been found yet
-      @if $divider == 0 {
-        $result: $result * 10;
-      }
+			// Decimal dot hasn’t been found yet
+			@if $divider == 0 {
+				$result: $result * 10;
+			}
 
-      // Decimal dot has been found
-      @else {
-        // Move the decimal dot to the left
-        $divider: $divider * 10;
-        $number: $number / $divider;
-      }
+			// Decimal dot has been found
+			@else {
+				// Move the decimal dot to the left
+				$divider: $divider * 10;
+				$number: $number / $divider;
+			}
 
-      $result: $result + $number;
-    }
-  }
+			$result: $result + $number;
+		}
+	}
 
-  @return if($minus, $result * -1, $result);
+	@return if($minus, $result * -1, $result);
 }
 ```
 
@@ -147,22 +147,22 @@ First we need to get the unit as a string. It’s basically the string starting 
 
 ```scss
 @function number($string) {
-  // …
-  @for $i from 1 through str-length($string) {
-    // …
-    @if $char == '-' {
-      // …
-    } @else if $char == '.' {
-      // …
-    } @else {
-      @if not $index {
-        $result: if($minus, $result * -1, $result);
-        @return _length($result, str-slice($string, $i));
-      }
-      // …
-    }
-  }
-  // …
+	// …
+	@for $i from 1 through str-length($string) {
+		// …
+		@if $char == '-' {
+			// …
+		} @else if $char == '.' {
+			// …
+		} @else {
+			@if not $index {
+				$result: if($minus, $result * -1, $result);
+				@return _length($result, str-slice($string, $i));
+			}
+			// …
+		}
+	}
+	// …
 }
 ```
 
@@ -170,17 +170,17 @@ If we come to find a character that is neither `-`, nor `.` nor a number, it mea
 
 ```scss
 @function _length($number, $unit) {
-  $strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw'
-    'vh' 'vmin' 'vmax';
-  $units: 1px 1cm 1mm 1% 1ch 1pica 1in 1em 1rem 1pt 1pc 1ex 1vw 1vh 1vmin 1vmax;
-  $index: index($strings, $unit);
+	$strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw'
+		'vh' 'vmin' 'vmax';
+	$units: 1px 1cm 1mm 1% 1ch 1pica 1in 1em 1rem 1pt 1pc 1ex 1vw 1vh 1vmin 1vmax;
+	$index: index($strings, $unit);
 
-  @if not $index {
-    @warn "Unknown unit `#{$unit}`.";
-    @return false;
-  }
+	@if not $index {
+		@warn "Unknown unit `#{$unit}`.";
+		@return false;
+	}
 
-  @return $number * nth($units, $index);
+	@return $number * nth($units, $index);
 }
 ```
 
@@ -192,25 +192,25 @@ If you want to play with the code or the function, you can check it on [SassMeis
 
 ```scss
 sass {
-  cast: number('-15'); // -15
-  cast: number('-1'); // -1
-  cast: number('-.5'); // -.5
-  cast: number('-0'); // 0
-  cast: number('0'); // 0
-  case: number('.10'); // 0.1
-  cast: number('1'); // 1
-  cast: number('1.5'); // 1.5
-  cast: number('10.'); // 10
-  cast: number('12.380'); // 12.38
-  cast: number('42'); // 42
-  cast: number('1337'); // 1337
+	cast: number('-15'); // -15
+	cast: number('-1'); // -1
+	cast: number('-.5'); // -.5
+	cast: number('-0'); // 0
+	cast: number('0'); // 0
+	case: number('.10'); // 0.1
+	cast: number('1'); // 1
+	cast: number('1.5'); // 1.5
+	cast: number('10.'); // 10
+	cast: number('12.380'); // 12.38
+	cast: number('42'); // 42
+	cast: number('1337'); // 1337
 
-  cast: number('-10px'); // -10px
-  cast: number('20em'); // 20em
-  cast: number('30ch'); // 30ch
+	cast: number('-10px'); // -10px
+	cast: number('20em'); // 20em
+	cast: number('30ch'); // 30ch
 
-  cast: number('1fail'); // Error
-  cast: number('string'); // Error
+	cast: number('1fail'); // Error
+	cast: number('string'); // Error
 }
 ```
 

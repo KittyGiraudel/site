@@ -175,10 +175,10 @@ We also need a mixin that would theorically accepts multiple boolean options. As
 /// Custom mixin
 /// @param {Number} $options - Bitwise encoded flags
 @mixin custom-test($options) {
-  is-a-flag-set: bw($options '&' $A);
-  is-b-flag-set: bw($options '&' $B);
-  is-c-flag-set: bw($options '&' $C);
-  is-d-flag-set: bw($options '&' $D);
+	is-a-flag-set: bw($options '&' $A);
+	is-b-flag-set: bw($options '&' $B);
+	is-c-flag-set: bw($options '&' $C);
+	is-d-flag-set: bw($options '&' $D);
 }
 ```
 
@@ -187,7 +187,7 @@ And now we call it, passing it the result of a bitwise _OR_ operation of all our
 ```scss
 // Call
 test {
-  @include custom-test(bw($A '|' $C '|' $D));
+	@include custom-test(bw($A '|' $C '|' $D));
 }
 ```
 
@@ -195,10 +195,10 @@ As expected, the result is the following:
 
 ```css
 test {
-  is-a-flag-set: true;
-  is-b-flag-set: false;
-  is-c-flag-set: true;
-  is-d-flag-set: true;
+	is-a-flag-set: true;
+	is-b-flag-set: false;
+	is-c-flag-set: true;
+	is-d-flag-set: true;
 }
 ```
 

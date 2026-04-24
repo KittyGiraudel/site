@@ -57,13 +57,13 @@ Radio inputs with the same name should be grouped within a `<fieldset>` element 
 
 ```html
 <fieldset>
-  <legend>How comfortable are you with #a11y?</legend>
-  <label for="very"> <input type="radio" name="a11y" id="very" /> Very </label>
-  <label for="so-so">
-    <input type="radio" name="a11y" id="so-so" /> So-so
-  </label>
-  <label for="not-at-all">
-    <input type="radio" name="a11y" id="not-at-all" /> Not at all
-  </label>
+	<legend>How comfortable are you with #a11y?</legend>
+	<label for="very"> <input type="radio" name="a11y" id="very" /> Very </label>
+	<label for="so-so">
+		<input type="radio" name="a11y" id="so-so" /> So-so
+	</label>
+	<label for="not-at-all">
+		<input type="radio" name="a11y" id="not-at-all" /> Not at all
+	</label>
 </fieldset>
 ```

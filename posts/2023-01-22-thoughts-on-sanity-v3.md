@@ -20,16 +20,16 @@ import path from 'path'
 import { defineCliConfig } from 'sanity/cli'
 
 export default defineCliConfig({
-  api: {},
+	api: {},
 
-  vite: config => {
-    if (!config.resolve) config.resolve = {}
-    if (!config.resolve.alias) config.resolve.alias = {}
+	vite: config => {
+		if (!config.resolve) config.resolve = {}
+		if (!config.resolve.alias) config.resolve.alias = {}
 
-    config.resolve.alias['@'] = path.resolve(__dirname, '..', 'src')
+		config.resolve.alias['@'] = path.resolve(__dirname, '..', 'src')
 
-    return config
-  },
+		return config
+	},
 })
 ```
 
@@ -47,7 +47,7 @@ Any file which ends up including JSX — either directly or indirectly — now n
 import './global.css'
 
 export default defineConfig({
-  /* … */
+	/* … */
 })
 ```
 
@@ -59,23 +59,23 @@ Ideally we could do:
 
 ```js
 const isAdmin = currentUser =>
-  currentUser?.roles.some(role => role.name === 'administrator') ?? false
+	currentUser?.roles.some(role => role.name === 'administrator') ?? false
 ```
 
 ```js
 // This does not work: `context` is undefined.
 {
-  studio: {
-    components: {
-      toolMenu: (props, context) => {
-        const tools = isAdmin(context.currentUser)
-          ? props.tools
-          : props.tools.filter(tool => tool.name === 'default')
+	studio: {
+		components: {
+			toolMenu: (props, context) => {
+				const tools = isAdmin(context.currentUser)
+					? props.tools
+					: props.tools.filter(tool => tool.name === 'default')
 
-        return props.renderDefault({ ...props, tools })
-      }
-    }
-  }
+				return props.renderDefault({ ...props, tools })
+			}
+		}
+	}
 }
 ```
 
@@ -86,20 +86,20 @@ Similarly, the `schema.types` configuration does not accept a function but an ar
 ```js
 // This does not work: `schema.types` expects an array, not a function.
 {
-  schema: {
-    types: context => {
-      return schemaTypes.map(entity => {
-        if (entity.type === 'document' && !EDITOR_TYPES.includes(entity.name)) {
-          return {
-            ...entity,
-            __experimental_omnisearch_visibility: isAdmin(context.currentUser),
-          }
-        }
+	schema: {
+		types: context => {
+			return schemaTypes.map(entity => {
+				if (entity.type === 'document' && !EDITOR_TYPES.includes(entity.name)) {
+					return {
+						...entity,
+						__experimental_omnisearch_visibility: isAdmin(context.currentUser),
+					}
+				}
 
-        return type
-      })
-    }
-  }
+				return type
+			})
+		}
+	}
 }
 ```
 

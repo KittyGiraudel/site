@@ -41,23 +41,23 @@ At first, every line I attempted to change faced me with some kind of error, usu
 
 ```sh
 $ cargo run
-   Compiling ownership v0.1.0 (file:///projects/ownership)
+	 Compiling ownership v0.1.0 (file:///projects/ownership)
 error[E0382]: borrow of moved value: `s1`
  --> src/main.rs:5:16
-  |
+	|
 2 |     let s1 = String::from("hello");
-  |         -- move occurs because `s1` has type `String`, which does not implement the `Copy` trait
+	|         -- move occurs because `s1` has type `String`, which does not implement the `Copy` trait
 3 |     let s2 = s1;
-  |              -- value moved here
+	|              -- value moved here
 4 |
 5 |     println!("{s1}, world!");
-  |                ^^ value borrowed here after move
-  |
-  = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
+	|                ^^ value borrowed here after move
+	|
+	= note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
 help: consider cloning the value if the performance cost is acceptable
-  |
+	|
 3 |     let s2 = s1.clone();
-  |                ++++++++
+	|                ++++++++
 
 For more information about this error, try `rustc --explain E0382`.
 error: could not compile `ownership` (bin "ownership") due to 1 previous error
@@ -86,18 +86,18 @@ use std::fs::File;
 use std::io::ErrorKind;
 
 fn main() {
-  let greeting_file = match File::open("hello.txt") {
-    Ok(file) => file,
-    Err(error) => match error.kind() {
-      ErrorKind::NotFound => match File::create("hello.txt") {
-        Ok(file_created) => file_created,
-        Err(e) => panic!("Problem creating the file: {e:?}"),
-      },
-      _ => {
-        panic!("Problem opening the file: {error:?}");
-      }
-    },
-  };
+	let greeting_file = match File::open("hello.txt") {
+		Ok(file) => file,
+		Err(error) => match error.kind() {
+			ErrorKind::NotFound => match File::create("hello.txt") {
+				Ok(file_created) => file_created,
+				Err(e) => panic!("Problem creating the file: {e:?}"),
+			},
+			_ => {
+				panic!("Problem opening the file: {error:?}");
+			}
+		},
+	};
 }
 ```
 
@@ -107,20 +107,20 @@ In TypeScript, we’d do something like this (which I find to be “harder” to
 import { readFile, writeFile } from "node:fs/promises"
 
 async function main() {
-  try {
-    let greetingFile = await readFile("hello.txt", "utf8")
-    // Do something with the content
-  } catch (readError: unknown) {
-    if ((readError as any)?.code === "ENOENT") {
-      try {
-        await writeFile("hello.txt", "")
-      } catch (writeError) {
-        throw new Error(`Problem creating the file: ${String(writeError)}`)
-      }
-    } else {
-      throw new Error(`Problem opening the file: ${String(readError)}`)
-    }
-  }
+	try {
+		let greetingFile = await readFile("hello.txt", "utf8")
+		// Do something with the content
+	} catch (readError: unknown) {
+		if ((readError as any)?.code === "ENOENT") {
+			try {
+				await writeFile("hello.txt", "")
+			} catch (writeError) {
+				throw new Error(`Problem creating the file: ${String(writeError)}`)
+			}
+		} else {
+			throw new Error(`Problem opening the file: ${String(readError)}`)
+		}
+	}
 }
 ```
 

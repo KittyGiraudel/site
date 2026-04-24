@@ -85,9 +85,9 @@ Consider a simple selector. In order to implement the algorithm described above,
 
 ```scss
 $types: (
-  c: (':before', ':after', ':first-line', ':first-letter', ':selection'),
-  b: ('.', '[', ':'),
-  a: ('#')
+	c: (':before', ':after', ':first-line', ':first-letter', ':selection'),
+	b: ('.', '[', ':'),
+	a: ('#')
 );
 ```
 
@@ -97,7 +97,7 @@ Next, according to the [W3C spec](https://www.w3.org/TR/css3-selectors/#specific
 
 ```scss
 @if str-index($simple-selector, ':not(') == 1 {
-  $simple-selector: str-slice($simple-selector, 6, -2);
+	$simple-selector: str-slice($simple-selector, 6, -2);
 }
 ```
 
@@ -105,11 +105,11 @@ Then, iterate through the `$types` map and see if the `$simple-selector` begins 
 
 ```scss
 @each $type-key, $type-tokens in $types {
-  @each $token in $type-tokens {
-    @if str-index($simple-selector, $token) == 1 {
-      @return $type-key;
-    }
-  }
+	@each $token in $type-tokens {
+		@if str-index($simple-selector, $token) == 1 {
+			@return $type-key;
+		}
+	}
 }
 ```
 
@@ -117,33 +117,33 @@ As a catch-all, if none of the type tokens matched, then the simple selector is 
 
 ```scss
 @function specificity-type($simple-selector) {
-  $types: (
-    c: (':before', ':after', ':first-line', ':first-letter', ':selection'),
-    b: ('.', '[', ':'),
-    a: ('#')
-  );
+	$types: (
+		c: (':before', ':after', ':first-line', ':first-letter', ':selection'),
+		b: ('.', '[', ':'),
+		a: ('#')
+	);
 
-  $simple-selector: str-replace-batch($simple-selector, '::', ':');
+	$simple-selector: str-replace-batch($simple-selector, '::', ':');
 
-  @if str-index($simple-selector, ':not(') == 1 {
-    $simple-selector: str-slice($simple-selector, 6, -2);
-  }
+	@if str-index($simple-selector, ':not(') == 1 {
+		$simple-selector: str-slice($simple-selector, 6, -2);
+	}
 
-  @each $type-key, $type-tokens in $types {
-    @each $token in $type-tokens {
-      @if str-index($simple-selector, $token) == 1 {
-        @return $type-key;
-      }
-    }
-  }
+	@each $type-key, $type-tokens in $types {
+		@each $token in $type-tokens {
+			@if str-index($simple-selector, $token) == 1 {
+				@return $type-key;
+			}
+		}
+	}
 
-  // Ignore the universal selector
-  @if str-index($simple-selector, '*') == 1 {
-    @return false;
-  }
+	// Ignore the universal selector
+	@if str-index($simple-selector, '*') == 1 {
+		@return false;
+	}
 
-  // Simple selector is type selector (element)
-  @return c;
+	// Simple selector is type selector (element)
+	@return c;
 }
 ```
 
@@ -174,21 +174,21 @@ Our job is simple, now. Multiply the multiplicity (frequency) of each type by an
 
 ```scss
 @function specificity-value($specificity-map, $base: 256) {
-  $exponent-map: (
-    a: 2,
-    b: 1,
-    c: 0,
-  );
-  $specificity: 0;
+	$exponent-map: (
+		a: 2,
+		b: 1,
+		c: 0,
+	);
+	$specificity: 0;
 
-  @each $specificity-type, $specificity-value in $specificity-map {
-    $specificity: $specificity + (
-      $specificity-value *
-      pow($base, map-get($exponent-map, $specificity-type))
-    );
-  }
+	@each $specificity-type, $specificity-value in $specificity-map {
+		$specificity: $specificity + (
+			$specificity-value *
+			pow($base, map-get($exponent-map, $specificity-type))
+		);
+	}
 
-  @return $specificity;
+	@return $specificity;
 }
 ```
 
@@ -209,9 +209,9 @@ And more importantly, I’m keeping a running total of the multiplicity of each 
 
 ```scss
 $selector-specificity-map: (
-  a: 0,
-  b: 0,
-  c: 0,
+	a: 0,
+	b: 0,
+	c: 0,
 );
 ```
 
@@ -219,19 +219,19 @@ Then, I can just use my previously defined function `selector-type` to iterate t
 
 ```scss
 @each $part in $parts {
-  $specificity-type: specificity-type($part);
+	$specificity-type: specificity-type($part);
 
-  @if $specificity-type {
-    $selector-specificity-map: map-merge(
-      $selector-specificity-map,
-      (
-        #{$specificity-type}: map-get(
-            $selector-specificity-map,
-            $specificity-type
-          ) + 1
-      )
-    );
-  }
+	@if $specificity-type {
+		$selector-specificity-map: map-merge(
+			$selector-specificity-map,
+			(
+				#{$specificity-type}: map-get(
+						$selector-specificity-map,
+						$specificity-type
+					) + 1
+			)
+		);
+	}
 }
 ```
 
@@ -239,8 +239,8 @@ The rest of the function just returns the specificity map (or integer value, if 
 
 ```scss
 $specificities-map: map-merge(
-  $specificities-map,
-  (specificity-value($selector-specificity-map): $selector-specificity-map)
+	$specificities-map,
+	(specificity-value($selector-specificity-map): $selector-specificity-map)
 );
 ```
 
@@ -248,49 +248,49 @@ Here’s the full function:
 
 ```scss
 @function specificity($initial-selector, $integer: false) {
-  $initial-selector: str-replace-batch(#{$initial-selector}, ('+', '>', '~'));
-  $selectors: selector-parse($initial-selector);
-  $specificities-map: ();
+	$initial-selector: str-replace-batch(#{$initial-selector}, ('+', '>', '~'));
+	$selectors: selector-parse($initial-selector);
+	$specificities-map: ();
 
-  @each $selector in $selectors {
-    $parts: ();
-    $selector-specificity-map: (
-      a: 0,
-      b: 0,
-      c: 0,
-    );
+	@each $selector in $selectors {
+		$parts: ();
+		$selector-specificity-map: (
+			a: 0,
+			b: 0,
+			c: 0,
+		);
 
-    @each $simple-selectors in $selector {
-      @each $simple-selector in simple-selectors($simple-selectors) {
-        $parts: append($parts, $simple-selector);
-      }
-    }
+		@each $simple-selectors in $selector {
+			@each $simple-selector in simple-selectors($simple-selectors) {
+				$parts: append($parts, $simple-selector);
+			}
+		}
 
-    @each $part in $parts {
-      $specificity-type: specificity-type($part);
-      @if $specificity-type {
-        $selector-specificity-map: map-merge(
-          $selector-specificity-map,
-          (
-            #{$specificity-type}: map-get(
-                $selector-specificity-map,
-                $specificity-type
-              ) + 1
-          )
-        );
-      }
-    }
+		@each $part in $parts {
+			$specificity-type: specificity-type($part);
+			@if $specificity-type {
+				$selector-specificity-map: map-merge(
+					$selector-specificity-map,
+					(
+						#{$specificity-type}: map-get(
+								$selector-specificity-map,
+								$specificity-type
+							) + 1
+					)
+				);
+			}
+		}
 
-    $specificities-map: map-merge(
-      $specificities-map,
-      (specificity-value($selector-specificity-map): $selector-specificity-map)
-    );
-  }
+		$specificities-map: map-merge(
+			$specificities-map,
+			(specificity-value($selector-specificity-map): $selector-specificity-map)
+		);
+	}
 
-  $specificity-value: max(map-keys($specificities-map)...);
-  $specificity-map: map-values(map-get($specificities-map, $specificity-value));
+	$specificity-value: max(map-keys($specificities-map)...);
+	$specificity-map: map-values(map-get($specificities-map, $specificity-value));
 
-  @return if($integer, $specificity-value, $specificity-map);
+	@return if($integer, $specificity-value, $specificity-map);
 }
 ```
 
@@ -300,8 +300,8 @@ So, aside from this being another application of a [rethinking of Atwood’s Law
 
 ```scss
 @mixin specificity() {
-  specificity: specificity(&);
-  specificity-value: specificity(&, true);
+	specificity: specificity(&);
+	specificity-value: specificity(&, true);
 }
 ```
 
@@ -311,7 +311,7 @@ You can take this even further and, if you have dynamic selectors in your SCSS, 
 
 ```scss
 @if specificity($foo-selector, true) > specificity($bar-selector, true) {
-  // …
+	// …
 }
 ```
 

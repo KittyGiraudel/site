@@ -52,13 +52,13 @@ Let’s start with our container.
  *    Safari doesn’t like `currentcolor` in an animation. 🤯
  */
 .pie {
-  font-size: 500%; /* 1 */
-  width: 1em; /* 1 */
-  height: 1em; /* 1 */
-  border-radius: 50%; /* 1 */
-  position: relative; /* 2 */
-  border: 0.05em solid var(--color); /* 3 */
-  --color: deeppink; /* 4 */
+	font-size: 500%; /* 1 */
+	width: 1em; /* 1 */
+	height: 1em; /* 1 */
+	border-radius: 50%; /* 1 */
+	position: relative; /* 2 */
+	border: 0.05em solid var(--color); /* 3 */
+	--color: deeppink; /* 4 */
 }
 ```
 
@@ -74,28 +74,28 @@ Then, the base styles for our pseudo-elements:
  */
 .pie::before,
 .pie::after {
-  content: '';
-  width: 50%; /* 1 */
-  height: 100%; /* 1 */
-  border-radius: 0.5em 0 0 0.5em; /* 1 */
-  position: absolute; /* 2 */
-  left: 0; /* 2 */
-  transform-origin: center right; /* 3 */
+	content: '';
+	width: 50%; /* 1 */
+	height: 100%; /* 1 */
+	border-radius: 0.5em 0 0 0.5em; /* 1 */
+	position: absolute; /* 2 */
+	left: 0; /* 2 */
+	transform-origin: center right; /* 3 */
 }
 
 /**
  * 1. Put the masking pseudo-element on top.
  */
 .pie::before {
-  z-index: 1; /* 1 */
-  background-color: white; /* 1 */
+	z-index: 1; /* 1 */
+	background-color: white; /* 1 */
 }
 
 /**
  * 1. Give the spinning pseudo-element the pie color.
  */
 .pie::after {
-  background-color: var(--color); /* 1 */
+	background-color: var(--color); /* 1 */
 }
 ```
 
@@ -107,38 +107,38 @@ Finally, the animations:
  */
 .pie::before,
 .pie::after {
-  animation-duration: 3s; /* 1 */
-  animation-iteration-count: infinite; /* 1 */
+	animation-duration: 3s; /* 1 */
+	animation-iteration-count: infinite; /* 1 */
 }
 
 /**
  * 1. We want the animation to have a single step halfway through.
  */
 .pie::before {
-  animation-name: mask;
-  animation-timing-function: steps(1); /* 1 */
+	animation-name: mask;
+	animation-timing-function: steps(1); /* 1 */
 }
 
 /**
  * 1. Make sure the rotationg is linear for the effort to work.
  */
 .pie::after {
-  animation-name: rotate;
-  animation-timing-function: linear; /* 1 */
+	animation-name: rotate;
+	animation-timing-function: linear; /* 1 */
 }
 
 @keyframes mask {
-  50%,
-  100% {
-    background-color: var(--color);
-    transform: rotate(0.5turn);
-  }
+	50%,
+	100% {
+		background-color: var(--color);
+		transform: rotate(0.5turn);
+	}
 }
 
 @keyframes rotate {
-  to {
-    transform: rotate(1turn);
-  }
+	to {
+		transform: rotate(1turn);
+	}
 }
 ```
 

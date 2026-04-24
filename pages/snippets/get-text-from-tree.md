@@ -13,10 +13,10 @@ When working with React, it might sometimes be necessary to get a plain text rep
 
 ```js
 const getTextFromTree = tree => {
-  if (!tree && tree !== 0) return ''
-  if (Array.isArray(tree)) return tree.map(getTextFromTree).join(' ')
-  if (tree.props) return getTextFromTree(tree.props.children)
-  return tree
+	if (!tree && tree !== 0) return ''
+	if (Array.isArray(tree)) return tree.map(getTextFromTree).join(' ')
+	if (tree.props) return getTextFromTree(tree.props.children)
+	return tree
 }
 ```
 
@@ -24,10 +24,10 @@ For instance, considering this React tree:
 
 ```jsx
 <div className='App'>
-  <h1>
-    Hello <strong>CodeSandbox</strong>
-  </h1>
-  <h2>Start editing to see some magic happen!</h2>
+	<h1>
+		Hello <strong>CodeSandbox</strong>
+	</h1>
+	<h2>Start editing to see some magic happen!</h2>
 </div>
 ```
 

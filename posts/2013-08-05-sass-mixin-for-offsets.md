@@ -27,7 +27,7 @@ What I always wanted to be able to is something like this:
 
 ```scss
 .element {
-  absolute: left 1em top 1.5em;
+	absolute: left 1em top 1.5em;
 }
 ```
 
@@ -35,9 +35,9 @@ And this should output:
 
 ```scss
 .element {
-  position: absolute;
-  left: 1em;
-  top: 1.5em;
+	position: absolute;
+	left: 1em;
+	top: 1.5em;
 }
 ```
 
@@ -49,7 +49,7 @@ First, we will build the skeleton for our mixin. We seem to want to call our mix
 
 ```scss
 @mixin absolute($args) {
-  /* Mixin stuff here */
+	/* Mixin stuff here */
 }
 ```
 
@@ -61,8 +61,8 @@ The first thing to do is to tell our mixin what are the keywords we want to chec
 
 ```scss
 @mixin absolute($args) {
-  $offsets: top right bottom left;
-  /* Order doesn’t matter */
+	$offsets: top right bottom left;
+	/* Order doesn’t matter */
 }
 ```
 
@@ -74,16 +74,16 @@ Now, we will loop through the offsets and make three verifications:
 
 ```scss
 @mixin absolute($args) {
-  $offsets: top right bottom left;
+	$offsets: top right bottom left;
 
-  @each $o in $offsets {
-    $i: index($args, $o);
+	@each $o in $offsets {
+		$i: index($args, $o);
 
-    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
-    {
-      #{$o}: nth($args, $i + 1);
-    }
-  }
+		@if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+		{
+			#{$o}: nth($args, $i + 1);
+		}
+	}
 }
 ```
 
@@ -137,8 +137,8 @@ Why don’t we create a _private mixin_ instead? Something that isn’t meant to
 
 ```scss
 @mixin position($position, $args) {
-  /* Stuff we saw before */
-  position: $position;
+	/* Stuff we saw before */
+	position: $position;
 }
 ```
 
@@ -146,15 +146,15 @@ And now, we create the 3 mixins we need: `absolute()`, `fixed()` and `relative()
 
 ```scss
 @mixin absolute($args) {
-  @include position(absolute, $args);
+	@include position(absolute, $args);
 }
 
 @mixin fixed($args) {
-  @include position(fixed, $args);
+	@include position(fixed, $args);
 }
 
 @mixin relative($args) {
-  @include position(relative, $args);
+	@include position(relative, $args);
 }
 ```
 
@@ -168,7 +168,7 @@ Using this mixin is pretty simple:
 
 ```scss
 .element {
-  @include absolute(top 1em right 10%);
+	@include absolute(top 1em right 10%);
 }
 ```
 
@@ -176,9 +176,9 @@ Outputs:
 
 ```scss
 .element {
-  position: absolute;
-  top: 1em;
-  right: 10%;
+	position: absolute;
+	top: 1em;
+	right: 10%;
 }
 ```
 
@@ -186,7 +186,7 @@ Now, what if we try to do bad things like assigning no value to an offset, or an
 
 ```scss
 .element {
-  @include absolute(top 1em left 'HAHAHA!' right 10% bottom);
+	@include absolute(top 1em left 'HAHAHA!' right 10% bottom);
 }
 ```
 
@@ -199,9 +199,9 @@ In this case:
 
 ```scss
 .element {
-  position: absolute;
-  top: 1em;
-  right: 10%;
+	position: absolute;
+	top: 1em;
+	right: 10%;
 }
 ```
 
@@ -215,9 +215,9 @@ Hopefully, some day we will see a shorter way to call mixins in Sass. Indeed, so
 
 ```scss
 abcd {
-  + efgh {
-    property: value;
-  }
+	+ efgh {
+		property: value;
+	}
 }
 ```
 

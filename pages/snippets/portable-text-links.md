@@ -13,22 +13,22 @@ Provided you have a rich text (portable text) field called `body`, you can query
 
 ```
 *[ defined(body) ]
-  .body[ _type == "block" ]
-  .markDefs[ _type == "link" ]
-  .href
+	.body[ _type == "block" ]
+	.markDefs[ _type == "link" ]
+	.href
 ```
 
 And if instead you want to list _documents_ which contain a specific link (here `/searched/path`) in their rich text field (here `body`), you can do it like this:
 
 ```
 *[ defined(body) ] {
-  body
+	body
 }[
-  count(
-     body[ _type == "block" ]
-    .markDefs[ _type == "link" ]
-    [ href == "/searched/path" ]
-  ) > 0
+	count(
+		 body[ _type == "block" ]
+		.markDefs[ _type == "link" ]
+		[ href == "/searched/path" ]
+	) > 0
 ]
 ```
 

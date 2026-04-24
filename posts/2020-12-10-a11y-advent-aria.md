@@ -18,11 +18,11 @@ One thing I would like to bring your attention to is the concept of “live” r
 
 ```html
 <div role="log" aria-live="polite">
-  <!-- Chat messages being inserted as they are sent -->
+	<!-- Chat messages being inserted as they are sent -->
 </div>
 
 <div role="alert" aria-live="assertive">
-  <!-- Important notifications being inserted as they happen -->
+	<!-- Important notifications being inserted as they happen -->
 </div>
 ```
 

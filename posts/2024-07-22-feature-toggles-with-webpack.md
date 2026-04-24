@@ -35,12 +35,12 @@ import { Main } from './Main'
 import { FeatureInProgress } from './FeatureInProgress'
 
 export const MyApp: FC = () => {
-  return (
-    <Layout>
-      <Main />
-      {process.env.NODE_ENV === 'development' ? <FeatureInProgress /> : null}
-    </Layout>
-  )
+	return (
+		<Layout>
+			<Main />
+			{process.env.NODE_ENV === 'development' ? <FeatureInProgress /> : null}
+		</Layout>
+	)
 }
 ```
 
@@ -64,9 +64,9 @@ import { DefinePlugin } from 'webpack'
 type Environment = 'local' | 'development' | 'staging' | 'production'
 
 export const getBuildFlags = (environment: Environment) => {
-  return new DefinePlugin({
-    __MY_NEW_FEATURE__: environment !== 'production',
-  })
+	return new DefinePlugin({
+		__MY_NEW_FEATURE__: environment !== 'production',
+	})
 }
 ```
 
@@ -76,16 +76,16 @@ This would be our webpack configuration file (`webpack.config.ts`):
 import { getBuildFlags } from './getBuildFlags'
 
 export default env => {
-  const environment = env.environment ?? 'local'
+	const environment = env.environment ?? 'local'
 
-  return {
-    // Set up the `mode` option based on which environment we passed as a CLI option
-    // See: https://webpack.js.org/configuration/mode/
-    mode: environment === 'production' ? 'production' : 'development',
-    // Define our build flags plugin to expose global flags
-    plugins: [getBuildFlags(environment)],
-    // … rest of the config
-  }
+	return {
+		// Set up the `mode` option based on which environment we passed as a CLI option
+		// See: https://webpack.js.org/configuration/mode/
+		mode: environment === 'production' ? 'production' : 'development',
+		// Define our build flags plugin to expose global flags
+		plugins: [getBuildFlags(environment)],
+		// … rest of the config
+	}
 }
 ```
 
@@ -106,12 +106,12 @@ import { Main } from './Main'
 import { FeatureInProgress } from './FeatureInProgress'
 
 export const MyApp: FC = () => {
-  return (
-    <Layout>
-      <Main />
-      {__MY_NEW_FEATURE__ ? <FeatureInProgress /> : null}
-    </Layout>
-  )
+	return (
+		<Layout>
+			<Main />
+			{__MY_NEW_FEATURE__ ? <FeatureInProgress /> : null}
+		</Layout>
+	)
 }
 ```
 
@@ -123,23 +123,23 @@ One thing I like to do to improve readability at a glance is having a lot of wel
 
 ```ts
 export const getBuildFlags = (environment: Environment) => {
-  const EVERYWHERE = true
-  const PRODUCTION = environment === 'production'
-  const STAGING = environment === 'staging'
-  const DEVELOPMENT = environment === 'development'
-  const LOCAL = environment === 'local'
-  const NOWHERE = false
+	const EVERYWHERE = true
+	const PRODUCTION = environment === 'production'
+	const STAGING = environment === 'staging'
+	const DEVELOPMENT = environment === 'development'
+	const LOCAL = environment === 'local'
+	const NOWHERE = false
 
-  return new DefinePlugin({
-    // Example of a flag for a feature being actively tested
-    __SOFT_DELETION__: !PRODUCTION,
-    // Example of a flag for a feature that’s being developed
-    __REACT_19__: LOCAL || DEVELOPMENT,
-    // Example of a flag that’s not enabled anywhere
-    __LEGACY_USERS__: NOWHERE,
-    // Example of a flag that’s enabled everywhere and ready to be removed
-    __CONFIRMATION_STEP__: EVERYWHERE,
-  })
+	return new DefinePlugin({
+		// Example of a flag for a feature being actively tested
+		__SOFT_DELETION__: !PRODUCTION,
+		// Example of a flag for a feature that’s being developed
+		__REACT_19__: LOCAL || DEVELOPMENT,
+		// Example of a flag that’s not enabled anywhere
+		__LEGACY_USERS__: NOWHERE,
+		// Example of a flag that’s enabled everywhere and ready to be removed
+		__CONFIRMATION_STEP__: EVERYWHERE,
+	})
 }
 ```
 
@@ -155,13 +155,13 @@ There might be smarter way to do it, but I found that just defining them on the 
 import { DefinePlugin } from 'webpack'
 
 export const getBuildFlags = (environment: Environment) => {
-  return new DefinePlugin({
-    __MY_NEW_FEATURE__: environment !== 'production',
-  })
+	return new DefinePlugin({
+		__MY_NEW_FEATURE__: environment !== 'production',
+	})
 }
 
 declare global {
-  const __MY_NEW_FEATURE__: boolean
+	const __MY_NEW_FEATURE__: boolean
 }
 ```
 
@@ -179,9 +179,9 @@ Same thing with [Biome](/2024/06/01/from-eslint-and-prettier-to-biome/). Unfortu
 
 ```json
 {
-  "javascript": {
-    "globals": ["__MY_NEW_FEATURE__"]
-  }
+	"javascript": {
+		"globals": ["__MY_NEW_FEATURE__"]
+	}
 }
 ```
 
@@ -189,12 +189,12 @@ If using the [additional constants for readability](#improving-readability), the
 
 ```json
 {
-  "overrides": [
-    {
-      "include": ["./path/to/getBuildFlags.ts"],
-      "rules": { "correctness": { "noUnusedVariables": "off" } }
-    }
-  ]
+	"overrides": [
+		{
+			"include": ["./path/to/getBuildFlags.ts"],
+			"rules": { "correctness": { "noUnusedVariables": "off" } }
+		}
+	]
 }
 ```
 
@@ -210,8 +210,8 @@ const flags = getBuildFlags('local')
 const globals = Object.keys(flags).reduce((acc, flag) => ({ ...acc, [flag]: true }))
 
 module.exports {
-  globals,
-  // … rest of the config
+	globals,
+	// … rest of the config
 }
 ```
 

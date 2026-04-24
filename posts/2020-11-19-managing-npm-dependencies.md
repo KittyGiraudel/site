@@ -52,10 +52,10 @@ When extracted as a little `groom_deps` function in one’s `.zshrc` or `.bashrc
 
 ```bash
 function groom_deps {
-  key=${1:-dependencies}
-  for dep in $(cat package.json | jq -cr ".$key|keys|.[]");
-  do [[ -z "$(grep -r  --exclude-dir=node_modules "'${dep}" .)" ]] && echo "$dep appears unused";
-  done
+	key=${1:-dependencies}
+	for dep in $(cat package.json | jq -cr ".$key|keys|.[]");
+	do [[ -z "$(grep -r  --exclude-dir=node_modules "'${dep}" .)" ]] && echo "$dep appears unused";
+	done
 }
 ```
 
@@ -102,7 +102,7 @@ I actually never published the package on npm because I couldn’t be bothered t
 
 ```bash
 function deps() {
-  node ../dependency-checker/bin -p package.json --dev --no-pr
+	node ../dependency-checker/bin -p package.json --dev --no-pr
 }
 ```
 

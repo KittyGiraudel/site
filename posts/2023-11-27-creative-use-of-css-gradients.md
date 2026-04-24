@@ -28,9 +28,9 @@ We have our own video player, which has a track bar styled with CSS. We instruct
 
 ```css
 .Trackbar {
-  height: 10px;
-  width: 100%;
-  background: var(--preview-scene-markers, white);
+	height: 10px;
+	width: 100%;
+	background: var(--preview-scene-markers, white);
 }
 ```
 
@@ -42,29 +42,29 @@ We are going to loop over this array of scenes, and for each one, add some color
 
 ```js
 const getTrackMarkers = (scenes, options = {}) => {
-  const { trackColor = "#fff", thickness = 4, precision = 2 } = options;
-  const markers = [];
-  const totalDuration = scenes.at(-1)?.end;
-  const halfThickness = `${thickness / 2}px`;
+	const { trackColor = "#fff", thickness = 4, precision = 2 } = options;
+	const markers = [];
+	const totalDuration = scenes.at(-1)?.end;
+	const halfThickness = `${thickness / 2}px`;
 
-  // Return nothing, and not `none`, as we want the default value from the CSS
-  // custom property to be applied.
-  if (!totalDuration || scenes.length === 1) {
-    return;
-  }
+	// Return nothing, and not `none`, as we want the default value from the CSS
+	// custom property to be applied.
+	if (!totalDuration || scenes.length === 1) {
+		return;
+	}
 
-  scenes.forEach((scene) => {
-    const percent = ((scene.end / totalDuration) * 100).toFixed(precision);
+	scenes.forEach((scene) => {
+		const percent = ((scene.end / totalDuration) * 100).toFixed(precision);
 
-    // Marker start
-    markers.push(`${trackColor} calc(${percent}% - ${halfThickness})`);
-    markers.push(`transparent calc(${percent}% - ${halfThickness})`);
-    // Marker end
-    markers.push(`transparent calc(${percent}% + ${halfThickness})`);
-    markers.push(`${trackColor} calc(${percent}% + ${halfThickness})`);
-  });
+		// Marker start
+		markers.push(`${trackColor} calc(${percent}% - ${halfThickness})`);
+		markers.push(`transparent calc(${percent}% - ${halfThickness})`);
+		// Marker end
+		markers.push(`transparent calc(${percent}% + ${halfThickness})`);
+		markers.push(`${trackColor} calc(${percent}% + ${halfThickness})`);
+	});
 
-  return `linear-gradient(to right, ${markers.join(", ")})`;
+	return `linear-gradient(to right, ${markers.join(", ")})`;
 };
 ```
 
@@ -84,27 +84,27 @@ The output is pretty verbose though, and gets more and more bloated as the numbe
 
 ```css
 linear-gradient(
-  to right,
-  #fff calc(6.86% - 2px), transparent calc(6.86% - 2px),
-  transparent calc(6.86% + 2px), #fff calc(6.86% + 2px),
-  #fff calc(14.00% - 2px), transparent calc(14.00% - 2px),
-  transparent calc(14.00% + 2px), #fff calc(14.00% + 2px),
-  #fff calc(21.13% - 2px), transparent calc(21.13% - 2px),
-  transparent calc(21.13% + 2px), #fff calc(21.13% + 2px),
-  #fff calc(38.31% - 2px), transparent calc(38.31% - 2px),
-  transparent calc(38.31% + 2px), #fff calc(38.31% + 2px),
-  #fff calc(57.63% - 2px), transparent calc(57.63% - 2px),
-  transparent calc(57.63% + 2px), #fff calc(57.63% + 2px),
-  #fff calc(62.79% - 2px), transparent calc(62.79% - 2px),
-  transparent calc(62.79% + 2px), #fff calc(62.79% + 2px),
-  #fff calc(72.98% - 2px), transparent calc(72.98% - 2px),
-  transparent calc(72.98% + 2px), #fff calc(72.98% + 2px),
-  #fff calc(81.47% - 2px), transparent calc(81.47% - 2px),
-  transparent calc(81.47% + 2px), #fff calc(81.47% + 2px),
-  #fff calc(93.14% - 2px), transparent calc(93.14% - 2px),
-  transparent calc(93.14% + 2px), #fff calc(93.14% + 2px),
-  #fff calc(100.00% - 2px), transparent calc(100.00% - 2px),
-  transparent calc(100.00% + 2px), #fff calc(100.00% + 2px)
+	to right,
+	#fff calc(6.86% - 2px), transparent calc(6.86% - 2px),
+	transparent calc(6.86% + 2px), #fff calc(6.86% + 2px),
+	#fff calc(14.00% - 2px), transparent calc(14.00% - 2px),
+	transparent calc(14.00% + 2px), #fff calc(14.00% + 2px),
+	#fff calc(21.13% - 2px), transparent calc(21.13% - 2px),
+	transparent calc(21.13% + 2px), #fff calc(21.13% + 2px),
+	#fff calc(38.31% - 2px), transparent calc(38.31% - 2px),
+	transparent calc(38.31% + 2px), #fff calc(38.31% + 2px),
+	#fff calc(57.63% - 2px), transparent calc(57.63% - 2px),
+	transparent calc(57.63% + 2px), #fff calc(57.63% + 2px),
+	#fff calc(62.79% - 2px), transparent calc(62.79% - 2px),
+	transparent calc(62.79% + 2px), #fff calc(62.79% + 2px),
+	#fff calc(72.98% - 2px), transparent calc(72.98% - 2px),
+	transparent calc(72.98% + 2px), #fff calc(72.98% + 2px),
+	#fff calc(81.47% - 2px), transparent calc(81.47% - 2px),
+	transparent calc(81.47% + 2px), #fff calc(81.47% + 2px),
+	#fff calc(93.14% - 2px), transparent calc(93.14% - 2px),
+	transparent calc(93.14% + 2px), #fff calc(93.14% + 2px),
+	#fff calc(100.00% - 2px), transparent calc(100.00% - 2px),
+	transparent calc(100.00% + 2px), #fff calc(100.00% + 2px)
 );
 ```
 

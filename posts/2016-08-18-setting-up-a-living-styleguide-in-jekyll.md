@@ -61,7 +61,7 @@ Last but not least, we’ll make sure not to render the button if no content is 
 {​% assign content = include.content %}
 
 {​% if content %}
-  <button class="{​{ class }}" type="{​{ type }}">{​{ content }}</button>
+	<button class="{​{ class }}" type="{​{ type }}">{​{ content }}</button>
 {​% endif %}
 ```
 
@@ -69,8 +69,8 @@ This file is then included through an `{​% include %}` Liquid block when used 
 
 ```liquid
 {​% include components/button.html
-  type = "submit"
-  content = "Get in touch"
+	type = "submit"
+	content = "Get in touch"
 %}
 ```
 
@@ -139,26 +139,26 @@ What we need is a description of the UI module, the parameters it accepts when i
 ```liquid
 ---
 description: |
-  The button component should be used as the call-to-action in a form, or as a
-  user interaction mechanism. Generally speaking, a button should not be used
-  when a link would do the trick.
+	The button component should be used as the call-to-action in a form, or as a
+	user interaction mechanism. Generally speaking, a button should not be used
+	when a link would do the trick.
 parameters:
-  content: "*(mandatory)* the content of the button"
-  type: "*(optional)* either `button` or `submit` for the `type` HTML attribute
-        (default to `button`)"
-  class: "*(optional)* any extra class"
+	content: "*(mandatory)* the content of the button"
+	type: "*(optional)* either `button` or `submit` for the `type` HTML attribute
+				(default to `button`)"
+	class: "*(optional)* any extra class"
 example: |
-  {​% include components/button.html
-    type = "button"
-    content = "Click me"
-    class = "pretty-button"
-  %}
+	{​% include components/button.html
+		type = "button"
+		content = "Click me"
+		class = "pretty-button"
+	%}
 ---
 
 {​% include components/button.html
-  type = "button"
-  content = "Click me"
-  class = "pretty-button"
+	type = "button"
+	content = "Click me"
+	class = "pretty-button"
 %}
 ```
 
@@ -214,26 +214,26 @@ layout: styleguide
 
 <div class="container">
 
-  <!-- Styleguide header introducing the content -->
-  {​% include styleguide/header.html %}  
+	<!-- Styleguide header introducing the content -->
+	{​% include styleguide/header.html %}  
 
-  <div class="row">
+	<div class="row">
 
-    <!-- Styleguide aside navigation -->
-    <div class="col-md-3">
-      {​% include styleguide/navigation.html %}  
-    </div>
+		<!-- Styleguide aside navigation -->
+		<div class="col-md-3">
+			{​% include styleguide/navigation.html %}  
+		</div>
 
-    <!-- Styleguide main content area -->
-    <div class="col-md-9">
-      {​% for component in site.styleguide %}
-        {​% include styleguide/component.html
-          component = component
-        %}
-      {​% endfor %}
-    </div>
+		<!-- Styleguide main content area -->
+		<div class="col-md-9">
+			{​% for component in site.styleguide %}
+				{​% include styleguide/component.html
+					component = component
+				%}
+			{​% endfor %}
+		</div>
 
-  </div>
+	</div>
 
 </div>
 ```
@@ -242,20 +242,20 @@ Here is the header (`_includes/styleguide/header.html`):
 
 ```liquid
 <div class="jumbotron">
-  <h1>{​{ page.title | default: "Styleguide" }}</h1>
+	<h1>{​{ page.title | default: "Styleguide" }}</h1>
 
-  <p>
-    This document is a component styleguide. Its purpose is to list all the UI
-    modules used across the site / application, their role, how to use them and
-    how they look.
-  </p>
+	<p>
+		This document is a component styleguide. Its purpose is to list all the UI
+		modules used across the site / application, their role, how to use them and
+		how they look.
+	</p>
 
-  <p>
-    Furthermore, this document can be used as a single source of truth when
-    refactoring HTML and CSS in order to ensure no component visually broke.
-  </p>
+	<p>
+		Furthermore, this document can be used as a single source of truth when
+		refactoring HTML and CSS in order to ensure no component visually broke.
+	</p>
 
-  <a href="/" class="btn btn-primary">Back to the site</a>
+	<a href="/" class="btn btn-primary">Back to the site</a>
 </div>
 ```
 
@@ -263,16 +263,16 @@ Here is the navigation (`_includes/styleguide/navigation.html`):
 
 ```liquid
 <div class="scrollspy">
-  <div class="s-styleguide-aside hidden-xs hidden-sm">
-    <ul class="nav">
-      {​% for component in site.styleguide %}
-        {​% assign component_name = component.slug | replace: "-", " " | capitalize %}
-        <li>
-          <a href="#{​{ component.slug }}">{​{ component_name }}</a>
-        </li>
-      {​% endfor %}
-    </ul>
-  </div>
+	<div class="s-styleguide-aside hidden-xs hidden-sm">
+		<ul class="nav">
+			{​% for component in site.styleguide %}
+				{​% assign component_name = component.slug | replace: "-", " " | capitalize %}
+				<li>
+					<a href="#{​{ component.slug }}">{​{ component_name }}</a>
+				</li>
+			{​% endfor %}
+		</ul>
+	</div>
 </div>
 ```
 
@@ -296,65 +296,65 @@ And finally, here is the HTML for a component showcase (`_includes/styleguide/co
 
 <div class="s-styleguide-showcase" id="{​{ slug }}">
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2 class="panel-title">{​{ title }}</h2>
-    </div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">{​{ title }}</h2>
+		</div>
 
-    <div class="panel-body">
-      {​{ description }}
+		<div class="panel-body">
+			{​{ description }}
 
-      <!-- Component include parameters -->
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Parameter</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-        {​% for parameter in parameters %}
-          {​% assign parameter_name = parameter[0] %}
-          {​% assign parameter_desc = parameter[1] | markdownify %}
-          <tr>
-            <td><code>{​{ parameter_name }}</code></td>
-            <td>{​{ parameter_desc }}</td>
-          </tr>
-        {​% endfor %}
-        </tbody>
-      </table>
+			<!-- Component include parameters -->
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Parameter</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+				{​% for parameter in parameters %}
+					{​% assign parameter_name = parameter[0] %}
+					{​% assign parameter_desc = parameter[1] | markdownify %}
+					<tr>
+						<td><code>{​{ parameter_name }}</code></td>
+						<td>{​{ parameter_desc }}</td>
+					</tr>
+				{​% endfor %}
+				</tbody>
+			</table>
 
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active">
-          <a href="#{​{ tab_name }}-demo" aria-controls="{​{ tab_name }}-demo" role="tab" data-toggle="tab">Demo</a>
-        </li>
-        <li role="presentation">
-          <a href="#{​{ tab_name }}-liquid" aria-controls="{​{ tab_name }}-liquid" role="tab" data-toggle="tab">Liquid</a>
-        </li>
-        <li role="presentation">
-          <a href="#{​{ tab_name }}-html" aria-controls="{​{ tab_name }}-html" role="tab" data-toggle="tab">HTML</a>
-        </li>
-      </ul>
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active">
+					<a href="#{​{ tab_name }}-demo" aria-controls="{​{ tab_name }}-demo" role="tab" data-toggle="tab">Demo</a>
+				</li>
+				<li role="presentation">
+					<a href="#{​{ tab_name }}-liquid" aria-controls="{​{ tab_name }}-liquid" role="tab" data-toggle="tab">Liquid</a>
+				</li>
+				<li role="presentation">
+					<a href="#{​{ tab_name }}-html" aria-controls="{​{ tab_name }}-html" role="tab" data-toggle="tab">HTML</a>
+				</li>
+			</ul>
 
-      <!-- Tab panes -->
-      <div class="tab-content">
+			<!-- Tab panes -->
+			<div class="tab-content">
 
-        <div role="tabpanel" class="tab-pane active" id="{​{ tab_name }}-demo">
-          <iframe src="{​{ iframe_source }}" title="{​{ title }}"></iframe>
-        </div>
+				<div role="tabpanel" class="tab-pane active" id="{​{ tab_name }}-demo">
+					<iframe src="{​{ iframe_source }}" title="{​{ title }}"></iframe>
+				</div>
 
-        <div role="tabpanel" class="tab-pane" id="{​{ tab_name }}-liquid">
-          {​% highlight liquid %}{​{ liquid_code }}{​% endhighlight %}
-        </div>
+				<div role="tabpanel" class="tab-pane" id="{​{ tab_name }}-liquid">
+					{​% highlight liquid %}{​{ liquid_code }}{​% endhighlight %}
+				</div>
 
-        <div role="tabpanel" class="tab-pane" id="{​{ tab_name }}-html">
-          {​% highlight html %}{​{ html_code }}{​% endhighlight %}
-        </div>
+				<div role="tabpanel" class="tab-pane" id="{​{ tab_name }}-html">
+					{​% highlight html %}{​{ html_code }}{​% endhighlight %}
+				</div>
 
-      </div>
-    </div>
-  </div>
+			</div>
+		</div>
+	</div>
 
 </div>
 ```
@@ -377,33 +377,33 @@ Since there is quite a bit of JavaScript to make the styleguide work perfectly, 
 ```html
 <!-- jQuery -->
 <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
+	src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
 
 <!-- Bootstrap -->
 <script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
-  integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
-  crossorigin="anonymous"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
+	crossorigin="anonymous"></script>
 
 <!-- Iframes resizing -->
 <script type='text/javascript'>
-  $(function () {
-    $('iframe').on('load', function () {
-      var height = this.contentWindow.document.body.offsetHeight + 'px'
-      $(this).css('height', height)
-    })
-  })
+	$(function () {
+		$('iframe').on('load', function () {
+			var height = this.contentWindow.document.body.offsetHeight + 'px'
+			$(this).css('height', height)
+		})
+	})
 </script>
 
 <!-- Affix sidebar initialisation -->
 <script>
-  var $nav = $('.c-styleguide-aside')
+	var $nav = $('.c-styleguide-aside')
 
-  $nav.affix({
-    offset: { top: $nav.offset().top }
-  })
+	$nav.affix({
+		offset: { top: $nav.offset().top }
+	})
 </script>
 ```
 

@@ -97,8 +97,8 @@ But since we only have to support a reasonably recent range of browsers, we coul
 /* Side cells */
 .cell:nth-of-type(4n),       /* last  cells */
 .cell:nth-of-type(4n + 1) {
-  /* first cells */
-  /* Do something */
+	/* first cells */
+	/* Do something */
 }
 ```
 
@@ -109,13 +109,13 @@ In the end, the core of the solution is no more than this:
 ```scss
 /* Middle cells */
 .cell {
-  width: calc(((100% - (200px * 4 + 10px * 6)) / 6) * 2 + 200px);
+	width: calc(((100% - (200px * 4 + 10px * 6)) / 6) * 2 + 200px);
 }
 
 /* Side cells */
 .cell:nth-of-type(4n),
 .cell:nth-of-type(4n + 1) {
-  width: calc(((100% - (200px * 4 + 10px * 6)) / 6) + 200px);
+	width: calc(((100% - (200px * 4 + 10px * 6)) / 6) + 200px);
 }
 ```
 

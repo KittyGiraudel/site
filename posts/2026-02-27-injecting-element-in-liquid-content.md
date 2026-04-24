@@ -23,7 +23,7 @@ In my first pass, I rendered it at the top of the article. It’s fine, it works
 {% include "ad.liquid" %}
 
 {% for part in parts offset: 1 %}
-  {{ part }}{% unless forloop.last %}</p>{% endunless %}
+	{{ part }}{% unless forloop.last %}</p>{% endunless %}
 {% endfor %}
 ```
 
@@ -75,26 +75,26 @@ So here is the plan: load our HTML in cheerio, find the first top-level element,
  *                             the rest of the article.
  */
 function splitContent(html) {
-  if (!html || typeof html !== 'string') return ['', '']
+	if (!html || typeof html !== 'string') return ['', '']
 
-  const $ = cheerio.load(html, { decodeEntities: false }, false)
+	const $ = cheerio.load(html, { decodeEntities: false }, false)
 
-  const nodes = $.root().contents().toArray()
-  const index = nodes.findIndex(node => node.type === 'tag')
+	const nodes = $.root().contents().toArray()
+	const index = nodes.findIndex(node => node.type === 'tag')
 
-  if (index === -1) return ['', html]
+	if (index === -1) return ['', html]
 
-  const beforeNodes = nodes.slice(0, index + 1)
-  const afterNodes = nodes.slice(index + 1)
+	const beforeNodes = nodes.slice(0, index + 1)
+	const afterNodes = nodes.slice(index + 1)
 
-  return [serialize(beforeNodes), serialize(afterNodes)]
+	return [serialize(beforeNodes), serialize(afterNodes)]
 }
 
 function serialize(nodeArray) {
-  return nodeArray
-    .map(node => $.html(node))
-    .map(out => typeof out === 'string' ? out : '')
-    .join('')
+	return nodeArray
+		.map(node => $.html(node))
+		.map(out => typeof out === 'string' ? out : '')
+		.join('')
 }
 ```
 

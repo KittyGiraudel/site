@@ -35,16 +35,16 @@ import PostPage from '../PostPage'
 import HomePage from '../HomePage'
 
 const Router = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path='/'>
-        <HomePage />
-      </Route>
-      <Route path='/post/:slug'>
-        <PostPage />
-      </Route>
-    </Switch>
-  </BrowserRouter>
+	<BrowserRouter>
+		<Switch>
+			<Route path='/'>
+				<HomePage />
+			</Route>
+			<Route path='/post/:slug'>
+				<PostPage />
+			</Route>
+		</Switch>
+	</BrowserRouter>
 )
 
 export default Router
@@ -64,16 +64,16 @@ export default HomePage
 import PostPage from '../../../components/PostPage'
 
 export async function getStaticPaths() {
-  // If you can compute possible paths ahead of time, feel free to, but you
-  // shouldn’t need to do it to complete the migration to Next.
-  return { paths: [], fallback: true }
+	// If you can compute possible paths ahead of time, feel free to, but you
+	// shouldn’t need to do it to complete the migration to Next.
+	return { paths: [], fallback: true }
 }
 
 export async function getStaticProps(context) {
-  // If you want to resolve the whole post data from the slug at build time
-  // instead of runtime, feel free to, but you shouldn’t need to do it to
-  // complete the migration to Next.
-  return { props: { slug: context.params.slug } }
+	// If you want to resolve the whole post data from the slug at build time
+	// instead of runtime, feel free to, but you shouldn’t need to do it to
+	// complete the migration to Next.
+	return { props: { slug: context.params.slug } }
 }
 
 export default PostPage
@@ -124,10 +124,10 @@ You might want to turn of the `@next/next/no-img-element` rule though, because i
 
 ```json
 {
-  "extends": "next",
-  "rules": {
-    "@next/next/no-img-element": "off"
-  }
+	"extends": "next",
+	"rules": {
+		"@next/next/no-img-element": "off"
+	}
 }
 ```
 
@@ -146,16 +146,16 @@ import { Link as RRLink } from 'react-router-dom'
 // See: https://nextjs.org/docs/basic-features/environment-variables
 // See: https://create-react-app.dev/docs/adding-custom-environment-variables
 const FRAMEWORK =
-  process.env.NEXT_PUBLIC_FRAMEWORK || process.env.REACT_APP_FRAMEWORK
+	process.env.NEXT_PUBLIC_FRAMEWORK || process.env.REACT_APP_FRAMEWORK
 
 const Link = props => {
-  return FRAMEWORK === 'next' ? (
-    <NextLink href={props.to} passHref>
-      <a>{props.children}</a>
-    </NextLink>
-  ) : (
-    <RRLink to={props.to}>{props.children}</RRLink>
-  )
+	return FRAMEWORK === 'next' ? (
+		<NextLink href={props.to} passHref>
+			<a>{props.children}</a>
+		</NextLink>
+	) : (
+		<RRLink to={props.to}>{props.children}</RRLink>
+	)
 }
 
 export default Link

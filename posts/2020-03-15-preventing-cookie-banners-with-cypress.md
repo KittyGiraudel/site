@@ -23,7 +23,7 @@ const COOKIE_NAME = "cookie_notice";
 const COOKIE_VALUE = "ACCEPTED";
 
 Cypress.on("window:before:load", window => {
-  window.document.cookie = `${COOKIE_NAME}=${COOKIE_VALUE}`;
+	window.document.cookie = `${COOKIE_NAME}=${COOKIE_VALUE}`;
 });
 ```
 

@@ -52,51 +52,51 @@ import { XMLParser } from 'fast-xml-parser'
 import { getSiteUrl, readText } from './helpers/site-paths.mjs'
 
 test('The sitemap should be valid', async () => {
-  const siteUrl = await getSiteUrl()
-  const xml = await readText('sitemap.xml')
-  const parser = new XMLParser({ ignoreAttributes: false })
-  const site = new URL(siteUrl)
+	const siteUrl = await getSiteUrl()
+	const xml = await readText('sitemap.xml')
+	const parser = new XMLParser({ ignoreAttributes: false })
+	const site = new URL(siteUrl)
 
-  const doc = parser.parse(xml)
-  assert.ok(doc.urlset, 'sitemap should have a <urlset> root element')
+	const doc = parser.parse(xml)
+	assert.ok(doc.urlset, 'sitemap should have a <urlset> root element')
 
-  const urls = Array.isArray(doc.urlset.url) ? doc.urlset.url : [doc.urlset.url]
-  assert.ok(urls.length > 0, 'sitemap should contain at least one <url> entry')
+	const urls = Array.isArray(doc.urlset.url) ? doc.urlset.url : [doc.urlset.url]
+	assert.ok(urls.length > 0, 'sitemap should contain at least one <url> entry')
 
-  const locs = urls.map(entry => entry.loc).filter(Boolean)
-  assert.ok(locs.length === urls.length, 'every <url> should have a <loc>')
+	const locs = urls.map(entry => entry.loc).filter(Boolean)
+	assert.ok(locs.length === urls.length, 'every <url> should have a <loc>')
 
-  for (const loc of locs) {
-    assert.equal(typeof loc, 'string')
+	for (const loc of locs) {
+		assert.equal(typeof loc, 'string')
 
-    const { origin, pathname } = new URL(loc)
-    assert.equal(
-      origin,
-      site.origin,
-      'sitemap URL should use the correct site domain',
-    )
-    assert.ok(
-      pathname.endsWith('/'),
-      `sitemap URL path should use a trailing slash: ${pathname}`,
-    )
-  }
+		const { origin, pathname } = new URL(loc)
+		assert.equal(
+			origin,
+			site.origin,
+			'sitemap URL should use the correct site domain',
+		)
+		assert.ok(
+			pathname.endsWith('/'),
+			`sitemap URL path should use a trailing slash: ${pathname}`,
+		)
+	}
 
-  // Static pages to expect to see in the sitemap
-  const expectedPaths = ['/', '/blog/', '/projects/', '/snippets/', '/talks/', '/stats/', '/resume/', '/about/', '/accessibility-statement/']
-  for (const path of expectedPaths) {
-    const expected = new URL(path, site.origin).toString()
-    assert.ok(locs.includes(expected), `sitemap should include ${expected}`)
-  }
+	// Static pages to expect to see in the sitemap
+	const expectedPaths = ['/', '/blog/', '/projects/', '/snippets/', '/talks/', '/stats/', '/resume/', '/about/', '/accessibility-statement/']
+	for (const path of expectedPaths) {
+		const expected = new URL(path, site.origin).toString()
+		assert.ok(locs.includes(expected), `sitemap should include ${expected}`)
+	}
 
-  // Dev artifacts not to compile or present in the sitemap
-  const forbiddenPaths = ['/blog/index-markdown/', '/README.md', '/404.html']
-  for (const path of forbiddenPaths) {
-    const forbidden = new URL(path, site.origin).toString()
-    assert.ok(
-      !locs.includes(forbidden),
-      `sitemap should not include ${forbidden}`,
-    )
-  }
+	// Dev artifacts not to compile or present in the sitemap
+	const forbiddenPaths = ['/blog/index-markdown/', '/README.md', '/404.html']
+	for (const path of forbiddenPaths) {
+		const forbidden = new URL(path, site.origin).toString()
+		assert.ok(
+			!locs.includes(forbidden),
+			`sitemap should not include ${forbidden}`,
+		)
+	}
 })
 ```
 
@@ -111,36 +111,36 @@ import test from 'node:test'
 import { siteDir } from './helpers/site-paths.mjs'
 
 async function expectFile(relativePath) {
-  const full = path.join(siteDir, relativePath)
-  const s = await stat(full)
-  assert.ok(s.isFile(), `${relativePath} should exist as a file`)
+	const full = path.join(siteDir, relativePath)
+	const s = await stat(full)
+	assert.ok(s.isFile(), `${relativePath} should exist as a file`)
 }
 
 async function expectDirectoryWithFiles(relativePath) {
-  const full = path.join(siteDir, relativePath)
-  const s = await stat(full)
-  assert.ok(s.isDirectory(), `${relativePath} should exist as a directory`)
-  const files = await readdir(full)
-  assert.ok(files.length > 0, `${relativePath} should not be empty`)
+	const full = path.join(siteDir, relativePath)
+	const s = await stat(full)
+	assert.ok(s.isDirectory(), `${relativePath} should exist as a directory`)
+	const files = await readdir(full)
+	assert.ok(files.length > 0, `${relativePath} should not be empty`)
 }
 
 test('Core assets exist in built site', async () => {
-  await Promise.all([
-    expectFile('robots.txt'),
-    expectFile('humans.txt'),
-    expectFile('apple-touch-icon.png'),
-    expectFile('favicon.ico'),
-    expectFile('blog/search/data.json'),
-    expectFile('manifest.json'),
-    expectFile('sitemap.xml'),
-    expectFile('rss/index.xml'),
-    expectFile('_headers'),
-    expectFile('_redirects'),
-    expectFile('404.html'),
-    expectDirectoryWithFiles('assets'),
-    expectDirectoryWithFiles('assets/js'),
-    expectDirectoryWithFiles('assets/images'),
-  ])
+	await Promise.all([
+		expectFile('robots.txt'),
+		expectFile('humans.txt'),
+		expectFile('apple-touch-icon.png'),
+		expectFile('favicon.ico'),
+		expectFile('blog/search/data.json'),
+		expectFile('manifest.json'),
+		expectFile('sitemap.xml'),
+		expectFile('rss/index.xml'),
+		expectFile('_headers'),
+		expectFile('_redirects'),
+		expectFile('404.html'),
+		expectDirectoryWithFiles('assets'),
+		expectDirectoryWithFiles('assets/js'),
+		expectDirectoryWithFiles('assets/images'),
+	])
 })
 ```
 
@@ -155,84 +155,84 @@ import { XMLParser } from 'fast-xml-parser'
 import { getSiteUrl, readText } from './helpers/site-paths.mjs'
 
 test('RSS feed is valid Atom with correct URLs', async () => {
-  const siteUrl = getSiteUrl()
-  const xml = readText('rss/index.xml')
-  const parser = new XMLParser({ ignoreAttributes: false })
-  const doc = parser.parse(xml)
+	const siteUrl = getSiteUrl()
+	const xml = readText('rss/index.xml')
+	const parser = new XMLParser({ ignoreAttributes: false })
+	const doc = parser.parse(xml)
 
-  // Top-level feed structure
-  assert.ok(doc.feed, 'RSS feed should have a <feed> root element')
-  assert.ok(doc.feed.title, 'RSS feed should contain <title>')
-  assert.ok(doc.feed.subtitle, 'RSS feed should contain <subtitle>')
-  assert.ok(doc.feed.id, 'RSS feed should contain <id>')
-  assert.ok(doc.feed.updated, 'RSS feed should contain <updated>')
+	// Top-level feed structure
+	assert.ok(doc.feed, 'RSS feed should have a <feed> root element')
+	assert.ok(doc.feed.title, 'RSS feed should contain <title>')
+	assert.ok(doc.feed.subtitle, 'RSS feed should contain <subtitle>')
+	assert.ok(doc.feed.id, 'RSS feed should contain <id>')
+	assert.ok(doc.feed.updated, 'RSS feed should contain <updated>')
 
-  const links = Array.isArray(doc.feed.link) ? doc.feed.link : [doc.feed.link]
-  const linkByRel = new Map()
-  for (const link of links)
-    if (link['@_rel']) linkByRel.set(link['@_rel'], link)
+	const links = Array.isArray(doc.feed.link) ? doc.feed.link : [doc.feed.link]
+	const linkByRel = new Map()
+	for (const link of links)
+		if (link['@_rel']) linkByRel.set(link['@_rel'], link)
 
-  const site = new URL(siteUrl)
-  const selfLink = linkByRel.get('self')
-  assert.ok(selfLink, 'RSS feed should have a self <link>')
-  assert.equal(
-    selfLink['@_href'],
-    new URL('/rss/index.xml', site.origin).toString(),
-    'self link href should match site RSS URL',
-  )
+	const site = new URL(siteUrl)
+	const selfLink = linkByRel.get('self')
+	assert.ok(selfLink, 'RSS feed should have a self <link>')
+	assert.equal(
+		selfLink['@_href'],
+		new URL('/rss/index.xml', site.origin).toString(),
+		'self link href should match site RSS URL',
+	)
 
-  const altLink = linkByRel.get('alternate')
-  assert.ok(altLink, 'RSS feed should have an alternate HTML <link>')
-  assert.equal(
-    altLink['@_href'],
-    site.origin,
-    'alternate HTML link href should match site URL',
-  )
+	const altLink = linkByRel.get('alternate')
+	assert.ok(altLink, 'RSS feed should have an alternate HTML <link>')
+	assert.equal(
+		altLink['@_href'],
+		site.origin,
+		'alternate HTML link href should match site URL',
+	)
 
-  const entries = Array.isArray(doc.feed.entry)
-    ? doc.feed.entry
-    : [doc.feed.entry]
-  assert.ok(entries.length > 0, 'RSS feed should contain at least one <entry>')
+	const entries = Array.isArray(doc.feed.entry)
+		? doc.feed.entry
+		: [doc.feed.entry]
+	assert.ok(entries.length > 0, 'RSS feed should contain at least one <entry>')
 
-  for (const entry of entries) {
-    // Basic data for each entry
-    assert.ok(entry.title, 'entry should have a title')
-    assert.ok(entry.id, 'entry should have an id')
-    assert.ok(entry.published, 'entry should have a published date')
-    assert.ok(entry.summary, 'entry should have a summary')
+	for (const entry of entries) {
+		// Basic data for each entry
+		assert.ok(entry.title, 'entry should have a title')
+		assert.ok(entry.id, 'entry should have an id')
+		assert.ok(entry.published, 'entry should have a published date')
+		assert.ok(entry.summary, 'entry should have a summary')
 
-    const entryLinks = Array.isArray(entry.link) ? entry.link : [entry.link]
-    assert.ok(entryLinks.length > 0, 'entry should have at least one link')
+		const entryLinks = Array.isArray(entry.link) ? entry.link : [entry.link]
+		assert.ok(entryLinks.length > 0, 'entry should have at least one link')
 
-    const primaryLink = entryLinks[0]
-    const primaryHref = primaryLink['@_href']
-    assert.equal(typeof primaryHref, 'string')
+		const primaryLink = entryLinks[0]
+		const primaryHref = primaryLink['@_href']
+		assert.equal(typeof primaryHref, 'string')
 
-    const primaryUrl = new URL(primaryHref)
-    assert.ok(
-      primaryUrl.href.length > 0,
-      'primary entry link href should be a valid URL',
-    )
+		const primaryUrl = new URL(primaryHref)
+		assert.ok(
+			primaryUrl.href.length > 0,
+			'primary entry link href should be a valid URL',
+		)
 
-    const pathname = primaryUrl.pathname
-    const looksLikeFile = /\.[^/]+$/.test(pathname)
-    if (primaryUrl.origin === site.origin && !looksLikeFile) {
-      assert.ok(
-        pathname.endsWith('/'),
-        `internal entry link path should use a trailing slash: ${pathname}`,
-      )
-    }
+		const pathname = primaryUrl.pathname
+		const looksLikeFile = /\.[^/]+$/.test(pathname)
+		if (primaryUrl.origin === site.origin && !looksLikeFile) {
+			assert.ok(
+				pathname.endsWith('/'),
+				`internal entry link path should use a trailing slash: ${pathname}`,
+			)
+		}
 
-    const hasMarkdownAlternate = entryLinks.some(
-      l => l['@_rel'] === 'alternate' && l['@_type'] === 'text/markdown',
-    )
+		const hasMarkdownAlternate = entryLinks.some(
+			l => l['@_rel'] === 'alternate' && l['@_type'] === 'text/markdown',
+		)
 
-    assert.ok(entry.content, 'internal entry should have <content>')
-    assert.ok(
-      hasMarkdownAlternate,
-      'internal entry should have an alternate markdown <link>',
-    )
-  }
+		assert.ok(entry.content, 'internal entry should have <content>')
+		assert.ok(
+			hasMarkdownAlternate,
+			'internal entry should have an alternate markdown <link>',
+		)
+	}
 })
 ```
 
@@ -243,43 +243,43 @@ import test from 'node:test'
 import { readJson } from './helpers/site-paths.mjs'
 
 test('Search data JSON has expected shape', async () => {
-  const data = await readJson('blog/search/data.json')
+	const data = await readJson('blog/search/data.json')
 
-  assert.ok(Array.isArray(data), 'search data should be an array')
-  assert.ok(data.length > 0, 'search data should not be empty')
+	assert.ok(Array.isArray(data), 'search data should be an array')
+	assert.ok(data.length > 0, 'search data should not be empty')
 
-  for (const entry of data) {
-    assert.equal(typeof entry.title, 'string')
-    assert.ok(entry.title.length > 0)
+	for (const entry of data) {
+		assert.equal(typeof entry.title, 'string')
+		assert.ok(entry.title.length > 0)
 
-    assert.equal(typeof entry.lang, 'string')
-    assert.ok(entry.lang.length > 0)
+		assert.equal(typeof entry.lang, 'string')
+		assert.ok(entry.lang.length > 0)
 
-    assert.ok(Array.isArray(entry.tags), 'tags should be an array')
+		assert.ok(Array.isArray(entry.tags), 'tags should be an array')
 
-    assert.equal(typeof entry.url, 'string')
-    assert.ok(entry.url.length > 0, 'url should not be empty')
-    assert.ok(
-      entry.url.startsWith('http') || entry.url.startsWith('/'),
-      `url should be absolute or root-relative: ${entry.url}`,
-    )
+		assert.equal(typeof entry.url, 'string')
+		assert.ok(entry.url.length > 0, 'url should not be empty')
+		assert.ok(
+			entry.url.startsWith('http') || entry.url.startsWith('/'),
+			`url should be absolute or root-relative: ${entry.url}`,
+		)
 
-    if (entry.url.startsWith('/')) {
-      const looksLikeFile = /\.[^/]+$/.test(entry.url)
-      if (!looksLikeFile) {
-        assert.ok(
-          entry.url.endsWith('/'),
-          `internal search URL should use a trailing slash: ${entry.url}`,
-        )
-      }
-    }
+		if (entry.url.startsWith('/')) {
+			const looksLikeFile = /\.[^/]+$/.test(entry.url)
+			if (!looksLikeFile) {
+				assert.ok(
+					entry.url.endsWith('/'),
+					`internal search URL should use a trailing slash: ${entry.url}`,
+				)
+			}
+		}
 
-    assert.equal(typeof entry.date, 'string')
-    assert.ok(entry.date.length > 0)
+		assert.equal(typeof entry.date, 'string')
+		assert.ok(entry.date.length > 0)
 
-    assert.equal(typeof entry.guest, 'string')
-    assert.equal(typeof entry.external, 'string')
-  }
+		assert.equal(typeof entry.guest, 'string')
+		assert.equal(typeof entry.external, 'string')
+	}
 })
 ```
 
@@ -289,8 +289,8 @@ To run our tests, we can add a `test` script in our `package.json` file:
 
 ```json
 "scripts": {
-  "build": "npx @11ty/eleventy",
-  "test": "node --test _tests/*.test.mjs"
+	"build": "npx @11ty/eleventy",
+	"test": "node --test _tests/*.test.mjs"
 }
 ```
 

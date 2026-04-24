@@ -19,11 +19,11 @@ const dns = require('dns')
 const resolve = promisify(dns.resolve)
 
 const hasInternetAccess = async () => {
-  try {
-    await resolve('www.google.com')
-    return true
-  } catch {
-    return false
-  }
+	try {
+		await resolve('www.google.com')
+		return true
+	} catch {
+		return false
+	}
 }
 ```

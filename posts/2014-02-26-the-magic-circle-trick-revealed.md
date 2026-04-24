@@ -32,33 +32,33 @@ Then, be sure to know there is nothing magic in this trick. As a proof, some of 
 
 ```html
 <ul class="boxes">
-  <li class="box  box--top  box--left  box--alpha">
-    <section class="box__content">
-      <header class="box__header"></header>
-      <footer class="box__footer  box__cut"></footer>
-    </section>
-  </li>
+	<li class="box  box--top  box--left  box--alpha">
+		<section class="box__content">
+			<header class="box__header"></header>
+			<footer class="box__footer  box__cut"></footer>
+		</section>
+	</li>
 
-  <li class="box  box--top  box--right  box--beta">
-    <section class="box__content">
-      <header class="box__header"></header>
-      <footer class="box__footer  box__cut"></footer>
-    </section>
-  </li>
+	<li class="box  box--top  box--right  box--beta">
+		<section class="box__content">
+			<header class="box__header"></header>
+			<footer class="box__footer  box__cut"></footer>
+		</section>
+	</li>
 
-  <li class="box  box--bottom  box--left  box--gamma">
-    <section class="box__content">
-      <header class="box__header  box__cut"></header>
-      <footer class="box__footer"></footer>
-    </section>
-  </li>
+	<li class="box  box--bottom  box--left  box--gamma">
+		<section class="box__content">
+			<header class="box__header  box__cut"></header>
+			<footer class="box__footer"></footer>
+		</section>
+	</li>
 
-  <li class="box  box--bottom  box--right  box--delta">
-    <section class="box__content">
-      <header class="box__header  box__cut"></header>
-      <footer class="box__footer"></footer>
-    </section>
-  </li>
+	<li class="box  box--bottom  box--right  box--delta">
+		<section class="box__content">
+			<header class="box__header  box__cut"></header>
+			<footer class="box__footer"></footer>
+		</section>
+	</li>
 </ul>
 ```
 
@@ -83,10 +83,10 @@ $circle-size: 5em; // Inner disk
 $breakpoint: 700px;
 $border-radius: 0.25em; // Boxes radius
 $colors: (
-  alpha: #1abc9c,
-  beta: #2ecc71,
-  gamma: #3498db,
-  delta: #9b59b6,
+	alpha: #1abc9c,
+	beta: #2ecc71,
+	gamma: #3498db,
+	delta: #9b59b6,
 );
 ```
 
@@ -101,36 +101,36 @@ Let’s start with applying some default styles to our element (`.boxes`, `.box`
 // 1. Clearing inner float
 // 2. Enabling position context for pseudo-element
 .boxes {
-  list-style: none;
-  padding: 0 $gutter;
-  margin: 0;
-  overflow: hidden; // 1
-  position: relative; // 2
+	list-style: none;
+	padding: 0 $gutter;
+	margin: 0;
+	overflow: hidden; // 1
+	position: relative; // 2
 
-  // Central dark disk
-  &:after {
-    content: '';
-    position: absolute;
-    width: $circle-size;
-    height: $circle-size;
-    top: 50%;
-    left: 50%;
-    margin: -$circle-size/2 (0 0) -$circle-size/2;
-    border-radius: 50%;
-    border: 0.5em solid #2c3e50;
-    background: #34495e;
+	// Central dark disk
+	&:after {
+		content: '';
+		position: absolute;
+		width: $circle-size;
+		height: $circle-size;
+		top: 50%;
+		left: 50%;
+		margin: -$circle-size/2 (0 0) -$circle-size/2;
+		border-radius: 50%;
+		border: 0.5em solid #2c3e50;
+		background: #34495e;
 
-    // Hiding it on small screens
-    @media (max-width: $breakpoint) {
-      content: none;
-    }
+		// Hiding it on small screens
+		@media (max-width: $breakpoint) {
+			content: none;
+		}
 
-    // Hiding it on browsers not supporting box-shadow/border-radius/pseudo-elements
-    // Thanks to Modernizr
-    .no-boxshadow & {
-      content: none;
-    }
-  }
+		// Hiding it on browsers not supporting box-shadow/border-radius/pseudo-elements
+		// Thanks to Modernizr
+		.no-boxshadow & {
+			content: none;
+		}
+	}
 }
 ```
 
@@ -142,15 +142,15 @@ One of the rules of the game was to keep the same gutter between left and right 
 
 ```scss
 .box {
-  float: left;
-  width: 50%;
-  margin: $gutter 0;
+	float: left;
+	width: 50%;
+	margin: $gutter 0;
 
-  // Moving them back to a single column on small screens
-  @media (max-width: $breakpoint) {
-    width: 100%;
-    float: none;
-  }
+	// Moving them back to a single column on small screens
+	@media (max-width: $breakpoint) {
+		width: 100%;
+		float: none;
+	}
 }
 ```
 
@@ -159,20 +159,20 @@ Boxes spread across half the width of the parent. Some of you people did use `ca
 ```scss
 // Inner box wrapper
 .box__content {
-  // Adding a right padding on left boxes for the central gutter
-  .box--left & {
-    padding-right: $margin;
-  }
+	// Adding a right padding on left boxes for the central gutter
+	.box--left & {
+		padding-right: $margin;
+	}
 
-  // Adding a left padding on right boxes for the central gutter
-  .box--right & {
-    padding-left: $margin;
-  }
+	// Adding a left padding on right boxes for the central gutter
+	.box--right & {
+		padding-left: $margin;
+	}
 
-  // Removing padding on small screens
-  @media (max-width: $breakpoint) {
-    padding: 0 !important;
-  }
+	// Removing padding on small screens
+	@media (max-width: $breakpoint) {
+		padding: 0 !important;
+	}
 }
 ```
 
@@ -190,48 +190,48 @@ Yes, finally. As I explained at the beginning of the article, the idea consists 
 // 2. Making sure the box-shadow from pseudo-element doesn’t leak outside the container
 // 3. Enabling position context for pseudo-element
 .box__cut {
-  background: none !important; // 1
-  overflow: hidden; // 2
-  position: relative; // 3
+	background: none !important; // 1
+	overflow: hidden; // 2
+	position: relative; // 3
 
-  // Transparent circle
-  // 1. Moving it on a lower plan
-  // 2. Applying a very large box-shadow, using currentColor as color
-  &:after {
-    content: '';
-    position: absolute;
-    width: $mask-size;
-    height: $mask-size;
-    z-index: -1; // 1
-    border-radius: 50%;
-    margin: -($mask-size / 2 + $margin);
-    box-shadow: 0 0 0 55em; // 2
+	// Transparent circle
+	// 1. Moving it on a lower plan
+	// 2. Applying a very large box-shadow, using currentColor as color
+	&:after {
+		content: '';
+		position: absolute;
+		width: $mask-size;
+		height: $mask-size;
+		z-index: -1; // 1
+		border-radius: 50%;
+		margin: -($mask-size / 2 + $margin);
+		box-shadow: 0 0 0 55em; // 2
 
-    // Hiding it on small screens
-    @media (max-width: $breakpoint) {
-      content: none;
-    }
-  }
+		// Hiding it on small screens
+		@media (max-width: $breakpoint) {
+			content: none;
+		}
+	}
 
-  // Positioning transparent circle for left boxes
-  .box--left &:after {
-    right: 0;
-  }
+	// Positioning transparent circle for left boxes
+	.box--left &:after {
+		right: 0;
+	}
 
-  // Positioning transparent circle for right boxes
-  .box--right &:after {
-    left: 0;
-  }
+	// Positioning transparent circle for right boxes
+	.box--right &:after {
+		left: 0;
+	}
 
-  // Positioning transparent circle for top boxes
-  .box--top &:after {
-    bottom: 0;
-  }
+	// Positioning transparent circle for top boxes
+	.box--top &:after {
+		bottom: 0;
+	}
 
-  // Positioning transparent circle for bottom boxes
-  .box--bottom &:after {
-    top: 0;
-  }
+	// Positioning transparent circle for bottom boxes
+	.box--bottom &:after {
+		top: 0;
+	}
 }
 ```
 
@@ -242,32 +242,32 @@ Last but not least, we have to apply colors all over our code like some sort of 
 ```scss
 // Applying colors by looping on the color map
 @each $key, $value in $colors {
-  // Targeting the box
-  .box--#{$key} {
-    // Applying background colors
-    .box__header,
-    .box__footer {
-      background: $value;
-    }
+	// Targeting the box
+	.box--#{$key} {
+		// Applying background colors
+		.box__header,
+		.box__footer {
+			background: $value;
+		}
 
-    // Will be used a color for box-shadow
-    .box__cut {
-      &:after {
-        color: darken($value, 10%);
-      }
+		// Will be used a color for box-shadow
+		.box__cut {
+			&:after {
+				color: darken($value, 10%);
+			}
 
-      // Applying background for small screens
-      // since the pseudo-element will be hidden
-      @media (max-width: $breakpoint) {
-        background: darken($value, 10%) !important;
-      }
+			// Applying background for small screens
+			// since the pseudo-element will be hidden
+			@media (max-width: $breakpoint) {
+				background: darken($value, 10%) !important;
+			}
 
-      // Applying background on browsers not supporting box-shadow/border-radius/pseudo-elements
-      .no-boxshadow & {
-        background: darken($value, 10%) !important;
-      }
-    }
-  }
+			// Applying background on browsers not supporting box-shadow/border-radius/pseudo-elements
+			.no-boxshadow & {
+				background: darken($value, 10%) !important;
+			}
+		}
+	}
 }
 ```
 

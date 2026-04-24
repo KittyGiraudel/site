@@ -15,7 +15,7 @@ If you build mixins or just like to play around the syntax, you may have already
 
 ```scss
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+	@return $value / ($value * 0 + 1);
 }
 ```
 
@@ -25,7 +25,7 @@ So we divide our number by the same number multiplied by 0 to which we then add 
 
 ```scss
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+	@return $value / ($value * 0 + 1);
 }
 
 $length: 42em;
@@ -46,7 +46,7 @@ Anyway, this is a function to clamp a number. Clamping a number means restrictin
 
 ```scss
 @function clamp($value, $min, $max) {
-  @return if($value > $max, $max, if($value < $min, $min, $value));
+	@return if($value > $max, $max, if($value < $min, $min, $value));
 }
 ```
 
@@ -74,17 +74,17 @@ This one is a function by Chris Eppstein himself in order to convert an angle in
 
 ```scss
 @function convert-angle($value, $unit) {
-  $convertable-units: deg grad turn rad;
-  $conversion-factors: 1 10grad/9deg 1turn/360deg 3.1415926rad/180deg;
-  @if index($convertable-units, unit($value)) and
-    index($convertable-units, $unit)
-  {
-    @return $value /
-      nth($conversion-factors, index($convertable-units, unit($value))) *
-      nth($conversion-factors, index($convertable-units, $unit));
-  } @else {
-    @warn "Cannot convert #{unit($value)} to #{$unit}";
-  }
+	$convertable-units: deg grad turn rad;
+	$conversion-factors: 1 10grad/9deg 1turn/360deg 3.1415926rad/180deg;
+	@if index($convertable-units, unit($value)) and
+		index($convertable-units, $unit)
+	{
+		@return $value /
+			nth($conversion-factors, index($convertable-units, unit($value))) *
+			nth($conversion-factors, index($convertable-units, $unit));
+	} @else {
+		@warn "Cannot convert #{unit($value)} to #{$unit}";
+	}
 }
 ```
 
@@ -105,16 +105,16 @@ While we wait for [Sass 4.0](https://github.com/nex3/sass/issues/353#issuecommen
 $imported-once-files: ();
 
 @function import-once($filename) {
-  @if index($imported-once-files, $filename) {
-    @return false;
-  }
+	@if index($imported-once-files, $filename) {
+		@return false;
+	}
 
-  $imported-once-files: append($imported-once-files, $filename);
-  @return true;
+	$imported-once-files: append($imported-once-files, $filename);
+	@return true;
 }
 
 @if import-once('_SharedBaseStuff.scss') {
-  /* …declare stuff that will only be imported once… */
+	/* …declare stuff that will only be imported once… */
 }
 ```
 
@@ -128,12 +128,12 @@ $imported-once-files: ();
 
 /* _functions.scss: define the function */
 @function import-once($filename) {
-  @if index($imported-once-files, $filename) {
-    @return false;
-  }
+	@if index($imported-once-files, $filename) {
+		@return false;
+	}
 
-  $imported-once-files: append($imported-once-files, $filename);
-  @return true;
+	$imported-once-files: append($imported-once-files, $filename);
+	@return true;
 }
 
 /* styles.scss: import files */
@@ -143,9 +143,9 @@ $imported-once-files: ();
 
 /* _component.scss: wrap content depending on function return */
 @if import-once('component') {
-  .element {
-    /* … */
-  }
+	.element {
+		/* … */
+	}
 }
 ```
 
@@ -156,7 +156,7 @@ You probably wonder what prevents us from doing something like this:
 ```scss
 /* styles.scss - this doesn’t work */
 @if import-once('component') {
-  @import 'component';
+	@import 'component';
 }
 ```
 
@@ -172,14 +172,14 @@ Let’s have a look at the following list `$list: a b, c d, e f;`. `a` is kind o
 
 ```scss
 @function match($haystack, $needle) {
-  @each $item in $haystack {
-    $index: index($item, $needle);
-    @if $index {
-      $return: if($index == 1, 2, $index);
-      @return nth($item, $return);
-    }
-  }
-  @return false;
+	@each $item in $haystack {
+		$index: index($item, $needle);
+		@if $index {
+			$return: if($index == 1, 2, $index);
+			@return nth($item, $return);
+		}
+	}
+	@return false;
 }
 ```
 
@@ -187,9 +187,9 @@ Basically, the function loops through the pairs; if `$needle` you gave is found,
 
 ```scss
 $list:
-  a b,
-  c d,
-  e f;
+	a b,
+	c d,
+	e f;
 $value: match($list, e); /* returns f */
 $value: match($list, b); /* returns a */
 $value: match($list, z); /* returns false */

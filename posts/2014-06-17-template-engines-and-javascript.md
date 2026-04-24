@@ -47,28 +47,28 @@ When moving to Mixture, I took the time to think of how I would solve this issue
 ```javascript
 // app.js
 ;(function (global) {
-  var App = function (conf) {
-    this.conf = global.extend(
-      {
-        codepen: false,
-        sassmeister: false,
-        tableOfContent: false,
-        tracking: true,
-        ad: true,
-        comments: false,
-        layout: 'default',
-      },
-      conf || {}
-    )
+	var App = function (conf) {
+		this.conf = global.extend(
+			{
+				codepen: false,
+				sassmeister: false,
+				tableOfContent: false,
+				tracking: true,
+				ad: true,
+				comments: false,
+				layout: 'default',
+			},
+			conf || {}
+		)
 
-    this.initialize()
-  }
+		this.initialize()
+	}
 
-  App.prototype.initialize = function () {
-    /* … */
-  }
+	App.prototype.initialize = function () {
+		/* … */
+	}
 
-  global.App = App
+	global.App = App
 })(window)
 ```
 
@@ -76,27 +76,27 @@ So what’s going on here? In a JavaScript file, in a closure, we define a new c
 
 ```javascript
 App.prototype.initialize = function () {
-  if (this.conf.tracking === true) {
-    this.tracking()
-  }
+	if (this.conf.tracking === true) {
+		this.tracking()
+	}
 
-  if (this.conf.ad === true) {
-    this.ad()
-  }
+	if (this.conf.ad === true) {
+		this.ad()
+	}
 
-  if (this.conf.comments === true) {
-    this.comments()
-  }
+	if (this.conf.comments === true) {
+		this.comments()
+	}
 
-  if (this.conf.codepen === true) {
-    this.codepen()
-  }
+	if (this.conf.codepen === true) {
+		this.codepen()
+	}
 
-  if (this.conf.sassmeister === true) {
-    this.sassmeister()
-  }
+	if (this.conf.sassmeister === true) {
+		this.sassmeister()
+	}
 
-  // …
+	// …
 }
 ```
 
@@ -104,11 +104,11 @@ No magic here, the `initialize()` method simply calls other methods based on the
 
 ```javascript
 ;['tracking', 'ad', 'comments', 'codepen', 'sassmeister'].forEach(
-  function (key) {
-    if (this.conf[key] === true) {
-      this[key]()
-    }
-  }.bind(this)
+	function (key) {
+		if (this.conf[key] === true) {
+			this[key]()
+		}
+	}.bind(this)
 )
 ```
 
@@ -116,32 +116,32 @@ But it’s no big deal, we don’t really need this. And now, the other methods:
 
 ```javascript
 App.prototype.tracking = function () {
-  global._gaq = [['_setAccount', 'UA-XXXXXXXX-X'], ['_trackPageview']]
+	global._gaq = [['_setAccount', 'UA-XXXXXXXX-X'], ['_trackPageview']]
 
-  this._inject('//www.google-analytics.com/ga.js')
+	this._inject('//www.google-analytics.com/ga.js')
 }
 
 App.prototype.ad = function () {
-  this._inject('//engine.carbonads.com/z/24598/azcarbon_2_1_0_HORIZ')
+	this._inject('//engine.carbonads.com/z/24598/azcarbon_2_1_0_HORIZ')
 }
 
 App.prototype.codepen = function () {
-  this._inject('//codepen.io/assets/embed/ei.js')
+	this._inject('//codepen.io/assets/embed/ei.js')
 }
 
 App.prototype.sassmeister = function () {
-  this._inject('//static.sassmeister.com/js/embed.js')
+	this._inject('//static.sassmeister.com/js/embed.js')
 }
 
 App.prototype._inject = function (url) {
-  var d = document,
-    s = 'script',
-    g = d.createElement(s),
-    z = d.getElementsByTagName(s)[0]
+	var d = document,
+		s = 'script',
+		g = d.createElement(s),
+		z = d.getElementsByTagName(s)[0]
 
-  g.async = true
-  g.src = url
-  z.parentNode.insertBefore(g, z)
+	g.async = true
+	g.src = url
+	z.parentNode.insertBefore(g, z)
 }
 ```
 
@@ -155,15 +155,15 @@ We still haven’t really solved the problem yet. How are we going to pass our L
 <script src="/assets/js/main.min.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var app = new App({
-      codepen: {{ post.codepen }},
-      sassmeister: {{ post.sassmeister }},
-      layout: '{{ post.layout }}',
-      tracking: true,
-      ad: true
-    });
-  });
+	document.addEventListener('DOMContentLoaded', function() {
+		var app = new App({
+			codepen: {{ post.codepen }},
+			sassmeister: {{ post.sassmeister }},
+			layout: '{{ post.layout }}',
+			tracking: true,
+			ad: true
+		});
+	});
 </script>
 ```
 

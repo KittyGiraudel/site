@@ -24,7 +24,7 @@ Here is our HTML:
 
 ```html
 <body>
-  <a href="#main" class="sr-only sr-only--focusable">Skip to content</a>
+	<a href="#main" class="sr-only sr-only--focusable">Skip to content</a>
 </body>
 ```
 
@@ -33,13 +33,13 @@ For the styling we can use what we learnt in [day 3 of this calendar](/2020/12/0
 ```css
 .sr-only.sr-only--focusable:focus,
 .sr-only.sr-only--focusable:active {
-  clip: auto !important;
-  -webkit-clip-path: none !important;
-  clip-path: none !important;
-  height: auto !important;
-  overflow: visible !important;
-  width: auto !important;
-  white-space: normal !important;
+	clip: auto !important;
+	-webkit-clip-path: none !important;
+	clip-path: none !important;
+	height: auto !important;
+	overflow: visible !important;
+	width: auto !important;
+	white-space: normal !important;
 }
 ```
 

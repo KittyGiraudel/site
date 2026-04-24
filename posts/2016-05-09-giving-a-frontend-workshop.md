@@ -59,12 +59,12 @@ We encountered the first encoding issues (since we did not add a charset meta) w
 
 ```html
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    Content…
-  </body>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		Content…
+	</body>
 </html>
 ```
 
@@ -78,7 +78,7 @@ I did not want to start right away with the `<link>` tag and how to connect a st
 
 ```css
 h1 {
-  color: pink;
+	color: pink;
 }
 ```
 

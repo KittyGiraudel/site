@@ -35,7 +35,7 @@ We want to mask the amount on the screen while making it obvious that some conte
 
 ```css
 .amount {
-  filter: blur(10px);
+	filter: blur(10px);
 }
 ```
 
@@ -47,14 +47,14 @@ We have to consider the case where CSS filters are not supported (such as on Int
 
 ```css
 .amount {
-  opacity: 0;
+	opacity: 0;
 }
 
 @supports (filter: blur(10px)) {
-  .amount {
-    opacity: 1;
-    filter: blur(10px);
-  }
+	.amount {
+		opacity: 1;
+		filter: blur(10px);
+	}
 }
 ```
 

@@ -63,11 +63,11 @@ That Markdown file would contain a YAML front matter for metadata, and the origi
 title: 'Serving Markdown to LLMs with Eleventy'
 date: '2026-03-11T00:00:00Z'
 tags:
-  - 'AI'
-  - 'Eleventy'
-  - 'Liquid'
-  - 'Markdown'
-  - 'SEO'
+	- 'AI'
+	- 'Eleventy'
+	- 'Liquid'
+	- 'Markdown'
+	- 'SEO'
 canonical_url: '/2026/03/11/serving-markdown-to-llms-with-11ty/'
 ---
 
@@ -130,16 +130,16 @@ It said they’re “fine” in the sense that everything will still work, and m
 import he from 'he'
 
 export default function (config) {
-  // …
+	// …
 
-  config.addFilter(
-    'strip_html_entities',
-    function strip_html_entities(content) {
-      return he
-        .decode(content)
-        .replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
-    },
-  )
+	config.addFilter(
+		'strip_html_entities',
+		function strip_html_entities(content) {
+			return he
+				.decode(content)
+				.replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
+		},
+	)
 }
 ```
 
@@ -151,8 +151,8 @@ My Eleventy configuration defines the whole repository as an input directory. It
 
 ```json
 {
-  "layout": "post",
-  "permalink": "/{​{ page.date | date: '%Y/%m/%d' }}/{​{ page.fileSlug }}/"
+	"layout": "post",
+	"permalink": "/{​{ page.date | date: '%Y/%m/%d' }}/{​{ page.fileSlug }}/"
 }
 ```
 
@@ -192,17 +192,17 @@ To disable it while in development, we can tell Eleventy to ignore our new page 
 ```js
 // .eleventy.js
 export default function (config) {
-  // …
+	// …
 
-  if (process.env.NODE_ENV !== 'production') {
-    config.ignores.add('_pages/blog/index-markdown.liquid')
-  }
+	if (process.env.NODE_ENV !== 'production') {
+		config.ignores.add('_pages/blog/index-markdown.liquid')
+	}
 
-  return {
-    dir: {
-      /* … */
-    },
-  }
+	return {
+		dir: {
+			/* … */
+		},
+	}
 }
 ```
 
@@ -218,9 +218,9 @@ In our HTML post layout, we can render the following `<link>` element in the `<h
 
 ```html
 <link
-  rel="alternate"
-  type="text/markdown"
-  href="{​{ page.url | url }}index.md"
+	rel="alternate"
+	type="text/markdown"
+	href="{​{ page.url | url }}index.md"
 />
 ```
 
@@ -229,9 +229,9 @@ We can do the same thing in the `sitemap.xml` page:
 ```xml
 <link href="{{ post.url | prepend: site.url }}" />
 <link
-  rel="alternate"
-  type="text/markdown"
-  href="{{ post.url | prepend: site.url }}index.md" />
+	rel="alternate"
+	type="text/markdown"
+	href="{{ post.url | prepend: site.url }}index.md" />
 ```
 
 This basically says “there is an alternate Markdown representation of this HTML page at this URL”. The canonical page is still the HTML one (we also export it as `canonical_url` in the Markdown front matter).
@@ -246,8 +246,8 @@ A minimal rule to discourage search engines from indexing Markdown variants is:
 
 ```text
 /*.md
-  X-Robots-Tag: noindex
-  Content-Type: text/markdown; charset=utf-8
+	X-Robots-Tag: noindex
+	Content-Type: text/markdown; charset=utf-8
 ```
 
 This tells crawlers that respect [`X-Robots-Tag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Robots-Tag) to treat `*.md` URLs as usable but not indexable — which is what we want for LLMs / tools.

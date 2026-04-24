@@ -62,16 +62,16 @@ $list-comma: 'item-1', 'item-2', 'item-3';
 ```scss
 /* Nested lists with braces and same separator */
 $list: (
-  ('item-1.1', 'item-1.2', 'item-1.3'),
-  ('item-2.1', 'item-2.2', 'item-2.3'),
-  ('item-3.1', 'item-3.2', 'item-3.3')
+	('item-1.1', 'item-1.2', 'item-1.3'),
+	('item-2.1', 'item-2.2', 'item-2.3'),
+	('item-3.1', 'item-3.2', 'item-3.3')
 );
 
 /* Nested lists without braces using different separators to distinguish levels */
 $list:
-  'item-1.1' 'item-1.2' 'item-1.3',
-  'item-2.1' 'item-2.2' 'item-2.3',
-  'item-3.1' 'item-3.2' 'item-3.3';
+	'item-1.1' 'item-1.2' 'item-1.3',
+	'item-2.1' 'item-2.2' 'item-2.3',
+	'item-3.1' 'item-3.2' 'item-3.3';
 ```
 
 **You can ommit parentheses** (as you can guess from the previous example). You can define a non-empty list without any parentheses if you feel so. This is because -contrarily to what most people think- [parentheses are not what create lists](https://github.com/nex3/sass/issues/837#issuecomment-20429965) in Sass (except when empty); it is the delimiter (see below). Braces are a just a grouping mecanism.
@@ -137,11 +137,11 @@ $pages: ('home', 'about', 'products', 'contact');
 $selector: ();
 
 @each $item in $pages {
-  /* We create `$selector` */
+	/* We create `$selector` */
 }
 
 #{$selector} {
-  style: awesome;
+	style: awesome;
 }
 ```
 
@@ -151,12 +151,12 @@ This is the method I was still using a couple of weeks ago. It works but it invo
 
 ```scss
 @each $item in $pages {
-  $selector: $selector unquote('.#{$item} .nav-#{$item}');
+	$selector: $selector unquote('.#{$item} .nav-#{$item}');
 
-  // Add comma if not dealing with the last item of list
-  @if $item != nth($pages, length($pages)) {
-    $selector: $selector unquote(',');
-  }
+	// Add comma if not dealing with the last item of list
+	@if $item != nth($pages, length($pages)) {
+		$selector: $selector unquote(',');
+	}
 }
 ```
 
@@ -170,7 +170,7 @@ This one is the cleanest way you can use between the three; not the shortest tho
 
 ```scss
 @each $item in $pages {
-  $selector: append($selector, unquote('.#{$item} .nav-#{$item}'), 'comma');
+	$selector: append($selector, unquote('.#{$item} .nav-#{$item}'), 'comma');
 }
 ```
 
@@ -182,7 +182,7 @@ I think this is pretty straightforward: we append to `$selector` the new selecto
 
 ```scss
 @each $item in $pages {
-  $selector: $selector, unquote('.#{$item} .nav-#{$item}');
+	$selector: $selector, unquote('.#{$item} .nav-#{$item}');
 }
 ```
 

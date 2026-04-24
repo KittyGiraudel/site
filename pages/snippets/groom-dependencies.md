@@ -17,10 +17,10 @@ Add this function to `.zshrc` or `.bashrc`:
 
 ```bash
 function groom_dependencies {
-  key=${1:-dependencies}
-  for dep in $(cat package.json | jq -cr ".$key|keys|.[]");
-  do [[ -z "$(grep -r  --exclude-dir=node_modules "'${dep}" .)" ]] && echo "$dep appears unused";
-  done
+	key=${1:-dependencies}
+	for dep in $(cat package.json | jq -cr ".$key|keys|.[]");
+	do [[ -z "$(grep -r --exclude-dir=node_modules "'${dep}" .)" ]] && echo "$dep appears unused";
+	done
 }
 ```
 

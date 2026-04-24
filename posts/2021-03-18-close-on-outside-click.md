@@ -17,21 +17,21 @@ Consider the following [disclosure widget pattern](https://www.w3.org/TR/wai-ari
 
 ```html
 <nav role="navigation">
-  <button
-    type="button"
-    id="nav-toggle"
-    aria-expanded="false"
-    aria-controls="nav-content"
-  >
-    Navigation
-  </button>
-  <div id="nav-content" aria-hidden="true" aria-labelledby="nav-toggle">
-    <ul>
-      <li><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li><a href="#">Link 3</a></li>
-    </ul>
-  </div>
+	<button
+		type="button"
+		id="nav-toggle"
+		aria-expanded="false"
+		aria-controls="nav-content"
+	>
+		Navigation
+	</button>
+	<div id="nav-content" aria-hidden="true" aria-labelledby="nav-toggle">
+		<ul>
+			<li><a href="#">Link 1</a></li>
+			<li><a href="#">Link 2</a></li>
+			<li><a href="#">Link 3</a></li>
+		</ul>
+	</div>
 </nav>
 
 Some <a href="#">other link</a> or whatever.
@@ -48,18 +48,18 @@ const toggle = document.getElementById('nav-toggle')
 const content = document.getElementById('nav-content')
 
 const show = () => {
-  toggle.setAttribute('aria-expanded', true)
-  content.setAttribute('aria-hidden', false)
+	toggle.setAttribute('aria-expanded', true)
+	content.setAttribute('aria-hidden', false)
 }
 
 const hide = () => {
-  toggle.setAttribute('aria-expanded', false)
-  content.setAttribute('aria-hidden', true)
+	toggle.setAttribute('aria-expanded', false)
+	content.setAttribute('aria-hidden', true)
 }
 
 toggle.addEventListener('click', event => {
-  event.stopPropagation()
-  JSON.parse(toggle.getAttribute('aria-expanded')) ? hide() : show()
+	event.stopPropagation()
+	JSON.parse(toggle.getAttribute('aria-expanded')) ? hide() : show()
 })
 
 const handleClosure = event => !content.contains(event.target) && hide()
@@ -80,57 +80,57 @@ Our implementation is actually in React, so I might as well share it. We use [re
 
 ```jsx
 const useAutoClose = ({ setIsOpen, menu }) => {
-  const handleClosure = React.useCallback(
-    event => !menu.current.contains(event.target) && setIsOpen(false),
-    [setIsOpen, menu],
-  )
+	const handleClosure = React.useCallback(
+		event => !menu.current.contains(event.target) && setIsOpen(false),
+		[setIsOpen, menu],
+	)
 
-  React.useEffect(() => {
-    window.addEventListener('click', handleClosure)
-    window.addEventListener('focusin', handleClosure)
+	React.useEffect(() => {
+		window.addEventListener('click', handleClosure)
+		window.addEventListener('focusin', handleClosure)
 
-    return () => {
-      window.removeEventListener('click', handleClosure)
-      window.removeEventListener('focusin', handleClosure)
-    }
-  }, [handleClosure, menu])
+		return () => {
+			window.removeEventListener('click', handleClosure)
+			window.removeEventListener('focusin', handleClosure)
+		}
+	}, [handleClosure, menu])
 }
 
 const Menu = props => {
-  const menu = React.useRef()
-  const [isOpen, setIsOpen] = React.useState(false)
+	const menu = React.useRef()
+	const [isOpen, setIsOpen] = React.useState(false)
 
-  useAutoClose({ setIsOpen, menu })
+	useAutoClose({ setIsOpen, menu })
 
-  return (
-    <nav role='navigation'>
-      <button
-        type='button'
-        id='nav-toggle'
-        aria-expanded={isOpen}
-        aria-controls='nav-content'
-        onClick={event => {
-          event.stopPropagation()
-          setIsOpen(isOpen => !isOpen)
-        }}
-      >
-        Navigation
-      </button>
-      <div id='nav-content' aria-hidden={!isOpen} aria-labelledby='nav-toggle'>
-        <ul>
-          <li>
-            <a href='#'>Link 1</a>
-          </li>
-          <li>
-            <a href='#'>Link 2</a>
-          </li>
-          <li>
-            <a href='#'>Link 3</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  )
+	return (
+		<nav role='navigation'>
+			<button
+				type='button'
+				id='nav-toggle'
+				aria-expanded={isOpen}
+				aria-controls='nav-content'
+				onClick={event => {
+					event.stopPropagation()
+					setIsOpen(isOpen => !isOpen)
+				}}
+			>
+				Navigation
+			</button>
+			<div id='nav-content' aria-hidden={!isOpen} aria-labelledby='nav-toggle'>
+				<ul>
+					<li>
+						<a href='#'>Link 1</a>
+					</li>
+					<li>
+						<a href='#'>Link 2</a>
+					</li>
+					<li>
+						<a href='#'>Link 3</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	)
 }
 ```
 

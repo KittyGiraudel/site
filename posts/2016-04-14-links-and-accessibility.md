@@ -17,7 +17,7 @@ Here is how we would instinctively write it:
 
 ```html
 <p class="sort-by">
-  Sort by: <a href="…">date</a> | <a href="…">availability</a>.
+	Sort by: <a href="…">date</a> | <a href="…">availability</a>.
 </p>
 ```
 
@@ -36,7 +36,7 @@ I would also argue that the pipes (`|`) should not live in the markup as they ar
 
 ```css
 .sort-by a ~ a::before {
-  content: ' | ';
+	content: ' | ';
 }
 ```
 
@@ -50,10 +50,10 @@ My first bet was to add some visually hidden content inside the links to make th
 
 ```html
 <p class="sort-by">
-  Sort by:
-  <a href="…"> <span class="visually-hidden">Sort by </span>date </a>
-  <a href="…"> <span class="visually-hidden">Sort by </span>availability </a>
-  .
+	Sort by:
+	<a href="…"> <span class="visually-hidden">Sort by </span>date </a>
+	<a href="…"> <span class="visually-hidden">Sort by </span>availability </a>
+	.
 </p>
 ```
 
@@ -71,16 +71,16 @@ Thankfully, there is an easy solution: `aria-hidden="true"`.
 
 ```html
 <p class="sort-by">
-  <span aria-hidden="true">Sort by:</span>
-  <a href="…">
-    <span class="visually-hidden">Sort by </span>
-    date
-  </a>
-  <a href="…">
-    <span class="visually-hidden">Sort by </span>
-    availability
-  </a>
-  .
+	<span aria-hidden="true">Sort by:</span>
+	<a href="…">
+		<span class="visually-hidden">Sort by </span>
+		date
+	</a>
+	<a href="…">
+		<span class="visually-hidden">Sort by </span>
+		availability
+	</a>
+	.
 </p>
 ```
 
@@ -103,16 +103,16 @@ So where does that leave us? I’m honestly not super sure. Off the top of my he
 
 ```html
 <p class="sort-by">
-  <span>Sort by:</span>
-  <a href="…">
-    date
-    <span class="visually-hidden">(filter)</span>
-  </a>
-  <a href="…">
-    availability
-    <span class="visually-hidden">(filter)</span>
-  </a>
-  .
+	<span>Sort by:</span>
+	<a href="…">
+		date
+		<span class="visually-hidden">(filter)</span>
+	</a>
+	<a href="…">
+		availability
+		<span class="visually-hidden">(filter)</span>
+	</a>
+	.
 </p>
 ```
 
@@ -120,8 +120,8 @@ Or maybe even more explicitly (but that differs from the original design):
 
 ```html
 <p class="sort-by">
-  <a href="…">Sort by date</a>
-  <a href="…">Sort by availability</a>
+	<a href="…">Sort by date</a>
+	<a href="…">Sort by availability</a>
 </p>
 ```
 

@@ -61,33 +61,33 @@ So, summarized, we end up with two different ways to display CSS colors with the
 
 ```css
 .black {
-  /* I’m black! */
-  color: rgb(0 0 0);
-  color: rgb(0% 0% 0%);
+	/* I’m black! */
+	color: rgb(0 0 0);
+	color: rgb(0% 0% 0%);
 }
 
 .white {
-  /* I’m white! */
-  color: rgb(255 255 255);
-  color: rgb(100% 100% 100%);
+	/* I’m white! */
+	color: rgb(255 255 255);
+	color: rgb(100% 100% 100%);
 }
 
 .purple {
-  /* I’m medium purple! */
-  color: rgb(128 0 128);
-  color: rgb(50% 0% 50%);
+	/* I’m medium purple! */
+	color: rgb(128 0 128);
+	color: rgb(50% 0% 50%);
 }
 
 .light-purple {
-  /* I’m fuchsia! */
-  color: rgb(255 0 255);
-  color: rgb(100% 0% 100%);
+	/* I’m fuchsia! */
+	color: rgb(255 0 255);
+	color: rgb(100% 0% 100%);
 }
 
 .dark-purple {
-  /* I’m deep purple! */
-  color: rgb(64 0 64);
-  color: rgb(25% 0% 25%);
+	/* I’m deep purple! */
+	color: rgb(64 0 64);
+	color: rgb(25% 0% 25%);
 }
 ```
 
@@ -103,18 +103,18 @@ To use this channel in CSS, you’ll pass the alpha-channel as a float {% footno
 
 ```css
 .black {
-  /* I’m half transparent black! */
-  color: rgb(0 0 0 / 0.5);
+	/* I’m half transparent black! */
+	color: rgb(0 0 0 / 0.5);
 }
 
 .white {
-  /* I’m 2/3 transparent white! */
-  color: rgb(255 255 255 / 0.33);
+	/* I’m 2/3 transparent white! */
+	color: rgb(255 255 255 / 0.33);
 }
 
 .red {
-  /* I’m fully transparent red, so kind of invisible */
-  color: rgb(255 0 0 / 0);
+	/* I’m fully transparent red, so kind of invisible */
+	color: rgb(255 0 0 / 0);
 }
 ```
 
@@ -122,12 +122,12 @@ This can be very useful in various situation. Let’s say you have some kind of 
 
 ```css
 .parent {
-  background-image: url(‘my-picture.jpg’);
+	background-image: url(‘my-picture.jpg’);
 }
 
 .child {
-  background: rgb(255 255 255 / 0.75);
-  color: rgb(51 51 51);
+	background: rgb(255 255 255 / 0.75);
+	color: rgb(51 51 51);
 }
 ```
 
@@ -214,8 +214,8 @@ The currentColor is a CSS3 value allowing you to take the color as a default val
 
 ```css
 .my-element {
-  color: red;
-  border-color: 5px solid currentColor;
+	color: red;
+	border-color: 5px solid currentColor;
 }
 ```
 
@@ -231,10 +231,10 @@ It means you can do one of those and be perfectly valid:
 
 ```css
 .my-element {
-  color: red;
-  border-color: 5px solid; /* This will be red */
-  box-shadow: 10px 10px 5px; /* This will be red */
-  text-shadow: 0 2px 1px; /* This will be red */
+	color: red;
+	border-color: 5px solid; /* This will be red */
+	box-shadow: 10px 10px 5px; /* This will be red */
+	text-shadow: 0 2px 1px; /* This will be red */
 }
 ```
 
@@ -272,18 +272,18 @@ To describe a color using the HSL representation, you have to define parameters 
 
 ```css
 .white {
-  /* I’m white! */
-  color: hsl(0 0% 100%);
+	/* I’m white! */
+	color: hsl(0 0% 100%);
 }
 
 .black {
-  /* I’m black! */
-  color: hsl(0 0% 0%);
+	/* I’m black! */
+	color: hsl(0 0% 0%);
 }
 
 .red {
-  /* I’m red! */
-  color: hsl(0 100% 50%);
+	/* I’m red! */
+	color: hsl(0 100% 50%);
 }
 ```
 
@@ -295,12 +295,12 @@ As for RGBa, you can set a value for the alpha-channel on a HSL color. It works 
 
 ```css
 .parent {
-  background-image: url(‘my-picture.jpg’);
+	background-image: url(‘my-picture.jpg’);
 }
 
 .child {
-  background: hsl(0 0% 100% / 0.75);
-  color: hsl(0 0% 30%);
+	background: hsl(0 0% 100% / 0.75);
+	color: hsl(0 0% 30%);
 }
 ```
 
@@ -321,31 +321,31 @@ Honestly, this is really up to you. In the end, a RGB triplet is generated, pars
 ```css
 /* This will be red, whatever you pick */
 .red {
-  color: red;
+	color: red;
 }
 .red {
-  color: #f00;
+	color: #f00;
 }
 .red {
-  color: #ff0000;
+	color: #ff0000;
 }
 .red {
-  color: rgb(255 0 0);
+	color: rgb(255 0 0);
 }
 .red {
-  color: rgb(100% 0% 0%);
+	color: rgb(100% 0% 0%);
 }
 .red {
-  color: rgb(255 0 0 / 1);
+	color: rgb(255 0 0 / 1);
 }
 .red {
-  color: rgb(100% 0% 0% / 1);
+	color: rgb(100% 0% 0% / 1);
 }
 .red {
-  color: hsl(0 100% 50%);
+	color: hsl(0 100% 50%);
 }
 .red {
-  color: hsl(0 100% 50% / 1);
+	color: hsl(0 100% 50% / 1);
 }
 ```
 

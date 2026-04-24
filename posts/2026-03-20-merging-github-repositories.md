@@ -88,70 +88,70 @@ echo "Migrating releases from $OLD_REPO to $NEW_REPO with tag prefix '$PKG_PREFI
 
 # Fetch releases from the old repo
 gh api "repos/$OLD_REPO/releases" | jq -r '.[].tag_name' | while read -r tag; do
-  if [[ -z "$tag" ]]; then
-    continue
-  fi
+	if [[ -z "$tag" ]]; then
+		continue
+	fi
 
-  # Compute new tag name, namespaced by package to avoid collisions
-  # 0.1.0 on eleventy-plugin-footnotes becomes eleventy-plugin-footnotes-0.1.0
-  # 0.1.0 on react-a11y-footnotes becomes react-a11y-footnotes-0.1.0
-  new_tag="${PKG_PREFIX}-${tag}"
+	# Compute new tag name, namespaced by package to avoid collisions
+	# 0.1.0 on eleventy-plugin-footnotes becomes eleventy-plugin-footnotes-0.1.0
+	# 0.1.0 on react-a11y-footnotes becomes react-a11y-footnotes-0.1.0
+	new_tag="${PKG_PREFIX}-${tag}"
 
-  echo "Processing old tag '$tag' -> new tag '$new_tag'"
+	echo "Processing old tag '$tag' -> new tag '$new_tag'"
 
-  # Check if release with this new tag already exists in the new repo
-  # This makes sure we can run the script multiple times without it creating
-  # too many releases or failing: if the tag exists, it skips that release
-  if gh api "repos/$NEW_REPO/releases/tags/$new_tag" >/dev/null 2>&1; then
-    echo "Release with tag '$new_tag' already exists in $NEW_REPO, skipping."
-    continue
-  fi
+	# Check if release with this new tag already exists in the new repo
+	# This makes sure we can run the script multiple times without it creating
+	# too many releases or failing: if the tag exists, it skips that release
+	if gh api "repos/$NEW_REPO/releases/tags/$new_tag" >/dev/null 2>&1; then
+		echo "Release with tag '$new_tag' already exists in $NEW_REPO, skipping."
+		continue
+	fi
 
-  # Get release details from old repo
-  release_data=$(gh api "repos/$OLD_REPO/releases/tags/$tag")
+	# Get release details from old repo
+	release_data=$(gh api "repos/$OLD_REPO/releases/tags/$tag")
 
-  # Extract title, body, assets, and URL
-  title=$(echo "$release_data" | jq -r '.name // ""')
-  body=$(echo "$release_data" | jq -r '.body // ""')
-  assets=$(echo "$release_data" | jq -r '.assets[].browser_download_url?')
-  original_url=$(echo "$release_data" | jq -r '.html_url // ""')
+	# Extract title, body, assets, and URL
+	title=$(echo "$release_data" | jq -r '.name // ""')
+	body=$(echo "$release_data" | jq -r '.body // ""')
+	assets=$(echo "$release_data" | jq -r '.assets[].browser_download_url?')
+	original_url=$(echo "$release_data" | jq -r '.html_url // ""')
 
-  # Resolve the original commit-ish
-  original_commit=$(gh api "repos/$OLD_REPO/git/ref/tags/$tag" 2>/dev/null | jq -r '.object.sha // empty')
+	# Resolve the original commit-ish
+	original_commit=$(gh api "repos/$OLD_REPO/git/ref/tags/$tag" 2>/dev/null | jq -r '.object.sha // empty')
 
-  # Prepend the package name to the release title for clarity
-  # 0.1.0 from eleventy-plugin-footnotes becomes eleventy-plugin-footnotes@0.1.0
-  # 0.1.0 from react-a11y-footnotes becomes react-a11y-footnotes@0.1.0
-  title="$PKG_PREFIX@$title"
+	# Prepend the package name to the release title for clarity
+	# 0.1.0 from eleventy-plugin-footnotes becomes eleventy-plugin-footnotes@0.1.0
+	# 0.1.0 from react-a11y-footnotes becomes react-a11y-footnotes@0.1.0
+	title="$PKG_PREFIX@$title"
 
-  # Prepend a note about the original release for traceability.
-  body=$'_(Migrated from [$OLD_REPO@$tag]($original_url) at commit $original_commit)_\n\n$body'
+	# Prepend a note about the original release for traceability.
+	body=$'_(Migrated from [$OLD_REPO@$tag]($original_url) at commit $original_commit)_\n\n$body'
 
-  # Create the release in the new repo
-  echo "Creating release '$title' with tag '$new_tag' (target: $original_commit)"
-  gh api \
-  --method POST \
-    -H "Accept: application/vnd.github+json" \
-    -H "X-GitHub-Api-Version: 2026-03-10" \
-    "repos/$NEW_REPO/releases" \
-    -F "tag_name=$new_tag" \
-    -F "name=$title" \
-    -F "body=$body" \
-    -F "target_commitish=$original_commit"
+	# Create the release in the new repo
+	echo "Creating release '$title' with tag '$new_tag' (target: $original_commit)"
+	gh api \
+	--method POST \
+		-H "Accept: application/vnd.github+json" \
+		-H "X-GitHub-Api-Version: 2026-03-10" \
+		"repos/$NEW_REPO/releases" \
+		-F "tag_name=$new_tag" \
+		-F "name=$title" \
+		-F "body=$body" \
+		-F "target_commitish=$original_commit"
 
-  # Download and re-upload assets (if any)
-  if [[ -n "$assets" ]]; then
-    for asset_url in $assets; do
-      [[ -z "$asset_url" || "$asset_url" == "null" ]] && continue
+	# Download and re-upload assets (if any)
+	if [[ -n "$assets" ]]; then
+		for asset_url in $assets; do
+			[[ -z "$asset_url" || "$asset_url" == "null" ]] && continue
 
-      filename=$(basename "$asset_url")
-      echo "  Migrating asset '$filename' from $asset_url"
+			filename=$(basename "$asset_url")
+			echo "	Migrating asset '$filename' from $asset_url"
 
-      curl -L -o "$filename" "$asset_url"
-      gh release upload "$new_tag" "$filename" --repo "$NEW_REPO"
-      rm "$filename"
-    done
-  fi
+			curl -L -o "$filename" "$asset_url"
+			gh release upload "$new_tag" "$filename" --repo "$NEW_REPO"
+			rm "$filename"
+		done
+	fi
 done
 ```
 

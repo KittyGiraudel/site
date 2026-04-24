@@ -22,9 +22,9 @@ First, we parse the input file into an object where keys are the name of our var
 
 ```js
 {
-  "root": "pppw + sjmn",
-  "dbpl": 5,
-  …
+	"root": "pppw + sjmn",
+	"dbpl": 5,
+	…
 }
 ```
 
@@ -32,11 +32,11 @@ This first step can be done in plenty different ways, but I’m used to `Array.p
 
 ```js
 const parseInput = input =>
-  input.reduce((acc, line) => {
-    const [name, value] = line.split(': ')
-    acc[name] = +value || value
-    return acc
-  }, {})
+	input.reduce((acc, line) => {
+		const [name, value] = line.split(': ')
+		acc[name] = +value || value
+		return acc
+	}, {})
 ```
 
 Once we have our map, the logic goes like this:
@@ -51,35 +51,35 @@ The code goes like this:
 
 ```js
 const getRootNumber = input => {
-  const map = parseInput(input)
+	const map = parseInput(input)
 
-  while (typeof map.root !== 'number') reduceNext(map)
+	while (typeof map.root !== 'number') reduceNext(map)
 
-  return map.root
+	return map.root
 }
 
 const getNextNumber = map =>
-  Object.entries(map).find(([, value]) => typeof value === 'number')
+	Object.entries(map).find(([, value]) => typeof value === 'number')
 
 const reduceNext = map => {
-  const [nextKey, nextValue] = getNextNumber(map)
+	const [nextKey, nextValue] = getNextNumber(map)
 
-  for (let key in map) {
-    const value = map[key]
+	for (let key in map) {
+		const value = map[key]
 
-    if (typeof value === 'string' && value.includes(nextKey)) {
-      map[key] = value.replace(nextKey, nextValue)
-      // This is not the most elegant, but it does the job. If the
-      // expression contains only numbers (e.g. `2 + 3`), it will
-      // resolve it (e.g. `5`), otherwise (e.g. `2 + eklr`), it will
-      // fail and do nothing.
-      try {
-        map[key] = eval(map[key])
-      } catch {}
-    }
-  }
+		if (typeof value === 'string' && value.includes(nextKey)) {
+			map[key] = value.replace(nextKey, nextValue)
+			// This is not the most elegant, but it does the job. If the
+			// expression contains only numbers (e.g. `2 + 3`), it will
+			// resolve it (e.g. `5`), otherwise (e.g. `2 + eklr`), it will
+			// fail and do nothing.
+			try {
+				map[key] = eval(map[key])
+			} catch {}
+		}
+	}
 
-  delete map[nextKey]
+	delete map[nextKey]
 }
 ```
 
@@ -91,33 +91,33 @@ Initially, I wasn’t too bothered by it. I thought I could reuse the code I wro
 
 ```js
 const getHumnNumberByBruteForce = input => {
-  let map = parseInput(input)
+	let map = parseInput(input)
 
-  // We remove the `humn` key since it’s the actual key we are trying
-  // to figure out the value from.
-  delete map.humn
+	// We remove the `humn` key since it’s the actual key we are trying
+	// to figure out the value from.
+	delete map.humn
 
-  // While the exercise says to replace the `+` with an equality check
-  // (`==`) in the `root` value, we can instead replace it with a `-`
-  // sign so it returns `0` when we find the right value (e.g.
-  // `23622695042414 - 23622695042414`). This enables us to reuse the
-  // code from part 1 (which checks whether the `root` value is
-  // finally a number).
-  map.root = map.root.replace('+', '-')
+	// While the exercise says to replace the `+` with an equality check
+	// (`==`) in the `root` value, we can instead replace it with a `-`
+	// sign so it returns `0` when we find the right value (e.g.
+	// `23622695042414 - 23622695042414`). This enables us to reuse the
+	// code from part 1 (which checks whether the `root` value is
+	// finally a number).
+	map.root = map.root.replace('+', '-')
 
-  // To speed things up, we first reduce the map as much as we can.
-  // Basically we deal with all keys which are mapped to numbers right
-  // away, so that we only focus on the dynamic expressions in the
-  // next loop.
-  while (getNextNumber(map)) reduceNext(map)
+	// To speed things up, we first reduce the map as much as we can.
+	// Basically we deal with all keys which are mapped to numbers right
+	// away, so that we only focus on the dynamic expressions in the
+	// next loop.
+	while (getNextNumber(map)) reduceNext(map)
 
-  // We start our `humn` value at 0, run the code from part 1, and if
-  // it returns anything else but 0, we increment `humn` and repeat
-  // until we found the value that works.
-  let humn = 0
-  while (getRootNumber({ ...map, humn }) !== 0) humn++
+	// We start our `humn` value at 0, run the code from part 1, and if
+	// it returns anything else but 0, we increment `humn` and repeat
+	// until we found the value that works.
+	let humn = 0
+	while (getRootNumber({ ...map, humn }) !== 0) humn++
 
-  return humn
+	return humn
 }
 ```
 
@@ -167,50 +167,50 @@ Then, we keep iterating until we have found the `humn` key, updating our value a
 
 ```js
 const getHumnNumber = input => {
-  const map = parseInput(input)
-  delete map.humn
+	const map = parseInput(input)
+	delete map.humn
 
-  while (getNextNumber(map)) reduceNext(map)
+	while (getNextNumber(map)) reduceNext(map)
 
-  let value = +map.root.match(/(\d+)/)[1]
-  let curr = map.root.match(/([a-z]+)/)[1]
+	let value = +map.root.match(/(\d+)/)[1]
+	let curr = map.root.match(/([a-z]+)/)[1]
 
-  // We walk down the operation chain until we reach the `humn` key.
-  // The idea is that we reverse the current operation to find the
-  // previous number. For instance if we have `a = b / 4`, we can find
-  // `b` (the next one), by multiplying the current value by 4
-  // (`b = a * 4`).
-  while (curr !== 'humn') {
-    const [a, operator, b] = map[curr].split(' ')
+	// We walk down the operation chain until we reach the `humn` key.
+	// The idea is that we reverse the current operation to find the
+	// previous number. For instance if we have `a = b / 4`, we can find
+	// `b` (the next one), by multiplying the current value by 4
+	// (`b = a * 4`).
+	while (curr !== 'humn') {
+		const [a, operator, b] = map[curr].split(' ')
 
-    // Expressions are always made of 1 number and 1 variable, but the
-    // order is not guaranted. So we need to check both to figure out
-    // which is which.
-    const next = isNaN(Number(a)) ? a : b
-    const number = !isNaN(Number(b)) ? Number(b) : Number(a)
+		// Expressions are always made of 1 number and 1 variable, but the
+		// order is not guaranted. So we need to check both to figure out
+		// which is which.
+		const next = isNaN(Number(a)) ? a : b
+		const number = !isNaN(Number(b)) ? Number(b) : Number(a)
 
-    if (operator === '*') value /= number
-    if (operator === '+') value -= number
+		if (operator === '*') value /= number
+		if (operator === '+') value -= number
 
-    // Small edge cases to deal with: if the expression is in the form
-    // of `a = x - b` or `a = x / b` where x is the number, the
-    // operation should actually *not* be reversed but kept as is.
-    // E.g. 10 = 20 / b is the same as b = 20 / 10, not b = 10 / 20
-    // E.g. 10 = 20 - b is the same as b = 20 - 10, not b = 10 - 20
-    if (operator === '/') {
-      if (!isNaN(Number(a))) value = number / value
-      else value *= number
-    }
+		// Small edge cases to deal with: if the expression is in the form
+		// of `a = x - b` or `a = x / b` where x is the number, the
+		// operation should actually *not* be reversed but kept as is.
+		// E.g. 10 = 20 / b is the same as b = 20 / 10, not b = 10 / 20
+		// E.g. 10 = 20 - b is the same as b = 20 - 10, not b = 10 - 20
+		if (operator === '/') {
+			if (!isNaN(Number(a))) value = number / value
+			else value *= number
+		}
 
-    if (operator === '-') {
-      if (!isNaN(Number(a))) value = number - value
-      else value += number
-    }
+		if (operator === '-') {
+			if (!isNaN(Number(a))) value = number - value
+			else value += number
+		}
 
-    curr = next
-  }
+		curr = next
+	}
 
-  return value
+	return value
 }
 ```
 
@@ -224,10 +224,10 @@ The expression can be generated relatively conveniently from our map:
 
 ```js
 const getExpression = (map, key = 'root') => {
-  const value = (map[key] || key).split(' ')
-  return value.length === 1
-    ? value
-    : '(' + value.map(p => getExpression(map, p)).join(' ') + ')'
+	const value = (map[key] || key).split(' ')
+	return value.length === 1
+		? value
+		: '(' + value.map(p => getExpression(map, p)).join(' ') + ')'
 }
 ```
 

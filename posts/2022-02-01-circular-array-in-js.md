@@ -32,15 +32,15 @@ Our circular array is implemented as a linked list for convenience and performan
 
 ```js
 class Node {
-  constructor(value) {
-    this.value = value
-    this.next = this.prev = null
-  }
+	constructor(value) {
+		this.value = value
+		this.next = this.prev = null
+	}
 
-  remove() {
-    this.prev.next = this.next
-    this.next.prev = this.prev
-  }
+	remove() {
+		this.prev.next = this.next
+		this.next.prev = this.prev
+	}
 }
 ```
 
@@ -56,22 +56,22 @@ Our class will look like this (we’ll break every function down in further sect
 
 ```js
 class CircularArray {
-  size = 0
-  pointer = null
+	size = 0
+	pointer = null
 
-  constructor(values = []) {}
+	constructor(values = []) {}
 
-  get length() {}
+	get length() {}
 
-  push(value) {}
-  unshift(value) {}
+	push(value) {}
+	unshift(value) {}
 
-  pop() {}
-  shift() {}
+	pop() {}
+	shift() {}
 
-  rotate(offset) {}
+	rotate(offset) {}
 
-  toArray() {}
+	toArray() {}
 }
 ```
 
@@ -87,9 +87,9 @@ The first thing we need to do in our `push` method is wrap our given value with 
 
 ```js
 push (value) {
-  const node = new Node(value)
+	const node = new Node(value)
 
-  // … see below
+	// … see below
 }
 ```
 
@@ -103,7 +103,7 @@ If we don’t have a pointer yet (which happens when the list is empty), our nod
 
 ```js
 if (!this.pointer) {
-  node.next = node.prev = this.pointer = node
+	node.next = node.prev = this.pointer = node
 }
 ```
 
@@ -111,10 +111,10 @@ If we have a pointer though, we can deal with our main logic. We always want to 
 
 ```js
 else {
-  node.next = this.pointer // Mark as left of pointer
-  node.prev = this.pointer.prev // Mark as right of former last item
-  node.prev.next = node // Update former last item’s right
-  this.pointer.prev = node // Update pointer’s left
+	node.next = this.pointer // Mark as left of pointer
+	node.prev = this.pointer.prev // Mark as right of former last item
+	node.prev.next = node // Update former last item’s right
+	this.pointer.prev = node // Update pointer’s left
 }
 ```
 
@@ -123,20 +123,20 @@ else {
 
 ```js
 push(value) {
-  const node = new Node(value)
+	const node = new Node(value)
 
-  this.size++
+	this.size++
 
-  if (!this.pointer) {
-    node.next = node.prev = this.pointer = node
-  } else {
-    node.next = this.pointer
-    node.prev = this.pointer.prev
-    node.prev.next = node
-    this.pointer.prev = node
-  }
+	if (!this.pointer) {
+		node.next = node.prev = this.pointer = node
+	} else {
+		node.next = this.pointer
+		node.prev = this.pointer.prev
+		node.prev.next = node
+		this.pointer.prev = node
+	}
 
-  return this
+	return this
 }
 ```
 
@@ -148,8 +148,8 @@ If we want to insert items at the “start” of our array, we can do the same e
 
 ```js
 unshift(value) {
-  this.push(value)
-  this.pointer = this.pointer.prev
+	this.push(value)
+	this.pointer = this.pointer.prev
 }
 ```
 
@@ -171,9 +171,9 @@ Here is how our `pop` method would look like. First, we make sure there is an it
 
 ```js
 pop() {
-  if (!this.pointer) return undefined
+	if (!this.pointer) return undefined
 
-  // … see below
+	// … see below
 }
 ```
 
@@ -193,9 +193,9 @@ Then depending on whether we’re removing the only item or not, we do one of tw
 
 ```js
 if (this.size === 0) {
-  this.pointer = null
+	this.pointer = null
 } else {
-  this.pointer.prev.remove()
+	this.pointer.prev.remove()
 }
 ```
 
@@ -210,19 +210,19 @@ return value
 
 ```js
 pop() {
-  if (!this.pointer) return undefined
+	if (!this.pointer) return undefined
 
-  const value = this.pointer.prev.value
+	const value = this.pointer.prev.value
 
-  this.size--
+	this.size--
 
-  if (this.size === 0) {
-    this.pointer = null
-  } else {
-    this.pointer.prev.remove()
-  }
+	if (this.size === 0) {
+		this.pointer = null
+	} else {
+		this.pointer.prev.remove()
+	}
 
-  return value
+	return value
 }
 ```
 
@@ -249,12 +249,12 @@ To avoid doing more rotations than we need to, we initially modulo the offset by
 
 ```js
 rotate(offset) {
-  offset %= this.size
+	offset %= this.size
 
-  if (offset > 0) while (offset--) this.pointer = this.pointer.prev
-  else while (offset++) this.pointer = this.pointer.next
+	if (offset > 0) while (offset--) this.pointer = this.pointer.prev
+	else while (offset++) this.pointer = this.pointer.next
 
-  return this
+	return this
 }
 ```
 
@@ -264,18 +264,18 @@ Our circular array wouldn’t be as useful if we didn’t have a way to output i
 
 ```js
 toArray(direction = 'next') {
-  const items = []
+	const items = []
 
-  if (!this.size) return items
+	if (!this.size) return items
 
-  let node = this.pointer
+	let node = this.pointer
 
-  do {
-    items.push(node.value)
-    node = node[direction]
-  } while (!Object.is(node, this.pointer))
+	do {
+		items.push(node.value)
+		node = node[direction]
+	} while (!Object.is(node, this.pointer))
 
-  return items
+	return items
 }
 ```
 

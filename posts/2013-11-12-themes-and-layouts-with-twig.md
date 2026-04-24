@@ -23,13 +23,13 @@ Twig is mostly about extending templates ([`@extend`](hhttps://twig.symfony.com/
 <!-- base.html.twig -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- whatever -->
-  </head>
-  <body>
-    {% block header %}{% endblock %} {% block main %}{% endblock %} {% block
-    footer %}{% endblock %}
-  </body>
+	<head>
+		<!-- whatever -->
+	</head>
+	<body>
+		{% block header %}{% endblock %} {% block main %}{% endblock %} {% block
+		footer %}{% endblock %}
+	</body>
 </html>
 ```
 
@@ -131,12 +131,12 @@ As seen previously, the base file creates the HTML root document, the major HTML
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- whatever -->
-  </head>
-  <body class="{% block theme %}default{% endblock %}">
-    {% block layout %}{% endblock %}
-  </body>
+	<head>
+		<!-- whatever -->
+	</head>
+	<body class="{% block theme %}default{% endblock %}">
+		{% block layout %}{% endblock %}
+	</body>
 </html>
 ```
 
@@ -158,8 +158,8 @@ Let’s say our page will use the shopping theme we just created with a 2-column
 
 ```html
 <div class="wrapper">
-  <div class="col-md-9  content">{% block content %}{% endblock %}</div>
-  <div class="col-md-3  sidebar">{% block sidebar %}{% endblock %}</div>
+	<div class="col-md-9  content">{% block content %}{% endblock %}</div>
+	<div class="col-md-3  sidebar">{% block sidebar %}{% endblock %}</div>
 </div>
 ```
 
@@ -181,13 +181,13 @@ endembed %} {% endblock %}
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- whatever -->
-  </head>
-  <body class="shopping">
-    <div class="col-md-9  content">My awesome content</div>
-    <div class="col-md-3  sidebar">My sidebar content</div>
-  </body>
+	<head>
+		<!-- whatever -->
+	</head>
+	<body class="shopping">
+		<div class="col-md-9  content">My awesome content</div>
+		<div class="col-md-3  sidebar">My sidebar content</div>
+	</body>
 </html>
 ```
 

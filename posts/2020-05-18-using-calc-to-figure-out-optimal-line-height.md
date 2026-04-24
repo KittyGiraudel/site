@@ -101,15 +101,15 @@ If you apply the formula on a parent element, and `font-size` is a changed on a 
 
 ```css
 .parent {
-  font-size: 20px;
-  line-height: calc(2px + 2ex + 2px);
-  /* computed: 2px + (2 * 20px) + 2px = 44px */
+	font-size: 20px;
+	line-height: calc(2px + 2ex + 2px);
+	/* computed: 2px + (2 * 20px) + 2px = 44px */
 }
 
 .parent .descendant {
-  font-size: 40px;
-  /* desired:  2px + (2 * 40px) + 2px = 84px */
-  /* computed: 2px + (2 * 20px) + 2px = 44px (same as .parent) */
+	font-size: 40px;
+	/* desired:  2px + (2 * 40px) + 2px = 84px */
+	/* computed: 2px + (2 * 20px) + 2px = 44px (same as .parent) */
 }
 ```
 
@@ -117,7 +117,7 @@ This can be solved by applying the formula to all descendants, with the universa
 
 ```scss
 .parent * {
-  line-height: calc(2px + 2ex + 2px);
+	line-height: calc(2px + 2ex + 2px);
 }
 ```
 

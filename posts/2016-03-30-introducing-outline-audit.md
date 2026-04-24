@@ -48,8 +48,8 @@ Or you could also have a bookmarklet for this:
 
 ```html
 <a
-  href="javascript:(function(e,n,t){n=e.body,t=e.createElement('script'),t.src='https://cdn.rawgit.com/edenspiekermann/outline-audit/master/index.js',t.async=!0,t.onload=function(){new Outline().warn()},n.appendChild(t)}(document));"
-  >Outline Audit</a
+	href="javascript:(function(e,n,t){n=e.body,t=e.createElement('script'),t.src='https://cdn.rawgit.com/edenspiekermann/outline-audit/master/index.js',t.async=!0,t.onload=function(){new Outline().warn()},n.appendChild(t)}(document));"
+	>Outline Audit</a
 >
 ```
 

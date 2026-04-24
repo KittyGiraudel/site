@@ -74,8 +74,8 @@ This is why it’s nice to have backed up the folder before. We can now copy ove
 # aoc-backup/migration.sh
 find . -name "input.txt" -print0 | while read -d $'\0' file
 do
-  echo "Restoring input file at $file"
-  cp $file "../aoc/$file"
+	echo "Restoring input file at $file"
+	cp $file "../aoc/$file"
 done
 ```
 

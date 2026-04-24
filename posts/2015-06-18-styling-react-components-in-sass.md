@@ -77,10 +77,10 @@ And finally, the `main.scss` file, which imports all partial stylesheets:
 
 ```scss
 .my-datepicker-component {
-  @import 'utils/all';
-  @import 'base/all';
-  @import 'components/all';
-  @import 'themes/all';
+	@import 'utils/all';
+	@import 'base/all';
+	@import 'components/all';
+	@import 'themes/all';
 }
 ```
 
@@ -100,26 +100,26 @@ Here’s an example rule set for the “date” component:
 
 ```scss
 .sd-date {
-  width: percentage(1/7);
-  float: left;
-  text-align: center;
-  padding: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 400;
-  border-radius: 0.25rem;
-  transition: background-color 0.25s ease-in-out;
+	width: percentage(1/7);
+	float: left;
+	text-align: center;
+	padding: 0.5rem;
+	font-size: 0.75rem;
+	font-weight: 400;
+	border-radius: 0.25rem;
+	transition: background-color 0.25s ease-in-out;
 
-  // Variants
-  &.past,
-  &.future {
-    opacity: 0.5;
-  }
+	// Variants
+	&.past,
+	&.future {
+		opacity: 0.5;
+	}
 
-  // States
-  &:hover {
-    cursor: pointer;
-    background-color: rgba(white, 0.3);
-  }
+	// States
+	&:hover {
+		cursor: pointer;
+		background-color: rgba(white, 0.3);
+	}
 }
 ```
 
@@ -136,25 +136,25 @@ import React from 'react'
 import classnames from 'classnames'
 
 export default class CalendarDate extends React.Component {
-  render() {
-    let date = this.props.date
+	render() {
+		let date = this.props.date
 
-    let classes = classnames('sd-date', {
-      current: date.month() === this.props.month,
-      future: date.month() > this.props.month,
-      past: date.month() < this.props.month,
-    })
+		let classes = classnames('sd-date', {
+			current: date.month() === this.props.month,
+			future: date.month() > this.props.month,
+			past: date.month() < this.props.month,
+		})
 
-    return (
-      <div
-        className={classes}
-        key={date}
-        onClick={this.props.updateDate.bind(this, date)}
-      >
-        {date.date()}
-      </div>
-    )
-  }
+		return (
+			<div
+				className={classes}
+				key={date}
+				onClick={this.props.updateDate.bind(this, date)}
+			>
+				{date.date()}
+			</div>
+		)
+	}
 }
 
 // Note: CalendarDate used instead of Date, since
@@ -235,16 +235,16 @@ This is just a fancy way of saying “not knowing when styles are being unintent
 ```scss
 // In components/_overlay.scss
 .my-overlay {
-  // … overlay styles
+	// … overlay styles
 
-  > .my-button {
-    // … overlay-specific button styles
-  }
+	> .my-button {
+		// … overlay-specific button styles
+	}
 }
 
 // In components/_button.scss
 .my-button {
-  // … button styles
+	// … button styles
 }
 ```
 
@@ -278,7 +278,7 @@ Conversely, you can customize similar 3rd-party components by just styling equal
 
 // in stylesheets/components/_sd-month.scss
 #my-app .sd-month {
-  // overriding styles
+	// overriding styles
 }
 ```
 

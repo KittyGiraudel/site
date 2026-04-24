@@ -65,12 +65,12 @@ Interestingly enough, there is no obvious way to check whether the machine has i
 
 ```js
 const hasInternetAccess = async () => {
-  try {
-    await promisify(require('dns').resolve)('www.google.com')
-    return true
-  } catch {
-    return false
-  }
+	try {
+		await promisify(require('dns').resolve)('www.google.com')
+		return true
+	} catch {
+		return false
+	}
 }
 ```
 
@@ -82,18 +82,18 @@ This one has to be put in context: in the case of my team, the VPN grants us acc
 
 ```js
 const ping = async url => {
-  try {
-    await axios.get(url, {
-      // This is necessary to circumvent a `UNABLE_TO_VERIFY_LEAF_SIGNATURE`
-      // Node.js error (at least in our case).
-      // See: https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
-      httpsAgent: new https.Agent({ rejectUnauthorized: false }),
-    })
+	try {
+		await axios.get(url, {
+			// This is necessary to circumvent a `UNABLE_TO_VERIFY_LEAF_SIGNATURE`
+			// Node.js error (at least in our case).
+			// See: https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
+			httpsAgent: new https.Agent({ rejectUnauthorized: false }),
+		})
 
-    return true
-  } catch {
-    return false
-  }
+		return true
+	} catch {
+		return false
+	}
 }
 
 const onVPN = await ping('https://our.internal.api.domain')
@@ -109,12 +109,12 @@ If we could read that file, we could get the information we need. It turns out t
 
 ```js
 const getMacOsVersion = async () => {
-  const path = '/System/Library/CoreServices/SystemVersion.plist'
-  const content = fs.readFileSync(path, 'utf8')
-  const { plist } = await xml2js.parseStringPromise(content)
+	const path = '/System/Library/CoreServices/SystemVersion.plist'
+	const content = fs.readFileSync(path, 'utf8')
+	const { plist } = await xml2js.parseStringPromise(content)
 
-  // Returns `Mac OS X` (at index 2) and `10.15.6` (at index 3)
-  return plist.dict[0].string.slice(2, 4).join(' ')
+	// Returns `Mac OS X` (at index 2) and `10.15.6` (at index 3)
+	return plist.dict[0].string.slice(2, 4).join(' ')
 }
 ```
 
@@ -156,8 +156,8 @@ From there, we can emit a gentle warning if the last install is over, say, a wee
 
 ```js
 if (moment().diff(lastInstall, 'days') >= 7) {
-  console.warn('The last node_modules install is over a week old.')
-  console.warn('Consider reinstalling dependencies: `npm ci`.')
+	console.warn('The last node_modules install is over a week old.')
+	console.warn('Consider reinstalling dependencies: `npm ci`.')
 }
 ```
 
@@ -167,13 +167,13 @@ There are probably more elegant checks we can do regarding Docker, but I wanted 
 
 ```js
 const isDockerRunning = () => {
-  try {
-    cp.execSync('docker version', { stdio: 'ignore' })
+	try {
+		cp.execSync('docker version', { stdio: 'ignore' })
 
-    return true
-  } catch {
-    return false
-  }
+		return true
+	} catch {
+		return false
+	}
 }
 ```
 
@@ -193,14 +193,14 @@ Getting the amount of commits between the current branch and the main branch (in
 ```js
 const mainBranch = 'develop'
 const difference = Number(
-  exec(`git log --oneline ${branch} ^${mainBranch} | wc -l`),
+	exec(`git log --oneline ${branch} ^${mainBranch} | wc -l`),
 )
 const threshold = 10
 
 if (difference > threshold) {
-  console.warn(
-    `The local branch (${branch}) is over ${threshold} commits apart (${difference}) from ${mainBranch}; consider rebasing.`,
-  )
+	console.warn(
+		`The local branch (${branch}) is over ${threshold} commits apart (${difference}) from ${mainBranch}; consider rebasing.`,
+	)
 }
 ```
 

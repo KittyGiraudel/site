@@ -33,19 +33,19 @@ For our example, let’s consider a basic need: a [micro-clearfix hack](https://
 
 ```scss
 @mixin clear($extend: true) {
-  @if $extend {
-    @extend %clear;
-  } @else {
-    &:after {
-      content: '';
-      display: table;
-      clear: both;
-    }
-  }
+	@if $extend {
+		@extend %clear;
+	} @else {
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
 }
 
 %clear {
-  @include clear($extend: false);
+	@include clear($extend: false);
 }
 ```
 
@@ -59,15 +59,15 @@ Here is a boilerplate to code your own:
 
 ```scss
 @mixin myMixin($extend: true) {
-  @if $extend {
-    @extend %myMixin;
-  } @else {
-    // Mixin core
-  }
+	@if $extend {
+		@extend %myMixin;
+	} @else {
+		// Mixin core
+	}
 }
 
 %myMixin {
-  @include myMixin($extend: false);
+	@include myMixin($extend: false);
 }
 ```
 
@@ -77,10 +77,10 @@ There it is. Now let’s try it:
 
 ```scss
 .a {
-  @include clear;
+	@include clear;
 }
 .b {
-  @include clear;
+	@include clear;
 }
 ```
 
@@ -89,9 +89,9 @@ This will result in the following CSS output:
 ```scss
 .a:after,
 .b:after {
-  content: '';
-  display: table;
-  clear: both;
+	content: '';
+	display: table;
+	clear: both;
 }
 ```
 
@@ -101,9 +101,9 @@ Now let’s imagine we need to have a clear fix at a certain breakpoint:
 
 ```scss
 @media (min-width: 48em) {
-  .c {
-    @include clear;
-  }
+	.c {
+		@include clear;
+	}
 }
 ```
 
@@ -119,9 +119,9 @@ This is exactly the issue we are trying to work around. Now, thanks to the way w
 
 ```scss
 @media (min-width: 48em) {
-  .c {
-    @include clear(false);
-  }
+	.c {
+		@include clear(false);
+	}
 }
 ```
 

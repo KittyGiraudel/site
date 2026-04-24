@@ -51,11 +51,11 @@ What I’ve found astonishing is the very little amount of required CSS to achie
 
 ```html
 <div class="wrapper">
-  <article class="main">My awesome content here</article>
-  <footer class="footer">Some information here</footer>
-  <header class="header">My site title goes here</header>
-  <aside class="sidebar">Here is my side content</aside>
-  <aside class="annexe">Some more side content</aside>
+	<article class="main">My awesome content here</article>
+	<footer class="footer">Some information here</footer>
+	<header class="header">My site title goes here</header>
+	<aside class="sidebar">Here is my side content</aside>
+	<aside class="annexe">Some more side content</aside>
 </div>
 ```
 
@@ -63,36 +63,36 @@ Now the CSS. Pay attention to the number of lines:
 
 ```css
 .wrapper {
-  display: grid;
-  grid-columns: 200px 15px 1fr 15px 100px;
-  grid-rows: (auto 15px) [2] auto;
+	display: grid;
+	grid-columns: 200px 15px 1fr 15px 100px;
+	grid-rows: (auto 15px) [2] auto;
 }
 
 .header,
 .footer {
-  grid-column-span: 5;
+	grid-column-span: 5;
 }
 
 .sidebar,
 .main,
 .annexe {
-  grid-row: 3;
+	grid-row: 3;
 }
 .header {
-  grid-row: 1;
+	grid-row: 1;
 }
 .footer {
-  grid-row: 5;
+	grid-row: 5;
 }
 
 .sidebar {
-  grid-column: 1;
+	grid-column: 1;
 }
 .main {
-  grid-column: 3;
+	grid-column: 3;
 }
 .annexe {
-  grid-column: 5;
+	grid-column: 5;
 }
 ```
 

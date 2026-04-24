@@ -19,9 +19,9 @@ Our line of reasoning to determine what to render is as follow: if we have an `h
 
 ```jsx
 const Action = props => {
-  const Component = props.href ? 'a' : 'button'
+	const Component = props.href ? 'a' : 'button'
 
-  return <Component {...props} />
+	return <Component {...props} />
 }
 ```
 
@@ -31,9 +31,9 @@ If like us, you use client-side routing such as `react-router`, you might also w
 import { Link } from 'react-router-dom'
 
 const Action = props => {
-  const Component = props.to ? Link : props.href ? 'a' : 'button'
+	const Component = props.to ? Link : props.href ? 'a' : 'button'
 
-  return <Component {...props} />
+	return <Component {...props} />
 }
 ```
 
@@ -41,18 +41,18 @@ Then, we can have a link changing into a `<button>` when JavaScript eventually k
 
 ```jsx
 const MyComponent = props => {
-  const [isMounted, setIsMounted] = React.useState(false)
+	const [isMounted, setIsMounted] = React.useState(false)
 
-  React.useEffect(() => setIsMounted(true), [])
+	React.useEffect(() => setIsMounted(true), [])
 
-  return (
-    <Action
-      href={isMounted ? undefined : '/about'}
-      onClick={isMounted ? props.displayAboutDialog : undefined}
-    >
-      Learn more about us
-    </Action>
-  )
+	return (
+		<Action
+			href={isMounted ? undefined : '/about'}
+			onClick={isMounted ? props.displayAboutDialog : undefined}
+		>
+			Learn more about us
+		</Action>
+	)
 }
 ```
 
@@ -67,16 +67,16 @@ To achieve that, we can render a small icon with an associated label stating “
 
 ```html
 <a href="/about" class="link">
-  Learn more about us
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 32 32"
-  >
-    <path d="M22 11L10.5 22.5M10.44 11H22v11.56" fill="none"></path>
-  </svg>
-  <span class="sr-only">(opens in new tab)</span>
+	Learn more about us
+	<svg
+		aria-hidden="true"
+		focusable="false"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 32 32"
+	>
+		<path d="M22 11L10.5 22.5M10.44 11H22v11.56" fill="none"></path>
+	</svg>
+	<span class="sr-only">(opens in new tab)</span>
 </a>
 ```
 
@@ -84,19 +84,19 @@ For the sake of simplicity, let’s assume we have an `Icon` component that rend
 
 ```jsx
 const Action = props => {
-  const Component = props.to ? Link : props.href ? 'a' : 'button'
+	const Component = props.to ? Link : props.href ? 'a' : 'button'
 
-  return (
-    <Component {...props}>
-      {props.children}
-      {props.target === '_blank' && (
-        <>
-          <Icon icon='new-tab' />
-          <VisuallyHidden>(opens in a new tab)</VisuallyHidden>
-        </>
-      )}
-    </Component>
-  )
+	return (
+		<Component {...props}>
+			{props.children}
+			{props.target === '_blank' && (
+				<>
+					<Icon icon='new-tab' />
+					<VisuallyHidden>(opens in a new tab)</VisuallyHidden>
+				</>
+			)}
+		</Component>
+	)
 }
 ```
 
@@ -104,10 +104,10 @@ We can also extract this logic into its own little component to make the JSX of 
 
 ```jsx
 const NewTabIcon = props => (
-  <>
-    <Icon icon='new-tab' />
-    <VisuallyHidden>(opens in a new tab)</VisuallyHidden>
-  </>
+	<>
+		<Icon icon='new-tab' />
+		<VisuallyHidden>(opens in a new tab)</VisuallyHidden>
+	</>
 )
 ```
 
@@ -121,15 +121,15 @@ To make sure never to forget these attributes, we can bake this logic in our `Ac
 
 ```jsx
 const Action = props => {
-  const Component = props.to ? Link : props.href ? 'a' : 'button'
-  const rel = props.target === '_blank' ? 'noopener noreferrer' : undefined
+	const Component = props.to ? Link : props.href ? 'a' : 'button'
+	const rel = props.target === '_blank' ? 'noopener noreferrer' : undefined
 
-  return (
-    <Component {...props} rel={rel}>
-      {props.children}
-      {props.target === '_blank' && <NewTabIcon />}
-    </Component>
-  )
+	return (
+		<Component {...props} rel={rel}>
+			{props.children}
+			{props.target === '_blank' && <NewTabIcon />}
+		</Component>
+	)
 }
 ```
 
@@ -137,11 +137,11 @@ If we want to be able to pass a custom `rel` attribute as well, we can extract t
 
 ```js
 const getRel = props => {
-  if (props.target === '_blank') {
-    return (props.rel || '') + ' noopener noreferrer'
-  }
+	if (props.target === '_blank') {
+		return (props.rel || '') + ' noopener noreferrer'
+	}
 
-  return props.rel
+	return props.rel
 }
 ```
 
@@ -153,16 +153,16 @@ As this can be a little cumbersome, we can bake that logic in our component once
 
 ```jsx
 const Action = props => {
-  const Component = props.to ? Link : props.href ? 'a' : 'button'
-  const rel = getRel(props)
-  const type = Component === 'button' ? props.type || 'button' : undefined
+	const Component = props.to ? Link : props.href ? 'a' : 'button'
+	const rel = getRel(props)
+	const type = Component === 'button' ? props.type || 'button' : undefined
 
-  return (
-    <Component {...props} rel={rel} type={type}>
-      {props.children}
-      {props.target === '_blank' && <NewTabIcon />}
-    </Component>
-  )
+	return (
+		<Component {...props} rel={rel} type={type}>
+			{props.children}
+			{props.target === '_blank' && <NewTabIcon />}
+		</Component>
+	)
 }
 ```
 
@@ -176,22 +176,22 @@ By making our component themable, we can provide a styling API without injuring 
 
 ```jsx
 const Action = props => {
-  const Component = props.to ? Link : props.href ? 'a' : 'button'
-  const rel = getRel(props)
-  const type = Component === 'button' ? props.type || 'button' : undefined
-  const className = [
-    props.className,
-    props.theme === 'LINK' ? 'link' : 'button',
-  ]
-    .filter(Boolean)
-    .join(' ')
+	const Component = props.to ? Link : props.href ? 'a' : 'button'
+	const rel = getRel(props)
+	const type = Component === 'button' ? props.type || 'button' : undefined
+	const className = [
+		props.className,
+		props.theme === 'LINK' ? 'link' : 'button',
+	]
+		.filter(Boolean)
+		.join(' ')
 
-  return (
-    <Component {...props} rel={rel} type={type} className={className}>
-      {props.children}
-      {props.target === '_blank' && <NewTabIcon />}
-    </Component>
-  )
+	return (
+		<Component {...props} rel={rel} type={type} className={className}>
+			{props.children}
+			{props.target === '_blank' && <NewTabIcon />}
+		</Component>
+	)
 }
 ```
 
@@ -199,9 +199,9 @@ Then we can render a button, styled as a link:
 
 ```jsx
 const MyComponent = props => (
-  <Action theme='LINK' type='button' onClick={toggle}>
-    Toggle
-  </Action>
+	<Action theme='LINK' type='button' onClick={toggle}>
+		Toggle
+	</Action>
 )
 ```
 
@@ -209,9 +209,9 @@ Or a link, styled as a button:
 
 ```jsx
 const MyComponent = props => (
-  <Action theme='BUTTON' href='/about'>
-    Learn more about us
-  </Action>
+	<Action theme='BUTTON' href='/about'>
+		Learn more about us
+	</Action>
 )
 ```
 
@@ -219,9 +219,9 @@ Note how we preserve any provided `className` so it becomes possible to give our
 
 ```jsx
 const MyComponent = props => (
-  <Action theme='BUTTON' href='/about' className='about-link'>
-    Learn more about us
-  </Action>
+	<Action theme='BUTTON' href='/about' className='about-link'>
+		Learn more about us
+	</Action>
 )
 ```
 

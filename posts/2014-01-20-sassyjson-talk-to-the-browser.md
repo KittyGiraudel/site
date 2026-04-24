@@ -17,8 +17,8 @@ While the idea is solid, the realization is very simple. There was no CSS magic 
 
 ```css
 body::before {
-  display: none;
-  content: '{ "current": "small", "all": ["small"] }';
+	display: none;
+	content: '{ "current": "small", "all": ["small"] }';
 }
 ```
 
@@ -47,13 +47,13 @@ Writing the `json-encode` part has been very easy to do. It took us less than an
 
 ```scss
 @function json-encode($value) {
-  $type: type-of($value); /* 1 */
-  @if function_exists('_json-encode--#{$type}') {
-    /* 2 */
-    @return call('_json-encode--#{$type}', $value); /* 3 */
-  }
-  @warn "Unknown type for #{$value} (#{$type}) ."; /* 4 */
-  @return false; /* 4 */
+	$type: type-of($value); /* 1 */
+	@if function_exists('_json-encode--#{$type}') {
+		/* 2 */
+		@return call('_json-encode--#{$type}', $value); /* 3 */
+	}
+	@warn "Unknown type for #{$value} (#{$type}) ."; /* 4 */
+	@return false; /* 4 */
 }
 ```
 
@@ -79,25 +79,25 @@ Since we don’t like to choose, we picked all of them. We simply made [a mixin 
 
 ```scss
 $map: (
-  (
-    a: (
-      1 2
-        (
-          b: 1,
-        ),
-    ),
-    b: (
-      #444444,
-      false,
-      (
-        a: 1,
-        b: test,
-      ),
-    ),
-    c: (
-      2 3 4 string,
-    ),
-  )
+	(
+		a: (
+			1 2
+				(
+					b: 1,
+				),
+		),
+		b: (
+			#444444,
+			false,
+			(
+				a: 1,
+				b: test,
+			),
+		),
+		c: (
+			2 3 4 string,
+		),
+	)
 );
 @include json-encode($map, $flag: all);
 ```
@@ -106,18 +106,18 @@ $map: (
 /*! json-encode: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}' */
 
 body::before {
-  display: none !important;
-  content: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
+	display: none !important;
+	content: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
 }
 
 head {
-  font-family: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
+	font-family: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
 }
 
 @media -json-encode {
-  json {
-    json: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
-  }
+	json {
+		json: '{"a": [1, 2, {"b": 1}], "b": ["#444444", false, {"a": 1, "b": "test"}], "c": [2, 3, 4, "string"]}';
+	}
 }
 ```
 

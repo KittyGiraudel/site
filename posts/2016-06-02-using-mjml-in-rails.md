@@ -46,13 +46,13 @@ First thing, in `app/mailers`, we create a `foobar_mailer.rb` file:
 # ./app/mailers/foobar_mailer.rb
 
 class FoobarMailer < ActionMailer::Base
-  def baz(name)
-    @name = name
+	def baz(name)
+		@name = name
 
-    mail(to: 'test@example.com', subject: 'test') do |format|
-      format.mjml
-    end
-  end
+		mail(to: 'test@example.com', subject: 'test') do |format|
+			format.mjml
+		end
+	end
 end
 ```
 
@@ -62,11 +62,11 @@ Then in `app/views`, we create a `foobar_mailer` folder, containing a file named
 <!-- ./app/views/foobar_mailer/baz.mjml -->
 
 <mjml>
-  <mj-body>
-    <mj-container>
-      <mj-text>Hello <%= @name %></mj-text>
-    </mj-container>
-  </mj-body>
+	<mj-body>
+		<mj-container>
+			<mj-text>Hello <%= @name %></mj-text>
+		</mj-container>
+	</mj-body>
 </mjml>
 ```
 
@@ -82,31 +82,31 @@ Consider the following header (taken from [MJML documentation](https://mjml.io/d
 <!-- ./app/views/foobar_mailer/_foobar_header.mjml -->
 
 <mj-hero
-  mode="fixed-height"
-  height="469px"
-  background-width="600px"
-  background-height="469px"
-  background-url="https://cloud.githubusercontent.com/assets/1830348/15354890/1442159a-1cf0-11e6-92b1-b861dadf1750.jpg"
-  background-color="#2a3448"
-  padding="100px 0px"
+	mode="fixed-height"
+	height="469px"
+	background-width="600px"
+	background-height="469px"
+	background-url="https://cloud.githubusercontent.com/assets/1830348/15354890/1442159a-1cf0-11e6-92b1-b861dadf1750.jpg"
+	background-color="#2a3448"
+	padding="100px 0px"
 >
-  <mj-hero-content width="100%">
-    <mj-text
-      padding="20px"
-      color="#ffffff"
-      font-family="Helvetica"
-      align="center"
-      font-size="45"
-      line-height="45"
-      font-weight="900"
-    >
-      GO TO SPACE
-    </mj-text>
+	<mj-hero-content width="100%">
+		<mj-text
+			padding="20px"
+			color="#ffffff"
+			font-family="Helvetica"
+			align="center"
+			font-size="45"
+			line-height="45"
+			font-weight="900"
+		>
+			GO TO SPACE
+		</mj-text>
 
-    <mj-button href="https://mjml.io/" align="center">
-      ORDER YOUR TICKET NOW
-    </mj-button>
-  </mj-hero-content>
+		<mj-button href="https://mjml.io/" align="center">
+			ORDER YOUR TICKET NOW
+		</mj-button>
+	</mj-hero-content>
 </mj-hero>
 ```
 
@@ -116,15 +116,15 @@ Then in the mail template:
 <!-- ./app/views/foobar_mailer/baz.mjml -->
 
 <mjml>
-  <mj-body>
-    <mj-container>
-      <!-- Email header -->
-      <%= render partial: 'foobar_header', formats: [:html] %>
+	<mj-body>
+		<mj-container>
+			<!-- Email header -->
+			<%= render partial: 'foobar_header', formats: [:html] %>
 
-      <!-- Email content -->
-      <mj-text>Hello <%= @name %></mj-text>
-    </mj-container>
-  </mj-body>
+			<!-- Email content -->
+			<mj-text>Hello <%= @name %></mj-text>
+		</mj-container>
+	</mj-body>
 </mjml>
 ```
 

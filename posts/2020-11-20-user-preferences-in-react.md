@@ -16,12 +16,12 @@ The idea is to provide an easy way to access this information, and react (no pun
 
 ```jsx
 const ThankYouPage = props => (
-  <>
-    <p>Thank you for subscribing to our newsletter!</p>
-    <Settings.WithMotion>
-      <img src='./assets/party.gif' alt='Cat chasing confettis'>
-    </Settings.WithMotion>
-  </>
+	<>
+		<p>Thank you for subscribing to our newsletter!</p>
+		<Settings.WithMotion>
+			<img src='./assets/party.gif' alt='Cat chasing confettis'>
+		</Settings.WithMotion>
+	</>
 )
 ```
 
@@ -31,17 +31,17 @@ They would all essentially be based on a `useMatchMedia` hook. It would query th
 
 ```js
 const useMatchMedia = (query, defaultValue = false) => {
-  const [matches, setMatches] = React.useState(defaultValue);
+	const [matches, setMatches] = React.useState(defaultValue);
 
-  React.useEffect(() => {
-    const q = window.matchMedia(query);
-    const onChange = ({ matches }) => setMatches(matches);
-    onChange(q);
-    q.addListener(onChange);
-    return () => q.removeListener(onChange);
-  }, [query]);
+	React.useEffect(() => {
+		const q = window.matchMedia(query);
+		const onChange = ({ matches }) => setMatches(matches);
+		onChange(q);
+		q.addListener(onChange);
+		return () => q.removeListener(onChange);
+	}, [query]);
 
-  return matches;
+	return matches;
 };
 ```
 
@@ -51,22 +51,22 @@ From there, creating our React component is pretty straightforward:
 export const Settings = {};
 
 const WithMotion = ({ children }) =>
-  useMatchMedia("(prefers-reduced-motion: no-preference)") ? children : null;
+	useMatchMedia("(prefers-reduced-motion: no-preference)") ? children : null;
 
 const WithoutMotion = ({ children }) =>
-  useMatchMedia("(prefers-reduced-motion: reduce)") ? children : null;
+	useMatchMedia("(prefers-reduced-motion: reduce)") ? children : null;
 
 const WithReducedData = ({ children }) =>
-  useMatchMedia("(prefers-reduced-data: reduce)") ? children : null;
+	useMatchMedia("(prefers-reduced-data: reduce)") ? children : null;
 
 const WithReducedTransparency = ({ children }) =>
-  useMatchMedia("(prefers-reduced-transparency: reduce)") ? children : null;
+	useMatchMedia("(prefers-reduced-transparency: reduce)") ? children : null;
 
 const DarkMode = ({ children }) =>
-  useMatchMedia("(prefers-color-scheme: dark)") ? children : null;
+	useMatchMedia("(prefers-color-scheme: dark)") ? children : null;
 
 const LightMode = ({ children }) =>
-  useMatchMedia("(prefers-color-scheme: light)") ? children : null;
+	useMatchMedia("(prefers-color-scheme: light)") ? children : null;
 
 Settings.WithMotion = WithMotion;
 Settings.WithoutMotion = WithoutMotion;
@@ -82,19 +82,19 @@ If you prefer hooks to React components, you could write small wrapper hooks for
 
 ```js
 const useMotionPreference = () => {
-  const prefersReducedMotion = useMatchMedia(
-    "(prefers-reduced-motion: reduce)"
-  );
+	const prefersReducedMotion = useMatchMedia(
+		"(prefers-reduced-motion: reduce)"
+	);
 
-  // Or really any API you would like… A few ideas:
-  // - `reduce` vs `no-preference` to match the CSS spec
-  // - `on` vs `off`
-  // - just a boolean instead
-  return prefersReducedMotion ? "reduced" : "default";
+	// Or really any API you would like… A few ideas:
+	// - `reduce` vs `no-preference` to match the CSS spec
+	// - `on` vs `off`
+	// - just a boolean instead
+	return prefersReducedMotion ? "reduced" : "default";
 };
 
 const useColorScheme = () =>
-  useMatchMedia("(prefers-color-schema: dark)") ? "dark" : "light";
+	useMatchMedia("(prefers-color-schema: dark)") ? "dark" : "light";
 ```
 
 ---

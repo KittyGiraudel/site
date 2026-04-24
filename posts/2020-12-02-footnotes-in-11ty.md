@@ -41,16 +41,16 @@ The Eleventy configuration would be authored like this:
 const FOOTNOTE_MAP = [];
 
 config.addPairedShortcode(
-  "footnoteref",
-  function footnoteref(content, id, description) {
-    const key = this.page.inputPath;
-    const footnote = { id, description };
+	"footnoteref",
+	function footnoteref(content, id, description) {
+		const key = this.page.inputPath;
+		const footnote = { id, description };
 
-    FOOTNOTE_MAP[key] = FOOTNOTE_MAP[key] || {};
-    FOOTNOTE_MAP[key][id] = footnote;
+		FOOTNOTE_MAP[key] = FOOTNOTE_MAP[key] || {};
+		FOOTNOTE_MAP[key][id] = footnote;
 
-    return `<a href="#${id}-note" id="${id}-ref" aria-describedby="footnotes-label" role="doc-noteref" class="Footnotes__ref">${content}</a>`;
-  },
+		return `<a href="#${id}-note" id="${id}-ref" aria-describedby="footnotes-label" role="doc-noteref" class="Footnotes__ref">${content}</a>`;
+	},
 );
 ```
 
@@ -68,8 +68,8 @@ For that I created a `footnotes.liquid` partial which I render at the bottom of 
 
 ```liquid
 <article>
-  {{ content }}
-  {% include "components/footnotes.liquid", page: page %}
+	{{ content }}
+	{% include "components/footnotes.liquid", page: page %}
 </article>
 ```
 
@@ -97,10 +97,10 @@ Here is how it’s defined:
 
 ```js
 config.addFilter(
-  "footnotes",
-  // The first argument is the value the filter is applied to,
-  // which is irrelevant here.
-  (_, page) => Object.values(FOOTNOTES_MAP[page.inputPath] || {}),
+	"footnotes",
+	// The first argument is the value the filter is applied to,
+	// which is irrelevant here.
+	(_, page) => Object.values(FOOTNOTES_MAP[page.inputPath] || {}),
 );
 ```
 
@@ -113,20 +113,20 @@ From there, we can render the necessary markup to output the footnotes using a f
 {% assign count = footnotes | size %}
 {% if count > 0 %}
 <footer role="doc-endnotes">
-  <h2 id="footnotes-label">Footnotes</h2>
-  <ol>
-    {% for footnote in footnotes %}
-    <li id="{{ footnote.id }}-note">
-      {{ footnote.description }}
-      <a
-        href="#{{ footnote.id }}-ref"
-        aria-label="Back to reference {{ forloop.index }}"
-        role="doc-backlink"
-        >↩</a
-      >
-    </li>
-    {% endfor %}
-  </ol>
+	<h2 id="footnotes-label">Footnotes</h2>
+	<ol>
+		{% for footnote in footnotes %}
+		<li id="{{ footnote.id }}-note">
+			{{ footnote.description }}
+			<a
+				href="#{{ footnote.id }}-ref"
+				aria-label="Back to reference {{ forloop.index }}"
+				role="doc-backlink"
+				>↩</a
+			>
+		</li>
+		{% endfor %}
+	</ol>
 </footer>
 {% endif %}
 ```

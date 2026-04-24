@@ -38,10 +38,10 @@ Let’s see what it would look like in practice with a small example:
 
 ```js
 const page = await client.entry({
-  conditions: ['_type == "page"', 'slug.current == $slug'],
-  params: { slug: 'my-page-slug' },
-  fields: `_id, title, "content": body`
-  options: { isPreview: true }
+	conditions: ['_type == "page"', 'slug.current == $slug'],
+	params: { slug: 'my-page-slug' },
+	fields: `_id, title, "content": body`
+	options: { isPreview: true }
 })
 ```
 
@@ -53,10 +53,10 @@ First, let’s write a small utility to take all our arguments and create a vali
 
 ```js
 export const createQuery = ({ conditions, fields = '...', options = {} }) => {
-  const slice = typeof options.slice !== 'undefined' ? `[${options.slice}]` : ''
-  const order = options.order ? `| order(${options.order})` : ''
+	const slice = typeof options.slice !== 'undefined' ? `[${options.slice}]` : ''
+	const order = options.order ? `| order(${options.order})` : ''
 
-  return `*[${conditions.join(' && ')}] { ${fields} } ${order} ${slice}`
+	return `*[${conditions.join(' && ')}] { ${fields} } ${order} ${slice}`
 }
 ```
 
@@ -68,19 +68,19 @@ Now that we can create a GROQ query, we can use it in our helpers.
 
 ```js
 const getEntry = ({ conditions, fields, params, options = {} }) => {
-  const query = createQuery({
-    conditions,
-    fields,
-    options: { ...options, slice: 0 },
-  })
+	const query = createQuery({
+		conditions,
+		fields,
+		options: { ...options, slice: 0 },
+	})
 
-  return client.fetch(query, params)
+	return client.fetch(query, params)
 }
 
 const getEntries = ({ conditions, fields, params, options = {} }) => {
-  const query = createQuery({ conditions, fields, options })
+	const query = createQuery({ conditions, fields, options })
 
-  return client.fetch(query, params)
+	return client.fetch(query, params)
 }
 ```
 
@@ -125,18 +125,18 @@ Returning only published content is very easy thanks to the fact that Sanity doe
 
 ```js
 const client = sanityClient({
-  projectId: PROJECT_ID,
-  dataset: DATASET,
-  useCdn: true,
-  apiVersion: API_VERSION,
+	projectId: PROJECT_ID,
+	dataset: DATASET,
+	useCdn: true,
+	apiVersion: API_VERSION,
 })
 
 const previewClient = sanityClient({
-  projectId: PROJECT_ID,
-  dataset: DATASET,
-  useCdn: false,
-  token: TOKEN,
-  apiVersion: API_VERSION,
+	projectId: PROJECT_ID,
+	dataset: DATASET,
+	useCdn: false,
+	token: TOKEN,
+	apiVersion: API_VERSION,
 })
 ```
 
@@ -149,20 +149,20 @@ const isDraftEntry = entry => entry._id.startsWith('drafts.')
 const isPublishedEntry = entry => !entry._id.startsWith('drafts.')
 
 const getEntry = async ({ conditions, fields, params, options = {} }) => {
-  const slice = options.isPreview ? options.slice : 0
-  const query = createQuery({
-    conditions,
-    fields,
-    options: { ...options, slice },
-  })
+	const slice = options.isPreview ? options.slice : 0
+	const query = createQuery({
+		conditions,
+		fields,
+		options: { ...options, slice },
+	})
 
-  if (options.isPreview) {
-    const entries = await previewClient.fetch(query, params)
+	if (options.isPreview) {
+		const entries = await previewClient.fetch(query, params)
 
-    return entries.find(isDraftEntry) || entries.find(isPublishedEntry)
-  }
+		return entries.find(isDraftEntry) || entries.find(isPublishedEntry)
+	}
 
-  return client.fetch(query, params)
+	return client.fetch(query, params)
 }
 ```
 
@@ -170,11 +170,11 @@ The `getEntries` function is a little more complex. We need to preserve drafts o
 
 ```js
 const getEntries = async ({ conditions, fields, params, options = {} }) => {
-  const query = createQuery({ conditions, fields, options })
-  const sanityClient = options.isPreview ? previewClient : client
-  const entries = await sanityClient.fetch(query, params)
+	const query = createQuery({ conditions, fields, options })
+	const sanityClient = options.isPreview ? previewClient : client
+	const entries = await sanityClient.fetch(query, params)
 
-  return options.isPreview ? entries.filter(preserveDrafts) : entries
+	return options.isPreview ? entries.filter(preserveDrafts) : entries
 }
 ```
 
@@ -184,16 +184,16 @@ And our preserve drafts function (annotated with comments):
 const isNotSelf = entry => item => item._id !== entry._id
 
 const findSameEntry = (current, array) => {
-  const otherEntries = array.filter(isNotSelf(current))
-  const isDraft = isDraftEntry(current)
-  const isSameEntry = entry =>
-    // If the current entry is a draft, a duplicate would be a published version
-    // with the same ID but without the `drafts.` part. If the current entry is
-    // a published version, a duplicate would be a draft version with the same
-    // ID starting with the `drafts.` part.
-    isDraft ? current._id.endsWith(entry._id) : entry._id.endsWith(current._id)
+	const otherEntries = array.filter(isNotSelf(current))
+	const isDraft = isDraftEntry(current)
+	const isSameEntry = entry =>
+		// If the current entry is a draft, a duplicate would be a published version
+		// with the same ID but without the `drafts.` part. If the current entry is
+		// a published version, a duplicate would be a draft version with the same
+		// ID starting with the `drafts.` part.
+		isDraft ? current._id.endsWith(entry._id) : entry._id.endsWith(current._id)
 
-  return otherEntries.find(isSameEntry)
+	return otherEntries.find(isSameEntry)
 }
 
 // Try to find the current entry in the array with a different publication
@@ -202,7 +202,7 @@ const findSameEntry = (current, array) => {
 // it means it is both published and drafted. In that case, we should only
 // preserve the draft version (most recent).
 const preserveDrafts = (current, _, array) =>
-  findSameEntry(current, array) ? isDraftEntry(current) : true
+	findSameEntry(current, array) ? isDraftEntry(current) : true
 ```
 
 {% callout %} Note that this all requires querying the documents’ `_id` as part of the fields when the preview mode is enabled, since the filtering is done by reading the `_id`. To make sure this is the case, one could add a little check in the `createQuery` function to ensure it’s part of the fields. {% endcallout %}

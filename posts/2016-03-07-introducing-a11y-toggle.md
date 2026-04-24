@@ -50,7 +50,7 @@ Include the script in your app / pages and you should be good to go. You only ha
 <button data-a11y-toggle="content-container">Toggle content</button>
 
 <div id="content-container">
-  Here is some content that can be be toggled visible or invisible.
+	Here is some content that can be be toggled visible or invisible.
 </div>
 ```
 

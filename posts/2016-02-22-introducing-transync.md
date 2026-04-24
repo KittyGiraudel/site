@@ -33,9 +33,9 @@ And if you know that the English version is always your base file and want a sho
 
 ```json
 {
-  "script": {
-    "sync": "transync --from locales/en.yml --to"
-  }
+	"script": {
+		"sync": "transync --from locales/en.yml --to"
+	}
 }
 ```
 

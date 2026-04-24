@@ -31,12 +31,12 @@ The first thing we need is to crop our image so that its corner disappear. In a 
 
 ```css
 .ImageContainer {
-  clip-path: polygon(
-      0%    0%, /* Top left */
-    100%    0%, /* Top right */
-    100%  100%, /* Bottom right */
-      0%  100%  /* Bottom left */
-  );
+	clip-path: polygon(
+			0%    0%, /* Top left */
+		100%    0%, /* Top right */
+		100%  100%, /* Bottom right */
+			0%  100%  /* Bottom left */
+	);
 }
 ```
 
@@ -44,13 +44,13 @@ Then on hover, we want to actually apply a clip path:
 
 ```css
 .ImageContainer {
-  clip-path: polygon(
-     30%    0%, /* Top edge */
-    100%    0%, /* Top right */
-    100%  100%, /* Bottom left */
-      0%  100%, /* Bottom right */
-      0%   25%  /* Left edge */
-  );
+	clip-path: polygon(
+		 30%    0%, /* Top edge */
+		100%    0%, /* Top right */
+		100%  100%, /* Bottom left */
+			0%  100%, /* Bottom right */
+			0%   25%  /* Left edge */
+	);
 }
 ```
 
@@ -69,18 +69,18 @@ There really are only 2 values that change: {% footnoteref "pinch-values" footno
 
 ```css/2,6,11,12
 .ImageContainer {
-    clip-path: polygon(
-      var(--fold-start-x)  0%, /* Top edge */
-      100%                 0%, /* Top right */
-      100%               100%, /* Bottom right */
-      0%                 100%, /* Bottom left */
-      0%  var(--fold-start-y)  /* Left edge */
-  );
+		clip-path: polygon(
+			var(--fold-start-x)  0%, /* Top edge */
+			100%                 0%, /* Top right */
+			100%               100%, /* Bottom right */
+			0%                 100%, /* Bottom left */
+			0%  var(--fold-start-y)  /* Left edge */
+	);
 }
 
 .ImageContainer:hover {
-  --fold-start-x: 30%;
-  --fold-start-y: 25%;
+	--fold-start-x: 30%;
+	--fold-start-y: 25%;
 }
 ```
 
@@ -92,26 +92,26 @@ Now, we need to superimpose a {% footnoteref "fold-color" footnote_fold_color %}
 
 ```css
 .ImageContainer {
-  --fold-corner-x: 0%;
-  --fold-corner-y: 0%;
+	--fold-corner-x: 0%;
+	--fold-corner-y: 0%;
 }
 
 .ImageContainer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: white;
-  z-index: 2;
-  clip-path: polygon(
-    var(--fold-start-x)                     0%, /* Top edge */
-    0%                     var(--fold-start-y), /* Left edge */
-    var(--fold-corner-x)  var(--fold-corner-y)  /* Image corner */
-  );
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: white;
+	z-index: 2;
+	clip-path: polygon(
+		var(--fold-start-x)                     0%, /* Top edge */
+		0%                     var(--fold-start-y), /* Left edge */
+		var(--fold-corner-x)  var(--fold-corner-y)  /* Image corner */
+	);
 }
 
 .ImageContainer:hover::before {
-  --fold-corner-x: 15%;
-  --fold-corner-y: 31%;
+	--fold-corner-x: 15%;
+	--fold-corner-y: 31%;
 }
 ```
 
@@ -130,25 +130,25 @@ Now, we need to add another triangle below the white one that will be used to cr
 
 ```css
 .ImageContainer {
-  --shadow-corner-x: 0%;
-  --shadow-corner-y: 0%;
+	--shadow-corner-x: 0%;
+	--shadow-corner-y: 0%;
 }
 
 .ImageContainer::after {
-  content: '';
-  inset: 0;
-  z-index: 1;
-  background-color: var(--shade);
-  clip-path: polygon(
-    var(--fold-start-x)                        0%, /* Top edge */
-    0%                        var(--fold-start-y), /* Left edge */
-    var(--shadow-corner-x) var(--shadow-corner-y)  /* Shadow corner */
-  );
+	content: '';
+	inset: 0;
+	z-index: 1;
+	background-color: var(--shade);
+	clip-path: polygon(
+		var(--fold-start-x)                        0%, /* Top edge */
+		0%                        var(--fold-start-y), /* Left edge */
+		var(--shadow-corner-x) var(--shadow-corner-y)  /* Shadow corner */
+	);
 }
 
 .ImageContainer:hover::after {
-  --shadow-corner-x: 15%;
-  --shadow-corner-y: 31%;
+	--shadow-corner-x: 15%;
+	--shadow-corner-y: 31%;
 }
 ```
 
@@ -171,9 +171,9 @@ I found an ugly workaround, which involves creating a dozen decorative `<div>` e
 
 ```html
 <div class="ImageContainer__shadow">
-  <div></div>
-  <!-- … as many more as one wants -->
-  <div></div>
+	<div></div>
+	<!-- … as many more as one wants -->
+	<div></div>
 </div>
 ```
 
@@ -181,17 +181,17 @@ Each shadow is also a triangle, placed like the fold and the primary shadow, exc
 
 ```css
 .ImageContainer {
-  --shadow-offset-x: 0.5px;
-  --shadow-offset-y: 1px;
+	--shadow-offset-x: 0.5px;
+	--shadow-offset-y: 1px;
 }
 
 .ImageContainer__shadow > * {
-  clip-path: polygon(
-    var(--fold-start-x) 0%, /* Top edge */
-    0% var(--fold-start-y), /* Left edge */
-    calc(var(--shadow-corner-x) + var(--shadow-offset-x) * var(--index)),
-    calc(var(--shadow-corner-y) + var(--shadow-offset-y) * var(--index))
-  );
+	clip-path: polygon(
+		var(--fold-start-x) 0%, /* Top edge */
+		0% var(--fold-start-y), /* Left edge */
+		calc(var(--shadow-corner-x) + var(--shadow-offset-x) * var(--index)),
+		calc(var(--shadow-corner-y) + var(--shadow-offset-y) * var(--index))
+	);
 }
 
 .ImageContainer__shadow > :nth-child(1)  { --index:  1 }
@@ -219,12 +219,12 @@ We can negate the need for this `--index` custom property with the [`sibling-ind
 
 ```css
 .ImageContainer__shadow > * {
-  clip-path: polygon(
-    var(--fold-start-x) 0%, /* Top edge */
-    0% var(--fold-start-y), /* Left edge */
-    calc(var(--shadow-corner-x) + var(--shadow-offset-x) * sibling-index()),
-    calc(var(--shadow-corner-y) + var(--shadow-offset-y) * sibling-index())
-  );
+	clip-path: polygon(
+		var(--fold-start-x) 0%, /* Top edge */
+		0% var(--fold-start-y), /* Left edge */
+		calc(var(--shadow-corner-x) + var(--shadow-offset-x) * sibling-index()),
+		calc(var(--shadow-corner-y) + var(--shadow-offset-y) * sibling-index())
+	);
 }
 ```
 
@@ -234,14 +234,14 @@ As mentioned at the beginning of this article, the animation really is just a tr
 
 ```css
 .ImageContainer {
-  transition: clip-path 400ms;
+	transition: clip-path 400ms;
 }
 
 .ImageContainer::after,
 .ImageContainer::before,
 .ImageContainer__shadow,
 .ImageContainer__shadow > * {
-  transition: inherit;
+	transition: inherit;
 }
 ```
 

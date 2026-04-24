@@ -116,14 +116,14 @@ index 74d58f9..569449c 100755
 ––– a/Gruntfile.js
 +++ b/Gruntfile.js
 @@ -41,7 +41,7 @@ module.exports = function(grunt) {
-     },
-     jshint: {
-       all: [
+		 },
+		 jshint: {
+			 all: [
 -        'Gruntfile.js',
 +        'gruntfile.js',
-         '/web/js/**/*.js'
-       ],
-       options: {
+				 '/web/js/**/*.js'
+			 ],
+			 options: {
 ```
 
 But if you use the `--color-words` parameter, it will write the old and new text in the same line with red and green colors, which can be easier to read in some cases.
@@ -143,8 +143,8 @@ index b2185a2..887387f 100755
 ––– a/web/js/lazy.js
 +++ b/web/js/lazy.js
 @@ -427,28 +427,30 @@
-         return;
-       }
+				 return;
+			 }
 -      if (url !== null && url !== '' && typeof url !== 'undefined') {
 -        jQuery.ajax({
 -          url: url,
@@ -168,7 +168,7 @@ index b2185a2..887387f 100755
 -        });
 +      if (url === null || url === '' || typeof url === 'undefined') {
 +        return;
-       }
+			 }
 +
 +      jQuery.ajax({
 +        url: url,
@@ -190,8 +190,8 @@ index b2185a2..887387f 100755
 +          }
 +        }
 +      });
-     };
-     /**
+		 };
+		 /**
 ```
 
 What are the important updates in this piece of code? It’s not quite easy to check what have been done with a diff like this. But with the `-w` option:
@@ -203,23 +203,23 @@ index b2185a2..887387f 100755
 ––– a/web/js/lazy.js
 +++ b/web/js/lazy.js
 @@ -427,7 +427,10 @@
-         return;
-       }
+				 return;
+			 }
 -      if (url !== null && url !== '' && typeof url !== 'undefined') {
 +      if (url === null || url === '' || typeof url === 'undefined') {
 +        return;
 +      }
 +
-         jQuery.ajax({
-           url: url,
-           type: 'GET',
+				 jQuery.ajax({
+					 url: url,
+					 type: 'GET',
 @@ -448,7 +451,6 @@
-             }
-           }
-         });
+						 }
+					 }
+				 });
 -      }
-     };
-     /**
+		 };
+		 /**
 ```
 
 It’s now easier to catch up with the changes: I’ve replaced the test wrapping my Ajax call by a 3-lines test checking right before, which reduces the indentation level of the Ajax call.

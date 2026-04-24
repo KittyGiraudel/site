@@ -28,7 +28,7 @@ The very first thing we need to do is to define the CSS custom property at the r
 
 ```css
 :root {
-  --duration: 1;
+	--duration: 1;
 }
 ```
 
@@ -38,7 +38,7 @@ For the sake of the argument, consider the following declaration:
 
 ```css
 .foobar {
-  transition: transform 250ms;
+	transition: transform 250ms;
 }
 ```
 
@@ -46,7 +46,7 @@ We need to rewrite it like this:
 
 ```css
 .foobar {
-  transition: transform calc(var(--duration) * 250ms);
+	transition: transform calc(var(--duration) * 250ms);
 }
 ```
 
@@ -58,22 +58,22 @@ Because this is a strictly visual concern, we don’t save this option in our da
 
 ```js
 document
-  .querySelector('#reduced-motion')
-  .addEventListener('change', function (event) {
-    const reducedMotion = event.target.checked
+	.querySelector('#reduced-motion')
+	.addEventListener('change', function (event) {
+		const reducedMotion = event.target.checked
 
-    saveReducedMotionOption(reducedMotion)
-    updateReducedMotionFlag(reducedMotion)
-  })
+		saveReducedMotionOption(reducedMotion)
+		updateReducedMotionFlag(reducedMotion)
+	})
 
 function saveReducedMotionOption(value) {
-  localStorage.setItem('reducedMotion', value)
+	localStorage.setItem('reducedMotion', value)
 }
 
 function updateReducedMotionFlag(value) {
-  // `true` (reduced) should be `0`, `false` should be `1`.
-  const flag = Number(!value)
-  document.documentElement.style.setProperty('--duration', flag)
+	// `true` (reduced) should be `0`, `false` should be `1`.
+	const flag = Number(!value)
+	document.documentElement.style.setProperty('--duration', flag)
 }
 ```
 
@@ -81,14 +81,14 @@ On page load, we need to check the stored value and update the `--duration` cust
 
 ```js
 document.addEventListener('DOMContentLoaded', function (event) {
-  const reducedMotion = Boolean(localStorage.getItem('reducedMotion'))
+	const reducedMotion = Boolean(localStorage.getItem('reducedMotion'))
 
-  updateReducedMotionFlag(reducedMotion)
-  updateReducedMotionCheckbox(reducedMotion)
+	updateReducedMotionFlag(reducedMotion)
+	updateReducedMotionCheckbox(reducedMotion)
 })
 
 function updateReducedMotionCheckbox(value) {
-  document.querySelector('#reduced-motion').checked = !!value
+	document.querySelector('#reduced-motion').checked = !!value
 }
 ```
 
@@ -104,9 +104,9 @@ If we can detect the reduced mode, we can turn on the flag automatically and dis
 
 ```css
 @media (prefers-reduced-motion: reduce) {
-  :root {
-    --duration: 0;
-  }
+	:root {
+		--duration: 0;
+	}
 }
 ```
 
@@ -114,14 +114,14 @@ The second part will need a little bit of JavaScript.
 
 ```js
 document.addEventListener('DOMContentLoaded', function (event) {
-  const checkbox = document.querySelector('#reduced-motion')
-  const query = '(prefers-reduced-motion: reduce)'
-  const hasOSReducedMotion = window.matchMedia(query).matches
+	const checkbox = document.querySelector('#reduced-motion')
+	const query = '(prefers-reduced-motion: reduce)'
+	const hasOSReducedMotion = window.matchMedia(query).matches
 
-  if (hasOSReducedMotion) {
-    checkbox.checked = true
-    checkbox.disabled = true
-  }
+	if (hasOSReducedMotion) {
+		checkbox.checked = true
+		checkbox.disabled = true
+	}
 })
 ```
 

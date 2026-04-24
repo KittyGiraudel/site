@@ -35,7 +35,7 @@ $url: 'https://fonts.googleapis.com/css?family=#{$my-font}';
 @import url($url);
 
 h1 {
-  font-family: $my-font;
+	font-family: $my-font;
 }
 ```
 

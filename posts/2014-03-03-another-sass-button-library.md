@@ -29,11 +29,11 @@ $btn-size-ratio: 1.2 !default;
 $btn-hover: saturate 25% !default;
 $btn-border: darken 20% !default;
 $btn-background: (
-  "default": #565656,
-  "success": #468847,
-  "danger": #b94a48,
-  "warning": #c09853,
-  "info": #3a87ad,
+	"default": #565656,
+	"success": #468847,
+	"danger": #b94a48,
+	"warning": #c09853,
+	"info": #3a87ad,
 ) !default;
 ```
 
@@ -60,47 +60,47 @@ Also note the 2 measures we take to avoid conflicts with user’s code:
 
 ```scss
 .#{$btn-name} {
-  // Default styles
-  padding: 0.5em;
-  margin-bottom: 1em;
-  color: #fff;
+	// Default styles
+	padding: 0.5em;
+	margin-bottom: 1em;
+	color: #fff;
 
-  // Some sex appeal!
-  transition: background 0.15s;
-  border-radius: 0.15em;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
+	// Some sex appeal!
+	transition: background 0.15s;
+	border-radius: 0.15em;
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
 
-  // Border or not border?
-  border: if($btn-border, 1px solid, none);
+	// Border or not border?
+	border: if($btn-border, 1px solid, none);
 
-  // Modifiers
-  &--large {
-    font-size: 1em * $btn-size-ratio;
-  }
+	// Modifiers
+	&--large {
+		font-size: 1em * $btn-size-ratio;
+	}
 
-  &--small {
-    font-size: 1em / $btn-size-ratio;
-  }
+	&--small {
+		font-size: 1em / $btn-size-ratio;
+	}
 
-  &--bold {
-    font-weight: bold;
-  }
+	&--bold {
+		font-weight: bold;
+	}
 
-  &--upper {
-    text-transform: uppercase;
-  }
+	&--upper {
+		text-transform: uppercase;
+	}
 
-  &--block {
-    display: block;
-    width: 100%;
-  }
+	&--block {
+		display: block;
+		width: 100%;
+	}
 
-  // Color schemes
-  @each $key, $value in $btn-background {
-    &--#{$key} {
-      @include button-color($value);
-    }
-  }
+	// Color schemes
+	@each $key, $value in $btn-background {
+		&--#{$key} {
+			@include button-color($value);
+		}
+	}
 }
 ```
 
@@ -118,16 +118,16 @@ Now the mixin will actually apply the background-color to the button, as well as
 
 ```scss
 @mixin button-color($color) {
-  background-color: $color;
+	background-color: $color;
 
-  &:hover,
-  &:active {
-    background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
-  }
+	&:hover,
+	&:active {
+		background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+	}
 
-  @if $btn-border != false {
-    border-color: call(nth($btn-border, 1), $color, nth($btn-border, 2));
-  }
+	@if $btn-border != false {
+		border-color: call(nth($btn-border, 1), $color, nth($btn-border, 2));
+	}
 }
 ```
 
@@ -143,46 +143,46 @@ So we should probably make a couple of checks to make sure everything’s right 
 
 ```scss
 @mixin button-color($color) {
-  $everything-okay: true;
+	$everything-okay: true;
 
-  // Making sure $color is a color
-  @if type-of($color) != color {
-    @warn "`#{$color}` is not a color for `button-color`";
-    $everything-okay: false;
-  }
+	// Making sure $color is a color
+	@if type-of($color) != color {
+		@warn "`#{$color}` is not a color for `button-color`";
+		$everything-okay: false;
+	}
 
-  // Making sure $btn-hover and $btn-border
-  // are 2 items long
-  @if length($btn-hover) != 2 or length($btn-border) != 2 {
-    @warn "Both `$btn-hover` and `$btn-border` should be two items long for `button-color`.";
-    $everything-okay: false;
-  }
+	// Making sure $btn-hover and $btn-border
+	// are 2 items long
+	@if length($btn-hover) != 2 or length($btn-border) != 2 {
+		@warn "Both `$btn-hover` and `$btn-border` should be two items long for `button-color`.";
+		$everything-okay: false;
+	}
 
-  // Making sure first items from $btn-hover and $btn-border
-  // are valid functions
-  @if not
-    function-exists(nth($btn-hover, 1)) or not
-    function-exists(nth($btn-border, 1))
-  {
-    @warn "Either `#{nth($btn-hover, 1)}` or `#{nth($btn-border, 1)}` is not a valid function for `button-color`.";
-    $everything-okay: false;
-  }
+	// Making sure first items from $btn-hover and $btn-border
+	// are valid functions
+	@if not
+		function-exists(nth($btn-hover, 1)) or not
+		function-exists(nth($btn-border, 1))
+	{
+		@warn "Either `#{nth($btn-hover, 1)}` or `#{nth($btn-border, 1)}` is not a valid function for `button-color`.";
+		$everything-okay: false;
+	}
 
-  // Making sure second items from $btn-hover and $btn-border
-  // are percentages
-  @if type-of(nth($btn-hover, 2)) !=
-    number or
-    type-of(nth($btn-border, 2)) !=
-    number
-  {
-    @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
-    $everything-okay: false;
-  }
+	// Making sure second items from $btn-hover and $btn-border
+	// are percentages
+	@if type-of(nth($btn-hover, 2)) !=
+		number or
+		type-of(nth($btn-border, 2)) !=
+		number
+	{
+		@warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
+		$everything-okay: false;
+	}
 
-  // If there is no mistake
-  @if $everything-okay == true {
-    // Mixin content
-  }
+	// If there is no mistake
+	@if $everything-okay == true {
+		// Mixin content
+	}
 }
 ```
 

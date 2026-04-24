@@ -19,11 +19,11 @@ The `<VisuallyHidden />` React component aims at visually hiding a piece of text
 
 ```js
 const VisuallyHidden = ({ as: Component, ...props }) => (
-  <Component {...props} className='sr-only' />
+	<Component {...props} className='sr-only' />
 )
 
 VisuallyHidden.defaultProps = {
-  as: 'span',
+	as: 'span',
 }
 ```
 
@@ -31,17 +31,17 @@ VisuallyHidden.defaultProps = {
 
 ```css
 .sr-only {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important;
-  height: 1px !important;
-  overflow: hidden !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-  white-space: nowrap !important;
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
 }
 ```
 
@@ -49,8 +49,8 @@ VisuallyHidden.defaultProps = {
 
 ```jsx
 const Navigation = props => (
-  <a href={`/blog/${props.currentPage + 1}`}>
-    Next <VisuallyHidden>page</VisuallyHidden>
-  </a>
+	<a href={`/blog/${props.currentPage + 1}`}>
+		Next <VisuallyHidden>page</VisuallyHidden>
+	</a>
 )
 ```

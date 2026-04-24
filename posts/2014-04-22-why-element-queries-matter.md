@@ -50,10 +50,10 @@ I decided to set up on the last one which looks slightly better than the others.
 
 ```html
 <ul
-  class="component"
-  data-eq-pts="small: 300, medium: 500, large: 700, huge: 900"
+	class="component"
+	data-eq-pts="small: 300, medium: 500, large: 700, huge: 900"
 >
-  <!-- … -->
+	<!-- … -->
 </ul>
 ```
 

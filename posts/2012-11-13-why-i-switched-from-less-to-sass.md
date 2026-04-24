@@ -39,19 +39,19 @@ The way I wanted to handle my mixin was something which would look like this:
 
 ```less
 .mixin(parameters) {
-  /* Basic stuff here */
-  if (direction = top) {
-    /* Conditional stuff here */
-  }
-  else if (direction = bottom) {
-    /* Conditional stuff here */
-  }
-  else if (direction = left) {
-    /* Conditional stuff here */
-  }
-  else if (direction = right) {
-    /* Conditional stuff here */
-  }
+	/* Basic stuff here */
+	if (direction = top) {
+		/* Conditional stuff here */
+	}
+	else if (direction = bottom) {
+		/* Conditional stuff here */
+	}
+	else if (direction = left) {
+		/* Conditional stuff here */
+	}
+	else if (direction = right) {
+		/* Conditional stuff here */
+	}
 }
 ```
 
@@ -59,19 +59,19 @@ The fact is **LESS doesn’t handle if / else statements**. Instead, it provides
 
 ```less
 .mixin(parameters) {
-  /*Basic stuff here */
+	/*Basic stuff here */
 }
 .mixin(parameters) when (direction = top) {
-  /* Conditional stuff here */
+	/* Conditional stuff here */
 }
 .mixin(parameters) when (direction = bottom) {
-  /* Conditional stuff here */
+	/* Conditional stuff here */
 }
 .mixin(parameters) when (direction = left) {
-  /* Conditional stuff here */
+	/* Conditional stuff here */
 }
 .mixin(parameters) when (direction = right) {
-  /* Conditional stuff here */
+	/* Conditional stuff here */
 }
 ```
 
@@ -92,9 +92,9 @@ Loops are cool: they can handle a huge amount of operations in only a few lines 
 ```scss
 @nbElements: 10;
 for(@i = 0; @i < @nbElements; @i++) {
-  .my-element:nth-child(@i) {
-    animation-name: loading- @i;
-  }
+	.my-element:nth-child(@i) {
+		animation-name: loading- @i;
+	}
 }
 ```
 
@@ -103,12 +103,12 @@ Well, this is absolutely not how LESS is handling loops. Actually **LESS doesn�
 ```less
 /* Define loop */
 .loop(@index) when (@index > 0) {
-  (~'.my-element:nth-child(@{index})') {
-    animation-name: 'loading-@{index}';
-  }
+	(~'.my-element:nth-child(@{index})') {
+		animation-name: 'loading-@{index}';
+	}
 
-  /* Call itself */
-  .loop(@index - 1);
+	/* Call itself */
+	.loop(@index - 1);
 }
 
 /* Stop loop */
@@ -131,29 +131,29 @@ I know concatenation can be somewhat annoying to handle depending on the languag
 ```less
 /* This works */
 .my-element {
-  color: @my-value;
+	color: @my-value;
 }
 
 /* This doesn’t work */
 @my-element {
-  color: @my-value;
+	color: @my-value;
 }
 
 /* This doesn’t work either */
 @{my-element} {
-  color: @my-value;
+	color: @my-value;
 }
 
 /* But this works */
 (~'@{my-element}') {
-  color: @my-value;
+	color: @my-value;
 }
 
 /* And this can’t work */
 .my-element {
-  @my-property: @my-value;
-  @{my-property}: @my-value;
-  (~"@{my-property}"): @my-value;
+	@my-property: @my-value;
+	@{my-property}: @my-value;
+	(~"@{my-property}"): @my-value;
 }
 ```
 
@@ -168,44 +168,44 @@ Basically, LESS fails to understand `@page` and `@keyframes` inside mixins becau
 ```less
 @newline: ` '\n' `; /* Newline */
 .my-mixin(@selector, @name, @other-parameters) {
-  /* @selector is the element using your animation
-     * @name is the name of your animation
-     * @other-parameters are the parameters of your animation
-     */
+	/* @selector is the element using your animation
+		 * @name is the name of your animation
+		 * @other-parameters are the parameters of your animation
+		 */
 
-  .keyframe-mixin(@pre, @post, @vendor) {
-    /* @pre is the newline hack (empty on the first declaration)
-         * @post is a variable fix to detect the last declaration (1 on the last one)
-         * @vendor is the vendor prefix you want
-         */
+	.keyframe-mixin(@pre, @post, @vendor) {
+		/* @pre is the newline hack (empty on the first declaration)
+				 * @post is a variable fix to detect the last declaration (1 on the last one)
+				 * @vendor is the vendor prefix you want
+				 */
 
-    (~'@{pre}@@{vendor}keyframes @{name} {@{newline} 0%') {
-      /* 0% stuff here */
-    }
+		(~'@{pre}@@{vendor}keyframes @{name} {@{newline} 0%') {
+			/* 0% stuff here */
+		}
 
-    100% {
-      /* 100% stuff here */
-    }
+		100% {
+			/* 100% stuff here */
+		}
 
-    .Local() {
-    }
-    .Local() when (@post=1) {
-      (~'}@{newline}@{selector}') {
-        -webkit-animation: @name;
-        -moz-animation: @name;
-        -ms-animation: @name;
-        -o-animation: @name;
-        animation: @name;
-      }
-    }
-    .Local;
-  }
+		.Local() {
+		}
+		.Local() when (@post=1) {
+			(~'}@{newline}@{selector}') {
+				-webkit-animation: @name;
+				-moz-animation: @name;
+				-ms-animation: @name;
+				-o-animation: @name;
+				animation: @name;
+			}
+		}
+		.Local;
+	}
 
-  .keyframe-mixin('', 0, '-webkit-');
-  .keyframe-mixin(~'}@{newline}', 0, '-moz-');
-  .keyframe-mixin(~'}@{newline}', 0, '-ms-');
-  .keyframe-mixin(~'}@{newline}', 0, '-o-');
-  .keyframe-mixin(~'}@{newline}', 1, '');
+	.keyframe-mixin('', 0, '-webkit-');
+	.keyframe-mixin(~'}@{newline}', 0, '-moz-');
+	.keyframe-mixin(~'}@{newline}', 0, '-ms-');
+	.keyframe-mixin(~'}@{newline}', 0, '-o-');
+	.keyframe-mixin(~'}@{newline}', 1, '');
 }
 .my-mixin('#whatever', name, other-parameters);
 ```
@@ -234,10 +234,10 @@ I won’t make a complete and detailed comparison between Sass and LESS because 
 
 ```scss
 @mixin my-mixin($parameters) {
-  /* Basic stuff here */
-  @if ($my-parameter == 'value') {
-    /* Conditional stuff here */
-  }
+	/* Basic stuff here */
+	@if ($my-parameter == 'value') {
+		/* Conditional stuff here */
+	}
 }
 ```
 
@@ -247,7 +247,7 @@ This is the Sass syntax for conditional statements in a mixin. Okay, it may lack
 
 ```scss
 @for $i from 1 through 10 {
-  /* My stuff here */
+	/* My stuff here */
 }
 ```
 
@@ -259,7 +259,7 @@ Sass has absolutely no problem with concatenation neither in selectors nor in pr
 
 ```scss
 #{$my-selector} {
-  #{$my-property}: $my-value;
+	#{$my-property}: $my-value;
 }
 ```
 

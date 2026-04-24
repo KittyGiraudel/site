@@ -86,30 +86,30 @@ max_failures=3
 interval=10
 
 is_server_running() {
-    pgrep -af game_server || true
+	pgrep -af game_server || true
 }
 
 start_server() {
-    ./start_server.sh
-    return $?
+	./start_server.sh
+	return $?
 }
 
 while true; do
-    sleep "$interval";
+	sleep "$interval";
 
-    if ! is_server_running; then
-        failure_count=$((failure_count + 1))
+	if ! is_server_running; then
+		failure_count=$((failure_count + 1))
 
-        if [ $failure_count -ge $max_failures ]; then
-            if start_server; then
-                failure_count=0
-            fi
-        fi
-    else
-        if [ $failure_count -gt 0 ]; then
-            failure_count=0
-        fi
-    fi
+		if [ $failure_count -ge $max_failures ]; then
+			if start_server; then
+				failure_count=0
+			fi
+		fi
+	else
+		if [ $failure_count -gt 0 ]; then
+			failure_count=0
+		fi
+	fi
 done
 ```
 
@@ -125,35 +125,35 @@ To avoid this situation, we can have a `restart_server` function that performs s
 
 ```sh
 start_server() {
-    ./start_server.sh
-    return $?
+	./start_server.sh
+	return $?
 }
 
 restart_server() {
-    local now
-    now=$(date +%s)
-    local window=300      # 5 minutes
-    local max_restarts=3  # Max restarts in the window
+	local now
+	now=$(date +%s)
+	local window=300      # 5 minutes
+	local max_restarts=3  # Max restarts in the window
 
-    RESTART_HISTORY=("${RESTART_HISTORY[@]:-}")
-    local recent=()
-    for ts in "${RESTART_HISTORY[@]:-}"; do
-        if [ $((now - ts)) -lt $window ]; then
-            recent+=("$ts")
-        fi
-    done
-    RESTART_HISTORY=("${recent[@]}")
+	RESTART_HISTORY=("${RESTART_HISTORY[@]:-}")
+	local recent=()
+	for ts in "${RESTART_HISTORY[@]:-}"; do
+		if [ $((now - ts)) -lt $window ]; then
+			recent+=("$ts")
+		fi
+	done
+	RESTART_HISTORY=("${recent[@]}")
 
-    if [ "${#RESTART_HISTORY[@]}" -ge "$max_restarts" ]; then
-        return 1
-    fi
+	if [ "${#RESTART_HISTORY[@]}" -ge "$max_restarts" ]; then
+		return 1
+	fi
 
-    if start_server; then
-        RESTART_HISTORY+=("$now")
-        return 0
-    else
-        return 1
-    fi
+	if start_server; then
+		RESTART_HISTORY+=("$now")
+		return 0
+	else
+		return 1
+	fi
 }
 ```
 
@@ -185,7 +185,7 @@ Our Rust process exposes a tiny HTTP server for some webhooks. I thought I would
 
 ```sh
 is_server_running() {
-    curl -fsS "http://127.0.0.1:1234/health"
+	curl -fsS "http://127.0.0.1:1234/health"
 }
 ```
 
@@ -206,77 +206,77 @@ Instead, I thought the watchdog could open a short-lived websocket connection, s
 ```rust
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    let health_check_packet = create_packet(PacketType::HealthCheck)?;
-    let timeout_duration = Duration::from_secs(5);
-    let connect_result = timeout(timeout_duration, connect_async(websocket_url)).await;
+	let health_check_packet = create_packet(PacketType::HealthCheck)?;
+	let timeout_duration = Duration::from_secs(5);
+	let connect_result = timeout(timeout_duration, connect_async(websocket_url)).await;
 
-    let (ws_stream, _) = match connect_result {
-        Ok(Ok(stream)) => {
-            stream
-        }
-        Ok(Err(e)) => {
-            std::process::exit(1);
-        }
-        Err(_) => {
-            std::process::exit(1);
-        }
-    };
+	let (ws_stream, _) = match connect_result {
+		Ok(Ok(stream)) => {
+			stream
+		}
+		Ok(Err(e)) => {
+			std::process::exit(1);
+		}
+		Err(_) => {
+			std::process::exit(1);
+		}
+	};
 
-    let (mut sender, mut receiver) = ws_stream.split();
+	let (mut sender, mut receiver) = ws_stream.split();
 
-    let send_result = timeout(
-        timeout_duration,
-        sender.send(Message::Text(health_check_packet.into())),
-    )
-    .await;
+	let send_result = timeout(
+		timeout_duration,
+		sender.send(Message::Text(health_check_packet.into())),
+	)
+	.await;
 
-    match send_result {
-        Ok(Ok(_)) => {}
-        Ok(Err(_)) => {
-            std::process::exit(1);
-        }
-        Err(_) => {
-            std::process::exit(1);
-        }
-    }
+	match send_result {
+		Ok(Ok(_)) => {}
+		Ok(Err(_)) => {
+			std::process::exit(1);
+		}
+		Err(_) => {
+			std::process::exit(1);
+		}
+	}
 
-    let received_result = timeout(timeout_duration, receiver.next()).await;
+	let received_result = timeout(timeout_duration, receiver.next()).await;
 
-    match received_result {
-        Ok(Some(Ok(Message::Text(response)))) => {
-            match handle_packet(&response) {
-                Ok(packet) => {
-                    match serde_json::from_str::<Packet>(&packet) {
-                        Ok(PacketType::HealthCheckResponse) => {
-                            let _ = sender.send(Message::Close(None)).await;
-                            std::process::exit(0);
-                        }
-                        Ok(_) => {
-                            std::process::exit(1);
-                        }
-                        Err(_) => {
-                            std::process::exit(1);
-                        }
-                    }
-                }
-                Err(_) => {
-                    std::process::exit(1);
-                }
-            }
-        }
-        Ok(Some(Ok(_))) => {
-            std::process::exit(1);
-        }
-        Ok(Some(Err(_))) => {
-            std::process::exit(1);
-        }
-        Ok(None) => {
-            std::process::exit(1);
-        }
-        Err(_) => {
-            std::process::exit(1);
-        }
-    }
+	match received_result {
+		Ok(Some(Ok(Message::Text(response)))) => {
+			match handle_packet(&response) {
+				Ok(packet) => {
+					match serde_json::from_str::<Packet>(&packet) {
+						Ok(PacketType::HealthCheckResponse) => {
+							let _ = sender.send(Message::Close(None)).await;
+							std::process::exit(0);
+						}
+						Ok(_) => {
+							std::process::exit(1);
+						}
+						Err(_) => {
+							std::process::exit(1);
+						}
+					}
+				}
+				Err(_) => {
+					std::process::exit(1);
+				}
+			}
+		}
+		Ok(Some(Ok(_))) => {
+			std::process::exit(1);
+		}
+		Ok(Some(Err(_))) => {
+			std::process::exit(1);
+		}
+		Ok(None) => {
+			std::process::exit(1);
+		}
+		Err(_) => {
+			std::process::exit(1);
+		}
+	}
 }
 ```
 
@@ -286,7 +286,7 @@ Then I modified the `is_server_running` function to execute that Rust ~~script~~
 
 ```sh
 is_server_running() {
-    ./target/release/health_check
+	./target/release/health_check
 }
 ```
 
@@ -308,9 +308,9 @@ So when handling the health check packet on the server, we look at how many play
 
 ```rust
 if let Some(min_online_threshold) = config.min_online_threshold {
-    if metrics.online_players < min_online {
-        return HealthStatus::NotEnoughPlayers;
-    }
+	if metrics.online_players < min_online {
+		return HealthStatus::NotEnoughPlayers;
+	}
 }
 ```
 
@@ -338,7 +338,7 @@ let start_time = { *self.start_time.read().await };
 let seconds_since_start = start_time.elapsed().as_secs();
 let in_grace_period = seconds_since_start < GRACE_PERIOD_SECS;
 if in_grace_period {
-    return HealthStatus::Healthy;
+	return HealthStatus::Healthy;
 }
 ```
 
@@ -371,15 +371,15 @@ What if I could notice when this happens? To do so, I’ve started keeping track
 
 ```rust
 pub struct HealthCheckConfig {
-    pub(crate) min_online_players: Option<i32>,
-    pub(crate) max_timeouts_per_window: Option<u64>, // Assumed 30s
-    pub(crate) timeout_timestamps: Arc<SegQueue<Instant>>,
+	pub(crate) min_online_players: Option<i32>,
+	pub(crate) max_timeouts_per_window: Option<u64>, // Assumed 30s
+	pub(crate) timeout_timestamps: Arc<SegQueue<Instant>>,
 }
 ```
 
 ```rust
 fn record_timeout(&self) {
-    self.timeout_timestamps.push(Instant::now());
+	self.timeout_timestamps.push(Instant::now());
 }
 ```
 
@@ -387,27 +387,27 @@ This enabled me to implement a rolling window. The health check looks how many t
 
 ```rust
 fn count_timeouts_in_window(&self) -> Option<u64> {
-    self.max_timeouts_per_window.map(|_| {
-        let window = Duration::from_secs(30);
-        let now = Instant::now();
-        let cutoff = now.checked_sub(window).unwrap_or(Instant::now());
+	self.max_timeouts_per_window.map(|_| {
+		let window = Duration::from_secs(30);
+		let now = Instant::now();
+		let cutoff = now.checked_sub(window).unwrap_or(Instant::now());
 
-        let mut count = 0u64;
-        let mut recent_timestamps = Vec::new();
+		let mut count = 0u64;
+		let mut recent_timestamps = Vec::new();
 
-        while let Some(ts) = self.timeout_timestamps.pop() {
-            if ts >= cutoff {
-                count += 1;
-                recent_timestamps.push(ts);
-            }
-        }
+		while let Some(ts) = self.timeout_timestamps.pop() {
+			if ts >= cutoff {
+				count += 1;
+				recent_timestamps.push(ts);
+			}
+		}
 
-        for ts in recent_timestamps {
-            self.timeout_timestamps.push(ts);
-        }
+		for ts in recent_timestamps {
+			self.timeout_timestamps.push(ts);
+		}
 
-        count
-    })
+		count
+	})
 }
 ```
 
@@ -415,9 +415,9 @@ If it’s higher than a threshold, it fails.
 
 ```rust
 if let Some(max_timeouts_threshold) = config.max_timeouts_per_window {
-    if metrics.timeouts >= max_timeouts_threshold {
-        return HealthStatus::TooManyTimeouts;
-    }
+	if metrics.timeouts >= max_timeouts_threshold {
+		return HealthStatus::TooManyTimeouts;
+	}
 }
 ```
 
@@ -441,14 +441,14 @@ Since its first version, the watchdog forwarded the health check status to [Bett
 
 ```bash
 send_heartbeat() {
-    local is_healthy=$1
-    local heartbeat_url="$BS_HEARTBEAT_URL"
+	local is_healthy=$1
+	local heartbeat_url="$BS_HEARTBEAT_URL"
 
-    if [ "$is_healthy" != "true" ]; then
-        heartbeat_url="${BS_HEARTBEAT_URL}/fail"
-    fi
+	if [ "$is_healthy" != "true" ]; then
+		heartbeat_url="${BS_HEARTBEAT_URL}/fail"
+	fi
 
-    curl -sSf --max-time 5 --head "$heartbeat_url"
+	curl -sSf --max-time 5 --head "$heartbeat_url"
 }
 ```
 

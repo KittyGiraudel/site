@@ -52,19 +52,19 @@ To wrap up our `color-diff()` function we'll return a map of functions and value
 
 ```scss
 @function color-diff($color-a, $color-b) {
-  $hue: hue($color-a) - hue($color-b);
-  $saturation: saturation($color-a) - saturation($color-b);
-  $lightness: lightness($color-a) - lightness($color-b);
+	$hue: hue($color-a) - hue($color-b);
+	$saturation: saturation($color-a) - saturation($color-b);
+	$lightness: lightness($color-a) - lightness($color-b);
 
-  $function-hue: 'adjust-hue';
-  $function-saturation: if($saturation > 0, 'desaturate', 'saturate');
-  $function-lightness: if($lightness > 0, 'darken', 'lighten');
+	$function-hue: 'adjust-hue';
+	$function-saturation: if($saturation > 0, 'desaturate', 'saturate');
+	$function-lightness: if($lightness > 0, 'darken', 'lighten');
 
-  @return (
-    #{$function-hue}: - ($hue),
-    #{$function-saturation}: abs($saturation),
-    #{$function-lightness}: abs($lightness)
-  );
+	@return (
+		#{$function-hue}: - ($hue),
+		#{$function-saturation}: abs($saturation),
+		#{$function-lightness}: abs($lightness)
+	);
 }
 ```
 
@@ -72,9 +72,9 @@ If this looks a little odd to you, we are using Sass interpolation to return som
 
 ```scss
 $map: (
-  'adjust-hue': -42deg,
-  'saturate': 13.37%,
-  'darken': 4.2%,
+	'adjust-hue': -42deg,
+	'saturate': 13.37%,
+	'darken': 4.2%,
 );
 ```
 
@@ -86,10 +86,10 @@ Checking whether our work is efficient is actually quite simple: we only have to
 
 ```scss
 @function apply-color-diff($color, $diff) {
-  @each $key, $value in $diff {
-    $color: call($key, $color, $value);
-  }
-  @return $color;
+	@each $key, $value in $diff {
+		$color: call($key, $color, $value);
+	}
+	@return $color;
 }
 ```
 

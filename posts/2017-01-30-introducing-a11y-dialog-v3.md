@@ -63,12 +63,12 @@ In version 2.\*, the dialog element itself was firing DOM events when shown or h
 ```js
 // Version 2.*
 dialogEl
-  .addEventListener('show', function () {
-    // Do something
-  })
-  .addEventListener('hide', function () {
-    // Do something
-  })
+	.addEventListener('show', function () {
+		// Do something
+	})
+	.addEventListener('hide', function () {
+		// Do something
+	})
 ```
 
 From version 3, it is now possible to register event listeners on the dialog instance itself with the `.on(type, handler)` method. It is obviously possible to unregister event listeners with the `.off(type, handler)` method.
@@ -76,12 +76,12 @@ From version 3, it is now possible to register event listeners on the dialog ins
 ```js
 // Version 3
 dialog
-  .on('show', function () {
-    // Do something
-  })
-  .on('hide', function () {
-    // Do something
-  })
+	.on('show', function () {
+		// Do something
+	})
+	.on('hide', function () {
+		// Do something
+	})
 ```
 
 Note that the `.destroy()` and `.create()` instance also emit events.
@@ -99,8 +99,8 @@ In version 2.\*, custom (DOM) events used to pass an object to the registered ca
 ```js
 // Version 2.*
 dialogEl.addEventListener('show', function (event) {
-  // event.target = dialog element
-  // event.detail = trigger element
+	// event.target = dialog element
+	// event.detail = trigger element
 })
 ```
 
@@ -109,7 +109,7 @@ From version 3, events pass two separate arguments to the registered listeners: 
 ```js
 // Version 3
 dialog.on('show', function (dialogEl, triggerEl) {
-  // …
+	// …
 })
 ```
 

@@ -58,58 +58,58 @@ And the result is:
 
 ```css
 @keyframes carousel {
-  0% {
-    transform: translate3d(0, 0, 0);
-    filter: blur(0);
-  }
-  17.5% {
-    transform: translate3d(0, 0, 0);
-    filter: blur(0);
-  }
-  19.0625% {
-    filter: blur(2px);
-  }
-  20.625% {
-    transform: translate3d(-20%, 0, 0);
-    filter: blur(0);
-  }
-  38.125% {
-    transform: translate3d(-20%, 0, 0);
-    filter: blur(0);
-  }
-  39.6875% {
-    filter: blur(2px);
-  }
-  41.25% {
-    transform: translate3d(-40%, 0, 0);
-    filter: blur(0);
-  }
-  58.75% {
-    transform: translate3d(-40%, 0, 0);
-    filter: blur(0);
-  }
-  60.3125% {
-    filter: blur(2px);
-  }
-  61.875% {
-    transform: translate3d(-60%, 0, 0);
-    filter: blur(0);
-  }
-  79.375% {
-    transform: translate3d(-60%, 0, 0);
-    filter: blur(0);
-  }
-  80.9375% {
-    filter: blur(2px);
-  }
-  82.5% {
-    transform: translate3d(-80%, 0, 0);
-    filter: blur(0);
-  }
-  100% {
-    transform: translate3d(-80%, 0, 0);
-    filter: blur(0);
-  }
+	0% {
+		transform: translate3d(0, 0, 0);
+		filter: blur(0);
+	}
+	17.5% {
+		transform: translate3d(0, 0, 0);
+		filter: blur(0);
+	}
+	19.0625% {
+		filter: blur(2px);
+	}
+	20.625% {
+		transform: translate3d(-20%, 0, 0);
+		filter: blur(0);
+	}
+	38.125% {
+		transform: translate3d(-20%, 0, 0);
+		filter: blur(0);
+	}
+	39.6875% {
+		filter: blur(2px);
+	}
+	41.25% {
+		transform: translate3d(-40%, 0, 0);
+		filter: blur(0);
+	}
+	58.75% {
+		transform: translate3d(-40%, 0, 0);
+		filter: blur(0);
+	}
+	60.3125% {
+		filter: blur(2px);
+	}
+	61.875% {
+		transform: translate3d(-60%, 0, 0);
+		filter: blur(0);
+	}
+	79.375% {
+		transform: translate3d(-60%, 0, 0);
+		filter: blur(0);
+	}
+	80.9375% {
+		filter: blur(2px);
+	}
+	82.5% {
+		transform: translate3d(-80%, 0, 0);
+		filter: blur(0);
+	}
+	100% {
+		transform: translate3d(-80%, 0, 0);
+		filter: blur(0);
+	}
 }
 ```
 
@@ -121,51 +121,51 @@ Before even thinking about Sass, let’s lighten the animation a little bit. As 
 
 ```css
 @keyframes carousel {
-  0%,
-  17.5% {
-    transform: translate3d(0, 0, 0);
-    filter: blur(0);
-  }
+	0%,
+	17.5% {
+		transform: translate3d(0, 0, 0);
+		filter: blur(0);
+	}
 
-  19.0625% {
-    filter: blur(2px);
-  }
+	19.0625% {
+		filter: blur(2px);
+	}
 
-  20.625%,
-  38.125% {
-    transform: translate3d(-20%, 0, 0);
-    filter: blur(0);
-  }
+	20.625%,
+	38.125% {
+		transform: translate3d(-20%, 0, 0);
+		filter: blur(0);
+	}
 
-  39.6875% {
-    filter: blur(2px);
-  }
+	39.6875% {
+		filter: blur(2px);
+	}
 
-  41.25%,
-  58.75% {
-    transform: translate3d(-40%, 0, 0);
-    filter: blur(0);
-  }
+	41.25%,
+	58.75% {
+		transform: translate3d(-40%, 0, 0);
+		filter: blur(0);
+	}
 
-  60.3125% {
-    filter: blur(2px);
-  }
+	60.3125% {
+		filter: blur(2px);
+	}
 
-  61.875%,
-  79.375% {
-    transform: translate3d(-60%, 0, 0);
-    filter: blur(0);
-  }
+	61.875%,
+	79.375% {
+		transform: translate3d(-60%, 0, 0);
+		filter: blur(0);
+	}
 
-  80.9375% {
-    filter: blur(2px);
-  }
+	80.9375% {
+		filter: blur(2px);
+	}
 
-  82.5%,
-  100% {
-    transform: translate3d(-80%, 0, 0);
-    filter: blur(0);
-  }
+	82.5%,
+	100% {
+		transform: translate3d(-80%, 0, 0);
+		filter: blur(0);
+	}
 }
 ```
 
@@ -191,10 +191,10 @@ Now, we need to open the `@keyframes` directive, then a loop.
 
 ```scss
 @keyframes carousel {
-  @for $i from 0 to $n {
-    // 0, 1, 2, 3, 4
-    // Sass Magic
-  }
+	@for $i from 0 to $n {
+		// 0, 1, 2, 3, 4
+		// Sass Magic
+	}
 }
 ```
 
@@ -212,8 +212,8 @@ And now, we use those variables to generate a keyframe inside the loop. Let’s 
 ```scss
 #{$current-frame,
 $next-frame} {
-  transform: translateX($i * -100% / $frames);
-  filter: blur(0);
+	transform: translateX($i * -100% / $frames);
+	filter: blur(0);
 }
 ```
 
@@ -222,8 +222,8 @@ Quite simple, isn’t it? For the first loop run, this would output:
 ```css
 0%,
 17.5% {
-  transform: translate3d(0%, 0, 0);
-  filter: blur(0);
+	transform: translate3d(0%, 0, 0);
+	filter: blur(0);
 }
 ```
 
@@ -233,7 +233,7 @@ All we have left is outputing what Harry calls _an halfway frame_ to add a littl
 $halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
 
 #{$halfway-frame} {
-  filter: blur(2px);
+	filter: blur(2px);
 }
 ```
 
@@ -245,9 +245,9 @@ As you can see, we end up with a negative keyframe selector. This is prohibited 
 
 ```scss
 @if $i > 0 {
-  #{$halfway-frame} {
-    filter: blur(2px);
-  }
+	#{$halfway-frame} {
+		filter: blur(2px);
+	}
 }
 ```
 
@@ -259,23 +259,23 @@ $x: 17.5%;
 $y: (100% - $n * $x) / ($n - 1);
 
 @keyframes carousel {
-  @for $i from 0 to $n {
-    $current-frame: ($i * $x) + ($i * $y);
-    $next-frame: (($i + 1) * $x) + ($i + $y);
+	@for $i from 0 to $n {
+		$current-frame: ($i * $x) + ($i * $y);
+		$next-frame: (($i + 1) * $x) + ($i + $y);
 
-    #{$current-frame,
-    $next-frame} {
-      transform: translate3d($i * -100% / $frames, 0, 0);
-    }
+		#{$current-frame,
+		$next-frame} {
+			transform: translate3d($i * -100% / $frames, 0, 0);
+		}
 
-    $halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
+		$halfway-frame: $i * ($x / 1%) + ($i - 1) * $y + ($y / 2);
 
-    @if $i > 0 {
-      #{$halfway-frame} {
-        filter: blur(2px);
-      }
-    }
-  }
+		@if $i > 0 {
+			#{$halfway-frame} {
+				filter: blur(2px);
+			}
+		}
+	}
 }
 ```
 
@@ -295,9 +295,9 @@ Also, because a mixin can be called several times with different arguments, we s
 
 ```scss
 @mixin carousel-animation($frames, $static, $name: 'carousel') {
-  $animating: (100% - $frames * $static) / ($frames - 1);
+	$animating: (100% - $frames * $static) / ($frames - 1);
 
-  // Moar Sass
+	// Moar Sass
 }
 ```
 
@@ -305,13 +305,13 @@ Since it is now a mixin, it can be called from several places: probably the root
 
 ```scss
 @mixin carousel-animation($frames, $static, $name: 'carousel') {
-  $animating: (100% - $frames * $static) / ($frames - 1);
+	$animating: (100% - $frames * $static) / ($frames - 1);
 
-  @at-root {
-    @keyframes #{$name} {
-      // Animation logic here
-    }
-  }
+	@at-root {
+		@keyframes #{$name} {
+			// Animation logic here
+		}
+	}
 }
 ```
 
@@ -325,43 +325,43 @@ Resulting in:
 
 ```css
 @keyframes carousel {
-  0%,
-  17.5% {
-    transform: translateX(0%);
-    filter: blur(0);
-  }
-  19.0625% {
-    filter: blur(2px);
-  }
-  20.625%,
-  38.125% {
-    transform: translateX(-20%);
-    filter: blur(0);
-  }
-  39.6875% {
-    filter: blur(2px);
-  }
-  41.25%,
-  58.75% {
-    transform: translateX(-40%);
-    filter: blur(0);
-  }
-  60.3125% {
-    filter: blur(2px);
-  }
-  61.875%,
-  79.375% {
-    transform: translateX(-60%);
-    filter: blur(0);
-  }
-  80.9375% {
-    filter: blur(2px);
-  }
-  82.5%,
-  100% {
-    transform: translateX(-80%);
-    filter: blur(0);
-  }
+	0%,
+	17.5% {
+		transform: translateX(0%);
+		filter: blur(0);
+	}
+	19.0625% {
+		filter: blur(2px);
+	}
+	20.625%,
+	38.125% {
+		transform: translateX(-20%);
+		filter: blur(0);
+	}
+	39.6875% {
+		filter: blur(2px);
+	}
+	41.25%,
+	58.75% {
+		transform: translateX(-40%);
+		filter: blur(0);
+	}
+	60.3125% {
+		filter: blur(2px);
+	}
+	61.875%,
+	79.375% {
+		transform: translateX(-60%);
+		filter: blur(0);
+	}
+	80.9375% {
+		filter: blur(2px);
+	}
+	82.5%,
+	100% {
+		transform: translateX(-80%);
+		filter: blur(0);
+	}
 }
 ```
 
@@ -369,9 +369,9 @@ Mission accomplished! And if we want another animation for the contact page for 
 
 ```scss
 @include carousel-animation(
-  $name: 'carousel-contact',
-  $frames: 3,
-  $static: 20%
+	$name: 'carousel-contact',
+	$frames: 3,
+	$static: 20%
 );
 ```
 

@@ -25,12 +25,12 @@ I’ve reworked theme-related code a lot. On the CSS side, I’ve leveraged the 
 
 ```css
 :root {
-  color-scheme: light dark;
+	color-scheme: light dark;
 }
 
 body {
-  color: light-dark(#444, #eee);
-  background-color: light-dark(#fff, #222);
+	color: light-dark(#444, #eee);
+	background-color: light-dark(#fff, #222);
 }
 ```
 
@@ -39,13 +39,13 @@ I’ve improved the control itself to be a tri-state button to support dark, lig
 ```html
 <!-- Button currently in light mode -->
 <button
-  type="button"
-  aria-pressed="false"
-  class="ThemeButton NoPrint"
-  title="Theme: light"
+	type="button"
+	aria-pressed="false"
+	class="ThemeButton NoPrint"
+	title="Theme: light"
 >
-  <span class="visually-hidden">Dark mode</span>
-  <!-- Appropriate icon for current mode here -->
+	<span class="visually-hidden">Dark mode</span>
+	<!-- Appropriate icon for current mode here -->
 </button>
 ```
 
@@ -66,25 +66,25 @@ I’ve also added a playful little hover animation for that button, making it wi
 
 ```css
 .ThemeButton:hover {
-  animation: wiggle 500ms ease-out;
+	animation: wiggle 500ms ease-out;
 }
 
 @keyframes wiggle {
-  from {
-    transform: rotate(10deg);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(20deg);
-  }
-  75% {
-    transform: rotate(-5deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+	from {
+		transform: rotate(10deg);
+	}
+	25% {
+		transform: rotate(-10deg);
+	}
+	50% {
+		transform: rotate(20deg);
+	}
+	75% {
+		transform: rotate(-5deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
 }
 ```
 
@@ -96,7 +96,7 @@ I’m not smart enough to really make sense of the math behind it, but this decl
 
 ```css
 body {
-  font-size: min(max(1.25rem, 4vw), 1.4rem);
+	font-size: min(max(1.25rem, 4vw), 1.4rem);
 }
 ```
 
@@ -120,15 +120,15 @@ They still do look similar! They bear the same pale blue background color, and t
 
 ```css
 blockquote {
-  --background-color: light-dark(#f3f8fc, #303132);
-  padding: 0.75em 1.5em;
-  background-color: var(--background-color);
-  border: 2px solid transparent;
-  background-image:
-    linear-gradient(var(--background-color), var(--background-color)),
-    linear-gradient(to right, var(--blue), var(--pink));
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+	--background-color: light-dark(#f3f8fc, #303132);
+	padding: 0.75em 1.5em;
+	background-color: var(--background-color);
+	border: 2px solid transparent;
+	background-image:
+		linear-gradient(var(--background-color), var(--background-color)),
+		linear-gradient(to right, var(--blue), var(--pink));
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
 }
 ```
 
@@ -138,20 +138,20 @@ Now, for the floating typographic marks, I’ve used absolutely positioned pseud
 
 ```css
 .Callout::before {
-  content: "‽";
+	content: "‽";
 
-  opacity: 0.2;
-  font:
-    1000% / 1 Baskerville,
-    serif;
-  color: var(--blue);
+	opacity: 0.2;
+	font:
+		1000% / 1 Baskerville,
+		serif;
+	color: var(--blue);
 
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  z-index: 1;
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	z-index: 1;
 
-  transform: translate(-10%, 69%) rotate(-30deg);
+	transform: translate(-10%, 69%) rotate(-30deg);
 }
 ```
 
@@ -161,8 +161,8 @@ To ensure the content within the callout sits on top of the decorative character
 
 ```css
 .Callout > * {
-  position: relative;
-  z-index: 2;
+	position: relative;
+	z-index: 2;
 }
 ```
 
@@ -176,7 +176,7 @@ I have had a love-hate relationship with heading anchors over the years. I’ve 
 
 ```html
 <heading-anchors selector="h2,h3,h4" content="§">
-  <!-- Page content -->
+	<!-- Page content -->
 </heading-anchors>
 ```
 
@@ -203,8 +203,8 @@ I have recently (re)discovered [squircle corners](https://orgpad.info/blog/squir
 
 ```css
 .box {
-  border-radius: 1em;
-  corner-shape: squircle;
+	border-radius: 1em;
+	corner-shape: squircle;
 }
 ```
 
@@ -216,10 +216,10 @@ I’ve had [these gradient links](/) for a long time now. And I still like them 
 
 ```css
 a:focus-visible {
-  outline: 2px solid var(--pink);
-  outline-offset: 2px;
-  border-radius: 0.25em;
-  corner-shape: squircle;
+	outline: 2px solid var(--pink);
+	outline-offset: 2px;
+	border-radius: 0.25em;
+	corner-shape: squircle;
 }
 ```
 
@@ -227,7 +227,7 @@ Speaking of links, I’ve also added a little bit of spacing at the top of the p
 
 ```css
 h2 {
-  scroll-margin-top: 0.5rem;
+	scroll-margin-top: 0.5rem;
 }
 ```
 
@@ -250,7 +250,7 @@ So I’ve implemented a few changes. First, I’ve moved the ad a little lower i
 {​% include "ad.liquid" %}
 
 {​% for part in parts offset: 1 %}
-  {​{ part }}{​% unless forloop.last %}</p>{​% endunless %}
+	{​{ part }}{​% unless forloop.last %}</p>{​% endunless %}
 {​% endfor %}
 ```
 
@@ -260,21 +260,21 @@ Finally, I’ve made it so that if the ad couldn’t be loaded (because of an ad
 
 ```css
 .Ad:not(:has(#carbonads)) {
-  display: none;
+	display: none;
 }
 
 @media screen and (min-width: 1556px) {
-  .Ad {
-    display: contents;
-  }
-  .Ad__text {
-    display: none;
-  }
-  .Ad__carbon {
-    position: fixed;
-    bottom: 0.5em;
-    right: 1em;
-  }
+	.Ad {
+		display: contents;
+	}
+	.Ad__text {
+		display: none;
+	}
+	.Ad__carbon {
+		position: fixed;
+		bottom: 0.5em;
+		right: 1em;
+	}
 }
 ```
 

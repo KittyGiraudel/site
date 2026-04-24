@@ -20,11 +20,11 @@ I would personally recommend this structure:
 // All your globals and helpers
 
 node {
-  try {
-    // Your actual pipeline code
-  } catch (error) {
-    // Global error handler for your pipeline
-  }
+	try {
+		// Your actual pipeline code
+	} catch (error) {
+		// Global error handler for your pipeline
+	}
 }
 ```
 
@@ -52,9 +52,9 @@ For programmatically scheduled jobs, you can also opt-out the failures being pro
 
 ```groovy
 final build = steps.build(
-  job: 'path/to/job',
-  parameters: [],
-  propagate: false
+	job: 'path/to/job',
+	parameters: [],
+	propagate: false
 )
 ```
 
@@ -71,11 +71,11 @@ def branches = [:]
 branches.foo = { /* … */ }
 
 if (shouldRunBar) {
-  branches.bar = { /* … */ }
-  parallel branches
+	branches.bar = { /* … */ }
+	parallel branches
 } else {
-  // Otherwise skip parallelisation and manually execute the first branch
-  branches.foo()
+	// Otherwise skip parallelisation and manually execute the first branch
+	branches.foo()
 }
 ```
 
@@ -91,11 +91,11 @@ For instance:
 
 ```groovy
 stage('Second') {
-  if (env == 'live') {
-    skipStage()
-  } else {
-    // Test code
-  }
+	if (env == 'live') {
+		skipStage()
+	} else {
+		// Test code
+	}
 }
 ```
 
@@ -107,7 +107,7 @@ It can happen that some specific tasks are flaky. Maybe it’s a test that somet
 
 ```groovy
 retry (3) {
-  sh "npm ci"
+	sh "npm ci"
 }
 ```
 
@@ -119,20 +119,20 @@ On top of automatic retrying of failing steps (both [from Cypress behaviour](htt
 
 ```groovy
 stage('Tests') {
-  waitUntil {
-    try {
-      // Run tests
-      return true
-    } catch (error) {
-      // This will offer a boolean option to retry the stage. Since
-      // it is within a `waitUntil` block, proceeding will restart
-      // the body of the function. Aborting results in an abort
-      // error, which causes the `waitUntil` block to exit with an
-      // error.
-      input 'Retry stage?'
-      return false
-    }
-  }
+	waitUntil {
+		try {
+			// Run tests
+			return true
+		} catch (error) {
+			// This will offer a boolean option to retry the stage. Since
+			// it is within a `waitUntil` block, proceeding will restart
+			// the body of the function. Aborting results in an abort
+			// error, which causes the `waitUntil` block to exit with an
+			// error.
+			input 'Retry stage?'
+			return false
+		}
+	}
 }
 ```
 
@@ -142,9 +142,9 @@ When you are not quite ready for continuous deployment, having a stage to confir
 
 ```groovy
 stage('Confirmation') {
-  timeout(time: 60, unit: 'MINUTES') {
-    input "Release to production?"
-  }
+	timeout(time: 60, unit: 'MINUTES') {
+		input "Release to production?"
+	}
 }
 ```
 
@@ -160,15 +160,15 @@ To know whether a build is aborted, you could wrap your entire pipeline in a try
 
 ```groovy
 node {
-  try {
-    // The whole thing
-  } catch (error) {
-    if ("${error}".startsWith('org.jenkinsci.plugins.workflow.steps.FlowInterruptedException')) {
-      // Build was aborted
-    } else {
-      // Build failed
-    }
-  }
+	try {
+		// The whole thing
+	} catch (error) {
+		if ("${error}".startsWith('org.jenkinsci.plugins.workflow.steps.FlowInterruptedException')) {
+			// Build was aborted
+		} else {
+			// Build failed
+		}
+	}
 }
 ```
 
@@ -178,13 +178,13 @@ It can be interesting for a build to archive some of its assets (known as “art
 
 ```groovy
 try {
-  sh "cypress run"
+	sh "cypress run"
 } catch (error) {
-  archiveArtifacts(
-    artifacts: "cypress/screenshots/**/*.png",
-    fingerprint: true,
-    allowEmptyArchive: true
-  )
+	archiveArtifacts(
+		artifacts: "cypress/screenshots/**/*.png",
+		fingerprint: true,
+		allowEmptyArchive: true
+	)
 }
 ```
 
@@ -196,10 +196,10 @@ final build = steps.build(job: 'path/to/job', propagate: false)
 // Copy in the root directory the artefacts archived by the sub-job,
 // referred to by its name and job number
 if (build.status = 'FAILURE') {
-  copyArtifacts(
-    projectName: 'path/to/job',
-    selector: specific("${build.number}")
-  )
+	copyArtifacts(
+		projectName: 'path/to/job',
+		selector: specific("${build.number}")
+	)
 }
 ```
 

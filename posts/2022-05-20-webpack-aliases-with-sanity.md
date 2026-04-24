@@ -27,9 +27,9 @@ Thankfully, Sanity also uses Webpack as a bundler, so you can fix that by creati
 const path = require('path')
 
 module.exports = function (config) {
-  config.resolve.alias['@'] = path.resolve(__dirname, '..', 'src')
+	config.resolve.alias['@'] = path.resolve(__dirname, '..', 'src')
 
-  return config
+	return config
 }
 ```
 
@@ -52,15 +52,15 @@ import path from 'path'
 import { defineCliConfig } from 'sanity/cli'
 
 export default defineCliConfig({
-  api: {},
+	api: {},
 
-  vite: config => {
-    if (!config.resolve) config.resolve = {}
-    if (!config.resolve.alias) config.resolve.alias = {}
+	vite: config => {
+		if (!config.resolve) config.resolve = {}
+		if (!config.resolve.alias) config.resolve.alias = {}
 
-    config.resolve.alias['@'] = path.resolve(__dirname, '..', 'src')
+		config.resolve.alias['@'] = path.resolve(__dirname, '..', 'src')
 
-    return config
-  },
+		return config
+	},
 })
 ```

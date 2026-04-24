@@ -28,7 +28,7 @@ So the few things I noticed were definitely not about their idea but more the wa
 
 ```css
 .rating-5-half .star-6 {
-  border-left-color: #dd050b;
+	border-left-color: #dd050b;
 }
 ```
 
@@ -37,20 +37,20 @@ Next and probably the biggest flaws in their code, they got a lot of duplicated 
 ```css
 .rating-3 .star-1,
 .rating-3-half .star-1 {
-  border-color: #f0991e;
-  background: #f0991e;
+	border-color: #f0991e;
+	background: #f0991e;
 }
 
 .rating-3 .star-2,
 .rating-3-half .star-2 {
-  border-color: #f0991e;
-  background: #f0991e;
+	border-color: #f0991e;
+	background: #f0991e;
 }
 
 .rating-3 .star-3,
 .rating-3-half .star-3 {
-  border-color: #f0991e;
-  background: #f0991e;
+	border-color: #f0991e;
+	background: #f0991e;
 }
 ```
 
@@ -60,17 +60,17 @@ Last but not least, their `stars-color` function returning a color based on a nu
 
 ```scss
 @function stars-color($num) {
-  @if $num == 5 {
-    @return #dd050b;
-  } @else if $num == 4 {
-    @return #f26a2c;
-  } @else if $num == 3 {
-    @return #f0991e;
-  } @else if $num == 2 {
-    @return #dcb228;
-  } @else if $num == 1 {
-    @return #cc8b1f;
-  }
+	@if $num == 5 {
+		@return #dd050b;
+	} @else if $num == 4 {
+		@return #f26a2c;
+	} @else if $num == 3 {
+		@return #f0991e;
+	} @else if $num == 2 {
+		@return #dcb228;
+	} @else if $num == 1 {
+		@return #cc8b1f;
+	}
 }
 ```
 
@@ -98,12 +98,12 @@ We’ll start with the simplest thing we can do to improve the code: refactoring
 
 ```scss
 @function stars-color($stars) {
-  @if type-of($stars) != number {
-    @warn '#{$stars} is not a number for `stars-color`.';
-    @return false;
-  }
-  $colors: #cc8b1f #dcb228 #f0991e #f26a2c #dd050b;
-  @return if($stars <= length($colors), nth($colors, $stars), #333);
+	@if type-of($stars) != number {
+		@warn '#{$stars} is not a number for `stars-color`.';
+		@return false;
+	}
+	$colors: #cc8b1f #dcb228 #f0991e #f26a2c #dd050b;
+	@return if($stars <= length($colors), nth($colors, $stars), #333);
 }
 ```
 
@@ -121,25 +121,25 @@ Because it does the work well and is quite smart, I kept this as is. However I d
 
 ```scss
 @for $i from 1 to 5 {
-  $color: stars-color($i);
-  $selector: ();
+	$color: stars-color($i);
+	$selector: ();
 
-  @for $j from 1 through $i {
-    $selector: append(
-      $selector,
-      unquote("[data-rating^='#{$i}'] .star-#{$j}"),
-      comma
-    );
-  }
+	@for $j from 1 through $i {
+		$selector: append(
+			$selector,
+			unquote("[data-rating^='#{$i}'] .star-#{$j}"),
+			comma
+		);
+	}
 
-  #{$selector} {
-    border-color: $color;
-    background: $color;
-  }
+	#{$selector} {
+		border-color: $color;
+		background: $color;
+	}
 
-  [data-rating="#{$i + 0.5}"] .star-#{$i + 1} {
-    border-left-color: $color;
-  }
+	[data-rating="#{$i + 0.5}"] .star-#{$i + 1} {
+		border-left-color: $color;
+	}
 }
 ```
 
@@ -165,8 +165,8 @@ Then dealing with this case is as easy as writing:
 ```scss
 $color: stars-color(5);
 [data-rating="5"] i {
-  border-color: $color;
-  background: $color;
+	border-color: $color;
+	background: $color;
 }
 ```
 
@@ -181,50 +181,50 @@ And here is what the loops' output looks like in my case:
 
 ```css
 [data-rating^="1"] .star-1 {
-  border-color: #cc8b1f;
-  background: #cc8b1f;
+	border-color: #cc8b1f;
+	background: #cc8b1f;
 }
 
 [data-rating="1.5"] .star-2 {
-  border-left-color: #cc8b1f;
+	border-left-color: #cc8b1f;
 }
 
 [data-rating^="2"] .star-1,
 [data-rating^="2"] .star-2 {
-  border-color: #dcb228;
-  background: #dcb228;
+	border-color: #dcb228;
+	background: #dcb228;
 }
 
 [data-rating="2.5"] .star-3 {
-  border-left-color: #dcb228;
+	border-left-color: #dcb228;
 }
 
 [data-rating^="3"] .star-1,
 [data-rating^="3"] .star-2,
 [data-rating^="3"] .star-3 {
-  border-color: #f0991e;
-  background: #f0991e;
+	border-color: #f0991e;
+	background: #f0991e;
 }
 
 [data-rating="3.5"] .star-4 {
-  border-left-color: #f0991e;
+	border-left-color: #f0991e;
 }
 
 [data-rating^="4"] .star-1,
 [data-rating^="4"] .star-2,
 [data-rating^="4"] .star-3,
 [data-rating^="4"] .star-4 {
-  border-color: #f26a2c;
-  background: #f26a2c;
+	border-color: #f26a2c;
+	background: #f26a2c;
 }
 
 [data-rating="4.5"] .star-5 {
-  border-left-color: #f26a2c;
+	border-left-color: #f26a2c;
 }
 
 [data-rating="5"] i {
-  border-color: #dd050b;
-  background: #dd050b;
+	border-color: #dd050b;
+	background: #dd050b;
 }
 ```
 

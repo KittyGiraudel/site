@@ -30,11 +30,11 @@ Let’s start by creating the boilerplate for our transform:
 
 ```js
 eleventyConfig.addTransform('emojis', (content, outputPath) => {
-  return outputPath.endsWith('.html') ? wrapEmojis(content) : content
+	return outputPath.endsWith('.html') ? wrapEmojis(content) : content
 })
 
 function wrapEmojis(content) {
-  // Our code here
+	// Our code here
 }
 ```
 
@@ -48,10 +48,10 @@ From there, we can already wrap our emojis:
 const emojiRegex = require('emoji-regex/RGI_Emoji')()
 
 function wrapEmojis(content) {
-  return content.replace(
-    emojiRegex,
-    match => `<span role="img">${match}</span>`
-  )
+	return content.replace(
+		emojiRegex,
+		match => `<span role="img">${match}</span>`
+	)
 }
 ```
 
@@ -68,15 +68,15 @@ const emojiRegex = require('emoji-regex/RGI_Emoji')()
 const emojiShortName = require('emoji-short-name')
 
 function wrapEmojis(content) {
-  return content.replace(emojiRegex, wrapEmoji)
+	return content.replace(emojiRegex, wrapEmoji)
 }
 
 function wrapEmoji(emoji) {
-  const label = emojiShortName[content]
+	const label = emojiShortName[content]
 
-  return label
-    ? `<span role="img" aria-label="${label}" title="${label}">${emoji}</span>`
-    : emoji
+	return label
+		? `<span role="img" aria-label="${label}" title="${label}">${emoji}</span>`
+		: emoji
 }
 ```
 

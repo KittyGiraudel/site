@@ -16,13 +16,13 @@ This is how we would use it:
 
 ```js
 export async function handler(request, response) {
-  try {
-    await applyRateLimit(request, response)
-  } catch {
-    return response.status(429).send('Too many requests')
-  }
+	try {
+		await applyRateLimit(request, response)
+	} catch {
+		return response.status(429).send('Too many requests')
+	}
 
-  // Rest of the API route code.
+	// Rest of the API route code.
 }
 ```
 
@@ -30,22 +30,22 @@ I personally like [express-rate-limit](https://www.npmjs.com/package/express-rat
 
 ```js
 const applyMiddleware = middleware => (request, response) =>
-  new Promise((resolve, reject) => {
-    middleware(request, response, result =>
-      result instanceof Error ? reject(result) : resolve(result),
-    )
-  })
+	new Promise((resolve, reject) => {
+		middleware(request, response, result =>
+			result instanceof Error ? reject(result) : resolve(result),
+		)
+	})
 ```
 
 Then, our `applyRateLimit` function. It takes 2 middlewares (more on that in a second), runs them through the `applyMiddleware` function to make them consumable outside of Express/Connect and then await them with the request and response. If a middleware rejects, `applyRateLimit` rejects as well. If they all resolve, `applyRateLimit` resolves successfully.
 
 ```js
 async function applyRateLimit(request, response) {
-  await Promise.all(
-    middlewares
-      .map(applyMiddleware)
-      .map(middleware => middleware(request, response)),
-  )
+	await Promise.all(
+		middlewares
+			.map(applyMiddleware)
+			.map(middleware => middleware(request, response)),
+	)
 }
 ```
 
@@ -56,10 +56,10 @@ import rateLimit from 'express-rate-limit'
 import slowDown from 'express-slow-down'
 
 const getIP = request =>
-  request.ip ||
-  request.headers['x-forwarded-for'] ||
-  request.headers['x-real-ip'] ||
-  request.connection.remoteAddress
+	request.ip ||
+	request.headers['x-forwarded-for'] ||
+	request.headers['x-real-ip'] ||
+	request.connection.remoteAddress
 
 const limit = 10
 const windowMs = 60 * 1_000
@@ -67,8 +67,8 @@ const delayAfter = Math.round(limit / 2)
 const delayMs = 500
 
 const middlewares = [
-  slowDown({ keyGenerator: getIP, windowMs, delayAfter, delayMs }),
-  rateLimit({ keyGenerator: getIP, windowMs, max: limit }),
+	slowDown({ keyGenerator: getIP, windowMs, delayAfter, delayMs }),
+	rateLimit({ keyGenerator: getIP, windowMs, max: limit }),
 ]
 ```
 
@@ -90,13 +90,13 @@ If we want to customize the configuration per API route, we can refactor our cod
 
 ```js
 export const getRateLimitMiddlewares = ({
-  limit = 10,
-  windowMs = 60 * 1000,
-  delayAfter = Math.round(10 / 2),
-  delayMs = 500,
+	limit = 10,
+	windowMs = 60 * 1000,
+	delayAfter = Math.round(10 / 2),
+	delayMs = 500,
 } = {}) => [
-  slowDown({ keyGenerator: getIP, windowMs, delayAfter, delayMs }),
-  rateLimit({ keyGenerator: getIP, windowMs, max: limit }),
+	slowDown({ keyGenerator: getIP, windowMs, delayAfter, delayMs }),
+	rateLimit({ keyGenerator: getIP, windowMs, max: limit }),
 ]
 ```
 
@@ -106,15 +106,15 @@ And then we would use it like this:
 const middlewares = getRateLimitMiddlewares({ limit: 50 }).map(applyMiddleware)
 
 export default async function handler(request, response) {
-  try {
-    await Promise.all(
-      middlewares.map(middleware => middleware(request, response)),
-    )
-  } catch {
-    return response.status(429).send('Too Many Requests')
-  }
+	try {
+		await Promise.all(
+			middlewares.map(middleware => middleware(request, response)),
+		)
+	} catch {
+		return response.status(429).send('Too Many Requests')
+	}
 
-  // Rest of the API route code.
+	// Rest of the API route code.
 }
 ```
 
@@ -128,36 +128,36 @@ import rateLimit from 'express-rate-limit'
 import slowDown from 'express-slow-down'
 
 const applyMiddleware = middleware => (request, response) =>
-  new Promise((resolve, reject) => {
-    middleware(request, response, result =>
-      result instanceof Error ? reject(result) : resolve(result),
-    )
-  })
+	new Promise((resolve, reject) => {
+		middleware(request, response, result =>
+			result instanceof Error ? reject(result) : resolve(result),
+		)
+	})
 
 const getIP = request =>
-  request.ip ||
-  request.headers['x-forwarded-for'] ||
-  request.headers['x-real-ip'] ||
-  request.connection.remoteAddress
+	request.ip ||
+	request.headers['x-forwarded-for'] ||
+	request.headers['x-real-ip'] ||
+	request.connection.remoteAddress
 
 export const getRateLimitMiddlewares = ({
-  limit = 10,
-  windowMs = 60 * 1000,
-  delayAfter = Math.round(10 / 2),
-  delayMs = 500,
+	limit = 10,
+	windowMs = 60 * 1000,
+	delayAfter = Math.round(10 / 2),
+	delayMs = 500,
 } = {}) => [
-  slowDown({ keyGenerator: getIP, windowMs, delayAfter, delayMs }),
-  rateLimit({ keyGenerator: getIP, windowMs, max: limit }),
+	slowDown({ keyGenerator: getIP, windowMs, delayAfter, delayMs }),
+	rateLimit({ keyGenerator: getIP, windowMs, max: limit }),
 ]
 
 const middlewares = getRateLimitMiddlewares()
 
 async function applyRateLimit(request, response) {
-  await Promise.all(
-    middlewares
-      .map(applyMiddleware)
-      .map(middleware => middleware(request, response)),
-  )
+	await Promise.all(
+		middlewares
+			.map(applyMiddleware)
+			.map(middleware => middleware(request, response)),
+	)
 }
 
 export default applyRateLimit

@@ -118,7 +118,7 @@ This is what we wanted to achieve. Although we wanted a very simple API, somethi
 
 ```scss
 .grid {
-  @include cubic-bezier(0.32, 1, 0.53, 0.8);
+	@include cubic-bezier(0.32, 1, 0.53, 0.8);
 }
 ```
 
@@ -126,19 +126,19 @@ Basically exactly like the `cubic-bezier` function from CSS. We can also add an 
 
 ```scss
 .grid {
-  @include cubic-bezier(
-    0.32,
-    1,
-    0.53,
-    0.8,
-    (
-      'control-points': true,
-      'information': true,
-      'size': 300px,
-      'color': #999,
-      'details': 64,
-    )
-  );
+	@include cubic-bezier(
+		0.32,
+		1,
+		0.53,
+		0.8,
+		(
+			'control-points': true,
+			'information': true,
+			'size': 300px,
+			'color': #999,
+			'details': 64,
+		)
+	);
 }
 ```
 
@@ -158,7 +158,7 @@ It all starts with linear interpolation. I already showed you how that works.
 /// @param {Number} $p
 /// @return {Number} Return a number between `$a` and `$b`, based on `$p`
 @function lerp($a, $b, $p) {
-  @return ($b - $a) * $p + $a;
+	@return ($b - $a) * $p + $a;
 }
 ```
 
@@ -173,7 +173,7 @@ However, Sass doesn’t do arithmetic operations on maps or lists. Linear interp
 /// @param {Number} $p
 /// @return {List}
 @function lerp-point($a, $b, $p) {
-  @return lerp(nth($a, 1), nth($b, 1), $p), lerp(nth($a, 2), nth($b, 2), $p);
+	@return lerp(nth($a, 1), nth($b, 1), $p), lerp(nth($a, 2), nth($b, 2), $p);
 }
 ```
 
@@ -186,25 +186,25 @@ At this point, we have to apply the interpolation. Remember that a the amount of
 /// @param {Number} $p
 /// @return {Number}
 @function bezier-reduce($points, $p) {
-  // Keep lerping until one point is left
-  @while length($points) > 1 {
-    // Temporary list containing the newly lerped points
-    $tmp: ();
+	// Keep lerping until one point is left
+	@while length($points) > 1 {
+		// Temporary list containing the newly lerped points
+		$tmp: ();
 
-    // Iterate through all (current) points
-    @for $i from 1 to length($points) {
-      // Add lerped point to the temporary list
-      $tmp: append(
-        $tmp,
-        lerp-point(nth($points, $i), nth($points, $i + 1), $p)
-      );
-    }
+		// Iterate through all (current) points
+		@for $i from 1 to length($points) {
+			// Add lerped point to the temporary list
+			$tmp: append(
+				$tmp,
+				lerp-point(nth($points, $i), nth($points, $i + 1), $p)
+			);
+		}
 
-    // Replace old points by new interpolated list
-    $points: $tmp;
-  }
+		// Replace old points by new interpolated list
+		$points: $tmp;
+	}
 
-  @return nth($points, 1);
+	@return nth($points, 1);
 }
 ```
 
@@ -217,18 +217,18 @@ All that remains now is generating a sequence of points to display the graph and
 /// @output box-shadow
 /// @author Tim Severien
 @mixin bezier-shadow($points, $detail) {
-  // Create a list of shadows
-  $shadow: ();
+	// Create a list of shadows
+	$shadow: ();
 
-  @for $i from 0 to $detail {
-    // Get the point at $i / $detail
-    $point: bezier-reduce($points, $i / $detail);
+	@for $i from 0 to $detail {
+		// Get the point at $i / $detail
+		$point: bezier-reduce($points, $i / $detail);
 
-    // Create a new shadow for current point
-    $shadow: append($shadow, nth($point, 1) nth($point, 2), comma);
-  }
+		// Create a new shadow for current point
+		$shadow: append($shadow, nth($point, 1) nth($point, 2), comma);
+	}
 
-  box-shadow: $shadow;
+	box-shadow: $shadow;
 }
 ```
 
@@ -238,25 +238,25 @@ I won't dig too much into the code since it's mostly writing CSS at this point, 
 
 ```scss
 @mixin cubic-bezier($x1, $y1, $x2, $y2, $options: ()) {
-  $options: map-merge(
-    (
-      // Enable/disable control-points
-      'control-points': true,
-      // Extra information
-      'information': true,
-      // Size of the grid
-      'size': 300px,
-      // Color scheme
-      'color': #999,
-      // Points from the curve
-      'points': ($x1, $y1, $x2, $y2),
-      // Number of dots on the curve
-      'detail': 30
-    ),
-    $options
-  );
+	$options: map-merge(
+		(
+			// Enable/disable control-points
+			'control-points': true,
+			// Extra information
+			'information': true,
+			// Size of the grid
+			'size': 300px,
+			// Color scheme
+			'color': #999,
+			// Points from the curve
+			'points': ($x1, $y1, $x2, $y2),
+			// Number of dots on the curve
+			'detail': 30
+		),
+		$options
+	);
 
-  @include draw-system($options);
+	@include draw-system($options);
 }
 ```
 
@@ -264,43 +264,43 @@ As you can see, this mixin only deals with configuration. All it does is merging
 
 ```scss
 @mixin draw-system($conf) {
-  width: map-get($conf, 'size');
-  height: map-get($conf, 'size');
-  position: relative;
-  color: map-get($conf, 'color');
-  border-left: 2px solid;
-  border-bottom: 2px solid;
-  border-top: 1px dashed;
-  border-right: 1px dashed;
+	width: map-get($conf, 'size');
+	height: map-get($conf, 'size');
+	position: relative;
+	color: map-get($conf, 'color');
+	border-left: 2px solid;
+	border-bottom: 2px solid;
+	border-top: 1px dashed;
+	border-right: 1px dashed;
 
-  @if map-get($conf, 'information') {
-    &::after,
-    &::before {
-      position: absolute;
-      bottom: -1.75em;
-      text-transform: uppercase;
-      font-size: 0.75em;
-    }
+	@if map-get($conf, 'information') {
+		&::after,
+		&::before {
+			position: absolute;
+			bottom: -1.75em;
+			text-transform: uppercase;
+			font-size: 0.75em;
+		}
 
-    @if map-has-key($conf, 'name') {
-      // Display name
-      &::before {
-        content: "#{map-get($conf, 'name')}";
-        left: 0;
-      }
-    }
+		@if map-has-key($conf, 'name') {
+			// Display name
+			&::before {
+				content: "#{map-get($conf, 'name')}";
+				left: 0;
+			}
+		}
 
-    // Display values
-    &::after {
-      content: "#{map-get($conf, 'points')}";
-      right: 0;
-    }
-  }
+		// Display values
+		&::after {
+			content: "#{map-get($conf, 'points')}";
+			right: 0;
+		}
+	}
 
-  // Print the curve
-  > * {
-    @include draw-curve($conf);
-  }
+	// Print the curve
+	> * {
+		@include draw-curve($conf);
+	}
 }
 ```
 
@@ -310,16 +310,16 @@ Then, it calls `draw-curve` mixin.
 
 ```scss
 @mixin draw-curve($conf) {
-  // Print the wrapper
-  @include draw-curve-wrapper($conf);
+	// Print the wrapper
+	@include draw-curve-wrapper($conf);
 
-  // Print the dots
-  @include draw-dots($conf);
+	// Print the dots
+	@include draw-dots($conf);
 
-  // Print the control-points
-  @if map-get($conf, 'control-points') {
-    @include draw-control-points($conf);
-  }
+	// Print the control-points
+	@if map-get($conf, 'control-points') {
+		@include draw-control-points($conf);
+	}
 }
 ```
 
@@ -327,23 +327,23 @@ We'll skip `draw-curve-wrapper` since it does nothing more than a couple of bori
 
 ```scss
 @mixin draw-dots($conf) {
-  $points: map-get($conf, 'points');
-  $size: map-get($conf, 'size');
+	$points: map-get($conf, 'points');
+	$size: map-get($conf, 'size');
 
-  &::after {
-    content: '';
-    @include circle(4px);
-    @include absolute($left: 0, $top: 0);
-    @include bezier-shadow(
-      (
-        0 $size,
-        (nth($points, 1) * $size) ((1 - nth($points, 2)) * $size),
-        (nth($points, 3) * $size) ((1 - nth($points, 4)) * $size),
-        $size 0
-      ),
-      map-get($conf, 'detail')
-    );
-  }
+	&::after {
+		content: '';
+		@include circle(4px);
+		@include absolute($left: 0, $top: 0);
+		@include bezier-shadow(
+			(
+				0 $size,
+				(nth($points, 1) * $size) ((1 - nth($points, 2)) * $size),
+				(nth($points, 3) * $size) ((1 - nth($points, 4)) * $size),
+				$size 0
+			),
+			map-get($conf, 'detail')
+		);
+	}
 }
 ```
 

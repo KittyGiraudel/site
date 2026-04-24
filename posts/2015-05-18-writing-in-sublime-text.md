@@ -35,43 +35,43 @@ Most options default value make sense although there are some of theme that you 
 
 ```javascript
 {
-  // Bold folder labels in the sidebar
-  // so they are distinguishable from regular files
-  "bold_folder_labels": true,
+	// Bold folder labels in the sidebar
+	// so they are distinguishable from regular files
+	"bold_folder_labels": true,
 
-  // Make the caret blink with a smooth transition
-  // rather than a harsh one
-  "caret_style": "phase",
+	// Make the caret blink with a smooth transition
+	// rather than a harsh one
+	"caret_style": "phase",
 
-  // Draw a border around the visible part of the minimap
-  "draw_minimap_border": true,
+	// Draw a border around the visible part of the minimap
+	"draw_minimap_border": true,
 
-  // Draw all white spaces as very subtle dots
-  // as white spaces are very important in some cases
-  "draw_white_space": "all",
+	// Draw all white spaces as very subtle dots
+	// as white spaces are very important in some cases
+	"draw_white_space": "all",
 
-  // EOF is kind of a convention and this option makes sure
-  // there is always one as soon as you save a file
-  "ensure_newline_at_eof_on_save": true,
+	// EOF is kind of a convention and this option makes sure
+	// there is always one as soon as you save a file
+	"ensure_newline_at_eof_on_save": true,
 
-  // I have a terrible sight and this makes things big
-  "font_size": 20,
+	// I have a terrible sight and this makes things big
+	"font_size": 20,
 
-  // Add extra gap on top and bottom of each line
-  // which is basically increasing line height
-  "line_padding_bottom": 8,
-  "line_padding_top": 8,
+	// Add extra gap on top and bottom of each line
+	// which is basically increasing line height
+	"line_padding_bottom": 8,
+	"line_padding_top": 8,
 
-  // Show encoding and line endings
-  // in the status bar on the bottom right
-  "show_encoding": true,
-  "show_line_endings": true,
+	// Show encoding and line endings
+	// in the status bar on the bottom right
+	"show_encoding": true,
+	"show_line_endings": true,
 
-  // Force tab size to be equivalent to 2 spaces
-  "tab_size": 2,
+	// Force tab size to be equivalent to 2 spaces
+	"tab_size": 2,
 
-  // Make sure there are no tabs, only spaces
-  "translate_tabs_to_spaces": true
+	// Make sure there are no tabs, only spaces
+	"translate_tabs_to_spaces": true
 }
 ```
 

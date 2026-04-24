@@ -24,9 +24,9 @@ const moment = require('moment')
 const getStats = promisify(stat)
 
 const getLastNpmInstall = () => {
-  const stats = await getStats('./node_modules/moment')
-  const lastInstall = moment(stats.birthtime)
+	const stats = await getStats('./node_modules/moment')
+	const lastInstall = moment(stats.birthtime)
 
-  return lastInstall.fromNow() // E.g. 3 days
+	return lastInstall.fromNow() // E.g. 3 days
 }
 ```

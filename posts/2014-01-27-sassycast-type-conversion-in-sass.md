@@ -34,7 +34,7 @@ Casting to a string has to be the easiest type of all thanks to the brand new `i
 
 ```scss
 @function to-string($value) {
-  @return inspect($value);
+	@return inspect($value);
 }
 ```
 
@@ -57,7 +57,7 @@ Converting a value to a boolean is both simple and tricky. On the whole, the ope
 
 ```scss
 @function to-bool($value) {
-  @return not($value or $value == '' or $value == 0 or $value == ());
+	@return not($value or $value == '' or $value == 0 or $value == ());
 }
 ```
 
@@ -90,7 +90,7 @@ Technically, Sass treats all values as single-item lists so in a way, your value
 
 ```scss
 @function to-list($value) {
-  @return if(type-of($value) != list, ($value), $value);
+	@return if(type-of($value) != list, ($value), $value);
 }
 ```
 
@@ -100,7 +100,7 @@ If you are running Sass 3.2 and still want to create a singleton, there is a way
 
 ```scss
 @function to-list($args...) {
-  @return append((), $args);
+	@return append((), $args);
 }
 ```
 
@@ -110,13 +110,13 @@ Converting a single value to a map doesn’t make much sense since a map is a ke
 
 ```scss
 @function to-map($value) {
-  @return if(
-    type-of($value) != map,
-    (
-      1: $value,
-    ),
-    $value
-  );
+	@return if(
+		type-of($value) != map,
+		(
+			1: $value,
+		),
+		$value
+	);
 }
 ```
 

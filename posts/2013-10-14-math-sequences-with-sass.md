@@ -23,11 +23,11 @@ Pretty simple, isn't it? Of course there is no end to this sequence, so we need 
 
 ```scss
 @function fibonacci($n) {
-  $fib: 0 1;
-  @for $i from 1 through $n {
-    $fib: append($fib, $new);
-  }
-  @return $fib;
+	$fib: 0 1;
+	@for $i from 1 through $n {
+		$fib: append($fib, $new);
+	}
+	@return $fib;
 }
 ```
 
@@ -43,12 +43,12 @@ And there you have it, the Fibonacci number in Sass. Here is the whole function 
 
 ```scss
 @function fibonacci($n) {
-  $fib: 0 1;
-  @for $i from 1 through $n {
-    $new: nth($fib, length($fib)) + nth($fib, length($fib) - 1);
-    $fib: append($fib, $new);
-  }
-  @return $fib;
+	$fib: 0 1;
+	@for $i from 1 through $n {
+		$new: nth($fib, length($fib)) + nth($fib, length($fib) - 1);
+		$fib: append($fib, $new);
+	}
+	@return $fib;
 }
 
 $fib: fibonacci(10);
@@ -77,12 +77,12 @@ What's interesting about this sequence is it will eventually always end up with 
 
 ```scss
 @function juggler($n) {
-  $juggler: ($n);
-  @while nth($juggler, length($juggler)) != 1 {
-    // What's $new?
-    $juggler: append($juggler, $new);
-  }
-  @return $juggler;
+	$juggler: ($n);
+	@while nth($juggler, length($juggler)) != 1 {
+		// What's $new?
+		$juggler: append($juggler, $new);
+	}
+	@return $juggler;
 }
 ```
 
@@ -100,14 +100,14 @@ Simple, isn't it? Here is the whole function and a usecase:
 
 ```scss
 @function juggler($n) {
-  $juggler: ($n);
-  @while nth($juggler, length($juggler)) != 1 {
-    $last: nth($juggler, length($juggler));
-    $x: if($last % 2 == 0, 1/2, 3/2);
-    $new: pow($last, $x);
-    $juggler: append($juggler, $new);
-  }
-  @return $juggler;
+	$juggler: ($n);
+	@while nth($juggler, length($juggler)) != 1 {
+		$last: nth($juggler, length($juggler));
+		$x: if($last % 2 == 0, 1/2, 3/2);
+		$new: pow($last, $x);
+		$juggler: append($juggler, $new);
+	}
+	@return $juggler;
 }
 
 $juggler: juggler(77);
@@ -149,11 +149,11 @@ As for the Fibonacci number, there is no end so we have to define a limit. Again
 
 ```scss
 @function look-and-say($n) {
-  $sequence: (1);
-  @for $i from 1 through $n {
-    // We do stuff
-  }
-  @return $sequence;
+	$sequence: (1);
+	@for $i from 1 through $n {
+		// We do stuff
+	}
+	@return $sequence;
 }
 ```
 
@@ -161,11 +161,11 @@ Before going any further, I think it's important to understand how we are going 
 
 ```scss
 $sequence:
-  1,
-  1 1,
-  2 1,
-  1 2 1 1,
-  1 1 1 2 2 1;
+	1,
+	1 1,
+	2 1,
+	1 2 1 1,
+	1 1 1 2 2 1;
 ```
 
 So the upper level (entries) are comma separated while the lower level (numbers in each entry) are space separated. Two-levels deep list. Alright back to our stuff.
@@ -181,28 +181,28 @@ Let's see:
 
 ```scss
 @function look-and-say($n) {
-  $sequence: (1);
-  @for $i from 1 through $n {
-    $last-entry: nth($sequence, length($sequence));
-    $new-entry: ();
-    $count: 0;
-    @for $j from length($last-entry) * -1 through -1 {
-      $j: abs($j);
-      $last: nth($last-entry, $j);
-      $last-1: null;
-      $last-2: null;
+	$sequence: (1);
+	@for $i from 1 through $n {
+		$last-entry: nth($sequence, length($sequence));
+		$new-entry: ();
+		$count: 0;
+		@for $j from length($last-entry) * -1 through -1 {
+			$j: abs($j);
+			$last: nth($last-entry, $j);
+			$last-1: null;
+			$last-2: null;
 
-      @if $j > 1 {
-        $last-1: nth($last-entry, $j - 1);
-      }
-      @if $j > 2 {
-        $last-2: nth($last-entry, $j - 2);
-      }
+			@if $j > 1 {
+				$last-1: nth($last-entry, $j - 1);
+			}
+			@if $j > 2 {
+				$last-2: nth($last-entry, $j - 2);
+			}
 
-      // We do stuff
-    }
-  }
-  @return $sequence;
+			// We do stuff
+		}
+	}
+	@return $sequence;
 }
 ```
 
@@ -222,18 +222,18 @@ Then, we decrement `$count` from 1 at each loop run. This is meant to skip numbe
 
 ```scss
 @if $count == 0 {
-  @if $last == $last-1 and $last == $last-2 {
-    $count: 3;
-  }
-  @else if $last == $last-1 {
-    $count: 2;
-  }
-  @else {
-    $count: 1;
-  }
+	@if $last == $last-1 and $last == $last-2 {
+		$count: 3;
+	}
+	@else if $last == $last-1 {
+		$count: 2;
+	}
+	@else {
+		$count: 1;
+	}
 
-  // Prepend new numbers to new line
-  $new-line: join($count $last, $new-entry
+	// Prepend new numbers to new line
+	$new-line: join($count $last, $new-entry
 }
 
 $count: $count - 1;
@@ -243,42 +243,42 @@ Once we're done with the inner loop, we can append the new entry to the sequence
 
 ```scss
 @function look-and-say($n) {
-  $sequence: (1);
-  @for $i from 1 through $n {
-    $last-entry: nth($sequence, length($sequence));
-    $new-entry: ();
-    $count: 0;
-    @for $j from length($last-entry) * -1 through -1 {
-      $j: abs($j);
-      $last: nth($last-entry, $j);
+	$sequence: (1);
+	@for $i from 1 through $n {
+		$last-entry: nth($sequence, length($sequence));
+		$new-entry: ();
+		$count: 0;
+		@for $j from length($last-entry) * -1 through -1 {
+			$j: abs($j);
+			$last: nth($last-entry, $j);
 
-      $last-1: null;
-      $last-2: null;
-      @if $j > 1 {
-        $last-1: nth($last-entry, $j - 1);
-      }
-      @if $j > 2 {
-        $last-2: nth($last-entry, $j - 2);
-      }
+			$last-1: null;
+			$last-2: null;
+			@if $j > 1 {
+				$last-1: nth($last-entry, $j - 1);
+			}
+			@if $j > 2 {
+				$last-2: nth($last-entry, $j - 2);
+			}
 
-      @if $count == 0 {
-        @if $last == $last-1 and $last == $last-2 {
-          $count: 3;
-        } @else if $last == $last-1 {
-          $count: 2;
-        } @else {
-          $count: 1;
-        }
-        // Prepend new numbers to new line
-        $new-line: join($count $last, $new-entry);
-      }
-      $count: $count - 1;
-    }
-    // Appending new line to result
-    $sequence: append($sequence, $new-entry);
-  }
-  // Returning the whole sequence
-  @return $sequence;
+			@if $count == 0 {
+				@if $last == $last-1 and $last == $last-2 {
+					$count: 3;
+				} @else if $last == $last-1 {
+					$count: 2;
+				} @else {
+					$count: 1;
+				}
+				// Prepend new numbers to new line
+				$new-line: join($count $last, $new-entry);
+			}
+			$count: $count - 1;
+		}
+		// Appending new line to result
+		$sequence: append($sequence, $new-entry);
+	}
+	// Returning the whole sequence
+	@return $sequence;
 }
 ```
 
@@ -305,8 +305,8 @@ I think you can see where this is going now: to display the Fibonacci number lin
 
 ```scss
 body:before {
-  content: quote(to-string(fibonacci(100), ' \A '));
-  white-space: pre-wrap;
+	content: quote(to-string(fibonacci(100), ' \A '));
+	white-space: pre-wrap;
 }
 ```
 

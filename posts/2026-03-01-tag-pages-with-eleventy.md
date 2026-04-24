@@ -30,8 +30,8 @@ This ended up rendering `{{ tag }}` as a literal string, which is not what we wa
 ```liquid
 ---
 eleventyComputed:
-  title: "{​{ tag }}"
-  description: All the posts that are tagged with “{{ tag }}”.
+	title: "{​{ tag }}"
+	description: All the posts that are tagged with “{{ tag }}”.
 ---
 ```
 
@@ -42,11 +42,11 @@ Eleventy exposes a [special “all” collection](https://www.11ty.dev/docs/col
 ```liquid
 ---
 pagination:
-  data: collections
-  size: 1
-  alias: tag
-  filter:
-    - all
+	data: collections
+	size: 1
+	alias: tag
+	filter:
+		- all
 ---
 ```
 

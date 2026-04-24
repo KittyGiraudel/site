@@ -55,7 +55,7 @@ Because this is a terrible default value (which has been changed in Git 2.\* for
 ```bash
 # See: https://git-scm.com/docs/git-config#git-config-pushdefault
 [push]
-  default = current
+	default = current
 ```
 
 ## Undoing some work

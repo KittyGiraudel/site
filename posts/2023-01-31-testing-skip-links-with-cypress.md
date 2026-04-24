@@ -43,8 +43,8 @@ cy.get('@skipLink').should('not.have.focus').and('not.be.visible')
 
 // Press tab again and ensure the focus was moved to the main element
 cy.realPress('Tab')
-  .focused()
-  .then($el => expect($el.closest('main').not.to.be.null))
+	.focused()
+	.then($el => expect($el.closest('main').not.to.be.null))
 ```
 
 I hope this helps! ✨

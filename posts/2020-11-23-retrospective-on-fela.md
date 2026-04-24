@@ -22,11 +22,11 @@ There were good things and bad things with CSS modules. On one hand, writing pla
 @value blue, teal from '../../styles/variables.css';
 
 .base {
-  composes: base from './index.css';
-  background-color: blue;
-  border: 2px solid blue;
-  color: white;
-  padding: 0.5em 1em;
+	composes: base from './index.css';
+	background-color: blue;
+	border: 2px solid blue;
+	color: white;
+	padding: 0.5em 1em;
 }
 ```
 
@@ -63,14 +63,14 @@ Consider the following React components styling two `p` as a coloured squares (F
 
 ```jsx
 const a = () => ({
-  width: '5em',
-  height: '5em',
-  backgroundColor: 'deepskyblue',
+	width: '5em',
+	height: '5em',
+	backgroundColor: 'deepskyblue',
 })
 const b = () => ({
-  width: '5em',
-  height: '5em',
-  backgroundColor: 'deeppink',
+	width: '5em',
+	height: '5em',
+	backgroundColor: 'deeppink',
 })
 const SquareA = props => <p className={rule}>I’m deepskyblue!</p>
 const SquareB = props => <p className={rule}>I’m pink!</p>
@@ -80,16 +80,16 @@ Now the output would look like this (prettified for illustration):
 
 ```css
 .a {
-  width: 5em;
+	width: 5em;
 }
 .b {
-  height: 5em;
+	height: 5em;
 }
 .c {
-  background-color: deepskyblue;
+	background-color: deepskyblue;
 }
 .d {
-  background-color: deeppink;
+	background-color: deeppink;
 }
 ```
 
@@ -141,7 +141,7 @@ import { connect } from 'react-fela'
 
 const square = () => ({ width: '5em', height: '5em' })
 const Square = connect({ square })(props => (
-  <p className={props.styles.square}>I’m a square!</p>
+	<p className={props.styles.square}>I’m a square!</p>
 ))
 ```
 
@@ -152,9 +152,9 @@ import { FelaComponent } from 'react-fela'
 
 const square = () => ({ width: '5em', height: '5em' })
 const Square = props => (
-  <FelaComponent style={square}>
-    {({ className }) => <p className={className}>I’m a square!</p>}
-  </FelaComponent>
+	<FelaComponent style={square}>
+		{({ className }) => <p className={className}>I’m a square!</p>}
+	</FelaComponent>
 )
 ```
 
@@ -175,8 +175,8 @@ import { useFela } from 'react-fela'
 
 const square = () => ({ width: '5em', height: '5em' })
 const Square = props => {
-  const { css } = useFela()
-  return <p className={css(square)}>I’m a square!</p>
+	const { css } = useFela()
+	return <p className={css(square)}>I’m a square!</p>
 }
 ```
 
@@ -230,7 +230,7 @@ Then in Webpack, provide the content of the correct file as a global variable (e
 // to provide them to the application to avoid a crash on production
 // environments where `devDependencies` are absent.
 new webpack.ProvidePlugin({
-  FELA_CONFIG: path.resolve(`src/fela.${process.env.NODE_ENV}.js`),
+	FELA_CONFIG: path.resolve(`src/fela.${process.env.NODE_ENV}.js`),
 })
 ```
 
@@ -239,8 +239,8 @@ Finally, when instantiating the Fela renderer, read the plugins and enhancers fr
 ```js
 /* global FELA_CONFIG */
 export default createRenderer({
-  plugins: FELA_CONFIG.plugins,
-  enhancers: FELA_CONFIG.enhancers,
+	plugins: FELA_CONFIG.plugins,
+	enhancers: FELA_CONFIG.enhancers,
 })
 ```
 
@@ -265,33 +265,33 @@ import { combineRules } from 'fela'
 // Custom `react-with-styles` interface for Fela:
 // https://github.com/airbnb/react-with-styles
 export default renderer => ({
-  create(styleHash) {
-    return StyleSheet.create(styleHash)
-  },
+	create(styleHash) {
+		return StyleSheet.create(styleHash)
+	},
 
-  resolve(stylesArray) {
-    const styles = stylesArray.flat()
-    const rules = []
-    const classNames = []
+	resolve(stylesArray) {
+		const styles = stylesArray.flat()
+		const rules = []
+		const classNames = []
 
-    // This is run on potentially every node in the tree when rendering,
-    // where performance is critical. Normally we would prefer using
-    // `forEach`, but old-fashioned `for` loops are slightly faster.
-    for (let i = 0; i < styles.length; i += 1) {
-      const style = styles[i]
+		// This is run on potentially every node in the tree when rendering,
+		// where performance is critical. Normally we would prefer using
+		// `forEach`, but old-fashioned `for` loops are slightly faster.
+		for (let i = 0; i < styles.length; i += 1) {
+			const style = styles[i]
 
-      if (!style) continue
-      if (style.ruleName) classNames.push(style.ruleName)
-      if (typeof style === 'function') rules.push(style)
-      else rules.push(() => style)
-    }
+			if (!style) continue
+			if (style.ruleName) classNames.push(style.ruleName)
+			if (typeof style === 'function') rules.push(style)
+			else rules.push(() => style)
+		}
 
-    const rule = combineRules(...rules)
-    const classes = renderer.renderRule(combineRules(...rules))
-    classNames.push(classes)
+		const rule = combineRules(...rules)
+		const classes = renderer.renderRule(combineRules(...rules))
+		classNames.push(classes)
 
-    return { className: classNames.join(' ') }
-  },
+		return { className: classNames.join(' ') }
+	},
 })
 ```
 
@@ -303,21 +303,21 @@ By default, Fela now skips the `.ad` class, but there are more to add to the lis
 
 ```js
 const SKIPPED_CLASSNAMES = [
-  // Short for “advertisment”
-  'ad',
-  'ads',
-  'adv',
-  // See: https://github.com/adblockultimate/AdBlocker-Ultimate-for-Chrome/blob/3f07afbffa5c389270abe9ee4dc13333ca35613e/filters/filter_9.txt#L867
-  'bi',
-  'fb',
-  'ig',
-  'pin',
-  'tw',
-  'vk',
+	// Short for “advertisment”
+	'ad',
+	'ads',
+	'adv',
+	// See: https://github.com/adblockultimate/AdBlocker-Ultimate-for-Chrome/blob/3f07afbffa5c389270abe9ee4dc13333ca35613e/filters/filter_9.txt#L867
+	'bi',
+	'fb',
+	'ig',
+	'pin',
+	'tw',
+	'vk',
 ]
 
 export default createRenderer({
-  filterClassName: className => !SKIPPED_CLASSNAMES.includes(className),
+	filterClassName: className => !SKIPPED_CLASSNAMES.includes(className),
 })
 ```
 
@@ -331,23 +331,23 @@ Consider for a moment that you expect all your durations to be authored in milli
 import custom from 'fela-plugin-custom-property'
 
 const handleDuration = property => value => ({
-  // Convert durations expressed in seconds into milliseconds
-  // E.g. 0.2s, 1s -> 200ms, 1000ms
-  [property]: value.replace(
-    /([\d\.]+)[m^]*s/g,
-    (_, a) => Number(a) * 1000 + 'ms'
-  ),
+	// Convert durations expressed in seconds into milliseconds
+	// E.g. 0.2s, 1s -> 200ms, 1000ms
+	[property]: value.replace(
+		/([\d\.]+)[m^]*s/g,
+		(_, a) => Number(a) * 1000 + 'ms'
+	),
 })
 
 const renderer = createRenderer({
-  plugins: [
-    custom({
-      transitionDuration: handleDuration('transitionDuration'),
-      transitionDelay: handleDuration('transitionDelay'),
-      animationDuration: handleDuration('animationDuration'),
-      animationDelay: handleDuration('animationDelay'),
-    }),
-  ],
+	plugins: [
+		custom({
+			transitionDuration: handleDuration('transitionDuration'),
+			transitionDelay: handleDuration('transitionDelay'),
+			animationDuration: handleDuration('animationDuration'),
+			animationDelay: handleDuration('animationDelay'),
+		}),
+	],
 })
 ```
 

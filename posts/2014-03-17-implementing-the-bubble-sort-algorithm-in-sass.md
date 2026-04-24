@@ -27,27 +27,27 @@ Now for the meat of our comparison function:
 
 ```scss
 @function str-compare($string-a, $string-b, $order: $default-sort-order) {
-  // Cast values to strings
-  $string-a: to-lower-case($string-a + unquote(''));
-  $string-b: to-lower-case($string-b + unquote(''));
+	// Cast values to strings
+	$string-a: to-lower-case($string-a + unquote(''));
+	$string-b: to-lower-case($string-b + unquote(''));
 
-  // Loop through and compare the characters of each string...
-  @for $i from 1 through min(str-length($string-a), str-length($string-b)) {
-    // Extract a character from each string
-    $char-a: str-slice($string-a, $i, $i);
-    $char-b: str-slice($string-b, $i, $i);
+	// Loop through and compare the characters of each string...
+	@for $i from 1 through min(str-length($string-a), str-length($string-b)) {
+		// Extract a character from each string
+		$char-a: str-slice($string-a, $i, $i);
+		$char-b: str-slice($string-b, $i, $i);
 
-    // If characters exist in $order list and are different
-    // return true if first comes before second
-    @if $char-a and $char-b and index($order, $char-a) != index($order, $char-b)
-    {
-      @return index($order, $char-a) < index($order, $char-b);
-    }
-  }
+		// If characters exist in $order list and are different
+		// return true if first comes before second
+		@if $char-a and $char-b and index($order, $char-a) != index($order, $char-b)
+		{
+			@return index($order, $char-a) < index($order, $char-b);
+		}
+	}
 
-  // In case they are equal after all characters in one string are compared,
-  // return the shortest first
-  @return str-length($string-a) < str-length($string-b);
+	// In case they are equal after all characters in one string are compared,
+	// return the shortest first
+	@return str-length($string-a) < str-length($string-b);
 }
 ```
 
@@ -63,13 +63,13 @@ Since Bubble Sort relies on swapping two values in a list we need one more funct
 
 ```scss
 @function swap($list, $index-a, $index-b) {
-  @if abs($index-a) > length($list) or abs($index-b) > length($list) {
-    @return $list;
-  }
-  $tmp: nth($list, $index-a);
-  $list: set-nth($list, $index-a, nth($list, $index-b));
-  $list: set-nth($list, $index-b, $tmp);
-  @return $list;
+	@if abs($index-a) > length($list) or abs($index-b) > length($list) {
+		@return $list;
+	}
+	$tmp: nth($list, $index-a);
+	$list: set-nth($list, $index-a, nth($list, $index-b));
+	$list: set-nth($list, $index-b, $tmp);
+	@return $list;
 }
 ```
 
@@ -82,25 +82,25 @@ Armed with `str-compare()` and `swap()` we now have everything we need to build 
 ```sass
 @function sort($list, $order: $default-sort-order) {
 
-  // Cycle through each item in the list
-  @for $i from 1 through length($list) {
+	// Cycle through each item in the list
+	@for $i from 1 through length($list) {
 
-    // Compare the item with the previous items in the list
-    @for $j from $i * -1 through -1 {
+		// Compare the item with the previous items in the list
+		@for $j from $i * -1 through -1 {
 
-      // abs() trick to loop backward
-      $j: abs($j);
+			// abs() trick to loop backward
+			$j: abs($j);
 
-      // Compare both values
-      @if $j > 1 and str-compare(nth($list, $j), nth($list, $j - 1), $order) {
-        // If the item should go before the other, swap them
-        $list: swap($list, $j, $j - 1);
-      }
-    }
-  }
+			// Compare both values
+			@if $j > 1 and str-compare(nth($list, $j), nth($list, $j - 1), $order) {
+				// If the item should go before the other, swap them
+				$list: swap($list, $j, $j - 1);
+			}
+		}
+	}
 
-  // Return the sorted list
-  @return $list;
+	// Return the sorted list
+	@return $list;
 }
 ```
 

@@ -43,18 +43,18 @@ It’s not overly advertised, but you can retrieve information about the current
 
 ```json
 {
-  "email": "email@domain.com",
-  "id": "cc4zMBdMk",
-  "name": "Kitty",
-  "profileImage": "https://avatars.githubusercontent.com/u/3948238942?v=4",
-  "provider": "github",
-  "roles": [
-    {
-      "name": "administrator",
-      "title": "Administrator",
-      "description": "Read and write access to all datasets, with full access to all project settings."
-    }
-  ]
+	"email": "email@domain.com",
+	"id": "cc4zMBdMk",
+	"name": "Kitty",
+	"profileImage": "https://avatars.githubusercontent.com/u/3948238942?v=4",
+	"provider": "github",
+	"roles": [
+		{
+			"name": "administrator",
+			"title": "Administrator",
+			"description": "Read and write access to all datasets, with full access to all project settings."
+		}
+	]
 }
 ```
 
@@ -67,13 +67,13 @@ import userStore from 'part:@sanity/base/user'
 export const EDITOR_TYPES = ['blogPost']
 
 export const getCurrentUser = () => {
-  userStore.me.subscribe(user => {
-    window._sanityUser = user || undefined
-  })
+	userStore.me.subscribe(user => {
+		window._sanityUser = user || undefined
+	})
 }
 
 export const isAdmin = (user = window._sanityUser) =>
-  user?.roles.map(role => role.name).includes('administrator')
+	user?.roles.map(role => role.name).includes('administrator')
 
 export const isNotAdmin = user => !isAdmin(user)
 ```
@@ -86,8 +86,8 @@ Sanity comes with its own [structure builder](https://www.sanity.io/docs/structu
 
 ```json
 {
-  "name": "part:@sanity/desk-tool/structure",
-  "path": "./deskStructure.js"
+	"name": "part:@sanity/desk-tool/structure",
+	"path": "./deskStructure.js"
 }
 ```
 
@@ -108,15 +108,15 @@ import { getCurrentUser, isAdmin, EDITOR_TYPES } from './access'
 getCurrentUser()
 
 export default () => {
-  const admin = isAdmin()
+	const admin = isAdmin()
 
-  return S.list()
-    .title(admin ? 'Content' : 'Editorial content')
-    .items(
-      S.documentTypeListItems().filter(
-        item => admin || EDITOR_TYPES.includes(item.getId()),
-      ),
-    )
+	return S.list()
+		.title(admin ? 'Content' : 'Editorial content')
+		.items(
+			S.documentTypeListItems().filter(
+				item => admin || EDITOR_TYPES.includes(item.getId()),
+			),
+		)
 }
 ```
 
@@ -128,8 +128,8 @@ Updating the “Create new document” dialog is essentially the same thing (alt
 
 ```json
 {
-  "name": "part:@sanity/base/new-document-structure",
-  "path": "./newDocumentStructure.js"
+	"name": "part:@sanity/base/new-document-structure",
+	"path": "./newDocumentStructure.js"
 }
 ```
 
@@ -141,11 +141,11 @@ import S from '@sanity/base/structure-builder'
 import { isAdmin, EDITOR_TYPES } from './access'
 
 export default () => {
-  const admin = isAdmin()
+	const admin = isAdmin()
 
-  return S.defaultInitialValueTemplateItems().filter(
-    item => admin || EDITOR_TYPES.includes(item.getId()),
-  )
+	return S.defaultInitialValueTemplateItems().filter(
+		item => admin || EDITOR_TYPES.includes(item.getId()),
+	)
 }
 ```
 
@@ -166,17 +166,17 @@ import page from './page'
 import { isNotAdmin, EDITOR_TYPES } from './access'
 
 export default createSchema({
-  name: 'default',
-  types: schemaTypes.concat(
-    Object.entries({ blogPost, page }).map(([type, document]) => ({
-      ...document,
-      // As of writing, this is not yet a production feature. This is still in
-      // development and might not ever reach production.
-      // See: https://github.com/sanity-io/sanity/pull/3253
-      __experimental_search_ignore:
-        isNotAdmin() && !EDITOR_TYPES.includes(type),
-    })),
-  ),
+	name: 'default',
+	types: schemaTypes.concat(
+		Object.entries({ blogPost, page }).map(([type, document]) => ({
+			...document,
+			// As of writing, this is not yet a production feature. This is still in
+			// development and might not ever reach production.
+			// See: https://github.com/sanity-io/sanity/pull/3253
+			__experimental_search_ignore:
+				isNotAdmin() && !EDITOR_TYPES.includes(type),
+		})),
+	),
 })
 ```
 
@@ -195,34 +195,34 @@ import page from './page'
 import { isAdmin, EDITOR_TYPES } from './access'
 
 export default createSchema({
-  name: 'default',
-  types: schemaTypes.concat(
-    Object.entries({ blogPost, page }).map(([type, document]) => ({
-      ...document,
-      fields: document.fields.map(addReadOnly(type)),
-    })),
-  ),
+	name: 'default',
+	types: schemaTypes.concat(
+		Object.entries({ blogPost, page }).map(([type, document]) => ({
+			...document,
+			fields: document.fields.map(addReadOnly(type)),
+		})),
+	),
 })
 
 function addReadOnly(type) {
-  return function (field) {
-    // Block types do not support the `readOnly` property, so we can skip.
-    if (field.type === 'block') return field
+	return function (field) {
+		// Block types do not support the `readOnly` property, so we can skip.
+		if (field.type === 'block') return field
 
-    // If the `readOnly` property is not already defined and the type is for
-    // admins only, we add the `readOnly` property to restrict it for editors.
-    if (typeof field.readOnly === 'undefined' && !EDITOR_TYPES.includes(type)) {
-      field.readOnly = ({ currentUser }) => !isAdmin(currentUser)
-    }
+		// If the `readOnly` property is not already defined and the type is for
+		// admins only, we add the `readOnly` property to restrict it for editors.
+		if (typeof field.readOnly === 'undefined' && !EDITOR_TYPES.includes(type)) {
+			field.readOnly = ({ currentUser }) => !isAdmin(currentUser)
+		}
 
-    // If the fiels is an array, recursively add the `readOnly` property to
-    // nested fields.
-    if (typeof field.of !== 'undefined') {
-      field.of.forEach(addReadOnly(type))
-    }
+		// If the fiels is an array, recursively add the `readOnly` property to
+		// nested fields.
+		if (typeof field.of !== 'undefined') {
+			field.of.forEach(addReadOnly(type))
+		}
 
-    return field
-  }
+		return field
+	}
 }
 ```
 
@@ -232,8 +232,8 @@ For the same reason we should prevent editors from updating page fields, we shou
 
 ```json
 {
-  "implements": "part:@sanity/base/document-actions/resolver",
-  "path": "./resolveDocumentActions.js"
+	"implements": "part:@sanity/base/document-actions/resolver",
+	"path": "./resolveDocumentActions.js"
 }
 ```
 
@@ -245,9 +245,9 @@ import defaultResolve from 'part:@sanity/base/document-actions'
 import { isNotAdmin, EDITOR_TYPES } from './access'
 
 export default function resolveDocumentActions(props) {
-  return isAdmin() || EDITOR_TYPES.includes(props.type)
-    ? defaultResolve(props)
-    : []
+	return isAdmin() || EDITOR_TYPES.includes(props.type)
+		? defaultResolve(props)
+		: []
 }
 ```
 
@@ -262,10 +262,10 @@ import tools from 'all:part:@sanity/base/tool'
 import userStore from 'part:@sanity/base/user'
 
 const getCurrentUser = () => {
-  userStore.me.subscribe(user => {
-    window._sanityUser = user || undefined
-    if (!isAdmin(user)) tools.splice(1)
-  })
+	userStore.me.subscribe(user => {
+		window._sanityUser = user || undefined
+		if (!isAdmin(user)) tools.splice(1)
+	})
 }
 ```
 

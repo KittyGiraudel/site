@@ -37,18 +37,18 @@ Because there are a lot of things to consider, the code is going to be large and
 
 ```jsx
 const GeoCheck = () => {
-  const isMounted = useIsMounted()
-  const [isPristine, setIsPristine] = React.useState(true)
-  const { permission, isEligible, hasErrored } = useGeolocation(isPristine)
+	const isMounted = useIsMounted()
+	const [isPristine, setIsPristine] = React.useState(true)
+	const { permission, isEligible, hasErrored } = useGeolocation(isPristine)
 
-  if (!isMounted) return null
-  if (isPristine) return <GeoCheck.Pristine setIsPristine={setIsPristine} />
-  if (hasErrored) return <GeoCheck.Error />
-  if (isEligible) return <GeoCheck.Success />
-  if (isEligible === false) return <GeoCheck.Sad />
-  if (permission === 'denied') return <GeoCheck.Denied />
+	if (!isMounted) return null
+	if (isPristine) return <GeoCheck.Pristine setIsPristine={setIsPristine} />
+	if (hasErrored) return <GeoCheck.Error />
+	if (isEligible) return <GeoCheck.Success />
+	if (isEligible === false) return <GeoCheck.Sad />
+	if (permission === 'denied') return <GeoCheck.Denied />
 
-  return <GeoCheck.Waiting permission={permission} />
+	return <GeoCheck.Waiting permission={permission} />
 }
 ```
 
@@ -68,7 +68,7 @@ There is not a whole lot going on in HTML, but still a few things worth pointing
 
 ```html
 <div tabindex="-1">
-  <p>Please wait, we are checking if we can deliver to you.</p>
+	<p>Please wait, we are checking if we can deliver to you.</p>
 </div>
 ```
 
@@ -86,15 +86,15 @@ Our hook accepts the `isPristine` state from earlier, which is `true` if the but
 
 ```js
 export const useGeolocation = isPristine => {
-  const [permission, setPermission] = useGeolocationPermission()
-  const [hasErrored, setHasErrored] = React.useState(false)
-  const [isEligible, setIsEligible] = React.useState(null)
+	const [permission, setPermission] = useGeolocationPermission()
+	const [hasErrored, setHasErrored] = React.useState(false)
+	const [isEligible, setIsEligible] = React.useState(null)
 
-  React.useEffect(() => {
-    // Do the magic
-  }, [isPristine])
+	React.useEffect(() => {
+		// Do the magic
+	}, [isPristine])
 
-  return { permission, hasErrored, isEligible }
+	return { permission, hasErrored, isEligible }
 }
 ```
 
@@ -104,18 +104,18 @@ If the permissions API is supported, we ask for the state of the geolocation per
 
 ```js
 const useGeolocationPermission = () => {
-  const [permission, setPermission] = React.useState()
+	const [permission, setPermission] = React.useState()
 
-  React.useEffect(() => {
-    if ('permissions' in navigator) {
-      navigator.permissions.query({ name: 'geolocation' }).then(result => {
-        setPermission(result.state)
-        result.onchange = () => setPermission(result.state)
-      })
-    } else setPermission('prompt')
-  }, [])
+	React.useEffect(() => {
+		if ('permissions' in navigator) {
+			navigator.permissions.query({ name: 'geolocation' }).then(result => {
+				setPermission(result.state)
+				result.onchange = () => setPermission(result.state)
+			})
+		} else setPermission('prompt')
+	}, [])
 
-  return [permission, setPermission]
+	return [permission, setPermission]
 }
 ```
 
@@ -123,27 +123,27 @@ The last piece of the puzzle is, well, the entire series of events in our main `
 
 ```js
 export const useGeolocation = isPristine => {
-  const [permission, setPermission] = useGeolocationPermission()
-  const [hasErrored, setHasErrored] = React.useState(false)
-  const [isEligible, setIsEligible] = React.useState(null)
+	const [permission, setPermission] = useGeolocationPermission()
+	const [hasErrored, setHasErrored] = React.useState(false)
+	const [isEligible, setIsEligible] = React.useState(null)
 
-  React.useEffect(() => {
-    if (isPristine || permission === 'denied') return
+	React.useEffect(() => {
+		if (isPristine || permission === 'denied') return
 
-    getCoords()
-      .then(coords => {
-        setPermission('granted')
-        return coords
-      })
-      .then(getEligibility)
-      .then(setIsEligible)
-      .catch(error => {
-        if (error.code === 1) setPermission('denied')
-        else setHasErrored(true)
-      })
-  }, [isPristine, permission, setPermission])
+		getCoords()
+			.then(coords => {
+				setPermission('granted')
+				return coords
+			})
+			.then(getEligibility)
+			.then(setIsEligible)
+			.catch(error => {
+				if (error.code === 1) setPermission('denied')
+				else setHasErrored(true)
+			})
+	}, [isPristine, permission, setPermission])
 
-  return { permission, hasErrored, isEligible }
+	return { permission, hasErrored, isEligible }
 }
 ```
 
@@ -163,27 +163,27 @@ Let’s have a look at our two utilities. First `getCoords`, which is a thin wra
 
 ```js
 export const getCoords = () =>
-  new Promise((resolve, reject) => {
-    const getCoords = response => resolve(response.coords)
-    const options = {
-      timeout: 10000,
-      enableHighAccuracy: true,
-      maximumAge: 1000 * 60 * 5,
-    }
+	new Promise((resolve, reject) => {
+		const getCoords = response => resolve(response.coords)
+		const options = {
+			timeout: 10000,
+			enableHighAccuracy: true,
+			maximumAge: 1000 * 60 * 5,
+		}
 
-    navigator.geolocation.getCurrentPosition(getCoords, reject, options)
-  })
+		navigator.geolocation.getCurrentPosition(getCoords, reject, options)
+	})
 ```
 
 Finally, our `getEligibility` function does barely more than an HTTP request to our API:
 
 ```js
 export async function getEligibility({ latitude, longitude }) {
-  const query = `?lat=${latitude}&lng=${longitude}`
-  const response = await window.fetch(`/api/delivery_areas${query}`)
-  const data = await response.json()
+	const query = `?lat=${latitude}&lng=${longitude}`
+	const response = await window.fetch(`/api/delivery_areas${query}`)
+	const data = await response.json()
 
-  return data?.served ?? false
+	return data?.served ?? false
 }
 ```
 

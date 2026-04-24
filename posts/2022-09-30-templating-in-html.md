@@ -23,11 +23,11 @@ In [Manuel’s case](https://web.dev/website-navigation/#adding-a-burger-button)
 
 ```js
 <template id="burger-template">
-  <button type="button" aria-expanded="false" aria-label="Menu" aria-controls="mainnav">
-    <svg width="24" height="24" aria-hidden="true">
-      <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z">
-    </svg>
-  </button>
+	<button type="button" aria-expanded="false" aria-label="Menu" aria-controls="mainnav">
+		<svg width="24" height="24" aria-hidden="true">
+			<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z">
+		</svg>
+	</button>
 </template>
 ```
 
@@ -52,7 +52,7 @@ The browser support is surprisingly good. Almost 98% of the current landscape su
 
 ```js
 if ('content' in document.createElement('template')) {
-  // `<template>` is supported.
+	// `<template>` is supported.
 }
 ```
 
@@ -63,7 +63,7 @@ Following this article, some people asked what would be the difference with usin
 ```html
 <!-- Don’t do that, it’s just not as good or safe. -->
 <div id="template" style="display: none;">
-  <!-- Template content here -->
+	<!-- Template content here -->
 </div>
 ```
 

@@ -47,44 +47,44 @@ First, let’s fetch the latest articles. It’s made very easy by using my RSS 
 import { XMLParser } from 'fast-xml-parser'
 
 async function fetchFeed() {
-  try {
-    // Fetch the RSS feed
-    const response = await fetch('https://kittygiraudel.com/rss/index.xml')
-    if (!response.ok) {
-      console.error(
-        `Failed to fetch feed: ${response.status} ${response.statusText}`,
-      )
-      return null
-    }
+	try {
+		// Fetch the RSS feed
+		const response = await fetch('https://kittygiraudel.com/rss/index.xml')
+		if (!response.ok) {
+			console.error(
+				`Failed to fetch feed: ${response.status} ${response.statusText}`,
+			)
+			return null
+		}
 
-    // Parse the resulting XML
-    const xml = await response.text()
-    const parser = new XMLParser({ ignoreAttributes: false })
-    const data = parser.parse(xml)
+		// Parse the resulting XML
+		const xml = await response.text()
+		const parser = new XMLParser({ ignoreAttributes: false })
+		const data = parser.parse(xml)
 
-    // Ensure we have some data to work with
-    const entries = data?.feed?.entry
-    if (!entries || (Array.isArray(entries) && entries.length === 0)) {
-      console.error('No entries found in feed.')
-      return null
-    }
+		// Ensure we have some data to work with
+		const entries = data?.feed?.entry
+		if (!entries || (Array.isArray(entries) && entries.length === 0)) {
+			console.error('No entries found in feed.')
+			return null
+		}
 
-    // For each entry, resolve the necessary data (name, date, link)
-    const items = Array.isArray(entries) ? entries : [entries]
-    return items.slice(0, 5).map(entry => {
-      const title = entry.title ?? 'Untitled'
-      const url = entry.link?.['@_href']
-      const date = new Date(entry.published).toLocaleDateString('en-GB', {
-        month: 'short',
-        year: 'numeric',
-      })
+		// For each entry, resolve the necessary data (name, date, link)
+		const items = Array.isArray(entries) ? entries : [entries]
+		return items.slice(0, 5).map(entry => {
+			const title = entry.title ?? 'Untitled'
+			const url = entry.link?.['@_href']
+			const date = new Date(entry.published).toLocaleDateString('en-GB', {
+				month: 'short',
+				year: 'numeric',
+			})
 
-      return { title, url, date }
-    })
-  } catch (error) {
-    console.error('Error while fetching or parsing feed:', error)
-    return null
-  }
+			return { title, url, date }
+		})
+	} catch (error) {
+		console.error('Error while fetching or parsing feed:', error)
+		return null
+	}
 }
 ```
 
@@ -94,23 +94,23 @@ The second thing we need is to generate the Markdown table for our data:
 
 ```js
 function buildMarkdown(posts) {
-  if (!posts || posts.length === 0) {
-    return 'Find my latest blog posts on [kittygiraudel.com](https://kittygiraudel.com/blog).'
-  }
+	if (!posts || posts.length === 0) {
+		return 'Find my latest blog posts on [kittygiraudel.com](https://kittygiraudel.com/blog).'
+	}
 
-  const rows = posts
-    .map(post => {
-      const link = post.url || 'https://kittygiraudel.com'
-      const title = post.title.replace(/\|/g, '\\|')
-      return `| ${post.date} | [**${title}**](${link}) |`
-    })
-    .join('\n')
+	const rows = posts
+		.map(post => {
+			const link = post.url || 'https://kittygiraudel.com'
+			const title = post.title.replace(/\|/g, '\\|')
+			return `| ${post.date} | [**${title}**](${link}) |`
+		})
+		.join('\n')
 
-  return [
-    '| Date | Post |',
-    '| ---- | ---- |',
-    ...rows,
-  ].join('\n')
+	return [
+		'| Date | Post |',
+		'| ---- | ---- |',
+		...rows,
+	].join('\n')
 }
 ```
 
@@ -123,18 +123,18 @@ const MARKER_START = '<!-- BLOG-POST-LIST:START -->'
 const MARKER_END = '<!-- BLOG-POST-LIST:END -->'
 
 function updateReadmeBlock(content, block) {
-  const startIndex = content.indexOf(MARKER_START)
-  const endIndex = content.indexOf(MARKER_END)
+	const startIndex = content.indexOf(MARKER_START)
+	const endIndex = content.indexOf(MARKER_END)
 
-  if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
-    console.error('Could not find blog post markers in README.md')
-    return content
-  }
+	if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
+		console.error('Could not find blog post markers in README.md')
+		return content
+	}
 
-  const before = content.slice(0, startIndex + MARKER_START.length)
-  const after = content.slice(endIndex)
+	const before = content.slice(0, startIndex + MARKER_START.length)
+	const after = content.slice(endIndex)
 
-  return `${before}\n${block}\n${after}`
+	return `${before}\n${block}\n${after}`
 }
 ```
 

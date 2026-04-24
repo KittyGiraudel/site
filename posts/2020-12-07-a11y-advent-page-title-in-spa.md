@@ -31,9 +31,9 @@ Here is how our HTML should look like:
 
 ```html
 <body>
-  <p tabindex="-1" class="sr-only">…</p>
-  <a href="#main" class="sr-only sr-only--focusable">Skip to content</a>
-  <!-- Rest of the page -->
+	<p tabindex="-1" class="sr-only">…</p>
+	<a href="#main" class="sr-only sr-only--focusable">Skip to content</a>
+	<!-- Rest of the page -->
 </body>
 ```
 
@@ -43,10 +43,10 @@ And our unflavoured JavaScript. Note that this is no specific framework, it’s 
 const titleHandler = document.querySelector('body > p')
 
 router.on('page:change', ({ title }) => {
-  // Render the title of the new page in the <p>
-  titleHandler.innerText = title
-  // Focus it: note that it *needs*  `tabindex="-1"` to be focusable!
-  titleHandler.focus()
+	// Render the title of the new page in the <p>
+	titleHandler.innerText = title
+	// Focus it: note that it *needs*  `tabindex="-1"` to be focusable!
+	titleHandler.focus()
 })
 ```
 

@@ -35,15 +35,15 @@ I can’t believe I didn’t make the `purge()` function a while ago. Basically,
 
 ```scss
 @function purge($list) {
-  $result: ();
+	$result: ();
 
-  @each $item in $list {
-    @if $item != null and $item != false and $item != '' {
-      $result: append($result, $item);
-    }
-  }
+	@each $item in $list {
+		@if $item != null and $item != false and $item != '' {
+			$result: append($result, $item);
+		}
+	}
 
-  @return $result;
+	@return $result;
 }
 
 $list: a, b, null, c, false, '', d;
@@ -59,7 +59,7 @@ I don’t think this function has any major usecase, but you know, just in case 
 
 ```scss
 @function is-symmetrical($list) {
-  @return reverse($list) == reverse(reverse($list));
+	@return reverse($list) == reverse(reverse($list));
 }
 ```
 
@@ -71,20 +71,20 @@ Same here, I don’t think it has much point but I wanted to add it anyway. It t
 
 ```scss
 @function sum($list, $force: false) {
-  $result: 0;
+	$result: 0;
 
-  @each $item in $list {
-    @if type-of($item) == number {
-      @if $force and unit($item) {
-        $item: $item / ($item * 0 + 1);
-      }
-      @if unitless($item) {
-        $result: $result + $item;
-      }
-    }
-  }
+	@each $item in $list {
+		@if type-of($item) == number {
+			@if $force and unit($item) {
+				$item: $item / ($item * 0 + 1);
+			}
+			@if unitless($item) {
+				$result: $result + $item;
+			}
+		}
+	}
 
-  @return $result;
+	@return $result;
 }
 
 $list: 1 2 3 4px;
@@ -100,24 +100,24 @@ The `chunk()` function is based on the equivalent PHP function `array_chunk()`. 
 
 ```scss
 @function chunk($list, $size) {
-  $result: ();
-  $n: ceil(length($list) / $size);
-  $temp-index: 0;
+	$result: ();
+	$n: ceil(length($list) / $size);
+	$temp-index: 0;
 
-  @for $i from 1 through $n {
-    $temp-list: ();
+	@for $i from 1 through $n {
+		$temp-list: ();
 
-    @for $j from 1 + $temp-index through $size + $temp-index {
-      @if $j <= length($list) {
-        $temp-list: append($temp-list, nth($list, $j));
-      }
-    }
+		@for $j from 1 + $temp-index through $size + $temp-index {
+			@if $j <= length($list) {
+				$temp-list: append($temp-list, nth($list, $j));
+			}
+		}
 
-    $result: append($result, $temp-list);
-    $temp-index: $temp-index + $size;
-  }
+		$result: append($result, $temp-list);
+		$temp-index: $temp-index + $size;
+	}
 
-  @return $result;
+	@return $result;
 }
 
 $list: a, b, c, d, e, f, g;
@@ -135,22 +135,22 @@ Same as above, the `count-values()` function is inspired by `array_count_values(
 
 ```scss
 @function count-values($list) {
-  $keys: ();
-  $counts: ();
+	$keys: ();
+	$counts: ();
 
-  @each $item in $list {
-    $index: index($keys, $item);
+	@each $item in $list {
+		$index: index($keys, $item);
 
-    @if not $index {
-      $keys: append($keys, $item);
-      $counts: append($counts, 1);
-    } @else {
-      $count: nth($counts, $index) + 1;
-      $counts: replace-nth($counts, $index, $count);
-    }
-  }
+		@if not $index {
+			$keys: append($keys, $item);
+			$counts: append($counts, 1);
+		} @else {
+			$count: nth($counts, $index) + 1;
+			$counts: replace-nth($counts, $index, $count);
+		}
+	}
 
-  @return zip($keys, $counts);
+	@return zip($keys, $counts);
 }
 ```
 
@@ -168,19 +168,19 @@ There are times when you want to remove values that are present multiple times i
 
 ```scss
 @function remove-duplicates($list, $recursive: false) {
-  $result: ();
+	$result: ();
 
-  @each $item in $list {
-    @if not index($result, $item) {
-      @if length($item) > 1 and $recursive {
-        $result: append($result, remove-duplicates($item, $recursive));
-      } @else {
-        $result: append($result, $item);
-      }
-    }
-  }
+	@each $item in $list {
+		@if not index($result, $item) {
+			@if length($item) > 1 and $recursive {
+				$result: append($result, remove-duplicates($item, $recursive));
+			} @else {
+				$result: append($result, $item);
+			}
+		}
+	}
 
-  @return $result;
+	@return $result;
 }
 
 $list: a, b, a, c, b, a, d, e;
@@ -196,22 +196,22 @@ Last but not least, I added a `debug()` function to help you people debugging yo
 
 ```scss
 @function debug($list) {
-  $result: #{'[ '};
+	$result: #{'[ '};
 
-  @each $item in $list {
-    @if length($item) > 1 {
-      $result: $result#{debug($item)};
-    } @else {
-      $result: $result#{$item};
-    }
-    @if index($list, $item) != length($list) {
-      $result: $result#{', '};
-    }
-  }
+	@each $item in $list {
+		@if length($item) > 1 {
+			$result: $result#{debug($item)};
+		} @else {
+			$result: $result#{$item};
+		}
+		@if index($list, $item) != length($list) {
+			$result: $result#{', '};
+		}
+	}
 
-  $result: $result#{' ]'};
+	$result: $result#{' ]'};
 
-  @return $result;
+	@return $result;
 }
 
 $list: (a b (c d (e f ((g h (i j k)) l m))));
@@ -227,11 +227,11 @@ For example, you know we have [two remove functions](/2013/08/08/advanced-sass-l
 
 ```scss
 @function remove($list, $value, $recursive: false) {
-  @return replace($list, $value, '', $recursive);
+	@return replace($list, $value, '', $recursive);
 }
 
 @function remove-nth($list, $index) {
-  @return replace-nth($list, $index, '');
+	@return replace-nth($list, $index, '');
 }
 ```
 

@@ -23,14 +23,14 @@ import { useMutation } from 'react-apollo'
 const MUTATION = 'mutation removeEntry ($id: ID!) { removeEntry(id: $id) }'
 
 const RemoveEntryButton = props => {
-  const [removeEntry] = useMutation(MUTATION)
-  const handleClick = () => removeEntry({ variables: { id: props.id } })
+	const [removeEntry] = useMutation(MUTATION)
+	const handleClick = () => removeEntry({ variables: { id: props.id } })
 
-  return (
-    <button type='button' onClick={handleClick}>
-      Remove entry
-    </button>
-  )
+	return (
+		<button type='button' onClick={handleClick}>
+			Remove entry
+		</button>
+	)
 }
 ```
 
@@ -54,35 +54,35 @@ import gql from 'graphql-tag'
 import serialize from 'form-serialize'
 
 const MutationForm = props => {
-  const [mutate] = useMutation(gql(props.mutation))
-  const formRef = React.useRef()
-  const handleSubmit = event => {
-    // When submitting the form with JavaScript enabled, prevent the
-    // default behaviour to avoid a page refresh.
-    event.preventDefault()
+	const [mutate] = useMutation(gql(props.mutation))
+	const formRef = React.useRef()
+	const handleSubmit = event => {
+		// When submitting the form with JavaScript enabled, prevent the
+		// default behaviour to avoid a page refresh.
+		event.preventDefault()
 
-    // Call the mutation with the serialised form for variables, then
-    // redirect to the correct path accordingly.
-    mutate({ variables: serialize(formRef.current, { hash: true }) })
-      .then(() => window.history.pushState(null, null, props.successPath))
-      .catch(() => window.history.pushState(null, null, props.failurePath))
-  }
+		// Call the mutation with the serialised form for variables, then
+		// redirect to the correct path accordingly.
+		mutate({ variables: serialize(formRef.current, { hash: true }) })
+			.then(() => window.history.pushState(null, null, props.successPath))
+			.catch(() => window.history.pushState(null, null, props.failurePath))
+	}
 
-  // Render a <form> with a ref to be able to serialise it, and a
-  // few hidden fields to hold the mutation and the redirect paths.
-  return (
-    <form action='/graphql' method='POST' ref={formRef} onSubmit={handleSubmit}>
-      <input type='hidden' name='__mutation' value={props.mutation} />
-      <input type='hidden' name='__successPath' value={props.successPath} />
-      <input type='hidden' name='__failurePath' value={props.failurePath} />
+	// Render a <form> with a ref to be able to serialise it, and a
+	// few hidden fields to hold the mutation and the redirect paths.
+	return (
+		<form action='/graphql' method='POST' ref={formRef} onSubmit={handleSubmit}>
+			<input type='hidden' name='__mutation' value={props.mutation} />
+			<input type='hidden' name='__successPath' value={props.successPath} />
+			<input type='hidden' name='__failurePath' value={props.failurePath} />
 
-      {
-        // Mutation-specific fields, as well as the submit <button>
-        // are up to the component to render.
-        props.children
-      }
-    </form>
-  )
+			{
+				// Mutation-specific fields, as well as the submit <button>
+				// are up to the component to render.
+				props.children
+			}
+		</form>
+	)
 }
 ```
 
@@ -92,10 +92,10 @@ Then we can rewrite our `RemoveEntryButton` as follow. Note how we now provide t
 const MUTATION = 'mutation removeEntry ($id: ID!) { removeEntry(id: $id) }'
 
 const RemoveEntryButton = props => (
-  <MutationForm mutation={MUTATION} successPath='/' failurePath='/'>
-    <input type='hidden' name='id' value={props.id} />
-    <button type='submit'>Remove entry</button>
-  </MutationForm>
+	<MutationForm mutation={MUTATION} successPath='/' failurePath='/'>
+		<input type='hidden' name='id' value={props.id} />
+		<button type='submit'>Remove entry</button>
+	</MutationForm>
 )
 ```
 
@@ -137,38 +137,38 @@ If the request comes from the form submission, it needs to call Apollo directly 
 const { runHttpQuery } = require('apollo-server-core')
 
 const handleNoJavaScriptGraphQL = schema => (request, response, next) => {
-  const {
-    __mutation: query,
-    __successPath: successPath,
-    __failurePath: failurePath,
-    ...variables
-  } = request.body
+	const {
+		__mutation: query,
+		__successPath: successPath,
+		__failurePath: failurePath,
+		...variables
+	} = request.body
 
-  // Pick the `MutationForm`’s hidden fields from the request body. If
-  // they happen to be absent, return early and call `next`, as this
-  // means the request was performed with JavaScript, and this
-  // middleware has no purpose.
-  if (!query || !successPath || !failurePath) {
-    return next()
-  }
+	// Pick the `MutationForm`’s hidden fields from the request body. If
+	// they happen to be absent, return early and call `next`, as this
+	// means the request was performed with JavaScript, and this
+	// middleware has no purpose.
+	if (!query || !successPath || !failurePath) {
+		return next()
+	}
 
-  // Pass the schema, the mutation and the variables to Apollo manually
-  // to execute the mutation.
-  return runHttpQuery([request, response], {
-    method: request.method,
-    options: { schema },
-    query: { query, variables },
-  })
-    .then(({ graphqlResponse }) => {
-      const { data } = JSON.parse(graphqlResponse)
-      const operationName = Object.keys(data)[0]
-      const url = !data[operationName] ? failurePath : successPath
+	// Pass the schema, the mutation and the variables to Apollo manually
+	// to execute the mutation.
+	return runHttpQuery([request, response], {
+		method: request.method,
+		options: { schema },
+		query: { query, variables },
+	})
+		.then(({ graphqlResponse }) => {
+			const { data } = JSON.parse(graphqlResponse)
+			const operationName = Object.keys(data)[0]
+			const url = !data[operationName] ? failurePath : successPath
 
-      // CAUTION: be sure to sanitise that URL to make sure
-      // it doesn’t redirect to a malicious website.
-      return response.redirect(url)
-    })
-    .catch(error => response.redirect(failurePath))
+			// CAUTION: be sure to sanitise that URL to make sure
+			// it doesn’t redirect to a malicious website.
+			return response.redirect(url)
+		})
+		.catch(error => response.redirect(failurePath))
 }
 ```
 
@@ -198,13 +198,13 @@ In this article, we cover only the very basics to make it possible to use Apollo
 ```js
 const [isLoading, setIsLoading] = React.useState(false)
 const handleSubmit = event => {
-  event.preventDefault()
-  setIsLoading(true)
+	event.preventDefault()
+	setIsLoading(true)
 
-  mutate({ variables: serialize(formRef.current, { hash: true }) })
-    .then(() => window.history.pushState(null, null, props.successPath))
-    .catch(() => window.history.pushState(null, null, props.failurePath))
-    .finally(() => setIsLoading(false))
+	mutate({ variables: serialize(formRef.current, { hash: true }) })
+		.then(() => window.history.pushState(null, null, props.successPath))
+		.catch(() => window.history.pushState(null, null, props.failurePath))
+		.finally(() => setIsLoading(false))
 }
 ```
 
@@ -218,12 +218,12 @@ Which lets us re-author our `RemoveEntryButton` as such:
 
 ```jsx
 <MutationForm>
-  {({ isLoading }) => (
-    <button type='submit' aria-disabled={isLoading}>
-      {isLoading && <Loader />}
-      {isLoading ? 'Removing entry…' : 'Remove entry'}
-    </button>
-  )}
+	{({ isLoading }) => (
+		<button type='submit' aria-disabled={isLoading}>
+			{isLoading && <Loader />}
+			{isLoading ? 'Removing entry…' : 'Remove entry'}
+		</button>
+	)}
 </MutationForm>
 ```
 

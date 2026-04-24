@@ -101,19 +101,19 @@ The function to run whenever the countdown stops.
 
 ```javascript
 var countdown = new Countdown({
-  selector: '#timer',
-  msgBefore: 'Will start at Christmas!',
-  msgAfter: 'Happy new year folks!',
-  msgPattern:
-    '{days} days, {hours} hours and {minutes} minutes before new year!',
-  dateStart: new Date('2013/12/25 12:00'),
-  dateEnd: new Date('Jan 1, 2014 12:00'),
-  onStart: function () {
-    console.log('Merry Christmas!')
-  },
-  onEnd: function () {
-    console.log('Happy New Year!')
-  },
+	selector: '#timer',
+	msgBefore: 'Will start at Christmas!',
+	msgAfter: 'Happy new year folks!',
+	msgPattern:
+		'{days} days, {hours} hours and {minutes} minutes before new year!',
+	dateStart: new Date('2013/12/25 12:00'),
+	dateEnd: new Date('Jan 1, 2014 12:00'),
+	onStart: function () {
+		console.log('Merry Christmas!')
+	},
+	onEnd: function () {
+		console.log('Happy New Year!')
+	},
 })
 ```
 
@@ -127,15 +127,15 @@ As of today, two events are being fired: `countdownStart` and `countdownEnd`. Yo
 
 ```javascript
 var countdown = new Countdown({
-  selector: '.timer',
+	selector: '.timer',
 })
 
 $('.timer').on('countdownStart', function () {
-  console.log('The countdown has been started.')
+	console.log('The countdown has been started.')
 })
 
 $('.timer').on('countdownEnd', function () {
-  console.log('The countdown has reached 0.')
+	console.log('The countdown has reached 0.')
 })
 ```
 

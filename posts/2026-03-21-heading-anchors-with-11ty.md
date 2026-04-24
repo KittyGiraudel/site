@@ -30,53 +30,53 @@ import * as cheerio from 'cheerio'
 // This implementation is heavily inspired from <heading-anchors>
 // See: https://github.com/zachleat/heading-anchors
 function injectHeadingAnchors(content, outputPath) {
-  if (typeof outputPath !== 'string' || !outputPath.endsWith('.html'))
-    return content
+	if (typeof outputPath !== 'string' || !outputPath.endsWith('.html'))
+		return content
 
-  // This is a little fragile, but it’s also okay. It’s just intended as
-  // a heuristic to avoid loading the content in cheerio if we’re not in
-  // an article. It’s purely a performance optimization.
-  if (
-    !content.includes('class="Post"') &&
-    !content.includes('itemprop="articleBody"')
-  ) {
-    return content
-  }
+	// This is a little fragile, but it’s also okay. It’s just intended as
+	// a heuristic to avoid loading the content in cheerio if we’re not in
+	// an article. It’s purely a performance optimization.
+	if (
+		!content.includes('class="Post"') &&
+		!content.includes('itemprop="articleBody"')
+	) {
+		return content
+	}
 
-  // Load the HTML content into a virtual DOM with cheerio
-  const $ = cheerio.load(content, { decodeEntities: false }, true)
+	// Load the HTML content into a virtual DOM with cheerio
+	const $ = cheerio.load(content, { decodeEntities: false }, true)
 
-  // Keep an internal index for anchors
-  let anchorIndex = 0
+	// Keep an internal index for anchors
+	let anchorIndex = 0
 
-  // Find all headings we want an anchor for
-  $('.Post :is(h2, h3, h4)[id]:not([data-ha-exclude])').each((_, el) => {
-    const $heading = $(el)
-    const text = $heading.text().trim()
-    const anchorName = `--ha_0_${anchorIndex++}`
-    const id = $heading.attr('id')
+	// Find all headings we want an anchor for
+	$('.Post :is(h2, h3, h4)[id]:not([data-ha-exclude])').each((_, el) => {
+		const $heading = $(el)
+		const text = $heading.text().trim()
+		const anchorName = `--ha_0_${anchorIndex++}`
+		const id = $heading.attr('id')
 
-    const anchor = $(
-      `<a
-        class="ha"
-        href="#${id}"
-        style="position-anchor: ${anchorName};">
-        <span class="visually-hidden">Jump to section titled: ${text}</span>
-        <span aria-hidden="true">§</span>
-      </a>`,
-    )
-    const placeholder = $(
-      `<span
-        class="ha-placeholder"
-        aria-hidden="true"
-        style="anchor-name: ${anchorName};">§</span>`,
-    )
+		const anchor = $(
+			`<a
+				class="ha"
+				href="#${id}"
+				style="position-anchor: ${anchorName};">
+				<span class="visually-hidden">Jump to section titled: ${text}</span>
+				<span aria-hidden="true">§</span>
+			</a>`,
+		)
+		const placeholder = $(
+			`<span
+				class="ha-placeholder"
+				aria-hidden="true"
+				style="anchor-name: ${anchorName};">§</span>`,
+		)
 
-    $heading.append(placeholder)
-    $heading.after(anchor)
-  })
+		$heading.append(placeholder)
+		$heading.after(anchor)
+	})
 
-  return $.html()
+	return $.html()
 }
 
 export default injectHeadingAnchors
@@ -104,26 +104,26 @@ As a fallback, I came up with some styles that work _for this website specifical
 
 ```css
 @supports (anchor-name: none) {
-  .ha {
-    left: anchor(left);
-    top: anchor(top);
-  }
+	.ha {
+		left: anchor(left);
+		top: anchor(top);
+	}
 }
 
 @supports not (anchor-name: none) {
-  /**
-   * 1. Fallback positioning in the gutter for browsers
-   *    that don’t support CSS anchor positioning.
-   */
-  .ha {
-    transform: translate(-1.1em, -2.05em); /* 1 */
-    opacity: 0.5;
-    position: absolute;
-  }
+	/**
+	 * 1. Fallback positioning in the gutter for browsers
+	 *    that don’t support CSS anchor positioning.
+	 */
+	.ha {
+		transform: translate(-1.1em, -2.05em); /* 1 */
+		opacity: 0.5;
+		position: absolute;
+	}
 
-  .ha-placeholder {
-    display: none;
-  }
+	.ha-placeholder {
+		display: none;
+	}
 }
 ```
 

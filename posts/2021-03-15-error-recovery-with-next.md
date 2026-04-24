@@ -38,35 +38,35 @@ What if we called `window.stop()` _before_ the browser reaches the `<script>` ta
 
 ```jsx
 class MyDocument extends Document {
-  static getInitialProps(ctx) {
-    return Document.getInitialProps(ctx)
-  }
+	static getInitialProps(ctx) {
+		return Document.getInitialProps(ctx)
+	}
 
-  render() {
-    return (
-      <Html>
-        <Head />
-        <body>
-          <Main />
-          {/* Trying to prevent <script> elements rendered by
-              `<NextScript />` from being executed. The proper
-              condition will be covered in the next section. */
-          <script dangerouslySetInnerHTML={​{ __html: `
-            if (true) window.stop()
-          ` }} />
-          <NextScript />
-        </body>
-      </Html>
-    )
-  }
+	render() {
+		return (
+			<Html>
+				<Head />
+				<body>
+					<Main />
+					{/* Trying to prevent <script> elements rendered by
+							`<NextScript />` from being executed. The proper
+							condition will be covered in the next section. */
+					<script dangerouslySetInnerHTML={​{ __html: `
+						if (true) window.stop()
+					` }} />
+					<NextScript />
+				</body>
+			</Html>
+		)
+	}
 }
 ```
 
 Performing a [Next export](https://nextjs.org/docs/advanced-features/static-html-export) and serving the output folder before loading any page yields positive results: not only are the `<script>` tags not executed, but they’re not even rendered in the dev tools. That’s because `window.stop()` literally killed the page at this point, preventing the rest of the document from being rendered.
 
 ```html
-    <script>if (true) window.stop()</script>
-  </body>
+		<script>if (true) window.stop()</script>
+	</body>
 </html>
 ```
 
@@ -76,16 +76,16 @@ Of course, we do not want to always prevent the scripts’ execution. Only when 
 
 ```js
 class ErrorBoundary extends React.Component {
-  componentDidCatch(error, info) {
-    const { pathname, search } = window.location
+	componentDidCatch(error, info) {
+		const { pathname, search } = window.location
 
-    window.location.href =
-      pathname + search + (search.length ? '&' : '?') + 'no_script'
-  }
+		window.location.href =
+			pathname + search + (search.length ? '&' : '?') + 'no_script'
+	}
 
-  render() {
-    return this.props.children
-  }
+	render() {
+		return this.props.children
+	}
 }
 ```
 
@@ -93,11 +93,11 @@ We can render that component around our content in `./pages/_app.js` (see [Custo
 
 ```js
 function MyApp({ Component, pageProps }) {
-  return (
-    <ErrorBoundary>
-      <Component {...pageProps} />
-    </ErrorBoundary>
-  )
+	return (
+		<ErrorBoundary>
+			<Component {...pageProps} />
+		</ErrorBoundary>
+	)
 }
 ```
 
@@ -105,26 +105,26 @@ Finally, in our `./pages/_document.js`, we can check for the presence of this UR
 
 ```js
 class MyDocument extends Document {
-  static getInitialProps(ctx) {
-    return Document.getInitialProps(ctx)
-  }
+	static getInitialProps(ctx) {
+		return Document.getInitialProps(ctx)
+	}
 
-  render() {
-    return (
-      <Html>
-        <Head />
-        <body>
-          <Main />
-          <script dangerouslySetInnerHTML={​{ __html: `
-            if (window.location.search.includes('no_script')) {
-              window.stop()
-            }
-          ` }} />
-          <NextScript />
-        </body>
-      </Html>
-    )
-  }
+	render() {
+		return (
+			<Html>
+				<Head />
+				<body>
+					<Main />
+					<script dangerouslySetInnerHTML={​{ __html: `
+						if (window.location.search.includes('no_script')) {
+							window.stop()
+						}
+					` }} />
+					<NextScript />
+				</body>
+			</Html>
+		)
+	}
 }
 ```
 
@@ -144,23 +144,23 @@ However, Next does not provide a built-in way to know what scripts should be ren
 
 ```jsx
 class MyDocument extends Document {
-  static getInitialProps(ctx) {
-    return Document.getInitialProps(ctx)
-  }
+	static getInitialProps(ctx) {
+		return Document.getInitialProps(ctx)
+	}
 
-  render() {
-    return (
-      <Html>
-        <Head />
-        <body>
-          <Main />
-          <template id='next-scripts'>
-            <NextScript />
-          </template>
-        </body>
-      </Html>
-    )
-  }
+	render() {
+		return (
+			<Html>
+				<Head />
+				<body>
+					<Main />
+					<template id='next-scripts'>
+						<NextScript />
+					</template>
+				</body>
+			</Html>
+		)
+	}
 }
 ```
 
@@ -169,35 +169,35 @@ Perfect. Now, all we need is a little JavaScript snippet to effectively properly
 ```jsx
 const scriptInjector = `
 if (!window.location.search.includes('no_script')) {
-  var template = document.querySelector("#next-scripts")
-  var fragment = template.content.cloneNode(true)
-  var scripts = fragment.querySelectorAll("script")
+	var template = document.querySelector("#next-scripts")
+	var fragment = template.content.cloneNode(true)
+	var scripts = fragment.querySelectorAll("script")
 
-  Array.from(scripts).forEach(function (script) {
-    document.body.appendChild(script)
-  })
+	Array.from(scripts).forEach(function (script) {
+		document.body.appendChild(script)
+	})
 }
 `.trim()
 
 class MyDocument extends Document {
-  static getInitialProps(ctx) {
-    return Document.getInitialProps(ctx)
-  }
+	static getInitialProps(ctx) {
+		return Document.getInitialProps(ctx)
+	}
 
-  render() {
-    return (
-      <Html>
-        <Head />
-        <body>
-          <Main />
-          <template id='next-scripts'>
-            <NextScript />
-          </template>
-          <script dangerouslySetInnerHTML={​{ __html: scriptInjector }} />
-        </body>
-      </Html>
-    )
-  }
+	render() {
+		return (
+			<Html>
+				<Head />
+				<body>
+					<Main />
+					<template id='next-scripts'>
+						<NextScript />
+					</template>
+					<script dangerouslySetInnerHTML={​{ __html: scriptInjector }} />
+				</body>
+			</Html>
+		)
+	}
 }
 
 ```

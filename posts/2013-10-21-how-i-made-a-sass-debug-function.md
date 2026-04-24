@@ -31,33 +31,33 @@ It was pretty easy to do.
 
 ```scss
 @function debug($list) {
-  // We open the bracket
-  $result: '[ ';
+	// We open the bracket
+	$result: '[ ';
 
-  // For each item in list
-  @each $item in $list {
-    // We test its length
-    // If it’s more than one item long
-    @if length($item) > 1 {
-      // We deal with a nested list
-      $result: $result + debug($item);
-    }
-    // Else we append the item to $result
-    @else {
-      $result: $result + $item;
-    }
+	// For each item in list
+	@each $item in $list {
+		// We test its length
+		// If it’s more than one item long
+		@if length($item) > 1 {
+			// We deal with a nested list
+			$result: $result + debug($item);
+		}
+		// Else we append the item to $result
+		@else {
+			$result: $result + $item;
+		}
 
-    // If we are not dealing with the last item of the list
-    // We add a comma and a space
-    @if index($list, $item) != length($list) {
-      $result: $result + ', ';
-    }
-  }
+		// If we are not dealing with the last item of the list
+		// We add a comma and a space
+		@if index($list, $item) != length($list) {
+			$result: $result + ', ';
+		}
+	}
 
-  // We close the bracket
-  // And return the string
-  $result: $result + ' ]';
-  @return quote($result);
+	// We close the bracket
+	// And return the string
+	$result: $result + ' ]';
+	@return quote($result);
 }
 ```
 
@@ -65,16 +65,16 @@ This simple functions turns a Sass list into a readable string. It also deals wi
 
 ```scss
 $list:
-  a,
-  b,
-  c,
-  d e f,
-  g,
-  h i,
-  j;
+	a,
+	b,
+	c,
+	d e f,
+	g,
+	h i,
+	j;
 body:before {
-  content: debug($list);
-  // [ a, b, c, [ d, e, f ], g, [ h, i ], j ]
+	content: debug($list);
+	// [ a, b, c, [ d, e, f ], g, [ h, i ], j ]
 }
 ```
 
@@ -86,24 +86,24 @@ Basically I wanted to go `@include debug($list)` and have everything displayed. 
 
 ```scss
 @mixin debug($list) {
-  body:before {
-    content: debug($list) !important;
+	body:before {
+		content: debug($list) !important;
 
-    display: block !important;
-    margin: 1em !important;
-    padding: 0.5em !important;
+		display: block !important;
+		margin: 1em !important;
+		padding: 0.5em !important;
 
-    background: #efefef !important;
-    border: 1px solid #ddd !important;
-    border-radius: 0.2em !important;
+		background: #efefef !important;
+		border: 1px solid #ddd !important;
+		border-radius: 0.2em !important;
 
-    color: #333 !important;
-    font:
-      0.75em/1.5 'Courier New',
-      monospace !important;
-    text-shadow: 0 1px white !important;
-    white-space: pre-wrap !important;
-  }
+		color: #333 !important;
+		font:
+			0.75em/1.5 'Courier New',
+			monospace !important;
+		text-shadow: 0 1px white !important;
+		white-space: pre-wrap !important;
+	}
 }
 ```
 
@@ -127,25 +127,25 @@ This is pretty much what we will do here.
 
 ```scss
 @function debug($list) {
-  $line-break: '\A ';
-  $result: '[ ' + $line-break;
+	$line-break: '\A ';
+	$result: '[ ' + $line-break;
 
-  @each $item in $list {
-    $result: $result + '  ';
+	@each $item in $list {
+		$result: $result + '  ';
 
-    @if length($item) > 1 {
-      $result: $result + debug($item);
-    } @else {
-      $result: $result + $item;
-    }
+		@if length($item) > 1 {
+			$result: $result + debug($item);
+		} @else {
+			$result: $result + $item;
+		}
 
-    @if index($list, $item) != length($list) {
-      $result: $result + ', ' + $line-break;
-    }
-  }
+		@if index($list, $item) != length($list) {
+			$result: $result + ', ' + $line-break;
+		}
+	}
 
-  $result: $result + $line-break + ']';
-  @return quote($result);
+	$result: $result + $line-break + ']';
+	@return quote($result);
 }
 ```
 
@@ -155,26 +155,26 @@ Actually the only way I could manage a perfect indentation is the same trick I u
 
 ```scss
 @function debug($list, $root: true) {
-  $line-break: '\A ';
-  $result: '[ ' + $line-break;
-  $space: if($root, '', '  ');
+	$line-break: '\A ';
+	$result: '[ ' + $line-break;
+	$space: if($root, '', '  ');
 
-  @each $item in $list {
-    $result: $result + '  ';
+	@each $item in $list {
+		$result: $result + '  ';
 
-    @if length($item) > 1 {
-      $result: $result + debug($item, false);
-    } @else {
-      $result: $result + $space + $item;
-    }
+		@if length($item) > 1 {
+			$result: $result + debug($item, false);
+		} @else {
+			$result: $result + $space + $item;
+		}
 
-    @if index($list, $item) != length($list) {
-      $result: $result + ', ' + $line-break;
-    }
-  }
+		@if index($list, $item) != length($list) {
+			$result: $result + ', ' + $line-break;
+		}
+	}
 
-  $result: $result + $line-break + $space + ']';
-  @return quote($result);
+	$result: $result + $line-break + $space + ']';
+	@return quote($result);
 }
 ```
 

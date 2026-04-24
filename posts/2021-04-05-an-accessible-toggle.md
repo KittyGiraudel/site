@@ -32,8 +32,8 @@ If the toggle causes an immediate action (such as switching a theme) and therefo
 
 ```html
 <label class="Toggle" for="toggle">
-  <input type="checkbox" name="toggle" id="toggle" class="Toggle__input" />
-  This is the label
+	<input type="checkbox" name="toggle" id="toggle" class="Toggle__input" />
+	This is the label
 </label>
 ```
 
@@ -45,43 +45,43 @@ The way it’s going to work is we’re going to have a small container between 
 
 ```html
 <label class="Toggle" for="toggle">
-  <input type="checkbox" name="toggle" id="toggle" class="Toggle__input" />
+	<input type="checkbox" name="toggle" id="toggle" class="Toggle__input" />
 
-  <span class="Toggle__display" hidden>
-    <svg
-      aria-hidden="true"
-      focusable="false"
-      class="Toggle__icon Toggle__icon--checkmark"
-      width="18"
-      height="14"
-      viewBox="0 0 18 14"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M6.08471 10.6237L2.29164 6.83059L1 8.11313L6.08471 13.1978L17 2.28255L15.7175 1L6.08471 10.6237Z"
-        fill="currentcolor"
-        stroke="currentcolor"
-      />
-    </svg>
-    <svg
-      aria-hidden="true"
-      focusable="false"
-      class="Toggle__icon Toggle__icon--cross"
-      width="13"
-      height="13"
-      viewBox="0 0 13 13"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M11.167 0L6.5 4.667L1.833 0L0 1.833L4.667 6.5L0 11.167L1.833 13L6.5 8.333L11.167 13L13 11.167L8.333 6.5L13 1.833L11.167 0Z"
-        fill="currentcolor"
-      />
-    </svg>
-  </span>
+	<span class="Toggle__display" hidden>
+		<svg
+			aria-hidden="true"
+			focusable="false"
+			class="Toggle__icon Toggle__icon--checkmark"
+			width="18"
+			height="14"
+			viewBox="0 0 18 14"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M6.08471 10.6237L2.29164 6.83059L1 8.11313L6.08471 13.1978L17 2.28255L15.7175 1L6.08471 10.6237Z"
+				fill="currentcolor"
+				stroke="currentcolor"
+			/>
+		</svg>
+		<svg
+			aria-hidden="true"
+			focusable="false"
+			class="Toggle__icon Toggle__icon--cross"
+			width="13"
+			height="13"
+			viewBox="0 0 13 13"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M11.167 0L6.5 4.667L1.833 0L0 1.833L4.667 6.5L0 11.167L1.833 13L6.5 8.333L11.167 13L13 11.167L8.333 6.5L13 1.833L11.167 0Z"
+				fill="currentcolor"
+			/>
+		</svg>
+	</span>
 
-  This is the label
+	This is the label
 </label>
 ```
 
@@ -118,11 +118,11 @@ Let’s start with some basic styles for our container.
  *    See: https://caniuse.com/flexbox-gap
  */
 .Toggle {
-  display: inline-flex; /* 1 */
-  align-items: center; /* 1 */
-  flex-wrap: wrap; /* 2 */
-  position: relative; /* 3 */
-  gap: 1ch; /* 4 */
+	display: inline-flex; /* 1 */
+	align-items: center; /* 1 */
+	flex-wrap: wrap; /* 2 */
+	position: relative; /* 3 */
+	gap: 1ch; /* 4 */
 }
 ```
 
@@ -147,25 +147,25 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
  *    used as a background color.
  */
 .Toggle__display {
-  --offset: 0.25em;
-  --diameter: 1.8em;
+	--offset: 0.25em;
+	--diameter: 1.8em;
 
-  display: inline-flex; /* 1 */
-  align-items: center; /* 1 */
-  justify-content: space-around; /* 1 */
+	display: inline-flex; /* 1 */
+	align-items: center; /* 1 */
+	justify-content: space-around; /* 1 */
 
-  width: calc(var(--diameter) * 2 + var(--offset) * 2); /* 2 */
-  height: calc(var(--diameter) + var(--offset) * 2); /* 2 */
-  box-sizing: content-box; /* 2 */
+	width: calc(var(--diameter) * 2 + var(--offset) * 2); /* 2 */
+	height: calc(var(--diameter) + var(--offset) * 2); /* 2 */
+	box-sizing: content-box; /* 2 */
 
-  border: 0.1em solid rgb(0 0 0 / 0.2); /* 3 */
+	border: 0.1em solid rgb(0 0 0 / 0.2); /* 3 */
 
-  position: relative; /* 4 */
-  border-radius: 100vw; /* 5 */
-  background-color: #fbe4e2; /* 6 */
+	position: relative; /* 4 */
+	border-radius: 100vw; /* 5 */
+	background-color: #fbe4e2; /* 6 */
 
-  transition: 250ms;
-  cursor: pointer;
+	transition: 250ms;
+	cursor: pointer;
 }
 
 /**
@@ -180,23 +180,23 @@ Then, our toggle. To make it easier to tweak its styles, we rely on some CSS cus
  *    could be dark in a dark mode theme, as long as it’s solid.
  */
 .Toggle__display::before {
-  content: '';
+	content: '';
 
-  width: var(--diameter); /* 1 */
-  height: var(--diameter); /* 1 */
-  border-radius: 50%; /* 1 */
+	width: var(--diameter); /* 1 */
+	height: var(--diameter); /* 1 */
+	border-radius: 50%; /* 1 */
 
-  box-sizing: border-box; /* 2 */
-  border: 0.1 solid rgb(0 0 0 / 0.2); /* 2 */
+	box-sizing: border-box; /* 2 */
+	border: 0.1 solid rgb(0 0 0 / 0.2); /* 2 */
 
-  position: absolute; /* 3 */
-  z-index: 2; /* 3 */
-  top: 50%; /* 3 */
-  left: var(--offset); /* 3 */
-  transform: translate(0, -50%); /* 3 */
+	position: absolute; /* 3 */
+	z-index: 2; /* 3 */
+	top: 50%; /* 3 */
+	left: var(--offset); /* 3 */
+	transform: translate(0, -50%); /* 3 */
 
-  background-color: #fff; /* 4 */
-  transition: inherit;
+	background-color: #fff; /* 4 */
+	transition: inherit;
 }
 ```
 
@@ -204,9 +204,9 @@ The transition here is so the handle gently slides from one side to the other. T
 
 ```css
 @media (prefers-reduced-motion: reduce) {
-  .Toggle__display {
-    transition-duration: 0ms;
-  }
+	.Toggle__display {
+		transition-duration: 0ms;
+	}
 }
 ```
 
@@ -214,10 +214,10 @@ Let’s not forget to visually hide our actual checkbox, so it sits on top of ou
 
 ```css
 .Toggle__input {
-  position: absolute;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
 }
 ```
 
@@ -234,8 +234,8 @@ First, let’s deal with focus styles. As long as they’re noticeable, they can
  *    customised to have a custom focus outline.
  */
 .Toggle__input:focus + .Toggle__display {
-  outline: 1px dotted #212121; /* 1 */
-  outline: 1px auto -webkit-focus-ring-color; /* 1 */
+	outline: 1px dotted #212121; /* 1 */
+	outline: 1px auto -webkit-focus-ring-color; /* 1 */
 }
 ```
 
@@ -249,7 +249,7 @@ One interesting thing I’ve noticed is that when clicking a native checkbox or 
  *    the focus is not visible when clicking it.
  */
 .Toggle__input:focus:not(:focus-visible) + .Toggle__display {
-  outline: 0; /* 1 */
+	outline: 0; /* 1 */
 }
 ```
 
@@ -263,7 +263,7 @@ Then, we have to deal with the checked state. There are 2 things we want to do i
  *    pale green instead. 
  */
 .Toggle__input:checked + .Toggle__display {
-  background-color: #e3f5eb; /* 1 */
+	background-color: #e3f5eb; /* 1 */
 }
 
 /**
@@ -271,7 +271,7 @@ Then, we have to deal with the checked state. There are 2 things we want to do i
  *    the cross icon instead of the checkmark one.
  */
 .Toggle__input:checked + .Toggle__display::before {
-  transform: translate(100%, -50%); /* 1 */
+	transform: translate(100%, -50%); /* 1 */
 }
 ```
 
@@ -287,9 +287,9 @@ Finally, we can add some custom styles to make a disabled toggle a bit more expl
  *    with less sharp colors, softer opacity and a relevant cursor.
  */
 .Toggle__input:disabled + .Toggle__display {
-  opacity: 0.6; /* 1 */
-  filter: grayscale(40%); /* 1 */
-  cursor: not-allowed; /* 1 */
+	opacity: 0.6; /* 1 */
+	filter: grayscale(40%); /* 1 */
+	cursor: not-allowed; /* 1 */
 }
 ```
 
@@ -304,15 +304,15 @@ We need to adjust everything that’s currently directional so the original posi
  * 1. Flip the original position of the unchecked toggle in RTL.
  */
 [dir='rtl'] .Toggle__display::before {
-  left: auto; /* 1 */
-  right: var(--offset); /* 1 */
+	left: auto; /* 1 */
+	right: var(--offset); /* 1 */
 }
 
 /**
  * 1. Move the handle in the correct direction in RTL.
  */
 [dir='rtl'] .Toggle__input:checked + .Toggle__display::before {
-  transform: translate(-100%, -50%); /* 1 */
+	transform: translate(-100%, -50%); /* 1 */
 }
 ```
 
@@ -322,12 +322,12 @@ Finally, we apply some styles to our icons, as recommended by [Florens Verscheld
 
 ```css
 .Toggle__icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  color: inherit;
-  fill: currentcolor;
-  vertical-align: middle;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	color: inherit;
+	fill: currentcolor;
+	vertical-align: middle;
 }
 
 /**
@@ -335,12 +335,12 @@ Finally, we apply some styles to our icons, as recommended by [Florens Verscheld
  *    size. This might not be needed depending on the icons.
  */
 .Toggle__icon--cross {
-  color: #e74c3c;
-  font-size: 85%; /* 1 */
+	color: #e74c3c;
+	font-size: 85%; /* 1 */
 }
 
 .Toggle__icon--checkmark {
-  color: #1fb978;
+	color: #1fb978;
 }
 ```
 
@@ -354,10 +354,10 @@ Fortunately, it is easy to adapt our code so it works all the same as a button. 
 
 ```html
 <button class="Toggle" type="button" aria-pressed="false">
-  <span class="Toggle__display" hidden>
-    <!-- The toggle does not change at all -->
-  </span>
-  This is the label
+	<span class="Toggle__display" hidden>
+		<!-- The toggle does not change at all -->
+	</span>
+	This is the label
 </button>
 ```
 
@@ -368,10 +368,10 @@ Then, we need to make sure our `<button>` does not look like one. To do so, we r
  * 1. Reset default <button> styles.
  */
 button.Toggle {
-  border: 0; /* 1 */
-  padding: 0; /* 1 */
-  background: transparent; /* 1 */
-  font: inherit; /* 1 */
+	border: 0; /* 1 */
+	padding: 0; /* 1 */
+	background: transparent; /* 1 */
+	font: inherit; /* 1 */
 }
 
 /**
@@ -379,7 +379,7 @@ button.Toggle {
  *    the default focus outline can be safely removed.
  */
 .Toggle:focus {
-  outline: 0; /* 1 */
+	outline: 0; /* 1 */
 }
 ```
 
