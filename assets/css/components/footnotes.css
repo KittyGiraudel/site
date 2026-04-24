@@ -55,7 +55,7 @@
 
 .Footnotes__ref[role="doc-noteref"] {
   background-image: none;
-  cursor: default;
+  cursor: pointer;
 }
 
 .Footnotes__ref[role="doc-noteref"]::after {
