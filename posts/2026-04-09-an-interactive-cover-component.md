@@ -30,11 +30,11 @@ In this article, we will deal with the “rural sea” biome, whose green-ish th
 
 ```css
 [data-biome="ruralSea"] {
-  --biome-light: #7dc8a0;
-  --biome-dark: #4a9f72;
-  --biome-light-contrast: #ffffff;
-  --biome-dark-contrast: #ffffff;
-  --biome-banner: url('/assets/images/cover-component/banner-ruralSea.avif');
+	--biome-light: #7dc8a0;
+	--biome-dark: #4a9f72;
+	--biome-light-contrast: #ffffff;
+	--biome-dark-contrast: #ffffff;
+	--biome-banner: url('/assets/images/cover-component/banner-ruralSea.avif');
 }
 ```
 
@@ -46,11 +46,11 @@ The markup is quite straightforward:
 
 ```html
 <div class="Cover" tabindex="0">
-  <div class="Cover__overlay"></div>
-  <div class="Cover__content">
-    <p class="Cover__title">You are currently in a <strong>sea of fields</strong>.</p>
-    <p class="Cover__description">The wind picks up and begins to blow harder …</p>
-  </div>
+	<div class="Cover__overlay"></div>
+	<div class="Cover__content">
+		<p class="Cover__title">You are currently in a <strong>sea of fields</strong>.</p>
+		<p class="Cover__description">The wind picks up and begins to blow harder …</p>
+	</div>
 </div>
 ```
 
@@ -63,20 +63,20 @@ perspective, we’re going to:
 
 ```css/4,8,12
 .Cover__content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
 }
 
 .Cover__title {
-  transform: translateY(-100%);
+	transform: translateY(-100%);
 }
 
 .Cover:hover {
-  & .Cover__content { transform: translateY(-100%) }
-  & .Cover__title   { transform: translateY(0) }
-  & .Cover__overlay { opacity: 1 }
+	& .Cover__content { transform: translateY(-100%) }
+	& .Cover__title { transform: translateY(0) }
+	& .Cover__overlay { opacity: 1 }
 }
 ```
 
@@ -102,12 +102,11 @@ So far, everything works only on hover, and I wanted to add support for keyboard
 
 ```css
 .Cover:is(:hover, :focus-visible) {
-  /* … */
+	/* … */
 }
 ```
 
 Fair warning: I actually don’t know if using `tabindex="0"` is appropriate here. Perhaps it could be confusing for blind screen-reader users to be able to tab to a `div`. If someone has any experience with this, let me know. :)
-
 
 ### Static variant
 
@@ -115,7 +114,7 @@ In some instances, I have a variant of this component with just the title, no te
 
 ```css
 .Cover:has(.Cover__description:not(:empty)):is(:hover, :focus-visible) {
-  /* … */
+	/* … */
 }
 ```
 
@@ -127,11 +126,11 @@ Let’s start with the first: it goes downwards, and uses a color-stop at 85%, w
 
 ```css
 .Cover {
-  background-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgb(0 0 0 / 0.5) 85%
-  ), var(--biome-banner);
+	background-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		rgb(0 0 0 / 0.5) 85%
+	), var(--biome-banner);
 }
 ```
 
@@ -139,14 +138,14 @@ Now, for the overlay element. I thought it could be cool to bake the biome color
 
 ```css
 .Cover__overlay {
-  inset: 0;
-  position: absolute;
-  background-image: linear-gradient(
-    to bottom,
-    transparent 50%,
-    color-mix(in srgb, var(--biome-dark) 25%, black) 100%
-  );
-  opacity: 0;
+	inset: 0;
+	position: absolute;
+	background-image: linear-gradient(
+		to bottom,
+		transparent 50%,
+		color-mix(in srgb, var(--biome-dark) 25%, black) 100%
+	);
+	opacity: 0;
 }
 ```
 
@@ -158,8 +157,8 @@ At its core, it goes like this:
 
 ```css
 @keyframes animate-background {
-  from { background-position: center 0% }
-  to { background-position: center 100% }
+	from { background-position: center 0% }
+	to { background-position: center 100% }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -179,8 +178,8 @@ It turns out you can use CSS custom properties within keyframes, so let’s do t
 
 ```css
 @keyframes animate-background {
-  from { background-position: center var(--from, 0%) }
-  to { background-position: center var(--to, 100%) }
+	from { background-position: center var(--from, 0%) }
+	to { background-position: center var(--to, 100%) }
 }
 ```
 
@@ -190,7 +189,7 @@ The problem with this approach is that a background that gets animated between 4
 
 ```css/1
 .Cover {
-  animation-duration: calc((abs(var(--to) - var(--from))) * 0.5s);
+	animation-duration: calc((abs(var(--to) - var(--from))) * 0.5s);
 }
 ```
 
