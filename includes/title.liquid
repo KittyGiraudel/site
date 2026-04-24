@@ -9,5 +9,10 @@
 {% ensure title, "Required value 'title' is missing in title.liquid" %}
 
 <h1 class="Title" itemprop="title" {% if id %}id="{{ id }}" {% endif %}{% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}>
-  {{ title }}
+  {% comment %}
+   The Baskerville font that we use across the site has a *really* pretty amper-
+   sand character, but only in italic. So this wraps any ampersand in italics in
+   the title.
+  {% endcomment %}
+  {{ title | replace: "&", "<span style='font-style: italic;'>&</span>" }}
 </h1>
