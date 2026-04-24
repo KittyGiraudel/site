@@ -1,5 +1,5 @@
 ---
-title: Heading Anchors with Eleventy
+title: Heading Anchors With Eleventy
 description: A technical walkthrough about replacing runtime JavaScript to create heading anchors.
 tags:
   - Eleventy

@@ -1,5 +1,5 @@
 ---
-title: Stats Page with Eleventy
+title: Stats Page With Eleventy
 description: A short technical write-up about aggregating blogging stats and displaying them on a page with Eleventy.
 tags:
   - Eleventy

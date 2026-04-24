@@ -1,5 +1,5 @@
 ---
-title: How I use Trello to stop forgetting things
+title: How I Use Trello to Stop Forgetting Things
 description: A personal write-up on how I use Trello to stay organised
 tags:
   - Process

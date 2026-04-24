@@ -1,20 +1,20 @@
 ---
-title: 'The Magic Circle: trick revealed'
+title: 'The Magic Circle: Trick Revealed'
 description: A technical write-up about the Magic Circle puzzle previously posted on this website
 tags:
   - CSS
   - Challenge
 ---
 
+{% callout "warning" %}
 Spoilers! This post is the solution of a CSS riddle proposed in [a previous article](/2014/02/19/the-magic-circle-a-css-brain-teaser/).
-
----
+{% endcallout %}
 
 Time’s up people! First, thanks for playing. There have been quite a few proposals, all of them very interesting in their own way. In the end, I think the riddle was slightly easier than expected but it’s pretty cool to dig into your code to see how you’ve worked around the problem.
 
 Among the possible solutions, I thought about:
 
-- Pseudo-elements with box-shadows/borders (what I &mdash; and most of you &mdash; came up with)
+- Pseudo-elements with box-shadows/borders (what I, and most of you, came up with)
 - Pseudo-elements with duplicated background
 - Clip-path
 - Radial-gradients
@@ -176,7 +176,7 @@ Boxes spread across half the width of the parent. Some of you people did use `ca
 }
 ```
 
-There we go. Since we are using a clean box model (i.e. `box-sizing: border-box`), we can add a padding to the inner wrapper (`section`) &mdash; left or right depending on their position &mdash; in order to simulate the horizontal gutter. No need for calc.
+There we go. Since we are using a clean box model (i.e. `box-sizing: border-box`), we can add a padding to the inner wrapper (`section`), left or right depending on their position, in order to simulate the horizontal gutter. No need for calc.
 
 If you want to get rid of the sections at all cost, you can use `calc` however you end up hacking around for Internet Explorer 8 to have gutters. Not an interesting trade-off in my opinion, but that would make the code lighter and more elegant for sure.
 

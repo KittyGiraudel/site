@@ -1,5 +1,5 @@
 ---
-title: Understanding the gender spectrum
+title: Understanding the Gender Spectrum
 description: A lightweight guide gender, its spectrum, its considerations and inclusive language related to it
 edits:
   - date: 2023/07/08

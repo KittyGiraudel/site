@@ -1,5 +1,5 @@
 ---
-title: “CSS is easy”
+title: “CSS Is Easy”
 description: My thoughts on the common misconception that CSS is an easy language
 tags:
   - CSS
@@ -30,13 +30,13 @@ Most of all, CSS means something. It uses real words, understandable by anyone. 
 
 The first “problem” (for lack of a better word) with CSS is that it is a constantly evolving language. It was first introduced in 1994 if no mistake; so almost 20 years ago. After 3 major versions (CSS1, CSS2 and CSS2.1), CSS is now divided into modules growing at their own speed (Colors Level 3, Selectors Level 4, etc.). It means you cannot simply “learn CSS” then don’t get back to it. You can learn the bases, yes but it’s not enough.
 
-Some things I learnt 2 years ago are irrelevant now, and some things I’m learning today might disappear or become bad practices in the future. It is a non-stop evolution &mdash; which is cool but &mdash; which requires developers to be very careful.
+Some things I learnt 2 years ago are irrelevant now, and some things I’m learning today might disappear or become bad practices in the future. It is a non-stop evolution (which is cool but) which requires developers to be very careful.
 
 ## Browser dependent
 
 The thing is, since CSS is a language compiled on the client side (meaning by the browser itself), its interpretation depends on the compiler (once again, the browser).
 
-Yes, HTML and JavaScript as well. But unless you’re using new HTML5 elements (which don’t provide much more than semantic), your HTML &mdash; as long as it is valid &mdash; won’t differ from one browser to another.
+Yes, HTML and JavaScript as well. But unless you’re using new HTML5 elements (which don’t provide much more than semantic), your HTML (as long as it is valid) won’t differ from one browser to another.
 
 JavaScript is kind of like CSS. The interpretation depends on the JavaScript engine version. For example, Internet Explorer 9 doesn’t use the same [ECMAScript engine](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines) as Firefox or Chrome (Chakra for IE9, SpiderMonkey for Firefox, V8 for Chrome).
 

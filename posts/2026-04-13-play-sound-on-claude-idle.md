@@ -1,5 +1,5 @@
 ---
-title: Play sound when Claude idles (on macOS)
+title: Play Sound When Claude Idles (on macOS)
 description: A tiny article about configuring Claude to play sound notifications when requesting input (for macOS specifically).
 tags:
   - AI

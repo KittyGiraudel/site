@@ -1,5 +1,5 @@
 ---
-title: Little steps for accessibility at N26
+title: Little Steps for Accessibility at N26
 description: A reflection on the small steps we took for accessibility at N26
 tags:
   - Accessibility

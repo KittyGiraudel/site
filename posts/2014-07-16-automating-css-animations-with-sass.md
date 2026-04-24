@@ -1,5 +1,5 @@
 ---
-title: Automating CSS animations with Sass
+title: Automating CSS Animations With Sass
 description: A technical write-up on using Sass to ease authoring CSS animations
 tags:
   - Sass
@@ -10,7 +10,7 @@ tags:
 The other day, [Harry Roberts](https://twitter.com/csswizardry) featured a snippet of code from his own site [on Twitter](https://twitter.com/csswizardry/status/489038580128686081), asking for some ways to improve it (if any). What Harry did was computing by hand the keyframes of a carousel animation, thus claiming that high school algebra indeed **is** useful.
 
 > “Why do we have to learn algebra, Miss? We’re never going to use it…”  
-> &mdash;Everyone in my maths class [bit.ly/UaM2wf](https://bit.ly/UaM2wf)
+> — Everyone in my maths class [bit.ly/UaM2wf](https://bit.ly/UaM2wf)
 
 ## What’s the idea?
 
@@ -281,7 +281,7 @@ $y: (100% - $n * $x) / ($n - 1);
 
 ## Pushing things further with a mixin
 
-So far so good? It works pretty well in automating Harry’s code so he does not have to compute everything from scratch again if he ever wants to display &mdash;let’s say&mdash; 4 slides instead of 5, or wants the animation to be quicker or longer.
+So far so good? It works pretty well in automating Harry’s code so he does not have to compute everything from scratch again if he ever wants to display, let’s say, 4 slides instead of 5, or wants the animation to be quicker or longer.
 
 But we are basically polluting the global scope with our variables. Also, if he needs another carousel animation elsewhere, we will need to find other variable names, and copy the whole content of the animation into the new one. That’s definitely not ideal.
 

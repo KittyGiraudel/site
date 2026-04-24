@@ -7,7 +7,7 @@ tags:
   - Sanity
 ---
 
-I spent the afternoon migrating a pretty large Sanity Studio from version 2 to version 3. I’m glad I managed to see it through, even though it was pretty challenging at times. I thought I’d jot down my thoughts — in case it helps anyone else upgrading.
+I spent the afternoon migrating a pretty large Sanity Studio from version 2 to version 3. I’m glad I managed to see it through, even though it was pretty challenging at times. I thought I’d jot down my thoughts, in case it helps anyone else upgrading.
 
 ## Aliases
 

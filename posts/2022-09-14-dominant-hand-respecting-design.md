@@ -1,5 +1,5 @@
 ---
-title: Dominant hand respecting design
+title: Dominant Hand Respecting Design
 description: A write-up on an experimental approach to interface designin considering the dominant hand
 edits:
   - date: 2022/09/14

@@ -44,7 +44,7 @@ I think the very first issue we’ve opened for Browserhacks was a request for a
 - `XUL`: only available in Mozilla, and kind of buggy
 - `execCommand`: both hacky and buggy
 
-Basically it’s a mess and a cross-browser _copy-to-clipboard_ is not realistic. So we had to think of something and by _we_ I mean [Tim Pietrusky](https://timpietrusky.com) of course. He came up with a clever idea which would allow the user to select a hack &mdash; for lack of copying &mdash; in one click.
+Basically it’s a mess and a cross-browser _copy-to-clipboard_ is not realistic. So we had to think of something and by _we_ I mean [Tim Pietrusky](https://timpietrusky.com) of course. He came up with a clever idea which would allow the user to select a hack (for lack of copying) in one click.
 
 Thus, he released a little JavaScript library called [\_select()](https://timpietrusky.com/_select/) that allow anything to be selected in a single click: paragraphs, images, whole documents, anything.
 

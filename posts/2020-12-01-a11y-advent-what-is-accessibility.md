@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 1: What is Accessibility?'
+title: 'A11y Advent Day 1: What Is Accessibility?'
 description: A11yAdvent entry on what is digital accessibility and why it matters
 tags:
   - Accessibility

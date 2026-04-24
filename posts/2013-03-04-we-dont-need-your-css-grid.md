@@ -1,6 +1,6 @@
 ---
-title: We don’t need your CSS grid
-description: "A take on CSS grid systems and why we might not need another one — on consistency, responsive design and frameworks."
+title: We Don’t Need Your CSS Grid
+description: "A take on CSS grid systems and why we might not need another one; on consistency, responsive design and frameworks."
 tags:
   - CSS
 ---
@@ -14,7 +14,7 @@ So in the last few months, we have assisted to a bunch of new CSS grid systems, 
 **They all are great grid systems**. This makes me get to the point…
 
 > You know what would be awesome? Another CSS grid system!  
-> &mdash; No one ever.
+> — No one ever.
 
 ## We don’t need yours
 

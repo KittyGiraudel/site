@@ -1,5 +1,5 @@
 ---
-title: Items along a circle
+title: Items Along a Circle
 description: A technical write-up about how to place items along a circle with CSS
 tags:
   - CSS

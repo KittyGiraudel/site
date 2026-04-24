@@ -1,5 +1,5 @@
 ---
-title: Recovering from JavaScript errors
+title: Recovering from JavaScript Errors
 description: A technical write-up on making JavaScript optional and recovering from runtime errors
 tags:
   - Accessibility

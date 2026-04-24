@@ -1,5 +1,5 @@
 ---
-title: Introducing the SitePoint Sass Reference
+title: Introducing the Sitepoint Sass Reference
 description: An announcement post introducing the SitePoint Sass Reference
 tags:
   - Sass

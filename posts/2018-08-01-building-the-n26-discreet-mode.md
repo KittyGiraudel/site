@@ -1,5 +1,5 @@
 ---
-title: Building the N26 discreet mode
+title: Building the N26 Discreet Mode
 description: A technical write-up on building a discreet mode for the N26 web app
 tags:
   - Accessibility

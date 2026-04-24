@@ -1,6 +1,6 @@
 ---
 guest: Loïc Giraudel
-title: Git tips and tricks – Part 3
+title: Git Tips & Tricks – Part 3
 description: A guest post by Loïc Giraudel on advanced git and how to get the most of it
 tags:
   - git
@@ -52,7 +52,7 @@ This command will ask you which diff tool to use, then open the whole directory 
 When a new bug appears in your application, the best way to fix the bug is to find which commit introduced it. Git has an awesome method to find a specific commit with a dichotomic search solution.
 
 > In computer science, a dichotomic search is a search algorithm that operates by selecting between two distinct alternatives (dichotomies) at each step. It is a specific type of divide and conquer algorithm. A well-known example is binary search.  
-> &mdash; [Wikipedia - Dichotomic Search](https://en.wikipedia.org/wiki/Dichotomic_search)
+> — [Wikipedia - Dichotomic Search](https://en.wikipedia.org/wiki/Dichotomic_search)
 
 The magic Git command is `git bisect`. This command requires 2 commits SHA1 (or references) to work: an old commit where the bug is not there and a recent commit where the bug is there. The command will checkout the commit in the middle of the interval of the two commits.
 

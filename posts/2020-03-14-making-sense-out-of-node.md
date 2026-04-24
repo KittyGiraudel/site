@@ -1,5 +1,5 @@
 ---
-title: Making sense out of Node
+title: Making Sense Out of Node
 description: A short guide for beginners on Node, npm and npx
 tags:
   - Node.js

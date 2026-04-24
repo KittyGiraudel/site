@@ -1,5 +1,5 @@
 ---
-title: Dynamic profile README on GitHub
+title: Dynamic Profile README on GitHub
 description: A short technical write-up on how I created an always up-to-date README for my GitHub profile.
 tags:
   - git

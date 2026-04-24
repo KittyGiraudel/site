@@ -1,5 +1,5 @@
 ---
-title: Accessible emojis with Eleventy
+title: Accessible Emojis With Eleventy
 description: A technical write-up on making emojis accessible in Eleventy using their short names
 tags:
   - Accessibility

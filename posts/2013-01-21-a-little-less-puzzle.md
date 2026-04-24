@@ -1,5 +1,5 @@
 ---
-title: A little LESS puzzle
+title: A Little LESS Puzzle
 description: A short blog post to work around a shortcoming of the LESS CSS preprocessor
 tags:
   - CSS

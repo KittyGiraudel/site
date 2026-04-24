@@ -1,5 +1,5 @@
 ---
-title: Why element queries matter
+title: Why Element Queries Matter
 description: A look at element queries, how they differ from media queries, and why they matter
 tags:
   - CSS
@@ -46,7 +46,7 @@ That’s why I’ve decided to give a serious go at element queries at work. I c
 - [Element Queries](https://github.com/tysonmatanich/elementQuery) from Tyson Matanich
 - [EQ.js](https://github.com/Snugug/eq.js) from Sam Richards
 
-I decided to set up on the last one which looks slightly better than the others. Also I like Sam Richards, that’s enough for me. Anyway, all we have to do to make it work &mdash; aside from including the script &mdash; is adding a `data-eq-pts` attribute to the component, listing breakpoints as a map.
+I decided to set up on the last one which looks slightly better than the others. Also I like Sam Richards, that’s enough for me. Anyway, all we have to do to make it work (aside from including the script) is adding a `data-eq-pts` attribute to the component, listing breakpoints as a map.
 
 ```html
 <ul

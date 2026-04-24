@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const title = document.querySelector('#hint-title')
   const node = document.querySelector(location.hash)
 
-  if (node) {
+if (node) {
     title.innerHTML = `<a href="${node.getAttribute('href')}">${node.innerText}</a>`
     hint.removeAttribute('hidden')
   }

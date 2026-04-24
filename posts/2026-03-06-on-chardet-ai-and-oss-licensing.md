@@ -1,5 +1,5 @@
 ---
-title: On chardet, AI and OSS licensing
+title: On Chardet, AI & OSS Licensing
 description: A summary of the licensing situation unfolding at chardet, its ties with AI and its ramifications for open-source.
 tags:
   - AI

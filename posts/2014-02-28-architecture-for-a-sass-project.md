@@ -2,7 +2,7 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/architecture-sass-project/
-title: Architecture for a Sass project
+title: Architecture for a Sass Project
 description: A guide on project architecture for a project using Sass
 tags:
   - Sass

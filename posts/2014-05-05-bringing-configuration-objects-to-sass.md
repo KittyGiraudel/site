@@ -1,5 +1,5 @@
 ---
-title: Bringing configuration objects to Sass
+title: Bringing Configuration Objects to Sass
 description: A technical write-up on using configuration objects in Sass, similar to JavaScript
 tags:
   - Sass
@@ -150,7 +150,7 @@ $merge: (
 
 ## Using it for real
 
-Now what’s the point of all of this? Let’s say you have a component you call with a mixin. This mixin accepts quite a few parameters like &mdash; I don’t know &mdash; the width, the color scheme, the animation duration, maybe a name or something. They probably have some default values defined to match a common use case. Until now, you have done it like this
+Now what’s the point of all of this? Let’s say you have a component you call with a mixin. This mixin accepts quite a few parameters like, I don’t know, the width, the color scheme, the animation duration, maybe a name or something. They probably have some default values defined to match a common use case. Until now, you have done it like this
 
 ```scss
 @mixin component(

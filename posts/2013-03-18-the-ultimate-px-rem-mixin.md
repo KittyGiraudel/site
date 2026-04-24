@@ -1,5 +1,5 @@
 ---
-title: The ultimate PX/REM mixin
+title: The Ultimate PX/REM Mixin
 description: A technical write-up about building an advanced Sass mixin for converting px to rem
 tags:
   - Sass

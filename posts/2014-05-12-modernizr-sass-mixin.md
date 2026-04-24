@@ -1,6 +1,6 @@
 ---
 guest: Daniel Guillan
-title: Modernizr Sass mixin
+title: Modernizr Sass Mixin
 description: A guest post by Daniel Guillan on writing a Sass mixin to help using Modernizr
 tags:
   - Sass

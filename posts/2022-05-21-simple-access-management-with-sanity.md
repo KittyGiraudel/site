@@ -1,5 +1,5 @@
 ---
-title: Simple access management with Sanity
+title: Simple Access Management With Sanity
 description: A guide to creating a lightweight access management with Sanity
 tags:
   - Sanity

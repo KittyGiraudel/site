@@ -1,5 +1,5 @@
 ---
-title: Implementing a reduced-motion mode
+title: Implementing a Reduced-Motion Mode
 description: A guide on implementing a reduced motion mode that respects user preferences
 tags:
   - Accessibility

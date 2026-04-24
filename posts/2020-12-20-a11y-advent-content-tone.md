@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 20: Content and Tone'
+title: 'A11y Advent Day 20: Content & Tone'
 description: A11yAdvent entry on content and tone
 tags:
   - Accessibility

@@ -1,5 +1,5 @@
 ---
-title: Accessible links and buttons with React
+title: Accessible Links & Buttons With React
 description: A guide on building accessible links and buttons in React
 tags:
   - Accessibility

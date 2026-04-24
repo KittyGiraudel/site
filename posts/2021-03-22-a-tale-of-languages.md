@@ -1,5 +1,5 @@
 ---
-title: A tale of languages
+title: A Tale of Languages
 description: A short note on releasing the French version of the Gorillas website and a piece of language trivia
 edits:
   - date: 2021/03/25

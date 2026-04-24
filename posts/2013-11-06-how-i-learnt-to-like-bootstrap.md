@@ -1,5 +1,5 @@
 ---
-title: How I learnt to like Bootstrap
+title: How I Learnt to Like Bootstrap
 description: A retrospective on the Bootstrap framework, and when it comes in handy
 tags:
   - CSS

@@ -1,5 +1,5 @@
 ---
-title: 2D-Grid helpers
+title: 2D-Grid Helpers
 description: A technical write-up on the 2D-Grid helpers I wrote for the Advent of Code puzzles
 tags:
   - JavaScript

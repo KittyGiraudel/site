@@ -1,5 +1,5 @@
 ---
-title: Book recommendations for 2021
+title: Book Recommendations for 2021
 description: A short list of book recommendations for 2021
 tags:
   - Reading

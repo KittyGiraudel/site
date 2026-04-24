@@ -1,5 +1,5 @@
 ---
-title: Looking for dead code
+title: Looking for Dead Code
 description: A technical write-up on finding dead code in a large codebase
 tags:
   - Bash

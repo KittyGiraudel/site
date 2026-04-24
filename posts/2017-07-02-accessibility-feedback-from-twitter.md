@@ -1,11 +1,9 @@
 ---
-title: Accessibility feedback from Twitter
+title: Accessibility Feedback from Twitter
 description: A summary of accessibility feedback I’ve gathered from Twitter
 tags:
   - Accessibility
 ---
-
-## Accessibility feedback
 
 [Safia Abdalla started a thread](https://twitter.com/captainsafia/status/871056480799162368) about problems encountered on the web by people with (any kind) of disability. It’s super insightful but there are hundreds of response so I thought I’d write a TL;DR organised in categories (TL;DR which is still long…).
 
@@ -21,7 +19,7 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 {% markdown "inline" %}About migraines: [Tweet by @kolyshkin](https://twitter.com/kolyshkin/status/871118386754801664), [tweet by @DiamonDie](https://twitter.com/DiamonDie/status/871064350097854464), [tweet by @morganestes](https://twitter.com/morganestes/status/871070319129145348), [tweet by @elazar](https://twitter.com/elazar/status/871070831970885634).{% endmarkdown %}
 {% endcapture %}
 
-- Someone explains their {% footnoteref "small_font_sizes" footnote_small_font_sizes %}frustration about small font sizes{% endfootnoteref %} that cannot be safely increased because it breaks the layout. A few persons —{% footnoteref "migraines" footnote_migraines %}some with, some without <abbr title="Myalgic Encephalopathy">ME</abbr> / <abbr title="Chronic Fatigue Syndrome">CFS</abbr>{% endfootnoteref %}— agree or express a similar statement.
+- Someone explains their {% footnoteref "small_font_sizes" footnote_small_font_sizes %}frustration about small font sizes{% endfootnoteref %} that cannot be safely increased because it breaks the layout. A few persons — {% footnoteref "migraines" footnote_migraines %}some with, some without <abbr title="Myalgic Encephalopathy">ME</abbr> / <abbr title="Chronic Fatigue Syndrome">CFS</abbr>{% endfootnoteref %} — agree or express a similar statement.
 
 {% capture footnote_color_contrast %}
 {% markdown "inline" %}About lack of contrast: [Tweet by @AndrewDixonSo](https://twitter.com/AndrewDixonSo/status/871062142799142913), [tweet by @may_gun](https://twitter.com/may_gun/status/871175194328539136), [tweet by @gamescharlie79](https://twitter.com/gamescharlie79/status/871069372655087617).
@@ -59,7 +57,7 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 - Someone having a cerebral palsy shares the same problem and literally [cannot use a mouse](https://twitter.com/garyrozanc/status/871061173545963522) because of that; they use touch screens instead.
 
-- Someone says [click/tap targets that are either too small to aim precisely](https://twitter.com/csixty4/status/871116171566862337), or —interestingly enough— bigger than they need to be (such as headline + excerpt instead of just headline) are sometimes hard to use.
+- Someone says [click/tap targets that are either too small to aim precisely](https://twitter.com/csixty4/status/871116171566862337), or (interestingly enough) bigger than they need to be (such as headline + excerpt instead of just headline) are sometimes hard to use.
 
 - A person explains their fingers sort of stop working after a little while of using the computer / touch screen at which point they [have to rely on voice-to-text](https://twitter.com/WhitCoko/status/871108709652496385).
 
@@ -99,7 +97,7 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 - A person with Asperger syndrom says [certain types of humor are “hard to process”](https://twitter.com/pherring/status/871087733661462528).
 
-- Some people —some with ADHD or <abbr title="Post Traumatic Stress Disorder">PTSD</abbr>, some without— share their experience about [zoning out and following links](https://twitter.com/sliminality/status/871240090181390336) like Alice and the rabbit hole.
+- Some people — some with ADHD or <abbr title="Post Traumatic Stress Disorder">PTSD</abbr>, some without — share their experience about [zoning out and following links](https://twitter.com/sliminality/status/871240090181390336) like Alice and the rabbit hole.
 
 - A person suffering from epilepsy says how [the lack of content warnings is a problem](https://twitter.com/angeltrainee/status/871267069068681216).
 

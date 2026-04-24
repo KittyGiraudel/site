@@ -1,5 +1,5 @@
 ---
-title: Webpack aliases with Sanity
+title: Webpack Aliases With Sanity
 description: A short technical write-up about handling Webpack aliases with Sanity
 edits:
   - date: 2023/01/22

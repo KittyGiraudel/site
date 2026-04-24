@@ -1,5 +1,5 @@
 ---
-title: Pushing Sass placeholders further
+title: Pushing Sass Placeholders Further
 description: A technical write-up on advanced usage of Sass placeholders
 tags:
   - Sass
@@ -30,7 +30,7 @@ For more information about this technique and to understand this post, I suggest
 
 ## Pushing things further
 
-All good? Fine. This morning, [Matt Stow](https://twitter.com/stowball/status/450917879047651328) suggested a new version where we wouldn’t have to create a mixin for every placeholder we want to have. Instead, we would have a single mixin &mdash; let’s call it `extend()` &mdash; asking for a placeholder’s name, and extending it or including the mixin’s content as we did yesterday.
+All good? Fine. This morning, [Matt Stow](https://twitter.com/stowball/status/450917879047651328) suggested a new version where we wouldn’t have to create a mixin for every placeholder we want to have. Instead, we would have a single mixin (let’s call it `extend()`) asking for a placeholder’s name, and extending it or including the mixin’s content as we did yesterday.
 
 Matt’s demo looks about likethis:
 

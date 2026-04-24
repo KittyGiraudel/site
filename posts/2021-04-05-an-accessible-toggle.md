@@ -1,5 +1,5 @@
 ---
-title: An accessible toggle
+title: An Accessible Toggle
 description: A guide on building an accessible toggle component, from semantics to keyboard and screen reader support
 tags:
   - Accessibility

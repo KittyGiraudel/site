@@ -1,9 +1,10 @@
 ---
-title: Semistandard linting in Sublime Text
+title: Semistandard Linting in Sublime Text
 description: A technical write-up on using Semistandard linting in Sublime Text
 tags:
   - JavaScript
   - Testing
+deprecated: true
 ---
 
 At Edenspiekermann, we recently decided to drop a custom [eslint](https://eslint.org/) configuration file and to use [semistandard](https://github.com/Flet/semistandard) instead (we could have used [standard](https://github.com/feross/standard) but we do like semi-colons). This move aims at normalizing our linter configuration across projects in order to facilitate cross-team work.

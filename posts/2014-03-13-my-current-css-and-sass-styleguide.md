@@ -2,7 +2,7 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/css-sass-styleguide/
-title: My current CSS and Sass styleguide
+title: My Current CSS and Sass Styleguide
 description: A guide on using CSS and Sass and a look at my own styleguide
 tags:
   - CSS

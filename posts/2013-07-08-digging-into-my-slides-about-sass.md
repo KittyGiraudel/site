@@ -1,5 +1,5 @@
 ---
-title: Digging into my slides about Sass
+title: Digging Into My Slides About Sass
 description: A longer version of my recent talk at Kiwi Party, digging into my slides about Sass
 tags:
   - Sass

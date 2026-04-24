@@ -1,5 +1,5 @@
 ---
-title: 'Learning regular expressions: the practical way'
+title: 'Learning Regular Expressions: the Practical Way'
 description: A guide on learning regular expressions in a practical way
 tags:
   - Regex
@@ -29,7 +29,8 @@ That being said it is important to point out that not all regular expression eng
 
 Also, as it is forbidden to write about regular expressions without dropping some bombs, here is a famous quote to get started:
 
-> Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems. &mdash; Jamie Zawinski
+> Some people, when confronted with a problem, think “I know, I’ll use regular expressions.” Now they have two problems.  
+> — Jamie Zawinski
 
 {% callout %}To play with regular expressions, I highly recommend [Regexr](https://www.regexr.com/) which not only is extremely well thought, but also provides a handy reference as well as a way to save a regular expression for sharing. There is also [Regex101](https://regex101.com/) which is a great tool to fiddle with regular expressions.{% endcallout %}
 

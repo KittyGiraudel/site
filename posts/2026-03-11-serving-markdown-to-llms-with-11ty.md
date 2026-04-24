@@ -1,5 +1,5 @@
 ---
-title: Serving Markdown to LLMs with Eleventy
+title: Serving Markdown to LLMs With Eleventy
 description: A technical walkthrough on how to serve a Markdown version of all pages with Eleventy.
 tags:
   - AI

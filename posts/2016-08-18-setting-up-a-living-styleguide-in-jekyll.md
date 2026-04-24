@@ -1,5 +1,5 @@
 ---
-title: Setting up a living styleguide in Jekyll
+title: Setting up a Living Styleguide in Jekyll
 description: A technical write-up about setting up a living styleguide in Jekyll
 tags:
   - Jekyll

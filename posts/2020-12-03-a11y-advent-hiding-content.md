@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 3: Hiding Content'
+title: 'A11y Advent Day 3: Hiding Content'
 description: A11yAdvent entry on hiding content responsibly while preserving it for screen-readers
 tags:
   - Accessibility

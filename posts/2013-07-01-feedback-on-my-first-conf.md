@@ -1,5 +1,5 @@
 ---
-title: Feedback on my first conference
+title: Feedback on My First Conference
 description: Retrospective on my experience at Kiwi Party, my first conference
 tags:
   - Retrospective
@@ -17,7 +17,7 @@ It’s a one-day French conference at Strasbourg (France) gathering 10 speakers 
   lazy: false
 %}
 
-So Friday June 28 at 2:00PM I was on stage to talk about Sass, and how we can use preprocessors to push our stylesheets to an upper level: “Kick-ass CSS with Sass” (“Des CSS kick-ass avec Sass”).
+So Friday June 28 at 2:00PM I was on stage to talk about Sass, and how we can use preprocessors to push our stylesheets to an upper level: “Kick-ass CSS with Sass” (“<span lang="fr">Des CSS kick-ass avec Sass</span>”).
 
 Basically, my talk is a collection of code snippets and real-life usecases of Sass to show how we can use a preprocessor further than declaring a couple of variables while keeping the code simple enough not to turn it into a Rube Goldberg machine.
 

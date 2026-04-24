@@ -1,5 +1,5 @@
 ---
-title: My CSS Aha moment
+title: My CSS Aha Moment
 description: About the moment where CSS finally clicked and it became easy to use
 tags:
   - CSS

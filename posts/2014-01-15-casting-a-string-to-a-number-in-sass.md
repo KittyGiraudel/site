@@ -1,5 +1,5 @@
 ---
-title: Casting a string to a number in Sass
+title: Casting a String to a Number in Sass
 description: A technical write-up on how to cast a stringified string into an actual number in Sass
 tags:
   - Sass
@@ -14,7 +14,7 @@ I have to say I am pretty proud with what I have come up with. Not only does it 
 
 ## Building the function
 
-As I said, the function is actually simple. It relies on parsing the string character after character in order to map them to actual numbers. Then once you have numbers &mdash; well &mdash; you can do pretty much any thing. Let’s start with the skeleton, shall we?
+As I said, the function is actually simple. It relies on parsing the string character after character in order to map them to actual numbers. Then once you have numbers (well) you can do pretty much any thing. Let’s start with the skeleton, shall we?
 
 ```scss
 @function number($string) {

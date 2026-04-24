@@ -1,6 +1,6 @@
 ---
 guest: Ezekiel Gabrielse
-title: Building a customization API in Sass
+title: Building a Customization API in Sass
 description: A technical guest post by Ezekiel Gabrielse on building a customization API in Sass
 tags:
   - Sass
@@ -26,7 +26,7 @@ We are going to do this all within Sass, and as we will discuss in part 2 of the
 
 Therefore, we will create a color palette as a map, in order to pull _values_ from it. That way we can also hook into this palette _module_ through our frontend API and then allow the user to modify the original color palette.
 
-Furthermore, because we’ll be keeping track of which selectors (or if we’re getting really technical &mdash; which _sub-modules_) are using which color, we can then update their values if the user ever modifies that sub-module’s color _value_.
+Furthermore, because we’ll be keeping track of which selectors (or if we’re getting really technical, which _sub-modules_) are using which color, we can then update their values if the user ever modifies that sub-module’s color _value_.
 
 ### Okay, let’s sum up
 

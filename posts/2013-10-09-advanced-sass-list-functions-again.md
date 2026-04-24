@@ -1,13 +1,13 @@
 ---
-title: Advanced Sass list functions, again
+title: Advanced Sass List Functions, Again
 description: A technical write-up on some more advanced Sass list functions
 tags:
   - Sass
 ---
 
+{% callout %}
 In case you have missed my first article about this topic, I recommend you to read [Advanced Sass list functions](/2013/08/08/advanced-sass-list-functions/). 
-
----
+{% endcallout %}
 
 Heys people, it’s been a while I haven’t posted anything! I have been pretty busy lately but I really miss writing so here it is: a short article about what’s new on my Sass list functions library.
 

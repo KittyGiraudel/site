@@ -1,5 +1,5 @@
 ---
-title: Another Sass button library
+title: Another Sass Button Library
 description: A technical write-up on how to create reusable buttons with Sass
 tags:
   - Sass

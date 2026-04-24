@@ -1,5 +1,5 @@
 ---
-title: Handy tools for frontend
+title: Handy Tools for Frontend
 description: A look into tools that are worth knowing when doing frontend development
 tags:
   - Frontend

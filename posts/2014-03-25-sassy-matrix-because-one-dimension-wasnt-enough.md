@@ -1,5 +1,5 @@
 ---
-title: 'SassyMatrix: because one dimension wasn’t enough'
+title: 'Sassymatrix: Because One Dimension Wasn’t Enough'
 description: An announcement post about SassyMatrix, an experimental library to handle matrices in Sass
 tags:
   - Sass

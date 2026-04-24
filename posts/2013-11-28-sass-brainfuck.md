@@ -1,5 +1,5 @@
 ---
-title: Sass mindfuck
+title: Sass Mindfuck
 description: A rant about things that I find frustrating about Sass
 tags:
   - Sass
@@ -88,7 +88,7 @@ $value: (1337);
 $type: type-of($value); // number
 ```
 
-Indeed &mdash;as explained in [this comment from Chris Eppstein](https://github.com/nex3/sass/issues/837#issuecomment-20429965) &mdash; parens are not what define lists; it’s the delimiter (commas/spaces).
+Indeed, as explained in [this comment from Chris Eppstein](https://github.com/nex3/sass/issues/837#issuecomment-20429965), parens are not what define lists; it’s the delimiter (commas/spaces).
 
 Now what if we append this value to an empty list? Let’s see.
 

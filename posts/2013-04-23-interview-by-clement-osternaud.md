@@ -6,11 +6,14 @@ tags:
   - Retrospective
 ---
 
+{% callout %}[Clément Osternaud](https://www.linkedin.com/in/osternaudclement/) was kind enough to interview me. Below is the transcript of our conversation.
+{% endcallout %}
+
 ## Could you introduce yourself in a few lines
 
 My name is Kitty Giraudel. I’m a frontend developer on a work-based learning at Crédit Agricole Sud Rhône Alpes in Grenoble (France), hoping to work in a web agency starting from September. I’m really into frontend languages especially CSS & JS, as well as everything that comes with those languages: ergonomy, performance, accessibility, user experience, and much more.
 
-I am the co-author of [Browserhacks](/projects/browserhacks/) &mdash; a website aiming at gathering all the dirty little secrets from browsers to do some browser sniffing ; not that I support that kind of thing but someone had to do such a tool. ;) I also developed Wild Web Watch &mdash; a web-related watch tool (which unfortunately gets old pretty badly). I also take care of the Sass port of Raphaël Goetter’s framework, [KNACSS](https://knacss.com).
+I am the co-author of [Browserhacks](/projects/browserhacks/), a website aiming at gathering all the dirty little secrets from browsers to do some browser sniffing; not that I support that kind of thing but someone had to do such a tool. ;) I also developed Wild Web Watch, a web-related watch tool (which unfortunately gets old pretty badly). I also take care of the Sass port of Raphaël Goetter’s framework, [KNACSS](https://knacss.com).
 
 Beside that, I write a lot for the web, starting on my site but for [Codrops](https://tympanus.com/codrops/author/kittygiraudel) and [CSS-Tricks](https://css-tricks.com) as well.
 
@@ -20,7 +23,7 @@ Since I didn’t know what to do after highscool, I decided to join Ariès Greno
 
 During the preparatory class, I realized I don’t like 3D stuff, which makes me revise my path a little bit. Since I have two sisters and a brother in the web industry, I decided to join the “Webdesign” formation just to “see what it looks like”. A long and kind of boring year since this formation included a lot of print design (yes, this is weird for a Webdesign formation).
 
-In September 2011, I got into the “Webmaster” formation (still in Ariès) in a work-based learning at Crédit Agricole Sud Rhône Alpes; I felt like I fit. I wrapped my head around an array of languages &mdash; going from HTML/CSS to PHP/MySQL passing by ActionScript 3 and Flex &mdash; and got my diploma with commendation, pretty confident in the idea of becoming a web developer.
+In September 2011, I got into the “Webmaster” formation (still in Ariès) in a work-based learning at Crédit Agricole Sud Rhône Alpes; I felt like I fit. I wrapped my head around an array of languages: going from HTML/CSS to PHP/MySQL passing by ActionScript 3 and Flex, and got my diploma with commendation, pretty confident in the idea of becoming a web developer.
 
 I wanted to push this idea further last year by joining what comes close to “Computer Science” (still in Ariès) but I have to say I really don’t belong here. Backend languages like Java & C++ and server stuff really don’t please me.
 
@@ -36,7 +39,7 @@ My favourite thing in my job has to be **learning things**. It’s definitely be
 
 Beyond reading, it’s great to be able to easily discover and learn new things like CSS features, JavaScript APIs, preprocessors and much more (especially thanks to tools like [CodePen](https://codepen.io) and [GitHub](https://github.com)). And if we ever happen to use what we’ve learnt in real-life projects, then it’s even better!
 
-Ironically, even if I am able to define what I like in my job I don’t think I’m able to tell what I like the least. Maybe not being always able to use everything I know in real-life projects because of technical constraints like performance, maintainability or browser support. But this is part of the job; we can’t use everything we know, especially when it comes to new &mdash; somewhat borderline &mdash; features ("hello CSS grid!").
+Ironically, even if I am able to define what I like in my job I don’t think I’m able to tell what I like the least. Maybe not being always able to use everything I know in real-life projects because of technical constraints like performance, maintainability or browser support. But this is part of the job; we can’t use everything we know, especially when it comes to new (somewhat borderline) features ("hello CSS grid!").
 
 But this “bad side” of our job is what makes it interesting. Producing clean, maintainable and future-proof code is what makes the frontend developer work fun.
 

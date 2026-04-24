@@ -1,5 +1,5 @@
 ---
-title: Links and accessibility
+title: Links & Accessibility
 description: A guide on links and accessibility and what to know to do things well
 tags:
   - Accessibility

@@ -1,5 +1,5 @@
 ---
-title: My development environment
+title: My Development Environment
 description: A look into my software development environment
 tags:
   - Process

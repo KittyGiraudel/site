@@ -1,14 +1,11 @@
 ---
-title: Blog changes
+title: Blog Changes
 description: A review of more changes applied to my website to improve SEO, performance and accessibility
 tags:
   - Design
   - Performance
   - Accessibility
   - Writing
-edits:
-  - date: 2013/01/22
-    md: I did a lot of changes after writing this post notably regarding SEO, performance and accessibility. Be sure you read about it!
 ---
 
 Hi people! It’s now been two months since I launched the new and active version of kittygiraudel.com and I took the opportunity to make a few changes. Let me introduce them, hoping you find them cool. :)
@@ -45,11 +42,11 @@ But, switching all my files to .php means a terrible thing: old URLs won’t wor
 
 While we’re talking about .htaccess: you can now access articles without the file extension like this: https://kittygiraudel/blog. Pretty cool, right?
 
-I also decided to rely on a CDN rather than on self hosting for [Font Awesome](https://fontawesome.com/?from=io) (now in v3.0.1 since a couple of days). I was especially concerned about the file size of my stylesheet because Font Awesome &mdash; as any other icon font &mdash; uses a lot of CSS. Anyway, I’m now using [Tim Pietrusky’s](https://timpietrusky.com) CDN [WeLoveIconFonts](https://weloveiconfonts.com) and I’m pretty happy with it. ;)
+I also decided to rely on a CDN rather than on self hosting for [Font Awesome](https://fontawesome.com/?from=io) (now in v3.0.1 since a couple of days). I was especially concerned about the file size of my stylesheet because Font Awesome (as any other icon font) uses a lot of CSS. Anyway, I’m now using [Tim Pietrusky’s](https://timpietrusky.com) CDN [WeLoveIconFonts](https://weloveiconfonts.com) and I’m pretty happy with it. ;)
 
 ## Features
 
-I tried to add a few features in order to make your experience nicer. Nothing big, just a few things which are &mdash; according to me &mdash; UX improvements. Among those:
+I tried to add a few features in order to make your experience nicer. Nothing big, just a few things which are (according to me) UX improvements. Among those:
 
 - Links to articles on the home page are now paginated in order to make the whole page lighter. Only the last 7 articles will be displayed (including Codrops ones) on the first page. To see older blog posts, you’ll have to use the little buttons at the bottom of the screen.
 - You can now link to specific sections inside an article thanks to anchor tags on titles. When you hover a level-2 title (like “Features” or “Performances” for example), you’ll see a little # character appearing. Click on it to have a section-specific URL.

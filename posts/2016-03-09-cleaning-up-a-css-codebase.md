@@ -2,7 +2,7 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/cleaning-up-a-css-codebase/
-title: Cleaning up a CSS codebase
+title: Cleaning up a CSS Codebase
 description: A deep-dive into cleaning up a CSS codebase
 tags:
   - CSS

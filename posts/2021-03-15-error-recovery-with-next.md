@@ -1,5 +1,5 @@
 ---
-title: Error recovery with Next
+title: Error Recovery With Next
 description: A follow-up on recovering from runtime JavaScript errors, this time with Next.js
 edits:
   - date: 2021/03/16

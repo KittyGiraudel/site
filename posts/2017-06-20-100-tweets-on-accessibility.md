@@ -1,5 +1,5 @@
 ---
-title: 100 tweets on accessibility
+title: 100 Tweets on Accessibility
 description: A 100-tweet long Twitter thread about accessibility
 tags:
   - Accessibility

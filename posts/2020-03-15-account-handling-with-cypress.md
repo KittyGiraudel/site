@@ -1,5 +1,5 @@
 ---
-title: Account handling with Cypress
+title: Account Handling With Cypress
 description: A technical write-up on account handling and Cypress at N26
 tags:
   - Cypress

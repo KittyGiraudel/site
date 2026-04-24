@@ -1,5 +1,5 @@
 ---
-title: Things I’d like to do in 2013
+title: Things I’d Like to Do in 2013
 description: Ambitions for 2013, and things I would like to accomplish by the end of the year
 tags:
   - Retrospective

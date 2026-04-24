@@ -1,5 +1,5 @@
 ---
-title: Themes and layouts with Twig
+title: Themes & Layouts With Twig
 description: A technical write-up on using themes and layouts with Twig, the Symfony templating system
 tags:
   - Twig
@@ -66,7 +66,7 @@ The problem I faced at work was finding a way to manage both themes and layouts 
 
 So the theme is passed as a class to the body element (e.g. `<body class="shopping">`), while the layout defines what kind of dom nodes / HTML classes we will use for the main content of the site.
 
-We have half a dozen of themes &mdash; one per section of site &mdash; (`shopping`, `news`, `admin`, `regular`…) and 4 different layouts based on the 12-columns grid system from Bootstrap (`12` for a full-width one-column template, `9-3` for two columns with a 3/1 ratio, `8-4` for a two columns with a 2/1 ratio and `2-7-3` for 3-columns).
+We have half a dozen of themes (one per section of site like `shopping`, `news`, `admin`, `regular`…) and 4 different layouts based on the 12-columns grid system from Bootstrap (`12` for a full-width one-column template, `9-3` for two columns with a 3/1 ratio, `8-4` for a two columns with a 2/1 ratio and `2-7-3` for 3-columns).
 
 Back to the issue: we had to be able to define both the theme and the layout on a page per page basis. Something like this:
 
@@ -79,7 +79,7 @@ Unfortunately, it’s not possible to extend multiple templates in Twig (which s
 
 ## The ultra dirty solution we didn’t even try
 
-One possible way to go &mdash; the one we wanted to avoid at all costs &mdash; was having either every layouts for every themes, or every themes for every layouts. Basically something like this:
+One possible way to go (the one we wanted to avoid at all costs) was having either every layouts for every themes, or every themes for every layouts. Basically something like this:
 
 - admin (theme)
   - 12 (layout)

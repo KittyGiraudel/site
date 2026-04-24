@@ -1,11 +1,9 @@
 ---
-title: 'Future of CSS layout: CSS Grid'
+title: 'Future of CSS Layout: CSS Grid'
 description: An introduction post about CSS grid, the newest CSS layout module
 tags:
   - CSS
-edits:
-  - date: 2014/05/13
-    md: It looks like Internet Explorer is not the only browser to support the Grid Layout anymore since Chrome 34+ seems able to handle it quite well without any prefix. To the future!
+deprecated: true
 ---
 
 In the last few days/weeks, I have been helping Chris Coyier with [CSS-Tricks' Almanac](https://css-tricks.com/almanac/). It seems he doesn’t have enough time to fill the last remaining entries, so we’ve been a few to help him out by writing them. I have done [perspective](https://css-tricks.com/almanac/properties/p/perspective/), [perspective-origin](https://css-tricks.com/almanac/properties/p/perspective-origin/) and [grid](https://css-tricks.com/almanac/properties/g/grid/).
@@ -36,7 +34,7 @@ The basic example would be something like this: my `.wrapper` is my grid; `.head
 
 First, **reading specifications**. If a spec author ever reads this, I am sorry; but the specifications are definitely not for random people. I believe they are mostly made for browser makers, and they are probably very well writen but for a person like me, it’s way too complicated. Unfortunately, I had to dig deep into the spec.
 
-What has been difficult as well is that the only supported browser &mdash; as of writing &mdash; is Internet Explorer 10 (mostly because 3 of 5 authors of the Grid spec are from Microsoft). And I believe they started implementing the module in their browser engine a while ago, resulting in some inconsistencies regarding the spec which keeps moving.
+What has been difficult as well is that the only supported browser (as of writing) is Internet Explorer 10 (mostly because 3 of 5 authors of the Grid spec are from Microsoft). And I believe they started implementing the module in their browser engine a while ago, resulting in some inconsistencies regarding the spec which keeps moving.
 
 Not only their implementation is at a very early stage (about half the spec is currently supported), but it also differs from the spec at some point. Among other things:
 
@@ -105,7 +103,7 @@ Done. **10 lines. No float. No inline-block. No height. No width. No margin.** A
 ## What about Flexbox?
 
 > Are Flexbox and Grid both solutions to the same problem or do they both have their own use case?  
-> &mdash; [@Lezz](https://twitter.com/Lezz/status/319376112679522304)
+> — [@Lezz](https://twitter.com/Lezz/status/319376112679522304)
 
 This question comes from Twitter. However I’ve been questioning myself regarding this while making the entry for CSS-Tricks. Let’s have a look at both specifications:
 

@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 11: Emojis'
+title: 'A11y Advent Day 11: Emojis'
 description: A11yAdvent entry on emojis and accessibility
 tags:
   - Accessibility

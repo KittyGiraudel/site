@@ -1,5 +1,5 @@
 ---
-title: GitHub as a workflow
+title: GitHub as a Workflow
 description: A guide on using GitHub and pull requests as a workflow for task management
 tags:
   - GitHub

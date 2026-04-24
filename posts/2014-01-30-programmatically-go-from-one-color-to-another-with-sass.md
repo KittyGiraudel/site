@@ -1,5 +1,5 @@
 ---
-title: Programmatically go from one color to another with Sass
+title: Programmatically Go from One Color to Another With Sass
 description: A technical write-up about programmatically converting a color into another color in Sass
 tags:
   - Sass

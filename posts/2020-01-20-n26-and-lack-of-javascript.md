@@ -1,5 +1,5 @@
 ---
-title: N26 and lack of JavaScript
+title: N26 & Lack of JavaScript
 description: A note on how the N26 web app behaves when JavaScript is disabled
 tags:
   - Accessibility
@@ -116,7 +116,7 @@ When a user visits one of our web pages for the first time, and provided their b
 For users with JavaScript turned off, but with the cookie flag set somehow (from a former visit), a `<meta http-equiv='refresh' />` with a `<noscript>` tag gets added to the document `<head>`.
 
 ```js
-${props.hasJavascriptCookie
+${props.hasJavaScriptCookie
   ? `
     <noscript>
       <meta http-equiv='refresh' content='0; url=/js' />

@@ -1,9 +1,10 @@
 ---
-title: Introducing transync
+title: Introducing Transync
 description: An announcement post for Transync, a small library to manage translation files
 tags:
   - Release
   - Open Source
+deprecated: true
 ---
 
 Hey folks, another day, another open-source module at Edenspiekermann! Today, I’d like to talk about translation files. We tend to do a lot of multilingual websites here at the company.

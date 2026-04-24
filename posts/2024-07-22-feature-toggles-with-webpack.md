@@ -1,5 +1,5 @@
 ---
-title: Feature toggles with webpack
+title: Feature Toggles With Webpack
 description: A technical write-up on using Webpack to create feature flags/toggles
 tags:
   - Webpack

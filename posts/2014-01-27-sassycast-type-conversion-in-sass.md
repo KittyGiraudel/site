@@ -1,5 +1,5 @@
 ---
-title: 'SassyCast: type conversion in Sass'
+title: 'Sassycast: Type Conversion in Sass'
 description: An announcement post about SassyCast, a small library to convert between types in Sass
 tags:
   - Sass

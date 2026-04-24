@@ -1,5 +1,5 @@
 ---
-title: Adding Tests to an Eleventy site
+title: Adding Tests to an Eleventy Site
 description: A small walkthrough on how I added automated tests to this website to stop breaking it.
 tags:
   - Eleventy

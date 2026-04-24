@@ -1,5 +1,5 @@
 ---
-title: Making sense of zsh
+title: Making Sense of Zsh
 description: A technical write-up through zsh and my homemade configuration to get the most of it
 tags:
   - zsh
@@ -51,7 +51,7 @@ autoload -Uz vcs_info
 
 This, however, is not changing our prompt. It’s just letting us access the VCS (Version Control Software) information (typically Git, but perhaps SVN or Mercurial). Now we need to do something with it.
 
-I am clueless, but fortunately zsh comes with [nice prose about this very feature](https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples), and as they explain, there are plenty ways to achieve this. They say the easiest way to update one’s prompt with the VCS info is to — and I quote:
+I am clueless, but fortunately zsh comes with [nice prose about this very feature](https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples), and as they explain, there are plenty ways to achieve this. They say the easiest way to update one’s prompt with the VCS info is to, and I quote:
 
 > […] drop a `vcs_info` call to your `precmd` (or into a `precmd_functions[]` entry) and include a single-quoted `${vcs_info_msg_0_}` in your `PS1` definition.
 

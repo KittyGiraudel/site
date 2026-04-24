@@ -1,13 +1,11 @@
 ---
-title: Random function with Sass 3.3
+title: Random Function With Sass 3.3
 description: A technical write-up on creating a function to generate a random string in Sass
 tags:
   - Sass
 ---
 
 I wrote this article months ago when I was first experimenting with Sass 3.3 alpha features. I came up with a pretty wild solution to generate a random number in Sass. However it looks like [Sass 3.3 will implement a random function](https://github.com/nex3/sass/pull/968) so we won’t need all this stuff. I still publish it for fun. :) 
-
----
 
 Everything started when I was spying on Sass 3.3 source code on GitHub for my article about the [future of Sass](https://davidwalsh.name/future-sass) at David Walsh' Blog. I was sniffing the incoming functions when all of the sudden I came by a `unique-id()` function.
 
@@ -93,7 +91,7 @@ To put it simple, instead of stripping alpha characters, we take the alphanumeri
 ```scss
 @function rand($min: 0, $max: 100) {
   $str: str-slice(unique-id(), 2);
-  $res: toInt($str, 16);
+  $res: to-int($str, 16);
   @return ($res % ($max - $min)) + $min;
 }
 ```
@@ -102,14 +100,14 @@ The first line in the function core is the `unique-id()` function call. We immed
 
 {% callout %}According to my tests, the min value used in both implementations of `unique-id()` is such that the second character of the returned string is always the same (`8` in base 16, `1` in base 36). Thus we may need to strip it too, like this `str-slice(unique-id(), 3)`.{% endcallout %}
 
-The second line calls a `toInt()` function, passing it both the string (`$str`) and the base we want to convert the string from (not to). This is why I say we’re ready for both implementations: we only have to change this `16` to `36` and everything should work like a charm.
+The second line calls a `to-int()` function, passing it both the string (`$str`) and the base we want to convert the string from (not to). This is why I say we’re ready for both implementations: we only have to change this `16` to `36` and everything should work like a charm.
 
-Before going to the last line, let’s have a look at the `toInt` function:
+Before going to the last line, let’s have a look at the `to-int` function:
 
 ```scss
-@function toInt($str, $base: 10) {
+@function to-int($str, $base: 10) {
   $res: 0;
-  $chars: charsFromBase($base);
+  $chars: chars-from-base($base);
   @if $chars !== false {
     $str: if($base < 64, to-lower-case($str), $str);
     @for $i from 1 through str-length($str) {
@@ -123,7 +121,7 @@ Before going to the last line, let’s have a look at the `toInt` function:
 }
 ```
 
-`$res` will store the result we will return once we’re done. `$chars` contains the array of characters used by base `$base`; we’ll see the `charsFromBase()` function right after. Then, if the base is supported we loop through each characters of the string.
+`$res` will store the result we will return once we’re done. `$chars` contains the array of characters used by base `$base`; we’ll see the `chars-from-base()` function right after. Then, if the base is supported we loop through each characters of the string.
 
 For every character, we isolate it (`$char`) and convert it to its numeric equivalent (`$charVal`) thanks to the `$chars` array. Then, we multiply this number to the base raised to the reversed index in the string. That may sound a little complicated, let me rephrase it: in base 10, `426` equals `4*10^2` + `2*10^1` + `6*10^0`. That’s pretty much what we do here, except instead of `10` we use the base, and instead of `2`, `1` and `0`, we use the length of string minus the index of the current character.
 
@@ -142,10 +140,10 @@ The `pow()` function used to raise a value to an exponent is part of [Compass Ma
 
 And of course, we add this to the result (`$res`). Once we’re done with the string, we return the result to the `rand()` function. Then, we simply return `($res % ($max - $min)) + $min` to the user resulting in a random number between min and max values.
 
-Regarding the `charsFromBase()` function, here is what it looks like:
+Regarding the `chars-from-base()` function, here is what it looks like:
 
 ```scss
-@function charsFromBase($base: 10) {
+@function chars-from-base($base: 10) {
   /* Binary */
   @if $base == 2 {
     @return 0 1;

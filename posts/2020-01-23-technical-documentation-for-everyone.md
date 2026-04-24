@@ -1,5 +1,5 @@
 ---
-title: Technical documentation for everyone
+title: Technical Documentation for Everyone
 description: A reflection on the web documentation we built at N26
 tags:
   - Documentation

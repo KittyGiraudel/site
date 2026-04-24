@@ -1,5 +1,5 @@
 ---
-title: How I made a Sass debug function
+title: How I Made a Sass Debug Function
 description: A technical write-up on creating a function to debug Sass data
 tags:
   - Sass

@@ -1,5 +1,5 @@
 ---
-title: "A11yAdvent Day 5: Document Outline"
+title: "A11y Advent Day 5: Document Outline"
 description: A11yAdvent entry on the Document Outline
 tags:
   - Accessibility

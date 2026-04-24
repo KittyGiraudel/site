@@ -1,5 +1,5 @@
 ---
-title: What to do with a Sass list?
+title: What to Do With a Sass List?
 description: A technical write-up on Sass lists and what they are used for
 tags:
   - Sass

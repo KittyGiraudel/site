@@ -1,5 +1,5 @@
 ---
-title: Casting a map into a list in Sass
+title: Casting a Map Into a List in Sass
 description: A technical write-up into casting a Sass map into a list
 tags:
   - Sass

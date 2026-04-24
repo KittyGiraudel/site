@@ -1,5 +1,5 @@
 ---
-title: Giving a frontend workshop
+title: Giving a Frontend Workshop
 description: A retrospective on giving a frontend workshop for non-techies at Edenspiekermann
 tags:
   - Retrospective

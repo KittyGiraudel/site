@@ -1,5 +1,5 @@
 ---
-title: Circular array in JavaScript
+title: Circular Array in JavaScript
 description: An introduction to Circularray, my homemade library for circular arrays
 tags:
   - JavaScript

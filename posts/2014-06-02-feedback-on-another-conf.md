@@ -1,5 +1,5 @@
 ---
-title: Feedback on another conference
+title: Feedback on Another Conference
 description: A retrospective on my 2nd conference, the FeWeb in Belgium
 tags:
   - Retrospective
@@ -8,7 +8,7 @@ tags:
 image: /assets/images/feedbacks-feweb/feweb-costation.jpg
 ---
 
-A couple of weeks ago, I have been invited by the [FeWeb](https://www.feweb.be/fr/) (which stands for _La fédération des métiers du web_, literally _Web professions Federation_) to talk about Sass at [Co.Station](https://www.co-station.com/) in Bruxelles, Belgium.
+A couple of weeks ago, I have been invited by the [FeWeb](https://www.feweb.be/fr/) (which stands for <span lang="fr">_La fédération des métiers du web_</span>, literally _Web professions Federation_) to talk about Sass at [Co.Station](https://www.co-station.com/) in Bruxelles, Belgium.
 
 {% render "figure.liquid",
   src: "/assets/images/feedbacks-feweb/feweb-costation.jpg",
@@ -53,4 +53,4 @@ Anyway, here they are (in French).
 
 ## Final thoughts
 
-A warn thank to the FeWeb for their great welcome, the bear and the fries. And if you &mdash; whoever you are &mdash; were here on May 8th, thank you. If you were not, let’s hope we meet at another event.
+A warn thank to the FeWeb for their great welcome, the bear and the fries. And if you (whoever you are) were here on May 8th, thank you. If you were not, let’s hope we meet at another event.

@@ -1,5 +1,5 @@
 ---
-title: Closing on outside click
+title: Closing on Outside Click
 description: A technical write-up on closing a menu on outside click or tab-out, as used on the Gorillas navigation
 tags:
   - Accessibility

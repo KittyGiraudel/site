@@ -1,5 +1,5 @@
 ---
-title: 'Help me help you: a guide to asking for help'
+title: 'Help Me Help You: a Guide to Asking for Help'
 description: A guide to asking for help in development communities
 tags:
   - Community

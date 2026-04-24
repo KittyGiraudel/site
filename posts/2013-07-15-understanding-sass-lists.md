@@ -1,11 +1,11 @@
 ---
-title: Understanding Sass lists
+title: Understanding Sass Lists
 description: A technical deep-dive into the list type in Sass, and what to know to use them well
 tags:
   - Sass
 edits:
   - date: 2015/05/28
-    md: After realising this article ranks up incredibly high on _Sass_ Google searches, I come back to it to clear a few things up. Deletions are lined-through, additions are in italic.
+    md: After realising this article ranks up incredibly high on _Sass_ Google searches, I came back to it to clear a few things up. Deletions are lined-through, additions are in italic.
 ---
 
 Lists have to be the most complicated and vicious thing in the whole Sass language. The main problem with lists -if a problem it is- is that the syntax is way too permissive. You can do pretty much whatever you want.
@@ -14,11 +14,11 @@ Anyway, I recently had the opportunity to write [an article for CSS-Tricks](http
 
 ## Creating a Sass list
 
-First things first. ~Even creating a Sass list can be tricky. Indeed,~ Sass isn’t very strict with variable types. Basically it means you can process a list quite like a string, or use list functions on a ~string~ _single value_. It is ~basically~ _kind of_ a mess.
+First things first. ~~Even creating a Sass list can be tricky. Indeed,~~ Sass isn’t very strict with variable types. Basically it means you can process a list quite like a string, or use list functions on a ~~string~~ _single value_. It is ~~basically~~ _kind of_ a mess.
 
-~Anyway, we have a couple of ways to initialize an empty variable (that could be treated as a list):~ _There is a single way to initialize an empty variable (whatever that means), and it’s with `null`._
+~~Anyway, we have a couple of ways to initialize an empty variable (that could be treated as a list):~~ _There is a single way to initialize an empty variable (whatever that means), and it’s with `null`._
 
-```scss
+```scss/3
 $a: ();
 $b: unquote('');
 $c: null;
@@ -42,7 +42,7 @@ length($b) -> 1
 length($c) -> 1
 ```
 
-`$a` being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn’t that odd either since it is a string. ~However the `null` variable being 1 item long is kind of weird; more on this later.~ _It’s not weird either; `null` is pretty much a value like another, so it has a length of 1._
+`$a` being 0 item long is what we would have expected since it is an empty list. String being 1 item long isn’t that odd either since it is a string. ~~However the `null` variable being 1 item long is kind of weird; more on this later.~~ _It’s not weird either; `null` is pretty much a value like another, so it has a length of 1._
 
 ## Sass list “fun” facts
 
@@ -82,7 +82,7 @@ $list:
 $list: 'item-1', 'item-2', 'item-3';
 ```
 
-**Indexes start at 1, not 0.** This is one of the most disturbing once you start experimenting with Sass lists. ~Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).~ _No, it doesn’t._
+**Indexes start at 1, not 0.** This is one of the most disturbing once you start experimenting with Sass lists. ~~Plus it makes a lot of things pretty complicated (cf CSS-Tricks article).~~ _No, it doesn’t._
 
 ```scss
 nth($list, 0) -> throws error
@@ -178,7 +178,7 @@ I think this is pretty straightforward: we append to `$selector` the new selecto
 
 ### The implicit way
 
-~Probably my favorite version above all since it’s the shortest.~ It relies on implicit appending; ~very neat.~ _so I highly recommend you to use the `append(..)` way._
+~~Probably my favorite version above all since it’s the shortest.~~ It relies on implicit appending; ~~very neat.~~ _so I highly recommend you to use the `append(..)` way._
 
 ```scss
 @each $item in $pages {
@@ -190,6 +190,6 @@ Instead of using `append(..)` and setting the 3rd parameter to `comma` we implic
 
 ## Final words
 
-The three versions we saw in the previous section work like a charm, ~the one you should use is really up to you~ _although the one with `append(..)` is definitely the cleaner way of handling this. You can also do it in some other more complicated and dirty ways._
+The three versions we saw in the previous section work like a charm, ~~the one you should use is really up to you~~ _although the one with `append(..)` is definitely the cleaner way of handling this. You can also do it in some other more complicated and dirty ways._
 
 Anyway, this shows why having a very permissive syntax can be complicated. As I said at the beginning of this post, you can do pretty much whatever you want and if you want my opinion this isn’t for the best.

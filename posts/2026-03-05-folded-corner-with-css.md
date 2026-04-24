@@ -1,5 +1,5 @@
 ---
-title: Folded corner with CSS
+title: Folded Corner With CSS
 description: A technical walkthrough of creating a folding corner effect with CSS.
 tags:
   - CSS

@@ -1,9 +1,10 @@
 ---
-title: Useful Compass extensions that are worth a try
+title: Useful Compass Extensions That Are Worth a Try
 description: A gallery of handy Compass extensions that are worth a try
 tags:
   - Sass
   - Compass
+deprecated: true
 ---
 
 [Compass](http://compass-style.org/) is a great Sass framework. Not only because it provides a hundred useful mixins and functions and a sprite builder, but also because it allows authors to build their own extensions, thus use other authors’ ones.

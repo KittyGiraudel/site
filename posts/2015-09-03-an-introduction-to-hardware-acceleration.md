@@ -1,5 +1,5 @@
 ---
-title: An introduction to hardware acceleration
+title: An Introduction to Hardware Acceleration
 description: A technical write-up on hardware acceleration in CSS
 tags:
   - CSS
@@ -17,7 +17,7 @@ So applying hardware acceleration to the front-end world, it means telling the b
 I like this technical yet affordable explanation of hardware acceleration by [Ariya Hidayat](https://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/):
 
 > Among many different features of a GPU, it can hold a limited number of textures (a rectangle of pixels) and manipulate those textures efficiently, including applying a certain transformation (translation, scaling, rotating, etc). Instead of drawing the pixels for every animation frame, the browser will “snapshot” the DOM element and store it as a GPU texture (often called as layer). Later, the browser will simply tell the GPU to transform the said texture to give the perception of an animating DOM element. This is called GPU compositing, naturally referred to as “hardware acceleration”.  
-> &mdash; Ariya Hidayat in [Hardware Accelerated CSS: The Nice vs The Naughty](https://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/)
+> — Ariya Hidayat in [Hardware Accelerated CSS: The Nice vs The Naughty](https://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/)
 
 ## What about CSS?
 

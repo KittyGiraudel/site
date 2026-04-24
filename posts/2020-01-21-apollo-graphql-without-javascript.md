@@ -1,5 +1,5 @@
 ---
-title: Apollo GraphQL without JavaScript
+title: Apollo GraphQL Without JavaScript
 description: A technical write-up on using Apollo GraphQL when JavaScript is disabled
 tags:
   - JavaScript

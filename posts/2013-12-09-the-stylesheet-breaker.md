@@ -1,5 +1,5 @@
 ---
-title: The stylesheet breaker
+title: The Stylesheet Breaker
 description: A short technical write-up about a CSS quirk that has the potential to breaking the entire stylesheet
 tags:
   - CSS
@@ -7,9 +7,7 @@ tags:
   - Debug
 ---
 
-Or **how I found the one line of CSS that can break your entire stylesheet**. Hopefully it is very unlikely that you’ll ever write this line so worry not; you should be safe.
-
-However this is definitely something good to know so you might want to move on with the read.
+Or **how I found the one line of CSS that can break your entire stylesheet**. Hopefully it is very unlikely that you’ll ever write this line so worry not; you should be safe. However this is definitely something good to know so you might want to move on with the read.
 
 ## How did it start
 

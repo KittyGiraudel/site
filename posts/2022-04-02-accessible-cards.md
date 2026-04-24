@@ -1,5 +1,5 @@
 ---
-title: Accessible cards
+title: Accessible Cards
 description: A guide to creating an accessible card component
 tags:
   - Accessibility
@@ -47,7 +47,7 @@ Cats. Let’s imagine we want to display a list of cats. Every cat card can be i
 
 Allow me to point out that the link (it could also be a button if it performed an action instead of going somewhere) is placed on the primary piece of information only. It does _not_ wrap the whole card.
 
-The reason for it is that links can be listed by assistive technologies (such as VoiceOver’s rotor or [a11y-outline](https://github.com/xi/a11y-outline)), so we want to provide just enough information so that they’re understandable and identifiable on their own. We don’t want the entire card’s content to be read out when listing the links — it’s too much.
+The reason for it is that links can be listed by assistive technologies (such as VoiceOver’s rotor or [a11y-outline](https://github.com/xi/a11y-outline)), so we want to provide just enough information so that they’re understandable and identifiable on their own. We don’t want the entire card’s content to be read out when listing the links, it’s too much.
 
 In that case, we want the link to be listed as “Lilith, link” not “Lilith, 10 year old British Shorthair, link”. And while the latter would still be acceptable, it quickly becomes problematic when cards hold more and more content (think product cards with a lot of meta data for instance).
 

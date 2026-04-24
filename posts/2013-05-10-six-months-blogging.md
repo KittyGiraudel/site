@@ -1,5 +1,5 @@
 ---
-title: Six months of blogging
+title: Six Months of Blogging
 description: A retrospective on the last 6 months spent blogging on my own website
 tags:
   - Retrospective
@@ -34,10 +34,10 @@ Regarding browser, I’m a lucky bastard: **Chrome gets more than 60% of the bro
 
 {% render "figure.liquid",
   src: "/assets/images/six-months-blogging/mobile-vs-desktop.png",
-  caption: "<span style='color: #50b432'>Mobile</span> vs <span style='color: #058dc7'>Desktop</span>"
+  caption: "<span style='color: #50b432'>Mobile (13.9%)</span> vs <span style='color: #058dc7'>Desktop (86.1%)</span>"
 %}
 
-About **14% users are reading articles on their mobile phone** (cf. fig 2). and 7 out of 10 of them use an Apple phone. The 3 others use Android (I’m in).
+About **14% users are reading articles on their mobile phone** and 7 out of 10 of them use an Apple phone. The 3 others use Android (I’m in).
 
 The most important traffic source is definitely [Twitter](https://twitter.com) (actually t.co), then it’s [Reddit](https://reddit.com) and then [Codrops](https://tympanus.com/codrops/). A little further behind, we have [Sidebar.io](https://sidebar.io), [Google](https://google.com) and [CSS-Tricks](https://css-tricks.com).
 

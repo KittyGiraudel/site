@@ -1,5 +1,5 @@
 ---
-title: Designing an image gallery
+title: Designing an Image Gallery
 description: A design-oriented and technical write-up on how I built the imagery gallery for the WhyAlix website
 tags:
   - Design

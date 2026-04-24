@@ -1,5 +1,5 @@
 ---
-title: How I start a new project
+title: How I Start a New Project
 description: A look into my process when starting a new software project
 tags:
   - Frontend

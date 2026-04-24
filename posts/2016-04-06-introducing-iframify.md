@@ -1,10 +1,11 @@
 ---
-title: Introducing iframify
+title: Introducing Iframify
 description: An announcement post for iframify, a small library to encapsulate a widget in an iframe
 tags:
   - JavaScript
   - Release
   - Open Source
+deprecated: true
 ---
 
 _If you want to check the code directly, [be my guest](https://github.com/edenspiekermann/iframify). Also, maybe [a demo](https://codepen.io/KittyGiraudel/pen/vGWpyr?editors=1000)?_

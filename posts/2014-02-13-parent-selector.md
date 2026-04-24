@@ -1,5 +1,5 @@
 ---
-title: 'Parent selector: on has() and ^'
+title: 'Parent Selector: on Has() and ^'
 description: My thoughts on the expected parent selector in CSS, and pros and cons of either proposed syntax
 tags:
   - Thoughts
@@ -42,9 +42,9 @@ nav: hover span;
 
 In this example, `span` is the target. Not `nav` or `a:hover`. Just `span`. This is the element you’re willing to style. The remaining pieces of the selector are nothing but the context. You may think of it this way:
 
-- _What we want?!_ &mdash; _`span`!_
-- _Where we want?!_ &mdash; _When hovering `a` in `nav`!_
-- _When we want?!_ &mdash; _Now!_
+- _What we want?!_ — _`span`!_
+- _Where we want?!_ — _When hovering `a` in `nav`!_
+- _When we want?!_ — _Now!_
 
 Adding a pseudo-class or a pseudo-element to the last element from the selector doesn’t change the target, it only adds some more context on the target itself.
 
@@ -54,7 +54,7 @@ nav a:hover span:after
 
 The last element is still the target of the selector, although now it’s not only `span` but `span:after`. Now back to our discussion, plus I’m sure you can see the problem now.
 
-The `^` character &mdash; or whatever character could it be &mdash; breaks that rule and this is rather bad in my opinion. When you see `^A B`, the target is no longer `B`, it’s `A` because of this little character right on its left.
+The `^` character (or whatever character could it be) breaks that rule and this is rather bad in my opinion. When you see `^A B`, the target is no longer `B`, it’s `A` because of this little character right on its left.
 
 Meanwhile `:has()` being a pseudo-class it preserves this golden rule by keeping the selector’s target to the end. In `A B:has(C)`, there are only two dissociable parts: `A` and `B:has(C)`. And as you can see, the target (`B:has(C)`) is still at the end of the selector.
 

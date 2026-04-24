@@ -1,5 +1,5 @@
 ---
-title: Oh Jekyll, here we go again…
+title: Oh Jekyll, Here We Go Again…
 description: A retrospective on moving the blog to Jekyll back again after having been on Mixture
 tags:
   - Jekyll

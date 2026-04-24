@@ -1,5 +1,5 @@
 ---
-title: 8 Compass features you may not know
+title: 8 Compass Features You May Not Know
 description: A gallery of features from the Compass frameworks that is worth knowing
 tags:
   - Sass

@@ -1,5 +1,5 @@
 ---
-title: 'Blogging: WordPress or Jekyll'
+title: 'Blogging: Wordpress or Jekyll'
 description: A comparison of WordPress and Jekyll for blogging
 tags:
   - WordPress

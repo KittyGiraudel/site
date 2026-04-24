@@ -2,7 +2,7 @@
 external:
   host: SitePoint
   url: https://www.sitepoint.com/building-ad-manager-symfony-2/
-title: Building an ad manager with Symfony
+title: Building an Ad Manager With Symfony
 description: A technical write-up on building an ad manager with Symfony
 tags:
   - PHP

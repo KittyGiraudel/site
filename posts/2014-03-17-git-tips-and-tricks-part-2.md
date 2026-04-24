@@ -1,6 +1,6 @@
 ---
 guest: Loïc Giraudel
-title: Git tips and tricks – Part 2
+title: Git Tips & Tricks – Part 2
 description: A guest post by Loïc Giraudel on advanced git and how to get the most of it
 tags:
   - git
@@ -222,7 +222,7 @@ $ cat /home/loic/git/committemplate.txt
 More information about the feature
 ```
 
-Unfortunately, it’s not possible to use a bash script instead of a text message, to &mdash; let’s say &mdash; dynamically add the branch name. Fortunately, the same thing can be done with Git hooks.
+Unfortunately, it’s not possible to use a bash script instead of a text message to, let’s say, dynamically add the branch name. Fortunately, the same thing can be done with Git hooks.
 
 _Hooking_ is a common programming pattern to allow user to improve the behavior of a software by allowing custom piece of code to run at a specific moment.
 

@@ -1,5 +1,5 @@
 ---
-title: The required fault in our stars
+title: The Required Fault in Our Stars
 description: A short write-up about the use of asterisks to indicate required fields in forms
 tags:
   - Accessibility

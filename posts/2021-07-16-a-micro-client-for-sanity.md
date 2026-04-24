@@ -1,5 +1,5 @@
 ---
-title: A micro-client for Sanity
+title: A Micro-Client for Sanity
 description: A technical write-up on building a pair of utility functions wrapping the Sanity JavaScript client for simpler data queries
 tags:
   - Sanity

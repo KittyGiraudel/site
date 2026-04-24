@@ -1,5 +1,5 @@
 ---
-title: Markdown as a design
+title: Markdown as a Design
 description: An announcement post for the redesign of my blog using Markdown style
 tags:
   - Markdown

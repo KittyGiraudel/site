@@ -1,5 +1,5 @@
 ---
-title: Gists as npm packages
+title: Gists as npm Packages
 description: A technical write-up on publishing GitHub Gists as npm packages
 tags:
   - Dependencies

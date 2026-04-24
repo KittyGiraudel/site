@@ -2,7 +2,7 @@
 external:
   host: David Walsh’s blog
   url: https://davidwalsh.name/future-sass
-title: Looking into the future of Sass
+title: Looking Into the Future of Sass
 description: A guest post on David Walsh’s blog about what we can expect in the future of Sass
 tags:
   - Sass

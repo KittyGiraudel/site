@@ -1,5 +1,5 @@
 ---
-title: Hiding content responsibly
+title: Hiding Content Responsibly
 description: A guide on hiding content in an accessible way, building on the A11y Advent calendar post
 edits:
   - date: 2021/02/25

@@ -1,5 +1,5 @@
 ---
-title: String replacement function in Sass
+title: String Replacement Function in Sass
 description: A technical write-up about writing a Sass function to replace a substring inside a string
 tags:
   - Sass

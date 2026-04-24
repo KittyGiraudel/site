@@ -1,5 +1,5 @@
 ---
-title: 30 frontend tips
+title: 30 Frontend Tips
 description: A collection of 30 frontend tips I’ve learnt the hard way to celebrate me turning 30
 tags:
   - Retrospective

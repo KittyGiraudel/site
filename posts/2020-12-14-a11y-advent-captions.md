@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 14: Captions'
+title: 'A11y Advent Day 14: Captions'
 description: A11yAdvent entry on captions for video
 tags:
   - Accessibility
@@ -19,7 +19,7 @@ It turns out that authoring good captions is actually surprisingly difficult, an
 
 - The length of captions should be kept short (~40 characters) and the text should not stick to the sides since differences in screen calibrating could cut the edges off. A caption should usually not exceed 2, maybe 3 lines.
 
-- Captions should be displayed for 1 or 2 seconds and changes of captions should come with a brief (200 — 300ms) uncaptioned pause to make sure the reader can acknowledge a change of text even when lines look alike (length, etc.).
+- Captions should be displayed for 1 or 2 seconds and changes of captions should come with a brief (200–300ms) uncaptioned pause to make sure the reader can acknowledge a change of text even when lines look alike (length, etc.).
 
 - Language-specific typographic rules should be respected. Words should be broken where possible according to the language they are depicted in, and sentences should be split on punctuation as much as possible.
 

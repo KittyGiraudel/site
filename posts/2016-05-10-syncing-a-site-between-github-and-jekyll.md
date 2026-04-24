@@ -1,5 +1,5 @@
 ---
-title: Syncing a site between GitHub and Jekyll
+title: Syncing a Site Between GitHub & Jekyll
 description: A technical write-up on syncing a site between GitHub and Jekyll
 tags:
   - Jekyll

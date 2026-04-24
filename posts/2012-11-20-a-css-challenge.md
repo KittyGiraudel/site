@@ -1,5 +1,5 @@
 ---
-title: A CSS challenge
+title: A CSS Challenge
 description: My approach to this little CSS challenge by Raphaël Goetter
 tags:
   - CSS

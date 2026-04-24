@@ -1,5 +1,5 @@
 ---
-title: CSS trickery and calc function
+title: CSS Trickery & Calc Function
 description: A technical write-up about finding a solution to a tricky little CSS puzzle from Rémi Parmentier
 tags:
   - CSS

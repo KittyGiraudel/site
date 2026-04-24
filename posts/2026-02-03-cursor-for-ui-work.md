@@ -1,5 +1,5 @@
 ---
-title: Cursor for UI work
+title: Cursor for UI Work
 description: A retrospective on using Cursor for a small and creative little frontend project
 tags:
   - Frontend

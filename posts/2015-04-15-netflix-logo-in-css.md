@@ -1,6 +1,6 @@
 ---
 guest: Gregor Adams
-title: Netflix logo in CSS
+title: Netflix Logo in CSS
 description: A technical write-up by Gregor Adams on recreating the Netflix logo in CSS
 tags:
   - CSS

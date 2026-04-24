@@ -1,6 +1,6 @@
 ---
 guest: Hugo Darby-Brown
-title: Scroll overflow menu
+title: Scroll Overflow Menu
 description: A technical write-up by Hugo Darby-Brown on creating a menu that overflows and scrolls nicely
 tags:
   - CSS

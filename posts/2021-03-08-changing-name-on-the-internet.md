@@ -1,5 +1,5 @@
 ---
-title: Changing name on the internet
+title: Changing Name on the Internet
 description: A personal note on changing my name on the internet and updating accounts and services
 tags:
   - Retrospective

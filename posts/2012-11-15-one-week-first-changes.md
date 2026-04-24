@@ -1,5 +1,5 @@
 ---
-title: One week, first changes
+title: One Week, First Changes
 description: A review of the changes made in the first week after my website redesign
 tags:
   - Writing

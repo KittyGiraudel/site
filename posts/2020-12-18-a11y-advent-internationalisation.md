@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 18: Internationalisation'
+title: 'A11y Advent Day 18: Internationalisation'
 description: A11yAdvent entry on internationalisation and accessibility
 tags:
   - Accessibility
@@ -18,7 +18,7 @@ Nevertheless, we can outline a certain amount of advice and things to consider t
 
 - Flags should be used to represent countries, not languages. When listing languages, refrain from illustrating them with flags if possible. If flags are important for visual identity, consider reversing the logic so countries are listed (with their flag), followed by a language (for instance “🇨🇦 Canada (English)” and “🇨🇦 Canada (Français Canadien)”).
 
-- Flags should exclusively be used to represent countries, not languages. For instance, while French is mainly spoke in France, it is also spoken in Congo and Canada — among other territorial entities. Or Spanish, which is spoken all over South America, but too often represented with a Spain flag. Flags are for countries, not languages.
+- Flags should exclusively be used to represent countries, not languages. For instance, while French is mainly spoken in France, it is also spoken in Senegal, Congo and Canada, among other countries and territorial entities. Or Spanish, which is spoken all over South America, but too often represented with a Spain flag. Flags are for countries, not languages.
 
 - Dates and currencies should ideally be authored in the format conveyed by the language of the page. For instance, a document authored in American English should use the American date format `MM-DD-YYYY`, when a page in German should use the German one `DD.MM.YYYY`. Content in French should author currencies the French way such as “42 €” with a space between the amount and the symbol, which lives after the amount. The [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) native API and libraries like [Luxon](https://moment.github.io/luxon/) and [accounting.js](https://www.npmjs.com/package/accounting) can help with this process.
 

@@ -1,5 +1,5 @@
 ---
-title: Getting the most out of Sass placeholders
+title: Getting the Most Out of Sass Placeholders
 description: A guide on getting the most from Sass placeholders
 tags:
   - Sass

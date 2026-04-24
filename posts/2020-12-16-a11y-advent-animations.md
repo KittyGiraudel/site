@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 16: Animations'
+title: 'A11y Advent Day 16: Animations'
 description: A11yAdvent entry on animations and reduced motion
 tags:
   - Accessibility

@@ -1,5 +1,5 @@
 ---
-title: Tag pages with Eleventy
+title: Tag Pages With Eleventy
 description: A short technical write-up about the introduction of tag pages on this blog.
 tags:
   - Liquid

@@ -1,5 +1,5 @@
 ---
-title: Dear PayPal
+title: Dear Paypal
 description: An open letter to PayPal about their poor frontend practices
 tags:
   - UX

@@ -1,11 +1,12 @@
 ---
-title: Introducing spritesh
+title: Introducing Spritesh
 description: An announcement post for Spritesh, a Bash library to generate a SVG sprite for icons
 tags:
   - SVG
   - Bash
   - Release
   - Open Source
+deprecated: true
 ---
 
 We at Edenspiekermann are big fans of [Gulp](https://gulpjs.com/). We use it in most of our projects, even Rails ones to replace or rather connect to the assets pipeline. Gulp is usually responsible for most of our build process in basically any project.

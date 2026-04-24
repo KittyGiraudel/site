@@ -1,5 +1,5 @@
 ---
-title: Creative use of CSS gradients
+title: Creative Use of CSS Gradients
 description: A technical write-up about a clever use of CSS gradients to mark chapters on a video play bar
 tags:
   - CSS

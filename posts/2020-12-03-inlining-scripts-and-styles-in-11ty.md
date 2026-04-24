@@ -1,5 +1,5 @@
 ---
-title: Inlining scripts and styles in Eleventy
+title: Inlining Scripts & Styles in Eleventy
 description: A technical write-up on inlining scripts and styles in Eleventy for performance
 tags:
   - Eleventy
@@ -17,7 +17,7 @@ I had about 4.7Kb of CSS, and less than 1Kb of JavaScript, so I figured the HTTP
 
 Now the thing is not all styles are necessary on all pages. For instance, the home page have some components that do not exist anywhere else on the site, and an article page like this one has a lot of styles which are not needed anywhere else (code snippets, figures, tables, post date…). So instead of inlining 5Kb of CSS in the head, most of which would not be needed, I decided to split it across pages.
 
-My CSS (formerly authored in Sass) is split by concern, somewhat following the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern) (my JavaScript also follows a similar structure but I’m going to drop it from now on for sake of simplicity). That’s good because that mean I didn’t really have to figure out how to break it down — I only needed a way to include specific parts in specific contexts. Namely:
+My CSS (formerly authored in Sass) is split by concern, somewhat following the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern) (my JavaScript also follows a similar structure but I’m going to drop it from now on for sake of simplicity). That’s good because that mean I didn’t really have to figure out how to break it down, I only needed a way to include specific parts in specific contexts. Namely:
 
 - Including the core styles (such as layout & typography) in every page.
 - Including page-specific styles (blog post, home page, resume…) on specific pages.

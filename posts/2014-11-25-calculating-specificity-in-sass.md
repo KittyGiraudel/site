@@ -1,6 +1,6 @@
 ---
 guest: David Khourshid
-title: Calculating specificity in Sass
+title: Calculating Specificity in Sass
 description: A technical write-up on calculating CSS specificity in Sass
 tags:
   - Sass

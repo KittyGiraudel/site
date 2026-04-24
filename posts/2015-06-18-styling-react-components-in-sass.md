@@ -10,7 +10,7 @@ tags:
 ---
 
 {% callout %}
-The following is a guest post by David Khourshid about how he uses Sass and the [7-1 pattern](https://sass-guidelin.es/#architecture) to style React components. React being all over the place these days, I am very glad to have him talking about his experience here.
+The following is a guest post by [David Khourshid](https://twitter.com/davidkpiano) about how he uses Sass and the [7-1 pattern](https://sass-guidelin.es/#architecture) to style React components. React being all over the place these days, I am very glad to have him talking about his experience here.
 {% endcallout %}
 
 Chances are, as a frontend developer, you’ve heard of Facebook’s library for building user interfaces, [React](https://facebook.github.io/react/). Of course, an important part of building UI is styling it, as well. React strongly enforces the idea that a user interface is composed of many [“reusable components with well-defined interfaces”](https://facebook.github.io/react/docs/reusable-components.html), and many CSS methodologies and architectures embrace this as well, including:
@@ -288,7 +288,8 @@ Personally, I wouldn’t include 3rd-party styling at all, as the more style dep
 
 React components can be styled in Sass in an efficient, flexible, and maintainable way by using a proper organizational structure, such as SMACSS and the 7-1 pattern. If you know Sass, there’s no new libraries to learn, and no extra dependencies besides React and Sass.
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p><a href="https://twitter.com/rmurphey">@rmurphey</a> those problems can all be solved with good architecture and preprocesseors  <a href="https://t.co/JqbK3SBD6d">https://t.co/JqbK3SBD6d</a><br />— Una Kravets (@Una) <a href="https://twitter.com/Una/status/608271323941486592">June 9, 2015</a></p></blockquote>
+> @rmurphey those problems can all be solved with good architecture and preprocesseors [https://t.co/JqbK3SBD6d](https://t.co/JqbK3SBD6d)  
+> — [Una Kravets (@Una), June 9, 2015](https://twitter.com/Una/status/608271323941486592)
 
 The problems that Christopher Chedeau lists in his “CSS in JS” presentation are valid problems, albeit ones that are easily solved with a well-defined stylesheet architecture, organizational structure, and Sass (or any other preprocessor). Styling the web isn’t easy, and there are many very useful open-source Sass tools and libraries for grids, typography, breakpoints, animations, UI pattern libraries, and more to help develop stylesheets for components much more efficiently. Take advantage of these Sassy resources.
 

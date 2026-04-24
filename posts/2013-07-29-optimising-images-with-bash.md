@@ -1,6 +1,6 @@
 ---
 guest: Loïc Giraudel
-title: Optimising images with Bash
+title: Optimising Images With Bash
 description: A guest post by Loïc Giraudel on how to use Bash to optimize images
 tags:
   - Bash

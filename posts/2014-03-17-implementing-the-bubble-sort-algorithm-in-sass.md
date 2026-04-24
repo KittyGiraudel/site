@@ -1,5 +1,5 @@
 ---
-title: Implementing the bubble sort algorithm in Sass
+title: Implementing the Bubble Sort Algorithm in Sass
 description: A technical write-up on implementing a sorting algorithm in Sass
 tags:
   - Sass

@@ -1,5 +1,5 @@
 ---
-title: Math sequences with Sass
+title: Math Sequences With Sass
 description: A technical write-up on experimental functions to generate popular math sequences in Sass
 tags:
   - Sass

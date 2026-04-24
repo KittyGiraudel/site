@@ -1,5 +1,5 @@
 ---
-title: Code for edge cases
+title: Code for Edge Cases
 description: A reflection on coding for edge cases and defensive programming
 tags:
   - JavaScript

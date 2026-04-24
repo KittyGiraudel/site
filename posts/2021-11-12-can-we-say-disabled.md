@@ -1,5 +1,5 @@
 ---
-title: Can we say “disabled”?
+title: Can We Say “Disabled”?
 description: On whether the word “disabled” is appropriate (it is), and the discourse around its usage
 tags:
   - Accessibility

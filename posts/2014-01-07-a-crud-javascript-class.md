@@ -2,7 +2,7 @@
 external:
   host: David Walsh’s blog
   url: https://davidwalsh.name/crud-javascript-class
-title: A CRUD JavaScript class
+title: A CRUD JavaScript Class
 description: A technical write-up about building a small CRUD utility in JavaScript
 tags:
   - JavaScript

@@ -1,5 +1,5 @@
 ---
-title: Translation system in Sass
+title: Translation System in Sass
 description: A technical write-up on building a translation system in Sass
 tags:
   - Internationalisation
@@ -135,7 +135,7 @@ Much better, isn’t it? Although having to type the language over and over is n
 }
 ```
 
-The `message` function first deals with the language. If a global variable called `language` exists &mdash; which is the case if `set-locale` has been called &mdash; it uses it, else it falls back to `en`. Then, it makes sure arguments are valid. Finally, it returns the result of `map-deep-get` as we’ve seen above.
+The `message` function first deals with the language. If a global variable called `language` exists (which is the case if `set-locale` has been called) it uses it, else it falls back to `en`. Then, it makes sure arguments are valid. Finally, it returns the result of `map-deep-get` as we’ve seen above.
 
 So we could use it like this:
 

@@ -1,5 +1,5 @@
 ---
-title: Star-rating widget with Sass
+title: Star-Rating Widget With Sass
 description: A technical write-up on how to create a star rating system widget with Sass
 tags:
   - Sass

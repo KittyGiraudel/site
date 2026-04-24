@@ -1,5 +1,5 @@
 ---
-title: Site redesign + new blog
+title: Site Redesign & New Blog
 description: A deep-dive into the recent redesign of my  website
 tags:
   - Design

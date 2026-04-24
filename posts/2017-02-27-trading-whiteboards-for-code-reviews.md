@@ -1,5 +1,5 @@
 ---
-title: Trading whiteboards for code reviews
+title: Trading Whiteboards for Code Reviews
 description: A reflection on replacing whiteboard interviews with code reviews
 tags:
   - Hiring

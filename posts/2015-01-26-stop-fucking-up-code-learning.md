@@ -1,5 +1,5 @@
 ---
-title: Stop messing up code learning
+title: Stop Messing up Code Learning
 description: A reflective and ranty post on the messy approach to teaching coding nowadays
 tags:
   - CSS

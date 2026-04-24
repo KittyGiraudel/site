@@ -1,5 +1,5 @@
 ---
-title: Beautiful CLI prompt with Starship
+title: Beautiful CLI Prompt With Starship
 description: A short article to promote Starship, a beautiful command line utility to make you happy.
 tags:
   - CLI

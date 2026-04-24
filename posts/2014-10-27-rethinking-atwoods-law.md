@@ -1,5 +1,5 @@
 ---
-title: Rethinking Atwood’s law
+title: Rethinking Atwood’s Law
 description: A retrospective on Atwood’s law, and how it can be reframed in the context of Sass
 tags:
   - Thoughts

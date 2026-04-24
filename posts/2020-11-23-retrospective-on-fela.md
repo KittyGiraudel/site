@@ -32,7 +32,7 @@ There were good things and bad things with CSS modules. On one hand, writing pla
 
 We were already 2,000 commits in the making at that stage, and our roadmap was getting clearer and clearer: we’d end up with multiple large-scale projects within the same codebase, and I was growing worried of our CSS scaling poorly in the long run. That’s when on February 17th 2017, two weeks before our very first live release, I came to work one morning and told Mike “hear me out… how about CSS-in-JS?”
 
-I had done some research on JS libraries for styling, and while the ecosystem was nowhere near what it is today, there were a few contenders: [styled-components](https://styled-components.com/), [Fela](https://fela.js.org), [Aphrodite](https://github.com/Khan/aphrodite) and [Emotion](https://emotion.sh/) were all in 0.x or v1 at most and [JSS](https://cssinjs.org/?v=v10.5.0) was going strong for over 2 years already. So there were definitely options — or so we thought. Now, we had 2 main constraints (besides obvious aesthetic considerations):
+I had done some research on JS libraries for styling, and while the ecosystem was nowhere near what it is today, there were a few contenders: [styled-components](https://styled-components.com/), [Fela](https://fela.js.org), [Aphrodite](https://github.com/Khan/aphrodite) and [Emotion](https://emotion.sh/) were all in 0.x or v1 at most and [JSS](https://cssinjs.org/?v=v10.5.0) was going strong for over 2 years already. So there were definitely options, or so we thought. Now, we had 2 main constraints (besides obvious aesthetic considerations):
 
 1. We implemented server-side rendering (SSR) from day 1, and completely supported the absence of client-side JavaScript, so we needed an isomorphic solution which would deal properly with rehydration.
 2. The main reason to move away from CSS modules was to have critical CSS and most importantly atomic CSS out of the box so we needed a library able to provide that with minor effort.
@@ -106,7 +106,7 @@ This is what makes Fela really stand out from other similar CSS-in-JS libraries.
 
 To this day, if there is one thing that I always found impressive about Fela is its [rich ecosystem of utilities and plugins](https://github.com/robinweser/fela/tree/master/packages), especially considering they are almost all authored and maintained by Robin Weser, the original creator, and part of the main lerna repo.
 
-Even pretty advanced behaviour such as [responsive properties](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-responsive-value) — properties whose value varies across pre-defined breakpoints — or [extensive testing of state-specific styles](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-simulate) (e.g. hover) are already built and ready to use.
+Even pretty advanced behaviour such as [responsive properties](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-responsive-value), properties whose value varies across pre-defined breakpoints, or [extensive testing of state-specific styles](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-simulate) (e.g. hover) are already built and ready to use.
 
 And if something happens to be missing, Fela is very easy to customise with [plugins](https://fela.js.org/docs/advanced/Plugins.html) and [enhancers](https://fela.js.org/docs/advanced/Enhancers.html). Both are essentially functions to customise style processing.
 
@@ -353,7 +353,7 @@ const renderer = createRenderer({
 
 ## Wrapping up
 
-All in all, Fela is an amazing piece of software. It’s pretty powerful, relatively easy to use and very performant. For small to medium scale projects — especially those based on create-react-app — I would probably stick to plain CSS, or maybe Sass. But for anything large scale, I would highly recommend Fela as a bulletproof styling solution.
+All in all, Fela is an amazing piece of software. It’s pretty powerful, relatively easy to use and very performant. For small to medium scale projects, especially those based on create-react-app, I would probably stick to plain CSS, or maybe Sass. But for anything large scale, I would highly recommend Fela as a bulletproof styling solution.
 
 Despite its relatively small community, Fela has been around for 4 years, and is still actively maintained and update. The future roadmap includes:
 

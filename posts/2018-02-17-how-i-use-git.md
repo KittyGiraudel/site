@@ -1,5 +1,5 @@
 ---
-title: How I use Git
+title: How I Use Git
 description: A look at my Git workflow, aliases and habits
 tags:
   - git

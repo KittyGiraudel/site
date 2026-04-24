@@ -1,5 +1,5 @@
 ---
-title: Chromebook review
+title: Chromebook Review
 description: A personal review of the Chromebook laptop
 tags:
   - Retrospective

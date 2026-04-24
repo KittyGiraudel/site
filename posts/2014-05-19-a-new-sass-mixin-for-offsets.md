@@ -1,9 +1,11 @@
 ---
-title: A new Sass mixin for offsets
+title: A New Sass Mixin for Offsets
 description: A technical write-up on a Sass mixin to help with CSS offsets
 tags:
   - Sass
 edits:
+  - date: 2021/04/01
+    md: The `inset` CSS property is the native way to handle this and is now supported across all major browsers so there is no reason to use a Sass mixin for this.
   - date: 2015/06/06
     md: One year later, I now think it’s better not to have a mixin for this. Less Sass, more native CSS.
 ---

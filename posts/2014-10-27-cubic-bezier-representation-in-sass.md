@@ -1,5 +1,5 @@
 ---
-title: Cubic Bézier representation in Sass
+title: Cubic Bézier Representation in Sass
 description: A technical write-up on representing cubic-bezier in Sass with help from Tim Severien
 tags:
   - Sass

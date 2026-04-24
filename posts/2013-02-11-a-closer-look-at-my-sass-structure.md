@@ -1,5 +1,5 @@
 ---
-title: A closer look at my Sass structure
+title: A Closer Look at My Sass Structure
 description: A look about how I structure my Sass code for frontend projects
 tags:
   - Sass

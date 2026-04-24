@@ -1,5 +1,5 @@
 ---
-title: Accessibility from the ground up
+title: Accessibility from the Ground Up
 description: A guide on how to consider accessibility from the early steps of a project
 tags:
   - Accessibility

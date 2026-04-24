@@ -1,5 +1,5 @@
 ---
-title: Introducing a11y-dialog v3
+title: Introducing a11y-Dialog v3
 description: An announcement post for the 3rd version of a11y-dialog
 tags:
   - JavaScript

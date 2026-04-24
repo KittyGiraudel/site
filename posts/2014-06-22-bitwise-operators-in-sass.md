@@ -1,5 +1,5 @@
 ---
-title: Bitwise operators in Sass
+title: Bitwise Operators in Sass
 description: A technical write-up on the experimental implementation of bitwise operators in Sass
 tags:
   - Sass
@@ -98,7 +98,7 @@ We could have figured this length without converting to binary if we had a `log(
 Valérian summed it up quite nicely in a Tweet:
 
 > &amp;, | and ^ bitwise operators math formulas needs log(), but log() needs frexp() which needs bitwise operators. Fak! cc @KittyGiraudel  
-> — [Valérian Galliat (@valeriangalliat) June 4, 2014](https://twitter.com/valeriangalliat/statuses/474127810798555136)
+> — [Valérian Galliat (@valeriangalliat), June 4, 2014](https://twitter.com/valeriangalliat/statuses/474127810798555136)
 
 I won’t dig into Sass code because it doesn’t have much point. Let’s just have a look at the final implementation. We have implemented each operator as a Sass function called `bw-*` where `*` stands for the name of the operator (e.g. `and`). Except for `bw-not()` which is a rather particuliar operator, all functions accept 2 arguments: both decimal numbers.
 
@@ -137,7 +137,7 @@ OR 00000010 (B)
  = 00000011
 ```
 
-The result &mdash; let’s call it _Z_ &mdash; holds both options, right? To retrieve separately A and B from Z, we can use the _AND_ operator:
+The result, let’s call it _Z_, holds both options, right? To retrieve separately A and B from Z, we can use the _AND_ operator:
 
 ```
     00000011 (Z)

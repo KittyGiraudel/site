@@ -1,5 +1,5 @@
 ---
-title: An accessible visibility React component
+title: An Accessible Visibility React Component
 description: A technical write-up on an accessible visibility component in React
 tags:
   - Accessibility

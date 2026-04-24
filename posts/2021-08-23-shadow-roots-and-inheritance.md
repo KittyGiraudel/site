@@ -1,5 +1,5 @@
 ---
-title: Shadow roots and inheritance
+title: Shadow Roots & Inheritance
 description: A short explanation of an unintuitive behavior of CSS and shadow roots
 tags:
   - CSS

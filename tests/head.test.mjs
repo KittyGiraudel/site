@@ -243,7 +243,7 @@ test('page head: regular post', async () => {
 
   assertHeadMetadata($, siteUrl, {
     path: '/2026/03/02/stats-page-with-11ty/',
-    title: 'Stats Page with Eleventy',
+    title: 'Stats Page With Eleventy',
     description:
       'A short technical write-up about aggregating blogging stats and displaying them on a page with Eleventy.',
     author: siteAuthor,
@@ -288,7 +288,7 @@ test('page head: guest post (guest meta author)', async () => {
 
   assertHeadMetadata($, siteUrl, {
     path: '/2020/05/18/using-calc-to-figure-out-optimal-line-height/',
-    title: 'Using calc to figure out optimal line-height',
+    title: 'Using Calc to Figure Out Optimal Line-Height',
     description: 'A guest post by Jesús Ricarte on using calc() to figure out optimal line-height',
     author: 'Jesús Ricarte',
     ogType: 'article',

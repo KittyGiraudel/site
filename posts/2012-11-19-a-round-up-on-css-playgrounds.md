@@ -1,5 +1,5 @@
 ---
-title: A round-up on CSS playgrounds
+title: A Round-up on CSS Playgrounds
 description: A look into what CSS playgrounds are and what are the main contenders
 tags:
   - CSS
@@ -36,7 +36,7 @@ Plus, it seems to be very buggy sometimes. Shortcuts don’t work as expected, c
 
 ### Cons
 
-- ~No JS support~ JS tab now in alpha stage
+- ~~No JS support~~ JS tab now in alpha stage
 - No preprocessors support
 - Cloned GitHub user accounts (followers/following GitHub users)
 - Sometimes very buggy

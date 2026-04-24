@@ -1,5 +1,5 @@
 ---
-title: Sassify a CSS shape
+title: Sassify a CSS Shape
 description: A technical writeup about building a mixin to generate a specific CSS shape
 tags:
   - Sass

@@ -5,20 +5,18 @@ tags:
   - Sass
   - Release
   - Open Source
-edits:
-  - date: 2015/01/07
-    md: Over 20,000 visits on [Sass Guidelines](https://sass-guidelin.es) during the last 24 hours. Thank you so much for your support!
 image: /assets/images/introducing-sass-guidelines/preview.png
 ---
 
 I don’t know why I did not think of writing Sass guidelines when [Harry Roberts](https://csswizardry.com) first released his [CSS Guidelines](https://cssguidelin.es) a couple of months back. Anyway, on saturday evening I had a _eureka moment_:
 
 > “I SHOULD WRITE SASS GUIDELINES!”  
-> &mdash; Me, in the shower.
+> — Me, in the shower.
 
 After two days working on them, I am very proud and excited to release a 10,000 words long styleguide on working with Sass: [sass-guidelin.es](/projects/sass-guidelines/).
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p>Game on, folks! <a href="https://twitter.com/SassCSS">@SassCSS</a> guidelines, just for you: <a href="https://t.co/8ybeXdBOFY">https://t.co/8ybeXdBOFY</a>.<br />— Kitty Giraudel (@KittyGiraudel) <a href="https://twitter.com/KittyGiraudel/status/552472109797371906">January 6, 2015</a></p></blockquote>
+> Game on, folks! Sass Guidelines, just for you: https://sass-guidelin.es.  
+> — [Kitty Giraudel (@KittyGiraudel), January 6, 2015](https://twitter.com/KittyGiraudel/status/552472109797371906)
 
 ## What is that?
 

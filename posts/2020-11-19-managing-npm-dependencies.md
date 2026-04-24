@@ -1,5 +1,5 @@
 ---
-title: Managing npm dependencies
+title: Managing npm Dependencies
 description: A guide on managing npm dependencies and keeping them under control
 tags:
   - npm

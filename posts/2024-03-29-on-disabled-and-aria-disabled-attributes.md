@@ -1,5 +1,5 @@
 ---
-title: On disabled and aria-disabled attributes
+title: On Disabled & ARIA-Disabled Attributes
 description: A write-up about the disabled and aria-disabled attributes and their impact on accessibility
 tags:
   - Accessibility

@@ -1,5 +1,5 @@
 ---
-title: Boilerplate-ing Jekyll
+title: Boilerplate-Ing Jekyll
 description: A technical write-up on creating a boilerplate for Jekyll
 tags:
   - Jekyll

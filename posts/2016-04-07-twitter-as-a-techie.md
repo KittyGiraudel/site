@@ -1,5 +1,5 @@
 ---
-title: Twitter as a techie
+title: Twitter as a Techie
 description: A short reflection on being a techie on Twitter and how I use this social network
 tags:
   - Engineering

@@ -1,5 +1,5 @@
 ---
-title: Cleaning a repo from sensitive info
+title: Cleaning a Repo from Sensitive Info
 description: A technical write-up on how to clean up a git repository from sensitive information that was inadvertently committed
 tags:
   - git

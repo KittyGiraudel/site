@@ -1,5 +1,5 @@
 ---
-title: Building a geolocation widget
+title: Building a Geolocation Widget
 description: A technical write-up on building a geolocation widget for the Gorillas homepage
 tags:
   - HTML

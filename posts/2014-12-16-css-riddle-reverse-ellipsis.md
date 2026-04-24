@@ -1,5 +1,5 @@
 ---
-title: 'CSS Riddle: reverse ellipsis'
+title: 'CSS Riddle: Reverse Ellipsis'
 description: A technical write-up on a CSS riddle, how to create a reverse ellipsis
 tags:
   - CSS
@@ -108,7 +108,7 @@ A couple issues with Michael’s solution:
 - It needs a background color;
 - Ellipsis is slightly off.
 
-That being said, it is &mdash; as far as I can tell &mdash; the only solution I have seen that does work even if content does not overflow. All over solutions always display the ellipsis, even when content does fit within the container, which is a bit agressive, yielding something like:
+That being said, it is (as far as I can tell) the only solution I have seen that does work even if content does not overflow. All over solutions always display the ellipsis, even when content does fit within the container, which is a bit agressive, yielding something like:
 
 > …&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here is some short content.
 

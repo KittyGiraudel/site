@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 24: The Case for Accessibility'
+title: 'A11y Advent Day 24: the Case for Accessibility'
 description: A11yAdvent entry on making the case for accessibility
 tags:
   - Accessibility

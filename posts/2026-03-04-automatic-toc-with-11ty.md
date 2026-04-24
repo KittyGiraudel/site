@@ -1,5 +1,5 @@
 ---
-title: Automatic Table of Contents with Eleventy
+title: Automatic Table of Contents With Eleventy
 description: A technical walkthrough on how to automatically generate a table of contents for articles.
 tags:
   - Eleventy

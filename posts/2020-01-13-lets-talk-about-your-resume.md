@@ -1,5 +1,5 @@
 ---
-title: Let’s talk about your resume
+title: Let’s Talk About Your Resume
 description: A short reflection on resumes and what I look for as a hiring manager
 tags:
   - Hiring

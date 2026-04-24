@@ -1,5 +1,5 @@
 ---
-title: No more Carbon
+title: No More Carbon
 description: A brief look into why I decided to stop serving ads on this website, including some data visualization.
 tags:
   - Writing

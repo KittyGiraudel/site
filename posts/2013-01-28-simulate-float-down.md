@@ -1,5 +1,5 @@
 ---
-title: 'Simulate float: down'
+title: 'Simulate Float: Down'
 description: A technical write-up about simulating a conceptual float down CSS declaration
 tags:
   - CSS

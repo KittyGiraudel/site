@@ -32,7 +32,7 @@ And some of the things I was either a little frustrated or not super happy with:
 
 - I find the handling of global variables confusing at best. In Jekyll, I knew the difference between variables on the `include`, `page` or `site` objects. Here everything sort of blends together in an opaque way.
 - I personally like YAML over JSON, and it was a little disappointing [not being able to maintain my data files in YAML by default](https://www.11ty.dev/docs/data-custom/#yaml). Not a huge deal, but I find authoring JSON tedious compared to YAML.
-- There is a lot of documentation, and the maintainers clearly care a lot about it — yet it did feel like there were some glaring caps somewhat. For instance, it was unclear to me how to issue a production build or how to [maintain dynamic permalinks over a collection](#posts-permalinks) — both of which I’d consider pretty basic things.
+- There is a lot of documentation, and the maintainers clearly care a lot about it, yet it did feel like there were some glaring caps somewhat. For instance, it was unclear to me how to issue a production build or how to [maintain dynamic permalinks over a collection](#posts-permalinks), both of which I’d consider pretty basic things.
 
 That being said, I am overall pleased with the migration and the tool as a whole. Interesting thing to point out is that the compilation didn’t get much faster for me: both systems take about 2 seconds to compile hundreds of pages.
 
@@ -50,7 +50,7 @@ config.addCollection('posts', collection =>
 
 I use this collection in multiple places: in the blog, but also on the home page to list the most recent articles as well as in the RSS feed. I figured it was easier to sort the collection once in the configuration rather than everywhere I look up `collections.posts` since Eleventy sorts it chronologically by default.
 
-Now, Jekyll being a _blogging_ system at the core, it treats posts as first-class citizens and expects an article’s date to be in its slug — for instance `2020-11-30-from-jekyll-to-11ty.md` would then be compiled into `/2020/11/30/from-jekyll-to-11ty/index.html`.
+Now, Jekyll being a _blogging_ system at the core, it treats posts as first-class citizens and expects an article’s date to be in its slug: for instance `2020-11-30-from-jekyll-to-11ty.md` would then be compiled into `/2020/11/30/from-jekyll-to-11ty/index.html`.
 
 In its documentation, Eleventy explains pretty extensively how to handle permalinks, but not really how to define a permalink pattern for an entire collection. It took me a while to figure out that I needed to create a `_posts.json` file in the `_posts` directory with the following JSON:
 

@@ -1,5 +1,5 @@
 ---
-title: Imagining native skip links
+title: Imagining Native Skip Links
 description: A reflection on skip links and what a native HTML skip link could look like
 tags:
   - Component

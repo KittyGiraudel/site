@@ -1,5 +1,5 @@
 ---
-title: From ESLint and Prettier to Biome
+title: From ESLint & Prettier to Biome
 description: A technical write-up on my journey migrating from ESLint + Prettier to Biome
 tags:
   - JavaScript

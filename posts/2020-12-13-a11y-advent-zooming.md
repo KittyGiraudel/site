@@ -1,5 +1,5 @@
 ---
-title: "A11yAdvent Day 13: Zooming"
+title: "A11y Advent Day 13: Zooming"
 description: A11yAdvent entry on zooming and responsive design
 tags:
   - Accessibility

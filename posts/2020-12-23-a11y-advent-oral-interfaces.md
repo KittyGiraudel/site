@@ -1,5 +1,5 @@
 ---
-title: 'A11yAdvent Day 23: Oral interfaces'
+title: 'A11y Advent Day 23: Oral Interfaces'
 description: A11yAdvent entry on oral interfaces and the web
 tags:
   - Accessibility
@@ -21,7 +21,7 @@ Besides people without the ability to speak, people who stutter can also conside
 > — F-f-f-f-f-f-f-f-f…  
 > — [cancellation noise]
 
-Of course, Alexa — or any other voice assistant — is not doing it on purpose. It’s nothing but a program. It simply has not been trained for stuttering speeches. The same way facial recognition software produces racist outcomes because it is predominently trained on white faces, the “algorithm” is not the problem. Lack of diversity and ethics in the tech industry is.
+Of course, Alexa (or any other voice assistant) is not doing it on purpose. It’s nothing but a program. It simply has not been trained for stuttering speeches. The same way facial recognition software produces racist outcomes because it is predominently trained on white faces, the “algorithm” is not the problem. Lack of diversity and ethics in the tech industry is.
 
 A good way to accommodate people with a stutter is to make the voice trigger (such as “Ok Google”) customisable. Some sounds are more difficult to produce than others, and if the main command starts with such sound, it can make using the technology very stressful. In the great piece [Why voice assistants don’t understand people who stutter](https://archive.curbed.com/2018/12/12/18135195/alexa-google-home-tech-stuttering), Pedro Pena III says about Google Assistant, Alexa and Siri:
 

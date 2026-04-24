@@ -1,5 +1,5 @@
 ---
-title: A content warning component
+title: A Content Warning Component
 description: An experimental journey to designing and building a content warning UI component
 tags:
   - UI

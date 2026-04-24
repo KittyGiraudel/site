@@ -1,5 +1,5 @@
 ---
-title: CSS-only bottom-anchored scrolling area
+title: CSS-Only Bottom-Anchored Scrolling Area
 description: A short technical write-up on anchoring a scrolling area to the bottom with CSS
 tags:
   - CSS

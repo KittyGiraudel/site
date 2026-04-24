@@ -1,5 +1,5 @@
 ---
-title: 'SassyJSON: talk to the browser!'
+title: 'SassyJSON: Talk to the Browser!'
 description: An announcement post about the experimental SassyJSON library, implementation a JSON parser and serializer in Sass
 tags:
   - Sass
