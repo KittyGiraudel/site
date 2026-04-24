@@ -2,7 +2,7 @@
 
 .Resume__header {
   margin-block: -0.5em 2em;
-  color: #666;
+  color: light-dark(#666, #bbb);
 }
 
 .Resume__header p:first-child {
