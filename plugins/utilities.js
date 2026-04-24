@@ -117,6 +117,15 @@ function wrapEmDashes(content, outputPath) {
     : content
 }
 
+function wrapSmileyFaces(content, outputPath) {
+  return typeof outputPath === 'string' && outputPath.endsWith('.html')
+    ? content.replace(
+        /:\)/g,
+        '<span style="writing-mode: vertical-rl; color: light-dark(var(--blue), var(--pink))">:)</span>',
+      )
+    : content
+}
+
 function getFrontMatterData(value) {
   return value?.data ?? value ?? {}
 }
@@ -145,6 +154,7 @@ export default {
   ensureValue,
   helmet,
   wrapEmDashes,
+  wrapSmileyFaces,
   isPostVisible,
   isPostRendered,
 }
