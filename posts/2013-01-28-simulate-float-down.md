@@ -32,7 +32,7 @@ I first managed to do it with `:nth-child()` selectors, replacing manually each 
 
 I was very upset not finding any proper way to do it with CSS so I did it with a mix of CSS and JavaScript (in fact jQuery). I don’t know if it’s the best way to do it in JavaScript but here is what I came up with:
 
-```javascript
+```js
 $('.myList > li:odd').remove().appendTo('.myList')
 ```
 

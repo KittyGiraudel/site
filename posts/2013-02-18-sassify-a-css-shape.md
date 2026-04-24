@@ -42,7 +42,7 @@ At this point, I was already able to handle a mixin to create the star, but the 
 
 The user couldn’t figure this out and neither could I. So I asked Ana how to compute the height of the element based on the width. After a few complicated explanations, she finally gave me the formula (explanation [here](https://codepen.io/thebabydino/full/ca5fdb3582a6a27e4d3988d6d90952cb)).
 
-```javascript
+```js
 function computeHeight(x, skewAngle) {
 	return Math.sin(((90 - skewAngle) * Math.PI) / 180) * x;
 }
@@ -50,7 +50,7 @@ function computeHeight(x, skewAngle) {
 
 Okay, this is JavaScript but it is a good start. However this returns a radian value, which is not what we want. We want degrees. So the correct function has to be this one:
 
-```javascript
+```js
 function computeHeight(x, skewAngle) {
 	return Math.sin(90 - skewAngle) * x;
 }

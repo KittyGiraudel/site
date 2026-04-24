@@ -44,7 +44,7 @@ As you can see, this is not ideal. First, JavaScript lays in a template file. We
 
 When moving to Mixture, I took the time to think of how I would solve this issue to end up with a clean and DRY solution. The first thing I wanted to do was putting the JavaScript in a `.js` file, so let’s start with that.
 
-```javascript
+```js
 // app.js
 ;(function (global) {
 	var App = function (conf) {
@@ -74,7 +74,7 @@ When moving to Mixture, I took the time to think of how I would solve this issue
 
 So what’s going on here? In a JavaScript file, in a closure, we define a new class called `App`, that can be instantiated with an object of options (`conf`). This one is extended with an object of default parameters. When instantiated, it automatically calls the `initialize()` method. Let’s see what it does.
 
-```javascript
+```js
 App.prototype.initialize = function () {
 	if (this.conf.tracking === true) {
 		this.tracking()
@@ -102,7 +102,7 @@ App.prototype.initialize = function () {
 
 No magic here, the `initialize()` method simply calls other methods based on the configuration. We could simplify the code even more by calling the methods based on the configuration key names:
 
-```javascript
+```js
 ;['tracking', 'ad', 'comments', 'codepen', 'sassmeister'].forEach(
 	function (key) {
 		if (this.conf[key] === true) {
@@ -114,7 +114,7 @@ No magic here, the `initialize()` method simply calls other methods based on the
 
 But it’s no big deal, we don’t really need this. And now, the other methods:
 
-```javascript
+```js
 App.prototype.tracking = function () {
 	global._gaq = [['_setAccount', 'UA-XXXXXXXX-X'], ['_trackPageview']]
 

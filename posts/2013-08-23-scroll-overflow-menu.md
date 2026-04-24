@@ -87,7 +87,7 @@ nav {
 
 Throw in some JS to toggle the class, and you’ve got yourself a basic slide down mobile menu.
 
-```javascript
+```js
 // jQuery version
 $('.nav-toggle').on('click', function (e) {
 	$('nav').toggleClass('show')

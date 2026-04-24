@@ -11,7 +11,7 @@ One thing I was really looking forward with [Sass maps](https://viget.com/extend
 
 Before digging into Sass awesomeness, let’s first have a look at how we would do it in JavaScript:
 
-```javascript
+```js
 var Class = function (conf) {
 	this.conf = extend(
 		{
@@ -39,7 +39,7 @@ One could ask what is wrong with having several arguments in the signature with 
 
 To begin with, using an object makes it easier to understand since you have to specify the key associated to each value. While slightly longer to write, it’s easier to read; a fair trade-off in my opinion.
 
-```javascript
+```js
 // This…
 f({
 	message: 'You shall not pass!',
@@ -58,7 +58,7 @@ But the readibility argument is kind of a poor one. Some would say that they fee
 
 It’s generally simpler to store an object in a variable and then to pass it to the function rather than storing each individual parameter in its own variable. While `.call()` and `.apply()` let you do something around this, it’s not exquisite for readability (again!).
 
-```javascript
+```js
 // This…
 var conf = {
 	message: 'You shall not pass!',
@@ -81,7 +81,7 @@ Still not convince? Let’s move on.
 
 Adding or removing is as easy as updating the configuration object. No need to update all the calls or change arguments order if some of theme are optional.
 
-```javascript
+```js
 // Adding a parameter is simple; no need to worry about argument order
 f({
 	message: 'You shall not pass!',

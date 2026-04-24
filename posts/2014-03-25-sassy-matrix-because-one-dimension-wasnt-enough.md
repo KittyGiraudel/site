@@ -30,7 +30,7 @@ Well this was pretty easy. Now what if we want to dynamically create a matrix? U
 
 JavaScript allows you to instanciate a new array of `n` cells. This makes creating empty matrices quite easy, you only need a single for-loop like this:
 
-```javascript
+```js
 var matrix = new Array(9)
 for (var i = 0; i < matrix.length; i++) {
 	matrix[i] = new Array(9)

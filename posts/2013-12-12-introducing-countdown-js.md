@@ -35,7 +35,7 @@ Well, obviously you need to include the script in your page. But I made it prett
 
 Then using the countdown is as easy as instanciating the `Countdown` class:
 
-```javascript
+```js
 var countdown = new Countdown()
 ```
 
@@ -99,7 +99,7 @@ The function to run whenever the countdown stops.
 
 ### Example
 
-```javascript
+```js
 var countdown = new Countdown({
 	selector: '#timer',
 	msgBefore: 'Will start at Christmas!',
@@ -125,7 +125,7 @@ The script doesn’t use jQuery at all, mostly because there is no need for such
 
 As of today, two events are being fired: `countdownStart` and `countdownEnd`. You can use them as follow:
 
-```javascript
+```js
 var countdown = new Countdown({
 	selector: '.timer',
 })

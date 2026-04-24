@@ -26,7 +26,7 @@ Alright, let’s go.
 
 Let’s start with a little skeleton for our application:
 
-```javascript
+```js
 ;(function () {
 	'use strict'
 
@@ -50,7 +50,7 @@ Nothing special here: at every second, we call the `colorClock` function. This f
 
 Displaying the current time is probably the easiest part of the exercise. Although I must say I got helped by a [StackOverflow answer](https://stackoverflow.com/a/12612778).
 
-```javascript
+```js
 function colorClock() {
 	// …
 
@@ -69,7 +69,7 @@ Let’s tackle the actual challenge. My thought process was as follow. Our time 
 
 Alright. The first thing we need is to compute our color channels based on the current time. To do so, we need a `RGBFromDate` function that takes an instance of `Date`, and returns an array of 3 channels expressed as (rounded) numbers between 0 and 255.
 
-```javascript
+```js
 function RGBFromDate(date) {
 	return [
 		(date.getHours() / 24) * 255,
@@ -83,7 +83,7 @@ function RGBFromDate(date) {
 
 At this point, we have everything we need to apply the color to the body.
 
-```javascript
+```js
 var date = new Date()
 var channels = RGBFromDate(date)
 
@@ -94,7 +94,7 @@ document.body.style.backgroundColor = 'rgb(' + channels.join(',') + ')'
 
 Last but not least, we need to find a way to change the font color if the background color is too dark or too light, so the text remains readable at all time. To do this, we have to compute the [luminance](https://en.wikipedia.org/wiki/Relative_luminance) of a color. If it is higher than `.7`, then the color is very bright and text should be black.
 
-```javascript
+```js
 function colorLuminance(red, green, blue) {
 	return (0.299 * red + 0.587 * green + 0.114 * blue) / 256
 }
@@ -110,7 +110,7 @@ document.body.style.color = colorFromRGB.apply(this, channels)
 
 That’s it. Here is the final code:
 
-```javascript
+```js
 ;(function () {
 	'use strict'
 

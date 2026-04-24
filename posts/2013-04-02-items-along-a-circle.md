@@ -140,7 +140,7 @@ The main problem with this technic is that **IE8- doesn’t support pseudo-selec
 
 The first thing is easily fixed either with a plugin like [Selectivizr](https://selectivizr.com/) to enable support for pseudo-selectors on old browsers or a little bit of JavaScript to add a numbered class to each child of the parent. Here is how I did it (with jQuery):
 
-```javascript
+```js
 var $items = $(".parent").children();
 
 $items.each(function () {

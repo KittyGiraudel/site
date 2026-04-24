@@ -33,7 +33,7 @@ If there is one thing I do like with Sublime Text, it is the amount of options. 
 
 Most options default value make sense although there are some of theme that you might want to change. Here is my own configuration file (omitting a few boring things), annotated with comments to explain each choice:
 
-```javascript
+```js
 {
 	// Bold folder labels in the sidebar
 	// so they are distinguishable from regular files
@@ -122,7 +122,7 @@ Last time I had a fresh install of Sublime Text, I realized how poor the default
 
 Paweł Grzybek, in the comments, asked for a spell checking feature. I don’t use it myself, but I know that Sublime Text does support spell checking through 2 options:
 
-```javascript
+```js
 "spell_check": true,
 "dictionary": "Packages/Language - English/en_US.dic"
 ```

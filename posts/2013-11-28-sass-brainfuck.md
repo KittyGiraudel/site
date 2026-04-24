@@ -64,7 +64,7 @@ $value: ();
 
 If `()` was treated as a falsy value, the condition wouldn’t match and the 4th element of `$list` wouldn’t be an empty list. This is how it works in JavaScript:
 
-```javascript
+```js
 var array = ['a', 'b', 'c']
 var value = []
 
@@ -161,7 +161,7 @@ Since Sass 3.3, this is no longer a bug. It has been [fixed](https://sass-lang.c
 
 You all know what a ternary is, right? Kind of a one-line `if`/`else` statement. It’s pretty cool when you need to assign a variable differently depending on a condition. In JavaScript, you’d write something like this:
 
-```javascript
+```js
 var whatever = condition ? true : false
 ```
 

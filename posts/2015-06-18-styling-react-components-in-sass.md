@@ -131,7 +131,7 @@ I’m using a very thin naming system for component selectors; that is, I’m on
 
 It goes without saying that we will be referencing styles in our React components using **classes**. There is a very useful, framework-independent utility for conditionally assigning classes by Jed Watson called [classnames](https://github.com/JedWatson/classnames), which is often used in React:
 
-```javascript
+```js
 import React from 'react'
 import classnames from 'classnames'
 
@@ -167,7 +167,7 @@ The simple convention here is that the (prefixed) component class (`sd-date` in 
 
 Depending on your build system, there are a number of ways that a stylesheet can be exported and used within a project. Sass files can be compiled and bundled with Webpack (or Browserify), in which case you would require it within your `index.js` file…
 
-```javascript
+```js
 import React from 'react'
 
 import Datepicker from './components/datepicker'

@@ -35,7 +35,7 @@ It would have been a pain in the ass to work out such a “complicated” layout
 
 The idea is quite simple: you define a container that will draw boundaries for the layout and Isotope will move all its child elements according to the available room.
 
-```javascript
+```js
 $container.isotope({
 	itemSelector: ".gallery__item",
 	masonry: {
