@@ -1,9 +1,3 @@
-@font-face {
-  font-family: "MiddleDot";
-  src: local("Times New Roman");
-  unicode-range: U+00B7;
-}
-
 :root {
   color-scheme: light dark;
 
@@ -65,8 +59,7 @@ html {
 body {
   margin: 0; /* 1 */
   font:
-    1.25rem / 1.5 "MiddleDot",
-    "Baskerville",
+    1.25rem / 1.5 "Baskerville",
     "Lucida Bright",
     "Perpetua",
     "Times",
