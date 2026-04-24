@@ -20,7 +20,7 @@ function metaName($, name) {
  * @param {string} property
  */
 function metaProperty($, property) {
-  return $(`head meta[property="${property}"]`).attr('content')
+  return $(`meta[property="${property}"]`).attr('content')
 }
 
 /**
@@ -77,9 +77,10 @@ function assertHeadMetadata($, siteUrl, spec) {
   assert.match(viewport, /initial-scale=1/)
   assert.equal(metaName($, 'theme-color'), '#dd7eb4')
 
-  const shortcutIcon = $('head link[rel="shortcut icon"]')
-  assert.equal(shortcutIcon.length, 1, 'head should have exactly one shortcut icon')
-  assert.equal(shortcutIcon.attr('href'), '/assets/images/favicon.png')
+  const shortcutIcon = $('head link[rel="icon"]')
+  assert.equal(shortcutIcon.length, 2, 'head should have two icons (ico + png)')
+  assert.equal(shortcutIcon.first().attr('href'), '/favicon.ico')
+  assert.equal(shortcutIcon.last().attr('href'), '/assets/images/favicon.png')
 
   const appleTouch = $('head link[rel="apple-touch-icon"]')
   assert.equal(appleTouch.length, 1, 'head should have exactly one apple-touch-icon')
@@ -133,8 +134,8 @@ function assertHeadMetadata($, siteUrl, spec) {
   assert.equal(metaName($, 'twitter:title'), spec.title)
 
   // Structured data
-  const jsonLdScripts = $('head script[type="application/ld+json"]')
-  assert.ok(jsonLdScripts.length >= 2, 'head should include structured data scripts')
+  const jsonLdScripts = $('script[type="application/ld+json"]')
+  assert.ok(jsonLdScripts.length >= 2, 'should include structured data scripts')
   const jsonLdContent = jsonLdScripts
     .map((_, element) => $(element).text())
     .get()
@@ -262,7 +263,7 @@ test('page head: regular post', async () => {
   }
 
   let blogPosting = null
-  $('head script[type="application/ld+json"]').each((_, el) => {
+  $('script[type="application/ld+json"]').each((_, el) => {
     try {
       const data = JSON.parse($(el).text())
       if (data['@type'] === 'BlogPosting') blogPosting = data
