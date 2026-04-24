@@ -10,8 +10,6 @@
   Optional:
   - layout: The layout of the page
   - page_image: The image of the page
-  - page_date: The date of the page
-  - page_update_date: The update date of the page
   - tags: Tag/keyword list for the page
   - generator: The generator of the page
   - site_same_as: List of profile URLs for Person schema
@@ -81,7 +79,7 @@ http://ogp.me/ns/article#">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-é
+
   <!-- Manifest -->
   <link rel="manifest" href="/manifest.json">
 
@@ -92,20 +90,6 @@ http://ogp.me/ns/article#">
   <meta property="og:description" content="{{ page_description }}" />
   <meta property="og:site_name" content="kittygiraudel.com" />
   <meta property="og:image" content="{{ page_image_url }}">
-
-  {% if layout == 'post' %}
-    <!-- Article tags -->
-    <meta property="article:author" content="{{ page_author }}" />
-    {% if page_date %}
-      <meta property="article:published_time" content="{{ page_date | date_to_rfc3339 }}" />
-    {% endif %}
-    {% if page_update_date %}
-      <meta property="article:modified_time" content="{{ page_update_date | date_to_rfc3339 }}" /> 
-    {% endif %}
-    {% for tag in tags %}
-      <meta property="article:tag" content="{{ tag }}" />
-    {% endfor %}
-  {% endif %}
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
@@ -135,37 +119,6 @@ http://ogp.me/ns/article#">
       "sameAs": {{ site_same_as | jsonify }}{% endif %}
     }
   </script>
-  {% if layout == 'post' %}
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": {{ title | jsonify }},
-        "description": {{ page_description | jsonify }},
-        "author": {
-          "@type": "Person",
-          "name": {{ page_author | jsonify }}
-        },
-        "publisher": {
-          "@type": "Person",
-          "name": {{ site_author | jsonify }},
-          "url": {{ site_url | jsonify }}
-        },
-        {% if page_date -%}
-        "datePublished": {{ page_date | date_to_rfc3339 | jsonify }},
-        {%- endif %}
-        {% if page_update_date -%}
-        "dateModified": {{ page_update_date | date_to_rfc3339 | jsonify }},
-        {%- endif %}
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": {{ page_url | jsonify }}
-        },
-        "url": {{ page_url | jsonify }},
-        "image": {{ page_image_url | jsonify }}
-      }
-    </script>
-  {% endif %}
   
   {% render "script.liquid",
     inline: inline_assets,

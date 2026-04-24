@@ -11,7 +11,7 @@
 
 {% capture rest %}
 {%- if guest %}, by <span itemprop="author" id="post-author">{{ guest }}</span>{% endif %}
-<span class="Fleuron" aria-hidden="true">❦</span> {% if reading_time %}<span itemprop="timeRequired" id="post-reading-time" title="Estimated read time">{{ reading_time }}</span>{% endif %}
+<span class="Fleuron" aria-hidden="true">❦</span> {% if reading_time %}<span itemprop="timeRequired" id="post-reading-time" title="Estimated read time">{{ reading_time.display }}</span>{% endif %}
 {% endcapture %}
 
 <p class="PostMetadata">

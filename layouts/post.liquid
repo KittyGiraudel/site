@@ -22,8 +22,44 @@ layout: default
 %}
 
 <link rel="alternate" type="text/markdown" href="{{ page.url }}index.md" data-helmet>
+<meta property="article:author" content="{{ guest | default: site.author }}" data-helmet>
+{% if creation_date %}<meta property="article:published_time" content="{{ creation_date | date_to_rfc3339 }}" data-helmet>{% endif %}
+{% if update_date %}<meta property="article:modified_time" content="{{ update_date | date_to_rfc3339 }}" data-helmet>{% endif %}
+{% for tag in tags %}<meta property="article:tag" content="{{ tag }}" data-helmet>{% endfor %}
 
 {% assign reading_time = content | strip_html | reading_time %}
+{% assign post_image = image | default: '/assets/images/favicon-192.jpg' %}
+{% if post_image contains '://' %}
+  {% assign post_image_url = post_image %}
+{% else %}
+  {% assign post_image_url = post_image | prepend: site.url %}
+{% endif %}
+
+<script type="application/ld+json" data-helmet>{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | jsonify }},
+  "description": {{ description | default: site.description | strip_html | strip_newlines | truncate: 200 | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ guest | default: site.author | jsonify }}
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": {{ site.author | jsonify }},
+    "url": {{ site.url | jsonify }}
+  },
+  {% if creation_date %}"datePublished": "{{ creation_date | date_to_rfc3339 }}",{% endif %}
+  {% if update_date %}"dateModified": "{{ update_date | date_to_rfc3339 }}",{% endif %}
+  {% if reading_time.iso %}"timeRequired": {{ reading_time.iso | jsonify }},{% endif %}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ page.url | prepend: site.url | jsonify }}
+  },
+  "url": {{ page.url | prepend: site.url | jsonify }},
+  "image": {{ post_image_url | jsonify }}
+}</script>
+
 {% if toc != false %}
   {% assign toc_items = content | table_of_contents %}
 {% endif %}

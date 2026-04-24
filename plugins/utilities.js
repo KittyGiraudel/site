@@ -80,9 +80,10 @@ function time(value, itemprop, id) {
 }
 
 function readingTime(content) {
-  return content
-    ? `${Math.ceil((content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length / 300)}–minute read`
-    : ''
+  if (!content) return null
+  const words = (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length
+  const minutes = Math.ceil(words / 300)
+  return { display: `${minutes}–minute read`, iso: `PT${minutes}M` }
 }
 
 function stripHtmlEntities(content) {
