@@ -29,6 +29,14 @@ layout: default
 
 {% assign reading_time = content | strip_html | reading_time %}
 {% assign post_image = image | default: '/assets/images/favicon-192.jpg' %}
+{% assign created_date_str = creation_date | date: "%Y-%m-%d" %}
+{% assign updated_date_str = update_date | date: "%Y-%m-%d" %}
+
+{% assign was_updated = updated_date_str and updated_date_str != created_date_str %}
+{% assign itemref = "post-title post-date-published post-reading-time" %}
+{% if was_updated %}{% assign itemref = itemref | append: " post-date-modified" %}{% endif %}
+{% if guest %}{% assign itemref = itemref | append: " post-author" %}{% endif %}
+
 {% if post_image contains '://' %}
   {% assign post_image_url = post_image %}
 {% else %}
@@ -76,7 +84,7 @@ layout: default
 
 <main class="Main" role="main" id="main">
   <div class="Container">
-    <article itemscope itemtype="https://schema.org/Article" itemref="post-title post-date-published post-date-modified post-author post-reading-time" class="Post">
+    <article itemscope itemtype="https://schema.org/Article" itemref="{{ itemref }}" class="Post">
       {% if deprecated %}
         {% render "post_deprecated.liquid", date: creation_date %}
       {% endif %}
