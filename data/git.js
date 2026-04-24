@@ -1,8 +1,26 @@
 import { execSync } from 'node:child_process'
 
+let cache = {
+  head: null,
+  dates: {},
+}
+
+function getHead() {
+  return execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim()
+}
+
 // Build a file path to `Date` map from one `git log` call
 // See: https://meiert.com/blog/eleventy-git-last-modified/
 export default function () {
+  let head = null
+  try {
+    head = getHead()
+    if (cache.head === head) return cache.dates
+  } catch {
+    // Git unavailable or not a repo
+    return cache.dates
+  }
+
   const dates = {}
   try {
     // --diff-filter=M captures only genuine edits, ignoring renames/additions/deletions.
@@ -34,5 +52,7 @@ export default function () {
   } catch {
     // Git unavailable or not a repo
   }
+
+  cache = { head, dates }
   return dates
 }
