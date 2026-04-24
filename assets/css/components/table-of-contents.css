@@ -56,17 +56,17 @@
 .TableOfContents__list {
   list-style: none;
   margin: 0;
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .TableOfContents__item {
-  margin: var(--vb-quarter) 0;
+  margin-block: var(--vb-quarter);
   line-height: 1.1;
 }
 
 .TableOfContents__list--sublist {
-  margin-top: var(--vb-sixth);
-  margin-left: 1.25rem;
+  margin-block-start: var(--vb-sixth);
+  margin-inline-start: 1.25rem;
 }
 
 .TableOfContents__list--sublist .TableOfContents__item {
@@ -110,7 +110,7 @@
   font-family: monospace;
   display: inline-block;
   transition: transform 0.2s ease-in-out;
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 .TableOfContents[open] .TableOfContents__title::after {

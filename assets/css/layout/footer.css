@@ -1,6 +1,6 @@
 .Footer {
   position: relative;
-  padding: var(--vb) 0;
+  padding-block: var(--vb);
   background-image: linear-gradient(
     to right,
     light-dark(rgb(238 244 248), rgb(54 60 63)),
@@ -11,12 +11,12 @@
 .Footer__inner {
   display: flex;
   font-size: 80%;
-  margin: 0 calc(var(--vb-thirds) * -1);
+  margin-inline: calc(var(--vb-thirds) * -1);
 }
 
 .Footer__left {
   width: 60%;
-  padding: 0 1em;
+  padding-inline: 1em;
 }
 
 .Footer__colophon {
@@ -26,7 +26,7 @@
 
 .Footer__right {
   width: 40%;
-  padding: 0 1em;
+  padding-inline: 1em;
 }
 
 .Footer__list {
@@ -40,7 +40,7 @@
 
 @media (max-width: 768px) {
   .Footer {
-    padding: var(--vb-half) 0;
+    padding-block: var(--vb-half);
   }
 
   .Footer__inner {
@@ -55,17 +55,17 @@
   .Footer__list {
     text-align: center;
     padding: 0;
-    margin: 0 0 var(--vb-thirds);
+    margin-block-end: var(--vb-thirds);
   }
 
   .Footer__list > li {
     display: inline-block;
-    margin: var(--vb-sixth) 0;
+    margin-block: var(--vb-sixth);
     list-style: none;
   }
 
   .Footer__list > li:not(:last-of-type)::after {
-    margin: 0 0.5ch;
+    margin-inline: 0.5ch;
     content: "·";
     color: var(--pink);
     font-family: monospace;

@@ -5,18 +5,17 @@
 }
 
 .RecipeSteps > li {
-  margin-bottom: var(--vb);
+  margin-block-end: var(--vb);
   text-align: start;
   position: relative;
   counter-increment: steps;
-  padding-left: 1.75em;
+  padding-inline-start: 1.75em;
 }
 
 .RecipeSteps > li::before {
   content: counter(steps);
   position: absolute;
   top: 0;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -6,7 +6,7 @@
   --background-color: light-dark(#f3f8fc, #303132);
   --gradient-start: var(--blue);
   --gradient-end: var(--pink);
-  margin: var(--vb) 0;
+  margin-block: var(--vb);
   color: light-dark(#1e293b, #f1f5f9);
   padding: 0.75em 1.5em;
   position: relative; /* 1 */
@@ -73,12 +73,12 @@
  * 1. Prevent an odd gap when the first child of the info has a top margin
  */
 .Callout > :first-child {
-  margin-top: 0; /* 1 */
+  margin-block-start: 0; /* 1 */
 }
 
 /**
  * 1. Prevent an odd gap when the last child of the info has a bottom margin
  */
 .Callout > :last-child {
-  margin-bottom: 0; /* 1 */
+  margin-block-end: 0; /* 1 */
 }

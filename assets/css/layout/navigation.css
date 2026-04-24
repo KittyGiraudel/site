@@ -88,7 +88,7 @@
  *    thing after that is pushed to the right on large screens.
  */
 .Navigation:not([popover]) .Navigation__item:nth-child(2) /* 1 */ {
-  margin-right: auto;
+  margin-inline-end: auto;
 }
 
 .Navigation__item[aria-current] {

@@ -1,8 +1,7 @@
 /* Note: this document doesn’t use the --vb variable on purpose to be more flexible. */
 
 .Resume__header {
-  margin-top: -0.5em;
-  margin-bottom: 2em;
+  margin-block: -0.5em 2em;
   color: #666;
 }
 
@@ -33,36 +32,35 @@
 .Resume__section {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
+  margin-block-end: 2em;
 }
 
 .Resume__section > h2 {
   font-style: italic;
   font-weight: bold;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-block: 0;
 }
 
 .Resume__section > div {
-  padding-top: 0.9em;
+  padding-block-start: 0.9em;
 }
 
 .Resume__section > div > :last-child {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 .Resume__section > div > :first-child {
-  margin-top: 0;
+  margin-block-start: 0;
 }
 
 .Resume__section h3 {
   font-size: 90%;
   break-after: avoid;
-  margin-bottom: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 .Resume__section h3 > span {
-  margin-left: auto;
+  margin-inline-start: auto;
   opacity: 0.8;
   font-weight: normal;
   display: block;
@@ -70,11 +68,11 @@
 }
 
 .Resume__section h3 + p {
-  margin-top: 0;
+  margin-block-start: 0;
 }
 
 .Resume__section li {
-  margin: 0.5em 0;
+  margin-block: 0.5em;
 }
 
 @media (min-width: 767px), print {
@@ -87,12 +85,12 @@
   }
 
   .Resume__section > h2 {
-    margin-top: revert;
-    padding-right: 1.5em;
+    margin-block-start: revert;
+    padding-inline-end: 1.5em;
     font-size: 100%;
     text-align: right;
     border-right: 1px solid var(--pink);
-    margin-right: 1.5em;
+    margin-inline-end: 1.5em;
     flex: 0 0 8em;
   }
 
@@ -102,7 +100,7 @@
 
   .Resume__section h3 > span {
     font-size: 80%;
-    padding-left: 1em;
+    padding-inline-start: 1em;
     display: inline-block;
     text-align: right;
     white-space: nowrap;
@@ -118,7 +116,7 @@
   }
 
   .Resume__header {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 
   .Resume__subline a {
@@ -133,14 +131,14 @@
   }
 
   .Resume__section > div > :has(+ .NoPrint:last-child) {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   .Resume__section h3 {
-    margin-bottom: 0.25em;
+    margin-block-end: 0.25em;
   }
 
   .Resume__section li {
-    margin: 0.25em 0;
+    margin-block: 0.25em;
   }
 }

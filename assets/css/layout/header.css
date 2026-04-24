@@ -1,11 +1,9 @@
 .Header {
-  margin-bottom: var(--vb-third);
-  margin-top: var(--vb);
+  margin-block: var(--vb) var(--vb-third);
 }
 
 @media (min-width: 768px) {
   .Header {
-    margin-bottom: 0;
-    margin-top: var(--vb-double);
+    margin-block: var(--vb-double) 0;
   }
 }

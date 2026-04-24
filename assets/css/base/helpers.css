@@ -5,16 +5,14 @@
  */
 .Container {
   max-width: 80ch; /* 1 */
-  padding-left: 1em; /* 2 */
-  padding-right: 1em; /* 2 */
+  padding-inline: 1em; /* 2 */
   width: 100%; /* 1 */
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 @media (min-width: 768px) {
   .Container {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-inline: 2em;
   }
 }
 
@@ -57,5 +55,5 @@
   transform: scale(0.75);
   position: relative;
   opacity: 0.8;
-  margin: 0 0.25ch;
+  margin-inline: 0.25ch;
 }

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 90%;
-  margin-top: var(--vb-double);
+  margin-block-start: var(--vb-double);
   position: relative;
 }
 
@@ -20,7 +20,7 @@
 .CollectionNavigation__item {
   max-width: 50%;
   position: relative;
-  margin-top: var(--vb);
+  margin-block-start: var(--vb);
   line-height: 1.1;
 }
 
@@ -38,12 +38,12 @@
 
 .CollectionNavigation__item--previous::before {
   right: 100%;
-  margin-right: 1ch;
+  margin-inline-end: 1ch;
 }
 
 .CollectionNavigation__item--next::after {
   left: 100%;
-  margin-left: 1ch;
+  margin-inline-start: 1ch;
 }
 
 .CollectionNavigation--end {
@@ -52,7 +52,7 @@
 
 .CollectionNavigation__link-container {
   display: block;
-  margin-top: var(--vb-third);
+  margin-block-start: var(--vb-third);
 }
 
 @media (min-width: 768px) {
@@ -67,6 +67,6 @@
 
 @media (max-width: 768px) {
   .CollectionNavigation {
-    margin-bottom: var(--vb-double);
+    margin-block-end: var(--vb-double);
   }
 }

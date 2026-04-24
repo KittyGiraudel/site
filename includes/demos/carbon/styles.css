@@ -39,7 +39,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 0.5rem;
+  margin-block-end: 0.5rem;
   position: relative;
   z-index: 1;
 }
@@ -59,7 +59,7 @@
 
   .chart-header > div:last-child {
     align-items: flex-start;
-    margin-top: var(--vb-third);
+    margin-block-start: var(--vb-third);
   }
 }
 
@@ -79,13 +79,13 @@
   display: grid;
   gap: var(--vb-half);
   align-content: flex-start;
-  margin-bottom: var(--vb-half);
+  margin-block-end: var(--vb-half);
 }
 
 .summary-title {
   font-size: 0.9rem;
   color: var(--viz-fg);
-  margin-bottom: 0.2rem;
+  margin-block-end: 0.2rem;
 }
 
 .summary-grid {
@@ -111,7 +111,7 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin: 0;
-  margin-bottom: 0.15rem;
+  margin-block-end: 0.15rem;
 }
 
 .summary-value {
@@ -125,7 +125,7 @@
   display: inline-flex;
   gap: 0.35rem;
   align-items: center;
-  margin-top: 0.25rem;
+  margin-block-start: 0.25rem;
   border: 0;
   padding: 0;
 }
@@ -162,7 +162,7 @@
 
 @media (max-width: 600px) {
   .range-toggle {
-    margin-top: var(--vb-1\/3);
+    margin-block-start: var(--vb-1\/3);
     flex-wrap: wrap;
   }
 }
@@ -201,7 +201,7 @@
 }
 
 .estimates-toggle {
-  margin-top: 0.25rem;
+  margin-block-start: 0.25rem;
   font-size: 0.75rem;
   color: var(--viz-muted);
   display: inline-flex;

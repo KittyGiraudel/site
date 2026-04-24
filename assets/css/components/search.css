@@ -1,13 +1,13 @@
 .Search {
   clear: both;
-  margin-top: var(--vb-double);
+  margin-block-start: var(--vb-double);
 }
 
 .Search__input {
   width: 100%;
   display: block;
-  padding: 0.5em 0;
-  margin-bottom: var(--vb);
+  padding-block: 0.5em;
+  margin-block-end: var(--vb);
   color: inherit;
   border: 0;
   font: inherit;

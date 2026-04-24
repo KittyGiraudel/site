@@ -18,7 +18,7 @@ h3 + .ha {
 
 .ha-placeholder {
   opacity: 0.1;
-  margin-left: 0.5ch;
+  margin-inline-start: 0.5ch;
 }
 
 /**
@@ -27,7 +27,7 @@ h3 + .ha {
 .ha,
 .ha-placeholder {
   display: inline-block;
-  padding: 0 0.1em;
+  padding-inline: 0.1em;
   -webkit-user-select: none; /* 1 */
   user-select: none; /* 1 */
 }

@@ -1,5 +1,5 @@
 .Header--post {
-  margin-bottom: var(--vb-1\.5);
+  margin-block-end: var(--vb-1\.5);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -9,7 +9,7 @@
 
 @media (max-width: 768px) {
   .Header--post {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 }
 
@@ -36,8 +36,8 @@
   width: 100%;
   height: 2px;
   border-radius: 2px;
-  margin-left: 0;
-  margin-top: var(--vb-thirds);
+  margin-inline-start: 0;
+  margin-block-start: var(--vb-thirds);
   background-color: var(--blue);
   background-image: linear-gradient(to right, var(--pink), var(--blue));
 }
@@ -63,8 +63,8 @@
   opacity: 0.5;
   width: 0.75em;
   height: 0.75em;
-  margin-left: 0.5ch;
-  margin-right: 0.5ch;
+  margin-inline-start: 0.5ch;
+  margin-inline-end: 0.5ch;
   border-bottom-left-radius: 0.5em;
   corner-shape: squircle;
 }

@@ -1,15 +1,15 @@
 .Project__header {
-  margin-bottom: var(--vb);
+  margin-block-end: var(--vb);
 }
 
 .Project__description {
-  margin: 0 0 var(--vb-thirds);
+  margin-block-end: var(--vb-thirds);
   font-size: 110%;
   text-wrap: balance;
 }
 
 .Project__tags .Tags {
-  margin-bottom: var(--vb-third);
+  margin-block-end: var(--vb-third);
   gap: 0.5em;
 }
 
@@ -34,6 +34,5 @@
 }
 
 .Project__content {
-  margin-top: var(--vb);
-  margin-bottom: var(--vb-double);
+  margin-block: var(--vb) var(--vb-double);
 }

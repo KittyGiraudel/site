@@ -1,5 +1,5 @@
 .Footnotes {
-  margin: var(--vb) 0;
+  margin-block: var(--vb);
   padding: 0.75em 1.5em;
   position: relative;
   background-color: light-dark(#f6f4f9, #303132);
@@ -50,7 +50,7 @@
 }
 
 .Footnotes__list-item:not(:last-child) {
-  margin: var(--vb-third) 0;
+  margin-block: var(--vb-third);
 }
 
 .Footnotes__ref[role="doc-noteref"] {
@@ -63,7 +63,7 @@
   counter-increment: footnotes;
   vertical-align: super;
   font-size: 60%;
-  margin-left: 2px;
+  margin-inline-start: 2px;
   color: light-dark(var(--blue), var(--pink));
   text-decoration: underline;
   cursor: pointer;
