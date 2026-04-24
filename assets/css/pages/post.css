@@ -68,3 +68,28 @@
   border-bottom-left-radius: 0.5em;
   corner-shape: squircle;
 }
+
+.Post :where(ul, ol):not([class]) {
+  padding-inline-start: 0;
+}
+
+.Post ol {
+  counter-reset: list-item;
+}
+
+.Post li:not([class]) {
+  padding-inline-start: 2rem;
+  list-style-type: none;
+}
+
+.Post li:not([class])::before {
+  content: "— ";
+  position: absolute;
+  margin-inline-start: -2rem;
+  width: 2rem;
+}
+
+.Post ol li:not([class])::before {
+  content: counter(list-item) ".";
+  font-variant-numeric: tabular-nums;
+}
