@@ -76,7 +76,7 @@
   background-size: inherit;
 }
 
-.Footnotes__list-item::before {
+.Footnotes__list-item::after {
   inset: 0;
   left: -1.5em;
   position: absolute;
@@ -88,7 +88,7 @@
   animation-fill-mode: forwards;
 }
 
-.Footnotes__list-item:target::before {
+.Footnotes__list-item:target::after {
   content: "";
 }
 
