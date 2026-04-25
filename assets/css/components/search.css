@@ -11,7 +11,7 @@
   color: inherit;
   border: 0;
   font: inherit;
-  border-bottom: 2px solid var(--blue);
+  border-block-end: 2px solid var(--blue);
   -webkit-appearance: textfield;
   outline-offset: -2px;
   background-color: light-dark(#fff, #222);

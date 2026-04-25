@@ -12,13 +12,13 @@
   .StatsSection__table {
     width: calc(100% + var(--margin-offset) * 2);
     padding: 1em var(--margin-offset);
-    left: calc(var(--margin-offset) * -1);
+    inset-inline-start: calc(var(--margin-offset) * -1);
   }
 
   .StatsSection__table table {
     position: static;
     width: 100%;
-    left: 0;
+    inset-inline-start: 0;
   }
 }
 

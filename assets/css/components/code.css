@@ -31,7 +31,7 @@ pre {
   :not(aside) > pre {
     width: calc(100% + var(--margin-offset) * 2); /* 1 */
     padding: 1em var(--margin-offset); /* 1 */
-    left: calc(var(--margin-offset) * -1); /* 1 */
+    inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
   }
 }
 
@@ -42,13 +42,19 @@ code {
   font-size: 80%;
 }
 
-/**
- * 1. Set the tab size based on the container width.
- *    See: https://blog.kizu.dev/responsive-tab-size/
- */
 pre code {
   display: block;
-  tab-size: round(up, 100cqi / 20ch, 2); /* 1 */
+  tab-size: 4;
+}
+
+@supports (z-index: calc(1px / 1px)) {
+  /**
+   * 1. Set the tab size based on the container width.
+   *    See: https://blog.kizu.dev/responsive-tab-size/
+   */
+  pre code {
+    tab-size: round(up, 100cqi / 20ch, 2); /* 1 */
+  }
 }
 
 :not(pre) > code {

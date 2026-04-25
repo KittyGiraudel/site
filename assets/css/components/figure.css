@@ -21,11 +21,11 @@
 @media (min-width: 1400px) {
   .Figure figcaption {
     width: 100%;
-    max-width: 250px;
+    max-inline-size: 250px;
     position: absolute;
-    right: 100%;
-    top: 0.5em;
-    text-align: right;
+    inset-inline-end: 100%;
+    inset-block-start: 0.5em;
+    text-align: end;
     padding-inline-end: 2.5em;
   }
 

@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const linkRect = link.getBoundingClientRect()
 
       navigation.style.setProperty(
-        '--navigation-notch-left',
+        '--navigation-notch-start',
         `${Math.round(linkRect.left - navigationRect.left)}px`,
       )
       navigation.style.setProperty('--navigation-notch-width', `${Math.round(linkRect.width)}px`)

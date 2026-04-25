@@ -1,7 +1,7 @@
 .ThemeButton {
   position: fixed;
-  bottom: 0.5em;
-  right: 0.5em;
+  inset-block-end: 0.5em;
+  inset-inline-end: 0.5em;
 }
 
 .ThemeButton[aria-pressed="false"] > .ThemeButton__icon:not([data-theme="light"]),
@@ -12,14 +12,14 @@
 
 @media (min-width: 1024px) {
   .ThemeButton {
-    bottom: 1em;
-    right: 1em;
+    inset-block-end: 1em;
+    inset-inline-end: 1em;
   }
 }
 
 @media screen and (min-width: 1556px) {
   .ThemeButton {
-    right: 1em;
-    left: auto;
+    inset-inline-end: 1em;
+    inset-inline-start: auto;
   }
 }

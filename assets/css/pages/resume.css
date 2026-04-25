@@ -89,7 +89,7 @@
     padding-inline-end: 1.5em;
     font-size: 100%;
     text-align: right;
-    border-right: 1px solid var(--pink);
+    border-inline-end: 1px solid var(--pink);
     margin-inline-end: 1.5em;
     flex: 0 0 8em;
   }

@@ -33,8 +33,8 @@ The following styles only included the required declarations for the ribbon posi
  */
 .ribbon {
 	position: absolute; /* 1 */
-	top: 0; /* 1 */
-	right: 0; /* 1 */
+	inset-block-start: 0; /* 1 */
+	inset-inline-end: 0; /* 1 */
 	padding: 0 2em; /* 2 */
 	text-align: center; /* 3 */
 	transform: translateY(-100%) rotate(90deg) translateX(70.71067811865476%)

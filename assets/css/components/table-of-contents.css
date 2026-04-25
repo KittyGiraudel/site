@@ -5,8 +5,8 @@
 .TableOfContents {
   position: relative; /* 1 */
   width: fit-content;
-  max-width: 300px;
-  min-width: 250px;
+  max-inline-size: 300px;
+  min-inline-size: 250px;
   font-size: 80%; /* 2 */
   z-index: 100;
 }
@@ -17,7 +17,7 @@
    */
   .TableOfContents {
     width: 100%; /* 1 */
-    max-width: none; /* 1 */
+    max-inline-size: none; /* 1 */
   }
 }
 
@@ -26,7 +26,7 @@
  * 2. Make the title appear interactive.
  * 3. Prevent a weird text selection when double-clicking the title.
  * 4. Remove the default little triangle from the summary.
- * 5. Use the flex layout to push the custom arrow to the right.
+ * 5. Use the flex layout to push the custom arrow to the inline end.
  */
 .TableOfContents__title {
   opacity: 0.8; /* 1 */
@@ -77,7 +77,7 @@
   opacity: 0;
   background-color: light-dark(#f6f4f9, #303132);
   padding: 0.75em 1.25em;
-  top: calc(100% - 2px);
+  inset-block-start: calc(100% - 2px);
   border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
   border-top-width: 0;
   border-radius: 0 0 1em 1em;
@@ -90,8 +90,8 @@
 @media (min-width: 768px) {
   .TableOfContents::details-content {
     position: absolute;
-    left: 0;
-    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
     border-top-width: 2px;
   }
 }
@@ -101,8 +101,8 @@
 }
 
 .TableOfContents[open] .TableOfContents__title {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
 }
 
 .TableOfContents .TableOfContents__title::after {

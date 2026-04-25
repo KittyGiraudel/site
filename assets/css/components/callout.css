@@ -30,8 +30,8 @@
   font-weight: normal;
   line-height: 1;
   z-index: 1;
-  bottom: 100%;
-  left: 0;
+  inset-block-end: 100%;
+  inset-inline-start: 0;
   transform: translate(-10%, 69%) rotate(-30deg);
   color: var(--blue);
 }
@@ -65,7 +65,7 @@
   .Callout {
     width: calc(100% + var(--margin-offset) * 2); /* 1 */
     padding: 1em var(--margin-offset); /* 1 */
-    left: calc(var(--margin-offset) * -1); /* 1 */
+    inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
   }
 }
 

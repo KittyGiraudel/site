@@ -8,17 +8,17 @@ table {
   table {
     width: calc(100% + var(--margin-offset) * 2);
     padding: 1em var(--margin-offset);
-    left: calc(var(--margin-offset) * -1);
+    inset-inline-start: calc(var(--margin-offset) * -1);
     position: relative;
   }
 }
 
 thead {
-  border-bottom: 2px solid;
+  border-block-end: 2px solid;
 }
 
 tr + tr {
-  border-top: 1px solid var(--pink);
+  border-block-start: 1px solid var(--pink);
 }
 
 td,
@@ -27,6 +27,6 @@ th {
 }
 
 th {
-  text-align: left;
+  text-align: start;
   font-weight: bold;
 }

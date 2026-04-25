@@ -8,7 +8,7 @@
   padding-inline: 1em;
   position: relative; /* 2 */
 
-  --navigation-notch-left: 0px;
+  --navigation-notch-start: 0px;
   --navigation-notch-width: 0px;
   --navigation-notch-opacity: 0;
   --navigation-notch-offset: 4px;
@@ -22,9 +22,9 @@
 .Navigation:not([popover])::after {
   content: ""; /* 1 */
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  inset-block-start: 100%;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
   height: var(--underline-height);
   background-image: linear-gradient(to right, var(--blue), var(--pink));
   z-index: 1;
@@ -39,12 +39,12 @@
 .Navigation:not([popover])::before {
   content: ""; /* 1 */
   position: absolute;
-  top: calc(100% - 1px);
-  left: 0;
+  inset-block-start: calc(100% - 1px);
+  inset-inline-start: 0;
   height: calc(var(--underline-height) + 2px); /* 2 */
   width: calc(var(--navigation-notch-width) + var(--navigation-notch-offset) * 2);
   background-color: light-dark(#fff, #222); /* 3 */
-  transform: translateX(calc(var(--navigation-notch-left) - var(--navigation-notch-offset)));
+  transform: translateX(calc(var(--navigation-notch-start) - var(--navigation-notch-offset)));
   opacity: var(--navigation-notch-opacity);
   transition:
     transform var(--navigation-notch-transition-duration) ease,
@@ -88,7 +88,7 @@
  *    thing after that is pushed to the right on large screens.
  */
 .Navigation:not([popover]) .Navigation__item:nth-child(2) /* 1 */ {
-  margin-right: auto;
+  margin-inline-end: auto;
 }
 
 .Navigation__link--highlight::before {
@@ -124,8 +124,8 @@
   height: 1px;
   width: 1px;
   position: absolute;
-  top: 1em;
-  left: 1em;
+  inset-block-start: 1em;
+  inset-inline-start: 1em;
 }
 
 .Navigation__item--skip-link:focus-within {
@@ -179,8 +179,8 @@ button.Navigation__link:focus-visible {
 .OpenMenuButton.OpenMenuButton /* 1 */ {
   display: none;
   position: fixed;
-  top: 0.5em;
-  right: 0.5em;
+  inset-block-start: 0.5em;
+  inset-inline-end: 0.5em;
 }
 
 /**
@@ -188,9 +188,9 @@ button.Navigation__link:focus-visible {
  * 2. CSS trick to have a gradient border *with* rounded corners.
  */
 .Navigation[popover] {
-  top: 0.5em; /* 1 */
-  right: 0.5em; /* 1 */
-  left: auto; /* 1 */
+  inset-block-start: 0.5em; /* 1 */
+  inset-inline-end: 0.5em; /* 1 */
+  inset-inline-start: auto; /* 1 */
   margin: 0; /* 1 */
   padding: 1em 1.25em;
   border-radius: 1em;

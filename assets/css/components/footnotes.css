@@ -11,8 +11,8 @@
 .Footnotes::before {
   content: "†";
   position: absolute;
-  bottom: 100%;
-  left: 100%;
+  inset-block-end: 100%;
+  inset-inline-start: 100%;
   transform: translate(-90%, 67%) rotate(11deg);
   font-size: 1000%;
   opacity: 0.2;
@@ -29,7 +29,7 @@
   .Footnotes {
     width: calc(100% + var(--margin-offset) * 2); /* 1 */
     padding: 1em var(--margin-offset); /* 1 */
-    left: calc(var(--margin-offset) * -1); /* 1 */
+    inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
   }
 }
 
@@ -78,7 +78,7 @@
 
 .Footnotes__list-item::after {
   inset: 0;
-  left: -1.5em;
+  inset-inline-start: -1.5em;
   position: absolute;
   background-color: light-dark(rgb(255 255 0 / 0.3), rgb(255 255 0 / 0.15));
   border-radius: 1em;

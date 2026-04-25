@@ -58,7 +58,7 @@ h1:before {
 	height: 1px;
 	width: 1000px;
 	top: 50%;
-	right: 100%;
+	inset-inline-end: 100%;
 	background: black;
 }
 

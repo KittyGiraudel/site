@@ -4,7 +4,7 @@
  * 2. Leave some space on the edges, especially valuable on small screens.
  */
 .Container {
-  max-width: 80ch; /* 1 */
+  max-inline-size: 80ch; /* 1 */
   padding-inline: 1em; /* 2 */
   width: 100%; /* 1 */
   margin-inline: auto;

@@ -8,12 +8,12 @@
   height: 1px; /* 1 */
   width: 1px; /* 1 */
   position: absolute; /* 2 */
-  top: 1em; /* 2 */
-  left: 1em; /* 2 */
+  inset-block-start: 1em; /* 2 */
+  inset-inline-start: 1em; /* 2 */
   font-size: 80%;
   outline: none;
   color: inherit;
-  border-bottom: 2px solid transparent;
+  border-block-end: 2px solid transparent;
 }
 
 /**
@@ -25,5 +25,5 @@
   height: auto; /* 1 */
   width: auto; /* 1 */
   overflow: visible; /* 1 */
-  border-bottom: 0;
+  border-block-end: 0;
 }

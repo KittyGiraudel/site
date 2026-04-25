@@ -24,13 +24,13 @@
 
 /**
  * 1. Offset by half the extra width (10ch), half the container padding (2em)
- *    and the left margin (0.5em).
+ *    and the inline start margin (0.5em).
  */
 @media (min-width: 1024px) {
   .Showcase__container {
     width: 90ch;
     position: relative;
-    left: calc(-5ch - 1em - 0.5em); /* 1 */
+    inset-inline-start: calc(-5ch - 1em - 0.5em); /* 1 */
   }
 }
 
@@ -40,7 +40,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  max-width: 100%;
+  max-inline-size: 100%;
 }
 
 @media (min-width: 768px) {
@@ -52,17 +52,17 @@
 
 .Showcase__link {
   font-size: 80%;
-  float: right;
+  float: inline-end;
 }
 
 /**
  * 1. Offset by half the extra width (10ch), the container padding (2em) and
- *    the right margin (0.5em).
+ *    the inline end margin (0.5em).
  */
 @media (min-width: 1024px) {
   .Showcase__link {
     position: relative;
-    left: calc(5ch + 2em + 0.5em); /* 1 */
+    inset-inline-start: calc(5ch + 2em + 0.5em); /* 1 */
   }
 }
 

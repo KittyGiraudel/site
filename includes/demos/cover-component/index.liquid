@@ -24,7 +24,7 @@
 @media (min-width: 1024px) {
   .Cover {
     width: calc(100% + var(--margin-offset) * 2);
-    left: calc(var(--margin-offset) * -1);
+    inset-inline-start: calc(var(--margin-offset) * -1);
   }
 }
 
@@ -139,9 +139,9 @@
  */
 .Cover__content {
   position: absolute; /* 1 */
-  top: 100%; /* 1 */
-  right: 0;
-  left: 0;
+  inset-block-start: 100%; /* 1 */
+  inset-inline-end: 0;
+  inset-inline-start: 0;
   padding: 0 2em 1em; /* 2 */
   transition: inherit;
   text-shadow: 0 1px 4px rgb(0 0 0 / 0.35); /* 3 */
@@ -181,13 +181,13 @@
  *    not needed per se but it makes for a nicer effect.
  */
 .Cover__description {
-  max-width: 100ch; /* 1 */
-  margin-top: 0.5em; /* 2 */
+  max-inline-size: 100ch; /* 1 */
+  margin-block-start: 0.5em; /* 2 */
   font-style: italic;
   font-size: 0.9em;
-  border-left: 1px solid; /* 3 */
-  padding-left: 1em; /* 3 */
-  margin-left: 0.4em; /* 3 */
+  border-inline-start: 1px solid; /* 3 */
+  padding-inline-start: 1em; /* 3 */
+  margin-inline-start: 0.4em; /* 3 */
   opacity: 0.3; /* 4 */
   transition: inherit;
 }

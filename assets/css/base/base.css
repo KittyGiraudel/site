@@ -137,7 +137,7 @@ ul ul {
  * 1. Warning, potentially dangerous if using inline images.
  */
 img {
-  max-width: 100%;
+  max-inline-size: 100%;
   height: auto;
   display: block; /* 1 */
   margin-block: var(--vb);

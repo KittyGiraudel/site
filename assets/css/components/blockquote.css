@@ -34,16 +34,16 @@ blockquote::after {
 blockquote::before {
   content: "“";
   color: var(--blue);
-  bottom: 100%;
-  right: 100%;
+  inset-block-end: 100%;
+  inset-inline-end: 100%;
   transform: translate(67%, 73%);
 }
 
 blockquote::after {
   content: "”";
   color: var(--pink);
-  top: 100%;
-  left: 100%;
+  inset-block-start: 100%;
+  inset-inline-start: 100%;
   transform: translate(-67%, -37%);
 }
 
@@ -70,7 +70,7 @@ blockquote:hover::after {
   blockquote {
     width: calc(100% + var(--margin-offset) * 2); /* 1 */
     padding: 1em var(--margin-offset); /* 1 */
-    left: calc(var(--margin-offset) * -1); /* 1 */
+    inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
   }
 }
 
