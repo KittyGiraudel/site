@@ -8,7 +8,6 @@
   - reading_time: The reading time of the post
   - updated_at: Last updated date of the post
   - toc_items: The table of contents items
-  - toc_flat: Whether to only render top-level items
 {% endcomment %}
 
 <div class="Container">
@@ -27,7 +26,7 @@
     %}
 
     {% if toc_items.size > 0 %}
-      {% render "table_of_contents.liquid", items: toc_items, toc_flat: toc_flat %}
+      {% render "table_of_contents.liquid", items: toc_items %}
     {% endif %}
   </header>
 </div>
