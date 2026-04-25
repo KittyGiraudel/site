@@ -68,3 +68,20 @@
   border-end-start-radius: 0.5em;
   corner-shape: squircle;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .Post li {
+    animation-fill-mode: both;
+    animation-name: fade-in;
+    animation-range: entry 25% cover 50%;
+    animation-timeline: --item-timeline;
+    view-timeline-name: --item-timeline;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
