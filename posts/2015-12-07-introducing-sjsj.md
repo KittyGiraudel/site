@@ -5,7 +5,6 @@ tags:
   - JavaScript
   - Open Source
   - Release
-toc: false
 deprecated: true
 ---
 

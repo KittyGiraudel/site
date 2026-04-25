@@ -5,7 +5,6 @@ tags:
   - WordPress
   - Jekyll
   - Writing
-toc: false
 deprecated: true
 ---
 
