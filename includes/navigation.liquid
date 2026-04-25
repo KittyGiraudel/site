@@ -30,7 +30,7 @@
 The desktop menu is not a popover, and has a skip link.
 {% endcomment %}
 <nav class="Navigation NoPrint" role="navigation" id="desktop-menu">
-  <ul class="Navigation__list">
+  <ul class="Navigation__list NoListMarker">
     <li class="Navigation__item Navigation__item--skip-link">
       <a href="#main" class="Navigation__link NoBackground">Skip to content</a>
     </li>
@@ -53,7 +53,7 @@ The desktop menu is not a popover, and has a skip link.
 The mobile menu is a popover, has no skip link and contains a closing button.
 {% endcomment %}
 <nav class="Navigation NoPrint" role="navigation" id="mobile-menu" popover>
-  <ul class="Navigation__list">
+  <ul class="Navigation__list NoListMarker">
     {{ menu }}
     <li class="Navigation__item">
       <button

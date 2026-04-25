@@ -23,7 +23,7 @@ great events. If you would like me to speak at your conference, be sure to get
 in touch!
 {% endmarkdown %}
 
-<ul class="List">
+<ul class="List NoListMarker">
   {% for event in speaking %}
   <li class="List__item">
     <span class="List__secondary-content">
@@ -33,7 +33,7 @@ in touch!
       {{ event.event }}
     </a>
     {% if event.actions %}
-      <ul class="Tags">
+      <ul class="Tags NoListMarker">
         {% for action in event.actions %}
         <li class="Tag">
           <a class="Tag__link NoBackground" target="_blank" rel="noopener noreferrer" href="{{ action[1] }}">

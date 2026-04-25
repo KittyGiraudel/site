@@ -14,7 +14,7 @@ function search() {
     fuzzy: false,
     templateMiddleware: (prop, value) => {
       if (prop === 'tags') {
-        return `<ul class="Tags">
+        return `<ul class="Tags NoListMarker">
           ${value
             .sort((a, b) => a.localeCompare(b))
             .filter(tag => tag !== 'posts')

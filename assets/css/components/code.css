@@ -20,16 +20,7 @@ pre {
     linear-gradient(to right, var(--pink), var(--blue)); /* 3 */
   background-origin: border-box; /* 3 */
   background-clip: padding-box, border-box; /* 3 */
-}
-
-pre {
   container-type: inline-size;
-}
-/**
- * See: https://blog.kizu.dev/responsive-tab-size/
- */
-pre code {
-  tab-size: round(up, 100cqi / 20ch, 2);
 }
 
 @media (min-width: 1024px) {
@@ -51,8 +42,13 @@ code {
   font-size: 80%;
 }
 
+/**
+ * 1. Set the tab size based on the container width.
+ *    See: https://blog.kizu.dev/responsive-tab-size/
+ */
 pre code {
   display: block;
+  tab-size: round(up, 100cqi / 20ch, 2); /* 1 */
 }
 
 :not(pre) > code {

@@ -5,7 +5,7 @@
 
 {% ensure tags, "Required value 'tags' is missing in tags.liquid" %}
 
-<ul class="Tags">
+<ul class="Tags NoListMarker">
   {%- for tag in tags | sort %}
     {% assign name = tag.name | default: tag %}
 

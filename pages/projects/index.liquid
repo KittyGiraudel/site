@@ -35,7 +35,7 @@ permalink: "/projects/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
   github: github
 %}
 
-<ul class="List">
+<ul class="List NoListMarker">
   {% for project in paginatedProjects %}
   <li class="List__item">
     {% if project.tags %}

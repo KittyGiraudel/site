@@ -104,6 +104,31 @@ li {
   margin-block: var(--vb-quarter);
 }
 
+:where(ul, ol):not(.NoListMarker) {
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+
+:where(ul, ol):not(.NoListMarker) > li {
+  padding-inline-start: 2rem;
+}
+
+:where(ul, ol):not(.NoListMarker) > li::before {
+  content: "— ";
+  position: absolute;
+  margin-inline-start: -2rem;
+  width: 2rem;
+}
+
+/**
+ * 1. The `list-item` counter is implicitly defined for ordered lists.
+ *    See: https://kizu.dev/list-item-counter/
+ */
+ol:not(.NoListMarker) > li::before {
+  content: counter(list-item) "."; /* 1 */
+  font-variant-numeric: tabular-nums;
+}
+
 ul ul {
   margin-block: 0;
 }

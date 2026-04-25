@@ -41,7 +41,7 @@ export default function (config) {
 
   // Compilation plugins
   // ---------------------------------------------------------------------------
-  config.addPlugin(footnotes)
+  config.addPlugin(footnotes, { classes: { list: 'NoListMarker' } })
   config.addPlugin(IdAttributePlugin, {
     slugify,
     checkDuplicates: false,

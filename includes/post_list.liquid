@@ -5,7 +5,7 @@
 
 {% ensure items, "Required value 'items' is missing in post_list.liquid" %}
 
-<ul class="List">
+<ul class="List NoListMarker">
   {% for item in items %}
     {% assign url  = item.url %}
     {% assign data = item.data %}

@@ -8,7 +8,7 @@
  
 {% ensure items, "Required value 'items' is missing in table_of_contents_list.liquid" %}
 
-<ol class="TableOfContents__list{% unless root %} TableOfContents__list--sublist{% endunless %}">
+<ol class="TableOfContents__list{% unless root %} TableOfContents__list--sublist{% endunless %} NoListMarker">
   {% for item in items %}
     <li class="TableOfContents__item TableOfContents__item--level{{ item.level }}">
       <a href="#{{ item.id }}">{{ item.text }}</a>
