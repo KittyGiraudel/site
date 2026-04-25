@@ -1,29 +1,36 @@
-function observe(node, handler) {
+function observe(nodes, handler) {
   const observer = new IntersectionObserver(entries => entries.forEach(handler), {
     root: null,
     threshold: 0.1,
   })
-  observer.observe(node)
-  return observer
+  nodes.forEach(node => {
+    observer.observe(node)
+  })
+  return () => {
+    nodes.forEach(node => {
+      observer.unobserve(node)
+    })
+    observer.disconnect()
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  function loadCodepen(node) {
+  function loadCodepen(nodes) {
     let loaded = false
-    const observer = observe(node, entry => {
+    const unobserve = observe(nodes, entry => {
       if (entry.isIntersecting && !loaded) {
         loaded = true
-        loadJS('//codepen.io/assets/embed/ei.js', () => observer.unobserve(node))
+        loadJS('//codepen.io/assets/embed/ei.js', unobserve)
       }
     })
   }
 
-  function loadGiscus(node) {
+  function loadGiscus(nodes) {
     let loaded = false
-    const observer = observe(node, entry => {
+    const unobserve = observe(nodes, entry => {
       if (entry.isIntersecting && !loaded) {
         loaded = true
-        loadJS('https://giscus.app/client.js', () => observer.unobserve(node), {
+        loadJS('https://giscus.app/client.js', unobserve, {
           insert: script => document.querySelector('#giscus-holder')?.appendChild(script),
           attributes: {
             'data-repo': 'kittygiraudel/site',
@@ -45,10 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  const codepen = document.querySelector('.codepen')
-  const giscus = document.querySelector('#giscus-holder')
-  if (codepen) loadCodepen(codepen)
-  if (giscus) loadGiscus(giscus)
+  function loadBaseline(nodes) {
+    let loaded = false
+    const unobserve = observe(nodes, entry => {
+      if (entry.isIntersecting && !loaded) {
+        loaded = true
+        loadJS('/assets/js/vendors/baseline-status.min.js', unobserve, {
+          attributes: { type: 'module' },
+        })
+      }
+    })
+  }
+
+  const codepen = Array.from(document.querySelectorAll('.codepen'))
+  const giscus = Array.from(document.querySelectorAll('#giscus-holder'))
+  const baselines = Array.from(document.querySelectorAll('baseline-status'))
+  if (codepen.length) loadCodepen(codepen)
+  if (giscus.length) loadGiscus(giscus)
+  if (baselines.length) loadBaseline(baselines)
 
   window.ThemeManager.onThemeChanged(theme => {
     const iframe = document.querySelector('iframe.giscus-frame')

@@ -55,8 +55,10 @@ export default function (config) {
 
   // Static file passthrough
   // ---------------------------------------------------------------------------
-  config.addPassthroughCopy('assets/js/vendors')
   config.addPassthroughCopy({ public: '.' })
+  config.addPassthroughCopy({
+    'node_modules/baseline-status/baseline-status.min.js': 'assets/js/vendors',
+  })
 
   // CSS and JavaScript are inlined in HTML for performance reasons. The problem
   // with that is that saving a CSS or JavaScript file during development does

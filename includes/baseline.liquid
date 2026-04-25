@@ -1,0 +1,10 @@
+{% comment %}
+  Required:
+  - feature_id: The ID of the feature to check (https://webstatus.dev/)
+{% endcomment %}
+
+{% ensure feature_id, "Required value 'feature_id' is missing in baseline.liquid" %}
+
+<div class="Baseline">
+  <baseline-status featureId="{{ feature_id }}"></baseline-status>
+</div>
