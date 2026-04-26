@@ -70,7 +70,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .Post li {
+  .Post li:not(.Footnotes__list-item) {
     animation-fill-mode: both;
     animation-name: fade-in;
     animation-range: entry 25% cover 50%;
