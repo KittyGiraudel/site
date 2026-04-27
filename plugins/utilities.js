@@ -68,8 +68,11 @@ function dateToRFC3339(value) {
   return new Date(value).toISOString().replace(/\.\d+Z$/, 'Z')
 }
 
-function callout(content, type = 'info') {
-  return `<aside class="Callout Callout--${type}" role="note">${markdown(content, false)}</aside>`
+function callout(content, type = 'info', role = 'note') {
+  if (role === 'note') {
+    return `<aside class="Callout Callout--${type}" role="note">${markdown(content, false)}</aside>`
+  }
+  return `<div class="Callout Callout--${type}">${markdown(content, false)}</div>`
 }
 
 function time(value, itemprop, id) {
