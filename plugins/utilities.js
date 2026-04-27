@@ -123,8 +123,8 @@ function wrapEmDashes(content, outputPath) {
 function wrapSmileyFaces(content, outputPath) {
   return typeof outputPath === 'string' && outputPath.endsWith('.html')
     ? content.replace(
-        /:\)/g,
-        '<span style="writing-mode: vertical-rl; color: light-dark(var(--blue), var(--pink))">:)</span>',
+        /(:\)|:\()/g,
+        '<span style="writing-mode: vertical-rl; color: light-dark(var(--blue), var(--pink))">$1</span>',
       )
     : content
 }
