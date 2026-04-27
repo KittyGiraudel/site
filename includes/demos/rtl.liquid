@@ -1,0 +1,36 @@
+<button type="button" id="rtl-button">
+  Toggle RTL mode
+</button>
+{% raw %}
+<style>
+#rtl-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 2px solid light-dark(var(--blue), var(--pink));
+  background-color: transparent;
+  border-radius: 0.5em;
+  font-size: 80%;
+  cursor: pointer;
+}
+
+#rtl-button:focus {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
+
+#rtl-button:hover {
+  background-color: light-dark(rgb(0 0 0 / 0.05), rgb(255 255 255 / 0.05));
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	const button = document.querySelector('#rtl-button')
+	if (!button) return
+
+	button.addEventListener('click', function () {
+		const curr = document.documentElement.dir
+		document.documentElement.dir = !curr || curr === 'ltr' ? 'rtl' : 'ltr'
+	})
+})
+</script>
+{% endraw %}
