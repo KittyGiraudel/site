@@ -85,3 +85,7 @@
     transform: scale(0.95);
   }
 }
+
+.Post .Hook {
+  margin-top: var(--vb-double);
+}
