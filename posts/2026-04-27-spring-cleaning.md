@@ -21,6 +21,29 @@ On the plus side, this enabled me to play with the [Popover API](https://develop
 
 {% render "baseline.liquid" feature_id: "popover" %}
 
+I’ve also used `@starting-style` for the first time to animate the apparition of the menu.
+
+```css
+.Navigation[popover] {
+	opacity: 0;
+	transform: translate(1rem, -1rem) scale(0.95);
+	transition: 300ms ease-out;
+}
+
+.Navigation[popover]:popover-open {
+	opacity: 1;
+	transform: translate(0) scale(1);
+
+	@starting-style {
+		opacity: 0;
+		transform: translate(1rem, -1rem) scale(0.95);
+	}
+}
+```
+
+{% render "baseline.liquid" feature_id: "starting-style" %}
+
+
 ## New post head
 
 Moving the navigation out of the way had some unintended design side-effects, and led me to rework the header of blog posts. I’ve made the following changes:
@@ -85,20 +108,20 @@ I’ve added a small animation to them so they fade into the viewport as you scr
 
 ```css
 @media (prefers-reduced-motion: no-preference) {
-  .Post li {
-    animation-fill-mode: both;
-    animation-name: fade-in;
-    animation-range: entry 25% cover 50%;
-    animation-timeline: --item-timeline;
-    view-timeline-name: --item-timeline;
-  }
+	.Post li {
+		animation-fill-mode: both;
+		animation-name: fade-in;
+		animation-range: entry 25% cover 50%;
+		animation-timeline: --item-timeline;
+		view-timeline-name: --item-timeline;
+	}
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
 }
 ```
 
