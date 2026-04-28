@@ -56,7 +56,8 @@ export default function (config) {
   // ---------------------------------------------------------------------------
   config.addPassthroughCopy({ public: '.' })
   config.addPassthroughCopy({
-    'node_modules/baseline-status/baseline-status.min.js': 'assets/js/vendors',
+    'node_modules/baseline-status/baseline-status.min.js':
+      'assets/js/vendors/baseline-status.min.js',
   })
 
   // CSS and JavaScript are inlined in HTML for performance reasons. The problem
