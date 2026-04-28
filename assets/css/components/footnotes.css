@@ -13,11 +13,12 @@
   position: absolute;
   inset-block-end: 100%;
   inset-inline-start: 100%;
-  transform: translate(-90%, 67%) rotate(11deg);
+  transform: translate(-95%, 75%) rotate(9deg);
   font-size: 1000%;
   opacity: 0.2;
   font-family: Baskerville, serif;
   font-weight: bold;
+  line-height: 1;
   color: #6a5acd;
 }
 
