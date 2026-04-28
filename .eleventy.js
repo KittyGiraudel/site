@@ -31,7 +31,6 @@ export default function (config) {
   if (CONFIG.wrapEmojis) config.addTransform('emoji', utilities.a11yEmojis)
   if (CONFIG.helmet) config.addTransform('helmet', utilities.helmet)
   if (CONFIG.headingAnchors) config.addTransform('headingAnchors', injectHeadingAnchors)
-  config.addTransform('emDashes', utilities.wrapEmDashes)
   config.addTransform('smileyFaces', utilities.wrapSmileyFaces)
 
   // Watch targets
