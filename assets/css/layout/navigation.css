@@ -179,8 +179,8 @@ button.Navigation__link:focus-visible {
 .OpenMenuButton.OpenMenuButton /* 1 */ {
   display: none;
   position: fixed;
-  inset-block-start: 0.5em;
-  inset-inline-end: 0.5em;
+  inset-block-start: 1em;
+  inset-inline-end: 1em;
 }
 
 /**
@@ -188,8 +188,8 @@ button.Navigation__link:focus-visible {
  * 2. CSS trick to have a gradient border *with* rounded corners.
  */
 .Navigation[popover] {
-  inset-block-start: 0.5em; /* 1 */
-  inset-inline-end: 0.5em; /* 1 */
+  inset-block-start: 1em; /* 1 */
+  inset-inline-end: 1em; /* 1 */
   inset-inline-start: auto; /* 1 */
   margin: 0; /* 1 */
   padding: 1em 1.25em;
