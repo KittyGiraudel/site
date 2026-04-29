@@ -1,4 +1,6 @@
-import { CONFIG } from '../eleventy.config.ts'
+import CONFIG from '../flags.json' with { type: 'json' }
+
+const ENV = process.env.NODE_ENV
 
 export default {
 	url: 'https://kittygiraudel.com',
@@ -38,8 +40,7 @@ export default {
 		{ path: '/resume/', label: 'Hire me' },
 	],
 	configuration: {
-		minify_html: CONFIG.minifyHTML,
-		inline_assets: CONFIG.inlineAssets,
-		service_worker: CONFIG.serviceWorker,
+		inline_assets: CONFIG.inlineAssets.includes(ENV),
+		service_worker: CONFIG.serviceWorker.includes(ENV),
 	},
 }

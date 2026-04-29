@@ -5,6 +5,7 @@
 		"moduleResolution": "NodeNext",
 		"skipLibCheck": true,
 		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
 		"noEmit": true
 	},
 	"exclude": ["node_modules", "_site"]

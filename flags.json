@@ -1,0 +1,12 @@
+{
+	"githubStars": ["production"],
+	"headingAnchors": ["production"],
+	"helmet": ["production"],
+	"inlineAssets": ["production"],
+	"markdownAlternative": ["production"],
+	"minifyHTML": ["production"],
+	"renderDrafts": ["development"],
+	"serviceWorker": ["production"],
+	"syntaxHighlight": ["development", "production"],
+	"wrapEmojis": ["production"]
+}

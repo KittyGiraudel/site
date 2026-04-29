@@ -1,7 +1,10 @@
 import Fetch from '@11ty/eleventy-fetch'
+import CONFIG from '../flags.json' with { type: 'json' }
 
-const GITHUB_STARS = process.env.NODE_ENV === 'production'
+const ENV = process.env.NODE_ENV
 
+// This file needs to remain a JavaScript file to be usable in templates, and
+// `utilities.ts` is authored in TypeScript, so we cannot import it.
 function formatNumber(amount) {
 	return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
 }
@@ -14,7 +17,7 @@ const STATIC_DATA = {
 }
 
 export default async function () {
-	if (!GITHUB_STARS) {
+	if (!CONFIG.githubStars.includes(ENV)) {
 		return {
 			stargazers: STATIC_DATA,
 		}
