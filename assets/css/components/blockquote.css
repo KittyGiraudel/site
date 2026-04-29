@@ -6,7 +6,7 @@
 blockquote {
   --background-color: light-dark(#f3f8fc, #303132);
   position: relative; /* 1 */
-  margin-block: var(--vb-1\.5); /* 2 */
+  margin: var(--vb-1\.5) 0; /* 2 */
   padding: 0.75em 1.5em;
   background-color: var(--background-color);
   border-radius: 1em;
