@@ -4,6 +4,9 @@ description: A short heartfelt rant about the current state of AI in our industr
 tags:
   - AI
   - Retrospective
+edits:
+  - date: 2026/04/29
+    md: A mere *hours* after I published this post, an AI news website scrapped my content and republished some AI-generated summary with zero added value. You can’t make this up.
 ---
 
 This article started as some kind of brain dump. I kept having minor frustrations about the use of AI in our industry, so I started scribbling them down. I touch on a lot of different angles: the use of AI on social platforms, the needless reinventing of the wheel, focusing on the wrong outcomes, and the open web.
