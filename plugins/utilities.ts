@@ -74,9 +74,7 @@ function where<T extends Record<string, unknown>>(
 }
 
 function dateToRFC3339(value: DateInput): string {
-	const date = parseDate(value)
-	if (!date) return ''
-	return date.toISOString().replace(/\.\d+Z$/, 'Z')
+	return new Date(value).toISOString().replace(/\.\d+Z$/, 'Z')
 }
 
 function callout(content: string, type = 'info', role = 'note'): string {
@@ -87,18 +85,10 @@ function callout(content: string, type = 'info', role = 'note'): string {
 }
 
 function time(value: DateInput, itemprop?: string, id?: string): string {
-	const date = parseDate(value)
-	if (!date) return ''
-	const display = DATE_FORMATTER.format(date)
-	const datetime = date.toISOString()
+	const display = DATE_FORMATTER.format(new Date(value))
+	const datetime = new Date(value).toISOString()
 
 	return `<time datetime="${datetime}" title="${value}"${itemprop ? ` itemprop="${itemprop}"` : ''}${id ? ` id="${id}"` : ''}>${display}</time>`
-}
-
-function parseDate(value: DateInput): Date | null {
-	if (value === null || value === undefined || value === '') return null
-	const date = value instanceof Date ? value : new Date(value)
-	return Number.isNaN(date.getTime()) ? null : date
 }
 
 function readingTime(content: string): { display: string; iso: string } | null {

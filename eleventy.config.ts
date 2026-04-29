@@ -27,6 +27,7 @@ export default function (config: EleventyConfig) {
 	// ---------------------------------------------------------------------------
 	config.addWatchTarget('assets/css/**/*.css')
 	config.addWatchTarget('assets/js/**/*.js')
+	config.addWatchTarget('plugins/**/*.ts')
 
 	// Compilation plugins
 	// ---------------------------------------------------------------------------

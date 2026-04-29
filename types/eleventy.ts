@@ -2,7 +2,7 @@ import type UserConfigType from '@11ty/eleventy/src/UserConfig.js'
 
 export type EleventyConfig = UserConfigType
 
-export type DateInput = Date | string | number | null | undefined
+export type DateInput = Date | string | number
 export type ExternalReference = { host: string; url: string }
 export type PostEdit = { md: string; date: DateInput }
 
