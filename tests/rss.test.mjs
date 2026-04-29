@@ -10,9 +10,23 @@ function assertParsesAsDate(value) {
 	return ms
 }
 
+/** @param {string} xml */
+function assertNoBareAmpersands(xml) {
+	// `fast-xml-parser` is permissive with invalid entities, so enforce this
+	// XML well-formedness rule explicitly for feed text/attribute nodes.
+	const withoutCdata = xml.replace(/<!\[CDATA\[[\s\S]*?\]\]>/g, '')
+	const bareAmpersand = /&(?!#\d+;|#x[0-9a-fA-F]+;|[A-Za-z][A-Za-z0-9._-]*;)/.exec(withoutCdata)
+	assert.equal(
+		bareAmpersand,
+		null,
+		'RSS XML contains an unescaped "&"; use "&amp;" in non-CDATA content',
+	)
+}
+
 test('RSS feed is valid Atom with correct URLs', async () => {
 	const xml = await readText('rss/index.xml')
 	const siteUrl = getSiteUrl()
+	assertNoBareAmpersands(xml)
 
 	const parser = new XMLParser({ ignoreAttributes: false })
 	const doc = parser.parse(xml)
