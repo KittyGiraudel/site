@@ -36,7 +36,7 @@ Once again, we can reach out to our lord and savior [cheerio](https://cheerio.js
 eleventyConfig.addFilter('table_of_contents', html => {
 	if (!html || typeof html !== 'string') return []
 
-	const $ = cheerio.load(html, { decodeEntities: false }, false)
+	const $ = cheerio.load(html, null, false)
 	const headings = $('h2, h3, h4').toArray()
 
 	return headings.length < 2 ? [] : buildTocTree($, headings)

@@ -4,8 +4,12 @@ import emojiShortName from 'emoji-short-name'
 import he from 'he'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
-import { CONFIG } from '../.eleventy.js'
+import FLAGS from '../flags.json' with { type: 'json' }
+import type { DateInput, FrontMatterCarrier, FrontMatterLike } from '../types/eleventy.ts'
+import type { FeatureFlags } from '../types/flags.ts'
 
+const ENV = process.env.NODE_ENV
+const CONFIG = FLAGS as unknown as FeatureFlags
 const EMOJI_REGEX = emojiRegex()
 const DATE_FORMATTER = new Intl.DateTimeFormat('en', {
 	year: 'numeric',
@@ -13,7 +17,7 @@ const DATE_FORMATTER = new Intl.DateTimeFormat('en', {
 	day: '2-digit',
 })
 
-function minifyHTML(content, outputPath) {
+function minifyHTML(content: string, outputPath?: string): string | Promise<string> {
 	return typeof outputPath === 'string' && outputPath.endsWith('.html')
 		? htmlmin.minify(content, {
 				collapseBooleanAttributes: true,
@@ -37,63 +41,68 @@ function minifyHTML(content, outputPath) {
 		: content
 }
 
-function replaceEmoji(match) {
+function replaceEmoji(match: string): string {
 	const label = emojiShortName[match]?.replace(/"/g, '')
 	return label ? `<span role="img" aria-label="${label}" title="${label}">${match}</span>` : match
 }
 
-function a11yEmojis(content, outputPath) {
+function a11yEmojis(content: string, outputPath?: string): string {
 	return typeof outputPath === 'string' && outputPath.endsWith('.html')
 		? content.replace(EMOJI_REGEX, replaceEmoji)
 		: content
 }
 
-function markdown(content, inline = false) {
+function markdown(content: string, inline = false): string {
 	const html = markdownIt({ html: true }).render(content)
 	return inline ? html.replace('<p>', '').replace('</p>', '') : html
 }
 
-function formatNumber(amount) {
+function formatNumber(amount: number): string {
 	return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
 }
 
-function where(array, key, value) {
+function where<T extends Record<string, unknown>>(
+	array: Array<T | { data?: T }>,
+	key: keyof T | string,
+	value?: unknown,
+): Array<T | { data?: T }> {
 	return array.filter(item => {
-		const data = item?.data ?? item
-		return typeof value === 'undefined' ? key in data : data[key] === value
+		const data: Record<string, unknown> = (item?.data ?? item) as Record<string, unknown>
+		const normalizedKey = String(key)
+		return typeof value === 'undefined' ? normalizedKey in data : data[normalizedKey] === value
 	})
 }
 
-function dateToRFC3339(value) {
+function dateToRFC3339(value: DateInput): string {
 	return new Date(value).toISOString().replace(/\.\d+Z$/, 'Z')
 }
 
-function callout(content, type = 'info', role = 'note') {
+function callout(content: string, type = 'info', role = 'note'): string {
 	if (role === 'note') {
 		return `<aside class="Callout Callout--${type}" role="note">${markdown(content, false)}</aside>`
 	}
 	return `<div class="Callout Callout--${type}">${markdown(content, false)}</div>`
 }
 
-function time(value, itemprop, id) {
+function time(value: DateInput, itemprop?: string, id?: string): string {
 	const display = DATE_FORMATTER.format(new Date(value))
 	const datetime = new Date(value).toISOString()
 
 	return `<time datetime="${datetime}" title="${value}"${itemprop ? ` itemprop="${itemprop}"` : ''}${id ? ` id="${id}"` : ''}>${display}</time>`
 }
 
-function readingTime(content) {
+function readingTime(content: string): { display: string; iso: string } | null {
 	if (!content) return null
 	const words = (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length
 	const minutes = Math.ceil(words / 300)
 	return { display: `${minutes}–minute read`, iso: `PT${minutes}M` }
 }
 
-function stripHtmlEntities(content) {
+function stripHtmlEntities(content: string): string {
 	return he.decode(content).replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
 }
 
-function ensureValue(value, message) {
+function ensureValue(value: unknown, message?: string): void {
 	if (value === null || value === undefined || value === '') {
 		const detail =
 			typeof message === 'string' && message.trim() !== ''
@@ -103,15 +112,17 @@ function ensureValue(value, message) {
 	}
 }
 
-function helmet(content, outputPath) {
+function helmet(content: string, outputPath?: string): string {
 	if (typeof outputPath !== 'string' || !outputPath.endsWith('.html')) return content
 	const $ = cheerio.load(content)
 	const $head = $('head')
-	$('body [data-helmet]').each((_, el) => $head.append($(el).remove()))
+	$('body [data-helmet]').each((_, el) => {
+		$head.append($(el).remove())
+	})
 	return $.html()
 }
 
-function wrapEmDashes(content, outputPath) {
+function wrapEmDashes(content: string, outputPath?: string): string {
 	return typeof outputPath === 'string' && outputPath.endsWith('.html')
 		? content.replace(
 				/—/g,
@@ -120,7 +131,7 @@ function wrapEmDashes(content, outputPath) {
 		: content
 }
 
-function wrapSmileyFaces(content, outputPath) {
+function wrapSmileyFaces(content: string, outputPath?: string): string {
 	return typeof outputPath === 'string' && outputPath.endsWith('.html')
 		? content.replace(
 				/ (:\)|:\(|\(:)/g,
@@ -129,17 +140,17 @@ function wrapSmileyFaces(content, outputPath) {
 		: content
 }
 
-function getFrontMatterData(value) {
-	return value?.data ?? value ?? {}
+function getFrontMatterData(value: FrontMatterCarrier): Partial<FrontMatterLike> {
+	return (value?.data ?? value ?? {}) as Partial<FrontMatterLike>
 }
 
 // A post is visible if it is not a draft or if drafts are enabled.
-function isPostVisible(value) {
-	return !getFrontMatterData(value).draft || CONFIG.renderDrafts
+function isPostVisible(value: FrontMatterCarrier): boolean {
+	return !getFrontMatterData(value).draft || CONFIG.renderDrafts.includes(ENV)
 }
 
 // A post is rendered if it is visible and not an external post.
-function isPostRendered(value) {
+function isPostRendered(value: FrontMatterCarrier): boolean {
 	return isPostVisible(value) && !getFrontMatterData(value).external
 }
 

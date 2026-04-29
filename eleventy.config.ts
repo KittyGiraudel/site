@@ -2,41 +2,32 @@ import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
 import footnotes from 'eleventy-plugin-footnotes'
-import injectHeadingAnchors from './plugins/heading-anchors.js'
-import postStatsPlugin from './plugins/post-stats.js'
-import tocPlugin from './plugins/toc.js'
-import utilities from './plugins/utilities.js'
+import FLAGS from './flags.json' with { type: 'json' }
+import injectHeadingAnchors from './plugins/heading-anchors.ts'
+import postStatsPlugin from './plugins/post-stats.ts'
+import tocPlugin from './plugins/toc.ts'
+import utilities from './plugins/utilities.ts'
+import type { CollectionApi, EleventyConfig, PostEntry } from './types/eleventy.ts'
+import type { FeatureFlags } from './types/flags.ts'
 
-const PRODUCTION = process.env.NODE_ENV === 'production'
-export const CONFIG = {
-	minifyHTML: PRODUCTION,
-	wrapEmojis: PRODUCTION,
-	splitContent: PRODUCTION,
-	syntaxHighlight: true,
-	githubStars: PRODUCTION,
-	inlineAssets: PRODUCTION,
-	serviceWorker: PRODUCTION,
-	metaRefresh: PRODUCTION,
-	helmet: PRODUCTION,
-	markdownAlternative: PRODUCTION,
-	headingAnchors: PRODUCTION,
-	renderDrafts: !PRODUCTION,
-}
+const ENV = process.env.NODE_ENV
+const CONFIG = FLAGS as unknown as FeatureFlags
 
-/** @param {import('@11ty/eleventy/UserConfig').default} config */
-export default function (config) {
+export default function (config: EleventyConfig) {
 	// Content post-processing
 	// ---------------------------------------------------------------------------
-	if (CONFIG.minifyHTML) config.addTransform('htmlmin', utilities.minifyHTML)
-	if (CONFIG.wrapEmojis) config.addTransform('emoji', utilities.a11yEmojis)
-	if (CONFIG.helmet) config.addTransform('helmet', utilities.helmet)
-	if (CONFIG.headingAnchors) config.addTransform('headingAnchors', injectHeadingAnchors)
+	if (CONFIG.minifyHTML.includes(ENV)) config.addTransform('htmlmin', utilities.minifyHTML)
+	if (CONFIG.wrapEmojis.includes(ENV)) config.addTransform('emoji', utilities.a11yEmojis)
+	if (CONFIG.helmet.includes(ENV)) config.addTransform('helmet', utilities.helmet)
+	if (CONFIG.headingAnchors.includes(ENV))
+		config.addTransform('headingAnchors', injectHeadingAnchors)
 	config.addTransform('smileyFaces', utilities.wrapSmileyFaces)
 
 	// Watch targets
 	// ---------------------------------------------------------------------------
 	config.addWatchTarget('assets/css/**/*.css')
 	config.addWatchTarget('assets/js/**/*.js')
+	config.addWatchTarget('plugins/**/*.ts')
 
 	// Compilation plugins
 	// ---------------------------------------------------------------------------
@@ -48,8 +39,10 @@ export default function (config) {
 	})
 	config.addPlugin(postStatsPlugin)
 	config.addPlugin(tocPlugin)
-	if (CONFIG.syntaxHighlight) config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
-	if (!CONFIG.markdownAlternative) config.ignores.add('pages/blog/index-markdown.liquid')
+	if (CONFIG.syntaxHighlight.includes(ENV))
+		config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
+	if (!CONFIG.markdownAlternative.includes(ENV))
+		config.ignores.add('pages/blog/index-markdown.liquid')
 	config.ignores.add('CLAUDE.md')
 
 	// Static file passthrough
@@ -68,7 +61,7 @@ export default function (config) {
 	// script tags in production. For the assets to be linked to in development,
 	// they need to be passed through to the `_site` directory.
 	// See: https://kittygiraudel.com/2020/12/03/inlining-scripts-and-styles-in-11ty/
-	if (!CONFIG.inlineAssets) {
+	if (!CONFIG.inlineAssets.includes(ENV)) {
 		config.addPassthroughCopy('assets/js')
 		config.addPassthroughCopy('assets/css')
 	}
@@ -86,20 +79,22 @@ export default function (config) {
 
 	// Collections
 	// ---------------------------------------------------------------------------
-	config.addCollection('posts', c =>
+	config.addCollection('posts', (c: CollectionApi) =>
 		c
 			.getFilteredByGlob('posts/*.md')
 			.filter(utilities.isPostVisible)
-			.sort((a, b) => b.date - a.date),
+			.sort((a: PostEntry, b: PostEntry) => b.date.getTime() - a.date.getTime()),
 	)
-	config.addCollection('internal_posts', c =>
+	config.addCollection('internal_posts', (c: CollectionApi) =>
 		c
 			.getFilteredByGlob('posts/*.md')
 			.filter(utilities.isPostRendered)
-			.sort((a, b) => b.date - a.date),
+			.sort((a: PostEntry, b: PostEntry) => b.date.getTime() - a.date.getTime()),
 	)
-	config.addCollection('snippets', c => c.getFilteredByGlob('pages/snippets/*.md'))
-	config.addCollection('recipes', collection => collection.getFilteredByGlob('pages/recipes/*.md'))
+	config.addCollection('snippets', (c: CollectionApi) => c.getFilteredByGlob('pages/snippets/*.md'))
+	config.addCollection('recipes', (collection: CollectionApi) =>
+		collection.getFilteredByGlob('pages/recipes/*.md'),
+	)
 
 	return {
 		dir: {

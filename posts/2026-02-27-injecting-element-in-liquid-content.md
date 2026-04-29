@@ -77,7 +77,7 @@ So here is the plan: load our HTML in cheerio, find the first top-level element,
 function splitContent(html) {
 	if (!html || typeof html !== 'string') return ['', '']
 
-	const $ = cheerio.load(html, { decodeEntities: false }, false)
+	const $ = cheerio.load(html, null, false)
 
 	const nodes = $.root().contents().toArray()
 	const index = nodes.findIndex(node => node.type === 'tag')

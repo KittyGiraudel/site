@@ -4,8 +4,10 @@
 	"homepage": "https://kittygiraudel.com",
 	"scripts": {
 		"sw": "./node_modules/.bin/workbox generateSW workbox-config.cjs",
-		"build": "npx @11ty/eleventy && npm run sw",
-		"start": "NODE_ENV=development npx @11ty/eleventy --serve --quiet --incremental",
+		"build": "npx @11ty/eleventy --config=eleventy.config.ts",
+		"postbuild": "npm run sw",
+		"start": "NODE_ENV=development npm run build --ignore-scripts -- --serve --quiet --incremental",
+		"typecheck": "tsc --noEmit",
 		"format": "biome format --write .",
 		"test": "node --test tests/*.test.mjs"
 	},
@@ -28,6 +30,10 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.12",
-		"@netlify/edge-functions": "^3.0.6"
+		"@netlify/edge-functions": "^3.0.6",
+		"@types/he": "^1.2.3",
+		"@types/html-minifier-terser": "^7.0.2",
+		"@types/markdown-it": "^14.1.2",
+		"@types/node": "^25.6.0"
 	}
 }

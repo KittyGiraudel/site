@@ -1,22 +1,32 @@
 import slugify from '@sindresorhus/slugify'
 import * as cheerio from 'cheerio'
+import type { Element } from 'domhandler'
+import type { EleventyConfig } from '../types/eleventy.ts'
 
-export default function tocPlugin(eleventyConfig) {
-	eleventyConfig.addFilter('table_of_contents', html => {
+type TocNode = {
+	id: string
+	level: number
+	text: string
+	children: TocNode[]
+}
+
+export default function tocPlugin(eleventyConfig: EleventyConfig) {
+	eleventyConfig.addFilter('table_of_contents', (html: string) => {
 		if (!html || typeof html !== 'string') {
 			return []
 		}
 
-		const $ = cheerio.load(html, { decodeEntities: false }, false)
+		const $ = cheerio.load(html, null, false)
 		const headings = $('h2, h3, h4').toArray()
 
 		return headings.length < 2 ? [] : buildTocTree($, headings)
 	})
 }
-function buildTocTree($, headings) {
-	const tree = []
-	let currentL2 = null
-	let currentL3 = null
+
+function buildTocTree($: cheerio.CheerioAPI, headings: Element[]): TocNode[] {
+	const tree: TocNode[] = []
+	let currentL2: TocNode | null = null
+	let currentL3: TocNode | null = null
 
 	for (const heading of headings) {
 		const data = getHeadingData($, heading)
@@ -41,7 +51,7 @@ function buildTocTree($, headings) {
 	return tree
 }
 
-function getHeadingData($, heading) {
+function getHeadingData($: cheerio.CheerioAPI, heading: Element) {
 	const text = $(heading).text().trim()
 	if (!text) return null
 
