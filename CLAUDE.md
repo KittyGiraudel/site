@@ -30,7 +30,7 @@ Posts support: `title`, `description`, `tags` (Title Case), `guest` (guest autho
 
 ### Data files (`data/`)
 
-- `site.js` — Global config: URL, author, nav, feature flags
+- `site.js` — Global config: URL, author, nav, features
 - `git.js` — Maps file paths to last-modified dates (used for `update_date`)
 - `projects.json`, `speaking.json` — Structured content for those pages
 

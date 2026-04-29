@@ -1,4 +1,4 @@
-import CONFIG from '../flags.json' with { type: 'json' }
+import FEATURES from '../features.json' with { type: 'json' }
 
 const ENV = process.env.NODE_ENV
 
@@ -40,7 +40,7 @@ export default {
 		{ path: '/resume/', label: 'Hire me' },
 	],
 	configuration: {
-		inline_assets: CONFIG.inlineAssets.includes(ENV),
-		service_worker: CONFIG.serviceWorker.includes(ENV),
+		inline_assets: FEATURES.inlineAssets.includes(ENV),
+		service_worker: FEATURES.serviceWorker.includes(ENV),
 	},
 }

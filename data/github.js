@@ -1,5 +1,5 @@
 import Fetch from '@11ty/eleventy-fetch'
-import CONFIG from '../flags.json' with { type: 'json' }
+import FEATURES from '../features.json' with { type: 'json' }
 
 const ENV = process.env.NODE_ENV
 
@@ -17,7 +17,7 @@ const STATIC_DATA = {
 }
 
 export default async function () {
-	if (!CONFIG.githubStars.includes(ENV)) {
+	if (!FEATURES.githubStars.includes(ENV)) {
 		return {
 			stargazers: STATIC_DATA,
 		}

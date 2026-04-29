@@ -2,24 +2,24 @@ import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
 import footnotes from 'eleventy-plugin-footnotes'
-import FLAGS from './flags.json' with { type: 'json' }
+import features from './features.json' with { type: 'json' }
 import injectHeadingAnchors from './plugins/heading-anchors.ts'
 import postStatsPlugin from './plugins/post-stats.ts'
 import tocPlugin from './plugins/toc.ts'
 import utilities from './plugins/utilities.ts'
 import type { CollectionApi, EleventyConfig, PostEntry } from './types/eleventy.ts'
-import type { FeatureFlags } from './types/flags.ts'
+import type { Features } from './types/features.ts'
 
 const ENV = process.env.NODE_ENV
-const CONFIG = FLAGS as unknown as FeatureFlags
+const FEATURES = features as unknown as Features
 
 export default function (config: EleventyConfig) {
 	// Content post-processing
 	// ---------------------------------------------------------------------------
-	if (CONFIG.minifyHTML.includes(ENV)) config.addTransform('htmlmin', utilities.minifyHTML)
-	if (CONFIG.wrapEmojis.includes(ENV)) config.addTransform('emoji', utilities.a11yEmojis)
-	if (CONFIG.helmet.includes(ENV)) config.addTransform('helmet', utilities.helmet)
-	if (CONFIG.headingAnchors.includes(ENV))
+	if (FEATURES.minifyHTML.includes(ENV)) config.addTransform('htmlmin', utilities.minifyHTML)
+	if (FEATURES.wrapEmojis.includes(ENV)) config.addTransform('emoji', utilities.a11yEmojis)
+	if (FEATURES.helmet.includes(ENV)) config.addTransform('helmet', utilities.helmet)
+	if (FEATURES.headingAnchors.includes(ENV))
 		config.addTransform('headingAnchors', injectHeadingAnchors)
 	config.addTransform('smileyFaces', utilities.wrapSmileyFaces)
 
@@ -39,9 +39,9 @@ export default function (config: EleventyConfig) {
 	})
 	config.addPlugin(postStatsPlugin)
 	config.addPlugin(tocPlugin)
-	if (CONFIG.syntaxHighlight.includes(ENV))
+	if (FEATURES.syntaxHighlight.includes(ENV))
 		config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
-	if (!CONFIG.markdownAlternative.includes(ENV))
+	if (!FEATURES.markdownAlternative.includes(ENV))
 		config.ignores.add('pages/blog/index-markdown.liquid')
 	config.ignores.add('CLAUDE.md')
 
@@ -61,7 +61,7 @@ export default function (config: EleventyConfig) {
 	// script tags in production. For the assets to be linked to in development,
 	// they need to be passed through to the `_site` directory.
 	// See: https://kittygiraudel.com/2020/12/03/inlining-scripts-and-styles-in-11ty/
-	if (!CONFIG.inlineAssets.includes(ENV)) {
+	if (!FEATURES.inlineAssets.includes(ENV)) {
 		config.addPassthroughCopy('assets/js')
 		config.addPassthroughCopy('assets/css')
 	}

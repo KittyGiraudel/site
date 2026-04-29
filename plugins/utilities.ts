@@ -4,12 +4,12 @@ import emojiShortName from 'emoji-short-name'
 import he from 'he'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
-import FLAGS from '../flags.json' with { type: 'json' }
+import features from '../features.json' with { type: 'json' }
 import type { DateInput, FrontMatterCarrier, FrontMatterLike } from '../types/eleventy.ts'
-import type { FeatureFlags } from '../types/flags.ts'
+import type { Features } from '../types/features.ts'
 
 const ENV = process.env.NODE_ENV
-const CONFIG = FLAGS as unknown as FeatureFlags
+const FEATURES = features as unknown as Features
 const EMOJI_REGEX = emojiRegex()
 const DATE_FORMATTER = new Intl.DateTimeFormat('en', {
 	year: 'numeric',
@@ -146,7 +146,7 @@ function getFrontMatterData(value: FrontMatterCarrier): Partial<FrontMatterLike>
 
 // A post is visible if it is not a draft or if drafts are enabled.
 function isPostVisible(value: FrontMatterCarrier): boolean {
-	return !getFrontMatterData(value).draft || CONFIG.renderDrafts.includes(ENV)
+	return !getFrontMatterData(value).draft || FEATURES.renderDrafts.includes(ENV)
 }
 
 // A post is rendered if it is visible and not an external post.
