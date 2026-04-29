@@ -44,7 +44,7 @@ function injectHeadingAnchors(content, outputPath) {
 	}
 
 	// Load the HTML content into a virtual DOM with cheerio
-	const $ = cheerio.load(content, { decodeEntities: false }, true)
+	const $ = cheerio.load(content, null, true)
 
 	// Keep an internal index for anchors
 	let anchorIndex = 0

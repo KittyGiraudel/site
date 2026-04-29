@@ -9,7 +9,7 @@ function injectHeadingAnchors(content: string, outputPath?: string) {
 		return content
 	}
 
-	const $ = cheerio.load(content, undefined, true)
+	const $ = cheerio.load(content)
 
 	let anchorIndex = 0
 
