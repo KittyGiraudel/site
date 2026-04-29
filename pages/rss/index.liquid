@@ -13,12 +13,12 @@ eleventyExcludeFromCollections: true
       {% assign feed_updated = post_updated %}
     {% endif %}
   {%- endfor %}
-  <title>{{ site.author }}</title>
-  <subtitle>{{ site.description }}</subtitle>
+  <title>{{ site.author | escape }}</title>
+  <subtitle>{{ site.description | escape }}</subtitle>
   <link href="{{ site.url }}/rss/index.xml" rel="self" type="application/atom+xml" />
   <link href="{{ site.url }}" rel="alternate" type="text/html" />
   <author>
-    <name>{{ site.author }}</name>
+    <name>{{ site.author | escape }}</name>
   </author>
   {% if feed_updated %}
   <updated>{{ feed_updated | date_to_rfc3339 }}</updated>
@@ -34,7 +34,7 @@ eleventyExcludeFromCollections: true
   {%- if post.data.external -%}{{ post.data.external.url }}{%- else -%}{{ post.url | prepend: site.url }}{%- endif -%}
   {%- endcapture %}
   <entry>
-    <title>{{ post.data.title }}</title>
+    <title>{{ post.data.title | escape }}</title>
     <link href="{{ absolute_post_url }}" />
     {% unless post.data.external %}
       <link
@@ -45,7 +45,7 @@ eleventyExcludeFromCollections: true
     <published>{{ post_published | date_to_rfc3339 }}</published>
     <updated>{{ post_updated | date_to_rfc3339 }}</updated>
     <id>{{ absolute_post_url }}</id>
-    <summary>{{ post.data.description }}</summary>
+    <summary>{{ post.data.description | escape }}</summary>
     {% unless post.data.external %}
     <content type="html"><![CDATA[{{ post.templateContent | replace: 'href="/', 'href="https://kittygiraudel.com/' | replace: 'src="/', 'src="https://kittygiraudel.com/' }}]]></content>
     {% endunless %}
