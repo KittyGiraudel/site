@@ -1,4 +1,4 @@
-import { CONFIG } from '../.eleventy.js'
+import { CONFIG } from '../eleventy.config.ts'
 
 export default {
 	url: 'https://kittygiraudel.com',

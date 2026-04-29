@@ -2,10 +2,11 @@ import { IdAttributePlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
 import footnotes from 'eleventy-plugin-footnotes'
-import injectHeadingAnchors from './plugins/heading-anchors.js'
-import postStatsPlugin from './plugins/post-stats.js'
-import tocPlugin from './plugins/toc.js'
-import utilities from './plugins/utilities.js'
+import injectHeadingAnchors from './plugins/heading-anchors.ts'
+import postStatsPlugin from './plugins/post-stats.ts'
+import tocPlugin from './plugins/toc.ts'
+import utilities from './plugins/utilities.ts'
+import type { CollectionApi, EleventyConfig, PostEntry } from './types/eleventy.ts'
 
 const PRODUCTION = process.env.NODE_ENV === 'production'
 export const CONFIG = {
@@ -23,8 +24,7 @@ export const CONFIG = {
 	renderDrafts: !PRODUCTION,
 }
 
-/** @param {import('@11ty/eleventy/UserConfig').default} config */
-export default function (config) {
+export default function (config: EleventyConfig) {
 	// Content post-processing
 	// ---------------------------------------------------------------------------
 	if (CONFIG.minifyHTML) config.addTransform('htmlmin', utilities.minifyHTML)
@@ -86,20 +86,22 @@ export default function (config) {
 
 	// Collections
 	// ---------------------------------------------------------------------------
-	config.addCollection('posts', c =>
+	config.addCollection('posts', (c: CollectionApi) =>
 		c
 			.getFilteredByGlob('posts/*.md')
 			.filter(utilities.isPostVisible)
-			.sort((a, b) => b.date - a.date),
+			.sort((a: PostEntry, b: PostEntry) => b.date.getTime() - a.date.getTime()),
 	)
-	config.addCollection('internal_posts', c =>
+	config.addCollection('internal_posts', (c: CollectionApi) =>
 		c
 			.getFilteredByGlob('posts/*.md')
 			.filter(utilities.isPostRendered)
-			.sort((a, b) => b.date - a.date),
+			.sort((a: PostEntry, b: PostEntry) => b.date.getTime() - a.date.getTime()),
 	)
-	config.addCollection('snippets', c => c.getFilteredByGlob('pages/snippets/*.md'))
-	config.addCollection('recipes', collection => collection.getFilteredByGlob('pages/recipes/*.md'))
+	config.addCollection('snippets', (c: CollectionApi) => c.getFilteredByGlob('pages/snippets/*.md'))
+	config.addCollection('recipes', (collection: CollectionApi) =>
+		collection.getFilteredByGlob('pages/recipes/*.md'),
+	)
 
 	return {
 		dir: {

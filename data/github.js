@@ -1,16 +1,20 @@
 import Fetch from '@11ty/eleventy-fetch'
-import { CONFIG } from '../.eleventy.js'
-import utilities from '../plugins/utilities.js'
+
+const GITHUB_STARS = process.env.NODE_ENV === 'production'
+
+function formatNumber(amount) {
+	return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
+}
 
 const STATIC_DATA = {
-	'https://github.com/KittyGiraudel/a11y-dialog': utilities.formatNumber(2500),
-	'https://github.com/KittyGiraudel/SJSJ': utilities.formatNumber(2300),
-	'https://github.com/KittyGiraudel/sass-guidelines': utilities.formatNumber(900),
-	'https://github.com/SassDoc/sassdoc': utilities.formatNumber(1400),
+	'https://github.com/KittyGiraudel/a11y-dialog': formatNumber(2500),
+	'https://github.com/KittyGiraudel/SJSJ': formatNumber(2300),
+	'https://github.com/KittyGiraudel/sass-guidelines': formatNumber(900),
+	'https://github.com/SassDoc/sassdoc': formatNumber(1400),
 }
 
 export default async function () {
-	if (!CONFIG.githubStars) {
+	if (!GITHUB_STARS) {
 		return {
 			stargazers: STATIC_DATA,
 		}
@@ -29,7 +33,7 @@ export default async function () {
 		)
 
 		const data = repositoriesData.reduce((acc, repo) => {
-			acc[repo.clone_url.replace('.git', '')] = utilities.formatNumber(repo.stargazers_count)
+			acc[repo.clone_url.replace('.git', '')] = formatNumber(repo.stargazers_count)
 			return acc
 		}, {})
 

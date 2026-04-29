@@ -36,10 +36,10 @@ Posts support: `title`, `description`, `tags` (Title Case), `guest` (guest autho
 
 ### Custom plugins (`plugins/`)
 
-- `utilities.js` — HTML minification, emoji a11y wrapping (`<span role="img" aria-label>`), markdown rendering, callout shortcodes, custom Liquid filters
-- `post-stats.js` — Aggregates word counts, reading times, tag popularity across all posts; exposed as `postStats` collection
-- `toc.js` — Builds hierarchical table of contents from h2/h3/h4 headings
-- `heading-anchors.js` — Auto-injects anchor links into headings (production only)
+- `utilities.ts` — HTML minification, emoji a11y wrapping (`<span role="img" aria-label>`), markdown rendering, callout shortcodes, custom Liquid filters
+- `post-stats.ts` — Aggregates word counts, reading times, tag popularity across all posts; exposed as `postStats` collection
+- `toc.ts` — Builds hierarchical table of contents from h2/h3/h4 headings
+- `heading-anchors.ts` — Auto-injects anchor links into headings (production only)
 
 ### Asset pipeline
 
@@ -58,7 +58,7 @@ Tests in `tests/` use Node.js's native `test` module with Cheerio for DOM assert
 
 ### Deployment
 
-Hosted on Netlify. `public/_redirects` and `public/_headers` are passthrough-copied to the output root. Draft posts are hidden in production (`renderDrafts` flag in `.eleventy.js`).
+Hosted on Netlify. `public/_redirects` and `public/_headers` are passthrough-copied to the output root. Draft posts are hidden in production (`renderDrafts` flag in `eleventy.config.ts`).
 
 ### Edge function: Markdown content negotiation
 

@@ -1,9 +1,16 @@
-import fs from 'node:fs'
-import utilities from './utilities.js'
+import * as fs from 'node:fs'
+import type { CollectionApi, EleventyConfig, PostEntry } from '../types/eleventy.ts'
+import utilities from './utilities.ts'
 
 const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/
-const CONTENT_STATS_CACHE = new Map()
+const CONTENT_STATS_CACHE = new Map<string, CachedContentStats>()
 const POPULAR_TAGS_TOP = 20
+
+type ContentStats = { characters: number; words: number; paragraphs: number }
+type CachedContentStats = { mtimeMs: number; stats: ContentStats }
+type PostStatsPluginOptions = { popularTagsTop?: number }
+type PopularTagsOptions = { top?: number }
+
 const EMPTY_COLLECTION = {
 	firstPostDate: null,
 	lastPostDate: null,
@@ -20,12 +27,15 @@ const EMPTY_COLLECTION = {
 	months: [],
 }
 
-export default function postStatsPlugin(eleventyConfig, options = {}) {
-	eleventyConfig.addCollection('postStats', collection => {
+export default function postStatsPlugin(
+	eleventyConfig: EleventyConfig,
+	options: PostStatsPluginOptions = {},
+) {
+	eleventyConfig.addCollection('postStats', (collection: CollectionApi) => {
 		const posts = collection
 			.getFilteredByGlob('posts/*.md')
 			.filter(utilities.isPostVisible)
-			.sort((a, b) => b.date - a.date)
+			.sort((a: PostEntry, b: PostEntry) => b.date.getTime() - a.date.getTime())
 		const postCount = posts.length
 
 		if (postCount === 0) {
@@ -34,15 +44,24 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
 			return arr
 		}
 
-		const firstPostDate = posts[posts.length - 1].date
-		const lastPostDate = posts[0].date
-		const spanMs = lastPostDate - firstPostDate
+		const firstPost = posts[posts.length - 1]
+		const lastPost = posts[0]
+
+		if (!firstPost || !lastPost) {
+			const arr = [EMPTY_COLLECTION]
+			Object.assign(arr, EMPTY_COLLECTION)
+			return arr
+		}
+
+		const firstPostDate = firstPost.date
+		const lastPostDate = lastPost.date
+		const spanMs = lastPostDate.getTime() - firstPostDate.getTime()
 		const spanDays = spanMs / (24 * 60 * 60 * 1000)
 		const spanWeeks = spanDays / 7
 		const spanMonths = spanDays / (365.25 / 12)
 		const spanYears = spanDays / 365.25
 
-		const safe = n => (Number.isFinite(n) && n > 0 ? n : 1)
+		const safe = (n: number) => (Number.isFinite(n) && n > 0 ? n : 1)
 
 		let totalChars = 0
 		let totalWords = 0
@@ -142,7 +161,7 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
 			avgParagraphCount: utilities.formatNumber(avgParagraphCount),
 			popularTags,
 			years,
-			months: utilities.formatNumber(months),
+			months,
 		}
 
 		const arr = [stats]
@@ -151,26 +170,26 @@ export default function postStatsPlugin(eleventyConfig, options = {}) {
 	})
 }
 
-function stripFrontMatter(raw) {
+function stripFrontMatter(raw: string): string {
 	const match = raw.match(FRONT_MATTER_REGEX)
 	return match ? match[2].trim() : raw.trim()
 }
 
-function countWords(text) {
+function countWords(text: string): number {
 	return (text.match(/\S+/g) || []).length
 }
 
-function countParagraphs(text) {
+function countParagraphs(text: string): number {
 	const trimmed = text.trim()
 	if (!trimmed) return 0
 	return trimmed.split(/\n\s*\n/).filter(Boolean).length
 }
 
-function getCachedContentStats(post) {
+function getCachedContentStats(post: PostEntry): ContentStats | null {
 	const inputPath = post.inputPath
 	if (!inputPath) return null
 
-	let stat
+	let stat: fs.Stats
 	try {
 		stat = fs.statSync(inputPath)
 	} catch {
@@ -200,7 +219,7 @@ function getCachedContentStats(post) {
 	return stats
 }
 
-function getContentStats(body) {
+function getContentStats(body: string): ContentStats {
 	return {
 		characters: body.length,
 		words: countWords(body),
@@ -208,7 +227,7 @@ function getContentStats(body) {
 	}
 }
 
-function getPopularTags(posts, options = {}) {
+function getPopularTags(posts: PostEntry[], options: PopularTagsOptions = {}) {
 	const top = options.top ?? POPULAR_TAGS_TOP
 	const countByTag = new Map()
 

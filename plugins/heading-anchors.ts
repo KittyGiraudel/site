@@ -1,18 +1,19 @@
 import * as cheerio from 'cheerio'
+import type { Element } from 'domhandler'
 
 // This implementation is heavily inspired from <heading-anchors> by Zach Leat.
 // See: https://github.com/zachleat/heading-anchors
-function injectHeadingAnchors(content, outputPath) {
+function injectHeadingAnchors(content: string, outputPath?: string) {
 	if (typeof outputPath !== 'string' || !outputPath.endsWith('.html')) return content
 	if (!content.includes('class="Post"') && !content.includes('itemprop="articleBody"')) {
 		return content
 	}
 
-	const $ = cheerio.load(content, { decodeEntities: false }, true)
+	const $ = cheerio.load(content, undefined, true)
 
 	let anchorIndex = 0
 
-	$('.Post :is(h2, h3, h4)[id]:not([data-ha-exclude])').each((_, el) => {
+	$('.Post :is(h2, h3, h4)[id]:not([data-ha-exclude])').each((_, el: Element) => {
 		const $heading = $(el)
 		const anchorName = `--ha_0_${anchorIndex++}`
 
