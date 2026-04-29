@@ -16,7 +16,7 @@
   {% if item.path contains "/blog" %}
     {% assign start = current_url | slice: 0, 4 %}
     {% assign is_post = start == "/201" or start == "/202" %}
-    {% if current_url contains "tags" or is_post %}
+    {% if current_url contains "tags" or current_url contains "/stats" or is_post %}
       {% assign active = true %}
     {% endif %}
   {% endif %}
