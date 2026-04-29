@@ -2,14 +2,12 @@ import * as fs from 'node:fs'
 import type { CollectionApi, EleventyConfig, PostEntry } from '../types/eleventy.ts'
 import utilities from './utilities.ts'
 
+type ContentStats = { characters: number; words: number; paragraphs: number }
+type CachedContentStats = { mtimeMs: number; stats: ContentStats }
+
 const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/
 const CONTENT_STATS_CACHE = new Map<string, CachedContentStats>()
 const POPULAR_TAGS_TOP = 20
-
-type ContentStats = { characters: number; words: number; paragraphs: number }
-type CachedContentStats = { mtimeMs: number; stats: ContentStats }
-type PostStatsPluginOptions = { popularTagsTop?: number }
-type PopularTagsOptions = { top?: number }
 
 const EMPTY_COLLECTION = {
 	firstPostDate: null,
@@ -27,10 +25,7 @@ const EMPTY_COLLECTION = {
 	months: [],
 }
 
-export default function postStatsPlugin(
-	eleventyConfig: EleventyConfig,
-	options: PostStatsPluginOptions = {},
-) {
+export default function postStatsPlugin(eleventyConfig: EleventyConfig) {
 	eleventyConfig.addCollection('postStats', (collection: CollectionApi) => {
 		const posts = collection
 			.getFilteredByGlob('posts/*.md')
@@ -128,7 +123,7 @@ export default function postStatsPlugin(
 		const avgPostsPerYear = Math.round((postCount / safe(spanYears)) * 100) / 100
 		const avgDaysBetweenPosts = postCount > 1 ? Math.round(spanDays / (postCount - 1)) : 0
 
-		const popularTags = getPopularTags(posts, { top: options.popularTagsTop ?? POPULAR_TAGS_TOP })
+		const popularTags = getPopularTags(posts)
 
 		const years = Array.from(yearsMap.values())
 			.map(yearBucket => {
@@ -227,8 +222,7 @@ function getContentStats(body: string): ContentStats {
 	}
 }
 
-function getPopularTags(posts: PostEntry[], options: PopularTagsOptions = {}) {
-	const top = options.top ?? POPULAR_TAGS_TOP
+function getPopularTags(posts: PostEntry[]) {
 	const countByTag = new Map()
 
 	for (const post of posts) {
@@ -239,5 +233,5 @@ function getPopularTags(posts: PostEntry[], options: PopularTagsOptions = {}) {
 	return Array.from(countByTag.entries())
 		.map(([name, count]) => ({ name, extra: count }))
 		.sort((a, b) => b.extra - a.extra)
-		.slice(0, top)
+		.slice(0, POPULAR_TAGS_TOP)
 }
