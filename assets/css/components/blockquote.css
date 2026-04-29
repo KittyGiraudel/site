@@ -4,86 +4,86 @@
  * 3. CSS trick to have a gradient border *with* rounded corners.
  */
 blockquote {
-  --background-color: light-dark(#f3f8fc, #303132);
-  position: relative; /* 1 */
-  margin: var(--vb-1\.5) 0; /* 2 */
-  padding: 0.75em 1.5em;
-  background-color: var(--background-color);
-  border-radius: 1em;
-  corner-shape: squircle;
-  border: 2px solid transparent; /* 3 */
-  background-image:
-    linear-gradient(var(--background-color), var(--background-color)),
-    linear-gradient(to right, var(--blue), var(--pink)); /* 3 */
-  background-origin: border-box; /* 3 */
-  background-clip: padding-box, border-box; /* 3 */
+	--background-color: light-dark(#f3f8fc, #303132);
+	position: relative; /* 1 */
+	margin: var(--vb-1\.5) 0; /* 2 */
+	padding: 0.75em 1.5em;
+	background-color: var(--background-color);
+	border-radius: 1em;
+	corner-shape: squircle;
+	border: 2px solid transparent; /* 3 */
+	background-image:
+		linear-gradient(var(--background-color), var(--background-color)),
+		linear-gradient(to right, var(--blue), var(--pink)); /* 3 */
+	background-origin: border-box; /* 3 */
+	background-clip: padding-box, border-box; /* 3 */
 }
 
 blockquote::before,
 blockquote::after {
-  position: absolute;
-  font-size: 1000%;
-  opacity: 0.2;
-  font-family: Baskerville, serif;
-  font-weight: bold;
-  line-height: 1;
-  z-index: 1;
-  transition: 150ms;
+	position: absolute;
+	font-size: 1000%;
+	opacity: 0.2;
+	font-family: Baskerville, serif;
+	font-weight: bold;
+	line-height: 1;
+	z-index: 1;
+	transition: 150ms;
 }
 
 blockquote::before {
-  content: "“";
-  color: var(--blue);
-  inset-block-end: 100%;
-  inset-inline-end: 100%;
-  transform: translate(67%, 73%);
+	content: "“";
+	color: var(--blue);
+	inset-block-end: 100%;
+	inset-inline-end: 100%;
+	transform: translate(67%, 73%);
 }
 
 blockquote::after {
-  content: "”";
-  color: var(--pink);
-  inset-block-start: 100%;
-  inset-inline-start: 100%;
-  transform: translate(-67%, -37%);
+	content: "”";
+	color: var(--pink);
+	inset-block-start: 100%;
+	inset-inline-start: 100%;
+	transform: translate(-67%, -37%);
 }
 
 /**
  * 1. Ensure the text inside the blockquote sits on top of the quotation marks.
  */
 blockquote > p {
-  z-index: 2; /* 1 */
-  position: relative; /* 1 */
+	z-index: 2; /* 1 */
+	position: relative; /* 1 */
 }
 
 blockquote:focus-within::before,
 blockquote:focus-within::after,
 blockquote:hover::before,
 blockquote:hover::after {
-  rotate: 3deg;
+	rotate: 3deg;
 }
 
 @media (min-width: 1024px) {
-  /**
-   * 1. Increase width so the blockquote container looks wider than the
-   *    body text, but the text within it is aligned with the body text.
-   */
-  blockquote {
-    width: calc(100% + var(--margin-offset) * 2); /* 1 */
-    padding: 1em var(--margin-offset); /* 1 */
-    inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
-  }
+	/**
+	 * 1. Increase width so the blockquote container looks wider than the
+	 *    body text, but the text within it is aligned with the body text.
+	 */
+	blockquote {
+		width: calc(100% + var(--margin-offset) * 2); /* 1 */
+		padding: 1em var(--margin-offset); /* 1 */
+		inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
+	}
 }
 
 /**
  * 1. Prevent an odd gap when the first child of blockquote has a top margin
  */
 blockquote > :first-child {
-  margin-block-start: 0; /* 1 */
+	margin-block-start: 0; /* 1 */
 }
 
 /**
  * 1. Prevent an odd gap when the last child of blockquote has a bottom margin
  */
 blockquote > :last-child {
-  margin-block-end: 0; /* 1 */
+	margin-block-end: 0; /* 1 */
 }

@@ -1,73 +1,73 @@
 .Footer {
-  position: relative;
-  padding-block: var(--vb);
-  background-image: linear-gradient(
-    to right,
-    light-dark(rgb(238 244 248), rgb(54 60 63)),
-    light-dark(rgb(251 243 248), rgb(46 38 42))
-  );
+	position: relative;
+	padding-block: var(--vb);
+	background-image: linear-gradient(
+		to right,
+		light-dark(rgb(238 244 248), rgb(54 60 63)),
+		light-dark(rgb(251 243 248), rgb(46 38 42))
+	);
 }
 
 .Footer__inner {
-  display: flex;
-  font-size: 80%;
-  margin-inline: calc(var(--vb-thirds) * -1);
+	display: flex;
+	font-size: 80%;
+	margin-inline: calc(var(--vb-thirds) * -1);
 }
 
 .Footer__left {
-  width: 60%;
-  padding-inline: 1em;
+	width: 60%;
+	padding-inline: 1em;
 }
 
 .Footer__colophon {
-  opacity: 0.9;
-  font-size: 80%;
+	opacity: 0.9;
+	font-size: 80%;
 }
 
 .Footer__right {
-  width: 40%;
-  padding-inline: 1em;
+	width: 40%;
+	padding-inline: 1em;
 }
 
 .Footer__list {
-  text-align: end;
-  list-style: none;
+	text-align: end;
+	list-style: none;
 }
 
 .Footer__list > li {
-  margin: 0;
+	margin: 0;
 }
 
 @media (max-width: 768px) {
-  .Footer {
-    padding-block: var(--vb-half);
-  }
+	.Footer {
+		padding-block: var(--vb-half);
+	}
 
-  .Footer__inner {
-    flex-direction: column;
-  }
+	.Footer__inner {
+		flex-direction: column;
+	}
 
-  .Footer__left,
-  .Footer__right {
-    width: 100%;
-  }
+	.Footer__left,
+	.Footer__right {
+		width: 100%;
+	}
 
-  .Footer__list {
-    text-align: center;
-    padding: 0;
-    margin-block-end: var(--vb-thirds);
-  }
+	.Footer__list {
+		text-align: center;
+		padding: 0;
+		margin-block-end: var(--vb-thirds);
+	}
 
-  .Footer__list > li {
-    display: inline-block;
-    margin-block: var(--vb-sixth);
-    list-style: none;
-  }
+	.Footer__list > li {
+		display: inline-block;
+		margin-block: var(--vb-sixth);
+		list-style: none;
+	}
 
-  .Footer__list > li:not(:last-of-type)::after {
-    margin-inline: 0.5ch;
-    content: "·";
-    color: var(--pink);
-    font-family: monospace;
-  }
+	.Footer__list > li:not(:last-of-type)::after {
+		margin-inline: 0.5ch;
+		content: "·";
+		color: var(--pink);
+		font-family: monospace;
+	}
 }

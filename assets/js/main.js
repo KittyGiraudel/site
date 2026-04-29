@@ -1,106 +1,106 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // https://joelcalifa.com/blog/revisiting-visited
-  ;(function markVisitedLinks() {
-    localStorage.setItem(`visited-${window.location.pathname}`, true)
+	// https://joelcalifa.com/blog/revisiting-visited
+	;(function markVisitedLinks() {
+		localStorage.setItem(`visited-${window.location.pathname}`, true)
 
-    Array.from(document.querySelectorAll('.Main a')).forEach(link => {
-      if (
-        link.host === window.location.host &&
-        localStorage.getItem(`visited-${link.pathname}${link.pathname.endsWith('/') ? '' : '/'}`)
-      )
-        link.dataset.visited = true
-    })
-  })()
+		Array.from(document.querySelectorAll('.Main a')).forEach(link => {
+			if (
+				link.host === window.location.host &&
+				localStorage.getItem(`visited-${link.pathname}${link.pathname.endsWith('/') ? '' : '/'}`)
+			)
+				link.dataset.visited = true
+		})
+	})()
 
-  ;(function setupThemeButton() {
-    const { themes } = window.ThemeManager
-    const themeButton = document.querySelector('.js-theme-button')
-    if (!themeButton) return
+	;(function setupThemeButton() {
+		const { themes } = window.ThemeManager
+		const themeButton = document.querySelector('.js-theme-button')
+		if (!themeButton) return
 
-    // Show the button now that JavaScript is loaded
-    themeButton.removeAttribute('hidden')
+		// Show the button now that JavaScript is loaded
+		themeButton.removeAttribute('hidden')
 
-    // Update the button when the theme changes
-    window.ThemeManager.onThemeChanged(theme => {
-      const isDark = theme === themes.DARK
-      const isLight = theme === themes.LIGHT
-      const isAuto = theme === themes.AUTO
+		// Update the button when the theme changes
+		window.ThemeManager.onThemeChanged(theme => {
+			const isDark = theme === themes.DARK
+			const isLight = theme === themes.LIGHT
+			const isAuto = theme === themes.AUTO
 
-      const ariaPressed = isDark ? 'true' : isLight ? 'false' : 'mixed'
-      const label = isAuto
-        ? 'Theme: automatic (follows system setting)'
-        : isDark
-          ? 'Theme: dark'
-          : 'Theme: light'
+			const ariaPressed = isDark ? 'true' : isLight ? 'false' : 'mixed'
+			const label = isAuto
+				? 'Theme: automatic (follows system setting)'
+				: isDark
+					? 'Theme: dark'
+					: 'Theme: light'
 
-      themeButton.setAttribute('aria-pressed', ariaPressed)
-      themeButton.setAttribute('title', label)
-    })
+			themeButton.setAttribute('aria-pressed', ariaPressed)
+			themeButton.setAttribute('title', label)
+		})
 
-    // Toggle the theme when the button is clicked
+		// Toggle the theme when the button is clicked
 
-    function toggleTheme(event) {
-      const button = event.target.closest('.js-theme-button')
-      if (!button) return
+		function toggleTheme(event) {
+			const button = event.target.closest('.js-theme-button')
+			if (!button) return
 
-      const ariaPressed = button.getAttribute('aria-pressed')
-      const theme =
-        ariaPressed === 'true' ? themes.DARK : ariaPressed === 'false' ? themes.LIGHT : themes.AUTO
-      const nextTheme = window.ThemeManager.getNextTheme(theme)
+			const ariaPressed = button.getAttribute('aria-pressed')
+			const theme =
+				ariaPressed === 'true' ? themes.DARK : ariaPressed === 'false' ? themes.LIGHT : themes.AUTO
+			const nextTheme = window.ThemeManager.getNextTheme(theme)
 
-      window.ThemeManager.saveTheme(nextTheme)
-      window.ThemeManager.applyTheme(nextTheme)
-    }
+			window.ThemeManager.saveTheme(nextTheme)
+			window.ThemeManager.applyTheme(nextTheme)
+		}
 
-    themeButton.addEventListener('click', event => {
-      if (document.startViewTransition) document.startViewTransition(() => toggleTheme(event))
-      else toggleTheme(event)
-    })
-  })()
+		themeButton.addEventListener('click', event => {
+			if (document.startViewTransition) document.startViewTransition(() => toggleTheme(event))
+			else toggleTheme(event)
+		})
+	})()
 
-  ;(function setupNavigationNotch() {
-    const navigation = document.querySelector('.Navigation')
-    if (!navigation) return
+	;(function setupNavigationNotch() {
+		const navigation = document.querySelector('.Navigation')
+		if (!navigation) return
 
-    const links = Array.from(navigation.querySelectorAll('.Navigation__item > .Navigation__link'))
-    if (!links.length) return
+		const links = Array.from(navigation.querySelectorAll('.Navigation__item > .Navigation__link'))
+		if (!links.length) return
 
-    const getCurrentLink = () =>
-      navigation.querySelector('.Navigation__item[aria-current] > .Navigation__link') || links[0]
+		const getCurrentLink = () =>
+			navigation.querySelector('.Navigation__item[aria-current] > .Navigation__link') || links[0]
 
-    let currentLink = getCurrentLink()
+		let currentLink = getCurrentLink()
 
-    const moveNotchTo = link => {
-      if (!link) return
+		const moveNotchTo = link => {
+			if (!link) return
 
-      const navigationRect = navigation.getBoundingClientRect()
-      const linkRect = link.getBoundingClientRect()
+			const navigationRect = navigation.getBoundingClientRect()
+			const linkRect = link.getBoundingClientRect()
 
-      navigation.style.setProperty(
-        '--navigation-notch-start',
-        `${Math.round(linkRect.left - navigationRect.left)}px`,
-      )
-      navigation.style.setProperty('--navigation-notch-width', `${Math.round(linkRect.width)}px`)
-      navigation.style.setProperty('--navigation-notch-opacity', '1')
-      currentLink = link
-    }
+			navigation.style.setProperty(
+				'--navigation-notch-start',
+				`${Math.round(linkRect.left - navigationRect.left)}px`,
+			)
+			navigation.style.setProperty('--navigation-notch-width', `${Math.round(linkRect.width)}px`)
+			navigation.style.setProperty('--navigation-notch-opacity', '1')
+			currentLink = link
+		}
 
-    moveNotchTo(currentLink)
+		moveNotchTo(currentLink)
 
-    links.forEach(link => {
-      link.addEventListener('pointerenter', () => moveNotchTo(link))
-      link.addEventListener('focus', () => moveNotchTo(link))
-    })
+		links.forEach(link => {
+			link.addEventListener('pointerenter', () => moveNotchTo(link))
+			link.addEventListener('focus', () => moveNotchTo(link))
+		})
 
-    navigation.addEventListener('pointerleave', () => moveNotchTo(getCurrentLink()))
-    navigation.addEventListener('focusout', event => {
-      if (!event.relatedTarget || !navigation.contains(event.relatedTarget)) {
-        moveNotchTo(getCurrentLink())
-      }
-    })
+		navigation.addEventListener('pointerleave', () => moveNotchTo(getCurrentLink()))
+		navigation.addEventListener('focusout', event => {
+			if (!event.relatedTarget || !navigation.contains(event.relatedTarget)) {
+				moveNotchTo(getCurrentLink())
+			}
+		})
 
-    window.addEventListener('resize', () => moveNotchTo(currentLink))
-  })()
+		window.addEventListener('resize', () => moveNotchTo(currentLink))
+	})()
 
-  window.ThemeManager.mount()
+	window.ThemeManager.mount()
 })

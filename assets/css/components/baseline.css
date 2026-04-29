@@ -1,11 +1,11 @@
 .Baseline {
-  margin: var(--vb) auto;
+	margin: var(--vb) auto;
 }
 
 .Baseline:has(:focus-within) {
-  outline: 2px solid var(--pink);
-  outline-offset: 2px;
-  border-radius: 0.5rem;
+	outline: 2px solid var(--pink);
+	outline-offset: 2px;
+	border-radius: 0.5rem;
 }
 
 /**
@@ -16,18 +16,18 @@
  * 3. CSS trick to have a gradient border *with* rounded corners.
  */
 .Baseline baseline-status {
-  max-width: none; /* 1 */
-  border-radius: 1rem; /* 2 */
-  corner-shape: squircle;
-  border: 2px solid transparent; /* 3 */
-  --background-color: light-dark(#fffafd, #322d2f);
-  background-image:
-    linear-gradient(var(--background-color), var(--background-color)),
-    linear-gradient(to right, var(--pink), var(--blue)); /* 3 */
-  background-origin: border-box; /* 3 */
-  background-clip: padding-box, border-box; /* 3 */
+	max-width: none; /* 1 */
+	border-radius: 1rem; /* 2 */
+	corner-shape: squircle;
+	border: 2px solid transparent; /* 3 */
+	--background-color: light-dark(#fffafd, #322d2f);
+	background-image:
+		linear-gradient(var(--background-color), var(--background-color)),
+		linear-gradient(to right, var(--pink), var(--blue)); /* 3 */
+	background-origin: border-box; /* 3 */
+	background-clip: padding-box, border-box; /* 3 */
 }
 
 .Baseline:has(:focus-within) baseline-status::part(summary) {
-  outline: 0;
+	outline: 0;
 }

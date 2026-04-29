@@ -10,16 +10,16 @@ const siteDir = path.join(repoRoot, '_site')
 export { siteDir }
 
 export async function readText(relativePath) {
-  const fullPath = path.join(siteDir, relativePath)
-  return readFile(fullPath, 'utf8')
+	const fullPath = path.join(siteDir, relativePath)
+	return readFile(fullPath, 'utf8')
 }
 
 export async function readJson(relativePath) {
-  const text = await readText(relativePath)
-  return JSON.parse(text)
+	const text = await readText(relativePath)
+	return JSON.parse(text)
 }
 
 /** Canonical site origin (matches `data/site.js` `url`, no trailing slash). */
 export function getSiteUrl() {
-  return siteData.url.replace(/\/+$/, '')
+	return siteData.url.replace(/\/+$/, '')
 }

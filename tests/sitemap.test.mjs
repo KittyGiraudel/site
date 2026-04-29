@@ -5,75 +5,75 @@ import { getSiteUrl, readText } from './helpers/site-paths.mjs'
 
 /** @param {string} value */
 function assertParsesAsDate(value) {
-  const ms = Date.parse(value)
-  assert.ok(Number.isFinite(ms), `lastmod should parse as a date: ${value}`)
-  return ms
+	const ms = Date.parse(value)
+	assert.ok(Number.isFinite(ms), `lastmod should parse as a date: ${value}`)
+	return ms
 }
 
 test('sitemap.xml is valid and contains absolute URLs', async () => {
-  const xml = await readText('sitemap.xml')
-  const siteUrl = getSiteUrl()
+	const xml = await readText('sitemap.xml')
+	const siteUrl = getSiteUrl()
 
-  const parser = new XMLParser({ ignoreAttributes: false })
-  const doc = parser.parse(xml)
+	const parser = new XMLParser({ ignoreAttributes: false })
+	const doc = parser.parse(xml)
 
-  assert.ok(doc.urlset, 'sitemap should have a <urlset> root element')
+	assert.ok(doc.urlset, 'sitemap should have a <urlset> root element')
 
-  const urls = Array.isArray(doc.urlset.url) ? doc.urlset.url : [doc.urlset.url]
-  assert.ok(urls.length > 0, 'sitemap should contain at least one <url> entry')
+	const urls = Array.isArray(doc.urlset.url) ? doc.urlset.url : [doc.urlset.url]
+	assert.ok(urls.length > 0, 'sitemap should contain at least one <url> entry')
 
-  const site = new URL(siteUrl)
+	const site = new URL(siteUrl)
 
-  const locs = urls.map(entry => entry.loc).filter(Boolean)
-  assert.ok(locs.length === urls.length, 'every <url> should have a <loc>')
+	const locs = urls.map(entry => entry.loc).filter(Boolean)
+	assert.ok(locs.length === urls.length, 'every <url> should have a <loc>')
 
-  for (const loc of locs) {
-    assert.equal(typeof loc, 'string')
+	for (const loc of locs) {
+		assert.equal(typeof loc, 'string')
 
-    const url = new URL(loc)
-    const pathname = url.pathname
+		const url = new URL(loc)
+		const pathname = url.pathname
 
-    assert.equal(url.origin, site.origin, 'sitemap URL should use the correct site domain')
+		assert.equal(url.origin, site.origin, 'sitemap URL should use the correct site domain')
 
-    if (pathname !== '/blog/search/data.json') {
-      assert.ok(pathname.endsWith('/'), `sitemap URL path should use a trailing slash: ${pathname}`)
-    }
-  }
+		if (pathname !== '/blog/search/data.json') {
+			assert.ok(pathname.endsWith('/'), `sitemap URL path should use a trailing slash: ${pathname}`)
+		}
+	}
 
-  const expectedPaths = [
-    '/',
-    '/blog/',
-    '/projects/',
-    '/snippets/',
-    '/talks/',
-    '/stats/',
-    '/resume/',
-    '/about/',
-    '/accessibility-statement/',
-  ]
-  for (const path of expectedPaths) {
-    const expected = new URL(path, site.origin).toString()
-    assert.ok(locs.includes(expected), `sitemap should include ${expected}`)
-  }
+	const expectedPaths = [
+		'/',
+		'/blog/',
+		'/projects/',
+		'/snippets/',
+		'/talks/',
+		'/stats/',
+		'/resume/',
+		'/about/',
+		'/accessibility-statement/',
+	]
+	for (const path of expectedPaths) {
+		const expected = new URL(path, site.origin).toString()
+		assert.ok(locs.includes(expected), `sitemap should include ${expected}`)
+	}
 
-  const forbiddenPaths = ['/blog/index-markdown/', '/README.md', '/404.html']
-  for (const path of forbiddenPaths) {
-    const forbidden = new URL(path, site.origin).toString()
-    assert.ok(!locs.includes(forbidden), `sitemap should not include ${forbidden}`)
-  }
+	const forbiddenPaths = ['/blog/index-markdown/', '/README.md', '/404.html']
+	for (const path of forbiddenPaths) {
+		const forbidden = new URL(path, site.origin).toString()
+		assert.ok(!locs.includes(forbidden), `sitemap should not include ${forbidden}`)
+	}
 
-  const withLastmod = urls.filter(entry => Boolean(entry.lastmod))
-  assert.ok(
-    withLastmod.length / urls.length >= 0.85,
-    'most sitemap URLs should include <lastmod> (creation or update date)',
-  )
-  for (const entry of withLastmod) {
-    assertParsesAsDate(entry.lastmod)
-  }
+	const withLastmod = urls.filter(entry => Boolean(entry.lastmod))
+	assert.ok(
+		withLastmod.length / urls.length >= 0.85,
+		'most sitemap URLs should include <lastmod> (creation or update date)',
+	)
+	for (const entry of withLastmod) {
+		assertParsesAsDate(entry.lastmod)
+	}
 
-  const statsPostUrl = new URL('/2026/03/02/stats-page-with-11ty/', site.origin).toString()
-  const statsEntry = urls.find(u => u.loc === statsPostUrl)
-  assert.ok(statsEntry, 'sitemap should include the stats Eleventy post')
-  assert.ok(statsEntry.lastmod, 'golden post should have <lastmod>')
-  assertParsesAsDate(statsEntry.lastmod)
+	const statsPostUrl = new URL('/2026/03/02/stats-page-with-11ty/', site.origin).toString()
+	const statsEntry = urls.find(u => u.loc === statsPostUrl)
+	assert.ok(statsEntry, 'sitemap should include the stats Eleventy post')
+	assert.ok(statsEntry.lastmod, 'golden post should have <lastmod>')
+	assertParsesAsDate(statsEntry.lastmod)
 })

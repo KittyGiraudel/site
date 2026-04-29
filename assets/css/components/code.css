@@ -5,79 +5,79 @@
  * 3. CSS trick to have a gradient border *with* rounded corners.
  */
 pre {
-  --background-color: light-dark(#fffafd, #322d2f);
-  background-color: var(--background-color);
-  margin-block: var(--vb);
-  padding: 1.25em;
-  overflow: auto;
-  font-family: inherit; /* 1 */
-  position: relative; /* 2 */
-  border-radius: 1em;
-  corner-shape: squircle;
-  border: 2px solid transparent; /* 3 */
-  background-image:
-    linear-gradient(var(--background-color), var(--background-color)),
-    linear-gradient(to right, var(--pink), var(--blue)); /* 3 */
-  background-origin: border-box; /* 3 */
-  background-clip: padding-box, border-box; /* 3 */
-  container-type: inline-size;
+	--background-color: light-dark(#fffafd, #322d2f);
+	background-color: var(--background-color);
+	margin-block: var(--vb);
+	padding: 1.25em;
+	overflow: auto;
+	font-family: inherit; /* 1 */
+	position: relative; /* 2 */
+	border-radius: 1em;
+	corner-shape: squircle;
+	border: 2px solid transparent; /* 3 */
+	background-image:
+		linear-gradient(var(--background-color), var(--background-color)),
+		linear-gradient(to right, var(--pink), var(--blue)); /* 3 */
+	background-origin: border-box; /* 3 */
+	background-clip: padding-box, border-box; /* 3 */
+	container-type: inline-size;
 }
 
 @media (min-width: 1024px) {
-  /**
-   * 1. Increase width so the code container looks wider than the body text, but
-   *    the text within it is aligned with the body text.
-   */
-  :not(aside) > pre {
-    width: calc(100% + var(--margin-offset) * 2); /* 1 */
-    padding: 1em var(--margin-offset); /* 1 */
-    inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
-  }
+	/**
+	 * 1. Increase width so the code container looks wider than the body text, but
+	 *    the text within it is aligned with the body text.
+	 */
+	:not(aside) > pre {
+		width: calc(100% + var(--margin-offset) * 2); /* 1 */
+		padding: 1em var(--margin-offset); /* 1 */
+		inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
+	}
 }
 
 code {
-  font-family: var(--code-font);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  font-size: 80%;
+	font-family: var(--code-font);
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	font-size: 80%;
 }
 
 pre code {
-  display: block;
-  tab-size: 4;
+	display: block;
+	tab-size: 4;
 }
 
 @supports (z-index: calc(1px / 1px)) {
-  /**
-   * 1. Set the tab size based on the container width.
-   *    See: https://blog.kizu.dev/responsive-tab-size/
-   */
-  pre code {
-    tab-size: round(up, 100cqi / 20ch, 2); /* 1 */
-  }
+	/**
+	 * 1. Set the tab size based on the container width.
+	 *    See: https://blog.kizu.dev/responsive-tab-size/
+	 */
+	pre code {
+		tab-size: round(up, 100cqi / 20ch, 2); /* 1 */
+	}
 }
 
 :not(pre) > code {
-  background-color: light-dark(rgb(255 251 253 / 0.5), rgb(50 45 47 / 0.5));
-  border-radius: 0.25em;
-  padding: 0.1em 0.25em;
-  font-size: 70%;
-  border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
+	background-color: light-dark(rgb(255 251 253 / 0.5), rgb(50 45 47 / 0.5));
+	border-radius: 0.25em;
+	padding: 0.1em 0.25em;
+	font-size: 70%;
+	border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
 }
 
 .namespace {
-  opacity: 0.7;
+	opacity: 0.7;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: light-dark(#6f7b80, #a8afb2);
+	color: light-dark(#6f7b80, #a8afb2);
 }
 
 .token.punctuation {
-  color: #95a6ad;
+	color: #95a6ad;
 }
 
 .token.property,
@@ -87,7 +87,7 @@ pre code {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #fc4787;
+	color: #fc4787;
 }
 
 .token.selector,
@@ -96,7 +96,7 @@ pre code {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #009f7f;
+	color: #009f7f;
 }
 
 .token.operator,
@@ -104,36 +104,36 @@ pre code {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #e17055;
+	color: #e17055;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: light-dark(#087bd4, #6aafe5);
+	color: light-dark(#087bd4, #6aafe5);
 }
 
 .token.function {
-  color: #e84393;
+	color: #e84393;
 }
 .token.regex,
 .token.important,
 .token.variable {
-  color: #ecb246;
+	color: #ecb246;
 }
 .token.important,
 .token.bold {
-  font-weight: bold;
+	font-weight: bold;
 }
 .token.italic {
-  font-style: italic;
+	font-style: italic;
 }
 .token.entity {
-  cursor: help;
+	cursor: help;
 }
 
 .highlight-line-active {
-  background-color: light-dark(rgb(255 192 203 / 0.4), rgb(255 192 203 / 0.2));
-  color: inherit;
-  border-radius: 0.25em;
+	background-color: light-dark(rgb(255 192 203 / 0.4), rgb(255 192 203 / 0.2));
+	color: inherit;
+	border-radius: 0.25em;
 }

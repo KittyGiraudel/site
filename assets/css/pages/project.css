@@ -1,38 +1,38 @@
 .Project__header {
-  margin-block-end: var(--vb);
+	margin-block-end: var(--vb);
 }
 
 .Project__description {
-  margin-block-end: var(--vb-thirds);
-  font-size: 110%;
-  text-wrap: balance;
+	margin-block-end: var(--vb-thirds);
+	font-size: 110%;
+	text-wrap: balance;
 }
 
 .Project__tags .Tags {
-  margin-block-end: var(--vb-third);
-  gap: 0.5em;
+	margin-block-end: var(--vb-third);
+	gap: 0.5em;
 }
 
 .Project__meta {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  justify-content: center;
-  font-size: 95%;
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1.5rem;
+	justify-content: center;
+	font-size: 95%;
 }
 
 .Project__meta-link {
-  position: relative;
-  font-weight: 600;
-  text-decoration: none;
-  border-block-end: 0;
+	position: relative;
+	font-weight: 600;
+	text-decoration: none;
+	border-block-end: 0;
 }
 
 .Project__stars {
-  font-weight: 400;
-  opacity: 0.85;
+	font-weight: 400;
+	opacity: 0.85;
 }
 
 .Project__content {
-  margin-block: var(--vb) var(--vb-double);
+	margin-block: var(--vb) var(--vb-double);
 }

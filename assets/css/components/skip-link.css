@@ -3,17 +3,17 @@
  * 2. Place the link at the top left of the page
  */
 .SkipLink {
-  clip: rect(1px, 1px, 1px, 1px); /* 1 */
-  overflow: hidden; /* 1 */
-  height: 1px; /* 1 */
-  width: 1px; /* 1 */
-  position: absolute; /* 2 */
-  inset-block-start: 1em; /* 2 */
-  inset-inline-start: 1em; /* 2 */
-  font-size: 80%;
-  outline: none;
-  color: inherit;
-  border-block-end: 2px solid transparent;
+	clip: rect(1px, 1px, 1px, 1px); /* 1 */
+	overflow: hidden; /* 1 */
+	height: 1px; /* 1 */
+	width: 1px; /* 1 */
+	position: absolute; /* 2 */
+	inset-block-start: 1em; /* 2 */
+	inset-inline-start: 1em; /* 2 */
+	font-size: 80%;
+	outline: none;
+	color: inherit;
+	border-block-end: 2px solid transparent;
 }
 
 /**
@@ -21,9 +21,9 @@
  */
 .SkipLink:focus,
 .SkipLink:active {
-  clip: auto; /* 1 */
-  height: auto; /* 1 */
-  width: auto; /* 1 */
-  overflow: visible; /* 1 */
-  border-block-end: 0;
+	clip: auto; /* 1 */
+	height: auto; /* 1 */
+	width: auto; /* 1 */
+	overflow: visible; /* 1 */
+	border-block-end: 0;
 }

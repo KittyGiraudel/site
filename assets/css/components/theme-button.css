@@ -1,11 +1,11 @@
 .ThemeButton {
-  position: fixed;
-  inset-block-end: 1em;
-  inset-inline-end: 1em;
+	position: fixed;
+	inset-block-end: 1em;
+	inset-inline-end: 1em;
 }
 
 .ThemeButton[aria-pressed="false"] > .ThemeButton__icon:not([data-theme="light"]),
 .ThemeButton[aria-pressed="mixed"] > .ThemeButton__icon:not([data-theme="auto"]),
 .ThemeButton[aria-pressed="true"] > .ThemeButton__icon:not([data-theme="dark"]) {
-  display: none;
+	display: none;
 }

@@ -3,82 +3,82 @@
  * 2. CSS trick to have a gradient border *with* rounded corners.
  */
 .Callout {
-  --background-color: light-dark(#f3f8fc, #303132);
-  --gradient-start: var(--blue);
-  --gradient-end: var(--pink);
-  margin-block: var(--vb);
-  color: light-dark(#1e293b, #f1f5f9);
-  padding: 0.75em 1.5em;
-  position: relative; /* 1 */
-  background-color: var(--background-color);
-  border-radius: 1em;
-  corner-shape: squircle;
-  border: 2px solid transparent; /* 2 */
-  background-image:
-    linear-gradient(var(--background-color), var(--background-color)),
-    linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* 2 */
-  background-origin: border-box; /* 2 */
-  background-clip: padding-box, border-box; /* 2 */
+	--background-color: light-dark(#f3f8fc, #303132);
+	--gradient-start: var(--blue);
+	--gradient-end: var(--pink);
+	margin-block: var(--vb);
+	color: light-dark(#1e293b, #f1f5f9);
+	padding: 0.75em 1.5em;
+	position: relative; /* 1 */
+	background-color: var(--background-color);
+	border-radius: 1em;
+	corner-shape: squircle;
+	border: 2px solid transparent; /* 2 */
+	background-image:
+		linear-gradient(var(--background-color), var(--background-color)),
+		linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* 2 */
+	background-origin: border-box; /* 2 */
+	background-clip: padding-box, border-box; /* 2 */
 }
 
 .Callout::before {
-  content: "‽";
-  position: absolute;
-  font-size: 1000%;
-  opacity: 0.2;
-  font-family: Baskerville, serif;
-  font-weight: normal;
-  line-height: 1;
-  z-index: 1;
-  inset-block-end: 100%;
-  inset-inline-start: 0;
-  transform: translate(-10%, 69%) rotate(-30deg);
-  color: var(--blue);
+	content: "‽";
+	position: absolute;
+	font-size: 1000%;
+	opacity: 0.2;
+	font-family: Baskerville, serif;
+	font-weight: normal;
+	line-height: 1;
+	z-index: 1;
+	inset-block-end: 100%;
+	inset-inline-start: 0;
+	transform: translate(-10%, 69%) rotate(-30deg);
+	color: var(--blue);
 }
 
 .Callout--warning {
-  --background-color: light-dark(#fffbeb, #2a2115);
-  color: light-dark(#92400e, #f4d4a0);
-  --gradient-start: light-dark(#facc15, #eab308);
-  --gradient-end: light-dark(#f97316, #d97706);
+	--background-color: light-dark(#fffbeb, #2a2115);
+	color: light-dark(#92400e, #f4d4a0);
+	--gradient-start: light-dark(#facc15, #eab308);
+	--gradient-end: light-dark(#f97316, #d97706);
 }
 
 .Callout--warning::before {
-  content: "!";
-  color: light-dark(#f97316, #eab308);
-  transform: translate(-10%, 69%) rotate(-20deg);
+	content: "!";
+	color: light-dark(#f97316, #eab308);
+	transform: translate(-10%, 69%) rotate(-20deg);
 }
 
 /**
  * 1. Ensure the text inside the info container sits on top of the decorative pseudo-element.
  */
 .Callout > * {
-  z-index: 2; /* 1 */
-  position: relative;
+	z-index: 2; /* 1 */
+	position: relative;
 }
 
 @media (min-width: 1024px) {
-  /**
-   * 1. Increase width so the info container looks wider than the
-   *    body text, but the text within it is aligned with the body text.
-   */
-  .Callout {
-    width: calc(100% + var(--margin-offset) * 2); /* 1 */
-    padding: 1em var(--margin-offset); /* 1 */
-    inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
-  }
+	/**
+	 * 1. Increase width so the info container looks wider than the
+	 *    body text, but the text within it is aligned with the body text.
+	 */
+	.Callout {
+		width: calc(100% + var(--margin-offset) * 2); /* 1 */
+		padding: 1em var(--margin-offset); /* 1 */
+		inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
+	}
 }
 
 /**
  * 1. Prevent an odd gap when the first child of the info has a top margin
  */
 .Callout > :first-child {
-  margin-block-start: 0; /* 1 */
+	margin-block-start: 0; /* 1 */
 }
 
 /**
  * 1. Prevent an odd gap when the last child of the info has a bottom margin
  */
 .Callout > :last-child {
-  margin-block-end: 0; /* 1 */
+	margin-block-end: 0; /* 1 */
 }

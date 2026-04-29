@@ -1,144 +1,144 @@
 /* Note: this document doesn’t use the --vb variable on purpose to be more flexible. */
 
 .Resume__header {
-  margin-block: -0.5em 2em;
-  color: light-dark(#666, #bbb);
+	margin-block: -0.5em 2em;
+	color: light-dark(#666, #bbb);
 }
 
 .Resume__header p:first-child {
-  font-variant: small-caps;
-  font-size: 120%;
+	font-variant: small-caps;
+	font-size: 120%;
 }
 
 .Resume__subline {
-  font-size: 140%;
+	font-size: 140%;
 }
 
 .Resume__contact {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 .Resume__contact span:nth-child(1)::before {
-  content: "kitty.giraudel@gmail.com";
+	content: "kitty.giraudel@gmail.com";
 }
 .Resume__contact span:nth-child(2)::before {
-  content: "+491702295391";
+	content: "+491702295391";
 }
 
 .Resume__header p {
-  margin: 0;
+	margin: 0;
 }
 
 .Resume__section {
-  display: flex;
-  flex-direction: column;
-  margin-block-end: 2em;
+	display: flex;
+	flex-direction: column;
+	margin-block-end: 2em;
 }
 
 .Resume__section > h2 {
-  font-style: italic;
-  font-weight: bold;
-  margin-block: 0;
+	font-style: italic;
+	font-weight: bold;
+	margin-block: 0;
 }
 
 .Resume__section > div {
-  padding-block-start: 0.9em;
+	padding-block-start: 0.9em;
 }
 
 .Resume__section > div > :last-child {
-  margin-block-end: 0;
+	margin-block-end: 0;
 }
 
 .Resume__section > div > :first-child {
-  margin-block-start: 0;
+	margin-block-start: 0;
 }
 
 .Resume__section h3 {
-  font-size: 90%;
-  break-after: avoid;
-  margin-block-end: 0.5em;
+	font-size: 90%;
+	break-after: avoid;
+	margin-block-end: 0.5em;
 }
 
 .Resume__section h3 > span {
-  margin-inline-start: auto;
-  opacity: 0.8;
-  font-weight: normal;
-  display: block;
-  white-space: nowrap;
+	margin-inline-start: auto;
+	opacity: 0.8;
+	font-weight: normal;
+	display: block;
+	white-space: nowrap;
 }
 
 .Resume__section h3 + p {
-  margin-block-start: 0;
+	margin-block-start: 0;
 }
 
 .Resume__section li {
-  margin-block: 0.5em;
+	margin-block: 0.5em;
 }
 
 @media (min-width: 767px), print {
-  .Resume {
-    font-size: 90%;
-  }
+	.Resume {
+		font-size: 90%;
+	}
 
-  .Resume__section {
-    flex-direction: row;
-  }
+	.Resume__section {
+		flex-direction: row;
+	}
 
-  .Resume__section > h2 {
-    margin-block-start: revert;
-    padding-inline-end: 1.5em;
-    font-size: 100%;
-    text-align: right;
-    border-inline-end: 1px solid var(--pink);
-    margin-inline-end: 1.5em;
-    flex: 0 0 8em;
-  }
+	.Resume__section > h2 {
+		margin-block-start: revert;
+		padding-inline-end: 1.5em;
+		font-size: 100%;
+		text-align: right;
+		border-inline-end: 1px solid var(--pink);
+		margin-inline-end: 1.5em;
+		flex: 0 0 8em;
+	}
 
-  .Resume__section h3 {
-    display: flex;
-  }
+	.Resume__section h3 {
+		display: flex;
+	}
 
-  .Resume__section h3 > span {
-    font-size: 80%;
-    padding-inline-start: 1em;
-    display: inline-block;
-    text-align: right;
-    white-space: nowrap;
-  }
+	.Resume__section h3 > span {
+		font-size: 80%;
+		padding-inline-start: 1em;
+		display: inline-block;
+		text-align: right;
+		white-space: nowrap;
+	}
 }
 
 @media print {
-  /**
-   * Tight fit for a 2-page resume.
-   */
-  .Resume {
-    font-size: 52%;
-  }
+	/**
+	 * Tight fit for a 2-page resume.
+	 */
+	.Resume {
+		font-size: 52%;
+	}
 
-  .Resume__header {
-    margin-inline-start: 0;
-  }
+	.Resume__header {
+		margin-inline-start: 0;
+	}
 
-  .Resume__subline a {
-    background-image: none;
-    pointer-events: none;
-  }
+	.Resume__subline a {
+		background-image: none;
+		pointer-events: none;
+	}
 
-  .Title {
-    font-size: 300%;
-    font-variant: small-caps;
-    letter-spacing: 0.05em;
-  }
+	.Title {
+		font-size: 300%;
+		font-variant: small-caps;
+		letter-spacing: 0.05em;
+	}
 
-  .Resume__section > div > :has(+ .NoPrint:last-child) {
-    margin-block-end: 0;
-  }
+	.Resume__section > div > :has(+ .NoPrint:last-child) {
+		margin-block-end: 0;
+	}
 
-  .Resume__section h3 {
-    margin-block-end: 0.25em;
-  }
+	.Resume__section h3 {
+		margin-block-end: 0.25em;
+	}
 
-  .Resume__section li {
-    margin-block: 0.25em;
-  }
+	.Resume__section li {
+		margin-block: 0.25em;
+	}
 }

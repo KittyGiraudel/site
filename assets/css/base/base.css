@@ -1,25 +1,25 @@
 :root {
-  color-scheme: light dark;
+	color-scheme: light dark;
 
-  --pink: #dd7eb4;
-  --blue: #267cb9;
-  --code-font: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
-  --vb: 1.5em;
-  --vb-half: calc(var(--vb) / 2);
-  --vb-third: calc(var(--vb) / 3);
-  --vb-quarter: calc(var(--vb) / 4);
-  --vb-sixth: calc(var(--vb) / 6);
-  --vb-thirds: calc(var(--vb) * 2 / 3);
-  --vb-1\.5: calc(var(--vb) * 1.5);
-  --vb-double: calc(var(--vb) * 2);
-  --margin-offset: 2rem;
+	--pink: #dd7eb4;
+	--blue: #267cb9;
+	--code-font: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
+	--vb: 1.5em;
+	--vb-half: calc(var(--vb) / 2);
+	--vb-third: calc(var(--vb) / 3);
+	--vb-quarter: calc(var(--vb) / 4);
+	--vb-sixth: calc(var(--vb) / 6);
+	--vb-thirds: calc(var(--vb) * 2 / 3);
+	--vb-1\.5: calc(var(--vb) * 1.5);
+	--vb-double: calc(var(--vb) * 2);
+	--margin-offset: 2rem;
 }
 
 .dark {
-  color-scheme: dark;
+	color-scheme: dark;
 }
 .light {
-  color-scheme: light;
+	color-scheme: light;
 }
 
 /**
@@ -27,17 +27,17 @@
  * 2. Prevent horizontal scrolling.
  */
 html {
-  box-sizing: border-box; /* 1 */
-  overflow-x: hidden; /* 2 */
+	box-sizing: border-box; /* 1 */
+	overflow-x: hidden; /* 2 */
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    transition-duration: 0ms !important;
-    animation-duration: 0ms !important;
-  }
+	*,
+	::before,
+	::after {
+		transition-duration: 0ms !important;
+		animation-duration: 0ms !important;
+	}
 }
 
 /**
@@ -49,7 +49,7 @@ html {
 *,
 ::before,
 ::after {
-  box-sizing: inherit; /* 1 */
+	box-sizing: inherit; /* 1 */
 }
 
 /**
@@ -57,28 +57,28 @@ html {
  * 2. Enable fluid typography.
  */
 body {
-  margin: 0; /* 1 */
-  font:
-    1.25rem / 1.5 "Baskerville",
-    "Lucida Bright",
-    "Perpetua",
-    "Times",
-    "Times New Roman",
-    "Palatino",
-    "Bookman",
-    "New Century Schoolbook",
-    serif;
-  font-size: min(max(1.25rem, 4vw), 1.4rem); /* 2 */
-  color: light-dark(#444, #eee);
-  background-color: light-dark(#fff, #222);
+	margin: 0; /* 1 */
+	font:
+		1.25rem / 1.5 "Baskerville",
+		"Lucida Bright",
+		"Perpetua",
+		"Times",
+		"Times New Roman",
+		"Palatino",
+		"Bookman",
+		"New Century Schoolbook",
+		serif;
+	font-size: min(max(1.25rem, 4vw), 1.4rem); /* 2 */
+	color: light-dark(#444, #eee);
+	background-color: light-dark(#fff, #222);
 }
 
 hr {
-  height: 4px;
-  border-radius: 4px;
-  border: 0;
-  margin-block: var(--vb);
-  background-image: linear-gradient(to right, var(--pink), var(--blue));
+	height: 4px;
+	border-radius: 4px;
+	border: 0;
+	margin-block: var(--vb);
+	background-image: linear-gradient(to right, var(--pink), var(--blue));
 }
 
 /**
@@ -86,38 +86,38 @@ hr {
  */
 h2,
 h3 {
-  margin-block: var(--vb) var(--vb-third);
-  scroll-margin-top: var(--vb-half); /* 1 */
+	margin-block: var(--vb) var(--vb-third);
+	scroll-margin-top: var(--vb-half); /* 1 */
 }
 
 p {
-  margin-block: var(--vb-half);
+	margin-block: var(--vb-half);
 }
 
 ul,
 ol {
-  padding-inline-start: 1em;
-  margin-block: var(--vb-half);
+	padding-inline-start: 1em;
+	margin-block: var(--vb-half);
 }
 
 li {
-  margin-block: var(--vb-quarter);
+	margin-block: var(--vb-quarter);
 }
 
 :where(ul, ol):not(.NoListMarker) {
-  padding-inline-start: 0;
-  list-style-type: none;
+	padding-inline-start: 0;
+	list-style-type: none;
 }
 
 :where(ul, ol):not(.NoListMarker) > li {
-  padding-inline-start: 2rem;
+	padding-inline-start: 2rem;
 }
 
 :where(ul, ol):not(.NoListMarker) > li::before {
-  content: "— ";
-  position: absolute;
-  margin-inline-start: -2rem;
-  width: 2rem;
+	content: "— ";
+	position: absolute;
+	margin-inline-start: -2rem;
+	width: 2rem;
 }
 
 /**
@@ -125,65 +125,65 @@ li {
  *    See: https://kizu.dev/list-item-counter/
  */
 ol:not(.NoListMarker) > li::before {
-  content: counter(list-item) "."; /* 1 */
-  font-variant-numeric: tabular-nums;
+	content: counter(list-item) "."; /* 1 */
+	font-variant-numeric: tabular-nums;
 }
 
 ul ul {
-  margin-block: 0;
+	margin-block: 0;
 }
 
 /**
  * 1. Warning, potentially dangerous if using inline images.
  */
 img {
-  max-inline-size: 100%;
-  height: auto;
-  display: block; /* 1 */
-  margin-block: var(--vb);
+	max-inline-size: 100%;
+	height: auto;
+	display: block; /* 1 */
+	margin-block: var(--vb);
 }
 
 a:not(.NoBackground) {
-  outline: 0;
-  color: inherit;
-  text-decoration: none;
-  background-image: linear-gradient(
-    to right,
-    light-dark(#f2cfe3, #796771),
-    light-dark(#c4e0f3, #758691)
-  );
-  background-repeat: no-repeat;
-  background-size: 100% 0.2em;
-  background-position: 0 88%;
-  transition: background-size 250ms ease-in;
+	outline: 0;
+	color: inherit;
+	text-decoration: none;
+	background-image: linear-gradient(
+		to right,
+		light-dark(#f2cfe3, #796771),
+		light-dark(#c4e0f3, #758691)
+	);
+	background-repeat: no-repeat;
+	background-size: 100% 0.2em;
+	background-position: 0 88%;
+	transition: background-size 250ms ease-in;
 }
 
 a:not(.NoBackground):hover,
 a:not(.NoBackground):active {
-  color: light-dark(#222, #ccc);
-  background-size: 100% 88%;
+	color: light-dark(#222, #ccc);
+	background-size: 100% 88%;
 }
 
 /**
  * Apply explicit focus styles to all links to make keyboard navigation more visible.
  */
 a:focus-visible {
-  outline: 2px solid var(--pink) !important;
-  outline-offset: 2px;
-  border-radius: 0.5em;
-  corner-shape: squircle;
+	outline: 2px solid var(--pink) !important;
+	outline-offset: 2px;
+	border-radius: 0.5em;
+	corner-shape: squircle;
 }
 
 @media not print {
-  a[data-visited]:not([data-visited-ignore]):not([href^="#"])::after {
-    content: " ✓";
-    opacity: 0.5;
-    font-size: 80%;
-  }
+	a[data-visited]:not([data-visited-ignore]):not([href^="#"])::after {
+		content: " ✓";
+		opacity: 0.5;
+		font-size: 80%;
+	}
 }
 
 a:visited {
-  color: inherit;
+	color: inherit;
 }
 
 /**
@@ -191,27 +191,27 @@ a:visited {
  *    to titles especially, so this should soften them a little bit.
  */
 strong {
-  opacity: 0.8; /* 1 */
+	opacity: 0.8; /* 1 */
 }
 
 /**
  * See: https://codepen.io/argyleink/pen/NWZZPLZ
  */
 @media (prefers-reduced-motion: no-preference) {
-  ::view-transition-old(root) {
-    animation: none;
-  }
+	::view-transition-old(root) {
+		animation: none;
+	}
 
-  ::view-transition-new(root) {
-    animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) switch-theme forwards;
-  }
+	::view-transition-new(root) {
+		animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) switch-theme forwards;
+	}
 }
 
 @keyframes switch-theme {
-  from {
-    clip-path: circle(0% at bottom right);
-  }
-  to {
-    clip-path: circle(100% at center);
-  }
+	from {
+		clip-path: circle(0% at bottom right);
+	}
+	to {
+		clip-path: circle(100% at center);
+	}
 }

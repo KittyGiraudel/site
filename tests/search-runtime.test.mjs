@@ -10,97 +10,97 @@ const repoRoot = path.resolve(__dirname, '..')
 const searchScriptPath = path.join(repoRoot, 'assets/js/search.js')
 
 function createSearchEntries(total = 30) {
-  return Array.from({ length: total }, (_, index) => ({
-    title: `Accessibility tip ${index}`,
-    lang: 'en',
-    tags: ['Accessibility', 'posts'],
-    url: `/2026/04/20/accessibility-tip-${index}/`,
-    date: 'April 20, 2026',
-    guest: '&#8203;',
-    external: '&#8203;',
-  }))
+	return Array.from({ length: total }, (_, index) => ({
+		title: `Accessibility tip ${index}`,
+		lang: 'en',
+		tags: ['Accessibility', 'posts'],
+		url: `/2026/04/20/accessibility-tip-${index}/`,
+		date: 'April 20, 2026',
+		guest: '&#8203;',
+		external: '&#8203;',
+	}))
 }
 
 async function runSearchScript({ entries, query = '' }) {
-  const source = await readFile(searchScriptPath, 'utf8')
-  const listeners = {}
+	const source = await readFile(searchScriptPath, 'utf8')
+	const listeners = {}
 
-  const searchInput = {
-    value: '',
-    addEventListener(event, handler) {
-      listeners[event] = handler
-    },
-  }
-  const resultsContainer = { innerHTML: '' }
+	const searchInput = {
+		value: '',
+		addEventListener(event, handler) {
+			listeners[event] = handler
+		},
+	}
+	const resultsContainer = { innerHTML: '' }
 
-  const windowLocation = new URL(
-    `https://kittygiraudel.com/blog/search/${query ? `?q=${query}` : ''}`,
-  )
-  const windowMock = {
-    location: windowLocation,
-    history: {
-      replaceState(_state, _title, href) {
-        windowMock.location = new URL(href)
-      },
-    },
-  }
+	const windowLocation = new URL(
+		`https://kittygiraudel.com/blog/search/${query ? `?q=${query}` : ''}`,
+	)
+	const windowMock = {
+		location: windowLocation,
+		history: {
+			replaceState(_state, _title, href) {
+				windowMock.location = new URL(href)
+			},
+		},
+	}
 
-  const context = vm.createContext({
-    URL,
-    URLSearchParams,
-    console,
-    document: {
-      addEventListener(event, callback) {
-        if (event === 'DOMContentLoaded') callback()
-      },
-      getElementById(id) {
-        if (id === 'search-input') return searchInput
-        if (id === 'results-container') return resultsContainer
-        return null
-      },
-    },
-    fetch: () =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(entries),
-      }),
-    window: windowMock,
-  })
+	const context = vm.createContext({
+		URL,
+		URLSearchParams,
+		console,
+		document: {
+			addEventListener(event, callback) {
+				if (event === 'DOMContentLoaded') callback()
+			},
+			getElementById(id) {
+				if (id === 'search-input') return searchInput
+				if (id === 'results-container') return resultsContainer
+				return null
+			},
+		},
+		fetch: () =>
+			Promise.resolve({
+				ok: true,
+				json: () => Promise.resolve(entries),
+			}),
+		window: windowMock,
+	})
 
-  vm.runInContext(source, context)
-  await new Promise(resolve => setImmediate(resolve))
+	vm.runInContext(source, context)
+	await new Promise(resolve => setImmediate(resolve))
 
-  return {
-    searchInput,
-    resultsContainer,
-    listeners,
-    location: () => windowMock.location,
-  }
+	return {
+		searchInput,
+		resultsContainer,
+		listeners,
+		location: () => windowMock.location,
+	}
 }
 
 test('search runtime limits results and keeps query in URL', async () => {
-  const entries = createSearchEntries(30)
-  const runtime = await runSearchScript({ entries })
+	const entries = createSearchEntries(30)
+	const runtime = await runSearchScript({ entries })
 
-  runtime.listeners.input({ target: { value: 'accessibility tip' } })
+	runtime.listeners.input({ target: { value: 'accessibility tip' } })
 
-  assert.ok(runtime.location().searchParams.get('q') === 'accessibility tip')
-  assert.equal((runtime.resultsContainer.innerHTML.match(/class="List__item"/g) || []).length, 20)
+	assert.ok(runtime.location().searchParams.get('q') === 'accessibility tip')
+	assert.equal((runtime.resultsContainer.innerHTML.match(/class="List__item"/g) || []).length, 20)
 })
 
 test('search runtime renders no-results message', async () => {
-  const entries = createSearchEntries(3)
-  const runtime = await runSearchScript({ entries })
+	const entries = createSearchEntries(3)
+	const runtime = await runSearchScript({ entries })
 
-  runtime.listeners.input({ target: { value: 'no-match-value' } })
+	runtime.listeners.input({ target: { value: 'no-match-value' } })
 
-  assert.match(runtime.resultsContainer.innerHTML, /Sorry, I could not find any result/)
+	assert.match(runtime.resultsContainer.innerHTML, /Sorry, I could not find any result/)
 })
 
 test('search runtime pre-fills query from URL parameter', async () => {
-  const entries = createSearchEntries(10)
-  const runtime = await runSearchScript({ entries, query: 'accessibility' })
+	const entries = createSearchEntries(10)
+	const runtime = await runSearchScript({ entries, query: 'accessibility' })
 
-  assert.equal(runtime.searchInput.value, 'accessibility')
-  assert.ok(runtime.resultsContainer.innerHTML.includes('Accessibility tip'))
+	assert.equal(runtime.searchInput.value, 'accessibility')
+	assert.ok(runtime.resultsContainer.innerHTML.includes('Accessibility tip'))
 })

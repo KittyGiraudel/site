@@ -1,91 +1,91 @@
 .Header--post {
-  margin-block-end: var(--vb-1\.5);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: var(--vb-half);
+	margin-block-end: var(--vb-1\.5);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: var(--vb-half);
 }
 
 @media (max-width: 768px) {
-  .Header--post {
-    margin-block-end: 0;
-  }
+	.Header--post {
+		margin-block-end: 0;
+	}
 }
 
 .Header--post .Title {
-  flex-basis: 100%;
+	flex-basis: 100%;
 }
 
 @media (min-width: 1024px) {
-  .Header--post {
-    position: relative;
-    width: calc(100% + var(--margin-offset) * 2);
-    inset-inline-start: calc(var(--margin-offset) * -1);
-  }
+	.Header--post {
+		position: relative;
+		width: calc(100% + var(--margin-offset) * 2);
+		inset-inline-start: calc(var(--margin-offset) * -1);
+	}
 }
 
 .PostMetadata {
-  margin: 0;
-  width: max-content;
+	margin: 0;
+	width: max-content;
 }
 
 .PostMetadata:first-of-type::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  border-radius: 2px;
-  margin-inline-start: 0;
-  margin-block-start: var(--vb-thirds);
-  background-color: var(--blue);
-  background-image: linear-gradient(to right, var(--pink), var(--blue));
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	border-radius: 2px;
+	margin-inline-start: 0;
+	margin-block-start: var(--vb-thirds);
+	background-color: var(--blue);
+	background-image: linear-gradient(to right, var(--pink), var(--blue));
 }
 
 @media (max-width: 768px) {
-  .PostMetadata:first-of-type::after {
-    content: none;
-  }
+	.PostMetadata:first-of-type::after {
+		content: none;
+	}
 }
 
 .PostMetadata__updated {
-  opacity: 0.7;
-  display: block;
-  font-size: 90%;
-  position: relative;
+	opacity: 0.7;
+	display: block;
+	font-size: 90%;
+	position: relative;
 }
 
 .PostMetadata__updated::before {
-  content: "";
-  display: inline-block;
-  border-inline-start: 1.5px solid;
-  border-block-end: 1.5px solid;
-  opacity: 0.5;
-  width: 0.75em;
-  height: 0.75em;
-  margin-inline: 0.5ch;
-  margin-block-end: 0.5ch;
-  border-end-start-radius: 0.5em;
-  corner-shape: squircle;
+	content: "";
+	display: inline-block;
+	border-inline-start: 1.5px solid;
+	border-block-end: 1.5px solid;
+	opacity: 0.5;
+	width: 0.75em;
+	height: 0.75em;
+	margin-inline: 0.5ch;
+	margin-block-end: 0.5ch;
+	border-end-start-radius: 0.5em;
+	corner-shape: squircle;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .Post li:not(.Footnotes__list-item) {
-    animation-fill-mode: both;
-    animation-name: fade-in;
-    animation-range: entry 25% cover 50%;
-    animation-timeline: --item-timeline;
-    view-timeline-name: --item-timeline;
-  }
+	.Post li:not(.Footnotes__list-item) {
+		animation-fill-mode: both;
+		animation-name: fade-in;
+		animation-range: entry 25% cover 50%;
+		animation-timeline: --item-timeline;
+		view-timeline-name: --item-timeline;
+	}
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
 }
 
 .Post .Hook {
-  margin-top: var(--vb-double);
+	margin-top: var(--vb-double);
 }

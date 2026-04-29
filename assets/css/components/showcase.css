@@ -1,25 +1,25 @@
 .Showcase {
-  margin-block: var(--vb-half);
+	margin-block: var(--vb-half);
 }
 
 .Showcase::after {
-  content: "";
-  display: block;
-  clear: right;
+	content: "";
+	display: block;
+	clear: right;
 }
 
 .Showcase__title {
-  margin-block-end: var(--vb-third);
+	margin-block-end: var(--vb-third);
 }
 
 .Showcase__copy {
-  margin-block-start: 0;
+	margin-block-start: 0;
 }
 
 .Showcase__container {
-  display: flex;
-  margin-inline: -0.5em;
-  flex-wrap: wrap;
+	display: flex;
+	margin-inline: -0.5em;
+	flex-wrap: wrap;
 }
 
 /**
@@ -27,32 +27,32 @@
  *    and the inline start margin (0.5em).
  */
 @media (min-width: 1024px) {
-  .Showcase__container {
-    width: 90ch;
-    position: relative;
-    inset-inline-start: calc(-5ch - 1em - 0.5em); /* 1 */
-  }
+	.Showcase__container {
+		width: 90ch;
+		position: relative;
+		inset-inline-start: calc(-5ch - 1em - 0.5em); /* 1 */
+	}
 }
 
 .Showcase__item {
-  padding: 0.5em;
-  flex: 1 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  max-inline-size: 100%;
+	padding: 0.5em;
+	flex: 1 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	max-inline-size: 100%;
 }
 
 @media (min-width: 768px) {
-  .Showcase__item {
-    flex: 1 0 calc(100% / 3);
-    margin-block-end: 0;
-  }
+	.Showcase__item {
+		flex: 1 0 calc(100% / 3);
+		margin-block-end: 0;
+	}
 }
 
 .Showcase__link {
-  font-size: 80%;
-  float: inline-end;
+	font-size: 80%;
+	float: inline-end;
 }
 
 /**
@@ -60,13 +60,13 @@
  *    the inline end margin (0.5em).
  */
 @media (min-width: 1024px) {
-  .Showcase__link {
-    position: relative;
-    inset-inline-start: calc(5ch + 2em + 0.5em); /* 1 */
-  }
+	.Showcase__link {
+		position: relative;
+		inset-inline-start: calc(5ch + 2em + 0.5em); /* 1 */
+	}
 }
 
 .Showcase__link::before {
-  content: "→ ";
-  color: var(--pink);
+	content: "→ ";
+	color: var(--pink);
 }

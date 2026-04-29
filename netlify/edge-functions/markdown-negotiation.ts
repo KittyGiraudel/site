@@ -7,13 +7,13 @@ import type { Config, Context } from '@netlify/edge-functions'
  * `text/markdown`.
  */
 export const config: Config = {
-  pattern: [
-    String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/?$`,
-    String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.html$`,
-    String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.md$`,
-  ],
-  method: 'GET',
-  header: { accept: 'text/markdown' },
+	pattern: [
+		String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/?$`,
+		String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.html$`,
+		String.raw`^/\d{4}/\d{2}/\d{2}/[^/]+/index\.md$`,
+	],
+	method: 'GET',
+	header: { accept: 'text/markdown' },
 }
 
 /**
@@ -53,65 +53,65 @@ export const config: Config = {
  *    body, add token hint.
  */
 export default async function markdownNegotiation(
-  request: Request,
-  context: Context,
+	request: Request,
+	context: Context,
 ): Promise<Response | undefined> {
-  const url = new URL(request.url)
-  const { pathname } = url
+	const url = new URL(request.url)
+	const { pathname } = url
 
-  // Direct `.md` requests: serve the static file as Netlify normally would.
-  // Must run before negotiation so the inner `context.next(innerRequest)` chain
-  // does not recurse on Markdown-winning Accept headers.
-  if (pathname.toLowerCase().endsWith('.md')) {
-    return context.next()
-  }
+	// Direct `.md` requests: serve the static file as Netlify normally would.
+	// Must run before negotiation so the inner `context.next(innerRequest)` chain
+	// does not recurse on Markdown-winning Accept headers.
+	if (pathname.toLowerCase().endsWith('.md')) {
+		return context.next()
+	}
 
-  // If the Accept header provides `text/markdown`, but it’s not the preference,
-  // abort the edge function as there is nothing to do.
-  if (!prefersMarkdown(request.headers.get('accept'))) return
+	// If the Accept header provides `text/markdown`, but it’s not the preference,
+	// abort the edge function as there is nothing to do.
+	if (!prefersMarkdown(request.headers.get('accept'))) return
 
-  // If we cannot find a Markdown twin for that path for any reason, abort the
-  // edge function as there is nothing we can do.
-  const twinPath = getMarkdownTwin(pathname)
-  if (!twinPath) return
+	// If we cannot find a Markdown twin for that path for any reason, abort the
+	// edge function as there is nothing we can do.
+	const twinPath = getMarkdownTwin(pathname)
+	if (!twinPath) return
 
-  // Subrequest to the static twin. Reset the `Accept` header so we do not
-  // negotiate again on the inner pass; the `.md` pathname is enough for the
-  // early exit above.
-  const innerUrl = new URL(twinPath, url.origin).toString()
-  const innerHeaders = new Headers(request.headers)
-  innerHeaders.delete('accept')
-  innerHeaders.set('accept', '*/*')
+	// Subrequest to the static twin. Reset the `Accept` header so we do not
+	// negotiate again on the inner pass; the `.md` pathname is enough for the
+	// early exit above.
+	const innerUrl = new URL(twinPath, url.origin).toString()
+	const innerHeaders = new Headers(request.headers)
+	innerHeaders.delete('accept')
+	innerHeaders.set('accept', '*/*')
 
-  const upstream = await context.next(
-    new Request(innerUrl, {
-      method: request.method,
-      headers: innerHeaders,
-      redirect: 'manual',
-    }),
-  )
+	const upstream = await context.next(
+		new Request(innerUrl, {
+			method: request.method,
+			headers: innerHeaders,
+			redirect: 'manual',
+		}),
+	)
 
-  // External posts and any URL without a generated twin: behave like a normal
-  // visit.
-  if (!upstream.ok || upstream.status === 404) {
-    return context.next(request)
-  }
+	// External posts and any URL without a generated twin: behave like a normal
+	// visit.
+	if (!upstream.ok || upstream.status === 404) {
+		return context.next(request)
+	}
 
-  const headers = new Headers(upstream.headers)
-  headers.set('content-type', 'text/markdown; charset=utf-8')
-  headers.set('vary', 'accept')
+	const headers = new Headers(upstream.headers)
+	headers.set('content-type', 'text/markdown; charset=utf-8')
+	headers.set('vary', 'accept')
 
-  // Build the body as UTF-8 bytes so Content-Length matches what we send.
-  // Dropping the copied header alone relies on the runtime to infer length from
-  // a string body; setting it explicitly avoids any mismatch if headers were
-  // merged oddly.
-  const text = await upstream.text()
-  const body = new TextEncoder().encode(text)
-  headers.delete('transfer-encoding')
-  headers.set('content-length', String(body.byteLength))
-  headers.set('x-markdown-tokens', String(estimateTokens(body.byteLength)))
+	// Build the body as UTF-8 bytes so Content-Length matches what we send.
+	// Dropping the copied header alone relies on the runtime to infer length from
+	// a string body; setting it explicitly avoids any mismatch if headers were
+	// merged oddly.
+	const text = await upstream.text()
+	const body = new TextEncoder().encode(text)
+	headers.delete('transfer-encoding')
+	headers.set('content-length', String(body.byteLength))
+	headers.set('x-markdown-tokens', String(estimateTokens(body.byteLength)))
 
-  return new Response(body, { status: upstream.status, headers })
+	return new Response(body, { status: upstream.status, headers })
 }
 
 /**
@@ -122,8 +122,8 @@ export default async function markdownNegotiation(
  * whether `Accept` mentions Markdown so Netlify invokes this edge at all.
  */
 function prefersMarkdown(accept: string | null): boolean {
-  if (!accept) return false
-  return Accept.mediaType(accept, ['text/html', 'text/markdown']) === 'text/markdown'
+	if (!accept) return false
+	return Accept.mediaType(accept, ['text/html', 'text/markdown']) === 'text/markdown'
 }
 
 /**
@@ -134,9 +134,9 @@ function prefersMarkdown(accept: string | null): boolean {
  * a positive integer.
  */
 function estimateTokens(byteLength: number): number {
-  if (!Number.isFinite(byteLength) || byteLength < 0) return 0
-  if (byteLength === 0) return 1
-  return Math.max(1, Math.ceil(byteLength / 4))
+	if (!Number.isFinite(byteLength) || byteLength < 0) return 0
+	if (byteLength === 0) return 1
+	return Math.max(1, Math.ceil(byteLength / 4))
 }
 
 /**
@@ -147,14 +147,14 @@ function estimateTokens(byteLength: number): number {
  * patterns inside template literals like regex literals.
  */
 function getMarkdownTwin(pathname: string): string | null {
-  const HTML_PATH_RE = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/index\.html$/i
-  const EXTLESS_PATH_RE = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/?$/
+	const HTML_PATH_RE = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/index\.html$/i
+	const EXTLESS_PATH_RE = /^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/?$/
 
-  let match = pathname.match(HTML_PATH_RE)
-  if (!match?.[1] || !match[2] || !match[3] || !match[4]) {
-    match = pathname.match(EXTLESS_PATH_RE)
-    if (!match?.[1] || !match[2] || !match[3] || !match[4]) return null
-  }
-  const [, year, month, day, slug] = match
-  return ['', year, month, day, slug, 'index.md'].join('/')
+	let match = pathname.match(HTML_PATH_RE)
+	if (!match?.[1] || !match[2] || !match[3] || !match[4]) {
+		match = pathname.match(EXTLESS_PATH_RE)
+		if (!match?.[1] || !match[2] || !match[3] || !match[4]) return null
+	}
+	const [, year, month, day, slug] = match
+	return ['', year, month, day, slug, 'index.md'].join('/')
 }

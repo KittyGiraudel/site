@@ -1,26 +1,26 @@
 .List {
-  list-style: none;
-  padding-inline-start: 0;
+	list-style: none;
+	padding-inline-start: 0;
 }
 
 .List__item {
-  padding-block: var(--vb-thirds);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+	padding-block: var(--vb-thirds);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .List__item p {
-  margin: 0;
+	margin: 0;
 }
 
 .List__primary-content {
-  font-size: 150%;
-  line-height: 1.1;
-  margin-block: var(--vb-third) var(--vb-quarter);
+	font-size: 150%;
+	line-height: 1.1;
+	margin-block: var(--vb-third) var(--vb-quarter);
 }
 
 .List__secondary-content {
-  font-size: 75%;
-  font-family: var(--code-font);
+	font-size: 75%;
+	font-family: var(--code-font);
 }

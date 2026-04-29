@@ -4,16 +4,16 @@
  * 2. Leave some space on the edges, especially valuable on small screens.
  */
 .Container {
-  max-inline-size: 80ch; /* 1 */
-  padding-inline: 1em; /* 2 */
-  width: 100%; /* 1 */
-  margin-inline: auto;
+	max-inline-size: 80ch; /* 1 */
+	padding-inline: 1em; /* 2 */
+	width: 100%; /* 1 */
+	margin-inline: auto;
 }
 
 @media (min-width: 768px) {
-  .Container {
-    padding-inline: 2em;
-  }
+	.Container {
+		padding-inline: 2em;
+	}
 }
 
 /**
@@ -21,39 +21,39 @@
  * See: https://kittygiraudel.com/2016/10/13/css-hide-and-seek/
  */
 .visually-hidden {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important;
-  height: 1px !important;
-  overflow: hidden !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-  white-space: nowrap !important;
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
 }
 
 @media print {
-  .NoPrint {
-    display: none !important;
-  }
+	.NoPrint {
+		display: none !important;
+	}
 
-  .PrintOnly {
-    display: block !important;
-  }
+	.PrintOnly {
+		display: block !important;
+	}
 }
 
 @media not print {
-  .PrintOnly {
-    display: none !important;
-  }
+	.PrintOnly {
+		display: none !important;
+	}
 }
 
 .Fleuron {
-  display: inline-block;
-  transform: scale(0.75);
-  position: relative;
-  opacity: 0.8;
-  margin-inline: 0.25ch;
+	display: inline-block;
+	transform: scale(0.75);
+	position: relative;
+	opacity: 0.8;
+	margin-inline: 0.25ch;
 }

@@ -1,72 +1,72 @@
 .CollectionNavigation {
-  display: flex;
-  justify-content: space-between;
-  font-size: 90%;
-  margin-block-start: var(--vb-double);
-  position: relative;
+	display: flex;
+	justify-content: space-between;
+	font-size: 90%;
+	margin-block-start: var(--vb-double);
+	position: relative;
 }
 
 .CollectionNavigation::before {
-  content: "";
-  position: absolute;
-  inset-block-end: 100%;
-  inset-inline-start: 0;
-  inset-inline-end: 0;
-  height: 4px;
-  border-radius: 4px;
-  background-image: linear-gradient(to right, var(--blue), var(--pink));
+	content: "";
+	position: absolute;
+	inset-block-end: 100%;
+	inset-inline-start: 0;
+	inset-inline-end: 0;
+	height: 4px;
+	border-radius: 4px;
+	background-image: linear-gradient(to right, var(--blue), var(--pink));
 }
 
 .CollectionNavigation__item {
-  max-inline-size: 50%;
-  position: relative;
-  margin-block-start: var(--vb);
-  line-height: 1.1;
+	max-inline-size: 50%;
+	position: relative;
+	margin-block-start: var(--vb);
+	line-height: 1.1;
 }
 
 .CollectionNavigation__item--next {
-  text-align: end;
+	text-align: end;
 }
 
 .CollectionNavigation__item--previous::before,
 .CollectionNavigation__item--next::after {
-  position: absolute;
-  inset-block-start: 0;
-  color: var(--pink);
-  font-weight: bold;
+	position: absolute;
+	inset-block-start: 0;
+	color: var(--pink);
+	font-weight: bold;
 }
 
 .CollectionNavigation__item--previous::before {
-  inset-inline-end: 100%;
-  margin-inline-end: 1ch;
+	inset-inline-end: 100%;
+	margin-inline-end: 1ch;
 }
 
 .CollectionNavigation__item--next::after {
-  inset-inline-start: 100%;
-  margin-inline-start: 1ch;
+	inset-inline-start: 100%;
+	margin-inline-start: 1ch;
 }
 
 .CollectionNavigation--end {
-  justify-content: flex-end;
+	justify-content: flex-end;
 }
 
 .CollectionNavigation__link-container {
-  display: block;
-  margin-block-start: var(--vb-third);
+	display: block;
+	margin-block-start: var(--vb-third);
 }
 
 @media (min-width: 768px) {
-  .CollectionNavigation__item--previous::before {
-    content: "←";
-  }
+	.CollectionNavigation__item--previous::before {
+		content: "←";
+	}
 
-  .CollectionNavigation__item--next::after {
-    content: "→";
-  }
+	.CollectionNavigation__item--next::after {
+		content: "→";
+	}
 }
 
 @media (max-width: 768px) {
-  .CollectionNavigation {
-    margin-block-end: var(--vb-double);
-  }
+	.CollectionNavigation {
+		margin-block-end: var(--vb-double);
+	}
 }

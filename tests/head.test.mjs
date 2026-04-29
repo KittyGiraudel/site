@@ -12,7 +12,7 @@ const siteUrl = getSiteUrl()
  * @param {string} name
  */
 function metaName($, name) {
-  return $(`head meta[name="${name}"]`).attr('content')
+	return $(`head meta[name="${name}"]`).attr('content')
 }
 
 /**
@@ -20,7 +20,7 @@ function metaName($, name) {
  * @param {string} property
  */
 function metaProperty($, property) {
-  return $(`meta[property="${property}"]`).attr('content')
+	return $(`meta[property="${property}"]`).attr('content')
 }
 
 /**
@@ -28,19 +28,19 @@ function metaProperty($, property) {
  * @returns {string} resolved canonical URL (for og:url etc.)
  */
 function assertCanonicalLink($, siteUrl, path, label = '') {
-  const origin = new URL(siteUrl)
-  const expected = new URL(path, origin.origin).toString()
-  const prefix = label ? `${label}: ` : ''
-  const canonicalLinks = $('head link[rel="canonical"]')
-  assert.equal(
-    canonicalLinks.length,
-    1,
-    `${prefix}should have exactly one <link rel="canonical"> in <head>`,
-  )
-  const canonicalHref = canonicalLinks.attr('href')
-  assert.ok(/^https?:\/\//.test(canonicalHref), `${prefix}canonical href should be absolute`)
-  assert.equal(canonicalHref, expected)
-  return expected
+	const origin = new URL(siteUrl)
+	const expected = new URL(path, origin.origin).toString()
+	const prefix = label ? `${label}: ` : ''
+	const canonicalLinks = $('head link[rel="canonical"]')
+	assert.equal(
+		canonicalLinks.length,
+		1,
+		`${prefix}should have exactly one <link rel="canonical"> in <head>`,
+	)
+	const canonicalHref = canonicalLinks.attr('href')
+	assert.ok(/^https?:\/\//.test(canonicalHref), `${prefix}canonical href should be absolute`)
+	assert.equal(canonicalHref, expected)
+	return expected
 }
 
 /**
@@ -62,238 +62,238 @@ function assertCanonicalLink($, siteUrl, path, label = '') {
  * }} spec
  */
 function assertHeadMetadata($, siteUrl, spec) {
-  const documentTitle = spec.documentTitle ?? `${spec.title} | ${siteAuthor}`
-  const canonical = assertCanonicalLink($, siteUrl, spec.path)
-  const expectedSocialImage = spec.ogImage
-    ? new URL(spec.ogImage, siteData.url).toString()
-    : new URL('/assets/images/favicon-192.jpg', siteData.url).toString()
+	const documentTitle = spec.documentTitle ?? `${spec.title} | ${siteAuthor}`
+	const canonical = assertCanonicalLink($, siteUrl, spec.path)
+	const expectedSocialImage = spec.ogImage
+		? new URL(spec.ogImage, siteData.url).toString()
+		: new URL('/assets/images/favicon-192.jpg', siteData.url).toString()
 
-  assert.ok($('head').length, 'document should have a <head>')
-  assert.equal($('head meta[charset]').attr('charset'), 'utf-8')
+	assert.ok($('head').length, 'document should have a <head>')
+	assert.equal($('head meta[charset]').attr('charset'), 'utf-8')
 
-  const viewport = metaName($, 'viewport')
-  assert.ok(viewport, 'head should include a viewport meta')
-  assert.match(viewport, /width=device-width/)
-  assert.match(viewport, /initial-scale=1/)
-  assert.equal(metaName($, 'theme-color'), '#dd7eb4')
+	const viewport = metaName($, 'viewport')
+	assert.ok(viewport, 'head should include a viewport meta')
+	assert.match(viewport, /width=device-width/)
+	assert.match(viewport, /initial-scale=1/)
+	assert.equal(metaName($, 'theme-color'), '#dd7eb4')
 
-  const shortcutIcon = $('head link[rel="icon"]')
-  assert.equal(shortcutIcon.length, 2, 'head should have two icons (ico + png)')
-  assert.equal(shortcutIcon.first().attr('href'), '/favicon.ico')
-  assert.equal(shortcutIcon.last().attr('href'), '/assets/images/favicon.png')
+	const shortcutIcon = $('head link[rel="icon"]')
+	assert.equal(shortcutIcon.length, 2, 'head should have two icons (ico + png)')
+	assert.equal(shortcutIcon.first().attr('href'), '/favicon.ico')
+	assert.equal(shortcutIcon.last().attr('href'), '/assets/images/favicon.png')
 
-  const appleTouch = $('head link[rel="apple-touch-icon"]')
-  assert.equal(appleTouch.length, 1, 'head should have exactly one apple-touch-icon')
-  assert.equal(appleTouch.attr('href'), '/apple-touch-icon.png')
+	const appleTouch = $('head link[rel="apple-touch-icon"]')
+	assert.equal(appleTouch.length, 1, 'head should have exactly one apple-touch-icon')
+	assert.equal(appleTouch.attr('href'), '/apple-touch-icon.png')
 
-  const manifest = $('head link[rel="manifest"]')
-  assert.equal(manifest.length, 1, 'head should have exactly one web manifest link')
-  assert.equal(manifest.attr('href'), '/manifest.json')
-  assert.equal($('head title').text(), documentTitle)
-  assert.equal(metaName($, 'description'), spec.description)
-  assert.equal(metaName($, 'author'), spec.author)
-  assert.equal(metaName($, 'robots'), 'index,follow')
-  assert.ok(
-    metaName($, 'generator')?.includes('Eleventy'),
-    'generator meta should mention Eleventy',
-  )
+	const manifest = $('head link[rel="manifest"]')
+	assert.equal(manifest.length, 1, 'head should have exactly one web manifest link')
+	assert.equal(manifest.attr('href'), '/manifest.json')
+	assert.equal($('head title').text(), documentTitle)
+	assert.equal(metaName($, 'description'), spec.description)
+	assert.equal(metaName($, 'author'), spec.author)
+	assert.equal(metaName($, 'robots'), 'index,follow')
+	assert.ok(
+		metaName($, 'generator')?.includes('Eleventy'),
+		'generator meta should mention Eleventy',
+	)
 
-  // Keywords
-  if (spec.keywords === null) {
-    assert.equal(
-      $('head meta[name="keywords"]').length,
-      0,
-      'should not emit meta keywords when there are no tags/keywords',
-    )
-  } else if (spec.keywords !== undefined) {
-    assert.equal(metaName($, 'keywords'), spec.keywords)
-  }
+	// Keywords
+	if (spec.keywords === null) {
+		assert.equal(
+			$('head meta[name="keywords"]').length,
+			0,
+			'should not emit meta keywords when there are no tags/keywords',
+		)
+	} else if (spec.keywords !== undefined) {
+		assert.equal(metaName($, 'keywords'), spec.keywords)
+	}
 
-  // Open Graph
-  assert.equal(metaProperty($, 'og:title'), spec.title)
-  assert.equal(metaProperty($, 'og:type'), spec.ogType)
-  assert.equal(metaProperty($, 'og:url'), canonical)
-  assert.equal(metaProperty($, 'og:description'), spec.description)
-  assert.equal(metaProperty($, 'og:site_name'), 'kittygiraudel.com')
-  assert.equal(metaProperty($, 'og:image'), expectedSocialImage)
-  if (spec.ogType === 'article') {
-    assert.ok(metaProperty($, 'article:published_time'))
-    assert.equal(metaProperty($, 'article:author'), spec.author)
-  } else {
-    assert.equal(metaProperty($, 'article:published_time'), undefined)
-    assert.equal(metaProperty($, 'article:author'), undefined)
-  }
+	// Open Graph
+	assert.equal(metaProperty($, 'og:title'), spec.title)
+	assert.equal(metaProperty($, 'og:type'), spec.ogType)
+	assert.equal(metaProperty($, 'og:url'), canonical)
+	assert.equal(metaProperty($, 'og:description'), spec.description)
+	assert.equal(metaProperty($, 'og:site_name'), 'kittygiraudel.com')
+	assert.equal(metaProperty($, 'og:image'), expectedSocialImage)
+	if (spec.ogType === 'article') {
+		assert.ok(metaProperty($, 'article:published_time'))
+		assert.equal(metaProperty($, 'article:author'), spec.author)
+	} else {
+		assert.equal(metaProperty($, 'article:published_time'), undefined)
+		assert.equal(metaProperty($, 'article:author'), undefined)
+	}
 
-  // Twitter Graph
-  assert.equal(metaName($, 'twitter:card'), 'summary')
-  assert.equal(metaName($, 'twitter:creator'), '@KittyGiraudel')
-  assert.equal(metaName($, 'twitter:description'), spec.description)
-  assert.equal(metaName($, 'twitter:domain'), 'kittygiraudel.com')
-  assert.equal(metaName($, 'twitter:image'), expectedSocialImage)
-  assert.equal(metaName($, 'twitter:site'), '@KittyGiraudel')
-  assert.equal(metaName($, 'twitter:title'), spec.title)
+	// Twitter Graph
+	assert.equal(metaName($, 'twitter:card'), 'summary')
+	assert.equal(metaName($, 'twitter:creator'), '@KittyGiraudel')
+	assert.equal(metaName($, 'twitter:description'), spec.description)
+	assert.equal(metaName($, 'twitter:domain'), 'kittygiraudel.com')
+	assert.equal(metaName($, 'twitter:image'), expectedSocialImage)
+	assert.equal(metaName($, 'twitter:site'), '@KittyGiraudel')
+	assert.equal(metaName($, 'twitter:title'), spec.title)
 
-  // Structured data
-  const jsonLdScripts = $('script[type="application/ld+json"]')
-  assert.ok(jsonLdScripts.length >= 2, 'should include structured data scripts')
-  const jsonLdContent = jsonLdScripts
-    .map((_, element) => $(element).text())
-    .get()
-    .join('\n')
-  assert.match(jsonLdContent, /"@type":\s*"WebSite"/)
-  assert.match(jsonLdContent, /"@type":\s*"Person"/)
-  if (spec.ogType === 'article') {
-    assert.match(jsonLdContent, /"@type":\s*"BlogPosting"/)
-  }
+	// Structured data
+	const jsonLdScripts = $('script[type="application/ld+json"]')
+	assert.ok(jsonLdScripts.length >= 2, 'should include structured data scripts')
+	const jsonLdContent = jsonLdScripts
+		.map((_, element) => $(element).text())
+		.get()
+		.join('\n')
+	assert.match(jsonLdContent, /"@type":\s*"WebSite"/)
+	assert.match(jsonLdContent, /"@type":\s*"Person"/)
+	if (spec.ogType === 'article') {
+		assert.match(jsonLdContent, /"@type":\s*"BlogPosting"/)
+	}
 
-  // RSS
-  const rss = $('head link[rel="alternate"][type="application/rss+xml"]')
-  assert.ok(rss.length, 'head should link to the RSS feed')
-  const rssHref = rss.attr('href')
-  const expectedRss = new URL('/rss/index.xml', siteData.url).toString()
-  assert.ok(/^https?:\/\//.test(rssHref), 'RSS alternate href in <head> should be absolute')
-  assert.equal(rssHref, expectedRss, 'RSS alternate href should match site URL + /rss/index.xml')
+	// RSS
+	const rss = $('head link[rel="alternate"][type="application/rss+xml"]')
+	assert.ok(rss.length, 'head should link to the RSS feed')
+	const rssHref = rss.attr('href')
+	const expectedRss = new URL('/rss/index.xml', siteData.url).toString()
+	assert.ok(/^https?:\/\//.test(rssHref), 'RSS alternate href in <head> should be absolute')
+	assert.equal(rssHref, expectedRss, 'RSS alternate href should match site URL + /rss/index.xml')
 
-  // Markdown Alternate
-  if (spec.markdownAlternate === true) {
-    const basePath = spec.path.endsWith('/') ? spec.path : `${spec.path}/`
-    const expectedHref = `${basePath}index.md`
-    const md = $('link[rel="alternate"][type="text/markdown"]')
-    assert.equal(md.length, 1, 'post page should expose exactly one markdown alternate link')
-    assert.equal(md.attr('href'), expectedHref)
-  } else if (spec.markdownAlternate === false) {
-    assert.equal(
-      $('link[rel="alternate"][type="text/markdown"]').length,
-      0,
-      'page should not expose a markdown alternate',
-    )
-  }
+	// Markdown Alternate
+	if (spec.markdownAlternate === true) {
+		const basePath = spec.path.endsWith('/') ? spec.path : `${spec.path}/`
+		const expectedHref = `${basePath}index.md`
+		const md = $('link[rel="alternate"][type="text/markdown"]')
+		assert.equal(md.length, 1, 'post page should expose exactly one markdown alternate link')
+		assert.equal(md.attr('href'), expectedHref)
+	} else if (spec.markdownAlternate === false) {
+		assert.equal(
+			$('link[rel="alternate"][type="text/markdown"]').length,
+			0,
+			'page should not expose a markdown alternate',
+		)
+	}
 }
 
 test('page head: home', async () => {
-  /** Golden: pages/home/index.liquid */
-  const html = await readText('index.html')
-  const $ = load(html)
+	/** Golden: pages/home/index.liquid */
+	const html = await readText('index.html')
+	const $ = load(html)
 
-  assertHeadMetadata($, siteUrl, {
-    path: '/',
-    title: 'Kitty says hi.',
-    description:
-      'Transfeminine web engineer and engineering leader based in Berlin, focused on accessibility, diversity and inclusion.',
-    author: siteAuthor,
-    ogType: 'website',
-    keywords: 'author,speaker,developer,accessibility,diversity,trans',
-    markdownAlternate: false,
-  })
+	assertHeadMetadata($, siteUrl, {
+		path: '/',
+		title: 'Kitty says hi.',
+		description:
+			'Transfeminine web engineer and engineering leader based in Berlin, focused on accessibility, diversity and inclusion.',
+		author: siteAuthor,
+		ogType: 'website',
+		keywords: 'author,speaker,developer,accessibility,diversity,trans',
+		markdownAlternate: false,
+	})
 })
 
 test('page head: resume', async () => {
-  /** Golden: pages/resume/index.liquid */
-  const html = await readText('resume/index.html')
-  const $ = load(html)
+	/** Golden: pages/resume/index.liquid */
+	const html = await readText('resume/index.html')
+	const $ = load(html)
 
-  assertHeadMetadata($, siteUrl, {
-    path: '/resume/',
-    title: 'Kitty Giraudel',
-    description: 'Resume and work history of Kitty Giraudel, engineering and executive leadership.',
-    author: siteAuthor,
-    ogType: 'website',
-    keywords: 'resume,cv,linkedin',
-    markdownAlternate: false,
-  })
+	assertHeadMetadata($, siteUrl, {
+		path: '/resume/',
+		title: 'Kitty Giraudel',
+		description: 'Resume and work history of Kitty Giraudel, engineering and executive leadership.',
+		author: siteAuthor,
+		ogType: 'website',
+		keywords: 'resume,cv,linkedin',
+		markdownAlternate: false,
+	})
 })
 
 test('page head: snippet', async () => {
-  /** Golden: pages/snippets/get-last-npm-install.md */
-  const html = await readText('snippets/get-last-npm-install/index.html')
-  const $ = load(html)
+	/** Golden: pages/snippets/get-last-npm-install.md */
+	const html = await readText('snippets/get-last-npm-install/index.html')
+	const $ = load(html)
 
-  assertHeadMetadata($, siteUrl, {
-    path: '/snippets/get-last-npm-install/',
-    title: 'Figuring out when modules were last installed',
-    description: 'Retrieving the last time npm dependencies were installed',
-    author: siteAuthor,
-    ogType: 'website',
-    keywords: 'npm,Dependencies,Node.js,Debug',
-    markdownAlternate: false,
-  })
+	assertHeadMetadata($, siteUrl, {
+		path: '/snippets/get-last-npm-install/',
+		title: 'Figuring out when modules were last installed',
+		description: 'Retrieving the last time npm dependencies were installed',
+		author: siteAuthor,
+		ogType: 'website',
+		keywords: 'npm,Dependencies,Node.js,Debug',
+		markdownAlternate: false,
+	})
 })
 
 test('page head: project', async () => {
-  /** Golden: pages/projects/a11y-dialog/index.liquid */
-  const html = await readText('projects/a11y-dialog/index.html')
-  const $ = load(html)
+	/** Golden: pages/projects/a11y-dialog/index.liquid */
+	const html = await readText('projects/a11y-dialog/index.html')
+	const $ = load(html)
 
-  assertHeadMetadata($, siteUrl, {
-    path: '/projects/a11y-dialog/',
-    title: 'A11y-dialog',
-    description: siteData.description,
-    author: siteAuthor,
-    ogType: 'website',
-    ogImage: '/assets/images/projects/a11y-dialog.png',
-    keywords: null,
-    markdownAlternate: false,
-  })
+	assertHeadMetadata($, siteUrl, {
+		path: '/projects/a11y-dialog/',
+		title: 'A11y-dialog',
+		description: siteData.description,
+		author: siteAuthor,
+		ogType: 'website',
+		ogImage: '/assets/images/projects/a11y-dialog.png',
+		keywords: null,
+		markdownAlternate: false,
+	})
 })
 
 test('page head: regular post', async () => {
-  /** Golden: _posts/2026-03-02-stats-page-with-11ty.md */
-  const html = await readText('2026/03/02/stats-page-with-11ty/index.html')
-  const $ = load(html)
+	/** Golden: _posts/2026-03-02-stats-page-with-11ty.md */
+	const html = await readText('2026/03/02/stats-page-with-11ty/index.html')
+	const $ = load(html)
 
-  assertHeadMetadata($, siteUrl, {
-    path: '/2026/03/02/stats-page-with-11ty/',
-    title: 'Stats Page With Eleventy',
-    description:
-      'A short technical write-up about aggregating blogging stats and displaying them on a page with Eleventy.',
-    author: siteAuthor,
-    ogType: 'article',
-    keywords: 'Eleventy,JavaScript,Liquid',
-    markdownAlternate: true,
-  })
+	assertHeadMetadata($, siteUrl, {
+		path: '/2026/03/02/stats-page-with-11ty/',
+		title: 'Stats Page With Eleventy',
+		description:
+			'A short technical write-up about aggregating blogging stats and displaying them on a page with Eleventy.',
+		author: siteAuthor,
+		ogType: 'article',
+		keywords: 'Eleventy,JavaScript,Liquid',
+		markdownAlternate: true,
+	})
 
-  const publishedTime = metaProperty($, 'article:published_time')
-  const modifiedTime = metaProperty($, 'article:modified_time')
-  assert.ok(publishedTime, 'article posts should expose article:published_time')
-  if (modifiedTime) {
-    assert.ok(
-      Date.parse(modifiedTime) >= Date.parse(publishedTime),
-      'article:modified_time should be >= article:published_time when present',
-    )
-  }
+	const publishedTime = metaProperty($, 'article:published_time')
+	const modifiedTime = metaProperty($, 'article:modified_time')
+	assert.ok(publishedTime, 'article posts should expose article:published_time')
+	if (modifiedTime) {
+		assert.ok(
+			Date.parse(modifiedTime) >= Date.parse(publishedTime),
+			'article:modified_time should be >= article:published_time when present',
+		)
+	}
 
-  let blogPosting = null
-  $('script[type="application/ld+json"]').each((_, el) => {
-    try {
-      const data = JSON.parse($(el).text())
-      if (data['@type'] === 'BlogPosting') blogPosting = data
-    } catch {
-      // ignore non-JSON-LD fragments
-    }
-  })
-  assert.ok(blogPosting, 'post page should include BlogPosting JSON-LD')
-  assert.ok(blogPosting.datePublished, 'BlogPosting should include datePublished')
-  if (blogPosting.dateModified) {
-    assert.ok(
-      Date.parse(blogPosting.dateModified) >= Date.parse(blogPosting.datePublished),
-      'BlogPosting dateModified should be >= datePublished when present',
-    )
-  }
+	let blogPosting = null
+	$('script[type="application/ld+json"]').each((_, el) => {
+		try {
+			const data = JSON.parse($(el).text())
+			if (data['@type'] === 'BlogPosting') blogPosting = data
+		} catch {
+			// ignore non-JSON-LD fragments
+		}
+	})
+	assert.ok(blogPosting, 'post page should include BlogPosting JSON-LD')
+	assert.ok(blogPosting.datePublished, 'BlogPosting should include datePublished')
+	if (blogPosting.dateModified) {
+		assert.ok(
+			Date.parse(blogPosting.dateModified) >= Date.parse(blogPosting.datePublished),
+			'BlogPosting dateModified should be >= datePublished when present',
+		)
+	}
 })
 
 test('page head: guest post (guest meta author)', async () => {
-  /** Golden: _posts/2020-05-18-using-calc-to-figure-out-optimal-line-height.md */
-  const html = await readText('2020/05/18/using-calc-to-figure-out-optimal-line-height/index.html')
-  const $ = load(html)
+	/** Golden: _posts/2020-05-18-using-calc-to-figure-out-optimal-line-height.md */
+	const html = await readText('2020/05/18/using-calc-to-figure-out-optimal-line-height/index.html')
+	const $ = load(html)
 
-  assertHeadMetadata($, siteUrl, {
-    path: '/2020/05/18/using-calc-to-figure-out-optimal-line-height/',
-    title: 'Using Calc to Figure Out Optimal Line-Height',
-    description: 'A guest post by Jesús Ricarte on using calc() to figure out optimal line-height',
-    author: 'Jesús Ricarte',
-    ogType: 'article',
-    ogImage: '/assets/images/using-calc-to-figure-out-optimal-line-height/line-height.png',
-    keywords: 'CSS,Typography',
-    markdownAlternate: true,
-  })
+	assertHeadMetadata($, siteUrl, {
+		path: '/2020/05/18/using-calc-to-figure-out-optimal-line-height/',
+		title: 'Using Calc to Figure Out Optimal Line-Height',
+		description: 'A guest post by Jesús Ricarte on using calc() to figure out optimal line-height',
+		author: 'Jesús Ricarte',
+		ogType: 'article',
+		ogImage: '/assets/images/using-calc-to-figure-out-optimal-line-height/line-height.png',
+		keywords: 'CSS,Typography',
+		markdownAlternate: true,
+	})
 })

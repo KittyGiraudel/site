@@ -1,56 +1,56 @@
 .IconButton {
-  background-color: light-dark(#fff, #222);
-  color: inherit;
-  border: 2px solid light-dark(rgb(0 0 0 / 0.4), rgb(255 255 255 / 0.4));
-  border-radius: 2em;
-  corner-shape: squircle;
-  cursor: pointer;
-  transition: 250ms;
+	background-color: light-dark(#fff, #222);
+	color: inherit;
+	border: 2px solid light-dark(rgb(0 0 0 / 0.4), rgb(255 255 255 / 0.4));
+	border-radius: 2em;
+	corner-shape: squircle;
+	cursor: pointer;
+	transition: 250ms;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  font-size: 125%;
-  padding: 0;
-  width: 1.75em;
-  height: 1.75em;
-  line-height: 1.5em;
-  z-index: 10;
+	font-size: 125%;
+	padding: 0;
+	width: 1.75em;
+	height: 1.75em;
+	line-height: 1.5em;
+	z-index: 10;
 }
 
 .IconButton:hover,
 .IconButton:focus {
-  animation: wiggle 500ms ease-out;
+	animation: wiggle 500ms ease-out;
 }
 
 .IconButton:focus {
-  outline: 2px solid var(--pink);
-  outline-offset: 2px;
+	outline: 2px solid var(--pink);
+	outline-offset: 2px;
 }
 
 .IconButton > svg {
-  width: 1em;
-  height: 1em;
-  display: inline-block;
-  vertical-align: middle;
-  fill: currentcolor;
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentcolor;
 }
 
 @keyframes wiggle {
-  from {
-    transform: rotate(10deg);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(20deg);
-  }
-  75% {
-    transform: rotate(-5deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+	from {
+		transform: rotate(10deg);
+	}
+	25% {
+		transform: rotate(-10deg);
+	}
+	50% {
+		transform: rotate(20deg);
+	}
+	75% {
+		transform: rotate(-5deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
 }

@@ -1,32 +1,32 @@
 table {
-  width: 100%;
-  margin-block: var(--vb);
-  border-collapse: collapse;
+	width: 100%;
+	margin-block: var(--vb);
+	border-collapse: collapse;
 }
 
 @media (min-width: 1024px) {
-  table {
-    width: calc(100% + var(--margin-offset) * 2);
-    padding: 1em var(--margin-offset);
-    inset-inline-start: calc(var(--margin-offset) * -1);
-    position: relative;
-  }
+	table {
+		width: calc(100% + var(--margin-offset) * 2);
+		padding: 1em var(--margin-offset);
+		inset-inline-start: calc(var(--margin-offset) * -1);
+		position: relative;
+	}
 }
 
 thead {
-  border-block-end: 2px solid;
+	border-block-end: 2px solid;
 }
 
 tr + tr {
-  border-block-start: 1px solid var(--pink);
+	border-block-start: 1px solid var(--pink);
 }
 
 td,
 th {
-  padding: 0.5em;
+	padding: 0.5em;
 }
 
 th {
-  text-align: start;
-  font-weight: bold;
+	text-align: start;
+	font-weight: bold;
 }

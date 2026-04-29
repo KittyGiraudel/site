@@ -1,9 +1,9 @@
 .Main {
-  counter-reset: footnotes;
+	counter-reset: footnotes;
 }
 
 @media (min-width: 768px) {
-  .Main {
-    padding-block-end: var(--vb);
-  }
+	.Main {
+		padding-block-end: var(--vb);
+	}
 }

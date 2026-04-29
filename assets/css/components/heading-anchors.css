@@ -1,24 +1,24 @@
 .ha {
-  font-weight: bold;
-  position: absolute;
-  opacity: 0;
+	font-weight: bold;
+	position: absolute;
+	opacity: 0;
 }
 
 .ha:is(:focus-within, :hover) {
-  opacity: 1;
+	opacity: 1;
 }
 
 h2 + .ha {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 h3 + .ha {
-  font-size: 1.17em;
+	font-size: 1.17em;
 }
 
 .ha-placeholder {
-  opacity: 0.1;
-  margin-inline-start: 0.5ch;
+	opacity: 0.1;
+	margin-inline-start: 0.5ch;
 }
 
 /**
@@ -26,30 +26,30 @@ h3 + .ha {
  */
 .ha,
 .ha-placeholder {
-  display: inline-block;
-  padding-inline: 0.1em;
-  -webkit-user-select: none; /* 1 */
-  user-select: none; /* 1 */
+	display: inline-block;
+	padding-inline: 0.1em;
+	-webkit-user-select: none; /* 1 */
+	user-select: none; /* 1 */
 }
 
 @supports (anchor-name: none) {
-  .ha {
-    inset-inline-start: anchor(inline-start);
-    inset-block-start: anchor(block-start);
-  }
+	.ha {
+		inset-inline-start: anchor(inline-start);
+		inset-block-start: anchor(block-start);
+	}
 }
 
 @supports not (anchor-name: none) {
-  /**
-   * 1. Fallback positioning in the gutter for browsers that don't support CSS
-   *  anchor positioning.
-   */
-  .ha {
-    transform: translate(-1.1em, -2.05em); /* 1 */
-    opacity: 0.5;
-  }
+	/**
+	 * 1. Fallback positioning in the gutter for browsers that don't support CSS
+	 *  anchor positioning.
+	 */
+	.ha {
+		transform: translate(-1.1em, -2.05em); /* 1 */
+		opacity: 0.5;
+	}
 
-  .ha-placeholder {
-    display: none;
-  }
+	.ha-placeholder {
+		display: none;
+	}
 }

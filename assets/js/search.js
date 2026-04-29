@@ -10,19 +10,19 @@ const NO_RESULTS_TEXT = `
 document.addEventListener('DOMContentLoaded', () => search())
 
 function search() {
-  const searchInput = document.getElementById('search-input')
-  const resultsContainer = document.getElementById('results-container')
+	const searchInput = document.getElementById('search-input')
+	const resultsContainer = document.getElementById('results-container')
 
-  if (!searchInput || !resultsContainer) return
+	if (!searchInput || !resultsContainer) return
 
-  const renderTags = tags => {
-    if (!Array.isArray(tags)) return ''
+	const renderTags = tags => {
+		if (!Array.isArray(tags)) return ''
 
-    const items = tags
-      .slice()
-      .sort((a, b) => a.localeCompare(b))
-      .map(
-        tag => `
+		const items = tags
+			.slice()
+			.sort((a, b) => a.localeCompare(b))
+			.map(
+				tag => `
         <li class="Tag">
           <a
             class="Tag__link"
@@ -32,14 +32,14 @@ function search() {
           </a>
         </li>
         `,
-      )
-      .join('')
+			)
+			.join('')
 
-    if (!items) return ''
-    return `<ul class="Tags NoListMarker">${items}</ul>`
-  }
+		if (!items) return ''
+		return `<ul class="Tags NoListMarker">${items}</ul>`
+	}
 
-  const renderResult = entry => `
+	const renderResult = entry => `
     <li class="List__item">
       <span class="List__secondary-content">${entry.date}${entry.guest}${entry.external}</span>
       <a href="${entry.url}" class="List__primary-content" ${entry.lang ? `lang="${entry.lang}" hreflang="${entry.lang}"` : ''}>
@@ -49,88 +49,88 @@ function search() {
     </li>
   `
 
-  const entryMatches = (entry, query) => {
-    const normalizedQuery = query.trim().toLowerCase()
-    if (!normalizedQuery) return false
+	const entryMatches = (entry, query) => {
+		const normalizedQuery = query.trim().toLowerCase()
+		if (!normalizedQuery) return false
 
-    const terms = normalizedQuery.split(/\s+/)
-    const haystack = [
-      entry.title,
-      entry.url,
-      entry.date,
-      entry.guest,
-      entry.external,
-      ...(Array.isArray(entry.tags) ? entry.tags : []),
-    ]
-      .filter(Boolean)
-      .join(' ')
-      .toLowerCase()
+		const terms = normalizedQuery.split(/\s+/)
+		const haystack = [
+			entry.title,
+			entry.url,
+			entry.date,
+			entry.guest,
+			entry.external,
+			...(Array.isArray(entry.tags) ? entry.tags : []),
+		]
+			.filter(Boolean)
+			.join(' ')
+			.toLowerCase()
 
-    return terms.every(term => haystack.includes(term))
-  }
+		return terms.every(term => haystack.includes(term))
+	}
 
-  const performSearch = (entries, query) => {
-    if (!query?.trim()) {
-      resultsContainer.innerHTML = ''
-      return
-    }
+	const performSearch = (entries, query) => {
+		if (!query?.trim()) {
+			resultsContainer.innerHTML = ''
+			return
+		}
 
-    const results = entries.filter(entry => entryMatches(entry, query)).slice(0, RESULTS_LIMIT)
+		const results = entries.filter(entry => entryMatches(entry, query)).slice(0, RESULTS_LIMIT)
 
-    if (!results.length) {
-      resultsContainer.innerHTML = NO_RESULTS_TEXT
-      return
-    }
+		if (!results.length) {
+			resultsContainer.innerHTML = NO_RESULTS_TEXT
+			return
+		}
 
-    resultsContainer.innerHTML = results.map(renderResult).join('')
-  }
+		resultsContainer.innerHTML = results.map(renderResult).join('')
+	}
 
-  function updateURLFromQuery(value) {
-    try {
-      const url = new URL(window.location.href)
-      const trimmed = (value || '').trim()
+	function updateURLFromQuery(value) {
+		try {
+			const url = new URL(window.location.href)
+			const trimmed = (value || '').trim()
 
-      if (trimmed) url.searchParams.set('q', trimmed)
-      else url.searchParams.delete('q')
+			if (trimmed) url.searchParams.set('q', trimmed)
+			else url.searchParams.delete('q')
 
-      if (url.toString() !== window.location.href) window.history.replaceState({}, '', url)
-    } catch {
-      // Fail silently if URL / URLSearchParams are not available
-    }
-  }
+			if (url.toString() !== window.location.href) window.history.replaceState({}, '', url)
+		} catch {
+			// Fail silently if URL / URLSearchParams are not available
+		}
+	}
 
-  fetch(SEARCH_INDEX_URL)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Failed to load search data from ${SEARCH_INDEX_URL}`)
-      }
-      return response.json()
-    })
-    .then(entries => {
-      if (!Array.isArray(entries)) return
+	fetch(SEARCH_INDEX_URL)
+		.then(response => {
+			if (!response.ok) {
+				throw new Error(`Failed to load search data from ${SEARCH_INDEX_URL}`)
+			}
+			return response.json()
+		})
+		.then(entries => {
+			if (!Array.isArray(entries)) return
 
-      // Keep the URL in sync with what the user is typing.
-      searchInput.addEventListener('input', event => {
-        const query = event.target.value
-        updateURLFromQuery(query)
-        performSearch(entries, query)
-      })
+			// Keep the URL in sync with what the user is typing.
+			searchInput.addEventListener('input', event => {
+				const query = event.target.value
+				updateURLFromQuery(query)
+				performSearch(entries, query)
+			})
 
-      // Pre-fill and trigger search from query parameter, e.g. ?q=accessibility.
-      try {
-        const params = new URLSearchParams(window.location.search)
-        const query = params.get('q') || params.get('query')
+			// Pre-fill and trigger search from query parameter, e.g. ?q=accessibility.
+			try {
+				const params = new URLSearchParams(window.location.search)
+				const query = params.get('q') || params.get('query')
 
-        if (!query) return
+				if (!query) return
 
-        searchInput.value = query
-        updateURLFromQuery(query)
-        performSearch(entries, query)
-      } catch {
-        // Fail silently if URLSearchParams is unavailable or something goes wrong.
-      }
-    })
-    .catch(() => {
-      resultsContainer.innerHTML = NO_RESULTS_TEXT
-    })
+				searchInput.value = query
+				updateURLFromQuery(query)
+				performSearch(entries, query)
+			} catch {
+				// Fail silently if URLSearchParams is unavailable or something goes wrong.
+			}
+		})
+		.catch(() => {
+			resultsContainer.innerHTML = NO_RESULTS_TEXT
+		})
 }
