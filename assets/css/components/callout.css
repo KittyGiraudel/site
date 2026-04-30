@@ -3,7 +3,7 @@
  * 2. CSS trick to have a gradient border *with* rounded corners.
  */
 .Callout {
-	--callout-background: --embed-background-blue;
+	--callout-background: var(--embed-background-blue);
 	--gradient-start: var(--blue);
 	--gradient-end: var(--pink);
 	margin-block: var(--vb);
