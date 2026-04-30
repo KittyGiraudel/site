@@ -181,6 +181,7 @@ button.Navigation__link:focus-visible {
 	position: fixed;
 	inset-block-start: 1em;
 	inset-inline-end: 1em;
+	z-index: 100;
 }
 
 /**
