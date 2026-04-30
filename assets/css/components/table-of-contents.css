@@ -1,6 +1,7 @@
 /**
  * 1. Position context for the absolutely positioned content that pops out.
  * 2. Reduce the font size of the table of contents to make it less intrusive.
+ * 3. Align the background color with the footnotes.
  */
 .TableOfContents {
 	position: relative; /* 1 */
@@ -9,6 +10,7 @@
 	min-inline-size: 250px;
 	font-size: 80%; /* 2 */
 	z-index: 100;
+	--toc-background-color: light-dark(#f6f4f9, #303132); /* 3 */
 }
 
 @media (max-width: 768px) {
@@ -39,7 +41,7 @@
 	border-radius: 1em;
 	corner-shape: squircle;
 	border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
-	background-color: var(--embed-background-blue);
+	background-color: var(--toc-background-color);
 	transition: 300ms;
 }
 
@@ -75,7 +77,7 @@
 
 .TableOfContents::details-content {
 	opacity: 0;
-	background-color: var(--embed-background-blue);
+	background-color: var(--toc-background-color);
 	padding: 0.75em 1.25em;
 	inset-block-start: calc(100% - 2px);
 	border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
