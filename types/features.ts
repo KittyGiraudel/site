@@ -5,5 +5,5 @@ export type FeatureEnv = 'development' | 'production'
 export type FeatureName = keyof typeof features
 
 export type Features = {
-	[K in FeatureName]: FeatureEnv[]
+	[K in FeatureName]: [FeatureEnv?, FeatureEnv?]
 }
