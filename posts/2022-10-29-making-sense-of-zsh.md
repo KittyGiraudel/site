@@ -6,7 +6,7 @@ tags:
   - Bash
 edits:
   - date: 2026-03-06
-    md: I have started using [Starship](https://starship.rs/) to manage my prompt, and I’ve been really happy with it so far. I can recommend it.
+    md: I have started using [Starship](https://starship.rs/) to manage my prompt, and I’ve been really happy with it so far. I can recommend it. Read my review in *[Beautiful CLI Prompt with Starship](https://kittygiraudel.com/2026/03/13/beautiful-cli-prompt-with-starship/)*.
 image: /assets/images/making-sense-of-zsh/zsh-prompt.png
 ---
 
