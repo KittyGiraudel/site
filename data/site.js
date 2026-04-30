@@ -41,6 +41,7 @@ export default {
 	],
 	configuration: {
 		inline_assets: FEATURES.inlineAssets.includes(ENV),
+		render_drafts: FEATURES.renderDrafts.includes(ENV),
 		service_worker: FEATURES.serviceWorker.includes(ENV),
 	},
 }

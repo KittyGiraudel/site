@@ -29,6 +29,7 @@ test('sitemap.xml is valid and contains absolute URLs', async () => {
 
 	for (const loc of locs) {
 		assert.equal(typeof loc, 'string')
+		assert.ok(!loc.endsWith('.'), `sitemap URL should not end with a dot: ${loc}`)
 
 		const url = new URL(loc)
 		const pathname = url.pathname
@@ -61,6 +62,17 @@ test('sitemap.xml is valid and contains absolute URLs', async () => {
 		const forbidden = new URL(path, site.origin).toString()
 		assert.ok(!locs.includes(forbidden), `sitemap should not include ${forbidden}`)
 	}
+
+	const tagLocs = locs.filter(loc => new URL(loc).pathname.startsWith('/tags/'))
+	assert.ok(tagLocs.length > 1, 'sitemap should include multiple tag pages')
+	assert.ok(
+		tagLocs.includes(new URL('/tags/ai/', site.origin).toString()),
+		'sitemap should include /tags/ai/',
+	)
+	assert.ok(
+		tagLocs.includes(new URL('/tags/eleventy/', site.origin).toString()),
+		'sitemap should include /tags/eleventy/',
+	)
 
 	const withLastmod = urls.filter(entry => Boolean(entry.lastmod))
 	assert.ok(

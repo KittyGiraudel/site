@@ -11,6 +11,7 @@ pagination:
   data: projects
   size: 12
   alias: paginatedProjects
+  addAllPagesToCollections: true
 permalink: "/projects/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 

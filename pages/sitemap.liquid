@@ -4,13 +4,17 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-    {%- for page in collections.all %}
-    {%- unless page.data.external or page.url == '/404.html' %}
+    {%- for page in collections.all -%}
+    {% assign is_real = page.url and page.url != '.' and page.url != '/404.html' %}
+    {% assign is_draft = page.data.draft == true %}
+    {% assign is_visible = site.configuration.render_drafts or is_draft == false %}
+    {% assign is_rendered = page.data.external != true %}
+    {%- if is_real and is_rendered and is_visible -%}
     {% assign page_lastmod = page.data.update_date | default: page.date %}
     <url>
         <loc>{{ site.url }}{{ page.url | url }}</loc>
         {% if page_lastmod %}<lastmod>{{ page_lastmod | date_to_rfc3339 }}</lastmod>{% endif %}
     </url>
-    {%- endunless %}
+    {%- endif %}
     {%- endfor %}
 </urlset>
