@@ -1,5 +1,5 @@
 .Figure {
-	margin-block: var(--vb);
+	margin: var(--vb) 0;
 	position: relative;
 }
 
