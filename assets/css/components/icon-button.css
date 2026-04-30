@@ -2,8 +2,7 @@
 	background-color: var(--page-background);
 	color: inherit;
 	border: 2px solid light-dark(rgb(0 0 0 / 0.4), rgb(255 255 255 / 0.4));
-	border-radius: 2em;
-	corner-shape: squircle;
+	border-radius: 0.5em;
 	cursor: pointer;
 	transition: 250ms;
 
@@ -16,6 +15,13 @@
 	width: 1.75em;
 	height: 1.75em;
 	line-height: 1.5em;
+}
+
+@supports (corner-shape: squircle) {
+	.IconButton {
+		border-radius: 2em;
+		corner-shape: squircle;
+	}
 }
 
 .IconButton:hover,
