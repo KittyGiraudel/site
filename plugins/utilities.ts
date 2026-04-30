@@ -14,7 +14,7 @@ const EMOJI_REGEX = emojiRegex()
 const DATE_FORMATTER = new Intl.DateTimeFormat('en', {
 	year: 'numeric',
 	month: 'long',
-	day: '2-digit',
+	day: 'numeric',
 })
 
 function minifyHTML(content: string, outputPath?: string): string | Promise<string> {
