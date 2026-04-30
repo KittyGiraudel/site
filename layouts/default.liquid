@@ -53,6 +53,13 @@
     partials: "main"
   %}
 
+  {% if site.environment != "production" %}
+    {% render "script.liquid",
+      inline: site.configuration.inline_assets,
+      partials: "dev-theme-reload"
+    %}
+  {% endif %}
+
   {% if site.configuration.service_worker == true %}
   <script>
     if ('serviceWorker' in navigator) {
