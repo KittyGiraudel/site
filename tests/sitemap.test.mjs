@@ -57,7 +57,12 @@ test('sitemap.xml is valid and contains absolute URLs', async () => {
 		assert.ok(locs.includes(expected), `sitemap should include ${expected}`)
 	}
 
-	const forbiddenPaths = ['/blog/index-markdown/', '/README.md', '/404.html']
+	const forbiddenPaths = [
+		'/blog/index-markdown/',
+		'/README.md',
+		'/404.html',
+		'/tags/internal-posts/',
+	]
 	for (const path of forbiddenPaths) {
 		const forbidden = new URL(path, site.origin).toString()
 		assert.ok(!locs.includes(forbidden), `sitemap should not include ${forbidden}`)
