@@ -20,9 +20,8 @@
 	border-radius: 1rem; /* 2 */
 	corner-shape: squircle;
 	border: 2px solid transparent; /* 3 */
-	--background-color: light-dark(#fffafd, #322d2f);
 	background-image:
-		linear-gradient(var(--background-color), var(--background-color)),
+		linear-gradient(var(--embed-background-pink), var(--embed-background-pink)),
 		linear-gradient(to right, var(--pink), var(--blue)); /* 3 */
 	background-origin: border-box; /* 3 */
 	background-clip: padding-box, border-box; /* 3 */

@@ -3,19 +3,18 @@
  * 2. CSS trick to have a gradient border *with* rounded corners.
  */
 .Callout {
-	--background-color: light-dark(#f3f8fc, #303132);
 	--gradient-start: var(--blue);
 	--gradient-end: var(--pink);
 	margin-block: var(--vb);
 	color: light-dark(#1e293b, #f1f5f9);
 	padding: 0.75em 1.5em;
 	position: relative; /* 1 */
-	background-color: var(--background-color);
+	background-color: var(--embed-background-blue);
 	border-radius: 1em;
 	corner-shape: squircle;
 	border: 2px solid transparent; /* 2 */
 	background-image:
-		linear-gradient(var(--background-color), var(--background-color)),
+		linear-gradient(var(--embed-background-blue), var(--embed-background-blue)),
 		linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* 2 */
 	background-origin: border-box; /* 2 */
 	background-clip: padding-box, border-box; /* 2 */

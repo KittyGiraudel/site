@@ -43,7 +43,7 @@
 	inset-inline-start: 0;
 	height: calc(var(--underline-height) + 2px); /* 2 */
 	width: calc(var(--navigation-notch-width) + var(--navigation-notch-offset) * 2);
-	background-color: light-dark(#fff, #222); /* 3 */
+	background-color: var(--page-background); /* 3 */
 	transform: translateX(calc(var(--navigation-notch-start) - var(--navigation-notch-offset)));
 	opacity: var(--navigation-notch-opacity);
 	transition:
@@ -195,11 +195,10 @@ button.Navigation__link:focus-visible {
 	padding: 1em 1.25em;
 	border-radius: 1em;
 	corner-shape: squircle;
-	--background-color: light-dark(#fffafd, #322d2f);
-	background-color: var(--background-color);
+	background-color: var(--embed-background-pink);
 	border: 2px solid transparent; /* 2 */
 	background-image:
-		linear-gradient(var(--background-color), var(--background-color)),
+		linear-gradient(var(--embed-background-pink), var(--embed-background-pink)),
 		linear-gradient(to right, var(--pink), var(--blue)); /* 2 */
 	background-origin: border-box; /* 2 */
 	background-clip: padding-box, border-box; /* 2 */

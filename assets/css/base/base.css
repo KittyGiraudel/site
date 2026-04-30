@@ -3,6 +3,9 @@
 
 	--pink: #dd7eb4;
 	--blue: #267cb9;
+	--page-background: light-dark(#faf9fb, #252324);
+	--embed-background-pink: light-dark(#fffafd, #322d2f);
+	--embed-background-blue: light-dark(#f3f8fc, #303132);
 	--code-font: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
 	--vb: 1.5em;
 	--vb-half: calc(var(--vb) / 2);
@@ -70,7 +73,7 @@ body {
 		serif;
 	font-size: min(max(1.25rem, 4vw), 1.4rem); /* 2 */
 	color: light-dark(#444, #eee);
-	background-color: light-dark(#fff, #222);
+	background-color: var(--page-background);
 }
 
 hr {

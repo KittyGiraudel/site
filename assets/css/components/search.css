@@ -14,7 +14,7 @@
 	border-block-end: 2px solid var(--blue);
 	-webkit-appearance: textfield;
 	outline-offset: -2px;
-	background-color: light-dark(#fff, #222);
+	background-color: var(--page-background);
 	transition: 250ms;
 }
 

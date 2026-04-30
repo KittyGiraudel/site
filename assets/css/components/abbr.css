@@ -6,8 +6,8 @@ abbr[title] {
 			to right,
 			transparent,
 			transparent 50%,
-			light-dark(#fff, #222) 50%,
-			light-dark(#fff, #222) 100%
+			var(--page-background) 50%,
+			var(--page-background) 100%
 		),
 		linear-gradient(to right, var(--pink), var(--blue) 100%);
 	background-repeat: repeat-x;

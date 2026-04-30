@@ -4,16 +4,15 @@
  * 3. CSS trick to have a gradient border *with* rounded corners.
  */
 blockquote {
-	--background-color: light-dark(#f3f8fc, #303132);
 	position: relative; /* 1 */
 	margin: var(--vb-1\.5) 0; /* 2 */
 	padding: 0.75em 1.5em;
-	background-color: var(--background-color);
+	background-color: var(--embed-background-blue);
 	border-radius: 1em;
 	corner-shape: squircle;
 	border: 2px solid transparent; /* 3 */
 	background-image:
-		linear-gradient(var(--background-color), var(--background-color)),
+		linear-gradient(var(--embed-background-blue), var(--embed-background-blue)),
 		linear-gradient(to right, var(--blue), var(--pink)); /* 3 */
 	background-origin: border-box; /* 3 */
 	background-clip: padding-box, border-box; /* 3 */

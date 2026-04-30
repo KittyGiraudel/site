@@ -1,5 +1,5 @@
 .IconButton {
-	background-color: light-dark(#fff, #222);
+	background-color: var(--page-background);
 	color: inherit;
 	border: 2px solid light-dark(rgb(0 0 0 / 0.4), rgb(255 255 255 / 0.4));
 	border-radius: 2em;
