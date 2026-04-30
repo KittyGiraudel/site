@@ -195,12 +195,12 @@ The problem with this approach is that a background that gets animated between 4
 
 {% callout %}
 When defining `--from` and `--to` as percentages, I couldn’t figure out how to convert them into durations in the `calc()` function. I tried to divide the result of `abs()` by `1%` to get a unitless number (which is how it’s done in Sass for instance), but it didn’t work. To work around the problem, I’ve defined these as unitless values, and multiply them by 1% in the keyframes to get percentages. If someone knows how to do better, let me know.
-{% highlight css %}
+```css
 .Cover[data-biome="ruralSea"] {
   --from: 10;
   --to: 95;
 }
-{% endhighlight %}
+```
 {% endcallout %}
 
 Boom! Now an animation spanning twice as tall as another will take twice as long, which makes sure all images move at the same speed.
