@@ -53,7 +53,7 @@
     partials: "main"
   %}
 
-  {% if site.environment != "production" %}
+  {% if site.configuration.dev_mode %}
     {% render "script.liquid",
       inline: site.configuration.inline_assets,
       partials: "dev-theme-reload"

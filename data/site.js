@@ -40,6 +40,11 @@ export default {
 		{ path: '/resume/', label: 'Hire me' },
 	],
 	configuration: {
+		// ELEVENTY_RUN_MODE is either `build`, `watch` or `serve`:
+		// - `serve` is set when using `--serve`, which is what `npm start` does
+		// - `watch` is set when using `--watch`, which we don’t use
+		// - `build` is set when building the website, i.e. `npm run build`
+		dev_mode: process.env.ELEVENTY_RUN_MODE !== 'build',
 		inline_assets: FEATURES.inlineAssets.includes(ENV),
 		render_drafts: FEATURES.renderDrafts.includes(ENV),
 		service_worker: FEATURES.serviceWorker.includes(ENV),

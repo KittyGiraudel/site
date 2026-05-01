@@ -109,13 +109,18 @@ layout: default
     {% render "giscus.liquid" %}
 
     {% assign navigation_collection = collections.posts %}
-    {% if site.environment != "production" %}
+    {% if site.configuration.dev_mode %}
       {% comment %}
        In development, we have shortcuts using left and right arrow to navigate
        between the posts, which rely on this navigation. External post are a 
        problem, so we exclude them in development.
       {% endcomment %}
       {% assign navigation_collection = collections.internal_posts %}
+
+      {% render "script.liquid",
+        inline: site.configuration.inline_assets,
+        partials: "post-shortcuts"
+      %}
     {% endif %}
 
     {% render "collection_navigation.liquid",
@@ -138,10 +143,3 @@ layout: default
   inline: site.configuration.inline_assets,
   partials: "utilities, post"
 %}
-
-{% if site.environment != "production" %}
-  {% render "script.liquid",
-    inline: site.configuration.inline_assets,
-    partials: "post-shortcuts"
-  %}
-{% endif %}
