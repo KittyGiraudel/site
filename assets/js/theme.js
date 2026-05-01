@@ -32,23 +32,15 @@ class ThemeManager {
 		return T.AUTO
 	}
 
-	_resolveToLightOrDark(mode) {
+	resolveToLightOrDark(mode) {
 		if (mode === T.AUTO) {
 			return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? T.DARK : T.LIGHT
 		}
 		return mode
 	}
 
-	_updateDocumentClass(resolved) {
-		const root = document.documentElement
-
-		if (resolved === T.DARK) {
-			root.classList.remove('light')
-			root.classList.add('dark')
-		} else {
-			root.classList.add('light')
-			root.classList.remove('dark')
-		}
+	_updateDocumentAttr(resolved) {
+		document.documentElement.dataset.theme = resolved
 	}
 
 	saveTheme(theme) {
@@ -60,7 +52,7 @@ class ThemeManager {
 	}
 
 	applyTheme(mode) {
-		this._updateDocumentClass(this._resolveToLightOrDark(mode))
+		this._updateDocumentAttr(this.resolveToLightOrDark(mode))
 		this.#_listeners.forEach(listener => {
 			listener(mode)
 		})
@@ -76,7 +68,7 @@ class ThemeManager {
 		// Only react to OS changes when in automatic mode.
 		if (this.theme !== T.AUTO) return
 
-		this._updateDocumentClass(event.matches ? T.DARK : T.LIGHT)
+		this._updateDocumentAttr(event.matches ? T.DARK : T.LIGHT)
 		this.#_listeners.forEach(listener => {
 			listener(T.AUTO)
 		})

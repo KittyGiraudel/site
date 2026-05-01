@@ -1,29 +1,16 @@
+// When using Eleventy’s watch mode, the `data-theme` attribute gets lost be-
+// cause it’s applied on mount by the ThemeManager. This re-asserts the
+// current ThemeManager mode so forced light/dark survives live reloads during
+// development.
 ;(function keepThemeAcrossLiveReload() {
-	// In Eleventy watch mode, HTML delta updates can replace <html> and drop the
-	// theme class (`light`/`dark`). Re-assert the current ThemeManager mode so
-	// forced light/dark survives live reloads during development.
-	if (typeof MutationObserver !== 'function') return
-	if (!window.ThemeManager) return
-
-	const { themes } = window.ThemeManager
 	const root = document.documentElement
 
-	const ensureDocumentClass = () => {
-		const { theme: mode } = window.ThemeManager
-		const resolved =
-			mode === themes.AUTO
-				? window.matchMedia?.('(prefers-color-scheme: dark)').matches
-					? themes.DARK
-					: themes.LIGHT
-				: mode
-
-		const hasExpectedClass =
-			(resolved === themes.DARK && root.classList.contains('dark')) ||
-			(resolved === themes.LIGHT && root.classList.contains('light'))
-
-		if (!hasExpectedClass) window.ThemeManager.applyTheme(mode)
+	const ensureDocumentAttr = () => {
+		const { theme } = window.ThemeManager
+		const resolved = window.ThemeManager.resolveToLightOrDark(theme)
+		if (root.dataset.theme !== resolved) window.ThemeManager.applyTheme(theme)
 	}
 
-	const observer = new MutationObserver(() => ensureDocumentClass())
-	observer.observe(root, { attributes: true, attributeFilter: ['class'] })
+	const observer = new MutationObserver(() => ensureDocumentAttr())
+	observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] })
 })()

@@ -18,10 +18,10 @@
 	--margin-offset: 2rem;
 }
 
-.dark {
+[data-theme="dark"] {
 	color-scheme: dark;
 }
-.light {
+[data-theme="light"] {
 	color-scheme: light;
 }
 
