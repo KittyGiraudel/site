@@ -34,8 +34,8 @@ h3 + .ha {
 
 @supports (anchor-name: none) {
 	.ha {
-		inset-inline-start: anchor(inline-start);
-		inset-block-start: anchor(block-start);
+		inset-inline-start: anchor(left);
+		inset-block-start: anchor(top);
 	}
 }
 
