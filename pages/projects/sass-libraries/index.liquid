@@ -1,0 +1,34 @@
+---
+layout: project
+title: Sass libraries
+project_name: Sass libraries
+image: /assets/images/projects/sass-libraries.png
+screenshot: /assets/images/projects/sass-libraries.png
+screenshot_alt: Screenshot of the Awesome-Sass repository.
+screenshot_caption: The Awesome-Sass repository lists all the Sass projects I authored over the years.
+permalink: /projects/sass-libraries/index.html
+---
+
+During the LibSass and Ruby Sass years, I published a set of small pure-Sass
+libraries (mostly prefixed “Sassy”) for everything from list helpers to a JSON
+parser. They were experiments in what you could squeeze out of the language
+before `@use` and the modern module system reshaped how Sass is written.
+
+Each library lives in its own repository; this page groups them so the
+[projects list](/projects/) stays readable.
+
+- [SassyBitwise](https://github.com/KittyGiraudel/SassyBitwise): Bitwise operators implemented in Sass as an experiment, co-authored with [Valérian Galliat](https://github.com/valeriangalliat).
+- [SassyCast](https://github.com/KittyGiraudel/SassyCast): Functions to convert between Sass types (numbers, colors, strings, lists, maps, and more).
+- [SassyGradients](https://github.com/KittyGiraudel/SassyGradients): A thin API over CSS linear and radial gradients to make them easier to use.
+- [SassyJSON](https://github.com/KittyGiraudel/SassyJSON): A partial JSON encoder and decoder in Sass — useful mainly as a proof of concept and for tooling experiments.
+- [SassyLists](https://github.com/at-import/SassyLists): Helpers for chunking, looping, serializing, debugging lists, and more.
+- [SassyLogger](https://github.com/KittyGiraudel/SassyLogger): A logging mixin and levels so Sass builds could emit structured messages during compilation.
+- [SassyMatrix](https://github.com/KittyGiraudel/SassyMatrix): 2D matrix operations and helpers built on Sass lists and maps.
+- [SassySort](https://github.com/KittyGiraudel/SassySort): Several classic sorting algorithms implemented as Sass functions — more fun than production advice.
+- [SassyStrings](https://github.com/KittyGiraudel/SassyStrings): String manipulation helpers to complement what the language offered at the time.
+- [SassyTester](https://github.com/KittyGiraudel/SassyTester): A minimal harness for asserting Sass function output in the pre–module-system world.
+- [Sass Semver](https://github.com/KittyGiraudel/sass-semver): A small Semantic Versioning parser in Sass.
+
+{% callout "warning" %}
+A lot of these libraries were largely authored as proof-of-concepts and experimental playgrounds. Your typical project shouldn’t need any of this, especially as the language and its ecosystem matured with the years.
+{% endcallout %}

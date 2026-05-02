@@ -91,10 +91,11 @@
 		"detail_url": "/projects/sass-guidelines/"
 	},
 	{
-		"name": "Sass Semver",
-		"description": "A small Semantic Versioning parser in Sass.",
-		"link": "https://github.com/KittyGiraudel/sass-semver",
-		"tags": ["Sass"]
+		"name": "Sass libraries",
+		"description": "A family of small pure-Sass libraries to extend the language with all sorts of features.",
+		"repository": "https://github.com/KittyGiraudel/awesome-sass",
+		"tags": ["Sass"],
+		"detail_url": "/projects/sass-libraries/"
 	},
 	{
 		"name": "SassDoc",
@@ -104,66 +105,6 @@
 		"tags": ["Sass", "Documentation"],
 		"showcase": true,
 		"detail_url": "/projects/sassdoc/"
-	},
-	{
-		"name": "SassyBitwise",
-		"description": "An implementation of bitwise operators in Sass.",
-		"link": "https://github.com/KittyGiraudel/SassyBitwise",
-		"tags": ["Sass"]
-	},
-	{
-		"name": "SassyCast",
-		"description": "A collection of Sass functions for type conversion.",
-		"link": "https://github.com/KittyGiraudel/SassyCast",
-		"tags": ["Sass"]
-	},
-	{
-		"name": "SassyGradients",
-		"description": "A lightweight wrapper for CSS gradients.",
-		"link": "https://github.com/KittyGiraudel/SassyGradients",
-		"tags": ["Sass"]
-	},
-	{
-		"name": "SassyJSON",
-		"description": "A partially working JSON parser in Sass.",
-		"link": "https://github.com/KittyGiraudel/SassyJSON",
-		"tags": ["Sass", "JSON"]
-	},
-	{
-		"name": "SassyLists",
-		"description": "A collection of Sass functions for list manipulation.",
-		"link": "https://github.com/at-import/SassyLists",
-		"tags": ["Sass"]
-	},
-	{
-		"name": "SassyLogger",
-		"description": "A powerful logging system built for Sass.",
-		"link": "https://github.com/KittyGiraudel/SassyLogger",
-		"tags": ["Sass"]
-	},
-	{
-		"name": "SassyMatrix",
-		"description": "A collection of Sass functions for matrix manipulation.",
-		"link": "https://github.com/KittyGiraudel/SassyMatrix",
-		"tags": ["Sass"]
-	},
-	{
-		"name": "SassySort",
-		"description": "A collection of sorting algorithms implementations in Sass.",
-		"link": "https://github.com/KittyGiraudel/SassySort",
-		"tags": ["Sass"]
-	},
-	{
-		"name": "SassyStrings",
-		"description": "A collection of Sass functions for string manipulation.",
-		"link": "https://github.com/KittyGiraudel/SassyStrings",
-		"tags": ["Sass"]
-	},
-	{
-		"name": "SassyTester",
-		"description": "A minimalistic function tester in Sass.",
-		"link": "https://github.com/KittyGiraudel/SassyTester",
-		"tags": ["Sass"]
 	},
 	{
 		"name": "Selectors Explained",
