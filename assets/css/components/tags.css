@@ -23,7 +23,7 @@
 	transition: border-color 200ms ease-in-out;
 }
 
-.Tag__link:hover {
+a.Tag__link:hover {
 	border-color: var(--blue);
 }
 
