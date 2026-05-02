@@ -96,8 +96,7 @@
 		"description": "A family of small pure-Sass libraries to extend the language with all sorts of features.",
 		"repository": "https://github.com/KittyGiraudel/awesome-sass",
 		"tags": ["Sass"],
-		"detail_url": "/projects/sass-libraries/",
-		"image": "/assets/images/projects/sass-libraries.png"
+		"detail_url": "/projects/sass-libraries/"
 	},
 	{
 		"name": "SassDoc",
