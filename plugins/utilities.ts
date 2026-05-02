@@ -5,7 +5,15 @@ import he from 'he'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
 import features from '../features.json' with { type: 'json' }
-import type { Post, PostFrontMatter, PostTemplateData } from '../types/eleventy.ts'
+import type {
+	MaybePost,
+	MaybeProject,
+	Post,
+	PostFrontMatter,
+	PostTemplateData,
+	Project,
+	ProjectFrontMatter,
+} from '../types/eleventy.ts'
 import type { Features } from '../types/features.ts'
 
 const ENV = process.env.NODE_ENV
@@ -143,7 +151,11 @@ function wrapSmileyFaces(content: string, outputPath?: string): string {
 // Nested `.data` (collection entries) vs flattened cascade (layouts)
 // - PostTemplateData is used in posts.11tydata.ts
 // - Post is used in eleventy.config.ts
-function getFrontMatterData(value: Post | PostTemplateData): Partial<PostFrontMatter> {
+function getFrontMatterData(value: MaybePost): Partial<PostFrontMatter>
+function getFrontMatterData(value: MaybeProject): Partial<ProjectFrontMatter>
+function getFrontMatterData(
+	value: MaybePost | MaybeProject,
+): Partial<PostFrontMatter | ProjectFrontMatter> {
 	if (value !== null && typeof value === 'object' && 'data' in value) {
 		const nested = (value as { data?: Partial<PostFrontMatter> }).data
 		return { ...(nested ?? {}) }
@@ -152,12 +164,12 @@ function getFrontMatterData(value: Post | PostTemplateData): Partial<PostFrontMa
 }
 
 // A post is visible if it is not a draft or if drafts are enabled.
-function isPostVisible(value: Post | PostTemplateData): boolean {
+function isPostVisible(value: MaybePost): boolean {
 	return !getFrontMatterData(value).draft || FEATURES.renderDrafts.includes(ENV)
 }
 
 // A post is rendered if it is visible and not an external post.
-function isPostRendered(value: Post | PostTemplateData): boolean {
+function isPostRendered(value: MaybePost): boolean {
 	return isPostVisible(value) && !getFrontMatterData(value).external
 }
 

@@ -39,6 +39,25 @@ export type Post = EleventySuppliedData & {
 	data?: PostFrontMatter
 }
 
+export type MaybePost = Post | PostTemplateData
+
+export type ProjectFrontMatter = {
+	layout: 'project'
+	title: string
+	project_name: string
+	image: string
+	screenshot: string
+	screenshot_alt: string
+	screenshot_caption: string
+	permalink: string
+}
+
+export type Project = EleventySuppliedData & {
+	data?: ProjectFrontMatter
+}
+
+export type MaybeProject = Project | ProjectFrontMatter
+
 // biome-ignore lint/suspicious/noExplicitAny: `any[]` matches 11ty’s filter signature; `unknown[]` makes real `(content: string) => …` filters fail assignability checks.
 type UniversalFilter = (this: EleventyScope, ...args: any[]) => unknown
 

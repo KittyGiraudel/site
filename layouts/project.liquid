@@ -70,9 +70,19 @@ layout: page
   </section>
 </article>
 
+{% assign navigation_collection = collections.projects %}
+{% if site.configuration.dev_mode %}
+  {% comment %}
+   Like posts, dev keyboard nav (collection-shortcuts) only follows same-origin
+   links, so we skip items with `external` in front matter by using
+   internal_projects.
+  {% endcomment %}
+  {% assign navigation_collection = collections.internal_projects %}
+{% endif %}
+
 {% render "collection_navigation.liquid",
   page: page,
-  collection: collections.projects,
+  collection: navigation_collection,
   label: "project",
   dev_mode: site.configuration.dev_mode
 %}
