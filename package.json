@@ -29,6 +29,7 @@
 		"he": "^1.2.0",
 		"html-minifier-terser": "^7.2.0",
 		"markdown-it": "^14.1.1",
+		"netlify-plugin-cache": "^1.0.3",
 		"workbox-cli": "^7.4.0"
 	},
 	"devDependencies": {
@@ -37,7 +38,6 @@
 		"@types/he": "^1.2.3",
 		"@types/html-minifier-terser": "^7.0.2",
 		"@types/markdown-it": "^14.1.2",
-		"@types/node": "^25.6.0",
-		"netlify-plugin-cache": "^1.0.3"
+		"@types/node": "^25.6.0"
 	}
 }
