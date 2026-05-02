@@ -18,6 +18,12 @@
 	margin-right: calc(var(--width) / -2);
 }
 
+@media (max-width: 350px) {
+	.CardGrid {
+		grid-template-columns: 1fr;
+	}
+}
+
 @media (min-width: 1024px) {
 	.CardGrid {
 		--width: 95vw;
