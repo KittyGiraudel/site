@@ -3,6 +3,28 @@
 	position: relative;
 }
 
+/**
+ * Figures live inside the main content container. The raster output from the
+ * @11ty/eleventy-img plugin can be smaller than that (e.g. max width 640–800px)
+ * Without an explicit width, replaced elements keep their intrinsic size, so
+ * they sit narrower than the column—max-inline-size: 100% only caps overflow,
+ * it does not stretch.
+ */
+.Figure > picture {
+	display: block;
+	inline-size: 100%;
+}
+
+.Figure > img,
+.Figure > picture img {
+	inline-size: 100%;
+}
+
+.Figure > video {
+	inline-size: 100%;
+	height: auto;
+}
+
 .Figure figcaption {
 	font-family: var(--code-font);
 	font-size: 60%;
