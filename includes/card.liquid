@@ -4,15 +4,17 @@
 		- secondary: The secondary content for the card
 	Optional:
 		- image: The card image
+		- image_alt: Alt text when an image is set
 		- url: The link for the card
 		- tags: The tags for the card
+		- actions: The actions for the card
 		- image_style: Style attribute for the card image
 {% endcomment %}
 
 {% ensure primary, "Required value 'primary' is missing in card.liquid" %}
 {% ensure secondary, "Required value 'secondary' is missing in card.liquid" %}
 
-{% assign alt = image_alt | default: "" %}
+{% assign alt = image_alt | default: '' %}
 
 <div class="Card">
 	{% if image %}
@@ -33,11 +35,18 @@
 		{% endif %}
 		<p class="Card__title">
 			{% if url %}
-			<a class="Card__action" href="{{ url }}">{{ primary }}</a>
+			<a class="Card__cta" href="{{ url }}">{{ primary }}</a>
 			{% else %}
 				{{ primary }}
 			{% endif %}
 		</p>
 		<p class="Card__secondary">{{ secondary }}</p>
+		{% if actions %}
+		<div class="Card__actions">
+			{% for action in actions %}
+				<a class="Card__action NoBackground" href="{{ action.url }}">{{ action.label }}</a>
+			{% endfor %}
+			</div>
+		{% endif %}
 	</div>
 </div>

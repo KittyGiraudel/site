@@ -70,13 +70,40 @@
 	font-size: 80%;
 }
 
+.Card__actions {
+	display: flex;
+	gap: var(--vb-quarter);
+	flex-wrap: wrap;
+	z-index: 2;
+	margin-block-start: var(--vb-half);
+	border-block-start: 1px solid silver;
+	padding-block-start: var(--vb-half);
+}
+
+.Card__action {
+	border: 1px solid light-dark(var(--blue), var(--pink));
+	border-radius: 0.5em;
+	padding: 0.25em 0.75em;
+	font-size: 60%;
+	text-decoration: none;
+	font-family: var(--code-font);
+	color: inherit;
+	transition: border-color 200ms;
+	background-color: light-dark(var(--embed-background-blue), var(--embed-background-pink));
+}
+
+.Card__action:hover {
+	border-color: light-dark(var(--pink), var(--blue));
+	background-color: light-dark(var(--embed-background-pink), var(--embed-background-blue));
+}
+
 /**
  * 1. Use a pseudo-element to expand the hitbox of the link over
  *    the whole card.
  * 2. Expand the hitbox over the whole card.
  * 3. Place the pseudo-element on top of the whole card.
  */
-.Card__action::before {
+.Card__cta::before {
 	content: ""; /* 1 */
 	position: absolute; /* 2 */
 	inset: 0; /* 2 */
@@ -88,6 +115,6 @@
 /**
  * 1. Hide the default focus outline as it’s moved to the card.
  */
-.Card__action:focus {
+.Card__cta:focus {
 	outline: none !important; /* 1 */
 }

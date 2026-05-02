@@ -58,6 +58,21 @@ export type Project = EleventySuppliedData & {
 
 export type MaybeProject = Project | ProjectFrontMatter
 
+/**
+ * Row passed to `includes/card_grid.liquid` (built in listing
+ * `index.11tydata.ts` files).
+ */
+export type CardGridItem = {
+	primary: string
+	secondary: string
+	image?: string
+	image_alt?: string
+	url?: string
+	vt_source?: string
+	tags?: string[]
+	actions?: { label: string; url: string }[]
+}
+
 // biome-ignore lint/suspicious/noExplicitAny: `any[]` matches 11ty’s filter signature; `unknown[]` makes real `(content: string) => …` filters fail assignability checks.
 type UniversalFilter = (this: EleventyScope, ...args: any[]) => unknown
 

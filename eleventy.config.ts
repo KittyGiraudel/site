@@ -51,6 +51,7 @@ export default defineConfig(config => {
 	config.addWatchTarget('assets/css/**/*.css')
 	config.addWatchTarget('assets/js/**/*.js')
 	config.addWatchTarget('plugins/**/*.ts')
+	config.addWatchTarget('pages/**/*.11tydata.{js,ts}')
 
 	// Compilation plugins
 	// ---------------------------------------------------------------------------

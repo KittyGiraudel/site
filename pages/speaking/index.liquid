@@ -12,36 +12,18 @@ permalink: /talks/
 {% render "styles.liquid",
   inline: site.configuration.inline_assets,
   partials: "
-    components/list,
+    components/card-grid,
+    components/card,
     components/tags
   "
 %}
 
 {% markdown %}
 Over the last few years I’ve had the amazing opportunity to be a speaker at some
-great events. If you would like me to speak at your conference, be sure to get
+great conferences. If you would like me to speak at your event, be sure to get
 in touch!
 {% endmarkdown %}
 
-<ul class="List NoListMarker">
-  {% for event in speaking %}
-  <li class="List__item">
-    <span class="List__secondary-content">
-      {{ event.date | time }} ❦ {{ event.location }}
-    </span>
-    <a href="{{ event.link }}" class="List__primary-content" target="_blank" rel="noopener noreferrer">
-      {{ event.event }}
-    </a>
-    {% if event.actions %}
-      <ul class="Tags NoListMarker">
-        {% for action in event.actions %}
-        <li class="Tag">
-          <a class="Tag__link NoBackground" target="_blank" rel="noopener noreferrer" href="{{ action[1] }}">
-            {{ action[0] }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-  </li>
-  {% endfor %}
-</ul>
+{% render "card_grid.liquid",
+  items: event_cards
+%}

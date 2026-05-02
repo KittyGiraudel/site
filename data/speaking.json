@@ -3,130 +3,188 @@
 		"event": "WeAreDevelopers – Live",
 		"link": "https://www.youtube.com/watch?v=UncTZgOxgL8",
 		"location": "Online",
-		"date": "2026-03-11 12:30:00 +0100"
+		"date": "2026-03-11 12:30:00 +0100",
+		"thumbnail": "/assets/images/talks/wearedevelopers.jpg",
+		"actions": [{ "label": "Watch video", "url": "https://www.youtube.com/watch?v=UncTZgOxgL8" }]
 	},
 	{
 		"event": "Unlocking Inclusivity, by Xena",
 		"link": "https://wearexena.com/unlocking-inclusivity/",
 		"location": "Berlin, Germany",
-		"date": "2023-06-01 12:30:00 -0400"
+		"date": "2023-06-01 12:30:00 -0400",
+		"thumbnail": "/assets/images/talks/xena-unlocking-inclusivity.png",
+		"actions": [
+			{ "label": "Check event page", "url": "https://wearexena.com/unlocking-inclusivity/" }
+		]
 	},
 	{
 		"event": "Algolia Developer Experience Podcast",
 		"link": "https://developerexperience.buzzsprout.com/1806381/9919419-accessibility-and-developer-experience",
 		"location": "Online",
-		"date": "2022-01-20 12:30:00 -0400"
+		"date": "2022-01-20 12:30:00 -0400",
+		"thumbnail": "/assets/images/talks/algolia-podcast.png",
+		"actions": [
+			{
+				"label": "Listen to podcast",
+				"url": "https://developerexperience.buzzsprout.com/1806381/9919419-accessibility-and-developer-experience"
+			}
+		]
 	},
 	{
 		"event": "Paris Web",
 		"link": "https://www.paris-web.fr/2018/conferences/L-accessibilite-au-dela-des-specifications.php",
 		"location": "Paris, France",
 		"date": "2018-10-04 12:30:00 -0400",
-		"actions": {
-			"Video": "https://youtu.be/ZNBGieeOLcU?t=11991",
-			"Slides": "https://noti.st/kittygiraudel/KxP2AU/l-accessibilite-au-dela-des-specs"
-		}
+		"thumbnail": "/assets/images/talks/accessibility-beyond-specs.png",
+		"actions": [
+			{ "label": "Watch video", "url": "https://youtu.be/ZNBGieeOLcU?t=11991" },
+			{
+				"label": "View slides",
+				"url": "https://noti.st/kittygiraudel/KxP2AU/l-accessibilite-au-dela-des-specs"
+			}
+		]
 	},
 	{
 		"event": "A11y Meetup Berlin",
-		"link": "https://colloq.io/events/a11y-meetup-berlin/2018/berlin/3/slots/accessibility-designing-for-the-real-world",
+		"link": "https://a11y-meetup-berlin.de/meetups/meetup-3/",
 		"location": "Berlin, Germany",
 		"date": "2018-05-17 15:15:00 -0400",
-		"actions": {
-			"Video": "https://www.youtube.com/watch?v=ZUXxxYHYPcs",
-			"Slides": "https://speakerdeck.com/kittygiraudel/designing-for-the-real-world"
-		}
+		"thumbnail": "/assets/images/talks/designing-for-the-real-world.png",
+		"actions": [
+			{ "label": "Watch video", "url": "https://www.youtube.com/watch?v=ZUXxxYHYPcs" },
+			{
+				"label": "View slides",
+				"url": "https://speakerdeck.com/kittygiraudel/designing-for-the-real-world"
+			}
+		]
 	},
 	{
 		"event": "Tinel Meetup",
-		"link": "https://www.meetup.com/TinelMeetup/events/243912279/",
+		"link": "https://split-techcity.com/kalendar/tinel-5-hugo-giraudel",
 		"location": "Split, Croatia",
 		"date": "2017-10-26 07:00:00 -0400",
-		"actions": {
-			"Video": "https://www.youtube.com/watch?v=FuYI1XSQHtM",
-			"Slides": "https://speakerdeck.com/kittygiraudel/clever-stop-being-so-3"
-		}
+		"thumbnail": "/assets/images/talks/clever-stop-being-so.png",
+		"actions": [
+			{ "label": "Watch video", "url": "https://www.youtube.com/watch?v=FuYI1XSQHtM" },
+			{
+				"label": "View slides",
+				"url": "https://speakerdeck.com/kittygiraudel/clever-stop-being-so-3"
+			}
+		]
 	},
 	{
 		"event": "CSS-Minsk-JS",
 		"link": "https://css-minsk-js.by/",
 		"location": "Minsk, Republic of Belarus",
 		"date": "2017-09-10 07:00:00 -0400",
-		"actions": {
-			"Slides": "https://speakerdeck.com/kittygiraudel/clever-stop-being-so-2"
-		}
+		"thumbnail": "/assets/images/talks/clever-stop-being-so-2.png",
+		"actions": [
+			{
+				"label": "View slides",
+				"url": "https://speakerdeck.com/kittygiraudel/clever-stop-being-so-2"
+			}
+		]
 	},
 	{
 		"event": "DEVit Conference",
-		"link": "https://devitconf.org/",
+		"link": "https://web.archive.org/web/20170603205508/https://devitconf.org/",
 		"location": "Thessaloniki, Greece",
 		"date": "2017-05-20 07:00:00 -0400",
-		"actions": {
-			"Video": "https://www.youtube.com/watch?v=yhK_LvD8WSg&feature=youtu.be",
-			"Slides": "https://speakerdeck.com/kittygiraudel/clever-stop-being-so-1",
-			"Workshop": "https://github.com/KittyGiraudel/react-workshop"
-		}
+		"thumbnail": "/assets/images/talks/clever-stop-being-so-3.png",
+		"actions": [
+			{
+				"label": "Watch video",
+				"url": "https://www.youtube.com/watch?v=yhK_LvD8WSg&feature=youtu.be"
+			},
+			{
+				"label": "View slides",
+				"url": "https://speakerdeck.com/kittygiraudel/clever-stop-being-so-1"
+			}
+		]
 	},
 	{
 		"event": "From The Front",
 		"link": "https://2016.fromthefront.it/",
 		"location": "Bologna, Italy",
 		"date": "2016-09-15 07:00:00 -0400",
-		"actions": {
-			"Video": "https://www.youtube.com/watch?v=ouFvuwMBgfk&t=71s",
-			"Slides": "https://speakerdeck.com/kittygiraudel/local-styling-with-css-modules"
-		}
+		"thumbnail": "/assets/images/talks/local-styling-with-css-modules-2.png",
+		"actions": [
+			{ "label": "Watch video", "url": "https://www.youtube.com/watch?v=ouFvuwMBgfk&t=71s" },
+			{
+				"label": "View slides",
+				"url": "https://speakerdeck.com/kittygiraudel/local-styling-with-css-modules"
+			}
+		]
 	},
 	{
 		"event": "DEVit Conference",
-		"link": "https://devitconf.org/",
+		"link": "https://web.archive.org/web/20160602060941/https://devitconf.org/",
 		"location": "Thessaloniki, Greece",
 		"date": "2016-05-20 07:00:00 -0400",
-		"actions": {
-			"Video": "https://www.youtube.com/watch?v=LIUdaegJi20",
-			"Slides": "https://speakerdeck.com/kittygiraudel/local-styling-with-css-modules"
-		}
+		"thumbnail": "/assets/images/talks/local-styling-with-css-modules.png",
+		"actions": [
+			{ "label": "Watch video", "url": "https://www.youtube.com/watch?v=LIUdaegJi20" },
+			{
+				"label": "View slides",
+				"url": "https://speakerdeck.com/kittygiraudel/local-styling-with-css-modules"
+			}
+		]
 	},
 	{
 		"event": "Frontend Conference Zurich",
 		"link": "https://frontconference.com/",
 		"location": "Zurich, Switzerland",
 		"date": "2015-08-26 19:00:00 -0400",
-		"image": "/images/events/fec.png",
-		"actions": {
-			"Video": "https://youtu.be/dGz6y6glEmI?t=8h17m40s",
-			"Slides": "https://speakerdeck.com/kittygiraudel/three-years-of-purging-sass"
-		}
+		"thumbnail": "/assets/images/talks/three-years-of-purging-sass.png",
+		"actions": [
+			{ "label": "Watch video", "url": "https://youtu.be/dGz6y6glEmI?t=8h17m40s" },
+			{
+				"label": "View slides",
+				"url": "https://speakerdeck.com/kittygiraudel/three-years-of-purging-sass"
+			}
+		]
 	},
 	{
 		"event": "dotCSS",
 		"link": "https://www.dotcss.io/",
 		"location": "Paris, France",
 		"date": "2014-11-14 18:00:00 -0500",
-		"actions": {
-			"Feedback": "/2014/11/17/feedback-on-dotcss-2014/",
-			"Video": "https://www.dotconferences.com/2014/11/kitty-giraudel-keep-calm-and-write-sass",
-			"Slides": "https://speakerdeck.com/kittygiraudel/keep-calm-and-write-sass"
-		}
+		"thumbnail": "/assets/images/talks/keep-calm-and-write-sass.png",
+		"actions": [
+			{ "label": "Read article", "url": "/2014/11/17/feedback-on-dotcss-2014/" },
+			{
+				"label": "Watch video",
+				"url": "https://www.dotconferences.com/2014/11/kitty-giraudel-keep-calm-and-write-sass"
+			},
+			{
+				"label": "View slides",
+				"url": "https://speakerdeck.com/kittygiraudel/keep-calm-and-write-sass"
+			}
+		]
 	},
 	{
 		"event": "FeWeb",
 		"link": "https://www.feweb.be/fr/",
 		"location": "Bruxelles, Belgium",
 		"date": "2014-05-07 19:00:00 -0400",
-		"actions": {
-			"Feedback": "/2014/06/02/feedbacks-feweb/",
-			"Slides": "https://slides.com/kittygiraudel/sass-une-architecture-composee#/"
-		}
+		"thumbnail": "/assets/images/talks/sass-a-composed-architecture.png",
+		"actions": [
+			{ "label": "Read article", "url": "/2014/06/02/feedback-on-another-conf/" },
+			{
+				"label": "View slides",
+				"url": "https://slides.com/kittygiraudel/sass-une-architecture-composee#/"
+			}
+		]
 	},
 	{
 		"event": "KiwiParty",
-		"link": "https://kiwiparty.fr",
+		"link": "http://2013.kiwiparty.fr/",
 		"location": "Strasbourg, France",
 		"date": "2013-06-22 19:00:00 -0400",
-		"actions": {
-			"Feedback": "/2013/07/01/feedbacks-kiwiparty/",
-			"Slides": "https://slides.com/kittygiraudel/css-kick-ass-avec-sass#/"
-		}
+		"thumbnail": "/assets/images/talks/kick-ass-css-with-sass.png",
+		"actions": [
+			{ "label": "Read article", "url": "/2013/07/01/feedback-on-my-first-conf/" },
+			{ "label": "View slides", "url": "https://slides.com/kittygiraudel/css-kick-ass-avec-sass#/" }
+		]
 	}
 ]

@@ -1,20 +1,24 @@
 {% comment %}
 	Required:
-		- items: The items to display as cards
+		- items: Normalized items ready for the card partial
 {% endcomment %}
 
 <ul class="CardGrid NoListMarker" id="card-grid">
 	{% for item in items %}
 		<li class="CardGrid__item">
-			{% assign url = item.detail_url | default: item.link %}
-			{% assign image_style = item.detail_url | slugify | prepend: 'view-transition-name: ' %}
+			{% assign image_style = '' %}
+			{% if item.vt_source %}
+				{% assign image_style = item.vt_source | slugify | prepend: 'view-transition-name: ' %}
+			{% endif %}
 
 			{% render "card.liquid",
 				image: item.image,
-				primary: item.name,
-				secondary: item.description,
-				url: url,
+				image_alt: item.image_alt,
+				primary: item.primary,
+				secondary: item.secondary,
+				url: item.url,
 				tags: item.tags,
+				actions: item.actions,
 				image_style: image_style
 			%}
 		</li>
