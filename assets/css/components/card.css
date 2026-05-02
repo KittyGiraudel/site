@@ -52,7 +52,7 @@
 	gap: var(--vb-fifths);
 }
 
-.Card__image + .Card__content {
+:where(picture, .Card__image) + .Card__content {
 	padding-block-start: var(--vb-third);
 }
 
