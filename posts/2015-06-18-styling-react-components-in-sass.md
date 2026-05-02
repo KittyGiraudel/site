@@ -42,7 +42,7 @@ If you want to jump straight to the code, you can check the [sample React compon
 
 Before we dive into how each of the above problems are solved, let’s take a look at the end result by styling a simple React datepicker component from this mock-up:
 
-![Simple React Datepicker screenshot](https://i.imgur.com/TS5WfFa.png)
+![Simple React Datepicker screenshot](/assets/images/styling-react-components-in-sass/date-picker-component.png)
 
 Our solution will have these characteristics:
 
@@ -56,7 +56,7 @@ Our solution will have these characteristics:
 
 Using the 7-1 pattern, the file organization for our datepicker component looks like this:
 
-![Simple Datepicker file organization](https://i.imgur.com/5KxdGRH.png)
+![Simple Datepicker file organization](/assets/images/styling-react-components-in-sass/datepicker-file-organization.png)
 
 All of our React components are in the `/components` folder, which are imported inside `index.js`. [Webpack](https://webpack.github.io/) is used in this example to bundle the JS (and optionally the CSS) files, which we’ll explain later.
 

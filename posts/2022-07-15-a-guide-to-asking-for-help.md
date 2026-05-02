@@ -70,7 +70,7 @@ On a similar note, Julia Evans recently shared [this zine on Twitter](https://tw
 
 {% capture alt_text %}strategy: write a message asking for help. When I’m REALLY stuck, I’ll write an email to a friend: “Here’s what I'm trying to do…; I did X and I expected Y to happen, but instead…; Could this be because…; This seems impossible because…; I've tried A, B, and C to fix it, but…” This helps me organize my thoughts, and often by the time I finish writing, I’ve magically fixed the problem on my own! {% endcapture %}
 
-![{{ alt_text }}](https://pbs.twimg.com/media/FXea6nRX0AAFOex?format=jpg)
+![{{ alt_text }}](/assets/images/a-guide-to-asking-for-help/julia-evans-help-strategy.jpeg)
 
 ## Be patient
 

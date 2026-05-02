@@ -32,7 +32,11 @@ This plugin does static evaluation of the JSX to look for possible accessibility
 
 At N26, we run ESLint on a pre-commit hook. That is, every time a developer commits code, ESLint runs on indexed files, and aborts the commit if there is an error. This way, we can ensure committed code is free of basic mistakes. I highly recommend anyone using React to setup this plugin: it takes little time and it can make a big difference.
 
-![eslint-plugin-jsx-a11y helps us catching mistakes early](https://i.imgur.com/zdtmkAt.png)
+```
+/Users/kitty/Sites/goldfish/src/components/LoginForm/index.js
+	48:7  error  Anchors must have content and the content must be accessible by a screen reader jsx-ally/anchor-has-content
+𐄂 1 problem (1 error, 0 warnings)
+```
 
 ### Developer tools
 
@@ -40,7 +44,7 @@ Linting is an excellent way to avoid mistakes early, but there is only so much i
 
 That’s why we introduced [react-aXe](https://github.com/dequelabs/react-axe) to our code base. It’s a React wrapper around [aXe](https://github.com/dequelabs/axe-core), an accessibility engine for testing HTML-based interfaces. It runs in the browser, and provides insightful information in the developer console.
 
-![react-aXe provides information in the console about accessibility errors](https://i.imgur.com/5jjed0b.png)
+![react-aXe provides information in the console about accessibility errors](/assets/images/little-steps-for-accessibility-at-n26/axe-console.png)
 
 Because react-aXe modifies the rendering functions from React and React DOM, it should be run in development mode only. It’s also a bit greedy in term of performance, so better make sure not to enable it in production.
 
@@ -96,7 +100,7 @@ On top of the obvious fact that reviewing code carefully helps preventing mistak
 
 In the current team setup, I tend to be the one with the most knowledge on accessibility and inclusivity through design. I take pull-requests as an opportunity to share my knowledge on the topic so soon enough everybody understands the state of things and can contribute to making all our user interfaces as accessible as they can be.
 
-![GitHub discussion on the need for a label on a `select` element](https://i.imgur.com/1eKJL0M.png)
+![GitHub discussion on the need for a label on a `select` element](/assets/images/little-steps-for-accessibility-at-n26/code-review.png)
 
 We also have a Markdown document on accessibility. It contains a definition of the term and what we do about it, as well as instructions around our linting and testing setup (as explained in this article). Every time a pull-request sparks an insightful discussion around the topic, we sum it up in our documentation. At the time of writing, here is the table of contents:
 
@@ -119,7 +123,7 @@ Pa11y is a Node / CLI utility running HTML Code Sniffer (a library to analyse HT
 
 We set up pa11y to run on deployment on all our pages, so that if there is an accessibility error, it fails with a non-zero error code and aborts the procedure. Essentially, we made accessibility mistakes first class errors, so that we don’t deploy broken code.
 
-![pa11y tests our pages for accessibility errors on deployment](https://i.imgur.com/pSiDHTX.png)
+![pa11y tests our pages for accessibility errors on deployment](/assets/images/little-steps-for-accessibility-at-n26/pa11y-tests.png)
 
 In order to test dynamic URLs (articles for instance), we start by retreiving them all from our <abbr title="Content Management System">CMS</abbr> so that we can provide them to pa11y for testing. It makes testing slightly longer, and dependent on the CMS’ API health, but it really helps us making sure we don’t inadvertently break accessibility. I find it especially useful given we don’t actively do manual QA on keyboard navigation or screen-reader usage.
 

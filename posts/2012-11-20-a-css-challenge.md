@@ -10,7 +10,7 @@ Yesterday night, I’ve seen something in my Twitter timeline which excited my c
 
 Since I’m sure you’ll be interested in a little CSS riddle (you will, will you?), let me tell you what this is about.
 
-![Some text content sitting on top of a horizontal line, and masking said line behind the letters](https://i.imgur.com/fZkkw.jpg)
+![Some text content sitting on top of a horizontal line, and masking said line behind the letters](/assets/images/a-css-challenge/css-challenge.jpeg)
 
 Will you be able to do this (I’m talking about the small line behind the text) following the restrictions below?
 

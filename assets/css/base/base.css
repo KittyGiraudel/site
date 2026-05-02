@@ -218,7 +218,6 @@ strong {
 	}
 
 	@view-transition {
-		navigation: auto; /* 2 */
 	}
 }
 

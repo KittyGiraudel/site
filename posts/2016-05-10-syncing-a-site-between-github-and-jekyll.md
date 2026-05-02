@@ -65,7 +65,7 @@ collections:
 
 Tada! Files are located at `/_glossary/<path>.md`, served over `/_glossary/<path>.md`. 1:1 mapping, site is browsable in both GitHub and Jekyll seamlessly.
 
-![The “AJAX” entry served over /_glossary/AJAX.md in Jekyll](https://i.imgur.com/HVuKEOr.png)
+![The “AJAX” entry served over /_glossary/AJAX.md in Jekyll](/assets/images/syncing-a-site-between-github-and-jekyll/sjsj-ajax.png)
 
 ## Final thoughts
 

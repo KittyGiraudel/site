@@ -18,8 +18,6 @@ I really dig this idea. I feel it’s a great way to know more about someone or 
 
 That’s why I created an [Ask Me Anything](https://github.com/KittyGiraudel/ama) repository for me where you can ask me questions if you feel like it. Feel free to ask anything; code, Sass, life, hobbies, stupid, non-stupid, whatever.
 
-![This is an excellent question](https://media.giphy.com/media/dXICCcws9oxxK/giphy.gif)
-
 I already replied to about [20 questions](https://github.com/KittyGiraudel/ama/issues?q=is%3Aissue+is%3Aclosed) so far, among which you’ll learn that:
 
 - [I roughly spend 62.5% of my time working](https://github.com/KittyGiraudel/ama/issues/15),

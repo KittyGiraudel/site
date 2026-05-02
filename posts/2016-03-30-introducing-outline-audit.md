@@ -42,7 +42,7 @@ One last thing to point out on this topic: the theory is so far away from the cu
 
 Given the size of the script (and that it doesn’t have any dependency), there are quite a few ways to use it. What you could do is save it as a snippet in your DevTools (see next screenshot).
 
-![Saving Outline Audit as a DevTools snippet](https://i.imgur.com/2kDj2ZI.png)
+![Saving Outline Audit as a DevTools snippet](/assets/images/introducing-outline-audit/outline-devtool-snippet.png)
 
 Or you could also have a bookmarklet for this:
 

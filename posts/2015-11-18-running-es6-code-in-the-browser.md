@@ -16,8 +16,6 @@ Now, using them both could be tricky if it was not for [Babelify](https://github
 
 Last but not least, I came across [Watchify](https://github.com/substack/watchify), a _watch mode for Browserify builds_. This extra tool allowed me to have a watcher running to make Babelify recompile the dist file every time there is a change. Handy!
 
-![-ify all the things](https://i.imgur.com/yHiAcVZ.jpg)
-
 From there, we can create our `package.json` file, starting with (dev)dependencies:
 
 ```sh

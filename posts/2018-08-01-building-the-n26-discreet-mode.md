@@ -17,11 +17,11 @@ Our goal at N26 is to make users comfortable dealing with their money. We go to 
 
 This certainly comes with its own challenges. Money being the sensitive topic it is, many people feel uncomfortable talking about it, especially their own. This is how the idea of having a discreet mode came up.
 
-![Discreet mode within the N26 webapp](https://user-images.githubusercontent.com/1889710/43515691-77428d7e-9583-11e8-8f5d-475d0bd7b5ba.png)
+![Discreet mode within the N26 webapp](/assets/images/building-the-n26-discreet-mode/n26-discreet-mode.png)
 
 A simple toggle to mask all sensitive user information, mainly amounts and account balance. Checking your account in the public transports or in a shared open space? We got you covered.
 
-![Ways to toggle the discreet mode in the N26 webapp](https://user-images.githubusercontent.com/1889710/43516741-c5b90048-9586-11e8-8506-08684216cfed.png)
+![Ways to toggle the discreet mode in the N26 webapp](/assets/images/building-the-n26-discreet-mode/n26-discreet-mode-setting.png)
 
 An interesting side effect we didn’t anticipate from this feature is that some people use this mode not to make sure that no one sees it but rather to avoid being confronted to their own account balance every time they use the app.
 
