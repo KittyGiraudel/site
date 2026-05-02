@@ -1,0 +1,7 @@
+# Persist Eleventy Image output (and any other .cache data, e.g. eleventy-fetch) between builds.
+# https://github.com/jakejarvis/netlify-plugin-cache
+[[plugins]]
+package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+  paths = [".cache"]

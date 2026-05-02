@@ -1,5 +1,4 @@
 import { IdAttributePlugin } from '@11ty/eleventy'
-import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
 import { defineConfig } from '11ty.ts'
@@ -7,6 +6,7 @@ import footnotes from 'eleventy-plugin-footnotes'
 import projects from './data/projects.json' with { type: 'json' }
 import features from './features.json' with { type: 'json' }
 import injectHeadingAnchors from './plugins/heading-anchors.ts'
+import imageTransformPlugin from './plugins/image-transform.ts'
 import postStatsPlugin from './plugins/post-stats.ts'
 import tocPlugin from './plugins/toc.ts'
 import utilities from './plugins/utilities.ts'
@@ -25,26 +25,6 @@ export default defineConfig(config => {
 	if (FEATURES.headingAnchors.includes(ENV))
 		config.addTransform('headingAnchors', injectHeadingAnchors)
 	config.addTransform('smileyFaces', utilities.wrapSmileyFaces)
-	config.addPlugin(eleventyImageTransformPlugin, {
-		formats: ['avif', 'webp'],
-		// Default widths cap raster output (~80ch column × ~2× DPR). Omit "auto" so
-		// full-resolution sources are not duplicated in srcset. Per-image overrides
-		// (e.g. card thumbnails) use eleventy:widths in markup.
-		widths: [640, 960, 1280, 1600],
-		htmlOptions: {
-			// Per-img attributes win over these defaults.
-			imgAttributes: {
-				// Use loading="eager" in HTML or the `lazy` option from the figure
-				// partial for above-the-fold images.
-				loading: 'lazy',
-				decoding: 'async',
-				// Default sizes matches .Container (80ch); required when using eager +
-				// multiple widths.
-				sizes: '(max-width: 48rem) min(100vw - 2em, 100vw), 80ch',
-			},
-			pictureAttributes: {},
-		},
-	})
 
 	// Watch targets
 	// ---------------------------------------------------------------------------
@@ -55,6 +35,7 @@ export default defineConfig(config => {
 
 	// Compilation plugins
 	// ---------------------------------------------------------------------------
+	config.addPlugin(imageTransformPlugin)
 	config.addPlugin(footnotes, { classes: { list: 'NoListMarker' } })
 	config.addPlugin(IdAttributePlugin, {
 		slugify,
@@ -65,6 +46,9 @@ export default defineConfig(config => {
 	config.addPlugin(tocPlugin)
 	if (FEATURES.syntaxHighlight.includes(ENV))
 		config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
+
+	// Compilation ignores
+	// ---------------------------------------------------------------------------
 	if (!FEATURES.markdownAlternative.includes(ENV))
 		config.ignores.add('pages/blog/index-markdown.liquid')
 	config.ignores.add('CLAUDE.md')
