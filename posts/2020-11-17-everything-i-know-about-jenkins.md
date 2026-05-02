@@ -99,8 +99,6 @@ stage('Second') {
 }
 ```
 
-<img src="https://comquent.de/wp-content/uploads/skip.png" alt="Example of a skipped stage being marked as such in Jenkins BlueOcean interface" eleventy:ignore />
-
 ## Built-in retry
 
 It can happen that some specific tasks are flaky. Maybe it’s a test that sometimes fail, or a fragile install, or whatnot. Jenkins has a built-in way to retry a block for a certain amount of times.
