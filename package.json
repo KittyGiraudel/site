@@ -18,6 +18,7 @@
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
 		"@hapi/accept": "^6.0.3",
 		"@sindresorhus/slugify": "^3.0.0",
+		"11ty.ts": "^0.0.7",
 		"baseline-status": "^1.1.1",
 		"cheerio": "^1.2.0",
 		"eleventy-plugin-footnotes": "^0.11.0",
@@ -36,7 +37,6 @@
 		"@types/he": "^1.2.3",
 		"@types/html-minifier-terser": "^7.0.2",
 		"@types/markdown-it": "^14.1.2",
-		"@types/node": "^25.6.0",
-		"11ty.ts": "^0.0.7"
+		"@types/node": "^25.6.0"
 	}
 }
