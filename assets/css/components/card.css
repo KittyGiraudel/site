@@ -39,7 +39,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	.Card:is(:hover, :focus-within) .Card__image {
+	.Card:has(.Card__cta):is(:hover, :focus-within) .Card__image {
 		transform: scale(1.1);
 		clip-path: inset(1.3em 1.8em 1em round 0.25em);
 	}
