@@ -26,7 +26,8 @@ to say) as well as taking notes. Find below some of my recipes.
       For {{ recipe.data.serves }} ❦ About {{ recipe.data.preparation_time }}
     </span>
 
-    <a class="List__primary-content" href="{{ recipe.url }}">
+    <a class="List__primary-content" href="{{ recipe.url }}"
+      style="view-transition-name: page-{{ recipe.url | slugify }}">
       {{ recipe.data.title }}
     </a>
   </li>

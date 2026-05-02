@@ -39,10 +39,14 @@ function search() {
 		return `<ul class="Tags NoListMarker">${items}</ul>`
 	}
 
+	// Note: the view transition name uses a cheap and bad slugification, which
+	// does not match the one used by Liquid/Eleventy. So transitions could defi-
+	// nitely fail in that case.
 	const renderResult = entry => `
     <li class="List__item">
       <span class="List__secondary-content">${entry.date}${entry.guest}${entry.external}</span>
-      <a href="${entry.url}" class="List__primary-content" ${entry.lang ? `lang="${entry.lang}" hreflang="${entry.lang}"` : ''}>
+      <a href="${entry.url}" class="List__primary-content" ${entry.lang ? `lang="${entry.lang}" hreflang="${entry.lang}"` : ''}
+				style="view-transition-name: post${entry.url.replace(/\//g, '-').replace(/-$/, '')}">
         ${entry.title}
       </a>
       ${renderTags(entry.tags)}

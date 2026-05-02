@@ -3,12 +3,13 @@
   - title: The title of the page
   Optional:
   - lang: The language of the page
+  - title_style: The style attribute for the title element
 {% endcomment %}
  
 {% ensure title, "Required value 'title' is missing in header.liquid" %}
 
 <header class="Header" role="banner">
   <div class="Container">
-    {% render "title.liquid", title: title, lang: lang %}
+    {% render "title.liquid", title: title, lang: lang, style: title_style %}
   </div>
 </header>

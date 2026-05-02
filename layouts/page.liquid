@@ -2,9 +2,12 @@
 layout: default
 ---
 
+{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: page-' %}
+
 {% render "header.liquid",
   title: title,
-  lang: lang
+  lang: lang,
+  title_style: vt_style
 %}
 
 <main class="Main" role="main" id="main">
