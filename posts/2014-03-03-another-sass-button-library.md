@@ -37,12 +37,6 @@ $btn-background: (
 ) !default;
 ```
 
-{% render "figure.liquid",
-  src: "https://i.imgur.com/shEzy8H.jpg",
-  caption: "Variable all the things!",
-  lazy: false
-%}
-
 Everything might not be intuitive so let me explain what each variable is for:
 
 - `$btn-name` is the name of the module (e.g. the base class).

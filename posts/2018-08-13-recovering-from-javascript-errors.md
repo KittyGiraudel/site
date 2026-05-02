@@ -16,7 +16,7 @@ At N26, we recently discovered a nifty little bug which likely had been around f
 What happens in our case is that we immediately reload the page without loading any JavaScript. At this stage, the user is informed they have been redirected to the “basic version”, and are free to continue using it or to go back to the interactive version.
 
 {% render "figure.liquid",
-  src: "https://user-images.githubusercontent.com/1889710/44032814-95fc7de0-9f08-11e8-8f10-cc79d95a5b50.png",
+  src: "/assets/images/recovering-from-javascript-errors/n26-error-recovery.png",
   caption: "PS: we fixed that bug. 😅",
   alt: "Transfer page with an error banner about being redirected to the basic version of the site",
   lazy: false
