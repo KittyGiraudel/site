@@ -4,6 +4,7 @@
   - page: The page object
   Optional:
   - label: The label for the navigation
+  - dev_mode: Whether to include the development mode shortcuts
 {% endcomment %}
  
 {% ensure collection, "Required value 'collection' is missing in collection_navigation.liquid" %}
@@ -53,4 +54,11 @@
       </p>
     {% endif %}
   </div>
+{% endif %}
+
+{% if dev_mode %}  
+  {% render "script.liquid",
+    inline: false,
+    partials: "collection-shortcuts"
+  %}
 {% endif %}

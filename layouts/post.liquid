@@ -116,17 +116,13 @@ layout: default
        problem, so we exclude them in development.
       {% endcomment %}
       {% assign navigation_collection = collections.internal_posts %}
-
-      {% render "script.liquid",
-        inline: site.configuration.inline_assets,
-        partials: "post-shortcuts"
-      %}
     {% endif %}
 
     {% render "collection_navigation.liquid",
       page: page,
       collection: navigation_collection,
-      label: "post"
+      label: "post",
+      dev_mode: site.configuration.dev_mode
     %}
   </div>
 

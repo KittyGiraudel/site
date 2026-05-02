@@ -5,7 +5,7 @@ import he from 'he'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
 import features from '../features.json' with { type: 'json' }
-import type { DateInput, FrontMatterCarrier, FrontMatterLike } from '../types/eleventy.ts'
+import type { Post, PostFrontMatter, PostTemplateData } from '../types/eleventy.ts'
 import type { Features } from '../types/features.ts'
 
 const ENV = process.env.NODE_ENV
@@ -73,7 +73,7 @@ function where<T extends Record<string, unknown>>(
 	})
 }
 
-function dateToRFC3339(value: DateInput): string {
+function dateToRFC3339(value: Date | string | number): string {
 	return new Date(value).toISOString().replace(/\.\d+Z$/, 'Z')
 }
 
@@ -84,7 +84,7 @@ function callout(content: string, type = 'info', role = 'note'): string {
 	return `<div class="Callout Callout--${type}">${markdown(content, false)}</div>`
 }
 
-function time(value: DateInput, itemprop?: string, id?: string): string {
+function time(value: Date | string | number, itemprop?: string, id?: string): string {
 	const display = DATE_FORMATTER.format(new Date(value))
 	const datetime = new Date(value).toISOString()
 
@@ -102,7 +102,7 @@ function stripHtmlEntities(content: string): string {
 	return he.decode(content).replace(/[\u00AD\u200B\u200C\uFEFF]|\u200D/g, '')
 }
 
-function ensureValue(value: unknown, message?: string): void {
+function ensureValue(value: unknown, message?: string) {
 	if (value === null || value === undefined || value === '') {
 		const detail =
 			typeof message === 'string' && message.trim() !== ''
@@ -140,17 +140,24 @@ function wrapSmileyFaces(content: string, outputPath?: string): string {
 		: content
 }
 
-function getFrontMatterData(value: FrontMatterCarrier): Partial<FrontMatterLike> {
-	return (value?.data ?? value ?? {}) as Partial<FrontMatterLike>
+// Nested `.data` (collection entries) vs flattened cascade (layouts)
+// - PostTemplateData is used in posts.11tydata.ts
+// - Post is used in eleventy.config.ts
+function getFrontMatterData(value: Post | PostTemplateData): Partial<PostFrontMatter> {
+	if (value !== null && typeof value === 'object' && 'data' in value) {
+		const nested = (value as { data?: Partial<PostFrontMatter> }).data
+		return { ...(nested ?? {}) }
+	}
+	return { ...(value as Partial<PostFrontMatter>) }
 }
 
 // A post is visible if it is not a draft or if drafts are enabled.
-function isPostVisible(value: FrontMatterCarrier): boolean {
+function isPostVisible(value: Post | PostTemplateData): boolean {
 	return !getFrontMatterData(value).draft || FEATURES.renderDrafts.includes(ENV)
 }
 
 // A post is rendered if it is visible and not an external post.
-function isPostRendered(value: FrontMatterCarrier): boolean {
+function isPostRendered(value: Post | PostTemplateData): boolean {
 	return isPostVisible(value) && !getFrontMatterData(value).external
 }
 
@@ -171,4 +178,5 @@ export default {
 	wrapSmileyFaces,
 	isPostVisible,
 	isPostRendered,
+	getFrontMatterData,
 }

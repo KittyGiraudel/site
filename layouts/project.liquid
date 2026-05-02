@@ -10,6 +10,7 @@ layout: page
     components/code,
     components/tags,
     components/tile,
+    components/collection-navigation,
     pages/project
   "
 %}
@@ -69,3 +70,9 @@ layout: page
   </section>
 </article>
 
+{% render "collection_navigation.liquid",
+  page: page,
+  collection: collections.projects,
+  label: "project",
+  dev_mode: site.configuration.dev_mode
+%}

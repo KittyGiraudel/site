@@ -1,7 +1,8 @@
 import slugify from '@sindresorhus/slugify'
+import type { EleventyConfig } from '11ty.ts'
 import * as cheerio from 'cheerio'
 import type { Element } from 'domhandler'
-import type { EleventyConfig } from '../types/eleventy.ts'
+import { asEleventyFilter } from '../types/eleventy.ts'
 
 type TocNode = {
 	id: string
@@ -11,16 +12,19 @@ type TocNode = {
 }
 
 export default function tocPlugin(eleventyConfig: EleventyConfig) {
-	eleventyConfig.addFilter('table_of_contents', (html: string) => {
-		if (!html || typeof html !== 'string') {
-			return []
-		}
+	eleventyConfig.addFilter(
+		'table_of_contents',
+		asEleventyFilter(html => {
+			if (!html || typeof html !== 'string') {
+				return []
+			}
 
-		const $ = cheerio.load(html, null, false)
-		const headings = $('h2, h3, h4').toArray()
+			const $ = cheerio.load(html, null, false)
+			const headings = $('h2, h3, h4').toArray()
 
-		return headings.length < 2 ? [] : buildTocTree($, headings)
-	})
+			return headings.length < 2 ? [] : buildTocTree($, headings)
+		}),
+	)
 }
 
 function buildTocTree($: cheerio.CheerioAPI, headings: Element[]): TocNode[] {

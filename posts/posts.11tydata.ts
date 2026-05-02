@@ -1,14 +1,5 @@
 import utilities from '../plugins/utilities.ts'
-import type { PostDataContext } from '../types/eleventy.ts'
-
-type PostDirectoryData = {
-	layout: 'post'
-	eleventyComputed: {
-		creation_date: (data: PostDataContext) => Date | string | undefined
-		update_date: (data: PostDataContext) => Date | string | undefined
-	}
-	permalink: (data: PostDataContext) => string | false
-}
+import type { PostTemplateData } from '../types/eleventy.ts'
 
 const config = {
 	layout: 'post',
@@ -25,7 +16,7 @@ const config = {
 		// the date from the URL. In another world, post URLs wouldn’t contain the
 		// date, but coming from Jekyll, they do, and therefore the creation date
 		// should respect that.
-		creation_date(data: PostDataContext) {
+		creation_date(data: PostTemplateData) {
 			const inputPath = data.page?.inputPath
 			return getPostDateFromPath(inputPath) || data.date
 		},
@@ -33,13 +24,13 @@ const config = {
 		// avoid paying a performance penalty with a `git log` call for every post,
 		// we build a map of the post paths to their last modified date.
 		// See: https://meiert.com/blog/eleventy-git-last-modified/
-		update_date(data: PostDataContext) {
+		update_date(data: PostTemplateData) {
 			const inputPath = data.page?.inputPath
 			const key = inputPath?.replace(/^\.\//, '')
 			return key ? data.git?.[key] : undefined
 		},
 	},
-	permalink(data: PostDataContext) {
+	permalink(data: PostTemplateData) {
 		// Do not generate a permalink (and thus a page) for posts that are not
 		// rendered.
 		if (!utilities.isPostRendered(data)) return false
@@ -56,7 +47,7 @@ const config = {
 
 		return `/${year}/${month}/${day}/${fileSlug}/`
 	},
-} satisfies PostDirectoryData
+}
 
 const getPostDateFromPath = (inputPath?: string): Date | null => {
 	if (!inputPath) return null

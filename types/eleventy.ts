@@ -1,61 +1,54 @@
-import type UserConfigType from '@11ty/eleventy/src/UserConfig.js'
+import type { EleventyScope, EleventySuppliedData } from '11ty.ts'
 
-export type EleventyConfig = UserConfigType
-
-export type DateInput = Date | string | number
-export type ExternalReference = { host: string; url: string }
-export type PostEdit = { md: string; date: DateInput }
-
-export type BaseFrontMatter = {
+/**
+ * Supported front matter for `posts/*.md`. Same shape is flattened onto the
+ * Liquid data root for layouts. Eleventy may add extra keys at runtime (e.g.
+ * computed data); callers that need those should intersect a wider type locally.
+ */
+export type PostFrontMatter = {
 	title: string
 	description: string
 	tags: string[]
-}
-
-export type PostFrontMatter = BaseFrontMatter & {
-	layout: 'post'
 	deprecated?: boolean
 	draft?: boolean
-	edits?: PostEdit[]
-	external?: ExternalReference
+	edits?: { date: string | Date; md: string }[]
+	external?: { host: string; url: string }
 	guest?: string
 	image?: string
+	lang?: string
 	templateEngineOverride?: string
 	toc?: boolean
 }
 
-export type SnippetFrontMatter = BaseFrontMatter & {
-	layout: 'snippet'
-	language: string
-	permalink: string
-	date?: DateInput
-	related?: string
-}
-
-export type FrontMatterLike = (PostFrontMatter | SnippetFrontMatter) & {
-	[key: string]: unknown
-}
-
-export type FrontMatterCarrier = {
-	data?: Partial<FrontMatterLike>
-	[key: string]: unknown
-}
-
-export type PostEntry = {
-	date: Date
-	inputPath?: string
-	data?: FrontMatterLike
-}
-
-export type PostDataContext = {
-	date?: Date | string
-	git?: Record<string, Date | string | undefined>
-	page?: {
-		inputPath?: string
-		fileSlug?: string
+/**
+ * Merged data for `permalink` / `eleventyComputed` in `posts/posts.11tydata.*`.
+ */
+export type PostTemplateData = EleventyScope &
+	Partial<PostFrontMatter> & {
+		date?: Date
+		git?: Record<string, Date>
+		creation_date?: Date
+		update_date?: Date
 	}
+
+/**
+ * A post template item (`page` subset + merged `data`). Optional `data` keeps
+ * `getFilteredByGlob` results assignable without assertions at every predicate.
+ */
+export type Post = EleventySuppliedData & {
+	data?: PostFrontMatter
 }
 
-export type CollectionApi = {
-	getFilteredByGlob: (glob: string) => PostEntry[]
+// biome-ignore lint/suspicious/noExplicitAny: `any[]` matches 11ty’s filter signature; `unknown[]` makes real `(content: string) => …` filters fail assignability checks.
+type UniversalFilter = (this: EleventyScope, ...args: any[]) => unknown
+
+/**
+ * 11ty.ts types universal `addFilter` as returning only `string`, but
+ * Liquid/Eleventy allow arbitrary JSON-like values at runtime (e.g. objects,
+ * arrays).
+ */
+export function asEleventyFilter<T extends UniversalFilter>(
+	fn: T,
+): (this: EleventyScope, ...args: Parameters<T>) => string | PromiseLike<string> {
+	return fn as (this: EleventyScope, ...args: Parameters<T>) => string | PromiseLike<string>
 }

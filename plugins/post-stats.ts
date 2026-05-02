@@ -1,5 +1,5 @@
 import * as fs from 'node:fs'
-import type { CollectionApi, EleventyConfig, PostEntry } from '../types/eleventy.ts'
+import type { EleventyConfig, EleventySuppliedData } from '11ty.ts'
 import utilities from './utilities.ts'
 
 type ContentStats = { characters: number; words: number; paragraphs: number }
@@ -26,11 +26,11 @@ const EMPTY_COLLECTION = {
 }
 
 export default function postStatsPlugin(eleventyConfig: EleventyConfig) {
-	eleventyConfig.addCollection('postStats', (collection: CollectionApi) => {
+	eleventyConfig.addCollection('postStats', collection => {
 		const posts = collection
 			.getFilteredByGlob('posts/*.md')
 			.filter(utilities.isPostVisible)
-			.sort((a: PostEntry, b: PostEntry) => b.date.getTime() - a.date.getTime())
+			.sort((a, b) => b.date.getTime() - a.date.getTime())
 		const postCount = posts.length
 
 		if (postCount === 0) {
@@ -67,9 +67,10 @@ export default function postStatsPlugin(eleventyConfig: EleventyConfig) {
 		const monthsMap = new Map()
 
 		for (const post of posts) {
+			const fm = utilities.getFrontMatterData(post)
 			const year = post.date.getFullYear()
 			const monthIndex = post.date.getMonth()
-			const isExternal = Boolean(post.data?.external)
+			const isExternal = Boolean(fm.external)
 
 			let yearBucket = yearsMap.get(year)
 			if (!yearBucket) {
@@ -180,7 +181,7 @@ function countParagraphs(text: string): number {
 	return trimmed.split(/\n\s*\n/).filter(Boolean).length
 }
 
-function getCachedContentStats(post: PostEntry): ContentStats | null {
+function getCachedContentStats(post: EleventySuppliedData): ContentStats | null {
 	const inputPath = post.inputPath
 	if (!inputPath) return null
 
@@ -222,11 +223,11 @@ function getContentStats(body: string): ContentStats {
 	}
 }
 
-function getPopularTags(posts: PostEntry[]) {
+function getPopularTags(posts: EleventySuppliedData[]) {
 	const countByTag = new Map()
 
 	for (const post of posts) {
-		const tags = post.data?.tags ?? []
+		const tags = utilities.getFrontMatterData(post).tags ?? []
 		for (const tag of tags) countByTag.set(tag, (countByTag.get(tag) ?? 0) + 1)
 	}
 

@@ -2,19 +2,20 @@ import { IdAttributePlugin } from '@11ty/eleventy'
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
+import { defineConfig } from '11ty.ts'
 import footnotes from 'eleventy-plugin-footnotes'
 import features from './features.json' with { type: 'json' }
 import injectHeadingAnchors from './plugins/heading-anchors.ts'
 import postStatsPlugin from './plugins/post-stats.ts'
 import tocPlugin from './plugins/toc.ts'
 import utilities from './plugins/utilities.ts'
-import type { CollectionApi, EleventyConfig, PostEntry } from './types/eleventy.ts'
+import { asEleventyFilter } from './types/eleventy.ts'
 import type { Features } from './types/features.ts'
 
 const ENV = process.env.NODE_ENV
 const FEATURES = features as unknown as Features
 
-export default function (config: EleventyConfig) {
+export default defineConfig(config => {
 	// Content post-processing
 	// ---------------------------------------------------------------------------
 	if (FEATURES.minifyHTML.includes(ENV)) config.addTransform('htmlmin', utilities.minifyHTML)
@@ -95,30 +96,33 @@ export default function (config: EleventyConfig) {
 	// ---------------------------------------------------------------------------
 	config.addPairedShortcode('markdown', utilities.markdown)
 	config.addPairedShortcode('callout', utilities.callout)
-	config.addShortcode('ensure', utilities.ensureValue)
+	config.addShortcode('ensure', asEleventyFilter(utilities.ensureValue))
 	config.addFilter('time', utilities.time)
-	config.addFilter('reading_time', utilities.readingTime)
+	config.addFilter('reading_time', asEleventyFilter(utilities.readingTime))
 	config.addFilter('date_to_rfc3339', utilities.dateToRFC3339)
-	config.addFilter('where', utilities.where)
+	config.addFilter('where', asEleventyFilter(utilities.where))
 	config.addFilter('strip_html_entities', utilities.stripHtmlEntities)
 
 	// Collections
 	// ---------------------------------------------------------------------------
-	config.addCollection('posts', (c: CollectionApi) =>
+	config.addCollection('posts', c =>
 		c
 			.getFilteredByGlob('posts/*.md')
 			.filter(utilities.isPostVisible)
-			.sort((a: PostEntry, b: PostEntry) => b.date.getTime() - a.date.getTime()),
+			.sort((a, b) => b.date.getTime() - a.date.getTime()),
 	)
-	config.addCollection('internal_posts', (c: CollectionApi) =>
+	config.addCollection('internal_posts', c =>
 		c
 			.getFilteredByGlob('posts/*.md')
 			.filter(utilities.isPostRendered)
-			.sort((a: PostEntry, b: PostEntry) => b.date.getTime() - a.date.getTime()),
+			.sort((a, b) => b.date.getTime() - a.date.getTime()),
 	)
-	config.addCollection('snippets', (c: CollectionApi) => c.getFilteredByGlob('pages/snippets/*.md'))
-	config.addCollection('recipes', (collection: CollectionApi) =>
-		collection.getFilteredByGlob('pages/recipes/*.md'),
+	config.addCollection('snippets', c => c.getFilteredByGlob('pages/snippets/*.md'))
+	config.addCollection('recipes', c => c.getFilteredByGlob('pages/recipes/*.md'))
+	config.addCollection('projects', c =>
+		c
+			.getFilteredByGlob('pages/projects/*/index.liquid')
+			.sort((a, b) => a.fileSlug.localeCompare(b.fileSlug)),
 	)
 
 	return {
@@ -130,4 +134,4 @@ export default function (config: EleventyConfig) {
 			templateFormats: ['html', 'liquid', 'md', '11ty.js'],
 		},
 	}
-}
+})
