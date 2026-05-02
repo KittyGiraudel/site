@@ -77,9 +77,10 @@
 	},
 	{
 		"name": "Sass Compatibility",
-		"description": "A (now defunct) project collecting incompatibilities between different Sass engines.",
-		"link": "https://kittygiraudel.github.io/sass-compatibility/",
+		"description": "A project collecting incompatibilities between different Sass engines, such as Ruby Sass and LibSass.",
+		"repository": "https://github.com/KittyGiraudel/sass-compatibility",
 		"tags": ["Sass"],
+		"detail_url": "/projects/sass-compatibility/",
 		"image": "/assets/images/projects/sass-compatibility.png"
 	},
 	{

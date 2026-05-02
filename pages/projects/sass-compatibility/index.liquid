@@ -1,0 +1,36 @@
+---
+layout: project
+title: Sass Compatibility
+description: An archived compatibility matrix comparing Ruby Sass, LibSass and related engines—historical reference only after the Sass ecosystem consolidated on Dart Sass.
+project_name: Sass Compatibility
+image: /assets/images/projects/sass-compatibility.png
+screenshot: /assets/images/projects/sass-compatibility.png
+screenshot_alt: Screenshot of the Sass-Compatibility site showing engine columns and feature support.
+screenshot_caption: The site compared Ruby Sass, LibSass and other engines in a single matrix.
+permalink: /projects/sass-compatibility/index.html
+---
+
+Sass-Compatibility was a reference site that listed differences between Sass implementations — Ruby Sass and LibSass, but also gaps between Ruby Sass releases such as 3.2 versus 3.3 or 3.4. It grew out of a GitHub gist, then a styled CodePen, before becoming a standalone project aimed at teams deciding whether a LibSass migration was realistic for their codebase.
+
+{% callout "warning" %}
+**Disclaimer:** The project is **defunct.** Ruby Sass reached its end-of-life
+status, Dart Sass replaced it, LibSass is likewise unmaintained, and the tooling
+described below has long been superseded by the aligned behaviour modern
+compilers provide today. Treat this page as historical context.
+{% endcallout %}
+
+## What it offered
+
+You could skim a compatibility matrix instead of auditing your entire codebase by hand: missing features or subtle semantic differences surfaced as labelled checks, so you knew what you might lose (or gain) when switching engines.
+
+## How it worked (at the time)
+
+Early versions relied on tedious manual SassMeister runs and hand-maintained tables. [Valérian Galliat](https://twitter.com/valeriangalliat) helped move that to automation built around [sass-spec](https://github.com/sass/sass-spec), the engine compliance suite — even though sass-spec itself was messy in spots (mixed eras of tests, some LibSass-only cases, disabled cases).
+
+Whenever a gap had no upstream test, new coverage was contributed to sass-spec where possible, or authored specifically for Sass-Compatibility until the ambition was “only sass-spec-derived tests everywhere.” A Rake task iterated tests, delegated evaluation to SassMeister’s backend, then emitted YAML consumed by the Jekyll site to render green/red support cells—see [the archived sources](https://github.com/sass-compatibility/sass-compatibility.github.io).
+
+![Support table with per-engine outcomes for Sass features](/assets/images/sass-compatibility/sass-compatibility-2.png)
+
+## Further reading
+
+I announced the launch in *[Introducing Sass-Compatibility](/2014/12/23/introducing-sass-compatibility/)* (December 2014), which walks through motivations, sass-spec quirks, and ideas for community contributions.
