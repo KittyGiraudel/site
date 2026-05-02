@@ -198,15 +198,27 @@ strong {
 }
 
 /**
+ * View transitions: two independent uses on this site
+ * 1. Theme button: same-document transition with type `theme` (see main.js).
+ *    Root ::view-transition-* rules MUST be gated on :active-view-transition-
+ *    type(theme) so they never run during cross-document navigations (MPA
+ *    project pages).
+ * 2. Projects: cross-document @view-transition { navigation: auto } on listing
+ *    + detail; those transitions are not typed `theme`, so the rules below
+ *    never match.
  * See: https://codepen.io/argyleink/pen/NWZZPLZ
  */
 @media (prefers-reduced-motion: no-preference) {
-	::view-transition-old(root) {
-		animation: none;
+	html:active-view-transition-type(theme)::view-transition-old(root) {
+		animation: none; /* 1 */
 	}
 
-	::view-transition-new(root) {
-		animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) switch-theme forwards;
+	html:active-view-transition-type(theme)::view-transition-new(root) {
+		animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) switch-theme forwards; /* 1 */
+	}
+
+	@view-transition {
+		navigation: auto; /* 2 */
 	}
 }
 

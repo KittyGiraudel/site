@@ -6,6 +6,7 @@
 		- image: The card image
 		- url: The link for the card
 		- tags: The tags for the card
+		- image_style: Style attribute for the card image
 {% endcomment %}
 
 {% ensure primary, "Required value 'primary' is missing in card.liquid" %}
@@ -19,6 +20,7 @@
 		class="Card__image"
 		src="{{ image }}"
 		alt="{{ alt }}"
+		{% if image_style %}style="{{ image_style }}"{% endif %}
 		eleventy:widths="480,960"
 		sizes="(min-width: 1100px) 32vw, (min-width: 720px) 46vw, 92vw"
 	/>

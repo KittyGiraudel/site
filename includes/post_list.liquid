@@ -25,7 +25,8 @@
         </a>
       {% else %}
         <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
-          lang="{{ data.lang | downcase }}" {% endif %} href="{{ item.url }}">
+          lang="{{ data.lang | downcase }}" {% endif %} href="{{ item.url }}"
+          style="view-transition-name: post-{{ item.url | slugify }}">
           {{ data.title }}
         </a>
       {% endif %}

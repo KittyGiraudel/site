@@ -4,11 +4,18 @@
   Optional:
   - id: The id attribute for the h1 element
   - lang: The language of the page
+  - style: The style attribute for the h1 element
 {% endcomment %}
 
 {% ensure title, "Required value 'title' is missing in title.liquid" %}
 
-<h1 class="Title" itemprop="title" {% if id %}id="{{ id }}" {% endif %}{% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}>
+<h1
+  class="Title"
+  itemprop="title"
+  {% if id %}id="{{ id }}" {% endif %}
+  {% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}
+  {% if style %}style="{{ style }}"{% endif %}
+>
   {% comment %}
    The Baskerville font that we use across the site has a *really* pretty amper-
    sand character, but only in italic. So this wraps any ampersand in italics in

@@ -8,6 +8,7 @@
   - reading_time: The reading time of the post
   - updated_at: Last updated date of the post
   - toc_items: The table of contents items
+  - title_style: The style attribute for the title element
 {% endcomment %}
 
 <div class="Container">
@@ -16,6 +17,7 @@
       title: title,
       id: "post-title",
       lang: lang,
+      style: title_style
     %}
 
     {% render "post_metadata.liquid",

@@ -7,21 +7,24 @@
 	{% for item in items %}
 		<li class="CardGrid__item">
 			{% assign url = item.detail_url | default: item.link %}
+			{% assign image_style = item.detail_url | slugify | prepend: 'view-transition-name: ' %}
+
 			{% render "card.liquid",
 				image: item.image,
 				primary: item.name,
 				secondary: item.description,
 				url: url,
-				tags: item.tags
+				tags: item.tags,
+				image_style: image_style
 			%}
 		</li>
 	{% endfor %}
 </ul>
 
 
-<script type="module">	
+<script type="module">
 	import { Masonry } from "/assets/js/vendors/masonry.js";
-	console.log('Loaded')
+
 	const el = document.getElementById("card-grid");
 	const masonry = new Masonry(el);
 </script>

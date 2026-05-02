@@ -54,7 +54,12 @@ layout: page
 
   {% if screenshot %}
     <figure class="Figure">
-      <img src="{{ screenshot }}" alt="{{ screenshot_alt }}" loading="eager">
+      <img
+        src="{{ screenshot }}"
+        alt="{{ screenshot_alt }}"
+        loading="eager"
+        {% if project.detail_url %}style="view-transition-name: {{ project.detail_url | slugify }}"{% endif %}
+      >
       {% if screenshot_caption %}
         <figcaption>
           {{ screenshot_caption }}

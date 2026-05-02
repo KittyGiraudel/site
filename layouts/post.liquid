@@ -73,6 +73,8 @@ layout: default
   {% assign toc_items = content | table_of_contents %}
 {% endif %}
 
+{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: post-' %}
+
 {% render "post_header.liquid",
   title: title,
   created_at: creation_date,
@@ -80,6 +82,7 @@ layout: default
   guest: guest,
   reading_time: reading_time,
   toc_items: toc_items,
+  title_style: vt_style
 %}
 
 <main class="Main" role="main" id="main">

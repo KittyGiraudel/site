@@ -53,8 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		themeButton.addEventListener('click', event => {
-			if (document.startViewTransition) document.startViewTransition(() => toggleTheme(event))
-			else toggleTheme(event)
+			if (!document.startViewTransition) return toggleTheme(event)
+
+			const run = () => toggleTheme(event)
+
+			try {
+				document.startViewTransition({ types: ['theme'], update: run })
+			} catch {
+				// Typed transitions are required for :active-view-transition-
+				// type(theme) CSS; callback-only form still runs a transition, without
+				// the custom root animation.
+				document.startViewTransition(run)
+			}
 		})
 	})()
 
