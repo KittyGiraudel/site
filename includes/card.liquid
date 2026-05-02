@@ -11,12 +11,16 @@
 {% ensure primary, "Required value 'primary' is missing in card.liquid" %}
 {% ensure secondary, "Required value 'secondary' is missing in card.liquid" %}
 
+{% assign alt = image_alt | default: "" %}
+
 <div class="Card">
 	{% if image %}
 	<img
 		class="Card__image"
 		src="{{ image }}"
-		alt="{{ image_alt }}"
+		alt="{{ alt }}"
+		eleventy:widths="480,960"
+		sizes="(min-width: 1100px) 32vw, (min-width: 720px) 46vw, 92vw"
 	/>
 	{% endif %}
 	<div class="Card__content">
