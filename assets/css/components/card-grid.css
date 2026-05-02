@@ -10,11 +10,18 @@
 	padding-inline: var(--spacing);
 	margin-block-start: var(--vb);
 
-	width: 100vw;
+	--width: 100vw;
+	width: var(--width);
 	left: 50%;
 	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
+	margin-left: calc(var(--width) / -2);
+	margin-right: calc(var(--width) / -2);
+}
+
+@media (min-width: 1024px) {
+	.CardGrid {
+		--width: 95vw;
+	}
 }
 
 .CardGrid__item {
