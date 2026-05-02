@@ -31,40 +31,10 @@
 		"tags": ["JavaScript", "TypeScript", "AoC"]
 	},
 	{
-		"name": "Countdown.js",
-		"description": "A small yet customisable countdown in JavaScript.",
-		"link": "https://github.com/KittyGiraudel/countdown.js",
-		"tags": ["JavaScript"]
-	},
-	{
-		"name": "CRUD.js",
-		"description": "A lightweight interface for CRUD.",
-		"link": "https://github.com/KittyGiraudel/CRUD.js",
-		"tags": ["JavaScript"]
-	},
-	{
 		"name": "Focusable Selectors",
 		"description": "A micro-lib exporting an array of CSS selectors for focusable HTML elements.",
 		"link": "https://github.com/KittyGiraudel/focusable-selectors",
 		"tags": ["Accessibility", "CSS"]
-	},
-	{
-		"name": "iframify",
-		"description": "A script to replace a HTML element with an iframe version of itself. Especially useful for styleguides.",
-		"link": "https://github.com/edenspiekermann/iframify",
-		"tags": ["JavaScript"]
-	},
-	{
-		"name": "ImagePreloader",
-		"description": "A lightweight image preloader.",
-		"link": "https://github.com/KittyGiraudel/imagepreloader",
-		"tags": ["JavaScript", "Performance"]
-	},
-	{
-		"name": "Inline-Styler",
-		"description": "A teeny tiny JavaScript library to easily manipulate the style attribute of an element.",
-		"link": "https://github.com/KittyGiraudel/inline-styler",
-		"tags": ["JavaScript", "CSS"]
 	},
 	{
 		"name": "node-legofy",
@@ -196,12 +166,6 @@
 		"tags": ["Sass"]
 	},
 	{
-		"name": "Scrabble-Helper",
-		"description": "A CLI helper for Scrabble.",
-		"link": "https://github.com/KittyGiraudel/scrabble-helper",
-		"tags": ["JavaScript"]
-	},
-	{
 		"name": "Selectors Explained",
 		"description": "A CSS selector to plain English converter.",
 		"link": "https://github.com/KittyGiraudel/selectors-explained",
@@ -217,11 +181,5 @@
 		"tags": ["JavaScript", "Documentation"],
 		"showcase": true,
 		"detail_url": "/projects/sjsj/"
-	},
-	{
-		"name": "Spritesh",
-		"description": "A script to build a SVG sprite from a folder of SVG files.",
-		"link": "https://github.com/edenspiekermann/sprite.sh",
-		"tags": ["JavaScript", "Bash", "SVG"]
 	}
 ]
