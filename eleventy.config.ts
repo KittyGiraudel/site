@@ -52,6 +52,9 @@ export default function (config: EleventyConfig) {
 		'node_modules/baseline-status/baseline-status.min.js':
 			'assets/js/vendors/baseline-status.min.js',
 	})
+	config.addPassthroughCopy({
+		'node_modules/grid-rows-masonry/dist/masonry.js': 'assets/js/vendors/masonry.js',
+	})
 
 	// CSS and JavaScript are inlined in HTML for performance reasons. The problem
 	// with that is that saving a CSS or JavaScript file during development does

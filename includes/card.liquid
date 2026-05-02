@@ -1,0 +1,37 @@
+{% comment %}
+	Required:
+		- primary: The primary content for the card
+		- secondary: The secondary content for the card
+	Optional:
+		- image: The card image
+		- url: The link for the card
+		- tags: The tags for the card
+{% endcomment %}
+
+{% ensure primary, "Required value 'primary' is missing in card.liquid" %}
+{% ensure secondary, "Required value 'secondary' is missing in card.liquid" %}
+
+<div class="Card">
+	{% if image %}
+	<img
+		class="Card__image"
+		src="{{ image }}"
+		alt="{{ image_alt }}"
+	/>
+	{% endif %}
+	<div class="Card__content">
+		{% if tags %}
+		<div class="Card__tags">
+			{% render "tags.liquid", tags: tags, no_link: true %}
+		</div>
+		{% endif %}
+		<p class="Card__title">
+			{% if url %}
+			<a class="Card__action" href="{{ url }}">{{ primary }}</a>
+			{% else %}
+				{{ primary }}
+			{% endif %}
+		</p>
+		<p class="Card__secondary">{{ secondary }}</p>
+	</div>
+</div>

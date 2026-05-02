@@ -1,0 +1,93 @@
+/**
+ * 1. Position context for the link’s pseudo-element.
+ */
+.Card {
+	--card-background: light-dark(#fff, #333);
+	position: relative; /* 1 */
+	border-radius: 0.6em;
+	overflow: hidden;
+	border: 2px solid transparent;
+	background-image:
+		linear-gradient(var(--card-background), var(--card-background)),
+		linear-gradient(to right, var(--blue), var(--pink));
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	transition: transform 0.2s ease;
+}
+
+@supports (corner-shape: squircle) {
+	.Card {
+		border-radius: 1em;
+		corner-shape: squircle;
+	}
+}
+
+.Card:has(:focus-within) {
+	border-color: var(--pink);
+	transform: scale(1.02);
+	box-shadow: 0 0 10px 0 rgb(0 0 0 / 0.1);
+}
+
+.Card__image {
+	margin: 0;
+	border-radius: 0.5em;
+	padding: 0.25em;
+	clip-path: inset(0% round 0px);
+	transition:
+		transform 0.2s ease-in-out,
+		clip-path 0.2s ease-in-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.Card:is(:hover, :focus-within) .Card__image {
+		transform: scale(1.1);
+		clip-path: inset(1.3em 1.8em 1em round 0.25em);
+	}
+}
+
+.Card__content {
+	padding: var(--vb-half) var(--vb-thirds);
+	display: flex;
+	flex-direction: column;
+	gap: var(--vb-fifths);
+}
+
+.Card__image + .Card__content {
+	padding-block-start: var(--vb-third);
+}
+
+.Card__title,
+.Card__secondary {
+	margin: 0;
+}
+
+.Card__secondary {
+	font-size: 80%;
+	line-height: 1.3;
+}
+
+.Card__tags {
+	font-size: 80%;
+}
+
+/**
+ * 1. Use a pseudo-element to expand the hitbox of the link over
+ *    the whole card.
+ * 2. Expand the hitbox over the whole card.
+ * 3. Place the pseudo-element on top of the whole card.
+ */
+.Card__action::before {
+	content: ""; /* 1 */
+	position: absolute; /* 2 */
+	inset: 0; /* 2 */
+	z-index: 1; /* 3 */
+	cursor: pointer; /* 4 */
+	transition: border-color 200ms;
+}
+
+/**
+ * 1. Hide the default focus outline as it’s moved to the card.
+ */
+.Card__action:focus {
+	outline: none !important; /* 1 */
+}

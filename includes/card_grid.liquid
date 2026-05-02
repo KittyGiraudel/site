@@ -1,0 +1,27 @@
+{% comment %}
+	Required:
+		- items: The items to display as cards
+{% endcomment %}
+
+<ul class="CardGrid NoListMarker" id="card-grid">
+	{% for item in items %}
+		<li class="CardGrid__item">
+			{% assign url = item.detail_url | default: item.link %}
+			{% render "card.liquid",
+				image: item.image,
+				primary: item.name,
+				secondary: item.description,
+				url: url,
+				tags: item.tags
+			%}
+		</li>
+	{% endfor %}
+</ul>
+
+
+<script type="module">	
+	import { Masonry } from "/assets/js/vendors/masonry.js";
+	console.log('Loaded')
+	const el = document.getElementById("card-grid");
+	const masonry = new Masonry(el);
+</script>

@@ -1,0 +1,29 @@
+.CardGrid {
+	--spacing: var(--vb-half);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-rows: masonry;
+	align-items: start;
+	list-style: none;
+	gap: var(--spacing);
+	position: relative;
+	padding-inline: var(--spacing);
+	margin-block-start: var(--vb);
+
+	width: 100vw;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+.CardGrid__item {
+	margin: 0;
+}
+
+@supports (display: grid-lanes) {
+	.CardGrid {
+		display: grid-lanes;
+		grid-template-rows: unset;
+	}
+}
