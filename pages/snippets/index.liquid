@@ -34,7 +34,8 @@ paste them with minor effort.
       </span>
     {% endif %}
 
-    <a class="List__primary-content" href="{{ snippet.url }}">
+    <a class="List__primary-content" href="{{ snippet.url }}"
+      style="view-transition-name: snippet-{{ snippet.url | slugify }}">
       {{ snippet.data.title }}
     </a>
 

@@ -20,10 +20,13 @@ layout: default
   {% endfor %}
 {% endif %}
 
+{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: snippet-' %}
+
 {% render "snippet_header.liquid",
   title: title,
   related_post: related_post,
   date: date,
+  title_style: vt_style
 %}
 
 <main class="Main" role="main" id="main">

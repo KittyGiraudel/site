@@ -4,6 +4,7 @@
   Optional:
   - date: The date of the snippet
   - related_post: The related post
+  - title_style: The style attribute for the title element
 {% endcomment %}
 
 <header class="Header Header--post" role="banner">
@@ -11,6 +12,7 @@
     {% render "title.liquid",
       title: title,
       id: "snippet-title",
+      style: title_style
     %}
 
     {% if related_post %}
