@@ -1,17 +1,17 @@
 [
 	{
 		"name": "A11y-dialog",
-		"description": "A script to make modal dialogs accessible to assistive technology users.",
+		"description": "A lightweight script to make modal dialogs accessible to assistive technology users.",
 		"link": "https://a11y-dialog.netlify.app/",
 		"repository": "https://github.com/KittyGiraudel/a11y-dialog",
-		"tags": ["Accessibility", "JavaScript", "HTML", "Dialog", "TypeScript"],
+		"tags": ["Accessibility", "HTML", "Dialog", "TypeScript"],
 		"showcase": true,
 		"detail_url": "/projects/a11y-dialog/",
 		"image": "/assets/images/projects/a11y-dialog.png"
 	},
 	{
 		"name": "A11y-toggle",
-		"description": "A script to make accessible content toggles to assistive technology users.",
+		"description": "A small script to make content toggles and disclosure widgets accessible to assistive technology users.",
 		"link": "https://github.com/edenspiekermann/a11y-toggle",
 		"repository": "https://github.com/edenspiekermann/a11y-toggle",
 		"tags": ["Accessibility", "JavaScript", "HTML"],
@@ -20,7 +20,7 @@
 	},
 	{
 		"name": "Browserhacks",
-		"description": "An extensive list of browser specific hacks.",
+		"description": "An extensive list of browser-specific hacks, built in a time when cross-browser inconsistencies were much more common.",
 		"link": "http://browserhacks.com/",
 		"repository": "https://github.com/4ae9b8/browserhacks",
 		"tags": ["CSS", "JavaScript"],
@@ -29,28 +29,28 @@
 	},
 	{
 		"name": "Circularray",
-		"description": "A fast circular array implementation in JavaScript.",
+		"description": "A fast circular array implementation in JavaScript built with a linked list.",
 		"link": "https://github.com/KittyGiraudel/circularray",
-		"tags": ["JavaScript", "TypeScript", "AoC"]
+		"tags": ["TypeScript", "AoC"]
 	},
 	{
 		"name": "Focusable Selectors",
-		"description": "A micro-lib exporting an array of CSS selectors for focusable HTML elements.",
+		"description": "A micro-library exporting an array of CSS selectors for focusable HTML elements. Useful for dialogs and other accessible widgets",
 		"link": "https://github.com/KittyGiraudel/focusable-selectors",
 		"tags": ["Accessibility", "CSS"]
 	},
 	{
 		"name": "node-legofy",
-		"description": "A script to convert an image into a mosaic of LEGO pieces.",
+		"description": "A fun little script to convert an image into a mosaic of LEGO pieces.",
 		"link": "https://github.com/KittyGiraudel/node-legofy",
 		"repository": "https://github.com/KittyGiraudel/node-legofy",
 		"tags": ["JavaScript", "Node.js"],
 		"detail_url": "/projects/node-legofy/",
-		"image": "https://raw.githubusercontent.com/KittyGiraudel/node-legofy/master/images/benchmark/sample-1.lego.jpg"
+		"image": "/assets/images/projects/node-legofy.jpg"
 	},
 	{
 		"name": "Outline Audit",
-		"description": "A script to audit the outline of a document.",
+		"description": "A script to audit the outline of a document, ensuring the right headings are used.",
 		"link": "https://github.com/edenspiekermann/outline-audit",
 		"tags": ["Accessibility", "JavaScript"]
 	},
@@ -59,13 +59,13 @@
 		"description": "A solver for the puzzle board game “Par Odin!”.",
 		"link": "https://github.com/KittyGiraudel/par-odin-solver",
 		"repository": "https://github.com/KittyGiraudel/par-odin-solver",
-		"tags": ["JavaScript", "TypeScript"],
+		"tags": ["TypeScript"],
 		"detail_url": "/projects/par-odin-solver/",
 		"image": "/assets/images/projects/par-odin-solver.png"
 	},
 	{
 		"name": "react-a11y-dialog",
-		"description": "A React component wrapper around a11y-dialog.",
+		"description": "A React wrapper around a11y-dialog, providing both a component and a hook.",
 		"link": "https://github.com/KittyGiraudel/react-a11y-dialog",
 		"tags": ["Accessibility", "React"]
 	},
@@ -77,10 +77,10 @@
 	},
 	{
 		"name": "Sass Compatibility",
-		"description": "A project collecting incompatibilities between different Sass engines.",
+		"description": "A (now defunct) project collecting incompatibilities between different Sass engines.",
 		"link": "https://kittygiraudel.github.io/sass-compatibility/",
 		"tags": ["Sass"],
-		"image": "/assets/images/sass-compatibility/sass-compatibility-1.png"
+		"image": "/assets/images/projects/sass-compatibility.png"
 	},
 	{
 		"name": "Sass Guidelines",
@@ -101,7 +101,7 @@
 	},
 	{
 		"name": "SassDoc",
-		"description": "A documentation system for Sass.",
+		"description": "A documentation system for Sass, similar to what JSDoc is for JavaScript.",
 		"link": "http://sassdoc.com",
 		"repository": "https://github.com/SassDoc/sassdoc",
 		"tags": ["Sass", "Documentation"],
@@ -111,7 +111,7 @@
 	},
 	{
 		"name": "Selectors Explained",
-		"description": "A CSS selector to plain English converter.",
+		"description": "A small application that explains CSS selectors in plain English, helping beginners understand the CSS syntax.",
 		"link": "https://github.com/KittyGiraudel/selectors-explained",
 		"repository": "https://github.com/KittyGiraudel/selectors-explained",
 		"tags": ["CSS", "Documentation"],
@@ -120,7 +120,7 @@
 	},
 	{
 		"name": "Simplified JavaScript Jargon",
-		"description": "A community-driven attempt at explaining JavaScript concepts and buzzwords.",
+		"description": "A (now defunct) community-driven attempt at explaining JavaScript concepts and buzzwords.",
 		"link": "https://jargon.js.org",
 		"repository": "https://github.com/KittyGiraudel/SJSJ",
 		"tags": ["JavaScript", "Documentation"],
