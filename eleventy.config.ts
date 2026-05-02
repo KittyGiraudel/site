@@ -1,4 +1,5 @@
 import { IdAttributePlugin } from '@11ty/eleventy'
+import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
 import footnotes from 'eleventy-plugin-footnotes'
@@ -22,6 +23,26 @@ export default function (config: EleventyConfig) {
 	if (FEATURES.headingAnchors.includes(ENV))
 		config.addTransform('headingAnchors', injectHeadingAnchors)
 	config.addTransform('smileyFaces', utilities.wrapSmileyFaces)
+	config.addPlugin(eleventyImageTransformPlugin, {
+		formats: ['avif', 'webp'],
+		// Default widths cap raster output (~80ch column × ~2× DPR). Omit "auto" so
+		// full-resolution sources are not duplicated in srcset. Per-image overrides
+		// (e.g. card thumbnails) use eleventy:widths in markup.
+		widths: [640, 960, 1280, 1600],
+		htmlOptions: {
+			// Per-img attributes win over these defaults.
+			imgAttributes: {
+				// Use loading="eager" in HTML or the `lazy` option from the figure
+				// partial for above-the-fold images.
+				loading: 'lazy',
+				decoding: 'async',
+				// Default sizes matches .Container (80ch); required when using eager +
+				// multiple widths.
+				sizes: '(max-width: 48rem) min(100vw - 2em, 100vw), 80ch',
+			},
+			pictureAttributes: {},
+		},
+	})
 
 	// Watch targets
 	// ---------------------------------------------------------------------------
@@ -48,6 +69,7 @@ export default function (config: EleventyConfig) {
 	// Static file passthrough
 	// ---------------------------------------------------------------------------
 	config.addPassthroughCopy({ public: '.' })
+	config.addPassthroughCopy('assets/images')
 	config.addPassthroughCopy({
 		'node_modules/baseline-status/baseline-status.min.js':
 			'assets/js/vendors/baseline-status.min.js',

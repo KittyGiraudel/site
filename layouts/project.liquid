@@ -53,7 +53,7 @@ layout: page
 
   {% if screenshot %}
     <figure class="Figure">
-      <img src="{{ screenshot }}" alt="{{ screenshot_alt }}">
+      <img src="{{ screenshot }}" alt="{{ screenshot_alt }}" loading="eager">
       {% if screenshot_caption %}
         <figcaption>
           {{ screenshot_caption }}

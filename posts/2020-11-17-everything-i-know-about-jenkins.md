@@ -99,7 +99,7 @@ stage('Second') {
 }
 ```
 
-![Example of a skipped stage being marked as such in Jenkins BlueOcean interface](https://comquent.de/wp-content/uploads/skip.png)
+<img src="https://comquent.de/wp-content/uploads/skip.png" alt="Example of a skipped stage being marked as such in Jenkins BlueOcean interface" eleventy:ignore />
 
 ## Built-in retry
 
