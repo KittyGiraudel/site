@@ -166,7 +166,7 @@ And then, we loop through the files and call an `optimise_image` function with t
 Now, we have to create this `optimise_image()` method which is going to be fairly easy since we already have seen the command to optimise images before.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/optimise-image.png",
+  src: "/assets/images/optimising-with-bash/optimize-image.png",
   caption: "The actual image optimisation function"
 %}
 
@@ -222,7 +222,7 @@ Let’s try it by running the following command:
 For the final stats we are going to display the amount of space saved. The `optimise_image()</code> method will increase a`total_input_size`with the filesize of the image to optimise, and a`total_output_size` with the filesize of the output image. At the end of the loop, we will use this two counters to display the stats.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/optimise-image-with-stats.png",
+  src: "/assets/images/optimising-with-bash/optimize-image-with-stats.png",
   caption: "Adding stats output in optimise_image()"
 %}
 
