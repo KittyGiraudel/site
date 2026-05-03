@@ -1,26 +1,30 @@
 .CardGrid {
-	--spacing: var(--vb-half);
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-	grid-template-rows: masonry;
 	align-items: start;
 	list-style: none;
-	gap: var(--spacing);
+	gap: var(--vb-thirds);
 	position: relative;
-	padding-inline: var(--spacing);
+	padding-inline-start: 0;
 	margin-block-start: var(--vb);
-
-	--width: 100vw;
-	width: var(--width);
-	left: 50%;
-	right: 50%;
-	margin-left: calc(var(--width) / -2);
-	margin-right: calc(var(--width) / -2);
 }
 
-@media (max-width: 350px) {
+@media (min-width: 400px) {
 	.CardGrid {
-		grid-template-columns: 1fr;
+		gap: var(--vb-half);
+		grid-template-rows: masonry;
+		grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+	}
+}
+
+@media (min-width: 768px) {
+	.CardGrid {
+		padding-inline: var(--vb-half);
+		--width: 100vw;
+		width: var(--width);
+		left: 50%;
+		right: 50%;
+		margin-left: calc(var(--width) / -2);
+		margin-right: calc(var(--width) / -2);
 	}
 }
 
