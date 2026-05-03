@@ -3,7 +3,7 @@
 	"headingAnchors": ["production"],
 	"helmet": ["production"],
 	"inlineAssets": ["production"],
-	"markdownAlternative": ["production"],
+	"markdownAlternative": ["development", "production"],
 	"minifyHTML": ["production"],
 	"renderDrafts": ["development"],
 	"serviceWorker": ["production"],

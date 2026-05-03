@@ -32,7 +32,7 @@ Posts support: `title`, `description`, `tags` (Title Case), `guest` (guest autho
 
 - `site.js` — Global config: URL, author, nav, features
 - `git.js` — Maps file paths to last-modified dates (used for `update_date`)
-- `speaking.json` — Structured content for the talks page
+- `events.json` — Structured content for the talks page
 
 ### Custom plugins (`plugins/`)
 

@@ -1,13 +1,13 @@
-import speakingJson from '../../data/speaking.json' with { type: 'json' }
-import utilities from '../../plugins/utilities.ts'
-import type { CardGridItem } from '../../types/eleventy.ts'
+import events from '../data/events.json' with { type: 'json' }
+import utilities from '../plugins/utilities.ts'
+import type { CardGridItem } from '../types/eleventy.ts'
 
-type SpeakingEntry = (typeof speakingJson)[number]
+type EventEntry = (typeof events)[number]
 
 export default {
 	eleventyComputed: {
-		event_cards(data: { speaking: SpeakingEntry[] }): CardGridItem[] {
-			return data.speaking.map(e => {
+		event_cards(data: { events: EventEntry[] }): CardGridItem[] {
+			return data.events.map(e => {
 				return {
 					primary: e.event,
 					secondary: `${utilities.time(e.date)} · ${e.location}`,

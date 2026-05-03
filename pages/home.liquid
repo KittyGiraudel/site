@@ -58,7 +58,7 @@ about me](/about/).
   github: github
 %}
 
-{% assign latest_events = speaking | slice: 0, 3 %}
+{% assign latest_events = events | slice: 0, 3 %}
 {% render "showcase.liquid",
   type: "event",
   title: "Last events",

@@ -1,6 +1,4 @@
-import FEATURES from '../features.json' with { type: 'json' }
-
-const ENV = process.env.NODE_ENV
+import { getEnvironment, isFeatureEnabled } from './environment.js'
 
 export default {
 	url: 'https://kittygiraudel.com',
@@ -24,7 +22,7 @@ export default {
 		'https://speakerdeck.com/kittygiraudel',
 		'https://tympanus.net/codrops/author/kittygiraudel/',
 	],
-	environment: process.env.NODE_ENV,
+	environment: getEnvironment(),
 	time: new Date(),
 	pubDate: new Date(2012, 10, 10),
 	job_notice: {
@@ -45,8 +43,8 @@ export default {
 		// - `watch` is set when using `--watch`, which we don’t use
 		// - `build` is set when building the website, i.e. `npm run build`
 		dev_mode: process.env.ELEVENTY_RUN_MODE !== 'build',
-		inline_assets: FEATURES.inlineAssets.includes(ENV),
-		render_drafts: FEATURES.renderDrafts.includes(ENV),
-		service_worker: FEATURES.serviceWorker.includes(ENV),
+		inline_assets: isFeatureEnabled('inlineAssets'),
+		render_drafts: isFeatureEnabled('renderDrafts'),
+		service_worker: isFeatureEnabled('serviceWorker'),
 	},
 }

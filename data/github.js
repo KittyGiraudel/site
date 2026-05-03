@@ -1,7 +1,5 @@
 import Fetch from '@11ty/eleventy-fetch'
-import FEATURES from '../features.json' with { type: 'json' }
-
-const ENV = process.env.NODE_ENV
+import { isFeatureEnabled } from './environment.js'
 
 // This file needs to remain a JavaScript file to be usable in templates, and
 // `utilities.ts` is authored in TypeScript, so we cannot import it.
@@ -17,7 +15,7 @@ const STATIC_DATA = {
 }
 
 export default async function () {
-	if (!FEATURES.githubStars.includes(ENV)) {
+	if (!isFeatureEnabled('githubStars')) {
 		return {
 			stargazers: STATIC_DATA,
 		}

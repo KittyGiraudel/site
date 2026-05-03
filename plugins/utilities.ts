@@ -4,20 +4,14 @@ import emojiShortName from 'emoji-short-name'
 import he from 'he'
 import htmlmin from 'html-minifier-terser'
 import markdownIt from 'markdown-it'
-import features from '../features.json' with { type: 'json' }
 import type {
 	MaybePost,
 	MaybeProject,
-	Post,
 	PostFrontMatter,
-	PostTemplateData,
-	Project,
 	ProjectFrontMatter,
 } from '../types/eleventy.ts'
-import type { Features } from '../types/features.ts'
+import { isFeatureEnabled } from '../types/features.ts'
 
-const ENV = process.env.NODE_ENV
-const FEATURES = features as unknown as Features
 const EMOJI_REGEX = emojiRegex()
 const DATE_FORMATTER = new Intl.DateTimeFormat('en', {
 	year: 'numeric',
@@ -165,7 +159,7 @@ function getFrontMatterData(
 
 // A post is visible if it is not a draft or if drafts are enabled.
 function isPostVisible(value: MaybePost): boolean {
-	return !getFrontMatterData(value).draft || FEATURES.renderDrafts.includes(ENV)
+	return !getFrontMatterData(value).draft || isFeatureEnabled('renderDrafts')
 }
 
 // A post is rendered if it is visible and not an external post.

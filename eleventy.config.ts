@@ -3,25 +3,21 @@ import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
 import { defineConfig } from '11ty.ts'
 import footnotes from 'eleventy-plugin-footnotes'
-import features from './features.json' with { type: 'json' }
 import injectHeadingAnchors from './plugins/heading-anchors.ts'
 import imageTransformPlugin from './plugins/image-transform.ts'
 import postStatsPlugin from './plugins/post-stats.ts'
 import tocPlugin from './plugins/toc.ts'
 import utilities from './plugins/utilities.ts'
 import { asEleventyFilter } from './types/eleventy.ts'
-import type { Features } from './types/features.ts'
-
-const ENV = process.env.NODE_ENV
-const FEATURES = features as unknown as Features
+import { isFeatureEnabled } from './types/features.ts'
 
 export default defineConfig(config => {
 	// Content post-processing
 	// ---------------------------------------------------------------------------
-	if (FEATURES.minifyHTML.includes(ENV)) config.addTransform('htmlmin', utilities.minifyHTML)
-	if (FEATURES.wrapEmojis.includes(ENV)) config.addTransform('emoji', utilities.a11yEmojis)
-	if (FEATURES.helmet.includes(ENV)) config.addTransform('helmet', utilities.helmet)
-	if (FEATURES.headingAnchors.includes(ENV))
+	if (isFeatureEnabled('minifyHTML')) config.addTransform('htmlmin', utilities.minifyHTML)
+	if (isFeatureEnabled('wrapEmojis')) config.addTransform('emoji', utilities.a11yEmojis)
+	if (isFeatureEnabled('helmet')) config.addTransform('helmet', utilities.helmet)
+	if (isFeatureEnabled('headingAnchors'))
 		config.addTransform('headingAnchors', injectHeadingAnchors)
 	config.addTransform('smileyFaces', utilities.wrapSmileyFaces)
 
@@ -43,13 +39,12 @@ export default defineConfig(config => {
 	})
 	config.addPlugin(postStatsPlugin)
 	config.addPlugin(tocPlugin)
-	if (FEATURES.syntaxHighlight.includes(ENV))
+	if (isFeatureEnabled('syntaxHighlight'))
 		config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
 
 	// Compilation ignores
 	// ---------------------------------------------------------------------------
-	if (!FEATURES.markdownAlternative.includes(ENV))
-		config.ignores.add('pages/blog/index-markdown.liquid')
+	if (!isFeatureEnabled('markdownAlternative')) config.ignores.add('pages/blog-markdown.liquid')
 	config.ignores.add('CLAUDE.md')
 
 	// Static file passthrough
@@ -72,7 +67,7 @@ export default defineConfig(config => {
 	// script tags in production. For the assets to be linked to in development,
 	// they need to be passed through to the `_site` directory.
 	// See: https://kittygiraudel.com/2020/12/03/inlining-scripts-and-styles-in-11ty/
-	if (!FEATURES.inlineAssets.includes(ENV)) {
+	if (!isFeatureEnabled('inlineAssets')) {
 		config.addPassthroughCopy('assets/js')
 		config.addPassthroughCopy('assets/css')
 	}
@@ -107,7 +102,6 @@ export default defineConfig(config => {
 	config.addCollection('projects', c =>
 		c
 			.getFilteredByGlob('pages/projects/*.liquid')
-			.filter(page => page.fileSlug !== 'index')
 			.sort((a, b) => a.fileSlug.localeCompare(b.fileSlug)),
 	)
 

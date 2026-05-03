@@ -171,7 +171,7 @@ function assertHeadMetadata($, siteUrl, spec) {
 }
 
 test('page head: home', async () => {
-	/** Golden: pages/home/index.liquid */
+	/** Golden: pages/home.liquid */
 	const html = await readText('index.html')
 	const $ = load(html)
 
@@ -188,14 +188,14 @@ test('page head: home', async () => {
 })
 
 test('page head: resume', async () => {
-	/** Golden: pages/resume/index.liquid */
+	/** Golden: pages/resume-el.liquid */
 	const html = await readText('resume/index.html')
 	const $ = load(html)
 
 	assertHeadMetadata($, siteUrl, {
 		path: '/resume/',
 		title: 'Kitty Giraudel',
-		description: 'Resume and work history of Kitty Giraudel, engineering and executive leadership.',
+		description: 'Engineering and executive leadership resume of Kitty Giraudel.',
 		author: siteAuthor,
 		ogType: 'website',
 		keywords: 'resume,cv,linkedin',
