@@ -15,3 +15,21 @@
 		font-size: 350%;
 	}
 }
+
+/**
+ * The button to open the mobile menu positioned fixed in the top corner, so it
+ * is out of the flow and can overlap the title. This pseudo-element is added in
+ * the flow, under the position of the button, to prevent the text from occupying
+ * this space.
+ * 1. Roughly matches `.IconButton` (1.75em at 125% font) plus border.
+ * 2. At least one line box tall so the first line clears the overlap region.
+ */
+@media (max-width: 768px) {
+	.Title::before {
+		content: "";
+		float: right;
+		width: calc(2.25rem + 0.35em); /* 1 */
+		height: max(2.75rem, 1lh); /* 1, 2 */
+		pointer-events: none;
+	}
+}
