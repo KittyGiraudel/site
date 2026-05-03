@@ -3,7 +3,6 @@ import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
 import he from 'he'
 import htmlmin from 'html-minifier-terser'
-import markdownIt from 'markdown-it'
 import type {
 	MaybePost,
 	MaybeProject,
@@ -11,6 +10,7 @@ import type {
 	ProjectFrontMatter,
 } from '../types/eleventy.ts'
 import { isFeatureEnabled } from '../types/features.ts'
+import { getMarkdownRenderer } from './markdown.ts'
 
 const EMOJI_REGEX = emojiRegex()
 const DATE_FORMATTER = new Intl.DateTimeFormat('en', {
@@ -55,7 +55,7 @@ function a11yEmojis(content: string, outputPath?: string): string {
 }
 
 function markdown(content: string, inline = false): string {
-	const html = markdownIt({ html: true }).render(content)
+	const html = getMarkdownRenderer().render(content)
 	return inline ? html.replace('<p>', '').replace('</p>', '') : html
 }
 
