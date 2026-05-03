@@ -220,7 +220,7 @@ test('page head: snippet', async () => {
 })
 
 test('page head: project', async () => {
-	/** Golden: pages/projects/a11y-dialog/index.liquid */
+	/** Golden: pages/projects/a11y-dialog.liquid */
 	const html = await readText('projects/a11y-dialog/index.html')
 	const $ = load(html)
 

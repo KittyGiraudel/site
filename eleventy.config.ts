@@ -106,7 +106,8 @@ export default defineConfig(config => {
 	config.addCollection('recipes', c => c.getFilteredByGlob('pages/recipes/*.md'))
 	config.addCollection('projects', c =>
 		c
-			.getFilteredByGlob('pages/projects/*/index.liquid')
+			.getFilteredByGlob('pages/projects/*.liquid')
+			.filter(page => page.fileSlug !== 'index')
 			.sort((a, b) => a.fileSlug.localeCompare(b.fileSlug)),
 	)
 
