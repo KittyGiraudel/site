@@ -29,7 +29,7 @@ layout: default
 {% for tag in tags %}<meta property="article:tag" content="{{ tag }}" data-helmet>{% endfor %}
 
 {% assign reading_time = content | strip_html | reading_time %}
-{% assign post_image = image | default: '/assets/images/favicon-192.jpg' %}
+{% assign post_image = image | default: '/assets/images/og-default.png' %}
 {% assign created_date_str = creation_date | date: "%Y-%m-%d" %}
 {% assign updated_date_str = update_date | date: "%Y-%m-%d" %}
 

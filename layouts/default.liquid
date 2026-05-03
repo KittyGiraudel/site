@@ -2,7 +2,7 @@
 {% assign page_description = description | default: site.description | strip_html | strip_newlines | truncate: 200 | escape %}
 {% assign title = title | default: site.author %}
 {% assign page_author = guest | default: site.author %}
-{% assign page_image = image | default: '/assets/images/favicon-192.jpg' %}
+{% assign page_image = image %}
 {% assign page_date = page.date %}
 {% assign page_update_date = update_date %}
 {% assign site_author = site.author %}

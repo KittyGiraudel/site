@@ -53,7 +53,7 @@ function assertHeadMetadata($: CheerioAPI, siteUrl: string, spec: HeadSpec): voi
 	const canonical = assertCanonicalLink($, siteUrl, spec.path)
 	const expectedSocialImage = spec.ogImage
 		? new URL(spec.ogImage, siteData.url).toString()
-		: new URL('/assets/images/favicon-192.jpg', siteData.url).toString()
+		: new URL('/assets/images/og-default.png', siteData.url).toString()
 
 	assert.ok($('head').length, 'document should have a <head>')
 	assert.equal($('head meta[charset]').attr('charset'), 'utf-8')
@@ -103,6 +103,14 @@ function assertHeadMetadata($: CheerioAPI, siteUrl: string, spec: HeadSpec): voi
 	assert.equal(metaProperty($, 'og:description'), spec.description)
 	assert.equal(metaProperty($, 'og:site_name'), 'kittygiraudel.com')
 	assert.equal(metaProperty($, 'og:image'), expectedSocialImage)
+	if (spec.ogImage) {
+		assert.equal(metaProperty($, 'og:image:width'), undefined)
+		assert.equal(metaProperty($, 'og:image:height'), undefined)
+	} else {
+		assert.equal(metaProperty($, 'og:image:width'), '1200')
+		assert.equal(metaProperty($, 'og:image:height'), '630')
+	}
+	assert.equal(metaProperty($, 'og:image:alt'), undefined)
 	if (spec.ogType === 'article') {
 		assert.ok(metaProperty($, 'article:published_time'))
 		assert.equal(metaProperty($, 'article:author'), spec.author)
@@ -112,7 +120,7 @@ function assertHeadMetadata($: CheerioAPI, siteUrl: string, spec: HeadSpec): voi
 	}
 
 	// Twitter Graph
-	assert.equal(metaName($, 'twitter:card'), 'summary')
+	assert.equal(metaName($, 'twitter:card'), 'summary_large_image')
 	assert.equal(metaName($, 'twitter:creator'), '@KittyGiraudel')
 	assert.equal(metaName($, 'twitter:description'), spec.description)
 	assert.equal(metaName($, 'twitter:domain'), 'kittygiraudel.com')
