@@ -35,7 +35,7 @@ export default function imageTransformPlugin(eleventyConfig: EleventyConfig) {
 				decoding: 'async',
 				// Default sizes matches .Container (80ch); required when using eager +
 				// multiple widths.
-				sizes: '(max-width: 48rem) min(100vw - 2em, 100vw), 80ch',
+				sizes: '(max-width: 48rem) calc(100vw - 2em), 80ch',
 			},
 			pictureAttributes: {},
 		},
