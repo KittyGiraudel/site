@@ -198,7 +198,7 @@ test('page head: resume', async () => {
 		description: 'Engineering and executive leadership resume of Kitty Giraudel.',
 		author: siteAuthor,
 		ogType: 'website',
-		keywords: 'resume,cv,linkedin',
+		keywords: 'resume,cv,linkedin,engineering,leadership',
 		markdownAlternate: false,
 	})
 })
