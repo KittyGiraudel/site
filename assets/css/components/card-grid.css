@@ -8,6 +8,13 @@
 	margin-block: var(--vb);
 }
 
+@supports (display: grid-lanes) {
+	.CardGrid {
+		display: grid-lanes;
+		grid-template-rows: unset;
+	}
+}
+
 @media (min-width: 400px) {
 	.CardGrid {
 		gap: var(--vb-half);
@@ -38,9 +45,19 @@
 	margin: 0;
 }
 
-@supports (display: grid-lanes) {
-	.CardGrid {
-		display: grid-lanes;
-		grid-template-rows: unset;
+@media (prefers-reduced-motion: no-preference) {
+	.CardGrid__item {
+		animation-fill-mode: both;
+		animation-name: fade-in;
+		animation-range: entry 25% cover 50%;
+		animation-timeline: --item-timeline;
+		view-timeline-name: --item-timeline;
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
 	}
 }
