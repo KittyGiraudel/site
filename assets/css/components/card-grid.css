@@ -5,7 +5,7 @@
 	gap: var(--vb-thirds);
 	position: relative;
 	padding-inline-start: 0;
-	margin-block-start: var(--vb);
+	margin-block: var(--vb);
 }
 
 @media (min-width: 400px) {
