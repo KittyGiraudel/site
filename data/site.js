@@ -33,8 +33,8 @@ export default {
 	},
 	nav: [
 		{ path: '/blog/', label: 'Blog' },
-		{ path: '/projects/', label: 'Projects' },
 		{ path: '/snippets/', label: 'Snippets' },
+		{ path: '/projects/', label: 'Projects' },
 		{ path: '/talks/', label: 'Talks' },
 		{ path: '/about/', label: 'About' },
 		{ path: '/resume/', label: 'Hire me' },
