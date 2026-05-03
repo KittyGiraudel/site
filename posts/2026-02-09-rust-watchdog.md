@@ -4,6 +4,7 @@ description: A walkthrough of how I got to write a watchdog script in Rust to en
 tags:
   - Rust
   - Observability
+  - Gaming
 image: /assets/images/rust-watchdog/error-logs.png
 ---
 

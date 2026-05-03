@@ -5,6 +5,7 @@ tags:
   - UI
   - UX
   - CSS
+  - Gaming
 image: /assets/images/cover-component/banner-ruralSea.avif
 --- 
 

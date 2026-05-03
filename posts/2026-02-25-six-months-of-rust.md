@@ -4,6 +4,7 @@ description: A retrospective on my last 6 months learning Rust from scratch, as 
 tags:
   - Rust
   - Retrospective
+  - Gaming
 ---
 
 {% assign footnote_timeline = "It’s actually been 8 months, but “six months” makes for a better title." %}

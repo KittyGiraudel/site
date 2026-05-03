@@ -9,7 +9,7 @@ export default {
 
 				return {
 					primary: data.title,
-					secondary: data.description ?? '',
+					secondary: data.description,
 					image: data.image,
 					image_alt: data.title,
 					url,
