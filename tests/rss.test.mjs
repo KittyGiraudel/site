@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { XMLParser } from 'fast-xml-parser'
-import { getSiteUrl, readText } from './helpers/site-paths.mjs'
+import { readText } from './helpers/site-paths.mjs'
 
 /** @param {string} value */
 function assertParsesAsDate(value) {
@@ -25,7 +25,7 @@ function assertNoBareAmpersands(xml) {
 
 test('RSS feed is valid Atom with correct URLs', async () => {
 	const xml = await readText('rss/index.xml')
-	const siteUrl = getSiteUrl()
+	const siteUrl = 'https://kittygiraudel.com'
 	assertNoBareAmpersands(xml)
 
 	const parser = new XMLParser({ ignoreAttributes: false })

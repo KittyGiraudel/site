@@ -2,10 +2,10 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { load } from 'cheerio'
 import siteData from '../data/site.js'
-import { getSiteUrl, readText } from './helpers/site-paths.mjs'
+import { readText } from './helpers/site-paths.mjs'
 
 const siteAuthor = siteData.author
-const siteUrl = getSiteUrl()
+const siteUrl = 'https://kittygiraudel.com'
 
 /**
  * @param {import('cheerio').CheerioAPI} $

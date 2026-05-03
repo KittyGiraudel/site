@@ -49,13 +49,12 @@ Here is what the tests to validate the sitemap look like:
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { XMLParser } from 'fast-xml-parser'
-import { getSiteUrl, readText } from './helpers/site-paths.mjs'
+import { readText } from './helpers/site-paths.mjs'
 
 test('The sitemap should be valid', async () => {
-	const siteUrl = await getSiteUrl()
 	const xml = await readText('sitemap.xml')
 	const parser = new XMLParser({ ignoreAttributes: false })
-	const site = new URL(siteUrl)
+	const site = new URL('https://kittygiraudel.com')
 
 	const doc = parser.parse(xml)
 	assert.ok(doc.urlset, 'sitemap should have a <urlset> root element')
@@ -152,10 +151,9 @@ test('Core assets exist in built site', async () => {
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { XMLParser } from 'fast-xml-parser'
-import { getSiteUrl, readText } from './helpers/site-paths.mjs'
+import { readText } from './helpers/site-paths.mjs'
 
 test('RSS feed is valid Atom with correct URLs', async () => {
-	const siteUrl = getSiteUrl()
 	const xml = readText('rss/index.xml')
 	const parser = new XMLParser({ ignoreAttributes: false })
 	const doc = parser.parse(xml)
@@ -172,7 +170,7 @@ test('RSS feed is valid Atom with correct URLs', async () => {
 	for (const link of links)
 		if (link['@_rel']) linkByRel.set(link['@_rel'], link)
 
-	const site = new URL(siteUrl)
+	const site = new URL('https://kittygiraudel.com')
 	const selfLink = linkByRel.get('self')
 	assert.ok(selfLink, 'RSS feed should have a self <link>')
 	assert.equal(

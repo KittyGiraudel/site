@@ -18,8 +18,3 @@ export async function readJson(relativePath) {
 	const text = await readText(relativePath)
 	return JSON.parse(text)
 }
-
-/** Canonical site origin (matches `data/site.js` `url`, no trailing slash). */
-export function getSiteUrl() {
-	return siteData.url.replace(/\/+$/, '')
-}
