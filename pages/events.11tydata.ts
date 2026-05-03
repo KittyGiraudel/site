@@ -1,6 +1,6 @@
+import type { CardGridItem } from '../build/eleventy.ts'
+import utilities from '../build/utilities.ts'
 import events from '../data/events.json' with { type: 'json' }
-import utilities from '../plugins/utilities.ts'
-import type { CardGridItem } from '../types/eleventy.ts'
 
 type EventEntry = (typeof events)[number]
 

@@ -2,7 +2,7 @@ import slugify from '@sindresorhus/slugify'
 import type { EleventyConfig } from '11ty.ts'
 import * as cheerio from 'cheerio'
 import type { Element } from 'domhandler'
-import { asEleventyFilter } from '../types/eleventy.ts'
+import { asEleventyFilter } from './eleventy.ts'
 
 type TocNode = {
 	id: string

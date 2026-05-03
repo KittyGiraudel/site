@@ -1,5 +1,5 @@
-import utilities from '../plugins/utilities.ts'
-import type { PostTemplateData } from '../types/eleventy.ts'
+import type { PostTemplateData } from '../build/eleventy.ts'
+import utilities from '../build/utilities.ts'
 
 const config = {
 	layout: 'post',

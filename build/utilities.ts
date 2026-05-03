@@ -3,13 +3,8 @@ import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
 import he from 'he'
 import htmlmin from 'html-minifier-terser'
-import type {
-	MaybePost,
-	MaybeProject,
-	PostFrontMatter,
-	ProjectFrontMatter,
-} from '../types/eleventy.ts'
-import { isFeatureEnabled } from '../types/features.ts'
+import type { MaybePost, MaybeProject, PostFrontMatter, ProjectFrontMatter } from './eleventy.ts'
+import { isFeatureEnabled } from './features.ts'
 import { getMarkdownRenderer } from './markdown.ts'
 
 const EMOJI_REGEX = emojiRegex()

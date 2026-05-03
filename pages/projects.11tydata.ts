@@ -1,4 +1,4 @@
-import type { CardGridItem, Project } from '../types/eleventy.ts'
+import type { CardGridItem, Project } from '../build/eleventy.ts'
 
 export default {
 	eleventyComputed: {

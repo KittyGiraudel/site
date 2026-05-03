@@ -1,6 +1,6 @@
 import { createRequire } from 'node:module'
 import markdownIt from 'markdown-it'
-import { isFeatureEnabled } from '../types/features.ts'
+import { isFeatureEnabled } from './features.ts'
 
 const require = createRequire(import.meta.url)
 
