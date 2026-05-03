@@ -44,12 +44,14 @@ export type MaybePost = Post | PostTemplateData
 export type ProjectFrontMatter = {
 	layout: 'project'
 	title: string
-	project_name: string
-	image: string
-	screenshot: string
-	screenshot_alt: string
-	screenshot_caption: string
+	description: string
+	repository: string
+	tags: string[]
 	permalink: string
+	website?: string
+	showcase?: boolean
+	image?: string
+	image_caption?: string
 }
 
 export type Project = EleventySuppliedData & {

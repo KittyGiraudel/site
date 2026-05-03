@@ -9,60 +9,51 @@ layout: page
     components/figure,
     components/code,
     components/tags,
-    components/tile,
     components/collection-navigation,
     pages/project
   "
 %}
 
-{% assign project = projects | where: "name", project_name | first %}
-
 <article class="Project">
   <section class="Project__header">
-    {% if project %}
-      <p class="Project__description">
-        {{ project.description }}
-      </p>
+    <p class="Project__description">
+      {{ description }}
+    </p>
 
-      {% if project.tags %}
-        <div class="Project__tags">
-          {% render "tags.liquid", tags: project.tags %}
-        </div>
-      {% endif %}
-    {% endif %}
+    <div class="Project__tags">
+      {% render "tags.liquid", tags: tags %}
+    </div>
 
     <div class="Project__meta" aria-label="Project links">
-      {% if project and project.link %}
-        <a class="Project__meta-link" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
+      {% if website %}
+        <a class="Project__meta-link" href="{{ website }}" target="_blank" rel="noopener noreferrer">
           Visit website
         </a>
       {% endif %}
 
-      {% if project and project.repository %}
-        {% assign project_stars = github.stargazers[project.repository] | default: 0 %}
-        <a class="Project__meta-link" href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">
-          View on GitHub
-          {% if project_stars > 0 %}
-            <span class="Project__stars">
-              · {{ project_stars }} ★
-            </span>
-          {% endif %}
-        </a>
-      {% endif %}
+      {% assign project_stars = github.stargazers[repository] | default: 0 %}
+      <a class="Project__meta-link" href="{{ repository }}" target="_blank" rel="noopener noreferrer">
+        View on GitHub
+        {% if project_stars > 0 %}
+          <span class="Project__stars">
+            · {{ project_stars }} ★
+          </span>
+        {% endif %}
+      </a>
     </div>
   </section>
 
-  {% if screenshot %}
+  {% if image %}
     <figure class="Figure">
       <img
-        src="{{ screenshot }}"
-        alt="{{ screenshot_alt }}"
+        src="{{ image }}"
+        alt="{{ title }}"
         loading="eager"
-        {% if project.detail_url %}style="view-transition-name: {{ project.detail_url | slugify }}"{% endif %}
+        style="view-transition-name: {{ page.url | slugify }}"
       >
-      {% if screenshot_caption %}
+      {% if image_caption %}
         <figcaption>
-          {{ screenshot_caption }}
+          {{ image_caption }}
         </figcaption>
       {% endif %}
     </figure>
@@ -75,19 +66,9 @@ layout: page
   </section>
 </article>
 
-{% assign navigation_collection = collections.projects %}
-{% if site.configuration.dev_mode %}
-  {% comment %}
-   Like posts, dev keyboard nav (collection-shortcuts) only follows same-origin
-   links, so we skip items with `external` in front matter by using
-   internal_projects.
-  {% endcomment %}
-  {% assign navigation_collection = collections.internal_projects %}
-{% endif %}
-
 {% render "collection_navigation.liquid",
   page: page,
-  collection: navigation_collection,
+  collection: collections.projects,
   label: "project",
   dev_mode: site.configuration.dev_mode
 %}

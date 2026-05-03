@@ -3,7 +3,6 @@ import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
 import { defineConfig } from '11ty.ts'
 import footnotes from 'eleventy-plugin-footnotes'
-import projects from './data/projects.json' with { type: 'json' }
 import features from './features.json' with { type: 'json' }
 import injectHeadingAnchors from './plugins/heading-anchors.ts'
 import imageTransformPlugin from './plugins/image-transform.ts'
@@ -108,16 +107,6 @@ export default defineConfig(config => {
 	config.addCollection('projects', c =>
 		c
 			.getFilteredByGlob('pages/projects/*/index.liquid')
-			.sort((a, b) => a.fileSlug.localeCompare(b.fileSlug)),
-	)
-	config.addCollection('internal_projects', c =>
-		c
-			.getFilteredByGlob('pages/projects/*/index.liquid')
-			.filter(p => {
-				const fm = utilities.getFrontMatterData(p)
-				const project = projects.find(pa => pa.name === fm.title)
-				return project.detail_url
-			})
 			.sort((a, b) => a.fileSlug.localeCompare(b.fileSlug)),
 	)
 

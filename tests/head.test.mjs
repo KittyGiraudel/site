@@ -227,11 +227,12 @@ test('page head: project', async () => {
 	assertHeadMetadata($, siteUrl, {
 		path: '/projects/a11y-dialog/',
 		title: 'A11y-dialog',
-		description: siteData.description,
+		description:
+			'A lightweight script to make modal dialogs accessible to assistive technology users.',
 		author: siteAuthor,
 		ogType: 'website',
 		ogImage: '/assets/images/projects/a11y-dialog.png',
-		keywords: null,
+		keywords: 'Accessibility,HTML,Dialog,TypeScript',
 		markdownAlternate: false,
 	})
 })

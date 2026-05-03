@@ -46,7 +46,7 @@ about me](/about/).
   items: latest_articles
 %}
 
-{% assign main_projects = projects | where: "showcase", true | slice: 0, 3 %}
+{% assign main_projects = collections.projects | where: "showcase", true | slice: 0, 3 %}
 {% render "showcase.liquid",
   type: "project",
   title: "Main projects",
