@@ -59,6 +59,8 @@ function assertCanonicalLink($, siteUrl, path, label = '') {
  *   keywords?: string | null
  *   documentTitle?: string
  *   markdownAlternate?: boolean
+ *   softwareSourceCode?: boolean
+ *   itemList?: boolean
  * }} spec
  */
 function assertHeadMetadata($, siteUrl, spec) {
@@ -144,6 +146,12 @@ function assertHeadMetadata($, siteUrl, spec) {
 	assert.match(jsonLdContent, /"@type":\s*"Person"/)
 	if (spec.ogType === 'article') {
 		assert.match(jsonLdContent, /"@type":\s*"BlogPosting"/)
+	}
+	if (spec.softwareSourceCode === true) {
+		assert.match(jsonLdContent, /"@type":\s*"SoftwareSourceCode"/)
+	}
+	if (spec.itemList === true) {
+		assert.match(jsonLdContent, /"@type":\s*"ItemList"/)
 	}
 
 	// RSS
@@ -234,7 +242,68 @@ test('page head: project', async () => {
 		ogImage: '/assets/images/projects/a11y-dialog.png',
 		keywords: 'Accessibility,HTML,Dialog,TypeScript',
 		markdownAlternate: false,
+		softwareSourceCode: true,
 	})
+
+	let software = null
+	$('script[type="application/ld+json"]').each((_, el) => {
+		try {
+			const data = JSON.parse($(el).text())
+			if (data['@type'] === 'SoftwareSourceCode') software = data
+		} catch {
+			// ignore
+		}
+	})
+	assert.ok(software, 'project page should include SoftwareSourceCode JSON-LD')
+	assert.equal(software.name, 'A11y-dialog')
+	assert.equal(software.codeRepository, 'https://github.com/KittyGiraudel/a11y-dialog')
+	assert.equal(software.url, 'https://a11y-dialog.netlify.app/')
+	assert.equal(software.mainEntityOfPage['@id'], `${siteUrl}/projects/a11y-dialog/`)
+	assert.equal(software.author['@type'], 'Person')
+	assert.equal(software.author.name, siteAuthor)
+	assert.ok(Array.isArray(software.keywords))
+	assert.ok(software.keywords.includes('TypeScript'))
+	assert.equal(software.mainEntityOfPage['@type'], 'WebPage')
+	assert.equal(software.mainEntityOfPage['@id'], `${siteUrl}/projects/a11y-dialog/`)
+})
+
+test('page head: projects index (ItemList)', async () => {
+	/** Golden: pages/projects.liquid */
+	const html = await readText('projects/index.html')
+	const $ = load(html)
+
+	assertHeadMetadata($, siteUrl, {
+		path: '/projects/',
+		title: 'Open-Source Projects',
+		description:
+			'A list of all of Kitty Giraudel’s noteworthy open-sourced projects, all hosted on GitHub.',
+		author: siteAuthor,
+		ogType: 'website',
+		keywords: 'projects,open-source,github',
+		markdownAlternate: false,
+		itemList: true,
+	})
+
+	let itemList = null
+	$('script[type="application/ld+json"]').each((_, el) => {
+		try {
+			const data = JSON.parse($(el).text())
+			if (data['@type'] === 'ItemList') itemList = data
+		} catch {
+			// ignore
+		}
+	})
+	assert.ok(itemList, 'projects index should include ItemList JSON-LD')
+	assert.equal(itemList.name, 'Open-Source Projects')
+	assert.ok(itemList.numberOfItems >= 1)
+	assert.ok(Array.isArray(itemList.itemListElement))
+	assert.equal(itemList.itemListElement.length, itemList.numberOfItems)
+	const first = itemList.itemListElement[0]
+	assert.equal(first['@type'], 'ListItem')
+	assert.equal(first.position, 1)
+	assert.equal(first.item['@type'], 'WebPage')
+	assert.ok(first.item['@id'].startsWith(siteUrl))
+	assert.ok(typeof first.item.name === 'string' && first.item.name.length > 0)
 })
 
 test('page head: regular post', async () => {

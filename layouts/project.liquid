@@ -2,6 +2,41 @@
 layout: page
 ---
 
+{% assign project_page_url = page.url | prepend: site.url %}
+{% if website %}
+  {% assign software_primary_url = website %}
+{% else %}
+  {% assign software_primary_url = project_page_url %}
+{% endif %}
+{% if image %}
+  {% if image contains '://' %}
+    {% assign project_image_url = image %}
+  {% else %}
+    {% assign project_image_url = image | prepend: site.url %}
+  {% endif %}
+{% endif %}
+
+<script type="application/ld+json" data-helmet>{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": {{ title | jsonify }},
+  "description": {{ description | strip_html | strip_newlines | truncate: 200 | jsonify }},
+  "url": {{ software_primary_url | jsonify }},
+  "codeRepository": {{ repository | jsonify }}{% if image %}
+  ,"image": {{ project_image_url | jsonify }}{% endif %}{% if tags and tags.size > 0 %}
+  ,"keywords": {{ tags | jsonify }}{% endif %}
+  ,"author": {
+    "@type": "Person",
+    "name": {{ site.author | jsonify }},
+    "url": {{ site.url | jsonify }}{% if site.same_as and site.same_as.size > 0 %}
+    ,"sameAs": {{ site.same_as | jsonify }}{% endif %}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ project_page_url | jsonify }}
+  }
+}</script>
+
 {% render "styles.liquid",
   inline: site.configuration.inline_assets,
   partials: "

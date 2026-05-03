@@ -9,6 +9,29 @@ keywords:
 permalink: /projects/
 ---
 
+{% assign projects_list_url = page.url | prepend: site.url %}
+<script type="application/ld+json" data-helmet>{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ title | jsonify }},
+  "description": {{ description | strip_html | strip_newlines | truncate: 200 | jsonify }},
+  "url": {{ projects_list_url | jsonify }},
+  "numberOfItems": {{ collections.projects.size }},
+  "itemListElement": [
+    {% for p in collections.projects %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "WebPage",
+        "@id": {{ p.url | prepend: site.url | jsonify }},
+        "name": {{ p.data.title | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}</script>
+
 {% render "styles.liquid",
   inline: site.configuration.inline_assets,
   partials: "
