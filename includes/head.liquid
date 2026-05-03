@@ -13,6 +13,7 @@
   - tags: Tag/keyword list for the page
   - generator: The generator of the page
   - site_same_as: List of profile URLs for Person schema
+  - site_description: Global site tagline for WebSite JSON-LD (not page meta description)
 {% endcomment %}
  
 {% ensure inline_assets, "Required value 'inline_assets' is missing in head.liquid" %}
@@ -20,6 +21,7 @@
 {% ensure page_description, "Required value 'page_description' is missing in head.liquid" %}
 {% ensure page_url, "Required value 'page_url' is missing in head.liquid" %}
 {% ensure site_author, "Required value 'site_author' is missing in head.liquid" %}
+{% ensure site_description, "Required value 'site_description' is missing in head.liquid" %}
 {% ensure site_url, "Required value 'site_url' is missing in head.liquid" %}
 {% ensure title, "Required value 'title' is missing in head.liquid" %}
 {% if page_image contains '://' %}
@@ -107,7 +109,7 @@ http://ogp.me/ns/article#">
       "@type": "WebSite",
       "name": {{ site_author | jsonify }},
       "url": {{ site_url | jsonify }},
-      "description": {{ page_description | jsonify }}
+      "description": {{ site_description | jsonify }}
     }
   </script>
   <script type="application/ld+json">

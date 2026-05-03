@@ -129,6 +129,14 @@ test('structured data: regular post (BlogPosting)', async () => {
 	const $ = load(html)
 	assertJsonLdShape($, { article: true })
 
+	const website = findJsonLdByType($, 'WebSite')
+	assert.ok(website, 'post page should include WebSite JSON-LD')
+	assert.equal(
+		website.description,
+		siteData.description,
+		'WebSite description should be the global site tagline, not the article abstract',
+	)
+
 	const blogPosting = findJsonLdByType($, 'BlogPosting')
 	assert.ok(blogPosting, 'post page should include BlogPosting JSON-LD')
 	assert.ok(blogPosting.datePublished, 'BlogPosting should include datePublished')
