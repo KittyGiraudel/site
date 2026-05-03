@@ -1,0 +1,39 @@
+---
+layout: project
+title: Focusable Selectors
+project_name: Focusable Selectors
+permalink: /projects/focusable-selectors/
+---
+
+Focusable Selectors is a tiny published npm package: a single array of CSS selectors that match elements considered focusable in HTML documents. The list mirrors what you typically need when implementing focus traps, custom dialogs, or anything that asks “what can receive focus next?”
+
+## Why it exists
+
+Focus-related interactions in browsers are rich and complex (think `tabindex`, shadow DOM, disabled controls, `contenteditable`, `inert`, and more). Duplicating that logic in every library leads to subtle drift. Sharing one curated selector list keeps behaviour aligned across small tools.
+
+The package does not move or manage the focus for you: it only answers **which selectors** to query when you build your own focus management.
+
+## Using it
+
+Install from npm, import the array, and combine it with `document.querySelector` /`Element.matches` (or your framework’s DOM helpers) to collect or test focusable nodes. Check the repository for the exact export shape and any release notes.
+
+```js
+import focusableSelectors from 'focusable-selectors'
+
+function isVisible(element) {
+	return Boolean(
+		element.offsetWidth ||
+		element.offsetHeight ||
+		element.getClientRects().length
+	)
+}
+
+const selector = focusableSelectors.join(',')
+const focusableElements = Array.from(
+	document.querySelectorAll(selector)
+).filter(isVisible)
+```
+
+## Miscellaneous
+
+This package steams from my work on [a11y-dialog](/projects/a11y-dialog/), where I needed to know which elements could receive focus when the dialog was open as part of the focus trap. I eventually extracted the list into a separate package to share with other libraries and tools that need to know the same thing.

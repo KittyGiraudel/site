@@ -1,0 +1,19 @@
+---
+layout: project
+title: react-a11y-disclosure
+project_name: react-a11y-disclosure
+permalink: /projects/react-a11y-disclosure/
+---
+
+react-a11y-disclosure is a small React hook for building disclosure widgets: the “button toggles a panel” pattern behind accordions, show/hide sections, and mobile nav drawers. It wires up the right ARIA attributes and keeps button and region IDs in sync so assistive technologies announce state correctly.
+
+## Design goals
+
+- Minimal surface: one hook, no imposed markup beyond what the pattern needs.
+- Composable: you keep control of styling and DOM structure; the hook focuses on behaviour and accessibility contracts.
+
+If you need disclosure without React, consider with [a11y-toggle](/projects/a11y-toggle) which implements the same pattern in vanilla JavaScript.
+
+## Documentation
+
+Examples and API details live in the GitHub repository README. Install from npm and follow the hook’s returned props to connect your trigger and content nodes.

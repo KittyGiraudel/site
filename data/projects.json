@@ -30,14 +30,16 @@
 	{
 		"name": "Circularray",
 		"description": "A fast circular array implementation in JavaScript built with a linked list.",
-		"link": "https://github.com/KittyGiraudel/circularray",
-		"tags": ["TypeScript", "AoC"]
+		"repository": "https://github.com/KittyGiraudel/circularray",
+		"tags": ["TypeScript", "AoC"],
+		"detail_url": "/projects/circularray/"
 	},
 	{
 		"name": "Focusable Selectors",
-		"description": "A micro-library exporting an array of CSS selectors for focusable HTML elements. Useful for dialogs and other accessible widgets",
-		"link": "https://github.com/KittyGiraudel/focusable-selectors",
-		"tags": ["Accessibility", "CSS"]
+		"description": "A micro-library exporting an array of CSS selectors for focusable HTML elements. Useful for dialogs and other accessible widgets.",
+		"repository": "https://github.com/KittyGiraudel/focusable-selectors",
+		"tags": ["Accessibility", "CSS"],
+		"detail_url": "/projects/focusable-selectors/"
 	},
 	{
 		"name": "node-legofy",
@@ -51,8 +53,9 @@
 	{
 		"name": "Outline Audit",
 		"description": "A script to audit the outline of a document, ensuring the right headings are used.",
-		"link": "https://github.com/edenspiekermann/outline-audit",
-		"tags": ["Accessibility", "JavaScript"]
+		"repository": "https://github.com/edenspiekermann/outline-audit",
+		"tags": ["Accessibility", "JavaScript"],
+		"detail_url": "/projects/outline-audit/"
 	},
 	{
 		"name": "Par Odin! Solver",
@@ -66,14 +69,16 @@
 	{
 		"name": "react-a11y-dialog",
 		"description": "A React wrapper around a11y-dialog, providing both a component and a hook.",
-		"link": "https://github.com/KittyGiraudel/react-a11y-dialog",
-		"tags": ["Accessibility", "React"]
+		"repository": "https://github.com/KittyGiraudel/react-a11y-dialog",
+		"tags": ["Accessibility", "React"],
+		"detail_url": "/projects/react-a11y-dialog/"
 	},
 	{
 		"name": "react-a11y-disclosure",
 		"description": "A small React hook to build accessible disclosure widgets.",
-		"link": "https://github.com/KittyGiraudel/react-a11y-disclosure",
-		"tags": ["Accessibility", "React"]
+		"repository": "https://github.com/KittyGiraudel/react-a11y-disclosure",
+		"tags": ["Accessibility", "React"],
+		"detail_url": "/projects/react-a11y-disclosure/"
 	},
 	{
 		"name": "Sass Compatibility",

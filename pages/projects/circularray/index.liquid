@@ -1,0 +1,18 @@
+---
+layout: project
+title: Circularray
+project_name: Circularray
+permalink: /projects/circularray/
+---
+
+Circularray is a small TypeScript implementation of a **circular buffer** (ring buffer): a fixed-size collection where writes wrap around. It is built with a linked-list structure rather than a plain array slice-and-shift approach, which keeps some operations fast when you care about how often allocations happen.
+
+## What it is for
+
+It is useful when you need a bounded history or queue—telemetry windows, rolling logs, puzzle inputs (it shows up in Advent of Code), or any case where “keep the last *n* items” should stay O(1) for push and bounded for space.
+
+The API is intentionally minimal and close to the JavaScript Array API: you get the usual enqueue/dequeue-style operations and a clear model of capacity versus current length.
+
+## Miscellaneous
+
+I’ve built Circularray in 2022 and announced it in *[Circular Array in JavaScript](/2022/02/01/circular-array-in-js/)* as part of the [Advent of Code](https://adventofcode.com/). It was a fun way for me to learn about double-ended queues (like the `deque` Python module) and implement them from scratch in JavaScript.
