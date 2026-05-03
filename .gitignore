@@ -1,8 +1,12 @@
+# Eleventy build output
 _site
-.sass-cache
+
+# Miscellaneous
 .DS_Store
+
+# Node.js dependencies
 node_modules
 
-# Local Netlify folder
+# Local Netlify folders
 .netlify
 .cache
