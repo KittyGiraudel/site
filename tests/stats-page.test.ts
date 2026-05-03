@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { readText } from './helpers/site-paths.mjs'
+import { readText } from './helpers/site-paths.ts'
 
 test('stats page renders metrics and chart data', async () => {
 	const html = await readText('stats/index.html')

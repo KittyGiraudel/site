@@ -7,11 +7,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 npm start        # Dev server with hot reload (incremental builds)
 npm run build    # Production build + service worker generation
-npm test         # Node.js native test runner (all tests/*.test.mjs)
+npm test         # Node.js native test runner (TypeScript via --experimental-strip-types; tests/*.test.ts)
 npm run format   # Biome formatter (write mode)
 ```
 
-Single test: `node --test tests/head.test.mjs`
+Single test: `node --experimental-strip-types --test tests/head.test.ts`
 
 ## Architecture
 

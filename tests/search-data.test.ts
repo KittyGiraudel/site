@@ -1,11 +1,21 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { readJson } from './helpers/site-paths.mjs'
+import { readJson } from './helpers/site-paths.ts'
+
+type SearchEntry = {
+	title: string
+	lang: string
+	tags: unknown[]
+	url: string
+	date: string
+	guest: string
+	external: string
+}
 
 test('search data JSON has expected shape', async () => {
-	const data = await readJson('blog/search/data.json')
-
-	assert.ok(Array.isArray(data), 'search data should be an array')
+	const raw = await readJson('blog/search/data.json')
+	assert.ok(Array.isArray(raw), 'search data should be an array')
+	const data = raw as SearchEntry[]
 	assert.ok(data.length > 0, 'search data should not be empty')
 
 	for (const entry of data) {

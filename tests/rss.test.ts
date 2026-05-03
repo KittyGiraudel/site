@@ -1,17 +1,15 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { XMLParser } from 'fast-xml-parser'
-import { readText } from './helpers/site-paths.mjs'
+import { readText } from './helpers/site-paths.ts'
 
-/** @param {string} value */
-function assertParsesAsDate(value) {
+function assertParsesAsDate(value: string): number {
 	const ms = Date.parse(value)
 	assert.ok(Number.isFinite(ms), `should parse as a date: ${value}`)
 	return ms
 }
 
-/** @param {string} xml */
-function assertNoBareAmpersands(xml) {
+function assertNoBareAmpersands(xml: string) {
 	// `fast-xml-parser` is permissive with invalid entities, so enforce this
 	// XML well-formedness rule explicitly for feed text/attribute nodes.
 	const withoutCdata = xml.replace(/<!\[CDATA\[[\s\S]*?\]\]>/g, '')
@@ -29,7 +27,16 @@ test('RSS feed is valid Atom with correct URLs', async () => {
 	assertNoBareAmpersands(xml)
 
 	const parser = new XMLParser({ ignoreAttributes: false })
-	const doc = parser.parse(xml)
+	const doc = parser.parse(xml) as {
+		feed: {
+			title: unknown
+			subtitle: unknown
+			id: unknown
+			updated: string
+			link: unknown
+			entry: unknown
+		}
+	}
 
 	// Top-level feed structure
 	assert.ok(doc.feed, 'RSS feed should have a <feed> root element')
@@ -39,8 +46,8 @@ test('RSS feed is valid Atom with correct URLs', async () => {
 	assert.ok(doc.feed.updated, 'RSS feed should contain <updated>')
 
 	const links = Array.isArray(doc.feed.link) ? doc.feed.link : [doc.feed.link]
-	const linkByRel = new Map()
-	for (const link of links) {
+	const linkByRel = new Map<string, { '@_rel'?: string; '@_href'?: string; '@_type'?: string }>()
+	for (const link of links as { '@_rel'?: string; '@_href'?: string; '@_type'?: string }[]) {
 		if (link['@_rel']) linkByRel.set(link['@_rel'], link)
 	}
 
@@ -61,8 +68,16 @@ test('RSS feed is valid Atom with correct URLs', async () => {
 	const entries = Array.isArray(doc.feed.entry) ? doc.feed.entry : [doc.feed.entry]
 	assert.ok(entries.length > 0, 'RSS feed should contain at least one <entry>')
 
-	const entryUpdatedMs = []
-	for (const entry of entries) {
+	const entryUpdatedMs: number[] = []
+	for (const entry of entries as {
+		title: unknown
+		id: unknown
+		published: string
+		updated: string
+		summary: unknown
+		content?: unknown
+		link: unknown
+	}[]) {
 		// Basic data for each entry
 		assert.ok(entry.title, 'entry should have a title')
 		assert.ok(entry.id, 'entry should have an id')
@@ -81,7 +96,7 @@ test('RSS feed is valid Atom with correct URLs', async () => {
 		const entryLinks = Array.isArray(entry.link) ? entry.link : [entry.link]
 		assert.ok(entryLinks.length > 0, 'entry should have at least one link')
 
-		const primaryLink = entryLinks[0]
+		const primaryLink = entryLinks[0] as { '@_href': string; '@_rel'?: string; '@_type'?: string }
 		const primaryHref = primaryLink['@_href']
 		assert.equal(typeof primaryHref, 'string')
 		const primaryUrl = new URL(primaryHref)
@@ -96,7 +111,7 @@ test('RSS feed is valid Atom with correct URLs', async () => {
 			)
 		}
 
-		const hasMarkdownAlternate = entryLinks.some(
+		const hasMarkdownAlternate = (entryLinks as { '@_rel'?: string; '@_type'?: string }[]).some(
 			l => l['@_rel'] === 'alternate' && l['@_type'] === 'text/markdown',
 		)
 

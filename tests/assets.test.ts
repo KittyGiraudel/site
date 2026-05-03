@@ -2,15 +2,15 @@ import assert from 'node:assert/strict'
 import { readdir, stat } from 'node:fs/promises'
 import path from 'node:path'
 import test from 'node:test'
-import { siteDir } from './helpers/site-paths.mjs'
+import { siteDir } from './helpers/site-paths.ts'
 
-async function expectFile(relativePath) {
+async function expectFile(relativePath: string) {
 	const full = path.join(siteDir, relativePath)
 	const s = await stat(full)
 	assert.ok(s.isFile(), `${relativePath} should exist as a file`)
 }
 
-async function expectDirectoryWithFiles(relativePath) {
+async function expectDirectoryWithFiles(relativePath: string) {
 	const full = path.join(siteDir, relativePath)
 	const s = await stat(full)
 	assert.ok(s.isDirectory(), `${relativePath} should exist as a directory`)

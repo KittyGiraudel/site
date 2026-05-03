@@ -1,10 +1,9 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { XMLParser } from 'fast-xml-parser'
-import { readText } from './helpers/site-paths.mjs'
+import { readText } from './helpers/site-paths.ts'
 
-/** @param {string} value */
-function assertParsesAsDate(value) {
+function assertParsesAsDate(value: string): number {
 	const ms = Date.parse(value)
 	assert.ok(Number.isFinite(ms), `lastmod should parse as a date: ${value}`)
 	return ms
@@ -15,7 +14,11 @@ test('sitemap.xml is valid and contains absolute URLs', async () => {
 	const siteUrl = 'https://kittygiraudel.com'
 
 	const parser = new XMLParser({ ignoreAttributes: false })
-	const doc = parser.parse(xml)
+	const doc = parser.parse(xml) as {
+		urlset: {
+			url: unknown
+		}
+	}
 
 	assert.ok(doc.urlset, 'sitemap should have a <urlset> root element')
 
@@ -24,7 +27,7 @@ test('sitemap.xml is valid and contains absolute URLs', async () => {
 
 	const site = new URL(siteUrl)
 
-	const locs = urls.map(entry => entry.loc).filter(Boolean)
+	const locs = (urls as { loc: string }[]).map(entry => entry.loc).filter(Boolean)
 	assert.ok(locs.length === urls.length, 'every <url> should have a <loc>')
 
 	for (const loc of locs) {
@@ -80,18 +83,20 @@ test('sitemap.xml is valid and contains absolute URLs', async () => {
 		'sitemap should include /tags/eleventy/',
 	)
 
-	const withLastmod = urls.filter(entry => Boolean(entry.lastmod))
+	const withLastmod = (urls as { loc: string; lastmod?: string }[]).filter(entry =>
+		Boolean(entry.lastmod),
+	)
 	assert.ok(
 		withLastmod.length / urls.length >= 0.85,
 		'most sitemap URLs should include <lastmod> (creation or update date)',
 	)
 	for (const entry of withLastmod) {
-		assertParsesAsDate(entry.lastmod)
+		assertParsesAsDate(entry.lastmod as string)
 	}
 
 	const statsPostUrl = new URL('/2026/03/02/stats-page-with-11ty/', site.origin).toString()
-	const statsEntry = urls.find(u => u.loc === statsPostUrl)
+	const statsEntry = (urls as { loc: string; lastmod?: string }[]).find(u => u.loc === statsPostUrl)
 	assert.ok(statsEntry, 'sitemap should include the stats Eleventy post')
 	assert.ok(statsEntry.lastmod, 'golden post should have <lastmod>')
-	assertParsesAsDate(statsEntry.lastmod)
+	assertParsesAsDate(statsEntry.lastmod as string)
 })

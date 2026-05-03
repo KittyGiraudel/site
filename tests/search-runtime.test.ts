@@ -9,7 +9,17 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(__dirname, '..')
 const searchScriptPath = path.join(repoRoot, 'assets/js/search.js')
 
-function createSearchEntries(total = 30) {
+type SearchEntry = {
+	title: string
+	lang: string
+	tags: string[]
+	url: string
+	date: string
+	guest: string
+	external: string
+}
+
+function createSearchEntries(total = 30): SearchEntry[] {
 	return Array.from({ length: total }, (_, index) => ({
 		title: `Accessibility tip ${index}`,
 		lang: 'en',
@@ -21,13 +31,26 @@ function createSearchEntries(total = 30) {
 	}))
 }
 
-async function runSearchScript({ entries, query = '' }) {
+type WindowMock = {
+	location: URL
+	history: {
+		replaceState: (_state: unknown, _title: string, href: string) => void
+	}
+}
+
+async function runSearchScript({
+	entries,
+	query = '',
+}: {
+	entries: SearchEntry[]
+	query?: string
+}) {
 	const source = await readFile(searchScriptPath, 'utf8')
-	const listeners = {}
+	const listeners: Record<string, (ev: { target: { value: string } }) => void> = {}
 
 	const searchInput = {
 		value: '',
-		addEventListener(event, handler) {
+		addEventListener(event: string, handler: (ev: { target: { value: string } }) => void) {
 			listeners[event] = handler
 		},
 	}
@@ -36,7 +59,7 @@ async function runSearchScript({ entries, query = '' }) {
 	const windowLocation = new URL(
 		`https://kittygiraudel.com/blog/search/${query ? `?q=${query}` : ''}`,
 	)
-	const windowMock = {
+	const windowMock: WindowMock = {
 		location: windowLocation,
 		history: {
 			replaceState(_state, _title, href) {
@@ -50,10 +73,10 @@ async function runSearchScript({ entries, query = '' }) {
 		URLSearchParams,
 		console,
 		document: {
-			addEventListener(event, callback) {
+			addEventListener(event: string, callback: () => void) {
 				if (event === 'DOMContentLoaded') callback()
 			},
-			getElementById(id) {
+			getElementById(id: string) {
 				if (id === 'search-input') return searchInput
 				if (id === 'results-container') return resultsContainer
 				return null
@@ -68,7 +91,7 @@ async function runSearchScript({ entries, query = '' }) {
 	})
 
 	vm.runInContext(source, context)
-	await new Promise(resolve => setImmediate(resolve))
+	await new Promise<void>(resolve => setImmediate(resolve))
 
 	return {
 		searchInput,

@@ -4,6 +4,7 @@
 		"target": "ESNext",
 		"moduleResolution": "NodeNext",
 		"skipLibCheck": true,
+		"allowJs": true,
 		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"noEmit": true

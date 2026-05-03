@@ -1,33 +1,37 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { load } from 'cheerio'
+import { type CheerioAPI, load } from 'cheerio'
 import siteData from '../data/site.js'
-import { readText } from './helpers/site-paths.mjs'
+import { readText } from './helpers/site-paths.ts'
 
 const siteAuthor = siteData.author
 const siteUrl = 'https://kittygiraudel.com'
 
-/**
- * @param {import('cheerio').CheerioAPI} $
- * @param {string} name
- */
-function metaName($, name) {
+type OgType = 'article' | 'website'
+
+type HeadSpec = {
+	path: string
+	title: string
+	description: string
+	author: string
+	ogType: OgType
+	ogImage?: string
+	keywords?: string | null
+	documentTitle?: string
+	markdownAlternate?: boolean
+	softwareSourceCode?: boolean
+	itemList?: boolean
+}
+
+function metaName($: CheerioAPI, name: string): string | undefined {
 	return $(`head meta[name="${name}"]`).attr('content')
 }
 
-/**
- * @param {import('cheerio').CheerioAPI} $
- * @param {string} property
- */
-function metaProperty($, property) {
+function metaProperty($: CheerioAPI, property: string): string | undefined {
 	return $(`meta[property="${property}"]`).attr('content')
 }
 
-/**
- * @param {string} [label] built output path (for assertion messages)
- * @returns {string} resolved canonical URL (for og:url etc.)
- */
-function assertCanonicalLink($, siteUrl, path, label = '') {
+function assertCanonicalLink($: CheerioAPI, siteUrl: string, path: string, label = ''): string {
 	const origin = new URL(siteUrl)
 	const expected = new URL(path, origin.origin).toString()
 	const prefix = label ? `${label}: ` : ''
@@ -38,32 +42,15 @@ function assertCanonicalLink($, siteUrl, path, label = '') {
 		`${prefix}should have exactly one <link rel="canonical"> in <head>`,
 	)
 	const canonicalHref = canonicalLinks.attr('href')
-	assert.ok(/^https?:\/\//.test(canonicalHref), `${prefix}canonical href should be absolute`)
+	assert.ok(
+		canonicalHref && /^https?:\/\//.test(canonicalHref),
+		`${prefix}canonical href should be absolute`,
+	)
 	assert.equal(canonicalHref, expected)
 	return expected
 }
 
-/**
- * Asserts global `<head>` elements from `head.liquid`, page metadata, plus
- * optional checks outside `<head>` (e.g. post layout markdown `alternate`).
- *
- * @param {import('cheerio').CheerioAPI} $
- * @param {string} siteUrl homepage URL without trailing slash (`data/site.js`)
- * @param {{
- *   path: string
- *   title: string
- *   description: string
- *   author: string
- *   ogType: 'article' | 'website'
- *   ogImage?: string
- *   keywords?: string | null
- *   documentTitle?: string
- *   markdownAlternate?: boolean
- *   softwareSourceCode?: boolean
- *   itemList?: boolean
- * }} spec
- */
-function assertHeadMetadata($, siteUrl, spec) {
+function assertHeadMetadata($: CheerioAPI, siteUrl: string, spec: HeadSpec): void {
 	const documentTitle = spec.documentTitle ?? `${spec.title} | ${siteAuthor}`
 	const canonical = assertCanonicalLink($, siteUrl, spec.path)
 	const expectedSocialImage = spec.ogImage
@@ -159,7 +146,10 @@ function assertHeadMetadata($, siteUrl, spec) {
 	assert.ok(rss.length, 'head should link to the RSS feed')
 	const rssHref = rss.attr('href')
 	const expectedRss = new URL('/rss/index.xml', siteData.url).toString()
-	assert.ok(/^https?:\/\//.test(rssHref), 'RSS alternate href in <head> should be absolute')
+	assert.ok(
+		rssHref && /^https?:\/\//.test(rssHref),
+		'RSS alternate href in <head> should be absolute',
+	)
 	assert.equal(rssHref, expectedRss, 'RSS alternate href should match site URL + /rss/index.xml')
 
 	// Markdown Alternate
@@ -245,26 +235,35 @@ test('page head: project', async () => {
 		softwareSourceCode: true,
 	})
 
-	let software = null
-	$('script[type="application/ld+json"]').each((_, el) => {
+	let software: Record<string, unknown> | null = null
+	for (const el of $('script[type="application/ld+json"]').toArray()) {
 		try {
-			const data = JSON.parse($(el).text())
-			if (data['@type'] === 'SoftwareSourceCode') software = data
+			const data = JSON.parse($(el).text()) as Record<string, unknown>
+			if (data['@type'] === 'SoftwareSourceCode') {
+				software = data
+				break
+			}
 		} catch {
 			// ignore
 		}
-	})
+	}
 	assert.ok(software, 'project page should include SoftwareSourceCode JSON-LD')
 	assert.equal(software.name, 'A11y-dialog')
 	assert.equal(software.codeRepository, 'https://github.com/KittyGiraudel/a11y-dialog')
 	assert.equal(software.url, 'https://a11y-dialog.netlify.app/')
-	assert.equal(software.mainEntityOfPage['@id'], `${siteUrl}/projects/a11y-dialog/`)
-	assert.equal(software.author['@type'], 'Person')
-	assert.equal(software.author.name, siteAuthor)
+	assert.equal(
+		(software.mainEntityOfPage as Record<string, unknown>)['@id'],
+		`${siteUrl}/projects/a11y-dialog/`,
+	)
+	assert.equal((software.author as Record<string, unknown>)['@type'], 'Person')
+	assert.equal((software.author as Record<string, unknown>).name, siteAuthor)
 	assert.ok(Array.isArray(software.keywords))
-	assert.ok(software.keywords.includes('TypeScript'))
-	assert.equal(software.mainEntityOfPage['@type'], 'WebPage')
-	assert.equal(software.mainEntityOfPage['@id'], `${siteUrl}/projects/a11y-dialog/`)
+	assert.ok((software.keywords as string[]).includes('TypeScript'))
+	assert.equal((software.mainEntityOfPage as Record<string, unknown>)['@type'], 'WebPage')
+	assert.equal(
+		(software.mainEntityOfPage as Record<string, unknown>)['@id'],
+		`${siteUrl}/projects/a11y-dialog/`,
+	)
 })
 
 test('page head: projects index (ItemList)', async () => {
@@ -284,26 +283,36 @@ test('page head: projects index (ItemList)', async () => {
 		itemList: true,
 	})
 
-	let itemList = null
-	$('script[type="application/ld+json"]').each((_, el) => {
+	let itemList: Record<string, unknown> | null = null
+	for (const el of $('script[type="application/ld+json"]').toArray()) {
 		try {
-			const data = JSON.parse($(el).text())
-			if (data['@type'] === 'ItemList') itemList = data
+			const data = JSON.parse($(el).text()) as Record<string, unknown>
+			if (data['@type'] === 'ItemList') {
+				itemList = data
+				break
+			}
 		} catch {
 			// ignore
 		}
-	})
+	}
 	assert.ok(itemList, 'projects index should include ItemList JSON-LD')
 	assert.equal(itemList.name, 'Open-Source Projects')
-	assert.ok(itemList.numberOfItems >= 1)
+	assert.ok((itemList.numberOfItems as number) >= 1)
 	assert.ok(Array.isArray(itemList.itemListElement))
-	assert.equal(itemList.itemListElement.length, itemList.numberOfItems)
-	const first = itemList.itemListElement[0]
+	assert.equal((itemList.itemListElement as unknown[]).length, itemList.numberOfItems as number)
+	const first = (itemList.itemListElement as Record<string, unknown>[])[0]
 	assert.equal(first['@type'], 'ListItem')
 	assert.equal(first.position, 1)
-	assert.equal(first.item['@type'], 'WebPage')
-	assert.ok(first.item['@id'].startsWith(siteUrl))
-	assert.ok(typeof first.item.name === 'string' && first.item.name.length > 0)
+	assert.equal((first.item as Record<string, unknown>)['@type'], 'WebPage')
+	const firstItemId = (first.item as Record<string, unknown>)['@id']
+	assert.ok(
+		typeof firstItemId === 'string' && firstItemId.startsWith(siteUrl),
+		'ListItem URL should be under the site origin',
+	)
+	assert.ok(
+		typeof (first.item as Record<string, unknown>).name === 'string' &&
+			((first.item as Record<string, unknown>).name as string).length > 0,
+	)
 })
 
 test('page head: regular post', async () => {
@@ -332,20 +341,24 @@ test('page head: regular post', async () => {
 		)
 	}
 
-	let blogPosting = null
-	$('script[type="application/ld+json"]').each((_, el) => {
+	let blogPosting: Record<string, unknown> | null = null
+	for (const el of $('script[type="application/ld+json"]').toArray()) {
 		try {
-			const data = JSON.parse($(el).text())
-			if (data['@type'] === 'BlogPosting') blogPosting = data
+			const data = JSON.parse($(el).text()) as Record<string, unknown>
+			if (data['@type'] === 'BlogPosting') {
+				blogPosting = data
+				break
+			}
 		} catch {
 			// ignore non-JSON-LD fragments
 		}
-	})
+	}
 	assert.ok(blogPosting, 'post page should include BlogPosting JSON-LD')
 	assert.ok(blogPosting.datePublished, 'BlogPosting should include datePublished')
 	if (blogPosting.dateModified) {
 		assert.ok(
-			Date.parse(blogPosting.dateModified) >= Date.parse(blogPosting.datePublished),
+			Date.parse(blogPosting.dateModified as string) >=
+				Date.parse(blogPosting.datePublished as string),
 			'BlogPosting dateModified should be >= datePublished when present',
 		)
 	}
