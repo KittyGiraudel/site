@@ -30,10 +30,10 @@ export default {
 		url: 'https://www.linkedin.com/posts/kitty-giraudel_dear-network-im-still-looking-for-my-next-activity-7451986756494663680-6Br8',
 	},
 	nav: [
-		{ path: '/blog/', label: 'Blog' },
+		{ path: '/blog/', label: 'Articles' },
 		{ path: '/snippets/', label: 'Snippets' },
 		{ path: '/projects/', label: 'Projects' },
-		{ path: '/talks/', label: 'Talks' },
+		{ path: '/talks/', label: 'Events' },
 		{ path: '/about/', label: 'About' },
 		{ path: '/resume/', label: 'Hire me' },
 	],
