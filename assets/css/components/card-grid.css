@@ -28,10 +28,10 @@
 		padding-inline: var(--vb-half);
 		--width: 100vw;
 		width: var(--width);
-		left: 50%;
-		right: 50%;
-		margin-left: calc(var(--width) / -2);
-		margin-right: calc(var(--width) / -2);
+		inset-inline-start: 50%;
+		inset-inline-end: 50%;
+		margin-inline-start: calc(var(--width) / -2);
+		margin-inline-end: calc(var(--width) / -2);
 	}
 }
 
@@ -58,6 +58,5 @@
 @keyframes fade-in {
 	from {
 		opacity: 0;
-		transform: scale(0.95);
 	}
 }
