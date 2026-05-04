@@ -105,7 +105,7 @@ test('structured data: projects index (ItemList)', async () => {
 
 	const itemList = findJsonLdByType($, 'ItemList')
 	assert.ok(itemList, 'projects index should include ItemList JSON-LD')
-	assert.equal(itemList.name, 'Open-Source Projects')
+	assert.equal(itemList.name, 'Side Projects')
 	assert.ok((itemList.numberOfItems as number) >= 1)
 	assert.ok(Array.isArray(itemList.itemListElement))
 	assert.equal((itemList.itemListElement as unknown[]).length, itemList.numberOfItems as number)

@@ -80,21 +80,21 @@ test('RSS feed is valid Atom with correct URLs', async () => {
 	}[]) {
 		// Basic data for each entry
 		assert.ok(entry.title, 'entry should have a title')
-		assert.ok(entry.id, 'entry should have an id')
-		assert.ok(entry.published, 'entry should have a <published> date')
-		assert.ok(entry.updated, 'entry should have an <updated> date')
-		assert.ok(entry.summary, 'entry should have a summary')
+		assert.ok(entry.id, `entry should have an id (${entry.title})`)
+		assert.ok(entry.published, `entry should have a <published> date (${entry.title})`)
+		assert.ok(entry.updated, `entry should have an <updated> date (${entry.title})`)
+		assert.ok(entry.summary, `entry should have a summary (${entry.title})`)
 
 		const publishedMs = assertParsesAsDate(entry.published)
 		const updatedMs = assertParsesAsDate(entry.updated)
 		assert.ok(
 			updatedMs >= publishedMs,
-			'entry <updated> should be >= <published> (same moment is ok)',
+			`entry <updated> should be >= <published> (same moment is ok) (${entry.title})`,
 		)
 		entryUpdatedMs.push(updatedMs)
 
 		const entryLinks = Array.isArray(entry.link) ? entry.link : [entry.link]
-		assert.ok(entryLinks.length > 0, 'entry should have at least one link')
+		assert.ok(entryLinks.length > 0, `entry should have at least one link (${entry.title})`)
 
 		const primaryLink = entryLinks[0] as { '@_href': string; '@_rel'?: string; '@_type'?: string }
 		const primaryHref = primaryLink['@_href']

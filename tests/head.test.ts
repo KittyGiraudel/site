@@ -229,7 +229,7 @@ test('page head: projects index (ItemList)', async () => {
 
 	assertHeadMetadata($, siteUrl, {
 		path: '/projects/',
-		title: 'Open-Source Projects',
+		title: 'Side Projects',
 		description:
 			'A list of all of Kitty Giraudel’s noteworthy open-sourced projects, all hosted on GitHub.',
 		author: siteAuthor,
