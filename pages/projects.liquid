@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Open-Source Projects
+title: Side Projects
 description: 'A list of all of Kitty Giraudel’s noteworthy open-sourced projects, all hosted on GitHub.'
 keywords:
   - projects
@@ -46,8 +46,23 @@ I have done my fair share of open-source work over the years. I contributed to
 many projects, and started a few of my own. You can find a list of all projects
 I’ve taken part in over the years. Fair warning: many of them are no longer 
 maintained.
+## Personal projects
 {% endmarkdown %}
 
 {% render "card_grid.liquid",
   items: project_cards
 %}  
+
+{% markdown %}
+## Open-source contributions
+Besides my own projects, I have also issued small contributions to noteworthy open-source projects: 
+- A bug fix in [Cypress](https://github.com/cypress-io/cypress/pull/720)
+- A localization and documentation improvement in AirBnB’s [react-dates](https://github.com/react-dates/react-dates/pull/1171)
+- An accessibility improvement in [Ant Design](https://github.com/ant-design/ant-design/pull/57695)
+- An accessibility improvement in [Next.js](https://github.com/vercel/next.js/pull/31147)
+- An accessibility improvement in [Slate](https://github.com/ianstormtaylor/slate/pull/5100)
+- Multiple accessibility improvements in [Sanity](https://github.com/sanity-io/sanity/pulls?q=is%3Apr+author%3Akittygiraudel+is%3Aclosed)
+- Multiple documentation and tooling improvements in [Fela](https://github.com/robinweser/fela/pulls?q=is%3Apr+author%3Akittygiraudel+is%3Aclosed)
+- Some minor enhancements in [Knip](https://github.com/webpro-nl/knip/pulls?q=is%3Apr+author%3Akittygiraudel+is%3Aclosed)
+- … and [more](https://github.com/search?q=author%3Akittygiraudel+++++&type=pullrequests&query=author%3Akittygiraudel+is%3Apr&state=closed).
+{% endmarkdown %}
