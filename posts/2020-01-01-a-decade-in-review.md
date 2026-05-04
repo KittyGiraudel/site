@@ -32,7 +32,7 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 - 👀 I got to endorse and be a reviewer for “CSS Secrets”, Lea Verou’s bestselling CSS book, which is not nothing for me given she is one of the figures who inspired me to pursue a career in web development.
 - 📝 I [wrote over 250 articles](/blog/), some on highly regarded websites such as CSS-Tricks, Codrops, Tuts+ and SitePoint (read [how I got to write for the web](/2014/05/26/how-i-came-to-write-for-the-web/)).
 - 🏦 I worked in 4 different companies across 2 countries, 3 of them being banks or bank-related.
-- 🏆 I [got short-listed for Developer of the Year 2015](https://thenetawards.com/vote/developer/) by Net Awards (although I should have been in the “Young Developer of the Year” category at that time, since I was under 25).
+- 🏆 I [got short-listed for Developer of the Year 2015](https://web.archive.org/web/20150907192516/https://thenetawards.com/vote/developer/) by Net Awards (although I should have been in the “Young Developer of the Year” category at that time, since I was under 25).
 - 🤓 I have been a Google Developer Expert in web development.
 - 🎤 I [spoke at a dozen conferences](/talks/) over Europe.
 - 👩‍💻 I [authored or co-authored over 40 open-source projects](/projects/), such as [Sass Guidelines](/projects/sass-guidelines/), [SassDoc](/projects/sassdoc/) and [Browserhacks](/projects/browserhacks/).
