@@ -216,8 +216,10 @@ button.Navigation__link:focus-visible {
 	display: flex; /* 1 */
 	opacity: 1;
 	transform: translate(0, 0) scale(1);
+}
 
-	@starting-style {
+@starting-style {
+	.Navigation[popover]:popover-open {
 		opacity: 0;
 		transform: translate(1rem, -1rem) scale(0.95);
 	}

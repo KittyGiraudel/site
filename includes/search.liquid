@@ -7,13 +7,63 @@
   JavaScript in your browser to be able to use the provided search engine.
 </noscript>
 
-<form class="Search" id="search-container" onsubmit="return false">
-  <div role="search" aria-label="Search">
-    <label for="search-input" class="Search__label visually-hidden">Search</label>
-    <input type="text" id="search-input" class="Search__input" placeholder="Search blog posts…" autofocus required aria-controls="results-container">
-  </div>
-</form>
+<search class="Search">
+  <form id="search-form" action="/blog/search/" method="get">
+    <label for="search-input" class="Search__label visually-hidden">
+      Search blog archive
+    </label>
+    <input
+      type="search"
+      id="search-input"
+      class="Search__input"
+      name="q"
+      autocomplete="off"
+      enterkeyhint="search"
+      placeholder="Search blog articles…"
+      autofocus
+      spellcheck="false"
+      aria-describedby="search-input-hint"
+      aria-controls="search-results-region"
+    />
+    <p id="search-input-hint" class="visually-hidden">
+      Results appear in the search results section as you type.
+    </p>
+  </form>
 
-<ul id="results-container" class="Search__results List NoListMarker" role="region" aria-live="polite" aria-labelledby="search-results-title">
-  <h2 class="visually-hidden" id="search-results-title">Search results</h2>
-</ul>
+  <section
+    id="search-results-region"
+    aria-labelledby="search-results-title"
+    aria-busy="true"
+  >
+    <h2 class="visually-hidden" id="search-results-title">Search results</h2>
+    <ul
+      id="search-results-list"
+      class="Search__results List NoListMarker"
+      role="list"
+      aria-live="polite"
+      aria-relevant="additions removals"
+    ></ul>
+    <p id="no-results" class="Search__empty Callout Callout--warning" hidden role="status">
+      Unfortunately, no results were found for your search. If you think this is
+      a mistake, please reach out on
+      <a href="https://github.com/kittygiraudel/site/issues">GitHub</a>.
+    </p>
+    <p id="search-index-error" class="Callout Callout--warning Search__error" hidden role="alert">
+      Search could not be loaded. Please refresh the page or try again later.
+    </p>
+  </section>
+</search>
+
+<template id="search-result-template">
+  <li class="List__item">
+    <span class="List__secondary-content"></span>
+    <a class="List__primary-content" href=""></a>
+    <ul class="Tags NoListMarker" hidden></ul>
+  </li>
+</template>
+
+<template id="search-tag-template">
+  <li class="Tag">
+    <a class="Tag__link" href=""></a>
+  </li>
+</template>
