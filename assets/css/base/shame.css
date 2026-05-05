@@ -3,4 +3,12 @@
  */
 .cp_embed_wrapper {
 	margin: var(--vb) auto;
+	position: relative;
+}
+
+@media (min-width: 1024px) {
+	.cp_embed_wrapper {
+		width: calc(100% + var(--margin-offset) * 2);
+		inset-inline-start: calc(var(--margin-offset) * -1);
+	}
 }
