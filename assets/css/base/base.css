@@ -1,3 +1,42 @@
+/**
+ * Italic “&” (U+0026). `font-style: normal` keeps this face in play for
+ * ordinary (non-<em>) text; true italic still uses real italic faces. Use a
+ * synthetic `font-family` (not `Baskerville`) so browsers keep matching system
+ * Baskerville for other glyphs; the synth name is first in `--body-font`.
+ * If `local("Baskerville*")` is absent, these rules no-op.
+ */
+@font-face {
+	font-family: "Baskerville Ampersand";
+	src: local("Baskerville Italic");
+	font-weight: 400;
+	font-style: normal;
+	unicode-range: U+0026;
+}
+
+@font-face {
+	font-family: "Baskerville Ampersand";
+	src: local("Baskerville Bold Italic");
+	font-weight: 700;
+	font-style: normal;
+	unicode-range: U+0026;
+}
+
+/**
+ * When it comes to fonts:
+ * | Font | Windows | macOS | Linux |
+ * | ---- | ------- | ----- | ----- |
+ * | Baskerville            | ✅ | ✅ | ❌ |
+ * | Times New Roman        | ✅ | ✅ | ⚠️ |
+ * | Palatino               | ✅ | ⚠️ | ⚠️ |
+ * | Bookman                | ⚠️ | ⚠️ | ⚠️ |
+ * | New Century Schoolbook | ❌ | ⚠️ | ⚠️ |
+ * | Lucida Bright          | ❌ | ❌ | ⚠️ |
+ * | Perpetua               | ⚠️ | ❌ | ❌ |
+ *
+ * ✅ = Preinstalled,
+ * ⚠️ = Available via Office/iWork or package manager,
+ * ❌ = Not natively available.
+ */
 :root {
 	color-scheme: light dark;
 
@@ -7,6 +46,10 @@
 	--embed-background-pink: light-dark(#fffafd, #322d2f);
 	--embed-background-blue: light-dark(#f3f8fc, #303132);
 	--code-font: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
+	--typography-font:
+		"Lucida Bright", "Perpetua", "Times", "Times New Roman", "Palatino", "Bookman",
+		"New Century Schoolbook", serif;
+	--body-font: "Baskerville Ampersand", "Baskerville", var(--typography-font);
 	--vb: 1.5em;
 	--vb-half: calc(var(--vb) / 2);
 	--vb-third: calc(var(--vb) / 3);
@@ -61,16 +104,7 @@ html {
  */
 body {
 	margin: 0; /* 1 */
-	font:
-		1.25rem / 1.5 "Baskerville",
-		"Lucida Bright",
-		"Perpetua",
-		"Times",
-		"Times New Roman",
-		"Palatino",
-		"Bookman",
-		"New Century Schoolbook",
-		serif;
+	font: 1.25rem / 1.5 var(--body-font);
 	font-size: min(max(1.25rem, 4vw), 1.4rem); /* 2 */
 	color: light-dark(#444, #eee);
 	background-color: var(--page-background);

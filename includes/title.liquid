@@ -16,10 +16,5 @@
   {% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}
   {% if style %}style="{{ style }}"{% endif %}
 >
-  {% comment %}
-   The Baskerville font that we use across the site has a *really* pretty amper-
-   sand character, but only in italic. So this wraps any ampersand in italics in
-   the title.
-  {% endcomment %}
-  {{ title | replace: "&", "<span style='font-style: italic;'>&</span>" }}
+  {{ title }}
 </h1>

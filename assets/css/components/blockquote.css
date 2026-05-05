@@ -23,7 +23,7 @@ blockquote::after {
 	position: absolute;
 	font-size: 1000%;
 	opacity: 0.2;
-	font-family: Baskerville, serif;
+	font-family: var(--typography-font);
 	font-weight: bold;
 	line-height: 1;
 	z-index: 1;
