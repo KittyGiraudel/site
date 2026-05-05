@@ -24,3 +24,28 @@
 	font-size: 75%;
 	font-family: var(--code-font);
 }
+
+.List__item[data-index] {
+	position: relative;
+}
+
+@media (min-width: 1024px) {
+	.List__item[data-index]::before {
+		content: "#" attr(data-index);
+		font-variant-numeric: tabular-nums;
+		position: absolute;
+		right: calc(100% + 1em);
+		top: 50%;
+		transform: translateY(-50%) rotate(-0.25turn) translateY(1em);
+		opacity: 0.4;
+		font-size: 1.5em;
+		font-family: var(--code-font);
+		letter-spacing: 0.15em;
+		transition: opacity 250ms;
+		color: #ccbdbd;
+	}
+
+	.List__item:is(:hover, :focus-within)::before {
+		opacity: 0.8;
+	}
+}

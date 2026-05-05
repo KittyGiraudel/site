@@ -1,4 +1,4 @@
-import type { PostTemplateData } from '../build/eleventy.ts'
+import type { Post, PostTemplateData } from '../build/eleventy.ts'
 import utilities from '../build/utilities.ts'
 
 const config = {
@@ -28,6 +28,20 @@ const config = {
 			const inputPath = data.page?.inputPath
 			const key = inputPath?.replace(/^\.\//, '')
 			return key ? data.git?.[key] : undefined
+		},
+		/**
+		 * 1-based position in publication order: first post ever = 1, latest = N.
+		 * Matches the order of `collections.posts` (newest first): index `i` →
+		 * number `length - i`.
+		 */
+		archive_post_number(data: PostTemplateData & { collections?: { posts: Post[] } }) {
+			const posts = data.collections?.posts
+			const rawPath = data.page?.inputPath
+			if (!posts?.length || !rawPath) return undefined
+			const needle = rawPath.replace(/^\.\//, '')
+			const index = posts.findIndex(p => (p.inputPath ?? '').replace(/^\.\//, '') === needle)
+			if (index < 0) return undefined
+			return posts.length - index
 		},
 	},
 	permalink(data: PostTemplateData) {

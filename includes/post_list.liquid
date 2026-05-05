@@ -10,7 +10,7 @@
     {% assign url  = item.url %}
     {% assign data = item.data %}
     
-    <li class="List__item">
+    <li class="List__item"{% if data.archive_post_number %} data-index="{{ data.archive_post_number }}"{% endif %}>
       <span class="List__secondary-content">
         {{ item.date | time }}
         {% if data.guest %} by {{ data.guest }}{% endif %}
