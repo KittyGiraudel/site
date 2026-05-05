@@ -14,7 +14,7 @@ Over the years, I have tweeted about [Fela](https://fela.js.org) a few times. An
 
 The year is 2016. [Mike Smart](https://twitter.com/smartmike) and I just joined N26 in Berlin to revamp their web strategy, hire a team and build a platform that will last longer than the previous one. With but a rough idea in mind of what we wanted to achieve, we had a mountain of decisions to take. Amongst them, how to author our styles.
 
-We originally started with [CSS modules](https://github.com/css-modules/css-modules). This was principally motivated by the fact that I was under a writing contract for a book on the matter at the time. Don’t waste your time looking for it, it was neither written nor published and given CSS modules has lost a lot of its traction in favour of more modern solutions, maybe it’s for the best after all. CSS modules also came with [create-react-app](https://create-react-app.dev/) if I’m not mistaken, which is what we started with (before ejecting literally during our first week).
+We originally started with [CSS modules](https://github.com/css-modules/css-modules). This was principally motivated by the fact that I was under a writing contract for a book on the matter at the time. Don’t waste your time looking for it, it was neither written nor published and given CSS modules has lost a lot of its traction in favor of more modern solutions, maybe it’s for the best after all. CSS modules also came with [create-react-app](https://create-react-app.dev/) if I’m not mistaken, which is what we started with (before ejecting literally during our first week).
 
 There were good things and bad things with CSS modules. On one hand, writing plain CSS was nice and we knew it would come with virtually no learning curve for people joining us down the line. On the other, style composition was a little clumsy (probably because we didn’t know how to do it well) and variables were a mix between Sass and JavaScript imports, but neither really.
 
@@ -53,7 +53,7 @@ If I had to describe it, I would say Fela is an ecosystem of styling utilities t
 
 ## What’s good about it?
 
-Today, Fela is one CSS-in-JS library amongst others, and to some extent they all more or less do the same things: dynamic styling, performant rendering, optimisations… Still, there are a few things where Fela shines.
+Today, Fela is one CSS-in-JS library amongst others, and to some extent they all more or less do the same things: dynamic styling, performant rendering, optimizations… Still, there are a few things where Fela shines.
 
 ### Transparent atomic output
 
@@ -98,7 +98,7 @@ Now the output would look like this (prettified for illustration):
 <p class="a b d">I’m pink!</p>
 ```
 
-While this might look like unnecessary optimisation on such a reduced example, it does matter on projects growing fast and large. This effectively caps the amount of CSS that gets shipped to the browser to the amount of different CSS declarations. Of course, there will be quite a lot (every different padding, margin, colour and so on) but there will be an upper limit. Particularly when following a design system or component library where styling is dictated by a strict set of reusable rules.
+While this might look like unnecessary optimization on such a reduced example, it does matter on projects growing fast and large. This effectively caps the amount of CSS that gets shipped to the browser to the amount of different CSS declarations. Of course, there will be quite a lot (every different padding, margin, color and so on) but there will be an upper limit. Particularly when following a design system or component library where styling is dictated by a strict set of reusable rules.
 
 This is what makes Fela really stand out from other similar CSS-in-JS libraries. Atomic CSS happens silently and out of the box without having to think in an atomic way. No need to remember atomic class names, or force a specific naming convention; keep writing CSS as always (except, well, as JavaScript objects), and benefit from highly performant output.
 
@@ -106,9 +106,9 @@ This is what makes Fela really stand out from other similar CSS-in-JS libraries.
 
 To this day, if there is one thing that I always found impressive about Fela is its [rich ecosystem of utilities and plugins](https://github.com/robinweser/fela/tree/master/packages), especially considering they are almost all authored and maintained by Robin Weser, the original creator, and part of the main lerna repo.
 
-Even pretty advanced behaviour such as [responsive properties](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-responsive-value), properties whose value varies across pre-defined breakpoints, or [extensive testing of state-specific styles](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-simulate) (e.g. hover) are already built and ready to use.
+Even pretty advanced behavior such as [responsive properties](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-responsive-value), properties whose value varies across pre-defined breakpoints, or [extensive testing of state-specific styles](https://github.com/robinweser/fela/tree/master/packages/fela-plugin-simulate) (e.g. hover) are already built and ready to use.
 
-And if something happens to be missing, Fela is very easy to customise with [plugins](https://fela.js.org/docs/advanced/Plugins.html) and [enhancers](https://fela.js.org/docs/advanced/Enhancers.html). Both are essentially functions to customise style processing.
+And if something happens to be missing, Fela is very easy to customize with [plugins](https://fela.js.org/docs/advanced/Plugins.html) and [enhancers](https://fela.js.org/docs/advanced/Enhancers.html). Both are essentially functions to customize style processing.
 
 ### Extensive RTL support
 
@@ -248,7 +248,7 @@ export default createRenderer({
 
 [react-dates](https://github.com/airbnb/react-dates) is a fantastic date-picker library from AirBnB. It’s built on top of Aphrodite and comes with monolithic class names by default in order to be unopinionated regarding the styling layer.
 
-It took us some time to figure out how to integrate it properly with Fela so styles are applied atomically with Fela (and therefore optimised) instead of through the original CSS classes. Fortunately, react-dates offers a way to customise the rendering process with `react-with-styles` interfaces.
+It took us some time to figure out how to integrate it properly with Fela so styles are applied atomically with Fela (and therefore optimized) instead of through the original CSS classes. Fortunately, react-dates offers a way to customize the rendering process with `react-with-styles` interfaces.
 
 ```js
 import ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet'

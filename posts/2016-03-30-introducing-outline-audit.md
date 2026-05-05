@@ -36,7 +36,7 @@ One last thing to point out on this topic: the theory is so far away from the cu
 
 ## Alright, what about the script?
 
-[Outline Audit](https://github.com/edenspiekermann/outline-audit) is a small JavaScript program that analyses the document outline of the current page, and emits warnings in the developer console when something looks odd.
+[Outline Audit](https://github.com/edenspiekermann/outline-audit) is a small JavaScript program that analyzes the document outline of the current page, and emits warnings in the developer console when something looks odd.
 
 ## How to use it?
 

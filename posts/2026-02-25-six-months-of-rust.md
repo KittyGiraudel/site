@@ -72,7 +72,7 @@ On the bright side, if the code ever compiles, then it most likely runs. Runtime
 
 I suppose the price to pay to get such a good compiler is time. Every check that’s shifted left at compilation time adds to, well, compilation time. Our server is relatively small, and our machine is quite powerful, and it can still take several minutes to do a clean build with 8 vCPUs. I can only imagine how long it takes to compile very large Rust applications with many dependencies.
 
-I think I properly realised that when setting up a test server for us. I purchased a rather cheap machine since that server would have essentially no traffic. But when it came to actually compiling and deploying the Rust binary (which happens a lot for testing purposes), it would take 5–10 minutes. That’s because the machine I bought had only 2 vCPUs, so compilation could not be parallelized efficiently.
+I think I properly realized that when setting up a test server for us. I purchased a rather cheap machine since that server would have essentially no traffic. But when it came to actually compiling and deploying the Rust binary (which happens a lot for testing purposes), it would take 5–10 minutes. That’s because the machine I bought had only 2 vCPUs, so compilation could not be parallelized efficiently.
 
 ## Error handling done right
 
@@ -125,7 +125,7 @@ async function main() {
 }
 ```
 
-Time and time again, I realise how elegant error management is in Rust. Between the `Result` enum that encapsulates either outcomes, the `match` keyword, the `?` operator shortcut for error propagation, and more… It’s just very well thought out, and it makes complex programs convenient and _readable_.
+Time and time again, I realize how elegant error management is in Rust. Between the `Result` enum that encapsulates either outcomes, the `match` keyword, the `?` operator shortcut for error propagation, and more… It’s just very well thought out, and it makes complex programs convenient and _readable_.
 
 ## Locks and deadlocks
 

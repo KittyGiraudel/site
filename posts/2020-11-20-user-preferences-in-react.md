@@ -99,7 +99,7 @@ const useColorScheme = () =>
 
 ---
 
-I hope you like the idea! Adapting to users’ preferences is not only a good design principle, it can also help with accessibility (for instance, disabled animations for people suffering from vestibular disorder). If you are going to rely on the operating system’s preferences, be sure to provide a way to still customise them on a per website basis.
+I hope you like the idea! Adapting to users’ preferences is not only a good design principle, it can also help with accessibility (for instance, disabled animations for people suffering from vestibular disorder). If you are going to rely on the operating system’s preferences, be sure to provide a way to still customize them on a per website basis.
 
 If you are interested in the intersection of React code and web accessibility, be sure to have a look at the following articles:
 

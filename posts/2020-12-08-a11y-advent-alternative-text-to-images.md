@@ -7,7 +7,7 @@ tags:
 
 Ah, alt text! Alternative text to images has been an age old topic on the web. The goal is to provide a description of the image in case it fails to load or for people who are not able to perceive images and rely on textual content to get their meaning. It is very important for people using screen-readers, as well as search engines.
 
-There are countless resources on the web about authoring good alternative texts to images, my favourite of all is [this ultimate guide by Daniel Göransson](https://axesslab.com/alt-texts/), so I will just give a bit of a recap.
+There are countless resources on the web about authoring good alternative texts to images, my favorite of all is [this ultimate guide by Daniel Göransson](https://axesslab.com/alt-texts/), so I will just give a bit of a recap.
 
 - The alternative text is supposed to describe the image. This is not the appropriate place for credits or attributions. This is not the appropriate place for keywords stuffing (no place is).
 - Focus on the main content and don’t go overboard with the details. Make it as concise and to the point as possible.

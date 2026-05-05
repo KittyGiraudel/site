@@ -11,7 +11,7 @@ After [a tweet about how I like Git but find it hard to use](https://twitter.com
 
 ## Getting information
 
-I quickly realised there is no way to be comfortable with command-line Git in the default OS terminal. On macOS, I recommend installing iTerm2 and [pimping it to display the branch name as part of the prompt](https://github.com/KittyGiraudel/dotfiles/blob/main/.zshrc#L21-L28). Also, colors. I mean, look at that beauty:
+I quickly realized there is no way to be comfortable with command-line Git in the default OS terminal. On macOS, I recommend installing iTerm2 and [pimping it to display the branch name as part of the prompt](https://github.com/KittyGiraudel/dotfiles/blob/main/.zshrc#L21-L28). Also, colors. I mean, look at that beauty:
 
 ![A display of my Git prompt including the branch name](/assets/images/how-i-use-git/git-prompt.png)
 
@@ -66,7 +66,7 @@ To undo a commit entirely, I created a `git undo` alias (short for `git reset --
 
 To move things out of the index (the opposite of `git add`), I have `git wait` (for `git reset HEAD`). And to remove things from the index entirely, I aliased `git checkout .` into `git abort`. I also had it under `git nope` for a while. Not sure why I ever changed though, `git nope` is gold.
 
-So let’s say I realised my last commit was complete poppycock and I want to undo all of it and never speak of it ever again:
+So let’s say I realized my last commit was complete poppycock and I want to undo all of it and never speak of it ever again:
 
 ```bash
 $ git undo  # This undoes the last commit
@@ -92,7 +92,7 @@ When working on a branch, I commit frequently and tend to rewrite my commits man
 
 To achieve that, I rebase a lot. I know a lot of people don’t like rebasing, and that’s a shame. Rebase is an outstanding tool to make sure the history of the branch you work on is meaningful. I don’t want to open that can of worms, but if you’d like my take on rebasing vs merging: rebase feature branches until they are clean, merge them into main branches. Been running like this for years including on projects with multiple developers and it’s been great.
 
-Anyway, the point is: I do a lot of interactive rebases. My usual workflow looks like this: do a bit of work, do a commit, realise I forgot something therefore update the history (no “fix” commit with me). Eventually push the history onto the remote.
+Anyway, the point is: I do a lot of interactive rebases. My usual workflow looks like this: do a bit of work, do a commit, realize I forgot something therefore update the history (no “fix” commit with me). Eventually push the history onto the remote.
 
 If the commit I want to update is the very last one in history, that’s rather easy: there is `git amend` (short for `git commit --amend --no-edit`). This simply adds what’s in my index to the last commit, without even asking me if I want to change the message.
 

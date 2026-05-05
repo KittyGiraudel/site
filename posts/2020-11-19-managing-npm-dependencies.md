@@ -73,7 +73,7 @@ You might be familiar with third-party tools like [Dependabot](https://dependabo
 
 - They require some initial setup.
 - They create a lot of noise, and a permanent stream of updates.
-- They could fail to pass security approvals in some organisation.
+- They could fail to pass security approvals in some organization.
 
 That’s why a long time ago I authored [a small Node program to look for outdated dependencies](https://github.com/KittyGiraudel/dependency-checker). Similar packages exist as well, this is just my take on it.
 

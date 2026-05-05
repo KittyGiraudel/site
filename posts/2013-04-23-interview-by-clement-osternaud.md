@@ -35,7 +35,7 @@ I also think we really have to love experimenting and trying new things. We work
 
 ## What do you like the most in your job? And the least?
 
-My favourite thing in my job has to be **learning things**. It’s definitely because I’m passionate that I’m comfortable with some things today. As good as my web teacher has been, I don’t owe him my skills (not all of them at least). Long story short, I enjoy reading web related stuff.
+My favorite thing in my job has to be **learning things**. It’s definitely because I’m passionate that I’m comfortable with some things today. As good as my web teacher has been, I don’t owe him my skills (not all of them at least). Long story short, I enjoy reading web related stuff.
 
 Beyond reading, it’s great to be able to easily discover and learn new things like CSS features, JavaScript APIs, preprocessors and much more (especially thanks to tools like [CodePen](https://codepen.io) and [GitHub](https://github.com)). And if we ever happen to use what we’ve learnt in real-life projects, then it’s even better!
 

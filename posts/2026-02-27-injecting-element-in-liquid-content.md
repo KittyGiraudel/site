@@ -35,7 +35,7 @@ Besides the code smell, there was another problem with this implementation: a lo
 
 Beyond these cases, articles could also start with something like a table of contents (`<ol>`) or a citation (`blockquote`), or something else. It would be good to have a more generic solution.
 
-I’ve quickly come to realise that sticking to Liquid for that is not going to work. My requirements are a little too complex for such a simple templating language.
+I’ve quickly come to realize that sticking to Liquid for that is not going to work. My requirements are a little too complex for such a simple templating language.
 
 ## Custom filter
 

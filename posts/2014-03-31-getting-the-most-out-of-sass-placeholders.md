@@ -95,7 +95,7 @@ This will result in the following CSS output:
 }
 ```
 
-Until now, quite nice isn’t it? Even if we are using a mixin, we have the behaviour of a placeholder since both selectors get merged into a single one, like extending a placeholder would do.
+Until now, quite nice isn’t it? Even if we are using a mixin, we have the behavior of a placeholder since both selectors get merged into a single one, like extending a placeholder would do.
 
 Now let’s imagine we need to have a clear fix at a certain breakpoint:
 

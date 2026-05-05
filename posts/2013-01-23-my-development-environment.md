@@ -57,7 +57,7 @@ However I would like to move forward, thus I am currently learning how to do som
 
 Well, I am a huge fan of this **design in the browser** thing, plus I am very sucky when it comes to any designing tool. I mean you, Photoshop. So really, I hardly use Photoshop, unless I am forced to.
 
-However I have the good luck to have an Adobe Creative Suite on most of my development workflows. Work provides official liences, we have student licences at school and I have a student licence at home as well.
+However I have the good luck to have an Adobe Creative Suite on most of my development workflows. Work provides official liences, we have student licenses at school and I have a student license at home as well.
 
 You may find this silly but 9 out of 10 times, I use Photoshop to resize and save a screenshot I just took. Yeah… A $3000 software to make screenshots is a bit expensive I guess.
 

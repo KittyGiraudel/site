@@ -13,7 +13,7 @@ Ultimately, it is difficult to figure out what people will feel uncomfortable wi
 
 - Remove the notion of urgency. The idea that something is only available for a short amount of time is one of the main causes of anxiety among users. By removing this notion altogether, we can make things less stressful. For instance, if a two-factor authentication code is only valid for 1 minute, it might not be necessary to display a timer counting down. Worst case scenario, the user missed the mark and will ask for another code.
 
-- Focus on clarity. The more straightforward the interface and its content, the less stressful it is. Avoid double-negatives and reversed checkboxes and be consistent with phrases and terminology. Stay away from scaremongering like dramatising non-critical actions (such as not wanting to benefit from a promotion), or shaming users for performing something (such as opting out from a newsletter).
+- Focus on clarity. The more straightforward the interface and its content, the less stressful it is. Avoid double-negatives and reversed checkboxes and be consistent with phrases and terminology. Stay away from scaremongering like dramatizing non-critical actions (such as not wanting to benefit from a promotion), or shaming users for performing something (such as opting out from a newsletter).
 
 {% assign footnote_amazon_review = "One thing Amazon does very well by the way — despite being an awful company that we should all use less. At every step of the checkout process, it is clearly indicated next to the confirmation button whether there will be an opportunity to review the order one more time before placing it." %}
 

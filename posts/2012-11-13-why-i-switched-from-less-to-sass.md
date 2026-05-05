@@ -98,7 +98,7 @@ for(@i = 0; @i < @nbElements; @i++) {
 }
 ```
 
-Well, this is absolutely not how LESS is handling loops. Actually **LESS doesn’t handle loops**; you have to use a recursive function (a function calling itself) in order to reproduce the desired behaviour. This is what I ended up with:
+Well, this is absolutely not how LESS is handling loops. Actually **LESS doesn’t handle loops**; you have to use a recursive function (a function calling itself) in order to reproduce the desired behavior. This is what I ended up with:
 
 ```less
 /* Define loop */

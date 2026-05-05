@@ -158,7 +158,7 @@ eleventyConfig.addPlugin(IdAttributePlugin, {
 
 And then it dawned on me that both that plugin and my `table_of_contents` filter occurred on the same rendering pass, and not one after the other. In other words, they both act on the same HTML of the page. My filter doesn’t happen _after_, it happens in the same compilation step. So by the time Liquid executes my filter, there is no `id` attribute on the headings yet.
 
-{% assign footnote_line_highlighting = "I have been blogging for 14 years, and using Eleventy since 2020, and I <em>just</em> realised I can highlight specific lines in code blocks. What a time to be alive!" %}
+{% assign footnote_line_highlighting = "I have been blogging for 14 years, and using Eleventy since 2020, and I <em>just</em> realized I can highlight specific lines in code blocks. What a time to be alive!" %}
 
 To solve the problem, we can make our filter “figure out” what the headings ID will be. All we have to do is use the exact same logic as the `IdAttributePlugin` plugin, and we will end up with the same identifiers. Eleventy gracefully [highlights its dependency](https://www.11ty.dev/docs/filters/slugify/), so we can install the same one. Then, we need to {% footnoteref "line-highlighting" footnote_line_highlighting %}update{% endfootnoteref %} our `getHeadingData` function to generate the ID from the text.
 

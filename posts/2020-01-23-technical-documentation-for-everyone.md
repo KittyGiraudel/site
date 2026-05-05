@@ -71,7 +71,7 @@ Once our documentation is up and running, it is important to actively promote it
 
 When answering someone’s question, it is a good idea to join a link to the relevant section of the documentation if it contains the answer or related content. And if it doesn’t, this is likely to be a good opportunity for an addition.
 
-Similarly, I recommend openly announcing (in an organisation tech channel of some sort) when new pages are being added to the hub. This contributes to growing the influence of the documentation hub within the company.
+Similarly, I recommend openly announcing (in an organization tech channel of some sort) when new pages are being added to the hub. This contributes to growing the influence of the documentation hub within the company.
 
 ## Wrapping up
 
@@ -79,7 +79,7 @@ So if I had to sum up, here is a <abbr title="Too Long; Didn’t Read">TL;DR</ab
 
 - Keep technical documentation alongside the code. That is the best advice I can keep to fight obsolescence.
 - Make sure documentation is both easy to read **and** easy to write. The more convenient it is to just hop in and write/update a few lines, the more likely people will.
-- Talk about your documentation, link it, and refer people to it. Make sure your organisation knows about it so it becomes an active part of your work.
+- Talk about your documentation, link it, and refer people to it. Make sure your organization knows about it so it becomes an active part of your work.
 
 Documentation is a living organism. Our hub is 3 years old and keeps growing on a daily basis. As of writing, it is almost 60,000 words (or the equivalent of ~200 pages book) spread across about 60 Markdown files.
 

@@ -1,6 +1,6 @@
 ---
 guest: Loïc Giraudel
-title: Optimising Images With Bash
+title: Optimizing Images With Bash
 description: A guest post by Loïc Giraudel on how to use Bash to optimize images
 tags:
   - Bash
@@ -11,23 +11,23 @@ tags:
 The following is a guest post by [Loïc Giraudel](https://twitter.com/l_giraudel). Loïc is a JavaScript and Git expert at Future PLC (Grenoble, France) and my brother. He also knows his way in Bash scripting and frontend performance. I’m very glad to have him writing here. :)
 {% endcallout %}
 
-You can’t talk about frontend performance without talking about images. They are the heaviest component of a webpage. This is why it is important to optimise images before pushing things live.
+You can’t talk about frontend performance without talking about images. They are the heaviest component of a webpage. This is why it is important to optimize images before pushing things live.
 
-So let’s try a not-so-easy exercise: write a script to optimise a directory of images. Yup, I know there are a lot of web services offering this kind of feature but:
+So let’s try a not-so-easy exercise: write a script to optimize a directory of images. Yup, I know there are a lot of web services offering this kind of feature but:
 
-- most of them can’t optimise several files at once,
+- most of them can’t optimize several files at once,
 - it’s not quite simple to use it in an industrial process,
 - it’s always interesting to learn how those services work.
 
 > Shell scripting is a powerful skill to improve development efficiency by automating common tasks.
 
-But first, a simple warning: don’t expect big optimisations. To have the best results, you have to decrease the image quality but it’s better to do this manually than automatically. We are going to script simple operations that remove metadata and other losslessly information.
+But first, a simple warning: don’t expect big optimizations. To have the best results, you have to decrease the image quality but it’s better to do this manually than automatically. We are going to script simple operations that remove metadata and other losslessly information.
 
 I’m working on Linux environment so this script will be a Bash script. Don’t worry! I will start with an introduction to Bash scripting in a Windows environment.
 
 Bash is the GNU shell and the most common shell in Unix/Linux environment. A shell is a command-line interpreter allowing to access to all the functionalities of the OS. Shell scripting is a powerful skill to improve development efficiency by automating common tasks like building a project and deploying it.
 
-## Use Linux flavour in Windows
+## Use Linux flavor in Windows
 
 To be able to run Linux scripts on Windows, there are two methods:
 
@@ -37,7 +37,7 @@ To be able to run Linux scripts on Windows, there are two methods:
 Since it can be quite a pain to set up a virtual machine, we will go for the latter with [Cygwin](https://www.cygwin.com/). Cygwin is a Linux simulator. Go to the [download section](https://cygwin.com/install.html), grab the `setup.exe` file and execute it to launch the installer. You can leave all settings by default until you get to the step asking you which packages to install.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/cygwin.png",
+  src: "/assets/images/optimizing-with-bash/cygwin.png",
   caption: "<a href='https://www.cygwin.com/'>Cygwin</a> is a Linux simulator",
   lazy: false
 %}
@@ -49,7 +49,7 @@ To add a package, click on the _“Skip”_ label to switch it to a package vers
 - jpeg
 - util-linux
 
-Once Cygwin is fully installed, simply open a Cygwin terminal. Let’s create a workspace to host our optimisation script: we create a _“workspace”_ directory in the current user home:
+Once Cygwin is fully installed, simply open a Cygwin terminal. Let’s create a workspace to host our optimization script: we create a _“workspace”_ directory in the current user home:
 
 ```bash
 # Create the workspace folder
@@ -59,20 +59,20 @@ cd workspace
 ```
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/workspace.png",
+  src: "/assets/images/optimizing-with-bash/workspace.png",
   caption: "Creating a workspace in Cygwin",
   lazy: false
 %}
 
 By default, Cygwin is installed at `C:/cygwin/` so our new directory is at `C:/cygwin/home/[username]/workspace` (where `[username]` is your username). Let’s create a _“images”_ directory and fill it with some random images from the wild wild web (you can do this manually). For this exercise, we are going to take cat pictures because, you know, everybody love cats.
 
-## Optimising an image with the command line
+## Optimizing an image with the command line
 
 For each file, our script is going to run _optipng_ and _pngcrush_ for PNG files and _jpegtran_ for JPG files. Before going any further and start writing the script, let’s make a first try with all of these tools starting with _optipng_:
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/optipng.png",
-  caption: "PNG optimisation with <a href='https://optipng.sourceforge.net/'>optipng</a>"
+  src: "/assets/images/optimizing-with-bash/optipng.png",
+  caption: "PNG optimization with <a href='https://optipng.sourceforge.net/'>optipng</a>"
 %}
 
 {% callout %}The `-o7` parameter force optipng to use the slowest mode. The fastest is `-o0`.{% endcallout %}
@@ -80,20 +80,20 @@ For each file, our script is going to run _optipng_ and _pngcrush_ for PNG files
 Then _pngcrush_:
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/pngcrush.png",
-  caption: "PNG optimisation with <a href='https://pmt.sourceforge.net/pngcrush/'>pngcrush</a>"
+  src: "/assets/images/optimizing-with-bash/pngcrush.png",
+  caption: "PNG optimization with <a href='https://pmt.sourceforge.net/pngcrush/'>pngcrush</a>"
 %}
 
-And now a JPG optimisation with _jpegtran_:
+And now a JPG optimization with _jpegtran_:
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/jpegtran.png",
-  caption: "JPG optimisation with <a href='https://jpegclub.org/'>jpegtran</a>"
+  src: "/assets/images/optimizing-with-bash/jpegtran.png",
+  caption: "JPG optimization with <a href='https://jpegclub.org/'>jpegtran</a>"
 %}
 
 ## Building the script
 
-You’ll find the whole script at the end of the article. If you want to try things as we go through all of this, you can save it (`optimise.sh`) now from [this GitHub gist](https://gist.github.com/lgiraudel/6065155).
+You’ll find the whole script at the end of the article. If you want to try things as we go through all of this, you can save it (`optimize.sh`) now from [this GitHub gist](https://gist.github.com/lgiraudel/6065155).
 
 ### Options parsing
 
@@ -108,14 +108,14 @@ As obvious as it can be, our script needs some parameters:
 There is a common pattern to parse script options, based on the `getopt` command. First, we create two variables to store both the short and long version of each parameter. A parameter which requires a specific value (for example our input and output directories) must end with ":".
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/options.png",
+  src: "/assets/images/optimizing-with-bash/options.png",
   caption: "Bash script options"
 %}
 
 Then we are going to use the `getopt` command to parse the parameters passed to script and use a loop to call functions or define variables to store values. For this, we will also need to know the script name.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/options-loop.png",
+  src: "/assets/images/optimizing-with-bash/options-loop.png",
   caption: "Parsing our options within a loop"
 %}
 
@@ -124,32 +124,32 @@ Then we are going to use the `getopt` command to parse the parameters passed to 
 Now, we have to create two functions:
 
 - the `usage()` function, called in the parameters loop if there is a `-h` or `--help` parameter,
-- a `main()` function which will do the optimisation of the images.
+- a `main()` function which will do the optimization of the images.
 
 To be called, the functions must be declared before the parameters loop.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/usage.png",
+  src: "/assets/images/optimizing-with-bash/usage.png",
   caption: "The help function"
 %}
 
 Let’s try our help function. To be able to run the script, we have to add execution mode (+x) on it with the command `chmod`.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/usage-try.png",
+  src: "/assets/images/optimizing-with-bash/usage-try.png",
   caption: "Help function"
 %}
 
 Pretty cool, isn’t it ?
 
-_Note, if you get a couple of errors like "./optimise.sh: line 2: $'\r' : command not found", you have to turn line endings in Unix mode. To do so, open `optimise.sh` in Sublime Text 2 and go to View > Line endings > Unix._
+_Note, if you get a couple of errors like "./optimize.sh: line 2: $'\r' : command not found", you have to turn line endings in Unix mode. To do so, open `optimize.sh` in Sublime Text 2 and go to View > Line endings > Unix._
 
 ### Main function
 
 And now, let’s create the main function. We won’t deal with `--no-stats` and `--quiet` parameters for now. Below is the skeleton of our main function; it might looks complicated but it’s really not trust me.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/main.png",
+  src: "/assets/images/optimizing-with-bash/main.png",
   caption: "The main function of our script"
 %}
 
@@ -163,11 +163,11 @@ The image files are retrieved with the `find` command, which accepts a regular e
 
 And then, we loop through the files and call an `optimise_image` function with two parameters: the input and output filename for the image.
 
-Now, we have to create this `optimise_image()` method which is going to be fairly easy since we already have seen the command to optimise images before.
+Now, we have to create this `optimise_image()` method which is going to be fairly easy since we already have seen the command to optimize images before.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/optimize-image.png",
-  caption: "The actual image optimisation function"
+  src: "/assets/images/optimizing-with-bash/optimize-image.png",
+  caption: "The actual image optimization function"
 %}
 
 ### Output information
@@ -184,7 +184,7 @@ file_with_a_long_name ...... [ DONE ]
 Would be neat, wouldn’t it? To do this, we first need to find the longest filename by doing a fast loop on the files.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/get-max-file-length.png",
+  src: "/assets/images/optimizing-with-bash/get-max-file-length.png",
   caption: "Function to retrieve the longest filename"
 %}
 
@@ -197,7 +197,7 @@ Then before our main loop, we:
 Finally, in the main loop we display the filename then the _“.”_ symbols and the _“ [ DONE ]”_ string.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/output.png",
+  src: "/assets/images/optimizing-with-bash/output.png",
   caption: "Script handling the output"
 %}
 
@@ -205,45 +205,45 @@ Let’s try it by running the following command:
 
 ```bash
 # All parameters to default
-./optimise.sh
+./optimize.sh
 # Or with custom options
-./optimise.sh --input images --output optimised-images
+./optimize.sh --input images --output optimized-images
 # Or with custom options and shorthand
-./optimise.sh -i images -o optimised-images
+./optimize.sh -i images -o optimized-images
 ```
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/output-console.png",
+  src: "/assets/images/optimizing-with-bash/output-console.png",
   caption: "Testing the output"
 %}
 
 ### Final stats
 
-For the final stats we are going to display the amount of space saved. The `optimise_image()</code> method will increase a`total_input_size`with the filesize of the image to optimise, and a`total_output_size` with the filesize of the output image. At the end of the loop, we will use this two counters to display the stats.
+For the final stats we are going to display the amount of space saved. The `optimise_image()</code> method will increase a`total_input_size`with the filesize of the image to optimize, and a`total_output_size` with the filesize of the output image. At the end of the loop, we will use this two counters to display the stats.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/optimize-image-with-stats.png",
+  src: "/assets/images/optimizing-with-bash/optimize-image-with-stats.png",
   caption: "Adding stats output in optimise_image()"
 %}
 
 To display human readable numbers, we can use a `human_readable_filesize()` method, retrieved from [StackExchange](https://unix.stackexchange.com/questions/44040/a-standard-tool-to-convert-a-byte-count-into-human-kib-mib-etc-like-du-ls1) (let’s not reinvent the wheel, shall we?).
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/display-stats.png",
+  src: "/assets/images/optimizing-with-bash/display-stats.png",
   caption: "A function to display human readable stats"
 %}
 
-Let’s try it before adding the last bites to our code. Once again, we simply run `./optimise.sh` (or with additional parameters if needed).
+Let’s try it before adding the last bites to our code. Once again, we simply run `./optimize.sh` (or with additional parameters if needed).
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/output-with-stats.png",
-  caption: "Outputing optimisation stats"
+  src: "/assets/images/optimizing-with-bash/output-with-stats.png",
+  caption: "Outputing optimization stats"
 %}
 
 Keep it up people, we are almost done! We just have to display progress output if the quiet mode is off.
 
 {% render "figure.liquid",
-  src: "/assets/images/optimising-with-bash/quiet-mode.png",
+  src: "/assets/images/optimizing-with-bash/quiet-mode.png",
   caption: "Quiet mode"
 %}
 
@@ -266,7 +266,7 @@ usage()
   cat <<EO
 Usage: $PROGNAME [options]
 
-Script to optimise JPG and PNG images in a directory.
+Script to optimize JPG and PNG images in a directory.
 
 Options:
 EO
@@ -344,7 +344,7 @@ main()
 	IMAGES=$(find $INPUT -regextype posix-extended -regex '.*\.(jpg|jpeg|png)' | grep -v $OUTPUT)
 
 	if [ "$QUIET" == "0" ]; then
-		echo ––– Optimising $INPUT –––
+		echo ––– Optimizing $INPUT –––
 		echo
 	fi
 	for CURRENT_IMAGE in $IMAGES; do
@@ -431,8 +431,8 @@ main
 Of course this is just a simple sample (no pun intended); there is still a lot of room for improvements. Here is a couple of things we could do to improve it:
 
 - add GIF support,
-- use other tools to optimise JPG and PNG in the `optimise_image` method (by the way, I highly recommend you to read [this great article](https://www.phpied.com/big-list-image-optimisation-tools) by Stoyan Stefanov),
+- use other tools to optimize JPG and PNG in the `optimise_image` method (by the way, I highly recommend you to read [this great article](https://www.phpied.com/big-list-image-optimization-tools) by Stoyan Stefanov),
 - add a progress bar,
-- try to add some lossy optimisations for JPG,
+- try to add some lossy optimizations for JPG,
 - add an auto-upload function to upload to your FTP,
-- use a configuration file to tweak the optimisation tools…
+- use a configuration file to tweak the optimization tools…

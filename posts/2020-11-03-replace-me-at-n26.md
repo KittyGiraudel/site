@@ -20,13 +20,13 @@ I will use certain terms over and over in this post, so I’d like to clarify te
 - _Web team:_ this refers to the community of web engineers working on customer-facing applications at N26. It is not a team per se, since they are distributed across product teams and work on different topics. Consider it a synonym to “web discipline”.
 - _Web platform:_ The range of features and products served by the web team to N26 prospects and customers. This encompasses the [website](https://n26.com), the [support center](https://support.n26.com), the [signup](https://get.n26.com), the [web-app](https://app.n26.com) and some webviews.
 - _Web code base:_ the [single repository containing the entire code base](/2020/03/25/web-mono-repo-at-n26/) used to build, deploy, test and serve the web platform.
-- _Segment:_ a division of the N26 product organisation, with its own responsibilities, goals and objectives. For instance, the Growth segment, or Memberships segment, or Core segment.
+- _Segment:_ a division of the N26 product organization, with its own responsibilities, goals and objectives. For instance, the Growth segment, or Memberships segment, or Core segment.
 
 ## The team
 
 As of today, there are about 15 engineers working on the customer-facing web platform, distributed across the product department in cross-functional teams, and located in our 4 offices (well, at least officially; they are currently working home): Berlin, Barcelona, Vienna and New-York.
 
-The web team is absolutely fantastic. 💖 Not only is it quite mature with people having been there for several years, it also values inclusion and respect at its core. There are no overly inflated egos, no openly passive-aggressive behaviours.
+The web team is absolutely fantastic. 💖 Not only is it quite mature with people having been there for several years, it also values inclusion and respect at its core. There are no overly inflated egos, no openly passive-aggressive behaviors.
 
 It is a diverse group of people, from various genders, nationalities, backgrounds, with a common understanding of what it means to work with one another in a highly toxic and biased industry that stacked cards against certain groups of people.
 
@@ -44,7 +44,7 @@ A non-exhaustive list of responsibilities would go like this:
 
 - Continue to uphold high quality standards, especially when it comes to accessibility, security, testing and documentation. We have always gone to great lengths to deliver stellar work, which scales and stands the test of time, and it should continue this way.
 
-- Look after testability, deliverability and observability of the web platform. That might mean improving testing stability and speed, optimising the deployment pipelines, and working towards having necessary stats and metrics necessary to ensure permanent good health for the code base and the team.
+- Look after testability, deliverability and observability of the web platform. That might mean improving testing stability and speed, optimizing the deployment pipelines, and working towards having necessary stats and metrics necessary to ensure permanent good health for the code base and the team.
 
 - Own the continuous integration and deployment pipeline of the web platform (and its testing and reporting strategy), and lead the migration from Jenkins to GitHub Actions and Kubernetes.
 

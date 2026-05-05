@@ -34,7 +34,7 @@ Here is how I thought about making it work: we use 2 pseudo-elements. One will s
 
 1. Start by laying both pseudo-elements on the left side of the container on top of each other, so that the one on top has the color of the background (e.g. white), and the colorful one lies hidden underneath.
 2. Then, rotate the lower element so it begins appearing.
-3. Once it has travelled 180 degrees, abruptly move the mask element on the other side to take its place and change its color to the fill color. For a brief instant, both element have the same color and same position.
+3. Once it has traveled 180 degrees, abruptly move the mask element on the other side to take its place and change its color to the fill color. For a brief instant, both element have the same color and same position.
 4. For the 2nd half of the animation, the rotating element will keep moving, thus filling the other half of the circle.
 5. Rince and repeat.
 

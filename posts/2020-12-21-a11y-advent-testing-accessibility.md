@@ -44,6 +44,6 @@ For professional audits conducted by accessibility experts, I can recommend:
 - [Marcy Sutton](https://twitter.com/marcysutton) (who will release an [EggHead series on testing accessibility](https://testingaccessibility.com/) in 2021).
 - [AxessLab](https://axesslab.com/accessibility-review-by-expert/), a company specialised in accessibility auditing and testing.
 - [Temesis](https://temesis.com/), a French company with English capacity specialised in accessibility and conducting audits abroad. I worked with them at N26 and it was a great experience.
-- [Tenon](https://tenon.io/) which looks like a software as a service (SaaS) solution for organising, testing and evaluating accessibility within an organisation.
+- [Tenon](https://tenon.io/) which looks like a software as a service (SaaS) solution for organizing, testing and evaluating accessibility within an organization.
 
-I am definitely forgetting a lot of tools here, this is just the tip of the iceberg. At the end of the day, ensuring proper accessibility and inclusivity in our products has to be done by combining various tools, methogolodies and manual work. There won’t be a one-size-fit-all testing solution. Feel free to share your favourite tools on Twitter with the #A11yAdvent hashtag!
+I am definitely forgetting a lot of tools here, this is just the tip of the iceberg. At the end of the day, ensuring proper accessibility and inclusivity in our products has to be done by combining various tools, methogolodies and manual work. There won’t be a one-size-fit-all testing solution. Feel free to share your favorite tools on Twitter with the #A11yAdvent hashtag!

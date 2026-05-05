@@ -9,7 +9,7 @@ edits:
   - date: 2019/01/18
     md: Updated the snippet with the margin property to overcome [issues related to containing overflow](#undesirable-overflows-18012019).
   - date: 2016/10/19
-    md: Updated the article to mention some important information about [screen-readers on mobile devices.](#screen-readers-and-touch-devices-19102016) as well as [search engine optimisation](#seo-19102016).
+    md: Updated the article to mention some important information about [screen-readers on mobile devices.](#screen-readers-and-touch-devices-19102016) as well as [search engine optimization](#seo-19102016).
 ---
 
 This article is a translation from [Cache-cache CSS](https://www.ffoodd.fr/cache-cache-css/) by accessibility expert [Gaël Poupard](https://twitter.com/ffoodd_fr). All credits to him.
@@ -74,7 +74,7 @@ Here is the final version I came up with:
 
 ## Warning
 
-This technique should only be used to mask **text**. In other words, there shouldn’t be any focusable element **inside** the hidden element. This could lead to annoying behaviours, like scrolling to an invisible element.
+This technique should only be used to mask **text**. In other words, there shouldn’t be any focusable element **inside** the hidden element. This could lead to annoying behaviors, like scrolling to an invisible element.
 
 That being said, you may want to hide a focusable element **itself**; a common candidate are **skip links** ([a WCAG 2.0 technique](https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1)). Most of the time we hide them until they get the focus.
 

@@ -44,7 +44,7 @@ After that, I asked the participants to create a folder for their project, conta
 
 ### Learning HTML
 
-At first, I thought I could start with the doctype, then the `<html>` tag, then the `<head>` and all it contains, then the `<body>` tag, then the content, and so on. And then I realised it was already way too complex to start with. And unnecessary.
+At first, I thought I could start with the doctype, then the `<html>` tag, then the `<head>` and all it contains, then the `<body>` tag, then the content, and so on. And then I realized it was already way too complex to start with. And unnecessary.
 
 So I started by introducing what HTML is meant for and how to write it. Opening a tag, putting some content, closing a tag. Easy peasy. From there, they could put their title in a `<h1>`, their sub-titles in `<h2>` and their content in `<p>`. Two interesting things there:
 

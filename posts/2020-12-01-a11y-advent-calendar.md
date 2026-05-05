@@ -50,7 +50,7 @@ if (node) {
 <li><a id="day-15-content-warnings" href="/2020/12/15/a11y-advent-content-warnings">Day 15: Content Warnings</a></li>
 <li><a id="day-16-animations" href="/2020/12/16/a11y-advent-Animations">Day 16: Animations</a></li>
 <li><a id="day-17-anxiety" href="/2020/12/17/a11y-advent-anxiety">Day 17: Anxiety</a></li>
-<li><a id="day-18-internationalisation" href="/2020/12/18/a11y-advent-internationalisation">Day 18: Internationalisation</a></li>
+<li><a id="day-18-internationalization" href="/2020/12/18/a11y-advent-internationalization">Day 18: Internationalization</a></li>
 <li><a id="day-19-performance" href="/2020/12/19/a11y-advent-performance">Day 19: Performance</a></li>
 <li><a id="day-20-content-tone" href="/2020/12/20/a11y-advent-content-tone">Day 20: Content and Tone</a></li>
 <li><a id="day-21-testing-accessibility" href="/2020/12/21/a11y-advent-testing-accessibility">Day 21: Testing Accessibility</a></li>

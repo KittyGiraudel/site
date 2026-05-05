@@ -68,7 +68,7 @@ I have seen candidates include a few short sentences about themselves and what t
 Let’s briefly talk about links to social networks:
 
 - **Personal website:** if you have one, by all mean, please link it. However note that I will look at the code if you apply as a web/frontend developer. That is basically a window into your skills, so it does matter to me.
-- **LinkedIn:** unless you really trimmed down your resume so that your LinkedIn contains more relevant information abour yourself, I would say this is not necessary. More often than not, the resume is a refactored PDF version of the LinkedIn profile.
+- **LinkedIn:** unless you really trimmed down your resume so that your LinkedIn contains more relevant information about yourself, I would say this is not necessary. More often than not, the resume is a refactored PDF version of the LinkedIn profile.
 - **GitHub:** that can be interesting **if** you have something on there that is relevant for your application. In other words, if there are no repositories, no contributions, that’s unnecessary. Similarly, if all the code on there is years old, that’s not helping you either.
 - **Twitter:** I personally like it as I get to see what you are interested in, talk about and how you interact in a public forum. Having been a solid user of Twitter for about 8 years, I do go check your feed if you link it (and it’s not protected…).
 - **Facebook:** I have never been on Facebook, so my opinion might be biased here but it doesn’t strike me as a professional network, so I would probably skip this one entirely.
@@ -160,7 +160,7 @@ Now, this is the tricky part. You might have done everything else by the book (i
 
 We are more than the sum of our skills. Coding is the easy part. We are human beings, and most of our job is about working with other human beings. It’s important to show that we are able to work in a team, to care for one another, to display empathy.
 
-There are a few things I consider positive signs: any work dedicated to make a team better (as an acting facilitator for instance), conducting workshops, onboarding engineers, writing substantial documentation, doing humanitarian work, volunteering, teaching classes, organising events… The list goes on. And while it’s not a perfect indicator, it usually says something important: there is more to your profile than a list of technologies and a couple of roles in tech companies.
+There are a few things I consider positive signs: any work dedicated to make a team better (as an acting facilitator for instance), conducting workshops, onboarding engineers, writing substantial documentation, doing humanitarian work, volunteering, teaching classes, organizing events… The list goes on. And while it’s not a perfect indicator, it usually says something important: there is more to your profile than a list of technologies and a couple of roles in tech companies.
 
 **TL;DR:**
 
@@ -174,7 +174,7 @@ There seems to be mixed opinions about whether or not to join a cover letter to 
 
 Things a cover letter are not: snippets of your resume, a link to your website, a checklist of your skills. Things a cover letter should do: complement your resume, give insights on who you are, tell why you like the company and think you would fit.
 
-Interesting letters I have read started by talking a bit about who they are. Then explain how they learnt about the company/position. Finally, mentioned why they would like to join (new challenge, working on the product, learning new tech, etc.). Kindness and humour is also nice of course.
+Interesting letters I have read started by talking a bit about who they are. Then explain how they learnt about the company/position. Finally, mentioned why they would like to join (new challenge, working on the product, learning new tech, etc.). Kindness and humor is also nice of course.
 
 Also, final pet-peeve of mine: please don’t start your letter with “Dear Sir or Madam”, let alone “Dear Sir”. I’m the non-binary person that will review your application. You might not want to misgender me on the 2nd word of your letter. Prefer neutral forms such as “To whom it may concern”, “Dear &lt;company>”, or something more casual (depending on the company you apply for).
 

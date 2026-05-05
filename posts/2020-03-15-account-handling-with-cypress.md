@@ -68,7 +68,7 @@ We created a `getAccount` command on top of our `createUser` one. It takes the e
 It works like this:
 
 - If the `cache` option is not passed or false, the `getAccount` just calls `createUser` and that’s it.
-- If the `cache` option is true, the `getAccount` command serialises the given configuration object, and see if a cached account for that configuration exists already.
+- If the `cache` option is true, the `getAccount` command serializes the given configuration object, and see if a cached account for that configuration exists already.
   - If an account for the same configuration has been created, we read it from the cache and return it. No extra request!
   - If no account for the given configuration exists yet, we call `createUser` to get an account and we store it in the cache before returning it.
 

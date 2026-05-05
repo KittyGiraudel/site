@@ -24,7 +24,7 @@ Overall, the migration was relatively smooth. It took me about 10 hours spread a
 Here are some things I do like a lot from Eleventy:
 
 - The configuration is really enjoyable to use. I like that it does not live in a JSON file which sometimes lacks flexibility, and that it exposes a class with lots of helper utilities to configure compilation.
-- I felt helped with templating errors. I don’t know to which extend Eleventy customises error reporting to make it friendly, but it’s overall pretty good I would say.
+- I felt helped with templating errors. I don’t know to which extend Eleventy customizes error reporting to make it friendly, but it’s overall pretty good I would say.
 - The pagination is overall better than the Jekyll one I feel, because it can be used on any collection instead of exclusively for the posts.
 - The automatic browser reload is a really nice touch that does not exist in Jekyll. It’s not much, but it’s appreciable during development.
 
@@ -67,7 +67,7 @@ This way, every article has its permalink defined based on its file name, and it
 
 I do rely on headings having an `id` attribute to create table of contents in long articles like this one. I used to rely on Kramdown and its GFM option for that, but Eleventy uses [markdown-it](https://github.com/markdown-it/markdown-it) which [does not come with automatic heading `id` generation](https://github.com/markdown-it/markdown-it/issues/28).
 
-To preserve that behaviour, we need to use our own markdown-it instance, as well as the [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) plugin. The latter comes with unicode support by default, which is not what GFM defaults to, so we also need to use [uslug](https://github.com/jeremys/uslug) [as a slugifier](https://github.com/valeriangalliat/markdown-it-anchor#unicode-support) to come closer to the original behaviour.
+To preserve that behavior, we need to use our own markdown-it instance, as well as the [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) plugin. The latter comes with unicode support by default, which is not what GFM defaults to, so we also need to use [uslug](https://github.com/jeremys/uslug) [as a slugifier](https://github.com/valeriangalliat/markdown-it-anchor#unicode-support) to come closer to the original behavior.
 
 ```js
 config.setLibrary(

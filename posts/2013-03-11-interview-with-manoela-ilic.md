@@ -20,7 +20,7 @@ You are kind of a mysterious person. Maybe could you introduce yourself?
 >
 > I worked in a software company for a while before I decided to become a freelancer and launch Codrops. Since I was a kid I was always fascinated with computers and I created my first website when I was 16 (it had some fancy Flash buttons, I remember) :)
 >
-> In my personal life I like to travel a lot (in fact, most of the time I am travelling). I love to eat and make good food, drink a great wine and take care of my balcony herb garden whenever I have some spare time.
+> In my personal life I like to travel a lot (in fact, most of the time I am traveling). I love to eat and make good food, drink a great wine and take care of my balcony herb garden whenever I have some spare time.
 
 Could you tell us a little bit more about Codrops? Where did the idea came from and what do you do for it?
 

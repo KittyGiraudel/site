@@ -35,7 +35,7 @@ There is a lot going on in this article, and each approach has pros and cons. I 
 
 [This combination of CSS declarations](https://kittygiraudel.com/snippets/sr-only-class/) hides an element from the page, but keeps it accessible for screen readers. It comes in very handy to provide more context to screen readers when the visual layout is enough with it.
 
-{% callout %} This technique should only be used to mask text. In other words, there shouldn’t be any focusable element inside the hidden element. This could lead to annoying behaviours, like scrolling to an invisible element. {% endcallout %}
+{% callout %} This technique should only be used to mask text. In other words, there shouldn’t be any focusable element inside the hidden element. This could lead to annoying behaviors, like scrolling to an invisible element. {% endcallout %}
 
 **Summary:**
 
@@ -133,7 +133,7 @@ Resizing an element to a 0x0 box with the `width` and `height` CSS properties an
 
 The `content-visibility` CSS property was introduced as a way to improve performance by hinting the browser (Chrome, as of writing) to skip rendering of a certain element until it is within the viewport.
 
-Content made hidden with `content-visibility: hidden` will effectively be absent from the accessibility tree entirely (just like with `display: none`). This is not necessarily intended behaviour though, and for that reason it is recommended not to use that declaration on landmarks.
+Content made hidden with `content-visibility: hidden` will effectively be absent from the accessibility tree entirely (just like with `display: none`). This is not necessarily intended behavior though, and for that reason it is recommended not to use that declaration on landmarks.
 
 **Summary:**
 

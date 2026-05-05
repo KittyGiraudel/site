@@ -15,7 +15,7 @@ I have been trying to figure why and when did we start using the asterisk charac
 
 It may also be derived from the print industry commonly using it to mark footnotes. Regardless where it came from, it’s safe to say the asterisk character is now a well established convention, so much so that we get to ask ourselves: is the symbol enough in itself?
 
-I was recently doing an accessibility review and someone asked me what was the ideal markup for denoting required fields in web forms. I initially thought it to be a no-brainer, but after digging a bit, I realised there is a room for interpretation.
+I was recently doing an accessibility review and someone asked me what was the ideal markup for denoting required fields in web forms. I initially thought it to be a no-brainer, but after digging a bit, I realized there is a room for interpretation.
 
 ## Under-engineered
 

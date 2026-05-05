@@ -6,7 +6,7 @@ tags:
   - HTML
 edits:
   - date: 2026/03/19
-    md: A decade later, I’ve realised the proposed solution is suboptimal because it doesn’t account for voice recognition software, so I added [a section about that](#accounting-for-voice-recognition).
+    md: A decade later, I’ve realized the proposed solution is suboptimal because it doesn’t account for voice recognition software, so I added [a section about that](#accounting-for-voice-recognition).
 ---
 
 The other day, [a friend](https://twitter.com/smartmike) and I were having a conversation about a tricky accessibility puzzle so I thought I’d write a few lines about it.
@@ -88,7 +88,7 @@ Boom. Solved.
 
 ### Accounting for voice recognition
 
-The year is 2026. Completely by chance, I’ve stumbled upon this article from 10 years ago, and I realised that the proposed solution is not ideal. Let’s look into why.
+The year is 2026. Completely by chance, I’ve stumbled upon this article from 10 years ago, and I realized that the proposed solution is not ideal. Let’s look into why.
 
 Voice recognition software, such as Dragon Naturally Speaking, can be used to navigate the web. To interact with controls on the page, one can dictate the text label of the desired control. For instance, “Add to cart” or “Sort by date”. 
 
@@ -127,7 +127,7 @@ Or maybe even more explicitly (but that differs from the original design):
 
 ## Final thoughts
 
-I just thought it was an interesting scenario, and while it might look like over-optimisation, I do believe this is what makes the difference for people with disabilities.
+I just thought it was an interesting scenario, and while it might look like over-optimization, I do believe this is what makes the difference for people with disabilities.
 
 Happy coding!
 

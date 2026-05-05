@@ -13,7 +13,7 @@ Lately, I taught the core concept of Git to a friend and thought it might be int
 
 ## Creating a repository
 
-The `init` command initialises a “git repository” in the current folder. It creates a (hidden) `.git` folder with a lot of sub-folders you don’t have to know about.
+The `init` command initializes a “git repository” in the current folder. It creates a (hidden) `.git` folder with a lot of sub-folders you don’t have to know about.
 
 ```
 $ git init

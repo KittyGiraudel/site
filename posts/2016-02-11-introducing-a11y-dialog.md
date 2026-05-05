@@ -14,7 +14,7 @@ Almost all projects involve some form of dialog window at one point or another. 
 
 Fortunately, there is a super clever guy named [Greg Kraus](https://github.com/gdkraus) who implemented an accessible modal dialog a few years ago and [open-sourced it on GitHub](https://github.com/gdkraus/accessible-modal-dialog). Now that’s nice!
 
-However, his version, no matter how good it is, requires jQuery. We try to avoid using jQuery as much as we can here. We realised we did not really need it most of the time. On top of that, his script is not very flexible: only one dialog window per page, hard-coded IDs inside the functions. Not very practical and certainly not a drop-in script for any project.
+However, his version, no matter how good it is, requires jQuery. We try to avoid using jQuery as much as we can here. We realized we did not really need it most of the time. On top of that, his script is not very flexible: only one dialog window per page, hard-coded IDs inside the functions. Not very practical and certainly not a drop-in script for any project.
 
 So I rolled up my sleeves and [improved it](https://github.com/KittyGiraudel/a11y-dialog).
 

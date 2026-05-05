@@ -85,7 +85,7 @@ When I started coding, I was expecting the brick rotation to be very simple. In 
 
 What was much harder however was **prevent the rotation when too close to the wall**. Rotating a red bar near the wall could mean wedging the bar into the wall. I succeded in preventing the rotation when too close to the wall, however there is still a bug with the purple L brick which cannot rotate when placed at a 1-unit gap from the wall. Sadly, I don’t know how to fix it.
 
-The other big problem I had and still have with brick rotation is rotating near another brick. Unlike the walls, there is no restriction for rotating a brick near another one, meaning you can overlap bricks with this method. In most cases, this bug won’t be noticed because the common behaviour when playing Tetris is rotating and moving the brick while falling, not moving the brick at the very last moment of its fall. Still, there is a bug I couldn’t fix.
+The other big problem I had and still have with brick rotation is rotating near another brick. Unlike the walls, there is no restriction for rotating a brick near another one, meaning you can overlap bricks with this method. In most cases, this bug won’t be noticed because the common behavior when playing Tetris is rotating and moving the brick while falling, not moving the brick at the very last moment of its fall. Still, there is a bug I couldn’t fix.
 
 ## Let’s make improvements
 

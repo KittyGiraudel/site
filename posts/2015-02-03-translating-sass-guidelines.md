@@ -3,7 +3,7 @@ title: Translating Sass Guidelines
 description: A short announcement on translating Sass Guidelines in multiple languages
 tags:
   - Sass
-  - Internationalisation
+  - Internationalization
   - Open Source
   - Release
 templateEngineOverride: md

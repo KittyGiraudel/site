@@ -30,7 +30,7 @@ const dialog = new A11yDialog(el, 'body > *:not(#dialog)')
 
 This should hopefully make CMS integrations easier.
 
-To maintain the exact same behaviour as before, you can do:
+To maintain the exact same behavior as before, you can do:
 
 ```js
 const el = document.querySelector('#your-dialog')

@@ -45,7 +45,7 @@ While there is nothing too ground-breaking here, what’s interesting to note is
   height: 300
 %}
 
-This is not specific to `box-sizing` though. There is nothing special about this property that would cause this behaviour. In face, all enforced inheritance break down at the `<details>` layer, as [Šime Vidas pointed out on Twitter](https://twitter.com/simevidas/status/1428503137816612871?s=20).
+This is not specific to `box-sizing` though. There is nothing special about this property that would cause this behavior. In face, all enforced inheritance break down at the `<details>` layer, as [Šime Vidas pointed out on Twitter](https://twitter.com/simevidas/status/1428503137816612871?s=20).
 
 ## The reason
 

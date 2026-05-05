@@ -65,7 +65,7 @@ Last but not least, we’ll make sure not to render the button if no content is 
 {​% endif %}
 ```
 
-This file is then included through an `{​% include %}` Liquid block when used in pages, customised with [include parameters](https://web.archive.org/web/20240630100623/http://jekyllrb.com/docs/templates/#includes). Ultimately, this means pages are basically nothing but generic containers including components.
+This file is then included through an `{​% include %}` Liquid block when used in pages, customized with [include parameters](https://web.archive.org/web/20240630100623/http://jekyllrb.com/docs/templates/#includes). Ultimately, this means pages are basically nothing but generic containers including components.
 
 ```liquid
 {​% include components/button.html
@@ -397,7 +397,7 @@ Since there is quite a bit of JavaScript to make the styleguide work perfectly, 
 	})
 </script>
 
-<!-- Affix sidebar initialisation -->
+<!-- Affix sidebar initialization -->
 <script>
 	var $nav = $('.c-styleguide-aside')
 

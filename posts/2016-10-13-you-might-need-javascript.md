@@ -51,7 +51,7 @@ If there is one thing I learnt while building [a11y-dialog](https://github.com/K
 
 A dialog element is not going to be accessible with CSS only. The `aria-hidden` attribute needs to be toggled, the focus needs to be trapped, the escape key needs to close the dialog, and I could go on.
 
-Maybe instead of trying to reproduce the exact same module without JavaScript by using CSS hacks, we could display the content in a way that is suited for no JavaScript behaviour. Nothing states that both JS and no-JS environments should behave the same. If a module cannot fully exist without JavaScript, don’t use it in a no-JS environment; find something else.
+Maybe instead of trying to reproduce the exact same module without JavaScript by using CSS hacks, we could display the content in a way that is suited for no JavaScript behavior. Nothing states that both JS and no-JS environments should behave the same. If a module cannot fully exist without JavaScript, don’t use it in a no-JS environment; find something else.
 
 ## Final thoughts
 
