@@ -41,9 +41,9 @@ So far so good.
 
 ## About live reloading
 
-{% assign live_reloading_credits_ref = "Kind thanks to my friend <a href='https://www.moritz.berlin/'>Moritz Kröger</a> for educating me on the topic. :)" %}
+{% assign footnote_live_reloading_credits = "Kind thanks to my friend <a href='https://www.moritz.berlin/'>Moritz Kröger</a> for educating me on the topic. :)" %}
 
-Here is how live reloading works {% footnoteref "live-reloading-credits" live_reloading_credits_ref %}in a nutshell{% endfootnoteref %}: 
+Here is how live reloading works {% footnoteref "live-reloading-credits" footnote_live_reloading_credits %}in a nutshell{% endfootnoteref %}: 
 
 1. The server that renders the content injects a small script into the client (e.g. `reload-client.js` or something).
 2. That script opens a WebSocket to the dev server that listens to events, and reacts accordingly.
@@ -55,10 +55,10 @@ This is not specific to Eleventy — essentially all live reloading solutions wo
 
 Eleventy has [its own development server package](https://www.11ty.dev/docs/dev-server/) for that. When you save a file that’s being watched, it informs the client about it. The client decides what to do based on what was changed.
 
-{% assign morphdom_ref = "Eleventy’s dev server is <a href='https://www.11ty.dev/docs/dev-server/#options'>surprisingly configurable</a>, and the use of morphdom can be opted-out — although I don’t know why you’d prefer full page reloads to more granular DOM updates." %}
+{% assign footnote_morphdom = "Eleventy’s dev server is <a href='https://www.11ty.dev/docs/dev-server/#options'>surprisingly configurable</a>, and the use of morphdom can be opted-out — although I don’t know why you’d prefer full page reloads to more granular DOM updates." %}
 
 - For external stylesheets, it performs some cache-busting to reload that specific file.
-- Otherwise, it {% footnoteref "morphdom" morphdom_ref %}uses a library called morphdom to perform surgical changes to the DOM{% endfootnoteref %}.
+- Otherwise, it {% footnoteref "morphdom" footnote_morphdom %}uses a library called morphdom to perform surgical changes to the DOM{% endfootnoteref %}.
 - If all else fails, it performs a full-page reload with `window.location.reload()`. 
 
 There are a lot of reasons why [morphdom](https://github.com/patrick-steele-idem/morphdom) is a great choice here: updating the existing DOM preserves event listeners, scroll position, animations, browser state and more. It makes for a much better developer experience. 

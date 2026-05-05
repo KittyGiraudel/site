@@ -14,9 +14,9 @@ As my website grew, I noticed I started using more and more environment conditio
 - [Inlining or minifying resources](/2020/12/03/inlining-scripts-and-styles-in-11ty/) (production only).
 - Optimizing watch performance (development only).
 
-{% assign terminology_ref = "I tend to call them “feature flags”, just out of habit. But I’ve written about this concept in <a href='/2024/07/22/feature-toggles-with-webpack/' style='font-style:italic'>Feature Toggles with Webpack</a> and I called them “toggles”, so I’ll keep using that word for consistency with the other article." %}
+{% assign footnote_terminology = "I tend to call them “feature flags”, just out of habit. But I’ve written about this concept in <a href='/2024/07/22/feature-toggles-with-webpack/' style='font-style:italic'>Feature Toggles with Webpack</a> and I called them “toggles”, so I’ll keep using that word for consistency with the other article." %}
 
-Ultimately, I realized I wanted proper {% footnoteref "terminology" terminology_ref %}feature toggles{% endfootnoteref %}. Let’s see how to set them up in Eleventy.
+Ultimately, I realized I wanted proper {% footnoteref "terminology" footnote_terminology %}feature toggles{% endfootnoteref %}. Let’s see how to set them up in Eleventy.
 
 ## In a nutshell
 
@@ -98,9 +98,9 @@ if ('serviceWorker' in navigator) {
 
 If like me, you’ve [converted your Eleventy configuration file to TypeScript](https://www.11ty.dev/docs/languages/typescript/#using-a-type-script-configuration-file), things are a bit dicier. That’s because Eleventy doesn’t really support TypeScript out of the box, and relies on [Node.js’ type stripping feature](https://nodejs.org/api/typescript.html) simply not to choke on it.
 
-{% assign ts_data_files_ref = "If you are reading this and know a way to author Eleventy data files in TypeScript (without needing to compile them manually), please let me know, as I’d like to learn how. :)" %}
+{% assign footnote_ts_data_files = "If you are reading this and know a way to author Eleventy data files in TypeScript (without needing to compile them manually), please let me know, as I’d like to learn how. :)" %}
 
-The main problem is that {% footnoteref "ts-data-files" ts_data_files_ref %}data files cannot be authored in TypeScript{% endfootnoteref %}: they have to use plain JavaScript (unless you want to introduce your own compilation step *prior* to running Eleventy). So you can’t have your feature toggles in a TypeScript file, if you need to read them in a JavaScript file.
+The main problem is that {% footnoteref "ts-data-files" footnote_ts_data_files %}data files cannot be authored in TypeScript{% endfootnoteref %}: they have to use plain JavaScript (unless you want to introduce your own compilation step *prior* to running Eleventy). So you can’t have your feature toggles in a TypeScript file, if you need to read them in a JavaScript file.
 
 I decided to go for an interchangeable and standardized format: JSON. Moving our toggles into a `features.json` file at the root of the project:
 

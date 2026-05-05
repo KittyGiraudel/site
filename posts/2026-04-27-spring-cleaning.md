@@ -67,17 +67,17 @@ So I’ve shamelessly copied [Jens Oliver Meiert’s approach](https://meiert.co
 
 - I’ve recently renamed the directory containing all my posts from `_posts` to `posts`, and of course that caused all posts to be committed. To discard such change, I have used `--diff-filter=M --name-status` and some normalization instead of `--name-only`. This basically ignores file moves which is nice.
 
-{% assign watch_ignore_ref = "I thought I could simply ignore this file from the watcher via <a href='https://www.11ty.dev/docs/watch-serve/#ignore-watching-files'>Eleventy’s <code>watchIgnores</code> API</a> but that’s different: it means “don’t rebuild anything when this file changes”, and not “don’t rebuild this file when anything changes”." %}
+{% assign footnote_watch_ignore = "I thought I could simply ignore this file from the watcher via <a href='https://www.11ty.dev/docs/watch-serve/#ignore-watching-files'>Eleventy’s <code>watchIgnores</code> API</a> but that’s different: it means “don’t rebuild anything when this file changes”, and not “don’t rebuild this file when anything changes”." %}
 
-- I’ve added caching, because every save {% footnoteref "watch-ignore" watch_ignore_ref %}in watch mode{% endfootnoteref %} causes the data files to be recomputed, which meant re-running the git command, which seemed unnecessary.
+- I’ve added caching, because every save {% footnoteref "watch-ignore" footnote_watch_ignore %}in watch mode{% endfootnoteref %} causes the data files to be recomputed, which meant re-running the git command, which seemed unnecessary.
 
 I’m pretty happy with the [outcome](https://github.com/KittyGiraudel/site/blob/main/data/git.js), except for the fact that I work so much on this website that most posts end up being marked as recently edited anyway. In principle, this should be helpful for the future. This change also made its way into the sitemap and the RSS feed.
 
 ## Deprecation notices
 
-{% assign no_broken_links_ref = "As a testament of that, my <a href='https://github.com/KittyGiraudel/site/blob/main/public/_redirects'><code>_redirects</code> file</a> is almost 100 lines long. I regularly monitor 404 in the Netlify dashboard, and I issue HTTP 301 redirects for most legitimate errors." %}
+{% assign footnote_no_broken_links = "As a testament of that, my <a href='https://github.com/KittyGiraudel/site/blob/main/public/_redirects'><code>_redirects</code> file</a> is almost 100 lines long. I regularly monitor 404 in the Netlify dashboard, and I issue HTTP 301 redirects for most legitimate errors." %}
 
-I {% footnoteref "no-broken-links" no_broken_links_ref %}make a point not to delete content{% endfootnoteref %} from this website, following the [Don’t Break the Web](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/The_web_standards_model#dont_break_the_web) directive. However, not all content ages the same way. So I’ve introduced deprecation notices to old articles. It looks like this:
+I {% footnoteref "no-broken-links" footnote_no_broken_links %}make a point not to delete content{% endfootnoteref %} from this website, following the [Don’t Break the Web](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/The_web_standards_model#dont_break_the_web) directive. However, not all content ages the same way. So I’ve introduced deprecation notices to old articles. It looks like this:
 
 {% render "post_deprecated.liquid", date: "2012/12/01", role: "flow" %}
 
@@ -85,9 +85,9 @@ I {% footnoteref "no-broken-links" no_broken_links_ref %}make a point not to del
 
 To mark old articles as outdated, I’ve gone through all articles and took this opportunity to clean up a lot of things:
 
-{% assign sitepoint_removal_ref = "It’s not even that they removed articles. It’s that they republished a different article by a different author on top of the old URL, which means I was sending traffic to someone else’s content on someone else’s website unknowingly. Anyway, I brought back these articles onto this site, the way I authored them back then, even if outdated." %}
+{% assign footnote_sitepoint_removal = "It’s not even that they removed articles. It’s that they republished a different article by a different author on top of the old URL, which means I was sending traffic to someone else’s content on someone else’s website unknowingly. Anyway, I brought back these articles onto this site, the way I authored them back then, even if outdated." %}
 
-- Rescued a handful of articles that {% footnoteref "sitepoint-removal" sitepoint_removal_ref %}SitePoint silently removed{% endfootnoteref %}. 
+- Rescued a handful of articles that {% footnoteref "sitepoint-removal" footnote_sitepoint_removal %}SitePoint silently removed{% endfootnoteref %}. 
 - Fixed a bunch of old typos, broken Markdown and clumsy wording.
 - Removed all broken links to the now defunct Sassmeister website and replaced them with links to GitHub Gists where the content was backed up.
 - Cleaned up some old HTML still present in Markdown posts.

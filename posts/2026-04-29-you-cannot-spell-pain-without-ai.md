@@ -15,9 +15,9 @@ The major <abbr title="Too Long; Didn’t Read">TL;DR</abbr> is that AI can be u
 
 ## Where we are
 
-{% assign ai_coding_history_ref = "David Kravets has written <a href='https://www.coderabbit.ai/blog/a-very-brief-history-of-ai-coding-from-copilot-to-next-gen-agents'>a brief yet comprehensive history of AI coding</a> for the CodeRabbit blog." %}
+{% assign footnote_ai_coding_history = "David Kravets has written <a href='https://www.coderabbit.ai/blog/a-very-brief-history-of-ai-coding-from-copilot-to-next-gen-agents'>a brief yet comprehensive history of AI coding</a> for the CodeRabbit blog." %}
 
-<abbr title="Artificial Intelligence">AI</abbr> is everywhere. It feels like it goes without saying, but it’s surprisingly new. It’s only late 2025 that coding models like Opus 4.5 and GPT-5.2 became genuine game-changers. And although {% footnoteref "ai-coding-history" ai_coding_history_ref %}ChatGPT has been around since 2022{% endfootnoteref %}, I feel like it’s only in 2024 that it became ubiquitous. 
+<abbr title="Artificial Intelligence">AI</abbr> is everywhere. It feels like it goes without saying, but it’s surprisingly new. It’s only late 2025 that coding models like Opus 4.5 and GPT-5.2 became genuine game-changers. And although {% footnoteref "ai-coding-history" footnote_ai_coding_history %}ChatGPT has been around since 2022{% endfootnoteref %}, I feel like it’s only in 2024 that it became ubiquitous. 
 
 When I joined Scilife back in October 2024, it wasn’t really much of a thing in our company. Documents and reports were written by humans, research and analysis were done on Google, and code was authored by engineers. We weren’t “orchestrating agents”, and it would have been ridiculous to suggest it. 
 
@@ -35,11 +35,11 @@ And yet, probably from reading so much about AI constantly, I am a little irrita
 
 ## Not-so-social networks
 
-{% assign genuineness_ref = "Oh wow, that is a <em>weird</em> word." %}
+{% assign footnote_genuineness = "Oh wow, that is a <em>weird</em> word." %}
 
 For ~~good or for~~ bad, I spend a lot of time on LinkedIn as [I am looking for a job](https://www.linkedin.com/posts/kitty-giraudel_dear-network-im-still-looking-for-my-next-activity-7451986756494663680-6Br8). And it’s quite shocking how terrible that platform is. 
 
-- Vocal posters are ridiculously performative. There is not an ounce of {% footnoteref "genuineness" genuineness_ref %}genuineness{% endfootnoteref %}, and a reason why is because AI is increasingly writing more and more of the content we consume. People have opinions, things to say, products to sell. And yet are too lazy, or bothered, or frustrated to deal with formulating their thoughts themselves, so end up outsourcing that to a machine.
+- Vocal posters are ridiculously performative. There is not an ounce of {% footnoteref "genuineness" footnote_genuineness %}genuineness{% endfootnoteref %}, and a reason why is because AI is increasingly writing more and more of the content we consume. People have opinions, things to say, products to sell. And yet are too lazy, or bothered, or frustrated to deal with formulating their thoughts themselves, so end up outsourcing that to a machine.
 - This is not just for posts and influencers either. AI also shows up in replies and comments, which is just so bizarre to me. Having something to broadcast to the world and letting a machine write the “perfect” pitch for you is one thing. But having your AI agent going on people’s posts and replying on your behalf is another. What’s the value? And for whom?
 - As a result, the network is less and less social, as more and more of the interactions are automated, scripted, event-driven. Bots communicating with one another, with the occasional human coordinating the mildly inconvenient steps in between — until this gets automated too.
 
@@ -49,19 +49,19 @@ And it’s not limited to LinkedIn. I’m sure other platforms are the same. Twi
 
 Social scenes predominantly showcase bold claims about AI, supposedly killing an entire profession or industry, or making whatever tool, process or product suddenly obsolete. And that’s primarily because AI made building software incredibly convenient.
 
-{% assign approachability_ref = "In my first draft, I used the word “accessibility”, because I think it’s accurate: it gives people “access” to building software. But considering I talk a lot about digital accessibility on this website, I found it better to pick another word to avoid any confusion." %}
+{% assign footnote_approachability = "In my first draft, I used the word “accessibility”, because I think it’s accurate: it gives people “access” to building software. But considering I talk a lot about digital accessibility on this website, I found it better to pick another word to avoid any confusion." %}
 
-This is both the thing I love the most about AI in our industry and also what bothers or scares me the most: its {% footnoteref "approachability" approachability_ref %}approachability{% endfootnoteref %}. Everyone gets to build things, because the barrier of entry to start building has been lowered to practically zero.
+This is both the thing I love the most about AI in our industry and also what bothers or scares me the most: its {% footnoteref "approachability" footnote_approachability %}approachability{% endfootnoteref %}. Everyone gets to build things, because the barrier of entry to start building has been lowered to practically zero.
 
 I love AI for that. I’ve always despised gate-keeping. I want people to have access and opportunities. I want people to be able to build software, for fun, for profit or to solve problems. This is aligned with the fundamental principles of the web: that it’s for everyone. And in a way, AI coding assistance is the ultimate crystallization of this: everyone can build for the web (more on [the bad side of that later](#crippling-of-the-open-web)). 
 
-{% assign usefulness_ref = "I do not mean to imply that every software should have a purpose. I am all for useless software that’s just there for entertainment or goofing around. I have a problem with software that wants to be useful, but actually solves nothing. It just creates noise and risks." %}
+{% assign footnote_usefulness = "I do not mean to imply that every software should have a purpose. I am all for useless software that’s just there for entertainment or goofing around. I have a problem with software that wants to be useful, but actually solves nothing. It just creates noise and risks." %}
 
-On the other hand, because building things is now cheap and easy and requires significantly less skill than before, we are getting absolutely flooded with software. And most of it is not only very mediocre but also completely {% footnoteref "usefulness" usefulness_ref %}useless{% endfootnoteref %}. People now build and push out things just because they can, not because it actually benefits anyone.
+On the other hand, because building things is now cheap and easy and requires significantly less skill than before, we are getting absolutely flooded with software. And most of it is not only very mediocre but also completely {% footnoteref "usefulness" footnote_usefulness %}useless{% endfootnoteref %}. People now build and push out things just because they can, not because it actually benefits anyone.
 
-{% assign popular_apps_ref = "It certainly can happen! There is the occasional niche app coming out of left field that genuinely solves something and gain popularity, but it’s incredibly rare." %}
+{% assign footnote_popular_apps = "It certainly can happen! There is the occasional niche app coming out of left field that genuinely solves something and gain popularity, but it’s incredibly rare." %}
 
-Solo devs and SaaS subreddits are swarmed with people launching their SaaS only to realize they can’t get users (exhibits [A](https://www.reddit.com/r/buildinpublic/comments/1swwrsv/how_did_you_get_your_first_real_users_not_traffic/), [B](https://www.reddit.com/r/TheFounders/comments/1swdkkj/is_my_posture_sabotaging_me/), [C](https://www.reddit.com/r/micro_saas/comments/1sxz8j8/i_am_lost_with_marketing/), [D](https://www.reddit.com/r/SaaS/comments/1sxp93e/launched_a_handwriting_transcription_app_last/) and the list goes on). It’s unfortunate, but it’s not a surprise. If anyone has the ability to build anything, that also means that professionals have had the opportunity to build that same product for years. There is no reason for their vibe-coded calorie tracker, fitness workout, or AI calendar to {% footnoteref "popular-apps" popular_apps_ref %}suddenly make waves and gain traction{% endfootnoteref %}. 
+Solo devs and SaaS subreddits are swarmed with people launching their SaaS only to realize they can’t get users (exhibits [A](https://www.reddit.com/r/buildinpublic/comments/1swwrsv/how_did_you_get_your_first_real_users_not_traffic/), [B](https://www.reddit.com/r/TheFounders/comments/1swdkkj/is_my_posture_sabotaging_me/), [C](https://www.reddit.com/r/micro_saas/comments/1sxz8j8/i_am_lost_with_marketing/), [D](https://www.reddit.com/r/SaaS/comments/1sxp93e/launched_a_handwriting_transcription_app_last/) and the list goes on). It’s unfortunate, but it’s not a surprise. If anyone has the ability to build anything, that also means that professionals have had the opportunity to build that same product for years. There is no reason for their vibe-coded calorie tracker, fitness workout, or AI calendar to {% footnoteref "popular-apps" footnote_popular_apps %}suddenly make waves and gain traction{% endfootnoteref %}. 
 
 Just because we can build anything and everything doesn’t mean that anything and everything is worth building. And if it is worth building as an individual, it also doesn’t mean it has a broader audience. 
 
@@ -107,9 +107,9 @@ Recently, Dave Rupert posted *[I don’t want a screenshot of your Claude conver
 
 It sure seems like writing as a medium is fading, as more people turn to LLMs at the first opportunity, throwing genuineness and authenticity out of the window in the process.
 
-{% assign onboarding_ref = "Even with stellar onboarding documentation, you should still sit with new-joiners (even virtually). Removing the social aspect of professional interactions, especially the early ones, is the best way to demotivate employees and lose them rapidly." %}
+{% assign footnote_onboarding = "Even with stellar onboarding documentation, you should still sit with new-joiners (even virtually). Removing the social aspect of professional interactions, especially the early ones, is the best way to demotivate employees and lose them rapidly." %}
 
-The most recent example of that I’ve come across was someone having apparently “solved onboarding” because they had Claude generate an `ONBOARDING.md` document instead of {% footnoteref "onboarding" onboarding_ref %}having to sit with new employees{% endfootnoteref %}. Here is the thing: you should have had that document pre-LLM era already. This isn’t new, or groundbreaking, or some AI-possible breakthrough. This is onboarding-101, and claiming it’s made possible by AI is appalling.
+The most recent example of that I’ve come across was someone having apparently “solved onboarding” because they had Claude generate an `ONBOARDING.md` document instead of {% footnoteref "onboarding" footnote_onboarding %}having to sit with new employees{% endfootnoteref %}. Here is the thing: you should have had that document pre-LLM era already. This isn’t new, or groundbreaking, or some AI-possible breakthrough. This is onboarding-101, and claiming it’s made possible by AI is appalling.
 
 ### Crippling of the open web
 

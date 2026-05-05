@@ -9,15 +9,15 @@ tags:
 image: /assets/images/cover-component/banner-ruralSea.avif
 --- 
 
-{% assign protectors_memories_ref = "If you’re into role-playing game, I definitely recommend the <em>Protector’s Memories</em>. It’s a wonderful solo game focusing on exploration and discovery in a unique fantasy setting, with very little combat or magic." %}
-{% assign style_differences_ref = "It actually looks a bit different from this one, because this one inherits a bunch of styles from this website — starting with the font styles. But overall and for the purpose of this article, it looks more or less like that." %}
-{% assign midjourney_ref = "Kind thanks to my dear sister who is patiently and creatively producing the images using Midjourney, following the original lore from the rulebook and my vision for the site." %}
+{% assign footnote_protectors_memories = "If you’re into role-playing game, I definitely recommend the <em>Protector’s Memories</em>. It’s a wonderful solo game focusing on exploration and discovery in a unique fantasy setting, with very little combat or magic." %}
+{% assign footnote_style_differences = "It actually looks a bit different from this one, because this one inherits a bunch of styles from this website — starting with the font styles. But overall and for the purpose of this article, it looks more or less like that." %}
+{% assign footnote_midjourney = "Kind thanks to my dear sister who is patiently and creatively producing the images using Midjourney, following the original lore from the rulebook and my vision for the site." %}
 
-I am currently building a companion ~~app~~ website for the solo <abbr title="Table-Top Role-Playing Game">TTRPG</abbr> {% footnoteref "protectors-memories" protectors_memories_ref %}“The Protector’s Memories” by Enzo Salviato{% endfootnoteref %}, which I hope to release and introduce soon.
+I am currently building a companion ~~app~~ website for the solo <abbr title="Table-Top Role-Playing Game">TTRPG</abbr> {% footnoteref "protectors-memories" footnote_protectors_memories %}“The Protector’s Memories” by Enzo Salviato{% endfootnoteref %}, which I hope to release and introduce soon.
 
-I’ve built a pretty advanced hexagon map (which may be the subject of another blog post), and wanted some {% footnoteref "midjourney" midjourney_ref %}beautiful imagery{% endfootnoteref %} above it to make it more immersive.
+I’ve built a pretty advanced hexagon map (which may be the subject of another blog post), and wanted some {% footnoteref "midjourney" footnote_midjourney %}beautiful imagery{% endfootnoteref %} above it to make it more immersive.
 
-I ended up putting a fair bit of work in that UI component, so I thought it deserved a walkthrough. {% footnoteref "style-difference" style_differences_ref %}Here it is{% endfootnoteref %} — try hovering or focusing it:
+I ended up putting a fair bit of work in that UI component, so I thought it deserved a walkthrough. {% footnoteref "style-difference" footnote_style_differences %}Here it is{% endfootnoteref %} — try hovering or focusing it:
 
 {% render "demos/cover-component/index.liquid" %}
 
