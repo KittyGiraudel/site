@@ -23,4 +23,4 @@ notes:
   - I would recommend serving with fries and a relatively strong beer since the cheese is very flavourful. 🍺
 ---
 
-Burgers have to be my favourite thing to eat. I know, I’m so basic. 🍔 Every now and then, I like to make my own vegetarian burger with [reblochon](https://en.wikipedia.org/wiki/Reblochon), a French cheese from close to where I come from.
+Burgers have to be my favorite thing to eat. I know, I’m so basic. 🍔 Every now and then, I like to make my own vegetarian burger with [reblochon](https://en.wikipedia.org/wiki/Reblochon), a French cheese from close to where I come from.

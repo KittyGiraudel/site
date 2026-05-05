@@ -34,12 +34,12 @@ For more information between the scripted and the declarative syntaxes, refer to
 
 By default, Jenkins tends to resort to fast failing strategies. Parallel branches will all fail if one of them does, and sub-jobs will propagate their failure to their parent. These are good defaults in my opinion, but they can also be a problem when doing more complex things.
 
-When parallelising tasks with [the `parallel` function](https://www.jenkins.io/doc/book/pipeline/syntax/#parallel), you can opt-out to this fast-failing behaviour with the `failFast` key. I’m not super comfortable with the idea of having an arbitrarily named key on the argument of `parallel` but heh, it is what it is.
+When parallelizing tasks with [the `parallel` function](https://www.jenkins.io/doc/book/pipeline/syntax/#parallel), you can opt-out to this fast-failing behavior with the `failFast` key. I’m not super comfortable with the idea of having an arbitrarily named key on the argument of `parallel` but heh, it is what it is.
 
 ```groovy
 Map<String, Object> branches = [:]
 
-// Opt-out to fail-fast behaviour
+// Opt-out to fail-fast behavior
 branches.failFast = false
 
 branches.foo = { /* … */ }
@@ -60,9 +60,9 @@ final build = steps.build(
 
 The nice thing about this is that you can then use `build.status` to read whether the job was successful or not. We use that when scheduling sub-jobs to run our end-to-end tests, and reacting to tests having failed within terminating the parent job.
 
-## Conditional parallelisation
+## Conditional parallelization
 
-For performance reasons, we have a case where we want to run two tasks in parallel (`foo` and `bar` for sake of simplicty), but whether or not one of these tasks (`bar`) should run at all depends on environment factors. It took a bit of fidling to figure out how to skip the parallelisation when there is only one branch:
+For performance reasons, we have a case where we want to run two tasks in parallel (`foo` and `bar` for sake of simplicty), but whether or not one of these tasks (`bar`) should run at all depends on environment factors. It took a bit of fidling to figure out how to skip the parallelization when there is only one branch:
 
 ```groovy
 def branches = [:]
@@ -74,7 +74,7 @@ if (shouldRunBar) {
 	branches.bar = { /* … */ }
 	parallel branches
 } else {
-	// Otherwise skip parallelisation and manually execute the first branch
+	// Otherwise skip parallelization and manually execute the first branch
 	branches.foo()
 }
 ```
@@ -113,7 +113,7 @@ retry (3) {
 
 Our testing setup is pretty complex. We run _a lot_ of [Cypress](https://cypress.io) tests, and they interact with the staging backend, so they can be flaky. We cannot afford to restart the entire build from scratch every time a request fails during the tests, so we have built a lot of resilience within our test setup.
 
-On top of automatic retrying of failing steps (both [from Cypress behaviour](https://docs.cypress.io/guides/references/migration-guide.html#Tests-retries) and from a more advanced home made strategy), we also have a way to manually retry a stage if it failed. The idea is that it does not immediately fail the build, it waits for input (“Proceed” or “Abort”) until the stage either passes or is manually aborted.
+On top of automatic retrying of failing steps (both [from Cypress behavior](https://docs.cypress.io/guides/references/migration-guide.html#Tests-retries) and from a more advanced home made strategy), we also have a way to manually retry a stage if it failed. The idea is that it does not immediately fail the build, it waits for input (“Proceed” or “Abort”) until the stage either passes or is manually aborted.
 
 ```groovy
 stage('Tests') {

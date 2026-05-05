@@ -39,7 +39,7 @@ Now, including files can be done with the {% raw %}`{% include %}`{% endraw %} t
     └── js/
 ```
 
-Now, I wanted to minimise the amount of boilerplate needed to include some specific styles or script in a template, and making it easy to maintain. For instance, in my `post.liquid` layout, I wanted to have this include at the top:
+Now, I wanted to minimize the amount of boilerplate needed to include some specific styles or script in a template, and making it easy to maintain. For instance, in my `post.liquid` layout, I wanted to have this include at the top:
 
 {% raw %}
 
@@ -91,7 +91,7 @@ Alright, so there is quite a lot to unpack here. Here is the breakdown:
 
 ## Minification
 
-When it comes to minification, there are a few approaches here. One way would be to have a `cssmin` filter based on [clean-css](https://github.com/jakubpawlowicz/clean-css) (or any other CSS minifier). Inside of the `styles.html` partial, we’d apply `| cssmin` to our CSS so it gets optimised.
+When it comes to minification, there are a few approaches here. One way would be to have a `cssmin` filter based on [clean-css](https://github.com/jakubpawlowicz/clean-css) (or any other CSS minifier). Inside of the `styles.html` partial, we’d apply `| cssmin` to our CSS so it gets optimized.
 
 I went a slightly different path and have an [Eleventy transform](https://www.11ty.dev/docs/config/#transforms) to minify HTML with [html-minifier-terser](https://github.com/terser/html-minifier-terser). The nice thing about it is that it offers a `minifyCSS` and a `minifyJS` option to compress styles and scripts authored in `<style>` and `<script>` tags respectively. Therefore I have a single transform to minify everything.
 

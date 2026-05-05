@@ -1,6 +1,6 @@
 ---
 title: How I Use Trello to Stop Forgetting Things
-description: A personal write-up on how I use Trello to stay organised
+description: A personal write-up on how I use Trello to stay organized
 tags:
   - Process
 image: /assets/images/how-i-use-trello/trello-overview.png
@@ -9,7 +9,7 @@ deprecated: true
 
 Like everybody else, I have a lot going on in my life. There is working full-time at Edenspiekermann, focusing on the relationship with my girlfriend, keeping the flat a non-chaotic place, seeing friends, petting the cats, enjoying the city, working on open-source projects, and much more. Handling everything at once can be hard and overwhelming.
 
-Over the months, I noticed that I started forgetting about stuff… Forgetting to reply to some emails. Forgetting to buy some stuff at the supermarket. Forgetting to do important things in the house. There is just so much going on that my brain prioritises and filters things, although not always in the correct order… Duh.
+Over the months, I noticed that I started forgetting about stuff… Forgetting to reply to some emails. Forgetting to buy some stuff at the supermarket. Forgetting to do important things in the house. There is just so much going on that my brain prioritizes and filters things, although not always in the correct order… Duh.
 
 Therefore I started looking for a solution to work around this problem. I am not much of a paper-and-pen kind of person, so it was not really a solution for me to have post-it notes everywhere. After trying a few things, I finally realized that [Trello](https://trello.com) could actually do the trick!
 
@@ -47,7 +47,7 @@ For time-boxed items, I use the “Due date” feature from Trello. The coupling
   caption: "One label per project in the Web column"
 %}
 
-As my _Web_ column usually contains a large number of cards, I like to use labels to filter them. By having one colour (label) per project, it gets easier to spot which projects need extra attention. Another use of labels could be to adopt a more _Scrum-y_ approach, with only 3 columns: _To do_, _Doing_ and _Done_, and then use colors to replace my current category-based column setup. You’d have a label for Web, a label for People, a label for Twitter and so on. Although given the boolean state (done or not done) of most items and the fact that we don’t care about an item once done, I don’t feel like this Agile approach would suit me well.
+As my _Web_ column usually contains a large number of cards, I like to use labels to filter them. By having one color (label) per project, it gets easier to spot which projects need extra attention. Another use of labels could be to adopt a more _Scrum-y_ approach, with only 3 columns: _To do_, _Doing_ and _Done_, and then use colors to replace my current category-based column setup. You’d have a label for Web, a label for People, a label for Twitter and so on. Although given the boolean state (done or not done) of most items and the fact that we don’t care about an item once done, I don’t feel like this Agile approach would suit me well.
 
 One good thing from Trello is also the ability to re-order cards in a column which can come in handy for prioritizing. I usually put important cards at the top (such as time-boxed ones) and cards with low priority at the very bottom. It then gets super easy to visualise important items by scanning the top cards of each column.
 

@@ -26,6 +26,6 @@ I already replied to about [20 questions](https://github.com/KittyGiraudel/ama/i
 - [I don’t believe in God](https://github.com/KittyGiraudel/ama/issues/14),
 - [I enjoy a solid workflow](https://github.com/KittyGiraudel/ama/issues/17).
 
-And much more! I realise this is probably something I should have done a while ago given the amount of questions I’ve been asked on Twitter / GitHub / email. Better late than never!
+And much more! I realize this is probably something I should have done a while ago given the amount of questions I’ve been asked on Twitter / GitHub / email. Better late than never!
 
 I also incite you to have your own repository so people can ask you questions! Let’s dig this AMA concept!

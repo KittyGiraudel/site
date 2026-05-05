@@ -8,7 +8,7 @@ tags:
 
 I had some time off in December, so I decided to participate in [Advent of Code](https://adventofcode.com/). If you are unfamiliar with it, it is a series of daily coding/logic puzzles made of two parts, the second usually a twist on the former. Advent of Code has been running for 5 years now, and while I did attempt it last year, I gave up after a few days for lack of time.
 
-I originally wrote a long article about my thoughts on every individual puzzle, but I realised truly nobody cared, so I’m swapping it for a quick draft of my thoughts on the event as a whole. If you want to see my code, it’s in my [advent-of-code GitHub repo](https://github.com/KittyGiraudel/advent-of-code).
+I originally wrote a long article about my thoughts on every individual puzzle, but I realized truly nobody cared, so I’m swapping it for a quick draft of my thoughts on the event as a whole. If you want to see my code, it’s in my [advent-of-code GitHub repo](https://github.com/KittyGiraudel/advent-of-code).
 
 I won’t be giving any explicit answer or solution here, but I do mention tricks or things to pay attention to I guess spoiler alert.
 
@@ -66,9 +66,9 @@ test('Day 22 — Solutions', t => {
 
 Overall, it was a lot of fun. Difficulty varied greatly from day to day which was pretty interesting, and besides [day 20](https://adventofcode.com/2020/day/20) which was an absolute nightmare, I enjoyed solving the daily puzzle.
 
-What I particularly like about this event is that the amount of code to write is actually pretty low. Some challenges required barely more than a dozen lines. So it really is about solving problems more than writing code. My least favourite puzzles were the ones with a big code-to-solving ratio — that is, easy to solve, but hard or long to write.
+What I particularly like about this event is that the amount of code to write is actually pretty low. Some challenges required barely more than a dozen lines. So it really is about solving problems more than writing code. My least favorite puzzles were the ones with a big code-to-solving ratio — that is, easy to solve, but hard or long to write.
 
-My favourite ones were:
+My favorite ones were:
 
 - [Day 18](https://adventofcode.com/2020/day/18) which required evaluating mathematical expressions while challenging the natural resolution order (e.g. additions before multiplications).
 - [Day 22](https://adventofcode.com/2020/day/22), a recursive War-like card game where 2 players battle each other until one of them owns all cards in the deck.

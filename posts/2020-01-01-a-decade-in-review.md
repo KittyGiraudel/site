@@ -43,7 +43,7 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 
 - 👫 I have made incredible friends and lost touch with a few (thankfully not all of them).
 - 💔 I went through a 4+ year long relationship as well as its aftermath, yet managed to stay good friends.
-- 😅 I realised dating is really not my thing.
+- 😅 I realized dating is really not my thing.
 - ❤️ I found someone I want to construct things with again.
 - 👨‍👩‍👧‍👧 I managed to stay very close with my family, especially with my siblings, even though I lived in a different country for half of the decade.
 
@@ -52,14 +52,14 @@ Obviously, a lot has happened over the last 10 years for me. People say one’s 
 - 🖐 I [experienced some form of tendonitis](/2015/12/02/dealing-with-tendonitis/) caused by high level of stress during the break-up with my former partner.
 - 🦶 I managed to twist both my ankles in one night, making for a fun trip home back from Croatia (not).
 - 🏳️‍🌈 I learnt that sexuality and, more importantly for me, gender as well as physical representation are flexible concepts and that it’s okay to experiment with them.
-- 😬 I’ve come to realise that I am not always good enough, that I have flaws, that I can be a jerk (with or without wanting to be one) and that being a good human being takes effort and self-reflection.
+- 😬 I’ve come to realize that I am not always good enough, that I have flaws, that I can be a jerk (with or without wanting to be one) and that being a good human being takes effort and self-reflection.
 - 😔 I finally understood how privileged I am in this society (young, white, male-passing, from a upper middle-class family). This knowledge, and the thought that not every one has been as fortunate as I was, I carry with me every day.
 - 😣 I spent so much time coding or talking and writing about code that I got close to burning myself out a few years back. Since then, I have been balancing coding with other activities.
 
 ## Hobbies
 
-- ✏️ I stopped drawing. I realised it was just getting frustrating. Drawing has always been very connected with difficult emotions for me, and that’s not something I wanted to keep carrying with me.
-- 👩‍💻 I discovered web development (more about [how I got there](https://github.com/KittyGiraudel/ama/issues/82)), enjoyed it, realised I was good at it, and made a career out of it.
+- ✏️ I stopped drawing. I realized it was just getting frustrating. Drawing has always been very connected with difficult emotions for me, and that’s not something I wanted to keep carrying with me.
+- 👩‍💻 I discovered web development (more about [how I got there](https://github.com/KittyGiraudel/ama/issues/82)), enjoyed it, realized I was good at it, and made a career out of it.
 - 🎱 I learnt how to play pool, to a level that is enjoyable. And I taught a dear friend how to play as well.
 - 📖 I still haven’t really got to enjoy reading literature, which is funny for someone who likes to write that much. I did manage to read a few books over the last years, mostly humourous or scientifical (or both) but it takes me a long time.
 - 🎮 For the better or worse, I kept my love for games, be it video games, board games, or even role-playing games.

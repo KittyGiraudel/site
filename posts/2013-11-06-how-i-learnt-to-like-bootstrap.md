@@ -6,7 +6,7 @@ tags:
   - Retrospective
 edits:
   - date: 2020/12/09
-    md: This article is ye olde. I wouldn’t use Bootstrap outside of a quick prototyping phase anymore. I’d spend more time customising it than writing things from scratch so it’s just not worth it, especially since it’s quite heavy. Definitely would skip Bootstrap entirely today.
+    md: This article is ye olde. I wouldn’t use Bootstrap outside of a quick prototyping phase anymore. I’d spend more time customizing it than writing things from scratch so it’s just not worth it, especially since it’s quite heavy. Definitely would skip Bootstrap entirely today.
 deprecated: true
 ---
 

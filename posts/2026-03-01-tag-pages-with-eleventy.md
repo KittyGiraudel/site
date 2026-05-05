@@ -57,7 +57,7 @@ pagination:
 
 At some point, I added a [snippets](/snippets/) section to this website, inspired by [Josh W. Comeau](https://www.joshwcomeau.com/snippets/).
 
-I realised it would be nice to also tag snippets, and have them listed in the tag pages as well. The great thing about this is that it just works out of the box since collections are just based on the `tags` property of the front-matter.
+I realized it would be nice to also tag snippets, and have them listed in the tag pages as well. The great thing about this is that it just works out of the box since collections are just based on the `tags` property of the front-matter.
 
 ## Actually tagging content
 

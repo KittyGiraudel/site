@@ -75,7 +75,7 @@ Again, let’s break it down:
 - The footnotes do not _have to_ be authored as an ordered list, and could also be authored as individual paragraphs, but an ordered list seems more semantic to me. Additionally, it deals with the numbering for us which is handy.
 - Every back link needs to link back to the reference within the text. The `aria-label` attribute is necessary to provide explanatory content if the link text does not (like here, with an icon).
 
-As you can see, there is quite a lot to unpack, and you can soon realise why maintaining footnotes by hand can be tedious and error-prone.
+As you can see, there is quite a lot to unpack, and you can soon realize why maintaining footnotes by hand can be tedious and error-prone.
 
 ## Here comes React
 
@@ -109,7 +109,7 @@ What’s nice about this approach is that footnotes are essentially out of sight
 
 ## Wrapping things up
 
-I hope [react-a11y-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/react-a11y-footnotes) will help people implement clean and accessible footnotes for everyone. I’m currently finalising the API and will most likely publish a first version some time this week.
+I hope [react-a11y-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/react-a11y-footnotes) will help people implement clean and accessible footnotes for everyone. I’m currently finalizing the API and will most likely publish a first version some time this week.
 
 I am also playing with providing optional basic styling, especially for the references themselves since they currently rely on CSS counters, to make it easy to import the library, its styles, and start footnoting.
 

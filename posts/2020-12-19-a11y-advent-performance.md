@@ -16,7 +16,7 @@ A few years back, Harry Roberts mentioned an anecdote in one of his talks where 
 >
 > Here in the middle of Germany, if we experienced a one-minute load time, we’d assume the site was down. We’d assume they were having an outage, and we’d probably go elsewhere.
 
-Nepal, like many regions of the world, suffers from what most of us would consider poor connectivity. A website as optimised as Harry’s takes almost a minute to load. Harry continues:
+Nepal, like many regions of the world, suffers from what most of us would consider poor connectivity. A website as optimized as Harry’s takes almost a minute to load. Harry continues:
 
 > [M]y site is incredibly highly optimized. It has to be. It’s my job to sell fast websites. If you’re visiting my site from, say, Dublin or West Coast USA, it would be fully loaded, fully rendered within 1.3 seconds. The exact same website on the exact same hosting on the exact same code base takes a minute for this person, over 45 times slower just because of where he lives. That’s the geographic penalty, the geographic tax that a lot of people in the world have to pay.
 

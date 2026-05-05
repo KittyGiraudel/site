@@ -14,7 +14,7 @@ Here is a technical write-up of my journey through that puzzle.
 
 ## Part 1
 
-The first thing I’m happy about is that I managed to solve part 1 _very_ rapidly. And that’s only because a former Advent of Code event had a similar problem which I couldn’t solve back then. It feels nice realising that I learn stuff. 😅
+The first thing I’m happy about is that I managed to solve part 1 _very_ rapidly. And that’s only because a former Advent of Code event had a similar problem which I couldn’t solve back then. It feels nice realizing that I learn stuff. 😅
 
 Let’s go through it.
 

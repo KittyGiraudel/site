@@ -58,17 +58,17 @@ const MutationForm = props => {
 	const formRef = React.useRef()
 	const handleSubmit = event => {
 		// When submitting the form with JavaScript enabled, prevent the
-		// default behaviour to avoid a page refresh.
+		// default behavior to avoid a page refresh.
 		event.preventDefault()
 
-		// Call the mutation with the serialised form for variables, then
+		// Call the mutation with the serialized form for variables, then
 		// redirect to the correct path accordingly.
 		mutate({ variables: serialize(formRef.current, { hash: true }) })
 			.then(() => window.history.pushState(null, null, props.successPath))
 			.catch(() => window.history.pushState(null, null, props.failurePath))
 	}
 
-	// Render a <form> with a ref to be able to serialise it, and a
+	// Render a <form> with a ref to be able to serialize it, and a
 	// few hidden fields to hold the mutation and the redirect paths.
 	return (
 		<form action='/graphql' method='POST' ref={formRef} onSubmit={handleSubmit}>
@@ -178,7 +178,7 @@ That’s it! We managed to issue and handle a mutation with Apollo without havin
 
 It took us a bit of head-scratching to come up with a way to send potential errors back to the page. Originally, we prototyped passing them as part of the URL when redirecting back to the failure path. This was not ideal for several reasons, privacy and security being the most important ones.
 
-We ended up serialising (and encrypting in our case, but this is not a required step) the outcome of the mutation and storing it in a cookie. Then, _after_ we redirect back to the failure path, we read that cookie on the server, and pass it in a React context, then delete the cookie. From there, the React tree can read the errors from the React context and render them.
+We ended up serializing (and encrypting in our case, but this is not a required step) the outcome of the mutation and storing it in a cookie. Then, _after_ we redirect back to the failure path, we read that cookie on the server, and pass it in a React context, then delete the cookie. From there, the React tree can read the errors from the React context and render them.
 
 ## Going further
 

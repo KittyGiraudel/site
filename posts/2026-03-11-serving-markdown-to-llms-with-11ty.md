@@ -271,7 +271,7 @@ So there is this idea that LLMs could be requesting Markdown by sending a `Accep
 
 ## Closing thoughts
 
-I don’t know. At some point I was thinking “why are we optimizing the web for machines?” and then realised we’ve been doing it for decades already, we just called it SEO.
+I don’t know. At some point I was thinking “why are we optimizing the web for machines?” and then realized we’ve been doing it for decades already, we just called it SEO.
 
 I guess the difference is that we did that to improve our ranking in search results. This time around, we are optimizing _our_ websites to make it cheaper for machines that _steal our content_ to send it to other people. It feels weird.
 

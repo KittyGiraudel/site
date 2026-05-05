@@ -1,14 +1,14 @@
 ---
-title: 'A11y Advent Day 18: Internationalisation'
-description: A11yAdvent entry on internationalisation and accessibility
+title: 'A11y Advent Day 18: Internationalization'
+description: A11yAdvent entry on internationalization and accessibility
 tags:
   - Accessibility
-  - Internationalisation
+  - Internationalization
 ---
 
-If accessibility is the discipline aiming at providing equal access to everyone, then the internationalisation of content has to play an important part in it. Content provided in a language that is not understood by the user is pretty inaccessible.
+If accessibility is the discipline aiming at providing equal access to everyone, then the internationalization of content has to play an important part in it. Content provided in a language that is not understood by the user is pretty inaccessible.
 
-Localisation and internationalisation (sometimes shortened l10n and i18n respectively) are broad topics requiring a lot of knowledge to do well. Large companies tend to have teams dedicated to internationalisation and the proper localisation of content. It takes time and effort.
+Localisation and internationalization (sometimes shortened l10n and i18n respectively) are broad topics requiring a lot of knowledge to do well. Large companies tend to have teams dedicated to internationalization and the proper localisation of content. It takes time and effort.
 
 Nevertheless, we can outline a certain amount of advice and things to consider to make sure the content is properly localised:
 
@@ -24,4 +24,4 @@ Nevertheless, we can outline a certain amount of advice and things to consider t
 
 - Be mindful of bias when designing interfaces and the systems supporting them. For instance, having one first name and one last name is quite an occidental structure. All around the world, people have many names, middle names, initials, no first name, no last name, names with a single character… If you have never read [Falsehoods Programmers Believe About Names](https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/), I cannot recommend it enough.
 
-Internationalisation is hard to do well. Mistakes will be made, and it’s never going to be perfect. It’s a matter of iterating on it and doing better. In a world as connected as ours, we as organisations providing content and products, need to put aside our bias and design systems which fit everyone, whoever they are, and wherever they come from.
+Internationalization is hard to do well. Mistakes will be made, and it’s never going to be perfect. It’s a matter of iterating on it and doing better. In a world as connected as ours, we as organizations providing content and products, need to put aside our bias and design systems which fit everyone, whoever they are, and wherever they come from.

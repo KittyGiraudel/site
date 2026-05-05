@@ -39,7 +39,7 @@ Here are the things that it makes easier:
 
 ✅ Settling discussions by defining one way to do things. Of course this can change, and the one way might become another way down the line, but at any point in time, it is important to have a single common and agreed on approach.
 
-🏝 Removing knowledge islands. One of the worst things about someone leaving (besides, you know, them leaving) is all the knowledge they are taking with them. Companies tend to think that having a month or two of overlap with the next hire is enough to minimise that, but that’s not. I can guarantee, no amount of time overlap will be enough for me to share over 3 years of company, product and code knowledge. Documentation is what will. Note that this is not too specific to someone leaving, but also applies for someone with specific knowledge not being available (other project, holidays, sickness…).
+🏝 Removing knowledge islands. One of the worst things about someone leaving (besides, you know, them leaving) is all the knowledge they are taking with them. Companies tend to think that having a month or two of overlap with the next hire is enough to minimize that, but that’s not. I can guarantee, no amount of time overlap will be enough for me to share over 3 years of company, product and code knowledge. Documentation is what will. Note that this is not too specific to someone leaving, but also applies for someone with specific knowledge not being available (other project, holidays, sickness…).
 
 ## Make tests first-class citizens
 
@@ -65,13 +65,13 @@ I believe we should always be able to assess the health of a code base, at least
 
 If I had to reflect on my experience as a tech lead (or whatever fancy title it is) over these 3 years is that it’s important to let people experiment, make mistakes and take ownership. Micro-management is a counter-intuitive work methodology, and I certainly must have failed at this on multiple occasions.
 
-For people to grow and feel valued in an organisation, they have to be able to take on responsibilities. I feel like we did a fair job at making sure people would not be imposed responsibilities they didn’t want or couldn’t live up to, but probably we could have done better at letting people take on more at times.
+For people to grow and feel valued in an organization, they have to be able to take on responsibilities. I feel like we did a fair job at making sure people would not be imposed responsibilities they didn’t want or couldn’t live up to, but probably we could have done better at letting people take on more at times.
 
 I have always felt conflicted between doing things myself so people don’t have to deal with them and can focus on their work, and letting people do these things at the risk of causing them stress or discomfort.
 
 A good example of that is shipping code to production. We have released our web platform over 700 times in the last 3 years, and I must have orchestrated 90% of those releases. Mostly because it’s sometimes a little difficult, and more importantly, because I know it can be stressful for some people, especially less seasoned engineers. Now, some people were probably happy I took on this task repeatedly, but by doing so I also deprived some curious engineers from a learning opportunity.
 
-I have recently been taught the word “sonder”. That is the realisation that everyone, including passers-by, has a life as complex as our own, which they are living despite our personal lack of awareness of it. I find it interesting because it’s all too obvious but also quite a discovery in itself. People are not <abbr title="Non-Playable Characters">NPCs</abbr> in our lives. Who knew, right?
+I have recently been taught the word “sonder”. That is the realization that everyone, including passers-by, has a life as complex as our own, which they are living despite our personal lack of awareness of it. I find it interesting because it’s all too obvious but also quite a discovery in itself. People are not <abbr title="Non-Playable Characters">NPCs</abbr> in our lives. Who knew, right?
 
 I have absurdly high expectations for myself, and sometimes I expect people to do the same about themselves. That’s not quite how things work though, and every one is trying to do the best they can. The [Prime Directive of Agile](https://retrospectivewiki.org/index.php?title=The_Prime_Directive) says something similar:
 

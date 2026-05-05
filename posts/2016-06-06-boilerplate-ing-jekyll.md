@@ -7,7 +7,7 @@ tags:
 
 I have long been a fan of the static website generator [Jekyll](https://jekyllrb.com/). It is a splendid project, fast and efficient, and I cannot count the number of sites I have built with it.
 
-Still, I realised that I was doing the same thing over and over again for every new Jekyll project. It was way past time to create myself a tiny boilerplate. Which I did. Say hi to [jekyll-boilerplate](https://github.com/KittyGiraudel/jekyll-boilerplate).
+Still, I realized that I was doing the same thing over and over again for every new Jekyll project. It was way past time to create myself a tiny boilerplate. Which I did. Say hi to [jekyll-boilerplate](https://github.com/KittyGiraudel/jekyll-boilerplate).
 
 ## What’s in there?
 

@@ -119,7 +119,7 @@ We also have a Markdown document on accessibility. It contains a definition of t
 
 Accessibility is not something trivial to test. Fortunately, some brilliant people with their heart in the right place built tooling around it, such as aXe for instance. A fantastic tool to automate accessibility testing is [pa11y](https://github.com/pa11y/pa11y).
 
-Pa11y is a Node / CLI utility running HTML Code Sniffer (a library to analyse HTML code) in a headless browser (Phantom in v4, Puppeteer in v5). Like aXe, it embeds the rules from accessibility standards, and test them against given URLs. From their, it gives an extensive report with hints on how to fix.
+Pa11y is a Node / CLI utility running HTML Code Sniffer (a library to analyze HTML code) in a headless browser (Phantom in v4, Puppeteer in v5). Like aXe, it embeds the rules from accessibility standards, and test them against given URLs. From their, it gives an extensive report with hints on how to fix.
 
 We set up pa11y to run on deployment on all our pages, so that if there is an accessibility error, it fails with a non-zero error code and aborts the procedure. Essentially, we made accessibility mistakes first class errors, so that we don’t deploy broken code.
 

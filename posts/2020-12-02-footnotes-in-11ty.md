@@ -10,12 +10,12 @@ tags:
 
 {% assign footnote_liquid = "I personally use Liquid at the time of writing, but this implementation should be relatively similar with Nunjucks, or even some other templating language." %}
 
-After having [moved from Jekyll to Eleventy](/2020/11/30/from-jekyll-to-11ty/), I realised I could extend Liquid in fancy ways to make some things a little easier (or down right possible). In this article, I’d like to share how I built a tiny footnotes plugin with {% footnoteref "liquid" footnote_liquid %}Liquid{% endfootnoteref %}. If you are not interested in how the sausage is made and just want to use the code, check [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/eleventy-plugin-footnotes) for usage instructions.
+After having [moved from Jekyll to Eleventy](/2020/11/30/from-jekyll-to-11ty/), I realized I could extend Liquid in fancy ways to make some things a little easier (or down right possible). In this article, I’d like to share how I built a tiny footnotes plugin with {% footnoteref "liquid" footnote_liquid %}Liquid{% endfootnoteref %}. If you are not interested in how the sausage is made and just want to use the code, check [eleventy-plugin-footnotes](https://github.com/KittyGiraudel/accessible-footnotes/tree/main/packages/eleventy-plugin-footnotes) for usage instructions.
 
 {% callout %}
 Nicolas Hoizey pointed out on Twitter that [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) does essentially the same thing with less integration and using Markdown syntax instead of Liquid.
 
-_Maybe_, but my main problem with it is that it’s not super accessible (let alone by default), even considering all the customisation options. That’s because the footnote references end up being numbers (e.g. [1]) which are meaningless when listed or tabbed through because devoid of their surrounding context.
+_Maybe_, but my main problem with it is that it’s not super accessible (let alone by default), even considering all the customization options. That’s because the footnote references end up being numbers (e.g. [1]) which are meaningless when listed or tabbed through because devoid of their surrounding context.
 {% endcallout %}
 
 I have recently blogged about [accessible footnotes](/2020/11/24/accessible-footnotes-and-a-bit-of-react/) again and if you haven’t read the article yet, I recommend you do so you fully grasp what comes next. To put things simply, we need 2 things: a way to register a footnote reference within the text, and a way to display the footnotes for a given page at the bottom of a post. Let’s start with the first one.

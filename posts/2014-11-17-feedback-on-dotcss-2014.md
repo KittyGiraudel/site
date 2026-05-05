@@ -5,7 +5,7 @@ tags:
   - Retrospective
   - Conference
   - Sass
-image: /assets/images/feedback-on-dotcss/theatre.jpg
+image: /assets/images/feedback-on-dotcss/theater.jpg
 ---
 
 I have been invited to speak at the very first [dotCSS](https://www.dotcss.io/) in Paris on November 14th, as part of a beautiful lineup of incredible speakers and not less than 400 attendees. It was a truely great experience, hence a little article to sum up the journey.
@@ -20,10 +20,10 @@ Anyway, if you felt frisky coming to dotCSS this year because it was the first e
 
 ## About the stage
 
-The conference happened at the [Théâtre des Variétés](https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_des_Vari%C3%A9t%C3%A9s) in Paris, a beautiful 19th century redish and goldish theatre with balconies, great lights and everything. It was absolutely gorgeous. The stage was not huge but definitely big enough to move a bit around. I think one could not dream of a best location to give a talk.
+The conference happened at the [Théâtre des Variétés](https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_des_Vari%C3%A9t%C3%A9s) in Paris, a beautiful 19th century redish and goldish theater with balconies, great lights and everything. It was absolutely gorgeous. The stage was not huge but definitely big enough to move a bit around. I think one could not dream of a best location to give a talk.
 
 {% render "figure.liquid",
-  src: "/assets/images/feedback-on-dotcss/theatre.jpg",
+  src: "/assets/images/feedback-on-dotcss/theater.jpg",
   caption: "Théâtre des Variétés in Paris. Photo by dotCSS.",
   lazy: false
 %}
@@ -46,7 +46,7 @@ I don’t think the attention-span for a talk is meant to last any longer than 3
 
 Anyway, allow me to give you a quick round-up.
 
-[Daniel Glazman](https://twitter.com/glazou), co-chairman at the CSS Working Group opened the stage with [a talk about how CSS got there](https://disruptive-innovations.com/zoo/slides/20141114-dotCSS/dotCSS2014.pdf), what were the mistakes made, and why. I was not really familiar with Daniel’s work before the event so I found his talk very insightful. Plus, he really is talented speaker with great humour, thus I could not think of a better person to open the event.
+[Daniel Glazman](https://twitter.com/glazou), co-chairman at the CSS Working Group opened the stage with [a talk about how CSS got there](https://disruptive-innovations.com/zoo/slides/20141114-dotCSS/dotCSS2014.pdf), what were the mistakes made, and why. I was not really familiar with Daniel’s work before the event so I found his talk very insightful. Plus, he really is talented speaker with great humor, thus I could not think of a better person to open the event.
 
 Then [Kaelig](https://twitter.com/kaelig), French frontend developer previously at BBC and the Guardian, now at the Financial Times, presented a very interesting talk about [bridging the gap between designers and developers](https://www.slideshare.net/kaelig/bridging-the-gap-between-designers-and-developers-at-the-guardian) (essentially using Sass) in big teams such at The Guardian’s.
 
@@ -70,7 +70,7 @@ It was my first talk in English, and as far as I can tell it went quite well. I 
 
 When I came up on stage, as for other speakers, I couldn’t see a single face in the audience. Lights were all turned to the stage, and the room was kept dark, so all I could see was bright (while not blinding) light.
 
-Interestingly enough, I realised that I feel much more confident when I don’t see people’s face. Seeing people is disturbing because you may assist to things that you don’t want to see in order to provide a clear talk.
+Interestingly enough, I realized that I feel much more confident when I don’t see people’s face. Seeing people is disturbing because you may assist to things that you don’t want to see in order to provide a clear talk.
 
 - People that don’t give a damn and are coding or reading Twitter. Those people make you wonder whether or not your talk is interesting and this is not the kind of things you should be thinking _while_ talking.
 - People that seem completely lost. While it can be helpful to know that some people can’t follow along because things are getting too technical, seeing those reactions directly put you back to the previous bullet: you’ll end up wondering whether your talk is good enough.

@@ -64,7 +64,7 @@ Among the many things I did on the topic, I:
 
 ## Accessibility
 
-I don’t know if it’s a sudden realisation or the recent [A11y project](https://a11yproject.com/) which motivated me to do that but I took some time to improve accessibility on the site. Plus, it gave me the opportunity to learn some things on the topic.
+I don’t know if it’s a sudden realization or the recent [A11y project](https://a11yproject.com/) which motivated me to do that but I took some time to improve accessibility on the site. Plus, it gave me the opportunity to learn some things on the topic.
 
 First of all, I switched a bunch of my divs to “new” HTML5 elements. So I’m now using `<header>`, `<article>`, `<aside>`, `<footer>`, `<section>`, and so on. I must say it feels right, really.
 

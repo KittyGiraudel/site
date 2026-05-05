@@ -231,7 +231,7 @@ First, let’s deal with focus styles. As long as they’re noticeable, they can
 /**
  * 1. When the input is focused, provide the display the default outline
  *    styles from the browser to mimic a native control. This can be
- *    customised to have a custom focus outline.
+ *    customized to have a custom focus outline.
  */
 .Toggle__input:focus + .Toggle__display {
 	outline: 1px dotted #212121; /* 1 */
@@ -239,13 +239,13 @@ First, let’s deal with focus styles. As long as they’re noticeable, they can
 }
 ```
 
-One interesting thing I’ve noticed is that when clicking a native checkbox or its label, the focus outline does not appear. It only does so when focusing the checkbox with a keyboard. We can mimic this behaviour by removing the styles we just applied when the [`:focus-visible` selector](https://css-tricks.com/almanac/selectors/f/focus-visible/) doesn’t match.
+One interesting thing I’ve noticed is that when clicking a native checkbox or its label, the focus outline does not appear. It only does so when focusing the checkbox with a keyboard. We can mimic this behavior by removing the styles we just applied when the [`:focus-visible` selector](https://css-tricks.com/almanac/selectors/f/focus-visible/) doesn’t match.
 
 ```css
 /**
  * 1. When the toggle is activated with a mouse click (and therefore
  *    the focus does not have to be ‘visible’ as per browser heuristics),
- *    remove the focus outline. This is the native checkbox’s behaviour where
+ *    remove the focus outline. This is the native checkbox’s behavior where
  *    the focus is not visible when clicking it.
  */
 .Toggle__input:focus:not(:focus-visible) + .Toggle__display {
@@ -421,7 +421,7 @@ As you can see, there is nothing extremely difficult with it but still a lot of 
 - We use an actual checkbox form element, which we style as a toggle.
 - It conveys its status with both iconography _and_ color.
 - It leaves no artifacts when CSS is not available.
-- It has native focus styles, and can be customised.
+- It has native focus styles, and can be customized.
 - It has a disabled state.
 - It has right-to-left support, if necessary.
 - It should be relatively easy to adapt to a dark mode provided there are some global custom properties exposed.

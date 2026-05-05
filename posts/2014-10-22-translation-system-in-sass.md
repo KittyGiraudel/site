@@ -2,7 +2,7 @@
 title: Translation System in Sass
 description: A technical write-up on building a translation system in Sass
 tags:
-  - Internationalisation
+  - Internationalization
   - Sass
 ---
 

@@ -12,7 +12,7 @@ Generally speaking, being straightforward and unambiguous is the best way to avo
 
 The navigation, and generally speaking any sort of action, should be consistent across an entire platform. Main landmarks should not be moving around depending on the page, and a given action should be the same across pages.
 
-Regarding the tone, be mindful of being too formal or too casual. Over recent years, more and more software companies have taken a more casual and friendly approach with their communication, but it can be found a little childish or patronising. Not everyone wants a lighthearted relationship with their bank or insurance provider. Humour is subjective and can be delicate to do well.
+Regarding the tone, be mindful of being too formal or too casual. Over recent years, more and more software companies have taken a more casual and friendly approach with their communication, but it can be found a little childish or patronizing. Not everyone wants a lighthearted relationship with their bank or insurance provider. Humor is subjective and can be delicate to do well.
 
 Similarly, error messages should be descriptive enough to understand what went wrong. Think twice before validating the wrong thing, and playfully shaming the user for making mistakes (such as “Woopsi-doopsie your name needs more than a character, silly!”). Be clear and succint with the expectations so the issue can be addressed.
 

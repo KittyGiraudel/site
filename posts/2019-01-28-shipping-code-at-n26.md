@@ -38,7 +38,7 @@ When the pull-request has been merged, we initiate a testing build. This mimicks
 
 - We test that all our routes return what we expect (200, 301, 302, 404…). This works by building a “routes manifest” by merging static routes and dynamic ones coming from our Contentful CMS. All web services combined, we test about 3500 routes to make sure there is no rendering error and they actually work.
 
-- We then run [pa11y](https://pa11y.org/) on all these routes which return markup (which is most of them) to test for basic accessibility requirements (mostly correct DOM structure). This ensures we don’t break accessibility basics without realising it.
+- We then run [pa11y](https://pa11y.org/) on all these routes which return markup (which is most of them) to test for basic accessibility requirements (mostly correct DOM structure). This ensures we don’t break accessibility basics without realizing it.
 
 - Then, we run an extensive suite of end-to-end tests powered by [Cypress](https://www.cypress.io/) to test most main scenarios of our web platform. This mimicks proper user interaction, and most of them actually hit a testing database, therefore also covering the communication between the frontend and the backend API.
 

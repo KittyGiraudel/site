@@ -25,6 +25,6 @@ It turns out that authoring good captions is actually surprisingly difficult, an
 
 - Special care can be taken to make sure not to spoil upcoming events before they appear on screen. Nothing like knowing what happens before it actually does because the caption was too revealing.
 
-- Important sound effects and subtility (such as tone, emotions, loudness, music…) should be explicitly mentioned. Same thing if the sound/dialogue comes from something off-screen.
+- Important sound effects and subtility (such as tone, emotions, loudness, music…) should be explicitly mentioned. Same thing if the sound/dialog comes from something off-screen.
 
 As you can see, there are a lot of things to consider to make captions accessible. Some content might be easier to caption that others (single speaker, few editorial cuts, no sound effects or music…). The more attention is devoted to captions, the more accessible the content becomes. It is particularly critical when the main content of a given page or product is provided through videos (movie, series, screencasts…).

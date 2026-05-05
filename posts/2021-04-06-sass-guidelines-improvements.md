@@ -23,7 +23,7 @@ On any version but the English one, there is an English banner mentioning that t
 
 I noticed that this disclaimer was not marked as English, which meant someone using a screen-reader wouldn’t switch to English when reading out this content. Not great! I added `lang="en"` to this container and initiated the process to have this content translated since there is no reason it should be displayed in English at all.
 
-## Search engine optimisation
+## Search engine optimization
 
 Something I learnt from working on the international site for Gorillas is that it can be interesting to [list alternate versions](https://developers.google.com/search/docs/advanced/crawling/localized-versions) in the `<head>` of the document for search engines.
 
@@ -88,7 +88,7 @@ For something as simple as Sass Guidelines, you’d think there are not many per
 
 I removed the custom font entirely. We were using Roboto, and while it was responsibly loaded (asynchronously and only a subset, following the Filament Group’s recommendations), it also feels very unnecessary. The site doesn’t become suddenly better because of Roboto (or any font for that matter), so I decided to drop it entirely and use the default font stack instead.
 
-Images also could use some love. First of all, I lazy-loaded them all with `loading="lazy"`, which is pretty interesting to avoid downloading them as soon as the page loads and wait for them to be rendered instead. Secondly, I realised they were not served in optimised formats when available so I added WebP and AVIF support to significantly reduce their file size.
+Images also could use some love. First of all, I lazy-loaded them all with `loading="lazy"`, which is pretty interesting to avoid downloading them as soon as the page loads and wait for them to be rendered instead. Secondly, I realized they were not served in optimized formats when available so I added WebP and AVIF support to significantly reduce their file size.
 
 Not that it makes a huge difference performance-wise, but I removed CSS vendor prefixes. I was surprised to see that I used a lot of vendor prefixes like `-webkit-`, `-moz-` and `-ms-` throughout the stylesheet, which is definitely no longer necessary for most declarations.
 

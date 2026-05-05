@@ -82,7 +82,7 @@ In the description of the story, create a list of tasks where a task is a checkb
   caption: "The PR description contains the task to be accomplished for the feature"
 %}
 
-As long as all actors from a project are part of the GitHub organisation behind the project, everybody can edit/delete any comment, so anyone is able to add new tasks to the description if deemed necessary.
+As long as all actors from a project are part of the GitHub organization behind the project, everybody can edit/delete any comment, so anyone is able to add new tasks to the description if deemed necessary.
 
 {% callout %}GitHub Flavoured Markdown will automatically convert `[ ]` into an unticked checkbox and `[x]` into a ticked one. It will also remember the state of the checkbox so you can actually rely on it.{% endcallout %}
 

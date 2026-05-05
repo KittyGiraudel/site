@@ -430,7 +430,7 @@ $new-list: reverse($list); // h, g, f, c d e, b, a
 $new-list: reverse($list, true); // h, g, f, e d c, b, a
 ```
 
-As you can see, by default the function do not reverse nested lists. As always, you can force this behaviour by setting the `$recursive` parameter to `true`.
+As you can see, by default the function do not reverse nested lists. As always, you can force this behavior by setting the `$recursive` parameter to `true`.
 
 ```scss
 @function reverse($list, $recursive: false) {

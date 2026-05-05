@@ -47,6 +47,7 @@ https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 /2014/04/10/cross-media-query-extend-directives-in-sass/                  https://www.sitepoint.com/cross-media-query-extend-sass/ 301!
 /2014/04/15/caching-values-from-sass-mixins/                              https://www.sitepoint.com/caching-values-sass-mixins/ 301!
 /2014/04/23/my-favourite-sass-tools/                                      https://www.sitepoint.com/my-favorite-sass-tools/ 301!
+/2014/04/23/my-favorite-sass-tools/                                       https://www.sitepoint.com/my-favorite-sass-tools/ 301!
 /2014/04/29/whats-the-difference-between-sass-and-scss/                   https://www.sitepoint.com/whats-difference-sass-scss/ 301!
 /2014/05/08/sass-mixins-to-kickstart-your-project/                        https://www.sitepoint.com/sass-mixins-kickstart-project/ 301!
 /2014/05/13/supporting-multiple-versions-of-sass/                         https://webdesign.tutsplus.com/articles/when-and-how-to-support-multiple-versions-of-sass--cms-20935 301!
@@ -118,6 +119,7 @@ https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 /2017/07/27/whats-your-story/                                             https://github.com/KittyGiraudel/ama/issues/82 301!
 /2017/09/01/web-inclusion/                                                https://dev.by/lenta/main/web-inclusion 301!
 /2017/10/03/how-to-encourage-accessibility-in-an-organisation/            https://github.com/KittyGiraudel/ama/issues/88 301!
+/2017/10/03/how-to-encourage-accessibility-in-an-organization/            https://github.com/KittyGiraudel/ama/issues/88 301!
 /2017/10/03/where-to-start-with-accessibility/                            https://github.com/KittyGiraudel/ama/issues/87 301!
 /2018/12/17/creating-a-banking-web-app-with-accessibility-in-mind/        https://marcus.io/blog/interview-with-kitty-giraudel-of-n26 301!
 /2019/02/18/web-security-at-n26/                                          https://medium.com/insiden26/web-security-at-n26-d1b4644c32fb 301!
@@ -150,7 +152,8 @@ https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 /2013/07/01/feedbacks-kiwiparty/                                /2013/07/01/feedback-on-my-first-conf/ 301!
 /2013/07/08/digging-into-my-slides-sass/                        /2013/07/08/digging-into-my-slides-about-sass/ 301!
 /2013/07/17/sass-future                                         /2013/07/17/looking-into-the-future-of-sass 301!
-/2013/07/29/optimizing-with-bash/                               /2013/07/29/optimising-images-with-bash/ 301!
+/2013/07/29/optimizing-with-bash/                               /2013/07/29/optimizing-images-with-bash/ 301!
+/2013/07/29/optimising-images-with-bash/                        /2013/07/29/optimizing-images-with-bash/ 301!
 /2013/08/05/offsets-sass-mixin/                                 /2013/08/05/sass-mixin-for-offsets/ 301!
 /2013/08/12/sass-functions/                                     /2013/08/12/a-couple-sass-functions/ 301!
 /2013/10/17/sass-random/                                        /2013/10/17/random-function-with-sass-3-3/ 301!
@@ -188,6 +191,10 @@ https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 /2021/12/27/looking-back-at-2021/                               /2021/12/27/2021-in-review 301!
 /2022/12/28/looking-back-at-2022/                               /2022/12/28/2022-in-review 301!
 /2026/02/23/six-months-of-rust/                                 /2026/02/25/six-months-of-rust/ 301!
+/2020/12/18/a11y-advent-internationalisation/                  /2020/12/18/a11y-advent-internationalization/ 301!
+/tags/internationalisation/                                     /tags/internationalization/ 301!
+/assets/images/optimising-with-bash/*                          /assets/images/optimizing-with-bash/:splat 301!
+/assets/images/feedback-on-dotcss/theatre.jpg                  /assets/images/feedback-on-dotcss/theater.jpg 301!
 
 /blog/css-gradients        /2013/02/04/dig-deep-into-css-gradients/ 301!
 /less-to-sass.html         /2012/11/13/why-i-switched-from-less-to-sass/ 301!

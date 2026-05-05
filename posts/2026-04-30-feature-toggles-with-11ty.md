@@ -16,7 +16,7 @@ As my website grew, I noticed I started using more and more environment conditio
 
 {% assign terminology_ref = "I tend to call them “feature flags”, just out of habit. But I’ve written about this concept in <a href='/2024/07/22/feature-toggles-with-webpack/' style='font-style:italic'>Feature Toggles with Webpack</a> and I called them “toggles”, so I’ll keep using that word for consistency with the other article." %}
 
-Ultimately, I realised I wanted proper {% footnoteref "terminology" terminology_ref %}feature toggles{% endfootnoteref %}. Let’s see how to set them up in Eleventy.
+Ultimately, I realized I wanted proper {% footnoteref "terminology" terminology_ref %}feature toggles{% endfootnoteref %}. Let’s see how to set them up in Eleventy.
 
 ## In a nutshell
 

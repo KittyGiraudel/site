@@ -8,7 +8,7 @@ tags:
 
 When working on the design of this site a few weeks ago, I [added back heading anchors](https://kittygiraudel.com/2026/02/26/nerdy-design-details/#heading-anchors). Not wanting to think too much about it in the midst of all the things I was doing at the time, I decided to use the fantastic [heading-anchors](https://github.com/zachleat/heading-anchors) web component by Zach Leat, the creator of Eleventy.
 
-I was working on something else the other day, and realised I didn’t really need to execute runtime JavaScript to create automatic link for each heading. Everything is available at build time: the headings, their `id` attribute, the DOM, etc. Surely I could do it with Eleventy directly.
+I was working on something else the other day, and realized I didn’t really need to execute runtime JavaScript to create automatic link for each heading. Everything is available at build time: the headings, their `id` attribute, the DOM, etc. Surely I could do it with Eleventy directly.
 
 {% callout %}
 This post is by no means a diss on `<heading-anchors>`. As I said, it’s a very well put together component. It works a charm, it’s well thought through, and it’s very lightweight overall. If you’re going to remove a run time dependency from your website, this one shouldn’t be at the top of your list.

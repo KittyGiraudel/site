@@ -37,7 +37,7 @@ While making a pure CSS dropdown easily usable with the mouse can be done by pre
 
 However, it’s doable. You won’t have exactly the same process as above, but you’ll probably be able to pick your option with the arrow keys and such.
 
-Anyway, this introduces some new behaviour (you may call this inconsistencies) for people who can’t use a mouse. Yes, not having to press enter (steps 2 and 4) is probably no big deal for you and I but for, let’s say, a blind user, it may be confusing.
+Anyway, this introduces some new behavior (you may call this inconsistencies) for people who can’t use a mouse. Yes, not having to press enter (steps 2 and 4) is probably no big deal for you and I but for, let’s say, a blind user, it may be confusing.
 
 ## Mobile devices
 

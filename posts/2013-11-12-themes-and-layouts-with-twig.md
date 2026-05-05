@@ -113,7 +113,7 @@ Both sucks. Really bad. It is not only very ugly but also a nightmare to maintai
 
 After some searches, we finally found a way to do what we wanted with the `embed` directive. As I said earlier, embed really comes in handy when trying to achieve complicated systems like this. From the official Twig documentation:
 
-> The embed tag combines the behaviour of include and extends. It allows you to include another template’s contents, just like include does. But it also allows you to override any block defined inside the included template, like when extending a template.
+> The embed tag combines the behavior of include and extends. It allows you to include another template’s contents, just like include does. But it also allows you to override any block defined inside the included template, like when extending a template.
 
 In the end, we need 4 files to create a page:
 

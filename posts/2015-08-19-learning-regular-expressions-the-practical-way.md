@@ -238,7 +238,7 @@ Capturing content as part of a regular expression is made with parentheses (`(..
 
 > Groups multiple tokens together and creates a capture group for extracting a substring or using a backreference.
 
-You might be confused as we already used parentheses in our expression but not for capturing. We used them to group tokens together. This kind of behaviour is what makes the language of regular expressions difficult to grasp: it is not regular, and some characters have different meanings depending on their position or the context they are used in.
+You might be confused as we already used parentheses in our expression but not for capturing. We used them to group tokens together. This kind of behavior is what makes the language of regular expressions difficult to grasp: it is not regular, and some characters have different meanings depending on their position or the context they are used in.
 
 To use parentheses as a grouping feature without capturing anything, it is needed to start their content with a question mark (`?`) directly followed by a colon (`:`), like this: `(?: … )`. This intimates the engine not to capture what is being matched inside the parentheses. We should update our expression to avoid capturing the equal part (as well as the case-sentivity flag):
 
@@ -270,7 +270,7 @@ That’s it! The final state of our regular expression is able to correctly matc
 
 As you can see, it is not _that_ hard to write a decent regular expression, especially when you take it slow and build it step by step. Do not try to rush the perfect solution right away. Start with the basic match, then enhance it to deal with more complex scenarios and edge cases.
 
-It is worth noting that the difficulty with regular expressions is usually not to write them but to read them, and thus maintain them. Therefore, it is highly recommended to extensively unit-test code snippets relying on regular expressions. It can be a huge time-saviour when updating a regular expression to have a few dozens of tests making sure that the behaviour didn’t break.
+It is worth noting that the difficulty with regular expressions is usually not to write them but to read them, and thus maintain them. Therefore, it is highly recommended to extensively unit-test code snippets relying on regular expressions. It can be a huge time-saviour when updating a regular expression to have a few dozens of tests making sure that the behavior didn’t break.
 
 {% render "figure.liquid",
   src: "/assets/images/learning-regular-expressions/xkcd-2.png",

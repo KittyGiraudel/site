@@ -69,7 +69,7 @@ This list was originally [posted on Twitter](https://twitter.com/i/moments/87708
 
 31. The Chrome team maintains an [accessibility audit](https://github.com/GoogleChrome/accessibility-developer-tools-extension/) for the Chrome DevTools. Use it, it’s great.
 
-32. Use clear language. Tone and even humour are important of course, but in the end, copy should be understandable by everyone.
+32. Use clear language. Tone and even humor are important of course, but in the end, copy should be understandable by everyone.
 
 33. You’ll never have a perfect experience for absolutely everybody, and that’s okay. It doesn’t have to be perfect. Do your best.
 
@@ -105,7 +105,7 @@ This list was originally [posted on Twitter](https://twitter.com/i/moments/87708
 
 49. The usability of floating labels is debatable. Lack of space, confusing animation, poor contrast, only working for inputs, cropped label…
 
-50. The tab sequence should be trapped within a dialog window. The `inert` attribute will soon natively provides that behaviour.
+50. The tab sequence should be trapped within a dialog window. The `inert` attribute will soon natively provides that behavior.
 
 51. Some people use screen magnifiers to browse the web. Designing for them isn’t too hard, here are [good guidelines for screen magnifiers](https://dev.to/_bigblind/how-to-make-your-website-accessible-to-people-who-use-a-screen-magnifier).
 

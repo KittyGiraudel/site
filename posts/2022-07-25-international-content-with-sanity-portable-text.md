@@ -3,7 +3,7 @@ title: International Content With Sanity Portable Text
 description: A guide on handling international content with Sanity Portable Text
 tags:
   - Sanity
-  - Internationalisation
+  - Internationalization
 image: /assets/images/international-content-with-sanity-portable-text/rich-text.png
 ---
 
