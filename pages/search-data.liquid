@@ -6,13 +6,13 @@ eleventyExcludeFromCollections: true
 [
   {% for post in collections.posts %}
     {
-      "title"    : "{{ post.data.title | escape }}",
-      "lang"     : "{{ post.data.lang | default: 'en' }}",
-      "tags"     : ["{{ post.data.tags | default: arr | join: '", "' }}"],
-      "url"      : {% if post.data.external %}"{{ post.data.external.url }}"{% else %}"{{ post.url }}"{% endif %},
-      "date"     : "{{ post.date | date: '%B %d, %Y' }}",
-      "guest"    : {% if post.data.guest %}" by {{ post.data.guest }}"{% else %}"&#8203;"{% endif %},
-      "external" : {% if post.data.external %}" at {{ post.data.external.host }}"{% else %}"&#8203;"{% endif %}
+      "title"    : {{ post.data.title | jsonify }},
+      "lang"     : {{ post.data.lang | default: 'en' | jsonify }},
+      "tags"     : {{ post.data.tags | default: arr | jsonify }},
+      "url"      : {% if post.data.external %}{{ post.data.external.url | jsonify }}{% else %}{{ post.url | jsonify }}{% endif %},
+      "date"     : {{ post.date | date: '%B %d, %Y' | jsonify }},
+      "guest"    : {% if post.data.guest %}{{ post.data.guest | prepend: ' by ' | jsonify }}{% else %}"\u200b"{% endif %},
+      "external" : {% if post.data.external %}{{ post.data.external.host | prepend: ' at ' | jsonify }}{% else %}"\u200b"{% endif %}
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
