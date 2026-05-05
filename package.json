@@ -30,7 +30,7 @@
 		"html-minifier-terser": "^7.2.0",
 		"markdown-it": "^14.1.1",
 		"netlify-plugin-cache": "^1.0.3",
-		"workbox-cli": "^7.4.0"
+		"workbox-cli": "^7.4.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.12",
