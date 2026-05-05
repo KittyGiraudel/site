@@ -46,6 +46,7 @@ export default defineConfig(config => {
 	// ---------------------------------------------------------------------------
 	if (!isFeatureEnabled('markdownAlternative')) config.ignores.add('pages/blog-markdown.liquid')
 	config.ignores.add('CLAUDE.md')
+	config.ignores.add('STYLEGUIDE.md')
 
 	// Static file passthrough
 	// ---------------------------------------------------------------------------
