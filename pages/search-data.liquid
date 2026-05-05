@@ -11,8 +11,8 @@ eleventyExcludeFromCollections: true
       "tags"     : {{ post.data.tags | default: arr | jsonify }},
       "url"      : {% if post.data.external %}{{ post.data.external.url | jsonify }}{% else %}{{ post.url | jsonify }}{% endif %},
       "date"     : {{ post.date | date: '%B %d, %Y' | jsonify }},
-      "guest"    : {% if post.data.guest %}{{ post.data.guest | prepend: ' by ' | jsonify }}{% else %}"\u200b"{% endif %},
-      "external" : {% if post.data.external %}{{ post.data.external.host | prepend: ' at ' | jsonify }}{% else %}"\u200b"{% endif %}
+      "guest"    : {% if post.data.guest %}{{ post.data.guest | jsonify }}{% else %}null{% endif %},
+      "external" : {% if post.data.external %}{{ post.data.external.host | jsonify }}{% else %}null{% endif %}
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

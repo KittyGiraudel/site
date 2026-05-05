@@ -15,8 +15,8 @@ type SearchEntry = {
 	tags: string[]
 	url: string
 	date: string
-	guest: string
-	external: string
+	guest: string | null
+	external: string | null
 }
 
 function createSearchEntries(total = 30): SearchEntry[] {
@@ -26,8 +26,8 @@ function createSearchEntries(total = 30): SearchEntry[] {
 		tags: ['Accessibility', 'posts'],
 		url: `/2026/04/20/accessibility-tip-${index}/`,
 		date: 'April 20, 2026',
-		guest: '&#8203;',
-		external: '&#8203;',
+		guest: null,
+		external: null,
 	}))
 }
 
@@ -463,4 +463,25 @@ test('search runtime pre-fills query from URL parameter', async () => {
 
 	assert.equal(runtime.searchInput.value, 'accessibility')
 	assert.ok(runtime.resultsList.innerHTML.includes('Accessibility tip'))
+})
+
+test('search runtime formats guest and external host in secondary line', async () => {
+	const entries: SearchEntry[] = [
+		{
+			title: 'Sample post',
+			lang: 'en',
+			tags: [],
+			url: '/2026/01/01/sample-post/',
+			date: 'January 01, 2026',
+			guest: 'Alex Example',
+			external: 'CSS-Tricks',
+		},
+	]
+	const runtime = await runSearchScript({ entries })
+
+	runtime.listeners.input({ target: { value: 'sample' } })
+
+	assert.ok(
+		runtime.resultsList.innerHTML.includes('January 01, 2026 by Alex Example at CSS-Tricks'),
+	)
 })

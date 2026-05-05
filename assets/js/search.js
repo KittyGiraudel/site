@@ -80,12 +80,18 @@ function searchViewTransitionName(url) {
 	return `post${String(url).replace(/\//g, '-').replace(/-$/, '')}`
 }
 
+function formatSearchResultMeta(entry) {
+	const date = entry.date ?? ''
+	const guest = entry.guest ? ` by ${entry.guest}` : ''
+	const externalHost = entry.external ? ` at ${entry.external}` : ''
+	return `${date}${guest}${externalHost}`
+}
+
 function buildResultFragment(resultTemplate, tagTemplate, entry) {
 	const fragment = resultTemplate.content.cloneNode(true)
 	const root = fragment.querySelector('li')
 
-	root.querySelector('.List__secondary-content').innerHTML =
-		`${entry.date ?? ''}${entry.guest ?? ''}${entry.external ?? ''}`
+	root.querySelector('.List__secondary-content').textContent = formatSearchResultMeta(entry)
 
 	const link = root.querySelector('.List__primary-content')
 	link.href = String(entry.url ?? '#')

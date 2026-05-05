@@ -8,8 +8,8 @@ type SearchEntry = {
 	tags: unknown[]
 	url: string
 	date: string
-	guest: string
-	external: string
+	guest: string | null
+	external: string | null
 }
 
 test('search data JSON has expected shape', async () => {
@@ -47,7 +47,7 @@ test('search data JSON has expected shape', async () => {
 		assert.equal(typeof entry.date, 'string')
 		assert.ok(entry.date.length > 0)
 
-		assert.equal(typeof entry.guest, 'string')
-		assert.equal(typeof entry.external, 'string')
+		assert.ok(entry.guest === null || typeof entry.guest === 'string')
+		assert.ok(entry.external === null || typeof entry.external === 'string')
 	}
 })
