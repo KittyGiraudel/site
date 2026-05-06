@@ -4,6 +4,7 @@
 	list-style: none;
 	padding-inline-start: 0;
 	flex-wrap: wrap;
+	margin-block: 0;
 }
 
 .Tag {
