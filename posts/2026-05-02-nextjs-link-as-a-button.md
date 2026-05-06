@@ -4,6 +4,7 @@ description: A technical walkthrough on how to make a generic Button component (
 tags:
   - Next.js
   - TypeScript
+  - Accessibility
 ---
 
 You’d think it would be simple. And in principle, it can be. The Next.js `Link` component accept both a `className` and `style` prop so you can style it however you want. But what if you *already* have a `Button` component that can render a `<a>` element, and want that component to support router navigation?
