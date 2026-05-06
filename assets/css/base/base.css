@@ -184,6 +184,8 @@ a:not(.NoBackground) {
 	outline: 0;
 	color: inherit;
 	text-decoration: none;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
 	background-image: linear-gradient(
 		to right,
 		light-dark(#f2cfe3, #796771),

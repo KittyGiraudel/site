@@ -17,19 +17,21 @@
         {% if data.external %} at {{ data.external.host }}{% endif %}
       </span>
     
+      <span class="List__primary-content">
       {% if data.external %}
-        <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
+        <a {% if data.lang %}hreflang="{{ data.lang | downcase }}"
           lang="{{ data.lang | downcase }}" {% endif %} href="{{ data.external.url }}" target="_blank"
           rel="noopener noreferrer">
           {{ data.title }}
         </a>
       {% else %}
-        <a class="List__primary-content" {% if data.lang %}hreflang="{{ data.lang | downcase }}"
+        <a {% if data.lang %}hreflang="{{ data.lang | downcase }}"
           lang="{{ data.lang | downcase }}" {% endif %} href="{{ item.url }}"
           style="view-transition-name: post-{{ item.url | slugify }}">
           {{ data.title }}
         </a>
       {% endif %}
+    </span>
 
       {% if data.tags %}
         {% render "tags.liquid", tags: data.tags %}
