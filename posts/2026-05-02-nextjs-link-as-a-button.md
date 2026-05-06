@@ -23,7 +23,7 @@ function MyComponent() {
 
 ## Approach 1: imperative routing
 
-In its documentation, Next.js mentions [“imperating routing”](https://nextjs.org/docs/pages/building-your-application/routing/linking-and-navigating#imperative-routing). It would look like this:
+In its documentation, Next.js mentions [“imperative routing”](https://nextjs.org/docs/pages/building-your-application/routing/linking-and-navigating#imperative-routing). It would look like this:
 
 ```tsx
 import { Button } from 'antd'
