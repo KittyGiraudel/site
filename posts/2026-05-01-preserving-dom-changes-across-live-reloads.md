@@ -1,6 +1,7 @@
 ---
 title: Preserving DOM Changes Across Live Reloads
 description: A technical walkthrough about a workaround to preserving client-side DOM changes across live reloads.
+image: /assets/images/preserving-dom-changes-across-live-reloads/preserving-dom-changes-across-live-reloads-generated.png
 tags:
   - Liquid
   - Eleventy

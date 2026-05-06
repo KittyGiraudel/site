@@ -1,6 +1,7 @@
 ---
 title: Optimizing Images with Eleventy on Netlify
 description: A short glance at the few steps I’ve taken to optimize images on this website, without compromising on build time.
+image: /assets/images/optimizing-images-with-11ty-on-netlify/optimizing-images-with-11ty-on-netlify-generated.png
 tags:
   - Eleventy
   - Performance
