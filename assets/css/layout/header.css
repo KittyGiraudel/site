@@ -7,3 +7,30 @@
 		margin-block: var(--vb-double) 0;
 	}
 }
+
+.Header:has(.Metadata, .TableOfContents) {
+	margin-block-end: var(--vb-1\.5);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: var(--vb-half);
+}
+
+@media (max-width: 768px) {
+	.Header:has(.Metadata, .TableOfContents) {
+		margin-block-end: 0;
+	}
+}
+
+@media (min-width: 1024px) {
+	.Header:has(.Metadata) {
+		position: relative;
+		width: calc(100% + var(--margin-offset) * 2);
+		inset-inline-start: calc(var(--margin-offset) * -1);
+	}
+}
+
+.Header:has(.Metadata, .TableOfContents) .Title {
+	flex-basis: 100%;
+}

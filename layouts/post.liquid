@@ -5,7 +5,6 @@ layout: default
 {% render "styles.liquid",
   inline: site.configuration.inline_assets,
   partials: "
-    pages/post,
     components/baseline,
     components/blockquote,
     components/collection-navigation,
@@ -34,9 +33,9 @@ layout: default
 {% assign updated_date_str = update_date | date: "%Y-%m-%d" %}
 
 {% assign was_updated = updated_date_str and updated_date_str != created_date_str %}
-{% assign itemref = "post-title post-date-published post-reading-time" %}
-{% if was_updated %}{% assign itemref = itemref | append: " post-date-modified" %}{% endif %}
-{% if guest %}{% assign itemref = itemref | append: " post-author" %}{% endif %}
+{% assign itemref = "page-title page-date-published page-reading-time" %}
+{% if was_updated %}{% assign itemref = itemref | append: " page-date-modified" %}{% endif %}
+{% if guest %}{% assign itemref = itemref | append: " page-author" %}{% endif %}
 
 {% if post_image contains '://' %}
   {% assign post_image_url = post_image %}
@@ -75,11 +74,12 @@ layout: default
 
 {% assign vt_style = page.url | slugify | prepend: 'view-transition-name: post-' %}
 
-{% render "post_header.liquid",
+{% render "header.liquid",
   title: title,
+  lang: lang,
   created_at: creation_date,
   updated_at: update_date,
-  guest: guest,
+  author: guest,
   reading_time: reading_time,
   toc_items: toc_items,
   title_style: vt_style
@@ -87,7 +87,7 @@ layout: default
 
 <main class="Main" role="main" id="main">
   <div class="Container">
-    <article itemscope itemtype="https://schema.org/Article" itemref="{{ itemref }}" class="Post">
+    <article itemscope itemtype="https://schema.org/Article" itemref="{{ itemref }}" data-heading-anchors>
       {% if deprecated %}
         {% render "post_deprecated.liquid", date: creation_date %}
       {% endif %}

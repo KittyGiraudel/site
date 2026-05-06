@@ -2,7 +2,6 @@
   Required:
   - title: The title of the page
   Optional:
-  - id: The id attribute for the h1 element
   - lang: The language of the page
   - style: The style attribute for the h1 element
 {% endcomment %}
@@ -12,7 +11,7 @@
 <h1
   class="Title"
   itemprop="title"
-  {% if id %}id="{{ id }}" {% endif %}
+  id="page-title"
   {% if lang and lang != 'en' %}lang="{{ lang }}" {% endif %}
   {% if style %}style="{{ style }}"{% endif %}
 >

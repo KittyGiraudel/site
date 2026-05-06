@@ -4,12 +4,30 @@
   Optional:
   - lang: The language of the page
   - title_style: The style attribute for the title element
+  - created_at: The original creation/published date
+  - updated_at: Last updated date of the page
+  - reading_time: The reading time of the page
+  - author: The author of the page
+  - toc_items: The table of contents items
 {% endcomment %}
  
 {% ensure title, "Required value 'title' is missing in header.liquid" %}
 
-<header class="Header" role="banner">
-  <div class="Container">
+<div class="Container">
+  <header class="Header" role="banner">
     {% render "title.liquid", title: title, lang: lang, style: title_style %}
-  </div>
-</header>
+
+    {% if created_at %}
+      {% render "metadata.liquid"
+        created_at: created_at
+        updated_at: updated_at
+        reading_time: reading_time
+        author: author
+      %}
+    {% endif %}
+
+    {% if toc_items.size > 0 %}
+      {% render "table_of_contents.liquid", items: toc_items %}
+    {% endif %}
+  </header>
+</div>

@@ -4,14 +4,31 @@ layout: default
 
 {% assign vt_style = page.url | slugify | prepend: 'view-transition-name: page-' %}
 
+{% render "styles.liquid",
+  inline: site.configuration.inline_assets,
+  partials: "components/heading-anchors"
+%}
+
+{% if toc == true %}
+  {% assign toc_items = content | table_of_contents %}
+  {% render "styles.liquid",
+    inline: site.configuration.inline_assets,
+    partials: "components/table-of-contents"
+  %}
+{% endif %}
+
 {% render "header.liquid",
   title: title,
-  lang: lang,
-  title_style: vt_style
+  title_style: vt_style,
+  created_at: created_at,
+  updated_at: updated_at,
+  reading_time: reading_time,
+  author: author,
+  toc_items: toc_items
 %}
 
 <main class="Main" role="main" id="main">
-  <div class="Container">
+  <div class="Container" data-heading-anchors>
     {{ content }}
   
     {% comment %}

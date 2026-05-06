@@ -1,6 +1,6 @@
 {
 	"githubStars": ["production"],
-	"headingAnchors": ["production"],
+	"headingAnchors": ["development", "production"],
 	"helmet": ["production"],
 	"inlineAssets": ["production"],
 	"markdownAlternative": ["development", "production"],

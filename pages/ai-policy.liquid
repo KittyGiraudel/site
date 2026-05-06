@@ -1,0 +1,75 @@
+---
+layout: page
+title: AI Policy
+description: AI policy from Kitty Giraudel, regarding all content on this website.
+permalink: /ai-policy/
+created_at: 2026-05-05
+updated_at: 2026-05-06
+toc: true
+---
+
+{% render "styles.liquid"
+  inline: site.configuration.inline_assets,
+  partials: "
+    components/code,
+    components/footnotes
+  "
+%}
+
+{% markdown %}
+
+If all you want is a <abbr title="Too Long; Didn’t Read">TL;DR</abbr> devoid of all nuance and distilled to just “picking a side”, I guess I am more cautious and skeptical about <abbr title="Artificial Intelligence">AI</abbr> in the tech industry than completely embracing it. Find a more developed answer below.
+
+## General policy
+
+**I am generally in favor of non-generative AI.**
+
+{% assign footnote_generative_ai_coding = "One could argue AI coding assistance is a form of generative AI since it produces code. While technically true, I do not have a major problem with it because I do not see coding as a creative medium but as a tool to build software. I struggle with the use of AI that intends to replace human creativity, such as making art or copy-writing." %}
+
+I have certainly adopted it. I use constantly it for {% footnoteref "generative-ai-coding" footnote_generative_ai_coding %}coding purposes{% endfootnoteref %}, I use Mistral for mundane research tasks, and image thumbnails for this blog are generated with a GPT model (see *[Imagery](#imagery)*).
+
+That being said, I am not reckless with it as I definitely think it causes a lot of problems in our industry (ethics, slop, general degradation, and more). It also isn’t without its grave societal problems, and whether its benefits vastly outweigh those is yet to be determined.
+
+{% callout %}
+You can read more of my thoughts about the use of AI in the tech industry in *[You Cannot Spell “Pain” without AI](/2026/04/29/you-cannot-spell-pain-without-ai/)*, published in April 2026.
+{% endcallout %}
+
+## Blog articles
+
+**I do not use AI to write content.**
+
+I actually love writing. I see it as a hobby, and I’ve been blogging since 2012 resulting in hundreds of published articles. I pride myself in writing regular, quality content with an authentic voice — the latter being incompatible with the use of AI.
+
+So rest assured that whatever you read on this site is some good ol’ hand-crafted words. And if you see some em dashes here and there, it’s because I actually enjoy using them. 
+
+## Content review
+
+**I often use AI to review my articles before publication.**
+
+I am a solo content creator. There is no team behind this website, it’s just me. It’s a personal blog after all. That means I don’t have the opportunity to have a second pair of eyes review the content, which is almost always necessary. 
+
+This is where AI comes in. This is largely editorial: it checks for typos, consistency, formatting and more. It relies on a comprehensive [`STYLEGUIDE.md`](https://github.com/KittyGiraudel/site/blob/main/STYLEGUIDE.md) document to enforce editorial and stylistic rules that I have defined. I review its suggestions and have the final approval.
+
+## Imagery
+
+**I sometimes use AI-generated article thumbnails.**
+
+In 2026, I started wishing my website was a bit more visual and shifted some layouts from plain text lists to grids of *cards* (that include a thumbnail). As a result, I started needing images for my newest articles (when they had none to begin with).
+
+These images are generated with AI, through a GPT model directly within Cursor, via a standardized prompt template.
+
+I must say I have mixed feelings about this (see footnote below). The unethical training of AI on copyrighted work makes it a controversial usage. I don’t feel amazing about it, but it’s also a few thumbnails here and there which contributes rather little to the overall site.
+
+## Website code
+
+**This website is coded manually.**
+
+I have spent my career doing [frontend development](/resume/tech-lead/), and this website has always been a playground for me to try new things and a way to showcase my skills. Therefore, all the code was produced by hand. 
+
+In rare instances where AI generates a code snippet to speed things up, I tend to disclose it (like I did in *[No More Carbon](/2026/03/10/no-more-carbon/#analyzing-the-data)* after generating some data visualization graphs with Cursor).
+
+That being said, I do use AI as a sparing partner when building more complicated features or refactoring code.
+
+{% endmarkdown %}
+
+{% footnotes %}
