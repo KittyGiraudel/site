@@ -17,6 +17,13 @@
 }
 
 /**
+ * 1. Disable the notch effect when there is no active item in the menu.
+ */
+.Navigation.Navigation:not([popover]):not(:has([aria-current])) {
+	--navigation-notch-opacity: 0 !important; /* 1 */
+}
+
+/**
  * 1. Gradient border placed below the navigation on large screens.
  */
 .Navigation:not([popover])::after {
