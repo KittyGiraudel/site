@@ -1,6 +1,6 @@
 ---
 title: Next.js Link as a Button
-description: A technical walkthrough on how to make a generic Button component (such a coming from a library) use Next.js in-page routing.
+description: A technical walkthrough on how to make a generic Button component (such as coming from a library) still use Next.js in-page routing.
 image: /assets/images/nextjs-link-as-a-button/nextjs-link-as-a-button-generated.png
 tags:
   - Next.js
