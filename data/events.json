@@ -5,7 +5,8 @@
 		"location": "Online",
 		"date": "2026-03-11 12:30:00 +0100",
 		"thumbnail": "/assets/images/talks/wearedevelopers.jpg",
-		"actions": [{ "label": "Watch video", "url": "https://www.youtube.com/watch?v=UncTZgOxgL8" }]
+		"actions": [{ "label": "Watch video", "url": "https://www.youtube.com/watch?v=UncTZgOxgL8" }],
+		"tags": ["Accessibility", "Eleventy"]
 	},
 	{
 		"event": "Unlocking Inclusivity, by Xena",
@@ -15,7 +16,8 @@
 		"thumbnail": "/assets/images/talks/xena-unlocking-inclusivity.png",
 		"actions": [
 			{ "label": "Check event page", "url": "https://wearexena.com/unlocking-inclusivity/" }
-		]
+		],
+		"tags": ["Inclusivity"]
 	},
 	{
 		"event": "Algolia Developer Experience Podcast",
@@ -28,7 +30,8 @@
 				"label": "Listen to podcast",
 				"url": "https://developerexperience.buzzsprout.com/1806381/9919419-accessibility-and-developer-experience"
 			}
-		]
+		],
+		"tags": ["Accessibility"]
 	},
 	{
 		"event": "Paris Web",
@@ -42,7 +45,8 @@
 				"label": "View slides",
 				"url": "https://noti.st/kittygiraudel/KxP2AU/l-accessibilite-au-dela-des-specs"
 			}
-		]
+		],
+		"tags": ["Accessibility"]
 	},
 	{
 		"event": "A11y Meetup Berlin",
@@ -56,7 +60,8 @@
 				"label": "View slides",
 				"url": "https://speakerdeck.com/kittygiraudel/designing-for-the-real-world"
 			}
-		]
+		],
+		"tags": ["Accessibility"]
 	},
 	{
 		"event": "Tinel Meetup",
@@ -70,7 +75,8 @@
 				"label": "View slides",
 				"url": "https://speakerdeck.com/kittygiraudel/clever-stop-being-so-3"
 			}
-		]
+		],
+		"tags": ["Accessibility", "Inclusivity"]
 	},
 	{
 		"event": "CSS-Minsk-JS",
@@ -83,7 +89,8 @@
 				"label": "View slides",
 				"url": "https://speakerdeck.com/kittygiraudel/clever-stop-being-so-2"
 			}
-		]
+		],
+		"tags": ["Accessibility", "Inclusivity"]
 	},
 	{
 		"event": "DEVit Conference",
@@ -100,7 +107,8 @@
 				"label": "View slides",
 				"url": "https://speakerdeck.com/kittygiraudel/clever-stop-being-so-1"
 			}
-		]
+		],
+		"tags": ["Accessibility", "Inclusivity"]
 	},
 	{
 		"event": "From The Front",
@@ -114,7 +122,8 @@
 				"label": "View slides",
 				"url": "https://speakerdeck.com/kittygiraudel/local-styling-with-css-modules"
 			}
-		]
+		],
+		"tags": ["CSS"]
 	},
 	{
 		"event": "DEVit Conference",
@@ -128,7 +137,8 @@
 				"label": "View slides",
 				"url": "https://speakerdeck.com/kittygiraudel/local-styling-with-css-modules"
 			}
-		]
+		],
+		"tags": ["CSS"]
 	},
 	{
 		"event": "Frontend Conference Zurich",
@@ -142,7 +152,8 @@
 				"label": "View slides",
 				"url": "https://speakerdeck.com/kittygiraudel/three-years-of-purging-sass"
 			}
-		]
+		],
+		"tags": ["CSS", "Sass"]
 	},
 	{
 		"event": "dotCSS",
@@ -160,7 +171,8 @@
 				"label": "View slides",
 				"url": "https://speakerdeck.com/kittygiraudel/keep-calm-and-write-sass"
 			}
-		]
+		],
+		"tags": ["CSS", "Sass"]
 	},
 	{
 		"event": "FeWeb",
@@ -174,7 +186,8 @@
 				"label": "View slides",
 				"url": "https://slides.com/kittygiraudel/sass-une-architecture-composee#/"
 			}
-		]
+		],
+		"tags": ["CSS", "Sass"]
 	},
 	{
 		"event": "KiwiParty",
@@ -185,6 +198,7 @@
 		"actions": [
 			{ "label": "Read article", "url": "/2013/07/01/feedback-on-my-first-conf/" },
 			{ "label": "View slides", "url": "https://slides.com/kittygiraudel/css-kick-ass-avec-sass#/" }
-		]
+		],
+		"tags": ["CSS", "Sass"]
 	}
 ]

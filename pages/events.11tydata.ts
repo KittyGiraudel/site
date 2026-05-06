@@ -18,6 +18,7 @@ export default {
 						url: a.url,
 						label: `${a.label} <span class="visually-hidden">${e.event}</span>`,
 					})),
+					tags: e.tags,
 				}
 			})
 		},
