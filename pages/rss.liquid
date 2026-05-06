@@ -47,7 +47,8 @@ eleventyExcludeFromCollections: true
     <id>{{ absolute_post_url }}</id>
     <summary>{{ post.data.description | escape }}</summary>
     {% unless post.data.external %}
-    <content type="html"><![CDATA[{{ post.templateContent | replace: 'href="/', 'href="https://kittygiraudel.com/' | replace: 'src="/', 'src="https://kittygiraudel.com/' }}]]></content>
+    {% assign post_feed_content = post.url | rss_content | default: post.content | default: post.templateContent %}
+    <content type="html"><![CDATA[{{ post_feed_content | replace: 'href="/', 'href="https://kittygiraudel.com/' | replace: 'src="/', 'src="https://kittygiraudel.com/' }}]]></content>
     {% endunless %}
   </entry>
   {% endfor %}

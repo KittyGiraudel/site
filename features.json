@@ -8,5 +8,6 @@
 	"renderDrafts": ["development"],
 	"serviceWorker": ["production"],
 	"syntaxHighlight": ["development", "production"],
-	"wrapEmojis": ["production"]
+	"wrapEmojis": ["production"],
+	"rssCleanup": ["production"]
 }

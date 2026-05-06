@@ -83,6 +83,7 @@ export default defineConfig(config => {
 	config.addFilter('date_to_rfc3339', utilities.dateToRFC3339)
 	config.addFilter('where', asEleventyFilter(utilities.where))
 	config.addFilter('strip_html_entities', utilities.stripHtmlEntities)
+	config.addFilter('rss_content', utilities.rssContent)
 
 	// Collections
 	// ---------------------------------------------------------------------------

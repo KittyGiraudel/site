@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
 import * as cheerio from 'cheerio'
 import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
@@ -137,6 +139,32 @@ function wrapSmileyFaces(content: string, outputPath?: string): string {
 		: content
 }
 
+function rssContent(postUrl: string): string {
+	if (!postUrl || !isFeatureEnabled('rssCleanup')) return ''
+
+	const normalized = postUrl.replace(/^\/+|\/+$/g, '')
+	const outputPath = path.join(process.cwd(), '_site', normalized, 'index.html')
+
+	try {
+		const html = readFileSync(outputPath, 'utf8')
+		const $ = cheerio.load(html)
+		const $article = $('article').first()
+		const $articleBody = $article.find('[itemprop="articleBody"]').first()
+
+		if (!$articleBody.length) return ''
+
+		// Remove some elements that shouldn’t be rendered in a RSS feed
+		$articleBody.find('script, style, noscript, baseline-status, iframe').remove()
+
+		// Restore the footnotes that are not part of the article body
+		const $footnotes = $article.find('[role="doc-endnotes"]').first()
+
+		return $articleBody.html() + ($footnotes.length ? $.html($footnotes) : '')
+	} catch {
+		return ''
+	}
+}
+
 // Nested `.data` (collection entries) vs flattened cascade (layouts)
 // - PostTemplateData is used in posts.11tydata.ts
 // - Post is used in eleventy.config.ts
@@ -177,6 +205,7 @@ export default {
 	helmet,
 	wrapEmDashes,
 	wrapSmileyFaces,
+	rssContent,
 	isPostVisible,
 	isPostRendered,
 	getFrontMatterData,
