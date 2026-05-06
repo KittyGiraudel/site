@@ -67,7 +67,7 @@ function assertHeadMetadata($: CheerioAPI, siteUrl: string, spec: HeadSpec): voi
 	const shortcutIcon = $('head link[rel="icon"]')
 	assert.equal(shortcutIcon.length, 2, 'head should have two icons (ico + png)')
 	assert.equal(shortcutIcon.first().attr('href'), '/favicon.ico')
-	assert.equal(shortcutIcon.last().attr('href'), '/assets/images/favicon.png')
+	assert.equal(shortcutIcon.last().attr('href'), '/assets/images/favicon-192.png')
 
 	const appleTouch = $('head link[rel="apple-touch-icon"]')
 	assert.equal(appleTouch.length, 1, 'head should have exactly one apple-touch-icon')
