@@ -56,12 +56,13 @@
 	padding-block-start: var(--vb-third);
 }
 
-.Card__title,
-.Card__secondary {
-	margin: 0;
+.Card__title {
+	line-height: 1.25;
+	margin-block: var(--vb-third);
 }
 
 .Card__secondary {
+	margin: 0;
 	font-size: 80%;
 	line-height: 1.3;
 }
