@@ -9,7 +9,7 @@
 	max-inline-size: 300px;
 	min-inline-size: 250px;
 	font-size: 80%; /* 2 */
-	z-index: 90;
+	z-index: calc(var(--z-set) + 1);
 	--toc-background-color: light-dark(#f6f4f9, #303132); /* 3 */
 }
 

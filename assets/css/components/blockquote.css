@@ -26,7 +26,7 @@ blockquote::after {
 	font-family: var(--typography-font);
 	font-weight: bold;
 	line-height: 1;
-	z-index: 1;
+	z-index: var(--z-set);
 	transition: 150ms;
 }
 
@@ -49,8 +49,8 @@ blockquote::after {
 /**
  * 1. Ensure the text inside the blockquote sits on top of the quotation marks.
  */
-blockquote > p {
-	z-index: 2; /* 1 */
+blockquote > * {
+	z-index: calc(var(--z-set) + 1); /* 1 */
 	position: relative; /* 1 */
 }
 

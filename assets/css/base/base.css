@@ -59,6 +59,9 @@
 	--vb-1\.5: calc(var(--vb) * 1.5);
 	--vb-double: calc(var(--vb) * 2);
 	--margin-offset: 2rem;
+
+	--z-set: 1;
+	--z-top: 10;
 }
 
 [data-theme="dark"] {

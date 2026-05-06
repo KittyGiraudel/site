@@ -2,7 +2,7 @@
 	position: fixed;
 	inset-block-end: 1em;
 	inset-inline-end: 1em;
-	z-index: 100;
+	z-index: var(--z-top);
 }
 
 .ThemeButton[aria-pressed="false"] > .ThemeButton__icon:not([data-theme="light"]),

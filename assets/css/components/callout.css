@@ -28,7 +28,7 @@
 	opacity: 0.2;
 	font-family: var(--typography-font);
 	line-height: 1;
-	z-index: 1;
+	z-index: var(--z-set);
 	inset-block-end: 100%;
 	inset-inline-start: 0;
 	transform: translate(-10%, 69%) rotate(-30deg);
@@ -52,7 +52,7 @@
  * 1. Ensure the text inside the info container sits on top of the decorative pseudo-element.
  */
 .Callout > * {
-	z-index: 2; /* 1 */
+	z-index: calc(var(--z-set) + 1); /* 1 */
 	position: relative;
 }
 
