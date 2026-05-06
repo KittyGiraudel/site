@@ -6,8 +6,9 @@
 	margin-block-end: var(--vb-third);
 }
 
-.Showcase__copy {
+.Showcase__copy > p {
 	margin-block-start: 0;
+	margin-block-end: var(--vb);
 }
 
 .Showcase__container {
