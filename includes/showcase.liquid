@@ -47,13 +47,17 @@
         %}
       {% elsif type == "article" %}
         {% assign image = item.data.image | default: '/assets/images/og-default.png' %}
+        {% assign url = item.url %}
+        {% if item.data.external %}
+          {% assign url = item.data.external.url %}
+        {% endif %}
 
         {% render "card.liquid"
           image: image,
           image_alt: "",
           primary: item.data.title,
           secondary: item.data.description,
-          url: item.url,
+          url: url,
           tags: item.data.tags
         %}
       {% endif %}
