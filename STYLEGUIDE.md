@@ -215,6 +215,38 @@ Conventions:
 - `caption` allows inline HTML (so you can include links, emphasis, etc.).
 - Front-matter `image` is the OG/social card image. Reference it via the same `/assets/images/<slug>/…` path.
 
+### Generated article images
+
+When generating images for recent technical articles, keep them visually cohesive so the home-page cards feel like a set. Use this shared direction as the baseline, then adapt the central metaphor to the article:
+
+```txt
+A refined editorial tech illustration for a blog post titled “[ARTICLE TITLE]”.
+Landscape composition, 1.91:1 (1200x630) ratio, designed as a blog card/cover
+image. Use a minimalist personal blog aesthetic: soft off-white paper background,
+subtle grain texture, gentle shadows, elegant clean spacing.
+Palette centered on warm pink (#dd7eb4) and medium blue (#267cb9),
+with muted charcoal and pale gray accents.
+
+Style: modern flat vector, thin line art, soft translucent gradients,
+dotted connector lines, delicate code-inspired glyphs, calm and polished.
+No photorealism, no 3D render, no stock image feel.
+Avoid official logos; small text chips such as “11ty”, “data.json”,
+“<a>”, “aria-live”, or “cache” are fine when they support the concept.
+
+Typography in image: avoid large readable text. Keep any labels tiny,
+clean, and secondary. Ensure strong readability at thumbnail sizes,
+with a clear silhouette and enough negative space for card layouts.
+```
+
+Article-specific prompts should describe the article’s data flow or conceptual tension in one clean diagram-like scene:
+
+- For routing/semantic HTML posts, show the mismatch and resolution (`button` → `<a>`, reload → client-side navigation).
+- For build pipeline posts, show source input → transformation steps → cached or optimized output.
+- For accessibility posts, include restrained semantic hints (`label`, `aria-live`, `status`) without turning the image into documentation.
+- For DOM/runtime posts, show the browser or DOM node, the state being lost, and the small mechanism that restores or preserves it.
+
+Prefer one central idea over a collage of every section in the article. The image should be understandable in a small card before it is clever at full size.
+
 ## Callouts, blockquotes and asides
 
 There are two distinct constructs that look superficially similar but mean different things.
