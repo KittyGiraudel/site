@@ -2,12 +2,6 @@
 	margin-block: var(--vb-half);
 }
 
-.Showcase::after {
-	content: "";
-	display: block;
-	clear: right;
-}
-
 .Showcase__title {
 	margin-block-end: var(--vb-third);
 }
@@ -18,55 +12,43 @@
 
 .Showcase__container {
 	display: flex;
-	margin-inline: -0.5em;
 	flex-wrap: wrap;
-}
-
-/**
- * 1. Offset by half the extra width (10ch), half the container padding (2em)
- *    and the inline start margin (0.5em).
- */
-@media (min-width: 1024px) {
-	.Showcase__container {
-		width: 90ch;
-		position: relative;
-		inset-inline-start: calc(-5ch - 1em - 0.5em); /* 1 */
-	}
+	gap: 1em;
 }
 
 .Showcase__item {
-	padding: 0.5em;
-	flex: 1 0 auto;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
+	display: grid;
+	flex: 1 1 auto;
 	max-inline-size: 100%;
 }
 
+@media (min-width: 1024px) {
+	.Showcase__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		--width: calc(min(100vw, 1500px) - 2em * 2);
+		position: relative;
+		width: var(--width);
+		inset-inline-start: 50%;
+		inset-inline-end: 50%;
+		margin-inline-start: calc(var(--width) / -2);
+		margin-inline-end: calc(var(--width) / -2);
+	}
+}
+
 @media (min-width: 768px) {
+	.Showcase__item:first-child {
+		flex-basis: 100%;
+	}
+
 	.Showcase__item {
-		flex: 1 0 calc(100% / 3);
-		margin-block-end: 0;
+		flex-basis: calc(50% - 0.5em);
 	}
 }
 
 .Showcase__link {
+	display: flex;
+	justify-content: center;
+	margin-block-start: var(--vb);
 	font-size: 80%;
-	float: inline-end;
-}
-
-/**
- * 1. Offset by half the extra width (10ch), the container padding (2em) and
- *    the inline end margin (0.5em).
- */
-@media (min-width: 1024px) {
-	.Showcase__link {
-		position: relative;
-		inset-inline-start: calc(5ch + 2em + 0.5em); /* 1 */
-	}
-}
-
-.Showcase__link::before {
-	content: "→ ";
-	color: var(--pink);
 }

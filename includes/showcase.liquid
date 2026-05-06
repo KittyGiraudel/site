@@ -1,12 +1,10 @@
 {% comment %}
   Required:
-  - type: The type of showcase to render
+  - type: The type of showcase to render (article, event, project)
   - title: The title of the showcase
   - copy: The copy of the showcase
   - items: The items to render
   Optional:
-  - hidden_title: Whether the title should be hidden
-  - github: GitHub stargazer data (required for project tiles; pass from the page so this render scope receives it)
   - more_link_url: The URL of the link
   - more_link_label: The label of the link
 {% endcomment %}
@@ -19,18 +17,53 @@
 {% assign id = title | slugify %}
 
 <section class="Showcase" aria-labelledby="{{ id }}">
-  <h2 class="Showcase__title {% if hidden_title %}visually-hidden{% endif %}" id="{{ id }}">{{ title }}</h2>
+  <h2 class="Showcase__title" id="{{ id }}">{{ title }}</h2>
   <div class="Showcase__copy">{% markdown %}{{ copy }}{% endmarkdown %}</div>
 
   <div class="Showcase__container">
     {% for item in items %}
     <div class="Showcase__item">
-      {% render "{{ type }}_tile.liquid", item: item, github: github %}
+      {% if type == "event" %}
+        {% capture event_meta %}{{ item.date | time }} · {{ item.location | split: ',' | first }}{% endcapture %}
+        
+        {% render "card.liquid"
+          image: item.thumbnail,
+          primary: item.event,
+          secondary: event_meta,
+          url: item.link,
+          tags: item.tags
+        %}
+      {% elsif type == "project" %}
+        {% assign image = item.data.image | default: '/assets/images/og-default.png' %}
+
+        {% render "card.liquid"
+          image: image,
+          image_alt: item.data.title,
+          primary: item.data.title,
+          secondary: item.data.description,
+          url: item.url,
+          vt_source: item.url,
+          tags: item.data.tags
+        %}
+      {% elsif type == "article" %}
+        {% assign image = item.data.image | default: '/assets/images/og-default.png' %}
+
+        {% render "card.liquid"
+          image: image,
+          image_alt: "",
+          primary: item.data.title,
+          secondary: item.data.description,
+          url: item.url,
+          tags: item.data.tags
+        %}
+      {% endif %}
     </div>
     {% endfor %}
   </div>
 
   {% if more_link_label and more_link_url %}
-    <a href="{{ more_link_url }}" class="Showcase__link">{{ more_link_label }}</a>
+    <div class="Showcase__link">
+      <a href="{{ more_link_url }}">{{ more_link_label }}</a>
+    </div>
   {% endif %}
 </section>

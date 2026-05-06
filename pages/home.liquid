@@ -16,6 +16,8 @@ permalink: /
   inline: site.configuration.inline_assets,
   partials: "
     components/showcase,
+    components/card,
+    components/tags,
     components/tile
   "
 %}
@@ -37,7 +39,7 @@ about me](/about/).
 {% assign latest_articles = collections.posts | slice: 0, 3 %}
 {% render "showcase.liquid",
   type: "article",
-  title: "Latest articles",
+  title: "Latest blog articles",
   copy: "I love writing, and have been sharing my thoughts, mainly about web development, on this
   blog for years. If you are looking for something specific, [try the search](/blog/search/). I also
   had the pleasure of hosting [guest authors](/blog/guest/) and would recommend you read their posts!",
@@ -49,7 +51,7 @@ about me](/about/).
 {% assign main_projects = collections.projects | where: "showcase", true | slice: 0, 3 %}
 {% render "showcase.liquid",
   type: "project",
-  title: "Main projects",
+  title: "Main side projects",
   copy: "I used to be quite involved in open-source development. I have initiated and contributed to
   many projects, most of them about Sass or digital accessibility.",
   more_link_url: "/projects",
@@ -61,7 +63,7 @@ about me](/about/).
 {% assign latest_events = events | slice: 0, 3 %}
 {% render "showcase.liquid",
   type: "event",
-  title: "Last events",
+  title: "Last speaking events",
   copy: "I enjoy participating in events and talking at conferences when I find the time. If you
   would like me to attend one of your events, be sure to get in touch! In the meantime, feel free to
   have a look at my past talks.",
