@@ -4,6 +4,7 @@ import path from 'node:path'
 import test from 'node:test'
 import { fileURLToPath } from 'node:url'
 import vm from 'node:vm'
+import { parseHTML } from 'linkedom'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(__dirname, '..')
@@ -31,328 +32,44 @@ function createSearchEntries(total = 30): SearchEntry[] {
 	}))
 }
 
-type WindowMock = {
-	location: URL
-	history: {
-		replaceState: (_state: unknown, _title: string, href: string) => void
-	}
-}
-
-function escapeAttr(value: string) {
-	return String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
-}
-
 function buildMockSearchDom() {
-	const form = {
-		addEventListener(_type: string, _handler: (...args: unknown[]) => void) {
-			// no-op for submit prevention in tests
-		},
-	}
-
-	const searchInput: {
-		value: string
-		addEventListener: (event: string, handler: (ev: { target: { value: string } }) => void) => void
-		closest: (sel: string) => typeof form | null
-	} = {
-		value: '',
-		addEventListener(event: string, handler: (ev: { target: { value: string } }) => void) {
-			listeners[event] = handler
-		},
-		closest(sel: string) {
-			return sel === 'form' ? form : null
-		},
-	}
-
-	const listeners: Record<string, (ev: { target: { value: string } }) => void> = {}
-
-	function serializeElement(node: {
-		tagName: string
-		className?: string
-		attributes?: Record<string, string>
-		innerHTML?: string
-		textContent?: string
-		hidden?: boolean
-		style?: Record<string, string>
-		children?: ReturnType<typeof makeResultLi>[]
-	}): string {
-		const tag = node.tagName.toLowerCase()
-		const attrs: string[] = []
-		if (node.className) attrs.push(`class="${escapeAttr(node.className)}"`)
-		if (node.hidden) attrs.push('hidden')
-		if (node.attributes) {
-			for (const [k, v] of Object.entries(node.attributes)) {
-				if (v !== undefined && v !== null) attrs.push(`${k}="${escapeAttr(String(v))}"`)
-			}
-		}
-		if (node.style) {
-			const parts = Object.entries(node.style).map(([k, v]) => `${k}: ${v}`)
-			if (parts.length) attrs.push(`style="${escapeAttr(parts.join('; '))}"`)
-		}
-
-		const href = 'href' in node ? (node as { href?: string }).href : undefined
-		if (href) attrs.push(`href="${escapeAttr(String(href))}"`)
-
-		const open = attrs.length ? `${tag} ${attrs.join(' ')}` : tag
-		if (tag === 'br' || tag === 'img') {
-			return `<${open} />`
-		}
-
-		let inner = node.innerHTML ?? ''
-		if (!inner && node.textContent !== undefined) {
-			inner = escapeAttr(node.textContent).replace(/&amp;#8203;/g, '&#8203;')
-			// keep numeric entities from test data
-			inner = inner.replace(/&amp;#(\d+);/g, '&#$1;')
-		}
-		if (node.children?.length) {
-			inner = node.children.map(c => serializeElement(c)).join('')
-		}
-
-		return `<${open}>${inner}</${tag}>`
-	}
-
-	function makeTagLi(): {
-		tagName: string
-		children: unknown[]
-		querySelector(sel: string): { tagName: string; href: string; textContent: string } | null
-	} {
-		const link = {
-			tagName: 'A',
-			className: 'Tag__link',
-			href: '',
-			textContent: '',
-			setAttribute(_n: string, _v: string) {},
-			getAttribute(name: string) {
-				return name === 'href' ? link.href : null
-			},
-		}
-		const li = {
-			tagName: 'LI',
-			children: [link],
-			querySelector(sel: string) {
-				if (sel === 'a') return link
-				if (sel === 'li') return li
-				return null
-			},
-		}
-		return li
-	}
-
-	function makeResultLi(): {
-		tagName: string
-		className: string
-		innerHTML: string
-		textContent: string
-		children: unknown[]
-		querySelector(sel: string): unknown
-	} {
-		const secondary = {
-			tagName: 'SPAN',
-			className: 'List__secondary-content',
-			innerHTML: '',
-		}
-		const link = {
-			tagName: 'A',
-			className: 'List__primary-content',
-			href: '',
-			textContent: '',
-			style: {} as Record<string, string>,
-			attributes: {} as Record<string, string>,
-			setAttribute(n: string, v: string) {
-				link.attributes[n] = v
-			},
-			removeAttribute(n: string) {
-				delete link.attributes[n]
-			},
-			getAttribute(n: string) {
-				return link.attributes[n] ?? null
-			},
-		}
-		const tagsUl = {
-			tagName: 'UL',
-			className: 'Tags NoListMarker',
-			hidden: true,
-			children: [] as ReturnType<typeof makeTagLi>[],
-			replaceChildren() {
-				tagsUl.children = []
-			},
-			appendChild(child: ReturnType<typeof makeTagLi>) {
-				tagsUl.children.push(child)
-				return child
-			},
-		}
-
-		const li = {
-			tagName: 'LI',
-			className: 'List__item',
-			innerHTML: '',
-			textContent: '',
-			children: [secondary, link, tagsUl],
-			querySelector(sel: string) {
-				if (sel === '.List__secondary-content') return secondary
-				if (sel === '.List__primary-content') return link
-				if (sel === '.Tags') return tagsUl
-				if (sel === 'li') return li
-				return null
-			},
-		}
-		;(secondary as { textContent?: string }).textContent = ''
-		return li
-	}
-
-	const resultTemplate = {
-		content: {
-			cloneNode() {
-				const li = makeResultLi()
-				return {
-					firstElementChild: li,
-					querySelector(sel: string) {
-						return sel === 'li' ? li : null
-					},
-				}
-			},
-		},
-	}
-
-	const tagTemplate = {
-		content: {
-			cloneNode() {
-				const tagLi = makeTagLi()
-				return {
-					firstElementChild: tagLi,
-					querySelector(sel: string) {
-						return tagLi.querySelector(sel)
-					},
-				}
-			},
-		},
-	}
-
-	const resultsList: {
-		innerHTML: string
-		replaceChildren: (...nodes: unknown[]) => void
-	} = {
-		innerHTML: '',
-		replaceChildren(...nodes: unknown[]) {
-			if (nodes.length === 0) {
-				resultsList.innerHTML = ''
-				return
-			}
-			const frag = nodes[0] as { _children?: { outerHTML: string }[] }
-			const parts = frag._children ?? []
-			resultsList.innerHTML = parts.map(p => p.outerHTML).join('')
-		},
-	}
-
-	const noResults = {
-		hidden: true,
-		removeAttribute(name: string) {
-			if (name === 'hidden') this.hidden = false
-		},
-		setAttribute(name: string, _value: string) {
-			if (name === 'hidden') this.hidden = true
-		},
-	}
-
-	const indexError = {
-		hidden: true,
-	}
-
-	const resultsRegion = {
-		attributes: {} as Record<string, string>,
-		setAttribute(name: string, value: string) {
-			this.attributes[name] = value
-		},
-		removeAttribute(name: string) {
-			delete this.attributes[name]
-		},
-	}
-
-	function attachOuterHTML(node: {
-		tagName: string
-		className?: string
-		children?: { outerHTML?: string }[]
-		querySelector?: (sel: string) => unknown
-		innerHTML?: string
-		textContent?: string
-		hidden?: boolean
-		style?: Record<string, string>
-		attributes?: Record<string, string>
-		href?: string
-	}) {
-		if (!Object.hasOwn(node, 'outerHTML')) {
-			Object.defineProperty(node, 'outerHTML', {
-				configurable: true,
-				get() {
-					return serializeElement(node as Parameters<typeof serializeElement>[0])
-				},
-			})
-		}
-		if (node.children) {
-			for (const child of node.children) {
-				if (child && typeof child === 'object' && !Object.hasOwn(child, 'outerHTML')) {
-					attachOuterHTML(child as Parameters<typeof attachOuterHTML>[0])
-				}
-			}
-		}
-	}
-
-	function enhanceFragmentClone(clone: {
-		firstElementChild: ReturnType<typeof makeResultLi>
-		querySelector: (sel: string) => unknown
-	}) {
-		const li = clone.firstElementChild
-		attachOuterHTML(li)
-		const tagsUl = li.querySelector('.Tags') as {
-			appendChild: (c: ReturnType<typeof makeTagLi>) => unknown
-			children: ReturnType<typeof makeTagLi>[]
-		}
-		const origAppend = tagsUl.appendChild.bind(tagsUl)
-		tagsUl.appendChild = (c: ReturnType<typeof makeTagLi>) => {
-			origAppend(c)
-			attachOuterHTML(c)
-			return c
-		}
-	}
-
-	const origResultClone = resultTemplate.content.cloneNode.bind(resultTemplate.content)
-	resultTemplate.content.cloneNode = () => {
-		const clone = origResultClone()
-		enhanceFragmentClone(clone as Parameters<typeof enhanceFragmentClone>[0])
-		return clone
-	}
-
-	const origTagClone = tagTemplate.content.cloneNode.bind(tagTemplate.content)
-	tagTemplate.content.cloneNode = () => {
-		const clone = origTagClone()
-		const li = (clone as { firstElementChild: ReturnType<typeof makeTagLi> }).firstElementChild
-		attachOuterHTML(li)
-		return clone
-	}
-
-	const documentFragmentFactory = () => {
-		const children: { outerHTML: string }[] = []
-		return {
-			_children: children,
-			appendChild(node: { outerHTML: string }) {
-				children.push(node)
-				return node
-			},
-			get firstElementChild() {
-				return children[0] ?? null
-			},
-		}
+	const window = parseHTML(`
+		<html>
+			<body>
+				<form>
+					<input id="search-input" type="search">
+				</form>
+				<section id="search-results-region" aria-busy="true">
+					<ol id="search-results-list"></ol>
+					<p id="no-results" hidden>No results</p>
+					<p id="search-index-error" hidden>Search index error</p>
+				</section>
+				<template id="search-result-template">
+					<li class="List__item">
+						<span class="List__secondary-content"></span>
+						<a class="List__primary-content"></a>
+						<ul class="Tags NoListMarker" hidden></ul>
+					</li>
+				</template>
+				<template id="search-tag-template">
+					<li><a class="Tag__link"></a></li>
+				</template>
+			</body>
+		</html>
+	`)
+	const document = window.document
+	const requiredElement = <T extends Element>(selector: string) => {
+		const element = document.querySelector<T>(selector)
+		if (!element) throw new Error(`Missing test fixture element: ${selector}`)
+		return element
 	}
 
 	return {
-		searchInput,
-		resultsList,
-		noResults,
-		indexError,
-		resultsRegion,
-		listeners,
-		resultTemplate,
-		tagTemplate,
-		documentFragmentFactory,
+		window,
+		document,
+		searchInput: requiredElement<HTMLInputElement>('#search-input'),
+		resultsList: requiredElement<HTMLOListElement>('#search-results-list'),
+		noResults: requiredElement<HTMLElement>('#no-results'),
 	}
 }
 
@@ -365,64 +82,41 @@ async function runSearchScript({
 }) {
 	const source = await readFile(searchScriptPath, 'utf8')
 	const dom = buildMockSearchDom()
-	const {
-		searchInput,
-		resultsList,
-		noResults,
-		indexError,
-		resultsRegion,
-		listeners,
-		documentFragmentFactory,
-	} = dom
+	const { window, document, searchInput, resultsList, noResults } = dom
 
-	const windowLocation = new URL(
+	let windowLocation = new URL(
 		`https://kittygiraudel.com/blog/search/${query ? `?q=${query}` : ''}`,
 	)
-	const windowMock: WindowMock = {
-		location: windowLocation,
+	Object.defineProperties(window, {
+		location: {
+			configurable: true,
+			get: () => windowLocation,
+		},
 		history: {
-			replaceState(_state, _title, href) {
-				windowMock.location = new URL(href)
+			configurable: true,
+			value: {
+				replaceState(_state: unknown, _title: string, href: string) {
+					windowLocation = new URL(href)
+				},
 			},
 		},
-	}
-
-	const documentStub = {
-		addEventListener(event: string, callback: () => void) {
-			if (event === 'DOMContentLoaded') callback()
-		},
-		getElementById(id: string) {
-			if (id === 'search-input') return searchInput
-			if (id === 'search-results-list') return resultsList
-			if (id === 'no-results') return noResults
-			if (id === 'search-index-error') return indexError
-			if (id === 'search-results-region') return resultsRegion
-			if (id === 'search-result-template') return dom.resultTemplate
-			if (id === 'search-tag-template') return dom.tagTemplate
-			return null
-		},
-		querySelector(sel: string) {
-			const id = /^#([\w-]+)$/.exec(sel)
-			if (id) return documentStub.getElementById(id[1])
-			return null
-		},
-		createDocumentFragment: () => documentFragmentFactory(),
-	}
+	})
 
 	const context = vm.createContext({
 		URL,
 		URLSearchParams,
 		console,
-		document: documentStub,
+		document,
 		fetch: () =>
 			Promise.resolve({
 				ok: true,
 				json: () => Promise.resolve(entries),
 			}),
-		window: windowMock,
+		window,
 	})
 
 	vm.runInContext(source, context)
+	document.dispatchEvent(new window.Event('DOMContentLoaded'))
 	// Flush promise chains from async DOMContentLoaded (Search.from → bind + restore).
 	await Promise.resolve()
 	await Promise.resolve()
@@ -432,8 +126,8 @@ async function runSearchScript({
 		searchInput,
 		resultsList,
 		noResults,
-		listeners,
-		location: () => windowMock.location,
+		window,
+		location: () => windowLocation,
 	}
 }
 
@@ -441,7 +135,8 @@ test('search runtime limits results and keeps query in URL', async () => {
 	const entries = createSearchEntries(30)
 	const runtime = await runSearchScript({ entries })
 
-	runtime.listeners.input({ target: { value: 'accessibility tip' } })
+	runtime.searchInput.value = 'accessibility tip'
+	runtime.searchInput.dispatchEvent(new runtime.window.Event('input'))
 
 	assert.ok(runtime.location().searchParams.get('q') === 'accessibility tip')
 	assert.equal((runtime.resultsList.innerHTML.match(/class="List__item"/g) || []).length, 20)
@@ -451,7 +146,8 @@ test('search runtime renders no-results message', async () => {
 	const entries = createSearchEntries(3)
 	const runtime = await runSearchScript({ entries })
 
-	runtime.listeners.input({ target: { value: 'no-match-value' } })
+	runtime.searchInput.value = 'no-match-value'
+	runtime.searchInput.dispatchEvent(new runtime.window.Event('input'))
 
 	assert.equal(runtime.resultsList.innerHTML, '')
 	assert.equal(runtime.noResults.hidden, false)
@@ -479,7 +175,8 @@ test('search runtime formats guest and external host in secondary line', async (
 	]
 	const runtime = await runSearchScript({ entries })
 
-	runtime.listeners.input({ target: { value: 'sample' } })
+	runtime.searchInput.value = 'sample'
+	runtime.searchInput.dispatchEvent(new runtime.window.Event('input'))
 
 	assert.ok(
 		runtime.resultsList.innerHTML.includes('January 01, 2026 by Alex Example at CSS-Tricks'),
