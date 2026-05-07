@@ -11,7 +11,7 @@ function injectHeadingAnchors(content: string, outputPath?: string) {
 
 	let anchorIndex = 0
 
-	$('[data-heading-anchors] :is(h2, h3, h4)[id]:not([data-ha-exclude]):not(#footnotes-label)').each(
+	$('[data-heading-anchors] :is(h2, h3)[id]:not([data-ha-exclude]):not(#footnotes-label)').each(
 		(_, el: Element) => {
 			const $heading = $(el)
 			const anchorName = `--ha_0_${anchorIndex++}`
