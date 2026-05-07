@@ -148,6 +148,7 @@ This brought down incremental compilation time from about 10 seconds to ~1 secon
 
 Once we’ve added our custom plugin to the configuration, Eleventy exposes a `postStats` collection in all our Liquid templates (or whatever templating engine). Now, we can create a [dedicated page](/stats/) which consumes that collection.
 
+{% raw %}
 ```liquid
 ---
 layout: default
@@ -156,25 +157,26 @@ description: Vanity metrics about my writing habits on this blog over the years.
 permalink: /stats/
 ---
 
-{​% assign stats = collections.postStats %}
+{% assign stats = collections.postStats %}
 
 <table>
 	<tbody>
 		<tr>
 			<th scope="row">First post</th>
-			<td>{​{ stats.firstPostDate | time }}</td>
+			<td>{{ stats.firstPostDate | time }}</td>
 		</tr>
 		<tr>
 			<th scope="row">Last post</th>
-			<td>{​{ stats.lastPostDate | time }}</td>
+			<td>{{ stats.lastPostDate | time }}</td>
 		</tr>
 		<tr>
 			<th scope="row">Total posts</th>
-			<td>{​{ stats.postCount }}</td>
+			<td>{{ stats.postCount }}</td>
 		</tr>
 	</tbody>
 </table>
 ```
+{% endraw %}
 
 {% if stats.years and stats.years.size > 0 %}
 

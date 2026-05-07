@@ -36,6 +36,7 @@ Did you know about [`window.stop()`](https://developer.mozilla.org/en-US/docs/We
 
 What if we called `window.stop()` _before_ the browser reaches the `<script>` tags rendered by `<NextScript />`? Let’s try that by updating `./pages/_document.js` (see [Custom `Document` in Next’s documentation](https://nextjs.org/docs/advanced-features/custom-document)):
 
+{% raw %}
 ```jsx
 class MyDocument extends Document {
 	static getInitialProps(ctx) {
@@ -51,7 +52,7 @@ class MyDocument extends Document {
 					{/* Trying to prevent <script> elements rendered by
 							`<NextScript />` from being executed. The proper
 							condition will be covered in the next section. */
-					<script dangerouslySetInnerHTML={​{ __html: `
+					<script dangerouslySetInnerHTML={{ __html: `
 						if (true) window.stop()
 					` }} />
 					<NextScript />
@@ -61,6 +62,7 @@ class MyDocument extends Document {
 	}
 }
 ```
+{% endraw %}
 
 Performing a [Next export](https://nextjs.org/docs/advanced-features/static-html-export) and serving the output folder before loading any page yields positive results: not only are the `<script>` tags not executed, but they’re not even rendered in the dev tools. That’s because `window.stop()` literally killed the page at this point, preventing the rest of the document from being rendered.
 
@@ -103,6 +105,7 @@ function MyApp({ Component, pageProps }) {
 
 Finally, in our `./pages/_document.js`, we can check for the presence of this URL parameter. If it is present, we need to stop the execution of scripts.
 
+{% raw %}
 ```js
 class MyDocument extends Document {
 	static getInitialProps(ctx) {
@@ -115,7 +118,7 @@ class MyDocument extends Document {
 				<Head />
 				<body>
 					<Main />
-					<script dangerouslySetInnerHTML={​{ __html: `
+					<script dangerouslySetInnerHTML={{ __html: `
 						if (window.location.search.includes('no_script')) {
 							window.stop()
 						}
@@ -127,6 +130,7 @@ class MyDocument extends Document {
 	}
 }
 ```
+{% endraw %}
 
 That’s it, job done. Hacky as hell, but heh. It seems to work okay. For the most part at least, as it has some potentially negative side-effects: any ongoing request, such as for lazy loaded images, will be interrupted. That can cause some images not to render. Still better than a broken page due to a JavaScript error in my opinion, but I guess the choice is yours.
 
@@ -166,6 +170,7 @@ class MyDocument extends Document {
 
 Perfect. Now, all we need is a little JavaScript snippet to effectively properly render these `<script>` tags if the `no_script` URL parameter is not present.
 
+{% raw %}
 ```jsx
 const scriptInjector = `
 if (!window.location.search.includes('no_script')) {
@@ -193,13 +198,13 @@ class MyDocument extends Document {
 					<template id='next-scripts'>
 						<NextScript />
 					</template>
-					<script dangerouslySetInnerHTML={​{ __html: scriptInjector }} />
+					<script dangerouslySetInnerHTML={{ __html: scriptInjector }} />
 				</body>
 			</Html>
 		)
 	}
 }
-
 ```
+{% endraw %}
 
 Boom, job done. If the `no_script` URL query parameter is present, the script will do nothing, effectively mimicking a no-JavaScript expperience. If it is not, it will load Next bundles, just like normal.

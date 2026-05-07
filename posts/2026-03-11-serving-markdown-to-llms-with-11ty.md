@@ -83,25 +83,23 @@ For this website to render {% footnoteref "nice-looking" footnote_nice_looking %
 We need a new layout that does none of that, and spits out Markdown. Enters `_layouts/post-markdown.liquid`:
 
 {% raw %}
-
 ```yaml
-{​{ '---' }}
-title: "{​{ post.data.title | escape }}"
-date: "{​{ post.date | date_to_rfc3339 }}"
-{​% if post.data.tags %}
+{{ '---' }}
+title: "{{ post.data.title | escape }}"
+date: "{{ post.date | date_to_rfc3339 }}"
+{% if post.data.tags %}
 tags:
-{​%- for tag in post.data.tags %}
-  - "{​{ tag }}"
-{​%- endfor %}
-{​% endif %}
-canonical_url: "{​{ post.url | url }}"
-{​{ '---' }}
+{%- for tag in post.data.tags %}
+  - "{{ tag }}"
+{%- endfor %}
+{% endif %}
+canonical_url: "{{ post.url | url }}"
+{{ '---' }}
 
-# {​{ post.data.title }}
+# {{ post.data.title }}
 
 {{ post.data.page.rawInput }}
 ```
-
 {% endraw %}
 
 There is a lot going on, so here are some notes:
@@ -120,7 +118,7 @@ Out of curiosity and in order to improve the results, I asked Cursor…
 It seems to imply that using a multi-line list is unambiguous and “better for tooling”, so that LLMs and scripts do not have to guess or split on commas. I am skeptical, but who am I to judge.
 
 **Whether Liquid shortcodes should be removed?**  
-I sometimes use things like `{​% callout %}` in my articles and I was wondering if I had to strip these out, since they’re not actually Markdown. It said that they’re generally fine for LLMs and typically treated as a semantic hint if anything.
+I sometimes use things like {% raw %}`{% callout %}`{% endraw %} in my articles and I was wondering if I had to strip these out, since they’re not actually Markdown. It said that they’re generally fine for LLMs and typically treated as a semantic hint if anything.
 
 **Whether HTML entities like `&shy;` are a problem?**  
 It said they’re “fine” in the sense that everything will still work, and most LLMs will decode them correctly. But for Markdown twins aimed at agents, stripping layout-only entities like `&shy;` entirely could be worth it since they just add noise and can hurt tokenization. I’ve implemented a small solution with the formidable [he](https://github.com/mathiasbynens/he) package.
@@ -149,12 +147,14 @@ To understand how to make this happen, I had to dig back into how Eleventy works
 
 My Eleventy configuration defines the whole repository as an input directory. It also defines `.md` as a supported template format. This means Eleventy finds all my blog posts authored as Markdown in `./_posts`. Then, it applies the [data cascade](https://www.11ty.dev/docs/data-cascade/), and finds the JSON file at `./_posts/_posts.11tydata.json` which contains:
 
+{% raw %}
 ```json
 {
 	"layout": "post",
-	"permalink": "/{​{ page.date | date: '%Y/%m/%d' }}/{​{ page.fileSlug }}/"
+	"permalink": "/{{ page.date | date: '%Y/%m/%d' }}/{{ page.fileSlug }}/"
 }
 ```
+{% endraw %}
 
 This essentially _supercharges_ the existing metadata from each post with which template it should use to render them, and where it should render them. This is just to avoid having to specify these 2 fields manually in every single post page.
 
@@ -162,10 +162,11 @@ Now, we cannot easily tell Eleventy to render a page twice with different layout
 
 To do so, I have created a Liquid file which contains this:
 
+{% raw %}
 ```yaml
 ---
 layout: post-markdown
-permalink: '{​{ post.url }}index.md'
+permalink: '{{ post.url }}index.md'
 pagination:
   data: collections.posts
   size: 1
@@ -173,6 +174,7 @@ pagination:
 eleventyExcludeFromCollections: true
 ---
 ```
+{% endraw %}
 
 When Eleventy finds this file, it iterates over the `posts` collection (`1` post at a time) and renders each entry using our new `post-markdown` layout (passing the post itself as `post`), and a permalink that simply appends `index.md` to the existing post URL.
 
@@ -216,13 +218,15 @@ Right now, nothing links to the Markdown files. Crawlers would have to guess the
 
 In our HTML post layout, we can render the following `<link>` element in the `<head>` of the page:
 
+{% raw %}
 ```html
 <link
 	rel="alternate"
 	type="text/markdown"
-	href="{​{ page.url | url }}index.md"
+	href="{{ page.url | url }}index.md"
 />
 ```
+{% endraw %}
 
 We can do the same thing in the `sitemap.xml` page:
 

@@ -99,13 +99,13 @@ We don’t want to ship that in production though, so we scope the insertion of 
 
 {% raw %}
 ```liquid
-{​% if site.environment == "development" %}
+{% if site.environment == "development" %}
 <script>
 ;(function keepThemeAcrossLiveReload() {
 	// …
 })
 </script>
-{​% endif %}
+{% endif %}
 ```
 {% endraw %}
 

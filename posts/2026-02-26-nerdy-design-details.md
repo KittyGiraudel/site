@@ -243,16 +243,18 @@ I had limited that problem a little by placing the ad in the bottom right corner
 
 So I’ve implemented a few changes. First, I’ve moved the ad a little lower in the page, while still living above the fold. When possible, I injected it _after_ the first paragraph. This wasn’t too obvious in Liquid:
 
+{% raw %}
 ```liquid
-{​% assign parts = content | split: "</p>" %}
-{​{ parts | first }}</p>
+{% assign parts = content | split: "</p>" %}
+{{ parts | first }}</p>
 
-{​% include "ad.liquid" %}
+{% include "ad.liquid" %}
 
-{​% for part in parts offset: 1 %}
-	{​{ part }}{​% unless forloop.last %}</p>{​% endunless %}
-{​% endfor %}
+{% for part in parts offset: 1 %}
+	{{ part }}{% unless forloop.last %}</p>{% endunless %}
+{% endfor %}
 ```
+{% endraw %}
 
 And for it to fit better within the flow of the article, I’ve wrapped the ad in a visible container, with a dedicated slot and some text to explicitly mention that this callout is for an ad display.
 

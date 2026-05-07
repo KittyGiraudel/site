@@ -55,24 +55,28 @@ We’ll give a default class to the button that can be extended through the `cla
 
 Last but not least, we’ll make sure not to render the button if no content is being passed.
 
+{% raw %}
 ```liquid
-{​% assign class = "c-button " | append: include.class %}
-{​% assign type = include.type | default: "button" %}
-{​% assign content = include.content %}
+{% assign class = "c-button " | append: include.class %}
+{% assign type = include.type | default: "button" %}
+{% assign content = include.content %}
 
-{​% if content %}
-	<button class="{​{ class }}" type="{​{ type }}">{​{ content }}</button>
-{​% endif %}
+{% if content %}
+	<button class="{{ class }}" type="{{ type }}">{{ content }}</button>
+{% endif %}
 ```
+{% endraw %}
 
-This file is then included through an `{​% include %}` Liquid block when used in pages, customized with [include parameters](https://web.archive.org/web/20240630100623/http://jekyllrb.com/docs/templates/#includes). Ultimately, this means pages are basically nothing but generic containers including components.
+This file is then included through an {% raw %}`{% include %}`{% endraw %} Liquid block when used in pages, customized with [include parameters](https://web.archive.org/web/20240630100623/http://jekyllrb.com/docs/templates/#includes). Ultimately, this means pages are basically nothing but generic containers including components.
 
+{% raw %}
 ```liquid
-{​% include components/button.html
+{% include components/button.html
 	type = "submit"
 	content = "Get in touch"
 %}
 ```
+{% endraw %}
 
 ## Building the Styleguide
 
@@ -136,6 +140,7 @@ Let’s create the page for our button component (`_styleguide/button.html`). Th
 
 What we need is a description of the UI module, the parameters it accepts when included, and an example. The content of the page itself will be a proper Liquid include, and this is what will be rendered as a demo inside an iframe.
 
+{% raw %}
 ```liquid
 ---
 description: |
@@ -148,22 +153,22 @@ parameters:
 				(default to `button`)"
 	class: "*(optional)* any extra class"
 example: |
-	{​% include components/button.html
+	{% include components/button.html
 		type = "button"
 		content = "Click me"
 		class = "pretty-button"
 	%}
 ---
 
-{​% include components/button.html
+{% include components/button.html
 	type = "button"
 	content = "Click me"
 	class = "pretty-button"
 %}
 ```
+{% endraw %}
 
 ### A “Styleguide” Page
-
 
 We now need to create the page for the styleguide. To make it easy (and because I think this is the perfect occasion for it), I added [Bootstrap](https://getbootstrap.com/) to this page to make it easier to style and faster to build. This page consists of three sections:
 
@@ -207,6 +212,7 @@ my-project/
 
 The reason I recommend this is that it makes the code for our page quite clean and makes it pretty obvious about what it does.
 
+{% raw %}
 ```liquid
 ---
 layout: styleguide
@@ -215,34 +221,36 @@ layout: styleguide
 <div class="container">
 
 	<!-- Styleguide header introducing the content -->
-	{​% include styleguide/header.html %}  
+	{% include styleguide/header.html %}  
 
 	<div class="row">
 
 		<!-- Styleguide aside navigation -->
 		<div class="col-md-3">
-			{​% include styleguide/navigation.html %}  
+			{% include styleguide/navigation.html %}  
 		</div>
 
 		<!-- Styleguide main content area -->
 		<div class="col-md-9">
-			{​% for component in site.styleguide %}
-				{​% include styleguide/component.html
+			{% for component in site.styleguide %}
+				{% include styleguide/component.html
 					component = component
 				%}
-			{​% endfor %}
+			{% endfor %}
 		</div>
 
 	</div>
 
 </div>
 ```
+{% endraw %}
 
 Here is the header (`_includes/styleguide/header.html`):
 
+{% raw %}
 ```liquid
 <div class="jumbotron">
-	<h1>{​{ page.title | default: "Styleguide" }}</h1>
+	<h1>{{ page.title | default: "Styleguide" }}</h1>
 
 	<p>
 		This document is a component styleguide. Its purpose is to list all the UI
@@ -258,51 +266,55 @@ Here is the header (`_includes/styleguide/header.html`):
 	<a href="/" class="btn btn-primary">Back to the site</a>
 </div>
 ```
+{% endraw %}
 
 Here is the navigation (`_includes/styleguide/navigation.html`):
 
+{% raw %}
 ```liquid
 <div class="scrollspy">
 	<div class="s-styleguide-aside hidden-xs hidden-sm">
 		<ul class="nav">
-			{​% for component in site.styleguide %}
-				{​% assign component_name = component.slug | replace: "-", " " | capitalize %}
+			{% for component in site.styleguide %}
+				{% assign component_name = component.slug | replace: "-", " " | capitalize %}
 				<li>
-					<a href="#{​{ component.slug }}">{​{ component_name }}</a>
+					<a href="#{{ component.slug }}">{{ component_name }}</a>
 				</li>
-			{​% endfor %}
+			{% endfor %}
 		</ul>
 	</div>
 </div>
 ```
+{% endraw %}
 
-{​% callout %}Note: if the name of your components do not necessarily match their file name (`slug`), you could add a `title` or `name` key to each of them instead.
-{​% endcallout %}
+{% callout %}Note: if the name of your components do not necessarily match their file name (`slug`), you could add a `title` or `name` key to each of them instead.
+{% endcallout %}
 
 And finally, here is the HTML for a component showcase (`_includes/styleguide/component.html`), which is admittedly the most complex part of this page:
 
 ![Screenshot of the component output, showcasing a table of information for each parameter and a visual output](/assets/images/jekyll-styleguide/component-output.png)
 
+{% raw %}
 ```liquid
-{​% assign component = include.component %}
-{​% assign iframe_source = component.url | prepend: site.baseurl %}
-{​% assign slug = component.slug %}
-{​% assign title = slug | replace: "-", " " | capitalize %}
-{​% assign description = component.description | markdownify %}
-{​% assign html_code = component.content %}
-{​% assign liquid_code = component.example %}
-{​% assign parameters = component.parameters %}
-{​% assign tab_name = slug | append: "-" | append: "-tab" %}
+{% assign component = include.component %}
+{% assign iframe_source = component.url | prepend: site.baseurl %}
+{% assign slug = component.slug %}
+{% assign title = slug | replace: "-", " " | capitalize %}
+{% assign description = component.description | markdownify %}
+{% assign html_code = component.content %}
+{% assign liquid_code = component.example %}
+{% assign parameters = component.parameters %}
+{% assign tab_name = slug | append: "-" | append: "-tab" %}
 
-<div class="s-styleguide-showcase" id="{​{ slug }}">
+<div class="s-styleguide-showcase" id="{{ slug }}">
 
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h2 class="panel-title">{​{ title }}</h2>
+			<h2 class="panel-title">{{ title }}</h2>
 		</div>
 
 		<div class="panel-body">
-			{​{ description }}
+			{{ description }}
 
 			<!-- Component include parameters -->
 			<table class="table">
@@ -313,43 +325,43 @@ And finally, here is the HTML for a component showcase (`_includes/styleguide/co
 					</tr>
 				</thead>
 				<tbody>
-				{​% for parameter in parameters %}
-					{​% assign parameter_name = parameter[0] %}
-					{​% assign parameter_desc = parameter[1] | markdownify %}
+				{% for parameter in parameters %}
+					{% assign parameter_name = parameter[0] %}
+					{% assign parameter_desc = parameter[1] | markdownify %}
 					<tr>
-						<td><code>{​{ parameter_name }}</code></td>
-						<td>{​{ parameter_desc }}</td>
+						<td><code>{{ parameter_name }}</code></td>
+						<td>{{ parameter_desc }}</td>
 					</tr>
-				{​% endfor %}
+				{% endfor %}
 				</tbody>
 			</table>
 
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">
 				<li role="presentation" class="active">
-					<a href="#{​{ tab_name }}-demo" aria-controls="{​{ tab_name }}-demo" role="tab" data-toggle="tab">Demo</a>
+					<a href="#{{ tab_name }}-demo" aria-controls="{{ tab_name }}-demo" role="tab" data-toggle="tab">Demo</a>
 				</li>
 				<li role="presentation">
-					<a href="#{​{ tab_name }}-liquid" aria-controls="{​{ tab_name }}-liquid" role="tab" data-toggle="tab">Liquid</a>
+					<a href="#{{ tab_name }}-liquid" aria-controls="{{ tab_name }}-liquid" role="tab" data-toggle="tab">Liquid</a>
 				</li>
 				<li role="presentation">
-					<a href="#{​{ tab_name }}-html" aria-controls="{​{ tab_name }}-html" role="tab" data-toggle="tab">HTML</a>
+					<a href="#{{ tab_name }}-html" aria-controls="{{ tab_name }}-html" role="tab" data-toggle="tab">HTML</a>
 				</li>
 			</ul>
 
 			<!-- Tab panes -->
 			<div class="tab-content">
 
-				<div role="tabpanel" class="tab-pane active" id="{​{ tab_name }}-demo">
-					<iframe src="{​{ iframe_source }}" title="{​{ title }}"></iframe>
+				<div role="tabpanel" class="tab-pane active" id="{{ tab_name }}-demo">
+					<iframe src="{{ iframe_source }}" title="{{ title }}"></iframe>
 				</div>
 
-				<div role="tabpanel" class="tab-pane" id="{​{ tab_name }}-liquid">
-					{​% highlight liquid %}{​{ liquid_code }}{​% endhighlight %}
+				<div role="tabpanel" class="tab-pane" id="{{ tab_name }}-liquid">
+					{% highlight liquid %}{{ liquid_code }}{% endhighlight %}
 				</div>
 
-				<div role="tabpanel" class="tab-pane" id="{​{ tab_name }}-html">
-					{​% highlight html %}{​{ html_code }}{​% endhighlight %}
+				<div role="tabpanel" class="tab-pane" id="{{ tab_name }}-html">
+					{% highlight html %}{{ html_code }}{% endhighlight %}
 				</div>
 
 			</div>
@@ -358,6 +370,7 @@ And finally, here is the HTML for a component showcase (`_includes/styleguide/co
 
 </div>
 ```
+{% endraw %}
 
 ### A “Styleguide” Layout
 

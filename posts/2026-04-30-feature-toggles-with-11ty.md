@@ -84,13 +84,13 @@ And then in your templates:
 
 {% raw %}
 ```liquid
-{​% if features.initialize_service_worker %}
+{% if features.initialize_service_worker %}
 <script>
 if ('serviceWorker' in navigator) {
 	navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
 }
 </script>
-{​% endif %}
+{% endif %}
 ```
 {% endraw %}
 

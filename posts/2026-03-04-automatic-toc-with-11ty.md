@@ -24,9 +24,11 @@ Off the bat, there are a few challenges to overcome:
 
 Let’s start with the first question. The page content is available to Liquid layouts via the `content` variable. It’s essentially a string that contains everything rendered below the YAML front-matter of the page rendering the layout. We need to be able to feed that variable to some sort of a function. Fortunately, that’s exactly what [Liquid filters](https://liquidjs.com/filters/overview.html) are!
 
+{% raw %}
 ```liquid
-{​% assign toc = content | table_of_contents %}
+{% assign toc = content | table_of_contents %}
 ```
+{% endraw %}
 
 So now we know that we will declare a Liquid filter that returns a table of contents (more on what that actually means later). How do we actually do the data extraction? As we’ve established, `content` is a long string of HTML. We could use regular expressions, but [parsing HTML with regular expressions is a bad idea](https://stackoverflow.com/a/1732454).
 
@@ -49,52 +51,58 @@ In my initial version, the filter would generate and return the expected HTML. I
 
 So let’s flip the problem on its head, and start from the HTML we _want_ to render.
 
+{% raw %}
 ```liquid
 <!-- toc.liquid -->
-{​% if items and items.size > 0 %}
+{% if items and items.size > 0 %}
 	<aside class="ToC" aria-labelledby="toc">
 		<h2 class="ToC__title" id="toc">On this page</h2>
 		<ol class="ToC__list">
-			​​{​% for item in items %}
-				<li class="ToC__item ToC__item--level{​{ item.level }}">
-					<a href="#{​{ item.id }}">{​{ item.text }}</a>
+			​​{% for item in items %}
+				<li class="ToC__item ToC__item--level{{ item.level }}">
+					<a href="#{{ item.id }}">{{ item.text }}</a>
 				</li>
-			​{​% endfor %}
+			​{% endfor %}
 		</ol>
 	</aside>
-{​% endif %}
+{% endif %}
 ```
+{% endraw %}
 
 This looks great, but it only covers top-level headings. What about nested sections? What we can do is extract our list itself in another Liquid partial, so we can recursively render it. 🤯
 
+{% raw %}
 ```liquid
 <!-- toc_list.liquid -->
-{​% if items and items.size > 0 %}
-	<ol class="ToC__list{​% unless root %} ToC__list--sublist{​% endunless %}">
-		{​% for item in items %}
-			<li class="ToC__item ToC__item--level{​{ item.level }}">
-				<a href="#{​{ item.id }}">{​{ item.text }}</a>
+{% if items and items.size > 0 %}
+	<ol class="ToC__list{% unless root %} ToC__list--sublist{% endunless %}">
+		{% for item in items %}
+			<li class="ToC__item ToC__item--level{{ item.level }}">
+				<a href="#{{ item.id }}">{{ item.text }}</a>
 
-				{​% if item.children and item.children.size > 0 %}
-					{​% include "toc_list.liquid", items: item.children, root: false %}
-				{​% endif %}
+				{% if item.children and item.children.size > 0 %}
+					{% include "toc_list.liquid", items: item.children, root: false %}
+				{% endif %}
 			</li>
-		{​% endfor %}
+		{% endfor %}
 	</ol>
-{​% endif %}
+{% endif %}
 ```
+{% endraw %}
 
 We can replace it in our top-level partial as well:
 
+{% raw %}
 ```liquid
 <!-- toc.liquid -->
-{​% if items and items.size > 0 %}
+{% if items and items.size > 0 %}
 	<aside class="ToC" aria-labelledby="toc">
 		<h2 class="ToC__title" id="toc">On this page</h2>
-		{​% include "toc_list.liquid", items: items, root: true %}
+		{% include "toc_list.liquid", items: items, root: true %}
 	</aside>
-{​% endif %}
+{% endif %}
 ```
+{% endraw %}
 
 {% callout %}The `root` parameter enables us to add a specific class to nested lists (`ToC__list--sublist`) so we can shift them to the right accordingly. It will also be handy to [make sublists smaller](#deeper-and-smaller).
 {% endcallout %}
@@ -196,13 +204,15 @@ As shared in [a recent article](/2026/02/26/nerdy-design-details/), I have [auto
 
 If rendering the table of contents within that `<heading-anchors>` web component, its own title will have an anchor, which is a bit odd? It’s not a problem per se, but I didn’t really want the table of contents to have its own visible anchor as it felt too meta. There are a few ways to solve it: either render the table of contents outside, or do not use a heading inside the table of contents, or exclude the table of contents’ heading from `<heading-anchors>`. I opted for the latter:
 
+{% raw %}
 ```html/0
 <heading-anchors selector="h2:not(#toc), h3, h4" content="§">
-	{​% assign toc_items = content | table_of_contents %}
-	{​% include "toc.liquid", items: toc_items %}
-	{​{ content }}
+	{% assign toc_items = content | table_of_contents %}
+	{% include "toc.liquid", items: toc_items %}
+	{{ content }}
 </heading-anchors>
 ```
+{% endraw %}
 
 ### Float into the layout
 

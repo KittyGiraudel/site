@@ -18,22 +18,26 @@ This is not groundbreaking. Eleventy even has [documentation about tag pages](ht
 
 On this website, the layout file is responsible for rendering the page title. In the case of the tag page, I wanted to render the name of the tag in the title. My first attempt didn’t work:
 
+{% raw %}
 ```liquid
 ---
 title: "{​{ tag }}"
-description: All the posts that are tagged with “{​{ tag }}”.
+description: All the posts that are tagged with “{{ tag }}”.
 ---
 ```
+{% endraw %}
 
 This ended up rendering `{{ tag }}` as a literal string, which is not what we want. Instead, we need to use the [`eleventyComputed` special property](https://www.11ty.dev/docs/data-computed/#using-a-template-string). This instructs Eleventy to resolve and inject our variables before returning the content.
 
+{% raw %}
 ```liquid
 ---
 eleventyComputed:
-	title: "{​{ tag }}"
+	title: "{{ tag }}"
 	description: All the posts that are tagged with “{{ tag }}”.
 ---
 ```
+{% endraw %}
 
 ## Removing the “all” page
 
