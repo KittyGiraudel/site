@@ -28,7 +28,7 @@ layout: default
 %}
 
 <main class="Main" role="main" id="main">
-  <div class="Container" data-heading-anchors>
+  <div class="Container" {% unless heading_anchors == false %}data-heading-anchors{% endunless %}>
     {{ content }}
   
     {% comment %}
