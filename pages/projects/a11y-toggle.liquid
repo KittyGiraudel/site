@@ -12,36 +12,24 @@ image_caption: Screenshot of a demo using A11y-toggle for collapsible content.
 permalink: /projects/a11y-toggle/
 ---
 
-A11y-toggle is a small script to build accessible content toggles and disclosure
-widgets. It focuses on making show/hide interactions usable for keyboard and
-assistive technology users while staying close to plain HTML and CSS.
+A11y-toggle is a small script to build accessible content toggles and disclosure widgets. It focuses on making show/hide interactions usable for keyboard and assistive technology users while staying close to plain HTML and CSS.
 
 {% callout %}
-For a React version of a11y-toggle, check [react-a11y-disclosure](https://github.com/KittyGiraudel/react-a11y-disclosure)
-which implements the same pattern with a lightweight hook.
+For a React version of a11y-toggle, check [react-a11y-disclosure](https://github.com/KittyGiraudel/react-a11y-disclosure) which implements the same pattern with a lightweight hook.
+{% endcallout %}
+
+{% callout "warning" %}
+**Disclaimer:** a11y-toggle is less useful than it used to be due to the native `<details>` element being now widely supported and generally consistent across browsers.
 {% endcallout %}
 
 ## What it does
 
-- **State management**: wires up buttons and controlled regions so that the
-  open / closed state is always in sync between the DOM and what assistive
-  technologies expose.
-- **ARIA attributes**: handles the boring but important details like
-  `aria-expanded`, `aria-controls` and relationships between toggles and the
-  content they reveal.
-- **Progressive enhancement**: starts from semantic markup and only adds the
-  JavaScript needed to toggle visibility and state.
+- State management: wires up buttons and controlled regions so that the open / closed state is always in sync between the DOM and what assistive technologies expose.
+- ARIA attributes: handles the boring but important details like `aria-expanded`, `aria-controls` and relationships between toggles and the content they reveal.
+- Progressive enhancement: starts from semantic markup and only adds the JavaScript needed to toggle visibility and state.
 
-You keep full control over the HTML and styling; a11y-toggle takes care of the
-accessibility contract that is easy to overlook.
+You keep full control over the HTML and styling; a11y-toggle takes care of the accessibility contract that is easy to overlook.
 
 ## Where it fits
 
-a11y-toggle is useful for FAQs, disclosure sections, filter panels, settings
-panels and any place where content is conditionally revealed. It is deliberately
-minimal so it can be dropped into existing projects without imposing a design
-system or component framework.
-
-The project lives on GitHub, where you can find installation instructions,
-examples and tips for integrating it into different codebases.
-
+a11y-toggle is useful for FAQs, disclosure sections, filter panels, settings panels and any place where content is conditionally revealed. It is deliberately minimal so it can be dropped into existing projects without imposing a design system or component framework.

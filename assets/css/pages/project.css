@@ -5,7 +5,6 @@
 .Project__description {
 	margin-block-end: var(--vb-thirds);
 	font-size: 110%;
-	text-wrap: balance;
 }
 
 .Project__tags .Tags {
