@@ -218,7 +218,8 @@ a:focus-visible {
 
 @media not print {
 	a[data-visited]:not([data-visited-ignore]):not([href^="#"])::after {
-		content: " ✓";
+		content: "✓";
+		margin-inline-start: 0.5ch;
 		opacity: 0.5;
 		font-size: 80%;
 	}
