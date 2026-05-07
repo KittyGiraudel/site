@@ -132,6 +132,7 @@ https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 # Fix some old broken URLs
 /2012/11/13/less-to-sass/                                       /2012/11/13/why-i-switched-from-less-to-sass/ 301!
 /2012/11/13/why-i-switch-from-less-to-sass/                     /2012/11/13/why-i-switched-from-less-to-sass/ 301!
+/2012/11/19/css-playgrounds/                                    /2012/11/19/a-round-up-on-css-playgrounds/ 301!
 /2012/11/20/learning-principes-for-improving-your-css/          /2012/11/20/learning-principles-for-improving-your-css/ 301!
 /2012/11/27/css-colors/                                         /2012/11/27/colors-in-css/ 301!
 /2013/01/28/float-down/                                         /2013/01/28/simulate-float-down/ 301!
