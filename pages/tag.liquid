@@ -17,6 +17,12 @@ permalink: /tags/{{ tag | slugify }}/
 eleventyComputed:
   description: All the posts that are tagged with “{{ tag }}”.
   title: "{{ tag }}"
+eleventyImport:
+  collections:
+    - posts
+    - snippets
+    - recipes
+    - projects
 ---
 
 {% render "styles.liquid",
