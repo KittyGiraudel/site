@@ -24,12 +24,14 @@
     {% for item in items %}
     <div class="Showcase__item">
       {% if type == "event" %}
-        {% capture event_meta %}{{ item.date | time }} · {{ item.location | split: ',' | first }}{% endcapture %}
+        {% assign date = item.date | time %}
+        {% assign description = item.description | default: " " %}
         
         {% render "card.liquid"
           image: item.thumbnail,
           primary: item.event,
-          secondary: event_meta,
+          secondary: description,
+          tertiary: date,
           url: item.link,
           tags: item.tags
         %}

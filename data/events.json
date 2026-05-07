@@ -1,6 +1,7 @@
 [
 	{
 		"event": "WeAreDevelopers – Live Podcast",
+		"description": "I joined Christian Heilmann and Daniel Cranney to discuss tech news, AI, accessibility and my recent experiments with Eleventy in a cozy live episode of WeAreDevelopers.",
 		"link": "https://www.youtube.com/watch?v=UncTZgOxgL8",
 		"location": "Online",
 		"date": "2026-03-11 12:30:00 +0100",
@@ -10,6 +11,7 @@
 	},
 	{
 		"event": "Unlocking Inclusivity, by Xena",
+		"description": "I was invited to be a panelist at the Unlocking Inclusivity event by Xena, in Berlin, to discuss diversity and inclusion in the tech industry.",
 		"link": "https://wearexena.com/unlocking-inclusivity/",
 		"location": "Berlin, Germany",
 		"date": "2023-06-01 12:30:00 -0400",
@@ -21,6 +23,7 @@
 	},
 	{
 		"event": "Algolia Developer Experience Podcast",
+		"description": "I joined Sarah Dayan and Bryan Robinson on the Algolia Developer Experience podcast to discuss accessibility and its implications when it comes to developer experience.",
 		"link": "https://developerexperience.buzzsprout.com/1806381/9919419-accessibility-and-developer-experience",
 		"location": "Online",
 		"date": "2022-01-20 12:30:00 -0400",
