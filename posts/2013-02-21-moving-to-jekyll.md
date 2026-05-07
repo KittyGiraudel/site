@@ -6,6 +6,7 @@ tags:
   - Retrospective
   - Liquid
 templateEngineOverride: md
+deprecated: true
 ---
 
 If you wonder why you may have experienced some issues when trying to reach the site a couple of days ago, it is probably because I recently decided to move my website to Jekyll and to host it on GitHub Pages. Just like that.
