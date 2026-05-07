@@ -47,8 +47,8 @@ export default {
 		// - `watch` is set when using `--watch`, which we don’t use
 		// - `build` is set when building the website, i.e. `npm run build`
 		dev_mode: process.env.ELEVENTY_RUN_MODE !== 'build',
-		inline_assets: isFeatureEnabled('inlineAssets'),
-		render_drafts: isFeatureEnabled('renderDrafts'),
-		service_worker: isFeatureEnabled('serviceWorker'),
+		inline_assets: isFeatureEnabled('INLINE_ASSETS'),
+		render_drafts: isFeatureEnabled('RENDER_DRAFTS'),
+		init_service_worker: isFeatureEnabled('INIT_SERVICE_WORKER'),
 	},
 }

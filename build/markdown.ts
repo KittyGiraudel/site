@@ -11,7 +11,7 @@ export function getMarkdownRenderer(): ReturnType<typeof markdownIt> {
 
 	const options: ConstructorParameters<typeof markdownIt>[0] = { html: true }
 
-	if (isFeatureEnabled('syntaxHighlight')) {
+	if (isFeatureEnabled('HIGHLIGHT_CODE_BLOCKS')) {
 		const markdownPrismJs =
 			require('@11ty/eleventy-plugin-syntaxhighlight/src/markdownSyntaxHighlightOptions.js') as (opts?: {
 				errorOnInvalidLanguage?: boolean

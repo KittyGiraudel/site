@@ -15,7 +15,7 @@ const STATIC_DATA = {
 }
 
 export default async function () {
-	if (!isFeatureEnabled('githubStars')) {
+	if (!isFeatureEnabled('FETCH_GITHUB_STARS')) {
 		return {
 			stargazers: STATIC_DATA,
 		}

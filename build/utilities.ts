@@ -140,7 +140,7 @@ function wrapSmileyFaces(content: string, outputPath?: string): string {
 }
 
 function rssContent(postUrl: string): string {
-	if (!postUrl || !isFeatureEnabled('rssCleanup')) return ''
+	if (!postUrl || !isFeatureEnabled('CLEAN_RSS_FEED')) return ''
 
 	const normalized = postUrl.replace(/^\/+|\/+$/g, '')
 	const outputPath = path.join(process.cwd(), '_site', normalized, 'index.html')
@@ -182,7 +182,7 @@ function getFrontMatterData(
 
 // A post is visible if it is not a draft or if drafts are enabled.
 function isPostVisible(value: MaybePost): boolean {
-	return !getFrontMatterData(value).draft || isFeatureEnabled('renderDrafts')
+	return !getFrontMatterData(value).draft || isFeatureEnabled('RENDER_DRAFTS')
 }
 
 // A post is rendered if it is visible and not an external post.

@@ -14,10 +14,10 @@ import utilities from './build/utilities.ts'
 export default defineConfig(config => {
 	// Content post-processing
 	// ---------------------------------------------------------------------------
-	if (isFeatureEnabled('minifyHTML')) config.addTransform('htmlmin', utilities.minifyHTML)
-	if (isFeatureEnabled('wrapEmojis')) config.addTransform('emoji', utilities.a11yEmojis)
-	if (isFeatureEnabled('helmet')) config.addTransform('helmet', utilities.helmet)
-	if (isFeatureEnabled('headingAnchors'))
+	if (isFeatureEnabled('MINIFY_HTML')) config.addTransform('htmlmin', utilities.minifyHTML)
+	if (isFeatureEnabled('WRAP_EMOJIS')) config.addTransform('emoji', utilities.a11yEmojis)
+	if (isFeatureEnabled('PROCESS_HELMET')) config.addTransform('helmet', utilities.helmet)
+	if (isFeatureEnabled('INJECT_HEADING_ANCHORS'))
 		config.addTransform('headingAnchors', injectHeadingAnchors)
 	config.addTransform('smileyFaces', utilities.wrapSmileyFaces)
 
@@ -39,12 +39,13 @@ export default defineConfig(config => {
 	})
 	config.addPlugin(postStatsPlugin)
 	config.addPlugin(tocPlugin)
-	if (isFeatureEnabled('syntaxHighlight'))
+	if (isFeatureEnabled('HIGHLIGHT_CODE_BLOCKS'))
 		config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
 
 	// Compilation ignores
 	// ---------------------------------------------------------------------------
-	if (!isFeatureEnabled('markdownAlternative')) config.ignores.add('pages/blog-markdown.liquid')
+	if (!isFeatureEnabled('RENDER_MARKDOWN_ALTERNATIVE'))
+		config.ignores.add('pages/blog-markdown.liquid')
 	config.ignores.add('CLAUDE.md')
 	config.ignores.add('STYLEGUIDE.md')
 
@@ -68,7 +69,7 @@ export default defineConfig(config => {
 	// script tags in production. For the assets to be linked to in development,
 	// they need to be passed through to the `_site` directory.
 	// See: https://kittygiraudel.com/2020/12/03/inlining-scripts-and-styles-in-11ty/
-	if (!isFeatureEnabled('inlineAssets')) {
+	if (!isFeatureEnabled('INLINE_ASSETS')) {
 		config.addPassthroughCopy('assets/js')
 		config.addPassthroughCopy('assets/css')
 	}

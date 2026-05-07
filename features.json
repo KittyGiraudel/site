@@ -1,13 +1,13 @@
 {
-	"githubStars": ["production"],
-	"headingAnchors": ["development", "production"],
-	"helmet": ["production"],
-	"inlineAssets": ["production"],
-	"markdownAlternative": ["development", "production"],
-	"minifyHTML": ["production"],
-	"renderDrafts": ["development"],
-	"serviceWorker": ["production"],
-	"syntaxHighlight": ["development", "production"],
-	"wrapEmojis": ["production"],
-	"rssCleanup": ["production"]
+	"FETCH_GITHUB_STARS": ["production"],
+	"INJECT_HEADING_ANCHORS": ["development", "production"],
+	"PROCESS_HELMET": ["production"],
+	"INLINE_ASSETS": ["production"],
+	"RENDER_MARKDOWN_ALTERNATIVE": ["development", "production"],
+	"MINIFY_HTML": ["production"],
+	"RENDER_DRAFTS": ["development"],
+	"INIT_SERVICE_WORKER": ["production"],
+	"HIGHLIGHT_CODE_BLOCKS": ["development", "production"],
+	"WRAP_EMOJIS": ["production"],
+	"CLEAN_RSS_FEED": ["production"]
 }

@@ -61,7 +61,7 @@
     %}
   {% endif %}
 
-  {% if site.configuration.service_worker == true %}
+  {% if site.configuration.init_service_worker == true %}
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
