@@ -72,6 +72,7 @@ function dateToRFC3339(value: Date | string | number): string {
 }
 
 function callout(content: string, type = 'info', role = 'note'): string {
+	// See: https://www.11ty.dev/docs/languages/markdown/#why-cant-i-return-markdown-from-paired-shortcodes-to-use-in-a-markdown-file
 	const html = markdownIt({ html: true, typographer: true }).render(content)
 	if (role === 'note') return `<aside class="Callout Callout--${type}" role="note">${html}</aside>`
 	return `<div class="Callout Callout--${type}">${html}</div>`
