@@ -87,7 +87,7 @@ function time(value: Date | string | number, itemprop?: string, id?: string): st
 function readingTime(content: string): { display: string; iso: string } | null {
 	if (!content) return null
 	const words = (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length
-	const minutes = Math.ceil(words / 300)
+	const minutes = Math.ceil(words / 200)
 	return { display: `${minutes}–minute read`, iso: `PT${minutes}M` }
 }
 
