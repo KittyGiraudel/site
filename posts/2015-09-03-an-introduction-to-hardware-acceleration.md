@@ -37,5 +37,5 @@ It would basically be driving a very powerful sport car on a very crowded freewa
 
 - [Hardware Accelerated CSS: The Nice vs The Naughty](https://calendar.perfplanet.com/2014/hardware-accelerated-css-the-nice-vs-the-naughty/)
 - [Increase Site Performance With Hardware Accelerated CSS](https://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css)
-- [Let's Play With Hardware Accelerated CSS](https://www.smashingmagazine.com/2012/06/play-with-hardware-accelerated-css/)
+- [Let’s Play With Hardware Accelerated CSS](https://www.smashingmagazine.com/2012/06/play-with-hardware-accelerated-css/)
 - [Everything You Need to Know About the CSS will-change Property](https://dev.opera.com/articles/css-will-change-property/)

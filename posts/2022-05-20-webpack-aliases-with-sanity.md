@@ -16,7 +16,7 @@ Unfortunately, if your project uses [webpack aliases](https://webpack.js.org/con
 
 ```
 Error in ./schema.js
-Module not found: Error: Can't resolve '@/constants/something' in '/Users/kitty/Sites/my-project/sanity'
+Module not found: Error: Can’t resolve '@/constants/something' in '/Users/kitty/Sites/my-project/sanity'
 ```
 
 ## Version 2
@@ -37,9 +37,9 @@ I must warn you that this is **an undocumented feature** on purpose, and Sanity 
 
 > NOTE: We do **NOT** encourage or suggest you extend the Sanity webpack config.
 >
-> It's very easy to break existing functionality like hot module reloading, production build hashing, css module configuration, part resolution and so on.
+> It’s very easy to break existing functionality like hot module reloading, production build hashing, css module configuration, part resolution and so on.
 >
-> We're working towards making the bundling of Sanity studios more configurable, but we're not quite there yet. Treat this as a _last resort_, and if you _do_ choose to go this route, remember that Sanity uses Webpack ^3.8, so loaders, plugins and such needs to be compatible with this version.
+> We’re working towards making the bundling of Sanity studios more configurable, but we’re not quite there yet. Treat this as a _last resort_, and if you _do_ choose to go this route, remember that Sanity uses Webpack ^3.8, so loaders, plugins and such needs to be compatible with this version.
 
 I have reasons to believe this will not work in the future so we will eventually have to find another solution. In the meantime, this makes it possible to share code between a Next.js or Webpack-bundled project and Sanity!
 

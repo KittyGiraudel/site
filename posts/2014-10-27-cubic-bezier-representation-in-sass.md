@@ -10,7 +10,7 @@ It all started when [Tim Severien](https://twitter.com/timseverien) showed me a 
 
 But before we get too far, let me turn it over to Tim to catch us up on some basic knowledge regarding Bezier functions. Tim, please.
 
-If you're only interested in the code, please head straight to [CodePen](https://codepen.io/KittyGiraudel/pen/eqCvo?editors=010).
+If you’re only interested in the code, please head straight to [CodePen](https://codepen.io/KittyGiraudel/pen/eqCvo?editors=010).
 
 ## What is a Bézier curve?
 
@@ -104,7 +104,7 @@ As stated before, the amount of points is irrelevant, so we can use five points,
 
 As you add more points, the more coordinates play a part in the final curve, making it increasingly difficult to add desired detail. This is why the Cubic Bézier curve, the curve with four points is most common. If you’re familiar with software like Illustrator, you will know that between two points, you get two control points, which makes four.
 
-{% callout %}If you haven't already, I highly recommend you to watch [this 4 minute video](https://vimeo.com/106757336) about the way Bézier curves are drawn by a computer. Fair warning: ah-ha moment triggerer.{% endcallout %}
+{% callout %}If you haven’t already, I highly recommend you to watch [this 4 minute video](https://vimeo.com/106757336) about the way Bézier curves are drawn by a computer. Fair warning: ah-ha moment triggerer.{% endcallout %}
 
 ## Coming back to Sass
 
@@ -112,7 +112,7 @@ Okay, at this point you should be in a pretty good shape to understand cubic Bé
 
 Such a function can be reprensented on a 2-axis plan with the transition/animation progression along the Y axis, and the time along the X axis. A curve is then drawen on the graph, representing the timing function.
 
-![What we'll come up with](/assets/images/cubic-bezier-representation-in-sass/example.png)
+![What we’ll come up with](/assets/images/cubic-bezier-representation-in-sass/example.png)
 
 This is what we wanted to achieve. Although we wanted a very simple API, something like:
 
@@ -142,7 +142,7 @@ Basically exactly like the `cubic-bezier` function from CSS. We can also add an 
 }
 ```
 
-Let's see how we did it.
+Let’s see how we did it.
 
 ## Implementing the math part
 
@@ -234,7 +234,7 @@ All that remains now is generating a sequence of points to display the graph and
 
 ## Implementing the API
 
-I won't dig too much into the code since it's mostly writing CSS at this point, still I'll explain the logic behind our API, especially the `cubic-bezier` mixin, dealing with configuration, and such.
+I won’t dig too much into the code since it’s mostly writing CSS at this point, still I’ll explain the logic behind our API, especially the `cubic-bezier` mixin, dealing with configuration, and such.
 
 ```scss
 @mixin cubic-bezier($x1, $y1, $x2, $y2, $options: ()) {
@@ -304,7 +304,7 @@ As you can see, this mixin only deals with configuration. All it does is merging
 }
 ```
 
-If the `information` key from options map is truthy, it means we have to display function's information under the graph. To do this, nothing like pseudo-elements: `::before` for the name (if there is a name), and `::after` for the function parameters (e.g. `0.42, 0, 0.58, 1`).
+If the `information` key from options map is truthy, it means we have to display function’s information under the graph. To do this, nothing like pseudo-elements: `::before` for the name (if there is a name), and `::after` for the function parameters (e.g. `0.42, 0, 0.58, 1`).
 
 Then, it calls `draw-curve` mixin.
 
@@ -323,7 +323,7 @@ Then, it calls `draw-curve` mixin.
 }
 ```
 
-We'll skip `draw-curve-wrapper` since it does nothing more than a couple of boring CSS lines. Moving on to `draw-dots`. This is where Tim's work and mine meet.
+We’ll skip `draw-curve-wrapper` since it does nothing more than a couple of boring CSS lines. Moving on to `draw-dots`. This is where Tim’s work and mine meet.
 
 ```scss
 @mixin draw-dots($conf) {
@@ -349,13 +349,13 @@ We'll skip `draw-curve-wrapper` since it does nothing more than a couple of bori
 
 Regarding `draw-control-points` now, it gets called only if `control-points` key from map is truthy. Controls points are the blue and red dots, as well as the lines joining the dots to the corners of the graph.
 
-The way they are drawn are kind of tricky I must say (also quite complicated, so I won't display the code here). Basically, it consists on two pseudo-elements with their diagonal displayed thanks to a linear-gradient and some geometry magic using `atan` function ([from Compass](https://compass-style.org/reference/compass/helpers/math/#atan)).
+The way they are drawn are kind of tricky I must say (also quite complicated, so I won’t display the code here). Basically, it consists on two pseudo-elements with their diagonal displayed thanks to a linear-gradient and some geometry magic using `atan` function ([from Compass](https://compass-style.org/reference/compass/helpers/math/#atan)).
 
-{% callout %}If you don't use Compass, you can use [this (Ruby) implementation](https://github.com/at-import/Sassy-math/blob/60d130108bcd20c5cd5aa50b52505afab9a40519/compass/lib/sassy-math.rb#L136) from Sassy-Math, or [this (Sass) one](https://thesassway.herokuapp.com/advanced/inverse-trigonometric-functions-with-sass#coding-the-atan-function) from Ana Tudor.{% endcallout %}
+{% callout %}If you don’t use Compass, you can use [this (Ruby) implementation](https://github.com/at-import/Sassy-math/blob/60d130108bcd20c5cd5aa50b52505afab9a40519/compass/lib/sassy-math.rb#L136) from Sassy-Math, or [this (Sass) one](https://thesassway.herokuapp.com/advanced/inverse-trigonometric-functions-with-sass#coding-the-atan-function) from Ana Tudor.{% endcallout %}
 
 ## Final thoughts
 
-This expirement was fun, but really not very useful in practice. It can give you an idea of what a besier curve looks like and how it is manipulated, but it probably won't change your life if you write Sass for your day job.
+This expirement was fun, but really not very useful in practice. It can give you an idea of what a besier curve looks like and how it is manipulated, but it probably won’t change your life if you write Sass for your day job.
 
 If you need to create your own cubic-bezier animation function,[this tool](https://cubic-bezier.com/) from Lea Verou would probably be more useful.
 

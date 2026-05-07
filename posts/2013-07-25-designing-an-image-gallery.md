@@ -71,7 +71,7 @@ We needed two major features for this image gallery:
 
 The first one was pretty easy to do since Isotope comes with a built-in way to filter and sort items. In the [documentation](https://isotope.metafizzy.co/docs/filtering.html), they recommend using a class as a tag and apply it to all elements you want to assign this tag to. Then you create a little list with a jQuery selector as a `data-filter` attribute (like `.tag`). When you click on an element of this list, the plugin parses this data-attribute and displays nothing but the items matching the given selector.
 
-I didn’t want to add classes for this so I added a `data-album` attribute to every item and passed it the name of the album the image belongs to. Then, I give something like this to the `data-filter` attribute of the filter list: `[data-album\*='album-name']` (literally _everything with a `data-album` attribute containing 'album-name'_). Easy peasy!
+I didn’t want to add classes for this so I added a `data-album` attribute to every item and passed it the name of the album the image belongs to. Then, I give something like this to the `data-filter` attribute of the filter list: `[data-album\*='album-name']` (literally _everything with a `data-album` attribute containing “album-name”_). Easy peasy!
 
 Regarding the second feature, I basically needed a little lightbox thingie to display an image in fullsize when clicked. I could have made one but since I am definitely not a JavaScript ninja, I would probably have ended with a code that could be improved. So I decided to rely on a built-in solution; I wanted something which is both nice and efficient so I went with Avgrund from [Hakim El Hattab](https://hakim.se/).
 

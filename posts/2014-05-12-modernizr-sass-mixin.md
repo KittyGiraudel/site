@@ -250,7 +250,7 @@ we’ll get an unexpected CSS output:
 }
 ```
 
-We need something to fix this. Sass 3.3's @at-root directive comes to the rescue:
+We need something to fix this. Sass 3.3’s @at-root directive comes to the rescue:
 
 ```scss
 @at-root #{$selector} {

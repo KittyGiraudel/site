@@ -67,7 +67,7 @@ Congratulations to her for such a smart solution. :)
 
 ## Pushing it further
 
-A few days ago, Chris Coyier found Wolfcry911's work and [tweeted](https://twitter.com/chriscoyier/status/295223893516500993) about it. Someone (in the person of [Arash Milani](https://twitter.com/arashmilan)) answered it wasn’t possible to do it with more than 2 rows.
+A few days ago, Chris Coyier found Wolfcry911’s work and [tweeted](https://twitter.com/chriscoyier/status/295223893516500993) about it. Someone (in the person of [Arash Milani](https://twitter.com/arashmilan)) answered it wasn’t possible to do it with more than 2 rows.
 
 **CHALLENGE ACCEPTED!** This made me want to give it a shot. Honestly, it took me a few tries and no more than 10 minutes to find a solution for 3 rows.
 

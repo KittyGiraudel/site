@@ -44,7 +44,7 @@ However, this approach has a maitenance downside: as you can note in following d
 
 ## Looking for a formula
 
-To have a clearer way, let's take a look to our demo figures, on a comparison table (computed line-height values are in pixels for easier understanding):
+To have a clearer way, let’s take a look to our demo figures, on a comparison table (computed line-height values are in pixels for easier understanding):
 
 |                 | line-height: 1.5 | line-height: 1.1 |
 | :-------------- | :--------------- | :--------------- |
@@ -53,9 +53,9 @@ To have a clearer way, let's take a look to our demo figures, on a comparison ta
 
 In order get an optimal `line-height` we will need to be as close as possible to **1.5** value (15px), on smaller font sizes, but closer to **1.1** (55px) on larger ones.
 
-Wait… 11px is already pretty close to 15px. We're just a few pixels away.
+Wait… 11px is already pretty close to 15px. We’re just a few pixels away.
 
-So, instead of starting on a **1.5** value, why don't we flip it over? We could start down from **1.1**, adding just the few pixels we need, which will make almost no visual difference in larger font sizes, but on smaller ones.
+So, instead of starting on a **1.5** value, why don’t we flip it over? We could start down from **1.1**, adding just the few pixels we need, which will make almost no visual difference in larger font sizes, but on smaller ones.
 
 Something like:
 
@@ -70,9 +70,9 @@ Revisiting our computed `line-height` comparison table:
 | font-size: 10px | 15px     | 15px                 | ~~11px~~ |
 | font-size: 50px | ~~75px~~ | 59px                 | 55px     |
 
-That's better! We nailed it in small font sizes, and get pretty close on larger ones.
+That’s better! We nailed it in small font sizes, and get pretty close on larger ones.
 
-Unfortunately, `line-height: calc(2px + 1.1 + 2px)` is invalid CSS, since unit & unitless values can't be mixed. Could we use any relative unit that gets computed to about 1.1?
+Unfortunately, `line-height: calc(2px + 1.1 + 2px)` is invalid CSS, since unit & unitless values can’t be mixed. Could we use any relative unit that gets computed to about 1.1?
 
 Kind of: the [`ex`](https://developer.mozilla.org/en-US/docs/Web/CSS/length#ex) unit computes to current font x-height (the height of the lowercase letter “x”), so we just find out the perfect match for our formula.
 
@@ -123,6 +123,6 @@ This can be solved by applying the formula to all descendants, with the universa
 
 ## On responsive typography
 
-Our formula also helps with [reponsive typography](https://www.madebymike.com.au/writing/precise-control-responsive-typography/). Using relative-to-viewport units (`vw`, `vh`, `vmin`, `vmax`) leads to a lack of fine control, so we can't tweak line-height on every font-size change.
+Our formula also helps with [reponsive typography](https://www.madebymike.com.au/writing/precise-control-responsive-typography/). Using relative-to-viewport units (`vw`, `vh`, `vmin`, `vmax`) leads to a lack of fine control, so we can’t tweak line-height on every font-size change.
 
 This issue was also tackled by [CSS locks technique](https://fvsch.com/css-locks/), which uses relatively complex arithmetic to establish a minimum and maximum line-height.

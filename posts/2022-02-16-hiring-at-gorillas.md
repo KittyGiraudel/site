@@ -88,7 +88,7 @@ On our side, we review the application anonymously. At this stage, as reviewers,
 
 We discovered this works great for us! We found that it’s really good at filtering for competency very early on, while preventing any bias coming in the review process at that stage. This also saves applicants and us time down the line by making sure candidates reaching the technical interview are attuned to what we are looking for. In fact, that works so well that we are slowly spreading that to other hiring pipelines within our organization (for instance [Paradise Wright](https://www.linkedin.com/in/alexparadisewright/) started using a similar exercise for backend roles).
 
-> The ad links to screening questions which we separate from names and blind double mark. This surfaces candidates who really know their stuff. And surprise surprise, it's NOT the usual suspects. We did this as an experiment, but it's worked so well that we're making it permanent.  
+> The ad links to screening questions which we separate from names and blind double mark. This surfaces candidates who really know their stuff. And surprise surprise, it’s NOT the usual suspects. We did this as an experiment, but it’s worked so well that we’re making it permanent.  
 > — Rachel Carrell, on rethinking the hiring process
 
 ## Culture-add interview
@@ -117,7 +117,7 @@ Since then we have standardized our guide to conduct that interview so things ar
 >
 > So, these are the main three things we will want to dig into: what they know, Gorillas culture and alignment, and their experience and credibility. We just want to see who they are as a person along the way.”
 
-It’s typically the last round before sending out the offer, although it does not make it a guaranteed-pass — we have rejected candidates because things didn't work out at that stage. Not necessarily because we didn’t appreciate them, or because they were unqualified for the job, but because we did not think they would be a good fit in our teams, or because we didn’t think we would be a good place for them.
+It’s typically the last round before sending out the offer, although it does not make it a guaranteed-pass — we have rejected candidates because things didn’t work out at that stage. Not necessarily because we didn’t appreciate them, or because they were unqualified for the job, but because we did not think they would be a good fit in our teams, or because we didn’t think we would be a good place for them.
 
 > We are trying to assess if the applicant fits our team values, our motivation, and supports our vision. This is a conversation about social impact. We [have it] because it enables us to understand how they think about inclusivity, the impact of tech on society, and talk about how they see the world and technology.  
 > — Excerpt of our culture-add interview handbook

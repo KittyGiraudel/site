@@ -46,7 +46,7 @@ Okay. Sign in where? Do you have more information? What have you tried? Are you 
 
 Or:
 
-> Hi, I'm New here, I'm having issues running Sanity init, keeps showing me errors.
+> Hi, I’m New here, I’m having issues running Sanity init, keeps showing me errors.
 
 What errors? Can you share a screenshot or at the very least the text message of the error you’re facing? Pretty hard to debug otherwise.
 
@@ -68,7 +68,7 @@ A good way to ask for help is to follow this pattern: **Goal → Context → Pro
 
 On a similar note, Julia Evans recently shared [this zine on Twitter](https://twitter.com/b0rk/status/1546875361002135554?s=20&t=yPe-eh-s2AKB91cQVTAyBQ) where she explains how she approaches debugging. She writes a message asking for help (akin to [rubber-ducking](https://en.wikipedia.org/wiki/Rubber_duck_debugging)):
 
-{% capture alt_text %}strategy: write a message asking for help. When I’m REALLY stuck, I’ll write an email to a friend: “Here’s what I'm trying to do…; I did X and I expected Y to happen, but instead…; Could this be because…; This seems impossible because…; I've tried A, B, and C to fix it, but…” This helps me organize my thoughts, and often by the time I finish writing, I’ve magically fixed the problem on my own! {% endcapture %}
+{% capture alt_text %}strategy: write a message asking for help. When I’m REALLY stuck, I’ll write an email to a friend: “Here’s what I’m trying to do…; I did X and I expected Y to happen, but instead…; Could this be because…; This seems impossible because…; I’ve tried A, B, and C to fix it, but…” This helps me organize my thoughts, and often by the time I finish writing, I’ve magically fixed the problem on my own! {% endcapture %}
 
 ![{{ alt_text }}](/assets/images/a-guide-to-asking-for-help/julia-evans-help-strategy.jpeg)
 

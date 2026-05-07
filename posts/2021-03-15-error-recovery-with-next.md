@@ -32,7 +32,7 @@ If we can’t do anything about the script tags being rendered in the HTML respo
 
 Did you know about [`window.stop()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/stop) though? ‘Cause I didn’t until today. That’s a method on the `window` object that essentially does what the “Stop” button from the browser does. Quoting MDN:
 
-> The `window.stop()` [function] stops further resource loading in the current browsing context, equivalent to the stop button in the browser. Because of how scripts are executed, this method cannot interrupt its parent document's loading, but it will stop its images, new windows, and other still-loading objects.
+> The `window.stop()` [function] stops further resource loading in the current browsing context, equivalent to the stop button in the browser. Because of how scripts are executed, this method cannot interrupt its parent document’s loading, but it will stop its images, new windows, and other still-loading objects.
 
 What if we called `window.stop()` _before_ the browser reaches the `<script>` tags rendered by `<NextScript />`? Let’s try that by updating `./pages/_document.js` (see [Custom `Document` in Next’s documentation](https://nextjs.org/docs/advanced-features/custom-document)):
 

@@ -54,7 +54,7 @@ Posts support: `title`, `description`, `tags` (Title Case), `guest` (guest autho
 
 ### Testing
 
-Tests in `tests/` use Node.js's native `test` module with Cheerio for DOM assertions. They validate the built output — run `npm run build` before running tests in CI. Tests cover: meta tags, Open Graph, structured data (JSON-LD), RSS, sitemap, asset paths.
+Tests in `tests/` use Node.js’s native `test` module with Cheerio for DOM assertions. They validate the built output — run `npm run build` before running tests in CI. Tests cover: meta tags, Open Graph, structured data (JSON-LD), RSS, sitemap, asset paths.
 
 ### Deployment
 

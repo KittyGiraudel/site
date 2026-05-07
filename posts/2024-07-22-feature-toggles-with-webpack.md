@@ -56,7 +56,7 @@ The reason we cannot (shouldn’t?) just sneak other options using `NODE_ENV` is
 
 Let’s build something similar to what webpack does out of the box: a [`DefinePlugin`](https://webpack.js.org/plugins/define-plugin/) instance that globally exposes some boolean values based on which environment we are in. From the webpack documentation:
 
-> The `DefinePlugin` replaces variables in your code with other values or expressions at compile time. This can be useful for allowing different behavior between development builds and production builds. If you perform logging in your development build but not in the production build you might use a global constant to determine whether logging takes place. That's where `DefinePlugin` shines, set it and forget it rules for development and production builds.
+> The `DefinePlugin` replaces variables in your code with other values or expressions at compile time. This can be useful for allowing different behavior between development builds and production builds. If you perform logging in your development build but not in the production build you might use a global constant to determine whether logging takes place. That’s where `DefinePlugin` shines, set it and forget it rules for development and production builds.
 
 ```ts
 import { DefinePlugin } from 'webpack'

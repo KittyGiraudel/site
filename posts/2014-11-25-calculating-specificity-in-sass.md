@@ -194,7 +194,7 @@ Our job is simple, now. Multiply the multiplicity (frequency) of each type by an
 
 ### Dealing with Complex and Compound Selectors
 
-Thankfully, with Sass 3.4's selector functions, we can split a selector list comprised of complex and compound selectors into simple selectors. We’re going to be using two of these functions:
+Thankfully, with Sass 3.4’s selector functions, we can split a selector list comprised of complex and compound selectors into simple selectors. We’re going to be using two of these functions:
 
 - [`selector-parse($selector)`](https://sass-lang.com/documentation/Sass/Script/Functions.html#selector_parse-instance_method) to split a [selector list](https://dev.w3.org/csswg/selectors4/#selector-list) into a list of selectors;
 - [`simple-selectors($selector)`](https://sass-lang.com/documentation/Sass/Script/Functions.html#simple_selectors-instance_method) to split each compound/complex selector into a list of simple selectors.

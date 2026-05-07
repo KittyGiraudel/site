@@ -41,7 +41,7 @@ h3 + .ha {
 
 @supports not (anchor-name: none) {
 	/**
-	 * 1. Fallback positioning in the gutter for browsers that don't support CSS
+	 * 1. Fallback positioning in the gutter for browsers that don’t support CSS
 	 *  anchor positioning.
 	 */
 	.ha {

@@ -428,5 +428,5 @@ Pretty neat! Feel free to [play with the code on CodePen](https://codepen.io/Kit
 
 - [Designing and building toggle switches](https://www.sarasoueidan.com/blog/toggle-switch-design/) by Sara Soueidan
 - [Toggle buttons](https://inclusive-components.design/toggle-button/) by Heydon Pickering
-- [ARIA switch controls](https://scottaohara.github.io/aria-switch-control/) by Scott O'Hara
+- [ARIA switch controls](https://scottaohara.github.io/aria-switch-control/) by Scott O’Hara
 - [Under-engineered toggles](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html) by Adrian Roselli

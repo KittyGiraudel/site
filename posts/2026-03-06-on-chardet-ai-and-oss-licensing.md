@@ -39,7 +39,7 @@ You are probably familiar with the MIT License, one of the most permissive open-
 
 The LGPL v2.1 (Lesser General Public License) is less common in the open-source world. It is what’s called a “weak copyleft” license. It allows you to use the library in proprietary software, but with important restrictions: if you modify the library itself, you must release those changes under the LGPL as well. This license is designed to ensure that improvements to the library remain open, while still allowing proprietary software to use it.
 
-> This license mainly applies to libraries. You may copy, distribute and modify the software provided that you state modifications and license them under LGPL-2.1. Anything statically linked to the library can only be redistributed under LGPL, but applications that use the library don't have to be. You must allow reverse engineering of your application as necessary to debug and relink the library.  
+> This license mainly applies to libraries. You may copy, distribute and modify the software provided that you state modifications and license them under LGPL-2.1. Anything statically linked to the library can only be redistributed under LGPL, but applications that use the library don’t have to be. You must allow reverse engineering of your application as necessary to debug and relink the library.  
 > — [LGPL 2.1 on TL;DR Legal](https://www.tldrlegal.com/license/gnu-lesser-general-public-license-v2-1-lgpl-2-1)
 
 ### Main differences
@@ -85,7 +85,7 @@ Secondly, he used AI (Claude Anthropic) to generate the code, which is how he ar
 Moreover, the notion that the AI agent was only fed a _high-level description_ without using the existing code is demonstrably false. [Claude’s own implementation plan](https://github.com/chardet/chardet/commit/925bccbc85d1b13292e7dc782254fd44cc1e7856#diff-704d0561e3e878b036836b56870212b2d8b7e4a813bf2805df868a1bf9e0094cR309-R314) which was committed to the repository directly references chardet’s version 6 intricacies:
 
 > **Context:** The registry maps every supported encoding to its metadata.
-> Era assignments MUST match chardet 6.0.0's [`chardet/metadata/charsets.py`](https://raw.githubusercontent.com/chardet/chardet/f0676c0d6a4263827924b78a62957547fca40052/chardet/metadata/charsets.py)
+> Era assignments MUST match chardet 6.0.0’s [`chardet/metadata/charsets.py`](https://raw.githubusercontent.com/chardet/chardet/f0676c0d6a4263827924b78a62957547fca40052/chardet/metadata/charsets.py)
 >
 > Fetch that file and use it as the authoritative reference for which encodings belong to which era. Do not invent era assignments.
 
@@ -113,7 +113,7 @@ It is concerning, because if that flies, it sets a dangerous precedent. Found a 
 
 As [Aditya Shankhar](https://github.com/chardet/chardet/issues/327#issuecomment-4003786038) puts it:
 
-> I have to admit this sounds like an argument to why licensing is useless altogether due to an agent always being able to reconstruct a project on the basis it's inputs and outputs, which may be true, but I think this opens the pathway to many more questions about the point of licensing in the first place
+> I have to admit this sounds like an argument to why licensing is useless altogether due to an agent always being able to reconstruct a project on the basis its inputs and outputs, which may be true, but I think this opens the pathway to many more questions about the point of licensing in the first place
 
 Tuan-Anh Tran puts it eloquently in their article [Relicensing with AI-assisted rewrite](https://tuananh.net/2026/03/05/relicensing-with-ai-assisted-rewrite/):
 

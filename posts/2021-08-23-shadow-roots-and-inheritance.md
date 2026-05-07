@@ -53,7 +53,7 @@ This is not specific to `box-sizing` though. There is nothing special about this
 
 > Because of the weird display model of `<details>`, it is implemented as a shadow DOM (with the summary slotted in first, and then the rest of the light DOM contents). Inherited properties will inherit through the composed tree including shadow elements, which you can’t style.
 >
-> CSS inheritance should follow [&lt;details> → shadow root → &lt;slot> → &lt;summary>]. But `box-sizing` isn't normally inherited, and the `* { box-sizing: inherit }` rule in the document won’t match either the shadow root node or the slot element.
+> CSS inheritance should follow [&lt;details> → shadow root → &lt;slot> → &lt;summary>]. But `box-sizing` isn’t normally inherited, and the `* { box-sizing: inherit }` rule in the document won’t match either the shadow root node or the slot element.
 
 Amelia then recommended enabling the “Show user agent shadow DOM” Chromium DevTools setting, which enhance the DOM representation with browser shadow DOM. Inspecting our demo, we can see something like this now:
 

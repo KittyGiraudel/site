@@ -153,7 +153,7 @@ For instance, the `explain` subcommand provides information about each component
 ```
 site on main v24.14.0 ● starship explain                          10:33:47
 
- Here's a breakdown of your prompt:
+ Here’s a breakdown of your prompt:
  "on main " (17ms)    -  The active branch of the repo in your current directory
  "v24.14.0 " (63ms)   -  The currently installed version of NodeJS
  "● " (<1ms)          -  A character (usually an arrow) beside where the text is entered in your terminal
