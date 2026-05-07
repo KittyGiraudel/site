@@ -22,8 +22,7 @@ eleventyImport:
   partials: "
     components/showcase,
     components/card,
-    components/tags,
-    components/tile
+    components/tags
   "
 %}
 
@@ -35,11 +34,6 @@ inclusion. In recent years, I have led engineering teams at [N26](https://n26.co
 [cofenster](https://cofenster.com/), and [Scilife](https://scilife.io). For a longer version, [read more
 about me](/about/).
 {% endrenderTemplate %}
-
-{% render "job_notice.liquid",
-  style: "margin-block-start: var(--vb)",
-  job_notice: site.job_notice
-%}
 
 {% assign latest_articles = collections.posts | slice: 0, 3 %}
 {% render "showcase.liquid",

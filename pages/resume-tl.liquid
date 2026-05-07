@@ -9,14 +9,12 @@ keywords:
   - engineering
   - leadership
 permalink: /resume/tech-lead/
+heading_anchors: false
 ---
 
 {% render "styles.liquid",
   inline: site.configuration.inline_assets,
-  partials: "
-    pages/resume,
-    components/tile
-  "
+  partials: "pages/resume"
 %}
 
 <div class="Resume">
@@ -38,11 +36,6 @@ permalink: /resume/tech-lead/
         focus on solving product problems through robust technical implementation,
         clear architecture, and pragmatic delivery.
       </p>
-
-      {% render "job_notice.liquid",
-        class: "Tile NoPrint",
-        job_notice: site.job_notice
-      %}
 
       <p>
         My background is rooted in frontend engineering (including React since

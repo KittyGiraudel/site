@@ -29,17 +29,12 @@ export default {
 	environment: getEnvironment(),
 	time: new Date(),
 	pubDate: new Date(2012, 10, 10),
-	job_notice: {
-		text: 'I am currently looking for a new role!',
-		url: 'https://www.linkedin.com/posts/kitty-giraudel_dear-network-im-still-looking-for-my-next-activity-7451986756494663680-6Br8',
-	},
 	nav: [
 		{ path: '/blog/', label: 'Articles' },
 		{ path: '/snippets/', label: 'Snippets' },
 		{ path: '/projects/', label: 'Projects' },
 		{ path: '/talks/', label: 'Events' },
 		{ path: '/about/', label: 'About' },
-		{ path: '/resume/', label: 'Hire me' },
 	],
 	configuration: {
 		// ELEVENTY_RUN_MODE is either `build`, `watch` or `serve`:

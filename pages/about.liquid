@@ -6,22 +6,12 @@ permalink: /about/
 toc: true
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "components/tile"
-%}
-
 {% renderTemplate "liquid,md", site %}
 I’m Kitty. I’m a transfeminine web engineer and engineering leader based in Berlin, with nearly 15
 years of experience, currently focused on engineering excellence, accessibility, diversity and
 inclusion. In recent years, I have led engineering teams at [N26](https://n26.com),
 [Gorillas](<https://en.wikipedia.org/wiki/Gorillas_(company)>), [cofenster](https://cofenster.com/),
 and [Scilife](https://scilife.io) — all companies I helped grow and scale.
-
-{% render "job_notice.liquid",
-  style: "margin-block-start: var(--vb)",
-  job_notice: job_notice
-%}
 
 ## Professional journey
 

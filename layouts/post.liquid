@@ -11,13 +11,11 @@ layout: default
     components/figure,
     components/footnotes,
     components/heading-anchors,
-    components/hook,
     components/giscus,
     components/post-edits,
     components/code,
     components/table,
-    components/table-of-contents,
-    components/tile
+    components/table-of-contents
   "
 %}
 
@@ -99,12 +97,6 @@ layout: default
       <div itemprop="articleBody">
         {{ content }}
       </div>
-
-      {% render "job_notice.liquid",
-        class: "Hook",
-        label: "Pssst!",
-        job_notice: site.job_notice
-      %}
 
       {% footnotes page %}
     </article>
