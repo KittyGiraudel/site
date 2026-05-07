@@ -299,7 +299,7 @@ The thing with a health check packet is that it’s not _exactly_ like a real de
 
 To this day, I still do not fully understand why, but we had an incident where the watchdog was happy, but the server wasn’t. The latter kept sending healthy responses back, meanwhile all other packets were timing out. My assumption is that there was something else in the main packet handler that was broken, something the health check resolution didn’t hit.
 
-Unfortunately, this happened at 3am when I was busy, you know, being fast asleep. I woke up around 7am to an absolute shitstorm, immediately restarted the server, and started looking into what happened and how we could make things more resilient.
+Unfortunately, this happened at 3am when I was busy, you know, being fast asleep. I woke up around 7am to an absolute fiasco, immediately restarted the server, and started looking into what happened and how we could make things more resilient.
 
 {% assign footnote_non_zero_activity = "Curiously enough, there <em>were</em> a handful of online players. I still don’t understand how they could keep playing while every other player got faced with packets timing out." %}
 

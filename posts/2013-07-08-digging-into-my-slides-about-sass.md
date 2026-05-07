@@ -385,7 +385,7 @@ $nest: ();
 }
 ```
 
-The code might be complicated to understand but it’s really not that hard once you’re familiar with Sass. Now, we can push things further by turning this shit into a mixin in order to make it both clean and reusable.
+The code might be complicated to understand but it’s really not that hard once you’re familiar with Sass. Now, we can push things further by turning this thing into a mixin in order to make it both clean and reusable.
 
 ```scss
 @mixin numbering($from: 1, $to: 6) {
@@ -562,7 +562,7 @@ Outputs:
 }
 ```
 
-This is hot! Instead of outputing shit in the loop, we use it to create a selector that we then use to define our “active” styles.
+This is hot! Instead of outputting stuff in the loop, we use it to create a selector that we then use to define our “active” styles.
 
 ## Questions & Answers
 

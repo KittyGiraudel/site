@@ -24,7 +24,7 @@ Disclaimer: as for the original law from Jeff Atwood, it is obvious that Sass (o
 
 ## Nonsense you say!
 
-Sass is 7 years old if no mistake, and has come a long since its early days. In 7 years, and especially because of silly people like me loving doing crazy shits, a lot of stuff has been made in Sass already. Let’s see:
+Sass is 7 years old if no mistake, and has come a long since its early days. In 7 years, and especially because of silly people like me loving doing crazy stuff, a lot of stuff has been made in Sass already. Let’s see:
 
 - [a JSON parser](/2014/01/20/sassyjson-talk-to-the-browser/);
 - [bitwise operators](/2014/06/22/bitwise-operators-in-sass/);

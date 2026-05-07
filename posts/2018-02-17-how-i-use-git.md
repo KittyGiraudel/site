@@ -158,7 +158,7 @@ $ git force
 
 I have quite a few other Git tricks up my sleeve, but that will be for another article. For a complete list of my Git aliases, refer to [my dotfiles repo](https://github.com/KittyGiraudel/dotfiles/blob/master/.gitconfig).
 
-Speaking of Git tricks, this is your reminde that my brother knows his shit and wrote on this very blog a 3-parts article on Git tips & tricks:
+Speaking of Git tricks, this is your reminde that my brother knows his stuff and wrote a 3-part series on Git tips & tricks on this very blog:
 
 - [Git Tips & Tricks – part 1](/2014/03/10/git-tips-and-tricks-part-1/)
 - [Git Tips & Tricks – part 2](/2014/03/17/git-tips-and-tricks-part-2/)

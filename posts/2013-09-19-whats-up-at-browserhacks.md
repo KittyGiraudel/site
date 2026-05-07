@@ -54,7 +54,7 @@ Anyway, we now use this cool little library to allow you to select a whole hack 
 
 The web is evolving very quickly and so do the browsers. Meanwhile we are trying to keep a well documented list of hacks, including hacks nobody will ever use because they are targeting dinosaur browsers. To make the list lighter we’ve set up a _legacy_ system.
 
-Basically all hacks targeting a browser we consider as a _legacy browser_ won’t be displayed unless you tick the checkbox `Show legacy` at the top of the page, in which case you see everything even those shits for IE 6.
+Basically all hacks targeting a browser we consider as a _legacy browser_ won’t be displayed unless you tick the checkbox `Show legacy` at the top of the page, in which case you see everything even those for IE 6.
 
 Fortunately, we’ve made it very easy for us to decree a browser version as obsolete. All we have to do is change the version in [this file](https://github.com/4ae9b8/browserhacks/blob/master/code/db_browsers.php). Every hack for this version and prior will be considered as legacy.
 

@@ -29,7 +29,7 @@ Let’s make things clear right now: **preprocessors don’t output bad code, ba
 
 If the final stylesheet is less maintainable or heavier, or more complicated than the vanilla CSS version you had before using a preprocessor, [it’s because you messed up](https://pastebin.com/Jy9PqFTy). Not because of Sass.
 
-Vincent does an interesting comparison with PHP (HyperText Preprocessor): you can output shitty code with PHP too. Is it because of PHP? Definitely not. It’s because you’ve messed up.
+Vincent does an interesting comparison with PHP (HyperText Preprocessor): you can output bad code with PHP too. Is it because of PHP? Definitely not. It’s because you’ve messed up.
 
 ## Speed
 
@@ -69,6 +69,6 @@ If you happen to be a beginner or work with inexperienced developers, you probab
 
 ## Final words
 
-In the end, most arguments against preprocessors are bullshit. All those things about not speeding up the development, outputing bad code, it’s irrelevant. Most people telling you this are the one who have not even tried to use a preprocessor for real.
+In the end, most arguments against preprocessors are thin. All those things about not speeding up the development, outputing bad code, it’s irrelevant. Most people telling you this are the one who have not even tried to use a preprocessor for real.
 
 The only thing to ask is: **can I afford one?** If you think you or one of your co-workers won’t be able to handle everything correctly, then the answer is _no_. Otherwise just please yourself and go ahead. :)

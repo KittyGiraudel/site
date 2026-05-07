@@ -27,7 +27,7 @@ Cargo is Rust’s build system and package manager. It’s responsible for compi
 
 The JavaScript ecosystem is often the butt of the joke, with its multiple runtimes (Node.js and deno and Bun), various package managers (npm and pnpm and yarn), many flavours (CJS and UMD and ESM) and {% footnoteref "dependencies" footnote_dependencies %}countless dependencies{% endfootnoteref %}… And while you learn how to navigate them, it’s always a pain and a time sink.
 
-There are some old JavaScript projects I just don’t touch anymore, not because I’m bored of them, but because I know I’ll need to spend half a day updating 10 different major dependencies and fighting with CJS/ESM compatibility and life is just too short for this shit.
+There are some old JavaScript projects I just don’t touch anymore, not because I’m bored of them, but because I know I’ll need to spend half a day updating 10 different major dependencies and fighting with CJS/ESM compatibility and life is just too short for this.
 
 {% callout %}Side note: Cargo uses [TOML](https://toml.io/en/) as a configuration format and it’s just so much better than JSON. I understand that JavaScript uses JSON because the language had first-class support for it, but it’s a terrible format for configuration purposes.
 {% endcallout %}

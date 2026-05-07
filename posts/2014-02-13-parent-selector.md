@@ -1,5 +1,5 @@
 ---
-title: 'Parent Selector: on Has() and ^'
+title: 'Parent Selector: on :has() and ^'
 description: My thoughts on the expected parent selector in CSS, and pros and cons of either proposed syntax
 tags:
   - Thoughts
@@ -76,7 +76,7 @@ There are still edge cases I don’t really see handled with the single characte
 A ^B ^C D
 ```
 
-What happens here? What is the selector’s target? Is it `C`? Is it `D`? We don’t know and more accurately: we can’t know. According to the specifications, a selector like `^A ^B` would result in _all `B` contained in `A` and their containing `A` elements_. Needless to say it’s getting crazy. If you ask me, this should simply throw an error (which, in CSS, is equivalent to _skip that shit and move on_).
+What happens here? What is the selector’s target? Is it `C`? Is it `D`? We don’t know and more accurately: we can’t know. According to the specifications, a selector like `^A ^B` would result in _all `B` contained in `A` and their containing `A` elements_. Needless to say it’s getting crazy. If you ask me, this should simply throw an error (which, in CSS, is equivalent to _skip that and move on_).
 
 On the other hand, the pseudo-class proposal makes it very easy to allow multiple occurrences of itself in a selector. Even better, chaining and nesting are possible.
 

@@ -13,7 +13,7 @@ Yesterday night, hundreds of developers, engineers, tech leads and more generall
 
 While it may sound stupid, whiteboard interviews are actually quite popular including in very large corporations, and sometimes referred to as a good way to judge the technical ability for a candidate to fulfill a position.
 
-Well, this is bullshit.
+Well, this is nonsense.
 
 ## What’s wrong with whiteboard interviews?
 

@@ -7,7 +7,7 @@ tags:
 
 Git is a version control system. Practically speaking, it’s a rather tiny program that maintains an history of the changes from your project such as additions, deletions, editions…
 
-Git is a beast. It’s one of those things that look scary as fuck from the ground up, so much that very few people master completely. But it doesn’t have to be dramatically hard to grasp.
+Git is a beast. It’s one of those things that look scary as hell from the ground up, so much that very few people master completely. But it doesn’t have to be dramatically hard to grasp.
 
 Lately, I taught the core concept of Git to a friend and thought it might be interesting to publish online for other people to read. Here is the draft that came up of our discussion.
 

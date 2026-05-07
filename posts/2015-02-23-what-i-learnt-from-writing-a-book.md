@@ -71,10 +71,10 @@ Long story short, have your work reviewed. It will pay.
 
 ## Keep calm and keep working
 
-About two months after we launched the project, I started getting anxious. Sleep started to elude me and I had trouble chilling. I had already some solid bases for my book, yet I was entering a phase where everything was started but nothing was finished. It was scary as shit.
+About two months after we launched the project, I started getting anxious. Sleep started to elude me and I had trouble chilling. I had already some solid bases for my book, yet I was entering a phase where everything was started but nothing was finished. It was scary as hell.
 
 After a couple of weeks and with the deadline coming closer, as suprising as it may be, I started feeling more peaceful. I got more and more comfident in my work, feeling like I was actually building something good. This wasn’t scary anymore, it was exciting.
 
 Even during my last week, I wasn’t stressed. I worked 5 hours every night after my 8-hours day, and spent 30 hours proofreading everything during the last week-end, without feeling a tiny bit anxious. At some point, stress doesn’t bring anything good to the game anymore.
 
-Use your stress to get your shit done, but don’t let it overwhelm you. Just keep calm and keep working. Soon enough, there won’t be anxiety anymore. Soon enough, there will be a book waiting for you. :)
+Use your stress to get your tasks done, but don’t let it overwhelm you. Just keep calm and keep working. Soon enough, there won’t be anxiety anymore. Soon enough, there will be a book waiting for you. :)

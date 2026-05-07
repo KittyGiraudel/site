@@ -1,5 +1,5 @@
 ---
-title: Sass Mindfuck
+title: Sass Headscratchers
 description: A rant about things that I find frustrating about Sass
 tags:
   - Sass

@@ -5,6 +5,7 @@ description: A guest post by Loïc Giraudel on how to use Bash to optimize image
 tags:
   - Bash
   - Performance
+deprecated: true
 ---
 
 {% callout %}
