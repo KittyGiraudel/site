@@ -2,7 +2,8 @@
 	Required:
 		- primary: The primary content for the card
 		- secondary: The secondary content for the card
-	Optional:
+		Optional:
+		- tertiary: The tertiary content for the card
 		- image: The card image
 		- image_alt: Alt text when an image is set
 		- url: The link for the card
@@ -40,7 +41,13 @@
 				{{ primary }}
 			{% endif %}
 		</p>
+		
 		<p class="Card__secondary">{{ secondary }}</p>
+
+		{% if tertiary %}
+			<p class="Card__tertiary">{{ tertiary }}</p>
+		{% endif %}
+
 		{% if actions %}
 		<div class="Card__actions">
 			{% for action in actions %}
