@@ -19,7 +19,7 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | p
   "
 %}
 
-{% markdown %}
+{% renderTemplate "md" %}
 Over the last few years, I have spent a lot of time writing (see some [vanity
 metrics](/stats/)), mostly about tech, but also about some other topics from
 time to time.
@@ -29,8 +29,10 @@ time to time.
 - 🧑‍🍳 I’ve also published some of my own [recipes](/blog/recipes/).
 - 👩‍💻 For *code* recipes, head to the [snippets](/snippets/) section.
 
+You can subscribe to my [RSS feed](/blog/rss.xml) to get notified when new articles are published.
+
 ---
-{% endmarkdown %}
+{% endrenderTemplate %}
 
 {% render "post_list.liquid", items: posts %}
 {% render "pagination.liquid",

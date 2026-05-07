@@ -19,11 +19,11 @@ permalink: /blog/search/
   "
 %}
 
-{% markdown %}
+{% renderTemplate "md" %}
 There is a lot of content on this website. You can use the search below to look
 for something specific. Alternatively, you can browse tags to list all content
 related to a specific topic.
-{% endmarkdown %}
+{% endrenderTemplate %}
 
 {% include "tags.liquid", tags: collections.postStats.popularTags %}
 

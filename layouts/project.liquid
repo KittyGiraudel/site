@@ -94,9 +94,7 @@ layout: page
   {% endif %}
 
   <section class="Project__content">
-    {% markdown %}
-      {{ content }}
-    {% endmarkdown %}
+    {{ content | renderContent: "md" }}
   </section>
 </article>
 

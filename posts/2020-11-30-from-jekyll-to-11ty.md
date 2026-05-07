@@ -92,6 +92,7 @@ config.addPairedShortcode('markdown', content => markdownIt().render(content))
 
 Then, I can safely author Markdown content within Liquid files:
 
+{% raw %}
 ```
 {% markdown %}
 My name is Kitty. I’m a transfeminine web engineer in Berlin. I have led
@@ -101,6 +102,7 @@ accessibility and inclusivity. For a longer version, [read more about
 me](/about/).
 {% endmarkdown %}
 ```
+{% endraw %}
 
 Surprisingly enough, [Eleventy compiles Markdown files with Liquid](https://www.11ty.dev/docs/config/#default-template-engine-for-markdown-files) by default which can be pretty annoying in an article like this that contains Liquid syntax in code blocks since it gets evaluated literally. I had to disable the Liquid renderer for this specific article (and similar ones mentioning Liquid syntax in code snippets) by adding this to the YAML front matter:
 

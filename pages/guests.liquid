@@ -18,12 +18,12 @@ permalink: /blog/guest/
   "
 %}
 
-{% markdown %}
+{% renderTemplate "md" %}
 I had the amazing opportunity to have great writers sharing their experience on
 this very blog. You can find all guest posts on this page. And remember, if you
 have built something cool and would like to write about it, be sure to get in
 touch!
-{% endmarkdown %}
+{% endrenderTemplate %}
 
 {% assign guest_posts = collections.posts | where: "guest" %}
 {% render "post_list.liquid", items: guest_posts %}

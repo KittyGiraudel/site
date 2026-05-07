@@ -16,12 +16,10 @@ In this article, I will show a small HTML + CSS only implementation of an access
   height: 365
 %}
 
-{% capture toggles %}
-{% markdown "inline" %}Dion mentions how [the toggle might look reversed](https://twitter.com/_diondiondion/status/1379828760585834497?s=20), a sentiment backed up by [Rawrmonstar](https://twitter.com/rawrawrmonstar/status/1379555735118352384?s=20), and Mikael Kundert mentions how [checkboxes are usually simpler](https://twitter.com/iMiksu/status/1379802269709897737?s=20).{% endmarkdown %}
-{% endcapture %}
+{% assign footnote_toggles = "Dion mentions how <a href='https://twitter.com/_diondiondion/status/1379828760585834497?s=20'>the toggle might look reversed</a>, a sentiment backed up by <a href='https://twitter.com/rawrawrmonstar/status/1379555735118352384?s=20'>Rawrmonstar</a>, and Mikael Kundert mentions how <a href='https://twitter.com/iMiksu/status/1379802269709897737?s=20'>checkboxes are usually simpler</a>." %}
 
 {% callout "warning" %}
-**Disclaimer:** Before using a toggle switch, consider whether this is the best user interface for the situation. {% footnoteref "toggles" toggles %}Toggles can be visually confusing{% endfootnoteref %} and in some cases, [a button might be more suited](#button-variant).
+**Disclaimer:** Before using a toggle switch, consider whether this is the best user interface for the situation. {% footnoteref "toggles" footnote_toggles %}Toggles can be visually confusing{% endfootnoteref %} and in some cases, [a button might be more suited](#button-variant).
 {% endcallout %}
 
 ## Markup

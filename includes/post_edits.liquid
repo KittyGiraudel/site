@@ -10,7 +10,7 @@
   {% for edit in edits %}
     <p>
       <span class="PostEdits__date">{{ edit.date | time }}:</span>
-      {% markdown "inline" %}{{ edit.md }}{% endmarkdown %}
+      {{ edit.md | renderContent: "md" | replace: "<p>", "" | replace: "</p>", "" }}
     </p>
   {% endfor %}
 </div>

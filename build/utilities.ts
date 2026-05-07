@@ -5,9 +5,9 @@ import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
 import he from 'he'
 import htmlmin from 'html-minifier-terser'
+import markdownIt from 'markdown-it'
 import type { MaybePost, MaybeProject, PostFrontMatter, ProjectFrontMatter } from './eleventy.ts'
 import { isFeatureEnabled } from './features.ts'
-import { getMarkdownRenderer } from './markdown.ts'
 
 const EMOJI_REGEX = emojiRegex()
 const DATE_FORMATTER = new Intl.DateTimeFormat('en', {
@@ -51,11 +51,6 @@ function a11yEmojis(content: string, outputPath?: string): string {
 		: content
 }
 
-function markdown(content: string, inline = false): string {
-	const html = getMarkdownRenderer().render(content)
-	return inline ? html.replace('<p>', '').replace('</p>', '') : html
-}
-
 function formatNumber(amount: number): string {
 	return `${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
 }
@@ -77,10 +72,9 @@ function dateToRFC3339(value: Date | string | number): string {
 }
 
 function callout(content: string, type = 'info', role = 'note'): string {
-	if (role === 'note') {
-		return `<aside class="Callout Callout--${type}" role="note">${markdown(content, false)}</aside>`
-	}
-	return `<div class="Callout Callout--${type}">${markdown(content, false)}</div>`
+	const html = markdownIt({ html: true, typographer: true }).render(content)
+	if (role === 'note') return `<aside class="Callout Callout--${type}" role="note">${html}</aside>`
+	return `<div class="Callout Callout--${type}">${html}</div>`
 }
 
 function time(value: Date | string | number, itemprop?: string, id?: string): string {
@@ -193,7 +187,6 @@ function isPostRendered(value: MaybePost): boolean {
 export default {
 	minifyHTML,
 	a11yEmojis,
-	markdown,
 	formatNumber,
 	where,
 	dateToRFC3339,

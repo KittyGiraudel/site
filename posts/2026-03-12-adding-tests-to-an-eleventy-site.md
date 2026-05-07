@@ -7,11 +7,7 @@ tags:
   - Testing
 ---
 
-{% capture footnote_website_changes %}
-{% markdown "inline" %}
-See _[Nerdy Design Details](/2026/02/26/nerdy-design-details/)_, _[Injecting element in Liquid content](/2026/02/27/injecting-element-in-liquid-content/)_, _[Tag pages with Eleventy](/2026/03/01/tag-pages-with-eleventy/)_, _[Stats Page with Eleventy](http://localhost:8080/2026/03/02/stats-page-with-11ty/)_, _[Automatic Table of Contents with Eleventy](/2026/03/04/automatic-toc-with-11ty/)_, _[No more Carbon](/2026/03/10/no-more-carbon/)_ and _[Serving Markdown to LLMs with Eleventy](/2026/03/11/serving-markdown-to-llms-with-11ty/)_ — all released in the last 2 weeks.
-{% endmarkdown %}
-{% endcapture %}
+{% assign footnote_website_changes = "See <em><a href='/2026/02/26/nerdy-design-details/'>Nerdy Design Details</a></em>, <em><a href='/2026/02/27/injecting-element-in-liquid-content/'>Injecting element in Liquid content</a></em>, <em><a href='/2026/03/01/tag-pages-with-eleventy/'>Tag pages with Eleventy</a></em>, <em><a href='http://localhost:8080/2026/03/02/stats-page-with-11ty/'>Stats Page with Eleventy</a></em>, <em><a href='/2026/03/04/automatic-toc-with-11ty/'>Automatic Table of Contents with Eleventy</a></em>, <em><a href='/2026/03/10/no-more-carbon/'>No more Carbon</a></em> and <em><a href='/2026/03/11/serving-markdown-to-llms-with-eleventy/'>Serving Markdown to LLMs with Eleventy</a></em> — all released in the last 2 weeks." %}
 
 I’ve been {% footnoteref "website-changes" footnote_website_changes %}working a lot on this website recently{% endfootnoteref %}, and with every significant change, I end up doing a lot of poking around after every deployment to make sure I didn’t break anything.
 

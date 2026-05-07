@@ -1,5 +1,6 @@
 declare module '@11ty/eleventy' {
 	export const IdAttributePlugin: (eleventyConfig: unknown, options?: unknown) => unknown
+	export const RenderPlugin: (eleventyConfig: unknown, options?: unknown) => unknown
 }
 
 declare module '@11ty/eleventy-img' {

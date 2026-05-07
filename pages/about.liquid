@@ -11,7 +11,7 @@ toc: true
   partials: "components/tile"
 %}
 
-{% markdown %}
+{% renderTemplate "liquid,md", site %}
 I’m Kitty. I’m a transfeminine web engineer and engineering leader based in Berlin, with nearly 15
 years of experience, currently focused on engineering excellence, accessibility, diversity and
 inclusion. In recent years, I have led engineering teams at [N26](https://n26.com),
@@ -20,7 +20,7 @@ and [Scilife](https://scilife.io) — all companies I helped grow and scale.
 
 {% render "job_notice.liquid",
   style: "margin-block-start: var(--vb)",
-  job_notice: site.job_notice
+  job_notice: job_notice
 %}
 
 ## Professional journey
@@ -87,7 +87,7 @@ For a more personal glance at my last ten years, be sure to read [A decade in
 review](/2020/01/01/a-decade-in-review/), and if you have any question, feel
 free to ask me anything on my [Ask Me Anything](https://github.com/KittyGiraudel/ama)
 repository.
-{% endmarkdown %}
+{% endrenderTemplate %}
 
 {% callout %}
 If you mentioned my dead name somewhere on the internet over the years, please

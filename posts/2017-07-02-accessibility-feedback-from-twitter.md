@@ -11,20 +11,13 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 ## Vision disability
 
-{% capture footnote_small_font_sizes %}
-{% markdown "inline" %}About small font sizes: [Tweet by @brandonsavage](https://twitter.com/brandonsavage/status/871067906414608387), [tweet by @Rejistania](https://twitter.com/Rejistania/status/871103754409582592)."{% endmarkdown %}
-{% endcapture %}
+{% assign footnote_small_font_sizes = "About small font sizes: <a href='https://twitter.com/brandonsavage/status/871067906414608387'>Tweet by @brandonsavage</a>, <a href='https://twitter.com/Rejistania/status/871103754409582592'>tweet by @Rejistania</a>." %}
 
-{% capture footnote_migraines %}
-{% markdown "inline" %}About migraines: [Tweet by @kolyshkin](https://twitter.com/kolyshkin/status/871118386754801664), [tweet by @DiamonDie](https://twitter.com/DiamonDie/status/871064350097854464), [tweet by @morganestes](https://twitter.com/morganestes/status/871070319129145348), [tweet by @elazar](https://twitter.com/elazar/status/871070831970885634).{% endmarkdown %}
-{% endcapture %}
+{% assign footnote_migraines = "About migraines: <a href='https://twitter.com/kolyshkin/status/871118386754801664'>Tweet by @kolyshkin</a>, <a href='https://twitter.com/DiamonDie/status/871064350097854464'>tweet by @DiamonDie</a>, <a href='https://twitter.com/morganestes/status/871070319129145348'>tweet by @morganestes</a>, <a href='https://twitter.com/elazar/status/871070831970885634'>tweet by @elazar</a>." %}
 
 - Someone explains their {% footnoteref "small_font_sizes" footnote_small_font_sizes %}frustration about small font sizes{% endfootnoteref %} that cannot be safely increased because it breaks the layout. A few persons — {% footnoteref "migraines" footnote_migraines %}some with, some without <abbr title="Myalgic Encephalopathy">ME</abbr> / <abbr title="Chronic Fatigue Syndrome">CFS</abbr>{% endfootnoteref %} — agree or express a similar statement.
 
-{% capture footnote_color_contrast %}
-{% markdown "inline" %}About lack of contrast: [Tweet by @AndrewDixonSo](https://twitter.com/AndrewDixonSo/status/871062142799142913), [tweet by @may_gun](https://twitter.com/may_gun/status/871175194328539136), [tweet by @gamescharlie79](https://twitter.com/gamescharlie79/status/871069372655087617).
-{% endmarkdown %}
-{% endcapture %}
+{% assign footnote_color_contrast = "About lack of contrast: <a href='https://twitter.com/AndrewDixonSo/status/871062142799142913'>Tweet by @AndrewDixonSo</a>, <a href='https://twitter.com/may_gun/status/871175194328539136'>tweet by @may_gun</a>, <a href='https://twitter.com/gamescharlie79/status/871069372655087617'>tweet by @gamescharlie79</a>." %}
 
 - Some people extend the previous statement to include {% footnoteref "color_contrast" footnote_color_contrast %}poor color contrasts{% endfootnoteref %}, such as light grey on white background for instance or text on top of image.
 
@@ -48,10 +41,7 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 - A person with Parkinson disease explains how [mouse interactions are extremely hard to perform accurately](https://twitter.com/KodierKroete/status/871175620146982912).
 
-{% capture footnote_hand_tremor %}
-{% markdown "inline" %}About hand tremors: [tweet by @SpoonsAndPOTS](https://twitter.com/SpoonsAndPOTS/status/871185534814531585), [tweet by @KristenAnneSF](https://twitter.com/KristenAnneSF/status/871230651357331460) and [tweet by @jenilg](https://twitter.com/jenilg/status/871187106936360960).
-{% endmarkdown %}
-{% endcapture %}
+{% assign footnote_hand_tremor = "About hand tremors: <a href='https://twitter.com/SpoonsAndPOTS/status/871185534814531585'>tweet by @SpoonsAndPOTS</a>, <a href='https://twitter.com/KristenAnneSF/status/871230651357331460'>tweet by @KristenAnneSF</a> and <a href='https://twitter.com/jenilg/status/871187106936360960'>tweet by @jenilg</a>." %}
 
 - People with hand tremor say {% footnoteref "hand_tremor" footnote_hand_tremor %}precise gestures such as double-clicking or tap-and-hold are difficult{% endfootnoteref %} to perform.
 
@@ -65,19 +55,13 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 ## Cognitive & learning disabilities
 
-{% capture footnote_adhd_animations %}
-{% markdown "inline" %}About ADHD and animations: [Tweet by @elementnumber46](https://twitter.com/elementnumber46/status/871064762481872897), [tweet by @mojinations](https://twitter.com/mojinations/status/871173727601307648) and [tweet by @morganestes](https://twitter.com/morganestes/status/871070319129145348).
-{% endmarkdown %}
-{% endcapture %}
+{% assign footnote_adhd_animations = "About ADHD and animations: <a href='https://twitter.com/elementnumber46/status/871064762481872897'>Tweet by @elementnumber46</a>, <a href='https://twitter.com/mojinations/status/871173727601307648'>tweet by @mojinations</a> and <a href='https://twitter.com/morganestes/status/871070319129145348'>tweet by @morganestes</a>." %}
 
 - Someone with <abbr title="Attention Deficit Hyperactivity Disorder">ADHD</abbr> says [they can’t focus as soon as there is a “subtle” animation always running](https://twitter.com/tigt_/status/871061419600510978). {% footnoteref "adhd_animations" footnote_adhd_animations %}A lot of people suffering from ADHD to a certain level share the same opinion about animations{% endfootnoteref %}.
 
 - Along the same lines, someone [wishes they could disable GIFs](https://twitter.com/DaxAeterna/status/871205860285988865).
 
-{% capture footnote_adhd_wall_of_text %}
-{% markdown "inline" %}About large blocks of text: [Tweet by @DotProto](https://twitter.com/DotProto/status/871231522455433216), [tweet by @Polenth](https://twitter.com/Polenth/status/871080703370424321), [tweet by @Mustafa_x](https://twitter.com/Mustafa_x/status/871138503408615428), [tweet by @MeBeShe4815](https://twitter.com/MeBeShe4815/status/871082326578548736), [tweet by @keannka](https://twitter.com/keannka/status/871093540100689921) and [tweet by @elementnumber46](https://twitter.com/elementnumber46/status/871064762481872897).
-{% endmarkdown %}
-{% endcapture %}
+{% assign footnote_adhd_wall_of_text = "About large blocks of text: <a href='https://twitter.com/DotProto/status/871231522455433216'>Tweet by @DotProto</a>, <a href='https://twitter.com/Polenth/status/871080703370424321'>tweet by @Polenth</a>, <a href='https://twitter.com/Mustafa_x/status/871138503408615428'>tweet by @Mustafa_x</a>, <a href='https://twitter.com/MeBeShe4815/status/871082326578548736'>tweet by @MeBeShe4815</a>, <a href='https://twitter.com/keannka/status/871093540100689921'>tweet by @keannka</a> and <a href='https://twitter.com/elementnumber46/status/871064762481872897'>tweet by @elementnumber46</a>." %}
 
 - Another person with ADHD says {% footnoteref "adhd_wall_of_text" footnote_adhd_wall_of_text %}big walls of text can be difficult to get through{% endfootnoteref %}. To work around this problem, they use text-to-speech. This is a common problem for a lot of people suffering from a large variety of impairments and disorders.
 
@@ -103,10 +87,7 @@ Allow me to take this as an opportunity to link to this [introduction to web acc
 
 ## Hearing impairments
 
-{% capture footnote_no_captions %}
-{% markdown "inline" %}About lack of captions: [Tweet by @UntoNuggan](https://twitter.com/UntoNuggan/status/871063079861268481), [tweet by @carolmcarpenter](https://twitter.com/carolmcarpenter/status/871067344038219776), [tweet by @tohereknowswhe](https://twitter.com/tohereknowswhe/status/871061025642229761), [tweet by @radcrochetqueer](https://twitter.com/radcrochetqueer/status/871104664544137216), [tweet by @jjackson](https://twitter.com/jjackson/status/871209439856009216), [tweet by @k_hack](https://twitter.com/k_hack/status/871189568187322368), [tweet by @Lesbiologist](https://twitter.com/Lesbiologist/status/871108939126939648), [tweet by @domcorriveau](https://twitter.com/domcorriveau/status/871259653170020352), [tweet by @captainsafia](https://twitter.com/captainsafia/status/871061635485577217), [tweet by @ai_valentin](https://twitter.com/ai_valentin/status/871128518717046785).
-{% endmarkdown %}
-{% endcapture %}
+{% assign footnote_no_captions = "About lack of captions: <a href='https://twitter.com/UntoNuggan/status/871063079861268481'>Tweet by @UntoNuggan</a>, <a href='https://twitter.com/carolmcarpenter/status/871067344038219776'>tweet by @carolmcarpenter</a>, <a href='https://twitter.com/tohereknowswhe/status/871061025642229761'>tweet by @tohereknowswhe</a>, <a href='https://twitter.com/radcrochetqueer/status/871104664544137216'>tweet by @radcrochetqueer</a>, <a href='https://twitter.com/jjackson/status/871209439856009216'>tweet by @jjackson</a>, <a href='https://twitter.com/k_hack/status/871189568187322368'>tweet by @k_hack</a>, <a href='https://twitter.com/Lesbiologist/status/871108939126939648'>tweet by @Lesbiologist</a>, <a href='https://twitter.com/domcorriveau/status/871259653170020352'>tweet by @domcorriveau</a>, <a href='https://twitter.com/captainsafia/status/871061635485577217'>tweet by @captainsafia</a>, <a href='https://twitter.com/ai_valentin/status/871128518717046785'>tweet by @ai_valentin</a>." %}
 
 - A <abbr title="Hard of Hearing">HoH</abbr> person points out that {% footnoteref "no_captions" footnote_no_captions %}not enough videos/audios are captioned{% endfootnoteref %}, which is a shame because they are useful to more people than just HoH/deafs.
 

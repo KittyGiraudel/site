@@ -1,4 +1,4 @@
-import { IdAttributePlugin } from '@11ty/eleventy'
+import { IdAttributePlugin, RenderPlugin } from '@11ty/eleventy'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import slugify from '@sindresorhus/slugify'
 import { defineConfig } from '11ty.ts'
@@ -39,6 +39,8 @@ export default defineConfig(config => {
 	})
 	config.addPlugin(postStatsPlugin)
 	config.addPlugin(tocPlugin)
+	config.addPlugin(RenderPlugin)
+
 	if (isFeatureEnabled('HIGHLIGHT_CODE_BLOCKS'))
 		config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
 
@@ -76,7 +78,6 @@ export default defineConfig(config => {
 
 	// Liquid filters and shortcodes
 	// ---------------------------------------------------------------------------
-	config.addPairedShortcode('markdown', utilities.markdown)
 	config.addPairedShortcode('callout', utilities.callout)
 	config.addShortcode('ensure', asEleventyFilter(utilities.ensureValue))
 	config.addFilter('time', utilities.time)
