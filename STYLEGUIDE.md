@@ -146,7 +146,7 @@ external:
 
 ### Drafts
 
-To keep a post as a draft, set `draft: true` in front matter. Visibility is controlled by the `renderDrafts` feature flag.
+To keep a post as a draft, set `draft: true` in front matter.
 
 ## Document structure
 

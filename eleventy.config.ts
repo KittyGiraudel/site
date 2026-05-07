@@ -12,6 +12,12 @@ import tocPlugin from './build/toc.ts'
 import utilities from './build/utilities.ts'
 
 export default defineConfig(config => {
+	// Content pre-processing
+	// See: https://www.11ty.dev/docs/config-preprocessors/#example-drafts
+	config.addPreprocessor('drafts', '*', data => {
+		if (data.draft && process.env.ELEVENTY_RUN_MODE === 'build') return false
+	})
+
 	// Content post-processing
 	// ---------------------------------------------------------------------------
 	if (isFeatureEnabled('MINIFY_HTML')) config.addTransform('htmlmin', utilities.minifyHTML)
@@ -90,10 +96,7 @@ export default defineConfig(config => {
 	// Collections
 	// ---------------------------------------------------------------------------
 	config.addCollection('posts', c =>
-		c
-			.getFilteredByGlob('posts/*.md')
-			.filter(utilities.isPostVisible)
-			.sort((a, b) => b.date.getTime() - a.date.getTime()),
+		c.getFilteredByGlob('posts/*.md').sort((a, b) => b.date.getTime() - a.date.getTime()),
 	)
 	config.addCollection('internal_posts', c =>
 		c

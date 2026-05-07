@@ -5,7 +5,6 @@
 	"INLINE_ASSETS": ["production"],
 	"RENDER_MARKDOWN_ALTERNATIVE": ["development", "production"],
 	"MINIFY_HTML": ["production"],
-	"RENDER_DRAFTS": ["development"],
 	"INIT_SERVICE_WORKER": ["production"],
 	"HIGHLIGHT_CODE_BLOCKS": ["development", "production"],
 	"WRAP_EMOJIS": ["production"],

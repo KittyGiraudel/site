@@ -174,14 +174,9 @@ function getFrontMatterData(
 	return { ...(value as Partial<PostFrontMatter>) }
 }
 
-// A post is visible if it is not a draft or if drafts are enabled.
-function isPostVisible(value: MaybePost): boolean {
-	return !getFrontMatterData(value).draft || isFeatureEnabled('RENDER_DRAFTS')
-}
-
 // A post is rendered if it is visible and not an external post.
 function isPostRendered(value: MaybePost): boolean {
-	return isPostVisible(value) && !getFrontMatterData(value).external
+	return !getFrontMatterData(value).external
 }
 
 export default {
@@ -199,7 +194,6 @@ export default {
 	wrapEmDashes,
 	wrapSmileyFaces,
 	rssContent,
-	isPostVisible,
 	isPostRendered,
 	getFrontMatterData,
 }

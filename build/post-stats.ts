@@ -29,7 +29,6 @@ export default function postStatsPlugin(eleventyConfig: EleventyConfig) {
 	eleventyConfig.addCollection('postStats', collection => {
 		const posts = collection
 			.getFilteredByGlob('posts/*.md')
-			.filter(utilities.isPostVisible)
 			.sort((a, b) => b.date.getTime() - a.date.getTime())
 		const postCount = posts.length
 
