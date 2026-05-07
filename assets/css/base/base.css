@@ -60,7 +60,7 @@
 	--vb-double: calc(var(--vb) * 2);
 	--margin-offset: 2rem;
 
-	--z-set: 1;
+	--z-set: 0;
 	--z-top: 10;
 }
 

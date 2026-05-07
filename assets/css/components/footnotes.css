@@ -91,6 +91,7 @@
 	z-index: calc(var(--z-set) - 1);
 	animation: fade-out 1s 10s ease-in-out;
 	animation-fill-mode: forwards;
+	pointer-events: none;
 }
 
 .Footnotes__list-item:target::after {
