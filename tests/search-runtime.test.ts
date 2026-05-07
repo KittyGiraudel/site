@@ -39,10 +39,10 @@ function buildMockSearchDom() {
 				<form>
 					<input id="search-input" type="search">
 				</form>
-				<section id="search-results-region" aria-busy="true">
-					<ol id="search-results-list"></ol>
-					<p id="no-results" hidden>No results</p>
-					<p id="search-index-error" hidden>Search index error</p>
+				<section id="search-region" aria-busy="true">
+					<ul id="search-list"></ul>
+					<p id="search-empty" hidden>No results</p>
+					<p id="search-error" hidden>Search index error</p>
 				</section>
 				<template id="search-result-template">
 					<li class="List__item">
@@ -68,8 +68,8 @@ function buildMockSearchDom() {
 		window,
 		document,
 		searchInput: requiredElement<HTMLInputElement>('#search-input'),
-		resultsList: requiredElement<HTMLOListElement>('#search-results-list'),
-		noResults: requiredElement<HTMLElement>('#no-results'),
+		resultsList: requiredElement<HTMLOListElement>('#search-list'),
+		noResults: requiredElement<HTMLElement>('#search-empty'),
 	}
 }
 

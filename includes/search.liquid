@@ -17,38 +17,36 @@
       id="search-input"
       class="Search__input"
       name="q"
-      autocomplete="off"
       enterkeyhint="search"
       placeholder="Search blog articles…"
       autofocus
-      spellcheck="false"
-      aria-describedby="search-input-hint"
-      aria-controls="search-results-region"
+      aria-describedby="search-hint"
+      aria-controls="search-region"
     />
-    <p id="search-input-hint" class="visually-hidden">
+    <p id="search-hint" class="visually-hidden">
       Results appear in the search results section as you type.
     </p>
   </form>
 
   <section
-    id="search-results-region"
-    aria-labelledby="search-results-title"
+    id="search-region"
+    aria-labelledby="search-title"
     aria-busy="true"
   >
-    <h2 class="visually-hidden" id="search-results-title">Search results</h2>
+    <h2 class="visually-hidden" id="search-title">Search results</h2>
     <ul
-      id="search-results-list"
+      id="search-list"
       class="Search__results List NoListMarker"
       role="list"
       aria-live="polite"
       aria-relevant="additions removals"
     ></ul>
-    <p id="no-results" class="Search__empty Callout Callout--warning" hidden role="status">
+    <p id="search-empty" class="Search__empty Callout Callout--warning" hidden role="status">
       Unfortunately, no results were found for your search. If you think this is
       a mistake, please reach out on
       <a href="https://github.com/kittygiraudel/site/issues">GitHub</a>.
     </p>
-    <p id="search-index-error" class="Callout Callout--warning Search__error" hidden role="alert">
+    <p id="search-error" class="Callout Callout--warning Search__error" hidden role="alert">
       Search could not be loaded. Please refresh the page or try again later.
     </p>
   </section>
@@ -64,6 +62,6 @@
 
 <template id="search-tag-template">
   <li class="Tag">
-    <a class="Tag__link" href=""></a>
+    <a class="Tag__link NoBackground" href=""></a>
   </li>
 </template>

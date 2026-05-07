@@ -143,10 +143,10 @@ function showIndexError(indexErrorEl, noResultsEl, resultsList, resultsRegion) {
 
 document.addEventListener('DOMContentLoaded', async () => {
 	const input = document.querySelector('#search-input')
-	const resultsList = document.querySelector('#search-results-list')
-	const noResultsEl = document.querySelector('#no-results')
-	const indexErrorEl = document.querySelector('#search-index-error')
-	const resultsRegion = document.querySelector('#search-results-region')
+	const resultsList = document.querySelector('#search-list')
+	const noResultsEl = document.querySelector('#search-empty')
+	const indexErrorEl = document.querySelector('#search-error')
+	const resultsRegion = document.querySelector('#search-region')
 	const resultTemplate = document.querySelector('#search-result-template')
 	const tagTemplate = document.querySelector('#search-tag-template')
 

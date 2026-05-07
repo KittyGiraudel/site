@@ -20,9 +20,13 @@ permalink: /blog/search/
 %}
 
 {% markdown %}
-In almost 400 posts and snippets, I probably have written something at least a bit
-interesting. What about giving it a search?
+There is a lot of content on this website. You can use the search below to look
+for something specific. Alternatively, you can browse tags to list all content
+related to a specific topic.
 {% endmarkdown %}
+
+{% include "tags.liquid", tags: collections.postStats.popularTags %}
+
 
 {% render "search.liquid" %}
 

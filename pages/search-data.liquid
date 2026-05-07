@@ -10,7 +10,7 @@ eleventyExcludeFromCollections: true
       "lang"     : {{ post.data.lang | default: 'en' | jsonify }},
       "tags"     : {{ post.data.tags | default: arr | jsonify }},
       "url"      : {% if post.data.external %}{{ post.data.external.url | jsonify }}{% else %}{{ post.url | jsonify }}{% endif %},
-      "date"     : {{ post.date | date: '%B %d, %Y' | jsonify }},
+      "date"     : {{ post.date | date: '%B %e, %Y' | jsonify }},
       "guest"    : {% if post.data.guest %}{{ post.data.guest | jsonify }}{% else %}null{% endif %},
       "external" : {% if post.data.external %}{{ post.data.external.host | jsonify }}{% else %}null{% endif %}
     } {% unless forloop.last %},{% endunless %}
