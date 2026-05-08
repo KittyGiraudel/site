@@ -1,11 +1,11 @@
 ---
 title: Next.js Link as a Button
 description: A technical walkthrough on how to make a generic Button component (such as coming from a library) still use Next.js in-page routing.
-image: /assets/images/nextjs-link-as-a-button/nextjs-link-as-a-button-generated.png
 tags:
   - Next.js
   - TypeScript
   - Accessibility
+image: /assets/images/nextjs-link-as-a-button/nextjs-link-as-a-button-generated.jpg
 ---
 
 You’d think it would be simple. And in principle, it can be. The Next.js `Link` component accept both a `className` and `style` prop so you can style it however you want. But what if you *already* have a `Button` component that can render a `<a>` element, and want that component to support router navigation?

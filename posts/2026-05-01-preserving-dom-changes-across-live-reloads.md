@@ -1,11 +1,11 @@
 ---
 title: Preserving DOM Changes Across Live Reloads
 description: A technical walkthrough about a workaround to preserving client-side DOM changes across live reloads.
-image: /assets/images/preserving-dom-changes-across-live-reloads/preserving-dom-changes-across-live-reloads-generated.png
 tags:
   - Liquid
   - Eleventy
   - JavaScript
+image: /assets/images/preserving-dom-changes-across-live-reloads/preserving-dom-changes-across-live-reloads-generated.jpg
 ---
 
 As I was working on this website, I stumbled upon a curious little problem: saving a file (like the article I’m working on) caused my theme switcher to be out of sync. 
