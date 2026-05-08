@@ -20,7 +20,7 @@ export default function tocPlugin(eleventyConfig: EleventyConfig) {
 			}
 
 			const $ = cheerio.load(html, null, false)
-			const headings = $('h2, h3, h4').toArray()
+			const headings = $('h2, h3').toArray()
 
 			return headings.length < 2 ? [] : buildTocTree($, headings)
 		}),
