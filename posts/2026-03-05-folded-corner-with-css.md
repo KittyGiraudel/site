@@ -4,6 +4,9 @@ description: A technical walkthrough of creating a folding corner effect with CS
 tags:
   - CSS
   - Design
+edits:
+  - date: 2026-05-08
+    md: Daniel Schwarz published [a great write-up about using CSS `corner-shape`](https://css-tricks.com/using-css-corner-shape-for-folded-corners/) to achieve a similar effect. His approach is more modern and requires less code so be sure to check it out.
 ---
 
 While browsing through my CodePen, I stumbled upon a demo I made for my sister a while ago. She wanted to have this hover effect where the corner of the picture would fold over, as if peeling off a sticker from a flat surface. Try it below or [on CodePen](https://codepen.io/KittyGiraudel/pen/raNoZLr?editors=0100).
