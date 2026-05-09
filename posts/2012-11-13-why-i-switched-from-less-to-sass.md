@@ -268,7 +268,7 @@ Sass has absolutely no problem with concatenation neither in selectors nor in pr
 
 Very quickly, here are the few things making me tell Sass is better than LESS. Those are well explained in the above links.
 
-- Sass has [Compass](https://compass-style.org/) which keeps CSS3 support up to date
+- Sass has Compass which keeps CSS3 support up to date
 - Sass provides the `@extend` feature allowing you to extend a class from another one
 - Sass handles media queries in a better and more advanced ways than others
 - Sass throws errors instead of miscalculations when doing operations with units

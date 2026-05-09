@@ -580,11 +580,11 @@ That’s true. Sass doesn’t automatically merge media queries rules [yet](http
 
 In any case, if you feel dirty having duplicated media queries in your final CSS even if it doesn’t make any difference, you can still use [this Ruby gem](https://github.com/aaronjensen/sass-media_query_combiner) to merge them. Please note merging media queries may mean reordering CSS which may involve some specificity issues. More tests needed.
 
-**[Compass](https://compass-style.org/) or [Bourbon](https://bourbon.io/)?**
+**Compass or [Bourbon](https://bourbon.io/)?**
 
 Well, frankly it’s up to you. However note that the Compass team works directly with the Sass team so they are and will always be up to date. Bourbon otherwise is a side-project which isn’t affiliated with Sass in any way (well, except for the obvious).
 
-Moreover, Compass comes with a [sprite generator](https://compass-style.org/reference/compass/helpers/sprites/), [Blueprint](https://compass-style.org/reference/blueprint/) for your grids, a [vertical rhytm module](https://compass-style.org/reference/compass/typography/vertical_rhythm/) and a bunch of other cool things like [math functions](https://compass-style.org/reference/compass/helpers/math/), [image dimensions](https://compass-style.org/reference/compass/helpers/image-dimensions/), and [much more](https://compass-style.org/reference/compass/helpers/)…
+Moreover, Compass comes with a sprite generator, Blueprint for your grids, a vertical rhytm module and a bunch of other cool things like math functions, image dimensions, and much more…
 
 So if you want my opinion: definitely Compass.
 

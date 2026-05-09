@@ -7,13 +7,13 @@ tags:
 deprecated: true
 ---
 
-[Compass](https://compass-style.org/) is a CSS authoring framework dedicated to [Sass](https://sass-lang.com/). Not only is it insanely powerful, but it also includes a large range of built-in functions and mixins, easing daily tasks.
+Compass is a CSS authoring framework dedicated to [Sass](https://sass-lang.com/). Not only is it insanely powerful, but it also includes a large range of built-in functions and mixins, easing daily tasks.
 
 It occurred to me there was a couple of Compass features which remain pretty much unknown to most users so I thought it could be a good idea to write a short blog post about them.
 
 ## Opposite-position()
 
-Compass defines 5 CSS [constants](https://compass-style.org/reference/compass/helpers/constants/): `top`, `right`, `bottom`, `left` and `center`.
+Compass defines 5 CSS constants: `top`, `right`, `bottom`, `left` and `center`.
 
 The point of these inalterable variables is to use the `opposite-position()` function which returns the opposite value for each constant. Please consider the following example:
 
@@ -44,7 +44,7 @@ So `$opposite` equals _right_ when `$direction` is _left_ and vice versa. Allows
 
 ## Elements-of-type()
 
-[Element-of-type()](https://compass-style.org/reference/compass/helpers/display/) is a built-in function to detect the display type of an element: `block`, `inline`, `inline-block`, `table`, `table-row-group`, `table-header-group`, `table-footer-group`, `table-row`, `table-cell`, `list-item` and -as odd as it may look- `html5`, `html5-inline` and `html5-block`.
+Element-of-type() is a built-in function to detect the display type of an element: `block`, `inline`, `inline-block`, `table`, `table-row-group`, `table-header-group`, `table-footer-group`, `table-row`, `table-cell`, `list-item` and -as odd as it may look- `html5`, `html5-inline` and `html5-block`.
 
 {% callout %}`html5`, `html5-inline` and `html5-block` are not real display values; they are just keywords to gather all html5 elements (inline, block or both).{% endcallout %}
 
@@ -62,7 +62,7 @@ This snippet forces all HTML5 elements to be displayed as block-elements, even b
 
 ## Experimental()
 
-[Experimental](https://compass-style.org/reference/compass/css3/shared/) has to be one of the most used function in Compass and probably one of the less known at the same time.
+Experimental has to be one of the most used function in Compass and probably one of the less known at the same time.
 
 Basically, `experimental()` allows you to define mixins outputing content depending on enabled vendor prefixes. It is used in **all** CSS3 built-in mixins. When you use `@include box-sizing(border-box)`, here is what happen:
 
@@ -126,7 +126,7 @@ This outputs:
 
 ## Hacks
 
-Hum, [hacks](https://compass-style.org/reference/compass/utilities/general/hacks/). I know what you think: _NOOOOOO!_. Anyway, Compass provides a couple of features to take advantage of Internet Explorer inconsistencies and weaknesses.
+Hum, hacks. I know what you think: _NOOOOOO!_. Anyway, Compass provides a couple of features to take advantage of Internet Explorer inconsistencies and weaknesses.
 
 You may have already heard of `has-layout`. [This article](https://www.satzansatz.de/cssd/onhavinglayout.html) explains it way better than I could:
 
@@ -180,7 +180,7 @@ Since IE6 doesn’t understand `!important`, it will apply the later declaratati
 
 ## Image dimensions
 
-Compass gives you a way to know the [dimensions of an image](https://compass-style.org/reference/compass/helpers/image-dimensions/) (given as a path) with 2 functions: `image-width()` and `image-height()`.
+Compass gives you a way to know the dimensions of an image (given as a path) with 2 functions: `image-width()` and `image-height()`.
 
 ```scss
 .element {
@@ -197,7 +197,7 @@ In this example, the element will have a size relative to the background-image i
 
 ## Math functions
 
-If you’re like a total nerd and want to do CSS with math, then you’ll be pleased to know Compass has a bunch of built-in [math functions](https://compass-style.org/reference/compass/helpers/math/) like `sin()`, `cos()`, `pi()` among a few others.
+If you’re like a total nerd and want to do CSS with math, then you’ll be pleased to know Compass has a bunch of built-in math functions like `sin()`, `cos()`, `pi()` among a few others.
 
 I once had to use `sin()` in order to make a [mixin for a pure CSS 6-points star](/2013/02/18/sassify-a-css-shape/) but that’s pretty much it. If you happen to have a real live use case for one of those functions, I’d be more than pleased to know more about it.
 
@@ -209,7 +209,7 @@ $sqrt: sqrt($n); /* Returns 2  */
 
 ## Selector helpers
 
-Compass provides some [features](https://compass-style.org/reference/compass/helpers/selectors/) to play with selectors like `nest()`, `append-selector()` or `headings()`.
+Compass provides some features to play with selectors like `nest()`, `append-selector()` or `headings()`.
 
 Once again, I am not sure if there are a bunch of real life use cases for such functions. Let me show you with a demo, maybe you’ll be able to find a use case:
 
@@ -240,7 +240,7 @@ append-selector("a, p, li", ".class");
 
 ## Image-replacement functions
 
-Compass provides several resources to ease a daily task: [image replacement](https://compass-style.org/reference/compass/typography/text/replacement/). When you have an element with text content, but you want the text to disappear to see the background image instead.
+Compass provides several resources to ease a daily task: image replacement. When you have an element with text content, but you want the text to disappear to see the background image instead.
 
 ```scss
 .element {
@@ -262,4 +262,4 @@ _The `hide-text()` mixin takes a direction as a parameter. The default one is `l
 
 ## Final words
 
-So people, how many of these features did you know? If you have some free time, I highly recommend you to dig into [Compass documentation](https://compass-style.org/reference/compass/). You’d be surprised how little you know about the framework in most cases.
+So people, how many of these features did you know? If you have some free time, I highly recommend you to dig into Compass documentation. You’d be surprised how little you know about the framework in most cases.

@@ -125,7 +125,7 @@ Before going to the last line, let’s have a look at the `to-int` function:
 
 For every character, we isolate it (`$char`) and convert it to its numeric equivalent (`$charVal`) thanks to the `$chars` array. Then, we multiply this number to the base raised to the reversed index in the string. That may sound a little complicated, let me rephrase it: in base 10, `426` equals `4*10^2` + `2*10^1` + `6*10^0`. That’s pretty much what we do here, except instead of `10` we use the base, and instead of `2`, `1` and `0`, we use the length of string minus the index of the current character.
 
-The `pow()` function used to raise a value to an exponent is part of [Compass Math helpers](https://compass-style.org/reference/compass/helpers/math/). In case you don’t want to use Compass or simply can’t use Compass, here is the `pow()` function in pure Sass:
+The `pow()` function used to raise a value to an exponent is part of Compass Math helpers. In case you don’t want to use Compass or simply can’t use Compass, here is the `pow()` function in pure Sass:
 
 ```scss
 @function pow($val, $pow) {

@@ -349,7 +349,7 @@ We’ll skip `draw-curve-wrapper` since it does nothing more than a couple of bo
 
 Regarding `draw-control-points` now, it gets called only if `control-points` key from map is truthy. Controls points are the blue and red dots, as well as the lines joining the dots to the corners of the graph.
 
-The way they are drawn are kind of tricky I must say (also quite complicated, so I won’t display the code here). Basically, it consists on two pseudo-elements with their diagonal displayed thanks to a linear-gradient and some geometry magic using `atan` function ([from Compass](https://compass-style.org/reference/compass/helpers/math/#atan)).
+The way they are drawn are kind of tricky I must say (also quite complicated, so I won’t display the code here). Basically, it consists on two pseudo-elements with their diagonal displayed thanks to a linear-gradient and some geometry magic using `atan` function (from Compass).
 
 {% callout %}If you don’t use Compass, you can use [this (Ruby) implementation](https://github.com/at-import/Sassy-math/blob/60d130108bcd20c5cd5aa50b52505afab9a40519/compass/lib/sassy-math.rb#L136) from Sassy-Math, or [this (Sass) one](https://thesassway.herokuapp.com/advanced/inverse-trigonometric-functions-with-sass#coding-the-atan-function) from Ana Tudor.{% endcallout %}
 

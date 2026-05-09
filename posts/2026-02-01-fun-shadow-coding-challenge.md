@@ -7,7 +7,7 @@ tags:
   - Shadow DOM
 ---
 
-[Andy Bell shared a little CSS challenge](https://bell.bz/fun-shadow-coding-challenge/). The idea: a scroll-driven scene where a central light source affects the shadow direction of a box. His original prototype is from 8 years ago, and relies heavily on JavaScript to dynamically adjust the shadow. He wondered what we could do today with modern CSS.
+Andy Bell shared [a little CSS challenge](https://bell.bz/fun-shadow-coding-challenge/). The idea: a scroll-driven scene where a central light source affects the shadow direction of a box. His original prototype is from 8 years ago, and relies heavily on JavaScript to dynamically adjust the shadow. He wondered what we could do today with modern CSS.
 
 [I gave it a go](https://codepen.io/KittyGiraudel/pen/pvbaKBy?editors=0010). Scroll the demo and the shadow should adjust to where the “light” is.
 

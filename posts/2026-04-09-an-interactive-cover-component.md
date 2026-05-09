@@ -102,7 +102,7 @@ To avoid abruptly going from one state to another, we use CSS transitions to tra
 So far, everything works only on hover, and I wanted to add support for keyboard navigation. I’ve decided to apply `tabindex="0"` to the cover, and adjust the CSS selectors to account for focus.
 
 ```css
-.Cover:is(:hover, :focus-visible) {
+.Cover:where(:hover, :focus-visible) {
 	/* … */
 }
 ```
@@ -114,7 +114,7 @@ Fair warning: I actually don’t know if using `tabindex="0"` is appropriate her
 In some instances, I have a variant of this component with just the title, no text. In that case, there is nothing to reveal, so we shouldn’t apply our interactive styles. This can be done by ensuring there is a non-empty description. 
 
 ```css
-.Cover:has(.Cover__description:not(:empty)):is(:hover, :focus-visible) {
+.Cover:has(.Cover__description:not(:empty)):where(:hover, :focus-visible) {
 	/* … */
 }
 ```

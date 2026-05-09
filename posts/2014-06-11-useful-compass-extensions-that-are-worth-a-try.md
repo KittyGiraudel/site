@@ -7,7 +7,7 @@ tags:
 deprecated: true
 ---
 
-[Compass](http://compass-style.org/) is a great Sass framework. Not only because it provides a hundred useful mixins and functions and a sprite builder, but also because it allows authors to build their own extensions, thus use other authors’ ones.
+Compass is a great Sass framework. Not only because it provides a hundred useful mixins and functions and a sprite builder, but also because it allows authors to build their own extensions, thus use other authors’ ones.
 
 A Compass extension is some kind of bundle packed as a gem, that can be installed, imported then used in your Sass stylesheets. Installing a Compass extension is a 3-step process:
 
@@ -133,7 +133,7 @@ So this is great! No matter how you decide to tackle the issue on the HTML front
 
 ## SassyIcons
 
-[SassyIcons](https://github.com/pascalduez/SassyIcons) is a Sass tool that aims at helping to deal with icon sprites, SVG, PNG fallbacks, cross-browser support and all that sort of difficult stuff. Basically, it’s a wrapper for the [Compass sprite API](http://compass-style.org/help/tutorials/spriting/), using Modernizr classes.
+[SassyIcons](https://github.com/pascalduez/SassyIcons) is a Sass tool that aims at helping to deal with icon sprites, SVG, PNG fallbacks, cross-browser support and all that sort of difficult stuff. Basically, it’s a wrapper for the Compass sprite API, using Modernizr classes.
 
 It was designed by [Pascal Duez](https://twitter.com/pascalduez) and, unlike many extensions, was tested on live projects, so you can be sure it’s rock solid by now.
 

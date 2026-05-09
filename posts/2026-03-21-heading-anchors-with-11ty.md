@@ -50,7 +50,7 @@ function injectHeadingAnchors(content, outputPath) {
 	let anchorIndex = 0
 
 	// Find all headings we want an anchor for
-	$('.Post :is(h2, h3, h4)[id]:not([data-ha-exclude])').each((_, el) => {
+	$('.Post :where(h2, h3, h4)[id]:not([data-ha-exclude])').each((_, el) => {
 		const $heading = $(el)
 		const text = $heading.text().trim()
 		const anchorName = `--ha_0_${anchorIndex++}`

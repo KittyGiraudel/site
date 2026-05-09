@@ -69,7 +69,7 @@ I didn’t know how to call this section because it gathers various tools doing 
 
 Not so long ago I gave a try to CSS preprocessors, because I am both curious and a CSS lover. It turned out I like CSS preprocessors, they give a lot more options than regular CSS.
 
-Anyway, I am using [Sass](https://sass-lang.com/) and [Compass](https://compass-style.org/) on most of my projects now. As an example, this site is built on Sass.
+Anyway, I am using [Sass](https://sass-lang.com/) and Compass on most of my projects now. As an example, this site is built on Sass.
 
 I am running Sass through the command line. Yes, it’s scary. But actually it is really not that hard. I would like to have some sort of application taking care of everything for me like [CodeKit](https://codekitapp.com/), unfortunately I am not always on Mac OS plus CodeKit is not free ($25). If I was always using the same development environment, I would definitely buy CodeKit but sadly I am not.
 
