@@ -1,0 +1,120 @@
+article :where(li, p) a::before {
+	background-position: 0;
+	background-repeat: no-repeat;
+	background-size: 0.5lh;
+	width: 0.5lh;
+	height: 0.5lh;
+	display: inline-block;
+	vertical-align: middle;
+	margin-inline-end: 0.5ch;
+	transform: translateY(-0.05lh);
+}
+
+article :where(li, p) a[href*="github."]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:github-icon.svg");
+}
+
+article :where(li, p) a:where([href*="twitter.com"], [href*="x.com"])::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:twitter.svg");
+}
+
+article :where(li, p) a[href*="sitepoint.com"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:sitepoint.svg");
+}
+
+article :where(li, p) a[href*="codepen.io"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:codepen-icon.svg");
+}
+
+article :where(li, p) a[href*="w3.org"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/vscode-icons:file-type-css.svg");
+}
+
+article :where(li, p) a[href*="css-tricks.com"]::before {
+	content: "";
+	background-image: url("https://css-tricks.com/favicon.svg");
+}
+
+article :where(li, p) a[href*="developer.mozilla.org"]::before {
+	content: "";
+	background-image: url("https://www.google.com/s2/favicons?domain=developer.mozilla.org&sz=48");
+}
+
+article :where(li, p) a[href*="wikipedia.org"]::before {
+	content: "";
+	background-image: url("https://www.wikipedia.org/static/favicon/wikipedia.ico");
+}
+
+article :where(li, p) a:where([href*="sass-guidelin.es"], [href*="sass-lang.com"])::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:sass.svg");
+}
+
+article :where(li, p) a[href*="sassdoc.es"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:sassdoc.svg");
+}
+
+article :where(li, p) a[href*="tympanus.net"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:codrops.svg");
+}
+
+article :where(li, p) a[href*="11ty.dev"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:eleventy.svg");
+}
+
+article :where(li, p) a[href*="caniuse.com"]::before {
+	content: "";
+	background-image: url("https://caniuse.com/img/favicon-128.png");
+}
+
+article :where(li, p) a[href*="cypress.io"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:cypress-icon.svg");
+}
+
+article :where(li, p) a[href*="sanity.io"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:sanity.svg");
+}
+
+article :where(li, p) a[href*="nextjs.org"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:nextjs-icon.svg");
+}
+
+article :where(li, p) a[href*="stackoverflow.com"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:stackoverflow-icon.svg");
+}
+
+article :where(li, p) a[href*="npmjs.com"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:npm.svg");
+}
+
+article :where(li, p) a[href*="biomejs.dev"]::before {
+	content: "";
+	background-image: url("https://api.iconify.design/logos:biomejs-icon.svg");
+}
+
+article :where(li, p) a:where([href^="/"], [href*="kittygiraudel.com"])::before {
+	content: "";
+	background-image: url("/favicon.ico");
+	border-radius: 50%;
+}
+
+article :where(li, p) a:where([href^="#"])::before {
+	content: "";
+	background-image: url(https://api.iconify.design/mdi:hashtag.svg?color=%2300000055);
+	@media (prefers-color-scheme: dark) {
+		background-image: url(https://api.iconify.design/mdi:hashtag.svg?color=%23ffffffaa);
+	}
+}
