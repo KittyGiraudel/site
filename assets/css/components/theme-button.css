@@ -10,3 +10,7 @@
 .ThemeButton[aria-pressed="true"] > .ThemeButton__icon:not([data-theme="dark"]) {
 	display: none;
 }
+
+.ThemeButton[hidden] {
+	display: none;
+}
