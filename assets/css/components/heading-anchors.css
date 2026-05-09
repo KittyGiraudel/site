@@ -4,7 +4,7 @@
 	opacity: 0;
 }
 
-.ha:is(:focus-within, :hover) {
+.ha:where(:focus-within, :hover) {
 	opacity: 1;
 }
 

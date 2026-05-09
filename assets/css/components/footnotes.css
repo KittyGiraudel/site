@@ -3,7 +3,7 @@
  *    slightly more purple-ish hue which looks better than the typical blue.
  */
 .Footnotes {
-	margin-block: var(--vb);
+	margin-block: var(--vb-1\.5) var(--vb);
 	padding: 0.75em 1.5em;
 	position: relative;
 	background-color: light-dark(#f6f4f9, #303132); /* 1 */

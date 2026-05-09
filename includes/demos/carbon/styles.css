@@ -180,7 +180,7 @@
   white-space: nowrap;
 }
 
-.range-toggle label:is(:hover, :focus-visible) {
+.range-toggle label:where(:hover, :focus-visible) {
   border-color: var(--viz-accent);
   color: var(--viz-accent);
   background: rgba(37, 99, 235, 0.04);

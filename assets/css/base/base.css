@@ -38,18 +38,21 @@
  * ❌ = Not natively available.
  */
 :root {
-	color-scheme: light dark;
-
+	/* Colors */
 	--pink: #dd7eb4;
 	--blue: #267cb9;
 	--page-background: light-dark(#faf9fb, #252324);
 	--embed-background-pink: light-dark(#fffafd, #322d2f);
 	--embed-background-blue: light-dark(#f3f8fc, #303132);
+
+	/* Fonts */
 	--code-font: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
 	--typography-font:
 		"Lucida Bright", "Perpetua", "Times", "Times New Roman", "Palatino", "Bookman",
 		"New Century Schoolbook", serif;
 	--body-font: "Baskerville Ampersand", "Baskerville", var(--typography-font);
+
+	/* Spacing */
 	--vb: 1.5em;
 	--vb-half: calc(var(--vb) / 2);
 	--vb-third: calc(var(--vb) / 3);
@@ -58,17 +61,42 @@
 	--vb-thirds: calc(var(--vb) * 2 / 3);
 	--vb-1\.5: calc(var(--vb) * 1.5);
 	--vb-double: calc(var(--vb) * 2);
+
+	/* Miscellaneous */
 	--margin-offset: 2rem;
 
+	/* Z-index */
 	--z-set: 0;
 	--z-top: 10;
 }
 
+:root {
+	color-scheme: light dark;
+}
 [data-theme="dark"] {
 	color-scheme: dark;
 }
 [data-theme="light"] {
 	color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	/**
+	 * 1. Disable all transitions and animations, but make sure they still run to
+	 *    preserve things like onanimationend events.
+	 */
+	*,
+	::before,
+	::after {
+		transition-duration: 0.01ms !important; /* 1 */
+		animation-duration: 0.01ms !important; /* 1 */
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
 }
 
 /**
@@ -78,15 +106,6 @@
 html {
 	box-sizing: border-box; /* 1 */
 	overflow-x: hidden; /* 2 */
-}
-
-@media (prefers-reduced-motion: reduce) {
-	*,
-	::before,
-	::after {
-		transition-duration: 0ms !important;
-		animation-duration: 0ms !important;
-	}
 }
 
 /**
@@ -103,7 +122,8 @@ html {
 
 /**
  * 1. Reset default margin.
- * 2. Enable fluid typography.
+ * 2. Enable fluid typography (as a separate property so it can fallback to the
+ *    `font` declaration if not supported).
  */
 body {
 	margin: 0; /* 1 */
@@ -111,6 +131,7 @@ body {
 	font-size: min(max(1.25rem, 4vw), 1.4rem); /* 2 */
 	color: light-dark(#444, #eee);
 	background-color: var(--page-background);
+	text-wrap: pretty;
 }
 
 hr {
@@ -128,6 +149,17 @@ h2,
 h3 {
 	margin-block: var(--vb) var(--vb-third);
 	scroll-margin-top: var(--vb-half); /* 1 */
+}
+
+h4 {
+	margin-block: var(--vb-third);
+}
+
+/**
+ * 1. Reduce the gap between back-to-back headings.
+ */
+h2 + .ha + h3 {
+	margin-block-start: 0; /* 1 */
 }
 
 p {
@@ -174,7 +206,7 @@ ul ul {
 }
 
 /**
- * 1. Warning, potentially dangerous if using inline images.
+ * 1. Warning: potentially dangerous if using inline images.
  */
 img {
 	max-inline-size: 100%;
@@ -184,7 +216,6 @@ img {
 }
 
 a:not(.NoBackground) {
-	outline: 0;
 	color: inherit;
 	text-decoration: none;
 	-webkit-box-decoration-break: clone;
@@ -200,9 +231,7 @@ a:not(.NoBackground) {
 	transition: background-size 250ms ease-in;
 }
 
-a:not(.NoBackground):hover,
-a:not(.NoBackground):active {
-	color: light-dark(#222, #ccc);
+a:not(.NoBackground):where(:hover, :active) {
 	background-size: 100% 88%;
 }
 
@@ -230,7 +259,7 @@ a:visited {
 }
 
 /**
- * 1. Strong elements can be quite in your face, and they can look jarring next
+ * 1. Strong elements can be quite in-your-face, and they can look jarring next
  *    to titles especially, so this should soften them a little bit.
  */
 strong {

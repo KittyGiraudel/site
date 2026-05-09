@@ -45,7 +45,7 @@
 		color: #ccbdbd;
 	}
 
-	.List__item:is(:hover, :focus-within)::before {
+	.List__item:where(:hover, :focus-within)::before {
 		opacity: 0.8;
 	}
 }
