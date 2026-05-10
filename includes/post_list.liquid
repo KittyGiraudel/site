@@ -11,12 +11,22 @@
     {% assign data = item.data %}
     
     <li class="List__item"{% if data.archive_post_number %} data-index="{{ data.archive_post_number }}"{% endif %}>
+      {% if data.layout == "post" %}
       <span class="List__secondary-content">
         {{ item.date | time }}
         {% if data.guest %} by {{ data.guest }}{% endif %}
         {% if data.external %} at {{ data.external.host }}{% endif %}
       </span>
-    
+      {% elsif data.layout == "snippet" and data.date %}
+      <span class="List__secondary-content">
+        {{ data.date | time }}
+      </span>
+      {% else %}
+      <span class="List__secondary-content List__secondary-content--label">
+        {{ data.layout | capitalize }}
+      </span>
+      {% endif %}
+
       <span class="List__primary-content">
       {% if data.external %}
         <a {% if data.lang %}hreflang="{{ data.lang | downcase }}"
@@ -31,12 +41,11 @@
           {{ data.title }}
         </a>
       {% endif %}
-    </span>
+      </span>
 
       {% if data.tags %}
         {% render "tags.liquid", tags: data.tags %}
       {% endif %}
     </li>
-  
   {% endfor %}
 </ul>

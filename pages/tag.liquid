@@ -43,4 +43,11 @@ I hope you find what you’re looking for. 🚀 If looking for something specifi
 
 {{ intro | renderContent: "md" }}
 
+{% comment %}
+ Put projects first because they do not have a date.
+{% endcomment %}
+{% assign projects = items | where: "layout", "project" %}
+{% assign dated_items = items | where: "layout", "project", "not" %}
+{% assign items = projects | concat: dated_items %}
+
 {% render "post_list.liquid", items: items %}

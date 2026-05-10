@@ -25,6 +25,12 @@
 	font-family: var(--code-font);
 }
 
+.List__secondary-content--label {
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	font-size: 60%;
+}
+
 .List__item[data-index] {
 	position: relative;
 }

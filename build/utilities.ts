@@ -59,11 +59,16 @@ function where<T extends Record<string, unknown>>(
 	array: Array<T | { data?: T }>,
 	key: keyof T | string,
 	value?: unknown,
+	operator?: 'not',
 ): Array<T | { data?: T }> {
+	const isNot = operator === 'not'
+
 	return array.filter(item => {
 		const data: Record<string, unknown> = (item?.data ?? item) as Record<string, unknown>
 		const normalizedKey = String(key)
-		return typeof value === 'undefined' ? normalizedKey in data : data[normalizedKey] === value
+		const matches =
+			typeof value === 'undefined' ? normalizedKey in data : data[normalizedKey] === value
+		return isNot ? !matches : matches
 	})
 }
 
