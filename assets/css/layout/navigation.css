@@ -9,7 +9,7 @@
 	position: relative; /* 2 */
 
 	--navigation-notch-start: 0px;
-	--navigation-notch-width: 0px;
+	--navigation-notch-scale: 0;
 	--navigation-notch-opacity: 0;
 	--navigation-notch-offset: 4px;
 	--navigation-notch-transition-duration: 300ms;
@@ -49,13 +49,14 @@
 	inset-block-start: calc(100% - 1px);
 	inset-inline-start: 0;
 	height: calc(var(--underline-height) + 2px); /* 2 */
-	width: calc(var(--navigation-notch-width) + var(--navigation-notch-offset) * 2);
+	width: 100%;
 	background-color: var(--page-background); /* 3 */
-	transform: translateX(calc(var(--navigation-notch-start) - var(--navigation-notch-offset)));
+	transform: translateX(calc(var(--navigation-notch-start) - var(--navigation-notch-offset)))
+		scaleX(var(--navigation-notch-scale));
+	transform-origin: left center;
 	opacity: var(--navigation-notch-opacity);
 	transition:
 		transform var(--navigation-notch-transition-duration) ease,
-		width var(--navigation-notch-transition-duration) ease,
 		opacity 100ms var(--navigation-notch-transition-duration) ease-out;
 	pointer-events: none;
 	z-index: calc(var(--z-set) + 1);

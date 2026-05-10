@@ -104,12 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			const navigationRect = navigation.getBoundingClientRect()
 			const linkRect = link.getBoundingClientRect()
+			const notchOffset =
+				parseFloat(getComputedStyle(navigation).getPropertyValue('--navigation-notch-offset')) || 0
+			const notchWidth = Math.round(linkRect.width + notchOffset * 2)
+			const notchScale = navigationRect.width ? notchWidth / navigationRect.width : 0
 
 			navigation.style.setProperty(
 				'--navigation-notch-start',
 				`${Math.round(linkRect.left - navigationRect.left)}px`,
 			)
-			navigation.style.setProperty('--navigation-notch-width', `${Math.round(linkRect.width)}px`)
+			navigation.style.setProperty('--navigation-notch-scale', notchScale.toString())
 			navigation.style.setProperty('--navigation-notch-opacity', '1')
 			currentLink = link
 		}
