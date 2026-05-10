@@ -8,11 +8,11 @@
 	padding-inline: 1em;
 	position: relative; /* 2 */
 
-	--navigation-notch-start: 0px;
-	--navigation-notch-scale: 0;
-	--navigation-notch-opacity: 0;
-	--navigation-notch-offset: 4px;
-	--navigation-notch-transition-duration: 300ms;
+	--notch-start: 0px;
+	--notch-scale: 0;
+	--notch-opacity: 0;
+	--notch-offset: 4px;
+	--notch-transition-duration: 300ms;
 	--underline-height: 4px;
 }
 
@@ -20,7 +20,7 @@
  * 1. Disable the notch effect when there is no active item in the menu.
  */
 .Navigation.Navigation:not([popover]):not(:has([aria-current])) {
-	--navigation-notch-opacity: 0 !important; /* 1 */
+	--notch-opacity: 0 !important; /* 1 */
 }
 
 /**
@@ -51,13 +51,12 @@
 	height: calc(var(--underline-height) + 2px); /* 2 */
 	width: 100%;
 	background-color: var(--page-background); /* 3 */
-	transform: translateX(calc(var(--navigation-notch-start) - var(--navigation-notch-offset)))
-		scaleX(var(--navigation-notch-scale));
+	transform: translateX(calc(var(--notch-start) - var(--notch-offset))) scaleX(var(--notch-scale));
 	transform-origin: left center;
-	opacity: var(--navigation-notch-opacity);
+	opacity: var(--notch-opacity);
 	transition:
-		transform var(--navigation-notch-transition-duration) ease,
-		opacity 100ms var(--navigation-notch-transition-duration) ease-out;
+		transform var(--notch-transition-duration) ease,
+		opacity 100ms var(--notch-transition-duration) ease-out;
 	pointer-events: none;
 	z-index: calc(var(--z-set) + 1);
 }
