@@ -142,6 +142,7 @@ function showIndexError(indexErrorEl, noResultsEl, resultsList, resultsRegion) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+	const form = document.querySelector('#search-form')
 	const input = document.querySelector('#search-input')
 	const resultsList = document.querySelector('#search-list')
 	const noResultsEl = document.querySelector('#search-empty')
@@ -153,6 +154,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 	if (!input || !resultsList || !noResultsEl || !resultsRegion || !resultTemplate || !tagTemplate) {
 		return
 	}
+
+	form.hidden = false
 
 	const engine = await Search.from({ source: '/blog/search/data.json', max: 20 })
 	if (!engine) return showIndexError(indexErrorEl, noResultsEl, resultsList, resultsRegion)

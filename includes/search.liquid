@@ -3,12 +3,16 @@
 {% endcomment %}
 
 <noscript>
+{% renderTemplate "liquid" %}
+{% callout "warning" %}
   Unfortunately this site has no server-side search available, so please enable
   JavaScript in your browser to be able to use the provided search engine.
+{% endcallout %}
+{% endrenderTemplate %}
 </noscript>
 
-<search class="Search">
-  <form id="search-form" action="/blog/search/" method="get">
+<search class="Search" >
+  <form id="search-form" action="/blog/search/" method="get" hidden>
     <label for="search-input" class="Search__label visually-hidden">
       Search blog archive
     </label>
