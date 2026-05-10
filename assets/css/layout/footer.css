@@ -6,6 +6,7 @@
 		light-dark(rgb(238 244 248), rgb(54 60 63)),
 		light-dark(rgb(251 243 248), rgb(46 38 42))
 	);
+	margin-block-start: auto;
 }
 
 .Footer__inner {

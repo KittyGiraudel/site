@@ -106,6 +106,7 @@
 html {
 	box-sizing: border-box; /* 1 */
 	overflow-x: hidden; /* 2 */
+	height: 100%;
 }
 
 /**
@@ -132,6 +133,10 @@ body {
 	color: light-dark(#444, #eee);
 	background-color: var(--page-background);
 	text-wrap: pretty;
+	height: inherit;
+
+	display: flex;
+	flex-direction: column;
 }
 
 hr {
