@@ -1,9 +1,8 @@
 import { execSync } from 'node:child_process'
 
-let cache = {
-	head: null,
-	dates: {},
-}
+const cacheKey = Symbol.for('kittygiraudel.gitDatesCache')
+globalThis[cacheKey] ??= { head: null, dates: {} }
+const cache = globalThis[cacheKey]
 
 function getHead() {
 	return execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim()
@@ -53,6 +52,7 @@ export default function () {
 		// Git unavailable or not a repo
 	}
 
-	cache = { head, dates }
+	cache.head = head
+	cache.dates = dates
 	return dates
 }
