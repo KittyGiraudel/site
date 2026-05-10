@@ -164,7 +164,7 @@ test('page head: home', async () => {
 		path: '/',
 		title: 'Kitty says hi.',
 		description:
-			'Transfeminine web engineer and engineering leader based in Berlin, focused on accessibility, diversity and inclusion.',
+			'Transfeminine web developer and engineering leader based in Berlin, focused on accessibility, diversity and inclusion.',
 		author: siteAuthor,
 		ogType: 'website',
 		keywords: 'author,speaker,developer,accessibility,diversity,trans',

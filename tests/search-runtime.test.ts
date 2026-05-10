@@ -36,7 +36,7 @@ function buildMockSearchDom() {
 	const window = parseHTML(`
 		<html>
 			<body>
-				<form>
+				<form id="search-form">
 					<input id="search-input" type="search">
 				</form>
 				<section id="search-region" aria-busy="true">
