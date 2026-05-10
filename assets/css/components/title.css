@@ -1,6 +1,6 @@
 .Title {
 	color: var(--pink);
-	font-size: 225%;
+	font-size: clamp(225%, 135% + 4.5vw, 350%);
 	font-weight: normal;
 	line-height: 1.15;
 	margin: 0;
@@ -8,12 +8,6 @@
 	background-image: linear-gradient(to right, var(--pink), var(--blue));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-}
-
-@media (min-width: 768px) {
-	.Title {
-		font-size: 350%;
-	}
 }
 
 /**

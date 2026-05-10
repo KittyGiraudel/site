@@ -5,15 +5,9 @@
  */
 .Container {
 	max-inline-size: 80ch; /* 1 */
-	padding-inline: 1em; /* 2 */
+	padding-inline: clamp(1em, 5vw, 2em); /* 2 */
 	width: 100%; /* 1 */
 	margin-inline: auto;
-}
-
-@media (min-width: 768px) {
-	.Container {
-		padding-inline: 2em;
-	}
 }
 
 /**
