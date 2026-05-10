@@ -64,9 +64,8 @@ export default defineConfig(config => {
 	config.addPassthroughCopy({
 		'node_modules/baseline-status/baseline-status.min.js':
 			'assets/js/vendors/baseline-status.min.js',
-	})
-	config.addPassthroughCopy({
 		'node_modules/grid-rows-masonry/dist/masonry.js': 'assets/js/vendors/masonry.js',
+		'node_modules/charts.css/dist/charts.min.css': 'assets/css/vendors/charts.css',
 	})
 
 	// CSS and JavaScript are inlined in HTML for performance reasons. The problem

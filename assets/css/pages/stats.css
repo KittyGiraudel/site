@@ -7,6 +7,39 @@
 	position: relative;
 }
 
+.StatsSection__chart {
+	background-color: var(--embed-background-pink);
+	border: 2px solid light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
+	border-radius: 1em;
+	corner-shape: squircle;
+	margin-block: 1em;
+	padding: 2em 1em 1em;
+}
+
+.charts-css.StatsChart {
+	font-size: clamp(0.8rem, 0.65rem + 0.5vw, 1rem);
+	--labels-size: 2rem;
+}
+
+.charts-css.StatsChart.show-labels tbody tr th {
+	font-weight: normal;
+	width: 2ch;
+	margin-inline: auto;
+	line-height: 1;
+}
+
+.StatsSection__chart .charts-css.StatsChart--posts tbody tr td {
+	border-radius: 0.25em 0.25em 0 0;
+}
+
+@media (min-width: 768px) {
+	.charts-css.StatsChart.show-labels tbody tr th {
+		width: auto;
+		margin-inline: 0;
+		--labels-size: 1.5rem;
+	}
+}
+
 @media (min-width: 1024px) {
 	.StatsSection__table {
 		width: calc(100% + var(--margin-offset) * 2);
@@ -14,10 +47,18 @@
 		inset-inline-start: calc(var(--margin-offset) * -1);
 	}
 
-	.StatsSection__table table {
+	.StatsSection__table table,
+	.StatsSection__chart table {
 		position: static;
 		width: 100%;
 		inset-inline-start: 0;
+	}
+
+	.StatsSection__chart {
+		width: calc(100% + var(--margin-offset) * 2);
+		padding-inline: var(--margin-offset);
+		inset-inline-start: calc(var(--margin-offset) * -1);
+		position: relative;
 	}
 }
 

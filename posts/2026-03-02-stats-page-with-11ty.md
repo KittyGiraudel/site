@@ -5,6 +5,9 @@ tags:
   - Eleventy
   - JavaScript
   - Liquid
+edits:
+  - date: 2026-05-10
+    md: I have removed one of the charts from the [stats page](/stats/), and replaced the other with [charts.css](https://chartscss.org), a pure CSS enhancement of a data table, which requires no JavaScript whatsoever. As such, the section on [data visualization](#displaying-graphs) is outdated.
 ---
 
 The nice thing about having blogged for so long is that there is a lot of data to play with! I was curious whether I could pull some vanity metrics from all my writing and yes, it’s certainly possible! I’ll show how I’ve done it.
@@ -220,7 +223,101 @@ chart.render()
 
 Tadaaaa! Pretty cool if you ask me! The huge bump in 2020 is because I released my [accessibility advent calendar](/2020/12/01/a11y-advent-calendar) that year, which added 31 posts to the count. As for 2025, well I just didn’t write at all besides my year in review. Fortunately I’m correcting that this year!
 
-{% include "script.liquid", partials: "utilities, stats", inline: true %}
+<script>
+/**
+ * Match site theme for charts. Tooltip defaults are light while body text uses
+ * light-dark(); without this, dark mode yields pale text on a pale tooltip.
+ * Mirrors ThemeManager (including before main.js calls mount()).
+ */
+function statsChartThemeMode() {
+    const tm = window.ThemeManager
+    if (tm?.themes) {
+        const { themes } = tm
+        const pref = tm.theme
+        if (pref === themes.DARK) return 'dark'
+        if (pref === themes.LIGHT) return 'light'
+    }
+    if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) return 'dark'
+    return 'light'
+}
+ 
+function statsChartTheme() {
+    return { mode: statsChartThemeMode() }
+}
+ 
+function statsChartSurface() {
+    return {
+        theme: statsChartTheme(),
+        chart: { background: 'transparent' },
+    }
+}
+ 
+function bindStatsChartsThemeListener(charts) {
+    if (!window.ThemeManager?.onThemeChanged || charts.length === 0) return
+    window.ThemeManager.onThemeChanged(() => {
+        charts.forEach(chart => {
+            chart.updateOptions(statsChartSurface())
+        })
+    })
+}
+ 
+document.addEventListener('DOMContentLoaded', () => {
+    const years = window.__STATS_YEARS__ || []
+    const postsPerYearEl = document.querySelector('#stats-posts-per-year')
+ 
+    if (!Array.isArray(years) || years.length === 0) return
+    if (!postsPerYearEl) return
+ 
+    const init = () => {
+        if (!window.ApexCharts) return
+        const charts = []
+        if (postsPerYearEl) charts.push(renderPostsPerYearChart(postsPerYearEl, years))
+        bindStatsChartsThemeListener(charts.filter(Boolean))
+    }
+ 
+    if (typeof loadJS === 'function' && !window.ApexCharts) {
+        loadJS('https://cdn.jsdelivr.net/npm/apexcharts', init)
+    } else if (window.ApexCharts) {
+        init()
+    }
+})
+ 
+function renderPostsPerYearChart(container, years) {
+    if (!window.ApexCharts) return
+ 
+    const categories = years.map(year => String(year.year))
+    const counts = years.map(year => year.postCount)
+ 
+    if (!categories.length) return
+ 
+    const surface = statsChartSurface()
+    const chart = new ApexCharts(container, {
+        ...surface,
+        chart: { ...surface.chart, type: 'bar' },
+        series: [{ name: 'Posts', data: counts }],
+        xaxis: { categories },
+        dataLabels: { enabled: true },
+        tooltip: { y: { formatter } },
+        plotOptions: { bar: { horizontal: false } },
+        responsive: [
+            {
+                breakpoint: 768,
+                options: {
+                    plotOptions: { bar: { horizontal: true } },
+                    legend: { position: 'bottom' },
+                },
+            },
+        ],
+    })
+ 
+    chart.render()
+    return chart
+}
+ 
+function formatter(value) {
+    return value === 1 ? '1 post' : `${value} posts`
+}
+</script>
 {% endif %}
 
 ## Wrapping up

@@ -20,6 +20,7 @@
 		"@sindresorhus/slugify": "^3.0.0",
 		"11ty.ts": "^0.0.7",
 		"baseline-status": "^1.1.1",
+		"charts.css": "^1.2.0",
 		"cheerio": "^1.2.0",
 		"eleventy-plugin-footnotes": "^0.11.0",
 		"emoji-regex": "^10.6.0",

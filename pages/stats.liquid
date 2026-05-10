@@ -8,12 +8,14 @@ eleventyImport:
     - posts
 ---
 
+<link data-helmet rel="stylesheet" href="/assets/css/vendors/charts.css" />
+
 {% render "styles.liquid",
   inline: site.configuration.inline_assets,
   partials: "
-    pages/stats,
     components/table,
-    components/tags
+    components/tags,
+    pages/stats
   "
 %}
 
@@ -98,15 +100,35 @@ eleventyImport:
   </section>
 
   {% if stats.years and stats.years.size > 0 %}
-    <section class="StatsSection">
-      <h2>Posts per year</h2>
-      <div class="StatsSection__chart" id="stats-posts-per-year"></div>
-    </section>
+    {% assign maxPostCount = 1 %}
+    {% assign maxWordCount = 1 %}
+    {% assign maxParagraphCount = 1 %}
+
+    {% for year in stats.years %}
+      {% if year.postCount > maxPostCount %}
+        {% assign maxPostCount = year.postCount %}
+      {% endif %}
+    {% endfor %}
 
     <section class="StatsSection">
-      <h2>Content over time</h2>
-      <div class="StatsSection__chart" id="stats-content-trends"></div>
+      <h2>Posts per year</h2>
+      <div class="StatsSection__chart" id="stats-posts-per-year">
+        <table class="charts-css column show-labels show-primary-axis show-4-secondary-axes data-spacing-1 data-outside StatsChart StatsChart--posts">
+          <caption>Posts per year</caption>
+          <tbody>
+            {% for year in stats.years %}
+              <tr>
+                <th scope="row">{{ year.year }}</th>
+                <td style="--size: calc({{ year.postCount }} / {{ maxPostCount }})">
+                  <span class="data">{{ year.postCount }}</span>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </section>
+
   {% endif %}
 
   {% if stats.popularTags.size > 0 %}
@@ -117,15 +139,4 @@ eleventyImport:
   {% endif %}
 {% else %}
   <p>No posts yet, nothing to show here.</p>
-{% endif %}
-
-{% if stats.years and stats.years.size > 0 %}
-  <script>
-    window.__STATS_YEARS__ = {{ stats.years | json }};
-  </script>
-
-  {% render "script.liquid",
-    inline: site.configuration.inline_assets,
-    partials: "utilities, stats"
-  %}
 {% endif %}
