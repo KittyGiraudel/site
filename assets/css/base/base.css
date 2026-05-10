@@ -187,14 +187,17 @@ li {
 }
 
 :where(ul, ol):not(.NoListMarker) > li {
-	padding-inline-start: 2rem;
+	padding-inline-start: 2.5rem;
 }
 
 :where(ul, ol):not(.NoListMarker) > li::before {
 	content: "— ";
 	position: absolute;
-	margin-inline-start: -2rem;
+	margin-inline-start: -2.5rem;
 	width: 2rem;
+	font-variant-numeric: tabular-nums;
+	color: light-dark(var(--blue), var(--pink));
+	font-weight: bold;
 }
 
 /**
@@ -202,8 +205,8 @@ li {
  *    See: https://kizu.dev/list-item-counter/
  */
 ol:not(.NoListMarker) > li::before {
-	content: counter(list-item) "."; /* 1 */
-	font-variant-numeric: tabular-nums;
+	content: counter(list-item, decimal-leading-zero) "."; /* 1 */
+	scale: 0.8;
 }
 
 ul ul {
