@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+	;(function setupSearchShortcut() {
+		const searchPath = '/blog/search/'
+
+		function isTypingTarget(target) {
+			return Boolean(target?.closest?.('input, textarea, select, [contenteditable]'))
+		}
+
+		document.addEventListener('keydown', event => {
+			if (event.defaultPrevented) return
+			if (!event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return
+			if (event.key.toLowerCase() !== 'k') return
+			if (isTypingTarget(event.target)) return
+			if (window.location.pathname === searchPath) return
+
+			event.preventDefault()
+			window.location.href = searchPath
+		})
+	})()
+
 	// https://joelcalifa.com/blog/revisiting-visited
 	;(function markVisitedLinks() {
 		localStorage.setItem(`visited-${window.location.pathname}`, true)
