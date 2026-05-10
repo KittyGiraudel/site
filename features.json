@@ -1,9 +1,9 @@
 {
 	"FETCH_GITHUB_STARS": ["production"],
-	"INJECT_HEADING_ANCHORS": ["development", "production"],
+	"INJECT_HEADING_ANCHORS": ["production"],
 	"PROCESS_HELMET": ["production"],
 	"INLINE_ASSETS": ["production"],
-	"RENDER_MARKDOWN_ALTERNATIVE": ["development", "production"],
+	"RENDER_MARKDOWN_ALTERNATIVE": ["production"],
 	"MINIFY_HTML": ["production"],
 	"INIT_SERVICE_WORKER": ["production"],
 	"HIGHLIGHT_CODE_BLOCKS": ["development", "production"],
