@@ -106,14 +106,6 @@ layout: default
       dev_mode: site.configuration.dev_mode
     %}
   </div>
-
-  {% comment %}
-  It’s not ideal having to render the theme button here instead of inside the 
-  default layout, but it should live within a landmark, so that’s kinda the only
-  option. The alternative is to place it inside the navigation, but it’s not 
-  semantically correct because it’s not a navigational element.
-  {% endcomment %}
-  {% render "theme_button.liquid" %}
 </main>
 
 {% render "script.liquid",
