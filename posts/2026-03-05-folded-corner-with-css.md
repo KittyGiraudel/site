@@ -35,10 +35,10 @@ The first thing we need is to crop our image so that its corner disappear. In a 
 ```css
 .ImageContainer {
 	clip-path: polygon(
-			0%    0%, /* Top left */
-		100%    0%, /* Top right */
-		100%  100%, /* Bottom right */
-			0%  100%  /* Bottom left */
+		0%     0%, /* Top left */
+		100%   0%, /* Top right */
+		100% 100%, /* Bottom right */
+		0%   100%  /* Bottom left */
 	);
 }
 ```
@@ -48,11 +48,11 @@ Then on hover, we want to actually apply a clip path:
 ```css
 .ImageContainer {
 	clip-path: polygon(
-		 30%    0%, /* Top edge */
+		30%     0%, /* Top edge */
 		100%    0%, /* Top right */
 		100%  100%, /* Bottom left */
-			0%  100%, /* Bottom right */
-			0%   25%  /* Left edge */
+		0%    100%, /* Bottom right */
+		0%     25%  /* Left edge */
 	);
 }
 ```
