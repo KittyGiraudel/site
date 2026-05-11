@@ -103,3 +103,10 @@
 		opacity: 0;
 	}
 }
+
+/**
+ * 1. Make sure back links do not have the # icon preceding them.
+ */
+.Footnotes__back-link::before {
+	content: none;
+}
