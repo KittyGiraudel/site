@@ -28,8 +28,7 @@ for something specific. Alternatively, you can browse tags to list all content
 related to a specific topic.
 {% endrenderTemplate %}
 
-{% include "tags.liquid", tags: collections.postStats.popularTags %}
-
+{% render "tags.liquid", tags: collections.postStats.popularTags %}
 
 {% render "search.liquid" %}
 
