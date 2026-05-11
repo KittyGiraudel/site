@@ -114,7 +114,10 @@ article :where(li, p) a:where([href^="/"], [href*="kittygiraudel.com"])::before 
 article :where(li, p) a:where([href^="#"])::before {
 	content: "";
 	background-image: url(https://api.iconify.design/mdi:hashtag.svg?color=%2300000055);
-	@media (prefers-color-scheme: dark) {
+}
+
+@media (prefers-color-scheme: dark) {
+	article :where(li, p) a:where([href^="#"])::before {
 		background-image: url(https://api.iconify.design/mdi:hashtag.svg?color=%23ffffffaa);
 	}
 }
