@@ -5,7 +5,6 @@ tags:
   - JavaScript
   - Liquid
   - HTML
-templateEngineOverride: md
 ---
 
 Yesterday, I published a post on [design tweaks](/2026/02/26/nerdy-design-details/) I have applied to this website. One thing I’ve improved is the ad placement. Yet, I was still not fully satisfied with how it worked, so I spent more time coming up with a better solution.
@@ -16,6 +15,7 @@ Historically, I used to rend the ad right below the page title. It wasn’t very
 
 In my first pass, I rendered it at the top of the article. It’s fine, it works, but what I wanted was to insert it *after* the first content block (like the first paragraph). As explained in the other article, I found a hacky solution with Liquid:
 
+{% raw %}
 ```liquid
 {% assign parts = content | split: "</p>" %}
 {{ parts | first }}</p>
@@ -26,6 +26,7 @@ In my first pass, I rendered it at the top of the article. It’s fine, it works
 	{{ part }}{% unless forloop.last %}</p>{% endunless %}
 {% endfor %}
 ```
+{% endraw %}
 
 This splits the content on `</p>` closing tags, renders the first one (plus its now missing `</p>` closing tag), then inject the ad component, and then iterate over each remaining content chunk, rendering them one by one with their missing `</p>` closing tag. It works, but it’s a bit ugly.
 
@@ -43,12 +44,14 @@ The nice thing about Eleventy is that you can write your own Liquid filters in p
 
 What if we created a filter that splits the content into 2 parts: the first content block on the page, and then the rest of the article. This way, we can inject the ad right between the two.
 
+{% raw %}
 ```liquid
 {% assign parts = content | split_content %}
 {{ parts[0] }}
 {% include "ad.liquid" %}
 {{ parts[1] }}
 ```
+{% endraw %}
 
 ```js
 config.addFilter('split_content', splitContent)

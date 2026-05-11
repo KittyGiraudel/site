@@ -23,7 +23,7 @@ description: All the posts that are tagged with “{{ tag }}”.
 ```
 {% endraw %}
 
-This ended up rendering `{{ tag }}` as a literal string, which is not what we want. Instead, we need to use the [`eleventyComputed` special property](https://www.11ty.dev/docs/data-computed/#using-a-template-string). This instructs Eleventy to resolve and inject our variables before returning the content.
+This ended up rendering {% raw %}`{{ tag }}`{% endraw %} as a literal string, which is not what we want. Instead, we need to use the [`eleventyComputed` special property](https://www.11ty.dev/docs/data-computed/#using-a-template-string). This instructs Eleventy to resolve and inject our variables before returning the content.
 
 {% raw %}
 ```liquid
@@ -63,7 +63,7 @@ I realized it would be nice to also tag snippets, and have them listed in the ta
 
 If I’m honest, the most difficult part of this whole thing was tagging the content. I have about 400 pages on that website, spanning back all the way to 2012 when I started writing. I made several attempts at tagging the content over the years, and every time I gave up because it was just too much of a chore.
 
-I tried to instruct an AI to do it, and it also failed. It extracted keywords from page titles, slugs and content, but ended up with very awkward results. Take this old [Bringing configuration objects to Sass](/2014/05/05/bring-configuration-objects-to-sass/) article from 2014 for instance. The AI agent would tag it with `configuration`, `objects`, `sass`. And although it’s not wrong per se, it’s also not helpful: I don’t want a “configuration” tag, let alone an “objects” one.
+I tried to instruct an AI to do it, and it also failed. It extracted keywords from page titles, slugs and content, but ended up with very awkward results. Take this old *[Bringing configuration objects to Sass](/2014/05/05/bring-configuration-objects-to-sass/)* article from 2014 for instance. The AI agent would tag it with `configuration`, `objects`, `sass`. And although it’s not wrong per se, it’s also not helpful: I don’t want a “configuration” tag, let alone an “objects” one.
 
 So I eventually accepted I had to bite the bullet and do it by hand. I’ve done several passes on it, and got to a satisfying result. There are very few lonely tags, which is something I wanted to avoid. Here are the top 20 tags:
 
