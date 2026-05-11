@@ -10,7 +10,7 @@ tags:
 
 {% assign footnote_every_article = "It’s not exactly true. Articles with a single heading do not get a table of contents, and a few articles got opted out for design reasons." %}
 
-Today, I’ve shipped a nice addition to this website: {% footnoteref "every-article" footnote_every_article %}every article{% endfootnoteref %} now has its own table of contents (→ if you’re on desktop, ↑ if you’re on mobile). Of course it would be unthinkable to do that by hand for hundreds of articles, so we’re going to use some Eleventy goodness.
+Today, I’ve shipped a nice addition to this website: {% footnoteref "every-article" footnote_every_article %}every article{% endfootnoteref %} now has its own table of contents. Of course it would be unthinkable to do that by hand for hundreds of articles, so we’re going to use some Eleventy goodness.
 
 This is not a novel idea. There are already [plugins](https://github.com/jdsteinbach/eleventy-plugin-toc) and [literature](https://stevenwoodson.com/blog/adding-a-table-of-contents-to-dynamic-content-in-11ty/) on the topic. Yet I wasn’t entirely satisfied with them, so I thought I would give it a go myself. If you would like to see the whole code at once, these changes went through a [pull-request](https://github.com/KittyGiraudel/site/pull/205).
 
