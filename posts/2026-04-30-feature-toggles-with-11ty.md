@@ -11,7 +11,7 @@ As my website grew, I noticed I started using more and more environment conditio
 - Rendering draft posts (development only).
 - Initializing the service worker (production only).
 - [Generating Markdown alternates for LLMs](/2026/03/11/serving-markdown-to-llms-with-11ty/) (production only).
-- [Inlining or minifying resources](/2020/12/03/inlining-scripts-and-styles-in-11ty/) (production only).
+- [Inlining](/2026/05/11/styles-in-11ty-again/) or [minifying resources](/2020/12/03/inlining-scripts-and-styles-in-11ty/) (production only).
 - Optimizing watch performance (development only).
 
 {% assign footnote_terminology = "I tend to call them “feature flags”, just out of habit. But I’ve written about this concept in <a href='/2024/07/22/feature-toggles-with-webpack/' style='font-style:italic'>Feature Toggles with Webpack</a> and I called them “toggles”, so I’ll keep using that word for consistency with the other article." %}
