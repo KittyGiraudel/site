@@ -6,13 +6,11 @@
   - user: The user of the pen
   - default_tab: The default tab of the pen
   - height: The height of the pen
-  - theme_id: The theme id of the pen
 {% endcomment %}
 
 {% ensure slug, "Required value 'slug' is missing in codepen.liquid" %}
 
 {% assign height = height | default: 380 %}
-{% assign theme_id = theme_id | default: 0 %}
 {% assign default_tab = default_tab | default: 'result' %}
 {% assign user = user | default: 'KittyGiraudel' %}
 {% assign title = title | default: slug %}

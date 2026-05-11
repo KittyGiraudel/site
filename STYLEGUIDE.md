@@ -393,7 +393,6 @@ Optional arguments:
 - `user`: CodePen username (defaults to `KittyGiraudel`).
 - `default_tab`: Initially opened tab (defaults to `result`).
 - `height`: Embed height in pixels (defaults to `380`).
-- `theme_id`: Theme identifier (defaults to `0`).
 
 Canonical usage:
 
