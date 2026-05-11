@@ -2,14 +2,7 @@
 layout: page
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/collection-navigation,
-    components/heading-anchors,
-    pages/recipe
-  "
-%}
+{% styles "pages/recipe" %}
 
 <article>
   <div>

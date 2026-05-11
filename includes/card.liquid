@@ -15,6 +15,8 @@
 {% ensure primary, "Required value 'primary' is missing in card.liquid" %}
 {% ensure secondary, "Required value 'secondary' is missing in card.liquid" %}
 
+{% styles "components/card" %}
+
 {% assign alt = image_alt | default: '' %}
 
 <div class="Card">

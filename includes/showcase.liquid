@@ -14,6 +14,8 @@
 {% ensure copy, "Required value 'copy' is missing in showcase.liquid" %}
 {% ensure items, "Required value 'items' is missing in showcase.liquid" %}
 
+{% styles "components/showcase" %}
+
 {% assign id = title | slugify %}
 
 <section class="Showcase" aria-labelledby="{{ id }}">

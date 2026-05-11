@@ -13,15 +13,6 @@ keywords:
 permalink: "/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/collection-navigation,
-    components/list,
-    components/tags
-  "
-%}
-
 {% renderTemplate "md" %}
 Over the last few years, I have spent a lot of time writing (see some [vanity
 metrics](/stats/)), mostly about tech, but also about some other topics from

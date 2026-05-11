@@ -14,6 +14,8 @@
 {% assign alt = alt | default: caption %}
 {% assign lazy = lazy | default: true %}
 
+{% styles "components/figure" %}
+
 <figure class="Figure">
   <img src="{{ src }}" alt="{{ alt }}" loading="{% if lazy %}lazy{% else %}eager{% endif %}">
   <figcaption>{{ caption }}</figcaption>

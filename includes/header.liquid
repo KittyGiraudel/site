@@ -13,6 +13,8 @@
  
 {% ensure title, "Required value 'title' is missing in header.liquid" %}
 
+{% styles "layout/header" %}
+
 <div class="Container">
   <header class="Header" role="banner">
     {% render "title.liquid", title: title, lang: lang, style: title_style %}

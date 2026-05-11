@@ -1,5 +1,6 @@
 import * as cheerio from 'cheerio'
 import type { Element } from 'domhandler'
+import utilities from './utilities.ts'
 
 // This implementation is heavily inspired from <heading-anchors> by Zach Leat.
 // See: https://github.com/zachleat/heading-anchors
@@ -10,6 +11,9 @@ function injectHeadingAnchors(content: string, outputPath?: string) {
 	const $ = cheerio.load(content)
 
 	let anchorIndex = 0
+
+	// Inject the relevant stylesheet
+	$('head').append(utilities.styles('components/heading-anchors'))
 
 	$('[data-heading-anchors] :where(h2, h3)[id]:not([data-ha-exclude]):not(#footnotes-label)').each(
 		(_, el: Element) => {

@@ -12,16 +12,6 @@ eleventyImport:
     - posts
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/list,
-    components/callout,
-    components/search,
-    components/tags
-  "
-%}
-
 {% renderTemplate "md" %}
 There is a lot of content on this website. You can use the search below to look
 for something specific. Alternatively, you can browse tags to list all content

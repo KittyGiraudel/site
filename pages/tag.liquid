@@ -24,14 +24,6 @@ eleventyImport:
     - projects
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/list,
-    components/tags
-  "
-%}
-
 {% assign items = collections[ tag ] | reverse %}
 {% assign count = items | size %}
 

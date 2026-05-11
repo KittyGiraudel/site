@@ -2,22 +2,7 @@
 layout: default
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/baseline,
-    components/blockquote,
-    components/collection-navigation,
-    components/figure,
-    components/footnotes,
-    components/heading-anchors,
-    components/giscus,
-    components/post-edits,
-    components/code,
-    components/table,
-    components/table-of-contents
-  "
-%}
+{% styles "components/blockquote, components/code, components/table" %}
 
 <link rel="alternate" type="text/markdown" href="{{ page.url }}index.md" data-helmet>
 <meta property="article:author" content="{{ guest | default: site.author }}" data-helmet>
@@ -98,7 +83,8 @@ layout: default
         {{ content }}
       </div>
 
-      {% footnotes page %}
+      {% styles "components/footnotes" %}
+      {% footnotes %}
     </article>
 
     {% render "giscus.liquid" %}

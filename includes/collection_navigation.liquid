@@ -10,6 +10,8 @@
 {% ensure collection, "Required value 'collection' is missing in collection_navigation.liquid" %}
 {% ensure page, "Required value 'page' is missing in collection_navigation.liquid" %}
 
+{% styles "components/collection-navigation" %}
+
 {% assign label = label | default: 'entry' %}
 
 {% if collection %}

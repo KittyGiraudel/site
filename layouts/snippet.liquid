@@ -2,13 +2,7 @@
 layout: default
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/code,
-    components/collection-navigation
-  "
-%}
+{% styles "components/code" %}
 
 {% if related %}
   {% assign related_post = '' %}

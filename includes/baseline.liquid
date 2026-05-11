@@ -5,6 +5,8 @@
 
 {% ensure feature_id, "Required value 'feature_id' is missing in baseline.liquid" %}
 
+{% styles "components/baseline" %}
+
 <div class="Baseline">
   <baseline-status featureId="{{ feature_id }}"></baseline-status>
 </div>

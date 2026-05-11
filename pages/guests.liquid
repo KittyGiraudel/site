@@ -13,14 +13,6 @@ eleventyImport:
     - posts
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/list,
-    components/tags
-  "
-%}
-
 {% renderTemplate "md" %}
 I had the amazing opportunity to have great writers sharing their experience on
 this very blog. You can find all guest posts on this page. And remember, if you

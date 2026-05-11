@@ -10,14 +10,7 @@ eleventyImport:
 
 <link data-helmet rel="stylesheet" href="/assets/css/vendors/charts.css" />
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/table,
-    components/tags,
-    pages/stats
-  "
-%}
+{% styles "components/table, pages/stats" %}
 
 {% assign stats = collections.postStats %}
 

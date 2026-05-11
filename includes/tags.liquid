@@ -1,11 +1,13 @@
 {% comment %}
   Required:
-  - tags: The tags to render
+  - tags: The tags to render  
   Optional:
   - no_link: Whether to not wrap the tags in a link
 {% endcomment %}
 
 {% ensure tags, "Required value 'tags' is missing in tags.liquid" %}
+
+{% styles "components/tags" %}
 
 <ul class="Tags NoListMarker">
   {% assign tags = tags | sort %}
