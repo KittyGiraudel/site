@@ -29,8 +29,6 @@ export default defineConfig(config => {
 
 	// Watch targets
 	// ---------------------------------------------------------------------------
-	config.addWatchTarget('assets/css/**/*.css')
-	config.addWatchTarget('assets/js/**/*.js')
 	config.addWatchTarget('plugins/**/*.ts')
 	config.addWatchTarget('pages/**/*.11tydata.{js,ts}')
 
@@ -68,15 +66,13 @@ export default defineConfig(config => {
 		'node_modules/charts.css/dist/charts.min.css': 'assets/css/vendors/charts.css',
 	})
 
-	// CSS and JavaScript are inlined in HTML for performance reasons. The problem
-	// with that is that saving a CSS or JavaScript file during development does
-	// not cause HTML files to be recompiled, which makes working on the site
-	// significantly more cumbersome. The problem is addressed by linking external
-	// stylesheets and scripts in development, and inlining their content in style
-	// script tags in production. For the assets to be linked to in development,
-	// they need to be passed through to the `_site` directory.
-	// See: https://kittygiraudel.com/2020/12/03/inlining-scripts-and-styles-in-11ty/
+	// CSS and JavaScript are inlined in HTML for performance reasons. However,
+	// saving a CSS or JavaScript file ends up rebuilding *all* pages which can
+	// take several seconds. To work around the problem, we do not inline assets
+	// in development and instead hotlink them from the source files using proper
+	// stylesheets. This makes working on styles (and scripts) near instant.
 	if (!isFeatureEnabled('INLINE_ASSETS')) {
+		config.setServerPassthroughCopyBehavior('passthrough')
 		config.addPassthroughCopy('assets/js')
 		config.addPassthroughCopy('assets/css')
 	}
