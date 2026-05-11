@@ -19,7 +19,10 @@ layout: default
 %}
 
 <main class="Main" role="main" id="main">
-  <div class="Container" {% unless heading_anchors == false %}data-heading-anchors{% endunless %}>
+  <div class="Container"
+    {% if favicons == true %}data-favicons{% endif %}
+    {% unless heading_anchors == false %}data-heading-anchors{% endunless %}
+  > 
     {{ content }}
   </div>
 </main>

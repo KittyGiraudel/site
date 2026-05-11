@@ -102,10 +102,20 @@
 /**
  * 1. Make sure back links do not have the # icon preceding them.
  */
-.Footnotes__back-link::before {
+.Footnotes__back-link.Footnotes__back-link::before {
 	content: none;
 }
 
-.Footnotes__ref::before {
-	background-image: url(https://api.iconify.design/mdi:asterisk.svg?color=%2300000055);
+[data-favicons] .Footnotes__ref::before {
+	background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%2300000055");
+}
+
+[data-theme="dark"] [data-favicons] .Footnotes__ref::before {
+	background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%23ffffffaa");
+}
+
+@media (prefers-color-scheme: dark) {
+	[data-favicons] .Footnotes__ref::before {
+		background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%23ffffffaa");
+	}
 }

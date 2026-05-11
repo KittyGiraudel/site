@@ -70,7 +70,7 @@ layout: default
 
 <main class="Main" role="main" id="main">
   <div class="Container">
-    <article itemscope itemtype="https://schema.org/Article" itemref="{{ itemref }}" data-heading-anchors>
+    <article itemscope itemtype="https://schema.org/Article" itemref="{{ itemref }}" data-heading-anchors data-favicons>
       {% if deprecated %}
         {% render "post_deprecated.liquid", date: creation_date %}
       {% endif %}
