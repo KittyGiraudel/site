@@ -108,6 +108,16 @@
 }
 
 @media print {
+	body:has(.Resume) {
+		background: white;
+		color: black;
+		margin: 0;
+	}
+
+	body:has(.Resume) .Header {
+		margin-block-start: var(--vb-half);
+	}
+
 	/**
 	 * Tight fit for a 2-page resume.
 	 */

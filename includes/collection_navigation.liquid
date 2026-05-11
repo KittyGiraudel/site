@@ -32,7 +32,7 @@
     {% endif %}
   {% endif %}
 
-  <div class="CollectionNavigation {% if previous_url %}{% elsif next_url %}CollectionNavigation--end{% endif %}">
+  <div class="CollectionNavigation {% if previous_url %}{% elsif next_url %}CollectionNavigation--end{% endif %} NoPrint">
     {% if previous_url %}
       <p class="CollectionNavigation__item CollectionNavigation__item--previous">
         Read previous {{ label }}:
