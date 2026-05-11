@@ -47,7 +47,7 @@ function buildMockSearchDom() {
 				<template id="search-result-template">
 					<li class="List__item">
 						<span class="List__secondary-content"></span>
-						<a class="List__primary-content"></a>
+						<span class="List__primary-content"><a></a></span>
 						<ul class="Tags NoListMarker" hidden></ul>
 					</li>
 				</template>
