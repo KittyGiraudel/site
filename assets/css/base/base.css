@@ -187,15 +187,17 @@ li {
 }
 
 :where(ul, ol):not(.NoListMarker) > li {
-	padding-inline-start: 2.5rem;
+	--start-gutter: 2.25rem;
+	padding-inline-start: var(--start-gutter);
 }
 
+/**
+ * 1. Remove the pseudo-element from the flow.
+ */
 :where(ul, ol):not(.NoListMarker) > li::before {
-	content: "— ";
-	position: absolute;
-	margin-inline-start: -2.5rem;
-	width: 2rem;
-	font-variant-numeric: tabular-nums;
+	content: "—";
+	position: absolute; /* 1 */
+	margin-inline-start: calc(var(--start-gutter) * -1);
 	color: light-dark(var(--blue), var(--pink));
 	font-weight: bold;
 }
@@ -206,6 +208,7 @@ li {
  */
 ol:not(.NoListMarker) > li::before {
 	content: counter(list-item, decimal-leading-zero) "."; /* 1 */
+	font-variant-numeric: tabular-nums;
 	scale: 0.8;
 	transform-origin: center left;
 }
