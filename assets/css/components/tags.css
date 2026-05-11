@@ -33,3 +33,10 @@ a.Tag__link:hover {
 	opacity: 0.8;
 	font-size: 80%;
 }
+
+/**
+ * 1. Make sure linked tags do not show the favicon.
+ */
+a.Tag__link::before {
+	content: none; /* 1 */
+}
