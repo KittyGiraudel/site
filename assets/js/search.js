@@ -93,7 +93,7 @@ function buildResultFragment(resultTemplate, tagTemplate, entry) {
 
 	root.querySelector('.List__secondary-content').textContent = formatSearchResultMeta(entry)
 
-	const link = root.querySelector('.List__primary-content')
+	const link = root.querySelector('.List__primary-content a')
 	link.href = String(entry.url ?? '#')
 	link.textContent = String(entry.title ?? '')
 
