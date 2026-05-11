@@ -8,8 +8,10 @@
 
 {% assign label = label | default: 'entry' %}
 
+{% styles "components/collection-navigation" %}
+
 {% if prev_page_link or next_page_link %}
-  <div class="Pagination CollectionNavigation {% if prev_page_link %}{% elsif next_page_link %}CollectionNavigation--end{% endif %}">
+  <div class="CollectionNavigation {% if prev_page_link %}{% elsif next_page_link %}CollectionNavigation--end{% endif %}">
     {% if prev_page_link %}
       <p class="CollectionNavigation__item">
         <a class="CollectionNavigation__link" href="{{ prev_page_link }}">← Previous {{ label }}</a>
