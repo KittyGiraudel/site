@@ -6,6 +6,7 @@
   - alt: The alt text of the image
   - lazy: Whether to load the image lazily (default: true). When false, outputs
     loading="eager" so the image transform default (lazy) does not apply.
+  - style: The style attribute for the image
 {% endcomment %}
 
 {% ensure src, "Required value 'src' is missing in figure.liquid" %}
@@ -17,6 +18,6 @@
 {% styles "components/figure" %}
 
 <figure class="Figure">
-  <img src="{{ src }}" alt="{{ alt }}" loading="{% if lazy %}lazy{% else %}eager{% endif %}">
+  <img src="{{ src }}" alt="{{ alt }}" loading="{% if lazy %}lazy{% else %}eager{% endif %}" {% if style %}style="{{ style }}"{% endif %}>
   <figcaption>{{ caption }}</figcaption>
 </figure>

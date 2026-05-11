@@ -69,19 +69,14 @@ layout: page
   </section>
 
   {% if image %}
-    <figure class="Figure">
-      <img
-        src="{{ image }}"
-        alt="{{ title }}"
-        loading="eager"
-        style="view-transition-name: {{ page.url | slugify }}"
-      >
-      {% if image_caption %}
-        <figcaption>
-          {{ image_caption }}
-        </figcaption>
-      {% endif %}
-    </figure>
+    {% assign vt_style = page.url | slugify | prepend: 'view-transition-name: ' %}
+
+    {% render "figure.liquid",
+      src: image,
+      alt: title,
+      caption: image_caption,
+      style: vt_style
+    %}
   {% endif %}
 
   <section class="Project__content">
