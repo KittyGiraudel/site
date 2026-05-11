@@ -5,6 +5,9 @@ image: /assets/images/blog-search-with-eleventy/blog-search-with-11ty-generated.
 tags:
   - Eleventy
   - Accessibility
+edits:
+  - date: 2026-05-10
+    md: I have added a keyboard shortcut to rapidly open the search page with <kbd>CMD/CTRL</kbd> + <kbd>K</kbd>. This mimicks modern SaaS software like Slack, GitHub and more.
 ---
 
 I’ve recently reworked my [search page](/blog/search/), and realised I never wrote about how it works. So let’s have a look into how to set up a blog search in Eleventy.
