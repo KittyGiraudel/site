@@ -11,9 +11,9 @@ layout: page
   "
 %}
 
-<article class="Post">
-  <div class="Post__header">
-    <p class="Post__date">For {{ serves }} <span class="Fleuron" aria-hidden="true">❦</span> About {{ preparation_time }}</p>
+<article>
+  <div>
+    <p>For {{ serves }} <span class="Fleuron" aria-hidden="true">❦</span> About {{ preparation_time }}</p>
   </div>
 
   {{ content }}
@@ -45,5 +45,6 @@ layout: page
 {% render "collection_navigation.liquid",
   page: page,
   collection: collections.recipes,
-  label: "recipe"
+  label: "recipe",
+  dev_mode: site.configuration.dev_mode
 %}
