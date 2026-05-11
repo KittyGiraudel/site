@@ -9,11 +9,11 @@
   background-color: var(--footnote-highlight-color);
 }
 
-#with-pseudo-element .Footnotes__list-item:first-of-type::before,
-.demo-animating .Footnotes__list-item:first-of-type::before {
+#with-pseudo-element .Footnotes__list-item:first-of-type::after,
+.demo-animating .Footnotes__list-item:first-of-type::after {
   content: '';
   inset: 0;
-  inset-inline-start: -1.5em;
+  inset-inline-start: -0.5em;
   position: absolute;
   background-color: var(--footnote-highlight-color);
   border-radius: 1em;
@@ -56,7 +56,7 @@
   outline-offset: 2px;
 }
 
-.demo-animating .Footnotes__list-item:first-of-type::before {
+.demo-animating .Footnotes__list-item:first-of-type::after {
   animation: fade-out 1s 5s ease-in-out;
   animation-fill-mode: forwards;
 }

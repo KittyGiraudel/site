@@ -58,11 +58,6 @@
 	margin-block: var(--vb-third);
 }
 
-.Footnotes__ref[role="doc-noteref"] {
-	background-image: none;
-	cursor: pointer;
-}
-
 .Footnotes__ref[role="doc-noteref"]::after {
 	content: "[" counter(footnotes) "]";
 	counter-increment: footnotes;
@@ -109,4 +104,8 @@
  */
 .Footnotes__back-link::before {
 	content: none;
+}
+
+.Footnotes__ref::before {
+	background-image: url(https://api.iconify.design/mdi:asterisk.svg?color=%2300000055);
 }

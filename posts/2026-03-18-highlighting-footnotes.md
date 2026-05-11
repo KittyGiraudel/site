@@ -59,7 +59,7 @@ To fix that, I decided to use a pseudo-element which I can extend in the outer d
  * 1. Expand the highlight in the list gutter to encompass the number.
  * 2. Ensure the text appears *above* the highlight.
  */
-.Footnotes li::before {
+.Footnotes li::after {
 	inset: 0;
 	left: -1.5em; /* 1 */
 	position: absolute;
@@ -72,7 +72,7 @@ To fix that, I decided to use a pseudo-element which I can extend in the outer d
 /**
  * 1. Actually display the highlight when the footnote is targeted.
  */
-.Footnotes li:target::before {
+.Footnotes li:target::after {
 	content: ''; /* 1 */
 }
 ```
@@ -102,7 +102,7 @@ We can use a CSS animation to fade-out the highlight:
 /**
  * 1. Make sure the animation’s final state persists.
  */
-.Footnotes li:target::before {
+.Footnotes li:target::after {
 	animation: fade-out 1s 5s ease-in-out;
 	animation-fill-mode: forwards; /* 1 */
 }
