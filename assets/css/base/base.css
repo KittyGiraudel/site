@@ -207,6 +207,7 @@ li {
 ol:not(.NoListMarker) > li::before {
 	content: counter(list-item, decimal-leading-zero) "."; /* 1 */
 	scale: 0.8;
+	transform-origin: center left;
 }
 
 ul ul {
