@@ -12,10 +12,7 @@ eleventyImport:
     - recipes
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "components/list"
-%}
+{% styles "components/list" %}
 
 {% renderTemplate "md" %}
 Not everything has to be about coding. I do enjoy cooking (and eating, needless

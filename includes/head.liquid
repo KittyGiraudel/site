@@ -5,7 +5,6 @@
   - page_url: The URL of the page
   - page_author: The author of the page
   - page_description: The description of the page
-  - inline_assets: Whether to inline the styles and scripts
   - title: The title of the page
   Optional:
   - layout: The layout of the page
@@ -53,25 +52,7 @@ http://ogp.me/ns/article#">
   <meta name="robots" content="index,follow">
 
   <!-- Styles -->
-  {% render "styles.liquid",
-    inline: inline_assets,
-    partials: "
-      base/base,
-      base/helpers,
-      base/favicons,
-      layout/header,
-      layout/footer,
-      layout/main,
-      layout/navigation,
-      components/abbr,
-      components/callout,
-      components/icon-button,
-      components/metadata,
-      components/theme-button,
-      components/title,
-      base/shame
-    "
-  %}
+  {% styles "base/base, base/helpers, base/favicons, layout/main, components/abbr, base/shame" %}
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="{{ site_author }}"

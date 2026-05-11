@@ -7,6 +7,8 @@
 {% ensure navigation, "Required value 'navigation' is missing in navigation.liquid" %}
 {% ensure current_url, "Required value 'current_url' is missing in navigation.liquid" %}
 
+{% styles "layout/navigation, components/icon-button" %}
+
 {% capture menu %}
 <li class="Navigation__item" {% if current_url == "/" %}aria-current="page"{% endif %}>
   <a href="/" class="Navigation__link NoBackground">Home</a>

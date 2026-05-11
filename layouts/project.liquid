@@ -37,16 +37,7 @@ layout: page
   }
 }</script>
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/figure,
-    components/code,
-    components/tags,
-    components/collection-navigation,
-    pages/project
-  "
-%}
+{% styles "components/code, pages/project" %}
 
 <article class="Project">
   <section class="Project__header">

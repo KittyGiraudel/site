@@ -12,13 +12,7 @@ eleventyImport:
     - snippets
 ---
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/list,
-    components/tags
-  "
-%}
+{% styles "components/list" %}
 
 {% renderTemplate "md" %}
 These are small code snippets usually extracted from more in-depth articles so

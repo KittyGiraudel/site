@@ -35,14 +35,6 @@ eleventyImport:
   ]
 }</script>
 
-{% render "styles.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/card-grid,
-    components/card,
-    components/tags
-  "
-%}
 
 {% renderTemplate "md" %}
 I have done my fair share of open-source work over the years. I contributed to
@@ -54,7 +46,7 @@ maintained.
 
 {% render "card_grid.liquid",
   items: project_cards
-%}  
+%}
 
 {% renderTemplate "md" %}
 ## Open-source contributions

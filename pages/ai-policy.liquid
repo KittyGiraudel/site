@@ -8,14 +8,6 @@ updated_at: 2026-05-06
 toc: true
 ---
 
-{% render "styles.liquid"
-  inline: site.configuration.inline_assets,
-  partials: "
-    components/code,
-    components/footnotes
-  "
-%}
-
 {% renderTemplate "liquid,md" %}
 
 If all you want is a <abbr title="Too Long; Didn’t Read">TL;DR</abbr> devoid of all nuance and distilled to just “picking a side”, I guess I am more cautious and skeptical about <abbr title="Artificial Intelligence">AI</abbr> in the tech industry than completely embracing it. Find a more developed answer below.
@@ -72,4 +64,5 @@ That being said, I do use AI as a sparing partner when building more complicated
 
 {% endrenderTemplate %}
 
+{% styles "components/footnotes" %}
 {% footnotes %}

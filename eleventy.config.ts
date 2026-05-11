@@ -85,6 +85,7 @@ export default defineConfig(config => {
 	// ---------------------------------------------------------------------------
 	config.addPairedShortcode('callout', utilities.callout)
 	config.addShortcode('ensure', asEleventyFilter(utilities.ensureValue))
+	config.addShortcode('styles', utilities.styles)
 	config.addFilter('time', utilities.time)
 	config.addFilter('reading_time', asEleventyFilter(utilities.readingTime))
 	config.addFilter('date_to_rfc3339', utilities.dateToRFC3339)

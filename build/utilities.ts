@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import * as cheerio from 'cheerio'
+import type { Element } from 'domhandler'
 import emojiRegex from 'emoji-regex'
 import emojiShortName from 'emoji-short-name'
 import he from 'he'
@@ -79,8 +80,31 @@ function dateToRFC3339(value: Date | string | number): string {
 function callout(content: string, type = 'info', role = 'note'): string {
 	// See: https://www.11ty.dev/docs/languages/markdown/#why-cant-i-return-markdown-from-paired-shortcodes-to-use-in-a-markdown-file
 	const html = markdownIt({ html: true, typographer: true }).render(content)
-	if (role === 'note') return `<aside class="Callout Callout--${type}" role="note">${html}</aside>`
-	return `<div class="Callout Callout--${type}">${html}</div>`
+	if (role === 'note')
+		return `${styles('components/callout')}\n<aside class="Callout Callout--${type}" role="note">${html}</aside>`
+	return `${styles('components/callout')}\n<div class="Callout Callout--${type}">${html}</div>`
+}
+
+function styles(partials: string): string {
+	ensureValue(partials, "Required value 'partials' is missing in styles shortcode")
+
+	return partials
+		.split(',')
+		.map(partial => partial.trim())
+		.filter(Boolean)
+		.map(partial => {
+			const href = `/assets/css/${partial}.css`
+
+			if (!isFeatureEnabled('INLINE_ASSETS')) {
+				return `<link data-helmet rel="stylesheet" href="${href}">`
+			}
+
+			const filePath = path.join(process.cwd(), href)
+			const css = readFileSync(filePath, 'utf8')
+
+			return `<style data-helmet data-style="${href}">${css}</style>`
+		})
+		.join('')
 }
 
 function time(value: Date | string | number, itemprop?: string, id?: string): string {
@@ -111,11 +135,28 @@ function ensureValue(value: unknown, message?: string) {
 	}
 }
 
+function getHelmetKey($: cheerio.CheerioAPI, el: Element): string | undefined {
+	const $el = $(el)
+
+	if ($el.is('link[rel="stylesheet"]')) return $el.attr('href')
+	if ($el.is('style')) return $el.attr('data-style')
+}
+
 function helmet(content: string, outputPath?: string): string {
 	if (typeof outputPath !== 'string' || !outputPath.endsWith('.html')) return content
 	const $ = cheerio.load(content)
 	const $head = $('head')
+	const seen = new Set<string>()
+
 	$('body [data-helmet]').each((_, el) => {
+		const key = getHelmetKey($, el)
+
+		if (key && seen.has(key)) {
+			$(el).remove()
+			return
+		}
+
+		if (key) seen.add(key)
 		$head.append($(el).remove())
 	})
 	return $.html()
@@ -192,6 +233,7 @@ export default {
 	where,
 	dateToRFC3339,
 	callout,
+	styles,
 	time,
 	readingTime,
 	stripHtmlEntities,
