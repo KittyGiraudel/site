@@ -9,30 +9,31 @@ function injectHeadingAnchors(content: string, outputPath?: string) {
 	if (!content.includes('data-heading-anchors')) return content
 
 	const $ = cheerio.load(content)
+	const $headings = $(
+		'[data-heading-anchors] :where(h2, h3)[id]:not([data-ha-exclude]):not(#footnotes-label)',
+	)
 
 	let anchorIndex = 0
 
-	// Inject the relevant stylesheet
-	$('head').append(utilities.styles('components/heading-anchors'))
+	// Inject the relevant stylesheet (if needed)
+	if ($headings.length > 0) $('head').append(utilities.styles('components/heading-anchors'))
 
-	$('[data-heading-anchors] :where(h2, h3)[id]:not([data-ha-exclude]):not(#footnotes-label)').each(
-		(_, el: Element) => {
-			const $heading = $(el)
-			const anchorName = `--ha_0_${anchorIndex++}`
+	$headings.each((_, el: Element) => {
+		const $heading = $(el)
+		const anchorName = `--ha_0_${anchorIndex++}`
 
-			const placeholder = $(
-				`<span class="ha-placeholder" aria-hidden="true" style="anchor-name: ${anchorName};">§</span>`,
-			)
-			const anchor =
-				$(`<a class="ha" href="#${$heading.attr('id')}" style="position-anchor: ${anchorName};">
+		const placeholder = $(
+			`<span class="ha-placeholder" aria-hidden="true" style="anchor-name: ${anchorName};">§</span>`,
+		)
+		const anchor =
+			$(`<a class="ha" href="#${$heading.attr('id')}" style="position-anchor: ${anchorName};">
       <span class="VisuallyHidden">Jump to section titled: ${$heading.text().trim()}</span>
       <span aria-hidden="true">§</span>
     </a>`)
 
-			$heading.append(placeholder)
-			$heading.after(anchor)
-		},
-	)
+		$heading.append(placeholder)
+		$heading.after(anchor)
+	})
 
 	return $.html()
 }

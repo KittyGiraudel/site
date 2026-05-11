@@ -14,6 +14,7 @@ import utilities from './build/utilities.ts'
 export default defineConfig(config => {
 	// Content pre-processing
 	// See: https://www.11ty.dev/docs/config-preprocessors/#example-drafts
+	// ---------------------------------------------------------------------------
 	config.addPreprocessor('drafts', '*', data => {
 		if (data.draft && process.env.ELEVENTY_RUN_MODE === 'build') return false
 	})
@@ -44,7 +45,6 @@ export default defineConfig(config => {
 	config.addPlugin(postStatsPlugin)
 	config.addPlugin(tocPlugin)
 	config.addPlugin(RenderPlugin)
-
 	if (isFeatureEnabled('HIGHLIGHT_CODE_BLOCKS'))
 		config.addPlugin(syntaxHighlight, { errorOnInvalidLanguage: true })
 
