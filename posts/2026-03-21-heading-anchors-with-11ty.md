@@ -61,7 +61,7 @@ function injectHeadingAnchors(content, outputPath) {
 				class="ha"
 				href="#${id}"
 				style="position-anchor: ${anchorName};">
-				<span class="visually-hidden">Jump to section titled: ${text}</span>
+				<span class="VisuallyHidden">Jump to section titled: ${text}</span>
 				<span aria-hidden="true">§</span>
 			</a>`,
 		)
@@ -131,7 +131,7 @@ This is how it looks in a browser that doesn’t support anchor positioning:
 
 <p style="font-size: 1.17em; font-weight: bold; margin-bottom: var(--vb-third);" id="demo-title">Demo title</p>
 <a class="ha" href="#demo-title" style="transform: translate(-1.1em, -2.05em);opacity: 0.5; font-size: 1.17em;">
-  <span class="visually-hidden">Jump to section titled: Demo title</span>
+  <span class="VisuallyHidden">Jump to section titled: Demo title</span>
   <span aria-hidden="true">§</span>
 </a>
 

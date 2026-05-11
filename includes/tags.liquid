@@ -16,12 +16,12 @@
 
     {% if no_link %}
       <li class="Tag">
-        <span class="Tag__link">{{ name }}<span class="visually-hidden"> tag</span></span>
+        <span class="Tag__link">{{ name }}<span class="VisuallyHidden"> tag</span></span>
       </li>
     {% else %}
       <li class="Tag">
         <a class="Tag__link NoBackground" href="/tags/{{ name | replace: '.', '-' | slugify }}/" {% if tag.extra %}data-extra="{{ tag.extra }}" {% endif %}>
-          {{ name }}<span class="visually-hidden"> tag</span>
+          {{ name }}<span class="VisuallyHidden"> tag</span>
         </a>
       </li>
     {% endif %}

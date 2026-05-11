@@ -16,7 +16,7 @@ export default {
 					vt_source: e.link,
 					actions: e.actions.map(a => ({
 						url: a.url,
-						label: `${a.label} <span class="visually-hidden">${e.event}</span>`,
+						label: `${a.label} <span class="VisuallyHidden">${e.event}</span>`,
 					})),
 					tags: e.tags,
 				}

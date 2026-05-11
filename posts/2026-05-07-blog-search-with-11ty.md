@@ -95,7 +95,7 @@ Then, we want a proper form with our input. It’s important to remember that th
 		aria-describedby="search-hint"
 		aria-controls="search-region"
 	/>
-	<p id="search-hint" class="visually-hidden">
+	<p id="search-hint" class="VisuallyHidden">
 		Results appear in the search results section as you type.
 	</p>
 </form>

@@ -51,13 +51,13 @@ My first bet was to add some visually hidden content inside the links to make th
 ```html
 <p class="sort-by">
 	Sort by:
-	<a href="…"> <span class="visually-hidden">Sort by </span>date </a>
-	<a href="…"> <span class="visually-hidden">Sort by </span>availability </a>
+	<a href="…"> <span class="VisuallyHidden">Sort by </span>date </a>
+	<a href="…"> <span class="VisuallyHidden">Sort by </span>availability </a>
 	.
 </p>
 ```
 
-The [`.visually-hidden` class](/snippets/sr-only-class/) (or sometimes `.sr-only`) hides content on screen while keeping it available to screen readers. That solves our non-explicit links problem. Perfect.
+The [`.VisuallyHidden` class](/snippets/sr-only-class/) (or sometimes `.sr-only`) hides content on screen while keeping it available to screen readers. That solves our non-explicit links problem. Perfect.
 
 The next problem is that a screen reader going sequentially through the document would read something like:
 
@@ -73,11 +73,11 @@ Thankfully, there is an easy solution: `aria-hidden="true"`.
 <p class="sort-by">
 	<span aria-hidden="true">Sort by:</span>
 	<a href="…">
-		<span class="visually-hidden">Sort by </span>
+		<span class="VisuallyHidden">Sort by </span>
 		date
 	</a>
 	<a href="…">
-		<span class="visually-hidden">Sort by </span>
+		<span class="VisuallyHidden">Sort by </span>
 		availability
 	</a>
 	.
@@ -106,11 +106,11 @@ So where does that leave us? I’m honestly not super sure. Off the top of my he
 	<span>Sort by:</span>
 	<a href="…">
 		date
-		<span class="visually-hidden">(filter)</span>
+		<span class="VisuallyHidden">(filter)</span>
 	</a>
 	<a href="…">
 		availability
-		<span class="visually-hidden">(filter)</span>
+		<span class="VisuallyHidden">(filter)</span>
 	</a>
 	.
 </p>
