@@ -36,7 +36,8 @@
 		position: absolute;
 		right: calc(100% + 1em);
 		top: 50%;
-		transform: translateY(-50%) rotate(-0.25turn) translateY(1em);
+		transform: translateY(-50%) rotate(-90deg) translateX(50%) translateY(-30%);
+		transform-origin: right center;
 		opacity: 0.4;
 		font-size: 1.5em;
 		font-family: var(--code-font);
