@@ -76,8 +76,8 @@ function searchTagHref(tag) {
 	return `/tags/${String(tag).toLowerCase().replace(/\s/g, '-').replace(/\./g, '-')}/`
 }
 
-function searchViewTransitionName(url) {
-	return `post${String(url).replace(/\//g, '-').replace(/-$/, '')}`
+function viewTransitionName(url) {
+	return String(url).replace(/\//g, '-').replace(/-$/, '').replace(/^-/, '')
 }
 
 function formatSearchResultMeta(entry) {
@@ -91,18 +91,19 @@ function buildResultFragment(resultTemplate, tagTemplate, entry) {
 	const fragment = resultTemplate.content.cloneNode(true)
 	const root = fragment.querySelector('li')
 
-	root.querySelector('.List__secondary-content').textContent = formatSearchResultMeta(entry)
+	root.querySelector('.ListItem__secondary').textContent = formatSearchResultMeta(entry)
 
-	const link = root.querySelector('.List__primary-content a')
+	const link = root.querySelector('.ListItem__primary a')
 	link.href = String(entry.url ?? '#')
 	link.textContent = String(entry.title ?? '')
 
-	const lang = entry.lang ? String(entry.lang) : ''
-	if (lang) {
-		link.setAttribute('lang', lang)
-		link.setAttribute('hreflang', lang)
+	if (entry.lang && entry.lang !== 'en') {
+		link.setAttribute('lang', entry.lang)
+		link.setAttribute('hreflang', entry.lang)
 	}
-	link.style.viewTransitionName = searchViewTransitionName(String(entry.url ?? ''))
+
+	if (!entry.external)
+		link.setAttribute('style', `view-transition-name: ${viewTransitionName(entry.url)}`)
 
 	const tagsRoot = root.querySelector('.Tags')
 	tagsRoot.replaceChildren()

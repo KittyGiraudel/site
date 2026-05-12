@@ -21,16 +21,16 @@ to say) as well as taking notes. Find below some of my recipes.
 
 <ul class="List NoListMarker">
   {% for recipe in collections.recipes %}
-  <li class="List__item">
-    <span class="List__secondary-content">
+    {% capture secondary %}
       For {{ recipe.data.serves }} ❦ About {{ recipe.data.preparation_time }}
-    </span>
+    {% endcapture %}
+    {% assign vt_source = recipe.url | slugify %}
 
-    <span class="List__primary-content">
-      <a href="{{ recipe.url }}" style="view-transition-name: page-{{ recipe.url | slugify }}">
-        {{ recipe.data.title }}
-      </a>
-    </span>
-  </li>
+    {% render "list_item.liquid"
+      primary: recipe.data.title,
+      secondary: secondary,
+      href: recipe.url,
+      vt_source: vt_source
+    %}
   {% endfor %}
 </ul>

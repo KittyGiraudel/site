@@ -59,13 +59,14 @@
 </search>
 
 <template id="search-result-template">
-  <li class="List__item">
-    <span class="List__secondary-content"></span>
-    <span class="List__primary-content">
-      <a href=""></a>
-    </span>
-    <ul class="Tags NoListMarker" hidden></ul>
-  </li>
+  {% assign empty_array = '' | split: '' %}
+  {% assign tags = empty_array | concat: "Tag" %}
+  {% render "list_item",
+    primary: "Primary",
+    secondary: "Secondary",
+    href: "/",
+    tags: tags
+  %}
 </template>
 
 <template id="search-tag-template">

@@ -13,7 +13,7 @@ layout: default
   {% endfor %}
 {% endif %}
 
-{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: snippet-' %}
+{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: ' %}
 
 {% render "snippet_header.liquid",
   title: title,

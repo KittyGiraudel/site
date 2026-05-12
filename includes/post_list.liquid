@@ -11,43 +11,34 @@
   {% for item in items %}
     {% assign url  = item.url %}
     {% assign data = item.data %}
-    
-    <li class="List__item"{% if data.archive_post_number %} data-index="{{ data.archive_post_number }}"{% endif %}>
+
+    {% capture secondary %}
       {% if data.layout == "post" %}
-      <span class="List__secondary-content">
         {{ item.date | time }}
         {% if data.guest %} by {{ data.guest }}{% endif %}
         {% if data.external %} at {{ data.external.host }}{% endif %}
-      </span>
       {% elsif data.layout == "snippet" and data.date %}
-      <span class="List__secondary-content">
         {{ data.date | time }}
-      </span>
       {% else %}
-      <span class="List__secondary-content List__secondary-content--label">
-        {{ data.layout | capitalize }}
-      </span>
+        <span style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 80%">{{ data.layout }}</span>
       {% endif %}
+    {% endcapture %}
 
-      <span class="List__primary-content">
-      {% if data.external %}
-        <a {% if data.lang %}hreflang="{{ data.lang | downcase }}"
-          lang="{{ data.lang | downcase }}" {% endif %} href="{{ data.external.url }}" target="_blank"
-          rel="noopener noreferrer">
-          {{ data.title }}
-        </a>
-      {% else %}
-        <a {% if data.lang %}hreflang="{{ data.lang | downcase }}"
-          lang="{{ data.lang | downcase }}" {% endif %} href="{{ item.url }}"
-          style="view-transition-name: post-{{ item.url | slugify }}">
-          {{ data.title }}
-        </a>
-      {% endif %}
-      </span>
+    {% assign href = data.external.url | default: item.url %}
+    {% assign external = false %}
+    {% if data.external %}{% assign external = true %}{% endif %}
+    {% assign lang = data.lang | downcase %}
+    {% assign vt_source = item.url | slugify %}
 
-      {% if data.tags %}
-        {% render "tags.liquid", tags: data.tags %}
-      {% endif %}
-    </li>
+    {% render "list_item.liquid",
+      primary: data.title,
+      secondary: secondary,
+      tags: data.tags,
+      href: href,
+      external: external,
+      lang: lang,
+      vt_source: vt_source,
+      extra: data.archive_post_number
+    %}
   {% endfor %}
 </ul>

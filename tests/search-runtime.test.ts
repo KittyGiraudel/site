@@ -45,9 +45,9 @@ function buildMockSearchDom() {
 					<p id="search-error" hidden>Search index error</p>
 				</section>
 				<template id="search-result-template">
-					<li class="List__item">
-						<span class="List__secondary-content"></span>
-						<span class="List__primary-content"><a></a></span>
+					<li class="ListItem">
+						<span class="ListItem__secondary"></span>
+						<span class="ListItem__primary"><a></a></span>
 						<ul class="Tags NoListMarker" hidden></ul>
 					</li>
 				</template>
@@ -139,7 +139,7 @@ test('search runtime limits results and keeps query in URL', async () => {
 	runtime.searchInput.dispatchEvent(new runtime.window.Event('input'))
 
 	assert.ok(runtime.location().searchParams.get('q') === 'accessibility tip')
-	assert.equal((runtime.resultsList.innerHTML.match(/class="List__item"/g) || []).length, 20)
+	assert.equal((runtime.resultsList.innerHTML.match(/class="ListItem"/g) || []).length, 20)
 })
 
 test('search runtime renders no-results message', async () => {

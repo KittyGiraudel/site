@@ -55,7 +55,7 @@ layout: default
   {% assign toc_items = content | table_of_contents %}
 {% endif %}
 
-{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: post-' %}
+{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: ' %}
 
 {% render "header.liquid",
   title: title,

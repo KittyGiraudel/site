@@ -3,41 +3,35 @@
 	padding-inline-start: 0;
 }
 
-.List__item {
+.ListItem {
 	padding-block: var(--vb-thirds);
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 }
 
-.List__item p {
+.ListItem p {
 	margin: 0;
 }
 
-.List__primary-content {
+.ListItem__primary {
 	font-size: 150%;
 	line-height: 1.1;
 	margin-block: var(--vb-third) var(--vb-quarter);
 }
 
-.List__secondary-content {
+.ListItem__secondary {
 	font-size: 75%;
 	font-family: var(--code-font);
 }
 
-.List__secondary-content--label {
-	text-transform: uppercase;
-	letter-spacing: 0.15em;
-	font-size: 60%;
-}
-
-.List__item[data-index] {
+.ListItem[data-extra] {
 	position: relative;
 }
 
 @media (min-width: 1024px) {
-	.List__item[data-index]::before {
-		content: "#" attr(data-index);
+	.ListItem[data-extra]::before {
+		content: "#" attr(data-extra);
 		font-variant-numeric: tabular-nums;
 		position: absolute;
 		right: calc(100% + 1em);
@@ -51,7 +45,7 @@
 		color: #ccbdbd;
 	}
 
-	.List__item:where(:hover, :focus-within)::before {
+	.ListItem:where(:hover, :focus-within)::before {
 		opacity: 0.8;
 	}
 }

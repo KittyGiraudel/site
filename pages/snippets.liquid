@@ -24,23 +24,17 @@ paste them with minor effort.
 
 <ul class="List NoListMarker">
   {% for snippet in snippets %}
-  <li class="List__item">
     {% if snippet.data.date %}
-      <span class="List__secondary-content">
-        {{ snippet.data.date | time }}
-      </span>
+      {% assign date = snippet.data.date | time %}
     {% endif %}
+    {% assign vt_source = snippet.url | slugify %}
 
-    <span class="List__primary-content">
-      <a href="{{ snippet.url }}"
-        style="view-transition-name: snippet-{{ snippet.url | slugify }}">
-        {{ snippet.data.title }}
-      </a>
-    </span>
-
-    {% if snippet.data.tags %}
-      {% render "tags.liquid", tags: snippet.data.tags %}
-    {% endif %}
-  </li>
+    {% render "list_item.liquid"
+      primary: snippet.data.title,
+      secondary: date,
+      href: snippet.url,
+      vt_source: vt_source,
+      tags: snippet.data.tags
+    %}
   {% endfor %}
 </ul>

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: page-' %}
+{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: ' %}
 
 {% if toc == true %}
   {% assign toc_items = content | table_of_contents %}

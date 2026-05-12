@@ -1,0 +1,37 @@
+{% comment %}
+ Required:
+	- primary: the primary content of the list item
+	- href: the primary link for the list item
+	Optional:
+	- secondary: the secondary content of the list item
+	- tags: the tags for the list item
+	- lang: the language of the primary content
+	- external: whether the link should open in a new tab
+	- vt_source: the view transition name for the primary content
+	- extra: the data-extra value
+{% endcomment %}
+
+{% ensure primary, "Required value 'primary' is missing in list_item.liquid" %}
+{% ensure href, "Required value 'href' is missing in list_item.liquid" %}
+
+<li class="ListItem" {% if extra %}data-extra="{{ extra }}"{% endif %}>
+	{% if secondary %}
+		<span class="ListItem__secondary">
+			{{ secondary }}
+		</span>
+	{% endif %}
+
+	<span class="ListItem__primary">
+		<a href="{{ href }}"
+			{% if lang != blank %}lang="{{ lang }}" hreflang="{{ lang }}"{% endif %}
+			{% if external %}target="_blank" rel="noopener noreferrer"{% endif %}
+			{% if vt_source %}style="view-transition-name: {{ vt_source }}"{% endif %}
+		>
+			{{ primary }}
+		</a>
+	</span>
+
+	{% if tags %}
+		{% render "tags.liquid", tags: tags %}
+	{% endif %}
+</li>
