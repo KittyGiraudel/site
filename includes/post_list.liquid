@@ -28,7 +28,8 @@
     {% assign external = false %}
     {% if data.external %}{% assign external = true %}{% endif %}
     {% assign lang = data.lang | downcase %}
-    {% assign vt_source = item.url | slugify %}
+    {% comment %}The view transition name cannot start with a number.{% endcomment %}
+    {% assign vt_source = item.url | slugify | prepend: "post-" %}
 
     {% render "list_item.liquid",
       primary: data.title,

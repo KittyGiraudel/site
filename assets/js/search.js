@@ -77,7 +77,7 @@ function searchTagHref(tag) {
 }
 
 function viewTransitionName(url) {
-	return String(url).replace(/\//g, '-').replace(/-$/, '').replace(/^-/, '')
+	return `post-${String(url).replace(/\//g, '-').replace(/-$/, '').replace(/^-/, '')}`
 }
 
 function formatSearchResultMeta(entry) {
