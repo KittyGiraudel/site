@@ -106,16 +106,16 @@
 	content: none;
 }
 
-[data-favicons] .Footnotes__ref::before {
+[data-link-favicons] .Footnotes__ref::before {
 	background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%2300000055");
 }
 
-[data-theme="dark"] [data-favicons] .Footnotes__ref::before {
+[data-theme="dark"] [data-link-favicons] .Footnotes__ref::before {
 	background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%23ffffffaa");
 }
 
 @media (prefers-color-scheme: dark) {
-	[data-favicons] .Footnotes__ref::before {
+	[data-link-favicons] .Footnotes__ref::before {
 		background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%23ffffffaa");
 	}
 }

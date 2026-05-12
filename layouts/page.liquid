@@ -18,9 +18,13 @@ layout: default
   toc_items: toc_items
 %}
 
+{% if link_favicons == true %}
+  {% styles "base/favicons" %}
+{% endif %}
+
 <main class="Main" role="main" id="main">
   <div class="Container"
-    {% if favicons == true %}data-favicons{% endif %}
+    {% if link_favicons == true %}data-link-favicons{% endif %}
     {% unless heading_anchors == false %}data-heading-anchors{% endunless %}
   > 
     {{ content }}

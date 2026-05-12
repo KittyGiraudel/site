@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% styles "components/blockquote, components/code, components/table" %}
+{% styles "components/blockquote, components/code, components/table, base/favicons" %}
 
 <link rel="alternate" type="text/markdown" href="{{ page.url }}index.md" data-helmet>
 <meta property="article:author" content="{{ guest | default: site.author }}" data-helmet>
@@ -70,7 +70,7 @@ layout: default
 
 <main class="Main" role="main" id="main">
   <div class="Container">
-    <article itemscope itemtype="https://schema.org/Article" itemref="{{ itemref }}" data-heading-anchors data-favicons>
+    <article itemscope itemtype="https://schema.org/Article" itemref="{{ itemref }}" data-heading-anchors data-link-favicons>
       {% if deprecated %}
         {% render "post_deprecated.liquid", date: creation_date %}
       {% endif %}
