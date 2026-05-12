@@ -3,7 +3,7 @@ import { getEnvironment, isFeatureEnabled } from './environment.js'
 export default {
 	url: 'https://kittygiraudel.com',
 	description:
-		'I’m Kitty Giraudel, a transfeminine web engineer based in Berlin, focused on accessibility and inclusivity.',
+		'I’m Kitty Giraudel, a frontend developer and engineering leader based in Berlin, focused on accessibility and inclusivity.',
 	author: 'Kitty Giraudel',
 	same_as: [
 		'https://github.com/KittyGiraudel',
