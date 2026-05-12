@@ -6,6 +6,9 @@ tags:
   - Release
   - Accessibility
   - Open Source
+edits:
+  - date: 2020-01-01
+    md: As of January 2020, the `<details>` and `<summary>` elements are available in all major browsers, and there is therefore no good reason to use JavaScript to create disclosure widgets. 
 ---
 
 A few weeks ago, [I introduced a11y-dialog](/2016/02/11/introducing-a11y-dialog). Today, I am coming back with another accessibility-focused module: [a11y-toggle](https://github.com/edenspiekermann/a11y-toggle).
