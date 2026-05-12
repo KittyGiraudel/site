@@ -1,0 +1,40 @@
+{% comment %}
+	Required:
+		- host: The host of the external image
+{% endcomment %}
+
+{% ensure host, "Required value 'host' is missing in external_image.liquid" %}
+
+{% if host == "CSS-Tricks" %}
+	{% assign src = "https://css-tricks.com/favicon.svg" %}
+{% elsif host == "Codrops"%}
+	{% assign src = "https://api.iconify.design/logos:codrops.svg" %}
+{% elsif host == "SitePoint" %}
+	{% assign src = "https://api.iconify.design/logos:sitepoint.svg" %}
+{% elsif host == "GitHub AMA" %}
+	{% assign src = "https://api.iconify.design/logos:github-icon.svg" %}
+{% elsif host == "David Walsh’s blog" %}
+	{% assign src = "https://davidwalsh.name/wp-content/themes/punky/images/favicon-57.png" %}
+{% elsif host == "Tuts+" %}
+	{% assign src = "https://static.tutsplus.com/packs/static/images/favicon-f8d459d2fa865233f59c.ico" %}
+{% elsif host == "Youtube" %}
+	{% assign src = "https://api.iconify.design/logos:youtube-icon.svg" %}
+{% elsif host == "Web Design Weekly" %}
+	{% assign src = "https://web-design-weekly.com/wp-content/uploads/2023/01/ww-logomark-color-150x150.png" %}
+{% elsif host == "CDNify" %}
+	{% assign src = "https://cdnify.a.cdnify.io/icons/favicon.ico" %}
+{% elsif host == "24 Jours de Web" %}
+	{% assign src = "https://www.24joursdeweb.fr/favicon.svg" %}
+{% elsif host == "Creativebloq" %}
+	{% assign src = "https://vanilla.futurecdn.net/creativebloq/1629100/favicon.ico" %}
+{% elsif host == "Edenspiekermann" %}
+	{% assign src = "https://www.datocms-assets.com/131810/1727375010-favicon_48x48.png" %}
+{% elsif host == "Algolia" %}
+	{% assign src = "https://www.algolia.com/files/live/sites/algolia-assets/files/icons/algolia-logo-for-favicon.svg" %}
+{% elsif host == "Smashing Magazine" %}
+	{% assign src = "https://www.smashingmagazine.com/images/favicon/favicon.svg" %}
+{% endif %}
+
+{% if src %}
+<img src="{{ src }}" alt="Logo of {{ host }}" class="InlineImage" eleventy:ignore />
+{% endif %}

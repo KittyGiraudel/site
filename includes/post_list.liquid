@@ -16,7 +16,7 @@
       {% if data.layout == "post" %}
         {{ item.date | time }}
         {% if data.guest %} by {{ data.guest }}{% endif %}
-        {% if data.external %} at {{ data.external.host }}{% endif %}
+        {% if data.external %} at {% render "external_image.liquid", host: data.external.host %}{{ data.external.host }}{% endif %}
       {% elsif data.layout == "snippet" and data.date %}
         {{ data.date | time }}
       {% else %}
