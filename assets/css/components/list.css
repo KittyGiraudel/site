@@ -46,7 +46,7 @@
 		color: #ccbdbd;
 	}
 
-	.ListItem:where(:hover, :focus-within)::before {
+	.ListItem[data-extra]:where(:hover, :focus-within)::before {
 		opacity: 0.8;
 	}
 }
