@@ -163,6 +163,7 @@ h4 {
 /**
  * 1. Reduce the gap between back-to-back headings.
  */
+h2 + h3,
 h2 + .ha + h3 {
 	margin-block-start: 0; /* 1 */
 }

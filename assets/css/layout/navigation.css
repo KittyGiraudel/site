@@ -164,7 +164,7 @@ button.Navigation__link:focus-visible {
 .OpenMenuButton.OpenMenuButton /* 1 */ {
 	display: none;
 	position: fixed;
-	inset-block-start: 1em;
+	inset-block-start: 1.35em;
 	inset-inline-end: 1em;
 	z-index: var(--z-top);
 }
