@@ -21,6 +21,10 @@ function MyComponent() {
 }
 ```
 
+{% callout %}
+As discussed with Josep Viciana in the comments, the whole premise of this article is that you do not control the `Button` component, assuming it is provided by a component library like Ant Design or something similar. If you fully own the component, you can [use polymorphism to make the whole thing easier](https://www.viciana.me/articles/2025-08-23-use-polymorphism-to-ditch-legacybehavior-nextjs).
+{% endcallout %}
+
 ## Approach 1: imperative routing
 
 In its documentation, Next.js mentions [“imperative routing”](https://nextjs.org/docs/pages/building-your-application/routing/linking-and-navigating#imperative-routing). It would look like this:
