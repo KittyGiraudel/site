@@ -2,17 +2,17 @@
   <div class="Map" {% if with_shadows %}data-with-shadows="true"{% endif %} {% if with_patterns %}data-with-patterns="true"{% endif %} {% if with_fallback %}data-with-fallback="true"{% endif %}>
     <div class="Map__row">
       <div class="Map__cell" data-biome="unexplored"></div>
-      <div class="Map__cell" data-biome="shadowForest"></div>
-      <div class="Map__cell" data-biome="silentDesert"></div>
+      <div class="Map__cell" data-biome="shadowWoods"></div>
+      <div class="Map__cell" data-biome="silentWastes"></div>
     </div>
     <div class="Map__row">
       <div class="Map__cell" data-biome="titanGardens"></div>
       <div class="Map__cell" data-biome="unexplored"></div>
-      <div class="Map__cell" data-biome="floodedPlains"></div>
+      <div class="Map__cell" data-biome="sunkenSavannah"></div>
     </div>
     <div class="Map__row">
       <div class="Map__cell" data-biome="unexplored"></div>
-      <div class="Map__cell" data-biome="fieldSea"></div>
+      <div class="Map__cell" data-biome="prairieSea"></div>
       <div class="Map__cell" data-biome="mushroomJungle"></div>
     </div>
   </div>
@@ -24,20 +24,20 @@
   --biome-unexplored-light: light-dark(#f5f5f5, #2c3834);
   --biome-unexplored-dark: light-dark(#d8e5df, #1a2320);
 
-  --biome-fieldSea-light: #7dc8a0;
-  --biome-fieldSea-dark: #4a9f72;
+  --biome-prairieSea-light: #7dc8a0;
+  --biome-prairieSea-dark: #4a9f72;
 
-  --biome-shadowForest-light: #a793c3;
-  --biome-shadowForest-dark: #57446f;
+  --biome-shadowWoods-light: #a793c3;
+  --biome-shadowWoods-dark: #57446f;
 
   --biome-mushroomJungle-light: #ae9178;
   --biome-mushroomJungle-dark: #624838;
 
-  --biome-floodedPlains-light: #5ec4e8;
-  --biome-floodedPlains-dark: #1a6f94;
+  --biome-sunkenSavannah-light: #5ec4e8;
+  --biome-sunkenSavannah-dark: #1a6f94;
 
-  --biome-silentDesert-light: #f3d58e;
-  --biome-silentDesert-dark: #af8c43;
+  --biome-silentWastes-light: #f3d58e;
+  --biome-silentWastes-dark: #af8c43;
 
   --biome-titanGardens-light: #ffb3a7;
   --biome-titanGardens-dark: #a64b3c;
@@ -63,14 +63,14 @@
   --biome-dark: var(--biome-unexplored-dark);
 }
 
-[data-biome="shadowForest"] {
-  --biome-light: var(--biome-shadowForest-light);
-  --biome-dark: var(--biome-shadowForest-dark);
+[data-biome="shadowWoods"] {
+  --biome-light: var(--biome-shadowWoods-light);
+  --biome-dark: var(--biome-shadowWoods-dark);
 }
 
-[data-biome="floodedPlains"] {
-  --biome-light: var(--biome-floodedPlains-light);
-  --biome-dark: var(--biome-floodedPlains-dark);
+[data-biome="sunkenSavannah"] {
+  --biome-light: var(--biome-sunkenSavannah-light);
+  --biome-dark: var(--biome-sunkenSavannah-dark);
 }
 
 [data-biome="mushroomJungle"] {
@@ -78,14 +78,14 @@
   --biome-dark: var(--biome-mushroomJungle-dark);
 }
 
-[data-biome="fieldSea"] {
-  --biome-light: var(--biome-fieldSea-light);
-  --biome-dark: var(--biome-fieldSea-dark);
+[data-biome="prairieSea"] {
+  --biome-light: var(--biome-prairieSea-light);
+  --biome-dark: var(--biome-prairieSea-dark);
 }
 
-[data-biome="silentDesert"] {
-  --biome-light: var(--biome-silentDesert-light);
-  --biome-dark: var(--biome-silentDesert-dark);
+[data-biome="silentWastes"] {
+  --biome-light: var(--biome-silentWastes-light);
+  --biome-dark: var(--biome-silentWastes-dark);
 }
 
 [data-biome="titanGardens"] {
@@ -150,7 +150,7 @@
   }
 }
 
-[data-with-patterns="true"] [data-biome="fieldSea"] {
+[data-with-patterns="true"] [data-biome="prairieSea"] {
   --c1: #7dc892;
   --c2: #63b66e;
   --pattern-size: 30px;
@@ -196,7 +196,7 @@
   background-size: var(--pattern-size) var(--pattern-size);
 }
 
-[data-with-patterns="true"] [data-biome="shadowForest"] {
+[data-with-patterns="true"] [data-biome="shadowWoods"] {
   --c1: rgb(177 162 203);
   --c2: rgb(159 144 186);
   --pattern-size: 26px;
@@ -213,7 +213,7 @@
   background-size: var(--pattern-size) var(--pattern-size);
 }
 
-[data-with-patterns="true"] [data-biome="floodedPlains"] {
+[data-with-patterns="true"] [data-biome="sunkenSavannah"] {
   --c1: rgb(155 204 227);
   --c2: rgb(160 191 211);
   --pattern-size: 26px;
@@ -242,7 +242,7 @@
   background-size: var(--pattern-size) var(--pattern-size);
 }
 
-[data-with-patterns="true"] [data-biome="silentDesert"] {
+[data-with-patterns="true"] [data-biome="silentWastes"] {
   --c1: rgb(238 214 151);
   --c2: rgb(233 209 145);
   --c3: rgb(228 203 140);

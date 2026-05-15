@@ -5,14 +5,13 @@ tags:
   - UX
   - UI
   - Design
-toc_flat: true
 image: /assets/images/prome/home-page.png
 draft: true
 ---
 
-Over the last few weeks, I’ve been working on *[ProMe](https://prome.games)* (pronounced “pro-may”), a companion app for the solo <abbr title="Table-Top Role Playing Game">TTRPG</abbr> called “The Protector’s Memories”, created by Enzo Salviato.
+Over the last few weeks, I’ve been working on *[ProMe](https://prome.games)* (pronounced “pro-may”), a companion app for the solo <abbr title="Table-Top Role-Playing Game">TTRPG</abbr> called “The Protector’s Memories”, created by [Enzo Salviato](https://bsky.app/profile/desesperenzo.bsky.social).
 
-What started as a quick and dirty little tool to help me generate <abbr title="Non-Playable Characters">NPCs</abbr> turned into a fully fledged ~~website~~ progressive web app that I’m happy to finally release. <abbr title="The Protector’s Memories">TPM</abbr> is a relatively recent game (2025), and solo RPGs are rather niche, so I don’t expect many people to use this site. Still, I wanted to write about my experience building it, and highlight some cool things I’ve done and learnt along the way.
+What started as a quick and dirty little tool to help me generate <abbr title="Non-Playable Characters">NPCs</abbr> turned into a fully fledged ~~website~~ progressive web app that I’m happy to finally talk about. <abbr title="The Protector’s Memories">TPM</abbr> is a relatively recent game (2025), and solo RPGs are rather niche, so I don’t expect many people to use this site. Still, I wanted to write about my experience building it, and highlight some cool things I’ve done and learnt along the way.
 
 If you just want to check out the website, here goes: [prome.games](https://prome.games). The landing page, and the [biome pages](https://prome.games/en/biomes/titan-gardens) are the most cinematic pages, and I recommend checking them out on a desktop browser to fully appreciate the theming and imagery.
 
@@ -29,13 +28,13 @@ The Protector’s Memories is a niche little gem in the world of TTRPGs. For sta
 
 If you’re into role-playing games, you should try it. Depending on what you’re used to, it may hit the spot, or it may be a nice discovery!
 
-{% assign rpg_ref = "Truth be told, I’m not an avid roleplayer myself. I played a fair bit of Call of Cthulhu (based on the H.P. Lovecraft universe) with my ex-partner who was really into it although we played it more pulp than horror. Besides that, I’ve never really done much role playing game. The point is: you really don’t need to be a RPG nerd to try this one out." %}
+{% assign rpg_ref = "Truth be told, I’m not an avid role-player myself. I played a fair bit of Call of Cthulhu (based on the work of H.P. Lovecraft) with my ex-partner who was really into it — although we played it more pulp than horror. Besides that, I’ve never really done much role-playing. The point is: you really don’t need to be a RPG nerd to try this one out." %}
 
 And if you’re {% footnoteref "rpg" rpg_ref %}*not* into role-playing games{% endfootnoteref %}, you should try it! It’s *very easy* to pick up, it needs no prior gaming experience, it has no strict goal, and the rules are rather thin and permissive. If you’re thinking <abbr title="Dungeons and Dragons">DnD</abbr>, then you’re totally off-mark — it ain’t that. 
 
-TPM is based on exploration and discovery before anything else, so there is very little combat, and magic is present but rather subtle. Your goal is to wander and wonder, help inhabitants, discover lost landscapes and try to better the world around you.
+TPM is based on exploration and discovery before anything else, so there is very little combat, and while magic is present, it is rather subtle. Your goal is to wander and wonder, help dwellers, discover lost landscapes and try to better the world around you.
 
-The game costs about $20–25 and can be learnt within an hour, so I really encourage you to give it a go.
+The game costs about €£$20–25 and can be learnt within an hour, so I really encourage you to give it a go.
 
 {% callout "warning" %}**ProMe is not a digital version of the game.** You still need to own the rulebook, and I think it’s better this way: I’m not in the business of giving it away for free when a team worked so hard to create such a magical game. The site is only intended as a support to keep track of progress and play digitally instead of pen-and-paper. All credits to the original authors of the game.{% endcallout %}
 
@@ -47,7 +46,7 @@ I wanted to get started quick, and I wanted to code some things myself (and not 
 - Framework: Next.js
 - Internationalization: next-intl
 - Styling: plain ol’ CSS (actually a lot of {% footnoteref "modern-css" modern_css_ref %}*new* CSS{% endfootnoteref %})
-- Components: Ant Design (for good or for bad; more on that in a sec)
+- Components: Ant Design
 - PWA: Serwist
 - Hosting: Netlify and R2 for sound files
 - Authentication: Netlify Identity
@@ -95,16 +94,16 @@ I’ve defined 2 colors for each biome: a light and a dark one. And I’ve defin
 
 ```css
 :root {
-  --biome-fieldSea-light: #7dc8a0;
-  --biome-fieldSea-dark: #4a9f72;
-  --biome-shadowForest-light: #a793c3;
-  --biome-shadowForest-dark: #57446f;
+  --biome-prairieSea-light: #7dc8a0;
+  --biome-prairieSea-dark: #4a9f72;
+  --biome-shadowWoods-light: #a793c3;
+  --biome-shadowWoods-dark: #57446f;
   --biome-mushroomJungle-light: #ae9178;
   --biome-mushroomJungle-dark: #624838;
-  --biome-floodedPlains-light: #5ec4e8;
-  --biome-floodedPlains-dark: #1a6f94;
-  --biome-silentDesert-light: #f3d58e;
-  --biome-silentDesert-dark: #af8c43;
+  --biome-sunkenSavannah-light: #5ec4e8;
+  --biome-sunkenSavannah-dark: #1a6f94;
+  --biome-silentWastes-light: #f3d58e;
+  --biome-silentWastes-dark: #af8c43;
   --biome-titanGardens-light: #ffb3a7;
   --biome-titanGardens-dark: #a64b3c;
 }
@@ -113,9 +112,9 @@ I’ve defined 2 colors for each biome: a light and a dark one. And I’ve defin
 But I didn’t want to have to create a bunch of variants every time a component can be “biome-themed”. So what I’ve done is create two generic `--biome-light` and `--biome-dark` properties, whose value change depending on their ancestor. Like this for instance:
 
 ```css
-[data-biome="fieldSea"] {
-  --biome-light: var(--biome-fieldSea-light);
-  --biome-dark: var(--biome-fieldSea-dark);
+[data-biome="prairieSea"] {
+  --biome-light: var(--biome-prairieSea-light);
+  --biome-dark: var(--biome-prairieSea-dark);
 }
 ```
 
@@ -140,6 +139,8 @@ The thing is hexagons are not a very “natural” shape for the web. Fortunatel
 What’s nice about this approach is that it just uses the DOM, so we don’t need math to figure out which hexagon is being hovered or anything. Also the `outline` property follows the contours of the hexagons nicely. If you’re using a mouse, try hovering a hexagon!
 
 Unfortunately, [support for `corner-shape: bevel`](https://caniuse.com/mdn-css_properties_corner-shape) isn’t great. It currently sits at around 69%, with no support in either Firefox or Safari. For these, I’ve used CSS `@supports` to detect lack of support for `corner-shape: bevel` and fall back to a grid of circles. It’s not the same, but it’s usable. 
+
+{% render "baseline.liquid" feature_id: "corner-shape" %}
 
 {% render "demos/prome/map.liquid",
   with_styles: false,
@@ -194,29 +195,15 @@ From there, she used her creative judgement and profficiency with MidJourney to 
 %}
 
 {% callout %}All the images are served in avif, which has close to [95% global support](https://caniuse.com/avif). I didn’t even bother with a webp fallback, because I think 95% is more than enough. If you’re still serving non-transparent images in jpeg, this is your reminder to switch to more modern formats to serve lighter files. You can optimize images with [Squoosh](https://squoosh.app/) (which incidentily is a great progressive web app).
+
+{% render "baseline.liquid" feature_id: "avif" %}
 {% endcallout %}
-
-### View Transitions
-
-I’ve recently written about the [interactive cover component](/2026/04/09/an-interactive-cover-component/) I’ve built for this project. It looks like this:
-
-{% render "demos/cover-component/index.liquid" %}
-
-I render this component on 2 different pages: in the character sheet, right next to the map, and in the biome-specific page. On the actual site, this component contains a link that you can click to head to the biome page to know more about this biome. 
-
-Because the same component is rendered in both places, I could use a view transition to smoothly animate the switch from one page to the other. All I had to do was turn on [experimental support for view transition in Next.js](https://nextjs.org/docs/app/guides/view-transitions), then wrap my component with `ViewTransition` and give it a name.
-
-```tsx
-<ViewTransition name={`cover-${biome}`}>
-  <CardCover {...cardCoverProps} />
-</ViewTransition>
-```
 
 ### Custom Fonts
 
 I’ve spent most of my frontend career trying to avoid using custom fonts as much as possible to make my life easier. But I really wanted to create gorgeous almost poster-like pages for the biomes, and I felt like using a creative font would go a long way in instiling some character.
 
-Next.js provides [built-in optimization for Google Fonts](https://nextjs.org/docs/pages/getting-started/fonts). Unfortunately, their integration doesn’t allow for subsetting the font to specific characters (it only allows subsetting a whole script), like `latin` or `cyrillic`. This is doable with Google Fonts directly though, using the `text=` query parameter. For instance:
+Next.js provides [built-in optimization for Google Fonts](https://nextjs.org/docs/pages/getting-started/fonts). Unfortunately, their integration doesn’t allow for subsetting the font to specific characters (it only allows subsetting a whole script, like `latin` or `cyrillic`). This is doable with Google Fonts directly though, using the `text=` query parameter. For instance:
 
 ```html
 <link
@@ -240,15 +227,12 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
-// One entry per biome. `text` is the union of FR + EN titles, the script
-// deduplicates characters before sending the request. `extra` is an optional
-// string of additional CSS declarations applied to the biome's title element.
 const FONTS = [
   {
-    biome: 'shadowForest',
+    biome: 'shadowWoods',
     family: 'Caesar Dressing',
     file: 'caesar-dressing',
-    text: 'The Shadow Forest',
+    text: 'The Shadow Woods',
   },
   {
     biome: 'mushroomJungle',
@@ -257,28 +241,28 @@ const FONTS = [
     text: 'The Mushroom Jungle',
   },
   {
-    biome: 'floodedPlains',
+    biome: 'sunkenSavannah',
     family: 'Rubik Marker Hatch',
     file: 'rubik-marker-hatch',
-    text: 'The Flooded Plains',
+    text: 'The Sunken Savannah',
   },
   {
-    biome: 'titanGardens',
+    biome: 'titanGarden',
     family: 'Mountains of Christmas',
     file: 'mountains-of-christmas',
-    text: 'The Titan Gardens',
+    text: 'The Titan Garden',
   },
   {
-    biome: 'fieldSea',
+    biome: 'prairieSea',
     family: 'Mystery Quest',
     file: 'mystery-quest',
-    text: 'The Sea of Fields',
+    text: 'The Prairie Sea',
   },
   {
-    biome: 'silentDesert',
+    biome: 'silentWastes',
     family: 'Fredericka the Great',
     file: 'fredericka-the-great',
-    text: 'The Silent Desert',
+    text: 'The Silent Wastes',
   },
 ]
 
@@ -323,7 +307,7 @@ const faceParts = []
 const selectorParts = []
 
 for (const font of FONTS) {
-  process.stdout.write(`Fetching ${font.family}... `)
+  process.stdout.write(`Fetching ${font.family}…`)
   const css = await fetchGoogleFontsCSS(font.family, font.text)
   const woff2Url = extractWoff2Url(css, font.family)
   const woff2 = await downloadWoff2(woff2Url)
@@ -356,9 +340,27 @@ writeFileSync(
 ```
 </details>
 
+### View Transitions
+
+I’ve recently written about the [interactive cover component](/2026/04/09/an-interactive-cover-component/) I’ve built for this project. It looks like this:
+
+{% render "demos/cover-component/index.liquid" %}
+
+I render this component on 2 different pages: in the character sheet, right next to the map, and in the biome-specific page. On the actual site, this component contains a link that you can click to head to the biome page to know more about this biome. 
+
+Because the same component is rendered in both places, I could use a view transition to smoothly animate the switch from one page to the other. All I had to do was turn on [experimental support for view transition in Next.js](https://nextjs.org/docs/app/guides/view-transitions), then wrap my component with `ViewTransition` and give it a name.
+
+```tsx
+<ViewTransition name={`cover-${biome}`}>
+  <Cover {...coverProps} />
+</ViewTransition>
+```
+
 ### Blurred Background
 
-As you may have noticed from the picture above, I’ve decided to use a blurred background for the navigation, in order to let some light through it and better showcase the background image (also [support for `backdrop-filter`](https://caniuse.com/css-backdrop-filter) is over 95%).
+As you may have noticed from the biome screenshot above, I’ve decided to use a blurred background for the navigation, in order to let some light through it and better showcase the background image (also [support for `backdrop-filter`](https://caniuse.com/css-backdrop-filter) is over 95%).
+
+{% render "baseline.liquid" feature_id: "backdrop-filter" %}
 
 Now, some menu items have sub-menus. And I *also* wanted the submenus to have a blurred background, for the same reason. However, Chrome has a bug with rendering nested elements with `backdrop-filter`: the nested elements do not get a filter applied.
 
@@ -377,6 +379,10 @@ The solution is rather simple: use a pseudo-element to apply the navigation blur
 }
 ```
 
+{% callout %}
+I have also applied the design tips from Josh W. Comeau in his *[Next-level frosted glass with `backdrop-filter`](https://www.joshwcomeau.com/css/backdrop-filter/)* article, making the blur effect more realistic. Great read with interactive demos, highly recommended!
+{% endcallout %}
+
 ### Math-Based Spiral Animations
 
 I recently stumbled upon this [gallery of mathematical curve based animations](https://paidax01.github.io/math-curve-loaders/) made in plain old SVG and JavaScript. They looked so enchanting, I knew I wanted to do something with them!
@@ -393,7 +399,7 @@ There is also one on the biome page, in the “Magic” section. This time I too
 
 What I really wanted to achieve was for the audio to cross fade nicely when you go from one biome to the next. If soundtrack helps with immersion, an abrupt audio change would have the opposite effect. Turns out this is really annoying to do (even with AI support), and I think I’ve implemented it like 3 different times. 
 
-The first realisation (which took me longer than I care to admit) is that I can’t use a native `<audio>` element. Because when you change its `src` attribute, the browser unmounts the current audio and mounts the new one, and that’s an abrupt change. So I had to use to Audio API. I’ve tried a few different versions, and ultimately decided to use [Howler](https://howlerjs.com/), a JavaScript library to manage audio files on the web.
+The first realisation (which took me longer than I care to admit) is that I can’t use a single native `<audio>` element. Because changing its `src` attribute would cause the browser to unmount the current audio and mount the new one, which results in an abrupt change. So I had to use to the Audio API. I’ve tried a few different versions, and ultimately decided to use [Howler](https://howlerjs.com/), a JavaScript library to manage audio files on the web.
 
 <details>
 <summary>There is a fair amount of logic involved, and the code is not massively interesting albeit heavily commented, so you can check it if you want.</summary>
@@ -538,23 +544,25 @@ export function AudioPlayer({ url }: { url: string }) {
 ```
 </details>
 
-Most importantly, it works: and it sounds so gooood. You have both soundtracks cross-fade smoothly across 5 seconds (could be more as well) which is very natural, and gives you the feeling of literally changing environment, like leaving a forest trail and arriving in a village or something.
+Most importantly, it works, and it sounds so gooood. You have both soundtracks cross-fade smoothly across 5 seconds (could be more as well) which is very natural, and gives you the feeling of literally changing environment, like leaving a forest trail and arriving in a village or something.
 
-{% callout %}I had to set up audio preloading and caching for the effect to be smooth. Otherwise you could be stuck loading the new audio file while the old one fades out. So when you opt in the using soundtracks in the settings, I prefetch all soundtracks and cache them using the Cache API.
+{% callout %}I had to set up audio preloading and caching for the effect to be smooth. Otherwise you could be stuck loading the new audio file while the old one fades out. So when you opt in to using soundtracks in the settings, I prefetch all soundtracks and cache them using the Cache API.
 {% endcallout %}
 
 ## Markdown Journaling
 
-The core game loop goes like this: you decide which adjacent hexagonal cell you want to move to, which takes a fraction of you day. When entering that cell, you roll an encounter at random: some are good (you meet someone, you find something), some are less good (a wild creature is menacing, the environment is nocive…).
+The core game loop goes like this: you decide which adjacent hexagonal cell you want to move to, which takes a fraction of your day. When entering that cell, you roll an encounter at random: some are good (you meet someone, you find something), some are less good (a wild creature is menacing, the environment is hostile…).
 
 And then you write your adventure down to make your journey canonical. That’s really where the “table-top” comes in. You’re supposed to take notes, so that you know what happened in each cell, and also know where to go back to, how to find your way back, and so on.
 
-When I started playing, it took me half an hour before I got bothered writing things down in a notepad, because as much as I love writing, I genuinely don’t enjoy holding a pen. So I rapidly switched to Google Docs. And it was fine for a little while, but I ended up spending a lot of time formatting content so it looked nice, instead of playing.
+When I started playing, it took me half an hour before I got bothered writing things down in a notepad, because as much as I love writing, I genuinely don’t enjoy holding a pen. So I rapidly switched to Google Docs. And it was fine for a little while, but I ended up spending a lot of time formatting content so it looked nice, instead of playing. 
 
-So I’ve built the journaling feature inside the app, and it relies heavily on Markdown to keep you focused on *what* you write instead of *how* you write it. But I really wanted the journal to look good, and to be enjoyable to read! So I’ve built a rendering layer on top of the Markdown editor to enhance the way it looks. For instance:
+So I’ve built the journaling feature inside the app, and it relies heavily on Markdown to keep you focused on *what* you write instead of *how* you write it.
 
-- Biome names are highlighted with their theme color so they stand out. For instance: <span class="Tag" data-biome="silentDesert">Silent Desert</span>.
-- Cell coordinates are prefixed with a hex colored after their biome (if any), and become links that can take you to the map and select the exact cell. For instance: <span class="Hex" data-biome="fieldSea" title="Sea of Fields"></span>&nbsp;E12.
+I really wanted the journal to look good, and to be enjoyable to read! So I’ve built a rendering layer on top of the Markdown editor to enhance the way it looks. For instance:
+
+- Biome names are highlighted with their theme color so they stand out. For instance: <span class="Tag" data-biome="silentWastes">Silent Wastes</span>.
+- Cell coordinates are prefixed with a hex colored after their biome (if any), and become links that can take you to the map and select the exact cell. For instance: <span class="Hex" data-biome="prairieSea" title="Prairie Sea"></span>&nbsp;E12.
 - Certain keywords like <span class="Success">success</span> and <span class="Failure">failure</span> are highlighted and prefixed with an icon, just to make them stand out.
 - You can easily render die characters (⚀, ⚁, ⚂, ⚃, ⚄, ⚅) using {1}, {2}… and card suits (♠, ♥, ♦, ♣) using {S}, {H}, {D} and {C}, to avoid having to copy paste them from somewhere.
 - You can embed links to the different generators (like a NPC or a village), which will render cleanly, and offer a summary in a dialog when clicking them.
@@ -566,23 +574,23 @@ The journal editor also exists in 2 different flavor:
 1. As a full screen dialog, to really focus on the editing experience. This view also gives you some information about all of these embellishments so you know how to use them if you want.
 2. Or as a floating pop-up, kind of like the email composer in Gmail. You can expand or collapse it and it remains fixed to your window as you scroll and use the app below. This is useful to take notes while you use the rest of your character sheet.
 
-## User Accounts & Cloud Sync
+## User accounts & cloud Sync
 
 As I mentioned, the app stores your progress in local storage. It works great, until you want to switch devices, or change browsers, or your laptop breaks and you lost your character. To work around the problem, I’ve added JSON export, so you can save a snapshot of your character as a file somewhere (and re-import it), but it’s not super convenient.
 
 I wanted to see if I could add some form of optional authentication while a) keeping it simple because I don’t want to do backend and b) keeping it cheap because I don’t want to pay for it.
 
-It turns out that Netlify, which I use for hosting, has something called [Netlify Identity](https://docs.netlify.com/manage/security/secure-access-to-sites/identity/overview/). It’s basically an auth toolkit to let your user authenticate with Google, GitHub, GitLab or Bitbucket or even email and password. I’ve decided to use Google only.
+It turns out that Netlify, which I use for hosting, has something called [Netlify Identity](https://docs.netlify.com/manage/security/secure-access-to-sites/identity/overview/). It’s basically an auth toolkit to let your users authenticate with Google, GitHub, GitLab or Bitbucket or even email and password. I’ve decided to use Google only.
 
 That solved the authentication part, but not the storage. Like okay, now I have a JWT for that user, and now what? Netlify has its own database solution called [Netlify DB](https://docs.netlify.com/build/data-and-storage/netlify-db/) built on top of [Neon](https://neon.com/). They make the onboarding quite easy I must say, and I had it working in no time.
 
-What was a bit more difficult was designing a thorough synchronization system between the local and cloud storages that keeps working offline. It took a bit of back and forth with Claude Code, but we came up with something like this:
+What was a bit more difficult was designing a thorough synchronization system between the local and cloud storages that keeps working offline. It took a bit of back and forth with Claude Code, and we came up with something like this:
 
 - Being unauthenticated obviously means local only. When the user isn’t logged in, all reads and writes go exclusively to local storage. The remote store is never touched.
-- Signing in triggers a full bidirectional sync. On login, the app compares every character in both stores by ID. Three cases are resolved:
+- Signing in triggers a full bidirectional sync. On login, the app compares every character by ID in both stores. Three cases are resolved:
   - Only in local storage → pushed to remote.
-  - Only in remote storeage → pulled to local (preserving its original timestamp).
-  - In both → the version with the more recent `updatedAt` wins, and the older side is overwritten.
+  - Only in remote storage → pulled to local (preserving its original timestamp).
+  - In both storages → the version with the more recent `updatedAt` wins, and the older side is overwritten.
 - Data writes are local-first. Every data update always hits local storage first. The local write is authoritative: it generates IDs and sets the `updatedAt` timestamp before anything goes to the cloud.
 - Remote writes are *fire-and-forget*. After a successful local write, the same data is pushed to the remote database. If that push fails, the error is swallowed silently: the data is already safe locally, and the next sync will retry.
 - Equal timestamps (however unlikely) result in no-op. If both sides already agree on a character, nothing is written, making the sync safe to re-run at any time without side effects.
@@ -621,4 +629,10 @@ export function useNetworkStatus() {
 }
 ```
 
-## Wrapping Up
+## Wrapping up
+
+After weeks working on this, there is a lot more I could be sharing, but those were the highlights or more interesting technical bits.
+
+I have to say, this was such a fun project to work on, all very casual and relaxing. It felt nice coding for entertainment, without worrying about adoption, purpose or monetization. Still though, I put a lot of effort into accessibility, performance and SEO, just for the sake of a job well done.
+
+Once again, thank you to [Enzo Salviato](https://bsky.app/profile/desesperenzo.bsky.social) for his outstanding work on *the Protector’s Memories*. Be sure to give the game a try, you’ll love it! :)
