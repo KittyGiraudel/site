@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import type { Post, PostTemplateData } from '../build/eleventy.ts'
 import utilities from '../build/utilities.ts'
 
@@ -28,6 +29,31 @@ const config = {
 			const inputPath = data.page?.inputPath
 			const key = inputPath?.replace(/^\.\//, '')
 			return key ? data.git?.[key] : undefined
+		},
+		reading_time(data: PostTemplateData) {
+			function stripNoise(markdown: string): string {
+				return markdown
+					.replace(/(^|\n)(```|~~~)[^\n]*\n[\s\S]*?\n\2(?=\n|$)/g, '\n') // Code blocks
+					.replace(/(^|\n)(?: {4}|\t).+(?=\n|$)/g, '\n') // Tabs
+					.replace(/{%\s*render\b[\s\S]*?%}/g, '') // Render blocks
+					.replace(/!\[[^\]]*]\([^)]*\)/g, '') // Images
+					.replace(/\[([^\]]+)]\([^)]*\)/g, '$1') // Links
+					.replace(/`([^`]+)`/g, '$1') // Code
+					.replace(/^#{1,6}\s+/gm, '') // Headings
+			}
+
+			try {
+				const inputPath = data.page?.inputPath
+				const raw = readFileSync(inputPath, 'utf8')
+				const markdown = utilities.stripFrontMatter(raw)
+				const content = stripNoise(markdown)
+				const words = (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length
+				const minutes = Math.ceil(words / 200)
+
+				return { display: `${minutes}–minute read`, iso: `PT${minutes}M` }
+			} catch {
+				return null
+			}
 		},
 		/**
 		 * 1-based position in publication order: first post ever = 1, latest = N.

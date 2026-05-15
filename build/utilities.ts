@@ -114,11 +114,10 @@ function time(value: Date | string | number, itemprop?: string, id?: string): st
 	return `<time datetime="${datetime}" title="${value}"${itemprop ? ` itemprop="${itemprop}"` : ''}${id ? ` id="${id}"` : ''}>${display}</time>`
 }
 
-function readingTime(content: string): { display: string; iso: string } | null {
-	if (!content) return null
-	const words = (content.match(/[\u0400-\u04FF]+|\S+\s*/g) || []).length
-	const minutes = Math.ceil(words / 200)
-	return { display: `${minutes}–minute read`, iso: `PT${minutes}M` }
+function stripFrontMatter(markdown: string): string {
+	const FRONT_MATTER_REGEX = /^---\r?\n[\s\S]*?\r?\n---\r?\n([\s\S]*)$/
+	const match = markdown.match(FRONT_MATTER_REGEX)
+	return (match ? match[1] : markdown).trim()
 }
 
 function stripHtmlEntities(content: string): string {
@@ -235,7 +234,7 @@ export default {
 	callout,
 	styles,
 	time,
-	readingTime,
+	stripFrontMatter,
 	stripHtmlEntities,
 	ensureValue,
 	helmet,

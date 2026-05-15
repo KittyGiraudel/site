@@ -5,7 +5,6 @@ import utilities from './utilities.ts'
 type ContentStats = { characters: number; words: number; paragraphs: number }
 type CachedContentStats = { mtimeMs: number; stats: ContentStats }
 
-const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/
 const CONTENT_STATS_CACHE = new Map<string, CachedContentStats>()
 const POPULAR_TAGS_TOP = 20
 
@@ -165,11 +164,6 @@ export default function postStatsPlugin(eleventyConfig: EleventyConfig) {
 	})
 }
 
-function stripFrontMatter(raw: string): string {
-	const match = raw.match(FRONT_MATTER_REGEX)
-	return match ? match[2].trim() : raw.trim()
-}
-
 function countWords(text: string): number {
 	return (text.match(/\S+/g) || []).length
 }
@@ -202,7 +196,7 @@ function getCachedContentStats(post: EleventySuppliedData): ContentStats | null 
 
 	try {
 		const raw = fs.readFileSync(inputPath, 'utf8')
-		body = stripFrontMatter(raw)
+		body = utilities.stripFrontMatter(raw)
 	} catch {
 		// If we cannot read the file, skip content stats for this post.
 		return null

@@ -10,7 +10,6 @@ layout: default
 {% if update_date %}<meta property="article:modified_time" content="{{ update_date | date_to_rfc3339 }}" data-helmet>{% endif %}
 {% for tag in tags %}<meta property="article:tag" content="{{ tag }}" data-helmet>{% endfor %}
 
-{% assign reading_time = content | strip_html | reading_time %}
 {% assign post_image = image | default: '/assets/images/og-default.png' %}
 {% assign created_date_str = creation_date | date: "%Y-%m-%d" %}
 {% assign updated_date_str = update_date | date: "%Y-%m-%d" %}
