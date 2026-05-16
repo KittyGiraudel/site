@@ -1,3 +1,9 @@
+@font-face {
+	font-family: "MiddleDot";
+	src: local("Times New Roman");
+	unicode-range: U+00B7;
+}
+
 /**
  * Italic “&” (U+0026). `font-style: normal` keeps this face in play for
  * ordinary (non-<em>) text; true italic still uses real italic faces. Use a
@@ -50,7 +56,7 @@
 	--typography-font:
 		"Lucida Bright", "Perpetua", "Times", "Times New Roman", "Palatino", "Bookman",
 		"New Century Schoolbook", serif;
-	--body-font: "Baskerville Ampersand", "Baskerville", var(--typography-font);
+	--body-font: "MiddleDot", "Baskerville Ampersand", "Baskerville", var(--typography-font);
 
 	/* Spacing */
 	--vb: 1.5em;
