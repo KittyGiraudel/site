@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 title: Kitty says hi.
 description: Frontend developer and engineering leader based in Berlin, focused on accessibility, diversity and inclusion.
 keywords:
@@ -16,16 +16,6 @@ eleventyImport:
     - posts
     - projects
 ---
-
-
-{% renderTemplate "md" %}
-I’m Kitty. I’m a frontend developer and engineering leader based in Berlin, with nearly 15
-years of experience, primarily focused on software excellence, accessibility, diversity and
-inclusion. In recent years, I have led engineering teams at [N26](https://n26.com),
-[Gorillas](<https://en.wikipedia.org/wiki/Gorillas_(company)>),
-[cofenster](https://cofenster.com/), and [Scilife](https://scilife.io). For a longer version, [read more
-about me](/about/).
-{% endrenderTemplate %}
 
 {% assign latest_articles = collections.posts | slice: 0, 3 %}
 {% render "showcase.liquid",

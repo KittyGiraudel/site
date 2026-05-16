@@ -1,0 +1,110 @@
+.HomeHero {
+	padding: var(--vb-1\.5) clamp(1.25em, 5vw, 2.5em);
+	margin-inline: auto;
+	position: relative;
+}
+
+@media (min-width: 768px) {
+	/**
+	 * 1. Occupy the full viewport height (minus the estimated header height).
+	 * 2. Vertically center the content within the allocated height.
+	 */
+	.HomeHero {
+		width: min(calc(100vw - 4em), 1500px);
+		min-height: calc(100vh - 50px); /* 1 */
+		display: flex; /* 2 */
+		flex-direction: column; /* 2 */
+		justify-content: center; /* 2 */
+	}
+
+	/**
+	 * 1. Visually indicate that there is content below the fold. Only apply it on
+	 *    larger screens when the hero occupies the full viewport height.
+	 * 2. Horizontally center the fleuron within the width.
+	 */
+	.HomeHero::after {
+		content: "❦"; /* 1 */
+		position: absolute;
+		inset-inline: 0; /* 2 */
+		text-align: center; /* 2 */
+		inset-block-end: var(--vb-half);
+		margin-block-start: var(--vb-double);
+		opacity: 0.7;
+		color: var(--pink);
+		font-size: 2rem;
+		animation: float 2s ease-in-out infinite alternate;
+	}
+}
+
+@keyframes float {
+	to {
+		transform: translateY(-10px);
+	}
+}
+
+.HomeHero__greeting {
+	margin: 0;
+	font-size: clamp(1.05rem, 1.5vw + 0.85rem, 1.25rem);
+	font-style: italic;
+	letter-spacing: 0.01em;
+	opacity: 0.7;
+}
+
+/**
+ * 1. Prevent title from being balanced, which doesn’t look nice since it’s only
+ *    two words (first name + last name).
+ * 2. Marginally bring the title in the margin, which looks more visually pleas-
+ *    ing this way.
+ */
+.HomeHero .Title {
+	margin: 0;
+	font-size: clamp(3.25rem, 9vw + 0.5rem, 6.25rem);
+	letter-spacing: -0.03em;
+	text-wrap: initial; /* 1 */
+	transform: translateX(-5px); /* 2 */
+}
+
+.HomeHero__line {
+	margin: 0;
+	font-size: clamp(1.05rem, 1.8vw + 0.55rem, 1.35rem);
+}
+
+.HomeHero__line--roles {
+	margin-block-start: var(--vb-half);
+	font-variant-caps: all-small-caps;
+	letter-spacing: 0.08em;
+	opacity: 0.8;
+	width: fit-content;
+}
+
+.HomeHero__line--roles::after {
+	content: "";
+	display: block;
+	height: 4px;
+	border-radius: 2px;
+	width: 100%;
+	background-image: linear-gradient(to right, var(--pink), var(--blue));
+	margin-block-start: var(--vb);
+}
+
+.HomeHero__line--focus {
+	margin-block-start: var(--vb-double);
+	font-size: clamp(1.1rem, 2vw + 0.5rem, 1.5rem);
+	font-style: italic;
+	opacity: 0.8;
+}
+
+.HomeHero__bio {
+	margin-block-start: var(--vb);
+	margin-block-end: 0;
+	font-size: 1.05em;
+	line-height: 1.55;
+	text-align: justify;
+	text-wrap: balance;
+}
+
+@supports (text-wrap: pretty) {
+	.HomeHero__bio {
+		text-wrap: pretty;
+	}
+}

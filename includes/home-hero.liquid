@@ -1,0 +1,30 @@
+{% comment %}
+  Home page colophon hero. Optional:
+  - vt_style: inline style for view transitions (e.g. view-transition-name: home)
+{% endcomment %}
+
+{% styles "components/home-hero" %}
+
+<header role="banner" class="HomeHero" aria-labelledby="home-hero-name">
+  <div class="HomeHero__inner">
+    <p class="HomeHero__greeting">Hello there, I’m —</p>
+
+    {% render "title.liquid", title: "Kitty Giraudel." %}
+
+    <p class="HomeHero__line HomeHero__line--roles">
+      Frontend developer · Engineering leader · Published author
+    </p>
+
+    <div class="HomeHero__bio">
+      {% renderTemplate "md" %}
+      I’m a frontend developer and engineering leader based in Berlin, with nearly 15 years of experience. I focus on software excellence, accessibility, diversity and inclusion. In recent years, I have led engineering teams at [N26](https://n26.com), [Gorillas](<https://en.wikipedia.org/wiki/Gorillas_(company)>), [cofenster](https://cofenster.com/), and [Scilife](https://scilife.io). Aside of my primary activity, I write about the web on this blog, and have been doing so since 2012.
+      
+      Read more [about me](/about/), my [AI policy](/ai-policy/), and [my accessibility statement](/accessibility-statement/).
+      {% endrenderTemplate %}
+    </div>
+
+    <p class="HomeHero__line HomeHero__line--focus">
+      Accessibility · Diversity & Inclusion · Authenticity
+    </p>
+  </div>
+</header>
