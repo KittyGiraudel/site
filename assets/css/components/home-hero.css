@@ -99,8 +99,13 @@
 	margin-block-end: 0;
 	font-size: 1.05em;
 	line-height: 1.55;
-	text-align: justify;
 	text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+	.HomeHero__bio {
+		text-align: justify;
+	}
 }
 
 @supports (text-wrap: pretty) {
