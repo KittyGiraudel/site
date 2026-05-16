@@ -4,38 +4,6 @@
 	position: relative;
 }
 
-@media (min-width: 768px) {
-	/**
-	 * 1. Occupy the full viewport height (minus the estimated header height).
-	 * 2. Vertically center the content within the allocated height.
-	 */
-	.HomeHero {
-		width: min(calc(100vw - 4em), 1500px);
-		min-height: calc(100vh - 50px); /* 1 */
-		display: flex; /* 2 */
-		flex-direction: column; /* 2 */
-		justify-content: center; /* 2 */
-	}
-
-	/**
-	 * 1. Visually indicate that there is content below the fold. Only apply it on
-	 *    larger screens when the hero occupies the full viewport height.
-	 * 2. Horizontally center the fleuron within the width.
-	 */
-	.HomeHero::after {
-		content: "❦"; /* 1 */
-		position: absolute;
-		inset-inline: 0; /* 2 */
-		text-align: center; /* 2 */
-		inset-block-end: var(--vb-half);
-		margin-block-start: var(--vb-double);
-		opacity: 0.7;
-		color: var(--pink);
-		font-size: 2rem;
-		animation: float 2s ease-in-out infinite alternate;
-	}
-}
-
 @keyframes float {
 	to {
 		transform: translateY(-10px);
@@ -102,14 +70,44 @@
 	text-wrap: balance;
 }
 
-@media (min-width: 768px) {
-	.HomeHero__bio {
-		text-align: justify;
-	}
-}
-
 @supports (text-wrap: pretty) {
 	.HomeHero__bio {
 		text-wrap: pretty;
+	}
+}
+
+@media (min-width: 768px) {
+	/**
+	 * 1. Occupy the full viewport height (minus the estimated header height).
+	 * 2. Vertically center the content within the allocated height.
+	 */
+	.HomeHero {
+		width: min(calc(100vw - 4em), 1500px);
+		min-height: calc(100vh - 50px); /* 1 */
+		display: flex; /* 2 */
+		flex-direction: column; /* 2 */
+		justify-content: center; /* 2 */
+	}
+
+	/**
+	 * 1. Visually indicate that there is content below the fold. Only apply it on
+	 *    larger screens when the hero occupies the full viewport height.
+	 * 2. Horizontally center the fleuron within the width.
+	 */
+	.HomeHero::after {
+		content: "❦"; /* 1 */
+		position: absolute;
+		inset-inline: 0; /* 2 */
+		text-align: center; /* 2 */
+		inset-block-end: var(--vb-half);
+		margin-block-start: var(--vb-double);
+		opacity: 0.7;
+		color: var(--pink);
+		font-size: 2rem;
+		animation: float 2s ease-in-out infinite alternate;
+	}
+
+	.HomeHero__bio {
+		text-align: justify;
 	}
 }
