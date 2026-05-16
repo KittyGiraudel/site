@@ -18,6 +18,13 @@
 	opacity: 0.7;
 }
 
+.HomeHero__emdash {
+	cursor: help;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-color: light-dark(var(--pink), var(--blue));
+}
+
 /**
  * 1. Prevent title from being balanced, which doesn’t look nice since it’s only
  *    two words (first name + last name).
