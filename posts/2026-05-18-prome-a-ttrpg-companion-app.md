@@ -1,10 +1,11 @@
 ---
 title: ProMe, a TTRPG companion app
-description: A rather extensive design and technical walkthrough of my new project, ProMe.
+description: A rather extensive design and technical walkthrough of my new project, ProMe, a companion app for the game “The Protector’s Memories”.
 tags:
   - UX
   - UI
   - Design
+  - Gaming
 image: /assets/images/prome/home-page.png
 draft: true
 ---
