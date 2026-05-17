@@ -162,7 +162,7 @@ test('page head: home', async () => {
 
 	assertHeadMetadata($, siteUrl, {
 		path: '/',
-		title: 'Kitty says hi.',
+		title: 'Home',
 		description:
 			'Frontend developer and engineering leader based in Berlin, focused on accessibility, diversity and inclusion.',
 		author: siteAuthor,

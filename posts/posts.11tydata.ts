@@ -28,7 +28,16 @@ const config = {
 		update_date(data: PostTemplateData) {
 			const inputPath = data.page?.inputPath
 			const key = inputPath?.replace(/^\.\//, '')
-			return key ? data.git?.[key] : undefined
+			const gitDate = key ? data.git?.[key] : undefined
+			if (!gitDate) return undefined
+
+			// URL publication date is authoritative; the commit date can predate it
+			// for future-dated or in-progress drafts (e.g. filename 2026-05-18, last
+			// commit 2026-05-16).
+			const creationDate = getPostDateFromPath(inputPath) ?? data.date
+			if (!creationDate) return gitDate
+
+			return gitDate > creationDate ? gitDate : creationDate
 		},
 		reading_time(data: PostTemplateData) {
 			function stripNoise(markdown: string): string {

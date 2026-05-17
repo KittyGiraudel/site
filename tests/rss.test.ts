@@ -89,7 +89,7 @@ test('RSS feed is valid Atom with correct URLs', async () => {
 		const updatedMs = assertParsesAsDate(entry.updated)
 		assert.ok(
 			updatedMs >= publishedMs,
-			`entry <updated> should be >= <published> (same moment is ok) (${entry.title})`,
+			`entry <updated> should be >= <published> (same moment is ok) (${entry.title}, ${entry.published}, ${entry.updated})`,
 		)
 		entryUpdatedMs.push(updatedMs)
 
