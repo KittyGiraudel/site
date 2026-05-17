@@ -116,6 +116,26 @@
 		background-image: url("https://api.iconify.design/logos:nodejs-icon.svg");
 	}
 
+	[data-link-favicons] a[href*="n26.com"]::before {
+		content: "";
+		background-image: url("https://n26.com/_build/favico.ico");
+	}
+
+	[data-link-favicons] a[href*="cofenster.com"]::before {
+		content: "";
+		background-image: url("https://cdn.prod.website-files.com/6294ff4bc4758c3ab26c6972/634d7bc7dfc2f91154fe36d4_favicon-cofenster.png");
+	}
+
+	[data-link-favicons] a[href*="scilife.io"]::before {
+		content: "";
+		background-image: url("https://www.scilife.io/hubfs/Favicon_01.jpg");
+	}
+
+	[data-link-favicons] a[href*="edenspiekermann.com"]::before {
+		content: "";
+		background-image: url("https://www.datocms-assets.com/131810/1727375010-favicon_48x48.png");
+	}
+
 	[data-link-favicons] a:where([href^="/"], [href*="kittygiraudel.com"])::before {
 		content: "";
 		background-image: url("/favicon.ico");
