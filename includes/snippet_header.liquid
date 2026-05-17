@@ -9,8 +9,8 @@
 
 {% styles "layout/header, components/metadata" %}
 
-<header class="Header" role="banner">
-  <div class="Container">
+<div class="Container">
+  <header class="Header" role="banner">
     {% render "title.liquid",
       title: title,
       id: "snippet-title",
@@ -25,5 +25,5 @@
     {% elsif date %}
       <p class="Metadata">{{ date | time }}</p>
     {% endif %}
-  </div>
-</header>
+  </header>
+</div>
