@@ -59,7 +59,18 @@
 	border-radius: 2px;
 	width: 100%;
 	background-image: linear-gradient(to right, var(--pink), var(--blue));
+	background-size: 400% 400%;
+	animation: gradient 8s ease infinite alternate;
 	margin-block-start: var(--vb);
+}
+
+@keyframes gradient {
+	from {
+		background-position: 0% 50%;
+	}
+	to {
+		background-position: 100% 50%;
+	}
 }
 
 .HomeHero__line--focus {
