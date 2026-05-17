@@ -13,6 +13,9 @@
   cache-control: public
   cache-control: max-age=86400
 
+/.well-known/traffic-advice
+  Content-Type: application/trafficadvice+json; charset=utf-8
+
 /*.md
   X-Robots-Tag: noindex
   Content-Type: text/markdown; charset=utf-8
