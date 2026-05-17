@@ -1,5 +1,5 @@
 ---
-title: Blog Search with Eleventy
+title: Accessible Blog Search with Eleventy
 description: A technical walkthrough into the rework of my Eleventy website search, with a strong focus on semantic markup and accessibility.
 image: /assets/images/blog-search-with-eleventy/blog-search-with-11ty-generated.jpg
 tags:
