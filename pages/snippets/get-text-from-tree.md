@@ -4,7 +4,7 @@ title: Extracting text from React tree
 description: Retrieving text from a React component tree
 permalink: /snippets/get-text-from-tree/
 language: React
-date: ~
+date: 2021-07-27
 tags:
   - React
 ---

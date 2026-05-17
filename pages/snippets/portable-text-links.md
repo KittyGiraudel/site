@@ -4,6 +4,7 @@ title: Portable-Text links
 description: GROQ rich text query to retrieve all links used in Portable Text
 permalink: /snippets/portable-text-links/
 language: GROQ
+date: 2022-05-23
 tags:
   - Sanity
   - GROQ
