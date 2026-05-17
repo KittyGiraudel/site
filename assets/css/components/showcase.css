@@ -37,7 +37,7 @@
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.Showcase__item:first-child {
 		flex-basis: 100%;
 	}

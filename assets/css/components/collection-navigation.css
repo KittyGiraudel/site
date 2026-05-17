@@ -55,7 +55,7 @@
 	margin-block-start: var(--vb-third);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.CollectionNavigation__item--previous::before {
 		content: "←";
 	}

@@ -89,7 +89,7 @@
 		content-visibility 300ms allow-discrete;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.TableOfContents::details-content {
 		position: absolute;
 		inset-inline-start: 0;

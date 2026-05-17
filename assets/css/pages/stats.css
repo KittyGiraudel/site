@@ -32,7 +32,7 @@
 	border-radius: 0.25em 0.25em 0 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.charts-css.StatsChart.show-labels tbody tr th {
 		width: auto;
 		margin-inline: 0;

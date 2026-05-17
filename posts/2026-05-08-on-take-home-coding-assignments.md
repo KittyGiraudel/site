@@ -10,7 +10,7 @@ image: /assets/images/on-take-home-coding-assignments/take-home-coding-assignmen
 ---
 
 <style>
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .PnC {
     display: grid;
     grid-template-columns: 1fr 1fr;

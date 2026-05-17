@@ -94,7 +94,7 @@
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	/**
 	 * 1. Occupy the full viewport height (minus the estimated header height).
 	 * 2. Vertically center the content within the allocated height.

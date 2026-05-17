@@ -2,7 +2,7 @@
 	margin-block: var(--vb) var(--vb-third);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 	.Header {
 		margin-block: var(--vb-double) 0;
 	}
