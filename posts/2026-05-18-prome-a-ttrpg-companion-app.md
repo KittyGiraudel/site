@@ -181,6 +181,14 @@ I event went a bit nuts and added some perspective to the whole map (behind a se
   with_perspective: true
 %}
 
+Here is how it looks on the website:
+
+{% render "figure.liquid"
+  src: "/assets/images/prome/prome-map-light.png",
+  alt: "Screenshot of the map module from ProMe, showcasing a lot of explored and colorful biome hexes, as well as some hexes marked with emojis.",
+  caption: "The interactive and annotated map from my own game save."
+%}
+
 ### Creative Imagery
 
 My sisters made me discover TPM. So when I started building this website, I naturally showed it to them. One of them offered to help generate imagery using MidJourney, with which she is rather proficient.
