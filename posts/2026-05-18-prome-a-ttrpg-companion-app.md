@@ -555,6 +555,10 @@ export function AudioPlayer({ url }: { url: string }) {
 
 Most importantly, it works, and it sounds so gooood. You have both soundtracks cross-fade smoothly across 5 seconds (could be more as well) which is very natural, and gives you the feeling of literally changing environment, like leaving a forest trail and arriving in a village or something.
 
+Play a soundtrack below, wait a bit for the volume to pick up, then switch biomes to experience the audio cross-fade.
+
+{% include "demos/prome/audio-crossfade/index.liquid" %}
+
 {% callout %}I had to set up audio preloading and caching for the effect to be smooth. Otherwise you could be stuck loading the new audio file while the old one fades out. So when you opt in to using soundtracks in the settings, I prefetch all soundtracks and cache them using the Cache API.
 {% endcallout %}
 

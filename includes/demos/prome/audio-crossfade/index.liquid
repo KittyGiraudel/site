@@ -1,0 +1,100 @@
+<noscript>
+{% callout "warning" %}
+This demo requires JavaScript to be enabled in your browser.
+{% endcallout %}
+</noscript>
+  
+<section id="prome-audio-demo" data-biome="shadowWoods" data-crossfading="false">
+  <div id="prome-audio-demo-content" hidden>
+    <div class="audio-card">
+      <div class="audio-header">
+        <button
+          type="button"
+          class="play-button"
+          data-action="toggle-play"
+          aria-pressed="false"
+          aria-disabled="false"
+          aria-label="Play soundtrack"
+        >
+          <svg class="play-icon play-icon--play" viewBox="0 0 16 16" aria-hidden="true">
+            <path fill="currentColor" d="M4 2.5v11l10-5.5z" />
+          </svg>
+          <svg class="play-icon play-icon--pause" viewBox="0 0 16 16" aria-hidden="true">
+            <path fill="currentColor" d="M3 2h3v12H3zm7 0h3v12h-3z" />
+          </svg>
+        </button>
+
+        <p class="now-playing" data-now-playing role="status" aria-live="polite">
+          “Yokai Forest” from the Shadow Woods biome.
+        </p>
+      </div>
+
+      <div class="biome-picker" role="group" aria-label="Choose a biome">
+        <button
+          type="button"
+          class="biome-button"
+          data-biome="shadowWoods"
+          aria-pressed="true"
+          aria-disabled="false"
+        >
+          Shadow Woods
+        </button>
+        <button
+          type="button"
+          class="biome-button"
+          data-biome="silentWastes"
+          aria-pressed="false"
+          aria-disabled="false"
+        >
+          Silent Wastes
+        </button>
+        <button
+          type="button"
+          class="biome-button"
+          data-biome="sunkenSavannah"
+          aria-pressed="false"
+          aria-disabled="false"
+        >
+          Sunken Savannah
+        </button>
+        <button
+          type="button"
+          class="biome-button"
+          data-biome="mushroomJungle"
+          aria-pressed="false"
+          aria-disabled="false"
+        >
+          Mushroom Jungle
+        </button>
+        <button
+          type="button"
+          class="biome-button"
+          data-biome="prairieSea"
+          aria-pressed="false"
+          aria-disabled="false"
+        >
+          Prairie Sea
+        </button>
+        <button
+          type="button"
+          class="biome-button"
+          data-biome="titanGardens"
+          aria-pressed="false"
+          aria-disabled="false"
+        >
+          Titan Gardens
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+  <script>
+  {% include "demos/prome/audio-crossfade/data.js" %}
+  {% include "demos/prome/audio-crossfade/script.js" %}
+  </script>
+</section>
+
+<style>
+{% include "demos/prome/audio-crossfade/styles.css" %}
+</style>

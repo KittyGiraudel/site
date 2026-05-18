@@ -1,0 +1,205 @@
+#prome-audio-demo {
+	--audio-fg: light-dark(#2a2438, #f4f0fa);
+	--audio-muted: light-dark(#6f667f, #c4bdd6);
+	--audio-card-bg: light-dark(rgb(248 246 252), rgb(30 28 38));
+	--audio-card-border: color-mix(
+		in srgb,
+		var(--biome-dark) 50%,
+		color-mix(in srgb, var(--biome-light) 20%, transparent)
+	);
+	--audio-card-shine: light-dark(rgb(255 255 255 / 0.42), rgb(255 255 255 / 0.03));
+	--audio-card-wash: light-dark(
+		color-mix(in srgb, var(--biome-light) 18%, transparent),
+		color-mix(in srgb, var(--biome-light) 8%, transparent)
+	);
+	--audio-shadow: light-dark(
+		0 12px 28px rgb(42 36 56 / 0.08),
+		0 8px 24px rgb(0 0 0 / 0.28)
+	);
+
+	font-family: sans-serif;
+	margin: var(--vb) auto;
+}
+
+#prome-audio-demo .audio-card {
+	background:
+		radial-gradient(circle at 12% 0%, var(--audio-card-shine), transparent 20rem),
+		radial-gradient(circle at 100% 100%, var(--audio-card-wash), transparent 55%),
+		var(--audio-card-bg);
+	border: 2px solid var(--audio-card-border);
+	border-radius: 1rem;
+	box-shadow: var(--audio-shadow);
+	overflow: hidden;
+	padding: 0.85rem 1rem;
+	position: relative;
+}
+
+#prome-audio-demo .audio-card::before {
+	background: linear-gradient(
+		90deg,
+		color-mix(in srgb, var(--biome-light) 80%, transparent),
+		color-mix(in srgb, var(--biome-dark) 80%, transparent)
+	);
+	content: "";
+	display: block;
+	height: 0.2rem;
+	inset: 0 0 auto;
+	position: absolute;
+	opacity: light-dark(1, 0.65);
+}
+
+#prome-audio-demo .audio-header {
+	align-items: center;
+	display: flex;
+	gap: 0.75rem;
+	margin-block-end: 0.75rem;
+	position: relative;
+	z-index: 1;
+}
+
+#prome-audio-demo .play-button {
+	align-items: center;
+	background: linear-gradient(
+		145deg,
+		var(--biome-light),
+		color-mix(in srgb, var(--biome-dark) 70%, black)
+	);
+	border: 1px solid color-mix(in srgb, var(--biome-dark) 55%, transparent);
+	border-radius: 999px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	flex-shrink: 0;
+	font: inherit;
+	height: 2.5rem;
+	justify-content: center;
+	transition:
+		transform 150ms ease,
+		opacity 150ms ease;
+	width: 2.5rem;
+}
+
+#prome-audio-demo .play-button:hover:not([aria-disabled="true"]) {
+	transform: scale(1.04);
+}
+
+#prome-audio-demo .play-button[aria-disabled="true"] {
+	cursor: wait;
+	opacity: 0.72;
+}
+
+#prome-audio-demo .play-icon {
+	display: block;
+	height: 0.9rem;
+	width: 0.9rem;
+}
+
+#prome-audio-demo .play-button[aria-pressed="true"] .play-icon--play,
+#prome-audio-demo .play-button[aria-pressed="false"] .play-icon--pause {
+	display: none;
+}
+
+#prome-audio-demo .now-playing {
+	color: var(--audio-fg);
+	font-size: 0.88rem;
+	line-height: 1.35;
+	margin: 0;
+	min-width: 0;
+}
+
+#prome-audio-demo[data-crossfading="true"] .now-playing {
+	animation: prome-audio-pulse 1.2s ease-in-out infinite;
+	color: var(--biome-dark);
+}
+
+@keyframes prome-audio-pulse {
+	from, to {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.55;
+	}
+}
+
+#prome-audio-demo .biome-picker {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+	position: relative;
+	z-index: 1;
+}
+
+#prome-audio-demo .biome-button {
+	background: light-dark(
+		color-mix(in srgb, var(--biome-light) 22%, transparent),
+		color-mix(in srgb, var(--biome-light) 12%, rgb(42 40 52))
+	);
+	border: 1px solid
+		light-dark(
+			color-mix(in srgb, var(--biome-dark) 35%, transparent),
+			color-mix(in srgb, var(--biome-dark) 28%, rgb(60 58 72))
+		);
+	border-radius: 999px;
+	color: var(--audio-fg);
+	cursor: pointer;
+	font: inherit;
+	font-size: 0.78rem;
+	padding: 0.35rem 0.7rem;
+	transition:
+		background-color 150ms ease,
+		border-color 150ms ease,
+		opacity 150ms ease;
+}
+
+#prome-audio-demo .biome-button:hover:not([aria-disabled="true"]) {
+	background: light-dark(
+		color-mix(in srgb, var(--biome-light) 38%, transparent),
+		color-mix(in srgb, var(--biome-light) 18%, rgb(48 46 58))
+	);
+	border-color: light-dark(var(--biome-dark), color-mix(in srgb, var(--biome-dark) 55%, rgb(80 78 92)));
+}
+
+#prome-audio-demo .biome-button[aria-pressed="true"] {
+	background: linear-gradient(
+		145deg,
+		color-mix(in srgb, var(--biome-light) 70%, light-dark(white, rgb(52 50 62))),
+		color-mix(in srgb, var(--biome-dark) 88%, light-dark(transparent, rgb(36 34 46)))
+	);
+	border-color: color-mix(in srgb, var(--biome-dark) 75%, light-dark(transparent, rgb(52 50 62)));
+	color: #fff;
+}
+
+#prome-audio-demo .biome-button[aria-disabled="true"] {
+	cursor: wait;
+	opacity: 0.55;
+}
+
+#prome-audio-demo[data-biome="shadowWoods"] {
+	--biome-light: var(--biome-shadowWoods-light);
+	--biome-dark: var(--biome-shadowWoods-dark);
+}
+
+#prome-audio-demo[data-biome="silentWastes"] {
+	--biome-light: var(--biome-silentWastes-light);
+	--biome-dark: var(--biome-silentWastes-dark);
+}
+
+#prome-audio-demo[data-biome="sunkenSavannah"] {
+	--biome-light: var(--biome-sunkenSavannah-light);
+	--biome-dark: var(--biome-sunkenSavannah-dark);
+}
+
+#prome-audio-demo[data-biome="mushroomJungle"] {
+	--biome-light: var(--biome-mushroomJungle-light);
+	--biome-dark: var(--biome-mushroomJungle-dark);
+}
+
+#prome-audio-demo[data-biome="prairieSea"] {
+	--biome-light: var(--biome-prairieSea-light);
+	--biome-dark: var(--biome-prairieSea-dark);
+}
+
+#prome-audio-demo[data-biome="titanGardens"] {
+	--biome-light: var(--biome-titanGardens-light);
+	--biome-dark: var(--biome-titanGardens-dark);
+}
