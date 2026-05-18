@@ -256,7 +256,7 @@ const FONTS = [
     text: 'The Sunken Savannah',
   },
   {
-    biome: 'titanGarden',
+    biome: 'titanGardens',
     family: 'Mountains of Christmas',
     file: 'mountains-of-christmas',
     text: 'The Titan Garden',
