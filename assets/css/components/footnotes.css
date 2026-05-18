@@ -113,9 +113,3 @@
 [data-theme="dark"] [data-link-favicons] .Footnotes__ref[role="doc-noteref"]::before {
 	background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%23ffffffaa");
 }
-
-@media (prefers-color-scheme: dark) {
-	[data-link-favicons] .Footnotes__ref[role="doc-noteref"]::before {
-		background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%23ffffffaa");
-	}
-}

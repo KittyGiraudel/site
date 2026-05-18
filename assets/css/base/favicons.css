@@ -148,12 +148,6 @@
 	}
 }
 
-@media (prefers-color-scheme: dark) {
-	[data-link-favicons] a:where([href^="#"])::before {
-		background-image: url("https://api.iconify.design/mdi:hashtag.svg?color=%23ffffffaa");
-	}
-}
-
 [data-theme="dark"] [data-link-favicons] a:where([href^="#"])::before {
 	background-image: url("https://api.iconify.design/mdi:hashtag.svg?color=%23ffffffaa");
 }
