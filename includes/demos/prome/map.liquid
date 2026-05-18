@@ -43,10 +43,14 @@
   --biome-titanGardens-dark: #a64b3c;
 }
 
+.Map-wrapper {
+  margin: var(--vb-1\.5) auto;
+}
+
 .Map {
   width: calc(var(--size) * 3.5);
   margin: 1em auto;
-  padding-bottom: calc(var(--size) / (4 * cos(30deg)));
+  padding-block-end: calc(var(--size) / (4 * cos(30deg)));
   --size: 80px;
 }
 
@@ -96,7 +100,7 @@
 .Map__row {
   display: flex;
   position: relative;
-  margin-bottom: calc(var(--size) / (-4 * cos(30deg)));
+  margin-block-end: calc(var(--size) / (-4 * cos(30deg)));
 }
 
 .Map__row:nth-of-type(even) {
@@ -114,7 +118,7 @@
   border-radius: 50% / 25%;
   background-color: var(--biome-light);
   border: 1px solid var(--biome-dark);
-  transition: 300ms;
+  transition: ease-in-out 200ms;
 }
 
 .Map__cell:hover {
@@ -128,24 +132,24 @@
 }
 
 [data-with-fallback="true"] .Map__row {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 [data-with-fallback="true"] .Map__cell {
   corner-shape: unset;
   border-radius: 50%;
-  margin-bottom: calc(var(--size) / (-8 * cos(30deg)));
+  margin-block-end: calc(var(--size) / (-8 * cos(30deg)));
   aspect-ratio: 1;
 }
 
 @supports not ((corner-shape: bevel) and (aspect-ratio: cos(30deg))) {
-  .MapRow {
-    margin-bottom: 0;
+  .Map__row {
+    margin-block-end: 0;
   }
   .Map__cell {
     corner-shape: unset; 
     border-radius: 50%;
-    margin-bottom: calc(var(--size) / (-8 * cos(30deg)));
+    margin-block-end: calc(var(--size) / (-8 * cos(30deg)));
     aspect-ratio: 1;
   }
 }
@@ -319,7 +323,7 @@
 
 .Success::before {
   content: "✓";
-  margin-right: 0.5ch;
+  margin-inline-end: 0.5ch;
 }
 
 .Failure {
@@ -329,7 +333,7 @@
 
 .Failure::before {
   content: "✗";
-  margin-right: 0.5ch;
+  margin-inline-end: 0.5ch;
 }
 </style>
 {% endif %}
