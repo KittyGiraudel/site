@@ -29,9 +29,9 @@ The Protector’s Memories is a niche little gem in the world of TTRPGs. For sta
 
 If you’re into role-playing games, you should try it. Depending on what you’re used to, it may hit the spot, or it may be a nice discovery!
 
-{% assign rpg_ref = "Truth be told, I’m not an avid role-player myself. I played a fair bit of Call of Cthulhu (based on the work of H.P. Lovecraft) with my ex-partner who was really into it — although we played it more pulp than horror. Besides that, I’ve never really done much role-playing. The point is: you really don’t need to be a RPG nerd to try this one out." %}
+{% assign footnote_rpg = "Truth be told, I’m not an avid role-player myself. I played a fair bit of Call of Cthulhu (based on the work of H.P. Lovecraft) with my ex-partner who was really into it — although we played it more pulp than horror. Besides that, I’ve never really done much role-playing. The point is: you really don’t need to be a RPG nerd to try this one out." %}
 
-And if you’re {% footnoteref "rpg" rpg_ref %}*not* into role-playing games{% endfootnoteref %}, you should try it! It’s *very easy* to pick up, it needs no prior gaming experience, it has no strict goal, and the rules are rather thin and permissive. If you’re thinking <abbr title="Dungeons and Dragons">DnD</abbr>, then you’re totally off-mark — it ain’t that. 
+And if you’re {% footnoteref "rpg" footnote_rpg %}*not* into role-playing games{% endfootnoteref %}, you should try it! It’s *very easy* to pick up, it needs no prior gaming experience, it has no strict goal, and the rules are rather thin and permissive. If you’re thinking <abbr title="Dungeons and Dragons">DnD</abbr>, then you’re totally off-mark — it ain’t that. 
 
 TPM is based on exploration and discovery before anything else, so there is very little combat, and while magic is present, it is rather subtle. Your goal is to wander and wonder, help dwellers, discover lost landscapes and try to better the world around you.
 
@@ -41,12 +41,12 @@ The game costs about €£$20–25 and can be learnt within an hour, so I really
 
 ## Tech Stack
 
-{% assign modern_css_ref = "CSS has come such a long way, and truly is a joy to work with nowadays. Here are some modern features I’ve used in this project: <code>corner-shape</code>, <code>cos()</code>, <code>backdrop-filter</code>, <code>:has()</code>, <code>:is()</code>, <code>:where()</code>, <code>color-mix()</code>, <code>clamp()</code>, <code>light-dark()</code>, CSS nesting, and more." %}
+{% assign footnote_modern_css = "CSS has come such a long way, and truly is a joy to work with nowadays. Here are some modern features I’ve used in this project: <code>corner-shape</code>, <code>cos()</code>, <code>backdrop-filter</code>, <code>:has()</code>, <code>:is()</code>, <code>:where()</code>, <code>color-mix()</code>, <code>clamp()</code>, <code>light-dark()</code>, CSS nesting, and more." %}
 
 I wanted to get started quick, and I wanted to code some things myself (and not vibe-code the whole thing), so I picked a stack I’m mostly familiar with: 
 - Framework: Next.js
 - Internationalization: next-intl
-- Styling: plain ol’ CSS (actually a lot of {% footnoteref "modern-css" modern_css_ref %}*new* CSS{% endfootnoteref %})
+- Styling: plain ol’ CSS (actually a lot of {% footnoteref "modern-css" footnote_modern_css %}*new* CSS{% endfootnoteref %})
 - Components: Ant Design
 - PWA: Serwist
 - Hosting: Netlify and R2 for sound files
@@ -123,9 +123,13 @@ This way, I can use `--biome-light` and `--biome-dark` in my generic components,
 
 ### Hexagonal Map
 
-{% assign redblobgames_ref = "If you do <em>anything</em> with hexagonal grids, you <em>have</em> to check out this ridiculously good <a href='https://www.redblobgames.com/grids/hexagons/'>guide from RedBlobGames</a>. It contains everything, from establishing a coordinate systems, to drawing lines, computing distances, performing path-finding, and more — all with stunning interactive demos." %}
+{% assign footnote_redblobgames = "If you do <em>anything</em> with hexagonal grids, you <em>have</em> to check out this ridiculously good <a href='https://www.redblobgames.com/grids/hexagons/'>guide from RedBlobGames</a>. It contains everything, from establishing a coordinate systems, to drawing lines, computing distances, performing path-finding, and more — all with stunning interactive demos." %}
 
-The game uses a map of hexagons. There is something genuinely cool about {% footnoteref "redblobgames" redblobgames_ref %}hexagonal grids{% endfootnoteref %}. When I started working on this project, I knew I wanted the map to look fresh and inviting, because the game is ultimately about exploring and wandering the map.
+{% assign footnote_homm = "Speaking of which, HOMM III was recently remastered and re-released on <a href='https://store.steampowered.com/app/3105440/Heroes_of_Might_and_Magic_Olden_Era/'>Steam</a>, unfortunately it is Windows only and I am very sad. 😭" %}
+
+The game uses a map of hexagons. There is something genuinely cool about {% footnoteref "redblobgames" footnote_redblobgames %}hexagonal grids{% endfootnoteref %}. I grew up playing {% footnoteref "homm" footnote_homm %}Heroes of Might and Magic III{% endfootnoteref %} and [its legendary hex battle map](https://images.gog-statics.com/c1e08b28b7061f12be5f595b700bc32817c97fdc1fbbc0ecc875348aa7be9a27.jpg).
+
+When I started working on this project, I knew I wanted the map to look fresh and inviting, because the game is ultimately about exploring and wandering the world.
 
 The thing is hexagons are not a very “natural” shape for the web. Fortunately, Temani Afif wrote about building a *[Responsive Hexagon Grid Using Modern CSS](https://css-tricks.com/responsive-hexagon-grid-using-modern-css/)* which I heavily borrowed from. It looks a little like this:
 
