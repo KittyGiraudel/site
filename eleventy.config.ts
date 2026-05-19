@@ -54,6 +54,7 @@ export default defineConfig(config => {
 		config.ignores.add('pages/blog-markdown.liquid')
 	config.ignores.add('CLAUDE.md')
 	config.ignores.add('STYLEGUIDE.md')
+	config.ignores.add('.cursor')
 
 	// Static file passthrough
 	// ---------------------------------------------------------------------------
