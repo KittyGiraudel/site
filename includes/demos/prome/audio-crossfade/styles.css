@@ -107,6 +107,7 @@
 	min-width: 0;
 }
 
+#prome-audio-demo[data-loading="true"] .now-playing,
 #prome-audio-demo[data-crossfading="true"] .now-playing {
 	animation: prome-audio-pulse 1.2s ease-in-out infinite;
 	color: var(--biome-dark);

@@ -14,11 +14,12 @@
 	const nowPlayingEl = root.querySelector("[data-now-playing]");
 
 	let howl = null;
+	let pendingHowl = null;
 	let wasPlaying = false;
 	let currentBiomeId = DEFAULT_BIOME_ID;
 	let isCrossfading = false;
+	let isLoading = false;
 	let crossfadeTimeoutId = null;
-	let hasPreloaded = false;
 
 	function getBiome(id) {
 		return biomeById.get(id);
@@ -32,10 +33,18 @@
 		control.setAttribute("aria-disabled", String(disabled));
 	}
 
+	function setControlsLocked(locked) {
+		setControlDisabled(playButton, locked);
+		for (const button of biomeButtons) {
+			setControlDisabled(button, locked);
+		}
+	}
+
 	function formatNowPlaying(biome, isPlaying) {
 		const track = `“${biome.soundtrack}”`;
 		const from = `the ${biome.label} biome`;
 
+		if (isLoading) return `Loading ${track} from ${from}…`;
 		if (isCrossfading) return `Crossfading to ${track} from ${from}…`;
 		if (isPlaying) return `Now playing ${track} from ${from}.`;
 		return `${track} from ${from}.`;
@@ -59,26 +68,28 @@
 		});
 	}
 
-	function preloadOtherTracks() {
-		if (hasPreloaded) return;
-		hasPreloaded = true;
+	function cancelPendingLoad() {
+		if (!pendingHowl) return;
+		pendingHowl.unload();
+		pendingHowl = null;
+	}
 
-		for (const biome of PROME_AUDIO_BIOMES) {
-			if (biome.id === currentBiomeId) continue;
-			fetch(biome.url, { mode: "cors" }).catch(() => {});
+	function setLoading(next) {
+		isLoading = next;
+		root.dataset.loading = String(next);
+
+		for (const button of biomeButtons) {
+			button.setAttribute("aria-busy", String(next));
 		}
+
+		if (!isCrossfading) setControlsLocked(next);
+		updateUi();
 	}
 
 	function setCrossfading(next) {
 		isCrossfading = next;
 		root.dataset.crossfading = String(next);
-
-		setControlDisabled(playButton, next);
-		for (const button of biomeButtons) {
-			setControlDisabled(button, next);
-			button.setAttribute("aria-busy", String(next));
-		}
-
+		setControlsLocked(next || isLoading);
 		updateUi();
 	}
 
@@ -126,8 +137,80 @@
 		}
 	}
 
+	function startCrossfade(previousHowl, nextHowl) {
+		previousHowl.fade(VOLUME, 0, FADE_DURATION_MS);
+		window.setTimeout(() => previousHowl.unload(), FADE_DURATION_MS);
+
+		// Already queued via play() during the user gesture; only fade volume up.
+		if (!nextHowl.playing()) {
+			nextHowl.volume(0);
+			nextHowl.play();
+		}
+		nextHowl.fade(0, VOLUME, FADE_DURATION_MS);
+
+		howl = nextHowl;
+		scheduleCrossfadeEnd();
+	}
+
+	function whenLoaded(sound, onReady, onError) {
+		if (sound.state() === "loaded") {
+			onReady();
+			return;
+		}
+
+		sound.once("load", onReady);
+		sound.once("loaderror", onError);
+	}
+
+	function loadTrack(biome, { crossfadeFrom = null } = {}) {
+		cancelPendingLoad();
+
+		const sound = buildHowl(biome.url);
+		pendingHowl = sound;
+		setLoading(true);
+
+		// play() must run in the same turn as the click, not in the load callback,
+		// or browsers block playback when loading finishes later.
+		if (crossfadeFrom) {
+			sound.volume(0);
+			sound.play();
+		} else {
+			sound.play();
+		}
+
+		whenLoaded(
+			sound,
+			() => {
+				if (pendingHowl !== sound) return;
+				pendingHowl = null;
+				setLoading(false);
+
+				if (crossfadeFrom) {
+					startCrossfade(crossfadeFrom, sound);
+					return;
+				}
+
+				if (!sound.playing()) sound.play();
+				howl = sound;
+				updateUi();
+			},
+			() => {
+				if (pendingHowl !== sound) return;
+				pendingHowl = null;
+				setLoading(false);
+
+				if (crossfadeFrom) {
+					howl = crossfadeFrom;
+				}
+
+				nowPlayingEl.textContent = `Could not load “${biome.soundtrack}”.`;
+				updateUi();
+			},
+		);
+	}
+
 	function handleBiomeChange(nextBiomeId) {
-		if (nextBiomeId === currentBiomeId || isCrossfading) return;
+		if (nextBiomeId === currentBiomeId || isCrossfading || isLoading) return;
 
 		const previousHowl = howl;
 		const shouldCrossfade = wasPlaying && previousHowl;
@@ -135,39 +218,27 @@
 		updateUi();
 
 		if (shouldCrossfade) {
-			fadeOutAndUnload(previousHowl);
-			scheduleCrossfadeEnd();
-
 			const biome = getBiome(nextBiomeId);
-			if (!biome) {
-				howl = null;
-				return;
-			}
-
-			const sound = buildHowl(biome.url);
-			sound.play();
-			howl = sound;
+			if (!biome) return;
+			loadTrack(biome, { crossfadeFrom: previousHowl });
 			return;
 		}
 
+		cancelPendingLoad();
 		if (previousHowl) {
 			previousHowl.unload();
 			howl = null;
+			wasPlaying = false;
 		}
 	}
 
 	function togglePlay() {
-		if (isCrossfading || isControlDisabled(playButton)) return;
+		if (isCrossfading || isLoading || isControlDisabled(playButton)) return;
 
 		if (!howl) {
 			const biome = getBiome(currentBiomeId);
 			if (!biome) return;
-
-			preloadOtherTracks();
-			const sound = buildHowl(biome.url);
-			sound.play();
-			howl = sound;
-			updateUi();
+			loadTrack(biome);
 			return;
 		}
 
@@ -185,6 +256,7 @@
 
 	root.addEventListener("prome-audio-demo:destroy", () => {
 		clearCrossfadeTimer();
+		cancelPendingLoad();
 		if (howl) {
 			fadeOutAndUnload(howl);
 			howl = null;
