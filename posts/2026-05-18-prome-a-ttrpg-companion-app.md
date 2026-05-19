@@ -559,12 +559,11 @@ export function AudioPlayer({ url }: { url: string }) {
 
 Most importantly, it works, and it sounds so gooood. You have both soundtracks cross-fade smoothly across 5 seconds (could be more as well) which is very natural, and gives you the feeling of literally changing environment, like leaving a forest trail and arriving in a village or something.
 
-Play a soundtrack below, wait a bit for the volume to pick up, then switch biomes to experience the audio cross-fade.
+{% assign footnote_audio_preload = "I set up audio preloading and caching for the effect to be smooth. Otherwise you could be stuck loading the new audio file while the old one fades out. So when opting in to using soundtracks in the settings, all soundtracks get prefetched and cached using the Cache API." %}
+
+Play a soundtrack below (disclaimer: each track loads about ~5Mb of data when played), wait a bit for the volume to pick up, then switch biomes to experience the audio cross-fade. Of course on ProMe it would {% footnoteref "audio-preloading" footnote_audio_preload %}all happen automatically{% endfootnoteref %}.
 
 {% include "demos/prome/audio-crossfade/index.liquid" %}
-
-{% callout %}I had to set up audio preloading and caching for the effect to be smooth. Otherwise you could be stuck loading the new audio file while the old one fades out. So when you opt in to using soundtracks in the settings, I prefetch all soundtracks and cache them using the Cache API.
-{% endcallout %}
 
 ## Markdown Journaling
 
@@ -590,6 +589,18 @@ The journal editor also exists in 2 different flavor:
 
 1. As a full screen dialog, to really focus on the editing experience. This view also gives you some information about all of these embellishments so you know how to use them if you want.
 2. Or as a floating pop-up, kind of like the email composer in Gmail. You can expand or collapse it and it remains fixed to your window as you scroll and use the app below. This is useful to take notes while you use the rest of your character sheet.
+
+{% render "figure.liquid"
+  src: "/assets/images/prome/prome-journal-full.png",
+  alt: "Screenshot of the journal module from ProMe, featuring a full-width modal dialog window to edit the open journal entry, including a sidebar with a Markdown and formatting cheatsheet"
+  caption: "Editing a journal entry in full-screen, with access to the Markdown and formatting cheatsheet"
+%}
+
+{% render "figure.liquid"
+  src: "/assets/images/prome/prome-journal-floating.png",
+  alt: "Screenshot of the journal module from ProMe, featuring a floating widget in the bottom right of the screen with a textarea to edit the open journal entry"
+  caption: "Editing a journal entry in the floating editor, with the page accessible below"
+%}
 
 ## User accounts & cloud Sync
 
