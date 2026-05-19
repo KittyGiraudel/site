@@ -42,7 +42,7 @@ Everything started from [a tweet](https://twitter.com/gregwhitworth/status/62721
 >
 > [Greg Whitworth, Twitter](https://twitter.com/gregwhitworth/status/627218301622484992)
 
-It does look illegible. As most regular expressions. I started discussing with Greg about what he was trying to achieve and learnt he wanted to find CSS attribute selectors in a document. It seemed like a fun challenge so I spent a few minutes on it and came up with this:
+It does look illegible. As most regular expressions. I started discussing with Greg about what he was trying to achieve and learned he wanted to find CSS attribute selectors in a document. It seemed like a fun challenge so I spent a few minutes on it and came up with this:
 
 ```regex
 \[[a-z][a-z0-9-]*([|*$^~]?=("[^"\n]*"|'[^'\n]*'|[^"'\s\]]+)(\s+i)?)?]
@@ -285,6 +285,6 @@ Last but not least, Adonis mentioned in the comments a very handy tool to visual
   caption: "The graphical representation of our regular expression"
 %}
 
-I hope you learnt a few things anyway. And if you find a way to improve it, be sure to share in the comments!
+I hope you learned a few things anyway. And if you find a way to improve it, be sure to share in the comments!
 
 _Huge thanks to [my brother Loïc](https://twitter.com/l_giraudel) for helping me making this article a valuable piece of information about regular expressions. :)_

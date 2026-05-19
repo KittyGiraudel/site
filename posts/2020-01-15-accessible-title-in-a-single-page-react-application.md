@@ -7,13 +7,13 @@ tags:
   - React
 ---
 
-Over the summer, we, at N26, got the company Temesis to audit the accessibility of our web application. As part of their comprehensive and exhaustive report, we learnt that we were not handling page titles properly.
+Over the summer, we, at N26, got the company Temesis to audit the accessibility of our web application. As part of their comprehensive and exhaustive report, we learned that we were not handling page titles properly.
 
 Traditionally, following a link causes the page to reload with the content of the new page. This makes it possible for screen-readers to pick up on the new page title and announce it.
 
 With single-page applications using a JavaScript-powered routing system, only the content of the page tends to be reloaded in order to improve the perceived performance of the page.
 
-In this article, I will share what I learnt from Temesis and how to make sure the title of your React <abbr title='Single-Page Applications'>SPAs</abbr> is accessible to assistive technologies.
+In this article, I will share what I learned from Temesis and how to make sure the title of your React <abbr title='Single-Page Applications'>SPAs</abbr> is accessible to assistive technologies.
 
 ## Overview
 

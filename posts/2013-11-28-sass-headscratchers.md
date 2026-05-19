@@ -206,4 +206,4 @@ I love how powerful Sass has become but there are things that keep boggling my m
 > @KittyGiraudel the main problem is you want use Sass like PHP or Ruby, and not like a CSS preprocessor ;) /cc @kaelig  
 > — [Medhi Kabab, Twitter](https://twitter.com/piouPiouM/statuses/401427568592957441)
 
-That’s actually true! I’ve done many things with Sass that are really beycond the scope of CSS. But that’s where I think the fun is: thinking out of box, and hacking around the syntax. That’s how I learnt to use Sass, and that’s how I’ll keep going on. ;)
+That’s actually true! I’ve done many things with Sass that are really beycond the scope of CSS. But that’s where I think the fun is: thinking out of box, and hacking around the syntax. That’s how I learned to use Sass, and that’s how I’ll keep going on. ;)

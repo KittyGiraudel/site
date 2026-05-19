@@ -13,7 +13,7 @@ To have a look at what links look like in a given page, I would highly commend t
 
 If you spot a link that does not make much sense on its own, revise its content until it does. No more “click here”, “learn more” or other non-sensical links! Similarly, avoid mentioning “link” in the text since most screen-readers already do that.
 
-As an example, consider a link visually stating “Edit” in a list of items. It makes sense, because the link belongs to a list item, therefore it is implied that it is for that specific item. But when listing links or just tabbing through, all links end up saying “Edit”, which is not good at all. To fix that problem, we can apply what we learnt yesterday and add some visually hidden content to the link.
+As an example, consider a link visually stating “Edit” in a list of items. It makes sense, because the link belongs to a list item, therefore it is implied that it is for that specific item. But when listing links or just tabbing through, all links end up saying “Edit”, which is not good at all. To fix that problem, we can apply what we learned yesterday and add some visually hidden content to the link.
 
 ```html
 <a href="/edit/1234567890">

@@ -7,7 +7,7 @@ tags:
 
 I authored the very first version of [Sass Guidelines](/projects/sass-guidelines/) in the first week of 2015, inspired by Harry Robert’s [CSS guidelines](https://cssguidelin.es/). It went through 3 additional iterations: version 1.1 in April 2015, version 1.2 barely 6 months later in September 2015 and finally version 1.3 in Janvier 2017. Since then, not much, especially since I haven’t written a line of Sass since 2016.
 
-For some reason, I recently came back to Sass Guidelines. Not to update the content, but to work on the site itself. It turns out I learnt a lot in the last few years and found many improvements worth doing. I thought it would be interesting to discuss them in this post. Here are the different topics we’ll go through:
+For some reason, I recently came back to Sass Guidelines. Not to update the content, but to work on the site itself. It turns out I learned a lot in the last few years and found many improvements worth doing. I thought it would be interesting to discuss them in this post. Here are the different topics we’ll go through:
 
 ## Localisation
 
@@ -25,7 +25,7 @@ I noticed that this disclaimer was not marked as English, which meant someone us
 
 ## Search engine optimization
 
-Something I learnt from working on the international site for Gorillas is that it can be interesting to [list alternate versions](https://developers.google.com/search/docs/advanced/crawling/localized-versions) in the `<head>` of the document for search engines.
+Something I learned from working on the international site for Gorillas is that it can be interesting to [list alternate versions](https://developers.google.com/search/docs/advanced/crawling/localized-versions) in the `<head>` of the document for search engines.
 
 ```html
 <link rel="alternate" href="https://sass-guidelin.es" hreflang="x-default" />
@@ -51,7 +51,7 @@ I’ve also fixed a lot of links yielding a 404 due to pages and sites having di
 
 ## Accessibility
 
-Having spent the last few years focusing on accessibility, I must say I was almost pleased finding accessibility issues on Sass Guidelines as it means I’ve learnt and gotten better.
+Having spent the last few years focusing on accessibility, I must say I was almost pleased finding accessibility issues on Sass Guidelines as it means I’ve learned and gotten better.
 
 ### Titles
 

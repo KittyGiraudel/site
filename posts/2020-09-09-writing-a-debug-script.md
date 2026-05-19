@@ -103,7 +103,7 @@ const onVPN = await ping('https://our.internal.api.domain')
 
 You might be familiar with the [native `os` Node module](https://nodejs.org/api/os.html) which grants some insights onto the operating system details such as the platform, the amount of CPUs, and so on and so forth.
 
-However, I wanted to detect the precise Mac version (e.g. Mac OS X 10.15.6) since we don’t all use the same. It turns out that this is not provided by the `os` module; the best we get is `darwin` as the platform. In another StackOverflow answer, I learnt that there is [a file on all Mac systems that contains basic information about the OS](https://stackoverflow.com/questions/14989081/node-js-to-get-determine-os-version).
+However, I wanted to detect the precise Mac version (e.g. Mac OS X 10.15.6) since we don’t all use the same. It turns out that this is not provided by the `os` module; the best we get is `darwin` as the platform. In another StackOverflow answer, I learned that there is [a file on all Mac systems that contains basic information about the OS](https://stackoverflow.com/questions/14989081/node-js-to-get-determine-os-version).
 
 If we could read that file, we could get the information we need. It turns out that we can definitely do that. It’s a `plist` file which I came to understand is a flavor of XML for Apple systems (I guess?). In my case, I had `xml2js` at the ready, but [the `plist` npm package](https://www.npmjs.com/package/plist) might be even better.
 

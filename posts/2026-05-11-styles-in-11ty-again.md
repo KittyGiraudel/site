@@ -7,7 +7,7 @@ tags:
 image: /assets/images/styles-in-11ty-again/styles-in-eleventy-again.png
 ---
 
-I have written about how I [load styles on this website](/2020/12/03/inlining-scripts-and-styles-in-11ty/) in the past. I have recently revisited this approach, came up with new questions, new answers and learnt things along the way. I thought this would warrant an article.
+I have written about how I [load styles on this website](/2020/12/03/inlining-scripts-and-styles-in-11ty/) in the past. I have recently revisited this approach, came up with new questions, new answers and learned things along the way. I thought this would warrant an article.
 
 ## What’s so difficult anyway?
 
@@ -58,8 +58,8 @@ The `figure.liquid` partial looks like this:
 {% raw %}
 ```html
 <figure class="Figure">
-  <img src="{{ src }}" alt="{{ alt }}" loading="lazy">
-  <figcaption>{{ caption }}</figcaption>
+	<img src="{{ src }}" alt="{{ alt }}" loading="lazy">
+	<figcaption>{{ caption }}</figcaption>
 </figure>
 ```
 {% endraw %}
@@ -71,8 +71,8 @@ Now, onto including the styles for the figure component. The simplest approach i
 <link rel="stylesheet" href="/assets/css/components/figure.css">
 
 <figure class="Figure">
-  <img src="{{ src }}" alt="{{ alt }}" loading="lazy">
-  <figcaption>{{ caption }}</figcaption>
+	<img src="{{ src }}" alt="{{ alt }}" loading="lazy">
+	<figcaption>{{ caption }}</figcaption>
 </figure>
 ```
 {% endraw %}
@@ -140,8 +140,8 @@ It’s not too hard to adapt our existing code:
 <style data-href="/assets/css/components/figure.css">{{ css }}</style>
 
 <figure class="Figure">
-  <img src="{{ src }}" alt="{{ alt }}" loading="lazy">
-  <figcaption>{{ caption }}</figcaption>
+	<img src="{{ src }}" alt="{{ alt }}" loading="lazy">
+	<figcaption>{{ caption }}</figcaption>
 </figure>
 ```
 {% endraw %}

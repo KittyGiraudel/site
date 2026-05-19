@@ -1,5 +1,5 @@
 ---
-title: How I Learnt to Like Bootstrap
+title: How I Learned to Like Bootstrap
 description: A retrospective on the Bootstrap framework, and when it comes in handy
 tags:
   - CSS
@@ -14,7 +14,7 @@ A couple of days ago, I saw a [fellow French developer say how much he hates (Tw
 
 This reminded me that no so long ago, I was a fervent defender of the tell _“Bootstrap is good for prototypes and back offices or stuff like this”_.
 
-Until a recent project where I finally learnt to like Bootstrap, even for websites. But let’s back up a little bit!
+Until a recent project where I finally learned to like Bootstrap, even for websites. But let’s back up a little bit!
 
 ## How did we get there
 

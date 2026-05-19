@@ -8,7 +8,7 @@ tags:
   - TypeScript
 ---
 
-[Today’s Advent of Code](https://adventofcode.com/2022/day/21) (day 21 2022) was probably my favorite of the lot. I guess it’s a combination of having managed to solve it without relying on Reddit, having managed to solved it both manually _and_ programmatically, and having learnt things along the way.
+[Today’s Advent of Code](https://adventofcode.com/2022/day/21) (day 21 2022) was probably my favorite of the lot. I guess it’s a combination of having managed to solve it without relying on Reddit, having managed to solved it both manually _and_ programmatically, and having learned things along the way.
 
 Here is a technical write-up of my journey through that puzzle.
 
@@ -245,6 +245,6 @@ It’s generally very very fast and efficient. Significantly more than my versio
 
 ## Wrapping up
 
-So I ended up solving this one 3 times: one time by combining brute-force with some manual poking around (my own clumsy version of binary searching), one time by hand entirely, and one time programmatically from what I learnt in the manual version. And then after that I learnt more about implementing a binary search by reading other people’s solution.
+So I ended up solving this one 3 times: one time by combining brute-force with some manual poking around (my own clumsy version of binary searching), one time by hand entirely, and one time programmatically from what I learned in the manual version. And then after that I learned more about implementing a binary search by reading other people’s solution.
 
 It felt very good getting to the bottom of it and was pretty fun overall! ✨

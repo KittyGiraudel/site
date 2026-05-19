@@ -25,7 +25,7 @@ There are a couple of reasons that made me take the decision to move my perfectl
 - **Simpler workflow.** I only need a text editor and Git to update the site or release a blog post. No need for a local PHP server or anything. Plus, synchronizing my local environment with the one in production takes no more than a single command.
 - **Fewer dependencies.** No more jQuery.paginate for pagination; Jekyll has a built in plugin to do it. No more Prism.js for syntax highlighting; Jekyll comes with Pygments, a Python based syntax highlighter. Less JS (and especially no more jQuery) means faster site.
 - **Hosted on GitHub.** Not only are static files served from GitHub blazingly fast, but the source code is now public. I like the idea of making anyone able to have a look at the code behind the site. Plus, there is now a [bug tracker](https://github.com/KittyGiraudel/site/issues).
-- **Discover new things.** I’ve learnt to use the PHP/MySQL combo but I finally learnt how not to use it when it is not needed. I wanted to discover a new thing and it turned out to be quite simple to use in the end.
+- **Discover new things.** I’ve learned to use the PHP/MySQL combo but I finally learned how not to use it when it is not needed. I wanted to discover a new thing and it turned out to be quite simple to use in the end.
 
 ## Before Jekyll
 

@@ -297,7 +297,7 @@ export default renderer => ({
 
 ### Avoid adblockers messing with styles
 
-One minor problem with atomic classes is that they tend to be incorrectly flagged by adblockers as elements to be hidden. This is something we learnt the hard way mid-2017 and [that we fixed in Fela directly](https://github.com/robinweser/fela/pull/319) with the `filterClassName` option.
+One minor problem with atomic classes is that they tend to be incorrectly flagged by adblockers as elements to be hidden. This is something we learned the hard way mid-2017 and [that we fixed in Fela directly](https://github.com/robinweser/fela/pull/319) with the `filterClassName` option.
 
 By default, Fela now skips the `.ad` class, but there are more to add to the list to make sure no adblocker mess with the styles.
 

@@ -32,7 +32,7 @@ When you do `npm install <package>` in a directory that has a `package.json` fil
 
 ## Using dependencies
 
-Alright, so let’s recap a little bit what we just learnt.
+Alright, so let’s recap a little bit what we just learned.
 
 1. Node is an environment to execute JavaScript code. It has a package manager called npm, which is used to install (and reinstall) packages.
 
@@ -46,7 +46,7 @@ Okay, so now that we have dependencies installed for our project, how do we use 
 
 ## Wrapping up
 
-Alright, so let’s sum up what we just learnt:
+Alright, so let’s sum up what we just learned:
 
 Some packages provide executables, some don’t. All packages providing an executable can be executed with `./node_modules/.bin/<package>`.
 

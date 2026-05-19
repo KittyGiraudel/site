@@ -30,7 +30,7 @@ Most of all, CSS means something. It uses real words, understandable by anyone. 
 
 The first “problem” (for lack of a better word) with CSS is that it is a constantly evolving language. It was first introduced in 1994 if no mistake; so almost 20 years ago. After 3 major versions (CSS1, CSS2 and CSS2.1), CSS is now divided into modules growing at their own speed (Colors Level 3, Selectors Level 4, etc.). It means you cannot simply “learn CSS” then don’t get back to it. You can learn the bases, yes but it’s not enough.
 
-Some things I learnt 2 years ago are irrelevant now, and some things I’m learning today might disappear or become bad practices in the future. It is a non-stop evolution (which is cool but) which requires developers to be very careful.
+Some things I learned 2 years ago are irrelevant now, and some things I’m learning today might disappear or become bad practices in the future. It is a non-stop evolution (which is cool but) which requires developers to be very careful.
 
 ## Browser dependent
 

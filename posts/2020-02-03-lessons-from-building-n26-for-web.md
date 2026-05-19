@@ -9,7 +9,7 @@ tags:
 
 In just about a month, that will be 3.5 years I am at N26. I was hired as the first web developer to rebuild the N26 web platform. At the time, that meant rebuilding the WordPress website, rebuilding the Backbone webapp, rebuilding the Onsen UI webviews and rebuilding the custom support center, all in a new unified tech stack. And also, building a team, that could achieve all that, and work on the new platform to bring “N26 for Web” to a whole new shiny state.
 
-So I did, with immeasurable help from [Mike Smart](https://twitter.com/smartmike). So we did, us all, the web engineers that have been and are still with us to this day. In this article, I would like to share a few things I learnt and discovered along the way.
+So I did, with immeasurable help from [Mike Smart](https://twitter.com/smartmike). So we did, us all, the web engineers that have been and are still with us to this day. In this article, I would like to share a few things I learned and discovered along the way.
 
 ## Hire people, not skills
 

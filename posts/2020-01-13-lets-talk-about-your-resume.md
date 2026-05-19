@@ -8,7 +8,7 @@ tags:
 
 Folks, we need to talk about resumes. Over the last 3 years at N26, I have had to get quite involved in hiring. I virtually interviewed every single person who joined the web team, and have probably reviewed enough CVs for a life time. The point is, I have come to spot red flags quickly and can notice candidates who care and invest time into their profile.
 
-In this article, I would like to share everything I have learnt about online applications for software development jobs. Please, keep in mind that my point of view is the one of someone who is hiring for a diverse team in a fast growing startup. I’ve never worked in Human Resources, and I have so many privileges that I haven’t had to make a resume in the last decade so, as always, your mileage may vary.
+In this article, I would like to share everything I have learned about online applications for software development jobs. Please, keep in mind that my point of view is the one of someone who is hiring for a diverse team in a fast growing startup. I’ve never worked in Human Resources, and I have so many privileges that I haven’t had to make a resume in the last decade so, as always, your mileage may vary.
 
 This is going to be a long one, so I broke it down into pieces so you can jump to a specific session more conveniently. The next section is a big summary of the article, and every section also contains its own little TL;DR at the end.
 
@@ -174,7 +174,7 @@ There seems to be mixed opinions about whether or not to join a cover letter to 
 
 Things a cover letter are not: snippets of your resume, a link to your website, a checklist of your skills. Things a cover letter should do: complement your resume, give insights on who you are, tell why you like the company and think you would fit.
 
-Interesting letters I have read started by talking a bit about who they are. Then explain how they learnt about the company/position. Finally, mentioned why they would like to join (new challenge, working on the product, learning new tech, etc.). Kindness and humor is also nice of course.
+Interesting letters I have read started by talking a bit about who they are. Then explain how they learned about the company/position. Finally, mentioned why they would like to join (new challenge, working on the product, learning new tech, etc.). Kindness and humor is also nice of course.
 
 Also, final pet-peeve of mine: please don’t start your letter with “Dear Sir or Madam”, let alone “Dear Sir”. I’m the non-binary person that will review your application. You might not want to misgender me on the 2nd word of your letter. Prefer neutral forms such as “To whom it may concern”, “Dear &lt;company>”, or something more casual (depending on the company you apply for).
 

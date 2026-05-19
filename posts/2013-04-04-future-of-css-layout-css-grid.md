@@ -8,7 +8,7 @@ deprecated: true
 
 In the last few days/weeks, I have been helping Chris Coyier with [CSS-Tricks' Almanac](https://css-tricks.com/almanac/). It seems he doesn’t have enough time to fill the last remaining entries, so we’ve been a few to help him out by writing them. I have done [perspective](https://css-tricks.com/almanac/properties/p/perspective/), [perspective-origin](https://css-tricks.com/almanac/properties/p/perspective-origin/) and [grid](https://css-tricks.com/almanac/properties/g/grid/).
 
-I’ve to say it’s been a real pleasure to do this, mostly because I’ve learnt literally a ton of stuff. Some people say the best way to learn is through teaching, I can say it’s mostly true.
+I’ve to say it’s been a real pleasure to do this, mostly because I’ve learned literally a ton of stuff. Some people say the best way to learn is through teaching, I can say it’s mostly true.
 
 Anyway, if `perspective` and `perspective-origin` have been quite easy to do, I must say `grid` has been a whole another story. This is by far the most complicated thing I have ever seen in CSS. Let me introduce the topic.
 

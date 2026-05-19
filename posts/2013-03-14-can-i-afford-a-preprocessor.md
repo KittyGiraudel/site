@@ -63,7 +63,7 @@ _Sass also gives multiple stylesheets concatenation and file minification (among
 
 Vincent is definitely right on this one. Preprocessors sometimes make the syntax more complex by adding new features; not necessarily more complicated, simply more complex (no pun intended).
 
-One of the biggest concerns when talking about CSS preprocessors (and preprocessors in general) is the learning curve. Most try to stay as close as possible to the default syntax but they involve new features with their own syntax, which need to be learnt. Yes, **it needs some time to wrap one’s head around a preprocessor**, especially if it involves a very different syntax from the original language (Sass, CoffeeScript).
+One of the biggest concerns when talking about CSS preprocessors (and preprocessors in general) is the learning curve. Most try to stay as close as possible to the default syntax but they involve new features with their own syntax, which need to be learned. Yes, **it needs some time to wrap one’s head around a preprocessor**, especially if it involves a very different syntax from the original language (Sass, CoffeeScript).
 
 If you happen to be a beginner or work with inexperienced developers, you probably shouldn’t use preprocessors. Someone who’s not very comfortable with a language could do [pretty bad things](https://pastebin.com/Jy9PqFTy) with a preprocessor. Adapt your tools to your team.
 
