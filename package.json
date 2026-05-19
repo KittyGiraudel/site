@@ -35,7 +35,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.15",
-		"@netlify/edge-functions": "^3.0.6",
+		"@netlify/edge-functions": "^3.0.7",
 		"@types/he": "^1.2.3",
 		"@types/html-minifier-terser": "^7.0.2",
 		"@types/markdown-it": "^14.1.2",
