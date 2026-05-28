@@ -24,13 +24,23 @@ function formatPercent(count, total) {
 }
 
 /**
- * Read a CSS custom property from the visualization wrapper.
+ * Resolve a CSS custom property to a concrete color string.
+ *
+ * Reading a custom property directly returns its declared token list, which
+ * does not resolve `light-dark()`. Assigning it to an actual `<color>`
+ * property on a probe element forces the browser to resolve it.
  * @param {HTMLElement} element
  * @param {string} name
  * @returns {string}
  */
 function getColor(element, name) {
-  return getComputedStyle(element).getPropertyValue(name).trim();
+  const probe = document.createElement('span');
+  probe.style.color = `var(${name})`;
+  probe.style.display = 'none';
+  element.appendChild(probe);
+  const resolved = getComputedStyle(probe).color;
+  probe.remove();
+  return resolved;
 }
 
 /**
@@ -109,7 +119,7 @@ function renderJobHuntChart(root, data) {
     stack: 'applications',
   }));
 
-  new Chart(ctx, {
+  const chart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels,
@@ -120,7 +130,7 @@ function renderJobHuntChart(root, data) {
         duration: 650,
         easing: 'easeOutQuart',
       },
-      aspectRatio: 1.85,
+      maintainAspectRatio: false,
       indexAxis: 'y',
       responsive: true,
       scales: {
@@ -175,12 +185,26 @@ function renderJobHuntChart(root, data) {
   });
 
   content.hidden = false;
+  return chart;
 }
 
-(() => {
+function bootstrap() {
   const root = document.querySelector('#job-hunt-viz');
   if (!root || typeof Chart === 'undefined') return;
 
   renderSummary(root, jobHuntData);
-  renderJobHuntChart(root, jobHuntData);
-})();
+  let chart = renderJobHuntChart(root, jobHuntData);
+
+  // Chart.js rasterises colors at render time, so when the theme changes
+  // we destroy and re-render to pick up the new `light-dark()` values.
+  window.ThemeManager?.onThemeChanged(() => {
+    chart.destroy();
+    chart = renderJobHuntChart(root, jobHuntData);
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootstrap);
+} else {
+  bootstrap();
+}
