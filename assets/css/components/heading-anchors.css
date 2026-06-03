@@ -4,6 +4,10 @@
 	opacity: 0;
 }
 
+.ha.ha.ha::before {
+	content: none;
+}
+
 .ha:where(:focus-within, :hover) {
 	opacity: 1;
 }
