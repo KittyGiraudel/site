@@ -131,6 +131,11 @@
 		background-image: url("https://www.scilife.io/hubfs/Favicon_01.jpg");
 	}
 
+	[data-link-favicons] a[href*="duna.com"]::before {
+		content: "";
+		background-image: url("https://framerusercontent.com/images/NE8JsjXIjzJVlyyyktYN06ZoPY.png");
+	}
+
 	[data-link-favicons] a[href*="edenspiekermann.com"]::before {
 		content: "";
 		background-image: url("https://www.datocms-assets.com/131810/1727375010-favicon_48x48.png");
