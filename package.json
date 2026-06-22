@@ -34,7 +34,7 @@
 		"workbox-cli": "^7.4.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.4.16",
+		"@biomejs/biome": "^2.5.0",
 		"@netlify/edge-functions": "^3.0.7",
 		"@types/he": "^1.2.3",
 		"@types/html-minifier-terser": "^7.0.2",
