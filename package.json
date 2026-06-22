@@ -12,7 +12,7 @@
 		"test": "node --experimental-strip-types --test tests/*.test.ts"
 	},
 	"dependencies": {
-		"@11ty/eleventy": "^3.1.2",
+		"@11ty/eleventy": "^3.1.6",
 		"@11ty/eleventy-fetch": "^5.1.1",
 		"@11ty/eleventy-img": "^6.0.4",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
