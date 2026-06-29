@@ -1,18 +1,20 @@
 ---
-title: ProMe, a TTRPG companion app
+title: ProMe, a TTRPG Companion App
 description: A rather extensive design and technical walkthrough of my new project, ProMe, a companion app for the game “The Protector’s Memories”.
 tags:
   - UX
   - UI
   - Design
   - Gaming
+  - Next.js
+  - PWA
 image: /assets/images/prome/home-page.png
 draft: true
 ---
 
-Over the last few weeks, I’ve been working on *[ProMe](https://prome.games)* (pronounced “pro-may”), a companion app for the solo <abbr title="Table-Top Role-Playing Game">TTRPG</abbr> called “The Protector’s Memories”, created by [Enzo Salviato](https://bsky.app/profile/desesperenzo.bsky.social).
+While I was looking for a job earlier this year, I worked on *[ProMe](https://prome.games)* (pronounced “pro-may”), a companion app for the solo <abbr title="Table-Top Role-Playing Game">TTRPG</abbr> called “The Protector’s Memories”, created by [Enzo Salviato](https://bsky.app/profile/desesperenzo.bsky.social).
 
-What started as a quick and dirty little tool to help me generate <abbr title="Non-Playable Characters">NPCs</abbr> turned into a fully fledged ~~website~~ progressive web app that I’m happy to finally talk about. <abbr title="The Protector’s Memories">TPM</abbr> is a relatively recent game (2025), and solo RPGs are rather niche, so I don’t expect many people to use this site. Still, I wanted to write about my experience building it, and highlight some cool things I’ve done and learnt along the way.
+What started as a quick and dirty little tool to help me generate <abbr title="Non-Playable Characters">NPCs</abbr> turned into a fully fledged ~~website~~ progressive web app that I’m happy to finally talk about. <abbr title="The Protector’s Memories">TPM</abbr> is a relatively recent game (2025), and solo RPGs are rather niche, so I don’t expect many people to use this site. Still, I wanted to write about my experience building it, and highlight some cool things I’ve done and learned along the way.
 
 If you just want to check out the website, here goes: [prome.games](https://prome.games). The landing page, and the [biome pages](https://prome.games/en/biomes/titan-gardens) are the most cinematic pages, and I recommend checking them out on a desktop browser to fully appreciate the theming and imagery.
 
@@ -29,13 +31,13 @@ The Protector’s Memories is a niche little gem in the world of TTRPGs. For sta
 
 If you’re into role-playing games, you should try it. Depending on what you’re used to, it may hit the spot, or it may be a nice discovery!
 
-{% assign footnote_rpg = "Truth be told, I’m not an avid role-player myself. I played a fair bit of Call of Cthulhu (based on the work of H.P. Lovecraft) with my ex-partner who was really into it — although we played it more pulp than horror. Besides that, I’ve never really done much role-playing. The point is: you really don’t need to be a RPG nerd to try this one out." %}
+{% assign footnote_rpg = "Truth be told, I’m not an avid role-player myself. I played a fair bit of Call of Cthulhu (based on the work of H.P. Lovecraft) with my ex-partner who was really into it, although we played it more pulp than horror. Besides that, I’ve never really done much role-playing. The point is: you really don’t need to be an RPG nerd to try this one out." %}
 
 And if you’re {% footnoteref "rpg" footnote_rpg %}*not* into role-playing games{% endfootnoteref %}, you should try it! It’s *very easy* to pick up, it needs no prior gaming experience, it has no strict goal, and the rules are rather thin and permissive. If you’re thinking <abbr title="Dungeons and Dragons">DnD</abbr>, then you’re totally off-mark — it ain’t that. 
 
 TPM is based on exploration and discovery before anything else, so there is very little combat, and while magic is present, it is rather subtle. Your goal is to wander and wonder, help dwellers, discover lost landscapes and try to better the world around you.
 
-The game costs about €£$20–25 and can be learnt within an hour, so I really encourage you to give it a go.
+The game costs about €£$20–25 and can be learned within an hour, so I really encourage you to give it a go.
 
 {% callout "warning" %}**ProMe is not a digital version of the game.** You still need to own the rulebook, and I think it’s better this way: I’m not in the business of giving it away for free when a team worked so hard to create such a magical game. The site is only intended as a support to keep track of progress and play digitally instead of pen-and-paper. All credits to the original authors of the game.{% endcallout %}
 
@@ -51,7 +53,7 @@ I wanted to get started quick, and I wanted to code some things myself (and not 
 - PWA: Serwist
 - Hosting: Netlify and R2 for sound files
 - Authentication: Netlify Identity
-- Storage: local storage first, and Netlify Neon for user accounts
+- Storage: local storage first, and Netlify DB (Neon) for user accounts
 
 ### Ant Design: a love-hate relationship
 
@@ -91,22 +93,22 @@ I’ve really just been having fun with this project, so I got to spend some tim
 
 The game has this concept of “biomes,” of which there are 6. Think of them as different environments: you have your forest, and your desert, and your jungle, and so on. It felt rather natural to associate a color to each biome. After all, that’s how I played the game on paper: roll a die, pick a biome, color the map with pencils.
 
-I’ve defined 2 colors for each biome: a light and a dark one. And I’ve defined a CSS property for each. Like this:
+I’ve defined two colors for each biome: a light and a dark one. And I’ve defined a CSS property for each. Like this:
 
 ```css
 :root {
-  --biome-prairieSea-light: #7dc8a0;
-  --biome-prairieSea-dark: #4a9f72;
-  --biome-shadowWoods-light: #a793c3;
-  --biome-shadowWoods-dark: #57446f;
-  --biome-mushroomJungle-light: #ae9178;
-  --biome-mushroomJungle-dark: #624838;
-  --biome-sunkenSavannah-light: #5ec4e8;
-  --biome-sunkenSavannah-dark: #1a6f94;
-  --biome-silentWastes-light: #f3d58e;
-  --biome-silentWastes-dark: #af8c43;
-  --biome-titanGardens-light: #ffb3a7;
-  --biome-titanGardens-dark: #a64b3c;
+	--biome-prairieSea-light: #7dc8a0;
+	--biome-prairieSea-dark: #4a9f72;
+	--biome-shadowWoods-light: #a793c3;
+	--biome-shadowWoods-dark: #57446f;
+	--biome-mushroomJungle-light: #ae9178;
+	--biome-mushroomJungle-dark: #624838;
+	--biome-sunkenSavannah-light: #5ec4e8;
+	--biome-sunkenSavannah-dark: #1a6f94;
+	--biome-silentWastes-light: #f3d58e;
+	--biome-silentWastes-dark: #af8c43;
+	--biome-titanGardens-light: #ffb3a7;
+	--biome-titanGardens-dark: #a64b3c;
 }
 ```
 
@@ -114,8 +116,8 @@ But I didn’t want to have to create a bunch of variants every time a component
 
 ```css
 [data-biome="prairieSea"] {
-  --biome-light: var(--biome-prairieSea-light);
-  --biome-dark: var(--biome-prairieSea-dark);
+	--biome-light: var(--biome-prairieSea-light);
+	--biome-dark: var(--biome-prairieSea-dark);
 }
 ```
 
@@ -175,7 +177,7 @@ Then I decided to add patterns to each biome, which had the added perk of helpin
   with_perspective: false
 %}
 
-I event went a bit nuts and added some perspective to the whole map (behind a setting):
+I even went a bit nuts and added some perspective to the whole map (behind a setting):
 
 {% render "demos/prome/map.liquid",
   with_styles: false,
@@ -199,32 +201,32 @@ My sisters made me discover TPM. So when I started building this website, I natu
 
 Not only was it lovely to work with my sister on this project, but she also did an amazing job with the images. I’ve given her the official biome description from the rulebook, as well as the original illustrations from the book from Enzo Salviato and Natalia Mancio.
 
-From there, she used her creative judgement and profficiency with MidJourney to generate a variety of images. We’ve done several passes on them to find something that worked well on desktop, mobile and felt coherent across biomes. My favorite is the image used for the Titan Gardens biome, which are gigantic gardens where blue whales can float.
+From there, she used her creative judgement and proficiency with MidJourney to generate a variety of images. We’ve done several passes on them to find something that worked well on desktop, mobile and felt coherent across biomes. My favorite is the image used for the Titan Gardens biome, which are gigantic gardens where blue whales can float.
 
 {% render "figure.liquid",
   src: "/assets/images/prome/biome-page.png",
   caption: "The Titan Gardens in all their gorgeous splendor",
-  alt: "The dedicated page to the Titan Gardens biome feature a blue whale floating in the middle of a blooming environment of pink flowers"
+  alt: "The dedicated page to the Titan Gardens biome featuring a blue whale floating in the middle of a blooming environment of pink flowers"
 %}
 
-{% callout %}All the images are served in avif, which has close to [95% global support](https://caniuse.com/avif). I didn’t even bother with a webp fallback, because I think 95% is more than enough. If you’re still serving non-transparent images in jpeg, this is your reminder to switch to more modern formats to serve lighter files. You can optimize images with [Squoosh](https://squoosh.app/) (which incidentily is a great progressive web app).
+{% callout %}All the images are served in avif, which has close to [95% global support](https://caniuse.com/avif). I didn’t even bother with a webp fallback, because I think 95% is more than enough. If you’re still serving non-transparent images in jpeg, this is your reminder to switch to more modern formats to serve lighter files. You can optimize images with [Squoosh](https://squoosh.app/) (which incidentally is a great progressive web app).
 
 {% render "baseline.liquid" feature_id: "avif" %}
 {% endcallout %}
 
 ### Custom Fonts
 
-I’ve spent most of my frontend career trying to avoid using custom fonts as much as possible to make my life easier. But I really wanted to create gorgeous almost poster-like pages for the biomes, and I felt like using a creative font would go a long way in instiling some character.
+I’ve spent most of my frontend career trying to avoid using custom fonts as much as possible to make my life easier. But I really wanted to create gorgeous almost poster-like pages for the biomes, and I felt like using a creative font would go a long way in instilling some character.
 
 Next.js provides [built-in optimization for Google Fonts](https://nextjs.org/docs/pages/getting-started/fonts). Unfortunately, their integration doesn’t allow for subsetting the font to specific characters (it only allows subsetting a whole script, like `latin` or `cyrillic`). This is doable with Google Fonts directly though, using the `text=` query parameter. For instance:
 
 ```html
 <link
-  href="https://fonts.googleapis.com/css2
-    ?family=Mountains+of+Christmas:wght@400
-    &display=swap
-    &text=Titan+Gardens"
-  rel="stylesheet">
+	href="https://fonts.googleapis.com/css2
+		?family=Mountains+of+Christmas:wght@400
+		&display=swap
+		&text=Titan+Gardens"
+	rel="stylesheet">
 ```
 
 But because I want to have full offline support, I can’t have an HTTP request going to Google (or any third party for that matter). Also, this request could be a little slow which would really diminish the effect.
@@ -241,76 +243,76 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
 const FONTS = [
-  {
-    biome: 'shadowWoods',
-    family: 'Caesar Dressing',
-    file: 'caesar-dressing',
-    text: 'The Shadow Woods',
-  },
-  {
-    biome: 'mushroomJungle',
-    family: 'Shizuru',
-    file: 'shizuru',
-    text: 'The Mushroom Jungle',
-  },
-  {
-    biome: 'sunkenSavannah',
-    family: 'Rubik Marker Hatch',
-    file: 'rubik-marker-hatch',
-    text: 'The Sunken Savannah',
-  },
-  {
-    biome: 'titanGardens',
-    family: 'Mountains of Christmas',
-    file: 'mountains-of-christmas',
-    text: 'The Titan Garden',
-  },
-  {
-    biome: 'prairieSea',
-    family: 'Mystery Quest',
-    file: 'mystery-quest',
-    text: 'The Prairie Sea',
-  },
-  {
-    biome: 'silentWastes',
-    family: 'Fredericka the Great',
-    file: 'fredericka-the-great',
-    text: 'The Silent Wastes',
-  },
+	{
+		biome: 'shadowWoods',
+		family: 'Caesar Dressing',
+		file: 'caesar-dressing',
+		text: 'The Shadow Woods',
+	},
+	{
+		biome: 'mushroomJungle',
+		family: 'Shizuru',
+		file: 'shizuru',
+		text: 'The Mushroom Jungle',
+	},
+	{
+		biome: 'sunkenSavannah',
+		family: 'Rubik Marker Hatch',
+		file: 'rubik-marker-hatch',
+		text: 'The Sunken Savannah',
+	},
+	{
+		biome: 'titanGardens',
+		family: 'Mountains of Christmas',
+		file: 'mountains-of-christmas',
+		text: 'The Titan Garden',
+	},
+	{
+		biome: 'prairieSea',
+		family: 'Mystery Quest',
+		file: 'mystery-quest',
+		text: 'The Prairie Sea',
+	},
+	{
+		biome: 'silentWastes',
+		family: 'Fredericka the Great',
+		file: 'fredericka-the-great',
+		text: 'The Silent Wastes',
+	},
 ]
 
 // A modern UA is required: Google Fonts returns WOFF2 only for modern browsers.
 const UA =
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+	'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
 
 async function fetchGoogleFontsCSS(family, text) {
-  const url = new URL('https://fonts.googleapis.com/css2')
-  url.searchParams.set('family', family)
-  url.searchParams.set('text', [...new Set(text)].join(''))
-  url.searchParams.set('display', 'swap')
+	const url = new URL('https://fonts.googleapis.com/css2')
+	url.searchParams.set('family', family)
+	url.searchParams.set('text', [...new Set(text)].join(''))
+	url.searchParams.set('display', 'swap')
 
-  const res = await fetch(url.toString(), { headers: { 'User-Agent': UA } })
-  if (!res.ok)
-    throw new Error(`Failed to fetch CSS for ${family}: ${res.status}`)
-  return res.text()
+	const res = await fetch(url.toString(), { headers: { 'User-Agent': UA } })
+	if (!res.ok)
+		throw new Error(`Failed to fetch CSS for ${family}: ${res.status}`)
+	return res.text()
 }
 
 function extractWoff2Url(css, family) {
-  // The Google Fonts API returns URLs with query params (no .woff2 extension),
-  // followed by format('woff2'). Match the url() before that format hint.
-  const match = css.match(
-    /url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\)\s+format\('woff2'\)/
-  )
-  if (!match)
-    throw new Error(`No WOFF2 URL found in CSS response for ${family}`)
-  return match[1]
+	// The Google Fonts API returns URLs with query params (no .woff2 extension),
+	// followed by format('woff2'). Match the url() before that format hint.
+	const match = css.match(
+		/url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\)\s+format\('woff2'\)/
+	)
+	if (!match)
+		throw new Error(`No WOFF2 URL found in CSS response for ${family}`)
+	return match[1]
 }
 
 async function downloadWoff2(url) {
-  const res = await fetch(url)
-  if (!res.ok)
-    throw new Error(`Failed to download WOFF2 from ${url}: ${res.status}`)
-  return Buffer.from(await res.arrayBuffer())
+	const res = await fetch(url)
+	if (!res.ok)
+		throw new Error(`Failed to download WOFF2 from ${url}: ${res.status}`)
+	return Buffer.from(await res.arrayBuffer())
 }
 
 const outDir = join(ROOT, 'public', 'fonts')
@@ -320,35 +322,35 @@ const faceParts = []
 const selectorParts = []
 
 for (const font of FONTS) {
-  process.stdout.write(`Fetching ${font.family}…`)
-  const css = await fetchGoogleFontsCSS(font.family, font.text)
-  const woff2Url = extractWoff2Url(css, font.family)
-  const woff2 = await downloadWoff2(woff2Url)
-  const outPath = join(outDir, `${font.file}.woff2`)
-  writeFileSync(outPath, woff2)
-  console.log(
-    `${woff2.length.toLocaleString()} bytes → public/fonts/biomes/${font.file}.woff2`
-  )
+	process.stdout.write(`Fetching ${font.family}…`)
+	const css = await fetchGoogleFontsCSS(font.family, font.text)
+	const woff2Url = extractWoff2Url(css, font.family)
+	const woff2 = await downloadWoff2(woff2Url)
+	const outPath = join(outDir, `${font.file}.woff2`)
+	writeFileSync(outPath, woff2)
+	console.log(
+		`${woff2.length.toLocaleString()} bytes → public/fonts/biomes/${font.file}.woff2`
+	)
 
-  faceParts.push(`@font-face {
-  font-family: '${font.family}';
-  src: url('/fonts/biomes/${font.file}.woff2') format('woff2');
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
+	faceParts.push(`@font-face {
+	font-family: '${font.family}';
+	src: url('/fonts/biomes/${font.file}.woff2') format('woff2');
+	font-display: swap;
+	font-style: normal;
+	font-weight: 400;
 }`)
 
-  selectorParts.push(`
-    [data-biome='${font.biome}'] { --biome-font: '${font.family}' }
-  `)
+	selectorParts.push(`
+		[data-biome='${font.biome}'] { --biome-font: '${font.family}' }
+	`)
 }
 
 writeFileSync(
-  join(ROOT, 'src', 'biome-fonts.css'),
-  `
-    ${faceParts.join('\n\n')}
-    ${selectorParts.join('\n')}
-  `
+	join(ROOT, 'src', 'biome-fonts.css'),
+	`
+		${faceParts.join('\n\n')}
+		${selectorParts.join('\n')}
+	`
 )
 ```
 </details>
@@ -359,13 +361,13 @@ I’ve recently written about the [interactive cover component](/2026/04/09/an-i
 
 {% render "demos/cover-component/index.liquid" %}
 
-I render this component on 2 different pages: in the character sheet, right next to the map, and in the biome-specific page. On the actual site, this component contains a link that you can click to head to the biome page to know more about this biome. 
+I render this component on two different pages: in the character sheet, right next to the map, and in the biome-specific page. On the actual site, this component contains a link that you can click to head to the biome page to know more about this biome. 
 
 Because the same component is rendered in both places, I could use a view transition to smoothly animate the switch from one page to the other. All I had to do was turn on [experimental support for view transition in Next.js](https://nextjs.org/docs/app/guides/view-transitions), then wrap my component with `ViewTransition` and give it a name.
 
 ```tsx
 <ViewTransition name={`cover-${biome}`}>
-  <Cover {...coverProps} />
+	<Cover {...coverProps} />
 </ViewTransition>
 ```
 
@@ -381,14 +383,14 @@ The solution is rather simple: use a pseudo-element to apply the navigation blur
 
 ```css
 .Nav {
-  position: relative;
+	position: relative;
 }
 
 .Nav::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  backdrop-filter: blur(8px);
+	content: "";
+	position: absolute;
+	inset: 0;
+	backdrop-filter: blur(8px);
 }
 ```
 
@@ -408,151 +410,151 @@ There is also one on the biome page, in the “Magic” section. This time I too
 
 ### Cross-Fading Audio
 
- The official rulebook recommends some specific soundtracks from [TableTopAudio](https://tabletopaudio.com/) for each biome, to immerse you into your playing sessions. So of course, I’ve added a setting for you to be able to listen to these soundtracks directly on the site. 
+The official rulebook recommends some specific soundtracks from [TableTopAudio](https://tabletopaudio.com/) for each biome, to immerse you into your playing sessions. So of course, I’ve added a setting for you to be able to listen to these soundtracks directly on the site. 
 
 What I really wanted to achieve was for the audio to cross fade nicely when you go from one biome to the next. If soundtrack helps with immersion, an abrupt audio change would have the opposite effect. Turns out this is really annoying to do (even with AI support), and I think I’ve implemented it like 3 different times. 
 
-The first realisation (which took me longer than I care to admit) is that I can’t use a single native `<audio>` element. Because changing its `src` attribute would cause the browser to unmount the current audio and mount the new one, which results in an abrupt change. So I had to use to the Audio API. I’ve tried a few different versions, and ultimately decided to use [Howler](https://howlerjs.com/), a JavaScript library to manage audio files on the web.
+The first realisation (which took me longer than I care to admit) is that I can’t use a single native `<audio>` element. Because changing its `src` attribute would cause the browser to unmount the current audio and mount the new one, which results in an abrupt change. So I had to use the Audio API. I’ve tried a few different versions, and ultimately decided to use [Howler](https://howlerjs.com/), a JavaScript library to manage audio files on the web.
 
 <details>
 <summary>There is a fair amount of logic involved, and the code is not massively interesting albeit heavily commented, so you can check it if you want.</summary>
 
 ```ts
-import Howl from 'howler'
+import { Howl } from 'howler'
 
 const FADE_DURATION_MS = 5_000
 
 export function AudioPlayer({ url }: { url: string }) {
-  const howl = useRef<Howl | null>(null)
-  const volumeRef = useRef(0.8)
-  const wasPlayingRef = useRef(false)
-  const [volume, setVolume] = useState(0.8)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [currentTime, setCurrentTime] = useState(0)
-  const [duration, setDuration] = useState(0)
+	const howl = useRef<Howl | null>(null)
+	const volumeRef = useRef(0.8)
+	const wasPlayingRef = useRef(false)
+	const [volume, setVolume] = useState(0.8)
+	const [isPlaying, setIsPlaying] = useState(false)
+	const [currentTime, setCurrentTime] = useState(0)
+	const [duration, setDuration] = useState(0)
 
-  // Extracted so both the effect and togglePlay can create a Howl consistently.
-  // The `wasPlayingRef` is updated via onplay/onpause so its value survives
-  // effect cleanup.
-  const buildHowl = useCallback((src: string) => {
-    const sound = new Howl({
-      src: [src],
-      format: ['mp3'],
-      html5: true,
-      loop: true,
-      volume: volumeRef.current,
-      onload: () => setDuration(sound.duration()),
-      onplay: () => {
-        setIsPlaying(true)
-        wasPlayingRef.current = true
-      },
-      onpause: () => {
-        setIsPlaying(false)
-        wasPlayingRef.current = false
-      },
-      // It's important not to set `isPlaying` to `false` on sound stop, because
-      // this is invoked automatically when unloading the sound. So as the sound
-      // fades out, Howler calls `stop`, which would turn off the player.
-      // onstop: () => setIsPlaying(false),
-    })
-    return sound
-  }, [])
+	// Extracted so both the effect and togglePlay can create a Howl consistently.
+	// The `wasPlayingRef` is updated via onplay/onpause so its value survives
+	// effect cleanup.
+	const buildHowl = useCallback((src: string) => {
+		const sound = new Howl({
+			src: [src],
+			format: ['mp3'],
+			html5: true,
+			loop: true,
+			volume: volumeRef.current,
+			onload: () => setDuration(sound.duration()),
+			onplay: () => {
+				setIsPlaying(true)
+				wasPlayingRef.current = true
+			},
+			onpause: () => {
+				setIsPlaying(false)
+				wasPlayingRef.current = false
+			},
+			// It's important not to set `isPlaying` to `false` on sound stop, because
+			// this is invoked automatically when unloading the sound. So as the sound
+			// fades out, Howler calls `stop`, which would turn off the player.
+			// onstop: () => setIsPlaying(false),
+		})
+		return sound
+	}, [])
 
-  useEffect(
-    function handleBiomeChange() {
-      // `wasPlayingRef` survives cleanup (unlike `howl.current` which is nulled
-      // there), so we can reliably know whether to auto-start the incoming track.
-      const wasPlaying = wasPlayingRef.current
+	useEffect(
+		function handleBiomeChange() {
+			// `wasPlayingRef` survives cleanup (unlike `howl.current` which is nulled
+			// there), so we can reliably know whether to auto-start the incoming track.
+			const wasPlaying = wasPlayingRef.current
 
-      // Fade out the previous sound (cleanup will unload it after the fade).
-      if (howl.current) {
-        howl.current.fade(volumeRef.current, 0, FADE_DURATION_MS)
-      }
+			// Fade out the previous sound (cleanup will unload it after the fade).
+			if (howl.current) {
+				howl.current.fade(volumeRef.current, 0, FADE_DURATION_MS)
+			}
 
-      // If there is no URL, stop the player and reset the state (which can happen
-      // when moving into a cell that has no biome and thus no audio).
-      if (!url) {
-        setIsPlaying(false)
-        setCurrentTime(0)
-        wasPlayingRef.current = false
-        return
-      }
+			// If there is no URL, stop the player and reset the state (which can happen
+			// when moving into a cell that has no biome and thus no audio).
+			if (!url) {
+				setIsPlaying(false)
+				setCurrentTime(0)
+				wasPlayingRef.current = false
+				return
+			}
 
-      // If nothing was playing, don’t construct a Howl yet, wait for the user
-      // to click play. This avoids the "HTML5 Audio pool exhausted" warning
-      // firing when Howler tries to obtain an audio node before any user gesture.
-      if (!wasPlaying) {
-        howl.current = null
-        return
-      }
+			// If nothing was playing, don’t construct a Howl yet, wait for the user
+			// to click play. This avoids the "HTML5 Audio pool exhausted" warning
+			// firing when Howler tries to obtain an audio node before any user gesture.
+			if (!wasPlaying) {
+				howl.current = null
+				return
+			}
 
-      // Something was already playing: swap to the new track immediately.
-      const sound = buildHowl(url)
-      sound.play()
-      howl.current = sound
+			// Something was already playing: swap to the new track immediately.
+			const sound = buildHowl(url)
+			sound.play()
+			howl.current = sound
 
-      return () => {
-        sound.fade(volumeRef.current, 0, FADE_DURATION_MS)
-        setTimeout(() => sound.unload(), FADE_DURATION_MS)
-        howl.current = null
-      }
-    },
-    [url, buildHowl]
-  )
+			return () => {
+				sound.fade(volumeRef.current, 0, FADE_DURATION_MS)
+				setTimeout(() => sound.unload(), FADE_DURATION_MS)
+				howl.current = null
+			}
+		},
+		[url, buildHowl]
+	)
 
-  // Stop playback when the component unmounts. This covers the lazy-init path
-  // where togglePlay created the Howl, that path returns no cleanup from
-  // handleBiomeChange, so without this effect the audio would keep playing
-  // after navigation.
-  useEffect(function cleanup() {
-    return () => {
-      if (howl.current) {
-        howl.current.fade(volumeRef.current, 0, FADE_DURATION_MS)
-        const sound = howl.current
-        setTimeout(() => sound.unload(), FADE_DURATION_MS)
-        howl.current = null
-      }
-    }
-  }, [])
+	// Stop playback when the component unmounts. This covers the lazy-init path
+	// where togglePlay created the Howl, that path returns no cleanup from
+	// handleBiomeChange, so without this effect the audio would keep playing
+	// after navigation.
+	useEffect(function cleanup() {
+		return () => {
+			if (howl.current) {
+				howl.current.fade(volumeRef.current, 0, FADE_DURATION_MS)
+				const sound = howl.current
+				setTimeout(() => sound.unload(), FADE_DURATION_MS)
+				howl.current = null
+			}
+		}
+	}, [])
 
-  // Poll current playback position while playing
-  useEffect(
-    function pollCurrentTime() {
-      if (!isPlaying) return
-      const id = setInterval(
-        () => setCurrentTime(howl.current?.seek() ?? 0),
-        1_000
-      )
-      return () => clearInterval(id)
-    },
-    [isPlaying]
-  )
+	// Poll current playback position while playing
+	useEffect(
+		function pollCurrentTime() {
+			if (!isPlaying) return
+			const id = setInterval(
+				() => setCurrentTime(howl.current?.seek() ?? 0),
+				1_000
+			)
+			return () => clearInterval(id)
+		},
+		[isPlaying]
+	)
 
-  const togglePlay = useCallback(() => {
-    if (!howl.current) {
-      // Howl was never created (lazy init path), build it now on user gesture.
-      if (!url) return
-      const sound = buildHowl(url)
-      sound.play()
-      howl.current = sound
-      return
-    }
-    if (howl.current.playing()) howl.current.pause()
-    else howl.current.play()
-  }, [url, buildHowl])
+	const togglePlay = useCallback(() => {
+		if (!howl.current) {
+			// Howl was never created (lazy init path), build it now on user gesture.
+			if (!url) return
+			const sound = buildHowl(url)
+			sound.play()
+			howl.current = sound
+			return
+		}
+		if (howl.current.playing()) howl.current.pause()
+		else howl.current.play()
+	}, [url, buildHowl])
 
-  const seekTo = useCallback((time: number) => {
-    howl.current?.seek(time)
-    setCurrentTime(time)
-  }, [])
+	const seekTo = useCallback((time: number) => {
+		howl.current?.seek(time)
+		setCurrentTime(time)
+	}, [])
 
-  const changeVolume = useCallback((value: number) => {
-    volumeRef.current = value
-    setVolume(value)
-    howl.current?.volume(value)
-  }, [])
+	const changeVolume = useCallback((value: number) => {
+		volumeRef.current = value
+		setVolume(value)
+		howl.current?.volume(value)
+	}, [])
 
-  return <>/* Audio player UI */</>
+	return <>/* Audio player UI */</>
 }
 ```
 </details>
@@ -561,9 +563,9 @@ Most importantly, it works, and it sounds so gooood. You have both soundtracks c
 
 {% assign footnote_audio_preload = "I set up audio preloading and caching for the effect to be smooth. Otherwise you could be stuck loading the new audio file while the old one fades out. So when opting in to using soundtracks in the settings, all soundtracks get prefetched and cached using the Cache API." %}
 
-Play a soundtrack below (disclaimer: each track loads about ~5Mb of data when played), wait a bit for the volume to pick up, then switch biomes to experience the audio cross-fade. Of course on ProMe it would {% footnoteref "audio-preloading" footnote_audio_preload %}all happen automatically{% endfootnoteref %}.
+Play a soundtrack below (disclaimer: each track loads about 5Mb of data when played), wait a bit for the volume to pick up, then switch biomes to experience the audio cross-fade. Of course on ProMe it would {% footnoteref "audio-preloading" footnote_audio_preload %}all happen automatically{% endfootnoteref %}.
 
-{% include "demos/prome/audio-crossfade/index.liquid" %}
+{% render "demos/prome/audio-crossfade/index.liquid" %}
 
 ## Markdown Journaling
 
@@ -581,11 +583,11 @@ I really wanted the journal to look good, and to be enjoyable to read! So I’ve
 - Cell coordinates are prefixed with a hex colored after their biome (if any), and become links that can take you to the map and select the exact cell. For instance: <span class="Hex" data-biome="prairieSea" title="Prairie Sea"></span>&nbsp;E12.
 - Certain keywords like <span class="Success">success</span> and <span class="Failure">failure</span> are highlighted and prefixed with an icon, just to make them stand out.
 - You can easily render die characters (⚀, ⚁, ⚂, ⚃, ⚄, ⚅) using {1}, {2}… and card suits (♠, ♥, ♦, ♣) using {S}, {H}, {D} and {C}, to avoid having to copy paste them from somewhere.
-- You can embed links to the different generators (like a NPC or a village), which will render cleanly, and offer a summary in a dialog when clicking them.
+- You can embed links to the different generators (like an NPC or a village), which will render cleanly, and offer a summary in a dialog when clicking them.
 
 And all of this is basically done without you, as a player and writer, having to think much about it. You end up writing what you want to write, and once you save, it looks good.
 
-The journal editor also exists in 2 different flavor: 
+The journal editor also exists in two flavors: 
 
 1. As a full screen dialog, to really focus on the editing experience. This view also gives you some information about all of these embellishments so you know how to use them if you want.
 2. Or as a floating pop-up, kind of like the email composer in Gmail. You can expand or collapse it and it remains fixed to your window as you scroll and use the app below. This is useful to take notes while you use the rest of your character sheet.
@@ -602,9 +604,9 @@ The journal editor also exists in 2 different flavor:
   caption: "Editing a journal entry in the floating editor, with the page accessible below"
 %}
 
-## User accounts & cloud Sync
+## User accounts & cloud sync
 
-As I mentioned, the app stores your progress in local storage. It works great, until you want to switch devices, or change browsers, or your laptop breaks and you lost your character. To work around the problem, I’ve added JSON export, so you can save a snapshot of your character as a file somewhere (and re-import it), but it’s not super convenient.
+As I mentioned, the app stores your progress in local storage. It works great, until you want to switch devices, or change browsers, or your laptop breaks and you lose your character. To work around the problem, I’ve added JSON export, so you can save a snapshot of your character as a file somewhere (and re-import it), but it’s not super convenient.
 
 I wanted to see if I could add some form of optional authentication while a) keeping it simple because I don’t want to do backend and b) keeping it cheap because I don’t want to pay for it.
 
@@ -627,39 +629,39 @@ On top of that, I hooked onto the `online` and `offline` browser events to trigg
 
 ```ts
 export function useNetworkStatus() {
-  const { message } = App.useApp()
+	const { message } = App.useApp()
 
-  useEffect(
-    function handleConnectivityChanges() {
-      function handleOffline() {
-        message.warning('Now offline: saving locally only.')
-      }
+	useEffect(
+		function handleConnectivityChanges() {
+			function handleOffline() {
+				message.warning('Now offline: saving locally only.')
+			}
 
-      async function handleOnline() {
-        message.success('Back online: syncing to cloud.')
-        try {
-          await characterStore.syncToRemote()
-        } catch (error) {
-          console.error('Reconnect sync failed:', error)
-        }
-      }
+			async function handleOnline() {
+				message.success('Back online: syncing to cloud.')
+				try {
+					await characterStore.syncToRemote()
+				} catch (error) {
+					console.error('Reconnect sync failed:', error)
+				}
+			}
 
-      window.addEventListener('offline', handleOffline)
-      window.addEventListener('online', handleOnline)
+			window.addEventListener('offline', handleOffline)
+			window.addEventListener('online', handleOnline)
 
-      return () => {
-        window.removeEventListener('offline', handleOffline)
-        window.removeEventListener('online', handleOnline)
-      }
-    },
-    [message]
-  )
+			return () => {
+				window.removeEventListener('offline', handleOffline)
+				window.removeEventListener('online', handleOnline)
+			}
+		},
+		[message]
+	)
 }
 ```
 
 ## Wrapping up
 
-After weeks working on this, there is a lot more I could be sharing, but those were the highlights or more interesting technical bits.
+After weeks working on this, there is a lot more I could be sharing, but those were the highlights and the more interesting technical bits.
 
 I have to say, this was such a fun project to work on, all very casual and relaxing. It felt nice coding for entertainment, without worrying about adoption, purpose or monetization. Still though, I put a lot of effort into accessibility, performance and SEO, just for the sake of a job well done.
 
