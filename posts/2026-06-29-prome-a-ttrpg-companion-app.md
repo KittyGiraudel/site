@@ -9,7 +9,6 @@ tags:
   - Next.js
   - PWA
 image: /assets/images/prome/home-page.png
-draft: true
 ---
 
 While I was looking for a job earlier this year, I worked on *[ProMe](https://prome.games)* (pronounced “pro-may”), a companion app for the solo <abbr title="Table-Top Role-Playing Game">TTRPG</abbr> called “The Protector’s Memories”, created by [Enzo Salviato](https://bsky.app/profile/desesperenzo.bsky.social).
