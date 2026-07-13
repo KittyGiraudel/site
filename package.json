@@ -29,7 +29,7 @@
 		"grid-rows-masonry": "^1.2.11",
 		"he": "^1.2.0",
 		"html-minifier-terser": "^7.2.0",
-		"linkedom": "^0.18.12",
+		"linkedom": "^0.18.13",
 		"netlify-plugin-cache": "^1.0.3",
 		"workbox-cli": "^7.4.1"
 	},
