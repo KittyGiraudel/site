@@ -25,7 +25,7 @@
 		"eleventy-plugin-footnotes": "^0.11.0",
 		"emoji-regex": "^10.6.0",
 		"emoji-short-name": "^2.1.0",
-		"fast-xml-parser": "^5.9.3",
+		"fast-xml-parser": "^5.10.0",
 		"grid-rows-masonry": "^1.2.11",
 		"he": "^1.2.0",
 		"html-minifier-terser": "^7.2.0",
