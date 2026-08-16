@@ -1,8 +1,4 @@
----
-permalink: /robots.txt
-eleventyExcludeFromCollections: true
----
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: https://kittygiraudel.com/sitemap.xml
 
 # Content Signals (AI usage preferences): https://contentsignals.org/
 # IETF draft: https://datatracker.ietf.org/doc/draft-romm-aipref-contentsignals/
