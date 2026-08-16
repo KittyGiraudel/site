@@ -193,10 +193,11 @@ https://hugogiraudel.com/* https://kittygiraudel.com/:splat 301!
 /2021/12/27/looking-back-at-2021/                               /2021/12/27/2021-in-review 301!
 /2022/12/28/looking-back-at-2022/                               /2022/12/28/2022-in-review 301!
 /2026/02/23/six-months-of-rust/                                 /2026/02/25/six-months-of-rust/ 301!
-/2020/12/18/a11y-advent-internationalisation/                  /2020/12/18/a11y-advent-internationalization/ 301!
+/2020/12/18/a11y-advent-internationalisation/                   /2020/12/18/a11y-advent-internationalization/ 301!
+/2020/12/02/footnotes-in-eleventy/                              /2020/12/02/footnotes-in-11ty/
 /tags/internationalisation/                                     /tags/internationalization/ 301!
-/assets/images/optimising-with-bash/*                          /assets/images/optimizing-with-bash/:splat 301!
-/assets/images/feedback-on-dotcss/theatre.jpg                  /assets/images/feedback-on-dotcss/theater.jpg 301!
+/assets/images/optimising-with-bash/*                           /assets/images/optimizing-with-bash/:splat 301!
+/assets/images/feedback-on-dotcss/theatre.jpg                   /assets/images/feedback-on-dotcss/theater.jpg 301!
 
 /blog/css-gradients        /2013/02/04/dig-deep-into-css-gradients/ 301!
 /less-to-sass.html         /2012/11/13/why-i-switched-from-less-to-sass/ 301!
