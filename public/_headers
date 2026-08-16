@@ -13,6 +13,11 @@
   cache-control: public
   cache-control: max-age=86400
 
+/img/*
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+
 /.well-known/traffic-advice
   Content-Type: application/trafficadvice+json; charset=utf-8
 
