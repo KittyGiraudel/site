@@ -7,7 +7,7 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), fullscreen=(self)
 
 /
-  Link: </rss/index.xml>; rel="alternate"; type="application/atom+xml", </blog/search/data.json>; rel="describedby"; type="application/json"
+  Link: </rss/index.xml>; rel="alternate"; type="application/atom+xml", </llms.txt>; rel="describedby"; type="text/markdown", </blog/search/data.json>; rel="describedby"; type="application/json"
 
 /assets/images/*
   cache-control: public
@@ -20,6 +20,12 @@
 
 /.well-known/traffic-advice
   Content-Type: application/trafficadvice+json; charset=utf-8
+
+/.well-known/security.txt
+  Content-Type: text/plain; charset=utf-8
+
+/llms.txt
+  Content-Type: text/markdown; charset=utf-8
 
 /*.md
   X-Robots-Tag: noindex

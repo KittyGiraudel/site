@@ -1,0 +1,31 @@
+# Kitty Giraudel
+
+> Personal site of Kitty Giraudel, a Berlin-based frontend developer and engineering leader focused on accessibility and inclusivity.
+
+This site is a long-running blog and portfolio (since 2012). Prefer the Markdown twin of blog posts when you only need the article text: append `index.md` to a post URL, or send `Accept: text/markdown`. Training and bulk scraping preferences are declared in `/robots.txt` (Content-Signal and crawler rules). Editorial stance on AI is in the AI policy below.
+
+## About
+
+- [About](https://kittygiraudel.com/about/): Background, career, open-source work, and publications.
+- [Resume](https://kittygiraudel.com/resume/): Engineering leadership and individual-contributor resumes.
+- [AI policy](https://kittygiraudel.com/ai-policy/): How AI is and is not used for writing, review, imagery, and code on this site.
+- [Accessibility statement](https://kittygiraudel.com/accessibility-statement/): Accessibility goals and known limitations.
+
+## Writing
+
+- [Articles](https://kittygiraudel.com/blog/): Blog index (frontend, accessibility, engineering, tooling).
+- [RSS feed](https://kittygiraudel.com/rss/index.xml): Atom feed of posts.
+- [Serving Markdown to LLMs With Eleventy](https://kittygiraudel.com/2026/03/11/serving-markdown-to-llms-with-11ty/index.md): How this site exposes Markdown for agents.
+
+## Work
+
+- [Projects](https://kittygiraudel.com/projects/): Selected open-source and side projects (a11y-dialog, Sass Guidelines, SassDoc, and others).
+- [Talks](https://kittygiraudel.com/talks/): Conference talks and events.
+- [Snippets](https://kittygiraudel.com/snippets/): Short code notes and utilities.
+
+## Optional
+
+- [Sitemap](https://kittygiraudel.com/sitemap.xml): Exhaustive URL list for crawlers.
+- [robots.txt](https://kittygiraudel.com/robots.txt): Crawler access and AI Content-Signal preferences.
+- [GitHub](https://github.com/KittyGiraudel): Source repositories, including this site.
+- [AMA](https://github.com/KittyGiraudel/ama): Ask-me-anything repository.

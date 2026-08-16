@@ -1,0 +1,8 @@
+# Kitty Giraudel — security.txt
+# RFC 9116: https://www.rfc-editor.org/rfc/rfc9116
+
+Contact: https://github.com/KittyGiraudel/site/security/advisories/new
+Contact: https://www.linkedin.com/in/kitty-giraudel/
+Expires: 2027-08-16T00:00:00.000Z
+Preferred-Languages: en, fr
+Canonical: https://kittygiraudel.com/.well-known/security.txt
