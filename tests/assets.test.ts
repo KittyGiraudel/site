@@ -61,6 +61,7 @@ test('Netlify _headers ships a small Content-Security-Policy', async () => {
 		"script-src 'self' 'unsafe-inline'",
 		'https://giscus.app',
 		'https://codepen.io',
+		'https://public.codepenassets.com',
 		'https://cdn.jsdelivr.net',
 	]) {
 		assert.ok(policy.includes(directive), `CSP should include ${directive}`)
