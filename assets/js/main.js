@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		document.addEventListener('keydown', event => {
 			if (event.defaultPrevented) return
-			if (!event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return
+			if (!(event.metaKey || event.ctrlKey) || event.altKey || event.shiftKey) return
 			if (event.key.toLowerCase() !== 'k') return
 			if (isTypingTarget(event.target)) return
 			if (window.location.pathname === searchPath) return
