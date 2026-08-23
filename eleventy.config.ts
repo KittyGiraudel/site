@@ -30,7 +30,7 @@ export default defineConfig(config => {
 
 	// Watch targets
 	// ---------------------------------------------------------------------------
-	config.addWatchTarget('plugins/**/*.ts')
+	config.addWatchTarget('build/**/*.ts')
 	config.addWatchTarget('pages/**/*.11tydata.{js,ts}')
 
 	// Compilation plugins

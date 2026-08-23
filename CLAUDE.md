@@ -34,7 +34,7 @@ Posts support: `title`, `description`, `tags` (Title Case), `guest` (guest autho
 - `git.js` — Maps file paths to last-modified dates (used for `update_date`)
 - `events.json` — Structured content for the talks page
 
-### Custom plugins (`plugins/`)
+### Custom build utilities (`build/`)
 
 - `utilities.ts` — HTML minification, emoji a11y wrapping (`<span role="img" aria-label>`), markdown rendering, callout shortcodes, custom Liquid filters
 - `post-stats.ts` — Aggregates word counts, reading times, tag popularity across all posts; exposed as `postStats` collection
