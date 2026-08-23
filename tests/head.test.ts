@@ -85,17 +85,6 @@ function assertHeadMetadata($: CheerioAPI, siteUrl: string, spec: HeadSpec): voi
 		'generator meta should mention Eleventy',
 	)
 
-	// Keywords
-	if (spec.keywords === null) {
-		assert.equal(
-			$('head meta[name="keywords"]').length,
-			0,
-			'should not emit meta keywords when there are no tags/keywords',
-		)
-	} else if (spec.keywords !== undefined) {
-		assert.equal(metaName($, 'keywords'), spec.keywords)
-	}
-
 	// Open Graph
 	assert.equal(metaProperty($, 'og:title'), spec.title)
 	assert.equal(metaProperty($, 'og:type'), spec.ogType)

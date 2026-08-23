@@ -14,7 +14,7 @@
   - site_same_as: List of profile URLs for Person schema
   - site_description: Global site tagline for WebSite JSON-LD (not page meta description)
 {% endcomment %}
- 
+
 {% ensure inline_assets, "Required value 'inline_assets' is missing in head.liquid" %}
 {% ensure page_author, "Required value 'page_author' is missing in head.liquid" %}
 {% ensure page_description, "Required value 'page_description' is missing in head.liquid" %}
@@ -42,9 +42,6 @@ http://ogp.me/ns/article#">
   <!-- Page specific content -->
   <title>{% if title %}{{ title }} | {{ site_author }}{% else %}{{ site_author }}{% endif %}</title>
   <meta name="description" content="{{ page_description }}">
-  {% if tags %}
-    <meta name="keywords" content="{{ tags | join: ',' }}" />
-  {% endif %}
   <meta name="author" content="{{ page_author }}">
   <link rel="canonical" href="{{ page_url }}">
 
@@ -107,7 +104,7 @@ http://ogp.me/ns/article#">
       "sameAs": {{ site_same_as | jsonify }}{% endif %}
     }
   </script>
-  
+
   {% render "script.liquid",
     inline: inline_assets,
     partials: "theme"
