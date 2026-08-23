@@ -17,6 +17,7 @@
   {% assign active = current_url contains item.path %}
   {% if item.path contains "/blog" %}
     {% assign start = current_url | slice: 0, 4 %}
+    {% comment %}This will stop working in 2030. 🫠 See you in a few years.{% endcomment %}
     {% assign is_post = start == "/201" or start == "/202" %}
     {% if current_url contains "tags" or current_url contains "/stats" or is_post %}
       {% assign active = true %}
