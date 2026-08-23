@@ -24,7 +24,6 @@ export default {
 		'https://scholar.google.com/citations?user=UfTpt4cAAAAJ&hl=en',
 		'https://www.amazon.com/stores/Kitty-Giraudel/author/B08Y7ZPG2C',
 		'https://tutsplus.com/authors/kitty-giraudel',
-		'https://codepen.io/KittyGiraudel',
 	],
 	environment: getEnvironment(),
 	time: new Date(),
