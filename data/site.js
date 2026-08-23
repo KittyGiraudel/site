@@ -43,5 +43,6 @@ export default {
 		dev_mode: process.env.ELEVENTY_RUN_MODE !== 'build',
 		inline_assets: isFeatureEnabled('INLINE_ASSETS'),
 		init_service_worker: isFeatureEnabled('INIT_SERVICE_WORKER'),
+		current_year: new Date().getFullYear()
 	},
 }

@@ -46,9 +46,12 @@
   {% endcomment %}
 
   {{ content }}
-  
-  {% render "footer.liquid", input_path: page.inputPath %}
-  
+
+  {% render "footer.liquid",
+    input_path: page.inputPath,
+    current_year: site.configuration.current_year
+  %}
+
   {% render "script.liquid",
     inline: site.configuration.inline_assets,
     partials: "main"
