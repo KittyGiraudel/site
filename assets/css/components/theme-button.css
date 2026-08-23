@@ -5,9 +5,9 @@
 	z-index: var(--z-top);
 }
 
-.ThemeButton[aria-pressed="false"] > .ThemeButton__icon:not([data-theme="light"]),
-.ThemeButton[aria-pressed="mixed"] > .ThemeButton__icon:not([data-theme="auto"]),
-.ThemeButton[aria-pressed="true"] > .ThemeButton__icon:not([data-theme="dark"]) {
+.ThemeButton[data-theme="light"] > .ThemeButton__icon:not([data-theme="light"]),
+.ThemeButton[data-theme="auto"] > .ThemeButton__icon:not([data-theme="auto"]),
+.ThemeButton[data-theme="dark"] > .ThemeButton__icon:not([data-theme="dark"]) {
 	display: none;
 }
 

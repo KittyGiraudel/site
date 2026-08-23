@@ -36,35 +36,39 @@ document.addEventListener('DOMContentLoaded', () => {
 		const themeButton = document.querySelector('.js-theme-button')
 		if (!themeButton) return
 
+		const labelEl = themeButton.querySelector('.js-theme-button-label')
+
+		function nameFor(theme, { verbose = false } = {}) {
+			if (theme === themes.AUTO) {
+				return verbose ? 'automatic (follows system setting)' : 'automatic'
+			}
+			if (theme === themes.DARK) return 'dark'
+			return 'light'
+		}
+
+		function labelFor(theme) {
+			const next = window.ThemeManager.getNextTheme(theme)
+			return `Theme: ${nameFor(theme, { verbose: true })}; press for ${nameFor(next)}.`
+		}
+
 		// Show the button now that JavaScript is loaded
 		themeButton.removeAttribute('hidden')
 
 		// Update the button when the theme changes
 		window.ThemeManager.onThemeChanged(theme => {
-			const isDark = theme === themes.DARK
-			const isLight = theme === themes.LIGHT
-			const isAuto = theme === themes.AUTO
-
-			const ariaPressed = isDark ? 'true' : isLight ? 'false' : 'mixed'
-			const label = isAuto
-				? 'Theme: automatic (follows system setting)'
-				: isDark
-					? 'Theme: dark'
-					: 'Theme: light'
-
-			themeButton.setAttribute('aria-pressed', ariaPressed)
+			const label = labelFor(theme)
+			themeButton.dataset.theme = theme
 			themeButton.setAttribute('title', label)
+			if (labelEl) labelEl.textContent = label
 		})
 
-		// Toggle the theme when the button is clicked
+		// Cycle the theme when the button is clicked
 
-		function toggleTheme(event) {
+		function cycleTheme(event) {
 			const button = event.target.closest('.js-theme-button')
 			if (!button) return
 
-			const ariaPressed = button.getAttribute('aria-pressed')
-			const theme =
-				ariaPressed === 'true' ? themes.DARK : ariaPressed === 'false' ? themes.LIGHT : themes.AUTO
+			const theme = button.dataset.theme
 			const nextTheme = window.ThemeManager.getNextTheme(theme)
 
 			window.ThemeManager.saveTheme(nextTheme)
@@ -72,9 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		themeButton.addEventListener('click', event => {
-			if (!document.startViewTransition) return toggleTheme(event)
+			if (!document.startViewTransition) return cycleTheme(event)
 
-			const run = () => toggleTheme(event)
+			const run = () => cycleTheme(event)
 
 			try {
 				document.startViewTransition({ types: ['theme'], update: run })

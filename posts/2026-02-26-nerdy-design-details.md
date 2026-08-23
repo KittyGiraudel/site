@@ -10,6 +10,8 @@ tags:
 edits:
   - date: 2026-03-01
     md: I decided to add a way to link to a specific heading, so I updated this article to mention [how I implemented that](#heading-anchors).
+  - date: 2026-08-23
+    md: I originally documented `aria-pressed="mixed"` for the automatic theme. That was the wrong approach, so I [updated the control (and this section)](#working-theme-switcher) to cycle the accessible name instead.
 ---
 
 I’m currently looking for a job, so I have some free time. I decided to use it to work on the look and feel of this website some more, adding small design touches for a nicer, more accessible reading experience. I’ll share the highlights in this article!
@@ -34,29 +36,29 @@ body {
 }
 ```
 
-I’ve improved the control itself to be a tri-state button to support dark, light and automatic modes. I wasn’t super sure what would be the best markup for this, so I decided to leverage the `mixed` state from [`aria-pressed`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed).
+I’ve improved the control itself to be a tri-state button for dark, light and automatic. I first used the `mixed` value of [`aria-pressed`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) for automatic, and treated the control as a toggle for *dark mode* specifically (`true` / `false` / `mixed`). Turns out that was a bit of a stretch. In ARIA, `mixed` means the items the button controls do not all share the same value (think “select all” when only some rows are selected). Automatic theme is a third mode, not a mixed pressed state.
+
+The [ARIA Authoring Practices button pattern](https://www.w3.org/WAI/ARIA/apg/patterns/button/) is also pretty explicit: if you use `aria-pressed`, keep a stable label; if the label changes with the state, don’t use `aria-pressed`. So I dropped `aria-pressed` and let the accessible name cycle instead. The name includes the current mode *and* what activation does next, otherwise “Theme: light” is a status, not a control:
 
 ```html
 <!-- Button currently in light mode -->
 <button
 	type="button"
-	aria-pressed="false"
+	data-theme="light"
 	class="ThemeButton NoPrint"
-	title="Theme: light"
+	title="Theme: light; press for dark."
 >
-	<span class="VisuallyHidden">Dark mode</span>
+	<span class="VisuallyHidden">Theme: light; press for dark.</span>
 	<!-- Appropriate icon for current mode here -->
 </button>
 ```
 
-Semantically, this is a button to control the _dark mode_ specifically (not exactly the theme per se). The `aria-pressed` attribute determines whether the dark mode is enabled: `true` for yes, `false` for no, `mixed` for automatic (according to the operating system preference).
-
-The JavaScript code just rotates between the 3 states, and backs up the preference in the local storage of the browser. When you interact with the button, it computes the next state, updates the `aria-pressed` and `title` attributes, and stores the new value in local storage.
+JavaScript rotates between the three states and stores the preference in the local storage of the browser. On each change it updates `data-theme` (for the icon), the visually hidden label, and the `title` attribute.
 
 I’ve also added a playful little hover animation for that button, making it wiggle. Try it here:
 
 <button class="ThemeButton ThemeButton--demo" type="button">
-  <span class="VisuallyHidden">Dark mode</span>
+  <span class="VisuallyHidden">Theme: light; press for dark.</span>
   <svg class="ThemeButton__icon ThemeButton__icon--light" data-theme="light" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
     <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
   </svg>
