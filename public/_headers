@@ -1,9 +1,14 @@
+# First-party by default. Third parties: Giscus, CodePen, jsDelivr (demo
+# Chart.js / Howler), Speaker Deck, Baseline widget, ProMe audio. https: on
+# img/frame covers Iconify, link favicons, and old post iframes. unsafe-inline
+# is required for inlined production JS/CSS, JSON-LD, and a few demos.
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), fullscreen=(self)
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' https://giscus.app https://codepen.io https://cpwebassets.codepen.io https://cdn.jsdelivr.net https://speakerdeck.com; style-src 'self' 'unsafe-inline' https://giscus.app https://codepen.io https://cpwebassets.codepen.io; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://giscus.app https://api.github.com https://api.webstatus.dev https://prome.games; media-src 'self' https://prome.games; frame-src https:; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests
 
 /
   Link: </rss/index.xml>; rel="alternate"; type="application/atom+xml", </llms.txt>; rel="describedby"; type="text/markdown", </blog/search/data.json>; rel="describedby"; type="application/json"

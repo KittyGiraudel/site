@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { readdir, stat } from 'node:fs/promises'
+import { readdir, readFile, stat } from 'node:fs/promises'
 import path from 'node:path'
 import test from 'node:test'
 import { siteDir } from './helpers/site-paths.ts'
@@ -45,4 +45,26 @@ test('core assets exist in built site', async () => {
 		expectDirectoryWithFiles('assets/js'),
 		expectDirectoryWithFiles('assets/images'),
 	])
+})
+
+test('Netlify _headers ships a small Content-Security-Policy', async () => {
+	const headers = await readFile(path.join(siteDir, '..', 'public', '_headers'), 'utf8')
+	const policyLine = headers.split('\n').find(line => line.startsWith('  Content-Security-Policy:'))
+	assert.ok(policyLine, '_headers should set Content-Security-Policy on /*')
+	const policy = policyLine.replace('  Content-Security-Policy:', '').trim()
+
+	for (const directive of [
+		"default-src 'self'",
+		"object-src 'none'",
+		"frame-ancestors 'none'",
+		"base-uri 'self'",
+		"script-src 'self' 'unsafe-inline'",
+		'https://giscus.app',
+		'https://codepen.io',
+		'https://cdn.jsdelivr.net',
+	]) {
+		assert.ok(policy.includes(directive), `CSP should include ${directive}`)
+	}
+
+	assert.equal(policy.includes('unsafe-eval'), false, 'CSP should not allow unsafe-eval')
 })
