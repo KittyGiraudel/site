@@ -8,7 +8,7 @@ export default {
 	same_as: [
 		'https://github.com/KittyGiraudel',
 		'https://x.com/KittyGiraudel',
-		'https://www.linkedin.com/in/kittygiraudel/',
+		'https://www.linkedin.com/in/kitty-giraudel/',
 		'https://www.sanity.io/exchange/community/kittygiraudel',
 		'https://css-tricks.com/author/kittygiraudel/',
 		'https://www.npmjs.com/~kittygiraudel',
