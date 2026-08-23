@@ -161,15 +161,6 @@ function helmet(content: string, outputPath?: string): string {
 	return $.html()
 }
 
-function wrapEmDashes(content: string, outputPath?: string): string {
-	return typeof outputPath === 'string' && outputPath.endsWith('.html')
-		? content.replace(
-				/—/g,
-				'<abbr title="Yes, it’s an em dash. No, it’s not AI. I just enjoy using them — leave me alone.">—</abbr>',
-			)
-		: content
-}
-
 function wrapSmileyFaces(content: string, outputPath?: string): string {
 	return typeof outputPath === 'string' && outputPath.endsWith('.html')
 		? content.replace(
@@ -238,7 +229,6 @@ export default {
 	stripHtmlEntities,
 	ensureValue,
 	helmet,
-	wrapEmDashes,
 	wrapSmileyFaces,
 	rssContent,
 	isPostRendered,
