@@ -9,6 +9,7 @@
 		"start": "NODE_ENV=development npm run build --ignore-scripts -- --serve --quiet --incremental",
 		"typecheck": "tsc --noEmit",
 		"format": "biome format --write .",
+		"check": "biome ci .",
 		"test": "node --experimental-strip-types --test tests/*.test.ts"
 	},
 	"dependencies": {
