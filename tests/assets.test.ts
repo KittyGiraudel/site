@@ -62,10 +62,17 @@ test('Netlify _headers ships a small Content-Security-Policy', async () => {
 		'https://giscus.app',
 		'https://codepen.io',
 		'https://public.codepenassets.com',
-		'https://cdn.jsdelivr.net',
+		'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/',
+		'https://cdn.jsdelivr.net/npm/howler@2.2.4/',
 	]) {
 		assert.ok(policy.includes(directive), `CSP should include ${directive}`)
 	}
+
+	assert.equal(
+		/(?:^| )https:\/\/cdn\.jsdelivr\.net(?:;| |$)/.test(policy),
+		false,
+		'CSP should not allow the whole jsDelivr origin',
+	)
 
 	assert.equal(policy.includes('unsafe-eval'), false, 'CSP should not allow unsafe-eval')
 })
