@@ -1,13 +1,13 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.5.5/schema.json",
-	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": [
-			"**",
-			"!!includes/demos",
-			"!!**/*.svg"
-		]
+		"includes": ["**", "!!includes/demos", "!!**/*.svg"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -33,9 +33,7 @@
 				"noUnknownProperty": {
 					"level": "error",
 					"options": {
-						"ignore": [
-							"corner-shape"
-						]
+						"ignore": ["corner-shape"]
 					}
 				}
 			}
@@ -62,6 +60,10 @@
 	},
 	"assist": {
 		"enabled": true,
-		"actions": { "source": { "organizeImports": "on" } }
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	}
 }
