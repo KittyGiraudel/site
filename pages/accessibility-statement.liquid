@@ -4,7 +4,7 @@ title: Accessibility Statement
 description: Accessibility statement for kittygiraudel.com. Commitment to digital accessibility for people with disabilities.
 permalink: /accessibility-statement/
 created_at: 2024-08-04
-updated_at: 2026-05-06
+updated_at: 2026-08-23
 toc: true
 link_favicons: true
 ---
@@ -23,7 +23,17 @@ Kitty Giraudel takes the following measures to ensure accessibility of KittyGira
 
 ## Conformance status
 
-The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. KittyGiraudel.com is fully conformant with WCAG 2.2 level AA. Fully conformant means that the content fully conforms to the accessibility standard without any exceptions.
+The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. KittyGiraudel.com is **partially conformant** with WCAG 2.2 level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard.
+
+I aim for AA on pages I author and control. I do not claim the whole site, including third-party widgets and older embeds, meets AA with no exceptions.
+
+### Known limitations
+
+- [Site search](/blog/search/) runs entirely in the browser. There is no server-side search, so the form is unusable when JavaScript is disabled or fails to load.
+- Comments on blog posts use [Giscus](https://giscus.app/), a GitHub Discussions widget in a third-party iframe. Reading and posting comments requires JavaScript. Posting also requires a GitHub account. I do not control that widget’s accessibility.
+- The skip-to-content lives in the desktop site navigation, which is not shown on small screens (below 768px). Keyboard users on those viewports do not get that bypass.
+
+Some older posts include third-party embeds (for example CodePen). Those frames are outside this site’s markup.
 
 ## Feedback
 
@@ -38,5 +48,5 @@ Accessibility of this site relies on the following technologies to work with the
 - CSS
 - JavaScript
 
-These technologies are relied upon for conformance with the accessibility standards used.
+These technologies are relied upon for conformance with the accessibility standards used. Search and comments, as noted above, also depend on JavaScript.
 {% endrenderTemplate %}
