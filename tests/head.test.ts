@@ -157,7 +157,7 @@ test('page head: home', async () => {
 		author: siteAuthor,
 		ogType: 'website',
 		keywords: 'author,speaker,developer,accessibility,diversity,trans',
-		markdownAlternate: false,
+		markdownAlternate: true,
 	})
 })
 

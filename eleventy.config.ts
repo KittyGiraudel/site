@@ -50,8 +50,10 @@ export default defineConfig(config => {
 
 	// Compilation ignores
 	// ---------------------------------------------------------------------------
-	if (!isFeatureEnabled('RENDER_MARKDOWN_ALTERNATIVE'))
+	if (!isFeatureEnabled('RENDER_MARKDOWN_ALTERNATIVE')) {
 		config.ignores.add('pages/blog-markdown.liquid')
+		config.ignores.add('pages/home-markdown.liquid')
+	}
 	config.ignores.add('CLAUDE.md')
 	config.ignores.add('STYLEGUIDE.md')
 	config.ignores.add('.cursor')

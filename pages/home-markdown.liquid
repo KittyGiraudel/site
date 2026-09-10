@@ -1,0 +1,32 @@
+---
+permalink: /index.md
+eleventyExcludeFromCollections: true
+eleventyImport:
+  collections:
+    - posts
+---
+# Kitty Giraudel
+
+{{ site.description }}
+
+This is the Markdown twin of the homepage. Prefer `GET /` with `Accept: text/markdown`, or this file, instead of scraping the HTML.
+
+## When to use this
+
+See [llms.txt]({{ site.url }}/llms.txt) and [agent.txt]({{ site.url }}/agent.txt).
+
+## Latest articles
+
+{% assign latest_articles = collections.posts | slice: 0, 5 %}
+{%- for post in latest_articles %}
+- [{{ post.data.title }}]({{ site.url }}{{ post.url }}index.md)
+{%- endfor %}
+
+## Start here
+
+- [Articles]({{ site.url }}/blog/)
+- [Projects]({{ site.url }}/projects/)
+- [About]({{ site.url }}/about/)
+- [Talks]({{ site.url }}/talks/)
+- [AI policy]({{ site.url }}/ai-policy/)
+- [Sitemap]({{ site.url }}/sitemap.xml)

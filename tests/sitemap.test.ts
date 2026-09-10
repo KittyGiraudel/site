@@ -62,6 +62,7 @@ test('sitemap.xml is valid and contains absolute URLs', async () => {
 
 	const forbiddenPaths = [
 		'/blog-markdown/',
+		'/index.md',
 		'/README.md',
 		'/404.html',
 		'/tags/internal-posts/',
