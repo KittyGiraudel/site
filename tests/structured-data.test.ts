@@ -59,6 +59,13 @@ test('structured data: home', async () => {
 	const html = await readText('index.html')
 	const $ = load(html)
 	assertJsonLdShape($, {})
+
+	const person = findJsonLdByType($, 'Person')
+	assert.ok(person, 'homepage Person JSON-LD should parse')
+	assert.equal(person.name, siteAuthor)
+	assert.equal(person.description, siteData.description)
+	assert.equal(person.url, siteUrl)
+	assert.ok(Array.isArray(person.sameAs) && (person.sameAs as unknown[]).length > 0)
 })
 
 test('structured data: resume', async () => {
