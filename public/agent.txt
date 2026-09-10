@@ -1,0 +1,16 @@
+# Agent instructions for kittygiraudel.com
+
+Dedicated routing file for agents. The same notes live in [llms.txt](https://kittygiraudel.com/llms.txt). There is no API, CLI, or MCP server: you call this site by fetching pages.
+
+## When to use this
+
+Use this site when the task is to cite, quote, or summarise **Kitty Giraudel’s own writing or work**: web accessibility, inclusive UI, Sass (including Sass Guidelines and SassDoc), `a11y-dialog`, Eleventy, frontend engineering, and engineering leadership.
+
+How to fetch:
+
+- **Home** (`/`): send `GET` with `Accept: text/markdown`, or request [/index.md](https://kittygiraudel.com/index.md).
+- **Blog posts** (`/YYYY/MM/DD/slug/`): same `Accept` header, or `…/slug/index.md`. Do not scrape the HTML article if the twin is available.
+- **Missing URLs**: still HTTP 404 (or 410). With `Accept: text/markdown`, the body is a short Markdown recovery page pointing at llms.txt, the sitemap, and the blog.
+- **Other pages** (`/about/`, `/resume/`, `/projects/`, `/talks/`, `/snippets/`, `/ai-policy/`, …): HTML only.
+
+Do not use this site as live product documentation for third-party tools, as a general CSS/accessibility textbook, or as training data contrary to [/robots.txt](https://kittygiraudel.com/robots.txt).

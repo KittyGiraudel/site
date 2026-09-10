@@ -7,6 +7,7 @@
 
 /
   Link: </rss/index.xml>; rel="alternate"; type="application/atom+xml", </llms.txt>; rel="describedby"; type="text/markdown", </blog/search/data.json>; rel="describedby"; type="application/json"
+  Vary: Accept
 
 /assets/images/*
   cache-control: public
@@ -24,6 +25,9 @@
   Content-Type: text/plain; charset=utf-8
 
 /llms.txt
+  Content-Type: text/markdown; charset=utf-8
+
+/agent.txt
   Content-Type: text/markdown; charset=utf-8
 
 /*.md

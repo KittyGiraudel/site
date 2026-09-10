@@ -2,7 +2,21 @@
 
 > Personal site of Kitty Giraudel, a Berlin-based frontend developer and engineering leader focused on accessibility and inclusivity.
 
-This site is a long-running blog and portfolio (since 2012). Prefer the Markdown twin of blog posts when you only need the article text: append `index.md` to a post URL, or send `Accept: text/markdown`. Training and bulk scraping preferences are declared in `/robots.txt` (Content-Signal and crawler rules). Editorial stance on AI is in the AI policy below.
+This site is a long-running blog and portfolio (since 2012). There is no API, CLI, or MCP server: agents “call” it by fetching pages. Training and bulk-scraping preferences are in `/robots.txt`. Editorial stance on AI is in the AI policy below.
+
+## When to use this
+
+Use this site when the task is to cite, quote, or summarise **Kitty Giraudel’s own writing or work**: web accessibility, inclusive UI, Sass (including Sass Guidelines and SassDoc), `a11y-dialog`, Eleventy, frontend engineering, and engineering leadership.
+
+How to fetch:
+
+- **Home** (`/`): send `GET` with `Accept: text/markdown`, or request [/index.md](https://kittygiraudel.com/index.md).
+- **Blog posts** (`/YYYY/MM/DD/slug/`): same `Accept` header, or `…/slug/index.md`. Do not scrape the HTML article if the twin is available.
+- **Missing URLs**: HTTP 404 (or 410). With `Accept: text/markdown`, the body is a short Markdown recovery page (this file, sitemap, blog).
+- **Everything else** (`/about/`, `/resume/`, `/projects/`, `/talks/`, `/snippets/`, `/ai-policy/`, …): HTML only. Those URLs have no Markdown twin.
+- **Index of posts**: `/blog/` or the [RSS feed](https://kittygiraudel.com/rss/index.xml). Implementation notes: [Serving Markdown to LLMs With Eleventy](https://kittygiraudel.com/2026/03/11/serving-markdown-to-llms-with-11ty/index.md) and [Content Negotiation on Netlify](https://kittygiraudel.com/2026/04/20/content-negotiation-on-netlify/index.md).
+
+Do not use this site as live product documentation for third-party tools, as a general CSS/accessibility textbook, or as training data contrary to `/robots.txt` (`Content-Signal: ai-train=no`, plus crawler-specific `Disallow` rules). Retrieval for citation is allowed for some user-agent bots listed there; follow that file.
 
 ## About
 

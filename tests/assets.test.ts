@@ -24,6 +24,7 @@ test('core assets exist in built site', async () => {
 		expectFile('robots.txt'),
 		expectFile('humans.txt'),
 		expectFile('llms.txt'),
+		expectFile('agent.txt'),
 		expectFile('.well-known/security.txt'),
 		// Images
 		expectFile('apple-touch-icon.png'),
