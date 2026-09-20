@@ -57,9 +57,10 @@ layout: page
       {% endif %}
 
       {% assign project_stars = github.stargazers[repository] | default: 0 %}
+
       <a class="Project__meta-link" href="{{ repository }}" target="_blank" rel="noopener noreferrer">
         View on GitHub
-        {% if project_stars > 0 %}
+        {% if project_stars != 0 %}
           <span class="Project__stars">
             · {{ project_stars }} ★
           </span>
