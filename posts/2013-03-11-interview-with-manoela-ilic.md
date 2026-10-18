@@ -31,7 +31,7 @@ Could you tell us a little bit more about Codrops? Where did the idea came from 
 
 > I set up a WordPress blog in late 2009 thinking that I could share some useful snippets with fellow developers. I was doing some beginner mobile web development back then and I just wanted to share what I learnt and what I thought could be helpful. Snippets turned into tutorials over time and now Codrops turned into an almost full-time job :)
 >
-> What I do is to plan, design, implement and write tutorials together with my partner [Pedro](https://twitter.com/o_telho). I also manage the blog and review articles by our writers.
+> What I do is to plan, design, implement and write tutorials together with my partner [Pedro](https://www.linkedin.com/in/pedro-botelho-78361539b/?isSelfProfile=false). I also manage the blog and review articles by our writers.
 
 Why did you choose to land on WordPress? Who did the development (CSS, scripts and stuff)?
 
