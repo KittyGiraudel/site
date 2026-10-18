@@ -46,7 +46,7 @@ What do you plan for the future of Codrops?
 
 Could you share a few data points about the site maybe? Traffic, authors, anything surprising?
 
-> We currently have about **850.000 unique visitor** and **9.5 million pageviews** every month. Our readers spend an average of **4.25 minutes** on Codrops and they view about **6 pages per visit**. Almost half of them are from the United States. We have **512 published posts** and more than **20.000 comments**. In total, we have **45 authors**, most of whom were guest authors with a single contribution.
+> We currently have about **850,000 unique visitor** and **9.5 million pageviews** every month. Our readers spend an average of **4.25 minutes** on Codrops and they view about **6 pages per visit**. Almost half of them are from the United States. We have **512 published posts** and more than **20,000 comments**. In total, we have **45 authors**, most of whom were guest authors with a single contribution.
 
 What is the most successful article on Codrops so far? Related to the number of views.
 
