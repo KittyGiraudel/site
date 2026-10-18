@@ -59,5 +59,5 @@ Do you have any side project? What would you like to do if you had enough time?
 Anything left you’d like to say? :)
 
 > I’d like to thank you for the opportunity and **I’d like to thank all the readers of [Codrops](https://tympanus.com/codrops/)** for their support. I’d also like to wish you all the best for your website and blog and I’m looking forward to read many of your articles :)
->
-> Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. Oh, and congratulations for being part of the [2013 Awwwards jury](https://www.awwwards.com/jury/2013)! :)
+
+Well, thank you very much for your time Manoela! Wish you the best for both your work at Codrops and your personal life. Oh, and congratulations for being part of the [2013 Awwwards jury](https://www.awwwards.com/jury/2013)! :)
