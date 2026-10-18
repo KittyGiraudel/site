@@ -44,7 +44,7 @@ What do you plan for the future of Codrops?
 
 > There are many things that we want to add to and improve at Codrops. We are currently working on some new sections that we want to release this year. And we are of course planning to do more tutorials and provide more articles that will be interesting and useful to our readers.
 
-Could you share a few datas about the site maybe? Traffic, authors, anything surprising?
+Could you share a few data points about the site maybe? Traffic, authors, anything surprising?
 
 > We currently have about **850.000 unique visitor** and **9.5 million pageviews** every month. Our readers spend an average of **4.25 minutes** on Codrops and they view about **6 pages per visit**. Almost half of them are from the United States. We have **512 published posts** and more than **20.000 comments**. In total, we have **45 authors**, most of whom were guest authors with a single contribution.
 
