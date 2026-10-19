@@ -333,7 +333,7 @@ Last but not least, SCH provides some HSV and HSB to HSL converting functions, p
 
 ## Final Thoughts
 
-There are many more outstanding Compass extensions and Sass tools available, including popular grid systems like [Singularity](https://singularity.gs/) and [Susy](https://www.oddbird.net/susy/). But I think it’s nice that we had a look at some rather unknown extensions as well.
+There are many more outstanding Compass extensions and Sass tools available, including popular grid systems like [Singularity](https://github.com/at-import/Singularity) and [Susy](https://www.oddbird.net/susy/). But I think it’s nice that we had a look at some rather unknown extensions as well.
 
 And finding Sass extensions has become easier than ever with Sache.in. Do you have any in there? :)
 
