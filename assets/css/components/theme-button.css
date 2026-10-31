@@ -1,16 +1,18 @@
-.ThemeButton {
-	position: fixed;
-	inset-block-end: 1em;
-	inset-inline-end: 1em;
-	z-index: var(--z-top);
-}
+@layer components {
+	.ThemeButton {
+		position: fixed;
+		inset-block-end: 1em;
+		inset-inline-end: 1em;
+		z-index: var(--z-top);
+	}
 
-.ThemeButton[data-theme="light"] > .ThemeButton__icon:not([data-theme="light"]),
-.ThemeButton[data-theme="auto"] > .ThemeButton__icon:not([data-theme="auto"]),
-.ThemeButton[data-theme="dark"] > .ThemeButton__icon:not([data-theme="dark"]) {
-	display: none;
-}
+	.ThemeButton[data-theme="light"] > .ThemeButton__icon:not([data-theme="light"]),
+	.ThemeButton[data-theme="auto"] > .ThemeButton__icon:not([data-theme="auto"]),
+	.ThemeButton[data-theme="dark"] > .ThemeButton__icon:not([data-theme="dark"]) {
+		display: none;
+	}
 
-.ThemeButton[hidden] {
-	display: none;
+	.ThemeButton[hidden] {
+		display: none;
+	}
 }

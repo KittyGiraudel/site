@@ -1,61 +1,74 @@
-.IconButton {
-	background-color: var(--page-background);
-	color: inherit;
-	border: 2px solid light-dark(rgb(0 0 0 / 0.4), rgb(255 255 255 / 0.4));
-	border-radius: 0.5em;
-	cursor: pointer;
-	transition: 250ms;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	font-size: 125%;
-	padding: 0;
-	width: 1.75em;
-	height: 1.75em;
-	line-height: 1.5em;
-}
-
-@supports (corner-shape: squircle) {
+@layer components {
 	.IconButton {
-		border-radius: 2em;
-		corner-shape: squircle;
-	}
-}
+		background-color: var(--page-background);
+		color: inherit;
+		border: 2px solid light-dark(rgb(0 0 0 / 0.4), rgb(255 255 255 / 0.4));
+		border-radius: 0.5em;
+		cursor: pointer;
+		transition: 250ms;
 
-.IconButton:hover,
-.IconButton:focus {
-	animation: wiggle 500ms ease-out;
-}
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-.IconButton:focus {
-	outline: 2px solid var(--pink);
-	outline-offset: 2px;
-}
+		font-size: 125%;
+		padding: 0;
+		width: 1.75em;
+		height: 1.75em;
+		line-height: 1.5em;
+	}
 
-.IconButton > svg {
-	width: 1em;
-	height: 1em;
-	display: inline-block;
-	vertical-align: middle;
-	fill: currentcolor;
-}
+	@supports (corner-shape: squircle) {
+		.IconButton {
+			border-radius: 2em;
+			corner-shape: squircle;
+		}
+	}
 
-@keyframes wiggle {
-	from {
-		transform: rotate(10deg);
+	.IconButton:hover,
+	.IconButton:focus {
+		animation: wiggle 500ms ease-out;
 	}
-	25% {
-		transform: rotate(-10deg);
+
+	.IconButton:focus {
+		outline: 2px solid var(--pink);
+		outline-offset: 2px;
 	}
-	50% {
-		transform: rotate(20deg);
+
+	.IconButton > svg {
+		width: 1em;
+		height: 1em;
+		display: inline-block;
+		vertical-align: middle;
+		fill: currentcolor;
 	}
-	75% {
-		transform: rotate(-5deg);
+
+	@keyframes wiggle {
+		from {
+			transform: rotate(10deg);
+		}
+		25% {
+			transform: rotate(-10deg);
+		}
+		50% {
+			transform: rotate(20deg);
+		}
+		75% {
+			transform: rotate(-5deg);
+		}
+		to {
+			transform: rotate(0deg);
+		}
 	}
-	to {
-		transform: rotate(0deg);
+
+	/* This layer sits above layout, so layout cannot override `.IconButton`'s display. */
+	.OpenMenuButton {
+		display: none;
+	}
+
+	@media (max-width: 768px) {
+		.OpenMenuButton {
+			display: block;
+		}
 	}
 }

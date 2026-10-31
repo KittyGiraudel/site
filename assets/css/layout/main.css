@@ -1,8 +1,10 @@
-.Main {
-	counter-reset: footnotes;
-	margin-block-end: var(--vb-1\.5);
-}
+@layer layout {
+	.Main {
+		counter-reset: footnotes;
+		margin-block-end: var(--vb-1\.5);
+	}
 
-.Main [itemprop="articleBody"] h2:first-child {
-	margin-block-start: 0;
+	.Main [itemprop="articleBody"] h2:first-child {
+		margin-block-start: 0;
+	}
 }

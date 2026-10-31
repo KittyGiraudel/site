@@ -1,320 +1,324 @@
-@font-face {
-	font-family: "MiddleDot";
-	src: local("Times New Roman");
-	unicode-range: U+00B7;
-}
+@layer vendors, base, layout, components, pages, helpers;
 
-/**
- * Italic “&” (U+0026). `font-style: normal` keeps this face in play for
- * ordinary (non-<em>) text; true italic still uses real italic faces. Use a
- * synthetic `font-family` (not `Baskerville`) so browsers keep matching system
- * Baskerville for other glyphs; the synth name is first in `--body-font`.
- * If `local("Baskerville*")` is absent, these rules no-op.
- */
-@font-face {
-	font-family: "Baskerville Ampersand";
-	src: local("Baskerville Italic");
-	font-weight: 400;
-	font-style: normal;
-	unicode-range: U+0026;
-}
+@layer base {
+	@font-face {
+		font-family: "MiddleDot";
+		src: local("Times New Roman");
+		unicode-range: U+00B7;
+	}
 
-@font-face {
-	font-family: "Baskerville Ampersand";
-	src: local("Baskerville Bold Italic");
-	font-weight: 700;
-	font-style: normal;
-	unicode-range: U+0026;
-}
-
-/**
- * When it comes to fonts:
- * | Font | Windows | macOS | Linux |
- * | ---- | ------- | ----- | ----- |
- * | Baskerville            | ✅ | ✅ | ❌ |
- * | Times New Roman        | ✅ | ✅ | ⚠️ |
- * | Palatino               | ✅ | ⚠️ | ⚠️ |
- * | Bookman                | ⚠️ | ⚠️ | ⚠️ |
- * | New Century Schoolbook | ❌ | ⚠️ | ⚠️ |
- * | Lucida Bright          | ❌ | ❌ | ⚠️ |
- * | Perpetua               | ⚠️ | ❌ | ❌ |
- *
- * ✅ = Preinstalled,
- * ⚠️ = Available via Office/iWork or package manager,
- * ❌ = Not natively available.
- */
-:root {
-	/* Colors */
-	--pink: #dd7eb4;
-	--blue: #267cb9;
-	--page-background: light-dark(#faf9fb, #252324);
-	--embed-background-pink: light-dark(#fffafd, #322d2f);
-	--embed-background-blue: light-dark(#f3f8fc, #303132);
-
-	/* Fonts */
-	--code-font: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
-	--typography-font:
-		"Lucida Bright", "Perpetua", "Times", "Times New Roman", "Palatino", "Bookman",
-		"New Century Schoolbook", serif;
-	--body-font: "MiddleDot", "Baskerville Ampersand", "Baskerville", var(--typography-font);
-
-	/* Spacing */
-	--vb: 1.5em;
-	--vb-half: calc(var(--vb) / 2);
-	--vb-third: calc(var(--vb) / 3);
-	--vb-quarter: calc(var(--vb) / 4);
-	--vb-sixth: calc(var(--vb) / 6);
-	--vb-thirds: calc(var(--vb) * 2 / 3);
-	--vb-1\.5: calc(var(--vb) * 1.5);
-	--vb-double: calc(var(--vb) * 2);
-
-	/* Miscellaneous */
-	--margin-offset: 2rem;
-
-	/* Z-index */
-	--z-set: 0;
-	--z-top: 10;
-}
-
-:root {
-	color-scheme: light dark;
-}
-[data-theme="dark"] {
-	color-scheme: dark;
-}
-[data-theme="light"] {
-	color-scheme: light;
-}
-
-@media (prefers-reduced-motion: reduce) {
 	/**
-	 * 1. Disable all transitions and animations, but make sure they still run to
-	 *    preserve things like onanimationend events.
+	 * Italic “&” (U+0026). `font-style: normal` keeps this face in play for
+	 * ordinary (non-<em>) text; true italic still uses real italic faces. Use a
+	 * synthetic `font-family` (not `Baskerville`) so browsers keep matching system
+	 * Baskerville for other glyphs; the synth name is first in `--body-font`.
+	 * If `local("Baskerville*")` is absent, these rules no-op.
+	 */
+	@font-face {
+		font-family: "Baskerville Ampersand";
+		src: local("Baskerville Italic");
+		font-weight: 400;
+		font-style: normal;
+		unicode-range: U+0026;
+	}
+
+	@font-face {
+		font-family: "Baskerville Ampersand";
+		src: local("Baskerville Bold Italic");
+		font-weight: 700;
+		font-style: normal;
+		unicode-range: U+0026;
+	}
+
+	/**
+	 * When it comes to fonts:
+	 * | Font | Windows | macOS | Linux |
+	 * | ---- | ------- | ----- | ----- |
+	 * | Baskerville            | ✅ | ✅ | ❌ |
+	 * | Times New Roman        | ✅ | ✅ | ⚠️ |
+	 * | Palatino               | ✅ | ⚠️ | ⚠️ |
+	 * | Bookman                | ⚠️ | ⚠️ | ⚠️ |
+	 * | New Century Schoolbook | ❌ | ⚠️ | ⚠️ |
+	 * | Lucida Bright          | ❌ | ❌ | ⚠️ |
+	 * | Perpetua               | ⚠️ | ❌ | ❌ |
+	 *
+	 * ✅ = Preinstalled,
+	 * ⚠️ = Available via Office/iWork or package manager,
+	 * ❌ = Not natively available.
+	 */
+	:root {
+		/* Colors */
+		--pink: #dd7eb4;
+		--blue: #267cb9;
+		--page-background: light-dark(#faf9fb, #252324);
+		--embed-background-pink: light-dark(#fffafd, #322d2f);
+		--embed-background-blue: light-dark(#f3f8fc, #303132);
+
+		/* Fonts */
+		--code-font: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
+		--typography-font:
+			"Lucida Bright", "Perpetua", "Times", "Times New Roman", "Palatino", "Bookman",
+			"New Century Schoolbook", serif;
+		--body-font: "MiddleDot", "Baskerville Ampersand", "Baskerville", var(--typography-font);
+
+		/* Spacing */
+		--vb: 1.5em;
+		--vb-half: calc(var(--vb) / 2);
+		--vb-third: calc(var(--vb) / 3);
+		--vb-quarter: calc(var(--vb) / 4);
+		--vb-sixth: calc(var(--vb) / 6);
+		--vb-thirds: calc(var(--vb) * 2 / 3);
+		--vb-1\.5: calc(var(--vb) * 1.5);
+		--vb-double: calc(var(--vb) * 2);
+
+		/* Miscellaneous */
+		--margin-offset: 2rem;
+
+		/* Z-index */
+		--z-set: 0;
+		--z-top: 10;
+	}
+
+	:root {
+		color-scheme: light dark;
+	}
+	[data-theme="dark"] {
+		color-scheme: dark;
+	}
+	[data-theme="light"] {
+		color-scheme: light;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		/**
+		 * 1. Disable all transitions and animations, but make sure they still run to
+		 *    preserve things like onanimationend events.
+		 */
+		*,
+		::before,
+		::after {
+			transition-duration: 0.01ms !important; /* 1 */
+			animation-duration: 0.01ms !important; /* 1 */
+		}
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
+	}
+
+	/**
+	 * 1. Set up a decent box model on the root element.
+	 * 2. Prevent horizontal scrolling.
+	 */
+	html {
+		box-sizing: border-box; /* 1 */
+		overflow-x: hidden; /* 2 */
+		height: 100%;
+	}
+
+	/**
+	 * 1. Make all elements from the DOM inherit from the parent box-sizing
+	 *    Since `*` has a specificity of 0, it does not override the `html` value
+	 *    making all elements inheriting from the root box-sizing value.
+	 *    See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 	 */
 	*,
 	::before,
 	::after {
-		transition-duration: 0.01ms !important; /* 1 */
-		animation-duration: 0.01ms !important; /* 1 */
-	}
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	html {
-		scroll-behavior: smooth;
-	}
-}
-
-/**
- * 1. Set up a decent box model on the root element.
- * 2. Prevent horizontal scrolling.
- */
-html {
-	box-sizing: border-box; /* 1 */
-	overflow-x: hidden; /* 2 */
-	height: 100%;
-}
-
-/**
- * 1. Make all elements from the DOM inherit from the parent box-sizing
- *    Since `*` has a specificity of 0, it does not override the `html` value
- *    making all elements inheriting from the root box-sizing value.
- *    See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
-*,
-::before,
-::after {
-	box-sizing: inherit; /* 1 */
-}
-
-/**
- * 1. Reset default margin.
- * 2. Enable fluid typography (as a separate property so it can fallback to the
- *    `font` declaration if not supported).
- */
-body {
-	margin: 0; /* 1 */
-	font: 1.25rem / 1.5 var(--body-font);
-	font-size: min(max(1.25rem, 4vw), 1.4rem); /* 2 */
-	color: light-dark(#444, #eee);
-	background-color: var(--page-background);
-	text-wrap: pretty;
-	height: inherit;
-
-	display: flex;
-	flex-direction: column;
-}
-
-hr {
-	height: 4px;
-	border-radius: 4px;
-	border: 0;
-	margin-block: var(--vb);
-	background-image: linear-gradient(to right, var(--pink), var(--blue));
-}
-
-/**
- * 1. Add some space to the top of the heading when scrolling to it.
- */
-h2,
-h3 {
-	margin-block: var(--vb) var(--vb-third);
-	scroll-margin-top: var(--vb-half); /* 1 */
-}
-
-h4 {
-	margin-block: var(--vb-third);
-}
-
-/**
- * 1. Reduce the gap between back-to-back headings.
- */
-h2 + h3,
-h2 + .ha + h3 {
-	margin-block-start: 0; /* 1 */
-}
-
-p {
-	margin-block: var(--vb-half);
-}
-
-ul,
-ol {
-	padding-inline-start: 1em;
-	margin-block: var(--vb-half);
-}
-
-li {
-	margin-block: var(--vb-quarter);
-}
-
-:where(ul, ol):not(.NoListMarker) {
-	padding-inline-start: 0;
-	list-style-type: none;
-}
-
-:where(ul, ol):not(.NoListMarker) > li {
-	--start-gutter: 2.25rem;
-	padding-inline-start: var(--start-gutter);
-}
-
-/**
- * 1. Remove the pseudo-element from the flow.
- */
-:where(ul, ol):not(.NoListMarker) > li::before {
-	content: "—";
-	position: absolute; /* 1 */
-	margin-inline-start: calc(var(--start-gutter) * -1);
-	color: light-dark(var(--blue), var(--pink));
-	font-weight: bold;
-}
-
-/**
- * 1. The `list-item` counter is implicitly defined for ordered lists.
- *    See: https://kizu.dev/list-item-counter/
- */
-ol:not(.NoListMarker) > li::before {
-	content: counter(list-item, decimal-leading-zero) "."; /* 1 */
-	font-variant-numeric: tabular-nums;
-	scale: 0.8;
-	transform-origin: center left;
-}
-
-ul ul {
-	margin-block: 0;
-}
-
-/**
- * 1. Warning: potentially dangerous if using inline images.
- */
-img {
-	max-inline-size: 100%;
-	height: auto;
-	display: block; /* 1 */
-	margin-block: var(--vb);
-}
-
-a:not(.NoBackground) {
-	color: inherit;
-	text-decoration: none;
-	-webkit-box-decoration-break: clone;
-	box-decoration-break: clone;
-	background-image: linear-gradient(
-		to right,
-		light-dark(#f2cfe3, #796771),
-		light-dark(#c4e0f3, #758691)
-	);
-	background-repeat: no-repeat;
-	background-size: 100% 0.2em;
-	background-position: 0 88%;
-	transition: background-size 250ms ease-in;
-}
-
-a:not(.NoBackground):where(:hover, :active) {
-	background-size: 100% 88%;
-}
-
-/**
- * Apply explicit focus styles to all links to make keyboard navigation more visible.
- */
-a:focus-visible {
-	outline: 2px solid var(--pink) !important;
-	outline-offset: 2px;
-	border-radius: 0.5em;
-	corner-shape: squircle;
-}
-
-@media not print {
-	a[data-visited]:not([data-visited-ignore]):not([href^="#"])::after {
-		content: "✓";
-		margin-inline-start: 0.5ch;
-		opacity: 0.5;
-		font-size: 80%;
-	}
-}
-
-a:visited {
-	color: inherit;
-}
-
-/**
- * 1. Strong elements can be quite in-your-face, and they can look jarring next
- *    to titles especially, so this should soften them a little bit.
- */
-strong {
-	opacity: 0.8; /* 1 */
-}
-
-/**
- * View transitions: two independent uses on this site
- * 1. Theme button: same-document transition with type `theme` (see main.js).
- *    Root ::view-transition-* rules MUST be gated on :active-view-transition-
- *    type(theme) so they never run during cross-document navigations (MPA
- *    project pages).
- * 2. Projects: cross-document @view-transition { navigation: auto } on listing
- *    + detail; those transitions are not typed `theme`, so the rules below
- *    never match.
- * See: https://codepen.io/argyleink/pen/NWZZPLZ
- */
-@media (prefers-reduced-motion: no-preference) {
-	html:active-view-transition-type(theme)::view-transition-old(root) {
-		animation: none; /* 1 */
+		box-sizing: inherit; /* 1 */
 	}
 
-	html:active-view-transition-type(theme)::view-transition-new(root) {
-		animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) switch-theme forwards; /* 1 */
+	/**
+	 * 1. Reset default margin.
+	 * 2. Enable fluid typography (as a separate property so it can fallback to the
+	 *    `font` declaration if not supported).
+	 */
+	body {
+		margin: 0; /* 1 */
+		font: 1.25rem / 1.5 var(--body-font);
+		font-size: min(max(1.25rem, 4vw), 1.4rem); /* 2 */
+		color: light-dark(#444, #eee);
+		background-color: var(--page-background);
+		text-wrap: pretty;
+		height: inherit;
+
+		display: flex;
+		flex-direction: column;
 	}
 
-	@view-transition {
-		navigation: auto; /* 2 */
+	hr {
+		height: 4px;
+		border-radius: 4px;
+		border: 0;
+		margin-block: var(--vb);
+		background-image: linear-gradient(to right, var(--pink), var(--blue));
 	}
-}
 
-@keyframes switch-theme {
-	from {
-		clip-path: circle(0% at bottom right);
+	/**
+	 * 1. Add some space to the top of the heading when scrolling to it.
+	 */
+	h2,
+	h3 {
+		margin-block: var(--vb) var(--vb-third);
+		scroll-margin-top: var(--vb-half); /* 1 */
 	}
-	to {
-		clip-path: circle(100% at center);
+
+	h4 {
+		margin-block: var(--vb-third);
+	}
+
+	/**
+	 * 1. Reduce the gap between back-to-back headings.
+	 */
+	h2 + h3,
+	h2 + .ha + h3 {
+		margin-block-start: 0; /* 1 */
+	}
+
+	p {
+		margin-block: var(--vb-half);
+	}
+
+	ul,
+	ol {
+		padding-inline-start: 1em;
+		margin-block: var(--vb-half);
+	}
+
+	li {
+		margin-block: var(--vb-quarter);
+	}
+
+	:where(ul, ol):not(.NoListMarker) {
+		padding-inline-start: 0;
+		list-style-type: none;
+	}
+
+	:where(ul, ol):not(.NoListMarker) > li {
+		--start-gutter: 2.25rem;
+		padding-inline-start: var(--start-gutter);
+	}
+
+	/**
+	 * 1. Remove the pseudo-element from the flow.
+	 */
+	:where(ul, ol):not(.NoListMarker) > li::before {
+		content: "—";
+		position: absolute; /* 1 */
+		margin-inline-start: calc(var(--start-gutter) * -1);
+		color: light-dark(var(--blue), var(--pink));
+		font-weight: bold;
+	}
+
+	/**
+	 * 1. The `list-item` counter is implicitly defined for ordered lists.
+	 *    See: https://kizu.dev/list-item-counter/
+	 */
+	ol:not(.NoListMarker) > li::before {
+		content: counter(list-item, decimal-leading-zero) "."; /* 1 */
+		font-variant-numeric: tabular-nums;
+		scale: 0.8;
+		transform-origin: center left;
+	}
+
+	ul ul {
+		margin-block: 0;
+	}
+
+	/**
+	 * 1. Warning: potentially dangerous if using inline images.
+	 */
+	img {
+		max-inline-size: 100%;
+		height: auto;
+		display: block; /* 1 */
+		margin-block: var(--vb);
+	}
+
+	a:not(.NoBackground) {
+		color: inherit;
+		text-decoration: none;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+		background-image: linear-gradient(
+			to right,
+			light-dark(#f2cfe3, #796771),
+			light-dark(#c4e0f3, #758691)
+		);
+		background-repeat: no-repeat;
+		background-size: 100% 0.2em;
+		background-position: 0 88%;
+		transition: background-size 250ms ease-in;
+	}
+
+	a:not(.NoBackground):where(:hover, :active) {
+		background-size: 100% 88%;
+	}
+
+	/**
+	 * Apply explicit focus styles to all links to make keyboard navigation more visible.
+	 */
+	a:focus-visible {
+		outline: 2px solid var(--pink);
+		outline-offset: 2px;
+		border-radius: 0.5em;
+		corner-shape: squircle;
+	}
+
+	@media not print {
+		a[data-visited]:not([data-visited-ignore]):not([href^="#"])::after {
+			content: "✓";
+			margin-inline-start: 0.5ch;
+			opacity: 0.5;
+			font-size: 80%;
+		}
+	}
+
+	a:visited {
+		color: inherit;
+	}
+
+	/**
+	 * 1. Strong elements can be quite in-your-face, and they can look jarring next
+	 *    to titles especially, so this should soften them a little bit.
+	 */
+	strong {
+		opacity: 0.8; /* 1 */
+	}
+
+	/**
+	 * View transitions: two independent uses on this site
+	 * 1. Theme button: same-document transition with type `theme` (see main.js).
+	 *    Root ::view-transition-* rules MUST be gated on :active-view-transition-
+	 *    type(theme) so they never run during cross-document navigations (MPA
+	 *    project pages).
+	 * 2. Projects: cross-document @view-transition { navigation: auto } on listing
+	 *    + detail; those transitions are not typed `theme`, so the rules below
+	 *    never match.
+	 * See: https://codepen.io/argyleink/pen/NWZZPLZ
+	 */
+	@media (prefers-reduced-motion: no-preference) {
+		html:active-view-transition-type(theme)::view-transition-old(root) {
+			animation: none; /* 1 */
+		}
+
+		html:active-view-transition-type(theme)::view-transition-new(root) {
+			animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) switch-theme forwards; /* 1 */
+		}
+
+		@view-transition {
+			navigation: auto; /* 2 */
+		}
+	}
+
+	@keyframes switch-theme {
+		from {
+			clip-path: circle(0% at bottom right);
+		}
+		to {
+			clip-path: circle(100% at center);
+		}
 	}
 }

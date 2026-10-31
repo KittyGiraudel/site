@@ -1,52 +1,54 @@
-.List {
-	list-style: none;
-	padding-inline-start: 0;
-}
-
-.ListItem {
-	padding-block: var(--vb-thirds);
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-}
-
-.ListItem p {
-	margin: 0;
-}
-
-.ListItem__primary {
-	font-size: 150%;
-	line-height: 1.1;
-	margin-block: var(--vb-third) var(--vb-quarter);
-}
-
-.ListItem__secondary {
-	font-size: 75%;
-	font-family: var(--code-font);
-}
-
-.ListItem[data-extra] {
-	position: relative;
-}
-
-@media (min-width: 1024px) {
-	.ListItem[data-extra]::before {
-		content: "#" attr(data-extra);
-		font-variant-numeric: tabular-nums;
-		position: absolute;
-		right: calc(100% + 1em);
-		top: 50%;
-		transform: translateY(-50%) rotate(-90deg) translateX(50%) translateY(-30%);
-		transform-origin: right center;
-		opacity: 0.4;
-		font-size: 1.5em;
-		font-family: var(--code-font);
-		letter-spacing: 0.15em;
-		transition: opacity 250ms;
-		color: #ccbdbd;
+@layer components {
+	.List {
+		list-style: none;
+		padding-inline-start: 0;
 	}
 
-	.ListItem[data-extra]:where(:hover, :focus-within)::before {
-		opacity: 0.8;
+	.ListItem {
+		padding-block: var(--vb-thirds);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.ListItem p {
+		margin: 0;
+	}
+
+	.ListItem__primary {
+		font-size: 150%;
+		line-height: 1.1;
+		margin-block: var(--vb-third) var(--vb-quarter);
+	}
+
+	.ListItem__secondary {
+		font-size: 75%;
+		font-family: var(--code-font);
+	}
+
+	.ListItem[data-extra] {
+		position: relative;
+	}
+
+	@media (min-width: 1024px) {
+		.ListItem[data-extra]::before {
+			content: "#" attr(data-extra);
+			font-variant-numeric: tabular-nums;
+			position: absolute;
+			right: calc(100% + 1em);
+			top: 50%;
+			transform: translateY(-50%) rotate(-90deg) translateX(50%) translateY(-30%);
+			transform-origin: right center;
+			opacity: 0.4;
+			font-size: 1.5em;
+			font-family: var(--code-font);
+			letter-spacing: 0.15em;
+			transition: opacity 250ms;
+			color: #ccbdbd;
+		}
+
+		.ListItem[data-extra]:where(:hover, :focus-within)::before {
+			opacity: 0.8;
+		}
 	}
 }

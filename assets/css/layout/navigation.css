@@ -1,248 +1,242 @@
-/**
- * 1. Place the site name on the left and the navigation items on the right.
- * 2. Position context for the gradient border and underline effect.
- */
-.Navigation:not([popover]) {
-	display: flex; /* 1 */
-	justify-content: space-between; /* 1 */
-	padding-inline: 1em;
-	position: relative; /* 2 */
+@layer layout {
+	/**
+	 * 1. Place the site name on the left and the navigation items on the right.
+	 * 2. Position context for the gradient border and underline effect.
+	 */
+	.Navigation:not([popover]) {
+		display: flex; /* 1 */
+		justify-content: space-between; /* 1 */
+		padding-inline: 1em;
+		position: relative; /* 2 */
 
-	--notch-start: 0px;
-	--notch-scale: 0;
-	--notch-opacity: 0;
-	--notch-offset: 4px;
-	--notch-transition-duration: 300ms;
-	--underline-height: 4px;
-}
+		--notch-start: 0px;
+		--notch-scale: 0;
+		--notch-opacity: 0;
+		--notch-offset: 4px;
+		--notch-transition-duration: 300ms;
+		--underline-height: 4px;
+	}
 
-/**
- * 1. Disable the notch effect when there is no active item in the menu.
- */
-.Navigation.Navigation:not([popover]):not(:has([aria-current])) {
-	--notch-opacity: 0 !important; /* 1 */
-}
+	/**
+	 * 1. Disable the notch effect when there is no active item in the menu.
+	 */
+	.Navigation.Navigation:not([popover]):not(:has([aria-current])) {
+		--notch-opacity: 0 !important; /* 1 */
+	}
 
-/**
- * 1. Gradient border placed below the navigation on large screens.
- */
-.Navigation:not([popover])::after {
-	content: ""; /* 1 */
-	position: absolute;
-	inset-block-start: 100%;
-	inset-inline-start: 0;
-	inset-inline-end: 0;
-	height: var(--underline-height);
-	background-image: linear-gradient(to right, var(--blue), var(--pink));
-	z-index: var(--z-set);
-}
+	/**
+	 * 1. Gradient border placed below the navigation on large screens.
+	 */
+	.Navigation:not([popover])::after {
+		content: ""; /* 1 */
+		position: absolute;
+		inset-block-start: 100%;
+		inset-inline-start: 0;
+		inset-inline-end: 0;
+		height: var(--underline-height);
+		background-image: linear-gradient(to right, var(--blue), var(--pink));
+		z-index: var(--z-set);
+	}
 
-/**
- * 1. Notch indicating the current link or hovered link on large screens.
- * 2. Rendering looks a tad better with a slight offset in some browsers.
- * 3. Need to be the same color as the page background to give the illusion of a
- *    hole through the gradient border.
- */
-.Navigation:not([popover])::before {
-	content: ""; /* 1 */
-	position: absolute;
-	inset-block-start: calc(100% - 1px);
-	inset-inline-start: 0;
-	height: calc(var(--underline-height) + 2px); /* 2 */
-	width: 100%;
-	background-color: var(--page-background); /* 3 */
-	transform: translateX(calc(var(--notch-start) - var(--notch-offset))) scaleX(var(--notch-scale));
-	transform-origin: left center;
-	opacity: var(--notch-opacity);
-	transition:
-		transform var(--notch-transition-duration) ease,
-		opacity 100ms var(--notch-transition-duration) ease-out;
-	pointer-events: none;
-	z-index: calc(var(--z-set) + 1);
-}
+	/**
+	 * 1. Notch indicating the current link or hovered link on large screens.
+	 * 2. Rendering looks a tad better with a slight offset in some browsers.
+	 * 3. Need to be the same color as the page background to give the illusion of a
+	 *    hole through the gradient border.
+	 */
+	.Navigation:not([popover])::before {
+		content: ""; /* 1 */
+		position: absolute;
+		inset-block-start: calc(100% - 1px);
+		inset-inline-start: 0;
+		height: calc(var(--underline-height) + 2px); /* 2 */
+		width: 100%;
+		background-color: var(--page-background); /* 3 */
+		transform: translateX(calc(var(--notch-start) - var(--notch-offset))) scaleX(var(--notch-scale));
+		transform-origin: left center;
+		opacity: var(--notch-opacity);
+		transition:
+			transform var(--notch-transition-duration) ease,
+			opacity 100ms var(--notch-transition-duration) ease-out;
+		pointer-events: none;
+		z-index: calc(var(--z-set) + 1);
+	}
 
-.Navigation__list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	width: 100%;
-}
+	.Navigation__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		width: 100%;
+	}
 
-/**
- * 1. Reset styles applied to all list items globally.
- */
-.Navigation__item {
-	display: inline-block;
-	line-height: 1.5;
-	font-variant: small-caps;
-	text-transform: lowercase;
-	font-family: sans-serif;
-	letter-spacing: 0.1em;
-	padding-inline: 1em;
-	margin: 0; /* 1 */
-}
+	/**
+	 * 1. Reset styles applied to all list items globally.
+	 */
+	.Navigation__item {
+		display: inline-block;
+		line-height: 1.5;
+		font-variant: small-caps;
+		text-transform: lowercase;
+		font-family: sans-serif;
+		letter-spacing: 0.1em;
+		padding-inline: 1em;
+		margin: 0; /* 1 */
+	}
 
-/**
- * 1. Reduce the navigation font size on large screens.
- */
-.Navigation:not([popover]) .Navigation__item {
-	font-size: 70%; /* 1 */
-}
+	/**
+	 * 1. Reduce the navigation font size on large screens.
+	 */
+	.Navigation:not([popover]) .Navigation__item {
+		font-size: 70%; /* 1 */
+	}
 
-/**
- * 1. The first item is the skip link, the second item is the home link, any-
- *    thing after that is pushed to the right on large screens.
- */
-.Navigation:not([popover]) .Navigation__item:nth-child(2) /* 1 */ {
-	margin-inline-end: auto;
-}
+	/**
+	 * 1. The first item is the skip link, the second item is the home link, any-
+	 *    thing after that is pushed to the right on large screens.
+	 */
+	.Navigation:not([popover]) .Navigation__item:nth-child(2) /* 1 */ {
+		margin-inline-end: auto;
+	}
 
-.Navigation__item[aria-current] {
-	position: relative;
-	font-weight: bold;
-}
+	.Navigation__item[aria-current] {
+		position: relative;
+		font-weight: bold;
+	}
 
-.Navigation__item--skip-link {
-	clip: rect(1px, 1px, 1px, 1px);
-	overflow: hidden;
-	height: 1px;
-	width: 1px;
-	position: absolute;
-	inset-block-start: 1em;
-	inset-inline-start: 1em;
-}
+	.Navigation__item--skip-link {
+		clip: rect(1px, 1px, 1px, 1px);
+		overflow: hidden;
+		height: 1px;
+		width: 1px;
+		position: absolute;
+		inset-block-start: 1em;
+		inset-inline-start: 1em;
+	}
 
-.Navigation__item--skip-link:focus-within {
-	clip: auto;
-	height: auto;
-	width: auto;
-	position: static;
-	overflow: visible;
-}
+	.Navigation__item--skip-link:focus-within {
+		clip: auto;
+		height: auto;
+		width: auto;
+		position: static;
+		overflow: visible;
+	}
 
-.Navigation__link {
-	color: inherit;
-	position: relative;
-	text-decoration: none;
-	padding-block: 0.75em;
-	display: inline-block;
-	cursor: pointer;
-}
+	.Navigation__link {
+		color: inherit;
+		position: relative;
+		text-decoration: none;
+		padding-block: 0.75em;
+		display: inline-block;
+		cursor: pointer;
+	}
 
-button.Navigation__link {
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-	font: inherit;
-	padding-inline: unset;
-	text-align: start;
-	text-transform: inherit;
-	letter-spacing: inherit;
-}
+	button.Navigation__link {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		font: inherit;
+		padding-inline: unset;
+		text-align: start;
+		text-transform: inherit;
+		letter-spacing: inherit;
+	}
 
-button.Navigation__link:focus-visible {
-	outline: 2px solid var(--pink) !important;
-	outline-offset: 2px;
-	border-radius: 0.5em;
-	corner-shape: squircle;
-}
+	button.Navigation__link:focus-visible {
+		outline: 2px solid var(--pink);
+		outline-offset: 2px;
+		border-radius: 0.5em;
+		corner-shape: squircle;
+	}
 
-/**
- * 1. Remove the focus outline and add a underline on focus on large screens to
- *    look better within the navigation.
- */
-.Navigation:not([popover]) .Navigation__link:focus-visible {
-	outline: 0 !important; /* 1 */
-	text-decoration: underline; /* 1 */
-	text-decoration-skip-ink: auto;
-}
+	/**
+	 * 1. Remove the focus outline and add a underline on focus on large screens to
+	 *    look better within the navigation.
+	 */
+	.Navigation:not([popover]) .Navigation__link:focus-visible {
+		outline: 0; /* 1 */
+		text-decoration: underline; /* 1 */
+		text-decoration-skip-ink: auto;
+	}
 
-/**
- * 1. Double-selector to override the specificity of the `IconButton` class.
- */
-.OpenMenuButton.OpenMenuButton /* 1 */ {
-	display: none;
-	position: fixed;
-	inset-block-start: 1.35em;
-	inset-inline-end: 1em;
-	z-index: var(--z-top);
-}
+	.OpenMenuButton {
+		position: fixed;
+		inset-block-start: 1.35em;
+		inset-inline-end: 1em;
+		z-index: var(--z-top);
+	}
 
-/**
- * 1. Place the popover in the top right corner.
- * 2. CSS trick to have a gradient border *with* rounded corners.
- */
-.Navigation[popover] {
-	inset-block-start: 1em; /* 1 */
-	inset-inline-end: 1em; /* 1 */
-	inset-inline-start: auto; /* 1 */
-	margin: 0; /* 1 */
-	padding: 1em 1.25em;
-	border-radius: 1em;
-	corner-shape: squircle;
-	background-color: var(--embed-background-pink);
-	border: 2px solid transparent; /* 2 */
-	background-image:
-		linear-gradient(var(--embed-background-pink), var(--embed-background-pink)),
-		linear-gradient(to right, var(--pink), var(--blue)); /* 2 */
-	background-origin: border-box; /* 2 */
-	background-clip: padding-box, border-box; /* 2 */
+	/**
+	 * 1. Place the popover in the top right corner.
+	 * 2. CSS trick to have a gradient border *with* rounded corners.
+	 */
+	.Navigation[popover] {
+		inset-block-start: 1em; /* 1 */
+		inset-inline-end: 1em; /* 1 */
+		inset-inline-start: auto; /* 1 */
+		margin: 0; /* 1 */
+		padding: 1em 1.25em;
+		border-radius: 1em;
+		corner-shape: squircle;
+		background-color: var(--embed-background-pink);
+		border: 2px solid transparent; /* 2 */
+		background-image:
+			linear-gradient(var(--embed-background-pink), var(--embed-background-pink)),
+			linear-gradient(to right, var(--pink), var(--blue)); /* 2 */
+		background-origin: border-box; /* 2 */
+		background-clip: padding-box, border-box; /* 2 */
 
-	opacity: 0;
-	transform: translate(1rem, -1rem) scale(0.95);
-	transition: 300ms ease-out;
-}
-
-/**
- * 1. Show the popover when it is open.
- */
-.Navigation[popover]:popover-open {
-	display: flex; /* 1 */
-	opacity: 1;
-	transform: translate(0, 0) scale(1);
-}
-
-@starting-style {
-	.Navigation[popover]:popover-open {
 		opacity: 0;
 		transform: translate(1rem, -1rem) scale(0.95);
-	}
-}
-
-.Navigation[popover]::backdrop {
-	background-color: rgb(0 0 0 / 0.2);
-}
-
-/**
- * 1. Stack the navigation items vertically on small screens.
- */
-.Navigation[popover] .Navigation__list {
-	flex-direction: column; /* 1 */
-}
-
-/**
- * 1. Remove the padding from the navigation items on small screens, and move it
- *    to the link itself to improve the touch target and focus styles.
- */
-.Navigation[popover] .Navigation__item {
-	padding-inline: 0; /* 1 */
-}
-.Navigation[popover] .Navigation__link {
-	padding: 0.25em 0.5em; /* 1 */
-}
-
-.Navigation[popover] .Navigation__link:hover {
-	text-decoration: underline;
-	text-decoration-skip-ink: auto;
-}
-
-@media (max-width: 768px) {
-	.Navigation:not([popover]) {
-		display: none;
+		transition: 300ms ease-out;
 	}
 
-	.OpenMenuButton.OpenMenuButton {
-		display: block;
+	/**
+	 * 1. Show the popover when it is open.
+	 */
+	.Navigation[popover]:popover-open {
+		display: flex; /* 1 */
+		opacity: 1;
+		transform: translate(0, 0) scale(1);
+	}
+
+	@starting-style {
+		.Navigation[popover]:popover-open {
+			opacity: 0;
+			transform: translate(1rem, -1rem) scale(0.95);
+		}
+	}
+
+	.Navigation[popover]::backdrop {
+		background-color: rgb(0 0 0 / 0.2);
+	}
+
+	/**
+	 * 1. Stack the navigation items vertically on small screens.
+	 */
+	.Navigation[popover] .Navigation__list {
+		flex-direction: column; /* 1 */
+	}
+
+	/**
+	 * 1. Remove the padding from the navigation items on small screens, and move it
+	 *    to the link itself to improve the touch target and focus styles.
+	 */
+	.Navigation[popover] .Navigation__item {
+		padding-inline: 0; /* 1 */
+	}
+	.Navigation[popover] .Navigation__link {
+		padding: 0.25em 0.5em; /* 1 */
+	}
+
+	.Navigation[popover] .Navigation__link:hover {
+		text-decoration: underline;
+		text-decoration-skip-ink: auto;
+	}
+
+	@media (max-width: 768px) {
+		.Navigation:not([popover]) {
+			display: none;
+		}
 	}
 }

@@ -1,62 +1,64 @@
-.CardGrid {
-	display: grid;
-	align-items: start;
-	list-style: none;
-	gap: var(--vb-thirds);
-	position: relative;
-	padding-inline-start: 0;
-	margin-block: var(--vb);
-}
-
-@supports (display: grid-lanes) {
+@layer components {
 	.CardGrid {
-		display: grid-lanes;
-		grid-template-rows: unset;
+		display: grid;
+		align-items: start;
+		list-style: none;
+		gap: var(--vb-thirds);
+		position: relative;
+		padding-inline-start: 0;
+		margin-block: var(--vb);
 	}
-}
 
-@media (min-width: 400px) {
-	.CardGrid {
-		gap: var(--vb-half);
-		grid-template-rows: masonry;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	@supports (display: grid-lanes) {
+		.CardGrid {
+			display: grid-lanes;
+			grid-template-rows: unset;
+		}
 	}
-}
 
-@media (min-width: 769px) {
-	.CardGrid {
-		padding-inline: var(--vb-half);
-		--width: 100vw;
-		width: var(--width);
-		inset-inline-start: 50%;
-		inset-inline-end: 50%;
-		margin-inline-start: calc(var(--width) / -2);
-		margin-inline-end: calc(var(--width) / -2);
+	@media (min-width: 400px) {
+		.CardGrid {
+			gap: var(--vb-half);
+			grid-template-rows: masonry;
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		}
 	}
-}
 
-@media (min-width: 1024px) {
-	.CardGrid {
-		--width: 95vw;
+	@media (min-width: 769px) {
+		.CardGrid {
+			padding-inline: var(--vb-half);
+			--width: 100vw;
+			width: var(--width);
+			inset-inline-start: 50%;
+			inset-inline-end: 50%;
+			margin-inline-start: calc(var(--width) / -2);
+			margin-inline-end: calc(var(--width) / -2);
+		}
 	}
-}
 
-.CardGrid__item {
-	margin: 0;
-}
+	@media (min-width: 1024px) {
+		.CardGrid {
+			--width: 95vw;
+		}
+	}
 
-@media (prefers-reduced-motion: no-preference) {
 	.CardGrid__item {
-		animation-fill-mode: both;
-		animation-name: fade-in;
-		animation-range: entry 25% cover 50%;
-		animation-timeline: --item-timeline;
-		view-timeline-name: --item-timeline;
+		margin: 0;
 	}
-}
 
-@keyframes fade-in {
-	from {
-		opacity: 0;
+	@media (prefers-reduced-motion: no-preference) {
+		.CardGrid__item {
+			animation-fill-mode: both;
+			animation-name: fade-in;
+			animation-range: entry 25% cover 50%;
+			animation-timeline: --item-timeline;
+			view-timeline-name: --item-timeline;
+		}
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
 	}
 }

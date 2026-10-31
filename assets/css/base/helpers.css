@@ -1,63 +1,35 @@
-/**
- * Main content containers
- * 1. Make the container full-width with a maximum width.
- * 2. Leave some space on the edges, especially valuable on small screens.
- */
-.Container {
-	max-inline-size: 80ch; /* 1 */
-	padding-inline: clamp(1em, 5vw, 2em); /* 2 */
-	width: 100%; /* 1 */
-	margin-inline: auto;
-}
-
-/**
- * Hide element while making it readable for screen readers
- * See: https://kittygiraudel.com/2016/10/13/css-hide-and-seek/
- */
-.VisuallyHidden {
-	border: 0 !important;
-	clip: rect(1px, 1px, 1px, 1px) !important;
-	-webkit-clip-path: inset(50%) !important;
-	clip-path: inset(50%) !important;
-	height: 1px !important;
-	overflow: hidden !important;
-	margin: -1px !important;
-	padding: 0 !important;
-	position: absolute !important;
-	width: 1px !important;
-	white-space: nowrap !important;
-}
-
-@media print {
-	.NoPrint {
-		display: none !important;
+@layer helpers {
+	/**
+	 * Hide element while making it readable for screen readers
+	 * See: https://kittygiraudel.com/2016/10/13/css-hide-and-seek/
+	 */
+	.VisuallyHidden {
+		border: 0;
+		clip: rect(1px, 1px, 1px, 1px);
+		-webkit-clip-path: inset(50%);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		margin: -1px;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+		white-space: nowrap;
 	}
 
-	.PrintOnly {
-		display: block !important;
+	@media print {
+		.NoPrint {
+			display: none;
+		}
+
+		.PrintOnly {
+			display: block;
+		}
 	}
-}
 
-@media not print {
-	.PrintOnly {
-		display: none !important;
+	@media not print {
+		.PrintOnly {
+			display: none;
+		}
 	}
-}
-
-.Fleuron {
-	display: inline-block;
-	transform: scale(0.75);
-	position: relative;
-	opacity: 0.8;
-	margin-inline: 0.25ch;
-}
-
-.InlineImage {
-	height: 0.8lh;
-	aspect-ratio: 1;
-	display: inline;
-	width: auto;
-	margin-block: 0;
-	vertical-align: text-bottom;
-	margin-inline-end: -0.25ch;
 }

@@ -27,9 +27,9 @@ function injectHeadingAnchors(content: string, outputPath?: string) {
 		)
 		const anchor =
 			$(`<a class="ha" href="#${$heading.attr('id')}" style="position-anchor: ${anchorName};">
-      <span class="VisuallyHidden">Jump to section titled: ${$heading.text().trim()}</span>
-      <span aria-hidden="true">§</span>
-    </a>`)
+			<span class="VisuallyHidden">Jump to section titled: ${$heading.text().trim()}</span>
+			<span aria-hidden="true">§</span>
+		</a>`)
 
 		$heading.append(placeholder)
 		$heading.after(anchor)

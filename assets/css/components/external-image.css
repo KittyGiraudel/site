@@ -1,0 +1,11 @@
+@layer components {
+	.ExternalImage {
+		height: 0.8lh;
+		aspect-ratio: 1;
+		display: inline;
+		width: auto;
+		margin-block: 0;
+		vertical-align: text-bottom;
+		margin-inline-end: -0.25ch;
+	}
+}
