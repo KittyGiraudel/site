@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
  
     if (typeof loadJS === 'function' && !window.ApexCharts) {
-        loadJS('https://cdn.jsdelivr.net/npm/apexcharts', init)
+        loadJS('https://cdn.jsdelivr.net/npm/apexcharts@3.54.1/dist/apexcharts.min.js', init)
     } else if (window.ApexCharts) {
         init()
     }

@@ -93,5 +93,3 @@ Among things I should pay attention to though:
 Anyway, the event was really great, full of interesting talks and cool people. If there is another dotCSS next year, chances are high that you’ll see me there if I can attend it.
 
 If you missed my talk (or anyone’s talk actually), worry not because everything will be online in a couple of weeks. Meanwhile, you can have a look at my slidedeck; feel free to get in touch for any question. Also, special thanks to [Jesterhead](https://twitter.com/komiska) who designed the first slide for me.
-
-<script async class="speakerdeck-embed" data-id="117e5ae04f2501329d875e31c290001e" data-ratio="1.36898395721925" src="https://speakerdeck.com/assets/embed.js"></script>
