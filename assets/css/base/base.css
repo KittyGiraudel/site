@@ -1,4 +1,4 @@
-@layer vendors, base, layout, components, pages, utilities;
+@layer vendors, base, layout, components, pages, helpers;
 
 @layer base {
 	@font-face {
