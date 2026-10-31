@@ -13,27 +13,27 @@
 
 	[data-link-favicons] a[href*="github."]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:github-icon.svg");
+		background-image: url("https://api.iconify.design/logos/github-icon.svg");
 	}
 
 	[data-link-favicons] a:where([href*="twitter.com"], [href*="x.com"])::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:twitter.svg");
+		background-image: url("https://api.iconify.design/logos/twitter.svg");
 	}
 
 	[data-link-favicons] a[href*="sitepoint.com"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:sitepoint.svg");
+		background-image: url("https://api.iconify.design/logos/sitepoint.svg");
 	}
 
 	[data-link-favicons] a[href*="codepen.io"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:codepen-icon.svg");
+		background-image: url("https://api.iconify.design/logos/codepen-icon.svg");
 	}
 
 	[data-link-favicons] a[href*="w3.org"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/vscode-icons:file-type-css.svg");
+		background-image: url("https://api.iconify.design/streamline-logos/w3-logo-block.svg");
 	}
 
 	[data-link-favicons] a[href*="css-tricks.com"]::before {
@@ -53,22 +53,22 @@
 
 	[data-link-favicons] a:where([href*="sass-guidelin.es"], [href*="sass-lang.com"])::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:sass.svg");
+		background-image: url("https://api.iconify.design/logos/sass.svg");
 	}
 
 	[data-link-favicons] a[href*="sassdoc.com"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:sass-doc.svg");
+		background-image: url("https://api.iconify.design/logos/sass-doc.svg");
 	}
 
 	[data-link-favicons] a[href*="tympanus.net"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:codrops.svg");
+		background-image: url("https://api.iconify.design/logos/codrops.svg");
 	}
 
 	[data-link-favicons] a[href*="11ty.dev"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:eleventy.svg");
+		background-image: url("https://api.iconify.design/logos/eleventy.svg");
 	}
 
 	[data-link-favicons] a[href*="caniuse.com"]::before {
@@ -78,7 +78,7 @@
 
 	[data-link-favicons] a[href*="cypress.io"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:cypress-icon.svg");
+		background-image: url("https://api.iconify.design/logos/cypress-icon.svg");
 	}
 
 	[data-link-favicons] a[href*="sanity.io"]::before {
@@ -88,32 +88,32 @@
 
 	[data-link-favicons] a[href*="nextjs.org"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:nextjs-icon.svg");
+		background-image: url("https://api.iconify.design/logos/nextjs-icon.svg");
 	}
 
 	[data-link-favicons] a[href*="stackoverflow.com"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:stackoverflow-icon.svg");
+		background-image: url("https://api.iconify.design/logos/stackoverflow-icon.svg");
 	}
 
 	[data-link-favicons] a[href*="npmjs.com"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:npm.svg");
+		background-image: url("https://api.iconify.design/logos/npm.svg");
 	}
 
 	[data-link-favicons] a[href*="biomejs.dev"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:biomejs-icon.svg");
+		background-image: url("https://api.iconify.design/logos/biomejs-icon.svg");
 	}
 
 	[data-link-favicons] a[href*="netlify.com"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:netlify-icon.svg");
+		background-image: url("https://api.iconify.design/logos/netlify-icon.svg");
 	}
 
 	[data-link-favicons] a[href*="nodejs.org"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/logos:nodejs-icon.svg");
+		background-image: url("https://api.iconify.design/logos/nodejs-icon.svg");
 	}
 
 	[data-link-favicons] a[href*="n26.com"]::before {
@@ -149,10 +149,10 @@
 
 	[data-link-favicons] a[href^="#"]::before {
 		content: "";
-		background-image: url("https://api.iconify.design/mdi:hashtag.svg?color=%2300000055");
+		background-image: url("https://api.iconify.design/mdi/hashtag.svg?color=%2300000055");
 	}
 }
 
 [data-theme="dark"] [data-link-favicons] a:where([href^="#"])::before {
-	background-image: url("https://api.iconify.design/mdi:hashtag.svg?color=%23ffffffaa");
+	background-image: url("https://api.iconify.design/mdi/hashtag.svg?color=%23ffffffaa");
 }
