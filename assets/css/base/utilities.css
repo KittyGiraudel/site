@@ -1,0 +1,35 @@
+@layer utilities {
+	/**
+	 * Hide element while making it readable for screen readers
+	 * See: https://kittygiraudel.com/2016/10/13/css-hide-and-seek/
+	 */
+	.VisuallyHidden {
+		border: 0;
+		clip: rect(1px, 1px, 1px, 1px);
+		-webkit-clip-path: inset(50%);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		margin: -1px;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+		white-space: nowrap;
+	}
+
+	@media print {
+		.NoPrint {
+			display: none;
+		}
+
+		.PrintOnly {
+			display: block;
+		}
+	}
+
+	@media not print {
+		.PrintOnly {
+			display: none;
+		}
+	}
+}

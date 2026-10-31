@@ -95,6 +95,14 @@ function styles(partials: string): string {
 		.map(partial => {
 			const href = `/assets/css/${partial}.css`
 
+			// Vendor files are copied from node_modules, and there is no way to apply
+			// a layer to a <link> element, so they are imported within a style tag,
+			// even in production.
+			// See: https://github.com/whatwg/html/issues/7540
+			if (partial.startsWith('vendors/')) {
+				return `<style data-helmet data-style="${href}">@import url("${href}") layer(vendors);</style>`
+			}
+
 			if (!isFeatureEnabled('INLINE_ASSETS')) {
 				return `<link data-helmet rel="stylesheet" href="${href}">`
 			}

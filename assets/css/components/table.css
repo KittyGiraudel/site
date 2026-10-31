@@ -1,32 +1,37 @@
-table {
-	width: 100%;
-	margin-block: var(--vb);
-	border-collapse: collapse;
-}
-
-@media (min-width: 1024px) {
-	table {
-		width: calc(100% + var(--margin-offset) * 2);
-		padding: 1em var(--margin-offset);
-		inset-inline-start: calc(var(--margin-offset) * -1);
-		position: relative;
+@layer components {
+	/**
+	 * charts.css lives in the vendors layer, below this file. A bare `th` or `td`
+	 * would beat its table reset, so chart tables are excluded.
+	 */
+	table:not(.charts-css) {
+		width: 100%;
+		margin-block: var(--vb);
+		border-collapse: collapse;
 	}
-}
 
-thead {
-	border-block-end: 2px solid;
-}
+	@media (min-width: 1024px) {
+		table:not(.charts-css) {
+			width: calc(100% + var(--margin-offset) * 2);
+			padding: 1em var(--margin-offset);
+			inset-inline-start: calc(var(--margin-offset) * -1);
+			position: relative;
+		}
+	}
 
-tr + tr {
-	border-block-start: 1px solid var(--pink);
-}
+	table:not(.charts-css) thead {
+		border-block-end: 2px solid;
+	}
 
-td,
-th {
-	padding: 0.5em;
-}
+	table:not(.charts-css) tr + tr {
+		border-block-start: 1px solid var(--pink);
+	}
 
-th {
-	text-align: start;
-	font-weight: bold;
+	table:not(.charts-css) :is(td, th) {
+		padding: 0.5em;
+	}
+
+	table:not(.charts-css) th {
+		text-align: start;
+		font-weight: bold;
+	}
 }

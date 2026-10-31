@@ -1,57 +1,59 @@
-.Figure {
-	margin: var(--vb) 0;
-	position: relative;
-}
+@layer components {
+	.Figure {
+		margin: var(--vb) 0;
+		position: relative;
+	}
 
-/**
- * Figures live inside the main content container. The raster output from the
- * @11ty/eleventy-img plugin can be smaller than that (e.g. max width 640–800px)
- * Without an explicit width, replaced elements keep their intrinsic size, so
- * they sit narrower than the column—max-inline-size: 100% only caps overflow,
- * it does not stretch.
- */
-.Figure > picture {
-	display: block;
-	inline-size: 100%;
-}
+	/**
+	 * Figures live inside the main content container. The raster output from the
+	 * @11ty/eleventy-img plugin can be smaller than that (e.g. max width 640–800px)
+	 * Without an explicit width, replaced elements keep their intrinsic size, so
+	 * they sit narrower than the column—max-inline-size: 100% only caps overflow,
+	 * it does not stretch.
+	 */
+	.Figure > picture {
+		display: block;
+		inline-size: 100%;
+	}
 
-.Figure > img,
-.Figure > picture img {
-	inline-size: 100%;
-}
+	.Figure > img,
+	.Figure > picture img {
+		inline-size: 100%;
+	}
 
-.Figure > video {
-	inline-size: 100%;
-	height: auto;
-}
+	.Figure > video {
+		inline-size: 100%;
+		height: auto;
+	}
 
-.Figure figcaption {
-	font-family: var(--code-font);
-	font-size: 60%;
-	display: inline-block;
-}
-
-.Figure figcaption::before {
-	content: "";
-	display: block;
-	height: 4px;
-	border-radius: 4px;
-	background-image: linear-gradient(to right, var(--pink), var(--blue));
-	margin-block: calc(var(--vb-third) * -1) var(--vb-thirds);
-}
-
-@media (min-width: 1400px) {
 	.Figure figcaption {
-		width: 100%;
-		max-inline-size: 250px;
-		position: absolute;
-		inset-inline-end: 100%;
-		inset-block-start: 0.5em;
-		text-align: end;
-		padding-inline-end: 2.5em;
+		font-family: var(--code-font);
+		font-size: 60%;
+		display: inline-block;
 	}
 
 	.Figure figcaption::before {
-		margin-block-end: var(--vb);
+		content: "";
+		display: block;
+		height: 4px;
+		border-radius: 4px;
+		background-image: linear-gradient(to right, var(--pink), var(--blue));
+		margin-block: calc(var(--vb-third) * -1) var(--vb-thirds);
+	}
+
+	@media (min-width: 1400px) {
+		.Figure figcaption {
+			width: 100%;
+			max-inline-size: 250px;
+			position: absolute;
+			inset-inline-end: 100%;
+			inset-block-start: 0.5em;
+			text-align: end;
+			padding-inline-end: 2.5em;
+		}
+
+		.Figure figcaption::before {
+			margin-block-end: var(--vb);
+		}
 	}
 }

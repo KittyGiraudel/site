@@ -9,9 +9,7 @@ eleventyImport:
 link_favicons: true
 ---
 
-<link data-helmet rel="stylesheet" href="/assets/css/vendors/charts.css" />
-
-{% styles "components/table, pages/stats" %}
+{% styles "vendors/charts, components/table, pages/stats" %}
 
 {% assign stats = collections.postStats %}
 

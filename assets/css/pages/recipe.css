@@ -1,9 +1,11 @@
-.RecipeSteps > li {
-	margin-block-end: var(--vb-half);
-}
+@layer pages {
+	.RecipeSteps > li {
+		margin-block-end: var(--vb-half);
+	}
 
-.RecipeIngredients {
-	column-width: 17em;
-	column-count: 2;
-	column-gap: 1em;
+	.RecipeIngredients {
+		column-width: 17em;
+		column-count: 2;
+		column-gap: 1em;
+	}
 }

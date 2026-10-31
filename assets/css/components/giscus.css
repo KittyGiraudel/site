@@ -1,3 +1,5 @@
-.Giscus {
-	margin-block-start: var(--vb-double);
+@layer components {
+	.Giscus {
+		margin-block-start: var(--vb-double);
+	}
 }

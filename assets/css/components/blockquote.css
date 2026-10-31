@@ -1,88 +1,90 @@
-/**
- * 1. Positioning context for the decorative pseudo-elements.
- * 2. Add some extra spacing around the blockquote to give room to the quotation marks.
- * 3. CSS trick to have a gradient border *with* rounded corners.
- */
-blockquote {
-	position: relative; /* 1 */
-	margin: var(--vb-1\.5) 0; /* 2 */
-	padding: 0.75em 1.5em;
-	background-color: var(--embed-background-blue);
-	border-radius: 1em;
-	corner-shape: squircle;
-	border: 2px solid transparent; /* 3 */
-	background-image:
-		linear-gradient(var(--embed-background-blue), var(--embed-background-blue)),
-		linear-gradient(to right, var(--blue), var(--pink)); /* 3 */
-	background-origin: border-box; /* 3 */
-	background-clip: padding-box, border-box; /* 3 */
-}
-
-blockquote::before,
-blockquote::after {
-	position: absolute;
-	font-size: 1000%;
-	opacity: 0.2;
-	font-family: var(--typography-font);
-	font-weight: bold;
-	line-height: 1;
-	z-index: var(--z-set);
-	transition: 150ms;
-}
-
-blockquote::before {
-	content: "“";
-	color: var(--blue);
-	inset-block-end: 100%;
-	inset-inline-end: 100%;
-	transform: translate(67%, 73%);
-}
-
-blockquote::after {
-	content: "”";
-	color: var(--pink);
-	inset-block-start: 100%;
-	inset-inline-start: 100%;
-	transform: translate(-67%, -37%);
-}
-
-/**
- * 1. Ensure the text inside the blockquote sits on top of the quotation marks.
- */
-blockquote > * {
-	z-index: calc(var(--z-set) + 1); /* 1 */
-	position: relative; /* 1 */
-}
-
-blockquote:focus-within::before,
-blockquote:focus-within::after,
-blockquote:hover::before,
-blockquote:hover::after {
-	rotate: 3deg;
-}
-
-@media (min-width: 1024px) {
+@layer components {
 	/**
-	 * 1. Increase width so the blockquote container looks wider than the
-	 *    body text, but the text within it is aligned with the body text.
+	 * 1. Positioning context for the decorative pseudo-elements.
+	 * 2. Add some extra spacing around the blockquote to give room to the quotation marks.
+	 * 3. CSS trick to have a gradient border *with* rounded corners.
 	 */
 	blockquote {
-		width: calc(100% + var(--margin-offset) * 2); /* 1 */
-		padding: 1em var(--margin-offset); /* 1 */
-		inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
+		position: relative; /* 1 */
+		margin: var(--vb-1\.5) 0; /* 2 */
+		padding: 0.75em 1.5em;
+		background-color: var(--embed-background-blue);
+		border-radius: 1em;
+		corner-shape: squircle;
+		border: 2px solid transparent; /* 3 */
+		background-image:
+			linear-gradient(var(--embed-background-blue), var(--embed-background-blue)),
+			linear-gradient(to right, var(--blue), var(--pink)); /* 3 */
+		background-origin: border-box; /* 3 */
+		background-clip: padding-box, border-box; /* 3 */
 	}
-}
 
-/**
- * 1. Prevent an odd gap when the first child of blockquote has a top margin
- */
-blockquote > :first-child {
-	margin-block-start: 0; /* 1 */
-}
+	blockquote::before,
+	blockquote::after {
+		position: absolute;
+		font-size: 1000%;
+		opacity: 0.2;
+		font-family: var(--typography-font);
+		font-weight: bold;
+		line-height: 1;
+		z-index: var(--z-set);
+		transition: 150ms;
+	}
 
-/**
- * 1. Prevent an odd gap when the last child of blockquote has a bottom margin
- */
-blockquote > :last-child {
-	margin-block-end: 0; /* 1 */
+	blockquote::before {
+		content: "“";
+		color: var(--blue);
+		inset-block-end: 100%;
+		inset-inline-end: 100%;
+		transform: translate(67%, 73%);
+	}
+
+	blockquote::after {
+		content: "”";
+		color: var(--pink);
+		inset-block-start: 100%;
+		inset-inline-start: 100%;
+		transform: translate(-67%, -37%);
+	}
+
+	/**
+	 * 1. Ensure the text inside the blockquote sits on top of the quotation marks.
+	 */
+	blockquote > * {
+		z-index: calc(var(--z-set) + 1); /* 1 */
+		position: relative; /* 1 */
+	}
+
+	blockquote:focus-within::before,
+	blockquote:focus-within::after,
+	blockquote:hover::before,
+	blockquote:hover::after {
+		rotate: 3deg;
+	}
+
+	@media (min-width: 1024px) {
+		/**
+		 * 1. Increase width so the blockquote container looks wider than the
+		 *    body text, but the text within it is aligned with the body text.
+		 */
+		blockquote {
+			width: calc(100% + var(--margin-offset) * 2); /* 1 */
+			padding: 1em var(--margin-offset); /* 1 */
+			inset-inline-start: calc(var(--margin-offset) * -1); /* 1 */
+		}
+	}
+
+	/**
+	 * 1. Prevent an odd gap when the first child of blockquote has a top margin
+	 */
+	blockquote > :first-child {
+		margin-block-start: 0; /* 1 */
+	}
+
+	/**
+	 * 1. Prevent an odd gap when the last child of blockquote has a bottom margin
+	 */
+	blockquote > :last-child {
+		margin-block-end: 0; /* 1 */
+	}
 }
