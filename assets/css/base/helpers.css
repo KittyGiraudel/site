@@ -10,12 +10,4 @@
 		width: 100%; /* 1 */
 		margin-inline: auto;
 	}
-
-	.Fleuron {
-		display: inline-block;
-		transform: scale(0.75);
-		position: relative;
-		opacity: 0.8;
-		margin-inline: 0.25ch;
-	}
 }

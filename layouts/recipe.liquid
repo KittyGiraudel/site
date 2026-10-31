@@ -15,7 +15,7 @@ layout: default
     %}
 
     <p class="Metadata">
-      For {{ serves }} <span class="Fleuron" aria-hidden="true">❦</span> About {{ preparation_time }}
+      For {{ serves }} {% render "fleuron.liquid" %} About {{ preparation_time }}
     </p>
   </header>
 </div>
@@ -23,7 +23,7 @@ layout: default
 <main class="Main" role="main" id="main">
   <div class="Container">
     {{ content }}
-    
+
     <h2>Ingredients</h2>
     <ul class="RecipeIngredients">
       {% for ingredient in ingredients %}
@@ -46,7 +46,7 @@ layout: default
         {% endfor %}
       </ul>
     {% endif %}
-    
+
     {% render "collection_navigation.liquid",
       page: page,
       collection: collections.recipes,
