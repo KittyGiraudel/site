@@ -5,6 +5,8 @@
 
 {% ensure host, "Required value 'host' is missing in external_image.liquid" %}
 
+{% styles "components/external-image" %}
+
 {% if host == "CSS-Tricks" %}
 	{% assign src = "https://css-tricks.com/favicon.svg" %}
 {% elsif host == "Codrops"%}
@@ -36,5 +38,5 @@
 {% endif %}
 
 {% if src %}
-<img src="{{ src }}" alt="Logo of {{ host }}" class="InlineImage" eleventy:ignore />
+<img src="{{ src }}" alt="Logo of {{ host }}" class="ExternalImage" eleventy:ignore />
 {% endif %}
