@@ -108,10 +108,10 @@
 	}
 
 	[data-link-favicons] .Footnotes__ref[role="doc-noteref"]::before {
-		background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%2300000055");
+		background-image: url("https://api.iconify.design/mdi/asterisk.svg?color=%2300000055");
 	}
 
 	[data-theme="dark"] [data-link-favicons] .Footnotes__ref[role="doc-noteref"]::before {
-		background-image: url("https://api.iconify.design/mdi:asterisk.svg?color=%23ffffffaa");
+		background-image: url("https://api.iconify.design/mdi/asterisk.svg?color=%23ffffffaa");
 	}
 }
