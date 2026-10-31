@@ -1,0 +1,13 @@
+@layer layout {
+	/**
+	 * Main content containers
+	 * 1. Make the container full-width with a maximum width.
+	 * 2. Leave some space on the edges, especially valuable on small screens.
+	 */
+	.Container {
+		max-inline-size: 80ch; /* 1 */
+		padding-inline: clamp(1em, 5vw, 2em); /* 2 */
+		width: 100%; /* 1 */
+		margin-inline: auto;
+	}
+}
