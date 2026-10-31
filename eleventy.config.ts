@@ -21,9 +21,11 @@ export default defineConfig(config => {
 
 	// Content post-processing
 	// ---------------------------------------------------------------------------
+	// Helmet has to run *before* HTML minification so that the latter executes on
+	// the final markup, and not an intermediary one.
+	if (isFeatureEnabled('PROCESS_HELMET')) config.addTransform('helmet', utilities.helmet)
 	if (isFeatureEnabled('MINIFY_HTML')) config.addTransform('htmlmin', utilities.minifyHTML)
 	if (isFeatureEnabled('WRAP_EMOJIS')) config.addTransform('emoji', utilities.a11yEmojis)
-	if (isFeatureEnabled('PROCESS_HELMET')) config.addTransform('helmet', utilities.helmet)
 	if (isFeatureEnabled('INJECT_HEADING_ANCHORS'))
 		config.addTransform('headingAnchors', injectHeadingAnchors)
 	config.addTransform('smileyFaces', utilities.wrapSmileyFaces)
