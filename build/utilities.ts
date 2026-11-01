@@ -79,7 +79,9 @@ function dateToRFC3339(value: Date | string | number): string {
 
 function callout(content: string, type = 'info', role = 'note'): string {
 	// See: https://www.11ty.dev/docs/languages/markdown/#why-cant-i-return-markdown-from-paired-shortcodes-to-use-in-a-markdown-file
-	const html = markdownIt({ html: true, typographer: true }).render(content)
+	// Disable indented code blocks, matching Eleventy's Markdown engine. A leading
+	// tab would otherwise turn the callout body into a <pre>. Fenced blocks still work.
+	const html = markdownIt({ html: true, typographer: true }).disable('code').render(content)
 	if (role === 'note')
 		return `${styles('components/callout')}\n<aside class="Callout Callout--${type}" role="note">${html}</aside>`
 	return `${styles('components/callout')}\n<div class="Callout Callout--${type}">${html}</div>`
