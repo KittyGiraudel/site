@@ -28,3 +28,7 @@ The `.sr-only` class is a utility class aiming at visually hiding the element wh
 	white-space: nowrap !important;
 }
 ```
+
+{% callout %}
+If you make use of [CSS layers](/2026/11/01/playing-with-css-layers/), you could place this utility class onto an upper layer so that the `!important` flags are no longer necessary.
+{% endcallout %}
