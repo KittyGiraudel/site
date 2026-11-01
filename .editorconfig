@@ -1,0 +1,21 @@
+# Indentation matches Biome (biome.json): tabs, width 2.
+# YAML and TOML stay spaces — a tab is a syntax error in YAML.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = tab
+indent_size = 2
+insert_final_newline = true
+
+[*.{yml,yaml,toml}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+indent_style = tab
+
+[package-lock.json]
+indent_style = space
+indent_size = 2
