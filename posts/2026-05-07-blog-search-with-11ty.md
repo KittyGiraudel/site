@@ -24,14 +24,14 @@ eleventyExcludeFromCollections: true
 ---
 {% assign empty_array = '' | split: '' %}
 [
-  {% for post in collections.posts %}
-    {
-      "title" : {{ post.data.title | jsonify }},
-      "tags"  : {{ post.data.tags | default: empty_array | jsonify }},
-      "url"   : {{ post.url | jsonify }},
-      "date"  : {{ post.date | date: '%B %e, %Y' | jsonify }}
-    } {% unless forloop.last %},{% endunless %}
-  {% endfor %}
+	{% for post in collections.posts %}
+		{
+			"title" : {{ post.data.title | jsonify }},
+			"tags"  : {{ post.data.tags | default: empty_array | jsonify }},
+			"url"   : {{ post.url | jsonify }},
+			"date"  : {{ post.date | date: '%B %e, %Y' | jsonify }}
+		} {% unless forloop.last %},{% endunless %}
+	{% endfor %}
 ]
 ```
 {% endraw %}

@@ -186,18 +186,18 @@ Now the icing on top of the cake would be displaying variable types, right? Than
 
 ```scss
 @function debug($list, $type: false, $root: true) {
-  $line-break: "\A ";
-  $result: if($type,
-	  "(list:#{length($list)})[ "+ $line-break,
-	  "[ " + $line-break
-  );
-  $space: if($root,
-	  "",
-	  "  "
-  );
+	$line-break: "\A ";
+	$result: if($type,
+		"(list:#{length($list)})[ "+ $line-break,
+		"[ " + $line-break
+	);
+	$space: if($root,
+		"",
+		"  "
+	);
 
-  @each $item in $list {
-	  $result: $result + "  ";
+	@each $item in $list {
+		$result: $result + "  ";
 
 		@if length($item) > 1 {
 			$result: $result + debug($item, $type, false);
@@ -231,10 +231,10 @@ The only problem left is that if you debug a single value, it will wrap it into 
 ```scss
 @function debug($list, $type: false, $root: true) {
 	@if length($list) == 1 {
-    	@return if($type,
-    		quote("(#{type-of($list)}) #{$list}"),
-    		quote($list)
-    	);
+		@return if($type,
+			quote("(#{type-of($list)}) #{$list}"),
+			quote($list)
+		);
 	}
 	…
 }

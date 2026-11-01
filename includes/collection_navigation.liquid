@@ -1,10 +1,10 @@
 {% comment %}
-  Required:
-  - collection: The collection object
-  - page: The page object
-  Optional:
-  - label: The label for the navigation
-  - dev_mode: Whether to include the development mode shortcuts
+	Required:
+	- collection: The collection object
+	- page: The page object
+	Optional:
+	- label: The label for the navigation
+	- dev_mode: Whether to include the development mode shortcuts
 {% endcomment %}
 
 {% ensure collection, "Required value 'collection' is missing in collection_navigation.liquid" %}
@@ -15,52 +15,52 @@
 {% assign label = label | default: 'entry' %}
 
 {% if collection %}
-  {% assign previous_entry = collection | getPreviousCollectionItem: page %}
-  {% assign next_entry = collection | getNextCollectionItem: page %}
+	{% assign previous_entry = collection | getPreviousCollectionItem: page %}
+	{% assign next_entry = collection | getNextCollectionItem: page %}
 
-  {% if previous_entry %}
-    {% if previous_entry.data.external %}
-      {% assign previous_url = previous_entry.data.external.url %}
-    {% else %}
-      {% assign previous_url = previous_entry.url %}
-    {% endif %}
-  {% endif %}
+	{% if previous_entry %}
+		{% if previous_entry.data.external %}
+			{% assign previous_url = previous_entry.data.external.url %}
+		{% else %}
+			{% assign previous_url = previous_entry.url %}
+		{% endif %}
+	{% endif %}
 
-  {% if next_entry %}
-    {% if next_entry.data.external %}
-      {% assign next_url = next_entry.data.external.url %}
-    {% else %}
-      {% assign next_url = next_entry.url %}
-    {% endif %}
-  {% endif %}
+	{% if next_entry %}
+		{% if next_entry.data.external %}
+			{% assign next_url = next_entry.data.external.url %}
+		{% else %}
+			{% assign next_url = next_entry.url %}
+		{% endif %}
+	{% endif %}
 
-  <div class="CollectionNavigation {% if previous_url %}{% elsif next_url %}CollectionNavigation--end{% endif %} NoPrint">
-    {% if previous_url %}
-      <p class="CollectionNavigation__item CollectionNavigation__item--previous">
-        Read previous {{ label }}:
-        <span class="CollectionNavigation__link-container">
-          <a class="CollectionNavigation__link " href="{{ previous_url }}" {% if previous_entry.data.lang %}hreflang="{{ previous_entry.data.lang | downcase }}" lang="{{ previous_entry.data.lang | downcase }}"{% endif %}>
-            {{ previous_entry.data.title }}
-          </a>
-        </span>
-      </p>
-    {% endif %}
-    {% if next_url %}
-      <p class="CollectionNavigation__item CollectionNavigation__item--next">
-        Read next {{ label }}:
-        <span class="CollectionNavigation__link-container">
-          <a class="CollectionNavigation__link" href="{{ next_url }}" {% if next_entry.data.lang %}hreflang="{{ next_entry.data.lang | downcase }}" lang="{{ next_entry.data.lang | downcase }}"{% endif %}>
-            {{ next_entry.data.title }}
-          </a>
-        </span>
-      </p>
-    {% endif %}
-  </div>
+	<div class="CollectionNavigation {% if previous_url %}{% elsif next_url %}CollectionNavigation--end{% endif %} NoPrint">
+		{% if previous_url %}
+			<p class="CollectionNavigation__item CollectionNavigation__item--previous">
+				Read previous {{ label }}:
+				<span class="CollectionNavigation__link-container">
+					<a class="CollectionNavigation__link " href="{{ previous_url }}" {% if previous_entry.data.lang %}hreflang="{{ previous_entry.data.lang | downcase }}" lang="{{ previous_entry.data.lang | downcase }}"{% endif %}>
+						{{ previous_entry.data.title }}
+					</a>
+				</span>
+			</p>
+		{% endif %}
+		{% if next_url %}
+			<p class="CollectionNavigation__item CollectionNavigation__item--next">
+				Read next {{ label }}:
+				<span class="CollectionNavigation__link-container">
+					<a class="CollectionNavigation__link" href="{{ next_url }}" {% if next_entry.data.lang %}hreflang="{{ next_entry.data.lang | downcase }}" lang="{{ next_entry.data.lang | downcase }}"{% endif %}>
+						{{ next_entry.data.title }}
+					</a>
+				</span>
+			</p>
+		{% endif %}
+	</div>
 {% endif %}
 
 {% if dev_mode %}
-  {% render "script.liquid",
-    inline: false,
-    partials: "collection-shortcuts"
-  %}
+	{% render "script.liquid",
+		inline: false,
+		partials: "collection-shortcuts"
+	%}
 {% endif %}

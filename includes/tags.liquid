@@ -1,8 +1,8 @@
 {% comment %}
-  Required:
-  - tags: The tags to render  
-  Optional:
-  - no_link: Whether to not wrap the tags in a link
+	Required:
+	- tags: The tags to render  
+	Optional:
+	- no_link: Whether to not wrap the tags in a link
 {% endcomment %}
 
 {% ensure tags, "Required value 'tags' is missing in tags.liquid" %}
@@ -10,22 +10,22 @@
 {% styles "components/tags" %}
 
 <ul class="Tags NoListMarker">
-  {% assign tags = tags | sort %}
-  {% assign tags = tags | sort: 'name' %}
-  
-  {%- for tag in tags %}
-    {% assign name = tag.name | default: tag %}
+	{% assign tags = tags | sort %}
+	{% assign tags = tags | sort: 'name' %}
+	
+	{%- for tag in tags %}
+		{% assign name = tag.name | default: tag %}
 
-    {% if no_link %}
-      <li class="Tag">
-        <span class="Tag__link">{{ name }}<span class="VisuallyHidden"> tag</span></span>
-      </li>
-    {% else %}
-      <li class="Tag">
-        <a class="Tag__link NoBackground" href="/tags/{{ name | replace: '.', '-' | slugify }}/" {% if tag.extra %}data-extra="{{ tag.extra }}" {% endif %}>
-          {{ name }}<span class="VisuallyHidden"> tag</span>
-        </a>
-      </li>
-    {% endif %}
-  {% endfor %}
+		{% if no_link %}
+			<li class="Tag">
+				<span class="Tag__link">{{ name }}<span class="VisuallyHidden"> tag</span></span>
+			</li>
+		{% else %}
+			<li class="Tag">
+				<a class="Tag__link NoBackground" href="/tags/{{ name | replace: '.', '-' | slugify }}/" {% if tag.extra %}data-extra="{{ tag.extra }}" {% endif %}>
+					{{ name }}<span class="VisuallyHidden"> tag</span>
+				</a>
+			</li>
+		{% endif %}
+	{% endfor %}
 </ul>

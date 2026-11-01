@@ -1,36 +1,36 @@
 {% comment %}
-  Optional:
-  - input_path: The input path of the page
+	Optional:
+	- input_path: The input path of the page
 {% endcomment %}
 
 {% styles "layout/footer" %}
 
 <footer class="Footer NoPrint" role="contentinfo">
-  <div class="Container">
-    <div class="Footer__inner">
-      <div class="Footer__left">
-        <p>I’m Kitty, a Berlin-based frontend developer and engineering leader with 15 years of
-          experience, focused on accessibility, diversity and inclusion as part of engineering and
-          executive leadership. <a href="https://github.com/KittyGiraudel/ama">AMA</a>.
-        </p>
-        <p class="Footer__colophon">
-          &copy;&nbsp;2012–{{ current_year }} ❦ This website is made with Eleventy, hosted on Netlify and <a href="https://github.com/KittyGiraudel/site/blob/main/{{ input_path }}">open-sourced on GitHub</a>.
-          Find my <a href="/accessibility-statement/">accessibility statement</a> and my <a href="/ai-policy/">AI policy</a>.
-        </p>
-      </div>
+	<div class="Container">
+		<div class="Footer__inner">
+			<div class="Footer__left">
+				<p>I’m Kitty, a Berlin-based frontend developer and engineering leader with 15 years of
+					experience, focused on accessibility, diversity and inclusion as part of engineering and
+					executive leadership. <a href="https://github.com/KittyGiraudel/ama">AMA</a>.
+				</p>
+				<p class="Footer__colophon">
+					&copy;&nbsp;2012–{{ current_year }} ❦ This website is made with Eleventy, hosted on Netlify and <a href="https://github.com/KittyGiraudel/site/blob/main/{{ input_path }}">open-sourced on GitHub</a>.
+					Find my <a href="/accessibility-statement/">accessibility statement</a> and my <a href="/ai-policy/">AI policy</a>.
+				</p>
+			</div>
 
-      <div class="Footer__right">
-        <ul class="Footer__list NoListMarker">
-          <li><a href="/rss/index.xml">RSS</a></li>
-          <li><a href="https://github.com/KittyGiraudel" rel="me">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/kitty-giraudel/" rel="me">LinkedIn</a></li>
-          <li><a href="/ai-policy/">AI policy</a></li>
-          <li><a href="/resume/">Resume</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+			<div class="Footer__right">
+				<ul class="Footer__list NoListMarker">
+					<li><a href="/rss/index.xml">RSS</a></li>
+					<li><a href="https://github.com/KittyGiraudel" rel="me">GitHub</a></li>
+					<li><a href="https://www.linkedin.com/in/kitty-giraudel/" rel="me">LinkedIn</a></li>
+					<li><a href="/ai-policy/">AI policy</a></li>
+					<li><a href="/resume/">Resume</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-  {% render "theme_button.liquid" %}
+	{% render "theme_button.liquid" %}
 </footer>
 

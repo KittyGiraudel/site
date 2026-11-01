@@ -1,6 +1,6 @@
 {% comment %}
-  Required:
-  - edits: The edits to render
+	Required:
+	- edits: The edits to render
 {% endcomment %}
 
 {% ensure edits, "Required value 'edits' is missing in post_edits.liquid" %}
@@ -8,11 +8,11 @@
 {% styles "components/callout,components/post-edits" %}
 
 <div class="Callout PostEdits" id="post-edits">
-  <h2 class="PostEdits__title">Noteworthy edits</h2>
-  {% for edit in edits %}
-    <p>
-      <span class="PostEdits__date">{{ edit.date | time }}:</span>
-      {{ edit.md | renderContent: "md" | replace: "<p>", "" | replace: "</p>", "" }}
-    </p>
-  {% endfor %}
+	<h2 class="PostEdits__title">Noteworthy edits</h2>
+	{% for edit in edits %}
+		<p>
+			<span class="PostEdits__date">{{ edit.date | time }}:</span>
+			{{ edit.md | renderContent: "md" | replace: "<p>", "" | replace: "</p>", "" }}
+		</p>
+	{% endfor %}
 </div>

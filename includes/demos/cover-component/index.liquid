@@ -1,31 +1,31 @@
 <div class="Cover"
-  data-biome="ruralSea"
-  tabindex="0">
-  <div class="Cover__overlay"></div>
-  <div class="Cover__content">
-    <p class="Cover__title">You are currently traversing a <strong>sea of fields</strong>.</p>
-    <p class="Cover__description">The wind stirs a lullaby of grass and crickets, while an endless golden carpet unfolds beneath the sun — a land of boundless fertility.</p>
-  </div>
+	data-biome="ruralSea"
+	tabindex="0">
+	<div class="Cover__overlay"></div>
+	<div class="Cover__content">
+		<p class="Cover__title">You are currently traversing a <strong>sea of fields</strong>.</p>
+		<p class="Cover__description">The wind stirs a lullaby of grass and crickets, while an endless golden carpet unfolds beneath the sun — a land of boundless fertility.</p>
+	</div>
 </div>
 
 <style>
 .Cover {
-  clear: both;
-  border-radius: 1em; /* 1 */
-  corner-shape: squircle;
-  border: 2px solid light-dark(black, white); /* 1 */
+	clear: both;
+	border-radius: 1em; /* 1 */
+	corner-shape: squircle;
+	border: 2px solid light-dark(black, white); /* 1 */
 }
 
 .Cover:focus-visible {
-  outline: 2px solid var(--pink) !important;
-  outline-offset: 2px;
+	outline: 2px solid var(--pink) !important;
+	outline-offset: 2px;
 }
 
 @media (min-width: 1024px) {
-  .Cover {
-    width: calc(100% + var(--margin-offset) * 2);
-    inset-inline-start: calc(var(--margin-offset) * -1);
-  }
+	.Cover {
+		width: calc(100% + var(--margin-offset) * 2);
+		inset-inline-start: calc(var(--margin-offset) * -1);
+	}
 }
 
 /**
@@ -39,38 +39,38 @@
  *    inherit this value.
  */
 .Cover {
-  --biome-light: #7dc8a0;
-  --biome-dark: #4a9f72;
-  --biome-light-contrast: #ffffff;
-  --biome-dark-contrast: #ffffff;
-  --biome-banner: url('/assets/images/cover-component/banner-ruralSea.avif');
+	--biome-light: #7dc8a0;
+	--biome-dark: #4a9f72;
+	--biome-light-contrast: #ffffff;
+	--biome-dark-contrast: #ffffff;
+	--biome-banner: url('/assets/images/cover-component/banner-ruralSea.avif');
 
-  height: 12em; /* 1 */
+	height: 12em; /* 1 */
 
-  background-image: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / 0.5) 85%), var(--biome-banner); /* 2 */
-  background-size: cover;
-  background-repeat: no-repeat;
+	background-image: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / 0.5) 85%), var(--biome-banner); /* 2 */
+	background-size: cover;
+	background-repeat: no-repeat;
 
-  background-color: var(--biome-dark);
-  color: var(--biome-dark-contrast);
+	background-color: var(--biome-dark);
+	color: var(--biome-dark-contrast);
 
-  position: relative; /* 3 */
-  overflow: hidden; /* 4 */
-  transition: 500ms ease-in-out; /* 5 */
+	position: relative; /* 3 */
+	overflow: hidden; /* 4 */
+	transition: 500ms ease-in-out; /* 5 */
 
-  /**
-   * 1. Hacky fix for cells with an unexplored biome (i.e. the Core), because 
-   *    the “dark” background is actually a light color, which means the text
-   *    ends up dark on dark.
-   */
-  &[data-biome="unexplored"] {
-    color: var(--biome-unexplored-light); /* 1 */
-  }
+	/**
+	 * 1. Hacky fix for cells with an unexplored biome (i.e. the Core), because 
+	 *    the “dark” background is actually a light color, which means the text
+	 *    ends up dark on dark.
+	 */
+	&[data-biome="unexplored"] {
+		color: var(--biome-unexplored-light); /* 1 */
+	}
 }
 
 @keyframes background-animation {
-  from { background-position: center calc(var(--from, 0%) * 1%); }
-  to { background-position: center calc(var(--to, 100%) * 1%); }
+	from { background-position: center calc(var(--from, 0%) * 1%); }
+	to { background-position: center calc(var(--to, 100%) * 1%); }
 }
 
 /**
@@ -91,24 +91,24 @@
  *    `center` if not provided.
  */
 .Cover {
-  background-position: var(--position, center); /* 1 */
-  animation-name: background-animation; 
-  animation-duration: calc((abs(var(--to) - var(--from))) * 0.5s);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+	background-position: var(--position, center); /* 1 */
+	animation-name: background-animation; 
+	animation-duration: calc((abs(var(--to) - var(--from))) * 0.5s);
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 
-  &[data-biome="ruralSea"] {
-    --position: center 68%;
-    --from: 0;
-    --to: 100;
-  }
+	&[data-biome="ruralSea"] {
+		--position: center 68%;
+		--from: 0;
+		--to: 100;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .Cover {
-    animation-name: none;
-  }
+	.Cover {
+		animation-name: none;
+	}
 }
 
 
@@ -122,11 +122,11 @@
  *    just plain black.
  */
 .Cover__overlay {
-  inset: 0;
-  position: absolute;
-  background-image: linear-gradient(to bottom, transparent 50%, color-mix(in srgb, var(--biome-dark) 25%, black) 100%); /* 1 */
-  transition: inherit;
-  opacity: 0;
+	inset: 0;
+	position: absolute;
+	background-image: linear-gradient(to bottom, transparent 50%, color-mix(in srgb, var(--biome-dark) 25%, black) 100%); /* 1 */
+	transition: inherit;
+	opacity: 0;
 }
 
 /**
@@ -138,21 +138,21 @@
  * 3. Improve readability of the text by adding a subtle shadow.
  */
 .Cover__content {
-  position: absolute; /* 1 */
-  inset-block-start: 100%; /* 1 */
-  inset-inline-end: 0;
-  inset-inline-start: 0;
-  padding: 0 2em 1em; /* 2 */
-  transition: inherit;
-  text-shadow: 0 1px 4px rgb(0 0 0 / 0.35); /* 3 */
-  font-size: 0.8em;
+	position: absolute; /* 1 */
+	inset-block-start: 100%; /* 1 */
+	inset-inline-end: 0;
+	inset-inline-start: 0;
+	padding: 0 2em 1em; /* 2 */
+	transition: inherit;
+	text-shadow: 0 1px 4px rgb(0 0 0 / 0.35); /* 3 */
+	font-size: 0.8em;
 }
 
 @media (max-width: 768px) {
-  .Cover__content {
-    padding: 0 1em 1em;
-    font-size: 0.7em;
-  }
+	.Cover__content {
+		padding: 0 1em 1em;
+		font-size: 0.7em;
+	}
 }
 
 /**
@@ -161,16 +161,16 @@
  *    to avoid it sticking to the bottom of the container.
  */
 .Cover__title {
-  transform: translateY(calc(-100% - 0.75em)); /* 1 */
-  transition: inherit;
-  font-size: 1.5em;
-  line-height: 1.1;
-  margin: 0;
+	transform: translateY(calc(-100% - 0.75em)); /* 1 */
+	transition: inherit;
+	font-size: 1.5em;
+	line-height: 1.1;
+	margin: 0;
 }
 
 .Cover__title strong {
-  font-weight: bold;
-  letter-spacing: 0.02em;
+	font-weight: bold;
+	letter-spacing: 0.02em;
 }
 
 /**
@@ -181,49 +181,49 @@
  *    not needed per se but it makes for a nicer effect.
  */
 .Cover__description {
-  max-inline-size: 100ch; /* 1 */
-  margin-block-start: 0.5em; /* 2 */
-  font-style: italic;
-  font-size: 1em;
-  border-inline-start: 1px solid; /* 3 */
-  padding-inline-start: 1em; /* 3 */
-  margin-inline-start: 0.4em; /* 3 */
-  opacity: 0.3; /* 4 */
-  transition: inherit;
+	max-inline-size: 100ch; /* 1 */
+	margin-block-start: 0.5em; /* 2 */
+	font-style: italic;
+	font-size: 1em;
+	border-inline-start: 1px solid; /* 3 */
+	padding-inline-start: 1em; /* 3 */
+	margin-inline-start: 0.4em; /* 3 */
+	opacity: 0.3; /* 4 */
+	transition: inherit;
 }
 
 /**
  * When the cover gets interacted with:
  */
 /**
-  * 1. Slide the content up to reveal it.
-  */
+	* 1. Slide the content up to reveal it.
+	*/
 .Cover:has(.Cover__description:not(:empty)):where(:hover, :focus-visible)  .Cover__content {
-  transform: translateY(-100%); /* 1 */
+	transform: translateY(-100%); /* 1 */
 }
 
 /**
-  * 2. Cancel the title’s translation to avoid having a huge gap between itself
-  *    and the description. This acts as a counter-transition: content goes up,
-  *    title goes down.
-  */
+	* 2. Cancel the title’s translation to avoid having a huge gap between itself
+	*    and the description. This acts as a counter-transition: content goes up,
+	*    title goes down.
+	*/
 .Cover:has(.Cover__description:not(:empty)):where(:hover, :focus-visible)  .Cover__title {
-  transform: translateY(0); /* 2 */
+	transform: translateY(0); /* 2 */
 }
 
 /**
-  * 3. Make the description fully opaque. This opacity transition isn’t needed 
-  *    per se, but it makes the effect a bit smoother by fading the text in.
-  */
+	* 3. Make the description fully opaque. This opacity transition isn’t needed 
+	*    per se, but it makes the effect a bit smoother by fading the text in.
+	*/
 .Cover:has(.Cover__description:not(:empty)):where(:hover, :focus-visible)  .Cover__description {
-  opacity: 1; /* 3 */
+	opacity: 1; /* 3 */
 }
 
 /**
-  * 4. Make the overlay visible to improve readability of the content. Note: if
-  *    we could animate linear gradients, we wouldn’t need an overlay element.
-  */
+	* 4. Make the overlay visible to improve readability of the content. Note: if
+	*    we could animate linear gradients, we wouldn’t need an overlay element.
+	*/
 .Cover:has(.Cover__description:not(:empty)):where(:hover, :focus-visible)  .Cover__overlay {
-  opacity: 0.8; /* 4 */
+	opacity: 0.8; /* 4 */
 }
 </style>

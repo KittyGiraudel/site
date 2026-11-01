@@ -5,28 +5,28 @@ layout: default
 {% assign vt_style = page.url | slugify | prepend: 'view-transition-name: ' %}
 
 {% if toc == true %}
-  {% assign toc_items = content | table_of_contents %}
+	{% assign toc_items = content | table_of_contents %}
 {% endif %}
 
 {% render "header.liquid",
-  title: title,
-  title_style: vt_style,
-  created_at: created_at,
-  updated_at: updated_at,
-  reading_time: reading_time,
-  author: author,
-  toc_items: toc_items
+	title: title,
+	title_style: vt_style,
+	created_at: created_at,
+	updated_at: updated_at,
+	reading_time: reading_time,
+	author: author,
+	toc_items: toc_items
 %}
 
 {% if link_favicons == true %}
-  {% styles "base/favicons" %}
+	{% styles "base/favicons" %}
 {% endif %}
 
 <main class="Main" role="main" id="main">
-  <div class="Container"
-    {% if link_favicons == true %}data-link-favicons{% endif %}
-    {% unless heading_anchors == false %}data-heading-anchors{% endunless %}
-  > 
-    {{ content }}
-  </div>
+	<div class="Container"
+		{% if link_favicons == true %}data-link-favicons{% endif %}
+		{% unless heading_anchors == false %}data-heading-anchors{% endunless %}
+	> 
+		{{ content }}
+	</div>
 </main>

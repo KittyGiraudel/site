@@ -20,17 +20,17 @@ to say) as well as taking notes. Find below some of my recipes.
 {% endrenderTemplate %}
 
 <ul class="List NoListMarker">
-  {% for recipe in collections.recipes %}
-    {% capture secondary %}
-      For {{ recipe.data.serves }} ❦ About {{ recipe.data.preparation_time }}
-    {% endcapture %}
-    {% assign vt_source = recipe.url | slugify %}
+	{% for recipe in collections.recipes %}
+		{% capture secondary %}
+			For {{ recipe.data.serves }} ❦ About {{ recipe.data.preparation_time }}
+		{% endcapture %}
+		{% assign vt_source = recipe.url | slugify %}
 
-    {% render "list_item.liquid"
-      primary: recipe.data.title,
-      secondary: secondary,
-      href: recipe.url,
-      vt_source: vt_source
-    %}
-  {% endfor %}
+		{% render "list_item.liquid"
+			primary: recipe.data.title,
+			secondary: secondary,
+			href: recipe.url,
+			vt_source: vt_source
+		%}
+	{% endfor %}
 </ul>

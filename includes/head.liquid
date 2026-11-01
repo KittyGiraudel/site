@@ -1,18 +1,18 @@
 {% comment %}
-  Required:
-  - site_url: The URL of the site
-  - site_author: The author of the site
-  - page_url: The URL of the page
-  - page_author: The author of the page
-  - page_description: The description of the page
-  - title: The title of the page
-  Optional:
-  - layout: The layout of the page
-  - page_image: The image of the page
-  - tags: Tag/keyword list for the page
-  - generator: The generator of the page
-  - site_same_as: List of profile URLs for Person schema
-  - site_description: Global site tagline for WebSite JSON-LD (not page meta description)
+	Required:
+	- site_url: The URL of the site
+	- site_author: The author of the site
+	- page_url: The URL of the page
+	- page_author: The author of the page
+	- page_description: The description of the page
+	- title: The title of the page
+	Optional:
+	- layout: The layout of the page
+	- page_image: The image of the page
+	- tags: Tag/keyword list for the page
+	- generator: The generator of the page
+	- site_same_as: List of profile URLs for Person schema
+	- site_description: Global site tagline for WebSite JSON-LD (not page meta description)
 {% endcomment %}
 
 {% ensure inline_assets, "Required value 'inline_assets' is missing in head.liquid" %}
@@ -24,90 +24,90 @@
 {% ensure site_url, "Required value 'site_url' is missing in head.liquid" %}
 {% ensure title, "Required value 'title' is missing in head.liquid" %}
 {% if page_image contains '://' %}
-  {% assign page_image_url = page_image %}
+	{% assign page_image_url = page_image %}
 {% else %}
-  {% assign page_image_url = page_image | default: '/assets/images/og-default.png' | prepend: site_url %}
+	{% assign page_image_url = page_image | default: '/assets/images/og-default.png' | prepend: site_url %}
 {% endif %}
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:
 http://ogp.me/ns/article#">
-  <!-- Global stuff -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#dd7eb4">
-  {% if generator %}
-    <meta name="generator" content="{{ generator }}">
-  {% endif %}
+	<!-- Global stuff -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#dd7eb4">
+	{% if generator %}
+		<meta name="generator" content="{{ generator }}">
+	{% endif %}
 
-  <!-- Page specific content -->
-  <title>{% if title %}{{ title }} | {{ site_author }}{% else %}{{ site_author }}{% endif %}</title>
-  <meta name="description" content="{{ page_description }}">
-  <meta name="author" content="{{ page_author }}">
-  <link rel="canonical" href="{{ page_url }}">
+	<!-- Page specific content -->
+	<title>{% if title %}{{ title }} | {{ site_author }}{% else %}{{ site_author }}{% endif %}</title>
+	<meta name="description" content="{{ page_description }}">
+	<meta name="author" content="{{ page_author }}">
+	<link rel="canonical" href="{{ page_url }}">
 
-  <!-- Robots & indexing -->
-  <meta name="robots" content="index,follow">
+	<!-- Robots & indexing -->
+	<meta name="robots" content="index,follow">
 
-  <!-- Styles -->
-  {% styles "base/base, base/helpers, layout/main, layout/container, components/abbr" %}
+	<!-- Styles -->
+	{% styles "base/base, base/helpers, layout/main, layout/container, components/abbr" %}
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="{{ site_author }}"
-    href="{{ '/rss/index.xml' | prepend: site_url }}" />
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="{{ site_author }}"
+		href="{{ '/rss/index.xml' | prepend: site_url }}" />
 
-  <!-- Favicon -->
-  <!-- https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="icon" href="/assets/images/favicon-192.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<!-- Favicon -->
+	<!-- https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
+	<link rel="icon" href="/favicon.ico" sizes="32x32">
+	<link rel="icon" href="/assets/images/favicon-192.png">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Manifest -->
-  <link rel="manifest" href="/manifest.json">
+	<!-- Manifest -->
+	<link rel="manifest" href="/manifest.json">
 
-  <!-- Open Graph data -->
-  <meta property="og:title" content="{{ title }}" />
-  <meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}" />
-  <meta property="og:url" content="{{ page_url }}" />
-  <meta property="og:description" content="{{ page_description }}" />
-  <meta property="og:site_name" content="kittygiraudel.com" />
-  <meta property="og:image" content="{{ page_image_url }}">
-  {% unless page_image %}
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-  {% endunless %}
+	<!-- Open Graph data -->
+	<meta property="og:title" content="{{ title }}" />
+	<meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}" />
+	<meta property="og:url" content="{{ page_url }}" />
+	<meta property="og:description" content="{{ page_description }}" />
+	<meta property="og:site_name" content="kittygiraudel.com" />
+	<meta property="og:image" content="{{ page_image_url }}">
+	{% unless page_image %}
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+	{% endunless %}
 
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@KittyGiraudel">
-  <meta name="twitter:description" content="{{ page_description }}">
-  <meta name="twitter:domain" content="kittygiraudel.com">
-  <meta name="twitter:image" content="{{ page_image_url }}">
-  <meta name="twitter:site" content="@KittyGiraudel">
-  <meta name="twitter:title" content="{{ title }}">
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@KittyGiraudel">
+	<meta name="twitter:description" content="{{ page_description }}">
+	<meta name="twitter:domain" content="kittygiraudel.com">
+	<meta name="twitter:image" content="{{ page_image_url }}">
+	<meta name="twitter:site" content="@KittyGiraudel">
+	<meta name="twitter:title" content="{{ title }}">
 
-  <!-- Structured data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": {{ site_author | jsonify }},
-      "url": {{ site_url | jsonify }},
-      "description": {{ site_description | jsonify }}
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": {{ site_author | jsonify }},
-      "description": {{ site_description | jsonify }},
-      "url": {{ site_url | jsonify }}{% if site_same_as and site_same_as.size > 0 %},
-      "sameAs": {{ site_same_as | jsonify }}{% endif %}
-    }
-  </script>
+	<!-- Structured data -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": {{ site_author | jsonify }},
+			"url": {{ site_url | jsonify }},
+			"description": {{ site_description | jsonify }}
+		}
+	</script>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": {{ site_author | jsonify }},
+			"description": {{ site_description | jsonify }},
+			"url": {{ site_url | jsonify }}{% if site_same_as and site_same_as.size > 0 %},
+			"sameAs": {{ site_same_as | jsonify }}{% endif %}
+		}
+	</script>
 
-  {% render "script.liquid",
-    inline: inline_assets,
-    partials: "theme"
-  %}
+	{% render "script.liquid",
+		inline: inline_assets,
+		partials: "theme"
+	%}
 </head>

@@ -264,7 +264,7 @@ max_output_size=0
 
 usage()
 {
-  cat <<EO
+	cat <<EO
 Usage: $PROGNAME [options]
 
 Script to optimize JPG and PNG images in a directory.
@@ -351,14 +351,14 @@ main()
 	for CURRENT_IMAGE in $IMAGES; do
 		filename=$(basename $CURRENT_IMAGE)
 		if [ "$QUIET" == "0" ]; then
-		    printf '%s ' "$filename"
-		    printf '%*.*s' 0 $((linelength - ${#filename} - ${#sDone} )) "$pad"
+			printf '%s ' "$filename"
+			printf '%*.*s' 0 $((linelength - ${#filename} - ${#sDone} )) "$pad"
 		fi
 
 		optimise_image $CURRENT_IMAGE $OUTPUT/$filename
 
 		if [ "$QUIET" == "0" ]; then
-		    printf '%s\n' "$sDone"
+			printf '%s\n' "$sDone"
 		fi
 	done
 

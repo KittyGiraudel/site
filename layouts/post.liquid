@@ -20,94 +20,94 @@ layout: default
 {% if guest %}{% assign itemref = itemref | append: " page-author" %}{% endif %}
 
 {% if post_image contains '://' %}
-  {% assign post_image_url = post_image %}
+	{% assign post_image_url = post_image %}
 {% else %}
-  {% assign post_image_url = post_image | prepend: site.url %}
+	{% assign post_image_url = post_image | prepend: site.url %}
 {% endif %}
 
 <script type="application/ld+json" data-helmet>{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": {{ title | jsonify }},
-  "description": {{ description | default: site.description | strip_html | strip_newlines | truncate: 200 | jsonify }},
-  "author": {
-    "@type": "Person",
-    "name": {{ guest | default: site.author | jsonify }}
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": {{ site.author | jsonify }},
-    "url": {{ site.url | jsonify }}
-  },
-  {% if creation_date %}"datePublished": "{{ creation_date | date_to_rfc3339 }}",{% endif %}
-  {% if update_date %}"dateModified": "{{ update_date | date_to_rfc3339 }}",{% endif %}
-  {% if reading_time.iso %}"timeRequired": {{ reading_time.iso | jsonify }},{% endif %}
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": {{ page.url | prepend: site.url | jsonify }}
-  },
-  "url": {{ page.url | prepend: site.url | jsonify }},
-  "image": {{ post_image_url | jsonify }}
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	"headline": {{ title | jsonify }},
+	"description": {{ description | default: site.description | strip_html | strip_newlines | truncate: 200 | jsonify }},
+	"author": {
+		"@type": "Person",
+		"name": {{ guest | default: site.author | jsonify }}
+	},
+	"publisher": {
+		"@type": "Person",
+		"name": {{ site.author | jsonify }},
+		"url": {{ site.url | jsonify }}
+	},
+	{% if creation_date %}"datePublished": "{{ creation_date | date_to_rfc3339 }}",{% endif %}
+	{% if update_date %}"dateModified": "{{ update_date | date_to_rfc3339 }}",{% endif %}
+	{% if reading_time.iso %}"timeRequired": {{ reading_time.iso | jsonify }},{% endif %}
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": {{ page.url | prepend: site.url | jsonify }}
+	},
+	"url": {{ page.url | prepend: site.url | jsonify }},
+	"image": {{ post_image_url | jsonify }}
 }</script>
 
 {% if toc != false %}
-  {% assign toc_items = content | table_of_contents %}
+	{% assign toc_items = content | table_of_contents %}
 {% endif %}
 
 {% assign vt_style = page.url | slugify | prepend: 'view-transition-name: post-' %}
 
 {% render "header.liquid",
-  title: title,
-  lang: lang,
-  created_at: creation_date,
-  updated_at: update_date,
-  author: guest,
-  reading_time: reading_time,
-  toc_items: toc_items,
-  title_style: vt_style
+	title: title,
+	lang: lang,
+	created_at: creation_date,
+	updated_at: update_date,
+	author: guest,
+	reading_time: reading_time,
+	toc_items: toc_items,
+	title_style: vt_style
 %}
 
 <main class="Main" role="main" id="main">
-  <div class="Container">
-    <article itemscope itemtype="https://schema.org/Article" itemref="{{ itemref }}" data-heading-anchors data-link-favicons>
-      {% if deprecated %}
-        {% render "post_deprecated.liquid", date: creation_date %}
-      {% endif %}
+	<div class="Container">
+		<article itemscope itemtype="https://schema.org/Article" itemref="{{ itemref }}" data-heading-anchors data-link-favicons>
+			{% if deprecated %}
+				{% render "post_deprecated.liquid", date: creation_date %}
+			{% endif %}
 
-      {% if edits %}
-        {% render "post_edits.liquid", edits: edits %}
-      {% endif %}
-      
-      <div itemprop="articleBody">
-        {{ content }}
-      </div>
+			{% if edits %}
+				{% render "post_edits.liquid", edits: edits %}
+			{% endif %}
+			
+			<div itemprop="articleBody">
+				{{ content }}
+			</div>
 
-      {% styles "components/footnotes" %}
-      {% footnotes %}
-    </article>
+			{% styles "components/footnotes" %}
+			{% footnotes %}
+		</article>
 
-    {% render "giscus.liquid" %}
+		{% render "giscus.liquid" %}
 
-    {% assign navigation_collection = collections.posts %}
-    {% if site.configuration.dev_mode %}
-      {% comment %}
-       In development, we have shortcuts using left and right arrow to navigate
-       between the posts, which rely on this navigation. External post are a 
-       problem, so we exclude them in development.
-      {% endcomment %}
-      {% assign navigation_collection = collections.internal_posts %}
-    {% endif %}
+		{% assign navigation_collection = collections.posts %}
+		{% if site.configuration.dev_mode %}
+			{% comment %}
+			 In development, we have shortcuts using left and right arrow to navigate
+			 between the posts, which rely on this navigation. External post are a 
+			 problem, so we exclude them in development.
+			{% endcomment %}
+			{% assign navigation_collection = collections.internal_posts %}
+		{% endif %}
 
-    {% render "collection_navigation.liquid",
-      page: page,
-      collection: navigation_collection,
-      label: "post",
-      dev_mode: site.configuration.dev_mode
-    %}
-  </div>
+		{% render "collection_navigation.liquid",
+			page: page,
+			collection: navigation_collection,
+			label: "post",
+			dev_mode: site.configuration.dev_mode
+		%}
+	</div>
 </main>
 
 {% render "script.liquid",
-  inline: site.configuration.inline_assets,
-  partials: "utilities, post"
+	inline: site.configuration.inline_assets,
+	partials: "utilities, post"
 %}

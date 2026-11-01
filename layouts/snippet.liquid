@@ -5,32 +5,32 @@ layout: default
 {% styles "components/code" %}
 
 {% if related %}
-  {% assign related_post = '' %}
-  {% for post in collections.posts %}
-    {% if post.url == related %}
-      {% assign related_post = post %}
-    {% endif %}
-  {% endfor %}
+	{% assign related_post = '' %}
+	{% for post in collections.posts %}
+		{% if post.url == related %}
+			{% assign related_post = post %}
+		{% endif %}
+	{% endfor %}
 {% endif %}
 
 {% assign vt_style = page.url | slugify | prepend: 'view-transition-name: ' %}
 
 {% render "snippet_header.liquid",
-  title: title,
-  related_post: related_post,
-  date: date,
-  title_style: vt_style
+	title: title,
+	related_post: related_post,
+	date: date,
+	title_style: vt_style
 %}
 
 <main class="Main" role="main" id="main">
-  <div class="Container">
-    {{ content }}
+	<div class="Container">
+		{{ content }}
 
-    {% render "collection_navigation.liquid",
-      page: page,
-      collection: collections.snippets,
-      label: "snippet",
-      dev_mode: site.configuration.dev_mode
-    %}
-  </div>
+		{% render "collection_navigation.liquid",
+			page: page,
+			collection: collections.snippets,
+			label: "snippet",
+			dev_mode: site.configuration.dev_mode
+		%}
+	</div>
 </main>

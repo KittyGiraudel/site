@@ -7,52 +7,52 @@ layout: default
 {% assign vt_style = page.url | slugify | prepend: 'view-transition-name: ' %}
 
 <div class="Container">
-  <header class="Header" role="banner">
-    {% render "title.liquid",
-      title: title,
-      id: "recipe-title",
-      style: vt_style
-    %}
+	<header class="Header" role="banner">
+		{% render "title.liquid",
+			title: title,
+			id: "recipe-title",
+			style: vt_style
+		%}
 
-    <p class="Metadata">
-      For {{ serves }} {%- render "fleuron.liquid" -%} About {{ preparation_time }}
-    </p>
-  </header>
+		<p class="Metadata">
+			For {{ serves }} {%- render "fleuron.liquid" -%} About {{ preparation_time }}
+		</p>
+	</header>
 </div>
 
 <main class="Main" role="main" id="main">
-  <div class="Container">
-    {{ content }}
+	<div class="Container">
+		{{ content }}
 
-    <h2>Ingredients</h2>
-    <ul class="RecipeIngredients">
-      {% for ingredient in ingredients %}
-        <li>{{ ingredient }}</li>
-      {% endfor %}
-    </ul>
+		<h2>Ingredients</h2>
+		<ul class="RecipeIngredients">
+			{% for ingredient in ingredients %}
+				<li>{{ ingredient }}</li>
+			{% endfor %}
+		</ul>
 
-    <h2>Preparation</h2>
-    <ol class="RecipeSteps">
-      {% for step in steps %}
-        <li>{{ step }}</li>
-      {% endfor %}
-    </ol>
+		<h2>Preparation</h2>
+		<ol class="RecipeSteps">
+			{% for step in steps %}
+				<li>{{ step }}</li>
+			{% endfor %}
+		</ol>
 
-    {% if notes %}
-      <h2>Notes</h2>
-      <ul>
-        {% for note in notes %}
-        <li>{{ note }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+		{% if notes %}
+			<h2>Notes</h2>
+			<ul>
+				{% for note in notes %}
+				<li>{{ note }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
 
-    {% render "collection_navigation.liquid",
-      page: page,
-      collection: collections.recipes,
-      label: "recipe",
-      dev_mode: site.configuration.dev_mode
-    %}
-  </div>
+		{% render "collection_navigation.liquid",
+			page: page,
+			collection: collections.recipes,
+			label: "recipe",
+			dev_mode: site.configuration.dev_mode
+		%}
+	</div>
 </main>
 

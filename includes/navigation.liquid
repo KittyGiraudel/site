@@ -1,7 +1,7 @@
 {% comment %}
-  Required:
-  - navigation: The nav item list (e.g. site.nav)
-  - current_url: The page path (used for active nav)
+	Required:
+	- navigation: The nav item list (e.g. site.nav)
+	- current_url: The page path (used for active nav)
 {% endcomment %}
 
 {% ensure navigation, "Required value 'navigation' is missing in navigation.liquid" %}
@@ -11,21 +11,21 @@
 
 {% capture menu %}
 <li class="Navigation__item" {% if current_url == "/" %}aria-current="page"{% endif %}>
-  <a href="/" class="Navigation__link NoBackground">Home</a>
+	<a href="/" class="Navigation__link NoBackground">Home</a>
 </li>
 {% for item in navigation %}
-  {% assign active = current_url contains item.path %}
-  {% if item.path contains "/blog" %}
-    {% assign start = current_url | slice: 0, 4 %}
-    {% comment %}This will stop working in 2030. 🫠 See you in a few years.{% endcomment %}
-    {% assign is_post = start == "/201" or start == "/202" %}
-    {% if current_url contains "tags" or current_url contains "/stats" or is_post %}
-      {% assign active = true %}
-    {% endif %}
-  {% endif %}
-  <li class="Navigation__item" {% if active %} aria-current="page" {% endif %}>
-    <a class="Navigation__link NoBackground {% if item.path contains "/resume/" %}Navigation__link--highlight{% endif %}" href="{{ item.path }}">{{ item.label }}</a>
-  </li>
+	{% assign active = current_url contains item.path %}
+	{% if item.path contains "/blog" %}
+		{% assign start = current_url | slice: 0, 4 %}
+		{% comment %}This will stop working in 2030. 🫠 See you in a few years.{% endcomment %}
+		{% assign is_post = start == "/201" or start == "/202" %}
+		{% if current_url contains "tags" or current_url contains "/stats" or is_post %}
+			{% assign active = true %}
+		{% endif %}
+	{% endif %}
+	<li class="Navigation__item" {% if active %} aria-current="page" {% endif %}>
+		<a class="Navigation__link NoBackground {% if item.path contains "/resume/" %}Navigation__link--highlight{% endif %}" href="{{ item.path }}">{{ item.label }}</a>
+	</li>
 {% endfor %}
 {% endcapture %}
 
@@ -33,41 +33,41 @@
 The desktop menu is not a popover, and has a skip link.
 {% endcomment %}
 <nav class="Navigation NoPrint" role="navigation" id="desktop-menu">
-  <ul class="Navigation__list NoListMarker">
-    <li class="Navigation__item Navigation__item--skip-link">
-      <a href="#main" class="Navigation__link NoBackground">Skip to content</a>
-    </li>
-    {{ menu }}
-  </ul>
+	<ul class="Navigation__list NoListMarker">
+		<li class="Navigation__item Navigation__item--skip-link">
+			<a href="#main" class="Navigation__link NoBackground">Skip to content</a>
+		</li>
+		{{ menu }}
+	</ul>
 </nav>
 
 <button
-  class="IconButton OpenMenuButton NoPrint"
-  popovertarget="mobile-menu"
-  popovertargetaction="show"
-  aria-controls="mobile-menu"
-  aria-label="Open site menu"
-  title="Open site menu"
+	class="IconButton OpenMenuButton NoPrint"
+	popovertarget="mobile-menu"
+	popovertargetaction="show"
+	aria-controls="mobile-menu"
+	aria-label="Open site menu"
+	title="Open site menu"
 >
-  ☰
+	☰
 </button>
 
 {% comment %}
 The mobile menu is a popover, has no skip link and contains a closing button.
 {% endcomment %}
 <nav class="Navigation NoPrint" role="navigation" id="mobile-menu" popover>
-  <ul class="Navigation__list NoListMarker">
-    {{ menu }}
-    <li class="Navigation__item">
-      <button
-        class="Navigation__link NoBackground"
-        popovertarget="mobile-menu"
-        popovertargetaction="hide"
-        aria-label="Close Site Menu"
-        aria-controls="mobile-menu"
-      >
-        Close menu
-      </button>
-    </li>
-  </ul>
+	<ul class="Navigation__list NoListMarker">
+		{{ menu }}
+		<li class="Navigation__item">
+			<button
+				class="Navigation__link NoBackground"
+				popovertarget="mobile-menu"
+				popovertargetaction="hide"
+				aria-label="Close Site Menu"
+				aria-controls="mobile-menu"
+			>
+				Close menu
+			</button>
+		</li>
+	</ul>
 </nav>

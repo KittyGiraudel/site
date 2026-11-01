@@ -1,5 +1,5 @@
 {% comment %}
-  Required: —
+	Required: —
 {% endcomment %}
 
 {% styles "components/search, components/list" %}
@@ -7,70 +7,70 @@
 <noscript>
 {% renderTemplate "liquid" %}
 {% callout "warning" %}
-  Unfortunately this site has no server-side search available, so please enable
-  JavaScript in your browser to be able to use the provided search engine.
+Unfortunately this site has no server-side search available, so please enable
+JavaScript in your browser to be able to use the provided search engine.
 {% endcallout %}
 {% endrenderTemplate %}
 </noscript>
 
 <search class="Search" >
-  <form id="search-form" action="/blog/search/" method="get" hidden>
-    <label for="search-input" class="Search__label VisuallyHidden">
-      Search blog archive
-    </label>
-    <input
-      type="search"
-      id="search-input"
-      class="Search__input"
-      name="q"
-      enterkeyhint="search"
-      placeholder="Search blog articles…"
-      autofocus
-      aria-describedby="search-hint"
-      aria-controls="search-region"
-    />
-    <p id="search-hint" class="VisuallyHidden">
-      Results appear in the search results section as you type.
-    </p>
-  </form>
+	<form id="search-form" action="/blog/search/" method="get" hidden>
+		<label for="search-input" class="Search__label VisuallyHidden">
+			Search blog archive
+		</label>
+		<input
+			type="search"
+			id="search-input"
+			class="Search__input"
+			name="q"
+			enterkeyhint="search"
+			placeholder="Search blog articles…"
+			autofocus
+			aria-describedby="search-hint"
+			aria-controls="search-region"
+		/>
+		<p id="search-hint" class="VisuallyHidden">
+			Results appear in the search results section as you type.
+		</p>
+	</form>
 
-  <section
-    id="search-region"
-    aria-labelledby="search-title"
-    aria-busy="true"
-  >
-    <h2 class="VisuallyHidden" id="search-title">Search results</h2>
-    <ul
-      id="search-list"
-      class="Search__results List NoListMarker"
-      role="list"
-      aria-live="polite"
-      aria-relevant="additions removals"
-    ></ul>
-    <p id="search-empty" class="Search__empty Callout Callout--warning" hidden role="status">
-      Unfortunately, no results were found for your search. If you think this is
-      a mistake, please reach out on
-      <a href="https://github.com/kittygiraudel/site/issues">GitHub</a>.
-    </p>
-    <p id="search-error" class="Callout Callout--warning Search__error" hidden role="alert">
-      Search could not be loaded. Please refresh the page or try again later.
-    </p>
-  </section>
+	<section
+		id="search-region"
+		aria-labelledby="search-title"
+		aria-busy="true"
+	>
+		<h2 class="VisuallyHidden" id="search-title">Search results</h2>
+		<ul
+			id="search-list"
+			class="Search__results List NoListMarker"
+			role="list"
+			aria-live="polite"
+			aria-relevant="additions removals"
+		></ul>
+		<p id="search-empty" class="Search__empty Callout Callout--warning" hidden role="status">
+			Unfortunately, no results were found for your search. If you think this is
+			a mistake, please reach out on
+			<a href="https://github.com/kittygiraudel/site/issues">GitHub</a>.
+		</p>
+		<p id="search-error" class="Callout Callout--warning Search__error" hidden role="alert">
+			Search could not be loaded. Please refresh the page or try again later.
+		</p>
+	</section>
 </search>
 
 <template id="search-result-template">
-  {% assign empty_array = '' | split: '' %}
-  {% assign tags = empty_array | concat: "Tag" %}
-  {% render "list_item",
-    primary: "Primary",
-    secondary: "Secondary",
-    href: "/",
-    tags: tags
-  %}
+	{% assign empty_array = '' | split: '' %}
+	{% assign tags = empty_array | concat: "Tag" %}
+	{% render "list_item",
+		primary: "Primary",
+		secondary: "Secondary",
+		href: "/",
+		tags: tags
+	%}
 </template>
 
 <template id="search-tag-template">
-  <li class="Tag">
-    <a class="Tag__link NoBackground" href=""></a>
-  </li>
+	<li class="Tag">
+		<a class="Tag__link NoBackground" href=""></a>
+	</li>
 </template>

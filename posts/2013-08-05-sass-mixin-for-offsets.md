@@ -91,37 +91,37 @@ Okay, this might look quite complicated. Why don’t we simply take it over with
 
 ```scss
 @mixin absolute($args) {
-  /**
-  	 * List of offsets to check for in $args
-   	 */
-  $offsets: top right bottom left;
+	/**
+	 * List of offsets to check for in $args
+	 */
+	$offsets: top right bottom left;
 
-  /**
-  	 * We loop through $offsets to deal with them one by one
-  	 */
-  @each $o in $offsets {
-    /**
-    		 * If current offset found in $args
-    		 * assigns its index to $i
-    		 * Or `false` if not found
-    		 */
-    $i: index($args, $o);
+	/**
+	 * We loop through $offsets to deal with them one by one
+	 */
+	@each $o in $offsets {
+		/**
+		 * If current offset found in $args
+		 * assigns its index to $i
+		 * Or `false` if not found
+		 */
+		$i: index($args, $o);
 
-    /**
-    		 * Now we do the verifications
-    		 * 1. Is the offset listed in $args? (not false)
-    		 * 2. Is the offset value within the list range?
-    		 * 3. Is the offset value valid?
-    		 */
-    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
-    {
-      /**
-      			 * If everything is okay
-      			 * We assign the according value to the current offset
-      			 */
-      #{$o}: nth($args, $i + 1);
-    }
-  }
+		/**
+		 * Now we do the verifications
+		 * 1. Is the offset listed in $args? (not false)
+		 * 2. Is the offset value within the list range?
+		 * 3. Is the offset value valid?
+		 */
+		@if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+		{
+			/**
+			 * If everything is okay
+			 * We assign the according value to the current offset
+			 */
+			#{$o}: nth($args, $i + 1);
+		}
+	}
 }
 ```
 

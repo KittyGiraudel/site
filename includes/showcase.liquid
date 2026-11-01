@@ -1,12 +1,12 @@
 {% comment %}
-  Required:
-  - type: The type of showcase to render (article, event, project)
-  - title: The title of the showcase
-  - copy: The copy of the showcase
-  - items: The items to render
-  Optional:
-  - more_link_url: The URL of the link
-  - more_link_label: The label of the link
+	Required:
+	- type: The type of showcase to render (article, event, project)
+	- title: The title of the showcase
+	- copy: The copy of the showcase
+	- items: The items to render
+	Optional:
+	- more_link_url: The URL of the link
+	- more_link_label: The label of the link
 {% endcomment %}
 
 {% ensure type, "Required value 'type' is missing in showcase.liquid" %}
@@ -19,61 +19,61 @@
 {% assign id = title | slugify %}
 
 <section class="Showcase" aria-labelledby="{{ id }}">
-  <h2 class="Showcase__title" id="{{ id }}">{{ title }}</h2>
-  <div class="Showcase__copy">{{ copy | renderContent: "md" }}</div>
-  <div class="Showcase__container">
-    {% for item in items %}
-    <div class="Showcase__item">
-      {% if type == "event" %}
-        {% assign date = item.date | time %}
-        {% assign description = item.description | default: " " %}
-        
-        {% render "card.liquid"
-          image: item.thumbnail,
-          primary: item.event,
-          secondary: description,
-          tertiary: date,
-          url: item.link,
-          tags: item.tags
-        %}
-      {% elsif type == "project" %}
-        {% assign image = item.data.image | default: '/assets/images/og-default.png' %}
+	<h2 class="Showcase__title" id="{{ id }}">{{ title }}</h2>
+	<div class="Showcase__copy">{{ copy | renderContent: "md" }}</div>
+	<div class="Showcase__container">
+		{% for item in items %}
+		<div class="Showcase__item">
+			{% if type == "event" %}
+				{% assign date = item.date | time %}
+				{% assign description = item.description | default: " " %}
+				
+				{% render "card.liquid"
+					image: item.thumbnail,
+					primary: item.event,
+					secondary: description,
+					tertiary: date,
+					url: item.link,
+					tags: item.tags
+				%}
+			{% elsif type == "project" %}
+				{% assign image = item.data.image | default: '/assets/images/og-default.png' %}
 
-        {% render "card.liquid"
-          image: image,
-          image_alt: item.data.title,
-          primary: item.data.title,
-          secondary: item.data.description,
-          url: item.url,
-          vt_source: item.url,
-          tags: item.data.tags
-        %}
-      {% elsif type == "article" %}
-        {% assign image = item.data.image | default: '/assets/images/og-default.png' %}
-        {% assign url = item.url %}
-        {% if item.data.external %}
-          {% assign url = item.data.external.url %}
-        {% endif %}
+				{% render "card.liquid"
+					image: image,
+					image_alt: item.data.title,
+					primary: item.data.title,
+					secondary: item.data.description,
+					url: item.url,
+					vt_source: item.url,
+					tags: item.data.tags
+				%}
+			{% elsif type == "article" %}
+				{% assign image = item.data.image | default: '/assets/images/og-default.png' %}
+				{% assign url = item.url %}
+				{% if item.data.external %}
+					{% assign url = item.data.external.url %}
+				{% endif %}
 
-        {% assign date = item.date | time %}
+				{% assign date = item.date | time %}
 
-        {% render "card.liquid"
-          image: image,
-          image_alt: "",
-          primary: item.data.title,
-          secondary: item.data.description,
-          tertiary: date,
-          url: url,
-          tags: item.data.tags
-        %}
-      {% endif %}
-    </div>
-    {% endfor %}
-  </div>
+				{% render "card.liquid"
+					image: image,
+					image_alt: "",
+					primary: item.data.title,
+					secondary: item.data.description,
+					tertiary: date,
+					url: url,
+					tags: item.data.tags
+				%}
+			{% endif %}
+		</div>
+		{% endfor %}
+	</div>
 
-  {% if more_link_label and more_link_url %}
-    <div class="Showcase__link">
-      <a href="{{ more_link_url }}">{{ more_link_label }}</a>
-    </div>
-  {% endif %}
+	{% if more_link_label and more_link_url %}
+		<div class="Showcase__link">
+			<a href="{{ more_link_url }}">{{ more_link_label }}</a>
+		</div>
+	{% endif %}
 </section>

@@ -8,51 +8,51 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  {% assign feed_updated = null %}
-  {%- for post in collections.posts -%}
-    {% assign post_published = post.data.creation_date | default: post.date %}
-    {% assign post_updated = post.data.update_date | default: post_published %}
-    {% if feed_updated == null or post_updated > feed_updated %}
-      {% assign feed_updated = post_updated %}
-    {% endif %}
-  {%- endfor %}
-  <title>{{ site.author | escape }}</title>
-  <subtitle>{{ site.description | escape }}</subtitle>
-  <link href="{{ site.url }}/rss/index.xml" rel="self" type="application/atom+xml" />
-  <link href="{{ site.url }}" rel="alternate" type="text/html" />
-  <author>
-    <name>{{ site.author | escape }}</name>
-  </author>
-  {% if feed_updated %}
-  <updated>{{ feed_updated | date_to_rfc3339 }}</updated>
-  {% else %}
-  <updated>{{ site.time | date_to_rfc3339 }}</updated>
-  {% endif %}
-  <generator>Eleventy</generator>
-  <id>{{ site.url }}/</id>
-  {% for post in collections.posts %}
-  {% assign post_published = post.data.creation_date | default: post.date %}
-  {% assign post_updated = post.data.update_date | default: post_published %}
-  {% capture absolute_post_url -%}
-  {%- if post.data.external -%}{{ post.data.external.url }}{%- else -%}{{ post.url | prepend: site.url }}{%- endif -%}
-  {%- endcapture %}
-  <entry>
-    <title>{{ post.data.title | escape }}</title>
-    <link href="{{ absolute_post_url }}" />
-    {% unless post.data.external %}
-      <link
-        rel="alternate"
-        type="text/markdown"
-        href="{{ post.url | prepend: site.url }}index.md" />
-    {% endunless %}
-    <published>{{ post_published | date_to_rfc3339 }}</published>
-    <updated>{{ post_updated | date_to_rfc3339 }}</updated>
-    <id>{{ absolute_post_url }}</id>
-    <summary>{{ post.data.description | escape }}</summary>
-    {% unless post.data.external %}
-    {% assign post_feed_content = post.url | rss_content | default: post.content | default: post.templateContent %}
-    <content type="html"><![CDATA[{{ post_feed_content | replace: 'href="/', 'href="https://kittygiraudel.com/' | replace: 'src="/', 'src="https://kittygiraudel.com/' }}]]></content>
-    {% endunless %}
-  </entry>
-  {% endfor %}
+	{% assign feed_updated = null %}
+	{%- for post in collections.posts -%}
+		{% assign post_published = post.data.creation_date | default: post.date %}
+		{% assign post_updated = post.data.update_date | default: post_published %}
+		{% if feed_updated == null or post_updated > feed_updated %}
+			{% assign feed_updated = post_updated %}
+		{% endif %}
+	{%- endfor %}
+	<title>{{ site.author | escape }}</title>
+	<subtitle>{{ site.description | escape }}</subtitle>
+	<link href="{{ site.url }}/rss/index.xml" rel="self" type="application/atom+xml" />
+	<link href="{{ site.url }}" rel="alternate" type="text/html" />
+	<author>
+		<name>{{ site.author | escape }}</name>
+	</author>
+	{% if feed_updated %}
+	<updated>{{ feed_updated | date_to_rfc3339 }}</updated>
+	{% else %}
+	<updated>{{ site.time | date_to_rfc3339 }}</updated>
+	{% endif %}
+	<generator>Eleventy</generator>
+	<id>{{ site.url }}/</id>
+	{% for post in collections.posts %}
+	{% assign post_published = post.data.creation_date | default: post.date %}
+	{% assign post_updated = post.data.update_date | default: post_published %}
+	{% capture absolute_post_url -%}
+	{%- if post.data.external -%}{{ post.data.external.url }}{%- else -%}{{ post.url | prepend: site.url }}{%- endif -%}
+	{%- endcapture %}
+	<entry>
+		<title>{{ post.data.title | escape }}</title>
+		<link href="{{ absolute_post_url }}" />
+		{% unless post.data.external %}
+			<link
+				rel="alternate"
+				type="text/markdown"
+				href="{{ post.url | prepend: site.url }}index.md" />
+		{% endunless %}
+		<published>{{ post_published | date_to_rfc3339 }}</published>
+		<updated>{{ post_updated | date_to_rfc3339 }}</updated>
+		<id>{{ absolute_post_url }}</id>
+		<summary>{{ post.data.description | escape }}</summary>
+		{% unless post.data.external %}
+		{% assign post_feed_content = post.url | rss_content | default: post.content | default: post.templateContent %}
+		<content type="html"><![CDATA[{{ post_feed_content | replace: 'href="/', 'href="https://kittygiraudel.com/' | replace: 'src="/', 'src="https://kittygiraudel.com/' }}]]></content>
+		{% endunless %}
+	</entry>
+	{% endfor %}
 </feed>

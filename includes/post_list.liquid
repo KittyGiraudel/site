@@ -1,6 +1,6 @@
 {% comment %}
-  Required:
-  - items: The items to render
+	Required:
+	- items: The items to render
 {% endcomment %}
 
 {% ensure items, "Required value 'items' is missing in post_list.liquid" %}
@@ -8,38 +8,38 @@
 {% styles "components/list" %}
 
 <ul class="List NoListMarker">
-  {% for item in items %}
-    {% assign url  = item.url %}
-    {% assign data = item.data %}
+	{% for item in items %}
+		{% assign url  = item.url %}
+		{% assign data = item.data %}
 
-    {% capture secondary %}
-      {% if data.layout == "post" %}
-        {{ item.date | time }}
-        {% if data.guest %} by {{ data.guest }}{% endif %}
-        {% if data.external %} at {% render "external_image.liquid", host: data.external.host %}{{ data.external.host }}{% endif %}
-      {% elsif data.layout == "snippet" and data.date %}
-        {{ data.date | time }}
-      {% else %}
-        <span style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 80%">{{ data.layout }}</span>
-      {% endif %}
-    {% endcapture %}
+		{% capture secondary %}
+			{% if data.layout == "post" %}
+				{{ item.date | time }}
+				{% if data.guest %} by {{ data.guest }}{% endif %}
+				{% if data.external %} at {% render "external_image.liquid", host: data.external.host %}{{ data.external.host }}{% endif %}
+			{% elsif data.layout == "snippet" and data.date %}
+				{{ data.date | time }}
+			{% else %}
+				<span style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 80%">{{ data.layout }}</span>
+			{% endif %}
+		{% endcapture %}
 
-    {% assign href = data.external.url | default: item.url %}
-    {% assign external = false %}
-    {% if data.external %}{% assign external = true %}{% endif %}
-    {% assign lang = data.lang | downcase %}
-    {% comment %}The view transition name cannot start with a number.{% endcomment %}
-    {% assign vt_source = item.url | slugify | prepend: "post-" %}
+		{% assign href = data.external.url | default: item.url %}
+		{% assign external = false %}
+		{% if data.external %}{% assign external = true %}{% endif %}
+		{% assign lang = data.lang | downcase %}
+		{% comment %}The view transition name cannot start with a number.{% endcomment %}
+		{% assign vt_source = item.url | slugify | prepend: "post-" %}
 
-    {% render "list_item.liquid",
-      primary: data.title,
-      secondary: secondary,
-      tags: data.tags,
-      href: href,
-      external: external,
-      lang: lang,
-      vt_source: vt_source,
-      extra: data.archive_post_number
-    %}
-  {% endfor %}
+		{% render "list_item.liquid",
+			primary: data.title,
+			secondary: secondary,
+			tags: data.tags,
+			href: href,
+			external: external,
+			lang: lang,
+			vt_source: vt_source,
+			extra: data.archive_post_number
+		%}
+	{% endfor %}
 </ul>

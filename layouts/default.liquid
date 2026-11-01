@@ -15,74 +15,74 @@
 <html lang="en">
 
 {% render "head.liquid"
-  generator: generator,
-  inline_assets: site.configuration.inline_assets,
-  tags: tags,
-  layout: layout,
-  page_author: page_author,
-  page_description: page_description,
-  page_image: page_image,
-  page_url: page_url,
-  site_author: site_author,
-  site_description: site.description,
-  site_same_as: site_same_as,
-  site_url: site_url,
-  title: title,
+	generator: generator,
+	inline_assets: site.configuration.inline_assets,
+	tags: tags,
+	layout: layout,
+	page_author: page_author,
+	page_description: page_description,
+	page_image: page_image,
+	page_url: page_url,
+	site_author: site_author,
+	site_description: site.description,
+	site_same_as: site_same_as,
+	site_url: site_url,
+	title: title,
 %}
 
 <body>
-  {% render "navigation.liquid", current_url: page.url, navigation: site.nav %}
+	{% render "navigation.liquid", current_url: page.url, navigation: site.nav %}
 
-  {% comment %}
-  Note that this default layout does not render:
-  - The header (i.e. <header>)
-  - The main (i.e. <main>)
-  - The theme button (i.e. theme-button.liquid)
-  That’s because some layouts like the post layout need to render a custom
-  header, and because the header and the main elements should be siblings, the
-  implementing layout needs to take care of both. As for the theme button, it
-  needs to live in a landmark like the main element, so it should also be rende-
-  red by the implementing layout.
-  {% endcomment %}
+	{% comment %}
+	Note that this default layout does not render:
+	- The header (i.e. <header>)
+	- The main (i.e. <main>)
+	- The theme button (i.e. theme-button.liquid)
+	That’s because some layouts like the post layout need to render a custom
+	header, and because the header and the main elements should be siblings, the
+	implementing layout needs to take care of both. As for the theme button, it
+	needs to live in a landmark like the main element, so it should also be rende-
+	red by the implementing layout.
+	{% endcomment %}
 
-  {{ content }}
+	{{ content }}
 
-  {% render "footer.liquid",
-    input_path: page.inputPath,
-    current_year: site.configuration.current_year
-  %}
+	{% render "footer.liquid",
+		input_path: page.inputPath,
+		current_year: site.configuration.current_year
+	%}
 
-  {% render "script.liquid",
-    inline: site.configuration.inline_assets,
-    partials: "main"
-  %}
+	{% render "script.liquid",
+		inline: site.configuration.inline_assets,
+		partials: "main"
+	%}
 
-  {% if site.configuration.dev_mode %}
-    {% render "script.liquid",
-      inline: site.configuration.inline_assets,
-      partials: "dev-theme-reload"
-    %}
-  {% endif %}
+	{% if site.configuration.dev_mode %}
+		{% render "script.liquid",
+			inline: site.configuration.inline_assets,
+			partials: "dev-theme-reload"
+		%}
+	{% endif %}
 
-  {% if site.configuration.init_service_worker == true %}
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
-        .then(function (registration) {
-          console.log(
-            '%cserviceworker:registration', 'color:green',
-            'successful with scope: ' + registration.scope
-          )
-        })
-        .catch(function (error) {
-          console.error(
-            '%cserviceworker:registration', 'color:red',
-            'failed: ', error
-          )
-        })
-    }
-  </script>
-  {% endif %}
+	{% if site.configuration.init_service_worker == true %}
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+				.then(function (registration) {
+					console.log(
+						'%cserviceworker:registration', 'color:green',
+						'successful with scope: ' + registration.scope
+					)
+				})
+				.catch(function (error) {
+					console.error(
+						'%cserviceworker:registration', 'color:red',
+						'failed: ', error
+					)
+				})
+		}
+	</script>
+	{% endif %}
 </body>
 
 </html>

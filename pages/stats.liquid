@@ -14,121 +14,121 @@ link_favicons: true
 {% assign stats = collections.postStats %}
 
 {% if stats.postCount > 0 %}
-  {% renderTemplate "md" %}
-  This page highlights a few metrics about this blog: when it started, how often I post, and what
-  I tend to write about. The data is computed automatically via a [custom Eleventy plugin
-  ](https://github.com/KittyGiraudel/site/blob/main/build/post-stats.js) and should be accurate
-  at all time. Read more about [how it works](/2026/03/02/stats-page-with-11ty/).
-  {% endrenderTemplate %}
+	{% renderTemplate "md" %}
+	This page highlights a few metrics about this blog: when it started, how often I post, and what
+	I tend to write about. The data is computed automatically via a [custom Eleventy plugin
+	](https://github.com/KittyGiraudel/site/blob/main/build/post-stats.js) and should be accurate
+	at all time. Read more about [how it works](/2026/03/02/stats-page-with-11ty/).
+	{% endrenderTemplate %}
 
-  <section class="StatsSection">
-    <h2>Overview</h2>
-    <div class="StatsSection__table">
-      <table>
-        <tbody>
-          <tr>
-            <th scope="row">First post</th>
-            <td>{{ stats.firstPostDate | time }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Last post</th>
-            <td>{{ stats.lastPostDate | time }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Total posts</th>
-            <td>{{ stats.postCount }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+	<section class="StatsSection">
+		<h2>Overview</h2>
+		<div class="StatsSection__table">
+			<table>
+				<tbody>
+					<tr>
+						<th scope="row">First post</th>
+						<td>{{ stats.firstPostDate | time }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Last post</th>
+						<td>{{ stats.lastPostDate | time }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Total posts</th>
+						<td>{{ stats.postCount }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
 
-  <section class="StatsSection">
-    <h2>Writing frequency</h2>
-    <div class="StatsSection__table">
-      <table>
-        <tbody>
-          <tr>
-            <th scope="row">Average per week</th>
-            <td>{{ stats.avgPostsPerWeek }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Average per month</th>
-            <td>{{ stats.avgPostsPerMonth }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Average per year</th>
-            <td>{{ stats.avgPostsPerYear }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Average days between posts</th>
-            <td>{{ stats.avgDaysBetweenPosts }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+	<section class="StatsSection">
+		<h2>Writing frequency</h2>
+		<div class="StatsSection__table">
+			<table>
+				<tbody>
+					<tr>
+						<th scope="row">Average per week</th>
+						<td>{{ stats.avgPostsPerWeek }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Average per month</th>
+						<td>{{ stats.avgPostsPerMonth }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Average per year</th>
+						<td>{{ stats.avgPostsPerYear }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Average days between posts</th>
+						<td>{{ stats.avgDaysBetweenPosts }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
 
-  <section class="StatsSection">
-    <h2>Content per post</h2>
-    <div class="StatsSection__table">
-      <table>
-        <tbody>
-          <tr>
-            <th scope="row">Average characters</th>
-            <td>{{ stats.avgCharacterCount }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Average words</th>
-            <td>{{ stats.avgWordCount }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Average paragraphs</th>
-            <td>{{ stats.avgParagraphCount }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+	<section class="StatsSection">
+		<h2>Content per post</h2>
+		<div class="StatsSection__table">
+			<table>
+				<tbody>
+					<tr>
+						<th scope="row">Average characters</th>
+						<td>{{ stats.avgCharacterCount }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Average words</th>
+						<td>{{ stats.avgWordCount }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Average paragraphs</th>
+						<td>{{ stats.avgParagraphCount }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
 
-  {% if stats.years and stats.years.size > 0 %}
-    {% assign maxPostCount = 1 %}
-    {% assign maxWordCount = 1 %}
-    {% assign maxParagraphCount = 1 %}
+	{% if stats.years and stats.years.size > 0 %}
+		{% assign maxPostCount = 1 %}
+		{% assign maxWordCount = 1 %}
+		{% assign maxParagraphCount = 1 %}
 
-    {% for year in stats.years %}
-      {% if year.postCount > maxPostCount %}
-        {% assign maxPostCount = year.postCount %}
-      {% endif %}
-    {% endfor %}
+		{% for year in stats.years %}
+			{% if year.postCount > maxPostCount %}
+				{% assign maxPostCount = year.postCount %}
+			{% endif %}
+		{% endfor %}
 
-    <section class="StatsSection">
-      <h2>Posts per year</h2>
-      <div class="StatsSection__chart" id="stats-posts-per-year">
-        <table class="charts-css column show-labels show-primary-axis show-4-secondary-axes data-spacing-1 data-outside StatsChart StatsChart--posts">
-          <caption>Posts per year</caption>
-          <tbody>
-            {% for year in stats.years %}
-              <tr>
-                <th scope="row">{{ year.year }}</th>
-                <td style="--size: calc({{ year.postCount }} / {{ maxPostCount }})">
-                  <span class="data">{{ year.postCount }}</span>
-                </td>
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </section>
+		<section class="StatsSection">
+			<h2>Posts per year</h2>
+			<div class="StatsSection__chart" id="stats-posts-per-year">
+				<table class="charts-css column show-labels show-primary-axis show-4-secondary-axes data-spacing-1 data-outside StatsChart StatsChart--posts">
+					<caption>Posts per year</caption>
+					<tbody>
+						{% for year in stats.years %}
+							<tr>
+								<th scope="row">{{ year.year }}</th>
+								<td style="--size: calc({{ year.postCount }} / {{ maxPostCount }})">
+									<span class="data">{{ year.postCount }}</span>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</section>
 
-  {% endif %}
+	{% endif %}
 
-  {% if stats.popularTags.size > 0 %}
-    <section class="StatsSection StatsSection--tags">
-      <h2>Tags</h2>
-      {% render "tags.liquid", tags: stats.popularTags %}
-    </section>
-  {% endif %}
+	{% if stats.popularTags.size > 0 %}
+		<section class="StatsSection StatsSection--tags">
+			<h2>Tags</h2>
+			{% render "tags.liquid", tags: stats.popularTags %}
+		</section>
+	{% endif %}
 {% else %}
-  <p>No posts yet, nothing to show here.</p>
+	<p>No posts yet, nothing to show here.</p>
 {% endif %}

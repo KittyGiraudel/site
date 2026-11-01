@@ -201,9 +201,9 @@ In-content imagery uses the [`figure.liquid`](includes/figure.liquid) shortcode,
 
 ```liquid
 {% render "figure.liquid",
-  src: "/assets/images/<slug>/<file>.<ext>",
-  caption: "Wall of “deadline has elapsed” error logs",
-  alt: "Screenshot of Better Stack live tail showing a lot of timeout errors"
+	src: "/assets/images/<slug>/<file>.<ext>",
+	caption: "Wall of “deadline has elapsed” error logs",
+	alt: "Screenshot of Better Stack live tail showing a lot of timeout errors"
 %}
 ```
 
@@ -367,10 +367,10 @@ Canonical usage:
 
 ```liquid
 {% render "codepen.liquid",
-  user: "KittyGiraudel",
-  slug: "bGGxrvM",
-  title: "Logical Properties Mapping",
-  height: 640
+	user: "KittyGiraudel",
+	slug: "bGGxrvM",
+	title: "Logical Properties Mapping",
+	height: 640
 %}
 ```
 

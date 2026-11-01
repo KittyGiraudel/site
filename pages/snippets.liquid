@@ -23,18 +23,18 @@ paste them with minor effort.
 {% assign snippets = collections.snippets | reverse %}
 
 <ul class="List NoListMarker">
-  {% for snippet in snippets %}
-    {% if snippet.data.date %}
-      {% assign date = snippet.data.date | time %}
-    {% endif %}
-    {% assign vt_source = snippet.url | slugify %}
+	{% for snippet in snippets %}
+		{% if snippet.data.date %}
+			{% assign date = snippet.data.date | time %}
+		{% endif %}
+		{% assign vt_source = snippet.url | slugify %}
 
-    {% render "list_item.liquid"
-      primary: snippet.data.title,
-      secondary: date,
-      href: snippet.url,
-      vt_source: vt_source,
-      tags: snippet.data.tags
-    %}
-  {% endfor %}
+		{% render "list_item.liquid"
+			primary: snippet.data.title,
+			secondary: date,
+			href: snippet.url,
+			vt_source: vt_source,
+			tags: snippet.data.tags
+		%}
+	{% endfor %}
 </ul>

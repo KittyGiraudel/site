@@ -85,16 +85,16 @@ import { Button, type ButtonProps } from 'antd'
 import Link, { type LinkProps } from 'next/link'
 
 export type RouterButtonProps = Omit<ButtonProps, 'href' | 'htmlType'> & {
-  href: LinkProps['href']
-  linkProps?: Omit<LinkProps, 'href'>
+	href: LinkProps['href']
+	linkProps?: Omit<LinkProps, 'href'>
 }
 
 export function RouterButton({ href, linkProps, ...props }: RouterButtonProps) {
-  return (
-    <Link href={href} {...linkProps} passHref legacyBehavior>
-      <Button {...props} />
-    </Link>
-  )
+	return (
+		<Link href={href} {...linkProps} passHref legacyBehavior>
+			<Button {...props} />
+		</Link>
+	)
 }
 ```
 

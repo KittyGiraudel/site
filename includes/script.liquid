@@ -1,9 +1,9 @@
 {% comment %}
-  Required:
-  - partials: The partials to render
-  - inline: Whether to inline the scripts
-  Optional:
-  - type: The type of script to render
+	Required:
+	- partials: The partials to render
+	- inline: Whether to inline the scripts
+	Optional:
+	- type: The type of script to render
 {% endcomment %}
 
 {% ensure partials, "Required value 'partials' is missing in script.liquid" %}
@@ -12,13 +12,13 @@
 {% assign paths = partials | split: "," %}
 
 {%- if inline -%}
-  {%- capture js -%}
-    {% for path in paths -%}{%- include "../assets/js/{{ path | strip }}.js" -%}{%- endfor %}
-  {%- endcapture -%}
+	{%- capture js -%}
+		{% for path in paths -%}{%- include "../assets/js/{{ path | strip }}.js" -%}{%- endfor %}
+	{%- endcapture -%}
 
-  <script {% if type %}type="{{ type }}"{% endif %}>{{ js }}</script>
+	<script {% if type %}type="{{ type }}"{% endif %}>{{ js }}</script>
 {%- else -%}
-  {% for path in paths -%}
-    <script defer src="/assets/js/{{ path | strip }}.js" {% if type %}type="{{ type }}"{% endif %}></script>
-  {%- endfor %}
+	{% for path in paths -%}
+		<script defer src="/assets/js/{{ path | strip }}.js" {% if type %}type="{{ type }}"{% endif %}></script>
+	{%- endfor %}
 {%- endif %}

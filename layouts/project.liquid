@@ -4,90 +4,90 @@ layout: page
 
 {% assign project_page_url = page.url | prepend: site.url %}
 {% if website %}
-  {% assign software_primary_url = website %}
+	{% assign software_primary_url = website %}
 {% else %}
-  {% assign software_primary_url = project_page_url %}
+	{% assign software_primary_url = project_page_url %}
 {% endif %}
 {% if image %}
-  {% if image contains '://' %}
-    {% assign project_image_url = image %}
-  {% else %}
-    {% assign project_image_url = image | prepend: site.url %}
-  {% endif %}
+	{% if image contains '://' %}
+		{% assign project_image_url = image %}
+	{% else %}
+		{% assign project_image_url = image | prepend: site.url %}
+	{% endif %}
 {% endif %}
 
 <script type="application/ld+json" data-helmet>{
-  "@context": "https://schema.org",
-  "@type": "SoftwareSourceCode",
-  "name": {{ title | jsonify }},
-  "description": {{ description | strip_html | strip_newlines | truncate: 200 | jsonify }},
-  "url": {{ software_primary_url | jsonify }},
-  "codeRepository": {{ repository | jsonify }}{% if image %}
-  ,"image": {{ project_image_url | jsonify }}{% endif %}{% if tags and tags.size > 0 %}
-  ,"keywords": {{ tags | jsonify }}{% endif %}
-  ,"author": {
-    "@type": "Person",
-    "name": {{ site.author | jsonify }},
-    "url": {{ site.url | jsonify }}{% if site.same_as and site.same_as.size > 0 %}
-    ,"sameAs": {{ site.same_as | jsonify }}{% endif %}
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": {{ project_page_url | jsonify }}
-  }
+	"@context": "https://schema.org",
+	"@type": "SoftwareSourceCode",
+	"name": {{ title | jsonify }},
+	"description": {{ description | strip_html | strip_newlines | truncate: 200 | jsonify }},
+	"url": {{ software_primary_url | jsonify }},
+	"codeRepository": {{ repository | jsonify }}{% if image %}
+	,"image": {{ project_image_url | jsonify }}{% endif %}{% if tags and tags.size > 0 %}
+	,"keywords": {{ tags | jsonify }}{% endif %}
+	,"author": {
+		"@type": "Person",
+		"name": {{ site.author | jsonify }},
+		"url": {{ site.url | jsonify }}{% if site.same_as and site.same_as.size > 0 %}
+		,"sameAs": {{ site.same_as | jsonify }}{% endif %}
+	},
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": {{ project_page_url | jsonify }}
+	}
 }</script>
 
 {% styles "components/code, pages/project, base/favicons" %}
 
 <article class="Project" data-link-favicons>
-  <section class="Project__header">
-    <p class="Project__description">
-      {{ description }}
-    </p>
+	<section class="Project__header">
+		<p class="Project__description">
+			{{ description }}
+		</p>
 
-    <div class="Project__tags">
-      {% render "tags.liquid", tags: tags %}
-    </div>
+		<div class="Project__tags">
+			{% render "tags.liquid", tags: tags %}
+		</div>
 
-    <div class="Project__meta" aria-label="Project links">
-      {% if website %}
-        <a class="Project__meta-link" href="{{ website }}" target="_blank" rel="noopener noreferrer">
-          Visit website
-        </a>
-      {% endif %}
+		<div class="Project__meta" aria-label="Project links">
+			{% if website %}
+				<a class="Project__meta-link" href="{{ website }}" target="_blank" rel="noopener noreferrer">
+					Visit website
+				</a>
+			{% endif %}
 
-      {% assign project_stars = github.stargazers[repository] | default: 0 %}
+			{% assign project_stars = github.stargazers[repository] | default: 0 %}
 
-      <a class="Project__meta-link" href="{{ repository }}" target="_blank" rel="noopener noreferrer">
-        View on GitHub
-        {% if project_stars != 0 %}
-          <span class="Project__stars">
-            · {{ project_stars }} ★
-          </span>
-        {% endif %}
-      </a>
-    </div>
-  </section>
+			<a class="Project__meta-link" href="{{ repository }}" target="_blank" rel="noopener noreferrer">
+				View on GitHub
+				{% if project_stars != 0 %}
+					<span class="Project__stars">
+						· {{ project_stars }} ★
+					</span>
+				{% endif %}
+			</a>
+		</div>
+	</section>
 
-  {% if image %}
-    {% assign vt_style = page.url | slugify | prepend: 'view-transition-name: ' %}
+	{% if image %}
+		{% assign vt_style = page.url | slugify | prepend: 'view-transition-name: ' %}
 
-    {% render "figure.liquid",
-      src: image,
-      alt: title,
-      caption: image_caption,
-      style: vt_style
-    %}
-  {% endif %}
+		{% render "figure.liquid",
+			src: image,
+			alt: title,
+			caption: image_caption,
+			style: vt_style
+		%}
+	{% endif %}
 
-  <section class="Project__content">
-    {{ content | renderContent: "md" }}
-  </section>
+	<section class="Project__content">
+		{{ content | renderContent: "md" }}
+	</section>
 </article>
 
 {% render "collection_navigation.liquid",
-  page: page,
-  collection: collections.projects,
-  label: "project",
-  dev_mode: site.configuration.dev_mode
+	page: page,
+	collection: collections.projects,
+	label: "project",
+	dev_mode: site.configuration.dev_mode
 %}

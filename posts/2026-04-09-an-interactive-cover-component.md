@@ -163,13 +163,13 @@ At its core, it goes like this:
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .Cover {
-    animation-name: animate-background;
-    animation-duration: 50s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
+	.Cover {
+		animation-name: animate-background;
+		animation-duration: 50s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
 }
 ```
 
@@ -198,8 +198,8 @@ The problem with this approach is that a background that gets animated between 4
 When defining `--from` and `--to` as percentages, I couldn’t figure out how to convert them into durations in the `calc()` function. I tried to divide the result of `abs()` by `1%` to get a unitless number (which is how it’s done in Sass for instance), but it didn’t work. To work around the problem, I’ve defined these as unitless values, and multiply them by 1% in the keyframes to get percentages. If someone knows how to do better, let me know.
 ```css
 .Cover[data-biome="ruralSea"] {
-  --from: 10;
-  --to: 95;
+	--from: 10;
+	--to: 95;
 }
 ```
 {% endcallout %}
