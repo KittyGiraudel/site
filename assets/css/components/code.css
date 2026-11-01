@@ -122,6 +122,11 @@
 	.token.variable {
 		color: #ecb246;
 	}
+
+	.token.inserted > * {
+		color: #009f7f;
+	}
+
 	.token.important,
 	.token.bold {
 		font-weight: bold;
