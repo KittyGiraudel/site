@@ -3,7 +3,7 @@
 {%- include "demos/carbon/styles.css" -%}
 {%- endcapture %}
 
-	<style>{{ demo_styles }}</style>
+<style>{{ demo_styles }}</style>
 
 	<div class="chart-card">
 		<div class="chart-header">
@@ -76,10 +76,10 @@
 		</ul>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<script>
-	const postsPerMonth = {{ collections.postStats[0].months | json }};
-	{%- include "demos/carbon/data.js" -%}
-	{%- include "demos/carbon/script.js" -%}
-	</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const postsPerMonth = {{ collections.postStats[0].months | json }};
+{%- include "demos/carbon/data.js" -%}
+{%- include "demos/carbon/script.js" -%}
+</script>
 </section>
